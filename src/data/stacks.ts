@@ -700,19 +700,19 @@ export const STACKS: StackGuide[] = [
       "needs": [
           {
               "title": "Concept spatial",
-              "titleEn": "Concept spatial",
+              "titleEn": "Spatial concept",
               "detail": "Moodboards, références, narration, volumes et premières pistes doivent converger vite.",
               "detailEn": "Moodboards, references, narrative, volumes and first directions have to converge quickly."
           },
           {
               "title": "Production lisible",
-              "titleEn": "Production lisible",
+              "titleEn": "Legible production",
               "detail": "Plans, matériaux, fournisseurs, budget et contraintes doivent rester traçables.",
               "detailEn": "Drawings, materials, suppliers, budget and constraints have to stay traceable."
           },
           {
               "title": "Validation client",
-              "titleEn": "Validation client",
+              "titleEn": "Client sign-off",
               "detail": "Le client doit valider une intention et comprendre les arbitrages de fabrication.",
               "detailEn": "The client has to approve an intent and understand the fabrication trade-offs."
           }
@@ -740,7 +740,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Fichiers lourds",
-              "titleEn": "Fichiers lourds",
+              "titleEn": "Heavy files",
               "detail": "Les assets importés peuvent tuer SketchUp si Transmutr et CleanUp ne sont pas utilisés.",
               "detailEn": "Imported assets can kill SketchUp unless Transmutr and CleanUp are used."
           },
@@ -815,7 +815,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Presentation",
               "slug": "indesign",
               "reason": "Dossiers client, planches et rendus structurés.",
-              "reasonEn": "Client dossiers, boards and structured renders."
+              "reasonEn": "Client packs, boards and structured renders."
           },
           {
               "role": "Vectoriel / signalétique",
@@ -944,7 +944,7 @@ export const STACKS: StackGuide[] = [
       "needs": [
           {
               "title": "Concept vendable",
-              "titleEn": "Concept vendable",
+              "titleEn": "Sellable concept",
               "detail": "Le client doit comprendre l’expérience et la présence de marque.",
               "detailEn": "The client has to understand the experience and the brand presence."
           },
@@ -956,7 +956,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Budget vivant",
-              "titleEn": "Budget vivant",
+              "titleEn": "Living budget",
               "detail": "Chaque choix créatif doit avoir un impact prix visible.",
               "detailEn": "Every creative decision should have a visible price impact."
           }
@@ -978,7 +978,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Trop de 3D premium",
-              "titleEn": "Trop de 3D premium",
+              "titleEn": "Too much premium 3D",
               "detail": "V-Ray n’est utile que si l’image premium change la vente.",
               "detailEn": "V-Ray only earns its place if a premium image changes the sale."
           },
@@ -990,7 +990,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Suivi fournisseur flou",
-              "titleEn": "Suivi fournisseur flou",
+              "titleEn": "Vague supplier tracking",
               "detail": "Sans statuts et alternatives, le sourcing bloque la production.",
               "detailEn": "Without statuses and alternatives, sourcing blocks production."
           }
@@ -1043,7 +1043,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "CAO retail",
               "slug": "vectorworks",
               "reason": "Option solide pour implantation et dossiers techniques.",
-              "reasonEn": "A solid option for layouts and technical dossiers.",
+              "reasonEn": "A solid option for layouts and technical packs.",
               "decision": "conditional"
           },
           {
@@ -1183,11 +1183,11 @@ export const STACKS: StackGuide[] = [
       "avoidIf": "Tu fais surtout de l’UX produit ou du motion, où Figma ou After Effects deviennent plus centraux.",
       "avoidIfEn": "You mainly do product UX or motion, where Figma or After Effects are more central.",
       "editorial": "Illustrator, Photoshop et InDesign restent le noyau si le métier touche au print, au vectoriel et aux dossiers propres. Figma est utile pour les systèmes et le digital. Eagle et FontBase évitent la dérive des assets. Canva ne doit servir qu’aux déclinaisons rapides, pas à la source de vérité.",
-      "editorialEn": "Illustrator, Photoshop, and InDesign remain the core when the work touches print, vector, and polished dossiers. Figma helps with systems and digital. Eagle and FontBase prevent asset drift. Canva should handle quick variations, not the source of truth.",
+      "editorialEn": "Illustrator, Photoshop, and InDesign remain the core when the work touches print, vector, and polished documents. Figma helps with systems and digital. Eagle and FontBase prevent asset drift. Canva should handle quick variations, not the source of truth.",
       "needs": [
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Vectoriel, image, mise en page et PDF doivent sortir proprement.",
               "detailEn": "Vector, image, layout and PDF all have to come out clean."
           },
@@ -1199,7 +1199,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Livraison claire",
-              "titleEn": "Livraison claire",
+              "titleEn": "Clear delivery",
               "detail": "Le client doit recevoir les bons formats et la bonne version.",
               "detailEn": "The client has to receive the right formats and the right version."
           }
@@ -1221,7 +1221,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Canva comme source",
-              "titleEn": "Canva comme source",
+              "titleEn": "Canva as the source of truth",
               "detail": "Canva est utile pour décliner, pas pour porter une identité complète.",
               "detailEn": "Canva is useful for variants, not for carrying a whole identity."
           },
@@ -1278,7 +1278,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Mise en page",
               "slug": "indesign",
               "reason": "Brochures, dossiers, catalogues et exports print.",
-              "reasonEn": "Brochures, dossiers, catalogues and print exports."
+              "reasonEn": "Brochures, packs, catalogues and print exports."
           },
           {
               "role": "Système digital",
@@ -1427,7 +1427,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Livraison durable",
-              "titleEn": "Livraison durable",
+              "titleEn": "Delivery that lasts",
               "detail": "Le client doit pouvoir réutiliser la marque sans la dégrader.",
               "detailEn": "The client has to be able to reuse the brand without degrading it."
           }
@@ -1449,19 +1449,19 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Guidelines en PDF mort",
-              "titleEn": "Guidelines en PDF mort",
+              "titleEn": "Guidelines in a dead PDF",
               "detail": "Un PDF seul devient vite obsolète si la marque évolue.",
               "detailEn": "A PDF on its own goes stale as soon as the brand moves."
           },
           {
               "title": "Trop d’assets IA",
-              "titleEn": "Trop d’assets IA",
+              "titleEn": "Too many AI assets",
               "detail": "L’exploration IA ne remplace pas une direction de marque.",
               "detailEn": "Exploring with AI does not replace a brand direction."
           },
           {
               "title": "Tokens inutiles",
-              "titleEn": "Tokens inutiles",
+              "titleEn": "Pointless tokens",
               "detail": "Specify ou Tokens Studio ne servent que si le système va vers le digital ou le code.",
               "detailEn": "Specify and Tokens Studio only pay off if the system moves toward digital or code."
           }
@@ -1513,7 +1513,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Guidelines print",
               "slug": "indesign",
               "reason": "Brand book, règles et dossiers premium.",
-              "reasonEn": "Brand book, rules and premium dossiers."
+              "reasonEn": "Brand book, rules and premium packs."
           },
           {
               "role": "Présentation",
@@ -1650,13 +1650,13 @@ export const STACKS: StackGuide[] = [
       "needs": [
           {
               "title": "Veille solide",
-              "titleEn": "Veille solide",
+              "titleEn": "Solid market watch",
               "detail": "Références image, culture, style et benchmarks doivent être organisés.",
               "detailEn": "Image references, culture, style and benchmarks have to be organised."
           },
           {
               "title": "Vision partageable",
-              "titleEn": "Vision partageable",
+              "titleEn": "A vision you can share",
               "detail": "Le concept doit être présenté de façon courte, claire et vendable.",
               "detailEn": "The concept has to be presented short, clear and sellable."
           },
@@ -1684,7 +1684,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Moodboard infini",
-              "titleEn": "Moodboard infini",
+              "titleEn": "Endless moodboard",
               "detail": "Chercher plus de références peut masquer une décision non prise.",
               "detailEn": "Hunting for more references can hide a decision nobody has made."
           },
@@ -1696,7 +1696,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Feedback oral perdu",
-              "titleEn": "Feedback oral perdu",
+              "titleEn": "Spoken feedback lost",
               "detail": "Sans trace, la décision créative revient en arrière.",
               "detailEn": "With no record, the creative decision gets reopened."
           }
@@ -1879,19 +1879,19 @@ export const STACKS: StackGuide[] = [
       "needs": [
           {
               "title": "Cadrer vite",
-              "titleEn": "Cadrer vite",
+              "titleEn": "Frame it fast",
               "detail": "Sitemap, wireframes et composants doivent sortir avant le build.",
               "detailEn": "Sitemap, wireframes and components have to land before the build."
           },
           {
               "title": "Build maintenable",
-              "titleEn": "Build maintenable",
+              "titleEn": "Maintainable build",
               "detail": "Classes, CMS, interactions et scripts doivent rester lisibles.",
               "detailEn": "Classes, CMS, interactions and scripts have to stay readable."
           },
           {
               "title": "Mesurer utile",
-              "titleEn": "Mesurer utile",
+              "titleEn": "Measure what matters",
               "detail": "SEO, conversion et performance doivent être suivis sans usine analytics.",
               "detailEn": "SEO, conversion and performance have to be tracked without an analytics factory."
           }
@@ -1913,13 +1913,13 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Scripts invisibles",
-              "titleEn": "Scripts invisibles",
+              "titleEn": "Invisible scripts",
               "detail": "Un custom code non documenté casse la maintenance.",
               "detailEn": "Undocumented custom code breaks maintenance."
           },
           {
               "title": "Apps trop nombreuses",
-              "titleEn": "Apps trop nombreuses",
+              "titleEn": "Too many apps",
               "detail": "Chaque app ralentit ou complexifie le site.",
               "detailEn": "Every app slows the site down or makes it more complex."
           },
@@ -2108,19 +2108,19 @@ export const STACKS: StackGuide[] = [
       "needs": [
           {
               "title": "Montage stable",
-              "titleEn": "Montage stable",
+              "titleEn": "Stable editing",
               "detail": "Un outil principal doit porter 80% du workflow.",
               "detailEn": "One main tool should carry 80% of the workflow."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Les retours doivent être timecodés et actionnables.",
               "detailEn": "Feedback has to be timecoded and actionable."
           },
           {
               "title": "Livraison propre",
-              "titleEn": "Livraison propre",
+              "titleEn": "Clean delivery",
               "detail": "Sous-titres, exports, son et formats doivent être maîtrisés.",
               "detailEn": "Subtitles, exports, sound and formats have to be under control."
           }
@@ -2148,7 +2148,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "IA partout",
-              "titleEn": "IA partout",
+              "titleEn": "AI everywhere",
               "detail": "L’IA doit accélérer sous-titres, nettoyage ou upscale, pas remplacer le montage.",
               "detailEn": "AI should speed up subtitles, cleanup or upscaling, not replace the edit."
           },
@@ -2337,7 +2337,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Business fluide",
-              "titleEn": "Business fluide",
+              "titleEn": "Smooth business",
               "detail": "Devis, validation, acompte et livraison ne doivent pas ralentir le projet.",
               "detailEn": "Quote, approval, deposit and delivery must not slow the project down."
           }
@@ -2359,13 +2359,13 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Shotlist absente",
-              "titleEn": "Shotlist absente",
+              "titleEn": "No shotlist",
               "detail": "Le tournage coûte trop cher pour improviser les décisions de base.",
               "detailEn": "A shoot costs too much to improvise the basic decisions."
           },
           {
               "title": "Retour client flou",
-              "titleEn": "Retour client flou",
+              "titleEn": "Vague client feedback",
               "detail": "Un commentaire non timecodé coûte des heures.",
               "detailEn": "Feedback without a timecode costs hours."
           },
@@ -2540,7 +2540,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack designer éditorial",
       "titleEn": "Designer editorial / print stack",
       "subtitle": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
-      "subtitleEn": "Books, magazines, catalogues, reports and print dossiers: layout, typography, prepress, proofing and PDF delivery.",
+      "subtitleEn": "Books, magazines, catalogues, reports and print documents: layout, typography, prepress, proofing and PDF delivery.",
       "persona": "designer",
       "subProfiles": [
           "brand",
@@ -2554,11 +2554,11 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
-      "bestForEn": "Books, magazines, catalogues, reports and print dossiers: layout, typography, prepress, proofing and PDF delivery.",
+      "bestForEn": "Books, magazines, catalogues, reports and print documents: layout, typography, prepress, proofing and PDF delivery.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Books, magazines, catalogues, reports and print dossiers: layout, typography, prepress, proofing and PDF delivery. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Books, magazines, catalogues, reports and print documents: layout, typography, prepress, proofing and PDF delivery. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
@@ -2568,13 +2568,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -2588,7 +2588,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -2596,7 +2596,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -2772,13 +2772,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -2792,7 +2792,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -2800,7 +2800,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -2984,13 +2984,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -3004,7 +3004,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -3012,7 +3012,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -3196,13 +3196,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -3216,7 +3216,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -3224,7 +3224,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -3408,13 +3408,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -3428,7 +3428,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -3436,7 +3436,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -3611,13 +3611,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -3631,7 +3631,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -3639,7 +3639,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -3815,13 +3815,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -3835,7 +3835,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -3843,7 +3843,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -4027,13 +4027,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -4047,7 +4047,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -4055,7 +4055,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -4239,13 +4239,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -4259,7 +4259,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -4267,7 +4267,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -4451,13 +4451,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -4471,7 +4471,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -4479,7 +4479,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -4663,13 +4663,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -4683,7 +4683,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -4691,7 +4691,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -4851,13 +4851,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -4871,7 +4871,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -4879,7 +4879,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -5047,13 +5047,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -5067,7 +5067,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -5075,7 +5075,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -5235,13 +5235,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -5255,7 +5255,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -5263,7 +5263,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -5419,7 +5419,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack signalétique",
       "titleEn": "Wayfinding designer stack",
       "subtitle": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
-      "subtitleEn": "Wayfinding systems, pictograms, plans, flows, typography, printed supports, materials and installation.",
+      "subtitleEn": "Wayfinding systems, pictograms, plans, flows, typography, printed materials, substrates and installation.",
       "persona": "designer",
       "subProfiles": [
           "brand",
@@ -5433,11 +5433,11 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
-      "bestForEn": "Wayfinding systems, pictograms, plans, flows, typography, printed supports, materials and installation.",
+      "bestForEn": "Wayfinding systems, pictograms, plans, flows, typography, printed materials, substrates and installation.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Wayfinding systems, pictograms, plans, flows, typography, printed supports, materials and installation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Wayfinding systems, pictograms, plans, flows, typography, printed materials, substrates and installation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
@@ -5447,13 +5447,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -5467,7 +5467,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -5475,7 +5475,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -5659,13 +5659,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -5679,7 +5679,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -5687,7 +5687,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -5878,13 +5878,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -5898,7 +5898,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -5906,7 +5906,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -6074,13 +6074,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -6094,7 +6094,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -6102,7 +6102,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -6286,13 +6286,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -6306,7 +6306,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -6314,7 +6314,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -6498,13 +6498,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -6518,7 +6518,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -6526,7 +6526,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -6718,13 +6718,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -6738,7 +6738,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -6746,7 +6746,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -6922,13 +6922,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -6942,7 +6942,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -6950,7 +6950,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -7134,13 +7134,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -7154,7 +7154,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -7162,7 +7162,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -7346,13 +7346,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -7366,7 +7366,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -7374,7 +7374,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -7558,13 +7558,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -7578,7 +7578,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -7586,7 +7586,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -7762,13 +7762,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -7782,7 +7782,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -7790,7 +7790,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -7982,13 +7982,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -8002,7 +8002,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -8010,7 +8010,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -8186,13 +8186,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -8206,7 +8206,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -8214,7 +8214,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -8374,13 +8374,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -8394,7 +8394,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -8402,7 +8402,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -8570,13 +8570,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -8590,7 +8590,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -8598,7 +8598,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -8790,13 +8790,13 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Production fiable",
-              "titleEn": "Production fiable",
+              "titleEn": "Reliable production",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
               "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
-              "titleEn": "Validation claire",
+              "titleEn": "Clear sign-off",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
               "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
@@ -8810,7 +8810,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "title": "Plusieurs parties prenantes",
-              "titleEn": "Plusieurs parties prenantes",
+              "titleEn": "Several stakeholders",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
               "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
@@ -8818,7 +8818,7 @@ export const STACKS: StackGuide[] = [
       "traps": [
           {
               "title": "Abonnements dormants",
-              "titleEn": "Abonnements dormants",
+              "titleEn": "Dormant subscriptions",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
               "detailEn": "A premium creative tool should map to something you invoice."
           },
@@ -16613,7 +16613,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Cartographie organisationnelle",
-        "titleEn": "Cartographie organisationnelle",
+        "titleEn": "Org mapping",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -16625,7 +16625,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "ateliers",
-        "titleEn": "ateliers",
+        "titleEn": "workshops",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -16687,7 +16687,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Atelier : utile pour sécuriser cartographie organisationnelle sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie organisationnelle without scattering the workflow."
+        "reasonEn": "Useful to secure org mapping without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -16707,7 +16707,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser ateliers sans disperser le workflow.",
-        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+        "reasonEn": "Useful to secure workshops without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -16717,7 +16717,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser cartographie organisationnelle sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie organisationnelle without scattering the workflow."
+        "reasonEn": "Useful to secure org mapping without scattering the workflow."
       },
       {
         "role": "Suite collaborative",
@@ -16737,7 +16737,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Deck exécutif : utile pour sécuriser ateliers sans disperser le workflow.",
-        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+        "reasonEn": "Useful to secure workshops without scattering the workflow."
       },
       {
         "role": "Formulaires",
@@ -16747,7 +16747,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Formulaires : utile pour sécuriser cartographie organisationnelle sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie organisationnelle without scattering the workflow."
+        "reasonEn": "Useful to secure org mapping without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -16767,7 +16767,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Vidéo asynchrone : utile pour sécuriser ateliers sans disperser le workflow.",
-        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+        "reasonEn": "Useful to secure workshops without scattering the workflow."
       }
     ]
   },
@@ -16983,13 +16983,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit outils",
-        "titleEn": "Audit outils",
+        "titleEn": "Tooling audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "cartographie SI",
-        "titleEn": "cartographie SI",
+        "titleEn": "IT landscape mapping",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -17057,7 +17057,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Atelier : utile pour sécuriser audit outils sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit outils without scattering the workflow."
+        "reasonEn": "Useful to secure tooling audit without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -17067,7 +17067,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser cartographie si sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie si without scattering the workflow."
+        "reasonEn": "Useful to secure iT landscape mapping without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -17087,7 +17087,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Automatisation : utile pour sécuriser audit outils sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit outils without scattering the workflow."
+        "reasonEn": "Useful to secure tooling audit without scattering the workflow."
       },
       {
         "role": "Automatisation",
@@ -17097,7 +17097,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Automatisation : utile pour sécuriser cartographie si sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie si without scattering the workflow."
+        "reasonEn": "Useful to secure iT landscape mapping without scattering the workflow."
       },
       {
         "role": "CRM",
@@ -17117,7 +17117,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Suite collaborative : utile pour sécuriser audit outils sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit outils without scattering the workflow."
+        "reasonEn": "Useful to secure tooling audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17127,7 +17127,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser cartographie si sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie si without scattering the workflow."
+        "reasonEn": "Useful to secure iT landscape mapping without scattering the workflow."
       },
       {
         "role": "Vidéo asynchrone",
@@ -17372,7 +17372,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit marketing",
-        "titleEn": "Audit marketing",
+        "titleEn": "Marketing audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -17446,7 +17446,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "CRM : utile pour sécuriser audit marketing sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit marketing without scattering the workflow."
+        "reasonEn": "Useful to secure marketing audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17476,7 +17476,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit marketing sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit marketing without scattering the workflow."
+        "reasonEn": "Useful to secure marketing audit without scattering the workflow."
       },
       {
         "role": "Reporting",
@@ -17506,7 +17506,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Création rapide : utile pour sécuriser audit marketing sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit marketing without scattering the workflow."
+        "reasonEn": "Useful to secure marketing audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17753,7 +17753,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit technique",
-        "titleEn": "Audit technique",
+        "titleEn": "Technical audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -17765,7 +17765,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "contenus",
-        "titleEn": "contenus",
+        "titleEn": "content",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -17827,7 +17827,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit technique sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit technique without scattering the workflow."
+        "reasonEn": "Useful to secure technical audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17847,7 +17847,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser contenus sans disperser le workflow.",
-        "reasonEn": "Useful to secure contenus without scattering the workflow."
+        "reasonEn": "Useful to secure content without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17857,7 +17857,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit technique sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit technique without scattering the workflow."
+        "reasonEn": "Useful to secure technical audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17877,7 +17877,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser contenus sans disperser le workflow.",
-        "reasonEn": "Useful to secure contenus without scattering the workflow."
+        "reasonEn": "Useful to secure content without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17887,7 +17887,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser audit technique sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit technique without scattering the workflow."
+        "reasonEn": "Useful to secure technical audit without scattering the workflow."
       },
       {
         "role": "Reporting",
@@ -17907,7 +17907,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Cockpit mission : utile pour sécuriser contenus sans disperser le workflow.",
-        "reasonEn": "Useful to secure contenus without scattering the workflow."
+        "reasonEn": "Useful to secure content without scattering the workflow."
       }
     ]
   },
@@ -17939,7 +17939,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Calendrier",
-        "titleEn": "Calendrier",
+        "titleEn": "Calendar",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -18013,7 +18013,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser calendrier sans disperser le workflow.",
-        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+        "reasonEn": "Useful to secure calendar without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -18043,7 +18043,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser calendrier sans disperser le workflow.",
-        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+        "reasonEn": "Useful to secure calendar without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18073,7 +18073,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser calendrier sans disperser le workflow.",
-        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+        "reasonEn": "Useful to secure calendar without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18124,7 +18124,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit social",
-        "titleEn": "Audit social",
+        "titleEn": "Social audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -18136,7 +18136,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "planning",
-        "titleEn": "planning",
+        "titleEn": "scheduling",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -18198,7 +18198,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit social sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit social without scattering the workflow."
+        "reasonEn": "Useful to secure social audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18218,7 +18218,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser planning sans disperser le workflow.",
-        "reasonEn": "Useful to secure planning without scattering the workflow."
+        "reasonEn": "Useful to secure scheduling without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18228,7 +18228,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit social sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit social without scattering the workflow."
+        "reasonEn": "Useful to secure social audit without scattering the workflow."
       },
       {
         "role": "Création rapide",
@@ -18248,7 +18248,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser planning sans disperser le workflow.",
-        "reasonEn": "Useful to secure planning without scattering the workflow."
+        "reasonEn": "Useful to secure scheduling without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -18258,7 +18258,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Cockpit mission : utile pour sécuriser audit social sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit social without scattering the workflow."
+        "reasonEn": "Useful to secure social audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18299,13 +18299,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit marque",
-        "titleEn": "Audit marque",
+        "titleEn": "Brand audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "plateforme",
-        "titleEn": "plateforme",
+        "titleEn": "platform",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -18373,7 +18373,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Atelier : utile pour sécuriser audit marque sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit marque without scattering the workflow."
+        "reasonEn": "Useful to secure brand audit without scattering the workflow."
       },
       {
         "role": "Maquette",
@@ -18383,7 +18383,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Maquette : utile pour sécuriser plateforme sans disperser le workflow.",
-        "reasonEn": "Useful to secure plateforme without scattering the workflow."
+        "reasonEn": "Useful to secure platform without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18403,7 +18403,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser audit marque sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit marque without scattering the workflow."
+        "reasonEn": "Useful to secure brand audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18413,7 +18413,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser plateforme sans disperser le workflow.",
-        "reasonEn": "Useful to secure plateforme without scattering the workflow."
+        "reasonEn": "Useful to secure platform without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18433,7 +18433,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Deck client : utile pour sécuriser audit marque sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit marque without scattering the workflow."
+        "reasonEn": "Useful to secure brand audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18443,7 +18443,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser plateforme sans disperser le workflow.",
-        "reasonEn": "Useful to secure plateforme without scattering the workflow."
+        "reasonEn": "Useful to secure platform without scattering the workflow."
       }
     ]
   },
@@ -18473,7 +18473,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Plan de communication",
-        "titleEn": "Plan de communication",
+        "titleEn": "Communication plan",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -18485,7 +18485,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "calendrier",
-        "titleEn": "calendrier",
+        "titleEn": "calendar",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -18547,7 +18547,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser plan de communication sans disperser le workflow.",
-        "reasonEn": "Useful to secure plan de communication without scattering the workflow."
+        "reasonEn": "Useful to secure communication plan without scattering the workflow."
       },
       {
         "role": "Suite collaborative",
@@ -18567,7 +18567,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Création rapide : utile pour sécuriser calendrier sans disperser le workflow.",
-        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+        "reasonEn": "Useful to secure calendar without scattering the workflow."
       },
       {
         "role": "Deck exécutif",
@@ -18577,7 +18577,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Deck exécutif : utile pour sécuriser plan de communication sans disperser le workflow.",
-        "reasonEn": "Useful to secure plan de communication without scattering the workflow."
+        "reasonEn": "Useful to secure communication plan without scattering the workflow."
       },
       {
         "role": "Atelier",
@@ -18597,7 +18597,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser calendrier sans disperser le workflow.",
-        "reasonEn": "Useful to secure calendrier without scattering the workflow."
+        "reasonEn": "Useful to secure calendar without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18607,7 +18607,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser plan de communication sans disperser le workflow.",
-        "reasonEn": "Useful to secure plan de communication without scattering the workflow."
+        "reasonEn": "Useful to secure communication plan without scattering the workflow."
       },
       {
         "role": "Formulaires",
@@ -18648,7 +18648,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Fichier journalistes",
-        "titleEn": "Fichier journalistes",
+        "titleEn": "Press list",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -18660,7 +18660,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "pitchs",
-        "titleEn": "pitchs",
+        "titleEn": "pitches",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -18722,7 +18722,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser fichier journalistes sans disperser le workflow.",
-        "reasonEn": "Useful to secure fichier journalistes without scattering the workflow."
+        "reasonEn": "Useful to secure press list without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18742,7 +18742,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser pitchs sans disperser le workflow.",
-        "reasonEn": "Useful to secure pitchs without scattering the workflow."
+        "reasonEn": "Useful to secure pitches without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -18752,7 +18752,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser fichier journalistes sans disperser le workflow.",
-        "reasonEn": "Useful to secure fichier journalistes without scattering the workflow."
+        "reasonEn": "Useful to secure press list without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -18772,7 +18772,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser pitchs sans disperser le workflow.",
-        "reasonEn": "Useful to secure pitchs without scattering the workflow."
+        "reasonEn": "Useful to secure pitches without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18782,7 +18782,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser fichier journalistes sans disperser le workflow.",
-        "reasonEn": "Useful to secure fichier journalistes without scattering the workflow."
+        "reasonEn": "Useful to secure press list without scattering the workflow."
       },
       {
         "role": "Création rapide",
@@ -18822,19 +18822,19 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit RH",
-        "titleEn": "Audit RH",
+        "titleEn": "HR audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "entretiens",
-        "titleEn": "entretiens",
+        "titleEn": "interviews",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
       {
         "title": "processus",
-        "titleEn": "processus",
+        "titleEn": "processes",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -18896,7 +18896,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser audit rh sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit rh without scattering the workflow."
+        "reasonEn": "Useful to secure hR audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18906,7 +18906,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser entretiens sans disperser le workflow.",
-        "reasonEn": "Useful to secure entretiens without scattering the workflow."
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18916,7 +18916,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser processus sans disperser le workflow.",
-        "reasonEn": "Useful to secure processus without scattering the workflow."
+        "reasonEn": "Useful to secure processes without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18926,7 +18926,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit rh sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit rh without scattering the workflow."
+        "reasonEn": "Useful to secure hR audit without scattering the workflow."
       },
       {
         "role": "Formulaires",
@@ -18936,7 +18936,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Formulaires : utile pour sécuriser entretiens sans disperser le workflow.",
-        "reasonEn": "Useful to secure entretiens without scattering the workflow."
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
       },
       {
         "role": "Atelier",
@@ -18946,7 +18946,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Atelier : utile pour sécuriser processus sans disperser le workflow.",
-        "reasonEn": "Useful to secure processus without scattering the workflow."
+        "reasonEn": "Useful to secure processes without scattering the workflow."
       },
       {
         "role": "Suite collaborative",
@@ -18956,7 +18956,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Suite collaborative : utile pour sécuriser audit rh sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit rh without scattering the workflow."
+        "reasonEn": "Useful to secure hR audit without scattering the workflow."
       },
       {
         "role": "Rendez-vous",
@@ -18966,7 +18966,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Rendez-vous : utile pour sécuriser entretiens sans disperser le workflow.",
-        "reasonEn": "Useful to secure entretiens without scattering the workflow."
+        "reasonEn": "Useful to secure interviews without scattering the workflow."
       }
     ]
   },
@@ -18989,7 +18989,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant recrutement / talent acquisition",
-    "bestForEn": "Consultant recrutement / talent acquisition",
+    "bestForEn": "Recruitment and talent acquisition consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -19003,7 +19003,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "pipeline candidats",
-        "titleEn": "pipeline candidats",
+        "titleEn": "candidate pipeline",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -19081,7 +19081,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser pipeline candidats sans disperser le workflow.",
-        "reasonEn": "Useful to secure pipeline candidats without scattering the workflow."
+        "reasonEn": "Useful to secure candidate pipeline without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -19111,7 +19111,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser pipeline candidats sans disperser le workflow.",
-        "reasonEn": "Useful to secure pipeline candidats without scattering the workflow."
+        "reasonEn": "Useful to secure candidate pipeline without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19141,7 +19141,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Vidéo asynchrone : utile pour sécuriser pipeline candidats sans disperser le workflow.",
-        "reasonEn": "Useful to secure pipeline candidats without scattering the workflow."
+        "reasonEn": "Useful to secure candidate pipeline without scattering the workflow."
       }
     ]
   },
@@ -20077,13 +20077,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit CRM",
-        "titleEn": "Audit CRM",
+        "titleEn": "CRM audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "structure pipeline",
-        "titleEn": "structure pipeline",
+        "titleEn": "pipeline structure",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -20151,7 +20151,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "CRM : utile pour sécuriser audit crm sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit crm without scattering the workflow."
+        "reasonEn": "Useful to secure cRM audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20161,7 +20161,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser structure pipeline sans disperser le workflow.",
-        "reasonEn": "Useful to secure structure pipeline without scattering the workflow."
+        "reasonEn": "Useful to secure pipeline structure without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20181,7 +20181,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit crm sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit crm without scattering the workflow."
+        "reasonEn": "Useful to secure cRM audit without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -20191,7 +20191,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Base structurée : utile pour sécuriser structure pipeline sans disperser le workflow.",
-        "reasonEn": "Useful to secure structure pipeline without scattering the workflow."
+        "reasonEn": "Useful to secure pipeline structure without scattering the workflow."
       },
       {
         "role": "Automatisation",
@@ -20211,7 +20211,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Automatisation : utile pour sécuriser audit crm sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit crm without scattering the workflow."
+        "reasonEn": "Useful to secure cRM audit without scattering the workflow."
       },
       {
         "role": "Reporting",
@@ -20221,7 +20221,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Reporting : utile pour sécuriser structure pipeline sans disperser le workflow.",
-        "reasonEn": "Useful to secure structure pipeline without scattering the workflow."
+        "reasonEn": "Useful to secure pipeline structure without scattering the workflow."
       }
     ]
   },
@@ -20252,7 +20252,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit site",
-        "titleEn": "Audit site",
+        "titleEn": "Site audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -20326,7 +20326,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit site sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit site without scattering the workflow."
+        "reasonEn": "Useful to secure site audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20356,7 +20356,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit site sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit site without scattering the workflow."
+        "reasonEn": "Useful to secure site audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20386,7 +20386,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser audit site sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit site without scattering the workflow."
+        "reasonEn": "Useful to secure site audit without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -20437,7 +20437,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit UX",
-        "titleEn": "Audit UX",
+        "titleEn": "UX audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -20511,7 +20511,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit ux sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit ux without scattering the workflow."
+        "reasonEn": "Useful to secure uX audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20541,7 +20541,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit ux sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit ux without scattering the workflow."
+        "reasonEn": "Useful to secure uX audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20571,7 +20571,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Maquette : utile pour sécuriser audit ux sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit ux without scattering the workflow."
+        "reasonEn": "Useful to secure uX audit without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -20623,7 +20623,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "nettoyage",
-        "titleEn": "nettoyage",
+        "titleEn": "cleaning",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -20705,7 +20705,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Reporting : utile pour sécuriser nettoyage sans disperser le workflow.",
-        "reasonEn": "Useful to secure nettoyage without scattering the workflow."
+        "reasonEn": "Useful to secure cleaning without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20735,7 +20735,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Modèle chiffré : utile pour sécuriser nettoyage sans disperser le workflow.",
-        "reasonEn": "Useful to secure nettoyage without scattering the workflow."
+        "reasonEn": "Useful to secure cleaning without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20786,7 +20786,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit workflow",
-        "titleEn": "Audit workflow",
+        "titleEn": "Workflow audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -20798,7 +20798,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "apps internes",
-        "titleEn": "apps internes",
+        "titleEn": "internal apps",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -20860,7 +20860,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Base structurée : utile pour sécuriser audit workflow sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit workflow without scattering the workflow."
+        "reasonEn": "Useful to secure workflow audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20880,7 +20880,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser apps internes sans disperser le workflow.",
-        "reasonEn": "Useful to secure apps internes without scattering the workflow."
+        "reasonEn": "Useful to secure internal apps without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20890,7 +20890,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit workflow sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit workflow without scattering the workflow."
+        "reasonEn": "Useful to secure workflow audit without scattering the workflow."
       },
       {
         "role": "Automatisation",
@@ -20910,7 +20910,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Automatisation : utile pour sécuriser apps internes sans disperser le workflow.",
-        "reasonEn": "Useful to secure apps internes without scattering the workflow."
+        "reasonEn": "Useful to secure internal apps without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20920,7 +20920,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser audit workflow sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit workflow without scattering the workflow."
+        "reasonEn": "Useful to secure workflow audit without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -20940,7 +20940,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser apps internes sans disperser le workflow.",
-        "reasonEn": "Useful to secure apps internes without scattering the workflow."
+        "reasonEn": "Useful to secure internal apps without scattering the workflow."
       }
     ]
   },
@@ -20983,7 +20983,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "priorisation",
-        "titleEn": "priorisation",
+        "titleEn": "prioritisation",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -21065,7 +21065,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser priorisation sans disperser le workflow.",
-        "reasonEn": "Useful to secure priorisation without scattering the workflow."
+        "reasonEn": "Useful to secure prioritisation without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -21095,7 +21095,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser priorisation sans disperser le workflow.",
-        "reasonEn": "Useful to secure priorisation without scattering the workflow."
+        "reasonEn": "Useful to secure prioritisation without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21125,7 +21125,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Atelier : utile pour sécuriser priorisation sans disperser le workflow.",
-        "reasonEn": "Useful to secure priorisation without scattering the workflow."
+        "reasonEn": "Useful to secure prioritisation without scattering the workflow."
       }
     ]
   },
@@ -21330,7 +21330,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit SI",
-        "titleEn": "Audit SI",
+        "titleEn": "IT audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -21404,7 +21404,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit si sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit si without scattering the workflow."
+        "reasonEn": "Useful to secure iT audit without scattering the workflow."
       },
       {
         "role": "Suite collaborative",
@@ -21434,7 +21434,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit si sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit si without scattering the workflow."
+        "reasonEn": "Useful to secure iT audit without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -21464,7 +21464,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser audit si sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit si without scattering the workflow."
+        "reasonEn": "Useful to secure iT audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21511,13 +21511,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "politiques",
-        "titleEn": "politiques",
+        "titleEn": "policies",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
       {
         "title": "sensibilisation",
-        "titleEn": "sensibilisation",
+        "titleEn": "awareness training",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -21589,7 +21589,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser politiques sans disperser le workflow.",
-        "reasonEn": "Useful to secure politiques without scattering the workflow."
+        "reasonEn": "Useful to secure policies without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21599,7 +21599,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser sensibilisation sans disperser le workflow.",
-        "reasonEn": "Useful to secure sensibilisation without scattering the workflow."
+        "reasonEn": "Useful to secure awareness training without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21619,7 +21619,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser politiques sans disperser le workflow.",
-        "reasonEn": "Useful to secure politiques without scattering the workflow."
+        "reasonEn": "Useful to secure policies without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21629,7 +21629,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser sensibilisation sans disperser le workflow.",
-        "reasonEn": "Useful to secure sensibilisation without scattering the workflow."
+        "reasonEn": "Useful to secure awareness training without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -21649,7 +21649,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Atelier : utile pour sécuriser politiques sans disperser le workflow.",
-        "reasonEn": "Useful to secure politiques without scattering the workflow."
+        "reasonEn": "Useful to secure policies without scattering the workflow."
       }
     ]
   },
@@ -21680,13 +21680,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit RGPD",
-        "titleEn": "Audit RGPD",
+        "titleEn": "GDPR audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "registre",
-        "titleEn": "registre",
+        "titleEn": "register",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -21754,7 +21754,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser audit rgpd sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit rgpd without scattering the workflow."
+        "reasonEn": "Useful to secure gDPR audit without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -21764,7 +21764,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Base structurée : utile pour sécuriser registre sans disperser le workflow.",
-        "reasonEn": "Useful to secure registre without scattering the workflow."
+        "reasonEn": "Useful to secure register without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21784,7 +21784,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit rgpd sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit rgpd without scattering the workflow."
+        "reasonEn": "Useful to secure gDPR audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21794,7 +21794,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser registre sans disperser le workflow.",
-        "reasonEn": "Useful to secure registre without scattering the workflow."
+        "reasonEn": "Useful to secure register without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21814,7 +21814,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Signature : utile pour sécuriser audit rgpd sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit rgpd without scattering the workflow."
+        "reasonEn": "Useful to secure gDPR audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21824,7 +21824,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser registre sans disperser le workflow.",
-        "reasonEn": "Useful to secure registre without scattering the workflow."
+        "reasonEn": "Useful to secure register without scattering the workflow."
       }
     ]
   },
@@ -21867,7 +21867,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "indicateurs",
-        "titleEn": "indicateurs",
+        "titleEn": "metrics",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -21949,7 +21949,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "BI : utile pour sécuriser indicateurs sans disperser le workflow.",
-        "reasonEn": "Useful to secure indicateurs without scattering the workflow."
+        "reasonEn": "Useful to secure metrics without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21979,7 +21979,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser indicateurs sans disperser le workflow.",
-        "reasonEn": "Useful to secure indicateurs without scattering the workflow."
+        "reasonEn": "Useful to secure metrics without scattering the workflow."
       },
       {
         "role": "Atelier",
@@ -22022,7 +22022,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant achats / procurement",
-    "bestForEn": "Consultant achats / procurement",
+    "bestForEn": "Purchasing and procurement consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -22030,13 +22030,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Cartographie achats",
-        "titleEn": "Cartographie achats",
+        "titleEn": "Procurement mapping",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "fournisseurs",
-        "titleEn": "fournisseurs",
+        "titleEn": "suppliers",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -22104,7 +22104,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Modèle chiffré : utile pour sécuriser cartographie achats sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie achats without scattering the workflow."
+        "reasonEn": "Useful to secure procurement mapping without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -22114,7 +22114,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Base structurée : utile pour sécuriser fournisseurs sans disperser le workflow.",
-        "reasonEn": "Useful to secure fournisseurs without scattering the workflow."
+        "reasonEn": "Useful to secure suppliers without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -22134,7 +22134,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser cartographie achats sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie achats without scattering the workflow."
+        "reasonEn": "Useful to secure procurement mapping without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22144,7 +22144,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser fournisseurs sans disperser le workflow.",
-        "reasonEn": "Useful to secure fournisseurs without scattering the workflow."
+        "reasonEn": "Useful to secure suppliers without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22164,7 +22164,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Signature : utile pour sécuriser cartographie achats sans disperser le workflow.",
-        "reasonEn": "Useful to secure cartographie achats without scattering the workflow."
+        "reasonEn": "Useful to secure procurement mapping without scattering the workflow."
       },
       {
         "role": "BI",
@@ -22174,7 +22174,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "BI : utile pour sécuriser fournisseurs sans disperser le workflow.",
-        "reasonEn": "Useful to secure fournisseurs without scattering the workflow."
+        "reasonEn": "Useful to secure suppliers without scattering the workflow."
       }
     ]
   },
@@ -22211,7 +22211,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "stocks",
-        "titleEn": "stocks",
+        "titleEn": "stock",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -22289,7 +22289,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "BI : utile pour sécuriser stocks sans disperser le workflow.",
-        "reasonEn": "Useful to secure stocks without scattering the workflow."
+        "reasonEn": "Useful to secure stock without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22319,7 +22319,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Atelier : utile pour sécuriser stocks sans disperser le workflow.",
-        "reasonEn": "Useful to secure stocks without scattering the workflow."
+        "reasonEn": "Useful to secure stock without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22349,7 +22349,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Cockpit mission : utile pour sécuriser stocks sans disperser le workflow.",
-        "reasonEn": "Useful to secure stocks without scattering the workflow."
+        "reasonEn": "Useful to secure stock without scattering the workflow."
       }
     ]
   },
@@ -22546,7 +22546,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant legal ops / contrats",
-    "bestForEn": "Consultant legal ops / contrats",
+    "bestForEn": "Legal ops and contracts consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -22719,19 +22719,19 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit usages",
-        "titleEn": "Audit usages",
+        "titleEn": "Usage audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "occupation",
-        "titleEn": "occupation",
+        "titleEn": "occupancy",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
       {
         "title": "parcours",
-        "titleEn": "parcours",
+        "titleEn": "journeys",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -22793,7 +22793,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Atelier : utile pour sécuriser audit usages sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit usages without scattering the workflow."
+        "reasonEn": "Useful to secure usage audit without scattering the workflow."
       },
       {
         "role": "Formulaires",
@@ -22803,7 +22803,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Formulaires : utile pour sécuriser occupation sans disperser le workflow.",
-        "reasonEn": "Useful to secure occupation without scattering the workflow."
+        "reasonEn": "Useful to secure occupancy without scattering the workflow."
       },
       {
         "role": "Modèle chiffré",
@@ -22813,7 +22813,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Modèle chiffré : utile pour sécuriser parcours sans disperser le workflow.",
-        "reasonEn": "Useful to secure parcours without scattering the workflow."
+        "reasonEn": "Useful to secure journeys without scattering the workflow."
       },
       {
         "role": "BI",
@@ -22823,7 +22823,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "BI : utile pour sécuriser audit usages sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit usages without scattering the workflow."
+        "reasonEn": "Useful to secure usage audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22833,7 +22833,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser occupation sans disperser le workflow.",
-        "reasonEn": "Useful to secure occupation without scattering the workflow."
+        "reasonEn": "Useful to secure occupancy without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -22843,7 +22843,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Cockpit mission : utile pour sécuriser parcours sans disperser le workflow.",
-        "reasonEn": "Useful to secure parcours without scattering the workflow."
+        "reasonEn": "Useful to secure journeys without scattering the workflow."
       },
       {
         "role": "Suite collaborative",
@@ -22853,7 +22853,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Suite collaborative : utile pour sécuriser audit usages sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit usages without scattering the workflow."
+        "reasonEn": "Useful to secure usage audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22863,7 +22863,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser occupation sans disperser le workflow.",
-        "reasonEn": "Useful to secure occupation without scattering the workflow."
+        "reasonEn": "Useful to secure occupancy without scattering the workflow."
       }
     ]
   },
@@ -22900,7 +22900,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "planning",
-        "titleEn": "planning",
+        "titleEn": "scheduling",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -22978,7 +22978,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser planning sans disperser le workflow.",
-        "reasonEn": "Useful to secure planning without scattering the workflow."
+        "reasonEn": "Useful to secure scheduling without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -23008,7 +23008,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Atelier : utile pour sécuriser planning sans disperser le workflow.",
-        "reasonEn": "Useful to secure planning without scattering the workflow."
+        "reasonEn": "Useful to secure scheduling without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -23038,7 +23038,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Formulaires : utile pour sécuriser planning sans disperser le workflow.",
-        "reasonEn": "Useful to secure planning without scattering the workflow."
+        "reasonEn": "Useful to secure scheduling without scattering the workflow."
       }
     ]
   },
@@ -23069,7 +23069,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Narratif",
-        "titleEn": "Narratif",
+        "titleEn": "Narrative",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -23143,7 +23143,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Deck client : utile pour sécuriser narratif sans disperser le workflow.",
-        "reasonEn": "Useful to secure narratif without scattering the workflow."
+        "reasonEn": "Useful to secure narrative without scattering the workflow."
       },
       {
         "role": "Deck exécutif",
@@ -23173,7 +23173,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser narratif sans disperser le workflow.",
-        "reasonEn": "Useful to secure narratif without scattering the workflow."
+        "reasonEn": "Useful to secure narrative without scattering the workflow."
       },
       {
         "role": "Modèle chiffré",
@@ -23183,7 +23183,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Modèle chiffré : utile pour sécuriser narratif sans disperser le workflow.",
-        "reasonEn": "Useful to secure narratif without scattering the workflow."
+        "reasonEn": "Useful to secure narrative without scattering the workflow."
       },
       {
         "role": "Base structurée",
@@ -23234,7 +23234,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Ateliers",
-        "titleEn": "Ateliers",
+        "titleEn": "Workshops",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -23308,7 +23308,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Atelier : utile pour sécuriser ateliers sans disperser le workflow.",
-        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+        "reasonEn": "Useful to secure workshops without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -23338,7 +23338,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser ateliers sans disperser le workflow.",
-        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+        "reasonEn": "Useful to secure workshops without scattering the workflow."
       },
       {
         "role": "Formulaires",
@@ -23368,7 +23368,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser ateliers sans disperser le workflow.",
-        "reasonEn": "Useful to secure ateliers without scattering the workflow."
+        "reasonEn": "Useful to secure workshops without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -23409,13 +23409,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Analyse impact",
-        "titleEn": "Analyse impact",
+        "titleEn": "Impact analysis",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "parties prenantes",
-        "titleEn": "parties prenantes",
+        "titleEn": "stakeholders",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -23483,7 +23483,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Atelier : utile pour sécuriser analyse impact sans disperser le workflow.",
-        "reasonEn": "Useful to secure analyse impact without scattering the workflow."
+        "reasonEn": "Useful to secure impact analysis without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -23493,7 +23493,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser parties prenantes sans disperser le workflow.",
-        "reasonEn": "Useful to secure parties prenantes without scattering the workflow."
+        "reasonEn": "Useful to secure stakeholders without scattering the workflow."
       },
       {
         "role": "Formulaires",
@@ -23513,7 +23513,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Vidéo asynchrone : utile pour sécuriser analyse impact sans disperser le workflow.",
-        "reasonEn": "Useful to secure analyse impact without scattering the workflow."
+        "reasonEn": "Useful to secure impact analysis without scattering the workflow."
       },
       {
         "role": "Suite collaborative",
@@ -23523,7 +23523,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Suite collaborative : utile pour sécuriser parties prenantes sans disperser le workflow.",
-        "reasonEn": "Useful to secure parties prenantes without scattering the workflow."
+        "reasonEn": "Useful to secure stakeholders without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -23543,7 +23543,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser analyse impact sans disperser le workflow.",
-        "reasonEn": "Useful to secure analyse impact without scattering the workflow."
+        "reasonEn": "Useful to secure impact analysis without scattering the workflow."
       }
     ]
   },
@@ -23575,13 +23575,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Positionnement",
-        "titleEn": "Positionnement",
+        "titleEn": "Positioning",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
       {
         "title": "prospection",
-        "titleEn": "prospection",
+        "titleEn": "prospecting",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -23649,7 +23649,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser positionnement sans disperser le workflow.",
-        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+        "reasonEn": "Useful to secure positioning without scattering the workflow."
       },
       {
         "role": "CRM",
@@ -23659,7 +23659,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "CRM : utile pour sécuriser prospection sans disperser le workflow.",
-        "reasonEn": "Useful to secure prospection without scattering the workflow."
+        "reasonEn": "Useful to secure prospecting without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -23679,7 +23679,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Suite collaborative : utile pour sécuriser positionnement sans disperser le workflow.",
-        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+        "reasonEn": "Useful to secure positioning without scattering the workflow."
       },
       {
         "role": "Rendez-vous",
@@ -23689,7 +23689,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Rendez-vous : utile pour sécuriser prospection sans disperser le workflow.",
-        "reasonEn": "Useful to secure prospection without scattering the workflow."
+        "reasonEn": "Useful to secure prospecting without scattering the workflow."
       },
       {
         "role": "Vidéo asynchrone",
@@ -23709,7 +23709,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Signature : utile pour sécuriser positionnement sans disperser le workflow.",
-        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+        "reasonEn": "Useful to secure positioning without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -23719,7 +23719,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser prospection sans disperser le workflow.",
-        "reasonEn": "Useful to secure prospection without scattering the workflow."
+        "reasonEn": "Useful to secure prospecting without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -23739,7 +23739,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "IA généraliste : utile pour sécuriser positionnement sans disperser le workflow.",
-        "reasonEn": "Useful to secure positionnement without scattering the workflow."
+        "reasonEn": "Useful to secure positioning without scattering the workflow."
       }
     ]
   },
@@ -23772,25 +23772,25 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Scripts courts",
-        "titleEn": "Scripts courts",
+        "titleEn": "Short scripts",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
       {
         "title": "tournage smartphone",
-        "titleEn": "tournage smartphone",
+        "titleEn": "smartphone shooting",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "montage vertical",
-        "titleEn": "montage vertical",
+        "titleEn": "vertical editing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "sous-titres",
-        "titleEn": "sous-titres",
+        "titleEn": "subtitles",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -23852,7 +23852,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts courts in the content workflow."
+        "reasonEn": "Useful to secure short scripts in the content workflow."
       },
       {
         "role": "Montage pro",
@@ -23862,7 +23862,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage pro : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
       },
       {
         "role": "Montage pro",
@@ -23872,7 +23872,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage pro : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Pilotage TikTok",
@@ -23882,7 +23882,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Pilotage TikTok : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure sous-titres in the content workflow."
+        "reasonEn": "Useful to secure subtitles in the content workflow."
       },
       {
         "role": "Pilotage YouTube",
@@ -23892,7 +23892,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Pilotage YouTube : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts courts in the content workflow."
+        "reasonEn": "Useful to secure short scripts in the content workflow."
       },
       {
         "role": "Distribution Instagram",
@@ -23902,7 +23902,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Distribution Instagram : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
       },
       {
         "role": "Planification social",
@@ -23912,7 +23912,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Planification social : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -23922,7 +23922,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Cockpit contenu : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure sous-titres in the content workflow."
+        "reasonEn": "Useful to secure subtitles in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -23932,7 +23932,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts courts in the content workflow."
+        "reasonEn": "Useful to secure short scripts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -23942,7 +23942,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -23952,7 +23952,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -23962,7 +23962,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure sous-titres in the content workflow."
+        "reasonEn": "Useful to secure subtitles in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -23972,7 +23972,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts courts in the content workflow."
+        "reasonEn": "Useful to secure short scripts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -23982,7 +23982,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -23992,7 +23992,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24002,7 +24002,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure sous-titres in the content workflow."
+        "reasonEn": "Useful to secure subtitles in the content workflow."
       },
       {
         "role": "Repurposing vidéo",
@@ -24012,7 +24012,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Repurposing vidéo : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts courts in the content workflow."
+        "reasonEn": "Useful to secure short scripts in the content workflow."
       },
       {
         "role": "Sous-titres",
@@ -24022,7 +24022,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage smartphone in the content workflow."
+        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
       }
     ]
   },
@@ -24053,7 +24053,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche",
-        "titleEn": "Recherche",
+        "titleEn": "Research",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -24065,13 +24065,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "tournage",
-        "titleEn": "tournage",
+        "titleEn": "shooting",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "montage long",
-        "titleEn": "montage long",
+        "titleEn": "long-form editing",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -24133,7 +24133,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage pro : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Montage / étalonnage",
@@ -24153,7 +24153,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage pro : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Montage texte/audio",
@@ -24163,7 +24163,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage texte/audio : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage long in the content workflow."
+        "reasonEn": "Useful to secure long-form editing in the content workflow."
       },
       {
         "role": "Pilotage YouTube",
@@ -24173,7 +24173,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Pilotage YouTube : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24193,7 +24193,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -24203,7 +24203,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Cockpit contenu : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage long in the content workflow."
+        "reasonEn": "Useful to secure long-form editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24213,7 +24213,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24233,7 +24233,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24243,7 +24243,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage long in the content workflow."
+        "reasonEn": "Useful to secure long-form editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24253,7 +24253,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -24273,7 +24273,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Retouche avancée : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -24283,7 +24283,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage long in the content workflow."
+        "reasonEn": "Useful to secure long-form editing in the content workflow."
       },
       {
         "role": "Rédaction longue",
@@ -24293,7 +24293,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24340,13 +24340,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "enregistrement",
-        "titleEn": "enregistrement",
+        "titleEn": "recording",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "montage audio",
-        "titleEn": "montage audio",
+        "titleEn": "audio editing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -24424,7 +24424,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage texte/audio : utile pour sécuriser enregistrement dans le workflow contenu.",
-        "reasonEn": "Useful to secure enregistrement in the content workflow."
+        "reasonEn": "Useful to secure recording in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24434,7 +24434,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser montage audio dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage audio in the content workflow."
+        "reasonEn": "Useful to secure audio editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24464,7 +24464,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser enregistrement dans le workflow contenu.",
-        "reasonEn": "Useful to secure enregistrement in the content workflow."
+        "reasonEn": "Useful to secure recording in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24474,7 +24474,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage audio dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage audio in the content workflow."
+        "reasonEn": "Useful to secure audio editing in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -24504,7 +24504,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser enregistrement dans le workflow contenu.",
-        "reasonEn": "Useful to secure enregistrement in the content workflow."
+        "reasonEn": "Useful to secure recording in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24514,7 +24514,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage audio dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage audio in the content workflow."
+        "reasonEn": "Useful to secure audio editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24544,7 +24544,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Repurposing vidéo : utile pour sécuriser enregistrement dans le workflow contenu.",
-        "reasonEn": "Useful to secure enregistrement in the content workflow."
+        "reasonEn": "Useful to secure recording in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -24554,7 +24554,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser montage audio dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage audio in the content workflow."
+        "reasonEn": "Useful to secure audio editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24584,7 +24584,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser enregistrement dans le workflow contenu.",
-        "reasonEn": "Useful to secure enregistrement in the content workflow."
+        "reasonEn": "Useful to secure recording in the content workflow."
       }
     ]
   },
@@ -24615,7 +24615,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Positionnement",
-        "titleEn": "Positionnement",
+        "titleEn": "Positioning",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -24633,7 +24633,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "carrousels",
-        "titleEn": "carrousels",
+        "titleEn": "carousels",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -24695,7 +24695,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24725,7 +24725,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser carrousels dans le workflow contenu.",
-        "reasonEn": "Useful to secure carrousels in the content workflow."
+        "reasonEn": "Useful to secure carousels in the content workflow."
       },
       {
         "role": "Design avancé",
@@ -24735,7 +24735,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design avancé : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24765,7 +24765,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser carrousels dans le workflow contenu.",
-        "reasonEn": "Useful to secure carrousels in the content workflow."
+        "reasonEn": "Useful to secure carousels in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24775,7 +24775,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24805,7 +24805,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser carrousels dans le workflow contenu.",
-        "reasonEn": "Useful to secure carrousels in the content workflow."
+        "reasonEn": "Useful to secure carousels in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24815,7 +24815,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24845,7 +24845,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser carrousels dans le workflow contenu.",
-        "reasonEn": "Useful to secure carrousels in the content workflow."
+        "reasonEn": "Useful to secure carousels in the content workflow."
       },
       {
         "role": "Rédaction longue",
@@ -24855,7 +24855,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Recherche sourcée",
@@ -24896,7 +24896,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Veille",
-        "titleEn": "Veille",
+        "titleEn": "Market watch",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -24976,7 +24976,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Newsletter : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Newsletter",
@@ -25016,7 +25016,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -25056,7 +25056,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25096,7 +25096,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25136,7 +25136,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Recherche sourcée",
@@ -25184,19 +25184,19 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "retouche",
-        "titleEn": "retouche",
+        "titleEn": "retouching",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "montage court",
-        "titleEn": "montage court",
+        "titleEn": "short-form editing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "planification",
-        "titleEn": "planification",
+        "titleEn": "scheduling",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -25268,7 +25268,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Retouche avancée : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -25278,7 +25278,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser montage court dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage court in the content workflow."
+        "reasonEn": "Useful to secure short-form editing in the content workflow."
       },
       {
         "role": "Montage vertical",
@@ -25288,7 +25288,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser planification dans le workflow contenu.",
-        "reasonEn": "Useful to secure planification in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25308,7 +25308,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Planification social : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25318,7 +25318,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage court dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage court in the content workflow."
+        "reasonEn": "Useful to secure short-form editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25328,7 +25328,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planification dans le workflow contenu.",
-        "reasonEn": "Useful to secure planification in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25348,7 +25348,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25358,7 +25358,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage court dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage court in the content workflow."
+        "reasonEn": "Useful to secure short-form editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25368,7 +25368,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planification dans le workflow contenu.",
-        "reasonEn": "Useful to secure planification in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25388,7 +25388,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25398,7 +25398,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage court dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage court in the content workflow."
+        "reasonEn": "Useful to secure short-form editing in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -25408,7 +25408,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser planification dans le workflow contenu.",
-        "reasonEn": "Useful to secure planification in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25428,7 +25428,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       }
     ]
   },
@@ -25460,7 +25460,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Brief marque",
-        "titleEn": "Brief marque",
+        "titleEn": "Brand brief",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -25472,13 +25472,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "tournage",
-        "titleEn": "tournage",
+        "titleEn": "shooting",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "montage",
-        "titleEn": "montage",
+        "titleEn": "editing",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -25540,7 +25540,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser brief marque dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief marque in the content workflow."
+        "reasonEn": "Useful to secure brand brief in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -25560,7 +25560,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Livraison fichiers : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -25570,7 +25570,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25580,7 +25580,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser brief marque dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief marque in the content workflow."
+        "reasonEn": "Useful to secure brand brief in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25600,7 +25600,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25610,7 +25610,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Facturation",
@@ -25620,7 +25620,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Facturation : utile pour sécuriser brief marque dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief marque in the content workflow."
+        "reasonEn": "Useful to secure brand brief in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25640,7 +25640,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25650,7 +25650,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25660,7 +25660,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser brief marque dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief marque in the content workflow."
+        "reasonEn": "Useful to secure brand brief in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25680,7 +25680,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Sous-titres",
@@ -25690,7 +25690,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25700,7 +25700,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser brief marque dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief marque in the content workflow."
+        "reasonEn": "Useful to secure brand brief in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25747,19 +25747,19 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "calendrier",
-        "titleEn": "calendrier",
+        "titleEn": "calendar",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "tracking campagnes",
-        "titleEn": "tracking campagnes",
+        "titleEn": "campaign tracking",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "contrats",
-        "titleEn": "contrats",
+        "titleEn": "contracts",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -25831,7 +25831,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser calendrier dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier in the content workflow."
+        "reasonEn": "Useful to secure calendar in the content workflow."
       },
       {
         "role": "Planification social",
@@ -25841,7 +25841,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Planification social : utile pour sécuriser tracking campagnes dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+        "reasonEn": "Useful to secure campaign tracking in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25851,7 +25851,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
-        "reasonEn": "Useful to secure contrats in the content workflow."
+        "reasonEn": "Useful to secure contracts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25871,7 +25871,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Boutique : utile pour sécuriser calendrier dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier in the content workflow."
+        "reasonEn": "Useful to secure calendar in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25881,7 +25881,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tracking campagnes dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+        "reasonEn": "Useful to secure campaign tracking in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25891,7 +25891,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
-        "reasonEn": "Useful to secure contrats in the content workflow."
+        "reasonEn": "Useful to secure contracts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25911,7 +25911,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser calendrier dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier in the content workflow."
+        "reasonEn": "Useful to secure calendar in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25921,7 +25921,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tracking campagnes dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+        "reasonEn": "Useful to secure campaign tracking in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25931,7 +25931,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
-        "reasonEn": "Useful to secure contrats in the content workflow."
+        "reasonEn": "Useful to secure contracts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25951,7 +25951,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser calendrier dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier in the content workflow."
+        "reasonEn": "Useful to secure calendar in the content workflow."
       },
       {
         "role": "Rédaction longue",
@@ -25961,7 +25961,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser tracking campagnes dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking campagnes in the content workflow."
+        "reasonEn": "Useful to secure campaign tracking in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25971,7 +25971,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contrats dans le workflow contenu.",
-        "reasonEn": "Useful to secure contrats in the content workflow."
+        "reasonEn": "Useful to secure contracts in the content workflow."
       },
       {
         "role": "Image IA",
@@ -25991,7 +25991,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser calendrier dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier in the content workflow."
+        "reasonEn": "Useful to secure calendar in the content workflow."
       }
     ]
   },
@@ -26022,7 +26022,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche",
-        "titleEn": "Recherche",
+        "titleEn": "Research",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -26102,7 +26102,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -26142,7 +26142,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage texte/audio : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Pilotage YouTube",
@@ -26182,7 +26182,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26222,7 +26222,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26262,7 +26262,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Recherche sourcée : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26309,7 +26309,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "paiement",
-        "titleEn": "paiement",
+        "titleEn": "payments",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -26393,7 +26393,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26433,7 +26433,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Paiement",
@@ -26473,7 +26473,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26513,7 +26513,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26553,7 +26553,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       }
     ]
   },
@@ -26584,13 +26584,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Produits",
-        "titleEn": "Produits",
+        "titleEn": "Products",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
       {
         "title": "scripts ads",
-        "titleEn": "scripts ads",
+        "titleEn": "ad scripts",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -26602,7 +26602,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "pages produit",
-        "titleEn": "pages produit",
+        "titleEn": "product pages",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -26664,7 +26664,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Boutique : utile pour sécuriser produits dans le workflow contenu.",
-        "reasonEn": "Useful to secure produits in the content workflow."
+        "reasonEn": "Useful to secure products in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -26674,7 +26674,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser scripts ads dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts ads in the content workflow."
+        "reasonEn": "Useful to secure ad scripts in the content workflow."
       },
       {
         "role": "Montage vertical",
@@ -26694,7 +26694,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser pages produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure pages produit in the content workflow."
+        "reasonEn": "Useful to secure product pages in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26704,7 +26704,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
-        "reasonEn": "Useful to secure produits in the content workflow."
+        "reasonEn": "Useful to secure products in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26714,7 +26714,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts ads in the content workflow."
+        "reasonEn": "Useful to secure ad scripts in the content workflow."
       },
       {
         "role": "Analytics",
@@ -26734,7 +26734,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser pages produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure pages produit in the content workflow."
+        "reasonEn": "Useful to secure product pages in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26744,7 +26744,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
-        "reasonEn": "Useful to secure produits in the content workflow."
+        "reasonEn": "Useful to secure products in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26754,7 +26754,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts ads in the content workflow."
+        "reasonEn": "Useful to secure ad scripts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26774,7 +26774,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser pages produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure pages produit in the content workflow."
+        "reasonEn": "Useful to secure product pages in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26784,7 +26784,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
-        "reasonEn": "Useful to secure produits in the content workflow."
+        "reasonEn": "Useful to secure products in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26794,7 +26794,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts ads in the content workflow."
+        "reasonEn": "Useful to secure ad scripts in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -26814,7 +26814,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser pages produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure pages produit in the content workflow."
+        "reasonEn": "Useful to secure product pages in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26824,7 +26824,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser produits dans le workflow contenu.",
-        "reasonEn": "Useful to secure produits in the content workflow."
+        "reasonEn": "Useful to secure products in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26834,7 +26834,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser scripts ads dans le workflow contenu.",
-        "reasonEn": "Useful to secure scripts ads in the content workflow."
+        "reasonEn": "Useful to secure ad scripts in the content workflow."
       }
     ]
   },
@@ -26871,19 +26871,19 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "contenu SEO",
-        "titleEn": "contenu SEO",
+        "titleEn": "SEO content",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "tracking liens",
-        "titleEn": "tracking liens",
+        "titleEn": "link tracking",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "comparatifs",
-        "titleEn": "comparatifs",
+        "titleEn": "comparisons",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -26955,7 +26955,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "SEO : utile pour sécuriser contenu seo dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenu seo in the content workflow."
+        "reasonEn": "Useful to secure sEO content in the content workflow."
       },
       {
         "role": "SEO data",
@@ -26965,7 +26965,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "SEO data : utile pour sécuriser tracking liens dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking liens in the content workflow."
+        "reasonEn": "Useful to secure link tracking in the content workflow."
       },
       {
         "role": "Publication SEO",
@@ -26975,7 +26975,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Publication SEO : utile pour sécuriser comparatifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure comparatifs in the content workflow."
+        "reasonEn": "Useful to secure comparisons in the content workflow."
       },
       {
         "role": "Site / landing",
@@ -26995,7 +26995,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contenu seo dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenu seo in the content workflow."
+        "reasonEn": "Useful to secure sEO content in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27005,7 +27005,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tracking liens dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking liens in the content workflow."
+        "reasonEn": "Useful to secure link tracking in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27015,7 +27015,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser comparatifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure comparatifs in the content workflow."
+        "reasonEn": "Useful to secure comparisons in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27035,7 +27035,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contenu seo dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenu seo in the content workflow."
+        "reasonEn": "Useful to secure sEO content in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27045,7 +27045,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tracking liens dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking liens in the content workflow."
+        "reasonEn": "Useful to secure link tracking in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27055,7 +27055,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser comparatifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure comparatifs in the content workflow."
+        "reasonEn": "Useful to secure comparisons in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27075,7 +27075,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser contenu seo dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenu seo in the content workflow."
+        "reasonEn": "Useful to secure sEO content in the content workflow."
       },
       {
         "role": "Rédaction longue",
@@ -27085,7 +27085,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser tracking liens dans le workflow contenu.",
-        "reasonEn": "Useful to secure tracking liens in the content workflow."
+        "reasonEn": "Useful to secure link tracking in the content workflow."
       },
       {
         "role": "Recherche sourcée",
@@ -27095,7 +27095,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Recherche sourcée : utile pour sécuriser comparatifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure comparatifs in the content workflow."
+        "reasonEn": "Useful to secure comparisons in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27115,7 +27115,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contenu seo dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenu seo in the content workflow."
+        "reasonEn": "Useful to secure sEO content in the content workflow."
       }
     ]
   },
@@ -27146,7 +27146,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche",
-        "titleEn": "Recherche",
+        "titleEn": "Research",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -27226,7 +27226,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Publication SEO : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Site / landing",
@@ -27266,7 +27266,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Analytics",
@@ -27306,7 +27306,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27346,7 +27346,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27386,7 +27386,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Recherche sourcée : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27710,13 +27710,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "montage",
-        "titleEn": "montage",
+        "titleEn": "editing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "miniatures",
-        "titleEn": "miniatures",
+        "titleEn": "thumbnails",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -27798,7 +27798,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Pilotage YouTube",
@@ -27808,7 +27808,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Pilotage YouTube : utile pour sécuriser miniatures dans le workflow contenu.",
-        "reasonEn": "Useful to secure miniatures in the content workflow."
+        "reasonEn": "Useful to secure thumbnails in the content workflow."
       },
       {
         "role": "Montage / étalonnage",
@@ -27838,7 +27838,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -27848,7 +27848,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Design rapide : utile pour sécuriser miniatures dans le workflow contenu.",
-        "reasonEn": "Useful to secure miniatures in the content workflow."
+        "reasonEn": "Useful to secure thumbnails in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27878,7 +27878,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27888,7 +27888,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser miniatures dans le workflow contenu.",
-        "reasonEn": "Useful to secure miniatures in the content workflow."
+        "reasonEn": "Useful to secure thumbnails in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27918,7 +27918,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Repurposing vidéo : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Sous-titres",
@@ -27928,7 +27928,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser miniatures dans le workflow contenu.",
-        "reasonEn": "Useful to secure miniatures in the content workflow."
+        "reasonEn": "Useful to secure thumbnails in the content workflow."
       },
       {
         "role": "Image IA",
@@ -27991,13 +27991,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "retouche",
-        "titleEn": "retouche",
+        "titleEn": "retouching",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "montage",
-        "titleEn": "montage",
+        "titleEn": "editing",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -28079,7 +28079,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28089,7 +28089,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28119,7 +28119,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Distribution Instagram",
@@ -28129,7 +28129,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Distribution Instagram : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28159,7 +28159,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28169,7 +28169,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28199,7 +28199,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28209,7 +28209,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28260,19 +28260,19 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recettes",
-        "titleEn": "Recettes",
+        "titleEn": "Recipes",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
       {
         "title": "tournage",
-        "titleEn": "tournage",
+        "titleEn": "shooting",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "montage vertical",
-        "titleEn": "montage vertical",
+        "titleEn": "vertical editing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -28340,7 +28340,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser recettes dans le workflow contenu.",
-        "reasonEn": "Useful to secure recettes in the content workflow."
+        "reasonEn": "Useful to secure recipes in the content workflow."
       },
       {
         "role": "Retouche photo",
@@ -28350,7 +28350,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Retouche photo : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -28360,7 +28360,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -28380,7 +28380,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser recettes dans le workflow contenu.",
-        "reasonEn": "Useful to secure recettes in the content workflow."
+        "reasonEn": "Useful to secure recipes in the content workflow."
       },
       {
         "role": "Distribution Instagram",
@@ -28390,7 +28390,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Distribution Instagram : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Pilotage YouTube",
@@ -28400,7 +28400,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Pilotage YouTube : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Newsletter",
@@ -28420,7 +28420,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recettes dans le workflow contenu.",
-        "reasonEn": "Useful to secure recettes in the content workflow."
+        "reasonEn": "Useful to secure recipes in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28430,7 +28430,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28440,7 +28440,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28460,7 +28460,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser recettes dans le workflow contenu.",
-        "reasonEn": "Useful to secure recettes in the content workflow."
+        "reasonEn": "Useful to secure recipes in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28470,7 +28470,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28480,7 +28480,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage vertical in the content workflow."
+        "reasonEn": "Useful to secure vertical editing in the content workflow."
       },
       {
         "role": "Image IA",
@@ -28500,7 +28500,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recettes dans le workflow contenu.",
-        "reasonEn": "Useful to secure recettes in the content workflow."
+        "reasonEn": "Useful to secure recipes in the content workflow."
       }
     ]
   },
@@ -28531,25 +28531,25 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Planning looks",
-        "titleEn": "Planning looks",
+        "titleEn": "Outfit planning",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
       {
         "title": "tournage",
-        "titleEn": "tournage",
+        "titleEn": "shooting",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "retouche",
-        "titleEn": "retouche",
+        "titleEn": "retouching",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "montage",
-        "titleEn": "montage",
+        "titleEn": "editing",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -28611,7 +28611,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser planning looks dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning looks in the content workflow."
+        "reasonEn": "Useful to secure outfit planning in the content workflow."
       },
       {
         "role": "Retouche photo",
@@ -28621,7 +28621,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Retouche photo : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -28631,7 +28631,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28641,7 +28641,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28651,7 +28651,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser planning looks dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning looks in the content workflow."
+        "reasonEn": "Useful to secure outfit planning in the content workflow."
       },
       {
         "role": "Distribution Instagram",
@@ -28661,7 +28661,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Distribution Instagram : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28671,7 +28671,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Planification social",
@@ -28681,7 +28681,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Planification social : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28691,7 +28691,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planning looks dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning looks in the content workflow."
+        "reasonEn": "Useful to secure outfit planning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28701,7 +28701,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28711,7 +28711,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28721,7 +28721,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28731,7 +28731,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planning looks dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning looks in the content workflow."
+        "reasonEn": "Useful to secure outfit planning in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -28741,7 +28741,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage in the content workflow."
+        "reasonEn": "Useful to secure shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28751,7 +28751,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser retouche dans le workflow contenu.",
-        "reasonEn": "Useful to secure retouche in the content workflow."
+        "reasonEn": "Useful to secure retouching in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28761,7 +28761,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Image IA",
@@ -28771,7 +28771,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Image IA : utile pour sécuriser planning looks dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning looks in the content workflow."
+        "reasonEn": "Useful to secure outfit planning in the content workflow."
       }
     ]
   },
@@ -28802,7 +28802,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche",
-        "titleEn": "Recherche",
+        "titleEn": "Research",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -28814,7 +28814,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "graphes",
-        "titleEn": "graphes",
+        "titleEn": "charts",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -28882,7 +28882,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Newsletter",
@@ -28902,7 +28902,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Newsletter : utile pour sécuriser graphes dans le workflow contenu.",
-        "reasonEn": "Useful to secure graphes in the content workflow."
+        "reasonEn": "Useful to secure charts in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -28922,7 +28922,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design avancé : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28942,7 +28942,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser graphes dans le workflow contenu.",
-        "reasonEn": "Useful to secure graphes in the content workflow."
+        "reasonEn": "Useful to secure charts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28962,7 +28962,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28982,7 +28982,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser graphes dans le workflow contenu.",
-        "reasonEn": "Useful to secure graphes in the content workflow."
+        "reasonEn": "Useful to secure charts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29002,7 +29002,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Rédaction longue",
@@ -29022,7 +29022,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Recherche sourcée : utile pour sécuriser graphes dans le workflow contenu.",
-        "reasonEn": "Useful to secure graphes in the content workflow."
+        "reasonEn": "Useful to secure charts in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29075,7 +29075,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "calendriers",
-        "titleEn": "calendriers",
+        "titleEn": "calendars",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -29163,7 +29163,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser calendriers dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendriers in the content workflow."
+        "reasonEn": "Useful to secure calendars in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29203,7 +29203,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Paiement : utile pour sécuriser calendriers dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendriers in the content workflow."
+        "reasonEn": "Useful to secure calendars in the content workflow."
       },
       {
         "role": "Email marketing",
@@ -29243,7 +29243,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser calendriers dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendriers in the content workflow."
+        "reasonEn": "Useful to secure calendars in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29283,7 +29283,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser calendriers dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendriers in the content workflow."
+        "reasonEn": "Useful to secure calendars in the content workflow."
       },
       {
         "role": "Sous-titres",
@@ -29334,7 +29334,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Positionnement",
-        "titleEn": "Positionnement",
+        "titleEn": "Positioning",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -29414,7 +29414,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Design avancé",
@@ -29454,7 +29454,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Site / landing",
@@ -29494,7 +29494,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Pilotage YouTube : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29534,7 +29534,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29574,7 +29574,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positionnement in the content workflow."
+        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Rédaction longue",
@@ -29914,7 +29914,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "paiement",
-        "titleEn": "paiement",
+        "titleEn": "payments",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -30006,7 +30006,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30046,7 +30046,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Site / landing : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30086,7 +30086,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30126,7 +30126,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser paiement dans le workflow contenu.",
-        "reasonEn": "Useful to secure paiement in the content workflow."
+        "reasonEn": "Useful to secure payments in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30195,7 +30195,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "voix",
-        "titleEn": "voix",
+        "titleEn": "voice",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -30287,7 +30287,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Vidéo IA : utile pour sécuriser voix dans le workflow contenu.",
-        "reasonEn": "Useful to secure voix in the content workflow."
+        "reasonEn": "Useful to secure voice in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30327,7 +30327,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Montage vertical : utile pour sécuriser voix dans le workflow contenu.",
-        "reasonEn": "Useful to secure voix in the content workflow."
+        "reasonEn": "Useful to secure voice in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -30367,7 +30367,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser voix dans le workflow contenu.",
-        "reasonEn": "Useful to secure voix in the content workflow."
+        "reasonEn": "Useful to secure voice in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30407,7 +30407,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser voix dans le workflow contenu.",
-        "reasonEn": "Useful to secure voix in the content workflow."
+        "reasonEn": "Useful to secure voice in the content workflow."
       },
       {
         "role": "Recherche sourcée",
@@ -30448,7 +30448,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche",
-        "titleEn": "Recherche",
+        "titleEn": "Research",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -30528,7 +30528,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30568,7 +30568,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage pro : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Montage / étalonnage",
@@ -30608,7 +30608,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30648,7 +30648,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30688,7 +30688,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Recherche sourcée : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche in the content workflow."
+        "reasonEn": "Useful to secure research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30729,7 +30729,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Veille",
-        "titleEn": "Veille",
+        "titleEn": "Market watch",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -30741,7 +30741,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "montage rapide",
-        "titleEn": "montage rapide",
+        "titleEn": "fast editing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -30809,7 +30809,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -30829,7 +30829,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Retouche avancée : utile pour sécuriser montage rapide dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage rapide in the content workflow."
+        "reasonEn": "Useful to secure fast editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30849,7 +30849,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Distribution Instagram",
@@ -30869,7 +30869,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Communauté : utile pour sécuriser montage rapide dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage rapide in the content workflow."
+        "reasonEn": "Useful to secure fast editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30889,7 +30889,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30909,7 +30909,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage rapide dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage rapide in the content workflow."
+        "reasonEn": "Useful to secure fast editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30929,7 +30929,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -30949,7 +30949,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage rapide dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage rapide in the content workflow."
+        "reasonEn": "Useful to secure fast editing in the content workflow."
       },
       {
         "role": "Image IA",
@@ -30969,7 +30969,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure veille in the content workflow."
+        "reasonEn": "Useful to secure market watch in the content workflow."
       }
     ]
   },
@@ -31000,25 +31000,25 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Planning",
-        "titleEn": "Planning",
+        "titleEn": "Scheduling",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
       {
         "title": "tournage mobile",
-        "titleEn": "tournage mobile",
+        "titleEn": "mobile shooting",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "montage express",
-        "titleEn": "montage express",
+        "titleEn": "express editing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "publication live",
-        "titleEn": "publication live",
+        "titleEn": "live publishing",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -31080,7 +31080,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31090,7 +31090,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser tournage mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile shooting in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -31100,7 +31100,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser montage express dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage express in the content workflow."
+        "reasonEn": "Useful to secure express editing in the content workflow."
       },
       {
         "role": "Livraison fichiers",
@@ -31110,7 +31110,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Livraison fichiers : utile pour sécuriser publication live dans le workflow contenu.",
-        "reasonEn": "Useful to secure publication live in the content workflow."
+        "reasonEn": "Useful to secure live publishing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31120,7 +31120,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Planification social",
@@ -31130,7 +31130,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Planification social : utile pour sécuriser tournage mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile shooting in the content workflow."
       },
       {
         "role": "Distribution Instagram",
@@ -31140,7 +31140,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Distribution Instagram : utile pour sécuriser montage express dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage express in the content workflow."
+        "reasonEn": "Useful to secure express editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31150,7 +31150,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser publication live dans le workflow contenu.",
-        "reasonEn": "Useful to secure publication live in the content workflow."
+        "reasonEn": "Useful to secure live publishing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31160,7 +31160,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31170,7 +31170,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser tournage mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile shooting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31180,7 +31180,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage express dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage express in the content workflow."
+        "reasonEn": "Useful to secure express editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31190,7 +31190,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser publication live dans le workflow contenu.",
-        "reasonEn": "Useful to secure publication live in the content workflow."
+        "reasonEn": "Useful to secure live publishing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31200,7 +31200,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -31210,7 +31210,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser tournage mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure tournage mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile shooting in the content workflow."
       },
       {
         "role": "Sous-titres",
@@ -31220,7 +31220,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser montage express dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage express in the content workflow."
+        "reasonEn": "Useful to secure express editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31230,7 +31230,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser publication live dans le workflow contenu.",
-        "reasonEn": "Useful to secure publication live in the content workflow."
+        "reasonEn": "Useful to secure live publishing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31240,7 +31240,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       }
     ]
   },
@@ -31271,13 +31271,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Brief client",
-        "titleEn": "Brief client",
+        "titleEn": "Client brief",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
       {
         "title": "planning",
-        "titleEn": "planning",
+        "titleEn": "scheduling",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -31289,7 +31289,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "montage",
-        "titleEn": "montage",
+        "titleEn": "editing",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -31351,7 +31351,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser brief client dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief client in the content workflow."
+        "reasonEn": "Useful to secure client brief in the content workflow."
       },
       {
         "role": "Livraison fichiers",
@@ -31361,7 +31361,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Livraison fichiers : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31381,7 +31381,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage pro : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Montage texte/audio",
@@ -31391,7 +31391,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage texte/audio : utile pour sécuriser brief client dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief client in the content workflow."
+        "reasonEn": "Useful to secure client brief in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -31401,7 +31401,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Design rapide : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Design avancé",
@@ -31421,7 +31421,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31431,7 +31431,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser brief client dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief client in the content workflow."
+        "reasonEn": "Useful to secure client brief in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31441,7 +31441,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31461,7 +31461,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31471,7 +31471,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser brief client dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief client in the content workflow."
+        "reasonEn": "Useful to secure client brief in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31481,7 +31481,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       },
       {
         "role": "Idées et scripts",
@@ -31501,7 +31501,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser montage dans le workflow contenu.",
-        "reasonEn": "Useful to secure montage in the content workflow."
+        "reasonEn": "Useful to secure editing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31511,7 +31511,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser brief client dans le workflow contenu.",
-        "reasonEn": "Useful to secure brief client in the content workflow."
+        "reasonEn": "Useful to secure client brief in the content workflow."
       },
       {
         "role": "Vidéo IA",
@@ -31521,7 +31521,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Vidéo IA : utile pour sécuriser planning dans le workflow contenu.",
-        "reasonEn": "Useful to secure planning in the content workflow."
+        "reasonEn": "Useful to secure scheduling in the content workflow."
       }
     ]
   },
@@ -31819,7 +31819,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "contenus exclusifs",
-        "titleEn": "contenus exclusifs",
+        "titleEn": "exclusive content",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -31831,7 +31831,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "membres",
-        "titleEn": "membres",
+        "titleEn": "members",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -31903,7 +31903,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Communauté : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+        "reasonEn": "Useful to secure exclusive content in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31923,7 +31923,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser membres dans le workflow contenu.",
-        "reasonEn": "Useful to secure membres in the content workflow."
+        "reasonEn": "Useful to secure members in the content workflow."
       },
       {
         "role": "Newsletter",
@@ -31943,7 +31943,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Email marketing : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+        "reasonEn": "Useful to secure exclusive content in the content workflow."
       },
       {
         "role": "Paiement",
@@ -31963,7 +31963,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Cockpit contenu : utile pour sécuriser membres dans le workflow contenu.",
-        "reasonEn": "Useful to secure membres in the content workflow."
+        "reasonEn": "Useful to secure members in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31983,7 +31983,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+        "reasonEn": "Useful to secure exclusive content in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -32003,7 +32003,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser membres dans le workflow contenu.",
-        "reasonEn": "Useful to secure membres in the content workflow."
+        "reasonEn": "Useful to secure members in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -32023,7 +32023,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+        "reasonEn": "Useful to secure exclusive content in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -32043,7 +32043,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser membres dans le workflow contenu.",
-        "reasonEn": "Useful to secure membres in the content workflow."
+        "reasonEn": "Useful to secure members in the content workflow."
       },
       {
         "role": "Rédaction longue",
@@ -32063,7 +32063,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure contenus exclusifs in the content workflow."
+        "reasonEn": "Useful to secure exclusive content in the content workflow."
       }
     ]
   },
@@ -32106,7 +32106,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "priorisation",
-        "titleEn": "priorisation",
+        "titleEn": "prioritisation",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -32194,7 +32194,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Planning : utile pour sécuriser priorisation sans alourdir le système.",
-        "reasonEn": "Useful to secure priorisation without weighing down the system."
+        "reasonEn": "Useful to secure prioritisation without weighing down the system."
       },
       {
         "role": "Base métier",
@@ -32234,7 +32234,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Async : utile pour sécuriser priorisation sans alourdir le système.",
-        "reasonEn": "Useful to secure priorisation without weighing down the system."
+        "reasonEn": "Useful to secure prioritisation without weighing down the system."
       },
       {
         "role": "Atelier",
@@ -32274,7 +32274,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Automatisation : utile pour sécuriser priorisation sans alourdir le système.",
-        "reasonEn": "Useful to secure priorisation without weighing down the system."
+        "reasonEn": "Useful to secure prioritisation without weighing down the system."
       },
       {
         "role": "CRM",
@@ -32314,7 +32314,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Signature : utile pour sécuriser priorisation sans alourdir le système.",
-        "reasonEn": "Useful to secure priorisation without weighing down the system."
+        "reasonEn": "Useful to secure prioritisation without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -32393,7 +32393,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "planning",
-        "titleEn": "planning",
+        "titleEn": "scheduling",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -32485,7 +32485,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Kanban simple : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Communication",
@@ -32525,7 +32525,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Base métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -32565,7 +32565,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       }
     ]
   },
@@ -32855,7 +32855,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "campagnes",
-        "titleEn": "campagnes",
+        "titleEn": "campaigns",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -32947,7 +32947,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser campagnes sans alourdir le système.",
-        "reasonEn": "Useful to secure campagnes without weighing down the system."
+        "reasonEn": "Useful to secure campaigns without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -32987,7 +32987,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Automatisation : utile pour sécuriser campagnes sans alourdir le système.",
-        "reasonEn": "Useful to secure campagnes without weighing down the system."
+        "reasonEn": "Useful to secure campaigns without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -33027,7 +33027,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser campagnes sans alourdir le système.",
-        "reasonEn": "Useful to secure campagnes without weighing down the system."
+        "reasonEn": "Useful to secure campaigns without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -33279,7 +33279,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Onboarding client",
-        "titleEn": "Onboarding client",
+        "titleEn": "Client onboarding",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -33359,7 +33359,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Support client : utile pour sécuriser onboarding client sans alourdir le système.",
-        "reasonEn": "Useful to secure onboarding client without weighing down the system."
+        "reasonEn": "Useful to secure client onboarding without weighing down the system."
       },
       {
         "role": "Support",
@@ -33399,7 +33399,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser onboarding client sans alourdir le système.",
-        "reasonEn": "Useful to secure onboarding client without weighing down the system."
+        "reasonEn": "Useful to secure client onboarding without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -33439,7 +33439,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Automatisation : utile pour sécuriser onboarding client sans alourdir le système.",
-        "reasonEn": "Useful to secure onboarding client without weighing down the system."
+        "reasonEn": "Useful to secure client onboarding without weighing down the system."
       },
       {
         "role": "Formulaires",
@@ -33506,7 +33506,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "planning",
-        "titleEn": "planning",
+        "titleEn": "scheduling",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -33518,7 +33518,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "livraison",
-        "titleEn": "livraison",
+        "titleEn": "delivery",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -33590,7 +33590,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Planning : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Gestion projet",
@@ -33610,7 +33610,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser livraison sans alourdir le système.",
-        "reasonEn": "Useful to secure livraison without weighing down the system."
+        "reasonEn": "Useful to secure delivery without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -33630,7 +33630,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -33650,7 +33650,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser livraison sans alourdir le système.",
-        "reasonEn": "Useful to secure livraison without weighing down the system."
+        "reasonEn": "Useful to secure delivery without weighing down the system."
       },
       {
         "role": "Fichiers",
@@ -33670,7 +33670,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Communication : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -33690,7 +33690,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser livraison sans alourdir le système.",
-        "reasonEn": "Useful to secure livraison without weighing down the system."
+        "reasonEn": "Useful to secure delivery without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -33743,7 +33743,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "marges",
-        "titleEn": "marges",
+        "titleEn": "margins",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -33831,7 +33831,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Planning : utile pour sécuriser marges sans alourdir le système.",
-        "reasonEn": "Useful to secure marges without weighing down the system."
+        "reasonEn": "Useful to secure margins without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -33871,7 +33871,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Suite collaborative : utile pour sécuriser marges sans alourdir le système.",
-        "reasonEn": "Useful to secure marges without weighing down the system."
+        "reasonEn": "Useful to secure margins without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -33911,7 +33911,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser marges sans alourdir le système.",
-        "reasonEn": "Useful to secure marges without weighing down the system."
+        "reasonEn": "Useful to secure margins without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -33962,7 +33962,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recrutement",
-        "titleEn": "Recrutement",
+        "titleEn": "Recruitment",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -33974,7 +33974,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "entretiens",
-        "titleEn": "entretiens",
+        "titleEn": "interviews",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -34042,7 +34042,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser recrutement sans alourdir le système.",
-        "reasonEn": "Useful to secure recrutement without weighing down the system."
+        "reasonEn": "Useful to secure recruitment without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34062,7 +34062,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser entretiens sans alourdir le système.",
-        "reasonEn": "Useful to secure entretiens without weighing down the system."
+        "reasonEn": "Useful to secure interviews without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34082,7 +34082,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser recrutement sans alourdir le système.",
-        "reasonEn": "Useful to secure recrutement without weighing down the system."
+        "reasonEn": "Useful to secure recruitment without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34102,7 +34102,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Formulaires : utile pour sécuriser entretiens sans alourdir le système.",
-        "reasonEn": "Useful to secure entretiens without weighing down the system."
+        "reasonEn": "Useful to secure interviews without weighing down the system."
       },
       {
         "role": "Communication",
@@ -34122,7 +34122,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Suite collaborative : utile pour sécuriser recrutement sans alourdir le système.",
-        "reasonEn": "Useful to secure recrutement without weighing down the system."
+        "reasonEn": "Useful to secure recruitment without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -34142,7 +34142,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser entretiens sans alourdir le système.",
-        "reasonEn": "Useful to secure entretiens without weighing down the system."
+        "reasonEn": "Useful to secure interviews without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34183,7 +34183,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Facturation",
-        "titleEn": "Facturation",
+        "titleEn": "Invoicing",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -34195,7 +34195,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "achats",
-        "titleEn": "achats",
+        "titleEn": "purchasing",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -34263,7 +34263,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Comptabilité : utile pour sécuriser facturation sans alourdir le système.",
-        "reasonEn": "Useful to secure facturation without weighing down the system."
+        "reasonEn": "Useful to secure invoicing without weighing down the system."
       },
       {
         "role": "Compte pro",
@@ -34283,7 +34283,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser achats sans alourdir le système.",
-        "reasonEn": "Useful to secure achats without weighing down the system."
+        "reasonEn": "Useful to secure purchasing without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34303,7 +34303,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser facturation sans alourdir le système.",
-        "reasonEn": "Useful to secure facturation without weighing down the system."
+        "reasonEn": "Useful to secure invoicing without weighing down the system."
       },
       {
         "role": "Tableur",
@@ -34323,7 +34323,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Base métier : utile pour sécuriser achats sans alourdir le système.",
-        "reasonEn": "Useful to secure achats without weighing down the system."
+        "reasonEn": "Useful to secure purchasing without weighing down the system."
       },
       {
         "role": "Signature",
@@ -34343,7 +34343,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Paiement : utile pour sécuriser facturation sans alourdir le système.",
-        "reasonEn": "Useful to secure facturation without weighing down the system."
+        "reasonEn": "Useful to secure invoicing without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34363,7 +34363,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser achats sans alourdir le système.",
-        "reasonEn": "Useful to secure achats without weighing down the system."
+        "reasonEn": "Useful to secure purchasing without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -34383,7 +34383,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser facturation sans alourdir le système.",
-        "reasonEn": "Useful to secure facturation without weighing down the system."
+        "reasonEn": "Useful to secure invoicing without weighing down the system."
       }
     ]
   },
@@ -34414,25 +34414,25 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Fournisseurs",
-        "titleEn": "Fournisseurs",
+        "titleEn": "Suppliers",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
       {
         "title": "devis",
-        "titleEn": "devis",
+        "titleEn": "quotes",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
       {
         "title": "commandes",
-        "titleEn": "commandes",
+        "titleEn": "orders",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
       {
         "title": "validations",
-        "titleEn": "validations",
+        "titleEn": "approvals",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -34494,7 +34494,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Base métier : utile pour sécuriser fournisseurs sans alourdir le système.",
-        "reasonEn": "Useful to secure fournisseurs without weighing down the system."
+        "reasonEn": "Useful to secure suppliers without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -34504,7 +34504,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Tableur",
@@ -34514,7 +34514,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Tableur : utile pour sécuriser commandes sans alourdir le système.",
-        "reasonEn": "Useful to secure commandes without weighing down the system."
+        "reasonEn": "Useful to secure orders without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34524,7 +34524,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser validations sans alourdir le système.",
-        "reasonEn": "Useful to secure validations without weighing down the system."
+        "reasonEn": "Useful to secure approvals without weighing down the system."
       },
       {
         "role": "Compte pro",
@@ -34534,7 +34534,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Compte pro : utile pour sécuriser fournisseurs sans alourdir le système.",
-        "reasonEn": "Useful to secure fournisseurs without weighing down the system."
+        "reasonEn": "Useful to secure suppliers without weighing down the system."
       },
       {
         "role": "Comptabilité",
@@ -34544,7 +34544,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Comptabilité : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Signature",
@@ -34554,7 +34554,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Signature : utile pour sécuriser commandes sans alourdir le système.",
-        "reasonEn": "Useful to secure commandes without weighing down the system."
+        "reasonEn": "Useful to secure orders without weighing down the system."
       },
       {
         "role": "Communication",
@@ -34564,7 +34564,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Communication : utile pour sécuriser validations sans alourdir le système.",
-        "reasonEn": "Useful to secure validations without weighing down the system."
+        "reasonEn": "Useful to secure approvals without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34574,7 +34574,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser fournisseurs sans alourdir le système.",
-        "reasonEn": "Useful to secure fournisseurs without weighing down the system."
+        "reasonEn": "Useful to secure suppliers without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -34584,7 +34584,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -34594,7 +34594,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser commandes sans alourdir le système.",
-        "reasonEn": "Useful to secure commandes without weighing down the system."
+        "reasonEn": "Useful to secure orders without weighing down the system."
       },
       {
         "role": "Recherche",
@@ -34604,7 +34604,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Recherche : utile pour sécuriser validations sans alourdir le système.",
-        "reasonEn": "Useful to secure validations without weighing down the system."
+        "reasonEn": "Useful to secure approvals without weighing down the system."
       }
     ]
   },
@@ -34635,7 +34635,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Campagnes",
-        "titleEn": "Campagnes",
+        "titleEn": "Campaigns",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -34715,7 +34715,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "CRM : utile pour sécuriser campagnes sans alourdir le système.",
-        "reasonEn": "Useful to secure campagnes without weighing down the system."
+        "reasonEn": "Useful to secure campaigns without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34755,7 +34755,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser campagnes sans alourdir le système.",
-        "reasonEn": "Useful to secure campagnes without weighing down the system."
+        "reasonEn": "Useful to secure campaigns without weighing down the system."
       },
       {
         "role": "Reporting",
@@ -34795,7 +34795,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Automatisation : utile pour sécuriser campagnes sans alourdir le système.",
-        "reasonEn": "Useful to secure campagnes without weighing down the system."
+        "reasonEn": "Useful to secure campaigns without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -35320,7 +35320,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "formulaires",
-        "titleEn": "formulaires",
+        "titleEn": "forms",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -35408,7 +35408,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser formulaires sans alourdir le système.",
-        "reasonEn": "Useful to secure formulaires without weighing down the system."
+        "reasonEn": "Useful to secure forms without weighing down the system."
       },
       {
         "role": "Base métier",
@@ -35448,7 +35448,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser formulaires sans alourdir le système.",
-        "reasonEn": "Useful to secure formulaires without weighing down the system."
+        "reasonEn": "Useful to secure forms without weighing down the system."
       },
       {
         "role": "Communication",
@@ -35488,7 +35488,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser formulaires sans alourdir le système.",
-        "reasonEn": "Useful to secure formulaires without weighing down the system."
+        "reasonEn": "Useful to secure forms without weighing down the system."
       }
     ]
   },
@@ -35537,7 +35537,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "automatisation",
-        "titleEn": "automatisation",
+        "titleEn": "automation",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -35629,7 +35629,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Recherche : utile pour sécuriser automatisation sans alourdir le système.",
-        "reasonEn": "Useful to secure automatisation without weighing down the system."
+        "reasonEn": "Useful to secure automation without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -35669,7 +35669,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Base métier : utile pour sécuriser automatisation sans alourdir le système.",
-        "reasonEn": "Useful to secure automatisation without weighing down the system."
+        "reasonEn": "Useful to secure automation without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -35736,13 +35736,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "rituels",
-        "titleEn": "rituels",
+        "titleEn": "rituals",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
       {
         "title": "communication async",
-        "titleEn": "communication async",
+        "titleEn": "async communication",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -35820,7 +35820,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Communication : utile pour sécuriser rituels sans alourdir le système.",
-        "reasonEn": "Useful to secure rituels without weighing down the system."
+        "reasonEn": "Useful to secure rituals without weighing down the system."
       },
       {
         "role": "Async",
@@ -35830,7 +35830,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Async : utile pour sécuriser communication async sans alourdir le système.",
-        "reasonEn": "Useful to secure communication async without weighing down the system."
+        "reasonEn": "Useful to secure async communication without weighing down the system."
       },
       {
         "role": "Suite collaborative",
@@ -35860,7 +35860,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser rituels sans alourdir le système.",
-        "reasonEn": "Useful to secure rituels without weighing down the system."
+        "reasonEn": "Useful to secure rituals without weighing down the system."
       },
       {
         "role": "Atelier",
@@ -35870,7 +35870,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Atelier : utile pour sécuriser communication async sans alourdir le système.",
-        "reasonEn": "Useful to secure communication async without weighing down the system."
+        "reasonEn": "Useful to secure async communication without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -35900,7 +35900,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser rituels sans alourdir le système.",
-        "reasonEn": "Useful to secure rituels without weighing down the system."
+        "reasonEn": "Useful to secure rituals without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -35910,7 +35910,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser communication async sans alourdir le système.",
-        "reasonEn": "Useful to secure communication async without weighing down the system."
+        "reasonEn": "Useful to secure async communication without weighing down the system."
       }
     ]
   },
@@ -35941,7 +35941,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Contrats",
-        "titleEn": "Contrats",
+        "titleEn": "Contracts",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -35953,13 +35953,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "RGPD",
-        "titleEn": "RGPD",
+        "titleEn": "GDPR",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
       {
         "title": "archivage",
-        "titleEn": "archivage",
+        "titleEn": "archiving",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -36021,7 +36021,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Signature : utile pour sécuriser contrats sans alourdir le système.",
-        "reasonEn": "Useful to secure contrats without weighing down the system."
+        "reasonEn": "Useful to secure contracts without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36041,7 +36041,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser rgpd sans alourdir le système.",
-        "reasonEn": "Useful to secure rgpd without weighing down the system."
+        "reasonEn": "Useful to secure gDPR without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36051,7 +36051,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser archivage sans alourdir le système.",
-        "reasonEn": "Useful to secure archivage without weighing down the system."
+        "reasonEn": "Useful to secure archiving without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -36061,7 +36061,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser contrats sans alourdir le système.",
-        "reasonEn": "Useful to secure contrats without weighing down the system."
+        "reasonEn": "Useful to secure contracts without weighing down the system."
       },
       {
         "role": "Fichiers",
@@ -36081,7 +36081,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser rgpd sans alourdir le système.",
-        "reasonEn": "Useful to secure rgpd without weighing down the system."
+        "reasonEn": "Useful to secure gDPR without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36091,7 +36091,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser archivage sans alourdir le système.",
-        "reasonEn": "Useful to secure archivage without weighing down the system."
+        "reasonEn": "Useful to secure archiving without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -36101,7 +36101,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser contrats sans alourdir le système.",
-        "reasonEn": "Useful to secure contrats without weighing down the system."
+        "reasonEn": "Useful to secure contracts without weighing down the system."
       },
       {
         "role": "Recherche",
@@ -36148,7 +36148,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "commandes",
-        "titleEn": "commandes",
+        "titleEn": "orders",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -36232,7 +36232,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser commandes sans alourdir le système.",
-        "reasonEn": "Useful to secure commandes without weighing down the system."
+        "reasonEn": "Useful to secure orders without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36272,7 +36272,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Base métier : utile pour sécuriser commandes sans alourdir le système.",
-        "reasonEn": "Useful to secure commandes without weighing down the system."
+        "reasonEn": "Useful to secure orders without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36312,7 +36312,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Comptabilité : utile pour sécuriser commandes sans alourdir le système.",
-        "reasonEn": "Useful to secure commandes without weighing down the system."
+        "reasonEn": "Useful to secure orders without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -36363,13 +36363,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Planning",
-        "titleEn": "Planning",
+        "titleEn": "Scheduling",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
       {
         "title": "prestataires",
-        "titleEn": "prestataires",
+        "titleEn": "contractors",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -36381,7 +36381,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "inscriptions",
-        "titleEn": "inscriptions",
+        "titleEn": "registrations",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -36443,7 +36443,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Base métier",
@@ -36453,7 +36453,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Base métier : utile pour sécuriser prestataires sans alourdir le système.",
-        "reasonEn": "Useful to secure prestataires without weighing down the system."
+        "reasonEn": "Useful to secure contractors without weighing down the system."
       },
       {
         "role": "Planning",
@@ -36473,7 +36473,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Tableur : utile pour sécuriser inscriptions sans alourdir le système.",
-        "reasonEn": "Useful to secure inscriptions without weighing down the system."
+        "reasonEn": "Useful to secure registrations without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36483,7 +36483,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36493,7 +36493,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser prestataires sans alourdir le système.",
-        "reasonEn": "Useful to secure prestataires without weighing down the system."
+        "reasonEn": "Useful to secure contractors without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36513,7 +36513,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Signature : utile pour sécuriser inscriptions sans alourdir le système.",
-        "reasonEn": "Useful to secure inscriptions without weighing down the system."
+        "reasonEn": "Useful to secure registrations without weighing down the system."
       },
       {
         "role": "Fichiers",
@@ -36523,7 +36523,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Fichiers : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -36533,7 +36533,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser prestataires sans alourdir le système.",
-        "reasonEn": "Useful to secure prestataires without weighing down the system."
+        "reasonEn": "Useful to secure contractors without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -36580,7 +36580,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "proposition",
-        "titleEn": "proposition",
+        "titleEn": "proposal",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -36592,7 +36592,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "gestion projet",
-        "titleEn": "gestion projet",
+        "titleEn": "project management",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -36664,7 +36664,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Suite collaborative : utile pour sécuriser proposition sans alourdir le système.",
-        "reasonEn": "Useful to secure proposition without weighing down the system."
+        "reasonEn": "Useful to secure proposal without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36684,7 +36684,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Rendez-vous : utile pour sécuriser gestion projet sans alourdir le système.",
-        "reasonEn": "Useful to secure gestion projet without weighing down the system."
+        "reasonEn": "Useful to secure project management without weighing down the system."
       },
       {
         "role": "Paiement",
@@ -36704,7 +36704,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser proposition sans alourdir le système.",
-        "reasonEn": "Useful to secure proposition without weighing down the system."
+        "reasonEn": "Useful to secure proposal without weighing down the system."
       },
       {
         "role": "Compte pro",
@@ -36724,7 +36724,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Signature : utile pour sécuriser gestion projet sans alourdir le système.",
-        "reasonEn": "Useful to secure gestion projet without weighing down the system."
+        "reasonEn": "Useful to secure project management without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -36744,7 +36744,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Design rapide : utile pour sécuriser proposition sans alourdir le système.",
-        "reasonEn": "Useful to secure proposition without weighing down the system."
+        "reasonEn": "Useful to secure proposal without weighing down the system."
       },
       {
         "role": "Async",
@@ -36764,7 +36764,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser gestion projet sans alourdir le système.",
-        "reasonEn": "Useful to secure gestion projet without weighing down the system."
+        "reasonEn": "Useful to secure project management without weighing down the system."
       },
       {
         "role": "Recherche",
@@ -36784,7 +36784,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser proposition sans alourdir le système.",
-        "reasonEn": "Useful to secure proposition without weighing down the system."
+        "reasonEn": "Useful to secure proposal without weighing down the system."
       }
     ]
   },
@@ -36815,13 +36815,13 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Prospection",
-        "titleEn": "Prospection",
+        "titleEn": "Prospecting",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
       {
         "title": "devis",
-        "titleEn": "devis",
+        "titleEn": "quotes",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -36833,7 +36833,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "livraison",
-        "titleEn": "livraison",
+        "titleEn": "delivery",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -36895,7 +36895,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser prospection sans alourdir le système.",
-        "reasonEn": "Useful to secure prospection without weighing down the system."
+        "reasonEn": "Useful to secure prospecting without weighing down the system."
       },
       {
         "role": "Fichiers",
@@ -36905,7 +36905,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Fichiers : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36925,7 +36925,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Rendez-vous : utile pour sécuriser livraison sans alourdir le système.",
-        "reasonEn": "Useful to secure livraison without weighing down the system."
+        "reasonEn": "Useful to secure delivery without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36935,7 +36935,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser prospection sans alourdir le système.",
-        "reasonEn": "Useful to secure prospection without weighing down the system."
+        "reasonEn": "Useful to secure prospecting without weighing down the system."
       },
       {
         "role": "Compte pro",
@@ -36945,7 +36945,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Compte pro : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Signature",
@@ -36965,7 +36965,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Async : utile pour sécuriser livraison sans alourdir le système.",
-        "reasonEn": "Useful to secure livraison without weighing down the system."
+        "reasonEn": "Useful to secure delivery without weighing down the system."
       },
       {
         "role": "Design rapide",
@@ -36975,7 +36975,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Design rapide : utile pour sécuriser prospection sans alourdir le système.",
-        "reasonEn": "Useful to secure prospection without weighing down the system."
+        "reasonEn": "Useful to secure prospecting without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36985,7 +36985,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -37005,7 +37005,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser livraison sans alourdir le système.",
-        "reasonEn": "Useful to secure livraison without weighing down the system."
+        "reasonEn": "Useful to secure delivery without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37015,7 +37015,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser prospection sans alourdir le système.",
-        "reasonEn": "Useful to secure prospection without weighing down the system."
+        "reasonEn": "Useful to secure prospecting without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37025,7 +37025,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       }
     ]
   },
@@ -37074,7 +37074,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "ateliers",
-        "titleEn": "ateliers",
+        "titleEn": "workshops",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -37166,7 +37166,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser ateliers sans alourdir le système.",
-        "reasonEn": "Useful to secure ateliers without weighing down the system."
+        "reasonEn": "Useful to secure workshops without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37206,7 +37206,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser ateliers sans alourdir le système.",
-        "reasonEn": "Useful to secure ateliers without weighing down the system."
+        "reasonEn": "Useful to secure workshops without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -37246,7 +37246,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser ateliers sans alourdir le système.",
-        "reasonEn": "Useful to secure ateliers without weighing down the system."
+        "reasonEn": "Useful to secure workshops without weighing down the system."
       }
     ]
   },
@@ -37289,7 +37289,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "paiement",
-        "titleEn": "paiement",
+        "titleEn": "payments",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -37377,7 +37377,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37417,7 +37417,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Paiement : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37457,7 +37457,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -37508,7 +37508,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Calendrier contenu",
-        "titleEn": "Calendrier contenu",
+        "titleEn": "Content calendar",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -37588,7 +37588,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser calendrier contenu sans alourdir le système.",
-        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+        "reasonEn": "Useful to secure content calendar without weighing down the system."
       },
       {
         "role": "Design rapide",
@@ -37628,7 +37628,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser calendrier contenu sans alourdir le système.",
-        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+        "reasonEn": "Useful to secure content calendar without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37668,7 +37668,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser calendrier contenu sans alourdir le système.",
-        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+        "reasonEn": "Useful to secure content calendar without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -37708,7 +37708,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser calendrier contenu sans alourdir le système.",
-        "reasonEn": "Useful to secure calendrier contenu without weighing down the system."
+        "reasonEn": "Useful to secure content calendar without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37755,7 +37755,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "paiement",
-        "titleEn": "paiement",
+        "titleEn": "payments",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -37839,7 +37839,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Paiement",
@@ -37879,7 +37879,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Async : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Rendez-vous",
@@ -37919,7 +37919,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -37960,7 +37960,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Planning",
-        "titleEn": "Planning",
+        "titleEn": "Scheduling",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -37972,13 +37972,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "paiement",
-        "titleEn": "paiement",
+        "titleEn": "payments",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
       {
         "title": "supports",
-        "titleEn": "supports",
+        "titleEn": "collateral",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -38040,7 +38040,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Rendez-vous : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38060,7 +38060,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -38070,7 +38070,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser supports sans alourdir le système.",
-        "reasonEn": "Useful to secure supports without weighing down the system."
+        "reasonEn": "Useful to secure collateral without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38080,7 +38080,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38100,7 +38100,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Paiement : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38110,7 +38110,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser supports sans alourdir le système.",
-        "reasonEn": "Useful to secure supports without weighing down the system."
+        "reasonEn": "Useful to secure collateral without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38120,7 +38120,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -38140,7 +38140,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38150,7 +38150,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser supports sans alourdir le système.",
-        "reasonEn": "Useful to secure supports without weighing down the system."
+        "reasonEn": "Useful to secure collateral without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38160,7 +38160,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38207,19 +38207,19 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "planning",
-        "titleEn": "planning",
+        "titleEn": "scheduling",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
       {
         "title": "gestion prestataires",
-        "titleEn": "gestion prestataires",
+        "titleEn": "contractor management",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
       {
         "title": "marge",
-        "titleEn": "marge",
+        "titleEn": "margin",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -38291,7 +38291,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Gestion projet : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Communication",
@@ -38301,7 +38301,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Communication : utile pour sécuriser gestion prestataires sans alourdir le système.",
-        "reasonEn": "Useful to secure gestion prestataires without weighing down the system."
+        "reasonEn": "Useful to secure contractor management without weighing down the system."
       },
       {
         "role": "Fichiers",
@@ -38311,7 +38311,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Fichiers : utile pour sécuriser marge sans alourdir le système.",
-        "reasonEn": "Useful to secure marge without weighing down the system."
+        "reasonEn": "Useful to secure margin without weighing down the system."
       },
       {
         "role": "Base métier",
@@ -38331,7 +38331,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Signature",
@@ -38341,7 +38341,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Signature : utile pour sécuriser gestion prestataires sans alourdir le système.",
-        "reasonEn": "Useful to secure gestion prestataires without weighing down the system."
+        "reasonEn": "Useful to secure contractor management without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38351,7 +38351,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser marge sans alourdir le système.",
-        "reasonEn": "Useful to secure marge without weighing down the system."
+        "reasonEn": "Useful to secure margin without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -38371,7 +38371,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38381,7 +38381,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser gestion prestataires sans alourdir le système.",
-        "reasonEn": "Useful to secure gestion prestataires without weighing down the system."
+        "reasonEn": "Useful to secure contractor management without weighing down the system."
       }
     ]
   },
@@ -38418,7 +38418,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "calendrier",
-        "titleEn": "calendrier",
+        "titleEn": "calendar",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -38502,7 +38502,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser calendrier sans alourdir le système.",
-        "reasonEn": "Useful to secure calendrier without weighing down the system."
+        "reasonEn": "Useful to secure calendar without weighing down the system."
       },
       {
         "role": "Gestion projet",
@@ -38542,7 +38542,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Automatisation : utile pour sécuriser calendrier sans alourdir le système.",
-        "reasonEn": "Useful to secure calendrier without weighing down the system."
+        "reasonEn": "Useful to secure calendar without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -38582,7 +38582,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser calendrier sans alourdir le système.",
-        "reasonEn": "Useful to secure calendrier without weighing down the system."
+        "reasonEn": "Useful to secure calendar without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -38635,7 +38635,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "automatisation",
-        "titleEn": "automatisation",
+        "titleEn": "automation",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -38723,7 +38723,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser automatisation sans alourdir le système.",
-        "reasonEn": "Useful to secure automatisation without weighing down the system."
+        "reasonEn": "Useful to secure automation without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38763,7 +38763,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Automatisation : utile pour sécuriser automatisation sans alourdir le système.",
-        "reasonEn": "Useful to secure automatisation without weighing down the system."
+        "reasonEn": "Useful to secure automation without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -38803,7 +38803,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser automatisation sans alourdir le système.",
-        "reasonEn": "Useful to secure automatisation without weighing down the system."
+        "reasonEn": "Useful to secure automation without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -38843,7 +38843,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser automatisation sans alourdir le système.",
-        "reasonEn": "Useful to secure automatisation without weighing down the system."
+        "reasonEn": "Useful to secure automation without weighing down the system."
       },
       {
         "role": "Recherche",
@@ -39133,7 +39133,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "enrichissement",
-        "titleEn": "enrichissement",
+        "titleEn": "enrichment",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -39225,7 +39225,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser enrichissement sans alourdir le système.",
-        "reasonEn": "Useful to secure enrichissement without weighing down the system."
+        "reasonEn": "Useful to secure enrichment without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39265,7 +39265,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser enrichissement sans alourdir le système.",
-        "reasonEn": "Useful to secure enrichissement without weighing down the system."
+        "reasonEn": "Useful to secure enrichment without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -39326,19 +39326,19 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Devis",
-        "titleEn": "Devis",
+        "titleEn": "Quotes",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
       {
         "title": "factures",
-        "titleEn": "factures",
+        "titleEn": "invoices",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
       {
         "title": "planning",
-        "titleEn": "planning",
+        "titleEn": "scheduling",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -39406,7 +39406,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Suite collaborative : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -39416,7 +39416,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser factures sans alourdir le système.",
-        "reasonEn": "Useful to secure factures without weighing down the system."
+        "reasonEn": "Useful to secure invoices without weighing down the system."
       },
       {
         "role": "Design rapide",
@@ -39426,7 +39426,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Design rapide : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39446,7 +39446,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Compte pro : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Signature",
@@ -39456,7 +39456,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Signature : utile pour sécuriser factures sans alourdir le système.",
-        "reasonEn": "Useful to secure factures without weighing down the system."
+        "reasonEn": "Useful to secure invoices without weighing down the system."
       },
       {
         "role": "Rendez-vous",
@@ -39466,7 +39466,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Rendez-vous : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39486,7 +39486,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser devis sans alourdir le système.",
-        "reasonEn": "Useful to secure devis without weighing down the system."
+        "reasonEn": "Useful to secure quotes without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -39496,7 +39496,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser factures sans alourdir le système.",
-        "reasonEn": "Useful to secure factures without weighing down the system."
+        "reasonEn": "Useful to secure invoices without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39506,7 +39506,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure planning without weighing down the system."
+        "reasonEn": "Useful to secure scheduling without weighing down the system."
       }
     ]
   },
@@ -39543,19 +39543,19 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "factures",
-        "titleEn": "factures",
+        "titleEn": "invoices",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
       {
         "title": "relances",
-        "titleEn": "relances",
+        "titleEn": "follow-ups",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
       {
         "title": "dossiers",
-        "titleEn": "dossiers",
+        "titleEn": "case files",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -39627,7 +39627,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser factures sans alourdir le système.",
-        "reasonEn": "Useful to secure factures without weighing down the system."
+        "reasonEn": "Useful to secure invoices without weighing down the system."
       },
       {
         "role": "Kanban simple",
@@ -39637,7 +39637,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Kanban simple : utile pour sécuriser relances sans alourdir le système.",
-        "reasonEn": "Useful to secure relances without weighing down the system."
+        "reasonEn": "Useful to secure follow-ups without weighing down the system."
       },
       {
         "role": "Comptabilité",
@@ -39647,7 +39647,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Comptabilité : utile pour sécuriser dossiers sans alourdir le système.",
-        "reasonEn": "Useful to secure dossiers without weighing down the system."
+        "reasonEn": "Useful to secure case files without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39667,7 +39667,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Compte pro : utile pour sécuriser factures sans alourdir le système.",
-        "reasonEn": "Useful to secure factures without weighing down the system."
+        "reasonEn": "Useful to secure invoices without weighing down the system."
       },
       {
         "role": "Signature",
@@ -39677,7 +39677,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Signature : utile pour sécuriser relances sans alourdir le système.",
-        "reasonEn": "Useful to secure relances without weighing down the system."
+        "reasonEn": "Useful to secure follow-ups without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39687,7 +39687,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser dossiers sans alourdir le système.",
-        "reasonEn": "Useful to secure dossiers without weighing down the system."
+        "reasonEn": "Useful to secure case files without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -39707,7 +39707,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser factures sans alourdir le système.",
-        "reasonEn": "Useful to secure factures without weighing down the system."
+        "reasonEn": "Useful to secure invoices without weighing down the system."
       }
     ]
   },
@@ -39738,7 +39738,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Veille",
-        "titleEn": "Veille",
+        "titleEn": "Market watch",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -39818,7 +39818,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser veille sans alourdir le système.",
-        "reasonEn": "Useful to secure veille without weighing down the system."
+        "reasonEn": "Useful to secure market watch without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39858,7 +39858,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Recherche : utile pour sécuriser veille sans alourdir le système.",
-        "reasonEn": "Useful to secure veille without weighing down the system."
+        "reasonEn": "Useful to secure market watch without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39898,7 +39898,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser veille sans alourdir le système.",
-        "reasonEn": "Useful to secure veille without weighing down the system."
+        "reasonEn": "Useful to secure market watch without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -39949,7 +39949,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Boutique",
-        "titleEn": "Boutique",
+        "titleEn": "Store",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -39961,7 +39961,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "paiement",
-        "titleEn": "paiement",
+        "titleEn": "payments",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -40029,7 +40029,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser boutique sans alourdir le système.",
-        "reasonEn": "Useful to secure boutique without weighing down the system."
+        "reasonEn": "Useful to secure store without weighing down the system."
       },
       {
         "role": "Paiement",
@@ -40049,7 +40049,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40069,7 +40069,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser boutique sans alourdir le système.",
-        "reasonEn": "Useful to secure boutique without weighing down the system."
+        "reasonEn": "Useful to secure store without weighing down the system."
       },
       {
         "role": "Base métier",
@@ -40089,7 +40089,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Design rapide : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40109,7 +40109,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Compte pro : utile pour sécuriser boutique sans alourdir le système.",
-        "reasonEn": "Useful to secure boutique without weighing down the system."
+        "reasonEn": "Useful to secure store without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -40129,7 +40129,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure paiement without weighing down the system."
+        "reasonEn": "Useful to secure payments without weighing down the system."
       }
     ]
   },
@@ -40391,7 +40391,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche",
-        "titleEn": "Recherche",
+        "titleEn": "Research",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -40471,7 +40471,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser recherche sans alourdir le système.",
-        "reasonEn": "Useful to secure recherche without weighing down the system."
+        "reasonEn": "Useful to secure research without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40511,7 +40511,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser recherche sans alourdir le système.",
-        "reasonEn": "Useful to secure recherche without weighing down the system."
+        "reasonEn": "Useful to secure research without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40551,7 +40551,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser recherche sans alourdir le système.",
-        "reasonEn": "Useful to secure recherche without weighing down the system."
+        "reasonEn": "Useful to secure research without weighing down the system."
       },
       {
         "role": "IA généraliste",
@@ -40612,7 +40612,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche",
-        "titleEn": "Recherche",
+        "titleEn": "Research",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -40692,7 +40692,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "IA généraliste : utile pour sécuriser recherche sans alourdir le système.",
-        "reasonEn": "Useful to secure recherche without weighing down the system."
+        "reasonEn": "Useful to secure research without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -40732,7 +40732,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser recherche sans alourdir le système.",
-        "reasonEn": "Useful to secure recherche without weighing down the system."
+        "reasonEn": "Useful to secure research without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -40772,7 +40772,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser recherche sans alourdir le système.",
-        "reasonEn": "Useful to secure recherche without weighing down the system."
+        "reasonEn": "Useful to secure research without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40819,7 +40819,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "stack client",
-        "titleEn": "stack client",
+        "titleEn": "client stack",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -40903,7 +40903,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser stack client sans alourdir le système.",
-        "reasonEn": "Useful to secure stack client without weighing down the system."
+        "reasonEn": "Useful to secure client stack without weighing down the system."
       },
       {
         "role": "CRM",
@@ -40943,7 +40943,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser stack client sans alourdir le système.",
-        "reasonEn": "Useful to secure stack client without weighing down the system."
+        "reasonEn": "Useful to secure client stack without weighing down the system."
       },
       {
         "role": "Reporting",
@@ -40983,7 +40983,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser stack client sans alourdir le système.",
-        "reasonEn": "Useful to secure stack client without weighing down the system."
+        "reasonEn": "Useful to secure client stack without weighing down the system."
       },
       {
         "role": "Recherche",
@@ -41287,7 +41287,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "designer-stand-retail-popup":   [
       {
           "title": "Concept retail",
-          "titleEn": "Concept retail",
+          "titleEn": "Retail concept",
           "description": "Aligner marque, circulation, mobilier et expérience.",
           "descriptionEn": "Align brand, circulation, furniture and experience.",
           "toolSlugs": [
@@ -41309,7 +41309,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Dossier fabrication",
-          "titleEn": "Dossier fabrication",
+          "titleEn": "Fabrication pack",
           "description": "Transformer le concept en plans, matériaux et éléments produits.",
           "descriptionEn": "Turn the concept into drawings, materials and produced elements.",
           "toolSlugs": [
@@ -41331,7 +41331,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Suivi production",
-          "titleEn": "Suivi production",
+          "titleEn": "Production tracking",
           "description": "Piloter prestataires, coûts et alternatives.",
           "descriptionEn": "Steer suppliers, costs and alternatives.",
           "toolSlugs": [
@@ -41399,7 +41399,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Livraison client",
-          "titleEn": "Livraison client",
+          "titleEn": "Client delivery",
           "description": "Suivre brief, retours, facturation et versions.",
           "descriptionEn": "Track brief, feedback, invoicing and versions.",
           "toolSlugs": [
@@ -41423,7 +41423,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "brand-designer-systeme":   [
       {
           "title": "Plateforme de marque",
-          "titleEn": "Plateforme de marque",
+          "titleEn": "Brand platform",
           "description": "Structurer stratégie, moodboard et territoire visuel.",
           "descriptionEn": "Structure strategy, moodboard and visual territory.",
           "toolSlugs": [
@@ -41467,7 +41467,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Livraison",
-          "titleEn": "Livraison",
+          "titleEn": "Delivery",
           "description": "Organiser assets, variantes et règles d’usage.",
           "descriptionEn": "Organise assets, variants and usage rules.",
           "toolSlugs": [
@@ -41559,7 +41559,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "webflow-nocode-creatif":   [
       {
           "title": "Cadrage site",
-          "titleEn": "Cadrage site",
+          "titleEn": "Site framing",
           "description": "Poser sitemap, wireframes et DA avant build.",
           "descriptionEn": "Set sitemap, wireframes and art direction before the build.",
           "toolSlugs": [
@@ -41671,7 +41671,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Finition",
-          "titleEn": "Finition",
+          "titleEn": "Finishing",
           "description": "Améliorer son, sous-titres, couleur et plans faibles.",
           "descriptionEn": "Improve sound, subtitles, colour and weak shots.",
           "toolSlugs": [
@@ -41717,7 +41717,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Postproduction",
-          "titleEn": "Postproduction",
+          "titleEn": "Post-production",
           "description": "Monter, étalonner, nettoyer et faire valider.",
           "descriptionEn": "Edit, grade, clean up and get sign-off.",
           "toolSlugs": [
