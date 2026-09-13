@@ -4,7 +4,7 @@ import { buildToolFaqs } from "@/lib/toolFaq";
 interface Props {
   tool: Tool;
   displayPrice: number;
-  verifiedOn: string;
+  verifiedOn: string | null;
   alternatives: Tool[];
   lang: string;
   t: (fr: string, en: string) => string;

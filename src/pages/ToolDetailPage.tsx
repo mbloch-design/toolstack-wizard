@@ -235,7 +235,11 @@ const ToolDetailPage = () => {
     const canonicalUrl = `${SEO_BASE}${canonicalPath}`;
 
     setSeoTags({ title: seoTitle, description: seoDesc, url: canonicalUrl, locale: lang === "fr" ? "fr_FR" : "en_US" });
-    setMeta("article:modified_time", tool.pricing_v5?.verified_on || "2026-03-29");
+    // Le prerendu conditionne deja cette balise a une vraie date de
+    // verification. Le client la posait toujours, avec un repli code en dur :
+    // le HTML servi et le DOM apres hydratation annoncaient donc deux choses
+    // differentes, et la seconde etait fausse.
+    if (tool.pricing_v5?.verified_on) setMeta("article:modified_time", tool.pricing_v5.verified_on);
     setHreflang(canonicalPath);
     return () => cleanupSeo([]);
   }, [tool, lang, subPage, categories]);
@@ -415,7 +419,12 @@ const ToolDetailPage = () => {
   // redevenir conditionnel plutot que de pointer vers une page vide.
   const hasAlternativesContent = true;
   const displayPrice  = resolveMonthlyPrice(tool);
-  const verifiedOn    = tool.pricing_v5?.verified_on || "2026-03-29";
+  // Pas de date de repli. Elle valait « 2026-03-29 » et s'affichait comme
+  // « Dernière vérification » sur les 325 fiches sans `pricing_v5`, soit 644
+  // pages, en plus d'alimenter le `dateModified` des données structurées et la
+  // réponse FAQ « Prix vérifié le… ». Une vérification qui n'a pas eu lieu ne
+  // se date pas : ToolTrim vend précisément la fiabilité du tarif.
+  const verifiedOn    = tool.pricing_v5?.verified_on || null;
   const sourceDomain  = tool.pricing_v5?.source_domain;
   const domain        = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
   const safeAffiliateUrl = safeExternalUrl(tool.affiliateLink);
@@ -698,10 +707,12 @@ const ToolDetailPage = () => {
                         <dd>{(tool as any).host_app}</dd>
                       </div>
                     )}
-                    <div>
-                      <dt>{t("Dernière vérification", "Last verified")}</dt>
-                      <dd>{new Intl.DateTimeFormat(lang, { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${verifiedOn}T00:00:00`))}</dd>
-                    </div>
+                    {verifiedOn && (
+                      <div>
+                        <dt>{t("Dernière vérification", "Last verified")}</dt>
+                        <dd>{new Intl.DateTimeFormat(lang, { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${verifiedOn}T00:00:00`))}</dd>
+                      </div>
+                    )}
                   </dl>
 
                   {safeWebsiteUrl && (

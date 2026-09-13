@@ -18,7 +18,7 @@ export function buildToolFaqs(
   tool: Tool,
   lang: string,
   displayPrice: number,
-  verifiedOn: string,
+  verifiedOn: string | null,
   alternatives: Tool[]
 ): ToolFaqEntry[] {
   const isFr = lang !== "en";
@@ -29,6 +29,11 @@ export function buildToolFaqs(
     ? isFr ? ` (plan ${planLabel})` : ` (${planLabel} plan)`
     : "";
   const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
+  // Sans date de verification, la reponse s'arrete au prix. Ecrire « Prix
+  // verifie le 2026-03-29 » a partir d'un repli code en dur affirmait un
+  // controle qui n'avait pas eu lieu, sur 644 pages.
+  const verifiedSuffixFr = verifiedOn ? ` Prix vérifié le ${verifiedOn}.` : "";
+  const verifiedSuffixEn = verifiedOn ? ` Price verified on ${verifiedOn}.` : "";
 
   const faqs: ToolFaqEntry[] = [
     {
@@ -40,11 +45,11 @@ export function buildToolFaqs(
       q: isFr ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
       a: oneTime
         ? (isFr
-          ? `${tool.name} est vendu en licence à vie, sans abonnement. ${tool.pricing?.paid || "Consultez le tarif officiel."} Prix vérifié le ${verifiedOn}.`
-          : `${tool.name} is sold as a lifetime license with no subscription. ${tool.pricingEn?.paid || "See the official price."} Price verified on ${verifiedOn}.`)
+          ? `${tool.name} est vendu en licence à vie, sans abonnement. ${tool.pricing?.paid || "Consultez le tarif officiel."}${verifiedSuffixFr}`
+          : `${tool.name} is sold as a lifetime license with no subscription. ${tool.pricingEn?.paid || "See the official price."}${verifiedSuffixEn}`)
         : isFr
-          ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${plan}. Prix vérifié le ${verifiedOn}.`
-          : `${tool.name} costs ${displayPrice === 0 ? "$0 (free)" : `${formatToolPrice(tool, displayPrice, "USD", "en").text}/month`}${plan}. Price verified on ${verifiedOn}.`,
+          ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${plan}.${verifiedSuffixFr}`
+          : `${tool.name} costs ${displayPrice === 0 ? "$0 (free)" : `${formatToolPrice(tool, displayPrice, "USD", "en").text}/month`}${plan}.${verifiedSuffixEn}`,
     },
     {
       q: isFr ? `${tool.name} est-il adapté aux débutants ?` : `Is ${tool.name} suitable for beginners?`,

@@ -12,7 +12,8 @@ interface Props {
   tool: Tool;
   category: Category | undefined;
   displayPrice: number;
-  verifiedOn: string;
+  /** null quand aucune verification tarifaire n'a eu lieu. */
+  verifiedOn: string | null;
   alternatives: Tool[];
   lang: string;
   includeFaq?: boolean;
@@ -45,7 +46,9 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       name: `${tool.name} : ${pageIntent} | ToolTrim`,
       description: lang === "en" ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription,
       url: canonicalUrl,
-      dateModified: verifiedOn,
+      // Pas de dateModified sans verification reelle : annoncer une date de
+      // mise a jour qu'on n'a pas faite trompe le moteur autant que le lecteur.
+      ...(verifiedOn ? { dateModified: verifiedOn } : {}),
       publisher: {
         "@type": "Organization",
         name: "ToolTrim",

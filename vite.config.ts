@@ -141,6 +141,14 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
 // On ne retire la langue non servie que si la langue de la page porte deja une
 // valeur : les composants retombent volontairement sur l'autre langue quand la
 // traduction manque, et ce filet doit rester.
+// Champs editoriaux que la projection Supabase peut ne pas encore porter, et
+// qu'elle ne doit donc pas effacer. Meme liste que SSR_LOCALIZED_FIELDS, a plat.
+const PROJECTION_RESCUED_FIELDS = [
+  "longDescription", "longDescriptionEn",
+  "shortDescription", "shortDescriptionEn",
+  "verdict", "verdictEn",
+];
+
 const SSR_LOCALIZED_FIELDS: [string, string][] = [
   ["shortDescription", "shortDescriptionEn"],
   ["longDescription", "longDescriptionEn"],
@@ -441,6 +449,7 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
 
   const catalogById = new Map(catalogTools.map((tool) => [tool.id, tool]));
   let projectedCount = 0;
+  let projectionRescued = 0;
   const tools = toolIds.map((toolId) => {
     const localized = byTool.get(toolId) || [];
     const hasCompleteLocalization =
@@ -452,6 +461,33 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
 
     if (projectedTool) {
       projectedCount += 1;
+      // La projection remplace l'objet entier, donc elle effaçait l'éditorial
+      // que le JSON porte et qu'elle n'a pas encore. `getMergedTools` protège
+      // déjà le sitemap et les métadonnées de ce cas, mais pas le rendu des
+      // fiches, qui passe ici : les 37 descriptions anglaises écrites pendant
+      // l'indisponibilité de Supabase ont disparu des pages au premier build
+      // où il a répondu, remplacées par le gabarit « Specialist tool used in
+      // ToolTrim consulting stacks ».
+      //
+      // Même règle que l'autre chemin : la projection garde la main dès
+      // qu'elle porte un vrai texte, elle ne peut simplement pas effacer avec
+      // du vide ou du remplissage.
+      const local = catalogById.get(toolId) as Record<string, any> | undefined;
+      if (local) {
+        for (const field of PROJECTION_RESCUED_FIELDS) {
+          // `verdict` et consorts peuvent être structurés selon la source :
+          // on ne compare que du texte, sinon hasEditorialSubstance reçoit un
+          // objet et la projection entière tombe en fallback JSON.
+          const fromLocal = local[field];
+          if (typeof fromLocal !== "string") continue;
+          const projected = (projectedTool as any)[field];
+          if (typeof projected === "string" && hasEditorialSubstance(projected)) continue;
+          if (projected != null && typeof projected !== "string") continue;
+          if (!hasEditorialSubstance(fromLocal)) continue;
+          (projectedTool as any)[field] = fromLocal;
+          projectionRescued += 1;
+        }
+      }
       return projectedTool;
     }
 
@@ -469,8 +505,8 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
   _catalogProjectionToolsCache = tools as unknown as Record<string, any>[];
   console.log(
     fallbackCount > 0
-      ? `✓ Fiche + SSR source: catalog_api hybride (${projectedCount} projetées, ${fallbackCount} fallback JSON)`
-      : `✓ Fiche + SSR source: catalog_api (${rows.length} lignes, ${projectedCount} outils)`,
+      ? `✓ Fiche + SSR source: catalog_api hybride (${projectedCount} projetées, ${fallbackCount} fallback JSON)${projectionRescued ? `, ${projectionRescued} champs éditoriaux conservés depuis le JSON` : ""}`
+      : `✓ Fiche + SSR source: catalog_api (${rows.length} lignes, ${projectedCount} outils)${projectionRescued ? `, ${projectionRescued} champs éditoriaux conservés depuis le JSON` : ""}`,
   );
   return _catalogProjectionToolsCache;
 }
