@@ -37,6 +37,7 @@ import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
 import { localizePlanName } from "@/lib/planNames";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -120,15 +121,15 @@ const ToolDetailPage = () => {
     const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {
       presentation: {
         titleFr: oneTime
-          ? `${tool.name} : licence à vie, avis et alternatives ${year} | ToolTrim`
+          ? fitBrandedTitle(`${tool.name} : licence à vie, avis et alternatives ${year}`)
           : hasPrice
-          ? `${tool.name} : prix dès ${frPrice}, avis et alternatives ${year} | ToolTrim`
-          : `${tool.name} : gratuit, avis et alternatives ${year} | ToolTrim`,
+          ? fitBrandedTitle(`${tool.name} : prix dès ${frPrice}, avis et alternatives ${year}`)
+          : fitBrandedTitle(`${tool.name} : gratuit, avis et alternatives ${year}`),
         titleEn: oneTime
-          ? `${tool.name}: lifetime license, review & alternatives ${year} | ToolTrim`
+          ? fitBrandedTitle(`${tool.name}: lifetime license, review & alternatives ${year}`)
           : hasPrice
-          ? `${tool.name}: pricing from ${enPrice}, review & alternatives ${year} | ToolTrim`
-          : `${tool.name}: free, review & alternatives ${year} | ToolTrim`,
+          ? fitBrandedTitle(`${tool.name}: pricing from ${enPrice}, review & alternatives ${year}`)
+          : fitBrandedTitle(`${tool.name}: free, review & alternatives ${year}`),
         descFr: shortExcerpt
           ? `${shortExcerpt}. ${oneTime ? "Licence à vie, sans abonnement." : hasPrice ? `Coûte ${price}€/mois${planSuffixFr}, vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
           : oneTime
@@ -147,11 +148,11 @@ const ToolDetailPage = () => {
       },
       prix: {
         titleFr: hasPrice
-          ? `${tool.name} : prix et tarifs ${year} | ToolTrim`
-          : `${tool.name} Tarifs ${year} : Gratuit, Freemium ou Payant ? | ToolTrim`,
+          ? fitBrandedTitle(`${tool.name} : prix et tarifs ${year}`)
+          : fitBrandedTitle(`${tool.name} Tarifs ${year} : Gratuit, Freemium ou Payant ?`),
         titleEn: hasPrice
-          ? `${tool.name} pricing & plans ${year} | ToolTrim`
-          : `${tool.name} Pricing ${year}: Free, Freemium or Paid? | ToolTrim`,
+          ? fitBrandedTitle(`${tool.name} pricing & plans ${year}`)
+          : fitBrandedTitle(`${tool.name} Pricing ${year}: Free, Freemium or Paid?`),
         descFr: oneTime
           ? `Combien coûte ${tool.name} en ${year} ? Licence à vie sans abonnement. Détail du tarif, des conditions et des alternatives.`
           : hasPrice
@@ -166,11 +167,11 @@ const ToolDetailPage = () => {
       },
       alternatives: {
         titleFr: hasPrice
-          ? `Meilleures alternatives à ${tool.name} en ${year} | ToolTrim`
-          : `Meilleures alternatives à ${tool.name}, ${catLabel} | ToolTrim`,
+          ? fitBrandedTitle(`Meilleures alternatives à ${tool.name} en ${year}`)
+          : fitBrandedTitle(`Meilleures alternatives à ${tool.name}, ${catLabel}`),
         titleEn: hasPrice
-          ? `Best ${tool.name} alternatives in ${year} | ToolTrim`
-          : `Best ${tool.name} Alternatives, ${catLabel} | ToolTrim`,
+          ? fitBrandedTitle(`Best ${tool.name} alternatives in ${year}`)
+          : fitBrandedTitle(`Best ${tool.name} Alternatives, ${catLabel}`),
         descFr: oneTime
           ? `${tool.name} est vendu en licence à vie, pas au mois. Voici les meilleures alternatives gratuites ou payantes, comparées par ToolTrim en ${year}.`
           : hasPrice
@@ -188,8 +189,8 @@ const ToolDetailPage = () => {
         // de remplissage apres le nom : 895 titres francais et 487 anglais
         // depassaient 65 caracteres, donc etaient tronques en resultat de
         // recherche. Le nom reste en tete, pour coller a la requete reelle.
-        titleFr: `Avis ${tool.name} ${year} : note et retours | ToolTrim`,
-        titleEn: `${tool.name} reviews ${year}: rating and feedback | ToolTrim`,
+        titleFr: fitBrandedTitle(`Avis ${tool.name} ${year} : note et retours`),
+        titleEn: fitBrandedTitle(`${tool.name} reviews ${year}: rating and feedback`),
         descFr: shortExcerpt
           ? `${shortExcerpt}. Score ToolTrim, analyse indépendante et retours d'utilisateurs sur ${tool.name} en ${year}.`
           : `Score ToolTrim pour ${tool.name}, analyse indépendante et retours d'utilisateurs. Verdict honnête sur la valeur réelle en ${year}.`,
@@ -199,8 +200,8 @@ const ToolDetailPage = () => {
         suffix: "/avis",
       },
       faq: {
-        titleFr: `${tool.name} : questions fréquentes ${year} | ToolTrim`,
-        titleEn: `${tool.name} FAQ ${year} | ToolTrim`,
+        titleFr: fitBrandedTitle(`${tool.name} : questions fréquentes ${year}`),
+        titleEn: fitBrandedTitle(`${tool.name} FAQ ${year}`),
         descFr: shortExcerpt
           ? `${shortExcerpt}. Prix, plans, cas d'usage et alternatives à ${tool.name}, toutes les réponses clés en ${year}.`
           : `Tout ce que vous devez savoir sur ${tool.name} : prix, plans, utilité et meilleures alternatives, mis à jour ${year}.`,

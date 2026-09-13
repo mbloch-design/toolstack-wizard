@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChevronDown } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
@@ -617,8 +618,8 @@ const StackDetailPage = () => {
   useEffect(() => {
     if (!stack) return;
     const title = lang === "fr"
-      ? `${stack.title} : outils, usages et budget | ToolTrim`
-      : `${stack.titleEn}: tools, use cases and budget | ToolTrim`;
+      ? fitBrandedTitle(`${stack.title} : outils, usages et budget`)
+      : fitBrandedTitle(`${stack.titleEn}: tools, use cases and budget`);
     const description = getStackMetaDescription(stack, lang);
     setSeoTags({ title, description, url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/stacks/${stack.slug}`);

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowUpDown, ArrowUpRight, Search, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
@@ -158,8 +159,8 @@ const ComparesIndexPage = () => {
   useEffect(() => {
     const year = new Date().getFullYear();
     const title = t(
-      `Comparatifs d'outils SaaS ${year} — Analyse indépendante | ToolTrim`,
-      `SaaS Tool Comparisons ${year} — Independent Analysis | ToolTrim`,
+      fitBrandedTitle(`Comparatifs d'outils SaaS ${year} — Analyse indépendante`),
+      fitBrandedTitle(`SaaS Tool Comparisons ${year} — Independent Analysis`),
     );
     const desc = t(
       "Des comparatifs clairs pour comprendre les différences, les limites et le bon choix selon ton usage.",

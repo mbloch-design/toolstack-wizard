@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 import { useEffect, useMemo } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
@@ -79,7 +80,7 @@ const HostPage = ({ famille: familleProp }: { famille: string }) => {
     if (!hote || rattaches.length < HOST_PAGE_MIN) return;
     const url = `${SEO_BASE}${prefix}/${familleProp}/${slug}`;
     setSeoTags({
-      title: `${titre} — ${rattaches.length} ${lang === "fr" ? "outils" : "tools"} | ToolTrim`,
+      title: fitBrandedTitle(`${titre} — ${rattaches.length} ${lang === "fr" ? "outils" : "tools"}`),
       description: lang === "fr"
         ? `${rattaches.length} outils qui se rattachent à ${hote.name}, avec le verdict ToolTrim sur chacun.`
         : `${rattaches.length} tools that attach to ${hote.name}, each with the ToolTrim verdict.`,

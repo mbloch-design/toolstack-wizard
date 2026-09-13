@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "@/lib/icons";
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -374,8 +375,8 @@ export default function ExplorerPage() {
     if (source?.type === "outil" && sourceTool) {
       setSeoTags({
         title: lang === "en"
-          ? `Alternatives to ${sourceLabel}: similar tools | ToolTrim`
-          : `Alternatives à ${sourceLabel} : outils similaires | ToolTrim`,
+          ? fitBrandedTitle(`Alternatives to ${sourceLabel}: similar tools`)
+          : fitBrandedTitle(`Alternatives à ${sourceLabel} : outils similaires`),
         description: lang === "en"
           ? `Discover tools comparable to ${sourceLabel}, with manually verified pricing and independent verdicts on ToolTrim.`
           : `Découvrez des outils comparables à ${sourceLabel}, avec prix vérifiés à la main et verdicts indépendants sur ToolTrim.`,

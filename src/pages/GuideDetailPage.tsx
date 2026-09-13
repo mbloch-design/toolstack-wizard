@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 import { Link, useParams } from "react-router-dom";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
@@ -39,7 +40,7 @@ const GuideDetailPage = () => {
     const fallbackDescription = lang === "fr"
       ? `Guide ToolTrim — ${post.title}. Prix vérifiés, outils testés, sans affiliation.`
       : `ToolTrim guide — ${post.title}. Verified pricing, tested tools, no affiliate bias.`;
-    const title = post.seo?.metaTitle || `${post.title} | ToolTrim`;
+    const title = post.seo?.metaTitle || fitBrandedTitle(`${post.title}`);
     const rawDescription = post.seo?.metaDescription || post.excerpt || fallbackDescription;
     const description = rawDescription.length > 155
       ? `${rawDescription.slice(0, 152).trimEnd()}…`

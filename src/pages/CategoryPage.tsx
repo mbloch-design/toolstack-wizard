@@ -1,4 +1,5 @@
 import { useLocation, useParams, Link } from "react-router-dom";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 import { useState, useEffect, useMemo, useRef, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
@@ -91,8 +92,8 @@ const CategoryPage = () => {
     const catName = stripLeadingEmoji(category.name, category.id);
     const catNameEn = stripLeadingEmoji(category.nameEn, catName);
     const title = lang === "fr"
-      ? `Outils ${catName} — comparatif prix et alternatives ${year} | ToolTrim`
-      : `${catNameEn} tools — pricing comparison & alternatives ${year} | ToolTrim`;
+      ? fitBrandedTitle(`Outils ${catName} — comparatif prix et alternatives ${year}`)
+      : fitBrandedTitle(`${catNameEn} tools — pricing comparison & alternatives ${year}`);
     const desc = lang === "fr"
       ? `On a analysé et classé les meilleurs outils ${catName} : prix vérifiés manuellement, alternatives gratuites identifiées, sans affiliation.`
       : `We ranked the best ${catNameEn} tools with manually verified pricing, free alternatives, and zero affiliate bias.`;

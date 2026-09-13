@@ -11,6 +11,7 @@ import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 import { resolveMonthlyPrice } from "./src/lib/pricing";
 import { formatToolPrice, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
+import { fitBrandedTitle } from "./src/lib/seoTitle";
 import { localizePlanName } from "./src/lib/planNames";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 
@@ -849,13 +850,13 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // names (e.g. "Microsoft Dynamics 365 Finance and Operations")
             // need every character for the actual message, and Google
             // appends the site name in the SERP on its own anyway.
-            const titleWithBrand = isFr
-              ? `${name} : ${priceTag}, avis et alternatives 2026 | ToolTrim`
-              : `${name}: ${priceTag}, review & alternatives 2026 | ToolTrim`;
-            const titleNoBrand = isFr
-              ? `${name} : ${priceTag}, avis et alternatives 2026`
-              : `${name}: ${priceTag}, review & alternatives 2026`;
-            const title = presentationOverride || (titleWithBrand.length <= 60 ? titleWithBrand : titleNoBrand);
+            // fitBrandedTitle porte desormais la regle de retrait du suffixe,
+            // partagee avec ToolDetailPage : le mecanisme local faisait la meme
+            // chose cote prerendu seulement, d'ou un titre d'onglet different
+            // apres hydratation.
+            const title = presentationOverride || (isFr
+              ? fitBrandedTitle(`${name} : ${priceTag}, avis et alternatives 2026`)
+              : fitBrandedTitle(`${name}: ${priceTag}, review & alternatives 2026`));
             const description = buildToolMetaDesc(tool, lang);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
@@ -1022,8 +1023,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               const override = isFr ? tool?.seo?.prixTitleFr : tool?.seo?.prixTitleEn;
               if (override) return override;
               return isFr
-                ? `${name} : prix et tarifs 2026 | ToolTrim`
-                : `${name} pricing & plans 2026 | ToolTrim`;
+                ? fitBrandedTitle(`${name} : prix et tarifs 2026`)
+                : fitBrandedTitle(`${name} pricing & plans 2026`);
             },
             buildDesc: (name, price, isFr, tool) => tool.pricing_v5?.compare_plan_kind === "one_time"
               ? (isFr ? `${name} est vendu en licence à vie, sans abonnement. Tarif, conditions et alternatives analysés par ToolTrim.` : `${name} is sold as a lifetime license with no subscription. Price, terms and alternatives reviewed by ToolTrim.`)
@@ -1054,8 +1055,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               const override = isFr ? tool?.seo?.altTitleFr : tool?.seo?.altTitleEn;
               if (override) return override;
               return isFr
-                ? `Meilleures alternatives à ${name} en 2026 | ToolTrim`
-                : `Best ${name} alternatives in 2026 | ToolTrim`;
+                ? fitBrandedTitle(`Meilleures alternatives à ${name} en 2026`)
+                : fitBrandedTitle(`Best ${name} alternatives in 2026`);
             },
             buildDesc: (name, _price, isFr, tool) => {
               const override = isFr ? tool?.seo?.altMetaDescriptionFr : tool?.seo?.altMetaDescriptionEn;
@@ -1081,8 +1082,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             buildTitle: (name, isFr) => isFr
               // Voir ToolDetailPage : gabarit raccourci, ToolTrim n'y figure
               // plus qu'une fois. Les deux copies doivent rester alignees.
-              ? `Avis ${name} 2026 : note et retours | ToolTrim`
-              : `${name} reviews 2026: rating and feedback | ToolTrim`,
+              ? fitBrandedTitle(`Avis ${name} 2026 : note et retours`)
+              : fitBrandedTitle(`${name} reviews 2026: rating and feedback`),
             buildDesc: (name, _price, isFr, tool) => {
               const short = (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || "";
               const excerpt = short.split(/[.!?]/)[0]?.trim() || "";
@@ -1593,8 +1594,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const sourcePath = `/${lang}/explorer/around/${slug}`;
             const url = `${BASE}${sourcePath}`;
             const title = lang === "fr"
-              ? `Alternatives à ${name} : outils similaires | ToolTrim`
-              : `Alternatives to ${name}: similar tools | ToolTrim`;
+              ? fitBrandedTitle(`Alternatives à ${name} : outils similaires`)
+              : fitBrandedTitle(`Alternatives to ${name}: similar tools`);
             const description = lang === "fr"
               ? `Découvrez des outils comparables à ${name}, avec prix vérifiés à la main et verdicts indépendants sur ToolTrim.`
               : `Discover tools comparable to ${name}, with manually verified pricing and independent verdicts on ToolTrim.`;
@@ -1640,8 +1641,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             const title = isFr
-              ? `${stack.title} : outils, usages et budget | ToolTrim`
-              : `${stack.titleEn}: tools, use cases and budget | ToolTrim`;
+              ? fitBrandedTitle(`${stack.title} : outils, usages et budget`)
+              : fitBrandedTitle(`${stack.titleEn}: tools, use cases and budget`);
             const description = stack.slug === "developpeur-freelance-shipper"
               ? isFr
                 ? "Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : 32€/mois."
@@ -1722,8 +1723,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const catName = isFr ? frName : enData.name;
             const catDesc = isFr ? frDesc : enData.description;
             const title = isFr
-              ? `${catName} : meilleurs outils SaaS pour freelances 2026 | ToolTrim`
-              : `${catName}: best SaaS tools for freelancers 2026 | ToolTrim`;
+              ? fitBrandedTitle(`${catName} : meilleurs outils SaaS pour freelances 2026`)
+              : fitBrandedTitle(`${catName}: best SaaS tools for freelancers 2026`);
             const description = isFr
               ? `${catDesc} Comparez les meilleurs outils de la catégorie ${catName} : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.`
               : `${catDesc} Compare the best ${catName} tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.`;
@@ -1812,8 +1813,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             const title = isFr
-              ? `${label} : comparatif 2026 | ToolTrim`
-              : `${label}: comparison 2026 | ToolTrim`;
+              ? fitBrandedTitle(`${label} : comparatif 2026`)
+              : fitBrandedTitle(`${label}: comparison 2026`);
             const description = isFr
               ? `Comparatif ${label} : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?`
               : `${label} comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?`;
@@ -1904,7 +1905,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // l'onglet changeait donc a l'hydratation, et le HTML servi ne
           // correspondait plus au premier rendu client. Meme regle des deux
           // cotes, un metaTitre reste pris tel quel.
-          const title = post.seo?.metaTitle || (post.title ? `${post.title} | ToolTrim` : slug);
+          const title = post.seo?.metaTitle || (post.title ? fitBrandedTitle(post.title) : slug);
           const description = post.seo?.metaDescription || post.excerpt || "";
 
           const postBreadcrumb = {
