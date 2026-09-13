@@ -8,6 +8,7 @@ import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import FaqBlock from "@/components/FaqBlock";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, setNoindex, removeNoindex, SEO_BASE } from "@/lib/seo";
+import { translateBattleCopy } from "@/data/comparisonBattlesEn";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
@@ -379,8 +380,13 @@ interface BattleRawData {
   }>;
 }
 
+// Les fichiers comparison-battles/*.json sont en francais et n'ont aucun champ
+// *En. Cette fonction renvoyait la valeur telle quelle : les pages anglaises
+// servaient donc leur accroche, leur difference de fond et leurs arbitrages
+// « Choose X if… » en francais. Elle consulte maintenant une table de
+// traduction, et retombe sur le francais pour ce qui n'y figure pas encore.
 function asEnglishCopy(value: string): string {
-  return value;
+  return translateBattleCopy(value);
 }
 function slugifyName(name: string): string {
   return name
@@ -2192,7 +2198,13 @@ const ComparePage = () => {
     : EDITORIAL_CONTENT[slugPair ?? ""] ?? buildFallbackContent(toolA, toolB, lang);
 
   const framing = lang === "fr" ? content.framing : content.framingEn;
-  const heroDek = content.aglanceHeroPromise || framing;
+  // `aglanceHeroPromise` vient brut du fichier de comparatif, qui est francais :
+  // il court-circuitait la traduction et l'accroche restait en francais sur les
+  // pages anglaises, alors meme que la table la couvrait.
+  const heroPromise = content.aglanceHeroPromise
+    ? (lang === "fr" ? content.aglanceHeroPromise : asEnglishCopy(content.aglanceHeroPromise))
+    : "";
+  const heroDek = heroPromise || framing;
   const showFundamental = heroDek.trim().toLocaleLowerCase() !== framing.trim().toLocaleLowerCase();
   const verdictShort = lang === "fr" ? content.verdictShort : content.verdictShortEn;
   /* Verdict 2-card layout */
