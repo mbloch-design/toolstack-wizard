@@ -38,6 +38,7 @@ import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLin
 import { localizePlanName } from "@/lib/planNames";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
 import { fitBrandedTitle } from "@/lib/seoTitle";
+import { getExplorerHref } from "@/lib/toolExploration";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -384,10 +385,35 @@ const ToolDetailPage = () => {
         .slice(0, 6)
         .map((x) => x.ct);
 
-  const hasAlternativesContent = alternatives.length > 0
-    || clusterTools.length > 0
-    || sameCategoryTools.length > 0
-    || FEATURED_COMPARISONS.some((c: any) => c.toolA === (tool.slug || tool.id) || c.toolB === (tool.slug || tool.id));
+  const hasFeaturedComparison = FEATURED_COMPARISONS.some(
+    (c: any) => c.toolA === (tool.slug || tool.id) || c.toolB === (tool.slug || tool.id),
+  );
+
+  // 105 fiches n'ont aucun voisin partageant un besoin fonctionnel, et leur
+  // page /alternatives restait entierement vide sous un titre qui promettait
+  // « Meilleures alternatives a X ».
+  //
+  // Ce n'est pas l'algorithme, c'est la taxonomie : 309 des 573 besoins
+  // fonctionnels du catalogue ne sont portes que par un seul outil. Relacher
+  // la comparaison au niveau des mots du tag remplirait une soixantaine de ces
+  // pages, mais proposerait DocuSign et Ironclad en face de Google Docs, qui
+  // est classe a tort dans `legal-contracts` : la relaxation amplifierait
+  // l'erreur de classement au lieu de la reveler. Une page vide vaut mieux
+  // qu'une page sure d'elle et fausse.
+  //
+  // On sort donc du cul-de-sac sans rien affirmer : la page renvoie vers
+  // l'exploration de voisinage, qui existe deja et qui dit exactement ce
+  // qu'elle fait.
+  const showExplorationFallback = alternatives.length === 0
+    && clusterTools.length === 0
+    && sameCategoryTools.length === 0
+    && !hasFeaturedComparison;
+
+  // Toujours vrai depuis que la retombee ci-dessus couvre le cas vide. La
+  // constante est gardee explicite parce qu'elle pilote aussi l'onglet de la
+  // barre de navigation : si la retombee disparait un jour, l'onglet doit
+  // redevenir conditionnel plutot que de pointer vers une page vide.
+  const hasAlternativesContent = true;
   const displayPrice  = resolveMonthlyPrice(tool);
   const verifiedOn    = tool.pricing_v5?.verified_on || "2026-03-29";
   const sourceDomain  = tool.pricing_v5?.source_domain;
@@ -890,6 +916,28 @@ const ToolDetailPage = () => {
                             {ct.name}
                           </Link>
                         ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {showExplorationFallback && (
+                    <div className="td-subs">
+                      <p className="td-eyebrow td-eyebrow--tight">
+                        {t("Pas de substitut établi", "No established substitute")}
+                      </p>
+                      <p className="td-analysis-paragraph">
+                        {t(
+                          `Aucun outil du catalogue ne couvre le même besoin que ${tool.name}. Plutôt que d'en proposer un approximatif, voici l'exploration par voisinage.`,
+                          `No tool in the catalogue covers the same need as ${tool.name}. Rather than suggest an approximate match, here is the neighbourhood view.`,
+                        )}
+                      </p>
+                      <div className="td-chips">
+                        <Link
+                          to={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+                          className="td-chip"
+                        >
+                          {t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
+                        </Link>
                       </div>
                     </div>
                   )}
