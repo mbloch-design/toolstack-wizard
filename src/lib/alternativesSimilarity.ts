@@ -52,6 +52,24 @@ export function computeSimilarity(toolA: Pick<Tool, "functional_needs" | "vertic
   return fSim * rSim;
 }
 
+/**
+ * Recouvrement des seuls besoins fonctionnels, sans le facteur `verticals`.
+ *
+ * Sert à ordonner un voisinage de catégorie, jamais à affirmer une
+ * substituabilité : `computeSimilarity` reste la porte pour ça.
+ *
+ * Elle existe parce que `computeSimilarity` est un produit, et qu'un ensemble
+ * `verticals` vide l'annule. 19 % du catalogue n'a pas de `verticals`, contre
+ * 0 % sans `functional_needs` : sur ces fiches, le score est structurellement
+ * nul quelle que soit la proximité réelle des outils.
+ */
+export function functionalAffinity(
+  toolA: Pick<Tool, "functional_needs">,
+  toolB: Pick<Tool, "functional_needs">,
+): number {
+  return jaccard(toolA.functional_needs, toolB.functional_needs);
+}
+
 /** Strictly greater than the threshold — a score of exactly 0.75 is excluded, per spec. */
 export function isRelevantAlternative(
   toolA: Pick<Tool, "functional_needs" | "verticals">,

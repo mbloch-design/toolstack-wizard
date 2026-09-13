@@ -28,7 +28,7 @@ import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
-import { findSimilarTools } from "@/lib/alternativesSimilarity";
+import { findSimilarTools, functionalAffinity } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import { getGuidesForTool } from "@/lib/toolGuides";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
@@ -344,10 +344,49 @@ const ToolDetailPage = () => {
   // that clears the similarity gate, OR a featured head-to-head comparison.
   // Drives both the pill nav (hide the tab) and the section itself (don't
   // render a heading + intro paragraph above nothing).
+  const clusterTools = (tool as any).substitution_cluster_v2
+    ? findSimilarTools(
+        tool,
+        tools.filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id),
+      ).slice(0, 6)
+    : [];
+
+  // Voisinage de categorie, servi uniquement quand aucun substitut direct
+  // n'existe.
+  //
+  // 525 pages /alternatives sur 1074 ne contenaient aucun bloc : le titre
+  // promettait « Meilleures alternatives à X » et la page n'en citait aucune.
+  // C'est la deuxieme famille du site en clics et la seule ou une demande
+  // mesuree faisait face a une offre vide.
+  //
+  // La cause est en amont du score : 40 % des outils n'ont pas de cluster de
+  // substitution, et 19 % n'ont pas de `verticals`, or la similarite est le
+  // produit de deux indices de Jaccard, qu'un ensemble vide annule. Remplir ces
+  // champs est le vrai correctif, suivi a part.
+  //
+  // Le libelle compte autant que la liste. Un audit externe avait trouve des
+  // outils d'assurance sante presentes comme « substituables directement » a
+  // Asana. On n'affirme donc pas la substituabilite ici : on propose un
+  // voisinage de categorie, et on le dit.
+  // La categorie seule ne suffit pas a qualifier un voisin : « creation »
+  // compte 226 outils, et un classement par note y proposait FLUX AI et
+  // Grammarly en face d'Ableton Live. Le recouvrement des besoins fonctionnels
+  // fait le tri, et il est le seul champ renseigne sur 100 % du catalogue,
+  // contrairement a `verticals`. Sur le meme exemple il remonte Logic Pro et
+  // Pro Tools a 1,00, Audacity a 0,40, et ecarte Grammarly a 0.
+  const sameCategoryTools = (alternatives.length > 0 || clusterTools.length > 0)
+    ? []
+    : tools
+        .filter((ct: any) => ct.categoryId && ct.categoryId === (tool as any).categoryId && ct.id !== tool.id)
+        .map((ct: any) => ({ ct, affinity: functionalAffinity(tool, ct) }))
+        .filter((x) => x.affinity > 0)
+        .sort((a, b) => b.affinity - a.affinity || String(a.ct.name).localeCompare(String(b.ct.name)))
+        .slice(0, 6)
+        .map((x) => x.ct);
+
   const hasAlternativesContent = alternatives.length > 0
-    || ((tool as any).substitution_cluster_v2
-      ? findSimilarTools(tool, tools.filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)).length > 0
-      : false)
+    || clusterTools.length > 0
+    || sameCategoryTools.length > 0
     || FEATURED_COMPARISONS.some((c: any) => c.toolA === (tool.slug || tool.id) || c.toolB === (tool.slug || tool.id));
   const displayPrice  = resolveMonthlyPrice(tool);
   const verifiedOn    = tool.pricing_v5?.verified_on || "2026-03-29";
@@ -809,31 +848,51 @@ const ToolDetailPage = () => {
                        cluster membership generates candidates, the score
                        decides which of them are actually relevant enough
                        to show. */}
-                  {(tool as any).substitution_cluster_v2 && (() => {
-                    const clusterCandidates = tools
-                      .filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id);
-                    const clusterTools = findSimilarTools(tool, clusterCandidates).slice(0, 6);
-                    if (!clusterTools.length) return null;
-                    return (
-                      <div className="td-subs">
-                        <p className="td-eyebrow td-eyebrow--tight">
-                          {t("Substituables directement", "Direct substitutes")}
-                        </p>
-                        <div className="td-chips">
-                          {clusterTools.map((ct: any) => (
-                            <Link
-                              key={ct.id}
-                              to={`${prefix}/tool/${ct.slug || ct.id}`}
-                              className="td-chip"
-                            >
-                              <ToolLogo tool={ct} size={18} />
-                              {ct.name}
-                            </Link>
-                          ))}
-                        </div>
+                  {clusterTools.length > 0 && (
+                    <div className="td-subs">
+                      <p className="td-eyebrow td-eyebrow--tight">
+                        {t("Substituables directement", "Direct substitutes")}
+                      </p>
+                      <div className="td-chips">
+                        {clusterTools.map((ct: any) => (
+                          <Link
+                            key={ct.id}
+                            to={`${prefix}/tool/${ct.slug || ct.id}`}
+                            className="td-chip"
+                          >
+                            <ToolLogo tool={ct} size={18} />
+                            {ct.name}
+                          </Link>
+                        ))}
                       </div>
-                    );
-                  })()}
+                    </div>
+                  )}
+
+                  {sameCategoryTools.length > 0 && (
+                    <div className="td-subs">
+                      <p className="td-eyebrow td-eyebrow--tight">
+                        {t("Outils de la même catégorie", "Tools in the same category")}
+                      </p>
+                      <p className="td-analysis-paragraph">
+                        {t(
+                          `Aucun substitut direct n'est établi pour ${tool.name}. Ces outils couvrent le même terrain, à comparer selon ton usage.`,
+                          `No direct substitute is established for ${tool.name}. These tools cover the same ground, worth comparing against your own use.`,
+                        )}
+                      </p>
+                      <div className="td-chips">
+                        {sameCategoryTools.map((ct: any) => (
+                          <Link
+                            key={ct.id}
+                            to={`${prefix}/tool/${ct.slug || ct.id}`}
+                            className="td-chip"
+                          >
+                            <ToolLogo tool={ct} size={18} />
+                            {ct.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Featured comparisons */}
                   {(() => {
