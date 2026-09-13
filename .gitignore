@@ -12,6 +12,9 @@ node_modules
 # `node_modules` ci-dessus ne matche qu'un segment de chemin exact, donc pas ce
 # dossier. 229 Mo non suivis qui rendaient chaque `git add -A` dangereux.
 node_modules.corrupt/
+# Copie créée par le Finder ou un outil de sync, même piège : 229 Mo non suivis.
+# Le motif générique couvre les variantes à venir ("node_modules 3", etc.).
+node_modules[ .-]*/
 dist
 dist-ssr
 .build-trash
