@@ -15,6 +15,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/1001bit-tools.jpg",
     "tool_type": "metier",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -173,6 +174,7 @@
     "defaultMonthlyPrice": 20,
     "websiteUrl": "https://www.ableton.com/live/",
     "ogImageUrl": "https://beta-ableton.imgix.net/media/y1tf4gvt/l12-beta-800x600.jpg",
+    "substitution_cluster_v2": "audio-daw",
     "functional_needs": [
       "audio",
       "enregistrement-multipistes",
@@ -206,6 +208,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
     "logo": "https://logo.clearbit.com/acast.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "podcast-hosting",
     "functional_needs": [
       "analytics-podcast",
       "creator-workflow",
@@ -309,6 +312,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/adcreative-ai.jpg",
     "logo": "https://logo.clearbit.com/adcreativeai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "content-creation",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -397,6 +401,7 @@
     "websiteUrl": "https://www.adobe.com/acrobat.html",
     "ogImageUrl": "https://www.adobe.com/acrobat/media_14da7a4ea109e868041eecca664e1538d41f5beb4.png?width=1200&#x26;#x26;format=pjpg&#x26;#x26;optimize=medium",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "pdf-tools",
     "functional_needs": [
       "client-validation",
       "document-delivery",
@@ -499,6 +504,7 @@
     "websiteUrl": "https://www.adobe.com/products/audition.html",
     "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "audio-daw",
     "functional_needs": [
       "audio",
       "audio-cleanup",
@@ -580,6 +586,7 @@
     "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "https://logo.clearbit.com/adobecreativecloud.com",
     "tool_type": "metier",
+    "substitution_cluster_v2": "creative-suite",
     "functional_needs": [
       "illustration-vectorielle",
       "licences-creative-cloud",
@@ -618,6 +625,7 @@
     "logo": "https://logo.clearbit.com/podcast.adobe.com",
     "tool_type": "ia",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "ai-audio-enhancement",
     "functional_needs": [
       "audio-cleanup",
       "video-post-production",
@@ -650,6 +658,7 @@
     "websiteUrl": "https://www.adobe.com/express/",
     "ogImageUrl": "https://www.adobe.com/express/media_1fcab73980cfc55a24701342170da2c2098771fd4.png?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "creative-suite",
     "functional_needs": [
       "brand-kit",
       "branding",
@@ -800,6 +809,7 @@
     "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "tool_type": "metier",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "design-support",
     "functional_needs": [
       "print",
       "design-tools",
@@ -1028,6 +1038,7 @@
     "websiteUrl": "https://www.adobe.com/products/substance3d.html",
     "ogImageUrl": "https://www.adobe.com/products/media_1493006c2adba238de471ed68a47f1663e254966c.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "3d",
       "texturing-3d",
@@ -1061,6 +1072,7 @@
     "websiteUrl": "https://adobe.com/products/xd",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-xd.jpg",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "prototyping",
       "design-tools",
@@ -1308,6 +1320,7 @@
     "ogImageUrl": "https://images.ctfassets.net/8dreszsahte7/2yE99dsuxDH1IVNa5HQKXJ/435b73bb5bd5e0a62bba48a6144336a8/Visuel_g%C3%A9n%C3%A9rique.png",
     "logo": "https://logo.clearbit.com/agicap.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "treasury-cashflow-management",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -1340,6 +1353,10 @@
     "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "seo"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Spécialistes SEO",
@@ -1563,6 +1580,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://allstate.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/allstate.jpg",
+    "substitution_cluster_v2": "group-health-insurance",
     "functional_needs": [
       "insurance"
     ],
@@ -1617,6 +1635,10 @@
     "functional_needs": [
       "dom-manipulation"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs backend",
       "Développeurs minimalistes",
@@ -1643,6 +1665,7 @@
     "websiteUrl": "https://www.amplemarket.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6350808bc45bd0c902af10e6/671bb77ae2ed5e51f8dcae2b_e05a75f5cee34196fe6f70e9d7f57d31_am-opengraph-v2.jpg",
     "tool_type": "gestion",
+    "substitution_cluster_v2": "sales-prospecting-data",
     "functional_needs": [
       "analytics",
       "cold-email",
@@ -1749,6 +1772,10 @@
       "design-system",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "relevantFor": [
       "dev-frontend"
     ],
@@ -1774,6 +1801,10 @@
     "functional_needs": [
       "seo",
       "ssr"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
     ],
     "relevantFor": [
       "Développeurs Angular",
@@ -1877,6 +1908,10 @@
       "design-system",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Équipes SaaS",
@@ -1938,6 +1973,7 @@
     "defaultMonthlyPrice": 5,
     "websiteUrl": "https://www.antidote.info",
     "ogImageUrl": "https://www.antidote.info/user/config/plugins/druide-seo/antidote-1200x630_v2.jpg",
+    "substitution_cluster_v2": "grammar-correction-tools",
     "functional_needs": [
       "redaction",
       "assistant-generaliste"
@@ -1971,6 +2007,10 @@
     "functional_needs": [
       "charting"
     ],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "relevantFor": [
       "Développeurs frontend",
       "Data visualizers",
@@ -1998,6 +2038,7 @@
     "ogImageUrl": "https://www.apollo.com/content/dam/apolloaem/images/brand/apollo-og-image%202023.png",
     "logo": "https://logo.clearbit.com/apollo.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -2157,6 +2198,7 @@
     "defaultMonthlyPrice": 100,
     "websiteUrl": "https://www.arcgis.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/arcgis.jpg",
+    "substitution_cluster_v2": "gis-software",
     "functional_needs": [
       "analytics",
       "data-visualization"
@@ -2190,6 +2232,7 @@
     "affiliateLink": "https://graphisoft.com/solutions/archicad",
     "ogImageUrl": "https://www.graphisoft.com/content/uploads/2025/11/archicad-conceptualize-confidently.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "architecture",
       "bim",
@@ -2250,6 +2293,7 @@
     "compareMonthlyPrice": 5,
     "affiliateLink": "https://www.are.na",
     "ogImageUrl": "https://www.are.na/og-image.png",
+    "substitution_cluster_v2": "design-inspiration-search",
     "functional_needs": [
       "organization"
     ],
@@ -2312,6 +2356,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/around.jpg",
     "logo": "https://logo.clearbit.com/around.co",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "team-communication",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -2369,6 +2414,7 @@
     "defaultMonthlyPrice": 99,
     "websiteUrl": "https://www.articulate.com/360/",
     "ogImageUrl": "https://www.articulate.com/wp-content/uploads/2025/11/platform-articulate-preview.png",
+    "substitution_cluster_v2": "learning-platform",
     "functional_needs": [
       "lms",
       "creation-cours"
@@ -2399,6 +2445,7 @@
     "defaultMonthlyPrice": 17,
     "websiteUrl": "https://artlist.io",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/artlist.jpg",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "creative-licensing",
       "music-licensing",
@@ -2430,6 +2477,7 @@
     },
     "websiteUrl": "https://www.artstation.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/artstation.jpg",
+    "substitution_cluster_v2": "design-inspiration-search",
     "functional_needs": [
       "concept-art",
       "illustration",
@@ -2503,6 +2551,7 @@
     "ogImageUrl": "https://www.ashbyhq.com/og/default.png?v5",
     "logo": "https://logo.clearbit.com/ashbyhq.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "applicant-tracking-system",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -2533,6 +2582,7 @@
     "websiteUrl": "https://astutegraphics.com",
     "ogImageUrl": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
     "host_app": "adobe-illustrator",
+    "substitution_cluster_v2": "plugin-illustrator",
     "functional_needs": [
       "illustration-vectorielle",
       "design-tools"
@@ -2565,6 +2615,7 @@
     "ogImageUrl": "https://a.storyblok.com/f/234930/1900x1000/c2028529da/og-default.jpeg",
     "logo": "https://logo.clearbit.com/attio.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -2665,6 +2716,7 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://auphonic.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/auphonic.jpg",
+    "substitution_cluster_v2": "ai-audio-enhancement",
     "functional_needs": [
       "audio-cleanup",
       "audio-mastering",
@@ -2700,6 +2752,7 @@
     "defaultMonthlyPrice": 13,
     "websiteUrl": "https://www.ausha.co",
     "ogImageUrl": "https://img.ausha.co/cb:-U1P~1ddd7/w:auto/h:auto/q:mauto/f:best/https://www.ausha.co/wp-content/uploads/2022/09/Ausha-1.jpg",
+    "substitution_cluster_v2": "podcast-hosting",
     "functional_needs": [
       "analytics-podcast",
       "creator-workflow",
@@ -2763,6 +2816,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/6526c17b5fa3bc01030d024f/657b752236bb1b5c792e57b3_OpenGraphimg.png",
     "logo": "https://logo.clearbit.com/authoredup.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "linkedin-content-tools",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -2864,6 +2918,7 @@
     "affiliateLink": "https://www.autodesk.com/products/autocad-lt/overview",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/5JQTMWprZssXEdZRW6a1rI/49a52243189ea79c924d805260d44934/autocad-lt-dcn-hero-banner-1920x1080.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "dessin-technique",
       "documentation",
@@ -2952,6 +3007,7 @@
     "compareMonthlyPrice": 10,
     "affiliateLink": "https://auvik.com",
     "ogImageUrl": "https://www.auvik.com/wp-content/uploads/2023/07/site-image.jpg",
+    "substitution_cluster_v2": "network-monitoring",
     "functional_needs": [
       "it-management"
     ],
@@ -3008,6 +3064,10 @@
     "substitution_cluster_v2": "design-handoff",
     "functional_needs": [
       "design-collaboration"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
     ],
     "relevantFor": [
       "designer",
@@ -3123,6 +3183,7 @@
     "ogImageUrl": "https://www.axept.io/hubfs/axeptio-og-fr.jpg",
     "logo": "https://logo.clearbit.com/axeptio.eu",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "consent-management-platform",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -3155,6 +3216,7 @@
     "ogImageUrl": "https://axonaut.com/assets/home/images/axonaut-crm-francais-simple-abordable.jpg",
     "logo": "https://logo.clearbit.com/axonaut.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "erp-sync",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -3218,6 +3280,10 @@
     "functional_needs": [
       "prototyping",
       "wireframing"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
     ],
     "relevantFor": [
       "Product Managers",
@@ -3397,6 +3463,7 @@
     "defaultMonthlyPrice": 12,
     "websiteUrl": "https://www.beautiful.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/59deb588800ae30001ec19c9/679345319c7f2f3d2301228b_Open%20Graph_final.jpg",
+    "substitution_cluster_v2": "presentation-software",
     "functional_needs": [
       "ai-general",
       "mise-en-page",
@@ -3592,6 +3659,7 @@
     "ogImageUrl": "https://billo.app/wp-content/uploads/2023/04/billo-logo.svg",
     "logo": "https://logo.clearbit.com/billo.app",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ugc-influencer-marketing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -3881,6 +3949,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://bolt.eu/business",
     "ogImageUrl": "https://bolt.eu/assets/og-img.jpg",
+    "substitution_cluster_v2": "fleet-management",
     "functional_needs": [
       "fleet-management"
     ],
@@ -3946,6 +4015,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://boompop.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/69a5c7e6ea7c2b056a4c8bb8/69e7be9327a6aadf2bab58fd_735dba0479354e7677da18525b927ccb_open-graph-event-planning.webp",
+    "substitution_cluster_v2": "event-management",
     "functional_needs": [
       "event-management"
     ],
@@ -4032,6 +4102,7 @@
     "ogImageUrl": "https://stylebase.ai/wp-content/uploads/2023/01/Featured-Image-Home.png",
     "logo": "https://logo.clearbit.com/brandkits.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "design-system-tooling",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -4131,6 +4202,10 @@
       "brand-identity",
       "logo-creation"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "graphiste-da"
+    ],
     "relevantFor": [
       "Startups",
       "Side projects",
@@ -4156,6 +4231,7 @@
     "defaultMonthlyPrice": 30,
     "websiteUrl": "https://brandpad.io",
     "ogImageUrl": "https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009",
+    "substitution_cluster_v2": "design-system-tooling",
     "functional_needs": [
       "asset-library",
       "brand-guidelines",
@@ -4319,6 +4395,7 @@
     "defaultMonthlyPrice": 99,
     "websiteUrl": "https://browzwear.com",
     "ogImageUrl": "https://browzwear.com/hubfs/home_featured.jpg",
+    "substitution_cluster_v2": "3d-fashion-simulation",
     "functional_needs": [
       "3d",
       "modelisation-3d",
@@ -4349,6 +4426,7 @@
     "ogImageUrl": "https://meta-q.cdn.bubble.io/cdn-cgi/image/w=,h=,f=auto,dpr=1,fit=contain/f1762463484754x595287411041153000/Bubbleio%20opengraph.png",
     "logo": "https://logo.clearbit.com/bubble.io",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "website-app-builder",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -4606,6 +4684,7 @@
     "defaultMonthlyPrice": 300,
     "websiteUrl": "https://www.bynder.com",
     "ogImageUrl": "https://www.bynder.com/transform/7ee5a4fb-1f58-4940-8a3b-daeca99676ba/meta-default.jpg?io=transform:fit,width:1200&amp;quality=75&amp;focuspoint=0.5,0.5",
+    "substitution_cluster_v2": "dam",
     "functional_needs": [
       "collaboration",
       "branding",
@@ -4883,6 +4962,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-ai.jpg",
     "tool_type": "ia",
     "bundle_parent": "canva-pro",
+    "substitution_cluster_v2": "ai-image-enhancement",
     "functional_needs": [
       "generation-image",
       "ai-general",
@@ -5114,6 +5194,7 @@
     "ogImageUrl": "https://www.captaincontrat.com/hubfs/logo-captaincontrat-4.png",
     "logo": "https://logo.clearbit.com/captaincontrat.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "legal-contracts",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -5167,6 +5248,7 @@
     "ogImageUrl": "https://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg",
     "logo": "https://logo.clearbit.com/captiontools.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-transcription-editing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -5195,6 +5277,7 @@
     "ogImageUrl": "https://captions.ai/mrkt-static/captions-og-image.png",
     "logo": "https://logo.clearbit.com/captions.ai",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-transcription-editing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -5299,6 +5382,10 @@
       "link-page",
       "portfolio"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "relevantFor": [
       "Freelances",
       "Créateurs solo",
@@ -5357,6 +5444,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/causal.jpg",
     "logo": "https://logo.clearbit.com/causal.app",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "fpa-financial-modeling",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -5386,6 +5474,7 @@
     "defaultMonthlyPrice": 20,
     "websiteUrl": "https://cavalry.scenegroup.co",
     "ogImageUrl": "https://cavalry.studio/assets/images/og-image.png",
+    "substitution_cluster_v2": "motion-compositing",
     "functional_needs": [
       "animation",
       "animation-2d-3d",
@@ -5455,6 +5544,10 @@
       "design-system",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Startups web",
@@ -5511,6 +5604,10 @@
     "functional_needs": [
       "charting"
     ],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "relevantFor": [
       "Développeurs frontend",
       "Analystes",
@@ -5537,6 +5634,7 @@
     "ogImageUrl": "https://chartmogul.com/-/layouts/base/share-image.png",
     "logo": "https://logo.clearbit.com/chartmogul.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "saas-revenue-analytics",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -5803,6 +5901,7 @@
     "ogImageUrl": "https://www.cision.com/content/dam/cision-revamp/cision-optimized/global-assets/logo-cision-dark-lg.jpg",
     "logo": "https://logo.clearbit.com/cision.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "pr-media-monitoring",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -5867,6 +5966,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/61477f2c24a826836f969afe/6a3ab15061812432ead96f56_Clay_Homepage_og-image%201000.png",
     "logo": "https://logo.clearbit.com/clay.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "sales-prospecting-data",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -5896,6 +5996,7 @@
     "affiliateLink": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/cleanup3.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -5924,6 +6025,7 @@
     "websiteUrl": "https://cleanvoice.ai",
     "ogImageUrl": "https://cleanvoice.ai/assets/figma-home/multitrack.jpg",
     "tool_type": "ia",
+    "substitution_cluster_v2": "ai-audio-enhancement",
     "functional_needs": [
       "transcription",
       "montage-audio",
@@ -6123,6 +6225,10 @@
       "repurposing",
       "video-clipping"
     ],
+    "verticals": [
+      "createur-contenu",
+      "motion-video"
+    ],
     "relevantFor": [
       "Créateurs de contenu",
       "Podcasteurs vidéo",
@@ -6148,6 +6254,7 @@
     "defaultMonthlyPrice": 50,
     "websiteUrl": "https://www.clo3d.com",
     "ogImageUrl": "https://cdn.clo3d.com/resource/images/meta/open-graph-clo3d.jpg",
+    "substitution_cluster_v2": "3d-fashion-simulation",
     "functional_needs": [
       "3d",
       "modelisation-3d",
@@ -6504,6 +6611,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/condeco.jpg",
     "logo": "https://logo.clearbit.com/condecosoftware.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "workplace-management",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -6923,6 +7031,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/coupa.jpg",
     "logo": "https://logo.clearbit.com/coupa.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "procurement-spend-management",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -6954,6 +7063,7 @@
     "ogImageUrl": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
     "logo": "https://logo.clearbit.com/coupler.io",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "data-integration-etl",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -7011,6 +7121,10 @@
     "functional_needs": [
       "data-extraction",
       "web-scraping"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
     ],
     "relevantFor": [
       "Développeurs",
@@ -7071,6 +7185,10 @@
     "functional_needs": [
       "build-tooling"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React débutants",
       "Prototypeurs",
@@ -7097,6 +7215,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/creatoriq.jpg",
     "logo": "https://logo.clearbit.com/creatoriq.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ugc-influencer-marketing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -7221,6 +7340,7 @@
     "ogImageUrl": "https://assets.crowdstrike.com/is/image/crowdstrikeinc/WebShareDefaultImage",
     "logo": "https://logo.clearbit.com/crowdstrike.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "endpoint-security",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -7312,6 +7432,7 @@
     "affiliateLink": "https://sketchucation.com/pluginstore",
     "ogImageUrl": "https://pluginrepo.sketchucation.com/image/Curviloft.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -7340,6 +7461,7 @@
     "ogImageUrl": "https://cdn.sanity.io/images/onirtmj2/production/10390db7c2394eae65523bbaafced08666b75189-1200x630.png?rect=0,1,1200,628&amp;w=1200&amp;h=628&amp;fit=crop&amp;auto=format",
     "logo": "https://logo.clearbit.com/customer.io",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "marketing-automation",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -7441,6 +7563,10 @@
     "functional_needs": [
       "data-visualization"
     ],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "relevantFor": [
       "Data scientists",
       "Journalistes de données",
@@ -7467,6 +7593,7 @@
     "affiliateLink": "https://www.d5render.com",
     "ogImageUrl": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346.webp",
     "tool_type": "metier",
+    "substitution_cluster_v2": "3d-render-engine",
     "functional_needs": [
       "rendu-3d",
       "temps-reel"
@@ -7571,6 +7698,10 @@
     "functional_needs": [
       "project-management"
     ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "relevantFor": [
       "Équipes tech",
       "Startups",
@@ -7654,6 +7785,7 @@
     },
     "websiteUrl": "https://www.datawrapper.de",
     "ogImageUrl": "https://www.datawrapper.de/img/website/social-sharing-image.png",
+    "substitution_cluster_v2": "editorial-dataviz",
     "functional_needs": [
       "charting",
       "data-visualization",
@@ -7984,6 +8116,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/descript-ai.jpg",
     "logo": "https://logo.clearbit.com/descriptai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-transcription-editing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -8044,6 +8177,7 @@
     "compareMonthlyPrice": 10,
     "affiliateLink": "https://desktopready.com",
     "ogImageUrl": "https://www.anunta.com/wp-content/uploads/2024/02/DesktopReady_banner2-scaled.jpg",
+    "substitution_cluster_v2": "managed-cloud-desktop",
     "functional_needs": [
       "virtual-desktop"
     ],
@@ -8106,6 +8240,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/6669c8e8dad8d17885f7aa3a/6a3a87a613063e76ffc77ddc_6a26d7ef92960cc23b31d39a_ABOUT-DDM-CONSOLE_2x.webp",
     "logo": "https://logo.clearbit.com/didomi.io",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "consent-management-platform",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -8408,6 +8543,10 @@
       "portfolio",
       "website-builder"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "relevantFor": [
       "Freelances",
       "PME",
@@ -8464,6 +8603,7 @@
     "defaultMonthlyPrice": 29,
     "websiteUrl": "https://dovetail.com",
     "ogImageUrl": "/media/Social_Meta1.png",
+    "substitution_cluster_v2": "user-research-platform",
     "functional_needs": [
       "analytics",
       "tests-utilisateurs"
@@ -8497,6 +8637,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/dovetail-ai.jpg",
     "logo": "https://logo.clearbit.com/dovetailai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "user-research-platform",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -8558,6 +8699,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/drata.jpg",
     "logo": "https://logo.clearbit.com/drata.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "security-compliance",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -8824,6 +8966,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://eagle.cool",
     "ogImageUrl": "https://r2-web.eagle.cool/media/home-feature-eagle.png",
+    "substitution_cluster_v2": "dam",
     "functional_needs": [
       "organization"
     ],
@@ -8914,6 +9057,10 @@
     "functional_needs": [
       "charting",
       "data-visualization"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
     ],
     "relevantFor": [
       "Développeurs frontend",
@@ -9085,6 +9232,7 @@
     "ogImageUrl": "https://images.ctfassets.net/h50kqpe25yx1/2naK2vxCxvk8XOjh5Y912s/64528847ddd64655ed2f9ae464074b85/home.jpg",
     "logo": "https://logo.clearbit.com/elgato.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "streaming-hardware",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -9117,6 +9265,7 @@
     "ogImageUrl": "https://images.ctfassets.net/h50kqpe25yx1/7Cwo01eNtXbhr1fsum2248/28c5f862966fa0c48353d3a80ff33c99/Stream-Deck-Social-Graph.jpg",
     "logo": "https://logo.clearbit.com/elgatostreamdeck.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "streaming-hardware",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -9244,6 +9393,10 @@
       "css-in-js",
       "styling"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Frontend engineers",
@@ -9269,6 +9422,7 @@
     "affiliateLink": "https://extensions.sketchup.com",
     "ogImageUrl": "https://img.youtube.com/vi/ajRGCnNya74/maxresdefault.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -9332,6 +9486,7 @@
     "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/og-default-724bad6c9010550aa8e3.jpg",
     "logo": "https://logo.clearbit.com/envato.com",
     "bundle_parent": "envato-elements",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "asset-marketplace",
       "creative-licensing",
@@ -9366,6 +9521,7 @@
     "affiliateLink": "https://elements.envato.com",
     "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/audio.compressed-11d9cee9c59e9605c2cf.avif",
     "logo": "https://logo.clearbit.com/elements.envato.com",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "asset-library",
       "creative-licensing",
@@ -9402,6 +9558,7 @@
     "defaultMonthlyPrice": 13,
     "websiteUrl": "https://www.epidemicsound.com",
     "ogImageUrl": "https://www.epidemicsound.com/staticfiles/legacy/20/images/epidemic-sound-logo-square.png",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "music-licensing",
       "sfx",
@@ -9433,6 +9590,7 @@
     "defaultMonthlyPrice": 99,
     "websiteUrl": "https://www.esko.com/en/products/studio",
     "ogImageUrl": "https://www.esko.com/static/uploads/2024/01/hero_image.webp",
+    "substitution_cluster_v2": "packaging-design-software",
     "functional_needs": [
       "3d",
       "design-tools",
@@ -9518,6 +9676,7 @@
     },
     "websiteUrl": "https://www.eventbrite.com",
     "ogImageUrl": "https://cdn.evbstatic.com/s3-build/perm_001/6ce389/django/images/logos/eb_orange_on_white_1200x630.png",
+    "substitution_cluster_v2": "event-management",
     "functional_needs": [
       "project-management"
     ],
@@ -9549,6 +9708,7 @@
     "compareMonthlyPrice": 5,
     "websiteUrl": "https://excalidraw.com",
     "ogImageUrl": "https://excalidraw.com/og-image-3.png",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "brainstorming",
       "diagramming",
@@ -9772,6 +9932,10 @@
       "privacy-analytics",
       "web-analytics"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Web developers",
       "Privacy-focused businesses",
@@ -9801,6 +9965,7 @@
     "ogImageUrl": "https://s1.feedly.com/images/fx/og/threat-intelligence-5-26.png",
     "logo": "https://logo.clearbit.com/feedly.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "rss-reader",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -9883,6 +10048,7 @@
     "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/8b99a61f768555fab9a11deccc60639cbe74695b-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,1165,260,260&w=256&h=256&fit=crop&auto=format",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "brief",
       "collaboration",
@@ -9957,6 +10123,7 @@
     "tool_type": "ia",
     "host_app": "figma",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "ai-app-builder",
     "functional_needs": [
       "prototyping",
       "generation-code",
@@ -9990,6 +10157,7 @@
     "tool_type": "metier",
     "host_app": "figma",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "figma-feature-suite",
     "functional_needs": [
       "website-builder",
       "ui-design",
@@ -10024,6 +10192,7 @@
     "tool_type": "metier",
     "host_app": "figma",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "figma-feature-suite",
     "functional_needs": [
       "brand-assets",
       "content-production",
@@ -10058,6 +10227,7 @@
     "tool_type": "metier",
     "host_app": "figma",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "figma-feature-suite",
     "functional_needs": [
       "design-handoff",
       "inspection-code",
@@ -10091,6 +10261,7 @@
     "tool_type": "metier",
     "host_app": "figma",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "figma-feature-suite",
     "functional_needs": [
       "illustration",
       "vector-design",
@@ -10123,6 +10294,7 @@
     "tool_type": "metier",
     "host_app": "figma",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "figma-feature-suite",
     "functional_needs": [
       "animation",
       "motion-design",
@@ -10155,6 +10327,7 @@
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=650,1165,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "metier",
     "bundle_parent": "figma",
+    "substitution_cluster_v2": "figma-feature-suite",
     "functional_needs": [
       "design-tools"
     ],
@@ -10315,6 +10488,7 @@
     "pricing": "Achat unique de ~300€, pas d'abonnement mensuel.",
     "websiteUrl": "https://apple.com/final-cut-pro",
     "ogImageUrl": "https://www.apple.com/v/final-cut-pro/w/images/meta/final_cut__cumj84xteas2_og.png?202603241546",
+    "substitution_cluster_v2": "video-editing-software",
     "functional_needs": [
       "montage-video",
       "creation",
@@ -10471,6 +10645,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/fiverr.jpg",
     "logo": "https://logo.clearbit.com/fiverr.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "freelance-marketplace",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -10563,6 +10738,7 @@
     "affiliateLink": "https://flextools.cc",
     "ogImageUrl": "https://flextools.cc/wp-content/uploads/2025/11/FlexTools_Pro_01_300.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -10591,6 +10767,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/67a24537fa82ef534146a29d_104d4d983d47ec9445c20d452789cde9_homepage-meta-img_2025.png",
     "logo": "https://logo.clearbit.com/float.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "resource-management",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -10619,6 +10796,7 @@
     },
     "websiteUrl": "https://flourish.studio",
     "ogImageUrl": "https://flourish.studio/images/generic-meta-tag.png",
+    "substitution_cluster_v2": "editorial-dataviz",
     "functional_needs": [
       "data-visualization",
       "charting",
@@ -10937,6 +11115,7 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://fontba.se",
     "ogImageUrl": "https://fontba.se/social/main.png",
+    "substitution_cluster_v2": "font-manager",
     "functional_needs": [
       "assets",
       "creative-assets",
@@ -11029,6 +11208,10 @@
     "functional_needs": [
       "forms",
       "validation"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs React",
@@ -11136,6 +11319,10 @@
       "prototyping",
       "website-builder"
     ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "relevantFor": [
       "designer",
       "freelancer",
@@ -11196,6 +11383,7 @@
     "defaultMonthlyPrice": 15,
     "websiteUrl": "https://www.frase.io",
     "ogImageUrl": "https://www.frase.io/api/og?title=Rank+on+Google.&amp;titleGreen=Get+cited+by+AI.&amp;sub=Frase+runs+the+whole+content+loop%3A+research%2C+write%2C+optimize%2C+publish%2C+and+monitor.&amp;pills=SEO%2CGEO%2CAI+Visibility",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "seo",
       "analytics",
@@ -11230,6 +11418,7 @@
     "affiliateLink": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "ogImageUrl": "/og-screenshots/fredo6-bundle.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -11257,6 +11446,7 @@
     "affiliateLink": "https://sketchucation.com/pluginstore",
     "ogImageUrl": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Summary_Tool.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -11314,6 +11504,7 @@
     "ogImageUrl": "https://dam.freshworks.com/asset/aac3abf3-7dca-4397-b868-c29415ecebaa/ex-lp-og-image.webp",
     "logo": "https://logo.clearbit.com/freshworks.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "itsm-helpdesk",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -11373,6 +11564,7 @@
     "defaultMonthlyPrice": 70,
     "websiteUrl": "https://www.autodesk.com/products/fusion-360/overview",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/7cubXgLsTdlFLouyd2X4Vs/c12e1a3fa9a58107fb5bf41835183909/fusion-2027-banner-1920x1080-v4.jpg",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "3d",
       "dessin-technique",
@@ -11471,6 +11663,7 @@
     "affiliateLink": "https://try.gamma.app/bu5hfvmiagd8",
     "websiteUrl": "https://gamma.app",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma.jpg",
+    "substitution_cluster_v2": "presentation-software",
     "functional_needs": [
       "content-generation",
       "design-tools",
@@ -11509,6 +11702,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma-ai.jpg",
     "logo": "https://logo.clearbit.com/gammaai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "presentation-software",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -11626,6 +11820,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gempages.jpg",
     "logo": "https://logo.clearbit.com/gempages.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "landing-page-builders",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -11655,6 +11850,7 @@
     "defaultMonthlyPrice": 8,
     "websiteUrl": "https://genially.com",
     "ogImageUrl": "https://assets.genially.com/s3fs-public/images/genially.com_.png",
+    "substitution_cluster_v2": "learning-platform",
     "functional_needs": [
       "creation-cours",
       "presentation-client",
@@ -11813,6 +12009,7 @@
     "ogImageUrl": "https://giphy.com/static/img/giphy-be-animated-logo.gif",
     "logo": "https://logo.clearbit.com/giphy.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -12087,6 +12284,7 @@
     "logo": "https://logo.clearbit.com/gmail.com",
     "tool_type": "specialise",
     "bundle_parent": "google-workspace",
+    "substitution_cluster_v2": "email-hosting",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -12149,6 +12347,7 @@
     "ogImageUrl": "https://gocardless.com/content-platform/static/816e9048c2a134da3e79b8677556ad0f/f8482/og-full.png",
     "logo": "https://logo.clearbit.com/gocardless.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "checkout-platforms",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -12210,6 +12409,7 @@
     "ogImageUrl": "https://cdn.sanity.io/images/ww20clc6/production/e5b5bf0e084b83ad6b6607c10f026a91a4cfc1f3-2400x1256.png",
     "logo": "https://logo.clearbit.com/gong.io",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "revenue-intelligence",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -12294,6 +12494,7 @@
     },
     "websiteUrl": "https://analytics.google.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ga4.jpg",
+    "substitution_cluster_v2": "analytics",
     "verticals": [
       "creative"
     ],
@@ -12443,6 +12644,7 @@
     },
     "websiteUrl": "https://www.google.com/earth/studio/",
     "ogImageUrl": "https://www.google.com/earth/studio/assets/static/images/social.jpg",
+    "substitution_cluster_v2": "motion-compositing",
     "functional_needs": [
       "animation",
       "generation-video",
@@ -12473,6 +12675,7 @@
     "ogImageUrl": "https://maps.google.com/maps/api/staticmap?center=43.5355648%2C5.4657024&amp;zoom=14&amp;size=900x900&amp;language=en&amp;sensor=false&amp;key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&amp;signature=R_TIultUYRsEt1fU1H_iRC5Yhyk",
     "logo": "https://logo.clearbit.com/googlemaps.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "mapping-api",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -12505,6 +12708,7 @@
     "logo": "https://logo.clearbit.com/googlemeet.com",
     "tool_type": "specialise",
     "bundle_parent": "google-workspace",
+    "substitution_cluster_v2": "team-communication",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -12561,6 +12765,7 @@
     "pricing": "Gratuit, aucun plan payant.",
     "websiteUrl": "https://search.google.com/search-console/about",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-search-console.jpg",
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "seo",
       "web-analytics",
@@ -12620,6 +12825,7 @@
     "websiteUrl": "https://docs.google.com/presentation",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-slides.jpg",
     "bundle_parent": "google-workspace",
+    "substitution_cluster_v2": "presentation-software",
     "functional_needs": [
       "presentation-client",
       "templates",
@@ -12765,6 +12971,7 @@
     },
     "websiteUrl": "https://grabcad.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/grabcad.jpg",
+    "substitution_cluster_v2": "cad-library",
     "functional_needs": [
       "collaboration",
       "modelisation-3d",
@@ -12932,6 +13139,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/6668a687e71e2722fccb8357/6838cce6a2c87094baa9dfd6_Web-Home-SEO-clusters-of-three-workflows-with-photos-of-people-working-together-and-UI.png",
     "logo": "https://logo.clearbit.com/greenhouse.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "applicant-tracking-system",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -12962,6 +13170,7 @@
     "ogImageUrl": "https://images.prismic.io/greenly/aMFZEGGNHVfTO_De_ThumbnailhomeGreenly.png?auto=format,compress",
     "logo": "https://logo.clearbit.com/greenly.earth",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "esg-carbon-reporting",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -12993,6 +13202,10 @@
     "substitution_cluster_v2": "animation-library",
     "functional_needs": [
       "animation"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "motion-video"
     ],
     "relevantFor": [
       "Frontend engineers",
@@ -13069,6 +13282,7 @@
     },
     "websiteUrl": "https://gsap.com",
     "ogImageUrl": "https://gsap.com/GSAP-share-image.png",
+    "substitution_cluster_v2": "animation-library",
     "functional_needs": [
       "animation-web",
       "frontend-framework",
@@ -13133,6 +13347,10 @@
       "focus",
       "planning",
       "task-management"
+    ],
+    "verticals": [
+      "business-ops",
+      "coach-formateur"
     ],
     "relevantFor": [
       "Teams support",
@@ -13283,6 +13501,7 @@
     "defaultMonthlyPrice": 12,
     "websiteUrl": "https://www.getharvest.com",
     "ogImageUrl": "https://www.getharvest.com/hubfs/featured-image-home%20(1).png",
+    "substitution_cluster_v2": "time-tracking",
     "functional_needs": [
       "time-tracking",
       "facturation",
@@ -13348,6 +13567,10 @@
     "functional_needs": [
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Frontend engineers",
@@ -13371,6 +13594,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/headliner.jpg",
     "logo": "https://logo.clearbit.com/headliner.app",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "video-repurposing",
     "functional_needs": [
       "content-repurposing",
       "creator-workflow",
@@ -13461,6 +13685,7 @@
     "ogImageUrl": "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F4Rbim8xrCA6BCte94E1xnZ%2F6085a0847d360320af712ff86a342307%2Fhome--meta.jpg?ixlib=gatsbySourceUrl-2.1.3&amp;auto=format%2C%20compress&amp;q=75&amp;s=0aba9a73fb57c247551a2df98f436358",
     "logo": "https://logo.clearbit.com/helpscout.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "customer-support",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -13660,6 +13885,10 @@
     "functional_needs": [
       "charting",
       "data-visualization"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
     ],
     "relevantFor": [
       "Développeurs SaaS",
@@ -13941,6 +14170,7 @@
     "compareMonthlyPrice": 7.59,
     "websiteUrl": "https://hugeicons.com",
     "ogImageUrl": "https://hugeicons.com/og_preview.png",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "assets",
       "creative-assets",
@@ -14137,6 +14367,7 @@
     "affiliateLink": "https://icons8.com",
     "ogImageUrl": "https://icons8.com/vue-static/landings/primary-landings/preview_icons8.png",
     "logo": "https://logo.clearbit.com/icons8.com",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "design-resources",
       "icons",
@@ -14268,6 +14499,7 @@
     "ogImageUrl": "https://impact.com/wp-content/uploads/2022/04/impact-logo-square.jpg",
     "logo": "https://logo.clearbit.com/impact.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "affiliate-partnership-management",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -14302,6 +14534,10 @@
       "creation",
       "lead-generation",
       "seo"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
     ],
     "relevantFor": [
       "freelance",
@@ -14486,6 +14722,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/633308aadb76cf62fdcd1362/69ea0e60b4004074f9ecdb6a_Insense%20.png",
     "logo": "https://logo.clearbit.com/insense.pro",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ugc-influencer-marketing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -14573,6 +14810,7 @@
     },
     "websiteUrl": "https://www.instagram.com",
     "ogImageUrl": "https://static.cdninstagram.com/rsrc.php/v4/yD/r/R0fBIMurK8v.png",
+    "substitution_cluster_v2": "social-network",
     "functional_needs": [
       "social-media"
     ],
@@ -14605,6 +14843,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/63860c8c65e7bef4a1eeebeb/69bbbe355f4fdb68458b987d_Banner%20(1)%20(1).webp",
     "logo": "https://logo.clearbit.com/instantly.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -14731,6 +14970,10 @@
     "functional_needs": [
       "design-collaboration",
       "prototyping"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
     ],
     "relevantFor": [
       "designer",
@@ -15035,6 +15278,7 @@
     "affiliateLink": "https://sketchucation.com/pluginstore",
     "ogImageUrl": "https://pluginrepo.sketchucation.com/image/JointPushPull/JointPushPull_Summary_of_Tools.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -15097,6 +15341,10 @@
     "functional_needs": [
       "dom-manipulation"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs legacy",
       "Petits projets",
@@ -15120,6 +15368,7 @@
     "ogImageUrl": "https://framerusercontent.com/assets/3nUMjfjekVFLnxccSGqCnKJY8.png",
     "logo": "https://logo.clearbit.com/judgeme.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "shopify-review-apps",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -15336,6 +15585,7 @@
     "compareMonthlyPrice": 10,
     "affiliateLink": "https://keeptruckin.com",
     "ogImageUrl": "https://gomotive.com/wp-content/uploads/2022/04/Social-Share-Image.png",
+    "substitution_cluster_v2": "fleet-management",
     "functional_needs": [
       "fleet-management"
     ],
@@ -15397,6 +15647,7 @@
     },
     "websiteUrl": "https://www.apple.com/keynote/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/keynote.jpg",
+    "substitution_cluster_v2": "presentation-software",
     "functional_needs": [
       "mise-en-page",
       "presentation-client",
@@ -15631,6 +15882,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/kling.jpg",
     "logo": "https://logo.clearbit.com/kling.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-video-generation",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -15705,6 +15957,10 @@
     "substitution_cluster_v2": "ui-framework",
     "functional_needs": [
       "legacy-web"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs legacy",
@@ -16114,6 +16370,7 @@
     "defaultMonthlyPrice": 5,
     "websiteUrl": "https://languagetool.org",
     "ogImageUrl": "https://languagetool.org/images/social/og_image.jpg",
+    "substitution_cluster_v2": "grammar-correction-tools",
     "functional_needs": [
       "redaction",
       "assistant-generaliste"
@@ -16251,6 +16508,7 @@
     "ogImageUrl": "https://images.ctfassets.net/yd21npj2ir9g/8aeb1ef28387073bd4e98a/278789ba2ee27aadfb03b1a0ec87448b/2026-layout-interface.png",
     "host_app": "sketchup-pro",
     "bundle_parent": "sketchup-pro",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "document-delivery",
       "plans-2d",
@@ -16412,6 +16670,7 @@
     "ogImageUrl": "https://www.legalplace.fr/wp-content/uploads/2025/12/legalplace-creation-gestion-societe-og.png",
     "logo": "https://logo.clearbit.com/legalplace.fr",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "legal-contracts",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -16735,6 +16994,7 @@
     "ogImageUrl": "https://www.lightroompresets.com/cdn/shop/files/1200x628ppa_1200x.jpg?v=1588801656",
     "logo": "https://logo.clearbit.com/lightroommobile.com",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "photo-editor",
     "functional_needs": [
       "exports-photo",
       "photo-presets",
@@ -16860,6 +17120,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/63e15df811f9df22b231e58f/69a20da89a23a65ce1b211c3_Lindy%20OG.jpg",
     "logo": "https://logo.clearbit.com/lindy.ai",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-agent-builder",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -16981,6 +17242,7 @@
     "ogImageUrl": "https://linkwhisper.com/wp-content/uploads/2022/09/399194cf-0265-44e1-a7e9-08f43069dbf4-1a.webp",
     "logo": "https://logo.clearbit.com/linkwhisper.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -17012,6 +17274,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/linkedin.jpg",
     "logo": "https://logo.clearbit.com/linkedin.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-network",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -17045,6 +17308,7 @@
     "ogImageUrl": "https://delivery-p143253-e1476319.adobeaemcloud.com/adobe/assets/urn:aaid:aem:83e6a64d-9e07-406d-b348-8e1a415f9fc6/as/LTS-hero-hire-social-share.jpg",
     "logo": "https://logo.clearbit.com/business.linkedin.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "recruiting-sourcing",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -17073,6 +17337,7 @@
     "ogImageUrl": "https://linktr.ee/_marketing/og/linktree-default.jpg",
     "logo": "https://logo.clearbit.com/linktr.ee",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "bio-link-pages",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -17220,6 +17485,7 @@
     },
     "websiteUrl": "https://www.apple.com/logic-pro/",
     "ogImageUrl": "https://www.apple.com/v/logic-pro/n/images/meta/logic_pro__bwh8nhmy69jm_og.png?202603241546",
+    "substitution_cluster_v2": "audio-daw",
     "functional_needs": [
       "audio",
       "enregistrement-multipistes",
@@ -17379,6 +17645,7 @@
     "defaultMonthlyPrice": 25,
     "websiteUrl": "https://www.lookback.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lookback.jpg",
+    "substitution_cluster_v2": "user-research-platform",
     "functional_needs": [
       "tests-utilisateurs",
       "analytics"
@@ -17541,6 +17808,7 @@
     "affiliateLink": "https://loox.com",
     "logo": "https://logo.clearbit.com/loox.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "shopify-review-apps",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -17574,6 +17842,10 @@
     "functional_needs": [
       "animation"
     ],
+    "verticals": [
+      "dev-freelance",
+      "motion-video"
+    ],
     "relevantFor": [
       "Motion designers",
       "Animateurs",
@@ -17597,6 +17869,7 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://lottiefiles.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lottiefiles.jpg",
+    "substitution_cluster_v2": "animation-library",
     "functional_needs": [
       "animation-web",
       "handoff-dev",
@@ -17668,6 +17941,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ltk.jpg",
     "logo": "https://logo.clearbit.com/ltk.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "bio-link-pages",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -17759,6 +18033,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lucidchart.jpg",
     "logo": "https://logo.clearbit.com/lucidchart.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "diagramming-tools",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -17957,6 +18232,7 @@
     "defaultMonthlyPrice": 45,
     "websiteUrl": "https://madmapper.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/madmapper.jpg",
+    "substitution_cluster_v2": "motion-compositing",
     "functional_needs": [
       "effets-visuels",
       "animation",
@@ -18057,6 +18333,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/62fc85d2d02ef37f2cc7f83e/66c59d7d6c63ffa4c1b20ca6_OG.jpg",
     "logo": "https://logo.clearbit.com/magicbrief.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "design-inspiration-search",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -18086,6 +18363,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.jpg",
     "logo": "https://logo.clearbit.com/magnific.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-image-enhancement",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -18185,6 +18463,7 @@
     "ogImageUrl": "https://www.mailerlite.com/img/containers/assets/SEO/homepage-meta.jpg/a271969696ccb718c1a26ea27c86ef53.jpg",
     "logo": "https://logo.clearbit.com/mailerlite.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "email-marketing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -18374,6 +18653,10 @@
       "design-system",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "SaaS",
       "Admin panels",
@@ -18426,6 +18709,7 @@
     },
     "websiteUrl": "https://www.mapbox.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6050a76fa6a633d5d54ae714/6a3eb9c605068d6b1c91dbb6_home_og-image.jpg",
+    "substitution_cluster_v2": "mapping-api",
     "functional_needs": [
       "analytics",
       "data-visualization"
@@ -18497,6 +18781,7 @@
     "websiteUrl": "https://marmoset.co/toolbag/",
     "ogImageUrl": "https://marmoset.co/wp-content/uploads/2024/09/Texture-thumbnail-02.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "rendu-3d"
     ],
@@ -18592,6 +18877,10 @@
     "functional_needs": [
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "dev-mobile"
     ],
@@ -18618,6 +18907,10 @@
       "design-system",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Équipes produit",
@@ -18643,6 +18936,7 @@
     "ogImageUrl": "https://d3fe4umbwqdrlj.cloudfront.net/global/Maven_SocialShare_2026.jpg",
     "logo": "https://logo.clearbit.com/maven.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "learning-platform",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -18875,6 +19169,7 @@
     "ogImageUrl": "https://images.prismic.io/meltwater-site/afOxjsBOoF08xhUD_meta-1200x600-2.png?auto=format,compress&amp;rect=0,0,2500,1250&amp;w=1200&amp;h=600",
     "logo": "https://logo.clearbit.com/meltwater.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "pr-media-monitoring",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -18947,6 +19242,7 @@
     "ogImageUrl": "https://sanity-assets.memberful.com/images/dvnoujul/production/da7e702ea14237c984060bd203186f101bc4d8b4-2400x1260.jpg?w=1200&amp;h=630&amp;fit=crop&amp;auto=format",
     "logo": "https://logo.clearbit.com/memberful.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "membership-platform",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -18976,6 +19272,7 @@
     "defaultMonthlyPrice": 29,
     "websiteUrl": "https://www.memberstack.com",
     "ogImageUrl": "https://www.memberstack.com/images/og/home.png",
+    "substitution_cluster_v2": "membership-platform",
     "functional_needs": [
       "app-builder",
       "nocode-web"
@@ -19069,6 +19366,7 @@
     "ogImageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&amp;ab_page=CMS&amp;ab_entry=797459857892055&amp;version=1782606481&amp;transcode_extension=webp",
     "logo": "https://logo.clearbit.com/facebook.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ad-platforms",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -19163,6 +19461,7 @@
     "shortDescriptionEn": "Social media analytics and scheduling.",
     "websiteUrl": "https://metricool.com",
     "ogImageUrl": "https://metricool.com/wp-content/uploads/home-image-1.png",
+    "substitution_cluster_v2": "social-media-scheduler",
     "functional_needs": [
       "analytics-reseaux",
       "analytics",
@@ -19294,6 +19593,7 @@
     "ogImageUrl": "https://clarity.microsoft.com/static/Facebook_og_image.png",
     "logo": "https://logo.clearbit.com/clarity.microsoft.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -19325,6 +19625,7 @@
     "affiliateLink": "https://microsoft.com/security/business/microsoft-defender",
     "logo": "https://logo.clearbit.com/microsoft.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "endpoint-security",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -19446,6 +19747,7 @@
     "defaultMonthlyPrice": 7,
     "websiteUrl": "https://www.microsoft.com/microsoft-365/excel",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/excel.jpg",
+    "substitution_cluster_v2": "spreadsheet-software",
     "functional_needs": [
       "analytics",
       "charting",
@@ -19478,6 +19780,7 @@
     "defaultMonthlyPrice": 7,
     "websiteUrl": "https://www.microsoft.com/microsoft-365/powerpoint",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/powerpoint.jpg",
+    "substitution_cluster_v2": "presentation-software",
     "functional_needs": [
       "presentation-client",
       "templates",
@@ -19609,6 +19912,7 @@
     "compareMonthlyPrice": 8,
     "websiteUrl": "https://milanote.com",
     "ogImageUrl": "https://images.milanote.com/milanote%2Feb461c66-1c77-4e5c-9372-5ac7bb556ee7_milanote-share-preview.png?auto=format,compress",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "brief",
       "documentation",
@@ -19647,6 +19951,7 @@
     "compareMonthlyPrice": 8,
     "websiteUrl": "https://miro.com",
     "ogImageUrl": "https://framerusercontent.com/assets/Bab0War93Jeq5MpDPwqKFiyI.png",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "collaboration",
       "brainstorming",
@@ -19680,6 +19985,7 @@
     "ogImageUrl": "https://framerusercontent.com/assets/KHyJwfBzTDm8CBtgWokK94nAuQ.png",
     "logo": "https://logo.clearbit.com/mixpanel.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -19791,6 +20097,7 @@
     "ogImageUrl": "https://framerusercontent.com/assets/oYMF2sDPDefmvfGcyOWJA95NGU.jpg",
     "logo": "https://logo.clearbit.com/mojo.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-story-templates",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -19846,6 +20153,7 @@
     "compareMonthlyPrice": 8.28,
     "websiteUrl": "https://monday.com",
     "ogImageUrl": "https://s3.amazonaws.com/general-assets/monday-1200x628.png",
+    "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "collaboration",
       "crm",
@@ -19910,6 +20218,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/moobot.jpg",
     "logo": "https://logo.clearbit.com/moobot.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "twitch-chatbots",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -19938,6 +20247,7 @@
     },
     "websiteUrl": "https://moodle.org",
     "ogImageUrl": "https://moodle.org/theme/moodleorg/pix/moodle_logo_tm.png",
+    "substitution_cluster_v2": "learning-platform",
     "functional_needs": [
       "lms",
       "creation-cours",
@@ -20060,6 +20370,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion.jpg",
     "logo": "https://logo.clearbit.com/motion.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-planning",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -20088,6 +20399,7 @@
     "websiteUrl": "https://motionarray.com/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-array.jpg",
     "logo": "https://logo.clearbit.com/motionarray.com",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "creative-licensing",
       "motion-assets",
@@ -20221,6 +20533,7 @@
     "affiliateLink": "https://get.murf.ai/bo0qgxuctslr",
     "websiteUrl": "https://murf.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/66b3765153a8a0c399c70981/670584e2dab709883eed3793_Home.webp",
+    "substitution_cluster_v2": "ai-voice-generation",
     "functional_needs": [
       "generation-audio",
       "localization",
@@ -20394,6 +20707,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://navan.com",
     "ogImageUrl": "https://images.ctfassets.net/r49k2skuorjz/6FIv7ITxTTSkfATgwmVUN6/d991df51e415434ccd32ca0c609a6a3d/Share-image.webp",
+    "substitution_cluster_v2": "expense-management",
     "functional_needs": [
       "travel-management"
     ],
@@ -20722,6 +21036,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/nightbot.jpg",
     "logo": "https://logo.clearbit.com/nightbot.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "twitch-chatbots",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -20873,6 +21188,7 @@
     "defaultMonthlyPrice": 90,
     "websiteUrl": "https://www.notch.one",
     "ogImageUrl": "https://www.notch.one/uploads/general/01-Home/_1200x630_crop_center-center_82_none/WORKSPACE_HYGIENE-6_SENSORS-INTERACTIVITY.png?mtime=1739437171",
+    "substitution_cluster_v2": "motion-compositing",
     "functional_needs": [
       "motion-design",
       "effets-visuels",
@@ -21017,6 +21333,7 @@
     "affiliateLink": "https://nounproject.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/noun-project.jpg",
     "logo": "https://logo.clearbit.com/nounproject.com",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "design-resources",
       "iconographie",
@@ -21146,6 +21463,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/obs.jpg",
     "logo": "https://logo.clearbit.com/obsproject.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "screen-recording",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -21447,6 +21765,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/openai.jpg",
     "logo": "https://logo.clearbit.com/openai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-generalist",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -21539,6 +21858,7 @@
     },
     "websiteUrl": "https://www.opencutlist.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/open-cut-list.jpg",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup",
       "design-tools"
@@ -21603,6 +21923,7 @@
     "ogImageUrl": "https://images3.cmp.optimizely.com/Zz1hOTU5MjFjNDY5MWYxMWYxOTU5NmZlODFjZDBjMWExMg==?width=1200",
     "logo": "https://logo.clearbit.com/optimizely.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ab-testing-platform",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -21634,6 +21955,7 @@
     "websiteUrl": "https://www.opus.pro",
     "ogImageUrl": "https://cdn.prod.website-files.com/6388604483b03a9ecb34d695/6893fad68d6058a917d7f3c6_mainpage_thumbnail.jpg",
     "tool_type": "ia",
+    "substitution_cluster_v2": "video-repurposing",
     "functional_needs": [
       "content-repurposing",
       "creation",
@@ -21665,6 +21987,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/6388604483b03a9ecb34d695/6893fad68d6058a917d7f3c6_mainpage_thumbnail.jpg",
     "logo": "https://logo.clearbit.com/opus.pro",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "video-repurposing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -21727,6 +22050,10 @@
     "functional_needs": [
       "prototyping"
     ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "relevantFor": [
       "Designers interactions",
       "Prototypeurs apps mobiles",
@@ -21750,6 +22077,7 @@
     "ogImageUrl": "https://img1.wsimg.com/isteam/getty/1353151862",
     "logo": "https://logo.clearbit.com/otter.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-note-taking",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -22095,6 +22423,7 @@
     "defaultMonthlyPrice": 29,
     "websiteUrl": "https://www.pacdora.com",
     "ogImageUrl": "https://cdn.pacdora.com/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
+    "substitution_cluster_v2": "packaging-design-software",
     "functional_needs": [
       "3d",
       "design-tools",
@@ -22192,6 +22521,10 @@
       "conversion-optimization",
       "landing-page"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "dev-freelance"
+    ],
     "relevantFor": [
       "startup",
       "agency",
@@ -22245,6 +22578,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pagefly.jpg",
     "logo": "https://logo.clearbit.com/pagefly.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "landing-page-builders",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -22340,6 +22674,7 @@
     "ogImageUrl": "https://images.ctfassets.net/a4zep9yar86b/6y6NJJSllr8cJIZsgfVTN/a02b34f7f5e91eaa89c8594d10c25a69/Color7-11.png",
     "logo": "https://logo.clearbit.com/pandadoc.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "esignature",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -22399,6 +22734,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/655381e691678a2583615d93/6a32ec0b289b94fcd2014367_PS-Homepage-Meta_v1.jpg",
     "logo": "https://logo.clearbit.com/partnerstack.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "affiliate-partnership-management",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -22457,6 +22793,7 @@
     "ogImageUrl": "https://c14.patreon.com/OG_share_eaad746d69.jpg",
     "logo": "https://logo.clearbit.com/patreon.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "membership-platform",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -22825,6 +23162,7 @@
     },
     "websiteUrl": "https://www.perforce.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/perforce.jpg",
+    "substitution_cluster_v2": "version-control-large-files",
     "functional_needs": [
       "devops",
       "collaboration-dev",
@@ -23062,6 +23400,10 @@
       "asset-management",
       "dam"
     ],
+    "verticals": [
+      "graphiste-da",
+      "business-ops"
+    ],
     "relevantFor": [
       "Équipes Google Workspace",
       "Organisations S3",
@@ -23224,6 +23566,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://www.pinterest.com",
     "ogImageUrl": "https://s.pinimg.com/images/facebook_share_image.png",
+    "substitution_cluster_v2": "design-inspiration-search",
     "functional_needs": [
       "creation"
     ],
@@ -23508,6 +23851,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/planoly.jpg",
     "logo": "https://logo.clearbit.com/planoly.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-media-scheduler",
     "functional_needs": [
       "analytics-reseaux",
       "creator-workflow",
@@ -23544,6 +23888,7 @@
     "defaultMonthlyPrice": 12,
     "websiteUrl": "https://www.plasticity.xyz",
     "ogImageUrl": "https://plasticity.xyz/og-image.jpg",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "3d",
       "design-visuel",
@@ -23744,6 +24089,7 @@
     "websiteUrl": "https://async.com",
     "ogImageUrl": "https://m.async.com/home-page/ads.webp",
     "tool_type": "ia",
+    "substitution_cluster_v2": "ai-transcription-editing",
     "functional_needs": [
       "creation",
       "transcription",
@@ -23977,6 +24323,7 @@
     "defaultMonthlyPrice": 10,
     "websiteUrl": "https://powerbi.microsoft.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/power-bi.jpg",
+    "substitution_cluster_v2": "business-intelligence",
     "functional_needs": [
       "data-visualization",
       "dashboards",
@@ -24010,6 +24357,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/power-user.jpg",
     "logo": "https://logo.clearbit.com/poweruser.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -24043,6 +24391,10 @@
       "frontend-framework",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs performant-first",
       "Applications PWA",
@@ -24066,6 +24418,7 @@
     "logo": "https://logo.clearbit.com/premiererush.com",
     "tool_type": "specialise",
     "bundle_parent": "adobe-creative-cloud",
+    "substitution_cluster_v2": "video-editing-software",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -24154,6 +24507,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pretty-links.jpg",
     "logo": "https://logo.clearbit.com/prettylinks.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "affiliate-link-management",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -24306,6 +24660,7 @@
     "defaultMonthlyPrice": 30,
     "websiteUrl": "https://www.avid.com/pro-tools",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pro-tools.jpg",
+    "substitution_cluster_v2": "audio-daw",
     "functional_needs": [
       "audio",
       "enregistrement-multipistes",
@@ -24400,6 +24755,7 @@
     "websiteUrl": "https://procreate.com",
     "ogImageUrl": "https://procreate-assets-cdn.procreate.com/_nuxt/default_en.rxoU7ubg.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "digital-illustration",
     "functional_needs": [
       "concept-art",
       "creation",
@@ -24433,6 +24789,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/product-hunt.jpg",
     "logo": "https://logo.clearbit.com/producthunt.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "product-discovery-platform",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -24535,6 +24892,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/69273e1d1bd1fcfcff2fe0d4/69724044686ecf3c6b20e7c1_og-productive-product-2.png",
     "logo": "https://logo.clearbit.com/productive.io",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -24566,6 +24924,7 @@
     "affiliateLink": "https://profilebuilder4sketchup.com",
     "ogImageUrl": "https://i.ytimg.com/vi/8dBg3jJzccs/maxresdefault.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -24594,6 +24953,7 @@
     "ogImageUrl": "https://images.prismic.io/paddle/Z9gwpziBA97GijeQ_paddle-merchant-of-record-og.png?auto=format,compress&amp;rect=0,20,1200,591&amp;w=1280&amp;h=630",
     "logo": "https://logo.clearbit.com/profitwell.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "saas-revenue-analytics",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -24624,6 +24984,7 @@
     "compareMonthlyPrice": 49,
     "affiliateLink": "https://programa.design",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/programa.jpg",
+    "substitution_cluster_v2": "interior-design-sourcing",
     "functional_needs": [
       "project-management"
     ],
@@ -24744,6 +25105,10 @@
       "file-proofing",
       "project-management"
     ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "relevantFor": [
       "Agences créatives",
       "Studios de design",
@@ -24836,6 +25201,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/prowly.jpg",
     "logo": "https://logo.clearbit.com/prowly.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "pr-media-monitoring",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -24898,6 +25264,10 @@
     "functional_needs": [
       "prototyping"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs web",
       "Étudiants",
@@ -24918,6 +25288,7 @@
     "shortDescriptionEn": "Social media scheduling and analytics.",
     "websiteUrl": "https://publer.io",
     "ogImageUrl": "https://framerusercontent.com/assets/20xDElBhD9Xg3L7Cx7jVMwL56FU.png",
+    "substitution_cluster_v2": "social-media-scheduler",
     "functional_needs": [
       "analytics-reseaux",
       "planification-posts",
@@ -24946,6 +25317,7 @@
     },
     "websiteUrl": "https://www.pureref.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pure-ref.jpg",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "brief",
       "concept-art",
@@ -25105,6 +25477,7 @@
     },
     "websiteUrl": "https://qgis.org",
     "ogImageUrl": "https://qgis.org/img/QGIScover.png",
+    "substitution_cluster_v2": "gis-software",
     "functional_needs": [
       "analytics",
       "data-visualization"
@@ -25378,6 +25751,7 @@
     },
     "websiteUrl": "https://quixel.com/megascans",
     "ogImageUrl": "https://cdn.quixel.com/quixel/thumbs/page-thumb-quixel.jpg",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "assets-3d"
     ],
@@ -25412,6 +25786,10 @@
     "functional_needs": [
       "design-system",
       "ui-components"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Design systems",
@@ -25525,6 +25903,7 @@
     "ogImageUrl": "https://rankmath.com/wp-content/uploads/2021/12/Rank-Math.png",
     "logo": "https://logo.clearbit.com/rankmath.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -25622,6 +26001,10 @@
       "frontend-framework",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Startups tech",
       "Agences web",
@@ -25651,6 +26034,10 @@
     "functional_needs": [
       "forms",
       "validation"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs React",
@@ -25711,6 +26098,10 @@
       "data-fetching",
       "state-management"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Applications SaaS",
@@ -25741,6 +26132,10 @@
     "functional_needs": [
       "routing"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Applications SPA",
@@ -25768,6 +26163,7 @@
     "ogImageUrl": "https://d34adp677peecb.cloudfront.net/static/images/readwisecard.058019f9f4b1.jpg",
     "logo": "https://logo.clearbit.com/readwise.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "read-later-tools",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -25795,6 +26191,7 @@
       "paid": "À partir de 16$/mois"
     },
     "defaultMonthlyPrice": 16,
+    "substitution_cluster_v2": "website-builder",
     "functional_needs": [
       "design-tools",
       "animation-web",
@@ -25897,6 +26294,10 @@
     "functional_needs": [
       "charting"
     ],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "relevantFor": [
       "Développeurs React",
       "Data analysts (code-first)",
@@ -25981,6 +26382,7 @@
     "affiliateLink": "https://go.reclaim.ai/vl7x78i6mn0n",
     "websiteUrl": "https://reclaim.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/5ec848ec2b50b6cfae06f6cc/65e2563b7c0658aed71828ac_open_graph_final.png",
+    "substitution_cluster_v2": "ai-planning",
     "functional_needs": [
       "calendar",
       "focus-time",
@@ -26226,6 +26628,10 @@
       "data-fetching",
       "graphql"
     ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "relevantFor": [
       "Équipes React expertes",
       "Applications GraphQL complexes",
@@ -26251,6 +26657,7 @@
     "ogImageUrl": "https://cdn.relevanceai.com/images/og-image.webp",
     "logo": "https://logo.clearbit.com/relevanceai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-agent-builder",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -26280,6 +26687,7 @@
     "defaultMonthlyPrice": 32,
     "websiteUrl": "https://www.relume.io",
     "ogImageUrl": "https://www.relume.io/__assets/6177739448baa66404ce1d9c/65b756c9cebba152b52fccc8_Opengraph%20-%20Home%20for%20Twitter.jpg",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "prototyping",
       "templates",
@@ -26313,6 +26721,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/relume-ai.jpg",
     "logo": "https://logo.clearbit.com/relumeai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "prototyping",
       "sitemap",
@@ -26544,6 +26953,7 @@
     "affiliateLink": "https://repurposeio.com",
     "logo": "https://logo.clearbit.com/repurposeio.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "video-repurposing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -26603,6 +27013,7 @@
     "defaultMonthlyPrice": 40,
     "websiteUrl": "https://resolume.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/resolume.jpg",
+    "substitution_cluster_v2": "motion-compositing",
     "functional_needs": [
       "animation",
       "effets-visuels",
@@ -26789,6 +27200,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/65dd0e80788a2f545d95cd65/66ba66fac368a7f1695a8de0_rev_link_preview.webp",
     "logo": "https://logo.clearbit.com/rev.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-transcription-editing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -26914,6 +27326,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/6041705a8ccb775007a2e651/6499638ac5eecec5b374a7d2_Rewardful-home-page.png",
     "logo": "https://logo.clearbit.com/rewardful.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "affiliate-partnership-management",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -26967,6 +27380,7 @@
     "affiliateLink": "https://www.rhino3d.com",
     "ogImageUrl": "https://www.rhino3d.com/en/features/shrinkwrap/thumbnail_hu10919497186582654094.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "modelisation-3d"
     ],
@@ -27000,6 +27414,7 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://rightfontapp.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/rightfont.jpg",
+    "substitution_cluster_v2": "font-manager",
     "functional_needs": [
       "assets",
       "creative-assets",
@@ -27210,6 +27625,10 @@
       "contract-management",
       "legal-documents"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "consultant-b2b"
+    ],
     "relevantFor": [
       "Entrepreneurs US/UK",
       "Petites entreprises anglo-saxonnes",
@@ -27361,6 +27780,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://ruby.com",
     "ogImageUrl": "https://www.ruby.com/wp-content/uploads/2026/03/desktop_ai-version_header.png",
+    "substitution_cluster_v2": "business-phone",
     "functional_needs": [
       "virtual-receptionist"
     ],
@@ -27458,6 +27878,7 @@
     "ogImageUrl": "https://safetyculture.com/shared/safetyculture-og-image.jpg",
     "logo": "https://logo.clearbit.com/safetyculture.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "safety-inspection-platform",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -27673,6 +28094,10 @@
       "checkout",
       "upsell"
     ],
+    "verticals": [
+      "creator-economy",
+      "fondateur-saas"
+    ],
     "relevantFor": [
       "Créateurs de formations",
       "Éditeurs de produits numériques",
@@ -27701,6 +28126,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/62da4fdaa14b85540e41e74c/6a38f3785224b51b6ffee9d1_Capture%20d%27%C3%A9cran%202026-06-22%20102826.png",
     "logo": "https://logo.clearbit.com/sami.eco",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "esg-carbon-reporting",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -28015,6 +28441,7 @@
     "compareMonthlyPrice": 8.28,
     "websiteUrl": "https://screen.studio",
     "ogImageUrl": "https://screen.studio/og-main-2.png",
+    "substitution_cluster_v2": "screen-recording",
     "functional_needs": [
       "screen-recording",
       "video-creation",
@@ -28050,6 +28477,10 @@
       "creation-cours",
       "documentation",
       "screen-capture"
+    ],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
     ],
     "relevantFor": [
       "Créateurs de contenu Mac",
@@ -28139,6 +28570,7 @@
     "affiliateLink": "https://get.seamless.ai/j4xyra5zowrh",
     "websiteUrl": "https://seamless.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/62226180d38a78472cd35dd2/698a4de6ea5c3c3eaa59b2d5_2026-01_Open-Graph_Generic_Dark.png",
+    "substitution_cluster_v2": "sales-prospecting-data",
     "functional_needs": [
       "b2b-data",
       "email-finder",
@@ -28490,6 +28922,10 @@
       "content-optimization",
       "seo"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "relevantFor": [
       "Fondateurs SaaS",
       "Équipes marketing B2B",
@@ -28522,6 +28958,10 @@
     "functional_needs": [
       "design-system",
       "ui-components"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs React",
@@ -28606,6 +29046,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shield.jpg",
     "logo": "https://logo.clearbit.com/shieldapp.ai",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -28876,6 +29317,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shopmy.jpg",
     "logo": "https://logo.clearbit.com/shopmy.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "bio-link-pages",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -28905,6 +29347,7 @@
     "ogImageUrl": "https://shortpixel.com/img/bighead.jpg",
     "logo": "https://logo.clearbit.com/shortpixel.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "wordpress-performance-plugins",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -28934,6 +29377,7 @@
     "defaultMonthlyPrice": 13,
     "websiteUrl": "https://shotdeck.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shotdeck.jpg",
+    "substitution_cluster_v2": "design-inspiration-search",
     "functional_needs": [
       "branding",
       "color-grading",
@@ -29066,6 +29510,10 @@
       "privacy-analytics",
       "web-analytics"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Éditeurs web",
       "Agences privacy-first",
@@ -29153,6 +29601,7 @@
     "ogImageUrl": "https://design8.com/wp-content/uploads/2024/05/skatter-feature-life.jpg",
     "tool_type": "plugin",
     "host_app": "sketchup-pro",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -29310,6 +29759,7 @@
     },
     "websiteUrl": "https://www.slido.com",
     "ogImageUrl": "https://www.slido.com/_next/static/media/index.d7c1f01c.jpg",
+    "substitution_cluster_v2": "polls-qa-tools",
     "functional_needs": [
       "brainstorming",
       "tests-utilisateurs"
@@ -29343,6 +29793,7 @@
     "ogImageUrl": "https://www.smartsheet.com/sites/default/files/2024-10/smartsheet-og-teaser-image-dusk-on-light.jpg",
     "logo": "https://logo.clearbit.com/smartsheet.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -29458,6 +29909,7 @@
     "ogImageUrl": "https://snipeitapp.com/img/desktop_snipe.png",
     "logo": "https://logo.clearbit.com/snipeitapp.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "it-asset-management",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -29702,6 +30154,7 @@
     "affiliateLink": "https://extensions.sketchup.com/en/content/solid-inspector",
     "ogImageUrl": "https://i0.wp.com/www.thomthom.net/thoughts/wp-content/uploads/2014/12/UI-Example.png?resize=976%2C564",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -29733,6 +30186,10 @@
       "frontend-framework",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs performance-first",
       "Entreprises",
@@ -29756,6 +30213,7 @@
     "defaultMonthlyPrice": 250,
     "websiteUrl": "https://www.solidworks.com",
     "ogImageUrl": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2026-02/solidworks-AI-companions-battlebots-video-cover.jpg.webp?itok=lnj4ssfA",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "modelisation-3d",
       "3d",
@@ -29787,6 +30245,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://spaceiq.com",
     "ogImageUrl": "https://eptura.com/wp-content/uploads/2021/08/reliability-centered-maintenance-2.webp",
+    "substitution_cluster_v2": "workplace-management",
     "functional_needs": [
       "workplace-management"
     ],
@@ -29813,6 +30272,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/6278ffab9cf6e95f0162ea8e/657b916e91979871c64b2828_network-meta-image.jpg",
     "logo": "https://logo.clearbit.com/sparkloop.app",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "newsletter-growth",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -29841,6 +30301,7 @@
     },
     "websiteUrl": "https://specifyapp.com",
     "ogImageUrl": "https://framerusercontent.com/images/Mf3WhKlT44JPgm014wOOq9AHI4.png",
+    "substitution_cluster_v2": "design-system-tooling",
     "verticals": [
       "creative"
     ],
@@ -29910,6 +30371,10 @@
       "prototype-3d",
       "web-animation"
     ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "relevantFor": [
       "Designers web",
       "Équipes produit",
@@ -29934,6 +30399,7 @@
     },
     "websiteUrl": "https://podcasters.spotify.com",
     "ogImageUrl": "https://microfrontend-nonhosted-cdn.spotifycdn.com/images/social-thumbnail.png",
+    "substitution_cluster_v2": "podcast-hosting",
     "functional_needs": [
       "analytics-podcast",
       "creator-workflow",
@@ -30164,6 +30630,7 @@
     "ogImageUrl": "https://assets.stanwith.me/graphics/stan-url-preview.jpg",
     "logo": "https://logo.clearbit.com/stan.store",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "bio-link-pages",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -30320,6 +30787,7 @@
     "affiliateLink": "https://storyblocks.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/storyblocks.jpg",
     "logo": "https://logo.clearbit.com/storyblocks.com",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "creative-licensing",
       "stock-audio",
@@ -30356,6 +30824,10 @@
       "design-system",
       "ui-testing"
     ],
+    "verticals": [
+      "dev-freelance",
+      "ux-ui"
+    ],
     "relevantFor": [
       "Équipes frontend",
       "Design system teams",
@@ -30381,6 +30853,7 @@
     "ogImageUrl": "https://storyluxe.com/assets/social.png",
     "logo": "https://logo.clearbit.com/storyluxe.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-story-templates",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -30443,6 +30916,7 @@
     "ogImageUrl": "https://cdn.streamelements.com/assets/homepage/og/main.jpg",
     "logo": "https://logo.clearbit.com/streamelements.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "streaming-overlay-software",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -30502,6 +30976,7 @@
     "ogImageUrl": "https://cdn.streamlabs.com/static/imgs/marketing-pages/home.png",
     "logo": "https://logo.clearbit.com/streamlabs.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "streaming-overlay-software",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -30572,6 +31047,10 @@
       "css-in-js",
       "styling"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Équipes React",
       "Applications dynamiques",
@@ -30596,6 +31075,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/6469e2294ac68c3d5caea327/67582fde54b44b92ce325aa3_Submagic%20-%20Link%20Thumbnail%402x.png",
     "logo": "https://logo.clearbit.com/submagic.co",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-transcription-editing",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -30876,6 +31356,10 @@
       "code-review",
       "documentation"
     ],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
+    ],
     "relevantFor": [
       "Développeurs front-end",
       "Designers web",
@@ -30969,6 +31453,7 @@
     "ogImageUrl": "https://cdn.sanity.io/images/8ly2m84z/production-2025/eee7774699fe786de151ef9785e5392dc2da9d5a-3840x2160.png",
     "logo": "https://logo.clearbit.com/supermetrics.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "data-integration-etl",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -31027,6 +31512,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/surfer-ai.jpg",
     "logo": "https://logo.clearbit.com/surferai.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -31056,6 +31542,7 @@
     "defaultMonthlyPrice": 89,
     "websiteUrl": "https://surferseo.com",
     "ogImageUrl": "https://marketing-assets.surferseo.art/wf-cdn/62666115cfab458794bd512f/6a1d9411dd14b078c94328eb_4fafb0f70a45b96e9a7c000f89edfa37_surfer-3-og.jpeg",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "seo",
       "analytics",
@@ -31155,6 +31642,10 @@
       "frontend-framework",
       "ui-components"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Développeurs cherchant l'innovation",
       "Freelancers",
@@ -31182,6 +31673,7 @@
     "ogImageUrl": "/_astro/og_image_social_ZQPNrx.webp",
     "logo": "https://logo.clearbit.com/sweep.net",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "esg-carbon-reporting",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -31216,6 +31708,10 @@
     "functional_needs": [
       "analytics"
     ],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
+    ],
     "relevantFor": [
       "Agences digitales",
       "Lead generators",
@@ -31241,6 +31737,7 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://sysaid.com",
     "ogImageUrl": "https://cdn.sysaid.com/wp-content/uploads/sysaid-logo-blogs.png",
+    "substitution_cluster_v2": "itsm-helpdesk",
     "functional_needs": [
       "it-service-management"
     ],
@@ -31267,6 +31764,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/systeme-io.jpg",
     "logo": "https://logo.clearbit.com/systeme.io",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "checkout-platforms",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -31296,6 +31794,7 @@
     "defaultMonthlyPrice": 75,
     "websiteUrl": "https://www.tableau.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tableau.jpg",
+    "substitution_cluster_v2": "business-intelligence",
     "functional_needs": [
       "data-visualization",
       "dashboards",
@@ -31327,6 +31826,7 @@
     "ogImageUrl": "https://tablepress.org/wp-content/uploads/2026/06/tablepress-card.png",
     "logo": "https://logo.clearbit.com/tablepress.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "wordpress-plugins",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -31465,6 +31965,10 @@
     "functional_needs": [
       "routing"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Équipes TypeScript",
       "Startups",
@@ -31488,6 +31992,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/taplio.jpg",
     "logo": "https://logo.clearbit.com/taplio.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "linkedin-content-tools",
     "functional_needs": [
       "analytics-reseaux",
       "content-generation",
@@ -31646,6 +32151,7 @@
     "defaultMonthlyPrice": 49,
     "websiteUrl": "https://techpacker.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/techpacker.jpg",
+    "substitution_cluster_v2": "fashion-tech-packs",
     "functional_needs": [
       "project-management",
       "documentation"
@@ -31679,6 +32185,7 @@
     "ogImageUrl": "https://cdn.prod.website-files.com/62ee672fdd39ff45cfee8820/62f23f2aeafac5426e52e4a8_Screenshot%202022-08-09%20at%2013.01%201.png",
     "logo": "https://logo.clearbit.com/teleprompter.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "teleprompter-apps",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -31833,6 +32340,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tenor.jpg",
     "logo": "https://logo.clearbit.com/tenor.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -31895,6 +32403,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tezza.jpg",
     "logo": "https://logo.clearbit.com/tezza.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-story-templates",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -31986,6 +32495,7 @@
     "ogImageUrl": "https://thirstyaffiliates.com/wp-content/uploads/2018/08/ta-logo.png",
     "logo": "https://logo.clearbit.com/thirstyaffiliates.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "affiliate-link-management",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -32077,6 +32587,7 @@
     "ogImageUrl": "https://storage.googleapis.com/gpt-engineer-file-uploads/49cdxNi1aDXXyTY0oGi34nZe2kB2/social-images/social-1775842330750-Screenshot_(20).webp",
     "logo": "https://logo.clearbit.com/thrivecart.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "checkout-platforms",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -32192,6 +32703,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok.jpg",
     "logo": "https://logo.clearbit.com/tiktok.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-network",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -32220,6 +32732,7 @@
     "ogImageUrl": "https://lf-tt4b.tiktokcdn.com/obj/i18nblog/tt4b_cms/en-US/tipdilz7wysq-srIVh0sEyaoSgFa9SKZFU.png",
     "logo": "https://logo.clearbit.com/ads.tiktok.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ad-platforms",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -32249,6 +32762,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok-studio.jpg",
     "logo": "https://logo.clearbit.com/tiktok.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-network",
     "functional_needs": [
       "content-repurposing",
       "creator-workflow",
@@ -32474,6 +32988,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/topaz.jpg",
     "logo": "https://logo.clearbit.com/topaz.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-image-enhancement",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -32573,6 +33088,7 @@
     "defaultMonthlyPrice": 25,
     "websiteUrl": "https://www.topazlabs.com/topaz-video-ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp",
+    "substitution_cluster_v2": "ai-video-enhancement",
     "verticals": [
       "creative"
     ],
@@ -32627,6 +33143,7 @@
     },
     "websiteUrl": "https://derivative.ca",
     "ogImageUrl": "https://derivative-devforum-backups.s3.us-east-2.amazonaws.com/static/manifest512.png",
+    "substitution_cluster_v2": "motion-compositing",
     "functional_needs": [
       "animation",
       "temps-reel",
@@ -32657,6 +33174,7 @@
     "ogImageUrl": "https://s.tradingview.com/static/images/illustrations/main-page.jpg",
     "logo": "https://logo.clearbit.com/tradingview.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "trading-charting",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -32685,6 +33203,7 @@
     "ogImageUrl": "https://file.trainerize.com/assets/tz/common-assets/images/abc-trainerize-social-image.jpg",
     "logo": "https://logo.clearbit.com/trainerize.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "fitness-coaching-apps",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -32753,6 +33272,7 @@
     "affiliateLink": "https://transmutr.com",
     "ogImageUrl": "https://i.ytimg.com/vi/I73SLyJQG60/maxresdefault.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "plugin-sketchup",
     "functional_needs": [
       "plugin-sketchup"
     ],
@@ -32883,6 +33403,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/triple-whale.jpg",
     "logo": "https://logo.clearbit.com/triplewhale.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ecommerce-analytics",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -32945,6 +33466,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/truecoach.jpg",
     "logo": "https://logo.clearbit.com/truecoach.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "fitness-coaching-apps",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -33002,6 +33524,7 @@
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
     "logo": "https://logo.clearbit.com/tubebuddy.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -33097,6 +33620,7 @@
     "affiliateLink": "https://www.twinmotion.com",
     "ogImageUrl": "/og-screenshots/twinmotion.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "3d-render-engine",
     "functional_needs": [
       "rendu-3d",
       "temps-reel"
@@ -33132,6 +33656,7 @@
     "ogImageUrl": "https://static-cdn.jtvnw.net/ttv-static-metadata/twitch_logo3.jpg",
     "logo": "https://logo.clearbit.com/twitch.tv",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-network",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -33164,6 +33689,7 @@
     "ogImageUrl": "https://static-cdn.jtvnw.net/ttv-static-metadata/twitch_logo3.jpg",
     "logo": "https://logo.clearbit.com/twitch.tv",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "screen-recording",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -33198,6 +33724,10 @@
       "blog",
       "landing-page",
       "website-builder"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Créateurs solo",
@@ -33503,6 +34033,7 @@
     "ogImageUrl": "https://static1.squarespace.com/static/5e3ae1048e80ab4164765fae/t/5e6e61748afded74f5455b6c/1584292215045/futurebelongs.jpg?format=1500w",
     "logo": "https://logo.clearbit.com/unfold.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-story-templates",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -33563,6 +34094,7 @@
     },
     "websiteUrl": "https://unity.com",
     "ogImageUrl": "https://cdn.sanity.io/images/fuvbjjlp/production/9a58ef0b0a39424aaf70dd4c30539b477ae54697-1200x630.png",
+    "substitution_cluster_v2": "real-time-3d",
     "functional_needs": [
       "creation",
       "3d",
@@ -33687,6 +34219,7 @@
     "ogImageUrl": "https://www.usertesting.com/sites/default/files/usertestingv3/2024-10/IMAGE-meta-social-global-usertesting-1600x900.png?width=1200&amp;height=628",
     "logo": "https://logo.clearbit.com/usertesting.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "user-research-platform",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -33779,6 +34312,7 @@
     "affiliateLink": "https://www.chaos.com/vray",
     "ogImageUrl": "https://static.chaos.com/images/assets/000/025/178/image/benefit-v-ray-archviz-award-winning-1140x770.png?1779737136",
     "tool_type": "metier",
+    "substitution_cluster_v2": "3d-render-engine",
     "functional_needs": [
       "rendu-3d"
     ],
@@ -33813,6 +34347,7 @@
     "websiteUrl": "https://v0.dev",
     "ogImageUrl": "https://v0.app/chat/api/og",
     "tool_type": "ia",
+    "substitution_cluster_v2": "ai-app-builder",
     "functional_needs": [
       "ai-general",
       "creator-workflow",
@@ -33909,6 +34444,7 @@
     "defaultMonthlyPrice": 153,
     "websiteUrl": "https://www.vectorworks.net",
     "ogImageUrl": "/og-screenshots/vectorworks.jpg",
+    "substitution_cluster_v2": "3d-software",
     "functional_needs": [
       "3d",
       "architecture",
@@ -34115,6 +34651,7 @@
     "ogImageUrl": "https://www.vidyard.com/wp-content/uploads/Website-Sharing-3-1-1.jpg",
     "logo": "https://logo.clearbit.com/vidyard.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "business-video-hosting",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -34177,6 +34714,10 @@
     "functional_needs": [
       "prototyping",
       "wireframing"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
     ],
     "relevantFor": [
       "Product managers",
@@ -34358,6 +34899,10 @@
       "transcription",
       "voice-dictation"
     ],
+    "verticals": [
+      "dev-freelance",
+      "createur-contenu"
+    ],
     "relevantFor": [
       "Founders",
       "Writers",
@@ -34419,6 +34964,10 @@
       "build-tooling",
       "frontend-framework"
     ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "relevantFor": [
       "Projets Vue existants",
       "Équipes établies",
@@ -34445,6 +34994,10 @@
     "substitution_cluster_v2": "vue-routing",
     "functional_needs": [
       "routing"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs Vue",
@@ -34473,6 +35026,7 @@
     "ogImageUrl": "https://static.wingify.com/gcp/uploads/2023/07/feature-image-vwo-homepage-min.jpg",
     "logo": "https://logo.clearbit.com/vwo.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "ab-testing-platform",
     "functional_needs": [
       "consulting-workflow"
     ],
@@ -34769,6 +35323,7 @@
     "ogImageUrl": "https://weezevent.com/opengraph.jpg",
     "logo": "https://logo.clearbit.com/weezevent.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "event-management",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -34798,6 +35353,7 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://wetransfer.com",
     "ogImageUrl": "/wt-facebook.png",
+    "substitution_cluster_v2": "file-transfer",
     "functional_needs": [
       "collaboration"
     ],
@@ -34833,6 +35389,7 @@
     "defaultMonthlyPrice": 39,
     "websiteUrl": "https://www.whalesync.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6683792e42237a5f054af942/68a7936c224c6e9781e20342_generic-og.png",
+    "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
       "workflows",
@@ -34863,6 +35420,7 @@
     "ogImageUrl": "https://whatsappbusiness.com/wp-content/uploads/2026/04/whatsapp-logo.jpg",
     "logo": "https://logo.clearbit.com/whatsappbusiness.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "business-messaging",
     "functional_needs": [
       "operations-workflow"
     ],
@@ -34894,6 +35452,7 @@
     "compareMonthlyPrice": 9.2,
     "websiteUrl": "https://whimsical.com",
     "ogImageUrl": "https://whimsical.com/_next_public/cards/default.png",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "collaboration",
       "diagramming",
@@ -35020,6 +35579,7 @@
     "ogImageUrl": "https://images.ctfassets.net/buksmp4dkugj/iE7tNEpx71bpM630sHTxD/17d9755ecd7bbd53a99e9c606877e22b/Home-MetaImage.jpg?w=1200&amp;h=630&amp;fit=fill&amp;fl=progressive",
     "logo": "https://logo.clearbit.com/wistia.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "business-video-hosting",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -35085,6 +35645,10 @@
       "api-integration",
       "security",
       "webflow-logic"
+    ],
+    "verticals": [
+      "developpeur-solo",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Utilisateurs Webflow avancés",
@@ -35544,6 +36108,7 @@
     "ogImageUrl": "https://abs.twimg.com/rweb/ssr/default/v2/og/image.png",
     "logo": "https://logo.clearbit.com/x.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-network",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -35639,6 +36204,7 @@
     "ogImageUrl": "https://yoast.com/app/uploads/2026/05/yoast_og_2026.png",
     "logo": "https://logo.clearbit.com/yoast.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -35672,6 +36238,10 @@
     "functional_needs": [
       "form-builder"
     ],
+    "verticals": [
+      "fondateur-saas",
+      "business-ops"
+    ],
     "relevantFor": [
       "Startups lean",
       "Freelances",
@@ -35701,6 +36271,7 @@
     "affiliateLink": "https://yousign.com",
     "ogImageUrl": "https://yousign.com/og-image-facebook-en.png",
     "tool_type": "gestion",
+    "substitution_cluster_v2": "esignature",
     "functional_needs": [
       "legal-contracts"
     ],
@@ -35758,6 +36329,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/youtube-studio.jpg",
     "logo": "https://logo.clearbit.com/studio.youtube.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "social-network",
     "functional_needs": [
       "creator-workflow",
       "monetisation-video",
@@ -35930,6 +36502,7 @@
     "ogImageUrl": "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/img/parallel-agents/sidebar.webp",
     "logo": "/logos/zed.svg",
     "tool_type": "core",
+    "substitution_cluster_v2": "ai-code-assistant",
     "functional_needs": [
       "coding",
       "collaboration-dev",
@@ -36177,6 +36750,7 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/zotero.jpg",
     "logo": "https://logo.clearbit.com/zotero.com",
     "tool_type": "specialise",
+    "substitution_cluster_v2": "reference-manager",
     "functional_needs": [
       "creator-workflow"
     ],
@@ -36475,6 +37049,7 @@
     "ogImageUrl": "https://klark.app/mockups/Mockup_Klark_dashboard.png",
     "logo": "https://logo.clearbit.com/klark.app",
     "tool_type": "gestion",
+    "substitution_cluster_v2": "compte-pro",
     "functional_needs": [
       "compte-pro",
       "facturation",
@@ -36506,6 +37081,7 @@
     "compareMonthlyPrice": 19,
     "websiteUrl": "https://www.stellaflow.com/",
     "logo": "https://logo.clearbit.com/stellaflow.com",
+    "substitution_cluster_v2": "social-media-scheduler",
     "functional_needs": [
       "planification-posts",
       "generation-contenu-ia",
@@ -36540,6 +37116,7 @@
     "ogImageUrl": "/tool-media/vulko/dashboard.png",
     "logo": "https://logo.clearbit.com/vulko.fr",
     "tool_type": "metier",
+    "substitution_cluster_v2": "construction-quoting",
     "functional_needs": [
       "devis-facturation-btp",
       "facturation-electronique"
@@ -36571,6 +37148,7 @@
     "ogImageUrl": "https://i.ytimg.com/vi/E3e-_IMPl00/maxresdefault.jpg",
     "logo": "https://logo.clearbit.com/charik.app",
     "tool_type": "gestion",
+    "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
       "crm",
       "lead-generation"
@@ -36602,6 +37180,7 @@
     "websiteUrl": "https://www.snappack.io/",
     "ogImageUrl": "https://www.snappack.io/assets/img/hero-sGTGI8F.webp",
     "logo": "https://logo.clearbit.com/snappack.io",
+    "substitution_cluster_v2": "ai-product-photography",
     "functional_needs": [
       "generation-visuels-produit",
       "photographie-produit-ia"
@@ -36632,6 +37211,7 @@
     "websiteUrl": "https://www.getorlo.app/",
     "ogImageUrl": "https://www.getorlo.app/opengraph-image?0aa54a79b9b4e49e",
     "logo": "https://logo.clearbit.com/getorlo.app",
+    "substitution_cluster_v2": "deadline-tracking-ai",
     "functional_needs": [
       "gestion-documents",
       "rappel-echeances"
@@ -36724,6 +37304,7 @@
     "websiteUrl": "https://sistava.com/",
     "ogImageUrl": "https://sistava.com/site-assets/share/sistava-share-dark-1200x630.png",
     "logo": "https://logo.clearbit.com/sistava.com",
+    "substitution_cluster_v2": "ai-agent-builder",
     "functional_needs": [
       "agents-ia-metier",
       "automatisation-workflow"

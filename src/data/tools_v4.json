@@ -124,7 +124,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -855,7 +855,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "audio-daw",
     "ogImageUrl": "https://beta-ableton.imgix.net/media/y1tf4gvt/l12-beta-800x600.jpg",
     "description": "Production musicale, live performance et sound design.",
     "longDescriptionEn": "Digital audio workstation (DAW) known for electronic production and live performance, with its non-linear Session View (clips/scenes) alongside a classic Arrangement View.",
@@ -1029,7 +1029,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "podcast-hosting",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
     "force_silence": false
@@ -1458,7 +1458,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "content-creation",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/adcreative-ai.jpg",
     "force_silence": false
@@ -1852,7 +1852,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "pdf-tools",
     "ogImageUrl": "https://www.adobe.com/acrobat/media_14da7a4ea109e868041eecca664e1538d41f5beb4.png?width=1200&#x26;#x26;format=pjpg&#x26;#x26;optimize=medium",
     "description": "Outil de référence pour contrôler, annoter, signer et préparer des PDF professionnels.",
     "longDescriptionEn": "Family of Adobe applications and services for viewing, creating, editing, signing, and managing PDFs.",
@@ -2328,7 +2328,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "audio-daw",
     "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "description": "Nettoyage audio, mixage, voix off et postproduction sonore dans l’écosystème Adobe.",
     "longDescriptionEn": "Adobe's digital audio workstation (DAW): non-destructive multitrack environment for audio recording, editing, and mixing.",
@@ -2712,7 +2712,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-suite",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&format=pjpg&optimize=medium",
     "force_silence": false,
@@ -2878,7 +2878,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-audio-enhancement",
     "decision_policy_v3": null,
     "ogImageUrl": "https://podcast.adobe.com/enhance-speech.jpg",
     "force_silence": false,
@@ -2980,7 +2980,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-suite",
     "ogImageUrl": "https://www.adobe.com/express/media_1fcab73980cfc55a24701342170da2c2098771fd4.png?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "description": "Création rapide de supports de marque, formats sociaux et déclinaisons visuelles.",
     "longDescriptionEn": "Adobe's cloud design platform, geared toward everyday users, for quickly creating visuals (cards, videos, graphics).",
@@ -3643,7 +3643,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-support",
     "pricing_v5": {
       "cautions": [
         "Aucune version gratuite, essai uniquement",
@@ -4762,7 +4762,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "ogImageUrl": "https://www.adobe.com/products/media_1493006c2adba238de471ed68a47f1663e254966c.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "description": "Suite 3D Adobe pour matériaux, textures, staging et visualisation produit.",
     "longDescriptionEn": "Adobe's suite of 3D tools for creating materials and textures: Painter, Designer, Sampler, and Stager.",
@@ -4928,7 +4928,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-xd.jpg"
@@ -6017,7 +6017,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "treasury-cashflow-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://images.ctfassets.net/8dreszsahte7/2yE99dsuxDH1IVNa5HQKXJ/435b73bb5bd5e0a62bba48a6144336a8/Visuel_g%C3%A9n%C3%A9rique.png",
     "force_silence": false
@@ -6087,7 +6087,10 @@
     "functional_needs": [
       "seo"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "ia_use_case": null,
     "pros": [
       "Base de données massive et mise à jour fréquente.",
@@ -7297,7 +7300,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "group-health-insurance",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -7568,7 +7571,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "dom-manipulation"
     ],
@@ -7683,7 +7689,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "sales-prospecting-data",
     "pricing_v5": {
       "cautions": [
         "2 users min, annuel obligatoire. Prix en USD."
@@ -8159,7 +8165,10 @@
     "substitutable": false,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "design-system",
       "ui-components"
@@ -8289,7 +8298,10 @@
     "substitutable": false,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "seo",
       "ssr"
@@ -8723,7 +8735,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "design-system",
       "ui-components"
@@ -9031,7 +9046,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "grammar-correction-tools",
     "ogImageUrl": "https://www.antidote.info/user/config/plugins/druide-seo/antidote-1200x630_v2.jpg",
     "description": "Suite avancée de correction et dictionnaires pour rédaction française.",
     "longDescriptionEn": "Intelligent writing assistant software that corrects grammar, spelling, and style errors in French and English. Provides comprehensive dictionaries and language guides to improve text quality.",
@@ -9180,7 +9195,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "functional_needs": [
       "charting"
     ],
@@ -9335,7 +9353,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "crm-prospection",
     "decision_policy_v3": null,
     "descriptionEn": "Apollo combines a B2B contact database, automated email sequences, and a light CRM in one tool, built for regular sales prospecting activity wanting to avoid paying for several separate subscriptions (database, sending tool, CRM).\n\nThe free plan includes unlimited email credits (fair use, roughly 250/day), but only 5 mobile credits and 10 export credits per month, and caps at 2 active sequences in parallel. Paid plans start around $49/month/user (Basic) and go up to $119 (Organization).\n\nThe trade-off: credits don't roll over month to month, and for intensive prospecting (cold calling, high volumes), the real cost can climb to 2-3x the advertised rate once overages and add-ons are factored in.",
     "ogImageUrl": "https://www.apollo.com/content/dam/apolloaem/images/brand/apollo-og-image%202023.png",
@@ -9999,7 +10017,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "gis-software",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/arcgis.jpg",
     "description": "Suite SIG professionnelle pour cartographie et analyse géospatiale.",
     "longDescriptionEn": "Cloud-based GIS (Geographic Information System) platform for creating interactive maps, geospatial applications, and analyzing location-based data. Infrastructure fully managed by Esri.",
@@ -10168,7 +10186,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -10402,7 +10420,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-inspiration-search",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": []
@@ -10667,7 +10685,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "team-communication",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/around.jpg",
     "force_silence": false
@@ -10917,7 +10935,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "learning-platform",
     "ogImageUrl": "https://www.articulate.com/wp-content/uploads/2025/11/platform-articulate-preview.png",
     "description": "Suite e-learning pour modules interactifs, quiz et formation professionnelle.",
     "longDescriptionEn": "Complete training creation suite with AI (Articulate 360) including authoring tools (Storyline, Rise), review, localization in 80+ languages, 13M+ image/template library, and built-in or exported LMS.",
@@ -11042,7 +11060,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/artlist.jpg",
     "description": "Musique, effets sonores et assets vidéo sous licence pour productions créatives.",
     "longDescriptionEn": "Subscription library of licensed music and sound effects (plus stock video, templates and plugins on higher plans), with a commercial, perpetual license.",
@@ -11165,7 +11183,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-inspiration-search",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/artstation.jpg",
     "description": "Portfolio et plateforme de visibilité pour artistes concept, 3D et game art.",
     "longDescriptionEn": "Portfolio platform and professional network for 3D, concept and game artists, with galleries, a marketplace and job listings.",
@@ -11588,7 +11606,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "applicant-tracking-system",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.ashbyhq.com/og/default.png?v5",
     "force_silence": false,
@@ -11678,7 +11696,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-illustrator",
     "ogImageUrl": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
     "description": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.\n\nFonctions clés : Vector First Aid — nettoyage de formes complexes ; DynamicSketch — dessin vectoriel intuitif ; InkFlow — gestion des traits et tracés ; Phantasm — effets vectoriels ; ColliderScribe et SubScribe — géométrie avancée ; Randomino, Stipplism, Texturino — effets de texture ; WidthScribe — gestion des épaisseurs de trait ; FindReplace, Reform — modulation des formes.\n\nAstute Graphics s'impose pour les illustrateurs et designers vectoriels professionnels ; pour usage occasionnel ou budget limité, Illustrator natif + plugins gratuits peut suffire.",
     "longDescriptionEn": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.\n\nKey strengths: Significantly accelerates Illustrator workflow.; Very useful plugins for cleanup and vector effects.; Free 7-day trial before commitment.; 4 free plugins retained after cancellation.; Monthly updates included..\n\nAstute Graphics makes sense for professional vector designers and illustrators; for occasional use or tight budgets, native Illustrator + free plugins may suffice.",
@@ -11863,7 +11881,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "crm-prospection",
     "decision_policy_v3": null,
     "ogImageUrl": "https://a.storyblok.com/f/234930/1900x1000/c2028529da/og-default.jpeg",
     "force_silence": false,
@@ -12275,7 +12293,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-audio-enhancement",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/auphonic.jpg",
     "description": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
     "longDescriptionEn": "Auphonic automates post-production for podcasts, interviews and audiobooks. Intelligent Leveler balances speakers, while noise and reverb reduction, AutoEQ and loudness normalisation prepare consistent files for distribution. The service also handles encoding, metadata, chapters and publishing to external platforms.\n\nThe free plan includes 2 hours of processed audio per month and adds an Auphonic jingle. Paid usage is sold through recurring or one-time credits. One-time credits do not expire; monthly credits reset and do not roll over. Batch production, watch folders, multilingual transcription and automatic shownotes require paid credits.\n\nAuphonic is the strongest option here for automatically normalising a series and meeting loudness targets. It is less suitable when you need to reconstruct heavily damaged speech or edit an episode through its transcript.",
@@ -12419,7 +12437,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "podcast-hosting",
     "ogImageUrl": "https://img.ausha.co/cb:-U1P~1ddd7/w:auto/h:auto/q:mauto/f:best/https://www.ausha.co/wp-content/uploads/2022/09/Ausha-1.jpg",
     "description": "Hébergement, distribution et promotion de podcasts.",
     "longDescriptionEn": "French all-in-one podcast hosting, distribution, analytics and marketing platform, built for creators and brands.",
@@ -12711,7 +12729,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "linkedin-content-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/6526c17b5fa3bc01030d024f/657b752236bb1b5c792e57b3_OpenGraphimg.png",
     "force_silence": false
@@ -13152,7 +13170,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -13610,7 +13628,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "network-monitoring",
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -13842,7 +13860,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "design-collaboration"
     ],
@@ -14428,7 +14449,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "consent-management-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.axept.io/hubfs/axeptio-og-fr.jpg",
     "force_silence": false
@@ -14564,7 +14585,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "erp-sync",
     "decision_policy_v3": null,
     "ogImageUrl": "https://axonaut.com/assets/home/images/axonaut-crm-francais-simple-abordable.jpg",
     "force_silence": false,
@@ -14817,7 +14838,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "prototyping",
       "wireframing"
@@ -15728,7 +15752,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "presentation-software",
     "ogImageUrl": "https://cdn.prod.website-files.com/59deb588800ae30001ec19c9/679345319c7f2f3d2301228b_Open%20Graph_final.jpg",
     "description": "Création de présentations assistée par IA avec templates structurés.",
     "longDescriptionEn": "AI-assisted presentation tool: self-formatting 'Smart Slides' and an AI deck generator to quickly produce polished slides.",
@@ -16608,7 +16632,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ugc-influencer-marketing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://billo.app/wp-content/uploads/2023/04/billo-logo.svg",
     "force_silence": false
@@ -17998,7 +18022,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "fleet-management",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -18325,7 +18349,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "event-management",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -18742,7 +18766,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-system-tooling",
     "decision_policy_v3": null,
     "ogImageUrl": "https://stylebase.ai/wp-content/uploads/2023/01/Featured-Image-Home.png",
     "force_silence": false
@@ -19135,7 +19159,10 @@
       "brand-identity",
       "logo-creation"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "graphiste-da"
+    ],
     "ia_use_case": null,
     "pros": [
       "Paiement unique, pas d'abonnement.",
@@ -19325,7 +19352,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-system-tooling",
     "ogImageUrl": "https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009",
     "description": "Plateforme de gestion de marque (brand guidelines) pour centraliser et partager les règles visuelles, logo, typographies, couleurs avec l'équipe ou les partenaires. Permet la collaboration et la validation des assets.\n\nFonctions clés : Centralisation des brand guidelines (logos, couleurs, typographies) ; Gestion des versions et contrôle de change ; Partage sécurisé avec équipe et partenaires ; Library d'assets centralisée ; Approbation et validation des designs ; Intégration avec outils design (Figma, Adobe, etc.).\n\nBrandpad excelle pour les grandes marques ou équipes ayant besoin de contrôle strict ; pour une petite marque simple, une simple documentation suffit.",
     "longDescriptionEn": "Brand management platform (brand guidelines) to centralize and share visual rules, logos, typography, colors with team or partners. Enables collaboration and asset validation.\n\nKey strengths: Very complete free Starter plan.; Perfect for large accounts and agencies.; Centralization and versioning of brand assets.; Integrated collaboration and approval workflow.; 3-week free trial, no credit card required..\n\nBrandpad excels for large brands or teams needing strict control; for a small simple brand, simple documentation suffices.",
@@ -20068,7 +20095,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-fashion-simulation",
     "ogImageUrl": "https://browzwear.com/hubfs/home_featured.jpg",
     "description": "Solution 3D mode pour prototypage vêtement et production textile.",
     "longDescriptionEn": "3D garment design platform (VStitcher) for building digital prototypes of fabrics and patterns, with realistic simulation of drape and materials for the fashion industry.",
@@ -20250,7 +20277,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "website-app-builder",
     "decision_policy_v3": null,
     "ogImageUrl": "https://meta-q.cdn.bubble.io/cdn-cgi/image/w=,h=,f=auto,dpr=1,fit=contain/f1762463484754x595287411041153000/Bubbleio%20opengraph.png",
     "force_silence": false
@@ -21402,7 +21429,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "dam",
     "ogImageUrl": "https://www.bynder.com/transform/7ee5a4fb-1f58-4940-8a3b-daeca99676ba/meta-default.jpg?io=transform:fit,width:1200&amp;quality=75&amp;focuspoint=0.5,0.5",
     "description": "DAM professionnel pour assets de marque, campagnes et équipes créatives.",
     "longDescriptionEn": "Enterprise Digital Asset Management (DAM) platform with AI search, content creation (Studio), omnichannel delivery, and 155+ MarTech integrations serving 4,000+ customers (Spotify, Target, Lacoste, Mazda).",
@@ -22936,7 +22963,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-image-enhancement",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-ai.jpg"
@@ -23896,7 +23923,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "legal-contracts",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.captaincontrat.com/hubfs/logo-captaincontrat-4.png",
     "force_silence": false
@@ -24125,7 +24152,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-transcription-editing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg",
     "force_silence": false,
@@ -24265,7 +24292,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-transcription-editing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://captions.ai/mrkt-static/captions-og-image.png",
     "force_silence": false
@@ -24675,7 +24702,10 @@
       "link-page",
       "portfolio"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "ia_use_case": null,
     "pros": [
       "Tarif imbattable (19 euros/an pour le plan complet).",
@@ -25066,7 +25096,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "fpa-financial-modeling",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/causal.jpg",
     "force_silence": false
@@ -25157,7 +25187,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "motion-compositing",
     "ogImageUrl": "https://cavalry.studio/assets/images/og-image.png",
     "description": "Animation 2D procédurale et motion design rapide, utile pour systèmes graphiques animés.",
     "longDescriptionEn": "Procedural 2D motion design and animation software (Scene Group) for macOS and Windows, with procedural rigs, real-time viewport and data-driven sequences.",
@@ -25407,7 +25437,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "design-system",
       "ui-components"
@@ -25678,7 +25711,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "functional_needs": [
       "charting"
     ],
@@ -25837,7 +25873,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "saas-revenue-analytics",
     "decision_policy_v3": null,
     "ogImageUrl": "https://chartmogul.com/-/layouts/base/share-image.png",
     "force_silence": false
@@ -27021,7 +27057,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "pr-media-monitoring",
     "decision_policy_v3": null,
     "descriptionEn": "Cision gives access to a database of 1.4M journalists and influencers, press release distribution via PR Newswire, and real-time media coverage tracking with sentiment analysis. Like Meltwater, no price is public and everything goes through a custom sales quote.\n\nReal contracts range from $7,200/year for basic access to over $150,000/year for a full suite including PR Newswire distribution. Database-only access costs roughly $5,700-6,000/year.",
     "ogImageUrl": "https://www.cision.com/content/dam/cision-revamp/cision-optimized/global-assets/logo-cision-dark-lg.jpg",
@@ -27363,7 +27399,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "sales-prospecting-data",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/61477f2c24a826836f969afe/6a3ab15061812432ead96f56_Clay_Homepage_og-image%201000.png",
     "force_silence": false
@@ -27450,7 +27486,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "pricing_v5": {
       "verified_on": "2026-06-15",
       "source_domain": "extensions.sketchup.com",
@@ -27649,7 +27685,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-audio-enhancement",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -28408,7 +28444,10 @@
       "repurposing",
       "video-clipping"
     ],
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "motion-video"
+    ],
     "ia_use_case": null,
     "pros": [
       "Découpe automatique rapide en clips courts.",
@@ -28586,7 +28625,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-fashion-simulation",
     "ogImageUrl": "https://cdn.clo3d.com/resource/images/meta/open-graph-clo3d.jpg",
     "description": "Simulation vêtement 3D pour mode, textile et prototypage collection.",
     "longDescriptionEn": "3D garment design software for creating realistic digital prototypes from 2D patterns, with drape and material simulation for fashion.",
@@ -30354,7 +30393,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "workplace-management",
     "decision_policy_v3": null,
     "verdictFr": {
       "score": 65,
@@ -32266,7 +32305,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "procurement-spend-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/coupa.jpg",
     "force_silence": false
@@ -32402,7 +32441,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "data-integration-etl",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
     "force_silence": false
@@ -32593,7 +32632,10 @@
       "data-extraction",
       "web-scraping"
     ],
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
+    ],
     "ia_use_case": null,
     "pros": [
       "Facturation à la requête réussie, sans gaspillage.",
@@ -32946,7 +32988,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "build-tooling"
     ],
@@ -33098,7 +33143,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ugc-influencer-marketing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/creatoriq.jpg",
     "force_silence": false
@@ -33740,7 +33785,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "endpoint-security",
     "decision_policy_v3": null,
     "ogImageUrl": "https://assets.crowdstrike.com/is/image/crowdstrikeinc/WebShareDefaultImage",
     "force_silence": false
@@ -34164,7 +34209,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": []
@@ -34300,7 +34345,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "marketing-automation",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.sanity.io/images/onirtmj2/production/10390db7c2394eae65523bbaafced08666b75189-1200x630.png?rect=0,1,1200,628&amp;w=1200&amp;h=628&amp;fit=crop&amp;auto=format",
     "force_silence": false
@@ -34717,7 +34762,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "functional_needs": [
       "data-visualization"
     ],
@@ -34888,7 +34936,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-render-engine",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -35298,7 +35346,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "project-management"
     ],
@@ -35703,7 +35754,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "editorial-dataviz",
     "ogImageUrl": "https://www.datawrapper.de/img/website/social-sharing-image.png",
     "description": "Création rapide de graphiques, cartes et tables éditoriales.",
     "longDescriptionEn": "Data visualization tool designed for journalists, publishers, and analytics teams. Create, publish, and embed charts, maps, and tables without code, with clean, accessible design.",
@@ -37377,7 +37428,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-transcription-editing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/descript-ai.jpg",
     "force_silence": false
@@ -37697,7 +37748,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "managed-cloud-desktop",
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -38005,7 +38056,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "consent-management-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/6669c8e8dad8d17885f7aa3a/6a3a87a613063e76ffc77ddc_6a26d7ef92960cc23b31d39a_ABOUT-DDM-CONSOLE_2x.webp",
     "force_silence": false
@@ -39387,7 +39438,10 @@
       "portfolio",
       "website-builder"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "ia_use_case": "website-generation",
     "pros": [
       "Plan gratuit complet et sans limites (branding seul).",
@@ -39680,7 +39734,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "user-research-platform",
     "ogImageUrl": "/media/Social_Meta1.png",
     "description": "Recherche utilisateur, analyse d’interviews, tags, insights et repository research.",
     "longDescriptionEn": "User research analysis platform. Centralize interviews, surveys, feedback in workspace. Auto-transcription, tagging, insight synthesis. Supports editors and viewers with permissions.",
@@ -39851,7 +39905,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "user-research-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/dovetail-ai.jpg",
     "force_silence": false
@@ -40149,7 +40203,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "security-compliance",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/drata.jpg",
     "force_silence": false
@@ -41464,7 +41518,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "dam",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -41838,7 +41892,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "functional_needs": [
       "charting",
       "data-visualization"
@@ -42800,7 +42857,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "streaming-hardware",
     "decision_policy_v3": null,
     "ogImageUrl": "https://images.ctfassets.net/h50kqpe25yx1/2naK2vxCxvk8XOjh5Y912s/64528847ddd64655ed2f9ae464074b85/home.jpg",
     "force_silence": false
@@ -42938,7 +42995,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "streaming-hardware",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://images.ctfassets.net/h50kqpe25yx1/7Cwo01eNtXbhr1fsum2248/28c5f862966fa0c48353d3a80ff33c99/Stream-Deck-Social-Graph.jpg",
@@ -43452,7 +43509,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "css-in-js",
       "styling"
@@ -43596,7 +43656,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": []
@@ -43924,7 +43984,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "force_silence": true,
     "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/og-default-724bad6c9010550aa8e3.jpg"
@@ -44114,7 +44174,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/audio.compressed-11d9cee9c59e9605c2cf.avif",
     "force_silence": false,
@@ -44208,7 +44268,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "ogImageUrl": "https://www.epidemicsound.com/staticfiles/legacy/20/images/epidemic-sound-logo-square.png",
     "description": "Bibliothèque de musique et effets sonores pour créateurs, marques et vidéos clients.",
     "longDescriptionEn": "Subscription library of royalty-free music and sound effects: as long as the subscription is active, users can download and use tracks in their videos and podcasts, including monetized ones, with no extra royalties.",
@@ -44335,7 +44395,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "packaging-design-software",
     "ogImageUrl": "https://www.esko.com/static/uploads/2024/01/hero_image.webp",
     "description": "Suite logicielle d'emballage 3D pour designers, utilisant le plugin Adobe Illustrator pour concevoir et visualiser des boîtes, étiquettes et emballages souples avec rendu photorealist.\n\nFonctions clés : Plugin Adobe Illustrator pour conception d'emballage 3D ; Technologie de modélisation d'impression pour ajustage parfait sur structures ; Rendu photorealist via ray tracing ; Toolkit shrink-sleeve pour simulation thermique ; Export multi-format : PDF, vidéo, packshots, étagères virtuelles ; Réduction de prototypes physiques jusqu'à 80% productivité.\n\nEsko Studio s'impose pour designers d'emballage professionnel ; sinon un logiciel 3D généraliste convient mieux.",
     "longDescriptionEn": "3D packaging design software suite for designers, using Adobe Illustrator plugin to design and visualize boxes, labels, and flexible packaging with photorealistic rendering.\n\nKey strengths: Seamless integration in Adobe Illustrator (familiar workflow).; Unique print-modeling technology for perfect structural fit.; Fast photorealistic renders without physical prototype.; Major productivity gains and fewer photoshoots needed.; Unified packaging-marketing collaboration..\n\nEsko Studio is ideal for professional packaging designers; otherwise a general-purpose 3D tool fits better.",
@@ -44730,7 +44790,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "event-management",
     "pricingEn": {
       "free": "Unlimited free event publishing, no fees.",
       "paid": "3.7% + $1.79 per paid ticket, plus 2.9% payment processing. Pro plan $15-$100/month for more email marketing capacity (doesn't reduce per-ticket fees)."
@@ -44951,7 +45011,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -45890,7 +45950,10 @@
       "privacy-analytics",
       "web-analytics"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "developpeur-solo"
+    ],
     "ia_use_case": null,
     "pros": [
       "Respect privacité et GDPR natif, pas de banners.",
@@ -46107,7 +46170,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "rss-reader",
     "decision_policy_v3": null,
     "ogImageUrl": "https://s1.feedly.com/images/fx/og/threat-intelligence-5-26.png",
     "force_silence": false
@@ -46443,7 +46506,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/8b99a61f768555fab9a11deccc60639cbe74695b-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
     "description": "Tableau blanc collaboratif par Figma pour le brainstorming, la réflexion d'équipe et la planification. Inclus gratuitement dans tous les plans Figma, sans frais supplémentaires.\n\nFonctions clés : Tableau blanc infini avec modèles (300+) ; Audio et chat temps réel ; Fonction Spotlight et réactions expressives ; Résumé automatique des actions et suggestions IA ; Intégration avec Asana, Jira, GitHub ; Fonction iPad avec stylus.\n\nFigJam s'impose si vous êtes déjà sur Figma. Sinon, Excalidraw gratuit peut suffire.",
     "longDescriptionEn": "Collaborative digital whiteboard by Figma for brainstorming, team alignment, and planning. Included free with all Figma plans, no additional cost.\n\nKey strengths: Included at no extra cost with Figma.; Seamless integration with Figma designs and tools (Asana, Jira).; Rich templates and AI to auto-generate diagrams.; Native audio collaboration and expressive reactions..\n\nFigJam dominates if you're on Figma already. Otherwise, free Excalidraw may suffice.",
@@ -46824,7 +46887,8 @@
     "galleryImages": [
       "https://cdn.sanity.io/images/599r6htc/regionalized/ec904960a5d46447f31afe6e7abab92f97ec444e-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804",
       "https://cdn.sanity.io/images/599r6htc/regionalized/af228a202004b8e7a6bf03fcef7f1a22a7bd603d-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804"
-    ]
+    ],
+    "substitution_cluster_v2": "ai-app-builder"
   },
   {
     "id": "figma-sites",
@@ -46945,7 +47009,8 @@
     "galleryImages": [
       "https://cdn.sanity.io/images/599r6htc/regionalized/d88fb912c65fa24938c25b067c88b22ea6917041-1608x1072.png?auto=format&fit=max&h=520&q=75&w=780",
       "https://cdn.sanity.io/images/599r6htc/regionalized/812f934f093212b5f2a939227b970a6bf3406929-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
-    ]
+    ],
+    "substitution_cluster_v2": "figma-feature-suite"
   },
   {
     "id": "figma-buzz",
@@ -47079,7 +47144,8 @@
       "https://cdn.sanity.io/images/599r6htc/regionalized/430c964dd6ffc2db4f6046bf970bd5e4c3824474-1680x1120.png?auto=format&fit=max&h=404&q=75&w=606",
       "https://cdn.sanity.io/images/599r6htc/regionalized/0d5e593767a47aadadb218bab97b953ae43697a1-1560x1170.png?auto=format&fit=max&h=585&q=75&w=780"
     ],
-    "force_silence": false
+    "force_silence": false,
+    "substitution_cluster_v2": "figma-feature-suite"
   },
   {
     "id": "figma-dev-mode",
@@ -47197,7 +47263,8 @@
     "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/c6a0a58afc2722851abd21d93a1840360c851ad9-2464x1378.png?auto=format&fit=max&h=1378&q=75&w=2464",
     "galleryImages": [
       "https://cdn.sanity.io/images/599r6htc/regionalized/9cdc0cedb39a7c60e5b814ea857175cfd0fd0616-2720x1360.png?auto=format&fit=max&h=1360&q=75&w=2720"
-    ]
+    ],
+    "substitution_cluster_v2": "figma-feature-suite"
   },
   {
     "id": "figma-draw",
@@ -47316,7 +47383,8 @@
     "galleryImages": [
       "https://cdn.sanity.io/images/599r6htc/regionalized/a02aff53e28875fb72d35769a8827e40b2d5d552-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080",
       "https://cdn.sanity.io/images/599r6htc/regionalized/f1e43870f025011e7fcac304e4b24fa47c5d8b1d-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
-    ]
+    ],
+    "substitution_cluster_v2": "figma-feature-suite"
   },
   {
     "id": "figma-motion",
@@ -47435,7 +47503,8 @@
     "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/1be0a1a57c359165bc4c28346f987f30d662ce65-992x558.png?auto=format&fit=max&h=558&q=75&w=992",
     "galleryImages": [
       "https://cdn.sanity.io/images/599r6htc/regionalized/7fbacb4b82f4f9ecca0d9788f5eab4c8a1ae1e7b-2016x1135.png?auto=format&fit=max&h=1135&q=75&w=2016"
-    ]
+    ],
+    "substitution_cluster_v2": "figma-feature-suite"
   },
   {
     "id": "figma-slides",
@@ -47563,7 +47632,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "figma-feature-suite",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -48290,7 +48359,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "video-editing-software",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.apple.com/v/final-cut-pro/w/images/meta/final_cut__cumj84xteas2_og.png?202603241546"
@@ -49064,7 +49133,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "freelance-marketplace",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/fiverr.jpg",
     "force_silence": false
@@ -49496,7 +49565,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -49635,7 +49704,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "resource-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/67a24537fa82ef534146a29d_104d4d983d47ec9445c20d452789cde9_homepage-meta-img_2025.png",
     "force_silence": false
@@ -49726,7 +49795,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "editorial-dataviz",
     "ogImageUrl": "https://flourish.studio/images/generic-meta-tag.png",
     "description": "Dataviz éditoriale interactive, graphiques, cartes et stories data.",
     "longDescriptionEn": "Interactive data visualization platform. Charts, maps, animations, real-time graphics without code. Import CSV/API data, visualization templates. Owned by Canva since 2024.",
@@ -51177,7 +51246,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "font-manager",
     "pricing_v5": {
       "cautions": [
         "Vérifier si l'utilisateur paie un compte Awesome ou une alternative font manager."
@@ -51616,7 +51685,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "forms",
       "validation"
@@ -52063,7 +52135,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "animation",
       "cms",
@@ -52308,7 +52383,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "ogImageUrl": "https://www.frase.io/api/og?title=Rank+on+Google.&amp;titleGreen=Get+cited+by+AI.&amp;sub=Frase+runs+the+whole+content+loop%3A+research%2C+write%2C+optimize%2C+publish%2C+and+monitor.&amp;pills=SEO%2CGEO%2CAI+Visibility",
     "description": "Briefs SEO, recherche SERP et optimisation de contenu.",
     "longDescriptionEn": "Content operating system designed to research, write, optimize and publish content that ranks on Google and gets cited by AI search engines (ChatGPT, Perplexity, Claude, Gemini).",
@@ -52477,7 +52552,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": []
@@ -52608,7 +52683,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -52920,7 +52995,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "itsm-helpdesk",
     "decision_policy_v3": null,
     "ogImageUrl": "https://dam.freshworks.com/asset/aac3abf3-7dca-4397-b868-c29415ecebaa/ex-lp-og-image.webp",
     "force_silence": false
@@ -53187,7 +53262,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/7cubXgLsTdlFLouyd2X4Vs/c12e1a3fa9a58107fb5bf41835183909/fusion-2027-banner-1920x1080-v4.jpg",
     "description": "Plateforme de conception et fabrication d'Autodesk réunissant CAO, FAO (CAM), simulation (CAE) et électronique (PCB) dans un seul outil, avec gestion des données intégrée.\n\nFonctions clés : CAO 3D paramétrique ; FAO / usinage (CAM) intégré ; Simulation et analyse (CAE) ; Conception électronique (PCB) et gestion des données.\n\nFusion s'impose pour la conception produit qui va jusqu'à la fabrication ; pour de l'architecture ou de très gros assemblages industriels, un outil spécialisé convient mieux.",
     "longDescriptionEn": "Autodesk's design and manufacturing platform combining CAD, CAM, simulation (CAE) and electronics (PCB) in a single tool, with built-in data management.\n\nKey strengths: CAD, CAM, simulation and PCB in one tool.; Free for non-commercial personal use.; Built-in data management and collaboration.; Autodesk ecosystem and large community..\n\nFusion makes sense for product design that goes through to manufacturing; for architecture or very large industrial assemblies, a specialised tool fits better.",
@@ -53626,7 +53701,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "presentation-software",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma.jpg"
@@ -53762,7 +53837,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "presentation-software",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma-ai.jpg",
     "force_silence": false
@@ -54373,7 +54448,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "landing-page-builders",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gempages.jpg",
     "force_silence": false
@@ -54463,7 +54538,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "learning-platform",
     "ogImageUrl": "https://assets.genially.com/s3fs-public/images/genially.com_.png",
     "description": "Contenus interactifs, présentations, modules pédagogiques et infographies.",
     "longDescriptionEn": "No-code interactive and animated content creation platform (presentations, quizzes, games, courses) with AI, real-time collaboration, and 1,000+ templates, watermark-free on paid plans.",
@@ -55288,7 +55363,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://giphy.com/static/img/giphy-be-animated-logo.gif",
     "force_silence": false
@@ -56531,7 +56606,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "email-hosting",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gmail.jpg",
     "force_silence": false
@@ -56801,7 +56876,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "checkout-platforms",
     "decision_policy_v3": null,
     "ogImageUrl": "https://gocardless.com/content-platform/static/816e9048c2a134da3e79b8677556ad0f/f8482/og-full.png",
     "force_silence": false
@@ -57065,7 +57140,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "revenue-intelligence",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.sanity.io/images/ww20clc6/production/e5b5bf0e084b83ad6b6607c10f026a91a4cfc1f3-2400x1256.png",
     "force_silence": false
@@ -57424,7 +57499,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ga4.jpg",
     "description": "Analytics web et produit gratuit pour acquisition, comportement et conversion.",
     "longDescriptionEn": null,
@@ -58204,7 +58279,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "motion-compositing",
     "ogImageUrl": "https://www.google.com/earth/studio/assets/static/images/social.jpg",
     "description": "Animation de cartes et vues satellite pour vidéos et cartographie narrative.",
     "longDescriptionEn": "Web-based animation tool built on Google Earth's 3D and satellite imagery: creates cinematic keyframe camera animations (flyovers, zooms) directly in the browser.",
@@ -58377,7 +58452,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "mapping-api",
     "decision_policy_v3": null,
     "ogImageUrl": "https://maps.google.com/maps/api/staticmap?center=43.5355648%2C5.4657024&amp;zoom=14&amp;size=900x900&amp;language=en&amp;sensor=false&amp;key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&amp;signature=R_TIultUYRsEt1fU1H_iRC5Yhyk",
     "force_silence": false
@@ -58524,7 +58599,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "team-communication",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -58751,7 +58826,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "longDescriptionEn": "Google Search Console is Google's free tool to track how a site appears in search results: queries generating clicks, indexed pages, indexing errors, and detected structured data.\n\nIt's the only direct source of truth for Google search data (other tools like SEMrush or Ahrefs estimate, Search Console shows real data) — essential for any site that wants to track and fix its technical SEO.",
     "pricingEn": "Free, no paid plan.",
     "prosEn": [
@@ -59094,7 +59169,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "presentation-software",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-slides.jpg"
@@ -59757,7 +59832,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "cad-library",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/grabcad.jpg",
     "description": "Bibliothèque et plateforme collaborative autour des fichiers CAO.",
     "longDescriptionEn": "Online community of designers and engineers (Stratasys) with a very large library of free CAD models to download and share. The Workbench collaboration module was discontinued in June 2023; the community library remains active.",
@@ -60559,7 +60634,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "applicant-tracking-system",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/6668a687e71e2722fccb8357/6838cce6a2c87094baa9dfd6_Web-Home-SEO-clusters-of-three-workflows-with-photos-of-people-working-together-and-UI.png",
     "force_silence": false
@@ -60700,7 +60775,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esg-carbon-reporting",
     "decision_policy_v3": null,
     "ogImageUrl": "https://images.prismic.io/greenly/aMFZEGGNHVfTO_De_ThumbnailhomeGreenly.png?auto=format,compress",
     "force_silence": false
@@ -60812,7 +60887,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "motion-video"
+    ],
     "functional_needs": [
       "animation"
     ],
@@ -61194,7 +61272,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "animation-library",
     "ogImageUrl": "https://gsap.com/GSAP-share-image.png",
     "description": "Bibliothèque d’animation web avancée pour interactions, micro-animations et expériences immersives.",
     "longDescriptionEn": "High-performance JavaScript animation library for browser. Animates CSS, SVG, canvas, and JS objects with native GPU optimization. Since April 2025 (Webflow acquisition), fully free including all plugins.",
@@ -61399,7 +61477,10 @@
       "planning",
       "task-management"
     ],
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "coach-formateur"
+    ],
     "ia_use_case": "personal-planning",
     "pros": [
       "Gratuit avec 3 guides généreux.",
@@ -62173,7 +62254,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "time-tracking",
     "prosEn": [
       "Automated invoicing from tracked time.",
       "Detailed project profitability reports.",
@@ -62461,7 +62542,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "ui-components"
     ],
@@ -62617,7 +62701,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "video-repurposing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/headliner.jpg",
     "force_silence": false
@@ -63023,7 +63107,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "customer-support",
     "decision_policy_v3": null,
     "ogImageUrl": "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F4Rbim8xrCA6BCte94E1xnZ%2F6085a0847d360320af712ff86a342307%2Fhome--meta.jpg?ixlib=gatsbySourceUrl-2.1.3&amp;auto=format%2C%20compress&amp;q=75&amp;s=0aba9a73fb57c247551a2df98f436358",
     "force_silence": false
@@ -63914,7 +63998,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "functional_needs": [
       "charting",
       "data-visualization"
@@ -65456,7 +65543,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -66354,7 +66441,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://icons8.com/vue-static/landings/primary-landings/preview_icons8.png",
     "force_silence": false
@@ -67012,7 +67099,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "affiliate-partnership-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://impact.com/wp-content/uploads/2022/04/impact-logo-square.jpg",
     "force_silence": false
@@ -67080,7 +67167,10 @@
       "lead-generation",
       "seo"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "ia_use_case": "content-generation",
     "pros": [
       "Contenu SEO généré par IA",
@@ -68040,7 +68130,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ugc-influencer-marketing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/633308aadb76cf62fdcd1362/69ea0e60b4004074f9ecdb6a_Insense%20.png",
     "force_silence": false
@@ -68424,7 +68514,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-network",
     "pricingEn": {
       "free": "Free, no limit on posts or followers.",
       "paid": "No native Instagram subscription. Cost comes from ads (Meta Ads, flexible budget) or third-party scheduling/management tools (Buffer, Later...)."
@@ -68613,7 +68703,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "email-outreach",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/63860c8c65e7bef4a1eeebeb/69bbbe355f4fdb68458b987d_Banner%20(1)%20(1).webp",
@@ -69158,7 +69248,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "design-collaboration",
       "prototyping"
@@ -70685,7 +70778,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -70973,7 +71066,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "dom-manipulation"
     ],
@@ -71119,7 +71215,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "shopify-review-apps",
     "decision_policy_v3": null,
     "ogImageUrl": "https://framerusercontent.com/assets/3nUMjfjekVFLnxccSGqCnKJY8.png",
     "force_silence": false
@@ -72258,7 +72354,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "fleet-management",
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -72490,7 +72586,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "presentation-software",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/keynote.jpg",
     "description": "Outil Apple pour présentations visuelles, pitchs créatifs et dossiers clients.",
     "longDescriptionEn": "Apple's presentation software (iWork suite) to build polished slideshows with themes, cinematic transitions and animations, available on Mac, iPhone, iPad and via iCloud on the web.",
@@ -73628,7 +73724,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-video-generation",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/kling.jpg",
     "force_silence": false
@@ -73939,7 +74035,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "legacy-web"
     ],
@@ -75768,7 +75867,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "grammar-correction-tools",
     "ogImageUrl": "https://languagetool.org/images/social/og_image.jpg",
     "description": "Correction grammaticale, style et orthographe multilingue.",
     "longDescriptionEn": "AI-powered writing assistant that detects grammar, spelling, punctuation, and style errors in 30+ languages. Offers rephrasing suggestions, writing statistics, and works on browser, desktop, and office plugins.",
@@ -76518,7 +76617,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": []
@@ -77335,7 +77434,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "legal-contracts",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.legalplace.fr/wp-content/uploads/2025/12/legalplace-creation-gestion-societe-og.png",
     "force_silence": false
@@ -78829,7 +78928,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "photo-editor",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.lightroompresets.com/cdn/shop/files/1200x628ppa_1200x.jpg?v=1588801656",
     "force_silence": false
@@ -79294,7 +79393,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-agent-builder",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/63e15df811f9df22b231e58f/69a20da89a23a65ce1b211c3_Lindy%20OG.jpg",
     "force_silence": false
@@ -79823,7 +79922,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://linkwhisper.com/wp-content/uploads/2022/09/399194cf-0265-44e1-a7e9-08f43069dbf4-1a.webp",
     "force_silence": false
@@ -79980,7 +80079,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-network",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/linkedin.jpg",
     "force_silence": false
@@ -80118,7 +80217,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "recruiting-sourcing",
     "decision_policy_v3": null,
     "descriptionEn": "LinkedIn Recruiter Lite costs about $170/month with 30 monthly InMails and access limited to 3rd-degree network connections. The Corporate tier, billed $10,800-$12,960/year per seat, unlocks the full 930M+ profile network, AI sourcing, and ATS integrations.\n\nReal cost often runs 20-40% above the listed subscription: each InMail beyond your quota costs about $10, and active recruiters frequently exceed their monthly limit.",
     "ogImageUrl": "https://delivery-p143253-e1476319.adobeaemcloud.com/adobe/assets/urn:aaid:aem:83e6a64d-9e07-406d-b348-8e1a415f9fc6/as/LTS-hero-hire-social-share.jpg",
@@ -80249,7 +80348,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "bio-link-pages",
     "decision_policy_v3": null,
     "ogImageUrl": "https://linktr.ee/_marketing/og/linktree-default.jpg",
     "force_silence": false
@@ -80863,7 +80962,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "audio-daw",
     "ogImageUrl": "https://www.apple.com/v/logic-pro/n/images/meta/logic_pro__bwh8nhmy69jm_og.png?202603241546",
     "description": "Station audio Apple pour composition, mixage et postproduction.",
     "longDescriptionEn": "Apple's professional digital audio workstation (DAW) for Mac and iPad, with a large library of instruments, loops and effects, plus advanced production and mixing tools.",
@@ -81626,7 +81725,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "user-research-platform",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lookback.jpg",
     "description": "Tests utilisateurs et interviews vidéo pour observer les parcours en direct ou asynchrone.",
     "longDescriptionEn": "Remote qualitative user research platform combining moderated interviews, unmoderated studies, and AI-powered pattern analysis with real-time note capture, transcription, and stakeholder viewing.",
@@ -82430,7 +82529,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "shopify-review-apps",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -82568,7 +82667,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "motion-video"
+    ],
     "functional_needs": [
       "animation"
     ],
@@ -82682,7 +82784,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "animation-library",
     "pricing_v5": {
       "cautions": [
         "Vérifier si un espace équipe ou une librairie privée est utilisée."
@@ -83054,7 +83156,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "bio-link-pages",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ltk.jpg",
     "force_silence": false
@@ -83515,7 +83617,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "diagramming-tools",
     "decision_policy_v3": null,
     "descriptionEn": "Lucidchart covers flowcharts, org charts, wireframes, network diagrams and UML, with AI generation from a text description and real-time collaboration. 50+ integrations cover Jira, Confluence, Google Drive and Microsoft Teams.\n\nThe free plan caps you at 3 editable documents and a reduced shape set, fine for very occasional use but quickly limiting for regular use. The Team plan requires a 3-user minimum, so a solo freelancer pays the Individual tier or stays free.",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lucidchart.jpg",
@@ -84394,7 +84496,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "motion-compositing",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/madmapper.jpg",
     "description": "Mapping vidéo, projection, LED et installations visuelles.",
     "longDescriptionEn": "Video mapping and light-control software: it projects visuals onto surfaces and volumes (buildings, objects, stages) and drives LEDs, for installations, shows and VJing.",
@@ -84880,7 +84982,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-inspiration-search",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/62fc85d2d02ef37f2cc7f83e/66c59d7d6c63ffa4c1b20ca6_OG.jpg",
     "force_silence": false
@@ -85016,7 +85118,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-image-enhancement",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.jpg",
     "force_silence": false
@@ -85524,7 +85626,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "email-marketing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.mailerlite.com/img/containers/assets/SEO/homepage-meta.jpg/a271969696ccb718c1a26ea27c86ef53.jpg",
     "force_silence": false
@@ -86416,7 +86518,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "design-system",
       "ui-components"
@@ -86623,7 +86728,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "mapping-api",
     "ogImageUrl": "https://cdn.prod.website-files.com/6050a76fa6a633d5d54ae714/6a3eb9c605068d6b1c91dbb6_home_og-image.jpg",
     "description": "Cartographie web, styles de cartes, données géographiques et APIs.",
     "longDescriptionEn": "Mapping platform providing APIs and SDKs for building map experiences on web and mobile. Navigation, search, geocoding, custom tilesets, AR, and location-based analytics.",
@@ -86953,7 +87058,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "ogImageUrl": "https://marmoset.co/wp-content/uploads/2024/09/Texture-thumbnail-02.jpg",
     "description": "Marmoset Toolbag, c'est le couteau suisse des artistes 3D pour trois choses : le baking (cuisson des maps normal, AO, courbure), le rendu temps réel avec un éclairage magnifique, et surtout la présentation d'assets. C'est devenu un quasi-standard du game art : tu y peaufines l'éclairage de ton modèle et tu sors des turntables et des images de portfolio superbes, ou tu publies un Marmoset Viewer interactif (très utilisé sur ArtStation).\n\nSa qualité de baking est réputée, et son rendu est à la fois beau et rapide, sans la complexité d'un moteur de production. Côté prix, c'est très abordable et flexible : 14,99$/mois en abonnement, ou un achat unique à 299$ pour ceux qui préfèrent posséder leur licence.\n\nÀ qui ça s'adresse : aux artistes 3D, character/prop artists et à quiconque doit présenter ses assets sous leur meilleur jour. Ce n'est pas un outil de texturing (ça, c'est Substance Painter) ni un moteur de production : c'est l'étape finale de mise en valeur. Blender peut faire du baking et du rendu gratuitement, mais avec plus de manipulations ; Marmoset gagne par sa simplicité et la qualité immédiate de sa présentation.",
     "pricing_v5": null,
@@ -87359,7 +87464,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "ui-components"
     ],
@@ -87462,7 +87570,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "design-system",
       "ui-components"
@@ -87653,7 +87764,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "learning-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://d3fe4umbwqdrlj.cloudfront.net/global/Maven_SocialShare_2026.jpg",
     "force_silence": false
@@ -88692,7 +88803,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "pr-media-monitoring",
     "decision_policy_v3": null,
     "descriptionEn": "Meltwater monitors over 6 million media sources with real-time alerts, journalist identification and predictive mention analysis. No price is published: every quote depends on the chosen modules (media monitoring, social listening, influencers), user count and geographic coverage.\n\nReal amounts paid range from $6,000/year for a Starter tier to over $150,000/year at Enterprise, with a median around $25,000/year per B2B buyer data. This is sized for a company with a structured comms budget, not a freelancer or small team.",
     "ogImageUrl": "https://images.prismic.io/meltwater-site/afOxjsBOoF08xhUD_meta-1200x600-2.png?auto=format,compress&amp;rect=0,0,2500,1250&amp;w=1200&amp;h=600",
@@ -88994,7 +89105,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "membership-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://sanity-assets.memberful.com/images/dvnoujul/production/da7e702ea14237c984060bd203186f101bc4d8b4-2400x1260.jpg?w=1200&amp;h=630&amp;fit=crop&amp;auto=format",
     "force_silence": false
@@ -89088,7 +89199,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "membership-platform",
     "ogImageUrl": "https://www.memberstack.com/images/og/home.png",
     "description": "Membership et authentification no-code pour sites Webflow et produits légers.",
     "longDescriptionEn": "No-code membership and authentication platform for Webflow. Manage users, gate content, and handle recurring subscriptions with Stripe integration. Free until launch, then pay based on member count.",
@@ -89522,7 +89633,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ad-platforms",
     "decision_policy_v3": null,
     "ogImageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&amp;ab_page=CMS&amp;ab_entry=797459857892055&amp;version=1782606481&amp;transcode_extension=webp",
     "force_silence": false
@@ -89940,7 +90051,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-media-scheduler",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://metricool.com/wp-content/uploads/home-image-1.png"
@@ -90567,7 +90678,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "ogImageUrl": "https://clarity.microsoft.com/static/Facebook_og_image.png",
     "force_silence": false
@@ -90706,7 +90817,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "endpoint-security",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -91315,7 +91426,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "spreadsheet-software",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/excel.jpg",
     "description": "Tableur de référence pour données, budgets, modèles et analyses.",
     "longDescriptionEn": "Microsoft's spreadsheet application for analyzing, visualizing, and organizing data. Formula support, pivot tables, charts, VBA macros. Desktop and web versions.",
@@ -91439,7 +91550,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "presentation-software",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/powerpoint.jpg",
     "description": "Standard des présentations business, commerciales et institutionnelles.",
     "longDescriptionEn": "Microsoft's presentation software for building slides, part of the Microsoft 365 suite, with templates, animations, collaboration and design assistance tools.",
@@ -92133,7 +92244,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -92279,7 +92390,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://framerusercontent.com/assets/Bab0War93Jeq5MpDPwqKFiyI.png"
@@ -92431,7 +92542,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "descriptionEn": "Mixpanel bills by monthly tracked users (MTU), not by seat. The free plan covers up to 50,000 MTU with funnels, segmentation and 3 projects — plenty for an early-stage product.\n\nThe Growth plan starts at $20/month for 10,000 MTU and scales with volume ($50 for 50k, $150 for 250k). For a B2B product, account-level analysis (Group Analytics) is a separate paid add-on, easy to forget when budgeting.",
     "ogImageUrl": "https://framerusercontent.com/assets/KHyJwfBzTDm8CBtgWokK94nAuQ.png",
@@ -92879,7 +92990,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-story-templates",
     "decision_policy_v3": null,
     "ogImageUrl": "https://framerusercontent.com/assets/oYMF2sDPDefmvfGcyOWJA95NGU.jpg",
     "force_silence": false
@@ -93196,7 +93307,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "project-management-general",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -93481,7 +93592,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "twitch-chatbots",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/moobot.jpg",
     "force_silence": false
@@ -93570,7 +93681,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "learning-platform",
     "ogImageUrl": "https://moodle.org/theme/moodleorg/pix/moodle_logo_tm.png",
     "description": "LMS open source pour formations, parcours et suivi apprenants.",
     "longDescriptionEn": "Free, open-source learning management system (LMS) under GNU license, supporting 30+ languages, courses, quizzes, badges, and user management for education and enterprise training.",
@@ -94176,7 +94287,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-planning",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion.jpg",
     "force_silence": false
@@ -94315,7 +94426,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-array.jpg",
     "force_silence": false
@@ -94905,7 +95016,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-voice-generation",
     "pricing_v5": {
       "cautions": [
         "Prix en USD. Limite 24h de génération sur Creator."
@@ -95771,7 +95882,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "expense-management",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -97349,7 +97460,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "twitch-chatbots",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/nightbot.jpg",
     "force_silence": false
@@ -98043,7 +98154,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "motion-compositing",
     "ogImageUrl": "https://www.notch.one/uploads/general/01-Home/_1200x630_crop_center-center_82_none/WORKSPACE_HYGIENE-6_SENSORS-INTERACTIVITY.png?mtime=1739437171",
     "description": "Outil temps réel pour motion graphics, VFX live et expériences immersives.",
     "longDescriptionEn": "Real-time motion graphics and VFX authoring software, used for concert visuals, interactive installations, stage design and live-generated video content.",
@@ -98736,7 +98847,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/noun-project.jpg",
     "force_silence": false
@@ -99306,7 +99417,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "screen-recording",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/obs.jpg",
     "force_silence": false
@@ -100908,7 +101019,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-generalist",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/openai.jpg",
     "force_silence": false
@@ -101290,7 +101401,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/open-cut-list.jpg",
     "description": "Plugin SketchUp pour débits, listes de coupe, panneaux et préparation fabrication.",
     "longDescriptionEn": "Free, open-source SketchUp extension that automates generation of cut lists, cutting diagrams, nesting layouts, and cost/weight reports for woodworking projects.",
@@ -101630,7 +101741,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ab-testing-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://images3.cmp.optimizely.com/Zz1hOTU5MjFjNDY5MWYxMWYxOTU5NmZlODFjZDBjMWExMg==?width=1200",
     "force_silence": false
@@ -101786,7 +101897,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "video-repurposing",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -101916,7 +102027,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "video-repurposing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/6388604483b03a9ecb34d695/6893fad68d6058a917d7f3c6_mainpage_thumbnail.jpg",
     "force_silence": false
@@ -102203,7 +102314,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "prototyping"
     ],
@@ -102350,7 +102464,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-note-taking",
     "decision_policy_v3": null,
     "ogImageUrl": "https://img1.wsimg.com/isteam/getty/1353151862",
     "force_silence": false
@@ -103918,7 +104032,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "packaging-design-software",
     "ogImageUrl": "https://cdn.pacdora.com/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
     "description": "Plateforme en ligne pour designers d'emballage, offrant générateur de mockups 3D, templates dieline personnalisables et logiciel de modélisation 3D sans expérience requise.\n\nFonctions clés : 5 000+ templates mockup (boxes, bottles, pouches, cans, labels) ; 3 000+ dieline templates personnalisables ; Générateur d'arrière-plan IA pour photos produit ; Modélisation 3D pour placement produit en scènes réalistes ; Support fichiers multiples compatibles logiciels design ; Visualisation 3D partageable avec clients ; Retrait de watermark (Pro/Business) ; Crédits IA variables selon plan (50 à 10 000/mois).\n\nPacdora excelle pour designers emballage ne voulant pas apprendre 3D complexe ; mélange mockup, dieline et IA intelligemment.",
     "longDescriptionEn": "Online packaging design platform providing 3D mockup generator, customizable dieline templates, and 3D modeling tools—no design experience required.\n\nKey strengths: Free access to 5,000+ mockups and dieline templates.; AI background generator for professional product visuals.; Shareable 3D mockups with clients—no software needed.; Intuitive UI, no 3D learning curve.; Affordable entry tiers.; Scaled AI credits per plan.; Flexible payment (PayPal, PayerMax, card)..\n\nPacdora excels for packaging designers who don't want to learn complex 3D; smartly blends mockup, dieline, and AI.",
@@ -104366,7 +104480,10 @@
       "conversion-optimization",
       "landing-page"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "dev-freelance"
+    ],
     "ia_use_case": "landing-page-generation",
     "pros": [
       "Génération rapide de landing pages IA",
@@ -104723,7 +104840,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "landing-page-builders",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pagefly.jpg",
     "force_silence": false
@@ -105170,7 +105287,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esignature",
     "decision_policy_v3": null,
     "ogImageUrl": "https://images.ctfassets.net/a4zep9yar86b/6y6NJJSllr8cJIZsgfVTN/a02b34f7f5e91eaa89c8594d10c25a69/Color7-11.png",
     "force_silence": false
@@ -105437,7 +105554,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "affiliate-partnership-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/655381e691678a2583615d93/6a32ec0b289b94fcd2014367_PS-Homepage-Meta_v1.jpg",
     "force_silence": false
@@ -105710,7 +105827,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "membership-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://c14.patreon.com/OG_share_eaad746d69.jpg",
     "force_silence": false
@@ -107339,7 +107456,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "version-control-large-files",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/perforce.jpg",
     "description": "Versioning robuste pour gros fichiers, jeux vidéo et pipelines créatifs.",
     "longDescriptionEn": "Enterprise DevOps suite covering version control (P4), quality testing (Perfecto, BlazeMeter), infrastructure automation (Puppet), and data management (Delphix). Serves 20,000+ customers, including 75% of Global 500.",
@@ -108332,7 +108449,10 @@
       "asset-management",
       "dam"
     ],
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "business-ops"
+    ],
     "ia_use_case": null,
     "pros": [
       "Essai gratuit 7 jours sans CB.",
@@ -109195,7 +109315,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-inspiration-search",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -110584,7 +110704,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-media-scheduler",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/planoly.jpg",
     "force_silence": false
@@ -110686,7 +110806,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "ogImageUrl": "https://plasticity.xyz/og-image.jpg",
     "description": "Modeleur 3D NURBS basé sur les kernels Parasolid et xNURBS, conçu pour surfacing CAD et design concept sans historique de modélisation.\n\nFonctions clés : Surfacing NURBS avancé pour design concept et produit ; Outils de filets (fillets) sophistiqués ; Édition directe et modification d'historique réduite ; Kernels Parasolid et xNURBS pour précision extrême ; Support design industriel, design véhicules, game art ; Interfaces artist-friendly sans contraintes d'historique ; Prise en charge complète de la géométrie complexe ; Essai gratuit 30 jours sans limitation.\n\nPlasticity excelle pour designers concept et artistes 3D ; performance CAO precision sans les shackles d'un historique lourd — meilleure valeur vs abonnements.",
     "longDescriptionEn": "NURBS-based 3D modeler using Parasolid and xNURBS kernels, designed for CAD surfacing and concept design without constraint-laden history workflows.\n\nKey strengths: Perpetual one-time license—no recurring subscription.; Excellent value against Rhino, Fusion 360 or Maya.; Top-tier NURBS surfacing with Parasolid/xNURBS kernels.; Direct workflows (direct edit) without history-tree frustration.; Artist-oriented interface—gentle learning curve.; Full 30-day free trial (really test before buying).; Perfect for concept design, vehicle, game art..\n\nPlasticity wins for concept designers and 3D artists; CAD precision without heavy-history shackles—best value vs subscriptions.",
@@ -111678,7 +111798,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-transcription-editing",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -112651,7 +112771,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "business-intelligence",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/power-bi.jpg",
     "description": "Solution Microsoft BI pour dashboards, rapports et analyses business.",
     "longDescriptionEn": "Microsoft analytics and BI platform. Combines interactive dashboards, reports, and premium capacity for secure sharing. Natively integrates with Microsoft 365 ecosystem.",
@@ -112822,7 +112942,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/power-user.jpg",
     "force_silence": false
@@ -112936,7 +113056,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "frontend-framework",
       "ui-components"
@@ -113083,7 +113206,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "video-editing-software",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -113442,7 +113565,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "affiliate-link-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pretty-links.jpg",
     "force_silence": false
@@ -114176,7 +114299,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "audio-daw",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pro-tools.jpg",
     "description": "DAW standard studio pour audio professionnel, mixage et postproduction.",
     "longDescriptionEn": "Industry-standard digital audio workstation (DAW) for professional studio recording, editing, mixing and audio post-production.",
@@ -114601,7 +114724,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "digital-illustration",
     "pricing_v5": {
       "cautions": [
         "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
@@ -114805,7 +114928,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "product-discovery-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/product-hunt.jpg",
     "force_silence": false
@@ -115262,7 +115385,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "project-management-general",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/69273e1d1bd1fcfcff2fe0d4/69724044686ecf3c6b20e7c1_og-productive-product-2.png",
     "force_silence": false
@@ -115389,7 +115512,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -115532,7 +115655,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "saas-revenue-analytics",
     "decision_policy_v3": null,
     "ogImageUrl": "https://images.prismic.io/paddle/Z9gwpziBA97GijeQ_paddle-merchant-of-record-og.png?auto=format,compress&amp;rect=0,20,1200,591&amp;w=1280&amp;h=630",
     "force_silence": false
@@ -115663,7 +115786,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "interior-design-sourcing",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -116117,7 +116240,10 @@
       "file-proofing",
       "project-management"
     ],
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "pros": [
       "Tarification forfaitaire : pas de surprise avec les utilisateurs.",
@@ -116672,7 +116798,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "pr-media-monitoring",
     "decision_policy_v3": null,
     "descriptionEn": "Prowly gives access to 1M+ journalist contacts, a branded newsroom builder, and press coverage tracking up to 80,000 mentions. The Basic plan starts at $369/month but doesn't include automated follow-ups or detailed reporting, reserved for the Pro plan.\n\nImportant to know before committing: Semrush, Prowly's owner, started phasing the product out in late 2025 to merge it into the Semrush AI PR Toolkit. Check the current roadmap before signing a long contract.",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/prowly.jpg",
@@ -116941,7 +117067,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "prototyping"
     ],
@@ -117074,7 +117203,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-media-scheduler",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://framerusercontent.com/assets/20xDElBhD9Xg3L7Cx7jVMwL56FU.png"
@@ -117171,7 +117300,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pure-ref.jpg",
     "description": "Planche de références ultra légère pour artistes, illustrateurs et 3D.",
     "longDescriptionEn": "Standalone reference image organizer. Consolidates multiple inspiration images in a single, stay-on-top window to speed up creative processes.",
@@ -117860,7 +117989,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "gis-software",
     "ogImageUrl": "https://qgis.org/img/QGIScover.png",
     "description": "SIG open source pour cartographie, analyse spatiale et données géographiques.",
     "longDescriptionEn": "Free and open-source geographic information system (GIS). Enables creating, editing, visualizing, analyzing, and sharing geospatial data on Windows, Mac, and Linux.",
@@ -119265,7 +119394,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "ogImageUrl": "https://cdn.quixel.com/quixel/thumbs/page-thumb-quixel.jpg",
     "description": "Quixel Megascans, c'est la plus grande bibliothèque d'assets 3D photoréalistes au monde, construite à partir de scans du monde réel : surfaces (roche, bois, sol), props 3D, et une collection de plantes 3D (Megaplants) d'un réalisme bluffant. Pour habiller une scène d'archviz, un environnement de jeu ou un décor de film, c'est un gain de temps colossal : tu poses des assets photoscannés au lieu de tout modéliser et texturer à la main.\n\nEpic Games a racheté Quixel et a migré Megascans vers Fab, sa marketplace unifiée. Historiquement, la bibliothèque était gratuite pour les utilisateurs d'Unreal, puis gratuite pour tous. Depuis 2025, sur Fab, une grande partie reste gratuite (notamment les Megaplants sous licence Fab Standard) tandis que certains assets sont devenus payants à l'unité. On y accède via des plugins vers Unreal, Blender, Maya, Cinema 4D.\n\nÀ qui ça s'adresse : aux artistes 3D, archviz et environment artists. Ce n'est pas un logiciel mais une source d'assets, donc complémentaire de ton outil 3D. Vu la qualité et la part encore gratuite, c'est quasiment incontournable pour qui peuple des scènes. Des alternatives gratuites existent (Poly Haven), mais l'ampleur et la qualité de Megascans restent une référence.",
     "longDescriptionEn": "Library of photorealistic 3D assets from real-world scans: high-fidelity surfaces, environments, foliage and objects for games, film and visualization. Now distributed through Fab (Epic Games).",
@@ -119386,7 +119515,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "design-system",
       "ui-components"
@@ -119919,7 +120051,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://rankmath.com/wp-content/uploads/2021/12/Rank-Math.png",
     "force_silence": false
@@ -120365,7 +120497,10 @@
     "substitutable": false,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "frontend-framework",
       "ui-components"
@@ -120495,7 +120630,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "forms",
       "validation"
@@ -120756,7 +120894,10 @@
     "substitutable": false,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "data-fetching",
       "state-management"
@@ -120904,7 +121045,10 @@
     "substitutable": false,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "routing"
     ],
@@ -121059,7 +121203,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "read-later-tools",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://d34adp677peecb.cloudfront.net/static/images/readwisecard.058019f9f4b1.jpg",
@@ -121192,7 +121336,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "website-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -121551,7 +121695,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "data-analyst"
+    ],
     "functional_needs": [
       "charting"
     ],
@@ -121966,7 +122113,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-planning",
     "pricing_v5": {
       "cautions": [
         "Prix en USD. Nécessite Google Calendar."
@@ -123040,7 +123187,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "data-fetching",
       "graphql"
@@ -123193,7 +123343,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-agent-builder",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.relevanceai.com/images/og-image.webp",
     "force_silence": false
@@ -123282,7 +123432,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "ogImageUrl": "https://www.relume.io/__assets/6177739448baa66404ce1d9c/65b756c9cebba152b52fccc8_Opengraph%20-%20Home%20for%20Twitter.jpg",
     "description": "Sitemap, wireframes et librairie de sections pour accélérer les sites Webflow et Figma.",
     "longDescriptionEn": "AI-assisted design framework: generates sitemaps and wireframes from a library of 1,000+ human-designed components, exportable to Webflow, Figma or React. Doesn't produce a finished site, but accelerates design.",
@@ -123463,7 +123613,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/relume-ai.jpg",
     "force_silence": false
@@ -124534,7 +124684,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "video-repurposing",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -124760,7 +124910,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "motion-compositing",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/resolume.jpg",
     "description": "VJing, vidéo live, mapping et performance audiovisuelle.",
     "longDescriptionEn": "VJing and media-server software to mix, trigger and manipulate video in real time during live performances; the Arena edition adds projection mapping and multi-screen blending.",
@@ -125714,7 +125864,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-transcription-editing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/65dd0e80788a2f545d95cd65/66ba66fac368a7f1695a8de0_rev_link_preview.webp",
     "force_silence": false
@@ -126271,7 +126421,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "affiliate-partnership-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/6041705a8ccb775007a2e651/6499638ac5eecec5b374a7d2_Rewardful-home-page.png",
     "force_silence": false
@@ -126559,7 +126709,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -126661,7 +126811,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "font-manager",
     "pricing_v5": {
       "cautions": [
         "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
@@ -127651,7 +127801,10 @@
       "contract-management",
       "legal-documents"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "pros": [
       "Modèles juridiques nombreux et guidés.",
@@ -128514,7 +128667,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "business-phone",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": true,
@@ -128973,7 +129126,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "safety-inspection-platform",
     "decision_policy_v3": null,
     "verdictFr": {
       "score": 78,
@@ -129983,7 +130136,10 @@
       "checkout",
       "upsell"
     ],
-    "verticals": [],
+    "verticals": [
+      "creator-economy",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "pros": [
       "Checkout ultra-optimisé pour conversion (1-page, upsells, bumps).",
@@ -130211,7 +130367,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esg-carbon-reporting",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/62da4fdaa14b85540e41e74c/6a38f3785224b51b6ffee9d1_Capture%20d%27%C3%A9cran%202026-06-22%20102826.png",
     "force_silence": false
@@ -131702,7 +131858,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "screen-recording",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -131769,7 +131925,10 @@
       "documentation",
       "screen-capture"
     ],
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
+    ],
     "ia_use_case": "documentation-generation",
     "pros": [
       "Zoom et suivi automatiques pratiques.",
@@ -132226,7 +132385,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "sales-prospecting-data",
     "pricing_v5": {
       "cautions": [
         "Cancellation 60j. Crédits consommés sur échecs. Annuel obligatoire."
@@ -133929,7 +134088,10 @@
       "content-optimization",
       "seo"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "ia_use_case": "seo-optimization",
     "pros": [
       "Réunit contenu, technique, autorité et visibilité IA dans une même prestation.",
@@ -134095,7 +134257,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "design-system",
       "ui-components"
@@ -134559,7 +134724,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shield.jpg",
     "force_silence": false
@@ -135876,7 +136041,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "bio-link-pages",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shopmy.jpg",
     "force_silence": false
@@ -136006,7 +136171,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "wordpress-performance-plugins",
     "decision_policy_v3": null,
     "ogImageUrl": "https://shortpixel.com/img/bighead.jpg",
     "force_silence": false
@@ -136100,7 +136265,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-inspiration-search",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shotdeck.jpg",
     "description": "Base de références cinématographiques pour moodboards, cadrages, lumière et direction image.",
     "longDescriptionEn": "Searchable, richly tagged high-definition library of film and commercial stills (by shot type, color, lighting, genre…) for inspiration, moodboards and shoot prep.",
@@ -136629,7 +136794,10 @@
       "privacy-analytics",
       "web-analytics"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "developpeur-solo"
+    ],
     "ia_use_case": null,
     "pros": [
       "Privacy-first, sans cookies, conforme au RGPD.",
@@ -137174,7 +137342,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -137908,7 +138076,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "polls-qa-tools",
     "pricingEn": {
       "free": "Up to 100 participants, polls, Q&A, word clouds, quizzes.",
       "paid": "Paid plans scale with participant count and branding/analytics needs; rates vary significantly by event size, worth requesting a quote beyond 100 participants."
@@ -138100,7 +138268,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "project-management-general",
     "decision_policy_v3": null,
     "descriptionEn": "Smartsheet looks like a spreadsheet but works like a project management tool: Gantt, calendar and Kanban views, forms, and 250 monthly automations from the Pro plan up. Business removes the user cap and adds unlimited storage and no-code portals (WorkApps).\n\nThe real price jump sits between Pro and Business: Business costs over 3.5x Pro. For a small team that doesn't need client portals or automated external data import, Pro is plenty.",
     "ogImageUrl": "https://www.smartsheet.com/sites/default/files/2024-10/smartsheet-og-teaser-image-dusk-on-light.jpg",
@@ -138737,7 +138905,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "it-asset-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://snipeitapp.com/img/desktop_snipe.png",
     "force_silence": false
@@ -139889,7 +140057,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -140006,7 +140174,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "frontend-framework",
       "ui-components"
@@ -140114,7 +140285,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "ogImageUrl": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2026-02/solidworks-AI-companions-battlebots-video-cover.jpg.webp?itok=lnj4ssfA",
     "description": "Logiciel CAO 3D (Conception Assistée par Ordinateur) professionnel de Dassault Systèmes pour la modélisation de pièces, assemblages et mises en plan. Inclut des outils de simulation, visualisation photorealiste et gestion de données.\n\nFonctions clés : Modélisation 3D de pièces et assemblages complexes ; Mise en plan automatisée ; Simulation et analyse (stress, flux, etc.) ; Rendu photorealiste ; Gestion de données PDM intégrée ; Export CAO vers multiples formats.\n\nSolidWorks gagne pour l'ingénierie mécanique professionnelle et les simulations ; pour le design produit léger, FreeCAD ou Fusion 360 peuvent suffire.",
     "longDescriptionEn": "Professional 3D CAD software by Dassault Systèmes for part modeling, assemblies, and drawings. Includes simulation tools, photorealistic rendering, and data management.\n\nKey strengths: Universally recognized industry standard.; Robust simulation and idea validation.; Strong technical support.; PDM integration and project management..\n\nSolidWorks wins for professional mechanical engineering and simulations; for lighter product design, FreeCAD or Fusion 360 may suffice.",
@@ -140325,7 +140496,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "workplace-management",
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -140462,7 +140633,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "newsletter-growth",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/6278ffab9cf6e95f0162ea8e/657b916e91979871c64b2828_network-meta-image.jpg",
     "force_silence": false
@@ -140540,7 +140711,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-system-tooling",
     "ogImageUrl": "https://framerusercontent.com/images/Mf3WhKlT44JPgm014wOOq9AHI4.png",
     "description": "Plateforme de distribution de design tokens et d'assets qui relie les sources de design aux dépôts et outils de développement.\n\nFonctions clés : Synchronisation des design tokens et assets ; Figma et Tokens Studio comme sources ; GitHub comme destination ; CLI et SDK d'automatisation ; Templates et parsers open source ; Format SDTF pour structurer les tokens.\n\nSpecify devient pertinent lorsque la synchronisation manuelle des tokens crée des erreurs ou mobilise plusieurs personnes chaque semaine.",
     "longDescriptionEn": "Design token and asset distribution platform connecting design sources with development repositories and tools.\n\nKey strengths: Automation between design and development.; Unlimited sources and destinations in the displayed plans.; Documented CLI, SDK, and token format..\n\nSpecify becomes worthwhile when manual token synchronization creates errors or takes several people time every week.",
@@ -140842,7 +141013,10 @@
       "prototype-3d",
       "web-animation"
     ],
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "ia_use_case": null,
     "pros": [
       "Prise en main accessible pour les designers web.",
@@ -141025,7 +141199,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "podcast-hosting",
     "ogImageUrl": "https://microfrontend-nonhosted-cdn.spotifycdn.com/images/social-thumbnail.png",
     "description": "Hébergement et distribution podcast gratuits par Spotify.",
     "longDescriptionEn": "Free podcast hosting, distribution and monetization platform (formerly Anchor, renamed Spotify for Creators in late 2024). Manages audio, video, analytics and the Spotify Partner Program.",
@@ -142098,7 +142272,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "bio-link-pages",
     "decision_policy_v3": null,
     "ogImageUrl": "https://assets.stanwith.me/graphics/stan-url-preview.jpg",
     "force_silence": false
@@ -142791,7 +142965,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/storyblocks.jpg",
     "force_silence": false
@@ -142870,7 +143044,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "ux-ui"
+    ],
     "functional_needs": [
       "design-system",
       "ui-testing"
@@ -143062,7 +143239,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-story-templates",
     "decision_policy_v3": null,
     "ogImageUrl": "https://storyluxe.com/assets/social.png",
     "force_silence": false
@@ -143341,7 +143518,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "streaming-overlay-software",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.streamelements.com/assets/homepage/og/main.jpg",
     "force_silence": false
@@ -143593,7 +143770,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "streaming-overlay-software",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.streamlabs.com/static/imgs/marketing-pages/home.png",
     "force_silence": false
@@ -143897,7 +144074,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "css-in-js",
       "styling"
@@ -144053,7 +144233,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-transcription-editing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/6469e2294ac68c3d5caea327/67582fde54b44b92ce325aa3_Submagic%20-%20Link%20Thumbnail%402x.png",
     "force_silence": false
@@ -145221,7 +145401,10 @@
       "code-review",
       "documentation"
     ],
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
+    ],
     "ia_use_case": "code-generation",
     "pros": [
       "Nombreux outils front réunis dans une extension.",
@@ -145777,7 +145960,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "data-integration-etl",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.sanity.io/images/8ly2m84z/production-2025/eee7774699fe786de151ef9785e5392dc2da9d5a-3840x2160.png",
     "force_silence": false
@@ -146075,7 +146258,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/surfer-ai.jpg",
     "force_silence": false
@@ -146166,7 +146349,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "ogImageUrl": "https://marketing-assets.surferseo.art/wf-cdn/62666115cfab458794bd512f/6a1d9411dd14b078c94328eb_4fafb0f70a45b96e9a7c000f89edfa37_surfer-3-og.jpeg",
     "description": "Optimisation SEO de contenus, briefs et scoring sémantique.",
     "longDescriptionEn": "AI-powered SEO and content optimization platform designed to improve visibility across Google search, AI Overviews, and AI models like ChatGPT, Gemini, and Claude.",
@@ -146658,7 +146841,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "frontend-framework",
       "ui-components"
@@ -146816,7 +147002,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esg-carbon-reporting",
     "decision_policy_v3": null,
     "ogImageUrl": "/_astro/og_image_social_ZQPNrx.webp",
     "force_silence": false
@@ -146928,7 +147114,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "analytics"
     ],
@@ -147104,7 +147293,7 @@
       "guest_clients",
       "approvals_needed"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "itsm-helpdesk",
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -147272,7 +147461,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "checkout-platforms",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/systeme-io.jpg",
     "force_silence": false
@@ -147363,7 +147552,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "business-intelligence",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tableau.jpg",
     "description": "Plateforme BI et dataviz pour dashboards et analyses avancées.",
     "longDescriptionEn": "Business intelligence and data visualization platform for creating interactive dashboards and analytical reports from multiple data sources.",
@@ -147528,7 +147717,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "wordpress-plugins",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tablepress.org/wp-content/uploads/2026/06/tablepress-card.png",
     "force_silence": false
@@ -148126,7 +148315,10 @@
     "substitutable": true,
     "host_app": "react",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "routing"
     ],
@@ -148293,7 +148485,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "linkedin-content-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/taplio.jpg",
     "force_silence": false
@@ -149018,7 +149210,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "fashion-tech-packs",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/techpacker.jpg",
     "description": "Fiches techniques mode, spécifications produit et suivi production.",
     "longDescriptionEn": "Production management platform for fashion, specialized in tech pack creation, production tracking, line sheets, and supplier collaboration.",
@@ -149190,7 +149382,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "teleprompter-apps",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/62ee672fdd39ff45cfee8820/62f23f2aeafac5426e52e4a8_Screenshot%202022-08-09%20at%2013.01%201.png",
     "force_silence": false
@@ -149818,7 +150010,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tenor.jpg",
     "force_silence": false
@@ -150082,7 +150274,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-story-templates",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tezza.jpg",
     "force_silence": false
@@ -150495,7 +150687,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "affiliate-link-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://thirstyaffiliates.com/wp-content/uploads/2018/08/ta-logo.png",
     "force_silence": false
@@ -150914,7 +151106,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "checkout-platforms",
     "decision_policy_v3": null,
     "ogImageUrl": "https://storage.googleapis.com/gpt-engineer-file-uploads/49cdxNi1aDXXyTY0oGi34nZe2kB2/social-images/social-1775842330750-Screenshot_(20).webp",
     "force_silence": false
@@ -151476,7 +151668,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-network",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok.jpg",
     "force_silence": false
@@ -151618,7 +151810,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ad-platforms",
     "decision_policy_v3": null,
     "ogImageUrl": "https://lf-tt4b.tiktokcdn.com/obj/i18nblog/tt4b_cms/en-US/tipdilz7wysq-srIVh0sEyaoSgFa9SKZFU.png",
     "force_silence": false
@@ -151772,7 +151964,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-network",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok-studio.jpg",
     "force_silence": false
@@ -152891,7 +153083,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-image-enhancement",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/topaz.jpg",
     "force_silence": false
@@ -153277,7 +153469,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-video-enhancement",
     "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp",
     "description": "Amélioration, stabilisation, upscale et nettoyage vidéo assistés par IA.",
     "longDescriptionEn": null,
@@ -153576,7 +153768,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "motion-compositing",
     "ogImageUrl": "https://derivative-devforum-backups.s3.us-east-2.amazonaws.com/static/manifest512.png",
     "description": "Environnement node-based pour installations interactives, temps réel et projection.",
     "longDescriptionEn": "Node-based visual programming environment for building real-time interactive content: projections, installations, video mapping, generative visuals, and stage scenography.",
@@ -153749,7 +153941,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "trading-charting",
     "decision_policy_v3": null,
     "ogImageUrl": "https://s.tradingview.com/static/images/illustrations/main-page.jpg",
     "force_silence": false
@@ -153879,7 +154071,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "fitness-coaching-apps",
     "decision_policy_v3": null,
     "ogImageUrl": "https://file.trainerize.com/assets/tz/common-assets/images/abc-trainerize-social-image.jpg",
     "force_silence": false
@@ -154161,7 +154353,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "plugin-sketchup",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -154774,7 +154966,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ecommerce-analytics",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/triple-whale.jpg",
     "force_silence": false
@@ -155050,7 +155242,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "fitness-coaching-apps",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/truecoach.jpg",
     "force_silence": false
@@ -155353,7 +155545,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
     "force_silence": false
@@ -155859,7 +156051,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-render-engine",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": []
@@ -156014,7 +156206,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-network",
     "decision_policy_v3": null,
     "ogImageUrl": "https://static-cdn.jtvnw.net/ttv-static-metadata/twitch_logo3.jpg",
     "force_silence": false
@@ -156159,7 +156351,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "screen-recording",
     "decision_policy_v3": null,
     "ogImageUrl": "https://static-cdn.jtvnw.net/ttv-static-metadata/twitch_logo3.jpg",
     "force_silence": false
@@ -156227,7 +156419,10 @@
       "landing-page",
       "website-builder"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "createur-contenu"
+    ],
     "ia_use_case": null,
     "pros": [
       "Interface unique et créative avec slash-commands.",
@@ -157810,7 +158005,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-story-templates",
     "decision_policy_v3": null,
     "ogImageUrl": "https://static1.squarespace.com/static/5e3ae1048e80ab4164765fae/t/5e6e61748afded74f5455b6c/1584292215045/futurebelongs.jpg?format=1500w",
     "force_silence": false
@@ -158070,7 +158265,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "real-time-3d",
     "ogImageUrl": "https://cdn.sanity.io/images/fuvbjjlp/production/9a58ef0b0a39424aaf70dd4c30539b477ae54697-1200x630.png",
     "description": "Moteur temps réel pour jeux, applications interactives et expériences 3D.",
     "longDescriptionEn": "Cross-platform real-time game engine and creation platform (2D/3D), used for games, simulation, XR and interactive experiences, with a vast asset ecosystem.",
@@ -158700,7 +158895,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "user-research-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.usertesting.com/sites/default/files/usertestingv3/2024-10/IMAGE-meta-social-global-usertesting-1600x900.png?width=1200&amp;height=628",
     "force_silence": false
@@ -159095,7 +159290,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-render-engine",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -159279,7 +159474,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-app-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -159711,7 +159906,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "3d-software",
     "ogImageUrl": "/og-screenshots/vectorworks.jpg",
     "description": "Plateforme 3D CAO intégrée pour architecture, paysagisme, design d'éclairage et scénographie. Offre BIM natif, outils de modélisation 3D avancés et documentation projet. Disponible en plusieurs variantes selon la spécialité : Architect, Landmark, Spotlight et Fundamentals.\n\nFonctions clés : BIM intégré pour architecture et design ; Modélisation 3D CAO avancée ; Outils de rendu et visualisation ; Intégration paysage, illumination et scénographie ; Gestion de projet collaborative ; Export vers multiples formats (IFC, DWG, DXF, PDF 3D, etc.).\n\nVectorworks est incontournable pour le BIM architecural professionnel ; pour du design occasionnel, SketchUp ou Blender suffisent.",
     "longDescriptionEn": "Integrated 3D CAD platform for architecture, landscape design, lighting design, and scenic design. Offers native BIM, advanced 3D modeling tools, and project documentation. Available in specialist variants: Architect, Landmark, Spotlight, and Fundamentals.\n\nKey strengths: Professional integrated solution for architecture and design.; Robust BIM compliant with industry standards.; Multiple variants (Architect, Landmark, Spotlight) tailored to needs.; Collaboration and project management tools included.; Export to open standards (IFC, DWG, etc.)..\n\nVectorworks is essential for professional architectural BIM; for occasional design, SketchUp or Blender suffice.",
@@ -160640,7 +160835,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "business-video-hosting",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.vidyard.com/wp-content/uploads/Website-Sharing-3-1-1.jpg",
     "force_silence": false
@@ -160926,7 +161121,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "prototyping",
       "wireframing"
@@ -161722,7 +161920,10 @@
       "transcription",
       "voice-dictation"
     ],
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "createur-contenu"
+    ],
     "ia_use_case": "voice-dictation",
     "pros": [
       "Offline par défaut (confidentialité garantie).",
@@ -162067,7 +162268,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "build-tooling",
       "frontend-framework"
@@ -162203,7 +162407,10 @@
     "substitutable": false,
     "host_app": "vue-cli",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "routing"
     ],
@@ -162365,7 +162572,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ab-testing-platform",
     "decision_policy_v3": null,
     "ogImageUrl": "https://static.wingify.com/gcp/uploads/2023/07/feature-image-vwo-homepage-min.jpg",
     "force_silence": false
@@ -163675,7 +163882,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "event-management",
     "decision_policy_v3": null,
     "ogImageUrl": "https://weezevent.com/opengraph.jpg",
     "force_silence": false
@@ -163778,7 +163985,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "file-transfer",
     "pricing_v5": {
       "cautions": [
         "Offre gratuite plafonnée à 10 transferts par mois depuis fin 2024",
@@ -163916,7 +164123,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "automation-orchestration",
     "ogImageUrl": "https://cdn.prod.website-files.com/6683792e42237a5f054af942/68a7936c224c6e9781e20342_generic-og.png",
     "description": "Synchronisation no-code entre Webflow, Airtable, Notion et bases de données.",
     "longDescriptionEn": "Data integration platform enabling deep two-way synchronization between applications. Unlike automation tools, Whalesync maintains real-time data sync across connected systems.",
@@ -164097,7 +164304,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "business-messaging",
     "decision_policy_v3": null,
     "ogImageUrl": "https://whatsappbusiness.com/wp-content/uploads/2026/04/whatsapp-logo.jpg",
     "force_silence": false
@@ -164275,7 +164482,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -164866,7 +165073,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "business-video-hosting",
     "decision_policy_v3": null,
     "ogImageUrl": "https://images.ctfassets.net/buksmp4dkugj/iE7tNEpx71bpM630sHTxD/17d9755ecd7bbd53a99e9c606877e22b/Home-MetaImage.jpg?w=1200&amp;h=630&amp;fit=fill&amp;fl=progressive",
     "force_silence": false
@@ -165103,7 +165310,10 @@
       "security",
       "webflow-logic"
     ],
-    "verticals": [],
+    "verticals": [
+      "developpeur-solo",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "pros": [
       "Intégration seamless avec Webflow (écosystème cohérent).",
@@ -167395,7 +167605,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-network",
     "decision_policy_v3": null,
     "ogImageUrl": "https://abs.twimg.com/rweb/ssr/default/v2/og/image.png",
     "force_silence": false
@@ -167871,7 +168081,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://yoast.com/app/uploads/2026/05/yoast_og_2026.png",
     "force_silence": false
@@ -167938,7 +168148,10 @@
     "functional_needs": [
       "form-builder"
     ],
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "business-ops"
+    ],
     "ia_use_case": null,
     "pros": [
       "Plan gratuit illimité (vraiment sans limite).",
@@ -168144,7 +168357,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esignature",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -168410,7 +168623,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-network",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/youtube-studio.jpg",
     "force_silence": false
@@ -169160,7 +169373,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-code-assistant",
     "decision_policy_v3": null,
     "force_silence": false,
     "galleryImages": [
@@ -170400,7 +170613,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "reference-manager",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/zotero.jpg",
     "force_silence": false
@@ -172460,7 +172673,7 @@
       "invoicing_volume",
       "ecommerce_platform"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "compte-pro",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -172733,7 +172946,7 @@
       "posting_frequency",
       "team_size"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-media-scheduler",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -173042,7 +173255,7 @@
       "quotes_per_month",
       "team_size"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "construction-quoting",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -173311,7 +173524,7 @@
       "prospecting_volume",
       "existing_crm"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "crm-prospection",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -173573,7 +173786,7 @@
       "product_category",
       "images_per_month"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-product-photography",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -173836,7 +174049,7 @@
       "documents_per_month",
       "landlord_or_business"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "deadline-tracking-ai",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -174580,7 +174793,7 @@
       "team_size",
       "budget_range"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-agent-builder",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
