@@ -13,6 +13,7 @@ import { formatToolPrice, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
 import { localizePlanName } from "./src/lib/planNames";
+import { TOOLS_TABLE_SELECT } from "./src/lib/toolsTableColumns";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 
 const BASE = "https://tooltrim.com";
@@ -590,7 +591,7 @@ async function getMergedTools(jsonTools: any[]): Promise<any[]> {
         const rows: Record<string, any>[] = [];
         const pageSize = 1000; // plafond Data API Supabase par requête
         for (let from = 0; ; from += pageSize) {
-          const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&order=id.asc`, {
+          const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=${TOOLS_TABLE_SELECT}&order=id.asc`, {
             headers: {
               apikey: SB_PRERENDER_ANON,
               Authorization: `Bearer ${SB_PRERENDER_ANON}`,

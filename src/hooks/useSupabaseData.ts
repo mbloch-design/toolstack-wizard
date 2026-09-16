@@ -4,6 +4,7 @@ import type { Tool, Category } from "@/data/types";
 import categoriesIndexJson from "@/data/categories_index.json";
 import toolsIndexJson from "@/data/tools_index.json";
 import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
+import { TOOLS_TABLE_SELECT } from "@/lib/toolsTableColumns";
 
 // Pre-resolved tool data injected by the SSR build step (see entry-server.tsx),
 // so useToolBySlug can skip its loading state when the markup was already
@@ -437,7 +438,7 @@ export function useTools() {
       if (cancelled) return;
       setTools(localTools);
 
-      const { data, error } = await supabase.from("tools").select("*").limit(5000);
+      const { data, error } = await supabase.from("tools").select(TOOLS_TABLE_SELECT).limit(5000);
       if (cancelled) return;
       const merged = (!error && data && data.length > 0) ? mergeById(localTools, data.map(mapToolFromJson)) : localTools;
       _toolsCache = merged;
@@ -553,8 +554,8 @@ export function useToolBySlug(slug: string | undefined) {
           }
         }
 
-        let { data } = await supabase.from("tools").select("*").eq("slug", slug).maybeSingle();
-        if (!data) ({ data } = await supabase.from("tools").select("*").eq("id", slug).maybeSingle());
+        let { data } = await supabase.from("tools").select(TOOLS_TABLE_SELECT).eq("slug", slug).maybeSingle();
+        if (!data) ({ data } = await supabase.from("tools").select(TOOLS_TABLE_SELECT).eq("id", slug).maybeSingle());
         return data ? mapToolFromJson(data) : null;
       })();
 
