@@ -618,8 +618,8 @@ const StackDetailPage = () => {
   useEffect(() => {
     if (!stack) return;
     const title = lang === "fr"
-      ? fitBrandedTitle(`${stack.title} : outils, usages et budget`)
-      : fitBrandedTitle(`${stack.titleEn}: tools, use cases and budget`);
+      ? fitBrandedTitle(stack.seoTitle || `${stack.title} : outils, usages et budget`)
+      : fitBrandedTitle(stack.seoTitleEn || `${stack.titleEn}: tools, use cases and budget`);
     const description = getStackMetaDescription(stack, lang);
     setSeoTags({ title, description, url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/stacks/${stack.slug}`);

@@ -1760,9 +1760,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         for (const stack of STACKS) {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
+            // seoTitle/seoTitleEn are hand-written per stack, never generated —
+            // title/titleEn stay generic because they also serve as the page H1,
+            // card label, and breadcrumb, so they can't carry a search-result hook.
             const title = isFr
-              ? fitBrandedTitle(`${stack.title} : outils, usages et budget`)
-              : fitBrandedTitle(`${stack.titleEn}: tools, use cases and budget`);
+              ? fitBrandedTitle(stack.seoTitle || `${stack.title} : outils, usages et budget`)
+              : fitBrandedTitle(stack.seoTitleEn || `${stack.titleEn}: tools, use cases and budget`);
             // `subtitleEn` was generic boilerplate on the 111 auto-generated
             // stacks ("Recommended tools for this consulting profile."), which
             // is why the EN description used to rebuild from `titleEn` instead

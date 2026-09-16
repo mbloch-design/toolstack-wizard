@@ -188,6 +188,11 @@ export interface StackGuide {
   slug: string;
   title: string;
   titleEn: string;
+  /** Optional SEO <title> override, hand-written per stack — never auto-generated.
+   * `title`/`titleEn` stay short and neutral because they double as the page H1,
+   * card label, and breadcrumb; a search-result title can afford to be sharper. */
+  seoTitle?: string;
+  seoTitleEn?: string;
   subtitle: string;
   subtitleEn: string;
   persona: StackPersona;
@@ -17351,6 +17356,8 @@ export const STACKS: StackGuide[] = [
     "slug": "consultant-marketing",
     "title": "Stack marketing",
     "titleEn": "Marketing stack",
+    "seoTitle": "Stack marketing : zéro HubSpot inutile",
+    "seoTitleEn": "Marketing stack: skip the HubSpot subscription",
     "subtitle": "Tu dois auditer, cadrer un plan et prouver un résultat mesurable à chaque mission. Le risque : payer plusieurs plateformes qui font toutes un peu de tout.",
     "subtitleEn": "Every mission needs an audit, a plan, and a measurable result. The risk is paying for several platforms that each do a bit of everything.",
     "persona": "consultant",
@@ -17535,6 +17542,8 @@ export const STACKS: StackGuide[] = [
     "slug": "consultant-growth",
     "title": "Stack growth",
     "titleEn": "Growth stack",
+    "seoTitle": "Stack growth : un outil d'analytics, pas trois",
+    "seoTitleEn": "Growth stack: one analytics tool, not three",
     "subtitle": "Tu dois tester des pages, tracker le comportement et prouver un impact chiffré. Le piège : trois outils d'analytics produit qui mesurent la même chose.",
     "subtitleEn": "You need to test pages, track behavior, and prove a measurable impact. The trap: three product-analytics tools measuring the same thing.",
     "persona": "consultant",
@@ -20764,6 +20773,8 @@ export const STACKS: StackGuide[] = [
     "slug": "consultant-no-code",
     "title": "Stack no-code",
     "titleEn": "No-code stack",
+    "seoTitle": "Stack no-code : 3 automatisations, choisis-en une",
+    "seoTitleEn": "No-code stack: cut 3 automation tools to one",
     "subtitle": "Tu dois livrer un outil interne ou un MVP sans écrire de code. Le piège : trois app builders et trois automatiseurs qui font tous le même travail.",
     "subtitleEn": "You need to ship an internal tool or MVP without writing code. The trap: three app builders and three automation tools all doing the same job.",
     "persona": "consultant",
@@ -23749,6 +23760,8 @@ export const STACKS: StackGuide[] = [
     "slug": "createur-createur-tiktok-reels-shorts",
     "title": "Stack short video",
     "titleEn": "Short video stack",
+    "seoTitle": "Stack vidéo courte : CapCut bat Premiere ici",
+    "seoTitleEn": "Short-video stack: CapCut beats Premiere here",
     "subtitle": "Les outils recommandés pour créateur orienté vidéo courte verticale, rythme rapide, hooks forts, montage dynamique et publication très régulière.",
     "subtitleEn": "For creators focused on fast-paced vertical video — strong hooks, dynamic editing, and a very regular publishing cadence.",
     "persona": "content",
@@ -24031,6 +24044,8 @@ export const STACKS: StackGuide[] = [
     "slug": "createur-youtuber-long-format",
     "title": "Stack YouTube long",
     "titleEn": "YouTube long stack",
+    "seoTitle": "Stack YouTube : un seul monteur suffit",
+    "seoTitleEn": "YouTube stack: you don't need 3 video editors",
     "subtitle": "Les outils recommandés pour créateur de vidéos longues : face caméra, documentaire, analyse, tutoriel, divertissement ou expertise.",
     "subtitleEn": "For long-form video creators — to camera, documentary, analysis, tutorial, entertainment, or expertise — who need to produce, publish, and monetize without losing their editorial voice.",
     "persona": "content",
@@ -24874,6 +24889,8 @@ export const STACKS: StackGuide[] = [
     "slug": "createur-newsletter-creator",
     "title": "Stack newsletter",
     "titleEn": "Newsletter stack",
+    "seoTitle": "Stack newsletter : une plateforme, pas cinq",
+    "seoTitleEn": "Newsletter stack: pick one platform, not five",
     "subtitle": "Les outils recommandés pour créateur qui construit une audience via email, avec contenus éditoriaux, curation ou expertise.",
     "subtitleEn": "For creators building an audience over email through editorial content, curation, or expertise — where the platform choice locks in your monetization options.",
     "persona": "content",
@@ -32353,6 +32370,8 @@ export const STACKS: StackGuide[] = [
     "slug": "ops-operations-manager-freelance",
     "title": "Stack ops manager",
     "titleEn": "Ops manager stack",
+    "seoTitle": "Stack ops manager : un outil, pas quatre",
+    "seoTitleEn": "Ops manager stack: 4 task tools, pick one",
     "subtitle": "Tu dois rendre l'exécution visible sans multiplier les outils de pilotage. Le piège : quatre outils de gestion de tâches qui font le même travail en parallèle.",
     "subtitleEn": "You need execution to be visible without stacking management tools. The trap: four task-management tools all doing the same job in parallel.",
     "persona": "ops",
@@ -37255,6 +37274,8 @@ export const STACKS: StackGuide[] = [
     "slug": "solo-solo-founder-indie-maker",
     "title": "Stack indie maker",
     "titleEn": "Indie maker stack",
+    "seoTitle": "Stack indie maker : stop aux IA en double",
+    "seoTitleEn": "Indie maker stack: stop paying for 2 AI subs",
     "subtitle": "Tu dois construire, lancer et mesurer seul. Le piège : payer deux site builders et deux abonnements IA généraliste qui font le même travail.",
     "subtitleEn": "You need to build, launch, and measure alone. The trap: paying for two site builders and two general-purpose AI subscriptions doing the same job.",
     "persona": "solo",
