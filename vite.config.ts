@@ -1763,19 +1763,23 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const title = isFr
               ? fitBrandedTitle(`${stack.title} : outils, usages et budget`)
               : fitBrandedTitle(`${stack.titleEn}: tools, use cases and budget`);
+            // `subtitleEn` was generic boilerplate on the 111 auto-generated
+            // stacks ("Recommended tools for this consulting profile."), which
+            // is why the EN description used to rebuild from `titleEn` instead
+            // and never showed the real hook. As stacks get a real editorial
+            // pass (see the 8-stack pilot, a01254d0), `subtitleEn` becomes a
+            // genuine, differentiated hook — use it whenever it's not that
+            // boilerplate pattern, since it's what actually earns the click.
+            const isGenericSubtitleEn = /^Recommended tools for this \w[\w-]* profile\.$/.test(stack.subtitleEn.trim());
             const description = stack.slug === "developpeur-freelance-shipper"
               ? isFr
                 ? "Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : 32€/mois."
                 : `Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: ${usdFromEur(32)}/month.`
               : isFr
                 ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois. Stack organisée par workflow, budget, risques et calibrage.`
-                // `subtitleEn` est generique sur 111 stacks ("Recommended tools
-                // for this consulting profile."), la ou `subtitle` est propre a
-                // chaque metier. Construite dessus, la description anglaise
-                // n'existait qu'en 107 exemplaires pour 212 pages : la moitie du
-                // catalogue anglais se presentait a Google avec la description
-                // d'une autre page. On repart de `titleEn`, qui est unique.
-                : `${stack.titleEn}: the tools recommended for this profile, with a target budget of ${usdFromEur(stack.monthlyBudget)}/month, organized by workflow, budget, risks and calibration.`;
+                : isGenericSubtitleEn
+                  ? `${stack.titleEn}: the tools recommended for this profile, with a target budget of ${usdFromEur(stack.monthlyBudget)}/month, organized by workflow, budget, risks and calibration.`
+                  : `${stack.subtitleEn} Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
             const url = `${BASE}/${lang}/stacks/${stack.slug}`;
             const frUrl = `${BASE}/fr/stacks/${stack.slug}`;
             const enUrl = `${BASE}/en/stacks/${stack.slug}`;
