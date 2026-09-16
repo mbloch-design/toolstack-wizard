@@ -61,6 +61,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.inspoai.io",
   "traceo.dev",
   "www.traceo.dev",
+  "planeezy.com",
+  "www.planeezy.com",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait
