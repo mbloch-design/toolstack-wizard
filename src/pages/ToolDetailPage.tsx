@@ -22,7 +22,6 @@ import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import ToolAudienceBlock from "@/components/tool/ToolAudienceBlock";
 import ToolPluginsBlock from "@/components/tool/ToolPluginsBlock";
 import ToolProfitabilityBlock from "@/components/tool/ToolProfitabilityBlock";
-import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
 import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
@@ -854,7 +853,6 @@ const ToolDetailPage = () => {
                     tool={tool} displayPrice={displayPrice}
                     lang={lang} t={t}
                   />
-                  <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                 </div>
                 <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
