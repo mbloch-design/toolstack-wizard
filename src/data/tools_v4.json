@@ -168,7 +168,7 @@
       "compare_price_monthly_eur": 55
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://17hats.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -1219,7 +1219,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://activepieces.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -9822,7 +9822,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://arc.net",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -15970,7 +15970,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.beehiiv.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -16115,7 +16115,7 @@
       "compare_price_monthly_eur": 17
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://betterproposals.io",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -17264,7 +17264,7 @@
       "compare_price_monthly_eur": 13
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://bloom.io",
     "logo": "",
     "seo": {
       "idealForEn": "Freelance photographer or creative with 2-10 active clients wanting built-in client galleries on a small budget.",
@@ -29753,7 +29753,7 @@
     "defaultMonthlyPrice": 10,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://coda.io",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -31496,7 +31496,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://kit.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -39263,7 +39263,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://doppler.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -39548,7 +39548,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.dotenv.org",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -46350,7 +46350,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://fig.io",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -62302,7 +62302,7 @@
     "shortDescription": "Gestion de secrets et chiffrement enterprise.",
     "longDescription": "HashiCorp Vault, c'est l'outil de référence pour gérer les secrets d'une infrastructure : mots de passe, clés d'API, certificats, accès aux bases de données. Au lieu de laisser traîner ces secrets dans des fichiers de config ou des variables d'environnement, Vault les centralise, les chiffre, contrôle qui y accède et les fait tourner automatiquement (rotation). C'est un standard du monde DevOps et de la sécurité d'infrastructure.\n\nLe cœur est open source et gratuit en auto-hébergement. Au-delà, il y a HCP Vault (la version cloud managée par HashiCorp, facturée à l'usage) et Vault Enterprise (sur devis) pour les fonctions de gouvernance et de conformité. À noter : HashiCorp a été racheté par IBM en 2024.\n\nÀ qui ça s'adresse : aux équipes avec une vraie infrastructure et une fonction DevOps/SRE. La puissance a un coût : Vault est complexe à déployer et à maintenir. Pour une petite équipe ou un dev solo qui veut juste centraliser quelques secrets, des outils plus simples comme Doppler ou Infisical sont bien plus rapides à mettre en place. Vault se justifie quand la sécurité et la gouvernance deviennent des enjeux sérieux.",
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://hashicorp.com",
     "defaultMonthlyPrice": 0,
     "pricing": {
       "free": "Open source et gratuit en auto-hébergement",
@@ -63152,7 +63152,7 @@
       "compare_price_monthly_eur": 8
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://heptabase.com",
     "logo": "",
     "seo": {
       "idealForEn": "Researcher, student or consultant doing visual thinking who organizes complex projects on connected whiteboards, on annual billing for the best rate.",
@@ -67605,7 +67605,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://infisical.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -68897,7 +68897,7 @@
     "defaultMonthlyPrice": 20,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://integrately.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -75034,7 +75034,7 @@
     "defaultMonthlyPrice": 60,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.lagrowthmachine.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -77457,7 +77457,7 @@
     "defaultMonthlyPrice": 15,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.legalstart.fr",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -82157,7 +82157,7 @@
       "compare_price_monthly_eur": 1530
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://loopio.com",
     "logo": "",
     "seo": {
       "idealForEn": "Enterprise sales teams responding to 5+ RFPs per quarter, with a tens-of-thousands annual budget — not a tool for freelancers or small agencies.",
@@ -91607,7 +91607,7 @@
     "defaultMonthlyPrice": 25,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.microsoft.com/en-us/microsoft-365/project/project-management-software",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -98602,7 +98602,7 @@
     "defaultMonthlyPrice": 5,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://notionlytics.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -99045,7 +99045,7 @@
       "compare_price_monthly_eur": 27
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://nusii.com",
     "logo": "",
     "seo": {
       "idealForEn": "Agency or consultant wanting a simple proposal tool without bloat, ready to use a separate signing tool.",
@@ -103834,7 +103834,7 @@
     "defaultMonthlyPrice": 16,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.pabbly.com/connect",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -106027,7 +106027,7 @@
     "defaultMonthlyPrice": 12,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://payhawk.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -107990,7 +107990,7 @@
     "defaultMonthlyPrice": 56,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://phantombuster.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -116383,7 +116383,7 @@
       "compare_price_monthly_eur": 27
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://proposify.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -121227,7 +121227,7 @@
     "defaultMonthlyPrice": 16,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://readymag.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -122954,7 +122954,7 @@
       "compare_price_monthly_eur": 9
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://reflect.app",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -127615,7 +127615,7 @@
       "compare_price_monthly_eur": 13
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://roamresearch.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -128880,7 +128880,7 @@
     "defaultMonthlyPrice": 8,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.rydoo.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -134747,7 +134747,7 @@
     "defaultMonthlyPrice": 8,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.shieldapp.ai",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -136346,7 +136346,7 @@
       "compare_price_monthly_eur": 9
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://signrequest.com",
     "logo": "",
     "seo": {
       "idealForEn": "Freelancer or small team with moderate signature volume (5-20/month) wanting a simple tool without eIDAS qualified signing.",
@@ -136473,7 +136473,7 @@
     "defaultMonthlyPrice": 35,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.silae.fr",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -137712,7 +137712,7 @@
       "compare_price_monthly_eur": 9
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://skribble.com",
     "logo": "",
     "seo": {
       "idealForEn": "Business in Switzerland or with Swiss clients needing qualified signing, budgeting the per-signature cost on top of the subscription.",
@@ -139814,7 +139814,7 @@
     "defaultMonthlyPrice": 6,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.soldo.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -144876,7 +144876,7 @@
       "compare_price_monthly_eur": 19
     },
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://suitedash.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -162595,7 +162595,7 @@
     "defaultMonthlyPrice": 40,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.waalaxy.com",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -162846,7 +162846,7 @@
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.warp.dev",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -165416,7 +165416,7 @@
     "defaultMonthlyPrice": 49,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.wolterskluwer.com",
     "logo": "",
     "seo": null,
     "articles": [],
@@ -166324,7 +166324,7 @@
     "defaultMonthlyPrice": 99,
     "pricing_v5": null,
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://www.workday.com",
     "logo": "",
     "seo": {
       "aiAngle": {

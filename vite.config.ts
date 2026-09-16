@@ -149,6 +149,11 @@ const PROJECTION_RESCUED_FIELDS = [
   "longDescription", "longDescriptionEn",
   "shortDescription", "shortDescriptionEn",
   "verdict", "verdictEn",
+  // Added alongside getMergedTools' own rescue list (see its comment) once the
+  // same silent-overwrite pattern was found hiding the CTA on tool pages —
+  // this projection path feeds the actual SSR fiche render, getMergedTools
+  // only feeds the sitemap/meta. Pansement, same as the other list.
+  "websiteUrl", "affiliateLink", "logo", "substitution_cluster_v2",
 ];
 
 const SSR_LOCALIZED_FIELDS: [string, string][] = [
@@ -538,6 +543,7 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
       // du vide ou du remplissage.
       const local = catalogById.get(toolId) as Record<string, any> | undefined;
       if (local) {
+        const SHORT_FIELDS = new Set(["websiteUrl", "affiliateLink", "logo", "substitution_cluster_v2"]);
         for (const field of PROJECTION_RESCUED_FIELDS) {
           // `verdict` et consorts peuvent être structurés selon la source :
           // on ne compare que du texte, sinon hasEditorialSubstance reçoit un
@@ -545,10 +551,23 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
           const fromLocal = local[field];
           if (typeof fromLocal !== "string") continue;
           const projected = (projectedTool as any)[field];
-          if (typeof projected === "string" && hasEditorialSubstance(projected)) continue;
+          const isShortField = SHORT_FIELDS.has(field);
+          // A URL or a cluster slug is one "word" with no spaces:
+          // hasEditorialSubstance's word-count floor is tuned for prose and
+          // always rejects it, so short fields use a plain truthy check
+          // instead, both for what Supabase already has and for the JSON
+          // candidate that would replace it.
+          const projectedFilled = isShortField ? Boolean((projected || "").trim()) : hasEditorialSubstance(projected);
+          if (typeof projected === "string" && projectedFilled) continue;
           if (projected != null && typeof projected !== "string") continue;
-          if (!hasEditorialSubstance(fromLocal)) continue;
+          const localFilled = isShortField ? Boolean(fromLocal.trim()) : hasEditorialSubstance(fromLocal);
+          if (!localFilled) continue;
           (projectedTool as any)[field] = fromLocal;
+          projectionRescued += 1;
+        }
+        const projectedVerticals = (projectedTool as any).verticals;
+        if ((!Array.isArray(projectedVerticals) || projectedVerticals.length === 0) && Array.isArray(local.verticals) && local.verticals.length > 0) {
+          (projectedTool as any).verticals = local.verticals;
           projectionRescued += 1;
         }
       }
@@ -617,19 +636,35 @@ async function getMergedTools(jsonTools: any[]): Promise<any[]> {
     // Supabase remplace l'objet entier. Un champ editorial vide ou rempli d'un
     // gabarit cote Supabase effacait donc silencieusement le texte local, sans
     // erreur ni trace dans le build. C'est arrive aux descriptions anglaises
-    // redigees pendant l'indisponibilite de Supabase (HTTP 402, septembre 2026).
-    // Supabase reste prioritaire des qu'il porte un vrai texte ; il ne peut
-    // simplement pas effacer avec du vide. A retirer une fois les textes
-    // reinjectes dans Supabase (voir docs/SUPABASE_REPRISE.md).
+    // redigees pendant l'indisponibilite de Supabase (HTTP 402, septembre 2026),
+    // puis au catalogue de clusters/verticals et aux websiteUrl/affiliateLink/
+    // logo manquants repares en septembre 2026 (voir MEMORY.md : "reprise
+    // Supabase") : Supabase etait redevenu joignable avec 1047/1176 lignes,
+    // toutes anterieures a ce travail, et l'ecrasait silencieusement a chaque
+    // build sans que les tests ou tsc ne le detectent. Supabase reste
+    // prioritaire des qu'il porte une vraie valeur ; il ne peut simplement
+    // pas effacer avec du vide. Pansement le temps de reinjecter ce travail
+    // dans Supabase (voir docs/SUPABASE_REPRISE.md) — a retirer ensuite.
     let rescued = 0;
+    const RESCUE_TEXT_FIELDS = [
+      "longDescriptionEn", "longDescription",
+      "websiteUrl", "affiliateLink", "logo", "substitution_cluster_v2",
+    ];
     for (const row of _sbToolsCache) {
       if (!row.slug) continue;
       const local = bySlug.get(row.slug);
       const merged = sbRowToTool(row);
-      for (const field of ["longDescriptionEn", "longDescription"]) {
-        if (hasEditorialSubstance(merged[field])) continue;
-        if (!hasEditorialSubstance(local?.[field])) continue;
+      for (const field of RESCUE_TEXT_FIELDS) {
+        const isDescriptionField = field === "longDescriptionEn" || field === "longDescription";
+        const mergedHasValue = isDescriptionField ? hasEditorialSubstance(merged[field]) : Boolean(merged[field]);
+        if (mergedHasValue) continue;
+        const localHasValue = isDescriptionField ? hasEditorialSubstance(local?.[field]) : Boolean(local?.[field]);
+        if (!localHasValue) continue;
         merged[field] = local[field];
+        rescued++;
+      }
+      if ((!Array.isArray(merged.verticals) || merged.verticals.length === 0) && Array.isArray(local?.verticals) && local.verticals.length > 0) {
+        merged.verticals = local.verticals;
         rescued++;
       }
       bySlug.set(row.slug, merged);

@@ -41,6 +41,7 @@
     },
     "defaultMonthlyPrice": 60,
     "compareMonthlyPrice": 55,
+    "websiteUrl": "https://17hats.com",
     "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
       "crm",
@@ -279,6 +280,7 @@
       "free": "Gratuit (open-source, self-hosted)",
       "paid": "Cloud à partir de 0$/mois (plan gratuit)"
     },
+    "websiteUrl": "https://activepieces.com",
     "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
@@ -2165,6 +2167,7 @@
       "free": "Entièrement gratuit",
       "paid": "N/A"
     },
+    "websiteUrl": "https://arc.net",
     "substitution_cluster_v2": "productivity-browser",
     "functional_needs": [
       "notes",
@@ -3533,6 +3536,7 @@
       "free": "Inclus avec Beehiiv gratuit",
       "paid": "Métriques avancées dans les plans payants"
     },
+    "websiteUrl": "https://www.beehiiv.com",
     "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "analytics",
@@ -3565,6 +3569,7 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 17,
+    "websiteUrl": "https://betterproposals.io",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
@@ -3817,6 +3822,7 @@
     },
     "defaultMonthlyPrice": 14,
     "compareMonthlyPrice": 13,
+    "websiteUrl": "https://bloom.io",
     "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
       "crm",
@@ -6487,6 +6493,7 @@
       "paid": "À partir de 10$/mois par utilisateur"
     },
     "defaultMonthlyPrice": 10,
+    "websiteUrl": "https://coda.io",
     "tool_type": "core",
     "substitution_cluster_v2": "productivity-docs",
     "functional_needs": [
@@ -6864,6 +6871,7 @@
       "free": "Inclus avec ConvertKit",
       "paid": "N/A"
     },
+    "websiteUrl": "https://kit.com",
     "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "analytics",
@@ -8504,6 +8512,7 @@
       "free": "Plan gratuit (5 projets)",
       "paid": "À partir de 18$/mois par utilisateur"
     },
+    "websiteUrl": "https://doppler.com",
     "tool_type": "core",
     "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
@@ -8571,6 +8580,7 @@
       "free": "Gratuit",
       "paid": "Plans team disponibles"
     },
+    "websiteUrl": "https://www.dotenv.org",
     "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
       "security",
@@ -10023,6 +10033,7 @@
       "free": "Gratuit",
       "paid": "N/A (transition vers Amazon Q)"
     },
+    "websiteUrl": "https://fig.io",
     "substitution_cluster_v2": "modern-terminal",
     "verticals": [
       "dev-freelance",
@@ -13531,6 +13542,7 @@
       "paid": "HCP Vault (cloud) facturé à l'usage, Vault Enterprise sur devis"
     },
     "compareMonthlyPrice": 0,
+    "websiteUrl": "https://hashicorp.com",
     "tool_type": "core",
     "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
@@ -13715,6 +13727,7 @@
     },
     "defaultMonthlyPrice": 8.99,
     "compareMonthlyPrice": 8,
+    "websiteUrl": "https://heptabase.com",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
       "knowledge-management",
@@ -14627,6 +14640,7 @@
       "free": "Gratuit (open-source)",
       "paid": "Cloud à partir de 0$/mois"
     },
+    "websiteUrl": "https://infisical.com",
     "tool_type": "core",
     "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
@@ -14900,6 +14914,7 @@
       "paid": "À partir de 20$/mois"
     },
     "defaultMonthlyPrice": 20,
+    "websiteUrl": "https://integrately.com",
     "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
@@ -16212,6 +16227,7 @@
       "paid": "À partir de 60€/mois"
     },
     "defaultMonthlyPrice": 60,
+    "websiteUrl": "https://www.lagrowthmachine.com",
     "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
       "automatisation",
@@ -16698,6 +16714,7 @@
       "paid": "À partir de 15€/mois ou actes à l'unité"
     },
     "defaultMonthlyPrice": 15,
+    "websiteUrl": "https://www.legalstart.fr",
     "tool_type": "gestion",
     "substitution_cluster_v2": "legal-contracts",
     "functional_needs": [
@@ -17748,6 +17765,7 @@
     },
     "defaultMonthlyPrice": 1667,
     "compareMonthlyPrice": 1530,
+    "websiteUrl": "https://loopio.com",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
@@ -19810,6 +19828,7 @@
       "paid": "À partir de 25€/mois par utilisateur"
     },
     "defaultMonthlyPrice": 25,
+    "websiteUrl": "https://www.microsoft.com/en-us/microsoft-365/project/project-management-software",
     "tool_type": "gestion",
     "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
@@ -21304,6 +21323,7 @@
       "paid": "À partir de 5$/mois"
     },
     "defaultMonthlyPrice": 5,
+    "websiteUrl": "https://notionlytics.com",
     "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "analytics",
@@ -21400,6 +21420,7 @@
     },
     "defaultMonthlyPrice": 29,
     "compareMonthlyPrice": 27,
+    "websiteUrl": "https://nusii.com",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
@@ -22389,6 +22410,7 @@
       "paid": "À partir de 16$/mois (illimité)"
     },
     "defaultMonthlyPrice": 16,
+    "websiteUrl": "https://www.pabbly.com/connect",
     "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
@@ -22850,6 +22872,7 @@
       "paid": "À partir de 12€/mois par utilisateur"
     },
     "defaultMonthlyPrice": 12,
+    "websiteUrl": "https://payhawk.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
     "functional_needs": [
@@ -23291,6 +23314,7 @@
       "paid": "À partir de 56$/mois"
     },
     "defaultMonthlyPrice": 56,
+    "websiteUrl": "https://phantombuster.com",
     "tool_type": "ia",
     "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
@@ -25134,6 +25158,7 @@
     },
     "defaultMonthlyPrice": 29,
     "compareMonthlyPrice": 27,
+    "websiteUrl": "https://proposify.com",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
@@ -26191,6 +26216,7 @@
       "paid": "À partir de 16$/mois"
     },
     "defaultMonthlyPrice": 16,
+    "websiteUrl": "https://readymag.com",
     "substitution_cluster_v2": "website-builder",
     "functional_needs": [
       "design-tools",
@@ -26590,6 +26616,7 @@
     },
     "defaultMonthlyPrice": 8.33,
     "compareMonthlyPrice": 9,
+    "websiteUrl": "https://reflect.app",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
       "notes",
@@ -27586,6 +27613,7 @@
     },
     "defaultMonthlyPrice": 13.75,
     "compareMonthlyPrice": 13,
+    "websiteUrl": "https://roamresearch.com",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
       "knowledge-management",
@@ -27843,6 +27871,7 @@
       "paid": "À partir de 8€/mois par utilisateur"
     },
     "defaultMonthlyPrice": 8,
+    "websiteUrl": "https://www.rydoo.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
     "functional_needs": [
@@ -29074,6 +29103,7 @@
       "paid": "À partir de 8$/mois"
     },
     "defaultMonthlyPrice": 8,
+    "websiteUrl": "https://www.shieldapp.ai",
     "substitution_cluster_v2": "analytics",
     "verticals": [
       "community-manager",
@@ -29413,6 +29443,7 @@
     },
     "defaultMonthlyPrice": 7,
     "compareMonthlyPrice": 9,
+    "websiteUrl": "https://signrequest.com",
     "substitution_cluster_v2": "esignature",
     "functional_needs": [
       "collaboration"
@@ -29443,6 +29474,7 @@
       "paid": "À partir de 35€/mois (sur devis)"
     },
     "defaultMonthlyPrice": 35,
+    "websiteUrl": "https://www.silae.fr",
     "tool_type": "gestion",
     "substitution_cluster_v2": "hris-payroll",
     "functional_needs": [
@@ -29697,6 +29729,7 @@
     },
     "defaultMonthlyPrice": 12,
     "compareMonthlyPrice": 9,
+    "websiteUrl": "https://skribble.com",
     "substitution_cluster_v2": "esignature",
     "functional_needs": [
       "collaboration"
@@ -30120,6 +30153,7 @@
       "paid": "À partir de 6€/mois par utilisateur"
     },
     "defaultMonthlyPrice": 6,
+    "websiteUrl": "https://www.soldo.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
     "functional_needs": [
@@ -31242,6 +31276,7 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 19,
+    "websiteUrl": "https://suitedash.com",
     "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
       "crm",
@@ -35055,6 +35090,7 @@
       "paid": "À partir de 40€/mois"
     },
     "defaultMonthlyPrice": 40,
+    "websiteUrl": "https://www.waalaxy.com",
     "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
       "automatisation",
@@ -35110,6 +35146,7 @@
       "free": "Gratuit pour un usage individuel",
       "paid": "Plan Team à partir de 15$/mois"
     },
+    "websiteUrl": "https://www.warp.dev",
     "tool_type": "core",
     "substitution_cluster_v2": "modern-terminal",
     "functional_needs": [
@@ -35672,6 +35709,7 @@
       "paid": "À partir de 49€/mois"
     },
     "defaultMonthlyPrice": 49,
+    "websiteUrl": "https://www.wolterskluwer.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "legal-contracts",
     "functional_needs": [
@@ -35859,6 +35897,7 @@
       "paid": "Sur devis (à partir de 99$/utilisateur/mois)"
     },
     "defaultMonthlyPrice": 99,
+    "websiteUrl": "https://www.workday.com",
     "tool_type": "core",
     "substitution_cluster_v2": "hris-payroll",
     "functional_needs": [
