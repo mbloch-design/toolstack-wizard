@@ -171337,6 +171337,239 @@
     }
   },
   {
+    "id": "planeezy",
+    "slug": "planeezy",
+    "name": "Planeezy",
+    "category": "hris-payroll",
+    "shortDescription": "Planning d'équipe et badgeuse mobile géolocalisée pour les TPE à horaires variables, avec préparation automatique de la paie.",
+    "shortDescriptionEn": "Team scheduling and geolocated mobile time-clocking for small businesses with variable hours, with automatic payroll prep.",
+    "description": "Planeezy construit un planning d'équipe en glisser-déposer, avec des alertes visuelles en temps réel dès qu'une règle n'est pas respectée (repos quotidien, durée maximale, contraintes propres à chaque poste). Le planning se publie en quelques clics et les salariés le reçoivent sur leur téléphone via une application collaborateur.\n\nLa badgeuse mobile, incluse dans l'offre supérieure, permet de pointer depuis son propre téléphone avec géolocalisation, sans boîtier ni badge physique. Les écarts entre planifié et pointé remontent pour arbitrage, et un rapport de paie (heures normales, complémentaires, majorations nuit/dimanche/fériés) s'exporte en CSV ou Excel pour le comptable.\n\nDeux offres par collaborateur et par mois : Planning seul à 3,60 €HT, Planning + Badgeuse à 5,90 €HT, sans engagement, avec 30 jours d'essai complet sans carte bancaire. Planeezy est développé et hébergé en France (Sophia-Antipolis, hébergeur IONOS), et cible les TPE et petites PME à horaires variables (restauration, commerce, pharmacie, nettoyage, services à la personne) plutôt que les grandes structures avec un SIRH déjà en place.\n\nL'éditeur indique qu'un centre d'aide public est en préparation ; il n'était pas encore accessible au moment de la vérification.",
+    "longDescription": "Planeezy construit un planning d'équipe en glisser-déposer, avec des alertes visuelles en temps réel dès qu'une règle n'est pas respectée (repos quotidien, durée maximale, contraintes propres à chaque poste). Le planning se publie en quelques clics et les salariés le reçoivent sur leur téléphone via une application collaborateur.\n\nLa badgeuse mobile, incluse dans l'offre supérieure, permet de pointer depuis son propre téléphone avec géolocalisation, sans boîtier ni badge physique. Les écarts entre planifié et pointé remontent pour arbitrage, et un rapport de paie (heures normales, complémentaires, majorations nuit/dimanche/fériés) s'exporte en CSV ou Excel pour le comptable.\n\nDeux offres par collaborateur et par mois : Planning seul à 3,60 €HT, Planning + Badgeuse à 5,90 €HT, sans engagement, avec 30 jours d'essai complet sans carte bancaire. Planeezy est développé et hébergé en France (Sophia-Antipolis, hébergeur IONOS), et cible les TPE et petites PME à horaires variables (restauration, commerce, pharmacie, nettoyage, services à la personne) plutôt que les grandes structures avec un SIRH déjà en place.\n\nL'éditeur indique qu'un centre d'aide public est en préparation ; il n'était pas encore accessible au moment de la vérification.",
+    "longDescriptionEn": "Planeezy builds a team schedule via drag-and-drop, with real-time visual alerts as soon as a rule is broken (daily rest, maximum duration, role-specific constraints). The schedule publishes in a few clicks and staff receive it on their phone through a collaborator app.\n\nThe mobile time clock, included in the higher tier, lets staff clock in from their own phone with geolocation, no physical terminal or badge. Gaps between planned and clocked hours are flagged for arbitration, and a payroll report (regular hours, overtime, night/Sunday/holiday premiums) exports as CSV or Excel for the accountant.\n\nTwo per-employee monthly tiers: Planning alone at €3.60 excl. VAT, Planning + Time Clock at €5.90 excl. VAT, no commitment, with a full-featured 30-day trial and no card required. Planeezy is built and hosted in France (Sophia-Antipolis, IONOS hosting), targeting small businesses with variable hours (restaurants, retail, pharmacies, cleaning, personal services) rather than larger structures with an HRIS already in place.\n\nThe publisher states a public help center is in preparation; it wasn't accessible yet at the time of verification.",
+    "pricing": {
+      "free": "Essai 30 jours, toutes les fonctionnalités, sans carte bancaire",
+      "paid": "Planning 3,60 €HT/collaborateur/mois ; Planning + Badgeuse 5,90 €HT/collaborateur/mois"
+    },
+    "pricingEn": {
+      "free": "30-day trial, full features, no card required",
+      "paid": "Planning €3.60 excl. VAT/employee/month; Planning + Time Clock €5.90 excl. VAT/employee/month"
+    },
+    "defaultMonthlyPrice": 3.6,
+    "pricing_v5": {
+      "cautions": [
+        "Prix affichés HT ; TVA française 20 % en supplément.",
+        "Aucune raison sociale (forme juridique, SIRET) précisée dans les mentions légales, seulement un directeur de publication.",
+        "Le centre d'aide public annoncé par l'éditeur n'était pas encore en ligne à la vérification."
+      ],
+      "cautionsEn": [
+        "Prices shown exclude VAT; French 20% VAT is added on top.",
+        "No legal entity (company form, SIRET) disclosed in the legal notice, only a publication director.",
+        "The public help center announced by the publisher wasn't live yet at verification."
+      ],
+      "verified_on": "2026-09-15",
+      "source_domain": "planeezy.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Planning",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.planeezy.com/tarif-essai-gratuit-sans-engagement/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 3.6,
+      "plans": [
+        {
+          "planKey": "planning",
+          "displayName": "Planning",
+          "summary": "Outil de planification complet avec gestion des congés et rapports de paie.",
+          "featureHighlights": [
+            "Vues journalière, hebdomadaire et mensuelle",
+            "Gestion des besoins, contraintes et congés",
+            "Rapports de paie exportables"
+          ],
+          "detailsSourceUrl": "https://www.planeezy.com/tarif-essai-gratuit-sans-engagement/",
+          "pricingUnit": "par collaborateur",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 3.6,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "ht"
+        },
+        {
+          "planKey": "planning-badgeuse",
+          "displayName": "Planning + Badgeuse",
+          "summary": "Tous les modules Planning, plus la badgeuse mobile géolocalisée.",
+          "featureHighlights": [
+            "Pointage mobile géolocalisé, sans terminal",
+            "Vue planning en direct et écarts pointé/planifié",
+            "Suivi des demandes de correction"
+          ],
+          "detailsSourceUrl": "https://www.planeezy.com/tarif-essai-gratuit-sans-engagement/",
+          "pricingUnit": "par collaborateur",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 5.9,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "ht"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.planeezy.com/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/planeezy.com",
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe à horaires variables (restauration, commerce, pharmacie, services) et faites vos plannings vous-même.",
+        "Vous voulez que les erreurs de règles (repos, durée maximale) soient signalées pendant la construction du planning, pas après coup.",
+        "Vous voulez remplacer un pointage papier ou un boîtier par un pointage mobile géolocalisé relié directement au planning."
+      ],
+      "avoidIf": [
+        "Vous avez déjà un SIRH complet qui couvre planning, pointage et paie.",
+        "Votre structure a des horaires fixes et réguliers, sans contraintes complexes à arbitrer.",
+        "L'absence de raison sociale précisée dans les mentions légales est un frein pour votre organisation."
+      ],
+      "threshold": "Choisissez Planeezy si le planning et le pointage restent gérés à la main aujourd'hui et que les erreurs de règles vous coûtent du temps ou de l'argent. Testez les 30 jours gratuits sur un vrai planning avant de choisir entre l'offre Planning seule et l'offre avec badgeuse."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You manage a team with variable hours (restaurants, retail, pharmacy, services) and build schedules yourself.",
+        "You want rule violations (rest periods, maximum duration) flagged while building the schedule, not after the fact.",
+        "You want to replace paper time-tracking or a physical terminal with geolocated mobile clocking tied directly to the schedule."
+      ],
+      "avoidIf": [
+        "You already have a full HRIS covering scheduling, time-tracking and payroll.",
+        "Your structure has fixed, regular hours with no complex constraints to arbitrate.",
+        "The lack of a disclosed legal entity in the legal notice is a blocker for your organization."
+      ],
+      "threshold": "Choose Planeezy if scheduling and time-tracking are still handled manually today and rule mistakes cost you time or money. Test the 30-day free trial on a real schedule before choosing between the Planning-only offer and the one with time clocking."
+    },
+    "pros": [
+      "Alertes visuelles en temps réel pendant la construction du planning, pas après publication.",
+      "Publication du planning en quelques clics, avec application collaborateur mobile.",
+      "Badgeuse mobile géolocalisée sans boîtier ni badge physique.",
+      "Rapport de paie prêt à l'emploi (heures normales, majorations) exportable en CSV/Excel.",
+      "Essai de 30 jours avec toutes les fonctionnalités, sans carte bancaire, sur de vrais plannings."
+    ],
+    "prosEn": [
+      "Real-time visual alerts while building the schedule, not after publishing.",
+      "Schedule publishing in a few clicks, with a mobile collaborator app.",
+      "Geolocated mobile time clock with no physical terminal or badge.",
+      "Ready-to-use payroll report (regular hours, premiums) exportable as CSV/Excel.",
+      "30-day trial with full features, no card required, on real schedules."
+    ],
+    "cons": [
+      "Aucune raison sociale précisée dans les mentions légales, seulement un directeur de publication.",
+      "Centre d'aide public annoncé mais pas encore en ligne à la vérification.",
+      "Politique de confidentialité peu détaillée sur les droits RGPD comparée à d'autres éditeurs du secteur.",
+      "Tarif par collaborateur qui grimpe vite pour une équipe nombreuse à horaires variables."
+    ],
+    "consEn": [
+      "No legal entity disclosed in the legal notice, only a publication director.",
+      "Public help center announced but not live yet at verification.",
+      "Privacy policy is thin on GDPR rights compared to other publishers in the space.",
+      "Per-employee pricing that adds up quickly for a large team with variable hours."
+    ],
+    "useCases": [
+      "Construire le planning hebdomadaire d'une équipe à horaires variables en glisser-déposer.",
+      "Publier un planning par équipe et corriger un planning déjà publié sans que les salariés voient les changements en cours.",
+      "Faire pointer les salariés depuis leur téléphone avec géolocalisation, sans matériel dédié.",
+      "Exporter un rapport de paie prêt à l'emploi pour le comptable, sans ressaisie."
+    ],
+    "useCasesEn": [
+      "Build a variable-hours team's weekly schedule by drag-and-drop.",
+      "Publish a schedule team by team and edit an already-published schedule without staff seeing changes in progress.",
+      "Have staff clock in from their phone with geolocation, no dedicated hardware.",
+      "Export a ready-to-use payroll report for the accountant, no re-entry."
+    ],
+    "covers": [
+      "scheduling",
+      "time-tracking",
+      "suivi-temps"
+    ],
+    "functional_needs": [
+      "scheduling",
+      "time-tracking"
+    ],
+    "relevantFor": [
+      "Restaurateurs",
+      "Commerçants",
+      "Pharmacies",
+      "Entreprises de nettoyage",
+      "Services à la personne"
+    ],
+    "alternatives": [
+      "deputy"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour une TPE à horaires variables qui fait ses plannings elle-même et veut un pointage mobile relié à la paie.",
+      "idealForEn": "Ideal for a small business with variable hours that builds its own schedules and wants mobile clocking tied to payroll.",
+      "metaDescription": "Planeezy : avis, tarifs Planning et Badgeuse, planning d'équipe, pointage mobile géolocalisé et alternatives pour TPE à horaires variables."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ecommercant",
+      "restaurateur",
+      "dirigeant-tpe-pme"
+    ],
+    "ia_use_case": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 5,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "team_size",
+      "variable_hours_requirement",
+      "time_clock_requirement"
+    ],
+    "substitution_cluster_v2": "planning-equipe-badgeuse",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://www.planeezy.com/wp-content/uploads/home_screens_pc-2.png",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Remplace un planning papier ou Excel, un pointage séparé et une ressaisie manuelle en paie par un flux unique (construction, publication, pointage, export paie), avec un essai de 30 jours complet sans carte bancaire (source : planeezy.com/tarif-essai-gratuit-sans-engagement, vérifié le 2026-09-15).",
+        "simplicite": "Le site annonce une publication du planning « en 2 clics » et une prise en main via glisser-déposer, modèles et duplication de semaines, mais aucun avis public indépendant (Capterra, Trustpilot) n'a été trouvé pour confirmer l'ergonomie au-delà du discours du site (source : planeezy.com, vérifié le 2026-09-15).",
+        "utilisation": "L'outil couvre un usage hebdomadaire continu : construction du planning, publication, pointage mobile quotidien des salariés, traitement des écarts et export de paie, un périmètre large pour la gestion courante d'une équipe (source : planeezy.com/solution-organisation-planning-planeezy, vérifié le 2026-09-15).",
+        "puissance": "Les alertes de règles en temps réel et le pointage géolocalisé sans matériel sont des capacités réelles et vérifiées, mais restent un socle de fonctionnalités comparable à d'autres outils de planning d'équipe du marché, sans différenciateur exclusif identifié (source : planeezy.com, vérifié le 2026-09-15).",
+        "reversibilite": "L'export CSV/Excel des rapports de paie et la résiliation sans engagement « en deux clics » sont confirmés, mais la politique de confidentialité reste générique (accès et suppression mentionnés, sans détail sur la portabilité ni référence explicite aux articles du RGPD) (source : planeezy.com/politique-de-confidentialite, vérifié le 2026-09-15)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Replaces a paper or Excel schedule, separate time-tracking and manual payroll re-entry with one flow (build, publish, clock in, payroll export), with a full 30-day trial and no card required (source: planeezy.com/tarif-essai-gratuit-sans-engagement, verified 2026-09-15).",
+        "simplicite": "The site claims schedule publishing \"in 2 clicks\" and onboarding via drag-and-drop, templates and week duplication, but no independent public review (Capterra, Trustpilot) was found to confirm ergonomics beyond the site's own copy (source: planeezy.com, verified 2026-09-15).",
+        "utilisation": "The tool covers continuous weekly use: building the schedule, publishing, daily mobile clocking by staff, handling gaps and payroll export, a broad scope for ongoing team management (source: planeezy.com/solution-organisation-planning-planeezy, verified 2026-09-15).",
+        "puissance": "Real-time rule alerts and geolocated clocking with no hardware are real, verified capabilities, but remain a feature set comparable to other team-scheduling tools on the market, with no identified exclusive differentiator (source: planeezy.com, verified 2026-09-15).",
+        "reversibilite": "CSV/Excel export of payroll reports and no-commitment cancellation \"in two clicks\" are confirmed, but the privacy policy stays generic (access and deletion mentioned, no detail on portability or explicit GDPR article references) (source: planeezy.com/politique-de-confidentialite, verified 2026-09-15)."
+      },
+      "lastActivityVerifiedOn": "2026-09-15",
+      "notedOn": "2026-09-15"
+    }
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

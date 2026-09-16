@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1175
+# Records: 1176
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17517,6 +17517,21 @@
     },
     "description_fr": "Assistant IA de droit social français qui croise Code du travail, convention collective, jurisprudence et documents internes, avec sources vérifiables.",
     "description_en": "French employment-law AI assistant that cross-references the Labor Code, collective agreements, case law and internal documents, with verifiable sources."
+  },
+  {
+    "name": "Planeezy",
+    "slug": "planeezy",
+    "url_fr": "https://tooltrim.com/fr/tool/planeezy",
+    "url_en": "https://tooltrim.com/en/tool/planeezy",
+    "website": "https://www.planeezy.com/",
+    "category": "hris-payroll",
+    "monthly_price_eur": 3.6,
+    "pricing": {
+      "free": "Essai 30 jours, toutes les fonctionnalités, sans carte bancaire",
+      "paid": "Planning 3,60 €HT/collaborateur/mois ; Planning + Badgeuse 5,90 €HT/collaborateur/mois"
+    },
+    "description_fr": "Planning d'équipe et badgeuse mobile géolocalisée pour les TPE à horaires variables, avec préparation automatique de la paie.",
+    "description_en": "Team scheduling and geolocated mobile time-clocking for small businesses with variable hours, with automatic payroll prep."
   },
   {
     "name": "Happia",

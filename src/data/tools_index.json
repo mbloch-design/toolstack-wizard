@@ -35694,6 +35694,41 @@
     ]
   },
   {
+    "id": "planeezy",
+    "slug": "planeezy",
+    "name": "Planeezy",
+    "categoryId": "hris-payroll",
+    "shortDescription": "Planning d'équipe et badgeuse mobile géolocalisée pour les TPE à horaires variables, avec préparation automatique de la paie.",
+    "shortDescriptionEn": "Team scheduling and geolocated mobile time-clocking for small businesses with variable hours, with automatic payroll prep.",
+    "pricing": {
+      "free": "Essai 30 jours, toutes les fonctionnalités, sans carte bancaire",
+      "paid": "Planning 3,60 €HT/collaborateur/mois ; Planning + Badgeuse 5,90 €HT/collaborateur/mois"
+    },
+    "defaultMonthlyPrice": 3.6,
+    "compareMonthlyPrice": 3.6,
+    "websiteUrl": "https://www.planeezy.com/",
+    "ogImageUrl": "https://www.planeezy.com/wp-content/uploads/home_screens_pc-2.png",
+    "logo": "https://logo.clearbit.com/planeezy.com",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "planning-equipe-badgeuse",
+    "functional_needs": [
+      "scheduling",
+      "time-tracking"
+    ],
+    "verticals": [
+      "ecommercant",
+      "restaurateur",
+      "dirigeant-tpe-pme"
+    ],
+    "relevantFor": [
+      "Restaurateurs",
+      "Commerçants",
+      "Pharmacies",
+      "Entreprises de nettoyage",
+      "Services à la personne"
+    ]
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",
