@@ -1,4 +1,4 @@
-import { stripLeadingEmoji } from "@/lib/text";
+import { stripLeadingEmoji } from "./text";
 
 /**
  * Category names in the catalogue carry a decorative emoji prefix

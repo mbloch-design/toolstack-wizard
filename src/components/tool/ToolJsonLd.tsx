@@ -4,7 +4,6 @@ import { setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { buildToolFaqs } from "@/lib/toolFaq";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
-import { getCategoryLabel } from "@/lib/categoryLabel";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { safeExternalUrl } from "@/lib/externalLink";
 
@@ -145,73 +144,14 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       });
     }
 
-    // 4. BreadcrumbList — helps Google display path in SERP snippet
-    const toolUrl = `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
-    const breadcrumbItems: object[] = [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: lang === "fr" ? "Accueil" : "Home",
-        item: `${SEO_BASE}/${lang}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: lang === "fr" ? "Outils" : "Tools",
-        item: `${SEO_BASE}/${lang}/tools`,
-      },
-    ];
-    if (category) {
-      breadcrumbItems.push({
-        "@type": "ListItem",
-        position: 3,
-        name: getCategoryLabel(category, lang),
-        item: `${SEO_BASE}/${lang}/category/${category.slug || category.id}`,
-      });
-    }
-    breadcrumbItems.push({
-      "@type": "ListItem",
-      position: breadcrumbItems.length + 1,
-      // Never let this fall through to undefined: JSON.stringify drops undefined
-      // keys, producing a ListItem with no `name` — which Search Console rejects
-      // with "Vous devez indiquer name ou item.name".
-      name: tool.name || tool.slug || tool.id,
-      item: canonicalUrl !== toolUrl ? toolUrl : canonicalUrl,
-    });
-    // If we're on a sub-page, add it as the last crumb
-    if (canonicalUrl !== toolUrl) {
-      const subLabel =
-        canonicalUrl.endsWith("/prix") || canonicalUrl.endsWith("/pricing")
-          ? (lang === "fr" ? "Prix" : "Pricing")
-          : canonicalUrl.endsWith("/alternatives")
-          ? (lang === "fr" ? "Alternatives" : "Alternatives")
-          : canonicalUrl.endsWith("/avis") || canonicalUrl.endsWith("/reviews")
-          ? (lang === "fr" ? "Avis" : "Reviews")
-          : canonicalUrl.endsWith("/faq")
-          ? "FAQ"
-          : null;
-      if (subLabel) {
-        breadcrumbItems[breadcrumbItems.length - 1] = {
-          "@type": "ListItem",
-          position: breadcrumbItems.length,
-          name: tool.name,
-          item: toolUrl,
-        };
-        breadcrumbItems.push({
-          "@type": "ListItem",
-          position: breadcrumbItems.length + 1,
-          name: subLabel,
-          item: canonicalUrl,
-        });
-      }
-    }
-    setJsonLd("tool-breadcrumb-jsonld", {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: breadcrumbItems,
-    });
+    // BreadcrumbList is intentionally NOT emitted here: the static prerender
+    // (vite.config.ts, static-prerender-tools) already bakes one into the
+    // initial HTML for every tool page and sub-page. This effect ran on top
+    // of that at hydration without removing it, so Google was seeing two
+    // divergent BreadcrumbList blocks on the same URL (GSC: "certains
+    // éléments ne sont pas valides"). One canonical source only.
 
-    return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-video-jsonld", "tool-faq-jsonld", "tool-breadcrumb-jsonld"]);
+    return () => cleanupSeo(["tool-webpage-jsonld", "tool-software-jsonld", "tool-video-jsonld", "tool-faq-jsonld"]);
   }, [tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq, pageCanonicalUrl]);
 
   return null;

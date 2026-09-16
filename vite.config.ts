@@ -15,6 +15,7 @@ import { fitBrandedTitle } from "./src/lib/seoTitle";
 import { localizePlanName } from "./src/lib/planNames";
 import { TOOLS_TABLE_SELECT } from "./src/lib/toolsTableColumns";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
+import { getCategoryLabel } from "./src/lib/categoryLabel";
 
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
@@ -834,6 +835,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           }
         }
         const categories = JSON.parse(categoriesRaw);
+        const categoryById = new Map(categories.map((c: any) => [c.id, c]));
+        const breadcrumbCategoryLabel = (tool: any, isFr: boolean): string | null => {
+          const cat = categoryById.get(tool.category);
+          if (!cat) return null;
+          return getCategoryLabel(cat, isFr ? "fr" : "en") || null;
+        };
 
         const distDir = path.resolve(__dirname, "dist");
         // Per-tool OG image: use our own captured screenshot when one exists
@@ -1002,13 +1009,15 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const frToolUrl = `${BASE}/fr/tool/${slug}`;
             const enToolUrl = `${BASE}/en/tool/${slug}`;
 
+            const breadcrumbCatLabel = breadcrumbCategoryLabel(tool, isFr);
             const breadcrumb = {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
                 { "@type": "ListItem", position: 2, name: isFr ? "Outils" : "Tools", item: `${BASE}/${lang}/tools` },
-                { "@type": "ListItem", position: 3, name, item: url },
+                ...(breadcrumbCatLabel ? [{ "@type": "ListItem", position: 3, name: breadcrumbCatLabel, item: `${BASE}/${lang}/category/${tool.category}` }] : []),
+                { "@type": "ListItem", position: breadcrumbCatLabel ? 4 : 3, name, item: url },
               ],
             };
 
@@ -1244,14 +1253,16 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               const bodyText = sub.buildBody(name, price, isFr, tool);
 
               // BreadcrumbList for sub-page
+              const subBreadcrumbCatLabel = breadcrumbCategoryLabel(tool, isFr);
               const breadcrumb = {
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
                 itemListElement: [
                   { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
                   { "@type": "ListItem", position: 2, name: isFr ? "Outils" : "Tools", item: `${BASE}/${lang}/tools` },
-                  { "@type": "ListItem", position: 3, name, item: mainUrl },
-                  { "@type": "ListItem", position: 4, name: title.split("|")[0].trim(), item: url },
+                  ...(subBreadcrumbCatLabel ? [{ "@type": "ListItem", position: 3, name: subBreadcrumbCatLabel, item: `${BASE}/${lang}/category/${tool.category}` }] : []),
+                  { "@type": "ListItem", position: subBreadcrumbCatLabel ? 4 : 3, name, item: mainUrl },
+                  { "@type": "ListItem", position: subBreadcrumbCatLabel ? 5 : 4, name: title.split("|")[0].trim(), item: url },
                 ],
               };
 
