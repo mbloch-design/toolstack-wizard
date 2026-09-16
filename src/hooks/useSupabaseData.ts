@@ -422,37 +422,10 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
   return { toolA, toolB, loading };
 }
 
-let _toolsCache: Tool[] | null = null;
-
-export function useTools() {
-  const [tools, setTools] = useState<Tool[]>(_toolsCache ?? []);
-  const [loading, setLoading] = useState(!_toolsCache);
-
-  useEffect(() => {
-    if (_toolsCache) return;
-    let cancelled = false;
-
-    (async () => {
-      setLoading(true);
-      const localTools = await loadLocalTools();
-      if (cancelled) return;
-      setTools(localTools);
-
-      const { data, error } = await supabase.from("tools").select(TOOLS_TABLE_SELECT).limit(5000);
-      if (cancelled) return;
-      const merged = (!error && data && data.length > 0) ? mergeById(localTools, data.map(mapToolFromJson)) : localTools;
-      _toolsCache = merged;
-      setTools(merged);
-      setLoading(false);
-    })();
-
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  return { tools, loading };
-}
+// useTools() a ete retire avec ResultsPage.tsx, son seul consommateur : le
+// diagnostic questionnaire qu'il alimentait est mort, redirige vers /ma-stack
+// (voir vercel.json). Il chargeait la totalite du catalogue avec select("*")
+// a chaque visite de cette page, ~11 Mio par chargement.
 
 let _toolSummariesCache: ToolSummary[] | null = null;
 

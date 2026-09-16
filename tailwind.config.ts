@@ -11,9 +11,8 @@ export default {
     "./src/**/*.{ts,tsx}",
     // Retired routes redirect to /ma-stack. Excluding their unreachable source
     // prevents Tailwind from shipping utilities that no rendered page can use.
-    "!./src/pages/{SelectorPage,ResultsPage}.tsx",
-    "!./src/components/diagnostic/**/*.{ts,tsx}",
-    "!./src/components/selector/**/*.{ts,tsx}",
+    // SelectorPage/ResultsPage and the diagnostic/selector component trees were
+    // deleted outright rather than left as dead source for this glob to skip.
     "!./src/components/dashboard/**/*.{ts,tsx}",
   ],
   prefix: "",

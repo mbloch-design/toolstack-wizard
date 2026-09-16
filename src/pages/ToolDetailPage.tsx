@@ -483,7 +483,11 @@ const ToolDetailPage = () => {
     { key: "prix", label: t("Prix", "Pricing"), to: `${baseToolPath}/${lang === "en" ? "pricing" : "prix"}` },
     ...(hasAlternativesContent ? [{ key: "alternatives", label: t("Alternatives", "Alternatives"), to: `${baseToolPath}/alternatives` }] : []),
     { key: "avis", label: t("Avis", "Reviews"), to: `${baseToolPath}/${lang === "en" ? "reviews" : "avis"}` },
-    { key: "faq", label: "FAQ", to: `${baseToolPath}/faq` },
+    // /faq is a dead route (vercel.json redirects it back to the fiche to
+    // avoid duplicate-content pages), and the FAQ block already renders on
+    // the overview tab — link straight to its anchor instead of a URL that
+    // bounces the visitor right back to where they started.
+    { key: "faq", label: "FAQ", to: `${baseToolPath}#faq` },
   ];
   const subpageBreadcrumbLabel = subPage === "prix"
     ? t("Prix", "Pricing")

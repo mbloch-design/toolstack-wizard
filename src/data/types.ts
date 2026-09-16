@@ -342,87 +342,11 @@ export const FAMILY_ACTIVITIES: Record<VerticalFamily, { label: string; labelEn:
   ],
 };
 
-export type TimeWeight = "principal" | "secondaire" | "occasionnel";
-export const TIME_WEIGHTS: Record<TimeWeight, number> = {
-  principal: 1.0,
-  secondaire: 0.5,
-  occasionnel: 0.2,
-};
-
-export const TIME_WEIGHT_OPTIONS: { value: TimeWeight; label: string; labelEn: string; desc: string; descEn: string }[] = [
-  { value: "principal", label: "Principal", labelEn: "Primary", desc: "50%+ de mon temps", descEn: "50%+ of my time" },
-  { value: "secondaire", label: "Secondaire", labelEn: "Secondary", desc: "20-50%", descEn: "20-50%" },
-  { value: "occasionnel", label: "Occasionnel", labelEn: "Occasional", desc: "Moins de 20%", descEn: "Less than 20%" },
-];
-
-// ─── Legacy Personas (kept for compat) ───
-export type Persona = "sofia" | "marc" | "theo" | "alix" | "claire";
-
-export const PERSONAS: { value: Persona; emoji: string; name: string; desc: string; descEn: string }[] = [
-  { value: "sofia", emoji: "💼", name: "Sofia", desc: "Freelance — je facture des clients en direct", descEn: "Freelancer — I invoice clients directly" },
-  { value: "marc", emoji: "🏢", name: "Marc", desc: "DSI / Manager — je gère une équipe et des licences", descEn: "CTO / Manager — I manage a team and licenses" },
-  { value: "theo", emoji: "🚀", name: "Théo", desc: "Fondateur startup — je surveille mon Burn SaaS", descEn: "Startup founder — I track my SaaS Burn" },
-  { value: "alix", emoji: "🤖", name: "Alix", desc: "Solopreneur IA — j'utilise des agents et outils IA intensivement", descEn: "AI Solopreneur — I use AI agents and tools intensively" },
-  { value: "claire", emoji: "📊", name: "Claire", desc: "DAF / Finance — je consolide les dépenses logicielles", descEn: "CFO / Finance — I consolidate software spending" },
-];
-
-// ─── TJM ───
-export type TjmRange = "lt200" | "200-400" | "400-600" | "gt600" | "none";
-export const TJM_OPTIONS: { value: TjmRange; label: string; labelEn: string; median: number }[] = [
-  { value: "lt200", label: "Moins de 200€", labelEn: "Less than €200", median: 150 },
-  { value: "200-400", label: "200–400€", labelEn: "€200–400", median: 300 },
-  { value: "400-600", label: "400–600€", labelEn: "€400–600", median: 500 },
-  { value: "gt600", label: "Plus de 600€", labelEn: "More than €600", median: 700 },
-  { value: "none", label: "Je ne facture pas à la journée", labelEn: "I don't bill by the day", median: 0 },
-];
-
-// ─── Project Phase ───
-export type ProjectPhase = "lancement" | "croissance" | "regime";
-export const PHASE_OPTIONS: { value: ProjectPhase; emoji: string; label: string; labelEn: string; desc: string; descEn: string }[] = [
-  { value: "lancement", emoji: "🌱", label: "En lancement", labelEn: "Launching", desc: "Je construis, j'explore", descEn: "I'm building, exploring" },
-  { value: "croissance", emoji: "📈", label: "En croissance", labelEn: "Growing", desc: "J'optimise, j'automatise", descEn: "I'm optimizing, automating" },
-  { value: "regime", emoji: "⚡", label: "En régime", labelEn: "Steady state", desc: "Je maintiens, je consolide", descEn: "I'm maintaining, consolidating" },
-];
-
-// ─── Tech Maturity ───
-export type TechMaturity = "zero-config" | "intermediaire" | "expert";
-export const MATURITY_OPTIONS: { value: TechMaturity; emoji: string; label: string; labelEn: string; desc: string; descEn: string }[] = [
-  { value: "zero-config", emoji: "🔌", label: "Zéro config", labelEn: "Zero config", desc: "Je veux que ça marche sans réglages", descEn: "I want it to work out of the box" },
-  { value: "intermediaire", emoji: "🔧", label: "Intermédiaire", labelEn: "Intermediate", desc: "J'accepte une courbe d'apprentissage courte", descEn: "I accept a short learning curve" },
-  { value: "expert", emoji: "⚙️", label: "Expert", labelEn: "Expert", desc: "Je configure et j'automatise tout", descEn: "I configure and automate everything" },
-];
-
-export type MainGoal = "reduce-costs" | "reduce_costs" | "save-time" | "save_time" | "simplify" | "simplify_stack" | "find-better" | "find_better_tools";
-export type AIUsageLevel = "intensive" | "occasional" | "none" | "want_to_start";
-
-export interface VerticalWeight {
-  id: string;
-  weight: number;
-  timeWeight: TimeWeight;
-}
-
-export interface SelectedTool {
-  toolId: string;
-  monthlyCost: number;
-  usage: "low" | "medium" | "high";
-}
-
-export interface SelectorFormData {
-  // v4 composite profile
-  family: VerticalFamily | null;
-  verticals: VerticalWeight[];
-  // legacy (kept for backward compat)
-  persona: Persona | null;
-  mainGoal: MainGoal | null;
-  currentTools: SelectedTool[];
-  aiUsageLevel: AIUsageLevel | null;
-  tjm: TjmRange | null;
-  projectPhase: ProjectPhase | null;
-  techMaturity: TechMaturity | null;
-  email: string;
-  firstName: string;
-  marketingOptIn: boolean;
-}
+// Le questionnaire "selector" qui produisait ce profil a ete retire (redirige
+// vers /ma-stack, voir vercel.json et App.tsx) sans jamais retirer ses types.
+// TimeWeight, VerticalWeight, Persona (variante minuscule), PERSONAS, TjmRange,
+// ProjectPhase, TechMaturity, MainGoal, AIUsageLevel, SelectedTool et
+// SelectorFormData vivaient tous ici sans plus aucun consommateur.
 
 // ─── Prescription System ───
 export type PrescriptionType = "cancel" | "replace-cheaper" | "replace-better" | "downgrade";
