@@ -365,6 +365,17 @@ function appCategoryFor(tool: any): string {
 // (Supabase gagne) pour que le build reflète le contenu live et couvre les
 // fiches retirées de tools_v4.json. Fallback : si le fetch échoue, on garde le
 // JSON seul (comportement historique), donc le build n'est jamais pire qu'avant.
+// Codex restructure la base Supabase en ce moment (septembre 2026). Tant que
+// ce chantier n'est pas termine, le contenu qu'elle sert est en mouvement et
+// potentiellement incoherent avec le travail fait cote JSON cette session
+// (clusters, verticals, websiteUrl...) - le pansement de rescue de champs
+// (getMergedTools / getProjectedFicheTools) ne suffit plus a garantir un
+// etat previsible. Le build reste donc sur le JSON local seul, sans meme
+// tenter le fetch Supabase, independamment de tout reglage d'environnement
+// Vercel. A remettre a `false` une fois la restructuration terminee et ce
+// travail reinjecte (voir tache #9 / docs/SUPABASE_REPRISE.md).
+const SB_SOURCE_DISABLED_WHILE_CODEX_RESTRUCTURES = true;
+
 const SB_PRERENDER_URL = "https://rtfyfuwfdpnsogovkwai.supabase.co";
 const SB_PRERENDER_ANON =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0ZnlmdXdmZHBuc29nb3Zrd2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyOTcyMDcsImV4cCI6MjA4ODg3MzIwN30.pwpmh9Qe8dLZFq1rMqtCRmEMJ9dnbcdvT_B4CjIu4Xc";
@@ -454,6 +465,7 @@ let _sbToolsCache: Record<string, any>[] | null = null;
 let _catalogProjectionToolsCache: Record<string, any>[] | null = null;
 
 async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Promise<Record<string, any>[]> {
+  if (SB_SOURCE_DISABLED_WHILE_CODEX_RESTRUCTURES) return catalogTools;
   if (_catalogProjectionToolsCache) return _catalogProjectionToolsCache;
 
   // The projection resolves prices and relationships per row. An unfiltered
@@ -595,6 +607,7 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
 }
 
 async function getMergedTools(jsonTools: any[]): Promise<any[]> {
+  if (SB_SOURCE_DISABLED_WHILE_CODEX_RESTRUCTURES) return jsonTools;
   try {
     if (!_sbToolsCache) {
       const cached = readSbDiskCache<Record<string, any>[]>("tools-rows");
