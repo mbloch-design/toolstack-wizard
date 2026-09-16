@@ -108,4 +108,31 @@ describe("catalogProjectionRowsToTool", () => {
       ],
     });
   });
+
+  it("préfère le média canonique publié à une ancienne URL cassée", () => {
+    const tool = catalogProjectionRowsToTool([
+      row("fr", {
+        data_contract: "canonical",
+        og_image_url: "https://tooltrim.com/og-screenshots/1001bit-tools.png",
+        gallery_images: ["https://tooltrim.com/og-screenshots/obsolete.png"],
+        domain_availability: { media: "published" },
+        media: [
+          { type: "og_image", url: "https://tooltrim.com/og-screenshots/1001bit-tools.jpg", position: 0 },
+          { type: "gallery", url: "https://tooltrim.com/gallery/1001bit-tools-1.jpg", position: 0 },
+        ],
+      }),
+      row("en", {
+        data_contract: "canonical",
+        og_image_url: "https://tooltrim.com/og-screenshots/1001bit-tools.png",
+        domain_availability: { media: "published" },
+        media: [
+          { type: "og_image", url: "https://tooltrim.com/og-screenshots/1001bit-tools.jpg", position: 0 },
+          { type: "gallery", url: "https://tooltrim.com/gallery/1001bit-tools-1.jpg", position: 0 },
+        ],
+      }),
+    ]);
+
+    expect(tool?.ogImageUrl).toBe("https://tooltrim.com/og-screenshots/1001bit-tools.jpg");
+    expect(tool?.galleryImages).toEqual(["https://tooltrim.com/gallery/1001bit-tools-1.jpg"]);
+  });
 });

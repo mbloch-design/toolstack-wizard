@@ -416,7 +416,7 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
   const fetchBatch = async (ids: string[]) => {
     const idFilter = ids.map((id) => encodeURIComponent(id)).join(",");
     const res = await fetch(
-      `${SB_PRERENDER_URL}/rest/v1/published_tool_projection?select=*&id=in.(${idFilter})&order=id.asc,lang.asc`,
+      `${SB_PRERENDER_URL}/rest/v1/tool_details?select=*&id=in.(${idFilter})&order=id.asc,lang.asc`,
       {
         headers: {
           apikey: SB_PRERENDER_ANON,

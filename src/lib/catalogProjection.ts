@@ -69,6 +69,13 @@ export function catalogProjectionRowsToTool(rows: CatalogProjectionRow[]): Tool 
   const verdictFallback = { keepIf: [], avoidIf: [], threshold: "" };
   const pricing = base.legacy_pricing || { free: "", paid: "" };
   const relationships = array<Record<string, unknown>>(base.relationships);
+  const domainAvailability = base.domain_availability as Record<string, unknown> | undefined;
+  const canonicalMediaPublished = base.data_contract === "canonical" && domainAvailability?.media === "published";
+  const canonicalMedia = canonicalMediaPublished ? array<Record<string, unknown>>(base.media) : [];
+  const canonicalOgImage = canonicalMedia.find((item) => item.type === "og_image" && text(item.url));
+  const canonicalGallery = canonicalMedia
+    .filter((item) => item.type === "gallery" && text(item.url))
+    .map((item) => text(item.url));
 
   return {
     id: text(base.id),
@@ -96,7 +103,11 @@ export function catalogProjectionRowsToTool(rows: CatalogProjectionRow[]): Tool 
     affiliateLink: text(base.affiliate_link),
     websiteUrl: text(base.website_url || base.affiliate_link),
     logo: text(base.logo),
-    ogImageUrl: base.og_image_url || null,
+    // Once the media domain is published, the normalized media table is the
+    // authority. The legacy column may still contain a stale URL during the
+    // transition (1001bit-tools kept a missing .png while V4 stored the real
+    // .jpg), so it is only a compatibility fallback.
+    ogImageUrl: text(canonicalOgImage?.url) || base.og_image_url || null,
     soloRelevance: text(base.solo_relevance),
     teamRelevance: text(base.team_relevance),
     alternatives: array(base.alternatives),
@@ -123,17 +134,19 @@ export function catalogProjectionRowsToTool(rows: CatalogProjectionRow[]): Tool 
     // Kept outside the current Tool contract but useful to future projection
     // consumers; the cast avoids silently dropping these public fields.
     relationships,
-    galleryImages: fr?.gallery_images || en?.gallery_images || [],
+    galleryImages: canonicalMediaPublished
+      ? canonicalGallery
+      : fr?.gallery_images || en?.gallery_images || [],
     aiAngle: fr?.ai_angle || en?.ai_angle || null,
   } as Tool;
 }
 
-/** Read-only helper. It is intentionally not wired to a page yet. */
+/** Read a complete public fiche from the V4 projection. */
 export async function fetchProjectedTool(slugOrId: string): Promise<Tool | null> {
   const { supabase } = await import("@/integrations/supabase/client");
   const catalog = (supabase as any).schema("catalog_api");
   let result = await catalog
-    .from("published_tool_projection")
+    .from("tool_details")
     .select("*")
     .eq("slug", slugOrId)
     .order("lang", { ascending: true });
@@ -143,7 +156,7 @@ export async function fetchProjectedTool(slugOrId: string): Promise<Tool | null>
   }
 
   result = await catalog
-    .from("published_tool_projection")
+    .from("tool_details")
     .select("*")
     .eq("id", slugOrId)
     .order("lang", { ascending: true });

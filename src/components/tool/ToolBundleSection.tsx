@@ -45,7 +45,7 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
         const { supabase } = await import("@/integrations/supabase/client");
         const catalog = (supabase as any).schema("catalog_api");
         const { data } = await catalog
-          .from("published_tool_projection")
+          .from("tool_details")
           .select("tool_id, slug, name, logo, website_url, bundle_parent")
           .eq("bundle_parent", bundleKey)
           .eq("lang", L);
@@ -61,7 +61,7 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
         list.sort((a, b) => a.name.localeCompare(b.name));
         if (list.length > 0) setMembers(list);
         const { data: p } = await catalog
-          .from("published_tool_projection")
+          .from("tool_details")
           .select("slug, name, logo, website_url").eq("tool_id", bundleKey).eq("lang", L).limit(1);
         if (!cancelled && p?.[0]) setParent({ slug: p[0].slug || bundleKey, name: p[0].name || humanizeSlug(bundleKey), logo: p[0].logo, websiteUrl: p[0].website_url });
       } catch {
