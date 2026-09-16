@@ -366,20 +366,26 @@ export default function ExplorerPage() {
      theme), so every filter combination is technically a distinct URL. Only
      two shapes are worth indexing on their own: the bare /explorer landing
      page, and a "type=outil" source ("explore around Notion") — that one has
-     genuine standalone long-tail value (alternatives to a specific tool) and
-     gets its own title/description/canonical below. The "objectif" and
-     "stack" sources are derived from a user's own picks and don't carry
-     unique enough content to index; they stay noindexed and fall back to the
-     generic explorer copy. */
+     genuine standalone long-tail value and gets its own title/description/
+     canonical below. The "objectif" and "stack" sources are derived from a
+     user's own picks and don't carry unique enough content to index; they
+     stay noindexed and fall back to the generic explorer copy.
+
+     This page is deliberately NOT an "alternatives to X" page — that's
+     tool/{slug}/alternatives (close substitutes, same job). Explorer surfaces
+     the adjacent/satellite ecosystem around a tool (a Pinterest-style "tools
+     that pair with X"), a different selection and a different search intent.
+     Title/description must stay differentiated from the alternatives page's
+     copy so the two don't compete for the same query. */
   useEffect(() => {
     if (source?.type === "outil" && sourceTool) {
       setSeoTags({
         title: lang === "en"
-          ? fitBrandedTitle(`Alternatives to ${sourceLabel}: similar tools`)
-          : fitBrandedTitle(`Alternatives à ${sourceLabel} : outils similaires`),
+          ? fitBrandedTitle(`Tools that pair with ${sourceLabel}`)
+          : fitBrandedTitle(`Outils à associer à ${sourceLabel}`),
         description: lang === "en"
-          ? `Discover tools comparable to ${sourceLabel}, with manually verified pricing and independent verdicts on ToolTrim.`
-          : `Découvrez des outils comparables à ${sourceLabel}, avec prix vérifiés à la main et verdicts indépendants sur ToolTrim.`,
+          ? `Explore the tool ecosystem around ${sourceLabel}: complementary and adjacent picks to build a stack, curated by ToolTrim.`
+          : `Explorez l'écosystème d'outils autour de ${sourceLabel} : outils complémentaires et satellites pour composer votre stack, sélectionnés par ToolTrim.`,
         url: `${SEO_BASE}/${lang}/explorer/around/${encodeURIComponent(source.slug)}`,
         locale: lang === "en" ? "en_US" : "fr_FR",
       });

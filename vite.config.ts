@@ -1698,12 +1698,16 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           for (const lang of ["fr", "en"] as const) {
             const sourcePath = `/${lang}/explorer/around/${slug}`;
             const url = `${BASE}${sourcePath}`;
+            // Deliberately distinct from tool/{slug}/alternatives (close substitutes,
+            // same job): this page surfaces the adjacent/satellite ecosystem around
+            // a tool, not competing replacements. Keep the copy differentiated so
+            // the two pages don't target the same query. See ExplorerPage.tsx.
             const title = lang === "fr"
-              ? fitBrandedTitle(`Alternatives à ${name} : outils similaires`)
-              : fitBrandedTitle(`Alternatives to ${name}: similar tools`);
+              ? fitBrandedTitle(`Outils à associer à ${name}`)
+              : fitBrandedTitle(`Tools that pair with ${name}`);
             const description = lang === "fr"
-              ? `Découvrez des outils comparables à ${name}, avec prix vérifiés à la main et verdicts indépendants sur ToolTrim.`
-              : `Discover tools comparable to ${name}, with manually verified pricing and independent verdicts on ToolTrim.`;
+              ? `Explorez l'écosystème d'outils autour de ${name} : outils complémentaires et satellites pour composer votre stack, sélectionnés par ToolTrim.`
+              : `Explore the tool ecosystem around ${name}: complementary and adjacent picks to build a stack, curated by ToolTrim.`;
             const altLang = lang === "fr" ? "en" : "fr";
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
