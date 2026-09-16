@@ -1,7 +1,8 @@
 import type { Tool, ToolSummary } from "@/data/types";
 import { Package } from "@/lib/icons";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
+import { SsrToolContext } from "@/hooks/useSupabaseData";
 
 // Slug -> nom lisible (repli quand le nom n'est pas disponible).
 const humanizeSlug = (s: string) =>
@@ -38,7 +39,17 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
   const [members, setMembers] = useState<Member[]>(localMembers);
   const [parent, setParent] = useState<Member | null>(localParent);
 
+  // Same reasoning as useToolBySlug/useToolSummaries: on an SSR-matched tool
+  // page, `tools` is the same build-time snapshot the server already rendered
+  // from, so `localMembers`/`localParent` above are already as fresh as that
+  // page gets. 93% of tools have no bundle relationship at all (63 members +
+  // 17 parents out of 1176), so this effect fired two queries that resolved
+  // to nothing on nearly every tool-page view. Client-side navigation between
+  // tool pages (no SSR context for the newly-visited slug) still refreshes.
+  const isSsrPage = useContext(SsrToolContext) !== undefined;
+
   useEffect(() => {
+    if (isSsrPage) return;
     let cancelled = false;
     (async () => {
       try {
@@ -70,7 +81,7 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
       }
     })();
     return () => { cancelled = true; };
-  }, [bundleKey, L]);
+  }, [bundleKey, L, isSsrPage]);
 
   if (!members || members.length === 0) return null;
 
