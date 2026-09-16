@@ -7882,7 +7882,7 @@
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://www.dayforce.com",
-    "ogImageUrl": "/getmedia/49e85ed8-2e0e-46ef-92f9-248e2972ccf8/hero-home-1200x627.jpg",
+    "ogImageUrl": "https://www.dayforce.com/getmedia/49e85ed8-2e0e-46ef-92f9-248e2972ccf8/hero-home-1200x627.jpg",
     "tool_type": "metier",
     "substitution_cluster_v2": "hris-sync",
     "functional_needs": [
@@ -8602,7 +8602,7 @@
     },
     "defaultMonthlyPrice": 29,
     "websiteUrl": "https://dovetail.com",
-    "ogImageUrl": "/media/Social_Meta1.png",
+    "ogImageUrl": "https://dovetail.com/media/Social_Meta1.png",
     "substitution_cluster_v2": "user-research-platform",
     "functional_needs": [
       "analytics",
@@ -14777,7 +14777,7 @@
       "paid": "Options payantes possibles selon hébergement, équipe ou volume"
     },
     "websiteUrl": "https://insomnia.rest",
-    "ogImageUrl": "/images/open-graph-insomnia.png",
+    "ogImageUrl": "https://insomnia.rest/images/open-graph-insomnia.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "nocode-web",
     "functional_needs": [
@@ -16179,7 +16179,7 @@
       "paid": "Options payantes possibles selon hébergement, équipe ou volume"
     },
     "websiteUrl": "https://kubernetes.io",
-    "ogImageUrl": "/images/kubernetes-open-graph.png",
+    "ogImageUrl": "https://kubernetes.io/images/kubernetes-open-graph.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "devops",
     "functional_needs": [
@@ -22045,7 +22045,7 @@
       "paid": null
     },
     "websiteUrl": "https://origami.design",
-    "ogImageUrl": "/public/images/homepage/homepage-og.png",
+    "ogImageUrl": "https://origami.design/public/images/homepage/homepage-og.png",
     "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "prototyping"
@@ -23623,7 +23623,7 @@
     "defaultMonthlyPrice": 20,
     "compareMonthlyPrice": 20,
     "affiliateLink": "https://pipelinepro.io",
-    "ogImageUrl": "/static/home/game/images/share.jpg",
+    "ogImageUrl": "https://pipelinepro.io/static/home/game/images/share.jpg",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
       "sales-automation"
@@ -24722,7 +24722,7 @@
       "paid": "Options payantes possibles selon hébergement, équipe ou volume"
     },
     "websiteUrl": "https://processing.org",
-    "ogImageUrl": "/img/banner.png",
+    "ogImageUrl": "https://processing.org/img/banner.png",
     "substitution_cluster_v2": "creation",
     "functional_needs": [
       "creation"
@@ -25966,7 +25966,7 @@
     "defaultMonthlyPrice": 15,
     "compareMonthlyPrice": 15,
     "affiliateLink": "https://razorpay.com",
-    "ogImageUrl": "/build/browser/static/static/og-default.png",
+    "ogImageUrl": "https://razorpay.com/build/browser/static/static/og-default.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "finance-ops",
     "functional_needs": [
@@ -31670,7 +31670,7 @@
     "defaultMonthlyPrice": 250,
     "compareMonthlyPrice": 250,
     "affiliateLink": "https://sweep.net",
-    "ogImageUrl": "/_astro/og_image_social_ZQPNrx.webp",
+    "ogImageUrl": "https://www.sweep.net/_astro/og_image_social_ZQPNrx.webp",
     "logo": "https://logo.clearbit.com/sweep.net",
     "tool_type": "specialise",
     "substitution_cluster_v2": "esg-carbon-reporting",

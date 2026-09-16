@@ -36304,7 +36304,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/getmedia/49e85ed8-2e0e-46ef-92f9-248e2972ccf8/hero-home-1200x627.jpg"
+    "ogImageUrl": "https://www.dayforce.com/getmedia/49e85ed8-2e0e-46ef-92f9-248e2972ccf8/hero-home-1200x627.jpg"
   },
   {
     "id": "dbt",
@@ -39735,7 +39735,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": "user-research-platform",
-    "ogImageUrl": "/media/Social_Meta1.png",
+    "ogImageUrl": "https://dovetail.com/media/Social_Meta1.png",
     "description": "Recherche utilisateur, analyse d’interviews, tags, insights et repository research.",
     "longDescriptionEn": "User research analysis platform. Centralize interviews, surveys, feedback in workspace. Auto-transcription, tagging, insight synthesis. Supports editors and viewers with permissions.",
     "pricingEn": null,
@@ -68423,7 +68423,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "/images/open-graph-insomnia.png",
+    "ogImageUrl": "https://insomnia.rest/images/open-graph-insomnia.png",
     "force_silence": false
   },
   {
@@ -75013,7 +75013,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "/images/kubernetes-open-graph.png",
+    "ogImageUrl": "https://kubernetes.io/images/kubernetes-open-graph.png",
     "force_silence": false
   },
   {
@@ -102335,7 +102335,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "/public/images/homepage/homepage-og.png",
+    "ogImageUrl": "https://origami.design/public/images/homepage/homepage-og.png",
     "force_silence": false
   },
   {
@@ -109644,7 +109644,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "/static/home/game/images/share.jpg"
+    "ogImageUrl": "https://pipelinepro.io/static/home/game/images/share.jpg"
   },
   {
     "id": "pitch",
@@ -114633,7 +114633,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "/img/banner.png",
+    "ogImageUrl": "https://processing.org/img/banner.png",
     "force_silence": false
   },
   {
@@ -120384,7 +120384,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "/build/browser/static/static/og-default.png"
+    "ogImageUrl": "https://razorpay.com/build/browser/static/static/og-default.png"
   },
   {
     "id": "react",
@@ -147004,7 +147004,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": "esg-carbon-reporting",
     "decision_policy_v3": null,
-    "ogImageUrl": "/_astro/og_image_social_ZQPNrx.webp",
+    "ogImageUrl": "https://www.sweep.net/_astro/og_image_social_ZQPNrx.webp",
     "force_silence": false
   },
   {
