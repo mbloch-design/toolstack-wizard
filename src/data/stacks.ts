@@ -24875,7 +24875,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack newsletter",
     "titleEn": "Newsletter stack",
     "subtitle": "Les outils recommandés pour créateur qui construit une audience via email, avec contenus éditoriaux, curation ou expertise.",
-    "subtitleEn": "Recommended tools for this creator profile.",
+    "subtitleEn": "For creators building an audience over email through editorial content, curation, or expertise — where the platform choice locks in your monetization options.",
     "persona": "content",
     "subProfiles": [
       "creator-newsletter",
@@ -24891,8 +24891,8 @@ export const STACKS: StackGuide[] = [
     "bestForEn": "A creator building an audience over email, through editorial content, curation or expertise.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
-    "editorial": "La newsletter est un format idéal pour les fiches stack : outils de rédaction, growth, sponsorship, automation et analytics.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
-    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "editorial": "Cinq plateformes newsletter n'ont aucune raison de tourner en même temps : choisis-en une, c'est ta maison. Substack va le plus vite pour démarrer et apporte un réseau de découverte intégré, mais impose 10 % de commission sur les abonnements payants et laisse peu de contrôle sur le design. Beehiiv a rattrapé Substack sur l'essentiel et ajoute un vrai réseau publicitaire et des outils de croissance (recommandations croisées, référencement de lecteurs) sans commission sur les revenus. Ghost s'adresse à qui veut sortir des plateformes fermées : plus de contrôle, aucune commission, mais plus de configuration et un vrai coût d'hébergement. Kit et Mailerlite ne sont pas des plateformes de publication : ce sont des outils d'email marketing réutilisés pour la newsletter — n'y vont que si le contenu vit déjà ailleurs (site, blog) et que le besoin est purement l'envoi d'emails segmentés. Même logique de doublon sur les outils périphériques : Grammarly et LanguageTool corrigent la même chose, Zapier et Make automatisent la même chose, Tally et Typeform captent les mêmes formulaires.",
+    "editorialEn": "Five newsletter platforms have no reason to run at the same time: pick one, that's your home. Substack is the fastest to start and comes with a built-in discovery network, but takes a 10% cut of paid subscriptions and leaves little design control. Beehiiv has caught up with Substack on the essentials and adds a real ad network and growth tools (cross-recommendations, reader referrals) with no revenue cut. Ghost is for creators who want out of closed platforms: more control, no commission, but more setup and a real hosting cost. Kit and Mailerlite aren't publishing platforms — they're email-marketing tools repurposed for newsletters — only reach for them if the content already lives elsewhere (a site, a blog) and the need is purely segmented email sending. Same duplication logic on the peripheral tools: Grammarly and LanguageTool fix the same thing, Zapier and Make automate the same thing, Tally and Typeform capture the same forms.",
     "needs": [
       {
         "title": "Veille",
@@ -24969,154 +24969,154 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "Newsletter",
-        "roleEn": "Newsletter",
+        "role": "Plateforme newsletter (croissance)",
+        "roleEn": "Newsletter platform (growth)",
         "slug": "beehiiv",
         "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Newsletter : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure market watch in the content workflow."
+        "tip": "Le choix par défaut si la monétisation publicitaire compte.",
+        "tipEn": "The default choice if ad monetization matters.",
+        "reason": "Réseau publicitaire et outils de croissance intégrés, sans commission sur les revenus ; fait doublon avec Substack, Ghost, Kit et Mailerlite — une seule plateforme suffit.",
+        "reasonEn": "Built-in ad network and growth tools, no revenue cut; duplicates Substack, Ghost, Kit, and Mailerlite — one platform is enough."
       },
       {
-        "role": "Newsletter",
-        "roleEn": "Newsletter",
+        "role": "Plateforme newsletter (découverte)",
+        "roleEn": "Newsletter platform (discovery)",
         "slug": "substack",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Newsletter : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure writing in the content workflow."
+        "decision": "challenge",
+        "tip": "Alternative à Beehiiv, pas un complément.",
+        "tipEn": "An alternative to Beehiiv, not a complement.",
+        "reason": "Démarre plus vite et apporte un réseau de découverte, mais prend 10 % sur les abonnements payants et offre moins de contrôle sur le design.",
+        "reasonEn": "Starts faster and brings a discovery network, but takes a 10% cut of paid subscriptions and offers less design control."
       },
       {
-        "role": "Email marketing",
-        "roleEn": "Email marketing",
-        "slug": "kit",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Email marketing : utile pour sécuriser segmentation dans le workflow contenu.",
-        "reasonEn": "Useful to secure segmentation in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "mailerlite",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Outil métier : utile pour sécuriser publication dans le workflow contenu.",
-        "reasonEn": "Useful to secure publication in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Plateforme newsletter (indépendante)",
+        "roleEn": "Newsletter platform (independent)",
         "slug": "ghost",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure market watch in the content workflow."
+        "decision": "challenge",
+        "tip": "Pour sortir des plateformes fermées, avec un vrai coût d'hébergement.",
+        "tipEn": "To get off closed platforms, with a real hosting cost.",
+        "reason": "Aucune commission et plein contrôle, mais plus de configuration ; ne le choisis que si l'indépendance de plateforme prime sur la simplicité.",
+        "reasonEn": "No commission and full control, but more setup; only choose it if platform independence matters more than simplicity."
+      },
+      {
+        "role": "Email marketing (contenu externe)",
+        "roleEn": "Email marketing (content lives elsewhere)",
+        "slug": "kit",
+        "decision": "challenge",
+        "tip": "Seulement si le contenu vit déjà sur un site ou un blog.",
+        "tipEn": "Only if the content already lives on a site or blog.",
+        "reason": "N'est pas une plateforme de publication comme Beehiiv ; n'y va que si le besoin est purement l'envoi d'emails segmentés.",
+        "reasonEn": "Not a publishing platform like Beehiiv; only reach for it if the need is purely segmented email sending."
+      },
+      {
+        "role": "Email marketing (budget)",
+        "roleEn": "Email marketing (budget)",
+        "slug": "mailerlite",
+        "decision": "challenge",
+        "tip": "Alternative moins chère à Kit pour le même usage.",
+        "tipEn": "A cheaper alternative to Kit for the same use case.",
+        "reason": "Même logique que Kit, pour un budget plus serré ; ne le cumule pas avec une vraie plateforme de publication.",
+        "reasonEn": "Same logic as Kit, for a tighter budget; don't stack it with a real publishing platform."
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Cockpit contenu : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure writing in the content workflow."
+        "tip": "Utile dès que le calendrier éditorial dépasse la mémoire.",
+        "tipEn": "Useful once the editorial calendar outgrows memory alone.",
+        "reason": "Centralise idées, brouillons et calendrier de publication en un espace que tu retrouves facilement.",
+        "reasonEn": "Centralizes ideas, drafts, and the publishing calendar in one space you can find easily."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Base abonnés",
+        "roleEn": "Subscriber database",
         "slug": "airtable",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser segmentation dans le workflow contenu.",
-        "reasonEn": "Useful to secure segmentation in the content workflow."
+        "tip": "Utile pour croiser des données que la plateforme newsletter ne segmente pas nativement.",
+        "tipEn": "Useful to cross-reference data the newsletter platform doesn't natively segment.",
+        "reason": "Utile pour croiser des données sur les abonnés (source, segment, historique) que la plateforme newsletter ne gère pas nativement.",
+        "reasonEn": "Useful to cross-reference subscriber data (source, segment, history) the newsletter platform doesn't natively handle."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Croissance croisée",
+        "roleEn": "Cross-promotion growth",
         "slug": "sparkloop",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser publication dans le workflow contenu.",
-        "reasonEn": "Useful to secure publication in the content workflow."
+        "tip": "Rentable dès que d'autres newsletters acceptent de te recommander.",
+        "tipEn": "Pays off once other newsletters agree to recommend you.",
+        "reason": "Automatise les recommandations croisées entre newsletters pour faire grandir la liste sans publicité payante.",
+        "reasonEn": "Automates cross-newsletter recommendations to grow the list without paid ads."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Correction (payant)",
+        "roleEn": "Proofreading (paid)",
         "slug": "grammarly",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure market watch in the content workflow."
+        "tip": "Le choix par défaut, fait doublon avec LanguageTool.",
+        "tipEn": "The default choice, duplicates LanguageTool.",
+        "reason": "Corrige grammaire et style à la relecture ; recoupe LanguageTool, un seul correcteur suffit.",
+        "reasonEn": "Corrects grammar and style at proofreading; overlaps LanguageTool, one proofreading tool is enough."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Correction (alternative)",
+        "roleEn": "Proofreading (alternative)",
         "slug": "languagetool",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure writing in the content workflow."
+        "decision": "challenge",
+        "tip": "Alternative à Grammarly, pas un complément.",
+        "tipEn": "An alternative to Grammarly, not a complement.",
+        "reason": "Même fonction que Grammarly ; intéressant si tu écris aussi en français, moins polie en anglais.",
+        "reasonEn": "Same function as Grammarly; worth it if you also write in French, less polished in English."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "zapier",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser segmentation dans le workflow contenu.",
-        "reasonEn": "Useful to secure segmentation in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser publication dans le workflow contenu.",
-        "reasonEn": "Useful to secure publication in the content workflow."
+        "tip": "Le choix par défaut, fait doublon avec Zapier.",
+        "tipEn": "The default choice, duplicates Zapier.",
+        "reason": "Route les nouveaux abonnés vers Airtable ou un CRM ; recoupe Zapier, un seul outil d'automatisation suffit.",
+        "reasonEn": "Routes new subscribers to Airtable or a CRM; overlaps Zapier, one automation tool is enough."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Automatisation (alternative)",
+        "roleEn": "Automation (alternative)",
+        "slug": "zapier",
+        "decision": "challenge",
+        "tip": "Alternative à Make, pas un complément.",
+        "tipEn": "An alternative to Make, not a complement.",
+        "reason": "Plus de connecteurs que Make mais plus cher au volume d'abonnés envoyés.",
+        "reasonEn": "More connectors than Make but more expensive at subscriber-routing volume."
+      },
+      {
+        "role": "Formulaires (léger)",
+        "roleEn": "Forms (lightweight)",
         "slug": "tally",
         "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure market watch in the content workflow."
+        "tip": "Gratuit et suffisant pour un formulaire d'inscription simple.",
+        "tipEn": "Free and enough for a simple signup form.",
+        "reason": "Fait doublon avec Typeform pour un formulaire simple ; gratuit là où Typeform devient vite payant.",
+        "reasonEn": "Duplicates Typeform for a simple form; free where Typeform quickly becomes paid."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Formulaires (design)",
+        "roleEn": "Forms (design)",
         "slug": "typeform",
         "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure writing in the content workflow."
+        "tip": "N'ajoute que si le design du formulaire doit vraiment se démarquer.",
+        "tipEn": "Only add if the form's design really needs to stand out.",
+        "reason": "Plus soigné visuellement que Tally, mais coûte plus cher pour un besoin souvent équivalent.",
+        "reasonEn": "More polished visually than Tally, but costs more for an often-equivalent need."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Affiliation sponsors",
+        "roleEn": "Sponsor affiliate tracking",
         "slug": "rewardful",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser segmentation dans le workflow contenu.",
-        "reasonEn": "Useful to secure segmentation in the content workflow."
+        "decision": "conditional",
+        "tip": "Utile dès que la newsletter vend un produit affilié en propre.",
+        "tipEn": "Useful once the newsletter sells its own affiliate product.",
+        "reason": "Suit les commissions d'affiliation si tu vends un produit ou service à ton audience, distinct de la publicité sponsorisée.",
+        "reasonEn": "Tracks affiliate commissions if you sell a product or service to your audience, distinct from sponsored ads."
       },
       {
         "role": "Idées et scripts",
@@ -32353,8 +32353,8 @@ export const STACKS: StackGuide[] = [
     "slug": "ops-operations-manager-freelance",
     "title": "Stack ops manager",
     "titleEn": "Ops manager stack",
-    "subtitle": "Les outils recommandés pour gère les opérations quotidiennes d’une activité ou d’une équipe.",
-    "subtitleEn": "Recommended tools for this operator profile.",
+    "subtitle": "Tu dois rendre l'exécution visible sans multiplier les outils de pilotage. Le piège : quatre outils de gestion de tâches qui font le même travail en parallèle.",
+    "subtitleEn": "You need execution to be visible without stacking management tools. The trap: four task-management tools all doing the same job in parallel.",
     "persona": "ops",
     "subProfiles": [
       "ops-manager",
@@ -32370,8 +32370,8 @@ export const STACKS: StackGuide[] = [
     "bestForEn": "Runs the day-to-day operations of a business or a team.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
-    "editorial": "Il doit suivre les tâches, résoudre les blocages, documenter les process et fluidifier l’exécution.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
-    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "editorial": "ClickUp, Asana, Trello et Notion ne sont pas quatre étapes d'un même workflow : ce sont quatre façons concurrentes de suivre des tâches. Trello reste le plus simple pour une petite équipe qui n'a besoin que d'un tableau kanban ; Asana s'impose quand plusieurs personnes doivent suivre des dépendances et des échéances de façon lisible ; ClickUp va plus loin en personnalisation (champs custom, automatisations internes) mais demande plus de configuration pour ne pas devenir un fourre-tout ; Notion vaut le coup si la documentation et les process comptent autant que le suivi de tâches, mais reste plus faible pour du suivi de charge à l'échelle d'une équipe. Choisis-en un, pas les quatre. Même chose côté automatisation : Zapier et Make font le même travail de glue entre les outils ; Make offre un meilleur rapport visuel/prix, Zapier gagne sur le nombre de connecteurs. ChatGPT et Claude se recoupent aussi pour l'usage IA généraliste — l'un des deux suffit dans la majorité des missions, le second ne se justifie que pour un cas d'usage précis que le premier gère mal.",
+    "editorialEn": "ClickUp, Asana, Trello, and Notion aren't four steps of one workflow — they're four competing ways to track tasks. Trello stays the simplest for a small team that just needs a kanban board; Asana earns its place once several people need to track dependencies and deadlines legibly; ClickUp goes further on customization (custom fields, internal automations) but needs more setup to avoid becoming a catch-all; Notion is worth it if documentation and process matter as much as task tracking, but stays weaker for team-wide workload tracking. Pick one, not all four. Same on automation: Zapier and Make do the same glue work between tools; Make offers a better visual/price ratio, Zapier wins on connector count. ChatGPT and Claude also overlap for general-purpose AI use — one is usually enough, the second only earns its place for a specific use case the first handles poorly.",
     "needs": [
       {
         "title": "Task management",
@@ -32448,44 +32448,44 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "Gestion projet",
-        "roleEn": "Gestion projet",
-        "slug": "clickup",
-        "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Gestion projet : utile pour sécuriser task management sans alourdir le système.",
-        "reasonEn": "Useful to secure task management without weighing down the system."
-      },
-      {
-        "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "role": "Gestion de tâches (équipe)",
+        "roleEn": "Task management (team)",
         "slug": "asana",
         "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Gestion projet : utile pour sécuriser process sans alourdir le système.",
-        "reasonEn": "Useful to secure process without weighing down the system."
+        "tip": "Le choix par défaut dès que plusieurs personnes suivent des dépendances.",
+        "tipEn": "The default choice once several people track dependencies.",
+        "reason": "Rend dépendances et échéances lisibles à plusieurs ; fait doublon avec ClickUp, Trello et Notion, un seul outil de tâches suffit.",
+        "reasonEn": "Makes dependencies and deadlines legible across a team; duplicates ClickUp, Trello, and Notion — one task tool is enough."
       },
       {
-        "role": "Cockpit",
-        "roleEn": "Cockpit",
-        "slug": "notion",
-        "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Cockpit : utile pour sécuriser coordination sans alourdir le système.",
-        "reasonEn": "Useful to secure coordination without weighing down the system."
+        "role": "Gestion de tâches (personnalisable)",
+        "roleEn": "Task management (customizable)",
+        "slug": "clickup",
+        "decision": "challenge",
+        "tip": "Alternative à Asana pour qui veut personnaliser en profondeur.",
+        "tipEn": "An alternative to Asana for deep customization.",
+        "reason": "Va plus loin en champs custom et automatisations internes, mais demande plus de configuration pour ne pas devenir un fourre-tout.",
+        "reasonEn": "Goes further on custom fields and internal automations, but needs more setup to avoid becoming a catch-all."
       },
       {
-        "role": "Kanban simple",
-        "roleEn": "Kanban simple",
+        "role": "Gestion de tâches (kanban simple)",
+        "roleEn": "Task management (simple kanban)",
         "slug": "trello",
-        "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Kanban simple : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure scheduling without weighing down the system."
+        "decision": "challenge",
+        "tip": "Alternative légère pour une petite équipe ou un usage solo.",
+        "tipEn": "A lightweight alternative for a small team or solo use.",
+        "reason": "Le plus simple des quatre ; suffit tant que le besoin reste un tableau kanban sans dépendances complexes.",
+        "reasonEn": "The simplest of the four; enough as long as the need stays a kanban board without complex dependencies."
+      },
+      {
+        "role": "Cockpit documentation",
+        "roleEn": "Documentation cockpit",
+        "slug": "notion",
+        "decision": "conditional",
+        "tip": "Utile si la documentation compte autant que le suivi de tâches.",
+        "tipEn": "Useful if documentation matters as much as task tracking.",
+        "reason": "Vaut le coup pour les process et la doc, mais reste plus faible qu'Asana ou ClickUp pour du suivi de charge à l'échelle d'une équipe.",
+        "reasonEn": "Worth it for process and docs, but stays weaker than Asana or ClickUp for team-wide workload tracking."
       },
       {
         "role": "Communication",
@@ -32494,78 +32494,78 @@ export const STACKS: StackGuide[] = [
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
-        "reason": "Communication : utile pour sécuriser task management sans alourdir le système.",
-        "reasonEn": "Useful to secure task management without weighing down the system."
+        "reason": "Centralise les échanges rapides hors des tâches elles-mêmes ; distinct de l'outil de gestion de tâches, pas redondant.",
+        "reasonEn": "Centralizes quick exchanges outside the tasks themselves; distinct from the task tool, not redundant."
       },
       {
         "role": "Fichiers",
-        "roleEn": "Fichiers",
+        "roleEn": "Files",
         "slug": "google-drive",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Fichiers : utile pour sécuriser process sans alourdir le système.",
-        "reasonEn": "Useful to secure process without weighing down the system."
+        "tip": "Utile dès que les documents dépassent la pièce jointe occasionnelle.",
+        "tipEn": "Useful once documents outgrow the occasional attachment.",
+        "reason": "Sert de stockage partagé pour les fichiers trop volumineux ou trop nombreux pour vivre dans l'outil de tâches.",
+        "reasonEn": "Serves as shared storage for files too large or too numerous to live in the task tool."
       },
       {
         "role": "Async",
         "roleEn": "Async",
         "slug": "loom",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Async : utile pour sécuriser coordination sans alourdir le système.",
-        "reasonEn": "Useful to secure coordination without weighing down the system."
+        "tip": "Utile pour remplacer une réunion par une vidéo courte.",
+        "tipEn": "Useful to replace a meeting with a short video.",
+        "reason": "Documente une décision ou une démo sans immobiliser toute l'équipe sur un créneau commun.",
+        "reasonEn": "Documents a decision or a demo without pinning down the whole team for a shared time slot."
       },
       {
         "role": "Base métier",
         "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Base métier : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure scheduling without weighing down the system."
+        "tip": "Utile pour une donnée structurée que le kanban ne gère pas.",
+        "tipEn": "Useful for structured data the kanban board doesn't handle.",
+        "reason": "Sert à suivre une donnée métier (inventaire, fournisseurs, clients) distincte du suivi de tâches, pas un doublon.",
+        "reasonEn": "Tracks business data (inventory, vendors, clients) distinct from task tracking, not a duplicate."
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
-        "slug": "zapier",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Automatisation : utile pour sécuriser task management sans alourdir le système.",
-        "reasonEn": "Useful to secure task management without weighing down the system."
-      },
-      {
-        "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Automatisation : utile pour sécuriser process sans alourdir le système.",
-        "reasonEn": "Useful to secure process without weighing down the system."
+        "tip": "Le choix par défaut, fait doublon avec Zapier.",
+        "tipEn": "The default choice, duplicates Zapier.",
+        "reason": "Meilleur rapport visuel/prix pour la majorité des missions ; recoupe Zapier, un seul outil d'automatisation suffit.",
+        "reasonEn": "Best visual/price ratio for most missions; overlaps Zapier, one automation tool is enough."
+      },
+      {
+        "role": "Automatisation (alternative)",
+        "roleEn": "Automation (alternative)",
+        "slug": "zapier",
+        "decision": "challenge",
+        "tip": "Alternative à Make, pas un complément.",
+        "tipEn": "An alternative to Make, not a complement.",
+        "reason": "Plus de connecteurs que Make mais plus cher au volume ; à choisir plutôt que Make, pas en plus.",
+        "reasonEn": "More connectors than Make but more expensive at volume; pick instead of Make, not alongside it."
       },
       {
         "role": "IA généraliste",
         "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "IA généraliste : utile pour sécuriser coordination sans alourdir le système.",
-        "reasonEn": "Useful to secure coordination without weighing down the system."
+        "tip": "Le choix par défaut pour l'usage IA généraliste.",
+        "tipEn": "The default choice for general-purpose AI use.",
+        "reason": "Suffit pour la majorité des usages (rédaction, brainstorm, synthèse) ; recoupe Claude, un seul abonnement suffit la plupart du temps.",
+        "reasonEn": "Enough for most uses (writing, brainstorming, synthesis); overlaps Claude, one subscription is usually enough."
       },
       {
-        "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "role": "Analyse de documents longs",
+        "roleEn": "Long-document analysis",
         "slug": "claude",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Analyse longue : utile pour sécuriser planning sans alourdir le système.",
-        "reasonEn": "Useful to secure scheduling without weighing down the system."
+        "decision": "challenge",
+        "tip": "N'ajoute que pour un usage précis que ChatGPT gère mal.",
+        "tipEn": "Only add for a specific use ChatGPT handles poorly.",
+        "reason": "Ne se justifie face à ChatGPT que pour l'analyse de documents longs ou un usage précis, pas comme abonnement parallèle par défaut.",
+        "reasonEn": "Only earns its place over ChatGPT for long-document analysis or a specific use case, not as a default parallel subscription."
       }
     ]
   },
@@ -37255,8 +37255,8 @@ export const STACKS: StackGuide[] = [
     "slug": "solo-solo-founder-indie-maker",
     "title": "Stack indie maker",
     "titleEn": "Indie maker stack",
-    "subtitle": "Les outils recommandés pour créateur d’un produit, saas, annuaire, newsletter, outil ou service digital.",
-    "subtitleEn": "Recommended tools for this operator profile.",
+    "subtitle": "Tu dois construire, lancer et mesurer seul. Le piège : payer deux site builders et deux abonnements IA généraliste qui font le même travail.",
+    "subtitleEn": "You need to build, launch, and measure alone. The trap: paying for two site builders and two general-purpose AI subscriptions doing the same job.",
     "persona": "solo",
     "subProfiles": [
       "indie-maker",
@@ -37266,14 +37266,14 @@ export const STACKS: StackGuide[] = [
     "budget": "under150",
     "monthlyBudget": 112,
     "savings": 240,
-    "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
-    "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
-    "bestFor": "Créateur d’un produit, SaaS, annuaire, newsletter, outil ou service digital.",
-    "bestForEn": "The maker of a product, SaaS, directory, newsletter, tool or digital service.",
+    "risk": "Payer Webflow et Framer en même temps, ou ChatGPT et Claude en parallèle, sans que l'un des deux serve un usage vraiment distinct.",
+    "riskEn": "Paying for both Webflow and Framer, or ChatGPT and Claude in parallel, when neither serves a genuinely distinct use.",
+    "bestFor": "Créateur d'un produit, SaaS, annuaire, newsletter, outil ou service digital, qui construit et lance seul sans équipe technique.",
+    "bestForEn": "The maker of a product, SaaS, directory, newsletter, tool, or digital service, building and shipping alone without a technical team.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
-    "editorial": "Il doit construire, lancer, mesurer, vendre et supporter seul.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
-    "editorialEn": "The stack should make the business easier to run: intake, priorities, execution, approval, reporting, finance, and continuous improvement.",
+    "editorial": "Webflow et Framer se recoupent pour le site : Framer va plus vite pour une landing page qui doit convertir, Webflow s'impose si le site a besoin d'un vrai CMS derrière (blog, contenu structuré). Les deux ensemble n'ont pas de sens pour un solo. Lovable et Cursor ne sont pas redondants : Lovable génère une première version d'app à partir d'un prompt, utile pour un MVP sans écrire de code ; Cursor prend le relais une fois qu'il faut vraiment écrire et maintenir du code — l'un sert à démarrer vite, l'autre à construire sérieusement. PostHog et Plausible répondent à deux questions différentes : Plausible mesure le trafic du site marketing (simple, respectueux de la vie privée), PostHog mesure le comportement dans le produit (funnels, rétention, session replay). Commence par celui qui répond à ta vraie question du moment plutôt que les deux d'un coup. ChatGPT et Claude, en revanche, se recoupent vraiment pour l'usage généraliste — choisis-en un comme outil principal. Perplexity garde sa place à part : c'est un moteur de recherche ancré sur le web, pas un concurrent direct des deux autres.",
+    "editorialEn": "Webflow and Framer overlap for the site: Framer is faster for a landing page that needs to convert, Webflow earns its place if the site needs a real CMS behind it (blog, structured content). The two together make no sense for a solo. Lovable and Cursor aren't redundant: Lovable generates a first app version from a prompt, useful for an MVP without writing code; Cursor takes over once you actually need to write and maintain code — one is for getting started fast, the other for building seriously. PostHog and Plausible answer two different questions: Plausible measures marketing-site traffic (simple, privacy-respecting), PostHog measures in-product behavior (funnels, retention, session replay). Start with whichever answers your actual current question rather than both at once. ChatGPT and Claude, on the other hand, genuinely overlap for general-purpose use — pick one as your main tool. Perplexity keeps its own place: it's a web-grounded search engine, not a direct competitor to the other two.",
     "needs": [
       {
         "title": "Build",
@@ -37350,134 +37350,134 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "webflow",
-        "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
-        "reasonEn": "Useful to secure build without weighing down the system."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Site (conversion rapide)",
+        "roleEn": "Site (fast conversion)",
         "slug": "framer",
         "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Outil métier : utile pour sécuriser landing sans alourdir le système.",
-        "reasonEn": "Useful to secure landing without weighing down the system."
+        "tip": "Le choix par défaut pour une landing page qui doit convertir vite.",
+        "tipEn": "The default choice for a landing page that needs to convert fast.",
+        "reason": "Va plus vite que Webflow pour publier et itérer une landing page ; fait doublon avec Webflow, choisis l'un ou l'autre.",
+        "reasonEn": "Faster than Webflow to publish and iterate on a landing page; duplicates Webflow, pick one or the other."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Site (CMS structuré)",
+        "roleEn": "Site (structured CMS)",
+        "slug": "webflow",
+        "decision": "challenge",
+        "tip": "N'ajoute que si le site a besoin d'un vrai CMS (blog, contenu structuré).",
+        "tipEn": "Only add if the site needs a real CMS (blog, structured content).",
+        "reason": "Ne se justifie face à Framer que si le contenu doit être structuré en profondeur ; sinon Framer fait le même travail plus vite.",
+        "reasonEn": "Only earns its place over Framer if content needs deep structuring; otherwise Framer does the same job faster."
+      },
+      {
+        "role": "MVP par prompt",
+        "roleEn": "Prompt-to-MVP",
         "slug": "lovable",
         "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Outil métier : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure payments without weighing down the system."
+        "tip": "Pour démarrer vite sans écrire de code.",
+        "tipEn": "To get started fast without writing code.",
+        "reason": "Génère une première version d'app à partir d'un prompt ; complémentaire de Cursor, pas redondant — l'un démarre, l'autre construit.",
+        "reasonEn": "Generates a first app version from a prompt; complements Cursor rather than duplicating it — one gets you started, the other builds seriously."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Développement sérieux",
+        "roleEn": "Serious development",
         "slug": "cursor",
-        "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Outil métier : utile pour sécuriser analytics sans alourdir le système.",
-        "reasonEn": "Useful to secure analytics without weighing down the system."
+        "decision": "conditional",
+        "tip": "Prend le relais une fois qu'il faut vraiment écrire et maintenir du code.",
+        "tipEn": "Takes over once you actually need to write and maintain code.",
+        "reason": "Utile dès que le produit dépasse ce que Lovable peut générer et qu'il faut du code maintenable sur la durée.",
+        "reasonEn": "Useful once the product outgrows what Lovable can generate and needs maintainable code over time."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Hébergement",
+        "roleEn": "Hosting",
         "slug": "vercel",
         "decision": "core",
-        "tip": "À garder dans le socle opérationnel.",
-        "tipEn": "Keep it in the operations core.",
-        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
-        "reasonEn": "Useful to secure build without weighing down the system."
+        "tip": "À garder dans le socle : déploiement simple et rapide.",
+        "tipEn": "Keep it in the core: simple, fast deployment.",
+        "reason": "Déploie le site ou l'app en quelques commandes, avec un plan gratuit généreux pour démarrer.",
+        "reasonEn": "Deploys the site or app in a few commands, with a generous free tier to get started."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Backend",
+        "roleEn": "Backend",
         "slug": "supabase",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser landing sans alourdir le système.",
-        "reasonEn": "Useful to secure landing without weighing down the system."
+        "tip": "Utile dès que le produit a besoin d'une vraie base de données et d'auth.",
+        "tipEn": "Useful once the product needs a real database and auth.",
+        "reason": "Fournit base de données, authentification et API en un backend géré, sans avoir à tout construire soi-même.",
+        "reasonEn": "Provides database, authentication, and API in one managed backend, without having to build it all yourself."
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Paiement : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure payments without weighing down the system."
+        "decision": "core",
+        "tip": "À garder dans le socle dès qu'il y a un plan payant.",
+        "tipEn": "Keep it in the core as soon as there's a paid plan.",
+        "reason": "Standard du marché pour encaisser un abonnement ou un paiement unique sans construire sa propre infrastructure de paiement.",
+        "reasonEn": "Market standard for collecting a subscription or one-time payment without building your own payment infrastructure."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Analytics produit",
+        "roleEn": "Product analytics",
         "slug": "posthog",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser analytics sans alourdir le système.",
-        "reasonEn": "Useful to secure analytics without weighing down the system."
+        "tip": "Pour comprendre le comportement dans le produit, pas le trafic du site.",
+        "tipEn": "To understand in-product behavior, not site traffic.",
+        "reason": "Mesure funnels, rétention et usage réel du produit ; répond à une question différente de Plausible, pas un doublon.",
+        "reasonEn": "Measures funnels, retention, and real product usage; answers a different question than Plausible, not a duplicate."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Analytics trafic",
+        "roleEn": "Traffic analytics",
         "slug": "plausible",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser build sans alourdir le système.",
-        "reasonEn": "Useful to secure build without weighing down the system."
+        "tip": "Pour le trafic du site marketing, pas le comportement in-app.",
+        "tipEn": "For marketing-site traffic, not in-app behavior.",
+        "reason": "Simple et respectueux de la vie privée pour suivre le trafic ; commence par lui si la question du moment est juste \"d'où viennent les visiteurs\".",
+        "reasonEn": "Simple and privacy-respecting for tracking traffic; start here if the current question is just \"where do visitors come from\"."
       },
       {
-        "role": "Cockpit",
-        "roleEn": "Cockpit",
+        "role": "Cockpit produit",
+        "roleEn": "Product cockpit",
         "slug": "notion",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Cockpit : utile pour sécuriser landing sans alourdir le système.",
-        "reasonEn": "Useful to secure landing without weighing down the system."
+        "tip": "Utile dès que la roadmap dépasse la mémoire.",
+        "tipEn": "Useful once the roadmap outgrows memory alone.",
+        "reason": "Centralise roadmap, notes et décisions produit dans un espace unique plutôt qu'éparpillées entre outils.",
+        "reasonEn": "Centralizes roadmap, notes, and product decisions in one place instead of scattered across tools."
       },
       {
         "role": "IA généraliste",
         "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "IA généraliste : utile pour sécuriser paiement sans alourdir le système.",
-        "reasonEn": "Useful to secure payments without weighing down the system."
+        "tip": "Le choix par défaut pour l'usage IA généraliste.",
+        "tipEn": "The default choice for general-purpose AI use.",
+        "reason": "Suffit pour la majorité des usages (rédaction, brainstorm) ; recoupe Claude, un seul abonnement suffit la plupart du temps.",
+        "reasonEn": "Enough for most uses (writing, brainstorming); overlaps Claude, one subscription is usually enough."
       },
       {
-        "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "role": "Analyse de documents longs",
+        "roleEn": "Long-document analysis",
         "slug": "claude",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Analyse longue : utile pour sécuriser analytics sans alourdir le système.",
-        "reasonEn": "Useful to secure analytics without weighing down the system."
+        "decision": "challenge",
+        "tip": "N'ajoute que pour un usage précis que ChatGPT gère mal.",
+        "tipEn": "Only add for a specific use ChatGPT handles poorly.",
+        "reason": "Ne se justifie face à ChatGPT que pour l'analyse de documents longs, pas comme abonnement parallèle par défaut.",
+        "reasonEn": "Only earns its place over ChatGPT for long-document analysis, not as a default parallel subscription."
       },
       {
-        "role": "Recherche",
-        "roleEn": "Recherche",
+        "role": "Recherche web",
+        "roleEn": "Web research",
         "slug": "perplexity",
-        "decision": "challenge",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Recherche : utile pour sécuriser build sans alourdir le système.",
-        "reasonEn": "Useful to secure build without weighing down the system."
+        "decision": "conditional",
+        "tip": "Distinct de ChatGPT/Claude : un moteur de recherche ancré sur le web, pas un assistant généraliste.",
+        "tipEn": "Distinct from ChatGPT/Claude: a web-grounded search engine, not a general-purpose assistant.",
+        "reason": "Utile pour une veille concurrentielle ou une recherche factuelle sourcée, un usage différent de l'IA généraliste.",
+        "reasonEn": "Useful for competitive research or sourced factual lookups, a different use from general-purpose AI."
       }
     ]
   },
