@@ -102,14 +102,14 @@ const CATEGORY_GROUPS = [
     titleEn: "Run the business",
     descriptionFr: "Temps, facturation, projets, contrats et pilotage financier.",
     descriptionEn: "Time, invoicing, projects, contracts, and financial control.",
-    categoryIds: ["organization", "project-management", "finance", "productivity-tracking", "legal-contracts", "budgeting-fpa"],
+    categoryIds: ["organization", "project-management", "crm", "finance", "productivity-tracking", "legal-contracts", "budgeting-fpa"],
   },
   {
     titleFr: "Créer et vendre",
     titleEn: "Create and sell",
     descriptionFr: "Contenus, design, IA, email et pages web qui soutiennent l'acquisition.",
     descriptionEn: "Content, design, AI, email, and web pages that support acquisition.",
-    categoryIds: ["creation", "design-tools", "ai-general", "email-productivity", "nocode-web", "formation-education"],
+    categoryIds: ["creation", "design-tools", "prototyping", "ui-components", "ai-general", "email-productivity", "nocode-web", "formation-education"],
   },
   {
     titleFr: "Collaborer et automatiser",

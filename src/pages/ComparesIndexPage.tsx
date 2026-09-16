@@ -248,6 +248,21 @@ const ComparesIndexPage = () => {
             }}
           />
 
+          {categoryFilter === "all" && !query.trim() && resolvedComparisons.length > visibleCount && (
+            // Same issue as /stacks: the grid below only mounts `visibleCount`
+            // cards behind "Show more comparisons", so a crawler that doesn't
+            // click never finds a link to the rest. Full link list, hidden from
+            // both the visual layout and the accessibility tree (the paginated
+            // grid already carries this content for real users).
+            <nav aria-hidden="true" className="sk-crawler-links">
+              {resolvedComparisons.map((c) => (
+                <a key={c.slugPair} href={`${prefix}/comparatif/${c.slugPair}`} tabIndex={-1}>
+                  {c.toolAData!.name} vs {c.toolBData!.name}
+                </a>
+              ))}
+            </nav>
+          )}
+
           {/* Decision grid — each card keeps the duel and its two choices together. */}
           {filteredComparisons.length > 0 ? (
             <>

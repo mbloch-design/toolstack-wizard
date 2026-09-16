@@ -252,6 +252,21 @@ const GuidesPage = () => {
 
           {visibleList.length > 0 && (
             <>
+              {activeFilter === "all" && !searchQuery.trim() && listPosts.length > PAGE_SIZE && (
+                // Same issue as /stacks and /comparatifs: the grid below only
+                // mounts the first PAGE_SIZE cards behind "Show more guides",
+                // so a crawler that doesn't click never finds a link to the
+                // rest. Full link list, hidden from the visual layout and the
+                // accessibility tree.
+                <nav aria-hidden="true" className="sk-crawler-links">
+                  {listPosts.map((post) => (
+                    <a key={post.slug} href={`/${post.lang === "fr" ? "fr" : lang}/guide/${post.slug}`} tabIndex={-1}>
+                      {post.title}
+                    </a>
+                  ))}
+                </nav>
+              )}
+
               <div className="gi-lead-grid">
                 <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} tools={tools} featured />
                 {visibleList.length > 1 && (
