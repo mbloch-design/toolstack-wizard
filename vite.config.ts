@@ -361,6 +361,56 @@ function appCategoryFor(tool: any): string {
 const SB_PRERENDER_URL = "https://rtfyfuwfdpnsogovkwai.supabase.co";
 const SB_PRERENDER_ANON =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ0ZnlmdXdmZHBuc29nb3Zrd2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyOTcyMDcsImV4cCI6MjA4ODg3MzIwN30.pwpmh9Qe8dLZFq1rMqtCRmEMJ9dnbcdvT_B4CjIu4Xc";
+
+// --- Cache disque des reponses Supabase, local uniquement -----------------
+// Chaque `npm run build` demarre un process neuf, donc les caches memoire
+// ci-dessous (_sbToolsCache, _catalogProjectionToolsCache) ne survivent pas
+// d'un build au suivant. Un build complet fait ~2 requetes pour `tools` et
+// ~47 pour la projection (1175 outils / lots de 25) : une session de travail
+// qui relance le build a chaque verification peut cumuler des centaines de
+// requetes et epuiser un quota Supabase Free en egress.
+//
+// Le cache est ecrit dans .build-trash/, deja ignore par git, et desactive
+// sur Vercel (process.env.VERCEL) : le build de production doit toujours
+// voir la donnee la plus fraiche, seule l'iteration locale est concernee.
+const SB_DISK_CACHE_DIR = path.resolve(__dirname, ".build-trash/supabase-cache");
+const SB_DISK_CACHE_TTL_MS = Number(process.env.SB_CACHE_TTL_MINUTES || 30) * 60 * 1000;
+const SB_DISK_CACHE_ENABLED = !process.env.VERCEL && process.env.SB_CACHE !== "off";
+
+function sbDiskCachePath(key: string): string {
+  return path.join(SB_DISK_CACHE_DIR, `${key}.json`);
+}
+
+function readSbDiskCache<T>(key: string): T | null {
+  if (!SB_DISK_CACHE_ENABLED) return null;
+  try {
+    const file = sbDiskCachePath(key);
+    const ageMs = Date.now() - fs.statSync(file).mtimeMs;
+    if (ageMs > SB_DISK_CACHE_TTL_MS) return null;
+    const data = JSON.parse(fs.readFileSync(file, "utf-8")) as T;
+    console.log(`  ↳ cache disque Supabase "${key}" (${Math.round(ageMs / 1000)}s, TTL ${SB_DISK_CACHE_TTL_MS / 60000}min) — requête évitée`);
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function writeSbDiskCache(key: string, data: unknown): void {
+  if (!SB_DISK_CACHE_ENABLED) return;
+  try {
+    fs.mkdirSync(SB_DISK_CACHE_DIR, { recursive: true });
+    fs.writeFileSync(sbDiskCachePath(key), JSON.stringify(data));
+  } catch {
+    // Best effort : un cache qui échoue à s'écrire ne doit pas casser le build.
+  }
+}
+
+/** Empreinte stable d'une liste d'ids, pour invalider le cache si le catalogue change. */
+function hashIds(ids: string[]): string {
+  let h = 0;
+  for (const id of ids) for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) | 0;
+  return `${ids.length}-${(h >>> 0).toString(36)}`;
+}
 const SB_RENAME: Record<string, string> = {
   short_description: "shortDescription",
   short_description_en: "shortDescriptionEn",
@@ -399,7 +449,6 @@ let _catalogProjectionToolsCache: Record<string, any>[] | null = null;
 async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Promise<Record<string, any>[]> {
   if (_catalogProjectionToolsCache) return _catalogProjectionToolsCache;
 
-  const rows: CatalogProjectionRow[] = [];
   // The projection resolves prices and relationships per row. An unfiltered
   // scan can exceed PostgREST's statement timeout, including with Range pages,
   // because PostgreSQL may still evaluate the full security-barrier view first.
@@ -407,37 +456,50 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
   // resolvers. Small batches preserve every legacy fallback while keeping the
   // production build deterministic and bounded.
   const toolIds = [...new Set(catalogTools.map((tool) => tool.id).filter(Boolean))].sort();
-  const batchSize = 25;
-  const concurrency = 4;
-  const batches: string[][] = [];
-  for (let index = 0; index < toolIds.length; index += batchSize) {
-    batches.push(toolIds.slice(index, index + batchSize));
-  }
-  const fetchBatch = async (ids: string[]) => {
-    const idFilter = ids.map((id) => encodeURIComponent(id)).join(",");
-    const res = await fetch(
-      `${SB_PRERENDER_URL}/rest/v1/tool_details?select=*&id=in.(${idFilter})&order=id.asc,lang.asc`,
-      {
-        headers: {
-          apikey: SB_PRERENDER_ANON,
-          Authorization: `Bearer ${SB_PRERENDER_ANON}`,
-          "Accept-Profile": "catalog_api",
-          "Cache-Control": "no-cache",
-        },
-        cache: "no-store",
-      },
-    );
-    if (!res.ok) {
-      const detail = (await res.text()).slice(0, 300);
-      throw new Error(`projection HTTP ${res.status}${detail ? `: ${detail}` : ""}`);
+
+  // Ce fetch a lui seul fait ~47 requetes par build (1175 outils / lots de
+  // 25) : c'est le premier poste de consommation du quota Supabase pendant
+  // l'iteration locale. Mis en cache disque au meme titre que getMergedTools.
+  const projectionCacheKey = `tool-details-${hashIds(toolIds)}`;
+  const cachedRows = readSbDiskCache<CatalogProjectionRow[]>(projectionCacheKey);
+  let rows: CatalogProjectionRow[];
+  if (cachedRows) {
+    rows = cachedRows;
+  } else {
+    rows = [];
+    const batchSize = 25;
+    const concurrency = 4;
+    const batches: string[][] = [];
+    for (let index = 0; index < toolIds.length; index += batchSize) {
+      batches.push(toolIds.slice(index, index + batchSize));
     }
-    const page = await res.json();
-    if (!Array.isArray(page)) throw new Error("projection invalid response");
-    return page as CatalogProjectionRow[];
-  };
-  for (let index = 0; index < batches.length; index += concurrency) {
-    const pages = await Promise.all(batches.slice(index, index + concurrency).map(fetchBatch));
-    for (const page of pages) rows.push(...page);
+    const fetchBatch = async (ids: string[]) => {
+      const idFilter = ids.map((id) => encodeURIComponent(id)).join(",");
+      const res = await fetch(
+        `${SB_PRERENDER_URL}/rest/v1/tool_details?select=*&id=in.(${idFilter})&order=id.asc,lang.asc`,
+        {
+          headers: {
+            apikey: SB_PRERENDER_ANON,
+            Authorization: `Bearer ${SB_PRERENDER_ANON}`,
+            "Accept-Profile": "catalog_api",
+            "Cache-Control": "no-cache",
+          },
+          cache: "no-store",
+        },
+      );
+      if (!res.ok) {
+        const detail = (await res.text()).slice(0, 300);
+        throw new Error(`projection HTTP ${res.status}${detail ? `: ${detail}` : ""}`);
+      }
+      const page = await res.json();
+      if (!Array.isArray(page)) throw new Error("projection invalid response");
+      return page as CatalogProjectionRow[];
+    };
+    for (let index = 0; index < batches.length; index += concurrency) {
+      const pages = await Promise.all(batches.slice(index, index + concurrency).map(fetchBatch));
+      for (const page of pages) rows.push(...page);
+    }
+    writeSbDiskCache(projectionCacheKey, rows);
   }
 
   const byTool = new Map<string, CatalogProjectionRow[]>();
@@ -514,33 +576,39 @@ async function getProjectedFicheTools(catalogTools: Record<string, any>[]): Prom
 async function getMergedTools(jsonTools: any[]): Promise<any[]> {
   try {
     if (!_sbToolsCache) {
-      // Cache-Control: a content edit followed by a deploy showed stale data
-      // in prod (Asana's seo.idealForFr) while a local rebuild of the exact
-      // same commit was correct - consistent with an intermediary (CDN/edge)
-      // caching this GET on Vercel's network path but not on a local
-      // connection. PostgREST treats unknown query params as column filters
-      // (a "_cb" cache-busting param 400s), so this relies on the header
-      // alone to bypass any such cache.
-      const rows: Record<string, any>[] = [];
-      const pageSize = 1000; // plafond Data API Supabase par requête
-      for (let from = 0; ; from += pageSize) {
-        const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&order=id.asc`, {
-          headers: {
-            apikey: SB_PRERENDER_ANON,
-            Authorization: `Bearer ${SB_PRERENDER_ANON}`,
-            "Cache-Control": "no-cache",
-            Range: `${from}-${from + pageSize - 1}`,
-          },
-          cache: "no-store",
-        });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const page = await res.json();
-        if (!Array.isArray(page)) throw new Error("invalid response");
-        rows.push(...page);
-        if (page.length < pageSize) break;
+      const cached = readSbDiskCache<Record<string, any>[]>("tools-rows");
+      if (cached && cached.length > 0) {
+        _sbToolsCache = cached;
+      } else {
+        // Cache-Control: a content edit followed by a deploy showed stale data
+        // in prod (Asana's seo.idealForFr) while a local rebuild of the exact
+        // same commit was correct - consistent with an intermediary (CDN/edge)
+        // caching this GET on Vercel's network path but not on a local
+        // connection. PostgREST treats unknown query params as column filters
+        // (a "_cb" cache-busting param 400s), so this relies on the header
+        // alone to bypass any such cache.
+        const rows: Record<string, any>[] = [];
+        const pageSize = 1000; // plafond Data API Supabase par requête
+        for (let from = 0; ; from += pageSize) {
+          const res = await fetch(`${SB_PRERENDER_URL}/rest/v1/tools?select=*&order=id.asc`, {
+            headers: {
+              apikey: SB_PRERENDER_ANON,
+              Authorization: `Bearer ${SB_PRERENDER_ANON}`,
+              "Cache-Control": "no-cache",
+              Range: `${from}-${from + pageSize - 1}`,
+            },
+            cache: "no-store",
+          });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const page = await res.json();
+          if (!Array.isArray(page)) throw new Error("invalid response");
+          rows.push(...page);
+          if (page.length < pageSize) break;
+        }
+        if (rows.length === 0) throw new Error("empty response");
+        _sbToolsCache = rows;
+        writeSbDiskCache("tools-rows", rows);
       }
-      if (rows.length === 0) throw new Error("empty response");
-      _sbToolsCache = rows;
     }
     const bySlug = new Map<string, any>();
     for (const t of jsonTools) bySlug.set(t.slug || t.id, t);
