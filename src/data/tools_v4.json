@@ -261,7 +261,11 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "creative",
+      "business-ops"
+    ],
     "functional_needs": [
       "crm",
       "project-management"
@@ -274,7 +278,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "freelance-crm-suite",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -1299,7 +1303,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
+    ],
     "functional_needs": [
       "automatisation",
       "workflows",
@@ -1313,7 +1320,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "automation-orchestration",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -5722,7 +5729,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "photographe",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "retouche-photo",
       "photo-enhancement",
@@ -5736,7 +5746,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "photo-editor",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/affinity-photo.jpg"
@@ -9886,7 +9896,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "notes",
       "documentation"
@@ -9899,7 +9912,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "productivity-browser",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -13722,7 +13735,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "creative-assets",
       "design-resources"
@@ -13735,7 +13751,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-assets",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -15603,7 +15619,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "creator-economy"
+    ],
     "functional_needs": [
       "knowledge-management",
       "notes"
@@ -15616,7 +15635,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "note-taking-apps",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -16012,7 +16031,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "newslettiste-auteur",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "analytics",
       "analytics-produit"
@@ -16025,7 +16047,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -16162,7 +16184,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "crm",
       "presentation-client"
@@ -16175,7 +16200,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "proposal-software",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -16684,7 +16709,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "business-ops"
+    ],
     "functional_needs": [
       "security"
     ],
@@ -16696,7 +16724,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "password-manager",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://bitwarden.com/assets/7fzQJmr0qt5ggGZp3t66Y/7bf59a6a2379d49fc580ff49e8510efb/bitwarden.com_og_image.png"
@@ -17300,7 +17328,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "photographe",
+      "creative"
+    ],
     "functional_needs": [
       "crm",
       "project-management"
@@ -17313,7 +17344,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "crm-prospection",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -19025,7 +19056,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "graphiste-da"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -19033,7 +19067,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "logo-generators",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -23104,7 +23138,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": "canva",
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "community-manager"
+    ],
     "functional_needs": [
       "design-visuel",
       "creation",
@@ -23119,7 +23156,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "creative-suite",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-pro.jpg"
@@ -23940,7 +23977,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -23950,7 +23990,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "legal-contracts",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -24486,7 +24526,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "creative"
+    ],
     "functional_needs": [
       "website-builder",
       "design-tools",
@@ -24500,7 +24543,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "website-builder",
     "pricing_v5": {
       "cautions": [
         "Construction gratuite mais en privé : la publication est payante",
@@ -25950,7 +25993,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -25958,7 +26004,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-chatbot-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -29763,7 +29809,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "collaboration",
       "knowledge-management"
@@ -29776,7 +29825,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "productivity-docs",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -30959,7 +31008,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "collaboration"
     ],
@@ -30971,7 +31023,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esignature",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -31372,7 +31424,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "creative"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -31380,7 +31435,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "freelance-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -31487,7 +31542,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "newslettiste-auteur",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "analytics",
       "analytics-produit"
@@ -31500,7 +31558,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -31893,7 +31951,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "templates",
       "ui-components",
@@ -31907,7 +31968,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -32445,7 +32506,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "collaboration",
       "documentation",
@@ -32460,7 +32524,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "note-taking-apps",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -32758,7 +32822,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "motion-video"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -32766,7 +32833,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-video-generation",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -33775,7 +33842,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "ai-general",
       "creation"
@@ -33788,7 +33858,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-writing-assistant",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -35353,7 +35423,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops"
+    ],
     "functional_needs": [
       "security"
     ],
@@ -35365,7 +35437,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "password-manager",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.dashlane.com/uploads/2025/07/dashlane_omnix_hero-1-scaled.webp"
@@ -38054,7 +38126,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "devops",
       "deploiement",
@@ -38068,7 +38143,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/digitalocean.jpg"
@@ -38340,7 +38415,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "community-manager",
+      "creator-economy"
+    ],
     "functional_needs": [
       "collaboration",
       "social-media"
@@ -38353,7 +38431,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "team-chat",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg"
@@ -39225,7 +39303,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "security",
       "devops"
@@ -39238,7 +39319,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "secrets-management",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -39495,7 +39576,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "security",
       "devops"
@@ -39508,7 +39592,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "secrets-management",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -40416,7 +40500,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "marketing-ops"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -40424,7 +40511,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "link-shortener",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -41238,7 +41325,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -41246,7 +41336,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "mockup-generators",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -42236,7 +42326,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "templates",
       "ui-components",
@@ -42250,7 +42343,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -43137,7 +43230,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -43145,7 +43241,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-app-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -44530,7 +44626,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu"
+    ],
     "functional_needs": [
       "ai-general",
       "creation"
@@ -44543,7 +44641,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-writing-assistant",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -45711,7 +45809,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -45719,7 +45820,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-note-taking",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -46153,7 +46254,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -46161,7 +46265,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-note-taking",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -46234,7 +46338,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -46244,7 +46351,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "modern-terminal",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -48046,7 +48153,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -48054,7 +48164,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "form-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -48642,7 +48752,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "nocode-web",
       "app-builder",
@@ -48656,7 +48769,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "backend-database-platform",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://firebase.google.com/images/social.png"
@@ -48793,7 +48906,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -48801,7 +48917,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "web-scraping",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -49902,7 +50018,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "templates",
       "ui-components",
@@ -49916,7 +50035,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -50073,7 +50192,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -50081,7 +50202,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -50666,7 +50787,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "deploiement",
       "devops",
@@ -50680,7 +50804,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://fly.io/phx/images/preview/og-7ea9380853220ced249aaf88c2332937.jpg?vsn=d"
@@ -50941,7 +51065,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "crm",
       "prospection",
@@ -50955,7 +51082,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "crm-prospection",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/626be00c396339c5a816353b/677e4924b4b4eb32886d59ca_Open-graph.webp"
@@ -54100,7 +54227,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
+    ],
     "functional_needs": [
       "ai-general",
       "knowledge-management",
@@ -54114,7 +54244,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-research-answer-engine",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -54798,7 +54928,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "newslettiste-auteur"
+    ],
     "functional_needs": [
       "website-builder",
       "email-marketing",
@@ -54812,7 +54945,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "newsletter-platform",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://ghost.org/images/meta/ghost-6.png"
@@ -57079,7 +57212,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ai-builder",
+      "developpeur-solo"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -57087,7 +57223,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-generalist",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -57202,7 +57338,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "web-analytics",
       "analytics",
@@ -57216,7 +57355,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-analytics.jpg"
@@ -60137,7 +60276,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -60145,7 +60287,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-note-taking",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -60837,7 +60979,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ai-builder"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -60845,7 +60989,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-generalist",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -60946,7 +61090,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu"
+    ],
     "functional_needs": [
       "ai-general",
       "documentation"
@@ -60959,7 +61105,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-research-answer-engine",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -61475,7 +61621,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ai-builder",
+      "developpeur-solo"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -61483,7 +61632,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "automation-orchestration",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -61595,7 +61744,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "creator-economy",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "ecommerce",
       "finance"
@@ -61608,7 +61760,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "checkout-platforms",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://assets.gumroad.com/images/opengraph_image.png"
@@ -62133,7 +62285,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "cto-lead-tech",
+      "enterprise-ops"
+    ],
     "functional_needs": [
       "security",
       "devops"
@@ -62146,7 +62301,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "secrets-management",
     "pricing_v5": {
       "cautions": [
         "Cœur open source gratuit en auto-hébergement",
@@ -62563,7 +62718,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "creator-economy"
+    ],
     "functional_needs": [
       "notes"
     ],
@@ -62575,7 +62732,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "note-taking-apps",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -63002,7 +63159,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
+    ],
     "functional_needs": [
       "knowledge-management",
       "collaboration",
@@ -63016,7 +63176,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "knowledge-workspace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -63130,7 +63290,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "deploiement",
       "devops",
@@ -63144,7 +63307,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.heroku.com/wp-content/uploads/2025/08/heroku-card-dark.png"
@@ -65885,7 +66048,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -65893,7 +66059,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "web-scraping",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -67431,7 +67597,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "security",
       "devops"
@@ -67444,7 +67613,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "secrets-management",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -68721,7 +68890,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "automatisation",
       "workflows",
@@ -68735,7 +68907,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "automation-orchestration",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -69180,7 +69352,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -69188,7 +69363,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "accounting-ops",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -69590,7 +69765,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "templates",
       "ui-components",
@@ -69604,7 +69782,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -69730,7 +69908,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "business-ops"
+    ],
     "functional_needs": [
       "ai-general",
       "redaction",
@@ -69744,7 +69925,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-writing-assistant",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e65810eadefa81494f_233fc11d48858aeb5d62081b163af549_Nav%20-%20Agents.avif",
@@ -70667,7 +70848,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -70675,7 +70859,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "form-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -72199,7 +72383,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "rh",
+      "manager-dsi"
+    ],
     "functional_needs": [
       "time-tracking",
       "planning",
@@ -72213,7 +72400,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "hris-payroll",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -73872,7 +74059,9 @@
     "substitutable": true,
     "host_app": "framer",
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da"
+    ],
     "functional_needs": [
       "ui-components",
       "design-system",
@@ -73886,7 +74075,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -74829,7 +75018,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "automatisation",
       "prospection",
@@ -74843,7 +75035,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "linkedin-automation",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -75869,7 +76061,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops"
+    ],
     "functional_needs": [
       "security"
     ],
@@ -75881,7 +76075,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "password-manager",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.lastpass.com/-/media/28cbf631b1954ed081a8979e2c46b6e4.png"
@@ -76153,7 +76347,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "templates",
       "ui-components",
@@ -76167,7 +76364,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -77254,7 +77451,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "dev-freelance"
+    ],
     "functional_needs": [
       "documentation"
     ],
@@ -77266,7 +77466,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "legal-contracts",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -77338,7 +77538,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b"
+    ],
     "functional_needs": [],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -77348,7 +77550,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "legal-contracts",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -77735,7 +77937,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "developpeur-solo"
+    ],
     "functional_needs": [],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -77745,7 +77950,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "checkout-platforms",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/6347244ba8d63489ba51c08e/6358e59c97dcbfdc770e1ff8_og2.jpg"
@@ -81027,7 +81232,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "knowledge-management",
       "notes",
@@ -81041,7 +81249,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "knowledge-workspace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -81937,7 +82145,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "enterprise-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "crm",
       "documentation"
@@ -81950,7 +82161,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "proposal-software",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -83773,7 +83984,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "business-ops"
+    ],
     "functional_needs": [
       "notes",
       "task-management"
@@ -83786,7 +84000,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "personal-task-manager",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -84534,7 +84748,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "ai-builder"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -84542,7 +84759,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-prototyping",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -91373,7 +91590,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "enterprise-ops",
+      "manager-dsi"
+    ],
     "functional_needs": [
       "project-management",
       "planning"
@@ -91386,7 +91606,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "project-management-general",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -92508,7 +92728,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "creative-assets",
       "design-resources"
@@ -92521,7 +92744,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "mockup-generators",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -92756,7 +92979,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
+    ],
     "functional_needs": [
       "project-management",
       "task-management"
@@ -92769,7 +92995,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "project-management-general",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://s3.amazonaws.com/general-assets/monday-1200x628.png"
@@ -93054,7 +93280,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "app-builder",
       "nocode-web",
@@ -93068,7 +93297,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "backend-database-platform",
     "pricing_v5": {
       "cautions": [
         "Cluster gratuit M0 limité à 512 Mo",
@@ -93641,7 +93870,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
+    ],
     "functional_needs": [
       "finance",
       "task-management"
@@ -93654,7 +93886,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "expense-management",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -93804,7 +94036,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -93812,7 +94047,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-planning",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -95040,7 +95275,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
+    ],
     "functional_needs": [
       "automatisation",
       "workflows",
@@ -95054,7 +95292,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "automation-orchestration",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-stage/assets/og_image_website_3_afd66761a9.png"
@@ -95204,7 +95442,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -95212,7 +95453,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "domain-registrar",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -95776,7 +96017,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "app-builder",
       "nocode-web",
@@ -95790,7 +96034,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "backend-database-platform",
     "pricing_v5": {
       "cautions": [
         "Offre gratuite : 100 heures de calcul et 0,5 Go par mois",
@@ -96247,7 +96491,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "deploiement",
       "devops",
@@ -96261,7 +96508,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.netlify.com/images/og-image-default.png"
@@ -97691,7 +97938,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops"
+    ],
     "functional_needs": [
       "security"
     ],
@@ -97703,7 +97952,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "password-manager",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://sb.nordcdn.com/transform/3d7f8d78-75bf-422b-9481-bc4a26643afe/nordpass-meta-trademark"
@@ -98326,7 +98575,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops"
+    ],
     "functional_needs": [
       "analytics",
       "web-analytics"
@@ -98339,7 +98590,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -98773,7 +99024,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "creative"
+    ],
     "functional_needs": [
       "crm",
       "presentation-client"
@@ -98786,7 +99040,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "proposal-software",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -99491,7 +99745,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "creator-economy"
+    ],
     "functional_needs": [
       "knowledge-management",
       "notes"
@@ -99504,7 +99761,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "note-taking-apps",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -102393,7 +102650,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "ai-general",
       "analytics",
@@ -102407,7 +102667,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -103544,7 +103804,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "automatisation",
       "workflows",
@@ -103558,7 +103821,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "automation-orchestration",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -104027,7 +104290,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -104035,7 +104300,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "checkout-platforms",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -105737,7 +106002,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
+    ],
     "functional_needs": [
       "paiements",
       "finance",
@@ -105751,7 +106019,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "expense-management",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -106174,7 +106442,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ecommercant",
+      "business-ops"
+    ],
     "functional_needs": [
       "paiements"
     ],
@@ -106186,7 +106457,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "checkout-platforms",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.paypalobjects.com/marketing/web23/uk/en/ppe/homepage-consumer/meta_size-all.jpg"
@@ -107698,7 +107969,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "automatisation",
       "prospection",
@@ -107712,7 +107986,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "linkedin-automation",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -110040,7 +110314,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -110048,7 +110325,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "project-management-general",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -110148,7 +110425,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "app-builder",
       "nocode-web",
@@ -110162,7 +110442,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "backend-database-platform",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://planetscale.xyz/assets/social-DtnN8vYG.png"
@@ -112271,7 +112551,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "community-manager",
+      "createur-contenu"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -112279,7 +112562,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "social-media-scheduler",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -116071,7 +116354,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "crm",
       "presentation-client"
@@ -116084,7 +116370,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "proposal-software",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -118715,7 +119001,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -118723,7 +119012,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "accounting-ops",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -118824,7 +119113,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu",
+      "coach-formateur"
+    ],
     "functional_needs": [
       "ai-general",
       "creation"
@@ -118837,7 +119129,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-writing-assistant",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -119343,7 +119635,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "deploiement",
       "devops",
@@ -119357,7 +119652,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://railway.com/og.png?v=2"
@@ -121556,7 +121851,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -121564,7 +121862,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-planning",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -122609,7 +122907,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
+    ],
     "functional_needs": [
       "notes",
       "knowledge-management",
@@ -122623,7 +122924,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "knowledge-workspace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -123444,7 +123745,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": "adobe-photoshop",
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "retouche-photo",
       "generation-image",
@@ -123458,7 +123762,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-image-enhancement",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://sb.kaleidousercontent.com/67418/600x315/48eb30a742/emilia-og-image.jpg"
@@ -123559,7 +123863,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "deploiement",
       "devops",
@@ -123573,7 +123880,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://cdn.sanity.io/images/hvk0tap5/production/a3528e77b010804af14908fab79f826d66437620-1600x900.png?fit=max&amp;auto=format"
@@ -126066,7 +126373,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance"
+    ],
     "functional_needs": [
       "ai-general",
       "templates"
@@ -126079,7 +126388,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "resume-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -127257,7 +127566,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
+    ],
     "functional_needs": [
       "knowledge-management",
       "notes",
@@ -127271,7 +127583,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "knowledge-workspace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -127728,7 +128040,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -127736,7 +128051,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-app-builder",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -127857,7 +128172,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "creative-assets",
       "design-resources"
@@ -127870,7 +128188,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "mockup-generators",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -128500,7 +128818,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
+    ],
     "functional_needs": [
       "finance",
       "automatisation"
@@ -128513,7 +128834,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "expense-management",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -129119,7 +129440,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "rh",
+      "daf-finance"
+    ],
     "functional_needs": [
       "paie",
       "finance"
@@ -129132,7 +129456,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "hris-payroll",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -131784,7 +132108,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -131792,7 +132119,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "documentation-tools",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -134307,7 +134634,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "community-manager",
+      "createur-contenu"
+    ],
     "functional_needs": [],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -134317,7 +134647,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "analytics",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -135941,7 +136271,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "dev-freelance"
+    ],
     "functional_needs": [
       "collaboration"
     ],
@@ -135953,7 +136286,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esignature",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -136057,7 +136390,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "rh",
+      "daf-finance"
+    ],
     "functional_needs": [
       "paie",
       "finance"
@@ -136070,7 +136406,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "hris-payroll",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -136964,7 +137300,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "design-tools",
       "prototyping",
@@ -136978,7 +137317,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-interface",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.sketch.com/images/metadata/pages/home.jpg"
@@ -137294,7 +137633,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "collaboration"
     ],
@@ -137306,7 +137648,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "esignature",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -138176,7 +138518,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "photographe"
+    ],
     "functional_needs": [
       "retouche-photo",
       "photo-enhancement"
@@ -138189,7 +138533,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "photo-editor",
     "pricing_v5": {
       "cautions": [],
       "verified_on": "2026-06-15",
@@ -139393,7 +139737,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
+    ],
     "functional_needs": [
       "paiements",
       "finance"
@@ -139406,7 +139753,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "expense-management",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -144452,7 +144799,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "crm",
       "project-management",
@@ -144466,7 +144816,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "freelance-crm-suite",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -144736,7 +145086,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "app-builder",
       "nocode-web",
@@ -144750,7 +145103,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "backend-database-platform",
     "pricing_v5": {
       "cautions": [
         "Offre gratuite : 2 projets, 500 Mo de base",
@@ -145278,7 +145631,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "operations"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -145286,7 +145642,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "personal-task-manager",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -145570,7 +145926,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "createur-contenu"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -145578,7 +145937,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "voice-dictation",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -148090,7 +148449,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "ai-builder"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -148098,7 +148460,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "project-management-general",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -148228,7 +148590,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "photographe"
+    ],
     "functional_needs": [
       "crm",
       "project-management"
@@ -148241,7 +148605,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "freelance-crm-suite",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -149819,7 +150183,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "motion-video"
+    ],
     "functional_needs": [
       "ui-components",
       "design-system",
@@ -149833,7 +150200,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -150945,7 +151312,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "comptabilite",
       "finance"
@@ -150958,7 +151328,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "accounting-ops",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://www.tiime.fr/hubfs/Tiime%202025/Opengraph/tiime-og-2026-entrepreneur-home.png"
@@ -156388,7 +156758,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
     "functional_needs": [
       "typography",
       "design-system"
@@ -156401,7 +156774,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-system-tooling",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -156672,7 +157045,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -156680,7 +157055,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-writing-assistant",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -157292,7 +157667,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "createur-contenu"
+    ],
     "functional_needs": [
       "analytics"
     ],
@@ -157304,7 +157681,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "communication",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -162106,7 +162483,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
+    ],
     "functional_needs": [
       "automatisation",
       "prospection",
@@ -162120,7 +162500,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "linkedin-automation",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -162220,7 +162600,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
+    ],
     "functional_needs": [
       "ui-components",
       "design-system",
@@ -162234,7 +162617,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "design-template-marketplace",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -162349,7 +162732,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "functional_needs": [
       "coding",
       "devops"
@@ -162362,7 +162748,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "modern-terminal",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -162500,7 +162886,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "dev-freelance"
+    ],
     "functional_needs": [
       "comptabilite",
       "facturation"
@@ -162513,7 +162902,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "accounting-ops",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/62446230dcb514b828a6e237/6a4ff288b8823074cb3b7dfe_8ef5fd2061b1ab372327974001853343_dashboard-poster.avif",
@@ -164211,7 +164600,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -164219,7 +164611,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-code-assistant",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -164320,7 +164712,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "createur-contenu"
+    ],
     "functional_needs": [
       "ai-general",
       "transcription"
@@ -164333,7 +164728,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "voice-dictation",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -164892,7 +165287,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "enterprise-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "documentation"
     ],
@@ -164904,7 +165302,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "legal-contracts",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -165810,7 +166208,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "enterprise-ops",
+      "rh"
+    ],
     "functional_needs": [
       "paie",
       "finance",
@@ -165824,7 +166225,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "hris-payroll",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -168597,7 +168998,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -168605,7 +169009,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "scheduling",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -169568,7 +169972,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": "zoom-pro",
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "collaboration"
     ],
@@ -169580,7 +169987,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "team-communication",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://st1.zoom.us/homepage/20260622-1234/primary/dist/assets/images/thumb.png"
@@ -169689,7 +170096,9 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": "zoom-pro",
-    "verticals": [],
+    "verticals": [
+      "business-ops"
+    ],
     "functional_needs": [
       "ai-general",
       "transcription",
@@ -169703,7 +170112,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "ai-note-taking",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -169785,7 +170194,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "functional_needs": [
       "collaboration"
     ],
@@ -169797,7 +170209,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "team-communication",
     "pricing_v5": {
       "cautions": [
         "Plan gratuit limité à 40 minutes par réunion",
@@ -171780,7 +172192,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "fondateur-saas",
+      "community-manager"
+    ],
     "ia_use_case": [
       "generation-texte"
     ],
@@ -171798,7 +172213,7 @@
       "review_volume",
       "team_size"
     ],
-    "substitution_cluster_v2": null,
+    "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,

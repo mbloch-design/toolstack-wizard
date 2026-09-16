@@ -40,9 +40,15 @@
     },
     "defaultMonthlyPrice": 60,
     "compareMonthlyPrice": 55,
+    "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
       "crm",
       "project-management"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "creative",
+      "business-ops"
     ],
     "relevantFor": [
       "Freelancers",
@@ -270,10 +276,15 @@
       "free": "Gratuit (open-source, self-hosted)",
       "paid": "Cloud à partir de 0$/mois (plan gratuit)"
     },
+    "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
       "workflows",
       "no-code"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
     ],
     "relevantFor": [
       "Équipes techniques",
@@ -1232,10 +1243,15 @@
     "websiteUrl": "https://affinity.serif.com/photo",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/affinity-photo.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "photo-editor",
     "functional_needs": [
       "retouche-photo",
       "photo-enhancement",
       "design-tools"
+    ],
+    "verticals": [
+      "photographe",
+      "graphiste-da"
     ],
     "relevantFor": [
       "Photographes professionnels",
@@ -2108,9 +2124,14 @@
       "free": "Entièrement gratuit",
       "paid": "N/A"
     },
+    "substitution_cluster_v2": "productivity-browser",
     "functional_needs": [
       "notes",
       "documentation"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Travailleurs en freelance",
@@ -2953,9 +2974,14 @@
     "shortDescription": "Bibliothèque d'avatars personnalisables, gratuits et utilisables commercialement sans limitation. Disponible en téléchargement PNG, en fichier Figma, Sketch et Adobe XD, ainsi que via plugin Figma.",
     "shortDescriptionEn": "Library of over 600 customizable avatars, free and available for commercial use without restriction. Available as PNG downloads, Figma files, Sketch and Adobe XD files, and via Figma plugin.",
     "websiteUrl": "https://www.avaaatars.com/",
+    "substitution_cluster_v2": "creative-assets",
     "functional_needs": [
       "creative-assets",
       "design-resources"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Startups et MVP",
@@ -3342,9 +3368,14 @@
     "shortDescription": "Application de prise de notes Markdown pour les appareils Apple (Mac, iPhone, iPad) mettant l'accent sur la simplicité et le design élégant. Supporte l'édition Markdown, l'organisation flexible des tags, le scan de documents et les exports multiples (TXT, PDF, HTML, DOCX, etc.).",
     "shortDescriptionEn": "Markdown note-taking app for Apple devices (Mac, iPhone, iPad) emphasizing simplicity and elegant design. Markdown editing, flexible tag organization, document scanning, multiple exports (TXT, PDF, HTML, DOCX, etc.).",
     "websiteUrl": "https://bear.app",
+    "substitution_cluster_v2": "note-taking-apps",
     "functional_needs": [
       "knowledge-management",
       "notes"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "creator-economy"
     ],
     "relevantFor": [
       "Utilisateurs Apple",
@@ -3435,9 +3466,14 @@
       "free": "Inclus avec Beehiiv gratuit",
       "paid": "Métriques avancées dans les plans payants"
     },
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "analytics",
       "analytics-produit"
+    ],
+    "verticals": [
+      "newslettiste-auteur",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Newsletter creators",
@@ -3462,9 +3498,14 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 17,
+    "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
       "presentation-client"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Freelancers",
@@ -3576,8 +3617,13 @@
     "pricing": "Gratuit (mots de passe illimités) ; Premium à ~10$/an, Famille à ~40$/an.",
     "websiteUrl": "https://bitwarden.com",
     "ogImageUrl": "https://bitwarden.com/assets/7fzQJmr0qt5ggGZp3t66Y/7bf59a6a2379d49fc580ff49e8510efb/bitwarden.com_og_image.png",
+    "substitution_cluster_v2": "password-manager",
     "functional_needs": [
       "security"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "business-ops"
     ],
     "relevantFor": [
       "Développeurs",
@@ -3703,9 +3749,14 @@
     },
     "defaultMonthlyPrice": 14,
     "compareMonthlyPrice": 13,
+    "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
       "crm",
       "project-management"
+    ],
+    "verticals": [
+      "photographe",
+      "creative"
     ],
     "relevantFor": [
       "Photographes",
@@ -4046,9 +4097,14 @@
     "compareMonthlyPrice": 8.28,
     "websiteUrl": "https://www.brandcrowd.com",
     "ogImageUrl": "https://dcstatic.com/images/brandcrowd/logos/brandcrowd-logo-black-bc9e817e0f.en-us.svg",
+    "substitution_cluster_v2": "logo-generators",
     "functional_needs": [
       "branding",
       "logo-design"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "graphiste-da"
     ],
     "relevantFor": [
       "Startups",
@@ -4884,11 +4940,16 @@
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-pro.jpg",
     "tool_type": "core",
     "bundle_parent": "canva",
+    "substitution_cluster_v2": "creative-suite",
     "functional_needs": [
       "design-visuel",
       "creation",
       "templates",
       "generation-image"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "community-manager"
     ],
     "relevantFor": [
       "Freelances",
@@ -5081,6 +5142,11 @@
     },
     "defaultMonthlyPrice": 19,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "legal-contracts",
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
+    ],
     "personas": [
       "CLAIRE"
     ]
@@ -5194,10 +5260,15 @@
     "compareMonthlyPrice": 14,
     "websiteUrl": "https://cargo.site/",
     "ogImageUrl": "/tool-media/cargo-site/cargo-overview.jpg",
+    "substitution_cluster_v2": "website-builder",
     "functional_needs": [
       "website-builder",
       "design-tools",
       "nocode-web"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "creative"
     ],
     "relevantFor": [
       "Designers",
@@ -5496,10 +5567,15 @@
     "compareMonthlyPrice": 27,
     "websiteUrl": "https://www.chatbase.co",
     "ogImageUrl": "https://www.chatbase.co/og-home.png",
+    "substitution_cluster_v2": "ai-chatbot-builder",
     "functional_needs": [
       "chatbot",
       "customer-support",
       "knowledge-base"
+    ],
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "E-commerce",
@@ -6305,9 +6381,14 @@
     },
     "defaultMonthlyPrice": 10,
     "tool_type": "core",
+    "substitution_cluster_v2": "productivity-docs",
     "functional_needs": [
       "collaboration",
       "knowledge-management"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Équipes produit",
@@ -6555,8 +6636,13 @@
       "paid": "À partir de 15€/mois"
     },
     "defaultMonthlyPrice": 15,
+    "substitution_cluster_v2": "esignature",
     "functional_needs": [
       "collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "PME françaises",
@@ -6641,11 +6727,16 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://contra.com",
     "ogImageUrl": "https://contra.com/static/opengraph-assets/v2/fallbacks/contra-fallback-open-graph-image.png",
+    "substitution_cluster_v2": "freelance-marketplace",
     "functional_needs": [
       "freelance-marketplace",
       "legal-contracts",
       "paiements",
       "portfolio"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "creative"
     ],
     "relevantFor": [
       "design",
@@ -6665,9 +6756,14 @@
       "free": "Inclus avec ConvertKit",
       "paid": "N/A"
     },
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "analytics",
       "analytics-produit"
+    ],
+    "verticals": [
+      "newslettiste-auteur",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Email creators",
@@ -6758,10 +6854,15 @@
     "shortDescription": "Collection de templates Framer sélectionnés et conçus par un créateur et quelques contributeurs de confiance, destinés aux founders et entrepreneurs qui privilégient le design. Le concept est simple : choisir un template, adapter le contenu, et lancer.",
     "shortDescriptionEn": "Curated collection of Framer templates designed by a creator and trusted contributors for founders and entrepreneurs who value design. The concept is simple: pick a template, swap your content, and launch.",
     "websiteUrl": "https://cosmaha.com/",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "templates",
       "ui-components",
       "design-system"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Founders et entrepreneurs",
@@ -6876,11 +6977,16 @@
     "shortDescription": "Plateforme documents et collaboration multifonctionnelle incluant l'écriture, les tâches intégrées, le calendrier, les tableaux blancs, les notes quotidiennes et l'intégration de l'IA (Claude, ChatGPT). Synchronisation cross-device sur iPhone, iPad, Mac et web.",
     "shortDescriptionEn": "Multifunctional document and collaboration platform including writing, embedded tasks, calendar, whiteboards, daily notes, and AI integration (Claude, ChatGPT). Cross-device sync iPhone, iPad, Mac, web.",
     "websiteUrl": "https://craft.do",
+    "substitution_cluster_v2": "note-taking-apps",
     "functional_needs": [
       "collaboration",
       "documentation",
       "notes",
       "task-management"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Écrivains Apple",
@@ -6932,10 +7038,15 @@
     "compareMonthlyPrice": 17.48,
     "websiteUrl": "https://crayo.ai",
     "ogImageUrl": "https://crayo.ai/og-image.png",
+    "substitution_cluster_v2": "ai-video-generation",
     "functional_needs": [
       "automatisation",
       "social-media",
       "video-creation"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "motion-video"
     ],
     "relevantFor": [
       "Créateurs de contenu",
@@ -7133,9 +7244,14 @@
     "shortDescription": "Suite d'outils IA pour la rédaction et l'humanisation du contenu généré par IA. Inclut un humaniseur de contenu IA, un détecteur IA, un vérificateur de plagiat, un outil de paraphrase et un générateur d'essai IA. Supporte plus de 100 langues.",
     "shortDescriptionEn": "Suite of AI writing and humanization tools for AI-generated content. Includes AI humanizer, AI detector, plagiarism checker, paraphrasing tool, AI essay writer. Supports 100+ languages.",
     "websiteUrl": "https://cudekai.com",
+    "substitution_cluster_v2": "ai-writing-assistant",
     "functional_needs": [
       "ai-general",
       "creation"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Étudiants",
@@ -7474,8 +7590,12 @@
     "defaultMonthlyPrice": 4,
     "websiteUrl": "https://dashlane.com",
     "ogImageUrl": "https://www.dashlane.com/uploads/2025/07/dashlane_omnix_hero-1-scaled.webp",
+    "substitution_cluster_v2": "password-manager",
     "functional_needs": [
       "security"
+    ],
+    "verticals": [
+      "business-ops"
     ],
     "relevantFor": [
       "Particuliers",
@@ -8012,10 +8132,15 @@
     "defaultMonthlyPrice": 5,
     "websiteUrl": "https://digitalocean.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/digitalocean.jpg",
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "functional_needs": [
       "devops",
       "deploiement",
       "nocode-web"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Startups",
@@ -8069,9 +8194,14 @@
     },
     "websiteUrl": "https://discord.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg",
+    "substitution_cluster_v2": "team-chat",
     "functional_needs": [
       "collaboration",
       "social-media"
+    ],
+    "verticals": [
+      "community-manager",
+      "creator-economy"
     ],
     "relevantFor": [
       "Créateurs de contenu",
@@ -8240,9 +8370,14 @@
       "paid": "À partir de 18$/mois par utilisateur"
     },
     "tool_type": "core",
+    "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
       "security",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
     ],
     "relevantFor": [
       "Équipes DevOps",
@@ -8297,9 +8432,14 @@
       "free": "Gratuit",
       "paid": "Plans team disponibles"
     },
+    "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
       "security",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Équipes Node.js/JS",
@@ -8489,10 +8629,15 @@
     "compareMonthlyPrice": 21,
     "websiteUrl": "https://dub.co",
     "ogImageUrl": "https://assets.dub.co/thumbnail.jpg",
+    "substitution_cluster_v2": "link-shortener",
     "functional_needs": [
       "analytics",
       "url-shortening",
       "website-builder"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "marketing-ops"
     ],
     "relevantFor": [
       "Marketers",
@@ -8648,11 +8793,16 @@
     "compareMonthlyPrice": 13.8,
     "websiteUrl": "https://dynamicmockups.com",
     "ogImageUrl": "https://dynamicmockups.com/wp-content/uploads/2024/10/OG-Dynamic-Mockups.png",
+    "substitution_cluster_v2": "mockup-generators",
     "functional_needs": [
       "batch-export",
       "design-automation",
       "mockup-generation",
       "product-visuals"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
     ],
     "relevantFor": [
       "E-commerçants",
@@ -8846,10 +8996,15 @@
     "shortDescription": "Bibliothèque de composants et de templates Framer prêts à copier-coller, conçus pour des sites SaaS, des portfolios et des pages d'atterrissage. Tous les éléments sont responsifs et optimisés pour le web moderne.",
     "shortDescriptionEn": "Library of 500+ copy-paste-ready Framer components and templates designed for SaaS, portfolios and landing pages. All elements are responsive and optimized for modern web standards.",
     "websiteUrl": "https://elements-library.com/",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "templates",
       "ui-components",
       "design-system"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Designers Framer",
@@ -9026,10 +9181,15 @@
     "compareMonthlyPrice": 18.4,
     "websiteUrl": "https://emergent.sh",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/emergent.jpg",
+    "substitution_cluster_v2": "ai-app-builder",
     "functional_needs": [
       "app-builder",
       "coding",
       "no-code"
+    ],
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Founders non-tech",
@@ -9331,9 +9491,13 @@
     "shortDescription": "Outil d'IA de réécriture textuelle qui transforme le contenu généré par IA en prose naturelle et académique. Optimise la fluidité, la personnalité et la crédibilité tout en contournant les détecteurs de contenu IA.",
     "shortDescriptionEn": "AI text rewriting tool transforming AI-generated content into natural and academic prose. Optimizes flow, personality, and credibility while bypassing AI content detectors.",
     "websiteUrl": "https://www.essaytone.com/en",
+    "substitution_cluster_v2": "ai-writing-assistant",
     "functional_needs": [
       "ai-general",
       "creation"
+    ],
+    "verticals": [
+      "createur-contenu"
     ],
     "relevantFor": [
       "Étudiants",
@@ -9573,10 +9737,15 @@
     "compareMonthlyPrice": 17.48,
     "websiteUrl": "https://www.fathom.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/6899da9beccbdbe92be49b5d/68f20f5cd1c6d0de365b8849_Fathom-Visual_Identity_Concepts-Stage_07-Website_Thumbnail-01.jpg",
+    "substitution_cluster_v2": "ai-note-taking",
     "functional_needs": [
       "ai-assistant",
       "meeting-notes",
       "transcription"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Teams sales",
@@ -9662,10 +9831,15 @@
     "compareMonthlyPrice": 6,
     "websiteUrl": "https://fellow.app",
     "ogImageUrl": "https://framerusercontent.com/assets/J0X2qL3rwf819TDwjCc8iG9UjUk.png",
+    "substitution_cluster_v2": "ai-note-taking",
     "functional_needs": [
       "calendar",
       "notes",
       "team-collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
     ],
     "relevantFor": [
       "Teams produit",
@@ -9684,6 +9858,11 @@
       "free": "Gratuit",
       "paid": "N/A (transition vers Amazon Q)"
     },
+    "substitution_cluster_v2": "modern-terminal",
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
+    ],
     "personas": [
       "THEO"
     ]
@@ -10107,11 +10286,16 @@
     "compareMonthlyPrice": 13.8,
     "websiteUrl": "https://fillout.com",
     "ogImageUrl": "https://static.fillout.com/fillout-og-image.png",
+    "substitution_cluster_v2": "form-builder",
     "functional_needs": [
       "data-collection",
       "forms",
       "no-code",
       "paiements"
+    ],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Freelances",
@@ -10222,10 +10406,15 @@
     "websiteUrl": "https://firebase.google.com",
     "ogImageUrl": "https://firebase.google.com/images/social.png",
     "tool_type": "core",
+    "substitution_cluster_v2": "backend-database-platform",
     "functional_needs": [
       "nocode-web",
       "app-builder",
       "deploiement"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Startups",
@@ -10249,11 +10438,16 @@
     "compareMonthlyPrice": 14.74,
     "websiteUrl": "https://firecrawl.dev",
     "ogImageUrl": "https://www.firecrawl.dev/og.png",
+    "substitution_cluster_v2": "web-scraping",
     "functional_needs": [
       "automatisation",
       "data-extraction",
       "developer-tools",
       "web-scraping"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
     ],
     "relevantFor": [
       "Équipes IA",
@@ -10486,10 +10680,15 @@
     "shortDescription": "Catalogue de templates conçus pour Framer, Webflow et Figma, couvrant SaaS, agences, portfolios, ecommerce, santé et immobilier. Chaque template est pensé pour conversion et facile à adapter.",
     "shortDescriptionEn": "Catalogue of templates designed for Framer, Webflow and Figma, covering SaaS, agencies, portfolios, ecommerce, healthcare and real estate. Each template is built for conversion and easy to adapt.",
     "websiteUrl": "https://flowcub.com/",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "templates",
       "ui-components",
       "design-system"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Freelances web cross-plateforme",
@@ -10512,9 +10711,13 @@
     "compareMonthlyPrice": 13.8,
     "websiteUrl": "https://www.flowmapp.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/65fe17942989eb1e1145dbea_Open%20Graph.webp",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "ui-design",
       "wireframing"
+    ],
+    "verticals": [
+      "ux-ui"
     ],
     "relevantFor": [
       "UX designers",
@@ -10641,10 +10844,15 @@
     "pricing": "Free tier limité ; facturation à l'usage des ressources (CPU, RAM, bande passante) au-delà.",
     "websiteUrl": "https://fly.io",
     "ogImageUrl": "https://fly.io/phx/images/preview/og-7ea9380853220ced249aaf88c2332937.jpg?vsn=d",
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "functional_needs": [
       "deploiement",
       "devops",
       "nocode-web"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs individuels",
@@ -10698,10 +10906,15 @@
     "compareMonthlyPrice": 27,
     "websiteUrl": "https://folk.app",
     "ogImageUrl": "https://cdn.prod.website-files.com/626be00c396339c5a816353b/677e4924b4b4eb32886d59ca_Open-graph.webp",
+    "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
       "crm",
       "prospection",
       "collaboration"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Équipes vente B2B",
@@ -11384,10 +11597,15 @@
     "shortDescription": "Outil de recherche et partenaire IA Google (anciennement NotebookLM, renommé Gemini Notebook en juillet 2026). Upload jusqu'à 600 sources par notebook pour générer des résumés, des matériels d'étude et des analyses de données. La signature : Audio Overviews convertissant les documents en discussions de podcast IA.",
     "shortDescriptionEn": "Google AI research tool and thinking partner (formerly NotebookLM, rebranded Gemini Notebook July 2026). Upload up to 600 sources/notebook to generate summaries, study materials, data analysis. Signature: Audio Overviews converting documents into AI podcast discussions.",
     "websiteUrl": "https://notebook.google/",
+    "substitution_cluster_v2": "ai-research-answer-engine",
     "functional_needs": [
       "ai-general",
       "knowledge-management",
       "notes"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
     ],
     "relevantFor": [
       "Chercheurs",
@@ -11527,10 +11745,15 @@
     "defaultMonthlyPrice": 9,
     "websiteUrl": "https://ghost.org",
     "ogImageUrl": "https://ghost.org/images/meta/ghost-6.png",
+    "substitution_cluster_v2": "newsletter-platform",
     "functional_needs": [
       "website-builder",
       "email-marketing",
       "nocode-web"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "newslettiste-auteur"
     ],
     "relevantFor": [
       "Créateurs indépendants",
@@ -12016,11 +12239,16 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://aistudio.google.com",
     "ogImageUrl": "https://ai.google.dev/static/site-assets/images/share-ais-513315318.png",
+    "substitution_cluster_v2": "ai-generalist",
     "functional_needs": [
       "ai-chat",
       "analyse",
       "developer-tools",
       "prototyping"
+    ],
+    "verticals": [
+      "ai-builder",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs",
@@ -12037,10 +12265,15 @@
     "shortDescriptionEn": "Free web analytics by Google.",
     "websiteUrl": "https://analytics.google.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-analytics.jpg",
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "web-analytics",
       "analytics",
       "analytics-produit"
+    ],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Marketeurs",
@@ -12635,10 +12868,15 @@
     "compareMonthlyPrice": 12.88,
     "websiteUrl": "https://www.granola.ai",
     "ogImageUrl": "https://www.granola.ai/og-image.png",
+    "substitution_cluster_v2": "ai-note-taking",
     "functional_needs": [
       "ai-assistant",
       "meeting-notes",
       "transcription"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Teams Notion",
@@ -12780,11 +13018,15 @@
     "compareMonthlyPrice": 27.6,
     "websiteUrl": "https://grok.com",
     "ogImageUrl": "https://grok.com/icon-512x512.png",
+    "substitution_cluster_v2": "ai-generalist",
     "functional_needs": [
       "ai-chat",
       "content-generation",
       "research",
       "veille"
+    ],
+    "verticals": [
+      "ai-builder"
     ],
     "relevantFor": [
       "Gestionnaires réseaux sociaux",
@@ -12800,9 +13042,13 @@
     "shortDescription": "Encyclopédie générative utilisant le modèle Grok IA de xAI pour créer des articles encyclopédiques. Le corpus, entièrement généré, s'étend rapidement depuis son lancement avec des fonctionnalités d'édition communautaire, des résumés vidéo, des panneaux de connaissances et des images générées.",
     "shortDescriptionEn": "Generative encyclopedia using xAI's Grok AI model to create encyclopedic articles. The fully generated corpus has been expanding rapidly since launch with community edit proposals, video summaries, knowledge panels, generated images.",
     "websiteUrl": "https://grokipedia.com",
+    "substitution_cluster_v2": "ai-research-answer-engine",
     "functional_needs": [
       "ai-general",
       "documentation"
+    ],
+    "verticals": [
+      "createur-contenu"
     ],
     "relevantFor": [
       "Chercheurs curieux",
@@ -12916,10 +13162,15 @@
     "compareMonthlyPrice": 31,
     "websiteUrl": "https://www.gumloop.com",
     "ogImageUrl": "https://gumloop.com/images/link-preview.webp",
+    "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "ai-automation",
       "no-code",
       "workflow-builder"
+    ],
+    "verticals": [
+      "ai-builder",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Entreprises",
@@ -12937,9 +13188,14 @@
     "pricing": "Gratuit à l'inscription ; commission de 10% par vente (dégressive avec le volume).",
     "websiteUrl": "https://gumroad.com",
     "ogImageUrl": "https://assets.gumroad.com/images/opengraph_image.png",
+    "substitution_cluster_v2": "checkout-platforms",
     "functional_needs": [
       "ecommerce",
       "finance"
+    ],
+    "verticals": [
+      "creator-economy",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Créateurs",
@@ -13057,9 +13313,14 @@
     },
     "compareMonthlyPrice": 0,
     "tool_type": "core",
+    "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
       "security",
       "devops"
+    ],
+    "verticals": [
+      "cto-lead-tech",
+      "enterprise-ops"
     ],
     "relevantFor": [
       "Équipes DevOps",
@@ -13139,8 +13400,12 @@
     "shortDescription": "Application de prise de notes quotidienne pour Mac et iPhone où chaque jour est une page. Intègre un calendrier, une gestion de tâches et une synchronisation iCloud avec un design centré sur la confidentialité. Stocke les notes sous forme de fichiers Markdown locaux.",
     "shortDescriptionEn": "Daily note-taking app for Mac and iPhone where each day is a page. Integrates calendar, task management, and iCloud sync with privacy-focused design. Stores notes as local Markdown files.",
     "websiteUrl": "https://hejour.com",
+    "substitution_cluster_v2": "note-taking-apps",
     "functional_needs": [
       "notes"
+    ],
+    "verticals": [
+      "creator-economy"
     ],
     "relevantFor": [
       "Utilisateurs Mac",
@@ -13225,10 +13490,15 @@
     },
     "defaultMonthlyPrice": 8.99,
     "compareMonthlyPrice": 8,
+    "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
       "knowledge-management",
       "collaboration",
       "brainstorming"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
     ],
     "relevantFor": [
       "Doctorants",
@@ -13252,10 +13522,15 @@
     "defaultMonthlyPrice": 5,
     "websiteUrl": "https://heroku.com",
     "ogImageUrl": "https://www.heroku.com/wp-content/uploads/2025/08/heroku-card-dark.png",
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "functional_needs": [
       "deploiement",
       "devops",
       "nocode-web"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Startups",
@@ -13798,10 +14073,15 @@
     "compareMonthlyPrice": 27.6,
     "websiteUrl": "https://www.hyperbrowser.ai",
     "ogImageUrl": "https://www.hyperbrowser.ai/og-image.png",
+    "substitution_cluster_v2": "web-scraping",
     "functional_needs": [
       "ai-general",
       "automatisation",
       "web-scraping"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
     ],
     "relevantFor": [
       "Équipes de données",
@@ -14112,9 +14392,14 @@
       "paid": "Cloud à partir de 0$/mois"
     },
     "tool_type": "core",
+    "substitution_cluster_v2": "secrets-management",
     "functional_needs": [
       "security",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
     ],
     "relevantFor": [
       "Équipes DevOps",
@@ -14376,10 +14661,15 @@
       "paid": "À partir de 20$/mois"
     },
     "defaultMonthlyPrice": 20,
+    "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
       "workflows",
       "no-code"
+    ],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "PME",
@@ -14466,9 +14756,14 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://invoicely.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/invoicely.jpg",
+    "substitution_cluster_v2": "accounting-ops",
     "functional_needs": [
       "facturation",
       "finance"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Freelances",
@@ -14545,10 +14840,15 @@
     "shortDescription": "Catalogue de templates Framer prêts à convertir, conçus pour être faciles à personnaliser et être parfaits sur tous les appareils. Chaque template est livré avec des instructions détaillées et des mises à jour permanentes.",
     "shortDescriptionEn": "Catalogue of conversion-ready Framer templates designed for easy customization and responsive perfection across devices. Each template includes detailed instructions and lifetime updates.",
     "websiteUrl": "https://www.izabysof.com/",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "templates",
       "ui-components",
       "design-system"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Freelances Framer",
@@ -14570,10 +14870,15 @@
     "defaultMonthlyPrice": 39,
     "websiteUrl": "https://jasper.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e65810eadefa81494f_233fc11d48858aeb5d62081b163af549_Nav%20-%20Agents.avif",
+    "substitution_cluster_v2": "ai-writing-assistant",
     "functional_needs": [
       "ai-general",
       "redaction",
       "email-marketing"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "business-ops"
     ],
     "relevantFor": [
       "Équipes marketing",
@@ -14757,10 +15062,15 @@
     "compareMonthlyPrice": 31.28,
     "websiteUrl": "https://www.jotform.com",
     "ogImageUrl": "https://cdn.jotfor.ms/assets/img/landing/opengraph.png",
+    "substitution_cluster_v2": "form-builder",
     "functional_needs": [
       "data-collection",
       "forms",
       "paiements"
+    ],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "PME",
@@ -15054,10 +15364,15 @@
     "defaultMonthlyPrice": 8,
     "websiteUrl": "https://www.kelio.com",
     "tool_type": "gestion",
+    "substitution_cluster_v2": "hris-payroll",
     "functional_needs": [
       "time-tracking",
       "planning",
       "paie"
+    ],
+    "verticals": [
+      "rh",
+      "manager-dsi"
     ],
     "relevantFor": [
       "PME",
@@ -15410,10 +15725,14 @@
     "shortDescriptionEn": "Framer plugin bundling over a thousand ready-made sections and four hundred interface components, reachable from Framer's quick-action menu. Aimed at freelancers and teams shipping sites in volume.",
     "websiteUrl": "https://www.kompa.design/",
     "host_app": "framer",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "ui-components",
       "design-system",
       "templates"
+    ],
+    "verticals": [
+      "graphiste-da"
     ],
     "relevantFor": [
       "Freelances Framer",
@@ -15637,10 +15956,15 @@
       "paid": "À partir de 60€/mois"
     },
     "defaultMonthlyPrice": 60,
+    "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
       "automatisation",
       "prospection",
       "email-marketing"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Équipes sales",
@@ -15845,8 +16169,12 @@
     "defaultMonthlyPrice": 3,
     "websiteUrl": "https://lastpass.com",
     "ogImageUrl": "https://www.lastpass.com/-/media/28cbf631b1954ed081a8979e2c46b6e4.png",
+    "substitution_cluster_v2": "password-manager",
     "functional_needs": [
       "security"
+    ],
+    "verticals": [
+      "business-ops"
     ],
     "relevantFor": [
       "Utilisateurs individuels",
@@ -15891,10 +16219,15 @@
     "shortDescription": "Catalogue de templates Framer premium conçus pour convertir les visiteurs en clients, adaptés aux designers indépendants et aux petites agences qui cherchent à accélérer leur production sans compromettre la qualité.",
     "shortDescriptionEn": "Catalogue of premium Framer templates designed to convert visitors into customers, ideal for freelance designers and small agencies who want to accelerate production without compromising quality.",
     "websiteUrl": "https://launchnow.design/",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "templates",
       "ui-components",
       "design-system"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Freelances designers web",
@@ -16107,8 +16440,13 @@
     },
     "defaultMonthlyPrice": 15,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "legal-contracts",
     "functional_needs": [
       "documentation"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "dev-freelance"
     ],
     "relevantFor": [
       "Freelances",
@@ -16132,6 +16470,10 @@
       "paid": "N/A"
     },
     "tool_type": "gestion",
+    "substitution_cluster_v2": "legal-contracts",
+    "verticals": [
+      "consultant-b2b"
+    ],
     "personas": [
       "CLAIRE"
     ]
@@ -16209,7 +16551,12 @@
     "shortDescriptionEn": "\"Merchant of Record\" payment platform to sell a SaaS or digital product without handling tax yourself.",
     "pricing": "Gratuit à l'inscription ; commission de 5% + 0,50$ par transaction.",
     "websiteUrl": "https://lemonsqueezy.com",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6347244ba8d63489ba51c08e/6358e59c97dcbfdc770e1ff8_og2.jpg"
+    "ogImageUrl": "https://cdn.prod.website-files.com/6347244ba8d63489ba51c08e/6358e59c97dcbfdc770e1ff8_og2.jpg",
+    "substitution_cluster_v2": "checkout-platforms",
+    "verticals": [
+      "fondateur-saas",
+      "developpeur-solo"
+    ]
   },
   {
     "id": "lendio",
@@ -16941,10 +17288,15 @@
     "compareMonthlyPrice": 5,
     "affiliateLink": "https://logseq.com/",
     "ogImageUrl": "https://user-images.githubusercontent.com/25513724/221387376-4dc419c2-0d0a-460c-a920-2d211e78b456.gif",
+    "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
       "knowledge-management",
       "notes",
       "collaboration"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Knowledge workers",
@@ -17129,9 +17481,14 @@
     },
     "defaultMonthlyPrice": 1667,
     "compareMonthlyPrice": 1530,
+    "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
       "documentation"
+    ],
+    "verticals": [
+      "enterprise-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Équipes commerciales (ventes complexes, B2B)",
@@ -17499,9 +17856,14 @@
     "shortDescription": "Application chiffrée tout-en-un regroupant la gestion des tâches (Kanban, Eisenhower Matrix), le suivi des habitudes, la journalisation, le suivi de la vie (humeurs, énergie, stress), la gestion des relations (CRM personnel) et les notes. Intégrations avec l'email, une extension navigateur, Zapier et une API publique.",
     "shortDescriptionEn": "All-in-one encrypted app combining task management (Kanban, Eisenhower Matrix), habit tracking, journaling, life tracking (moods, energy, stress), relationship management (personal CRM), and notes. Email, browser extension, Zapier, public API integrations.",
     "websiteUrl": "https://lunatask.app",
+    "substitution_cluster_v2": "personal-task-manager",
     "functional_needs": [
       "notes",
       "task-management"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "business-ops"
     ],
     "relevantFor": [
       "Utilisateurs solo intensifs",
@@ -17664,10 +18026,15 @@
     "compareMonthlyPrice": 18.4,
     "websiteUrl": "https://www.magicpatterns.com",
     "ogImageUrl": "https://www.magicpatterns.com/marketing/main_og.png",
+    "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "code-generation",
       "prototyping",
       "ui-design"
+    ],
+    "verticals": [
+      "ux-ui",
+      "ai-builder"
     ],
     "relevantFor": [
       "Product managers",
@@ -19141,9 +19508,14 @@
     },
     "defaultMonthlyPrice": 25,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "project-management",
       "planning"
+    ],
+    "verticals": [
+      "enterprise-ops",
+      "manager-dsi"
     ],
     "relevantFor": [
       "Directeurs de projet",
@@ -19387,9 +19759,14 @@
     "shortDescription": "Générateur de mockups en ligne proposant une vaste bibliothèque de mockups de produits en contexte réel (appareils, supports imprimés, environnements). Disponible directement en ligne, et via plugins pour Figma et Adobe Express.",
     "shortDescriptionEn": "Online mockup generator offering a large library of product mockups in real-world contexts (devices, print materials, environments). Available via web browser, plus plugins for Figma and Adobe Express.",
     "websiteUrl": "https://mockuuups.studio/",
+    "substitution_cluster_v2": "mockup-generators",
     "functional_needs": [
       "creative-assets",
       "design-resources"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Freelances en design web",
@@ -19439,9 +19816,14 @@
     "defaultMonthlyPrice": 9,
     "websiteUrl": "https://monday.com",
     "ogImageUrl": "https://s3.amazonaws.com/general-assets/monday-1200x628.png",
+    "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "project-management",
       "task-management"
+    ],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
     ],
     "relevantFor": [
       "Petites et moyennes équipes",
@@ -19496,10 +19878,15 @@
     "websiteUrl": "https://mongodb.com/atlas",
     "ogImageUrl": "https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "backend-database-platform",
     "functional_needs": [
       "app-builder",
       "nocode-web",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
     ],
     "relevantFor": [
       "Développeurs",
@@ -19611,9 +19998,14 @@
     "defaultMonthlyPrice": 9,
     "websiteUrl": "https://www.getmoss.com",
     "tool_type": "gestion",
+    "substitution_cluster_v2": "expense-management",
     "functional_needs": [
       "finance",
       "task-management"
+    ],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
     ],
     "relevantFor": [
       "PME",
@@ -19640,9 +20032,14 @@
     "compareMonthlyPrice": 17.48,
     "websiteUrl": "https://www.usemotion.com",
     "ogImageUrl": "https://www-cdn.usemotion.com/default-og-image-1764610536.png",
+    "substitution_cluster_v2": "ai-planning",
     "functional_needs": [
       "calendar",
       "task-management"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Managers et lead de projet",
@@ -19912,10 +20309,15 @@
     "websiteUrl": "https://n8n.io",
     "ogImageUrl": "https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-stage/assets/og_image_website_3_afd66761a9.png",
     "logo": "https://raw.githubusercontent.com/n8n-io/n8n/a2c19e46974990c39007ffe64ab2ae908fe2f1b9/assets/n8n-logo.png",
+    "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
       "workflows",
       "no-code"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "ai-builder"
     ]
   },
   {
@@ -19933,9 +20335,14 @@
     "compareMonthlyPrice": 5,
     "websiteUrl": "https://www.namecheap.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/namecheap.jpg",
+    "substitution_cluster_v2": "domain-registrar",
     "functional_needs": [
       "hosting",
       "security"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Débutants",
@@ -20045,10 +20452,15 @@
     "websiteUrl": "https://neon.tech",
     "ogImageUrl": "https://neon.com/images/social-previews/index.jpg?updated=2026-05-27",
     "tool_type": "metier",
+    "substitution_cluster_v2": "backend-database-platform",
     "functional_needs": [
       "app-builder",
       "nocode-web",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs",
@@ -20124,10 +20536,15 @@
     "shortDescriptionEn": "JAMstack hosting and deployment.",
     "websiteUrl": "https://netlify.com",
     "ogImageUrl": "https://www.netlify.com/images/og-image-default.png",
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "functional_needs": [
       "deploiement",
       "devops",
       "nocode-web"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs front",
@@ -20429,8 +20846,12 @@
     "defaultMonthlyPrice": 1.99,
     "websiteUrl": "https://nordpass.com",
     "ogImageUrl": "https://sb.nordcdn.com/transform/3d7f8d78-75bf-422b-9481-bc4a26643afe/nordpass-meta-trademark",
+    "substitution_cluster_v2": "password-manager",
     "functional_needs": [
       "security"
+    ],
+    "verticals": [
+      "business-ops"
     ],
     "relevantFor": [
       "Particuliers",
@@ -20567,9 +20988,13 @@
       "paid": "À partir de 5$/mois"
     },
     "defaultMonthlyPrice": 5,
+    "substitution_cluster_v2": "analytics",
     "functional_needs": [
       "analytics",
       "web-analytics"
+    ],
+    "verticals": [
+      "business-ops"
     ],
     "relevantFor": [
       "Créateurs de contenu",
@@ -20658,9 +21083,14 @@
     },
     "defaultMonthlyPrice": 29,
     "compareMonthlyPrice": 27,
+    "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
       "presentation-client"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "creative"
     ],
     "relevantFor": [
       "Agences créatives et digitales",
@@ -20805,9 +21235,14 @@
     "shortDescription": "Application de prise de notes Markdown privée, locale-d'abord, pour la rédaction focalisée et la gestion des connaissances personnelles. Les notes sont stockées sous forme de fichiers Markdown locaux de l'utilisateur. Intégration IA optionnelle permettant à l'utilisateur de configurer un fournisseur personnel.",
     "shortDescriptionEn": "Private, local-first Markdown note-taking app for focused writing and personal knowledge management. Notes stored as local Markdown files. Optional AI integration configuring personal provider.",
     "websiteUrl": "https://octarine.app",
+    "substitution_cluster_v2": "note-taking-apps",
     "functional_needs": [
       "knowledge-management",
       "notes"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "creator-economy"
     ],
     "relevantFor": [
       "Adeptes confidentialité",
@@ -21380,10 +21815,15 @@
     "shortDescription": "Plateforme IA générant et publiant automatiquement les articles SEO-optimisés. Inclut la recherche IA de mots-clés, l'optimisation SEO, la génération d'images adaptées à la marque et la création de backlinks via un réseau. Supporte plus de 150 langues, avec des intégrations WordPress, Webflow, Shopify, Framer, Wix, Notion et Ghost.",
     "shortDescriptionEn": "AI platform automatically generating and publishing SEO-optimized articles. Includes AI keyword research, SEO optimization, on-brand image generation, backlink building via network. Supports 150+ languages, integrations WordPress, Webflow, Shopify, Framer, Wix, Notion, Ghost.",
     "websiteUrl": "https://outrank.so",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "ai-general",
       "analytics",
       "creation"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Éditeurs",
@@ -21621,10 +22061,15 @@
       "paid": "À partir de 16$/mois (illimité)"
     },
     "defaultMonthlyPrice": 16,
+    "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
       "workflows",
       "no-code"
+    ],
+    "verticals": [
+      "business-ops",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Startups",
@@ -21713,9 +22158,13 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.paddle.com",
     "ogImageUrl": "https://images.prismic.io/paddle/Z9gwpziBA97GijeQ_paddle-merchant-of-record-og.png?auto=format,compress&amp;rect=0,20,1200,591&amp;w=1280&amp;h=630",
+    "substitution_cluster_v2": "checkout-platforms",
     "functional_needs": [
       "finance",
       "paiements"
+    ],
+    "verticals": [
+      "fondateur-saas"
     ],
     "relevantFor": [
       "SaaS founders",
@@ -22065,10 +22514,15 @@
     },
     "defaultMonthlyPrice": 12,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "expense-management",
     "functional_needs": [
       "paiements",
       "finance",
       "task-management"
+    ],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
     ],
     "relevantFor": [
       "PME/ETI",
@@ -22154,8 +22608,13 @@
     "websiteUrl": "https://paypal.com",
     "ogImageUrl": "https://www.paypalobjects.com/marketing/web23/uk/en/ppe/homepage-consumer/meta_size-all.jpg",
     "tool_type": "gestion",
+    "substitution_cluster_v2": "checkout-platforms",
     "functional_needs": [
       "paiements"
+    ],
+    "verticals": [
+      "ecommercant",
+      "business-ops"
     ],
     "relevantFor": [
       "Vendeurs e-commerce",
@@ -22495,10 +22954,15 @@
     },
     "defaultMonthlyPrice": 56,
     "tool_type": "ia",
+    "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
       "automatisation",
       "prospection",
       "analytics"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Équipes sales",
@@ -22988,10 +23452,15 @@
     "compareMonthlyPrice": 5,
     "websiteUrl": "https://plane.so",
     "ogImageUrl": "https://plane.so/opengraph-image-4usi79.png?opengraph-image.0b2l1f2243yp~.png",
+    "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "bug-tracking",
       "developer-tools",
       "project-management"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
     ],
     "relevantFor": [
       "Startups tech",
@@ -23010,10 +23479,15 @@
     "pricing": "Free tier disponible (limité en stockage) ; plans payants à partir de ~39$/mois selon l'usage.",
     "websiteUrl": "https://planetscale.com",
     "ogImageUrl": "https://planetscale.xyz/assets/social-DtnN8vYG.png",
+    "substitution_cluster_v2": "backend-database-platform",
     "functional_needs": [
       "app-builder",
       "nocode-web",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "cto-lead-tech"
     ],
     "relevantFor": [
       "Startups SaaS",
@@ -23473,10 +23947,15 @@
     "compareMonthlyPrice": 26.68,
     "websiteUrl": "https://postsyncer.com",
     "ogImageUrl": "https://postsyncer.com/images/og/banner.png?v2",
+    "substitution_cluster_v2": "social-media-scheduler",
     "functional_needs": [
       "content-scheduling",
       "social-media",
       "video-creation"
+    ],
+    "verticals": [
+      "community-manager",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Community managers",
@@ -24290,9 +24769,14 @@
     },
     "defaultMonthlyPrice": 29,
     "compareMonthlyPrice": 27,
+    "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
       "crm",
       "presentation-client"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Équipes ventes et commerciales",
@@ -24843,10 +25327,15 @@
     "compareMonthlyPrice": 32,
     "websiteUrl": "https://quickbooks.intuit.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks-online.jpg",
+    "substitution_cluster_v2": "accounting-ops",
     "functional_needs": [
       "comptabilite",
       "facturation",
       "tax-management"
+    ],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
     ],
     "relevantFor": [
       "consultant",
@@ -24861,9 +25350,14 @@
     "shortDescription": "Outil de paraphrase, de grammaire, de résumé et de traduction IA pour les étudiants et les écrivains. Modes de réécriture multiples, vérificateur de plagiat, détecteur IA et générateur de citations. Freemium avec plans Premium, Student et Teams.",
     "shortDescriptionEn": "AI paraphrasing, grammar, summarizer, and translation tool for students and writers. Multiple rewriting modes, plagiarism checker, AI detector, citation generator. Freemium with Premium, Student, Teams plans.",
     "websiteUrl": "https://quillbot.com",
+    "substitution_cluster_v2": "ai-writing-assistant",
     "functional_needs": [
       "ai-general",
       "creation"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "coach-formateur"
     ],
     "relevantFor": [
       "Étudiants",
@@ -24972,10 +25466,15 @@
     "defaultMonthlyPrice": 5,
     "websiteUrl": "https://railway.app",
     "ogImageUrl": "https://railway.com/og.png?v=2",
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "functional_needs": [
       "deploiement",
       "devops",
       "nocode-web"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs",
@@ -25450,11 +25949,16 @@
     "compareMonthlyPrice": 9.22,
     "websiteUrl": "https://reclaim.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/5ec848ec2b50b6cfae06f6cc/65e2563b7c0658aed71828ac_open_graph_final.png",
+    "substitution_cluster_v2": "ai-planning",
     "functional_needs": [
       "calendar-management",
       "planification",
       "productivity",
       "time-tracking"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "consultant",
@@ -25684,10 +26188,15 @@
     },
     "defaultMonthlyPrice": 8.33,
     "compareMonthlyPrice": 9,
+    "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
       "notes",
       "knowledge-management",
       "ai-general"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
     ],
     "relevantFor": [
       "Penseurs indépendants et chercheurs",
@@ -25873,10 +26382,15 @@
     "websiteUrl": "https://www.remove.bg/",
     "ogImageUrl": "https://sb.kaleidousercontent.com/67418/600x315/48eb30a742/emilia-og-image.jpg",
     "bundle_parent": "adobe-photoshop",
+    "substitution_cluster_v2": "ai-image-enhancement",
     "functional_needs": [
       "retouche-photo",
       "generation-image",
       "design-visuel"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
     ],
     "relevantFor": [
       "E-commerçants",
@@ -25893,10 +26407,15 @@
     "shortDescriptionEn": "Modern cloud for apps, APIs, and sites.",
     "websiteUrl": "https://render.com",
     "ogImageUrl": "https://cdn.sanity.io/images/hvk0tap5/production/a3528e77b010804af14908fab79f826d66437620-1600x900.png?fit=max&amp;auto=format",
+    "substitution_cluster_v2": "cloud-hosting-paas",
     "functional_needs": [
       "deploiement",
       "devops",
       "nocode-web"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs full-stack",
@@ -26418,9 +26937,13 @@
     "shortDescription": "Plateforme de création et d'optimisation de CV basée sur l'IA, conçue pour les candidats optimisant la compatibilité ATS (Applicant Tracking System) et l'alignement avec le poste. Inclut un générateur de bullet points IA, un vérificateur ATS et un scanner de mots-clés.",
     "shortDescriptionEn": "AI-powered resume building and optimization platform designed for job seekers optimizing ATS (Applicant Tracking System) compatibility and job fit. Includes AI bullet point generator, ATS checker, keyword scanner.",
     "websiteUrl": "https://rezi.ai",
+    "substitution_cluster_v2": "resume-builder",
     "functional_needs": [
       "ai-general",
       "templates"
+    ],
+    "verticals": [
+      "dev-freelance"
     ],
     "relevantFor": [
       "Chercheurs d'emploi",
@@ -26648,10 +27171,15 @@
     },
     "defaultMonthlyPrice": 13.75,
     "compareMonthlyPrice": 13,
+    "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
       "knowledge-management",
       "notes",
       "collaboration"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "coach-formateur"
     ],
     "relevantFor": [
       "Chercheurs et académiques",
@@ -26736,10 +27264,15 @@
     "compareMonthlyPrice": 23,
     "websiteUrl": "https://rork.com",
     "ogImageUrl": "https://rork.com/og-image.png",
+    "substitution_cluster_v2": "ai-app-builder",
     "functional_needs": [
       "coding",
       "mobile-app-builder",
       "no-code"
+    ],
+    "verticals": [
+      "ai-builder",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Entrepreneurs non-technique",
@@ -26755,9 +27288,14 @@
     "shortDescription": "Générateur de mockups 3D d'appareils (téléphones, tablettes, ordinateurs portables, montres) avec capacités d'animation vidéo. Application macOS avec version web en bêta public. Import natif depuis Figma, Sketch et Adobe XD.",
     "shortDescriptionEn": "3D device mockup generator (phones, tablets, laptops, watches) with video animation capabilities. macOS application with public beta web version. Native import from Figma, Sketch and Adobe XD.",
     "websiteUrl": "https://rotato.app/",
+    "substitution_cluster_v2": "mockup-generators",
     "functional_needs": [
       "creative-assets",
       "design-resources"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Designers UX/UI",
@@ -26886,9 +27424,14 @@
     },
     "defaultMonthlyPrice": 8,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "expense-management",
     "functional_needs": [
       "finance",
       "automatisation"
+    ],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
     ],
     "relevantFor": [
       "PME/ETI",
@@ -27005,9 +27548,14 @@
     },
     "defaultMonthlyPrice": 40,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "hris-payroll",
     "functional_needs": [
       "paie",
       "finance"
+    ],
+    "verticals": [
+      "rh",
+      "daf-finance"
     ],
     "relevantFor": [
       "PME françaises avec salariés",
@@ -27560,9 +28108,14 @@
     "compareMonthlyPrice": 20,
     "websiteUrl": "https://scribehow.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6a0c94b351f88b926e7c69db/6a31950a9cec0ea91a93a396_Homepage.png",
+    "substitution_cluster_v2": "documentation-tools",
     "functional_needs": [
       "documentation",
       "onboarding"
+    ],
+    "verticals": [
+      "business-ops",
+      "manager-dsi"
     ],
     "relevantFor": [
       "Gestionnaires opérationnels et processus",
@@ -28080,6 +28633,11 @@
       "paid": "À partir de 8$/mois"
     },
     "defaultMonthlyPrice": 8,
+    "substitution_cluster_v2": "analytics",
+    "verticals": [
+      "community-manager",
+      "createur-contenu"
+    ],
     "personas": [
       "ALIX",
       "MARC"
@@ -28411,8 +28969,13 @@
     },
     "defaultMonthlyPrice": 7,
     "compareMonthlyPrice": 9,
+    "substitution_cluster_v2": "esignature",
     "functional_needs": [
       "collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "dev-freelance"
     ],
     "relevantFor": [
       "Juristes et departments légal",
@@ -28437,9 +29000,14 @@
     },
     "defaultMonthlyPrice": 35,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "hris-payroll",
     "functional_needs": [
       "paie",
       "finance"
+    ],
+    "verticals": [
+      "rh",
+      "daf-finance"
     ],
     "relevantFor": [
       "Cabinets d'expertise comptable",
@@ -28612,10 +29180,15 @@
     "websiteUrl": "https://sketch.com",
     "ogImageUrl": "https://www.sketch.com/images/metadata/pages/home.jpg",
     "tool_type": "metier",
+    "substitution_cluster_v2": "design-interface",
     "functional_needs": [
       "design-tools",
       "prototyping",
       "ui-components"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
     ],
     "relevantFor": [
       "Designers macOS",
@@ -28675,8 +29248,13 @@
     },
     "defaultMonthlyPrice": 12,
     "compareMonthlyPrice": 9,
+    "substitution_cluster_v2": "esignature",
     "functional_needs": [
       "collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Entreprises DACH/UE",
@@ -28850,9 +29428,13 @@
     },
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://snapseed.online",
+    "substitution_cluster_v2": "photo-editor",
     "functional_needs": [
       "retouche-photo",
       "photo-enhancement"
+    ],
+    "verticals": [
+      "photographe"
     ],
     "relevantFor": [
       "Photographes mobile-first",
@@ -29087,9 +29669,14 @@
     },
     "defaultMonthlyPrice": 6,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "expense-management",
     "functional_needs": [
       "paiements",
       "finance"
+    ],
+    "verticals": [
+      "business-ops",
+      "daf-finance"
     ],
     "relevantFor": [
       "PME/ETI",
@@ -30175,10 +30762,15 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 19,
+    "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
       "crm",
       "project-management",
       "collaboration"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Petites agences (3-50 personnes)",
@@ -30248,10 +30840,15 @@
     "websiteUrl": "https://supabase.com",
     "ogImageUrl": "https://supabase.com/images/og/supabase-og.png",
     "tool_type": "metier",
+    "substitution_cluster_v2": "backend-database-platform",
     "functional_needs": [
       "app-builder",
       "nocode-web",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs full-stack",
@@ -30339,10 +30936,15 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.superlist.com",
     "ogImageUrl": "https://framerusercontent.com/assets/xlouachsGTVuJaHXsYmxxI66e2s.png",
+    "substitution_cluster_v2": "personal-task-manager",
     "functional_needs": [
       "assistant-generaliste",
       "task-management",
       "team-collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "operations"
     ],
     "relevantFor": [
       "Travailleurs indépendants et freelances",
@@ -30397,9 +30999,14 @@
     "compareMonthlyPrice": 7.82,
     "websiteUrl": "https://superwhisper.com",
     "ogImageUrl": "https://superwhisper.com/api/og",
+    "substitution_cluster_v2": "voice-dictation",
     "functional_needs": [
       "productivity",
       "transcription"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Consultants",
@@ -30918,11 +31525,16 @@
     "compareMonthlyPrice": 5.52,
     "websiteUrl": "https://taskade.com",
     "ogImageUrl": "https://www.taskade.com/static_images/taskade-genesis-mascot-2026.png",
+    "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "ai-automation",
       "project-management",
       "task-management",
       "team-collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "ai-builder"
     ],
     "relevantFor": [
       "Équipes startup",
@@ -30945,9 +31557,13 @@
     "defaultMonthlyPrice": 24.99,
     "compareMonthlyPrice": 23,
     "websiteUrl": "https://www.vsco.co/workspace",
+    "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
       "crm",
       "project-management"
+    ],
+    "verticals": [
+      "photographe"
     ],
     "relevantFor": [
       "Photographes professionnels",
@@ -31302,10 +31918,15 @@
     "shortDescription": "Collection de composants Framer axés sur l'animation et la 3D, construits avec WebGL, GSAP et Three.js : galeries interactives, effets de défilement, animations typographiques, arrière-plans animés. On les insère dans un projet Framer existant.",
     "shortDescriptionEn": "Collection of Framer components focused on animation and 3D, built with WebGL, GSAP and Three.js: interactive galleries, scroll effects, typographic animations, animated backgrounds. They are dropped into an existing Framer project.",
     "websiteUrl": "https://thedesignfuturist.zip/framer-components",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "ui-components",
       "design-system",
       "templates"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "motion-video"
     ],
     "relevantFor": [
       "Designers Framer",
@@ -31540,9 +32161,14 @@
     "shortDescriptionEn": "Automated accounting for independents.",
     "websiteUrl": "https://tiime.fr",
     "ogImageUrl": "https://www.tiime.fr/hubfs/Tiime%202025/Opengraph/tiime-og-2026-entrepreneur-home.png",
+    "substitution_cluster_v2": "accounting-ops",
     "functional_needs": [
       "comptabilite",
       "finance"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Indépendants",
@@ -32658,9 +33284,14 @@
     "shortDescription": "Plugin gratuit pour Figma, Adobe XD et Penpot qui génère des échelles typographiques modulaires à partir d'une taille de base et d'un ratio. Suppose une licence active de l'outil de design choisi.",
     "shortDescriptionEn": "Free plugin for Figma, Adobe XD and Penpot that generates modular typographic scales from a base size and a ratio. Requires an active license of the chosen design tool.",
     "websiteUrl": "https://typescale.io/",
+    "substitution_cluster_v2": "design-system-tooling",
     "functional_needs": [
       "typography",
       "design-system"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
     ],
     "relevantFor": [
       "Designers UX/UI",
@@ -32716,11 +33347,15 @@
     "compareMonthlyPrice": 5.52,
     "websiteUrl": "https://typotab.com",
     "ogImageUrl": "https://framerusercontent.com/assets/LAAaK4gnCrpCcbVcfd84oYI6nKw.jpg",
+    "substitution_cluster_v2": "ai-writing-assistant",
     "functional_needs": [
       "ai-general",
       "developer-tools",
       "productivity",
       "writing-assistance"
+    ],
+    "verticals": [
+      "createur-contenu"
     ],
     "relevantFor": [
       "Writers professionnels",
@@ -32842,8 +33477,12 @@
     "shortDescription": "Service de sources originales pour les médias et les journalistes fournissant un accès en continu aux actualités en temps réel, des analyses et des outils de salles de presse. Couvre l'Autriche, l'Allemagne et les domaines internationaux.",
     "shortDescriptionEn": "Original source service for media and journalists providing real-time news stream access, analytics, and newsroom tools. Covers Austria, Germany, international domains.",
     "websiteUrl": "https://uncovr.com",
+    "substitution_cluster_v2": "communication",
     "functional_needs": [
       "analytics"
+    ],
+    "verticals": [
+      "createur-contenu"
     ],
     "relevantFor": [
       "Médias professionnels",
@@ -33862,10 +34501,15 @@
       "paid": "À partir de 40€/mois"
     },
     "defaultMonthlyPrice": 40,
+    "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
       "automatisation",
       "prospection",
       "lead-generation"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "business-ops"
     ],
     "relevantFor": [
       "Sales reps",
@@ -33885,10 +34529,15 @@
     "shortDescription": "Catalogue de templates de sites prêts à la production, déclinés pour Webflow, Framer et Figma, avec des exports HTML, Next.js et Astro selon les modèles. Chaque template existe sur plusieurs plateformes, ce qui permet de choisir son outil de production.",
     "shortDescriptionEn": "Catalogue of production-ready website templates available for Webflow, Framer and Figma, with HTML, Next.js and Astro exports on some models. Each template exists across several platforms, letting you pick your build tool.",
     "websiteUrl": "https://waidastudio.com/",
+    "substitution_cluster_v2": "design-template-marketplace",
     "functional_needs": [
       "ui-components",
       "design-system",
       "templates"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "fondateur-saas"
     ],
     "relevantFor": [
       "Freelances web",
@@ -33908,9 +34557,14 @@
       "paid": "Plan Team à partir de 15$/mois"
     },
     "tool_type": "core",
+    "substitution_cluster_v2": "modern-terminal",
     "functional_needs": [
       "coding",
       "devops"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs",
@@ -33932,9 +34586,14 @@
     "compareMonthlyPrice": 16.2,
     "websiteUrl": "https://waveapps.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/62446230dcb514b828a6e237/6a4ff288b8823074cb3b7dfe_8ef5fd2061b1ab372327974001853343_dashboard-poster.avif",
+    "substitution_cluster_v2": "accounting-ops",
     "functional_needs": [
       "comptabilite",
       "facturation"
+    ],
+    "verticals": [
+      "business-ops",
+      "dev-freelance"
     ],
     "relevantFor": [
       "Freelances aux États-Unis ou au Canada",
@@ -34310,9 +34969,14 @@
     "compareMonthlyPrice": 13.8,
     "websiteUrl": "https://windsurf.com",
     "ogImageUrl": "https://devin.ai/assets/images/desktop/og-desktop.png",
+    "substitution_cluster_v2": "ai-code-assistant",
     "functional_needs": [
       "code-generation",
       "developer-tools"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "developpeur-solo"
     ],
     "relevantFor": [
       "Développeurs",
@@ -34328,9 +34992,14 @@
     "shortDescription": "Outil de dictée voix-à-texte IA convertissant la parole en contenu écrit poli partout où l'on peut taper. Pas de plugins requis. Support pour plus de 100 langues avec détection automatique. Apprentissage du vocabulaire de l'utilisateur et adaptation du style au contexte applicatif.",
     "shortDescriptionEn": "Voice-to-text AI dictation tool converting speech into polished written content anywhere you can type. No plugins required. 100+ languages auto-detection. Learns user vocabulary and adapts style to app context.",
     "websiteUrl": "https://wisprflow.ai",
+    "substitution_cluster_v2": "voice-dictation",
     "functional_needs": [
       "ai-general",
       "transcription"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Rédacteurs productifs",
@@ -34440,8 +35109,13 @@
     },
     "defaultMonthlyPrice": 49,
     "tool_type": "gestion",
+    "substitution_cluster_v2": "legal-contracts",
     "functional_needs": [
       "documentation"
+    ],
+    "verticals": [
+      "enterprise-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Directions juridiques",
@@ -34622,10 +35296,15 @@
     },
     "defaultMonthlyPrice": 99,
     "tool_type": "core",
+    "substitution_cluster_v2": "hris-payroll",
     "functional_needs": [
       "paie",
       "finance",
       "crm"
+    ],
+    "verticals": [
+      "enterprise-ops",
+      "rh"
     ],
     "relevantFor": [
       "Grands groupes (1000+ emp.)",
@@ -35217,10 +35896,15 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://zcal.co",
     "ogImageUrl": "https://storage.googleapis.com/zcal-us-central-1/resources/og_image_v2.jpg",
+    "substitution_cluster_v2": "scheduling",
     "functional_needs": [
       "calendar",
       "planification",
       "prise-rendez-vous"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Freelancers",
@@ -35410,8 +36094,13 @@
     "websiteUrl": "https://zoom.us",
     "ogImageUrl": "https://st1.zoom.us/homepage/20260622-1234/primary/dist/assets/images/thumb.png",
     "bundle_parent": "zoom-pro",
+    "substitution_cluster_v2": "team-communication",
     "functional_needs": [
       "collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Équipes distribuées",
@@ -35429,10 +36118,14 @@
     "websiteUrl": "https://zoom.us/ai-assistant",
     "tool_type": "ia",
     "bundle_parent": "zoom-pro",
+    "substitution_cluster_v2": "ai-note-taking",
     "functional_needs": [
       "ai-general",
       "transcription",
       "assistant-generaliste"
+    ],
+    "verticals": [
+      "business-ops"
     ],
     "relevantFor": [
       "Équipes collaboratives Zoom",
@@ -35456,8 +36149,13 @@
     "websiteUrl": "https://zoom.us/pricing",
     "ogImageUrl": "https://st1.zoom.us/static/26.6.60642/image/thumb.png",
     "tool_type": "core",
+    "substitution_cluster_v2": "team-communication",
     "functional_needs": [
       "collaboration"
+    ],
+    "verticals": [
+      "business-ops",
+      "consultant-b2b"
     ],
     "relevantFor": [
       "Équipes distribuées",
@@ -35744,10 +36442,15 @@
     "websiteUrl": "https://happia.fr/",
     "ogImageUrl": "/tool-media/happia/happia-dashboard.webp",
     "logo": "https://logo.clearbit.com/happia.fr",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "visibilite-ia",
       "gestion-avis",
       "referencement-local"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "community-manager"
     ],
     "relevantFor": [
       "Commerces locaux indépendants",
