@@ -282,6 +282,24 @@ export interface Post {
   seo: { metaTitle?: string; metaDescription?: string; keywords?: string } | null;
 }
 
+// Colonnes de `posts` pour la liste (SearchModal, SearchPage, CategoryPage) :
+// aucun des trois ne lit `.content`, le corps markdown complet de l'article,
+// qui domine le poids de la ligne. `usePostBySlug` (page article individuelle)
+// garde `select("*")`, `content` y est le but meme de la requete.
+//
+// Verifie contre le schema reel via select("*") : `thumbnail` n'existe pas
+// cote Supabase (mapPost le lit quand meme, retombe toujours sur `|| null`
+// pour les lignes distantes — c'est le JSON local qui le porte). Un select
+// explicite nommant une colonne absente echoue en 42703 la ou "*" l'aurait
+// juste omise silencieusement ; verifie en conditions reelles avant de
+// pousser, pas seulement en relisant mapPost.
+const POSTS_LIST_SELECT = "id,slug,lang,title,excerpt,date,category,tool_id,tags,read_time,seo";
+
+// Cache memoire par langue, duree de vie de la session SPA. Sans lui,
+// SearchModal/SearchPage/CategoryPage relancaient une requete Supabase a
+// chaque montage du composant plutot qu'une seule fois par visite.
+const remotePostsCache = new Map<string, Post[]>();
+
 const localPostsCache = new Map<string, Post[]>();
 const localPostsPromises = new Map<string, Promise<Post[]>>();
 
@@ -564,11 +582,12 @@ export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions 
   // network chain) is pure waste there. Skip it entirely in that case.
   const skip = useContext(SsrRelatedPostsContext) !== undefined;
   const cachedLocalPosts = localPostsCache.get(lang) ?? [];
-  const [posts, setPosts] = useState<Post[]>(cachedLocalPosts);
-  const [loading, setLoading] = useState(!skip && cachedLocalPosts.length === 0);
+  const cachedRemotePosts = remotePostsCache.get(lang);
+  const [posts, setPosts] = useState<Post[]>(cachedRemotePosts ?? cachedLocalPosts);
+  const [loading, setLoading] = useState(!skip && !cachedRemotePosts && cachedLocalPosts.length === 0);
 
   useEffect(() => {
-    if (skip) return;
+    if (skip || remotePostsCache.has(lang)) return;
     let cancelled = false;
 
     (async () => {
@@ -580,7 +599,7 @@ export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions 
       const remotePostsPromise = refreshRemote
         ? supabase
           .from("posts")
-          .select("*")
+          .select(POSTS_LIST_SELECT)
           .eq("lang", lang)
           .order("date", { ascending: false })
         : null;
@@ -600,6 +619,7 @@ export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions 
         const supabaseSlugs = new Set(supabasePosts.map(p => p.slug));
         const merged = [...supabasePosts, ...localPosts.filter(p => !supabaseSlugs.has(p.slug))];
         merged.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+        remotePostsCache.set(lang, merged);
         setPosts(merged);
       }
     })();
