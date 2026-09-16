@@ -854,6 +854,22 @@ const StacksPage = () => {
                 </div>
               )}
 
+              {activeChips.length === 0 && enrichedStacks.length > visibleCount && (
+                // The visible grid below only mounts `visibleCount` cards — the rest
+                // exist solely behind the "Show more" button's client-side state, so
+                // a crawler that doesn't click never sees a link to them. 182/213
+                // stack pages had zero internal inbound links because of this. This
+                // list carries the same links Google needs, without duplicating the
+                // visual card grid for sighted users.
+                <nav aria-hidden="true" className="sk-crawler-links">
+                  {enrichedStacks.map((enriched) => (
+                    <a key={enriched.stack.id} href={`${prefix}/stacks/${enriched.stack.slug}`} tabIndex={-1}>
+                      {lang === "fr" ? enriched.stack.title : enriched.stack.titleEn}
+                    </a>
+                  ))}
+                </nav>
+              )}
+
               {filteredStacks.length > 0 ? (
                 <>
                 <div className="sk-results-grid">

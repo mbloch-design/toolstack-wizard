@@ -12184,6 +12184,19 @@
     gap: 22px;
     align-items: stretch;
   }
+  /* Full stack link list for crawlers, kept out of the visual layout and out of
+     the accessibility tree (aria-hidden on the nav itself covers its children).
+     Not screen-reader content: sighted and assistive-tech users both get the
+     same paginated "Show more" grid; this exists only so a crawler that never
+     clicks "Show more" still finds a link to every stack page. */
+  .sk-crawler-links {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
   .sk-load-more {
     display: flex;
     flex-direction: column;
