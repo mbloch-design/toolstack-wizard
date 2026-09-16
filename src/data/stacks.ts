@@ -17351,8 +17351,8 @@ export const STACKS: StackGuide[] = [
     "slug": "consultant-marketing",
     "title": "Stack marketing",
     "titleEn": "Marketing stack",
-    "subtitle": "Les outils recommandés pour consultant marketing",
-    "subtitleEn": "Recommended tools for this consulting profile.",
+    "subtitle": "Tu dois auditer, cadrer un plan et prouver un résultat mesurable à chaque mission. Le risque : payer plusieurs plateformes qui font toutes un peu de tout.",
+    "subtitleEn": "Every mission needs an audit, a plan, and a measurable result. The risk is paying for several platforms that each do a bit of everything.",
     "persona": "consultant",
     "subProfiles": [
       "marketing-consulting"
@@ -17361,60 +17361,60 @@ export const STACKS: StackGuide[] = [
     "budget": "under150",
     "monthlyBudget": 128,
     "savings": 240,
-    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
-    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
-    "bestFor": "Consultant marketing",
-    "bestForEn": "Consultant marketing",
+    "risk": "Payer HubSpot ou Semrush en continu alors que la mission ne dure que quelques semaines par client.",
+    "riskEn": "Paying for HubSpot or Semrush continuously when each client engagement only lasts a few weeks.",
+    "bestFor": "Consultant marketing en mission ponctuelle (audit, plan d'acquisition, refonte de funnel) pour PME et startups sans équipe marketing interne.",
+    "bestForEn": "Marketing consultants on short engagements (audits, acquisition plans, funnel rework) for SMBs and startups without an in-house marketing team.",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
-    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
-    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "editorial": "HubSpot et Semrush se chevauchent sur le suivi de campagnes, mais servent deux rôles différents : HubSpot structure la relation client (pipeline, mission, historique), Semrush structure la preuve marché (positions, concurrents, mots-clés). Un consultant solo n'a pas besoin de payer le CRM HubSpot en continu : le plan gratuit suffit pour suivre ses missions, et c'est Semrush qui justifie l'abonnement, car il sert directement le livrable facturé au client. Ahrefs ne mérite sa place que si le backlink devient un axe régulier des missions — sinon Semrush seul couvre l'audit technique, les mots-clés et la veille concurrentielle. GA4 et Google Search Console sont gratuits et suffisent à prouver un résultat ; Looker Studio ne devient rentable que lorsque le même dashboard sert plusieurs clients.",
+    "editorialEn": "HubSpot and Semrush overlap on campaign tracking, but serve two different roles: HubSpot structures the client relationship (pipeline, mission, history), Semrush structures the market proof (rankings, competitors, keywords). A solo consultant doesn't need to pay for HubSpot continuously: the free CRM tier is enough to track missions, and it's Semrush that earns its subscription, because it directly feeds the billed deliverable. Ahrefs only earns its place if backlinks become a recurring axis of the missions — otherwise Semrush alone covers technical audit, keywords, and competitive tracking. GA4 and Google Search Console are free and usually enough to prove a result; Looker Studio only pays off once the same dashboard template serves several clients.",
     "needs": [
       {
-        "title": "Audit marketing",
-        "titleEn": "Marketing audit",
-        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
-        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+        "title": "Vendre l'audit",
+        "titleEn": "Sell the audit",
+        "detail": "Le premier livrable doit convaincre le client de continuer : une lecture claire du problème, pas une liste d'outils utilisés.",
+        "detailEn": "The first deliverable has to convince the client to continue: a clear read of the problem, not a list of tools used."
       },
       {
-        "title": "persona",
-        "titleEn": "persona",
-        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
-        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+        "title": "Prouver l'acquisition",
+        "titleEn": "Prove acquisition",
+        "detail": "GA4 et Search Console doivent répondre à une seule question : d'où viennent les clients, et est-ce que ça change avec la mission.",
+        "detailEn": "GA4 and Search Console need to answer one question: where do clients come from, and does that change with the mission."
       },
       {
-        "title": "funnel",
-        "titleEn": "funnel",
-        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
-        "detailEn": "Each tool needs a clear role in the engagement."
+        "title": "Cadrer le funnel",
+        "titleEn": "Scope the funnel",
+        "detail": "Le funnel (Mailchimp ou Brevo) ne vaut la peine d'être touché que si le volume d'emails justifie l'optimisation.",
+        "detailEn": "The funnel (Mailchimp or Brevo) is only worth touching if email volume justifies the optimization."
       }
     ],
     "maturitySignals": [
       {
-        "title": "Le process se répète",
-        "titleEn": "The process repeats",
-        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
-        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+        "title": "Le même audit revient plusieurs fois",
+        "titleEn": "The same audit keeps coming back",
+        "detail": "Transforme la trame d'audit en template Notion réutilisable plutôt que de repartir de zéro à chaque client.",
+        "detailEn": "Turn the audit structure into a reusable Notion template instead of starting from scratch with every client."
       },
       {
-        "title": "Le reporting devient attendu",
-        "titleEn": "Reporting is expected",
-        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
-        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+        "title": "Le reporting devient récurrent",
+        "titleEn": "Reporting becomes recurring",
+        "detail": "Dès qu'un client demande un point mensuel, Looker Studio amortit son coût de mise en place sur plusieurs missions.",
+        "detailEn": "Once a client asks for a monthly check-in, Looker Studio's setup cost pays off across several engagements."
       }
     ],
     "traps": [
       {
-        "title": "Payer pour paraître senior",
-        "titleEn": "Paying to look senior",
-        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
-        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+        "title": "Garder HubSpot payant pour une seule mission",
+        "titleEn": "Keeping paid HubSpot for a single mission",
+        "detail": "Le plan gratuit suit très bien un pipeline de missions solo ; le palier payant ne se justifie qu'avec une équipe ou un volume de leads élevé.",
+        "detailEn": "The free plan tracks a solo mission pipeline just fine; the paid tier only makes sense with a team or high lead volume."
       },
       {
-        "title": "Créer un espace client trop lourd",
-        "titleEn": "Overbuilding the client space",
-        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
-        "detailEn": "The client should find decisions in two clicks, not learn your system."
+        "title": "Payer Ahrefs et Semrush en même temps",
+        "titleEn": "Paying for both Ahrefs and Semrush",
+        "detail": "Les deux se recoupent sur l'essentiel de l'audit ; n'ajoute le second que si le backlink devient un vrai axe de mission.",
+        "detailEn": "The two overlap on most of the audit; only add the second one if backlinks become a real mission axis."
       }
     ],
     "checkpoints": [
@@ -17439,94 +17439,94 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "CRM",
-        "roleEn": "CRM",
+        "role": "CRM mission",
+        "roleEn": "Mission CRM",
         "slug": "hubspot",
         "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "CRM : utile pour sécuriser audit marketing sans disperser le workflow.",
-        "reasonEn": "Useful to secure marketing audit without scattering the workflow."
+        "tip": "Reste sur le plan gratuit tant que tu es seul.",
+        "tipEn": "Stay on the free plan as long as you're solo.",
+        "reason": "Le plan gratuit suit très bien un pipeline de missions solo ; inutile de payer avant d'avoir une équipe ou un vrai volume de leads.",
+        "reasonEn": "The free plan tracks a solo mission pipeline just fine; there's no reason to pay before you have a team or real lead volume."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Cockpit audit",
+        "roleEn": "Audit cockpit",
         "slug": "semrush",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser persona sans disperser le workflow.",
-        "reasonEn": "Useful to secure persona without scattering the workflow."
+        "reason": "Couvre l'audit technique, les mots-clés et la veille concurrentielle en un seul outil facturable au client.",
+        "reasonEn": "Covers technical audit, keywords, and competitive tracking in one tool you can bill to the client."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Backlinks",
+        "roleEn": "Backlinks",
         "slug": "ahrefs",
-        "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser funnel sans disperser le workflow.",
-        "reasonEn": "Useful to secure funnel without scattering the workflow."
+        "decision": "challenge",
+        "tip": "N'ajoute que si le backlink est un axe régulier de tes missions.",
+        "tipEn": "Only add it if backlinks are a recurring axis of your missions.",
+        "reason": "Recoupe l'essentiel de Semrush ; ne le paie en parallèle que si l'analyse de liens devient un vrai livrable récurrent.",
+        "reasonEn": "Overlaps most of Semrush; only pay for it alongside Semrush if link analysis becomes a real recurring deliverable."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Preuve d'acquisition",
+        "roleEn": "Acquisition proof",
         "slug": "ga4",
         "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser audit marketing sans disperser le workflow.",
-        "reasonEn": "Useful to secure marketing audit without scattering the workflow."
+        "tip": "Gratuit, à connecter dès le premier audit.",
+        "tipEn": "Free, connect it from the very first audit.",
+        "reason": "Gratuit et suffisant pour prouver d'où viennent les clients et si ça change avec la mission.",
+        "reasonEn": "Free and enough to prove where clients come from, and whether that changes with the mission."
       },
       {
-        "role": "Reporting",
-        "roleEn": "Reporting",
+        "role": "Reporting client",
+        "roleEn": "Client reporting",
         "slug": "looker-studio",
         "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Reporting : utile pour sécuriser persona sans disperser le workflow.",
-        "reasonEn": "Useful to secure persona without scattering the workflow."
+        "tip": "Rentable dès que le même dashboard sert plusieurs clients.",
+        "tipEn": "Pays off once the same dashboard serves several clients.",
+        "reason": "Gratuit, mais le temps de mise en place ne s'amortit qu'avec un reporting récurrent ou plusieurs clients.",
+        "reasonEn": "Free, but the setup time only pays off with recurring reporting or several clients."
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Mission cockpit",
         "slug": "notion",
         "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Cockpit mission : utile pour sécuriser funnel sans disperser le workflow.",
-        "reasonEn": "Useful to secure funnel without scattering the workflow."
+        "tip": "Une page projet claire vaut mieux que trois espaces partagés.",
+        "tipEn": "One clear project page beats three shared spaces.",
+        "reason": "Centralise l'audit, le plan et les décisions dans un espace que le client retrouve facilement.",
+        "reasonEn": "Centralizes the audit, plan, and decisions in a space the client can find easily."
       },
       {
         "role": "Création rapide",
         "roleEn": "Fast creation",
         "slug": "canva",
         "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Création rapide : utile pour sécuriser audit marketing sans disperser le workflow.",
-        "reasonEn": "Useful to secure marketing audit without scattering the workflow."
+        "tip": "Pour les decks et visuels de mission, pas pour un système de marque.",
+        "tipEn": "For mission decks and visuals, not for a full brand system.",
+        "reason": "Rapide pour un deck d'audit ou un visuel de campagne, mais ne remplace pas un vrai travail de direction artistique.",
+        "reasonEn": "Fast for an audit deck or campaign visual, but doesn't replace real art direction work."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Email marketing",
+        "roleEn": "Email marketing",
         "slug": "mailchimp",
         "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser persona sans disperser le workflow.",
-        "reasonEn": "Useful to secure persona without scattering the workflow."
+        "tip": "N'active que si la mission inclut la gestion des campagnes email.",
+        "tipEn": "Only activate if the mission includes running email campaigns.",
+        "reason": "Historique et complet, mais le prix grimpe vite avec la taille de la liste — vérifie le volume avant de le facturer au client.",
+        "reasonEn": "Established and full-featured, but pricing climbs fast with list size — check volume before billing it to the client."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Alternative email",
+        "roleEn": "Email alternative",
         "slug": "brevo",
         "decision": "challenge",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser funnel sans disperser le workflow.",
-        "reasonEn": "Useful to secure funnel without scattering the workflow."
+        "tip": "À choisir plutôt que Mailchimp, pas en plus.",
+        "tipEn": "Pick this instead of Mailchimp, not alongside it.",
+        "reason": "Souvent moins cher que Mailchimp à volume équivalent pour des clients européens ; les deux font doublon dans la même mission.",
+        "reasonEn": "Often cheaper than Mailchimp at equivalent volume for European clients; the two duplicate each other within the same mission."
       }
     ]
   },
@@ -17535,8 +17535,8 @@ export const STACKS: StackGuide[] = [
     "slug": "consultant-growth",
     "title": "Stack growth",
     "titleEn": "Growth stack",
-    "subtitle": "Les outils recommandés pour consultant growth",
-    "subtitleEn": "Recommended tools for this consulting profile.",
+    "subtitle": "Tu dois tester des pages, tracker le comportement et prouver un impact chiffré. Le piège : trois outils d'analytics produit qui mesurent la même chose.",
+    "subtitleEn": "You need to test pages, track behavior, and prove a measurable impact. The trap: three product-analytics tools measuring the same thing.",
     "persona": "consultant",
     "subProfiles": [
       "growth-consulting",
@@ -17547,60 +17547,60 @@ export const STACKS: StackGuide[] = [
     "budget": "under150",
     "monthlyBudget": 128,
     "savings": 240,
-    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
-    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
-    "bestFor": "Consultant growth",
-    "bestForEn": "Consultant growth",
+    "risk": "Payer PostHog, Amplitude et Mixpanel en même temps alors que les trois répondent à la même question de tracking produit.",
+    "riskEn": "Paying for PostHog, Amplitude, and Mixpanel at the same time when all three answer the same product-tracking question.",
+    "bestFor": "Consultant growth qui teste des pages, structure un pipeline d'acquisition et doit prouver un impact chiffré à chaque mission.",
+    "bestForEn": "Growth consultants testing pages, structuring an acquisition pipeline, and needing to prove a measurable impact on every mission.",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
-    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
-    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "editorial": "Cette stack cumule trois doublons classiques si on n'arbitre pas. D'abord le site : Framer et Webflow font tous les deux du no-code, mais Framer va plus vite pour tester des landing pages jetables, Webflow s'impose si le client a besoin d'un vrai CMS derrière. Ensuite le CRM : Pipedrive reste plus léger et moins cher que HubSpot pour un pipeline commercial pur ; HubSpot ne se justifie que si la mission touche aussi le marketing automation. Enfin l'analytics produit : PostHog, Amplitude et Mixpanel mesurent la même chose (funnels, cohortes, événements). PostHog a l'avantage d'un plan gratuit généreux et convient à la majorité des missions ; Amplitude et Mixpanel ne valent leur prix que pour un client déjà équipé ou une analyse très poussée. GA4 reste la base gratuite pour le trafic, Hotjar apporte une lecture qualitative (où les visiteurs bloquent) que l'analytics chiffré ne donne pas.",
+    "editorialEn": "This stack stacks three classic duplicates if you don't arbitrate. First, the site: Framer and Webflow are both no-code, but Framer is faster for disposable landing-page tests, while Webflow earns its place when the client needs a real CMS behind it. Then the CRM: Pipedrive stays lighter and cheaper than HubSpot for a pure sales pipeline; HubSpot only makes sense if the mission also touches marketing automation. Finally, product analytics: PostHog, Amplitude, and Mixpanel all measure the same thing (funnels, cohorts, events). PostHog's generous free tier covers most missions; Amplitude and Mixpanel only earn their price for a client already equipped with them, or a very deep analysis. GA4 stays the free baseline for traffic, and Hotjar adds a qualitative read (where visitors get stuck) that raw numbers don't give you.",
     "needs": [
       {
-        "title": "Tracking",
-        "titleEn": "Tracking",
-        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
-        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+        "title": "Tester vite",
+        "titleEn": "Test fast",
+        "detail": "La landing page doit pouvoir changer en heures, pas en jours — c'est ce qui justifie un site builder no-code plutôt qu'un dev dédié.",
+        "detailEn": "The landing page needs to change in hours, not days — that's what justifies a no-code site builder over a dedicated dev."
       },
       {
-        "title": "landing pages",
-        "titleEn": "landing pages",
-        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
-        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+        "title": "Tracker sans multiplier les outils",
+        "titleEn": "Track without tool sprawl",
+        "detail": "Un seul outil d'analytics produit suffit pour la majorité des missions ; en ajouter un deuxième dilue le signal au lieu de l'affiner.",
+        "detailEn": "One product-analytics tool is enough for most missions; adding a second one dilutes the signal instead of sharpening it."
       },
       {
-        "title": "CRM",
-        "titleEn": "CRM",
-        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
-        "detailEn": "Each tool needs a clear role in the engagement."
+        "title": "Cadrer le pipeline commercial",
+        "titleEn": "Scope the sales pipeline",
+        "detail": "Le CRM doit rester lisible pour le client : un pipeline simple qu'il peut suivre, pas un système que lui seul maîtrise.",
+        "detailEn": "The CRM has to stay legible for the client: a simple pipeline they can follow, not a system only you understand."
       }
     ],
     "maturitySignals": [
       {
-        "title": "Le process se répète",
-        "titleEn": "The process repeats",
-        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
-        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+        "title": "Le même test revient sur plusieurs clients",
+        "titleEn": "The same test recurs across clients",
+        "detail": "Transforme la structure de test A/B en template Framer réutilisable plutôt que de la reconstruire à chaque mission.",
+        "detailEn": "Turn the A/B test structure into a reusable Framer template instead of rebuilding it for every mission."
       },
       {
-        "title": "Le reporting devient attendu",
-        "titleEn": "Reporting is expected",
-        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
-        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+        "title": "Le client demande un tableau de bord permanent",
+        "titleEn": "The client wants a permanent dashboard",
+        "detail": "C'est le signal pour connecter GA4 et le CRM dans un reporting suivi, au-delà de la mission ponctuelle.",
+        "detailEn": "That's the signal to connect GA4 and the CRM into ongoing reporting, beyond the one-off mission."
       }
     ],
     "traps": [
       {
-        "title": "Payer pour paraître senior",
-        "titleEn": "Paying to look senior",
-        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
-        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+        "title": "Payer trois outils d'analytics produit",
+        "titleEn": "Paying for three product-analytics tools",
+        "detail": "PostHog, Amplitude et Mixpanel mesurent la même chose ; choisis-en un et ne garde les autres que si le client les utilise déjà.",
+        "detailEn": "PostHog, Amplitude, and Mixpanel measure the same thing; pick one and only keep the others if the client already uses them."
       },
       {
-        "title": "Créer un espace client trop lourd",
-        "titleEn": "Overbuilding the client space",
-        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
-        "detailEn": "The client should find decisions in two clicks, not learn your system."
+        "title": "Garder HubSpot pour un usage purement CRM",
+        "titleEn": "Keeping HubSpot for CRM-only use",
+        "detail": "Si la mission ne touche pas le marketing automation, Pipedrive fait le même travail de pipeline pour moins cher.",
+        "detailEn": "If the mission doesn't touch marketing automation, Pipedrive does the same pipeline job for less."
       }
     ],
     "checkpoints": [
@@ -17625,104 +17625,104 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "webflow",
-        "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser tracking sans disperser le workflow.",
-        "reasonEn": "Useful to secure tracking without scattering the workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Landing pages jetables",
+        "roleEn": "Disposable landing pages",
         "slug": "framer",
         "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser landing pages sans disperser le workflow.",
-        "reasonEn": "Useful to secure landing pages without scattering the workflow."
+        "tip": "Le choix par défaut pour tester une page rapidement.",
+        "tipEn": "The default choice to test a page quickly.",
+        "reason": "Plus rapide que Webflow pour publier et itérer une landing page de test, sans avoir besoin d'un vrai CMS derrière.",
+        "reasonEn": "Faster than Webflow to publish and iterate on a test landing page, without needing a real CMS behind it."
       },
       {
-        "role": "CRM",
-        "roleEn": "CRM",
-        "slug": "hubspot",
-        "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "CRM : utile pour sécuriser crm sans disperser le workflow.",
-        "reasonEn": "Useful to secure crm without scattering the workflow."
+        "role": "Site avec CMS",
+        "roleEn": "Site with CMS",
+        "slug": "webflow",
+        "decision": "challenge",
+        "tip": "N'ajoute que si le client a besoin d'un CMS derrière la page.",
+        "tipEn": "Only add if the client needs a CMS behind the page.",
+        "reason": "Fait doublon avec Framer pour du test de landing page ; ne le garde que si le site final doit gérer du contenu structuré.",
+        "reasonEn": "Duplicates Framer for landing-page testing; only keep it if the final site needs to manage structured content."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "CRM pipeline",
+        "roleEn": "Pipeline CRM",
         "slug": "pipedrive",
         "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser tracking sans disperser le workflow.",
-        "reasonEn": "Useful to secure tracking without scattering the workflow."
+        "tip": "Le choix par défaut pour un pipeline commercial simple.",
+        "tipEn": "The default choice for a simple sales pipeline.",
+        "reason": "Plus léger et moins cher que HubSpot pour suivre un pipeline commercial pur, sans besoin de marketing automation.",
+        "reasonEn": "Lighter and cheaper than HubSpot for tracking a pure sales pipeline, without needing marketing automation."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "ga4",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser landing pages sans disperser le workflow.",
-        "reasonEn": "Useful to secure landing pages without scattering the workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "posthog",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser crm sans disperser le workflow.",
-        "reasonEn": "Useful to secure crm without scattering the workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "amplitude",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser tracking sans disperser le workflow.",
-        "reasonEn": "Useful to secure tracking without scattering the workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "mixpanel",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser landing pages sans disperser le workflow.",
-        "reasonEn": "Useful to secure landing pages without scattering the workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "hotjar",
+        "role": "CRM + marketing",
+        "roleEn": "CRM + marketing",
+        "slug": "hubspot",
         "decision": "challenge",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser crm sans disperser le workflow.",
-        "reasonEn": "Useful to secure crm without scattering the workflow."
+        "tip": "N'ajoute que si la mission touche aussi le marketing automation.",
+        "tipEn": "Only add if the mission also touches marketing automation.",
+        "reason": "Ne se justifie face à Pipedrive que si la mission dépasse le pipeline commercial et inclut de l'automation marketing.",
+        "reasonEn": "Only earns its place over Pipedrive if the mission goes beyond the sales pipeline and includes marketing automation."
+      },
+      {
+        "role": "Trafic",
+        "roleEn": "Traffic",
+        "slug": "ga4",
+        "decision": "core",
+        "tip": "Gratuit, à connecter dès le début de la mission.",
+        "tipEn": "Free, connect it from the start of the mission.",
+        "reason": "Gratuit et suffisant comme base de trafic, en complément de l'analytics produit.",
+        "reasonEn": "Free and enough as a traffic baseline, alongside product analytics."
+      },
+      {
+        "role": "Analytics produit",
+        "roleEn": "Product analytics",
+        "slug": "posthog",
+        "decision": "core",
+        "tip": "Le choix par défaut : plan gratuit généreux.",
+        "tipEn": "The default choice: generous free tier.",
+        "reason": "Couvre funnels, cohortes et événements pour la majorité des missions avec un plan gratuit qui suffit rarement à dépasser.",
+        "reasonEn": "Covers funnels, cohorts, and events for most missions with a free tier that's rarely worth exceeding."
+      },
+      {
+        "role": "Analytics produit (client déjà équipé)",
+        "roleEn": "Product analytics (client already set up)",
+        "slug": "amplitude",
+        "decision": "challenge",
+        "tip": "Ne garde que si le client l'utilise déjà.",
+        "tipEn": "Only keep if the client already uses it.",
+        "reason": "Mesure la même chose que PostHog ; ne le facture que si le client est déjà équipé et que migrer coûterait plus cher.",
+        "reasonEn": "Measures the same thing as PostHog; only bill it if the client is already set up with it and migrating would cost more."
+      },
+      {
+        "role": "Analytics produit (client déjà équipé)",
+        "roleEn": "Product analytics (client already set up)",
+        "slug": "mixpanel",
+        "decision": "challenge",
+        "tip": "Ne garde que si le client l'utilise déjà.",
+        "tipEn": "Only keep if the client already uses it.",
+        "reason": "Même logique qu'Amplitude : redondant avec PostHog, à ne garder que pour ne pas migrer un client déjà équipé.",
+        "reasonEn": "Same logic as Amplitude: redundant with PostHog, only keep it to avoid migrating an already-equipped client."
+      },
+      {
+        "role": "Lecture qualitative",
+        "roleEn": "Qualitative read",
+        "slug": "hotjar",
+        "decision": "conditional",
+        "tip": "Complète l'analytics chiffré, ne le remplace pas.",
+        "tipEn": "Complements the numeric analytics, doesn't replace it.",
+        "reason": "Montre où les visiteurs bloquent (heatmaps, session recordings), une lecture que les chiffres seuls ne donnent pas.",
+        "reasonEn": "Shows where visitors get stuck (heatmaps, session recordings), a read that raw numbers alone don't give."
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
-        "decision": "challenge",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Automatisation : utile pour sécuriser tracking sans disperser le workflow.",
-        "reasonEn": "Useful to secure tracking without scattering the workflow."
+        "decision": "conditional",
+        "tip": "Utile pour router les leads entre formulaire et CRM.",
+        "tipEn": "Useful to route leads between form and CRM.",
+        "reason": "Sert de glue entre landing page, CRM et notifications quand la mission demande un routing de leads automatisé.",
+        "reasonEn": "Acts as glue between landing page, CRM, and notifications when the mission needs automated lead routing."
       }
     ]
   },
@@ -20764,8 +20764,8 @@ export const STACKS: StackGuide[] = [
     "slug": "consultant-no-code",
     "title": "Stack no-code",
     "titleEn": "No-code stack",
-    "subtitle": "Les outils recommandés pour consultant no-code",
-    "subtitleEn": "Recommended tools for this consulting profile.",
+    "subtitle": "Tu dois livrer un outil interne ou un MVP sans écrire de code. Le piège : trois app builders et trois automatiseurs qui font tous le même travail.",
+    "subtitleEn": "You need to ship an internal tool or MVP without writing code. The trap: three app builders and three automation tools all doing the same job.",
     "persona": "consultant",
     "subProfiles": [
       "no-code",
@@ -20775,60 +20775,60 @@ export const STACKS: StackGuide[] = [
     "budget": "under150",
     "monthlyBudget": 128,
     "savings": 240,
-    "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
-    "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
-    "bestFor": "Consultant no-code",
-    "bestForEn": "Consultant no-code",
+    "risk": "Payer Make, Zapier et n8n en même temps alors qu'un seul suffit à couvrir la mission.",
+    "riskEn": "Paying for Make, Zapier, and n8n at the same time when one alone covers the mission.",
+    "bestFor": "Consultant no-code qui livre des apps internes, portails client ou automatisations pour des PME sans équipe technique.",
+    "bestForEn": "No-code consultants shipping internal apps, client portals, or automations for SMBs without a technical team.",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
-    "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
-    "editorialEn": "The stack must cover the real workflow: qualify, analyze, produce, decide, follow up, and invoice without friction.",
+    "editorial": "Deux familles d'outils se recoupent ici. Côté app builder : Softr et Glide font le même pari (transformer une base Airtable en app ou portail client) — Softr est plus polie pour un rendu web, Glide plus rapide pour du mobile-first. Les deux ne servent à rien ensemble, choisis selon le rendu attendu. Bubble joue dans une autre catégorie : logique métier custom, courbe d'apprentissage plus longue, à réserver aux missions où Softr et Glide ne suffisent plus (workflows conditionnels complexes, vrai back-office). Côté automatisation, Make, Zapier et n8n couvrent la même fonction de glue entre apps. Make offre le meilleur rapport visuel/prix pour la majorité des missions ; Zapier a plus de connecteurs mais coûte plus cher au volume ; n8n s'impose seulement si le client a une équipe technique prête à l'auto-héberger. Webflow n'a sa place que si la mission inclut un vrai site vitrine, pas seulement l'outil interne.",
+    "editorialEn": "Two families of tools overlap here. On the app-builder side: Softr and Glide make the same bet (turning an Airtable base into an app or client portal) — Softr renders more polished for web, Glide is faster for mobile-first. The two are pointless together; pick one based on the expected output. Bubble plays in a different league: custom business logic, a longer learning curve, reserved for missions where Softr and Glide fall short (complex conditional workflows, a real back-office). On the automation side, Make, Zapier, and n8n cover the same glue function between apps. Make offers the best visual/price ratio for most missions; Zapier has more connectors but costs more at volume; n8n only earns its place if the client has a technical team ready to self-host it. Webflow only belongs here if the mission includes a real marketing site, not just the internal tool.",
     "needs": [
       {
-        "title": "Audit workflow",
-        "titleEn": "Workflow audit",
-        "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
-        "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
+        "title": "Structurer la donnée",
+        "titleEn": "Structure the data",
+        "detail": "Airtable comme base commune évite de dupliquer la même donnée dans chaque outil du prototype.",
+        "detailEn": "Airtable as a common base avoids duplicating the same data across every tool in the prototype."
       },
       {
-        "title": "prototype",
-        "titleEn": "prototype",
-        "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
-        "detailEn": "The stack must stay legible for the client and profitable for the consultant."
+        "title": "Prototyper vite",
+        "titleEn": "Prototype fast",
+        "detail": "Un seul app builder suffit pour la majorité des missions ; le choix dépend du rendu (web vs mobile), pas du prix.",
+        "detailEn": "One app builder is enough for most missions; the choice depends on output (web vs mobile), not price."
       },
       {
-        "title": "apps internes",
-        "titleEn": "internal apps",
-        "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
-        "detailEn": "Each tool needs a clear role in the engagement."
+        "title": "Automatiser sans doublon",
+        "titleEn": "Automate without duplication",
+        "detail": "Un seul outil d'automatisation par mission ; en faire tourner deux en parallèle complique le débogage sans gain réel.",
+        "detailEn": "One automation tool per mission; running two in parallel complicates debugging with no real gain."
       }
     ],
     "maturitySignals": [
       {
-        "title": "Le process se répète",
-        "titleEn": "The process repeats",
-        "detail": "Tu peux transformer la mission en playbook, templates et vues réutilisables.",
-        "detailEn": "You can turn delivery into playbooks, templates, and reusable views."
+        "title": "Le même type d'app revient",
+        "titleEn": "The same type of app keeps coming back",
+        "detail": "Transforme la base Airtable et les scénarios d'automatisation en template cloné à chaque mission.",
+        "detailEn": "Turn the Airtable base and automation scenarios into a template you clone for every mission."
       },
       {
-        "title": "Le reporting devient attendu",
-        "titleEn": "Reporting is expected",
-        "detail": "Le client ne veut plus seulement un livrable, il veut suivre l’effet de la mission.",
-        "detailEn": "The client no longer wants only a deliverable, but a way to track impact."
+        "title": "Le client veut gérer l'outil seul",
+        "titleEn": "The client wants to manage the tool alone",
+        "detail": "C'est le signal pour documenter dans Notion plutôt que de rester le seul à savoir faire tourner l'automatisation.",
+        "detailEn": "That's the signal to document in Notion instead of staying the only one who knows how to run the automation."
       }
     ],
     "traps": [
       {
-        "title": "Payer pour paraître senior",
-        "titleEn": "Paying to look senior",
-        "detail": "Un outil premium ne remplace pas un diagnostic net ni une recommandation courageuse.",
-        "detailEn": "A premium tool does not replace a sharp diagnosis or a brave recommendation."
+        "title": "Payer trois outils d'automatisation",
+        "titleEn": "Paying for three automation tools",
+        "detail": "Make, Zapier et n8n font le même travail de glue ; choisis-en un selon le budget et le niveau technique du client.",
+        "detailEn": "Make, Zapier, and n8n all do the same glue work; pick one based on budget and the client's technical level."
       },
       {
-        "title": "Créer un espace client trop lourd",
-        "titleEn": "Overbuilding the client space",
-        "detail": "Le client doit retrouver les décisions en deux clics, pas apprendre ton système.",
-        "detailEn": "The client should find decisions in two clicks, not learn your system."
+        "title": "Passer à Bubble trop tôt",
+        "titleEn": "Jumping to Bubble too early",
+        "detail": "Bubble coûte du temps d'apprentissage ; ne l'utilise que si Softr ou Glide ne peuvent vraiment plus suivre la logique demandée.",
+        "detailEn": "Bubble costs learning time; only use it once Softr or Glide genuinely can't keep up with the required logic."
       }
     ],
     "checkpoints": [
@@ -20853,94 +20853,94 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "Base structurée",
-        "roleEn": "Structured base",
+        "role": "Base commune",
+        "roleEn": "Common base",
         "slug": "airtable",
         "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Base structurée : utile pour sécuriser audit workflow sans disperser le workflow.",
-        "reasonEn": "Useful to secure workflow audit without scattering the workflow."
+        "tip": "La base de données partagée entre les autres outils du prototype.",
+        "tipEn": "The shared database behind the rest of the prototype's tools.",
+        "reason": "Évite de dupliquer la donnée dans chaque outil : Softr, Glide et les automatisations s'y connectent directement.",
+        "reasonEn": "Avoids duplicating data across every tool: Softr, Glide, and the automations connect to it directly."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "App builder (rendu web)",
+        "roleEn": "App builder (web output)",
         "slug": "softr",
         "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser prototype sans disperser le workflow.",
-        "reasonEn": "Useful to secure prototype without scattering the workflow."
+        "tip": "Le choix par défaut pour un portail client ou un dashboard web.",
+        "tipEn": "The default choice for a client portal or web dashboard.",
+        "reason": "Transforme une base Airtable en portail web soigné ; fait doublon avec Glide, choisis l'un ou l'autre selon le rendu voulu.",
+        "reasonEn": "Turns an Airtable base into a polished web portal; duplicates Glide, pick one or the other based on the desired output."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "App builder (rendu mobile)",
+        "roleEn": "App builder (mobile output)",
         "slug": "glide",
-        "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser apps internes sans disperser le workflow.",
-        "reasonEn": "Useful to secure internal apps without scattering the workflow."
+        "decision": "challenge",
+        "tip": "N'ajoute que si le rendu doit être mobile-first plutôt que web.",
+        "tipEn": "Only add if the output needs to be mobile-first rather than web.",
+        "reason": "Même principe que Softr sur une base Airtable ; à choisir plutôt que Softr pour un usage mobile, pas en plus.",
+        "reasonEn": "Same principle as Softr on top of an Airtable base; pick instead of Softr for mobile use, not alongside it."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "App builder (logique custom)",
+        "roleEn": "App builder (custom logic)",
         "slug": "bubble",
-        "decision": "core",
-        "tip": "À garder dans le socle de mission.",
-        "tipEn": "Keep it in the mission core.",
-        "reason": "Outil métier : utile pour sécuriser audit workflow sans disperser le workflow.",
-        "reasonEn": "Useful to secure workflow audit without scattering the workflow."
+        "decision": "challenge",
+        "tip": "Réserve-le aux missions où Softr et Glide ne suffisent plus.",
+        "tipEn": "Reserve it for missions where Softr and Glide fall short.",
+        "reason": "Courbe d'apprentissage plus longue ; ne le facture que si la mission demande une vraie logique métier custom.",
+        "reasonEn": "Longer learning curve; only bill it if the mission needs real custom business logic."
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Automatisation : utile pour sécuriser prototype sans disperser le workflow.",
-        "reasonEn": "Useful to secure prototype without scattering the workflow."
+        "decision": "core",
+        "tip": "Le choix par défaut : bon rapport visuel/prix.",
+        "tipEn": "The default choice: good visual/price ratio.",
+        "reason": "Meilleur compromis pour la majorité des missions ; fait doublon avec Zapier et n8n, choisis-en un seul.",
+        "reasonEn": "Best trade-off for most missions; duplicates Zapier and n8n, pick only one."
       },
       {
-        "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "role": "Automatisation (plus de connecteurs)",
+        "roleEn": "Automation (more connectors)",
         "slug": "zapier",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Automatisation : utile pour sécuriser apps internes sans disperser le workflow.",
-        "reasonEn": "Useful to secure internal apps without scattering the workflow."
+        "decision": "challenge",
+        "tip": "N'ajoute que si un connecteur précis manque à Make.",
+        "tipEn": "Only add if a specific connector is missing from Make.",
+        "reason": "Plus de connecteurs que Make mais plus cher au volume ; à choisir plutôt que Make, pas en plus.",
+        "reasonEn": "More connectors than Make but more expensive at volume; pick instead of Make, not alongside it."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Automatisation (auto-hébergée)",
+        "roleEn": "Automation (self-hosted)",
         "slug": "n8n",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser audit workflow sans disperser le workflow.",
-        "reasonEn": "Useful to secure workflow audit without scattering the workflow."
+        "decision": "challenge",
+        "tip": "Ne le propose que si le client a une équipe technique.",
+        "tipEn": "Only suggest it if the client has a technical team.",
+        "reason": "Gratuit en auto-hébergement, mais demande une équipe technique côté client pour le maintenir.",
+        "reasonEn": "Free to self-host, but needs a technical team on the client's side to maintain it."
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Mission cockpit",
         "slug": "notion",
         "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Cockpit mission : utile pour sécuriser prototype sans disperser le workflow.",
-        "reasonEn": "Useful to secure prototype without scattering the workflow."
+        "tip": "Utile pour documenter l'outil une fois livré.",
+        "tipEn": "Useful to document the tool once delivered.",
+        "reason": "Centralise la documentation de l'app livrée pour que le client puisse s'en servir sans toi.",
+        "reasonEn": "Centralizes documentation for the delivered app so the client can use it without you."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Site vitrine",
+        "roleEn": "Marketing site",
         "slug": "webflow",
-        "decision": "challenge",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser apps internes sans disperser le workflow.",
-        "reasonEn": "Useful to secure internal apps without scattering the workflow."
+        "decision": "conditional",
+        "tip": "N'active que si la mission inclut un vrai site, pas seulement l'outil interne.",
+        "tipEn": "Only activate if the mission includes a real site, not just the internal tool.",
+        "reason": "Sert le site vitrine du client, un besoin distinct de l'app interne — ne le compte pas dans le socle par défaut.",
+        "reasonEn": "Serves the client's marketing site, a distinct need from the internal app — don't count it in the default core."
       }
     ]
   },
@@ -23750,7 +23750,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack short video",
     "titleEn": "Short video stack",
     "subtitle": "Les outils recommandés pour créateur orienté vidéo courte verticale, rythme rapide, hooks forts, montage dynamique et publication très régulière.",
-    "subtitleEn": "Recommended tools for this creator profile.",
+    "subtitleEn": "For creators focused on fast-paced vertical video — strong hooks, dynamic editing, and a very regular publishing cadence.",
     "persona": "content",
     "subProfiles": [
       "short-video",
@@ -23767,8 +23767,8 @@ export const STACKS: StackGuide[] = [
     "bestForEn": "A creator focused on short vertical video: fast pace, strong hooks, dynamic editing and very regular publishing.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
-    "editorial": "Ce profil a besoin d’une stack claire pour produire vite, recycler les contenus et analyser ce qui performe.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
-    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "editorial": "Pour du format court, CapCut couvre l'essentiel : montage vertical natif, sous-titres automatiques et export direct aux bons formats TikTok/Reels/Shorts. Premiere Pro et Final Cut Pro sont surdimensionnés pour un clip de 15 à 60 secondes — ne les ajoute que si tu fais aussi du montage plus long ou un travail d'étalonnage que CapCut ne gère pas. Même remarque sur les bibliothèques d'assets : CapCut Templates, Motion Array, Envato Elements, Epidemic Sound et Artlist se recoupent largement (musique, SFX, templates). Une ou deux suffisent ; empiler les cinq abonnements coûte cher pour un gain marginal. Submagic peut être redondant avec les sous-titres automatiques déjà intégrés à CapCut — ne le paie que si tu as besoin d'un style de sous-titrage plus poussé (animations, mise en avant de mots-clés).",
+    "editorialEn": "For short-form, CapCut covers the essentials: native vertical editing, automatic captions, and direct export in the right TikTok/Reels/Shorts formats. Premiere Pro and Final Cut Pro are oversized for a 15-to-60-second clip — only add them if you're also doing longer edits or color work CapCut can't handle. Same note on asset libraries: CapCut Templates, Motion Array, Envato Elements, Epidemic Sound, and Artlist overlap heavily (music, SFX, templates). One or two are enough; stacking all five subscriptions costs a lot for marginal gain. Submagic can be redundant with the auto-captions already built into CapCut — only pay for it if you need a more advanced caption style (animations, keyword highlighting).",
     "needs": [
       {
         "title": "Scripts courts",
@@ -23845,154 +23845,154 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "role": "Montage vertical natif",
+        "roleEn": "Native vertical editing",
         "slug": "capcut",
         "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Montage vertical : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure short scripts in the content workflow."
+        "tip": "Le choix par défaut : gratuit, rapide, formats natifs.",
+        "tipEn": "The default choice: free, fast, native formats.",
+        "reason": "Couvre montage, sous-titres automatiques et export aux bons formats TikTok/Reels/Shorts en un seul outil gratuit.",
+        "reasonEn": "Covers editing, auto-captions, and export in the right TikTok/Reels/Shorts formats in one free tool."
       },
       {
-        "role": "Montage pro",
-        "roleEn": "Montage pro",
+        "role": "Montage pro (usage ponctuel)",
+        "roleEn": "Professional editing (occasional use)",
         "slug": "adobe-premiere-pro",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Montage pro : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
+        "decision": "challenge",
+        "tip": "N'ajoute que pour un montage plus long ou un étalonnage que CapCut ne gère pas.",
+        "tipEn": "Only add for longer edits or color work CapCut can't handle.",
+        "reason": "Surdimensionné pour un clip de 15 à 60 secondes ; ne le paie que si tu produis aussi du contenu plus long.",
+        "reasonEn": "Oversized for a 15-to-60-second clip; only pay for it if you also produce longer-form content."
       },
       {
-        "role": "Montage pro",
-        "roleEn": "Montage pro",
+        "role": "Montage pro (Mac, usage ponctuel)",
+        "roleEn": "Professional editing (Mac, occasional use)",
         "slug": "final-cut-pro",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Montage pro : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure vertical editing in the content workflow."
+        "decision": "challenge",
+        "tip": "Alternative à Premiere sur Mac, pas un complément à CapCut pour du court.",
+        "tipEn": "An alternative to Premiere on Mac, not a complement to CapCut for short-form.",
+        "reason": "Même logique que Premiere : ne le compte pas dans le socle court-format, seulement pour un besoin de montage plus poussé.",
+        "reasonEn": "Same logic as Premiere: don't count it in the short-form core, only for a heavier editing need."
       },
       {
         "role": "Pilotage TikTok",
-        "roleEn": "Pilotage TikTok",
+        "roleEn": "TikTok management",
         "slug": "tiktok-studio",
         "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Pilotage TikTok : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure subtitles in the content workflow."
+        "tip": "Gratuit, à garder dans le socle.",
+        "tipEn": "Free, keep it in the core.",
+        "reason": "Gratuit et nécessaire pour publier et suivre la performance directement sur la plateforme principale du format.",
+        "reasonEn": "Free and necessary to publish and track performance directly on the format's primary platform."
       },
       {
-        "role": "Pilotage YouTube",
-        "roleEn": "Pilotage YouTube",
+        "role": "Pilotage YouTube Shorts",
+        "roleEn": "YouTube Shorts management",
         "slug": "youtube-studio",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Pilotage YouTube : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure short scripts in the content workflow."
+        "decision": "conditional",
+        "tip": "Utile dès que tu republies aussi en Shorts.",
+        "tipEn": "Useful once you also republish to Shorts.",
+        "reason": "Complète TikTok Studio si tu distribues le même contenu sur Shorts, pas redondant tant que la plateforme diffère.",
+        "reasonEn": "Complements TikTok Studio if you distribute the same content to Shorts too — not redundant as long as the platform differs."
       },
       {
         "role": "Distribution Instagram",
-        "roleEn": "Distribution Instagram",
+        "roleEn": "Instagram distribution",
         "slug": "instagram",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Distribution Instagram : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
+        "tip": "Troisième canal de diffusion pour le même clip.",
+        "tipEn": "A third distribution channel for the same clip.",
+        "reason": "Le même montage vertical se republie sur Reels sans travail supplémentaire une fois le format calé.",
+        "reasonEn": "The same vertical edit republishes to Reels with no extra work once the format is set."
       },
       {
-        "role": "Planification social",
-        "roleEn": "Planification social",
+        "role": "Planification multi-plateforme",
+        "roleEn": "Multi-platform scheduling",
         "slug": "metricool",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Planification social : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure vertical editing in the content workflow."
+        "tip": "Rentable dès que tu publies sur 3 plateformes ou plus.",
+        "tipEn": "Pays off once you publish to 3+ platforms.",
+        "reason": "Centralise la planification et les stats de TikTok, Reels et Shorts au lieu de gérer chaque app séparément.",
+        "reasonEn": "Centralizes scheduling and stats for TikTok, Reels, and Shorts instead of juggling each app separately."
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Cockpit contenu : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure subtitles in the content workflow."
+        "tip": "Utile dès que le rythme de publication dépasse la mémoire.",
+        "tipEn": "Useful once the publishing cadence outgrows memory alone.",
+        "reason": "Centralise les idées de hooks et le calendrier pour garder un rythme de publication élevé sans se répéter.",
+        "reasonEn": "Centralizes hook ideas and the calendar to keep a high publishing cadence without repeating yourself."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Templates CapCut",
+        "roleEn": "CapCut templates",
         "slug": "capcut-templates",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure short scripts in the content workflow."
+        "tip": "Le choix par défaut pour des templates, déjà intégré à CapCut.",
+        "tipEn": "The default choice for templates, already built into CapCut.",
+        "reason": "Recoupe Motion Array et Envato Elements ; comme c'est déjà intégré à CapCut, commence par lui avant de payer ailleurs.",
+        "reasonEn": "Overlaps Motion Array and Envato Elements; since it's already built into CapCut, start there before paying elsewhere."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Templates (alternative)",
+        "roleEn": "Templates (alternative)",
         "slug": "motion-array",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
+        "decision": "challenge",
+        "tip": "N'ajoute que pour un style de template que CapCut ne propose pas.",
+        "tipEn": "Only add for a template style CapCut doesn't offer.",
+        "reason": "Redondant avec CapCut Templates et Envato Elements ; une seule bibliothèque de templates suffit dans la plupart des cas.",
+        "reasonEn": "Redundant with CapCut Templates and Envato Elements; one template library is enough in most cases."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Marketplace d'assets",
+        "roleEn": "Asset marketplace",
         "slug": "envato-elements",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure vertical editing in the content workflow."
+        "decision": "challenge",
+        "tip": "Catalogue plus large, mais recoupe les autres sources de templates.",
+        "tipEn": "Broader catalog, but overlaps the other template sources.",
+        "reason": "Utile si tu as besoin d'un catalogue plus large que CapCut, mais ne le cumule pas avec Motion Array.",
+        "reasonEn": "Useful if you need a broader catalog than CapCut, but don't stack it with Motion Array."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Musique et SFX",
+        "roleEn": "Music and SFX",
         "slug": "epidemic-sound",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure subtitles in the content workflow."
+        "tip": "Le choix par défaut pour la musique, distinct des templates.",
+        "tipEn": "The default choice for music, separate from templates.",
+        "reason": "Couvre musique et SFX, un besoin différent des templates vidéo ; recoupe Artlist, n'en garde qu'une des deux.",
+        "reasonEn": "Covers music and SFX, a different need from video templates; overlaps Artlist, keep only one of the two."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Musique et SFX (alternative)",
+        "roleEn": "Music and SFX (alternative)",
         "slug": "artlist",
         "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser scripts courts dans le workflow contenu.",
-        "reasonEn": "Useful to secure short scripts in the content workflow."
+        "tip": "Alternative à Epidemic Sound, pas un complément.",
+        "tipEn": "An alternative to Epidemic Sound, not a complement.",
+        "reason": "Même fonction qu'Epidemic Sound ; le choix se fait sur le catalogue musical, pas sur les fonctionnalités.",
+        "reasonEn": "Same function as Epidemic Sound; the choice comes down to the music catalog, not the features."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Sous-titres avancés",
+        "roleEn": "Advanced captions",
         "slug": "submagic",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser tournage smartphone dans le workflow contenu.",
-        "reasonEn": "Useful to secure smartphone shooting in the content workflow."
+        "decision": "conditional",
+        "tip": "N'ajoute que si les sous-titres CapCut ne suffisent plus.",
+        "tipEn": "Only add if CapCut's captions aren't enough anymore.",
+        "reason": "Peut faire doublon avec les sous-titres automatiques déjà dans CapCut ; ne le paie que pour un style plus poussé (animations, mots-clés mis en avant).",
+        "reasonEn": "Can duplicate CapCut's built-in auto-captions; only pay for it for a more advanced style (animations, keyword highlighting)."
       },
       {
-        "role": "Idées et scripts",
-        "roleEn": "Ideas and scripts",
+        "role": "Idées et hooks",
+        "roleEn": "Ideas and hooks",
         "slug": "chatgpt",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Idées et scripts : utile pour sécuriser montage vertical dans le workflow contenu.",
-        "reasonEn": "Useful to secure vertical editing in the content workflow."
+        "decision": "conditional",
+        "tip": "Pour débloquer des angles, pas pour écrire le script final.",
+        "tipEn": "To unblock angles, not to write the final script.",
+        "reason": "Utile pour générer des variantes de hook rapidement ; le ton et le montage restent ce qui différencie vraiment le créateur.",
+        "reasonEn": "Useful to generate hook variants quickly; tone and editing remain what actually differentiates the creator."
       },
       {
         "role": "Outil métier",
@@ -24032,7 +24032,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack YouTube long",
     "titleEn": "YouTube long stack",
     "subtitle": "Les outils recommandés pour créateur de vidéos longues : face caméra, documentaire, analyse, tutoriel, divertissement ou expertise.",
-    "subtitleEn": "Recommended tools for this creator profile.",
+    "subtitleEn": "For long-form video creators — to camera, documentary, analysis, tutorial, entertainment, or expertise — who need to produce, publish, and monetize without losing their editorial voice.",
     "persona": "content",
     "subProfiles": [
       "youtube-long",
@@ -24048,8 +24048,8 @@ export const STACKS: StackGuide[] = [
     "bestForEn": "A creator of long-form video: to camera, documentary, analysis, tutorial, entertainment or expertise.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
-    "editorial": "Les YouTubers ont un besoin complet : production, optimisation, monétisation, sponsorship et réutilisation en shorts.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
-    "editorialEn": "The stack must cover the full chain: idea, production, publishing, engagement, measurement, repurposing, and monetization without flattening the creator’s signature.",
+    "editorial": "Trois logiciels de montage pro (Premiere Pro, DaVinci Resolve, Final Cut Pro) n'ont aucune raison de cohabiter dans une même stack : ce sont trois façons différentes de faire le même métier, pas trois étapes complémentaires. Final Cut Pro n'a de sens que sur Mac et en achat unique ; DaVinci Resolve a une version gratuite très complète, forte en étalonnage ; Premiere Pro s'impose surtout si le reste du studio tourne déjà sous licence Adobe. Même logique côté bibliothèques d'assets : Artlist, Epidemic Sound, Motion Array, Envato et Storyblocks se recoupent presque totalement (musique, SFX, templates, stock footage). Une seule suffit dans 90 % des cas ; n'en ajouter une deuxième ne se justifie que pour un type d'asset que la première ne couvre pas. TubeBuddy et VidIQ font le même travail d'optimisation YouTube (mots-clés, vignettes, A/B testing) : les deux en même temps n'apportent rien, choisis celui dont l'interface te convient.",
+    "editorialEn": "Three professional editors (Premiere Pro, DaVinci Resolve, Final Cut Pro) have no reason to coexist in the same stack: they're three different ways to do the same job, not three complementary steps. Final Cut Pro only makes sense on Mac with a one-time purchase; DaVinci Resolve has a genuinely capable free tier, strong on color grading; Premiere Pro earns its place mainly if the rest of the studio already runs on Adobe licenses. Same logic on asset libraries: Artlist, Epidemic Sound, Motion Array, Envato, and Storyblocks overlap almost entirely (music, SFX, templates, stock footage). One is enough 90% of the time; adding a second only makes sense for an asset type the first doesn't cover. TubeBuddy and VidIQ do the same YouTube-optimization job (keywords, thumbnails, A/B testing): running both adds nothing, pick whichever interface you prefer.",
     "needs": [
       {
         "title": "Recherche",
@@ -24126,164 +24126,164 @@ export const STACKS: StackGuide[] = [
     ],
     "tools": [
       {
-        "role": "Montage pro",
-        "roleEn": "Montage pro",
-        "slug": "adobe-premiere-pro",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Montage pro : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure research in the content workflow."
-      },
-      {
-        "role": "Montage / étalonnage",
-        "roleEn": "Editing and colour grading",
+        "role": "Montage (gratuit, étalonnage fort)",
+        "roleEn": "Editing (free, strong color grading)",
         "slug": "davinci-resolve",
         "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Montage / étalonnage : utile pour sécuriser script dans le workflow contenu.",
-        "reasonEn": "Useful to secure script in the content workflow."
+        "tip": "Le choix par défaut : version gratuite très complète.",
+        "tipEn": "The default choice: a genuinely capable free tier.",
+        "reason": "Fait doublon avec Premiere Pro et Final Cut Pro ; choisis-en un seul selon ton OS et ton budget, pas les trois.",
+        "reasonEn": "Duplicates Premiere Pro and Final Cut Pro; pick only one based on your OS and budget, not all three."
       },
       {
-        "role": "Montage pro",
-        "roleEn": "Montage pro",
+        "role": "Montage (écosystème Adobe)",
+        "roleEn": "Editing (Adobe ecosystem)",
+        "slug": "adobe-premiere-pro",
+        "decision": "challenge",
+        "tip": "À choisir plutôt que DaVinci si le reste du studio est déjà sous Adobe.",
+        "tipEn": "Pick instead of DaVinci if the rest of the studio already runs on Adobe.",
+        "reason": "S'impose surtout par intégration avec After Effects et Photoshop ; sinon DaVinci fait le même travail gratuitement.",
+        "reasonEn": "Mainly earns its place through integration with After Effects and Photoshop; otherwise DaVinci does the same job for free."
+      },
+      {
+        "role": "Montage (Mac, licence unique)",
+        "roleEn": "Editing (Mac, one-time license)",
         "slug": "final-cut-pro",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Montage pro : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure shooting in the content workflow."
+        "decision": "challenge",
+        "tip": "À choisir plutôt que les deux autres si tu es sur Mac et veux éviter l'abonnement.",
+        "tipEn": "Pick instead of the other two if you're on Mac and want to avoid a subscription.",
+        "reason": "Achat unique au lieu d'un abonnement, mais Mac uniquement ; ne l'ajoute pas en plus de DaVinci ou Premiere.",
+        "reasonEn": "One-time purchase instead of a subscription, but Mac-only; don't add it on top of DaVinci or Premiere."
       },
       {
-        "role": "Montage texte/audio",
-        "roleEn": "Montage texte/audio",
+        "role": "Montage par le texte",
+        "roleEn": "Text-based editing",
         "slug": "descript",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
-        "reason": "Montage texte/audio : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure long-form editing in the content workflow."
+        "reason": "Édite la vidéo en éditant la transcription : accélère les coupes et le dérushage avant même le montage fin.",
+        "reasonEn": "Edits video by editing the transcript: speeds up cuts and rough assembly before fine editing even starts."
       },
       {
-        "role": "Pilotage YouTube",
-        "roleEn": "Pilotage YouTube",
+        "role": "Pilotage de la chaîne",
+        "roleEn": "Channel management",
         "slug": "youtube-studio",
         "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Pilotage YouTube : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure research in the content workflow."
+        "tip": "Gratuit, à garder dans le socle.",
+        "tipEn": "Free, keep it in the core.",
+        "reason": "Gratuit et incontournable pour publier, suivre la rétention et gérer la monétisation directement sur la plateforme.",
+        "reasonEn": "Free and essential for publishing, tracking retention, and managing monetization directly on the platform."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Optimisation SEO YouTube",
+        "roleEn": "YouTube SEO optimization",
         "slug": "tubebuddy",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
-        "reasonEn": "Useful to secure script in the content workflow."
+        "tip": "Choisis-le ou VidIQ, pas les deux.",
+        "tipEn": "Pick this or VidIQ, not both.",
+        "reason": "Fait le même travail que VidIQ (mots-clés, vignettes, A/B testing) ; les deux en même temps n'apportent rien.",
+        "reasonEn": "Does the same job as VidIQ (keywords, thumbnails, A/B testing); running both adds nothing."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Optimisation SEO YouTube",
+        "roleEn": "YouTube SEO optimization",
         "slug": "vidiq",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure shooting in the content workflow."
+        "decision": "challenge",
+        "tip": "Alternative à TubeBuddy, pas un complément.",
+        "tipEn": "An alternative to TubeBuddy, not a complement.",
+        "reason": "Recoupe TubeBuddy presque à l'identique ; le choix se fait sur l'interface, pas sur les fonctionnalités.",
+        "reasonEn": "Overlaps TubeBuddy almost entirely; the choice comes down to interface, not features."
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Cockpit contenu : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure long-form editing in the content workflow."
+        "tip": "Utile dès que le calendrier éditorial dépasse la mémoire.",
+        "tipEn": "Useful once the editorial calendar outgrows memory alone.",
+        "reason": "Centralise idées, scripts et statut de publication pour ne pas perdre le fil entre deux vidéos.",
+        "reasonEn": "Centralizes ideas, scripts, and publishing status so nothing gets lost between two videos."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Musique et SFX",
+        "roleEn": "Music and SFX",
         "slug": "artlist",
         "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure research in the content workflow."
+        "tip": "Le choix par défaut pour une bibliothèque d'assets.",
+        "tipEn": "The default choice for an asset library.",
+        "reason": "Couvre musique et SFX en un abonnement ; recoupe Epidemic Sound, Motion Array, Envato et Storyblocks — une seule suffit.",
+        "reasonEn": "Covers music and SFX in one subscription; overlaps Epidemic Sound, Motion Array, Envato, and Storyblocks — one is enough."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Musique et SFX (alternative)",
+        "roleEn": "Music and SFX (alternative)",
         "slug": "epidemic-sound",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser script dans le workflow contenu.",
-        "reasonEn": "Useful to secure script in the content workflow."
+        "decision": "challenge",
+        "tip": "Alternative à Artlist, pas un complément.",
+        "tipEn": "An alternative to Artlist, not a complement.",
+        "reason": "Même fonction qu'Artlist ; n'en garde qu'une des deux selon le catalogue musical qui te convient.",
+        "reasonEn": "Same function as Artlist; only keep one of the two based on which music catalog fits your taste."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Templates et stock vidéo",
+        "roleEn": "Templates and stock video",
         "slug": "motion-array",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure shooting in the content workflow."
+        "decision": "challenge",
+        "tip": "N'ajoute que si tu as besoin de templates de montage, pas seulement de musique.",
+        "tipEn": "Only add if you need editing templates, not just music.",
+        "reason": "Utile pour les templates d'habillage vidéo ; redondant avec Artlist si le besoin reste musique et SFX.",
+        "reasonEn": "Useful for video-motion templates; redundant with Artlist if the need stays music and SFX only."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Marketplace d'assets",
+        "roleEn": "Asset marketplace",
         "slug": "envato",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure long-form editing in the content workflow."
+        "decision": "challenge",
+        "tip": "Catalogue plus large, mais recoupe les autres bibliothèques.",
+        "tipEn": "Broader catalog, but overlaps the other libraries.",
+        "reason": "Couvre templates, stock et musique en un seul abonnement plus généraliste ; ne le cumule pas avec les autres.",
+        "reasonEn": "Covers templates, stock, and music in one broader subscription; don't stack it with the others."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
+        "role": "Stock footage (alternative)",
+        "roleEn": "Stock footage (alternative)",
         "slug": "storyblocks",
         "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser recherche dans le workflow contenu.",
-        "reasonEn": "Useful to secure research in the content workflow."
+        "tip": "N'ajoute que pour du stock footage spécifique introuvable ailleurs.",
+        "tipEn": "Only add for specific stock footage you can't find elsewhere.",
+        "reason": "Recoupe Artlist et Envato sur le stock footage ; n'ajoute une cinquième bibliothèque que pour un besoin précis.",
+        "reasonEn": "Overlaps Artlist and Envato on stock footage; only add a fifth library for a specific, unmet need."
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Fast design",
         "slug": "canva",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Design rapide : utile pour sécuriser script dans le workflow contenu.",
-        "reasonEn": "Useful to secure script in the content workflow."
+        "decision": "conditional",
+        "tip": "Pour les miniatures, pas pour un système de vignettes élaboré.",
+        "tipEn": "For thumbnails, not for an elaborate thumbnail system.",
+        "reason": "Rapide pour des miniatures correctes ; Photoshop reste supérieur pour un vrai travail de composition.",
+        "reasonEn": "Fast for decent thumbnails; Photoshop remains superior for real compositing work."
       },
       {
         "role": "Retouche avancée",
         "roleEn": "Advanced retouching",
         "slug": "adobe-photoshop",
         "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Retouche avancée : utile pour sécuriser tournage dans le workflow contenu.",
-        "reasonEn": "Useful to secure shooting in the content workflow."
+        "tip": "N'active que si les miniatures deviennent un vrai levier de clics.",
+        "tipEn": "Only activate once thumbnails become a real click-through lever.",
+        "reason": "Justifié quand la miniature devient un facteur de clic mesurable, pas pour un usage occasionnel que Canva couvre déjà.",
+        "reasonEn": "Justified once the thumbnail becomes a measurable click-through factor, not for occasional use Canva already covers."
       },
       {
         "role": "Idées et scripts",
         "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Idées et scripts : utile pour sécuriser montage long dans le workflow contenu.",
-        "reasonEn": "Useful to secure long-form editing in the content workflow."
+        "decision": "conditional",
+        "tip": "Pour accélérer les brouillons, pas pour écrire à ta place.",
+        "tipEn": "To speed up drafts, not to write for you.",
+        "reason": "Utile pour débloquer une structure de script ou des angles ; le ton final doit rester le tien, pas celui du modèle.",
+        "reasonEn": "Useful to unblock a script structure or angles; the final voice has to stay yours, not the model's."
       },
       {
         "role": "Rédaction longue",
