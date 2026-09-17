@@ -35,25 +35,31 @@ const EDITORIAL_SHELF = [
   { categoryId: "communication", label: "Communication", labelEn: "Communication" },
 ];
 
-/* Curated "new additions" — update this list as new tools are added to the catalogue */
+/* Curated "new additions" — update this list as new tools are added to the catalogue.
+   Deliberately skips mega-brand names (Claude, Cursor, DeepSeek, Notion, Salesforce...)
+   already shown elsewhere on the site — this shelf is the discovery surface. */
 const NEW_SLUGS = [
-  "cursor","arc-browser","claude","deepseek","notion","airtable","figma-tokens","beehiiv",
-  "intercom","lemlist","waalaxy","qonto","toggl","honeybook","wrike","salesforce",
-  "amplitude","activecampaign","apollo-io","looka","pika-labs","frame-io","phantombuster","brand24",
+  "arc-browser","figma-tokens","beehiiv","intercom","lemlist","waalaxy","qonto","toggl",
+  "honeybook","wrike","amplitude","activecampaign","apollo-io","looka","pika-labs","frame-io",
+  "phantombuster","brand24","cossistant","vanta","grokipedia","pagefly","tezza","comfyui-workflows",
 ];
 
-/* Curated AI tools — single-row carousel (4 per page) */
+/* Curated AI tools — single-row carousel (4 per page). Deliberately skips the
+   household names (ChatGPT, Claude, Cursor, Gemini, GitHub Copilot...) in favor
+   of specialized picks a freelancer/small team is less likely to already know. */
 const AI_SLUGS = [
-  "claude","cursor","deepseek","descript","elevenlabs","gemini","github-copilot",
-  "heygen","jasper","lovable","notion-ai","replit","stable-diffusion","suno","grok","windsurf",
+  "move-ai","autodesk-flow-studio","cleanvoice","krea-ai","magnific-ai","topaz-photo-ai",
+  "topaz-gigapixel","topaz-video-ai","podcastle","taplio","vmake","glyphe",
+  "elevenlabs","heygen","suno","stable-diffusion",
 ];
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
 const LARGE_SHELF_PAGE_SIZE = 8; // 2 rows × 4 cols — major thematic shelves
 const LARGE_SHELF_MAX_PAGES = 3;
 const FREE_TOOL_SLUGS = [
-  "figma", "notion", "canva", "chatgpt", "claude", "perplexity", "trello", "slack",
-  "blender", "audacity", "obs-studio", "davinci-resolve", "n8n", "airtable", "miro", "loom",
-  "calendly", "tally", "brevo", "mailchimp", "github", "visual-studio-code", "gimp", "inkscape",
+  "blender", "audacity", "obs", "davinci-resolve", "n8n", "airtable", "miro", "loom",
+  "calendly", "tally", "brevo", "mailchimp", "photopea", "krita",
+  "cloudflare", "postman", "reaper", "touchdesigner", "twinmotion", "unity",
+  "capcut-ai", "storybook", "warp", "qgis",
 ];
 
 const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> = {
