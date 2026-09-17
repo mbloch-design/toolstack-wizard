@@ -35,6 +35,17 @@ const EDITORIAL_SHELF = [
   { categoryId: "communication", label: "Communication", labelEn: "Communication" },
 ];
 
+/* Tools whose ogImageUrl is confirmed dead (404, DNS failure, timeout, or
+   simply absent) via a real HTTP/Image() check, found while auditing the
+   dynamic shelves below (Featured = prescription_quality "ferme", the
+   "Works with" ecosystem picker). Every dynamic homepage shelf must filter
+   through this so a tool with a broken visual never surfaces here — re-run
+   the check before removing an entry, don't just trust the field is fixed. */
+const HOMEPAGE_IMAGE_BLOCKLIST = new Set([
+  "fathom-analytics", "guideless", "gumloop", "hugeicons", "voicetypr", "youform",
+  "figma-weave", "ae-gifgun", "google-meet", "premiere-rush",
+]);
+
 /* Curated "new additions" — update this list as new tools are added to the catalogue.
    Deliberately skips mega-brand names (Claude, Cursor, DeepSeek, Notion, Salesforce...)
    already shown elsewhere on the site — this shelf is the discovery surface. */
@@ -408,7 +419,7 @@ export default function HomePageV2() {
      the "ToolTrim Pick" badge on tool cards elsewhere), not a hand-picked
      slug list that drifts out of sync with the catalog. ── */
   const featured = useMemo(
-    () => tools.filter((t) => t.prescription_quality === "ferme"),
+    () => tools.filter((t) => t.prescription_quality === "ferme" && !HOMEPAGE_IMAGE_BLOCKLIST.has(t.slug)),
     [tools],
   );
 
@@ -470,7 +481,7 @@ export default function HomePageV2() {
   const prevFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.max(0, page - 1)), []);
   const nextFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.min(freeToolsTotalPages - 1, page + 1)), [freeToolsTotalPages]);
 
-  const automationTools = useMemo(() => rankShelfTools(tools.filter((tool) => tool.categoryId === "automation"))
+  const automationTools = useMemo(() => rankShelfTools(tools.filter((tool) => tool.categoryId === "automation" && !HOMEPAGE_IMAGE_BLOCKLIST.has(tool.slug)))
     .slice(0, LARGE_SHELF_PAGE_SIZE * LARGE_SHELF_MAX_PAGES), [rankShelfTools, tools]);
   const automationTotalPages = Math.max(1, Math.ceil(automationTools.length / LARGE_SHELF_PAGE_SIZE));
   const visibleAutomationTools = automationTools.slice(automationPage * LARGE_SHELF_PAGE_SIZE, (automationPage + 1) * LARGE_SHELF_PAGE_SIZE);
@@ -497,7 +508,7 @@ export default function HomePageV2() {
     const map = new Map<string, typeof tools>();
     for (const tool of tools) {
       const key = tool.categoryId;
-      if (!key) continue;
+      if (!key || HOMEPAGE_IMAGE_BLOCKLIST.has(tool.slug)) continue;
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(tool);
     }
@@ -530,9 +541,10 @@ export default function HomePageV2() {
 
   const allCompatibleTools = useMemo(
     () => tools.filter((tool) =>
-      (tool.worksWith || []).includes(selectedHost)
-      || tool.host_app === selectedHost
-      || tool.bundle_parent === selectedHost
+      !HOMEPAGE_IMAGE_BLOCKLIST.has(tool.slug)
+      && ((tool.worksWith || []).includes(selectedHost)
+        || tool.host_app === selectedHost
+        || tool.bundle_parent === selectedHost)
     ),
     [selectedHost, tools],
   );
