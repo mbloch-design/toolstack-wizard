@@ -24,6 +24,7 @@
     "slug": "17hats",
     "url_fr": "https://tooltrim.com/fr/tool/17hats",
     "url_en": "https://tooltrim.com/en/tool/17hats",
+    "website": "https://17hats.com",
     "category": "organization",
     "monthly_price_eur": 60,
     "pricing": {
@@ -131,6 +132,7 @@
     "slug": "activepieces",
     "url_fr": "https://tooltrim.com/fr/tool/activepieces",
     "url_en": "https://tooltrim.com/en/tool/activepieces",
+    "website": "https://activepieces.com",
     "category": "automation",
     "monthly_price_eur": 0,
     "pricing": {
@@ -988,6 +990,7 @@
     "slug": "arc-browser",
     "url_fr": "https://tooltrim.com/fr/tool/arc-browser",
     "url_en": "https://tooltrim.com/en/tool/arc-browser",
+    "website": "https://arc.net",
     "category": "productivity-tracking",
     "monthly_price_eur": 0,
     "pricing": {
@@ -1632,6 +1635,7 @@
     "slug": "beehiiv-analytics",
     "url_fr": "https://tooltrim.com/fr/tool/beehiiv-analytics",
     "url_en": "https://tooltrim.com/en/tool/beehiiv-analytics",
+    "website": "https://www.beehiiv.com",
     "category": "analytics",
     "monthly_price_eur": 0,
     "pricing": {
@@ -1646,6 +1650,7 @@
     "slug": "better-proposals",
     "url_fr": "https://tooltrim.com/fr/tool/better-proposals",
     "url_en": "https://tooltrim.com/en/tool/better-proposals",
+    "website": "https://betterproposals.io",
     "category": "organization",
     "monthly_price_eur": 19,
     "pricing": {
@@ -1758,6 +1763,7 @@
     "slug": "bloom-crm",
     "url_fr": "https://tooltrim.com/fr/tool/bloom-crm",
     "url_en": "https://tooltrim.com/en/tool/bloom-crm",
+    "website": "https://bloom.io",
     "category": "crm",
     "monthly_price_eur": 14,
     "pricing": {
@@ -3030,6 +3036,7 @@
     "slug": "coda",
     "url_fr": "https://tooltrim.com/fr/tool/coda",
     "url_en": "https://tooltrim.com/en/tool/coda",
+    "website": "https://coda.io",
     "category": "project-management",
     "monthly_price_eur": 10,
     "pricing": {
@@ -3205,6 +3212,7 @@
     "slug": "convertkit-analytics",
     "url_fr": "https://tooltrim.com/fr/tool/convertkit-analytics",
     "url_en": "https://tooltrim.com/en/tool/convertkit-analytics",
+    "website": "https://kit.com",
     "category": "analytics",
     "monthly_price_eur": 0,
     "pricing": {
@@ -3995,6 +4003,7 @@
     "slug": "doppler",
     "url_fr": "https://tooltrim.com/fr/tool/doppler",
     "url_en": "https://tooltrim.com/en/tool/doppler",
+    "website": "https://doppler.com",
     "category": "security",
     "monthly_price_eur": 0,
     "pricing": {
@@ -4027,6 +4036,7 @@
     "slug": "dotenv-vault",
     "url_fr": "https://tooltrim.com/fr/tool/dotenv-vault",
     "url_en": "https://tooltrim.com/en/tool/dotenv-vault",
+    "website": "https://www.dotenv.org",
     "category": "security",
     "monthly_price_eur": 0,
     "pricing": {
@@ -4725,6 +4735,7 @@
     "slug": "fig-terminal",
     "url_fr": "https://tooltrim.com/fr/tool/fig-terminal",
     "url_en": "https://tooltrim.com/en/tool/fig-terminal",
+    "website": "https://fig.io",
     "category": "productivity-tracking",
     "monthly_price_eur": 0,
     "pricing": {
@@ -6390,6 +6401,7 @@
     "slug": "vault",
     "url_fr": "https://tooltrim.com/fr/tool/vault",
     "url_en": "https://tooltrim.com/en/tool/vault",
+    "website": "https://hashicorp.com",
     "category": "security",
     "monthly_price_eur": 0,
     "pricing": {
@@ -6479,6 +6491,7 @@
     "slug": "heptabase",
     "url_fr": "https://tooltrim.com/fr/tool/heptabase",
     "url_en": "https://tooltrim.com/en/tool/heptabase",
+    "website": "https://heptabase.com",
     "category": "organization",
     "monthly_price_eur": 8.99,
     "pricing": {
@@ -6894,6 +6907,7 @@
     "slug": "infisical",
     "url_fr": "https://tooltrim.com/fr/tool/infisical",
     "url_en": "https://tooltrim.com/en/tool/infisical",
+    "website": "https://infisical.com",
     "category": "security",
     "monthly_price_eur": 0,
     "pricing": {
@@ -7022,6 +7036,7 @@
     "slug": "integrately",
     "url_fr": "https://tooltrim.com/fr/tool/integrately",
     "url_en": "https://tooltrim.com/en/tool/integrately",
+    "website": "https://integrately.com",
     "category": "automation",
     "monthly_price_eur": 20,
     "pricing": {
@@ -7655,6 +7670,7 @@
     "slug": "la-growth-machine",
     "url_fr": "https://tooltrim.com/fr/tool/la-growth-machine",
     "url_en": "https://tooltrim.com/en/tool/la-growth-machine",
+    "website": "https://www.lagrowthmachine.com",
     "category": "automation",
     "monthly_price_eur": 60,
     "pricing": {
@@ -7897,6 +7913,7 @@
     "slug": "legalstart",
     "url_fr": "https://tooltrim.com/fr/tool/legalstart",
     "url_en": "https://tooltrim.com/en/tool/legalstart",
+    "website": "https://www.legalstart.fr",
     "category": "legal-contracts",
     "monthly_price_eur": 15,
     "pricing": {
@@ -8399,6 +8416,7 @@
     "slug": "loopio",
     "url_fr": "https://tooltrim.com/fr/tool/loopio",
     "url_en": "https://tooltrim.com/en/tool/loopio",
+    "website": "https://loopio.com",
     "category": "organization",
     "monthly_price_eur": 1667,
     "pricing": {
@@ -9374,6 +9392,7 @@
     "slug": "microsoft-project",
     "url_fr": "https://tooltrim.com/fr/tool/microsoft-project",
     "url_en": "https://tooltrim.com/en/tool/microsoft-project",
+    "website": "https://www.microsoft.com/en-us/microsoft-365/project/project-management-software",
     "category": "project-management",
     "monthly_price_eur": 25,
     "pricing": {
@@ -10090,6 +10109,7 @@
     "slug": "notionlytics",
     "url_fr": "https://tooltrim.com/fr/tool/notionlytics",
     "url_en": "https://tooltrim.com/en/tool/notionlytics",
+    "website": "https://notionlytics.com",
     "category": "analytics",
     "monthly_price_eur": 5,
     "pricing": {
@@ -10134,6 +10154,7 @@
     "slug": "nusii",
     "url_fr": "https://tooltrim.com/fr/tool/nusii",
     "url_en": "https://tooltrim.com/en/tool/nusii",
+    "website": "https://nusii.com",
     "category": "organization",
     "monthly_price_eur": 29,
     "pricing": {
@@ -10613,6 +10634,7 @@
     "slug": "pabbly-connect",
     "url_fr": "https://tooltrim.com/fr/tool/pabbly-connect",
     "url_en": "https://tooltrim.com/en/tool/pabbly-connect",
+    "website": "https://www.pabbly.com/connect",
     "category": "automation",
     "monthly_price_eur": 16,
     "pricing": {
@@ -10828,6 +10850,7 @@
     "slug": "payhawk",
     "url_fr": "https://tooltrim.com/fr/tool/payhawk",
     "url_en": "https://tooltrim.com/en/tool/payhawk",
+    "website": "https://payhawk.com",
     "category": "finance",
     "monthly_price_eur": 12,
     "pricing": {
@@ -11039,6 +11062,7 @@
     "slug": "phantombuster",
     "url_fr": "https://tooltrim.com/fr/tool/phantombuster",
     "url_en": "https://tooltrim.com/en/tool/phantombuster",
+    "website": "https://phantombuster.com",
     "category": "automation",
     "monthly_price_eur": 56,
     "pricing": {
@@ -11903,6 +11927,7 @@
     "slug": "proposify",
     "url_fr": "https://tooltrim.com/fr/tool/proposify",
     "url_en": "https://tooltrim.com/en/tool/proposify",
+    "website": "https://proposify.com",
     "category": "organization",
     "monthly_price_eur": 29,
     "pricing": {
@@ -12416,6 +12441,7 @@
     "slug": "readymag",
     "url_fr": "https://tooltrim.com/fr/tool/readymag",
     "url_en": "https://tooltrim.com/en/tool/readymag",
+    "website": "https://readymag.com",
     "category": "nocode-web",
     "monthly_price_eur": 16,
     "pricing": {
@@ -12601,6 +12627,7 @@
     "slug": "reflect-notes",
     "url_fr": "https://tooltrim.com/fr/tool/reflect-notes",
     "url_en": "https://tooltrim.com/en/tool/reflect-notes",
+    "website": "https://reflect.app",
     "category": "organization",
     "monthly_price_eur": 8.33,
     "pricing": {
@@ -13065,6 +13092,7 @@
     "slug": "roam-research",
     "url_fr": "https://tooltrim.com/fr/tool/roam-research",
     "url_en": "https://tooltrim.com/en/tool/roam-research",
+    "website": "https://roamresearch.com",
     "category": "organization",
     "monthly_price_eur": 13.75,
     "pricing": {
@@ -13184,6 +13212,7 @@
     "slug": "rydoo",
     "url_fr": "https://tooltrim.com/fr/tool/rydoo",
     "url_en": "https://tooltrim.com/en/tool/rydoo",
+    "website": "https://www.rydoo.com",
     "category": "finance",
     "monthly_price_eur": 8,
     "pricing": {
@@ -13784,6 +13813,7 @@
     "slug": "shield-app",
     "url_fr": "https://tooltrim.com/fr/tool/shield-app",
     "url_en": "https://tooltrim.com/en/tool/shield-app",
+    "website": "https://www.shieldapp.ai",
     "category": "analytics",
     "monthly_price_eur": 8,
     "pricing": {
@@ -13939,6 +13969,7 @@
     "slug": "signrequest",
     "url_fr": "https://tooltrim.com/fr/tool/signrequest",
     "url_en": "https://tooltrim.com/en/tool/signrequest",
+    "website": "https://signrequest.com",
     "category": "legal-contracts",
     "monthly_price_eur": 7,
     "pricing": {
@@ -13953,6 +13984,7 @@
     "slug": "silae",
     "url_fr": "https://tooltrim.com/fr/tool/silae",
     "url_en": "https://tooltrim.com/en/tool/silae",
+    "website": "https://www.silae.fr",
     "category": "finance",
     "monthly_price_eur": 35,
     "pricing": {
@@ -14078,6 +14110,7 @@
     "slug": "skribble",
     "url_fr": "https://tooltrim.com/fr/tool/skribble",
     "url_en": "https://tooltrim.com/en/tool/skribble",
+    "website": "https://skribble.com",
     "category": "legal-contracts",
     "monthly_price_eur": 12,
     "pricing": {
@@ -14289,6 +14322,7 @@
     "slug": "soldo",
     "url_fr": "https://tooltrim.com/fr/tool/soldo",
     "url_en": "https://tooltrim.com/en/tool/soldo",
+    "website": "https://www.soldo.com",
     "category": "finance",
     "monthly_price_eur": 6,
     "pricing": {
@@ -14817,6 +14851,7 @@
     "slug": "suitedash",
     "url_fr": "https://tooltrim.com/fr/tool/suitedash",
     "url_en": "https://tooltrim.com/en/tool/suitedash",
+    "website": "https://suitedash.com",
     "category": "organization",
     "monthly_price_eur": 19,
     "pricing": {
@@ -16615,6 +16650,7 @@
     "slug": "waalaxy",
     "url_fr": "https://tooltrim.com/fr/tool/waalaxy",
     "url_en": "https://tooltrim.com/en/tool/waalaxy",
+    "website": "https://www.waalaxy.com",
     "category": "automation",
     "monthly_price_eur": 40,
     "pricing": {
@@ -16644,6 +16680,7 @@
     "slug": "warp",
     "url_fr": "https://tooltrim.com/fr/tool/warp",
     "url_en": "https://tooltrim.com/en/tool/warp",
+    "website": "https://www.warp.dev",
     "category": "productivity-tracking",
     "monthly_price_eur": 0,
     "pricing": {
@@ -16910,6 +16947,7 @@
     "slug": "wolters-kluwer",
     "url_fr": "https://tooltrim.com/fr/tool/wolters-kluwer",
     "url_en": "https://tooltrim.com/en/tool/wolters-kluwer",
+    "website": "https://www.wolterskluwer.com",
     "category": "legal-contracts",
     "monthly_price_eur": 49,
     "pricing": {
@@ -16996,6 +17034,7 @@
     "slug": "workday",
     "url_fr": "https://tooltrim.com/fr/tool/workday",
     "url_en": "https://tooltrim.com/en/tool/workday",
+    "website": "https://www.workday.com",
     "category": "finance",
     "monthly_price_eur": 99,
     "pricing": {
