@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1176
+# Records: 1177
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17571,6 +17571,21 @@
     },
     "description_fr": "Planning d'équipe et badgeuse mobile géolocalisée pour les TPE à horaires variables, avec préparation automatique de la paie.",
     "description_en": "Team scheduling and geolocated mobile time-clocking for small businesses with variable hours, with automatic payroll prep."
+  },
+  {
+    "name": "Maniana",
+    "slug": "maniana",
+    "url_fr": "https://tooltrim.com/fr/tool/maniana",
+    "url_en": "https://tooltrim.com/en/tool/maniana",
+    "website": "https://maniana.ai/",
+    "category": "creation",
+    "monthly_price_eur": 17.17,
+    "pricing": {
+      "free": "Plan Free permanent : 0 $, fonctions de base de génération et de collaboration",
+      "paid": "Starter 20 $/mois, Builder 50 $/mois, Manianaer 200 $/mois"
+    },
+    "description_fr": "Générateur d'applications par description texte, avec une suite d'outils IA (support, planning, marketing) pour faire tourner l'app une fois publiée.",
+    "description_en": "Text-to-app builder with an AI operations suite (support, planning, marketing) to run the app once shipped."
   },
   {
     "name": "Happia",

@@ -37040,6 +37040,38 @@
     ]
   },
   {
+    "id": "maniana",
+    "slug": "maniana",
+    "name": "Maniana",
+    "categoryId": "creation",
+    "shortDescription": "Générateur d'applications par description texte, avec une suite d'outils IA (support, planning, marketing) pour faire tourner l'app une fois publiée.",
+    "shortDescriptionEn": "Text-to-app builder with an AI operations suite (support, planning, marketing) to run the app once shipped.",
+    "pricing": {
+      "free": "Plan Free permanent : 0 $, fonctions de base de génération et de collaboration",
+      "paid": "Starter 20 $/mois, Builder 50 $/mois, Manianaer 200 $/mois"
+    },
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
+    "affiliateLink": "https://tidd.ly/46ti79o",
+    "websiteUrl": "https://maniana.ai/",
+    "ogImageUrl": "https://maniana.ai/showcase/team-dashboard.png",
+    "logo": "https://logo.clearbit.com/maniana.ai",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "ai-app-builder",
+    "functional_needs": [
+      "no-code"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "developpeur"
+    ],
+    "relevantFor": [
+      "Créateurs de contenu",
+      "Startup solo",
+      "Petites équipes produit"
+    ]
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

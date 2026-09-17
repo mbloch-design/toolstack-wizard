@@ -172195,6 +172195,262 @@
     }
   },
   {
+    "id": "maniana",
+    "slug": "maniana",
+    "name": "Maniana",
+    "category": "creation",
+    "shortDescription": "Générateur d'applications par description texte, avec une suite d'outils IA (support, planning, marketing) pour faire tourner l'app une fois publiée.",
+    "shortDescriptionEn": "Text-to-app builder with an AI operations suite (support, planning, marketing) to run the app once shipped.",
+    "description": "Maniana génère une application ou un site à partir d'une description en langage naturel, avec un aperçu qui se construit en direct et un mode conversationnel pour ajuster l'écran, le style ou les données. Des « verticales » prêtes à l'emploi (funnel, onboarding, email marketing) accélèrent le départ sur des cas d'usage courants.\n\nAu-delà de la génération, chaque app publiée est accompagnée d'un « Virtual Office » : une messagerie entrante avec tri IA (Frontdesk), un support voix/email/tickets, une planification en tableau/liste/calendrier et un module marketing, tous connectés au même modèle et aux mêmes données client.\n\nQuatre paliers actifs et achetables dès aujourd'hui : Free (0 $), Starter (20 $/mois, 100 messages et 5 applications verticales), Builder (50 $/mois, 250 messages et 15 applications), Manianaer (200 $/mois, usage illimité). Aucune structure légale (société, adresse) n'est précisée dans la politique de confidentialité ou les CGU ; l'export et la suppression de données se font sur demande par email, pas en libre-service.",
+    "longDescription": "Maniana génère une application ou un site à partir d'une description en langage naturel, avec un aperçu qui se construit en direct et un mode conversationnel pour ajuster l'écran, le style ou les données. Des « verticales » prêtes à l'emploi (funnel, onboarding, email marketing) accélèrent le départ sur des cas d'usage courants.\n\nAu-delà de la génération, chaque app publiée est accompagnée d'un « Virtual Office » : une messagerie entrante avec tri IA (Frontdesk), un support voix/email/tickets, une planification en tableau/liste/calendrier et un module marketing, tous connectés au même modèle et aux mêmes données client.\n\nQuatre paliers actifs et achetables dès aujourd'hui : Free (0 $), Starter (20 $/mois, 100 messages et 5 applications verticales), Builder (50 $/mois, 250 messages et 15 applications), Manianaer (200 $/mois, usage illimité). Aucune structure légale (société, adresse) n'est précisée dans la politique de confidentialité ou les CGU ; l'export et la suppression de données se font sur demande par email, pas en libre-service.",
+    "longDescriptionEn": "Maniana generates an application or site from a natural-language description, with a live-building preview and a conversational mode to adjust a screen, the style or the data. Ready-made \"verticals\" (funnel, onboarding, email marketing) speed up common use cases.\n\nBeyond generation, every published app ships with a \"Virtual Office\": an inbound mailbox with AI triage (Frontdesk), voice/email/ticket support, board/list/calendar planning, and a marketing module, all connected to the same model and the same customer data.\n\nFour active, purchasable tiers today: Free ($0), Starter ($20/month, 100 messages and 5 vertical apps), Builder ($50/month, 250 messages and 15 apps), Manianaer ($200/month, unlimited usage). No legal entity (company, address) is disclosed in the privacy policy or terms; data export and deletion are handled on request by email, not self-service.",
+    "pricing": {
+      "free": "Plan Free permanent : 0 $, fonctions de base de génération et de collaboration",
+      "paid": "Starter 20 $/mois, Builder 50 $/mois, Manianaer 200 $/mois"
+    },
+    "pricingEn": {
+      "free": "Permanent Free plan: $0, core generation and collaboration features",
+      "paid": "Starter $20/month, Builder $50/month, Manianaer $200/month"
+    },
+    "defaultMonthlyPrice": 17.17,
+    "pricing_v5": {
+      "cautions": [
+        "Prix officiels en dollars.",
+        "Aucune structure légale (société, adresse) n'est précisée sur le site.",
+        "Export et suppression de données sur demande par email, pas en libre-service dans l'interface."
+      ],
+      "cautionsEn": [
+        "Official prices are in US dollars.",
+        "No legal entity (company, address) is disclosed on the site.",
+        "Data export and deletion are handled on request by email, not self-service in the app."
+      ],
+      "verified_on": "2026-09-16",
+      "source_domain": "maniana.ai",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://maniana.ai/#pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17.17,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Génération et collaboration de base, historique de versions.",
+          "featureHighlights": [
+            "Espaces de travail collaboratifs",
+            "Historique de versions restaurable",
+            "Mises en page export-ready"
+          ],
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": false
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "100 messages/mois, jusqu'à 5 applications verticales.",
+          "featureHighlights": [
+            "100 messages et 15k crédits d'exécution par mois",
+            "5 applications verticales, 3 000 sessions utilisateur",
+            "Nombre d'apps illimité, backend complet"
+          ],
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "builder",
+          "displayName": "Builder",
+          "summary": "250 messages/mois, jusqu'à 15 applications verticales, domaines personnalisés.",
+          "featureHighlights": [
+            "250 messages et 37,5k crédits d'exécution par mois",
+            "15 applications verticales, 10 000 sessions utilisateur",
+            "Domaines personnalisés"
+          ],
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly"
+        },
+        {
+          "planKey": "manianaer",
+          "displayName": "Manianaer",
+          "summary": "Usage illimité (messages, apps, sessions) et support prioritaire.",
+          "featureHighlights": [
+            "1 200 messages et 180k crédits d'exécution par mois",
+            "Applications verticales et sessions illimitées",
+            "Support prioritaire"
+          ],
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 200,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly"
+        }
+      ]
+    },
+    "websiteUrl": "https://maniana.ai/",
+    "affiliateLink": "https://tidd.ly/46ti79o",
+    "logo": "https://logo.clearbit.com/maniana.ai",
+    "verdict": {
+      "keepIf": [
+        "Vous voulez générer une application ou un site à partir d'une description en langage naturel, sans écrire de code.",
+        "Vous cherchez à regrouper la génération d'app et les outils d'exploitation courants (support, planning, marketing) dans un seul abonnement.",
+        "Un des paliers payants (20 à 200 $/mois selon le volume) reste proportionné à votre usage réel."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'exporter le code source complet de l'application, pas seulement des mises en page.",
+        "L'absence de structure légale précisée sur le site est un frein pour votre organisation.",
+        "Vous préférez un outil déjà éprouvé avec un historique d'avis publics indépendants."
+      ],
+      "threshold": "Choisissez Maniana si le besoin est de générer une app par description texte et de la faire tourner avec une suite d'outils d'exploitation IA déjà connectée, plutôt que d'assembler plusieurs outils séparés. Testez le plan Free sur un vrai projet avant de passer sur un palier payant."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to generate an app or site from a natural-language description, with no code to write.",
+        "You want to bundle app generation with everyday operations tools (support, planning, marketing) in one subscription.",
+        "One of the paid tiers ($20 to $200/month depending on volume) stays proportionate to your real usage."
+      ],
+      "avoidIf": [
+        "You need to export the app's full source code, not just layouts.",
+        "The lack of a disclosed legal entity on the site is a blocker for your organization.",
+        "You prefer an already-proven tool with a track record of independent public reviews."
+      ],
+      "threshold": "Choose Maniana if the need is generating an app from a text description and running it with an already-connected AI operations suite, rather than assembling several separate tools. Test the Free plan on a real project before moving to a paid tier."
+    },
+    "pros": [
+      "Génération d'app par description texte avec aperçu construit en direct.",
+      "Suite d'exploitation IA incluse (support, planning, marketing) connectée aux mêmes données.",
+      "Verticales prêtes à l'emploi pour démarrer plus vite sur des cas courants.",
+      "Plan gratuit permanent réel pour tester avant de payer.",
+      "Droits d'export et de suppression de données confirmés, même s'ils passent par une demande manuelle."
+    ],
+    "prosEn": [
+      "Text-to-app generation with a live-building preview.",
+      "Included AI operations suite (support, planning, marketing) connected to the same data.",
+      "Ready-made verticals to get started faster on common use cases.",
+      "Genuine permanent free plan to test before paying.",
+      "Data export and deletion rights confirmed, even if handled through a manual request."
+    ],
+    "cons": [
+      "Aucune structure légale ou adresse d'éditeur communiquée sur le site.",
+      "Aucun avis public indépendant trouvé (Trustpilot, Product Hunt, G2).",
+      "Export du code source de l'app non confirmé, seulement des « mises en page export-ready ».",
+      "Combine beaucoup de fonctions (génération, support, planning, marketing) pour un produit encore jeune."
+    ],
+    "consEn": [
+      "No legal entity or publisher address disclosed on the site.",
+      "No independent public review found (Trustpilot, Product Hunt, G2).",
+      "Full app source-code export not confirmed, only \"export-ready layouts\".",
+      "Combines a lot of functions (generation, support, planning, marketing) for a still-young product."
+    ],
+    "useCases": [
+      "Générer une première version d'une app ou d'un site à partir d'une description texte.",
+      "Lancer une app de funnel ou d'onboarding à partir d'une verticale prête à l'emploi.",
+      "Centraliser le support voix/email/tickets d'une app publiée sur Maniana.",
+      "Piloter le planning d'équipe (tableau, liste, calendrier) connecté aux mêmes données produit."
+    ],
+    "useCasesEn": [
+      "Generate a first version of an app or site from a text description.",
+      "Launch a funnel or onboarding app from a ready-made vertical.",
+      "Centralize voice/email/ticket support for an app published on Maniana.",
+      "Run team planning (board, list, calendar) connected to the same product data."
+    ],
+    "covers": [
+      "no-code"
+    ],
+    "functional_needs": [
+      "no-code"
+    ],
+    "relevantFor": [
+      "Créateurs de contenu",
+      "Startup solo",
+      "Petites équipes produit"
+    ],
+    "alternatives": [
+      "lovable",
+      "base44"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour générer une app par description texte et la faire tourner avec une suite d'outils IA déjà connectée.",
+      "idealForEn": "Ideal for generating an app from a text description and running it with an already-connected AI operations suite.",
+      "metaDescription": "Maniana : avis, tarifs Free à Manianaer, génération d'application par IA, suite d'exploitation et alternatives à Lovable et Base44."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "createur-contenu",
+      "developpeur"
+    ],
+    "ia_use_case": "ui-generation",
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 4,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "generation_volume_requirement",
+      "operations_suite_requirement"
+    ],
+    "substitution_cluster_v2": "ai-app-builder",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://maniana.ai/showcase/team-dashboard.png",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Combine la génération d'application par texte et une suite d'exploitation (support, planning, marketing) déjà connectée aux mêmes données, avec un vrai plan gratuit pour tester avant de payer 20 à 200 $/mois selon le volume (source : maniana.ai/#pricing, vérifié le 2026-09-16).",
+        "simplicite": "L'interface conversationnelle et l'aperçu en direct abaissent la barrière d'entrée d'après la démonstration du site, mais aucun avis public indépendant (Trustpilot, Product Hunt, G2) n'a été trouvé pour confirmer la fiabilité réelle de la génération (source : maniana.ai, vérifié le 2026-09-16).",
+        "utilisation": "L'usage dépasse la seule génération : Frontdesk, support, planning et marketing sont utilisables au quotidien une fois l'app publiée, un périmètre large pour une petite équipe ou un solo (source : maniana.ai, vérifié le 2026-09-16).",
+        "puissance": "La combinaison génération + verticales + suite d'exploitation à 5 modules est ambitieuse, mais reste un produit jeune sans capacité de génération vérifiée indépendamment ni export de code source confirmé, seulement des « mises en page export-ready » (source : maniana.ai/#pricing, vérifié le 2026-09-16).",
+        "reversibilite": "L'export et la suppression des données sont confirmés dans la politique de confidentialité, mais passent par une demande manuelle par email plutôt qu'un outil en libre-service, et aucune structure légale n'est communiquée pour identifier l'éditeur (source : app.maniana.ai/privacy, vérifié le 2026-09-16)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Combines text-to-app generation with an operations suite (support, planning, marketing) already connected to the same data, with a genuine free plan to test before paying $20 to $200/month depending on volume (source: maniana.ai/#pricing, verified 2026-09-16).",
+        "simplicite": "The conversational interface and live preview lower the entry barrier per the site's own demo, but no independent public review (Trustpilot, Product Hunt, G2) was found to confirm the real reliability of the generation (source: maniana.ai, verified 2026-09-16).",
+        "utilisation": "Usage extends beyond generation alone: Frontdesk, support, planning and marketing are usable day-to-day once the app is published, a broad scope for a small team or solo founder (source: maniana.ai, verified 2026-09-16).",
+        "puissance": "The combination of generation, verticals and a 5-module operations suite is ambitious, but remains a young product with no independently verified generation quality nor confirmed source-code export, only \"export-ready layouts\" (source: maniana.ai/#pricing, verified 2026-09-16).",
+        "reversibilite": "Data export and deletion are confirmed in the privacy policy, but go through a manual email request rather than a self-service tool, and no legal entity is disclosed to identify the publisher (source: app.maniana.ai/privacy, verified 2026-09-16)."
+      },
+      "lastActivityVerifiedOn": "2026-09-16",
+      "notedOn": "2026-09-16"
+    }
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",
