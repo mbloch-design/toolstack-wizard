@@ -1661,7 +1661,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         }
 
         // --- Prerender static section pages (/fr/tools, /fr/guides, etc.) ---
-        const SECTION_PAGES: { path: string; lang: string; title: string; description: string }[] = [
+        const SECTION_PAGES: { path: string; lang: string; title: string; description: string; noindex?: boolean; canonicalPath?: string }[] = [
           { path: "/fr/tools",      lang: "fr", title: "Tous les outils SaaS pour freelances | ToolTrim",         description: "Comparez 200+ outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité." },
           { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 200+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
           // No dedicated file existed for the bare index at all (only
@@ -1686,17 +1686,48 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           { path: "/en/transparency",lang:"en", title: "Transparency and methodology | ToolTrim",                 description: "How ToolTrim evaluates SaaS tools: selection criteria, update frequency and editorial independence policy." },
           { path: "/fr/explorer",   lang: "fr", title: "Explorer les outils SaaS par besoin | ToolTrim",          description: "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler." },
           { path: "/en/explorer",   lang: "en", title: "Explore SaaS tools by need | ToolTrim",                   description: "Browse ToolTrim's SaaS catalogue by objective, category or workflow, and build a stack that fits how you actually work." },
+          // legal-notice/terms/privacy-policy/ma-stack/my-stack had no entry
+          // here at all: the static HTML they shipped fell back to whatever
+          // canonical/hreflang baseHtml happened to carry (the homepage's),
+          // corrected only client-side after hydration. A crawler reading the
+          // raw HTML — like an SEO audit tool, or Google before it runs JS —
+          // saw every one of these pages claiming to be a duplicate of the
+          // homepage. Titles/descriptions match each page's own setSeoTags.
+          { path: "/fr/legal-notice", lang: "fr", title: "Mentions légales — ToolTrim", description: "Mentions légales du site ToolTrim.io" },
+          { path: "/en/legal-notice", lang: "en", title: "Legal Notice — ToolTrim", description: "Legal notice for ToolTrim.io" },
+          { path: "/fr/terms",        lang: "fr", title: "Conditions générales — ToolTrim", description: "Conditions générales d'utilisation du site ToolTrim.io" },
+          { path: "/en/terms",        lang: "en", title: "Terms of Service — ToolTrim", description: "Terms of service for ToolTrim.io" },
+          // Noindexed client-side (PrivacyPolicyPage calls setNoindex) — the
+          // static HTML needs the same directive, not just a fixed canonical.
+          { path: "/fr/privacy-policy", lang: "fr", title: "Politique de confidentialité — ToolTrim", description: "Comment ToolTrim collecte, utilise et protège vos données personnelles.", noindex: true },
+          { path: "/en/privacy-policy", lang: "en", title: "Privacy Policy — ToolTrim", description: "How ToolTrim collects, uses, and protects your personal data.", noindex: true },
+          { path: "/fr/ma-stack",    lang: "fr", title: "Ma stack — ToolTrim",  description: "Composez et suivez votre stack d'outils SaaS avec ToolTrim." },
+          { path: "/en/ma-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim." },
+          // /my-stack renders the exact same CartPage as /ma-stack (see
+          // App.tsx) — a real duplicate route, not a translation. Canonicalize
+          // to /ma-stack instead of giving it its own indexable identity.
+          { path: "/fr/my-stack",    lang: "fr", title: "Ma stack — ToolTrim",  description: "Composez et suivez votre stack d'outils SaaS avec ToolTrim.", canonicalPath: "/fr/ma-stack" },
+          { path: "/en/my-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim.", canonicalPath: "/en/ma-stack" },
         ];
 
         for (const sp of SECTION_PAGES) {
           const url = `${BASE}${sp.path}`;
           const altLang = sp.lang === "fr" ? "en" : "fr";
           const altPath = sp.path.replace(`/${sp.lang}/`, `/${altLang}/`);
+          // A page with canonicalPath (currently just /my-stack) is a literal
+          // duplicate of another route, not its own indexable entity: point
+          // the canonical there and drop the hreflang cluster (hreflang on a
+          // non-canonical page is a contradiction Google resolves in favor of
+          // the canonical anyway, so it's just noise here).
+          const canonicalUrl = sp.canonicalPath ? `${BASE}${sp.canonicalPath}` : url;
           const metaTags = [
-            `<link rel="canonical" href="${url}" />`,
-            `<link rel="alternate" hreflang="${sp.lang}" href="${url}" />`,
-            `<link rel="alternate" hreflang="${altLang}" href="${BASE}${altPath}" />`,
-            `<link rel="alternate" hreflang="x-default" href="${BASE}${sp.path.replace(`/${sp.lang}/`, "/en/")}" />`,
+            `<link rel="canonical" href="${canonicalUrl}" />`,
+            ...(sp.canonicalPath ? [] : [
+              `<link rel="alternate" hreflang="${sp.lang}" href="${url}" />`,
+              `<link rel="alternate" hreflang="${altLang}" href="${BASE}${altPath}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${BASE}${sp.path.replace(`/${sp.lang}/`, "/en/")}" />`,
+            ]),
+            ...(sp.noindex ? [`<meta name="robots" content="noindex, follow" />`] : []),
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:title" content="${sp.title.replace(/"/g, "&quot;")}" />`,
@@ -1709,6 +1740,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
           html = html.replace(/<title>[^<]*<\/title>/, "");
           html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+          // baseHtml's default is "index, follow" — remove it so sp.noindex's
+          // injected tag isn't a second, contradictory robots directive.
+          if (sp.noindex) html = html.replace(/<meta\s+name="robots"[^>]*\/?>/, "");
           html = html.replace("</head>", `    ${metaTags}\n  </head>`);
 
           // /tools and /stacks shipped a fully empty <div id="root"> — not
