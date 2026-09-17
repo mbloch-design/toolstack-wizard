@@ -43,7 +43,9 @@ const EDITORIAL_SHELF = [
    the check before removing an entry, don't just trust the field is fixed. */
 const HOMEPAGE_IMAGE_BLOCKLIST = new Set([
   "fathom-analytics", "guideless", "gumloop", "hugeicons", "voicetypr", "youform",
-  "figma-weave", "ae-gifgun", "google-meet", "premiere-rush",
+  "figma-weave", "ae-gifgun", "google-meet", "premiere-rush", "brandmark", "glide",
+  "move-ai", "autodesk-flow-studio", "cleanvoice", "meshy", "heygen",
+  "obs", "davinci-resolve", "touchdesigner",
 ]);
 
 /* Curated "new additions" — update this list as new tools are added to the catalogue.
@@ -61,17 +63,17 @@ const NEW_SLUGS = [
    Every slug's ogImageUrl was verified to return 200 with a real (non-favicon)
    image before landing here — swap with the same check, not just a good name. */
 const AI_SLUGS = [
-  "move-ai","autodesk-flow-studio","cleanvoice","krea-ai","meshy","topaz-photo-ai",
+  "runway","screen-studio","scribe","krea-ai","granola","topaz-photo-ai",
   "topaz-gigapixel","topaz-video-ai","podcastle","taplio","opus-clip","castmagic",
-  "flux-ai","heygen","suno","stable-diffusion",
+  "flux-ai","typeform","suno","stable-diffusion",
 ];
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
 const LARGE_SHELF_PAGE_SIZE = 8; // 2 rows × 4 cols — major thematic shelves
 const LARGE_SHELF_MAX_PAGES = 3;
 const FREE_TOOL_SLUGS = [
-  "blender", "obs", "davinci-resolve", "n8n", "airtable", "miro", "vidyard", "cal-com",
+  "blender", "radix-primitives", "uv", "n8n", "airtable", "miro", "vidyard", "cal-com",
   "tally", "brevo", "mailchimp", "photopea", "krita",
-  "cloudflare", "postman", "reaper", "touchdesigner", "twinmotion", "unity",
+  "cloudflare", "postman", "reaper", "zed", "twinmotion", "unity",
   "descript-ai", "storybook", "insomnia", "qgis", "excalidraw",
 ];
 
