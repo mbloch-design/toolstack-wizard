@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode, type TouchEvent } from "react";
-import { ArrowRight, ChevronDown, Code2, Layers3, MessagesSquare, WandSparkles } from "@/lib/icons";
+import { ArrowRight, Bot, ChevronDown, Code2, Layers3, MessagesSquare, WandSparkles } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -33,6 +33,7 @@ const EDITORIAL_SHELF = [
   { categoryId: "creation", label: "Création de contenu", labelEn: "Content Creation" },
   { categoryId: "nocode-web", label: "No-Code & Web", labelEn: "No-Code & Web" },
   { categoryId: "communication", label: "Communication", labelEn: "Communication" },
+  { categoryId: "ai-general", label: "IA Généraliste", labelEn: "AI & Generative Tools" },
 ];
 
 /* Tools whose ogImageUrl is confirmed dead (404, DNS failure, timeout, or
@@ -223,12 +224,11 @@ function StackCollectionVisual({
 }
 
 /* ── Generic section header ── */
-function SectionHead({ label, description, to, linkLabel }: { label: string; description?: string; to: string; linkLabel: string }) {
+function SectionHead({ label, to, linkLabel }: { label: string; to: string; linkLabel: string }) {
   return (
     <div className="v2-section-head">
       <div className="v2-section-heading-copy">
         <h2 className="v2-section-title">{label}</h2>
-        {description && <p className="v2-section-description">{description}</p>}
       </div>
       <Link to={to} className="tt-section-action v2-section-link">
         {linkLabel} <ArrowRight aria-hidden />
@@ -239,9 +239,9 @@ function SectionHead({ label, description, to, linkLabel }: { label: string; des
 
 /* ── Featured carousel header with arrows ── */
 function FeaturedHead({
-  label, description, to, linkLabel, page, total, onPrev, onNext, previousLabel, nextLabel,
+  label, to, linkLabel, page, total, onPrev, onNext, previousLabel, nextLabel,
 }: {
-  label: string; description?: string; to: string; linkLabel: string;
+  label: string; to: string; linkLabel: string;
   page: number; total: number; onPrev: () => void; onNext: () => void;
   previousLabel: string; nextLabel: string;
 }) {
@@ -249,7 +249,6 @@ function FeaturedHead({
     <div className="v2-section-head">
       <div className="v2-section-heading-copy">
         <h2 className="v2-section-title">{label}</h2>
-        {description && <p className="v2-section-description">{description}</p>}
       </div>
       <div className="v2-featured-nav">
         <CarouselControls
@@ -316,7 +315,9 @@ function EditorialShelfPanel({
     ? <WandSparkles aria-hidden />
     : visualVariant === 1
       ? <Code2 aria-hidden />
-      : <MessagesSquare aria-hidden />;
+      : visualVariant === 2
+        ? <MessagesSquare aria-hidden />
+        : <Bot aria-hidden />;
 
   return (
     <article className="v2-shelf-panel">
@@ -341,10 +342,10 @@ function EditorialShelfPanel({
       <div className="v2-shelf-list">
         {visibleTools.map((tool) => (
           <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-item">
-            <span className="v2-shelf-item-logo"><ToolLogo tool={withHomeAssets(tool)} size={42} /></span>
+            <span className="v2-shelf-item-logo"><ToolLogo tool={withHomeAssets(tool)} size={40} /></span>
             <span className="v2-shelf-item-copy">
               <strong>{tool.name}</strong>
-              <small>{shortTagline(tool.shortDescription, 52)}</small>
+              <small>{shortTagline(tool.shortDescription, 40)}</small>
             </span>
           </Link>
         ))}
@@ -577,7 +578,6 @@ export default function HomePageV2() {
             <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Outils en vedette", "Featured tools")}
-                description={t("Une sélection courte d'outils solides pour commencer.", "A short selection of strong tools to start with.") as string}
                 to={`${prefix}/tools`}
                 linkLabel={t("Voir tout", "See all")}
                 page={featuredPage}
@@ -622,7 +622,6 @@ export default function HomePageV2() {
             <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Outils IA", "AI Design Tools")}
-                description={t("Les assistants et modèles à comparer selon ton usage réel.", "Assistants and models to compare for your actual use.") as string}
                 to={`${prefix}/category/ia-generaliste`}
                 linkLabel={t("Voir tout", "See all")}
                 page={aiPage}
@@ -656,7 +655,6 @@ export default function HomePageV2() {
             <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Outils gratuits", "Free tools")}
-                description={t("Des logiciels réellement utilisables sans abonnement pour lancer ou alléger votre stack.", "Software you can genuinely use without a subscription to start or lighten your stack.") as string}
                 to={`${prefix}/tools`}
                 linkLabel={t("Tous les outils", "All tools")}
                 page={freeToolsPage}
@@ -692,7 +690,6 @@ export default function HomePageV2() {
             <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Nouveautés", "New Additions")}
-                description={t("Les ajouts récents au catalogue ToolTrim.", "Recent additions to the ToolTrim catalogue.") as string}
                 to={`${prefix}/tools`}
                 linkLabel={t("Voir tout", "See all")}
                 page={newPage}
@@ -713,7 +710,7 @@ export default function HomePageV2() {
                   return (
                     <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-new-card">
                       <div className="v2-new-logo">
-                        <ToolLogo tool={withHomeAssets(tool) as any} size={36} />
+                        <ToolLogo tool={withHomeAssets(tool) as any} size={40} />
                       </div>
                       <div className="v2-new-info">
                         <span className="v2-new-name">{tool.name}</span>
@@ -733,7 +730,6 @@ export default function HomePageV2() {
           <section className="v2-catalog-section v2-shelf-section">
             <SectionHead
               label={t("Explorer par univers", "Explore by category")}
-              description={t("Trois portes d’entrée pour trouver rapidement les bons outils.", "Three starting points to quickly find the right tools.") as string}
               to={`${prefix}/tools`}
               linkLabel={t("Tout le catalogue", "Full catalogue")}
             />
@@ -747,7 +743,7 @@ export default function HomePageV2() {
                     title={lang === "en" ? cat.labelEn : cat.label}
                     eyebrow={t("Univers", "Universe") as string}
                     visualVariant={categoryIndex}
-                    tools={categoryTools}
+                    tools={rankShelfTools(categoryTools)}
                     prefix={prefix}
                     categoryHref={`${prefix}/category/${categories.find((category) => category.id === cat.categoryId)?.slug || cat.categoryId}`}
                     seeAllLabel={t("Voir plus", "See more") as string}
@@ -795,9 +791,6 @@ export default function HomePageV2() {
                       </div>
                     </details>
                   </h2>
-                  <p className="v2-section-description">
-                    {t("Les extensions et services qui s’intègrent à votre outil de travail.", "Extensions and services that integrate with your work tool.")}
-                  </p>
                 </div>
                 <div className="v2-featured-nav">
                   <CarouselControls
@@ -839,7 +832,6 @@ export default function HomePageV2() {
             <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Automatiser son travail", "Automate your work")}
-                description={t("Connectez vos outils, éliminez les tâches répétitives et construisez des workflows plus fluides.", "Connect your tools, remove repetitive tasks and build smoother workflows.") as string}
                 to={`${prefix}/category/automatisation`}
                 linkLabel={t("Tous les outils d’automatisation", "All automation tools")}
                 page={automationPage}
@@ -874,7 +866,6 @@ export default function HomePageV2() {
           <section className="v2-catalog-section">
             <FeaturedHead
               label={t("Collections de stacks", "Curated stack collections")}
-              description={t("Des combinaisons éditoriales prêtes à explorer selon ton métier.", "Editorial combinations ready to explore for your role.") as string}
               to={`${prefix}/stacks`}
               linkLabel={t("Toutes les stacks", "All stacks")}
               page={stackPage}
@@ -910,7 +901,6 @@ export default function HomePageV2() {
             <section className="v2-catalog-section">
               <FeaturedHead
                 label={t("Articles du guide", "Guide articles")}
-                description={t("Des analyses pour décider sans empiler les outils.", "Analysis to help you decide without stacking tools.") as string}
                 to={`${prefix}/guides`}
                 linkLabel={t("Tous les guides", "All guides")}
                 page={postPage}
