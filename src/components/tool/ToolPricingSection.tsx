@@ -49,7 +49,16 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
     : tool.pricing;
   // Variante de prix dans la langue de la page (résumés/plans localisés) ; repli sûr sur pricing_v5.
   const pv5 = lang === "en" && tool.pricing_v5En ? tool.pricing_v5En : tool.pricing_v5;
-  const canonicalPlans = pv5?.plans || [];
+  // A tool can publish the same plan in more than one real currency (lemlist:
+  // $69 for a US account, 69 EUR for a euro-zone account — two genuine vendor
+  // prices, not a conversion). Both carry isComparePlan so price resolution
+  // can pick the right one per page language; showing both as separate cards
+  // here would just be confusing, so only the one matching the page currency
+  // survives — the other stays in data for the summary price elsewhere.
+  const allPlans = pv5?.plans || [];
+  const compareCandidates = allPlans.filter((p) => p.isComparePlan && !p.isFree);
+  const preferredCompare = compareCandidates.find((p) => p.nativeCurrency === currency) || compareCandidates[0];
+  const canonicalPlans = allPlans.filter((p) => !p.isComparePlan || p.isFree || p === preferredCompare);
   // Texte de carte gratuite qualifié (licence vs coût total) fourni par la projection canonique.
   const freeCard = (pv5 as { free_plan_card?: string } | undefined)?.free_plan_card || null;
   const hasFree = hasGenuineFreeTier(pricing?.free);

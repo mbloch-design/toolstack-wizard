@@ -7944,10 +7944,10 @@
     "url_en": "https://tooltrim.com/en/tool/lemlist",
     "website": "https://www.lemlist.com",
     "category": "email-productivity",
-    "monthly_price_eur": 39,
+    "monthly_price_eur": 69,
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics à partir d’environ 39 $/mois selon fonctionnalités."
+      "free": "Pas de plan gratuit, essai de 14 jours.",
+      "paid": "Trois plans : Email (69 €/mois, ou 55 €/mois facturé annuellement, utilisateurs illimités), Multichannel (109 €/mois, ou 87 €/mois facturé annuellement, par utilisateur), Enterprise sur devis."
     },
     "description_fr": "Séquences d’email outbound et prospection multicanale personnalisée.",
     "description_en": "Outbound email sequences and personalized multichannel prospecting."

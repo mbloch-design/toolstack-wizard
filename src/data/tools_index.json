@@ -16762,11 +16762,11 @@
     "shortDescription": "Séquences d’email outbound et prospection multicanale personnalisée.",
     "shortDescriptionEn": "Outbound email sequences and personalized multichannel prospecting.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics à partir d’environ 39 $/mois selon fonctionnalités."
+      "free": "Pas de plan gratuit, essai de 14 jours.",
+      "paid": "Trois plans : Email (69 €/mois, ou 55 €/mois facturé annuellement, utilisateurs illimités), Multichannel (109 €/mois, ou 87 €/mois facturé annuellement, par utilisateur), Enterprise sur devis."
     },
-    "defaultMonthlyPrice": 39,
-    "compareMonthlyPrice": 39,
+    "defaultMonthlyPrice": 69,
+    "compareMonthlyPrice": 69,
     "affiliateLink": "https://get.lemlist.com/iqofb24egwan",
     "websiteUrl": "https://www.lemlist.com",
     "ogImageUrl": "https://web-assets.lemlist.com/lemlist/Home - Graph URL.png",

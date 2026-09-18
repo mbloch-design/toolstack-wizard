@@ -85,11 +85,17 @@ export type NativePrice = { amount: number; currency: Currency };
  * Sans attestation, l'appelant retombe sur la valeur normalisée du catalogue,
  * convertie et signalée comme telle.
  */
-export function nativePriceFromTool(tool: any): NativePrice | null {
-  const plan = tool?.pricing_v5?.plans?.find(
-    (item: any) => item?.isComparePlan && !item?.isFree && item?.nativeAmount != null,
+export function nativePriceFromTool(tool: any, preferredCurrency?: Currency): NativePrice | null {
+  const candidates = (tool?.pricing_v5?.plans || []).filter(
+    (item: any) => item?.isComparePlan && !item?.isFree && item?.nativeAmount != null && isCurrency(item?.nativeCurrency),
   );
-  if (plan && isCurrency(plan.nativeCurrency)) {
+  // Meme logique que getNativeComparePrice (nativePricing.ts) : un outil peut
+  // publier le meme plan en plusieurs devises reelles (lemlist : $69 US,
+  // 69 EUR zone euro), pas une conversion. On prend celle qui correspond a la
+  // devise demandee, sinon la premiere attestee.
+  const match = preferredCurrency ? candidates.find((item: any) => item.nativeCurrency === preferredCurrency) : undefined;
+  const plan = match || candidates[0];
+  if (plan) {
     return { amount: Number(plan.nativeAmount), currency: plan.nativeCurrency };
   }
 
@@ -121,11 +127,11 @@ export type ToolPriceDisplay = {
 export function formatToolPrice(
   tool: any,
   normalizedEur: number,
-  _currency: Currency,
+  preferredCurrency: Currency,
   lang: string,
   options: { round?: boolean } = {},
 ): ToolPriceDisplay {
-  const native = nativePriceFromTool(tool);
+  const native = nativePriceFromTool(tool, preferredCurrency);
   const currency = native?.currency ?? "EUR";
   const raw = native?.amount ?? normalizedEur;
   const amount = options.round ? Math.round(raw) : raw;

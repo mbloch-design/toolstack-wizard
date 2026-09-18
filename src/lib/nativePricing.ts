@@ -76,10 +76,20 @@ const pricingTruth = (() => {
  * Sans attestation, resolveDisplayPrice retombe sur la valeur normalisee du
  * catalogue, convertie et signalee comme telle par le drapeau `converted`.
  */
-export function getNativeComparePrice(tool: Tool): NativePrice | null {
-  const plan = tool.pricing_v5?.plans?.find((item) => item.isComparePlan && !item.isFree && item.nativeAmount != null);
-  if (plan && (plan.nativeCurrency === "EUR" || plan.nativeCurrency === "USD" || plan.nativeCurrency === "GBP")) {
-    return { amount: plan.nativeAmount!, currency: plan.nativeCurrency, source: "canonical_plan" };
+export function getNativeComparePrice(tool: Tool, preferredCurrency?: Currency): NativePrice | null {
+  const candidates = (tool.pricing_v5?.plans || []).filter(
+    (item) => item.isComparePlan && !item.isFree && item.nativeAmount != null
+    && (item.nativeCurrency === "EUR" || item.nativeCurrency === "USD" || item.nativeCurrency === "GBP"),
+  );
+  // Un outil peut publier le meme plan dans plusieurs devises reelles (lemlist :
+  // $69 pour un compte US, 69 EUR pour un compte zone euro, pas une conversion,
+  // deux prix vendeur distincts). Quand c'est le cas, plusieurs plans portent
+  // isComparePlan : on prend celui qui correspond a la devise demandee, sinon
+  // le premier attesté pour ne rien casser sur les outils a devise unique.
+  const match = preferredCurrency ? candidates.find((item) => item.nativeCurrency === preferredCurrency) : undefined;
+  const plan = match || candidates[0];
+  if (plan) {
+    return { amount: plan.nativeAmount!, currency: plan.nativeCurrency as Currency, source: "canonical_plan" };
   }
   const id = tool.slug || tool.id;
   return pricingTruth.get(id) || pricingTruth.get(tool.id) || null;
@@ -97,9 +107,9 @@ export function getNativeComparePrice(tool: Tool): NativePrice | null {
 export function resolveDisplayPrice(
   tool: Tool,
   normalizedEur: number,
-  _selectedCurrency: Currency,
+  selectedCurrency: Currency,
 ): ResolvedDisplayPrice {
-  const nativePrice = getNativeComparePrice(tool);
+  const nativePrice = getNativeComparePrice(tool, selectedCurrency);
   if (nativePrice) {
     return { amount: nativePrice.amount, currency: nativePrice.currency, converted: false, nativePrice };
   }

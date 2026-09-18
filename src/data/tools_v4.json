@@ -77664,26 +77664,107 @@
     "longDescription": "Lemlist aide à envoyer des séquences de prospection personnalisées et à suivre les réponses. ToolTrim le voit comme un outil de vente, pas d’email marketing généraliste. Il devient utile quand l’offre, la cible et le rythme de prospection sont déjà clairs.",
     "longDescriptionEn": "Lemlist is for personalized outbound sequences, not general newsletter marketing. It is valuable when positioning and prospecting rhythm are clear.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics à partir d’environ 39 $/mois selon fonctionnalités."
+      "free": "Pas de plan gratuit, essai de 14 jours.",
+      "paid": "Trois plans : Email (69 €/mois, ou 55 €/mois facturé annuellement, utilisateurs illimités), Multichannel (109 €/mois, ou 87 €/mois facturé annuellement, par utilisateur), Enterprise sur devis."
     },
     "pricingEn": {
-      "free": "No durable free plan identified.",
-      "paid": "Public plans start around $39/month depending on features."
+      "free": "No free plan, 14-day trial.",
+      "paid": "Three plans: Email ($69/month, or $55/month billed annually, unlimited users), Multichannel ($109/month, or $87/month billed annually, per user), Enterprise on quote."
     },
-    "defaultMonthlyPrice": 39,
+    "defaultMonthlyPrice": 69,
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-05-03",
+      "cautions": [
+        "Pas de plan gratuit permanent, seulement un essai de 14 jours.",
+        "Le plan Multichannel est facturé par utilisateur ; seul Email reste à tarif fixe (utilisateurs illimités).",
+        "Le plan Enterprise n'a pas de prix public, uniquement sur devis."
+      ],
+      "cautionsEn": [
+        "No permanent free plan, only a 14-day trial.",
+        "The Multichannel plan is billed per user; only Email stays flat-rate (unlimited users).",
+        "The Enterprise plan has no public price, quote-based only."
+      ],
+      "verified_on": "2026-09-17",
       "source_domain": "lemlist.com",
       "usage_sensitive": true,
-      "compare_plan_kind": "paid",
-      "compare_plan_name": "Email Starter",
-      "price_reliability": "public_pricing_or_public_entry_plan",
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Email",
+      "price_reliability": "high",
       "location_sensitive": true,
       "official_source_url": "https://www.lemlist.com/pricing",
-      "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 39
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 69,
+      "plans": [
+        {
+          "planKey": "email",
+          "displayName": "Email",
+          "summary": "Prospection email illimitée en utilisateurs, avec base de leads et outils de délivrabilité inclus.",
+          "featureHighlights": [
+            "Utilisateurs et expéditeurs illimités, 50 000 emails/mois",
+            "Base de 650 M+ leads, recherche d'email et de téléphone",
+            "lemAgent, IA et serveur MCP inclus"
+          ],
+          "detailsSourceUrl": "https://www.lemlist.com/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 69,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "observedMarket": "US"
+        },
+        {
+          "planKey": "email-eur",
+          "displayName": "Email (zone euro)",
+          "summary": "Même offre que le plan Email, facturée en euros pour les comptes zone euro.",
+          "featureHighlights": [
+            "Utilisateurs et expéditeurs illimités, 50 000 emails/mois",
+            "Base de 650 M+ leads, recherche d'email et de téléphone"
+          ],
+          "detailsSourceUrl": "https://www.lemlist.com/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 69,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "observedMarket": "EU"
+        },
+        {
+          "planKey": "multichannel",
+          "displayName": "Multichannel",
+          "summary": "Email, LinkedIn, appels, SMS et WhatsApp depuis un seul workflow, facturé par utilisateur.",
+          "featureHighlights": [
+            "5 expéditeurs par utilisateur, emails et messages illimités",
+            "Automatisation LinkedIn, SMS et appels intégrés",
+            "WhatsApp en option payante"
+          ],
+          "detailsSourceUrl": "https://www.lemlist.com/pricing",
+          "pricingUnit": "par utilisateur",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 109,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "observedMarket": "US"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Pour les équipes de 5 utilisateurs et plus, avec rôles personnalisés et SSO.",
+          "featureHighlights": [
+            "5 expéditeurs ou plus par utilisateur",
+            "SSO/SAML, gestionnaire de compte dédié",
+            "Conditions d'utilisation personnalisées"
+          ],
+          "detailsSourceUrl": "https://www.lemlist.com/pricing",
+          "pricingUnit": "sur devis",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": null,
+          "billingPeriod": null
+        }
+      ]
     },
     "affiliateLink": "https://get.lemlist.com/iqofb24egwan",
     "websiteUrl": "https://www.lemlist.com",
@@ -77745,20 +77826,18 @@
       "threshold": "Lemlist excels for B2B cold outreach; for normal email marketing, Mailchimp/Brevo better."
     },
     "pros": [
-      "Multi-canal cold outreach intégré (7 channels).",
-      "IA personnalisation dynamique à l'échelle.",
-      "Images personalisées uniques (competitive advantage).",
-      "Lemwarm inclus (vs autres add-ons payants).",
-      "Claap integration pour conversation intelligence.",
-      "Lead scoring et segmentation IA."
+      "Prospection multicanale intégrée : email, LinkedIn, appels, SMS et WhatsApp.",
+      "Base de plus de 650 millions de leads avec recherche d'email et de téléphone.",
+      "lemAgent et un serveur MCP pour connecter Lemlist à des outils IA externes.",
+      "Note de 4,7/5 sur G2 (plus de 1 300 avis), une preuve tierce vérifiable.",
+      "Lemwarm inclus (vs autres add-ons payants)."
     ],
     "prosEn": [
-      "Integrated multi-channel cold outreach (7 channels).",
-      "AI dynamic personalization at scale.",
-      "Unique personalized images (competitive advantage).",
-      "Lemwarm included (vs other paid add-ons).",
-      "Claap integration for conversation intelligence.",
-      "AI lead scoring and segmentation."
+      "Integrated multichannel outreach: email, LinkedIn, calls, SMS and WhatsApp.",
+      "650M+ lead database with email and phone number finder.",
+      "lemAgent and an MCP server to connect Lemlist to external AI tools.",
+      "4.7/5 rating on G2 (1,300+ reviews), verifiable third-party proof.",
+      "Lemwarm included (vs other paid add-ons)."
     ],
     "cons": [
       "Pas de plan gratuit.",
