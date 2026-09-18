@@ -1,10 +1,10 @@
 import { useLocation, useParams, Link } from "react-router-dom";
 import { fitBrandedTitle } from "@/lib/seoTitle";
-import { useState, useEffect, useMemo, useRef, type CSSProperties } from "react";
+import { useState, useEffect, useMemo, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { ArrowUpDown, Search, ChevronDown, SlidersHorizontal, X } from "@/lib/icons";
-import FilterDropdown from "@/components/filters/FilterDropdown";
+import { ChevronDown, SlidersHorizontal, X } from "@/lib/icons";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
@@ -12,6 +12,8 @@ import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
+import { GuideCardEditorial } from "@/components/GuideCardEditorial";
+import ToolLogo from "@/components/ToolLogo";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -62,15 +64,31 @@ const CategoryPage = () => {
     [category, tools]
   );
 
-  const [search, setSearch]               = useState("");
+  // Landing-page shelves above the filtered grid: a quality-ranked pick,
+  // category-relevant editorial posts, and a second slice of the catalog
+  // for browsing before committing to filters — same spirit as the
+  // homepage's own shelves, scoped to this category.
+  const rankedCatTools = useMemo(() => [...allCatTools].sort((a, b) => {
+    const recommendationDelta = Number(b.prescription_quality === "ferme") - Number(a.prescription_quality === "ferme");
+    if (recommendationDelta) return recommendationDelta;
+    const mediaDelta = Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl));
+    if (mediaDelta) return mediaDelta;
+    return (a.name ?? "").localeCompare(b.name ?? "");
+  }), [allCatTools]);
+  const featuredCatTools = useMemo(() => rankedCatTools.slice(0, 4), [rankedCatTools]);
+  const moreCatTools = useMemo(() => rankedCatTools.slice(4, 16), [rankedCatTools]);
+  const categoryArticles = useMemo(
+    () => (category ? posts.filter((post) => post.category === category.id || (post.tags || []).includes(category.id)).slice(0, 3) : []),
+    [posts, category]
+  );
+
   const [sort, setSort]                   = useState<SortKey>("name");
   const [priceFilter, setPriceFilter]     = useState<PriceFilter>("all");
   const [profileFilter, setProfileFilter] = useState<string[]>([]);
   const [typeFilter, setTypeFilter]       = useState<string[]>([]);
   const [savingsFilter, setSavingsFilter] = useState<string[]>([]);
   const [visibleCount, setVisibleCount]   = useState(PER_PAGE);
-  const [isSearchOpen, setIsSearchOpen]   = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
+  const [panelOpen, setPanelOpen]         = useState(false);
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   const year = useMemo(() => new Date().getFullYear(), []);
@@ -78,11 +96,11 @@ const CategoryPage = () => {
   const toggleArr = (arr: string[], val: string) =>
     arr.includes(val) ? arr.filter((x) => x !== val) : [...arr, val];
 
-  const hasActiveFilters =
-    priceFilter !== "all" || profileFilter.length > 0 || typeFilter.length > 0 || savingsFilter.length > 0 || !!search;
+  const secondaryFilterCount = profileFilter.length + typeFilter.length + savingsFilter.length;
+  const hasActiveFilters = priceFilter !== "all" || secondaryFilterCount > 0;
 
   const resetFilters = () => {
-    setSearch(""); setPriceFilter("all");
+    setPriceFilter("all");
     setProfileFilter([]); setTypeFilter([]); setSavingsFilter([]);
   };
 
@@ -124,11 +142,6 @@ const CategoryPage = () => {
   // Filter & sort
   const filtered = useMemo(() => {
     const result = allCatTools.filter((tool) => {
-      const matchSearch =
-        !search ||
-        (tool.name ?? "").toLowerCase().includes(search.toLowerCase()) ||
-        (tool.shortDescription ?? "").toLowerCase().includes(search.toLowerCase());
-
       const matchPrice =
         priceFilter === "all" ? true :
         priceFilter === "free" ? (tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid) :
@@ -154,7 +167,7 @@ const CategoryPage = () => {
           return true;
         });
 
-      return matchSearch && matchPrice && matchProfile && matchType && matchSavings;
+      return matchPrice && matchProfile && matchType && matchSavings;
     });
 
     result.sort((a, b) => {
@@ -168,9 +181,9 @@ const CategoryPage = () => {
       }
     });
     return result;
-  }, [allCatTools, search, sort, priceFilter, profileFilter, typeFilter, savingsFilter]);
+  }, [allCatTools, sort, priceFilter, profileFilter, typeFilter, savingsFilter]);
 
-  useEffect(() => { setVisibleCount(PER_PAGE); }, [search, sort, priceFilter, profileFilter, typeFilter, savingsFilter]);
+  useEffect(() => { setVisibleCount(PER_PAGE); }, [sort, priceFilter, profileFilter, typeFilter, savingsFilter]);
 
   if (!category) {
     return (
@@ -190,6 +203,9 @@ const CategoryPage = () => {
   const relatedCats = categories.filter((c) => c.id !== category.id).slice(0, 4);
 
   const displayName = t(catName, catNameEn) as string;
+  const catIntro = lang === "fr"
+    ? `On a analysé et classé les meilleurs outils ${catName} : prix vérifiés manuellement, alternatives gratuites identifiées, sans affiliation.`
+    : `We ranked the best ${catNameEn} tools with manually verified pricing, free alternatives, and zero affiliate bias.`;
 
   return (
     <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#78EB2B" } as CSSProperties}>
@@ -204,132 +220,150 @@ const CategoryPage = () => {
           ]}
           includeSchema={false}
         />
-        {/* ── Compact header: one title, then the catalogue controls. ── */}
+        {/* ── Compact header: title + a category-specific lead, so the page
+              reads as its own landing page rather than a bare directory
+              listing (and carries unique, crawlable copy per category). ── */}
         <div className="tt-catalog-compact-header">
           <h1 className="tt-catalog-compact-title">{displayName}</h1>
+          <p className="tt-catalog-compact-intro">{catIntro}</p>
         </div>
 
         <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
-        {/* ══════════════ FILTER BAR — same pilule+popover pattern as
-            Outils/Comparatifs/Stacks/Guides, replacing the old permanent
-            sidebar so every listing page on the site behaves the same way. ══ */}
+        {/* ══════════════ FILTER BAR — same pilule row + « Plus de filtres »
+            popover + libellé de tri that ToolsPage uses, so every catalogue
+            listing on the site behaves and reads the same way. ══ */}
         <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
-          <div className="tt-catalog-toolbar-filters">
-            <details className="tt-catalog-filter-menu">
-              <summary>
-                <SlidersHorizontal size={16} aria-hidden />
-                <span>{t("Filtrer", "Filter")}</span>
-                {hasActiveFilters && (
-                  <span className="tt-catalog-filter-count">
-                    {profileFilter.length + typeFilter.length + savingsFilter.length + (priceFilter !== "all" ? 1 : 0)}
-                  </span>
-                )}
-              </summary>
-              <div className="tt-catalog-filter-menu-panel">
-                <FilterDropdown
-                  label={t("Profil", "Profile") as string}
-                  allLabel={t("Tous les profils", "All profiles") as string}
-                  options={PROFILE_OPTIONS.map((p) => ({ id: p.key, label: lang === "fr" ? p.labelFr : p.labelEn }))}
-                  value="all"
-                  onChange={() => {}}
-                  multi
-                  values={profileFilter}
-                  onChangeMulti={setProfileFilter}
-                  clearLabel={t("Effacer la sélection", "Clear selections") as string}
-                />
-                <FilterDropdown
-                  label={t("Type", "Type") as string}
-                  allLabel={t("Tous les types", "All types") as string}
-                  options={TYPE_OPTIONS.map((ty) => ({ id: ty.key, label: ty.short }))}
-                  value="all"
-                  onChange={() => {}}
-                  multi
-                  values={typeFilter}
-                  onChangeMulti={setTypeFilter}
-                  clearLabel={t("Effacer la sélection", "Clear selections") as string}
-                />
-                <FilterDropdown
-                  label={t("Tarif", "Pricing") as string}
-                  allLabel={t("Tous les tarifs", "All pricing") as string}
-                  options={[
-                    { id: "free", label: t("Gratuit", "Free") as string },
-                    { id: "freemium", label: "Freemium" },
-                    { id: "paid", label: t("Payant", "Paid") as string },
-                  ]}
-                  value={priceFilter}
-                  onChange={(id) => setPriceFilter(id as PriceFilter)}
-                />
-                <FilterDropdown
-                  label={t("Économies", "Savings") as string}
-                  allLabel={t("Toutes", "All") as string}
-                  options={SAVINGS_OPTIONS.map((s) => ({ id: s.key, label: lang === "fr" ? s.labelFr : s.labelEn }))}
-                  value="all"
-                  onChange={() => {}}
-                  multi
-                  values={savingsFilter}
-                  onChangeMulti={setSavingsFilter}
-                  clearLabel={t("Effacer la sélection", "Clear selections") as string}
-                />
-              </div>
-            </details>
+          <nav className="tt-pillrow" aria-label={t("Filtrer par tarif", "Filter by pricing") as string}>
+            <button
+              type="button"
+              className={`tt-pill${priceFilter === "all" ? " tt-pill--active" : ""}`}
+              onClick={() => setPriceFilter("all")}
+              aria-pressed={priceFilter === "all"}
+            >
+              {t("Tout", "All")}
+            </button>
+            <button
+              type="button"
+              className={`tt-pill${priceFilter === "free" ? " tt-pill--active" : ""}`}
+              onClick={() => setPriceFilter(priceFilter === "free" ? "all" : "free")}
+              aria-pressed={priceFilter === "free"}
+            >
+              {t("Gratuit", "Free")}
+            </button>
+            <button
+              type="button"
+              className={`tt-pill${priceFilter === "freemium" ? " tt-pill--active" : ""}`}
+              onClick={() => setPriceFilter(priceFilter === "freemium" ? "all" : "freemium")}
+              aria-pressed={priceFilter === "freemium"}
+            >
+              Freemium
+            </button>
+            <button
+              type="button"
+              className={`tt-pill${priceFilter === "paid" ? " tt-pill--active" : ""}`}
+              onClick={() => setPriceFilter(priceFilter === "paid" ? "all" : "paid")}
+              aria-pressed={priceFilter === "paid"}
+            >
+              {t("Payant", "Paid")}
+            </button>
+          </nav>
 
-            <div className={`tt-catalog-inline-search${isSearchOpen || search ? " tt-catalog-inline-search--open" : ""}`}>
-              {isSearchOpen || search ? (
-                <div className="tt-catalog-inline-search-field">
-                  <Search size={17} aria-hidden />
-                  <input
-                    ref={searchInputRef}
-                    id="category-tool-search"
-                    name="category-tool-search"
-                    type="search"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    onBlur={() => { if (!search) setIsSearchOpen(false); }}
-                    onKeyDown={(event) => {
-                      if (event.key === "Escape") {
-                        setSearch("");
-                        setIsSearchOpen(false);
-                      }
-                    }}
-                    placeholder={t("Rechercher", "Search") as string}
-                    className="tt-catalog-inline-search-input"
-                    autoComplete="off"
-                  />
-                  <button
-                    type="button"
-                    onMouseDown={(event) => event.preventDefault()}
-                    onClick={() => { setSearch(""); setIsSearchOpen(false); }}
-                    className="tt-catalog-inline-search-clear"
-                    aria-label={t("Fermer la recherche", "Close search") as string}
-                  >
-                    <X size={15} aria-hidden />
-                  </button>
-                </div>
-              ) : (
-                <button type="button" className="tt-catalog-inline-search-button" onClick={() => setIsSearchOpen(true)}>
-                  <Search size={17} aria-hidden />
-                  <span>{t("Rechercher", "Search")}</span>
+          <div className="tt-catalog-toolbar-tail">
+            <Popover open={panelOpen} onOpenChange={setPanelOpen}>
+              <PopoverTrigger asChild>
+                <button
+                  type="button"
+                  className={`tt-pill tt-pill--more${secondaryFilterCount > 0 ? " tt-pill--active" : ""}`}
+                >
+                  <SlidersHorizontal size={16} aria-hidden />
+                  <span>{t("Plus de filtres", "More filters")}</span>
+                  {secondaryFilterCount > 0 && <span className="tt-pill-count">{secondaryFilterCount}</span>}
                 </button>
-              )}
-            </div>
+              </PopoverTrigger>
+              {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
+              <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
+                <div className="tt-filter-panel-head">
+                  <strong>{t("Filtres", "Filters")}</strong>
+                  <div className="tt-filter-panel-head-actions">
+                    {hasActiveFilters && (
+                      <button type="button" className="tt-filter-panel-reset" onClick={resetFilters}>
+                        {t("Tout effacer", "Clear all")}
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      className="tt-filter-panel-close"
+                      onClick={() => setPanelOpen(false)}
+                      aria-label={t("Fermer", "Close") as string}
+                    >
+                      <X size={18} aria-hidden />
+                    </button>
+                  </div>
+                </div>
+                <div className="tt-filter-panel-body">
+                  <section className="tt-filter-group">
+                    <h3>{t("Profil", "Profile")}</h3>
+                    <div className="tt-filter-facets">
+                      {PROFILE_OPTIONS.map((p) => {
+                        const checked = profileFilter.includes(p.key);
+                        return (
+                          <button
+                            key={p.key}
+                            type="button"
+                            className={`tt-pill${checked ? " tt-pill--active" : ""}`}
+                            onClick={() => setProfileFilter(toggleArr(profileFilter, p.key))}
+                            aria-pressed={checked}
+                          >
+                            {lang === "fr" ? p.labelFr : p.labelEn}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                  <section className="tt-filter-group">
+                    <h3>{t("Type", "Type")}</h3>
+                    <div className="tt-filter-facets">
+                      {TYPE_OPTIONS.map((ty) => {
+                        const checked = typeFilter.includes(ty.key);
+                        return (
+                          <button
+                            key={ty.key}
+                            type="button"
+                            className={`tt-pill${checked ? " tt-pill--active" : ""}`}
+                            onClick={() => setTypeFilter(toggleArr(typeFilter, ty.key))}
+                            aria-pressed={checked}
+                          >
+                            {ty.short}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                  <section className="tt-filter-group">
+                    <h3>{t("Économies", "Savings")}</h3>
+                    <div className="tt-filter-facets">
+                      {SAVINGS_OPTIONS.map((s) => {
+                        const checked = savingsFilter.includes(s.key);
+                        return (
+                          <button
+                            key={s.key}
+                            type="button"
+                            className={`tt-pill${checked ? " tt-pill--active" : ""}`}
+                            onClick={() => setSavingsFilter(toggleArr(savingsFilter, s.key))}
+                            aria-pressed={checked}
+                          >
+                            {lang === "fr" ? s.labelFr : s.labelEn}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </section>
+                </div>
+              </PopoverContent>
+            </Popover>
 
-            {hasActiveFilters && (
-              <button
-                type="button"
-                className="tt-catalog-context-chip"
-                onClick={resetFilters}
-                aria-label={t("Réinitialiser les filtres", "Reset filters") as string}
-              >
-                <span>{t("Réinitialiser", "Reset")}</span>
-                <X size={14} aria-hidden />
-              </button>
-            )}
-          </div>
-
-          <div className="tt-catalog-toolbar-meta">
             <label className="tt-catalog-sort-control" title={t("Trier les outils", "Sort tools") as string}>
-              <ArrowUpDown size={18} aria-hidden />
               <select
                 className="tt-catalog-sort-select"
                 value={sort}
@@ -342,14 +376,107 @@ const CategoryPage = () => {
                 <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
                 <option value="savings">{t("Économie max", "Max savings")}</option>
               </select>
+              <ChevronDown size={15} aria-hidden />
             </label>
           </div>
+        </div>
+
+        {/* ══════════════ Landing-page shelves — a quality pick, the category's
+            own editorial coverage, and a second browsing slice — all above the
+            filtered grid, same spirit as the homepage's own shelves. ══ */}
+        <div className="home-v2">
+          {featuredCatTools.length > 0 && (
+            <section className="v2-catalog-section">
+              <div className="v2-section-head">
+                <div className="v2-section-heading-copy">
+                  <h2 className="v2-section-title">{t("Sélection", "Featured")}</h2>
+                  <p className="v2-section-description">
+                    {t(
+                      `Les outils ${displayName} qu'on recommande en premier, sur la base du prix et de la qualité vérifiée.`,
+                      `The ${displayName} tools we'd recommend first, based on verified pricing and quality.`
+                    )}
+                  </p>
+                </div>
+              </div>
+              <div className="tc-grid">
+                {featuredCatTools.map((tool) => (
+                  <ToolCardEditorial
+                    key={tool.id}
+                    tool={tool}
+                    prefix={prefix}
+                    t={t}
+                    lang={lang}
+                    categoryLabel={displayName}
+                    exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
+                    exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName }}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {categoryArticles.length > 0 && (
+            <section className="v2-catalog-section">
+              <div className="v2-section-head">
+                <div className="v2-section-heading-copy">
+                  <h2 className="v2-section-title">{t(`Articles ${displayName}`, `${displayName} articles`)}</h2>
+                </div>
+              </div>
+              <div className="cat-article-grid">
+                {categoryArticles.map((post) => (
+                  <GuideCardEditorial key={post.id} post={post} prefix={prefix} ctaLabel={t("Lire →", "Read →") as string} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          {moreCatTools.length > 0 && (
+            <section className="v2-catalog-section">
+              <div className="v2-section-head">
+                <div className="v2-section-heading-copy">
+                  <h2 className="v2-section-title">{t("À explorer aussi", "Also worth a look")}</h2>
+                  <p className="v2-section-description">
+                    {t(
+                      `D'autres outils ${displayName} à comparer avant de trancher.`,
+                      `More ${displayName} options worth comparing before you commit.`
+                    )}
+                  </p>
+                </div>
+              </div>
+              <div className="v2-new-grid">
+                {moreCatTools.map((tool) => (
+                  <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-new-card">
+                    <div className="v2-new-logo">
+                      <ToolLogo tool={tool} size={40} />
+                    </div>
+                    <div className="v2-new-info">
+                      <span className="v2-new-name">{tool.name}</span>
+                      <span className="v2-new-cat">{displayName}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
 
         {/* ══════════════ TOOL LIST — same tc-grid + ToolCardEditorial as
             ToolsPage (image, name, inline price, hover-reveal description
             + CTA on the image) instead of the old editorial list rows. ══ */}
         <div className="min-w-0">
+            <div className="home-v2" style={{ marginTop: "var(--v2-section-gap)" }}>
+              <div className="v2-section-head" style={{ marginBottom: 16 }}>
+                <div className="v2-section-heading-copy">
+                  <h2 className="v2-section-title">{t("Tous les outils", "All tools")}</h2>
+                  <p className="v2-section-description">
+                    {t(
+                      `Le catalogue ${displayName} complet, filtrable par prix, profil et type.`,
+                      `The full ${displayName} catalog, filterable by price, profile, and type.`
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
             <div className="tc-grid">
               {visible.map((tool) => (
                 <ToolCardEditorial
