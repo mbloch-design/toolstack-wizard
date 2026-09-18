@@ -77901,7 +77901,30 @@
     },
     "force_silence": false,
     "timeGainedHoursPerMonth": null,
-    "ogImageUrl": "https://web-assets.lemlist.com/lemlist/Home - Graph URL.png"
+    "ogImageUrl": "https://web-assets.lemlist.com/lemlist/Home - Graph URL.png",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Combine recherche de leads (650 M+ contacts), envoi multicanal, délivrabilité et suivi des réponses dans un seul outil, avec une satisfaction client vérifiable (4,7/5 sur G2, plus de 1 300 avis) plutôt qu'un simple discours commercial (source : lemlist.com/pricing, G2, vérifié le 2026-09-17).",
+        "simplicite": "L'interface couvre de nombreux canaux et réglages (séquences, délivrabilité, IA, intégrations CRM), ce qui demande un temps de prise en main réel pour un premier résultat utile, sans preuve tierce spécifique sur la facilité d'usage au-delà de la note G2 globale (source : lemlist.com, vérifié le 2026-09-17).",
+        "utilisation": "L'usage quotidien couvre tout le cycle de prospection sortante : recherche et vérification de leads, séquences email/LinkedIn/appels/SMS/WhatsApp, boîte de réception unifiée et suivi des réponses (source : lemlist.com/pricing, vérifié le 2026-09-17).",
+        "puissance": "Base de leads propriétaire de plus de 650 millions de contacts, lemAgent pour la recherche et la personnalisation IA, et un serveur MCP pour connecter Lemlist à des outils de code externes sont des capacités réelles et différenciantes face à un simple envoyeur d'emails (source : lemlist.com/pricing, lemlist.com/ai-info, vérifié le 2026-09-17).",
+        "reversibilite": "Droit à la portabilité des données explicitement listé dans la politique de confidentialité (format structuré, transfert au destinataire de son choix), données hébergées dans l'Union européenne, et éditeur identifié (lempire SAS, France) avec intégrations CRM et API pour l'export (source : lemlist.com/legal/privacy-policy, vérifié le 2026-09-17)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Combines lead sourcing (650M+ contacts), multichannel sending, deliverability and reply tracking in one tool, with verifiable customer satisfaction (4.7/5 on G2, 1,300+ reviews) rather than plain marketing copy (source: lemlist.com/pricing, G2, verified 2026-09-17).",
+        "simplicite": "The interface spans many channels and settings (sequences, deliverability, AI, CRM integrations), which takes real ramp-up time for a first useful result, with no specific third-party proof on ease of use beyond the overall G2 rating (source: lemlist.com, verified 2026-09-17).",
+        "utilisation": "Daily usage covers the full outbound cycle: lead sourcing and verification, email/LinkedIn/call/SMS/WhatsApp sequences, a unified inbox and reply tracking (source: lemlist.com/pricing, verified 2026-09-17).",
+        "puissance": "A proprietary 650M+ contact database, lemAgent for AI-driven research and personalization, and an MCP server to connect Lemlist to external coding tools are real, differentiating capabilities versus a plain email sender (source: lemlist.com/pricing, lemlist.com/ai-info, verified 2026-09-17).",
+        "reversibilite": "Data portability right explicitly listed in the privacy policy (structured format, transfer to the recipient of your choice), EU-hosted data, and an identified publisher (lempire SAS, France) with CRM integrations and an API for export (source: lemlist.com/legal/privacy-policy, verified 2026-09-17)."
+      },
+      "lastActivityVerifiedOn": "2026-09-17",
+      "notedOn": "2026-09-17"
+    }
   },
   {
     "id": "lemon-squeezy",
