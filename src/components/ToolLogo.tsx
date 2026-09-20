@@ -16,8 +16,16 @@ interface ToolLogoProps {
  * that event alone leaves the <img> rendered but empty — a blank rounded tile.
  * That is exactly what happened when cdn.simpleicons.org became unreachable.
  * After this delay we give up on the current source and try the next one.
+ *
+ * A tool with no manual slug/local override can chain through 3-4 sources
+ * (simpleicons probe, Google favicon, DuckDuckGo) before landing on the
+ * fallback tile — at the old 1500ms this was up to ~6s of visible stall per
+ * thumbnail. Real responses measured well under 300ms, so 900ms still gives
+ * a genuinely slow-but-working source plenty of room while halving the
+ * worst-case wait when a source is actually dead/blocked (ad-blockers
+ * commonly target simpleicons.org and gstatic.com).
  */
-const SOURCE_TIMEOUT_MS = 1500;
+const SOURCE_TIMEOUT_MS = 900;
 
 /**
  * How long we wait for IntersectionObserver to report before proceeding without
