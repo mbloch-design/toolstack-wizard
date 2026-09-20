@@ -242,7 +242,7 @@ const SubmitToolPage = () => {
       </div>
       <div className="sp-proof-line">
         <div><strong>{t("Sous 5 jours", "Within 5 days")}</strong><span>{t("délai de publication", "publication turnaround")}</span></div>
-        <div><strong>DR 31</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
+        <div><strong>DR 36</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
         <div><strong>{t("Lien dofollow", "Dofollow link")}</strong><span>{t("vers le site officiel", "to the official website")}</span></div>
       </div>
     </header>
