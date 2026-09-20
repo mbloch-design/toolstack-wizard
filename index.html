@@ -95,6 +95,14 @@
     <link rel="preconnect" href="https://rtfyfuwfdpnsogovkwai.supabase.co" />
     <link rel="preconnect" href="https://www.google.com" />
 
+    <!-- Preconnect for tool-logo fallback CDNs (see ToolLogo.tsx / toolLogos.ts) —
+         every card on the site probes these, so paying the DNS+TLS handshake
+         once up front shaves it off every thumbnail request instead of the
+         first one per origin. -->
+    <link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin />
+    <link rel="preconnect" href="https://t3.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://icons.duckduckgo.com" crossorigin />
+
     <!-- Uncut Sans Variable — self-hosted, preloaded for FCP -->
     <link rel="preload" as="font" type="font/woff2" href="/fonts/UncutSans-Variable.woff2" crossorigin />
 
