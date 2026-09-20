@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
-import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Globe, Mail, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
+import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Globe, Link2, Mail, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { normalizeSiteUrl, type NormalizeUrlFailure } from "@/lib/normalizeSiteUrl";
@@ -255,7 +255,7 @@ const SubmitToolPage = () => {
             <span className="sp-plan-tag"><Clock size={14} />{t("LE PLUS DIRECT · OFFRE JUSQU’AU 30 SEPTEMBRE", "MOST DIRECT · OFFER UNTIL SEPTEMBER 30")}</span>
             <div className="sp-plan-card-head"><div><span className="sp-plan-price">{price}</span><span className="sp-plan-period">{t("une seule fois", "just once")}</span></div><span className="sp-plan-name">{t("Fiche publiée sous 5 jours", "Listing published within 5 days")}</span></div>
             <p className="sp-plan-desc">{t("Le chemin court pour obtenir une fiche complète, sans rien installer sur ton site.", "The shortest path to a complete listing, with nothing to install on your website.")}</p>
-            <ul className="sp-plan-args"><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><StarSolid size={16} />{t("Note ToolTrim expliquée par des faits", "ToolTrim score explained with supporting facts")}</li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Clock size={16} />{t("Publication garantie sous cinq jours ouvrés", "Publication guaranteed within five business days")}</li></ul>
+            <ul className="sp-plan-args"><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><StarSolid size={16} />{t("Note ToolTrim expliquée par des faits", "ToolTrim score explained with supporting facts")}</li><li><Link2 size={16} />{t("Lien dofollow vers ton site officiel", "Dofollow link to your official website")}</li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Clock size={16} />{t("Publication garantie sous cinq jours ouvrés", "Publication guaranteed within five business days")}</li></ul>
             <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Obtenir la publication prioritaire · ${price} →`, `Get priority publication · ${price} →`)}</button>
           </article>
           <article className="sp-plan-card">
