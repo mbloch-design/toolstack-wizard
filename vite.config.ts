@@ -1655,6 +1655,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             try {
               const markup = await renderPersonaPillarPage(sp.path, pillarPersona, spLang);
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              if (compiledCssPath) {
+                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                if (utilityCss) {
+                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                }
+              }
               pillarsSsrd++;
             } catch (e) {
               console.warn(`⚠️ Persona pillar SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
@@ -1772,6 +1778,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             try {
               const markup = await sectionRenderer(sp.path);
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              if (compiledCssPath) {
+                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                if (utilityCss) {
+                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                }
+              }
             } catch (e) {
               console.warn(`⚠️ Section SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
             }
@@ -1831,6 +1843,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const markup = await renderExplorerAroundPage(sourcePath);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                if (compiledCssPath) {
+                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                  if (utilityCss) {
+                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                  }
+                }
               } catch (e) {
                 console.warn(`⚠️ SSR failed for ${sourcePath}:`, e);
               }
@@ -1998,6 +2016,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const markup = await renderCategoryPage(`/${lang}/category/${slug}`);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                if (compiledCssPath) {
+                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                  if (utilityCss) {
+                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                  }
+                }
               } catch (e) {
                 console.warn(`⚠️ Category SSR failed for ${slug}/${lang}, falling back to ItemList + noscript only:`, e);
               }
@@ -2072,6 +2096,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const markup = await renderComparePage(`/${lang}/comparatif/${comp.slugPair}`, toolA, toolB);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+                if (compiledCssPath) {
+                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                  if (utilityCss) {
+                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                  }
+                }
                 const ssrJson = JSON.stringify({ toolA, toolB }).replace(/<\/script/gi, "<\\/script");
                 html = html.replace(
                   "</body>",
