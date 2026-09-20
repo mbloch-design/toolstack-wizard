@@ -16,6 +16,7 @@ import { CarouselControls, CarouselPagination } from "@/components/CarouselContr
 import STACKS from "@/data/stacks-index.json";
 import HOME_POSTS from "@/data/home-posts-index.json";
 import { getExplorerHref } from "@/lib/toolExploration";
+import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
 
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
@@ -35,19 +36,6 @@ const EDITORIAL_SHELF = [
   { categoryId: "communication", label: "Communication", labelEn: "Communication" },
   { categoryId: "ai-general", label: "IA Généraliste", labelEn: "AI & Generative Tools" },
 ];
-
-/* Tools whose ogImageUrl is confirmed dead (404, DNS failure, timeout, or
-   simply absent) via a real HTTP/Image() check, found while auditing the
-   dynamic shelves below (Featured = prescription_quality "ferme", the
-   "Works with" ecosystem picker). Every dynamic homepage shelf must filter
-   through this so a tool with a broken visual never surfaces here — re-run
-   the check before removing an entry, don't just trust the field is fixed. */
-const HOMEPAGE_IMAGE_BLOCKLIST = new Set([
-  "fathom-analytics", "guideless", "gumloop", "hugeicons", "voicetypr", "youform",
-  "figma-weave", "ae-gifgun", "google-meet", "premiere-rush", "brandmark", "glide",
-  "move-ai", "autodesk-flow-studio", "cleanvoice", "meshy", "heygen",
-  "obs", "davinci-resolve", "touchdesigner",
-]);
 
 /* Curated "new additions" — update this list as new tools are added to the catalogue.
    Deliberately skips mega-brand names (Claude, Cursor, DeepSeek, Notion, Salesforce...)
@@ -422,7 +410,7 @@ export default function HomePageV2() {
      the "ToolTrim Pick" badge on tool cards elsewhere), not a hand-picked
      slug list that drifts out of sync with the catalog. ── */
   const featured = useMemo(
-    () => tools.filter((t) => t.prescription_quality === "ferme" && !HOMEPAGE_IMAGE_BLOCKLIST.has(t.slug)),
+    () => tools.filter((t) => t.prescription_quality === "ferme" && !TOOL_IMAGE_BLOCKLIST.has(t.slug)),
     [tools],
   );
 
@@ -484,7 +472,7 @@ export default function HomePageV2() {
   const prevFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.max(0, page - 1)), []);
   const nextFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.min(freeToolsTotalPages - 1, page + 1)), [freeToolsTotalPages]);
 
-  const automationTools = useMemo(() => rankShelfTools(tools.filter((tool) => tool.categoryId === "automation" && !HOMEPAGE_IMAGE_BLOCKLIST.has(tool.slug)))
+  const automationTools = useMemo(() => rankShelfTools(tools.filter((tool) => tool.categoryId === "automation" && !TOOL_IMAGE_BLOCKLIST.has(tool.slug)))
     .slice(0, LARGE_SHELF_PAGE_SIZE * LARGE_SHELF_MAX_PAGES), [rankShelfTools, tools]);
   const automationTotalPages = Math.max(1, Math.ceil(automationTools.length / LARGE_SHELF_PAGE_SIZE));
   const visibleAutomationTools = automationTools.slice(automationPage * LARGE_SHELF_PAGE_SIZE, (automationPage + 1) * LARGE_SHELF_PAGE_SIZE);
@@ -511,7 +499,7 @@ export default function HomePageV2() {
     const map = new Map<string, typeof tools>();
     for (const tool of tools) {
       const key = tool.categoryId;
-      if (!key || HOMEPAGE_IMAGE_BLOCKLIST.has(tool.slug)) continue;
+      if (!key || TOOL_IMAGE_BLOCKLIST.has(tool.slug)) continue;
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(tool);
     }
@@ -544,7 +532,7 @@ export default function HomePageV2() {
 
   const allCompatibleTools = useMemo(
     () => tools.filter((tool) =>
-      !HOMEPAGE_IMAGE_BLOCKLIST.has(tool.slug)
+      !TOOL_IMAGE_BLOCKLIST.has(tool.slug)
       && ((tool.worksWith || []).includes(selectedHost)
         || tool.host_app === selectedHost
         || tool.bundle_parent === selectedHost)

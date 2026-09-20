@@ -14,6 +14,7 @@ import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { GuideCardEditorial } from "@/components/GuideCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
+import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -68,7 +69,7 @@ const CategoryPage = () => {
   // category-relevant editorial posts, and a second slice of the catalog
   // for browsing before committing to filters — same spirit as the
   // homepage's own shelves, scoped to this category.
-  const rankedCatTools = useMemo(() => [...allCatTools].sort((a, b) => {
+  const rankedCatTools = useMemo(() => allCatTools.filter((tool) => !TOOL_IMAGE_BLOCKLIST.has(tool.slug)).sort((a, b) => {
     const recommendationDelta = Number(b.prescription_quality === "ferme") - Number(a.prescription_quality === "ferme");
     if (recommendationDelta) return recommendationDelta;
     const mediaDelta = Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl));
