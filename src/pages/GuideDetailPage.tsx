@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
 import { localizeGuideCategory } from "@/lib/guideCategory";
 import { usePostBySlug, type Post } from "@/hooks/useSupabaseData";
-import { Check, Clock, Link2, X as XIcon } from "@/lib/icons";
+import { Check, Clock, Link2, Linkedin, X as XIcon } from "@/lib/icons";
 import { buildGuideToc, renderGuideMarkdown, type GuideTocItem } from "@/lib/guideMarkdown";
 import { cleanupSeo, setHreflang, setJsonLd, setMeta, setSeoTags } from "@/lib/seo";
 import { getToolForGuide } from "@/lib/toolGuides";
@@ -185,6 +185,15 @@ const GuideDetailPage = () => {
                 aria-label={t("Partager sur X", "Share on X") as string}
               >
                 <XIcon aria-hidden="true" />
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://tooltrim.com/${lang}/guide/${post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ga-hero-share-btn"
+                aria-label={t("Partager sur LinkedIn", "Share on LinkedIn") as string}
+              >
+                <Linkedin aria-hidden="true" />
               </a>
             </div>
           </div>
