@@ -11414,6 +11414,28 @@
   }
   .ga-share-btn:hover { border-color: var(--color-text); color: var(--color-text); }
   .ga-share-btn svg { width: 16px; height: 16px; }
+  .ga-hero-share {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: var(--space-lg);
+  }
+  .ga-hero-share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-circle);
+    background: var(--color-surface);
+    color: var(--color-muted);
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 140ms, color 140ms;
+  }
+  .ga-hero-share-btn:hover { border-color: var(--color-text); color: var(--color-text); }
+  .ga-hero-share-btn svg { width: 16px; height: 16px; }
   .ga-article-back {
     margin-top: 48px;
     padding-top: 28px;

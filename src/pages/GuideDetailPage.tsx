@@ -5,7 +5,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
 import { localizeGuideCategory } from "@/lib/guideCategory";
 import { usePostBySlug, type Post } from "@/hooks/useSupabaseData";
-import { Check, Clock, Link2 } from "@/lib/icons";
+import { Check, Clock, Link2, X as XIcon } from "@/lib/icons";
 import { buildGuideToc, renderGuideMarkdown, type GuideTocItem } from "@/lib/guideMarkdown";
 import { cleanupSeo, setHreflang, setJsonLd, setMeta, setSeoTags } from "@/lib/seo";
 import { getToolForGuide } from "@/lib/toolGuides";
@@ -168,6 +168,25 @@ const GuideDetailPage = () => {
             </div>
             <h1 className="ga-title">{post.title}</h1>
             {post.excerpt ? <p className="ga-standfirst">{post.excerpt}</p> : null}
+            <div className="ga-hero-share">
+              <button
+                type="button"
+                onClick={copyLink}
+                className="ga-hero-share-btn"
+                aria-label={t("Copier le lien", "Copy link") as string}
+              >
+                {copied ? <Check aria-hidden="true" /> : <Link2 aria-hidden="true" />}
+              </button>
+              <a
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://tooltrim.com/${lang}/guide/${post.slug}`)}&text=${encodeURIComponent(post.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ga-hero-share-btn"
+                aria-label={t("Partager sur X", "Share on X") as string}
+              >
+                <XIcon aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </header>
