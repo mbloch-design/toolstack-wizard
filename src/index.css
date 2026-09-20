@@ -10823,7 +10823,7 @@
   .ga-body-grid {
     display: grid;
     grid-template-columns: minmax(180px, 236px) minmax(0, 760px);
-    gap: clamp(48px, 6vw, 96px);
+    gap: clamp(48px, 4vw, 64px);
     max-width: var(--layout-max);
     margin: 0 auto;
     padding: 0 var(--layout-gutter);
@@ -10851,40 +10851,45 @@
   }
   .ga-toc-label {
     font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 450;
-    letter-spacing: 0;
-    text-transform: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--color-muted);
     margin-bottom: 18px;
   }
   .ga-toc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     border-left: 0;
     padding-left: 0;
   }
   .ga-toc-link {
+    position: relative;
     display: block;
     font-family: var(--font-ui);
     font-size: 13px;
     line-height: 1.4;
     color: var(--color-muted-light);
     text-decoration: none;
-    margin-bottom: 14px;
+    padding: 4px 0 4px 16px;
+    margin-bottom: 0;
     transition: color 120ms ease-out;
   }
   .ga-toc-link::before {
     content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin-right: 12px;
-    border-radius: var(--radius-circle);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
     background: transparent;
-    vertical-align: 1px;
+    transition: background-color 120ms ease-out;
   }
   .ga-toc-link:hover { color: var(--color-text); }
   .ga-toc-link--active { color: var(--color-text); font-weight: 450; }
-  .ga-toc-link--active::before { background: var(--color-text); }
+  .ga-toc-link--active::before { background: var(--color-text-strong); }
 
   /* Methodology page TOC: larger and darker at rest than the guide default
      (13px / muted-light, ~2.5:1 contrast) — this page's sidebar sits next to

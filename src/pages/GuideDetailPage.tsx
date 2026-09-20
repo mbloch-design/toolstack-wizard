@@ -25,6 +25,29 @@ const GuideDetailPage = () => {
   // stays a static read — the page loads no catalogue at runtime.
   const relatedTool = useMemo(() => getToolForGuide(post?.slug, lang), [post?.slug, lang]);
   const h2Toc = useMemo(() => toc.filter((item) => item.level === 2), [toc]);
+
+  // Scroll-spy: same approach as MethodologyPage/TransparencyPage, but
+  // driven by the dynamic h2Toc ids parsed from this guide's own markdown
+  // instead of a fixed id list.
+  const [activeHeading, setActiveHeading] = useState<string>("");
+  useEffect(() => {
+    if (h2Toc.length === 0) return;
+    setActiveHeading((current) => current || h2Toc[0].id);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible?.target.id) setActiveHeading(visible.target.id);
+      },
+      { rootMargin: "-18% 0px -68% 0px", threshold: [0, 1] },
+    );
+    h2Toc.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [h2Toc]);
   const isStory = post?.category === "Stories";
   const htmlContent = useMemo(() => (
     post
@@ -157,7 +180,7 @@ const GuideDetailPage = () => {
         <div className={`ga-body-grid${isStory ? " ga-body-grid--story" : ""}`}>
           <article>
             {!isStory && h2Toc.length > 1 ? (
-              <MobileTableOfContents items={h2Toc} label={t("Sommaire", "Contents") as string} />
+              <MobileTableOfContents items={h2Toc} label={t("Sur cette page", "On this page") as string} />
             ) : null}
 
             <div className="ga-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
@@ -194,7 +217,11 @@ const GuideDetailPage = () => {
           </article>
 
           {!isStory && h2Toc.length > 1 ? (
-            <DesktopTableOfContents items={h2Toc} label={t("Sommaire", "Contents") as string} />
+            <DesktopTableOfContents
+              items={h2Toc}
+              label={t("Sur cette page", "On this page") as string}
+              activeId={activeHeading}
+            />
           ) : null}
         </div>
       </main>
@@ -216,12 +243,20 @@ function MobileTableOfContents({ items, label }: { items: GuideTocItem[]; label:
   );
 }
 
-function DesktopTableOfContents({ items, label }: { items: GuideTocItem[]; label: string }) {
+function DesktopTableOfContents({ items, label, activeId }: { items: GuideTocItem[]; label: string; activeId: string }) {
   return (
     <aside className="ga-toc-col">
       <p className="ga-toc-label">{label}</p>
       <nav className="ga-toc-nav" aria-label={label}>
-        {items.map((item) => <a key={item.id} href={`#${item.id}`} className="ga-toc-link">{item.text}</a>)}
+        {items.map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className={`ga-toc-link${item.id === activeId ? " ga-toc-link--active" : ""}`}
+          >
+            {item.text}
+          </a>
+        ))}
       </nav>
     </aside>
   );
