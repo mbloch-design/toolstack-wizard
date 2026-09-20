@@ -1480,6 +1480,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             try {
               const markup = await renderHomePage(`/${lp.lang}`);
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              if (compiledCssPath) {
+                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                if (utilityCss) {
+                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                }
+              }
             } catch (e) {
               console.warn(`⚠️ Home SSR failed for ${lp.file}, falling back to empty root + noscript:`, e);
             }
