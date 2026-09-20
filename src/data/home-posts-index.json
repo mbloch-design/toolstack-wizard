@@ -1,6 +1,25 @@
 {
   "fr": [
     {
+      "slug": "notion-canva-ai-tax-pricing-2026",
+      "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+      "date": "2026-09-20",
+      "tags": [
+        "notion",
+        "canva",
+        "clickup",
+        "ia",
+        "tarifs",
+        "hausse de prix",
+        "saas",
+        "freelance",
+        "2026",
+        "productivite",
+        "design"
+      ],
+      "thumbnail": null
+    },
+    {
       "slug": "alternatives-freshservice-2026",
       "title": "Alternatives à Freshservice : que choisir selon ce qui te bloque",
       "date": "2026-09-09",
@@ -174,28 +193,28 @@
         "workflow"
       ],
       "thumbnail": "/editorial/stories/nora-sante/hero.jpg"
-    },
-    {
-      "slug": "outils-facturation-freelance-2026",
-      "title": "Logiciel facturation freelance 2026 : le guide honnête (+ obligation e-invoicing)",
-      "date": "2026-05-08",
-      "tags": [
-        "facturation",
-        "compta",
-        "freelance",
-        "tpe",
-        "e-invoicing",
-        "pdp",
-        "shine",
-        "qonto",
-        "indy",
-        "pennylane",
-        "dougs"
-      ],
-      "thumbnail": null
     }
   ],
   "en": [
+    {
+      "slug": "notion-canva-ai-tax-pricing-2026",
+      "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+      "date": "2026-09-20",
+      "tags": [
+        "notion",
+        "canva",
+        "clickup",
+        "ai",
+        "pricing",
+        "price increase",
+        "saas",
+        "freelance",
+        "2026",
+        "productivity",
+        "design"
+      ],
+      "thumbnail": null
+    },
     {
       "slug": "ai-agents-freelancers-2026",
       "title": "AI agents for freelancers in 2026: which ones earn a place",
@@ -378,20 +397,6 @@
         "growth"
       ],
       "thumbnail": "/editorial/stories/marc-operations/hero.jpg"
-    },
-    {
-      "slug": "nora-bensaid-produit-sante-depuis-terrain",
-      "title": "Building a Digital Product from the Field",
-      "date": "2026-07-26",
-      "tags": [
-        "stories",
-        "freelance developer",
-        "digital product",
-        "healthcare",
-        "user research",
-        "workflow"
-      ],
-      "thumbnail": "/editorial/stories/nora-sante/hero.jpg"
     }
   ]
 }

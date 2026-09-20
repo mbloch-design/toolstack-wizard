@@ -195,6 +195,12 @@
     "notion": {
       "fr": [
         {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "date": "2026-09-20",
+          "category": "Comparatifs"
+        },
+        {
           "slug": "notion-gratuit-ou-payant",
           "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
           "date": "2026-03-06",
@@ -214,6 +220,12 @@
         }
       ],
       "en": [
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "date": "2026-09-20",
+          "category": "Comparatifs"
+        },
         {
           "slug": "notion-free-or-paid",
           "title": "Managing 3 clients simultaneously: Is Notion free really enough for you?",
@@ -508,6 +520,11 @@
       "name": "Toggl Track",
       "hasPricing": true
     },
+    "fr:notion-canva-ai-tax-pricing-2026": {
+      "slug": "notion",
+      "name": "Notion",
+      "hasPricing": true
+    },
     "en:chatgpt-pro-worth-it": {
       "slug": "chatgpt",
       "name": "ChatGPT",
@@ -651,6 +668,11 @@
     "en:stripe-vs-bank-transfer": {
       "slug": "stripe",
       "name": "Stripe",
+      "hasPricing": true
+    },
+    "en:notion-canva-ai-tax-pricing-2026": {
+      "slug": "notion",
+      "name": "Notion",
       "hasPricing": true
     }
   }

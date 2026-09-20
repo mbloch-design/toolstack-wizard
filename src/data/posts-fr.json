@@ -1477,5 +1477,88 @@
     "seo": {
       "metaTitle": "Rédactrice freelance : la stack qui te suffit"
     }
+  },
+  {
+    "slug": "notion-canva-ai-tax-pricing-2026",
+    "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+    "excerpt": "Notion a supprimé son add-on IA à 10$. Canva a intégré des crédits IA dans chaque plan Pro. Les deux fonctionnent comme une hausse de prix, vérifiée à la source avec les chiffres exacts et la marche à suivre.",
+    "date": "2026-09-20",
+    "category": "Comparatifs",
+    "toolId": "notion",
+    "readTime": "7 min",
+    "tags": [
+      "notion",
+      "canva",
+      "clickup",
+      "ia",
+      "tarifs",
+      "hausse de prix",
+      "saas",
+      "freelance",
+      "2026",
+      "productivite",
+      "design"
+    ],
+    "content": "# La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"\n\n<p class=\"ga-story-lead\">Notion a supprimé son add-on IA optionnel. Canva a fondu l'IA dans un quota de crédits partagé. Aucune des deux entreprises n'a parlé de hausse de prix. Les deux en étaient une.</p>\n\nPendant deux ans, l'IA dans votre stack SaaS était une ligne qu'on pouvait refuser. Notion AI coûtait 10$ par mois, ajouté au-dessus du plan déjà payé, résiliable à tout moment. Les outils IA de Canva se cachaient derrière un interrupteur séparé. Si vous n'en vouliez pas, vous ne le payiez pas.\n\nCe modèle a disparu chez les deux entreprises. Voici exactement ce qui l'a remplacé, lu sur leurs propres pages de tarifs, avec la date de vérification de chaque prix.\n\n## Notion : l'add-on à 10$ supprimé, pas remplacé par moins cher\n\nJusqu'en mai 2025, Notion AI était un add-on autonome à 10$ par membre. On pouvait l'ajouter au plan gratuit. On pouvait l'ajouter au plan Plus. On ne payait pour l'IA que si on l'utilisait.\n\n**Notion a retiré cet add-on. Il ne l'a pas remplacé par une version moins chère.** Au 15 juin 2026, selon la page de tarifs officielle de Notion :\n\n| Plan | Prix | IA incluse |\n|---|---|---|\n| Plus | 10$/membre/mois | Non |\n| Business | 15$/membre/mois | Oui, IA complète |\n\nL'IA ne se vend plus seule. La seule façon de l'obtenir est de faire passer toute l'équipe de Plus à Business, un bond de 5$ par membre et par mois, payé que quelqu'un touche ou non aux fonctionnalités IA, parce que Business débloque aussi des éléments sans rapport comme le SSO SAML et des permissions avancées que les équipes montent en gamme pour obtenir de toute façon. Une équipe de dix personnes qui ne voulait que l'assistant de rédaction paie désormais 50$ de plus par mois que le plan dont elle avait réellement besoin, avec en prime des fonctions d'administration que la plupart des freelances et petites équipes n'ouvriront jamais.\n\n## Canva : une IA qu'on ne peut pas refuser, des crédits qu'on ne peut pas racheter\n\nCanva a pris un autre chemin pour arriver au même endroit. Il n'existe pas d'abonnement \"Canva AI\" séparé à sauter. Canva Pro lui-même, à 110€/an (9,17€/mois, vérifié le 27 août 2026 sur canva.com), inclut déjà un quota de crédits Magic Studio partagé entre toutes les fonctionnalités IA de la plateforme : suppression d'arrière-plan, génération d'images, outils vidéo, tout puise dans le même pot commun.\n\n**Impossible d'acheter uniquement les outils de design et de sauter l'IA.** Les crédits sont intégrés au plan déjà payé, et les propres notes tarifaires de Canva signalent que ces quotas varient selon le modèle IA utilisé par une fonctionnalité donnée, si bien que deux personnes sur le même plan Pro peuvent épuiser leur allocation à des vitesses différentes pour la même tâche. Pro+ (170€/an, 14,17€/mois) sert surtout à acheter plus de marge dans ce pot commun, pas à obtenir un produit distinct.\n\nL'historique des prix de Canva raconte la suite : plusieurs hausses depuis fin 2024, suivant presque exactement le déploiement de nouvelles fonctionnalités IA dans le plan de base. La contestation a été assez forte pour que Canva publie une \"Pricing Promise\" formelle, s'engageant à prévenir 60 jours avant tout futur changement, une démarche inhabituelle pour une entreprise qui n'annonce généralement pas ses hausses à l'avance, et un signe que les précédentes sont passées plus difficilement que prévu.\n\n## Pourquoi c'est une taxe, pas une fonctionnalité\n\nUne taxe est une charge qu'on paie qu'on utilise ou non ce qu'elle finance. C'est exactement le mécanisme dans les deux cas :\n\n- **Notion** : la prime de 5$ Business se paie qu'on écrive une phrase avec l'IA ou aucune. L'alternative, rester sur Plus sans IA, a existé pendant un an et demi. Elle n'existe plus.\n- **Canva** : le pot de crédits IA se prélève sur l'abonnement Pro déjà payé, qu'on touche à Magic Studio une fois par mois ou jamais. Aucun plan inférieur ne le retire pour coûter moins cher.\n\nÀ comparer avec une entreprise qui fait ça correctement : l'IA de ClickUp, baptisée Brain, est facturée comme une ligne véritablement séparée, 9$/membre/mois pour le palier de base, 28$/membre/mois pour le plus haut, ajoutée par-dessus le plan d'espace de travail déjà payé. Ce n'est pas donné, et l'analyse tarifaire 2026 de CloudEagle a raison de pointer que c'est cher pour ce que ça fait. Mais on peut regarder sa facture et voir la charge IA comme sa propre ligne, et la retirer sans toucher au reste. C'est la différence entre un add-on et une taxe : l'un a une ligne qu'on peut supprimer.\n\n## Que faire concrètement\n\n**Sur Notion Plus et pas besoin de l'IA :** restez-y. Rien n'impose le passage à Business sauf besoin de ses fonctions d'administration. Vérifiez d'abord ce point : la montée en gamme IA se retrouve souvent mêlée à une décision qui portait en réalité sur les permissions.\n\n**Sur Notion Business et le panneau IA jamais ouvert :** vous payez les 5$ de prime pour rien. Redescendre toute l'équipe vers Plus est le seul moyen d'arrêter, puisque Business n'a pas d'interrupteur pour désactiver l'IA.\n\n**Sur Canva Pro et Magic Studio rarement utilisé :** les crédits sont déjà payés, dépensés ou non, il n'existe pas de palier Pro partiel sans IA. Le levier ici n'est pas de redescendre (le plan Free représente une vraie perte de fonctionnalités), c'est de vérifier que les hausses liées à l'IA restent justifiées par les outils de design seuls sur le plan Free, pas par une IA inutilisée.\n\n**Dans tous les cas :** la solution est rarement de changer d'outil. C'est de vérifier, plan par plan, si le palier réellement payé correspond à l'usage réel de l'équipe, pas à celui qui est arrivé avec l'IA en prime. L'[audit de stack en 45 minutes](/fr/guide/auditer-stack-saas-45-minutes) permet de faire exactement cette vérification sur toute une liste d'abonnements, pas seulement ces deux-là.\n\nLes fiches [Notion sur ToolTrim](/fr/tool/notion) et [Canva sur ToolTrim](/fr/tool/canva) détaillent chacune le tarif complet et à jour, pour vérifier ses propres calculs avant le prochain renouvellement.\n\n## Ce que cet article ne fait pas\n\nIl n'affirme pas que l'une ou l'autre entreprise ment sur le contenu de Business ou Pro : les deux sont transparentes sur le contenu du forfait une fois sur la page de tarifs. Le reproche est plus étroit : la version optionnelle, payée seulement en cas d'usage, existait chez les deux entreprises il y a moins de deux ans, et les deux l'ont supprimée.\n\nIl ne compare pas le coût total de Notion ou de Canva à celui d'un concurrent, parce que cette comparaison dépend entièrement des fonctionnalités hors IA réellement utilisées par l'équipe, une comparaison que les seuls chiffres de cet article ne peuvent pas trancher honnêtement.\n\n## Questions fréquentes\n\n### Peut-on encore acheter Notion AI comme add-on autonome ?\n\nNon. L'add-on autonome à 10$/membre/mois a été retiré en mai 2025. Au 15 juin 2026, la seule façon d'obtenir l'IA complète de Notion est le plan Business à 15$/membre/mois, qui inclut aussi des fonctionnalités sans rapport avec l'IA comme le SSO SAML et les permissions avancées.\n\n### Canva propose-t-il un plan avec les outils de design mais sans crédits IA ?\n\nNon. Canva Pro (9,17€/mois, vérifié en août 2026) inclut par défaut un quota de crédits Magic Studio partagé entre toutes les fonctionnalités IA. Il n'existe pas de palier Pro moins cher qui retire l'IA et garde le reste de la boîte à outils de design.\n\n### La tarification IA de ClickUp est-elle meilleure que celle de Notion ou Canva ?\n\nElle est structurée différemment, pas forcément moins chère. ClickUp Brain est facturé comme un add-on séparé (9$ ou 28$ par membre et par mois en plus du plan d'espace de travail) plutôt qu'intégré à un palier, ce qui permet de le retirer de la facture sans rien redescendre d'autre, ce qu'aucun des deux autres n'autorise aujourd'hui.\n\n### Faut-il quitter Notion ou Canva à cause de ça ?\n\nGénéralement pas sur le seul critère du prix. Vérifiez d'abord si le palier payé correspond à l'usage réel de l'équipe. Notion Business et Canva Pro incluent tous deux de vraies fonctionnalités hors IA qui peuvent justifier le prix, que quelqu'un touche ou non aux outils IA.\n",
+    "faq": [
+      {
+        "question": "Peut-on encore acheter Notion AI comme add-on autonome ?",
+        "answer": "Non. L'add-on autonome à 10$/membre/mois a été retiré en mai 2025. Au 15 juin 2026, la seule façon d'obtenir l'IA complète de Notion est le plan Business à 15$/membre/mois, qui inclut aussi des fonctionnalités sans rapport avec l'IA comme le SSO SAML et les permissions avancées."
+      },
+      {
+        "question": "Canva propose-t-il un plan avec les outils de design mais sans crédits IA ?",
+        "answer": "Non. Canva Pro (9,17€/mois, vérifié en août 2026) inclut par défaut un quota de crédits Magic Studio partagé entre toutes les fonctionnalités IA. Il n'existe pas de palier Pro moins cher qui retire l'IA et garde le reste de la boîte à outils de design."
+      },
+      {
+        "question": "La tarification IA de ClickUp est-elle meilleure que celle de Notion ou Canva ?",
+        "answer": "Elle est structurée différemment, pas forcément moins chère. ClickUp Brain est facturé comme un add-on séparé (9$ ou 28$ par membre et par mois en plus du plan d'espace de travail) plutôt qu'intégré à un palier, ce qui permet de le retirer de la facture sans rien redescendre d'autre, ce qu'aucun des deux autres n'autorise aujourd'hui."
+      },
+      {
+        "question": "Faut-il quitter Notion ou Canva à cause de ça ?",
+        "answer": "Généralement pas sur le seul critère du prix. Vérifiez d'abord si le palier payé correspond à l'usage réel de l'équipe. Notion Business et Canva Pro incluent tous deux de vraies fonctionnalités hors IA qui peuvent justifier le prix, que quelqu'un touche ou non aux outils IA."
+      }
+    ],
+    "seo": {
+      "metaTitle": "La taxe IA cachée : tarifs Notion & Canva 2026",
+      "metaDescription": "Notion a retiré son add-on IA à 10$. Canva a intégré des crédits IA dans Pro. Les deux fonctionnent comme une hausse de prix, vérifiée à la source, chiffres et solutions.",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Peut-on encore acheter Notion AI comme add-on autonome ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. L'add-on autonome à 10$/membre/mois a été retiré en mai 2025. Au 15 juin 2026, la seule façon d'obtenir l'IA complète de Notion est le plan Business à 15$/membre/mois, qui inclut aussi des fonctionnalités sans rapport avec l'IA comme le SSO SAML et les permissions avancées."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Canva propose-t-il un plan avec les outils de design mais sans crédits IA ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. Canva Pro (9,17€/mois, vérifié en août 2026) inclut par défaut un quota de crédits Magic Studio partagé entre toutes les fonctionnalités IA. Il n'existe pas de palier Pro moins cher qui retire l'IA et garde le reste de la boîte à outils de design."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "La tarification IA de ClickUp est-elle meilleure que celle de Notion ou Canva ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elle est structurée différemment, pas forcément moins chère. ClickUp Brain est facturé comme un add-on séparé (9$ ou 28$ par membre et par mois en plus du plan d'espace de travail) plutôt qu'intégré à un palier, ce qui permet de le retirer de la facture sans rien redescendre d'autre, ce qu'aucun des deux autres n'autorise aujourd'hui."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Faut-il quitter Notion ou Canva à cause de ça ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Généralement pas sur le seul critère du prix. Vérifiez d'abord si le palier payé correspond à l'usage réel de l'équipe. Notion Business et Canva Pro incluent tous deux de vraies fonctionnalités hors IA qui peuvent justifier le prix, que quelqu'un touche ou non aux outils IA."
+            }
+          }
+        ]
+      }
+    }
   }
 ]
