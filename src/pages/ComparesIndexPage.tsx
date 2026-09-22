@@ -16,28 +16,11 @@ function findTool(tools: ToolSummary[], idOrSlug: string): ToolSummary | undefin
   return tools.find(t => t.id === idOrSlug || t.slug === idOrSlug);
 }
 
-function compactToolPositioning(tool: ToolSummary, lang: "fr" | "en"): string {
-  const raw = (lang === "fr" ? tool.shortDescription : tool.shortDescriptionEn)
-    || tool.shortDescription
-    || tool.name;
-  return raw
-    .trim()
-    .replace(/[.!?]+$/, "")
-    .replace(lang === "fr" ? /^(le|la|les|l’|l'|un|une)\s*/i : /^(the|a|an)\s*/i, "");
-}
-
 function getComparisonSummary(
   comparison: (typeof FEATURED_COMPARISONS)[number],
-  a: ToolSummary,
-  b: ToolSummary,
   lang: "fr" | "en",
 ): string {
-  const authored = lang === "fr"
-    ? comparison.summary
-    : (comparison.summaryEn || comparison.summary);
-  if (authored) return authored;
-
-  return `${a.name} — ${compactToolPositioning(a, lang)}. ${b.name} — ${compactToolPositioning(b, lang)}.`;
+  return lang === "fr" ? comparison.summary : comparison.summaryEn;
 }
 
 /* ─── Category detection ─────────────────────────────────────────────────── */
@@ -293,7 +276,7 @@ const ComparesIndexPage = () => {
                               )}
                               <h2 className="cix-card-title">{a.name} <span>vs</span> {b.name}</h2>
                               <p className="cix-card-summary">
-                                {getComparisonSummary(c, a, b, lang)}
+                                {getComparisonSummary(c, lang)}
                               </p>
                             </div>
                           </div>

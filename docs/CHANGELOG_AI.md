@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-22 — Index comparatifs : angles éditoriaux
+
+- Les 75 comparatifs disposent d’un résumé spécifique en français et en anglais. Les deux champs sont requis ; les cartes ne concatènent plus les descriptions des outils.
+- Suppression du nettoyage de préfixes qui tronquait notamment Anthropic. Les résumés ne sont plus coupés après trois lignes.
+- Vérification du rendu et de la navigation de l’index, ainsi que de la couverture bilingue.
+
 ## 2026-09-22 — Restauration éditoriale des comparatifs
 
 - Le template réutilise les accroches, recommandations, critères, limites, points de bascule, profils et risques des contenus comparatifs existants, au lieu des substitutions génériques. Les tarifs sourcés restent séparés.

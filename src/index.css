@@ -14113,16 +14113,14 @@
     font-weight: 500;
   }
   .cix-card-summary {
-    display: -webkit-box;
+    display: block;
     margin: var(--space-sm) 0 0;
-    overflow: hidden;
     font-family: var(--font-ui);
     font-size: 14px;
     font-weight: 450;
     line-height: 1.4;
     color: var(--color-muted);
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+
   }
   .cix-card-arrow {
     flex: 0 0 auto;
