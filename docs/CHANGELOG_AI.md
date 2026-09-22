@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-22 — Comparatifs : lecture et aide à la décision
+
+- Nouveau template partagé : deux choix en ouverture, tableau par usage, budget, changement d’outil et protocole d’essai. Typographie plus hiérarchisée, surfaces sobres et détails dépliables.
+- ChatGPT / Claude dispose de contenus FR/EN dédiés et de tarifs sourcés au 20 septembre, avec sélection solo/équipe et distinction mensuel/annuel. Les autres comparatifs conservent leurs données éditoriales et utilisent les plans du catalogue.
+- Vérification visuelle desktop/mobile FR/EN, interactions des tarifs, conseils, FAQ et sources. Correction du conseil déplié sur toute la largeur mobile. Travail local, non déployé.
+
 ## 2026-09-09 — Nettoyage prudent des médias dupliqués
 
 - Suppression de neuf fichiers image strictement identiques à une copie conservée et sans aucune référence dans le code ou les données actuelles.
