@@ -1,3 +1,4 @@
+import { translateBattleCopy } from '@/data/comparisonBattlesEn';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
@@ -15,20 +16,18 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const [audience, setAudience] = useState<'solo' | 'team'>('solo');
   const pick = (fr: string, en: string) => lang === 'fr' ? fr : en;
   const curated = slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined;
-  const genericSwitching = [
-    { title: t('Garder', 'Keep'), text: t('Gardez votre outil si vos tâches sont bien couvertes, les limites acceptables et le coût justifié. La nouveauté seule ne justifie pas une migration.', 'Keep your tool if it covers your tasks, its limits are acceptable and its cost is justified. Novelty alone does not justify a migration.') },
-    { title: t('Remplacer', 'Replace'), text: t('Essayez l’autre sur un blocage récurrent. Comptez le temps de transfert des données, de recréation des intégrations et de prise en main avant de changer.', 'Try the other on a recurring problem. Account for moving data, rebuilding integrations and learning the tool before switching.') },
-    { title: t('Compléter', 'Complement'), text: t('Gardez deux abonnements seulement si chacun couvre une étape distincte et récurrente du travail. Sinon, choisissez celui que vous utilisez réellement.', 'Keep two subscriptions only if each covers a distinct, recurring part of your work. Otherwise, choose the one you actually use.') },
-  ];
-  const scenarios = curated?.scenarios ?? [
-    { situation: t('Votre besoin principal', 'Your main need'), choice: `${t('Choisir', 'Choose')} ${toolA.name}`, reason: pick(content.chooseAIfList[0] || content.quickVerdictA, content.toolAUseCasesEn[0] || content.quickVerdictAEn), limit: pick(content.limitsA[0] || content.quickVerdictAvoid, content.limitsAEn[0] || content.quickVerdictAvoidEn) },
-    { situation: t('Une autre façon de travailler', 'A different workflow'), choice: `${t('Choisir', 'Choose')} ${toolB.name}`, reason: pick(content.chooseBIfList[0] || content.quickVerdictB, content.toolBUseCasesEn[0] || content.quickVerdictBEn), limit: pick(content.limitsB[0] || content.quickVerdictAvoid, content.limitsBEn[0] || content.quickVerdictAvoidEn) },
-    { situation: t('Vous êtes déjà équipé', 'You already have a tool'), choice: t('Garder ce qui fonctionne', 'Keep what works'), reason: genericSwitching[0].text, limit: t('Changez seulement si un problème concret revient dans votre travail.', 'Switch only when a concrete problem keeps coming back.') },
-  ];
-  const criteria: ComparisonDecisionGuide['criteria'] = curated?.criteria ?? (content.decisiveCriteria.length
-    ? content.decisiveCriteria.slice(0, 6).map(c => ({ title: pick(c.title, c.titleEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.decision, c.decisionEn) }))
-    : content.tableRows.filter(c => !/prix|price|coût|cost/i.test(c.criterion)).slice(0, 6).map(c => ({ title: pick(c.criterion, c.criterionEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.verdictLabel, c.verdictLabelEn) })));
-  const faq = curated?.faq ?? content.faq.map(f => ({ question: pick(f.q, f.qEn), answer: pick(f.a, f.aEn) }));
+  const scenarios = toolsForEditorial();
+  function toolsForEditorial() {
+    return [
+      { choice: pick(content.verdictCardTitleA || `Choisir ${toolA.name}`, content.verdictCardTitleAEn || `Choose ${toolA.name}`), reason: pick(content.verdictCardTextA || content.quickVerdictA, content.verdictCardTextAEn || content.quickVerdictAEn), limits: content.limitsA.length ? pickList(content.limitsA, content.limitsAEn) : content.avoidAIfList.map(value => lang === 'fr' ? value : translateBattleCopy(value)) },
+      { choice: pick(content.verdictCardTitleB || `Choisir ${toolB.name}`, content.verdictCardTitleBEn || `Choose ${toolB.name}`), reason: pick(content.verdictCardTextB || content.quickVerdictB, content.verdictCardTextBEn || content.quickVerdictBEn), limits: content.limitsB.length ? pickList(content.limitsB, content.limitsBEn) : content.avoidBIfList.map(value => lang === 'fr' ? value : translateBattleCopy(value)) },
+    ];
+  }
+  function pickList(fr: string[], en: string[]) { return lang === 'fr' ? fr : en; }
+  const criteria: ComparisonDecisionGuide['criteria'] = content.decisiveCriteria.length
+    ? content.decisiveCriteria.map(c => ({ title: pick(c.title, c.titleEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.decision, c.decisionEn) }))
+    : content.tableRows.filter(c => !/prix|price|coût|cost/i.test(c.criterion)).map(c => ({ title: pick(c.criterion, c.criterionEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.verdictLabel, c.verdictLabelEn) }));
+  const faq = content.faq.map(f => ({ question: pick(f.q, f.qEn), answer: pick(f.a, f.aEn) }));
   const alternatives = curated?.alternatives ?? content.alternatives.map(a => ({ ...a, reason: pick(a.reason, a.reasonEn) }));
   const trial = curated?.trial ?? [
     t('Choisissez trois tâches récentes représentatives de votre travail, avec les mêmes données et le même résultat attendu.', 'Choose three recent tasks that represent your work, with the same input and expected result.'),
@@ -40,17 +39,17 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
     ['decision', t('Choisir', 'Choose')], ['comparaison', t('Différences', 'Differences')],
     ['cout', t('Prix', 'Pricing')], ['changer', t('Changer ?', 'Switch?')], ['essai', t('Tester', 'Test')],
   ];
-  const date = curated?.checkedAt || content.checkedAt;
+  const date = content.checkedAt;
   return (
     <article className="cp-guide">
       <header className="cp-guide-hero">
         <Breadcrumb items={[{ label: t('Comparatifs', 'Comparisons'), href: `${prefix}/comparatifs` }, { label: `${toolA.name} vs ${toolB.name}` }]} includeSchema={false} />
         <div className="cp-guide-meta">
           <span>{t('Comparatif', 'Comparison')}</span>
-          {date && <time dateTime={date}>{curated ? t('Sources vérifiées', 'Sources checked') : t('Revue éditoriale', 'Editorial review')} · {new Date(`${date}T12:00:00Z`).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time>}
+          {date && <time dateTime={date}>{t('Revue éditoriale', 'Editorial review')} · {new Date(`${date}T12:00:00Z`).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time>}
         </div>
         <h1><span><ToolLogo tool={toolA} size={40} aria-hidden="true" />{toolA.name}</span><span className="cp-guide-vs">vs</span><span><ToolLogo tool={toolB} size={40} aria-hidden="true" />{toolB.name}</span></h1>
-        <p className="cp-guide-intro">{curated?.intro ?? pick(content.framing, content.framingEn)}</p>
+        <p className="cp-guide-intro">{pick(content.framing, content.framingEn)}</p>
         <p className="cp-guide-scope">{curated?.scope ?? t('Choix, budget et changement d’outil pour indépendants et petites équipes.', 'Choice, budget and switching tools for freelancers and small teams.')}</p>
       </header>
       <nav className="cp-guide-nav" aria-label={t('Dans ce comparatif', 'In this comparison')}>
@@ -63,9 +62,10 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           {scenarios.slice(0, 2).map((s, i) => <article className="cp-guide-scenario" key={s.choice}>
             <div className="cp-guide-scenario-identity"><ToolLogo tool={tools[i]} size={28} aria-hidden="true" /><span>{tools[i].name}</span></div>
             <h3>{s.choice}</h3><p>{s.reason}</p>
-            <details className="cp-guide-disclosure"><summary>{t('Ce qui peut changer votre choix', 'What could change your choice')}<ChevronDown aria-hidden="true" /></summary><p>{s.limit}</p></details>
+            {s.limits.length > 0 && <details className="cp-guide-disclosure"><summary>{t('Ce qui peut changer votre choix', 'What could change your choice')}<ChevronDown aria-hidden="true" /></summary><ul>{s.limits.map(limit => <li key={limit}>{limit}</li>)}</ul></details>}
           </article>)}
         </div>
+        <p className="cp-guide-editorial-verdict">{pick(content.finalRecommendation, content.finalRecommendationEn)}</p>
         <div className="cp-guide-shortcuts">
           <a href="#changer"><span>{t('Déjà équipé ?', 'Already using one?')} <strong>{t('Gardez ce qui fonctionne.', 'Keep what works.')}</strong></span><ArrowRight aria-hidden="true" /></a>
           <a href="#cout" onClick={() => setAudience('team')}><span>{t('À plusieurs ?', 'Choosing for a team?')} <strong>{t('Comparez le coût par siège.', 'Compare the cost per seat.')}</strong></span><ArrowRight aria-hidden="true" /></a>
@@ -74,7 +74,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       <section id="comparaison" className="cp-guide-section" aria-labelledby="cp-differences-title">
 
         <h2 id="cp-differences-title">{t('Comparez ce qui compte.', 'Compare what matters.')}</h2>
-        <p className="cp-guide-section-intro">{t('Partez des tâches qui reviennent dans votre semaine.', 'Start with the tasks you do every week.')}</p>
+        <p className="cp-guide-section-intro">{pick(content.criteriaIntro || content.verdictShort, content.criteriaIntroEn || content.verdictShortEn)}</p>
         <table className="cp-guide-matrix">
           <caption className="sr-only">{t('Comparaison par usage', 'Comparison by use case')}</caption>
           <thead><tr><th scope="col">{t('Votre besoin', 'Your need')}</th>{tools.map(tool => <th scope="col" key={tool.id}>{tool.name}</th>)}</tr></thead>
@@ -125,8 +125,24 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       <section id="changer" className="cp-guide-section cp-guide-switch-section" aria-labelledby="cp-switch-title">
 
         <h2 id="cp-switch-title">{t('Changer doit vous simplifier la vie.', 'Switching should make work easier.')}</h2>
-        <div className="cp-guide-switching">{(curated?.switching ?? genericSwitching).map(s => <div key={s.title}><h3>{s.title}</h3><p>{s.text}</p></div>)}</div>
+        <div className="cp-guide-switching">
+          <div><h3>{t('Le choix de départ', 'Where to start')}</h3><p>{pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn)}</p></div>
+          <div><h3>{t('Quand changer', 'When to switch')}</h3><p>{pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn)}</p></div>
+          {pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).length > 0 && <div><h3>{t('Les situations à reconnaître', 'Situations to watch for')}</h3><ul>{pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).map(signal => <li key={signal}>{signal}</li>)}</ul></div>}
+        </div>
       </section>
+      {content.profiles.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-profiles-title">
+        <h2 id="cp-profiles-title">{t('Selon votre travail.', 'For your workflow.')}</h2>
+        <div className="cp-guide-editorial-grid">{content.profiles.map(profile => <article key={profile.persona}>
+          <h3>{pick(profile.persona, profile.personaEn)}</h3><p><strong>{profile.choice}</strong></p><p>{pick(profile.reason, profile.reasonEn)}</p><p className="cp-guide-editorial-limit">{pick(profile.limit, profile.limitEn)}</p>
+        </article>)}</div>
+      </section>}
+      {content.tooltrimRisks.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-risks-title">
+        <h2 id="cp-risks-title">{t('Les pièges de ce choix.', 'The trade-offs to watch.')}</h2>
+        <div className="cp-guide-faq">{content.tooltrimRisks.map(risk => <details key={risk.mistake}>
+          <summary>{pick(risk.mistake, risk.mistakeEn)}<ChevronDown aria-hidden="true" /></summary><p>{pick(risk.consequence, risk.consequenceEn)}</p><p>{pick(risk.recommendation, risk.recommendationEn)}</p>
+        </details>)}</div>
+      </section>}
       <section id="essai" className="cp-guide-section" aria-labelledby="cp-test-title">
 
         <h2 id="cp-test-title">{t('Un essai vaut mieux qu’un classement.', 'Your work is the best test.')}</h2>

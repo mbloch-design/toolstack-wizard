@@ -31247,3 +31247,14 @@ section[id] {
     .cp-guide-method { padding-top: 0; }
   }
 }
+
+@layer components {
+  .cp-guide-editorial-verdict { margin: 24px 0; max-width: 76ch; font-size: 17px; }
+  .cp-guide-disclosure ul, .cp-guide-switching ul { padding-left: 20px; font-size: 14px; line-height: 1.6; }
+  .cp-guide-disclosure li + li, .cp-guide-switching li + li { margin-top: 10px; }
+  .cp-guide-editorial-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  .cp-guide-editorial-grid article { border-top: 1px solid var(--color-border); padding-top: 24px; }
+  .cp-guide-editorial-grid p { margin: 12px 0; }
+  .cp-guide-editorial-limit { font-size: 14px; }
+  @media (max-width: 600px) { .cp-guide-editorial-grid { grid-template-columns: 1fr; } }
+}

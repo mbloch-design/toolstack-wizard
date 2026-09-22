@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-22 — Restauration éditoriale des comparatifs
+
+- Le template réutilise les accroches, recommandations, critères, limites, points de bascule, profils et risques des contenus comparatifs existants, au lieu des substitutions génériques. Les tarifs sourcés restent séparés.
+- La date de revue éditoriale est distincte de celle des prix. Compléments de traduction ChatGPT/Claude et traduction des recommandations élément par élément avant concaténation.
+- Correction locale du détail des comparatifs ; l’index et la nouvelle direction visuelle restent hors de ce changement.
+
 ## 2026-09-22 — Comparatifs : lecture et aide à la décision
 
 - Nouveau template partagé : deux choix en ouverture, tableau par usage, budget, changement d’outil et protocole d’essai. Typographie plus hiérarchisée, surfaces sobres et détails dépliables.
