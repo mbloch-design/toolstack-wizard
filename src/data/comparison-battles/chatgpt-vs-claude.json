@@ -164,7 +164,7 @@
   },
   "comparison": {
     "whyCompared": "Ce sont deux assistants IA généralistes que les freelances et équipes utilisent pour écrire, analyser, chercher, coder et produire plus vite.",
-    "falseSimilarity": "Ils semblent interchangeables car ils répondent tous les deux à des prompts. En réalité, le choix dépend surtout du type de travail : assistant polyvalent et outillé côté ChatGPT, profondeur rédactionnelle et confort sur longs documents côté Claude.",
+    "falseSimilarity": "ChatGPT pour varier les tâches ; Claude si votre travail repose surtout sur les textes longs et les documents.",
     "mainDifference": "ChatGPT est le meilleur choix par défaut pour un usage généraliste et multimodal. Claude devient plus logique quand le cœur du travail est l’analyse longue, l’écriture structurée ou la qualité éditoriale.",
     "decisionSummary": "Par défaut, ToolTrim recommande ChatGPT pour un solo ou freelance qui veut un assistant IA unique. Claude devient meilleur si l’usage principal est la rédaction longue, l’analyse de documents ou le travail éditorial exigeant.",
     "tooltrimDefaultChoice": "toolA",
@@ -679,7 +679,7 @@
     "avoidBothIf": [
       "Vous n’avez pas d’usage hebdomadaire clair."
     ],
-    "finalRecommendation": "Par défaut, ToolTrim recommande de choisir une IA principale selon usage réel. Garder les deux seulement si ChatGPT sert aux outils polyvalents et Claude aux textes longs.",
+    "finalRecommendation": "Choisissez une IA principale. Payez les deux seulement si vous séparez clairement leurs rôles : tâches variées pour ChatGPT, textes longs pour Claude.",
     "reviewedAt": "2026-05-19"
   },
   "pricingComparison": {

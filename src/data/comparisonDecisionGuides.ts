@@ -50,15 +50,15 @@ export const chatgptClaudeGuides: Record<'fr' | 'en', ComparisonDecisionGuide> =
       { title: 'Remplacer', text: 'L’autre résout un blocage récurrent ? Testez-le, puis comptez les projets, instructions et intégrations à recréer.' },
       { title: 'Compléter', text: 'Une tâche régulière et distincte pour chacun ? Les deux peuvent se justifier. Sinon, gardez le second en version gratuite.' },
     ],
-    trial: ['Un brief, une synthèse, une recherche. Utilisez vos cas habituels et des fichiers que vous pouvez partager.', 'Mêmes consignes, mêmes documents, même résultat attendu. Notez le plan et le modèle utilisés.', 'Vérifiez les faits et le respect du brief. Comparez les minutes de correction et les limites rencontrées.'],
+    trial: ['Un brief ou une synthèse, avec des fichiers que vous pouvez partager.', 'Même brief, mêmes fichiers. Notez le plan et le modèle.', 'Vérifiez les faits, puis comptez les corrections et les blocages.'],
     faq: [
       { question: 'Faut-il payer ChatGPT et Claude ?', answer: 'Seulement si chacun remplit une tâche récurrente distincte. Deux abonnements individuels mensuels Plus et Pro coûtent ensemble 40 $ par mois avant taxes applicables. Un second avis occasionnel peut se tester avec les offres gratuites.' },
       { question: 'Claude écrit-il toujours mieux ?', answer: 'Aucun vainqueur universel n’est établi ici. Le résultat dépend du brief, du modèle, des documents et du niveau de retouche attendu. Cette page propose un protocole d’essai ; elle ne présente pas de benchmark comparatif réalisé par ToolTrim.' },
       { question: 'Ce comparatif départage-t-il aussi Codex et Claude Code ?', answer: 'Non. Le périmètre principal est celui des applications d’assistance au travail. Un choix pour le développement exige un essai sur votre dépôt, vos tests et votre environnement. Les accès inclus et les limites doivent être examinés séparément.' },
     ],
     alternatives: [
-      { slug: 'gemini', name: 'Gemini', reason: 'À examiner si votre choix dépend d’abord de votre environnement Google : vérifiez les intégrations dont vous avez besoin.' },
-      { slug: 'perplexity', name: 'Perplexity', reason: 'À examiner si votre tâche principale est la recherche de sources plutôt que la production de livrables variés.' },
+      { slug: 'gemini', name: 'Gemini', reason: 'Pour travailler dans l’environnement Google.' },
+      { slug: 'perplexity', name: 'Perplexity', reason: 'Pour chercher et consulter des sources.' },
     ], sources,
   },
   en: {
@@ -91,15 +91,15 @@ export const chatgptClaudeGuides: Record<'fr' | 'en', ComparisonDecisionGuide> =
       { title: 'Replace', text: 'Does the other solve a recurring problem? Test it, then account for rebuilding projects, instructions and integrations.' },
       { title: 'Complement', text: 'A distinct, recurring job for each? Both may make sense. Otherwise, keep the second on its free plan.' },
     ],
-    trial: ['A brief, a summary, a research question. Use your regular tasks and files you are allowed to share.', 'Same instructions, same files, same expected result. Record the plan and model you use.', 'Check the facts and the brief. Compare minutes spent editing and any usage limits you hit.'],
+    trial: ['A brief or a summary, using files you can share.', 'Same brief, same files. Record the plan and model.', 'Check the facts, then count corrections and interruptions.'],
     faq: [
       { question: 'Should I pay for both ChatGPT and Claude?', answer: 'Only if each handles a distinct recurring task. Monthly Plus and Pro subscriptions total $40 per month before applicable taxes. You can try an occasional second opinion on the free plans.' },
       { question: 'Is Claude always better at writing?', answer: 'No universal winner is established here. Results depend on the brief, model, source files and editing standard. This page offers a trial method; it does not report a hands-on comparative benchmark by ToolTrim.' },
       { question: 'Does this comparison also rank Codex and Claude Code?', answer: 'No. The main scope is the work assistant apps. A development choice needs a trial with your repository, tests and environment. Included access and limits should be assessed separately.' },
     ],
     alternatives: [
-      { slug: 'gemini', name: 'Gemini', reason: 'Consider it if your decision primarily depends on your Google environment; check the integrations you need.' },
-      { slug: 'perplexity', name: 'Perplexity', reason: 'Consider it if finding sources is your main task rather than producing a variety of deliverables.' },
+      { slug: 'gemini', name: 'Gemini', reason: 'For work within Google’s ecosystem.' },
+      { slug: 'perplexity', name: 'Perplexity', reason: 'For finding and reviewing sources.' },
     ], sources,
   },
 };

@@ -1,5 +1,10 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-23 — Comparatifs : ton direct
+
+- Titres FR/EN explicites : différences, tarifs, limites, changement d’outil. Retrait des slogans et des paragraphes de transition redondants.
+- Accroche et recommandation ChatGPT/Claude raccourcies à la source ; protocole d’essai et alternatives plus concis. Les critères, risques, réserves et conditions tarifaires restent disponibles.
+
 ## 2026-09-22 — Comparatifs : système visuel réutilisable
 
 - Cartes d’ouverture avec médias du catalogue et navigation de galerie, formats identiques, gestion des erreurs et illustration de repli. Aucun asset créé par duel ; inventaire local documenté.

@@ -929,6 +929,8 @@ const COMPARISON_BATTLE_EN: Record<string, string> = {
   "Wiki d’agence": "Agency wiki",
   "Workflow multi-branches": "Multi-branch workflow",
 
+  "ChatGPT pour varier les tâches ; Claude si votre travail repose surtout sur les textes longs et les documents.": "ChatGPT for a mix of tasks; Claude when most of your work involves long texts and documents.",
+  "Choisissez une IA principale. Payez les deux seulement si vous séparez clairement leurs rôles : tâches variées pour ChatGPT, textes longs pour Claude.": "Choose one main AI. Pay for both only with distinct roles: varied tasks for ChatGPT, long-form text for Claude.",
 };
 
 export function translateBattleCopy(value: string): string {
