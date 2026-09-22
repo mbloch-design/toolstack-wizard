@@ -1,18 +1,43 @@
 import { translateBattleCopy } from '@/data/comparisonBattlesEn';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
 import ToolLogo from '@/components/ToolLogo';
 import Breadcrumb from '@/components/Breadcrumb';
-import { ArrowRight, ChevronDown } from '@/lib/icons';
+import { ArrowRight, ChevronDown, Layers, Target, RefreshCw, FileText, Users, Search, PenTool, Code2, Wallet } from '@/lib/icons';
 import type { Tool } from '@/data/types';
 import type { CompareEditorialContent } from '@/pages/ComparePage';
 import { chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
+
+import ComparisonMedia from './ComparisonMedia';
+
+function criterionIcon(title: string) {
+  if (/équipe|team|collabor/i.test(title)) return Users;
+  if (/recherch|research|source/i.test(title)) return Search;
+  if (/prix|coût|price|cost|budget/i.test(title)) return Wallet;
+  if (/code|api|dev/i.test(title)) return Code2;
+  if (/design|visuel|visual|image/i.test(title)) return PenTool;
+  return FileText;
+}
 
 interface Props { toolA: Tool; toolB: Tool; content: CompareEditorialContent; slugPair: string }
 
 export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair }: Props) {
   const { lang, t, prefix } = useLang();
+  const [selectedCriterion, setSelectedCriterion] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState('decision');
+  useEffect(() => {
+    setSelectedCriterion(null);
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible[0]) setActiveSection(visible[0].target.id);
+    }, { rootMargin: '-15% 0px -55% 0px' });
+    for (const id of ['decision', 'comparaison', 'cout', 'changer', 'essai']) {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    }
+    return () => observer.disconnect();
+  }, [slugPair, lang]);
   const [audience, setAudience] = useState<'solo' | 'team'>('solo');
   const pick = (fr: string, en: string) => lang === 'fr' ? fr : en;
   const curated = slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined;
@@ -53,13 +78,14 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
         <p className="cp-guide-scope">{curated?.scope ?? t('Choix, budget et changement d’outil pour indépendants et petites équipes.', 'Choice, budget and switching tools for freelancers and small teams.')}</p>
       </header>
       <nav className="cp-guide-nav" aria-label={t('Dans ce comparatif', 'In this comparison')}>
-        {headings.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
+        {headings.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}
       </nav>
       <section id="decision" className="cp-guide-section" aria-labelledby="cp-decision-title">
 
         <h2 id="cp-decision-title">{t('L’essentiel pour choisir.', 'A good place to start.')}</h2>
         <div className="cp-guide-scenarios">
           {scenarios.slice(0, 2).map((s, i) => <article className="cp-guide-scenario" key={s.choice}>
+            <ComparisonMedia key={tools[i].id} tool={tools[i]} lang={lang} />
             <div className="cp-guide-scenario-identity"><ToolLogo tool={tools[i]} size={28} aria-hidden="true" /><span>{tools[i].name}</span></div>
             <h3>{s.choice}</h3><p>{s.reason}</p>
             {s.limits.length > 0 && <details className="cp-guide-disclosure"><summary>{t('Ce qui peut changer votre choix', 'What could change your choice')}<ChevronDown aria-hidden="true" /></summary><ul>{s.limits.map(limit => <li key={limit}>{limit}</li>)}</ul></details>}
@@ -75,10 +101,15 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
 
         <h2 id="cp-differences-title">{t('Comparez ce qui compte.', 'Compare what matters.')}</h2>
         <p className="cp-guide-section-intro">{pick(content.criteriaIntro || content.verdictShort, content.criteriaIntroEn || content.verdictShortEn)}</p>
+        <div className="cp-criteria-selector" role="group" aria-label={t('Filtrer les critères', 'Filter criteria')}>
+          <button type="button" aria-pressed={selectedCriterion === null} onClick={() => setSelectedCriterion(null)}><Layers size={18} aria-hidden="true" />{t('Tout comparer', 'Compare all')}</button>
+          {criteria.map(c => { const Icon = criterionIcon(c.title); return <button key={c.title} type="button" aria-pressed={selectedCriterion === c.title} onClick={() => setSelectedCriterion(c.title)}><Icon size={18} aria-hidden="true" />{c.title}</button>; })}
+        </div>
+        <p className="sr-only" role="status">{selectedCriterion || t('Tous les critères affichés', 'All criteria shown')}</p>
         <table className="cp-guide-matrix">
           <caption className="sr-only">{t('Comparaison par usage', 'Comparison by use case')}</caption>
           <thead><tr><th scope="col">{t('Votre besoin', 'Your need')}</th>{tools.map(tool => <th scope="col" key={tool.id}>{tool.name}</th>)}</tr></thead>
-          <tbody>{criteria.map(c => <tr key={c.title}>
+          <tbody>{criteria.filter(c => selectedCriterion === null || selectedCriterion === c.title).map(c => <tr key={c.title}>
             <th scope="row"><span>{c.title}</span><details className="cp-guide-disclosure"><summary>{t('Notre conseil', 'Our advice')}<ChevronDown aria-hidden="true" /></summary><p>{c.takeaway}{c.source && <a href="#sources" aria-label={t('Voir les sources', 'View sources')}> [{c.source}]</a>}</p></details></th>
             <td><span className="cp-guide-mobile-label">{toolA.name}</span>{c.a}</td>
             <td><span className="cp-guide-mobile-label">{toolB.name}</span>{c.b}</td>
@@ -87,7 +118,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       </section>
       <section id="cout" className="cp-guide-section" aria-labelledby="cp-pricing-title">
 
-        <h2 id="cp-pricing-title">{t('Le bon plan. Au bon prix.', 'The right plan. The right price.')}</h2>
+        <h2 id="cp-pricing-title"><Wallet className="cp-section-icon" size={28} aria-hidden="true" />{t('Le bon plan. Au bon prix.', 'The right plan. The right price.')}</h2>
         <p className="cp-guide-section-intro">{curated ? t('Les offres gratuites suffisent pour commencer. Voici les repères pour un usage régulier.', 'Start with the free plans. These are reference points for regular use.') : t('Comparez le coût du plan adapté à votre travail, ses limites et sa facturation.', 'Compare the cost of the plan that fits your work, its limits and billing terms.')}</p>
         {curated ? <>
           <div className="cp-guide-segmented" role="group" aria-label={t('Comparer les tarifs pour', 'Compare pricing for')}>
@@ -124,8 +155,9 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       </section>
       <section id="changer" className="cp-guide-section cp-guide-switch-section" aria-labelledby="cp-switch-title">
 
-        <h2 id="cp-switch-title">{t('Changer doit vous simplifier la vie.', 'Switching should make work easier.')}</h2>
+        <h2 id="cp-switch-title"><RefreshCw className="cp-section-icon" size={28} aria-hidden="true" />{t('Changer doit vous simplifier la vie.', 'Switching should make work easier.')}</h2>
         <div className="cp-guide-switching">
+          <div className="cp-decision-diagram" aria-hidden="true"><span><ToolLogo tool={toolA} size={40} />{toolA.name}</span><span className="cp-diagram-link"><ArrowRight size={22} /><span>{t('Votre usage décide', 'Your work decides')}</span></span><span><ToolLogo tool={toolB} size={40} />{toolB.name}</span></div>
           <div><h3>{t('Le choix de départ', 'Where to start')}</h3><p>{pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn)}</p></div>
           <div><h3>{t('Quand changer', 'When to switch')}</h3><p>{pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn)}</p></div>
           {pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).length > 0 && <div><h3>{t('Les situations à reconnaître', 'Situations to watch for')}</h3><ul>{pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).map(signal => <li key={signal}>{signal}</li>)}</ul></div>}
@@ -145,7 +177,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       </section>}
       <section id="essai" className="cp-guide-section" aria-labelledby="cp-test-title">
 
-        <h2 id="cp-test-title">{t('Un essai vaut mieux qu’un classement.', 'Your work is the best test.')}</h2>
+        <h2 id="cp-test-title"><Target className="cp-section-icon" size={28} aria-hidden="true" />{t('Un essai vaut mieux qu’un classement.', 'Your work is the best test.')}</h2>
         <ol className="cp-guide-trial">{trial.map((step, i) => <li key={step}><div><h3>{[t('Prenez une vraie tâche.', 'Pick real work.'), t('Comparez à armes égales.', 'Give both the same brief.'), t('Comptez les retouches.', 'Count the corrections.')][i]}</h3><p>{step}</p></div></li>)}</ol>
       </section>
       {faq.length > 0 && <section id="doutes" className="cp-guide-section" aria-labelledby="cp-faq-title"><h2 id="cp-faq-title">{t('Les dernières questions.', 'The remaining questions.')}</h2><div className="cp-guide-faq">{faq.map(item => <details key={item.question}><summary>{item.question}<ChevronDown aria-hidden="true" /></summary><p>{item.answer}</p></details>)}</div></section>}

@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-22 — Comparatifs : système visuel réutilisable
+
+- Cartes d’ouverture avec médias du catalogue et navigation de galerie, formats identiques, gestion des erreurs et illustration de repli. Aucun asset créé par duel ; inventaire local documenté.
+- Filtrage des critères avec pictos Iconoir et retour au tableau complet. Repère de section active, navigation sticky sur ordinateur, schéma de décision et pictos de sections.
+- Transitions courtes avec respect de prefers-reduced-motion ; contenu éditorial restauré conservé.
+
 ## 2026-09-22 — Index comparatifs : angles éditoriaux
 
 - Les 75 comparatifs disposent d’un résumé spécifique en français et en anglais. Les deux champs sont requis ; les cartes ne concatènent plus les descriptions des outils.
