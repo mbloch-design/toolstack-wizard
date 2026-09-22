@@ -1,42 +1,49 @@
 import { translateBattleCopy } from '@/data/comparisonBattlesEn';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
 import ToolLogo from '@/components/ToolLogo';
 import Breadcrumb from '@/components/Breadcrumb';
-import { ArrowRight, ChevronDown, Layers, Target, RefreshCw, FileText, Users, Search, PenTool, Code2, Wallet } from '@/lib/icons';
+import { ArrowRight, ChevronDown, Target, RefreshCw, Wallet } from '@/lib/icons';
 import type { Tool } from '@/data/types';
 import type { CompareEditorialContent } from '@/pages/ComparePage';
 import { chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
 
 import ComparisonMedia from './ComparisonMedia';
 
-function criterionIcon(title: string) {
-  if (/équipe|team|collabor/i.test(title)) return Users;
-  if (/recherch|research|source/i.test(title)) return Search;
-  if (/prix|coût|price|cost|budget/i.test(title)) return Wallet;
-  if (/code|api|dev/i.test(title)) return Code2;
-  if (/design|visuel|visual|image/i.test(title)) return PenTool;
-  return FileText;
-}
-
 interface Props { toolA: Tool; toolB: Tool; content: CompareEditorialContent; slugPair: string }
 
 export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair }: Props) {
   const { lang, t, prefix } = useLang();
-  const [selectedCriterion, setSelectedCriterion] = useState<string | null>(null);
-  const [activeSection, setActiveSection] = useState('decision');
+  const navRef = useRef<HTMLElement>(null);
+  const [activeSection, setActiveSection] = useState('comparaison');
   useEffect(() => {
-    setSelectedCriterion(null);
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      if (visible[0]) setActiveSection(visible[0].target.id);
-    }, { rootMargin: '-15% 0px -55% 0px' });
-    for (const id of ['decision', 'comparaison', 'cout', 'changer', 'essai']) {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    }
-    return () => observer.disconnect();
+    const ids = ['comparaison', 'decision', 'cout', 'changer', 'essai'];
+    let frame = 0;
+    const update = () => {
+      const boundary = (navRef.current?.getBoundingClientRect().bottom ?? 0) + 28;
+      let current = ids[0];
+      for (const id of ids) {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= boundary) current = id;
+      }
+      setActiveSection(current);
+    };
+    const schedule = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+    // Capture both AppShell's internal scrolling and mobile document scrolling.
+    document.addEventListener('scroll', schedule, { capture: true, passive: true });
+    window.addEventListener('resize', schedule);
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target && ids.includes(target.id)) target.scrollIntoView({ block: 'start' });
+    update();
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener('scroll', schedule, true);
+      window.removeEventListener('resize', schedule);
+    };
   }, [slugPair, lang]);
   const [audience, setAudience] = useState<'solo' | 'team'>('solo');
   const pick = (fr: string, en: string) => lang === 'fr' ? fr : en;
@@ -61,7 +68,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   ];
   const tools = [toolA, toolB];
   const headings = [
-    ['decision', t('Choisir', 'Choose')], ['comparaison', t('Différences', 'Differences')],
+    ['comparaison', t('Comparer', 'Compare')], ['decision', t('Notre avis', 'Our verdict')],
     ['cout', t('Prix', 'Pricing')], ['changer', t('Changer ?', 'Switch?')], ['essai', t('Tester', 'Test')],
   ];
   const date = content.checkedAt;
@@ -77,12 +84,25 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
         <p className="cp-guide-intro">{pick(content.framing, content.framingEn)}</p>
         {curated && <p className="cp-guide-scope">{curated.scope}</p>}
       </header>
-      <nav className="cp-guide-nav" aria-label={t('Dans ce comparatif', 'In this comparison')}>
+      <nav ref={navRef} className="cp-guide-nav" aria-label={t('Dans ce comparatif', 'In this comparison')}>
         {headings.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}
       </nav>
+      <section id="comparaison" className="cp-guide-section cp-guide-comparison" aria-labelledby="cp-differences-title">
+        <h2 id="cp-differences-title">{t('Comparez selon votre usage', 'Compare by use case')}</h2>
+        <div className="cp-duel-list">
+          {criteria.map((c, index) => <article className="cp-duel" key={c.title} aria-labelledby={`cp-criterion-${index}`}>
+            <h3 id={`cp-criterion-${index}`}>{c.title}</h3>
+            <div className="cp-duel-pair">
+              <div><h4><ToolLogo tool={toolA} size={24} />{toolA.name}</h4><p>{c.a}</p></div>
+              <div><h4><ToolLogo tool={toolB} size={24} />{toolB.name}</h4><p>{c.b}</p></div>
+            </div>
+            {c.takeaway && <p className="cp-duel-advice"><strong>{t('Pour choisir', 'How to choose')}</strong>{c.takeaway}{c.source && <a href="#sources"> [{c.source}]</a>}</p>}
+          </article>)}
+        </div>
+      </section>
       <section id="decision" className="cp-guide-section" aria-labelledby="cp-decision-title">
 
-        <h2 id="cp-decision-title">{t('Lequel choisir ?', 'Which should you choose?')}</h2>
+        <h2 id="cp-decision-title">{t('Notre avis', 'Our verdict')}</h2>
         <div className="cp-guide-scenarios">
           {scenarios.slice(0, 2).map((s, i) => <article className="cp-guide-scenario" key={s.choice}>
             <ComparisonMedia key={tools[i].id} tool={tools[i]} lang={lang} />
@@ -96,25 +116,6 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           <a href="#changer"><span>{t('Vous utilisez déjà l’un des deux ?', 'Already using either tool?')}</span><ArrowRight aria-hidden="true" /></a>
           <a href="#cout" onClick={() => setAudience('team')}><span>{t('Tarifs pour une équipe', 'Team pricing')}</span><ArrowRight aria-hidden="true" /></a>
         </div>
-      </section>
-      <section id="comparaison" className="cp-guide-section" aria-labelledby="cp-differences-title">
-
-        <h2 id="cp-differences-title">{t('Les différences', 'Key differences')}</h2>
-        {content.criteriaIntro && <p className="cp-guide-section-intro">{pick(content.criteriaIntro, content.criteriaIntroEn || content.criteriaIntro)}</p>}
-        <div className="cp-criteria-selector" role="group" aria-label={t('Filtrer les critères', 'Filter criteria')}>
-          <button type="button" aria-pressed={selectedCriterion === null} onClick={() => setSelectedCriterion(null)}><Layers size={18} aria-hidden="true" />{t('Tout comparer', 'Compare all')}</button>
-          {criteria.map(c => { const Icon = criterionIcon(c.title); return <button key={c.title} type="button" aria-pressed={selectedCriterion === c.title} onClick={() => setSelectedCriterion(c.title)}><Icon size={18} aria-hidden="true" />{c.title}</button>; })}
-        </div>
-        <p className="sr-only" role="status">{selectedCriterion || t('Tous les critères affichés', 'All criteria shown')}</p>
-        <table className="cp-guide-matrix">
-          <caption className="sr-only">{t('Comparaison par usage', 'Comparison by use case')}</caption>
-          <thead><tr><th scope="col">{t('Votre besoin', 'Your need')}</th>{tools.map(tool => <th scope="col" key={tool.id}>{tool.name}</th>)}</tr></thead>
-          <tbody>{criteria.filter(c => selectedCriterion === null || selectedCriterion === c.title).map(c => <tr key={c.title}>
-            <th scope="row"><span>{c.title}</span><details className="cp-guide-disclosure"><summary>{t('Notre conseil', 'Our advice')}<ChevronDown aria-hidden="true" /></summary><p>{c.takeaway}{c.source && <a href="#sources" aria-label={t('Voir les sources', 'View sources')}> [{c.source}]</a>}</p></details></th>
-            <td><span className="cp-guide-mobile-label">{toolA.name}</span>{c.a}</td>
-            <td><span className="cp-guide-mobile-label">{toolB.name}</span>{c.b}</td>
-          </tr>)}</tbody>
-        </table>
       </section>
       <section id="cout" className="cp-guide-section" aria-labelledby="cp-pricing-title">
 

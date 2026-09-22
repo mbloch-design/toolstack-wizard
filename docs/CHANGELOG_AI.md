@@ -1,3 +1,11 @@
+## 2026-09-23 — Comparatifs : face-à-face par usage et navigation
+
+- La comparaison passe avant les cartes de présentation : besoin commun, deux colonnes nommées, conseil visible sous chaque paire.
+- Retrait des filtres de critères et des conseils repliés ; contenus spécifiques conservés.
+- Sommaire sticky sur toutes les largeurs, suivi de la section active sur le scroll interne AppShell et le document mobile.
+- Exclusion des sections comparatives de la règle globale de marge d’ancre, qui écrasait leur décalage mobile et masquait les titres.
+- Vérification navigateur FR ChatGPT/Claude et EN Hive/Asana, cinq destinations et mobile 390 px.
+
 # ToolTrim — AI Changelog
 
 ## 2026-09-23 — Comparatifs : ton direct

@@ -17541,7 +17541,7 @@
 
 /* Ensure sections don't hide behind sticky elements when scrolled to */
 .sd-section[id],
-section[id] {
+section[id]:not(.cp-guide-section) {
   scroll-margin-top: 80px;
 }
 
@@ -31291,4 +31291,33 @@ section[id] {
   @media (min-width: 601px) and (max-width: 900px) { .cp-media { margin: -24px -24px 24px; } }
   @media (max-width: 600px) { .cp-media { margin: -24px -24px 24px; } .cp-media-stage { aspect-ratio: 16 / 9; } .cp-guide-editorial-verdict { font-size: 17px; padding-left: 16px; } .cp-media-controls button { width: 44px; height: 44px; } }
   @media (prefers-reduced-motion: reduce) { .cp-guide *, .cp-guide *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+}
+
+
+@layer components {
+  /* Comparison is the primary reading surface; advice stays next to evidence. */
+  .cp-guide-nav { position: sticky; top: 0; flex-wrap: nowrap; gap: 4px; overflow-x: auto; background: var(--color-bg); padding: 6px 0; }
+  .cp-guide-nav a { flex: 1 0 auto; justify-content: center; padding: 0 12px; white-space: nowrap; }
+  .cp-guide-nav a[aria-current="location"] { background: var(--color-surface-soft); border-radius: 8px; }
+  .cp-guide-section { scroll-margin-top: 68px; }
+  .cp-guide-comparison { padding-top: 32px; }
+  .cp-duel-list { display: grid; gap: 24px; }
+  .cp-duel { border: 1px solid var(--color-border); border-radius: 16px; overflow: hidden; }
+  .cp-duel h3 { padding: 20px 24px; margin: 0; background: var(--color-surface-soft); font-size: 18px; }
+  .cp-duel-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cp-duel-pair > div { padding: 20px 24px; }
+  .cp-duel-pair > div + div { border-left: 1px solid var(--color-border); }
+  .cp-duel-pair h4 { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 650; margin: 0 0 12px; }
+  .cp-duel-pair p { margin: 0; font-size: 15px; }
+  .cp-duel-advice { border-top: 1px solid var(--color-border); padding: 16px 24px; margin: 0; font-size: 14px; }
+  .cp-duel-advice strong { display: block; font-size: 12px; margin-bottom: 4px; }
+  @media (max-width: 640px) {
+    .cp-guide-nav { top: var(--header-height, 68px); }
+    .cp-guide-section { scroll-margin-top: calc(var(--header-height, 68px) + 68px); }
+    .cp-guide-nav a { padding-inline: 10px; }
+    .cp-duel h3 { padding: 16px; font-size: 17px; }
+    .cp-duel-pair > div { padding: 16px 12px; }
+    .cp-duel-pair p { font-size: 14px; line-height: 1.5; }
+    .cp-duel-advice { padding: 14px 16px; }
+  }
 }
