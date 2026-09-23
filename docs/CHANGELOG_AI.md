@@ -4464,3 +4464,6 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Navigation SectionPillNav commune ; décalage mobile au-dessus de la navigation principale. FAQ structurée alignée avec les réponses réellement affichées, y compris les variantes éditoriales.
 - Données du catalogue conservées ; les montants existants ne sont pas une nouvelle vérification tarifaire.
 - Validation : build production PASS ; 424 pages FR/EN contrôlées (tous les outils dans l'ordre source, un H1, sections présentes). Rendu navigateur consultant FR, développeur EN à 390 px, architecte FR ; sommaire et FAQ testés. Le contrôle TypeScript global remonte encore des erreurs hors de StackDetailPage.
+## 2026-09-23 — Stacks : retrait de la capsule flottante
+
+- Retrait de SectionPillNav du template stack après retour utilisateur : cette ancienne navigation recouvrait le contenu et avait été réintroduite par erreur.

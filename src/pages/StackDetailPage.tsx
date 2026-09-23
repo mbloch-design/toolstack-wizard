@@ -2,7 +2,6 @@ import { useEffect, useMemo } from "react";
 import { fitBrandedTitle } from "@/lib/seoTitle";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChevronDown, ArrowRight } from "@/lib/icons";
-import SectionPillNav from "@/components/SectionPillNav";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
@@ -668,13 +667,6 @@ const StackDetailPage = () => {
   const hasRisks = editorial.risks.length > 0;
   const hasAltVariants = editorial.altVariants.length > 0;
 
-  const navSections = [
-    { id: "outils", label: t("Outils", "Tools") },
-    { id: "avis", label: t("Notre avis", "Our take") },
-    { id: "budget", label: t("Budget", "Budget") },
-    ...(hasRisks || stack.risk ? [{ id: "limites", label: t("Vigilance", "Watch-outs") }] : []),
-    ...(editorial.faq.length ? [{ id: "faq", label: "FAQ" }] : []),
-  ];
 
   return (
     <article className="sg-page">
@@ -736,7 +728,6 @@ const StackDetailPage = () => {
 
       {relatedStacks.length > 0 && <section className="sg-section"><div className="sg-section-heading"><h2>{t("D’autres stacks à explorer", "More stacks to explore")}</h2></div><div className="sd-related-grid">{relatedStacks.map((related) => <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card"><div className="sd-related-visual"><div className="sd-related-logo-pile">{asArray(related.tools).slice(0, 4).map((slot) => { const tool = toolBySlug.get(slot.slug); return tool ? <span key={slot.slug} className="sd-related-logo"><ToolLogo tool={tool} size={30} /></span> : null; })}</div></div><div className="sd-related-content"><h3 className="sd-related-name">{t(related.title, related.titleEn)}</h3><p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p><span className="sd-related-cta">{t("Voir la stack", "View stack")} →</span></div></Link>)}</div></section>}
 
-      <SectionPillNav sections={navSections} logoTo={`${prefix}/stacks`} logoAriaLabel={t("Toutes les stacks", "All stacks")} ariaLabel={t("Dans cette stack", "In this stack")} heroSelector=".sg-hero" />
     </article>
   );
 };
