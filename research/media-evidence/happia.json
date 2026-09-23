@@ -1,0 +1,17 @@
+{
+  "slug": "happia",
+  "verified_on": "2026-09-24",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": ["https://happia.fr/"]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://happia.fr/preuve-apercu-ia-google.webp",
+      "source_page_url": "https://happia.fr/",
+      "official": true
+    }
+  ]
+}

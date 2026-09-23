@@ -37076,10 +37076,10 @@
     "slug": "happia",
     "name": "Happia",
     "categoryId": "analytics",
-    "shortDescription": "Audit et pilotage de la visibilité d'un commerce local dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
-    "shortDescriptionEn": "Audits and manages a local business's visibility in ChatGPT, Gemini, Perplexity and Claude answers.",
+    "shortDescription": "Audit et pilotage de la visibilité des TPE et PME dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
+    "shortDescriptionEn": "Audits and manages how small businesses appear in ChatGPT, Gemini, Perplexity and Claude answers.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent (essai 14 jours, carte enregistrée, aucun prélèvement)",
+      "free": "Pas de plan gratuit permanent (essai Pro de 14 jours sans carte bancaire)",
       "paid": "79 à 159 €HT/mois selon le plan (Essentiel, Pro, Premium), + 49 €HT/mois/site en add-on multi-établissements (Premium)"
     },
     "defaultMonthlyPrice": 79,
@@ -37098,9 +37098,9 @@
       "community-manager"
     ],
     "relevantFor": [
-      "Commerces locaux indépendants",
-      "Restaurateurs et hôteliers",
-      "Artisans et professions de santé de proximité"
+      "TPE et PME avec ou sans point de vente",
+      "Commerces, e-commerçants et SaaS",
+      "Agences, consultants, indépendants et professions libérales"
     ]
   },
   {

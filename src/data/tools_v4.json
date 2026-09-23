@@ -172557,30 +172557,30 @@
     "slug": "happia",
     "name": "Happia",
     "category": "analytics",
-    "shortDescription": "Audit et pilotage de la visibilité d'un commerce local dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
-    "shortDescriptionEn": "Audits and manages a local business's visibility in ChatGPT, Gemini, Perplexity and Claude answers.",
-    "description": "Happia audite la visibilité d'un commerce local dans les réponses des IA conversationnelles. L'outil interroge en direct ChatGPT, Gemini, Perplexity, Claude et l'Aperçu IA de Google (Copilot et Apple Intelligence sont suivis mais pas mesurés en direct), et croise ce constat avec un audit de 11 sources : fiche Google Business, site, avis, presse locale, annuaires, plateformes métier et cohérence de l'identité de marque. Chaque commerce reçoit un score de préparation sur 100, pondéré en trois piliers (Socle 45 %, Autorité 35 %, Fraîcheur 20 %), et un score de citation réelle mesuré à part : les deux ne sont jamais fusionnés dans une note unique.\n\nLe back-office dépasse le simple diagnostic : l'agent IA Happy rédige les réponses aux avis Google, des posts pour les réseaux et des articles de blog de 500 à 1200 mots directement depuis le tableau de bord, avec publication programmée sur Instagram, Facebook et Google Business à partir du plan Pro. Rien ne part sans validation manuelle.\n\nHappia cible les commerces locaux indépendants (restaurants, salons, hôtels, artisans, professions libérales), plutôt que les marques nationales ou l'e-commerce pur. Un pré-audit gratuit sans inscription donne un premier aperçu ; l'essai de 14 jours (carte enregistrée, aucun prélèvement) ouvre l'accès complet au plan Pro avant de basculer sur la formule choisie.",
-    "longDescription": "Happia audite la visibilité d'un commerce local dans les réponses des IA conversationnelles. L'outil interroge en direct ChatGPT, Gemini, Perplexity, Claude et l'Aperçu IA de Google (Copilot et Apple Intelligence sont suivis mais pas mesurés en direct), et croise ce constat avec un audit de 11 sources : fiche Google Business, site, avis, presse locale, annuaires, plateformes métier et cohérence de l'identité de marque. Chaque commerce reçoit un score de préparation sur 100, pondéré en trois piliers (Socle 45 %, Autorité 35 %, Fraîcheur 20 %), et un score de citation réelle mesuré à part : les deux ne sont jamais fusionnés dans une note unique.\n\nLe back-office dépasse le simple diagnostic : l'agent IA Happy rédige les réponses aux avis Google, des posts pour les réseaux et des articles de blog de 500 à 1200 mots directement depuis le tableau de bord, avec publication programmée sur Instagram, Facebook et Google Business à partir du plan Pro. Rien ne part sans validation manuelle.\n\nHappia cible les commerces locaux indépendants (restaurants, salons, hôtels, artisans, professions libérales), plutôt que les marques nationales ou l'e-commerce pur. Un pré-audit gratuit sans inscription donne un premier aperçu ; l'essai de 14 jours (carte enregistrée, aucun prélèvement) ouvre l'accès complet au plan Pro avant de basculer sur la formule choisie.",
-    "longDescriptionEn": "Happia audits a local business's visibility in conversational AI answers. It queries ChatGPT, Gemini, Perplexity, Claude and Google AI Overview live (Copilot and Apple Intelligence are tracked but not measured live), and cross-references that with an audit of 11 sources: Google Business Profile, website, reviews, local press, directories, vertical platforms and brand-identity consistency. Each business gets a preparation score out of 100, weighted across three pillars (Foundation 45%, Authority 35%, Freshness 20%), plus a real-citation score measured separately: the two are never merged into one number.\n\nThe back office goes beyond diagnosis: the Happy AI agent drafts Google review replies, social posts and 500-to-1200-word blog articles directly from the dashboard, with scheduled publishing to Instagram, Facebook and Google Business from the Pro plan up. Nothing goes out without manual approval.\n\nHappia targets independent local businesses (restaurants, salons, hotels, tradespeople, professional services), rather than national brands or pure e-commerce. A free, sign-up-free pre-audit gives a first read; the 14-day trial (card on file, no charge) unlocks the full Pro plan before switching to the chosen tier.",
+    "shortDescription": "Audit et pilotage de la visibilité des TPE et PME dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
+    "shortDescriptionEn": "Audits and manages how small businesses appear in ChatGPT, Gemini, Perplexity and Claude answers.",
+    "description": "Happia audite la visibilité des TPE, PME et commerces dans les réponses des IA conversationnelles. L'outil interroge ChatGPT, Gemini, Perplexity, Claude et l'Aperçu IA de Google, puis collecte automatiquement les signaux publics utiles : site, fiche Google Business, avis, annuaires, presse, plateformes métier et cohérence de l'identité. L'audit complet porte actuellement sur 88 critères. Aucune source n'est à connecter pour lancer cette analyse.\n\nLe back-office dépasse le diagnostic : l'équipe de huit agents prépare les réponses aux avis, des posts, des bios, des articles de blog et un calendrier éditorial de 65 à 75 actions par an. À partir du plan Pro, Happia peut publier sur Google Business, Instagram et Facebook après connexion OAuth et validation de l'utilisateur. La veille des trois principaux concurrents est actualisée chaque mercredi et dimanche.\n\nHappia ne se limite pas aux entreprises disposant d'un point de vente. Son référentiel couvre aussi les SaaS, agences, cabinets de conseil, professions libérales, e-commerçants et freelances qui veulent améliorer leur visibilité dans les réponses des IA. L'essai Pro de 14 jours démarre sans carte bancaire ; une carte n'est ajoutée que si l'utilisateur décide de continuer.",
+    "longDescription": "Happia audite la visibilité des TPE, PME et commerces dans les réponses des IA conversationnelles. L'outil interroge ChatGPT, Gemini, Perplexity, Claude et l'Aperçu IA de Google, puis collecte automatiquement les signaux publics utiles : site, fiche Google Business, avis, annuaires, presse, plateformes métier et cohérence de l'identité. L'audit complet porte actuellement sur 88 critères. Aucune source n'est à connecter pour lancer cette analyse.\n\nLe back-office dépasse le diagnostic : l'équipe de huit agents prépare les réponses aux avis, des posts, des bios, des articles de blog et un calendrier éditorial de 65 à 75 actions par an. À partir du plan Pro, Happia peut publier sur Google Business, Instagram et Facebook après connexion OAuth et validation de l'utilisateur. La veille des trois principaux concurrents est actualisée chaque mercredi et dimanche.\n\nHappia ne se limite pas aux entreprises disposant d'un point de vente. Son référentiel couvre aussi les SaaS, agences, cabinets de conseil, professions libérales, e-commerçants et freelances qui veulent améliorer leur visibilité dans les réponses des IA. L'essai Pro de 14 jours démarre sans carte bancaire ; une carte n'est ajoutée que si l'utilisateur décide de continuer.",
+    "longDescriptionEn": "Happia audits how small businesses appear in conversational AI answers. It queries ChatGPT, Gemini, Perplexity, Claude and Google AI Overview, then automatically collects relevant public signals from websites, Google Business Profiles, reviews, directories, press coverage, vertical platforms and entity consistency. The full audit currently covers 88 criteria, with no source connection required to start the analysis.\n\nThe back office goes beyond diagnosis: eight specialized agents prepare review replies, posts, bios, blog articles and a 65-to-75-action annual editorial calendar. From the Pro plan, Happia can publish to Google Business, Instagram and Facebook after an OAuth connection and user approval. Monitoring of the three main competitors is refreshed every Wednesday and Sunday.\n\nHappia is not limited to businesses with a physical location. Its framework also covers SaaS companies, agencies, consultancies, professional services, e-commerce businesses and freelancers that want to improve their visibility in AI answers. The 14-day Pro trial starts without a credit card; payment details are added only if the user chooses to continue.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent (essai 14 jours, carte enregistrée, aucun prélèvement)",
+      "free": "Pas de plan gratuit permanent (essai Pro de 14 jours sans carte bancaire)",
       "paid": "79 à 159 €HT/mois selon le plan (Essentiel, Pro, Premium), + 49 €HT/mois/site en add-on multi-établissements (Premium)"
     },
     "pricingEn": {
-      "free": "No permanent free plan (14-day trial, card on file, no charge)",
+      "free": "No permanent free plan (14-day Pro trial with no credit card required)",
       "paid": "€79 to €159 excl. VAT/month depending on plan (Essentiel, Pro, Premium), plus €49 excl. VAT/month/site for the multi-location add-on (Premium)"
     },
     "defaultMonthlyPrice": 79,
     "pricing_v5": {
       "cautions": [
         "Prix affichés HT ; TVA française 20% en supplément (94,80 à 190,80 €TTC).",
-        "Pas de plan gratuit permanent, seulement un essai de 14 jours avec carte enregistrée."
+        "Pas de plan gratuit permanent ; l'essai Pro de 14 jours démarre sans carte bancaire."
       ],
       "cautionsEn": [
         "Prices shown exclude VAT; French 20% VAT is added on top (up to €190.80 incl. tax).",
-        "No permanent free plan, only a 14-day trial with a card on file."
+        "No permanent free plan; the 14-day Pro trial starts with no credit card required."
       ],
-      "verified_on": "2026-09-02",
+    "verified_on": "2026-09-24",
       "source_domain": "happia.fr",
       "usage_sensitive": true,
       "compare_plan_kind": "account",
@@ -172596,7 +172596,7 @@
           "displayName": "Essentiel",
           "summary": "Audit complet trimestriel, bios par réseau et dashboard de performance Google Business.",
           "featureHighlights": [
-            "Audit complet 87 points tous les 3 mois",
+          "Audit complet 88 critères tous les 3 mois",
             "Happy : 50 crédits/mois",
             "Bios par réseau (Insta, FB, LinkedIn, TikTok, X, GBP, YouTube)"
           ],
@@ -172611,8 +172611,8 @@
           "taxInclusion": "ht",
           "observedMarket": "FR",
           "observedLocale": "fr-FR",
-          "observedOn": "2026-09-02",
-          "lastConfirmedOn": "2026-09-02"
+        "observedOn": "2026-09-24",
+        "lastConfirmedOn": "2026-09-24"
         },
         {
           "planKey": "pro",
@@ -172636,8 +172636,8 @@
           "taxInclusion": "ht",
           "observedMarket": "FR",
           "observedLocale": "fr-FR",
-          "observedOn": "2026-09-02",
-          "lastConfirmedOn": "2026-09-02"
+        "observedOn": "2026-09-24",
+        "lastConfirmedOn": "2026-09-24"
         },
         {
           "planKey": "premium",
@@ -172661,8 +172661,8 @@
           "taxInclusion": "ht",
           "observedMarket": "FR",
           "observedLocale": "fr-FR",
-          "observedOn": "2026-09-02",
-          "lastConfirmedOn": "2026-09-02"
+        "observedOn": "2026-09-24",
+        "lastConfirmedOn": "2026-09-24"
         }
       ]
     },
@@ -172671,63 +172671,63 @@
     "logo": "https://logo.clearbit.com/happia.fr",
     "verdict": {
       "keepIf": [
-        "Tu gères un commerce local (restaurant, salon, hôtel, cabinet, artisan) qui dépend du référencement de proximité.",
+        "Tu diriges une TPE ou PME qui veut mesurer sa visibilité dans les réponses des IA, avec ou sans point de vente.",
         "Tu veux un diagnostic chiffré de ta présence dans les réponses IA plutôt qu'une impression.",
-        "Tu veux déléguer la rédaction des réponses aux avis et des posts réseaux sans y passer tes soirées."
+        "Tu veux déléguer la préparation des réponses aux avis, des posts, des articles et du calendrier éditorial."
       ],
       "avoidIf": [
-        "Tu vends uniquement en ligne, sans point de vente ni zone de chalandise locale.",
         "Tu cherches un outil de SEO web classique (mots-clés, backlinks) plutôt qu'un audit de citation IA.",
-        "Tu ne peux pas justifier 79 à 159 €HT/mois (+ TVA) pour ton volume d'activité actuel."
+        "Tu ne peux pas justifier 79 à 159 €HT/mois (+ TVA) pour ton volume d'activité actuel.",
+        "Tu veux une promesse garantie d'être recommandé par les IA : Happia mesure et accompagne, mais ne contrôle pas leurs réponses."
       ],
-      "threshold": "Happia devient pertinent dès qu'un commerce local dépend d'un flux régulier de clients qui cherchent via Google ou une IA conversationnelle, sans avoir le temps de suivre 11 sources à la main. Il ne remplace pas une agence SEO généraliste si le besoin porte sur un site e-commerce national ou du contenu à fort volume de mots-clés."
+      "threshold": "Happia devient pertinent lorsqu'une TPE ou PME veut suivre sa visibilité dans les IA et exécuter un plan éditorial régulier sans collecter elle-même les signaux publics, rédiger chaque contenu ni surveiller ses concurrents à la main. Il ne remplace pas une suite SEO technique centrée sur les mots-clés et les backlinks."
     },
     "verdictEn": {
       "keepIf": [
-        "You run a local business (restaurant, salon, hotel, practice, tradesperson) that depends on local search.",
+        "You run a small business that wants to measure its visibility in AI answers, with or without a physical location.",
         "You want a measured read of your AI-answer presence instead of a guess.",
-        "You want to offload writing review replies and social posts without spending your evenings on it."
+        "You want to offload the preparation of review replies, posts, articles and an editorial calendar."
       ],
       "avoidIf": [
-        "You sell purely online with no physical location or local catchment area.",
         "You're after classic web SEO (keywords, backlinks) rather than an AI-citation audit.",
-        "You can't justify a €79-to-€159 excl. VAT monthly budget for your current activity volume."
+        "You can't justify a €79-to-€159 excl. VAT monthly budget for your current activity volume.",
+        "You expect a guaranteed AI recommendation: Happia measures and assists, but does not control model answers."
       ],
-      "threshold": "Happia is worth it once a local business depends on a steady flow of customers searching via Google or a conversational AI, without the time to track 11 sources by hand. It doesn't replace a general SEO agency when the need is a national e-commerce site or high-volume keyword content."
+      "threshold": "Happia becomes relevant when a small business wants to track its visibility in AI answers and execute a recurring editorial plan without manually collecting public signals, writing every asset or monitoring competitors. It does not replace a technical SEO suite focused on keywords and backlinks."
     },
     "pros": [
       "Score de préparation et score de citation réelle mesurés séparément, sans note bricolée.",
-      "Audit sur 11 sources avec méthodologie publique et poids par pilier documentés.",
-      "Pré-audit gratuit sans carte ni inscription pour tester avant de s'engager.",
+      "Audit automatique sur 88 critères, sans connecter de source pour lancer l'analyse.",
+      "Essai Pro de 14 jours sans carte bancaire, en plus du pré-audit gratuit.",
       "Agent Happy intégré pour les réponses aux avis, posts et articles, sous validation manuelle.",
-      "Facturation sans engagement, résiliable en un clic, HT/TTC clairement affichée."
+      "Audit, calendrier et données exportables depuis l'espace client, avec récupération pendant 30 jours après résiliation."
     ],
     "prosEn": [
       "Preparation score and real-citation score measured separately, no blended number.",
-      "11-source audit with a published methodology and documented pillar weights.",
-      "Free pre-audit with no card or sign-up to try before committing.",
+      "Automatic audit across 88 criteria with no source connection required to start.",
+      "14-day Pro trial with no credit card required, in addition to the free pre-audit.",
       "Built-in Happy agent for review replies, posts and articles, always under manual approval.",
-      "Billing with no commitment, one-click cancellation, and clear excl./incl. VAT pricing."
+      "Audit, calendar and data exports from the client area, with a 30-day recovery window after cancellation."
     ],
     "cons": [
-      "Absence de plan gratuit permanent : seulement un essai de 14 jours avec carte enregistrée.",
+      "Absence de plan gratuit permanent après l'essai de 14 jours.",
       "Publication directe des avis limitée à Google via API ; les autres plateformes passent en copier-coller.",
       "Coach personnalisé et surveillance automatique des avis réservés au plan Premium à 159 €HT/mois.",
-      "Positionnement commerce local : peu pertinent hors zone de chalandise physique."
+      "Les connexions OAuth sont nécessaires pour publier directement sur Google Business, Instagram et Facebook."
     ],
     "consEn": [
-      "No permanent free plan: only a 14-day trial with a card on file.",
+      "No permanent free plan after the 14-day trial.",
       "Review publishing limited to Google via API; other platforms are copy-paste only.",
       "Personal coaching and automatic review monitoring, Premium-only at €159 excl. VAT/month.",
-      "Local-commerce focus: less relevant outside a physical catchment area."
+      "OAuth connections are required for direct publishing to Google Business, Instagram and Facebook."
     ],
     "useCases": [
-      "Auditer la visibilité IA d'un restaurant ou d'un salon avant de lancer un plan d'action.",
+      "Auditer la visibilité IA d'une TPE ou PME avant de lancer un plan d'action.",
       "Automatiser les réponses aux avis Google sans y passer ses soirées.",
       "Programmer un calendrier éditorial multi-réseaux depuis un seul back-office."
     ],
     "useCasesEn": [
-      "Audit a restaurant's or salon's AI visibility before launching an action plan.",
+      "Audit a small business's AI visibility before launching an action plan.",
       "Automate Google review replies without spending evenings on it.",
       "Schedule a multi-network content calendar from a single back office."
     ],
@@ -172743,18 +172743,18 @@
       "referencement-local"
     ],
     "relevantFor": [
-      "Commerces locaux indépendants",
-      "Restaurateurs et hôteliers",
-      "Artisans et professions de santé de proximité"
+      "TPE et PME avec ou sans point de vente",
+      "Commerces, e-commerçants et SaaS",
+      "Agences, consultants, indépendants et professions libérales"
     ],
     "alternatives": [
       "google-search-console",
       "ahrefs"
     ],
     "seo": {
-      "idealForFr": "Idéal pour un commerce local qui veut mesurer et améliorer sa présence dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
-      "idealForEn": "Ideal for a local business that wants to measure and improve its presence in ChatGPT, Gemini, Perplexity and Claude answers.",
-      "metaDescription": "Happia : avis, prix de 79 à 159 €HT/mois, méthodologie d'audit sur 11 sources et alternatives pour la visibilité IA d'un commerce local."
+      "idealForFr": "Idéal pour une TPE ou PME qui veut mesurer et améliorer sa présence dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
+      "idealForEn": "Ideal for a small business that wants to measure and improve its presence in ChatGPT, Gemini, Perplexity and Claude answers.",
+      "metaDescription": "Happia : avis, prix de 79 à 159 €HT/mois, audit automatique sur 88 critères, agents éditoriaux et alternatives pour la visibilité IA des TPE et PME."
     },
     "articles": [],
     "soloRelevance": "high",
@@ -172775,7 +172775,6 @@
     "migrationGuide": null,
     "downgradePlan": null,
     "personas": [],
-    "timeGainedHoursPerMonth": 2,
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
@@ -172799,27 +172798,27 @@
     ],
     "force_silence": false,
     "toolTrimRating": {
-      "valeurAjoutee": 3,
-      "simplicite": 3,
+      "valeurAjoutee": 4,
+      "simplicite": 4,
       "utilisation": 4,
-      "puissance": 3,
-      "reversibilite": 3,
+      "puissance": 4,
+      "reversibilite": 4,
       "evidence": {
-        "valeurAjoutee": "Gain de temps estimé à 2h/mois pour un prix de 79 à 159 €HT/mois : gain réel mais modeste rapporté au prix.",
-        "simplicite": "Pré-audit gratuit instantané sans inscription, mais audit complet nécessite de connecter 11 sources (fiche Google Business, avis, presse, annuaires...) : configuration de plusieurs heures, aucune compétence technique requise.",
-        "utilisation": "Méthodologie publique en 3 piliers pondérés (Socle 45%, Autorité 35%, Fraîcheur 20%), score de préparation et score de citation réelle mesurés séparément sans être fusionnés. Seul écart documenté : réponse aux avis automatisée via API pour Google uniquement, copier-coller pour TripAdvisor/Trustpilot (source : happia.fr/tarifs, consulté le 2026-09-02).",
-        "puissance": "4 à 5 moteurs IA interrogés en direct (ChatGPT, Gemini, Perplexity, Claude, + Aperçu IA Google), audit sur 11 sources datées et tracées, méthodologie publique (\"mesurer, jamais supposer\") mais sans étude de validation chiffrée ni comparatif publié. Un concurrent du même segment (Botrank.ai) annonce un audit à 20+ critères sur 5 moteurs dont Mistral : Happia se situe dans la moyenne du marché plutôt qu'en tête (source : happia.fr/methodologie et recherche comparative, consulté le 2026-09-02).",
-        "reversibilite": "La politique de confidentialité mentionne un droit RGPD générique à la portabilité (\"récupérer tes données dans un format structuré CSV, JSON\") accessible sur demande, mais aucune fonctionnalité produit d'export en libre-service des rapports d'audit, scores ou contenus générés par Happy (source : happia.fr/confidentialite, consulté le 2026-09-02)."
+        "valeurAjoutee": "L'offre combine un calendrier éditorial de 65 à 75 actions par an, la rédaction de réponses aux avis, posts et articles, puis une veille automatique des trois principaux concurrents deux fois par semaine en Pro. Le gain de temps n'est pas chiffré faute de mesure indépendante, mais le périmètre documenté invalide l'ancienne estimation arbitraire de 2 h/mois (source : happia.fr/tarifs, consulté le 2026-09-24).",
+        "simplicite": "L'essai Pro de 14 jours démarre sans carte bancaire. L'audit collecte automatiquement les données publiques et ne demande aucune connexion de source ; les connexions OAuth Google Business, Instagram et Facebook ne servent qu'à la publication directe à partir du plan Pro (sources : happia.fr et happia.fr/tarifs, consultées le 2026-09-24).",
+        "utilisation": "Méthodologie publique, audit récurrent selon le plan, score de préparation et score de citation réelle suivis séparément. La publication reste soumise à validation et la réponse directe aux avis est limitée à Google, les autres plateformes passant par le copier-coller (source : happia.fr/tarifs, consulté le 2026-09-24).",
+        "puissance": "Cinq surfaces IA sont mesurées, l'audit complet couvre actuellement 88 critères, l'équipe de huit agents produit plusieurs formats de contenu et la veille concurrentielle Pro relève les KPI chaque mercredi et dimanche. Aucun comparatif indépendant ne permet toutefois de conclure à une supériorité sur tout le marché (sources : happia.fr et happia.fr/tarifs, consultées le 2026-09-24).",
+        "reversibilite": "L'audit, le calendrier et les données sont exportables en libre-service depuis l'espace client. Après résiliation, l'utilisateur dispose de 30 jours pour les récupérer avant suppression définitive ; la politique de confidentialité confirme également une conservation de 30 jours après suppression du compte (sources : happia.fr/tarifs et happia.fr/confidentialite, consultées le 2026-09-24)."
       },
       "evidenceEn": {
-        "valeurAjoutee": "Estimated time saving of 2h/month for a price of €79 to €159 excl. VAT/month: a real but modest gain relative to the price.",
-        "simplicite": "Instant free pre-audit with no sign-up, but the full audit requires connecting 11 sources (Google Business Profile, reviews, press, directories...): several hours of setup, no technical skill required.",
-        "utilisation": "Public methodology with 3 weighted pillars (Foundation 45%, Authority 35%, Freshness 20%), preparation score and real-citation score measured separately without being merged. Only documented gap: automated review replies via API for Google only, copy-paste for TripAdvisor/Trustpilot (source: happia.fr/tarifs, checked 2026-09-02).",
-        "puissance": "4 to 5 AI engines queried live (ChatGPT, Gemini, Perplexity, Claude, + Google AI Overview), audit across 11 dated and traced sources, public methodology (\"measure, never assume\") but no quantified validation study or published comparison. A same-segment competitor (Botrank.ai) advertises a 20+ criteria audit across 5 engines including Mistral: Happia sits at market average rather than ahead (source: happia.fr/methodologie and comparative research, checked 2026-09-02).",
-        "reversibilite": "The privacy policy mentions a generic RGPD portability right (\"get your data in a structured CSV, JSON format\") available on request, but no self-service product feature to export audit reports, scores or Happy-generated content (source: happia.fr/confidentialite, checked 2026-09-02)."
+        "valeurAjoutee": "The offer combines a 65-to-75-action annual editorial calendar, drafting of review replies, posts and articles, plus automated monitoring of the three main competitors twice a week on Pro. No independent measurement quantifies time saved, but the documented scope invalidates the former arbitrary two-hours-per-month estimate (source: happia.fr/tarifs, checked 2026-09-24).",
+        "simplicite": "The 14-day Pro trial starts with no credit card. The audit automatically collects public data and requires no source connection; Google Business, Instagram and Facebook OAuth connections are only used for direct publishing from Pro upward (sources: happia.fr and happia.fr/tarifs, checked 2026-09-24).",
+        "utilisation": "Published methodology, recurring audits depending on the plan, and separate preparation and real-citation scores. Publishing remains subject to approval, and direct review replies are limited to Google while other platforms use copy-paste (source: happia.fr/tarifs, checked 2026-09-24).",
+        "puissance": "Five AI surfaces are measured, the full audit currently covers 88 criteria, eight agents produce several content formats, and Pro competitor monitoring captures KPIs every Wednesday and Sunday. No independent comparison proves market-wide superiority (sources: happia.fr and happia.fr/tarifs, checked 2026-09-24).",
+        "reversibilite": "The audit, calendar and data can be exported self-service from the client area. After cancellation, users have 30 days to recover them before permanent deletion; the privacy policy also confirms a 30-day retention period after account deletion (sources: happia.fr/tarifs and happia.fr/confidentialite, checked 2026-09-24)."
       },
       "lastActivityVerifiedOn": null,
-      "notedOn": "2026-09-02"
+      "notedOn": "2026-09-24"
     }
   },
   {

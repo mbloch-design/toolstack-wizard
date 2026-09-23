@@ -1,0 +1,30 @@
+{
+  "slug": "happia",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-09-24",
+  "sources": [
+    { "label": "Happia - site officiel", "url": "https://happia.fr/" },
+    { "label": "Happia - tarifs", "url": "https://happia.fr/tarifs" },
+    { "label": "Happia - confidentialité", "url": "https://happia.fr/confidentialite" }
+  ],
+  "facts": {
+    "what": "Plateforme française qui mesure la visibilité des TPE et PME dans les réponses des IA et aide à exécuter un plan éditorial.",
+    "what_en": "French platform that measures how small businesses appear in AI answers and helps execute an editorial plan.",
+    "pricing_model": "Trois abonnements mensuels sans engagement : Essentiel 79 €, Pro 119 € et Premium 159 € HT/mois.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent ; essai Pro de 14 jours sans carte bancaire." },
+    "plans": [
+      { "name": "Essentiel", "price": "79 € HT/mois" },
+      { "name": "Pro", "price": "119 € HT/mois" },
+      { "name": "Premium", "price": "159 € HT/mois" }
+    ],
+    "key_features": [
+      "Audit automatique sur 88 critères, sans source à connecter",
+      "Mesure sur cinq surfaces IA",
+      "Huit agents spécialisés pour avis, posts, bios et articles",
+      "Calendrier éditorial de 65 à 75 actions par an",
+      "Publication OAuth sur Google Business, Instagram et Facebook à partir de Pro",
+      "Veille des trois principaux concurrents deux fois par semaine en Pro et Premium",
+      "Export libre-service et récupération des données pendant 30 jours après résiliation"
+    ]
+  }
+}

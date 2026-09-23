@@ -1,3 +1,12 @@
+## 2026-09-24 — Correction factuelle de la fiche Happia
+
+- Corrige l'essai Pro de 14 jours : aucune carte bancaire au démarrage.
+- Documente l'export libre-service et la récupération des données pendant 30 jours après résiliation.
+- Retire la fausse configuration de 11 sources : l'audit collecte automatiquement les signaux publics ; OAuth uniquement pour la publication Pro/Premium.
+- Élargit la cible aux TPE et PME avec ou sans point de vente.
+- Supprime l'estimation non sourcée de 2 h gagnées par mois et réévalue les cinq axes ToolTrim à partir des fonctions désormais documentées.
+- Retient 88 critères, valeur affichée sur la page tarifs officielle au 24 septembre 2026, plutôt que les 94 indiqués dans le message du fondateur mais non confirmés publiquement.
+
 ## 2026-09-23 — Comparatifs : face-à-face par usage et navigation
 
 - La comparaison passe avant les cartes de présentation : besoin commun, deux colonnes nommées, conseil visible sous chaque paire.

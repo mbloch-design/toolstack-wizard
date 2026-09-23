@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "slug": "happia",
-  "researchedOn": "2026-09-02",
-  "researcher": "Claude Code",
+  "researchedOn": "2026-09-24",
+  "researcher": "Codex",
   "status": "draft",
   "identity": {
     "officialName": "Happia",
@@ -55,11 +55,11 @@
     },
     {
       "id": "pricing.free-trial",
-      "value": "Essai gratuit 14 jours, accès complet au plan Pro, carte bancaire enregistrée, aucun prélèvement pendant l'essai, notification 3 jours avant, bascule automatique sur Pro si aucune action, résiliable en 1 clic",
+      "value": "Essai gratuit 14 jours, accès complet au plan Pro, sans carte bancaire. À la fin, l'utilisateur ajoute une carte seulement s'il veut continuer ; sinon l'accès est suspendu.",
       "sourceUrl": "https://happia.fr/tarifs",
       "sourceTier": 1,
-      "accessedOn": "2026-09-02",
-      "evidence": "Encart '14 jours d'essai gratuit' en haut de la page tarifs",
+      "accessedOn": "2026-09-24",
+      "evidence": "Page tarifs : 'Accès complet à Pro pendant 14 jours, sans carte bancaire. À la fin, si tu veux continuer, tu ajoutes une carte'.",
       "confidence": "high",
       "volatility": "medium"
     },
@@ -105,11 +105,11 @@
     },
     {
       "id": "capability.audit-frequency",
-      "value": "Audit complet 87 critères tous les 3 mois (Essentiel) ou tous les mois (Pro/Premium)",
+      "value": "Audit complet 88 critères tous les 3 mois (Essentiel) ou tous les mois (Pro/Premium)",
       "sourceUrl": "https://happia.fr/tarifs",
       "sourceTier": 1,
-      "accessedOn": "2026-09-02",
-      "evidence": "Tableau comparatif, ligne 'Fréquence de l'audit'",
+      "accessedOn": "2026-09-24",
+      "evidence": "Tableau comparatif, lignes 'Fréquence de l'audit' et 'Profondeur de l'audit'. Le site en ligne indique 88 critères, pas 94.",
       "confidence": "high",
       "volatility": "medium"
     },
@@ -140,6 +140,36 @@
       "sourceTier": 1,
       "accessedOn": "2026-09-02",
       "evidence": "Tableau comparatif, section 'VEILLE CONCURRENTIELLE'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.audit-onboarding",
+      "value": "Aucune source n'est à connecter pour lancer l'audit : les signaux publics sont collectés automatiquement. Les connexions OAuth Google Business, Instagram et Facebook servent uniquement à la publication directe à partir du plan Pro.",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-24",
+      "evidence": "La page tarifs décrit l'audit inclus dans tous les plans sans connexion préalable et réserve explicitement l'OAuth à la publication directe Pro/Premium ; la politique de confidentialité indique une génération automatique via DataForSEO + Claude.",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.self-service-export",
+      "value": "Audit, calendrier et données exportables à tout moment depuis l'espace client ; fenêtre de récupération de 30 jours après résiliation avant suppression définitive.",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-24",
+      "evidence": "FAQ tarifs 'Mes données sont-elles à moi si je résilie ?' et politique de confidentialité, section conservation.",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.editorial-volume",
+      "value": "Calendrier éditorial de 65 à 75 actions par an selon les réseaux actifs, contenus générés par Happy et veille des trois concurrents avec snapshots chaque mercredi et dimanche sur Pro/Premium.",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-24",
+      "evidence": "Tableau comparatif, sections calendrier éditorial, agent Happy et veille concurrentielle.",
       "confidence": "high",
       "volatility": "medium"
     },
@@ -221,7 +251,7 @@
     ],
     "cautions": [
       "Prix affichés hors taxes ; TVA française 20% en supplément",
-      "Pas de plan gratuit permanent : uniquement un essai de 14 jours carte enregistrée, bascule automatique en Pro si non résilié"
+      "Pas de plan gratuit permanent : essai Pro de 14 jours sans carte, puis carte requise uniquement pour continuer"
     ]
   },
   "capabilities": [
@@ -234,7 +264,7 @@
   "limitations": [
     "Pas de plan gratuit durable",
     "Publication directe des avis limitée à Google (API) ; autres plateformes en copier-coller manuel",
-    "Positionnement mono-marché francophone / commerce local, pas pensé pour l'e-commerce pur ou les marques nationales",
+    "Positionnement francophone centré sur les TPE et PME ; pas de garantie d'être recommandé par les IA",
     "Statistiques d'impact (score projeté, cas client) auto-rapportées par Happia, non auditées par un tiers indépendant identifié"
   ],
   "integrations": [
@@ -243,11 +273,11 @@
     "TripAdvisor, Trustpilot, Doctolib et autres plateformes d'avis (rédaction copier-coller, sans API)"
   ],
   "audiences": [
-    "Commerces locaux indépendants (restaurants, hôtels, beauté, artisans, santé/paramédical, professions libérales)",
+    "TPE et PME avec ou sans point de vente : commerces, SaaS, agences, cabinets, e-commerce, professions libérales et freelances",
     "Multi-établissements jusqu'à 4 sites via l'add-on Premium"
   ],
   "useCases": [
-    "Obtenir un diagnostic chiffré de sa présence dans les réponses de ChatGPT/Gemini/Perplexity/Claude avant d'agir",
+    "Obtenir un diagnostic chiffré de sa présence dans les réponses de ChatGPT/Gemini/Perplexity/Claude avant d'agir, sans connecter de source",
     "Déléguer la rédaction des réponses aux avis Google",
     "Planifier et publier un calendrier de contenu multi-réseaux depuis un seul back-office"
   ],
@@ -262,7 +292,9 @@
   ],
   "unknowns": [
     "Aucune métrique d'usage indépendante (nombre de clients, ancienneté réelle du produit au-delà de la mention '2026') trouvée hors du site officiel",
-    "Persona/vertical ToolTrim 'commerce local physique' absent du référentiel existant (verticals actuels : ecommercant, coach-formateur, etc., aucun ne correspond exactement) : laissé vide plutôt qu'approximé"
+    "Aucune mesure indépendante du temps réellement économisé : l'ancienne estimation de 2 h/mois est supprimée plutôt que remplacée par un chiffre non sourcé"
   ],
-  "conflicts": []
+  "conflicts": [
+    "Le fondateur indique 94 critères dans son message du 2026-09-24, mais la page tarifs officielle consultée le même jour affiche 88 critères. La fiche publie 88 jusqu'à mise à jour de la source publique."
+  ]
 }
