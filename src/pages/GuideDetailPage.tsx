@@ -14,6 +14,11 @@ import { getToolForGuide } from "@/lib/toolGuides";
  * Mostly-static article document. There is deliberately no scroll listener,
  * scroll-spy, catalogue scan or runtime network refresh on this page.
  */
+// Brand fallback when a guide has no dedicated hero image supplied — the
+// same gradient asset the homepage hero already uses, so a guide without
+// custom art still gets a real, on-brand visual instead of an empty column.
+const DEFAULT_HERO_IMAGE = "/hero/hero-gradient-1800.webp";
+
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { lang, t, prefix } = useLang();
@@ -144,6 +149,7 @@ const GuideDetailPage = () => {
     <div className={isStory ? "ga-page ga-page--story" : "ga-page"}>
       <header className={`ga-header${isStory ? " ga-header--story" : ""}`}>
         <div className="ga-container">
+          <div className={isStory ? "ga-hero-main" : "ga-hero-split"}>
           <div className="ga-hero-main">
             <Breadcrumb
               items={[
@@ -196,6 +202,12 @@ const GuideDetailPage = () => {
                 <Linkedin aria-hidden="true" />
               </a>
             </div>
+          </div>
+          {!isStory ? (
+            <div className="ga-hero-image">
+              <img src={post.thumbnail || DEFAULT_HERO_IMAGE} alt="" loading="eager" decoding="async" />
+            </div>
+          ) : null}
           </div>
         </div>
       </header>
