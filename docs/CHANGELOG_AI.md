@@ -4457,3 +4457,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Cartes d’avis recomposées en lignes image/texte avec toutes les limites visibles ; section de changement restructurée en trois décisions.
 - Alternatives rendues avec `ToolCardEditorial`, le composant catalogue commun.
 - Vérification rendue FR ChatGPT/Claude, EN Hive/Asana et mobile 390 px sans débordement.
+## 2026-09-23 — Template stacks : composition et contenu visibles
+
+- Template partagé FR/EN : héros avec logos liés aux outils, rôles et raisons visibles une seule fois, avis éditorial dans le flux, adéquation au profil, budget cible, risques, besoins et signaux de maturité existants.
+- Suppression des regroupements heuristiques qui dupliquaient des outils, des justifications masquées et des seuils budgétaires identiques pour tous les métiers. Statuts uniquement lorsqu'ils sont explicites dans les données.
+- Navigation SectionPillNav commune ; décalage mobile au-dessus de la navigation principale. FAQ structurée alignée avec les réponses réellement affichées, y compris les variantes éditoriales.
+- Données du catalogue conservées ; les montants existants ne sont pas une nouvelle vérification tarifaire.
+- Validation : build production PASS ; 424 pages FR/EN contrôlées (tous les outils dans l'ordre source, un H1, sections présentes). Rendu navigateur consultant FR, développeur EN à 390 px, architecte FR ; sommaire et FAQ testés. Le contrôle TypeScript global remonte encore des erreurs hors de StackDetailPage.

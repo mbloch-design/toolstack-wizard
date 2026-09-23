@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { fitBrandedTitle } from "@/lib/seoTitle";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ChevronDown } from "@/lib/icons";
+import { ChevronDown, ArrowRight } from "@/lib/icons";
+import SectionPillNav from "@/components/SectionPillNav";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
@@ -612,9 +613,6 @@ const StackDetailPage = () => {
     return [...samePersona, ...fill].slice(0, 3);
   }, [stack]);
 
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [expandedToolLayers, setExpandedToolLayers] = useState<Set<string>>(() => new Set());
-
   useEffect(() => {
     if (!stack) return;
     const title = lang === "fr"
@@ -631,13 +629,10 @@ const StackDetailPage = () => {
       url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`,
       about: asArray(stack.tools).map((slot) => toolBySlug.get(slot.slug)?.name || slot.slug),
     });
-    // FAQPage from the same checkpoints already rendered in the visible FAQ
-    // section below (editorial.faq) — SXO audit found this content existed
-    // and was shown to users but never exposed as structured data. Every
-    // one of the 212 stacks has checkpoints (verified), so no fallback needed.
-    const faqEntries = (stack.checkpoints ?? []).map((cp) => ({
+    // Structured data must match the visible editorial FAQ, including overrides.
+    const faqEntries = (EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack)).faq.map((cp) => ({
       q: lang === "fr" ? cp.q : cp.qEn,
-      a: lang === "fr" ? cp.hint : cp.hintEn,
+      a: lang === "fr" ? cp.a : cp.aEn,
     }));
     if (faqEntries.length > 0) {
       setJsonLd("stack-detail-faq-jsonld", {
@@ -653,14 +648,6 @@ const StackDetailPage = () => {
     return () => cleanupSeo(["stack-detail-jsonld", "stack-detail-faq-jsonld"]);
   }, [lang, stack, toolBySlug]);
 
-  useEffect(() => {
-    if (!stack) return;
-    const previewTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-    const previewSteps = buildWorkflowSteps(stack, previewTools, lang);
-    const fallbackSteps = previewSteps.length > 0 ? previewSteps : buildFallbackWorkflowSteps(stack, previewTools, lang);
-    setExpandedToolLayers(new Set([getDefaultWorkflowStepId(stack.slug, fallbackSteps)]));
-  }, [lang, stack, toolBySlug]);
-
   if (loading) {
     return <main className="min-h-screen bg-background" aria-busy="true" />;
   }
@@ -674,501 +661,83 @@ const StackDetailPage = () => {
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
 
   const stackTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-  const workflowSteps = buildWorkflowSteps(stack, stackTools, lang);
-  const stackLayers = workflowSteps.length > 0 ? workflowSteps : buildFallbackWorkflowSteps(stack, stackTools, lang);
-  const stackMapFamilies = buildStackMapFamilies(stack, stackLayers);
   const budgetTargetLabel = stack.monthlyBudget > 0
     ? t(`≈${stack.monthlyBudget}€/mois`, `≈${usdFromEur(stack.monthlyBudget)}/mo`)
     : t("Gratuit", "Free");
-  const toggleToolLayer = (layerId: string) => {
-    setExpandedToolLayers((current) => {
-      const next = new Set(current);
-      if (next.has(layerId)) next.delete(layerId);
-      else next.add(layerId);
-      return next;
-    });
-  };
 
   const hasRisks = editorial.risks.length > 0;
   const hasAltVariants = editorial.altVariants.length > 0;
 
-  /* ── Render ─────────────────────────────────────────────────────────────── */
+  const navSections = [
+    { id: "outils", label: t("Outils", "Tools") },
+    { id: "avis", label: t("Notre avis", "Our take") },
+    { id: "budget", label: t("Budget", "Budget") },
+    ...(hasRisks || stack.risk ? [{ id: "limites", label: t("Vigilance", "Watch-outs") }] : []),
+    ...(editorial.faq.length ? [{ id: "faq", label: "FAQ" }] : []),
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
+    <article className="sg-page">
+      <Breadcrumb items={[{ label: "Stacks", href: `${prefix}/stacks` }, { label: detailTitle }]} />
+      <header className="sg-hero">
+        <span className="sg-eyebrow">{personaText}</span>
+        <h1>{detailTitle}</h1>
+        <p className="sg-lead">{heroSubtitle}</p>
+        <div className="sg-hero-tools" aria-label={t("Outils de cette stack", "Tools in this stack")}>
+          {stackTools.map(({ slot, tool }) => <a key={slot.slug} href={`#outil-${slot.slug}`} title={tool!.name}><ToolLogo tool={tool!} size={40} /><span className="sr-only">{tool!.name}</span></a>)}
+        </div>
+        <dl className="sg-facts">
+          <div><dt>{t("Sélection", "Selection")}</dt><dd>{stack.tools.length} {t("outils", "tools")}</dd></div>
+          <div><dt>{t("Budget cible", "Target budget")}</dt><dd>{budgetTargetLabel}</dd></div>
+          <div><dt>{t("Profil", "Profile")}</dt><dd>{t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}</dd></div>
+        </dl>
+      </header>
 
-      {/* ════════════════════════════════════════════════════════════════════
-          HERO — éditorial + table signalétique
-      ════════════════════════════════════════════════════════════════════ */}
-      <div className="sd-page-frame">
-          <Breadcrumb
-            items={[
-              { label: t("Stacks", "Stacks"), href: `${prefix}/stacks` },
-              { label: detailTitle },
-            ]}
-          />
-
-            <header className="sd-hero-editorial">
-              <span className="sd-hero-eyebrow">{t(`STACK ${personaText}`.toUpperCase(), `STACK ${personaText}`.toUpperCase())}</span>
-              <h1 className="sd-hero-h1">
-                {heroDecision.title.split("\n").map((line, i) => (
-                  i === 0 ? <span key={i}>{line}</span> : <span key={i}><br />{line}</span>
-                ))}
-              </h1>
-              <p className="sd-hero-desc">{heroSubtitle}</p>
-            </header>
-
-          <div className="sd-hero-sentinel" aria-hidden="true" />
-
-          <div className="sd-page-grid">
-            <main className="sd-page-main">
-
-      {/* ════════════════════════════════════════════════════════════════════
-          OUTILS — stack par étape
-      ════════════════════════════════════════════════════════════════════ */}
-      <section id="outils" className="sd-section scroll-mt-20">
-        <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("02 — OUTILS", "02 — TOOLS")}</span>
-          <p className="sd-section-title sd-tools-title">
-            {t("La carte de la stack.", "The stack map.")}
-          </p>
-          <p className="sd-tools-subtitle">
-            {stack.slug === "developpeur-freelance-shipper"
-              ? t("Le socle est visible immédiatement ; déplie seulement les compléments utiles.", "The core is visible immediately; expand only the add-ons you need.")
-              : t("Une stack ne se lit pas outil par outil. Elle se lit par blocs de travail : produire, valider, livrer, encaisser.", "A stack is not read tool by tool. It is read as work blocks: produce, validate, deliver, get paid.")}
-          </p>
-
-          <div className="sd-stack-map" aria-label={t("Carte de la stack", "Stack map")}>
-            {stackMapFamilies.map((family) => {
-              const sortedTools = sortToolsByDecision(family.tools);
-              const groups = groupToolsByRecommendation(sortedTools);
-              const isExpanded = expandedToolLayers.has(family.id);
-              const totalCount = sortedTools.length;
-              const decisionCopy = getWorkflowDecisionCopy(groups, lang);
-
-              // Expand logic: always show core + first 3 secondary; hide rest
-              const hiddenSecondary = Math.max(0, groups.secondary.length - 3);
-              const hasHiddenGroups = hiddenSecondary > 0 || groups.extension.length > 0;
-
-              const hiddenTotal = hiddenSecondary + (isExpanded ? 0 : groups.extension.length);
-              let expandLabel: string;
-              if (hiddenTotal > 0) {
-                expandLabel = lang === 'fr'
-                  ? `Afficher les ${hiddenTotal} complément${hiddenTotal > 1 ? 's' : ''}`
-                  : `Show ${hiddenTotal} more`;
-              } else {
-                expandLabel = lang === 'fr' ? 'Voir les compléments' : 'Show add-ons';
-              }
-
-              const visibleCount = groups.core.length + Math.min(groups.secondary.length, 3);
-
-              return (
-                <section key={family.id} className="sd-stack-map-family" aria-label={t(family.titleFr, family.titleEn)}>
-                  {/* Left column: editorial */}
-                  <div className="sd-stack-map-copy sd-stack-card-left">
-                    <h3 className="sd-stack-card-title">{t(family.titleFr, family.titleEn)}</h3>
-                    <p className="sd-stack-card-role">{t(family.purposeFr, family.purposeEn)}</p>
-                    <p className="sd-stack-card-decision">{decisionCopy}</p>
-                    {hasHiddenGroups && !isExpanded && (
-                      <p className="sd-stack-card-micro">
-                        {lang === 'fr'
-                          ? `+${hiddenTotal} masqué${hiddenTotal > 1 ? 's' : ''}`
-                          : `+${hiddenTotal} hidden`}
-                      </p>
-                    )}
-                    {hasHiddenGroups && (
-                      <button
-                        type="button"
-                        className="sd-expand-btn"
-                        aria-expanded={isExpanded}
-                        aria-controls={`sd-stack-map-tools-${family.id}`}
-                        onClick={() => toggleToolLayer(family.id)}
-                      >
-                        {isExpanded
-                          ? (lang === 'fr' ? 'Réduire ↑' : 'Show less ↑')
-                          : expandLabel + ' ↓'}
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Right column: grouped tools */}
-                  <div id={`sd-stack-map-tools-${family.id}`} className="sd-stack-map-tools-wrapper sd-stack-card-right">
-                    {/* Core group — always visible */}
-                    {groups.core.length > 0 && (
-                      <div className="sd-tool-group">
-                        <span className="sd-group-tag">
-                          {lang === 'fr' ? 'Socle' : 'Core'}
-                        </span>
-                        <div className="sd-tool-grid">
-                          {groups.core.map(({ slot, tool }) => (
-                            <Link
-                              key={slot.slug}
-                              to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                              className="sd-tool-item"
-                              title={tool!.name}
-                            >
-                              <span className="sd-tool-logo">
-                                <ToolLogo tool={tool!} size={34} />
-                              </span>
-                              <span className="sd-tool-name">{tool!.name}</span>
-                              {/* Always in the DOM (not just the click-to-open
-                                  Sheet) so this per-tool justification is
-                                  crawlable; visually hidden to keep the
-                                  compact pill design. */}
-                              {slot.reason && (
-                                <span className="sr-only">{t(slot.reason, slot.reasonEn ?? slot.reason)}</span>
-                              )}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Secondary group — first 3 always visible, rest CSS-hidden
-                        (not unmounted) until expand, so the tool names/links
-                        stay in the DOM for crawlers even before a click. */}
-                    {groups.secondary.length > 0 && (
-                      <div className="sd-tool-group">
-                        <span className="sd-group-tag">
-                          {lang === 'fr' ? 'Compléments' : 'Add-ons'}
-                        </span>
-                        <div className="sd-tool-grid">
-                          {groups.secondary.map(({ slot, tool }, i) => (
-                            <Link
-                              key={slot.slug}
-                              to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                              className={`sd-tool-item${i >= 3 && !isExpanded ? " sd-tool-item--collapsed" : ""}`}
-                              title={tool!.name}
-                            >
-                              <span className="sd-tool-logo">
-                                <ToolLogo tool={tool!} size={34} />
-                              </span>
-                              <span className="sd-tool-name">{tool!.name}</span>
-                              {/* Always in the DOM (not just the click-to-open
-                                  Sheet) so this per-tool justification is
-                                  crawlable; visually hidden to keep the
-                                  compact pill design. */}
-                              {slot.reason && (
-                                <span className="sr-only">{t(slot.reason, slot.reasonEn ?? slot.reason)}</span>
-                              )}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Extension group — CSS-hidden (not unmounted) until
-                        expand; same reasoning as secondary above. */}
-                    {groups.extension.length > 0 && (
-                      <div className={`sd-tool-group${!isExpanded ? " sd-tool-group--collapsed" : ""}`}>
-                        <span className="sd-group-tag">
-                          {lang === 'fr' ? 'Extensions' : 'Extensions'}
-                        </span>
-                        <div className="sd-tool-grid">
-                          {groups.extension.map(({ slot, tool }) => (
-                            <Link
-                              key={slot.slug}
-                              to={`${prefix}/tool/${tool!.slug || tool!.id}`}
-                              className="sd-tool-item"
-                              title={tool!.name}
-                            >
-                              <span className="sd-tool-logo">
-                                <ToolLogo tool={tool!} size={34} />
-                              </span>
-                              <span className="sd-tool-name">{tool!.name}</span>
-                              {/* Always in the DOM (not just the click-to-open
-                                  Sheet) so this per-tool justification is
-                                  crawlable; visually hidden to keep the
-                                  compact pill design. */}
-                              {slot.reason && (
-                                <span className="sr-only">{t(slot.reason, slot.reasonEn ?? slot.reason)}</span>
-                              )}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Fallback: empty family */}
-                    {totalCount === 0 && (
-                      <span className="sd-stack-map-empty">{t("Aucun outil dédié", "No dedicated tool")}</span>
-                    )}
-                  </div>
-                </section>
-              );
-            })}
-          </div>
+      <section id="outils" className="sg-section">
+        <div className="sg-section-heading"><span className="sg-eyebrow">01 / {t("La sélection", "The selection")}</span><h2>{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
+        <div className="sg-tool-list">
+          {asArray(stack.tools).map((slot) => {
+            const tool = toolBySlug.get(slot.slug);
+            const status = slot.decision === "core" ? t("Socle", "Core") : slot.decision === "conditional" ? t("Selon vos besoins", "If needed") : slot.decision === "challenge" ? t("À réévaluer", "Reassess") : null;
+            return <article key={slot.slug} id={`outil-${slot.slug}`} className="sg-tool-row">
+              <div className="sg-tool-identity"><ToolLogo tool={tool ?? { name: slot.slug, slug: slot.slug }} size={48} /><div>{tool ? <Link to={`${prefix}/tool/${tool.slug || tool.id}`}><h3>{tool.name}</h3></Link> : <h3>{slot.slug}</h3>}{status && <span className="sg-tool-status">{status}</span>}</div></div>
+              <div className="sg-tool-copy"><h4>{t(slot.role, slot.roleEn)}</h4><p>{t(slot.reason, slot.reasonEn)}</p>{slot.tip && <p className="sg-tool-tip">{t(slot.tip, slot.tipEn || slot.tip)}</p>}</div>
+              {tool && <Link className="sg-tool-link" to={`${prefix}/tool/${tool.slug || tool.id}`} aria-label={t(`Voir la fiche ${tool.name}`, `View ${tool.name}`)}><ArrowRight size={20} /></Link>}
+            </article>;
+          })}
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════════════════
-          BUDGET
-      ════════════════════════════════════════════════════════════════════ */}
-      <section id="budget" className="sd-section scroll-mt-20">
-        <div className="sd-container">
-          <span className="sd-section-eyebrow">{t("03 — BUDGET", "03 — BUDGET")}</span>
-          <p className="sd-section-title sd-budget-title">
-            {stack.slug === "developpeur-freelance-shipper"
-              ? t("Budget réel : de 0 à 32€/mois.", `Real budget: $0 to ${usdFromEur(32)}/month.`)
-              : stack.monthlyBudget > 0
-              ? t(
-                  `${stack.monthlyBudget}€/mois, si le socle travaille vraiment.`,
-                  `${usdFromEur(stack.monthlyBudget)}/month, when the core stack earns its keep.`,
-                )
-              : t("Le budget qui reste sain.", "A budget that stays healthy.")}
-          </p>
-          {stack.slug === "developpeur-freelance-shipper" ? (
-            <div className="sd-budget-breakdown" aria-label={t("Composition du budget", "Budget breakdown")}>
-              {[
-                {
-                  slugs: ["github", "vercel"],
-                  labelFr: "Socle gratuit",
-                  labelEn: "Free core",
-                  priceFr: "0€/mois",
-                  priceEn: "€0/month",
-                  detailFr: "GitHub et Vercel suffisent en plan gratuit pour démarrer et livrer seul.",
-                  detailEn: "GitHub and Vercel free plans are enough to start and ship solo.",
-                },
-                {
-                  slugs: ["chatgpt", "notion"],
-                  labelFr: "Abonnements optionnels",
-                  labelEn: "Optional subscriptions",
-                  priceFr: "≈27€/mois",
-                  priceEn: "≈€27/month",
-                  detailFr: "ChatGPT Plus et Notion Plus seulement si tu les utilises chaque semaine.",
-                  detailEn: "ChatGPT Plus and Notion Plus only when you use them every week.",
-                },
-                {
-                  slugs: ["stripe"],
-                  labelFr: "Paiement à l’usage",
-                  labelEn: "Usage-based payment",
-                  priceFr: "Sans abonnement",
-                  priceEn: "No subscription",
-                  detailFr: "Stripe prélève une commission uniquement quand le client paie.",
-                  detailEn: "Stripe charges a fee only when the client pays.",
-                },
-              ].map((row) => (
-                <div key={row.labelFr} className="sd-budget-breakdown-row">
-                  <div className="sd-budget-breakdown-tools">
-                    {row.slugs.map((toolSlug) => {
-                      const budgetTool = toolBySlug.get(toolSlug);
-                      return budgetTool ? (
-                        <span key={toolSlug} className="sd-budget-breakdown-logo">
-                          <ToolLogo tool={budgetTool} size={24} />
-                        </span>
-                      ) : null;
-                    })}
-                  </div>
-                  <div className="sd-budget-breakdown-copy">
-                    <span>{t(row.labelFr, row.labelEn)}</span>
-                    <p>{t(row.detailFr, row.detailEn)}</p>
-                  </div>
-                  <strong>{t(row.priceFr, row.priceEn)}</strong>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="sd-budget-thresholds" aria-label={t("Seuils de budget", "Budget thresholds")}>
-              <div className="sd-budget-threshold">
-                <span className="sd-bt-range">{t("0–15€/mois", `$0–${usdFromEur(15).replace("$", "")}/mo`)}</span>
-                <span className="sd-bt-label">{t("Tester", "Testing")}</span>
-                <span className="sd-bt-desc">{t("Plans gratuits + un outil payant maximum.", "Free plans + one paid tool maximum.")}</span>
-              </div>
-              <div className="sd-budget-threshold sd-budget-threshold--active">
-                <span className="sd-bt-range">{budgetTargetLabel}</span>
-                <span className="sd-bt-label">{t("Livrer régulièrement", "Shipping regularly")}</span>
-                <span className="sd-bt-desc">{t("Le socle est utilisé chaque semaine.", "The core stack is used every week.")}</span>
-              </div>
-              <div className="sd-budget-threshold">
-                <span className="sd-bt-range">{t("80–100€/mois", `${usdFromEur(80)}–${usdFromEur(100).replace("$", "")}/mo`)}</span>
-                <span className="sd-bt-label">{t("Auditer", "Time to audit")}</span>
-                <span className="sd-bt-desc">{t("Doublons IA, CRM, projet ou automatisation à vérifier.", "Check for AI, CRM, project or automation overlaps.")}</span>
-              </div>
-            </div>
-          )}
-
+      <section id="avis" className="sg-section">
+        <div className="sg-section-heading"><span className="sg-eyebrow">02 / {t("Le choix ToolTrim", "ToolTrim's take")}</span><h2>{t("Pourquoi cette combinaison ?", "Why these tools together?")}</h2></div>
+        <div className="sg-editorial"><p>{t(editorial.overviewIntro, editorial.overviewIntroEn)}</p></div>
+        <div className="sg-fit-grid">
+          <div><h3>{t("Adaptée si…", "A good fit if…")}</h3><p>{t(editorial.overviewServes, editorial.overviewServesEn)}</p></div>
+          <div><h3>{t("À éviter si…", "Look elsewhere if…")}</h3><p>{t(editorial.overviewNotFor, editorial.overviewNotForEn)}</p></div>
         </div>
+        {asArray(stack.needs).length > 0 && <div className="sg-insights">{asArray(stack.needs).map((need, i) => <div key={i}><h3>{t(need.title, need.titleEn)}</h3><p>{t(need.detail, need.detailEn)}</p></div>)}</div>}
       </section>
 
-      {/* ════════════════════════════════════════════════════════════════════
-          LIMITES — points à surveiller
-      ════════════════════════════════════════════════════════════════════ */}
-      {hasRisks && (
-        <section id="limites" className="sd-section scroll-mt-20">
-          <div className="sd-container">
-            <span className="sd-section-eyebrow">{t("04 — GARDER LA STACK LÉGÈRE", "04 — KEEP THE STACK LIGHT")}</span>
-            <p className="sd-section-title">
-              {t("À ne pas ajouter trop tôt.", "Do not add these too early.")}
-            </p>
-            <ul className="sd-watch-list">
-              {(stack.slug === "developpeur-freelance-shipper"
-                ? editorial.risks.slice(2, 5)
-                : editorial.risks.slice(0, 3)
-              ).map((risk, i) => (
-                <li key={i} className="sd-watch-row">
-                  <span className="sd-watch-marker" aria-hidden="true" />
-                  <h3>{t(risk.problem, risk.problemEn)}</h3>
-                  <p>{t(risk.reco, risk.recoEn)}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
+      <section id="budget" className="sg-section sg-budget">
+        <div className="sg-section-heading"><span className="sg-eyebrow">03 / Budget</span><h2>{t("Combien prévoir ?", "What should you budget?")}</h2></div>
+        <div className="sg-budget-summary"><strong>{budgetTargetLabel}</strong><p>{t("Budget cible de cette sélection, pas le cumul de tous les abonnements. Les plans et options retenus font varier le total.", "Target budget for this selection, not the sum of every subscription. Your total depends on the plans and options you choose.")}</p></div>
+        {EDITORIAL_REGISTRY[stack.slug] && <div className="sg-insights">{editorial.budgetRows.map((row, i) => <div key={i}><h3>{t(row.tier, row.tierEn)}</h3><strong>{lang === "fr" ? row.amount : row.amount.replace("/mois", "/month").replace("IA", "AI")}</strong><p>{t(row.desc, row.descEn)}</p></div>)}</div>}
+      </section>
 
-      {/* ════════════════════════════════════════════════════════════════════
-          ALTERNATIVES — 3 variantes de stack
-      ════════════════════════════════════════════════════════════════════ */}
-      {hasAltVariants && (
-        <section id="alternatives" className="sd-section scroll-mt-20">
-          <div className="sd-container">
-            <span className="sd-section-eyebrow">{t("ALTERNATIVES", "ALTERNATIVES")}</span>
-            <p className="sd-section-title">
-              {t(editorial.altsTitle, editorial.altsTitleEn)}
-            </p>
-            <div className="sd-alt-grid">
-              {editorial.altVariants.map((variant, i) => (
-                <div key={i} className="sd-alt-card">
-                  <span className="sd-alt-label">{t(variant.label, variant.labelEn)}</span>
-                  <p className="sd-alt-title">{t(variant.title, variant.titleEn)}</p>
-                  <p className="sd-alt-budget">{variant.budget}</p>
-                  <p className="sd-alt-tools">{t(variant.toolsDesc, variant.toolsDescEn)}</p>
-                  <p className="sd-alt-compromise">{t(variant.compromise, variant.compromiseEn)}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {(hasRisks || stack.risk) && <section id="limites" className="sg-section">
+        <div className="sg-section-heading"><span className="sg-eyebrow">04 / {t("Les arbitrages", "Trade-offs")}</span><h2>{t("Ce qui mérite votre attention", "What to watch out for")}</h2></div>
+        {stack.risk && <p className="sg-risk-intro">{t(stack.risk, stack.riskEn)}</p>}
+        <div className="sg-insights">{editorial.risks.map((risk, i) => <div key={i}><h3>{t(risk.problem, risk.problemEn)}</h3><p>{t(risk.consequence, risk.consequenceEn)}</p>{EDITORIAL_REGISTRY[stack.slug] && <p>{t(risk.reco, risk.recoEn)}</p>}</div>)}{asArray(stack.maturitySignals).map((signal, i) => <div key={`signal-${i}`}><h3>{t(signal.title, signal.titleEn)}</h3><p>{t(signal.detail, signal.detailEn)}</p></div>)}</div>
+      </section>}
 
-      {/* ════════════════════════════════════════════════════════════════════
-          FAQ
-      ════════════════════════════════════════════════════════════════════ */}
-      {editorial.faq.length > 0 && (
-        <section id="faq" className="sd-section scroll-mt-20">
-          <div className="sd-container">
-            <span className="sd-section-eyebrow">FAQ</span>
-            <p className="sd-section-title">
-              {t("Questions fréquentes.", "Frequently asked questions.")}
-            </p>
-            <div className="sd-faq-list">
-              {editorial.faq.map((item, i) => (
-                <details
-                  key={i}
-                  className="sd-faq-item"
-                  open={openFaqIndex === i}
-                  onToggle={(e) => {
-                    if ((e.currentTarget as HTMLDetailsElement).open) setOpenFaqIndex(i);
-                    else if (openFaqIndex === i) setOpenFaqIndex(null);
-                  }}
-                >
-                  <summary className="sd-faq-summary">
-                    {t(item.q, item.qEn)}
-                    <ChevronDown size={16} className="sd-faq-icon" />
-                  </summary>
-                  <p className="sd-faq-answer">{t(item.a, item.aEn)}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {hasAltVariants && <section id="alternatives" className="sg-section"><div className="sg-section-heading"><h2>{t(editorial.altsTitle, editorial.altsTitleEn)}</h2></div><div className="sg-insights">{editorial.altVariants.map((variant, i) => <div key={i}><span className="sg-eyebrow">{t(variant.label, variant.labelEn)}</span><h3>{t(variant.title, variant.titleEn)}</h3><strong>{lang === "fr" ? variant.budget : variant.budget.replace("/mois", "/month").replace("Gratuit", "Free")}</strong><p>{t(variant.toolsDesc, variant.toolsDescEn)}</p><p>{t(variant.compromise, variant.compromiseEn)}</p></div>)}</div></section>}
 
-      {/* ════════════════════════════════════════════════════════════════════
-          STACKS PROCHES
-      ════════════════════════════════════════════════════════════════════ */}
-      {relatedStacks.length > 0 && (
-        <section className="sd-section sd-section--last scroll-mt-20">
-          <div className="sd-container">
-            <span className="sd-section-eyebrow">{t("STACKS PROCHES", "RELATED STACKS")}</span>
-            <p className="sd-section-title">
-              {t("Si cette stack ne correspond pas tout à fait à ton usage.", "If this stack does not quite match your use case.")}
-            </p>
-            <div className="sd-related-grid">
-              {relatedStacks.map((related) => {
-                const relatedTools = asArray(related.tools)
-                  .map((slot) => toolBySlug.get(slot.slug))
-                  .filter((tool): tool is ToolSummary => Boolean(tool))
-                  .slice(0, 4);
+      {editorial.faq.length > 0 && <section id="faq" className="sg-section"><div className="sg-section-heading"><h2>{t("Questions fréquentes", "Frequently asked questions")}</h2></div><div className="sd-faq-list">{editorial.faq.map((item, i) => <details key={`${stack.slug}-${i}`} className="sd-faq-item"><summary className="sd-faq-summary">{t(item.q, item.qEn)}<ChevronDown size={16} className="sd-faq-icon" /></summary><p className="sd-faq-answer">{t(item.a, item.aEn)}</p></details>)}</div></section>}
 
-                return (
-                  <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card">
-                    <div className="sd-related-visual" aria-label={t("Outils principaux", "Main tools") as string}>
-                      <div className="sd-related-logo-pile">
-                        {relatedTools.map((tool) => (
-                          <span key={tool.id} className="sd-related-logo">
-                            <ToolLogo tool={tool} size={30} />
-                          </span>
-                        ))}
-                      </div>
-                      <span className="sd-related-tool-count">
-                        {related.tools.length} {t("outils", "tools")}
-                      </span>
-                    </div>
+      {relatedStacks.length > 0 && <section className="sg-section"><div className="sg-section-heading"><h2>{t("D’autres stacks à explorer", "More stacks to explore")}</h2></div><div className="sd-related-grid">{relatedStacks.map((related) => <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card"><div className="sd-related-visual"><div className="sd-related-logo-pile">{asArray(related.tools).slice(0, 4).map((slot) => { const tool = toolBySlug.get(slot.slug); return tool ? <span key={slot.slug} className="sd-related-logo"><ToolLogo tool={tool} size={30} /></span> : null; })}</div></div><div className="sd-related-content"><h3 className="sd-related-name">{t(related.title, related.titleEn)}</h3><p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p><span className="sd-related-cta">{t("Voir la stack", "View stack")} →</span></div></Link>)}</div></section>}
 
-                    <div className="sd-related-content">
-                      <div className="sd-related-meta">
-                        <span className="sd-related-persona">
-                          {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
-                        </span>
-                        <span className="sd-related-budget">
-                          {t(`≈ ${related.monthlyBudget}€/mois`, `≈ ${usdFromEur(related.monthlyBudget)}/mo`)}
-                        </span>
-                      </div>
-                      <p className="sd-related-name">{t(related.title, related.titleEn)}</p>
-                      <p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p>
-                      <span className="sd-related-cta">{t("Voir la stack", "See stack")} →</span>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-
-            </main>
-
-            <aside className="sd-decision-sidebar" aria-label={t("Décision ToolTrim", "ToolTrim decision") as string}>
-              <div className="sd-decision-card">
-                <span className="sd-decision-kicker">{t("DÉCISION TOOLTRIM", "TOOLTRIM DECISION")}</span>
-                <h2 className="sd-decision-title">
-                  {stack.slug === "developpeur-freelance-shipper"
-                    ? t("Quatre outils suffisent pour livrer.", "Four tools are enough to ship.")
-                    : t("Une stack calibrée pour cet usage.", "A stack calibrated for this use case.")}
-                </h2>
-                <p className="sd-decision-copy">
-                  {stack.slug === "developpeur-freelance-shipper"
-                    ? t(
-                        "GitHub, Vercel, Notion et Stripe forment le socle. ChatGPT reste optionnel.",
-                        "GitHub, Vercel, Notion, and Stripe form the core. ChatGPT remains optional.",
-                      )
-                    : t(editorial.overviewIntro, editorial.overviewIntroEn)}
-                </p>
-
-                <div className="sd-decision-facts">
-                  {heroDecision.reperes
-                    .filter((repere) => ["PROFIL", "PROFILE", "BUDGET", "OUTILS", "TOOLS"].includes(repere.label))
-                    .map((repere) => (
-                      <div key={repere.label} className="sd-decision-fact">
-                        <span>{repere.label}</span>
-                        <strong>{repere.value}</strong>
-                      </div>
-                    ))}
-                </div>
-
-                <div className="sd-decision-workflow">
-                  <span>{t("WORKFLOW", "WORKFLOW")}</span>
-                  <strong>
-                    {heroDecision.reperes.find((repere) => repere.label === "WORKFLOW")?.value}
-                  </strong>
-                </div>
-
-              </div>
-            </aside>
-          </div>
-        </div>
-
-    </div>
+      <SectionPillNav sections={navSections} logoTo={`${prefix}/stacks`} logoAriaLabel={t("Toutes les stacks", "All stacks")} ariaLabel={t("Dans cette stack", "In this stack")} heroSelector=".sg-hero" />
+    </article>
   );
 };
 
