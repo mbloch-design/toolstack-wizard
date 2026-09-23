@@ -1,5 +1,29 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-22 — Comparatifs : système visuel réutilisable
+
+- Cartes d’ouverture avec médias du catalogue et navigation de galerie, formats identiques, gestion des erreurs et illustration de repli. Aucun asset créé par duel ; inventaire local documenté.
+- Filtrage des critères avec pictos Iconoir et retour au tableau complet. Repère de section active, navigation sticky sur ordinateur, schéma de décision et pictos de sections.
+- Transitions courtes avec respect de prefers-reduced-motion ; contenu éditorial restauré conservé.
+
+## 2026-09-22 — Index comparatifs : angles éditoriaux
+
+- Les 75 comparatifs disposent d’un résumé spécifique en français et en anglais. Les deux champs sont requis ; les cartes ne concatènent plus les descriptions des outils.
+- Suppression du nettoyage de préfixes qui tronquait notamment Anthropic. Les résumés ne sont plus coupés après trois lignes.
+- Vérification du rendu et de la navigation de l’index, ainsi que de la couverture bilingue.
+
+## 2026-09-22 — Restauration éditoriale des comparatifs
+
+- Le template réutilise les accroches, recommandations, critères, limites, points de bascule, profils et risques des contenus comparatifs existants, au lieu des substitutions génériques. Les tarifs sourcés restent séparés.
+- La date de revue éditoriale est distincte de celle des prix. Compléments de traduction ChatGPT/Claude et traduction des recommandations élément par élément avant concaténation.
+- Correction locale du détail des comparatifs ; l’index et la nouvelle direction visuelle restent hors de ce changement.
+
+## 2026-09-22 — Comparatifs : lecture et aide à la décision
+
+- Nouveau template partagé : deux choix en ouverture, tableau par usage, budget, changement d’outil et protocole d’essai. Typographie plus hiérarchisée, surfaces sobres et détails dépliables.
+- ChatGPT / Claude dispose de contenus FR/EN dédiés et de tarifs sourcés au 20 septembre, avec sélection solo/équipe et distinction mensuel/annuel. Les autres comparatifs conservent leurs données éditoriales et utilisent les plans du catalogue.
+- Vérification visuelle desktop/mobile FR/EN, interactions des tarifs, conseils, FAQ et sources. Correction du conseil déplié sur toute la largeur mobile. Travail local, non déployé.
+
 ## 2026-09-09 — Nettoyage prudent des médias dupliqués
 
 - Suppression de neuf fichiers image strictement identiques à une copie conservée et sans aucune référence dans le code ou les données actuelles.
