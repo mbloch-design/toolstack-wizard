@@ -436,7 +436,10 @@ export default function HomePageV2() {
   const handleDiscoverySubmit = useCallback((event: FormEvent) => {
     event.preventDefault();
     const q = discoveryQuery.trim();
-    navigate(`${prefix}/tools${q ? `?q=${encodeURIComponent(q)}` : ""}`);
+    // /search runs the fuzzy catalogue-search engine (tools + categories +
+    // guides); /tools?q= only does a literal substring match, which reads
+    // as broken for a phrase like "AI video" that no tool spells out.
+    navigate(q ? `${prefix}/search?q=${encodeURIComponent(q)}` : `${prefix}/tools`);
   }, [discoveryQuery, navigate, prefix]);
 
   /* “Travailler avec” is driven by the catalogue relationship model rather
