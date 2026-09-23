@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
-import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode, type TouchEvent } from "react";
-import { ArrowRight, Bot, ChevronDown, Code2, Layers3, MessagesSquare, WandSparkles } from "@/lib/icons";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useMemo, useState, useCallback, useRef, type FormEvent, type ReactNode, type TouchEvent } from "react";
+import { ArrowRight, Bot, ChevronDown, Code2, Layers3, MessagesSquare, Search, WandSparkles } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
+import StackGoalsSection from "@/components/home/StackGoalsSection";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { CarouselControls, CarouselPagination } from "@/components/CarouselControls";
@@ -19,9 +20,6 @@ import { getExplorerHref } from "@/lib/toolExploration";
 import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
 
 
-const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
-const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
-const NEW_MAX_PAGES = 2;  // plafond du carrousel Nouveautés (24 fiches max)
 const STACK_PAGE_SIZE = 5; // 1 row × 5 cols — curated collections carousel
 const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
 const POST_PAGE_SIZE = 3; // 1 row × 3 cols — guides carousel
@@ -37,33 +35,29 @@ const EDITORIAL_SHELF = [
   { categoryId: "ai-general", label: "IA Généraliste", labelEn: "AI & Generative Tools" },
 ];
 
-/* Curated "new additions" — update this list as new tools are added to the catalogue.
-   Deliberately skips mega-brand names (Claude, Cursor, DeepSeek, Notion, Salesforce...)
-   already shown elsewhere on the site — this shelf is the discovery surface. */
-const NEW_SLUGS = [
-  "figma-tokens","beehiiv","lemlist","qonto","toggl","wrike","amplitude","activecampaign",
-  "apollo-io","looka","frame-io","brand24","cossistant","vanta","pagefly","tezza",
-  "gorgias","creatoriq","quadient","causal","condeco","maniana","klark","maced-ai",
+const AI_PAGE_SIZE = 4; // 1 row × 4 cols — "Works with" carousel
+
+/* Discovery section — a handful of category entry points, ordered by how
+   broadly they matter to the freelancer / small-team audience rather than
+   raw catalogue size. Counts are computed live from toolsByCategory so this
+   never drifts out of sync with the catalogue. */
+const DISCOVERY_CATEGORY_IDS = [
+  "creation", "design-tools", "nocode-web", "ai-general",
+  "communication", "organization", "automation", "analytics",
 ];
 
-/* Curated AI tools — single-row carousel (4 per page). Deliberately skips the
-   household names (ChatGPT, Claude, Cursor, Gemini, GitHub Copilot...) in favor
-   of specialized picks a freelancer/small team is less likely to already know.
-   Every slug's ogImageUrl was verified to return 200 with a real (non-favicon)
-   image before landing here — swap with the same check, not just a good name. */
-const AI_SLUGS = [
-  "runway","screen-studio","scribe","krea-ai","granola","topaz-photo-ai",
-  "topaz-gigapixel","topaz-video-ai","podcastle","taplio","opus-clip","castmagic",
-  "flux-ai","typeform","suno","stable-diffusion",
-];
-const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
-const LARGE_SHELF_PAGE_SIZE = 8; // 2 rows × 4 cols — major thematic shelves
-const LARGE_SHELF_MAX_PAGES = 3;
-const FREE_TOOL_SLUGS = [
-  "blender", "radix-primitives", "uv", "n8n", "airtable", "miro", "vidyard", "cal-com",
-  "tally", "brevo", "mailchimp", "photopea", "krita",
-  "cloudflare", "postman", "reaper", "zed", "twinmotion", "unity",
-  "descript-ai", "storybook", "insomnia", "qgis", "excalidraw",
+/* Tools we're watching — a hand-picked, opinionated shortlist rather than
+   a "featured" flag nobody outside the team can decode. Every entry carries
+   a one-line editorial reason (the actual point of view, not a category
+   label) so even a grid of logos reads as ToolTrim's take, not a random
+   sample of the catalogue. */
+const WATCHLIST = [
+  { slug: "runway", reasonFr: "Une stack IA vidéo vraiment solide.", reasonEn: "Strong, focused AI video stack." },
+  { slug: "n8n", reasonFr: "Puissant, mais facile à sur-équiper.", reasonEn: "Powerful, but easy to overbuild." },
+  { slug: "airtable", reasonFr: "Idéal, jusqu'à ce que ça redevienne simple.", reasonEn: "Great until your workflow gets simple." },
+  { slug: "notion", reasonFr: "Flexible au point d'éviter de trancher.", reasonEn: "Flexible enough to avoid deciding anything." },
+  { slug: "canva", reasonFr: "Rapide, mais pas taillé pour grandir.", reasonEn: "Fast, but not built to grow with you." },
+  { slug: "figma", reasonFr: "La référence en design d'interface.", reasonEn: "Still the default for interface design." },
 ];
 
 const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> = {
@@ -255,25 +249,6 @@ function FeaturedHead({
   );
 }
 
-function FeaturedSkeletonGrid() {
-  return (
-    <div className="tc-grid v2-featured-skeleton-grid" aria-hidden="true">
-      {Array.from({ length: PAGE_SIZE }, (_, index) => (
-        <div className="v2-featured-skeleton" key={index}>
-          <span className="v2-featured-skeleton-media" />
-          <span className="v2-featured-skeleton-identity">
-            <span className="v2-featured-skeleton-logo" />
-            <span className="v2-featured-skeleton-copy">
-              <span />
-              <span />
-            </span>
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 /* ── Compact tool tagline: trims a full shortDescription sentence down
    to a short row label, cutting at a word boundary. ── */
 function shortTagline(desc: string | undefined, max = 40): string {
@@ -349,19 +324,16 @@ function EditorialShelfPanel({
 
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
-  const { tools, loading: toolsLoading } = useToolSummaries();
+  const navigate = useNavigate();
+  const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const posts = HOME_POSTS[lang];
 
-  const [featuredPage, setFeaturedPage] = useState(0);
-  const [newPage, setNewPage] = useState(0);
+  const [discoveryQuery, setDiscoveryQuery] = useState("");
   const [stackPage, setStackPage] = useState(0);
-  const [aiPage, setAiPage] = useState(0);
   const [postPage, setPostPage] = useState(0);
   const [selectedHost, setSelectedHost] = useState("adobe-creative-cloud");
   const [workWithPage, setWorkWithPage] = useState(0);
-  const [freeToolsPage, setFreeToolsPage] = useState(0);
-  const [automationPage, setAutomationPage] = useState(0);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -405,51 +377,16 @@ export default function HomePageV2() {
     return () => cleanupSeo(["home-jsonld", "home-org-jsonld"]);
   }, [lang]);
 
-  /* ── Featured tools — sourced from prescription_quality === "ferme",
-     ToolTrim's own firm-recommendation signal (the same one that drives
-     the "ToolTrim Pick" badge on tool cards elsewhere), not a hand-picked
-     slug list that drifts out of sync with the catalog. ── */
-  const featured = useMemo(
-    () => tools.filter((t) => t.prescription_quality === "ferme" && !TOOL_IMAGE_BLOCKLIST.has(t.slug)),
-    [tools],
-  );
-
-  const totalPages = Math.ceil(featured.length / PAGE_SIZE);
-  const visibleFeatured = featured.slice(featuredPage * PAGE_SIZE, (featuredPage + 1) * PAGE_SIZE);
-
-  const prevPage = useCallback(() => setFeaturedPage((p) => Math.max(0, p - 1)), []);
-  const nextPage = useCallback(() => setFeaturedPage((p) => Math.min(totalPages - 1, p + 1)), [totalPages]);
-
-  /* ── Nouveautés : les plus récemment publiés, d'après published_at ──
-     Alimenté par la base, plus par une liste figée : la section se met à jour
-     seule à chaque mise en ligne. Les fiches sans date (bundle statique servi
-     avant hydratation) passent en fin de tri au lieu de remonter au hasard. */
-  const latestTools = useMemo(() => {
-    const dated = tools.filter((t) => t.publishedAt);
-    const source = dated.length > 0 ? dated : NEW_SLUGS.flatMap((slug) => {
-      const t = tools.find((x) => x.slug === slug);
-      return t ? [t] : [];
+  /* ── Watchlist — resolve each hand-picked slug against the live catalogue
+     so name/logo/pricing stay accurate; the editorial reason is authored,
+     not derived. ── */
+  const watchlistTools = useMemo(() => {
+    const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
+    return WATCHLIST.flatMap(({ slug, reasonFr, reasonEn }) => {
+      const tool = bySlug.get(slug);
+      return tool ? [{ tool, reasonFr, reasonEn }] : [];
     });
-    return [...source]
-      .sort((a, b) => String(b.publishedAt ?? "").localeCompare(String(a.publishedAt ?? "")))
-      .slice(0, NEW_PAGE_SIZE * NEW_MAX_PAGES);
   }, [tools]);
-
-  const newTotalPages = Math.ceil(latestTools.length / NEW_PAGE_SIZE);
-  const visibleNew = latestTools.slice(newPage * NEW_PAGE_SIZE, (newPage + 1) * NEW_PAGE_SIZE);
-  const prevNewPage = useCallback(() => setNewPage((p) => Math.max(0, p - 1)), []);
-  const nextNewPage = useCallback(() => setNewPage((p) => Math.min(newTotalPages - 1, p + 1)), [newTotalPages]);
-
-  /* ── AI tools — single row of 4 ── */
-  const aiTools = useMemo(() => {
-    const bySlug = new Map(tools.map((t) => [t.slug, t]));
-    return AI_SLUGS.flatMap((slug) => { const t = bySlug.get(slug); return t ? [t] : []; });
-  }, [tools]);
-
-  const aiTotalPages = Math.ceil(aiTools.length / AI_PAGE_SIZE);
-  const visibleAi = aiTools.slice(aiPage * AI_PAGE_SIZE, (aiPage + 1) * AI_PAGE_SIZE);
-  const prevAiPage = useCallback(() => setAiPage((p) => Math.max(0, p - 1)), []);
-  const nextAiPage = useCallback(() => setAiPage((p) => Math.min(aiTotalPages - 1, p + 1)), [aiTotalPages]);
 
   /* ── Large thematic shelves ── */
   const rankShelfTools = useCallback((items: typeof tools) => [...items].sort((a, b) => {
@@ -459,25 +396,6 @@ export default function HomePageV2() {
     if (mediaDelta) return mediaDelta;
     return a.name.localeCompare(b.name);
   }), []);
-
-  const freeTools = useMemo(() => {
-    const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
-    return FREE_TOOL_SLUGS.flatMap((slug) => {
-      const tool = bySlug.get(slug);
-      return tool ? [tool] : [];
-    }).slice(0, LARGE_SHELF_PAGE_SIZE * LARGE_SHELF_MAX_PAGES);
-  }, [tools]);
-  const freeToolsTotalPages = Math.max(1, Math.ceil(freeTools.length / LARGE_SHELF_PAGE_SIZE));
-  const visibleFreeTools = freeTools.slice(freeToolsPage * LARGE_SHELF_PAGE_SIZE, (freeToolsPage + 1) * LARGE_SHELF_PAGE_SIZE);
-  const prevFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.max(0, page - 1)), []);
-  const nextFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.min(freeToolsTotalPages - 1, page + 1)), [freeToolsTotalPages]);
-
-  const automationTools = useMemo(() => rankShelfTools(tools.filter((tool) => tool.categoryId === "automation" && !TOOL_IMAGE_BLOCKLIST.has(tool.slug)))
-    .slice(0, LARGE_SHELF_PAGE_SIZE * LARGE_SHELF_MAX_PAGES), [rankShelfTools, tools]);
-  const automationTotalPages = Math.max(1, Math.ceil(automationTools.length / LARGE_SHELF_PAGE_SIZE));
-  const visibleAutomationTools = automationTools.slice(automationPage * LARGE_SHELF_PAGE_SIZE, (automationPage + 1) * LARGE_SHELF_PAGE_SIZE);
-  const prevAutomationPage = useCallback(() => setAutomationPage((page) => Math.max(0, page - 1)), []);
-  const nextAutomationPage = useCallback(() => setAutomationPage((page) => Math.min(automationTotalPages - 1, page + 1)), [automationTotalPages]);
 
   /* ── Stacks pagination (capped to STACK_MAX_PAGES screens) ── */
   const bySlug = useMemo(() => new Map(tools.map((t) => [t.slug, t])), [tools]);
@@ -505,6 +423,21 @@ export default function HomePageV2() {
     }
     return map;
   }, [tools]);
+
+  const discoveryCategories = useMemo(
+    () => DISCOVERY_CATEGORY_IDS
+      .map((id) => categories.find((category) => category.id === id))
+      .filter((category): category is NonNullable<typeof category> => Boolean(category))
+      .map((category) => ({ category, count: toolsByCategory.get(category.id)?.length ?? 0 }))
+      .filter(({ count }) => count > 0),
+    [categories, toolsByCategory],
+  );
+
+  const handleDiscoverySubmit = useCallback((event: FormEvent) => {
+    event.preventDefault();
+    const q = discoveryQuery.trim();
+    navigate(`${prefix}/tools${q ? `?q=${encodeURIComponent(q)}` : ""}`);
+  }, [discoveryQuery, navigate, prefix]);
 
   /* “Travailler avec” is driven by the catalogue relationship model rather
      than a hand-authored list of recommendations. A host is only presented
@@ -553,166 +486,70 @@ export default function HomePageV2() {
   return (
     <div className="home-v2">
       <HeroSectionV2 />
+      <StackGoalsSection />
 
       <div className="v2-catalog">
         <div className="v2-container">
 
-          {/* ══ 1. Outils en vedette — carousel 2×4 ══
-               The local summary snapshot does not carry prescription_quality,
-               so the remote catalogue can add this entire section after first
-               paint. Keep its final geometry reserved while that request is in
-               flight to prevent the catalogue below from shifting. */}
-          {(toolsLoading || featured.length > 0) && (
-            <section className="v2-catalog-section">
-              <FeaturedHead
-                label={t("Outils en vedette", "Featured tools")}
-                to={`${prefix}/tools`}
-                linkLabel={t("Voir tout", "See all")}
-                page={featuredPage}
-                total={Math.max(totalPages, 1)}
-                onPrev={prevPage}
-                onNext={nextPage}
-                previousLabel={t("Page précédente", "Previous page") as string}
-                nextLabel={t("Page suivante", "Next page") as string}
-              />
-              {toolsLoading && featured.length === 0 ? (
-                <FeaturedSkeletonGrid />
-              ) : (
-                <>
-                  <SwipePager className="tc-grid" onPrevious={prevPage} onNext={nextPage}>
-                    {visibleFeatured.map((tool) => {
-                      const catName = stripLeadingEmoji(
-                        lang === "en"
-                          ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                            || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                          : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-                      );
-                      return (
-                        <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
-                      );
-                    })}
-                  </SwipePager>
+          {/* ══ Discovery — one calm entry point instead of a wall of tagged
+               rails. The catalogue's size doesn't need re-proving (170+
+               Content Creation, 129+ No-Code & Web tools already exist);
+               what's missing is a fast way in: search, then a few
+               categories, then a small, honest sample of tools. ══ */}
+          <section className="v2-catalog-section dcv-section">
+            <h2 className="dcv-title">
+              {t("Trouvez le bon outil pour la tâche", "Find the right tool for the job")}
+            </h2>
 
-                  <CarouselPagination
-                    current={featuredPage}
-                    total={totalPages}
-                    onChange={setFeaturedPage}
-                    label={t("Choisir une page d'outils", "Choose a tools page") as string}
-                    pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
-                  />
-                </>
-              )}
-            </section>
-          )}
+            <form className="dcv-search" role="search" onSubmit={handleDiscoverySubmit}>
+              <Search className="dcv-search-icon" aria-hidden />
+              <input
+                type="search"
+                className="dcv-search-input"
+                value={discoveryQuery}
+                onChange={(event) => setDiscoveryQuery(event.target.value)}
+                placeholder={t("Gestion de projet, IA vidéo, CRM…", "Project management, AI video, CRM…")}
+                aria-label={t("Que recherchez-vous ?", "What are you looking for?")}
+              />
+              <button type="submit" className="dcv-search-submit">
+                {t("Rechercher", "Search")}
+              </button>
+            </form>
 
-          {/* ══ 2. Outils IA — single row of 4 ══ */}
-          {aiTools.length > 0 && (
-            <section className="v2-catalog-section">
-              <FeaturedHead
-                label={t("Outils IA", "AI Design Tools")}
-                to={`${prefix}/category/ia-generaliste`}
-                linkLabel={t("Voir tout", "See all")}
-                page={aiPage}
-                total={aiTotalPages}
-                onPrev={prevAiPage}
-                onNext={nextAiPage}
-                previousLabel={t("Page précédente", "Previous page") as string}
-                nextLabel={t("Page suivante", "Next page") as string}
-              />
-              <SwipePager className="tc-grid" onPrevious={prevAiPage} onNext={nextAiPage}>
-                {visibleAi.map((tool) => {
-                  const catName = stripLeadingEmoji(
-                    lang === "en"
-                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-                  );
-                  return (
-                    <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
-                  );
-                })}
-              </SwipePager>
-              <CarouselPagination current={aiPage} total={aiTotalPages} onChange={setAiPage}
-                label={t("Choisir une page d'outils IA", "Choose an AI tools page") as string}
-                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
-            </section>
-          )}
+            {discoveryCategories.length > 0 && (
+              <div className="dcv-categories">
+                {discoveryCategories.map(({ category, count }) => (
+                  <Link key={category.id} to={`${prefix}/category/${category.slug}`} className="dcv-category-chip">
+                    <span className="dcv-category-name">{lang === "en" ? (category.nameEn || category.name) : category.name}</span>
+                    <span className="dcv-category-count">{count}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
 
-          {/* ══ Outils gratuits — major 2×4 shelf ══ */}
-          {freeTools.length > 0 && (
-            <section className="v2-catalog-section">
-              <FeaturedHead
-                label={t("Outils gratuits", "Free tools")}
-                to={`${prefix}/tools`}
-                linkLabel={t("Tous les outils", "All tools")}
-                page={freeToolsPage}
-                total={freeToolsTotalPages}
-                onPrev={prevFreeToolsPage}
-                onNext={nextFreeToolsPage}
-                previousLabel={t("Page précédente", "Previous page") as string}
-                nextLabel={t("Page suivante", "Next page") as string}
-              />
-              <SwipePager className="tc-grid" onPrevious={prevFreeToolsPage} onNext={nextFreeToolsPage}>
-                {visibleFreeTools.map((tool) => {
-                  const catName = stripLeadingEmoji(
-                    lang === "en"
-                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-                  );
-                  return <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />;
-                })}
-              </SwipePager>
-              <CarouselPagination
-                current={freeToolsPage}
-                total={freeToolsTotalPages}
-                onChange={setFreeToolsPage}
-                label={t("Choisir une page d’outils gratuits", "Choose a free tools page") as string}
-                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
-              />
-            </section>
-          )}
-
-          {/* ══ 3. Nouveautés — logo list 3×4 ══ */}
-          {latestTools.length > 0 && (
-            <section className="v2-catalog-section">
-              <FeaturedHead
-                label={t("Nouveautés", "New Additions")}
-                to={`${prefix}/tools`}
-                linkLabel={t("Voir tout", "See all")}
-                page={newPage}
-                total={newTotalPages}
-                onPrev={prevNewPage}
-                onNext={nextNewPage}
-                previousLabel={t("Page précédente", "Previous page") as string}
-                nextLabel={t("Page suivante", "Next page") as string}
-              />
-              <SwipePager className="v2-new-grid" onPrevious={prevNewPage} onNext={nextNewPage}>
-                {visibleNew.map((tool) => {
-                  const catName = stripLeadingEmoji(
-                    lang === "en"
-                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-                  );
-                  return (
-                    <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-new-card">
-                      <div className="v2-new-logo">
-                        <ToolLogo tool={withHomeAssets(tool) as any} size={40} />
-                      </div>
-                      <div className="v2-new-info">
-                        <span className="v2-new-name">{tool.name}</span>
-                        {catName && <span className="v2-new-cat">{catName}</span>}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </SwipePager>
-              <CarouselPagination current={newPage} total={newTotalPages} onChange={setNewPage}
-                label={t("Choisir une page de nouveautés", "Choose a new additions page") as string}
-                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
-            </section>
-          )}
+            {watchlistTools.length > 0 && (
+              <div className="dcv-tools">
+                <div className="dcv-tools-head">
+                  <h3 className="dcv-tools-title">{t("Les outils qu'on surveille", "Tools we're watching")}</h3>
+                  <Link to={`${prefix}/tools`} className="tt-section-action v2-section-link">
+                    {t("Tout le catalogue", "Full catalogue")} <ArrowRight aria-hidden />
+                  </Link>
+                </div>
+                <div className="tc-grid">
+                  {watchlistTools.map(({ tool, reasonFr, reasonEn }) => (
+                    <ToolCardEditorial
+                      key={tool.id}
+                      tool={withHomeAssets(tool) as any}
+                      prefix={prefix}
+                      t={t}
+                      categoryLabel={lang === "fr" ? reasonFr : reasonEn}
+                      lang={lang}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
 
           {/* ══ 4. Editorial shelf — three categories, one visual lead each ══ */}
           <section className="v2-catalog-section v2-shelf-section">
@@ -810,41 +647,6 @@ export default function HomePageV2() {
                 total={workWithTotalPages}
                 onChange={setWorkWithPage}
                 label={t("Choisir une page d’outils compatibles", "Choose a compatible tools page") as string}
-                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
-              />
-            </section>
-          )}
-
-          {/* ══ Automatiser son travail — major 2×4 shelf ══ */}
-          {automationTools.length > 0 && (
-            <section className="v2-catalog-section">
-              <FeaturedHead
-                label={t("Automatiser son travail", "Automate your work")}
-                to={`${prefix}/category/automatisation`}
-                linkLabel={t("Tous les outils d’automatisation", "All automation tools")}
-                page={automationPage}
-                total={automationTotalPages}
-                onPrev={prevAutomationPage}
-                onNext={nextAutomationPage}
-                previousLabel={t("Page précédente", "Previous page") as string}
-                nextLabel={t("Page suivante", "Next page") as string}
-              />
-              <SwipePager className="tc-grid" onPrevious={prevAutomationPage} onNext={nextAutomationPage}>
-                {visibleAutomationTools.map((tool) => {
-                  const catName = stripLeadingEmoji(
-                    lang === "en"
-                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-                  );
-                  return <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />;
-                })}
-              </SwipePager>
-              <CarouselPagination
-                current={automationPage}
-                total={automationTotalPages}
-                onChange={setAutomationPage}
-                label={t("Choisir une page d’outils d’automatisation", "Choose an automation tools page") as string}
                 pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
               />
             </section>

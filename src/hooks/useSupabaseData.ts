@@ -257,13 +257,22 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
 
 function mapSupabaseCat(c: any): Category {
   const localFallback = staticCategories.find((category) => category.id === c.id);
+  // Supabase's `categories` table doesn't reliably carry English columns.
+  // Prefer a real remote English value, then the local static English
+  // translation, and only transliterate the French value as a last resort
+  // — falling straight to c.name would silently serve French text on the
+  // English site whenever the remote row has no English column.
   return {
     id: c.id,
     slug: c.slug || localFallback?.slug || c.id,
     name: asLocalizedText(c.name, localFallback?.name || c.id, "fr"),
-    nameEn: asLocalizedText(c.name_en ?? c.nameEn ?? c.name, localFallback?.nameEn || localFallback?.name || c.id, "en"),
+    nameEn: (c.name_en ?? c.nameEn) != null
+      ? asLocalizedText(c.name_en ?? c.nameEn, localFallback?.nameEn || localFallback?.name || c.id, "en")
+      : (localFallback?.nameEn || asLocalizedText(c.name, localFallback?.name || c.id, "en")),
     description: asLocalizedText(c.description, localFallback?.description || "", "fr"),
-    descriptionEn: asLocalizedText(c.description_en ?? c.descriptionEn ?? c.description, localFallback?.descriptionEn || localFallback?.description || "", "en"),
+    descriptionEn: (c.description_en ?? c.descriptionEn) != null
+      ? asLocalizedText(c.description_en ?? c.descriptionEn, localFallback?.descriptionEn || localFallback?.description || "", "en")
+      : (localFallback?.descriptionEn || asLocalizedText(c.description, localFallback?.description || "", "en")),
     tools: localFallback?.tools,
   };
 }

@@ -24958,6 +24958,47 @@ section[id] {
   color: color-mix(in srgb, var(--color-text) 60%, transparent);
 }
 
+/* "Tools we're watching" repurposes the category slot for an authored
+   one-line reason, not a short category name — let it wrap instead of
+   truncating the actual point of the section. The name and reason also
+   stop sharing one baseline row: at sentence length the reason was
+   fighting the tool name for space in that flex row and clipping it too. */
+.home-v2 .dcv-tools .tce-identity-link {
+  align-items: start;
+}
+.home-v2 .dcv-tools .tce-identity-copy {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.home-v2 .dcv-tools .tce-logo {
+  margin-top: 1px;
+}
+.home-v2 .dcv-tools .tce-name {
+  max-width: 100%;
+}
+.home-v2 .dcv-tools .tce-category {
+  display: -webkit-box;
+  max-width: 100%;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: clip;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.home-v2 .dcv-tools .tce-category::before {
+  content: none;
+}
+
+/* Three columns, not four — six curated picks read as a stronger point of
+   view with more room per card (bigger cover, less cramped reason line)
+   than the same six thinned out across a four-up grid. */
+@media (min-width: 1024px) {
+  .home-v2 .dcv-tools .tc-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 860px) {
   .home-v2 {
     --v2-section-gap: 56px;
@@ -25070,8 +25111,24 @@ section[id] {
   line-height: 1.02;
   color: var(--color-text);
   max-width: 18ch;
-  margin: 0 0 var(--space-xl);
+  margin: 0 0 var(--space-md);
   text-wrap: balance;
+}
+
+.hv2-subtitle {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-muted);
+  max-width: 46ch;
+  margin: 0 0 var(--space-xl);
+}
+
+.hv2-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
 }
 
 .hv2-cta {
@@ -25081,6 +25138,25 @@ section[id] {
   padding: 13px 26px;
   border-radius: var(--radius-pill);
   border: 1.5px solid var(--color-text-strong);
+  background: var(--color-text-strong);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-bg);
+  text-decoration: none;
+  transition: background 150ms ease-out, color 150ms ease-out, opacity 150ms ease-out;
+}
+.hv2-cta:hover {
+  opacity: 0.85;
+}
+
+.hv2-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border-strong);
   background: transparent;
   font-family: var(--font-ui);
   font-size: 14px;
@@ -25089,7 +25165,7 @@ section[id] {
   text-decoration: none;
   transition: background 150ms ease-out, color 150ms ease-out;
 }
-.hv2-cta:hover {
+.hv2-cta-secondary:hover {
   background: var(--color-text-strong);
   color: var(--color-bg);
 }
@@ -25120,6 +25196,302 @@ section[id] {
     max-width: 20ch;
     font-size: clamp(32px, 9vw, 42px);
   }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   V2 Home — Discovery. One calm entry point (search, then a few
+   categories, then a small sample of tools) instead of a wall of tagged
+   carousels — the catalogue is large enough that it no longer needs to
+   prove its size, it needs to help people use it.
+   ══════════════════════════════════════════════════════════════════════ */
+.dcv-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dcv-title {
+  font-family: var(--font-ui);
+  font-size: var(--v2-type-section-title, clamp(22px, 2.2vw, 28px));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+  margin: 0 0 var(--space-lg);
+  text-wrap: balance;
+}
+
+.dcv-search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 640px;
+  padding: 8px 8px 8px 20px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border-strong);
+  background: var(--color-surface);
+  margin: 0 0 var(--space-lg);
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+.dcv-search:focus-within {
+  border-color: var(--color-text-strong);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-text-strong) 12%, transparent);
+}
+
+.dcv-search-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--color-muted);
+}
+
+.dcv-search-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--color-text);
+}
+.dcv-search-input::placeholder { color: var(--color-muted-light); }
+
+.dcv-search-submit {
+  flex-shrink: 0;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--color-text-strong);
+  color: var(--color-bg);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 150ms ease-out;
+}
+.dcv-search-submit:hover { opacity: 0.85; }
+
+.dcv-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 780px;
+  margin: 0 0 var(--space-2xl);
+}
+
+.dcv-category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 8px 9px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 150ms ease-out, background 150ms ease-out;
+}
+.dcv-category-chip:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-soft);
+}
+
+.dcv-category-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-chip);
+  color: var(--color-muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dcv-tools {
+  width: 100%;
+  text-align: left;
+}
+
+.dcv-tools-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--v2-head-content-gap);
+}
+
+.dcv-tools-title {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text-strong);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .dcv-search { max-width: 100%; flex-wrap: wrap; padding: 14px 16px; border-radius: var(--radius-lg); }
+  .dcv-search-submit { width: 100%; order: 3; }
+  .dcv-tools-head { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   V2 Home — Stack goals grid. Four flagship stacks, one per business
+   objective (matches the /stacks facet taxonomy), each linking straight
+   to its stack detail page rather than a filtered list.
+   ══════════════════════════════════════════════════════════════════════ */
+.sgs-root {
+  padding: var(--space-3xl) 0 0;
+}
+
+.sgs-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.sgs-title {
+  font-family: var(--font-ui);
+  font-size: var(--v2-type-section-title, clamp(20px, 1.695vw, 22px));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0 0 4px;
+}
+
+.sgs-lead {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.sgs-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.sgs-all-link:hover { text-decoration: underline; }
+
+.sgs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.sgs-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 150ms ease-out, transform 150ms ease-out, box-shadow 150ms ease-out;
+}
+.sgs-card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -12px rgba(0, 0, 0, 0.18);
+}
+
+.sgs-card-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-md);
+}
+
+.sgs-card-logo-tile {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border-soft);
+}
+
+.sgs-card-objective {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+}
+.sgs-card-objective svg { color: var(--color-text-strong); }
+
+.sgs-card-title {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0 0 6px;
+}
+
+.sgs-card-subtitle {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-lg);
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.sgs-card-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-soft);
+  transition: color 150ms ease-out, gap 150ms ease-out;
+}
+.sgs-card:hover .sgs-card-link {
+  color: var(--color-text-strong);
+  gap: 9px;
+}
+
+@media (max-width: 1080px) {
+  .sgs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .sgs-grid { grid-template-columns: 1fr; }
+  .sgs-head { flex-direction: column; align-items: flex-start; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════

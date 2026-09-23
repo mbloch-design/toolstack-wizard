@@ -9,7 +9,7 @@ const HeroSectionV2 = () => {
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = cartCount > 0
     ? `${t("Ma stack", "My stack")} · ${cartCount}`
-    : t("Construire ma stack", "Build my stack");
+    : t("Auditer ma stack", "Audit my stack");
 
   return (
     <section className="hv2-root">
@@ -44,10 +44,22 @@ const HeroSectionV2 = () => {
                 : <>Decide which software to keep,<br />replace, or add.</>}
             </h1>
 
-            <Link to={`${prefix}/ma-stack`} className="hv2-cta" aria-label={cartLabel}>
-              <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
-              <span>{cartLabel}</span>
-            </Link>
+            <p className="hv2-subtitle">
+              {t(
+                "Construisez votre stack et voyez où vous payez trop, où vous avez des doublons, ou où il vous manque le bon outil.",
+                "Build your stack and see where you're overspending, overlapping, or missing the right tool.",
+              )}
+            </p>
+
+            <div className="hv2-actions">
+              <Link to={`${prefix}/ma-stack`} className="hv2-cta" aria-label={cartLabel}>
+                <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
+                <span>{cartLabel}</span>
+              </Link>
+              <Link to={`${prefix}/tools`} className="hv2-cta-secondary">
+                {t("Explorer les outils", "Explore tools")}
+              </Link>
+            </div>
           </div>
         </div>
 
