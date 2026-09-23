@@ -1,13 +1,16 @@
 import { translateBattleCopy } from '@/data/comparisonBattlesEn';
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
 import ToolLogo from '@/components/ToolLogo';
+import ToolCardEditorial from '@/components/ToolCardEditorial';
+import SectionPillNav from '@/components/SectionPillNav';
 import Breadcrumb from '@/components/Breadcrumb';
-import { ArrowRight, ChevronDown, Target, RefreshCw, Wallet } from '@/lib/icons';
+import { ArrowRight, ChevronDown, Wallet } from '@/lib/icons';
 import type { Tool } from '@/data/types';
 import type { CompareEditorialContent } from '@/pages/ComparePage';
 import { chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
+import { useToolSummaries } from '@/hooks/useSupabaseData';
 
 import ComparisonMedia from './ComparisonMedia';
 
@@ -15,37 +18,8 @@ interface Props { toolA: Tool; toolB: Tool; content: CompareEditorialContent; sl
 
 export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair }: Props) {
   const { lang, t, prefix } = useLang();
-  const navRef = useRef<HTMLElement>(null);
-  const [activeSection, setActiveSection] = useState('comparaison');
-  useEffect(() => {
-    const ids = ['comparaison', 'decision', 'cout', 'changer', 'essai'];
-    let frame = 0;
-    const update = () => {
-      const boundary = (navRef.current?.getBoundingClientRect().bottom ?? 0) + 28;
-      let current = ids[0];
-      for (const id of ids) {
-        const section = document.getElementById(id);
-        if (section && section.getBoundingClientRect().top <= boundary) current = id;
-      }
-      setActiveSection(current);
-    };
-    const schedule = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(update);
-    };
-    // Capture both AppShell's internal scrolling and mobile document scrolling.
-    document.addEventListener('scroll', schedule, { capture: true, passive: true });
-    window.addEventListener('resize', schedule);
-    const target = document.getElementById(window.location.hash.slice(1));
-    if (target && ids.includes(target.id)) target.scrollIntoView({ block: 'start' });
-    update();
-    return () => {
-      cancelAnimationFrame(frame);
-      document.removeEventListener('scroll', schedule, true);
-      window.removeEventListener('resize', schedule);
-    };
-  }, [slugPair, lang]);
   const [audience, setAudience] = useState<'solo' | 'team'>('solo');
+  const { tools: toolSummaries } = useToolSummaries({ refreshRemote: false });
   const pick = (fr: string, en: string) => lang === 'fr' ? fr : en;
   const curated = slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined;
   const scenarios = toolsForEditorial();
@@ -61,15 +35,10 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
     : content.tableRows.filter(c => !/prix|price|coût|cost/i.test(c.criterion)).map(c => ({ title: pick(c.criterion, c.criterionEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.verdictLabel, c.verdictLabelEn) }));
   const faq = content.faq.map(f => ({ question: pick(f.q, f.qEn), answer: pick(f.a, f.aEn) }));
   const alternatives = curated?.alternatives ?? content.alternatives.map(a => ({ ...a, reason: pick(a.reason, a.reasonEn) }));
-  const trial = curated?.trial ?? [
-    t('Reprenez une tâche récente avec vos propres données.', 'Use a recent task with your own data.'),
-    t('Gardez les mêmes données et le même résultat attendu. Notez le plan utilisé.', 'Use the same inputs and expected result. Record the plan used.'),
-    t('Mesurez le temps de reprise et les limites rencontrées, pas seulement la première impression.', 'Measure rework and limits encountered, not just first impressions.'),
-  ];
   const tools = [toolA, toolB];
   const headings = [
     ['comparaison', t('Comparer', 'Compare')], ['decision', t('Notre avis', 'Our verdict')],
-    ['cout', t('Prix', 'Pricing')], ['changer', t('Changer ?', 'Switch?')], ['essai', t('Tester', 'Test')],
+    ['cout', t('Prix', 'Pricing')], ['changer', t('Changer ?', 'Switch?')],
   ];
   const date = content.checkedAt;
   return (
@@ -80,13 +49,11 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           <span>{t('Comparatif', 'Comparison')}</span>
           {date && <time dateTime={date}>{t('Revue éditoriale', 'Editorial review')} · {new Date(`${date}T12:00:00Z`).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time>}
         </div>
-        <h1><span><ToolLogo tool={toolA} size={40} aria-hidden="true" />{toolA.name}</span><span className="cp-guide-vs">vs</span><span><ToolLogo tool={toolB} size={40} aria-hidden="true" />{toolB.name}</span></h1>
+        <h1><span><ToolLogo tool={toolA} size={56} aria-hidden="true" />{toolA.name}</span><span className="cp-guide-vs">vs</span><span><ToolLogo tool={toolB} size={56} aria-hidden="true" />{toolB.name}</span></h1>
         <p className="cp-guide-intro">{pick(content.framing, content.framingEn)}</p>
         {curated && <p className="cp-guide-scope">{curated.scope}</p>}
       </header>
-      <nav ref={navRef} className="cp-guide-nav" aria-label={t('Dans ce comparatif', 'In this comparison')}>
-        {headings.map(([id, label]) => <a key={id} href={`#${id}`} aria-current={activeSection === id ? 'location' : undefined}>{label}</a>)}
-      </nav>
+      <SectionPillNav sections={headings.map(([id, label]) => ({ id, label }))} logoTo={`${prefix}/comparatifs`} logoAriaLabel={t('Tous les comparatifs', 'All comparisons')} ariaLabel={t('Dans ce comparatif', 'In this comparison')} heroSelector=".cp-guide-hero" />
       <section id="comparaison" className="cp-guide-section cp-guide-comparison" aria-labelledby="cp-differences-title">
         <h2 id="cp-differences-title">{t('Comparez selon votre usage', 'Compare by use case')}</h2>
         <div className="cp-duel-list">
@@ -106,16 +73,14 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
         <div className="cp-guide-scenarios">
           {scenarios.slice(0, 2).map((s, i) => <article className="cp-guide-scenario" key={s.choice}>
             <ComparisonMedia key={tools[i].id} tool={tools[i]} lang={lang} />
-            <div className="cp-guide-scenario-identity"><ToolLogo tool={tools[i]} size={28} aria-hidden="true" /><span>{tools[i].name}</span></div>
-            <h3>{s.choice}</h3><p>{s.reason}</p>
-            {s.limits.length > 0 && <details className="cp-guide-disclosure"><summary>{t('Les limites', 'Limitations')}<ChevronDown aria-hidden="true" /></summary><ul>{s.limits.map(limit => <li key={limit}>{limit}</li>)}</ul></details>}
+            <div className="cp-guide-scenario-copy">
+              <div className="cp-guide-scenario-identity"><ToolLogo tool={tools[i]} size={32} aria-hidden="true" /><span>{tools[i].name}</span></div>
+              <h3>{s.choice}</h3><p>{s.reason}</p>
+              {s.limits.length > 0 && <div className="cp-guide-limits"><h4>{t('À savoir', 'Before you choose')}</h4><ul>{s.limits.map(limit => <li key={limit}>{limit}</li>)}</ul></div>}
+            </div>
           </article>)}
         </div>
         <p className="cp-guide-editorial-verdict">{pick(content.finalRecommendation, content.finalRecommendationEn)}</p>
-        <div className="cp-guide-shortcuts">
-          <a href="#changer"><span>{t('Vous utilisez déjà l’un des deux ?', 'Already using either tool?')}</span><ArrowRight aria-hidden="true" /></a>
-          <a href="#cout" onClick={() => setAudience('team')}><span>{t('Tarifs pour une équipe', 'Team pricing')}</span><ArrowRight aria-hidden="true" /></a>
-        </div>
       </section>
       <section id="cout" className="cp-guide-section" aria-labelledby="cp-pricing-title">
 
@@ -152,16 +117,13 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
                 : <p>{t('Tarif à consulter sur la fiche détaillée.', 'See the full review for pricing.')}</p>}
             </article>;
           })}</div>}
-        <div className="cp-guide-links">{tools.map(tool => <Link key={tool.id} to={`${prefix}/tool/${tool.slug || tool.id}/${lang === 'en' ? 'pricing' : 'prix'}`}>{t('Offres', 'Plans')} {tool.name}<ArrowRight aria-hidden="true" /></Link>)}</div>
       </section>
       <section id="changer" className="cp-guide-section cp-guide-switch-section" aria-labelledby="cp-switch-title">
-
-        <h2 id="cp-switch-title"><RefreshCw className="cp-section-icon" size={28} aria-hidden="true" />{t('Faut-il changer ?', 'Should you switch?')}</h2>
+        <div className="cp-guide-switch-heading"><span>{t('Décision', 'Decision')}</span><h2 id="cp-switch-title">{t('Faut-il changer ?', 'Should you switch?')}</h2></div>
         <div className="cp-guide-switching">
-          <div className="cp-decision-diagram" aria-hidden="true"><span><ToolLogo tool={toolA} size={40} />{toolA.name}</span><span className="cp-diagram-link"><ArrowRight size={22} /><span>{t('Changer d’outil', 'Switching tools')}</span></span><span><ToolLogo tool={toolB} size={40} />{toolB.name}</span></div>
-          <div><h3>{t('Par défaut', 'Default choice')}</h3><p>{pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn)}</p></div>
-          <div><h3>{t('Quand changer', 'When to switch')}</h3><p>{pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn)}</p></div>
-          {pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).length > 0 && <div><h3>{t('Cas concrets', 'Examples')}</h3><ul>{pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).map(signal => <li key={signal}>{signal}</li>)}</ul></div>}
+          <article><span>01</span><h3>{t('Restez sur votre choix actuel si', 'Keep your current tool if')}</h3><p>{pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn)}</p></article>
+          <article><span>02</span><h3>{t('Changez si', 'Switch if')}</h3><p>{pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn)}</p></article>
+          {pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).length > 0 && <article className="cp-guide-switch-signals"><span>03</span><h3>{t('Les signaux à regarder', 'Signals to watch')}</h3><ul>{pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).map(signal => <li key={signal}>{signal}</li>)}</ul></article>}
         </div>
       </section>
       {content.profiles.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-profiles-title">
@@ -176,11 +138,6 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           <summary>{pick(risk.mistake, risk.mistakeEn)}<ChevronDown aria-hidden="true" /></summary><p>{pick(risk.consequence, risk.consequenceEn)}</p><p>{pick(risk.recommendation, risk.recommendationEn)}</p>
         </details>)}</div>
       </section>}
-      <section id="essai" className="cp-guide-section" aria-labelledby="cp-test-title">
-
-        <h2 id="cp-test-title"><Target className="cp-section-icon" size={28} aria-hidden="true" />{t('Comment les tester', 'How to test them')}</h2>
-        <ol className="cp-guide-trial">{trial.map((step, i) => <li key={step}><div><h3>{[t('Une tâche habituelle', 'A typical task'), t('Les mêmes consignes', 'The same brief'), t('Le temps de correction', 'Editing time')][i]}</h3><p>{step}</p></div></li>)}</ol>
-      </section>
       {faq.length > 0 && <section id="doutes" className="cp-guide-section" aria-labelledby="cp-faq-title"><h2 id="cp-faq-title">{t('Questions fréquentes', 'Common questions')}</h2><div className="cp-guide-faq">{faq.map(item => <details key={item.question}><summary>{item.question}<ChevronDown aria-hidden="true" /></summary><p>{item.answer}</p></details>)}</div></section>}
       <section id="sources" className="cp-guide-section cp-guide-method" aria-label={t('Sources et méthode', 'Sources and methodology')}>
         <details className="cp-guide-disclosure"><summary>{t('Sources, conditions et méthode', 'Sources, terms and methodology')}<ChevronDown aria-hidden="true" /></summary>
@@ -189,8 +146,10 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           <Link to={`${prefix}/transparency`}>{t('Lire la méthode ToolTrim', 'Read the ToolTrim methodology')} →</Link>
         </details>
       </section>
-      {alternatives.length > 0 && <section id="alternatives" className="cp-guide-section" aria-labelledby="cp-alternatives-title"><h2 id="cp-alternatives-title">{t('Autres options', 'Alternatives')}</h2><div className="cp-guide-alternatives">{alternatives.map(alt => <Link key={alt.slug} to={`${prefix}/tool/${alt.slug}`}><div><h3>{alt.name}</h3><p>{alt.reason}</p></div><ArrowRight aria-hidden="true" /></Link>)}</div></section>}
-      <footer className="cp-guide-footer"><span>{t('Fiches détaillées', 'Full reviews')}</span><div className="cp-guide-links">{tools.map(tool => <Link key={tool.id} to={`${prefix}/tool/${tool.slug || tool.id}`}>{tool.name}<ArrowRight aria-hidden="true" /></Link>)}</div></footer>
+      {alternatives.length > 0 && <section id="alternatives" className="cp-guide-section" aria-labelledby="cp-alternatives-title"><h2 id="cp-alternatives-title">{t('Autres options', 'Alternatives')}</h2><div className="cp-guide-alternatives tc-grid">{alternatives.map(alt => {
+        const alternativeTool = toolSummaries.find(tool => tool.slug === alt.slug || tool.id === alt.slug);
+        return alternativeTool ? <ToolCardEditorial key={alt.slug} tool={alternativeTool} prefix={prefix} t={t} lang={lang} showPin={false} /> : null;
+      })}</div></section>}
     </article>
   );
 }

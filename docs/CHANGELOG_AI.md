@@ -4449,3 +4449,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - L’état enregistré du marque-page reste secondaire et n’est plus rendu comme un disque noir.
 - Les cartes Avantages/Inconvénients et À garder/À challenger utilisent des surfaces pleines, sans dégradé, avec le même contraste de lecture.
 - Rythme et largeur des paragraphes de présentation resserrés pour rendre les niveaux éditoriaux plus lisibles.
+## 2026-09-23 — Comparatifs : simplification structurelle et composants partagés
+
+- Largeur alignée sur le contenu 1280 px des autres pages et logos du hero agrandis ; le badge artificiel de Claude est remplacé par son logo de marque.
+- Navigation spécifique remplacée par la capsule `SectionPillNav` partagée avec les fiches et les stacks.
+- Suppression des raccourcis, liens d’offres, protocole de test et footer de fiches détaillées signalés comme sans valeur.
+- Cartes d’avis recomposées en lignes image/texte avec toutes les limites visibles ; section de changement restructurée en trois décisions.
+- Alternatives rendues avec `ToolCardEditorial`, le composant catalogue commun.
+- Vérification rendue FR ChatGPT/Claude, EN Hive/Asana et mobile 390 px sans débordement.

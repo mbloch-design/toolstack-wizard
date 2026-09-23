@@ -315,14 +315,14 @@
       }
     ],
     "tippingPoint": {
-      "defaultPosition": "Commencer avec ChatGPT si tu veux un seul assistant IA.",
-      "switchWhen": "Ajouter ou basculer vers Claude quand plus de 50 % de ton usage concerne longs textes, documents, reformulations sensibles ou analyse éditoriale.",
-      "keepBothIf": "Tu utilises ChatGPT pour recherche/multimodal/code et Claude pour textes longs/édition/analyse documentaire.",
+      "defaultPosition": "Gardez ChatGPT si vous cherchez un seul assistant polyvalent.",
+      "switchWhen": "Passez à Claude si les textes longs, les documents et la réécriture représentent la majorité de votre usage.",
+      "keepBothIf": "Gardez les deux seulement si ChatGPT couvre recherche, multimodal et code, tandis que Claude prend en charge les textes longs et l’analyse documentaire.",
       "warning": "Payer les deux sans frontière d’usage crée un doublon coûteux et confus.",
       "examples": [
         "ChatGPT pour produire une structure, Claude pour affiner un manifeste.",
         "ChatGPT pour analyser des données et sources, Claude pour transformer en note claire.",
-        "Claude seul si ton usage est principalement rédactionnel."
+        "Claude seul si votre usage est principalement rédactionnel."
       ]
     },
     "costReality": {

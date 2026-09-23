@@ -20,6 +20,14 @@
 
 const COMPARISON_BATTLE_EN: Record<string, string> = {
   // ── ChatGPT vs Claude ──────────────────────────────────────────────────
+  "Gardez ChatGPT si vous cherchez un seul assistant polyvalent.":
+    "Keep ChatGPT if you want one versatile assistant.",
+  "Passez à Claude si les textes longs, les documents et la réécriture représentent la majorité de votre usage.":
+    "Switch to Claude if long-form writing, documents and rewriting make up most of your work.",
+  "Gardez les deux seulement si ChatGPT couvre recherche, multimodal et code, tandis que Claude prend en charge les textes longs et l’analyse documentaire.":
+    "Keep both only if ChatGPT handles research, multimodal work and code while Claude handles long-form writing and document analysis.",
+  "Claude seul si votre usage est principalement rédactionnel.":
+    "Use Claude alone if most of your work is writing.",
   "Ils semblent interchangeables car ils répondent tous les deux à des prompts. En réalité, le choix dépend surtout du type de travail : assistant polyvalent et outillé côté ChatGPT, profondeur rédactionnelle et confort sur longs documents côté Claude.":
     "They look interchangeable because both answer prompts. In practice the choice depends on the kind of work: ChatGPT is the broader, better-equipped assistant, Claude goes deeper on writing and stays comfortable across long documents.",
   "Tu veux un assistant unique pour rédaction, recherche, image, fichiers, code et usages variés.":
