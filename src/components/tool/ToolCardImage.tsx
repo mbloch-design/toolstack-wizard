@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
 import type { Tool } from "@/data/types";
 
@@ -47,6 +47,7 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "", ove
   const resolved = useMemo(() => normalizeCardImageUrl(tool.ogImageUrl), [tool.ogImageUrl]);
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
   const showImage = Boolean(resolved && !failed);
   const quality: CardImageQuality = showImage && resolved ? resolved.quality : "fallback";
   const loading = showImage && !loaded;
@@ -56,6 +57,21 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "", ove
     setLoaded(false);
   }, [resolved?.src]);
 
+  // A cached (or already-fetched, lazy-loaded-into-view) image can be
+  // complete before React ever attaches the onLoad handler below, which
+  // otherwise leaves the card stuck in its "loading" (opacity: 0) state
+  // forever even though the image is right there.
+  useEffect(() => {
+    if (!resolved || loaded || failed) return;
+    const image = imgRef.current;
+    if (!image?.complete) return;
+    if (image.naturalWidth < 320 || image.naturalHeight < 160) {
+      setFailed(true);
+    } else {
+      setLoaded(true);
+    }
+  }, [resolved, loaded, failed]);
+
   return (
     <div
       className={`tc-image tc-image--${quality}${loading ? " is-loading" : ""}${className ? ` ${className}` : ""}`}
@@ -64,6 +80,7 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "", ove
     >
       {showImage ? (
         <img
+          ref={imgRef}
           src={resolved?.src}
           alt={`${tool.name} — aperçu`}
           loading="lazy"

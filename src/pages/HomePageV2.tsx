@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback, useRef, type FormEvent, type ReactNode, type TouchEvent } from "react";
-import { ArrowRight, Bot, ChevronDown, Code2, Layers3, MessagesSquare, Search, WandSparkles } from "@/lib/icons";
+import { ArrowRight, ChevronDown, Layers3, Search } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -25,14 +25,63 @@ const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
 const POST_PAGE_SIZE = 3; // 1 row × 3 cols — guides carousel
 const POST_MAX_PAGES = 4; // cap carousel depth to 4 screens
 
-/* Three high-signal catalogue entries displayed as one editorial shelf.
-   The composition deliberately breaks the succession of homogeneous rails:
-   one visual lead and three compact tools per category. */
-const EDITORIAL_SHELF = [
-  { categoryId: "creation", label: "Création de contenu", labelEn: "Content Creation" },
-  { categoryId: "nocode-web", label: "No-Code & Web", labelEn: "No-Code & Web" },
-  { categoryId: "communication", label: "Communication", labelEn: "Communication" },
-  { categoryId: "ai-general", label: "IA Généraliste", labelEn: "AI & Generative Tools" },
+/* Editorial universe index — needs-based categories rather than a
+   technology list, matching how freelancers actually describe what they're
+   trying to do. Each entry reuses the closest existing category route
+   (categoryId is real, labels are overridden here rather than on the shared
+   category data, which other pages still read under its original name). AI
+   is deliberately not a universe here: it's cross-cutting, not a
+   destination — it stays a filter/attribute inside the categories it
+   already lives in (ai-general page and data are untouched, just not
+   linked from this row).
+   Sub-usage lines are drawn from each category's real tool taxonomy
+   (functional_needs / substitution_cluster_v2 in tools_index.json), not
+   invented — e.g. Content Creation's top clusters are content-creation,
+   3d-software, creative-assets, and audio-daw, which read as Video / Design
+   / Audio / 3D. Generic tokens that just restate the category itself
+   (e.g. "analytics" inside Data & Analytics) are skipped in favor of the
+   next most frequent real cluster. */
+const EDITORIAL_UNIVERSES = [
+  {
+    categoryId: "organization", labelFr: "Productivité & Travail", labelEn: "Productivity & Work",
+    subsFr: ["Notes", "Gestion de projet", "Gestion de tâches", "Base de connaissances"],
+    subsEn: ["Notes", "Project Management", "Task Management", "Knowledge Base"],
+  },
+  {
+    categoryId: "creation", labelFr: "Création de contenu", labelEn: "Content Creation",
+    subsFr: ["Vidéo", "Design", "Audio", "3D"],
+    subsEn: ["Video", "Design", "Audio", "3D"],
+  },
+  {
+    categoryId: "design-tools", labelFr: "Design", labelEn: "Design",
+    subsFr: ["Design systems", "Motion design", "Modélisation 3D", "Prototypage"],
+    subsEn: ["Design Systems", "Motion Design", "3D Modeling", "Prototyping"],
+  },
+  {
+    categoryId: "email-productivity", labelFr: "Marketing & Ventes", labelEn: "Marketing & Sales",
+    subsFr: ["Email outreach", "Newsletter", "Prospection", "Réseaux sociaux"],
+    subsEn: ["Email Outreach", "Newsletter", "Prospecting", "Social Media"],
+  },
+  {
+    categoryId: "automation", labelFr: "Automatisation", labelEn: "Automation",
+    subsFr: ["Workflows", "No-code", "Agents IA", "Web scraping"],
+    subsEn: ["Workflows", "No-Code", "AI Agents", "Web Scraping"],
+  },
+  {
+    categoryId: "nocode-web", labelFr: "Développement & No-Code", labelEn: "Development & No-Code",
+    subsFr: ["DevOps", "Créateurs de sites", "E-commerce", "Créateurs d'apps"],
+    subsEn: ["DevOps", "Website Builders", "E-commerce", "App Builders"],
+  },
+  {
+    categoryId: "communication", labelFr: "Communication", labelEn: "Communication",
+    subsFr: ["Chat d'équipe", "Téléphonie pro", "Planification", "Support client"],
+    subsEn: ["Team Chat", "Business Phone", "Scheduling", "Customer Support"],
+  },
+  {
+    categoryId: "analytics", labelFr: "Données & Analytics", labelEn: "Data & Analytics",
+    subsFr: ["SEO", "Visualisation de données", "Dashboards", "Recherche utilisateur"],
+    subsEn: ["SEO", "Data Visualization", "Dashboards", "User Research"],
+  },
 ];
 
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — "Works with" carousel
@@ -249,79 +298,6 @@ function FeaturedHead({
   );
 }
 
-/* ── Compact tool tagline: trims a full shortDescription sentence down
-   to a short row label, cutting at a word boundary. ── */
-function shortTagline(desc: string | undefined, max = 40): string {
-  const clean = (desc || "").trim();
-  if (!clean) return "";
-  if (clean.length <= max) return clean;
-  const cut = clean.slice(0, max);
-  const lastSpace = cut.lastIndexOf(" ");
-  return `${lastSpace > 20 ? cut.slice(0, lastSpace) : cut}…`;
-}
-
-/* ── Editorial category shelf: visual lead + compact product rows. ── */
-function EditorialShelfPanel({
-  title, eyebrow, visualVariant, tools, prefix, categoryHref, seeAllLabel, toolsLabel,
-}: {
-  title: string;
-  eyebrow: string;
-  visualVariant: number;
-  tools: any[];
-  prefix: string;
-  categoryHref: string;
-  seeAllLabel: string;
-  toolsLabel: string;
-}) {
-  const visibleTools = tools.slice(0, 3);
-  const universeIcon = visualVariant === 0
-    ? <WandSparkles aria-hidden />
-    : visualVariant === 1
-      ? <Code2 aria-hidden />
-      : visualVariant === 2
-        ? <MessagesSquare aria-hidden />
-        : <Bot aria-hidden />;
-
-  return (
-    <article className="v2-shelf-panel">
-      <Link to={categoryHref} className="v2-shelf-lead">
-        <div className="v2-shelf-lead-media">
-          <div className="v2-universe-visual" data-variant={visualVariant}>
-            <div className="v2-universe-topline">
-              <span>{eyebrow}</span>
-              {universeIcon}
-            </div>
-            <div className="v2-universe-glyph" aria-hidden>
-              <StackGlyph variant={visualVariant + 2} />
-            </div>
-            <h3>{title}</h3>
-          </div>
-        </div>
-        <div className="v2-shelf-lead-copy">
-          <p><strong>{tools.length}</strong> {toolsLabel}</p>
-        </div>
-      </Link>
-
-      <div className="v2-shelf-list">
-        {visibleTools.map((tool) => (
-          <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-item">
-            <span className="v2-shelf-item-logo"><ToolLogo tool={withHomeAssets(tool)} size={40} /></span>
-            <span className="v2-shelf-item-copy">
-              <strong>{tool.name}</strong>
-              <small>{shortTagline(tool.shortDescription, 40)}</small>
-            </span>
-          </Link>
-        ))}
-      </div>
-
-      <Link to={categoryHref} className="v2-shelf-more">
-        {seeAllLabel}
-        <ArrowRight aria-hidden />
-      </Link>
-    </article>
-  );
-}
-
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
   const navigate = useNavigate();
@@ -387,15 +363,6 @@ export default function HomePageV2() {
       return tool ? [{ tool, reasonFr, reasonEn }] : [];
     });
   }, [tools]);
-
-  /* ── Large thematic shelves ── */
-  const rankShelfTools = useCallback((items: typeof tools) => [...items].sort((a, b) => {
-    const recommendationDelta = Number(b.prescription_quality === "ferme") - Number(a.prescription_quality === "ferme");
-    if (recommendationDelta) return recommendationDelta;
-    const mediaDelta = Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl));
-    if (mediaDelta) return mediaDelta;
-    return a.name.localeCompare(b.name);
-  }), []);
 
   /* ── Stacks pagination (capped to STACK_MAX_PAGES screens) ── */
   const bySlug = useMemo(() => new Map(tools.map((t) => [t.slug, t])), [tools]);
@@ -554,7 +521,7 @@ export default function HomePageV2() {
             )}
           </section>
 
-          {/* ══ 4. Editorial shelf — three categories, one visual lead each ══ */}
+          {/* ══ 4. Editorial universe index — needs-based, not a card wall ══ */}
           <section className="v2-catalog-section v2-shelf-section">
             <SectionHead
               label={t("Explorer par univers", "Explore by category")}
@@ -562,21 +529,19 @@ export default function HomePageV2() {
               linkLabel={t("Tout le catalogue", "Full catalogue")}
             />
             <div className="v2-shelf-grid">
-              {EDITORIAL_SHELF.map((cat, categoryIndex) => {
-                const categoryTools = toolsByCategory.get(cat.categoryId) || [];
-                if (categoryTools.length === 0) return null;
+              {EDITORIAL_UNIVERSES.map((universe) => {
+                const category = categories.find((c) => c.id === universe.categoryId);
+                const count = toolsByCategory.get(universe.categoryId)?.length ?? 0;
+                if (!category || count === 0) return null;
                 return (
-                  <EditorialShelfPanel
-                    key={cat.categoryId}
-                    title={lang === "en" ? cat.labelEn : cat.label}
-                    eyebrow={t("Univers", "Universe") as string}
-                    visualVariant={categoryIndex}
-                    tools={rankShelfTools(categoryTools)}
-                    prefix={prefix}
-                    categoryHref={`${prefix}/category/${categories.find((category) => category.id === cat.categoryId)?.slug || cat.categoryId}`}
-                    seeAllLabel={t("Voir plus", "See more") as string}
-                    toolsLabel={t("outils à explorer", "tools to explore") as string}
-                  />
+                  <Link key={universe.categoryId} to={`${prefix}/category/${category.slug}`} className="v2-shelf-cell">
+                    <span className="v2-shelf-cell-head">
+                      <span className="v2-shelf-cell-name">{lang === "en" ? universe.labelEn : universe.labelFr}</span>
+                      <ArrowRight className="v2-shelf-cell-arrow" style={{ width: 14, height: 14 }} aria-hidden />
+                    </span>
+                    <span className="v2-shelf-cell-count">{count} {t("outils", "tools")}</span>
+                    <span className="v2-shelf-cell-subs">{(lang === "en" ? universe.subsEn : universe.subsFr).join(" · ")}</span>
+                  </Link>
                 );
               })}
             </div>

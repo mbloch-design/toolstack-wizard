@@ -476,39 +476,49 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
         .limit(5000);
 
       if (!error && data && data.length > 0) {
-        const remoteTools = data.map((t: any) => ({
-          id: asLocalizedText(t.id, ""),
-          slug: asLocalizedText(t.slug || t.id, ""),
-          name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
-          categoryId: asLocalizedText(t.category, ""),
-          shortDescription: asLocalizedText(t.short_description, "", "fr"),
-          shortDescriptionEn: asLocalizedText(t.short_description_en || t.short_description, "", "en"),
-          pricing: t.pricing || { free: "", paid: "" },
-          defaultMonthlyPrice: t.default_monthly_price || 0,
-          affiliateLink: asLocalizedText(t.affiliate_link, ""),
-          ogImageUrl: asLocalizedText(t.og_image_url, ""),
-          covers: t.covers || [],
-          pros: t.pros || [],
-          prosEn: t.pros_en || t.pros || null,
-          tool_type: t.tool_type || "satellite",
-          host_app: t.host_app || null,
-          bundle_parent: t.bundle_parent || null,
-          websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, ""),
-          logo: asLocalizedText(t.logo, ""),
-          substitution_cluster_v2: t.substitution_cluster_v2 || null,
-          functional_needs: t.functional_needs || [],
-          verticals: t.verticals || [],
-          prescription_quality: t.prescription_quality || null,
-          relevantFor: t.relevant_for || [],
-          personas: t.personas || [],
-          freeAlternative: t.free_alternative || null,
-          substitutable: t.substitutable ?? true,
-          betterAlternative: t.better_alternative || null,
-          compareMonthlyPrice: Number(t.pricing_v5?.compare_price_monthly_eur) || null,
-          publishedAt: t.published_at || null,
-          worksWith: Array.isArray(t.works_with) ? t.works_with : [],
-          formFactor: t.form_factor || null,
-        }));
+        // Supabase rows are frequently missing og_image_url/logo (not every
+        // tool has been re-crawled since the static catalogue was built).
+        // mergeById below replaces the static entry wholesale per id, so an
+        // empty remote value would silently overwrite a real local one —
+        // fall back to the static catalogue's value whenever Supabase's is
+        // blank, same fix as mapSupabaseCat's nameEn above.
+        const staticById = new Map(staticToolSummaries.map((t) => [t.id, t]));
+        const remoteTools = data.map((t: any) => {
+          const localFallback = staticById.get(asLocalizedText(t.id, ""));
+          return {
+            id: asLocalizedText(t.id, ""),
+            slug: asLocalizedText(t.slug || t.id, ""),
+            name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
+            categoryId: asLocalizedText(t.category, ""),
+            shortDescription: asLocalizedText(t.short_description, "", "fr"),
+            shortDescriptionEn: asLocalizedText(t.short_description_en || t.short_description, "", "en"),
+            pricing: t.pricing || { free: "", paid: "" },
+            defaultMonthlyPrice: t.default_monthly_price || 0,
+            affiliateLink: asLocalizedText(t.affiliate_link, "") || localFallback?.affiliateLink || "",
+            ogImageUrl: asLocalizedText(t.og_image_url, "") || localFallback?.ogImageUrl || "",
+            covers: t.covers || [],
+            pros: t.pros || [],
+            prosEn: t.pros_en || t.pros || null,
+            tool_type: t.tool_type || "satellite",
+            host_app: t.host_app || null,
+            bundle_parent: t.bundle_parent || null,
+            websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, "") || localFallback?.websiteUrl || "",
+            logo: asLocalizedText(t.logo, "") || localFallback?.logo || "",
+            substitution_cluster_v2: t.substitution_cluster_v2 || null,
+            functional_needs: t.functional_needs || [],
+            verticals: t.verticals || [],
+            prescription_quality: t.prescription_quality || null,
+            relevantFor: t.relevant_for || [],
+            personas: t.personas || [],
+            freeAlternative: t.free_alternative || null,
+            substitutable: t.substitutable ?? true,
+            betterAlternative: t.better_alternative || null,
+            compareMonthlyPrice: Number(t.pricing_v5?.compare_price_monthly_eur) || null,
+            publishedAt: t.published_at || null,
+            worksWith: Array.isArray(t.works_with) ? t.works_with : [],
+            formFactor: t.form_factor || null,
+          };
+        });
         const merged = mergeById(staticToolSummaries, remoteTools)
           .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));
         _toolSummariesCache = merged;
