@@ -9,7 +9,7 @@ const HeroSectionV2 = () => {
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = cartCount > 0
     ? `${t("Ma stack", "My stack")} · ${cartCount}`
-    : t("Auditer ma stack", "Audit my stack");
+    : t("Construire ma stack", "Build my stack");
 
   return (
     <section className="hv2-root">

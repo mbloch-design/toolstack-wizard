@@ -1,19 +1,21 @@
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, FolderKanban, Handshake, PenTool, Zap } from "@/lib/icons";
-import type { IconComponent } from "@/lib/icons";
+import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
+import { useToolSummaries } from "@/hooks/useSupabaseData";
 import ToolLogo from "@/components/ToolLogo";
+
+type StackTool = { slug: string; name: string; websiteUrl: string; logo?: string };
 
 interface GoalStack {
   objectiveFr: string;
   objectiveEn: string;
-  icon: IconComponent;
   slug: string;
   titleFr: string;
   titleEn: string;
   subtitleFr: string;
   subtitleEn: string;
-  tools: Array<{ slug: string; name: string; websiteUrl: string }>;
+  tools: StackTool[];
 }
 
 // One flagship stack per business objective, picked from the ~200+ curated
@@ -23,7 +25,6 @@ const GOAL_STACKS: GoalStack[] = [
   {
     objectiveFr: "Gérer ses clients",
     objectiveEn: "Manage clients",
-    icon: Handshake,
     slug: "consultant-b2b-propre",
     titleFr: "Stack consultant B2B",
     titleEn: "B2B consultant stack",
@@ -39,14 +40,14 @@ const GOAL_STACKS: GoalStack[] = [
   {
     objectiveFr: "Créer du contenu",
     objectiveEn: "Create content",
-    icon: PenTool,
     slug: "createur-contenu-operateur",
     titleFr: "Stack créateur contenu",
     titleEn: "Content creator stack",
     subtitleFr: "Publiez, recyclez vos contenus et captez les demandes sans payer trois copilotes IA.",
     subtitleEn: "Publish, repurpose, and capture requests without paying for three copilots.",
     tools: [
-      { slug: "chatgpt", name: "ChatGPT", websiteUrl: "https://chat.openai.com" },
+      // Self-hosted: Simple Icons no longer carries the OpenAI mark.
+      { slug: "chatgpt", name: "ChatGPT", websiteUrl: "https://chat.openai.com", logo: "/home-logos/chatgpt.webp" },
       { slug: "notion", name: "Notion", websiteUrl: "https://notion.so" },
       { slug: "canva", name: "Canva", websiteUrl: "https://canva.com" },
       { slug: "buffer", name: "Buffer", websiteUrl: "https://buffer.com" },
@@ -55,12 +56,11 @@ const GOAL_STACKS: GoalStack[] = [
   {
     objectiveFr: "Automatiser",
     objectiveEn: "Automate",
-    icon: Zap,
     slug: "automatisation-legere-freelance",
     titleFr: "Automatisation freelance",
     titleEn: "Freelance automation",
     subtitleFr: "Quelques tâches répétitives automatisées, sans la complexité de Zapier.",
-    subtitleEn: "A few recurring tasks, automated — without the complexity of Zapier.",
+    subtitleEn: "A few recurring tasks, automated, without the complexity of Zapier.",
     tools: [
       { slug: "make", name: "Make", websiteUrl: "https://make.com" },
       { slug: "tally", name: "Tally", websiteUrl: "https://tally.so" },
@@ -71,7 +71,6 @@ const GOAL_STACKS: GoalStack[] = [
   {
     objectiveFr: "Organiser",
     objectiveEn: "Organize",
-    icon: FolderKanban,
     slug: "freelance-solo-zero-bloat",
     titleFr: "Stack solo léger",
     titleEn: "Light solo stack",
@@ -88,13 +87,28 @@ const GOAL_STACKS: GoalStack[] = [
 
 const StackGoalsSection = () => {
   const { t, lang, prefix } = useLang();
+  const { tools: catalog } = useToolSummaries();
+
+  // Resolve against the live catalogue so logos use the same data (logo,
+  // domain) as every other tool card; the config values only fill gaps.
+  const bySlug = useMemo(() => new Map(catalog.map((tool) => [tool.slug, tool])), [catalog]);
+  const resolve = (tool: StackTool) => {
+    const live = bySlug.get(tool.slug);
+    return {
+      ...tool,
+      ...live,
+      name: live?.name || tool.name,
+      websiteUrl: live?.websiteUrl || tool.websiteUrl,
+      logo: tool.logo || live?.logo || undefined,
+    };
+  };
 
   return (
     <section className="sgs-root">
       <div className="v2-container">
         <div className="sgs-head">
           <div>
-            <h2 className="sgs-title">
+            <h2 className="v2-section-title">
               {t("De vraies stacks, choisies selon votre objectif", "Real stacks, picked by what you need to do")}
             </h2>
             <p className="sgs-lead">
@@ -104,43 +118,33 @@ const StackGoalsSection = () => {
               )}
             </p>
           </div>
-          <Link to={`${prefix}/stacks`} className="sgs-all-link">
-            {t("Voir toutes les stacks", "Browse all stacks")}
-            <ArrowRight style={{ width: 14, height: 14 }} aria-hidden />
+          <Link to={`${prefix}/stacks`} className="tt-section-action v2-section-link">
+            {t("Toutes les stacks", "All stacks")} <ArrowRight aria-hidden />
           </Link>
         </div>
 
-        <div className="sgs-grid">
-          {GOAL_STACKS.map((stack) => {
-            const title = lang === "fr" ? stack.titleFr : stack.titleEn;
-            const Icon = stack.icon;
-            return (
-              <Link key={stack.slug} to={`${prefix}/stacks/${stack.slug}`} className="sgs-card">
-                <div className="sgs-card-logos">
-                  {stack.tools.map((tool) => (
-                    <span key={tool.slug} className="sgs-card-logo-tile">
-                      <ToolLogo tool={tool} size={30} />
+        <ul className="sgs-list">
+          {GOAL_STACKS.map((stack) => (
+            <li key={stack.slug}>
+              <Link to={`${prefix}/stacks/${stack.slug}`} className="sgs-item">
+                {/* iOS-folder cluster: the stack reads as one bundle of apps. */}
+                <span className="sgs-folder" aria-hidden>
+                  {stack.tools.slice(0, 4).map((tool) => (
+                    <span key={tool.slug} className="sgs-folder-app">
+                      <ToolLogo tool={resolve(tool) as any} size={32} className="sgs-folder-logo" />
                     </span>
                   ))}
-                </div>
-
-                <span className="sgs-card-objective">
-                  <Icon style={{ width: 14, height: 14 }} aria-hidden />
-                  {lang === "fr" ? stack.objectiveFr : stack.objectiveEn}
                 </span>
-                <h3 className="sgs-card-title">{title}</h3>
-                <p className="sgs-card-subtitle">
-                  {lang === "fr" ? stack.subtitleFr : stack.subtitleEn}
-                </p>
-
-                <span className="sgs-card-link">
-                  {t("Voir la stack", "View stack")}
-                  <ArrowRight style={{ width: 14, height: 14 }} aria-hidden />
+                <span className="sgs-item-copy">
+                  <span className="sgs-item-objective">{lang === "fr" ? stack.objectiveFr : stack.objectiveEn}</span>
+                  <span className="sgs-item-title">{lang === "fr" ? stack.titleFr : stack.titleEn}</span>
+                  <span className="sgs-item-subtitle">{lang === "fr" ? stack.subtitleFr : stack.subtitleEn}</span>
+                  <span className="sr-only">{stack.tools.map((tool) => tool.name).join(", ")}</span>
                 </span>
               </Link>
-            );
-          })}
-        </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
