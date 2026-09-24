@@ -30,7 +30,10 @@ export function formatPriceLabel(
     return isPriceUndisclosed(tool) ? t("Prix non communiqué", "Price not public") : t("Gratuit", "Free");
   }
   const resolved = resolveDisplayPrice(tool, price, currency);
-  const amount = `${resolved.converted ? "≈ " : ""}${formatCurrencyAmount(resolved.amount, currency, lang)}`;
+  // An attested vendor price keeps its own currency (a $30 plan is never
+  // "30 €"). Unattested values keep the page currency until the pending
+  // USD/EUR catalogue decision is made.
+  const amount = `${resolved.converted ? "≈ " : ""}${formatCurrencyAmount(resolved.amount, resolved.nativePrice ? resolved.currency : currency, lang)}`;
   return isOneTimePrice(tool) ? amount : `${amount}/${t("mois", "mo")}`;
 }
 

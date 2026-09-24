@@ -11,6 +11,8 @@ import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
 import { trackEvent } from "@/lib/analytics";
 import { formatToolPrice } from "@/lib/currencyRates";
+import { isPriceUndisclosed } from "@/lib/pricing";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 
 // Prix d'un outil en dollars pour les chaines anglaises, figees a la langue.
 // Prefere le montant publie par l'editeur quand il est deja en dollars.
@@ -1700,6 +1702,29 @@ function hiddenCostCopy(perSeat: boolean, lang: "fr" | "en"): string {
     : "The flat price can hide limits on volume, storage, or advanced features.";
 }
 
+/* Verdict items are stored as full sentences ("You write a lot in English
+   every day."). Embedded after "if" they must lose their end punctuation and
+   only their first letter's case: lower-casing the whole string printed
+   "english" and "every day.." on every generated comparison. */
+function asClause(text: string): string {
+  const trimmed = String(text || "").trim().replace(/[\s.;:,!]+$/u, "");
+  if (!trimmed) return "";
+  return /^[A-ZÀ-Ý][a-zà-ÿ]/.test(trimmed) ? trimmed.charAt(0).toLowerCase() + trimmed.slice(1) : trimmed;
+}
+function asSentence(text: string): string {
+  const trimmed = String(text || "").trim().replace(/[\s.;:,]+$/u, "");
+  if (!trimmed) return "";
+  return /[?!]$/u.test(trimmed) ? trimmed : `${trimmed}.`;
+}
+function priceSentence(tool: Tool, lang: "fr" | "en"): string {
+  const price = getPriceNum(tool);
+  if (!price && isPriceUndisclosed(tool)) {
+    return lang === "fr" ? `${tool.name} ne publie pas de prix` : `${tool.name} doesn't publish a price`;
+  }
+  if (!price) return lang === "fr" ? `${tool.name} a un plan gratuit` : `${tool.name} has a free plan`;
+  return lang === "fr" ? `${tool.name} démarre à ${getPrice(tool, "fr")}` : `${tool.name} starts at ${getPrice(tool, "en")}`;
+}
+
 /* ─── Auto-generate fallback content from tool data ─────────────────────── */
 function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): CompareEditorialContent {
   const priceA = getPriceNum(toolA);
@@ -1751,22 +1776,24 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
   const effectiveAvoidAEn = avoidIdxA >= 0 ? (avoidsAEn[avoidIdxA] || avoidsA[avoidIdxA]) : `Avoid if you only use a small part of ${toolA.name}.`;
   const effectiveAvoidBEn = avoidIdxB >= 0 ? (avoidsBEn[avoidIdxB] || avoidsB[avoidIdxB]) : `Avoid if you only use a small part of ${toolB.name}.`;
 
+  const cheaper = priceA <= priceB ? toolA : toolB;
+  const pricier = cheaper === toolA ? toolB : toolA;
   const aPerSeat = isPerSeatPricing(toolA);
   const bPerSeat = isPerSeatPricing(toolB);
 
   return {
     framing: `${toolA.name} et ${toolB.name} : deux approches différentes pour des besoins proches.`,
     framingEn: `${toolA.name} and ${toolB.name}: two different approaches for similar needs.`,
-    verdictShort: `Choisis ${toolA.name} si ${effectiveKeepA.toLowerCase()}. Choisis ${toolB.name} si ${effectiveKeepB.toLowerCase()}.`,
-    verdictShortEn: `Choose ${toolA.name} if ${effectiveKeepAEn.toLowerCase()}. Choose ${toolB.name} if ${effectiveKeepBEn.toLowerCase()}.`,
-    finalRecommendation: `ToolTrim recommande ${toolA.name} si ${effectiveKeepA.toLowerCase()}. ${toolB.name} devient meilleur si ${effectiveKeepB.toLowerCase()}.`,
-    finalRecommendationEn: `ToolTrim recommends ${toolA.name} if ${effectiveKeepAEn.toLowerCase()}. ${toolB.name} becomes better if ${effectiveKeepBEn.toLowerCase()}.`,
-    quickVerdictA: dedupeAgainst(keepsA, keepsB).slice(0, 2).join(". ") || effectiveKeepA,
-    quickVerdictAEn: dedupeAgainst(keepsAEn, keepsBEn).slice(0, 2).join(". ") || effectiveKeepAEn,
-    quickVerdictB: dedupeAgainst(keepsB, keepsA).slice(0, 2).join(". ") || effectiveKeepB,
-    quickVerdictBEn: dedupeAgainst(keepsBEn, keepsAEn).slice(0, 2).join(". ") || effectiveKeepBEn,
-    quickVerdictAvoid: `Les deux outils ont des limites — choisis selon ton usage, pas selon les features.`,
-    quickVerdictAvoidEn: `Both tools have limitations — choose based on your use case, not feature lists.`,
+    verdictShort: `${toolA.name} si ${asClause(effectiveKeepA)}. ${toolB.name} si ${asClause(effectiveKeepB)}.`,
+    verdictShortEn: `Choose ${toolA.name} if ${asClause(effectiveKeepAEn)}. Choose ${toolB.name} if ${asClause(effectiveKeepBEn)}.`,
+    finalRecommendation: `ToolTrim recommande ${toolA.name} si ${asClause(effectiveKeepA)}. ${toolB.name} devient le meilleur choix si ${asClause(effectiveKeepB)}.`,
+    finalRecommendationEn: `ToolTrim recommends ${toolA.name} if ${asClause(effectiveKeepAEn)}. ${toolB.name} becomes the better pick if ${asClause(effectiveKeepBEn)}.`,
+    quickVerdictA: dedupeAgainst(keepsA, keepsB).slice(0, 2).map(asSentence).join(" ") || asSentence(effectiveKeepA),
+    quickVerdictAEn: dedupeAgainst(keepsAEn, keepsBEn).slice(0, 2).map(asSentence).join(" ") || asSentence(effectiveKeepAEn),
+    quickVerdictB: dedupeAgainst(keepsB, keepsA).slice(0, 2).map(asSentence).join(" ") || asSentence(effectiveKeepB),
+    quickVerdictBEn: dedupeAgainst(keepsBEn, keepsAEn).slice(0, 2).map(asSentence).join(" ") || asSentence(effectiveKeepBEn),
+    quickVerdictAvoid: `Les deux outils ont des limites : choisis selon ton usage, pas selon les fonctionnalités.`,
+    quickVerdictAvoidEn: `Both tools have limits: choose on your use case, not on feature lists.`,
 
     toolADesc: toolA.shortDescription || `${toolA.name} est un outil conçu pour ${effectiveKeepA.toLowerCase()}.`,
     toolADescEn: toolA.shortDescriptionEn || `${toolA.name} is a tool designed for ${effectiveKeepAEn.toLowerCase()}.`,
@@ -1822,6 +1849,8 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       },
     ],
 
+    // No per-criterion advice here: the generic lines were identical on
+    // every generated page and read as noise under each row.
     decisiveCriteria: [
       {
         title: "Usage principal",
@@ -1830,50 +1859,43 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         toolAEn: standaloneKeepAEn,
         toolB: standaloneKeepB,
         toolBEn: standaloneKeepBEn,
-        decision: "Choisir l'outil qui couvre le flux le plus fréquent, pas celui qui a le plus de fonctions.",
-        decisionEn: "Choose the tool that covers the most frequent workflow, not the one with the most features.",
+        decision: "",
+        decisionEn: "",
       },
       {
         title: "Coût réel",
         titleEn: "Real cost",
-        toolA: priceA === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${formatToolPrice(toolA, priceA, "EUR", "fr").text}/mois.`,
-        toolAEn: priceA === 0 ? "Free plan possible depending on volume." : `Paid plan starts around ${usdPrice(toolA, priceA)}/month.`,
-        toolB: priceB === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${formatToolPrice(toolB, priceB, "EUR", "fr").text}/mois.`,
-        toolBEn: priceB === 0 ? "Free plan possible depending on volume." : `Paid plan starts around ${usdPrice(toolB, priceB)}/month.`,
-        decision: "Auditer si le coût monte avant que l'usage soit hebdomadaire.",
-        decisionEn: "Audit if cost rises before weekly usage is real.",
+        toolA: priceA === 0 ? (isPriceUndisclosed(toolA) ? "Prix non communiqué par l'éditeur." : "Plan gratuit possible selon volume.") : `Payant à prévoir dès ${formatToolPrice(toolA, priceA, "EUR", "fr").text}/mois.`,
+        toolAEn: priceA === 0 ? (isPriceUndisclosed(toolA) ? "The vendor doesn't publish a price." : "Free plan possible depending on volume.") : `Paid plan starts around ${usdPrice(toolA, priceA)}/month.`,
+        toolB: priceB === 0 ? (isPriceUndisclosed(toolB) ? "Prix non communiqué par l'éditeur." : "Plan gratuit possible selon volume.") : `Payant à prévoir dès ${formatToolPrice(toolB, priceB, "EUR", "fr").text}/mois.`,
+        toolBEn: priceB === 0 ? (isPriceUndisclosed(toolB) ? "The vendor doesn't publish a price." : "Free plan possible depending on volume.") : `Paid plan starts around ${usdPrice(toolB, priceB)}/month.`,
+        decision: "",
+        decisionEn: "",
       },
       {
-        title: "Risque de surdimensionnement",
-        titleEn: "Overbuilding risk",
+        title: "À éviter si",
+        titleEn: "Avoid if",
         toolA: effectiveAvoidA,
         toolAEn: effectiveAvoidAEn,
         toolB: effectiveAvoidB,
         toolBEn: effectiveAvoidBEn,
-        decision: "Le meilleur choix est souvent le plus petit outil qui couvre le besoin réel.",
-        decisionEn: "The best choice is often the smallest tool that covers the real need.",
+        decision: "",
+        decisionEn: "",
       },
     ],
 
+    // Built from the two tools' own "keep if" reasons, so the advice is about
+    // this pair. The old generic line ("structure, collaboration, or
+    // automation gains") and its four signals read the same on 62 pages.
     tippingPoint: {
       title: "Le seuil de bascule",
       titleEn: "The tipping point",
-      defaultChoice: `Choisis ${priceA <= priceB ? toolA.name : toolB.name} par défaut si le besoin est simple et le budget serré.`,
-      defaultChoiceEn: `Choose ${priceA <= priceB ? toolA.name : toolB.name} by default if the need is simple and budget is tight.`,
-      switchWhen: `Passe à ${priceA <= priceB ? toolB.name : toolA.name} quand le gain de structure, de collaboration ou d'automatisation justifie le coût.`,
-      switchWhenEn: `Switch to ${priceA <= priceB ? toolB.name : toolA.name} when structure, collaboration, or automation gains justify the cost.`,
-      signals: [
-        "usage hebdomadaire réel",
-        "plusieurs personnes concernées",
-        "automatisations ou intégrations nécessaires",
-        "temps de setup inférieur au temps gagné",
-      ],
-      signalsEn: [
-        "real weekly usage",
-        "several people involved",
-        "automations or integrations required",
-        "setup time lower than time saved",
-      ],
+      defaultChoice: `Déjà sur ${cheaper.name}, et ${asClause(cheaper === toolA ? effectiveKeepA : effectiveKeepB)}.`,
+      defaultChoiceEn: `You use ${cheaper.name} and ${asClause(cheaper === toolA ? effectiveKeepAEn : effectiveKeepBEn)}.`,
+      switchWhen: `${capitalize(asClause(pricier === toolA ? effectiveKeepA : effectiveKeepB))} : ${pricier.name} est fait pour ça.`,
+      switchWhenEn: `${capitalize(asClause(pricier === toolA ? effectiveKeepAEn : effectiveKeepBEn))}: ${pricier.name} is built for that.`,
+      signals: [],
+      signalsEn: [],
     },
 
     costReality: [
@@ -1909,41 +1931,10 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       },
     ],
 
-    tooltrimRisks: [
-      {
-        mistake: "Choisir le plus complet",
-        mistakeEn: "Choosing the most complete tool",
-        consequence: "Tu paies et configures plus que ce que ton usage réel demande.",
-        consequenceEn: "You pay for and configure more than your real use requires.",
-        recommendation: "Choisis le plus petit outil qui couvre le flux principal.",
-        recommendationEn: "Choose the smallest tool that covers the main workflow.",
-      },
-      {
-        mistake: "Décider au prix marketing",
-        mistakeEn: "Deciding from marketing price",
-        consequence: "Le vrai coût peut venir des sièges, volumes, automatisations ou du temps de setup.",
-        consequenceEn: "The real cost can come from seats, volume, automations, or setup time.",
-        recommendation: "Compare le coût à ton usage hebdomadaire réel.",
-        recommendationEn: "Compare cost to your real weekly usage.",
-      },
-      {
-        mistake: "Garder deux outils qui se chevauchent",
-        mistakeEn: "Keeping two overlapping tools",
-        consequence: "Les données, tâches ou décisions se retrouvent en double.",
-        consequenceEn: "Data, tasks, or decisions become duplicated.",
-        recommendation: "Attribue un rôle clair à chaque outil ou coupe le doublon.",
-        recommendationEn: "Give each tool a clear role or cut the duplicate.",
-      },
-    ],
-
-    profiles: [
-      { persona: "Solo / Freelance", personaEn: "Solo / Freelancer",
-        choice: aFerme ? toolA.name : toolB.name,
-        reason: aFerme ? standaloneKeepA : standaloneKeepB,
-        reasonEn: aFerme ? standaloneKeepAEn : standaloneKeepBEn,
-        limit: aFerme ? effectiveAvoidA : effectiveAvoidB,
-        limitEn: aFerme ? effectiveAvoidAEn : effectiveAvoidBEn },
-    ],
+    // No generic "mistakes to avoid" or one-profile "by role" block: both were
+    // the same boilerplate on every generated page and repeated the verdict.
+    tooltrimRisks: [],
+    profiles: [],
 
     pricingFraming: `${toolA.name} et ${toolB.name} ont des modèles de prix différents. Vérifiez les plans officiels avant de décider.`,
     pricingFramingEn: `${toolA.name} and ${toolB.name} have different pricing models. Check official plans before deciding.`,
@@ -1973,14 +1964,14 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     aglanceContract: undefined,
     alternatives: [],
     faq: [
-      { q: `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
-        qEn: `${toolA.name} or ${toolB.name} — which is cheaper?`,
-        a: `${toolA.name} coûte ${getPrice(toolA)} et ${toolB.name} coûte ${getPrice(toolB)}.`,
-        aEn: `${toolA.name} costs ${getPrice(toolA, "en")} and ${toolB.name} costs ${getPrice(toolB, "en")}.` },
-      { q: `${toolA.name} vs ${toolB.name} — lequel choisir ?`,
-        qEn: `${toolA.name} vs ${toolB.name} — which to choose?`,
-        a: `Prends ${toolA.name} si ${effectiveKeepA.toLowerCase()}. Prends ${toolB.name} si ${effectiveKeepB.toLowerCase()}.`,
-        aEn: `Choose ${toolA.name} if ${effectiveKeepAEn.toLowerCase()}. Choose ${toolB.name} if ${effectiveKeepBEn.toLowerCase()}.` },
+      { q: `${toolA.name} ou ${toolB.name} : lequel est le moins cher ?`,
+        qEn: `${toolA.name} or ${toolB.name}: which is cheaper?`,
+        a: `${priceSentence(toolA, "fr")} ; ${priceSentence(toolB, "fr")}.`,
+        aEn: `${priceSentence(toolA, "en")}; ${priceSentence(toolB, "en")}.` },
+      { q: `${toolA.name} ou ${toolB.name} : lequel choisir ?`,
+        qEn: `${toolA.name} or ${toolB.name}: which should you choose?`,
+        a: `${toolA.name} convient si ${asClause(effectiveKeepA)}. ${toolB.name} convient si ${asClause(effectiveKeepB)}.`,
+        aEn: `Choose ${toolA.name} if ${asClause(effectiveKeepAEn)}. Choose ${toolB.name} if ${asClause(effectiveKeepBEn)}.` },
     ],
   };
 }
@@ -2035,9 +2026,11 @@ const ComparePage = () => {
   useEffect(() => {
     if (!toolA || !toolB) return;
     const year = new Date().getFullYear();
+    // Same rule as the prerendered title (vite.config.ts), which the client
+    // used to overwrite on hydration with an em-dash variant.
     const title = lang === "fr"
-      ? `${toolA.name} vs ${toolB.name} ${year} — comparatif, prix et verdict | ToolTrim`
-      : `${toolA.name} vs ${toolB.name} ${year} — comparison, pricing & verdict | ToolTrim`;
+      ? fitBrandedTitle(`${toolA.name} vs ${toolB.name} : comparatif ${year}`)
+      : fitBrandedTitle(`${toolA.name} vs ${toolB.name}: comparison ${year}`);
 
     // Decision-framing description: verb-driven, no audience assumption, no hardcoded copy.
     const guide = slugPair === "chatgpt-vs-claude" ? chatgptClaudeGuides[lang] : undefined;

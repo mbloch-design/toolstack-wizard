@@ -55,7 +55,7 @@ export default function ToolProfitabilityBlock({ tool, lang, t, keepItems = [], 
 
   const price = resolveMonthlyPrice(tool);
   const resolvedPrice = resolveDisplayPrice(tool, price, currency);
-  const displayPrice = `${resolvedPrice.converted ? "≈ " : ""}${formatCurrencyAmount(resolvedPrice.amount, currency, lang)}`;
+  const displayPrice = `${resolvedPrice.converted ? "≈ " : ""}${formatCurrencyAmount(resolvedPrice.amount, resolvedPrice.nativePrice ? resolvedPrice.currency : currency, lang)}`;
   const ba = (tool as any).betterAlternative;
   const altReason = lang === "en"
     ? (ba?.performanceGainEn || ba?.reasonEn)
