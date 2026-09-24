@@ -32489,3 +32489,143 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
   .cp-spec-row > .cp-spec-label { grid-column: 1 / -1; }
   .cp-spec-row--head > .cp-spec-label { display: none; }
 }
+
+/* Comparison hero, face-off: one panel split in two, icons tilted toward
+   each other, the VS badge on the seam, halves sliding in on load. */
+.cp-vs-duel {
+  gap: 0;
+  overflow: hidden;
+  border-radius: 32px;
+  background: var(--color-surface-soft);
+}
+.cp-vs-card {
+  min-height: 300px;
+  padding: 44px;
+  border-radius: 0;
+  background: transparent;
+  animation: cp-vs-in-left 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.cp-vs-card:nth-of-type(2) {
+  background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-border));
+  animation-name: cp-vs-in-right;
+}
+.cp-vs-card:hover { background: color-mix(in srgb, var(--color-surface-soft) 60%, var(--color-border)); }
+.cp-vs-card:nth-of-type(2):hover { background: color-mix(in srgb, var(--color-surface-soft) 50%, var(--color-border)); }
+.cp-vs-icon {
+  width: 112px !important;
+  height: 112px !important;
+  min-width: 112px !important;
+  min-height: 112px !important;
+  margin-bottom: 22px;
+  padding: 6px !important;
+  border-radius: 28px !important;
+  box-shadow: 0 18px 40px rgb(0 0 0 / 0.12), inset 0 0 0 1px var(--color-border) !important;
+  transform: rotate(-7deg);
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cp-vs-card:nth-of-type(2) .cp-vs-icon { transform: rotate(7deg); }
+.cp-vs-card:hover .cp-vs-icon { transform: rotate(0) scale(1.04); }
+.cp-vs-name { font-size: clamp(26px, 2.6vw, 34px); letter-spacing: -0.03em; }
+.cp-vs-badge {
+  width: 68px;
+  height: 68px;
+  box-shadow: 0 0 0 8px var(--color-surface-soft), 0 12px 30px rgb(0 0 0 / 0.18);
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  animation: cp-vs-pop 500ms 380ms cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+@keyframes cp-vs-in-left { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+@keyframes cp-vs-in-right { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+@keyframes cp-vs-pop { from { opacity: 0; transform: translate(-50%, -50%) scale(0.4); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
+@media (max-width: 640px) {
+  .cp-vs-card { min-height: 0; padding: 28px 24px; }
+  .cp-vs-icon { width: 80px !important; height: 80px !important; min-width: 80px !important; min-height: 80px !important; border-radius: 20px !important; margin-bottom: 14px; }
+  .cp-vs-badge { width: 52px; height: 52px; font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cp-vs-card, .cp-vs-badge { animation: none; }
+  .cp-vs-icon, .cp-vs-card:nth-of-type(2) .cp-vs-icon { transform: none; transition: none; }
+}
+
+/* Brand face-off: each half washed with its tool's own colour, the icon
+   larger and lifted. Solid tints only, no gradients. */
+.cp-vs-card--brand,
+.cp-vs-card--brand:nth-of-type(2) { background: color-mix(in srgb, var(--brand) 13%, #FFFFFF); }
+.cp-vs-card--brand:hover,
+.cp-vs-card--brand:nth-of-type(2):hover { background: color-mix(in srgb, var(--brand) 19%, #FFFFFF); }
+.cp-vs-card--brand .cp-vs-name { color: color-mix(in srgb, var(--brand) 55%, #0F0F0F); }
+.cp-vs-card--brand .cp-vs-price,
+.cp-vs-card--brand .cp-vs-score { background: rgb(255 255 255 / 0.8); }
+.cp-vs-card { min-height: 340px; justify-content: flex-end; }
+.cp-vs-icon {
+  width: 128px !important;
+  height: 128px !important;
+  min-width: 128px !important;
+  min-height: 128px !important;
+  margin-bottom: auto;
+  border-radius: 32px !important;
+  box-shadow: 0 24px 48px color-mix(in srgb, var(--brand, #000) 26%, transparent), inset 0 0 0 1px var(--color-border) !important;
+}
+.cp-vs-name { margin-top: 28px; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.05; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .cp-vs-card--brand { background: color-mix(in srgb, var(--brand) 22%, #121212); }
+  :root:not([data-theme="light"]) .cp-vs-card--brand .cp-vs-name { color: color-mix(in srgb, var(--brand) 35%, #FFFFFF); }
+}
+:root[data-theme="dark"] .cp-vs-card--brand { background: color-mix(in srgb, var(--brand) 22%, #121212); }
+:root[data-theme="dark"] .cp-vs-card--brand .cp-vs-name { color: color-mix(in srgb, var(--brand) 35%, #FFFFFF); }
+@media (max-width: 640px) {
+  .cp-vs-card { min-height: 0; }
+  .cp-vs-icon { width: 84px !important; height: 84px !important; min-width: 84px !important; min-height: 84px !important; border-radius: 22px !important; margin-bottom: 0; }
+  .cp-vs-name { margin-top: 16px; font-size: 28px; }
+  .cp-vs-badge { left: auto; right: 12px; transform: translate(0, -50%); }
+  @keyframes cp-vs-pop { from { opacity: 0; transform: translate(0, -50%) scale(0.4); } to { opacity: 1; transform: translate(0, -50%) scale(1); } }
+}
+
+/* ── Comparison pricing: two cards in one format ─────────────────────── */
+.cp-price-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cp-price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 26px;
+  border-radius: 24px;
+  background: var(--color-surface-soft);
+}
+.cp-price-head { display: flex; align-items: center; gap: 10px; }
+.cp-price-head h3 { margin: 0; font: 600 17px/1.2 var(--font-ui); }
+.cp-price-logo { padding: 2px !important; border-radius: 9px !important; background: var(--color-surface) !important; box-shadow: inset 0 0 0 1px var(--color-border); }
+.cp-price-amount {
+  margin: 14px 0 0;
+  font: 600 clamp(40px, 4.4vw, 56px)/1 var(--font-brand);
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-strong);
+}
+.cp-price-amount span { margin-left: 4px; font: 500 17px/1 var(--font-ui); letter-spacing: 0; color: var(--color-muted); }
+.cp-price-plan { margin: 0; font-size: 14px; line-height: 1.5; color: var(--color-muted); }
+.cp-price-card .cp-guide-price-link { margin-top: 10px; font-size: 14px; }
+.cp-price-note { max-width: 760px; margin: 14px 0 0; font-size: 13px; line-height: 1.55; color: var(--color-muted); }
+
+/* ── Comparison: should you switch ───────────────────────────────────── */
+.cp-switch-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.cp-switch-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px;
+  border-radius: 24px;
+  background: var(--color-surface-soft);
+}
+.cp-switch-head { display: flex; align-items: center; gap: 10px; }
+.cp-switch-head > svg { width: 20px; height: 20px; color: var(--color-text-strong); }
+.cp-switch-head h3 { flex: 1; margin: 0; font: 600 17px/1.2 var(--font-ui); }
+.cp-switch-logo { padding: 2px !important; border-radius: 8px !important; background: var(--color-surface) !important; box-shadow: inset 0 0 0 1px var(--color-border); }
+.cp-switch-card p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--color-text); }
+.cp-switch-signals { margin-top: 28px; }
+.cp-switch-signals h3 { margin: 0 0 12px; font: 600 11px/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+.cp-switch-signals ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 10px 32px; margin: 0; padding: 0; list-style: none; }
+.cp-switch-signals li { position: relative; padding-left: 18px; font-size: 15px; line-height: 1.55; }
+.cp-switch-signals li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 7px; height: 7px; border-radius: 50%; background: var(--color-text-strong); opacity: 0.35; }
+@media (max-width: 760px) {
+  .cp-price-cards, .cp-switch-grid { grid-template-columns: 1fr; }
+}

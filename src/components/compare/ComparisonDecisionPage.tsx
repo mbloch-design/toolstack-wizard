@@ -5,7 +5,7 @@ import { useLang } from '@/hooks/useLang';
 import ToolLogo from '@/components/ToolLogo';
 import ToolCardEditorial from '@/components/ToolCardEditorial';
 import Breadcrumb from '@/components/Breadcrumb';
-import { ArrowRight, ChevronDown, Wallet } from '@/lib/icons';
+import { ArrowRight, ChevronDown, CheckCircle2, RefreshCw } from '@/lib/icons';
 import type { Tool } from '@/data/types';
 import type { CompareEditorialContent } from '@/pages/ComparePage';
 import { chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
@@ -15,6 +15,7 @@ import { formatPriceLabel } from '@/lib/toolUtils';
 import { resolveMonthlyPrice } from '@/lib/pricing';
 import { computeToolTrimScore } from '@/lib/toolTrimScore';
 import { localizePlanName } from '@/lib/planNames';
+import brandColors from '@/data/brandColors.json';
 
 
 interface Props { toolA: Tool; toolB: Tool; content: CompareEditorialContent; slugPair: string }
@@ -25,6 +26,17 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const { tools: toolSummaries } = useToolSummaries({ refreshRemote: false });
   const { currency } = useCurrency();
   const priceOf = (tool: Tool) => formatPriceLabel(tool, resolveMonthlyPrice(tool), t, currency, lang);
+  // Plan units are stored in French ("par utilisateur"); translate the known ones.
+  const unitLabel = (unit?: string | null) => {
+    if (!unit) return '';
+    const map: Record<string, [string, string]> = {
+      'par utilisateur': ['par utilisateur', 'per user'], 'par compte': ['par compte', 'per account'],
+      'par collaborateur': ['par collaborateur', 'per seat'], 'par équipe': ['par équipe', 'per team'],
+      'par commerce': ['par commerce', 'per store'], 'sur devis': ['sur devis', 'on quote'],
+    };
+    const hit = map[unit.toLowerCase()];
+    return hit ? t(hit[0], hit[1]) : (lang === 'fr' ? unit : '');
+  };
   const toolHref = (tool: Tool) => `${prefix}/tool/${tool.slug || tool.id}`;
   const pricingHref = (tool: Tool) => `${toolHref(tool)}/${lang === 'fr' ? 'prix' : 'pricing'}`;
   const pick = (fr: string, en: string) => lang === 'fr' ? fr : en;
@@ -60,8 +72,12 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           {tools.map((tool) => {
             const score = computeToolTrimScore(tool);
             const pitch = lang === 'en' ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription;
-            return <Link key={tool.id} to={toolHref(tool)} className="cp-vs-card">
-              <ToolLogo tool={tool} size={80} className="cp-vs-icon" />
+            // Dominant logo colour, extracted once for the tools in published
+            // comparisons (src/data/brandColors.json); monochrome logos have
+            // none and keep the neutral surface.
+            const brand = (brandColors as Record<string, string>)[tool.slug || tool.id];
+            return <Link key={tool.id} to={toolHref(tool)} className={`cp-vs-card${brand ? ' cp-vs-card--brand' : ''}`} style={brand ? { ['--brand' as string]: brand } : undefined}>
+              <ToolLogo tool={tool} size={128} className="cp-vs-icon" />
               <span className="cp-vs-name">{tool.name}</span>
               {pitch && <span className="cp-vs-pitch">{pitch}</span>}
               <span className="cp-vs-meta">
@@ -114,7 +130,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       </section>
       <section id="cout" className="cp-guide-section" aria-labelledby="cp-pricing-title">
 
-        <h2 id="cp-pricing-title"><Wallet className="cp-section-icon" size={28} aria-hidden="true" />{t('Tarifs', 'Pricing')}</h2>
+        <h2 id="cp-pricing-title">{t('Tarifs', 'Pricing')}</h2>
 
         {curated ? <>
           <div className="cp-guide-segmented" role="group" aria-label={t('Comparer les tarifs pour', 'Compare pricing for')}>
@@ -138,28 +154,64 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           </div>
           <p className="cp-guide-source-note">{t('USD · Taxes et tarifs locaux à vérifier au paiement.', 'USD · Check taxes and local prices at checkout.')} <a href="#sources">{t('Sources et conditions', 'Sources and terms')}</a></p>
         </>
-          : <div className="cp-guide-pair cp-guide-catalog-prices">{tools.map(tool => {
-            const pricing = (lang === 'en' ? tool.pricing_v5En : undefined) || tool.pricing_v5;
-            const plan = pricing?.plans?.find(p => p.isComparePlan && !p.comingSoon);
-            const canPrice = plan && plan.nativeAmount != null && plan.nativeCurrency;
-            return <article key={tool.id}><h3>{tool.name}</h3>
-              {canPrice ? <><p className="cp-guide-price-value">{new Intl.NumberFormat(lang, { style: 'currency', currency: plan.nativeCurrency! }).format(plan.nativeAmount!)}</p><p>{plan.displayName} · {plan.billingPeriod === 'annual' ? t('par an', 'per year') : plan.billingPeriod === 'monthly' ? t('par mois', 'per month') : t('selon les conditions du plan', 'subject to plan terms')}{plan.pricingUnit ? ` · ${plan.pricingUnit}` : ''}</p><p>{plan.billingCommitment === 'annual_prepaid' ? t('Paiement annuel à l’avance.', 'Annual payment up front.') : ''} {t('Vérifiez les taxes, le nombre de sièges et les limites applicables.', 'Check taxes, seat counts and applicable limits.')}</p>{(plan.lastConfirmedOn || plan.observedOn) && <p>{t('Observation du', 'Observed on')} {plan.lastConfirmedOn || plan.observedOn}</p>}</>
-                : <>
-                  <p className="cp-guide-price-value">{priceOf(tool)}</p>
-                  {localizePlanName(tool.pricing_v5?.compare_plan_name, lang) && <p>{t('Plan de comparaison', 'Comparison plan')} · {localizePlanName(tool.pricing_v5?.compare_plan_name, lang)}</p>}
-                  <p><Link className="cp-guide-price-link" to={pricingHref(tool)}>{t(`Tous les tarifs de ${tool.name}`, `All ${tool.name} pricing`)} <ArrowRight aria-hidden="true" /></Link></p>
-                </>}
-            </article>;
-          })}</div>}
+          : <>
+            {/* Two price cards in one format: logo and name, a big amount with
+                a small period, the plan and unit, one link. Taxes, seats and
+                observation dates go once in the footnote below. */}
+            <div className="cp-price-cards">{tools.map(tool => {
+              const pricing = (lang === 'en' ? tool.pricing_v5En : undefined) || tool.pricing_v5;
+              const plan = pricing?.plans?.find(p => p.isComparePlan && !p.comingSoon);
+              const hasNative = Boolean(plan && plan.nativeAmount != null && plan.nativeCurrency);
+              const amount = hasNative
+                ? new Intl.NumberFormat(lang, { style: 'currency', currency: plan!.nativeCurrency!, maximumFractionDigits: plan!.nativeAmount! % 1 ? 2 : 0 }).format(plan!.nativeAmount!)
+                : priceOf(tool).replace(/\/(mo|mois)$/, '');
+              const isNumeric = /\d/.test(amount);
+              const period = hasNative ? (plan!.billingPeriod === 'annual' ? t('/an', '/yr') : t('/mois', '/mo')) : (isNumeric ? t('/mois', '/mo') : '');
+              const planName = hasNative ? plan!.displayName : localizePlanName(tool.pricing_v5?.compare_plan_name, lang);
+              const unit = hasNative ? unitLabel(plan!.pricingUnit) : '';
+              const commitment = hasNative && plan!.billingCommitment === 'annual_prepaid' ? t('facturé à l’année', 'billed yearly') : '';
+              return <article key={tool.id} className="cp-price-card">
+                <div className="cp-price-head"><ToolLogo tool={tool} size={32} className="cp-price-logo" /><h3>{tool.name}</h3></div>
+                <p className="cp-price-amount">{amount}{period && <span>{period}</span>}</p>
+                {(planName || unit || commitment) && <p className="cp-price-plan">{[planName, unit, commitment].filter(Boolean).join(' · ')}</p>}
+                <Link className="cp-guide-price-link" to={pricingHref(tool)}>{t(`Tous les tarifs de ${tool.name}`, `All ${tool.name} pricing`)} <ArrowRight aria-hidden="true" /></Link>
+              </article>;
+            })}</div>
+            {(() => {
+              const observed = tools.map(tool => { const pr = (lang === 'en' ? tool.pricing_v5En : undefined) || tool.pricing_v5; const pl = pr?.plans?.find(p => p.isComparePlan && !p.comingSoon); return pl?.lastConfirmedOn || pl?.observedOn || pr?.verified_on; }).filter(Boolean).sort().pop();
+              return <p className="cp-price-note">{t('Prix d’entrée des plans payants. Taxes, nombre de sièges et limites à vérifier chez l’éditeur.', 'Entry prices of the paid plans. Check taxes, seat counts and limits with the vendor.')}{observed ? ` ${t('Relevé le', 'Checked on')} ${observed}.` : ''}</p>;
+            })()}
+          </>}
       </section>
-      <section id="changer" className="cp-guide-section cp-guide-switch-section" aria-labelledby="cp-switch-title">
-        <div className="cp-guide-switch-heading"><span>{t('Décision', 'Decision')}</span><h2 id="cp-switch-title">{t('Faut-il changer ?', 'Should you switch?')}</h2></div>
-        <div className="cp-guide-switching">
-          <article><span>01</span><h3>{t('Restez sur votre choix actuel si', 'Keep your current tool if')}</h3><p>{pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn)}</p></article>
-          <article><span>02</span><h3>{t('Changez si', 'Switch if')}</h3><p>{pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn)}</p></article>
-          {pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).length > 0 && <article className="cp-guide-switch-signals"><span>03</span><h3>{t('Les signaux à regarder', 'Signals to watch')}</h3><ul>{pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn).map(signal => <li key={signal}>{signal}</li>)}</ul></article>}
-        </div>
-      </section>
+      {(() => {
+        const stay = pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn);
+        const go = pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn);
+        const signals = pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn);
+        // Which tool each card is about: the one named first in its sentence.
+        const firstNamed = (text: string) => [...tools].sort((x, y) => {
+          const ix = text.indexOf(x.name), iy = text.indexOf(y.name);
+          return (ix < 0 ? 1e9 : ix) - (iy < 0 ? 1e9 : iy);
+        })[0];
+        const stayTool = firstNamed(stay);
+        const goTool = firstNamed(go) === stayTool ? tools.find(tool => tool !== stayTool)! : firstNamed(go);
+        return <section id="changer" className="cp-guide-section cp-switch" aria-labelledby="cp-switch-title">
+          <h2 id="cp-switch-title">{t('Faut-il changer ?', 'Should you switch?')}</h2>
+          <div className="cp-switch-grid">
+            <article className="cp-switch-card">
+              <div className="cp-switch-head"><CheckCircle2 aria-hidden="true" /><h3>{t('Restez si', 'Stay if')}</h3><ToolLogo tool={stayTool} size={28} className="cp-switch-logo" /></div>
+              <p>{stay}</p>
+            </article>
+            <article className="cp-switch-card">
+              <div className="cp-switch-head"><RefreshCw aria-hidden="true" /><h3>{t('Changez si', 'Switch if')}</h3><ToolLogo tool={goTool} size={28} className="cp-switch-logo" /></div>
+              <p>{go}</p>
+            </article>
+          </div>
+          {signals.length > 0 && <div className="cp-switch-signals">
+            <h3>{t('Les signaux à surveiller', 'Signals to watch')}</h3>
+            <ul>{signals.map(signal => <li key={signal}>{signal}</li>)}</ul>
+          </div>}
+        </section>;
+      })()}
       {content.profiles.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-profiles-title">
         <h2 id="cp-profiles-title">{t('Par profil', 'By role')}</h2>
         <div className="cp-guide-editorial-grid">{content.profiles.map(profile => <article key={profile.persona}>
