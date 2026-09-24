@@ -9,8 +9,24 @@ interface Props {
   tool: Tool;
   lang: string;
   t: (fr: string, en: string) => string;
-  keepText?: string;
-  challengeText?: string;
+  keepItems?: string[];
+  challengeItems?: string[];
+}
+
+// Curated reasons are stored as sentences ("You want X.", "Y.;") and used to
+// be glued with ". ", which printed "X.. Y". One clean sentence per line.
+function cleanReason(text: string) {
+  const trimmed = text.trim().replace(/[\s.;,:]+$/u, "");
+  if (!trimmed) return "";
+  return /[?!]$/u.test(trimmed) ? trimmed : `${trimmed}.`;
+}
+
+function ReasonList({ items }: { items: string[] }) {
+  return (
+    <ul className="td-profit-fit">
+      {items.map((item) => <li key={item}>{item}</li>)}
+    </ul>
+  );
 }
 
 /**
@@ -27,7 +43,11 @@ interface Props {
  * duplicate "Décision rapide" either. Renders for any priced tool;
  * returns null only for free tools with nothing to compare against.
  */
-export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challengeText }: Props) {
+export default function ToolProfitabilityBlock({ tool, lang, t, keepItems = [], challengeItems = [] }: Props) {
+  const keepReasons = keepItems.map(cleanReason).filter(Boolean);
+  const challengeReasons = challengeItems.map(cleanReason).filter(Boolean);
+  const keepText = keepReasons.length > 0;
+  const challengeText = challengeReasons.length > 0;
   const { currency } = useCurrency();
   const verdict = lang === "en" ? tool.verdictEn : tool.verdict;
   const curatedProfitable = verdict?.profitableIf;
@@ -77,7 +97,7 @@ export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challe
       {(keepText || profitableIf?.length) ? (
         <div className="td-profit-card td-profit-card--positive">
           <div className="td-profit-card-head"><CheckCircle2 aria-hidden /><p>{t("À garder si", "Keep if")}</p></div>
-          {keepText && <p className="td-profit-fit">{keepText}</p>}
+          {keepText && <ReasonList items={keepReasons} />}
           {profitableIf?.length ? <div className="td-profit-threshold">
             <span>{t(`${tool.name} devient rentable quand`, `${tool.name} becomes worthwhile when`)}</span>
             <ul className="td-judgment">
@@ -94,7 +114,7 @@ export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challe
       {(challengeText || tooExpensiveIf?.length) ? (
         <div className="td-profit-card td-profit-card--negative">
           <div className="td-profit-card-head"><CircleAlert aria-hidden /><p>{t("À challenger si", "Challenge if")}</p></div>
-          {challengeText && <p className="td-profit-fit">{challengeText}</p>}
+          {challengeText && <ReasonList items={challengeReasons} />}
           {tooExpensiveIf?.length ? <div className="td-profit-threshold">
             <span>{t(`${tool.name} devient trop cher quand`, `${tool.name} becomes too expensive when`)}</span>
             <ul className="td-judgment">

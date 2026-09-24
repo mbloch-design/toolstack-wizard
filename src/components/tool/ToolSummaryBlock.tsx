@@ -3,6 +3,7 @@ import type { Tool, Category } from "@/data/types";
 import { stripLeadingEmoji } from "@/lib/text";
 import { formatPriceLabel } from "@/lib/toolUtils";
 import { useCurrency } from "@/hooks/useCurrency";
+import { localizePlanName } from "@/lib/planNames";
 
 // Cache-bust marker (2026-06-24): forcing this module's content hash to
 // change after a build showed seo.idealForFr correct in the embedded
@@ -26,6 +27,7 @@ interface Props {
  */
 export default function ToolSummaryBlock({ tool, category, alternatives, displayPrice, lang, prefix, t }: Props) {
   const { currency } = useCurrency();
+  const planLabel = localizePlanName(tool.pricing_v5?.compare_plan_name, lang);
   const categoryLabel = category
     ? t(
         stripLeadingEmoji(category.name, category.id).toLowerCase(),
@@ -46,7 +48,10 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
 
   const avoidIfRaw = lang === "en" ? tool.verdictEn?.avoidIf : tool.verdict?.avoidIf;
   const avoidCases = avoidIfRaw?.length
-    ? (Array.isArray(avoidIfRaw) ? avoidIfRaw : [avoidIfRaw]).filter(Boolean).slice(0, 2).join("; ")
+    ? (Array.isArray(avoidIfRaw) ? avoidIfRaw : [avoidIfRaw]).filter(Boolean).slice(0, 2)
+        // Items are stored as sentences: drop their own end punctuation so
+        // the joined line doesn't read "listens.; You don't".
+        .map((item: string) => item.trim().replace(/[\s.;,:]+$/u, "")).join("; ")
     : null;
 
   const topAlts = alternatives.slice(0, 4).map(a => a.name).join(", ");
@@ -83,7 +88,7 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
           <dt className="td-synth-dt">{t("Prix à partir de", "Price from")}</dt>
           <dd className="td-synth-dd">
             {formatPriceLabel(tool, displayPrice, t, currency, lang)}
-            {tool.pricing_v5?.compare_plan_name && ` (${tool.pricing_v5.compare_plan_name})`}.
+            {planLabel && ` (${planLabel})`}.
           </dd>
         </div>
 

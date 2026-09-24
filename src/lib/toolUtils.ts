@@ -6,6 +6,7 @@ import type { Tool } from "@/data/types";
 import type { Currency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";
+import { isPriceUndisclosed } from "@/lib/pricing";
 
 /** True if the tool's paid pricing is a one-time/perpetual license, not a subscription. */
 export function isOneTimePrice(tool: { pricing?: { paid?: string }; pricing_v5?: { compare_plan_kind?: string | null } | null }): boolean {
@@ -24,7 +25,10 @@ export function formatPriceLabel(
   if (isOneTimePrice(tool) && price === 0) {
     return tool.pricing_v5?.compare_plan_name || t("Licence à vie", "Lifetime license");
   }
-  if (price === 0) return t("Gratuit", "Free");
+  if (price === 0) {
+    // A 0 on an undisclosed-price tool means "unknown", not "free".
+    return isPriceUndisclosed(tool) ? t("Prix non communiqué", "Price not public") : t("Gratuit", "Free");
+  }
   const resolved = resolveDisplayPrice(tool, price, currency);
   const amount = `${resolved.converted ? "≈ " : ""}${formatCurrencyAmount(resolved.amount, currency, lang)}`;
   return isOneTimePrice(tool) ? amount : `${amount}/${t("mois", "mo")}`;

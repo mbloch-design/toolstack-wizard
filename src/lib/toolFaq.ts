@@ -1,6 +1,7 @@
 import type { Tool } from "@/data/types";
 import { formatToolPrice } from "@/lib/currencyRates";
 import { localizePlanName } from "@/lib/planNames";
+import { isPriceUndisclosed } from "@/lib/pricing";
 
 export interface ToolFaqEntry {
   q: string;
@@ -47,6 +48,10 @@ export function buildToolFaqs(
         ? (isFr
           ? `${tool.name} est vendu en licence à vie, sans abonnement. ${tool.pricing?.paid || "Consultez le tarif officiel."}${verifiedSuffixFr}`
           : `${tool.name} is sold as a lifetime license with no subscription. ${tool.pricingEn?.paid || "See the official price."}${verifiedSuffixEn}`)
+        : displayPrice === 0 && isPriceUndisclosed(tool)
+        ? (isFr
+          ? `${tool.name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedSuffixFr}`
+          : `${tool.name} doesn't publish a price list; check the official page for current pricing.${verifiedSuffixEn}`)
         : isFr
           ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${plan}.${verifiedSuffixFr}`
           : `${tool.name} costs ${displayPrice === 0 ? "$0 (free)" : `${formatToolPrice(tool, displayPrice, "USD", "en").text}/month`}${plan}.${verifiedSuffixEn}`,

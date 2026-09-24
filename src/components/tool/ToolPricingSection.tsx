@@ -1,7 +1,8 @@
 import type { Tool } from "@/data/types";
 import { CreditCard, Sparkles, Package } from "@/lib/icons";
-import { hasGenuineFreeTier } from "@/lib/pricing";
+import { hasGenuineFreeTier, isPriceUndisclosed } from "@/lib/pricing";
 import { relExterne, safeExternalUrl } from "@/lib/externalLink";
+import { localizePlanName } from "@/lib/planNames";
 import { useCurrency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";
@@ -75,6 +76,13 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
     return formatCurrencyAmount(amount, source, lang || "fr");
   };
 
+  // 71 tools store pricing as a single sentence rather than {free, paid};
+  // it used to be ignored, leaving the section with only a source link.
+  const rawPricing = lang === "en" ? (tool.pricingEn ?? tool.pricing) : tool.pricing;
+  const pricingSentence = typeof rawPricing === "string" ? rawPricing.trim() : "";
+  const undisclosed = isPriceUndisclosed(tool);
+  const hasPlanCards = canonicalPlans.length > 0 || hasFree || hasPaid || displayPrice > 0;
+
   const bundleParent = tool.bundle_parent;
   const parentLang = lang === "en" ? "en" : "fr";
 
@@ -91,7 +99,25 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
           </span>
         </a>
       )}
-      {canonicalPlans.length > 0 ? (
+      {!hasPlanCards && !(bundleParent && canonicalPlans.length === 0) && (
+        <div className="td-pricing-plans">
+          <article className="td-pricing-plan">
+            <div className="td-pricing-plan-head">
+              <span className="td-pricing-plan-name">
+                <CreditCard aria-hidden />
+                {undisclosed ? t("Tarif non communiqué", "Price not public") : t("Tarifs", "Pricing")}
+              </span>
+            </div>
+            <p className="td-pricing-copy">
+              {pricingSentence || t(
+                "L'éditeur ne publie pas de grille tarifaire. Vérifie le prix sur la page officielle avant de t'engager.",
+                "The vendor doesn't publish a price list. Check the official page before committing.",
+              )}
+            </p>
+          </article>
+        </div>
+      )}
+      {!hasPlanCards ? null : canonicalPlans.length > 0 ? (
         <div className="td-pricing-plans td-pricing-plans--catalog">
           {canonicalPlans.map((plan) => (
             <article
@@ -170,7 +196,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
             <div className="td-pricing-plan-head">
               <span className="td-pricing-plan-name">
                 <CreditCard aria-hidden />
-                {isOneTime ? t("Licence à vie", "Lifetime license") : pv5?.compare_plan_name || t("Plan payant", "Paid plan")}
+                {isOneTime ? t("Licence à vie", "Lifetime license") : localizePlanName(pv5?.compare_plan_name, lang || "fr") || t("Plan payant", "Paid plan")}
               </span>
               {displayPrice > 0 && (
                 <strong className="td-pricing-price">

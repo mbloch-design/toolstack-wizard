@@ -8,7 +8,7 @@ import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
-import { resolveMonthlyPrice } from "./src/lib/pricing";
+import { isPriceUndisclosed, resolveMonthlyPrice } from "./src/lib/pricing";
 import { formatToolPrice, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
@@ -290,6 +290,13 @@ function buildToolFaqSchema(params: {
           "@type": "Answer",
           text: (() => {
             const hasFree = toolHasFreePlan(tool);
+            // Must match the visible FAQ answer (src/lib/toolFaq.ts).
+            if (isPriceUndisclosed(tool)) {
+              const verifiedOn = tool.pricing_v5?.verified_on;
+              return isFr
+                ? `${name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedOn ? ` Prix vérifié le ${verifiedOn}.` : ""}`
+                : `${name} doesn't publish a price list; check the official page for current pricing.${verifiedOn ? ` Price verified on ${verifiedOn}.` : ""}`;
+            }
             if (isFr) {
               if (priceDisplay === 0) return `${name} est gratuit. Prix vérifié par ToolTrim.`;
               if (priceDisplay) return `${name} propose ${hasFree ? "un plan gratuit, puis des offres payantes à partir de" : "des offres à partir de"} ${fr(tool, priceDisplay)}/mois. Prix vérifié par ToolTrim.`;
@@ -333,6 +340,14 @@ function toolHasFreePlan(tool: any): boolean {
  *  - paid only: single Offer at that price.
  *  - free only / unknown: single Offer at 0.
  */
+// A tool with no public price and no free plan has no offer we can state:
+// its 0 comparison price means "unknown", and an Offer at 0 would claim free.
+function buildToolOffersFor(tool: any, price: number | null, url: string) {
+  const hasFree = toolHasFreePlan(tool);
+  if (isPriceUndisclosed(tool) && !hasFree) return undefined;
+  return buildToolOffers(price, hasFree, "EUR", url);
+}
+
 function buildToolOffers(price: number | null, hasFree: boolean, currency: string, url: string) {
   const urlPart = url ? { url } : {};
   const paid = price != null && price > 0 ? price : 0;
@@ -1034,7 +1049,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // offers est requis par le rich result Software App ; AggregateOffer
             // 0→prix pour les freemium (sinon le schema annonce un prix payant
             // sur une page qui affiche "Gratuit").
-            jsonLd.offers = buildToolOffers(price, toolHasFreePlan(tool), "EUR", productUrl);
+            const offers = buildToolOffersFor(tool, price, productUrl);
+            if (offers) jsonLd.offers = offers;
             // Note éditoriale ToolTrim (affichée sur la page) exposée en Review.
             // C'est l'avis du média sur un outil tiers (légitime), PAS un
             // aggregateRating à faux compteur d'avis utilisateurs.
@@ -1328,7 +1344,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 ...(subProductUrl ? { url: subProductUrl } : {}),
                 applicationCategory: appCategoryFor(tool),
                 operatingSystem: "Web",
-                offers: buildToolOffers(price, toolHasFreePlan(tool), "EUR", subProductUrl),
+                ...(buildToolOffersFor(tool, price, subProductUrl) ? { offers: buildToolOffersFor(tool, price, subProductUrl) } : {}),
                 ...(subScore && typeof subScore.score === "number" ? {
                   review: {
                     "@type": "Review",

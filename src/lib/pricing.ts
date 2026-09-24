@@ -37,6 +37,17 @@ export function isFreemiumPricing(pricing: { free?: string | null; paid?: string
  * only a fallback for tools that have not been migrated yet. Keeping this in
  * one helper prevents visible copy, metadata, JSON-LD and SSR from drifting.
  */
+/**
+ * 237 tools carry the sentinel plan "Prix non public" with a 0 comparison
+ * price: the vendor publishes no price list. That 0 means "unknown", not
+ * "free", and must never be printed as "Free" or as a plan name.
+ */
+export function isPriceUndisclosed(tool: {
+  pricing_v5?: { compare_plan_name?: string | null } | null;
+}): boolean {
+  return /non public/i.test(tool.pricing_v5?.compare_plan_name || "");
+}
+
 export function resolveMonthlyPrice(tool: {
   pricing_v5?: { compare_price_monthly_eur?: number | null } | null;
   defaultMonthlyPrice?: number | null;

@@ -36,6 +36,8 @@ const REPLACEMENTS: [RegExp, string][] = [
  */
 export function localizePlanName(name: string | null | undefined, lang: string): string {
   if (!name) return "";
+  // "Prix non public" is a sentinel for "no published price", not a plan.
+  if (/non public/i.test(name)) return "";
   if (lang !== "en") return name;
   let out = name;
   for (const [pattern, replacement] of REPLACEMENTS) out = out.replace(pattern, replacement);

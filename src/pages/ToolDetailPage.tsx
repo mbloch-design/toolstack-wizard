@@ -12,7 +12,7 @@ import { trackEvent } from "@/lib/analytics";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, isOneTimePrice, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
 import { stripLeadingEmoji } from "@/lib/text";
-import { hasGenuineFreeTier, resolveMonthlyPrice } from "@/lib/pricing";
+import { hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "@/lib/pricing";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
@@ -92,6 +92,11 @@ const ToolDetailPage = () => {
     const price = resolveMonthlyPrice(tool);
     const hasPrice = price != null && price > 0;
     const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
+    // Same rule as the prerendered title (vite.config.ts): "free" only when a
+    // free offer is documented, otherwise the neutral "pricing". The client
+    // title used to say "free" for every 0-priced tool, including the 237
+    // with no public price, and overwrote the prerendered one on hydration.
+    const freeTitleTag = Boolean((tool as any).pricing?.free);
     const year = new Date().getFullYear();
     const baseSlug = tool.slug || tool.id;
     const planName = tool.pricing_v5?.compare_plan_name || null;
@@ -124,12 +129,12 @@ const ToolDetailPage = () => {
           ? fitBrandedTitle(`${tool.name} : licence à vie, avis et alternatives ${year}`)
           : hasPrice
           ? fitBrandedTitle(`${tool.name} : prix dès ${frPrice}, avis et alternatives ${year}`)
-          : fitBrandedTitle(`${tool.name} : gratuit, avis et alternatives ${year}`),
+          : fitBrandedTitle(`${tool.name} : ${freeTitleTag ? "gratuit" : "prix"}, avis et alternatives ${year}`),
         titleEn: oneTime
           ? fitBrandedTitle(`${tool.name}: lifetime license, review & alternatives ${year}`)
           : hasPrice
           ? fitBrandedTitle(`${tool.name}: pricing from ${enPrice}, review & alternatives ${year}`)
-          : fitBrandedTitle(`${tool.name}: free, review & alternatives ${year}`),
+          : fitBrandedTitle(`${tool.name}: ${freeTitleTag ? "free" : "pricing"}, review & alternatives ${year}`),
         descFr: shortExcerpt
           ? `${shortExcerpt}. ${oneTime ? "Licence à vie, sans abonnement." : hasPrice ? `Coûte ${price}€/mois${planSuffixFr}, vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
           : oneTime
@@ -385,6 +390,11 @@ const ToolDetailPage = () => {
         .map((ct: any) => ({ ct, affinity: functionalAffinity(tool, ct) }))
         .filter((x) => x.affinity > 0)
         .sort((a, b) => b.affinity - a.affinity || String(a.ct.name).localeCompare(String(b.ct.name)))
+        // One shared generic need ("creator-workflow") put Adcreative AI next
+        // to Acast. A neighbour must share a real part of the needs, and stay
+        // within half of the best neighbour's score. Catalogue-wide this
+        // empties 3 lists, which fall back to the exploration link below.
+        .filter((x, _i, ranked) => x.affinity >= 0.25 && x.affinity >= ranked[0].affinity * 0.5)
         .slice(0, 6)
         .map((x) => x.ct);
 
@@ -417,6 +427,27 @@ const ToolDetailPage = () => {
   // barre de navigation : si la retombee disparait un jour, l'onglet doit
   // redevenir conditionnel plutot que de pointer vers une page vide.
   const hasAlternativesContent = true;
+
+  // App Store style "you might also like" list: real logo, name and the
+  // tool's one-line pitch, instead of name-only chips with 18px logos.
+  const renderAltShelf = (list: any[]) => (
+    <ul className="td-alt-shelf">
+      {list.map((ct: any) => {
+        const pitch = lang === "en" ? (ct.shortDescriptionEn || ct.shortDescription) : ct.shortDescription;
+        return (
+          <li key={ct.id}>
+            <Link to={`${prefix}/tool/${ct.slug || ct.id}`} className="td-alt-shelf-item">
+              <ToolLogo tool={ct} size={44} className="td-alt-shelf-logo" />
+              <span className="td-alt-shelf-copy">
+                <span className="td-alt-shelf-name">{ct.name}</span>
+                {pitch && <span className="td-alt-shelf-pitch">{pitch}</span>}
+              </span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
   const displayPrice  = resolveMonthlyPrice(tool);
   // Pas de date de repli. Elle valait « 2026-03-29 » et s'affichait comme
   // « Dernière vérification » sur les 325 fiches sans `pricing_v5`, soit 644
@@ -689,7 +720,7 @@ const ToolDetailPage = () => {
                     <div>
                       <dt>{t("Prix", "Pricing")}</dt>
                       <dd>{displayPrice === 0 && !isOneTimePrice(tool)
-                        ? t("Gratuit", "Free")
+                        ? (isPriceUndisclosed(tool) ? t("Prix non communiqué", "Price not public") : t("Gratuit", "Free"))
                         : displayPrice != null && (displayPrice > 0 || isOneTimePrice(tool))
                           ? formatPriceLabel(tool, displayPrice, t, currency, lang)
                           : t("Sur devis", "Contact sales")}</dd>
@@ -803,14 +834,17 @@ const ToolDetailPage = () => {
                 <section className="td-decision-flow">
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
-                  const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
+                  const { keepItems, avoidItems } = resolveVerdict(tool, lang);
 
-                  const keepText = keepItems.length ? keepItems.slice(0, 2).join(". ") : undefined;
-                  const challengeText = avoidItems.length ? avoidItems.slice(0, 2).join(". ") : undefined;
+                  const keepList = keepItems.slice(0, 2);
+                  const challengeList = avoidItems.slice(0, 2);
 
                   // Ne pas rendre une coquille vide « quand ça a du sens » pour un outil sans
                   // matière de verdict (ex. app de bundle non onboardée) : la section disparaît.
-                  if (!threshold && !keepText && !challengeText) return null;
+                  // The verdict sentence (threshold) already opens the page in
+                  // the decision card; this section only carries the reasons.
+                  // Priced tools still get the auto profitability thresholds.
+                  if (!keepList.length && !challengeList.length && !(resolveMonthlyPrice(tool) > 0)) return null;
 
                   return (
                     <div className="td-section td-decision-flow-intro">
@@ -820,12 +854,9 @@ const ToolDetailPage = () => {
                           : `${tool.name}: when it makes sense.`}
                       </h2>
 
-                      {/* Verdict sentence */}
-                      {threshold && <p className="td-verdict-lead">{threshold}</p>}
-
                       <ToolProfitabilityBlock
                         tool={tool} lang={lang} t={t}
-                        keepText={keepText} challengeText={challengeText}
+                        keepItems={keepList} challengeItems={challengeList}
                       />
                     </div>
                   );
@@ -892,18 +923,7 @@ const ToolDetailPage = () => {
                       <p className="td-eyebrow td-eyebrow--tight">
                         {t("Substituables directement", "Direct substitutes")}
                       </p>
-                      <div className="td-chips">
-                        {clusterTools.map((ct: any) => (
-                          <Link
-                            key={ct.id}
-                            to={`${prefix}/tool/${ct.slug || ct.id}`}
-                            className="td-chip"
-                          >
-                            <ToolLogo tool={ct} size={18} />
-                            {ct.name}
-                          </Link>
-                        ))}
-                      </div>
+                      {renderAltShelf(clusterTools)}
                     </div>
                   )}
 
@@ -914,22 +934,11 @@ const ToolDetailPage = () => {
                       </p>
                       <p className="td-analysis-paragraph">
                         {t(
-                          `Aucun substitut direct n'est établi pour ${tool.name}. Ces outils couvrent le même terrain, à comparer selon ton usage.`,
-                          `No direct substitute is established for ${tool.name}. These tools cover the same ground, worth comparing against your own use.`,
+                          `Ils couvrent les mêmes besoins que ${tool.name}, sans être encore confirmés comme remplaçants directs. À comparer selon ton usage.`,
+                          `They cover the same needs as ${tool.name}, but aren't confirmed one-to-one replacements yet. Compare them against your own use.`,
                         )}
                       </p>
-                      <div className="td-chips">
-                        {sameCategoryTools.map((ct: any) => (
-                          <Link
-                            key={ct.id}
-                            to={`${prefix}/tool/${ct.slug || ct.id}`}
-                            className="td-chip"
-                          >
-                            <ToolLogo tool={ct} size={18} />
-                            {ct.name}
-                          </Link>
-                        ))}
-                      </div>
+                      {renderAltShelf(sameCategoryTools)}
                     </div>
                   )}
 
