@@ -11493,21 +11493,37 @@
       "free": "Pas de palier gratuit ; tarification entreprise sur devis, à partir d'un ticket d'entrée élevé.",
       "paid": "Foundations, jusqu'à 100 employés: 400 $/mois; réduction de 10 % possible avec engagement annuel ; Plus, 101 à 1 000 employés: Sur devis ; Enterprise, plus de 1 000 employés: Sur devis"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 343.5,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-08-30",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "ashbyhq.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "All-In-One Foundations",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.ashbyhq.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 343.5,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "All-In-One Foundations",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.ashbyhq.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 400,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://ashbyhq.com",
     "websiteUrl": "https://ashbyhq.com",
@@ -11768,21 +11784,62 @@
       "free": "Gratuit jusqu'à 3 sièges, avec automatisations et types d'objets limités.",
       "paid": "Free: 0 $/utilisateur/mois ; Plus: 44 $ mensuel ou 35 $/utilisateur/mois annuel ; Pro: 99 $ mensuel ou 79 $/utilisateur/mois annuel ; Enterprise: Sur devis, facturation annuelle"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 39,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-08-30",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "attio.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Plus",
+      "price_reliability": "high",
+      "location_sensitive": true,
       "official_source_url": "https://attio.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 39,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Plus",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://attio.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 44,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        },
+        {
+          "planKey": "compare-eur",
+          "displayName": "Plus",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://attio.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 39,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://attio.com",
     "websiteUrl": "https://attio.com",
@@ -12616,21 +12673,37 @@
     "longDescriptionEn": "AuthoredUp helps write LinkedIn posts with an accurate preview of the final formatting (line breaks, layout), post scheduling, and analytics — a lighter, more specialized alternative to Taplio.\n\nFor anyone publishing regularly on LinkedIn with no need for deep AI generation, it's a tool focused on writing and formatting rather than AI assistance.",
     "pricing": "Plan gratuit limité ; Pro à partir de ~9€/mois.",
     "pricingEn": "Limited free plan; Pro from ~$9/month.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 17.13,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "authoredup.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Individual",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://authoredup.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://authoredup.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17.13,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Individual",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://authoredup.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 19.95,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://authoredup.com",
     "websiteUrl": "https://authoredup.com",
@@ -14881,25 +14954,41 @@
       "free": "Aucun plan gratuit permanent annoncé.",
       "paid": "Core: À partir de 10 $/employé/mois ; Pro: À partir de 17 $/employé/mois ; Elite: À partir de 25 $/employé/mois ; 25 employés ou moins: Forfait à partir de 250 $/mois"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 214.68,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-08-30",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "bamboohr.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Core",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.bamboohr.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 214.68,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Core",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.bamboohr.com/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 250,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://www.bamboohr.com",
     "websiteUrl": "https://bamboohr.com",
@@ -20146,21 +20235,46 @@
     "longDescriptionEn": "Bubble lets you build a complete web application — interface, database, conditional logic, workflows — without writing traditional code, via a visual editor. It's one of the most powerful no-code tools for apps with real business logic (marketplace, SaaS, complex internal tool), at the cost of a real learning curve.\n\nFor a non-developer founder, Bubble lets you launch a working MVP without hiring a developer; for a simpler project, AI app generators (Lovable, Bolt.new) are faster to start with today.",
     "pricing": "Gratuit pour tester ; plans payants à partir de ~32$/mois pour un projet en production.",
     "pricingEn": "Free to test; paid plans from ~$32/month for a production project.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 50.67,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "bubble.io",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://bubble.io",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://bubble.io/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50.67,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://bubble.io/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 59,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://bubble.io",
     "websiteUrl": "https://bubble.io",
@@ -24170,21 +24284,46 @@
     "longDescriptionEn": "Captions is a video editing app designed from the ground up around AI, rather than a classic editor with AI features bolted on afterward: stylish automatic captions, dubbing into another language with the original voice preserved, automatic correction of eye contact that misses the camera.\n\nFor a creator producing video content solo, with no editing team, it's a way to get a professional result without deep technical editing skills.",
     "pricing": "Plan gratuit limité ; Pro à partir de ~10$/mois.",
     "pricingEn": "Limited free plan; Pro from ~$10/month.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 21.46,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "captions.ai",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Max",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://captions.ai",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://captions.ai/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 21.46,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Max",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://captions.ai/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 24.99,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://captions.ai",
     "websiteUrl": "https://captions.ai",
@@ -27269,21 +27408,46 @@
     "longDescriptionEn": "Clay aggregates prospect data from dozens of sources (LinkedIn, websites, B2B databases) and uses AI to personalize prospecting messages at scale based on this real data, rather than generic templates.\n\nFor a sales or growth team wanting to industrialize personalized prospecting, it's a more powerful but also more complex tool than classic prospecting tools like Lemlist or Apollo.io alone.",
     "pricing": "À partir de ~149$/mois selon le volume de crédits d'enrichissement.",
     "pricingEn": "From ~$149/month depending on enrichment credit volume.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 158.87,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "clay.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Launch",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://clay.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.clay.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 158.87,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Launch",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.clay.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 185,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://clay.com",
     "websiteUrl": "https://clay.com",
@@ -38784,25 +38948,41 @@
       "free": "Essai gratuit ; pas de version gratuite permanente. Accès free trial 30 jours.",
       "paid": "Personal: À partir de 10€/mois annualisé (15€ mensuel) - 5 enveloppes/mois ; Standard: 25€/user/mois annualisé (45€ mensuel) - 100 enveloppes/an ; Business Pro: 40€/user/mois annualisé (65€ mensuel) - 100 enveloppes/an + bulk send ; Enterprise: Prix personnalisé - tous les features avancés"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 8.59,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-07-24",
-      "source_domain": "docusign.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "ecom.docusign.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Personal",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.docusign.com",
+      "official_source_url": "https://ecom.docusign.com/plans-and-pricing/esignature",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 8.59,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Personal",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://ecom.docusign.com/plans-and-pricing/esignature",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 10,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://www.docusign.com",
     "websiteUrl": "https://www.docusign.com",
@@ -54335,21 +54515,46 @@
     "longDescriptionEn": "GemPages is a visual page builder for Shopify that lets you create custom product pages, landing pages, and homepages with no coding, with conversion-oriented elements (testimonials, comparison tables, countdowns).\n\nSince Shopify's native editor is limited in customization, GemPages is often used by e-commerce brands wanting a more compelling product or landing page than a standard theme, without hiring a developer.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~29$/mois.",
     "pricingEn": "Limited free plan; paid plans from ~$29/month.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 24.9,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
-      "source_domain": "gempages.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "shopify-app.gempages.net",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Build",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://gempages.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://shopify-app.gempages.net/api/coupons/MD30_GP",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 24.9,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Build",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://shopify-app.gempages.net/api/coupons/MD30_GP",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 29,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://gempages.com",
     "websiteUrl": "https://gempages.com",
@@ -59337,25 +59542,41 @@
       "free": "Pas de forfait Business gratuit permanent. Un essai est proposé depuis la page officielle.",
       "paid": "Business Starter: 7 USD par utilisateur et par mois avec engagement annuel ; Business Standard: 14 USD par utilisateur et par mois avec engagement annuel ; Business Plus: 22 USD par utilisateur et par mois avec engagement annuel ; Enterprise: Sur devis"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 8.1,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-08-30",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "workspace.google.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://workspace.google.com/pricing.html?hl=en",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Business Starter",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://workspace.google.com/intl/fr/business/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 8.1,
+      "plans": [
+        {
+          "planKey": "compare-eur",
+          "displayName": "Business Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://workspace.google.com/intl/fr/business/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 8.1,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://workspace.google.com",
     "websiteUrl": "https://workspace.google.com",
@@ -62578,21 +62799,46 @@
     "longDescriptionEn": "Headliner solves a problem specific to podcasters: turning an audio episode into a shareable social media video, with an animated waveform, automatic captions, and a customizable background visual.\n\nFor a podcaster who wants to promote episodes on Instagram or TikTok without shooting a separate video, it's a fast way to create a visual format from purely audio content.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~8$/mois.",
     "pricingEn": "Limited free plan; paid plans from ~$8/month.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 8.58,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "headliner.app",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Basic",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://headliner.app",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.headliner.app/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 8.58,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Basic",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.headliner.app/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 9.99,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://headliner.app",
     "websiteUrl": "https://headliner.app",
@@ -65199,30 +65445,53 @@
       "free": "Free basic CRM",
       "paid": "Starter from $20/seat/month (frequent promos at $9-15 for year one); Professional and Enterprise quoted per hub"
     },
-    "defaultMonthlyPrice": 17.52,
+    "defaultMonthlyPrice": 8.59,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "cautionsEn": [
-        "Price depends on plan, country, volume, or contract. Check the official page before deciding."
-      ],
-      "verified_on": "2026-05-02",
+      "cautions": [],
+      "cautionsEn": [],
+      "verified_on": "2026-09-24",
       "tcoExampleEn": "Concrete example: a small marketing-sales team billing $50/h that collectively loses 2h/month re-entering leads between two separate tools is losing $100/month in hidden time. HubSpot's free CRM (2 seats) absorbs that cost for a very small team — but at the 3rd user or the jump to Professional, budget for the full price and onboarding fees, not the advertised promotional rate.",
       "tcoExampleFr": "Exemple concret : une petite équipe marketing-vente facturant 50$/h qui perd collectivement 2h/mois à ressaisir des leads entre deux outils séparés perd 100$/mois en temps masqué. Le CRM gratuit HubSpot (2 sièges) absorbe ce coût pour une toute petite équipe — mais au 3e utilisateur ou au passage à Professional, il faut budgétiser le tarif plein et les frais d'onboarding, pas le prix promotionnel affiché.",
       "source_domain": "hubspot.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter Customer Platform",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.hubspot.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.hubspot.com/products/crm/starter",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 8.59,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter Customer Platform",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.hubspot.com/products/crm/starter",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 10,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://www.hubspot.com",
     "websiteUrl": "https://hubspot.com",
@@ -66321,21 +66590,46 @@
     "longDescriptionEn": "Icons8 offers a large library of icons, illustrations, and photos in consistent styles, plus built-in AI tools (background removal, photo enhancement, avatar generation) that make it more than a simple static asset bank.\n\nFor a designer or freelancer who needs consistent icons quickly without starting from scratch, it's an alternative to Noun Project with a broader catalog and added editing tools.",
     "pricing": "Gratuit avec attribution ; Premium à partir de ~9€/mois pour un usage sans attribution.",
     "pricingEn": "Free with attribution; Premium from ~$9/month for attribution-free use.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 12.88,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "icons8.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Icons",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://icons8.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://icons8.com/icons/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 12.88,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Icons",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://icons8.com/icons/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://icons8.com",
     "websiteUrl": "https://icons8.com",
@@ -68590,21 +68884,37 @@
       "free": "Pas de palier gratuit permanent ; abonnement selon volume d'emails et de contacts.",
       "paid": "Growth: 47 $/mois (37,60 $ en annuel), 5 000 emails/mois, 1 000 contacts ; Hypergrowth: 97 $/mois (77,60 $ en annuel), 100 000 emails/mois, 25 000 contacts, comptes illimités"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 40.36,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-08-30",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "instantly.ai",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Growth Outreach",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://instantly.ai/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 40.36,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Growth Outreach",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://instantly.ai/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 47,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://instantly.com",
     "websiteUrl": "https://instantly.com",
@@ -71102,21 +71412,46 @@
     "longDescriptionEn": "Judge.me collects and displays customer reviews on a Shopify store (text, photo, video), with automatic follow-up emails after purchase to maximize collection rate, at a notably lower price than competitors like Yotpo or Okendo.\n\nSince customer reviews are an important e-commerce conversion factor, it's an often-installed tool from store launch to build social proof without a significant budget.",
     "pricing": "Plan gratuit disponible (limité) ; Pro à partir de ~15$/mois.",
     "pricingEn": "Free plan available (limited); Pro from ~$15/month.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 12.88,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
-      "source_domain": "judgeme.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "judge.me",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Awesome",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://judgeme.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://judge.me/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 12.88,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Awesome",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://judge.me/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://judgeme.com",
     "websiteUrl": "https://judgeme.com",
@@ -80337,21 +80672,62 @@
     "longDescriptionEn": "Linktree solves a simple problem: social networks only allow one link in the bio, while a creator or brand often wants to share several (site, store, newsletter, socials). Linktree creates a mini-page that centralizes all these links in one click.\n\nIt has become the de facto standard on Instagram, TikTok, and YouTube, to the point that many use the free service; paid features (advanced analytics, deep customization, store integration) are only needed for more strategic use.",
     "pricing": "Gratuit pour l'essentiel ; Pro à partir de ~5$/mois pour l'analytics avancé et la personnalisation.",
     "pricingEn": "Free for the essentials; Pro from ~$5/month for advanced analytics and customization.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 6,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "linktr.ee",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://linktr.ee",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://linktr.ee/s/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 6,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://linktr.ee/s/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 8,
+          "nativeCurrency": "USD",
+          "observedMarket": "US"
+        },
+        {
+          "planKey": "compare-eur",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://linktr.ee/s/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 6,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://linktr.ee",
     "websiteUrl": "https://linktr.ee",
@@ -85601,21 +85977,46 @@
     "longDescriptionEn": "MailerLite is an email marketing tool positioned as a simpler, cheaper alternative to Mailchimp or ActiveCampaign: drag-and-drop newsletter editor, basic automations, landing pages, all with a free plan already covering up to 1,000 contacts.\n\nFor a creator or small business starting an email list, it's often the best features-to-price ratio for simple automations (welcome sequence, abandoned cart follow-up).",
     "pricing": "Gratuit jusqu'à 1000 contacts ; plans payants à partir de ~10€/mois au-delà.",
     "pricingEn": "Free up to 1,000 contacts; paid plans from ~$10/month beyond that.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 10.3,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "mailerlite.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Comfort",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://mailerlite.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.mailerlite.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 10.3,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Comfort",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.mailerlite.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 12,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://mailerlite.com",
     "websiteUrl": "https://mailerlite.com",
@@ -89094,21 +89495,46 @@
     "longDescriptionEn": "Memberful lets you create a paid subscription program granting access to exclusive content, integrating directly with an existing WordPress site, newsletter, or podcast rather than imposing a separate platform like Patreon.\n\nFor a creator who already has a site or established audience, it's a way to monetize without redirecting the audience to a third-party platform, keeping control of the brand and user experience.",
     "pricing": "Gratuit jusqu'à un certain volume ; commission de 4,9% à 10% selon le plan au-delà.",
     "pricingEn": "Free up to a certain volume; 4.9% to 10% commission depending on the plan beyond that.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 42.08,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "memberful.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Standard",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://memberful.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://memberful.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 42.08,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Standard",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://memberful.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://memberful.com",
     "websiteUrl": "https://memberful.com",
@@ -90176,25 +90602,41 @@
       "free": "No full free tier (limited online Office)",
       "paid": "Personal at $6.99/month ($69.99/year); Family (up to 6 people) at $129.99/year"
     },
-    "defaultMonthlyPrice": 7,
+    "defaultMonthlyPrice": 10,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-02",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "microsoft.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://www.microsoft.com/microsoft-365",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Personal",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.microsoft.com/fr-fr/microsoft-365/buy/microsoft-365/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 10,
+      "plans": [
+        {
+          "planKey": "compare-eur",
+          "displayName": "Personal",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.microsoft.com/fr-fr/microsoft-365/buy/microsoft-365/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 10,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://www.microsoft.com/microsoft-365",
     "websiteUrl": "https://www.microsoft.com/microsoft-365",
@@ -91281,25 +91723,50 @@
       "free": "Entra ID Free, Inclus avec Microsoft Cloud (Azure, Microsoft 365). Authentification multifacteur, SSO illimité, rapports basiques, changement autogéré de mot de passe.",
       "paid": "Microsoft Entra ID Free: Gratuit (inclus Microsoft Cloud) ; Microsoft Entra ID P1: $6–7/utilisateur/mois (engagement annuel) ; Microsoft Entra ID P2: $9–10/utilisateur/mois (engagement annuel) ; Microsoft Entra Suite: $12/utilisateur/mois (engagement annuel, nécessite P1) ; Internet Access / Private Access (standalone): $5/utilisateur/mois chacun ; ID Governance (standalone): $7/utilisateur/mois ; Workload ID (standalone): $3/workload/mois"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 6.01,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
+      "compare_price_monthly_eur": 6.01,
+      "compare_plan_name": "Entra ID P1",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
       "location_sensitive": false,
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
+      "cautions": [],
       "source_domain": "microsoft.com",
-      "verified_on": "2026-08-30",
+      "verified_on": "2026-09-24",
       "official_source_url": "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing",
-      "verification_status": "official_explicit"
+      "verification_status": "official_explicit",
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Entra ID P1",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 7,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://www.microsoft.com/security/business/identity-access/microsoft-entra-id",
     "websiteUrl": "https://www.microsoft.com/security/business/identity-access/microsoft-entra-id",
@@ -99996,25 +100463,41 @@
       "free": "No free plan.",
       "paid": "Workforce Identity from around $2/user/month (basic SSO), $6-15/user/month for plans with advanced MFA and lifecycle management."
     },
-    "defaultMonthlyPrice": 2,
+    "defaultMonthlyPrice": 5.15,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-02",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "okta.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter Suite",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.okta.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.okta.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 5.15,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter Suite",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.okta.com/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 6,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://www.okta.com",
     "websiteUrl": "https://www.okta.com",
@@ -102015,21 +102498,46 @@
     "longDescriptionEn": "OpusClip analyzes a long video (podcast, webinar, stream) and automatically identifies the moments most likely to become viral clips, with a viral potential score, captions, and automatic vertical reframing.\n\nFor a creator producing long-format content (podcast, interview) who wants to repurpose it into short social clips, it's a considerable time saver compared to manual clip-by-clip editing.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~15$/mois selon le volume de minutes traitées.",
     "pricingEn": "Limited free plan; paid plans from ~$15/month depending on processed minutes volume.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 12.88,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "opus.pro",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://opus.pro",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.opus.pro/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 12.88,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.opus.pro/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://opus.pro",
     "websiteUrl": "https://opus.pro",
@@ -102452,21 +102960,46 @@
     "longDescriptionEn": "Otter transcribes meetings in real time and automatically generates a summary with key points and action items, one of the first tools to popularize this type of AI meeting assistant before the feature became standard in Zoom, Teams, and Google Meet.\n\nIts differentiation today comes from more advanced features (searching transcript history, CRM integrations) rather than basic transcription, now available natively elsewhere.",
     "pricing": "Plan gratuit limité (minutes/mois) ; plans payants à partir de ~10$/mois.",
     "pricingEn": "Limited free plan (minutes/month); paid plans from ~$10/month.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 11.67,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
-      "source_domain": "otter.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "otter.ai",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Pro",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://otter.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://otter.ai/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 11.67,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://otter.ai/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 13.59,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://otter.com",
     "websiteUrl": "https://otter.com",
@@ -105276,21 +105809,37 @@
     "longDescriptionEn": "PandaDoc combines document creation (quotes, sales proposals, contracts) with electronic signature and open tracking, in a single tool. For a freelancer or small business regularly sending sales proposals, it saves time compared to juggling a PDF, a separate signing tool (DocuSign), and manual tracking.\n\nTemplates and reusable content libraries make it especially relevant once the volume of quotes/contracts sent justifies automating creation.",
     "pricing": "À partir de ~19€/mois par utilisateur (plan Essentials avec signature électronique).",
     "pricingEn": "From ~$19/month per user (Essentials plan with e-signature).",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 16.32,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "pandadoc.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "medium",
       "location_sensitive": false,
-      "official_source_url": "https://pandadoc.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.pandadoc.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 16.32,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.pandadoc.com/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 19,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://pandadoc.com",
     "websiteUrl": "https://pandadoc.com",
@@ -106699,25 +107248,41 @@
       "free": "Not disclosed",
       "paid": "Basic from €14/month (freelancer); Essential from €24/month; Premium from €79/month (depending on users and invoice volume)"
     },
-    "defaultMonthlyPrice": 14,
+    "defaultMonthlyPrice": 7,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-02",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "pennylane.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://www.pennylane.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.pennylane.com/fr/tarifs/small",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 7,
+      "plans": [
+        {
+          "planKey": "compare-eur",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "detailsSourceUrl": "https://www.pennylane.com/fr/tarifs/small",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 7,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://www.pennylane.com",
     "websiteUrl": "https://pennylane.com",
@@ -113554,21 +114119,46 @@
     "longDescriptionEn": "Pretty Links lets you create shortened, custom links directly from WordPress, with click tracking and cloaking for cleaner affiliate URLs, without relying on an external service.",
     "pricing": "Version gratuite disponible ; Pro à partir de ~99$/an pour le suivi avancé.",
     "pricingEn": "Free version available; Pro from ~$99/year for advanced tracking.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 17.82,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "prettylinks.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Beginner",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://prettylinks.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://prettylinks.com/pricing/plans/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17.82,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Beginner",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://prettylinks.com/pricing/plans/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 20.75,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://prettylinks.com",
     "websiteUrl": "https://prettylinks.com",
@@ -120031,21 +120621,46 @@
     "longDescriptionEn": "RankMath is Yoast's main competitor on WordPress, with a similar approach (on-page optimization, sitemap, technical tags) but a more generous free version: multi-keyword tracking and Google Search Console integration included for free, where Yoast reserves them for the paid plan.\n\nThe choice between the two is mostly a matter of habit and interface; RankMath is often recommended for those who want more features without paying.",
     "pricing": "Version gratuite généreuse (suivi multi-mot-clé inclus) ; Pro à partir de ~59$/an.",
     "pricingEn": "Generous free version (multi-keyword tracking included); Pro from ~$59/year.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 8.99,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "rankmath.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://rankmath.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "PRO",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://rankmath.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 8.99,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-eur",
+          "displayName": "PRO",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "detailsSourceUrl": "https://rankmath.com/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 8.99,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://rankmath.com",
     "websiteUrl": "https://rankmath.com",
@@ -121192,21 +121807,37 @@
       "free": "Essai gratuit de 30 jours ; abonnement requis ensuite. Réduction 50 % étudiants/universitaires.",
       "paid": "Readwise Lite: 5,59 $/mois (annuel), révision des surlignages, sans l'app Reader ; Readwise (complet): 9,99 $/mois (annuel), 12,99 $ en mensuel, inclut l'app Reader et les exports"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 4.8,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-08-30",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "readwise.io",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Lite",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://readwise.io/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 4.8,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Lite",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://readwise.io/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 5.59,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://readwise.com",
     "websiteUrl": "https://readwise.com",
@@ -124673,21 +125304,46 @@
     "longDescriptionEn": "Repurpose.io automates transforming and republishing source content (YouTube video, podcast) into other formats and platforms (TikTok clips, Instagram posts, audio episodes) with no repeated manual intervention at each publication.\n\nFor a creator regularly producing main content, it's a way to maximize multi-platform presence without manually recreating each format every time.",
     "pricing": "À partir de ~15$/mois selon le nombre d'automatisations.",
     "pricingEn": "From ~$15/month depending on the number of automations.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 30.06,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
-      "source_domain": "repurposeio.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "repurpose.io",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://repurposeio.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://repurpose.io/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 30.06,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://repurpose.io/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 35,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://repurposeio.com",
     "websiteUrl": "https://repurposeio.com",
@@ -126401,21 +127057,37 @@
     "longDescriptionEn": "Rewardful lets you set up an affiliate program for a SaaS or digital product, integrating directly with Stripe to automatically track commissions on real payments rather than managing it manually.\n\nFor an independent developer launching a SaaS, it's a simple way to activate an affiliate growth channel without building an in-house commission tracking system.",
     "pricing": "À partir de ~49$/mois selon le volume de revenus suivis.",
     "pricingEn": "From ~$49/month depending on tracked revenue volume.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 42.08,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "rewardful.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://rewardful.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.rewardful.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 42.08,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.rewardful.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://rewardful.com",
     "websiteUrl": "https://rewardful.com",
@@ -142252,21 +142924,37 @@
     "longDescriptionEn": "Stan Store combines Linktree's \"link in bio\" function with a real built-in store: selling digital products, booking coaching, accessing a course, all from a single page accessible in one click from Instagram or TikTok.\n\nIt has become popular with creators who monetize their social audience directly without going through a full website — an alternative to combining Linktree + Gumroad + Calendly into one simpler tool.",
     "pricing": "À partir de ~29$/mois (pas de plan gratuit permanent, essai disponible).",
     "pricingEn": "From ~$29/month (no permanent free plan, trial available).",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 24.9,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
-      "source_domain": "stan.store",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "help.stan.store",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Creator",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://stan.store",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://help.stan.store/article/31-creator-vs-creator-pro",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 24.9,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Creator",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://help.stan.store/article/31-creator-vs-creator-pro",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 29,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://stan.store",
     "websiteUrl": "https://stan.store",
@@ -142936,21 +143624,53 @@
     "longDescriptionEn": "Storyblocks offers a catalog of stock video, royalty-free music, and images, accessible via unlimited downloads through a subscription rather than per-item like Shutterstock. For a creator regularly producing video content, it's often more economical than buying individual clips.\n\nCatalog quality is solid without reaching the level of the most expensive premium banks (Getty), making it a good compromise for regular content production on a controlled budget.",
     "pricing": "À partir de ~15€/mois en abonnement annuel pour un accès illimité.",
     "pricingEn": "From ~$15/month on an annual subscription for unlimited access.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 18,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "storyblocks.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://storyblocks.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Essentials",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.storyblocks.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 18,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Essentials",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.storyblocks.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 21,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        },
+        {
+          "planKey": "compare-eur",
+          "displayName": "Essentials",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.storyblocks.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 18,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://storyblocks.com",
     "websiteUrl": "https://storyblocks.com",
@@ -143742,21 +144462,46 @@
       "free": "Free: capture, basic overlays, alerts, integrated chat.",
       "paid": "Prime $19/month ($149/year, ~$12.42/month): premium themes, no Streamlabs branding, unlimited alert sounds. Ultra $27/month for team tools and advanced monetization."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 23.19,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "streamlabs.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Ultra",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://streamlabs.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://streamlabs.com/desktop-app",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 23.19,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Ultra",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://streamlabs.com/desktop-app",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 27,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://streamlabs.com",
     "websiteUrl": "https://streamlabs.com",
@@ -144213,21 +144958,37 @@
     "longDescriptionEn": "Submagic is an AI tool specialized in generating animated captions for short videos (TikTok, Reels, Shorts): automatic transcription, ready-made visual styles, emojis, and keyword highlight effects, all in minutes instead of manual captioning.\n\nFor a content creator who publishes regularly, it's a significant time saver compared to manual captioning in CapCut or Premiere, at the cost of one more tool to add to the stack.",
     "pricing": "À partir de ~18€/mois selon le volume de minutes traitées.",
     "pricingEn": "From ~$18/month depending on the volume of minutes processed.",
-    "defaultMonthlyPrice": 18,
+    "defaultMonthlyPrice": 16.32,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "submagic.co",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "medium",
       "location_sensitive": false,
-      "official_source_url": "https://submagic.co",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.submagic.co/fr/tarification",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 16.32,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.submagic.co/fr/tarification",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 19,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://submagic.co",
     "websiteUrl": "https://submagic.co",
@@ -147441,21 +148202,46 @@
     "longDescriptionEn": "Systeme.io is an all-in-one French platform that combines sales funnels, email marketing, sales pages, and online course hosting in a single tool, at a notably lower price than English-speaking equivalents (ClickFunnels, Kajabi).\n\nFor a French-speaking independent creator selling a course, coaching, or digital product, it's often the cheapest way to replace 4-5 separate tools (funnel, email, sales page, course hosting) with a single subscription.",
     "pricing": "Plan gratuit disponible (limité) ; plans payants à partir de ~27€/mois.",
     "pricingEn": "Free plan available (limited); paid plans from ~€27/month.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 14.6,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "systeme.io",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Startup",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://systeme.io",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://systeme.io/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 14.6,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Startup",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://systeme.io/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 17,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://systeme.io",
     "websiteUrl": "https://systeme.io",
@@ -148453,21 +149239,37 @@
     "longDescriptionEn": "Taplio helps produce LinkedIn content regularly through AI-generated post suggestions, a publishing calendar, and analytics to understand what performs. It has become a popular tool among consultants, coaches, and B2B freelancers who want to build authority on LinkedIn without spending hours on it every day.\n\nAI helps overcome writer's block, but content relevance and publishing consistency remain decisive for real audience growth.",
     "pricing": "À partir de ~39$/mois selon les fonctionnalités.",
     "pricingEn": "From ~$39/month depending on features.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 33.49,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "taplio.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://taplio.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://taplio.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 33.49,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://taplio.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 39,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://taplio.com",
     "websiteUrl": "https://taplio.com",
@@ -150676,21 +151478,46 @@
     "longDescriptionEn": "ThirstyAffiliates is a WordPress plugin that centralizes affiliate link management: shortening, cloaking for cleaner URLs, automatic redirection if a link changes, and per-link click tracking.\n\nFor a blogger or content creator monetizing via affiliation, it's a way to avoid manually updating every link in every article when an affiliate program changes its URLs.",
     "pricing": "Version gratuite disponible ; Pro à partir de ~49$/an pour le suivi avancé.",
     "pricingEn": "Free version available; Pro from ~$49/year for advanced tracking.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 17.82,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "thirstyaffiliates.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Basic",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://thirstyaffiliates.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://thirstyaffiliates.com/register/basic/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17.82,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Basic",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://thirstyaffiliates.com/register/basic/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 20.75,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://thirstyaffiliates.com",
     "websiteUrl": "https://thirstyaffiliates.com",
@@ -153921,21 +154748,46 @@
     "longDescriptionEn": "TradingView is the reference for tracking financial markets in real time: stocks, crypto, forex, commodities, with advanced technical analysis tools and a proprietary scripting language (Pine Script) to build custom indicators.\n\nFor an independent trader or individual investor, the free version already covers a lot of needs; paid plans unlock more simultaneous indicators, alerts, and real-time data with no delay.",
     "pricing": "Version gratuite disponible ; plans payants à partir de ~13€/mois pour plus d'indicateurs et d'alertes.",
     "pricingEn": "Free version available; paid plans from ~$13/month for more indicators and alerts.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 11.12,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
-      "source_domain": "tradingview.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://tradingview.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "fr.tradingview.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Essential",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://fr.tradingview.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 11.12,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Essential",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://fr.tradingview.com/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 12.95,
+          "nativeCurrency": "USD",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://tradingview.com",
     "websiteUrl": "https://tradingview.com",
@@ -154060,21 +154912,46 @@
     "longDescriptionEn": "Trainerize lets a fitness coach create personalized training programs, track clients' progress remotely, and communicate via the app — an alternative to spreadsheet tracking or scattered messages.\n\nFor an independent coach wanting to scale their business beyond in-person follow-up, it's a structuring tool to manage several clients simultaneously without losing tracking quality.",
     "pricing": "À partir de ~5$/mois par client actif, selon le plan.",
     "pricingEn": "From ~$5/month per active client, depending on the plan.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 7.73,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "trainerize.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Grow",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://trainerize.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.trainerize.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 7.73,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Grow",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.trainerize.com/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 9,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://trainerize.com",
     "websiteUrl": "https://trainerize.com",
@@ -155231,21 +156108,37 @@
     "longDescriptionEn": "TrueCoach is a direct competitor to Trainerize for remote fitness coaching: creating personalized programs, tracking progress, communicating with clients — both tools cover a very similar need.\n\nThe difference mostly comes down to interface and certain specific features (exercise templates, integrations); the choice often depends on personal preference after trying both.",
     "pricing": "À partir de ~5$/mois par client actif, selon le plan.",
     "pricingEn": "From ~$5/month per active client, depending on the plan.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 22.62,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
-      "source_domain": "truecoach.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "cautions": [],
+      "verified_on": "2026-09-24",
+      "source_domain": "truecoach.co",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "medium",
       "location_sensitive": false,
-      "official_source_url": "https://truecoach.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://truecoach.co/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 22.62,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://truecoach.co/pricing/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 26.34,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://truecoach.com",
     "websiteUrl": "https://truecoach.com",
@@ -160824,21 +161717,46 @@
     "longDescriptionEn": "Vidyard lets salespeople record and send personalized videos to prospects (pitch, demo, follow-up), with precise tracking of who watched the video and how far — a valuable engagement signal to prioritize follow-ups.\n\nFor a B2B sales team, it's a way to differentiate from a classic text email by embedding a personalized video message, with engagement data directly usable in the CRM.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~15$/mois par utilisateur.",
     "pricingEn": "Limited free plan; paid plans from ~$15/month per user.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 50.67,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "vidyard.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://vidyard.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.vidyard.com/blog/loom-alternatives/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50.67,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par utilisateur",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://www.vidyard.com/blog/loom-alternatives/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 59,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://vidyard.com",
     "websiteUrl": "https://vidyard.com",
@@ -165053,21 +165971,46 @@
     "longDescriptionEn": "Wistia hosts marketing videos with detailed engagement analytics (who watches what, how far) and lead capture features built directly into the video player — designed specifically for B2B marketing rather than the general public like YouTube.\n\nFor a company using video as a lead generation tool (product demos, webinars), it's an investment justified by engagement data a mainstream host doesn't provide.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~19€/mois selon le nombre de vidéos.",
     "pricingEn": "Limited free plan; paid plans from ~$19/month depending on number of videos.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 67.84,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "wistia.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Business",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://wistia.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://wistia.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 67.84,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "Business",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://wistia.com/pricing",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 79,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        }
+      ]
     },
     "affiliateLink": "https://wistia.com",
     "websiteUrl": "https://wistia.com",
@@ -167889,25 +168832,41 @@
       "free": "30-day free trial",
       "paid": "Early at $25/month, Growing at $55/month, Established at $90/month (monthly billing only in the US since March 2026)"
     },
-    "defaultMonthlyPrice": 21.9,
+    "defaultMonthlyPrice": 21.47,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-02",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "xero.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://www.xero.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Early",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.xero.com/us/pricing-plans/update/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 21.47,
+      "plans": [
+        {
+          "planKey": "compare-usd",
+          "displayName": "Early",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "detailsSourceUrl": "https://www.xero.com/us/pricing-plans/update/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 25,
+          "nativeCurrency": "USD",
+          "observedMarket": "US"
+        }
+      ]
     },
     "affiliateLink": "https://www.xero.com",
     "websiteUrl": "https://xero.com",
@@ -168061,21 +169020,62 @@
     "longDescriptionEn": "Yoast SEO is the reference WordPress plugin for on-page SEO optimization: readability analysis, focus keyword suggestions, XML sitemap generation, page-by-page control of title and meta description tags.\n\nFor anyone managing a blog or WordPress site without deep SEO expertise, Yoast guides toward basic best practices (keyword density, content length, internal links) without replacing a real content or backlink strategy.",
     "pricing": "Version gratuite très complète ; Premium à partir de ~99$/an pour le suivi multi-mot-clé et les redirections.",
     "pricingEn": "Very complete free version; Premium from ~$99/year for multi-keyword tracking and redirects.",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 9.9,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "cautions": [],
+      "verified_on": "2026-09-24",
       "source_domain": "yoast.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://yoast.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "usage_sensitive": false,
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "SEO Premium",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://yoast.com/product/yoast-seo-premium-wordpress/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 9.9,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedOn": "2026-09-24"
+        },
+        {
+          "planKey": "compare-usd",
+          "displayName": "SEO Premium",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "detailsSourceUrl": "https://yoast.com/product/yoast-seo-premium-wordpress/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 9.9,
+          "nativeCurrency": "USD",
+          "observedMarket": null
+        },
+        {
+          "planKey": "compare-eur",
+          "displayName": "SEO Premium",
+          "isFree": false,
+          "isComparePlan": true,
+          "pricingUnit": "par compte",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "detailsSourceUrl": "https://yoast.com/product/yoast-seo-premium-wordpress/",
+          "observedOn": "2026-09-24",
+          "lastConfirmedOn": "2026-09-24",
+          "nativeAmount": 9.9,
+          "nativeCurrency": "EUR",
+          "observedMarket": "FR"
+        }
+      ]
     },
     "affiliateLink": "https://yoast.com",
     "websiteUrl": "https://yoast.com",

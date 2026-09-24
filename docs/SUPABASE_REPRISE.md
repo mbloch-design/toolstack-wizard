@@ -87,6 +87,23 @@ Table `posts`. Travail de la semaine du 07/09/2026 :
   Claude corriges, trois affirmations inverifiables supprimees.
 - `chatgpt-plus-worth-it` : renvoi ajoute vers le nouveau guide Pro.
 
+## 2 bis. Prix officiels releves le 24/09/2026
+
+44 fiches portaient la sentinelle `compare_plan_name: "Prix non public"` alors
+que l'editeur publie un prix. Leur `pricing_v5` a ete rempli dans
+`src/data/tools_v4.json` a partir de la page tarifaire officielle (preuve
+recopiee pour chaque prix, 35 controles automatiques et 9 dans le navigateur).
+Le bloc a ete fusionne, pas remplace : les champs editoriaux voisins
+(`tcoExample*`, `costTable`) sont intacts. Les montants restent dans la devise
+de l'editeur dans `plans[].nativeAmount`, et `compare_price_monthly_eur` est
+normalise au taux de `src/lib/currencyRates.ts`.
+
+A reinjecter : `pricing_v5` et `default_monthly_price` de
+`ashby`, `attio`, `authoredup`, `bamboohr`, `bubble`, `captions`, `clay`, `docusign`, `gempages`, `google-workspace`, `headliner`, `hubspot`, `icons8`, `instantly`, `judge-me`, `linktree`, `mailerlite`, `memberful`, `microsoft-365`, `microsoft-entra-id`, `okta`, `opusclip`, `otter`, `pandadoc`, `pennylane`, `pretty-links`, `rankmath`, `readwise`, `repurpose-io`, `rewardful`, `stan-store`, `storyblocks`, `streamlabs`, `submagic`, `systeme-io`, `taplio`, `thirstyaffiliates`, `tradingview`, `trainerize`, `truecoach`, `vidyard`, `wistia`, `xero`, `yoast`.
+
+Controle : aucune de ces fiches ne doit repasser a `"Prix non public"` apres
+le retour de Supabase.
+
 ## 3. Verification apres reinjection
 
 ```bash
