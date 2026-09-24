@@ -224,7 +224,7 @@ const OFFICIAL_LOGO_URLS: Record<string, string> = {
 // features. They win over every remote source: Simple Icons dropped several
 // brands and favicon services time out, which surfaced letter fallbacks.
 const LOCAL_LOGO_SLUGS = new Set([
-  "affinity-photo", "airtable", "anima", "auphonic", "blender", "buffer", "calendly", "canva", "carrd",
+  "affinity-photo", "airtable", "chatgpt", "anima", "auphonic", "blender", "buffer", "calendly", "canva", "carrd",
   "clay", "crisp", "datawrapper", "figjam", "figma", "figma-buzz", "figma-dev-mode",
   "figma-draw", "figma-make", "figma-motion", "figma-sites", "google-analytics",
   "google-drive", "google-workspace", "lemlist", "lindy", "loom", "mailchimp", "make",
@@ -324,7 +324,10 @@ export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 
   // 0. Self-hosted icon for featured tools.
   const localKey = normalizeKey(tool.slug || tool.id);
   const localSlug = LOCAL_LOGO_ALIASES[localKey] || localKey;
-  if (LOCAL_LOGO_SLUGS.has(localSlug)) sources.push(`/home-logos/${localSlug}.png`);
+  // The build caps its file count, so an icon that already exists in another
+  // format is reused rather than duplicated.
+  const LOCAL_LOGO_EXT: Record<string, string> = { chatgpt: "webp" };
+  if (LOCAL_LOGO_SLUGS.has(localSlug)) sources.push(`/home-logos/${localSlug}.${LOCAL_LOGO_EXT[localSlug] || "png"}`);
 
   // 1. Custom logo override. Accept canonical remote URLs and local assets:
   // homepage/card-specific local logos must win before CDN probing so they

@@ -78,7 +78,8 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
 
   // 71 tools store pricing as a single sentence rather than {free, paid};
   // it used to be ignored, leaving the section with only a source link.
-  const rawPricing = lang === "en" ? (tool.pricingEn ?? tool.pricing) : tool.pricing;
+  // Typed as {free, paid}, but stored as a plain string on those 71 tools.
+  const rawPricing: unknown = lang === "en" ? (tool.pricingEn ?? tool.pricing) : tool.pricing;
   const pricingSentence = typeof rawPricing === "string" ? rawPricing.trim() : "";
   const undisclosed = isPriceUndisclosed(tool);
   const hasPlanCards = canonicalPlans.length > 0 || hasFree || hasPaid || displayPrice > 0;

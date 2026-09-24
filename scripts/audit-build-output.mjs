@@ -11,7 +11,9 @@ const MiB = 1024 * 1024;
 // lightweight. They stop silent regressions while the larger prerender/data
 // redesign is handled separately.
 const budgets = {
-  files: 12_800,
+  // 12_800 left 4 files of headroom; guide pages gained cover/tools/related
+  // variants (2026-09-24), a handful of small shared critical CSS files.
+  files: 12_850,
   totalBytes: 850 * MiB,
   htmlBytes: 750 * MiB,
   javascriptBytes: 15 * MiB,

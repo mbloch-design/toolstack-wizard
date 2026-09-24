@@ -86,7 +86,62 @@ for (const entry of Object.values(byTool)) {
   }
 }
 
-const output = { byTool, byGuide };
+/**
+ * Per guide: every catalogue tool it covers, and three guides to read next.
+ *
+ * `toolId` names one tool, but a guide like "Notion and Canva made AI a tax"
+ * covers several; its tags carry the rest. A tag counts only when it is a
+ * tool's exact slug, so generic tags ("ai", "pricing") never become tools.
+ * Related guides share the most tags, freshest first on a tie. Both are
+ * resolved here so the guide page stays free of runtime catalogue scans.
+ */
+const toolCard = (tool) => ({
+  slug: tool.slug || tool.id,
+  name: tool.name,
+  hasPricing: priced.has(tool.slug || tool.id),
+  ...(tool.logo ? { logo: tool.logo } : {}),
+  ...(tool.websiteUrl ? { websiteUrl: tool.websiteUrl } : {}),
+});
+const guideExtras = {};
+const coveredTools = (post) => {
+  const covered = [];
+  const seen = new Set();
+  for (const key of [post.toolId, ...(post.tags || []).map((tag) => String(tag).toLowerCase())].filter(Boolean)) {
+    const tool = byId.get(key) || bySlug.get(key);
+    if (!tool || seen.has(tool.slug || tool.id)) continue;
+    seen.add(tool.slug || tool.id);
+    covered.push(toolCard(tool));
+  }
+  return covered;
+};
+for (const lang of LANGUAGES) {
+  const posts = JSON.parse(readFileSync(resolve(`src/data/posts-${lang}.json`), "utf8"));
+  for (const post of posts) {
+    const tags = (post.tags || []).map((tag) => String(tag).toLowerCase());
+    const covered = coveredTools(post);
+    const related = posts
+      .filter((other) => other.slug !== post.slug)
+      .map((other) => ({
+        other,
+        shared: (other.tags || []).filter((tag) => tags.includes(String(tag).toLowerCase())).length,
+      }))
+      .filter((entry) => entry.shared > 0)
+      .sort((a, b) => b.shared - a.shared || String(b.other.date || "").localeCompare(String(a.other.date || "")))
+      .slice(0, 3)
+      .map(({ other }) => ({
+        slug: other.slug,
+        title: other.title,
+        ...(other.thumbnail ? { thumbnail: other.thumbnail } : {}),
+        ...(other.readTime ? { readTime: other.readTime } : {}),
+        ...(other.category ? { category: other.category } : {}),
+        // Stands in for a missing cover: the guide's lead tool.
+        ...(!other.thumbnail && coveredTools(other)[0] ? { tool: coveredTools(other)[0] } : {}),
+      }));
+    guideExtras[`${lang}:${post.slug}`] = { tools: covered.slice(0, 6), related };
+  }
+}
+
+const output = { byTool, byGuide, guideExtras };
 writeFileSync(resolve("src/data/tool_guides_index.json"), `${JSON.stringify(output, null, 2)}\n`);
 
 const pairs = Object.keys(byGuide).length;

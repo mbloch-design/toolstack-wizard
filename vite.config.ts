@@ -2190,10 +2190,13 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // Omit the date keys entirely rather than emit an invalid empty
             // ISO string when a post has no date.
             ...(post.date ? { datePublished: post.date, dateModified: post.date } : {}),
+            // Same author as the client-side schema (GuideDetailPage). It was
+            // a French-named "Person" pointing at the French page on English
+            // articles too.
             author: {
-              "@type": "Person",
-              name: "Équipe ToolTrim",
-              url: `${BASE}/fr/transparency`,
+              "@type": "Organization",
+              name: "ToolTrim",
+              url: `${BASE}/${lang}/transparency`,
             },
             publisher: { "@type": "Organization", name: "ToolTrim", url: BASE, logo: { "@type": "ImageObject", url: `${BASE}/og-image.png` } },
             url,
@@ -2227,7 +2230,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
             `<meta property="og:url" content="${url}" />`,
-            // og:image / twitter:image inherited from the static <head> defaults.
+            // A guide with its own cover shares it; social crawlers never run
+            // the client code that used to set it. Others keep the defaults.
+            ...(post.thumbnail ? [
+              `<meta property="og:image" content="${BASE}${post.thumbnail}" />`,
+              `<meta name="twitter:image" content="${BASE}${post.thumbnail}" />`,
+            ] : []),
             ...(post.seo?.keywords ? [`<meta name="keywords" content="${post.seo.keywords.replace(/"/g, "&quot;")}" />`] : []),
             `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script>`,
             `<script type="application/ld+json">${JSON.stringify(postBreadcrumb)}</script>`,
@@ -2242,6 +2250,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // This is an article, not the site default — drop the static
           // og:type="website" so only the article one below remains.
           html = html.replace(/<meta\s+property="og:type"[^>]*\/?>/, "");
+          if (post.thumbnail) {
+            html = html.replace(/<meta\s+property="og:image(:[a-z]+)?"[^>]*\/?>/g, "");
+            html = html.replace(/<meta\s+name="twitter:image"[^>]*\/?>/g, "");
+          }
           html = html.replace("</head>", `    ${postMetaTags}\n  </head>`);
           html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;").substring(0, 300)}</p></noscript>\n  </body>`);
 

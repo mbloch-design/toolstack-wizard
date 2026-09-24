@@ -675,5 +675,3084 @@
       "name": "Notion",
       "hasPricing": true
     }
+  },
+  "guideExtras": {
+    "fr:alternatives-freshservice-2026": {
+      "tools": [
+        {
+          "slug": "freshservice",
+          "name": "Freshservice",
+          "hasPricing": true,
+          "logo": "https://logo.clearbit.com/freshworks.com"
+        },
+        {
+          "slug": "snipe-it",
+          "name": "Snipe IT",
+          "hasPricing": true,
+          "logo": "https://logo.clearbit.com/snipeitapp.com"
+        },
+        {
+          "slug": "deskpro",
+          "name": "Deskpro",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool : faut-il vraiment payer 12€/mois ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion gratuit vs payant : le vrai calcul (2026)",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:adobe-podcast-ai-gratuit-alternatives-2026": {
+      "tools": [
+        {
+          "slug": "adobe-podcast-ai",
+          "name": "Adobe Podcast AI",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "fr:andrew-huberman-kit-systeme-audience": {
+      "tools": [
+        {
+          "slug": "kit",
+          "name": "Kit",
+          "hasPricing": true,
+          "websiteUrl": "https://kit.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Remettre de la clarté dans une entreprise qui grandit trop vite",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "fr:atelier-hors-champ-scenographie-espace-raconte": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "anna-morel-designer-studio-augmente",
+          "title": "Concevoir comme un studio quand on travaille seule",
+          "thumbnail": "/editorial/stories/anna-morel/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Remettre de la clarté dans une entreprise qui grandit trop vite",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "nora-bensaid-produit-sante-depuis-terrain",
+          "title": "Construire un produit numérique à partir du terrain",
+          "thumbnail": "/editorial/stories/nora-sante/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "fr:auditer-stack-saas-45-minutes": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "pourquoi-visualiser-stack-saas",
+          "title": "Pourquoi visualiser votre stack SaaS plutôt que la gérer dans Excel",
+          "thumbnail": "/editorial/stack-visuale/hero-stack-visuelle.jpg",
+          "readTime": "6 min",
+          "category": "Productivité"
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion gratuit vs payant : le vrai calcul (2026)",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:marc-delmas-clarifier-entreprise-qui-grandit": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "atelier-hors-champ-scenographie-espace-raconte",
+          "title": "Dessiner ce que le visiteur ressent avant ce qu’il regarde",
+          "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "anna-morel-designer-studio-augmente",
+          "title": "Concevoir comme un studio quand on travaille seule",
+          "thumbnail": "/editorial/stories/anna-morel/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "fr:nora-bensaid-produit-sante-depuis-terrain": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "atelier-hors-champ-scenographie-espace-raconte",
+          "title": "Dessiner ce que le visiteur ressent avant ce qu’il regarde",
+          "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "anna-morel-designer-studio-augmente",
+          "title": "Concevoir comme un studio quand on travaille seule",
+          "thumbnail": "/editorial/stories/anna-morel/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Remettre de la clarté dans une entreprise qui grandit trop vite",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "fr:anna-morel-designer-studio-augmente": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "atelier-hors-champ-scenographie-espace-raconte",
+          "title": "Dessiner ce que le visiteur ressent avant ce qu’il regarde",
+          "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Remettre de la clarté dans une entreprise qui grandit trop vite",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "nora-bensaid-produit-sante-depuis-terrain",
+          "title": "Construire un produit numérique à partir du terrain",
+          "thumbnail": "/editorial/stories/nora-sante/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "fr:pourquoi-visualiser-stack-saas": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion gratuit vs payant : le vrai calcul (2026)",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:outils-facturation-freelance-2026": {
+      "tools": [
+        {
+          "slug": "qonto",
+          "name": "Qonto",
+          "hasPricing": true,
+          "websiteUrl": "https://qonto.com/fr"
+        },
+        {
+          "slug": "shine",
+          "name": "Shine",
+          "hasPricing": true,
+          "websiteUrl": "https://www.shine.fr"
+        },
+        {
+          "slug": "indy",
+          "name": "Indy",
+          "hasPricing": true
+        },
+        {
+          "slug": "pennylane",
+          "name": "Pennylane",
+          "hasPricing": true,
+          "websiteUrl": "https://pennylane.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "toggl-track-gratuit-ou-payant",
+          "title": "Toggl Track : Gratuit ou Payant ? Le Guide Complet pour Freelances",
+          "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png",
+          "category": "Productivité"
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        }
+      ]
+    },
+    "fr:top-5-competences-ia-freelance-2026": {
+      "tools": [
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "GPT-6 Astra : ChatGPT Pro vaut-il vraiment son prix ?",
+          "readTime": "10 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "conseils-ia-freelances-2026",
+          "title": "Conseils IA pour freelances en 2026 : construire une stack utile, sans payer deux fois",
+          "thumbnail": "/editorial/conseils-ia-freelances-2026/surcharge-outils-ia.jpg",
+          "readTime": "9 min",
+          "category": "Guides"
+        },
+        {
+          "slug": "stack-minimaliste-freelance-2026",
+          "title": "Stack Minimaliste Freelance 2026 : Les 7 Outils Qui Changent Vraiment Une Vie (+ 15 à Annuler)",
+          "category": "Guides"
+        }
+      ]
+    },
+    "fr:conseils-ia-freelances-2026": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        },
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "gemini",
+          "name": "Gemini",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+          "title": "Tu cherches l'IA la plus rentable pour tes tâches : ChatGPT, Claude ou DeepSeek ?",
+          "readTime": "15 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "claude",
+            "name": "Claude",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "GPT-6 Astra : ChatGPT Pro vaut-il vraiment son prix ?",
+          "readTime": "10 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:loom-prix-alternatives": {
+      "tools": [
+        {
+          "slug": "loom",
+          "name": "Loom",
+          "hasPricing": true
+        },
+        {
+          "slug": "tella",
+          "name": "Tella",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "pourquoi-payer-loom",
+          "title": "Pourquoi payer Loom (alors que QuickTime est gratuit) ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "loom",
+            "name": "Loom",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "alternatives-freshservice-2026",
+          "title": "Alternatives à Freshservice : que choisir selon ce qui te bloque",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "freshservice",
+            "name": "Freshservice",
+            "hasPricing": true,
+            "logo": "https://logo.clearbit.com/freshworks.com"
+          }
+        }
+      ]
+    },
+    "fr:stack-saas-minimaliste-freelance-2026-moins-50-euros": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        },
+        {
+          "slug": "make",
+          "name": "Make",
+          "hasPricing": true
+        },
+        {
+          "slug": "fathom",
+          "name": "Fathom",
+          "hasPricing": true,
+          "websiteUrl": "https://www.fathom.ai"
+        }
+      ],
+      "related": [
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "agents-ia-freelances-2026-lesquels-valent-le-coup",
+          "title": "Agents IA pour freelances en 2026 : lesquels valent vraiment le coup ?",
+          "thumbnail": "/editorial/agents-ia-freelances-2026/hero-agent.jpg",
+          "readTime": "8 min",
+          "category": "Comparatifs"
+        }
+      ]
+    },
+    "fr:zapier-vs-make-vs-n8n-2026-automatiser-stack": {
+      "tools": [
+        {
+          "slug": "zapier",
+          "name": "Zapier",
+          "hasPricing": true
+        },
+        {
+          "slug": "make",
+          "name": "Make",
+          "hasPricing": true
+        },
+        {
+          "slug": "n8n",
+          "name": "n8n",
+          "hasPricing": false,
+          "logo": "https://raw.githubusercontent.com/n8n-io/n8n/a2c19e46974990c39007ffe64ab2ae908fe2f1b9/assets/n8n-logo.png",
+          "websiteUrl": "https://n8n.io"
+        }
+      ],
+      "related": [
+        {
+          "slug": "agents-ia-freelances-2026-lesquels-valent-le-coup",
+          "title": "Agents IA pour freelances en 2026 : lesquels valent vraiment le coup ?",
+          "thumbnail": "/editorial/agents-ia-freelances-2026/hero-agent.jpg",
+          "readTime": "8 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:agents-ia-freelances-2026-lesquels-valent-le-coup": {
+      "tools": [
+        {
+          "slug": "zapier",
+          "name": "Zapier",
+          "hasPricing": true
+        },
+        {
+          "slug": "make",
+          "name": "Make",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "GPT-6 Astra : ChatGPT Pro vaut-il vraiment son prix ?",
+          "readTime": "10 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:claude-vs-chatgpt-2026-lequel-choisir-business": {
+      "tools": [
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+          "title": "Tu cherches l'IA la plus rentable pour tes tâches : ChatGPT, Claude ou DeepSeek ?",
+          "readTime": "15 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "claude",
+            "name": "Claude",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "conseils-ia-freelances-2026",
+          "title": "Conseils IA pour freelances en 2026 : construire une stack utile, sans payer deux fois",
+          "thumbnail": "/editorial/conseils-ia-freelances-2026/surcharge-outils-ia.jpg",
+          "readTime": "9 min",
+          "category": "Guides"
+        }
+      ]
+    },
+    "fr:claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026": {
+      "tools": [
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        },
+        {
+          "slug": "deepseek",
+          "name": "DeepSeek",
+          "hasPricing": true
+        },
+        {
+          "slug": "gemini",
+          "name": "Gemini",
+          "hasPricing": true
+        },
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "claude-vs-chatgpt-2026-lequel-choisir-business",
+          "title": "Claude ou ChatGPT en 2026 : lequel choisir pour votre activité ?",
+          "thumbnail": "/editorial/claude-vs-chatgpt-2026/hero-comparaison.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "perplexity-vs-chatgpt-recherche",
+          "title": "Perplexity AI : vaut-il mieux que ChatGPT pour la recherche ?",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "perplexity",
+            "name": "Perplexity",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:meilleurs-outils-ia-freelances-2026": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        },
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "midjourney",
+          "name": "Midjourney",
+          "hasPricing": true
+        },
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true
+        },
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true
+        },
+        {
+          "slug": "elevenlabs",
+          "name": "ElevenLabs",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+          "title": "Tu cherches l'IA la plus rentable pour tes tâches : ChatGPT, Claude ou DeepSeek ?",
+          "readTime": "15 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "claude",
+            "name": "Claude",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "perplexity-vs-chatgpt-recherche",
+          "title": "Perplexity AI : vaut-il mieux que ChatGPT pour la recherche ?",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "perplexity",
+            "name": "Perplexity",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool : faut-il vraiment payer 12€/mois ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:claude-opus-4-6-guide-complet-freelances": {
+      "tools": [
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "fr:alternatives-gratuites-notion-freelance-2026": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "fr:stack-minimaliste-freelance-2026": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:notion-gratuit-ou-payant": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-gratuit-ou-payant",
+          "title": "Tu as reçu un feedback client sur une faute : Grammarly Premium vaut-il le coup ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:calendly-gratuit-suffisant": {
+      "tools": [
+        {
+          "slug": "calendly",
+          "name": "Calendly",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "pourquoi-payer-loom",
+          "title": "Pourquoi payer Loom (alors que QuickTime est gratuit) ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "loom",
+            "name": "Loom",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:canva-pro-rentable": {
+      "tools": [
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-gratuit-ou-payant",
+          "title": "Tu as reçu un feedback client sur une faute : Grammarly Premium vaut-il le coup ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:pourquoi-payer-loom": {
+      "tools": [
+        {
+          "slug": "loom",
+          "name": "Loom",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:stripe-vs-virement": {
+      "tools": [
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "stripe-freelance-tarifs-alternatives",
+          "title": "Stripe pour freelances : tarifs, alternatives et guide complet",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:chatgpt-plus-utile-ou-inutile": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:grammarly-gratuit-ou-payant": {
+      "tools": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "canva-pro-rentable",
+          "title": "Canva Pro : l'investissement le plus rentable ?",
+          "category": "Création & Design",
+          "tool": {
+            "slug": "canva",
+            "name": "Canva",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:stripe-freelance-tarifs-alternatives": {
+      "tools": [
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:perplexity-vs-chatgpt-recherche": {
+      "tools": [
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool : faut-il vraiment payer 12€/mois ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion gratuit vs payant : le vrai calcul (2026)",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:notion-gratuit-vs-payant-vrai-calcul": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        },
+        {
+          "slug": "obsidian",
+          "name": "Obsidian",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool : faut-il vraiment payer 12€/mois ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "toggl-track-gratuit-ou-payant",
+          "title": "Toggl Track : Gratuit ou Payant ? Le Guide Complet pour Freelances",
+          "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png",
+          "category": "Productivité"
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:grammarly-vs-languagetool-comparaison": {
+      "tools": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "hasPricing": true
+        },
+        {
+          "slug": "languagetool",
+          "name": "LanguageTool",
+          "hasPricing": false,
+          "websiteUrl": "https://languagetool.org"
+        }
+      ],
+      "related": [
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion gratuit vs payant : le vrai calcul (2026)",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "toggl-track-gratuit-ou-payant",
+          "title": "Toggl Track : Gratuit ou Payant ? Le Guide Complet pour Freelances",
+          "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png",
+          "category": "Productivité"
+        },
+        {
+          "slug": "grammarly-gratuit-ou-payant",
+          "title": "Tu as reçu un feedback client sur une faute : Grammarly Premium vaut-il le coup ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:toggl-track-gratuit-ou-payant": {
+      "tools": [
+        {
+          "slug": "toggl",
+          "name": "Toggl Track",
+          "hasPricing": true
+        },
+        {
+          "slug": "clockify",
+          "name": "Clockify",
+          "hasPricing": true,
+          "websiteUrl": "https://clockify.me"
+        },
+        {
+          "slug": "harvest",
+          "name": "Harvest",
+          "hasPricing": false,
+          "websiteUrl": "https://www.getharvest.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool : faut-il vraiment payer 12€/mois ?",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion gratuit vs payant : le vrai calcul (2026)",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:stack-redactrice-freelance": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Tu gères 3 clients simultanément : Notion gratuit te suffit-il vraiment ?",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Tu viens de signer ton 2e client : as-tu besoin de Calendly Pro ?",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Tu viens de signer ton 1er client : comment tu dois te faire payer ?",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "fr:notion-canva-ai-tax-pricing-2026": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        },
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true
+        },
+        {
+          "slug": "clickup",
+          "name": "ClickUp",
+          "hasPricing": true,
+          "websiteUrl": "https://clickup.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "canva-pro-rentable",
+          "title": "Canva Pro : l'investissement le plus rentable ?",
+          "category": "Création & Design",
+          "tool": {
+            "slug": "canva",
+            "name": "Canva",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:chatgpt-pro-worth-it": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "ChatGPT Plus: Useful or Useless for Freelancers?",
+          "readTime": "5 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Best AI Tools for Freelancers 2026: The Complete Guide to Choosing (and Not Wasting Money)",
+          "readTime": "20 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:ai-agents-freelancers-2026": {
+      "tools": [
+        {
+          "slug": "zapier",
+          "name": "Zapier",
+          "hasPricing": true
+        },
+        {
+          "slug": "make",
+          "name": "Make",
+          "hasPricing": true
+        },
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "zapier-vs-make-vs-n8n-pricing",
+          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:zapier-vs-make-vs-n8n-pricing": {
+      "tools": [
+        {
+          "slug": "zapier",
+          "name": "Zapier",
+          "hasPricing": true
+        },
+        {
+          "slug": "make",
+          "name": "Make",
+          "hasPricing": true
+        },
+        {
+          "slug": "n8n",
+          "name": "n8n",
+          "hasPricing": false,
+          "logo": "https://raw.githubusercontent.com/n8n-io/n8n/a2c19e46974990c39007ffe64ab2ae908fe2f1b9/assets/n8n-logo.png",
+          "websiteUrl": "https://n8n.io"
+        }
+      ],
+      "related": [
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparison-2026",
+          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+          "readTime": "9 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:freshservice-alternatives-2026": {
+      "tools": [
+        {
+          "slug": "freshservice",
+          "name": "Freshservice",
+          "hasPricing": true,
+          "logo": "https://logo.clearbit.com/freshworks.com"
+        },
+        {
+          "slug": "snipe-it",
+          "name": "Snipe IT",
+          "hasPricing": true,
+          "logo": "https://logo.clearbit.com/snipeitapp.com"
+        },
+        {
+          "slug": "deskpro",
+          "name": "Deskpro",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool: Is it really worth paying €12/month?",
+          "readTime": "10 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-pricing",
+          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:adobe-podcast-ai-free-limits-alternatives-2026": {
+      "tools": [
+        {
+          "slug": "adobe-podcast-ai",
+          "name": "Adobe Podcast AI",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "en:outils-facturation-freelance-2026": {
+      "tools": [
+        {
+          "slug": "qonto",
+          "name": "Qonto",
+          "hasPricing": true,
+          "websiteUrl": "https://qonto.com/fr"
+        },
+        {
+          "slug": "indy",
+          "name": "Indy",
+          "hasPricing": true
+        },
+        {
+          "slug": "pennylane",
+          "name": "Pennylane",
+          "hasPricing": true,
+          "websiteUrl": "https://pennylane.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Stripe vs Bank Transfer: The Hidden Cost of Free",
+          "readTime": "3 min",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:top-5-competences-ia-freelance-2026": {
+      "tools": [
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "chatgpt-pro-worth-it",
+          "title": "GPT-6 Astra: is ChatGPT Pro actually worth it?",
+          "readTime": "10 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "ai-tips-freelancers-2026",
+          "title": "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste",
+          "readTime": "11 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stack-minimaliste-freelance-2026",
+          "title": "Freelance Minimalist Stack 2026: The 7 Tools That Truly Change a Life (+ 15 to Cancel)",
+          "readTime": "15 min",
+          "category": "Guides"
+        }
+      ]
+    },
+    "en:nora-bensaid-produit-sante-depuis-terrain": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "atelier-hors-champ-scenographie-espace-raconte",
+          "title": "Drawing What the Visitor Feels Before What They Look At",
+          "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "anna-morel-designer-studio-augmente",
+          "title": "Designing like a studio when you work alone",
+          "thumbnail": "/editorial/stories/anna-morel/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Bringing Clarity Back to a Company Growing Too Fast",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "en:marc-delmas-clarifier-entreprise-qui-grandit": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "atelier-hors-champ-scenographie-espace-raconte",
+          "title": "Drawing What the Visitor Feels Before What They Look At",
+          "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "anna-morel-designer-studio-augmente",
+          "title": "Designing like a studio when you work alone",
+          "thumbnail": "/editorial/stories/anna-morel/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "en:atelier-hors-champ-scenographie-espace-raconte": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "anna-morel-designer-studio-augmente",
+          "title": "Designing like a studio when you work alone",
+          "thumbnail": "/editorial/stories/anna-morel/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Bringing Clarity Back to a Company Growing Too Fast",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "nora-bensaid-produit-sante-depuis-terrain",
+          "title": "Building a Digital Product from the Field",
+          "thumbnail": "/editorial/stories/nora-sante/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "en:auditer-stack-saas-45-minutes": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        }
+      ]
+    },
+    "en:anna-morel-designer-studio-augmente": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "atelier-hors-champ-scenographie-espace-raconte",
+          "title": "Drawing What the Visitor Feels Before What They Look At",
+          "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Bringing Clarity Back to a Company Growing Too Fast",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        },
+        {
+          "slug": "nora-bensaid-produit-sante-depuis-terrain",
+          "title": "Building a Digital Product from the Field",
+          "thumbnail": "/editorial/stories/nora-sante/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "en:pourquoi-visualiser-stack-saas": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "chatgpt-pro-worth-it",
+          "title": "GPT-6 Astra: is ChatGPT Pro actually worth it?",
+          "readTime": "10 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:andrew-huberman-kit-systeme-audience": {
+      "tools": [
+        {
+          "slug": "kit",
+          "name": "Kit",
+          "hasPricing": true,
+          "websiteUrl": "https://kit.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-pricing",
+          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+          "title": "Bringing Clarity Back to a Company Growing Too Fast",
+          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
+          "readTime": "9 min",
+          "category": "Stories"
+        }
+      ]
+    },
+    "en:ai-tips-freelancers-2026": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        },
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "gemini",
+          "name": "Gemini",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+          "title": "Claude Sonnet 4.6 vs ChatGPT vs DeepSeek vs Gemini: Which AI Assistant to Choose in February 2026?",
+          "readTime": "15 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "claude",
+            "name": "Claude",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Best AI Tools for Freelancers 2026: The Complete Guide to Choosing (and Not Wasting Money)",
+          "readTime": "20 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "chatgpt-pro-worth-it",
+          "title": "GPT-6 Astra: is ChatGPT Pro actually worth it?",
+          "readTime": "10 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:grammarly-vs-languagetool-comparison-2026": {
+      "tools": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "hasPricing": true
+        },
+        {
+          "slug": "languagetool",
+          "name": "LanguageTool",
+          "hasPricing": false,
+          "websiteUrl": "https://languagetool.org"
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool: Is it really worth paying €12/month?",
+          "readTime": "10 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "toggl-track-free-or-paid",
+          "title": "Toggl Track: Free or Paid? The Complete Guide for Freelancers",
+          "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png",
+          "category": "Productivity"
+        }
+      ]
+    },
+    "en:loom-pricing-alternatives": {
+      "tools": [
+        {
+          "slug": "loom",
+          "name": "Loom",
+          "hasPricing": true
+        },
+        {
+          "slug": "tella",
+          "name": "Tella",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "pourquoi-payer-loom",
+          "title": "Why Pay for Loom (When QuickTime is Free)?",
+          "readTime": "3 min",
+          "category": "Communication",
+          "tool": {
+            "slug": "loom",
+            "name": "Loom",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:minimalist-saas-stack-freelancer-2026-under-50-euros": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        },
+        {
+          "slug": "make",
+          "name": "Make",
+          "hasPricing": true
+        },
+        {
+          "slug": "fathom",
+          "name": "Fathom",
+          "hasPricing": true,
+          "websiteUrl": "https://www.fathom.ai"
+        }
+      ],
+      "related": [
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "zapier-vs-make-vs-n8n-pricing",
+          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+          "readTime": "9 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026": {
+      "tools": [
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        },
+        {
+          "slug": "deepseek",
+          "name": "DeepSeek",
+          "hasPricing": true
+        },
+        {
+          "slug": "gemini",
+          "name": "Gemini",
+          "hasPricing": true
+        },
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Best AI Tools for Freelancers 2026: The Complete Guide to Choosing (and Not Wasting Money)",
+          "readTime": "20 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "perplexity-vs-chatgpt-recherche",
+          "title": "Perplexity AI: Is it better than ChatGPT for research?",
+          "readTime": "6 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "perplexity",
+            "name": "Perplexity",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "ai-tips-freelancers-2026",
+          "title": "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste",
+          "readTime": "11 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:meilleurs-outils-ia-freelances-2026": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        },
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "midjourney",
+          "name": "Midjourney",
+          "hasPricing": true
+        },
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true
+        },
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true
+        },
+        {
+          "slug": "elevenlabs",
+          "name": "ElevenLabs",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+          "title": "Claude Sonnet 4.6 vs ChatGPT vs DeepSeek vs Gemini: Which AI Assistant to Choose in February 2026?",
+          "readTime": "15 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "claude",
+            "name": "Claude",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "perplexity-vs-chatgpt-recherche",
+          "title": "Perplexity AI: Is it better than ChatGPT for research?",
+          "readTime": "6 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "perplexity",
+            "name": "Perplexity",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparison-2026",
+          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+          "readTime": "9 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:claude-opus-4-6-guide-complet-freelances": {
+      "tools": [
+        {
+          "slug": "claude",
+          "name": "Claude",
+          "hasPricing": true
+        },
+        {
+          "slug": "anthropic",
+          "name": "Anthropic API",
+          "hasPricing": true,
+          "websiteUrl": "https://www.anthropic.com/api"
+        }
+      ],
+      "related": [
+        {
+          "slug": "ai-tips-freelancers-2026",
+          "title": "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste",
+          "readTime": "11 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "ChatGPT Plus: Useful or Useless for Freelancers?",
+          "readTime": "5 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        }
+      ]
+    },
+    "en:alternatives-gratuites-notion-freelance-2026": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        },
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:stack-minimaliste-freelance-2026": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Is Free Calendly Enough for a Freelancer?",
+          "readTime": "3 min",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "pourquoi-payer-loom",
+          "title": "Why Pay for Loom (When QuickTime is Free)?",
+          "readTime": "3 min",
+          "category": "Communication",
+          "tool": {
+            "slug": "loom",
+            "name": "Loom",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:notion-gratuit-ou-payant": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-gratuit-ou-payant",
+          "title": "Grammarly Free or Paid: The Complete Guide for Freelancers",
+          "readTime": "6 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "canva-pro-rentable",
+          "title": "Canva Pro: The Most Profitable Investment?",
+          "readTime": "3 min",
+          "category": "Création & Design",
+          "tool": {
+            "slug": "canva",
+            "name": "Canva",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:calendly-gratuit-suffisant": {
+      "tools": [
+        {
+          "slug": "calendly",
+          "name": "Calendly",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "pourquoi-payer-loom",
+          "title": "Why Pay for Loom (When QuickTime is Free)?",
+          "readTime": "3 min",
+          "category": "Communication",
+          "tool": {
+            "slug": "loom",
+            "name": "Loom",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Stripe vs Bank Transfer: The Hidden Cost of Free",
+          "readTime": "3 min",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:canva-pro-rentable": {
+      "tools": [
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-gratuit-ou-payant",
+          "title": "Grammarly Free or Paid: The Complete Guide for Freelancers",
+          "readTime": "6 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "ChatGPT Plus: Useful or Useless for Freelancers?",
+          "readTime": "5 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:pourquoi-payer-loom": {
+      "tools": [
+        {
+          "slug": "loom",
+          "name": "Loom",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Is Free Calendly Enough for a Freelancer?",
+          "readTime": "3 min",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Stripe vs Bank Transfer: The Hidden Cost of Free",
+          "readTime": "3 min",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:stripe-vs-virement": {
+      "tools": [
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "calendly-gratuit-suffisant",
+          "title": "Is Free Calendly Enough for a Freelancer?",
+          "readTime": "3 min",
+          "category": "Communication",
+          "tool": {
+            "slug": "calendly",
+            "name": "Calendly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "stripe-freelance-tarifs-alternatives",
+          "title": "Stripe for Freelancers: Pricing, Alternatives, and Complete Guide",
+          "readTime": "7 min",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "pourquoi-payer-loom",
+          "title": "Why Pay for Loom (When QuickTime is Free)?",
+          "readTime": "3 min",
+          "category": "Communication",
+          "tool": {
+            "slug": "loom",
+            "name": "Loom",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:chatgpt-plus-utile-ou-inutile": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-gratuit-ou-payant",
+          "title": "Grammarly Free or Paid: The Complete Guide for Freelancers",
+          "readTime": "6 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "perplexity-vs-chatgpt-recherche",
+          "title": "Perplexity AI: Is it better than ChatGPT for research?",
+          "readTime": "6 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "perplexity",
+            "name": "Perplexity",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:grammarly-gratuit-ou-payant": {
+      "tools": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "canva-pro-rentable",
+          "title": "Canva Pro: The Most Profitable Investment?",
+          "readTime": "3 min",
+          "category": "Création & Design",
+          "tool": {
+            "slug": "canva",
+            "name": "Canva",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-ou-payant",
+          "title": "Notion Free or Paid: When to Pay?",
+          "readTime": "3 min",
+          "category": "Organisation",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "ChatGPT Plus: Useful or Useless for Freelancers?",
+          "readTime": "5 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:stripe-freelance-tarifs-alternatives": {
+      "tools": [
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "stripe-vs-virement",
+          "title": "Stripe vs Bank Transfer: The Hidden Cost of Free",
+          "readTime": "3 min",
+          "category": "Finance",
+          "tool": {
+            "slug": "stripe",
+            "name": "Stripe",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparison-2026",
+          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+          "readTime": "9 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool: Is it really worth paying €12/month?",
+          "readTime": "10 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:perplexity-vs-chatgpt-recherche": {
+      "tools": [
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Best AI Tools for Freelancers 2026: The Complete Guide to Choosing (and Not Wasting Money)",
+          "readTime": "20 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "chatgpt-plus-utile-ou-inutile",
+          "title": "ChatGPT Plus: Useful or Useless for Freelancers?",
+          "readTime": "5 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool: Is it really worth paying €12/month?",
+          "readTime": "10 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:notion-gratuit-vs-payant-vrai-calcul": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        },
+        {
+          "slug": "obsidian",
+          "name": "Obsidian",
+          "hasPricing": true
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool: Is it really worth paying €12/month?",
+          "readTime": "10 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "toggl-track-free-or-paid",
+          "title": "Toggl Track: Free or Paid? The Complete Guide for Freelancers",
+          "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png",
+          "category": "Productivity"
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparison-2026",
+          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+          "readTime": "9 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:grammarly-vs-languagetool-comparaison": {
+      "tools": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "hasPricing": true
+        },
+        {
+          "slug": "languagetool",
+          "name": "LanguageTool",
+          "hasPricing": false,
+          "websiteUrl": "https://languagetool.org"
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparison-2026",
+          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+          "readTime": "9 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "toggl-track-free-or-paid",
+          "title": "Toggl Track: Free or Paid? The Complete Guide for Freelancers",
+          "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png",
+          "category": "Productivity"
+        }
+      ]
+    },
+    "en:toggl-track-free-or-paid": {
+      "tools": [
+        {
+          "slug": "toggl",
+          "name": "Toggl Track",
+          "hasPricing": true
+        },
+        {
+          "slug": "clockify",
+          "name": "Clockify",
+          "hasPricing": true,
+          "websiteUrl": "https://clockify.me"
+        },
+        {
+          "slug": "harvest",
+          "name": "Harvest",
+          "hasPricing": false,
+          "websiteUrl": "https://www.getharvest.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool: Is it really worth paying €12/month?",
+          "readTime": "10 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "notion-gratuit-vs-payant-vrai-calcul",
+          "title": "Notion Free vs. Paid: The Real Calculation (2026)",
+          "readTime": "10 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "notion",
+            "name": "Notion",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparison-2026",
+          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+          "readTime": "9 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:notion-free-or-paid": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "en:calendly-free-enough": {
+      "tools": [
+        {
+          "slug": "calendly",
+          "name": "Calendly",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "en:chatgpt-plus-worth-it": {
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "en:grammarly-free-or-paid": {
+      "tools": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "en:stripe-vs-bank-transfer": {
+      "tools": [
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "hasPricing": true
+        }
+      ],
+      "related": []
+    },
+    "en:claude-vs-chatgpt-deepseek": {
+      "tools": [],
+      "related": []
+    },
+    "en:stack-freelance-writer": {
+      "tools": [],
+      "related": [
+        {
+          "slug": "grammarly-vs-languagetool-comparison-2026",
+          "title": "Grammarly vs LanguageTool 2026: Which One Is Worth Paying For?",
+          "readTime": "9 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "toggl-track-free-or-paid",
+          "title": "Toggl Track: Free or Paid? The Complete Guide for Freelancers",
+          "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png",
+          "category": "Productivity"
+        },
+        {
+          "slug": "grammarly-vs-languagetool-comparaison",
+          "title": "Grammarly vs LanguageTool: Is it really worth paying €12/month?",
+          "readTime": "10 min",
+          "category": "Productivité",
+          "tool": {
+            "slug": "grammarly",
+            "name": "Grammarly",
+            "hasPricing": true
+          }
+        }
+      ]
+    },
+    "en:notion-canva-ai-tax-pricing-2026": {
+      "tools": [
+        {
+          "slug": "notion",
+          "name": "Notion",
+          "hasPricing": true
+        },
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "hasPricing": true
+        },
+        {
+          "slug": "clickup",
+          "name": "ClickUp",
+          "hasPricing": true,
+          "websiteUrl": "https://clickup.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Best AI Tools for Freelancers 2026: The Complete Guide to Choosing (and Not Wasting Money)",
+          "readTime": "20 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "canva-pro-rentable",
+          "title": "Canva Pro: The Most Profitable Investment?",
+          "readTime": "3 min",
+          "category": "Création & Design",
+          "tool": {
+            "slug": "canva",
+            "name": "Canva",
+            "hasPricing": true
+          }
+        },
+        {
+          "slug": "ai-agents-freelancers-2026",
+          "title": "AI agents for freelancers in 2026: which ones earn a place",
+          "readTime": "8 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "zapier",
+            "name": "Zapier",
+            "hasPricing": true
+          }
+        }
+      ]
+    }
   }
 }

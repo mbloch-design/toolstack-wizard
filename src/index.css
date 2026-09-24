@@ -32746,3 +32746,179 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
 @media (prefers-reduced-motion: reduce) {
   .cix-feature-icon, .cix-feature-icon--second { transform: none; transition: none; }
 }
+
+/* ── Guide: tools in this article (App Store rows) ───────────────────── */
+.ga-tools {
+  margin-top: 48px;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--color-surface-soft);
+}
+.ga-tools-title { margin: 0 0 8px; font: 600 11px/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+.ga-tools-list { display: grid; margin: 0; padding: 0; list-style: none; }
+.ga-tools-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+}
+.ga-tools-item + .ga-tools-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 62px;
+  right: 0;
+  height: 1px;
+  background: var(--color-border);
+}
+.ga-tools-main { display: flex; min-width: 0; flex: 1; align-items: center; gap: 14px; color: inherit; text-decoration: none; }
+.ga-tools-icon { padding: 2px !important; border-radius: 12px !important; background: var(--color-surface) !important; box-shadow: inset 0 0 0 1px var(--color-border); }
+.ga-tools-name { font: 600 16px/1.3 var(--font-ui); color: var(--color-text-strong); }
+.ga-tools-price { font-size: 13px; font-weight: 500; color: var(--color-muted); text-decoration: none; padding: 6px 8px; }
+.ga-tools-price:hover { color: var(--color-text-strong); }
+.ga-tools-open {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  font: 600 13px/1.2 var(--font-ui);
+  color: var(--color-text-strong);
+  text-decoration: none;
+}
+.ga-tools-open:hover { background: var(--color-text-strong); color: var(--color-surface); box-shadow: none; }
+.ga-tools a:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; border-radius: 10px; }
+
+/* ── Guide: keep reading ─────────────────────────────────────────────── */
+.ga-next { margin-top: 56px; }
+.ga-next-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.ga-next-head h2 { margin: 0; font: 600 24px/1.2 var(--font-brand); letter-spacing: -0.02em; }
+.ga-next-all { display: inline-flex; align-items: center; gap: 2px; font-size: 14px; font-weight: 600; color: var(--color-text-strong); text-decoration: none; }
+.ga-next-all svg { width: 16px; height: 16px; }
+.ga-next-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.ga-next-card { display: flex; height: 100%; flex-direction: column; gap: 12px; color: inherit; text-decoration: none; }
+.ga-next-media { display: block; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 16px; background: var(--color-surface-soft); }
+.ga-next-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.ga-next-card:hover .ga-next-media img { transform: scale(1.04); }
+.ga-next-copy { display: flex; flex-direction: column; gap: 4px; }
+.ga-next-meta { font: 600 11px/1.3 var(--font-ui); letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-muted); }
+.ga-next-title {
+  display: -webkit-box;
+  overflow: hidden;
+  font: 600 16px/1.35 var(--font-ui);
+  color: var(--color-text-strong);
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.ga-next-card:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 4px; border-radius: 16px; }
+@media (max-width: 760px) {
+  .ga-next-list { grid-template-columns: 1fr; }
+  .ga-next-card { flex-direction: row; align-items: center; }
+  .ga-next-media { width: 112px; flex: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ga-next-media img { transition: none; }
+  .ga-next-card:hover .ga-next-media img { transform: none; }
+}
+.ga-next-media[data-kind="tool"] { display: grid; place-items: center; }
+.ga-next-tool {
+  padding: 3px !important;
+  border-radius: 18px !important;
+  background: var(--color-surface) !important;
+  box-shadow: 0 12px 26px rgb(0 0 0 / 0.08), inset 0 0 0 1px var(--color-border) !important;
+  transition: transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.ga-next-card:hover .ga-next-tool { transform: scale(1.06) rotate(-3deg); }
+@media (max-width: 760px) {
+  .ga-next-tool { width: 48px !important; height: 48px !important; min-width: 48px !important; min-height: 48px !important; border-radius: 12px !important; }
+}
+@media (prefers-reduced-motion: reduce) { .ga-next-card:hover .ga-next-tool { transform: none; } }
+
+/* ── Guide quick wins ────────────────────────────────────────────────── */
+/* 1. Tables as a spec card */
+.ga-content .overflow-x-auto { margin: 32px 0; border-radius: 20px; background: var(--color-surface-soft); }
+.ga-content table { margin: 0; border: 0; border-radius: 0; background: transparent; }
+.ga-content th { padding: 16px 20px 10px; border-bottom: 1px solid var(--color-border); background: transparent; }
+.ga-content td { padding: 14px 20px; border-bottom: 1px solid var(--color-border); font-variant-numeric: tabular-nums; }
+.ga-content td:first-child { font-weight: 600; color: var(--color-text-strong); }
+.ga-content tr:last-child td { border-bottom: 0; }
+
+/* 2. Generated cover: the article's tools on their brand tints */
+.ga-cover {
+  display: grid;
+  gap: 6px;
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 24px);
+}
+.ga-cover[data-count="1"] { grid-template-columns: 1fr; }
+.ga-cover[data-count="2"] { grid-template-columns: 1fr 1fr; }
+.ga-cover[data-count="3"] { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.ga-cover[data-count="3"] .ga-cover-tile:first-child { grid-row: span 2; }
+.ga-cover[data-count="4"] { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.ga-cover-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface-soft);
+}
+.ga-cover-icon {
+  padding: 4px !important;
+  border-radius: 26% !important;
+  background: var(--color-surface) !important;
+  box-shadow: 0 18px 40px rgb(0 0 0 / 0.1), inset 0 0 0 1px var(--color-border) !important;
+  transform: rotate(-5deg);
+  animation: ga-cover-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.ga-cover-tile:nth-child(even) .ga-cover-icon { transform: rotate(5deg); }
+.ga-cover-name {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  font: 600 13px/1 var(--font-ui);
+  color: var(--color-text-strong);
+  opacity: 0.7;
+}
+@keyframes ga-cover-in { from { opacity: 0; transform: translateY(12px) rotate(0); } }
+@media (max-width: 900px) {
+  .ga-cover { min-height: 240px; }
+  .ga-cover-icon { width: 72px !important; height: 72px !important; min-width: 72px !important; min-height: 72px !important; }
+}
+
+/* 3. Reading progress: CSS scroll timeline, hidden where unsupported */
+.ga-progress { display: none; }
+@supports (animation-timeline: scroll()) {
+  .ga-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    display: block;
+    height: 3px;
+    background: var(--color-text-strong);
+    transform-origin: 0 50%;
+    animation: ga-progress linear both;
+    /* The app shell scrolls .asv2-content, not the window: a named
+       timeline on that scroller drives the bar. */
+    animation-timeline: --tt-page-scroll;
+  }
+  @keyframes ga-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .asv2-content { scroll-timeline: --tt-page-scroll block; }
+}
+
+/* 5. "Found this useful?" as a quiet line, not a boxed card */
+.ga-share-row {
+  margin-top: 40px;
+  padding: 16px 0 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+}
+.ga-share-row .ga-share-btn { border-radius: 999px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ga-cover-icon { animation: none; }
+  .ga-progress { display: none; }
+}

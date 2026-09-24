@@ -8,7 +8,10 @@ import { usePostBySlug, type Post } from "@/hooks/useSupabaseData";
 import { Check, Clock, Link2, Linkedin, X as XIcon } from "@/lib/icons";
 import { buildGuideToc, renderGuideMarkdown, type GuideTocItem } from "@/lib/guideMarkdown";
 import { cleanupSeo, setHreflang, setJsonLd, setMeta, setSeoTags } from "@/lib/seo";
-import { getToolForGuide } from "@/lib/toolGuides";
+import { getRelatedGuides, getToolForGuide, getToolsForGuide } from "@/lib/toolGuides";
+import ToolLogo from "@/components/ToolLogo";
+import brandColors from "@/data/brandColors.json";
+import { ChevronRight } from "@/lib/icons";
 
 /**
  * Mostly-static article document. There is deliberately no scroll listener,
@@ -18,6 +21,20 @@ import { getToolForGuide } from "@/lib/toolGuides";
 // same gradient asset the homepage hero already uses, so a guide without
 // custom art still gets a real, on-brand visual instead of an empty column.
 const DEFAULT_HERO_IMAGE = "/hero/hero-gradient-1800.webp";
+
+/**
+ * Display-only typography: straight double quotes become curly ones. The
+ * stored title (and every SEO tag built from it) is left untouched.
+ */
+function smartQuotes(text: string, lang: string): string {
+  if (!text.includes('"')) return text;
+  let open = true;
+  return text.replace(/"/g, () => {
+    const mark = lang === "fr" ? (open ? "« " : " »") : (open ? "\u201C" : "\u201D");
+    open = !open;
+    return mark;
+  }).replace(/« \s+/g, "« ").replace(/\s+ »/g, " »");
+}
 
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -29,6 +46,8 @@ const GuideDetailPage = () => {
   // Resolved from the guide's `toolId` through a build-time index, so this
   // stays a static read — the page loads no catalogue at runtime.
   const relatedTool = useMemo(() => getToolForGuide(post?.slug, lang), [post?.slug, lang]);
+  const coveredTools = useMemo(() => getToolsForGuide(post?.slug, lang), [post?.slug, lang]);
+  const relatedGuides = useMemo(() => getRelatedGuides(post?.slug, lang), [post?.slug, lang]);
   const h2Toc = useMemo(() => toc.filter((item) => item.level === 2), [toc]);
 
   // Scroll-spy: same approach as MethodologyPage/TransparencyPage, but
@@ -147,6 +166,8 @@ const GuideDetailPage = () => {
 
   return (
     <div className={isStory ? "ga-page ga-page--story" : "ga-page"}>
+      {/* Reading progress, driven by CSS scroll timelines: no scroll listener. */}
+      <div className="ga-progress" aria-hidden="true" />
       <header className={`ga-header${isStory ? " ga-header--story" : ""}`}>
         <div className="ga-container">
           <div className={isStory ? "ga-hero-main" : "ga-hero-split"}>
@@ -172,7 +193,7 @@ const GuideDetailPage = () => {
                 </span>
               ) : null}
             </div>
-            <h1 className="ga-title">{post.title}</h1>
+            <h1 className="ga-title">{smartQuotes(post.title, lang)}</h1>
             {post.excerpt ? <p className="ga-standfirst">{post.excerpt}</p> : null}
             <div className="ga-hero-share">
               <button
@@ -204,9 +225,27 @@ const GuideDetailPage = () => {
             </div>
           </div>
           {!isStory ? (
-            <div className="ga-hero-image">
-              <img src={post.thumbnail || DEFAULT_HERO_IMAGE} alt="" loading="eager" decoding="async" />
-            </div>
+            post.thumbnail || coveredTools.length === 0 ? (
+              <div className="ga-hero-image">
+                <img src={post.thumbnail || DEFAULT_HERO_IMAGE} alt="" loading="eager" decoding="async" />
+              </div>
+            ) : (
+              // No cover image: the article's own tools, each on its brand tint,
+              // so every guide gets a visual identity without producing art.
+              // Variants live in data attributes: the build emits one critical CSS file
+              // per distinct class set, and variant classes multiplied those files.
+              <div className="ga-hero-image ga-cover" data-count={Math.min(coveredTools.length, 4)} aria-hidden="true">
+                {coveredTools.slice(0, 4).map((tool, i) => {
+                  const brand = (brandColors as Record<string, string>)[tool.slug];
+                  return (
+                    <span key={tool.slug} className="ga-cover-tile" style={brand ? { background: `color-mix(in srgb, ${brand} 18%, #FFFFFF)` } : undefined}>
+                      <ToolLogo tool={tool} size={coveredTools.length === 1 ? 128 : 96} className="ga-cover-icon" />
+                      <span className="ga-cover-name" style={{ ["--i" as string]: i }}>{tool.name}</span>
+                    </span>
+                  );
+                })}
+              </div>
+            )
           ) : null}
           </div>
         </div>
@@ -225,7 +264,33 @@ const GuideDetailPage = () => {
 
             <div className="ga-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
 
-            {relatedTool ? (
+            {/* Every tool the article covers, App Store rows: icon, name, the
+                fiche and its pricing. Built at build time from toolId + tags. */}
+            {coveredTools.length > 0 ? (
+              <aside className="ga-tools" aria-labelledby="ga-tools-title">
+                <h2 id="ga-tools-title" className="ga-tools-title">
+                  {coveredTools.length > 1 ? t("Les outils de cet article", "Tools in this article") : t("L’outil de cet article", "The tool in this article")}
+                </h2>
+                <ul className="ga-tools-list">
+                  {coveredTools.map((tool) => (
+                    <li key={tool.slug} className="ga-tools-item">
+                      <Link to={`${prefix}/tool/${tool.slug}`} className="ga-tools-main">
+                        <ToolLogo tool={tool} size={48} className="ga-tools-icon" />
+                        <span className="ga-tools-name">{tool.name}</span>
+                      </Link>
+                      {tool.hasPricing ? (
+                        <Link className="ga-tools-price" to={`${prefix}/tool/${tool.slug}${lang === "en" ? "/pricing" : "/prix"}`}>
+                          {t("Prix", "Pricing")}
+                        </Link>
+                      ) : null}
+                      <Link className="ga-tools-open" to={`${prefix}/tool/${tool.slug}`} aria-label={t(`Fiche ${tool.name}`, `${tool.name} overview`) as string}>
+                        {t("Voir", "View")}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            ) : relatedTool ? (
               <aside className="ga-tool-link">
                 <p className="ga-tool-link-label">
                   {t("L’outil de ce guide", "The tool covered here")}
@@ -251,9 +316,41 @@ const GuideDetailPage = () => {
               </button>
             </div>
 
-            <div className={isStory ? "ga-story-back" : "ga-article-back"}>
-              <Link to={`${prefix}/guides`}>← {t("Tous les guides", "All guides")}</Link>
-            </div>
+            {/* Not a dead end: three guides sharing the most tags. */}
+            {relatedGuides.length > 0 ? (
+              <section className="ga-next" aria-labelledby="ga-next-title">
+                <div className="ga-next-head">
+                  <h2 id="ga-next-title">{t("À lire ensuite", "Keep reading")}</h2>
+                  <Link to={`${prefix}/guides`} className="ga-next-all">{t("Tous les guides", "All guides")} <ChevronRight aria-hidden="true" /></Link>
+                </div>
+                <ul className="ga-next-list">
+                  {relatedGuides.map((guide) => (
+                    <li key={guide.slug}>
+                      <Link to={`${prefix}/guide/${guide.slug}`} className="ga-next-card">
+                        {guide.thumbnail || !guide.tool ? (
+                          <span className="ga-next-media"><img src={guide.thumbnail || DEFAULT_HERO_IMAGE} alt="" loading="lazy" decoding="async" /></span>
+                        ) : (
+                          // No cover: the guide's lead tool on its brand tint.
+                          <span className="ga-next-media" data-kind="tool" style={(brandColors as Record<string, string>)[guide.tool.slug] ? { background: `color-mix(in srgb, ${(brandColors as Record<string, string>)[guide.tool.slug]} 16%, #FFFFFF)` } : undefined}>
+                            <ToolLogo tool={guide.tool} size={72} className="ga-next-tool" />
+                          </span>
+                        )}
+                        <span className="ga-next-copy">
+                          {(guide.category || guide.readTime) ? (
+                            <span className="ga-next-meta">{[guide.category ? localizeGuideCategory(guide.category, lang) : "", guide.readTime || ""].filter(Boolean).join(" · ")}</span>
+                          ) : null}
+                          <span className="ga-next-title">{smartQuotes(guide.title, lang)}</span>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : (
+              <div className={isStory ? "ga-story-back" : "ga-article-back"}>
+                <Link to={`${prefix}/guides`}>← {t("Tous les guides", "All guides")}</Link>
+              </div>
+            )}
           </article>
 
           {!isStory && h2Toc.length > 1 ? (

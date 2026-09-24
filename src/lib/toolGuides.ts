@@ -14,12 +14,28 @@ export interface GuideToolRef {
   hasPricing: boolean;
 }
 
+export interface GuideCoveredTool extends GuideToolRef {
+  logo?: string;
+  websiteUrl?: string;
+}
+
+export interface GuideRelatedRef {
+  slug: string;
+  title: string;
+  thumbnail?: string;
+  readTime?: string;
+  category?: string;
+  /** Lead tool, used as the card visual when the guide has no cover. */
+  tool?: GuideCoveredTool;
+}
+
 type Index = {
   byTool: Record<string, { fr: ToolGuideRef[]; en: ToolGuideRef[] }>;
   byGuide: Record<string, GuideToolRef>;
+  guideExtras?: Record<string, { tools: GuideCoveredTool[]; related: GuideRelatedRef[] }>;
 };
 
-const { byTool, byGuide } = index as Index;
+const { byTool, byGuide, guideExtras = {} } = index as Index;
 
 const normaliseLang = (lang: string): "fr" | "en" => (lang === "en" ? "en" : "fr");
 
@@ -37,4 +53,16 @@ export function getGuidesForTool(toolSlug: string | undefined, lang: string): To
 export function getToolForGuide(guideSlug: string | undefined, lang: string): GuideToolRef | null {
   if (!guideSlug) return null;
   return byGuide[`${normaliseLang(lang)}:${guideSlug}`] ?? null;
+}
+
+/** Every catalogue tool a guide covers (toolId first, then tool slugs in its tags). */
+export function getToolsForGuide(guideSlug: string | undefined, lang: string): GuideCoveredTool[] {
+  if (!guideSlug) return [];
+  return guideExtras[`${normaliseLang(lang)}:${guideSlug}`]?.tools ?? [];
+}
+
+/** Three guides to read next, ranked by shared tags. */
+export function getRelatedGuides(guideSlug: string | undefined, lang: string): GuideRelatedRef[] {
+  if (!guideSlug) return [];
+  return guideExtras[`${normaliseLang(lang)}:${guideSlug}`]?.related ?? [];
 }
