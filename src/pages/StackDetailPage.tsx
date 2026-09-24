@@ -1,7 +1,8 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { fitBrandedTitle } from "@/lib/seoTitle";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ChevronDown, ArrowRight } from "@/lib/icons";
+import { AlertTriangle, ChevronDown, ChevronRight, CircleAlert, Target } from "@/lib/icons";
+import { hasGenuineFreeTier } from "@/lib/pricing";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
@@ -590,6 +591,23 @@ function splitBudget(s: string): { main: string; unit: string } | null {
   return m ? { main: m[1], unit: m[2] } : null;
 }
 
+/* ─── Hero cluster layout ───────────────────────────────────────────────── */
+// Hand-placed on a 440×380 canvas (centre points, icon size, tilt) so the
+// cluster never overlaps and reads the same for every stack.
+const HERO_CLUSTER_SLOTS = [
+  { x: 220, y: 190, s: 124, r: -6 },
+  { x: 92, y: 92, s: 84, r: 8 },
+  { x: 350, y: 84, s: 88, r: -9 },
+  { x: 72, y: 272, s: 76, r: -7 },
+  { x: 368, y: 290, s: 84, r: 6 },
+  { x: 226, y: 42, s: 62, r: 5 },
+  { x: 222, y: 338, s: 66, r: -4 },
+  { x: 398, y: 186, s: 58, r: 10 },
+  { x: 44, y: 180, s: 54, r: -10 },
+  { x: 136, y: 344, s: 50, r: 7 },
+  { x: 306, y: 350, s: 50, r: -8 },
+];
+
 /* ─── Main component ─────────────────────────────────────────────────────── */
 const StackDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -600,6 +618,10 @@ const StackDetailPage = () => {
     slug === "consultant-b2b" ? "consultant-b2b-propre" :
     slug;
   const { stack, loading } = useStackBySlug(resolvedSlug);
+  // Budget card: which chart is shown, and which tool is highlighted across
+  // chart and legend.
+  const [budgetView, setBudgetView] = useState<"share" | "target">("share");
+  const [budgetFocus, setBudgetFocus] = useState<string | null>(null);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
 
   // Must be before conditional return (hooks rules)
@@ -660,9 +682,39 @@ const StackDetailPage = () => {
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
 
   const stackTools = asArray(stack.tools).map((slot) => ({ slot, tool: toolBySlug.get(slot.slug) })).filter((item) => item.tool);
-  const budgetTargetLabel = stack.monthlyBudget > 0
-    ? t(`≈${stack.monthlyBudget}€/mois`, `≈${usdFromEur(stack.monthlyBudget)}/mo`)
-    : t("Gratuit", "Free");
+
+  // Budget breakdown from the catalogue: each non-conditional tool at its
+  // first paid plan. A 0 on a "Prix non public" tool means unknown, never
+  // free, so those are listed but not summed.
+  const fmtMoney = (eur: number) => lang === "fr" ? `${Math.round(eur)} €` : usdFromEur(eur);
+  const budgetLines = asArray(stack.tools).map((slot) => {
+    const tool = toolBySlug.get(slot.slug) as (ToolSummary & { priceUndisclosed?: boolean }) | undefined;
+    const price = Number(tool?.compareMonthlyPrice) || 0;
+    const pricing = tool?.pricing as { free?: string } | string | undefined;
+    const pricingText = typeof pricing === "string" ? pricing : [pricing?.free, (pricing as { paid?: string } | undefined)?.paid].filter(Boolean).join(" ");
+    // Stripe-like tools: no subscription, a cut of each transaction. Not free.
+    const usageBased = /%|commission|par transaction|per transaction|à l'usage|pay[- ]as[- ]you[- ]go/i.test(pricingText);
+    const free = !price && !tool?.priceUndisclosed && !usageBased && typeof pricing === "object" && hasGenuineFreeTier(pricing?.free);
+    const kind = price > 0 ? "paid" : tool?.priceUndisclosed ? "undisclosed" : usageBased ? "usage" : free ? "free" : "variable";
+    return { slot, tool, price, kind, optional: slot.decision === "conditional" };
+  }).filter((line) => line.tool);
+  const coreLines = budgetLines.filter((line) => !line.optional).sort((a, b) => b.price - a.price);
+  const optionalLines = budgetLines.filter((line) => line.optional);
+  const catalogueTotal = coreLines.reduce((sum, line) => sum + line.price, 0);
+  const pricedLines = coreLines.filter((line) => line.price > 0);
+  const barScale = Math.max(catalogueTotal, stack.monthlyBudget, 1);
+  // One continuous ramp, priciest tool darkest, so the legend reads in order.
+  const shadeFor = (i: number) => pricedLines.length > 1 ? 1 - (i / (pricedLines.length - 1)) * 0.72 : 1;
+  const unpricedCount = coreLines.filter((line) => line.kind === "undisclosed" || line.kind === "variable" || line.kind === "usage").length;
+  const priceLabel = (line: (typeof budgetLines)[number]) =>
+    line.kind === "paid" ? fmtMoney(line.price)
+      : line.kind === "free" ? t("Gratuit", "Free")
+      : line.kind === "undisclosed" ? t("Non communiqué", "Not public")
+      : line.kind === "usage" ? t("À l'usage", "Usage-based")
+      : t("Variable", "Varies");
+  // Up to 11 apps in the cluster; beyond that the last slot becomes "+N".
+  const clusterApps = stackTools.length > HERO_CLUSTER_SLOTS.length ? stackTools.slice(0, HERO_CLUSTER_SLOTS.length - 1) : stackTools;
+  const clusterOverflow = stackTools.length - clusterApps.length;
 
   const hasRisks = editorial.risks.length > 0;
   const hasAltVariants = editorial.altVariants.length > 0;
@@ -671,33 +723,59 @@ const StackDetailPage = () => {
   return (
     <article className="sg-page">
       <Breadcrumb items={[{ label: "Stacks", href: `${prefix}/stacks` }, { label: detailTitle }]} />
-      <header className="sg-hero">
-        <span className="sg-eyebrow">{personaText}</span>
-        <h1>{detailTitle}</h1>
-        <p className="sg-lead">{heroSubtitle}</p>
-        <div className="sg-hero-tools" aria-label={t("Outils de cette stack", "Tools in this stack")}>
-          {stackTools.map(({ slot, tool }) => <a key={slot.slug} href={`#outil-${slot.slug}`} title={tool!.name}><ToolLogo tool={tool!} size={40} /><span className="sr-only">{tool!.name}</span></a>)}
+      <header className="sg-hero sg-hero--cluster">
+        <div className="sg-hero-copy">
+          <span className="sg-hero-pill">{personaText}</span>
+          <h1>{detailTitle}</h1>
+          <p className="sg-lead">{heroSubtitle}</p>
+          {/* App Store info strip: label, value, caption, hairline dividers. */}
+          <dl className="sg-stats">
+            <div><dt>{t("Sélection", "Selection")}</dt><dd>{stack.tools.length}</dd><span>{optionalLines.length > 0 ? t(`dont ${optionalLines.length} en option`, `${optionalLines.length} optional`) : t("outils", "tools")}</span></div>
+            <div><dt>{t("Budget cible", "Target budget")}</dt><dd>{stack.monthlyBudget > 0 ? fmtMoney(stack.monthlyBudget) : t("Gratuit", "Free")}</dd><span>{stack.monthlyBudget > 0 ? t("par mois", "per month") : t("plans gratuits", "free plans")}</span></div>
+            <div><dt>{t("Profil", "Profile")}</dt><dd className="sg-stats-word">{t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}</dd><span>{t("stade d'activité", "business stage")}</span></div>
+          </dl>
         </div>
-        <dl className="sg-facts">
-          <div><dt>{t("Sélection", "Selection")}</dt><dd>{stack.tools.length} {t("outils", "tools")}</dd></div>
-          <div><dt>{t("Budget cible", "Target budget")}</dt><dd>{budgetTargetLabel}</dd></div>
-          <div><dt>{t("Profil", "Profile")}</dt><dd>{t(stageLabel(stack.stage, "fr"), stageLabel(stack.stage, "en"))}</dd></div>
-        </dl>
+        {/* Signature visual: each app of the stack once, as a composed cluster
+            (App Store bundle artwork). The lead tool sits at the centre; the
+            others orbit at varied sizes and angles. Each is a jump link. */}
+        <div className="sg-cluster" aria-label={t("Outils de cette stack", "Tools in this stack")}>
+          {clusterApps.map(({ slot, tool }, i) => {
+            const pos = HERO_CLUSTER_SLOTS[i];
+            return <a key={slot.slug} href={`#outil-${slot.slug}`} className="sg-cluster-app" title={tool!.name}
+              style={{ left: `${(pos.x / 440) * 100}%`, top: `${(pos.y / 380) * 100}%`, width: `${(pos.s / 440) * 100}%`, aspectRatio: "1", ["--r" as string]: `${pos.r}deg`, animationDelay: `${-i * 0.7}s` }}>
+              <ToolLogo tool={tool!} size={pos.s} className="sg-cluster-icon" /><span className="sr-only">{tool!.name}</span>
+            </a>;
+          })}
+          {clusterOverflow > 0 && <a href="#outils" className="sg-cluster-more" style={{ left: `${(HERO_CLUSTER_SLOTS[clusterApps.length].x / 440) * 100}%`, top: `${(HERO_CLUSTER_SLOTS[clusterApps.length].y / 380) * 100}%` }}>+{clusterOverflow}</a>}
+        </div>
       </header>
 
       <section id="outils" className="sg-section">
         <div className="sg-section-heading"><span className="sg-eyebrow">01 / {t("La sélection", "The selection")}</span><h2>{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
-        <div className="sg-tool-list">
+        {/* App Store list: one link per row (the whole row), icon, role as
+            eyebrow, name, reason. The name link + arrow link pair it
+            replaces sent two links to the same fiche from every row. */}
+        <ul className="sg-apps">
           {asArray(stack.tools).map((slot) => {
             const tool = toolBySlug.get(slot.slug);
             const status = slot.decision === "core" ? t("Socle", "Core") : slot.decision === "conditional" ? t("Selon vos besoins", "If needed") : slot.decision === "challenge" ? t("À réévaluer", "Reassess") : null;
-            return <article key={slot.slug} id={`outil-${slot.slug}`} className="sg-tool-row">
-              <div className="sg-tool-identity"><ToolLogo tool={tool ?? { name: slot.slug, slug: slot.slug }} size={48} /><div>{tool ? <Link to={`${prefix}/tool/${tool.slug || tool.id}`}><h3>{tool.name}</h3></Link> : <h3>{slot.slug}</h3>}{status && <span className="sg-tool-status">{status}</span>}</div></div>
-              <div className="sg-tool-copy"><h4>{t(slot.role, slot.roleEn)}</h4><p>{t(slot.reason, slot.reasonEn)}</p>{slot.tip && <p className="sg-tool-tip">{t(slot.tip, slot.tipEn || slot.tip)}</p>}</div>
-              {tool && <Link className="sg-tool-link" to={`${prefix}/tool/${tool.slug || tool.id}`} aria-label={t(`Voir la fiche ${tool.name}`, `View ${tool.name}`)}><ArrowRight size={20} /></Link>}
-            </article>;
+            const body = <>
+              <ToolLogo tool={tool ?? { name: slot.slug, slug: slot.slug }} size={56} className="sg-app-icon" />
+              <span className="sg-app-body">
+                <span className="sg-app-role">{t(slot.role, slot.roleEn)}{status && <span className="sg-app-status">{status}</span>}</span>
+                <h3 className="sg-app-name">{tool?.name ?? slot.slug}</h3>
+                <span className="sg-app-reason">{t(slot.reason, slot.reasonEn)}</span>
+                {slot.tip && <span className="sg-app-tip">{t(slot.tip, slot.tipEn || slot.tip)}</span>}
+              </span>
+              {tool && <ChevronRight size={18} className="sg-app-chevron" aria-hidden />}
+            </>;
+            return <li key={slot.slug} id={`outil-${slot.slug}`} className="sg-apps-item">
+              {tool
+                ? <Link className="sg-app" to={`${prefix}/tool/${tool.slug || tool.id}`}>{body}</Link>
+                : <div className="sg-app">{body}</div>}
+            </li>;
           })}
-        </div>
+        </ul>
       </section>
 
       <section id="avis" className="sg-section">
@@ -712,21 +790,124 @@ const StackDetailPage = () => {
 
       <section id="budget" className="sg-section sg-budget">
         <div className="sg-section-heading"><span className="sg-eyebrow">03 / Budget</span><h2>{t("Combien prévoir ?", "What should you budget?")}</h2></div>
-        <div className="sg-budget-summary"><strong>{budgetTargetLabel}</strong><p>{t("Budget cible de cette sélection, pas le cumul de tous les abonnements. Les plans et options retenus font varier le total.", "Target budget for this selection, not the sum of every subscription. Your total depends on the plans and options you choose.")}</p></div>
+        <div className="sg-budget-card">
+          <div className="sg-budget-figures">
+            <div className="sg-budget-figure sg-budget-figure--target">
+              <span>{t("Budget cible", "Target budget")}</span>
+              <strong>{stack.monthlyBudget > 0 ? fmtMoney(stack.monthlyBudget) : t("Gratuit", "Free")}</strong>
+              <small>{t("par mois, pour démarrer", "per month, to get started")}</small>
+            </div>
+            {catalogueTotal > 0 && <div className="sg-budget-figure">
+              <span>{t("Socle au prix catalogue", "Core at list price")}</span>
+              <strong>{fmtMoney(catalogueTotal)}</strong>
+              <small>{t(`par mois, ${coreLines.length} outils au premier plan payant`, `per month, ${coreLines.length} tools on their first paid plan`)}</small>
+            </div>}
+          </div>
+          {catalogueTotal > 0 && pricedLines.length > 1 && (
+            <div className="sg-budget-switch" role="tablist" aria-label={t("Visualisation du budget", "Budget chart")}>
+              {([["share", t("Répartition", "Breakdown")], ["target", t("Écart à la cible", "Gap to target")]] as const).map(([key, label]) => (
+                <button key={key} type="button" role="tab" aria-selected={budgetView === key} className="sg-budget-switch-tab" onClick={() => setBudgetView(key)}>{label}</button>
+              ))}
+            </div>
+          )}
+          <div className={`sg-budget-viz sg-budget-viz--${catalogueTotal > 0 && pricedLines.length > 1 ? budgetView : "target"}`} onMouseLeave={() => setBudgetFocus(null)}>
+            {/* Breakdown: a ring, one arc per priced core tool, total inside. */}
+            {catalogueTotal > 0 && pricedLines.length > 1 && budgetView === "share" && (() => {
+              const r = 76, c = 2 * Math.PI * r, gap = 3;
+              let offset = 0;
+              return <svg className="sg-donut" viewBox="0 0 200 200" role="img" aria-label={t(`Répartition du socle : ${fmtMoney(catalogueTotal)} par mois`, `Core breakdown: ${fmtMoney(catalogueTotal)} per month`)}>
+                <g transform="rotate(-90 100 100)">
+                  {pricedLines.map((line, i) => {
+                    const len = (line.price / catalogueTotal) * c;
+                    const seg = <circle key={line.slot.slug} cx="100" cy="100" r={r} fill="none" strokeWidth="26"
+                      className={`sg-donut-seg${budgetFocus && budgetFocus !== line.slot.slug ? " is-dim" : ""}${budgetFocus === line.slot.slug ? " is-focus" : ""}`}
+                      style={{ opacity: shadeFor(i) }} strokeDasharray={`${Math.max(0.5, len - gap)} ${c}`} strokeDashoffset={-offset}
+                      onMouseEnter={() => setBudgetFocus(line.slot.slug)}><title>{`${line.tool!.name} · ${fmtMoney(line.price)} (${Math.round((line.price / catalogueTotal) * 100)} %)`}</title></circle>;
+                    offset += len;
+                    return seg;
+                  })}
+                </g>
+                {(() => {
+                  const focus = pricedLines.find((line) => line.slot.slug === budgetFocus);
+                  return <>
+                    <text x="100" y="96" textAnchor="middle" className="sg-donut-value">{fmtMoney(focus ? focus.price : catalogueTotal)}</text>
+                    <text x="100" y="118" textAnchor="middle" className="sg-donut-label">{focus ? `${focus.tool!.name} · ${Math.round((focus.price / catalogueTotal) * 100)} %` : t("par mois", "per month")}</text>
+                  </>;
+                })()}
+              </svg>;
+            })()}
+            {/* Gap to target: iPhone Storage bar with a marker at the target. */}
+            {catalogueTotal > 0 && (budgetView === "target" || pricedLines.length <= 1) && <div className="sg-storage">
+              <div className="sg-storage-bar" role="img" aria-label={t(`Socle au prix catalogue : ${fmtMoney(catalogueTotal)} par mois, budget cible : ${fmtMoney(stack.monthlyBudget)}`, `Core at list price: ${fmtMoney(catalogueTotal)} per month, target budget: ${fmtMoney(stack.monthlyBudget)}`)}>
+                {pricedLines.map((line, i) => (
+                  <span key={line.slot.slug} className={`sg-storage-seg${budgetFocus && budgetFocus !== line.slot.slug ? " is-dim" : ""}`} style={{ width: `${(line.price / barScale) * 100}%`, opacity: shadeFor(i) }} title={`${line.tool!.name} · ${fmtMoney(line.price)}`} onMouseEnter={() => setBudgetFocus(line.slot.slug)} />
+                ))}
+                {stack.monthlyBudget > 0 && <span className="sg-storage-target" style={{ left: `${Math.min(100, (stack.monthlyBudget / barScale) * 100)}%` }}><span>{t("Cible", "Target")} {fmtMoney(stack.monthlyBudget)}</span></span>}
+              </div>
+              <div className="sg-storage-scale" aria-hidden><span>0</span><span>{fmtMoney(barScale)}</span></div>
+            </div>}
+            <ul className="sg-storage-legend">
+              {[...coreLines, ...optionalLines].map((line) => {
+                const shade = pricedLines.findIndex((p) => p.slot.slug === line.slot.slug);
+                const cls = [line.optional || shade < 0 ? "is-muted" : "", budgetFocus === line.slot.slug ? "is-focus" : "", budgetFocus && budgetFocus !== line.slot.slug ? "is-dim" : ""].filter(Boolean).join(" ");
+                return <li key={line.slot.slug} className={cls || undefined} onMouseEnter={() => shade >= 0 && setBudgetFocus(line.slot.slug)}>
+                  <span className={`sg-storage-dot${shade < 0 ? " sg-storage-dot--empty" : ""}`} style={shade >= 0 ? { opacity: shadeFor(shade) } : undefined} aria-hidden />
+                  <ToolLogo tool={line.tool!} size={24} className="sg-budget-logo" />
+                  <span className="sg-budget-name">{line.tool!.name}{line.optional && <em>{t("en option", "optional")}</em>}</span>
+                  <span className="sg-budget-value">{priceLabel(line)}</span>
+                </li>;
+              })}
+            </ul>
+          </div>
+          <p className="sg-budget-note">
+            {t(
+              `Le budget cible est l'enveloppe recommandée pour démarrer. Le prix catalogue additionne le premier plan payant de chaque outil du socle${unpricedCount > 0 ? `, hors ${unpricedCount} outil${unpricedCount > 1 ? "s" : ""} sans prix fixe` : ""}. Les outils en option n'y sont pas comptés.`,
+              `The target budget is the recommended starting envelope. The list price adds up each core tool's first paid plan${unpricedCount > 0 ? `, excluding ${unpricedCount} tool${unpricedCount > 1 ? "s" : ""} without a fixed price` : ""}. Optional tools are not included.`,
+            )}
+          </p>
+        </div>
         {EDITORIAL_REGISTRY[stack.slug] && <div className="sg-insights">{editorial.budgetRows.map((row, i) => <div key={i}><h3>{t(row.tier, row.tierEn)}</h3><strong>{lang === "fr" ? row.amount : row.amount.replace("/mois", "/month").replace("IA", "AI")}</strong><p>{t(row.desc, row.descEn)}</p></div>)}</div>}
       </section>
 
-      {(hasRisks || stack.risk) && <section id="limites" className="sg-section">
+      {(hasRisks || stack.risk || asArray(stack.maturitySignals).length > 0) && <section id="limites" className="sg-section">
         <div className="sg-section-heading"><span className="sg-eyebrow">04 / {t("Les arbitrages", "Trade-offs")}</span><h2>{t("Ce qui mérite votre attention", "What to watch out for")}</h2></div>
-        {stack.risk && <p className="sg-risk-intro">{t(stack.risk, stack.riskEn)}</p>}
-        <div className="sg-insights">{editorial.risks.map((risk, i) => <div key={i}><h3>{t(risk.problem, risk.problemEn)}</h3><p>{t(risk.consequence, risk.consequenceEn)}</p>{EDITORIAL_REGISTRY[stack.slug] && <p>{t(risk.reco, risk.recoEn)}</p>}</div>)}{asArray(stack.maturitySignals).map((signal, i) => <div key={`signal-${i}`}><h3>{t(signal.title, signal.titleEn)}</h3><p>{t(signal.detail, signal.detailEn)}</p></div>)}</div>
+        {stack.risk && <div className="sg-risk-card">
+          <AlertTriangle size={22} aria-hidden />
+          <span className="sg-risk-label">{t("Le piège de cette stack", "The trap in this stack")}</span>
+          <p>{t(stack.risk, stack.riskEn)}</p>
+        </div>}
+        {(editorial.risks.length > 0 || asArray(stack.maturitySignals).length > 0) && <ul className="sg-watch">
+          {editorial.risks.map((risk, i) => <li key={i}><CircleAlert size={18} aria-hidden /><div><h3>{t(risk.problem, risk.problemEn)}</h3><p>{t(risk.consequence, risk.consequenceEn)}</p>{EDITORIAL_REGISTRY[stack.slug] && <p className="sg-watch-reco">{t(risk.reco, risk.recoEn)}</p>}</div></li>)}
+          {asArray(stack.maturitySignals).map((signal, i) => <li key={`signal-${i}`}><Target size={18} aria-hidden /><div><h3>{t(signal.title, signal.titleEn)}</h3><p>{t(signal.detail, signal.detailEn)}</p></div></li>)}
+        </ul>}
       </section>}
 
       {hasAltVariants && <section id="alternatives" className="sg-section"><div className="sg-section-heading"><h2>{t(editorial.altsTitle, editorial.altsTitleEn)}</h2></div><div className="sg-insights">{editorial.altVariants.map((variant, i) => <div key={i}><span className="sg-eyebrow">{t(variant.label, variant.labelEn)}</span><h3>{t(variant.title, variant.titleEn)}</h3><strong>{lang === "fr" ? variant.budget : variant.budget.replace("/mois", "/month").replace("Gratuit", "Free")}</strong><p>{t(variant.toolsDesc, variant.toolsDescEn)}</p><p>{t(variant.compromise, variant.compromiseEn)}</p></div>)}</div></section>}
 
-      {editorial.faq.length > 0 && <section id="faq" className="sg-section"><div className="sg-section-heading"><h2>{t("Questions fréquentes", "Frequently asked questions")}</h2></div><div className="sd-faq-list">{editorial.faq.map((item, i) => <details key={`${stack.slug}-${i}`} className="sd-faq-item"><summary className="sd-faq-summary">{t(item.q, item.qEn)}<ChevronDown size={16} className="sd-faq-icon" /></summary><p className="sd-faq-answer">{t(item.a, item.aEn)}</p></details>)}</div></section>}
+      {editorial.faq.length > 0 && (EDITORIAL_REGISTRY[stack.slug]
+        ? <section id="faq" className="sg-section"><div className="sg-section-heading"><h2>{t("Questions fréquentes", "Frequently asked questions")}</h2></div><div className="sd-faq-list">{editorial.faq.map((item, i) => <details key={`${stack.slug}-${i}`} className="sd-faq-item"><summary className="sd-faq-summary">{t(item.q, item.qEn)}<ChevronDown size={16} className="sd-faq-icon" /></summary><p className="sd-faq-answer">{t(item.a, item.aEn)}</p></details>)}</div></section>
+        /* Without a dedicated editorial, the "FAQ" is the stack's self-check
+           questions ("Do you know your pipeline value?" → "No: …"). Hidden in
+           accordions they read as odd FAQs; shown open they are the most
+           practical part of the page. */
+        : <section id="faq" className="sg-section"><div className="sg-section-heading"><span className="sg-eyebrow">{t("Autodiagnostic", "Self-check")}</span><h2>{t("Les questions à te poser", "Questions to ask yourself")}</h2></div><ol className="sg-checks">{editorial.faq.map((item, i) => <li key={`${stack.slug}-${i}`} className="sg-check"><span className="sg-check-index" aria-hidden>{i + 1}</span><div><h3>{t(item.q, item.qEn)}</h3><p>{t(item.a, item.aEn)}</p></div></li>)}</ol></section>)}
 
-      {relatedStacks.length > 0 && <section className="sg-section"><div className="sg-section-heading"><h2>{t("D’autres stacks à explorer", "More stacks to explore")}</h2></div><div className="sd-related-grid">{relatedStacks.map((related) => <Link key={related.slug} to={`${prefix}/stacks/${related.slug}`} className="sd-related-card"><div className="sd-related-visual"><div className="sd-related-logo-pile">{asArray(related.tools).slice(0, 4).map((slot) => { const tool = toolBySlug.get(slot.slug); return tool ? <span key={slot.slug} className="sd-related-logo"><ToolLogo tool={tool} size={30} /></span> : null; })}</div></div><div className="sd-related-content"><h3 className="sd-related-name">{t(related.title, related.titleEn)}</h3><p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p><span className="sd-related-cta">{t("Voir la stack", "View stack")} →</span></div></Link>)}</div></section>}
+      {relatedStacks.length > 0 && <section className="sg-section"><div className="sg-section-heading"><h2>{t("D’autres stacks à explorer", "More stacks to explore")}</h2></div>
+        <ul className="sg-related">
+          {relatedStacks.map((related) => <li key={related.slug}>
+            <Link to={`${prefix}/stacks/${related.slug}`} className="sg-related-card">
+              {/* Same iOS-folder cluster as the homepage stacks. */}
+              <span className="sgs-folder" aria-hidden>
+                {asArray(related.tools).slice(0, 4).map((slot) => { const tool = toolBySlug.get(slot.slug); return tool ? <span key={slot.slug} className="sgs-folder-app"><ToolLogo tool={tool} size={32} className="sgs-folder-logo" /></span> : null; })}
+              </span>
+              <span className="sg-related-copy">
+                <span className="sg-related-name">{t(related.title, related.titleEn)}</span>
+                <span className="sg-related-sub">{t(related.subtitle, related.subtitleEn)}</span>
+              </span>
+            </Link>
+          </li>)}
+        </ul>
+      </section>}
 
     </article>
   );

@@ -185,6 +185,8 @@ export type ToolSummary = Pick<
   | "betterAlternative"
 > & {
   compareMonthlyPrice?: number | null;
+  /** "Prix non public" sentinel: a 0 comparison price means unknown, not free. */
+  priceUndisclosed?: boolean;
   // Date de publication, utilisée pour trier la section Nouveautés de l'accueil.
   // Absente des fiches statiques du bundle : optionnelle, les fiches sans date
   // sont reléguées en fin de tri plutôt que remontées par hasard.
@@ -253,6 +255,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   substitutable: t.substitutable ?? true,
   betterAlternative: t.betterAlternative || t.better_alternative || null,
   compareMonthlyPrice: Number(t.compareMonthlyPrice ?? t.pricing_v5?.compare_price_monthly_eur) || null,
+  priceUndisclosed: Boolean(t.priceUndisclosed || /non public/i.test(t.pricing_v5?.compare_plan_name || "")),
 })).filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));
 
 function mapSupabaseCat(c: any): Category {
@@ -514,6 +517,8 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
             substitutable: t.substitutable ?? true,
             betterAlternative: t.better_alternative || null,
             compareMonthlyPrice: Number(t.pricing_v5?.compare_price_monthly_eur) || null,
+            priceUndisclosed: /non public/i.test(t.pricing_v5?.compare_plan_name || "")
+              || Boolean(localFallback?.priceUndisclosed),
             publishedAt: t.published_at || null,
             worksWith: Array.isArray(t.works_with) ? t.works_with : [],
             formFactor: t.form_factor || null,

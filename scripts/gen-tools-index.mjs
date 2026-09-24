@@ -45,6 +45,8 @@ const summaries = tools.map((tool, index) => {
     ...(tool.pricing_v5?.compare_price_monthly_eur != null
       ? { compareMonthlyPrice: tool.pricing_v5.compare_price_monthly_eur }
       : {}),
+    // "Prix non public" sentinel: a 0 that means unknown, not free.
+    ...(/non public/i.test(tool.pricing_v5?.compare_plan_name || "") ? { priceUndisclosed: true } : {}),
     ...(affiliateLink ? { affiliateLink } : {}),
     ...(websiteUrl && websiteUrl !== affiliateLink ? { websiteUrl } : {}),
     ...(tool.ogImageUrl ? { ogImageUrl: tool.ogImageUrl } : {}),

@@ -205,6 +205,7 @@
     "shortDescriptionEn": "Podcast hosting and monetization platform.",
     "pricing": "Hébergement gratuit possible ; monétisation via le réseau publicitaire intégré selon l'audience.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://acast.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
     "logo": "https://logo.clearbit.com/acast.com",
@@ -310,6 +311,7 @@
     "shortDescriptionEn": "Automatically generates conversion-optimized ad creatives, with a predictive performance score.",
     "pricing": "À partir de ~21$/mois selon le volume de créations générées.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://adcreativeai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/adcreative-ai.jpg",
     "logo": "https://logo.clearbit.com/adcreativeai.com",
@@ -434,6 +436,7 @@
       "paid": "Offres dédiées Acrobat Sign / Document Cloud (voir la fiche de la suite)."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.adobe.com/sign.html",
     "ogImageUrl": "https://www.adobe.com/acrobat/business/media_11f9f56cfeb12e8481c6b5b2b22dd2f7a8c78dece.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -1101,6 +1104,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.adp.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/adp-workforce.jpg",
     "tool_type": "metier",
@@ -1162,6 +1166,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://affiliatedashboards.com",
     "logo": "https://logo.clearbit.com/affiliatedashboards.com",
     "tool_type": "specialise",
@@ -1190,6 +1195,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://affiliatetools.com",
     "logo": "https://logo.clearbit.com/affiliatetools.com",
     "tool_type": "specialise",
@@ -1738,6 +1744,7 @@
       "paid": "Anaplan Platform: Sur devis"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.anaplan.com",
     "ogImageUrl": "https://www.anaplan.com/content/dam/anaplan/assets/images/photography/stock/with-graphical-elements/generic-a-orange-resource-tile.jpg",
     "tool_type": "metier",
@@ -2264,6 +2271,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://archivetools.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/archive-tools.jpg",
     "logo": "https://logo.clearbit.com/archivetools.com",
@@ -2355,6 +2363,7 @@
       "paid": ""
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://around.co",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/around.jpg",
     "logo": "https://logo.clearbit.com/around.co",
@@ -3218,6 +3227,7 @@
       "paid": "Abonnement (tout inclus): à partir de ~34,99 € HT/mois (annuel), jusqu'à ~69,99 € HT/mois sans engagement - par entreprise, options en plus"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://axonaut.com",
     "ogImageUrl": "https://axonaut.com/assets/home/images/axonaut-crm-francais-simple-abordable.jpg",
     "logo": "https://logo.clearbit.com/axonaut.com",
@@ -3664,6 +3674,7 @@
     "shortDescriptionEn": "UGC creator marketplace to produce authentic ad videos on demand.",
     "pricing": "À partir de ~99$ par vidéo selon le type de créateur et le format.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://billo.app",
     "ogImageUrl": "https://billo.app/wp-content/uploads/2023/04/billo-logo.svg",
     "logo": "https://logo.clearbit.com/billo.app",
@@ -4051,6 +4062,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://botsdiscord.com",
     "logo": "https://logo.clearbit.com/botsdiscord.com",
     "tool_type": "specialise",
@@ -4108,6 +4120,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://brandkits.com",
     "ogImageUrl": "https://stylebase.ai/wp-content/uploads/2023/01/Featured-Image-Home.png",
     "logo": "https://logo.clearbit.com/brandkits.com",
@@ -5002,6 +5015,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://canvakits.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-kits.jpg",
     "logo": "https://logo.clearbit.com/canvakits.com",
@@ -5060,6 +5074,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://canvatemplates.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-templates.jpg",
     "logo": "https://logo.clearbit.com/canvatemplates.com",
@@ -5119,6 +5134,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://capcutai.com",
     "logo": "https://logo.clearbit.com/capcutai.com",
     "tool_type": "specialise",
@@ -5147,6 +5163,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://capcuttemplates.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/capcut-templates.jpg",
     "logo": "https://logo.clearbit.com/capcuttemplates.com",
@@ -5201,6 +5218,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://captaincontrat.com",
     "ogImageUrl": "https://www.captaincontrat.com/hubfs/logo-captaincontrat-4.png",
     "logo": "https://logo.clearbit.com/captaincontrat.com",
@@ -5255,6 +5273,7 @@
       "paid": "Pay-As-You-Go: 1 $/minute, sans achat minimum ; Professional: 400 $ pour 500 minutes, soit 0,80 $/minute ; Enterprise: 3 000 $ pour 6 000 minutes, soit 0,50 $/minute"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://captiontools.com",
     "ogImageUrl": "https://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg",
     "logo": "https://logo.clearbit.com/captiontools.com",
@@ -5452,6 +5471,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://causal.app",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/causal.jpg",
     "logo": "https://logo.clearbit.com/causal.app",
@@ -5582,6 +5602,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://charttools.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/chart-tools.jpg",
     "logo": "https://logo.clearbit.com/charttools.com",
@@ -5745,6 +5766,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://chatgptpourbrouillonsnonjuridiques.com",
     "logo": "https://logo.clearbit.com/chatgptpourbrouillonsnonjuridiques.com",
     "tool_type": "specialise",
@@ -6136,6 +6158,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://clickupai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/clickup-ai.jpg",
     "logo": "https://logo.clearbit.com/clickupai.com",
@@ -6591,6 +6614,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://comfyuiworkflows.com",
     "ogImageUrl": "https://easy-links.s3.us-west-2.amazonaws.com/avatars/porkbun-logo-600x600.png",
     "logo": "https://logo.clearbit.com/comfyuiworkflows.com",
@@ -6698,6 +6722,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://conga.com",
     "ogImageUrl": "https://conga.com/sites/default/files/styles/large/public/image/2026-03/Social%20Share%20%281%29%20%281%29.png?itok=uH7gF5iu",
     "tool_type": "metier",
@@ -6788,6 +6813,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://contentcredentialstools.com",
     "logo": "https://logo.clearbit.com/contentcredentialstools.com",
     "tool_type": "specialise",
@@ -7074,6 +7100,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://coupler.io",
     "ogImageUrl": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
     "logo": "https://logo.clearbit.com/coupler.io",
@@ -7226,6 +7253,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://creatoriq.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/creatoriq.jpg",
     "logo": "https://logo.clearbit.com/creatoriq.com",
@@ -7258,6 +7286,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.creditsafe.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/creditsafe.jpg",
     "tool_type": "metier",
@@ -7472,6 +7501,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://customer.io",
     "ogImageUrl": "https://cdn.sanity.io/images/onirtmj2/production/10390db7c2394eae65523bbaafced08666b75189-1200x630.png?rect=0,1,1200,628&amp;w=1200&amp;h=628&amp;fit=crop&amp;auto=format",
     "logo": "https://logo.clearbit.com/customer.io",
@@ -7830,6 +7860,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.datev.com",
     "ogImageUrl": "https://www.datev.com/etc.clientlibs/datev.sites/clientlibs/clientlib-site/resources/images/logo.png",
     "tool_type": "metier",
@@ -7896,6 +7927,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.dayforce.com",
     "ogImageUrl": "https://www.dayforce.com/getmedia/49e85ed8-2e0e-46ef-92f9-248e2972ccf8/hero-home-1200x627.jpg",
     "tool_type": "metier",
@@ -8127,6 +8159,7 @@
     "shortDescriptionEn": "Edit audio and video by editing text, with AI voice cloning and automatic transcription.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~15$/mois pour le clonage vocal et plus de fonctionnalités.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://descriptai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/descript-ai.jpg",
     "logo": "https://logo.clearbit.com/descriptai.com",
@@ -8651,6 +8684,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://dovetailai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/dovetail-ai.jpg",
     "logo": "https://logo.clearbit.com/dovetailai.com",
@@ -8884,6 +8918,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.dnb.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/dun-bradstreet.jpg",
     "tool_type": "metier",
@@ -9101,6 +9136,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://ecovadis.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ecovadis.jpg",
     "tool_type": "metier",
@@ -9246,6 +9282,7 @@
     "shortDescriptionEn": "Professional streaming hardware: Stream Deck, capture, lighting, and microphones.",
     "pricing": "Achat unique de matériel, de ~50€ (clé de capture basique) à plusieurs centaines d'euros (configuration complète).",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://elgato.com",
     "ogImageUrl": "https://images.ctfassets.net/h50kqpe25yx1/2naK2vxCxvk8XOjh5Y912s/64528847ddd64655ed2f9ae464074b85/home.jpg",
     "logo": "https://logo.clearbit.com/elgato.com",
@@ -9279,6 +9316,7 @@
     },
     "defaultMonthlyPrice": 150,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://elgatostreamdeck.com",
     "ogImageUrl": "https://images.ctfassets.net/h50kqpe25yx1/7Cwo01eNtXbhr1fsum2248/28c5f862966fa0c48353d3a80ff33c99/Stream-Deck-Social-Graph.jpg",
     "logo": "https://logo.clearbit.com/elgatostreamdeck.com",
@@ -9377,6 +9415,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://emojistickerpacks.com",
     "logo": "https://logo.clearbit.com/emojistickerpacks.com",
     "tool_type": "specialise",
@@ -9500,6 +9539,7 @@
     "shortDescriptionEn": "Marketplace for ready-to-use templates, themes, graphics, and creative assets.",
     "pricing": "Envato Elements à partir de ~17€/mois (accès illimité) ; ThemeForest à l'unité, de quelques euros à plusieurs centaines selon le produit.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://envato.com",
     "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/og-default-724bad6c9010550aa8e3.jpg",
     "logo": "https://logo.clearbit.com/envato.com",
@@ -9761,6 +9801,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://excelcopilot.com",
     "logo": "https://logo.clearbit.com/excelcopilot.com",
     "tool_type": "specialise",
@@ -9851,6 +9892,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://factorialhr.com",
     "ogImageUrl": "https://factorialhr.com/images/factorial-open-graph.png",
     "tool_type": "metier",
@@ -9979,6 +10021,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://feedly.com",
     "ogImageUrl": "https://s1.feedly.com/images/fx/og/threat-intelligence-5-26.png",
     "logo": "https://logo.clearbit.com/feedly.com",
@@ -10371,6 +10414,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://figmatemplates.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/figma-templates.jpg",
     "logo": "https://logo.clearbit.com/figmatemplates.com",
@@ -10660,6 +10704,7 @@
       "paid": "Commission de 20% prélevée sur chaque vente côté freelance ; Fiverr Pro pour des prestataires vérifiés à tarifs plus élevés."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://fiverr.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/fiverr.jpg",
     "logo": "https://logo.clearbit.com/fiverr.com",
@@ -10782,6 +10827,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://float.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/67a24537fa82ef534146a29d_104d4d983d47ec9445c20d452789cde9_homepage-meta-img_2025.png",
     "logo": "https://logo.clearbit.com/float.com",
@@ -11166,6 +11212,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://formapps.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/form-apps.jpg",
     "logo": "https://logo.clearbit.com/formapps.com",
@@ -11254,6 +11301,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://frameguides.com",
     "logo": "https://logo.clearbit.com/frameguides.com",
     "tool_type": "specialise",
@@ -11650,6 +11698,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gamingoverlays.com",
     "logo": "https://logo.clearbit.com/gamingoverlays.com",
     "tool_type": "specialise",
@@ -11717,6 +11766,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gammaai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma-ai.jpg",
     "logo": "https://logo.clearbit.com/gammaai.com",
@@ -12025,6 +12075,7 @@
       "paid": "Aucun plan payant grand public ; programme partenaire/marque sur demande pour les entreprises."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://giphy.com",
     "ogImageUrl": "https://giphy.com/static/img/giphy-be-animated-logo.gif",
     "logo": "https://logo.clearbit.com/giphy.com",
@@ -12299,6 +12350,7 @@
     },
     "defaultMonthlyPrice": 6.9,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gmail.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gmail.jpg",
     "logo": "https://logo.clearbit.com/gmail.com",
@@ -12363,6 +12415,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gocardless.com",
     "ogImageUrl": "https://gocardless.com/content-platform/static/816e9048c2a134da3e79b8677556ad0f/f8482/og-full.png",
     "logo": "https://logo.clearbit.com/gocardless.com",
@@ -12425,6 +12478,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gong.io",
     "ogImageUrl": "https://cdn.sanity.io/images/ww20clc6/production/e5b5bf0e084b83ad6b6607c10f026a91a4cfc1f3-2400x1256.png",
     "logo": "https://logo.clearbit.com/gong.io",
@@ -12534,6 +12588,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://chat.google.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-chat.jpg",
     "bundle_parent": "google-workspace",
@@ -12596,6 +12651,7 @@
       "paid": "Via Google Workspace : à partir de 6,90€/mois/utilisateur pour plus de stockage et des fonctionnalités d'administration."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.google.com/docs/about",
     "ogImageUrl": "https://lh3.googleusercontent.com/IiFEbz_dcLIKBLVIMfIhq2KOiT0C98fB7hCBEwf7BOHjWJ3Gin_FEqbQngrLIc1hvSYn25R6V3iQYKLqb3XijtVzVvQk1FuF_Aaw=w1200-e365",
     "tool_type": "metier",
@@ -12691,6 +12747,7 @@
     "shortDescriptionEn": "Mapping, navigation, and place search, free with a paid API for developers.",
     "pricing": "Gratuit pour l'usage grand public ; API développeur avec crédit gratuit mensuel puis facturation à l'usage.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://googlemaps.com",
     "ogImageUrl": "https://maps.google.com/maps/api/staticmap?center=43.5355648%2C5.4657024&amp;zoom=14&amp;size=900x900&amp;language=en&amp;sensor=false&amp;key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&amp;signature=R_TIultUYRsEt1fU1H_iRC5Yhyk",
     "logo": "https://logo.clearbit.com/googlemaps.com",
@@ -12724,6 +12781,7 @@
     },
     "defaultMonthlyPrice": 6.9,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://googlemeet.com",
     "logo": "https://logo.clearbit.com/googlemeet.com",
     "tool_type": "specialise",
@@ -12816,6 +12874,7 @@
       "paid": "Via Google Workspace : à partir de 6,90€/mois/utilisateur."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.google.com/sheets/about",
     "ogImageUrl": "https://lh3.googleusercontent.com/Auzcj3shB70_xWEL2Ultpt1MGwLYntWo_VqnVdbuMwECJy1AIgpaBJgoksCc_xTHB5pFhICcd-7USwjKoQm20vBkhS2QUg8XSFU=w1200-e365",
     "tool_type": "gestion",
@@ -12962,6 +13021,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gorgiashelpscout.com",
     "logo": "https://logo.clearbit.com/gorgiashelpscout.com",
     "tool_type": "specialise",
@@ -13333,6 +13393,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gsc.com",
     "logo": "https://logo.clearbit.com/gsc.com",
     "tool_type": "specialise",
@@ -13456,6 +13517,7 @@
     },
     "defaultMonthlyPrice": 40,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://gusto.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gusto.jpg",
     "substitution_cluster_v2": "hris-sync",
@@ -13704,6 +13766,7 @@
     },
     "defaultMonthlyPrice": 25,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://helpscout.com",
     "ogImageUrl": "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F4Rbim8xrCA6BCte94E1xnZ%2F6085a0847d360320af712ff86a342307%2Fhome--meta.jpg?ixlib=gatsbySourceUrl-2.1.3&amp;auto=format%2C%20compress&amp;q=75&amp;s=0aba9a73fb57c247551a2df98f436358",
     "logo": "https://logo.clearbit.com/helpscout.com",
@@ -13873,6 +13936,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.hibob.com",
     "ogImageUrl": "https://res.cloudinary.com/hibob-website-prod/images/f_auto,q_auto/v1765722016/wp-website/New-Homepage-sharing-banner/New-Homepage-sharing-banner.png?_i=AA",
     "tool_type": "metier",
@@ -14227,6 +14291,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://humaans.io",
     "ogImageUrl": "https://humaans.io/_next/static/images/humaans-cover-2025-1440@1x-63829fe01312a3c8.png",
     "tool_type": "metier",
@@ -14520,6 +14585,7 @@
     "shortDescriptionEn": "Affiliate and partnership network at the scale of major brands, a premium alternative to Rewardful.",
     "pricing": "Tarification sur devis, généralement réservée aux moyennes et grandes entreprises.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://impact.com",
     "ogImageUrl": "https://impact.com/wp-content/uploads/2022/04/impact-logo-square.jpg",
     "logo": "https://logo.clearbit.com/impact.com",
@@ -14744,6 +14810,7 @@
     "shortDescriptionEn": "Influencer marketing platform to collaborate with creators and manage UGC campaigns.",
     "pricing": "Tarification sur devis selon le volume de campagnes et de créateurs.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://insense.pro",
     "ogImageUrl": "https://cdn.prod.website-files.com/633308aadb76cf62fdcd1362/69ea0e60b4004074f9ecdb6a_Insense%20.png",
     "logo": "https://logo.clearbit.com/insense.pro",
@@ -15055,6 +15122,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://ironcladapp.com",
     "ogImageUrl": "https://ironcladapp.com/wp-content/uploads/2025/09/HOMEPAGE-2A.svg",
     "tool_type": "metier",
@@ -15457,6 +15525,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://juro.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/612c95056c9d4b399ddfd2ef/681b76bdf3051d222fd5d9cc_photo_2025-05-07_18-05-20.jpg",
     "tool_type": "metier",
@@ -15487,6 +15556,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.justworks.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/justworks.jpg",
     "tool_type": "metier",
@@ -15907,6 +15977,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://kling.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/kling.jpg",
     "logo": "https://logo.clearbit.com/kling.com",
@@ -16076,6 +16147,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://krea.com",
     "ogImageUrl": "/resources/images/System/krea-sm.png",
     "logo": "https://logo.clearbit.com/krea.com",
@@ -16108,6 +16180,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://kreaselonmetier.com",
     "logo": "https://logo.clearbit.com/kreaselonmetier.com",
     "tool_type": "specialise",
@@ -16696,6 +16769,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://legalplace.fr",
     "ogImageUrl": "https://www.legalplace.fr/wp-content/uploads/2025/12/legalplace-creation-gestion-societe-og.png",
     "logo": "https://logo.clearbit.com/legalplace.fr",
@@ -16926,6 +17000,7 @@
     },
     "defaultMonthlyPrice": 500,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://lever.co",
     "ogImageUrl": "https://www.lever.co/images/og-default.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -16992,6 +17067,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://lightingkits.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lighting-kits.jpg",
     "logo": "https://logo.clearbit.com/lightingkits.com",
@@ -17021,6 +17097,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://lightroommobile.com",
     "ogImageUrl": "https://www.lightroompresets.com/cdn/shop/files/1200x628ppa_1200x.jpg?v=1588801656",
     "logo": "https://logo.clearbit.com/lightroommobile.com",
@@ -17147,6 +17224,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://lindy.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/63e15df811f9df22b231e58f/69a20da89a23a65ce1b211c3_Lindy%20OG.jpg",
     "logo": "https://logo.clearbit.com/lindy.ai",
@@ -17214,6 +17292,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://linkinbio.com",
     "ogImageUrl": "https://www.linkinbio.com/opengraph-image?6a8419bd9c80c8c3",
     "logo": "https://logo.clearbit.com/linkinbio.com",
@@ -17243,6 +17322,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://linkinbiotools.com",
     "ogImageUrl": "https://linkinbiotools.com/wp-content/uploads/2024/10/Best-Linktree-Alternatives.png",
     "logo": "https://logo.clearbit.com/linkinbiotools.com",
@@ -17269,6 +17349,7 @@
     "shortDescriptionEn": "WordPress plugin that suggests relevant internal links while writing.",
     "pricing": "À partir de ~77$/an pour un site unique.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://linkwhisper.com",
     "ogImageUrl": "https://linkwhisper.com/wp-content/uploads/2022/09/399194cf-0265-44e1-a7e9-08f43069dbf4-1a.webp",
     "logo": "https://logo.clearbit.com/linkwhisper.com",
@@ -17301,6 +17382,7 @@
       "paid": "Premium Business 59,99$/mois ; Premium All-in-One 99$/mois. Sales Navigator Core 119,99$/mois (~90$ en annuel) ; Advanced 159,99$/mois ; Advanced Plus sur devis (~1600$/an)."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://linkedin.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/linkedin.jpg",
     "logo": "https://logo.clearbit.com/linkedin.com",
@@ -17838,6 +17920,7 @@
     "shortDescriptionEn": "Photo-based customer review app, specialized for visual Shopify stores.",
     "pricing": "À partir de ~9,99$/mois selon le volume de commandes.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://loox.com",
     "logo": "https://logo.clearbit.com/loox.com",
     "tool_type": "specialise",
@@ -17970,6 +18053,7 @@
     "shortDescriptionEn": "Affiliate link platform for fashion and lifestyle influencers, with a dedicated shopping app.",
     "pricing": "Gratuit pour les créateurs, commission prélevée sur les ventes générées.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://ltk.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ltk.jpg",
     "logo": "https://logo.clearbit.com/ltk.com",
@@ -18002,6 +18086,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.lucca.fr",
     "ogImageUrl": "https://www.datocms-assets.com/159754/1752164039-og-default.png",
     "tool_type": "metier",
@@ -18362,6 +18447,7 @@
     "shortDescriptionEn": "Library of high-performing ads and creative inspiration tool for marketers.",
     "pricing": "À partir de ~49$/mois selon les fonctionnalités d'équipe.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://magicbrief.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/62fc85d2d02ef37f2cc7f83e/66c59d7d6c63ffa4c1b20ca6_OG.jpg",
     "logo": "https://logo.clearbit.com/magicbrief.com",
@@ -18392,6 +18478,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://magnific.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.jpg",
     "logo": "https://logo.clearbit.com/magnific.com",
@@ -18713,6 +18800,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://maptools.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/map-tools.jpg",
     "logo": "https://logo.clearbit.com/maptools.com",
@@ -18966,6 +19054,7 @@
     "shortDescriptionEn": "Live online course platform, taught by experts rather than pre-recorded.",
     "pricing": "Gratuit pour créer un cours ; commission sur les ventes (~10%).",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://maven.com",
     "ogImageUrl": "https://d3fe4umbwqdrlj.cloudfront.net/global/Maven_SocialShare_2026.jpg",
     "logo": "https://logo.clearbit.com/maven.com",
@@ -19106,6 +19195,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://mediakittemplates.com",
     "logo": "https://logo.clearbit.com/mediakittemplates.com",
     "tool_type": "specialise",
@@ -19337,6 +19427,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://memetemplates.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/meme-templates.jpg",
     "logo": "https://logo.clearbit.com/memetemplates.com",
@@ -19397,6 +19488,7 @@
     "shortDescriptionEn": "Facebook and Instagram's advertising platform to target audiences by interests and behaviors.",
     "pricing": "Budget de campagne libre, dès quelques euros par jour ; coût par clic variable selon la niche et la concurrence.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://facebook.com/business/ads",
     "ogImageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&amp;ab_page=CMS&amp;ab_entry=797459857892055&amp;version=1782606481&amp;transcode_extension=webp",
     "logo": "https://logo.clearbit.com/facebook.com",
@@ -19688,6 +19780,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://dynamics.microsoft.com/finance",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-365-finance-operations.jpg",
     "tool_type": "metier",
@@ -19719,6 +19812,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://dynamics.microsoft.com/business-central",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-business-central.jpg",
     "tool_type": "metier",
@@ -19880,6 +19974,7 @@
     },
     "defaultMonthlyPrice": 4.2,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.microsoft.com/microsoft-teams",
     "websiteUrl": "https://www.microsoft.com/teams",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-teams.jpg",
@@ -20050,6 +20145,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://mobilegimbalapps.com",
     "logo": "https://logo.clearbit.com/mobilegimbalapps.com",
     "tool_type": "specialise",
@@ -20130,6 +20226,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://mojo.com",
     "ogImageUrl": "https://framerusercontent.com/assets/oYMF2sDPDefmvfGcyOWJA95NGU.jpg",
     "logo": "https://logo.clearbit.com/mojo.com",
@@ -20251,6 +20348,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://moobot.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/moobot.jpg",
     "logo": "https://logo.clearbit.com/moobot.com",
@@ -20403,6 +20501,7 @@
     "shortDescriptionEn": "AI-assisted task planner that automatically organizes your calendar based on priorities.",
     "pricing": "À partir de ~19€/mois (individuel), avec une réduction si engagement annuel.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://motion.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion.jpg",
     "logo": "https://logo.clearbit.com/motion.com",
@@ -20432,6 +20531,7 @@
     "shortDescriptionEn": "Video templates, music, and stock footage marketplace with unlimited subscription.",
     "pricing": "Abonnement à tarif variable selon le plan. Prix à confirmer sur la page officielle.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://motionarray.com/pricing/",
     "websiteUrl": "https://motionarray.com/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-array.jpg",
@@ -20604,6 +20704,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://musiclibraries.com",
     "logo": "https://logo.clearbit.com/musiclibraries.com",
     "tool_type": "specialise",
@@ -20712,6 +20813,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.namely.com",
     "ogImageUrl": "https://mlnq5qmsdxfa.i.optimole.com/cb:8ubk.61ace/w:1200/h:628/q:mauto/https://namely.com/wp-content/uploads/2025/10/Namely-General-Feature.jpg",
     "tool_type": "metier",
@@ -20915,6 +21017,7 @@
       "paid": "Prix sur devis uniquement, fonction des modules, utilisateurs et volume — généralement plusieurs milliers d'euros/mois pour une PME."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.netsuite.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/netsuite.jpg",
     "tool_type": "metier",
@@ -20976,6 +21079,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://newsletterreferraltools.com",
     "logo": "https://logo.clearbit.com/newsletterreferraltools.com",
     "tool_type": "specialise",
@@ -21069,6 +21173,7 @@
     "shortDescriptionEn": "Moderation and automated command bot for Twitch and YouTube Live chats.",
     "pricing": "Gratuit ; abonnement payant optionnel pour des fonctionnalités avancées (~9$/mois).",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://nightbot.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/nightbot.jpg",
     "logo": "https://logo.clearbit.com/nightbot.com",
@@ -21368,6 +21473,7 @@
     "shortDescriptionEn": "Library of over 5 million vector icons, by subscription or individually.",
     "pricing": "Gratuit avec attribution ; Pro à partir de ~40$/an pour un usage sans attribution.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://nounproject.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/noun-project.jpg",
     "logo": "https://logo.clearbit.com/nounproject.com",
@@ -21498,6 +21604,7 @@
     "shortDescriptionEn": "Free open-source live video capture and broadcasting software, the streaming reference.",
     "pricing": "Gratuit, open source, aucun coût.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://obsproject.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/obs.jpg",
     "logo": "https://logo.clearbit.com/obsproject.com",
@@ -21679,6 +21786,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage",
     "websiteUrl": "https://onedrive.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/onedrive.jpg",
@@ -21710,6 +21818,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.onelogin.com",
     "ogImageUrl": "https://www.onelogin.com/images/og/WebImage-OneLogin-OG-103168-02_159085.jpg",
     "tool_type": "metier",
@@ -21740,6 +21849,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.onetrust.com",
     "ogImageUrl": "/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
     "tool_type": "metier",
@@ -21800,6 +21910,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://openai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/openai.jpg",
     "logo": "https://logo.clearbit.com/openai.com",
@@ -22053,6 +22164,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.oracle.com/cloud",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/oracle-fusion-cloud.jpg",
     "tool_type": "metier",
@@ -22212,6 +22324,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://overlays.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/overlays.jpg",
     "logo": "https://logo.clearbit.com/overlays.com",
@@ -22616,6 +22729,7 @@
     "shortDescriptionEn": "Drag-and-drop page builder for Shopify, an alternative to GemPages with a free plan.",
     "pricing": "Plan gratuit disponible ; plans payants à partir de ~24$/mois.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://pagefly.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pagefly.jpg",
     "logo": "https://logo.clearbit.com/pagefly.com",
@@ -22773,6 +22887,7 @@
     "shortDescriptionEn": "Partnership and affiliate management platform for B2B SaaS, more complete than Rewardful.",
     "pricing": "Tarification sur devis, généralement plusieurs centaines de dollars par mois.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://partnerstack.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/655381e691678a2583615d93/6a32ec0b289b94fcd2014367_PS-Homepage-Meta_v1.jpg",
     "logo": "https://logo.clearbit.com/partnerstack.com",
@@ -22832,6 +22947,7 @@
     "shortDescriptionEn": "Subscription platform for creators, directly funding their work via a loyal audience.",
     "pricing": "Gratuit pour démarrer ; commission de 8 à 12% sur les revenus selon le plan.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://patreon.com",
     "ogImageUrl": "https://c14.patreon.com/OG_share_eaad746d69.jpg",
     "logo": "https://logo.clearbit.com/patreon.com",
@@ -22864,6 +22980,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://payfit.com",
     "ogImageUrl": "https://www.datocms-assets.com/50397/1730212897-og-image-uk.jpg?auto=format&fit=max&w=1200",
     "tool_type": "metier",
@@ -23047,6 +23164,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://pennylaneaiselondispo.com",
     "logo": "https://logo.clearbit.com/pennylaneaiselondispo.com",
     "tool_type": "specialise",
@@ -23076,6 +23194,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://pennylaneouindy.com",
     "logo": "https://logo.clearbit.com/pennylaneouindy.com",
     "tool_type": "specialise",
@@ -23105,6 +23224,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://pennylaneqonto.com",
     "logo": "https://logo.clearbit.com/pennylaneqonto.com",
     "tool_type": "specialise",
@@ -23472,6 +23592,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.gopigment.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6605b12132f6a8b5d23896bd/66d863e42d71cb716b67d825_Pigment%20-%20Prepare%20for%20anything.jpg",
     "tool_type": "metier",
@@ -23892,6 +24013,7 @@
     "shortDescriptionEn": "Planning and scheduling for Instagram and other social media posts.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~13$/mois.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://planoly.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/planoly.jpg",
     "logo": "https://logo.clearbit.com/planoly.com",
@@ -24398,6 +24520,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://poweruser.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/power-user.jpg",
     "logo": "https://logo.clearbit.com/poweruser.com",
@@ -24459,6 +24582,7 @@
     "pricing": "Inclus dans certains abonnements Creative Cloud ; sinon ~10€/mois en autonome.",
     "defaultMonthlyPrice": 10,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://premiererush.com",
     "logo": "https://logo.clearbit.com/premiererush.com",
     "tool_type": "specialise",
@@ -24491,6 +24615,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://presets.com",
     "ogImageUrl": "https://presets.com/wp-content/uploads/2019/09/presets-com-logo-220.png",
     "logo": "https://logo.clearbit.com/presets.com",
@@ -24642,6 +24767,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.priority-software.com",
     "ogImageUrl": "https://www.priority-software.com/wp-content/uploads/2023/06/fav.png",
     "tool_type": "metier",
@@ -24831,6 +24957,7 @@
     "shortDescriptionEn": "Community platform for discovering new tech products, launched daily.",
     "pricing": "Gratuit pour lancer un produit ; options de promotion payante disponibles.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://producthunt.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/product-hunt.jpg",
     "logo": "https://logo.clearbit.com/producthunt.com",
@@ -24934,6 +25061,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://productive.io",
     "ogImageUrl": "https://cdn.prod.website-files.com/69273e1d1bd1fcfcff2fe0d4/69724044686ecf3c6b20e7c1_og-productive-product-2.png",
     "logo": "https://logo.clearbit.com/productive.io",
@@ -25115,6 +25243,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://promptlibraries.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/prompt-libraries.jpg",
     "logo": "https://logo.clearbit.com/promptlibraries.com",
@@ -26369,6 +26498,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://recipecardtemplates.com",
     "logo": "https://logo.clearbit.com/recipecardtemplates.com",
     "tool_type": "specialise",
@@ -26704,6 +26834,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://relevanceai.com",
     "ogImageUrl": "https://cdn.relevanceai.com/images/og-image.webp",
     "logo": "https://logo.clearbit.com/relevanceai.com",
@@ -26768,6 +26899,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://relumeai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/relume-ai.jpg",
     "logo": "https://logo.clearbit.com/relumeai.com",
@@ -27248,6 +27380,7 @@
     "shortDescriptionEn": "AI and professional human transcription and captioning, your choice.",
     "pricing": "IA à partir de ~0,25$/minute ; transcription humaine à partir de ~1,50$/minute.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://rev.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/65dd0e80788a2f545d95cd65/66ba66fac368a7f1695a8de0_rev_link_preview.webp",
     "logo": "https://logo.clearbit.com/rev.com",
@@ -27310,6 +27443,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://reviewtools.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/review-tools.jpg",
     "logo": "https://logo.clearbit.com/reviewtools.com",
@@ -27500,6 +27634,7 @@
     },
     "defaultMonthlyPrice": 8,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.rippling.com",
     "websiteUrl": "https://rippling.com",
     "ogImageUrl": "https://images.ctfassets.net/k0itp0ir7ty4/3kY0HlA6r398ZS1hLhq2Pf/5da93caeafeaef92645161efe8759827/SEO_-_General_blank.png",
@@ -27961,6 +28096,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.sage.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/sage.jpg",
     "tool_type": "metier",
@@ -27992,6 +28128,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.sage.com/en-us/products/sage-intacct",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/sage-intacct.jpg",
     "tool_type": "metier",
@@ -28281,6 +28418,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.sap.com/products/erp/business-bydesign.html",
     "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png",
     "tool_type": "metier",
@@ -28312,6 +28450,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.sap.com/products/erp/business-one.html",
     "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png",
     "tool_type": "metier",
@@ -28342,6 +28481,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.sap.com/products/erp/s4hana.html",
     "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png",
     "tool_type": "metier",
@@ -28374,6 +28514,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.sap.com/products/hcm.html",
     "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png",
     "tool_type": "metier",
@@ -28404,6 +28545,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://schedulingtools.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/scheduling-tools.jpg",
     "logo": "https://logo.clearbit.com/schedulingtools.com",
@@ -28464,6 +28606,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://screencapturetools.com",
     "ogImageUrl": "https://unicorn-images.b-cdn.net/3b5a242a-56a0-423d-a26a-e8cfe1dcd687?optimizer=gif",
     "logo": "https://logo.clearbit.com/screencapturetools.com",
@@ -28562,6 +28705,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://screenshottools.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/screenshot-tools.jpg",
     "logo": "https://logo.clearbit.com/screenshottools.com",
@@ -28657,6 +28801,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://securityscorecard.com",
     "ogImageUrl": "https://securityscorecard.com/wp-content/uploads/2026/03/SSC_Web_FI_Fallback-7.webp",
     "tool_type": "metier",
@@ -29039,6 +29184,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://sharedcloudfolders.com",
     "logo": "https://logo.clearbit.com/sharedcloudfolders.com",
     "tool_type": "specialise",
@@ -29067,6 +29213,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/sharepoint.jpg",
     "tool_type": "gestion",
@@ -29097,6 +29244,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://shieldapp.ai",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shield.jpg",
     "logo": "https://logo.clearbit.com/shieldapp.ai",
@@ -29369,6 +29517,7 @@
     "shortDescriptionEn": "Shoppable link platform for fashion, beauty, and lifestyle influencers, an alternative to LTK.",
     "pricing": "Gratuit pour les créateurs, commission prélevée sur les ventes générées.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://shopmy.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shopmy.jpg",
     "logo": "https://logo.clearbit.com/shopmy.com",
@@ -29399,6 +29548,7 @@
     "pricing": "Plan gratuit limité (100 images/mois) ; plans payants à partir de ~5$/mois selon le volume.",
     "defaultMonthlyPrice": 5,
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://shortpixel.com",
     "ogImageUrl": "https://shortpixel.com/img/bighead.jpg",
     "logo": "https://logo.clearbit.com/shortpixel.com",
@@ -30085,6 +30235,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://socialschedulers.com",
     "ogImageUrl": "https://socialschedulers.com/assets/images/cover-image.jpg",
     "logo": "https://logo.clearbit.com/socialschedulers.com",
@@ -30328,6 +30479,7 @@
     "shortDescriptionEn": "Newsletter cross-recommendation program to grow your subscriber list.",
     "pricing": "Gratuit pour les recommandations de base ; commission ou abonnement pour les fonctionnalités avancées de monétisation.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://sparkloop.app",
     "ogImageUrl": "https://cdn.prod.website-files.com/6278ffab9cf6e95f0162ea8e/657b916e91979871c64b2828_network-meta-image.jpg",
     "logo": "https://logo.clearbit.com/sparkloop.app",
@@ -30819,6 +30971,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://stockfootage.com",
     "ogImageUrl": "assets/images/bg8.jpg",
     "logo": "https://logo.clearbit.com/stockfootage.com",
@@ -30911,6 +31064,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://storyluxe.com",
     "ogImageUrl": "https://storyluxe.com/assets/social.png",
     "logo": "https://logo.clearbit.com/storyluxe.com",
@@ -30974,6 +31128,7 @@
       "paid": "Entrée payante dès 10$/mois pour plus de tailles de merch et d'overlays, et un meilleur accompagnement débutant."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://streamelements.com",
     "ogImageUrl": "https://cdn.streamelements.com/assets/homepage/og/main.jpg",
     "logo": "https://logo.clearbit.com/streamelements.com",
@@ -31006,6 +31161,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://streamelementswidgets.com",
     "logo": "https://logo.clearbit.com/streamelementswidgets.com",
     "tool_type": "specialise",
@@ -31275,6 +31431,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://subtitletools.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/subtitle-tools.jpg",
     "logo": "https://logo.clearbit.com/subtitletools.com",
@@ -31513,6 +31670,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://supermetrics.com",
     "ogImageUrl": "https://cdn.sanity.io/images/8ly2m84z/production-2025/eee7774699fe786de151ef9785e5392dc2da9d5a-3840x2160.png",
     "logo": "https://logo.clearbit.com/supermetrics.com",
@@ -31572,6 +31730,7 @@
     "shortDescriptionEn": "Generates SEO-optimized articles by analyzing already well-ranked pages for a keyword.",
     "pricing": "À partir de ~89$/mois selon le volume d'articles générés.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://surferai.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/surfer-ai.jpg",
     "logo": "https://logo.clearbit.com/surferai.com",
@@ -31887,6 +32046,7 @@
     "shortDescriptionEn": "Free WordPress plugin to create and manage data tables on a site.",
     "pricing": "Gratuit, fonctionnalités premium optionnelles disponibles.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://tablepress.com",
     "ogImageUrl": "https://tablepress.org/wp-content/uploads/2026/06/tablepress-card.png",
     "logo": "https://logo.clearbit.com/tablepress.com",
@@ -32247,6 +32407,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://teleprompter.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/62ee672fdd39ff45cfee8820/62f23f2aeafac5426e52e4a8_Screenshot%202022-08-09%20at%2013.01%201.png",
     "logo": "https://logo.clearbit.com/teleprompter.com",
@@ -32279,6 +32440,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://teleprompterapps.com",
     "ogImageUrl": "https://teleprompterpro.com/_astro/Teleprompter_Pro_App.Bbim0slF_1bCpTP.webp",
     "logo": "https://logo.clearbit.com/teleprompterapps.com",
@@ -32348,6 +32510,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://templates.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/templates.jpg",
     "logo": "https://logo.clearbit.com/templates.com",
@@ -32377,6 +32540,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://templatesugc.com",
     "logo": "https://logo.clearbit.com/templatesugc.com",
     "tool_type": "specialise",
@@ -32402,6 +32566,7 @@
     "shortDescriptionEn": "Free GIF library, natively integrated into many messaging apps.",
     "pricing": "Gratuit, aucun coût.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://tenor.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tenor.jpg",
     "logo": "https://logo.clearbit.com/tenor.com",
@@ -32465,6 +32630,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://tezza.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tezza.jpg",
     "logo": "https://logo.clearbit.com/tezza.com",
@@ -32650,6 +32816,7 @@
     "shortDescriptionEn": "Optimized checkout and sales page to maximize conversion and average order value.",
     "pricing": "Licence à vie à partir de ~495$ (paiement unique, pas d'abonnement mensuel).",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://thrivecart.com",
     "ogImageUrl": "https://storage.googleapis.com/gpt-engineer-file-uploads/49cdxNi1aDXXyTY0oGi34nZe2kB2/social-images/social-1775842330750-Screenshot_(20).webp",
     "logo": "https://logo.clearbit.com/thrivecart.com",
@@ -32766,6 +32933,7 @@
       "paid": "Monétisation via le Creator Rewards Program (rémunération aux vues qualifiées, ~0,40-1$/1000 vues) ; budget publicitaire libre via TikTok Ads"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://tiktok.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok.jpg",
     "logo": "https://logo.clearbit.com/tiktok.com",
@@ -32795,6 +32963,7 @@
     "shortDescriptionEn": "TikTok's advertising platform to target a younger audience with native video formats.",
     "pricing": "Budget minimum de campagne autour de 20$/jour ; coût par clic variable selon la niche.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://ads.tiktok.com",
     "ogImageUrl": "https://lf-tt4b.tiktokcdn.com/obj/i18nblog/tt4b_cms/en-US/tipdilz7wysq-srIVh0sEyaoSgFa9SKZFU.png",
     "logo": "https://logo.clearbit.com/ads.tiktok.com",
@@ -32825,6 +32994,7 @@
     "shortDescriptionEn": "TikTok's desktop app to manage your channel, analytics, and publish content.",
     "pricing": "Gratuit, fourni par TikTok.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://tiktok.com/tiktok-studio",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok-studio.jpg",
     "logo": "https://logo.clearbit.com/tiktok.com",
@@ -33021,6 +33191,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.tomorro.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/62a7039ea5539a072aa2c5d0/67069f030afd6c7c1c77b9c3_Thumbnail.png",
     "tool_type": "metier",
@@ -33051,6 +33222,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://topaz.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/topaz.jpg",
     "logo": "https://logo.clearbit.com/topaz.com",
@@ -33590,6 +33762,7 @@
     "shortDescriptionEn": "YouTube SEO optimization extension: keywords, thumbnails, A/B testing.",
     "pricing": "Plan gratuit limité ; plans payants à partir de ~4,5$/mois.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://tubebuddy.com",
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
     "logo": "https://logo.clearbit.com/tubebuddy.com",
@@ -33722,6 +33895,7 @@
       "paid": "Pas d'abonnement Twitch pour streamer. La monétisation se débloque par statut : Affiliate (automatique dès les seuils atteints) puis Partner (sur validation manuelle), avec un partage de revenus sur les abonnements et les bits."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://twitch.tv",
     "ogImageUrl": "https://static-cdn.jtvnw.net/ttv-static-metadata/twitch_logo3.jpg",
     "logo": "https://logo.clearbit.com/twitch.tv",
@@ -33755,6 +33929,7 @@
       "paid": ""
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://twitch.tv",
     "ogImageUrl": "https://static-cdn.jtvnw.net/ttv-static-metadata/twitch_logo3.jpg",
     "logo": "https://logo.clearbit.com/twitch.tv",
@@ -34013,6 +34188,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.ukg.com/solutions/ukg-pro",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ukg-pro.jpg",
     "tool_type": "metier",
@@ -34099,6 +34275,7 @@
     "shortDescriptionEn": "Minimalist-design Instagram story template app for creators and brands.",
     "pricing": "Gratuit avec templates de base ; Pro à partir de ~3€/mois pour le catalogue complet.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://unfold.com",
     "ogImageUrl": "https://static1.squarespace.com/static/5e3ae1048e80ab4164765fae/t/5e6e61748afded74f5455b6c/1584292215045/futurebelongs.jpg?format=1500w",
     "logo": "https://logo.clearbit.com/unfold.com",
@@ -34131,6 +34308,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.unit4.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/unit4.jpg",
     "tool_type": "metier",
@@ -34318,6 +34496,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://utmbuilders.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/utm-builders.jpg",
     "logo": "https://logo.clearbit.com/utmbuilders.com",
@@ -34454,6 +34633,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.vanta.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/64009032676f24f376f002fc/693c66c494e0178e6fae41c8_OG_default.jpg",
     "tool_type": "metier",
@@ -35273,6 +35453,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://webflowframer.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/webflow-framer.jpg",
     "logo": "https://logo.clearbit.com/webflowframer.com",
@@ -35303,6 +35484,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://webhooks.fyi",
     "ogImageUrl": "/banner.png",
     "logo": "https://logo.clearbit.com/webhooks.fyi",
@@ -35392,6 +35574,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://weezevent.com",
     "ogImageUrl": "https://weezevent.com/opengraph.jpg",
     "logo": "https://logo.clearbit.com/weezevent.com",
@@ -35489,6 +35672,7 @@
     "shortDescriptionEn": "Business messaging to reach clients on the channel they already use.",
     "pricing": "App gratuite pour l'essentiel ; l'API WhatsApp Business (pour l'automatisation à volume) est facturée par conversation selon le pays.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://whatsappbusiness.com",
     "ogImageUrl": "https://whatsappbusiness.com/wp-content/uploads/2026/04/whatsapp-logo.jpg",
     "logo": "https://logo.clearbit.com/whatsappbusiness.com",
@@ -35967,6 +36151,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.workday.com/en-us/products/financial-management/overview.html",
     "ogImageUrl": "https://www.workday.com/content/dam/web/en-us/images/social/workday-og-theme.png",
     "tool_type": "metier",
@@ -35997,6 +36182,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.workday.com/en-us/products/human-capital-management/overview.html",
     "ogImageUrl": "https://www.workday.com/content/dam/web/en-us/images/social/workday-og-theme.png",
     "tool_type": "metier",
@@ -36027,6 +36213,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://workouttemplates.com",
     "ogImageUrl": "https://img1.wsimg.com/isteam/getty/2155448017",
     "logo": "https://logo.clearbit.com/workouttemplates.com",
@@ -36180,6 +36367,7 @@
     "shortDescriptionEn": "Real-time public conversation social network, free, with an optional Premium subscription.",
     "pricing": "Gratuit ; Premium dès 3$/mois (Basic), 8$/mois (Premium), 40$/mois (Premium+, sans pub et accès Grok étendu).",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://x.com",
     "ogImageUrl": "https://abs.twimg.com/rweb/ssr/default/v2/og/image.png",
     "logo": "https://logo.clearbit.com/x.com",
@@ -36373,6 +36561,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://youtube.com",
     "ogImageUrl": "https://www.youtube.com/img/desktop/yt_1200.png",
     "logo": "https://logo.clearbit.com/youtube.com",
@@ -36402,6 +36591,7 @@
       "paid": "Pas de version payante de YouTube Studio lui-même. La monétisation (Partner Program) dépend de seuils d'audience, pas d'un paiement."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://studio.youtube.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/youtube-studio.jpg",
     "logo": "https://logo.clearbit.com/studio.youtube.com",
@@ -36479,6 +36669,7 @@
       "paid": "Sur devis / selon usage"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://zapiermake.com",
     "ogImageUrl": "https://res.cloudinary.com/zapier-media/image/upload/q_auto/f_auto/v1776210705/Governance/og-image-homepage_mskeaq.png",
     "logo": "https://logo.clearbit.com/zapiermake.com",
@@ -36612,6 +36803,7 @@
       "paid": "Sur devis / prix non public"
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://zelt.app",
     "ogImageUrl": "https://zelt.app/wp-content/uploads/2023/04/www.zelt.app-homepage-cover2-1024x535.png",
     "tool_type": "metier",
@@ -36823,6 +37015,7 @@
     "shortDescriptionEn": "Free, open-source bibliographic reference manager for academic research.",
     "pricing": "Gratuit, stockage cloud limité gratuit puis payant au-delà.",
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://zotero.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/zotero.jpg",
     "logo": "https://logo.clearbit.com/zotero.com",

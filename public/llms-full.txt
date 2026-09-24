@@ -1175,7 +1175,7 @@
     "url_en": "https://tooltrim.com/en/tool/ashby",
     "website": "https://ashbyhq.com",
     "category": "hris-payroll",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 343.5,
     "pricing": {
       "free": "Pas de palier gratuit ; tarification entreprise sur devis, à partir d'un ticket d'entrée élevé.",
       "paid": "Foundations, jusqu'à 100 employés: 400 $/mois; réduction de 10 % possible avec engagement annuel ; Plus, 101 à 1 000 employés: Sur devis ; Enterprise, plus de 1 000 employés: Sur devis"
@@ -1205,7 +1205,7 @@
     "url_en": "https://tooltrim.com/en/tool/attio",
     "website": "https://attio.com",
     "category": "crm",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 39,
     "pricing": {
       "free": "Gratuit jusqu'à 3 sièges, avec automatisations et types d'objets limités.",
       "paid": "Free: 0 $/utilisateur/mois ; Plus: 44 $ mensuel ou 35 $/utilisateur/mois annuel ; Pro: 99 $ mensuel ou 79 $/utilisateur/mois annuel ; Enterprise: Sur devis, facturation annuelle"
@@ -1295,7 +1295,7 @@
     "url_en": "https://tooltrim.com/en/tool/authoredup",
     "website": "https://authoredup.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 17.13,
     "pricing": "Plan gratuit limité ; Pro à partir de ~9€/mois.",
     "description_fr": "Outil de rédaction et de planification de posts LinkedIn avec aperçu de mise en forme.",
     "description_en": "LinkedIn post writing and scheduling tool with formatting preview."
@@ -1529,7 +1529,7 @@
     "url_en": "https://tooltrim.com/en/tool/bamboohr",
     "website": "https://bamboohr.com",
     "category": "hris-payroll",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 214.68,
     "pricing": {
       "free": "Aucun plan gratuit permanent annoncé.",
       "paid": "Core: À partir de 10 $/employé/mois ; Pro: À partir de 17 $/employé/mois ; Elite: À partir de 25 $/employé/mois ; 25 employés ou moins: Forfait à partir de 250 $/mois"
@@ -2050,7 +2050,7 @@
     "url_en": "https://tooltrim.com/en/tool/bubble",
     "website": "https://bubble.io",
     "category": "nocode-web",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 50.67,
     "pricing": "Gratuit pour tester ; plans payants à partir de ~32$/mois pour un projet en production.",
     "description_fr": "Outil no-code pour construire une vraie application web avec base de données et logique métier.",
     "description_en": "No-code tool to build a real web application with database and business logic."
@@ -2460,7 +2460,7 @@
     "url_en": "https://tooltrim.com/en/tool/captions",
     "website": "https://captions.ai",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 21.46,
     "pricing": "Plan gratuit limité ; Pro à partir de ~10$/mois.",
     "description_fr": "App de montage vidéo IA-native : sous-titres, doublage et correction de regard automatiques.",
     "description_en": "AI-native video editing app: automatic captions, dubbing, and eye-contact correction."
@@ -2787,7 +2787,7 @@
     "url_en": "https://tooltrim.com/en/tool/clay",
     "website": "https://clay.com",
     "category": "email-productivity",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 158.87,
     "pricing": "À partir de ~149$/mois selon le volume de crédits d'enrichissement.",
     "description_fr": "Plateforme d'enrichissement de données et de prospection IA, agrège des dizaines de sources.",
     "description_en": "Data enrichment and AI prospecting platform, aggregating dozens of sources."
@@ -3966,7 +3966,7 @@
     "url_en": "https://tooltrim.com/en/tool/docusign",
     "website": "https://www.docusign.com",
     "category": "legal-contracts",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 8.59,
     "pricing": {
       "free": "Essai gratuit ; pas de version gratuite permanente. Accès free trial 30 jours.",
       "paid": "Personal: À partir de 10€/mois annualisé (15€ mensuel) - 5 enveloppes/mois ; Standard: 25€/user/mois annualisé (45€ mensuel) - 100 enveloppes/an ; Business Pro: 40€/user/mois annualisé (65€ mensuel) - 100 enveloppes/an + bulk send ; Enterprise: Prix personnalisé - tous les features avancés"
@@ -5580,7 +5580,7 @@
     "url_en": "https://tooltrim.com/en/tool/gempages",
     "website": "https://gempages.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 24.9,
     "pricing": "Plan gratuit limité ; plans payants à partir de ~29$/mois.",
     "description_fr": "Constructeur de pages drag-and-drop pour Shopify, pensé pour la conversion.",
     "description_en": "Drag-and-drop page builder for Shopify, designed for conversion."
@@ -6087,7 +6087,7 @@
     "url_en": "https://tooltrim.com/en/tool/google-workspace",
     "website": "https://workspace.google.com",
     "category": "hris-payroll",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 8.1,
     "pricing": {
       "free": "Pas de forfait Business gratuit permanent. Un essai est proposé depuis la page officielle.",
       "paid": "Business Starter: 7 USD par utilisateur et par mois avec engagement annuel ; Business Standard: 14 USD par utilisateur et par mois avec engagement annuel ; Business Plus: 22 USD par utilisateur et par mois avec engagement annuel ; Enterprise: Sur devis"
@@ -6436,7 +6436,7 @@
     "url_en": "https://tooltrim.com/en/tool/headliner",
     "website": "https://headliner.app",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 8.58,
     "pricing": "Plan gratuit limité ; plans payants à partir de ~8$/mois.",
     "description_fr": "Transforme un fichier audio (podcast) en vidéo avec sous-titres pour les réseaux sociaux.",
     "description_en": "Turns an audio file (podcast) into a video with captions for social media."
@@ -6685,7 +6685,7 @@
     "url_en": "https://tooltrim.com/en/tool/hubspot",
     "website": "https://hubspot.com",
     "category": "crm",
-    "monthly_price_eur": 17.52,
+    "monthly_price_eur": 8.59,
     "pricing": {
       "free": "CRM de base gratuit",
       "paid": "Starter à partir de 20$/siège/mois (promos fréquentes à 9-15$ la 1ère année) ; Professional et Enterprise sur devis selon les hubs"
@@ -6789,7 +6789,7 @@
     "url_en": "https://tooltrim.com/en/tool/icons8",
     "website": "https://icons8.com",
     "category": "design-tools",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 12.88,
     "pricing": "Gratuit avec attribution ; Premium à partir de ~9€/mois pour un usage sans attribution.",
     "description_fr": "Bibliothèque d'icônes, illustrations et photos avec des outils IA de retouche intégrés.",
     "description_en": "Library of icons, illustrations, and photos with built-in AI editing tools."
@@ -7008,7 +7008,7 @@
     "url_en": "https://tooltrim.com/en/tool/instantly",
     "website": "https://instantly.com",
     "category": "project-management",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 40.36,
     "pricing": {
       "free": "Pas de palier gratuit permanent ; abonnement selon volume d'emails et de contacts.",
       "paid": "Growth: 47 $/mois (37,60 $ en annuel), 5 000 emails/mois, 1 000 contacts ; Hypergrowth: 97 $/mois (77,60 $ en annuel), 100 000 emails/mois, 25 000 contacts, comptes illimités"
@@ -7274,7 +7274,7 @@
     "url_en": "https://tooltrim.com/en/tool/judge-me",
     "website": "https://judgeme.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 12.88,
     "pricing": "Plan gratuit disponible (limité) ; Pro à partir de ~15$/mois.",
     "description_fr": "Application d'avis clients pour Shopify, alternative économique aux solutions premium.",
     "description_en": "Customer review app for Shopify, an affordable alternative to premium solutions."
@@ -8226,7 +8226,7 @@
     "url_en": "https://tooltrim.com/en/tool/linktree",
     "website": "https://linktr.ee",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 6,
     "pricing": "Gratuit pour l'essentiel ; Pro à partir de ~5$/mois pour l'analytics avancé et la personnalisation.",
     "description_fr": "Page \"link in bio\" pour centraliser tous ses liens importants en un seul endroit.",
     "description_en": "\"Link in bio\" page to centralize all your important links in one place."
@@ -8752,7 +8752,7 @@
     "url_en": "https://tooltrim.com/en/tool/mailerlite",
     "website": "https://mailerlite.com",
     "category": "email-productivity",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 10.3,
     "pricing": "Gratuit jusqu'à 1000 contacts ; plans payants à partir de ~10€/mois au-delà.",
     "description_fr": "Email marketing simple et abordable, avec un plan gratuit généreux pour démarrer.",
     "description_en": "Simple, affordable email marketing, with a generous free plan to start."
@@ -9127,7 +9127,7 @@
     "url_en": "https://tooltrim.com/en/tool/memberful",
     "website": "https://memberful.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 42.08,
     "pricing": "Gratuit jusqu'à un certain volume ; commission de 4,9% à 10% selon le plan au-delà.",
     "description_fr": "Plateforme d'abonnement et de membership pour monétiser du contenu exclusif, intégrée à WordPress.",
     "description_en": "Subscription and membership platform to monetize exclusive content, integrated with WordPress."
@@ -9241,7 +9241,7 @@
     "url_en": "https://tooltrim.com/en/tool/microsoft-365",
     "website": "https://www.microsoft.com/microsoft-365",
     "category": "productivity-tracking",
-    "monthly_price_eur": 7,
+    "monthly_price_eur": 10,
     "pricing": {
       "free": "Aucune offre gratuite complète (Office en ligne limité)",
       "paid": "Personal à 6,99$/mois (69,99$/an) ; Family (jusqu'à 6 personnes) à 129,99$/an"
@@ -9349,7 +9349,7 @@
     "url_en": "https://tooltrim.com/en/tool/microsoft-entra-id",
     "website": "https://www.microsoft.com/security/business/identity-access/microsoft-entra-id",
     "category": "security",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 6.01,
     "pricing": {
       "free": "Entra ID Free, Inclus avec Microsoft Cloud (Azure, Microsoft 365). Authentification multifacteur, SSO illimité, rapports basiques, changement autogéré de mot de passe.",
       "paid": "Microsoft Entra ID Free: Gratuit (inclus Microsoft Cloud) ; Microsoft Entra ID P1: $6–7/utilisateur/mois (engagement annuel) ; Microsoft Entra ID P2: $9–10/utilisateur/mois (engagement annuel) ; Microsoft Entra Suite: $12/utilisateur/mois (engagement annuel, nécessite P1) ; Internet Access / Private Access (standalone): $5/utilisateur/mois chacun ; ID Governance (standalone): $7/utilisateur/mois ; Workload ID (standalone): $3/workload/mois"
@@ -10249,7 +10249,7 @@
     "url_en": "https://tooltrim.com/en/tool/okta",
     "website": "https://www.okta.com",
     "category": "security",
-    "monthly_price_eur": 2,
+    "monthly_price_eur": 5.15,
     "pricing": {
       "free": "Aucun plan gratuit.",
       "paid": "Workforce Identity à partir d'environ 2$/utilisateur/mois (SSO basique), 6-15$/utilisateur/mois pour les plans avec authentification multi-facteur avancée et gestion du cycle de vie."
@@ -10444,7 +10444,7 @@
     "url_en": "https://tooltrim.com/en/tool/opusclip",
     "website": "https://opus.pro",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 12.88,
     "pricing": "Plan gratuit limité ; plans payants à partir de ~15$/mois selon le volume de minutes traitées.",
     "description_fr": "Transforme automatiquement une longue vidéo en plusieurs clips courts viraux pour TikTok, Reels et Shorts.",
     "description_en": "Automatically turns a long video into several viral short clips for TikTok, Reels, and Shorts."
@@ -10489,7 +10489,7 @@
     "url_en": "https://tooltrim.com/en/tool/otter",
     "website": "https://otter.com",
     "category": "ai-general",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 11.67,
     "pricing": "Plan gratuit limité (minutes/mois) ; plans payants à partir de ~10$/mois.",
     "description_fr": "Transcription et résumé de réunion en temps réel par IA, l'un des pionniers du marché.",
     "description_en": "Real-time AI meeting transcription and summary, one of the market's pioneers."
@@ -10771,7 +10771,7 @@
     "url_en": "https://tooltrim.com/en/tool/pandadoc",
     "website": "https://pandadoc.com",
     "category": "legal-contracts",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 16.32,
     "pricing": "À partir de ~19€/mois par utilisateur (plan Essentials avec signature électronique).",
     "description_fr": "Création, envoi et signature électronique de devis, propositions et contrats.",
     "description_en": "Create, send, and electronically sign quotes, proposals, and contracts."
@@ -10912,7 +10912,7 @@
     "url_en": "https://tooltrim.com/en/tool/pennylane",
     "website": "https://pennylane.com",
     "category": "finance",
-    "monthly_price_eur": 14,
+    "monthly_price_eur": 7,
     "pricing": {
       "free": "Non communiqué",
       "paid": "Basique dès 14€/mois (indépendant) ; Essentiel dès 24€/mois ; Premium dès 79€/mois (selon nombre d'utilisateurs et de factures)"
@@ -11629,7 +11629,7 @@
     "url_en": "https://tooltrim.com/en/tool/pretty-links",
     "website": "https://prettylinks.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 17.82,
     "pricing": "Version gratuite disponible ; Pro à partir de ~99$/an pour le suivi avancé.",
     "description_fr": "Plugin WordPress de raccourcissement et de suivi de liens, avec masquage pour l'affiliation.",
     "description_en": "WordPress link shortening and tracking plugin, with cloaking for affiliate use."
@@ -12308,7 +12308,7 @@
     "url_en": "https://tooltrim.com/en/tool/rankmath",
     "website": "https://rankmath.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 8.99,
     "pricing": "Version gratuite généreuse (suivi multi-mot-clé inclus) ; Pro à partir de ~59$/an.",
     "description_fr": "Plugin SEO WordPress, alternative à Yoast avec plus de fonctionnalités gratuites.",
     "description_en": "WordPress SEO plugin, an alternative to Yoast with more free features."
@@ -12428,7 +12428,7 @@
     "url_en": "https://tooltrim.com/en/tool/readwise",
     "website": "https://readwise.com",
     "category": "project-management",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 4.8,
     "pricing": {
       "free": "Essai gratuit de 30 jours ; abonnement requis ensuite. Réduction 50 % étudiants/universitaires.",
       "paid": "Readwise Lite: 5,59 $/mois (annuel), révision des surlignages, sans l'app Reader ; Readwise (complet): 9,99 $/mois (annuel), 12,99 $ en mensuel, inclut l'app Reader et les exports"
@@ -12800,7 +12800,7 @@
     "url_en": "https://tooltrim.com/en/tool/repurpose-io",
     "website": "https://repurposeio.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 30.06,
     "pricing": "À partir de ~15$/mois selon le nombre d'automatisations.",
     "description_fr": "Automatise la republication de contenu d'un format vers d'autres plateformes sociales.",
     "description_en": "Automates republishing content from one format to other social platforms."
@@ -12974,7 +12974,7 @@
     "url_en": "https://tooltrim.com/en/tool/rewardful",
     "website": "https://rewardful.com",
     "category": "finance",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 42.08,
     "pricing": "À partir de ~49$/mois selon le volume de revenus suivis.",
     "description_fr": "Logiciel de gestion d'affiliation pour SaaS, intégré à Stripe.",
     "description_en": "Affiliate management software for SaaS, integrated with Stripe."
@@ -14565,7 +14565,7 @@
     "url_en": "https://tooltrim.com/en/tool/stan-store",
     "website": "https://stan.store",
     "category": "finance",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 24.9,
     "pricing": "À partir de ~29$/mois (pas de plan gratuit permanent, essai disponible).",
     "description_fr": "Boutique \"link in bio\" pour vendre des produits digitaux, coaching ou formations directement depuis les réseaux sociaux.",
     "description_en": "\"Link in bio\" store to sell digital products, coaching, or courses directly from social media."
@@ -14637,7 +14637,7 @@
     "url_en": "https://tooltrim.com/en/tool/storyblocks",
     "website": "https://storyblocks.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 18,
     "pricing": "À partir de ~15€/mois en abonnement annuel pour un accès illimité.",
     "description_fr": "Vidéos, musiques et images stock en abonnement illimité pour la production de contenu.",
     "description_en": "Unlimited subscription stock video, music, and images for content production."
@@ -14724,7 +14724,7 @@
     "url_en": "https://tooltrim.com/en/tool/streamlabs",
     "website": "https://streamlabs.com",
     "category": "communication",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 23.19,
     "pricing": {
       "free": "Gratuit : capture, overlays de base, alertes, chat intégré.",
       "paid": "Prime 19$/mois (149$/an, ~12,42$/mois) : thèmes premium, sans marque Streamlabs, sons d'alerte illimités. Ultra 27$/mois pour les outils d'équipe et de monétisation avancés."
@@ -14775,7 +14775,7 @@
     "url_en": "https://tooltrim.com/en/tool/submagic",
     "website": "https://submagic.co",
     "category": "creation",
-    "monthly_price_eur": 18,
+    "monthly_price_eur": 16.32,
     "pricing": "À partir de ~18€/mois selon le volume de minutes traitées.",
     "description_fr": "Génère automatiquement des sous-titres animés et stylés pour vidéos courtes.",
     "description_en": "Automatically generates animated, styled captions for short videos."
@@ -15103,7 +15103,7 @@
     "url_en": "https://tooltrim.com/en/tool/systeme-io",
     "website": "https://systeme.io",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 14.6,
     "pricing": "Plan gratuit disponible (limité) ; plans payants à partir de ~27€/mois.",
     "description_fr": "Plateforme tout-en-un pour vendre en ligne : tunnels de vente, email marketing et formations.",
     "description_en": "All-in-one platform to sell online: sales funnels, email marketing, and courses."
@@ -15205,7 +15205,7 @@
     "url_en": "https://tooltrim.com/en/tool/taplio",
     "website": "https://taplio.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 33.49,
     "pricing": "À partir de ~39$/mois selon les fonctionnalités.",
     "description_fr": "Outil IA pour créer du contenu LinkedIn et faire grandir sa présence professionnelle.",
     "description_en": "AI tool to create LinkedIn content and grow your professional presence."
@@ -15442,7 +15442,7 @@
     "url_en": "https://tooltrim.com/en/tool/thirstyaffiliates",
     "website": "https://thirstyaffiliates.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 17.82,
     "pricing": "Version gratuite disponible ; Pro à partir de ~49$/an pour le suivi avancé.",
     "description_fr": "Plugin WordPress pour gérer et masquer des liens d'affiliation, avec suivi des clics.",
     "description_en": "WordPress plugin to manage and cloak affiliate links, with click tracking."
@@ -15766,7 +15766,7 @@
     "url_en": "https://tooltrim.com/en/tool/tradingview",
     "website": "https://tradingview.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 11.12,
     "pricing": "Version gratuite disponible ; plans payants à partir de ~13€/mois pour plus d'indicateurs et d'alertes.",
     "description_fr": "Plateforme de graphiques boursiers et d'analyse technique en temps réel, avec une communauté de traders.",
     "description_en": "Real-time stock charting and technical analysis platform, with a trading community."
@@ -15778,7 +15778,7 @@
     "url_en": "https://tooltrim.com/en/tool/trainerize",
     "website": "https://trainerize.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 7.73,
     "pricing": "À partir de ~5$/mois par client actif, selon le plan.",
     "description_fr": "Application de coaching fitness à distance pour gérer ses clients et leurs programmes d'entraînement.",
     "description_en": "Remote fitness coaching app to manage clients and their training programs."
@@ -15898,7 +15898,7 @@
     "url_en": "https://tooltrim.com/en/tool/truecoach",
     "website": "https://truecoach.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 22.62,
     "pricing": "À partir de ~5$/mois par client actif, selon le plan.",
     "description_fr": "Application de coaching fitness à distance, alternative à Trainerize.",
     "description_en": "Remote fitness coaching app, an alternative to Trainerize."
@@ -16450,7 +16450,7 @@
     "url_en": "https://tooltrim.com/en/tool/vidyard",
     "website": "https://vidyard.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 50.67,
     "pricing": "Plan gratuit limité ; plans payants à partir de ~15$/mois par utilisateur.",
     "description_fr": "Hébergement vidéo pour les équipes commerciales, avec suivi d'engagement par prospect.",
     "description_en": "Video hosting for sales teams, with per-prospect engagement tracking."
@@ -16907,7 +16907,7 @@
     "url_en": "https://tooltrim.com/en/tool/wistia",
     "website": "https://wistia.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 67.84,
     "pricing": "Plan gratuit limité ; plans payants à partir de ~19€/mois selon le nombre de vidéos.",
     "description_fr": "Hébergement vidéo professionnel pour le marketing B2B, avec analytics d'engagement détaillés.",
     "description_en": "Professional video hosting for B2B marketing, with detailed engagement analytics."
@@ -17183,7 +17183,7 @@
     "url_en": "https://tooltrim.com/en/tool/xero",
     "website": "https://xero.com",
     "category": "finance",
-    "monthly_price_eur": 21.9,
+    "monthly_price_eur": 21.47,
     "pricing": {
       "free": "Essai gratuit 30 jours",
       "paid": "Early à 25$/mois, Growing à 55$/mois, Established à 90$/mois (facturation mensuelle uniquement aux US depuis mars 2026)"
@@ -17198,7 +17198,7 @@
     "url_en": "https://tooltrim.com/en/tool/yoast",
     "website": "https://yoast.com",
     "category": "creation",
-    "monthly_price_eur": 0,
+    "monthly_price_eur": 9.9,
     "pricing": "Version gratuite très complète ; Premium à partir de ~99$/an pour le suivi multi-mot-clé et les redirections.",
     "description_fr": "Plugin SEO le plus utilisé sur WordPress pour optimiser titres, métas et structure de contenu.",
     "description_en": "The most widely used SEO plugin on WordPress to optimize titles, meta tags, and content structure."
