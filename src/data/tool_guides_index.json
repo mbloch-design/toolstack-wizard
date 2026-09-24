@@ -683,18 +683,19 @@
           "slug": "freshservice",
           "name": "Freshservice",
           "hasPricing": true,
-          "logo": "https://logo.clearbit.com/freshworks.com"
+          "websiteUrl": "https://freshworks.com/freshservice"
         },
         {
           "slug": "snipe-it",
           "name": "Snipe IT",
           "hasPricing": true,
-          "logo": "https://logo.clearbit.com/snipeitapp.com"
+          "websiteUrl": "https://snipeitapp.com"
         },
         {
           "slug": "deskpro",
           "name": "Deskpro",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://deskpro.com"
         }
       ],
       "related": [
@@ -705,7 +706,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -715,7 +717,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -726,7 +729,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -736,7 +740,8 @@
         {
           "slug": "adobe-podcast-ai",
           "name": "Adobe Podcast AI",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://podcast.adobe.com"
         }
       ],
       "related": []
@@ -759,7 +764,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -814,7 +820,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -824,7 +831,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -840,7 +848,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -921,7 +930,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -931,7 +941,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -942,7 +953,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -964,7 +976,8 @@
         {
           "slug": "indy",
           "name": "Indy",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://indy.fr"
         },
         {
           "slug": "pennylane",
@@ -981,7 +994,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -1004,7 +1018,8 @@
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         }
       ],
       "related": [
@@ -1016,7 +1031,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -1038,17 +1054,20 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         },
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "gemini",
           "name": "Gemini",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://gemini.google.com"
         }
       ],
       "related": [
@@ -1060,7 +1079,8 @@
           "tool": {
             "slug": "claude",
             "name": "Claude",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://claude.com/"
           }
         },
         {
@@ -1070,7 +1090,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -1081,7 +1102,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -1091,12 +1113,14 @@
         {
           "slug": "loom",
           "name": "Loom",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://loom.com"
         },
         {
           "slug": "tella",
           "name": "Tella",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://www.tella.tv"
         }
       ],
       "related": [
@@ -1107,7 +1131,8 @@
           "tool": {
             "slug": "loom",
             "name": "Loom",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://loom.com"
           }
         },
         {
@@ -1126,7 +1151,7 @@
             "slug": "freshservice",
             "name": "Freshservice",
             "hasPricing": true,
-            "logo": "https://logo.clearbit.com/freshworks.com"
+            "websiteUrl": "https://freshworks.com/freshservice"
           }
         }
       ]
@@ -1136,12 +1161,14 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         },
         {
           "slug": "make",
           "name": "Make",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://make.com"
         },
         {
           "slug": "fathom",
@@ -1166,7 +1193,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -1183,12 +1211,14 @@
         {
           "slug": "zapier",
           "name": "Zapier",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://zapier.com"
         },
         {
           "slug": "make",
           "name": "Make",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://make.com"
         },
         {
           "slug": "n8n",
@@ -1220,7 +1250,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -1230,12 +1261,14 @@
         {
           "slug": "zapier",
           "name": "Zapier",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://zapier.com"
         },
         {
           "slug": "make",
           "name": "Make",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://make.com"
         }
       ],
       "related": [
@@ -1247,7 +1280,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -1265,7 +1299,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -1275,12 +1310,14 @@
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         }
       ],
       "related": [
@@ -1292,7 +1329,8 @@
           "tool": {
             "slug": "claude",
             "name": "Claude",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://claude.com/"
           }
         },
         {
@@ -1302,7 +1340,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -1319,27 +1358,32 @@
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         },
         {
           "slug": "deepseek",
           "name": "DeepSeek",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://www.deepseek.com"
         },
         {
           "slug": "gemini",
           "name": "Gemini",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://gemini.google.com"
         },
         {
           "slug": "perplexity",
           "name": "Perplexity",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
         }
       ],
       "related": [
@@ -1350,7 +1394,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -1367,7 +1412,8 @@
           "tool": {
             "slug": "perplexity",
             "name": "Perplexity",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://perplexity.ai"
           }
         }
       ]
@@ -1377,32 +1423,38 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         },
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "midjourney",
           "name": "Midjourney",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://midjourney.com"
         },
         {
           "slug": "perplexity",
           "name": "Perplexity",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
         },
         {
           "slug": "canva",
           "name": "Canva",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
         },
         {
           "slug": "elevenlabs",
           "name": "ElevenLabs",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://elevenlabs.io"
         }
       ],
       "related": [
@@ -1414,7 +1466,8 @@
           "tool": {
             "slug": "claude",
             "name": "Claude",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://claude.com/"
           }
         },
         {
@@ -1424,7 +1477,8 @@
           "tool": {
             "slug": "perplexity",
             "name": "Perplexity",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://perplexity.ai"
           }
         },
         {
@@ -1434,7 +1488,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -1444,7 +1499,8 @@
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         }
       ],
       "related": []
@@ -1454,7 +1510,8 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         }
       ],
       "related": []
@@ -1469,7 +1526,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1479,7 +1537,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -1489,7 +1548,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         }
       ]
@@ -1499,7 +1559,8 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         }
       ],
       "related": [
@@ -1510,7 +1571,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -1520,7 +1582,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -1530,7 +1593,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -1540,7 +1604,8 @@
         {
           "slug": "calendly",
           "name": "Calendly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://calendly.com"
         }
       ],
       "related": [
@@ -1551,7 +1616,8 @@
           "tool": {
             "slug": "loom",
             "name": "Loom",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://loom.com"
           }
         },
         {
@@ -1561,7 +1627,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1571,7 +1638,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         }
       ]
@@ -1581,7 +1649,8 @@
         {
           "slug": "canva",
           "name": "Canva",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
         }
       ],
       "related": [
@@ -1592,7 +1661,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -1602,7 +1672,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1612,7 +1683,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         }
       ]
@@ -1622,7 +1694,8 @@
         {
           "slug": "loom",
           "name": "Loom",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://loom.com"
         }
       ],
       "related": [
@@ -1633,7 +1706,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -1643,7 +1717,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1653,7 +1728,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         }
       ]
@@ -1663,7 +1739,8 @@
         {
           "slug": "stripe",
           "name": "Stripe",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://stripe.com"
         }
       ],
       "related": [
@@ -1674,7 +1751,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -1684,7 +1762,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1694,7 +1773,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         }
       ]
@@ -1704,7 +1784,8 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         }
       ],
       "related": [
@@ -1715,7 +1796,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1725,7 +1807,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -1735,7 +1818,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         }
       ]
@@ -1745,7 +1829,8 @@
         {
           "slug": "grammarly",
           "name": "Grammarly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://grammarly.com"
         }
       ],
       "related": [
@@ -1756,7 +1841,8 @@
           "tool": {
             "slug": "canva",
             "name": "Canva",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://canva.com"
           }
         },
         {
@@ -1766,7 +1852,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1776,7 +1863,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         }
       ]
@@ -1786,7 +1874,8 @@
         {
           "slug": "stripe",
           "name": "Stripe",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://stripe.com"
         }
       ],
       "related": [
@@ -1797,7 +1886,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -1807,7 +1897,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1817,7 +1908,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         }
       ]
@@ -1827,12 +1919,14 @@
         {
           "slug": "perplexity",
           "name": "Perplexity",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
         },
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         }
       ],
       "related": [
@@ -1843,7 +1937,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -1853,7 +1948,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -1863,7 +1959,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -1873,12 +1970,14 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         },
         {
           "slug": "obsidian",
           "name": "Obsidian",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://obsidian.md"
         }
       ],
       "related": [
@@ -1889,7 +1988,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -1905,7 +2005,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -1915,7 +2016,8 @@
         {
           "slug": "grammarly",
           "name": "Grammarly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://grammarly.com"
         },
         {
           "slug": "languagetool",
@@ -1932,7 +2034,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -1948,7 +2051,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -1958,7 +2062,8 @@
         {
           "slug": "toggl",
           "name": "Toggl Track",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://toggl.com"
         },
         {
           "slug": "clockify",
@@ -1981,7 +2086,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -1991,7 +2097,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -2001,7 +2108,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         }
       ]
@@ -2016,7 +2124,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -2026,7 +2135,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -2036,7 +2146,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         }
       ]
@@ -2046,12 +2157,14 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         },
         {
           "slug": "canva",
           "name": "Canva",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
         },
         {
           "slug": "clickup",
@@ -2068,7 +2181,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2078,7 +2192,8 @@
           "tool": {
             "slug": "canva",
             "name": "Canva",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://canva.com"
           }
         },
         {
@@ -2089,7 +2204,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -2099,7 +2215,8 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         }
       ],
       "related": [
@@ -2111,7 +2228,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2122,7 +2240,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2133,7 +2252,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -2143,17 +2263,20 @@
         {
           "slug": "zapier",
           "name": "Zapier",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://zapier.com"
         },
         {
           "slug": "make",
           "name": "Make",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://make.com"
         },
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         }
       ],
       "related": [
@@ -2165,7 +2288,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -2183,7 +2307,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -2193,12 +2318,14 @@
         {
           "slug": "zapier",
           "name": "Zapier",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://zapier.com"
         },
         {
           "slug": "make",
           "name": "Make",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://make.com"
         },
         {
           "slug": "n8n",
@@ -2217,7 +2344,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -2235,7 +2363,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -2246,18 +2375,19 @@
           "slug": "freshservice",
           "name": "Freshservice",
           "hasPricing": true,
-          "logo": "https://logo.clearbit.com/freshworks.com"
+          "websiteUrl": "https://freshworks.com/freshservice"
         },
         {
           "slug": "snipe-it",
           "name": "Snipe IT",
           "hasPricing": true,
-          "logo": "https://logo.clearbit.com/snipeitapp.com"
+          "websiteUrl": "https://snipeitapp.com"
         },
         {
           "slug": "deskpro",
           "name": "Deskpro",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://deskpro.com"
         }
       ],
       "related": [
@@ -2269,7 +2399,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -2280,7 +2411,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -2291,7 +2423,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -2301,7 +2434,8 @@
         {
           "slug": "adobe-podcast-ai",
           "name": "Adobe Podcast AI",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://podcast.adobe.com"
         }
       ],
       "related": []
@@ -2317,7 +2451,8 @@
         {
           "slug": "indy",
           "name": "Indy",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://indy.fr"
         },
         {
           "slug": "pennylane",
@@ -2335,7 +2470,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -2353,7 +2489,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -2363,7 +2500,8 @@
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         }
       ],
       "related": [
@@ -2375,7 +2513,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2386,7 +2525,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2434,7 +2574,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -2490,7 +2631,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -2501,7 +2643,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -2550,7 +2693,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -2568,7 +2712,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -2591,7 +2736,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -2602,7 +2748,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -2619,17 +2766,20 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         },
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "gemini",
           "name": "Gemini",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://gemini.google.com"
         }
       ],
       "related": [
@@ -2641,7 +2791,8 @@
           "tool": {
             "slug": "claude",
             "name": "Claude",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://claude.com/"
           }
         },
         {
@@ -2652,7 +2803,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2663,7 +2815,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -2673,7 +2826,8 @@
         {
           "slug": "grammarly",
           "name": "Grammarly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://grammarly.com"
         },
         {
           "slug": "languagetool",
@@ -2691,7 +2845,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -2702,7 +2857,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -2718,12 +2874,14 @@
         {
           "slug": "loom",
           "name": "Loom",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://loom.com"
         },
         {
           "slug": "tella",
           "name": "Tella",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://www.tella.tv"
         }
       ],
       "related": [
@@ -2735,7 +2893,8 @@
           "tool": {
             "slug": "loom",
             "name": "Loom",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://loom.com"
           }
         },
         {
@@ -2753,7 +2912,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -2763,12 +2923,14 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         },
         {
           "slug": "make",
           "name": "Make",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://make.com"
         },
         {
           "slug": "fathom",
@@ -2786,7 +2948,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         },
         {
@@ -2804,7 +2967,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -2814,27 +2978,32 @@
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         },
         {
           "slug": "deepseek",
           "name": "DeepSeek",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://www.deepseek.com"
         },
         {
           "slug": "gemini",
           "name": "Gemini",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://gemini.google.com"
         },
         {
           "slug": "perplexity",
           "name": "Perplexity",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
         }
       ],
       "related": [
@@ -2846,7 +3015,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2857,7 +3027,8 @@
           "tool": {
             "slug": "perplexity",
             "name": "Perplexity",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://perplexity.ai"
           }
         },
         {
@@ -2868,7 +3039,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -2878,32 +3050,38 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         },
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "midjourney",
           "name": "Midjourney",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://midjourney.com"
         },
         {
           "slug": "perplexity",
           "name": "Perplexity",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
         },
         {
           "slug": "canva",
           "name": "Canva",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
         },
         {
           "slug": "elevenlabs",
           "name": "ElevenLabs",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://elevenlabs.io"
         }
       ],
       "related": [
@@ -2915,7 +3093,8 @@
           "tool": {
             "slug": "claude",
             "name": "Claude",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://claude.com/"
           }
         },
         {
@@ -2926,7 +3105,8 @@
           "tool": {
             "slug": "perplexity",
             "name": "Perplexity",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://perplexity.ai"
           }
         },
         {
@@ -2937,7 +3117,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -2947,7 +3128,8 @@
         {
           "slug": "claude",
           "name": "Claude",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://claude.com/"
         },
         {
           "slug": "anthropic",
@@ -2965,7 +3147,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2976,7 +3159,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -2993,7 +3177,8 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         }
       ],
       "related": [
@@ -3005,7 +3190,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3023,7 +3209,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]
@@ -3039,7 +3226,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -3050,7 +3238,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3061,7 +3250,8 @@
           "tool": {
             "slug": "loom",
             "name": "Loom",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://loom.com"
           }
         }
       ]
@@ -3071,7 +3261,8 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         }
       ],
       "related": [
@@ -3083,7 +3274,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3094,7 +3286,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3105,7 +3298,8 @@
           "tool": {
             "slug": "canva",
             "name": "Canva",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://canva.com"
           }
         }
       ]
@@ -3115,7 +3309,8 @@
         {
           "slug": "calendly",
           "name": "Calendly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://calendly.com"
         }
       ],
       "related": [
@@ -3127,7 +3322,8 @@
           "tool": {
             "slug": "loom",
             "name": "Loom",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://loom.com"
           }
         },
         {
@@ -3138,7 +3334,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -3149,7 +3346,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -3159,7 +3357,8 @@
         {
           "slug": "canva",
           "name": "Canva",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
         }
       ],
       "related": [
@@ -3171,7 +3370,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3182,7 +3382,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3193,7 +3394,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -3203,7 +3405,8 @@
         {
           "slug": "loom",
           "name": "Loom",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://loom.com"
         }
       ],
       "related": [
@@ -3215,7 +3418,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -3226,7 +3430,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -3237,7 +3442,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         }
       ]
@@ -3247,7 +3453,8 @@
         {
           "slug": "stripe",
           "name": "Stripe",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://stripe.com"
         }
       ],
       "related": [
@@ -3259,7 +3466,8 @@
           "tool": {
             "slug": "calendly",
             "name": "Calendly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://calendly.com"
           }
         },
         {
@@ -3270,7 +3478,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -3281,7 +3490,8 @@
           "tool": {
             "slug": "loom",
             "name": "Loom",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://loom.com"
           }
         }
       ]
@@ -3291,7 +3501,8 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         }
       ],
       "related": [
@@ -3303,7 +3514,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3314,7 +3526,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3325,7 +3538,8 @@
           "tool": {
             "slug": "perplexity",
             "name": "Perplexity",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://perplexity.ai"
           }
         }
       ]
@@ -3335,7 +3549,8 @@
         {
           "slug": "grammarly",
           "name": "Grammarly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://grammarly.com"
         }
       ],
       "related": [
@@ -3347,7 +3562,8 @@
           "tool": {
             "slug": "canva",
             "name": "Canva",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://canva.com"
           }
         },
         {
@@ -3358,7 +3574,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3369,7 +3586,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         }
       ]
@@ -3379,7 +3597,8 @@
         {
           "slug": "stripe",
           "name": "Stripe",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://stripe.com"
         }
       ],
       "related": [
@@ -3391,7 +3610,8 @@
           "tool": {
             "slug": "stripe",
             "name": "Stripe",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://stripe.com"
           }
         },
         {
@@ -3402,7 +3622,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3413,7 +3634,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -3423,12 +3645,14 @@
         {
           "slug": "perplexity",
           "name": "Perplexity",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
         },
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         }
       ],
       "related": [
@@ -3440,7 +3664,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -3451,7 +3676,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -3462,7 +3688,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -3472,12 +3699,14 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         },
         {
           "slug": "obsidian",
           "name": "Obsidian",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://obsidian.md"
         }
       ],
       "related": [
@@ -3489,7 +3718,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3506,7 +3736,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -3516,7 +3747,8 @@
         {
           "slug": "grammarly",
           "name": "Grammarly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://grammarly.com"
         },
         {
           "slug": "languagetool",
@@ -3534,7 +3766,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3545,7 +3778,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3561,7 +3795,8 @@
         {
           "slug": "toggl",
           "name": "Toggl Track",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://toggl.com"
         },
         {
           "slug": "clockify",
@@ -3585,7 +3820,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3596,7 +3832,8 @@
           "tool": {
             "slug": "notion",
             "name": "Notion",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://notion.so"
           }
         },
         {
@@ -3607,7 +3844,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -3617,7 +3855,8 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         }
       ],
       "related": []
@@ -3627,7 +3866,8 @@
         {
           "slug": "calendly",
           "name": "Calendly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://calendly.com"
         }
       ],
       "related": []
@@ -3637,7 +3877,8 @@
         {
           "slug": "chatgpt",
           "name": "ChatGPT",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
         }
       ],
       "related": []
@@ -3647,7 +3888,8 @@
         {
           "slug": "grammarly",
           "name": "Grammarly",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://grammarly.com"
         }
       ],
       "related": []
@@ -3657,7 +3899,8 @@
         {
           "slug": "stripe",
           "name": "Stripe",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://stripe.com"
         }
       ],
       "related": []
@@ -3677,7 +3920,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         },
         {
@@ -3694,7 +3938,8 @@
           "tool": {
             "slug": "grammarly",
             "name": "Grammarly",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://grammarly.com"
           }
         }
       ]
@@ -3704,12 +3949,14 @@
         {
           "slug": "notion",
           "name": "Notion",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://notion.so"
         },
         {
           "slug": "canva",
           "name": "Canva",
-          "hasPricing": true
+          "hasPricing": true,
+          "websiteUrl": "https://canva.com"
         },
         {
           "slug": "clickup",
@@ -3727,7 +3974,8 @@
           "tool": {
             "slug": "chatgpt",
             "name": "ChatGPT",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
           }
         },
         {
@@ -3738,7 +3986,8 @@
           "tool": {
             "slug": "canva",
             "name": "Canva",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://canva.com"
           }
         },
         {
@@ -3749,7 +3998,8 @@
           "tool": {
             "slug": "zapier",
             "name": "Zapier",
-            "hasPricing": true
+            "hasPricing": true,
+            "websiteUrl": "https://zapier.com"
           }
         }
       ]

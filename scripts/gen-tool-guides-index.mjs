@@ -95,13 +95,28 @@ for (const entry of Object.values(byTool)) {
  * Related guides share the most tags, freshest first on a tie. Both are
  * resolved here so the guide page stays free of runtime catalogue scans.
  */
-const toolCard = (tool) => ({
-  slug: tool.slug || tool.id,
-  name: tool.name,
-  hasPricing: priced.has(tool.slug || tool.id),
-  ...(tool.logo ? { logo: tool.logo } : {}),
-  ...(tool.websiteUrl ? { websiteUrl: tool.websiteUrl } : {}),
-});
+// The summaries index often lacks the website, and logo.clearbit.com is a
+// closed service: a cover tile built from either showed a bare initial.
+// Read the full catalogue for the site, drop Clearbit logos, and keep a tool
+// on a cover only when ToolLogo has something real to draw.
+const fullBySlug = new Map(
+  JSON.parse(readFileSync(resolve("src/data/tools_v4.json"), "utf8")).map((tool) => [tool.slug || tool.id, tool]),
+);
+const usableLogo = (logo) => (logo && !/clearbit\.com/.test(logo) ? logo : undefined);
+const validSite = (url) => (typeof url === "string" && /^https?:\/\/[^\s/]+\.[^\s/]+/.test(url) ? url : undefined);
+const toolCard = (tool) => {
+  const full = fullBySlug.get(tool.slug || tool.id) || {};
+  const logo = usableLogo(tool.logo) || usableLogo(full.logo);
+  const websiteUrl = validSite(tool.websiteUrl) || validSite(full.websiteUrl) || validSite(full.website_url) || validSite(full.affiliateLink);
+  return {
+    slug: tool.slug || tool.id,
+    name: tool.name,
+    hasPricing: priced.has(tool.slug || tool.id),
+    ...(logo ? { logo } : {}),
+    ...(websiteUrl ? { websiteUrl } : {}),
+  };
+};
+const drawable = (card) => Boolean(card.logo || card.websiteUrl);
 const guideExtras = {};
 const coveredTools = (post) => {
   const covered = [];
@@ -135,9 +150,9 @@ for (const lang of LANGUAGES) {
         ...(other.readTime ? { readTime: other.readTime } : {}),
         ...(other.category ? { category: other.category } : {}),
         // Stands in for a missing cover: the guide's lead tool.
-        ...(!other.thumbnail && coveredTools(other)[0] ? { tool: coveredTools(other)[0] } : {}),
+        ...(!other.thumbnail && coveredTools(other).find(drawable) ? { tool: coveredTools(other).find(drawable) } : {}),
       }));
-    guideExtras[`${lang}:${post.slug}`] = { tools: covered.slice(0, 6), related };
+    guideExtras[`${lang}:${post.slug}`] = { tools: covered.filter(drawable).slice(0, 6), related };
   }
 }
 

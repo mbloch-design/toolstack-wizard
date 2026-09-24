@@ -12,7 +12,7 @@ export function hasNonCanonicalSearchParams(params: URLSearchParams): boolean {
   return params.toString().length > 0;
 }
 
-const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
+export const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "loom-prix-alternatives": "loom-pricing-alternatives",
   "conseils-ia-freelances-2026": "ai-tips-freelancers-2026",
   "notion-gratuit-ou-payant": "notion-free-or-paid",

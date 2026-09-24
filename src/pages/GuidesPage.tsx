@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
+import type { Post } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, type CSSProperties } from "react";
-import { useArticleTools } from "@/hooks/useArticleTools";
-import { setSeoTags, cleanupSeo } from "@/lib/seo";
-import ToolCardImage from "@/components/tool/ToolCardImage";
+import { setSeoTags, cleanupSeo, GUIDE_SLUG_ALTERNATES } from "@/lib/seo";
+import GuideCover from "@/components/guide/GuideCover";
+import { getToolsForGuide } from "@/lib/toolGuides";
+import { localizeGuideCategory } from "@/lib/guideCategory";
+import { smartQuotes } from "@/lib/typography";
+import { fitBrandedTitle } from "@/lib/seoTitle";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Search, X } from "@/lib/icons";
 import { getGuidePosts } from "@/lib/guideCatalog";
@@ -47,9 +50,11 @@ const SORT_OPTIONS_EN = [
 
 const PAGE_SIZE = 9;
 const ENGLISH_PARITY_START_DATE = "2026-05-01";
-const ENGLISH_GUIDE_SLUGS: Record<string, string> = {
-  "adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026",
-};
+// Same pairing the hreflang tags use: a French guide with an English
+// counterpart under another slug is not "French only". The local one-entry
+// map listed Freshservice and Zapier/Make/n8n twice on the English index.
+const ENGLISH_GUIDE_SLUGS = GUIDE_SLUG_ALTERNATES;
+const DEFAULT_COVER = "/hero/hero-gradient-1800.webp";
 
 /* ── Matching helpers ─────────────────────────────────────────────────────── */
 function matchesFilter(post: Post, filterId: string): boolean {
@@ -90,15 +95,6 @@ function sortPosts(posts: Post[], sortBy: string): Post[] {
   return posts;
 }
 
-function getPostType(post: Post): string {
-  if (post.category === "Stories") return "STORY";
-  if (post.category === "Comparatifs") return "COMPARATIF";
-  const text = `${post.title ?? ""} ${(post.tags ?? []).join(" ")} ${post.slug ?? ""}`.toLowerCase();
-  if (text.includes("stack")) return "STACK";
-  if (text.includes("alternativ")) return "ALTERNATIVE";
-  return "GUIDE";
-}
-
 function formatPostDate(date: string | undefined, lang: string): string | null {
   if (!date) return null;
   const parsed = new Date(`${date}T12:00:00`);
@@ -114,7 +110,6 @@ function formatPostDate(date: string | undefined, lang: string): string | null {
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
   const posts = getGuidePosts(lang);
-  const { tools } = useToolSummaries({ refreshRemote: false });
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
@@ -137,8 +132,9 @@ const GuidesPage = () => {
 
   useEffect(() => {
     const title = lang === "fr"
-      ? "Guides & Comparatifs d'outils SaaS — ToolTrim"
-      : "SaaS Tool Guides & Comparisons — ToolTrim";
+      // Same as the prerendered titles (vite.config.ts).
+      ? fitBrandedTitle("Guides et comparatifs SaaS pour freelances")
+      : fitBrandedTitle("SaaS guides and comparisons for freelancers");
     const desc = lang === "fr"
       ? "Méthodes, comparatifs et stacks commentées pour construire une stack plus claire, plus utile et plus légère."
       : "Methods, comparisons and annotated stacks to build a clearer, more useful and leaner tool stack.";
@@ -268,11 +264,11 @@ const GuidesPage = () => {
               )}
 
               <div className="gi-lead-grid">
-                <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} tools={tools} featured />
+                <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} featured />
                 {visibleList.length > 1 && (
                   <div className="gi-lead-side">
                     {visibleList.slice(1, 3).map((post) => (
-                      <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} compact />
+                      <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} compact />
                     ))}
                   </div>
                 )}
@@ -280,7 +276,7 @@ const GuidesPage = () => {
               {visibleList.length > 3 && (
                 <div className="gi-card-grid">
                   {visibleList.slice(3).map((post) => (
-                    <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} />
+                    <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} />
                   ))}
                 </div>
               )}
@@ -334,7 +330,7 @@ function StoriesRow({
         {stories.map((story) => (
           <Link key={story.slug} to={storyPath(story)} className="gi-story-tile">
             <div className="gi-story-tile-media">
-              <img src={story.thumbnail} alt="" loading="lazy" decoding="async" />
+              <img src={story.thumbnail ?? DEFAULT_COVER} alt="" loading="lazy" decoding="async" />
             </div>
             <h3>{story.title}</h3>
             {lang === "en" && story.lang === "fr" && <span className="gi-language-badge">FR</span>}
@@ -347,57 +343,39 @@ function StoriesRow({
 }
 
 function ArticleCard({
-  post, prefix, lang, tools, featured = false, compact = false,
+  post, lang, featured = false, compact = false,
 }: {
-  post: Post; prefix: string; lang: string; tools: ToolSummary[]; featured?: boolean; compact?: boolean;
+  post: Post; prefix: string; lang: string; featured?: boolean; compact?: boolean;
 }) {
-  const mentionedTools = useArticleTools(post, tools);
-  const type   = getPostType(post);
-  const primaryTool = post.toolId
-    ? tools.find((tool) => tool.id === post.toolId || tool.slug === post.toolId)
-    : undefined;
-  const coverTool = (primaryTool?.ogImageUrl ? primaryTool : undefined)
-    || mentionedTools.find((tool) => tool.ogImageUrl)
-    || primaryTool
-    || mentionedTools[0];
+  const postLang = post.lang === "fr" ? "fr" : lang;
+  // Same cover as the article itself: its image, or its tools on brand tints.
+  // Resolved from the build-time index, so the index no longer loads the
+  // tool catalogue to pick a screenshot.
+  const tools = getToolsForGuide(post.slug, postLang);
   const displayDate = formatPostDate(post.date, lang);
-  const postPath = `/${post.lang === "fr" ? "fr" : lang}/guide/${post.slug}`;
+  const postPath = `/${postLang}/guide/${post.slug}`;
+  const eyebrow = [post.category ? localizeGuideCategory(post.category, lang) : "", post.readTime || ""].filter(Boolean).join(" · ");
 
   return (
     <Link
       to={postPath}
       className={`gi-card${featured ? " gi-card--featured" : ""}${compact ? " gi-card--compact" : ""}`}
     >
-      <div className="gi-card-media">
-        {post.thumbnail ? (
-          <img
-            src={post.thumbnail}
-            alt={`${post.title} — illustration`}
-            className="gi-card-editorial-cover"
-            loading={featured ? "eager" : "lazy"}
-            decoding="async"
-          />
-        ) : coverTool ? (
-          <ToolCardImage
-            tool={coverTool}
-            logoSize={featured ? 54 : compact ? 34 : 42}
-            className="gi-card-cover"
-            allowRemoteLogoSources={false}
-          />
-        ) : (
-          <div className="gi-card-cover-fallback">{type}</div>
-        )}
-      </div>
+      <GuideCover
+        thumbnail={post.thumbnail}
+        tools={tools}
+        fallbackImage={DEFAULT_COVER}
+        size={featured ? "large" : "small"}
+        eager={featured}
+        className="gi-card-media"
+      />
       <div className="gi-card-body">
-        <h3 className="gi-card-title">{post.title}</h3>
-        {lang === "en" && post.lang === "fr" && (
-          <span className="gi-language-badge">Available in French</span>
-        )}
-        {displayDate && (
-          <div className="gi-card-meta">
-            <time dateTime={post.date}>{displayDate}</time>
-          </div>
-        )}
+        {eyebrow ? <span className="gi-card-eyebrow">{eyebrow}</span> : null}
+        <h3 className="gi-card-title">{smartQuotes(post.title, postLang)}</h3>
+        <div className="gi-card-meta">
+          {displayDate ? <time dateTime={post.date}>{displayDate}</time> : null}
+          {lang === "en" && post.lang === "fr" ? <span className="gi-language-badge">In French</span> : null}
+        </div>
       </div>
     </Link>
   );

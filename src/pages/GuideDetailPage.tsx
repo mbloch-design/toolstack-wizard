@@ -11,6 +11,8 @@ import { cleanupSeo, setHreflang, setJsonLd, setMeta, setSeoTags } from "@/lib/s
 import { getRelatedGuides, getToolForGuide, getToolsForGuide } from "@/lib/toolGuides";
 import ToolLogo from "@/components/ToolLogo";
 import brandColors from "@/data/brandColors.json";
+import GuideCover from "@/components/guide/GuideCover";
+import { smartQuotes } from "@/lib/typography";
 import { ChevronRight } from "@/lib/icons";
 
 /**
@@ -21,20 +23,6 @@ import { ChevronRight } from "@/lib/icons";
 // same gradient asset the homepage hero already uses, so a guide without
 // custom art still gets a real, on-brand visual instead of an empty column.
 const DEFAULT_HERO_IMAGE = "/hero/hero-gradient-1800.webp";
-
-/**
- * Display-only typography: straight double quotes become curly ones. The
- * stored title (and every SEO tag built from it) is left untouched.
- */
-function smartQuotes(text: string, lang: string): string {
-  if (!text.includes('"')) return text;
-  let open = true;
-  return text.replace(/"/g, () => {
-    const mark = lang === "fr" ? (open ? "« " : " »") : (open ? "\u201C" : "\u201D");
-    open = !open;
-    return mark;
-  }).replace(/« \s+/g, "« ").replace(/\s+ »/g, " »");
-}
 
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -225,27 +213,13 @@ const GuideDetailPage = () => {
             </div>
           </div>
           {!isStory ? (
-            post.thumbnail || coveredTools.length === 0 ? (
-              <div className="ga-hero-image">
-                <img src={post.thumbnail || DEFAULT_HERO_IMAGE} alt="" loading="eager" decoding="async" />
-              </div>
-            ) : (
-              // No cover image: the article's own tools, each on its brand tint,
-              // so every guide gets a visual identity without producing art.
-              // Variants live in data attributes: the build emits one critical CSS file
-              // per distinct class set, and variant classes multiplied those files.
-              <div className="ga-hero-image ga-cover" data-count={Math.min(coveredTools.length, 4)} aria-hidden="true">
-                {coveredTools.slice(0, 4).map((tool, i) => {
-                  const brand = (brandColors as Record<string, string>)[tool.slug];
-                  return (
-                    <span key={tool.slug} className="ga-cover-tile" style={brand ? { background: `color-mix(in srgb, ${brand} 18%, #FFFFFF)` } : undefined}>
-                      <ToolLogo tool={tool} size={coveredTools.length === 1 ? 128 : 96} className="ga-cover-icon" />
-                      <span className="ga-cover-name" style={{ ["--i" as string]: i }}>{tool.name}</span>
-                    </span>
-                  );
-                })}
-              </div>
-            )
+            <GuideCover
+              thumbnail={post.thumbnail}
+              tools={coveredTools}
+              fallbackImage={DEFAULT_HERO_IMAGE}
+              className="ga-hero-image"
+              eager
+            />
           ) : null}
           </div>
         </div>
