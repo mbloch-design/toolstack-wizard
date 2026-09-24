@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { X } from "@/lib/icons";
-import ToolLogoPile from "@/components/ToolLogoPile";
-import ToolCardImage from "@/components/tool/ToolCardImage";
+import ToolLogo from "@/components/ToolLogo";
+import { usdFromEur } from "@/lib/currencyRates";
 import Breadcrumb from "@/components/Breadcrumb";
 import CatalogToolbar, { type ToolbarPill } from "@/components/catalog/CatalogToolbar";
 import { useLang } from "@/hooks/useLang";
@@ -450,75 +450,46 @@ function StackFilterPanel({
   );
 }
 
-interface StackSelectionCardProps {
+interface StackRowProps {
   enriched: EnrichedStack;
   prefix: string;
   lang: "fr" | "en";
   t: (fr: string, en: string) => string;
   tools: StackCatalogTool[];
+  featured?: boolean;
 }
 
-function StackSelectionCard({ enriched, prefix, lang, t, tools }: StackSelectionCardProps) {
+/* One stack, App Store style: the iOS-folder of its first four apps, name,
+   one line of pitch, then budget and tool count. The whole row is the link.
+   Replaces the card with four tool screenshots, which were unreadable at that
+   size and fitted two stacks per screen. */
+function StackRow({ enriched, prefix, lang, t, tools, featured = false }: StackRowProps) {
   const { stack, derived } = enriched;
   const title = lang === "fr" ? stack.title : stack.titleEn;
-  const primarySubProfile = stack.subProfiles[0];
-  const budgetText = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
-  const visualTools = [...tools]
-    .sort((a, b) => Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl)))
-    .slice(0, 4);
-  const roles = stack.tools
-    .map((slot) => lang === "fr" ? slot.role : slot.roleEn)
-    .filter((role, index, all) => role && all.indexOf(role) === index);
+  const subtitle = lang === "fr" ? stack.subtitle : stack.subtitleEn;
+  const budgetText = stack.monthlyBudget > 0
+    ? (lang === "fr" ? `≈${stack.monthlyBudget} €/mois` : `≈${usdFromEur(stack.monthlyBudget)}/mo`)
+    : t("Gratuit", "Free");
 
   return (
-    <Link to={`${prefix}/stacks/${stack.slug}`} className="sk-card">
-      <div className="sk-card-header">
-        <div className="sk-card-heading">
-          <div className="sk-card-identity">
-            <h2 className="sk-card-title">{title}</h2>
-            <span className="sk-card-tag">{personaLabel(stack.persona, lang)}</span>
-          </div>
-          <div className="sk-card-facts">
-            <span className="sk-card-fact sk-card-fact--strong">{budgetText}</span>
-            <span className="sk-card-fact">{derived.toolCount} {t("outils", "tools")}</span>
-            {primarySubProfile && <span className="sk-card-fact">{subProfileLabel(primarySubProfile, lang)}</span>}
-          </div>
-        </div>
-        <span className="sk-card-cta">{t("Voir la stack", "See stack")} <span aria-hidden>→</span></span>
-      </div>
-
-      <div className="sk-card-gallery" aria-label={t("Aperçus des outils de la stack", "Stack tool previews") as string}>
-        {visualTools.map((tool) => {
-          const slot = stack.tools.find((item) => item.slug === tool.slug || item.slug === tool.id);
-          return (
-            <div key={tool.id} className="sk-card-gallery-item">
-              <ToolCardImage tool={tool} logoSize={34} className="sk-card-tool-image" />
-              <span className="sk-card-gallery-caption">
-                <strong>{tool.name}</strong>
-                <small>{lang === "fr" ? slot?.role : slot?.roleEn}</small>
-              </span>
-            </div>
-          );
-        })}
-        {stack.tools.length > visualTools.length && (
-          <div className="sk-card-gallery-more">
-            <ToolLogoPile
-              tools={tools.slice(visualTools.length)}
-              totalCount={stack.tools.length - visualTools.length}
-              max={3}
-              ariaLabel={t("Autres outils de la stack", "Other stack tools") as string}
-              moreLabel={(count) => t(`${count} outils supplémentaires`, `${count} more tools`) as string}
-            />
-            <span>+{stack.tools.length - visualTools.length}</span>
-            <small>{t("autres outils", "more tools")}</small>
-          </div>
-        )}
-      </div>
-
-      <div className="sk-card-roles" aria-label={t("Rôles couverts", "Covered roles") as string}>
-        {roles.slice(0, 6).map((role) => <span key={role}>{role}</span>)}
-        {roles.length > 6 && <small>+{roles.length - 6}</small>}
-      </div>
+    <Link to={`${prefix}/stacks/${stack.slug}`} className={featured ? "sk-row sk-row--featured" : "sk-row"}>
+      <span className="sgs-folder sk-row-folder" aria-hidden>
+        {tools.slice(0, 4).map((tool) => (
+          <span key={tool.id} className="sgs-folder-app"><ToolLogo tool={tool} size={32} className="sgs-folder-logo" /></span>
+        ))}
+      </span>
+      <span className="sk-row-copy">
+        <span className="sk-row-title">{title}</span>
+        {/* The pitch only on featured tiles: in the list it doubled the text
+            density for little extra decision value. */}
+        {featured && <span className="sk-row-sub">{subtitle}</span>}
+        <span className="sk-row-meta">
+          <span className="sk-row-tag" data-persona={stack.persona}>{personaLabel(stack.persona, lang)}</span>
+          <span className="sk-row-meta-strong">{budgetText}</span>
+          <span>{derived.toolCount} {t("outils", "tools")}</span>
+        </span>
+      </span>
+      <span className="sr-only">{tools.map((tool) => tool.name).join(", ")}</span>
     </Link>
   );
 }
@@ -558,7 +529,7 @@ const StacksPage = () => {
   const [panelOpen, setPanelOpen] = useState(false);
   // Progressive rendering: the catalog has 200+ stacks; rendering them all at
   // once produced a ~116,000px page with 9k+ DOM nodes. Show a page at a time.
-  const STACK_LIST_PAGE_SIZE = 12;
+  const STACK_LIST_PAGE_SIZE = 24;
   const [visibleCount, setVisibleCount] = useState(STACK_LIST_PAGE_SIZE);
 
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
@@ -726,6 +697,16 @@ const StacksPage = () => {
     });
   }, [enrichedStacks, toolBySlug, currentFilters, sortBy]);
 
+  // Unfiltered and in recommended order, the first four picks get a featured
+  // band, and the list continues without them.
+  const showFeatured = !isFiltered && sortBy === "recommended";
+  const featuredStacks = showFeatured ? filteredStacks.slice(0, 4) : [];
+  const listStacks = showFeatured ? filteredStacks.slice(4) : filteredStacks;
+  const toolsFor = (enriched: EnrichedStack) => enriched.stack.tools
+    .slice(0, 4)
+    .map((slot) => toolBySlug.get(slot.slug))
+    .filter(Boolean) as StackCatalogTool[];
+
   // Back to the first page whenever the filtered/sorted set changes.
   useEffect(() => { setVisibleCount(STACK_LIST_PAGE_SIZE); }, [filteredStacks]);
 
@@ -872,25 +853,27 @@ const StacksPage = () => {
 
               {filteredStacks.length > 0 ? (
                 <>
-                <div className="sk-results-grid">
-                  {filteredStacks.slice(0, visibleCount).map((enriched) => {
-                    const stackTools = enriched.stack.tools
-                      .slice(0, 6)
-                      .map((slot) => toolBySlug.get(slot.slug))
-                      .filter(Boolean) as NonNullable<ReturnType<typeof toolBySlug.get>>[];
-                    return (
-                      <StackSelectionCard
-                        key={enriched.stack.id}
-                        enriched={enriched}
-                        prefix={prefix}
-                        lang={lang}
-                        t={t}
-                        tools={stackTools}
-                      />
-                    );
-                  })}
-                </div>
-                {filteredStacks.length > visibleCount && (
+                {showFeatured && (
+                  <section className="sk-featured" aria-labelledby="sk-featured-title">
+                    <h2 id="sk-featured-title" className="sk-group-title">{t("À la une", "Featured")}</h2>
+                    <ul className="sk-featured-grid">
+                      {featuredStacks.map((enriched) => (
+                        <li key={enriched.stack.id}>
+                          <StackRow enriched={enriched} prefix={prefix} lang={lang} t={t} tools={toolsFor(enriched)} featured />
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+                {showFeatured && <h2 className="sk-group-title">{t("Toutes les stacks", "All stacks")}</h2>}
+                <ul className="sk-list">
+                  {listStacks.slice(0, visibleCount).map((enriched) => (
+                    <li key={enriched.stack.id}>
+                      <StackRow enriched={enriched} prefix={prefix} lang={lang} t={t} tools={toolsFor(enriched)} />
+                    </li>
+                  ))}
+                </ul>
+                {listStacks.length > visibleCount && (
                   <div className="sk-load-more">
                     <button
                       type="button"
