@@ -23994,8 +23994,11 @@ section[id]:not(.cp-guide-section) {
   margin: 0 auto;
 }
 
+/* Bottom padding kept small: the global footer already brings its own
+   top margin, and the two stacked left ~200px of dead space under the
+   last section. */
 .v2-catalog {
-  padding: var(--space-3xl) 0 var(--space-4xl);
+  padding: var(--space-3xl) 0 var(--space-lg);
 }
 
 .v2-catalog-section + .v2-catalog-section {
@@ -24402,81 +24405,138 @@ section[id]:not(.cp-guide-section) {
   gap: 0;
 }
 
-/* ── V2 Articles — OpenAI-style editorial cards: the image carries the
-   visual weight; title and metadata sit below without a containing box. */
-.v2-article-grid {
+/* ── Guides, App Store "Today" format ──
+   One story across two thirds of the width, two more stacked on the right,
+   every one with a real image. The right column is its own flex stack
+   rather than grid rows shared with the feature: shared rows used to
+   stretch to the feature's height and scatter the side items with gaps.
+   Side images use the OG ratio (1.9:1) so tool screenshots, which carry
+   text, are never cropped. */
+.v2-today {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--v2-grid-gap);
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+/* Desktop: both columns share one height. The feature's image absorbs
+   the difference (flex: 1, cover), so the two columns start and end on
+   the same lines instead of the feature floating shorter or longer than
+   the stack beside it. */
+@media (min-width: 1024px) {
+  .v2-today {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 40px;
+  }
+  .v2-today-card--feature .v2-today-media {
+    flex: 1;
+    min-height: 0;
+    aspect-ratio: auto;
+  }
 }
 
-.v2-article-card {
-  min-width: 0;
-  color: var(--color-text);
+.v2-today-side {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .v2-today-side {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.v2-today-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: inherit;
   text-decoration: none;
 }
+.v2-today-card:focus-visible {
+  outline: 2px solid var(--color-text-strong);
+  outline-offset: 4px;
+  border-radius: 20px;
+}
 
-.v2-article-media {
+.v2-today-media {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1.9 / 1;
   overflow: hidden;
-  border-radius: var(--tt-surface-radius-info);
+  border-radius: 18px;
   background: var(--color-surface-soft);
+  box-shadow: inset 0 0 0 1px var(--color-border-soft);
 }
-
-.v2-article-image {
+.v2-today-card--feature .v2-today-media {
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+}
+.v2-today-media img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.v2-article-card:hover .v2-article-image {
-  transform: scale(1.015);
+.v2-today-card:hover .v2-today-media img {
+  transform: scale(1.025);
 }
-
-.v2-article-fallback {
-  padding: var(--space-lg);
+.v2-today-fallback-logo {
+  border-radius: 22% !important;
+  background: var(--color-surface) !important;
+  box-shadow: inset 0 0 0 1px var(--color-border) !important;
+}
+.v2-today-fallback {
   font-family: var(--font-ui);
-  font-size: var(--v2-type-meta);
-  font-weight: 500;
-  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted-light);
 }
 
-.v2-article-body {
-  padding-top: 20px;
+.v2-today-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.v2-article-title {
-  margin: 0;
+.v2-today-eyebrow {
   font-family: var(--font-ui);
-  font-size: var(--v2-type-card-title);
-  font-weight: 500;
-  line-height: 1.31;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted-light);
+}
+
+.v2-today-title {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
   letter-spacing: -0.01em;
-  color: var(--color-text);
+  color: var(--color-text-strong);
   text-wrap: pretty;
 }
-
-.v2-article-meta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  margin-top: 14px;
-  font-family: var(--font-ui);
-  font-size: var(--v2-type-meta);
-  font-weight: 500;
-  line-height: 1.4;
-  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+.v2-today-card--feature .v2-today-title {
+  max-width: 28ch;
+  font-size: clamp(24px, 2.3vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
-.v2-article-meta > * + *::before {
-  content: "·";
-  margin-right: var(--space-xs);
-  color: color-mix(in srgb, var(--color-text) 38%, transparent);
+.v2-today-date {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v2-today-media img { transition: none; }
+  .v2-today-card:hover .v2-today-media img { transform: none; }
 }
 
 /* ── Editorial universe index ──────────────────────────────────────────
@@ -24721,53 +24781,58 @@ section[id]:not(.cp-guide-section) {
   .v2-shelf-pick:hover .v2-shelf-pick-logo { transform: none; }
 }
 
-/* Editorial tool cards use the same OpenAI-derived title/meta hierarchy on
-   the homepage without changing their denser variants elsewhere. */
-.home-v2 .tce-name {
-  font-size: var(--v2-type-card-title);
-  font-weight: 500;
-  line-height: 1.31;
-  letter-spacing: -0.01em;
+/* Homepage tool cards (Tools we're watching, Works with): name on its own
+   line above the category instead of sharing one row with it, where both
+   got truncated ("Ani..." / "Design & Prototypir"). The icon grows to a
+   40px rounded square, roughly the two-line block's height and centred on
+   it (top-aligning read as sagging next to one-line names), same family as
+   the universe rows and stack folders. Denser variants elsewhere on the
+   site are untouched. */
+.home-v2 .tce-identity-link {
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
 }
-
-.home-v2 .tce-category {
-  font-size: var(--v2-type-meta);
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: 0;
-  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+/* Near full-bleed: many sources (Figma's product icons, favicons) already
+   carry their own inner margin, so ToolLogo's default padding on top of it
+   left the glyph at ~40% of the tile, small and lost. */
+.home-v2 .tce-logo {
+  padding: 2px !important;
+  border-radius: 11px !important;
+  box-shadow: inset 0 0 0 1px var(--color-border) !important;
 }
-
-/* "Tools we're watching" repurposes the category slot for an authored
-   one-line reason, not a short category name — let it wrap instead of
-   truncating the actual point of the section. The name and reason also
-   stop sharing one baseline row: at sentence length the reason was
-   fighting the tool name for space in that flex row and clipping it too. */
-.home-v2 .dcv-tools .tce-identity-link {
-  align-items: start;
-}
-.home-v2 .dcv-tools .tce-identity-copy {
+.home-v2 .tce-identity-copy {
   flex-direction: column;
   align-items: flex-start;
-  gap: 2px;
+  gap: 1px;
 }
-.home-v2 .dcv-tools .tce-logo {
-  margin-top: 1px;
-}
-.home-v2 .dcv-tools .tce-name {
+.home-v2 .tce-name {
   max-width: 100%;
+  font-size: var(--v2-type-card-title);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
+.home-v2 .tce-category {
+  max-width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--color-muted);
+}
+.home-v2 .tce-category::before {
+  content: none;
+}
+
+/* "Tools we're watching" puts an authored one-line reason in the category
+   slot: let it wrap to two lines rather than truncate the point. */
 .home-v2 .dcv-tools .tce-category {
   display: -webkit-box;
-  max-width: 100%;
   white-space: normal;
-  overflow: hidden;
   text-overflow: clip;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-}
-.home-v2 .dcv-tools .tce-category::before {
-  content: none;
 }
 
 /* Three columns, not four — six curated picks read as a stronger point of
@@ -24783,7 +24848,6 @@ section[id]:not(.cp-guide-section) {
   .home-v2 {
     --v2-section-gap: 56px;
   }
-  .v2-article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .v2-new-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
@@ -24795,7 +24859,7 @@ section[id]:not(.cp-guide-section) {
   }
   .v2-catalog {
     padding-top: var(--space-2xl);
-    padding-bottom: var(--space-3xl);
+    padding-bottom: var(--space-md);
   }
   .v2-catalog-section + .v2-catalog-section {
     margin-top: var(--v2-section-gap);
@@ -24803,7 +24867,6 @@ section[id]:not(.cp-guide-section) {
   .v2-container { padding: 0 var(--v2-grid-gutter); }
   .v2-cat-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
   .v2-new-grid { grid-template-columns: 1fr; gap: 16px; }
-  .v2-article-grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

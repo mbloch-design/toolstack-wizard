@@ -50,6 +50,10 @@ interface ToolCardEditorialProps {
   exploreHref?: string;
   exploreState?: unknown;
   onOrganize?: () => void;
+  /** Identity-row logo size in the media variant (default 24). Passing the
+   *  real display size lets ToolLogo fetch a sharp enough source instead of
+   *  a CSS upscale of a 32px favicon. */
+  identityLogoSize?: number;
 }
 
 interface CardHoverActionsProps {
@@ -120,6 +124,7 @@ export function ToolCardEditorial({
   exploreHref,
   exploreState,
   onOrganize,
+  identityLogoSize = 24,
 }: ToolCardEditorialProps) {
   const presentation = getToolPresentation(tool, lang);
   const plan = presentation.planLabel;
@@ -202,7 +207,7 @@ export function ToolCardEditorial({
         <div className="tce-body">
           <div className="tce-identity-row">
             <div className="tce-identity-link">
-              <ToolLogo tool={tool} size={24} className="tce-logo" />
+              <ToolLogo tool={tool} size={identityLogoSize} className="tce-logo" />
               <div className="tce-identity-copy">
                 <h3 className="tce-name">{tool.name}</h3>
                 {(typeLabel || categoryLabel) && <span className="tce-category">{typeLabel || categoryLabel}</span>}

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useMemo, useState, useCallback, useRef, type FormEvent, type ReactNode, type TouchEvent } from "react";
+import { useEffect, useMemo, useState, useCallback, useRef, type FormEvent, type ReactNode } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Search } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
@@ -10,14 +10,11 @@ import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import StackGoalsSection from "@/components/home/StackGoalsSection";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolCardImage from "@/components/tool/ToolCardImage";
-import { CarouselControls, CarouselPagination } from "@/components/CarouselControls";
 import HOME_POSTS from "@/data/home-posts-index.json";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
 
 
-const POST_PAGE_SIZE = 3; // 1 row × 3 cols — guides carousel
-const POST_MAX_PAGES = 4; // cap carousel depth to 4 screens
 
 /* Editorial universe index — needs-based categories rather than a
    technology list, matching how freelancers actually describe what they're
@@ -175,39 +172,6 @@ function withHomeAssets<T extends { id: string; name: string; slug?: string; ogI
   };
 }
 
-function SwipePager({
-  className,
-  onPrevious,
-  onNext,
-  children,
-}: {
-  className: string;
-  onPrevious: () => void;
-  onNext: () => void;
-  children: ReactNode;
-}) {
-  const startX = useRef<number | null>(null);
-
-  const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
-    startX.current = event.touches[0]?.clientX ?? null;
-  };
-
-  const handleTouchEnd = (event: TouchEvent<HTMLDivElement>) => {
-    if (startX.current === null) return;
-    const delta = event.changedTouches[0]?.clientX - startX.current;
-    startX.current = null;
-    if (Math.abs(delta) < 48) return;
-    if (delta < 0) onNext();
-    else onPrevious();
-  };
-
-  return (
-    <div className={className} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-      {children}
-    </div>
-  );
-}
-
 /* ── Horizontal shelf (App Store style) ──
    Native scroll with snap, the next card peeking past the edge instead of
    pagination dots. Mouse users get prev/next buttons that fade in on hover;
@@ -277,36 +241,6 @@ function SectionHead({ label, to, linkLabel }: { label: string; to: string; link
   );
 }
 
-/* ── Featured carousel header with arrows ── */
-function FeaturedHead({
-  label, to, linkLabel, page, total, onPrev, onNext, previousLabel, nextLabel,
-}: {
-  label: string; to: string; linkLabel: string;
-  page: number; total: number; onPrev: () => void; onNext: () => void;
-  previousLabel: string; nextLabel: string;
-}) {
-  return (
-    <div className="v2-section-head">
-      <div className="v2-section-heading-copy">
-        <h2 className="v2-section-title">{label}</h2>
-      </div>
-      <div className="v2-featured-nav">
-        <CarouselControls
-          onPrevious={onPrev}
-          onNext={onNext}
-          previousDisabled={page === 0}
-          nextDisabled={page >= total - 1}
-          previousLabel={previousLabel}
-          nextLabel={nextLabel}
-        />
-        <Link to={to} className="tt-section-action v2-section-link">
-          {linkLabel} <ArrowRight aria-hidden />
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
   const navigate = useNavigate();
@@ -315,7 +249,6 @@ export default function HomePageV2() {
   const posts = HOME_POSTS[lang];
 
   const [discoveryQuery, setDiscoveryQuery] = useState("");
-  const [postPage, setPostPage] = useState(0);
   const [selectedHost, setSelectedHost] = useState("figma");
 
   useEffect(() => {
@@ -373,12 +306,25 @@ export default function HomePageV2() {
 
   const bySlug = useMemo(() => new Map(tools.map((t) => [t.slug, t])), [tools]);
 
-  /* ── Posts — carousel, 1 row × 3 cols, capped to POST_MAX_PAGES screens ── */
-  const postTotalPages = Math.min(POST_MAX_PAGES, Math.ceil(posts.length / POST_PAGE_SIZE)) || 1;
-  const cappedPosts = posts.slice(0, postTotalPages * POST_PAGE_SIZE);
-  const visiblePosts = cappedPosts.slice(postPage * POST_PAGE_SIZE, (postPage + 1) * POST_PAGE_SIZE);
-  const prevPostPage = useCallback(() => setPostPage((p) => Math.max(0, p - 1)), []);
-  const nextPostPage = useCallback(() => setPostPage((p) => Math.min(postTotalPages - 1, p + 1)), [postTotalPages]);
+  /* ── Guides: one feature + two side stories. Tags are free text ("ChatGPT Pro"),
+     so each is matched as a slug, then by its first word, to find the tools
+     a guide is about. Covers are deduplicated so two automation guides
+     don't both show the same Zapier screenshot. ── */
+  const homeGuides = useMemo(() => {
+    const usedCovers = new Set<string>();
+    return posts.slice(0, 3).map((post) => {
+      const tagTools = (post.tags || []).flatMap((tag) => {
+        const key = tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+        const tool = bySlug.get(key) || bySlug.get(key.split("-")[0]);
+        return tool ? [tool] : [];
+      });
+      const candidates = [post.thumbnail, ...tagTools.map((tool) => tool.ogImageUrl)].filter((src): src is string => Boolean(src));
+      const coverSrc = candidates.find((src) => !usedCovers.has(src));
+      if (coverSrc) usedCovers.add(coverSrc);
+      return { post, coverSrc, logoTool: tagTools[0] };
+    });
+  }, [posts, bySlug]);
+
 
   /* ── Tools grouped by category, for the duo rows ── */
   const toolsByCategory = useMemo(() => {
@@ -445,6 +391,34 @@ export default function HomePageV2() {
         || a.name.localeCompare(b.name));
   }, [selectedHost, tools]);
   const compatibleTools = allCompatibleTools.slice(0, WORKS_WITH_MAX);
+
+  const renderGuide = ({ post, coverSrc, logoTool }: (typeof homeGuides)[number], featured: boolean) => {
+    const dateLabel = post.date
+      ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { year: "numeric", month: "short", day: "numeric" })
+      : "";
+    return (
+      <Link
+        key={post.slug}
+        to={`${prefix}/guide/${post.slug}`}
+        className={`v2-today-card${featured ? " v2-today-card--feature" : ""}`}
+      >
+        <span className="v2-today-media">
+          {coverSrc ? (
+            <img src={coverSrc} alt="" loading="lazy" decoding="async" width={featured ? 1200 : 760} height={featured ? 675 : 400} />
+          ) : logoTool ? (
+            <ToolLogo tool={logoTool as any} size={featured ? 96 : 64} className="v2-today-fallback-logo" />
+          ) : (
+            <span className="v2-today-fallback">{t("Guide", "Guide")}</span>
+          )}
+        </span>
+        <span className="v2-today-copy">
+          {featured && <span className="v2-today-eyebrow">{t("Dernier guide", "Latest guide")}</span>}
+          <span className="v2-today-title">{post.title}</span>
+          {dateLabel && <time className="v2-today-date" dateTime={post.date}>{dateLabel}</time>}
+        </span>
+      </Link>
+    );
+  };
 
   return (
     <div className="home-v2">
@@ -541,6 +515,7 @@ export default function HomePageV2() {
                   {watchlistTools.map(({ tool, reasonFr, reasonEn }) => (
                     <ToolCardEditorial
                       key={tool.id}
+                      identityLogoSize={40}
                       tool={withHomeAssets(tool) as any}
                       prefix={prefix}
                       t={t}
@@ -611,7 +586,7 @@ export default function HomePageV2() {
                     );
                     return (
                       <div key={tool.id} className="v2-rail-item">
-                        <ToolCardEditorial tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />
+                        <ToolCardEditorial tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} identityLogoSize={40} />
                       </div>
                     );
                   })}
@@ -620,64 +595,23 @@ export default function HomePageV2() {
             </section>
           )}
 
-          {/* ══ 6. Guides — carousel 1×3, same shape as Stacks ══ */}
-          {cappedPosts.length > 0 && (
+          {/* ══ Guides — "Today" format: one story up front, the next few as
+               a compact list, instead of a paginated 3-up carousel. ══ */}
+          {homeGuides.length > 0 && (
             <section className="v2-catalog-section">
-              <FeaturedHead
+              <SectionHead
                 label={t("Articles du guide", "Guide articles")}
                 to={`${prefix}/guides`}
                 linkLabel={t("Tous les guides", "All guides")}
-                page={postPage}
-                total={postTotalPages}
-                onPrev={prevPostPage}
-                onNext={nextPostPage}
-                previousLabel={t("Page précédente", "Previous page") as string}
-                nextLabel={t("Page suivante", "Next page") as string}
               />
-              <SwipePager className="v2-article-grid" onPrevious={prevPostPage} onNext={nextPostPage}>
-                {visiblePosts.map((post) => {
-                  const dateLabel = post.date
-                    ? new Date(post.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { year: "numeric", month: "short", day: "numeric" })
-                    : "";
-                  const postTools = (post.tags || [])
-                    .map((tag) => bySlug.get(tag))
-                    .filter(Boolean)
-                    .slice(0, 5);
-                  const coverTool = postTools.find((tool) => tool?.ogImageUrl);
-                  const coverSrc = post.thumbnail || coverTool?.ogImageUrl;
-                  return (
-                    <Link key={post.slug} to={`${prefix}/guide/${post.slug}`} className="v2-article-card">
-                      <div className="v2-article-media">
-                        {coverSrc ? (
-                          <img
-                            src={coverSrc}
-                            alt=""
-                            loading="lazy"
-                            decoding="async"
-                            width={480}
-                            height={300}
-                            className="v2-article-image"
-                          />
-                        ) : (
-                          <span className="v2-article-fallback">
-                            {t("Guide ToolTrim", "ToolTrim guide")}
-                          </span>
-                        )}
-                      </div>
-                      <div className="v2-article-body">
-                        <h3 className="v2-article-title">{post.title}</h3>
-                        <div className="v2-article-meta">
-                          {dateLabel && <time dateTime={post.date}>{dateLabel}</time>}
-                          {post.readTime && <span>{post.readTime}</span>}
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </SwipePager>
-              <CarouselPagination current={postPage} total={postTotalPages} onChange={setPostPage}
-                label={t("Choisir une page de guides", "Choose a guides page") as string}
-                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string} />
+              <div className="v2-today">
+                {renderGuide(homeGuides[0], true)}
+                {homeGuides.length > 1 && (
+                  <div className="v2-today-side">
+                    {homeGuides.slice(1).map((guide) => renderGuide(guide, false))}
+                  </div>
+                )}
+              </div>
             </section>
           )}
 
