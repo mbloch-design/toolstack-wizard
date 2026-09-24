@@ -45,6 +45,10 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }
   const [sourceIndex, setSourceIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [inView, setInView] = useState(false);
+  // Set when the grace period ends before the observer fired (e.g. a card
+  // scrolled off to the side of a horizontal shelf): the image is then
+  // requested eagerly, so the source timeout measures a real download.
+  const [eager, setEager] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   const src = sources[sourceIndex];
 
@@ -79,7 +83,10 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }
       { rootMargin: "200px" },
     );
     observer.observe(el);
-    const failSafe = setTimeout(() => setInView(true), OBSERVER_GRACE_MS);
+    const failSafe = setTimeout(() => {
+      setEager(true);
+      setInView(true);
+    }, OBSERVER_GRACE_MS);
     return () => {
       observer.disconnect();
       clearTimeout(failSafe);
@@ -88,6 +95,10 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }
 
   useEffect(() => {
     if (!src || loaded || !inView) return;
+    // Same-origin and inline sources cannot hang, and a lazy image still
+    // off-screen has not been requested yet: timing it out would skip a
+    // perfectly good local icon. onError still covers a missing file.
+    if (!src.startsWith("http")) return;
     // A cached image can be complete before React attaches onLoad.
     if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
       setLoaded(true);
@@ -106,7 +117,7 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }
         alt={`${tool.name} logo`}
         width={size}
         height={size}
-        loading="lazy"
+        loading={eager ? "eager" : "lazy"}
         className={`shrink-0 rounded-lg bg-card object-contain ring-1 ring-border/50 ${className}`}
         style={{ width: size, height: size, minWidth: size, minHeight: size, padding: Math.max(2, Math.round(size * 0.14)) }}
         onLoad={() => setLoaded(true)}

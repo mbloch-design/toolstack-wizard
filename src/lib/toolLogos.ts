@@ -220,6 +220,22 @@ const OFFICIAL_LOGO_URLS: Record<string, string> = {
   rive: "https://framerusercontent.com/images/jMyKrhKKXqpc15qYqC3A0pZELw.png",
 };
 
+// Self-hosted 128px icons (public/home-logos) for the tools the homepage
+// features. They win over every remote source: Simple Icons dropped several
+// brands and favicon services time out, which surfaced letter fallbacks.
+const LOCAL_LOGO_SLUGS = new Set([
+  "affinity-photo", "airtable", "anima", "auphonic", "blender", "buffer", "calendly", "canva", "carrd",
+  "clay", "crisp", "datawrapper", "figjam", "figma", "figma-buzz", "figma-dev-mode",
+  "figma-draw", "figma-make", "figma-motion", "figma-sites", "google-analytics",
+  "google-drive", "google-workspace", "lemlist", "lindy", "loom", "mailchimp", "make",
+  "microsoft-clarity", "n8n", "notion", "pipedrive", "runway", "scribe", "screen-studio",
+  "spline", "stripe", "supabase", "tally", "todoist", "tokens-studio", "webflow",
+]);
+const LOCAL_LOGO_ALIASES: Record<string, string> = {
+  "figma-anima": "anima",
+  "figma-tokens": "tokens-studio",
+};
+
 const PRODUCT_BADGES: Record<string, { label: string; bg: string; fg: string; border: string }> = {
   "adobe-acrobat-sign": { label: "Ac", bg: "FFF1F1", fg: "E41E26", border: "E41E26" },
   "adobe-after-effects": { label: "Ae", bg: "1F1148", fg: "D8B5FF", border: "9A6DFF" },
@@ -304,6 +320,11 @@ function simpleIconCandidateKeys(tool: LogoCandidateTool, domain: string) {
 
 export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 = 64): string[] {
   const sources: string[] = [];
+
+  // 0. Self-hosted icon for featured tools.
+  const localKey = normalizeKey(tool.slug || tool.id);
+  const localSlug = LOCAL_LOGO_ALIASES[localKey] || localKey;
+  if (LOCAL_LOGO_SLUGS.has(localSlug)) sources.push(`/home-logos/${localSlug}.png`);
 
   // 1. Custom logo override. Accept canonical remote URLs and local assets:
   // homepage/card-specific local logos must win before CDN probing so they
