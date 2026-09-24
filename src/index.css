@@ -32629,3 +32629,120 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
 @media (max-width: 760px) {
   .cp-price-cards, .cp-switch-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Comparisons index: featured face-offs + shelves by theme ─────────── */
+.cix-featured .sk-group-title { margin-top: 4px; }
+.cix-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cix-feature { display: flex; height: 100%; flex-direction: column; gap: 14px; color: inherit; text-decoration: none; }
+.cix-feature-art {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--color-surface-soft);
+}
+.cix-feature-art > span:not(.cix-feature-vs) { display: grid; place-items: center; background: var(--color-surface-soft); }
+.cix-feature-art > span:nth-child(2) { background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-border)); }
+.cix-feature-icon {
+  padding: 3px !important;
+  border-radius: 16px !important;
+  background: var(--color-surface) !important;
+  box-shadow: 0 12px 26px rgb(0 0 0 / 0.1), inset 0 0 0 1px var(--color-border) !important;
+  transform: rotate(-6deg);
+  transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.cix-feature-icon--second { transform: rotate(6deg); }
+.cix-feature:hover .cix-feature-icon { transform: rotate(0) scale(1.05); }
+.cix-feature-vs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-text-strong);
+  box-shadow: 0 0 0 4px var(--color-surface-soft);
+  color: var(--color-surface);
+  font: 600 12px/1 var(--font-brand);
+  transform: translate(-50%, -50%);
+}
+.cix-feature-copy { display: flex; flex-direction: column; gap: 4px; }
+.cix-feature-title { font: 600 17px/1.3 var(--font-ui); color: var(--color-text-strong); }
+.cix-feature-sub {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-muted);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.cix-feature:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 4px; border-radius: 22px; }
+
+.cix-shelf { margin-top: 12px; }
+.cix-shelf .sk-group-title { display: flex; align-items: baseline; gap: 10px; }
+.cix-shelf-count { font: 500 14px/1 var(--font-ui); letter-spacing: 0; color: var(--color-muted); }
+.cix-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px 24px;
+  margin: 0 -12px;
+  padding: 0;
+  list-style: none;
+}
+.cix-list--flat { margin-top: 24px; }
+.cix-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 18px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+.cix-row:hover { background: var(--color-surface-soft); }
+.cix-row:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+.cix-pair { display: flex; flex: none; }
+.cix-pair-icon {
+  padding: 2px !important;
+  border-radius: 12px !important;
+  background: var(--color-surface) !important;
+  box-shadow: 0 0 0 2px var(--color-bg, #FFFFFF), inset 0 0 0 1px var(--color-border) !important;
+}
+.cix-pair-icon--second { margin-left: -12px; }
+.cix-row:hover .cix-pair-icon { box-shadow: 0 0 0 2px var(--color-surface-soft), inset 0 0 0 1px var(--color-border) !important; }
+.cix-row-title { min-width: 0; font: 600 15px/1.3 var(--font-ui); color: var(--color-text-strong); }
+.cix-row-title > span { font-weight: 400; color: var(--color-muted); }
+
+@media (max-width: 1100px) {
+  .cix-featured-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cix-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .cix-featured-grid {
+    display: flex;
+    margin-inline: -20px;
+    padding: 0 20px 4px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .cix-featured-grid::-webkit-scrollbar { display: none; }
+  .cix-featured-grid > li { flex: 0 0 78%; scroll-snap-align: start; }
+  .cix-list { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cix-feature-icon, .cix-feature-icon--second { transform: none; transition: none; }
+}
