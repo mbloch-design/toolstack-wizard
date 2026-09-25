@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "slug": "toggl",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Toggl Track",
+    "vendor": "Toggl OÜ",
+    "officialUrl": "https://toggl.com/track/",
+    "docsUrl": "https://support.toggl.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://toggl.com/focus/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Toggl Track pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://toggl.com/focus/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Free forever for a limited number of users, with manual/real-time timers, calendar integrations, and personal-level insights.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Limited number of users; core time tracking without team reports.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 9, "annualPerMonth": 6, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Billable rates, team-level reports, timeline views, tags, milestones, basic capacity planning.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 16, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Labor cost and profitability reports, fixed-fee projects, timesheet approvals, Jira/Asana integrations, SSO.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom roles, custom integrations, multiple workspaces, dedicated customer success manager, volume discounts.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Annual billing gives roughly a 33% discount versus monthly on paid plans.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Manual and real-time time tracking with a focus mode and calendar integrations.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Team-level and profitability reporting, billable rates, timesheet approvals on paid plans.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan restricts the number of users, making it unsuitable beyond a very small team.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Advanced integrations (Jira, Asana) and SSO require the Premium tier or above.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Jira", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Asana", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Harvest", "officialUrl": "https://www.getharvest.com/", "reason": "Already appears in candidate list as a close time-tracking/invoicing competitor" }
+  ],
+  "unknowns": [
+    "Exact free-plan user cap not specified on the pricing page.",
+    "Mobile/desktop app platform coverage (iOS, Android, desktop apps) not confirmed in this session's single fetch."
+  ],
+  "conflicts": []
+}

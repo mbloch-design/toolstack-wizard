@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 2,
+  "slug": "steamworks",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Steamworks",
+    "vendor": "Valve Corporation",
+    "officialUrl": "https://partner.steamgames.com",
+    "docsUrl": "https://partner.steamgames.com/doc/home",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://partner.steamgames.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Steamworks partner site" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://partner.steamgames.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Account access and most developer tools are free; publishing a game requires a per-app submission fee.", "fr": null }, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Steamworks account access",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free developer account access and tools; publishing an app to the Steam store requires the separate one-time per-app submission fee.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "app-submission",
+        "name": "Per-app submission fee",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": true,
+        "keyLimits": [{ "en": "A one-time fee is charged per application submitted to Steam; exact amount not shown on the fetched page (commonly cited elsewhere as $100, recoupable from sales, but not independently confirmed here). Account access itself is free.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "regularPriceUnknown": true,
+    "addOns": [],
+    "cautions": [
+      { "en": "Steam also takes a revenue share cut on sales (industry-known ~30%, reduced at high volume), which was not stated on the fetched page and should be re-verified before publishing.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Distribution to Steam's user base (reported 132 million monthly active users) across 250+ countries via 400 distributed servers.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Built-in monetization: 80+ payment methods, sales in 35+ currencies, regional pricing tools.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Gameplay services: achievements, leaderboards, matchmaking, cloud saves, voice chat, and Steam Workshop mod support.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Real-time sales, player count, and wishlist analytics by region.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Publishing requires a per-app fee and going through Steam's review/approval process before a game becomes available.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Many gameplay and store features require explicit integration with the Steamworks API in the game's code.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "mac"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "itch.io", "officialUrl": "https://itch.io/", "reason": "Alternative indie game distribution platform with simpler, revenue-share-only pricing" },
+    { "name": "Epic Games Store", "officialUrl": "https://dev.epicgames.com/", "reason": "Major competing PC game distribution platform with a lower revenue cut" }
+  ],
+  "unknowns": [
+    "Exact per-app submission fee amount not confirmed on the fetched Steamworks page in this session.",
+    "Current revenue share percentage and its volume-based tiers not stated on the fetched page."
+  ],
+  "conflicts": []
+}

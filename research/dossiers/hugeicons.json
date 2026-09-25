@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "slug": "hugeicons",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Hugeicons",
+    "vendor": "Hugeicons",
+    "officialUrl": "https://hugeicons.com",
+    "docsUrl": "https://docs.hugeicons.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://hugeicons.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Hugeicons pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://hugeicons.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "6,000+ Stroke Rounded icons, web app access, dev formats, free design & dev plugins.", "fr": null }, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "6,000+ icons (Stroke Rounded style only), web app and free plugins.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 8.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "60,000+ icons across 10 styles, 300K monthly pageviews, 2GB monthly bandwidth, up to 6 project icon sets, custom icon upload, Figma source files, priority support. Billed at $99/year.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro-plus",
+        "name": "Pro Plus",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 1197 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Lifetime access: 60,000+ icons across 10 styles, 900K lifetime pageviews, 4GB lifetime bandwidth, up to 500 custom icon uploads, up to 10 project icon sets.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      { "en": "Extra bandwidth at $1/GB and extra pageviews at $3 per 300K views beyond plan limits.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pro plan usage is metered by pageviews and bandwidth, with overage fees if a project exceeds its monthly allowance.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Library of 51,000+ professional UI icons across multiple styles (stroke, solid, duotone, etc.) for designers and developers.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Provides ready-to-use dev formats (React, CDN) and design plugins for direct integration into codebases and design tools.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Supports custom icon uploads so teams can host their own icon sets alongside the library.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is restricted to a single icon style (Stroke Rounded) and a subset of the full library (6,000+ of 51,000+ icons).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Pro plan usage is capped by monthly pageviews and bandwidth, requiring paid overage or upgrade for high-traffic projects.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] },
+      { "name": "React", "slug": "react", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+  ],
+  "missingAlternatives": [
+    { "name": "Phosphor Icons", "officialUrl": "https://phosphoricons.com/", "reason": "Direct competitor: another large open icon library with multiple styles, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact number of icons per style beyond totals shown was not itemized on the pricing page.",
+    "Whether a free trial of Pro exists was not stated."
+  ],
+  "conflicts": []
+}

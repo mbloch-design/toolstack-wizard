@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "slug": "spendesk",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Spendesk",
+    "vendor": "Spendesk SAS",
+    "officialUrl": "https://www.spendesk.com",
+    "docsUrl": "https://help.spendesk.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.spendesk.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Spendesk pricing" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "EUR",
+    "pricingUrl": "https://www.spendesk.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "foundations",
+        "name": "Foundations",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Base package with unlimited cards, users, and control settings: physical/virtual cards, OCR receipt tracking, expense management, budget monitoring, multi-entity management, API access, SSO/SAML. Priced via custom quote combining a fixed subscription fee plus variable transaction-based fees.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      { "en": "Optional modules: Procurement, Accounts Payable, advanced workflows & policies, multi-entity management, HR/ERP integrations, AI-based automation and fraud detection.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pricing has two components: a fixed monthly subscription fee for platform access, plus variable fees tied to transaction volume (card purchases, invoices, expense claims); neither component's amount is published.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Issues unlimited physical and virtual corporate cards with spend controls, as part of the base Foundations package.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Automates receipt capture via OCR and expense/reimbursement management.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Supports multi-entity management and integrates with accounting tools such as Xero, QuickBooks, and Datev via API.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public pricing; every plan requires contacting sales for a custom quote, making cost comparison difficult upfront.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Advanced modules (Procurement, Accounts Payable, HR/ERP integrations, AI fraud detection) are separate paid add-ons on top of the base Foundations package.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Xero", "slug": "xero", "sourceIds": ["s1"] },
+      { "name": "QuickBooks", "slug": "quickbooks", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "qonto", "reason": { "en": "Competing business finance platform combining business banking with expense/card management.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No public price point exists for Foundations; exact fixed fee and transaction-based fee rates were not disclosed on the pricing page.",
+    "Whether a free trial exists was not stated on the pricing page."
+  ],
+  "conflicts": []
+}

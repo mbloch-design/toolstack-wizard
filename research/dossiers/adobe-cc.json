@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-cc",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Creative Cloud",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/creativecloud",
+    "docsUrl": "https://helpx.adobe.com/creative-cloud.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/fr/creativecloud/plans.html", "tier": 1, "accessedOn": "2026-08-30", "title": "Adobe Creative Cloud plans (FR)" },
+    { "id": "s2", "url": "https://www.adobe.com/creativecloud/plans.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Creative Cloud plans (US)" }
+  ],
+  "pricing": {
+    "model": "bundle_only",
+    "currency": "EUR",
+    "pricingUrl": "https://www.adobe.com/fr/creativecloud/plans.html",
+    "verifiedOn": "2026-08-30",
+    "region": "FR",
+    "taxIncluded": true,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "individual",
+        "name": "Creative Cloud Pro (individual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 78.65, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "20+ Adobe desktop and web apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro), plus Firefly generative AI credits. Annual commitment billed monthly.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Creative Cloud Pro (teams)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 86.55, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Per-license pricing (HT/excl. tax) for teams, includes license management and admin console.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams-pro-plus",
+        "name": "Creative Cloud Pro Plus (teams)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 95.79, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds Adobe Stock access on top of the standard Pro teams plan.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "students",
+        "name": "Students and teachers",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 19.50, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "First-year discounted price, then renews at 40.32€/month. Requires eligibility verification.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "individual",
+    "addOns": [
+      { "en": "Adobe Firefly generative AI credit packs available separately from the base suite subscription.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "cautions": [
+      { "en": "Individual and teams plans require an annual commitment even though billed monthly; cancelling early during the commitment period incurs an early termination fee.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "US pricing page shows a different promotional structure (e.g. $34.99/mo for 3 months then $69.99/mo) than the French page's flat 78.65€/mo, confirming prices and promotions vary by region.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Bundles over 20 creative desktop and web apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro, and more) under one subscription.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Includes Adobe Firefly generative AI features integrated across apps, with a monthly generative credit allowance.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Cloud storage, shared libraries, and centralized license management for teams via the admin console.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan for the full suite; only a 7-day trial for individuals.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Bundle pricing is significantly more expensive than buying a single app plan if only one application is needed.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "mac", "windows", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether the 14-day cancellation refund mentioned on the US page also applies to the French/EU plans was not verified.",
+    "Exact Firefly credit allowance included by default in the Pro individual plan was not itemized on the fetched pages."
+  ],
+  "conflicts": [
+    "The French pricing page (78.65€/mo, TTC, individual Pro) and the US pricing page (promotional $34.99/mo then $69.99/mo) show materially different price structures for the same plan name, reflecting regional pricing rather than a data error."
+  ]
+}

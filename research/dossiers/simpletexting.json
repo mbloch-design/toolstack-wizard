@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "slug": "simpletexting",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SimpleTexting",
+    "vendor": "SimpleTexting, LLC",
+    "officialUrl": "https://simpletexting.com",
+    "docsUrl": "https://simpletexting.com/help/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://simpletexting.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "SimpleTexting pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://simpletexting.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Standard (500 credits)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "500 monthly text credits, unlimited contacts and keywords, 3 user seats included, MMS at 3 credits each, extra credits billed at 5.5 cents each.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "en": "Local number rental at $10/month plus a $4 one-time activation fee; extra text credits at 5.5 cents each; carrier fees per message (~$0.0025 in the US, ~$0.0068 in Canada).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pricing scales by monthly text credit volume (500 to 50,000+); the $29/mo figure is the entry tier only, and higher-volume plans cost more.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "No credit card is required for the free trial, but there is no permanent free plan.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Mass texting and two-way SMS/MMS messaging for marketing campaigns and alerts.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Automation features including auto-replies, drip campaigns, and an AI message generator.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Unlimited contacts and keywords included on the base plan, with 3 user seats.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; only a no-credit-card-required trial to send a test message.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Message volume is capped by a monthly credit allowance, with additional per-message and carrier fees beyond the plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The fetched annual price ($398.40/year = $33.20/month) is higher per month than the $29/month plan, which is inconsistent with typical 'save with annual billing' framing; likely reflects a different bundled credit allowance than the monthly plan, but this was not confirmed on the page, so annualPerMonth was left null pending local re-verification.",
+    "Full list of higher-volume plan tiers and their prices was not itemized on the fetched page."
+  ],
+  "conflicts": []
+}

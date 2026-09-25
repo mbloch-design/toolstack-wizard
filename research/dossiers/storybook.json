@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "slug": "storybook",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Storybook",
+    "vendor": "Storybook (Chromatic / open source community)",
+    "officialUrl": "https://storybook.js.org",
+    "docsUrl": "https://storybook.js.org/docs",
+    "changelogUrl": "https://github.com/storybookjs/storybook/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://storybook.js.org", "tier": 1, "accessedOn": "2026-09-25", "title": "Storybook homepage" },
+    { "id": "s2", "url": "https://www.chromatic.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Chromatic pricing (Storybook's companion cloud service)" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://www.chromatic.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Storybook itself is fully free open source with no usage limits; only its optional cloud companion Chromatic has paid tiers.", "fr": null }, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Open source",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No feature limits; self-hosted, no included cloud visual testing/publishing.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      { "en": "Chromatic (cloud visual testing and Storybook publishing) starts around $149/month for teams, separate from Storybook itself.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Storybook the tool is entirely free; only the optional Chromatic cloud service (visual regression testing, hosted Storybook) is paid, and pricing for it was not directly re-verified in this session.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Build and preview UI components and pages in isolation from the main application, outside of business logic and app state.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Interaction testing and visual regression testing of components directly from stories.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Auto-generates living documentation for a component library from stories and component metadata.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Large open-source ecosystem: reports over 80 million installs per month and 90k+ GitHub stars, with a large addon ecosystem.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Storybook itself does not include hosted publishing or cloud visual-diffing; that requires a separate paid service such as Chromatic.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Requires initial setup and configuration inside a project's build tooling (webpack/Vite) and ongoing maintenance as the app's dependencies evolve.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "React", "slug": "react", "sourceIds": ["s1"] },
+      { "name": "Chromatic", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "react", "reason": { "en": "Storybook is commonly used alongside React component development; not a direct substitute but frequently paired.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Ladle", "officialUrl": "https://ladle.dev/", "reason": "Lightweight Vite-based alternative to Storybook for isolated component development" },
+    { "name": "Histoire", "officialUrl": "https://histoire.dev/", "reason": "Vite-native component workshop tool, direct Storybook alternative for Vue/Vite projects" }
+  ],
+  "unknowns": [
+    "Exact list of all supported frameworks (Vue, Angular, Svelte, Web Components, etc.) not confirmed in this session's single fetch.",
+    "Current Chromatic pricing tiers not independently re-verified beyond the seed's cached figure."
+  ],
+  "conflicts": []
+}

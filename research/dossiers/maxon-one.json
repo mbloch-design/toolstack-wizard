@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 2,
+  "slug": "maxon-one",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Maxon One",
+    "vendor": "Maxon Computer GmbH",
+    "officialUrl": "https://www.maxon.net/maxon-one",
+    "docsUrl": "https://helpcenter.maxon.net/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy/pricing page" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.maxon.net/en/buy",
+    "verifiedOn": "2026-06-17",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "maxon-one",
+        "name": "Maxon One (annual)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 99.91, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Bundles Cinema 4D, Redshift, ZBrush, Red Giant, and Universe under one subscription, with 'Save 30% or more' framed versus buying products individually with annual billing; includes access to 7,500+ Maxon Capsules and a training video library. Exact monthly-only price and full plan breakdown were not visible in the fetched page content.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "maxon-one",
+    "addOns": [],
+    "cautions": [
+      { "en": "The fetched pricing page did not render the actual pricing table in extracted content; figures here rely on the previously seeded/cached value and were not independently re-confirmed line by line in this session.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Single subscription bundling Maxon's full 3D toolset: Cinema 4D (3D modeling/animation), Redshift (GPU renderer), ZBrush (digital sculpting), Red Giant (VFX/motion graphics plugins), and Universe.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Includes access to a library of 7,500+ ready-made Maxon Capsules (assets) and training videos.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free tier; the suite is subscription-only, with annual billing offering the best discount versus monthly.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Full pricing table and per-app breakdown were not accessible in this session's page fetch, limiting confidence in exact figures.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["mac", "windows"]
+  },
+  "alternatives": [
+    { "slug": "blender", "reason": { "en": "Free, open-source 3D suite covering much of the same modeling/animation/rendering workflow.", "fr": null } },
+    { "slug": "houdini", "reason": { "en": "Competing professional 3D/VFX toolset, particularly for procedural and simulation work.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact current monthly and annual prices could not be confirmed directly from the fetched page content in this session; relies on previously cached figures.",
+    "Whether a standalone Cinema 4D-only plan exists separate from the full Maxon One bundle was not confirmed."
+  ],
+  "conflicts": []
+}

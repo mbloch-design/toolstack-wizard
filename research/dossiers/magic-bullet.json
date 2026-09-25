@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "slug": "magic-bullet",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Magic Bullet Suite (Red Giant)",
+    "vendor": "Maxon Computer GmbH",
+    "officialUrl": "https://www.maxon.net/en/red-giant",
+    "docsUrl": "https://helpcenter.maxon.net/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": { "en": "Red Giant was acquired by Maxon; Magic Bullet is now sold as part of the Red Giant product line under Maxon.", "fr": null }
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.maxon.net/en/red-giant", "tier": 1, "accessedOn": "2026-09-25", "title": "Red Giant / Maxon product page" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.maxon.net/en/red-giant",
+    "verifiedOn": "2026-07-24",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "red-giant-complete",
+        "name": "Red Giant Complete Annual Subscription",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Includes the full Red Giant toolkit (100+ tools) including Magic Bullet Looks, Trapcode Particular/Form, Universe plugin library, and Maxon Studio templates. Exact price not published on the fetched page; a downloadable trial is offered.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "regularPriceUnknown": true,
+    "addOns": [],
+    "cautions": [
+      { "en": "Magic Bullet is not sold standalone on the fetched page; it is bundled inside the Red Giant Complete annual subscription alongside dozens of other plugins.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Magic Bullet Looks provides cinematic color grading and film emulation presets as a plugin for host video editors.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Part of the wider Red Giant toolkit offering particle systems, lens flares, keying/compositing, and motion graphics tools.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Integrates as plugins directly inside After Effects, Premiere Pro, DaVinci Resolve, Apple Motion, Final Cut Pro, and Avid Media Composer.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Not a standalone application; requires a supported host video editor (After Effects, Premiere Pro, DaVinci Resolve, etc.) to run.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Exact subscription price and whether Magic Bullet alone can be purchased separately from the full Red Giant bundle was not shown on the fetched page.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Adobe Premiere Pro", "slug": "adobe-premiere-pro", "sourceIds": ["s1"] },
+      { "name": "DaVinci Resolve", "slug": "davinci-resolve", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["mac", "windows"]
+  },
+  "alternatives": [
+    { "slug": "davinci-resolve", "reason": { "en": "DaVinci Resolve includes built-in color grading tools that can substitute for Magic Bullet's color plugins in many workflows.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact monthly/annual subscription price for Red Giant Complete not published on the fetched page; the seed's cached price could not be re-verified.",
+    "Whether Magic Bullet Looks can be purchased as a standalone product separate from the full Red Giant bundle."
+  ],
+  "conflicts": []
+}

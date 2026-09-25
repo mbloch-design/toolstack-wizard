@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "slug": "mailchimp",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Mailchimp",
+    "vendor": "Intuit Mailchimp",
+    "officialUrl": "https://mailchimp.com",
+    "docsUrl": "https://mailchimp.com/help/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://mailchimp.com/pricing/marketing/compare-plans/", "tier": 1, "accessedOn": "2026-09-25", "title": "Mailchimp Marketing plans comparison" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://mailchimp.com/pricing/marketing/compare-plans/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Up to 250 contacts, 500 emails/month (max 250/day), 1 audience, 1 seat, limited templates, no scheduling.", "fr": null }, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "250 contacts, 500 emails/month, 1 audience, 1 seat.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "essentials",
+        "name": "Essentials",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 13, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "3 seats, 3 audiences, up to 4-step automation flows, email scheduling, A/B testing, limited reporting, no dynamic content. Price scales with contact count.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5 seats, 5 audiences, up to 200-step automations, advanced segmentation, SMS add-on, basic dynamic content.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 350, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited seats and unlimited contacts (custom pricing beyond 250,000 contacts), advanced automations with branching, predictive segmentation, priority phone support.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "essentials",
+    "addOns": [
+      { "en": "SMS marketing add-on available on Standard and Premium plans.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Listed monthly prices are entry-tier for the smallest contact count; price rises with list size and a promotional discount (around 15% for the first 12 months) applies to the displayed prices, so renewal price is higher.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Email campaign creation with templates, forms, landing pages, and marketing automation flows.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Audience segmentation, A/B testing, and reporting/analytics on campaign performance.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Predictive segmentation and advanced branching automations on higher tiers.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free and Essentials plans restrict number of audiences and automation steps, and lack dynamic content.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Pricing scales with contact list size, so cost grows significantly as a list grows even on the same plan tier.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "brevo", "reason": { "en": "Direct competitor with a more generous free tier and transactional email features.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "ConvertKit (Kit)", "officialUrl": "https://kit.com/", "reason": "Creator-focused email marketing alternative with simpler automation, not in the catalogue under that slug" }
+  ],
+  "unknowns": [
+    "Exact annualPerMonth discounted price was not isolated from the displayed introductory discount on this page.",
+    "Whether tax is included depends on billing region; not stated."
+  ],
+  "conflicts": []
+}
