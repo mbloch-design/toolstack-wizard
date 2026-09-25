@@ -15,10 +15,34 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://nordpass.com/plans/", "tier": 1, "accessedOn": "2026-09-25", "title": "NordPass personal plans" },
-    { "id": "s2", "url": "https://nordpass.com/plans/business/", "tier": 1, "accessedOn": "2026-09-25", "title": "NordPass Business plans" },
-    { "id": "s3", "url": "https://nordpass.com/features/", "tier": 1, "accessedOn": "2026-09-25", "title": "NordPass features" },
-    { "id": "s4", "url": "https://support.nordpass.com/hc/en-us/articles/360007646477-How-to-export-passwords-from-NordPass", "tier": 1, "accessedOn": "2026-09-25", "title": "How to export passwords from NordPass" }
+    {
+      "id": "s1",
+      "url": "https://nordpass.com/plans/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "NordPass personal plans"
+    },
+    {
+      "id": "s2",
+      "url": "https://nordpass.com/plans/business/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "NordPass Business plans"
+    },
+    {
+      "id": "s3",
+      "url": "https://nordpass.com/features/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "NordPass features"
+    },
+    {
+      "id": "s4",
+      "url": "https://support.nordpass.com/hc/en-us/articles/360007646477-How-to-export-passwords-from-NordPass",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "How to export passwords from NordPass"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -27,109 +51,313 @@
     "verifiedOn": "2026-09-25",
     "region": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "1 account, single device only, no Password Health or Data Breach Scanner", "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "1 account, single device only, no Password Health or Data Breach Scanner",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s2"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "One device at a time, no Password Health or Data Breach Scanner", "fr": "Un seul appareil à la fois, sans analyse de la qualité des mots de passe ni des fuites de données" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "One device at a time, no Password Health or Data Breach Scanner",
+            "fr": "Un seul appareil à la fois, sans analyse de la qualité des mots de passe ni des fuites de données"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 1.99, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 user account, multi-device sync, Data Breach Scanner and file attachments", "fr": "1 compte utilisateur, synchronisation multi-appareils, analyse des fuites de données et fichiers joints" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 user account, multi-device sync, Data Breach Scanner and file attachments",
+            "fr": "1 compte utilisateur, synchronisation multi-appareils, analyse des fuites de données et fichiers joints"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 1.99,
+          "oneTime": null
+        }
       },
       {
         "key": "family",
         "name": "Family",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 3.69, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "6 separate encrypted vaults for family or friends", "fr": "6 coffres-forts chiffrés distincts pour la famille ou des amis" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "6 separate encrypted vaults for family or friends",
+            "fr": "6 coffres-forts chiffrés distincts pour la famille ou des amis"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 3.69,
+          "oneTime": null
+        }
       },
       {
         "key": "teams",
         "name": "Teams",
         "unit": "seat",
         "minSeats": 10,
-        "price": { "monthly": null, "annualPerMonth": 1.79, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Sold only in a 10-user pack, SSO with Google Workspace only", "fr": "Vendu uniquement par pack de 10 utilisateurs, SSO limité à Google Workspace" }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "Sold only in a 10-user pack, SSO with Google Workspace only",
+            "fr": "Vendu uniquement par pack de 10 utilisateurs, SSO limité à Google Workspace"
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 1.79,
+          "oneTime": null
+        }
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 5,
-        "price": { "monthly": null, "annualPerMonth": 3.59, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5-user minimum, adds shared folders, password health, breach scanner and Vanta integration", "fr": "5 utilisateurs minimum, ajoute les dossiers partagés, la qualité des mots de passe, l'analyse de fuites et l'intégration Vanta" }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "5-user minimum, adds shared folders, password health, breach scanner and Vanta integration",
+            "fr": "5 utilisateurs minimum, ajoute les dossiers partagés, la qualité des mots de passe, l'analyse de fuites et l'intégration Vanta"
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 3.59,
+          "oneTime": null
+        }
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 5,
-        "price": { "monthly": null, "annualPerMonth": 5.39, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5-user minimum, adds SSO with Entra ID/ADFS/Okta, user provisioning, Splunk and Sentinel integrations", "fr": "5 utilisateurs minimum, ajoute le SSO Entra ID/ADFS/Okta, le provisioning utilisateurs et les intégrations Splunk et Sentinel" }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "5-user minimum, adds SSO with Entra ID/ADFS/Okta, user provisioning, Splunk and Sentinel integrations",
+            "fr": "5 utilisateurs minimum, ajoute le SSO Entra ID/ADFS/Okta, le provisioning utilisateurs et les intégrations Splunk et Sentinel"
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 5.39,
+          "oneTime": null
+        }
       }
     ],
-    "comparePlanKey": "premium",
+    "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Listed prices are first-term promotional rates (up to 40 percent off); NordPass states renewal prices differ once the first term ends.", "fr": "Les prix affichés sont des tarifs promotionnels de première période (jusqu'à 40 % de remise) ; NordPass indique que les prix de renouvellement diffèrent une fois cette période terminée.", "sourceIds": ["s1", "s2"] },
-      { "en": "Teams is sold only in fixed 10-user packs; Business and Enterprise require a minimum of 5 users, so a solo user cannot buy the cheapest per-seat rate.", "fr": "Teams se vend uniquement par packs fixes de 10 utilisateurs ; Business et Enterprise exigent un minimum de 5 utilisateurs, donc un utilisateur seul ne peut pas obtenir le tarif par siège le moins cher.", "sourceIds": ["s2"] }
-    ]
+      {
+        "en": "Listed prices are first-term promotional rates (up to 40 percent off); NordPass states renewal prices differ once the first term ends.",
+        "fr": "Les prix affichés sont des tarifs promotionnels de première période (jusqu'à 40 % de remise) ; NordPass indique que les prix de renouvellement diffèrent une fois cette période terminée.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "en": "Teams is sold only in fixed 10-user packs; Business and Enterprise require a minimum of 5 users, so a solo user cannot buy the cheapest per-seat rate.",
+        "fr": "Teams se vend uniquement par packs fixes de 10 utilisateurs ; Business et Enterprise exigent un minimum de 5 utilisateurs, donc un utilisateur seul ne peut pas obtenir le tarif par siège le moins cher.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "regularPriceUnknown": true
   },
   "product": {
     "capabilities": [
-      { "en": "xChaCha20-encrypted vault for passwords, passkeys and sensitive data, with biometric unlock and autofill/autosave.", "fr": "Coffre-fort chiffré xChaCha20 pour mots de passe, passkeys et données sensibles, avec déverrouillage biométrique et remplissage automatique.", "sourceIds": ["s3"] },
-      { "en": "Data Breach Scanner and Password Health reports to flag weak or reused passwords (Premium and above).", "fr": "Analyse des fuites de données et rapport de qualité des mots de passe pour repérer les mots de passe faibles ou réutilisés (à partir de Premium).", "sourceIds": ["s3"] },
-      { "en": "Business admin panel with shared folders, group management, activity log and item transfer for offboarding.", "fr": "Panneau d'administration entreprise avec dossiers partagés, gestion des groupes, journal d'activité et transfert d'éléments pour le offboarding.", "sourceIds": ["s3"] }
+      {
+        "en": "xChaCha20-encrypted vault for passwords, passkeys and sensitive data, with biometric unlock and autofill/autosave.",
+        "fr": "Coffre-fort chiffré xChaCha20 pour mots de passe, passkeys et données sensibles, avec déverrouillage biométrique et remplissage automatique.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Data Breach Scanner and Password Health reports to flag weak or reused passwords (Premium and above).",
+        "fr": "Analyse des fuites de données et rapport de qualité des mots de passe pour repérer les mots de passe faibles ou réutilisés (à partir de Premium).",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Business admin panel with shared folders, group management, activity log and item transfer for offboarding.",
+        "fr": "Panneau d'administration entreprise avec dossiers partagés, gestion des groupes, journal d'activité et transfert d'éléments pour le offboarding.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan is limited to one device at a time, no multi-device sync.", "fr": "Le plan gratuit est limité à un seul appareil à la fois, sans synchronisation multi-appareils.", "sourceIds": ["s1"] },
-      { "en": "Business SSO with Entra ID, ADFS or Okta is Enterprise-only; Teams and Business only get Google Workspace SSO.", "fr": "Le SSO avec Entra ID, ADFS ou Okta est réservé à Enterprise ; Teams et Business n'ont que le SSO Google Workspace.", "sourceIds": ["s2"] }
+      {
+        "en": "Free plan is limited to one device at a time, no multi-device sync.",
+        "fr": "Le plan gratuit est limité à un seul appareil à la fois, sans synchronisation multi-appareils.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Business SSO with Entra ID, ADFS or Okta is Enterprise-only; Teams and Business only get Google Workspace SSO.",
+        "fr": "Le SSO avec Entra ID, ADFS ou Okta est réservé à Enterprise ; Teams et Business n'ont que le SSO Google Workspace.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Google Workspace", "slug": "google-workspace", "sourceIds": ["s2"] },
-      { "name": "Vanta", "slug": "vanta", "sourceIds": ["s2"] },
-      { "name": "Microsoft Sentinel", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "Google Workspace",
+        "slug": "google-workspace",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Vanta",
+        "slug": "vanta",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Microsoft Sentinel",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web", "windows", "macos", "linux", "ios", "android"]
+    "platforms": [
+      "web",
+      "windows",
+      "macos",
+      "linux",
+      "ios",
+      "android"
+    ]
   },
   "audience": {
     "persona": "CLAIRE",
-    "description": { "en": "Fits a small team or solo operator who wants one shared vault with basic admin controls, without running a full identity platform.", "fr": "Convient à une petite équipe ou un indépendant qui veut un coffre-fort partagé avec des contrôles d'admin basiques, sans déployer une plateforme d'identité complète." },
+    "description": {
+      "en": "Fits a small team or solo operator who wants one shared vault with basic admin controls, without running a full identity platform.",
+      "fr": "Convient à une petite équipe ou un indépendant qui veut un coffre-fort partagé avec des contrôles d'admin basiques, sans déployer une plateforme d'identité complète."
+    },
     "soloRelevance": "high",
     "teamRelevance": "high"
   },
   "useCases": [
-    { "en": "A solo freelancer replacing browser-saved passwords with an encrypted vault and a breach scanner.", "fr": "Un indépendant qui remplace les mots de passe enregistrés dans le navigateur par un coffre-fort chiffré avec analyse des fuites." },
-    { "en": "A 5 to 10 person team sharing client logins through folders instead of a spreadsheet.", "fr": "Une équipe de 5 à 10 personnes qui partage les identifiants clients via des dossiers plutôt qu'un tableur." }
+    {
+      "en": "A solo freelancer replacing browser-saved passwords with an encrypted vault and a breach scanner.",
+      "fr": "Un indépendant qui remplace les mots de passe enregistrés dans le navigateur par un coffre-fort chiffré avec analyse des fuites."
+    },
+    {
+      "en": "A 5 to 10 person team sharing client logins through folders instead of a spreadsheet.",
+      "fr": "Une équipe de 5 à 10 personnes qui partage les identifiants clients via des dossiers plutôt qu'un tableur."
+    }
   ],
   "alternatives": [
-    { "slug": "1password", "reason": { "en": "The closest direct competitor on price and feature set for small teams.", "fr": "Le concurrent direct le plus proche en prix et en fonctionnalités pour les petites équipes." } },
-    { "slug": "bitwarden", "reason": { "en": "Open-source alternative with a genuinely free team tier and self-hosting option.", "fr": "Alternative open source avec un vrai plan d'équipe gratuit et une option d'auto-hébergement." } },
-    { "slug": "dashlane", "reason": { "en": "Similar consumer-to-business password manager with a comparable per-seat structure.", "fr": "Gestionnaire de mots de passe similaire, du grand public à l'entreprise, avec une structure par siège comparable." } },
-    { "slug": "lastpass", "reason": { "en": "Long-standing competitor at a similar price point, though with a weaker security track record.", "fr": "Concurrent historique à un prix similaire, mais avec un passif de sécurité plus lourd." } }
+    {
+      "slug": "1password",
+      "reason": {
+        "en": "The closest direct competitor on price and feature set for small teams.",
+        "fr": "Le concurrent direct le plus proche en prix et en fonctionnalités pour les petites équipes."
+      }
+    },
+    {
+      "slug": "bitwarden",
+      "reason": {
+        "en": "Open-source alternative with a genuinely free team tier and self-hosting option.",
+        "fr": "Alternative open source avec un vrai plan d'équipe gratuit et une option d'auto-hébergement."
+      }
+    },
+    {
+      "slug": "dashlane",
+      "reason": {
+        "en": "Similar consumer-to-business password manager with a comparable per-seat structure.",
+        "fr": "Gestionnaire de mots de passe similaire, du grand public à l'entreprise, avec une structure par siège comparable."
+      }
+    },
+    {
+      "slug": "lastpass",
+      "reason": {
+        "en": "Long-standing competitor at a similar price point, though with a weaker security track record.",
+        "fr": "Concurrent historique à un prix similaire, mais avec un passif de sécurité plus lourd."
+      }
+    }
   ],
   "missingAlternatives": [],
   "rating": {
@@ -139,35 +367,98 @@
     "puissance": 3,
     "reversibilite": 3,
     "evidence": {
-      "valeurAjoutee": { "en": "Premium costs under 2 euros per month and removes the real risk of reused browser passwords for a solo user or small team.", "fr": "Premium coûte moins de 2 euros par mois et supprime le risque réel des mots de passe navigateur réutilisés pour un indépendant ou une petite équipe.", "sourceIds": ["s1"] },
-      "simplicite": { "en": "Setup is autofill, autosave and a password generator; a first useful vault takes minutes, not a training session.", "fr": "La mise en route repose sur le remplissage automatique, l'enregistrement automatique et le générateur de mots de passe ; un premier coffre utile prend quelques minutes, pas une formation.", "sourceIds": ["s3"] },
-      "utilisation": { "en": "Delivers what it promises for storage, autofill and sharing without needing third-party tools.", "fr": "Tient sa promesse de stockage, remplissage automatique et partage sans outil tiers indispensable.", "sourceIds": ["s3"] },
-      "puissance": { "en": "Covers the standard password-manager feature set (SSO, provisioning, Splunk/Sentinel) at Enterprise, but stays behind 1Password on advanced secrets-management use cases.", "fr": "Couvre le socle standard d'un gestionnaire de mots de passe (SSO, provisioning, Splunk/Sentinel) en Enterprise, mais reste derrière 1Password sur les usages avancés de gestion de secrets.", "sourceIds": ["s2"] },
-      "reversibilite": { "en": "Passwords can be exported to CSV to move to another manager, per NordPass's own support documentation.", "fr": "Les mots de passe peuvent être exportés en CSV pour migrer vers un autre gestionnaire, selon la documentation d'aide de NordPass elle-même.", "sourceIds": ["s4"] }
+      "valeurAjoutee": {
+        "en": "The free plan covers one device; paid plans are shown from €1.99/mo as a first-term promotion, and the regular price is not published.",
+        "fr": "Le plan gratuit couvre un appareil ; les plans payants s'affichent dès 1,99 €/mois en promotion de première période, et le prix hors promotion n'est pas publié.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Setup is autofill, autosave and a password generator; a first useful vault takes minutes, not a training session.",
+        "fr": "La mise en route repose sur le remplissage automatique, l'enregistrement automatique et le générateur de mots de passe ; un premier coffre utile prend quelques minutes, pas une formation.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers what it promises for storage, autofill and sharing without needing third-party tools.",
+        "fr": "Tient sa promesse de stockage, remplissage automatique et partage sans outil tiers indispensable.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "puissance": {
+        "en": "Covers the standard password-manager feature set (SSO, provisioning, Splunk/Sentinel) at Enterprise, but stays behind 1Password on advanced secrets-management use cases.",
+        "fr": "Couvre le socle standard d'un gestionnaire de mots de passe (SSO, provisioning, Splunk/Sentinel) en Enterprise, mais reste derrière 1Password sur les usages avancés de gestion de secrets.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Passwords can be exported to CSV to move to another manager, per NordPass's own support documentation.",
+        "fr": "Les mots de passe peuvent être exportés en CSV pour migrer vers un autre gestionnaire, selon la documentation d'aide de NordPass elle-même.",
+        "sourceIds": [
+          "s4"
+        ]
+      }
     },
     "lastActivityVerifiedOn": null
   },
   "editorial": {
-    "tagline": { "en": "Password manager", "fr": "Gestionnaire mots de passe" },
-    "shortDescription": { "en": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.", "fr": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège." },
+    "tagline": {
+      "en": "Password manager",
+      "fr": "Gestionnaire mots de passe"
+    },
+    "shortDescription": {
+      "en": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
+      "fr": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège."
+    },
     "longDescription": {
-      "en": "NordPass stores passwords, passkeys and sensitive files in an xChaCha20-encrypted vault, with autofill, a password generator and a breach scanner on paid plans. The free plan works but is capped at one device at a time, which pushes most people toward Premium fairly quickly.\n\nFor teams, Business and Enterprise add shared folders, group management and an activity log, but both require a 5-user minimum, and the cheapest Teams tier only comes in fixed 10-user packs. A single freelancer who wants business-grade sharing for one or two collaborators will end up paying for seats they do not use.\n\nThe headline prices shown on the site are first-term promotional rates; NordPass says renewal pricing is higher, so budget for the list price after the first year, not the discounted one.",
-      "fr": "NordPass stocke mots de passe, passkeys et fichiers sensibles dans un coffre-fort chiffré xChaCha20, avec remplissage automatique, générateur de mots de passe et analyse des fuites sur les plans payants. Le plan gratuit fonctionne mais reste limité à un seul appareil à la fois, ce qui pousse assez vite vers Premium.\n\nPour les équipes, Business et Enterprise ajoutent dossiers partagés, gestion de groupes et journal d'activité, mais les deux exigent un minimum de 5 utilisateurs, et le palier Teams le moins cher ne se vend que par packs fixes de 10. Un indépendant qui veut un partage de niveau entreprise pour un ou deux collaborateurs finira par payer des sièges inutilisés.\n\nLes prix affichés sur le site sont des tarifs promotionnels de première période ; NordPass indique que le renouvellement coûte plus cher, donc prévois le tarif plein après la première année, pas le prix réduit."
+      "en": "NordPass stores passwords, passkeys and sensitive files in an xChaCha20-encrypted vault, with autofill, a password generator and a breach scanner on paid plans. The free plan works but is capped at one device at a time, which pushes most people toward Premium fairly quickly.\n\nFor teams, Business and Enterprise add shared folders, group management and an activity log, but both require a 5-user minimum, and the cheapest Teams tier only comes in fixed 10-user packs. A single freelancer who wants business-grade sharing for one or two collaborators will end up paying for seats they do not use.\n\nThe prices shown on the site are first-term promotions and NordPass does not publish the renewal price: ask for it before committing, and budget for more than the discounted rate after the first term.",
+      "fr": "NordPass stocke mots de passe, passkeys et fichiers sensibles dans un coffre-fort chiffré xChaCha20, avec remplissage automatique, générateur de mots de passe et analyse des fuites sur les plans payants. Le plan gratuit fonctionne mais reste limité à un seul appareil à la fois, ce qui pousse assez vite vers Premium.\n\nPour les équipes, Business et Enterprise ajoutent dossiers partagés, gestion de groupes et journal d'activité, mais les deux exigent un minimum de 5 utilisateurs, et le palier Teams le moins cher ne se vend que par packs fixes de 10. Un indépendant qui veut un partage de niveau entreprise pour un ou deux collaborateurs finira par payer des sièges inutilisés.\n\nLes prix affichés sur le site sont des promotions de première période et NordPass ne publie pas le prix de renouvellement : demande-le avant de t'engager, et prévois davantage que le tarif réduit après la première période."
     },
     "pros": [
-      { "en": "Cheap entry price for a solo user, under 2 euros a month for Premium.", "fr": "Prix d'entrée bas pour un utilisateur seul, moins de 2 euros par mois pour Premium." },
-      { "en": "Clean, fast interface across desktop, mobile and browser extensions.", "fr": "Interface propre et rapide sur ordinateur, mobile et extensions navigateur." },
-      { "en": "Export to CSV keeps the door open to switch managers later.", "fr": "L'export en CSV laisse la porte ouverte pour changer de gestionnaire plus tard." }
+      {
+        "en": "Cheap entry price for a solo user, under 2 euros a month for Premium.",
+        "fr": "Prix d'entrée bas pour un utilisateur seul, moins de 2 euros par mois pour Premium."
+      },
+      {
+        "en": "Clean, fast interface across desktop, mobile and browser extensions.",
+        "fr": "Interface propre et rapide sur ordinateur, mobile et extensions navigateur."
+      },
+      {
+        "en": "Export to CSV keeps the door open to switch managers later.",
+        "fr": "L'export en CSV laisse la porte ouverte pour changer de gestionnaire plus tard."
+      }
     ],
     "cons": [
-      { "en": "Business tiers force a 5 or 10 user minimum, poor fit for a 1 to 3 person team.", "fr": "Les offres entreprise imposent un minimum de 5 ou 10 utilisateurs, mal adapté à une équipe de 1 à 3 personnes." },
-      { "en": "Advertised prices are promotional; renewal rates are higher and not published upfront.", "fr": "Les prix annoncés sont promotionnels ; les tarifs de renouvellement sont plus élevés et non publiés à l'avance." }
+      {
+        "en": "Business tiers force a 5 or 10 user minimum, poor fit for a 1 to 3 person team.",
+        "fr": "Les offres entreprise imposent un minimum de 5 ou 10 utilisateurs, mal adapté à une équipe de 1 à 3 personnes."
+      },
+      {
+        "en": "Advertised prices are promotional; renewal rates are higher and not published upfront.",
+        "fr": "Les prix annoncés sont promotionnels ; les tarifs de renouvellement sont plus élevés et non publiés à l'avance."
+      }
     ],
     "verdict": {
-      "keepIf": { "en": "You are a solo user or a team of 5+ that wants a cheap, simple shared vault.", "fr": "Tu es seul ou en équipe de 5 personnes ou plus et tu veux un coffre-fort partagé simple et pas cher." },
-      "avoidIf": { "en": "You are a team of 2 to 4 people, since the cheapest business tier still bills for 5 to 10 seats.", "fr": "Tu es en équipe de 2 à 4 personnes, car le palier entreprise le moins cher facture quand même 5 à 10 sièges." },
-      "threshold": { "en": "Below 5 users, compare the per-seat cost of Business against a per-account tool that lets each person keep an individual paid account.", "fr": "En dessous de 5 utilisateurs, compare le coût par siège de Business à un outil par compte où chacun garde un abonnement payant individuel." },
-      "billingTraps": { "en": "The price shown at checkout is a first-term promotion; renewal is billed at a higher, undisclosed rate.", "fr": "Le prix affiché au paiement est une promotion de première période ; le renouvellement est facturé à un tarif plus élevé, non communiqué à l'avance." }
+      "keepIf": {
+        "en": "You are a solo user or a team of 5+ that wants a cheap, simple shared vault.",
+        "fr": "Tu es seul ou en équipe de 5 personnes ou plus et tu veux un coffre-fort partagé simple et pas cher."
+      },
+      "avoidIf": {
+        "en": "You are a team of 2 to 4 people, since the cheapest business tier still bills for 5 to 10 seats.",
+        "fr": "Tu es en équipe de 2 à 4 personnes, car le palier entreprise le moins cher facture quand même 5 à 10 sièges."
+      },
+      "threshold": {
+        "en": "Below 5 users, compare the per-seat cost of Business against a per-account tool that lets each person keep an individual paid account.",
+        "fr": "En dessous de 5 utilisateurs, compare le coût par siège de Business à un outil par compte où chacun garde un abonnement payant individuel."
+      },
+      "billingTraps": {
+        "en": "The price shown at checkout is a first-term promotion; renewal is billed at a higher, undisclosed rate.",
+        "fr": "Le prix affiché au paiement est une promotion de première période ; le renouvellement est facturé à un tarif plus élevé, non communiqué à l'avance."
+      }
     }
   },
   "unknowns": [
@@ -175,5 +466,12 @@
     "Exact renewal price after the first promotional term is not published on the pricing pages.",
     "Whether the pricing page's currency (EUR observed here) or USD (mentioned in NordPass support docs) applies depends on visitor region; not resolved to a single value."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "decisions": [
+    {
+      "on": "2026-09-25",
+      "by": "Michael",
+      "note": "Promotional first-term prices kept out of the price grid (promoPrice), regular price unknown."
+    }
+  ]
 }

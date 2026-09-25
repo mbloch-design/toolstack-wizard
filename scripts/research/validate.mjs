@@ -149,7 +149,10 @@ function validate(d, errors, warnings) {
     for (const [k, v] of Object.entries(pr)) {
       if (v != null && (typeof v !== "number" || v < 0)) errors.push(`${at}: price.${k} must be a number ≥ 0 or null`);
     }
-    if (!plan.onQuote && amounts.every((v) => v == null)) errors.push(`${at}: no price and not onQuote`);
+    // A plan whose only visible price is a first-term promotion carries it in
+    // promoPrice, never in price (brief, section 5.4).
+    const promo = plan.promoPrice && ["monthly", "annualPerMonth", "oneTime"].some((k) => typeof plan.promoPrice[k] === "number");
+    if (!plan.onQuote && !promo && amounts.every((v) => v == null)) errors.push(`${at}: no price, not onQuote and no promoPrice`);
     if (plan.onQuote && amounts.some((v) => v != null && v > 0)) errors.push(`${at}: onQuote plan cannot carry a price`);
     if (pr.oneTime != null && (pr.monthly != null || pr.annualPerMonth != null)) warnings.push(`${at}: one-time and recurring price on the same plan`);
     if (pr.annualPerMonth != null && pr.monthly != null && pr.annualPerMonth > pr.monthly) warnings.push(`${at}: annual billing costs more per month than monthly billing`);
@@ -161,7 +164,7 @@ function validate(d, errors, warnings) {
     warnings.push("pricing.freePlan.exists but no plan priced 0");
   }
   if (p.comparePlanKey != null && !planKeys.has(p.comparePlanKey)) errors.push(`pricing.comparePlanKey "${p.comparePlanKey}" is not a plan key`);
-  if (p.comparePlanKey == null && !["free", "open_source", "quote"].includes(p.model)) errors.push("pricing.comparePlanKey required (see the comparison rule in the brief)");
+  if (p.comparePlanKey == null && !["free", "open_source", "quote"].includes(p.model) && p.regularPriceUnknown !== true) errors.push("pricing.comparePlanKey required (see the comparison rule in the brief), or regularPriceUnknown: true when only promotional prices are published");
   for (const [i, a] of (p.addOns || []).entries()) cite(a.sourceIds, `pricing.addOns[${i}]`);
   for (const [i, c] of (p.cautions || []).entries()) { bi(c, `pricing.cautions[${i}]`); cite(c.sourceIds, `pricing.cautions[${i}]`); }
 

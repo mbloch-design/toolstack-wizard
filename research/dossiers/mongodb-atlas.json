@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.mongodb.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "MongoDB Atlas pricing" },
-    { "id": "s2", "url": "https://www.mongodb.com/atlas", "tier": 1, "accessedOn": "2026-09-25", "title": "MongoDB Atlas product page" }
+    {
+      "id": "s1",
+      "url": "https://www.mongodb.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "MongoDB Atlas pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.mongodb.com/atlas",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "MongoDB Atlas product page"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,7 +37,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "M0 cluster, 512 MB storage, shared RAM/vCPU, forever free", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,76 +51,225 @@
         "name": "Free (M0)",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "512 MB storage, shared RAM and vCPU, one per project", "fr": "512 Mo de stockage, RAM et vCPU partagés, un cluster par projet" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "512 MB storage, shared RAM and vCPU, one per project",
+            "fr": "512 Mo de stockage, RAM et vCPU partagés, un cluster par projet"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "flex",
         "name": "Flex",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 8, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 8,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 GB storage, billed hourly from $0.011/h, capped around $30/month at the top usage tier", "fr": "5 Go de stockage, facturé à l'heure dès 0,011 $/h, plafonné vers 30 $/mois au palier d'usage le plus haut" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "5 GB storage, billed hourly from $0.011/h, capped around $30/month at the top usage tier",
+            "fr": "5 Go de stockage, facturé à l'heure dès 0,011 $/h, plafonné vers 30 $/mois au palier d'usage le plus haut"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "dedicated-m10",
         "name": "Dedicated (M10)",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 57, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 57,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry dedicated tier: 2 GB RAM, 2 vCPUs, 10 to 128 GB storage, billed at $0.08/hour (about $57/month run continuously)", "fr": "Palier dédié d'entrée : 2 Go de RAM, 2 vCPU, 10 à 128 Go de stockage, facturé 0,08 $/h (environ 57 $/mois en fonctionnement continu)" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Entry dedicated tier: 2 GB RAM, 2 vCPUs, 10 to 128 GB storage, billed at $0.08/hour (about $57/month run continuously)",
+            "fr": "Palier dédié d'entrée : 2 Go de RAM, 2 vCPU, 10 à 128 Go de stockage, facturé 0,08 $/h (environ 57 $/mois en fonctionnement continu)"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
-    "comparePlanKey": "dedicated-m10",
+    "comparePlanKey": "flex",
     "addOns": [
-      { "name": "Atlas Search / Vector Search nodes", "unit": "usage", "sourceIds": ["s1"] },
-      { "name": "Atlas Data Federation and SQL Interface", "unit": "usage", "sourceIds": ["s1"] },
-      { "name": "Atlas Stream Processing", "unit": "usage", "sourceIds": ["s1"] },
-      { "name": "App Services (compute, requests, sync, data transfer)", "unit": "usage", "sourceIds": ["s1"] }
+      {
+        "name": "Atlas Search / Vector Search nodes",
+        "unit": "usage",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Atlas Data Federation and SQL Interface",
+        "unit": "usage",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Atlas Stream Processing",
+        "unit": "usage",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "App Services (compute, requests, sync, data transfer)",
+        "unit": "usage",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "All paid tiers are billed hourly by resources consumed (RAM, vCPU, storage); the figures here are the entry rate, not a fixed monthly fee.", "fr": "Tous les paliers payants sont facturés à l'heure selon les ressources consommées (RAM, vCPU, stockage) ; les montants indiqués ici sont le tarif d'entrée, pas un forfait mensuel fixe.", "sourceIds": ["s1"] },
-      { "en": "Search, Vector Search, Data Federation, Stream Processing and App Services are separate usage-based add-ons billed on top of the cluster.", "fr": "Search, Vector Search, Data Federation, Stream Processing et App Services sont des add-ons facturés séparément à l'usage, en plus du cluster.", "sourceIds": ["s1"] }
+      {
+        "en": "All paid tiers are billed hourly by resources consumed (RAM, vCPU, storage); the figures here are the entry rate, not a fixed monthly fee.",
+        "fr": "Tous les paliers payants sont facturés à l'heure selon les ressources consommées (RAM, vCPU, stockage) ; les montants indiqués ici sont le tarif d'entrée, pas un forfait mensuel fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Search, Vector Search, Data Federation, Stream Processing and App Services are separate usage-based add-ons billed on top of the cluster.",
+        "fr": "Search, Vector Search, Data Federation, Stream Processing et App Services sont des add-ons facturés séparément à l'usage, en plus du cluster.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Managed multi-cloud MongoDB document database with automatic scaling and built-in security defaults.", "fr": "Base de données documentaire MongoDB managée multi-cloud, avec mise à l'échelle automatique et sécurité activée par défaut.", "sourceIds": ["s2"] },
-      { "en": "Atlas Search and Vector Search run full-text and semantic/AI search directly on the same cluster.", "fr": "Atlas Search et Vector Search exécutent la recherche plein texte et sémantique/IA directement sur le même cluster.", "sourceIds": ["s2"] },
-      { "en": "Deployable via UI, CLI, Terraform, AWS CloudFormation or a Kubernetes Operator for infrastructure-as-code workflows.", "fr": "Déployable via l'interface, la CLI, Terraform, AWS CloudFormation ou un opérateur Kubernetes pour des workflows infrastructure-as-code.", "sourceIds": ["s2"] }
+      {
+        "en": "Managed multi-cloud MongoDB document database with automatic scaling and built-in security defaults.",
+        "fr": "Base de données documentaire MongoDB managée multi-cloud, avec mise à l'échelle automatique et sécurité activée par défaut.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Atlas Search and Vector Search run full-text and semantic/AI search directly on the same cluster.",
+        "fr": "Atlas Search et Vector Search exécutent la recherche plein texte et sémantique/IA directement sur le même cluster.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Deployable via UI, CLI, Terraform, AWS CloudFormation or a Kubernetes Operator for infrastructure-as-code workflows.",
+        "fr": "Déployable via l'interface, la CLI, Terraform, AWS CloudFormation ou un opérateur Kubernetes pour des workflows infrastructure-as-code.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "The M0 free cluster is capped at 512 MB and shared compute, not usable for production traffic.", "fr": "Le cluster gratuit M0 est limité à 512 Mo et à du calcul partagé, inutilisable pour du trafic de production.", "sourceIds": ["s1"] },
-      { "en": "Costs are usage-based and span the cluster plus optional Search, Federation and Stream Processing add-ons, making the total bill harder to predict than a flat subscription.", "fr": "Les coûts sont à l'usage et s'étendent au cluster plus les add-ons optionnels Search, Federation et Stream Processing, ce qui rend la facture totale plus difficile à prévoir qu'un abonnement fixe.", "sourceIds": ["s1"] }
+      {
+        "en": "The M0 free cluster is capped at 512 MB and shared compute, not usable for production traffic.",
+        "fr": "Le cluster gratuit M0 est limité à 512 Mo et à du calcul partagé, inutilisable pour du trafic de production.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Costs are usage-based and span the cluster plus optional Search, Federation and Stream Processing add-ons, making the total bill harder to predict than a flat subscription.",
+        "fr": "Les coûts sont à l'usage et s'étendent au cluster plus les add-ons optionnels Search, Federation et Stream Processing, ce qui rend la facture totale plus difficile à prévoir qu'un abonnement fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Kafka", "slug": null, "sourceIds": ["s2"] },
-      { "name": "AWS S3", "slug": "aws", "sourceIds": ["s2"] },
-      { "name": "Kubernetes", "slug": "kubernetes", "sourceIds": ["s2"] }
+      {
+        "name": "Kafka",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "AWS S3",
+        "slug": "aws",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Kubernetes",
+        "slug": "kubernetes",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "audience": {
     "persona": "THEO",
-    "description": { "en": "Fits a developer or small technical team that needs a managed database and wants to start free before paying for a dedicated cluster.", "fr": "Convient à un développeur ou une petite équipe technique qui a besoin d'une base de données managée et veut démarrer gratuitement avant de payer un cluster dédié." },
+    "description": {
+      "en": "Fits a developer or small technical team that needs a managed database and wants to start free before paying for a dedicated cluster.",
+      "fr": "Convient à un développeur ou une petite équipe technique qui a besoin d'une base de données managée et veut démarrer gratuitement avant de payer un cluster dédié."
+    },
     "soloRelevance": "high",
     "teamRelevance": "high"
   },
   "useCases": [
-    { "en": "Prototyping an app on the free M0 cluster before moving to a paid dedicated tier for production.", "fr": "Prototyper une app sur le cluster gratuit M0 avant de passer à un palier dédié payant en production." },
-    { "en": "Running a production API backend on an M10+ dedicated cluster with automatic scaling.", "fr": "Faire tourner une API de production sur un cluster dédié M10 ou plus avec mise à l'échelle automatique." },
-    { "en": "Adding semantic search to an existing app through Atlas Vector Search without a separate search service.", "fr": "Ajouter de la recherche sémantique à une app existante via Atlas Vector Search sans service de recherche séparé." }
+    {
+      "en": "Prototyping an app on the free M0 cluster before moving to a paid dedicated tier for production.",
+      "fr": "Prototyper une app sur le cluster gratuit M0 avant de passer à un palier dédié payant en production."
+    },
+    {
+      "en": "Running a production API backend on an M10+ dedicated cluster with automatic scaling.",
+      "fr": "Faire tourner une API de production sur un cluster dédié M10 ou plus avec mise à l'échelle automatique."
+    },
+    {
+      "en": "Adding semantic search to an existing app through Atlas Vector Search without a separate search service.",
+      "fr": "Ajouter de la recherche sémantique à une app existante via Atlas Vector Search sans service de recherche séparé."
+    }
   ],
   "alternatives": [
-    { "slug": "supabase", "reason": { "en": "Comparable managed database with a generous free tier, though built on Postgres rather than MongoDB's document model.", "fr": "Base de données managée comparable avec un plan gratuit généreux, mais construite sur Postgres plutôt que le modèle documentaire de MongoDB." } },
-    { "slug": "firebase", "reason": { "en": "Google's managed NoSQL document database with a similar free-to-usage-based pricing curve.", "fr": "Base de données documentaire NoSQL managée de Google, avec une courbe de prix gratuit-vers-usage similaire." } },
-    { "slug": "neon", "reason": { "en": "Serverless managed Postgres with a comparable usage-based, scale-to-zero pricing approach.", "fr": "Postgres managé serverless avec une approche tarifaire à l'usage et mise à l'échelle jusqu'à zéro comparable." } }
+    {
+      "slug": "supabase",
+      "reason": {
+        "en": "Comparable managed database with a generous free tier, though built on Postgres rather than MongoDB's document model.",
+        "fr": "Base de données managée comparable avec un plan gratuit généreux, mais construite sur Postgres plutôt que le modèle documentaire de MongoDB."
+      }
+    },
+    {
+      "slug": "firebase",
+      "reason": {
+        "en": "Google's managed NoSQL document database with a similar free-to-usage-based pricing curve.",
+        "fr": "Base de données documentaire NoSQL managée de Google, avec une courbe de prix gratuit-vers-usage similaire."
+      }
+    },
+    {
+      "slug": "neon",
+      "reason": {
+        "en": "Serverless managed Postgres with a comparable usage-based, scale-to-zero pricing approach.",
+        "fr": "Postgres managé serverless avec une approche tarifaire à l'usage et mise à l'échelle jusqu'à zéro comparable."
+      }
+    }
   ],
   "missingAlternatives": [],
   "rating": {
@@ -112,40 +279,110 @@
     "puissance": 5,
     "reversibilite": 4,
     "evidence": {
-      "valeurAjoutee": { "en": "The free M0 tier removes setup cost entirely, and the entry dedicated cluster starts around $57/month for real production capacity.", "fr": "Le palier gratuit M0 supprime tout coût de démarrage, et le cluster dédié d'entrée démarre autour de 57 $/mois pour une vraie capacité de production.", "sourceIds": ["s1"] },
-      "simplicite": { "en": "Creating an M0 cluster takes minutes, but usage-based billing across cluster, Search and Data Federation needs real reading before it is predictable.", "fr": "Créer un cluster M0 prend quelques minutes, mais la facturation à l'usage sur cluster, Search et Data Federation demande une vraie lecture avant d'être prévisible.", "sourceIds": ["s1"] },
-      "utilisation": { "en": "Delivers a fully managed document database with automatic scaling as advertised, without workarounds.", "fr": "Fournit une base de données documentaire managée avec mise à l'échelle automatique comme annoncé, sans contournement.", "sourceIds": ["s2"] },
-      "puissance": { "en": "Covers document storage, full-text and vector search, streaming and data federation under one platform, a reference point for managed MongoDB.", "fr": "Couvre stockage documentaire, recherche plein texte et vectorielle, streaming et fédération de données sous une même plateforme, une référence pour MongoDB managé.", "sourceIds": ["s2"] },
-      "reversibilite": { "en": "Standard MongoDB wire protocol and tooling (mongodump, Compass, Relational Migrator) allow data export to any MongoDB-compatible host.", "fr": "Le protocole et les outils MongoDB standards (mongodump, Compass, Relational Migrator) permettent d'exporter les données vers tout hébergeur compatible MongoDB.", "sourceIds": ["s2"] }
+      "valeurAjoutee": {
+        "en": "The free M0 tier removes setup cost entirely, and the entry dedicated cluster starts around $57/month for real production capacity.",
+        "fr": "Le palier gratuit M0 supprime tout coût de démarrage, et le cluster dédié d'entrée démarre autour de 57 $/mois pour une vraie capacité de production.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Creating an M0 cluster takes minutes, but usage-based billing across cluster, Search and Data Federation needs real reading before it is predictable.",
+        "fr": "Créer un cluster M0 prend quelques minutes, mais la facturation à l'usage sur cluster, Search et Data Federation demande une vraie lecture avant d'être prévisible.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers a fully managed document database with automatic scaling as advertised, without workarounds.",
+        "fr": "Fournit une base de données documentaire managée avec mise à l'échelle automatique comme annoncé, sans contournement.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers document storage, full-text and vector search, streaming and data federation under one platform, a reference point for managed MongoDB.",
+        "fr": "Couvre stockage documentaire, recherche plein texte et vectorielle, streaming et fédération de données sous une même plateforme, une référence pour MongoDB managé.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Standard MongoDB wire protocol and tooling (mongodump, Compass, Relational Migrator) allow data export to any MongoDB-compatible host.",
+        "fr": "Le protocole et les outils MongoDB standards (mongodump, Compass, Relational Migrator) permettent d'exporter les données vers tout hébergeur compatible MongoDB.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     },
     "lastActivityVerifiedOn": null
   },
   "editorial": {
-    "tagline": { "en": "Managed MongoDB", "fr": "MongoDB managé" },
-    "shortDescription": { "en": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.", "fr": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage." },
+    "tagline": {
+      "en": "Managed MongoDB",
+      "fr": "MongoDB managé"
+    },
+    "shortDescription": {
+      "en": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.",
+      "fr": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage."
+    },
     "longDescription": {
-      "en": "Atlas is MongoDB's managed database service: create a free M0 cluster in minutes, then scale to dedicated hardware billed by the hour once the app needs real capacity. The free tier is genuinely usable for learning and small prototypes, capped at 512 MB and shared compute.\n\nOnce production traffic arrives, pricing shifts to hourly usage across cluster size, storage, and any add-ons enabled: Search, Vector Search, Data Federation, Stream Processing, and App Services all bill separately. That flexibility means the platform scales from a side project to a large production system without a migration, but the total monthly bill is harder to predict than a flat subscription.\n\nFor a solo developer or small team, the entry dedicated cluster (M10, about $57/month run continuously) is the realistic starting point for production, not the free tier.",
-      "fr": "Atlas est le service de base de données managée de MongoDB : crée un cluster gratuit M0 en quelques minutes, puis passe à du matériel dédié facturé à l'heure une fois que l'app a besoin de vraie capacité. Le plan gratuit est vraiment utilisable pour apprendre et prototyper, limité à 512 Mo et à du calcul partagé.\n\nUne fois le trafic de production arrivé, la tarification passe à l'usage horaire sur la taille du cluster, le stockage et les add-ons activés : Search, Vector Search, Data Federation, Stream Processing et App Services se facturent tous séparément. Cette flexibilité permet à la plateforme de passer d'un side project à un gros système de production sans migration, mais la facture mensuelle totale est plus difficile à prévoir qu'un abonnement fixe.\n\nPour un développeur seul ou une petite équipe, le cluster dédié d'entrée (M10, environ 57 $/mois en continu) est le vrai point de départ pour la production, pas le plan gratuit."
+      "en": "Atlas is MongoDB's managed database service: create a free M0 cluster in minutes, then scale to dedicated hardware billed by the hour once the app needs real capacity. The free tier is genuinely usable for learning and small prototypes, capped at 512 MB and shared compute.\n\nOnce production traffic arrives, pricing shifts to hourly usage across cluster size, storage, and any add-ons enabled: Search, Vector Search, Data Federation, Stream Processing, and App Services all bill separately. That flexibility means the platform scales from a side project to a large production system without a migration, but the total monthly bill is harder to predict than a flat subscription.\n\nFor a solo developer or small team, Flex (from $8/month, capped around $30) is the first paid step for a small app; the entry dedicated cluster (M10, about $57/month run continuously) is the step for production capacity, not the free tier.",
+      "fr": "Atlas est le service de base de données managée de MongoDB : crée un cluster gratuit M0 en quelques minutes, puis passe à du matériel dédié facturé à l'heure une fois que l'app a besoin de vraie capacité. Le plan gratuit est vraiment utilisable pour apprendre et prototyper, limité à 512 Mo et à du calcul partagé.\n\nUne fois le trafic de production arrivé, la tarification passe à l'usage horaire sur la taille du cluster, le stockage et les add-ons activés : Search, Vector Search, Data Federation, Stream Processing et App Services se facturent tous séparément. Cette flexibilité permet à la plateforme de passer d'un side project à un gros système de production sans migration, mais la facture mensuelle totale est plus difficile à prévoir qu'un abonnement fixe.\n\nPour un développeur seul ou une petite équipe, Flex (dès 8 $/mois, plafonné autour de 30 $) est la première marche payante pour une petite application ; le cluster dédié d'entrée (M10, environ 57 $/mois en continu) est la marche pour une vraie capacité de production, pas le plan gratuit."
     },
     "pros": [
-      { "en": "Free tier is permanent, not a time-limited trial.", "fr": "Le plan gratuit est permanent, pas un essai limité dans le temps." },
-      { "en": "Scales from prototype to large production cluster on the same platform.", "fr": "Passe du prototype à un gros cluster de production sur la même plateforme." },
-      { "en": "Search, vector search and streaming live on the same database, avoiding extra services.", "fr": "Recherche, recherche vectorielle et streaming vivent dans la même base, évitant des services supplémentaires." }
+      {
+        "en": "Free tier is permanent, not a time-limited trial.",
+        "fr": "Le plan gratuit est permanent, pas un essai limité dans le temps."
+      },
+      {
+        "en": "Scales from prototype to large production cluster on the same platform.",
+        "fr": "Passe du prototype à un gros cluster de production sur la même plateforme."
+      },
+      {
+        "en": "Search, vector search and streaming live on the same database, avoiding extra services.",
+        "fr": "Recherche, recherche vectorielle et streaming vivent dans la même base, évitant des services supplémentaires."
+      }
     ],
     "cons": [
-      { "en": "Usage-based billing across multiple add-ons makes the monthly bill hard to predict without monitoring.", "fr": "La facturation à l'usage sur plusieurs add-ons rend la facture mensuelle difficile à prévoir sans suivi actif." },
-      { "en": "The free M0 tier is not viable for any real production workload.", "fr": "Le plan gratuit M0 n'est pas viable pour un vrai usage de production." }
+      {
+        "en": "Usage-based billing across multiple add-ons makes the monthly bill hard to predict without monitoring.",
+        "fr": "La facturation à l'usage sur plusieurs add-ons rend la facture mensuelle difficile à prévoir sans suivi actif."
+      },
+      {
+        "en": "The free M0 tier is not viable for any real production workload.",
+        "fr": "Le plan gratuit M0 n'est pas viable pour un vrai usage de production."
+      }
     ],
     "verdict": {
-      "keepIf": { "en": "You need a managed document database that can grow from a free prototype to production without switching providers.", "fr": "Tu as besoin d'une base documentaire managée qui peut grandir d'un prototype gratuit à la production sans changer de fournisseur." },
-      "avoidIf": { "en": "You want flat, predictable monthly pricing rather than hourly usage billing.", "fr": "Tu veux un prix mensuel fixe et prévisible plutôt qu'une facturation horaire à l'usage." },
-      "threshold": { "en": "Budget at least $57/month for the entry M10 dedicated cluster once you leave the free tier for production.", "fr": "Prévois au moins 57 $/mois pour le cluster dédié M10 d'entrée dès que tu quittes le plan gratuit pour la production." },
-      "billingTraps": { "en": "Add-ons (Search, Data Federation, Stream Processing, App Services) bill separately from the cluster and can add up quickly at scale.", "fr": "Les add-ons (Search, Data Federation, Stream Processing, App Services) se facturent séparément du cluster et peuvent vite s'additionner à l'échelle." }
+      "keepIf": {
+        "en": "You need a managed document database that can grow from a free prototype to production without switching providers.",
+        "fr": "Tu as besoin d'une base documentaire managée qui peut grandir d'un prototype gratuit à la production sans changer de fournisseur."
+      },
+      "avoidIf": {
+        "en": "You want flat, predictable monthly pricing rather than hourly usage billing.",
+        "fr": "Tu veux un prix mensuel fixe et prévisible plutôt qu'une facturation horaire à l'usage."
+      },
+      "threshold": {
+        "en": "Flex starts at $8/month and caps around $30 for a small app; budget about $57/month for the M10 dedicated cluster once you need production capacity.",
+        "fr": "Flex démarre à 8 $/mois et plafonne autour de 30 $ pour une petite application ; prévois environ 57 $/mois pour le cluster dédié M10 dès qu'il te faut une vraie capacité de production."
+      },
+      "billingTraps": {
+        "en": "Add-ons (Search, Data Federation, Stream Processing, App Services) bill separately from the cluster and can add up quickly at scale.",
+        "fr": "Les add-ons (Search, Data Federation, Stream Processing, App Services) se facturent séparément du cluster et peuvent vite s'additionner à l'échelle."
+      }
     }
   },
   "unknowns": [
     "Whether taxes are included in displayed prices is not stated on the pricing page.",
     "Exact data transfer/egress rates vary by cloud provider and region and were not fully itemized here."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "decisions": [
+    {
+      "on": "2026-09-25",
+      "by": "Michael",
+      "note": "Compared on Flex, the smallest paid tier that runs a real project, per the usage rule of the brief."
+    }
+  ]
 }

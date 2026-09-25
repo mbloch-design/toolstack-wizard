@@ -113,6 +113,8 @@ function applyDossier(tool, d) {
     const fr = lang === "fr";
     const pr = plan.price;
     const parts = [];
+    const promo = plan.promoPrice ? (plan.promoPrice.annualPerMonth ?? plan.promoPrice.monthly ?? null) : null;
+    if (promo != null) parts.push(fr ? `Offre de lancement à ${money(promo, p.currency, lang)}/mois sur la première période ; prix de renouvellement non publié.` : `Introductory offer at ${money(promo, p.currency, lang)}/mo for the first term; renewal price not published.`);
     if (plan.onQuote) parts.push(fr ? "Sur devis." : "Custom quote.");
     else if (pr.oneTime != null && pr.oneTime > 0) parts.push(fr ? "Licence à vie, paiement unique." : "Lifetime license, one-time payment.");
     // The card already says "annual subscription paid upfront": only the
@@ -125,7 +127,7 @@ function applyDossier(tool, d) {
   const buildV5 = (lang) => ({
     ...(lang === "fr" ? tool.pricing_v5 || {} : tool.pricing_v5En || {}),
     compare_price_monthly_eur: compareNative != null && p.model !== "one_time" ? toEur(compareNative, p.currency) : 0,
-    compare_plan_name: p.model === "quote" ? "Prix non public" : compare?.name || null,
+    compare_plan_name: p.model === "quote" || p.regularPriceUnknown ? "Prix non public" : compare?.name || null,
     compare_plan_kind: kind,
     price_reliability: "high",
     verification_status: "official_explicit",
@@ -173,6 +175,7 @@ function applyDossier(tool, d) {
   const paidText = (lang) => {
     const fr = lang === "fr";
     if (p.model === "quote") return fr ? "Prix non public, sur devis." : "Price not public, custom quote.";
+    if (p.regularPriceUnknown) return fr ? "Plans payants affichés à prix promotionnel ; prix hors promotion non publié." : "Paid plans shown at promotional prices; regular price not published.";
     if (p.model === "free" || p.model === "open_source") return fr ? "Pas d'offre payante obligatoire." : "No paid plan required.";
     if (!compare) return "";
     const amount = compare.price.oneTime ?? compare.price.annualPerMonth ?? compare.price.monthly;

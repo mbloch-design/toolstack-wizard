@@ -269,8 +269,10 @@ Cas particuliers :
   gratuit, car l'usage courant ne coûte rien chaque mois ; les packs restent
   dans `addOns` ou dans des plans `one_time`.
 - **Prix promotionnel** (bannière, offre 2 ans, « -60 % ») : il ne va jamais
-  dans `annualPerMonth`. Relève le prix hors promotion, ou mets `null` et
-  explique dans `unknowns`.
+  dans `price`. Relève le prix hors promotion. S'il n'est publié nulle part,
+  mets le prix promotionnel dans `promoPrice` du plan (même forme que
+  `price`), laisse `price` à `null`, passe `pricing.regularPriceUnknown` à
+  `true` et `comparePlanKey` à `null`.
 
 ## 6. Note ToolTrim (5 axes, entiers de 1 à 5)
 

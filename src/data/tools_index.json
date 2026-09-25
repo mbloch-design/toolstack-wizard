@@ -20941,10 +20941,10 @@
     "shortDescriptionEn": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.",
     "pricing": {
       "free": "Plan gratuit : M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
-      "paid": "Dès 57 $/mois, plan Dedicated (M10)."
+      "paid": "Dès 8 $/mois, plan Flex."
     },
-    "defaultMonthlyPrice": 48.95,
-    "compareMonthlyPrice": 48.95,
+    "defaultMonthlyPrice": 6.87,
+    "compareMonthlyPrice": 6.87,
     "websiteUrl": "https://mongodb.com/atlas",
     "ogImageUrl": "https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png",
     "tool_type": "metier",
@@ -21964,10 +21964,10 @@
     "shortDescriptionEn": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
     "pricing": {
       "free": "Plan gratuit : 1 account, single device only, no Password Health or Data Breach Scanner",
-      "paid": "Dès 1,99 €/mois, plan Premium."
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
-    "defaultMonthlyPrice": 1.99,
-    "compareMonthlyPrice": 1.99,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "websiteUrl": "https://nordpass.com",
     "ogImageUrl": "https://sb.nordcdn.com/transform/3d7f8d78-75bf-422b-9481-bc4a26643afe/nordpass-meta-trademark",
     "substitution_cluster_v2": "password-manager",

@@ -97028,13 +97028,13 @@
     "slug": "mongodb-atlas",
     "category": "nocode-web",
     "shortDescription": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage.",
-    "longDescription": "Atlas est le service de base de données managée de MongoDB : crée un cluster gratuit M0 en quelques minutes, puis passe à du matériel dédié facturé à l'heure une fois que l'app a besoin de vraie capacité. Le plan gratuit est vraiment utilisable pour apprendre et prototyper, limité à 512 Mo et à du calcul partagé.\n\nUne fois le trafic de production arrivé, la tarification passe à l'usage horaire sur la taille du cluster, le stockage et les add-ons activés : Search, Vector Search, Data Federation, Stream Processing et App Services se facturent tous séparément. Cette flexibilité permet à la plateforme de passer d'un side project à un gros système de production sans migration, mais la facture mensuelle totale est plus difficile à prévoir qu'un abonnement fixe.\n\nPour un développeur seul ou une petite équipe, le cluster dédié d'entrée (M10, environ 57 $/mois en continu) est le vrai point de départ pour la production, pas le plan gratuit.",
+    "longDescription": "Atlas est le service de base de données managée de MongoDB : crée un cluster gratuit M0 en quelques minutes, puis passe à du matériel dédié facturé à l'heure une fois que l'app a besoin de vraie capacité. Le plan gratuit est vraiment utilisable pour apprendre et prototyper, limité à 512 Mo et à du calcul partagé.\n\nUne fois le trafic de production arrivé, la tarification passe à l'usage horaire sur la taille du cluster, le stockage et les add-ons activés : Search, Vector Search, Data Federation, Stream Processing et App Services se facturent tous séparément. Cette flexibilité permet à la plateforme de passer d'un side project à un gros système de production sans migration, mais la facture mensuelle totale est plus difficile à prévoir qu'un abonnement fixe.\n\nPour un développeur seul ou une petite équipe, Flex (dès 8 $/mois, plafonné autour de 30 $) est la première marche payante pour une petite application ; le cluster dédié d'entrée (M10, environ 57 $/mois en continu) est la marche pour une vraie capacité de production, pas le plan gratuit.",
     "affiliateLink": "",
     "websiteUrl": "https://mongodb.com/atlas",
-    "defaultMonthlyPrice": 48.95,
+    "defaultMonthlyPrice": 6.87,
     "pricing": {
       "free": "Plan gratuit : M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
-      "paid": "Dès 57 $/mois, plan Dedicated (M10)."
+      "paid": "Dès 8 $/mois, plan Flex."
     },
     "logo": "",
     "soloRelevance": "high",
@@ -97046,7 +97046,7 @@
       "avoidIf": [
         "Tu veux un prix mensuel fixe et prévisible plutôt qu'une facturation horaire à l'usage."
       ],
-      "threshold": "Prévois au moins 57 $/mois pour le cluster dédié M10 d'entrée dès que tu quittes le plan gratuit pour la production.",
+      "threshold": "Flex démarre à 8 $/mois et plafonne autour de 30 $ pour une petite application ; prévois environ 57 $/mois pour le cluster dédié M10 dès qu'il te faut une vraie capacité de production.",
       "billingTraps": [
         {
           "title": "Avant de payer",
@@ -97131,9 +97131,9 @@
       ],
       "verified_on": "2026-09-25",
       "source_domain": "mongodb.com",
-      "compare_plan_name": "Dedicated (M10)",
+      "compare_plan_name": "Flex",
       "official_source_url": "https://www.mongodb.com/pricing",
-      "compare_price_monthly_eur": 48.95,
+      "compare_price_monthly_eur": 6.87,
       "compare_plan_kind": "account",
       "price_reliability": "high",
       "verification_status": "official_explicit",
@@ -97173,7 +97173,7 @@
           "detailsSourceUrl": "https://www.mongodb.com/pricing",
           "pricingUnit": "usage",
           "isFree": false,
-          "isComparePlan": false,
+          "isComparePlan": true,
           "nativeAmount": 8,
           "nativeCurrency": "USD",
           "billingPeriod": "monthly",
@@ -97193,7 +97193,7 @@
           "detailsSourceUrl": "https://www.mongodb.com/pricing",
           "pricingUnit": "usage",
           "isFree": false,
-          "isComparePlan": true,
+          "isComparePlan": false,
           "nativeAmount": 57,
           "nativeCurrency": "USD",
           "billingPeriod": "monthly",
@@ -97207,7 +97207,7 @@
     },
     "decision_policy_v3": null,
     "shortDescriptionEn": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.",
-    "longDescriptionEn": "Atlas is MongoDB's managed database service: create a free M0 cluster in minutes, then scale to dedicated hardware billed by the hour once the app needs real capacity. The free tier is genuinely usable for learning and small prototypes, capped at 512 MB and shared compute.\n\nOnce production traffic arrives, pricing shifts to hourly usage across cluster size, storage, and any add-ons enabled: Search, Vector Search, Data Federation, Stream Processing, and App Services all bill separately. That flexibility means the platform scales from a side project to a large production system without a migration, but the total monthly bill is harder to predict than a flat subscription.\n\nFor a solo developer or small team, the entry dedicated cluster (M10, about $57/month run continuously) is the realistic starting point for production, not the free tier.",
+    "longDescriptionEn": "Atlas is MongoDB's managed database service: create a free M0 cluster in minutes, then scale to dedicated hardware billed by the hour once the app needs real capacity. The free tier is genuinely usable for learning and small prototypes, capped at 512 MB and shared compute.\n\nOnce production traffic arrives, pricing shifts to hourly usage across cluster size, storage, and any add-ons enabled: Search, Vector Search, Data Federation, Stream Processing, and App Services all bill separately. That flexibility means the platform scales from a side project to a large production system without a migration, but the total monthly bill is harder to predict than a flat subscription.\n\nFor a solo developer or small team, Flex (from $8/month, capped around $30) is the first paid step for a small app; the entry dedicated cluster (M10, about $57/month run continuously) is the step for production capacity, not the free tier.",
     "prosEn": [
       "Free tier is permanent, not a time-limited trial.",
       "Scales from prototype to large production cluster on the same platform.",
@@ -97229,7 +97229,7 @@
       "avoidIf": [
         "You want flat, predictable monthly pricing rather than hourly usage billing."
       ],
-      "threshold": "Budget at least $57/month for the entry M10 dedicated cluster once you leave the free tier for production.",
+      "threshold": "Flex starts at $8/month and caps around $30 for a small app; budget about $57/month for the M10 dedicated cluster once you need production capacity.",
       "billingTraps": [
         {
           "title": "Before you pay",
@@ -97239,7 +97239,7 @@
     },
     "pricingEn": {
       "free": "Free plan: M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
-      "paid": "From $57/mo, Dedicated (M10) plan."
+      "paid": "From $8/mo, Flex plan."
     },
     "force_silence": false,
     "description": "MongoDB Atlas, c'est la version managée et hébergée de MongoDB, la base de données NoSQL la plus connue. Contrairement à une base relationnelle (Postgres, MySQL), MongoDB stocke des documents JSON souples : pas de schéma rigide, tu fais évoluer la structure de tes données au fil du projet. Atlas s'occupe de l'hébergement, des sauvegardes, de la montée en charge et de la sécurité, pour que tu n'aies pas à administrer de serveur de base.\n\nLe modèle est progressif : un cluster gratuit (M0, 512 Mo) suffit pour prototyper ou faire tourner un petit projet, des paliers Flex à l'usage existent entre les deux, puis les clusters dédiés démarrent autour de 57$/mois (M10). La facture devient vite difficile à prévoir quand le trafic grimpe, c'est le revers du modèle cloud à l'usage.\n\nQuand le choisir : MongoDB brille quand tes données sont peu structurées ou évoluent souvent (catalogues, contenus, événements). Si ton projet est naturellement relationnel (commandes, comptabilité, relations entre tables), une base Postgres comme Neon ou Supabase sera souvent plus adaptée et moins chère. Le choix se fait sur la nature des données, pas sur la hype.",
@@ -97250,8 +97250,8 @@
       "checkedOn": "2026-09-25"
     },
     "pricing_v5En": {
-      "compare_price_monthly_eur": 48.95,
-      "compare_plan_name": "Dedicated (M10)",
+      "compare_price_monthly_eur": 6.87,
+      "compare_plan_name": "Flex",
       "compare_plan_kind": "account",
       "price_reliability": "high",
       "verification_status": "official_explicit",
@@ -97294,7 +97294,7 @@
           "detailsSourceUrl": "https://www.mongodb.com/pricing",
           "pricingUnit": "usage",
           "isFree": false,
-          "isComparePlan": false,
+          "isComparePlan": true,
           "nativeAmount": 8,
           "nativeCurrency": "USD",
           "billingPeriod": "monthly",
@@ -97314,7 +97314,7 @@
           "detailsSourceUrl": "https://www.mongodb.com/pricing",
           "pricingUnit": "usage",
           "isFree": false,
-          "isComparePlan": true,
+          "isComparePlan": false,
           "nativeAmount": 57,
           "nativeCurrency": "USD",
           "billingPeriod": "monthly",
@@ -102040,20 +102040,20 @@
     "shortDescription": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège.",
     "shortDescriptionEn": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
     "description": "NordPass, c'est gestionnaire de mots de passe par NordVPN. À partir de 1.99€/mois.",
-    "longDescription": "NordPass stocke mots de passe, passkeys et fichiers sensibles dans un coffre-fort chiffré xChaCha20, avec remplissage automatique, générateur de mots de passe et analyse des fuites sur les plans payants. Le plan gratuit fonctionne mais reste limité à un seul appareil à la fois, ce qui pousse assez vite vers Premium.\n\nPour les équipes, Business et Enterprise ajoutent dossiers partagés, gestion de groupes et journal d'activité, mais les deux exigent un minimum de 5 utilisateurs, et le palier Teams le moins cher ne se vend que par packs fixes de 10. Un indépendant qui veut un partage de niveau entreprise pour un ou deux collaborateurs finira par payer des sièges inutilisés.\n\nLes prix affichés sur le site sont des tarifs promotionnels de première période ; NordPass indique que le renouvellement coûte plus cher, donc prévois le tarif plein après la première année, pas le prix réduit.",
-    "longDescriptionEn": "NordPass stores passwords, passkeys and sensitive files in an xChaCha20-encrypted vault, with autofill, a password generator and a breach scanner on paid plans. The free plan works but is capped at one device at a time, which pushes most people toward Premium fairly quickly.\n\nFor teams, Business and Enterprise add shared folders, group management and an activity log, but both require a 5-user minimum, and the cheapest Teams tier only comes in fixed 10-user packs. A single freelancer who wants business-grade sharing for one or two collaborators will end up paying for seats they do not use.\n\nThe headline prices shown on the site are first-term promotional rates; NordPass says renewal pricing is higher, so budget for the list price after the first year, not the discounted one.",
+    "longDescription": "NordPass stocke mots de passe, passkeys et fichiers sensibles dans un coffre-fort chiffré xChaCha20, avec remplissage automatique, générateur de mots de passe et analyse des fuites sur les plans payants. Le plan gratuit fonctionne mais reste limité à un seul appareil à la fois, ce qui pousse assez vite vers Premium.\n\nPour les équipes, Business et Enterprise ajoutent dossiers partagés, gestion de groupes et journal d'activité, mais les deux exigent un minimum de 5 utilisateurs, et le palier Teams le moins cher ne se vend que par packs fixes de 10. Un indépendant qui veut un partage de niveau entreprise pour un ou deux collaborateurs finira par payer des sièges inutilisés.\n\nLes prix affichés sur le site sont des promotions de première période et NordPass ne publie pas le prix de renouvellement : demande-le avant de t'engager, et prévois davantage que le tarif réduit après la première période.",
+    "longDescriptionEn": "NordPass stores passwords, passkeys and sensitive files in an xChaCha20-encrypted vault, with autofill, a password generator and a breach scanner on paid plans. The free plan works but is capped at one device at a time, which pushes most people toward Premium fairly quickly.\n\nFor teams, Business and Enterprise add shared folders, group management and an activity log, but both require a 5-user minimum, and the cheapest Teams tier only comes in fixed 10-user packs. A single freelancer who wants business-grade sharing for one or two collaborators will end up paying for seats they do not use.\n\nThe prices shown on the site are first-term promotions and NordPass does not publish the renewal price: ask for it before committing, and budget for more than the discounted rate after the first term.",
     "pricing": {
       "free": "Plan gratuit : 1 account, single device only, no Password Health or Data Breach Scanner",
-      "paid": "Dès 1,99 €/mois, plan Premium."
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
     "pricingEn": {
       "free": "Free plan: 1 account, single device only, no Password Health or Data Breach Scanner",
-      "paid": "From €1.99/mo, Premium plan."
+      "paid": "Paid plans shown at promotional prices; regular price not published."
     },
-    "defaultMonthlyPrice": 1.99,
+    "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "compare_price_monthly_eur": 1.99,
-      "compare_plan_name": "Premium",
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
       "compare_plan_kind": "account",
       "price_reliability": "high",
       "verification_status": "official_explicit",
@@ -102093,18 +102093,18 @@
         {
           "planKey": "premium",
           "displayName": "Premium",
-          "summary": null,
+          "summary": "Offre de lancement à 1,99 €/mois sur la première période ; prix de renouvellement non publié.",
           "featureHighlights": [
             "1 compte utilisateur, synchronisation multi-appareils, analyse des fuites de données et fichiers joints"
           ],
           "detailsSourceUrl": "https://nordpass.com/plans/",
           "pricingUnit": "account",
           "isFree": false,
-          "isComparePlan": true,
-          "nativeAmount": 1.99,
+          "isComparePlan": false,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102113,7 +102113,7 @@
         {
           "planKey": "family",
           "displayName": "Family",
-          "summary": null,
+          "summary": "Offre de lancement à 3,69 €/mois sur la première période ; prix de renouvellement non publié.",
           "featureHighlights": [
             "6 coffres-forts chiffrés distincts pour la famille ou des amis"
           ],
@@ -102121,10 +102121,10 @@
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 3.69,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102133,7 +102133,7 @@
         {
           "planKey": "teams",
           "displayName": "Teams",
-          "summary": "Par utilisateur, 10 minimum.",
+          "summary": "Offre de lancement à 1,79 €/mois sur la première période ; prix de renouvellement non publié. Par utilisateur, 10 minimum.",
           "featureHighlights": [
             "Vendu uniquement par pack de 10 utilisateurs, SSO limité à Google Workspace"
           ],
@@ -102141,10 +102141,10 @@
           "pricingUnit": "seat",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 1.79,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102153,7 +102153,7 @@
         {
           "planKey": "business",
           "displayName": "Business",
-          "summary": "Par utilisateur, 5 minimum.",
+          "summary": "Offre de lancement à 3,59 €/mois sur la première période ; prix de renouvellement non publié. Par utilisateur, 5 minimum.",
           "featureHighlights": [
             "5 utilisateurs minimum, ajoute les dossiers partagés, la qualité des mots de passe, l'analyse de fuites et l'intégration Vanta"
           ],
@@ -102161,10 +102161,10 @@
           "pricingUnit": "seat",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 3.59,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102173,7 +102173,7 @@
         {
           "planKey": "enterprise",
           "displayName": "Enterprise",
-          "summary": "Par utilisateur, 5 minimum.",
+          "summary": "Offre de lancement à 5,39 €/mois sur la première période ; prix de renouvellement non publié. Par utilisateur, 5 minimum.",
           "featureHighlights": [
             "5 utilisateurs minimum, ajoute le SSO Entra ID/ADFS/Okta, le provisioning utilisateurs et les intégrations Splunk et Sentinel"
           ],
@@ -102181,10 +102181,10 @@
           "pricingUnit": "seat",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 5.39,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102304,8 +102304,8 @@
       "checkedOn": "2026-09-25"
     },
     "pricing_v5En": {
-      "compare_price_monthly_eur": 1.99,
-      "compare_plan_name": "Premium",
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
       "compare_plan_kind": "account",
       "price_reliability": "high",
       "verification_status": "official_explicit",
@@ -102341,18 +102341,18 @@
         {
           "planKey": "premium",
           "displayName": "Premium",
-          "summary": null,
+          "summary": "Introductory offer at €1.99/mo for the first term; renewal price not published.",
           "featureHighlights": [
             "1 user account, multi-device sync, Data Breach Scanner and file attachments"
           ],
           "detailsSourceUrl": "https://nordpass.com/plans/",
           "pricingUnit": "account",
           "isFree": false,
-          "isComparePlan": true,
-          "nativeAmount": 1.99,
+          "isComparePlan": false,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102361,7 +102361,7 @@
         {
           "planKey": "family",
           "displayName": "Family",
-          "summary": null,
+          "summary": "Introductory offer at €3.69/mo for the first term; renewal price not published.",
           "featureHighlights": [
             "6 separate encrypted vaults for family or friends"
           ],
@@ -102369,10 +102369,10 @@
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 3.69,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102381,7 +102381,7 @@
         {
           "planKey": "teams",
           "displayName": "Teams",
-          "summary": "Per user, 10 minimum.",
+          "summary": "Introductory offer at €1.79/mo for the first term; renewal price not published. Per user, 10 minimum.",
           "featureHighlights": [
             "Sold only in a 10-user pack, SSO with Google Workspace only"
           ],
@@ -102389,10 +102389,10 @@
           "pricingUnit": "seat",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 1.79,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102401,7 +102401,7 @@
         {
           "planKey": "business",
           "displayName": "Business",
-          "summary": "Per user, 5 minimum.",
+          "summary": "Introductory offer at €3.59/mo for the first term; renewal price not published. Per user, 5 minimum.",
           "featureHighlights": [
             "5-user minimum, adds shared folders, password health, breach scanner and Vanta integration"
           ],
@@ -102409,10 +102409,10 @@
           "pricingUnit": "seat",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 3.59,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102421,7 +102421,7 @@
         {
           "planKey": "enterprise",
           "displayName": "Enterprise",
-          "summary": "Per user, 5 minimum.",
+          "summary": "Introductory offer at €5.39/mo for the first term; renewal price not published. Per user, 5 minimum.",
           "featureHighlights": [
             "5-user minimum, adds SSO with Entra ID/ADFS/Okta, user provisioning, Splunk and Sentinel integrations"
           ],
@@ -102429,10 +102429,10 @@
           "pricingUnit": "seat",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 5.39,
+          "nativeAmount": null,
           "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid",
+          "billingCommitment": null,
           "taxInclusion": "ht",
           "observedMarket": "EU (page localizes currency by country; a US visit shows USD billing per NordPass support docs)",
           "observedOn": "2026-09-25",
@@ -102447,14 +102447,14 @@
       "puissance": 3,
       "reversibilite": 3,
       "evidence": {
-        "valeurAjoutee": "Premium coûte moins de 2 euros par mois et supprime le risque réel des mots de passe navigateur réutilisés pour un indépendant ou une petite équipe.",
+        "valeurAjoutee": "Le plan gratuit couvre un appareil ; les plans payants s'affichent dès 1,99 €/mois en promotion de première période, et le prix hors promotion n'est pas publié.",
         "simplicite": "La mise en route repose sur le remplissage automatique, l'enregistrement automatique et le générateur de mots de passe ; un premier coffre utile prend quelques minutes, pas une formation.",
         "utilisation": "Tient sa promesse de stockage, remplissage automatique et partage sans outil tiers indispensable.",
         "puissance": "Couvre le socle standard d'un gestionnaire de mots de passe (SSO, provisioning, Splunk/Sentinel) en Enterprise, mais reste derrière 1Password sur les usages avancés de gestion de secrets.",
         "reversibilite": "Les mots de passe peuvent être exportés en CSV pour migrer vers un autre gestionnaire, selon la documentation d'aide de NordPass elle-même."
       },
       "evidenceEn": {
-        "valeurAjoutee": "Premium costs under 2 euros per month and removes the real risk of reused browser passwords for a solo user or small team.",
+        "valeurAjoutee": "The free plan covers one device; paid plans are shown from €1.99/mo as a first-term promotion, and the regular price is not published.",
         "simplicite": "Setup is autofill, autosave and a password generator; a first useful vault takes minutes, not a training session.",
         "utilisation": "Delivers what it promises for storage, autofill and sharing without needing third-party tools.",
         "puissance": "Covers the standard password-manager feature set (SSO, provisioning, Splunk/Sentinel) at Enterprise, but stays behind 1Password on advanced secrets-management use cases.",
