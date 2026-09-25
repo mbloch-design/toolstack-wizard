@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "slug": "brand24",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Brand24",
+    "vendor": "Brand24 S.A.",
+    "officialUrl": "https://brand24.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://brand24.com/prices/", "tier": 1, "accessedOn": "2026-09-25", "title": "Brand24 pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://brand24.com/prices/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "individual",
+        "name": "Individual",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 249, "annualPerMonth": 199, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "3 keywords tracked, up to 2,000 mentions per month.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 349, "annualPerMonth": 299, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "7 keywords tracked, up to 10,000 mentions per month.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 499, "annualPerMonth": 399, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "12 keywords, up to 40,000 mentions/month, real-time updates, AI Events Detection, AI Brand Assistant.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 699, "annualPerMonth": 599, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "25 keywords, up to 100,000 mentions/month, unlimited AI Topics, advanced reports.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom keywords and mentions volume, AI Visibility module, dedicated consulting.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "individual",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pricing is driven by a low, fixed number of tracked keywords per tier (3 on the entry plan); a business tracking more than 3 brand terms must jump tiers.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "No automatic overage charges are billed if the mention volume is exceeded, per the vendor's own statement, but the practical effect on data completeness in that case is not detailed.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time brand and keyword monitoring across social media (Facebook, Instagram, X, TikTok, LinkedIn, Reddit, YouTube), news, blogs, forums and reviews.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Sentiment analysis and engagement tracking on collected mentions.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI Brand Assistant and AI Events Detection on Pro tier and above.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Daily and weekly automated reports, with custom branded reports on higher tiers.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Entry-level Individual plan is capped at only 3 tracked keywords and 2,000 mentions/month, restrictive for multi-brand or multi-product tracking.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Real-time updates, AI features and advanced reports are gated behind the Pro tier and above ($499+/month), not available on entry plans.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "hotjar", "reason": { "en": "Adjacent analytics tool but not a direct social-listening competitor; listed among catalogue candidates.", "fr": null } },
+    { "slug": "similarweb", "reason": { "en": "Competitive/market intelligence tool with some brand-monitoring overlap.", "fr": null } },
+    { "slug": "semrush", "reason": { "en": "Includes brand/social monitoring features as part of a broader marketing suite.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Mention", "officialUrl": "https://mention.com/", "reason": "Direct, well-known competitor for social listening and brand monitoring, not present in the candidate list." }
+  ],
+  "unknowns": [
+    "Exact currency/region shown may vary (page defaults to USD); no EUR pricing was captured for this fetch."
+  ],
+  "conflicts": []
+}

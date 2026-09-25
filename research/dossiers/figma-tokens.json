@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "slug": "figma-tokens",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Tokens Studio (Figma Tokens)",
+    "vendor": "Tokens Studio",
+    "officialUrl": "https://tokens.studio",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://tokens.studio/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Tokens Studio pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "EUR",
+    "pricingUrl": "https://tokens.studio/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Figma plugin usable free for Figma variables sync; Studio platform requires a paid plan after the 14-day trial.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter-plus",
+        "name": "Starter Plus (Variables)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 17, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 editor included, additional editors at €17/mo each, unlimited viewers, up to 5 variable-based projects.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "essential",
+        "name": "Essential",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 169, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 editor and 1 project included; additional editors €39/mo, max 3; unlimited viewers; direct-to-code workflow, branching.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "organization",
+        "name": "Organization",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": null, "annualPerMonth": 499, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "5 editors, 20 projects, unlimited viewers, security & compliance support, asset management, documentation.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom pricing for security, compliance and scale needs.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter-plus",
+    "addOns": [
+      { "en": "The standalone Figma plugin can also be bought as a one-time purchase (around €39) separate from the Studio subscription tiers, per seed pricingText.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Prices shown are billed annually; monthly-billing equivalents not confirmed on this page.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Manages design tokens (colors, typography, spacing) inside Figma and syncs them to code.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Git integration and multi-file support for versioned token releases.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Direct-to-code workflow and branching on paid Studio tiers.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free usage is limited to the Figma plugin itself; the Studio platform (versioning, branching, direct-to-code) requires a paid subscription after the 14-day trial.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Editor seats are capped per tier (1 on Essential with max 3 extra, 5 on Organization), which constrains larger teams without upgrading.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] },
+      { "name": "Slack", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "figma", "reason": { "en": "Figma's native Variables feature now covers part of the same design-token workflow.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Specify", "officialUrl": "https://specifyapp.com/", "reason": "Direct competitor for design-token management and sync, already tracked as currentAlternatives in the seed but not present in alternativeCandidates for this batch." }
+  ],
+  "unknowns": [
+    "Exact price of the standalone one-time plugin purchase not independently re-verified on tokens.studio (sourced from seed pricingText).",
+    "Monthly (non-annual) billing rates not shown on the fetched pricing page."
+  ],
+  "conflicts": []
+}

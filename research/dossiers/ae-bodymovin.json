@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-bodymovin",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Bodymovin (Lottie for After Effects)",
+    "vendor": "Hernan Torrisi / RxLaboratory (distributed via aescripts.com)",
+    "officialUrl": "https://aescripts.com/bodymovin/",
+    "docsUrl": "https://github.com/airbnb/lottie",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://aescripts.com/bodymovin", "tier": 1, "accessedOn": "2026-09-25", "title": "Bodymovin on aescripts.com (search-derived; direct fetch blocked 403)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://aescripts.com/bodymovin/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Individual users can set their own price, including $0, to download the full plugin.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "name-your-own-price",
+        "name": "Name Your Own Price",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Individuals can pay any amount, including zero; businesses and teams are expected to pay the suggested price for a valid license.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "name-your-own-price",
+    "addOns": [],
+    "cautions": [
+      { "en": "The 'free for individuals' policy is a stated licensing expectation, not a technical restriction; businesses are asked to pay the suggested price but this is not enforced by the software itself.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Exports After Effects shape-layer animations to Lottie JSON format, playable natively on web via the Lottie JS player.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Exported JSON files are also playable on iOS and Android through Lottie's native mobile libraries.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Limited to shape-layer based animations; not all After Effects features (e.g. some effects, expressions) translate to Lottie JSON.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Requires After Effects itself (paid Adobe subscription) to author the animation before export.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "rive", "reason": { "en": "Alternative animation authoring tool that also exports lightweight interactive animations for web and mobile.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "LottieFiles for After Effects", "officialUrl": "https://aescripts.com/lottiefiles/", "reason": "Direct successor/competitor plugin for Lottie export from After Effects, appeared in search results but not in the candidate list." }
+  ],
+  "unknowns": [
+    "Direct fetch of aescripts.com/bodymovin returned HTTP 403 (anti-bot); pricing and feature details were reconstructed from search-result snippets rather than the live page, so figures should be re-verified.",
+    "Current version number and last update date not confirmed."
+  ],
+  "conflicts": []
+}

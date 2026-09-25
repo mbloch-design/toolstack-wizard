@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 2,
+  "slug": "sendible",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Sendible",
+    "vendor": "Sendible (Vendasta)",
+    "officialUrl": "https://www.sendible.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.sendible.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Sendible pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.sendible.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "core",
+        "name": "Core",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 workspace, 6 social profiles, 100 sends/day, unlimited users and AI credits.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 89, "annualPerMonth": 75.65, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "3 workspaces, 18 social profiles, 200 sends/day, assignment and approvals, 30 smart queues.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 199, "annualPerMonth": 169.15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "7 workspaces, 42 social profiles, 300 sends/day, content libraries, custom branded reports, campaigns, dedicated onboarding.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "elite",
+        "name": "Elite",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 499, "annualPerMonth": 424.15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "15 workspaces, 90 social profiles, 500 sends/day, bulk posting with dynamic fields, advanced permissions, unlimited smart queues.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Starting at $1,500+/month; 50 workspaces, 300 profiles, custom integrations, SSO, dedicated account manager.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "core",
+    "addOns": [
+      { "en": "White-label option available as a paid add-on.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Annual billing is described as saving 15%, but shown as a specific per-month equivalent that is not exactly monthly/12; verify at purchase.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Direct scheduling and posting to Instagram, Facebook, TikTok, LinkedIn, X, YouTube, Threads, Bluesky, and Google My Business.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Real-time comment/message monitoring and replies across connected social profiles.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Content libraries and campaign management for organizing and reusing assets.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Custom branded client reports (Premium and above).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; lowest paid tier (Core) is limited to 6 social profiles and 100 sends/day.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Advanced approval workflows and bulk posting are gated to Plus tier and above, not available on Core.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "hootsuite", "reason": { "en": "Direct competitor in social media management for agencies and teams.", "fr": null } },
+    { "slug": "socialbee", "reason": { "en": "Alternative social media scheduling tool aimed at smaller teams and solo users.", "fr": null } },
+    { "slug": "later", "reason": { "en": "Alternative visual-first social scheduling and analytics tool.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Buffer", "officialUrl": "https://buffer.com/", "reason": "Very common direct competitor for social media scheduling, not present in the candidate list." }
+  ],
+  "unknowns": [
+    "Exact annual-billing percentage discount formula not fully clear from the displayed monthly equivalents."
+  ],
+  "conflicts": []
+}

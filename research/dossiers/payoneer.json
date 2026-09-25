@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "slug": "payoneer",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Payoneer",
+    "vendor": "Payoneer Inc.",
+    "officialUrl": "https://payoneer.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://payoneer.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Payoneer homepage" },
+    { "id": "s2", "url": "https://www.payoneer.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Payoneer pricing and fees" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.payoneer.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": { "en": "Account creation and receiving from another Payoneer balance are free of charge, but there is no zero-cost plan overall: most activity incurs per-transaction fees (withdrawal, conversion, card use), and an inactive account under $6,000/year is charged $29.95 annually.", "fr": null }, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard account",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Annual account fee of $29.95 applies if the account receives less than $6,000 in any 12 consecutive months.", "fr": null, "sourceIds": ["s2"] },
+          { "en": "Withdrawal to local bank account in same currency, in 25+ eligible countries: $1.50 per withdrawal.", "fr": null, "sourceIds": ["s2"] },
+          { "en": "Withdrawal with currency conversion or to recipient's local currency: 1.2% to 4%, with a minimum fee up to $20 equivalent.", "fr": null, "sourceIds": ["s2"] },
+          { "en": "Receiving via credit card or PayPal: up to 3.99% + $0.49.", "fr": null, "sourceIds": ["s2"] },
+          { "en": "Payoneer card annual fee: $29.95; cash withdrawal fees apply on top of currency fees.", "fr": null, "sourceIds": ["s2"] }
+        ],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [
+      { "en": "Payoneer multi-currency card, physical or virtual, annual fee $29.95 plus per-transaction fees.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "cautions": [
+      { "en": "Not a flat subscription: cost depends entirely on volume, currency conversion, and withdrawal method chosen, so the real monthly cost is impossible to state as a single price.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Accounts under $6,000 received per 12 months are charged a $29.95 annual fee even with no paid plan.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Receive payments in 70+ currencies across 190+ countries via a local receiving account.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Send payments globally as single payments, batch payments (up to 1,000 at once), or mass payouts.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Issue multi-currency physical and virtual corporate cards.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Onboard and pay employees or contractors across 160+ countries through Employer of Record / Agent of Record services.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Hold multiple currencies and convert between them (Smart FX).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Card and product availability depends on customer eligibility and jurisdiction; not all products are available in every region.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "No flat monthly plan: fees are transactional and stack up (conversion, withdrawal, card), making costs hard to predict for irregular volume.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "stripe", "reason": { "en": "Alternative for receiving cross-border payments, more developer/API oriented.", "fr": null } },
+    { "slug": "qonto", "reason": { "en": "European business account alternative with card issuing and expense tools.", "fr": null } },
+    { "slug": "revenuecat", "reason": { "en": "Not a direct overlap for freelancers wanting simple cross-border collection; listed as adjacent catalogue candidate.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Wise (TransferWise) Business", "officialUrl": "https://wise.com/business/", "reason": "Main direct competitor for multi-currency accounts and cross-border payments, not in the catalogue candidates seen here." }
+  ],
+  "unknowns": [
+    "No single official comparePlanKey exists since Payoneer has no seat/subscription plan; pricing is entirely fee-based per transaction.",
+    "Business/Enterprise-tier custom pricing not published."
+  ],
+  "conflicts": []
+}

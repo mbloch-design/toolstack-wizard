@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-overlord",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Overlord",
+    "vendor": "Battle Axe",
+    "officialUrl": "https://battleaxe.co/overlord",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://battleaxe.co/overlord", "tier": 1, "accessedOn": "2026-09-25", "title": "Overlord product and pricing page" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://battleaxe.co/overlord",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "single-user",
+        "name": "Single User",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 75 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Perpetual license, one year of feature updates included; usable on up to 2 computers per license; renewal needed to receive feature releases issued after the first year.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "single-user",
+    "addOns": [],
+    "cautions": [
+      { "en": "No free trial mentioned; the $75 purchase is required to test the plugin.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Transfers layers from Figma, Photoshop and Illustrator into After Effects while preserving properties (masks, gradients, styles, names).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Editable text layers with per-character styling (kerning, color, font weight) carried over from source apps.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Bidirectional transfers between Figma and Illustrator; fast precomp/decomp and clipping mask operations.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Figma frame transfers with pixel density matching.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Freeform and mesh gradients cannot be rendered as After Effects shape layers; they must be rasterized to PNG instead.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Requires specific minimum app versions: After Effects/Illustrator CC 2022+, Photoshop 2025+, Windows 10 22H2+ or macOS Monterey 12+.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] },
+      { "name": "Adobe Photoshop", "slug": "adobe-photoshop", "sourceIds": ["s1"] },
+      { "name": "Adobe Illustrator", "slug": "adobe-illustrator", "sourceIds": ["s1"] },
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "ae-bodymovin", "reason": { "en": "Another After Effects plugin/extension used in motion design pipelines, though for a different purpose (Lottie export vs. layer transfer).", "fr": null } },
+    { "slug": "figma-anima", "reason": { "en": "Another cross-tool bridge plugin connecting Figma to other production workflows.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Team or multi-seat pricing beyond the Single User license is not published on the page."
+  ],
+  "conflicts": []
+}

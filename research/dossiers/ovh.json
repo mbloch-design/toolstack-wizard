@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 2,
+  "slug": "ovh",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "OVHcloud",
+    "vendor": "OVH Groupe SA",
+    "officialUrl": "https://www.ovhcloud.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.ovhcloud.com/en/web-hosting/personal-offer/", "tier": 1, "accessedOn": "2026-09-25", "title": "OVHcloud Eco web hosting plans" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.ovhcloud.com/en/web-hosting/personal-offer/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 1.89, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "First-year introductory price $1.89/month, renews at $3.09/month; 1 GB SSD storage, 2 email accounts (1 GB each), 1 database (250 MB), 1 site.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 3.59, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "First-year introductory price $3.59/month, renews at $7.09/month; 100 GB SSD storage, 10 email accounts, 5 databases (1 GB each), up to 15 sites.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Listed prices are first-year introductory rates; renewal prices are roughly 1.6x to 2x higher (Starter renews at $3.09 vs $1.89, Personal at $7.09 vs $3.59).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "This dossier covers only the 'Personal offer' web hosting range; OVHcloud also sells VPS, Public Cloud (usage-based) and dedicated servers under separate pricing not captured here.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Shared web hosting with one-click WordPress installation.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Unlimited SSL certificates and unlimited traffic included on hosting plans.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Anti-DDoS protection and automatic backups included.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Free domain name included for the first year.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Entry Starter plan is limited to 1 GB storage and a single site, only suitable for a very small personal site.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "99.9% uptime guarantee only, not a higher SLA; higher-availability infrastructure (VPS, Public Cloud, dedicated) is a separate product line with separate pricing.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "digitalocean", "reason": { "en": "Cloud infrastructure alternative, more developer/VPS-focused than shared hosting.", "fr": null } },
+    { "slug": "fly-io", "reason": { "en": "Alternative for deploying apps closer to compute rather than classic shared hosting.", "fr": null } },
+    { "slug": "vercel", "reason": { "en": "Alternative for hosting modern web front-ends, though usage-based and not comparable for classic PHP/WordPress hosting.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Hostinger", "officialUrl": "https://www.hostinger.com/", "reason": "Very common direct competitor for budget shared web hosting, not present in the candidate list." }
+  ],
+  "unknowns": [
+    "Only the Eco/Personal-offer hosting range was checked; OVHcloud's VPS and Public Cloud pricing (mentioned in the seed's pricingText) were not independently re-verified in this session.",
+    "Whether prices shown are US-region specific or apply globally is not confirmed."
+  ],
+  "conflicts": []
+}

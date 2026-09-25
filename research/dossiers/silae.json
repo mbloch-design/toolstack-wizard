@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "slug": "silae",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Silae",
+    "vendor": "Silae SAS",
+    "officialUrl": "https://www.silae.fr",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.silae.fr", "tier": 1, "accessedOn": "2026-09-25", "title": "Silae homepage" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "EUR",
+    "pricingUrl": "https://www.silae.fr",
+    "verifiedOn": "2026-09-25",
+    "region": "FR",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "No public price grid found on the official site; pricing is distributed through accounting-firm and integrator partners, not sold directly to end users at a listed rate.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Payroll production, control, and validation flow through to the payslip (bulletin), including automated DSN (French mandatory payroll declaration) generation.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Support for 900+ French collective bargaining agreements (conventions collectives).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "HR/SIRH modules: employee lifecycle, time tracking, leave management, telework management, electronic signature.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Additional modules: social reporting BI (mySilae BI), benefits management (mySilae Santé), expense management (mySilae Expense), legal document generation (mySilae Contrats).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Distribution model targets accounting firms, payroll BPOs and integrators rather than direct self-serve signup, so an individual freelancer or small team cannot easily buy or price it alone.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "No public pricing, so cost cannot be compared without contacting a partner or sales.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "pennylane", "reason": { "en": "French accounting/finance platform used by similar accounting-firm and SME customers.", "fr": null } },
+    { "slug": "payhawk", "reason": { "en": "Business spend and finance management alternative for European SMEs.", "fr": null } },
+    { "slug": "axonaut", "reason": { "en": "French all-in-one management software for small businesses, adjacent to payroll/admin needs.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "PayFit", "officialUrl": "https://payfit.com/", "reason": "Leading direct-to-SME French payroll competitor, self-serve unlike Silae's partner-only model, not present in the candidate list." }
+  ],
+  "unknowns": [
+    "No pricing figures published; distribution is via accounting firms and integrators (partner network), so comparePlanKey and price fields cannot be filled.",
+    "Whether an individual freelancer/small team can subscribe directly is unclear from the homepage."
+  ],
+  "conflicts": []
+}

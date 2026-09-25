@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "slug": "vault",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "HashiCorp Vault",
+    "vendor": "HashiCorp, Inc. (IBM)",
+    "officialUrl": "https://www.hashicorp.com/en/products/vault",
+    "docsUrl": "https://developer.hashicorp.com/hcp/docs/vault",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": { "en": "HashiCorp was acquired by IBM in 2025; Vault continues to be sold under the HashiCorp brand.", "fr": null }
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.hashicorp.com/products/vault/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "HashiCorp Vault pricing page (Vault-specific tiers not rendered in fetch)" },
+    { "id": "s2", "url": "https://www.hashicorp.com/en/products/vault", "tier": 1, "accessedOn": "2026-09-25", "title": "HashiCorp Vault product page" },
+    { "id": "s3", "url": "https://developer.hashicorp.com/hcp/docs/vault/get-started/deployment-considerations/tiers-and-features", "tier": 1, "accessedOn": "2026-09-25", "title": "HCP Vault Dedicated tiers and features" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://www.hashicorp.com/products/vault/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Vault Community edition is free and open source, self-hosted, with core secrets management, encryption and dynamic secrets features.", "fr": null }, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "community",
+        "name": "Vault Community (open source)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Free, self-managed, no official support SLA.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "hcp-vault-dedicated-dev",
+        "name": "HCP Vault Dedicated - Development tier",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Hourly-billed managed cluster on HashiCorp Cloud Platform, no per-client fee; exact hourly rate not confirmed on an official page in this session (search results cite roughly $0.03 to $0.62/hour for an extra-small cluster).", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "vault-enterprise",
+        "name": "Vault Enterprise",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Self-managed enterprise binary with advanced features (replication, Sentinel policies, HSM support); sold as a custom annual license, no public list price.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "HCP Vault Dedicated production tiers (Essentials, Standard) reportedly add a per-authenticated-client monthly fee on top of the hourly cluster cost, which was not verified against an official HashiCorp page in this session and should be re-checked before quoting a figure.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Centrally stores, accesses and distributes secrets programmatically to humans, machines and applications.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Certificate lifecycle management: generate, rotate and revoke certificates on demand.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Encryption-as-a-service for data in transit and at rest, plus automated secret rotation via API.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Identity-based authentication and authorization for humans, machines and services.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Community edition has no official support SLA and lacks enterprise features like performance replication and Sentinel policy-as-code.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "No self-serve public pricing for Vault Enterprise; requires a sales quote, making budgeting difficult without contacting HashiCorp.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "doppler", "reason": { "en": "Simpler, fully managed secrets management SaaS, easier onboarding for small teams.", "fr": null } },
+    { "slug": "infisical", "reason": { "en": "Open-source secrets management alternative with a hosted option, positioned as a lighter-weight Vault competitor.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "AWS Secrets Manager", "officialUrl": "https://aws.amazon.com/secrets-manager/", "reason": "Major cloud-native secrets manager competitor, especially for teams already on AWS, not present in the candidate list." }
+  ],
+  "unknowns": [
+    "Exact hourly and per-client pricing for HCP Vault Dedicated tiers not confirmed from an official HashiCorp page (only third-party estimates found); needs direct verification.",
+    "Vault Enterprise list pricing is not public; only obtainable via sales quote."
+  ],
+  "conflicts": []
+}
