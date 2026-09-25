@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "slug": "sysaid",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SysAid",
+    "vendor": "SysAid Technologies",
+    "officialUrl": "https://www.sysaid.com/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.sysaid.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "SysAid pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.sysaid.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 89, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Includes AI Copilot with unlimited agentic AI and no usage caps, 100K Workato integration credits, incident/change/problem/request management, asset management, SLA management, dashboards and BI analytics", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 20,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Starts at 20 agents; adds sandbox environment, tailor-made AI agents, advanced analytics, 300K Workato credits, gold support", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "professional",
+    "addOns": [],
+    "cautions": [
+      { "en": "Price also depends on the number of managed assets (workstations, servers, mobile devices), not agent seats alone.", "sourceIds": ["s1"] },
+      { "en": "Free trial requires no credit card, but there is no permanent free plan.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "ITSM platform covering incident, change, problem and request management with ITIL-aligned workflows.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI Copilot for agents and end users, plus asset/IT inventory management.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public list price beyond the Professional tier; Enterprise requires a custom quote starting at 20 agents.", "sourceIds": ["s1"] },
+      { "en": "No permanent free plan; only a time-limited free trial is offered.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Workato", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "freshservice", "reason": { "en": "Direct ITSM competitor with a comparable help desk, asset management and ITIL workflow feature set." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Jira Service Management", "officialUrl": "https://www.atlassian.com/software/jira/service-management", "reason": "Major ITSM competitor not currently in the catalogue" },
+    { "name": "ServiceNow", "officialUrl": "https://www.servicenow.com/", "reason": "Leading enterprise ITSM platform SysAid competes with, not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact trial length in days is not stated on the pricing page, only that it exists and requires no credit card.",
+    "Enterprise pricing formula (per-agent equivalent) is not disclosed publicly."
+  ],
+  "conflicts": []
+}

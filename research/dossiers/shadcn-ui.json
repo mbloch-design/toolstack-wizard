@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "slug": "shadcn-ui",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "shadcn/ui",
+    "vendor": "shadcn (independent maintainer, hosted via Vercel)",
+    "officialUrl": "https://ui.shadcn.com/",
+    "docsUrl": "https://ui.shadcn.com/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://ui.shadcn.com", "tier": 1, "accessedOn": "2026-09-25", "title": "shadcn/ui home page" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Copy-paste, accessible React component collection built with Radix UI primitives and Tailwind CSS, distributed as source code rather than an npm package.", "sourceIds": ["s1"] },
+      { "en": "Components are fully customizable and owned by the developer once copied into the project, rather than imported from an opaque library.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No hosted service, dashboard, or paid support tier; it is entirely community-maintained open-source code.", "sourceIds": ["s1"] },
+      { "en": "Requires React and Tailwind CSS in the target project; not a standalone drop-in UI kit for other stacks.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "material-ui", "reason": { "en": "Also a widely used React component library, but installed as a package rather than copy-pasted source." } },
+    { "slug": "radix-primitives", "reason": { "en": "The underlying accessible primitives shadcn/ui is built on top of; a lower-level alternative for teams building their own design system." } },
+    { "slug": "chakra-ui", "reason": { "en": "Competing React component library with a similar goal of accessible, themeable components." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact open-source license (e.g. MIT) not explicitly stated on the fetched homepage content, though the project is publicly hosted on GitHub."
+  ],
+  "conflicts": []
+}

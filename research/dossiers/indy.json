@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "slug": "indy",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Indy",
+    "vendor": "Indy",
+    "officialUrl": "https://www.indy.fr/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.indy.fr/tarifs", "tier": 1, "accessedOn": "2026-09-25", "title": "Indy tarifs" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "EUR",
+    "pricingUrl": "https://www.indy.fr/tarifs",
+    "verifiedOn": "2026-09-25",
+    "region": "FR",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": [{ "en": "Unlimited electronic invoicing (DGFiP-approved platform), unlimited quotes and invoices, automated bookkeeping; excludes mandatory tax declarations", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "essentiel",
+        "name": "Essentiel",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited invoicing and quotes, automated bookkeeping; no mandatory tax declarations included", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 12, "annualPerMonth": 9, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds e-signature of quotes, automated late-payment reminders, pro account with 3 sub-accounts; no mandatory tax declarations", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium (auto-entrepreneur)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 19, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds automated mandatory tax declarations, one-click government filings, priority support; price varies by legal structure (auto-entrepreneur shown, other structures range 22-49 EUR/month HT)", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "plus",
+    "addOns": [
+      { "name": "Expert-Accountant option (third-party accountant validation)", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Premium plan pricing varies significantly by legal structure: 15-19 EUR/month for auto-entrepreneurs, 22-49 EUR/month for individual enterprises, 24 EUR/month for SCI/LMNP, 49 EUR/month for companies (SAS/SASU/SARL/EURL).", "sourceIds": ["s1"] },
+      { "en": "Neither the free Essentiel nor the Plus plan includes mandatory tax declarations; that requires Premium.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Automated invoicing and quoting via a DGFiP-approved electronic invoicing platform, built for French freelancers.", "sourceIds": ["s1"] },
+      { "en": "Automated bookkeeping and, on Premium, automated mandatory tax declarations with one-click government filings.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Mandatory tax declarations are gated behind the Premium plan; not available on the free or Plus tiers.", "sourceIds": ["s1"] },
+      { "en": "Premium plan cost depends on legal structure, complicating direct price comparison across business types.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "shine", "reason": { "en": "Direct competitor for French freelancer banking, invoicing and tax management, already flagged as a current alternative." } },
+    { "slug": "qonto", "reason": { "en": "Overlaps on business banking and invoicing for French independents and small teams." } },
+    { "slug": "freshbooks", "reason": { "en": "Competes on automated invoicing and bookkeeping for freelancers, though not France-specific." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact price for the Premium plan across all legal structures (SCI/LMNP annual figure vs monthly not fully reconciled) was only partially detailed on the page."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "slug": "typeform",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Typeform",
+    "vendor": "Typeform S.L.",
+    "officialUrl": "https://www.typeform.com/",
+    "docsUrl": "https://www.typeform.com/developers/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.typeform.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Typeform pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.typeform.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Up to 100 responses per month, 1 user, unlimited forms and questions with basic customization", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 39, "annualPerMonth": 28, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "100 responses/month included, max 750/month; 1 user", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 79, "annualPerMonth": 56, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1,000 responses/month included, max 2,500/month; up to 3 users; removes Typeform branding, custom subdomain", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 129, "annualPerMonth": 91, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "10,000 responses/month included, max 50,000/month; up to 5 users; drop-off rates, conversion tracking, priority support", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "talent",
+        "name": "Talent",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 169, "annualPerMonth": 119, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "3,000 responses/month included; up to 3 users; video Q&A, multi-language support, AI clarification", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 6,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom/unlimited responses; 6+ users with SSO, dedicated support, HIPAA/GDPR compliance, custom domains", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      { "en": "There is also a separate 'Growth Flow' plan at $379/month ($266/month annual) with lead enrichment and Salesforce integration, positioned above Business rather than in the standard tier ladder.", "sourceIds": ["s1"] },
+      { "en": "Response limits are hard caps per plan; exceeding the included monthly responses requires an upgrade.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Interactive, conversational online form and survey builder with conditional logic and AI-assisted form creation.", "sourceIds": ["s1"] },
+      { "en": "Response analytics including drop-off rates and conversion tracking on Business plan and above.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan caps responses at 100/month, which is quickly exhausted for active forms.", "sourceIds": ["s1"] },
+      { "en": "Branding removal and custom subdomain require at least the Plus plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "jotform", "reason": { "en": "Direct competitor form builder already flagged as a current alternative for Typeform." } },
+    { "slug": "tally", "reason": { "en": "Lightweight form builder competing on simplicity and lower cost." } },
+    { "slug": "fillout", "reason": { "en": "Form and survey builder targeting the same conversational-form use case." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Whether taxes are included in the listed USD prices is not stated on the pricing page."
+  ],
+  "conflicts": []
+}

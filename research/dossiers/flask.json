@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "slug": "flask",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Flask",
+    "vendor": "Pallets (open-source community project)",
+    "officialUrl": "https://flask.palletsprojects.com",
+    "docsUrl": "https://flask.palletsprojects.com/",
+    "changelogUrl": "https://flask.palletsprojects.com/en/latest/changes/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://flask.palletsprojects.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Flask documentation home" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Flask itself is free and unlicensed for hosting costs; running it in production requires paying separately for hosting, deployment, and scaling infrastructure.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Lightweight Python micro-framework (WSGI) for building web applications and APIs with minimal built-in structure.", "sourceIds": ["s1"] },
+      { "en": "Extensible via a large ecosystem of third-party extensions (e.g. Flask-SQLAlchemy, Flask-Login) rather than bundled features.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No built-in admin panel, ORM, or authentication system; these require adding third-party extensions.", "sourceIds": ["s1"] },
+      { "en": "No official hosting or managed cloud offering from the Flask project itself; deployment is entirely the user's responsibility.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "python", "reason": { "en": "Flask is a framework built on Python; teams choosing a lightweight backend stack often evaluate the two at once." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Django", "officialUrl": "https://www.djangoproject.com/", "reason": "The other major Python web framework, more batteries-included, direct alternative to Flask, not in the catalogue" },
+    { "name": "FastAPI", "officialUrl": "https://fastapi.tiangolo.com/", "reason": "Modern Python API framework directly competing with Flask for API projects, not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "No official pricing page exists since Flask is free open-source software with no vendor-provided paid tier."
+  ],
+  "conflicts": []
+}

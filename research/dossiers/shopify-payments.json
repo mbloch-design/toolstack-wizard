@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "slug": "shopify-payments",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Shopify Payments",
+    "vendor": "Shopify Inc.",
+    "officialUrl": "https://www.shopify.com/payments",
+    "docsUrl": "https://help.shopify.com/en/manual/payments/shopify-payments",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.shopify.com/payments", "tier": 1, "accessedOn": "2026-09-25", "title": "Shopify Payments product page" },
+    { "id": "s2", "url": "https://help.shopify.com/en/manual/payments/shopify-payments/onboarding/cost-of-shopify-payments", "tier": 1, "accessedOn": "2026-09-25", "title": "Shopify Help Center: Shopify Payments fees" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.shopify.com/payments",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic (online card rate)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "2.9% + $0.30 per online credit card transaction on the Basic Shopify plan; +1% for cards issued outside the merchant's country", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "shopify-plan",
+        "name": "Shopify plan (online card rate)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "2.6% + $0.30 per online credit card transaction", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced (online card rate)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "2.4-2.5% + $0.30 per online credit card transaction, the lowest tier rate", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      { "en": "Shopify Payments is not a standalone product; its transaction rate depends entirely on which Shopify store plan (Basic/Shopify/Advanced) the merchant subscribes to.", "sourceIds": ["s2"] },
+      { "en": "Using Shopify Payments removes Shopify's separate third-party payment gateway fee (0.6% to 2% depending on plan), which otherwise applies on top of any external processor's own fees.", "sourceIds": ["s2"] },
+      { "en": "Cards issued outside the merchant's own country add a further 1% surcharge; premium cards (e.g. Amex, corporate, high-rewards) may carry different rates.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Built-in payment processing for Shopify stores: cards, digital wallets, installments, and crypto payment acceptance.", "sourceIds": ["s1"] },
+      { "en": "Supports 130+ currencies and integrates with Shop Pay accelerated checkout.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Only available to merchants running a Shopify store; not usable as a standalone payment processor outside Shopify.", "sourceIds": ["s1"] },
+      { "en": "Transaction rate is tied to the merchant's Shopify subscription tier rather than being independently negotiable at the entry tiers.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "stripe", "reason": { "en": "General-purpose payment processor that can also power e-commerce checkouts outside Shopify's own gateway." } },
+    { "slug": "razorpay", "reason": { "en": "Alternative payment processing platform for online commerce, though more India-market focused." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "In-person (POS) card rates were not confirmed in this pass, only online transaction rates.",
+    "Exact surcharge for premium/corporate cards is not quantified on the fetched pages."
+  ],
+  "conflicts": []
+}

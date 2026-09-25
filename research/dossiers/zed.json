@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "zed",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Zed",
+    "vendor": "Zed Industries",
+    "officialUrl": "https://zed.dev/",
+    "docsUrl": "https://zed.dev/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://zed.dev/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Zed pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://zed.dev/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "2,000 accepted edit predictions included; unlimited AI use possible with a user's own external API keys", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2,000 accepted edit predictions included", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 10, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited edit predictions, $5 of AI tokens included per month, then usage-based charges", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 30, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Organization-wide AI controls, data governance, unified spend visibility, role-based access; no fixed AI credits included, usage-based or bring-your-own-key", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pro plan AI usage is capped at $5 of included tokens per month; beyond that, usage-based charges apply.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Code editor written in Rust, designed for high performance and low latency.", "sourceIds": ["s1"] },
+      { "en": "Real-time multiplayer collaborative editing built in.", "sourceIds": ["s1"] },
+      { "en": "Integrated AI edit predictions and chat, with support for bringing external LLM API keys (Anthropic, OpenAI, Google AI, Amazon Bedrock, DeepSeek, Mistral, Ollama, LM Studio, OpenRouter, GitHub Copilot, Vercel).", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free Personal plan caps included AI edit predictions at 2,000; beyond that requires a paid plan or a user-supplied external API key.", "sourceIds": ["s1"] },
+      { "en": "Business plan does not include a fixed AI token allowance, relying on usage-based billing or bring-your-own-key.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["desktop"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "cursor", "reason": { "en": "Also an AI-first code editor competing directly with Zed's AI features." } },
+    { "slug": "windsurf", "reason": { "en": "Another AI-native code editor targeting the same developer workflow." } },
+    { "slug": "github-copilot", "reason": { "en": "Competes for the same AI coding-assistance budget, usable inside other editors." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact supported operating systems (macOS, Linux, Windows) not explicitly restated on the pricing page itself, though generally documented elsewhere on the site.",
+    "Whether taxes are included in listed prices is not stated on the pricing page."
+  ],
+  "conflicts": []
+}

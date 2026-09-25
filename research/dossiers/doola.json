@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "slug": "doola",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "doola",
+    "vendor": "doola",
+    "officialUrl": "https://www.doola.com/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.doola.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "doola pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.doola.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 19.75, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "LLC or C Corp formation, EIN filing, operating agreement, registered agent, virtual business address, email support; state fees not included", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pulse",
+        "name": "Pulse",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Automated bookkeeping, expense tracking, payout management, financial health reports, multiple bank connections", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "tax-and-compliance",
+        "name": "Tax and Compliance",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 133.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Everything in Starter plus annual state report filing, licensed tax professional consultation, IRS tax filings, e-commerce analytics; state fees not included", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business-in-a-box",
+        "name": "Business-in-a-Box",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 263, "annualPerMonth": 199.92, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Everything in Tax and Compliance plus dedicated bookkeeper, monthly financial statements, estimated quarterly taxes; state fees not included", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "State formation fees are billed separately on top of every plan's subscription price.", "sourceIds": ["s1"] },
+      { "en": "Listed annual prices are shown as already-discounted totals; the per-month equivalents were computed from the stated annual figures and are not separately confirmed on the page.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "US LLC and C Corp formation for non-resident and resident entrepreneurs, including EIN filing and registered agent service.", "sourceIds": ["s1"] },
+      { "en": "Ongoing compliance services: annual state report filing, IRS tax filings, and access to a licensed tax professional.", "sourceIds": ["s1"] },
+      { "en": "Automated bookkeeping and financial reporting via the Pulse add-on, including multi-bank-account connections.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Formation and compliance plans exclude mandatory state filing fees, added on top of the subscription cost.", "sourceIds": ["s1"] },
+      { "en": "Bookkeeping (Pulse) and formation/compliance are sold as separate plans rather than bundled by default.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "stripe", "reason": { "en": "Also used by non-US founders to set up US-facing payment and business infrastructure, though not a formation service itself." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Stripe Atlas", "officialUrl": "https://stripe.com/atlas", "reason": "Direct competitor for US company formation aimed at non-resident founders, not in the catalogue" },
+    { "name": "Firstbase", "officialUrl": "https://www.firstbase.io/", "reason": "Direct competitor offering US LLC/C Corp formation and compliance, not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact state filing fee amounts vary by state and are not published as a fixed figure on the pricing page."
+  ],
+  "conflicts": []
+}
