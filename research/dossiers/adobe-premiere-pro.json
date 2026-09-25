@@ -3,7 +3,7 @@
   "slug": "adobe-premiere-pro",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Adobe Premiere Pro",
     "vendor": "Adobe Inc.",
@@ -15,71 +15,332 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.adobe.com/products/premiere.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Premiere Pro pricing and details" }
+    {
+      "id": "s1",
+      "url": "https://www.adobe.com/products/premiere.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Premiere Pro pricing and details"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.adobe.com/products/premiere/plans.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Premiere plans"
+    }
   ],
   "pricing": {
-    "model": "subscription",
+    "model": "per_seat",
     "currency": "USD",
-    "pricingUrl": "https://www.adobe.com/products/premiere.html",
+    "pricingUrl": "https://www.adobe.com/products/premiere/plans.html",
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "single-app",
         "name": "Premiere Pro (single app)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 22.99, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 22.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Premiere Pro only, annual plan billed monthly; does not include the rest of Creative Cloud" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Premiere Pro only, yearly plan billed monthly, with 100GB cloud storage and Frame.io",
+            "fr": "Premiere Pro seul, engagement annuel payé au mois, avec 100 Go de stockage cloud et Frame.io"
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
       },
       {
         "key": "teams",
         "name": "Premiere Pro for teams",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 37.99, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 37.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Per-license team pricing, annual plan billed monthly" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Per license, yearly plan billed monthly, 14-day trial",
+            "fr": "Par licence, engagement annuel payé au mois, essai de 14 jours"
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": "single-app",
     "addOns": [],
     "cautions": [
-      { "en": "Adobe Premiere Pro is subscription-only: no perpetual license is offered.", "sourceIds": ["s1"] },
-      { "en": "The Creative Cloud Pro bundle price shown ($34.99/mo) is an introductory offer for the first 3 months, rising to $69.99/mo after; this is excluded from the compared plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Premiere Pro is subscription-only: no perpetual license is offered.",
+        "fr": "Premiere Pro est vendu uniquement par abonnement : aucune licence perpétuelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plan prices are yearly commitments billed monthly; a no-commitment monthly price is not shown on the plans page.",
+        "fr": "Les prix des plans sont des engagements annuels payés au mois ; le prix mensuel sans engagement n'apparaît pas sur la page des plans.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "The Creative Cloud Pro bundle is shown at a first-period discount for new subscribers; it is excluded from the compared plan.",
+        "fr": "Le pack Creative Cloud Pro est affiché avec une remise de première période pour les nouveaux abonnés ; il est exclu du plan de comparaison.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Video editing, title animation, effects, and sound mixing in one timeline-based editor", "sourceIds": ["s1"] },
-      { "en": "AI-powered media search and text-based editing", "sourceIds": ["s1"] },
-      { "en": "Generative effects via Adobe Firefly integration", "sourceIds": ["s1"] },
-      { "en": "Mobile editing on iOS and Android with cloud synchronization", "sourceIds": ["s1"] }
+      {
+        "en": "Video editing, title animation, effects, and sound mixing in one timeline-based editor",
+        "fr": "Montage vidéo, titres animés, effets et mixage audio dans une même timeline",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-powered media search and text-based editing",
+        "fr": "Recherche de médias par IA et montage à partir de la transcription",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Generative effects via Adobe Firefly integration",
+        "fr": "Effets génératifs via l'intégration d'Adobe Firefly",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Mobile editing on iOS and Android with cloud synchronization",
+        "fr": "Montage mobile sur iOS et Android, synchronisé dans le cloud",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Subscription-only pricing, no one-time purchase or perpetual license option", "sourceIds": ["s1"] },
-      { "en": "Full Frame.io collaboration features and generative AI credits are gated behind higher-tier Creative Cloud plans", "sourceIds": ["s1"] }
+      {
+        "en": "Subscription-only pricing, no one-time purchase or perpetual license option",
+        "fr": "Vendu uniquement par abonnement, sans achat unique ni licence perpétuelle",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Full Frame.io collaboration features and generative AI credits are gated behind higher-tier Creative Cloud plans",
+        "fr": "La collaboration complète Frame.io et davantage de crédits génératifs demandent une formule Creative Cloud supérieure",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Frame.io", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Adobe Firefly", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Frame.io",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Adobe Firefly",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["windows", "macos", "ios", "android"]
+    "platforms": [
+      "windows",
+      "macos",
+      "ios",
+      "android"
+    ]
   },
   "alternatives": [
-    { "slug": "davinci-resolve", "reason": { "en": "Professional NLE with a strong free tier and perpetual-license paid version" } },
-    { "slug": "adobe-after-effects", "reason": { "en": "Companion Adobe tool for motion graphics and compositing, often paired with Premiere" } }
+    {
+      "slug": "davinci-resolve",
+      "reason": {
+        "en": "Professional editor with a capable free version and a one-time paid version",
+        "fr": "Logiciel de montage professionnel avec une version gratuite complète et une version payante en achat unique"
+      }
+    },
+    {
+      "slug": "final-cut-pro",
+      "reason": {
+        "en": "Mac editor bought once, fast on Apple hardware",
+        "fr": "Logiciel de montage Mac acheté une fois, rapide sur les machines Apple"
+      }
+    },
+    {
+      "slug": "capcut",
+      "reason": {
+        "en": "Simpler editor for short social videos, with a free plan",
+        "fr": "Outil de montage plus simple pour les vidéos courtes des réseaux, avec un plan gratuit"
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact desktop platform requirements (Windows/Mac minimum versions) not extracted",
-    "Tax treatment (taxIncluded) not stated on the pricing page"
+    "Tax treatment (taxIncluded) not stated on the pricing page",
+    "No-commitment monthly price not shown on the plans page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "$22.99/mo on a yearly plan with 100GB storage and Frame.io, for an editor used across the industry.",
+        "fr": "22,99 $/mois en engagement annuel, avec 100 Go de stockage et Frame.io, pour un logiciel utilisé dans tout le secteur.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Text-based editing and AI media search shorten the first edit, but the full timeline takes practice.",
+        "fr": "Le montage par la transcription et la recherche de médias par IA raccourcissent le premier montage, mais la timeline complète demande de la pratique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Editing, titles, effects and sound mixing are handled in one timeline, without extra tools.",
+        "fr": "Montage, titres, effets et mixage audio se font dans une seule timeline, sans outil supplémentaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Generative effects through Firefly plus mobile editing extend a full professional editor.",
+        "fr": "Les effets génératifs via Firefly et le montage mobile complètent un logiciel professionnel complet.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export options were not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null,
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 5,
+    "puissance": 5,
+    "reversibilite": 3
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Content creators and freelance video editors who deliver edited videos to clients or channels every week",
+      "fr": "Créateurs de contenu et monteurs indépendants qui livrent des vidéos montées à des clients ou sur leurs chaînes chaque semaine"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Client video: cut interviews from the transcript, add titles, mix sound, deliver",
+      "fr": "Vidéo client : couper une interview depuis la transcription, ajouter les titres, mixer le son, livrer"
+    },
+    {
+      "en": "Channel content: edit long-form videos and review them with the client in Frame.io",
+      "fr": "Contenu de chaîne : monter des vidéos longues et les faire valider au client dans Frame.io"
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Video editing",
+      "fr": "Montage vidéo"
+    },
+    "shortDescription": {
+      "en": "Adobe's timeline video editor for editing, titles, effects and sound mixing, with review through Frame.io.",
+      "fr": "Le logiciel de montage vidéo d'Adobe pour le montage, les titres, les effets et le mixage, avec validation via Frame.io."
+    },
+    "longDescription": {
+      "en": "Premiere Pro handles a whole edit in one timeline: cuts, titles, effects and sound. Text-based editing and AI media search make the first pass faster, and Frame.io covers client review.\n\nEvery plan is a yearly commitment billed monthly, $22.99/mo for Premiere Pro alone. If you edit short social clips, a simpler editor is enough; if you want to own your software, DaVinci Resolve or Final Cut Pro are bought once.",
+      "fr": "Premiere Pro mène tout un montage dans une seule timeline : coupes, titres, effets et son. Le montage par la transcription et la recherche de médias par IA accélèrent le premier jet, et Frame.io couvre la validation client.\n\nChaque plan est un engagement annuel payé au mois, 22,99 $/mois pour Premiere Pro seul. Si tu montes surtout des vidéos courtes pour les réseaux, un outil plus simple suffit ; si tu veux posséder ton logiciel, DaVinci Resolve ou Final Cut Pro s'achètent une fois."
+    },
+    "pros": [
+      {
+        "en": "Text-based editing speeds up interview and talking-head cuts",
+        "fr": "Le montage par la transcription accélère les interviews et les vidéos face caméra"
+      },
+      {
+        "en": "Frame.io and 100GB storage included for client review",
+        "fr": "Frame.io et 100 Go de stockage inclus pour la validation client"
+      },
+      {
+        "en": "Industry-standard project files for working with other editors",
+        "fr": "Des fichiers de projet standards du métier pour travailler avec d'autres monteurs"
+      }
+    ],
+    "cons": [
+      {
+        "en": "Yearly commitment, no perpetual license",
+        "fr": "Engagement annuel, sans licence perpétuelle"
+      },
+      {
+        "en": "More than you need for short social clips",
+        "fr": "Surdimensionné pour des vidéos courtes destinées aux réseaux"
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you edit client videos every week and share projects with other Premiere editors.",
+        "fr": "Garde-le si tu montes des vidéos clients chaque semaine et que tu partages des projets avec d'autres monteurs Premiere."
+      },
+      "avoidIf": {
+        "en": "Skip it if you mostly cut short social clips or prefer to buy your editor once.",
+        "fr": "Passe ton tour si tu montes surtout des vidéos courtes pour les réseaux ou si tu préfères acheter ton logiciel une fois."
+      },
+      "threshold": {
+        "en": "The yearly commitment is $275.88: worth it with regular paid video work.",
+        "fr": "L'engagement annuel représente 275,88 $ : rentable avec des montages payés réguliers."
+      },
+      "billingTraps": {
+        "en": "Plans are yearly commitments even when billed monthly.",
+        "fr": "Les plans engagent sur un an, même quand ils sont payés au mois."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25"
 }

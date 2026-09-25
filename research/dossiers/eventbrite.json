@@ -3,7 +3,7 @@
   "slug": "eventbrite",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Eventbrite",
     "vendor": "Eventbrite, Inc.",
@@ -15,16 +15,31 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.eventbrite.com/organizer/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Eventbrite pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.eventbrite.com/organizer/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Eventbrite pricing"
+    }
   ],
   "pricing": {
-    "model": "freemium",
+    "model": "usage",
     "currency": "USD",
     "pricingUrl": "https://www.eventbrite.com/organizer/pricing/",
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Unlimited free events at no cost; fees only apply to paid tickets", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Unlimited free events at no cost; fees only apply to paid tickets",
+        "fr": "Événements gratuits illimités sans frais ; les frais ne s'appliquent qu'aux billets payants"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,59 +47,280 @@
         "name": "Free events",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited free events, no platform fee" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited free events, no platform fee",
+            "fr": "Événements gratuits illimités, sans frais de plateforme"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
-        "name": "Pro (email marketing add-on)",
+        "name": "Eventbrite Pro",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 10,000 daily emails; available only in US, Canada, Australia, New Zealand, UK, Ireland" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 10,000 daily emails; available only in US, Canada, Australia, New Zealand, UK, Ireland",
+            "fr": "Jusqu'à 10 000 emails par jour ; disponible seulement aux États-Unis, au Canada, en Australie, en Nouvelle-Zélande, au Royaume-Uni et en Irlande"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Includes strategic advisor, sponsored marketing, priority support" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Includes strategic advisor, sponsored marketing, priority support",
+            "fr": "Conseiller dédié, marketing sponsorisé, support prioritaire"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
-    "comparePlanKey": "pro",
+    "comparePlanKey": "free",
     "addOns": [],
     "cautions": [
-      { "en": "Paid tickets carry a per-ticket service fee of 3.7% + $1.79, plus a 2.9% payment processing fee; these are separate from the free/Pro plan cost and can be passed to attendees.", "sourceIds": ["s1"] },
-      { "en": "Eventbrite Ads and ad spend are billed separately from the platform fees and are only available in select markets.", "sourceIds": ["s1"] }
+      {
+        "en": "Paid tickets carry a per-ticket service fee of 3.7% + $1.79, plus a 2.9% payment processing fee; these are separate from the free/Pro plan cost and can be passed to attendees.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Chaque billet payant supporte des frais de service de 3,7 % + 1,79 $, plus 2,9 % de frais de traitement du paiement ; ils peuvent être reportés sur l'acheteur."
+      },
+      {
+        "en": "Eventbrite Ads and ad spend are billed separately from the platform fees and are only available in select markets.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les publicités Eventbrite sont facturées à part des frais de plateforme et ne sont disponibles que sur certains marchés."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "AI-powered event page creation with multiple ticket types, reserved seating and timed entry", "sourceIds": ["s1"] },
-      { "en": "Email marketing automation and social media ad tools (Facebook, Instagram, TikTok)", "sourceIds": ["s1"] },
-      { "en": "Mobile check-in app and secure payment processing with pre-event payouts", "sourceIds": ["s1"] }
+      {
+        "en": "AI-powered event page creation with multiple ticket types, reserved seating and timed entry",
+        "fr": "Création de page d'événement assistée par IA, avec plusieurs types de billets, placement numéroté et entrée par créneau",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Email marketing automation and social media ad tools (Facebook, Instagram, TikTok)",
+        "fr": "Automatisation d'emailing et publicités sur les réseaux (Facebook, Instagram, TikTok)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Mobile check-in app and secure payment processing with pre-event payouts",
+        "fr": "Application de contrôle des entrées et paiement sécurisé, avec versements avant l'événement",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Eventbrite Ads and the Pro email marketing add-on are only available in a handful of markets (US, Canada, Australia, New Zealand, UK, Ireland)", "sourceIds": ["s1"] },
-      { "en": "Per-ticket service and processing fees apply to every paid ticket regardless of plan, with no flat-fee alternative", "sourceIds": ["s1"] }
+      {
+        "en": "Eventbrite Ads and the Pro email marketing add-on are only available in a handful of markets (US, Canada, Australia, New Zealand, UK, Ireland)",
+        "fr": "Eventbrite Ads et l'option Pro ne sont disponibles que dans quelques pays (États-Unis, Canada, Australie, Nouvelle-Zélande, Royaume-Uni, Irlande)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Per-ticket service and processing fees apply to every paid ticket regardless of plan, with no flat-fee alternative",
+        "fr": "Des frais de service et de traitement s'appliquent à chaque billet payant, sans formule forfaitaire",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "weezevent",
+      "reason": {
+        "en": "French ticketing platform with on-site access control, suited to events in France",
+        "fr": "Billetterie française avec contrôle d'accès sur place, adaptée aux événements en France"
+      }
+    }
+  ],
   "missingAlternatives": [
-    { "name": "Luma", "officialUrl": "https://lu.ma", "reason": "Popular lightweight event ticketing competitor, not in the catalogue" }
+    {
+      "name": "Ticket Tailor",
+      "officialUrl": "https://www.tickettailor.com",
+      "reason": "Flat-fee ticketing competitor, not in the catalogue"
+    },
+    {
+      "name": "Luma",
+      "officialUrl": "https://lu.ma",
+      "reason": "Lightweight event and ticketing tool, not in the catalogue"
+    },
+    {
+      "name": "HelloAsso",
+      "officialUrl": "https://www.helloasso.com",
+      "reason": "Free ticketing for French non-profits, not in the catalogue"
+    }
   ],
   "unknowns": [
-    "No current catalogue alternatives listed for this slug (alternativeCandidates for eventbrite covers unrelated categories, not direct ticketing competitors)",
     "Tax treatment (taxIncluded) not stated on the pricing page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free for free events, but every paid ticket carries 3.7% + $1.79 plus 2.9% processing.",
+        "fr": "Gratuit pour les événements gratuits, mais chaque billet payant supporte 3,7 % + 1,79 $ et 2,9 % de traitement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "AI-assisted event pages and several ticket types get an event on sale quickly.",
+        "fr": "Les pages d'événement assistées par IA et les différents types de billets mettent vite un événement en vente.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Covers ticket sales, check-in and payouts before the event.",
+        "fr": "Couvre la vente de billets, le contrôle des entrées et les versements avant l'événement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Marketing tools and ads are limited to a few countries.",
+        "fr": "Les outils marketing et la publicité se limitent à quelques pays.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export options were not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null,
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3
+  },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Freelancers and small organisations who sell tickets for workshops, meetups or small events",
+      "fr": "Indépendants et petites structures qui vendent des billets pour des ateliers, des rencontres ou de petits événements"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Paid workshop: sell seats, pass the fees to buyers, check in on the day",
+      "fr": "Atelier payant : vendre les places, reporter les frais sur l'acheteur, contrôler les entrées le jour J"
+    },
+    {
+      "en": "Free meetup: publish registrations at no cost and email attendees",
+      "fr": "Rencontre gratuite : ouvrir les inscriptions sans frais et écrire aux participants"
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Event ticketing",
+      "fr": "Billetterie en ligne"
+    },
+    "shortDescription": {
+      "en": "An event ticketing platform: free for free events, with a per-ticket fee on paid tickets.",
+      "fr": "Une plateforme de billetterie : gratuite pour les événements gratuits, avec des frais par billet sur les billets payants."
+    },
+    "longDescription": {
+      "en": "Eventbrite puts an event on sale in minutes: event page, several ticket types, check-in app and payouts before the event. Free events cost nothing.\n\nOn paid tickets, the model is a fee per ticket: 3.7% + $1.79 in service fees plus 2.9% processing, which you can pass on to buyers. For a French audience, Weezevent is a local option; for flat pricing, compare with a fixed-fee ticketing tool.",
+      "fr": "Eventbrite met un événement en vente en quelques minutes : page d'événement, plusieurs types de billets, application de contrôle des entrées et versements avant l'événement. Les événements gratuits ne coûtent rien.\n\nSur les billets payants, le modèle est une commission par billet : 3,7 % + 1,79 $ de frais de service, plus 2,9 % de traitement, que tu peux reporter sur l'acheteur. Pour un public français, Weezevent est une option locale ; pour un coût fixe, compare avec une billetterie à tarif forfaitaire."
+    },
+    "pros": [
+      {
+        "en": "Free for free events, no subscription",
+        "fr": "Gratuit pour les événements gratuits, sans abonnement"
+      },
+      {
+        "en": "Fees can be passed on to buyers",
+        "fr": "Les frais peuvent être reportés sur l'acheteur"
+      },
+      {
+        "en": "Check-in app and payouts before the event",
+        "fr": "Application de contrôle des entrées et versements avant l'événement"
+      }
+    ],
+    "cons": [
+      {
+        "en": "Fees on every paid ticket, with no flat-fee option",
+        "fr": "Des frais sur chaque billet payant, sans formule forfaitaire"
+      },
+      {
+        "en": "Marketing tools limited to a few countries",
+        "fr": "Outils marketing limités à quelques pays"
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it for free events, or paid events where buyers can absorb the fees.",
+        "fr": "Garde-le pour des événements gratuits, ou payants quand l'acheteur peut absorber les frais."
+      },
+      "avoidIf": {
+        "en": "Skip it if you sell many paid tickets and want a fixed cost per event.",
+        "fr": "Passe ton tour si tu vends beaucoup de billets payants et veux un coût fixe par événement."
+      },
+      "threshold": {
+        "en": "On a $20 ticket, fees are about $2.53 plus 2.9% of the order: check that against a flat-fee tool before a large event.",
+        "fr": "Sur un billet à 20 $, les frais atteignent environ 2,53 $ plus 2,9 % de la commande : compare avec une billetterie forfaitaire avant un gros événement."
+      },
+      "billingTraps": {
+        "en": "Per-ticket fees apply to every paid ticket, whatever the plan.",
+        "fr": "Les frais par billet s'appliquent à chaque billet payant, quelle que soit la formule."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25"
 }

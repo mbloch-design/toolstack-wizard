@@ -3,7 +3,7 @@
   "slug": "coupler-io",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Coupler.io",
     "vendor": "Coupler.io",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.coupler.io/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Coupler.io pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.coupler.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Coupler.io pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "1 account, 1 data destination, manual refresh only, 100 rows/run, 1 user", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "1 account, 1 data destination, manual refresh only, 100 rows/run, 1 user",
+        "fr": "1 compte, 1 destination, rafraîchissement manuel, 100 lignes par exécution, 1 utilisateur"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,87 +47,343 @@
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 account, 1 destination, manual refresh, 100 rows per run, 1 user" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 account, 1 destination, manual refresh, 100 rows per run, 1 user",
+            "fr": "1 compte, 1 destination, rafraîchissement manuel, 100 lignes par exécution, 1 utilisateur"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 32, "annualPerMonth": 24, "oneTime": null },
+        "price": {
+          "monthly": 32,
+          "annualPerMonth": 24,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "3 accounts, 1 destination, daily refresh, 5,000 rows per run, 1 user" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "3 accounts, 1 destination, daily refresh, 5,000 rows per run, 1 user",
+            "fr": "3 comptes, 1 destination, rafraîchissement quotidien, 5 000 lignes par exécution, 1 utilisateur"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "active",
         "name": "Active",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 132, "annualPerMonth": 99, "oneTime": null },
+        "price": {
+          "monthly": 132,
+          "annualPerMonth": 99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "15 accounts, 3 destinations, daily refresh, unlimited data volume and users, adds transformations" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "15 accounts, 3 destinations, daily refresh, unlimited data volume and users, adds transformations",
+            "fr": "15 comptes, 3 destinations, rafraîchissement quotidien, volume et utilisateurs illimités, transformations incluses"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 259, "annualPerMonth": 199, "oneTime": null },
+        "price": {
+          "monthly": 259,
+          "annualPerMonth": 199,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "50 accounts, unlimited destinations, hourly refresh, team workspaces, automations, account manager" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "50 accounts, unlimited destinations, hourly refresh, team workspaces, automations, account manager",
+            "fr": "50 comptes, destinations illimitées, rafraîchissement horaire, espaces d'équipe, automatisations, account manager"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Agency & Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom refresh down to 15 minutes, custom sources, SSO, dedicated account manager, enterprise SLA" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Custom refresh down to 15 minutes, custom sources, SSO, dedicated account manager, enterprise SLA",
+            "fr": "Rafraîchissement jusqu'à 15 minutes, sources sur mesure, SSO, account manager dédié, SLA entreprise"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Data transformation features (formulas, joins, aggregation) are not available below the Active plan; the Free and Starter plans only move raw data.", "sourceIds": ["s1"] }
+      {
+        "en": "Data transformation features (formulas, joins, aggregation) are not available below the Active plan; the Free and Starter plans only move raw data.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les transformations (formules, jointures, agrégation) n'existent qu'à partir du plan Active ; Free et Starter déplacent les données brutes."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "No-code data integration connecting 400+ apps to spreadsheets, BI tools, and data warehouses", "sourceIds": ["s1"] },
-      { "en": "Data transformations including formulas, append, join, and aggregation (Active plan and above)", "sourceIds": ["s1"] },
-      { "en": "230+ prebuilt dashboard templates and AI integrations (Claude, ChatGPT, Gemini, Copilot, Perplexity)", "sourceIds": ["s1"] }
+      {
+        "en": "No-code data integration connecting 400+ apps to spreadsheets, BI tools, and data warehouses",
+        "fr": "Intégration de données sans code entre plus de 400 applications et des tableurs, outils de BI ou entrepôts de données",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Data transformations including formulas, append, join, and aggregation (Active plan and above)",
+        "fr": "Transformations de données (formules, ajout, jointure, agrégation) à partir du plan Active",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "230+ prebuilt dashboard templates and AI integrations (Claude, ChatGPT, Gemini, Copilot, Perplexity)",
+        "fr": "Plus de 230 modèles de tableaux de bord et des intégrations IA (Claude, ChatGPT, Gemini, Copilot, Perplexity)",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan is restricted to manual refresh and a 100-row cap per run, unsuitable for automated reporting", "sourceIds": ["s1"] },
-      { "en": "Team workspaces and workflow automations are exclusive to the Pro plan and above", "sourceIds": ["s1"] },
-      { "en": "SSO is only available on the custom-priced Enterprise plan", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan is restricted to manual refresh and a 100-row cap per run, unsuitable for automated reporting",
+        "fr": "Le plan gratuit se limite à un rafraîchissement manuel et 100 lignes par exécution, trop peu pour du reporting automatique",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Team workspaces and workflow automations are exclusive to the Pro plan and above",
+        "fr": "Les espaces d'équipe et les automatisations sont réservés au plan Pro et au-delà",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "SSO is only available on the custom-priced Enterprise plan",
+        "fr": "Le SSO n'existe que sur l'offre Enterprise sur devis",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "BigQuery", "slug": "bigquery", "sourceIds": ["s1"] },
-      { "name": "Google Analytics", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
-      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "BigQuery",
+        "slug": "bigquery",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Google Analytics",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Salesforce",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "HubSpot",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "airbyte", "reason": { "en": "Open-source data integration and ELT alternative covering a similar range of connectors" } },
-    { "slug": "dbt", "reason": { "en": "Overlaps for data transformation once pipelines feed a warehouse" } }
+    {
+      "slug": "supermetrics",
+      "reason": {
+        "en": "Marketing data connector for reports in spreadsheets and Looker Studio",
+        "fr": "Connecteur de données marketing pour des rapports dans un tableur ou Looker Studio"
+      }
+    },
+    {
+      "slug": "airbyte",
+      "reason": {
+        "en": "Open-source data integration covering a similar range of connectors",
+        "fr": "Intégration de données open source couvrant un éventail de connecteurs comparable"
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Fivetran", "officialUrl": "https://www.fivetran.com", "reason": "Major managed data-integration competitor, not in the catalogue" }
+    {
+      "name": "Fivetran",
+      "officialUrl": "https://www.fivetran.com",
+      "reason": "Major managed data-integration competitor, not in the catalogue"
+    }
   ],
   "unknowns": [
     "Exact list beyond 400+ data sources not fully enumerated on the pricing page",
     "Tax treatment (taxIncluded) not stated on the pricing page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Starter costs $24/mo on a yearly plan for 3 accounts and daily refresh; transformations start at $99/mo.",
+        "fr": "Le plan Starter coûte 24 $/mois en annuel pour 3 comptes et un rafraîchissement quotidien ; les transformations commencent à 99 $/mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "No-code connections and 230+ dashboard templates get a first report running without engineering.",
+        "fr": "Des connexions sans code et plus de 230 modèles de tableaux de bord lancent un premier rapport sans développeur.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Moves data from 400+ apps to spreadsheets, BI tools and warehouses as advertised.",
+        "fr": "Déplace les données de plus de 400 applications vers des tableurs, des outils de BI et des entrepôts, comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Transformations and hourly refresh are reserved for higher plans.",
+        "fr": "Les transformations et le rafraîchissement horaire sont réservés aux plans supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Data lands in your own spreadsheets, BI tools or warehouse, so it stays with you if you leave.",
+        "fr": "Les données arrivent dans tes propres tableurs, outils de BI ou entrepôt : elles restent chez toi si tu pars.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null,
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Consultants and small agencies who build recurring client reports from marketing and sales data",
+      "fr": "Consultants et petites agences qui construisent des rapports clients récurrents à partir de données marketing et commerciales"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Client reporting: pull ad and analytics data into a sheet refreshed every day",
+      "fr": "Reporting client : rapatrier les données publicitaires et d'audience dans un tableur rafraîchi chaque jour"
+    },
+    {
+      "en": "Dashboard: feed a Looker Studio or BI template without exporting CSV files by hand",
+      "fr": "Tableau de bord : alimenter un modèle Looker Studio ou de BI sans exporter de CSV à la main"
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Data syncing",
+      "fr": "Synchro de données"
+    },
+    "shortDescription": {
+      "en": "A no-code connector that moves data from 400+ apps into spreadsheets, BI tools and data warehouses on a schedule.",
+      "fr": "Un connecteur sans code qui envoie les données de plus de 400 applications vers des tableurs, des outils de BI et des entrepôts, selon un calendrier."
+    },
+    "longDescription": {
+      "en": "Coupler.io replaces manual CSV exports: it connects ad platforms, CRMs and analytics tools to Google Sheets, BI tools or a warehouse, and refreshes them on a schedule. Templates help ship a first dashboard fast.\n\nThe free plan is a test (manual refresh, 100 rows). Starter at $24/mo yearly covers simple daily reports; formulas and joins need Active at $99/mo. If you only report on marketing data, Supermetrics is the direct comparison.",
+      "fr": "Coupler.io remplace les exports CSV manuels : il relie régies publicitaires, CRM et outils d'audience à Google Sheets, à un outil de BI ou à un entrepôt, et les rafraîchit selon un calendrier. Les modèles aident à livrer vite un premier tableau de bord.\n\nLe plan gratuit sert de test (rafraîchissement manuel, 100 lignes). Starter à 24 $/mois en annuel couvre des rapports quotidiens simples ; les formules et jointures demandent le plan Active à 99 $/mois. Si tu ne fais que du reporting marketing, Supermetrics est la comparaison directe."
+    },
+    "pros": [
+      {
+        "en": "400+ sources to spreadsheets, BI tools and warehouses",
+        "fr": "Plus de 400 sources vers tableurs, outils de BI et entrepôts"
+      },
+      {
+        "en": "Data stays in your own destinations",
+        "fr": "Les données restent dans tes propres destinations"
+      },
+      {
+        "en": "Dashboard templates for a fast first report",
+        "fr": "Des modèles de tableaux de bord pour un premier rapport rapide"
+      }
+    ],
+    "cons": [
+      {
+        "en": "Transformations only from the $99/mo Active plan",
+        "fr": "Transformations seulement à partir du plan Active à 99 $/mois"
+      },
+      {
+        "en": "Free plan limited to manual refresh and 100 rows",
+        "fr": "Plan gratuit limité au rafraîchissement manuel et à 100 lignes"
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you rebuild the same client reports every week from several data sources.",
+        "fr": "Garde-le si tu reconstruis les mêmes rapports clients chaque semaine à partir de plusieurs sources."
+      },
+      "avoidIf": {
+        "en": "Skip it if one native export or connector already covers your report.",
+        "fr": "Passe ton tour si un export natif ou un connecteur unique couvre déjà ton rapport."
+      },
+      "threshold": {
+        "en": "Starter costs $288 a year: worth it once the manual exports it replaces cost you more than $24 of time a month.",
+        "fr": "Le plan Starter coûte 288 $ par an : rentable dès que les exports manuels qu'il remplace te coûtent plus de 24 $ de temps par mois."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25"
 }

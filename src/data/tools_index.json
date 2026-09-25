@@ -903,14 +903,14 @@
     "slug": "adobe-photoshop",
     "name": "Adobe Photoshop",
     "categoryId": "design-tools",
-    "shortDescription": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.",
-    "shortDescriptionEn": "Adobe's flagship raster image editor for Windows, macOS, and iPad.",
+    "shortDescription": "L'éditeur d'images matricielles d'Adobe pour la retouche, le montage et le remplissage génératif, sur ordinateur, web et mobile.",
+    "shortDescriptionEn": "Adobe's raster image editor for photo retouching, compositing and generative fills, on desktop, web and mobile.",
     "pricing": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 19,99 $/mois, plan Photography plan."
     },
-    "defaultMonthlyPrice": 23.99,
-    "compareMonthlyPrice": 26.21,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "affiliateLink": "https://adobe.com/products/photoshop",
     "ogImageUrl": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -934,8 +934,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "freeAlternative": "Affinity Photo",
     "substitutable": false
@@ -982,14 +981,14 @@
     "slug": "adobe-premiere-pro",
     "name": "Adobe Premiere Pro",
     "categoryId": "design-tools",
-    "shortDescription": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.",
-    "shortDescriptionEn": "Adobe's professional video editing application, distributed through Creative Cloud.",
+    "shortDescription": "Le logiciel de montage vidéo d'Adobe pour le montage, les titres, les effets et le mixage, avec validation via Frame.io.",
+    "shortDescriptionEn": "Adobe's timeline video editor for editing, titles, effects and sound mixing, with review through Frame.io.",
     "pricing": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 22,99 $/mois, plan Premiere Pro (single app)."
     },
-    "defaultMonthlyPrice": 26.21,
-    "compareMonthlyPrice": 26.21,
+    "defaultMonthlyPrice": 19.74,
+    "compareMonthlyPrice": 19.74,
     "affiliateLink": "https://adobe.com/products/premiere",
     "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -1011,8 +1010,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "ALIX"
     ],
     "freeAlternative": "DaVinci Resolve",
     "substitutable": false
@@ -5530,14 +5528,14 @@
     "slug": "cargo-site",
     "name": "Cargo Site",
     "categoryId": "nocode-web",
-    "shortDescription": "Le créateur de portfolios pour designers et artistes qui veulent un site aussi distinctif que leur travail.",
-    "shortDescriptionEn": "The portfolio builder for designers and artists who want a site as distinctive as their work.",
+    "shortDescription": "Un créateur de sites portfolio pour designers et artistes, avec édition collaborative et boutique intégrée.",
+    "shortDescriptionEn": "A portfolio site builder for designers and artists, with collaborative editing and a built-in shop.",
     "pricing": {
-      "free": "Construction gratuite en privé, publication payante",
-      "paid": "Environ 14$/mois en annuel (19$ au mois) pour publier, domaine inclus"
+      "free": "Plan gratuit : Construction et édition en privé, sans publication publique",
+      "paid": "Dès 14 $/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 14,
-    "compareMonthlyPrice": 14,
+    "defaultMonthlyPrice": 12.02,
+    "compareMonthlyPrice": 12.02,
     "websiteUrl": "https://cargo.site/",
     "ogImageUrl": "/tool-media/cargo-site/cargo-overview.jpg",
     "substitution_cluster_v2": "website-builder",
@@ -7314,14 +7312,14 @@
     "slug": "coupler-io",
     "name": "Coupler Io",
     "categoryId": "analytics",
-    "shortDescription": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
-    "shortDescriptionEn": "No-code data integration platform that automates data flows from 400+ apps into spreadsheets, BI tools, warehouses and AI tools.",
+    "shortDescription": "Un connecteur sans code qui envoie les données de plus de 400 applications vers des tableurs, des outils de BI et des entrepôts, selon un calendrier.",
+    "shortDescriptionEn": "A no-code connector that moves data from 400+ apps into spreadsheets, BI tools and data warehouses on a schedule.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Plan gratuit : 1 compte, 1 destination, rafraîchissement manuel, 100 lignes par exécution, 1 utilisateur",
+      "paid": "Dès 24 $/mois, plan Starter."
     },
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
+    "defaultMonthlyPrice": 20.61,
+    "compareMonthlyPrice": 20.61,
     "affiliateLink": "https://coupler.io",
     "ogImageUrl": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
     "logo": "https://logo.clearbit.com/coupler.io",
@@ -7340,7 +7338,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "marc"
+      "MARC"
     ]
   },
   {
@@ -10031,12 +10029,13 @@
     "slug": "eventbrite",
     "name": "Eventbrite",
     "categoryId": "communication",
-    "shortDescription": "Billetterie et gestion d'événements : événements gratuits illimités, 3,7% + 1,79$ par billet payant.",
-    "shortDescriptionEn": "Event ticketing and management: unlimited free events, 3.7% + $1.79 per paid ticket.",
+    "shortDescription": "Une plateforme de billetterie : gratuite pour les événements gratuits, avec des frais par billet sur les billets payants.",
+    "shortDescriptionEn": "An event ticketing platform: free for free events, with a per-ticket fee on paid tickets.",
     "pricing": {
-      "free": "Publication d'événements gratuits illimitée, sans frais.",
-      "paid": "3,7% + 1,79$ par billet payant, plus 2,9% de frais de traitement de paiement. Plan Pro 15$ à 100$/mois pour plus de capacité email marketing (ne réduit pas les frais par billet)."
+      "free": "Plan gratuit : Événements gratuits illimités sans frais ; les frais ne s'appliquent qu'aux billets payants",
+      "paid": "Dès 0 $/mois, plan Free events."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.eventbrite.com",
     "ogImageUrl": "https://cdn.evbstatic.com/s3-build/perm_001/6ce389/django/images/logos/eb_orange_on_white_1200x630.png",
     "substitution_cluster_v2": "event-management",
@@ -10052,10 +10051,7 @@
       "Conférenciers et formateurs",
       "Associations et communautés"
     ],
-    "prescription_quality": "contextual",
-    "personas": [
-      "designer"
-    ]
+    "prescription_quality": "contextual"
   },
   {
     "id": "excalidraw",
@@ -15766,14 +15762,14 @@
     "slug": "jira",
     "name": "Jira",
     "categoryId": "project-management",
-    "shortDescription": "La référence de la gestion de projet Agile pour équipes tech.",
-    "shortDescriptionEn": "The reference agile project management for tech teams.",
+    "shortDescription": "Le suivi de tickets et de projets d'Atlassian pour les équipes logicielles, avec tableaux Scrum et Kanban et workflows personnalisés.",
+    "shortDescriptionEn": "Atlassian's issue and project tracker for software teams, with Scrum and Kanban boards and custom workflows.",
     "pricing": {
-      "free": "Jusqu'à 10 utilisateurs",
-      "paid": "7,75$/utilisateur/mois"
+      "free": "Plan gratuit : Gratuit sans limite de durée jusqu'à 10 utilisateurs",
+      "paid": "Dès 7,91 $/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 6.71,
-    "compareMonthlyPrice": 6.71,
+    "defaultMonthlyPrice": 6.79,
+    "compareMonthlyPrice": 6.79,
     "affiliateLink": "https://atlassian.com/software/jira",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/jira.jpg",
     "substitution_cluster_v2": "dev-issue-tracker",
@@ -15794,8 +15790,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "theo",
-      "marc"
+      "THEO"
     ],
     "betterAlternative": {
       "tool": "linear",

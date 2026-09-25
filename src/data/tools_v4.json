@@ -4328,46 +4328,46 @@
     "name": "Adobe Photoshop",
     "slug": "adobe-photoshop",
     "category": "design-tools",
-    "shortDescription": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.",
-    "longDescription": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.\n\nFonctions clés : Édition multi-calques avec masques et compositing ; Retouche professionnelle (correcteur, remplissage selon le contenu) ; Traitement RAW via Camera Raw ; Fonctions d'IA générative (Remplissage et Extension génératifs) ; Disponible sur Windows, macOS et iPad.\n\nPhotoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux.",
+    "shortDescription": "L'éditeur d'images matricielles d'Adobe pour la retouche, le montage et le remplissage génératif, sur ordinateur, web et mobile.",
+    "longDescription": "Photoshop est l'éditeur d'images de référence : calques, masques et réglages non destructifs couvrent presque toute retouche ou tout montage, et les outils génératifs (remplissage génératif, Supprimer) règlent des nettoyages qui demandaient un travail manuel.\n\nLa contrepartie, c'est un engagement d'un an sur chaque plan individuel. L'entrée la moins chère est le plan Photographie à 19,99 $/mois, qui réunit Photoshop et Lightroom ; Photoshop seul coûte 22,99 $/mois. Si tu n'ouvres un PSD que de temps en temps, un éditeur acheté une fois ou un outil gratuit dans le navigateur suffit.",
     "affiliateLink": "https://adobe.com/products/photoshop",
     "websiteUrl": "https://adobe.com/products/photoshop",
-    "defaultMonthlyPrice": 23.99,
+    "defaultMonthlyPrice": 17.17,
     "pricing": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 19,99 $/mois, plan Photography plan."
     },
     "logo": "",
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
     "verdict": {
       "keepIf": [
-        "Vous éditez, retouchez ou composez des images de façon régulière.",
-        "Vous voulez l'outil de référence, avec l'IA générative (Firefly) intégrée.",
-        "Vous travaillez sur plusieurs plateformes (bureau et iPad)."
+        "Garde-le si tu retouches ou composes des images pour des clients chaque semaine et que tu échanges des PSD."
       ],
       "avoidIf": [
-        "Vous ne faites que du dessin vectoriel : Illustrator est plus adapté.",
-        "Vos retouches sont simples et occasionnelles.",
-        "Vous voulez éviter l'abonnement Creative Cloud."
+        "Passe ton tour si tu retouches quelques images par mois : Affinity Photo ou Photopea couvrent un usage ponctuel sans abonnement annuel."
       ],
-      "threshold": "Photoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux."
+      "threshold": "Sur le plan Photographie, l'engagement représente 239,88 $ par an : rentable avec un travail d'image hebdomadaire, difficile à justifier pour quelques retouches par mois.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Chaque plan individuel engage sur un an, même quand il est payé au mois."
+        }
+      ]
     },
     "pros": [
-      "Référence de l'édition d'images matricielles, extrêmement complète.",
-      "Retouche puissante : correcteur, remplissage selon le contenu, masques.",
-      "Traitement RAW intégré via Camera Raw.",
-      "Remplissage et Extension génératifs (IA) intégrés."
+      "Plan Photographie : Photoshop sur ordinateur et Lightroom pour 19,99 $/mois en engagement annuel",
+      "Le remplissage génératif et Supprimer accélèrent des nettoyages autrefois manuels",
+      "Le PSD est le format qu'attendent clients et imprimeurs"
     ],
     "cons": [
-      "Accessible via l'abonnement Creative Cloud, pas en achat unique.",
-      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
-      "Surdimensionné pour de simples retouches."
+      "Engagement d'un an sur chaque plan individuel, sans licence perpétuelle",
+      "Courbe d'apprentissage raide hors métiers de l'image",
+      "Crédits génératifs plafonnés à 25 par mois sur le plan Photoshop seul"
     ],
     "useCases": [
-      "Retoucher et corriger des photographies en détail.",
-      "Composer une image multi-calques (montage, affiche).",
-      "Étendre ou compléter une image par IA générative."
+      "Retouche photo client : retirer un objet, nettoyer, harmoniser les couleurs d'une série",
+      "Visuels réseaux et publicité : composer un visuel en calques, puis exporter chaque format"
     ],
     "covers": [
       "compositing",
@@ -4381,6 +4381,8 @@
     ],
     "alternatives": [
       "affinity-photo",
+      "pixelmator-pro",
+      "photopea",
       "canva"
     ],
     "seo": {
@@ -4398,14 +4400,15 @@
         "replaceEn": "For fine retouching and pro compositing, Photoshop remains irreplaceable: no AI gives you that pixel control. But for many everyday tasks (generate a visual, cut out, remove an object, change a background), free or cheap AIs (Canva, remove.bg, or pure generation via Midjourney/Krea) do the job without opening Photoshop. Verdict: it keeps the craft, but loses ground on the simple tasks AI is commoditizing.",
         "replaceFr": "Pour la retouche fine et le compositing pro, Photoshop reste irremplaçable : aucune IA ne te donne ce contrôle au pixel. Mais pour beaucoup de tâches courantes (générer un visuel, détourer, supprimer un objet, changer un fond), des IA gratuites ou bon marché (Canva, remove.bg, ou la génération pure via Midjourney/Krea) font le job sans ouvrir Photoshop. Le verdict : il garde la main sur le métier, mais perd du terrain sur les tâches simples que l'IA banalise."
       },
-      "metaDescription": "Adobe Photoshop en 2026 : prix réel, formule Photography moins chère, et alternatives gratuites (Affinity Photo). Le verdict ToolTrim pour la retouche photo."
+      "metaDescription": "Adobe Photoshop en 2026 : prix réel, formule Photography moins chère, et alternatives gratuites (Affinity Photo). Le verdict ToolTrim pour la retouche photo.",
+      "idealForFr": "Designers et photographes qui retouchent des images ou composent des visuels pour des clients chaque semaine",
+      "idealForEn": "Designers and photographers who retouch images or compose visuals for clients every week"
     },
     "articles": [],
     "timeGainedHoursPerMonth": 6,
     "freeAlternative": "Affinity Photo",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "tool_type": "metier",
     "substitutable": false,
@@ -4441,10 +4444,12 @@
     "substitution_cluster_v2": "design-support",
     "pricing_v5": {
       "cautions": [
-        "Aucune version gratuite, essai uniquement",
-        "Formule Photography (avec Lightroom) dès ~10€/mois, moins chère que Photoshop seul"
+        "Photoshop est vendu uniquement par abonnement : aucune licence perpétuelle.",
+        "Chaque plan individuel engage sur un an, même payé au mois. Le paiement annuel d'avance coûte 263,88 $ pour Photoshop seul (21,99 $/mois).",
+        "Le prix de Creative Cloud Pro affiché en premier est une offre de 3 mois réservée aux nouveaux abonnés (34,99 $/mois), puis 69,99 $/mois ; il est exclu du plan de comparaison.",
+        "Les crédits génératifs sont plafonnés chaque mois (25 sur le plan Photoshop seul)."
       ],
-      "verified_on": "2026-08-31",
+      "verified_on": "2026-09-25",
       "billing_model": "seat",
       "source_domain": "adobe.com",
       "billing_options": [
@@ -4481,13 +4486,61 @@
         }
       ],
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Photoshop single app",
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Photography plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.adobe.com/products/photoshop.html",
+      "official_source_url": "https://www.adobe.com/products/photoshop/plans.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 26.21
+      "compare_price_monthly_eur": 17.17,
+      "cautionsEn": [
+        "Photoshop is subscription-only: no perpetual license is offered.",
+        "Every individual plan is a yearly commitment, even when billed monthly. Paying the year upfront costs $263.88 for Photoshop alone ($21.99/mo).",
+        "The Creative Cloud Pro price shown first is a new-subscriber offer for 3 months ($34.99/mo), then $69.99/mo; it is excluded from the compared plan.",
+        "Generative credits are capped per month (25 on the single-app plan)."
+      ],
+      "plans": [
+        {
+          "planKey": "photography",
+          "displayName": "Photography plan",
+          "summary": null,
+          "featureHighlights": [
+            "Photoshop sur ordinateur, web et mobile, plus Lightroom, engagement annuel payé au mois"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/photoshop/plans.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "single-app",
+          "displayName": "Photoshop (single app)",
+          "summary": null,
+          "featureHighlights": [
+            "Photoshop seul, avec 100 Go de stockage cloud, 25 crédits génératifs par mois et Adobe Express Premium"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/photoshop.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 22.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -4497,40 +4550,40 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Adobe's flagship raster image editor for Windows, macOS, and iPad.",
-    "longDescriptionEn": "Adobe's flagship raster image editor for Windows, macOS, and iPad.\n\nKey strengths: The reference raster image editor, extremely complete.; Powerful retouching: healing, content-aware fill, masks.; Built-in RAW processing via Camera Raw.; Built-in Generative Fill and Expand (AI)..\n\nPhotoshop makes sense when raster image editing is core to your work; for vector work or occasional retouching, a lighter tool (or Illustrator) fits better.",
+    "shortDescriptionEn": "Adobe's raster image editor for photo retouching, compositing and generative fills, on desktop, web and mobile.",
+    "longDescriptionEn": "Photoshop is the reference raster editor: layers, masks and non-destructive adjustments cover almost any retouching or compositing job, and the generative tools (Generative Fill, Remove) now handle clean-ups that used to take manual work.\n\nThe cost is a yearly commitment on every individual plan. The cheapest way in is the Photography plan at $19.99/mo, which bundles Photoshop with Lightroom; Photoshop alone costs $22.99/mo. If you only open a PSD now and then, a one-time editor or a free browser tool covers the need.",
     "prosEn": [
-      "The reference raster image editor, extremely complete.",
-      "Powerful retouching: healing, content-aware fill, masks.",
-      "Built-in RAW processing via Camera Raw.",
-      "Built-in Generative Fill and Expand (AI)."
+      "Photography plan: desktop Photoshop and Lightroom for $19.99/mo on a yearly plan",
+      "Generative Fill and Remove speed up clean-ups that used to be manual",
+      "PSD is the format clients and printers expect"
     ],
     "consEn": [
-      "Available via the Creative Cloud subscription, not one-off purchase.",
-      "Real learning curve to unlock its full potential.",
-      "Overkill for simple retouching."
+      "Yearly commitment on every individual plan, no perpetual license",
+      "Steep learning curve outside image editing",
+      "Generative credits capped at 25 per month on the single-app plan"
     ],
     "useCasesEn": [
-      "Retouch and correct photographs in detail.",
-      "Composite a multi-layer image (montage, poster).",
-      "Extend or complete an image with generative AI."
+      "Client photo retouching: remove objects, clean up, match colors across a series",
+      "Social and ad visuals: compose a layered key visual, then export every format"
     ],
     "verdictEn": {
       "keepIf": [
-        "You edit, retouch or composite images regularly.",
-        "You want the reference tool, with generative AI (Firefly) built in.",
-        "You work across platforms (desktop and iPad)."
+        "Keep it if you retouch or compose images for clients every week and exchange PSD files."
       ],
       "avoidIf": [
-        "You only do vector work: Illustrator fits better.",
-        "Your edits are simple and occasional.",
-        "You want to avoid the Creative Cloud subscription."
+        "Skip it if you edit a few images a month: Affinity Photo or Photopea cover occasional work without a yearly subscription."
       ],
-      "threshold": "Photoshop makes sense when raster image editing is core to your work; for vector work or occasional retouching, a lighter tool (or Illustrator) fits better."
+      "threshold": "On the Photography plan the commitment is $239.88 a year: worth it with weekly image work, hard to justify for a few edits a month.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Every individual plan is a yearly commitment, even when billed monthly."
+        }
+      ]
     },
     "pricingEn": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
+      "free": "No permanent free plan, 7-day trial.",
+      "paid": "From $19.99/mo, Photography plan plan."
     },
     "force_silence": false,
     "description": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.\n\nFonctions clés : Édition multi-calques avec masques et compositing ; Retouche professionnelle (correcteur, remplissage selon le contenu) ; Traitement RAW via Camera Raw ; Fonctions d'IA générative (Remplissage et Extension génératifs) ; Disponible sur Windows, macOS et iPad.\n\nPhotoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux.",
@@ -4539,7 +4592,103 @@
       "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_18bfe9207cb445b0c0adb23e9358e4b04ffee9d37.jpg?width=750&format=jpg&optimize=medium",
       "https://www.adobe.com/products/media_1593767de8d991b2148233f4972e7a75f4b8c3f1b.png?width=750&format=png&optimize=medium",
       "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_190e4e43778fc5bb8a6847f4c87c04e8e4122ccaf.jpg?width=750&format=jpg&optimize=medium"
-    ]
+    ],
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 17.17,
+      "compare_plan_name": "Photography plan",
+      "compare_plan_kind": "account",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.adobe.com/products/photoshop/plans.html",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "Photoshop is subscription-only: no perpetual license is offered.",
+        "Every individual plan is a yearly commitment, even when billed monthly. Paying the year upfront costs $263.88 for Photoshop alone ($21.99/mo).",
+        "The Creative Cloud Pro price shown first is a new-subscriber offer for 3 months ($34.99/mo), then $69.99/mo; it is excluded from the compared plan.",
+        "Generative credits are capped per month (25 on the single-app plan)."
+      ],
+      "plans": [
+        {
+          "planKey": "photography",
+          "displayName": "Photography plan",
+          "summary": null,
+          "featureHighlights": [
+            "Desktop, web and mobile Photoshop plus Lightroom, yearly plan billed monthly"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/photoshop/plans.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "single-app",
+          "displayName": "Photoshop (single app)",
+          "summary": null,
+          "featureHighlights": [
+            "Photoshop only, with 100GB cloud storage, 25 monthly generative credits and Adobe Express Premium"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/photoshop.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 22.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 2,
+      "utilisation": 5,
+      "puissance": 5,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Le plan Photographie donne Photoshop sur ordinateur et Lightroom pour 19,99 $/mois en engagement annuel, moins que Photoshop seul.",
+        "simplicite": "Calques, masques et calques de réglage demandent une vraie pratique avant un premier résultat propre.",
+        "utilisation": "Retouche, montage et nettoyage génératif sont couverts dans le produit lui-même.",
+        "puissance": "L'édition non destructive par calques, le remplissage et l'extension génératifs fixent le niveau de la catégorie.",
+        "reversibilite": "Note neutre : les options d'export ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The Photography plan gives desktop Photoshop and Lightroom for $19.99/mo on a yearly plan, less than Photoshop alone.",
+        "simplicite": "Layers, masks and adjustment layers take real practice before a first clean result.",
+        "utilisation": "Retouching, compositing and generative clean-ups are all covered in the product itself.",
+        "puissance": "Layer-based non-destructive editing plus Generative Fill and Expand set the level of the category.",
+        "reversibilite": "Neutral score: export options were not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Retouche d'image",
+      "en": "Image editing"
+    },
+    "research": {
+      "dossier": "research/dossiers/adobe-photoshop.json",
+      "researchedOn": "2026-09-25",
+      "sources": 2
+    }
   },
   {
     "id": "adobe-podcast-ai",
@@ -4871,46 +5020,45 @@
     "name": "Adobe Premiere Pro",
     "slug": "adobe-premiere-pro",
     "category": "design-tools",
-    "shortDescription": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.",
-    "longDescription": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.\n\nFonctions clés : Montage sur timeline avec imbrication profonde des séquences ; Prise en charge haute résolution et grande profondeur de couleur ; Audio pro (édition fine, VST, mixage surround 5.1) ; Étalonnage couleur (outils Lumetri) ; Intégration Dynamic Link avec After Effects, Photoshop, Illustrator.\n\nPremiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit.",
+    "shortDescription": "Le logiciel de montage vidéo d'Adobe pour le montage, les titres, les effets et le mixage, avec validation via Frame.io.",
+    "longDescription": "Premiere Pro mène tout un montage dans une seule timeline : coupes, titres, effets et son. Le montage par la transcription et la recherche de médias par IA accélèrent le premier jet, et Frame.io couvre la validation client.\n\nChaque plan est un engagement annuel payé au mois, 22,99 $/mois pour Premiere Pro seul. Si tu montes surtout des vidéos courtes pour les réseaux, un outil plus simple suffit ; si tu veux posséder ton logiciel, DaVinci Resolve ou Final Cut Pro s'achètent une fois.",
     "affiliateLink": "https://adobe.com/products/premiere",
     "websiteUrl": "https://adobe.com/products/premiere",
-    "defaultMonthlyPrice": 26.21,
+    "defaultMonthlyPrice": 19.74,
     "pricing": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 22,99 $/mois, plan Premiere Pro (single app)."
     },
     "logo": "",
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
     "verdict": {
       "keepIf": [
-        "Vous montez de la vidéo de façon régulière et exigeante.",
-        "Vous voulez un outil pro intégré à After Effects et aux autres apps Adobe.",
-        "Vous avez besoin d'étalonnage et d'audio professionnels."
+        "Garde-le si tu montes des vidéos clients chaque semaine et que tu partages des projets avec d'autres monteurs Premiere."
       ],
       "avoidIf": [
-        "Vos montages sont ponctuels et simples.",
-        "Vous cherchez une alternative gratuite ou sans abonnement.",
-        "Votre machine est peu puissante."
+        "Passe ton tour si tu montes surtout des vidéos courtes pour les réseaux ou si tu préfères acheter ton logiciel une fois."
       ],
-      "threshold": "Premiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit."
+      "threshold": "L'engagement annuel représente 275,88 $ : rentable avec des montages payés réguliers.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les plans engagent sur un an, même quand ils sont payés au mois."
+        }
+      ]
     },
     "pros": [
-      "Montage professionnel complet (timeline, multi-formats, haute résolution).",
-      "Étalonnage couleur avancé (Lumetri) et audio pro.",
-      "Intégration Dynamic Link avec After Effects et les apps Adobe.",
-      "Standard largement adopté en production."
+      "Le montage par la transcription accélère les interviews et les vidéos face caméra",
+      "Frame.io et 100 Go de stockage inclus pour la validation client",
+      "Des fichiers de projet standards du métier pour travailler avec d'autres monteurs"
     ],
     "cons": [
-      "Accessible via l'abonnement Creative Cloud.",
-      "Courbe d'apprentissage réelle.",
-      "Traitement gourmand en ressources."
+      "Engagement annuel, sans licence perpétuelle",
+      "Surdimensionné pour des vidéos courtes destinées aux réseaux"
     ],
     "useCases": [
-      "Monter un projet vidéo multi-pistes avec étalonnage et audio.",
-      "Enchaîner avec After Effects sans re-rendu (Dynamic Link).",
-      "Produire une vidéo haute résolution destinée à la diffusion."
+      "Vidéo client : couper une interview depuis la transcription, ajouter les titres, mixer le son, livrer",
+      "Contenu de chaîne : monter des vidéos longues et les faire valider au client dans Frame.io"
     ],
     "covers": [
       "color-grading",
@@ -4924,6 +5072,7 @@
     ],
     "alternatives": [
       "davinci-resolve",
+      "final-cut-pro",
       "capcut"
     ],
     "seo": {
@@ -4939,14 +5088,15 @@
         "replaceEn": "Replace Premiere with an AI? No for pro multi-layer editing with grading, mixing and broadcast export: that's a level of control no AI provides. Video AIs (Runway, Kling) generate shots from scratch, a different use case from editing. Verdict: AI integrates into Premiere, it doesn't replace it for serious editing.",
         "replaceFr": "Remplacer Premiere par une IA ? Non pour un montage pro multicouche avec étalonnage, mixage et export broadcast : c'est un niveau de contrôle qu'aucune IA ne fournit. Les IA vidéo (Runway, Kling) génèrent des plans depuis zéro, ce qui est un usage différent du montage. Verdict : l'IA s'intègre dans Premiere, elle ne le remplace pas pour un montage sérieux."
       },
-      "metaDescription": "Adobe Premiere Pro en 2026 : prix réel, pas de version gratuite, et alternatives (DaVinci Resolve gratuit). Le verdict ToolTrim pour le montage vidéo."
+      "metaDescription": "Adobe Premiere Pro en 2026 : prix réel, pas de version gratuite, et alternatives (DaVinci Resolve gratuit). Le verdict ToolTrim pour le montage vidéo.",
+      "idealForFr": "Créateurs de contenu et monteurs indépendants qui livrent des vidéos montées à des clients ou sur leurs chaînes chaque semaine",
+      "idealForEn": "Content creators and freelance video editors who deliver edited videos to clients or channels every week"
     },
     "articles": [],
     "timeGainedHoursPerMonth": 8,
     "freeAlternative": "DaVinci Resolve",
     "personas": [
-      "sofia",
-      "alix"
+      "ALIX"
     ],
     "tool_type": "metier",
     "substitutable": false,
@@ -4980,10 +5130,11 @@
     "substitution_cluster_v2": "design-support",
     "pricing_v5": {
       "cautions": [
-        "Aucune version gratuite, essai uniquement",
-        "Environ 26€/mois pour Premiere Pro seul, plus dans l'offre Creative Cloud complète"
+        "Premiere Pro est vendu uniquement par abonnement : aucune licence perpétuelle.",
+        "Les prix des plans sont des engagements annuels payés au mois ; le prix mensuel sans engagement n'apparaît pas sur la page des plans.",
+        "Le pack Creative Cloud Pro est affiché avec une remise de première période pour les nouveaux abonnés ; il est exclu du plan de comparaison."
       ],
-      "verified_on": "2026-08-31",
+      "verified_on": "2026-09-25",
       "billing_model": "seat",
       "source_domain": "adobe.com",
       "billing_options": [
@@ -5015,12 +5166,59 @@
       ],
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Premiere Pro single app",
+      "compare_plan_name": "Premiere Pro (single app)",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.adobe.com/products/premiere.html",
+      "official_source_url": "https://www.adobe.com/products/premiere/plans.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 26.21
+      "compare_price_monthly_eur": 19.74,
+      "cautionsEn": [
+        "Premiere Pro is subscription-only: no perpetual license is offered.",
+        "Plan prices are yearly commitments billed monthly; a no-commitment monthly price is not shown on the plans page.",
+        "The Creative Cloud Pro bundle is shown at a first-period discount for new subscribers; it is excluded from the compared plan."
+      ],
+      "plans": [
+        {
+          "planKey": "single-app",
+          "displayName": "Premiere Pro (single app)",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "Premiere Pro seul, engagement annuel payé au mois, avec 100 Go de stockage cloud et Frame.io"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/premiere.html",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 22.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "teams",
+          "displayName": "Premiere Pro for teams",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "Par licence, engagement annuel payé au mois, essai de 14 jours"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/premiere.html",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 37.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -5030,40 +5228,39 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Adobe's professional video editing application, distributed through Creative Cloud.",
-    "longDescriptionEn": "Adobe's professional video editing application, distributed through Creative Cloud.\n\nKey strengths: Complete professional editing (timeline, multi-format, high resolution).; Advanced colour grading (Lumetri) and pro audio.; Dynamic Link integration with After Effects and Adobe apps.; Widely adopted production standard..\n\nPremiere Pro makes sense when video editing is regular and demanding, tied to the Adobe ecosystem; for occasional editing, a lighter (or free) tool is enough.",
+    "shortDescriptionEn": "Adobe's timeline video editor for editing, titles, effects and sound mixing, with review through Frame.io.",
+    "longDescriptionEn": "Premiere Pro handles a whole edit in one timeline: cuts, titles, effects and sound. Text-based editing and AI media search make the first pass faster, and Frame.io covers client review.\n\nEvery plan is a yearly commitment billed monthly, $22.99/mo for Premiere Pro alone. If you edit short social clips, a simpler editor is enough; if you want to own your software, DaVinci Resolve or Final Cut Pro are bought once.",
     "prosEn": [
-      "Complete professional editing (timeline, multi-format, high resolution).",
-      "Advanced colour grading (Lumetri) and pro audio.",
-      "Dynamic Link integration with After Effects and Adobe apps.",
-      "Widely adopted production standard."
+      "Text-based editing speeds up interview and talking-head cuts",
+      "Frame.io and 100GB storage included for client review",
+      "Industry-standard project files for working with other editors"
     ],
     "consEn": [
-      "Available via the Creative Cloud subscription.",
-      "Real learning curve.",
-      "Resource-heavy processing."
+      "Yearly commitment, no perpetual license",
+      "More than you need for short social clips"
     ],
     "useCasesEn": [
-      "Edit a multi-track video project with grading and audio.",
-      "Move to After Effects without re-rendering (Dynamic Link).",
-      "Produce a high-resolution video for broadcast."
+      "Client video: cut interviews from the transcript, add titles, mix sound, deliver",
+      "Channel content: edit long-form videos and review them with the client in Frame.io"
     ],
     "verdictEn": {
       "keepIf": [
-        "You edit video regularly and demandingly.",
-        "You want a pro tool integrated with After Effects and other Adobe apps.",
-        "You need professional colour grading and audio."
+        "Keep it if you edit client videos every week and share projects with other Premiere editors."
       ],
       "avoidIf": [
-        "Your edits are occasional and simple.",
-        "You want a free or subscription-free alternative.",
-        "Your machine is low-powered."
+        "Skip it if you mostly cut short social clips or prefer to buy your editor once."
       ],
-      "threshold": "Premiere Pro makes sense when video editing is regular and demanding, tied to the Adobe ecosystem; for occasional editing, a lighter (or free) tool is enough."
+      "threshold": "The yearly commitment is $275.88: worth it with regular paid video work.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Plans are yearly commitments even when billed monthly."
+        }
+      ]
     },
     "pricingEn": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
+      "free": "No permanent free plan, 7-day trial.",
+      "paid": "From $22.99/mo, Premiere Pro (single app) plan."
     },
     "force_silence": false,
     "description": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.\n\nFonctions clés : Montage sur timeline avec imbrication profonde des séquences ; Prise en charge haute résolution et grande profondeur de couleur ; Audio pro (édition fine, VST, mixage surround 5.1) ; Étalonnage couleur (outils Lumetri) ; Intégration Dynamic Link avec After Effects, Photoshop, Illustrator.\n\nPremiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit.",
@@ -5071,7 +5268,102 @@
     "galleryImages": [
       "https://www.adobe.com/products/media_168928bcdc3aff4c1288aa2e481211b36d7c35d8d.png?width=750&format=png&optimize=medium",
       "https://www.adobe.com/products/media_1f8daa11378f3f2bf31de3eba54dec9f989bf65d5.png?width=750&format=png&optimize=medium"
-    ]
+    ],
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 19.74,
+      "compare_plan_name": "Premiere Pro (single app)",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.adobe.com/products/premiere/plans.html",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "Premiere Pro is subscription-only: no perpetual license is offered.",
+        "Plan prices are yearly commitments billed monthly; a no-commitment monthly price is not shown on the plans page.",
+        "The Creative Cloud Pro bundle is shown at a first-period discount for new subscribers; it is excluded from the compared plan."
+      ],
+      "plans": [
+        {
+          "planKey": "single-app",
+          "displayName": "Premiere Pro (single app)",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "Premiere Pro only, yearly plan billed monthly, with 100GB cloud storage and Frame.io"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/premiere.html",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 22.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "teams",
+          "displayName": "Premiere Pro for teams",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "Per license, yearly plan billed monthly, 14-day trial"
+          ],
+          "detailsSourceUrl": "https://www.adobe.com/products/premiere.html",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 37.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 5,
+      "puissance": 5,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "22,99 $/mois en engagement annuel, avec 100 Go de stockage et Frame.io, pour un logiciel utilisé dans tout le secteur.",
+        "simplicite": "Le montage par la transcription et la recherche de médias par IA raccourcissent le premier montage, mais la timeline complète demande de la pratique.",
+        "utilisation": "Montage, titres, effets et mixage audio se font dans une seule timeline, sans outil supplémentaire.",
+        "puissance": "Les effets génératifs via Firefly et le montage mobile complètent un logiciel professionnel complet.",
+        "reversibilite": "Note neutre : les options d'export ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "$22.99/mo on a yearly plan with 100GB storage and Frame.io, for an editor used across the industry.",
+        "simplicite": "Text-based editing and AI media search shorten the first edit, but the full timeline takes practice.",
+        "utilisation": "Editing, titles, effects and sound mixing are handled in one timeline, without extra tools.",
+        "puissance": "Generative effects through Firefly plus mobile editing extend a full professional editor.",
+        "reversibilite": "Neutral score: export options were not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Montage vidéo",
+      "en": "Video editing"
+    },
+    "research": {
+      "dossier": "research/dossiers/adobe-premiere-pro.json",
+      "researchedOn": "2026-09-25",
+      "sources": 2
+    }
   },
   {
     "id": "adobe-stock",
@@ -25571,46 +25863,39 @@
     "name": "Cargo Site",
     "slug": "cargo-site",
     "category": "nocode-web",
-    "shortDescription": "Le créateur de portfolios pour designers et artistes qui veulent un site aussi distinctif que leur travail.",
-    "longDescription": "Cargo est un créateur de sites pensé pour les designers, artistes, photographes et studios qui refusent le portfolio standardisé. Ses modèles graphiques, ses outils typographiques, ses galeries et son éditeur CSS permettent de construire une présence visuelle très personnelle sans partir de zéro.\n\nL'abonnement coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Un même compte peut publier plusieurs sites, collaborer en temps réel et connecter un domaine personnalisé sans supplément. Chaque domaine personnalisé additionnel coûte 2$ par mois en annuel ou 3$ au mois. Le module Commerce coûte 5,50$ par mois en annuel ou 9$ au mois, sans commission Cargo sur les transactions.\n\nChoisissez Cargo si le design du portfolio est lui-même une démonstration de votre pratique. Préférez Framer ou Webflow pour une acquisition structurée, un CMS plus ambitieux et des intégrations marketing, Format pour un portfolio photo plus guidé, ou Squarespace pour réunir vitrine et commerce dans un outil généraliste.",
+    "shortDescription": "Un créateur de sites portfolio pour designers et artistes, avec édition collaborative et boutique intégrée.",
+    "longDescription": "Cargo construit des sites portfolio à forte identité visuelle, qu'on édite visuellement et à plusieurs. Une boutique intégrée permet de vendre des tirages ou des fichiers depuis le même site.\n\nTu peux construire gratuitement, mais publier demande le plan Standard : 14 $/mois en annuel ou 19 $ au mois, un domaine personnalisé inclus. Pour un site complexe ou des interactions poussées, Framer ou Webflow vont plus loin.",
     "affiliateLink": "",
     "websiteUrl": "https://cargo.site/",
-    "defaultMonthlyPrice": 14,
+    "defaultMonthlyPrice": 12.02,
     "pricing": {
-      "free": "Construction gratuite en privé, publication payante",
-      "paid": "Environ 14$/mois en annuel (19$ au mois) pour publier, domaine inclus"
+      "free": "Plan gratuit : Construction et édition en privé, sans publication publique",
+      "paid": "Dès 14 $/mois, plan Standard."
     },
     "logo": "",
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "verdict": {
       "keepIf": [
-        "Votre portfolio doit exprimer une identité visuelle forte, pas seulement aligner des projets.",
-        "Vous voulez publier plusieurs sites créatifs avec un seul abonnement.",
-        "Vous aimez personnaliser la typographie, les galeries et le CSS."
+        "Garde-le si ton site est un portfolio et que son apparence compte autant que son contenu."
       ],
       "avoidIf": [
-        "Votre priorité est la génération de leads, le SEO avancé ou un CMS structuré.",
-        "Vous cherchez une boutique complète avec un vaste écosystème d'intégrations.",
-        "Vous voulez un éditeur très guidé avec peu de décisions de design."
+        "Passe ton tour s'il te faut un site d'entreprise avec blog, formulaires et nombreuses pages."
       ],
-      "threshold": "Gardez Cargo si la forme du portfolio fait partie de votre signature. Remplacez-le si votre site doit surtout convertir, publier à grande échelle ou gérer un commerce avancé."
+      "threshold": "168 $ par an sur le plan Standard annuel, domaine inclus."
     },
     "pros": [
-      "Liberté visuelle rare pour un constructeur sans code.",
-      "Plusieurs sites publiés avec un seul abonnement.",
-      "Édition collaborative en temps réel.",
-      "Un domaine personnalisé inclus."
+      "Des modèles de portfolio à l'identité visuelle marquée",
+      "Domaine personnalisé inclus dans le plan Standard",
+      "Boutique intégrée pour les tirages et les fichiers"
     ],
     "cons": [
-      "Moins adapté aux tunnels marketing et aux contenus très structurés.",
-      "Commerce payant en supplément.",
-      "La construction gratuite reste privée tant que vous ne payez pas."
+      "Le plan gratuit ne permet pas de publier",
+      "Limité pour des sites complexes à plusieurs sections"
     ],
     "useCases": [
-      "Transformer un portfolio de designer en véritable manifeste visuel.",
-      "Publier plusieurs sites pour un studio, des projets ou des présentations clients.",
-      "Créer un portfolio photo ou artistique avec des galeries sur mesure."
+      "Portfolio : publier une archive de projets mise en page sous ton propre domaine",
+      "Petite boutique : vendre des tirages ou des fichiers depuis le même site"
     ],
     "covers": [
       "website-builder",
@@ -25624,15 +25909,16 @@
     ],
     "alternatives": [
       "framer",
+      "readymag",
       "webflow",
-      "format",
-      "squarespace",
-      "readymag"
+      "squarespace"
     ],
     "seo": {
       "metaDescription": "Cargo (cargo.site) en 2026 : prix, plan gratuit et alternatives pour un portfolio créatif. Pour qui c'est le bon choix, par ToolTrim.",
       "presentationTitleEn": "Cargo Site: Creative Portfolios for Designers | 2026 Price | ToolTrim",
-      "presentationTitleFr": "Cargo Site : portfolios créatifs pour designers | Prix 2026 | ToolTrim"
+      "presentationTitleFr": "Cargo Site : portfolios créatifs pour designers | Prix 2026 | ToolTrim",
+      "idealForFr": "Designers, illustrateurs et artistes qui veulent un site portfolio aussi singulier que leur travail",
+      "idealForEn": "Designers, illustrators and artists who want a portfolio site as distinctive as their work"
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
@@ -25664,59 +25950,95 @@
     "substitution_cluster_v2": "website-builder",
     "pricing_v5": {
       "cautions": [
-        "Construction gratuite mais en privé : la publication est payante",
-        "14$/mois en facturation annuelle ou 19$/mois sans engagement",
-        "Un domaine personnalisé inclus, puis 2$/mois par domaine additionnel en annuel",
-        "Commerce en supplément : 5,50$/mois en annuel ou 9$/mois au mois"
+        "Publier le site demande le plan Standard ; le plan gratuit ne sert qu'à construire et éditer en privé."
       ],
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-09-25",
       "source_domain": "cargo.site",
       "billing_model": "subscription",
       "currency": "USD",
       "price_original": 14,
-      "compare_plan_kind": "individual",
-      "compare_plan_name": "Publication",
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Standard",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://cargo.site/information",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 14
+      "compare_price_monthly_eur": 12.02,
+      "usage_sensitive": false,
+      "cautionsEn": [
+        "Publishing the site publicly requires the paid Standard plan; the free tier only allows private building and editing."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": null,
+          "featureHighlights": [
+            "Le site reste privé et ne peut pas être publié"
+          ],
+          "detailsSourceUrl": "https://cargo.site/information",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "summary": "19 $/mois sans engagement.",
+          "featureHighlights": [
+            "1 domaine personnalisé inclus ; les suivants coûtent 2 à 3 $/mois"
+          ],
+          "detailsSourceUrl": "https://cargo.site/information",
+          "pricingUnit": "site",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 14,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
     },
     "decision_policy_v3": null,
-    "shortDescriptionEn": "The portfolio builder for designers and artists who want a site as distinctive as their work.",
-    "longDescriptionEn": "Cargo is a site builder for designers, artists, photographers and studios that reject standardized portfolios. Its graphic templates, typography tools, galleries and CSS editor make it possible to build a highly personal visual presence without starting from scratch.\n\nThe subscription costs $14 per month when billed annually, or $19 month to month. One account can publish multiple sites, support real-time collaboration and connect one custom domain at no extra cost. Each additional custom domain costs $2 per month annually or $3 month to month. Commerce costs $5.50 per month annually or $9 month to month, with no Cargo transaction fee.\n\nChoose Cargo when the portfolio design itself demonstrates your practice. Pick Framer or Webflow for structured acquisition, a more ambitious CMS and marketing integrations, Format for a more guided photography portfolio, or Squarespace for a general-purpose website and store.",
+    "shortDescriptionEn": "A portfolio site builder for designers and artists, with collaborative editing and a built-in shop.",
+    "longDescriptionEn": "Cargo builds portfolio sites with a strong visual identity, edited visually and collaboratively. A built-in shop lets you sell prints or digital files from the same site.\n\nYou can build for free, but publishing requires Standard: $14/mo on a yearly plan or $19 month to month, one custom domain included. For a complex site or advanced interactions, Framer or Webflow go further.",
     "prosEn": [
-      "Unusually strong visual freedom for a no-code builder.",
-      "Multiple published sites under one subscription.",
-      "Real-time collaborative editing.",
-      "One custom domain included."
+      "Portfolio templates with a distinct visual identity",
+      "Custom domain included in Standard",
+      "Built-in shop for prints and digital files"
     ],
     "consEn": [
-      "Less suited to marketing funnels and highly structured content.",
-      "Commerce costs extra.",
-      "Free building remains private until you subscribe."
+      "The free plan cannot publish a site",
+      "Limited for complex, multi-section sites"
     ],
     "useCasesEn": [
-      "Turn a designer portfolio into a visual statement.",
-      "Publish several studio, project or client presentation sites.",
-      "Build a photography or art portfolio with custom galleries."
+      "Portfolio: publish a designed project archive under your own domain",
+      "Small shop: sell prints or digital files from the same site"
     ],
     "verdictEn": {
       "keepIf": [
-        "Your portfolio must express a strong visual identity, not merely list projects.",
-        "You want to publish multiple creative sites under one subscription.",
-        "You enjoy tailoring typography, galleries and CSS."
+        "Keep it if your site is a portfolio and its look matters as much as its content."
       ],
       "avoidIf": [
-        "Lead generation, advanced SEO or a structured CMS is the priority.",
-        "You need a complete store with a broad integration ecosystem.",
-        "You want a tightly guided editor with few design decisions."
+        "Skip it if you need a business site with a blog, forms and many pages."
       ],
-      "threshold": "Keep Cargo when the portfolio's form is part of your signature. Replace it when the site mainly needs to convert, publish at scale or run advanced commerce."
+      "threshold": "$168 a year on the yearly Standard plan, domain included."
     },
     "pricingEn": {
-      "free": "Build for free in private, publishing is paid",
-      "paid": "Around $14/month annually ($19 monthly) to publish, domain included"
+      "free": "Free plan: Build and edit privately, cannot publish the site publicly",
+      "paid": "From $14/mo, Standard plan."
     },
     "force_silence": false,
     "description": "Cargo est un créateur de sites pensé pour les designers, artistes, photographes et studios qui refusent le portfolio standardisé. Ses modèles graphiques, ses outils typographiques, ses galeries et son éditeur CSS permettent de construire une présence visuelle très personnelle sans partir de zéro.\n\nL'abonnement coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Un même compte peut publier plusieurs sites, collaborer en temps réel et connecter un domaine personnalisé sans supplément. Chaque domaine personnalisé additionnel coûte 2$ par mois en annuel ou 3$ au mois. Le module Commerce coûte 5,50$ par mois en annuel ou 9$ au mois, sans commission Cargo sur les transactions.\n\nChoisissez Cargo si le design du portfolio est lui-même une démonstration de votre pratique. Préférez Framer ou Webflow pour une acquisition structurée, un CMS plus ambitieux et des intégrations marketing, Format pour un portfolio photo plus guidé, ou Squarespace pour réunir vitrine et commerce dans un outil généraliste.",
@@ -25724,7 +26046,100 @@
     "galleryImages": [
       "/tool-media/cargo-site/cargo-template.jpg",
       "/tool-media/cargo-site/cargo-example.jpg"
-    ]
+    ],
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 12.02,
+      "compare_plan_name": "Standard",
+      "compare_plan_kind": "account",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://cargo.site/information",
+      "source_domain": "cargo.site",
+      "usage_sensitive": false,
+      "cautions": [
+        "Publishing the site publicly requires the paid Standard plan; the free tier only allows private building and editing."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": null,
+          "featureHighlights": [
+            "Site stays private, cannot be published publicly"
+          ],
+          "detailsSourceUrl": "https://cargo.site/information",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "summary": "$19/mo billed monthly.",
+          "featureHighlights": [
+            "1 free custom domain included; additional custom domains cost $2-3/month"
+          ],
+          "detailsSourceUrl": "https://cargo.site/information",
+          "pricingUnit": "site",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 14,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Le plan Standard coûte 14 $/mois en annuel avec un domaine personnalisé inclus, peu pour un portfolio publié.",
+        "simplicite": "Un éditeur visuel avec collaboration en temps réel met un portfolio en ligne sans code.",
+        "utilisation": "Couvre le besoin portfolio, jusqu'à la vente de tirages ou de fichiers via la boutique intégrée.",
+        "puissance": "Centré sur les portfolios et les petites boutiques plutôt que sur les sites complexes.",
+        "reversibilite": "Note neutre : les options d'export ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Standard costs $14/mo on a yearly plan with a custom domain included, low for a published portfolio.",
+        "simplicite": "A visual editor with real-time collaboration gets a portfolio online without code.",
+        "utilisation": "Covers the portfolio job, including selling prints or files through the built-in shop.",
+        "puissance": "Focused on portfolios and small shops rather than complex sites.",
+        "reversibilite": "Neutral score: export options were not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Sites portfolio",
+      "en": "Portfolio sites"
+    },
+    "research": {
+      "dossier": "research/dossiers/cargo-site.json",
+      "researchedOn": "2026-09-25",
+      "sources": 1
+    }
   },
   {
     "id": "carrd",
@@ -33672,70 +34087,172 @@
     "slug": "coupler-io",
     "name": "Coupler Io",
     "category": "analytics",
-    "shortDescription": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
-    "shortDescriptionEn": "No-code data integration platform that automates data flows from 400+ apps into spreadsheets, BI tools, warehouses and AI tools.",
+    "shortDescription": "Un connecteur sans code qui envoie les données de plus de 400 applications vers des tableurs, des outils de BI et des entrepôts, selon un calendrier.",
+    "shortDescriptionEn": "A no-code connector that moves data from 400+ apps into spreadsheets, BI tools and data warehouses on a schedule.",
     "description": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
-    "longDescription": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
-    "longDescriptionEn": "No-code data integration platform that automates data flows from 400+ apps into spreadsheets, BI tools, warehouses and AI tools.",
+    "longDescription": "Coupler.io remplace les exports CSV manuels : il relie régies publicitaires, CRM et outils d'audience à Google Sheets, à un outil de BI ou à un entrepôt, et les rafraîchit selon un calendrier. Les modèles aident à livrer vite un premier tableau de bord.\n\nLe plan gratuit sert de test (rafraîchissement manuel, 100 lignes). Starter à 24 $/mois en annuel couvre des rapports quotidiens simples ; les formules et jointures demandent le plan Active à 99 $/mois. Si tu ne fais que du reporting marketing, Supermetrics est la comparaison directe.",
+    "longDescriptionEn": "Coupler.io replaces manual CSV exports: it connects ad platforms, CRMs and analytics tools to Google Sheets, BI tools or a warehouse, and refreshes them on a schedule. Templates help ship a first dashboard fast.\n\nThe free plan is a test (manual refresh, 100 rows). Starter at $24/mo yearly covers simple daily reports; formulas and joins need Active at $99/mo. If you only report on marketing data, Supermetrics is the direct comparison.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Plan gratuit : 1 compte, 1 destination, rafraîchissement manuel, 100 lignes par exécution, 1 utilisateur",
+      "paid": "Dès 24 $/mois, plan Starter."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Free plan: 1 account, 1 data destination, manual refresh only, 100 rows/run, 1 user",
+      "paid": "From $24/mo, Starter plan."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 20.61,
     "pricing_v5": {
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Les transformations (formules, jointures, agrégation) n'existent qu'à partir du plan Active ; Free et Starter déplacent les données brutes."
       ],
-      "verified_on": "2026-05-11",
+      "verified_on": "2026-09-25",
       "source_domain": "coupler.io",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://coupler.io",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.coupler.io/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 20.61,
+      "cautionsEn": [
+        "Data transformation features (formulas, joins, aggregation) are not available below the Active plan; the Free and Starter plans only move raw data."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": null,
+          "featureHighlights": [
+            "1 compte, 1 destination, rafraîchissement manuel, 100 lignes par exécution, 1 utilisateur"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "32 $/mois sans engagement.",
+          "featureHighlights": [
+            "3 comptes, 1 destination, rafraîchissement quotidien, 5 000 lignes par exécution, 1 utilisateur"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "active",
+          "displayName": "Active",
+          "summary": "132 $/mois sans engagement.",
+          "featureHighlights": [
+            "15 comptes, 3 destinations, rafraîchissement quotidien, volume et utilisateurs illimités, transformations incluses"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "259 $/mois sans engagement.",
+          "featureHighlights": [
+            "50 comptes, destinations illimitées, rafraîchissement horaire, espaces d'équipe, automatisations, account manager"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 199,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Agency & Enterprise",
+          "summary": "Sur devis.",
+          "featureHighlights": [
+            "Rafraîchissement jusqu'à 15 minutes, sources sur mesure, SSO, account manager dédié, SLA entreprise"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
     },
     "affiliateLink": "https://coupler.io",
     "websiteUrl": "https://coupler.io",
     "logo": "https://logo.clearbit.com/coupler.io",
-    "seo": {},
+    "seo": {
+      "idealForFr": "Consultants et petites agences qui construisent des rapports clients récurrents à partir de données marketing et commerciales",
+      "idealForEn": "Consultants and small agencies who build recurring client reports from marketing and sales data"
+    },
     "pros": [
-      "Très large choix de connecteurs.",
-      "Flux et dashboards illimités par compte.",
-      "Facturation aux sources, pas aux utilisateurs.",
-      "Palier gratuit pour démarrer."
+      "Plus de 400 sources vers tableurs, outils de BI et entrepôts",
+      "Les données restent dans tes propres destinations",
+      "Des modèles de tableaux de bord pour un premier rapport rapide"
     ],
     "prosEn": [
-      "Very wide choice of connectors.",
-      "Unlimited flows and dashboards per account.",
-      "Billed per source, not per user.",
-      "Free tier to start."
+      "400+ sources to spreadsheets, BI tools and warehouses",
+      "Data stays in your own destinations",
+      "Dashboard templates for a fast first report"
     ],
     "cons": [
-      "Coût qui monte avec le nombre de sources.",
-      "Surdimensionné pour un besoin ponctuel.",
-      "Transformation avancée = prise en main."
+      "Transformations seulement à partir du plan Active à 99 $/mois",
+      "Plan gratuit limité au rafraîchissement manuel et à 100 lignes"
     ],
     "consEn": [
-      "Cost rises with number of sources.",
-      "Oversized for a one-off need.",
-      "Advanced transformation has a learning curve."
+      "Transformations only from the $99/mo Active plan",
+      "Free plan limited to manual refresh and 100 rows"
     ],
     "useCases": [
-      "Automatiser un reporting multi-sources.",
-      "Alimenter un dashboard BI ou un entrepôt.",
-      "Consolider des données cross-canal."
+      "Reporting client : rapatrier les données publicitaires et d'audience dans un tableur rafraîchi chaque jour",
+      "Tableau de bord : alimenter un modèle Looker Studio ou de BI sans exporter de CSV à la main"
     ],
     "useCasesEn": [
-      "Automate multi-source reporting.",
-      "Feed a BI dashboard or warehouse.",
-      "Consolidate cross-channel data."
+      "Client reporting: pull ad and analytics data into a sheet refreshed every day",
+      "Dashboard: feed a Looker Studio or BI template without exporting CSV files by hand"
     ],
     "covers": [
       "operations-workflow"
@@ -33746,39 +34263,34 @@
       "Agences"
     ],
     "personas": [
-      "marc"
+      "MARC"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "supermetrics",
+      "airbyte"
+    ],
     "verdict": {
       "keepIf": [
-        "Vous automatisez des rapports depuis plusieurs sources.",
-        "Vous alimentez un tableur, une BI ou un entrepôt.",
-        "Vous préférez payer aux sources connectées, pas aux utilisateurs."
+        "Garde-le si tu reconstruis les mêmes rapports clients chaque semaine à partir de plusieurs sources."
       ],
       "avoidIf": [
-        "Vous n'avez qu'une source simple à exporter.",
-        "Vos besoins de reporting sont ponctuels.",
-        "Un export natif suffit à votre usage."
+        "Passe ton tour si un export natif ou un connecteur unique couvre déjà ton rapport."
       ],
-      "threshold": "Coupler.io s'impose pour automatiser du reporting multi-sources vers tableur/BI ; pour une source unique et simple, un export natif suffit."
+      "threshold": "Le plan Starter coûte 288 $ par an : rentable dès que les exports manuels qu'il remplace te coûtent plus de 24 $ de temps par mois."
     },
     "verdictEn": {
       "keepIf": [
-        "You automate reports from several sources.",
-        "You feed a spreadsheet, BI or warehouse.",
-        "You prefer paying per connected source, not per user."
+        "Keep it if you rebuild the same client reports every week from several data sources."
       ],
       "avoidIf": [
-        "You only have one simple source to export.",
-        "Your reporting needs are one-off.",
-        "A native export covers your use."
+        "Skip it if one native export or connector already covers your report."
       ],
-      "threshold": "Coupler.io makes sense to automate multi-source reporting into spreadsheets/BI; for a single simple source, a native export suffices."
+      "threshold": "Starter costs $288 a year: worth it once the manual exports it replaces cost you more than $24 of time a month."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
+    "soloRelevance": "high",
     "teamRelevance": "medium",
     "tool_type": "specialise",
     "substitutable": true,
@@ -33801,7 +34313,160 @@
     "substitution_cluster_v2": "data-integration-etl",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
-    "force_silence": false
+    "force_silence": false,
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 20.61,
+      "compare_plan_name": "Starter",
+      "compare_plan_kind": "account",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.coupler.io/pricing",
+      "source_domain": "coupler.io",
+      "usage_sensitive": false,
+      "cautions": [
+        "Data transformation features (formulas, joins, aggregation) are not available below the Active plan; the Free and Starter plans only move raw data."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": null,
+          "featureHighlights": [
+            "1 account, 1 destination, manual refresh, 100 rows per run, 1 user"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "$32/mo billed monthly.",
+          "featureHighlights": [
+            "3 accounts, 1 destination, daily refresh, 5,000 rows per run, 1 user"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "active",
+          "displayName": "Active",
+          "summary": "$132/mo billed monthly.",
+          "featureHighlights": [
+            "15 accounts, 3 destinations, daily refresh, unlimited data volume and users, adds transformations"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "$259/mo billed monthly.",
+          "featureHighlights": [
+            "50 accounts, unlimited destinations, hourly refresh, team workspaces, automations, account manager"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 199,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Agency & Enterprise",
+          "summary": "Custom quote.",
+          "featureHighlights": [
+            "Custom refresh down to 15 minutes, custom sources, SSO, dedicated account manager, enterprise SLA"
+          ],
+          "detailsSourceUrl": "https://www.coupler.io/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Le plan Starter coûte 24 $/mois en annuel pour 3 comptes et un rafraîchissement quotidien ; les transformations commencent à 99 $/mois.",
+        "simplicite": "Des connexions sans code et plus de 230 modèles de tableaux de bord lancent un premier rapport sans développeur.",
+        "utilisation": "Déplace les données de plus de 400 applications vers des tableurs, des outils de BI et des entrepôts, comme annoncé.",
+        "puissance": "Les transformations et le rafraîchissement horaire sont réservés aux plans supérieurs.",
+        "reversibilite": "Les données arrivent dans tes propres tableurs, outils de BI ou entrepôt : elles restent chez toi si tu pars."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Starter costs $24/mo on a yearly plan for 3 accounts and daily refresh; transformations start at $99/mo.",
+        "simplicite": "No-code connections and 230+ dashboard templates get a first report running without engineering.",
+        "utilisation": "Moves data from 400+ apps to spreadsheets, BI tools and warehouses as advertised.",
+        "puissance": "Transformations and hourly refresh are reserved for higher plans.",
+        "reversibilite": "Data lands in your own spreadsheets, BI tools or warehouse, so it stays with you if you leave."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Synchro de données",
+      "en": "Data syncing"
+    },
+    "research": {
+      "dossier": "research/dossiers/coupler-io.json",
+      "researchedOn": "2026-09-25",
+      "sources": 1
+    }
   },
   {
     "id": "craft",
@@ -46193,50 +46858,45 @@
     "slug": "eventbrite",
     "name": "Eventbrite",
     "categoryId": "communication",
-    "shortDescription": "Billetterie et gestion d'événements : événements gratuits illimités, 3,7% + 1,79$ par billet payant.",
-    "shortDescriptionEn": "Event ticketing and management: unlimited free events, 3.7% + $1.79 per paid ticket.",
+    "shortDescription": "Une plateforme de billetterie : gratuite pour les événements gratuits, avec des frais par billet sur les billets payants.",
+    "shortDescriptionEn": "An event ticketing platform: free for free events, with a per-ticket fee on paid tickets.",
     "pricing": {
-      "free": "Publication d'événements gratuits illimitée, sans frais.",
-      "paid": "3,7% + 1,79$ par billet payant, plus 2,9% de frais de traitement de paiement. Plan Pro 15$ à 100$/mois pour plus de capacité email marketing (ne réduit pas les frais par billet)."
+      "free": "Plan gratuit : Événements gratuits illimités sans frais ; les frais ne s'appliquent qu'aux billets payants",
+      "paid": "Dès 0 $/mois, plan Free events."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://www.eventbrite.com",
     "logo": "",
     "category": "communication",
-    "longDescription": "Eventbrite reste la référence pour publier un événement rapidement, avec une vraie force de découverte (son moteur de recherche d'événements amène du trafic organique). Pour les événements gratuits, c'est sans frais et sans limite, ce qui en fait un bon choix par défaut pour une meetup ou un webinaire.\n\nDès qu'un billet est payant, les frais s'additionnent : 3,7% + 1,79$ par billet, plus 2,9% de frais de paiement. Sur un billet à 20$, ça représente environ 15% du prix, un taux d'autant plus élevé que le billet est bon marché (le montant fixe de 1,79$ pèse plus lourd sur un petit prix). Le plan Pro (15$ à 100$/mois) ajoute de la capacité d'email marketing mais ne réduit jamais ces frais par billet, contrairement à ce qu'on pourrait attendre d'un abonnement payant.",
+    "longDescription": "Eventbrite met un événement en vente en quelques minutes : page d'événement, plusieurs types de billets, application de contrôle des entrées et versements avant l'événement. Les événements gratuits ne coûtent rien.\n\nSur les billets payants, le modèle est une commission par billet : 3,7 % + 1,79 $ de frais de service, plus 2,9 % de traitement, que tu peux reporter sur l'acheteur. Pour un public français, Weezevent est une option locale ; pour un coût fixe, compare avec une billetterie à tarif forfaitaire.",
     "verdict": {
       "keepIf": [
-        "Vous organisez des événements et cherchez une solution de billetterie tout-en-un.",
-        "Vous voulez accéder à une audience prête à l'emploi via la marketplace Eventbrite.",
-        "Vos événements sont principalement basés sur les billets payants avec promotion."
+        "Garde-le pour des événements gratuits, ou payants quand l'acheteur peut absorber les frais."
       ],
       "avoidIf": [
-        "Vous avez un besoin très spécialisé (vente d'accès physique à fort volume, logistics complexe).",
-        "Vous refusez les frais de plateforme, non négociables.",
-        "Votre budget promotion dépend d'une API ouverte intégrable (Eventbrite est cloisonné)."
+        "Passe ton tour si tu vends beaucoup de billets payants et veux un coût fixe par événement."
       ],
-      "threshold": "Eventbrite excelle pour les organisateurs cherchant une plateforme tout-en-un avec audience intégrée ; pour les événements très spécialisés ou les besoins logistiques poussés, une solution métier s'impose."
+      "threshold": "Sur un billet à 20 $, les frais atteignent environ 2,53 $ plus 2,9 % de la commande : compare avec une billetterie forfaitaire avant un gros événement.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les frais par billet s'appliquent à chaque billet payant, quelle que soit la formule."
+        }
+      ]
     },
     "pros": [
-      "Entièrement gratuit pour tester et créer des événements.",
-      "Marketplace Eventbrite fournit une audience de 90 millions.",
-      "Email marketing inclus avec Eventbrite Pro.",
-      "Intégration publicités Meta/Google/TikTok pour promouvoir.",
-      "Check-in mobile native pour accueil fluide.",
-      "Frais transparents et calculables d'avance."
+      "Gratuit pour les événements gratuits, sans abonnement",
+      "Les frais peuvent être reportés sur l'acheteur",
+      "Application de contrôle des entrées et versements avant l'événement"
     ],
     "cons": [
-      "Frais de plateforme obligatoires sur les billets payants.",
-      "L'offre Eventbrite Pro s'ajoute en coût supplémentaire.",
-      "Moins de flexibilité sur la logistique ou les workflows custom.",
-      "La marketplace peut surcharger les événements boutique."
+      "Des frais sur chaque billet payant, sans formule forfaitaire",
+      "Outils marketing limités à quelques pays"
     ],
     "useCases": [
-      "Organiser une conférence professionnelle avec billetterie tiered.",
-      "Lancer une série de webinaires avec inscription gratuite mais segmentée.",
-      "Créer un événement communautaire et promouvoir via marketplace.",
-      "Gérer les entrées et check-in sur un événement grand public."
+      "Atelier payant : vendre les places, reporter les frais sur l'acheteur, contrôler les entrées le jour J",
+      "Rencontre gratuite : ouvrir les inscriptions sans frais et écrire aux participants"
     ],
     "covers": [
       "project-management"
@@ -46247,12 +46907,12 @@
       "Conférenciers et formateurs",
       "Associations et communautés"
     ],
-    "personas": [
-      "designer"
+    "personas": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "alternatives": [
+      "weezevent"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
     "articles": [],
     "freeAlternative": null,
     "tool_type": "satellite",
@@ -46275,42 +46935,37 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": "event-management",
     "pricingEn": {
-      "free": "Unlimited free event publishing, no fees.",
-      "paid": "3.7% + $1.79 per paid ticket, plus 2.9% payment processing. Pro plan $15-$100/month for more email marketing capacity (doesn't reduce per-ticket fees)."
+      "free": "Free plan: Unlimited free events at no cost; fees only apply to paid tickets",
+      "paid": "From $0/mo, Free events plan."
     },
-    "longDescriptionEn": "Eventbrite remains the reference for publishing an event quickly, with real discovery power (its event search engine drives organic traffic). For free events, it's fee-free and unlimited, making it a good default choice for a meetup or webinar.\n\nAs soon as a ticket is paid, fees add up: 3.7% + $1.79 per ticket, plus 2.9% payment processing. On a $20 ticket, that's about 15% of the price, an even higher rate the cheaper the ticket (the flat $1.79 weighs more on a small price). The Pro plan ($15-$100/month) adds email marketing capacity but never reduces these per-ticket fees, contrary to what you might expect from a paid subscription.",
+    "longDescriptionEn": "Eventbrite puts an event on sale in minutes: event page, several ticket types, check-in app and payouts before the event. Free events cost nothing.\n\nOn paid tickets, the model is a fee per ticket: 3.7% + $1.79 in service fees plus 2.9% processing, which you can pass on to buyers. For a French audience, Weezevent is a local option; for flat pricing, compare with a fixed-fee ticketing tool.",
     "verdictEn": {
       "keepIf": [
-        "You organize events and want an all-in-one ticketing solution.",
-        "Access to Eventbrite's ready-made audience (90M people) matters.",
-        "Your events are primarily ticket-based with paid attendance."
+        "Keep it for free events, or paid events where buyers can absorb the fees."
       ],
       "avoidIf": [
-        "You have a very specialized need (high-volume physical access, complex logistics).",
-        "You refuse platform fees, which are non-negotiable.",
-        "Your promotion budget depends on an open API (Eventbrite is closed)."
+        "Skip it if you sell many paid tickets and want a fixed cost per event."
       ],
-      "threshold": "Eventbrite excels for organizers wanting an all-in-one platform with integrated audience; for highly specialized events or complex logistics, a vertical solution works better."
+      "threshold": "On a $20 ticket, fees are about $2.53 plus 2.9% of the order: check that against a flat-fee tool before a large event.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Per-ticket fees apply to every paid ticket, whatever the plan."
+        }
+      ]
     },
     "prosEn": [
-      "Completely free to test and create events.",
-      "Eventbrite marketplace provides audience of 90 million.",
-      "Email marketing included with Eventbrite Pro.",
-      "Built-in Meta/Google/TikTok ad integration for promotion.",
-      "Native mobile check-in for smooth entry.",
-      "Transparent and calculable fees."
+      "Free for free events, no subscription",
+      "Fees can be passed on to buyers",
+      "Check-in app and payouts before the event"
     ],
     "consEn": [
-      "Platform fees are mandatory on paid tickets.",
-      "Eventbrite Pro adds a separate subscription cost.",
-      "Less flexibility for logistics or custom workflows.",
-      "Marketplace can overwhelm boutique events."
+      "Fees on every paid ticket, with no flat-fee option",
+      "Marketing tools limited to a few countries"
     ],
     "useCasesEn": [
-      "Organize a professional conference with tiered ticketing.",
-      "Launch a webinar series with free but segmented signup.",
-      "Create a community event and promote via marketplace.",
-      "Manage entry and check-in at a large public event."
+      "Paid workshop: sell seats, pass the fees to buyers, check in on the day",
+      "Free meetup: publish registrations at no cost and email attendees"
     ],
     "seo": {
       "aiAngle": {
@@ -46320,13 +46975,209 @@
         "augmentFr": "Eventbrite a ajouté des suggestions IA pour rédiger des descriptions d'événement, mais reste l'infrastructure de billetterie et de gestion d'événements (paiement, inscriptions, check-in) qui fait fonctionner l'événement.",
         "replaceEn": "Replace Eventbrite with an AI? No: selling tickets, managing registrations, and check-in at the door remains an operational infrastructure need. AI helps write the event description, it doesn't replace ticketing. Verdict: AI augments writing, ticketing infrastructure remains the product.",
         "replaceFr": "Remplacer Eventbrite par une IA ? Non : vendre des billets, gérer les inscriptions et le check-in à l'entrée reste un besoin d'infrastructure opérationnelle. L'IA aide à rédiger la description de l'événement, elle ne remplace pas la billetterie. Verdict : l'IA augmente la rédaction, l'infrastructure de billetterie reste le produit."
-      }
+      },
+      "idealForFr": "Indépendants et petites structures qui vendent des billets pour des ateliers, des rencontres ou de petits événements",
+      "idealForEn": "Freelancers and small organisations who sell tickets for workshops, meetups or small events"
     },
     "ogImageUrl": "https://cdn.evbstatic.com/s3-build/perm_001/6ce389/django/images/logos/eb_orange_on_white_1200x630.png",
     "description": "Eventbrite reste la référence pour publier un événement rapidement, avec une vraie force de découverte (son moteur de recherche d'événements amène du trafic organique). Pour les événements gratuits, c'est sans frais et sans limite, ce qui en fait un bon choix par défaut pour une meetup ou un webinaire.\n\nDès qu'un billet est payant, les frais s'additionnent : 3,7% + 1,79$ par billet, plus 2,9% de frais de paiement. Sur un billet à 20$, ça représente environ 15% du prix, un taux d'autant plus élevé que le billet est bon marché (le montant fixe de 1,79$ pèse plus lourd sur un petit prix). Le plan Pro (15$ à 100$/mois) ajoute de la capacité d'email marketing mais ne réduit jamais ces frais par billet, contrairement à ce qu'on pourrait attendre d'un abonnement payant.",
-    "pricing_v5": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free events",
+      "compare_plan_kind": "usage",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.eventbrite.com/organizer/pricing/",
+      "source_domain": "eventbrite.com",
+      "usage_sensitive": true,
+      "cautions": [
+        "Chaque billet payant supporte des frais de service de 3,7 % + 1,79 $, plus 2,9 % de frais de traitement du paiement ; ils peuvent être reportés sur l'acheteur.",
+        "Les publicités Eventbrite sont facturées à part des frais de plateforme et ne sont disponibles que sur certains marchés."
+      ],
+      "cautionsEn": [
+        "Paid tickets carry a per-ticket service fee of 3.7% + $1.79, plus a 2.9% payment processing fee; these are separate from the free/Pro plan cost and can be passed to attendees.",
+        "Eventbrite Ads and ad spend are billed separately from the platform fees and are only available in select markets."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free events",
+          "summary": null,
+          "featureHighlights": [
+            "Événements gratuits illimités, sans frais de plateforme"
+          ],
+          "detailsSourceUrl": "https://www.eventbrite.com/organizer/pricing/",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Eventbrite Pro",
+          "summary": null,
+          "featureHighlights": [
+            "Jusqu'à 10 000 emails par jour ; disponible seulement aux États-Unis, au Canada, en Australie, en Nouvelle-Zélande, au Royaume-Uni et en Irlande"
+          ],
+          "detailsSourceUrl": "https://www.eventbrite.com/organizer/pricing/",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Sur devis.",
+          "featureHighlights": [
+            "Conseiller dédié, marketing sponsorisé, support prioritaire"
+          ],
+          "detailsSourceUrl": "https://www.eventbrite.com/organizer/pricing/",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free events",
+      "compare_plan_kind": "usage",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.eventbrite.com/organizer/pricing/",
+      "source_domain": "eventbrite.com",
+      "usage_sensitive": true,
+      "cautions": [
+        "Paid tickets carry a per-ticket service fee of 3.7% + $1.79, plus a 2.9% payment processing fee; these are separate from the free/Pro plan cost and can be passed to attendees.",
+        "Eventbrite Ads and ad spend are billed separately from the platform fees and are only available in select markets."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free events",
+          "summary": null,
+          "featureHighlights": [
+            "Unlimited free events, no platform fee"
+          ],
+          "detailsSourceUrl": "https://www.eventbrite.com/organizer/pricing/",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Eventbrite Pro",
+          "summary": null,
+          "featureHighlights": [
+            "Up to 10,000 daily emails; available only in US, Canada, Australia, New Zealand, UK, Ireland"
+          ],
+          "detailsSourceUrl": "https://www.eventbrite.com/organizer/pricing/",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Custom quote.",
+          "featureHighlights": [
+            "Includes strategic advisor, sponsored marketing, priority support"
+          ],
+          "detailsSourceUrl": "https://www.eventbrite.com/organizer/pricing/",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Gratuit pour les événements gratuits, mais chaque billet payant supporte 3,7 % + 1,79 $ et 2,9 % de traitement.",
+        "simplicite": "Les pages d'événement assistées par IA et les différents types de billets mettent vite un événement en vente.",
+        "utilisation": "Couvre la vente de billets, le contrôle des entrées et les versements avant l'événement.",
+        "puissance": "Les outils marketing et la publicité se limitent à quelques pays.",
+        "reversibilite": "Note neutre : les options d'export ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Free for free events, but every paid ticket carries 3.7% + $1.79 plus 2.9% processing.",
+        "simplicite": "AI-assisted event pages and several ticket types get an event on sale quickly.",
+        "utilisation": "Covers ticket sales, check-in and payouts before the event.",
+        "puissance": "Marketing tools and ads are limited to a few countries.",
+        "reversibilite": "Neutral score: export options were not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Billetterie en ligne",
+      "en": "Event ticketing"
+    },
+    "research": {
+      "dossier": "research/dossiers/eventbrite.json",
+      "researchedOn": "2026-09-25",
+      "sources": 1
+    }
   },
   {
     "id": "excalidraw",
@@ -72692,11 +73543,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "project-management",
-    "shortDescription": "La référence de la gestion de projet Agile pour équipes tech.",
-    "defaultMonthlyPrice": 6.71,
+    "shortDescription": "Le suivi de tickets et de projets d'Atlassian pour les équipes logicielles, avec tableaux Scrum et Kanban et workflows personnalisés.",
+    "defaultMonthlyPrice": 6.79,
     "pricing": {
-      "free": "Jusqu'à 10 utilisateurs",
-      "paid": "7,75$/utilisateur/mois"
+      "free": "Plan gratuit : Gratuit sans limite de durée jusqu'à 10 utilisateurs",
+      "paid": "Dès 7,91 $/mois, plan Standard."
     },
     "covers": [
       "bug-tracking",
@@ -72716,8 +73567,7 @@
       "developpeur-solo"
     ],
     "personas": [
-      "theo",
-      "marc"
+      "THEO"
     ],
     "timeGainedHoursPerMonth": 4,
     "freeAlternative": null,
@@ -72744,32 +73594,25 @@
     "affiliateLink": "https://atlassian.com/software/jira",
     "verdict": {
       "keepIf": [
-        "Votre équipe développe un logiciel et suit issues, sprints et backlog en agile.",
-        "Vous voulez des tableaux Scrum/Kanban et de nombreuses intégrations.",
-        "Vous devez monter en charge jusqu'à des besoins d'entreprise."
+        "Garde-le si tes clients travaillent sur Jira ou si ton équipe a besoin de workflows sur mesure."
       ],
       "avoidIf": [
-        "Vous cherchez une simple liste de tâches : Jira sera surdimensionné.",
-        "Votre équipe est non technique et veut un outil léger.",
-        "Vous voulez une prise en main immédiate sans configuration."
+        "Passe ton tour pour un travail en solo ou une petite équipe qui veut suivre ses tickets en quelques minutes."
       ],
-      "threshold": "Jira s'impose pour des équipes logicielles qui suivent issues et sprints en agile et veulent un écosystème riche ; pour un besoin simple ou non technique, un outil plus léger est plus adapté."
+      "threshold": "Gratuit jusqu'à 10 utilisateurs ; au-delà, chaque utilisateur ajoute 7,91 $ par mois en facturation annuelle."
     },
     "pros": [
-      "Suivi d'issues et gestion agile puissants (Scrum, Kanban).",
-      "Palier gratuit jusqu'à 10 utilisateurs.",
-      "Écosystème d'apps et d'intégrations immense.",
-      "Monte en charge jusqu'aux besoins d'entreprise (SLA, support 24/7)."
+      "Plan gratuit jusqu'à 10 utilisateurs",
+      "Des workflows adaptés à la façon de travailler de l'équipe",
+      "L'outil que beaucoup d'équipes clientes utilisent déjà"
     ],
     "cons": [
-      "Complexe et parfois lourd pour des besoins simples.",
-      "Courbe d'apprentissage et configuration non négligeables.",
-      "Fonctions avancées et garanties réservées aux plans payants."
+      "Le paramétrage prend du temps avant que l'équipe soit productive",
+      "Lourd pour les projets personnels d'un développeur seul"
     ],
     "useCases": [
-      "Suivre le backlog et les sprints d'une équipe de développement.",
-      "Organiser le travail en tableaux Scrum ou Kanban.",
-      "Automatiser des workflows d'issues et suivre l'avancement via des rapports."
+      "Planification de sprint : backlog, tableau de sprint et revue pour une équipe de 10 maximum sur le plan gratuit",
+      "Suivi de projet client : tickets et bugs remontés par le client dans un même tableau"
     ],
     "seo": {
       "aiAngle": {
@@ -72779,11 +73622,13 @@
         "augmentFr": "Jira a ajouté Atlassian Intelligence pour résumer des tickets, suggérer des découpages de tâches et générer des rapports de sprint, mais le suivi structuré des tickets et des workflows Agile reste le cœur du produit.",
         "replaceEn": "Replace Jira with an AI? No: a tech team needs a structured system to track who's doing what, where each ticket stands, and how sprints flow — a team-coordination problem, not a content-generation one. AI helps write and summarize faster. Verdict: AI augments ticket writing, project tracking remains the core function.",
         "replaceFr": "Remplacer Jira par une IA ? Non : une équipe tech a besoin d'un système structuré pour suivre qui fait quoi, où en est chaque ticket et comment les sprints s'enchaînent — un problème de coordination d'équipe, pas de génération de contenu. L'IA aide à rédiger et résumer plus vite. Verdict : l'IA augmente la rédaction des tickets, le suivi de projet reste la fonction première."
-      }
+      },
+      "idealForFr": "Développeurs et petites équipes logicielles qui mènent des sprints et suivent des tickets",
+      "idealForEn": "Developers and small software teams who run sprints and track issues"
     },
     "articles": [],
     "soloRelevance": "medium",
-    "teamRelevance": "low",
+    "teamRelevance": "high",
     "bestFor": [],
     "relevantFor": [
       "Équipes de développement",
@@ -72794,56 +73639,144 @@
       "free": "Jusqu'à 10 users",
       "paid": "7.75$/user/mois"
     },
-    "longDescription": "Jira, c'est la référence de la gestion de projet Agile pour équipes tech. À partir de 6.71€/mois. Pensé pour les CTOs et leads tech et les product managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : équipe tech établie avec workflows Jira complexes. À éviter si : < 10 personnes — Linear beaucoup plus agréable. Free tier jusqu'à 10 users — pertinent pour débuter. Si le budget le permet, linear va plus loin.",
-    "alternatives": [],
+    "longDescription": "Jira suit les tickets et les sprints avec des tableaux Scrum et Kanban et des workflows adaptés à ton équipe. Le plan gratuit couvre jusqu'à 10 utilisateurs, assez pour un indépendant qui travaille avec une petite équipe client.\n\nCette souplesse se paie en temps de paramétrage : pour une petite équipe qui veut avancer vite, Linear y arrive avec moins de configuration. Jira trouve sa place quand les workflows se compliquent ou quand le client travaille déjà avec Atlassian.",
+    "alternatives": [
+      "linear",
+      "clickup",
+      "asana",
+      "trello"
+    ],
     "slug": "jira",
-    "shortDescriptionEn": "The reference agile project management for tech teams.",
+    "shortDescriptionEn": "Atlassian's issue and project tracker for software teams, with Scrum and Kanban boards and custom workflows.",
     "description": "Jira, c'est la référence de la gestion de projet Agile pour équipes tech. À partir de 6.71€/mois. Pensé pour les CTOs et leads tech et les product managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : équipe tech établie avec workflows Jira complexes. À éviter si : < 10 personnes — Linear beaucoup plus agréable. Free tier jusqu'à 10 users — pertinent pour débuter. Si le budget le permet, linear va plus loin.",
-    "longDescriptionEn": "Jira is the reference agile project management for tech teams. Starting at €6.71/month. Built for CTOs and tech leads and product managers.\n\nEstimated time saving: 4h/month.\n\nIf budget allows, linear goes further.",
-    "pricingEn": null,
+    "longDescriptionEn": "Jira tracks issues and sprints with Scrum and Kanban boards and workflows you shape to your team. The free plan covers up to 10 users, enough for a freelancer working with a small client team.\n\nThe flexibility has a cost in setup time: for a small team that wants to move fast, Linear gets there with less configuration. Jira earns its place when workflows get complex or when the client already runs on Atlassian.",
+    "pricingEn": {
+      "free": "Free plan: Free forever for up to 10 users",
+      "paid": "From $7.91/mo, Standard plan."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Les prix par utilisateur publiés (7,91 $ et 14,54 $) sont en facturation annuelle ; le tarif mensuel n'est pas affiché sur la page."
+      ],
+      "verified_on": "2026-09-25",
       "source_domain": "atlassian.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_name": "Standard",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.atlassian.com/software/jira/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 6.71
+      "compare_price_monthly_eur": 6.79,
+      "cautionsEn": [
+        "The per-user prices published on the pricing page ($7.91 and $14.54) are for annual billing; the monthly-billed rate is not shown on this page."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": null,
+          "featureHighlights": [
+            "Limité à 10 utilisateurs"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "Prix par utilisateur affiché en facturation annuelle"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 7.91,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "Ajoute les feuilles de route avancées et l'alignement entre équipes"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 14.54,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Sur devis. Par utilisateur, 801 minimum.",
+          "featureHighlights": [
+            "Entre 801 et 100 000 utilisateurs ; analytics avancés, montée en charge et sécurité"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
     },
     "websiteUrl": "https://atlassian.com/software/jira",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "Your team builds software and tracks issues, sprints and backlog with agile.",
-        "You want Scrum/Kanban boards and many integrations.",
-        "You need to scale up to enterprise needs."
+        "Keep it if your clients run on Jira or your team needs custom workflows."
       ],
       "avoidIf": [
-        "You want a simple task list: Jira will be overkill.",
-        "Your team is non-technical and wants a lightweight tool.",
-        "You want immediate use with no configuration."
+        "Skip it for solo work or a small team that wants to start tracking in minutes."
       ],
-      "threshold": "Jira makes sense for software teams tracking issues and sprints with agile and wanting a rich ecosystem; for a simple or non-technical need, a lighter tool fits better."
+      "threshold": "Free up to 10 users; beyond that, each user adds $7.91 a month on annual billing."
     },
     "prosEn": [
-      "Powerful issue tracking and agile management (Scrum, Kanban).",
-      "Free tier up to 10 users.",
-      "Huge ecosystem of apps and integrations.",
-      "Scales up to enterprise needs (SLA, 24/7 support)."
+      "Free plan up to 10 users",
+      "Workflows shaped to how the team works",
+      "The tool many client teams already use"
     ],
     "consEn": [
-      "Complex and sometimes heavy for simple needs.",
-      "Non-trivial learning curve and configuration.",
-      "Advanced features and guarantees reserved for paid plans."
+      "Setup takes time before the team is productive",
+      "Heavy for a solo developer's own projects"
     ],
     "useCasesEn": [
-      "Track a development team's backlog and sprints.",
-      "Organise work in Scrum or Kanban boards.",
-      "Automate issue workflows and track progress via reports."
+      "Sprint planning: backlog, sprint board and review for a team of up to 10 on the free plan",
+      "Client project tracking: issues and bugs reported by the client in one board"
     ],
     "prescription_quality": "silence",
     "prescription_output": null,
@@ -72867,7 +73800,140 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/jira.jpg"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/jira.jpg",
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 6.79,
+      "compare_plan_name": "Standard",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.atlassian.com/software/jira/pricing",
+      "source_domain": "atlassian.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "The per-user prices published on the pricing page ($7.91 and $14.54) are for annual billing; the monthly-billed rate is not shown on this page."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": null,
+          "featureHighlights": [
+            "Capped at 10 users"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "Per-user price shown is for annual billing"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 7.91,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "Adds advanced roadmaps and cross-team alignment features"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 14.54,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Custom quote. Per user, 801 minimum.",
+          "featureHighlights": [
+            "Requires between 801 and 100,000 users; advanced analytics, scale and security"
+          ],
+          "detailsSourceUrl": "https://www.atlassian.com/software/jira/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 2,
+      "utilisation": 4,
+      "puissance": 5,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Gratuit jusqu'à 10 utilisateurs, puis 7,91 $ par utilisateur et par mois en facturation annuelle.",
+        "simplicite": "Les workflows et tableaux personnalisables demandent un paramétrage avant qu'une équipe soit productive.",
+        "utilisation": "Le suivi Scrum et Kanban fonctionne comme annoncé pour les équipes logicielles.",
+        "puissance": "Workflows sur mesure, feuilles de route avancées et montée en charge fixent le plafond de la catégorie.",
+        "reversibilite": "Note neutre : les options d'export ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Free up to 10 users, then $7.91 per user a month on annual billing.",
+        "simplicite": "Customizable workflows and boards take setup before a team is productive.",
+        "utilisation": "Scrum and Kanban tracking work as advertised for software teams.",
+        "puissance": "Custom workflows, advanced roadmaps and enterprise scale set the ceiling of the category.",
+        "reversibilite": "Neutral score: export options were not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Suivi de tickets",
+      "en": "Issue tracking"
+    },
+    "research": {
+      "dossier": "research/dossiers/jira.json",
+      "researchedOn": "2026-09-25",
+      "sources": 1
+    }
   },
   {
     "id": "jobber",

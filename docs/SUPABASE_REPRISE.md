@@ -135,7 +135,7 @@ A reinjecter pour chaque slug : `pricing_v5`, `pricing_v5_en`, `pricing`,
 table (`tagline`, `lifecycle`, `research`) : a ajouter au schema ou a laisser
 dans le JSON.
 
-`adobe-after-effects`, `adobe-lightroom`, `adobe-podcast-ai`, `ae-gifgun`, `ae-red-giant`, `basecamp`, `capture-one`, `clerk`, `dependabot`, `freshservice`, `google-drive`, `hotjar`, `mongodb-atlas`, `motion-bro`, `nordpass`, `notion`, `remix`, `similarweb`, `topaz-video-ai`, `wetransfer`.
+`adobe-after-effects`, `adobe-lightroom`, `adobe-photoshop`, `adobe-premiere-pro`, `adobe-podcast-ai`, `cargo-site`, `coupler-io`, `eventbrite`, `jira`, `ae-gifgun`, `ae-red-giant`, `basecamp`, `capture-one`, `clerk`, `dependabot`, `freshservice`, `google-drive`, `hotjar`, `mongodb-atlas`, `motion-bro`, `nordpass`, `notion`, `remix`, `similarweb`, `topaz-video-ai`, `wetransfer`.
 
 ## 3. Verification apres reinjection
 

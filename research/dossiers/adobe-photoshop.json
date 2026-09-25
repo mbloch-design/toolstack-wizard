@@ -3,7 +3,7 @@
   "slug": "adobe-photoshop",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Adobe Photoshop",
     "vendor": "Adobe Inc.",
@@ -15,62 +15,350 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.adobe.com/products/photoshop.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Photoshop pricing, features and platforms" }
+    {
+      "id": "s1",
+      "url": "https://www.adobe.com/products/photoshop.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Photoshop pricing, features and platforms"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.adobe.com/products/photoshop/plans.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Photoshop plans"
+    }
   ],
   "pricing": {
     "model": "subscription",
     "currency": "USD",
-    "pricingUrl": "https://www.adobe.com/products/photoshop.html",
+    "pricingUrl": "https://www.adobe.com/products/photoshop/plans.html",
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s2"
+      ]
+    },
     "plans": [
+      {
+        "key": "photography",
+        "name": "Photography plan",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 19.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Desktop, web and mobile Photoshop plus Lightroom, yearly plan billed monthly",
+            "fr": "Photoshop sur ordinateur, web et mobile, plus Lightroom, engagement annuel payé au mois"
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
       {
         "key": "single-app",
         "name": "Photoshop (single app)",
-        "unit": "seat",
-        "minSeats": 1,
-        "price": { "monthly": 22.99, "annualPerMonth": null, "oneTime": null },
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 22.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Photoshop only, annual plan billed monthly; includes 100GB cloud storage and 25 monthly generative credits" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Photoshop only, with 100GB cloud storage, 25 monthly generative credits and Adobe Express Premium",
+            "fr": "Photoshop seul, avec 100 Go de stockage cloud, 25 crédits génératifs par mois et Adobe Express Premium"
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
       }
     ],
-    "comparePlanKey": "single-app",
+    "comparePlanKey": "photography",
     "addOns": [],
     "cautions": [
-      { "en": "Adobe Photoshop is subscription-only: no perpetual license is offered.", "sourceIds": ["s1"] },
-      { "en": "The Creative Cloud Pro bundle price shown ($34.99/mo) is an introductory offer for the first 3 months, rising to $69.99/mo after; this is excluded from the compared plan.", "sourceIds": ["s1"] },
-      { "en": "Generative AI credits are capped per month (25 on the single-app plan) and usage beyond that limit is restricted, not billed transparently per generation.", "sourceIds": ["s1"] }
+      {
+        "en": "Photoshop is subscription-only: no perpetual license is offered.",
+        "fr": "Photoshop est vendu uniquement par abonnement : aucune licence perpétuelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Every individual plan is a yearly commitment, even when billed monthly. Paying the year upfront costs $263.88 for Photoshop alone ($21.99/mo).",
+        "fr": "Chaque plan individuel engage sur un an, même payé au mois. Le paiement annuel d'avance coûte 263,88 $ pour Photoshop seul (21,99 $/mois).",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "The Creative Cloud Pro price shown first is a new-subscriber offer for 3 months ($34.99/mo), then $69.99/mo; it is excluded from the compared plan.",
+        "fr": "Le prix de Creative Cloud Pro affiché en premier est une offre de 3 mois réservée aux nouveaux abonnés (34,99 $/mois), puis 69,99 $/mois ; il est exclu du plan de comparaison.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Generative credits are capped per month (25 on the single-app plan).",
+        "fr": "Les crédits génératifs sont plafonnés chaque mois (25 sur le plan Photoshop seul).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Raster image editing and design tools with layers, adjustment layers, and non-destructive editing", "sourceIds": ["s1"] },
-      { "en": "Generative Fill, Generative Expand, and AI-powered Remove tool", "sourceIds": ["s1"] },
-      { "en": "Cross-platform editing across desktop, web, and mobile with cloud-synced documents", "sourceIds": ["s1"] },
-      { "en": "100GB of Creative Cloud storage and Adobe Express Premium access included with the subscription", "sourceIds": ["s1"] }
+      {
+        "en": "Raster image editing and design tools with layers, adjustment layers, and non-destructive editing",
+        "fr": "Retouche et création d'images matricielles avec calques, calques de réglage et édition non destructive",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Generative Fill, Generative Expand, and AI-powered Remove tool",
+        "fr": "Remplissage génératif, extension générative et outil Supprimer assisté par IA",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Cross-platform editing across desktop, web, and mobile with cloud-synced documents",
+        "fr": "Édition sur ordinateur, web et mobile, avec des documents synchronisés dans le cloud",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "100GB of Creative Cloud storage and Adobe Express Premium access included with the subscription",
+        "fr": "100 Go de stockage Creative Cloud et Adobe Express Premium inclus dans l'abonnement",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free mobile version has limited features and requires a paid subscription to unlock full editing", "sourceIds": ["s1"] },
-      { "en": "Free web version requires an Adobe account signup before uploading or editing photos", "sourceIds": ["s1"] },
-      { "en": "Generative AI credits are usage-limited per billing tier (25/month on the single-app plan)", "sourceIds": ["s1"] }
+      {
+        "en": "Free mobile version has limited features and requires a paid subscription to unlock full editing",
+        "fr": "La version mobile gratuite est limitée : l'édition complète demande un abonnement",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Free web version requires an Adobe account signup before uploading or editing photos",
+        "fr": "La version web gratuite exige un compte Adobe avant d'importer ou de modifier une photo",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Generative AI credits are usage-limited per billing tier (25/month on the single-app plan)",
+        "fr": "Les crédits génératifs sont limités selon la formule (25 par mois sur le plan Photoshop seul)",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Adobe Express", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Adobe Express",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["windows", "macos", "web", "ios", "android"]
+    "platforms": [
+      "windows",
+      "macos",
+      "web",
+      "ios",
+      "android"
+    ]
   },
   "alternatives": [
-    { "slug": "affinity-photo", "reason": { "en": "One-time-purchase raster editor covering most of Photoshop's core editing workflow" } },
-    { "slug": "canva", "reason": { "en": "Simpler browser-based design tool for quick graphics without Photoshop's learning curve" } }
+    {
+      "slug": "affinity-photo",
+      "reason": {
+        "en": "Raster editor bought once, covering most of Photoshop's retouching work",
+        "fr": "Éditeur d'images acheté une fois, qui couvre l'essentiel de la retouche Photoshop"
+      }
+    },
+    {
+      "slug": "pixelmator-pro",
+      "reason": {
+        "en": "Mac image editor with a one-time price, close to Photoshop for photo retouching",
+        "fr": "Éditeur d'images Mac à prix unique, proche de Photoshop pour la retouche photo"
+      }
+    },
+    {
+      "slug": "photopea",
+      "reason": {
+        "en": "Free browser editor that opens PSD files, enough for occasional edits",
+        "fr": "Éditeur gratuit dans le navigateur qui ouvre les PSD, suffisant pour des retouches ponctuelles"
+      }
+    },
+    {
+      "slug": "canva",
+      "reason": {
+        "en": "Simpler browser tool for quick graphics, without Photoshop's learning curve",
+        "fr": "Outil plus simple dans le navigateur pour des visuels rapides, sans la courbe d'apprentissage de Photoshop"
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact desktop system requirements (minimum OS versions) not extracted",
-    "Tax treatment (taxIncluded) not stated on the pricing page"
+    "Tax treatment (taxIncluded) not stated on the pricing page",
+    "No-commitment monthly price not shown on the plans page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Photography plan gives desktop Photoshop and Lightroom for $19.99/mo on a yearly plan, less than Photoshop alone.",
+        "fr": "Le plan Photographie donne Photoshop sur ordinateur et Lightroom pour 19,99 $/mois en engagement annuel, moins que Photoshop seul.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Layers, masks and adjustment layers take real practice before a first clean result.",
+        "fr": "Calques, masques et calques de réglage demandent une vraie pratique avant un premier résultat propre.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Retouching, compositing and generative clean-ups are all covered in the product itself.",
+        "fr": "Retouche, montage et nettoyage génératif sont couverts dans le produit lui-même.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Layer-based non-destructive editing plus Generative Fill and Expand set the level of the category.",
+        "fr": "L'édition non destructive par calques, le remplissage et l'extension génératifs fixent le niveau de la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export options were not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null,
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 5,
+    "puissance": 5,
+    "reversibilite": 3
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designers and photographers who retouch images or compose visuals for clients every week",
+      "fr": "Designers et photographes qui retouchent des images ou composent des visuels pour des clients chaque semaine"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Client photo retouching: remove objects, clean up, match colors across a series",
+      "fr": "Retouche photo client : retirer un objet, nettoyer, harmoniser les couleurs d'une série"
+    },
+    {
+      "en": "Social and ad visuals: compose a layered key visual, then export every format",
+      "fr": "Visuels réseaux et publicité : composer un visuel en calques, puis exporter chaque format"
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Image editing",
+      "fr": "Retouche d'image"
+    },
+    "shortDescription": {
+      "en": "Adobe's raster image editor for photo retouching, compositing and generative fills, on desktop, web and mobile.",
+      "fr": "L'éditeur d'images matricielles d'Adobe pour la retouche, le montage et le remplissage génératif, sur ordinateur, web et mobile."
+    },
+    "longDescription": {
+      "en": "Photoshop is the reference raster editor: layers, masks and non-destructive adjustments cover almost any retouching or compositing job, and the generative tools (Generative Fill, Remove) now handle clean-ups that used to take manual work.\n\nThe cost is a yearly commitment on every individual plan. The cheapest way in is the Photography plan at $19.99/mo, which bundles Photoshop with Lightroom; Photoshop alone costs $22.99/mo. If you only open a PSD now and then, a one-time editor or a free browser tool covers the need.",
+      "fr": "Photoshop est l'éditeur d'images de référence : calques, masques et réglages non destructifs couvrent presque toute retouche ou tout montage, et les outils génératifs (remplissage génératif, Supprimer) règlent des nettoyages qui demandaient un travail manuel.\n\nLa contrepartie, c'est un engagement d'un an sur chaque plan individuel. L'entrée la moins chère est le plan Photographie à 19,99 $/mois, qui réunit Photoshop et Lightroom ; Photoshop seul coûte 22,99 $/mois. Si tu n'ouvres un PSD que de temps en temps, un éditeur acheté une fois ou un outil gratuit dans le navigateur suffit."
+    },
+    "pros": [
+      {
+        "en": "Photography plan: desktop Photoshop and Lightroom for $19.99/mo on a yearly plan",
+        "fr": "Plan Photographie : Photoshop sur ordinateur et Lightroom pour 19,99 $/mois en engagement annuel"
+      },
+      {
+        "en": "Generative Fill and Remove speed up clean-ups that used to be manual",
+        "fr": "Le remplissage génératif et Supprimer accélèrent des nettoyages autrefois manuels"
+      },
+      {
+        "en": "PSD is the format clients and printers expect",
+        "fr": "Le PSD est le format qu'attendent clients et imprimeurs"
+      }
+    ],
+    "cons": [
+      {
+        "en": "Yearly commitment on every individual plan, no perpetual license",
+        "fr": "Engagement d'un an sur chaque plan individuel, sans licence perpétuelle"
+      },
+      {
+        "en": "Steep learning curve outside image editing",
+        "fr": "Courbe d'apprentissage raide hors métiers de l'image"
+      },
+      {
+        "en": "Generative credits capped at 25 per month on the single-app plan",
+        "fr": "Crédits génératifs plafonnés à 25 par mois sur le plan Photoshop seul"
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you retouch or compose images for clients every week and exchange PSD files.",
+        "fr": "Garde-le si tu retouches ou composes des images pour des clients chaque semaine et que tu échanges des PSD."
+      },
+      "avoidIf": {
+        "en": "Skip it if you edit a few images a month: Affinity Photo or Photopea cover occasional work without a yearly subscription.",
+        "fr": "Passe ton tour si tu retouches quelques images par mois : Affinity Photo ou Photopea couvrent un usage ponctuel sans abonnement annuel."
+      },
+      "threshold": {
+        "en": "On the Photography plan the commitment is $239.88 a year: worth it with weekly image work, hard to justify for a few edits a month.",
+        "fr": "Sur le plan Photographie, l'engagement représente 239,88 $ par an : rentable avec un travail d'image hebdomadaire, difficile à justifier pour quelques retouches par mois."
+      },
+      "billingTraps": {
+        "en": "Every individual plan is a yearly commitment, even when billed monthly.",
+        "fr": "Chaque plan individuel engage sur un an, même quand il est payé au mois."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25"
 }

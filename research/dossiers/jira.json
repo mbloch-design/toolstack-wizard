@@ -3,7 +3,7 @@
   "slug": "jira",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Jira",
     "vendor": "Atlassian Corporation",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.atlassian.com/software/jira/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Jira pricing: Free, Standard, Premium, Enterprise" }
+    {
+      "id": "s1",
+      "url": "https://www.atlassian.com/software/jira/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Jira pricing: Free, Standard, Premium, Enterprise"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Free forever for up to 10 users", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free forever for up to 10 users",
+        "fr": "Gratuit sans limite de durée jusqu'à 10 utilisateurs"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,71 +47,296 @@
         "name": "Free",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Capped at 10 users" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Capped at 10 users",
+            "fr": "Limité à 10 utilisateurs"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard",
         "name": "Standard",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 7.91, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 7.91,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Per-user price shown is for annual billing" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Per-user price shown is for annual billing",
+            "fr": "Prix par utilisateur affiché en facturation annuelle"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 14.54, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 14.54,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds advanced roadmaps and cross-team alignment features" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds advanced roadmaps and cross-team alignment features",
+            "fr": "Ajoute les feuilles de route avancées et l'alignement entre équipes"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 801,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Requires between 801 and 100,000 users; advanced analytics, scale and security" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Requires between 801 and 100,000 users; advanced analytics, scale and security",
+            "fr": "Entre 801 et 100 000 utilisateurs ; analytics avancés, montée en charge et sécurité"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [],
     "cautions": [
-      { "en": "The per-user prices published on the pricing page ($7.91 and $14.54) are for annual billing; the monthly-billed rate is not shown on this page.", "sourceIds": ["s1"] }
+      {
+        "en": "The per-user prices published on the pricing page ($7.91 and $14.54) are for annual billing; the monthly-billed rate is not shown on this page.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les prix par utilisateur publiés (7,91 $ et 14,54 $) sont en facturation annuelle ; le tarif mensuel n'est pas affiché sur la page."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Agile issue tracking with Scrum and Kanban boards", "sourceIds": ["s1"] },
-      { "en": "Customizable workflows for software development teams", "sourceIds": ["s1"] },
-      { "en": "Advanced roadmaps and cross-team alignment on the Premium plan", "sourceIds": ["s1"] }
+      {
+        "en": "Agile issue tracking with Scrum and Kanban boards",
+        "fr": "Suivi des tickets agile avec tableaux Scrum et Kanban",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Customizable workflows for software development teams",
+        "fr": "Workflows personnalisables pour les équipes de développement",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced roadmaps and cross-team alignment on the Premium plan",
+        "fr": "Feuilles de route avancées et alignement entre équipes sur le plan Premium",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 10 users, forcing a move to a paid plan for larger teams", "sourceIds": ["s1"] },
-      { "en": "Enterprise pricing requires a minimum of 801 users, unsuitable for small teams needing enterprise features", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan is capped at 10 users, forcing a move to a paid plan for larger teams",
+        "fr": "Le plan gratuit est limité à 10 utilisateurs, au-delà il faut passer au payant",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Enterprise pricing requires a minimum of 801 users, unsuitable for small teams needing enterprise features",
+        "fr": "L'offre Enterprise demande au moins 801 utilisateurs",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
   "alternatives": [
-    { "slug": "productboard", "reason": { "en": "Alternative for product roadmapping and prioritization" } }
+    {
+      "slug": "linear",
+      "reason": {
+        "en": "Faster, opinionated issue tracker built for small software teams",
+        "fr": "Suivi de tickets plus rapide et plus cadré, pensé pour les petites équipes logicielles"
+      }
+    },
+    {
+      "slug": "clickup",
+      "reason": {
+        "en": "All-in-one project tool that also covers sprints and tasks outside development",
+        "fr": "Outil de projet tout-en-un qui couvre aussi les sprints et les tâches hors développement"
+      }
+    },
+    {
+      "slug": "asana",
+      "reason": {
+        "en": "Project management for mixed teams, less developer-specific",
+        "fr": "Gestion de projet pour des équipes mixtes, moins centrée sur le développement"
+      }
+    },
+    {
+      "slug": "trello",
+      "reason": {
+        "en": "Simple Kanban boards for small projects without sprint tooling",
+        "fr": "Tableaux Kanban simples pour de petits projets, sans outillage de sprint"
+      }
+    }
   ],
-  "missingAlternatives": [
-    { "name": "Linear", "officialUrl": "https://linear.app", "reason": "Main lightweight issue-tracking competitor aimed at software teams, not in the catalogue" },
-    { "name": "Asana", "officialUrl": "https://asana.com", "reason": "Common project-management alternative frequently compared to Jira, not in the catalogue" }
-  ],
+  "missingAlternatives": [],
   "unknowns": [
     "Monthly-billed (non-annual) per-user price not shown on the pricing page",
     "Tax treatment (taxIncluded) not stated on the pricing page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free up to 10 users, then $7.91 per user a month on annual billing.",
+        "fr": "Gratuit jusqu'à 10 utilisateurs, puis 7,91 $ par utilisateur et par mois en facturation annuelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Customizable workflows and boards take setup before a team is productive.",
+        "fr": "Les workflows et tableaux personnalisables demandent un paramétrage avant qu'une équipe soit productive.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Scrum and Kanban tracking work as advertised for software teams.",
+        "fr": "Le suivi Scrum et Kanban fonctionne comme annoncé pour les équipes logicielles.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Custom workflows, advanced roadmaps and enterprise scale set the ceiling of the category.",
+        "fr": "Workflows sur mesure, feuilles de route avancées et montée en charge fixent le plafond de la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export options were not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null,
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and small software teams who run sprints and track issues",
+      "fr": "Développeurs et petites équipes logicielles qui mènent des sprints et suivent des tickets"
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Sprint planning: backlog, sprint board and review for a team of up to 10 on the free plan",
+      "fr": "Planification de sprint : backlog, tableau de sprint et revue pour une équipe de 10 maximum sur le plan gratuit"
+    },
+    {
+      "en": "Client project tracking: issues and bugs reported by the client in one board",
+      "fr": "Suivi de projet client : tickets et bugs remontés par le client dans un même tableau"
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Issue tracking",
+      "fr": "Suivi de tickets"
+    },
+    "shortDescription": {
+      "en": "Atlassian's issue and project tracker for software teams, with Scrum and Kanban boards and custom workflows.",
+      "fr": "Le suivi de tickets et de projets d'Atlassian pour les équipes logicielles, avec tableaux Scrum et Kanban et workflows personnalisés."
+    },
+    "longDescription": {
+      "en": "Jira tracks issues and sprints with Scrum and Kanban boards and workflows you shape to your team. The free plan covers up to 10 users, enough for a freelancer working with a small client team.\n\nThe flexibility has a cost in setup time: for a small team that wants to move fast, Linear gets there with less configuration. Jira earns its place when workflows get complex or when the client already runs on Atlassian.",
+      "fr": "Jira suit les tickets et les sprints avec des tableaux Scrum et Kanban et des workflows adaptés à ton équipe. Le plan gratuit couvre jusqu'à 10 utilisateurs, assez pour un indépendant qui travaille avec une petite équipe client.\n\nCette souplesse se paie en temps de paramétrage : pour une petite équipe qui veut avancer vite, Linear y arrive avec moins de configuration. Jira trouve sa place quand les workflows se compliquent ou quand le client travaille déjà avec Atlassian."
+    },
+    "pros": [
+      {
+        "en": "Free plan up to 10 users",
+        "fr": "Plan gratuit jusqu'à 10 utilisateurs"
+      },
+      {
+        "en": "Workflows shaped to how the team works",
+        "fr": "Des workflows adaptés à la façon de travailler de l'équipe"
+      },
+      {
+        "en": "The tool many client teams already use",
+        "fr": "L'outil que beaucoup d'équipes clientes utilisent déjà"
+      }
+    ],
+    "cons": [
+      {
+        "en": "Setup takes time before the team is productive",
+        "fr": "Le paramétrage prend du temps avant que l'équipe soit productive"
+      },
+      {
+        "en": "Heavy for a solo developer's own projects",
+        "fr": "Lourd pour les projets personnels d'un développeur seul"
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if your clients run on Jira or your team needs custom workflows.",
+        "fr": "Garde-le si tes clients travaillent sur Jira ou si ton équipe a besoin de workflows sur mesure."
+      },
+      "avoidIf": {
+        "en": "Skip it for solo work or a small team that wants to start tracking in minutes.",
+        "fr": "Passe ton tour pour un travail en solo ou une petite équipe qui veut suivre ses tickets en quelques minutes."
+      },
+      "threshold": {
+        "en": "Free up to 10 users; beyond that, each user adds $7.91 a month on annual billing.",
+        "fr": "Gratuit jusqu'à 10 utilisateurs ; au-delà, chaque utilisateur ajoute 7,91 $ par mois en facturation annuelle."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25"
 }

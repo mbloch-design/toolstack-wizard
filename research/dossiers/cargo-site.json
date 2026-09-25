@@ -3,7 +3,7 @@
   "slug": "cargo-site",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Cargo",
     "vendor": "Cargo",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://cargo.site/information", "tier": 1, "accessedOn": "2026-09-25", "title": "Cargo pricing and information" }
+    {
+      "id": "s1",
+      "url": "https://cargo.site/information",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Cargo pricing and information"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Build and edit privately, cannot publish the site publicly", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Build and edit privately, cannot publish the site publicly",
+        "fr": "Construction et édition en privé, sans publication publique"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,52 +47,260 @@
         "name": "Free",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Site stays private, cannot be published publicly" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Site stays private, cannot be published publicly",
+            "fr": "Le site reste privé et ne peut pas être publié"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard",
         "name": "Standard",
         "unit": "site",
         "minSeats": null,
-        "price": { "monthly": 19, "annualPerMonth": 14, "oneTime": null },
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": 14,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 free custom domain included; additional custom domains cost $2-3/month" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 free custom domain included; additional custom domains cost $2-3/month",
+            "fr": "1 domaine personnalisé inclus ; les suivants coûtent 2 à 3 $/mois"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [
-      { "name": "Additional custom domain", "unit": "site", "sourceIds": ["s1"] }
+      {
+        "name": "Additional custom domain",
+        "unit": "site",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Publishing the site publicly requires the paid Standard plan; the free tier only allows private building and editing.", "sourceIds": ["s1"] }
+      {
+        "en": "Publishing the site publicly requires the paid Standard plan; the free tier only allows private building and editing.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Publier le site demande le plan Standard ; le plan gratuit ne sert qu'à construire et éditer en privé."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Design and publish one or many public portfolio/design sites from a single account", "sourceIds": ["s1"] },
-      { "en": "Real-time, multi-user collaborative editing", "sourceIds": ["s1"] },
-      { "en": "Built-in commerce platform for selling physical and digital goods with payment processing", "sourceIds": ["s1"] }
+      {
+        "en": "Design and publish one or many public portfolio/design sites from a single account",
+        "fr": "Concevoir et publier un ou plusieurs sites portfolio depuis un seul compte",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Real-time, multi-user collaborative editing",
+        "fr": "Édition collaborative à plusieurs, en temps réel",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in commerce platform for selling physical and digital goods with payment processing",
+        "fr": "Boutique intégrée pour vendre des produits physiques et numériques, paiement compris",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan cannot publish a site publicly, only build and edit in private", "sourceIds": ["s1"] },
-      { "en": "Only 1 custom domain included per paid site; extra domains are a paid add-on", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan cannot publish a site publicly, only build and edit in private",
+        "fr": "Le plan gratuit ne permet pas de publier un site, seulement de le construire en privé",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Only 1 custom domain included per paid site; extra domains are a paid add-on",
+        "fr": "Un seul domaine personnalisé inclus par site payant ; les autres sont en option payante",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "framer", "reason": { "en": "Another design-forward no-code site builder popular with designers" } },
-    { "slug": "webflow", "reason": { "en": "More capable no-code builder for complex, custom-designed sites" } },
-    { "slug": "squarespace", "reason": { "en": "Mainstream all-in-one site builder with broader templates and commerce" } }
+    {
+      "slug": "framer",
+      "reason": {
+        "en": "Design-first site builder popular with designers, with more interactions",
+        "fr": "Créateur de sites pensé pour les designers, avec davantage d'interactions"
+      }
+    },
+    {
+      "slug": "readymag",
+      "reason": {
+        "en": "Editorial and portfolio site builder aimed at designers",
+        "fr": "Créateur de sites éditoriaux et portfolios destiné aux designers"
+      }
+    },
+    {
+      "slug": "webflow",
+      "reason": {
+        "en": "More capable no-code builder for complex, custom sites",
+        "fr": "Outil no-code plus complet pour des sites complexes et sur mesure"
+      }
+    },
+    {
+      "slug": "squarespace",
+      "reason": {
+        "en": "Mainstream all-in-one builder with more templates and commerce",
+        "fr": "Créateur de sites généraliste avec plus de modèles et de e-commerce"
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact tax treatment (taxIncluded) not stated on the pricing page",
     "Whether the free plan has a project/page limit is not explicitly stated"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Standard costs $14/mo on a yearly plan with a custom domain included, low for a published portfolio.",
+        "fr": "Le plan Standard coûte 14 $/mois en annuel avec un domaine personnalisé inclus, peu pour un portfolio publié.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A visual editor with real-time collaboration gets a portfolio online without code.",
+        "fr": "Un éditeur visuel avec collaboration en temps réel met un portfolio en ligne sans code.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Covers the portfolio job, including selling prints or files through the built-in shop.",
+        "fr": "Couvre le besoin portfolio, jusqu'à la vente de tirages ou de fichiers via la boutique intégrée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Focused on portfolios and small shops rather than complex sites.",
+        "fr": "Centré sur les portfolios et les petites boutiques plutôt que sur les sites complexes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export options were not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null,
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designers, illustrators and artists who want a portfolio site as distinctive as their work",
+      "fr": "Designers, illustrateurs et artistes qui veulent un site portfolio aussi singulier que leur travail"
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Portfolio: publish a designed project archive under your own domain",
+      "fr": "Portfolio : publier une archive de projets mise en page sous ton propre domaine"
+    },
+    {
+      "en": "Small shop: sell prints or digital files from the same site",
+      "fr": "Petite boutique : vendre des tirages ou des fichiers depuis le même site"
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Portfolio sites",
+      "fr": "Sites portfolio"
+    },
+    "shortDescription": {
+      "en": "A portfolio site builder for designers and artists, with collaborative editing and a built-in shop.",
+      "fr": "Un créateur de sites portfolio pour designers et artistes, avec édition collaborative et boutique intégrée."
+    },
+    "longDescription": {
+      "en": "Cargo builds portfolio sites with a strong visual identity, edited visually and collaboratively. A built-in shop lets you sell prints or digital files from the same site.\n\nYou can build for free, but publishing requires Standard: $14/mo on a yearly plan or $19 month to month, one custom domain included. For a complex site or advanced interactions, Framer or Webflow go further.",
+      "fr": "Cargo construit des sites portfolio à forte identité visuelle, qu'on édite visuellement et à plusieurs. Une boutique intégrée permet de vendre des tirages ou des fichiers depuis le même site.\n\nTu peux construire gratuitement, mais publier demande le plan Standard : 14 $/mois en annuel ou 19 $ au mois, un domaine personnalisé inclus. Pour un site complexe ou des interactions poussées, Framer ou Webflow vont plus loin."
+    },
+    "pros": [
+      {
+        "en": "Portfolio templates with a distinct visual identity",
+        "fr": "Des modèles de portfolio à l'identité visuelle marquée"
+      },
+      {
+        "en": "Custom domain included in Standard",
+        "fr": "Domaine personnalisé inclus dans le plan Standard"
+      },
+      {
+        "en": "Built-in shop for prints and digital files",
+        "fr": "Boutique intégrée pour les tirages et les fichiers"
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan cannot publish a site",
+        "fr": "Le plan gratuit ne permet pas de publier"
+      },
+      {
+        "en": "Limited for complex, multi-section sites",
+        "fr": "Limité pour des sites complexes à plusieurs sections"
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if your site is a portfolio and its look matters as much as its content.",
+        "fr": "Garde-le si ton site est un portfolio et que son apparence compte autant que son contenu."
+      },
+      "avoidIf": {
+        "en": "Skip it if you need a business site with a blog, forms and many pages.",
+        "fr": "Passe ton tour s'il te faut un site d'entreprise avec blog, formulaires et nombreuses pages."
+      },
+      "threshold": {
+        "en": "$168 a year on the yearly Standard plan, domain included.",
+        "fr": "168 $ par an sur le plan Standard annuel, domaine inclus."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25"
 }
