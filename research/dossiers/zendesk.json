@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "zendesk",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Zendesk",
+    "vendor": "Zendesk, Inc.",
+    "officialUrl": "https://www.zendesk.com",
+    "docsUrl": "https://developer.zendesk.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.zendesk.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Zendesk pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.zendesk.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "support-team",
+        "name": "Support Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 19, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Email ticketing only: routing, analytics, pre-written responses, automations, no omnichannel/chat.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "suite-team",
+        "name": "Suite Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 55, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds AI agents, knowledge base, omnichannel routing, messaging, live chat, telephony.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "suite-professional",
+        "name": "Suite Professional",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 115, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds Admin Copilot, App Builder, writing tools, quick reports, skills-based routing, IVR.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "suite-enterprise-copilot",
+        "name": "Suite Enterprise + Copilot",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Intelligent triage, generative AI for voice, approval workflows, sandbox, custom roles.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "support-team",
+    "addOns": [
+      { "en": "Copilot add-on: $50/agent/month (annual).", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Workforce Engagement bundle: $50/agent/month (annual).", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Contact Center: $83/agent/month (annual).", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Listed prices are annual commitment per agent; a small team's real monthly cost multiplies by seat count quickly.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "The entry Support Team plan covers email ticketing only, not the omnichannel/chat experience most buyers expect from Zendesk.", "fr": "…", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Omnichannel customer support across email, chat, social and phone from one unified inbox.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Built-in AI agents and Admin Copilot for automated triage and agent assistance on higher tiers.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Knowledge base, skills-based routing and IVR available starting from Suite Team/Professional.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; only a 14-day trial of Suite Professional.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Omnichannel features (chat, messaging, telephony) require moving up to the Suite plans, not available on Support Team.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "intercom", "reason": { "en": "Direct competitor for omnichannel customer support with strong chat and AI bot focus.", "fr": "…" } },
+    { "slug": "freshservice", "reason": { "en": "Comparable helpdesk platform, more IT-service-management oriented.", "fr": "…" } },
+    { "slug": "helpscout", "reason": { "en": "Simpler, lower-cost helpdesk alternative for small teams.", "fr": "…" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Monthly (non-annual) per-agent pricing was not shown on the fetched page, only annual commitment prices."],
+  "conflicts": []
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "slug": "pagespeed-insights",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "PageSpeed Insights",
+    "vendor": "Google LLC",
+    "officialUrl": "https://pagespeed.web.dev",
+    "docsUrl": "https://developers.google.com/speed/docs/insights/v5/about",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://developers.google.com/speed/docs/insights/v5/about", "tier": 1, "accessedOn": "2026-09-25", "title": "PageSpeed Insights - about" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://developers.google.com/speed/docs/insights/v5/about",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No paid tier exists; the tool and its API are free to use.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Reports on the user experience of a page on mobile and desktop, and suggests concrete improvements.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Combines real-world field data (Chrome User Experience Report) with lab data (Lighthouse simulation).", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Scores pages against Core Web Vitals: Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint, plus FCP, Speed Index and Total Blocking Time.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Field (real-user) data is only available for pages that are publicly crawlable and indexable, and have enough CrUX traffic.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Testing locations are limited to a few regions (North America, Europe, Asia), which may not reflect performance for other audiences.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "grafana", "reason": { "en": "General performance/observability dashboarding, broader than a single-page audit.", "fr": "…" } }
+  ],
+  "missingAlternatives": [
+    { "name": "WebPageTest", "officialUrl": "https://www.webpagetest.org", "reason": "Main independent alternative for detailed web performance testing, not in the catalogue." },
+    { "name": "GTmetrix", "officialUrl": "https://gtmetrix.com", "reason": "Popular free/paid page speed auditing tool, not in the catalogue." }
+  ],
+  "unknowns": ["Exact PageSpeed Insights API rate limits and quota tiers were not detailed on the fetched page."],
+  "conflicts": []
+}

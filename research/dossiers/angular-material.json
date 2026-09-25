@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "slug": "angular-material",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Angular Material",
+    "vendor": "Google (Angular team)",
+    "officialUrl": "https://material.angular.dev/",
+    "docsUrl": "https://material.angular.dev/",
+    "changelogUrl": "https://github.com/angular/components/releases",
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "Old material.angular.io now redirects to material.angular.dev."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://material.angular.dev/", "tier": 1, "accessedOn": "2026-09-25", "title": "Angular Material" },
+    { "id": "s2", "url": "https://github.com/angular/components", "tier": 1, "accessedOn": "2026-09-25", "title": "angular/components repository" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "open-source",
+        "name": "Open source",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "MIT-licensed, free to use with no paid tier.", "fr": "…" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Provides a full set of Material Design UI components (buttons, forms, navigation, layout, data table) for Angular applications.", "fr": "…", "sourceIds": ["s1", "s2"] },
+      { "en": "Ships alongside the Angular CDK, a set of behavior primitives (overlay, drag-drop, a11y) for building custom components.", "fr": "…", "sourceIds": ["s2"] },
+      { "en": "Officially maintained by the Angular team at Google, following the same support and release policy as the Angular framework.", "fr": "…", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Angular-only: no React, Vue or vanilla JS support, so it cannot be reused outside an Angular codebase.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Visual customization beyond Material Design theming requires overriding CSS/SCSS, which adds friction compared to headless component kits.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Angular CDK", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Google Maps", "slug": null, "sourceIds": ["s2"] },
+      { "name": "YouTube Player", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "material-ui", "reason": { "en": "Same Material Design system, but for React instead of Angular.", "fr": "…" } },
+    { "slug": "tailwind-css", "reason": { "en": "Utility-first alternative for teams that want full visual control instead of Material Design defaults.", "fr": "…" } },
+    { "slug": "radix-ui", "reason": { "en": "Headless component primitives, an alternative approach for teams not wanting Material Design's visual language.", "fr": "…" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["No pricing page relevant, project is fully open source (MIT); exact npm download stats and release cadence not captured."],
+  "conflicts": []
+}

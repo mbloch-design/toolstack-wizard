@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "slug": "supabase",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Supabase",
+    "vendor": "Supabase, Inc.",
+    "officialUrl": "https://supabase.com",
+    "docsUrl": "https://supabase.com/docs",
+    "changelogUrl": "https://supabase.com/changelog",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://supabase.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Supabase pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://supabase.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "500 MB database, 5 GB egress, 1 GB file storage, up to 50,000 MAUs, 2 active projects, pauses after 1 week of inactivity.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "500 MB database, 5 GB egress, 1 GB storage, 2 active projects", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "8 GB disk, 250 GB egress, 100 GB storage, 100,000 MAUs included, then usage-based overage.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 599, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "SOC2 & ISO 27001 compliance, priority support with SLAs, daily backups retained 14 days.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom limits, designated support manager, 24x7x365 support, uptime SLAs.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      { "en": "Compute instances $10-$3,730/month depending on size.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Point-in-Time Recovery $100/month per 7 days retention.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Image transformations $5 per 1,000 origin images beyond 100 free.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pro plan includes only $10/month of compute credit; a larger compute instance is billed as an add-on on top of the $25 base.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "MAU, disk, egress and storage overages beyond the Pro plan's included amounts are billed per unit.", "fr": "…", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "All-in-one backend built on Postgres: database, authentication, storage, auto-generated REST/GraphQL APIs and realtime subscriptions.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Open source, positioned as a Firebase alternative with a fully relational Postgres database underneath.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Free plan is generous enough to build and test a full project before paying, with 50,000 MAUs included.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free project pauses automatically after one week of inactivity, requiring manual restart.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Compute, storage, egress and MAU overages on Pro are all separately metered, making cost less predictable than a flat subscription.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "firebase", "reason": { "en": "The main competitor Supabase positions itself against, NoSQL-based rather than Postgres.", "fr": "…" } },
+    { "slug": "neon", "reason": { "en": "Serverless Postgres alternative, without the auth/storage/realtime layer Supabase bundles.", "fr": "…" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Exact per-unit overage rates for compute credits beyond the $10 included on Pro were not itemized in detail on the fetched page."],
+  "conflicts": []
+}

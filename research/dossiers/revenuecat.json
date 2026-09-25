@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "revenuecat",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "RevenueCat",
+    "vendor": "RevenueCat, Inc.",
+    "officialUrl": "https://www.revenuecat.com",
+    "docsUrl": "https://www.revenuecat.com/docs/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.revenuecat.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "RevenueCat pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.revenuecat.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Free up to $2,500 in monthly tracked revenue (MTR).", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (under $2,500 MTR)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free up to $2,500 in monthly tracked revenue; all features included.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "1% of monthly tracked revenue once MTR exceeds $2,500; no other usage limits.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom pricing, volume discounts, dedicated support and custom SLAs for high transaction volume.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [
+      { "en": "Growth tools (paywall editor, web-to-app funnels, A/B/n testing) can be billed at 1% of MTR on conversions from those tools when using your own subscription infrastructure.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pricing is a percentage of tracked revenue, not a flat seat price: cost scales directly with the app's in-app revenue.", "fr": "…", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Unifies in-app purchase and subscription management across iOS, Android and web with a single backend and REST API.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Provides a built-in paywall editor with A/B testing and customer segmentation for subscription conversion.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Ships open-source SDKs and integrates with 40+ platforms including mobile measurement partners (MMPs) and webhooks.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Cost is a percentage of tracked revenue rather than a flat fee, so it grows automatically with app revenue past the free threshold.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "No published flat per-seat or per-app plan for teams wanting predictable fixed costs; only Pro (percentage) or custom Enterprise.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Webhooks", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["ios", "android", "web"]
+  },
+  "alternatives": [
+    { "slug": "stripe", "reason": { "en": "Handles subscription billing directly, an alternative for web-first products not needing app-store entitlement sync.", "fr": "…" } }
+  ],
+  "missingAlternatives": [
+    { "name": "Adapty", "officialUrl": "https://adapty.io", "reason": "Direct competitor for mobile in-app purchase and subscription management, not in the catalogue." },
+    { "name": "Qonversion", "officialUrl": "https://qonversion.io", "reason": "Direct competitor for mobile subscription infrastructure, not in the catalogue." }
+  ],
+  "unknowns": ["Exact currency/region handling for MTR calculation outside the US was not detailed on the fetched page."],
+  "conflicts": []
+}

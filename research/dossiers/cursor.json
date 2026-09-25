@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "cursor",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Cursor",
+    "vendor": "Anysphere Inc.",
+    "officialUrl": "https://cursor.com",
+    "docsUrl": "https://docs.cursor.com",
+    "changelogUrl": "https://cursor.com/changelog",
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "cursor.sh now redirects to cursor.com."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://cursor.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Cursor pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://cursor.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Hobby plan: limited Agent requests, access to Composer, no credit card required.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "hobby",
+        "name": "Hobby",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Limited Agent requests per month", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Extended Agent limits and frontier model access", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 40, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Centralized billing/admin, team marketplace, shared cloud agents, SAML/OIDC SSO", "fr": "…" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Pooled usage, SCIM, access controls, audit logs, priority support", "fr": "…" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      { "en": "Bugbot code review billed on usage beyond included amount.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Usage-based pricing allows continued access beyond included model usage, billed in arrears; prices exclude taxes.", "fr": "…", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI-native code editor (VS Code fork) with Composer for multi-file edits and an autonomous Agent mode.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Codebase-wide indexing lets the AI reason about the whole project, not just the open file.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Access to multiple frontier models (Claude, GPT, Gemini, Grok) from one interface, plus native MCP support for connecting external tools.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The free Hobby plan has limited Agent requests, making it unsuitable for daily heavy use.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Heavy usage of frontier models triggers usage-based billing beyond the plan's included amount.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": "github", "sourceIds": ["s1"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["macos", "windows", "linux"]
+  },
+  "alternatives": [
+    { "slug": "github-copilot", "reason": { "en": "AI coding assistant integrated directly into VS Code/JetBrains instead of a standalone editor.", "fr": "…" } },
+    { "slug": "zed", "reason": { "en": "Fast, AI-assisted code editor built from scratch rather than a VS Code fork.", "fr": "…" } },
+    { "slug": "windsurf", "reason": { "en": "Direct competitor: another AI-native, VS Code-based editor with agentic coding.", "fr": "…" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Exact Pro+/Ultra tier names and prices ($60 and $200 per month per the internal seed) were not directly re-verified against the live pricing page structure during this pass."],
+  "conflicts": []
+}

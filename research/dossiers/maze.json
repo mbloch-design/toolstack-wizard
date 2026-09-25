@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "slug": "maze",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Maze",
+    "vendor": "Maze Design, Inc.",
+    "officialUrl": "https://maze.co",
+    "docsUrl": "https://help.maze.co/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://maze.co/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Maze pricing" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://maze.co/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "AI Moderator, AI Study Builder, interview studies, mobile testing, card sorting reserved for Enterprise per the official comparison table.", "fr": "…" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Maze does not publish plan prices on its own site; the pricing page is a feature-comparison table only, with every paid tier resolving to a sales conversation.", "fr": "…", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Integrated user research platform combining participant recruitment, prototype testing, moderated interviews and surveys in one tool.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "AI-assisted features (AI Moderator, AI Study Builder, Maze AI) for building and analyzing studies faster.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Supports card sorting and mobile app testing in addition to standard prototype usability tests.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Interview studies, AI Moderator, AI Study Builder and mobile testing are gated to the Enterprise tier per the public feature table.", "fr": "…", "sourceIds": ["s1"] },
+      { "en": "Panel recruitment (recruiting external participants) is capped by plan-based limits even on paid tiers.", "fr": "…", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "invision", "reason": { "en": "Prototyping tool with lighter usability-testing features, a simpler alternative for basic feedback.", "fr": "…" } }
+  ],
+  "missingAlternatives": [
+    { "name": "UserTesting", "officialUrl": "https://www.usertesting.com", "reason": "Major direct competitor for moderated/unmoderated user research, not in the catalogue." },
+    { "name": "Lyssna (formerly UsabilityHub)", "officialUrl": "https://www.lyssna.com", "reason": "Direct competitor for unmoderated usability testing and card sorting, not in the catalogue." }
+  ],
+  "unknowns": ["No public price points for Starter/Team plans; third-party trackers (not official sources, not used as facts here) suggest a Starter tier around $75-99/month, but this could not be confirmed on maze.co itself."],
+  "conflicts": []
+}

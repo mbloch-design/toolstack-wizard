@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "slug": "dovetail-ai",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Dovetail AI",
+    "vendor": null,
+    "officialUrl": "https://dovetailai.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "parked",
+    "productStatus": "discontinued",
+    "statusNote": "dovetailai.com redirects to atom.com/name/DovetailAI, a domain-sale marketplace listing, indicating the domain is now parked/for sale rather than hosting a live product.",
+    "_sourceIds": ["s1"]
+  },
+  "sources": [
+    { "id": "s1", "url": "https://dovetailai.com", "tier": 1, "accessedOn": "2026-09-25", "title": "dovetailai.com (redirects to a domain marketplace listing)" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://dovetailai.com",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": [] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [],
+    "limitations": [],
+    "integrations": [],
+    "platforms": []
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The official URL dovetailai.com no longer hosts a product: it redirects to a domain-marketplace listing (atom.com), so no live tier-1 source exists to verify pricing, capabilities or product status.",
+    "Unclear whether 'Dovetail AI' was ever a distinct product from Dovetail (dovetail.com, already a separate catalogue entry) or an alternate/marketing URL that has since lapsed. Could not confirm via the official domain."
+  ],
+  "conflicts": []
+}
