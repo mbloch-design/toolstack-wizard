@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "slug": "cinema-4d",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Cinema 4D",
+    "vendor": "Maxon Computer GmbH",
+    "officialUrl": "https://www.maxon.net/en/cinema-4d",
+    "docsUrl": "https://help.maxon.net/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy/pricing page" },
+    { "id": "s2", "url": "https://www.toolfarm.com/buy/maxon_cinema_4d_subscription/", "tier": 2, "accessedOn": "2026-09-25", "title": "Toolfarm reseller listing of Cinema 4D subscription pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.maxon.net/en/buy",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "cinema4d-annual",
+        "name": "Cinema 4D (annual billing)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 109, "annualPerMonth": 69.91, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Includes Redshift GPU rendering and 5 Team Render nodes at no extra cost; annual billing saves roughly 30%+ vs monthly.", "fr": null }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "maxon-one",
+        "name": "Maxon One (bundle: Cinema 4D, Redshift, Red Giant, ZBrush, Forger, Universe)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 149, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Bundle price varies by source (some show ~$99.91-105.41/month billed annually with promotions); official rate not independently re-confirmed beyond the buy page tabs in this session.", "fr": null }],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "cinema4d-annual",
+    "addOns": [],
+    "cautions": [
+      { "en": "The official maxon.net/en/buy page splits pricing across Individuals/Teams/Educational/Mobile/Reseller tabs and did not render specific numeric rates during automated fetch; figures above are corroborated by a reseller (Toolfarm) and should be re-verified against the live tabs.", "fr": null, "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Full 3D content creation suite for motion graphics, modeling, animation and rendering, considered a reference tool in motion design.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Includes Redshift GPU renderer and Team Render distributed rendering nodes bundled with every subscription.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "No free tier; requires an ongoing paid subscription (monthly or annual) to use.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Full feature set (SSO, dedicated license dashboard, premium support) is reserved for the Teams pricing tier, not the individual plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "mac"]
+  },
+  "alternatives": [
+    { "slug": "blender", "reason": { "en": "Free, open-source general-purpose 3D suite covering modeling, animation and rendering.", "fr": null } },
+    { "slug": "maya", "reason": { "en": "Autodesk's industry-standard 3D animation and VFX software, direct competitor in professional studios.", "fr": null } },
+    { "slug": "3ds-max", "reason": { "en": "Autodesk's 3D modeling and rendering tool, commonly compared for motion graphics and viz work.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Houdini", "officialUrl": "https://www.sidefx.com/products/houdini/", "reason": "Major procedural 3D/VFX competitor frequently compared to Cinema 4D, appears only as an alternativeCandidate, not in currentAlternatives." }
+  ],
+  "unknowns": [
+    "Exact current Maxon One bundle price not independently confirmed; the official buy page's specific dollar figures did not render in this session's automated fetch.",
+    "Trial period length (if any) not confirmed on the official site."
+  ],
+  "conflicts": []
+}

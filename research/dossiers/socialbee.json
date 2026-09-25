@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "slug": "socialbee",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SocialBee",
+    "vendor": "SocialBee (SOCIALBEE SRL)",
+    "officialUrl": "https://socialbee.com",
+    "docsUrl": "https://socialbee.com/help/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://socialbee.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "SocialBee pricing page" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://socialbee.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "bootstrap",
+        "name": "Bootstrap",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 29, "annualPerMonth": 24.17, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5 social profiles, 1 user per workspace, unlimited AI content generation, 10 content categories, analytics up to 3 months.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "accelerate",
+        "name": "Accelerate",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 49, "annualPerMonth": 40.83, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "10 social profiles, 1 user per workspace, advanced analytics, hashtag organizer, post approval, CSV uploads, 2-year data history.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 3,
+        "price": { "monthly": 99, "annualPerMonth": 82.50, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "25 social profiles, 5 workspaces, 3 users per workspace, export reports, internal notes, bulk editing, 2-year data history.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "bootstrap",
+    "addOns": [
+      { "en": "Extra user: $10/month or $100/year.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Extra workspace: $10/month or $100/year.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Extra profile set (5 profiles): $15/month or $150/year.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "A visible promo (code SBDAY2026, 50% off monthly plans for 3 months, expiring around June 10) was excluded from the plan prices above per pricing rules; only the regular list prices are recorded.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Agency-tier plans (Pro50/Pro100/Pro150, $179-$449/month) exist above Pro for larger profile counts but are not recorded here as they exceed the target audience's needs.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Schedules and publishes social media posts across multiple platforms with content categorization for organizing post types.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Evergreen content recycling: automatically re-shares and re-queues older posts based on content categories.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI-assisted content generation included unlimited on all paid plans.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; only a 14-day trial before payment is required.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Entry Bootstrap plan is limited to a single user per workspace, restricting collaboration without upgrading or buying add-on seats.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "buffer", "reason": { "en": "Widely used social media scheduling tool targeting the same solo/small team audience.", "fr": null } },
+    { "slug": "metricool", "reason": { "en": "Social scheduling and analytics platform competing on similar pricing tiers.", "fr": null } },
+    { "slug": "publer", "reason": { "en": "Budget social media scheduler often compared directly to SocialBee.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact list of supported social platforms (Instagram, Facebook, LinkedIn, TikTok, etc.) was not itemized in the source page excerpt retrieved.",
+    "Mobile app availability (iOS/Android) not confirmed in this session."
+  ],
+  "conflicts": []
+}

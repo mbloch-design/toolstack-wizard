@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "slug": "bolt-business",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Bolt Business",
+    "vendor": "Bolt Technology OÜ",
+    "officialUrl": "https://bolt.eu/business",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://bolt.eu/en/blog/bolt-business-pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Bolt Business pricing blog post" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://bolt.eu/en/blog/bolt-business-pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "No subscription fee, no per-seat charge, no activation cost, no minimum spend; pay only for rides taken at standard Bolt consumer fares.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Bolt Business (free account, pay per ride)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No fixed price; costs are entirely per-ride, at the same fares as standard Bolt consumer rides, which vary by city and demand (surge pricing applies).", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "There is no fixed per-ride rate: fares vary by city and fluctuate with demand/surge pricing, so no single number can represent 'the price' of the service.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Centralized ride management for teams: add employees, set spending controls, and get a single consolidated monthly invoice.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Multi-modal transport options in one platform: rides, e-scooters, e-bikes and car rentals.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Expense reporting integrations for corporate accounting workflows.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No fixed subscription pricing means costs are unpredictable and depend entirely on ride volume and local surge pricing.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Service availability and fare competitiveness depend on the city; Bolt does not operate everywhere Uber does.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No currentAlternatives or clear same-category catalogue matches were found among the seed's alternativeCandidates (mostly unrelated finance/payment tools), so alternatives list is left empty.",
+    "Exact enterprise-tier features (if any beyond the free self-serve account) not confirmed; the source describes only the free, pay-per-ride model."
+  ],
+  "conflicts": []
+}

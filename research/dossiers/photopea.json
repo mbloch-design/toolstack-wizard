@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "slug": "photopea",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Photopea",
+    "vendor": "Ivan Kutskir",
+    "officialUrl": "https://www.photopea.com/",
+    "docsUrl": "https://www.photopea.com/learn/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://costbench.com/software/design/photopea/", "tier": 2, "accessedOn": "2026-09-25", "title": "Photopea free vs premium pricing summary" },
+    { "id": "s2", "url": "https://costbench.com/software/design/photopea/free-plan/", "tier": 2, "accessedOn": "2026-09-25", "title": "Photopea free plan limits" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.photopea.com/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Ad-supported, full PSD support, 40+ file format compatibility, layers/masks/blending, 500 MB PeaDrive storage, shorter edit history, base AI credits.", "sourceIds": ["s1", "s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 5, "annualPerMonth": 4.17, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "$5/month or $50/year; removes ads, widens editor to full screen width, raises PeaDrive storage from 500 MB to 5 GB, doubles edit history length, adds more AI credits and priority support.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "premium",
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Runs entirely in the browser, no install required, and opens/edits native PSD files with layers, masks and blending modes preserved.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Supports 40+ file formats (PSD, XD, Sketch, XCF, AI, PDF and more), acting as a fallback editor across design tool ecosystems.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free tier is ad-supported and caps cloud storage (PeaDrive) at 500 MB.", "fr": null, "sourceIds": ["s1", "s2"] },
+      { "en": "Edit history length is shorter on the free plan than on Premium.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "adobe-photoshop", "reason": { "en": "The desktop application Photopea most directly mirrors and substitutes for in many workflows.", "fr": null } },
+    { "slug": "affinity-photo", "reason": { "en": "Paid one-time-purchase photo editor competing for users leaving Photoshop.", "fr": null } },
+    { "slug": "pixelmator-pro", "reason": { "en": "Mac-native photo/design editor targeting similar budget-conscious creative users.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact AI credit allowance difference between free and Premium was not precisely quantified in the sources checked.",
+    "Whether Premium billing is per-account or supports team seats was not confirmed."
+  ],
+  "conflicts": []
+}

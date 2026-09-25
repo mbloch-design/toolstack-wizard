@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 2,
+  "slug": "redshift",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Redshift",
+    "vendor": "Maxon Computer GmbH",
+    "officialUrl": "https://www.maxon.net/en/redshift",
+    "docsUrl": "https://help.maxon.net/r3d/",
+    "changelogUrl": "https://www.cgchannel.com/tag/redshift/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy/pricing page" },
+    { "id": "s2", "url": "https://www.bhphotovideo.com/c/product/1805465-REG/maxon_rs_y_redshift_annual_subscription.html", "tier": 2, "accessedOn": "2026-09-25", "title": "B&H Photo Video listing of Redshift annual subscription price" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.maxon.net/en/buy",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "redshift-annual",
+        "name": "Redshift standalone (annual billing)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 49, "annualPerMonth": 24.08, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Annual subscription listed at $289/year (~$24/month equivalent) by a reseller, roughly half the monthly rate of $49/month.", "fr": null }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "redshift-annual",
+    "addOns": [],
+    "cautions": [
+      { "en": "Redshift is also included at no extra cost with every Cinema 4D subscription and with Maxon One, so buying it standalone only makes sense for users of other 3D applications (Houdini, Maya, 3ds Max, Blender) needing just the renderer.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "GPU-accelerated biased renderer widely used in motion design, VFX and archviz for fast photorealistic rendering.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Plugs into multiple host 3D applications (Cinema 4D, Houdini, Maya, 3ds Max, Blender, Katana) rather than being a standalone DCC tool.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free tier; requires an ongoing subscription per seat.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "As a render engine, it depends on a compatible GPU and a host 3D application to be useful; it is not a full content-creation suite.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Cinema 4D", "slug": "cinema-4d", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "mac"]
+  },
+  "alternatives": [
+    { "slug": "octane-render", "reason": { "en": "Another GPU-accelerated renderer plugging into similar host 3D applications.", "fr": null } },
+    { "slug": "v-ray", "reason": { "en": "Widely used renderer across 3ds Max, Maya, SketchUp and other DCC tools.", "fr": null } },
+    { "slug": "corona-renderer", "reason": { "en": "Physically based renderer competing in archviz and product visualization.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Arnold", "officialUrl": "https://www.autodesk.com/products/arnold/overview", "reason": "Major production renderer (Autodesk) frequently compared to Redshift, listed only as an alternativeCandidate." }
+  ],
+  "unknowns": [
+    "Exact current monthly price on the official maxon.net buy page not independently re-confirmed; figures rely on a reseller listing.",
+    "Whether a free trial is offered was not confirmed on the official site."
+  ],
+  "conflicts": []
+}

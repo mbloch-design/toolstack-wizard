@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 2,
+  "slug": "discord",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Discord",
+    "vendor": "Discord Inc.",
+    "officialUrl": "https://discord.com",
+    "docsUrl": "https://support.discord.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://discord.com/nitro", "tier": 1, "accessedOn": "2026-09-25", "title": "Discord Nitro pricing and features" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://discord.com/nitro",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Full core messaging, voice/video and server features free with no member or server limit; Nitro is an optional paid enhancement, not required for core use.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "nitro-basic",
+        "name": "Nitro Basic",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 2.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "50MB uploads, custom app icons, custom stickers (300+), longer messages up to 4,000 characters, join up to 200 servers.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "nitro",
+        "name": "Nitro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9.99, "annualPerMonth": 8.33, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "500MB uploads, HD video streaming, 2 server Boosts + 30% off additional Boosts, Xbox Game Pass Starter Edition with 10 hrs/month cloud gaming, custom profiles/video backgrounds.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "nitro-basic",
+    "addOns": [
+      { "en": "Server Boosts (beyond what's included in Nitro): $4.99/month, discounted to $3.49/month for Nitro subscribers.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Nitro annual pricing ($99.99/year for full Nitro) was mentioned in some sources but not directly confirmed as annualPerMonth in the fetched content; recorded monthly figure only is certain.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Free voice, video and text chat organized into community servers with channels, roles and permissions.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Nitro subscription adds custom emoji use anywhere, higher upload limits, HD streaming and server boosting perks.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free tier caps file uploads at a lower size than Nitro (standard free upload limit well below the 500MB Nitro allows).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Custom emoji/stickers use across other servers, and HD video streaming, require a paid Nitro subscription.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "windows", "mac", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "slack", "reason": { "en": "Widely used team/community chat platform with voice, video and channel-based organization, direct competitor for community and team communication.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact Nitro annual price ($99.99/year figure seen elsewhere) not independently confirmed from the primary source fetch in this session."
+  ],
+  "conflicts": []
+}

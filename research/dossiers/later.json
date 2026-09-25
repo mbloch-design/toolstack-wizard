@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "slug": "later",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Later",
+    "vendor": "Later.com Inc. (Mavrck / Later)",
+    "officialUrl": "https://later.com",
+    "docsUrl": "https://help.later.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://later.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Later pricing page" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://later.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 25, "annualPerMonth": 18.75, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 social set (8 profiles total), 1 user, 30 posts per profile per month, 5 AI credits/month, basic scheduling and link in bio.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 50, "annualPerMonth": 37.50, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2 social sets (16 profiles total), 2 users, 180 posts per profile per month, 50 AI credits/month, collaboration tools, social inbox, UGC collection.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "scale",
+        "name": "Scale",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 110, "annualPerMonth": 82.50, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "6 social sets (48 profiles total), 4 users, unlimited posts, 100 AI credits/month, custom analytics, meta ads analytics, competitive benchmarking, priority support.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "en": "Extra social set: $11.25/month.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Extra user: $3.75/month.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Extra 100 AI credits: $3.75/month.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Annual billing gives 3 months free (25% savings) versus paying monthly; the annualPerMonth figures above already reflect that discount.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Social media scheduling across multiple platforms with a visual content calendar and best-time-to-post suggestions.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Link in Bio tool for driving traffic from social profiles to a customizable landing page.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Social inbox and user-generated content (UGC) collection tools on Growth and above.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; entry Starter plan starts at $25/month (or $18.75/month annual) with a hard cap of 30 posts per profile per month.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Advanced analytics (custom analytics, meta ads analytics, competitive benchmarking) are reserved for the top Scale plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No currentAlternatives were provided in the seed for this tool; a direct catalogue-native alternative (e.g. Buffer, SocialBee, Metricool) was not confirmed as present among alternativeCandidates in a directly comparable form, so alternatives list is left empty pending curation.",
+    "Exact list of supported social platforms per plan not itemized in the source excerpt retrieved."
+  ],
+  "conflicts": []
+}
