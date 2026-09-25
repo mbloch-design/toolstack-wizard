@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "slug": "dropbox",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Dropbox",
+    "vendor": "Dropbox, Inc.",
+    "officialUrl": "https://www.dropbox.com",
+    "docsUrl": "https://help.dropbox.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.dropbox.com/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "Dropbox plans and pricing" },
+    { "id": "s2", "url": "https://www.dropbox.com/app-integrations", "tier": 1, "accessedOn": "2026-09-25", "title": "Dropbox App Integrations" },
+    { "id": "s3", "url": "https://help.dropbox.com/integrations/slack", "tier": 1, "accessedOn": "2026-09-25", "title": "How to Use Slack with Dropbox" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.dropbox.com/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Basic plan: 2 GB storage, store and share files." }, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "2 GB storage, store and share files.", "fr": "2 Go de stockage, stockage et partage de fichiers.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "2 TB storage, file transfer up to 50 GB, PDF editing, AI integrations, 30-day file recovery.", "fr": "2 To de stockage, transfert de fichiers jusqu'à 50 Go, édition PDF, intégrations IA, récupération de fichiers sur 30 jours.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Starts at 3 TB pooled team storage, 180-day file recovery, file transfer up to 100 GB, team folders, 250 AI credits/month, PDF editing, password protection, brand customization.", "fr": "À partir de 3 To de stockage d'équipe mutualisé, récupération de fichiers sur 180 jours, transfert jusqu'à 100 Go, dossiers d'équipe, 250 crédits IA/mois, édition PDF, protection par mot de passe, personnalisation de marque.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": { "monthly": 24, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Starts at 15 TB pooled team storage, 1-year file recovery, 750 AI credits/month, end-to-end encryption, single sign-on, tiered admin management, advanced compliance tracking.", "fr": "À partir de 15 To de stockage d'équipe, récupération de fichiers sur 1 an, 750 crédits IA/mois, chiffrement de bout en bout, authentification unique, gestion admin par niveaux, conformité avancée.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom pricing; enterprise-grade security, dedicated support, customizable solutions.", "fr": "Prix sur devis ; sécurité de niveau entreprise, support dédié, solutions personnalisables.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "plus",
+    "addOns": [],
+    "cautions": [
+      { "en": "Only the monthly price was captured for the individual/team plans; an annual discounted rate likely exists on dropbox.com/plans but was not separately confirmed within the facts budget.", "fr": "Seul le prix mensuel a été relevé pour les plans individuels/équipe ; un tarif annuel réduit existe probablement sur dropbox.com/plans mais n'a pas été confirmé séparément dans le budget alloué.", "sourceIds": ["s1"] },
+      { "en": "A '30 days free' banner appears on the pricing page; treat it as a trial offer, not the free (Basic) plan.", "fr": "Une bannière « 30 jours gratuits » apparaît sur la page tarifs ; il s'agit d'un essai, pas du plan gratuit (Basic).", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cloud file storage with automatic sync across devices, file sharing links, and version history / file recovery.", "fr": "Stockage de fichiers dans le cloud avec synchronisation automatique entre appareils, liens de partage et historique/récupération de fichiers.", "sourceIds": ["s1"] },
+      { "en": "Built-in PDF editing and AI credits/integrations on paid plans for tasks like summarizing or searching file content.", "fr": "Édition PDF intégrée et crédits/intégrations IA sur les plans payants pour des tâches comme résumer ou rechercher dans le contenu des fichiers.", "sourceIds": ["s1"] },
+      { "en": "Native integrations with collaboration tools such as Slack (share files to channels, previews in conversations) and Zoom (present or save meeting files directly to Dropbox).", "fr": "Intégrations natives avec des outils de collaboration comme Slack (partage de fichiers dans les canaux, aperçus dans les conversations) et Zoom (présenter ou enregistrer des fichiers de réunion directement dans Dropbox).", "sourceIds": ["s2", "s3"] }
+    ],
+    "limitations": [
+      { "en": "Free (Basic) plan is limited to 2 GB of storage, far below competitors' typical free tiers.", "fr": "Le plan gratuit (Basic) est limité à 2 Go de stockage, bien en dessous des paliers gratuits habituels chez les concurrents.", "sourceIds": ["s1"] },
+      { "en": "Team plans price per seat with a minimum seat count on higher tiers (Advanced requires at least 3 users), which raises the entry cost for very small teams.", "fr": "Les plans équipe sont facturés par siège avec un minimum de sièges sur les paliers supérieurs (Advanced exige au moins 3 utilisateurs), ce qui augmente le coût d'entrée pour de très petites équipes.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2", "s3"] },
+      { "name": "Zoom", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "windows", "macos", "linux", "ios", "android"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "google-drive", "reason": { "en": "Direct cloud storage and file-sync competitor with a comparable freemium/per-seat pricing structure." } },
+    { "slug": "box", "reason": { "en": "Competing cloud storage platform targeted more explicitly at business/enterprise file management." } }
+  ],
+  "missingAlternatives": [
+    { "name": "OneDrive / Microsoft 365", "officialUrl": "https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage", "reason": "Major cloud storage competitor bundled with Microsoft 365, not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Annual/discounted pricing for Plus, Standard and Advanced was not directly confirmed; only monthly list prices were captured.",
+    "Exact AI feature list (which AI tools consume the monthly AI credits) was not detailed within the facts budget."
+  ],
+  "conflicts": []
+}

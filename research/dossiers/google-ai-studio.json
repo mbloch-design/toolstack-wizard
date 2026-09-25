@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "slug": "google-ai-studio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Google AI Studio",
+    "vendor": "Google LLC",
+    "officialUrl": "https://aistudio.google.com",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://ai.google.dev/gemini-api/docs/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Gemini API pricing" },
+    { "id": "s2", "url": "https://en.wikipedia.org/wiki/Google_AI_Studio", "tier": 2, "accessedOn": "2026-09-25", "title": "Google AI Studio (Wikipedia)" },
+    { "id": "s3", "url": "https://topbusinesssoftware.com/products/Google-AI-Studio/integrations/", "tier": 2, "accessedOn": "2026-09-25", "title": "List of Google AI Studio Integrations" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Free access to Google AI Studio interface and a free tier of the Gemini API with limited access to certain models; content may be used to improve Google products." }, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free-tier",
+        "name": "Free tier",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "No base fee; limited access to certain Gemini models with free input and output tokens. Prompts and data may be used to improve Google's products.", "fr": "Aucun forfait de base ; accès limité à certains modèles Gemini avec tokens d'entrée et de sortie gratuits. Les prompts et données peuvent être utilisés pour améliorer les produits Google.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pay-as-you-go",
+        "name": "Gemini API pay-as-you-go (paid tier)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "No base fee, billed per token. Gemini 3.5 Flash-Lite: $0.30/1M input, $2.50/1M output tokens. Gemini 3.8 Flash: $0.75/1M input, $3.75/1M output through Dec 31, 2026 (rising to $1.50/$7.50 from Jan 1, 2027). Batch API gives a 50% discount; content not used to improve Google's products.", "fr": "Aucun forfait de base, facturation au token. Gemini 3.5 Flash-Lite : 0,30 $/M tokens en entrée, 2,50 $/M en sortie. Gemini 3.8 Flash : 0,75 $/M en entrée, 3,75 $/M en sortie jusqu'au 31 décembre 2026 (puis 1,50 $/7,50 $ à partir du 1er janvier 2027). L'API Batch offre une remise de 50 % ; les données ne sont pas utilisées pour améliorer les produits Google.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pay-as-you-go",
+    "addOns": [
+      { "name": "Google Search grounding tool", "unit": "usage", "note": "5,000 free requests/month shared across Gemini 3.x models, then $14 per 1,000 requests.", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Gemini API pricing is usage-based per model and changes over time (e.g. a scheduled price increase on Jan 1, 2027); treat any single figure as a snapshot, not a fixed plan.", "fr": "Le prix de l'API Gemini est à l'usage, par modèle, et évolue dans le temps (ex. hausse programmée au 1er janvier 2027) ; tout chiffre isolé n'est qu'un instantané, pas un tarif fixe.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Free web-based playground to write, test and iterate on prompts against Google's Gemini models, including multimodal input (text, image, audio, video).", "fr": "Bac à sable web gratuit pour écrire, tester et itérer sur des prompts avec les modèles Gemini de Google, avec entrée multimodale (texte, image, audio, vidéo).", "sourceIds": ["s2"] },
+      { "en": "Generates API keys for integrating Gemini models into external applications, and supports structured JSON outputs via JSON Schema.", "fr": "Génère des clés API pour intégrer les modèles Gemini dans des applications externes, et prend en charge les sorties JSON structurées via JSON Schema.", "sourceIds": ["s2"] },
+      { "en": "Supports building simple apps (vibe coding for web and Android) and exporting or pushing generated code to GitHub or Google Colab.", "fr": "Permet de construire de petites applications (génération assistée pour le web et Android) et d'exporter ou pousser le code généré vers GitHub ou Google Colab.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free-tier prompts and data may be used by Google to improve its products, unlike the paid API tier.", "fr": "Les prompts et données du palier gratuit peuvent être utilisés par Google pour améliorer ses produits, contrairement au palier API payant.", "sourceIds": ["s1"] },
+      { "en": "For production-scale or enterprise needs, users are expected to move to the fully-managed Vertex AI platform rather than stay on AI Studio.", "fr": "Pour un usage en production ou en entreprise, les utilisateurs sont censés migrer vers la plateforme managée Vertex AI plutôt que de rester sur AI Studio.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": "github", "sourceIds": ["s2"] },
+      { "name": "Google Colab", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Firebase", "slug": null, "sourceIds": ["s3"] },
+      { "name": "Google Workspace", "slug": null, "sourceIds": ["s3"] }
+    ],
+    "platforms": ["web", "android"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "chatgpt", "reason": { "en": "Comparable free playground plus API access to a leading general-purpose AI model family." } },
+    { "slug": "claude", "reason": { "en": "Competing frontier AI model with a similar developer console and API pricing model." } },
+    { "slug": "deepseek", "reason": { "en": "Alternative low-cost AI model API for similar prompt-testing and integration use cases." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Vertex AI Studio", "officialUrl": "https://cloud.google.com/vertex-ai", "reason": "Google's own enterprise-grade successor/complement to AI Studio, not in the catalogue as a distinct entry" },
+    { "name": "OpenAI Platform (Playground)", "officialUrl": "https://platform.openai.com/", "reason": "Direct equivalent playground + API product from OpenAI, not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "No official page within the pages read gave explicit free-tier rate limits (requests per minute/day); this should be confirmed on ai.google.dev before publishing pricing claims.",
+    "Exact list of platforms (e.g. dedicated iOS app) was not confirmed on a tier-1 source; only a mobile app mention appeared in secondary sources."
+  ],
+  "conflicts": []
+}

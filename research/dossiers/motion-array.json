@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "slug": "motion-array",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Motion Array",
+    "vendor": "Motion Array",
+    "officialUrl": "https://motionarray.com/",
+    "docsUrl": "https://help.motionarray.com/",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://motionarray.com/unlimited/", "tier": 1, "accessedOn": "2026-09-25", "title": "Motion Array Membership Goes Unlimited" },
+    { "id": "s2", "url": "https://motionarray.com/learn/motion-array/motion-array-plans/", "tier": 1, "accessedOn": "2026-09-25", "title": "Motion Array Plans Explained" },
+    { "id": "s3", "url": "https://help.motionarray.com/hc/en-us/articles/22284184989341-Motion-Array-Plans", "tier": 1, "accessedOn": "2026-09-25", "title": "Motion Array Plans help center" },
+    { "id": "s4", "url": "https://motionarray.com/plugins/", "tier": 1, "accessedOn": "2026-09-25", "title": "Motion Array plugins" },
+    { "id": "s5", "url": "https://motionarray.com/learn/ai-voice-over/how-to-use-motion-array-voice-over/", "tier": 1, "accessedOn": "2026-09-25", "title": "Motion Array AI Voice Generator" },
+    { "id": "s6", "url": "https://motionarray.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Motion Array pricing page (fetch blocked, anti-bot)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://motionarray.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "everything",
+        "name": "Everything (Unlimited)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 29.99, "annualPerMonth": 20.83, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited downloads across the full catalogue (templates, footage, music, SFX, graphics, plugins)", "fr": "Téléchargements illimités sur tout le catalogue (templates, footage, musique, SFX, graphiques, plugins)", "sourceIds": ["s1"] },
+          { "en": "AI voiceover credits allocated per month (75,000 credits reported for this plan)", "fr": "Crédits de voix off IA alloués par mois (75 000 crédits rapportés pour ce plan)", "sourceIds": ["s2"] }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "everything",
+    "addOns": [],
+    "cautions": [
+      { "en": "The official pricing page (motionarray.com/pricing) blocked automated access (403); the plan price above was cross-checked via a secondary Motion Array page (motionarray.com/unlimited) but should be re-verified manually before publishing.", "fr": "La page tarifs officielle (motionarray.com/pricing) a bloqué l'accès automatisé (403) ; le prix ci-dessus vient d'une page secondaire Motion Array (motionarray.com/unlimited) et doit être revérifié manuellement avant publication.", "sourceIds": ["s1"] },
+      { "en": "Motion Array also sells narrower plans (voiceover-only, templates-only) and a Teams plan for organizations under 50 employees, not detailed here.", "fr": "Motion Array vend aussi des plans plus étroits (voix off seule, templates seuls) et un plan Teams pour les organisations de moins de 50 salariés, non détaillés ici.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Unlimited downloads of video templates, motion graphics, stock footage, music, sound effects and graphics under one subscription.", "fr": "Téléchargements illimités de templates vidéo, motion graphics, stock footage, musique, effets sonores et graphiques sous un seul abonnement.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI voice generator for narration, with a monthly credit allowance on the top plan.", "fr": "Générateur de voix IA intégré pour la narration, avec un quota mensuel de crédits sur le plan le plus complet.", "sourceIds": ["s5"] },
+      { "en": "Over 50 plugins that integrate directly with Premiere Pro, After Effects, Final Cut Pro and DaVinci Resolve for in-app asset browsing and one-click insertion.", "fr": "Plus de 50 plugins qui s'intègrent directement à Premiere Pro, After Effects, Final Cut Pro et DaVinci Resolve pour parcourir et insérer des assets en un clic.", "sourceIds": ["s4"] }
+    ],
+    "limitations": [
+      { "en": "License and download limits are per-plan; narrower plans (voiceover-only or templates-only) do not include the full catalogue.", "fr": "Les licences et limites de téléchargement dépendent du plan ; les plans plus étroits (voix off seule ou templates seuls) n'incluent pas le catalogue complet.", "sourceIds": ["s2"] },
+      { "en": "Official pricing page uses anti-bot protection, making automated price verification unreliable; manual confirmation recommended.", "fr": "La page tarifs officielle utilise une protection anti-bot, rendant la vérification automatisée des prix peu fiable ; une confirmation manuelle est recommandée.", "sourceIds": ["s6"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Premiere Pro", "slug": null, "sourceIds": ["s4"] },
+      { "name": "Adobe After Effects", "slug": null, "sourceIds": ["s4"] },
+      { "name": "Final Cut Pro", "slug": null, "sourceIds": ["s4"] },
+      { "name": "DaVinci Resolve", "slug": null, "sourceIds": ["s4"] }
+    ],
+    "platforms": ["web", "desktop"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "envato-elements", "reason": { "en": "Same unlimited-subscription model for video templates, footage, music and design assets." } },
+    { "slug": "storyblocks", "reason": { "en": "Direct competitor for stock footage, music and templates on an unlimited subscription." } },
+    { "slug": "productioncrate", "reason": { "en": "Overlapping catalogue of VFX and motion assets for video editors." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Artgrid", "officialUrl": "https://artgrid.io/", "reason": "Major stock footage subscription competitor not in the catalogue" },
+    { "name": "Videvo", "officialUrl": "https://www.videvo.net/", "reason": "Video template and stock footage marketplace competitor not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact current price on motionarray.com/pricing could not be directly confirmed (403 on automated fetch); the $29.99/mo and $249.99/yr figures come from a secondary Motion Array page and should be re-verified before publishing.",
+    "Details of the voiceover-only, templates-only and Teams plans (price, seat count, limits) were not collected within the facts budget.",
+    "Whether a free trial exists was not confirmed on an official page within the pages read."
+  ],
+  "conflicts": []
+}
