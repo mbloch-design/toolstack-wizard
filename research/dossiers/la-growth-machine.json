@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "slug": "la-growth-machine",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "La Growth Machine",
+    "vendor": "La Growth Machine",
+    "officialUrl": "https://www.lagrowthmachine.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.lagrowthmachine.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "La Growth Machine pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "EUR",
+    "pricingUrl": "https://www.lagrowthmachine.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 60, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "LinkedIn and email automation only, 250 leads enriched/month, 1 sending email per identity, up to 3 identities, 3 team members" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 120, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds calls channel, 400 leads enriched/month, up to 6 active campaigns, unlimited identities, 25 team members, A/B testing" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "ultimate",
+        "name": "Ultimate",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 120, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds X (Twitter) channel, 1,000 leads enriched/month, unlimited campaigns and team members, HubSpot/Pipedrive sync" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pricing is per identity (per sending account), not a flat account price: cost scales directly with the number of LinkedIn/email identities used.", "sourceIds": ["s1"] },
+      { "en": "Pro and Ultimate share the same €120/month per-identity list price; the difference is in included channels and features, not price.", "sourceIds": ["s1"] },
+      { "en": "Annual billing gives 2 months free on Pro and Ultimate, not reflected in the monthly figures listed here.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Multi-channel outbound automation combining LinkedIn, email, and (on higher tiers) calls and X (Twitter) in a single sequence.", "sourceIds": ["s1"] },
+      { "en": "Built-in lead enrichment with a monthly quota that scales by plan (250 to 1,000 leads/month).", "sourceIds": ["s1"] },
+      { "en": "Multichannel inbox and A/B testing on campaigns from the Pro tier up.", "sourceIds": ["s1"] },
+      { "en": "CRM sync (HubSpot, Pipedrive) and CRM enrichment on the top Ultimate tier.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Basic plan is capped at 3 sending identities and does not include the calls or X channels.", "sourceIds": ["s1"] },
+      { "en": "No free plan; only a 14-day trial before billing starts.", "sourceIds": ["s1"] },
+      { "en": "CRM sync (HubSpot/Pipedrive) requires the top Ultimate tier, not available on Basic or Pro.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Pipedrive", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "waalaxy", "reason": { "en": "Direct competitor for LinkedIn + email multi-channel prospecting automation." } },
+    { "slug": "phantombuster", "reason": { "en": "Overlaps on LinkedIn automation and lead scraping for similar outbound use cases." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact annual per-month price after the 2-months-free discount was not calculated on the pricing page.",
+    "Agency plan pricing beyond the 6-identity minimum was not disclosed publicly."
+  ],
+  "conflicts": []
+}

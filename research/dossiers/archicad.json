@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 2,
+  "slug": "archicad",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Archicad",
+    "vendor": "Graphisoft SE",
+    "officialUrl": "https://graphisoft.com/solutions/archicad",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://graphisoft.com/solutions/archicad", "tier": 1, "accessedOn": "2026-09-25", "title": "Archicad product page" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://graphisoft.com/solutions/archicad",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": [{ "en": "Free licenses exist for students and teachers only, not a commercial free plan" }], "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "studio",
+        "name": "Archicad Studio",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 201, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Local collaboration only; $2,414 billed annually" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "collaborate",
+        "name": "Archicad Collaborate",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 237, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds cloud-based BIMcloud teamwork; $2,840 billed annually; most popular plan" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "studio",
+    "addOns": [],
+    "cautions": [
+      { "en": "Both plan prices are annual commitments shown as a monthly-equivalent figure; the $201/$237 monthly numbers are not month-to-month rates.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Full BIM authoring: parametric walls, slabs, roofs, columns, beams, doors, windows, stairs, railings and curtain walls with intelligent relationships.", "sourceIds": ["s1"] },
+      { "en": "Real-time multi-user collaboration via BIMcloud with automatic synchronization (on the Collaborate plan).", "sourceIds": ["s1"] },
+      { "en": "MEP design capabilities (mechanical, electrical, plumbing) with clash detection.", "sourceIds": ["s1"] },
+      { "en": "OpenBIM interoperability via IFC 4.3, BCF and IDS support for cross-platform collaboration.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI assistant for workflow support (labeled BETA) and an AI Visualizer for photorealistic renders.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Real-time BIMcloud teamwork requires the more expensive Collaborate plan; the base Studio plan supports local collaboration only.", "sourceIds": ["s1"] },
+      { "en": "Priced as an annual commitment; no month-to-month plan was shown on the product page.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["desktop"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Autodesk Revit", "officialUrl": "https://www.autodesk.com/products/revit", "reason": "Leading BIM competitor for architects and engineers, not in the catalogue." },
+    { "name": "Vectorworks Architect", "officialUrl": "https://www.vectorworks.net/architect", "reason": "Alternative BIM/CAD platform for architecture practices, not in the catalogue." }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact currency/price for regions outside the US was not verified.",
+    "Whether Windows and macOS support are fully feature-equivalent for BIMcloud teamwork was only stated in general terms."
+  ],
+  "conflicts": []
+}

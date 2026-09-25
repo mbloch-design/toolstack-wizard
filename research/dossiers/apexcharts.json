@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "slug": "apexcharts",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ApexCharts",
+    "vendor": "ApexCharts.js",
+    "officialUrl": "https://apexcharts.com",
+    "docsUrl": "https://apexcharts.com/docs/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://apexcharts.com", "tier": 1, "accessedOn": "2026-09-25", "title": "ApexCharts homepage" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://apexcharts.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Core ApexCharts library is free and open source (MIT-licensed charting library)" }], "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "core",
+        "name": "ApexCharts (open source)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free, open-source charting library; no usage cap for the core library" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "core",
+    "addOns": [
+      { "en": "Companion commercial products in the same family (ApexGrid data grid, ApexGantt, ApexTree org charts, ApexSankey, ApexMaps, ApexStock) with separate, unverified pricing", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The core charting library is free/open source; commercial licensing terms for the companion products (grid, gantt, etc.) were not shown on the homepage and were not verified.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "20+ interactive SVG chart types (line, area, candlestick, heatmap, treemap, pie, radar, gauge, funnel) for React, Vue, Angular and vanilla JS.", "sourceIds": ["s1"] },
+      { "en": "Renders large datasets fast, claimed 100k-point line chart in 29ms.", "sourceIds": ["s1"] },
+      { "en": "Part of a broader data-visualization suite (data grids, Gantt charts, org charts, flow diagrams, geospatial maps, financial charts) under the same family of products.", "sourceIds": ["s1"] },
+      { "en": "Ships an MCP server and AI skill files for use with Claude, Cursor and ChatGPT.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The core library covers charting only; companion features (data grid, Gantt, org charts) are separate products, not bundled in.", "sourceIds": ["s1"] },
+      { "en": "No hosted/SaaS offering: it is an embeddable JS library, so teams must integrate and maintain it themselves within their own app.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "chartjs", "reason": { "en": "Comparable free, embeddable charting library for web apps with a similar chart-type range." } },
+    { "slug": "recharts", "reason": { "en": "React-focused charting library covering the same use case for React developers." } },
+    { "slug": "d3js", "reason": { "en": "Lower-level alternative for teams that need full custom control over chart rendering." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact license terms (MIT vs. other) and pricing of the companion commercial products (ApexGrid, ApexGantt, etc.) were not verified on the homepage.",
+    "TypeScript/Blazor support was mentioned but not detailed further."
+  ],
+  "conflicts": []
+}

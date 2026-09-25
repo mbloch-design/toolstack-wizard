@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 2,
+  "slug": "legalplace",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "LegalPlace",
+    "vendor": "LegalPlace",
+    "officialUrl": "https://legalplace.fr",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://legalplace.fr", "tier": 1, "accessedOn": "2026-09-25", "title": "LegalPlace homepage" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "EUR",
+    "pricingUrl": "https://legalplace.fr",
+    "verifiedOn": "2026-09-25",
+    "region": "FR",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "creation",
+        "name": "Création d'entreprise",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Service fee starts at 0 EUR, but mandatory legal/registry fees are added on top and vary by legal structure" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "invoicing",
+        "name": "Logiciel de facturation",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 8.25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "invoicing",
+    "addOns": [
+      { "en": "Business address domiciliation (Paris), with CFE tax reduction claims up to 1,000 EUR/year", "sourceIds": ["s1"] },
+      { "en": "Business modification filings (director change, registered seat transfer), dissolution filings, professional insurance", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The advertised 0 EUR company-creation price covers only LegalPlace's service fee; official registry/legal fees are mandatory and billed separately.", "sourceIds": ["s1"] },
+      { "en": "Accounting and most administrative services are priced on request, not shown publicly.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Online company formation for multiple French legal structures (SAS, SARL, SASU, EURL, SCI, auto-entreprise, associations) with automated document generation and e-signature.", "sourceIds": ["s1"] },
+      { "en": "Dedicated accountant support with compliance handling for VAT, financial statements and tax declarations, including the 2026 e-invoicing reform.", "sourceIds": ["s1"] },
+      { "en": "Business address domiciliation service in Paris with a professional bank account and capital-deposit attestation.", "sourceIds": ["s1"] },
+      { "en": "Handles ongoing legal changes: director changes, registered seat transfers, status amendments, and company dissolution filings.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Focused on French company law only; not usable for formation or compliance outside France.", "sourceIds": ["s1"] },
+      { "en": "Most services beyond invoicing software are quote-based or fee-on-top, not fixed self-service pricing.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "legalstart", "reason": { "en": "Direct French competitor for online company formation and legal document services." } },
+    { "slug": "captain-contrat", "reason": { "en": "Same category of French legaltech for business creation and legal procedures." } },
+    { "slug": "rocket-lawyer", "reason": { "en": "Comparable guided legal-document and business-formation platform, US/UK-focused rather than French." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Full pricing grid for company-formation service fees by legal structure was not shown on the homepage.",
+    "Accounting service pricing was not disclosed publicly."
+  ],
+  "conflicts": []
+}

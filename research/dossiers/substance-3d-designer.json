@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "slug": "substance-3d-designer",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Substance 3D Designer",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/substance3d/apps/designer.html",
+    "docsUrl": "https://substance3d.adobe.com/documentation",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/substance3d/apps/designer.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Substance 3D Designer" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/substance3d/apps/designer.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": [{ "en": "Free access exists for students and teachers only (non-commercial, community assets, 5GB storage), not a general free plan" }], "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "collection",
+        "name": "Substance 3D Collection",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 59.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Includes Designer, Painter, Sampler, Stager; 20,000+ assets; 100GB storage" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "collection-teams",
+        "name": "Collection for Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 119.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Annual commitment billed monthly, per license, 1TB storage, business admin features" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "collection",
+    "addOns": [],
+    "cautions": [
+      { "en": "Substance 3D Designer is not sold standalone on this page; the only individual purchase path shown is the full Substance 3D Collection bundle (Designer, Painter, Sampler, Stager).", "sourceIds": ["s1"] },
+      { "en": "The Collection for Teams price is per license under an annual commitment billed in monthly installments, not a month-to-month rate.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Node-based, fully procedural and non-destructive 3D material, pattern and image-filter authoring.", "sourceIds": ["s1"] },
+      { "en": "Large built-in content library of nodes, filters, patterns and randomizable noises.", "sourceIds": ["s1"] },
+      { "en": "Parametric HDR lighting stage creation, with Pantone and OpenColorIO color management support.", "sourceIds": ["s1"] },
+      { "en": "Dedicated shader graph for authoring MDL materials, and export to other Substance 3D apps and major 3D formats.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Not sold as a standalone subscription on the official page; commercial use requires buying the full Substance 3D Collection bundle.", "sourceIds": ["s1"] },
+      { "en": "Free access is restricted to students/teachers, non-commercial use only, with a small 5GB storage cap.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["desktop"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "substance-3d-painter", "reason": { "en": "Sibling Adobe app in the same suite, focused on texturing rather than procedural material creation." } },
+    { "slug": "blender", "reason": { "en": "Free alternative covering procedural material and texture creation within a full 3D suite." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact system requirements/OS platform list was not shown on this page (linked out to separate documentation).",
+    "Whether a Designer-only single-app subscription exists outside the Collection bundle was not confirmed."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "slug": "bloom-crm",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Bloom",
+    "vendor": "Bloom",
+    "officialUrl": "https://bloom.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://bloom.io/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Bloom pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://bloom.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter (Side Jobs)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 14, "annualPerMonth": 7, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "3 active projects, 1 workflow, 1 package template, 1 automation, 100GB storage, 1.5% payment processing fee on cards/ACH" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard (Solo Business)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 34, "annualPerMonth": 17, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited projects, workflows, packages and automations, 500GB storage, no payment processing fee" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus (Small Teams)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 66, "annualPerMonth": 33, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "All Standard features plus team member management and removal of Bloom branding, 1TB storage" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "en": "Custom client-facing website: $17 each, available on all plans", "sourceIds": ["s1"] },
+      { "en": "Extra storage: $10/month per additional 1TB", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The $7/$17/$33 monthly figures shown at signup are a promotional 50%-off rate for the first 12 months on annual billing, not the standing annual price.", "sourceIds": ["s1"] },
+      { "en": "Starter plan charges an extra 1.5% payment processing fee on card/ACH transactions that higher tiers don't.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "CRM and client portal built for creative freelancers and small studios (photographers, designers) covering leads, invoicing, contracts and scheduling in one workflow.", "sourceIds": ["s1"] },
+      { "en": "Built-in client galleries and package/pricing templates for delivering creative work.", "sourceIds": ["s1"] },
+      { "en": "Automations and multi-step workflows to move clients from lead to booked project.", "sourceIds": ["s1"] },
+      { "en": "Built-in messenger for client communication inside the portal.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Starter tier caps active projects at 3 and limits workflows, packages and automations to 1 each, making it unsuitable beyond very light side-job use.", "sourceIds": ["s1"] },
+      { "en": "Team member management only becomes available on the top (Plus) tier.", "sourceIds": ["s1"] },
+      { "en": "No permanent free plan; only a 7-day trial is offered before billing starts.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "honeybook", "reason": { "en": "Closest direct competitor: CRM and client management built for the same creative-freelancer audience." } },
+    { "slug": "dubsado", "reason": { "en": "Similar all-in-one client management, invoicing and workflow tool for solo creative businesses." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Standing (non-promotional) annual price per plan after the first 12 months was not shown explicitly on the pricing page.",
+    "Whether the Plus plan has a per-seat minimum or a flat team price beyond the base seat was not fully detailed."
+  ],
+  "conflicts": []
+}

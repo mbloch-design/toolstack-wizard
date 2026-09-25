@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "slug": "bots-discord",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Bots Discord",
+    "vendor": null,
+    "officialUrl": "https://botsdiscord.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "dead",
+    "productStatus": "discontinued",
+    "statusNote": "Domain does not resolve (DNS lookup failure) as of 2026-09-25; no live site found."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://botsdiscord.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Bots Discord (domain unreachable, DNS failure)" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://botsdiscord.com",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Unverified: name and domain suggest a Discord bot directory or bot-hosting service, but no live page could be reached to confirm.", "sourceIds": ["s1"] },
+      { "en": "Unverified: no working site, so specific features could not be checked against any source.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Site unreachable at research time (DNS does not resolve); no product facts could be verified.", "sourceIds": ["s1"] },
+      { "en": "No independent source (search engines, listings) describes this specific product either; identity and function could not be confirmed.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": []
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Domain botsdiscord.com does not resolve (getaddrinfo ENOTFOUND); no product page, pricing, or features could be verified.",
+    "Web search found no independent source describing this specific product; it may be defunct or the URL in the catalogue may be wrong."
+  ],
+  "conflicts": []
+}

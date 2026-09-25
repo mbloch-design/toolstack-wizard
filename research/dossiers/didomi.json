@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "slug": "didomi",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Didomi",
+    "vendor": "Didomi",
+    "officialUrl": "https://www.didomi.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.didomi.io/offers", "tier": 1, "accessedOn": "2026-09-25", "title": "Didomi offers/pricing" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.didomi.io/offers",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "essential",
+        "name": "Essential (Consent Management Platform)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Basic multi-regulation compliance features; priced on quote, no public rate" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced (Consent Management Platform)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Adds compliance auditing and monitoring on top of Essential" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium (Consent Management Platform)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Adds preference management, advanced customization and priority support" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      { "en": "Advanced Compliance Monitoring, priced by scan volume and frequency", "sourceIds": ["s1"] },
+      { "en": "Preference Management Platform, priced by user database size and API calls", "sourceIds": ["s1"] },
+      { "en": "Server-Side Tagging is a separate product from the CMP: free up to 100k requests/month, pay-as-you-go tier up to 2M requests/month, custom Enterprise volume", "sourceIds": ["s1"] },
+      { "en": "Connected TV CMP, separate quote-based product", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Every core CMP tier (Essential/Advanced/Premium) is quote-only; the only public numeric pricing is the Server-Side Tagging add-on's free and pay-as-you-go request tiers, which is a different product.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Consent Management Platform (CMP) with multi-regulation compliance support (GDPR and others) and cross-domain/cross-device consent synchronization.", "sourceIds": ["s1"] },
+      { "en": "Customizable branded consent banners and preference center.", "sourceIds": ["s1"] },
+      { "en": "Native integrations with CRM/marketing tools (Salesforce, HubSpot, Mailchimp and others) via the Preference Management Platform.", "sourceIds": ["s1"] },
+      { "en": "Automated compliance monitoring with scheduled scans and multi-scenario detection.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public pricing for the core consent management product; every buyer must go through a sales quote.", "sourceIds": ["s1"] },
+      { "en": "Product is split into several separately priced modules (CMP, Advanced Compliance Monitoring, Preference Management, Server-Side Tagging, Connected TV CMP), adding procurement complexity.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Mailchimp", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "axeptio", "reason": { "en": "Direct CMP/consent-banner competitor targeting a similar European compliance market." } }
+  ],
+  "missingAlternatives": [
+    { "name": "OneTrust", "officialUrl": "https://www.onetrust.com", "reason": "Major enterprise consent/privacy management competitor, not linked as an alternative in the catalogue for Didomi." },
+    { "name": "Cookiebot", "officialUrl": "https://www.cookiebot.com", "reason": "Widely used CMP with public self-service pricing, useful as a budget contrast, not in the catalogue." }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "No indicative price range was published for the Essential/Advanced/Premium CMP tiers; only sales quotes are available.",
+    "Currency for quotes was not stated on the page (USD assumed from site locale, not confirmed)."
+  ],
+  "conflicts": []
+}
