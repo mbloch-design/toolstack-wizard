@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "nik-collection",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Nik Collection",
+    "vendor": "DxO Labs",
+    "officialUrl": "https://nikcollection.dxo.com",
+    "docsUrl": "https://support.dxo.com/hc/en-us/categories/4407322577041-Nik-Collection",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://shop.dxo.com/en/nik-collection-9.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Nik Collection 9 shop / pricing" },
+    { "id": "s2", "url": "https://support.dxo.com/hc/en-us/articles/4407343447697-System-requirements-for-Nik-Collection", "tier": 2, "accessedOn": "2026-09-25", "title": "System requirements for Nik Collection" },
+    { "id": "s3", "url": "https://petapixel.com/2026/04/21/dxo-nik-collection-9-has-ai-masking-more-filters-and-new-blending-modes/", "tier": 2, "accessedOn": "2026-09-25", "title": "DxO Nik Collection 9 announcement coverage" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://shop.dxo.com/en/nik-collection-9.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "new-license",
+        "name": "New customer license",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 179.99 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Perpetual license, activation on up to 3 computers, works as standalone app or plugin for Photoshop, Lightroom Classic, Affinity Photo", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "upgrade",
+        "name": "Upgrade (from Nik Collection 7 or 8)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99.99 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Discounted price for existing owners of a recent prior version", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "new-license",
+    "addOns": [],
+    "cautions": [
+      { "en": "Prices seen on shop.dxo.com were in USD; DxO's other pages have shown EUR pricing for European visitors, so region-based currency should be reverified at merge time.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Both new-license and upgrade prices are also offered as 4 monthly installments via PayPal, which is not a subscription plan.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Suite of 8 photo-editing plugins/standalone tools: Color Efex, Silver Efex, Analog Efex, Viveza, Sharpener, HDR Efex, and others", "fr": null, "sourceIds": ["s3"] },
+      { "en": "AI-assisted masking and depth masks (GPU-dependent) added in Nik Collection 9", "fr": null, "sourceIds": ["s3"] },
+      { "en": "New Color Grading and Halation filters plus blending mode support across the filter library", "fr": null, "sourceIds": ["s3"] },
+      { "en": "Works as a standalone application or as a plugin inside Photoshop, Photoshop Elements, Lightroom Classic, and Affinity Photo", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No recurring subscription tier; buying the full suite is an upfront one-time cost with no lower-priced entry plan", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI masking features require a qualifying GPU, so full functionality is hardware-dependent", "fr": null, "sourceIds": ["s3"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Photoshop", "slug": "adobe-photoshop", "sourceIds": ["s1"] },
+      { "name": "Adobe Lightroom Classic", "slug": "adobe-lightroom", "sourceIds": ["s1"] },
+      { "name": "Affinity Photo", "slug": "affinity-photo", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "adobe-lightroom", "reason": { "en": "Mainstream photo editing suite covering similar creative filter workflows", "fr": null } },
+    { "slug": "capture-one", "reason": { "en": "Professional RAW editor with creative styling tools", "fr": null } },
+    { "slug": "luminar-neo", "reason": { "en": "AI-driven photo editor with comparable creative filter/masking features", "fr": null } },
+    { "slug": "topaz-gigapixel", "reason": { "en": "AI photo-enhancement plugin ecosystem overlapping on creative post-processing needs", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "ON1 Photo RAW", "officialUrl": "https://www.on1.com/products/photo-raw/", "reason": "Direct one-time-license photo editing/plugin competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Trial availability was not confirmed on the shop page excerpt; not stated whether a free trial version exists before purchase.",
+    "Whether listed USD prices include tax is not stated on the pricing page.",
+    "Homepage (nikcollection.dxo.com) returned HTTP 403 during research, so capabilities were sourced from the shop page and independent press coverage instead."
+  ],
+  "conflicts": [
+    "Original catalogue seed pricingText listed EUR figures (€89.99 / €169.99) while the shop.dxo.com page fetched during this research showed USD figures ($179.99 / $99.99 upgrade); currency/region needs reconciliation at merge time."
+  ]
+}

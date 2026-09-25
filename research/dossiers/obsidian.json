@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "slug": "obsidian",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Obsidian",
+    "vendor": "Dynalist Inc. (Obsidian.md)",
+    "officialUrl": "https://obsidian.md",
+    "docsUrl": "https://help.obsidian.md/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://obsidian.md/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Obsidian pricing" },
+    { "id": "s2", "url": "https://obsidian.md", "tier": 1, "accessedOn": "2026-09-25", "title": "Obsidian homepage" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://obsidian.md/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Core desktop/mobile app is free with no feature restrictions; commercial use is allowed without payment", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "core",
+        "name": "Core (free)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No sign-up required, full local Markdown app, no feature limits", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "sync",
+        "name": "Sync",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 5, "annualPerMonth": 4, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "End-to-end encrypted cross-device sync, version history, shared vault collaboration", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "publish",
+        "name": "Publish",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 10, "annualPerMonth": 8, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Per site; publish notes as a website, customizable themes, graph and full-text search", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "sync",
+    "addOns": [
+      { "en": "Catalyst one-time support license: $25 (beta access, community badge)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Commercial license: $50/user/year, optional (commercial use of the free app does not require it)", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Obsidian's core note-taking app is free even for commercial use; Sync and Publish are the only recurring paid services and are optional.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Local-first Markdown notes with bidirectional linking and graph visualization", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Canvas for freeform brainstorming and diagramming", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Daily notes, task tracking, and one year of local version history", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Extensible via an open plugin API and thousands of community plugins and themes", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "No built-in real-time multi-user collaboration; shared vaults rely on the paid Sync service", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Cross-device syncing is not included in the free core app and requires the paid Sync add-on (or manual/third-party sync)", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Dataview (community plugin)", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Kanban (community plugin)", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Calendar (community plugin)", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Tasks (community plugin)", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "windows", "macos", "linux", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "notion", "reason": { "en": "Popular all-in-one workspace covering notes and organization", "fr": null } },
+    { "slug": "logseq", "reason": { "en": "Open-source local-first outliner with similar linking model", "fr": null } },
+    { "slug": "roam-research", "reason": { "en": "Networked-thought note tool with bidirectional linking", "fr": null } },
+    { "slug": "reflect-notes", "reason": { "en": "Notes app with similar knowledge-graph approach", "fr": null } },
+    { "slug": "heptabase", "reason": { "en": "Visual note-taking and knowledge organization alternative", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Craft", "officialUrl": "https://www.craft.do", "reason": "Popular local-friendly notes app competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Full platform list (mobile OS versions, Linux distro support specifics) was inferred from general platform references, not an exhaustive systems-requirements page.",
+    "Whether obsidian.md pricing page shows region-specific currency/tax by IP was not verified beyond the US view."
+  ],
+  "conflicts": []
+}

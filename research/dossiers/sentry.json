@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "slug": "sentry",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Sentry",
+    "vendor": "Functional Software, Inc. (Sentry)",
+    "officialUrl": "https://sentry.io",
+    "docsUrl": "https://docs.sentry.io/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://sentry.io/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Sentry pricing" },
+    { "id": "s2", "url": "https://sentry.io", "tier": 1, "accessedOn": "2026-09-25", "title": "Sentry homepage" },
+    { "id": "s3", "url": "https://sentry.io/integrations/", "tier": 1, "accessedOn": "2026-09-25", "title": "Sentry integrations" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://sentry.io/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "1 user; 5,000 errors/month; 5M spans; 50 session replays; 10 custom dashboards", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "developer",
+        "name": "Developer",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Limited to 1 user; 5,000 errors/month; 5M spans; 50 session replays; 10 custom dashboards", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 26, "annualPerMonth": 26, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users; 50,000 errors included; 20 dashboards; Seer AI debugging is a separate subscription; API access", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 80, "annualPerMonth": 80, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users; unlimited custom dashboards; advanced quota management; SAML/SCIM", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Business features plus technical account manager and dedicated support", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "team",
+    "addOns": [
+      { "en": "Logs/metrics overage: $0.50/GB beyond plan quota (Team & Business)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Uptime monitoring: $1.00 per additional alert", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Cron monitoring: $0.78 per additional monitor", "fr": null, "sourceIds": ["s1"] },
+      { "en": "UI profiling: $0.25/hour; continuous profiling: $0.0315/hour", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Team and Business plans include a base quota of errors/spans; usage beyond it is billed pay-as-you-go per data category, so real monthly cost depends on traffic volume, not just the listed base price.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Error and exception tracking with stack traces and issue grouping across applications", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Distributed tracing and performance monitoring (spans)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Session replay for reproducing user-facing bugs", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Custom dashboards and alerting (email, and via integrations)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "MCP server and REST API for programmatic/agent access to issues", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free Developer plan is capped at a single user, restricting team use", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Usage-based overages (errors, spans, logs, profiling hours) can make monthly cost unpredictable beyond the base quota", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s3"] },
+      { "name": "Jira", "slug": null, "sourceIds": ["s3"] },
+      { "name": "Linear", "slug": "linear", "sourceIds": ["s3"] },
+      { "name": "PagerDuty", "slug": "pagerduty", "sourceIds": ["s3"] },
+      { "name": "Datadog", "slug": "datadog", "sourceIds": ["s3"] },
+      { "name": "GitHub Actions", "slug": null, "sourceIds": ["s3"] },
+      { "name": "Vercel", "slug": null, "sourceIds": ["s3"] },
+      { "name": "Microsoft Teams", "slug": null, "sourceIds": ["s3"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "datadog", "reason": { "en": "Broader observability suite (metrics, logs, traces) that also covers error monitoring", "fr": null } },
+    { "slug": "better-stack", "reason": { "en": "Alternative monitoring/incident stack for smaller teams", "fr": null } },
+    { "slug": "grafana", "reason": { "en": "Open-source observability and dashboarding alternative", "fr": null } },
+    { "slug": "posthog", "reason": { "en": "Product analytics platform with overlapping session replay and error tracking features", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Rollbar", "officialUrl": "https://rollbar.com", "reason": "Direct error-tracking competitor, not in the catalogue" },
+    { "name": "Bugsnag", "officialUrl": "https://www.bugsnag.com", "reason": "Direct error-tracking competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact included quotas per data category beyond errors/spans (e.g. logs, replays) at Team vs Business tier were not fully broken out on the pricing page excerpt.",
+    "Whether taxes are included in listed USD prices is not stated on the pricing page."
+  ],
+  "conflicts": []
+}
