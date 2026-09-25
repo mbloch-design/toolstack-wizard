@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 2,
+  "slug": "topaz-gigapixel",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Topaz Gigapixel AI",
+    "vendor": "Topaz Labs LLC",
+    "officialUrl": "https://topazlabs.com/gigapixel",
+    "docsUrl": "https://www.topazlabs.com/topaz-gigapixel-ai-documentation",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://topazlabs.com/gigapixel",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Topaz Gigapixel AI pricing and product page"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://topazlabs.com/gigapixel",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": 12.42,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "2-image cloud rendering concurrency",
+            "fr": "Concurrence de rendu cloud limitée à 2 images"
+          },
+          {
+            "en": "Limited commercial use for organizations under $1M annual revenue",
+            "fr": "Usage commercial limité pour les organisations de moins d'1M$ de revenu annuel"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 54,
+          "annualPerMonth": 41.58,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "4-image cloud rendering concurrency",
+            "fr": "Concurrence de rendu cloud limitée à 4 images"
+          },
+          {
+            "en": "Full commercial use rights",
+            "fr": "Droits d'usage commercial complets"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "personal",
+    "addOns": [
+      {
+        "en": "Topaz Studio bundle (includes Gigapixel plus other Topaz apps): $399/year ($33/month annually).",
+        "fr": "Offre groupée Topaz Studio (inclut Gigapixel et d'autres apps Topaz) : 399$/an (33$/mois en engagement annuel).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "The annual price is billed as one upfront payment of $149/year for Personal ($499/year for Pro); the $12.42/$41.58 monthly figures are the annualized equivalent, not a separate monthly billing option.",
+        "fr": "Le prix annuel est facturé en un seul paiement de 149$/an pour Personal (499$/an pour Pro) ; les montants de 12,42$/41,58$ par mois sont l'équivalent mensualisé, pas une facturation mensuelle distincte.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "AI-powered image upscaling up to 16x, with nine specialized models (Wonder 2/3, Standard, High Fidelity, Text & Shapes, Face Recovery, etc.) for different image types.",
+        "fr": "Agrandissement d'image par IA jusqu'à 16x, avec neuf modèles spécialisés (Wonder 2/3, Standard, High Fidelity, Text & Shapes, Face Recovery, etc.) selon le type d'image.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Offers both unlimited local (on-device) rendering and unlimited cloud rendering included in the subscription.",
+        "fr": "Propose un rendu local illimité (sur l'appareil) et un rendu cloud illimité inclus dans l'abonnement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plugin integration with Adobe Photoshop and Adobe Lightroom Classic in addition to the standalone desktop app.",
+        "fr": "Intégration en plugin avec Adobe Photoshop et Adobe Lightroom Classic, en plus de l'application de bureau autonome.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free plan; access requires an active subscription with no trial mentioned on the pricing page.",
+        "fr": "Pas de plan gratuit ; l'accès nécessite un abonnement actif, aucun essai n'est mentionné sur la page tarifs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "On Intel-based Macs, the generative models (Wonder 2/3) require cloud rendering; local processing is unavailable on that architecture.",
+        "fr": "Sur les Mac Intel, les modèles génératifs (Wonder 2/3) nécessitent le rendu cloud ; le traitement local n'est pas disponible sur cette architecture.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Adobe Photoshop",
+        "slug": "adobe-photoshop",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Adobe Lightroom",
+        "slug": "adobe-lightroom",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "magnific-ai",
+      "reason": {
+        "en": "Cloud AI image upscaler and enhancer covering the same core need without a desktop install.",
+        "fr": "Amélioration et agrandissement d'image par IA en cloud couvrant le même besoin sans installation de bureau."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact refund/cancellation policy not verified on this page",
+    "Whether a limited free trial exists elsewhere on the site was not confirmed within the page budget"
+  ],
+  "conflicts": []
+}

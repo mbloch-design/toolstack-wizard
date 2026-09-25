@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "slug": "echarts",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Apache ECharts",
+    "vendor": "Apache Software Foundation",
+    "officialUrl": "https://echarts.apache.org",
+    "docsUrl": "https://echarts.apache.org/en/index.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://echarts.apache.org",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Apache ECharts homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "More than 20 chart types available out of the box, plus a dozen reusable components (legends, tooltips, data zoom, etc.).",
+        "fr": "Plus de 20 types de graphiques disponibles nativement, plus une dizaine de composants réutilisables (légendes, infobulles, zoom sur données, etc.).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supports both Canvas and SVG rendering with progressive rendering for very large datasets, claiming real-time rendering of 10 million data points.",
+        "fr": "Prend en charge le rendu Canvas et SVG avec un rendu progressif pour de très grands volumes de données, avec un rendu en temps réel annoncé jusqu'à 10 millions de points.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in dataset management with data transforms such as filtering, clustering and regression.",
+        "fr": "Gestion de jeux de données intégrée avec des transformations (filtrage, clustering, régression).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatically generates chart descriptions and decal patterns to support accessibility.",
+        "fr": "Génère automatiquement des descriptions de graphiques et des motifs (decal patterns) pour l'accessibilité.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "It is a JavaScript charting library, not a hosted app: teams must integrate and maintain it inside their own web codebase, with no built-in dashboard hosting or collaboration.",
+        "fr": "C'est une bibliothèque JavaScript, pas une application hébergée : il faut l'intégrer et la maintenir dans son propre code web, sans hébergement de tableaux de bord ni collaboration intégrée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No official commercial support channel or SLA is offered; help comes from the open-source community and GitHub issues.",
+        "fr": "Aucun support commercial officiel ni SLA proposé ; l'aide vient de la communauté open source et des issues GitHub.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "chartjs",
+      "reason": {
+        "en": "Similar free, open-source JavaScript charting library, lighter-weight and simpler for basic charts.",
+        "fr": "Bibliothèque JavaScript de graphiques gratuite et open source similaire, plus légère et plus simple pour des graphiques basiques."
+      }
+    },
+    {
+      "slug": "highcharts",
+      "reason": {
+        "en": "Commercial JavaScript charting library covering the same use case with paid licensing and official support.",
+        "fr": "Bibliothèque JavaScript de graphiques commerciale couvrant le même usage, avec licence payante et support officiel."
+      }
+    },
+    {
+      "slug": "d3js",
+      "reason": {
+        "en": "Lower-level JavaScript visualization library for fully custom charts, more flexible but with a steeper learning curve.",
+        "fr": "Bibliothèque de visualisation JavaScript plus bas niveau pour des graphiques entièrement personnalisés, plus flexible mais avec une courbe d'apprentissage plus raide."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Plotly.js",
+      "officialUrl": "https://plotly.com/javascript/",
+      "reason": "Major open-source JS charting library competitor with scientific/statistical charts, not in the catalogue"
+    }
+  ],
+  "unknowns": [
+    "Full list of third-party framework integrations (React/Vue wrappers) not verified from the homepage alone"
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "slug": "frame-io",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Frame.io",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://frame.io",
+    "docsUrl": "https://help.frame.io/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://frame.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Frame.io pricing"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://frame.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": [
+        {
+          "en": "Up to 2 members, 2 projects, 2GB standard storage + 2GB mounted storage",
+          "fr": "Jusqu'à 2 membres, 2 projets, 2 Go de stockage standard + 2 Go de stockage monté"
+        }
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 5 seats; 2TB storage plus 2TB per additional member; 250GB mounted storage",
+            "fr": "Jusqu'à 5 sièges ; 2 To de stockage plus 2 To par membre supplémentaire ; 250 Go de stockage monté"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 25,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 15 seats; 3TB storage plus 2TB per additional member; 500GB mounted storage; unlimited projects",
+            "fr": "Jusqu'à 15 sièges ; 3 To de stockage plus 2 To par membre supplémentaire ; 500 Go de stockage monté ; projets illimités"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Custom seats and storage; SSO, multiple team workspaces, forensic watermarking, DRM",
+            "fr": "Sièges et stockage personnalisés ; SSO, plusieurs espaces d'équipe, filigrane forensique, DRM"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Annual billing gives roughly a 13% discount on the listed monthly per-seat price; the page shows the monthly rate as the headline figure.",
+        "fr": "La facturation annuelle offre une remise d'environ 13% sur le prix mensuel par siège affiché ; la page met en avant le tarif mensuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Frame-accurate video comments, annotations and version stacks for review and approval workflows.",
+        "fr": "Commentaires vidéo précis à l'image près, annotations et empilement de versions pour les workflows de review et validation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Camera to Cloud lets footage upload directly from set/on-location cameras for near-instant review.",
+        "fr": "Camera to Cloud permet l'upload direct des rushs depuis le tournage pour une review quasi instantanée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatic transcription and captions, plus public share links for client review.",
+        "fr": "Transcription et sous-titres automatiques, ainsi que des liens de partage publics pour la review client.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "SOC 2 Type 2 compliance and TPN+ Gold Shield content-security accreditation across all plans.",
+        "fr": "Conformité SOC 2 Type 2 et accréditation TPN+ Gold Shield sur tous les plans.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "The free plan caps storage at 2GB and only 2 projects, too small for real production work beyond a quick trial.",
+        "fr": "Le plan gratuit limite le stockage à 2 Go et à 2 projets, trop restreint pour un vrai travail de production au-delà d'un essai rapide.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Internal comments separated from client-facing conversations, restricted projects/folders and unlimited projects only appear from the Team plan up.",
+        "fr": "Les commentaires internes séparés des échanges client, les projets/dossiers restreints et les projets illimités n'apparaissent qu'à partir du plan Team.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Wipster",
+      "officialUrl": "https://www.wipster.io/",
+      "reason": "Video review and approval platform for creative teams, direct competitor not in the catalogue"
+    },
+    {
+      "name": "MediaSilo",
+      "officialUrl": "https://www.mediasilo.com/",
+      "reason": "Video collaboration and review platform for media teams, direct competitor not in the catalogue"
+    }
+  ],
+  "unknowns": [
+    "Exact annual price per seat in dollars not shown directly on the page, only the 13% discount percentage"
+  ],
+  "conflicts": []
+}
