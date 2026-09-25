@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 2,
+  "slug": "mixpanel",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Mixpanel",
+    "vendor": "Mixpanel, Inc.",
+    "officialUrl": "https://mixpanel.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://mixpanel.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Mixpanel pricing"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://mixpanel.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "Up to 1M monthly tracked events, 10K session replays/month, up to 1K experiment MEU/month, up to 10 active feature flags, unlimited seats.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "usage",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 1M events/month, 10K session replays/month, funnels and retention analysis, unlimited seats.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "usage",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 20M events/month included, then volume-based pricing; up to 500K session replays/month, 5K experiment MEU included, up to 50 active feature flags, unlimited saved cohorts, up to 5 alerts.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "usage",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Up to 1T events/month, custom session replay and experiment volumes, unlimited alerts, anomaly detection, root cause analysis, Metric Trees, dedicated success team.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "growth",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Growth plan starts free but bills on volume beyond the included 20M monthly events; the entry paid price point depends on actual event volume rather than a flat listed rate.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pricing model changed from monthly tracked users (MTU) to monthly events as the primary billing metric; older MTU-based pricing (used in the seed data) is outdated.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Product analytics with funnels, retention analysis and custom event tracking.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Session replay integrated into the same platform, with volume tiers per plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Feature flags and experimentation (MEU-based) built into the product.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Anomaly detection, root cause analysis and Metric Trees on Enterprise.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan is capped at 1M events/month and 10 active feature flags, limiting use for higher-traffic products.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Growth plan's exact price beyond the included event volume is not a flat published number, making budgeting less predictable.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "amplitude",
+      "reason": {
+        "en": "Already listed as a current alternative; direct competitor in product analytics.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "google-analytics",
+      "reason": {
+        "en": "Already listed as a current alternative; broader web analytics competitor.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "posthog",
+      "reason": {
+        "en": "Open-source product analytics alternative with self-hosting option.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "hotjar",
+      "reason": {
+        "en": "Overlaps on session replay and behavioral analytics use cases.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact per-event overage price for the Growth plan beyond the included 20M events/month not published as a flat rate.",
+    "Startup Program discount terms (first year free) not fully detailed (eligibility verification process)."
+  ],
+  "conflicts": [
+    "Seed pricing (comparePriceMonthlyEur 17.52, MTU-based model) reflects Mixpanel's older monthly-tracked-users pricing; the current official page prices by monthly events instead, so the seed's pricing model is outdated."
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 2,
+  "slug": "apollo-io",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Apollo.io",
+    "vendor": "Apollo.io, Inc.",
+    "officialUrl": "https://www.apollo.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.apollo.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Apollo.io pricing (features/FAQ content only; plan price amounts not rendered in fetched content)"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.warmly.ai/p/blog/apollo-pricing",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Third-party summary of Apollo.io 2026 plan prices, used to fill amounts not visible on the official page in this session"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.apollo.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "Free plan for 1 user with access to the 240M contact / 30M company database; email sending limited to Gmail only; capped credits.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "1 user, Gmail-only sending, limited credits, database access.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 59,
+          "annualPerMonth": 49,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Email sequencing with A/B testing, higher credit allowance than Free.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 99,
+          "annualPerMonth": 79,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Call recording, sales pipeline management (Opportunities), higher credit allowance.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "organization",
+        "name": "Organization",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": {
+          "monthly": 149,
+          "annualPerMonth": 119,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "3-seat minimum, API access, highest credit allowance.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Export credits are consumed separately when syncing contact data outside Apollo, on top of the per-seat subscription.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plan price amounts (Basic/Professional/Organization) could not be read directly from the official pricing page's rendered content in this session; figures were cross-checked against a third-party pricing summary and should be re-verified against apollo.io/pricing.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "B2B contact and company database with 240M contacts and 30M companies for lead sourcing.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Email sequencing with A/B testing for outbound sales outreach.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Call recording and sales pipeline (Opportunities) management on paid plans.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free and lower-tier plans restrict email sending to Gmail only; Microsoft 365 and other providers require a paid plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Bulk lead selection is capped by a record selection limit, restricting large list-building actions.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Salesforce",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "HubSpot",
+        "slug": "hubspot",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Outreach",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "SalesLoft",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "LinkedIn",
+        "slug": "linkedin",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "hubspot",
+      "reason": {
+        "en": "Already listed as a current alternative; overlaps on sales pipeline and outreach tooling.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "pipedrive",
+      "reason": {
+        "en": "Already listed as a current alternative; competing CRM/sales pipeline tool.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "lemlist",
+      "reason": {
+        "en": "Already listed as a current alternative; direct competitor for outbound email sequencing.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "la-growth-machine",
+      "reason": {
+        "en": "Already listed as a current alternative; competing multi-channel outbound prospecting tool.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "cognism",
+      "reason": {
+        "en": "Direct competitor in B2B contact database and sales intelligence.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact monthly/annual price amounts for Basic, Professional and Organization plans were not visible in the fetched official pricing page content and were sourced from a third-party breakdown; needs re-verification on apollo.io/pricing.",
+    "Credit allowances per plan (number of email/mobile/export credits) not confirmed from the primary source."
+  ],
+  "conflicts": []
+}

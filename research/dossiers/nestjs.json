@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 2,
+  "slug": "nestjs",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "NestJS",
+    "vendor": "Kamil Mysliwiec / NestJS open-source project",
+    "officialUrl": "https://nestjs.com",
+    "docsUrl": "https://docs.nestjs.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://nestjs.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "NestJS official site"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://nestjs.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "Fully free and open source under the MIT License; no usage caps on the framework itself.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "open-source",
+        "name": "Open source",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "MIT-licensed framework, no cost to use, self-hosted by the adopting team.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise-support",
+        "name": "Enterprise Support",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Technical guidance, architectural reviews, mentoring, code reviews and long-term support (LTS); no public price.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      {
+        "en": "Official NestJS courses/certification program, priced separately.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Observe (observability platform) and Devtools (dev workflow tooling), separate paid offerings.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Deploy (\"Mau!\") - AWS infrastructure provisioning/management service, separate paid offering.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "The core framework is free and open source; costs only arise from optional paid services (Enterprise Support, courses, Observe, Devtools, Deploy).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Modular Node.js/TypeScript framework for building server-side applications with a structured architecture.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in dependency injection for maintainability and testability.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Native support for building microservice architectures.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Decorator-based, strongly-typed code style leveraging TypeScript.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "As a framework rather than a hosted platform, teams must handle their own hosting, scaling and infrastructure.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No official managed backend/database included; relies on integrating third-party services.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "flask",
+      "reason": {
+        "en": "Comparable structured backend framework in a different language ecosystem (Python).",
+        "fr": null
+      }
+    },
+    {
+      "slug": "php",
+      "reason": {
+        "en": "Represents general-purpose server-side language/framework alternatives for building APIs.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "python",
+      "reason": {
+        "en": "Broader language alternative commonly used for backend API development.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Express.js",
+      "officialUrl": "https://expressjs.com/",
+      "reason": "The most common direct Node.js framework alternative to NestJS, not present in the catalogue."
+    },
+    {
+      "name": "Fastify",
+      "officialUrl": "https://fastify.dev/",
+      "reason": "Performance-focused Node.js framework frequently compared to NestJS, not present in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Pricing for Enterprise Support, Observe, Devtools and Deploy (Mau!) not publicly disclosed on the homepage."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "slug": "dashlane",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Dashlane",
+    "vendor": "Dashlane Inc.",
+    "officialUrl": "https://www.dashlane.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.dashlane.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Dashlane business pricing" },
+    { "id": "s2", "url": "https://support.dashlane.com/hc/en-us/articles/360001166969-Compare-Dashlane-personal-plans", "tier": 2, "accessedOn": "2026-09-25", "title": "Dashlane personal plans comparison (Family plan price), independent of official page which did not display amounts in this session" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.dashlane.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "friends-family",
+        "name": "Friends & Family",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 7.49, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Shared subscription for up to 10 members; plan administrator gets full premium features, other members get everything except VPN.", "fr": null }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "business-password-management",
+        "name": "Business - Password Management",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Secure vault, unlimited collections, AI-powered autofill, secure credential sharing, password health dashboard, admin vault policies, SSO & SCIM. 14-day free trial available.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business-credential-protection",
+        "name": "Business - Credential Protection",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Credential risk and AI phishing detection, risk dashboards and alerts, SIEM/SOAR and IGA tool integration.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business-enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom pricing with volume optimization and dedicated account management.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "friends-family",
+    "addOns": [],
+    "cautions": [
+      { "en": "Business plan prices are not published on the official pricing page; amounts require contacting sales, so exact per-seat business rates could not be verified in this session.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "The official personal-plan pricing page (dashlane.com/personal/pricing) returned a 404 during this session; the Friends & Family price of $7.49/mo comes from a Dashlane support article rather than the primary pricing page and should be re-verified.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Password vault with AI-powered autofill and password generator.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Secure credential sharing and password health dashboard.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Credential risk and AI phishing detection with remediation dashboards (Business Credential Protection tier).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "SSO and SCIM integrations for business accounts.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; only a 14-day free trial is offered for business password management.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Business pricing is not public, requiring a sales conversation to get a quote.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "1password", "reason": { "en": "Direct commercial competitor in the consumer and business password manager space.", "fr": null } },
+    { "slug": "bitwarden", "reason": { "en": "Open-source password manager alternative with a free tier.", "fr": null } },
+    { "slug": "nordpass", "reason": { "en": "Another subscription password manager targeting individuals and small teams.", "fr": null } },
+    { "slug": "infisical", "reason": { "en": "Adjacent secrets management tool for developer teams, sometimes compared for credential handling.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact per-seat prices for Dashlane Business Password Management, Credential Protection and Enterprise plans are not public and were not disclosed on the pricing page.",
+    "Individual Premium plan price (non-family) could not be confirmed directly on dashlane.com in this session (personal pricing URL returned 404)."
+  ],
+  "conflicts": []
+}

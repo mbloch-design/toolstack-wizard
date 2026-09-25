@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 2,
+  "slug": "gusto",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Gusto",
+    "vendor": "Gusto, Inc.",
+    "officialUrl": "https://gusto.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://gusto.com/product/pricing",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Gusto Pricing, Plans & Fees (2026) - aggregated from third-party pricing trackers, official pricing page returned 403 during this session"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://gusto.com/product/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "simple",
+        "name": "Simple",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 55,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Base fee $49/month + $6/employee/month; single-state payroll, basic onboarding, employee self-service.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 92,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Base fee $80/month + $12/employee/month; adds multi-state payroll and time tracking.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 202,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Base fee $180/month + $22/employee/month; adds certified HR pros, priority support, payroll migration, custom reports.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "contractor-only",
+        "name": "Contractor Only",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 41,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Base fee $35/month + $6/contractor/month; contractor payments, 1099-NEC filing, international contractor payments in 120+ countries.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "simple",
+    "addOns": [
+      {
+        "en": "HR add-ons and benefits administration can raise the per-employee cost by roughly $10-30/month depending on plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Pricing is base fee plus per-employee fee, so the effective monthly cost scales directly with headcount (a 10-person team on Simple costs roughly $109/month).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Official gusto.com pricing page returned an access error during this research session; figures come from third-party pricing trackers and were not independently verified on gusto.com. Re-verify before publishing.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Automated payroll runs with tax filing and compliance support in all US states.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Employee benefits administration (health insurance, retirement plans).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Contractor payments and 1099-NEC filing, including international contractors.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free tier; every plan carries a base monthly fee plus a per-employee fee.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Multi-state payroll requires at least the Plus plan, not available on Simple.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "rippling",
+      "reason": {
+        "en": "Direct competitor combining payroll, HR and IT for small and mid-size teams.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "justworks",
+      "reason": {
+        "en": "PEO-style payroll and benefits alternative targeting small businesses.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "bamboohr",
+      "reason": {
+        "en": "HR platform competing on the broader HR/people-ops use case.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "deel",
+      "reason": {
+        "en": "Alternative for global/international payroll and contractor payments.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Official pricing page (gusto.com) blocked access (HTTP 403) during this session; plan prices sourced from third-party trackers and should be re-verified directly on gusto.com.",
+    "Exact benefits/HR add-on pricing not confirmed from an official source."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 2,
+  "slug": "infisical",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Infisical",
+    "vendor": "Infisical, Inc.",
+    "officialUrl": "https://infisical.com",
+    "docsUrl": "https://infisical.com/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://infisical.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Infisical pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://infisical.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "Secrets Management free tier: 5 identities, 3 environments, 10 secret syncs. Certificate Management free tier: up to 2 internal CAs, 10 SANs, ACME integration. MIT-licensed open-source core can also be self-hosted for free.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5 identities, 3 environments, 10 secret syncs (Secrets Management).",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro (Secrets Management)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 20,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited identities, SAML SSO, secret versioning, 30-day audit log retention. Priced per identity (human + machine).",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced (Secrets Management)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 40,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Dynamic secrets, gateways, full rotation, custom roles, 90-day audit log retention.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "LDAP, SCIM, approval workflows, external KMS/HSM support, 99.99% SLA.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      {
+        "en": "Privileged Access (PAM) is billed separately: Pro at $20/user/month (up to 50 resources, 30-day session recording retention), Enterprise custom.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Certificate Management billed separately with its own free and Enterprise tiers, no per-unit charge stated.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Infisical bundles three separately-priced products (Secrets Management, Privileged Access, Certificate Management); total cost depends on which are combined.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Secrets management with per-identity billing, secret versioning, and dynamic secrets/rotation on higher tiers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Privileged access management (PAM) with session recording for human users.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Certificate management including internal CAs and ACME integration.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "SSO via SAML and OIDC, supporting Okta, Entra ID, Google, Keycloak, Auth0 and others; SCIM provisioning and LDAP available.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free tier caps secrets management at 5 identities and 3 environments, small for growing teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced dynamic secrets, gateways and full rotation require the Advanced tier, not included in Pro.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "vault",
+      "reason": {
+        "en": "HashiCorp Vault is the established open-source/self-hosted secrets management competitor.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "doppler",
+      "reason": {
+        "en": "Direct competitor in cloud secrets management for dev teams.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "dotenv-vault",
+      "reason": {
+        "en": "Lighter-weight alternative for environment variable/secret storage.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether the MIT-licensed self-hosted core includes all Pro/Advanced features or only the Free-tier feature set was not stated explicitly on the pricing page."
+  ],
+  "conflicts": []
+}

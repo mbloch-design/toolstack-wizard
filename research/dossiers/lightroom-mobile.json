@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "slug": "lightroom-mobile",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Lightroom (mobile)",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/photoshop-lightroom.html",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "The seed-provided websiteUrl (lightroommobile.com) is not Adobe's domain and appears incorrect; the mobile Lightroom app is distributed and priced via adobe.com."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Lightroom plans and pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "Lightroom for mobile is a free iOS/Android app for capturing, editing and sharing photos, with in-app upgrade to premium features.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free-mobile",
+        "name": "Lightroom mobile (free)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free iOS/Android app with core capture, editing and sharing tools; no cloud storage plan included.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "lightroom-individual",
+        "name": "Lightroom (Individual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 11.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Full Lightroom on mobile, desktop and web plus Lightroom Classic; 1TB cloud storage; annual plan billed monthly.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "photography-individual",
+        "name": "Photography (Individual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 19.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds Photoshop on desktop and mobile to the Lightroom plan; 1TB cloud storage; annual plan billed monthly.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "lightroom-individual",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Prices shown are the promotional annual-billed-monthly rate; Creative Cloud Pro (20+ apps including Lightroom) is offered at an introductory $34.99/mo for 3 months before reverting to $69.99/mo.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Non-destructive photo editing with presets, on mobile, desktop and web, synced via the cloud.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Free mobile app for capture, editing and sharing without requiring a paid subscription.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Cloud storage and sync across devices included with paid plans (1TB on Lightroom and Photography plans).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Full desktop-grade editing and cloud storage require a paid Lightroom or Photography subscription; the free mobile app alone is limited.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Part of the Adobe Creative Cloud ecosystem, meaning cancellation and pricing changes follow Adobe's broader subscription terms.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "affinity-photo",
+      "reason": {
+        "en": "One-time-purchase photo editing alternative to Adobe's subscription model.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "snapseed",
+      "reason": {
+        "en": "Free mobile photo editing app, direct alternative to Lightroom mobile for casual editing.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "canva",
+      "reason": {
+        "en": "Broader creative tool sometimes used as a lighter-weight alternative for photo editing and sharing.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Seed's websiteUrl (lightroommobile.com) does not resolve to an Adobe-owned page; treated as an error and replaced with the official Adobe Lightroom URL in this dossier.",
+    "Exact feature gating between the free mobile app and paid plans (e.g. which edits require a subscription) not fully detailed on the plans page."
+  ],
+  "conflicts": [
+    "Seed websiteUrl (https://lightroommobile.com) conflicts with the official Adobe product domain; flagged in identity.statusNote."
+  ]
+}

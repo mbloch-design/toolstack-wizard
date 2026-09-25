@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 2,
+  "slug": "microsoft-dynamics-365-finance-operations",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Microsoft Dynamics 365 Finance",
+    "vendor": "Microsoft Corporation",
+    "officialUrl": "https://www.microsoft.com/en-us/dynamics-365/products/finance",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Microsoft Dynamics 365 Finance pricing, figures aggregated via web search summary of third-party partner pricing guides (encorebusiness.com, erpresearch.com); page not fetched directly this session"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "finance-single-app",
+        "name": "Finance (single app)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 210,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Full user license for finance module only; adding a second app (e.g. Supply Chain Management) costs an additional $30/user/month.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "finance-premium",
+        "name": "Finance Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 300,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Includes 1,000 Copilot credits per user per month.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "team-member",
+        "name": "Team Member",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 8,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Read-only access and basic data entry; same rate for Activity User licenses.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "finance-single-app",
+    "addOns": [
+      {
+        "en": "Second app add-on (e.g. Supply Chain Management alongside Finance): +$30/user/month.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "As of January 15, 2026, Microsoft began enforcing license compliance: users without the correct license lose access to Dynamics 365 Finance & Operations applications.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pricing figures were not fetched directly from the official Microsoft pricing page in this session (aggregated from partner/reseller summaries); re-verify against microsoft.com/en-us/dynamics-365/products/finance/pricing.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Cloud-based financial management covering accounting, cash management and regulatory compliance.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supply chain integration available as an add-on module alongside Finance.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI and automation features via Copilot credits on the Premium tier.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Full user licenses are expensive per seat (from $210/user/month), targeting large enterprises rather than small teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "License enforcement (as of January 2026) means misconfigured licensing can cut off application access.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "netsuite",
+      "reason": {
+        "en": "Direct competitor in cloud ERP/finance for mid-size to large organizations.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "sap-s4hana",
+      "reason": {
+        "en": "Major enterprise ERP competitor covering finance and operations.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "sage-intacct",
+      "reason": {
+        "en": "Cloud financial management alternative, often positioned for mid-market.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "oracle-fusion-cloud",
+      "reason": {
+        "en": "Enterprise cloud ERP/finance competitor.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Official Microsoft pricing page could not be fetched directly in this session; all figures come from third-party partner pricing guides and should be re-verified on microsoft.com.",
+    "Regional/currency variations (outside US) not covered."
+  ],
+  "conflicts": []
+}

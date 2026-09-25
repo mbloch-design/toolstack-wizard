@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "smartsuite",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SmartSuite",
+    "vendor": "SmartSuite Inc.",
+    "officialUrl": "https://www.smartsuite.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.smartsuite.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "SmartSuite pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.smartsuite.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": "No permanent free plan; 14-day free trial of the Professional plan, no credit card required.", "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": { "monthly": 20, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Minimum 3 billable users, 5,000 records per solution, 50GB storage, 30-day recycle bin.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": 36, "annualPerMonth": 32, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Minimum 5 billable users, 100,000 records per solution, 100GB storage, 45-day recycle bin, folders, Gmail/Outlook integrations, advanced permissions.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 10,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Unlimited solutions, 400,000 records per solution, 500GB storage, 60-day recycle bin, SSO, SCIM, audit logs, IP restrictions, DLP, European data residency, premium support.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "team",
+    "addOns": [],
+    "cautions": [
+      { "en": "Team and Professional plans require minimums of 3 and 5 billable seats respectively, raising the effective monthly floor above the per-seat sticker price.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Collaborative work management with multiple view types: grid, card, kanban, calendar, timeline, gantt, chart, form, map.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "SmartSuite AI, automation builder, dashboards and 200+ workflow templates included on all plans.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "REST API access and support for 15 languages.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan, only a 14-day trial of Professional.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Advanced security features (SSO, SCIM, DLP, audit logs) are Enterprise-only.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Gmail", "slug": "gmail", "sourceIds": ["s1"] },
+      { "name": "Outlook", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "notion", "reason": { "en": "Broad work management/knowledge tool competing on flexible database and workflow use cases.", "fr": null } },
+    { "slug": "asana", "reason": { "en": "Direct competitor in team task and project management.", "fr": null } },
+    { "slug": "process-street", "reason": { "en": "Overlaps on workflow/process template use cases for small teams.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Signature Plan (mentioned as a tailored option) has no public pricing or feature detail."
+  ],
+  "conflicts": []
+}

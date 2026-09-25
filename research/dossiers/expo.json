@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 2,
+  "slug": "expo",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Expo",
+    "vendor": "650 Industries, Inc. (Expo)",
+    "officialUrl": "https://expo.dev",
+    "docsUrl": "https://docs.expo.dev/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://expo.dev/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Expo Application Services pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://expo.dev/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "15 Android and 15 iOS builds/month, low-priority build queue, updates to 1K MAUs, 25 projects, 45 min build timeout, 20 GiB storage, 100 GiB bandwidth.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "15 Android + 15 iOS builds/month, low-priority queue, updates to 1K MAUs, 25 projects, 20 GiB storage, 100 GiB bandwidth.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$45 of build credit included, high-priority queue, updates to 3K MAUs, 50 projects, 20 GiB storage, 100 GiB bandwidth.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "production",
+        "name": "Production",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 199,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$225 of build credit, 2 concurrent builds, 2h build timeout, updates to 50K MAUs, 100 projects, 1 TiB storage, 1 TiB bandwidth, priority support, SSO.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "$1,000 build credit, 5 concurrent builds, updates to 1M+ MAUs, 300 projects, 10 TiB storage, 40 TiB bandwidth, SLAs and strategic support.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      {
+        "en": "Extra Android build: $1 (medium) or $2 (large) per build beyond included credit.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Extra iOS build: $2 (medium) or $4 (large) per build beyond included credit.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Build costs are usage-based beyond the plan's included credit; heavy CI usage can exceed the flat monthly fee quickly.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "EAS Build, Submit and Update services for React Native app CI/CD.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Over-the-air (OTA) update delivery without app store review.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "CI/CD Workflows automation and end-to-end code signing (Production plan and above).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Website hosting via Expo Router.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan build queue is low-priority, which can slow down CI turnaround.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Builds beyond the plan's included credit are billed per build, so costs scale with usage.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "eas-build",
+      "reason": {
+        "en": "EAS Build is Expo's own build service, often referenced separately as a competing/complementary product for React Native CI.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "codemagic",
+      "reason": {
+        "en": "Mobile CI/CD platform competing directly with Expo's build and deploy services.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "firebase",
+      "reason": {
+        "en": "Common alternative/complement for mobile app backend and distribution.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "vercel",
+      "reason": {
+        "en": "Comparable developer platform philosophy (build, deploy, preview) applied to web instead of mobile.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact overage pricing for storage/bandwidth beyond plan quotas not detailed on the pricing page."
+  ],
+  "conflicts": []
+}
