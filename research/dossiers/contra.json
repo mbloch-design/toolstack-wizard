@@ -3,7 +3,8 @@
   "slug": "contra",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Contra",
     "vendor": "Contra Labs, Inc.",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Community access, job opportunities, standard discoverability and standard payouts. Client payment fees of $15 or $29 apply on payments above $500, and digital product fees are capped at 5% ($3-$29).", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Community access, job opportunities, standard discoverability and standard payouts. Client payment fees of $15 or $29 apply on payments above $500, and digital product fees are capped at 5% ($3-$29).", "fr": "Accès à la communauté, aux offres de mission, à une visibilité standard et à des paiements standards. Des frais de paiement client de 15$ ou 29$ s'appliquent sur les paiements au-dessus de 500$, et les frais sur les produits numériques sont plafonnés à 5% (entre 3$ et 29$)." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -36,8 +37,8 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Client payment fees of $15 or $29 per payment above $500", "fr": null },
-          { "en": "Digital product fees capped at 5% (min $3, max $29)", "fr": null }
+          { "en": "Client payment fees of $15 or $29 per payment above $500", "fr": "Frais de paiement client de 15$ ou 29$ par paiement au-dessus de 500$" },
+          { "en": "Digital product fees capped at 5% (min $3, max $29)", "fr": "Frais sur les produits numériques plafonnés à 5% (min 3$, max 29$)" }
         ],
         "sourceIds": ["s1"]
       },
@@ -49,30 +50,30 @@
         "price": { "monthly": 29, "annualPerMonth": 16.58, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Eliminates client payment fees and digital product fees; boosted visibility in Discover and job listings; faster payouts (2% fee) and crypto payouts (1% fee) remain optional paid add-ons", "fr": null }
+          { "en": "Eliminates client payment fees and digital product fees; boosted visibility in Discover and job listings; faster payouts (2% fee) and crypto payouts (1% fee) remain optional paid add-ons", "fr": "Supprime les frais de paiement client et les frais sur les produits numériques ; visibilité renforcée dans Discover et les offres de mission ; les paiements accélérés (frais de 2%) et les paiements en crypto (frais de 1%) restent des options payantes" }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [
-      { "en": "Faster payouts: 2% fee per payout", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Crypto payouts: 1% fee per payout", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Faster payouts: 2% fee per payout", "fr": "Paiements accélérés : frais de 2% par paiement", "sourceIds": ["s1"] },
+      { "en": "Crypto payouts: 1% fee per payout", "fr": "Paiements en crypto : frais de 1% par paiement", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The Free plan is commission-free but not fee-free: client payment fees ($15 or $29 above $500) and digital product fees (up to 5%) apply until upgrading to Pro.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The Free plan is commission-free but not fee-free: client payment fees ($15 or $29 above $500) and digital product fees (up to 5%) apply until upgrading to Pro.", "fr": "Le plan Free est sans commission mais pas sans frais : des frais de paiement client (15$ ou 29$ au-dessus de 500$) et des frais sur les produits numériques (jusqu'à 5%) s'appliquent tant que tu n'es pas passé à Pro.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Public portfolio and role-based freelancer profile (web developer, designer, etc.) for client discovery", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Project posting and browsing, with tool-based filtering (Framer, Figma, Midjourney, etc.)", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Commission-free payment collection from clients", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Custom invoicing and contract creation on the Pro plan", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Public portfolio and role-based freelancer profile (web developer, designer, etc.) for client discovery", "fr": "Portfolio public et profil freelance par métier (développeur web, designer, etc.) pour la découverte par les clients", "sourceIds": ["s2"] },
+      { "en": "Project posting and browsing, with tool-based filtering (Framer, Figma, Midjourney, etc.)", "fr": "Publication et consultation de projets, avec un filtrage par outil utilisé (Framer, Figma, Midjourney, etc.)", "sourceIds": ["s2"] },
+      { "en": "Commission-free payment collection from clients", "fr": "Encaissement des paiements clients sans commission", "sourceIds": ["s1"] },
+      { "en": "Custom invoicing and contract creation on the Pro plan", "fr": "Création de factures et de contrats personnalisés sur le plan Pro", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan carries per-payment and per-product fees that Pro removes, so heavy users effectively need the paid tier", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Invoicing and proposal workflow details are not documented on the public marketing pages", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Free plan carries per-payment and per-product fees that Pro removes, so heavy users effectively need the paid tier", "fr": "Le plan gratuit porte des frais par paiement et par produit que Pro supprime, donc les utilisateurs à fort volume ont dans les faits besoin du plan payant", "sourceIds": ["s1"] },
+      { "en": "Invoicing and proposal workflow details are not documented on the public marketing pages", "fr": "Les détails du workflow de facturation et de proposition ne sont pas documentés sur les pages publiques", "sourceIds": ["s2"] }
     ],
     "integrations": [
       { "name": "Figma", "slug": "figma", "sourceIds": ["s2"] },
@@ -81,11 +82,115 @@
     ],
     "platforms": ["web"]
   },
-  "alternatives": [
-    { "slug": "upwork", "reason": { "en": "Broader freelance marketplace with similar client discovery and project posting." } },
-    { "slug": "fiverr", "reason": { "en": "Competing freelance marketplace for commission-based service sales." } }
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent consultants and creative freelancers who need a public portfolio, client discovery and commission-free payment collection without building their own website and invoicing setup.",
+      "fr": "Consultants indépendants et freelances créatifs qui ont besoin d'un portfolio public, de visibilité auprès de clients et d'un encaissement sans commission, sans monter leur propre site et leur propre facturation."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: publish a role-based profile and portfolio, result: a client browsing Discover finds the freelancer by tool and hires directly through Contra.",
+      "fr": "Usage : publier un profil par métier avec son portfolio, résultat : un client qui parcourt Discover trouve le freelance par outil utilisé et l'embauche directement via Contra."
+    },
+    {
+      "en": "Usage: collect a client payment above $500 on the Free plan, result: a $15 or $29 fee is deducted, an amount the Pro plan would have avoided.",
+      "fr": "Usage : encaisser un paiement client au-dessus de 500$ sur le plan Free, résultat : des frais de 15$ ou 29$ sont prélevés, un montant que le plan Pro aurait évité."
+    }
   ],
-  "missingAlternatives": [],
+  "alternatives": [
+    { "slug": "upwork", "reason": { "en": "Broader freelance marketplace with similar client discovery and project posting.", "fr": "Marketplace freelance plus large avec une découverte de clients et une publication de projets similaires." } },
+    { "slug": "fiverr", "reason": { "en": "Competing freelance marketplace for commission-based service sales.", "fr": "Marketplace freelance concurrente pour la vente de services à la commission." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Malt", "officialUrl": "https://www.malt.fr", "reason": "Freelance marketplace with portfolio and client discovery, especially strong in France, not present in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Free plan costs nothing but charges per-payment fees up to $29 and up to 5% on digital products; Pro removes those fees for $29/month, a break-even that only pays off once payment volume is high enough.",
+        "fr": "Le plan Free ne coûte rien mais prélève des frais par paiement allant jusqu'à 29$ et jusqu'à 5% sur les produits numériques ; Pro supprime ces frais pour 29$/mois, un seuil de rentabilité qui ne joue qu'à partir d'un volume de paiements suffisant.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to set up a profile and get a first paid engagement is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour créer un profil et décrocher une première mission payée ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The documented features (profile, project browsing, commission-free payment collection, Pro invoicing) deliver the promised discovery-and-payment workflow without needing a third-party invoicing tool.",
+        "fr": "Les fonctionnalités documentées (profil, consultation de projets, encaissement sans commission, facturation sur Pro) livrent le workflow promis de découverte et de paiement sans avoir besoin d'un outil de facturation tiers.",
+        "sourceIds": ["s1", "s2"]
+      },
+      "puissance": {
+        "en": "Contra covers profile, discovery and payment collection, but invoicing and proposal workflow details are not documented, so its ceiling versus a full freelance-operations suite is unclear.",
+        "fr": "Contra couvre le profil, la découverte et l'encaissement, mais les détails du workflow de facturation et de proposition ne sont pas documentés, ce qui rend son plafond incertain face à une suite complète de gestion freelance.",
+        "sourceIds": ["s2"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or portfolio portability if leaving the platform is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données ou la portabilité du portfolio en cas de départ de la plateforme ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Freelance portfolio platform",
+      "fr": "Portfolio freelance"
+    },
+    "shortDescription": {
+      "en": "Contra is a commission-free platform where creative and technical freelancers publish a portfolio, find clients and collect payments.",
+      "fr": "Contra est une plateforme sans commission où les freelances créatifs et techniques publient un portfolio, trouvent des clients et encaissent leurs paiements."
+    },
+    "longDescription": {
+      "en": "Contra combines a public, role-based freelancer profile with project discovery and payment collection in one place. Clients filter freelancers by the tools they use (Figma, Framer, Midjourney and others), and freelancers post or browse projects directly from their profile.\n\nThe Free plan costs nothing but takes a fee on every client payment above $500 ($15 or $29) and up to 5% on digital product sales. The Pro plan, at $29/month ($16.58/month annual), removes both fees and adds boosted visibility plus custom invoicing; faster payouts (2%) and crypto payouts (1%) stay optional add-ons. A freelancer collecting several payments a month above $500 recovers the Pro cost through the fees it removes.",
+      "fr": "Contra combine un profil freelance public par métier avec la découverte de projets et l'encaissement des paiements. Les clients filtrent les freelances par outils utilisés (Figma, Framer, Midjourney), et les freelances publient ou consultent des projets depuis leur profil.\n\nLe plan Free ne coûte rien mais prélève des frais sur chaque paiement au-dessus de 500$ (15$ ou 29$) et jusqu'à 5% sur les produits numériques. Le plan Pro, à 29$/mois (16,58$/mois en annuel), supprime ces frais et ajoute une visibilité renforcée et la facturation personnalisée ; paiements accélérés (2%) et crypto (1%) restent en option. Un freelance à fort volume rentabilise vite Pro."
+    },
+    "pros": [
+      {
+        "en": "No commission on the service itself, unlike marketplaces that take a percentage of every project.",
+        "fr": "Aucune commission sur la prestation elle-même, contrairement aux marketplaces qui prennent un pourcentage sur chaque projet."
+      },
+      {
+        "en": "Filtering by the tools a freelancer uses (Figma, Framer, Midjourney) helps clients find a specific skill set fast.",
+        "fr": "Le filtrage par outils utilisés par le freelance (Figma, Framer, Midjourney) aide les clients à trouver une compétence précise rapidement."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The Free plan's per-payment fees ($15 or $29 above $500) can add up quickly for a freelancer billing several clients a month.",
+        "fr": "Les frais par paiement du plan Free (15$ ou 29$ au-dessus de 500$) peuvent vite s'accumuler pour un freelance qui facture plusieurs clients par mois."
+      },
+      {
+        "en": "Invoicing and proposal mechanics are not documented publicly, so the exact Pro workflow can't be verified before subscribing.",
+        "fr": "Les mécanismes de facturation et de proposition ne sont pas documentés publiquement, donc le workflow exact de Pro ne peut pas être vérifié avant de s'abonner."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you want a public portfolio plus client discovery and payment collection without paying a commission on every project.",
+        "fr": "Garde-le si tu veux un portfolio public avec découverte de clients et encaissement des paiements, sans commission sur chaque projet."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you already have an established client base and a working invoicing setup, since the main value here is discovery and fee-free payment collection.",
+        "fr": "Évite-le si tu as déjà une base de clients établie et une facturation qui fonctionne, car l'intérêt principal ici est la découverte et l'encaissement sans frais."
+      },
+      "threshold": {
+        "en": "Pro costs $29/month; it pays for itself once the fees it removes ($15 to $29 per payment above $500, plus up to 5% on digital products) would otherwise exceed $29 in a month.",
+        "fr": "Pro coûte 29$/mois ; il se rentabilise dès que les frais qu'il supprime (15 à 29$ par paiement au-dessus de 500$, plus jusqu'à 5% sur les produits numériques) dépasseraient 29$ sur un mois."
+      }
+    }
+  },
   "unknowns": [
     "Exact invoicing and proposal system mechanics not documented on public pages",
     "No documented free trial for Pro plan"

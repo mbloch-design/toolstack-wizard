@@ -68,6 +68,19 @@ for (const slug of slugs) {
     continue;
   }
   const d = JSON.parse(fs.readFileSync(file, "utf8"));
+  if (d.hold) {
+    console.log(`⏸ ${slug}: on hold (${d.hold})`);
+    continue;
+  }
+  // A price is published only from an official source: when the compared
+  // plan cites independent sources only (official page blocked or rendered
+  // by script), the fiche waits for a manual check.
+  const tierOf = new Map(d.sources.map((s) => [s.id, s.tier]));
+  const comparePlan = d.pricing.plans.find((plan) => plan.key === d.pricing.comparePlanKey);
+  if (comparePlan && !(comparePlan.sourceIds || []).some((id) => tierOf.get(id) === 1)) {
+    console.log(`⏸ ${slug}: compared price has no official source, kept for a manual check`);
+    continue;
+  }
   const tool = bySlug.get(slug);
   if (!tool) { console.log(`✖ ${slug}: not in catalogue`); continue; }
 

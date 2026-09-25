@@ -3,7 +3,8 @@
   "slug": "adobe-illustrator",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Adobe Illustrator",
     "vendor": "Adobe Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 22.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual commitment billed monthly; standalone plan (Illustrator only, no other Creative Cloud apps).", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Annual commitment billed monthly; standalone plan (Illustrator only, no other Creative Cloud apps).", "fr": "Engagement annuel facturé au mois ; plan autonome (Illustrator seul, sans les autres applications Creative Cloud).", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 37.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Per-license price for business use; annual commitment billed monthly.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Per-license price for business use; annual commitment billed monthly.", "fr": "Prix par licence pour un usage professionnel ; engagement annuel facturé au mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": 69.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Bundle of 20+ Creative Cloud apps including Illustrator, plus Firefly generative AI credits. A promotional price of $34.99/mo for the first 3 months was observed at time of research (excluded from compare price).", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Bundle of 20+ Creative Cloud apps including Illustrator, plus Firefly generative AI credits. A promotional price of $34.99/mo for the first 3 months was observed at time of research (excluded from compare price).", "fr": "Bundle de plus de 20 applications Creative Cloud dont Illustrator, plus des crédits de génération IA Firefly. Un prix promotionnel de 34,99$/mois pour les 3 premiers mois a été observé au moment de la recherche (exclu du prix de comparaison).", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,26 +65,26 @@
         "minSeats": 1,
         "price": { "monthly": 99.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Full Creative Cloud bundle per team license; annual commitment billed monthly.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Full Creative Cloud bundle per team license; annual commitment billed monthly.", "fr": "Bundle Creative Cloud complet par licence d'équipe ; engagement annuel facturé au mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "illustrator-single-app",
     "addOns": [],
     "cautions": [
-      { "en": "The advertised monthly price is billed under a mandatory 12-month commitment (annual, billed monthly), not a flexible month-to-month plan; cancelling early can trigger an early termination fee per Adobe's subscription terms (not itemized on this page).", "sourceIds": ["s1"] }
+      { "en": "The advertised monthly price is billed under a mandatory 12-month commitment (annual, billed monthly), not a flexible month-to-month plan; cancelling early can trigger an early termination fee per Adobe's subscription terms (not itemized on this page).", "fr": "Le prix mensuel affiché est facturé dans le cadre d'un engagement obligatoire de 12 mois (annuel, facturé au mois), pas d'un plan flexible sans engagement ; une résiliation anticipée peut déclencher des frais de résiliation selon les conditions d'abonnement d'Adobe (non détaillés sur cette page).", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Vector graphic creation and editing for logos, icons, illustrations and print/digital layouts.", "sourceIds": ["s1"] },
-      { "en": "AI-powered generative tools: Generative Shape Fill, Text to Vector, and Generative Expand.", "sourceIds": ["s1"] },
-      { "en": "Sketch-to-vector conversion and 3D design perspectives (Turntable).", "sourceIds": ["s1"] },
-      { "en": "Cross-platform editing on desktop (Windows/macOS) and iPad with synced projects.", "sourceIds": ["s1"] }
+      { "en": "Vector graphic creation and editing for logos, icons, illustrations and print/digital layouts.", "fr": "Création et édition de graphismes vectoriels pour logos, icônes, illustrations et mises en page print/digital.", "sourceIds": ["s1"] },
+      { "en": "AI-powered generative tools: Generative Shape Fill, Text to Vector, and Generative Expand.", "fr": "Outils de génération par IA : Generative Shape Fill, Text to Vector, et Generative Expand.", "sourceIds": ["s1"] },
+      { "en": "Sketch-to-vector conversion and 3D design perspectives (Turntable).", "fr": "Conversion de croquis en vectoriel et perspectives de design 3D (Turntable).", "sourceIds": ["s1"] },
+      { "en": "Cross-platform editing on desktop (Windows/macOS) and iPad with synced projects.", "fr": "Édition multiplateforme sur bureau (Windows/macOS) et iPad avec des projets synchronisés.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No permanent free tier; full functionality requires an ongoing paid subscription after the 7-day trial.", "sourceIds": ["s1"] },
-      { "en": "Standalone Illustrator plan does not include other Creative Cloud apps (Photoshop, InDesign, etc.); those require a separate purchase or the all-apps bundle.", "sourceIds": ["s1"] }
+      { "en": "No permanent free tier; full functionality requires an ongoing paid subscription after the 7-day trial.", "fr": "Aucun plan gratuit permanent ; toutes les fonctionnalités demandent un abonnement payant continu après l'essai de 7 jours.", "sourceIds": ["s1"] },
+      { "en": "Standalone Illustrator plan does not include other Creative Cloud apps (Photoshop, InDesign, etc.); those require a separate purchase or the all-apps bundle.", "fr": "Le plan Illustrator autonome n'inclut pas les autres applications Creative Cloud (Photoshop, InDesign, etc.) ; celles-ci demandent un achat séparé ou le bundle toutes applications.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Adobe Photoshop", "slug": "adobe-photoshop", "sourceIds": ["s1"] },
@@ -91,17 +92,127 @@
     ],
     "platforms": ["windows", "mac", "ipad"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designers producing vector logos, icons and print or digital layouts who need an industry-standard tool for client-ready, scalable graphics.",
+      "fr": "Designers qui produisent des logos vectoriels, icônes et mises en page print ou digital, et ont besoin d'un outil standard du secteur pour des graphismes redimensionnables prêts pour les clients."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: design a logo as a vector file, result: the same file scales from a business card to a billboard without loss of quality.",
+      "fr": "Usage : dessiner un logo en fichier vectoriel, résultat : le même fichier s'agrandit d'une carte de visite à un panneau publicitaire sans perte de qualité."
+    },
+    {
+      "en": "Usage: convert a hand-drawn sketch to a vector with the built-in conversion tool, result: a clean, editable illustration without manually retracing every line.",
+      "fr": "Usage : convertir un croquis dessiné à la main en vectoriel avec l'outil de conversion intégré, résultat : une illustration propre et modifiable sans retracer chaque ligne à la main."
+    }
+  ],
   "alternatives": [
-    { "slug": "figma", "reason": { "en": "Overlaps for vector/icon and UI-adjacent illustration work with a genuinely usable free tier, though it is browser-first and less print/production-oriented than Illustrator." } },
-    { "slug": "affinity-photo", "reason": { "en": "Affinity's vector app (Designer) is the closest one-time-purchase alternative in the same suite family as Illustrator, avoiding the subscription model." } }
+    { "slug": "figma", "reason": { "en": "Overlaps for vector/icon and UI-adjacent illustration work with a genuinely usable free tier, though it is browser-first and less print/production-oriented than Illustrator.", "fr": "Chevauche sur le travail vectoriel/icônes et l'illustration proche de l'UI, avec un plan gratuit réellement utilisable, bien qu'il soit d'abord pensé pour le navigateur et moins orienté print/production qu'Illustrator." } },
+    { "slug": "canva", "reason": { "en": "Vector and template-based design tool with a free tier, popular for quick graphics though with less precise vector control than Illustrator.", "fr": "Outil de design vectoriel et par modèles avec un plan gratuit, populaire pour des graphismes rapides bien qu'avec un contrôle vectoriel moins précis qu'Illustrator." } },
+    { "slug": "sketch", "reason": { "en": "Vector design tool historically popular for interface and icon work, a lighter-weight alternative to Illustrator for that scope.", "fr": "Outil de design vectoriel historiquement populaire pour l'interface et les icônes, une alternative plus légère à Illustrator sur ce périmètre." } }
   ],
   "missingAlternatives": [
     { "name": "Affinity Designer", "officialUrl": "https://affinity.serif.com/designer/", "reason": "The most cited one-time-purchase vector-editor alternative to Illustrator; not present as its own catalogue entry (only Affinity Photo is)." },
     { "name": "Inkscape", "officialUrl": "https://inkscape.org", "reason": "Free, open-source vector editor commonly recommended as a no-cost Illustrator alternative; absent from the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At $22.99/month for the standalone plan under a mandatory 12-month commitment, the tool is capable but the cost is recurring indefinitely, unlike a one-time-purchase alternative in the same category.",
+        "fr": "À 22,99$/mois pour le plan autonome sous engagement obligatoire de 12 mois, l'outil est performant mais le coût est récurrent indéfiniment, contrairement à une alternative en achat unique dans la même catégorie.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to produce a first client-ready graphic is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour produire un premier graphisme prêt pour un client ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Vector creation, sketch-to-vector conversion, and cross-platform editing on desktop and iPad deliver the promised professional vector workflow as documented.",
+        "fr": "La création vectorielle, la conversion de croquis en vectoriel et l'édition multiplateforme sur bureau et iPad livrent le workflow vectoriel professionnel promis, tel que documenté.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "As the industry-standard vector tool with generative AI features (Generative Shape Fill, Text to Vector, Generative Expand), 3D perspectives, and desktop/iPad support, it sets the reference point for the category.",
+        "fr": "En tant qu'outil vectoriel de référence du secteur avec des fonctionnalités de génération IA (Generative Shape Fill, Text to Vector, Generative Expand), des perspectives 3D et un support bureau/iPad, il fait figure de référence dans la catégorie.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and file portability if cancelling the subscription are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des fichiers en cas d'annulation de l'abonnement ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Vector graphics editor",
+      "fr": "Éditeur vectoriel"
+    },
+    "shortDescription": {
+      "en": "Adobe Illustrator is the industry-standard vector graphics editor for logos, icons and print or digital layouts, sold as a subscription.",
+      "fr": "Adobe Illustrator est l'éditeur vectoriel de référence pour logos, icônes et mises en page print ou digital, vendu en abonnement."
+    },
+    "longDescription": {
+      "en": "Illustrator covers vector creation and editing from logos and icons to full print and digital layouts, with generative AI tools (Generative Shape Fill, Text to Vector, Generative Expand), sketch-to-vector conversion, and 3D perspectives. Projects sync between desktop (Windows/macOS) and iPad.\n\nThere is no free tier, only a 7-day trial. The standalone plan costs $22.99/month for an individual under a mandatory 12-month commitment, billed monthly; the same license for business use costs $37.99/month. Getting the full Creative Cloud bundle of 20+ apps, including Illustrator and Firefly AI credits, costs $69.99/month individually or $99.99/month per team license. Cancelling before the 12-month term ends can trigger an early termination fee under Adobe's subscription terms.",
+      "fr": "Illustrator couvre la création et l'édition vectorielle, des logos et icônes aux mises en page print et digital, avec des outils IA (Generative Shape Fill, Text to Vector, Generative Expand), la conversion de croquis en vectoriel et des perspectives 3D. Les projets se synchronisent entre bureau (Windows/macOS) et iPad.\n\nPas de plan gratuit, seulement un essai de 7 jours. Le plan autonome coûte 22,99$/mois sous engagement obligatoire de 12 mois ; la licence pro coûte 37,99$/mois. Le bundle Creative Cloud complet (plus de 20 applications, crédits IA Firefly) coûte 69,99$/mois par particulier ou 99,99$/mois par équipe. Annuler avant la fin de l'engagement peut déclencher des frais."
+    },
+    "pros": [
+      {
+        "en": "Generative AI tools (Generative Shape Fill, Text to Vector, Generative Expand) are built into the core app, not a separate add-on.",
+        "fr": "Les outils de génération IA (Generative Shape Fill, Text to Vector, Generative Expand) sont intégrés au cœur de l'application, pas dans un module séparé."
+      },
+      {
+        "en": "Projects sync between desktop and iPad, so work can move from a full workstation to a tablet without a file-conversion step.",
+        "fr": "Les projets se synchronisent entre bureau et iPad, donc le travail peut passer d'un poste complet à une tablette sans étape de conversion de fichier."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The standalone plan locks buyers into a mandatory 12-month commitment even though it is billed monthly.",
+        "fr": "Le plan autonome engage l'acheteur sur 12 mois obligatoires même s'il est facturé au mois."
+      },
+      {
+        "en": "Other Creative Cloud apps (Photoshop, InDesign) require a separate purchase or the full bundle; the standalone plan covers Illustrator alone.",
+        "fr": "Les autres applications Creative Cloud (Photoshop, InDesign) demandent un achat séparé ou le bundle complet ; le plan autonome ne couvre qu'Illustrator seul."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you need the industry-standard vector tool for client work, cross-platform iPad editing, or the built-in generative AI features.",
+        "fr": "Garde-le si tu as besoin de l'outil vectoriel de référence pour du travail client, d'une édition multiplateforme avec l'iPad, ou des fonctionnalités de génération IA intégrées."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you want to avoid a recurring subscription and a 12-month commitment, or if your vector needs are occasional enough for a free tool.",
+        "fr": "Évite-le si tu veux éviter un abonnement récurrent et un engagement de 12 mois, ou si tes besoins vectoriels sont assez occasionnels pour un outil gratuit."
+      },
+      "threshold": {
+        "en": "The standalone plan costs $22.99/month, or $275.88 over the mandatory 12-month commitment, for Illustrator alone.",
+        "fr": "Le plan autonome coûte 22,99$/mois, soit 275,88$ sur les 12 mois d'engagement obligatoire, pour Illustrator seul."
+      },
+      "billingTraps": {
+        "en": "The monthly price is billed under a mandatory 12-month commitment; cancelling before the term ends can trigger an early termination fee that Adobe does not itemize on the pricing page.",
+        "fr": "Le prix mensuel est facturé sous un engagement obligatoire de 12 mois ; résilier avant la fin de l'engagement peut déclencher des frais de résiliation anticipée qu'Adobe ne détaille pas sur la page tarifs."
+      }
+    }
+  },
   "unknowns": [
     "Exact early-termination-fee terms for the annual-billed-monthly commitment were not re-verified on Adobe's official subscription-terms page during this pass.",
     "Student/teacher pricing for the standalone Illustrator plan (vs. Creative Cloud Pro) was not checked."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The affinity-photo alternative from the facts pass was replaced with canva and sketch: Affinity Photo is a raster photo editor, not a vector tool, so it does not cover Illustrator's main need; the intended Affinity vector app (Affinity Designer) is not in the catalogue and stays in missingAlternatives."
+  ]
 }

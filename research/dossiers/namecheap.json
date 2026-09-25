@@ -3,7 +3,8 @@
   "slug": "namecheap",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Namecheap",
     "vendor": "Namecheap, Inc.",
@@ -37,8 +38,8 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 9.58 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "First-year introductory price; renewal is significantly higher (see cautions).", "sourceIds": ["s2"] },
-          { "en": "Free WHOIS privacy protection (WhoisGuard) included on eligible TLDs.", "sourceIds": ["s2", "s3"] }
+          { "en": "First-year introductory price; renewal is significantly higher (see cautions).", "fr": "Prix d'appel valable la première année ; le renouvellement est nettement plus cher (voir les mises en garde).", "sourceIds": ["s2"] },
+          { "en": "Free WHOIS privacy protection (WhoisGuard) included on eligible TLDs.", "fr": "Protection WHOIS gratuite (WhoisGuard) incluse sur les extensions éligibles.", "sourceIds": ["s2", "s3"] }
         ],
         "sourceIds": ["s2", "s3"]
       }
@@ -48,35 +49,85 @@
       { "name": "Shared hosting", "unit": "account", "note": { "en": "Separate hosting plans exist alongside domain registration; pricing changed as of May 2026 per Namecheap's own knowledge base article title." }, "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": ".com renewal is typically 30-50% higher than the first-year introductory price (roughly $14-19/year vs ~$9.58 first year).", "fr": null, "sourceIds": ["s2"] },
-      { "en": "ICANN adds a mandatory ~$0.20/year fee per domain on top of the listed price.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Exact current prices could not be verified directly on namecheap.com in this session (site blocked automated access); figures come from third-party pricing trackers and should be reverified before publishing.", "fr": null, "sourceIds": ["s2", "s3"] }
+      { "en": ".com renewal is typically 30-50% higher than the first-year introductory price (roughly $14-19/year vs ~$9.58 first year).", "fr": "Le renouvellement du .com coûte en général 30 à 50 % de plus que le prix d'appel de la première année (environ 14-19 $/an contre ~9,58 $ la première année).", "sourceIds": ["s2"] },
+      { "en": "ICANN adds a mandatory ~$0.20/year fee per domain on top of the listed price.", "fr": "L'ICANN ajoute des frais obligatoires d'environ 0,20 $/an par domaine en plus du prix affiché.", "sourceIds": ["s2"] },
+      { "en": "Exact current prices could not be verified directly on namecheap.com in this session (site blocked automated access); figures come from third-party pricing trackers and should be reverified before publishing.", "fr": "Les prix exacts actuels n'ont pas pu être vérifiés directement sur namecheap.com pendant cette session (site bloquant l'accès automatisé) ; les chiffres viennent de trackers tiers et sont à revérifier avant publication.", "sourceIds": ["s2", "s3"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Domain registration and transfer across hundreds of TLDs, with free WHOIS privacy (WhoisGuard) on most.", "sourceIds": ["s2", "s3"] },
-      { "en": "Bundled services beyond domains: shared/VPS/dedicated hosting, free SSL certificates on some plans, and email hosting (Private Email).", "sourceIds": ["s1", "s3"] }
+      { "en": "Domain registration and transfer across hundreds of TLDs, with free WHOIS privacy (WhoisGuard) on most.", "fr": "Enregistrement et transfert de domaines sur des centaines d'extensions, avec protection WHOIS gratuite (WhoisGuard) sur la plupart.", "sourceIds": ["s2", "s3"] },
+      { "en": "Bundled services beyond domains: shared/VPS/dedicated hosting, free SSL certificates on some plans, and email hosting (Private Email).", "fr": "Services annexes au-delà du domaine : hébergement mutualisé/VPS/dédié, certificats SSL gratuits sur certains plans, et hébergement email (Private Email).", "sourceIds": ["s1", "s3"] }
     ],
     "limitations": [
-      { "en": "No permanent free plan; every product (domain, hosting, email) is paid, with low first-year introductory pricing on domains that rises at renewal.", "sourceIds": ["s2"] },
-      { "en": "Support and account management primarily self-service via knowledge base and ticketing rather than phone-first support.", "sourceIds": ["s3"] }
+      { "en": "No permanent free plan; every product (domain, hosting, email) is paid, with low first-year introductory pricing on domains that rises at renewal.", "fr": "Aucune offre gratuite permanente ; chaque produit (domaine, hébergement, email) est payant, avec un prix d'appel bas la première année sur les domaines qui grimpe au renouvellement.", "sourceIds": ["s2"] },
+      { "en": "Support and account management primarily self-service via knowledge base and ticketing rather than phone-first support.", "fr": "Support et gestion de compte principalement en libre-service via la base de connaissances et les tickets, plutôt qu'un support téléphonique prioritaire.", "sourceIds": ["s3"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "Someone handling ops for a small team or solo business who needs to register and manage a domain (and often hosting or email) without a dedicated IT person.", "fr": "Une personne qui gère l'administratif d'une petite équipe ou d'une activité solo et doit enregistrer et gérer un domaine (souvent avec l'hébergement ou l'email) sans informaticien dédié." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "New project launch: register a .com domain at the low first-year introductory price for a side project or new brand.", "fr": "Lancement d'un nouveau projet : enregistrer un domaine .com au prix d'appel de la première année pour un side project ou une nouvelle marque." },
+    { "en": "Small business setup: bundle the domain with shared hosting and Private Email so the business runs on one provider.", "fr": "Mise en place d'une petite activité : associer le domaine à l'hébergement mutualisé et à Private Email pour tout centraliser chez un seul prestataire." }
+  ],
   "alternatives": [
-    { "slug": "cloudflare", "reason": { "en": "Domain registration at near-cost pricing with no markup on renewal, plus DNS and security tooling." } },
-    { "slug": "ovh", "reason": { "en": "European registrar and hosting provider with comparable domain/hosting bundle." } }
+    { "slug": "cloudflare", "reason": { "en": "Domain registration at near-cost pricing with no markup on renewal, plus DNS and security tooling.", "fr": "Enregistrement de domaine à prix proche du coût, sans majoration au renouvellement, avec en plus des outils DNS et sécurité." } },
+    { "slug": "ovh", "reason": { "en": "European registrar and hosting provider with comparable domain/hosting bundle.", "fr": "Registrar et hébergeur européen avec une offre domaine/hébergement comparable." } }
   ],
   "missingAlternatives": [
     { "name": "Gandi", "officialUrl": "https://www.gandi.net", "reason": "Domain registrar known for transparent, no-markup renewal pricing and strong support, not in the catalogue." },
     { "name": "GoDaddy", "officialUrl": "https://www.godaddy.com", "reason": "Largest global domain registrar and direct competitor, not in the catalogue." },
     { "name": "Porkbun", "officialUrl": "https://porkbun.com", "reason": "Popular low-cost registrar frequently compared to Namecheap, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The first-year price is genuinely cheap, but a 30-50% renewal increase plus the mandatory ICANN fee erodes the value once you look past year one.", "fr": "Le prix de la première année est vraiment bas, mais une hausse de 30 à 50 % au renouvellement, plus les frais ICANN obligatoires, réduisent l'intérêt une fois passée la première année.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Neutral score: how long domain registration or hosting setup takes for a first-time user is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour enregistrer un domaine ou configurer l'hébergement pour un nouvel utilisateur ne figure pas dans les sources relevées.", "sourceIds": ["s3"] },
+      "utilisation": { "en": "Domain registration, transfer and free WHOIS privacy work as advertised across hundreds of TLDs.", "fr": "L'enregistrement, le transfert et la protection WHOIS gratuite fonctionnent comme annoncé sur des centaines d'extensions.", "sourceIds": ["s2", "s3"] },
+      "puissance": { "en": "Covers domains, hosting, SSL and email in one place, but the sources don't show advanced DNS, security or automation tooling comparable to a specialized provider.", "fr": "Couvre domaines, hébergement, SSL et email au même endroit, mais les sources ne montrent pas d'outils DNS, sécurité ou automatisation avancés comparables à un fournisseur spécialisé.", "sourceIds": ["s1", "s3"] },
+      "reversibilite": { "en": "Neutral score: the ease of transferring a domain or hosted data out to another registrar is not detailed in the collected sources.", "fr": "Note neutre : la facilité de transférer un domaine ou des données hébergées vers un autre registrar n'est pas détaillée dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Domain registrar", "fr": "Registrar de domaines" },
+    "shortDescription": { "en": "Namecheap is a domain registrar with bundled hosting, SSL and email options, known for low first-year domain prices that rise at renewal.", "fr": "Namecheap est un registrar de domaines avec des options d'hébergement, SSL et email, connu pour des prix bas la première année qui augmentent au renouvellement." },
+    "longDescription": {
+      "en": "Namecheap covers domain registration and transfer across hundreds of TLDs with free WHOIS privacy on most, and bundles hosting (shared, VPS, dedicated), SSL certificates and Private Email around the domain so a small business can run everything with one provider.\n\nA .com domain starts around $9.58 for the first year, but renewal is typically 30-50% higher, plus a small mandatory ICANN fee, so the real annual cost only shows up after year one. There's no free tier for any product, and support is mostly self-service through the knowledge base and ticketing rather than phone-first.",
+      "fr": "Namecheap couvre l'enregistrement et le transfert de domaines sur des centaines d'extensions, avec une protection WHOIS gratuite sur la plupart, et propose autour du domaine de l'hébergement (mutualisé, VPS, dédié), des certificats SSL et Private Email pour centraliser une petite activité chez un seul prestataire.\n\nUn domaine .com démarre autour de 9,58 $ la première année, mais le renouvellement coûte en général 30 à 50 % de plus, avec en plus de petits frais ICANN obligatoires, donc le vrai coût annuel n'apparaît qu'après la première année. Aucun produit n'a d'offre gratuite, et le support passe surtout par la base de connaissances et les tickets plutôt que par le téléphone en priorité."
+    },
+    "pros": [
+      { "en": "Low first-year introductory price on domains, with free WHOIS privacy included on most TLDs.", "fr": "Prix d'appel bas la première année sur les domaines, avec la protection WHOIS gratuite incluse sur la plupart des extensions." },
+      { "en": "Domain, hosting, SSL and email are bundled with one provider, useful for a small business that wants a single account.", "fr": "Domaine, hébergement, SSL et email sont regroupés chez un seul prestataire, utile pour une petite activité qui veut un seul compte." }
+    ],
+    "cons": [
+      { "en": "Renewal prices jump 30-50% above the first-year rate, so the advertised low price only applies once.", "fr": "Les prix de renouvellement grimpent de 30 à 50 % au-dessus du tarif de première année, donc le prix bas annoncé ne s'applique qu'une fois." },
+      { "en": "Support is mostly self-service via knowledge base and tickets, without a phone-first option.", "fr": "Le support passe surtout par la base de connaissances et les tickets, sans option téléphonique prioritaire." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a low entry price to register a domain now and you're prepared for the renewal price to rise the following year.", "fr": "Tu veux un prix d'entrée bas pour enregistrer un domaine maintenant et tu es prêt à voir le prix de renouvellement augmenter l'année suivante." },
+      "avoidIf": { "en": "You want the same predictable price every year; a near-cost registrar with no renewal markup will suit you better.", "fr": "Tu veux le même prix prévisible chaque année ; un registrar au prix proche du coût, sans majoration au renouvellement, te conviendra mieux." },
+      "threshold": { "en": "Budget for roughly $14-19/year from year two onward on a .com, not the ~$9.58 first-year price, plus the small mandatory ICANN fee.", "fr": "Prévois un budget d'environ 14-19 $/an dès la deuxième année pour un .com, pas le prix d'appel de ~9,58 $, plus les petits frais ICANN obligatoires." },
+      "billingTraps": { "en": "The advertised price is a first-year-only introductory rate; renewal resets to a higher price automatically unless you cancel before the renewal date.", "fr": "Le prix affiché n'est valable que la première année ; le renouvellement repasse automatiquement à un tarif plus élevé si tu n'annules pas avant la date de renouvellement." }
+    }
+  },
   "unknowns": [
     "Could not access namecheap.com directly in this session (HTTP 403 on all attempted URLs); exact current .com registration/renewal prices, hosting plan prices, and email plan prices are sourced from third-party trackers (2026) and should be reverified against the official pricing page before publishing.",
     "taxIncluded status not confirmed from an official source."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The catalogue's alternativeCandidates for namecheap are file-storage tools (Google Drive, WeTransfer, Cloudinary...) because the tool is miscategorized under \"storage\" instead of a domains/hosting category; only cloudflare and ovh from the existing alternatives field were usable, so alternatives stayed at 2 instead of the tier A target of 3-6. Worth fixing the category and/or adding Gandi, GoDaddy or Porkbun to the catalogue."
+  ]
 }

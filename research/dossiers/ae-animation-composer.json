@@ -3,7 +3,8 @@
   "slug": "ae-animation-composer",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Animation Composer",
     "vendor": "Mister Horse",
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Over 1,000 assets and 4 time-saving tools included; personal library capped (up to 500 items per prior seed data)." }],
+        "keyLimits": [{ "en": "Over 1,000 assets and 4 time-saving tools included; personal library capped (up to 500 items per prior seed data).", "fr": "Plus de 1 000 assets et 4 outils gain de temps inclus ; bibliothèque personnelle plafonnée (jusqu'à 500 éléments selon les données précédentes)." }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": 1,
         "price": { "monthly": 19.90, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Over 6,000 assets and the 4 time-saving tools, across both After Effects and Premiere Pro." }],
+        "keyLimits": [{ "en": "Over 6,000 assets and the 4 time-saving tools, across both After Effects and Premiere Pro.", "fr": "Plus de 6 000 assets et les 4 outils gain de temps, sur After Effects et Premiere Pro." }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,27 +56,27 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 16.50, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Over 6,000 assets and the 4 time-saving tools; billed yearly at $198, saving $40 versus paying monthly." }],
+        "keyLimits": [{ "en": "Over 6,000 assets and the 4 time-saving tools; billed yearly at $198, saving $40 versus paying monthly.", "fr": "Plus de 6 000 assets et les 4 outils gain de temps ; facturé 198 $/an, soit 40 $ d'économie par rapport au paiement mensuel." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "subscription-annual",
     "addOns": [],
     "cautions": [
-      { "en": "Prorated charges apply when adding new team members to a subscription account, so team cost scales beyond the listed single-account price.", "sourceIds": ["s1"] },
-      { "en": "Owners of previous perpetual licenses may see different, discounted upgrade pricing only visible after logging in, not shown on the public pricing page.", "sourceIds": ["s1"] }
+      { "en": "Prorated charges apply when adding new team members to a subscription account, so team cost scales beyond the listed single-account price.", "fr": "Des frais au prorata s'appliquent lors de l'ajout de nouveaux membres à un compte abonnement, donc le coût d'équipe dépasse le prix indiqué pour un seul compte.", "sourceIds": ["s1"] },
+      { "en": "Owners of previous perpetual licenses may see different, discounted upgrade pricing only visible after logging in, not shown on the public pricing page.", "fr": "Les possesseurs d'anciennes licences perpétuelles peuvent voir un tarif de mise à niveau différent et réduit, visible seulement après connexion, non affiché sur la page tarifs publique.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Provides a large, browsable library of pre-built animation presets and reusable components for After Effects (6,000+ assets on paid plan).", "sourceIds": ["s1"] },
-      { "en": "Works across both Adobe After Effects and Premiere Pro under one unified subscription.", "sourceIds": ["s1", "s2"] },
-      { "en": "Includes 4 dedicated time-saving tools bundled with both the free and paid tiers.", "sourceIds": ["s1"] }
+      { "en": "Provides a large, browsable library of pre-built animation presets and reusable components for After Effects (6,000+ assets on paid plan).", "fr": "Fournit une large bibliothèque d'animations prêtes à l'emploi et de composants réutilisables pour After Effects (6 000+ assets sur le plan payant).", "sourceIds": ["s1"] },
+      { "en": "Works across both Adobe After Effects and Premiere Pro under one unified subscription.", "fr": "Fonctionne à la fois dans Adobe After Effects et Premiere Pro avec un seul abonnement unifié.", "sourceIds": ["s1", "s2"] },
+      { "en": "Includes 4 dedicated time-saving tools bundled with both the free and paid tiers.", "fr": "Inclut 4 outils dédiés qui font gagner du temps, dans les deux paliers, gratuit et payant.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free tier caps the personal asset library and offers a much smaller preset library (1,000+ vs 6,000+ assets) than the paid subscription.", "sourceIds": ["s1"] },
-      { "en": "Requires Adobe After Effects and/or Premiere Pro as host applications; it is a plugin, not a standalone tool, so it adds to an existing Adobe Creative Cloud cost.", "sourceIds": ["s2"] },
-      { "en": "Team/multi-user usage incurs prorated per-member charges rather than a flat team price.", "sourceIds": ["s1"] }
+      { "en": "Free tier caps the personal asset library and offers a much smaller preset library (1,000+ vs 6,000+ assets) than the paid subscription.", "fr": "Le palier gratuit plafonne la bibliothèque personnelle d'assets et offre une bibliothèque de presets bien plus petite (1 000+ contre 6 000+ assets) que l'abonnement payant.", "sourceIds": ["s1"] },
+      { "en": "Requires Adobe After Effects and/or Premiere Pro as host applications; it is a plugin, not a standalone tool, so it adds to an existing Adobe Creative Cloud cost.", "fr": "Nécessite Adobe After Effects et/ou Premiere Pro comme application hôte ; c'est un plugin, pas un outil autonome, donc il s'ajoute au coût d'un abonnement Adobe Creative Cloud existant.", "sourceIds": ["s2"] },
+      { "en": "Team/multi-user usage incurs prorated per-member charges rather than a flat team price.", "fr": "L'usage en équipe/multi-utilisateurs entraîne des frais au prorata par membre plutôt qu'un tarif d'équipe fixe.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s2"] },
@@ -83,15 +84,61 @@
     ],
     "platforms": ["windows", "macos"]
   },
-  "audience": null,
-  "useCases": null,
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Video editors and motion designers who already work in After Effects or Premiere Pro and want ready-made animations instead of keyframing common motions from scratch.",
+      "fr": "Monteurs vidéo et motion designers qui travaillent déjà dans After Effects ou Premiere Pro et veulent des animations prêtes à l'emploi plutôt que de faire les keyframes courants à la main."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Speed up motion graphics: drag a preset animation from Animation Composer onto a layer in After Effects instead of keyframing from scratch.", "fr": "Accélérer le motion design : glisser un preset d'animation depuis Animation Composer sur un calque dans After Effects plutôt que de faire les keyframes à la main." },
+    { "en": "Reuse animations across projects: save custom animations to your personal library so they are available in Premiere Pro through the same subscription.", "fr": "Réutiliser des animations d'un projet à l'autre : enregistrer des animations personnalisées dans sa bibliothèque pour qu'elles soient disponibles dans Premiere Pro via le même abonnement." }
+  ],
   "alternatives": [
-    { "slug": "motion-bro", "reason": { "en": "Direct competitor plugin offering a similar preset/asset library and animation tools for After Effects." } },
-    { "slug": "ae-red-giant", "reason": { "en": "Alternative plugin suite for After Effects and Premiere Pro adding effects and animation tools, overlapping in target workflow." } }
+    { "slug": "motion-bro", "reason": { "en": "Direct competitor plugin offering a similar preset/asset library and animation tools for After Effects.", "fr": "Plugin concurrent direct offrant une bibliothèque de presets/assets et des outils d'animation similaires pour After Effects." } },
+    { "slug": "ae-red-giant", "reason": { "en": "Alternative plugin suite for After Effects and Premiere Pro adding effects and animation tools, overlapping in target workflow.", "fr": "Suite de plugins alternative pour After Effects et Premiere Pro ajoutant effets et outils d'animation, avec un workflow cible qui se recoupe." } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The $16.50/month annual subscription unlocks 6,000+ assets across two host apps, but it is an add-on cost on top of an already-paid After Effects or Premiere Pro license rather than a standalone replacement.", "fr": "L'abonnement annuel à 16,50 $/mois débloque plus de 6 000 assets sur deux applications hôtes, mais c'est un coût supplémentaire par-dessus une licence After Effects ou Premiere Pro déjà payante, pas un remplacement autonome.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "The library is described as browsable, with presets and reusable components directly usable in the host app, matching a quick drag-and-drop first result.", "fr": "La bibliothèque est décrite comme parcourable, avec des presets et composants réutilisables directement utilisables dans l'application hôte, correspondant à un premier résultat rapide en glisser-déposer.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The preset library and 4 time-saving tools work natively inside After Effects and Premiere Pro as described, matching the plugin's core promise without a third-party tool mentioned.", "fr": "La bibliothèque de presets et les 4 outils gain de temps fonctionnent nativement dans After Effects et Premiere Pro comme décrit, ce qui tient la promesse du plugin sans outil tiers mentionné.", "sourceIds": ["s1", "s2"] },
+      "puissance": { "en": "The catalogue covers animation presets and reusable components at a large scale (6,000+ assets), but it is scoped to animation presets rather than a broader creative toolset.", "fr": "Le catalogue couvre des presets d'animation et composants réutilisables à grande échelle (6 000+ assets), mais reste centré sur les presets d'animation plutôt qu'un ensemble d'outils créatifs plus large.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: what happens to saved custom animations or the personal library after cancelling is not covered by the collected sources.", "fr": "Note neutre : ce qu'il advient des animations personnalisées enregistrées ou de la bibliothèque personnelle après résiliation ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AE animation presets", "fr": "Presets d'animation AE" },
+    "shortDescription": { "en": "Animation Composer is a Mister Horse plugin for After Effects and Premiere Pro that provides a browsable library of animation presets, free with 1,000+ assets or $16.50/month (annual) for 6,000+.", "fr": "Animation Composer est un plugin Mister Horse pour After Effects et Premiere Pro qui fournit une bibliothèque d'animations prêtes à l'emploi, gratuite avec plus de 1 000 assets ou à 16,50 $/mois (annuel) pour plus de 6 000." },
+    "longDescription": {
+      "en": "Animation Composer adds a browsable library of pre-built animation presets and reusable components inside Adobe After Effects, and the same subscription works in Premiere Pro (where the product has been renamed Premiere Composer on that side). Four dedicated time-saving tools come with both the free and paid tiers.\n\nThe free tier includes over 1,000 assets. The Mister Horse Subscription unlocks over 6,000 assets across both apps for $19.90/month, or $16.50/month billed annually ($198/year, a $40 saving versus paying monthly). Adding team members incurs prorated charges rather than a flat team price, and owners of old perpetual licenses may see discounted upgrade pricing only visible after logging in.",
+      "fr": "Animation Composer ajoute une bibliothèque d'animations prêtes à l'emploi et de composants réutilisables dans Adobe After Effects, et le même abonnement fonctionne dans Premiere Pro (où le produit a été renommé Premiere Composer de ce côté). Quatre outils dédiés qui font gagner du temps sont inclus dans les deux paliers, gratuit et payant.\n\nLe palier gratuit inclut plus de 1 000 assets. Le Mister Horse Subscription débloque plus de 6 000 assets sur les deux applications pour 19,90 $/mois, ou 16,50 $/mois facturé annuellement (198 $/an, soit 40 $ d'économie par rapport au paiement mensuel). Ajouter des membres à l'équipe entraîne des frais au prorata plutôt qu'un tarif d'équipe fixe, et les possesseurs d'anciennes licences perpétuelles peuvent voir un tarif de mise à niveau réduit, visible seulement après connexion."
+    },
+    "pros": [
+      { "en": "Works across both After Effects and Premiere Pro under one subscription instead of buying separate plugins for each.", "fr": "Fonctionne à la fois dans After Effects et Premiere Pro avec un seul abonnement, au lieu d'acheter des plugins séparés pour chacun." },
+      { "en": "The free tier already includes over 1,000 assets, enough to try the workflow before paying.", "fr": "Le palier gratuit inclut déjà plus de 1 000 assets, assez pour tester le workflow avant de payer." }
+    ],
+    "cons": [
+      { "en": "It is a plugin, not a standalone tool, so it adds to an existing Adobe Creative Cloud subscription cost rather than replacing it.", "fr": "C'est un plugin, pas un outil autonome, donc il s'ajoute au coût d'un abonnement Adobe Creative Cloud existant plutôt que de le remplacer." },
+      { "en": "Adding a team member is billed pro-rata rather than at a flat per-seat rate, so team cost is not a simple multiple of the individual price.", "fr": "Ajouter un membre d'équipe est facturé au prorata plutôt qu'à un tarif fixe par siège, donc le coût d'équipe n'est pas un simple multiple du prix individuel." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already work in After Effects or Premiere Pro and want a large, ready-made animation preset library instead of keyframing common motions by hand.", "fr": "Tu travailles déjà dans After Effects ou Premiere Pro et tu veux une large bibliothèque de presets d'animation prête à l'emploi plutôt que de faire les keyframes courants à la main." },
+      "avoidIf": { "en": "You do not use After Effects or Premiere Pro, since Animation Composer only works as a plugin inside those two apps.", "fr": "Tu n'utilises ni After Effects ni Premiere Pro, car Animation Composer ne fonctionne qu'en plugin dans ces deux applications." },
+      "threshold": { "en": "Worth the $16.50/month annual subscription (about $198/year) once the larger 6,000+ asset library and the 4 time-saving tools save more editing time than the free tier's 1,000+ assets already cover.", "fr": "L'abonnement annuel à 16,50 $/mois (environ 198 $/an) vaut le coût dès que la bibliothèque plus large de 6 000+ assets et les 4 outils gain de temps font gagner plus de temps de montage que ce que couvre déjà le palier gratuit avec 1 000+ assets." },
+      "billingTraps": { "en": "Adding team members is prorated rather than billed at a flat per-seat fee, and prior perpetual-license owners may see different upgrade pricing only visible after logging in, not shown on the public pricing page.", "fr": "Ajouter des membres d'équipe est facturé au prorata plutôt qu'à un tarif fixe par siège, et les anciens possesseurs de licence perpétuelle peuvent voir un tarif de mise à niveau différent, visible seulement après connexion, non affiché sur la page tarifs publique." }
+    }
+  },
   "unknowns": [
     "Exact platform compatibility (Windows/macOS) was not explicitly confirmed on the pages read; inferred from standard Adobe host app support.",
     "No explicit trial period is stated beyond the existence of a free tier; the product page mentions a 'free trial access... through their product manager' without further detail.",
@@ -99,5 +146,8 @@
   ],
   "conflicts": [
     { "en": "Seed data describes the free tier limit as 'up to 500 items in personal library', while the live pricing page states the free plan includes 'over 1,000 assets'. These may refer to different things (personal saved library vs. total browsable preset count) but could not be reconciled from the pages read.", "sourceIds": ["s1"] }
+  ],
+  "reviewNotes": [
+    "The free-tier limit conflicts between sources: seed data says 'up to 500 items in personal library' while the live pricing page states 'over 1,000 assets'. These may describe different things (personal saved library vs. total browsable preset count); reconcile on misterhorse.com/pricing before publishing the free-plan limit."
   ]
 }

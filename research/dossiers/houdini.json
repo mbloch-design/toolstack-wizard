@@ -3,7 +3,8 @@
   "slug": "houdini",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Houdini",
     "vendor": "SideFX",
@@ -36,7 +37,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free, non-commercial use only; renders carry a watermark; access to nearly all Houdini FX features.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Free, non-commercial use only; renders carry a watermark; access to nearly all Houdini FX features.", "fr": "Gratuit, usage non commercial uniquement ; les rendus portent un filigrane ; accès à presque toutes les fonctions de Houdini FX.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -47,9 +48,9 @@
         "price": { "monthly": null, "annualPerMonth": 24.92, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Annual license priced at $299/year (or $449 for a 2-year term); limited to 3 licenses per commercial entity.", "sourceIds": ["s2"] },
-          { "en": "Only for commercial/contracting entities with annual gross revenue under $100,000 USD and under $1,000,000 USD in total funding raised in the last 24 months.", "sourceIds": ["s2"] },
-          { "en": "Includes Houdini Engine Indie and SideFX Labs production tools at no extra cost.", "sourceIds": ["s2"] }
+          { "en": "Annual license priced at $299/year (or $449 for a 2-year term); limited to 3 licenses per commercial entity.", "fr": "Licence annuelle à 299 $/an (ou 449 $ pour un engagement de 2 ans) ; limitée à 3 licences par entité commerciale.", "sourceIds": ["s2"] },
+          { "en": "Only for commercial/contracting entities with annual gross revenue under $100,000 USD and under $1,000,000 USD in total funding raised in the last 24 months.", "fr": "Réservé aux entités commerciales ou prestataires dont le revenu brut annuel est inférieur à 100 000 $ et les fonds levés sur 24 mois inférieurs à 1 000 000 $.", "sourceIds": ["s2"] },
+          { "en": "Includes Houdini Engine Indie and SideFX Labs production tools at no extra cost.", "fr": "Inclut Houdini Engine Indie et les outils de production SideFX Labs sans coût supplémentaire.", "sourceIds": ["s2"] }
         ],
         "sourceIds": ["s2"]
       },
@@ -60,7 +61,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "No public price shown on the Houdini Core product page; purchase/licensing requires going through the Buy flow or contacting SideFX. Limited to 5 workstation licenses per studio.", "sourceIds": ["s1", "s3"] }],
+        "keyLimits": [{ "en": "No public price shown on the Houdini Core product page; purchase/licensing requires going through the Buy flow or contacting SideFX. Limited to 5 workstation licenses per studio.", "fr": "Aucun prix public affiché sur la page produit de Houdini Core ; l'achat ou la licence nécessite de passer par le parcours d'achat ou de contacter SideFX. Limité à 5 licences poste par studio.", "sourceIds": ["s1", "s3"] }],
         "sourceIds": ["s1", "s3"]
       },
       {
@@ -70,26 +71,26 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Full VFX and animation capabilities; no public price shown on the fetched pages; limited to 5 workstation licenses per studio.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Full VFX and animation capabilities; no public price shown on the fetched pages; limited to 5 workstation licenses per studio.", "fr": "Fonctionnalités complètes de VFX et d'animation ; aucun prix public affiché sur les pages consultées ; limité à 5 licences poste par studio.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "indie",
     "addOns": [],
     "cautions": [
-      { "en": "Houdini Indie is only available to entities under $100K annual revenue and under $1M total funding raised; a growing studio will eventually need to move to Core or FX at unpublished, higher prices.", "sourceIds": ["s2"] }
+      { "en": "Houdini Indie is only available to entities under $100K annual revenue and under $1M total funding raised; a growing studio will eventually need to move to Core or FX at unpublished, higher prices.", "fr": "Houdini Indie n'est accessible qu'aux entités sous 100 000 $ de revenu annuel et sous 1 000 000 $ de fonds levés au total ; un studio en croissance devra à terme passer à Core ou FX, à des prix non publiés et plus élevés.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Procedural modeling, rigging and animation workflows built around a node-based system.", "sourceIds": ["s2"] },
-      { "en": "VFX simulation tools for particles, dynamics, fluids and terrain generation.", "sourceIds": ["s2"] },
-      { "en": "Built-in Karma XPU renderer plus support for third-party renderers including RenderMan, Arnold, Redshift, V-Ray, 3Delight and OctaneRender.", "sourceIds": ["s2"] },
-      { "en": "Houdini Engine plugin for integrating Houdini's procedural assets into other DCC and game-engine pipelines.", "sourceIds": ["s2"] }
+      { "en": "Procedural modeling, rigging and animation workflows built around a node-based system.", "fr": "Flux de travail de modélisation, rigging et animation procéduraux construits autour d'un système à base de nœuds.", "sourceIds": ["s2"] },
+      { "en": "VFX simulation tools for particles, dynamics, fluids and terrain generation.", "fr": "Outils de simulation VFX pour les particules, la dynamique, les fluides et la génération de terrain.", "sourceIds": ["s2"] },
+      { "en": "Built-in Karma XPU renderer plus support for third-party renderers including RenderMan, Arnold, Redshift, V-Ray, 3Delight and OctaneRender.", "fr": "Moteur de rendu Karma XPU intégré, avec prise en charge de moteurs tiers dont RenderMan, Arnold, Redshift, V-Ray, 3Delight et OctaneRender.", "sourceIds": ["s2"] },
+      { "en": "Houdini Engine plugin for integrating Houdini's procedural assets into other DCC and game-engine pipelines.", "fr": "Plugin Houdini Engine pour intégrer les assets procéduraux de Houdini dans d'autres pipelines DCC et moteurs de jeu.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Free Apprentice tier is strictly non-commercial and watermarks all renders.", "sourceIds": ["s1"] },
-      { "en": "Indie tier is gated by revenue and funding caps, and capped at 3 licenses per studio.", "sourceIds": ["s2"] }
+      { "en": "Free Apprentice tier is strictly non-commercial and watermarks all renders.", "fr": "L'offre gratuite Apprentice est strictement non commerciale et filigrane tous les rendus.", "sourceIds": ["s1"] },
+      { "en": "Indie tier is gated by revenue and funding caps, and capped at 3 licenses per studio.", "fr": "L'offre Indie est conditionnée à des plafonds de revenu et de fonds levés, et limitée à 3 licences par studio.", "sourceIds": ["s2"] }
     ],
     "integrations": [
       { "name": "RenderMan", "slug": null, "sourceIds": ["s2"] },
@@ -99,19 +100,63 @@
     ],
     "platforms": ["windows", "macos", "linux"]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "An independent VFX artist or small studio producing procedural 3D content or simulations who doesn't yet need the unpublished Core/FX studio pricing.", "fr": "Un artiste VFX indépendant ou un petit studio qui produit du contenu 3D procédural ou des simulations, sans encore avoir besoin des tarifs studio Core/FX non publiés." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Procedural environment: build a procedurally generated terrain or environment asset for a game or film shot.", "fr": "Environnement procédural : construire un terrain ou un décor généré de façon procédurale pour un jeu ou un plan de film." },
+    { "en": "VFX simulation: simulate a fluid, particle or dynamics effect for a short film and render it with a supported third-party renderer like Redshift or Arnold.", "fr": "Simulation VFX : simuler un effet de fluide, de particules ou de dynamique pour un court métrage et le rendre avec un moteur tiers pris en charge comme Redshift ou Arnold." }
+  ],
   "alternatives": [
-    { "slug": "blender", "reason": { "en": "Free, open-source 3D suite covering modeling, simulation and rendering, the main lower-cost alternative to Houdini for procedural and VFX work." } },
-    { "slug": "cinema-4d", "reason": { "en": "Competing 3D/motion graphics application with its own procedural and simulation toolset." } },
-    { "slug": "maya", "reason": { "en": "Industry-standard 3D animation and VFX package that overlaps with Houdini in film and game production pipelines." } }
+    { "slug": "blender", "reason": { "en": "Free, open-source 3D suite covering modeling, simulation and rendering, the main lower-cost alternative to Houdini for procedural and VFX work.", "fr": "Suite 3D gratuite et open source couvrant modélisation, simulation et rendu, la principale alternative moins chère à Houdini pour le travail procédural et VFX." } },
+    { "slug": "cinema-4d", "reason": { "en": "Competing 3D/motion graphics application with its own procedural and simulation toolset.", "fr": "Application 3D et motion design concurrente, avec son propre jeu d'outils procéduraux et de simulation." } },
+    { "slug": "maya", "reason": { "en": "Industry-standard 3D animation and VFX package that overlaps with Houdini in film and game production pipelines.", "fr": "Suite 3D d'animation et VFX de référence dans l'industrie, qui recoupe Houdini dans les pipelines de production film et jeu vidéo." } }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "Indie at $299/year gives near-full Houdini FX capability (including Houdini Engine Indie and SideFX Labs tools) to an eligible small studio, and Apprentice is free for learning, which is strong value for the price shown.", "fr": "Indie à 299 $/an donne des capacités quasi complètes de Houdini FX (avec Houdini Engine Indie et les outils SideFX Labs inclus) à un petit studio éligible, et Apprentice est gratuit pour apprendre, ce qui représente une bonne valeur au prix affiché.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "The product is built around a node-based procedural system for modeling, simulation and rendering, a workflow the sources describe as a dedicated production toolset rather than one designed for a quick first result.", "fr": "L'outil repose sur un système procédural à base de nœuds pour la modélisation, la simulation et le rendu, un flux de travail que les sources décrivent comme un outil de production dédié plutôt que pensé pour un premier résultat rapide.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Procedural modeling, VFX simulation and rendering work as described, backed by a built-in renderer plus support for major third-party renderers.", "fr": "La modélisation procédurale, la simulation VFX et le rendu fonctionnent comme décrit, avec un moteur de rendu intégré et la prise en charge des principaux moteurs tiers.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Node-based procedural modeling, full VFX simulation (particles, dynamics, fluids, terrain), a built-in renderer, support for six major third-party renderers, and a pipeline-integration engine together place it at the top of the category.", "fr": "Modélisation procédurale à base de nœuds, simulation VFX complète (particules, dynamique, fluides, terrain), moteur de rendu intégré, prise en charge de six moteurs tiers majeurs et moteur d'intégration pipeline en font une référence du haut de la catégorie.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Houdini Engine lets procedural assets built in Houdini be exported into other DCC applications and game engines, so work isn't fully locked into one tool.", "fr": "Houdini Engine permet d'exporter des assets procéduraux créés dans Houdini vers d'autres applications DCC et moteurs de jeu, donc le travail n'est pas totalement enfermé dans un seul outil.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Procedural 3D and VFX", "fr": "3D procédurale et VFX" },
+    "shortDescription": { "en": "Houdini is a node-based procedural 3D and VFX application, free for non-commercial use and $299/year for eligible small studios via the Indie tier.", "fr": "Houdini est une application 3D et VFX procédurale à nœuds, gratuite en usage non commercial et à 299 $/an via l'offre Indie." },
+    "longDescription": {
+      "en": "Houdini builds 3D content procedurally through a node-based system covering modeling, rigging, animation and VFX simulation (particles, dynamics, fluids, terrain). It ships a built-in Karma XPU renderer and supports major third-party renderers (RenderMan, Arnold, Redshift, V-Ray, 3Delight, OctaneRender), and Houdini Engine can push procedural assets into other DCC tools and game engines.\n\nHoudini Apprentice is free for non-commercial use with watermarked renders. Houdini Indie is $299/year (or $449 for two years) for commercial entities under $100,000 in annual revenue and under $1,000,000 in funding raised, capped at 3 licenses. Studios that outgrow those caps move to Core or Houdini FX, whose prices aren't published and require going through SideFX directly.",
+      "fr": "Houdini construit du contenu 3D de façon procédurale via un système à base de nœuds couvrant modélisation, rigging, animation et simulation VFX (particules, dynamique, fluides, terrain). L'outil embarque un moteur de rendu Karma XPU et prend en charge les principaux moteurs tiers (RenderMan, Arnold, Redshift, V-Ray, 3Delight, OctaneRender), et Houdini Engine peut exporter les assets procéduraux vers d'autres outils DCC et moteurs de jeu.\n\nHoudini Apprentice est gratuit pour un usage non commercial, avec des rendus filigranés. Houdini Indie coûte 299 $/an (ou 449 $ pour deux ans) pour les entités commerciales sous 100 000 $ de revenu annuel et sous 1 000 000 $ de fonds levés, avec un plafond de 3 licences. Les studios qui dépassent ces plafonds passent à Core ou Houdini FX, dont les prix ne sont pas publiés et nécessitent de contacter SideFX directement."
+    },
+    "pros": [
+      { "en": "Houdini Indie gives near-full Houdini FX capability at $299/year for an eligible small studio, well below unpublished Core/FX studio pricing.", "fr": "Houdini Indie donne des capacités quasi complètes de Houdini FX à 299 $/an pour un petit studio éligible, bien en dessous des tarifs studio non publiés de Core/FX." },
+      { "en": "Support for six major third-party renderers plus Houdini Engine means work isn't locked into a single rendering or pipeline path.", "fr": "La prise en charge de six moteurs de rendu tiers majeurs, plus Houdini Engine, évite d'être enfermé dans un seul chemin de rendu ou de pipeline." }
+    ],
+    "cons": [
+      { "en": "The node-based procedural workflow is built for dedicated VFX production, not a quick first result for a newcomer.", "fr": "Le flux de travail procédural à base de nœuds est conçu pour de la production VFX dédiée, pas pour un premier résultat rapide quand on débute." },
+      { "en": "Once a studio exceeds the Indie revenue or funding caps, it must move to Core or FX at prices that aren't published anywhere.", "fr": "Dès qu'un studio dépasse les plafonds de revenu ou de fonds levés d'Indie, il doit passer à Core ou FX, à des prix non publiés nulle part." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're an independent artist or small studio under the Indie revenue and funding caps who wants near-full VFX simulation and rendering capability.", "fr": "Tu es un artiste indépendant ou un petit studio sous les plafonds de revenu et de fonds levés d'Indie, et tu veux des capacités de simulation et de rendu VFX quasi complètes." },
+      "avoidIf": { "en": "Your studio already exceeds $100,000 in annual revenue or $1,000,000 in funding raised; you'll need to contact SideFX for Core or FX pricing before committing.", "fr": "Ton studio dépasse déjà 100 000 $ de revenu annuel ou 1 000 000 $ de fonds levés ; il te faudra contacter SideFX pour connaître le prix de Core ou FX avant de t'engager." },
+      "threshold": { "en": "Start on the free Apprentice tier to learn the node-based workflow, then move to Indie at $299/year once you need commercial, unwatermarked output and stay under its revenue and funding caps.", "fr": "Commence par l'offre gratuite Apprentice pour apprendre le flux à base de nœuds, puis passe à Indie à 299 $/an dès que tu as besoin d'un rendu commercial sans filigrane, tant que tu restes sous ses plafonds de revenu et de fonds levés." },
+      "billingTraps": { "en": "Indie eligibility is capped at $100,000 annual revenue and $1,000,000 total funding raised; exceeding either forces a move to Core or FX at prices SideFX doesn't publish.", "fr": "L'éligibilité à Indie est plafonnée à 100 000 $ de revenu annuel et 1 000 000 $ de fonds levés au total ; dépasser l'un ou l'autre oblige à passer à Core ou FX, à des prix que SideFX ne publie pas." }
+    }
+  },
   "unknowns": [
     "Public prices for Houdini Core and Houdini FX are not shown on their SideFX product pages or the Buy page as fetched; they require going through the interactive purchase flow or contacting SideFX directly.",
     "Whether Houdini Indie offers a free trial period was not stated on the fetched pages."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

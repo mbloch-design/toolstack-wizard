@@ -3,7 +3,8 @@
   "slug": "ahrefs",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Ahrefs",
     "vendor": "Ahrefs Pte. Ltd.",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Ahrefs Free gives basic access to site data (limited Site Explorer / Webmaster Tools features for verified site owners)." }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Ahrefs Free gives basic access to site data (limited Site Explorer / Webmaster Tools features for verified site owners).", "fr": "Ahrefs Free donne un accès de base aux données du site (fonctions limitées de Site Explorer / Webmaster Tools pour les propriétaires de site vérifiés)." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Limited Site Explorer / Webmaster Tools access for verified site owners; not a full SEO suite." }],
+        "keyLimits": [{ "en": "Limited Site Explorer / Webmaster Tools access for verified site owners; not a full SEO suite.", "fr": "Accès limité à Site Explorer / Webmaster Tools pour les propriétaires de site vérifiés ; ce n'est pas une suite SEO complète.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": 1,
         "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry-level plan focused on keyword/competitor lookups, no full project suite." }],
+        "keyLimits": [{ "en": "Entry-level plan focused on keyword/competitor lookups, no full project suite.", "fr": "Plan d'entrée centré sur les recherches ponctuelles de mots-clés et de concurrents, sans la suite complète de projets.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -56,7 +57,7 @@
         "price": { "monthly": 129, "annualPerMonth": 108, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "5 projects, 750 tracked keywords, 100,000 crawl credits, 1 user included (+2 extra seats at $40/mo each)." }
+          { "en": "5 projects, 750 tracked keywords, 100,000 crawl credits, 1 user included (+2 extra seats at $40/mo each).", "fr": "5 projets, 750 mots-clés suivis, 100 000 crédits d'exploration, 1 utilisateur inclus (+2 sièges supplémentaires à 40 $/mois chacun).", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -68,7 +69,7 @@
         "price": { "monthly": 249, "annualPerMonth": 208, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "20 projects, 2,000 tracked keywords, 500,000 crawl credits, 1 user included (+5 extra seats at $60/mo each)." }
+          { "en": "20 projects, 2,000 tracked keywords, 500,000 crawl credits, 1 user included (+5 extra seats at $60/mo each).", "fr": "20 projets, 2 000 mots-clés suivis, 500 000 crédits d'exploration, 1 utilisateur inclus (+5 sièges supplémentaires à 60 $/mois chacun).", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -80,7 +81,7 @@
         "price": { "monthly": 449, "annualPerMonth": 374, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "50 projects, 5,000 tracked keywords, 1,500,000 crawl credits, 1 user included (+10 extra seats at $80/mo each)." }
+          { "en": "50 projects, 5,000 tracked keywords, 1,500,000 crawl credits, 1 user included (+10 extra seats at $80/mo each).", "fr": "50 projets, 5 000 mots-clés suivis, 1 500 000 crédits d'exploration, 1 utilisateur inclus (+10 sièges supplémentaires à 80 $/mois chacun).", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -92,7 +93,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Custom limits, uncapped API access, SSO, unlimited historical data; requires annual commitment; list price around $1,499/mo billed annually." }
+          { "en": "Custom limits, uncapped API access, SSO, unlimited historical data; requires annual commitment; list price around $1,499/mo billed annually.", "fr": "Limites personnalisées, accès API illimité, SSO, historique de données illimité ; engagement annuel requis ; prix affiché autour de 1 499 $/mois facturé annuellement.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       }
@@ -104,20 +105,20 @@
       { "name": "Custom Prompt Packages", "unit": "account", "note": { "en": "Basic $50/mo (+2,500 checks), Growth $100/mo (+7,000 checks), Scale $250/mo (+25,000 checks)." }, "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Starter ($29/mo) is a limited lookup tool, not a full SEO suite; the first plan with projects, rank tracking and site audit together is Lite at $129/mo ($108/mo annual).", "sourceIds": ["s1"] },
-      { "en": "Enterprise pricing requires an annual commitment despite being listed as a monthly figure.", "sourceIds": ["s1"] }
+      { "en": "Starter ($29/mo) is a limited lookup tool, not a full SEO suite; the first plan with projects, rank tracking and site audit together is Lite at $129/mo ($108/mo annual).", "fr": "Starter (29 $/mois) est un outil de recherche ponctuelle limité, pas une suite SEO complète ; le premier plan avec projets, suivi de classement et audit de site réunis est Lite à 129 $/mois (108 $/mois en annuel).", "sourceIds": ["s1"] },
+      { "en": "Enterprise pricing requires an annual commitment despite being listed as a monthly figure.", "fr": "Le tarif Enterprise nécessite un engagement annuel malgré un affichage sous forme de montant mensuel.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Site Explorer for competitor backlink and traffic analysis, backed by a stated 170 trillion-page web index.", "sourceIds": ["s2"] },
-      { "en": "Keywords Explorer, Rank Tracker and Site Audit covering keyword research, SERP monitoring and technical SEO.", "sourceIds": ["s2"] },
-      { "en": "AI Content Helper, Content Explorer and an 'Ask Ahrefs' AI assistant for content and data analysis.", "sourceIds": ["s2"] },
-      { "en": "Brand Radar for tracking brand visibility in AI search results (ChatGPT, etc.), plus Web Analytics and Bot Analytics.", "sourceIds": ["s2"] }
+      { "en": "Site Explorer for competitor backlink and traffic analysis, backed by a stated 170 trillion-page web index.", "fr": "Site Explorer pour analyser les backlinks et le trafic des concurrents, appuyé sur un index web annoncé à 170 000 milliards de pages.", "sourceIds": ["s2"] },
+      { "en": "Keywords Explorer, Rank Tracker and Site Audit covering keyword research, SERP monitoring and technical SEO.", "fr": "Keywords Explorer, Rank Tracker et Site Audit couvrant la recherche de mots-clés, le suivi des SERP et le SEO technique.", "sourceIds": ["s2"] },
+      { "en": "AI Content Helper, Content Explorer and an 'Ask Ahrefs' AI assistant for content and data analysis.", "fr": "AI Content Helper, Content Explorer et un assistant IA « Ask Ahrefs » pour l'analyse de contenu et de données.", "sourceIds": ["s2"] },
+      { "en": "Brand Radar for tracking brand visibility in AI search results (ChatGPT, etc.), plus Web Analytics and Bot Analytics.", "fr": "Brand Radar pour suivre la visibilité de la marque dans les résultats de recherche IA (ChatGPT, etc.), plus Web Analytics et Bot Analytics.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "No permanent full-featured free plan; free access is limited to basic Webmaster Tools for verified site owners.", "sourceIds": ["s1"] },
-      { "en": "Crawl credits, tracked keywords and project counts are capped per plan and consumed by usage, so heavy audits or large keyword sets require upgrading.", "sourceIds": ["s1"] }
+      { "en": "No permanent full-featured free plan; free access is limited to basic Webmaster Tools for verified site owners.", "fr": "Aucune offre gratuite complète permanente ; l'accès gratuit se limite aux fonctions de base de Webmaster Tools pour les propriétaires de site vérifiés.", "sourceIds": ["s1"] },
+      { "en": "Crawl credits, tracked keywords and project counts are capped per plan and consumed by usage, so heavy audits or large keyword sets require upgrading.", "fr": "Les crédits d'exploration, les mots-clés suivis et le nombre de projets sont plafonnés par plan et consommés à l'usage, donc des audits lourds ou de gros volumes de mots-clés obligent à monter de gamme.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Google Search Console", "slug": "google-search-console", "sourceIds": ["s2"] },
@@ -125,16 +126,67 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A marketing or SEO consultant who runs audits, tracks rankings and researches keywords across several client sites.", "fr": "Un consultant marketing ou SEO qui réalise des audits, suit des classements et recherche des mots-clés sur plusieurs sites clients." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Client audit: run a Site Audit and Site Explorer backlink review before a new SEO engagement.", "fr": "Audit client : lancer un Site Audit et une analyse de backlinks avec Site Explorer avant une nouvelle mission SEO." },
+    { "en": "Content planning: use Keywords Explorer and Content Explorer to find keyword gaps and plan a content calendar.", "fr": "Planification de contenu : utiliser Keywords Explorer et Content Explorer pour trouver des opportunités de mots-clés et planifier un calendrier éditorial." }
+  ],
   "alternatives": [
-    { "slug": "semrush", "reason": { "en": "Closest direct competitor with a comparable all-in-one SEO suite and similarly tiered pricing." } }
+    { "slug": "semrush", "reason": { "en": "Closest direct competitor with a comparable all-in-one SEO suite and similarly tiered pricing.", "fr": "Concurrent direct le plus proche, avec une suite SEO tout-en-un comparable et une tarification par paliers similaire." } },
+    { "slug": "google-search-console", "reason": { "en": "Free alternative for basic keyword and ranking data when a paid full SEO suite isn't yet justified.", "fr": "Alternative gratuite pour des données de base sur les mots-clés et le classement quand une suite SEO payante complète n'est pas encore justifiée." } }
   ],
   "missingAlternatives": [
     { "name": "Moz", "officialUrl": "https://moz.com", "reason": "Established SEO suite with keyword research and site audit at a generally lower entry price, not in the catalogue." },
     { "name": "SE Ranking", "officialUrl": "https://seranking.com", "reason": "Lower-cost SEO suite competitor frequently compared to Ahrefs, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The entry plan with a full project suite (Lite) is $129/mo, well above budget SEO tools, and Starter at $29/mo is only a lookup tool rather than a full suite, so the real cost of a working setup is higher than the headline price.", "fr": "Le plan d'entrée avec la suite complète de projets (Lite) coûte 129 $/mois, bien au-dessus des outils SEO d'entrée de gamme, et Starter à 29 $/mois n'est qu'un outil de recherche ponctuelle, donc le coût réel d'une installation fonctionnelle dépasse le prix affiché en avant.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time needed to reach a useful first result across Site Explorer, Keywords Explorer and Site Audit is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir un premier résultat utile entre Site Explorer, Keywords Explorer et Site Audit ne figure pas dans les sources relevées.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Backlink analysis, keyword research, rank tracking and site audits work as described without needing third-party tools for the core SEO workflow.", "fr": "L'analyse de backlinks, la recherche de mots-clés, le suivi de classement et les audits de site fonctionnent comme décrit, sans outil tiers nécessaire pour le flux SEO de base.", "sourceIds": ["s2"] },
+      "puissance": { "en": "A stated 170 trillion-page index plus Site Explorer, Keywords Explorer, Rank Tracker, Site Audit and Brand Radar together cover most of what an SEO suite offers.", "fr": "Un index annoncé à 170 000 milliards de pages, associé à Site Explorer, Keywords Explorer, Rank Tracker, Site Audit et Brand Radar, couvre l'essentiel de ce qu'offre une suite SEO.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: data export formats and API access for lower-tier plans are not detailed in the collected sources (uncapped API access is only confirmed for Enterprise).", "fr": "Note neutre : les formats d'export des données et l'accès API pour les plans d'entrée ne sont pas détaillés dans les sources relevées (l'accès API illimité n'est confirmé que pour Enterprise).", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "All-in-one SEO suite", "fr": "Suite SEO tout-en-un" },
+    "shortDescription": { "en": "Ahrefs is an SEO platform for backlinks, keywords, rank tracking and site audits, with plans starting at $29/month for a limited lookup tier.", "fr": "Ahrefs est une plateforme SEO combinant backlinks, mots-clés, suivi de classement et audits de site, dès 29 $/mois pour un niveau limité." },
+    "longDescription": {
+      "en": "Ahrefs centers on Site Explorer for competitor backlink and traffic research, backed by a large web index, alongside Keywords Explorer, Rank Tracker and Site Audit for the rest of the SEO workflow. AI Content Helper, Content Explorer and Brand Radar (tracking brand visibility in AI search results) extend it beyond classic SEO.\n\nStarter at $29/month only covers keyword and competitor lookups, not a full project suite; the first plan with projects, rank tracking and site audit together is Lite at $129/month ($108/month billed annually). Higher tiers (Standard, Advanced, Enterprise) add more projects, tracked keywords and crawl credits, with Enterprise requiring an annual commitment. There's no full-featured free plan, only a limited Webmaster Tools access for verified site owners.",
+      "fr": "Ahrefs s'articule autour de Site Explorer pour analyser les backlinks et le trafic des concurrents, appuyé sur un large index web, avec en complément Keywords Explorer, Rank Tracker et Site Audit pour le reste du flux SEO. AI Content Helper, Content Explorer et Brand Radar (suivi de la visibilité de marque dans les résultats de recherche IA) étendent l'outil au-delà du SEO classique.\n\nStarter à 29 $/mois ne couvre que des recherches ponctuelles de mots-clés et de concurrents, pas la suite complète de projets ; le premier plan avec projets, suivi de classement et audit de site réunis est Lite à 129 $/mois (108 $/mois en facturation annuelle). Les paliers supérieurs (Standard, Advanced, Enterprise) ajoutent plus de projets, de mots-clés suivis et de crédits d'exploration, Enterprise exigeant un engagement annuel. Il n'existe pas d'offre gratuite complète, seulement un accès limité à Webmaster Tools pour les propriétaires de site vérifiés."
+    },
+    "pros": [
+      { "en": "Backlink, keyword, rank-tracking and site-audit tools are combined in one suite instead of several separate tools.", "fr": "Les outils de backlinks, mots-clés, suivi de classement et audit de site sont réunis dans une seule suite plutôt que dans plusieurs outils séparés." },
+      { "en": "Higher tiers scale with more projects, tracked keywords and crawl credits as an agency or team grows.", "fr": "Les paliers supérieurs augmentent le nombre de projets, de mots-clés suivis et de crédits d'exploration à mesure qu'une agence ou une équipe grandit." }
+    ],
+    "cons": [
+      { "en": "The cheapest plan with a full project suite (Lite) is $129/month; Starter at $29/month is only a lookup tool.", "fr": "Le moins cher des plans avec la suite complète de projets (Lite) coûte 129 $/mois ; Starter à 29 $/mois n'est qu'un outil de recherche ponctuelle." },
+      { "en": "Crawl credits, tracked keywords and project counts are capped per plan, so heavy usage forces an upgrade.", "fr": "Les crédits d'exploration, les mots-clés suivis et le nombre de projets sont plafonnés par plan, donc un usage intensif oblige à monter de gamme." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You manage SEO for several sites or clients and need backlinks, keyword tracking and site audits together in one tool.", "fr": "Tu gères le SEO de plusieurs sites ou clients et tu as besoin des backlinks, du suivi de mots-clés et des audits de site réunis dans un seul outil." },
+      "avoidIf": { "en": "You only need occasional keyword lookups; Starter or a free tool like Google Search Console will cover that without paying for the full suite.", "fr": "Tu n'as besoin que de recherches ponctuelles de mots-clés ; Starter ou un outil gratuit comme Google Search Console suffira sans payer pour la suite complète." },
+      "threshold": { "en": "Budget for Lite at $129/month ($108/month billed annually) as the entry point for a real multi-project SEO workflow, not the $29/month Starter plan.", "fr": "Prévois un budget de 129 $/mois pour Lite (108 $/mois en facturation annuelle) comme point d'entrée pour un vrai flux SEO multi-projets, pas le plan Starter à 29 $/mois." },
+      "billingTraps": { "en": "Enterprise is shown as a monthly figure (~$1,499/mo) but actually requires an annual commitment; extra seats also add $40-80/month each depending on the plan.", "fr": "Enterprise est affiché comme un montant mensuel (~1 499 $/mois) mais exige en réalité un engagement annuel ; les sièges supplémentaires ajoutent aussi 40 à 80 $/mois chacun selon le plan." }
+    }
+  },
   "unknowns": [
     "Exact keyword/crawl-credit limits for the Starter ($29/mo) plan were not detailed on the pricing page excerpt retrieved.",
     "Whether annual billing is available for Starter and Enterprise was not confirmed (Enterprise appears annual-only)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The catalogue's alternativeCandidates for ahrefs are mostly generic analytics/monitoring tools (Hotjar, Datadog, Sentry...), not SEO suites; only semrush was a genuine direct competitor already in the catalogue, and google-search-console was added as a free partial alternative. Moz and SE Ranking remain missing from the catalogue (see missingAlternatives), which keeps alternatives below the tier A target of 3-6."
+  ]
 }

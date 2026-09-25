@@ -3,7 +3,8 @@
   "slug": "sentry",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Sentry",
     "vendor": "Functional Software, Inc. (Sentry)",
@@ -26,7 +27,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "1 user; 5,000 errors/month; 5M spans; 50 session replays; 10 custom dashboards", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "1 user; 5,000 errors/month; 5M spans; 50 session replays; 10 custom dashboards", "fr": "1 utilisateur ; 5 000 erreurs/mois ; 5 millions de spans ; 50 relectures de session ; 10 tableaux de bord personnalisés" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -36,7 +37,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Limited to 1 user; 5,000 errors/month; 5M spans; 50 session replays; 10 custom dashboards", "fr": null }],
+        "keyLimits": [{ "en": "Limited to 1 user; 5,000 errors/month; 5M spans; 50 session replays; 10 custom dashboards", "fr": "Limité à 1 utilisateur ; 5 000 erreurs/mois ; 5 millions de spans ; 50 relectures de session ; 10 tableaux de bord personnalisés" }],
         "sourceIds": ["s1"]
       },
       {
@@ -46,7 +47,7 @@
         "minSeats": null,
         "price": { "monthly": 26, "annualPerMonth": 26, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users; 50,000 errors included; 20 dashboards; Seer AI debugging is a separate subscription; API access", "fr": null }],
+        "keyLimits": [{ "en": "Unlimited users; 50,000 errors included; 20 dashboards; Seer AI debugging is a separate subscription; API access", "fr": "Utilisateurs illimités ; 50 000 erreurs incluses ; 20 tableaux de bord ; le débogage IA Seer est un abonnement séparé ; accès API" }],
         "sourceIds": ["s1"]
       },
       {
@@ -56,7 +57,7 @@
         "minSeats": null,
         "price": { "monthly": 80, "annualPerMonth": 80, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users; unlimited custom dashboards; advanced quota management; SAML/SCIM", "fr": null }],
+        "keyLimits": [{ "en": "Unlimited users; unlimited custom dashboards; advanced quota management; SAML/SCIM", "fr": "Utilisateurs illimités ; tableaux de bord personnalisés illimités ; gestion avancée des quotas ; SAML/SCIM" }],
         "sourceIds": ["s1"]
       },
       {
@@ -66,32 +67,32 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Business features plus technical account manager and dedicated support", "fr": null }],
+        "keyLimits": [{ "en": "Business features plus technical account manager and dedicated support", "fr": "Fonctions de Business plus un chargé de compte technique et un support dédié" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "team",
     "addOns": [
-      { "en": "Logs/metrics overage: $0.50/GB beyond plan quota (Team & Business)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Uptime monitoring: $1.00 per additional alert", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Cron monitoring: $0.78 per additional monitor", "fr": null, "sourceIds": ["s1"] },
-      { "en": "UI profiling: $0.25/hour; continuous profiling: $0.0315/hour", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Logs/metrics overage: $0.50/GB beyond plan quota (Team & Business)", "fr": "Dépassement logs/métriques : 0,50 $/Go au-delà du quota du plan (Team et Business)", "sourceIds": ["s1"] },
+      { "en": "Uptime monitoring: $1.00 per additional alert", "fr": "Suivi de disponibilité : 1,00 $ par alerte supplémentaire", "sourceIds": ["s1"] },
+      { "en": "Cron monitoring: $0.78 per additional monitor", "fr": "Suivi cron : 0,78 $ par moniteur supplémentaire", "sourceIds": ["s1"] },
+      { "en": "UI profiling: $0.25/hour; continuous profiling: $0.0315/hour", "fr": "Profiling UI : 0,25 $/heure ; profiling continu : 0,0315 $/heure", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Team and Business plans include a base quota of errors/spans; usage beyond it is billed pay-as-you-go per data category, so real monthly cost depends on traffic volume, not just the listed base price.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Team and Business plans include a base quota of errors/spans; usage beyond it is billed pay-as-you-go per data category, so real monthly cost depends on traffic volume, not just the listed base price.", "fr": "Les plans Team et Business incluent un quota de base d'erreurs/spans ; l'usage au-delà est facturé à l'usage par catégorie de donnée, donc le coût mensuel réel dépend du volume de trafic, pas seulement du prix de base affiché.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Error and exception tracking with stack traces and issue grouping across applications", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Distributed tracing and performance monitoring (spans)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Session replay for reproducing user-facing bugs", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Custom dashboards and alerting (email, and via integrations)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "MCP server and REST API for programmatic/agent access to issues", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Error and exception tracking with stack traces and issue grouping across applications", "fr": "Suivi des erreurs et exceptions avec traces de pile et regroupement des problèmes sur toutes les applications", "sourceIds": ["s2"] },
+      { "en": "Distributed tracing and performance monitoring (spans)", "fr": "Traçage distribué et suivi de performance (spans)", "sourceIds": ["s1"] },
+      { "en": "Session replay for reproducing user-facing bugs", "fr": "Relecture de session pour reproduire les bugs rencontrés par les utilisateurs", "sourceIds": ["s1"] },
+      { "en": "Custom dashboards and alerting (email, and via integrations)", "fr": "Tableaux de bord personnalisés et alertes (email, et via les intégrations)", "sourceIds": ["s1"] },
+      { "en": "MCP server and REST API for programmatic/agent access to issues", "fr": "Serveur MCP et API REST pour un accès programmatique ou par agent aux problèmes", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Free Developer plan is capped at a single user, restricting team use", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Usage-based overages (errors, spans, logs, profiling hours) can make monthly cost unpredictable beyond the base quota", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free Developer plan is capped at a single user, restricting team use", "fr": "Le plan gratuit Developer est limité à un seul utilisateur, ce qui restreint l'usage en équipe", "sourceIds": ["s1"] },
+      { "en": "Usage-based overages (errors, spans, logs, profiling hours) can make monthly cost unpredictable beyond the base quota", "fr": "Les dépassements facturés à l'usage (erreurs, spans, logs, heures de profiling) peuvent rendre le coût mensuel imprévisible au-delà du quota de base", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Slack", "slug": "slack", "sourceIds": ["s3"] },
@@ -105,16 +106,66 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and small engineering teams who need error tracking, tracing and session replay for a production application, without a per-seat price that grows with the team.",
+      "fr": "Développeurs et petites équipes d'ingénierie qui ont besoin de suivi des erreurs, de traçage et de relecture de session pour une application en production, sans un prix par siège qui augmente avec l'équipe."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Catch production bugs immediately: connect the SDK to get stack traces and issue grouping as soon as an unhandled exception occurs.", "fr": "Détecter les bugs en production immédiatement : connecter le SDK pour obtenir des traces de pile et un regroupement des problèmes dès qu'une exception non gérée survient." },
+    { "en": "Reproduce a user-reported bug: pull up the session replay tied to the error to see exactly what the user did before it happened.", "fr": "Reproduire un bug signalé par un utilisateur : ouvrir la relecture de session liée à l'erreur pour voir exactement ce que l'utilisateur a fait juste avant." }
+  ],
   "alternatives": [
-    { "slug": "datadog", "reason": { "en": "Broader observability suite (metrics, logs, traces) that also covers error monitoring", "fr": null } },
-    { "slug": "better-stack", "reason": { "en": "Alternative monitoring/incident stack for smaller teams", "fr": null } },
-    { "slug": "grafana", "reason": { "en": "Open-source observability and dashboarding alternative", "fr": null } },
-    { "slug": "posthog", "reason": { "en": "Product analytics platform with overlapping session replay and error tracking features", "fr": null } }
+    { "slug": "datadog", "reason": { "en": "Broader observability suite (metrics, logs, traces) that also covers error monitoring", "fr": "Suite d'observabilité plus large (métriques, logs, traces) qui couvre aussi le suivi des erreurs" } },
+    { "slug": "better-stack", "reason": { "en": "Alternative monitoring/incident stack for smaller teams", "fr": "Stack de monitoring/incidents alternative pour les petites équipes" } },
+    { "slug": "grafana", "reason": { "en": "Open-source observability and dashboarding alternative", "fr": "Alternative open source d'observabilité et de tableaux de bord" } },
+    { "slug": "posthog", "reason": { "en": "Product analytics platform with overlapping session replay and error tracking features", "fr": "Plateforme d'analytics produit avec des fonctions de relecture de session et de suivi des erreurs qui se recoupent" } }
   ],
   "missingAlternatives": [
     { "name": "Rollbar", "officialUrl": "https://rollbar.com", "reason": "Direct error-tracking competitor, not in the catalogue" },
     { "name": "Bugsnag", "officialUrl": "https://www.bugsnag.com", "reason": "Direct error-tracking competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Team plan bills a flat $26/month base for unlimited users with a 50,000-error quota, which is cheap error tracking for a growing team compared to a per-seat price.", "fr": "Le plan Team facture une base fixe de 26 $/mois pour des utilisateurs illimités avec un quota de 50 000 erreurs, ce qui est un suivi des erreurs peu coûteux pour une équipe qui grandit, comparé à un prix par siège.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The sources describe SDK-based error and performance tracking but do not state an explicit setup time or onboarding effort, so time-to-first-result cannot be confirmed beyond the general product description.", "fr": "Les sources décrivent un suivi des erreurs et de la performance basé sur un SDK, mais ne précisent pas de temps de mise en place explicite ni d'effort d'onboarding, donc le temps jusqu'au premier résultat utile n'est pas confirmé au-delà de la description générale du produit.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Error tracking, distributed tracing, session replay, custom dashboards and alerting are all delivered natively as described, matching the monitoring promise without a third-party tool mentioned.", "fr": "Le suivi des erreurs, le traçage distribué, la relecture de session, les tableaux de bord personnalisés et les alertes sont tous livrés nativement comme décrit, ce qui tient la promesse de monitoring sans outil tiers mentionné.", "sourceIds": ["s1", "s2"] },
+      "puissance": { "en": "Distributed tracing, session replay, custom dashboards, an MCP server for agent access, and integrations across 8 tools (Slack, Jira, Linear, PagerDuty, Datadog, GitHub Actions, Vercel, Microsoft Teams) go beyond a basic error logger.", "fr": "Le traçage distribué, la relecture de session, les tableaux de bord personnalisés, un serveur MCP pour l'accès par agent, et des intégrations avec 8 outils (Slack, Jira, Linear, PagerDuty, Datadog, GitHub Actions, Vercel, Microsoft Teams) vont au-delà d'un simple journal d'erreurs.", "sourceIds": ["s1", "s2", "s3"] },
+      "reversibilite": { "en": "Neutral score: data export and portability of error/performance history if leaving Sentry are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité de l'historique d'erreurs/performance en cas de départ de Sentry ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Error monitoring", "fr": "Suivi des erreurs" },
+    "shortDescription": { "en": "Sentry is an error and performance monitoring platform for applications, with a single-user free plan and a Team plan at $26/month for unlimited users plus a 50,000-error base quota.", "fr": "Sentry est une plateforme de suivi des erreurs et de la performance pour applications, avec un plan gratuit à un utilisateur et un plan Team à 26 $/mois pour des utilisateurs illimités et un quota de base de 50 000 erreurs." },
+    "longDescription": {
+      "en": "Sentry tracks errors and exceptions with stack traces and issue grouping, adds distributed tracing and performance monitoring, and includes session replay to reproduce user-facing bugs. Custom dashboards and alerting, plus an MCP server and REST API for programmatic or agent access to issues, round out the platform, and it integrates with Slack, Jira, Linear, PagerDuty, Datadog, GitHub Actions, Vercel and Microsoft Teams.\n\nThe free Developer plan is limited to 1 user with 5,000 errors, 5 million spans, 50 session replays and 10 custom dashboards a month. Team is $26/month with unlimited users, a 50,000-error base quota and 20 dashboards, Business is $80/month with unlimited dashboards, advanced quota management and SAML/SCIM, and Enterprise is on quote. Team and Business include a base usage quota; going over it is billed pay-as-you-go per data category (for example $0.50/GB for logs/metrics overage), so real monthly cost depends on traffic volume, not just the listed base price.",
+      "fr": "Sentry suit les erreurs et exceptions avec des traces de pile et un regroupement des problèmes, ajoute le traçage distribué et le suivi de performance, et inclut la relecture de session pour reproduire les bugs signalés par les utilisateurs. Des tableaux de bord personnalisés et des alertes, plus un serveur MCP et une API REST pour un accès programmatique ou par agent aux problèmes, complètent la plateforme, et elle s'intègre à Slack, Jira, Linear, PagerDuty, Datadog, GitHub Actions, Vercel et Microsoft Teams.\n\nLe plan gratuit Developer est limité à 1 utilisateur avec 5 000 erreurs, 5 millions de spans, 50 relectures de session et 10 tableaux de bord personnalisés par mois. Team est à 26 $/mois avec des utilisateurs illimités, un quota de base de 50 000 erreurs et 20 tableaux de bord, Business est à 80 $/mois avec des tableaux de bord illimités, une gestion avancée des quotas et SAML/SCIM, et Enterprise est sur devis. Team et Business incluent un quota d'usage de base ; le dépassement est facturé à l'usage par catégorie de donnée (par exemple 0,50 $/Go pour le dépassement de logs/métriques), donc le coût mensuel réel dépend du volume de trafic, pas seulement du prix de base affiché."
+    },
+    "pros": [
+      { "en": "The Team plan allows unlimited users for a flat $26/month base, unlike a per-seat price that grows with headcount.", "fr": "Le plan Team permet des utilisateurs illimités pour une base fixe de 26 $/mois, contrairement à un prix par siège qui augmente avec l'effectif." },
+      { "en": "An MCP server and REST API give programmatic or AI-agent access to issues, not just a web dashboard.", "fr": "Un serveur MCP et une API REST donnent un accès programmatique ou par agent IA aux problèmes, pas seulement un tableau de bord web." }
+    ],
+    "cons": [
+      { "en": "The free Developer plan is capped at a single user, so a second team member requires moving to a paid plan.", "fr": "Le plan gratuit Developer est limité à un seul utilisateur, donc un deuxième membre d'équipe demande de passer à un plan payant." },
+      { "en": "Usage-based overages across errors, spans, logs and profiling hours can make the monthly bill unpredictable beyond the base quota.", "fr": "Les dépassements facturés à l'usage sur les erreurs, spans, logs et heures de profiling peuvent rendre la facture mensuelle imprévisible au-delà du quota de base." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want error tracking, tracing and session replay for a team of any size under one base price, not billed per seat.", "fr": "Tu veux le suivi des erreurs, le traçage et la relecture de session pour une équipe de toute taille sous un seul prix de base, sans facturation par siège." },
+      "avoidIf": { "en": "You are a solo developer whose traffic stays comfortably under the free plan's 5,000 errors/month, since the Developer plan already covers that at no cost.", "fr": "Tu es un développeur solo dont le trafic reste largement sous les 5 000 erreurs/mois du plan gratuit, car le plan Developer couvre déjà ça sans coût." },
+      "threshold": { "en": "Worth the $26/month Team plan (about $312/year) once a project needs more than 1 user or more than 5,000 errors/month, the free Developer plan's caps.", "fr": "Le plan Team à 26 $/mois (environ 312 $/an) vaut le coût dès qu'un projet a besoin de plus d'1 utilisateur ou de plus de 5 000 erreurs/mois, les plafonds du plan gratuit Developer." },
+      "billingTraps": { "en": "Team and Business plans include only a base usage quota; overages on errors, spans, logs, uptime alerts, cron monitors and profiling hours are billed separately per data category, so actual monthly cost can exceed the listed base price.", "fr": "Les plans Team et Business n'incluent qu'un quota d'usage de base ; les dépassements sur erreurs, spans, logs, alertes de disponibilité, moniteurs cron et heures de profiling sont facturés séparément par catégorie de donnée, donc le coût mensuel réel peut dépasser le prix de base affiché." }
+    }
+  },
   "unknowns": [
     "Exact included quotas per data category beyond errors/spans (e.g. logs, replays) at Team vs Business tier were not fully broken out on the pricing page excerpt.",
     "Whether taxes are included in listed USD prices is not stated on the pricing page."

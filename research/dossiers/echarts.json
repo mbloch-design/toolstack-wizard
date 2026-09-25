@@ -3,7 +3,8 @@
   "slug": "echarts",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Apache ECharts",
     "vendor": "Apache Software Foundation",
@@ -125,8 +126,55 @@
       "reason": "Major open-source JS charting library competitor with scientific/statistical charts, not in the catalogue"
     }
   ],
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer building a web app or dashboard who needs a wide range of chart types integrated into their own codebase without paying a license fee.", "fr": "Un développeur qui construit une application web ou un tableau de bord et a besoin d'une large gamme de graphiques intégrés à son propre code, sans payer de licence." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Analytics dashboard: render a mix of line, bar and heatmap charts from live data inside a custom web app.", "fr": "Tableau de bord analytique : afficher un mélange de graphiques en ligne, en barres et en carte de chaleur à partir de données en direct dans une application web sur mesure." },
+    { "en": "Large dataset visualization: use progressive rendering to plot a very large dataset (millions of points) without freezing the browser.", "fr": "Visualisation de gros volumes de données : utiliser le rendu progressif pour afficher un très grand jeu de données (des millions de points) sans figer le navigateur." }
+  ],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "It's free and open source with more than 20 chart types and a dozen reusable components out of the box, so there's no license cost to justify against a paid charting library.", "fr": "L'outil est gratuit et open source, avec plus de 20 types de graphiques et une dizaine de composants réutilisables nativement, donc aucun coût de licence à justifier face à une bibliothèque de graphiques payante.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to render a first working chart for a developer new to the library is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour afficher un premier graphique fonctionnel quand on découvre la bibliothèque ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Chart rendering, dataset transforms and accessibility features work as described directly inside a web codebase, without needing a separate hosted tool.", "fr": "Le rendu des graphiques, les transformations de jeux de données et les fonctions d'accessibilité fonctionnent comme décrit directement dans le code web, sans outil hébergé séparé.", "sourceIds": ["s1"] },
+      "puissance": { "en": "More than 20 chart types, Canvas and SVG rendering, built-in data transforms (filtering, clustering, regression), and a claimed real-time rendering of 10 million data points put it at the high end of JS charting libraries.", "fr": "Plus de 20 types de graphiques, un rendu Canvas et SVG, des transformations de données intégrées (filtrage, clustering, régression), et un rendu en temps réel annoncé jusqu'à 10 millions de points en font une bibliothèque de graphiques JS parmi les plus complètes.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "As an Apache-licensed open-source library rendering to standard Canvas or SVG output, there's no proprietary data format or vendor lock-in to escape.", "fr": "En tant que bibliothèque open source sous licence Apache qui produit du Canvas ou du SVG standard, il n'y a aucun format de données propriétaire ni dépendance à un éditeur dont se libérer.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "JavaScript charting library", "fr": "Bibliothèque de graphiques JS" },
+    "shortDescription": { "en": "Apache ECharts is a free, open-source JavaScript charting library with more than 20 chart types and support for very large datasets.", "fr": "Apache ECharts est une bibliothèque JavaScript de graphiques gratuite et open source, avec plus de 20 types de graphiques." },
+    "longDescription": {
+      "en": "ECharts is a JavaScript charting library, not a hosted app: it ships more than 20 chart types plus reusable components (legends, tooltips, data zoom), Canvas and SVG rendering, built-in dataset transforms (filtering, clustering, regression), and accessibility features like automatic chart descriptions and decal patterns.\n\nIt's free and open source under the Apache Software Foundation, with no license fee at any scale. The trade-off is that a team has to integrate and maintain it inside their own codebase, with no built-in dashboard hosting, collaboration or official commercial support beyond the open-source community and GitHub issues.",
+      "fr": "ECharts est une bibliothèque JavaScript de graphiques, pas une application hébergée : elle propose plus de 20 types de graphiques, des composants réutilisables (légendes, infobulles, zoom sur données), un rendu Canvas et SVG, des transformations de données intégrées (filtrage, clustering, régression), et des fonctions d'accessibilité comme la génération automatique de descriptions et de motifs.\n\nElle est gratuite et open source sous l'égide de l'Apache Software Foundation, sans frais de licence à aucune échelle. En contrepartie, une équipe doit l'intégrer et la maintenir dans son propre code, sans hébergement de tableaux de bord, collaboration intégrée ni support commercial officiel au-delà de la communauté open source et des issues GitHub."
+    },
+    "pros": [
+      { "en": "Free and open source with no license cost, covering more than 20 chart types out of the box.", "fr": "Gratuit et open source sans coût de licence, avec plus de 20 types de graphiques disponibles nativement." },
+      { "en": "Handles very large datasets through progressive rendering, claimed at up to 10 million points in real time.", "fr": "Gère de très gros volumes de données grâce au rendu progressif, annoncé jusqu'à 10 millions de points en temps réel." }
+    ],
+    "cons": [
+      { "en": "It's a library to integrate and maintain in your own codebase, with no hosted dashboard or built-in collaboration.", "fr": "C'est une bibliothèque à intégrer et à maintenir dans son propre code, sans tableau de bord hébergé ni collaboration intégrée." },
+      { "en": "No official commercial support channel or SLA; help comes from the open-source community and GitHub issues.", "fr": "Aucun canal de support commercial officiel ni SLA ; l'aide vient de la communauté open source et des issues GitHub." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're building charts directly into your own web app or dashboard and want a wide range of chart types without a license fee.", "fr": "Tu construis des graphiques directement dans ta propre application web ou ton tableau de bord et tu veux une large gamme de types de graphiques sans frais de licence." },
+      "avoidIf": { "en": "You need a hosted dashboard with built-in collaboration and official commercial support; ECharts only gives you the charting layer, not the app around it.", "fr": "Tu as besoin d'un tableau de bord hébergé avec collaboration intégrée et support commercial officiel ; ECharts ne fournit que la couche graphique, pas l'application autour." },
+      "threshold": { "en": "There's no plan to compare: the library itself is free at any scale, so the only cost is the developer time to integrate and maintain it.", "fr": "Il n'y a pas d'offre à comparer : la bibliothèque elle-même est gratuite à toute échelle, le seul coût étant le temps de développement pour l'intégrer et la maintenir." }
+    }
+  },
   "unknowns": [
     "Full list of third-party framework integrations (React/Vue wrappers) not verified from the homepage alone"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

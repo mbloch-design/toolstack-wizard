@@ -3,7 +3,8 @@
   "slug": "sketchup-pro",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "SketchUp Pro",
     "vendor": "Trimble Inc.",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://sketchup.trimble.com/en/plans-and-pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "SketchUp - Plans and pricing" }
+    {
+      "id": "s1",
+      "url": "https://sketchup.trimble.com/en/plans-and-pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "SketchUp - Plans and pricing"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -24,71 +31,339 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "SketchUp for Schools is free but requires a K-12 Google Workspace for Education or Microsoft Education account; not available to the general public.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "SketchUp for Schools is free but requires a K-12 Google Workspace for Education or Microsoft Education account; not available to the general public.",
+        "fr": "SketchUp for Schools est gratuit mais demande un compte Google Workspace for Education ou Microsoft Education K-12 ; non disponible pour le grand public."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
+      {
+        "key": "schools",
+        "name": "SketchUp for Schools",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free but requires a K-12 Google Workspace for Education or Microsoft Education account; not available to the general public.",
+            "fr": "Gratuit mais demande un compte Google Workspace for Education ou Microsoft Education K-12 ; non disponible pour le grand public.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
       {
         "key": "go",
         "name": "Go",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 10.75, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 10.75,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Essential 3D design on iPad and web only, no desktop modeling; includes cloud storage, mobile viewer, real-time sharing.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Essential 3D design on iPad and web only, no desktop modeling; includes cloud storage, mobile viewer, real-time sharing.",
+            "fr": "Design 3D essentiel sur iPad et web uniquement, sans modélisation bureau ; inclut le stockage cloud, la visionneuse mobile, le partage en temps réel.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 33.25, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 33.25,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Full toolkit including desktop modeling, LayOut documentation, and access to 1000+ extensions.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Full toolkit including desktop modeling, LayOut documentation, and access to 1000+ extensions.",
+            "fr": "Boîte à outils complète incluant la modélisation bureau, la documentation LayOut, et l'accès à plus de 1000 extensions.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "studio",
         "name": "Studio",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 71.58, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 71.58,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Advanced visualization and BIM workflows, including Revit importer and point-cloud modeling; restricted to Windows.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Advanced visualization and BIM workflows, including Revit importer and point-cloud modeling; restricted to Windows.",
+            "fr": "Workflows avancés de visualisation et BIM, dont l'import Revit et la modélisation par nuage de points ; réservé à Windows.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
-    "comparePlanKey": "go",
+    "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "Prices shown are annual billing; a monthly (no-commitment) billing option exists but at a higher per-month rate than the annual-equivalent figures above.", "sourceIds": ["s1"] },
-      { "en": "The Go plan, the cheapest paid tier, does not include desktop modeling, so a freelancer needing full desktop functionality must buy Pro or Studio instead.", "sourceIds": ["s1"] }
+      {
+        "en": "Prices shown are annual billing; a monthly (no-commitment) billing option exists but at a higher per-month rate than the annual-equivalent figures above.",
+        "fr": "Les prix affichés sont en facturation annuelle ; une option de facturation mensuelle sans engagement existe mais à un tarif mensuel plus élevé que les montants équivalents annuels ci-dessus.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The Go plan, the cheapest paid tier, does not include desktop modeling, so a freelancer needing full desktop functionality must buy Pro or Studio instead.",
+        "fr": "Le plan Go, le moins cher, n'inclut pas la modélisation bureau, donc un freelance qui a besoin de toutes les fonctionnalités bureau doit acheter Pro ou Studio à la place.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "3D modeling for architecture, interior design and product design across desktop, web and mobile.", "sourceIds": ["s1"] },
-      { "en": "LayOut for producing construction/presentation documentation from 3D models (Pro/Studio).", "sourceIds": ["s1"] },
-      { "en": "Library of 1000+ extensions for specialized workflows (Pro/Studio).", "sourceIds": ["s1"] },
-      { "en": "Studio tier adds a Revit importer, point-cloud modeling and photorealistic rendering for BIM workflows.", "sourceIds": ["s1"] }
+      {
+        "en": "3D modeling for architecture, interior design and product design across desktop, web and mobile.",
+        "fr": "Modélisation 3D pour l'architecture, l'aménagement intérieur et le design produit sur bureau, web et mobile.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "LayOut for producing construction/presentation documentation from 3D models (Pro/Studio).",
+        "fr": "LayOut pour produire de la documentation de construction/présentation à partir des modèles 3D (Pro/Studio).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Library of 1000+ extensions for specialized workflows (Pro/Studio).",
+        "fr": "Bibliothèque de plus de 1000 extensions pour des workflows spécialisés (Pro/Studio).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Studio tier adds a Revit importer, point-cloud modeling and photorealistic rendering for BIM workflows.",
+        "fr": "Le plan Studio ajoute un import Revit, la modélisation par nuage de points et le rendu photoréaliste pour les workflows BIM.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Desktop modeling is unavailable on the entry-level Go plan (iPad/web only).", "sourceIds": ["s1"] },
-      { "en": "Studio, the tier with BIM/Revit interoperability and advanced rendering, is Windows-only.", "sourceIds": ["s1"] }
+      {
+        "en": "Desktop modeling is unavailable on the entry-level Go plan (iPad/web only).",
+        "fr": "La modélisation bureau n'est pas disponible sur le plan d'entrée Go (iPad/web uniquement).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Studio, the tier with BIM/Revit interoperability and advanced rendering, is Windows-only.",
+        "fr": "Studio, le plan avec l'interopérabilité BIM/Revit et le rendu avancé, est réservé à Windows.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["windows", "mac", "web", "ipad"]
+    "platforms": [
+      "windows",
+      "mac",
+      "web",
+      "ipad"
+    ]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Architects, interior and product designers who need 3D modeling with construction-ready documentation, on a real desktop workflow rather than a tablet-only viewer.",
+      "fr": "Architectes, designers d'intérieur et de produit qui ont besoin de modélisation 3D avec une documentation prête pour la construction, sur un vrai workflow bureau plutôt qu'une visionneuse tablette seule."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: model a room layout on desktop with Pro, then generate construction documentation in LayOut, result: a client-ready plan without redrawing dimensions in a separate app.",
+      "fr": "Usage : modéliser un plan de pièce sur bureau avec Pro, puis générer la documentation de construction dans LayOut, résultat : un plan prêt pour le client sans redessiner les cotes dans une autre application."
+    },
+    {
+      "en": "Usage: import a Revit model into Studio and overlay a point cloud, result: an accurate BIM-compatible scene without manually rebuilding the existing structure.",
+      "fr": "Usage : importer un modèle Revit dans Studio et superposer un nuage de points, résultat : une scène compatible BIM précise sans reconstruire manuellement la structure existante."
+    }
+  ],
   "alternatives": [
-    { "slug": "blender", "reason": { "en": "Free, open-source 3D modeling tool covering overlapping architectural/product-visualization use cases, though with a steeper general-purpose learning curve than SketchUp." } }
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Free, open-source 3D modeling tool covering overlapping architectural/product-visualization use cases, though with a steeper general-purpose learning curve than SketchUp.",
+        "fr": "Outil de modélisation 3D libre et gratuit qui couvre des cas d'usage similaires en architecture/visualisation produit, bien qu'avec une courbe d'apprentissage plus raide et généraliste que SketchUp."
+      }
+    },
+    {
+      "slug": "revit",
+      "reason": {
+        "en": "Direct BIM/architecture competitor to SketchUp Studio, with deeper native BIM workflows.",
+        "fr": "Concurrent direct en BIM/architecture face à SketchUp Studio, avec des workflows BIM natifs plus poussés."
+      }
+    },
+    {
+      "slug": "archicad",
+      "reason": {
+        "en": "Direct architecture/BIM competitor, targeting the same professional design and documentation workflow.",
+        "fr": "Concurrent direct en architecture/BIM, visant le même workflow professionnel de conception et de documentation."
+      }
+    }
   ],
-  "missingAlternatives": [
-    { "name": "Revit", "officialUrl": "https://www.autodesk.com/products/revit/overview", "reason": "Direct BIM/architecture competitor to SketchUp Studio, already referenced as a currentAlternative but absent as its own catalogue entry." },
-    { "name": "ArchiCAD", "officialUrl": "https://graphisoft.com/solutions/archicad", "reason": "Direct architecture/BIM competitor already referenced as a currentAlternative but absent as its own catalogue entry." }
-  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The cheapest paid plan, Go at $10.75/month, excludes desktop modeling, the tool's core function for most professional use; a freelancer needing that must pay $33.25/month for Pro, which changes the real entry cost.",
+        "fr": "Le plan payant le moins cher, Go à 10,75$/mois, exclut la modélisation bureau, la fonction principale de l'outil pour la plupart des usages professionnels ; un freelance qui en a besoin doit payer 33,25$/mois pour Pro, ce qui change le vrai coût d'entrée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to produce a first usable 3D model is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour produire un premier modèle 3D utilisable ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "3D modeling and LayOut documentation deliver the promised design-and-documentation workflow on Pro and above, but the entry Go plan cannot do desktop modeling at all, a real gap versus the tool's stated purpose.",
+        "fr": "La modélisation 3D et la documentation LayOut livrent le workflow de conception et documentation promis à partir de Pro, mais le plan d'entrée Go ne peut pas du tout faire de modélisation bureau, un vrai manque par rapport à l'objectif affiché de l'outil.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Studio's Revit importer, point-cloud modeling and photorealistic rendering, plus a 1000+ extension library on Pro/Studio, give it a high ceiling for professional architecture and design work.",
+        "fr": "L'import Revit de Studio, la modélisation par nuage de points et le rendu photoréaliste, plus une bibliothèque de plus de 1000 extensions sur Pro/Studio, lui donnent un plafond élevé pour le travail professionnel en architecture et design.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and model portability outside SketchUp are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des modèles en dehors de SketchUp ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "3D modeling software",
+      "fr": "Logiciel de modélisation 3D"
+    },
+    "shortDescription": {
+      "en": "SketchUp Pro is Trimble's 3D modeling software for architecture, interior and product design, spanning desktop, web and mobile.",
+      "fr": "SketchUp Pro est le logiciel de modélisation 3D de Trimble pour l'architecture, l'aménagement intérieur et le design produit, sur bureau, web et mobile."
+    },
+    "longDescription": {
+      "en": "SketchUp models in 3D across desktop, web and iPad, paired with LayOut for turning a model into construction or presentation documentation. Pro and Studio unlock a library of 1000+ extensions, and Studio adds a Revit importer, point-cloud modeling and photorealistic rendering for BIM work, though that tier is Windows-only.\n\nThere is no public free plan; SketchUp for Schools is free but limited to K-12 accounts. Go, the cheapest paid plan at $10.75/month (annual), covers iPad and web only, without desktop modeling. A freelancer needing the full desktop toolkit and LayOut has to buy Pro at $33.25/month; Studio, at $71.58/month, adds the BIM features. A monthly, no-commitment option exists at a higher rate.",
+      "fr": "SketchUp modélise en 3D sur bureau, web et iPad, associé à LayOut pour transformer un modèle en documentation de construction ou de présentation. Pro et Studio débloquent plus de 1000 extensions, et Studio ajoute import Revit, nuage de points et rendu photoréaliste orientés BIM, réservés à Windows.\n\nPas de plan gratuit public ; SketchUp for Schools est gratuit mais limité aux comptes K-12. Go, le moins cher à 10,75$/mois (annuel), couvre l'iPad et le web, sans modélisation bureau. Un freelance qui a besoin de la boîte à outils complète et de LayOut doit acheter Pro à 33,25$/mois ; Studio, à 71,58$/mois, ajoute le BIM. Une option mensuelle sans engagement existe, à un tarif plus élevé."
+    },
+    "pros": [
+      {
+        "en": "LayOut turns a 3D model directly into construction or presentation documentation without switching to a separate drafting app.",
+        "fr": "LayOut transforme directement un modèle 3D en documentation de construction ou de présentation sans passer par une autre application de dessin technique."
+      },
+      {
+        "en": "The 1000+ extension library on Pro and Studio covers specialized workflows without waiting on SketchUp's own roadmap.",
+        "fr": "La bibliothèque de plus de 1000 extensions sur Pro et Studio couvre des workflows spécialisés sans attendre la feuille de route de SketchUp elle-même."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The entry-level Go plan cannot do desktop modeling at all, so the real starting price for most professional use is Pro, not Go.",
+        "fr": "Le plan d'entrée Go ne peut pas du tout faire de modélisation bureau, donc le vrai prix de départ pour un usage professionnel est Pro, pas Go."
+      },
+      {
+        "en": "Studio's BIM-oriented features (Revit importer, point-cloud modeling) only run on Windows, excluding Mac users from that tier's main value.",
+        "fr": "Les fonctionnalités orientées BIM de Studio (import Revit, modélisation par nuage de points) ne tournent que sous Windows, excluant les utilisateurs Mac de l'intérêt principal de ce plan."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you model in 3D for architecture, interior or product design and need LayOut documentation or the extension library on top.",
+        "fr": "Garde-le si tu modélises en 3D pour l'architecture, l'aménagement intérieur ou le design produit et as besoin de la documentation LayOut ou de la bibliothèque d'extensions en plus."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you only need a quick viewer or light iPad sketching, since Go, the cheap entry plan, does not include real desktop modeling.",
+        "fr": "Évite-le si tu n'as besoin que d'une visionneuse rapide ou d'esquisses légères sur iPad, car Go, le plan d'entrée bon marché, n'inclut pas la vraie modélisation bureau."
+      },
+      "threshold": {
+        "en": "Desktop modeling requires Pro at $33.25/month (about $399/year), not the cheaper $10.75/month Go plan, which excludes it.",
+        "fr": "La modélisation bureau demande Pro à 33,25$/mois (environ 399$/an), pas le plan Go moins cher à 10,75$/mois, qui l'exclut."
+      }
+    }
+  },
   "unknowns": [
     "Exact monthly (non-annual) pricing figures for Go/Pro/Studio were not captured, only the annual-billing per-month equivalents.",
     "macOS availability for Studio's Windows-only features (Revit importer, point-cloud) beyond the base app was not fully detailed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "comparePlanKey is set to \"go\" per the seed data, but Go excludes desktop modeling, SketchUp's main function; per the brief's rule 5.4 (a plan that removes the main function does not count), \"pro\" may be the more accurate comparison plan. Flagging for review rather than changing the price data.",
+    "Revit and Archicad were moved from missingAlternatives into alternatives: both are valid catalogue slugs (revit, archicad), matching this tool's own currentAlternatives record."
+  ],
+  "decisions": [
+    {
+      "on": "2026-09-25",
+      "by": "review",
+      "note": "Compared on Pro: Go excludes desktop modeling, the main function (rule 5.4)."
+    }
+  ]
 }

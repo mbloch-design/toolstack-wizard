@@ -3,7 +3,8 @@
   "slug": "topaz-gigapixel",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Topaz Gigapixel AI",
     "vendor": "Topaz Labs LLC",
@@ -171,6 +172,16 @@
       "macos"
     ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A photographer or content creator who needs to enlarge images for print or delivery without losing detail, using a standalone app or a Photoshop/Lightroom plugin.", "fr": "Un photographe ou créateur de contenu qui doit agrandir des images pour l'impression ou la livraison sans perdre de détail, via une application autonome ou un plugin Photoshop/Lightroom." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Print preparation: upscale a lower-resolution photo up to 16x before sending it to print.", "fr": "Préparation à l'impression : agrandir une photo en basse résolution jusqu'à 16x avant de l'envoyer à l'impression." },
+    { "en": "Archive restoration: enlarge and recover detail on an old or low-quality image using the Face Recovery or High Fidelity model.", "fr": "Restauration d'archives : agrandir et récupérer des détails sur une image ancienne ou de faible qualité avec le modèle Face Recovery ou High Fidelity." }
+  ],
   "alternatives": [
     {
       "slug": "magnific-ai",
@@ -178,12 +189,71 @@
         "en": "Cloud AI image upscaler and enhancer covering the same core need without a desktop install.",
         "fr": "Amélioration et agrandissement d'image par IA en cloud couvrant le même besoin sans installation de bureau."
       }
+    },
+    {
+      "slug": "topaz-photo-ai",
+      "reason": {
+        "en": "Sibling Topaz product combining upscaling with noise reduction and sharpening in one app, a direct alternative for the same upscaling need.",
+        "fr": "Produit voisin de Topaz combinant agrandissement, réduction du bruit et netteté dans une seule application, alternative directe pour le même besoin d'agrandissement."
+      }
+    },
+    {
+      "slug": "luminar-neo",
+      "reason": {
+        "en": "AI-driven photo editor with its own upscaling and enhancement tools covering an overlapping need.",
+        "fr": "Éditeur photo piloté par IA avec ses propres outils d'agrandissement et d'amélioration couvrant un besoin similaire."
+      }
+    },
+    {
+      "slug": "nik-collection",
+      "reason": {
+        "en": "AI-assisted photo-enhancement plugin suite overlapping on creative post-processing and image-quality needs.",
+        "fr": "Suite de plugins d'amélioration photo assistée par IA qui recoupe les besoins de post-traitement créatif et de qualité d'image."
+      }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Personal at $149/year billed upfront includes unlimited local and cloud rendering with nine specialized models, which is a strong feature set for the price compared to a per-image credit system.", "fr": "Personal à 149 $/an payé d'avance inclut un rendu local et cloud illimité avec neuf modèles spécialisés, ce qui représente un ensemble de fonctions solide pour ce prix comparé à un système de crédits par image.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to a first upscaled result for a new user is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir un premier résultat agrandi pour un nouvel utilisateur ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Upscaling up to 16x with nine specialized models works as described, standalone or as a Photoshop/Lightroom Classic plugin, without needing another tool.", "fr": "L'agrandissement jusqu'à 16x avec neuf modèles spécialisés fonctionne comme décrit, en autonome ou en plugin Photoshop/Lightroom Classic, sans autre outil nécessaire.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Nine specialized models, up to 16x upscaling, and unlimited local plus cloud rendering give it a wide capability range within the AI upscaling category.", "fr": "Neuf modèles spécialisés, un agrandissement jusqu'à 16x et un rendu local plus cloud illimité lui donnent une large capacité au sein de la catégorie de l'agrandissement par IA.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: exported file formats and whether upscaled images carry any proprietary metadata or lock-in are not covered by the collected sources.", "fr": "Note neutre : les formats de fichiers exportés et l'éventuelle présence de métadonnées propriétaires ou de verrouillage sur les images agrandies ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI image upscaling", "fr": "Agrandissement d'image par IA" },
+    "shortDescription": { "en": "Topaz Gigapixel AI is a subscription app for AI-powered image upscaling up to 16x, with unlimited local and cloud rendering and a Photoshop/Lightroom plugin.", "fr": "Topaz Gigapixel AI est une application par abonnement pour l'agrandissement d'image par IA jusqu'à 16x, avec rendu local et cloud illimité." },
+    "longDescription": {
+      "en": "Gigapixel AI upscales images up to 16x using nine specialized models (Wonder 2/3, Standard, High Fidelity, Text & Shapes, Face Recovery, and others) chosen based on the image type, with both unlimited local rendering and unlimited cloud rendering included. It runs standalone or as a plugin inside Photoshop and Lightroom Classic.\n\nThere's no free plan: Personal is $149/year billed upfront ($29/month if paid monthly, $12.42/month as the annualized rate) with limited commercial use for organizations under $1M revenue, and Pro is $499/year upfront ($54/month, $41.58/month annualized) for full commercial rights and higher cloud-rendering concurrency. On Intel-based Macs, the newer generative models require cloud rendering since local processing isn't available there.",
+      "fr": "Gigapixel AI agrandit les images jusqu'à 16x grâce à neuf modèles spécialisés (Wonder 2/3, Standard, High Fidelity, Text & Shapes, Face Recovery, entre autres) choisis selon le type d'image, avec un rendu local illimité et un rendu cloud illimité inclus. L'outil fonctionne en autonome ou en plugin dans Photoshop et Lightroom Classic.\n\nIl n'y a pas d'offre gratuite : Personal coûte 149 $/an payé d'avance (29 $/mois en mensuel, 12,42 $/mois en équivalent annualisé) avec un usage commercial limité pour les organisations de moins d'1 M$ de revenu, et Pro coûte 499 $/an payé d'avance (54 $/mois, 41,58 $/mois en équivalent annualisé) pour des droits commerciaux complets et une concurrence de rendu cloud plus élevée. Sur les Mac Intel, les modèles génératifs récents nécessitent le rendu cloud car le traitement local n'y est pas disponible."
+    },
+    "pros": [
+      { "en": "Unlimited local and cloud rendering are both included, with no per-image credit system to track.", "fr": "Le rendu local et le rendu cloud illimités sont tous les deux inclus, sans système de crédits par image à surveiller." },
+      { "en": "Nine specialized models let you pick the right approach for portraits, text, or general upscaling instead of one generic algorithm.", "fr": "Neuf modèles spécialisés permettent de choisir la bonne approche pour les portraits, le texte ou l'agrandissement général plutôt qu'un seul algorithme générique." }
+    ],
+    "cons": [
+      { "en": "No free plan and no trial mentioned; you commit to a subscription before testing it on your own images.", "fr": "Aucune offre gratuite ni essai mentionné ; il faut s'engager dans un abonnement avant de le tester sur ses propres images." },
+      { "en": "The Personal plan's commercial use is capped for organizations over $1M in annual revenue, which pushes larger studios to Pro.", "fr": "L'usage commercial de l'offre Personal est plafonné pour les organisations dépassant 1 M$ de revenu annuel, ce qui pousse les studios plus importants vers Pro." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You regularly need to enlarge photos for print or delivery and want unlimited local and cloud rendering without a per-image credit system.", "fr": "Tu dois régulièrement agrandir des photos pour l'impression ou la livraison et tu veux un rendu local et cloud illimité sans système de crédits par image." },
+      "avoidIf": { "en": "You only need to upscale images occasionally; a pay-per-use cloud tool will likely cost less than a $149/year commitment.", "fr": "Tu n'as besoin d'agrandir des images qu'occasionnellement ; un outil cloud payé à l'usage coûtera probablement moins cher qu'un engagement à 149 $/an." },
+      "threshold": { "en": "Budget $149/year for Personal if your organization earns under $1M/year, or $499/year for Pro once you need full commercial rights or organization revenue exceeds that limit.", "fr": "Prévois 149 $/an pour Personal si ton organisation gagne moins d'1 M$/an, ou 499 $/an pour Pro dès que tu as besoin de droits commerciaux complets ou que le revenu de l'organisation dépasse ce seuil." },
+      "billingTraps": { "en": "The advertised monthly-equivalent price ($12.42 or $41.58) is not an actual monthly billing option; both plans are charged as one upfront annual payment ($149 or $499).", "fr": "Le prix mensuel équivalent affiché (12,42 $ ou 41,58 $) n'est pas une option de facturation mensuelle réelle ; les deux offres sont facturées en un seul paiement annuel payé d'avance (149 $ ou 499 $)." }
+    }
+  },
   "unknowns": [
     "Exact refund/cancellation policy not verified on this page",
     "Whether a limited free trial exists elsewhere on the site was not confirmed within the page budget"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

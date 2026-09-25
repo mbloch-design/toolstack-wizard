@@ -3,7 +3,8 @@
   "slug": "datadog",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Datadog",
     "vendor": "Datadog, Inc.",
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 5 hosts, 1-day metric retention" }],
+        "keyLimits": [{ "en": "Up to 5 hosts, 1-day metric retention", "fr": "Jusqu'à 5 hosts, rétention des métriques d'1 jour" }],
         "sourceIds": ["s1"]
       },
       {
@@ -46,7 +47,7 @@
         "price": { "monthly": 18, "annualPerMonth": 15, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Priced per host per month; 15-month data retention; 100 custom metrics and 500 custom events per host" }
+          { "en": "Priced per host per month; 15-month data retention; 100 custom metrics and 500 custom events per host", "fr": "Facturé par host et par mois ; rétention des données de 15 mois ; 100 métriques personnalisées et 500 événements personnalisés par host" }
         ],
         "sourceIds": ["s1"]
       },
@@ -58,36 +59,36 @@
         "price": { "monthly": 27, "annualPerMonth": 23, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Priced per host per month; machine learning alerts, live processes, governance console; 200 custom metrics and 1,000 custom events per host" }
+          { "en": "Priced per host per month; machine learning alerts, live processes, governance console; 200 custom metrics and 1,000 custom events per host", "fr": "Facturé par host et par mois ; alertes par machine learning, processus en direct, console de gouvernance ; 200 métriques personnalisées et 1 000 événements personnalisés par host" }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "infra-pro",
     "addOns": [
-      { "en": "APM (Application Performance Monitoring): from $36/host/month standalone (annual), or from $31/host/month bundled with Infrastructure", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Log Management: ingest $0.10/GB, standard indexing $1.70 per million events/month (annual), flex storage $0.05 per million events/month", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Feature Flags: $55/month per 1M monthly flag configuration requests (annual)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Code Coverage: $8 per active committer/month (annual)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI Credits (Bits Chat, Investigation, Code, Agent Builder): $500 for 500 credits/month (annual) or $1.30/credit on-demand", "fr": null, "sourceIds": ["s1"] }
+      { "en": "APM (Application Performance Monitoring): from $36/host/month standalone (annual), or from $31/host/month bundled with Infrastructure", "fr": "APM (suivi des performances applicatives) : à partir de 36 $/host/mois en standalone (annuel), ou à partir de 31 $/host/mois avec Infrastructure", "sourceIds": ["s1"] },
+      { "en": "Log Management: ingest $0.10/GB, standard indexing $1.70 per million events/month (annual), flex storage $0.05 per million events/month", "fr": "Gestion des logs : ingestion à 0,10 $/Go, indexation standard 1,70 $ par million d'événements/mois (annuel), stockage flex à 0,05 $ par million d'événements/mois", "sourceIds": ["s1"] },
+      { "en": "Feature Flags: $55/month per 1M monthly flag configuration requests (annual)", "fr": "Feature Flags : 55 $/mois par million de requêtes de configuration de flag par mois (annuel)", "sourceIds": ["s1"] },
+      { "en": "Code Coverage: $8 per active committer/month (annual)", "fr": "Couverture de code : 8 $ par committeur actif/mois (annuel)", "sourceIds": ["s1"] },
+      { "en": "AI Credits (Bits Chat, Investigation, Code, Agent Builder): $500 for 500 credits/month (annual) or $1.30/credit on-demand", "fr": "Crédits IA (Bits Chat, Investigation, Code, Agent Builder) : 500 $ pour 500 crédits/mois (annuel) ou 1,30 $/crédit à la demande", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Pricing is primarily per-host and per-usage across many separately billed modules (infra, APM, logs, feature flags, AI credits); the total cost scales with the number of hosts and volume of telemetry, not a flat per-seat fee.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "On-demand (month-to-month) pricing is notably higher than annual commitment pricing across all modules (e.g. Infrastructure Pro is $15/host/month annual vs $18/host/month on-demand).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Pricing is primarily per-host and per-usage across many separately billed modules (infra, APM, logs, feature flags, AI credits); the total cost scales with the number of hosts and volume of telemetry, not a flat per-seat fee.", "fr": "Le prix est principalement par host et à l'usage sur de nombreux modules facturés séparément (infra, APM, logs, feature flags, crédits IA) ; le coût total évolue avec le nombre de hosts et le volume de télémétrie, pas un tarif fixe par siège.", "sourceIds": ["s1"] },
+      { "en": "On-demand (month-to-month) pricing is notably higher than annual commitment pricing across all modules (e.g. Infrastructure Pro is $15/host/month annual vs $18/host/month on-demand).", "fr": "Le tarif à la demande (mois par mois) est nettement plus élevé que le tarif avec engagement annuel sur tous les modules (ex. Infrastructure Pro à 15 $/host/mois en annuel contre 18 $/host/mois à la demande).", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Infrastructure, application (APM), network, and log monitoring in one integrated platform.", "sourceIds": ["s2"] },
-      { "en": "Real User Monitoring (RUM) and synthetic testing for frontend/user-facing performance.", "sourceIds": ["s2"] },
-      { "en": "Security features including cloud security posture management, code security (SAST/SCA/IaC scanning), and Cloud SIEM.", "sourceIds": ["s2"] },
-      { "en": "Developer tooling: CI/CD visibility, test optimization, feature flags, code coverage, and an internal developer portal.", "sourceIds": ["s2"] },
-      { "en": "AI-assisted troubleshooting and chat features (Bits Investigation, Bits Chat) for incident response.", "sourceIds": ["s2", "s1"] }
+      { "en": "Infrastructure, application (APM), network, and log monitoring in one integrated platform.", "fr": "Monitoring d'infrastructure, d'applications (APM), de réseau et de logs dans une plateforme intégrée.", "sourceIds": ["s2"] },
+      { "en": "Real User Monitoring (RUM) and synthetic testing for frontend/user-facing performance.", "fr": "Real User Monitoring (RUM) et tests synthétiques pour la performance côté utilisateur.", "sourceIds": ["s2"] },
+      { "en": "Security features including cloud security posture management, code security (SAST/SCA/IaC scanning), and Cloud SIEM.", "fr": "Fonctions de sécurité incluant la gestion de la posture de sécurité cloud, l'analyse de code (SAST/SCA/IaC) et le Cloud SIEM.", "sourceIds": ["s2"] },
+      { "en": "Developer tooling: CI/CD visibility, test optimization, feature flags, code coverage, and an internal developer portal.", "fr": "Outils pour développeurs : visibilité CI/CD, optimisation des tests, feature flags, couverture de code et un portail développeur interne.", "sourceIds": ["s2"] },
+      { "en": "AI-assisted troubleshooting and chat features (Bits Investigation, Bits Chat) for incident response.", "fr": "Fonctions de dépannage et de chat assistées par IA (Bits Investigation, Bits Chat) pour la réponse aux incidents.", "sourceIds": ["s2", "s1"] }
     ],
     "limitations": [
-      { "en": "Cost structure is complex and modular: infrastructure, APM, logs, feature flags, code coverage, and AI credits are billed separately, making total spend hard to predict without usage history.", "sourceIds": ["s1"] },
-      { "en": "The free Infrastructure plan is capped at 5 hosts and only 1-day metric retention, unsuitable for production use beyond small test environments.", "sourceIds": ["s1"] },
-      { "en": "Full capability (APM, logs, security) requires stacking multiple paid modules on top of Infrastructure Pro/Enterprise, not a single flat plan.", "sourceIds": ["s1"] }
+      { "en": "Cost structure is complex and modular: infrastructure, APM, logs, feature flags, code coverage, and AI credits are billed separately, making total spend hard to predict without usage history.", "fr": "La structure de coût est complexe et modulaire : infrastructure, APM, logs, feature flags, couverture de code et crédits IA sont facturés séparément, ce qui rend la dépense totale difficile à prévoir sans historique d'usage.", "sourceIds": ["s1"] },
+      { "en": "The free Infrastructure plan is capped at 5 hosts and only 1-day metric retention, unsuitable for production use beyond small test environments.", "fr": "Le plan Infrastructure gratuit est limité à 5 hosts et à seulement 1 jour de rétention des métriques, inadapté à un usage en production au-delà de petits environnements de test.", "sourceIds": ["s1"] },
+      { "en": "Full capability (APM, logs, security) requires stacking multiple paid modules on top of Infrastructure Pro/Enterprise, not a single flat plan.", "fr": "La capacité complète (APM, logs, sécurité) demande d'empiler plusieurs modules payants par-dessus Infrastructure Pro/Enterprise, pas un plan unique et fixe.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "AWS", "slug": null, "sourceIds": ["s2"] },
@@ -98,25 +99,73 @@
     ],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": null,
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and small engineering teams running production infrastructure who need infra, APM, logs and security monitoring in one platform rather than several separate tools.",
+      "fr": "Développeurs et petites équipes d'ingénierie qui gèrent une infrastructure en production et ont besoin du monitoring infra, APM, logs et sécurité dans une seule plateforme plutôt que plusieurs outils séparés."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Monitor production infrastructure: install the Datadog agent on your hosts and get infra metrics with 15-month retention on Infrastructure Pro.", "fr": "Surveiller une infrastructure en production : installer l'agent Datadog sur tes hosts et obtenir des métriques infra avec 15 mois de rétention sur Infrastructure Pro." },
+    { "en": "Debug incidents faster: use the Bits Investigation and Bits Chat AI troubleshooting features to speed up root-cause analysis of a production issue.", "fr": "Déboguer plus vite un incident : utiliser les fonctions de dépannage IA Bits Investigation et Bits Chat pour accélérer l'analyse de la cause racine d'un problème en production." }
+  ],
   "alternatives": [
-    { "slug": "sentry", "reason": { "en": "Focused alternative for error tracking and application monitoring, lighter weight than Datadog's full observability suite." } },
-    { "slug": "prometheus", "reason": { "en": "Open-source metrics monitoring alternative with no per-host licensing cost, requiring self-hosting and more setup." } },
-    { "slug": "grafana", "reason": { "en": "Open-source/self-hostable observability and dashboarding platform, a common lower-cost substitute for Datadog dashboards and alerting." } },
-    { "slug": "better-stack", "reason": { "en": "Simpler, more affordably priced uptime, logs, and incident monitoring platform aimed at smaller teams." } },
-    { "slug": "pagerduty", "reason": { "en": "Alternative or complement focused specifically on incident management and on-call alerting rather than full observability." } }
+    { "slug": "sentry", "reason": { "en": "Focused alternative for error tracking and application monitoring, lighter weight than Datadog's full observability suite.", "fr": "Alternative plus ciblée pour le suivi des erreurs et le monitoring applicatif, plus légère que la suite d'observabilité complète de Datadog." } },
+    { "slug": "prometheus", "reason": { "en": "Open-source metrics monitoring alternative with no per-host licensing cost, requiring self-hosting and more setup.", "fr": "Alternative open source de monitoring de métriques sans coût de licence par host, mais demandant de l'auto-hébergement et plus de configuration." } },
+    { "slug": "grafana", "reason": { "en": "Open-source/self-hostable observability and dashboarding platform, a common lower-cost substitute for Datadog dashboards and alerting.", "fr": "Plateforme d'observabilité et de tableaux de bord open source/auto-hébergeable, un substitut courant moins cher aux dashboards et alertes de Datadog." } },
+    { "slug": "better-stack", "reason": { "en": "Simpler, more affordably priced uptime, logs, and incident monitoring platform aimed at smaller teams.", "fr": "Plateforme de monitoring de disponibilité, de logs et d'incidents plus simple et moins chère, visant les petites équipes." } }
   ],
   "missingAlternatives": [
     { "name": "New Relic", "officialUrl": "https://newrelic.com", "reason": "Major direct competitor in full-stack observability (APM, infrastructure, logs) not in the catalogue." },
     { "name": "Dynatrace", "officialUrl": "https://www.dynatrace.com", "reason": "Enterprise-grade observability platform competing directly with Datadog, not in the catalogue." }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Infrastructure Pro gives per-host monitoring with 15-month retention from $15/host/month annual, but cost is split across many separately billed modules (APM, logs, feature flags, AI credits), which makes it hard to judge value against price without knowing full usage.", "fr": "Infrastructure Pro donne un monitoring par host avec 15 mois de rétention dès 15 $/host/mois en annuel, mais le coût est réparti sur de nombreux modules facturés séparément (APM, logs, feature flags, crédits IA), ce qui rend difficile de juger la valeur par rapport au prix sans connaître l'usage complet.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The sources do not state a setup time for a first useful result, and describe a modular cost structure across many products, which suggests unlocking full capability takes more than a first-hour configuration.", "fr": "Les sources ne précisent pas de temps de mise en place pour un premier résultat utile, et décrivent une structure de coût modulaire sur de nombreux produits, ce qui suggère que débloquer la capacité complète prend plus qu'une configuration d'une heure.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Infra, APM, log, RUM, security and developer-tooling capabilities are all delivered natively as described, matching the full-observability promise without a third-party tool mentioned.", "fr": "Les capacités infra, APM, logs, RUM, sécurité et outils dev sont toutes livrées nativement comme décrit, ce qui tient la promesse d'observabilité complète sans outil tiers mentionné.", "sourceIds": ["s2"] },
+      "puissance": { "en": "The product spans infrastructure, APM, logs, RUM, synthetic testing, security scanning, CI/CD visibility, feature flags and AI-assisted troubleshooting, a broad feature ceiling for the observability category.", "fr": "Le produit couvre infrastructure, APM, logs, RUM, tests synthétiques, analyse de sécurité, visibilité CI/CD, feature flags et dépannage assisté par IA, un plafond de fonctionnalités large pour la catégorie observabilité.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: data export and portability of monitoring history if leaving Datadog are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité de l'historique de monitoring en cas de départ de Datadog ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Observability platform", "fr": "Plateforme d'observabilité" },
+    "shortDescription": { "en": "Datadog is a full observability platform (infrastructure, APM, logs, security) priced per host and by usage, with a free tier for up to 5 hosts and Infrastructure Pro from $15/host/month billed annually.", "fr": "Datadog est une plateforme d'observabilité complète (infrastructure, APM, logs, sécurité) facturée par host et à l'usage, avec un palier gratuit jusqu'à 5 hosts et Infrastructure Pro dès 15 $/host/mois facturé annuellement." },
+    "longDescription": {
+      "en": "Datadog combines infrastructure, application (APM), network and log monitoring with real user monitoring, synthetic testing, security scanning (SAST/SCA/IaC, Cloud SIEM) and developer tooling like CI/CD visibility and feature flags, all in one platform. AI-assisted troubleshooting features (Bits Investigation, Bits Chat) help with incident response.\n\nThe free Infrastructure plan covers up to 5 hosts with 1-day metric retention. Infrastructure Pro is $18/host/month on-demand or $15/host/month billed annually, and Infrastructure Enterprise is $27 on-demand or $23/host/month annually. Beyond infrastructure, APM, log management, feature flags, code coverage and AI credits are each billed separately and add to the total, so real monthly cost depends on the number of hosts and the volume of telemetry across every module used, not a single flat fee.",
+      "fr": "Datadog combine le monitoring d'infrastructure, d'applications (APM), de réseau et de logs avec le suivi des utilisateurs réels, les tests synthétiques, l'analyse de sécurité (SAST/SCA/IaC, Cloud SIEM) et des outils dev comme la visibilité CI/CD et les feature flags, le tout dans une seule plateforme. Des fonctions de dépannage assistées par IA (Bits Investigation, Bits Chat) aident à la réponse aux incidents.\n\nLe plan Infrastructure gratuit couvre jusqu'à 5 hosts avec une rétention de métriques d'1 jour. Infrastructure Pro coûte 18 $/host/mois à la demande ou 15 $/host/mois facturé annuellement, et Infrastructure Enterprise est à 27 $ à la demande ou 23 $/host/mois annuellement. Au-delà de l'infrastructure, APM, gestion des logs, feature flags, couverture de code et crédits IA sont chacun facturés séparément et s'ajoutent au total, donc le coût mensuel réel dépend du nombre de hosts et du volume de télémétrie sur chaque module utilisé, pas d'un tarif fixe unique."
+    },
+    "pros": [
+      { "en": "One platform covers infra, APM, logs, RUM and security instead of stitching together separate monitoring tools.", "fr": "Une seule plateforme couvre infra, APM, logs, RUM et sécurité au lieu d'assembler des outils de monitoring séparés." },
+      { "en": "AI-assisted troubleshooting (Bits Investigation, Bits Chat) is built into incident response rather than sold as a separate product.", "fr": "Le dépannage assisté par IA (Bits Investigation, Bits Chat) est intégré à la réponse aux incidents plutôt que vendu comme un produit séparé." }
+    ],
+    "cons": [
+      { "en": "Cost is split across many separately billed modules (infra, APM, logs, feature flags, AI credits), making total spend hard to predict without usage history.", "fr": "Le coût est réparti sur de nombreux modules facturés séparément (infra, APM, logs, feature flags, crédits IA), ce qui rend la dépense totale difficile à prévoir sans historique d'usage." },
+      { "en": "The free plan's 1-day metric retention limits it to short-term testing rather than ongoing monitoring.", "fr": "La rétention des métriques d'1 jour du plan gratuit le limite à des tests de courte durée plutôt qu'à un monitoring continu." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run production infrastructure and want infra, APM, logs and security monitoring in one platform, and can track usage-based billing across modules.", "fr": "Tu gères une infrastructure en production et tu veux le monitoring infra, APM, logs et sécurité dans une seule plateforme, et tu peux suivre une facturation à l'usage répartie sur plusieurs modules." },
+      "avoidIf": { "en": "You want one predictable flat price, since Datadog's total cost depends on host count and telemetry volume across several separately billed modules.", "fr": "Tu veux un prix fixe et prévisible, car le coût total de Datadog dépend du nombre de hosts et du volume de télémétrie sur plusieurs modules facturés séparément." },
+      "threshold": { "en": "Budget at least $15/host/month (Infrastructure Pro, annual) per monitored host, then add APM, logs or other modules as needed; the free plan's 5-host cap is only enough for a small test environment.", "fr": "Prévois au moins 15 $/host/mois (Infrastructure Pro, annuel) par host surveillé, puis ajoute APM, logs ou d'autres modules selon le besoin ; le plafond de 5 hosts du plan gratuit ne suffit que pour un petit environnement de test." },
+      "billingTraps": { "en": "On-demand (month-to-month) pricing is notably higher than the annual commitment across modules (e.g. Infrastructure Pro is $18/host on-demand vs $15/host annual), and APM, logs, feature flags, code coverage and AI credits are all billed as separate add-ons on top of the host price.", "fr": "Le tarif à la demande (mois par mois) est nettement plus élevé que l'engagement annuel sur tous les modules (ex. Infrastructure Pro à 18 $/host à la demande contre 15 $/host en annuel), et APM, logs, feature flags, couverture de code et crédits IA sont tous facturés en plus du prix par host." }
+    }
+  },
   "unknowns": [
     "No explicit trial length stated on the pricing page for most Datadog products.",
     "Whether taxes are included in listed prices is not stated on the pricing page.",
     "Exact scope of what counts as a 'host' for billing purposes (e.g. containers, serverless functions) is not detailed on the pricing page itself and requires deeper docs review."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Removed pagerduty from alternatives: it is an incident-alerting complement to observability, not a substitute for Datadog's main function, per the brief's rule that an alternative must cover the same main need."
+  ]
 }

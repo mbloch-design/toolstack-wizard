@@ -3,7 +3,8 @@
   "slug": "klaviyo",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Klaviyo",
     "vendor": "Klaviyo, Inc.",
@@ -35,30 +36,30 @@
         "minSeats": null,
         "price": { "monthly": 60, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry paid tier price scales with number of active contact profiles; $60/month is the starting rate above the free 250-profile threshold." }],
+        "keyLimits": [{ "en": "Entry paid tier price scales with number of active contact profiles; $60/month is the starting rate above the free 250-profile threshold.", "fr": "Le tarif du premier palier payant évolue avec le nombre de profils de contact actifs ; 60 $/mois est le tarif de départ au-delà du seuil gratuit de 250 profils." }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "marketing-starter",
     "addOns": [
-      { "en": "SMS/mobile messaging billed separately from email, usage-based on message volume.", "sourceIds": ["s1"] },
-      { "en": "Composer (AI campaign generation) has its own usage allowance, $5/month included on the free plan.", "sourceIds": ["s1"] }
+      { "en": "SMS/mobile messaging billed separately from email, usage-based on message volume.", "fr": "Messagerie SMS/mobile facturée à part de l'email, à l'usage selon le volume de messages.", "sourceIds": ["s1"] },
+      { "en": "Composer (AI campaign generation) has its own usage allowance, $5/month included on the free plan.", "fr": "Composer (génération de campagnes par IA) a son propre quota d'usage, 5 $/mois inclus sur le plan gratuit.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Pricing is usage-based on the number of active contact profiles; the pricing page did not expose a full tiered price table by profile count during this pass, only the free threshold (250 profiles) and a starting paid rate.", "sourceIds": ["s1", "s2"] },
-      { "en": "SMS and email are priced and metered separately; a plan's email price does not include SMS sending volume.", "sourceIds": ["s1"] }
+      { "en": "Pricing is usage-based on the number of active contact profiles; the pricing page did not expose a full tiered price table by profile count during this pass, only the free threshold (250 profiles) and a starting paid rate.", "fr": "Le prix dépend de l'usage, selon le nombre de profils de contact actifs ; la page tarifs n'a pas montré de grille tarifaire complète par palier de profils lors de cette recherche, seulement le seuil gratuit (250 profils) et un tarif de départ.", "sourceIds": ["s1", "s2"] },
+      { "en": "SMS and email are priced and metered separately; a plan's email price does not include SMS sending volume.", "fr": "SMS et email sont facturés et mesurés séparément ; le prix d'un plan pour l'email n'inclut pas de volume d'envoi SMS.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Email marketing with campaign creation, automation flows (welcome, abandoned cart, post-purchase), A/B testing, and segmentation.", "sourceIds": ["s2"] },
-      { "en": "Omnichannel messaging: SMS, WhatsApp, mobile push, and social ad audience sync alongside email.", "sourceIds": ["s2"] },
-      { "en": "Unified customer profiles (B2C CRM) with predictive analytics for lifetime value and churn risk.", "sourceIds": ["s2"] },
-      { "en": "AI tools: Composer for prompt-based campaign generation and an AI Customer Agent.", "sourceIds": ["s2"] }
+      { "en": "Email marketing with campaign creation, automation flows (welcome, abandoned cart, post-purchase), A/B testing, and segmentation.", "fr": "Email marketing avec création de campagnes, flux automatisés (bienvenue, panier abandonné, post-achat), tests A/B et segmentation.", "sourceIds": ["s2"] },
+      { "en": "Omnichannel messaging: SMS, WhatsApp, mobile push, and social ad audience sync alongside email.", "fr": "Messagerie omnicanale : SMS, WhatsApp, notifications push mobiles et synchronisation d'audiences publicitaires sociales en plus de l'email.", "sourceIds": ["s2"] },
+      { "en": "Unified customer profiles (B2C CRM) with predictive analytics for lifetime value and churn risk.", "fr": "Profils client unifiés (CRM B2C) avec analyses prédictives de valeur vie client et de risque de churn.", "sourceIds": ["s2"] },
+      { "en": "AI tools: Composer for prompt-based campaign generation and an AI Customer Agent.", "fr": "Outils IA : Composer pour générer des campagnes à partir d'un prompt, et un agent client IA.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Free plan support is time-limited to the first 60 days rather than ongoing.", "sourceIds": ["s1"] },
-      { "en": "Pricing scales with contact list size, so cost grows automatically as an account's audience grows, independent of feature needs.", "sourceIds": ["s1"] }
+      { "en": "Free plan support is time-limited to the first 60 days rather than ongoing.", "fr": "Le support du plan gratuit est limité aux 60 premiers jours plutôt que permanent.", "sourceIds": ["s1"] },
+      { "en": "Pricing scales with contact list size, so cost grows automatically as an account's audience grows, independent of feature needs.", "fr": "Le prix évolue avec la taille de la liste de contacts, donc le coût augmente automatiquement avec l'audience du compte, indépendamment des besoins en fonctionnalités.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Shopify", "slug": null, "sourceIds": ["s2"] },
@@ -70,19 +71,72 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small ecommerce teams that run their own marketing operations and need email, SMS and customer data unified in one platform.",
+      "fr": "Petites équipes e-commerce qui gèrent leur propre marketing et ont besoin d'unifier email, SMS et données client dans une seule plateforme."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Recover abandoned carts: set up an automated email and SMS flow triggered by cart abandonment on a connected Shopify or WooCommerce store.", "fr": "Récupérer les paniers abandonnés : configurer un flux automatisé email et SMS déclenché par l'abandon de panier sur une boutique Shopify ou WooCommerce connectée." },
+    { "en": "Target high-value customers: use predictive lifetime-value data to build a VIP segment and send it a campaign generated with Composer.", "fr": "Cibler les clients à forte valeur : utiliser la donnée prédictive de valeur vie client pour créer un segment VIP et lui envoyer une campagne générée avec Composer." }
+  ],
   "alternatives": [
-    { "slug": "mailchimp", "reason": { "en": "General email marketing competitor with a similar freemium entry point." } },
-    { "slug": "brevo", "reason": { "en": "Alternative email/SMS marketing platform with usage-based pricing on a similar audience." } },
-    { "slug": "activecampaign", "reason": { "en": "Competing marketing automation platform combining email and CRM-style features." } },
-    { "slug": "mailerlite", "reason": { "en": "Lower-cost email marketing alternative for smaller lists." } }
+    { "slug": "mailchimp", "reason": { "en": "General email marketing competitor with a similar freemium entry point.", "fr": "Concurrent généraliste en email marketing avec un point d'entrée freemium similaire." } },
+    { "slug": "brevo", "reason": { "en": "Alternative email/SMS marketing platform with usage-based pricing on a similar audience.", "fr": "Plateforme alternative d'email/SMS marketing avec une tarification à l'usage pour une audience similaire." } },
+    { "slug": "activecampaign", "reason": { "en": "Competing marketing automation platform combining email and CRM-style features.", "fr": "Plateforme concurrente de marketing automation combinant email et fonctions type CRM." } },
+    { "slug": "mailerlite", "reason": { "en": "Lower-cost email marketing alternative for smaller lists.", "fr": "Alternative email marketing moins chère pour des listes plus petites." } }
   ],
   "missingAlternatives": [
     { "name": "Omnisend", "officialUrl": "https://www.omnisend.com", "reason": "Direct ecommerce-focused email/SMS marketing competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Klaviyo bundles email, SMS, a B2C CRM and predictive analytics that would otherwise need separate tools, but the full price ladder by profile count was not exposed in the sources, so the cost-to-value ratio beyond the $60/month entry rate cannot be confirmed.", "fr": "Klaviyo regroupe email, SMS, un CRM B2C et des analyses prédictives qui demanderaient sinon des outils séparés, mais la grille tarifaire complète par nombre de profils n'a pas été trouvée dans les sources, donc le rapport coût/valeur au-delà du tarif de départ à 60 $/mois n'est pas confirmé.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "Composer generates a campaign from a prompt, which speeds up that one step, but setting up ecommerce integrations, flows and segmentation is not detailed enough in the sources to judge overall time-to-first-result.", "fr": "Composer génère une campagne à partir d'un prompt, ce qui accélère cette étape, mais la mise en place des intégrations e-commerce, des flux et de la segmentation n'est pas assez détaillée dans les sources pour juger le temps total jusqu'au premier résultat utile.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Email, SMS, WhatsApp, push and social ad sync are delivered natively alongside unified customer profiles, matching the omnichannel promise without third-party tools mentioned in the sources.", "fr": "Email, SMS, WhatsApp, push et synchronisation publicitaire sociale sont livrés nativement avec des profils client unifiés, ce qui tient la promesse omnicanale sans outil tiers mentionné dans les sources.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Predictive lifetime-value and churn analytics on top of omnichannel messaging and native connectors to the main ecommerce platforms go beyond a basic email tool's feature ceiling.", "fr": "Les analyses prédictives de valeur vie client et de churn, en plus de la messagerie omnicanale et des connecteurs natifs aux principales plateformes e-commerce, dépassent le plafond de fonctionnalités d'un simple outil d'emailing.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: data export and account portability are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité du compte ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Ecommerce marketing", "fr": "Marketing e-commerce" },
+    "shortDescription": { "en": "Klaviyo is an email and SMS marketing platform built for ecommerce, with a free plan up to 250 contacts and paid plans starting at $60/month as the contact list grows.", "fr": "Klaviyo est une plateforme d'email et SMS marketing pensée pour l'e-commerce, avec un plan gratuit jusqu'à 250 contacts et des plans payants dès 60 $/mois selon la taille de la liste." },
+    "longDescription": {
+      "en": "Klaviyo combines email and SMS marketing with a B2C CRM: it stores unified customer profiles, predicts lifetime value and churn risk, and lets a store build automated flows for abandoned carts, welcome series and post-purchase follow-up. It connects natively to Shopify, WooCommerce, BigCommerce, Magento, Wix and Salesforce Commerce Cloud, and an AI tool called Composer generates campaigns from a prompt.\n\nThe free plan covers up to 250 active profiles and 500 email sends a month, with $5 of SMS credit and support limited to the first 60 days. The entry paid tier starts at $60/month once the free profile threshold is crossed, and the price scales automatically with the number of active contact profiles; SMS is metered and billed separately from email, so total cost depends on both list size and messaging volume.",
+      "fr": "Klaviyo combine email et SMS marketing avec un CRM B2C : il stocke des profils client unifiés, prédit la valeur vie client et le risque de churn, et permet de construire des flux automatisés pour les paniers abandonnés, la série de bienvenue et le suivi post-achat. Il se connecte nativement à Shopify, WooCommerce, BigCommerce, Magento, Wix et Salesforce Commerce Cloud, et un outil IA appelé Composer génère des campagnes à partir d'un prompt.\n\nLe plan gratuit couvre jusqu'à 250 profils actifs et 500 envois d'email par mois, avec 5 $ de crédit SMS et un support limité aux 60 premiers jours. Le premier plan payant démarre à 60 $/mois une fois le seuil gratuit de profils dépassé, et le prix augmente automatiquement avec le nombre de profils de contact actifs ; le SMS est facturé à part de l'email, donc le coût total dépend à la fois de la taille de la liste et du volume de messages."
+    },
+    "pros": [
+      { "en": "Unified customer profiles with predictive lifetime-value and churn data go beyond what a basic email tool offers.", "fr": "Les profils client unifiés avec données prédictives de valeur vie client et de churn vont au-delà d'un simple outil d'emailing." },
+      { "en": "Native connectors for the main ecommerce platforms (Shopify, WooCommerce, BigCommerce, Magento) remove manual data syncing.", "fr": "Les connecteurs natifs pour les principales plateformes e-commerce (Shopify, WooCommerce, BigCommerce, Magento) évitent la synchronisation manuelle des données." }
+    ],
+    "cons": [
+      { "en": "Price rises automatically as the contact list grows, independent of how many features are actually used.", "fr": "Le prix augmente automatiquement avec la croissance de la liste de contacts, indépendamment des fonctionnalités réellement utilisées." },
+      { "en": "Free plan support drops off after 60 days, unlike an ongoing free-tier support policy.", "fr": "Le support du plan gratuit s'arrête après 60 jours, contrairement à une politique de support gratuit permanente." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run an ecommerce store and want email, SMS and customer data in one connected platform instead of separate tools.", "fr": "Tu gères une boutique en ligne et tu veux l'email, le SMS et la donnée client dans une seule plateforme connectée plutôt que des outils séparés." },
+      "avoidIf": { "en": "Your contact list is large relative to your budget, since Klaviyo's cost scales with active profiles rather than a flat fee.", "fr": "Ta liste de contacts est grande par rapport à ton budget, car le coût de Klaviyo augmente avec le nombre de profils actifs plutôt qu'un tarif fixe." },
+      "threshold": { "en": "Budget at least $60/month (the entry paid tier above the 250-profile free threshold) plus separate SMS credit, and expect that figure to rise as the contact list grows.", "fr": "Prévois au moins 60 $/mois (le premier plan payant au-delà du seuil gratuit de 250 profils) plus du crédit SMS séparé, et attends-toi à ce que ce montant augmente avec la liste de contacts." },
+      "billingTraps": { "en": "SMS is billed separately from email and its exact per-message pricing was not captured in this dossier; confirm it on the pricing page before estimating total monthly cost.", "fr": "Le SMS est facturé séparément de l'email et son prix exact au message n'a pas été relevé dans ce dossier ; vérifie-le sur la page tarifs avant d'estimer le coût mensuel total." }
+    }
+  },
   "unknowns": [
     "Full tiered pricing table by active-profile count was not directly visible on the fetched pricing page in this pass; only the free tier (250 profiles) and a starting paid rate ($60/month) were confirmed.",
     "Whether a free trial period exists for paid tiers was not clearly stated on the pricing page.",
     "Exact SMS pricing mechanics (per-message cost, regional variation) were not captured in this pass."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Klaviyo's pricing page did not expose a full tiered price table by active-profile count in this pass, only the free threshold (250 profiles) and a $60/month starting rate. Re-verify the full tier ladder on klaviyo.com/pricing before publishing a price comparison."
+  ]
 }

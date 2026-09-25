@@ -3,7 +3,8 @@
   "slug": "gitlens",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "GitLens",
     "vendor": "GitKraken (Axosoft LLC)",
@@ -15,10 +16,34 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.gitkraken.com/gitlens/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "GitLens pricing" },
-    { "id": "s2", "url": "https://www.gitkraken.com/gitlens", "tier": 1, "accessedOn": "2026-09-25", "title": "GitLens product page" },
-    { "id": "s3", "url": "https://gitkraken.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "GitKraken plans pricing" },
-    { "id": "s4", "url": "https://gitkraken.com/gitlens/pro-features", "tier": 1, "accessedOn": "2026-09-25", "title": "GitLens Pro features" }
+    {
+      "id": "s1",
+      "url": "https://www.gitkraken.com/gitlens/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "GitLens pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.gitkraken.com/gitlens",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "GitLens product page"
+    },
+    {
+      "id": "s3",
+      "url": "https://gitkraken.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "GitKraken plans pricing"
+    },
+    {
+      "id": "s4",
+      "url": "https://gitkraken.com/gitlens/pro-features",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "GitLens Pro features"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -27,8 +52,21 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Community edition: public and local repositories only, basic blame/history views, GitHub Copilot support with weekly AI credit cap.", "sourceIds": ["s1", "s3"] },
-    "trial": { "days": 14, "sourceIds": ["s1", "s3"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "Community edition: public and local repositories only, basic blame/history views, GitHub Copilot support with weekly AI credit cap.",
+      "sourceIds": [
+        "s1",
+        "s3"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1",
+        "s3"
+      ]
+    },
     "regularPriceUnknown": true,
     "plans": [
       {
@@ -36,91 +74,354 @@
         "name": "Community",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Public and local repositories only; basic blame/history views; GitHub Copilot support with a weekly AI credit cap.", "sourceIds": ["s1", "s3"] }],
-        "sourceIds": ["s1", "s3"]
+        "keyLimits": [
+          {
+            "en": "Public and local repositories only; basic blame/history views; GitHub Copilot support with a weekly AI credit cap.",
+            "fr": "Dépôts publics et locaux uniquement ; vues de blame et d'historique de base ; prise en charge de GitHub Copilot avec un plafond hebdomadaire de crédits IA.",
+            "sourceIds": [
+              "s1",
+              "s3"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s3"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Up to 2 seats; private repo access; up to 1,000,000 weekly AI credits per user. Exact seat price is not displayed on the public page without starting checkout (JS-rendered).", "sourceIds": ["s3", "s4"] }],
-        "sourceIds": ["s3", "s4"]
+        "keyLimits": [
+          {
+            "en": "Up to 2 seats; private repo access; up to 1,000,000 weekly AI credits per user. Exact seat price is not displayed on the public page without starting checkout (JS-rendered).",
+            "fr": "Jusqu'à 2 sièges ; accès aux dépôts privés ; jusqu'à 1 000 000 de crédits IA hebdomadaires par utilisateur. Le prix exact par siège n'est pas affiché sur la page publique sans lancer le paiement (rendu en JavaScript).",
+            "sourceIds": [
+              "s3",
+              "s4"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s3",
+          "s4"
+        ]
       },
       {
         "key": "advanced",
         "name": "Advanced",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Up to 10 seats; self-hosted Git integrations, single-domain SSO, team Launchpad, up to 2,000,000 weekly AI credits per user. Price not publicly displayed on the fetched page.", "sourceIds": ["s3"] }],
-        "sourceIds": ["s3"]
+        "keyLimits": [
+          {
+            "en": "Up to 10 seats; self-hosted Git integrations, single-domain SSO, team Launchpad, up to 2,000,000 weekly AI credits per user. Price not publicly displayed on the fetched page.",
+            "fr": "Jusqu'à 10 sièges ; intégrations Git auto-hébergées, SSO monodomaine, Launchpad d'équipe, jusqu'à 2 000 000 de crédits IA hebdomadaires par utilisateur. Prix non affiché publiquement sur la page consultée.",
+            "sourceIds": [
+              "s3"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s3"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Up to 100 seats; multi-domain SSO, customer success manager, GitKraken Insights, up to 3,000,000 weekly AI credits per user. Price not publicly displayed on the fetched page.", "sourceIds": ["s3"] }],
-        "sourceIds": ["s3"]
+        "keyLimits": [
+          {
+            "en": "Up to 100 seats; multi-domain SSO, customer success manager, GitKraken Insights, up to 3,000,000 weekly AI credits per user. Price not publicly displayed on the fetched page.",
+            "fr": "Jusqu'à 100 sièges ; SSO multidomaine, chargé de compte dédié, GitKraken Insights, jusqu'à 3 000 000 de crédits IA hebdomadaires par utilisateur. Prix non affiché publiquement sur la page consultée.",
+            "sourceIds": [
+              "s3"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s3"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 20,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom terms and master service agreements, minimum 20+ seats, 30-day trial.", "sourceIds": ["s3"] }],
-        "sourceIds": ["s3"]
+        "keyLimits": [
+          {
+            "en": "Custom terms and master service agreements, minimum 20+ seats, 30-day trial.",
+            "fr": "Conditions et accords de service sur mesure, minimum de 20 sièges ou plus, essai de 30 jours.",
+            "sourceIds": [
+              "s3"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s3"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "GitKraken's pricing page renders plan prices via JavaScript; the exact per-seat dollar amounts for Pro, Advanced and Business were not retrievable through static page fetches and must be confirmed on gitkraken.com/pricing before publishing.", "sourceIds": ["s3"] }
+      {
+        "en": "GitKraken's pricing page renders plan prices via JavaScript; the exact per-seat dollar amounts for Pro, Advanced and Business were not retrievable through static page fetches and must be confirmed on gitkraken.com/pricing before publishing.",
+        "fr": "La page de tarifs de GitKraken affiche les prix via JavaScript ; les montants exacts par siège pour Pro, Advanced et Business n'ont pas pu être récupérés par une simple lecture statique de la page et doivent être confirmés sur gitkraken.com/pricing avant publication.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Commit Graph showing branches, commits, worktrees and working changes in one visual view.", "sourceIds": ["s2"] },
-      { "en": "Inline blame annotations, Git CodeLens, file/line history and a Visual File History timeline.", "sourceIds": ["s2"] },
-      { "en": "AI-powered commit message generation, PR descriptions, changelog creation and merge-conflict assistance.", "sourceIds": ["s2"] },
-      { "en": "Launchpad for centralized pull request tracking across repositories.", "sourceIds": ["s2"] }
+      {
+        "en": "Commit Graph showing branches, commits, worktrees and working changes in one visual view.",
+        "fr": "Commit Graph affichant branches, commits, arbres de travail et modifications en cours dans une seule vue visuelle.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Inline blame annotations, Git CodeLens, file/line history and a Visual File History timeline.",
+        "fr": "Annotations de blame en ligne, Git CodeLens, historique par fichier/ligne et une chronologie visuelle de l'historique des fichiers.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "AI-powered commit message generation, PR descriptions, changelog creation and merge-conflict assistance.",
+        "fr": "Génération de messages de commit, de descriptions de PR, de changelogs et d'aide à la résolution de conflits de fusion assistées par IA.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Launchpad for centralized pull request tracking across repositories.",
+        "fr": "Launchpad pour centraliser le suivi des pull requests sur plusieurs dépôts.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Private repository features require a paid Pro subscription; the free Community edition only supports public and local repositories.", "sourceIds": ["s1", "s2"] },
-      { "en": "Advanced features such as Commit Graph extras, Worktrees, Visual File History and GitKraken AI are limited or gated in the free tier.", "sourceIds": ["s2"] }
+      {
+        "en": "Private repository features require a paid Pro subscription; the free Community edition only supports public and local repositories.",
+        "fr": "Les fonctions sur dépôts privés nécessitent un abonnement Pro payant ; la version gratuite Community ne prend en charge que les dépôts publics et locaux.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "en": "Advanced features such as Commit Graph extras, Worktrees, Visual File History and GitKraken AI are limited or gated in the free tier.",
+        "fr": "Des fonctions avancées comme les extras du Commit Graph, les Worktrees, l'historique visuel des fichiers et GitKraken AI sont limitées ou verrouillées dans l'offre gratuite.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "GitHub", "slug": null, "sourceIds": ["s2"] },
-      { "name": "GitLab", "slug": null, "sourceIds": ["s2"] },
-      { "name": "Bitbucket", "slug": null, "sourceIds": ["s2"] },
-      { "name": "Jira", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "GitHub",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "GitLab",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Bitbucket",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Jira",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web", "desktop"]
+    "platforms": [
+      "web",
+      "desktop"
+    ]
   },
-  "audience": {},
-  "useCases": [],
-  "alternatives": [
-    { "slug": "vercel", "reason": { "en": "Both are core developer-workflow tools frequently used alongside VS Code, though for a different job (deployment vs. Git visualization)." } }
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer who wants Git history, blame and pull-request context directly inside VS Code instead of switching to a separate Git client.",
+      "fr": "Un développeur qui veut l'historique Git, le blame et le contexte des pull requests directement dans VS Code plutôt que de basculer vers un client Git séparé."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Code review prep: check inline blame and Visual File History to understand why a line changed before reviewing a PR.",
+      "fr": "Préparation de revue de code : consulter le blame en ligne et l'historique visuel des fichiers pour comprendre pourquoi une ligne a changé avant de relire une PR."
+    },
+    {
+      "en": "Cross-repo tracking: use Launchpad to keep tabs on open pull requests across several repositories from one place.",
+      "fr": "Suivi multi-dépôts : utiliser Launchpad pour suivre les pull requests ouvertes sur plusieurs dépôts depuis un seul endroit."
+    }
   ],
+  "alternatives": [],
   "missingAlternatives": [
-    { "name": "GitHub Desktop", "officialUrl": "https://desktop.github.com/", "reason": "Free alternative Git GUI many solo developers compare GitLens against, not in the catalogue" },
-    { "name": "Sourcetree", "officialUrl": "https://www.sourcetreeapp.com/", "reason": "Free Git GUI client, a direct alternative for visual Git history, not in the catalogue" }
+    {
+      "name": "GitHub Desktop",
+      "officialUrl": "https://desktop.github.com/",
+      "reason": "Free alternative Git GUI many solo developers compare GitLens against, not in the catalogue"
+    },
+    {
+      "name": "Sourcetree",
+      "officialUrl": "https://www.sourcetreeapp.com/",
+      "reason": "Free Git GUI client, a direct alternative for visual Git history, not in the catalogue"
+    }
   ],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: the Community edition covers public/local repos for free, but Pro/Advanced/Business prices are not published, so the cost-to-value ratio for private-repo use can't be judged from the collected sources.",
+        "fr": "Note neutre : l'édition Community couvre gratuitement les dépôts publics/locaux, mais les prix de Pro/Advanced/Business ne sont pas publiés, donc le rapport coût/valeur pour un usage sur dépôts privés ne peut pas être évalué à partir des sources relevées.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: how long it takes a new user to get a useful first result inside VS Code is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire à un nouvel utilisateur pour obtenir un premier résultat utile dans VS Code ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Inline blame, Commit Graph, file history and Launchpad work as described inside VS Code, without needing a separate Git GUI for the covered features.",
+        "fr": "Le blame en ligne, le Commit Graph, l'historique de fichiers et Launchpad fonctionnent comme décrit dans VS Code, sans nécessiter une interface Git séparée pour les fonctions couvertes.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Commit Graph, Visual File History, AI-assisted commit messages and PR tracking together cover more ground than a basic blame extension.",
+        "fr": "Commit Graph, historique visuel des fichiers, messages de commit assistés par IA et suivi des PR couvrent ensemble bien plus qu'une simple extension de blame.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "GitLens only visualizes and annotates the existing Git history and repository data; it doesn't store code or history in a proprietary format, so nothing is lost by uninstalling it.",
+        "fr": "GitLens ne fait que visualiser et annoter l'historique Git et les données du dépôt existants ; il ne stocke ni code ni historique dans un format propriétaire, donc rien n'est perdu en le désinstallant.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Git blame tool",
+      "fr": "Outil de blame Git"
+    },
+    "shortDescription": {
+      "en": "GitLens is a VS Code extension that adds inline blame, a visual commit graph, file history and AI-assisted commit tools on top of Git.",
+      "fr": "GitLens est une extension VS Code qui ajoute blame en ligne, graphe de commits, historique de fichiers et outils IA au-dessus de Git."
+    },
+    "longDescription": {
+      "en": "GitLens layers on top of Git inside VS Code: inline blame annotations, a Commit Graph showing branches and worktrees, Visual File History, and a Launchpad that centralizes pull requests across repositories. AI-assisted commit messages, PR descriptions and merge-conflict help round it out.\n\nThe free Community edition covers public and local repositories with basic blame and history views. Private repositories require the paid Pro tier (up to 2 seats), with Advanced and Business tiers adding SSO, self-hosted Git integrations and higher AI-credit caps as a team grows, and Enterprise for 20+ seats. Exact seat prices for Pro, Advanced and Business aren't published on the pricing page and need checking live before use for a team.",
+      "fr": "GitLens s'ajoute par-dessus Git dans VS Code : annotations de blame en ligne, Commit Graph affichant branches et arbres de travail, historique visuel des fichiers, et un Launchpad qui centralise les pull requests sur plusieurs dépôts. Des messages de commit, descriptions de PR et une aide à la résolution de conflits assistés par IA complètent l'ensemble.\n\nL'édition Community gratuite couvre les dépôts publics et locaux avec des vues de blame et d'historique de base. Les dépôts privés nécessitent l'offre Pro payante (jusqu'à 2 sièges), les offres Advanced et Business ajoutant SSO, intégrations Git auto-hébergées et des plafonds de crédits IA plus élevés à mesure qu'une équipe grandit, avec Enterprise pour 20 sièges ou plus. Les prix exacts par siège pour Pro, Advanced et Business ne sont pas publiés sur la page de tarifs et sont à vérifier en direct avant un usage en équipe."
+    },
+    "pros": [
+      {
+        "en": "Inline blame, Commit Graph and file history work directly inside VS Code without switching tools.",
+        "fr": "Le blame en ligne, le Commit Graph et l'historique de fichiers fonctionnent directement dans VS Code sans changer d'outil."
+      },
+      {
+        "en": "The free Community edition already covers public and local repositories with real blame and history features.",
+        "fr": "L'édition gratuite Community couvre déjà les dépôts publics et locaux avec de vraies fonctions de blame et d'historique."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Private repository access requires a paid Pro seat, and its exact price isn't published on the pricing page.",
+        "fr": "L'accès aux dépôts privés nécessite un siège Pro payant, dont le prix exact n'est pas publié sur la page de tarifs."
+      },
+      {
+        "en": "Advanced Git and AI features (Worktrees, Visual File History extras, GitKraken AI) are gated behind paid tiers.",
+        "fr": "Les fonctions Git et IA avancées (Worktrees, extras de l'historique visuel des fichiers, GitKraken AI) sont réservées aux offres payantes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You work mainly with public or local Git repositories in VS Code and want blame, history and a commit graph without leaving the editor.",
+        "fr": "Tu travailles surtout sur des dépôts Git publics ou locaux dans VS Code et tu veux du blame, de l'historique et un graphe de commits sans quitter l'éditeur."
+      },
+      "avoidIf": {
+        "en": "You need private-repo features for a team right away and can't confirm the Pro/Advanced/Business seat price first; check the live pricing page before committing.",
+        "fr": "Tu as besoin tout de suite des fonctions sur dépôts privés pour une équipe et tu ne peux pas confirmer d'abord le prix par siège de Pro/Advanced/Business ; vérifie la page de tarifs en direct avant de t'engager."
+      },
+      "threshold": {
+        "en": "The free Community edition covers a solo developer on public/local repos at no cost; budget for a Pro seat only once private-repo access is actually needed, after confirming its price live.",
+        "fr": "L'édition gratuite Community suffit à un développeur solo sur des dépôts publics/locaux sans coût ; prévois un siège Pro seulement quand l'accès aux dépôts privés devient nécessaire, après avoir confirmé son prix en direct."
+      }
+    }
+  },
   "unknowns": [
     "Exact monthly/annual per-seat USD prices for GitLens Pro, Advanced and Business are not statically retrievable from gitkraken.com/pricing (JS-rendered checkout); needs a live-browser check before publishing.",
     "Whether taxes are included in listed prices is not stated."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Removed \"vercel\" from alternatives: it is a deployment platform, not a Git-visualization tool, so it does not cover GitLens's main need per the brief's alternatives rule. No catalogue slug for a same-need Git GUI competitor (GitHub Desktop, Sourcetree, GitKraken, Fork) was found, so alternatives is empty and both real competitors are listed under missingAlternatives instead.",
+    "Pro/Advanced/Business seat prices are JS-rendered and not confirmed; regularPriceUnknown is set to true and comparePlanKey left null pending a live pricing check."
+  ],
+  "hold": "paid prices rendered by script, not read; the fiche must not say the price is not public"
 }

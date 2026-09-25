@@ -3,7 +3,8 @@
   "slug": "enscape",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Enscape",
     "vendor": "Chaos Software (Chaos Group)",
@@ -15,8 +16,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.chaos.com/enscape/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Enscape pricing" },
-    { "id": "s2", "url": "https://www.chaos.com/enscape", "tier": 1, "accessedOn": "2026-09-25", "title": "Enscape product page" }
+    {
+      "id": "s1",
+      "url": "https://www.chaos.com/enscape/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Enscape pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.chaos.com/enscape",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Enscape product page"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -25,86 +38,343 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "solo",
         "name": "Enscape Solo",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 47.9, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 47.9,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "100 AI (Veras) credits per month", "fr": null },
-          { "en": "Access to up to 6,700 Chaos Cosmos render-ready assets", "fr": null }
+          {
+            "en": "100 AI (Veras) credits per month",
+            "fr": "100 crédits IA (Veras) par mois"
+          },
+          {
+            "en": "Access to up to 6,700 Chaos Cosmos render-ready assets",
+            "fr": "Accès à jusqu'à 6 700 assets prêts au rendu de la bibliothèque Chaos Cosmos"
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Enscape Premium",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 77.0, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 77.0,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "500 AI (Veras) credits per month", "fr": null },
-          { "en": "Access to up to 10,000 Chaos Cosmos render-ready assets", "fr": null }
+          {
+            "en": "500 AI (Veras) credits per month",
+            "fr": "500 crédits IA (Veras) par mois"
+          },
+          {
+            "en": "Access to up to 10,000 Chaos Cosmos render-ready assets",
+            "fr": "Accès à jusqu'à 10 000 assets prêts au rendu de la bibliothèque Chaos Cosmos"
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "collection",
         "name": "Enscape Collection",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 208.0, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 208.0,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1,500 AI (Veras) credits per month", "fr": null },
-          { "en": "Access to over 18,500 render-ready assets, plus Enscape Envision (animation) and Enscape Impact (sustainability analysis)", "fr": null }
+          {
+            "en": "1,500 AI (Veras) credits per month",
+            "fr": "1 500 crédits IA (Veras) par mois"
+          },
+          {
+            "en": "Access to over 18,500 render-ready assets, plus Enscape Envision (animation) and Enscape Impact (sustainability analysis)",
+            "fr": "Accès à plus de 18 500 assets prêts au rendu, plus Enscape Envision (animation) et Enscape Impact (analyse de durabilité)"
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "solo",
     "addOns": [],
     "cautions": [
-      { "en": "Prices shown are billed annually per month; a monthly-billing figure was not clearly separated from the annual one on the pricing page, and a secondary page listed different monthly-equivalent figures (Premium $55.90, Collection $60.90). Re-verify at purchase.", "fr": null, "sourceIds": ["s1", "s2"] }
+      {
+        "en": "Prices shown are billed annually per month; a monthly-billing figure was not clearly separated from the annual one on the pricing page, and a secondary page listed different monthly-equivalent figures (Premium $55.90, Collection $60.90). Re-verify at purchase.",
+        "fr": "Les prix affichés sont facturés annuellement, ramenés au mois ; un tarif en facturation mensuelle n'était pas clairement distingué du tarif annuel sur la page tarifs, et une seconde page listait des montants mensuels différents (Premium 55,90$, Collection 60,90$). À revérifier avant achat.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Real-time 3D rendering and visualization embedded directly in Revit, SketchUp, Rhino, ArchiCAD and Vectorworks", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Bi-directional sync with the CAD/BIM model so design changes appear instantly in the render", "fr": null, "sourceIds": ["s2"] },
-      { "en": "AI-powered design option generation and scene enhancement via integrated Veras", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Cloud collaboration through Chaos Cloud and access to the Chaos Cosmos asset library", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Real-time 3D rendering and visualization embedded directly in Revit, SketchUp, Rhino, ArchiCAD and Vectorworks",
+        "fr": "Rendu et visualisation 3D en temps réel intégrés directement dans Revit, SketchUp, Rhino, ArchiCAD et Vectorworks",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Bi-directional sync with the CAD/BIM model so design changes appear instantly in the render",
+        "fr": "Synchronisation bidirectionnelle avec le modèle CAD/BIM : les changements de conception apparaissent instantanément dans le rendu",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "AI-powered design option generation and scene enhancement via integrated Veras",
+        "fr": "Génération d'options de design et amélioration de scène par IA via Veras intégré",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Cloud collaboration through Chaos Cloud and access to the Chaos Cosmos asset library",
+        "fr": "Collaboration cloud via Chaos Cloud et accès à la bibliothèque d'assets Chaos Cosmos",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No permanent free tier; only a 14-day full-access trial", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Animation (Envision) and sustainability analysis (Impact) are gated behind the top Collection tier", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No permanent free tier; only a 14-day full-access trial",
+        "fr": "Aucun plan gratuit permanent ; seulement un essai complet de 14 jours",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Animation (Envision) and sustainability analysis (Impact) are gated behind the top Collection tier",
+        "fr": "L'animation (Envision) et l'analyse de durabilité (Impact) sont réservées au plan Collection, le plus cher",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Revit", "slug": null, "sourceIds": ["s2"] },
-      { "name": "SketchUp", "slug": null, "sourceIds": ["s2"] },
-      { "name": "Rhino", "slug": null, "sourceIds": ["s2"] },
-      { "name": "ArchiCAD", "slug": null, "sourceIds": ["s2"] },
-      { "name": "Vectorworks", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "Revit",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "SketchUp",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Rhino",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "ArchiCAD",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Vectorworks",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Architects and interior/product designers who model in Revit, SketchUp, Rhino, ArchiCAD or Vectorworks and need a photorealistic, real-time render to show clients without leaving their CAD/BIM tool.",
+      "fr": "Architectes et designers d'intérieur ou de produit qui modélisent dans Revit, SketchUp, Rhino, ArchiCAD ou Vectorworks et ont besoin d'un rendu photoréaliste en temps réel à montrer aux clients sans quitter leur outil CAD/BIM."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: move a wall in Revit while Enscape's real-time view is open, result: the client-facing render updates instantly instead of requiring a separate render pass.",
+      "fr": "Usage : déplacer un mur dans Revit avec la vue temps réel d'Enscape ouverte, résultat : le rendu à montrer au client se met à jour instantanément, sans passe de rendu séparée."
+    },
+    {
+      "en": "Usage: drop a Chaos Cosmos asset into a SketchUp scene and generate a design option with Veras, result: a furnished, photorealistic option is ready to present without manual asset placement and lighting setup.",
+      "fr": "Usage : placer un asset Chaos Cosmos dans une scène SketchUp et générer une option de design avec Veras, résultat : une option meublée et photoréaliste est prête à présenter sans placement manuel des assets et réglage de l'éclairage."
+    }
+  ],
   "alternatives": [
-    { "slug": "twinmotion", "reason": { "en": "Real-time visualization tool for the same CAD/BIM workflows, competing on rendering quality and asset library." } },
-    { "slug": "d5-render", "reason": { "en": "Real-time rendering plugin targeting architects and designers with a similar embedded-in-CAD workflow." } },
-    { "slug": "lumion", "reason": { "en": "Standalone real-time rendering software for architectural visualization, a direct competitor on output quality." } }
+    {
+      "slug": "twinmotion",
+      "reason": {
+        "en": "Real-time visualization tool for the same CAD/BIM workflows, competing on rendering quality and asset library.",
+        "fr": "Outil de visualisation temps réel pour les mêmes workflows CAD/BIM, en concurrence sur la qualité de rendu et la bibliothèque d'assets."
+      }
+    },
+    {
+      "slug": "d5-render",
+      "reason": {
+        "en": "Real-time rendering plugin targeting architects and designers with a similar embedded-in-CAD workflow.",
+        "fr": "Plugin de rendu temps réel destiné aux architectes et designers avec un workflow intégré au CAD similaire."
+      }
+    },
+    {
+      "slug": "lumion",
+      "reason": {
+        "en": "Standalone real-time rendering software for architectural visualization, a direct competitor on output quality.",
+        "fr": "Logiciel de rendu temps réel autonome pour la visualisation architecturale, concurrent direct sur la qualité du rendu final."
+      }
+    }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At $47.90/month for Solo, real-time rendering embedded directly in the CAD tool avoids a separate render pipeline, but the two official Chaos pages disagree on Premium/Collection prices ($77/$208 vs $55.90/$60.90), which makes the real cost-benefit hard to pin down.",
+        "fr": "À 47,90$/mois pour Solo, le rendu temps réel intégré directement à l'outil CAD évite une chaîne de rendu séparée, mais les deux pages officielles Chaos se contredisent sur les prix Premium/Collection (77$/208$ contre 55,90$/60,90$), ce qui rend le rapport coût-bénéfice réel difficile à évaluer précisément.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to get a first usable render is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir un premier rendu utilisable ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Bi-directional sync between the CAD/BIM model and the render, documented across five host applications, delivers the promised real-time visualization without a manual re-render step.",
+        "fr": "La synchronisation bidirectionnelle entre le modèle CAD/BIM et le rendu, documentée sur cinq applications hôtes, livre la visualisation temps réel promise sans étape manuelle de re-rendu.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Support for five major CAD/BIM applications, an 18,500+ asset library on the top tier and integrated AI design generation (Veras) place it among the more complete real-time visualization tools for this category.",
+        "fr": "La prise en charge de cinq applications CAD/BIM majeures, une bibliothèque de plus de 18 500 assets sur le plan le plus haut et la génération de design par IA intégrée (Veras) en font l'un des outils de visualisation temps réel les plus complets de la catégorie.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and render portability outside Enscape are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des rendus en dehors d'Enscape ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Real-time CAD rendering",
+      "fr": "Rendu CAD temps réel"
+    },
+    "shortDescription": {
+      "en": "Enscape is a real-time rendering plugin embedded in Revit, SketchUp, Rhino, ArchiCAD and Vectorworks, syncing instantly with the CAD model.",
+      "fr": "Enscape est un plugin de rendu temps réel intégré à Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, synchronisé instantanément avec le modèle CAD."
+    },
+    "longDescription": {
+      "en": "Enscape runs inside the CAD/BIM tool an architect or designer already uses, rendering the model in real time as it changes instead of requiring a separate export-and-render step. The AI-powered Veras integration can generate design options, and Chaos Cloud adds collaboration plus the Chaos Cosmos asset library.\n\nThere is no free tier, only a 14-day trial. Solo, the entry plan, costs $47.90/month (annual) with 100 AI credits and 6,700 assets. Premium ($77/month per the pricing page, $55.90 per the product page) adds more credits, and Collection ($208 vs $60.90 across the two pages) unlocks animation and sustainability analysis. That price discrepancy should be checked before purchase.",
+      "fr": "Enscape tourne dans l'outil CAD/BIM qu'un architecte utilise déjà, rendant le modèle en temps réel à mesure qu'il change, sans étape séparée d'export et de rendu. Veras (IA) génère des options de design, et Chaos Cloud ajoute la collaboration et la bibliothèque Chaos Cosmos.\n\nPas de plan gratuit, seulement un essai de 14 jours. Solo, le plan d'entrée, coûte 47,90$/mois (annuel) avec 100 crédits IA et 6 700 assets. Premium (77$/mois sur la page tarifs, 55,90$ sur la page produit) ajoute des crédits, et Collection (208$ contre 60,90$) débloque animation et analyse de durabilité. Cet écart doit être vérifié avant l'achat."
+    },
+    "pros": [
+      {
+        "en": "Works inside five major CAD/BIM tools (Revit, SketchUp, Rhino, ArchiCAD, Vectorworks) instead of requiring a separate standalone app.",
+        "fr": "Fonctionne à l'intérieur de cinq outils CAD/BIM majeurs (Revit, SketchUp, Rhino, ArchiCAD, Vectorworks) au lieu d'exiger une application autonome séparée."
+      },
+      {
+        "en": "Chaos Cosmos gives access to thousands of render-ready assets without building a scene from scratch.",
+        "fr": "Chaos Cosmos donne accès à des milliers d'assets prêts au rendu sans construire une scène de zéro."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free tier at all, only a 14-day trial before a paid subscription is required.",
+        "fr": "Aucun plan gratuit, seulement un essai de 14 jours avant qu'un abonnement payant ne soit nécessaire."
+      },
+      {
+        "en": "Animation and sustainability analysis are locked behind the most expensive Collection tier.",
+        "fr": "L'animation et l'analyse de durabilité sont réservées au plan Collection, le plus cher."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you already model in Revit, SketchUp, Rhino, ArchiCAD or Vectorworks and need real-time, photorealistic renders to show clients without a separate rendering step.",
+        "fr": "Garde-le si tu modélises déjà dans Revit, SketchUp, Rhino, ArchiCAD ou Vectorworks et as besoin de rendus photoréalistes en temps réel à montrer aux clients sans étape de rendu séparée."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need animation or sustainability analysis but can't justify the Collection tier's price, or if you don't work in one of the five supported CAD/BIM tools.",
+        "fr": "Évite-le si tu as besoin d'animation ou d'analyse de durabilité mais ne peux pas justifier le prix du plan Collection, ou si tu ne travailles dans aucun des cinq outils CAD/BIM pris en charge."
+      },
+      "threshold": {
+        "en": "The Solo plan costs $47.90/month (about $575/year); confirm the exact billed amount directly with Chaos given the discrepancy between its two official pages on Premium and Collection prices.",
+        "fr": "Le plan Solo coûte 47,90$/mois (environ 575$/an) ; confirme le montant exact facturé directement auprès de Chaos vu l'écart entre ses deux pages officielles sur les prix Premium et Collection."
+      }
+    }
+  },
   "unknowns": [
     "Monthly (non-annual) billing price not clearly confirmed; pricing page emphasizes annual billing",
     "Discrepancy between two official Chaos pages on Premium/Collection per-month figures ($77/$208 vs $55.90/$60.90) not resolved"
   ],
   "conflicts": [
     "chaos.com/enscape/pricing lists Premium at $77.00/mo and Collection at $208.00/mo (annual billing), while chaos.com/enscape lists Premium at $55.90/mo and Collection at $60.90/mo (both accessed 2026-09-25)"
-  ]
+  ],
+  "reviewNotes": [
+    "Two official Chaos pages give different Premium/Collection monthly prices ($77/$208 on the pricing page vs $55.90/$60.90 on the product page); verify the correct current figures directly on chaos.com/enscape/pricing before publishing."
+  ],
+  "hold": "two official Chaos pages disagree on Premium and Collection prices"
 }

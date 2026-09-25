@@ -3,7 +3,8 @@
   "slug": "dropbox",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Dropbox",
     "vendor": "Dropbox, Inc.",
@@ -113,20 +114,69 @@
     ],
     "platforms": ["web", "windows", "macos", "linux", "ios", "android"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and their ops/admin owner who need reliable file sync, sharing and version history without running their own file server.",
+      "fr": "Petites équipes et la personne ops/admin qui les gère, qui ont besoin de synchronisation de fichiers fiable, de partage et d'historique de versions sans gérer leur propre serveur de fichiers."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Sync work files across devices: keep a shared folder up to date on desktop, web and mobile with automatic version history.", "fr": "Synchroniser des fichiers de travail entre appareils : garder un dossier partagé à jour sur ordinateur, web et mobile avec un historique de versions automatique." },
+    { "en": "Collaborate as a small team: use Standard's pooled team storage and shared team folders so everyone accesses the same files.", "fr": "Collaborer en petite équipe : utiliser le stockage d'équipe mutualisé et les dossiers d'équipe partagés de Standard pour que tout le monde accède aux mêmes fichiers." }
+  ],
   "alternatives": [
-    { "slug": "google-drive", "reason": { "en": "Direct cloud storage and file-sync competitor with a comparable freemium/per-seat pricing structure." } },
-    { "slug": "box", "reason": { "en": "Competing cloud storage platform targeted more explicitly at business/enterprise file management." } }
+    { "slug": "google-drive", "reason": { "en": "Direct cloud storage and file-sync competitor with a comparable freemium/per-seat pricing structure.", "fr": "Concurrent direct de stockage cloud et de synchronisation de fichiers, avec une structure tarifaire freemium/par siège comparable." } },
+    { "slug": "box", "reason": { "en": "Competing cloud storage platform targeted more explicitly at business/enterprise file management.", "fr": "Plateforme de stockage cloud concurrente ciblant plus explicitement la gestion de fichiers en entreprise." } },
+    { "slug": "onedrive", "reason": { "en": "Major cloud storage competitor bundled with Microsoft 365, with a similar per-seat team pricing model.", "fr": "Concurrent majeur du stockage cloud, intégré à Microsoft 365, avec un modèle tarifaire par siège similaire." } }
   ],
-  "missingAlternatives": [
-    { "name": "OneDrive / Microsoft 365", "officialUrl": "https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage", "reason": "Major cloud storage competitor bundled with Microsoft 365, not in the catalogue" }
-  ],
-  "rating": null,
-  "editorial": null,
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Plus plan gives 2 TB of storage, PDF editing and AI integrations for $9.99/month, but the free Basic plan's 2 GB cap and per-seat minimums on higher tiers limit how much value a very small account gets before paying more.", "fr": "Le plan Plus donne 2 To de stockage, l'édition PDF et des intégrations IA pour 9,99 $/mois, mais le plafond de 2 Go du plan gratuit Basic et les minimums de sièges sur les paliers supérieurs limitent la valeur obtenue par un tout petit compte avant de payer plus.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Automatic sync across devices with sharing links is the core described behavior, requiring no configuration beyond installing the app.", "fr": "La synchronisation automatique entre appareils avec des liens de partage est le comportement principal décrit, sans configuration au-delà de l'installation de l'application.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Storage, sync, sharing and version history are delivered natively as described, and Slack/Zoom integrations work inside those apps without a third-party bridge mentioned in the sources.", "fr": "Stockage, synchronisation, partage et historique de versions sont livrés nativement comme décrit, et les intégrations Slack/Zoom fonctionnent dans ces applications sans passerelle tierce mentionnée dans les sources.", "sourceIds": ["s1", "s2"] },
+      "puissance": { "en": "PDF editing, AI credits and up to 1-year file recovery on Advanced add real capability, but the free tier's 2 GB cap is explicitly described as far below typical competitor free tiers, capping the entry-level ceiling.", "fr": "L'édition PDF, les crédits IA et la récupération de fichiers jusqu'à 1 an sur Advanced ajoutent une vraie capacité, mais le plafond de 2 Go du palier gratuit est explicitement décrit comme bien en dessous des paliers gratuits concurrents habituels, ce qui limite le plafond d'entrée.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and data portability if leaving Dropbox are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ de Dropbox ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cloud storage", "fr": "Stockage cloud" },
+    "shortDescription": { "en": "Dropbox is a cloud storage and file-sync service with automatic sync, sharing and version history, from a 2 GB free plan up to a $24/seat/month Advanced plan.", "fr": "Dropbox est un service de stockage cloud et de synchronisation de fichiers avec sync automatique, partage et historique de versions, d'un plan gratuit à 2 Go jusqu'à un plan Advanced à 24 $/siège/mois." },
+    "longDescription": {
+      "en": "Dropbox syncs files automatically across devices, with shareable links and version history / file recovery. Paid plans add built-in PDF editing and AI credits for tasks like summarizing or searching file content, plus native integrations with tools like Slack and Zoom for sharing and previewing files inside conversations or meetings.\n\nThe free Basic plan is capped at 2 GB. The individual Plus plan is $9.99/month for 2 TB with 30-day file recovery, and Standard, priced per seat at $15/month, starts at 3 TB of pooled team storage with 180-day file recovery and 250 AI credits a month. Advanced is $24/seat/month with a 3-seat minimum, starting at 15 TB of team storage, 1-year file recovery and 750 AI credits a month. Enterprise pricing is on quote. Only monthly list prices were confirmed; an annual discounted rate likely exists but was not separately verified.",
+      "fr": "Dropbox synchronise automatiquement les fichiers entre appareils, avec des liens de partage et un historique/récupération de fichiers. Les plans payants ajoutent l'édition PDF intégrée et des crédits IA pour des tâches comme résumer ou rechercher dans le contenu des fichiers, plus des intégrations natives avec des outils comme Slack et Zoom pour partager et prévisualiser des fichiers dans les conversations ou réunions.\n\nLe plan gratuit Basic est limité à 2 Go. Le plan individuel Plus coûte 9,99 $/mois pour 2 To avec récupération de fichiers sur 30 jours, et Standard, facturé par siège à 15 $/mois, démarre à 3 To de stockage d'équipe mutualisé avec récupération sur 180 jours et 250 crédits IA par mois. Advanced est à 24 $/siège/mois avec un minimum de 3 sièges, à partir de 15 To de stockage d'équipe, récupération sur 1 an et 750 crédits IA par mois. Le prix d'Enterprise est sur devis. Seuls les prix mensuels affichés ont été confirmés ; un tarif annuel réduit existe probablement mais n'a pas été vérifié séparément."
+    },
+    "pros": [
+      { "en": "Version history and file recovery scale up with the plan, from 30 days on Plus to 1 year on Advanced, useful beyond simple backup.", "fr": "L'historique et la récupération de fichiers s'étendent avec le plan, de 30 jours sur Plus jusqu'à 1 an sur Advanced, utile au-delà d'une simple sauvegarde." },
+      { "en": "Native Slack and Zoom integrations let files be shared and previewed without leaving those apps.", "fr": "Les intégrations natives Slack et Zoom permettent de partager et prévisualiser des fichiers sans quitter ces applications." }
+    ],
+    "cons": [
+      { "en": "The free Basic plan's 2 GB cap is small next to typical free storage tiers elsewhere.", "fr": "Le plafond de 2 Go du plan gratuit Basic est faible comparé aux paliers gratuits habituels ailleurs." },
+      { "en": "Advanced requires a minimum of 3 seats, which raises the entry cost for a very small team.", "fr": "Advanced exige un minimum de 3 sièges, ce qui augmente le coût d'entrée pour une très petite équipe." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need reliable cross-device file sync and sharing for yourself or a small team, with built-in PDF editing and AI search.", "fr": "Tu as besoin d'une synchronisation et d'un partage de fichiers fiables entre appareils, pour toi ou une petite équipe, avec édition PDF et recherche IA intégrées." },
+      "avoidIf": { "en": "You want to stay on the free plan for a real storage need, since 2 GB is too small for regular use.", "fr": "Tu veux rester sur le plan gratuit pour un vrai besoin de stockage, car 2 Go est trop faible pour un usage régulier." },
+      "threshold": { "en": "Worth it once the Plus plan, $9.99/month (about $120/year) for 2 TB, replaces a smaller paid storage tier elsewhere or manual file transfers.", "fr": "Rentable dès que le plan Plus, 9,99 $/mois (environ 120 $/an) pour 2 To, remplace un palier de stockage payant plus petit ailleurs ou des transferts de fichiers manuels." },
+      "billingTraps": { "en": "Advanced has a 3-seat minimum even for a 2-person team, and only monthly list prices were confirmed; check dropbox.com/plans for any annual discount before committing.", "fr": "Advanced exige un minimum de 3 sièges même pour une équipe de 2 personnes, et seuls les prix mensuels affichés ont été confirmés ; vérifie sur dropbox.com/plans une éventuelle remise annuelle avant de t'engager." }
+    }
+  },
   "unknowns": [
     "Annual/discounted pricing for Plus, Standard and Advanced was not directly confirmed; only monthly list prices were captured.",
     "Exact AI feature list (which AI tools consume the monthly AI credits) was not detailed within the facts budget."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Only monthly list prices were confirmed for Plus, Standard and Advanced; pricing.plans stores them under price.monthly with annualPerMonth left null even though Dropbox likely offers an annual discount like most competitors. Re-verify on dropbox.com/plans and add annualPerMonth if it exists.",
+    "The dossier originally listed OneDrive under missingAlternatives as absent from the catalogue, but the onedrive slug exists there; it has been moved into alternatives instead."
+  ]
 }

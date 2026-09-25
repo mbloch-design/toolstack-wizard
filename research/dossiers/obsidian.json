@@ -3,7 +3,8 @@
   "slug": "obsidian",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Obsidian",
     "vendor": "Dynalist Inc. (Obsidian.md)",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Core desktop/mobile app is free with no feature restrictions; commercial use is allowed without payment", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Core desktop/mobile app is free with no feature restrictions; commercial use is allowed without payment", "fr": "L'application principale (bureau/mobile) est gratuite sans restriction de fonctionnalités ; l'usage commercial est autorisé sans paiement" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "No sign-up required, full local Markdown app, no feature limits", "fr": null }],
+        "keyLimits": [{ "en": "No sign-up required, full local Markdown app, no feature limits", "fr": "Aucune inscription requise, application Markdown locale complète, aucune limite de fonctionnalité" }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": null,
         "price": { "monthly": 5, "annualPerMonth": 4, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "End-to-end encrypted cross-device sync, version history, shared vault collaboration", "fr": null }],
+        "keyLimits": [{ "en": "End-to-end encrypted cross-device sync, version history, shared vault collaboration", "fr": "Synchronisation multi-appareils chiffrée de bout en bout, historique des versions, collaboration sur un coffre partagé" }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,7 +56,7 @@
         "minSeats": null,
         "price": { "monthly": 10, "annualPerMonth": 8, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Per site; publish notes as a website, customizable themes, graph and full-text search", "fr": null }],
+        "keyLimits": [{ "en": "Per site; publish notes as a website, customizable themes, graph and full-text search", "fr": "Par site ; publie les notes en site web, thèmes personnalisables, graphe et recherche plein texte" }],
         "sourceIds": ["s1"]
       }
     ],
@@ -65,19 +66,19 @@
       { "en": "Commercial license: $50/user/year, optional (commercial use of the free app does not require it)", "fr": null, "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Obsidian's core note-taking app is free even for commercial use; Sync and Publish are the only recurring paid services and are optional.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Obsidian's core note-taking app is free even for commercial use; Sync and Publish are the only recurring paid services and are optional.", "fr": "L'application principale de prise de notes est gratuite même pour un usage commercial ; Sync et Publish sont les seuls services payants récurrents et restent optionnels.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Local-first Markdown notes with bidirectional linking and graph visualization", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Canvas for freeform brainstorming and diagramming", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Daily notes, task tracking, and one year of local version history", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Extensible via an open plugin API and thousands of community plugins and themes", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Local-first Markdown notes with bidirectional linking and graph visualization", "fr": "Notes Markdown locales par défaut avec liens bidirectionnels et visualisation en graphe", "sourceIds": ["s2"] },
+      { "en": "Canvas for freeform brainstorming and diagramming", "fr": "Canvas pour le brainstorming libre et les schémas", "sourceIds": ["s2"] },
+      { "en": "Daily notes, task tracking, and one year of local version history", "fr": "Notes quotidiennes, suivi de tâches et un an d'historique de versions en local", "sourceIds": ["s2"] },
+      { "en": "Extensible via an open plugin API and thousands of community plugins and themes", "fr": "Extensible via une API de plugins ouverte et des milliers de plugins et thèmes communautaires", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "No built-in real-time multi-user collaboration; shared vaults rely on the paid Sync service", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Cross-device syncing is not included in the free core app and requires the paid Sync add-on (or manual/third-party sync)", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No built-in real-time multi-user collaboration; shared vaults rely on the paid Sync service", "fr": "Aucune collaboration multi-utilisateur en temps réel intégrée ; les coffres partagés dépendent du service payant Sync", "sourceIds": ["s2"] },
+      { "en": "Cross-device syncing is not included in the free core app and requires the paid Sync add-on (or manual/third-party sync)", "fr": "La synchronisation entre appareils n'est pas incluse dans l'application gratuite et nécessite l'option payante Sync (ou une synchronisation manuelle/tierce)", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Dataview (community plugin)", "slug": null, "sourceIds": ["s2"] },
@@ -87,19 +88,66 @@
     ],
     "platforms": ["web", "windows", "macos", "linux", "ios", "android"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer or technical solo worker who wants notes stored as plain local Markdown files, extendable through a plugin API, rather than locked in a hosted app.", "fr": "Un développeur ou indépendant technique qui veut des notes stockées en fichiers Markdown locaux, extensibles via une API de plugins, plutôt qu'enfermées dans une application hébergée." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Personal knowledge base: link related project notes with backlinks and review the connections in the graph view.", "fr": "Base de connaissances personnelle : relier des notes de projet avec des liens retour et visualiser les connexions dans le graphe." },
+    { "en": "Daily engineering log: keep a daily-notes routine with community Tasks and Kanban plugins to track open items.", "fr": "Journal de développement quotidien : tenir des notes du jour avec les plugins communautaires Tasks et Kanban pour suivre les tâches en cours." }
+  ],
   "alternatives": [
-    { "slug": "notion", "reason": { "en": "Popular all-in-one workspace covering notes and organization", "fr": null } },
-    { "slug": "logseq", "reason": { "en": "Open-source local-first outliner with similar linking model", "fr": null } },
-    { "slug": "roam-research", "reason": { "en": "Networked-thought note tool with bidirectional linking", "fr": null } },
-    { "slug": "reflect-notes", "reason": { "en": "Notes app with similar knowledge-graph approach", "fr": null } },
-    { "slug": "heptabase", "reason": { "en": "Visual note-taking and knowledge organization alternative", "fr": null } }
+    { "slug": "notion", "reason": { "en": "Popular all-in-one workspace covering notes and organization", "fr": "Espace de travail tout-en-un populaire couvrant les notes et l'organisation" } },
+    { "slug": "logseq", "reason": { "en": "Open-source local-first outliner with similar linking model", "fr": "Outliner open source et local par défaut avec un modèle de liens similaire" } },
+    { "slug": "roam-research", "reason": { "en": "Networked-thought note tool with bidirectional linking", "fr": "Outil de notes en pensée en réseau avec liens bidirectionnels" } },
+    { "slug": "reflect-notes", "reason": { "en": "Notes app with similar knowledge-graph approach", "fr": "Application de notes avec une approche similaire de graphe de connaissances" } },
+    { "slug": "heptabase", "reason": { "en": "Visual note-taking and knowledge organization alternative", "fr": "Alternative de prise de notes visuelle et d'organisation des connaissances" } }
   ],
   "missingAlternatives": [
     { "name": "Craft", "officialUrl": "https://www.craft.do", "reason": "Popular local-friendly notes app competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "The core app is free even for commercial use, with paid add-ons limited to Sync ($5/month) and Publish ($10/month), so most solo users pay nothing.", "fr": "L'application principale est gratuite même en usage commercial, les options payantes se limitant à Sync (5 $/mois) et Publish (10 $/mois), donc la plupart des utilisateurs solo ne paient rien.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to reach a useful first result with linking and the plugin ecosystem is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir un premier résultat utile avec les liens et l'écosystème de plugins ne figure pas dans les sources relevées.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "It delivers local Markdown note-taking with linking and a graph view as advertised, without requiring third-party tools for the core workflow.", "fr": "L'outil tient sa promesse de prise de notes Markdown locale avec liens et vue en graphe, sans outil tiers nécessaire pour le flux de base.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Canvas, daily notes, task tracking, and an open plugin API with thousands of community plugins push it well beyond a basic notes app.", "fr": "Canvas, notes quotidiennes, suivi de tâches et une API de plugins ouverte avec des milliers de plugins communautaires en font bien plus qu'une simple application de notes.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Notes are stored as plain local Markdown files with one year of local version history, so data stays portable and readable without the app.", "fr": "Les notes sont stockées en simples fichiers Markdown locaux avec un an d'historique de versions en local, donc les données restent portables et lisibles sans l'application.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Markdown note-taking", "fr": "Prise de notes Markdown" },
+    "shortDescription": { "en": "Obsidian is a free, local-first Markdown note-taking app with bidirectional linking, a plugin ecosystem, and optional paid sync and publish services.", "fr": "Obsidian est une application gratuite de prise de notes en Markdown, locale par défaut, avec liens bidirectionnels et un écosystème de plugins." },
+    "longDescription": {
+      "en": "Obsidian keeps notes as plain Markdown files on your device, linked to each other and viewable as a graph, with a Canvas for freeform diagrams and daily notes for a running log. Its open plugin API and thousands of community plugins (Dataview, Kanban, Tasks, Calendar) let it grow into a personal system rather than staying a fixed note-taking app.\n\nThe core app is free, including for commercial use, so most solo users never pay. The only recurring costs are optional: Sync at $5/month for encrypted cross-device syncing and shared vaults, and Publish at $10/month per site to turn notes into a website. There's no built-in real-time collaboration, so teams that need to co-edit live will feel the gap.",
+      "fr": "Obsidian conserve les notes en simples fichiers Markdown sur ton appareil, reliés entre eux et consultables sous forme de graphe, avec un Canvas pour les schémas libres et des notes quotidiennes pour un journal courant. Son API de plugins ouverte et ses milliers de plugins communautaires (Dataview, Kanban, Tasks, Calendar) lui permettent de devenir un vrai système personnel plutôt qu'une simple application de notes figée.\n\nL'application principale est gratuite, y compris en usage commercial, donc la plupart des utilisateurs solo ne paient jamais. Les seuls coûts récurrents sont optionnels : Sync à 5 $/mois pour la synchronisation chiffrée entre appareils et les coffres partagés, et Publish à 10 $/mois par site pour transformer les notes en site web. Il n'y a pas de collaboration en temps réel intégrée, donc une équipe qui doit coéditer en direct sentira la limite."
+    },
+    "pros": [
+      { "en": "Core app is free even for commercial use, with no feature limits and no sign-up required.", "fr": "L'application principale est gratuite même en usage commercial, sans limite de fonctionnalités ni inscription requise." },
+      { "en": "Notes stay as local Markdown files, so they remain readable and portable even without Obsidian.", "fr": "Les notes restent des fichiers Markdown locaux, donc elles demeurent lisibles et portables même sans Obsidian." }
+    ],
+    "cons": [
+      { "en": "No built-in real-time collaboration; shared, co-edited vaults depend on the paid Sync service.", "fr": "Aucune collaboration en temps réel intégrée ; les coffres partagés et coédités dépendent du service payant Sync." },
+      { "en": "Cross-device syncing is not part of the free app and requires either the paid Sync add-on or a manual/third-party setup.", "fr": "La synchronisation entre appareils ne fait pas partie de l'application gratuite et nécessite l'option payante Sync ou une solution tierce manuelle." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want your notes as plain, portable Markdown files with linking and a plugin ecosystem, and you're comfortable setting up your own sync if you skip the paid option.", "fr": "Tu veux des notes en fichiers Markdown simples et portables, avec des liens et un écosystème de plugins, et tu es à l'aise pour organiser ta propre synchronisation si tu évites l'option payante." },
+      "avoidIf": { "en": "Your team needs built-in real-time co-editing; Obsidian has no live collaboration feature at any price.", "fr": "Ton équipe a besoin de coédition en temps réel intégrée ; Obsidian n'a aucune fonction de collaboration en direct, quel que soit le prix." },
+      "threshold": { "en": "The free core app covers a solo user with no cost; add Sync at $5/month ($4/month billed annually) only once you actually need encrypted cross-device access.", "fr": "L'application gratuite suffit à un usage solo sans coût ; ajoute Sync à 5 $/mois (4 $/mois en engagement annuel) seulement quand tu as vraiment besoin d'un accès chiffré entre appareils." }
+    }
+  },
   "unknowns": [
     "Full platform list (mobile OS versions, Linux distro support specifics) was inferred from general platform references, not an exhaustive systems-requirements page.",
     "Whether obsidian.md pricing page shows region-specific currency/tax by IP was not verified beyond the US view."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

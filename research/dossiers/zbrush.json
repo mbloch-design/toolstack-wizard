@@ -3,7 +3,8 @@
   "slug": "zbrush",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "ZBrush",
     "vendor": "Maxon Computer GmbH",
@@ -16,10 +17,34 @@
     "urlStatusSource": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy / pricing page" },
-    { "id": "s2", "url": "https://www.maxon.net/en/zbrush-plan-options", "tier": 1, "accessedOn": "2026-09-25", "title": "ZBrush plan options comparison" },
-    { "id": "s3", "url": "https://www.maxon.net/en/zbrush", "tier": 1, "accessedOn": "2026-09-25", "title": "ZBrush product page" },
-    { "id": "s4", "url": "https://novedge.com/products/buy-zbrush-subscription", "tier": 2, "accessedOn": "2026-09-25", "title": "NOVEDGE - Buy ZBrush Subscription (authorized reseller)" }
+    {
+      "id": "s1",
+      "url": "https://www.maxon.net/en/buy",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Maxon buy / pricing page"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.maxon.net/en/zbrush-plan-options",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "ZBrush plan options comparison"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.maxon.net/en/zbrush",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "ZBrush product page"
+    },
+    {
+      "id": "s4",
+      "url": "https://novedge.com/products/buy-zbrush-subscription",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "NOVEDGE - Buy ZBrush Subscription (authorized reseller)"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -28,7 +53,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "ZBrush for iPad free tier: 28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh. No free desktop version.", "sourceIds": ["s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "ZBrush for iPad free tier: 28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh. No free desktop version.",
+      "sourceIds": [
+        "s2"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -36,74 +67,338 @@
         "name": "ZBrush for iPad (Free)",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh." }
+          {
+            "en": "28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh.",
+            "fr": "28 pinceaux, Dynamesh/SculptrisPro/ZSpheres/ZRemesher limités, maximum 20 millions de polygones par mesh."
+          }
         ],
-        "sourceIds": ["s2"]
+        "sourceIds": [
+          "s2"
+        ]
       },
       {
         "key": "zbrush-desktop",
         "name": "ZBrush (desktop + iPad)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 49, "annualPerMonth": 33.25, "oneTime": null },
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": 33.25,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Includes both ZBrush desktop and ZBrush for iPad; 440+ brushes, up to 100 million polygons; desktop-exclusive features (2D/2.5D painting, plugin/ZScript support)." }
+          {
+            "en": "Includes both ZBrush desktop and ZBrush for iPad; 440+ brushes, up to 100 million polygons; desktop-exclusive features (2D/2.5D painting, plugin/ZScript support).",
+            "fr": "Inclut ZBrush desktop et ZBrush pour iPad ; plus de 440 pinceaux, jusqu'à 100 millions de polygones ; fonctions exclusives au desktop (peinture 2D/2.5D, support plugin/ZScript)."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "zbrush-desktop",
     "addOns": [
-      { "en": "ZBrush for iPad standalone subscription: $9.99/month or $89.99/year, for users who only want the iPad app rather than the full desktop bundle.", "sourceIds": ["s4"] },
-      { "en": "Maxon One bundle (ZBrush + Cinema 4D + Redshift + Red Giant Complete + Forger): from $99.91/month billed annually.", "sourceIds": ["s4"] }
+      {
+        "en": "ZBrush for iPad standalone subscription: $9.99/month or $89.99/year, for users who only want the iPad app rather than the full desktop bundle.",
+        "fr": "Abonnement ZBrush pour iPad seul : 9,99 $/mois ou 89,99 $/an, pour qui ne veut que l'app iPad plutôt que le pack desktop complet.",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "en": "Maxon One bundle (ZBrush + Cinema 4D + Redshift + Red Giant Complete + Forger): from $99.91/month billed annually.",
+        "fr": "Pack Maxon One (ZBrush + Cinema 4D + Redshift + Red Giant Complete + Forger) : à partir de 99,91 $/mois facturé annuellement.",
+        "sourceIds": [
+          "s4"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "ZBrush moved to a rental-only (subscription) model; perpetual licenses are no longer sold, unlike some other 3D tools.", "sourceIds": ["s4"] },
-      { "en": "The exact annual price ($399/year per a third-party reseller, equivalent to $33.25/month) could not be independently confirmed by extracting the live pricing table directly from maxon.net; it is corroborated by a search summary and an authorized reseller listing, not a direct page read.", "sourceIds": ["s4"] }
+      {
+        "en": "ZBrush moved to a rental-only (subscription) model; perpetual licenses are no longer sold, unlike some other 3D tools.",
+        "fr": "ZBrush est passé à un modèle uniquement locatif (abonnement) ; les licences perpétuelles ne sont plus vendues, contrairement à d'autres outils 3D.",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "en": "The exact annual price ($399/year per a third-party reseller, equivalent to $33.25/month) could not be independently confirmed by extracting the live pricing table directly from maxon.net; it is corroborated by a search summary and an authorized reseller listing, not a direct page read.",
+        "fr": "Le prix annuel exact (399 $/an selon un revendeur tiers, soit 33,25 $/mois) n'a pas pu être confirmé indépendamment en extrayant la grille tarifaire en direct depuis maxon.net ; il est corroboré par un résumé de recherche et une liste de revendeur agréé, pas une lecture directe de la page.",
+        "sourceIds": [
+          "s4"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Digital sculpting with 200+ (desktop: 440+) proprietary brushes for working at very high polygon counts with topological flexibility.", "sourceIds": ["s3"] },
-      { "en": "Hard-surface and polygon modeling via ZModeler and Live Boolean tools.", "sourceIds": ["s3"] },
-      { "en": "PolyPaint direct-surface texture painting and UV Master for UV mapping.", "sourceIds": ["s3"] },
-      { "en": "Pipeline integration via GoZ for direct transfer to/from Cinema 4D, Maya, and 3ds Max, and Cineware integration with After Effects.", "sourceIds": ["s3"] }
+      {
+        "en": "Digital sculpting with 200+ (desktop: 440+) proprietary brushes for working at very high polygon counts with topological flexibility.",
+        "fr": "Sculpture numérique avec plus de 200 (440+ sur desktop) pinceaux propriétaires pour travailler à très haute densité de polygones avec une flexibilité topologique.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Hard-surface and polygon modeling via ZModeler and Live Boolean tools.",
+        "fr": "Modélisation hard-surface et polygonale via les outils ZModeler et Live Boolean.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "PolyPaint direct-surface texture painting and UV Master for UV mapping.",
+        "fr": "PolyPaint pour peindre les textures directement sur la surface, et UV Master pour le mapping UV.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Pipeline integration via GoZ for direct transfer to/from Cinema 4D, Maya, and 3ds Max, and Cineware integration with After Effects.",
+        "fr": "Intégration de pipeline via GoZ pour transférer directement vers et depuis Cinema 4D, Maya et 3ds Max, et intégration Cineware avec After Effects.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No perpetual license option remains; long-term cost is an ongoing subscription with no path to a one-time purchase.", "sourceIds": ["s4"] },
-      { "en": "The free tier is limited to ZBrush for iPad only, with a reduced brush set (28 vs 440+) and lower polygon ceiling (20M vs 100M); there is no free desktop version.", "sourceIds": ["s2"] },
-      { "en": "Specialized for sculpting/digital art rather than a general-purpose 3D modeling, rigging, and animation suite.", "sourceIds": ["s3"] }
+      {
+        "en": "No perpetual license option remains; long-term cost is an ongoing subscription with no path to a one-time purchase.",
+        "fr": "Aucune licence perpétuelle n'est plus disponible ; le coût à long terme est un abonnement continu, sans possibilité d'achat unique.",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      {
+        "en": "The free tier is limited to ZBrush for iPad only, with a reduced brush set (28 vs 440+) and lower polygon ceiling (20M vs 100M); there is no free desktop version.",
+        "fr": "Le palier gratuit se limite à ZBrush pour iPad, avec un jeu de pinceaux réduit (28 contre 440+) et un plafond de polygones plus bas (20M contre 100M) ; il n'y a pas de version desktop gratuite.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Specialized for sculpting/digital art rather than a general-purpose 3D modeling, rigging, and animation suite.",
+        "fr": "Spécialisé dans la sculpture et l'art numérique plutôt qu'une suite généraliste de modélisation, rigging et animation 3D.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Cinema 4D", "slug": null, "sourceIds": ["s3"] },
-      { "name": "Maya", "slug": null, "sourceIds": ["s3"] },
-      { "name": "3ds Max", "slug": null, "sourceIds": ["s3"] },
-      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s3"] },
-      { "name": "Redshift", "slug": null, "sourceIds": ["s3"] }
+      {
+        "name": "Cinema 4D",
+        "slug": null,
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "name": "Maya",
+        "slug": null,
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "name": "3ds Max",
+        "slug": null,
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "name": "Adobe After Effects",
+        "slug": "adobe-after-effects",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "name": "Redshift",
+        "slug": null,
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ],
-    "platforms": ["windows", "macos", "ipad"]
+    "platforms": [
+      "windows",
+      "macos",
+      "ipad"
+    ]
   },
-  "audience": null,
-  "useCases": null,
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Professional character, creature and hard-surface 3D artists who need very high polygon counts and a direct pipeline into Cinema 4D, Maya or 3ds Max.",
+      "fr": "Artistes 3D professionnels spécialisés en personnages, créatures et hard-surface, qui ont besoin de très hautes densités de polygones et d'un pipeline direct vers Cinema 4D, Maya ou 3ds Max."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Sculpt a character asset: build a high-poly creature or character up to 100 million polygons using ZBrush's 440+ brushes, then export via GoZ to Maya or Cinema 4D for rigging.",
+      "fr": "Sculpter un asset personnage : construire un personnage ou une créature haute densité jusqu'à 100 millions de polygones avec les 440+ pinceaux de ZBrush, puis exporter via GoZ vers Maya ou Cinema 4D pour le rigging."
+    },
+    {
+      "en": "Prep the model for texturing: use PolyPaint to paint directly on the mesh surface and UV Master to generate UVs before handing off to a texturing app.",
+      "fr": "Préparer le modèle pour la texture : utiliser PolyPaint pour peindre directement sur la surface du mesh et UV Master pour générer les UV avant de transmettre à une application de texturing."
+    }
+  ],
   "alternatives": [
-    { "slug": "nomad-sculpt", "reason": { "en": "Much cheaper mobile/tablet-first sculpting app covering similar core sculpting workflows, without the desktop feature depth." } },
-    { "slug": "blender", "reason": { "en": "Free, open-source alternative with built-in sculpting tools, at the cost of a less specialized/refined sculpting toolset than ZBrush." } },
-    { "slug": "houdini", "reason": { "en": "Alternative for procedural 3D content creation, overlapping for parts of a character/creature production pipeline." } },
-    { "slug": "substance-3d-painter", "reason": { "en": "Alternative for texturing workflows that can complement or partly replace ZBrush's PolyPaint for surface detail." } }
+    {
+      "slug": "nomad-sculpt",
+      "reason": {
+        "en": "Much cheaper mobile/tablet-first sculpting app covering similar core sculpting workflows, without the desktop feature depth.",
+        "fr": "Application de sculpture mobile/tablette bien moins chère, couvrant des workflows de sculpture similaires, sans la profondeur de fonctionnalités du desktop."
+      }
+    },
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Free, open-source alternative with built-in sculpting tools, at the cost of a less specialized/refined sculpting toolset than ZBrush.",
+        "fr": "Alternative gratuite et open source avec des outils de sculpture intégrés, au prix d'un jeu d'outils de sculpture moins spécialisé et moins abouti que ZBrush."
+      }
+    },
+    {
+      "slug": "houdini",
+      "reason": {
+        "en": "Alternative for procedural 3D content creation, overlapping for parts of a character/creature production pipeline.",
+        "fr": "Alternative pour la création 3D procédurale, avec un recoupement sur certaines parties d'un pipeline de production personnage/créature."
+      }
+    },
+    {
+      "slug": "substance-3d-painter",
+      "reason": {
+        "en": "Alternative for texturing workflows that can complement or partly replace ZBrush's PolyPaint for surface detail.",
+        "fr": "Alternative pour les workflows de texturing, qui peut compléter ou remplacer en partie PolyPaint de ZBrush pour le détail de surface."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Mudbox", "officialUrl": "https://www.autodesk.com/products/mudbox/overview", "reason": "Direct competitor for digital sculpting and texture painting, not in the catalogue." }
+    {
+      "name": "Mudbox",
+      "officialUrl": "https://www.autodesk.com/products/mudbox/overview",
+      "reason": "Direct competitor for digital sculpting and texture painting, not in the catalogue."
+    }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The desktop-plus-iPad bundle at $33.25/month (annual) gives a professional sculpting toolset with pipeline integration, but the subscription-only model with no perpetual option means the tool never fully pays for itself the way a one-time license would.",
+        "fr": "Le pack desktop + iPad à 33,25 $/mois (annuel) donne un jeu d'outils de sculpture professionnel avec intégration de pipeline, mais le modèle uniquement par abonnement, sans option perpétuelle, signifie que l'outil ne se rentabilise jamais complètement comme le ferait une licence unique.",
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      "simplicite": {
+        "en": "The sources describe a professional toolset (200+/440+ proprietary brushes, ZModeler hard-surface tools, GoZ pipeline integration, ZScript plugin support) built for a production pipeline rather than a same-day result for a beginner.",
+        "fr": "Les sources décrivent un jeu d'outils professionnel (plus de 200/440 pinceaux propriétaires, outils hard-surface ZModeler, intégration de pipeline GoZ, support des plugins ZScript) conçu pour un pipeline de production plutôt qu'un résultat le jour même pour un débutant.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "utilisation": {
+        "en": "Sculpting at very high polygon counts, hard-surface modeling, PolyPaint texturing and UV mapping are all delivered natively as described, matching the professional sculpting promise without third-party tools mentioned.",
+        "fr": "La sculpture à très haute densité de polygones, la modélisation hard-surface, la texture PolyPaint et le mapping UV sont tous livrés nativement comme décrit, ce qui tient la promesse de sculpture professionnelle sans outil tiers mentionné.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "puissance": {
+        "en": "Support for up to 100 million polygons per mesh, 440+ brushes, hard-surface modeling, and direct pipeline integration with Cinema 4D, Maya and 3ds Max place a high ceiling on capability for professional sculpting.",
+        "fr": "Le support jusqu'à 100 millions de polygones par mesh, 440+ pinceaux, la modélisation hard-surface et l'intégration de pipeline directe avec Cinema 4D, Maya et 3ds Max placent un plafond élevé de capacité pour la sculpture professionnelle.",
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and file portability if leaving ZBrush are not detailed beyond the GoZ pipeline names in the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des fichiers en cas de départ de ZBrush ne sont pas détaillés au-delà des noms du pipeline GoZ dans les sources relevées.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "3D sculpting",
+      "fr": "Sculpture 3D"
+    },
+    "shortDescription": {
+      "en": "ZBrush is Maxon's professional digital sculpting software for characters, creatures and hard-surface models, sold only as a subscription from $49/month or $33.25/month billed annually.",
+      "fr": "ZBrush est le logiciel de sculpture numérique professionnel de Maxon pour personnages, créatures et modèles hard-surface, vendu uniquement en abonnement dès 49 $/mois ou 33,25 $/mois facturé annuellement."
+    },
+    "longDescription": {
+      "en": "ZBrush is built for digital sculpting at very high polygon counts, with 440+ proprietary brushes on desktop, hard-surface and polygon modeling via ZModeler and Live Boolean, PolyPaint for direct-surface texture painting, and UV Master for UV mapping. GoZ integration moves work directly to and from Cinema 4D, Maya and 3ds Max, and Cineware connects it to After Effects.\n\nZBrush moved to a subscription-only model; perpetual licenses are no longer sold. The desktop-plus-iPad bundle is $49/month, or $33.25/month billed annually (reported as $399/year by a reseller, not independently confirmed on Maxon's own pricing table in this pass). A standalone ZBrush for iPad subscription is $9.99/month or $89.99/year for users who only want the iPad app, and it is also included at no extra cost inside the wider Maxon One bundle from $99.91/month billed annually. A free, more limited ZBrush for iPad tier exists, but there is no free desktop version.",
+      "fr": "ZBrush est conçu pour la sculpture numérique à très haute densité de polygones, avec plus de 440 pinceaux propriétaires sur desktop, la modélisation hard-surface et polygonale via ZModeler et Live Boolean, PolyPaint pour peindre directement sur la surface, et UV Master pour le mapping UV. L'intégration GoZ transfère le travail directement vers et depuis Cinema 4D, Maya et 3ds Max, et Cineware le connecte à After Effects.\n\nZBrush est passé à un modèle uniquement par abonnement ; les licences perpétuelles ne sont plus vendues. Le pack desktop + iPad coûte 49 $/mois, ou 33,25 $/mois facturé annuellement (rapporté à 399 $/an par un revendeur, non confirmé indépendamment sur la grille tarifaire propre de Maxon lors de cette recherche). Un abonnement ZBrush pour iPad seul coûte 9,99 $/mois ou 89,99 $/an pour qui ne veut que l'app iPad, et il est aussi inclus sans coût supplémentaire dans le pack plus large Maxon One dès 99,91 $/mois facturé annuellement. Un palier ZBrush pour iPad gratuit et plus limité existe, mais il n'y a pas de version desktop gratuite."
+    },
+    "pros": [
+      {
+        "en": "GoZ pipeline integration with Cinema 4D, Maya and 3ds Max removes manual re-import steps between sculpting and the rest of the pipeline.",
+        "fr": "L'intégration de pipeline GoZ avec Cinema 4D, Maya et 3ds Max évite les réimports manuels entre la sculpture et le reste du pipeline."
+      },
+      {
+        "en": "The desktop subscription also includes ZBrush for iPad, so the same license covers both a workstation and a tablet workflow.",
+        "fr": "L'abonnement desktop inclut aussi ZBrush pour iPad, donc la même licence couvre à la fois un poste de travail et un usage sur tablette."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No perpetual license remains available; the only way to keep using desktop ZBrush is an ongoing subscription.",
+        "fr": "Aucune licence perpétuelle n'est plus disponible ; la seule façon de continuer à utiliser ZBrush desktop est un abonnement continu."
+      },
+      {
+        "en": "The free tier only covers ZBrush for iPad, with a reduced brush set and a lower polygon ceiling than the paid desktop app.",
+        "fr": "Le palier gratuit ne couvre que ZBrush pour iPad, avec un jeu de pinceaux réduit et un plafond de polygones plus bas que l'application desktop payante."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You do professional character, creature or hard-surface sculpting and need very high polygon counts with a pipeline connection to Cinema 4D, Maya or 3ds Max.",
+        "fr": "Tu fais de la sculpture professionnelle de personnages, créatures ou hard-surface et tu as besoin de très hautes densités de polygones avec une connexion de pipeline vers Cinema 4D, Maya ou 3ds Max."
+      },
+      "avoidIf": {
+        "en": "You want a one-time purchase instead of an ongoing subscription, since ZBrush no longer sells perpetual licenses.",
+        "fr": "Tu veux un achat unique plutôt qu'un abonnement continu, car ZBrush ne vend plus de licence perpétuelle."
+      },
+      "threshold": {
+        "en": "Budget the annual desktop-plus-iPad subscription at $33.25/month (about $399/year); confirm this figure directly on maxon.net since it was corroborated by a reseller rather than a direct read of the primary pricing table.",
+        "fr": "Prévois l'abonnement annuel desktop + iPad à 33,25 $/mois (environ 399 $/an) ; vérifie ce chiffre directement sur maxon.net car il a été corroboré par un revendeur plutôt que lu directement sur la grille tarifaire principale."
+      },
+      "billingTraps": {
+        "en": "The subscription is the only option (no perpetual license), and the exact annual price could not be confirmed directly on Maxon's own pricing table in this pass; verify the current rate on maxon.net/en/buy before subscribing.",
+        "fr": "L'abonnement est la seule option (pas de licence perpétuelle), et le prix annuel exact n'a pas pu être confirmé directement sur la grille tarifaire de Maxon lors de cette recherche ; vérifie le tarif actuel sur maxon.net/en/buy avant de t'abonner."
+      }
+    }
+  },
   "unknowns": [
     "The exact current monthly/annual price could not be confirmed via a direct extraction of maxon.net/en/buy (the page returned only navigation content); figures are corroborated by search summary and a reseller page instead of the primary pricing table itself.",
     "Whether ZBrush pricing shown is region/currency-specific to the US was not confirmed.",
     "No explicit trial period is stated on the official plan comparison page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The $49/month and $33.25/month (annual) ZBrush prices were corroborated via a reseller page (novedge.com), not a direct read of maxon.net/en/buy's own pricing table (which returned mostly navigation content); re-verify the current figures directly on Maxon's site before publishing."
+  ],
+  "hold": "Maxon prices rendered by script; price from a reseller page, check in a browser"
 }

@@ -3,7 +3,8 @@
   "slug": "feedly",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Feedly",
     "vendor": "Feedly Inc.",
@@ -26,9 +27,19 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Basic RSS reading with a limited number of sources/feeds; no AI Feeds.", "sourceIds": ["s1", "s3"] },
+    "freePlan": { "exists": true, "limits": { "en": "Basic RSS reading with a limited number of sources/feeds; no AI Feeds.", "fr": "Lecture RSS de base avec un nombre limité de sources/flux ; pas d'AI Feeds." }, "sourceIds": ["s1", "s3"] },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Basic RSS reading with a limited number of sources/feeds; no AI Feeds.", "fr": "Lecture RSS de base avec un nombre limité de sources/flux ; pas d'AI Feeds.", "sourceIds": ["s1", "s3"] }],
+        "sourceIds": ["s1", "s3"]
+      },
       {
         "key": "pro",
         "name": "Pro",
@@ -36,7 +47,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 6, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Advanced features and enhanced sharing beyond the free tier; billed annually (~$72/year).", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Advanced features and enhanced sharing beyond the free tier; billed annually (~$72/year).", "fr": "Fonctionnalités avancées et partage amélioré au-delà du plan gratuit ; facturé annuellement (~72$/an).", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       },
       {
@@ -46,7 +57,7 @@
         "minSeats": 1,
         "price": { "monthly": 12.99, "annualPerMonth": 12, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds AI Feeds (Leo AI) that analyze articles, reports and social posts, plus an RSS Builder for sites without native RSS. A discounted first-year introductory rate (~$8.25/mo, $99/yr) was seen and is excluded from the compare price.", "sourceIds": ["s1", "s2"] }],
+        "keyLimits": [{ "en": "Adds AI Feeds (Leo AI) that analyze articles, reports and social posts, plus an RSS Builder for sites without native RSS. A discounted first-year introductory rate (~$8.25/mo, $99/yr) was seen and is excluded from the compare price.", "fr": "Ajoute les AI Feeds (Leo AI) qui analysent articles, rapports et posts sociaux, plus un RSS Builder pour les sites sans flux RSS natif. Un tarif de lancement réduit la première année (~8,25$/mois, 99$/an) a été observé et est exclu du prix de comparaison.", "sourceIds": ["s1", "s2"] }],
         "sourceIds": ["s1", "s2"]
       },
       {
@@ -56,40 +67,145 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Team/organization intelligence workflows (Threat Intelligence, Market Intelligence, Biopharma Research, Competitive Intelligence); third-party sources report pricing starting around $1,600/month.", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Team/organization intelligence workflows (Threat Intelligence, Market Intelligence, Biopharma Research, Competitive Intelligence); third-party sources report pricing starting around $1,600/month.", "fr": "Workflows d'intelligence pour équipes/organisations (veille menaces, veille marché, recherche biopharma, veille concurrentielle) ; des sources tierces indiquent un tarif de départ autour de 1 600$/mois.", "sourceIds": ["s2"] }],
         "sourceIds": ["s1", "s2"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "Pro+ has been seen advertised at a discounted first-year rate (~$99/year); the regular recurring price is closer to $144/year ($12/mo equivalent) or $12.99/mo billed monthly. Exact current figures could not be confirmed on an official Feedly page during this pass and should be re-verified.", "sourceIds": ["s2"] }
+      { "en": "Pro+ has been seen advertised at a discounted first-year rate (~$99/year); the regular recurring price is closer to $144/year ($12/mo equivalent) or $12.99/mo billed monthly. Exact current figures could not be confirmed on an official Feedly page during this pass and should be re-verified.", "fr": "Pro+ a été vu affiché à un tarif de lancement réduit la première année (~99$/an) ; le prix récurrent normal est plutôt proche de 144$/an (équivalent 12$/mois) ou 12,99$/mois en facturation mensuelle. Les montants actuels exacts n'ont pas pu être confirmés sur une page officielle Feedly pendant cette recherche et doivent être revérifiés.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Aggregates RSS/Atom feeds, blogs, news sites and YouTube channels into a single reading stream.", "sourceIds": ["s1"] },
-      { "en": "AI Feeds (Leo AI) on Pro+ that filter, prioritize and summarize large volumes of articles around a topic.", "sourceIds": ["s1"] },
-      { "en": "RSS Builder to generate a feed for websites that don't publish native RSS.", "sourceIds": ["s1"] },
-      { "en": "Enterprise-tier intelligence modules for market, threat, biopharma and competitive monitoring.", "sourceIds": ["s1"] }
+      { "en": "Aggregates RSS/Atom feeds, blogs, news sites and YouTube channels into a single reading stream.", "fr": "Agrège les flux RSS/Atom, blogs, sites d'actualité et chaînes YouTube dans un seul flux de lecture.", "sourceIds": ["s1"] },
+      { "en": "AI Feeds (Leo AI) on Pro+ that filter, prioritize and summarize large volumes of articles around a topic.", "fr": "AI Feeds (Leo AI) sur Pro+ qui filtrent, priorisent et résument de gros volumes d'articles autour d'un sujet.", "sourceIds": ["s1"] },
+      { "en": "RSS Builder to generate a feed for websites that don't publish native RSS.", "fr": "RSS Builder pour générer un flux pour les sites qui ne publient pas de RSS natif.", "sourceIds": ["s1"] },
+      { "en": "Enterprise-tier intelligence modules for market, threat, biopharma and competitive monitoring.", "fr": "Modules d'intelligence de niveau Enterprise pour la veille marché, menaces, biopharma et concurrentielle.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "The free plan has no AI-assisted filtering (Leo AI) and a limited number of sources, so serious monitoring workflows require Pro+ or Enterprise.", "sourceIds": ["s1", "s3"] },
-      { "en": "Official pricing page (feedly.com) was not reliably reachable via automated tools during this research pass, so exact current prices rely partly on third-party sources.", "sourceIds": ["s2"] }
+      { "en": "The free plan has no AI-assisted filtering (Leo AI) and a limited number of sources, so serious monitoring workflows require Pro+ or Enterprise.", "fr": "Le plan gratuit n'a pas de filtrage assisté par IA (Leo AI) et un nombre limité de sources, donc une veille sérieuse demande Pro+ ou Enterprise.", "sourceIds": ["s1", "s3"] },
+      { "en": "Official pricing page (feedly.com) was not reliably reachable via automated tools during this research pass, so exact current prices rely partly on third-party sources.", "fr": "La page tarifs officielle (feedly.com) n'était pas accessible de façon fiable par les outils automatisés pendant cette recherche, donc les prix actuels exacts reposent en partie sur des sources tierces.", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Content creators, researchers and small marketing teams who need to monitor many sources on a topic and want a single stream instead of visiting dozens of sites.",
+      "fr": "Créateurs de contenu, chercheurs et petites équipes marketing qui doivent surveiller de nombreuses sources sur un sujet et veulent un flux unique plutôt que visiter des dizaines de sites."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: add a niche's blogs, news sites and YouTube channels to one Feedly stream, result: a daily reading routine replaces checking dozens of sites individually.",
+      "fr": "Usage : ajouter les blogs, sites d'actualité et chaînes YouTube d'un secteur dans un seul flux Feedly, résultat : une routine de lecture quotidienne remplace la visite individuelle de dizaines de sites."
+    },
+    {
+      "en": "Usage: turn on AI Feeds (Leo AI) on Pro+ for a topic, result: large volumes of articles are pre-filtered and summarized instead of read one by one.",
+      "fr": "Usage : activer les AI Feeds (Leo AI) sur Pro+ pour un sujet, résultat : un gros volume d'articles est pré-filtré et résumé au lieu d'être lu un par un."
+    }
+  ],
   "alternatives": [
-    { "slug": "readwise", "reason": { "en": "Overlaps on aggregating and prioritizing reading material, though Readwise focuses more on highlights/annotations than live feed monitoring." } }
+    { "slug": "readwise", "reason": { "en": "Overlaps on aggregating and prioritizing reading material, though Readwise focuses more on highlights/annotations than live feed monitoring.", "fr": "Chevauche sur l'agrégation et la priorisation de lecture, bien que Readwise se concentre plus sur les surlignages et annotations que sur la veille de flux en direct." } }
   ],
   "missingAlternatives": [
     { "name": "Inoreader", "officialUrl": "https://www.inoreader.com", "reason": "Direct RSS-reader competitor with similar AI/filtering features, not present in the catalogue candidates for this pass." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Pro+ at roughly $12/month (annual) adds AI-assisted filtering that saves manual reading time, but the exact recurring price could not be confirmed on an official page, which limits how confidently the return can be judged.",
+        "fr": "Pro+ à environ 12$/mois (annuel) ajoute un filtrage assisté par IA qui fait gagner du temps de lecture manuelle, mais le prix récurrent exact n'a pas pu être confirmé sur une page officielle, ce qui limite la fiabilité du jugement sur le retour.",
+        "sourceIds": ["s1", "s2"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to set up a first useful set of feeds is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour configurer un premier ensemble de flux utile ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Aggregating RSS/Atom, blogs, news and YouTube into one stream, plus AI-assisted filtering on Pro+, delivers the promised monitoring workflow without needing to visit sources individually.",
+        "fr": "L'agrégation des flux RSS/Atom, blogs, actualités et YouTube dans un seul flux, plus le filtrage assisté par IA sur Pro+, livre le workflow de veille promis sans avoir à visiter les sources individuellement.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Enterprise-tier intelligence modules (threat, market, biopharma, competitive) show a high ceiling for organizations, but the free and Pro tiers are limited to basic reading with a capped number of sources.",
+        "fr": "Les modules d'intelligence de niveau Enterprise (menaces, marché, biopharma, concurrentiel) montrent un plafond élevé pour les organisations, mais les plans gratuit et Pro se limitent à une lecture basique avec un nombre de sources plafonné.",
+        "sourceIds": ["s1", "s3"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether saved articles and feed lists can be exported if leaving the platform is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter les articles sauvegardés et les listes de flux en cas de départ de la plateforme ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "RSS reader and monitoring",
+      "fr": "Veille et lecteur RSS"
+    },
+    "shortDescription": {
+      "en": "Feedly aggregates RSS feeds, blogs, news sites and YouTube channels into one reading stream, with AI-assisted filtering on paid plans.",
+      "fr": "Feedly agrège les flux RSS, blogs, sites d'actualité et chaînes YouTube dans un flux unique, avec un filtrage assisté par IA sur les plans payants."
+    },
+    "longDescription": {
+      "en": "Feedly replaces checking many individual sites with a single stream from RSS/Atom feeds, blogs, news sites and YouTube channels. On Pro+, Leo AI-powered AI Feeds filter, prioritize and summarize large volumes of articles, and an RSS Builder covers sites without a native feed.\n\nThe free plan reads a limited number of sources with no AI filtering. Pro costs about $6/month (annual). Pro+ unlocks AI Feeds at roughly $12/month (annual) or $12.99/month, though a discounted first-year rate (~$99/year) has been seen advertised. Enterprise is quote-based, reported by third parties around $1,600/month. The official pricing page could not be reached during this research; confirm figures there.",
+      "fr": "Feedly remplace la visite de nombreux sites par un flux unique construit à partir de flux RSS/Atom, blogs, sites d'actualité et chaînes YouTube. Sur Pro+, les AI Feeds (Leo AI) filtrent, priorisent et résument de gros volumes d'articles, et un RSS Builder couvre les sites sans flux natif.\n\nLe plan gratuit lit un nombre limité de sources sans filtrage IA. Pro coûte environ 6$/mois (annuel). Pro+ débloque les AI Feeds à environ 12$/mois (annuel) ou 12,99$/mois, bien qu'un tarif de lancement réduit la première année (~99$/an) ait été vu affiché. Enterprise est sur devis, rapporté par des tiers autour de 1 600$/mois. La page tarifs officielle n'a pas pu être atteinte ; à confirmer directement."
+    },
+    "pros": [
+      {
+        "en": "Combines RSS feeds, blogs, news sites and YouTube channels in one stream instead of separate tools per source type.",
+        "fr": "Combine flux RSS, blogs, sites d'actualité et chaînes YouTube dans un seul flux plutôt que des outils séparés par type de source."
+      },
+      {
+        "en": "RSS Builder extends monitoring to sites that don't publish a native feed, a gap most RSS readers leave open.",
+        "fr": "RSS Builder étend la veille aux sites qui ne publient pas de flux natif, un manque que la plupart des lecteurs RSS laissent ouvert."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The official pricing page was unreachable during this research, leaving the exact current Pro/Pro+ prices unconfirmed on an official source.",
+        "fr": "La page tarifs officielle était inaccessible pendant cette recherche, laissant les prix exacts actuels de Pro/Pro+ non confirmés sur une source officielle."
+      },
+      {
+        "en": "AI Feeds, the main upgrade over a plain RSS reader, are locked behind the Pro+ tier, not available on the cheaper Pro plan.",
+        "fr": "Les AI Feeds, la principale amélioration par rapport à un simple lecteur RSS, sont réservés au plan Pro+, pas disponibles sur le plan Pro moins cher."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you monitor many sources on a topic regularly and want them filtered and summarized instead of read one by one.",
+        "fr": "Garde-le si tu surveilles régulièrement de nombreuses sources sur un sujet et veux qu'elles soient filtrées et résumées plutôt que lues une par une."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you follow only a handful of sites, where the free plan's source cap and lack of AI filtering already cover your needs without upgrading.",
+        "fr": "Évite-le si tu suis seulement une poignée de sites, auquel cas le plafond de sources du plan gratuit et l'absence de filtrage IA suffisent déjà sans passer au payant."
+      },
+      "threshold": {
+        "en": "AI Feeds require Pro+ at roughly $12/month billed annually (about $144/year); confirm the current recurring price on feedly.com before subscribing.",
+        "fr": "Les AI Feeds demandent Pro+ à environ 12$/mois en facturation annuelle (environ 144$/an) ; confirme le prix récurrent actuel sur feedly.com avant de t'abonner."
+      }
+    }
+  },
   "unknowns": [
     "feedly.com (including /i/pricing) returned an app-loading error on every automated fetch attempt during this session; current exact prices for Pro and Pro+ rely on third-party (tier 2) sources and should be re-verified directly on feedly.com.",
     "Whether the Pro plan has a monthly (non-annual) price option was not confirmed.",
     "Exact source/feed limits on the Free plan were not confirmed on an official page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The official feedly.com pricing page could not be reached during research; Pro and Pro+ prices rely on third-party sources and should be re-verified on feedly.com/i/pricing before this dossier is merged."
+  ]
 }

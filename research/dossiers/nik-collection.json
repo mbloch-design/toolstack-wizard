@@ -3,7 +3,8 @@
   "slug": "nik-collection",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Nik Collection",
     "vendor": "DxO Labs",
@@ -36,7 +37,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 179.99 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Perpetual license, activation on up to 3 computers, works as standalone app or plugin for Photoshop, Lightroom Classic, Affinity Photo", "fr": null }],
+        "keyLimits": [{ "en": "Perpetual license, activation on up to 3 computers, works as standalone app or plugin for Photoshop, Lightroom Classic, Affinity Photo", "fr": "Licence perpétuelle, activation sur 3 ordinateurs maximum, fonctionne en application autonome ou en plugin pour Photoshop, Lightroom Classic et Affinity Photo" }],
         "sourceIds": ["s1"]
       },
       {
@@ -46,27 +47,27 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99.99 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Discounted price for existing owners of a recent prior version", "fr": null }],
+        "keyLimits": [{ "en": "Discounted price for existing owners of a recent prior version", "fr": "Tarif réduit réservé aux propriétaires d'une version récente précédente" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "new-license",
     "addOns": [],
     "cautions": [
-      { "en": "Prices seen on shop.dxo.com were in USD; DxO's other pages have shown EUR pricing for European visitors, so region-based currency should be reverified at merge time.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Both new-license and upgrade prices are also offered as 4 monthly installments via PayPal, which is not a subscription plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Prices seen on shop.dxo.com were in USD; DxO's other pages have shown EUR pricing for European visitors, so region-based currency should be reverified at merge time.", "fr": "Les prix vus sur shop.dxo.com étaient en USD ; d'autres pages DxO ont montré des prix en EUR pour les visiteurs européens, la devise selon la région est donc à revérifier lors de la fusion.", "sourceIds": ["s1"] },
+      { "en": "Both new-license and upgrade prices are also offered as 4 monthly installments via PayPal, which is not a subscription plan.", "fr": "Les prix de la nouvelle licence et de la mise à niveau sont aussi proposés en 4 échéances mensuelles via PayPal, ce qui n'est pas un abonnement.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Suite of 8 photo-editing plugins/standalone tools: Color Efex, Silver Efex, Analog Efex, Viveza, Sharpener, HDR Efex, and others", "fr": null, "sourceIds": ["s3"] },
-      { "en": "AI-assisted masking and depth masks (GPU-dependent) added in Nik Collection 9", "fr": null, "sourceIds": ["s3"] },
-      { "en": "New Color Grading and Halation filters plus blending mode support across the filter library", "fr": null, "sourceIds": ["s3"] },
-      { "en": "Works as a standalone application or as a plugin inside Photoshop, Photoshop Elements, Lightroom Classic, and Affinity Photo", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Suite of 8 photo-editing plugins/standalone tools: Color Efex, Silver Efex, Analog Efex, Viveza, Sharpener, HDR Efex, and others", "fr": "Suite de 8 plugins/outils autonomes de retouche photo : Color Efex, Silver Efex, Analog Efex, Viveza, Sharpener, HDR Efex, entre autres", "sourceIds": ["s3"] },
+      { "en": "AI-assisted masking and depth masks (GPU-dependent) added in Nik Collection 9", "fr": "Masquage assisté par IA et masques de profondeur (nécessitant une carte graphique compatible) ajoutés dans Nik Collection 9", "sourceIds": ["s3"] },
+      { "en": "New Color Grading and Halation filters plus blending mode support across the filter library", "fr": "Nouveaux filtres Color Grading et Halation, avec prise en charge des modes de fusion dans toute la bibliothèque de filtres", "sourceIds": ["s3"] },
+      { "en": "Works as a standalone application or as a plugin inside Photoshop, Photoshop Elements, Lightroom Classic, and Affinity Photo", "fr": "Fonctionne en application autonome ou en plugin dans Photoshop, Photoshop Elements, Lightroom Classic et Affinity Photo", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No recurring subscription tier; buying the full suite is an upfront one-time cost with no lower-priced entry plan", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI masking features require a qualifying GPU, so full functionality is hardware-dependent", "fr": null, "sourceIds": ["s3"] }
+      { "en": "No recurring subscription tier; buying the full suite is an upfront one-time cost with no lower-priced entry plan", "fr": "Aucune offre par abonnement ; l'achat de la suite complète est un coût unique payé d'avance, sans plan d'entrée moins cher", "sourceIds": ["s1"] },
+      { "en": "AI masking features require a qualifying GPU, so full functionality is hardware-dependent", "fr": "Les fonctions de masquage par IA nécessitent une carte graphique compatible, donc les fonctionnalités complètes dépendent du matériel", "sourceIds": ["s3"] }
     ],
     "integrations": [
       { "name": "Adobe Photoshop", "slug": "adobe-photoshop", "sourceIds": ["s1"] },
@@ -75,15 +76,61 @@
     ],
     "platforms": ["windows", "macos"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A photographer or content creator who wants creative, filter-based photo styling without adding another recurring subscription to their toolkit.", "fr": "Un photographe ou créateur de contenu qui veut des styles photo créatifs à base de filtres sans ajouter un nouvel abonnement récurrent à ses outils." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Portrait delivery: restyle a client portrait series with Color Efex presets before export.", "fr": "Livraison de portraits : restyliser une série de portraits client avec les préréglages Color Efex avant l'export." },
+    { "en": "Travel photo batch: convert a set of travel photos to black and white with Silver Efex inside Lightroom Classic.", "fr": "Lot de photos de voyage : convertir une série de photos de voyage en noir et blanc avec Silver Efex depuis Lightroom Classic." }
+  ],
   "alternatives": [
-    { "slug": "adobe-lightroom", "reason": { "en": "Mainstream photo editing suite covering similar creative filter workflows", "fr": null } },
-    { "slug": "capture-one", "reason": { "en": "Professional RAW editor with creative styling tools", "fr": null } },
-    { "slug": "luminar-neo", "reason": { "en": "AI-driven photo editor with comparable creative filter/masking features", "fr": null } },
-    { "slug": "topaz-gigapixel", "reason": { "en": "AI photo-enhancement plugin ecosystem overlapping on creative post-processing needs", "fr": null } }
+    { "slug": "adobe-lightroom", "reason": { "en": "Mainstream photo editing suite covering similar creative filter workflows", "fr": "Suite de retouche photo grand public couvrant des flux de filtres créatifs similaires" } },
+    { "slug": "capture-one", "reason": { "en": "Professional RAW editor with creative styling tools", "fr": "Éditeur RAW professionnel avec des outils de style créatif" } },
+    { "slug": "luminar-neo", "reason": { "en": "AI-driven photo editor with comparable creative filter/masking features", "fr": "Éditeur photo piloté par IA avec des fonctions de filtres créatifs et de masquage comparables" } },
+    { "slug": "topaz-gigapixel", "reason": { "en": "AI photo-enhancement plugin ecosystem overlapping on creative post-processing needs", "fr": "Écosystème de plugins d'amélioration photo par IA qui recoupe les besoins de post-traitement créatif" } }
   ],
   "missingAlternatives": [
     { "name": "ON1 Photo RAW", "officialUrl": "https://www.on1.com/products/photo-raw/", "reason": "Direct one-time-license photo editing/plugin competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A one-time $179.99 purchase (or $99.99 to upgrade) with no recurring fee costs less over time than a subscription photo plugin, as long as it's used beyond the first year.", "fr": "Un achat unique de 179,99 $ (ou 99,99 $ en mise à niveau) sans frais récurrent coûte moins cher dans la durée qu'un plugin photo par abonnement, à condition d'être utilisé au-delà de la première année.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: first-use onboarding time is not covered by the collected sources.", "fr": "Note neutre : le temps de prise en main ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "It works as advertised, either standalone or as a plugin inside Photoshop, Lightroom Classic and Affinity Photo, without needing extra third-party tools.", "fr": "L'outil fonctionne comme annoncé, en autonome ou en plugin dans Photoshop, Lightroom Classic et Affinity Photo, sans outil tiers supplémentaire nécessaire.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Eight specialized plugins covering color grading, black and white, HDR and analog looks, plus AI masking added in version 9, is a wide creative range for the category.", "fr": "Huit plugins spécialisés couvrant l'étalonnage colorimétrique, le noir et blanc, le HDR et les rendus analogiques, plus le masquage par IA ajouté en version 9, offrent une large gamme créative pour la catégorie.", "sourceIds": ["s3"] },
+      "reversibilite": { "en": "Neutral score: export formats and portability of edits if the plugin is abandoned are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des retouches en cas d'abandon du plugin ne figurent pas dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Creative photo filters", "fr": "Filtres photo créatifs" },
+    "shortDescription": { "en": "Nik Collection is a one-time-purchase suite of eight creative photo-editing plugins that work standalone or inside Photoshop, Lightroom Classic and Affinity Photo.", "fr": "Nik Collection est une suite de huit plugins photo créatifs vendue en licence unique, utilisable seule ou en plugin Adobe et Affinity Photo." },
+    "longDescription": {
+      "en": "Nik Collection bundles eight specialized plugins (Color Efex, Silver Efex, Analog Efex, Viveza, HDR Efex and others) for creative photo styling, from black-and-white conversions to HDR and analog film looks, plus AI-assisted masking added in version 9 for GPU-equipped machines. It runs as a standalone app or as a plugin inside Photoshop, Lightroom Classic and Affinity Photo.\n\nThere's no subscription: a new license is $179.99 (or $99.99 to upgrade from version 7 or 8), activated on up to 3 computers, with no lower-priced entry plan. It fits a solo photographer who already owns a host editor and wants permanent creative filters instead of another monthly tool, though no free trial is confirmed.",
+      "fr": "Nik Collection regroupe huit plugins spécialisés (Color Efex, Silver Efex, Analog Efex, Viveza, HDR Efex et d'autres) pour du style photo créatif, de la conversion noir et blanc au HDR et aux rendus argentiques, avec un masquage assisté par IA ajouté en version 9 sur les machines compatibles. L'outil fonctionne en application autonome ou en plugin dans Photoshop, Lightroom Classic et Affinity Photo.\n\nPas d'abonnement ici : une nouvelle licence coûte 179,99 $ (ou 99,99 $ en mise à niveau depuis la version 7 ou 8), activable sur 3 ordinateurs maximum, sans offre d'entrée moins chère. C'est pertinent si tu es photographe solo, que tu possèdes déjà un éditeur hôte et que tu veux des filtres créatifs permanents plutôt qu'un outil de plus à payer chaque mois, même sans essai gratuit confirmé."
+    },
+    "pros": [
+      { "en": "One-time purchase with no recurring subscription, activated on up to 3 computers.", "fr": "Achat unique sans abonnement récurrent, activable sur 3 ordinateurs maximum." },
+      { "en": "Eight specialized creative plugins covering color grading, black and white, HDR and analog looks in one purchase.", "fr": "Huit plugins créatifs spécialisés couvrant l'étalonnage colorimétrique, le noir et blanc, le HDR et les rendus argentiques en un seul achat." }
+    ],
+    "cons": [
+      { "en": "No lower-cost entry plan; the full suite is a single $179.99 upfront cost with no free trial confirmed.", "fr": "Aucune offre d'entrée moins chère : la suite complète coûte 179,99 $ payés d'avance, sans essai gratuit confirmé." },
+      { "en": "AI masking features require a qualifying GPU, so results vary depending on the computer.", "fr": "Les fonctions de masquage par IA nécessitent une carte graphique compatible, donc les résultats varient selon l'ordinateur." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already use Photoshop, Lightroom Classic or Affinity Photo and want a permanent set of creative filters instead of another subscription.", "fr": "Tu utilises déjà Photoshop, Lightroom Classic ou Affinity Photo et tu veux un jeu de filtres créatifs permanent plutôt qu'un abonnement de plus." },
+      "avoidIf": { "en": "You need to test before paying or prefer spreading the cost monthly with the option to cancel; there is no free trial and no true subscription plan.", "fr": "Tu as besoin de tester avant de payer ou tu préfères étaler le coût en pouvant résilier ; il n'y a ni essai gratuit ni véritable abonnement." },
+      "threshold": { "en": "At $179.99 one-time (or $99.99 as an upgrade), it pays off once you keep using it for more than a year, since there's no monthly plan to compare it against directly.", "fr": "À 179,99 $ en une fois (ou 99,99 $ en mise à niveau), l'achat se rentabilise dès que tu l'utilises plus d'un an, faute d'offre mensuelle à laquelle le comparer directement." }
+    }
+  },
   "unknowns": [
     "Trial availability was not confirmed on the shop page excerpt; not stated whether a free trial version exists before purchase.",
     "Whether listed USD prices include tax is not stated on the pricing page.",
@@ -91,5 +138,8 @@
   ],
   "conflicts": [
     "Original catalogue seed pricingText listed EUR figures (€89.99 / €169.99) while the shop.dxo.com page fetched during this research showed USD figures ($179.99 / $99.99 upgrade); currency/region needs reconciliation at merge time."
+  ],
+  "reviewNotes": [
+    "Currency mismatch between the catalogue seed (EUR 89.99/169.99) and the researched USD prices ($179.99/$99.99) should be checked live on shop.dxo.com per region before merge."
   ]
 }

@@ -3,7 +3,8 @@
   "slug": "aescripts-flow",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Flow",
     "vendor": "aescripts + aeplugins (Zack Lovatt / renderTom)",
@@ -15,8 +16,20 @@
     "statusNote": "aescripts.com returned HTTP 403 to automated fetch; facts below come from search-indexed summaries and third-party review sites, not a direct read of the official page."
   },
   "sources": [
-    { "id": "s1", "url": "https://aescripts.com/flow/", "tier": 1, "accessedOn": "2026-09-25", "title": "Flow - aescripts.com (blocked, 403, indexed summary only)" },
-    { "id": "s2", "url": "https://motionarray.com/learn/after-effects/flow-after-effects-extension-review/", "tier": 2, "accessedOn": "2026-09-25", "title": "Flow After Effects Extension Review - Motion Array" }
+    {
+      "id": "s1",
+      "url": "https://aescripts.com/flow/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Flow - aescripts.com (blocked, 403, indexed summary only)"
+    },
+    {
+      "id": "s2",
+      "url": "https://motionarray.com/learn/after-effects/flow-after-effects-extension-review/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Flow After Effects Extension Review - Motion Array"
+    }
   ],
   "pricing": {
     "model": "one_time",
@@ -25,7 +38,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,38 +52,227 @@
         "name": "Flow",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 35 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 35
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Single-user license for the Flow After Effects extension; exact price not directly confirmed from the official page due to a 403 block", "fr": null }
+          {
+            "en": "Single-user license for the Flow After Effects extension; exact price not directly confirmed from the official page due to a 403 block",
+            "fr": "Licence mono-utilisateur pour l'extension Flow d'After Effects ; le prix exact n'a pas pu être confirmé directement sur la page officielle, bloquée (erreur 403)"
+          }
         ],
-        "sourceIds": ["s1", "s2"]
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": "flow",
     "addOns": [],
     "cautions": [
-      { "en": "Price ($35) could not be directly confirmed on the official pricing page (blocked by anti-bot protection); it comes from third-party review/search summaries and should be re-verified.", "fr": null, "sourceIds": ["s1", "s2"] }
+      {
+        "en": "Price ($35) could not be directly confirmed on the official pricing page (blocked by anti-bot protection); it comes from third-party review/search summaries and should be re-verified.",
+        "fr": "Le prix (35$) n'a pas pu être confirmé directement sur la page tarifs officielle (bloquée par une protection anti-bot) ; il provient de résumés tiers et doit être revérifié.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Replaces Adobe After Effects' native Graph Editor with a modern, normalized easing-curve editor", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Ships with 25 built-in easing curves based on Robert Penner's easing functions", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Library system to save, reuse and share custom easing presets across projects, with multi-library support", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Exports easing curves as CSS cubic-bezier values for handoff to web developers", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Replaces Adobe After Effects' native Graph Editor with a modern, normalized easing-curve editor",
+        "fr": "Remplace le Graph Editor natif d'Adobe After Effects par un éditeur de courbes d'interpolation moderne et normalisé",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Ships with 25 built-in easing curves based on Robert Penner's easing functions",
+        "fr": "Livré avec 25 courbes d'interpolation intégrées basées sur les fonctions d'easing de Robert Penner",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Library system to save, reuse and share custom easing presets across projects, with multi-library support",
+        "fr": "Système de bibliothèque pour sauvegarder, réutiliser et partager des presets d'easing personnalisés entre projets, avec plusieurs bibliothèques possibles",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Exports easing curves as CSS cubic-bezier values for handoff to web developers",
+        "fr": "Exporte les courbes d'easing en valeurs CSS cubic-bezier pour les transmettre à des développeurs web",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Requires Adobe After Effects; not a standalone tool", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Official pricing and system-requirements page could not be directly verified due to anti-bot blocking; details rely on third-party sources", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Requires Adobe After Effects; not a standalone tool",
+        "fr": "Nécessite Adobe After Effects ; ce n'est pas un outil autonome",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Official pricing and system-requirements page could not be directly verified due to anti-bot blocking; details rely on third-party sources",
+        "fr": "La page officielle de tarifs et de prérequis système n'a pas pu être vérifiée directement à cause d'un blocage anti-bot ; les détails reposent sur des sources tierces",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Adobe After Effects", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "Adobe After Effects",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Motion designers who animate in After Effects and want faster, more precise control over easing curves than the native Graph Editor gives them.",
+      "fr": "Motion designers qui animent dans After Effects et veulent un contrôle plus rapide et plus précis des courbes d'interpolation que ne le permet le Graph Editor natif."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: apply one of the 25 built-in easing curves to a keyframe instead of hand-tweaking the Graph Editor, result: a polished animation motion in seconds.",
+      "fr": "Usage : appliquer l'une des 25 courbes d'easing intégrées à une image clé au lieu d'ajuster à la main le Graph Editor, résultat : un mouvement d'animation soigné en quelques secondes."
+    },
+    {
+      "en": "Usage: save a custom easing preset to a shared library, result: the same motion feel is reused across projects and teammates without rebuilding the curve each time.",
+      "fr": "Usage : sauvegarder un preset d'easing personnalisé dans une bibliothèque partagée, résultat : la même sensation de mouvement est réutilisée d'un projet à l'autre et entre collègues, sans reconstruire la courbe à chaque fois."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "ae-animation-composer",
+      "reason": {
+        "en": "After Effects extension bundling an easing and keyframe animation tool (Ease and Wizz), competing directly on speeding up animation curves.",
+        "fr": "Extension After Effects intégrant un outil d'easing et d'animation par images clés (Ease and Wizz), en concurrence directe pour accélérer les courbes d'animation."
+      }
+    },
+    {
+      "slug": "motion-bro",
+      "reason": {
+        "en": "After Effects plugin pack that also includes easing and animation presets for motion designers.",
+        "fr": "Pack de plugins After Effects qui inclut aussi des presets d'easing et d'animation pour motion designers."
+      }
+    }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: the exact price could not be confirmed on the official page (blocked), so the cost-to-benefit ratio for a one-time purchase can't be judged reliably from the collected sources.",
+        "fr": "Note neutre : le prix exact n'a pas pu être confirmé sur la page officielle (bloquée), donc le rapport coût-bénéfice de cet achat unique ne peut pas être jugé de façon fiable à partir des sources relevées.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to get a first useful animation curve is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir une première courbe d'animation utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "The documented features (curve editor, 25 built-in easings, preset library, CSS export) deliver the promised faster easing workflow, based on a third-party review rather than the official page.",
+        "fr": "Les fonctionnalités documentées (éditeur de courbes, 25 easings intégrés, bibliothèque de presets, export CSS) livrent le workflow d'easing plus rapide promis, sur la base d'un avis tiers plutôt que de la page officielle.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Neutral score: how it compares in ceiling of capability to competing easing tools like Ease and Wizz is not covered by the collected sources.",
+        "fr": "Note neutre : sa comparaison en plafond de capacité avec des outils d'easing concurrents comme Ease and Wizz ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: what happens to saved easing presets and libraries if the extension is uninstalled is not covered by the collected sources.",
+        "fr": "Note neutre : ce qu'il advient des presets et bibliothèques d'easing sauvegardés en cas de désinstallation de l'extension ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "After Effects easing editor",
+      "fr": "Éditeur d'easing After Effects"
+    },
+    "shortDescription": {
+      "en": "Flow is an After Effects extension that replaces the native Graph Editor with a modern easing-curve editor and a reusable preset library.",
+      "fr": "Flow est une extension After Effects qui remplace le Graph Editor natif par un éditeur de courbes d'easing moderne et une bibliothèque de presets réutilisables."
+    },
+    "longDescription": {
+      "en": "Flow targets one specific friction point in After Effects: shaping keyframe easing without fighting the native Graph Editor. It comes with 25 built-in curves based on Robert Penner's easing functions, a library system to save and reuse custom presets across projects, and a CSS cubic-bezier export for handing motion values to a web developer.\n\nIt is sold as a one-time license, reported at $35, but the official aescripts.com page blocked automated access during this research pass, so that price and any trial availability should be confirmed directly on the site before purchase. It only works as a plugin inside After Effects, not as a standalone app.",
+      "fr": "Flow cible un point de friction précis dans After Effects : façonner l'easing des images clés sans lutter contre le Graph Editor natif. Il est livré avec 25 courbes intégrées basées sur les fonctions d'easing de Robert Penner, un système de bibliothèque pour sauvegarder et réutiliser des presets personnalisés entre projets, et un export CSS cubic-bezier pour transmettre les valeurs de mouvement à un développeur web.\n\nIl est vendu en licence à vie, indiquée à 35$, mais la page officielle aescripts.com a bloqué l'accès automatisé pendant cette recherche, donc ce prix et la disponibilité d'un essai doivent être confirmés directement sur le site avant achat. Il ne fonctionne que comme plugin à l'intérieur d'After Effects, pas comme application autonome."
+    },
+    "pros": [
+      {
+        "en": "CSS cubic-bezier export bridges the gap between motion design and front-end development.",
+        "fr": "L'export CSS cubic-bezier fait le lien entre le motion design et le développement front-end."
+      },
+      {
+        "en": "A reusable, shareable preset library avoids rebuilding the same easing curve project after project.",
+        "fr": "Une bibliothèque de presets réutilisable et partageable évite de reconstruire la même courbe d'easing projet après projet."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The official pricing page was inaccessible during this research pass, so the current price and terms are not independently confirmed.",
+        "fr": "La page tarifs officielle était inaccessible pendant cette recherche, donc le prix et les conditions actuels ne sont pas confirmés de façon indépendante."
+      },
+      {
+        "en": "It only works as a plugin inside After Effects, so it adds no value without an existing Adobe subscription.",
+        "fr": "Il ne fonctionne que comme plugin dans After Effects, donc il n'apporte rien sans un abonnement Adobe existant."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you animate regularly in After Effects and the native Graph Editor slows down your easing work.",
+        "fr": "Garde-le si tu animes régulièrement dans After Effects et que le Graph Editor natif ralentit ton travail d'easing."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you don't use After Effects, or if a bundled tool like Animation Composer already covers your easing needs.",
+        "fr": "Évite-le si tu n'utilises pas After Effects, ou si un outil déjà en pack comme Animation Composer couvre déjà tes besoins d'easing."
+      },
+      "threshold": {
+        "en": "The license is reported at a $35 one-time cost, unconfirmed on the official page; verify the current price directly on aescripts.com before buying.",
+        "fr": "La licence est indiquée à 35$ en achat unique, non confirmé sur la page officielle ; vérifie le prix actuel directement sur aescripts.com avant d'acheter."
+      }
+    }
+  },
   "unknowns": [
     "Exact official price not confirmed directly (site blocked automated access); third-party sources cite $35, an older source cites $30",
     "Trial availability and duration not confirmed from the official page",
@@ -72,5 +280,9 @@
   ],
   "conflicts": [
     "Search-indexed summaries disagree on price: $35 (most recent) vs $30 (older source)"
-  ]
+  ],
+  "reviewNotes": [
+    "The official aescripts.com page returned HTTP 403 during research; the $35 one-time price should be re-verified directly on the site before this dossier is merged."
+  ],
+  "hold": "official page blocked (403); evidence too thin to publish"
 }

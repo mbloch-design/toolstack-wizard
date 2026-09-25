@@ -3,7 +3,8 @@
   "slug": "patreon",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Patreon",
     "vendor": "Patreon, Inc.",
@@ -26,7 +27,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Free to create a creator page; Patreon only takes a cut of actual patron payments, there is no monthly subscription fee for creators." }, "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "Free to create a creator page; Patreon only takes a cut of actual patron payments, there is no monthly subscription fee for creators.", "fr": "Créer une page créateur est gratuit ; Patreon ne prend une commission que sur les paiements effectifs des abonnés, sans frais d'abonnement mensuel pour le créateur." }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {
@@ -36,7 +37,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Creating a Patreon page costs nothing; Patreon only takes a cut once patrons actually pay." }],
+        "keyLimits": [{ "en": "Creating a Patreon page costs nothing; Patreon only takes a cut once patrons actually pay.", "fr": "Créer une page Patreon ne coûte rien ; Patreon ne prend une commission qu'une fois que les abonnés paient réellement.", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       },
       {
@@ -47,7 +48,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Flat 10% platform fee on membership income for all creators who joined after August 4, 2025, plus payment processing, currency conversion and payout fees." }
+          { "en": "Flat 10% platform fee on membership income for all creators who joined after August 4, 2025, plus payment processing, currency conversion and payout fees.", "fr": "Commission fixe de 10 % sur les revenus d'abonnement pour tous les créateurs inscrits après le 4 août 2025, plus les frais de traitement des paiements, de conversion de devise et de versement.", "sourceIds": ["s2", "s3"] }
         ],
         "sourceIds": ["s2", "s3"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "5% platform fee, available only to creators grandfathered from before August 2025; basic page, posts and patron engagement tools." }
+          { "en": "5% platform fee, available only to creators grandfathered from before August 2025; basic page, posts and patron engagement tools.", "fr": "Commission de 5 %, réservée aux créateurs inscrits avant août 2025 (droits acquis) ; page de base, publications et outils d'interaction avec les abonnés.", "sourceIds": ["s2", "s3"] }
         ],
         "sourceIds": ["s2", "s3"]
       },
@@ -71,7 +72,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "8% platform fee (legacy, grandfathered); adds membership tiers, analytics, special offers and app integrations." }
+          { "en": "8% platform fee (legacy, grandfathered); adds membership tiers, analytics, special offers and app integrations.", "fr": "Commission de 8 % (droits acquis) ; ajoute des paliers d'abonnement, des statistiques, des offres spéciales et des intégrations d'applications.", "sourceIds": ["s2", "s3"] }
         ],
         "sourceIds": ["s2", "s3"]
       },
@@ -83,7 +84,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "12% platform fee (legacy, grandfathered), aimed at established creators with larger operations." }
+          { "en": "12% platform fee (legacy, grandfathered), aimed at established creators with larger operations.", "fr": "Commission de 12 % (droits acquis), destinée aux créateurs déjà établis avec une activité plus importante.", "sourceIds": ["s2", "s3"] }
         ],
         "sourceIds": ["s2", "s3"]
       }
@@ -91,32 +92,83 @@
     "comparePlanKey": "standard",
     "addOns": [],
     "cautions": [
-      { "en": "On top of the platform fee, payment processing costs 2.9% + $0.30 per charge (or 5% + $0.10 for pledges under $3), which materially reduces creator take-home.", "sourceIds": ["s2", "s3"] },
-      { "en": "New creators since August 2025 are locked into the single 10% Standard plan; the cheaper 5%/8% legacy tiers are closed to new signups.", "sourceIds": ["s2", "s3"] },
-      { "en": "Exact current fee figures could not be verified directly on patreon.com or support.patreon.com in this session (both blocked automated access); figures come from third-party trackers citing Patreon's help center and should be reverified before publishing.", "sourceIds": ["s2", "s3"] }
+      { "en": "On top of the platform fee, payment processing costs 2.9% + $0.30 per charge (or 5% + $0.10 for pledges under $3), which materially reduces creator take-home.", "fr": "En plus de la commission de plateforme, le traitement des paiements coûte 2,9 % + 0,30 $ par transaction (ou 5 % + 0,10 $ pour les contributions de moins de 3 $), ce qui réduit sensiblement les revenus nets du créateur.", "sourceIds": ["s2", "s3"] },
+      { "en": "New creators since August 2025 are locked into the single 10% Standard plan; the cheaper 5%/8% legacy tiers are closed to new signups.", "fr": "Les créateurs inscrits depuis août 2025 sont limités au seul plan Standard à 10 % ; les anciens paliers moins chers à 5 %/8 % sont fermés aux nouvelles inscriptions.", "sourceIds": ["s2", "s3"] },
+      { "en": "Exact current fee figures could not be verified directly on patreon.com or support.patreon.com in this session (both blocked automated access); figures come from third-party trackers citing Patreon's help center and should be reverified before publishing.", "fr": "Les montants exacts des frais actuels n'ont pas pu être vérifiés directement sur patreon.com ou support.patreon.com pendant cette session (les deux bloquant l'accès automatisé) ; les chiffres viennent de trackers tiers citant le centre d'aide Patreon et sont à revérifier avant publication.", "sourceIds": ["s2", "s3"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Recurring membership/subscription pages letting creators charge patrons monthly (or per-post) in exchange for exclusive content and perks.", "sourceIds": ["s2"] },
-      { "en": "Membership tiers, analytics, special offers and third-party app integrations available on higher (legacy Pro/Premium or feature-gated) plans.", "sourceIds": ["s2"] }
+      { "en": "Recurring membership/subscription pages letting creators charge patrons monthly (or per-post) in exchange for exclusive content and perks.", "fr": "Pages d'abonnement récurrent permettant aux créateurs de facturer leurs abonnés chaque mois (ou par publication) en échange de contenu exclusif et d'avantages.", "sourceIds": ["s2"] },
+      { "en": "Membership tiers, analytics, special offers and third-party app integrations available on higher (legacy Pro/Premium or feature-gated) plans.", "fr": "Paliers d'abonnement, statistiques, offres spéciales et intégrations d'applications tierces disponibles sur les paliers supérieurs (Legacy Pro/Premium ou fonctionnalités conditionnées).", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Platform fee (10% for all new creators) plus separate payment-processing fees stack on top of each other, which is less transparent than a flat all-in percentage.", "sourceIds": ["s2", "s3"] },
-      { "en": "No self-serve way for new creators to access the lower legacy fee tiers; they are closed to new accounts.", "sourceIds": ["s2", "s3"] }
+      { "en": "Platform fee (10% for all new creators) plus separate payment-processing fees stack on top of each other, which is less transparent than a flat all-in percentage.", "fr": "La commission de plateforme (10 % pour tous les nouveaux créateurs) s'additionne aux frais de traitement des paiements séparés, ce qui est moins transparent qu'un pourcentage tout compris.", "sourceIds": ["s2", "s3"] },
+      { "en": "No self-serve way for new creators to access the lower legacy fee tiers; they are closed to new accounts.", "fr": "Aucun moyen en libre-service pour un nouveau créateur d'accéder aux anciens paliers à commission réduite ; ils sont fermés aux nouveaux comptes.", "sourceIds": ["s2", "s3"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator who wants recurring income from a loyal audience in exchange for exclusive content, without building payment infrastructure themselves.", "fr": "Un créateur de contenu qui veut des revenus récurrents d'une audience fidèle en échange de contenu exclusif, sans construire lui-même une infrastructure de paiement." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Ongoing membership: offer patrons a monthly tier with exclusive posts and early access to new work.", "fr": "Abonnement continu : proposer aux abonnés un palier mensuel avec des publications exclusives et un accès anticipé aux nouveautés." },
+    { "en": "Per-creation charging: bill patrons per new post or episode instead of a flat monthly fee.", "fr": "Facturation à la création : facturer les abonnés à chaque nouvelle publication ou épisode plutôt qu'un forfait mensuel fixe." }
+  ],
+  "alternatives": [
+    { "slug": "memberful", "reason": { "en": "Direct creator-membership competitor, letting creators run subscriptions on their own site instead of Patreon's platform.", "fr": "Concurrent direct pour les abonnements créateurs, permettant de gérer les abonnements sur son propre site plutôt que sur la plateforme Patreon." } },
+    { "slug": "substack", "reason": { "en": "Newsletter-based creator subscription platform covering the same recurring-support need with a different content format.", "fr": "Plateforme d'abonnement créateur basée sur la newsletter, couvrant le même besoin de soutien récurrent avec un format de contenu différent." } },
+    { "slug": "gumroad", "reason": { "en": "Creator monetization platform covering memberships and one-off digital sales, overlapping on recurring fan income.", "fr": "Plateforme de monétisation pour créateurs couvrant les abonnements et les ventes numériques ponctuelles, avec un recoupement sur les revenus récurrents des fans." } }
+  ],
   "missingAlternatives": [
     { "name": "Ko-fi", "officialUrl": "https://ko-fi.com", "reason": "Direct creator-membership competitor with lower/no platform fees on some tiers, not in the catalogue." },
-    { "name": "Substack", "officialUrl": "https://substack.com", "reason": "Newsletter-based creator subscription platform frequently compared to Patreon, not in the catalogue." },
     { "name": "Buy Me a Coffee", "officialUrl": "https://www.buymeacoffee.com", "reason": "Lower-friction creator support/membership platform, direct competitor, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The 10% platform fee stacks with a separate 2.9% + $0.30 payment-processing fee, so a meaningful share of patron payments doesn't reach the creator, and new creators can't reach the cheaper legacy tiers.", "fr": "La commission de 10 % s'ajoute à des frais de traitement des paiements séparés de 2,9 % + 0,30 $, donc une part significative des paiements des abonnés n'arrive pas jusqu'au créateur, et les nouveaux créateurs ne peuvent pas accéder aux anciens paliers moins chers.", "sourceIds": ["s2", "s3"] },
+      "simplicite": { "en": "Neutral score: time to set up a page and get a first paying patron is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour créer une page et obtenir un premier abonné payant ne figure pas dans les sources relevées.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Recurring and per-post billing for exclusive content works as described, with the page itself free to create.", "fr": "La facturation récurrente et à la publication pour du contenu exclusif fonctionne comme décrit, la création de la page elle-même étant gratuite.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Membership tiers, analytics, special offers and app integrations exist, but they depend on grandfathered legacy plans rather than being available to every new creator equally.", "fr": "Les paliers d'abonnement, statistiques, offres spéciales et intégrations d'applications existent, mais dépendent de paliers historiques à droits acquis plutôt que d'être également accessibles à chaque nouveau créateur.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: whether a creator can export their patron list or migrate a membership base to another platform is not covered by the collected sources.", "fr": "Note neutre : la possibilité d'exporter sa liste d'abonnés ou de migrer sa base vers une autre plateforme ne figure pas dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Creator membership platform", "fr": "Plateforme d'abonnement créateur" },
+    "shortDescription": { "en": "Patreon lets creators offer recurring paid memberships to patrons in exchange for exclusive content, taking a percentage-based platform fee instead of a subscription price.", "fr": "Patreon permet aux créateurs de proposer des abonnements récurrents à leurs fans contre du contenu exclusif, via une commission plutôt qu'un abonnement fixe." },
+    "longDescription": {
+      "en": "Patreon's core product is a creator page where patrons pay recurring (or per-post) amounts for exclusive content and perks. Creating a page is free; Patreon only earns money once patrons pay, through a platform fee rather than a subscription charged to the creator.\n\nAll creators who joined after August 2025 pay a flat 10% platform fee on membership income, on top of separate payment-processing fees (2.9% + $0.30 per charge, more for small pledges). Older, grandfathered creators can keep lower 5%, 8% or 12% legacy tiers, but new creators can't opt into those rates. It fits a creator who wants recurring support without building payment infrastructure, if the stacked fees are budgeted for.",
+      "fr": "Le produit central de Patreon est une page créateur où les abonnés paient un montant récurrent (ou à la publication) pour du contenu exclusif et des avantages. Créer une page est gratuit, et Patreon ne gagne de l'argent que lorsque les abonnés paient réellement, via une commission de plateforme plutôt qu'un abonnement facturé au créateur.\n\nTous les créateurs inscrits depuis août 2025 paient une commission fixe de 10 % sur les revenus d'abonnement, en plus de frais de traitement des paiements séparés (2,9 % + 0,30 $ par transaction, plus pour les petites contributions). Les créateurs plus anciens, à droits acquis, peuvent conserver des paliers historiques à 5 %, 8 % ou 12 % avec des fonctionnalités différentes, mais les nouveaux créateurs ne peuvent pas choisir ces tarifs réduits. Patreon convient donc à un créateur qui veut des revenus récurrents sans construire d'infrastructure de paiement, à condition de budgéter les frais qui s'additionnent."
+    },
+    "pros": [
+      { "en": "Free to create a page; Patreon only takes a cut once patrons actually pay.", "fr": "Créer une page est gratuit ; Patreon ne prend une commission qu'une fois que les abonnés paient réellement." },
+      { "en": "Built-in recurring and per-post billing for exclusive content, without building payment infrastructure yourself.", "fr": "Facturation récurrente et à la publication intégrée pour du contenu exclusif, sans construire soi-même d'infrastructure de paiement." }
+    ],
+    "cons": [
+      { "en": "The 10% platform fee stacks with a separate payment-processing fee, so the real cut taken is higher than 10% of what patrons pay.", "fr": "La commission de plateforme de 10 % s'ajoute à des frais de traitement des paiements séparés, donc la part réellement prélevée dépasse 10 % de ce que paient les abonnés." },
+      { "en": "New creators cannot access the cheaper 5%/8% legacy fee tiers, which are closed to new signups.", "fr": "Les nouveaux créateurs ne peuvent pas accéder aux anciens paliers à commission réduite de 5 %/8 %, fermés aux nouvelles inscriptions." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want to start collecting recurring support from an audience without setting up your own payment system, and you can absorb a roughly 10% platform fee plus processing fees.", "fr": "Tu veux commencer à recevoir un soutien récurrent de ton audience sans mettre en place ton propre système de paiement, et tu peux absorber une commission de plateforme d'environ 10 % plus les frais de traitement." },
+      "avoidIf": { "en": "You already have a website and want to keep more of each payment; a lower-fee membership tool will leave you more revenue.", "fr": "Tu as déjà un site et tu veux garder une plus grande part de chaque paiement ; un outil d'abonnement à commission plus faible te laissera plus de revenus." },
+      "threshold": { "en": "Every payment loses roughly 10% to the platform fee plus 2.9% + $0.30 in processing (more on pledges under $3), so budget for keeping around 85-87% of what patrons pledge, not the full amount.", "fr": "Chaque paiement perd environ 10 % de commission de plateforme plus 2,9 % + 0,30 $ de traitement (plus pour les contributions de moins de 3 $), donc prévois de conserver environ 85 à 87 % de ce que versent tes abonnés, pas la totalité." },
+      "billingTraps": { "en": "The platform fee and payment-processing fee are charged separately and stack up, and new creators are permanently locked out of the cheaper legacy fee tiers once they sign up under the current Standard plan.", "fr": "La commission de plateforme et les frais de traitement des paiements sont facturés séparément et s'additionnent, et les nouveaux créateurs sont durablement exclus des anciens paliers moins chers une fois inscrits sous le plan Standard actuel." }
+    }
+  },
   "unknowns": [
     "Could not access patreon.com or support.patreon.com directly in this session (HTTP 403); exact current fee percentages and whether the 10% Standard rate has changed since August 2025 should be reverified against the official Creator fees overview page before publishing.",
-    "No slugs from the catalogue's alternativeCandidates matched a same-need competitor for this seed, so `alternatives` is left empty and candidates are listed under missingAlternatives instead."
+    "No slugs from the catalogue's alternativeCandidates initially matched a same-need competitor for this seed; memberful, substack and gumroad were confirmed as valid catalogue slugs and added to alternatives during local completion."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

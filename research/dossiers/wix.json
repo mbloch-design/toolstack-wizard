@@ -3,7 +3,8 @@
   "slug": "wix",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Wix",
     "vendor": "Wix.com Ltd.",
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 17.77, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "2 GB storage, free custom domain (1 year), 2 site collaborators" }],
+        "keyLimits": [{ "en": "2 GB storage, free custom domain (1 year), 2 site collaborators", "fr": "2 Go de stockage, domaine personnalisé gratuit (1 an), 2 collaborateurs sur le site" }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": null,
         "price": { "monthly": 29.77, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "50 GB storage, free custom domain (1 year), 5 site collaborators, ecommerce features" }],
+        "keyLimits": [{ "en": "50 GB storage, free custom domain (1 year), 5 site collaborators, ecommerce features", "fr": "50 Go de stockage, domaine personnalisé gratuit (1 an), 5 collaborateurs sur le site, fonctions e-commerce" }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,7 +56,7 @@
         "minSeats": null,
         "price": { "monthly": 39.77, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "100 GB storage, free custom domain (1 year), 10 site collaborators" }],
+        "keyLimits": [{ "en": "100 GB storage, free custom domain (1 year), 10 site collaborators", "fr": "100 Go de stockage, domaine personnalisé gratuit (1 an), 10 collaborateurs sur le site" }],
         "sourceIds": ["s1"]
       },
       {
@@ -65,27 +66,27 @@
         "minSeats": null,
         "price": { "monthly": 159.77, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited storage, free custom domain (1 year), 100 site collaborators" }],
+        "keyLimits": [{ "en": "Unlimited storage, free custom domain (1 year), 100 site collaborators", "fr": "Stockage illimité, domaine personnalisé gratuit (1 an), 100 collaborateurs sur le site" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "light",
     "addOns": [],
     "cautions": [
-      { "en": "Monthly prices shown on the pricing page are already discounted list prices; an annual commitment is required to lock them in and the source page did not show a separate month-to-month rate.", "sourceIds": ["s1"] },
-      { "en": "The free plan does not allow a custom domain; a paid plan is required to remove Wix branding and use your own domain.", "sourceIds": ["s1"] }
+      { "en": "Monthly prices shown on the pricing page are already discounted list prices; an annual commitment is required to lock them in and the source page did not show a separate month-to-month rate.", "fr": "Les prix mensuels affichés sur la page tarifs sont déjà des prix remisés ; un engagement annuel est nécessaire pour les obtenir, et la page source ne montrait pas de tarif mensuel séparé sans engagement.", "sourceIds": ["s1"] },
+      { "en": "The free plan does not allow a custom domain; a paid plan is required to remove Wix branding and use your own domain.", "fr": "Le plan gratuit ne permet pas de domaine personnalisé ; un plan payant est nécessaire pour retirer la marque Wix et utiliser son propre domaine.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Drag-and-drop visual editor plus an AI website builder that generates a site from a text prompt.", "sourceIds": ["s2"] },
-      { "en": "Built-in ecommerce (product sales, subscriptions, memberships) and payment processing via Wix Payments.", "sourceIds": ["s2"] },
-      { "en": "Appointment scheduling, lead management/CRM, email marketing, and SEO tools included natively.", "sourceIds": ["s2"] },
-      { "en": "2000+ industry templates and a library of free graphics/animations.", "sourceIds": ["s2"] }
+      { "en": "Drag-and-drop visual editor plus an AI website builder that generates a site from a text prompt.", "fr": "Éditeur visuel en glisser-déposer et créateur de site IA qui génère un site à partir d'un prompt texte.", "sourceIds": ["s2"] },
+      { "en": "Built-in ecommerce (product sales, subscriptions, memberships) and payment processing via Wix Payments.", "fr": "E-commerce intégré (vente de produits, abonnements, adhésions) et paiement via Wix Payments.", "sourceIds": ["s2"] },
+      { "en": "Appointment scheduling, lead management/CRM, email marketing, and SEO tools included natively.", "fr": "Prise de rendez-vous, gestion des prospects/CRM, email marketing et outils SEO inclus nativement.", "sourceIds": ["s2"] },
+      { "en": "2000+ industry templates and a library of free graphics/animations.", "fr": "Plus de 2000 modèles par secteur et une bibliothèque de graphismes et animations gratuits.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Free plan keeps a Wix-branded subdomain (mysite.wixsite.com); a custom domain requires a paid plan.", "sourceIds": ["s1"] },
-      { "en": "Switching templates after publishing a site is limited compared to code-based site builders; deep customization beyond the visual editor is constrained.", "sourceIds": ["s2"] }
+      { "en": "Free plan keeps a Wix-branded subdomain (mysite.wixsite.com); a custom domain requires a paid plan.", "fr": "Le plan gratuit garde un sous-domaine Wix (mysite.wixsite.com) ; un domaine personnalisé demande un plan payant.", "sourceIds": ["s1"] },
+      { "en": "Switching templates after publishing a site is limited compared to code-based site builders; deep customization beyond the visual editor is constrained.", "fr": "Changer de modèle après publication est limité par rapport aux créateurs de sites basés sur le code ; la personnalisation poussée au-delà de l'éditeur visuel reste contrainte.", "sourceIds": ["s2"] }
     ],
     "integrations": [
       { "name": "Google Analytics", "slug": null, "sourceIds": ["s2"] },
@@ -95,20 +96,73 @@
     ],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Freelance consultants and small business owners who need a professional website with booking, a basic CRM and marketing tools, without hiring a developer.",
+      "fr": "Consultants indépendants et petites entreprises qui ont besoin d'un site professionnel avec prise de rendez-vous, CRM de base et outils marketing, sans embaucher de développeur."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Launch a professional site: pick a template or generate one with AI, connect a custom domain on the Light plan, and publish within a day.", "fr": "Lancer un site professionnel : choisir un modèle ou le générer par IA, connecter un domaine personnalisé sur le plan Light, et publier en une journée." },
+    { "en": "Sell services or products online: enable Wix Payments, manage appointment scheduling, and run email marketing campaigns from the same dashboard.", "fr": "Vendre des services ou produits en ligne : activer Wix Payments, gérer la prise de rendez-vous et lancer des campagnes email marketing depuis le même tableau de bord." }
+  ],
   "alternatives": [
-    { "slug": "wordpress", "reason": { "en": "Main competitor for building a full website with more code-level flexibility." } },
-    { "slug": "wordpress-com", "reason": { "en": "Hosted, no-code website builder aimed at a similar non-technical audience." } },
-    { "slug": "woocommerce", "reason": { "en": "Alternative when the priority is ecommerce on a self-hosted stack rather than an all-in-one hosted builder." } },
-    { "slug": "bubble", "reason": { "en": "No-code builder alternative for more app-like, logic-driven sites." } }
+    { "slug": "wordpress", "reason": { "en": "Main competitor for building a full website with more code-level flexibility.", "fr": "Concurrent principal pour construire un site complet avec plus de flexibilité au niveau du code." } },
+    { "slug": "wordpress-com", "reason": { "en": "Hosted, no-code website builder aimed at a similar non-technical audience.", "fr": "Créateur de site hébergé, sans code, visant un public non technique similaire." } },
+    { "slug": "woocommerce", "reason": { "en": "Alternative when the priority is ecommerce on a self-hosted stack rather than an all-in-one hosted builder.", "fr": "Alternative quand la priorité est l'e-commerce sur une stack auto-hébergée plutôt qu'un créateur tout-en-un hébergé." } },
+    { "slug": "bubble", "reason": { "en": "No-code builder alternative for more app-like, logic-driven sites.", "fr": "Alternative sans code pour des sites plus applicatifs, pilotés par la logique." } }
   ],
   "missingAlternatives": [
     { "name": "Squarespace", "officialUrl": "https://www.squarespace.com", "reason": "Major hosted website builder competitor, not in the catalogue" },
     { "name": "Webflow", "officialUrl": "https://webflow.com", "reason": "Major visual web design competitor with more design control, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Light plan bundles hosting, a custom domain, built-in ecommerce, CRM, email marketing and SEO tools starting at $17.77/month, replacing several separate subscriptions for a solo user.", "fr": "Le plan Light regroupe hébergement, domaine personnalisé, e-commerce intégré, CRM, email marketing et SEO dès 17,77 $/mois, ce qui remplace plusieurs abonnements séparés pour un utilisateur seul.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "A drag-and-drop editor plus an AI site generator that builds a starting site from a text prompt lets a non-technical user publish quickly.", "fr": "Un éditeur en glisser-déposer et un générateur de site IA à partir d'un prompt texte permettent à un utilisateur non technique de publier rapidement.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Core promises (ecommerce, scheduling, CRM, email marketing, SEO) are delivered natively, but template switching after publishing and deep customization beyond the visual editor are limited, which can force workarounds for advanced needs.", "fr": "Les promesses principales (e-commerce, prise de rendez-vous, CRM, email marketing, SEO) sont tenues nativement, mais changer de modèle après publication et personnaliser en profondeur au-delà de l'éditeur visuel restent limités, ce qui peut demander des contournements pour des besoins avancés.", "sourceIds": ["s2"] },
+      "puissance": { "en": "The feature set covers ecommerce, scheduling, CRM, email marketing and SEO out of the box, but customization depth beyond the visual editor is constrained compared to code-based site builders.", "fr": "L'offre couvre e-commerce, prise de rendez-vous, CRM, email marketing et SEO d'office, mais la profondeur de personnalisation au-delà de l'éditeur visuel reste limitée face à des créateurs de sites basés sur le code.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: data export and site portability are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité du site ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Website builder", "fr": "Créateur de site" },
+    "shortDescription": { "en": "Wix is a hosted website builder combining a visual editor, AI site generation, built-in ecommerce and marketing tools, with paid plans starting at $17.77 per month.", "fr": "Wix est un créateur de site hébergé combinant éditeur visuel, génération de site par IA, e-commerce intégré et outils marketing, avec des plans payants dès 17,77 $ par mois." },
+    "longDescription": {
+      "en": "Wix lets a non-technical user build a website with a drag-and-drop editor or an AI generator that creates a starting point from a text prompt. Ecommerce, appointment scheduling, a basic CRM, email marketing and SEO tools are built into the platform, so a solo user does not need to stitch together separate services for a small business site.\n\nThe free plan keeps a Wix-branded subdomain and no custom domain; a paid plan is required for that. The entry paid plan, Light, is $17.77/month with 2 GB of storage, a free custom domain for the first year and 2 site collaborators, and prices rise through Core ($29.77), Business ($39.77) up to Business Elite ($159.77) as storage and collaborator limits increase. The pricing page shows these as already-discounted monthly figures without a clearly separated non-discounted monthly rate, so a buyer should confirm on-site before committing to a plan.",
+      "fr": "Wix permet à une personne non technique de construire un site avec un éditeur en glisser-déposer ou un générateur IA qui crée une base à partir d'un prompt texte. E-commerce, prise de rendez-vous, un CRM basique, email marketing et outils SEO sont intégrés à la plateforme, donc un utilisateur seul n'a pas besoin d'assembler plusieurs services pour le site d'une petite entreprise.\n\nLe plan gratuit garde un sous-domaine Wix et pas de domaine personnalisé ; un plan payant est nécessaire pour ça. Le premier plan payant, Light, coûte 17,77 $/mois avec 2 Go de stockage, un domaine personnalisé gratuit la première année et 2 collaborateurs sur le site, et les prix montent avec Core (29,77 $), Business (39,77 $) jusqu'à Business Elite (159,77 $) à mesure que les limites de stockage et de collaborateurs augmentent. La page tarifs affiche ces montants comme déjà remisés, sans tarif mensuel non remisé clairement séparé, donc mieux vaut vérifier sur le site avant de s'engager."
+    },
+    "pros": [
+      { "en": "One subscription covers hosting, ecommerce, scheduling, CRM and email marketing instead of several separate tools.", "fr": "Un seul abonnement couvre hébergement, e-commerce, prise de rendez-vous, CRM et email marketing au lieu de plusieurs outils séparés." },
+      { "en": "AI site generation gives a usable starting point instead of a blank page.", "fr": "La génération de site par IA donne un point de départ exploitable, au lieu d'une page blanche." }
+    ],
+    "cons": [
+      { "en": "The free plan cannot use a custom domain, which limits it to testing rather than a real launch.", "fr": "Le plan gratuit ne permet pas de domaine personnalisé, ce qui le limite à un test plutôt qu'à un vrai lancement." },
+      { "en": "The pricing page folds the discount into the displayed monthly price without a clear undiscounted rate, making the true cost outside an annual commitment hard to know.", "fr": "La page tarifs intègre la remise dans le prix mensuel affiché sans tarif non remisé clair, ce qui rend difficile de connaître le coût réel hors engagement annuel." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You are a solo consultant or small business that wants a website, basic ecommerce, scheduling and email marketing in one place without managing a developer.", "fr": "Tu es un consultant indépendant ou une petite entreprise qui veut un site, de l'e-commerce basique, la prise de rendez-vous et l'email marketing au même endroit sans gérer un développeur." },
+      "avoidIf": { "en": "You need deep design or code-level customization, or plan to switch templates often after launch.", "fr": "Tu as besoin d'une personnalisation poussée ou au niveau du code, ou tu prévois de changer de modèle souvent après le lancement." },
+      "threshold": { "en": "Worth it once the entry Light plan ($17.77/month, about $213/year) replaces at least a separate hosting subscription and an email marketing tool; confirm the annual commitment before switching.", "fr": "Rentable dès que le plan d'entrée Light (17,77 $/mois, environ 213 $/an) remplace au moins un hébergement et un outil d'email marketing séparés ; vérifie l'engagement annuel avant de basculer." },
+      "billingTraps": { "en": "Displayed monthly prices appear to already reflect an annual-commitment discount with no separate month-to-month rate shown; confirm the actual non-annual price before subscribing.", "fr": "Les prix mensuels affichés semblent déjà inclure la remise d'un engagement annuel, sans tarif mensuel sans engagement affiché séparément ; vérifie le prix réel hors engagement avant de t'abonner." }
+    }
+  },
   "unknowns": [
     "Exact annual (yearly-billed) per-month prices were not clearly separated from the monthly rate on the fetched pricing page; the page showed one set of prices with a general '50% savings' banner rather than two clean monthly/annual columns.",
     "Whether displayed USD prices include tax was not stated on the pricing page.",
     "Free plan exact storage/bandwidth caps were not itemized on the fetched page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Wix pricing page shows monthly figures that the collected cautions describe as already-discounted, annual-commitment prices, but pricing.plans stores them under price.monthly with annualPerMonth left null. Verify on wix.com/plans whether a true non-annual monthly rate exists and reclassify the amounts if so."
+  ]
 }

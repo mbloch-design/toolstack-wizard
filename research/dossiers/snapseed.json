@@ -3,7 +3,8 @@
   "slug": "snapseed",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Snapseed",
     "vendor": "Google LLC (Nik Software)",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Entirely free app, no ads, no subscription, no in-app purchases; all editing tools and filters are available from install.", "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "Entirely free app, no ads, no subscription, no in-app purchases; all editing tools and filters are available from install.", "fr": "Application entièrement gratuite, sans publicité, sans abonnement, sans achat intégré ; tous les outils d'édition et filtres sont disponibles dès l'installation." }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "All editing tools, filters and looks are available from install, with no ads, subscription or in-app purchases.", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "All editing tools, filters and looks are available from install, with no ads, subscription or in-app purchases.", "fr": "Tous les outils d'édition, filtres et looks sont disponibles dès l'installation, sans publicité, abonnement ni achat intégré.", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       }
     ],
@@ -45,20 +46,125 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Professional-grade mobile photo editing: selective adjustments (healing, brush, curves), RAW (DNG) editing, and non-destructive edit stacks.", "sourceIds": ["s2"] },
-      { "en": "A library of one-tap filters and looks alongside granular manual controls.", "sourceIds": ["s2"] }
+      { "en": "Professional-grade mobile photo editing: selective adjustments (healing, brush, curves), RAW (DNG) editing, and non-destructive edit stacks.", "fr": "Retouche photo mobile de niveau professionnel : ajustements sélectifs (tampon, pinceau, courbes), édition RAW (DNG) et piles d'édition non destructives.", "sourceIds": ["s2"] },
+      { "en": "A library of one-tap filters and looks alongside granular manual controls.", "fr": "Une bibliothèque de filtres et looks en un geste, à côté de réglages manuels précis.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Mobile-only (Android/iOS); no desktop or web application.", "sourceIds": ["s1"] },
-      { "en": "No collaboration, cloud sync across devices, or team features, since it is a single-user consumer app with no account-based plan.", "sourceIds": ["s1"] }
+      { "en": "Mobile-only (Android/iOS); no desktop or web application.", "fr": "Mobile uniquement (Android/iOS) ; pas d'application bureau ou web.", "sourceIds": ["s1"] },
+      { "en": "No collaboration, cloud sync across devices, or team features, since it is a single-user consumer app with no account-based plan.", "fr": "Aucune collaboration, synchronisation cloud entre appareils ou fonctionnalité d'équipe, car c'est une application grand public mono-utilisateur, sans plan basé sur un compte.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["ios", "android"]
   },
-  "alternatives": [
-    { "slug": "adobe-lightroom", "reason": { "en": "Direct mobile photo-editing competitor with a comparable feature set, but Lightroom uses a freemium/subscription model versus Snapseed's fully free app." } }
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Content creators and mobile photographers who edit photos on the go and want professional-grade, non-destructive tools without paying for a subscription.",
+      "fr": "Créateurs de contenu et photographes mobiles qui retouchent leurs photos en déplacement et veulent des outils de niveau professionnel, non destructifs, sans payer d'abonnement."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: shoot a RAW (DNG) photo on a phone and edit it with selective adjustments in Snapseed, result: a publish-ready photo without transferring the file to a desktop editor.",
+      "fr": "Usage : prendre une photo RAW (DNG) avec un téléphone et la retoucher avec des ajustements sélectifs dans Snapseed, résultat : une photo prête à publier sans transférer le fichier vers un logiciel de bureau."
+    },
+    {
+      "en": "Usage: apply a non-destructive edit stack to a photo, result: individual adjustments (healing, curves, filters) stay editable later instead of being permanently baked in.",
+      "fr": "Usage : appliquer une pile d'édition non destructive à une photo, résultat : les ajustements individuels (tampon, courbes, filtres) restent modifiables plus tard au lieu d'être figés définitivement."
+    }
   ],
-  "missingAlternatives": [],
+  "alternatives": [
+    { "slug": "adobe-lightroom", "reason": { "en": "Direct mobile photo-editing competitor with a comparable feature set, but Lightroom uses a freemium/subscription model versus Snapseed's fully free app.", "fr": "Concurrent direct en retouche photo mobile avec un ensemble de fonctionnalités comparable, mais Lightroom fonctionne en freemium/abonnement contrairement à l'application entièrement gratuite Snapseed." } },
+    { "slug": "affinity-photo", "reason": { "en": "Overlaps on non-destructive, professional-grade photo editing, though Affinity Photo is primarily a desktop/iPad tool rather than a phone-first app.", "fr": "Chevauche sur la retouche photo non destructive de niveau professionnel, bien qu'Affinity Photo soit d'abord un outil de bureau/iPad plutôt qu'une application pensée pour le téléphone." } }
+  ],
+  "missingAlternatives": [
+    { "name": "VSCO", "officialUrl": "https://vsco.co", "reason": "Widely used mobile photo-editing app with a comparable filter and adjustment set, direct competitor not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The app is entirely free with no ads, subscription or in-app purchases, and all editing tools are unlocked from install, so there is no cost to weigh against the value delivered.",
+        "fr": "L'application est entièrement gratuite, sans publicité, abonnement ni achat intégré, et tous les outils d'édition sont débloqués dès l'installation, donc il n'y a aucun coût à mettre en balance avec la valeur apportée.",
+        "sourceIds": ["s2"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to get a first useful edit is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir une première retouche utile ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s2"]
+      },
+      "utilisation": {
+        "en": "Selective adjustments, RAW editing and non-destructive edit stacks are documented as available from install, delivering the promised professional-grade mobile editing without a companion desktop app.",
+        "fr": "Les ajustements sélectifs, l'édition RAW et les piles d'édition non destructives sont documentés comme disponibles dès l'installation, livrant l'édition mobile de niveau professionnel promise sans application de bureau complémentaire.",
+        "sourceIds": ["s2"]
+      },
+      "puissance": {
+        "en": "RAW (DNG) support and non-destructive edit stacks are advanced for a free mobile app, but it has no desktop counterpart and no collaboration or cloud-sync features, capping its ceiling versus a full editing suite.",
+        "fr": "Le support RAW (DNG) et les piles d'édition non destructives sont avancés pour une application mobile gratuite, mais elle n'a pas d'équivalent bureau ni de fonctionnalités de collaboration ou de synchronisation cloud, ce qui plafonne sa capacité face à une suite d'édition complète.",
+        "sourceIds": ["s1", "s2"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and whether edits can be transferred to another tool are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la possibilité de transférer les retouches vers un autre outil ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s2"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Free mobile photo editor",
+      "fr": "Retouche photo mobile gratuite"
+    },
+    "shortDescription": {
+      "en": "Snapseed is Google's free mobile photo editor with professional-grade, non-destructive tools including RAW editing and selective adjustments.",
+      "fr": "Snapseed est l'éditeur photo mobile gratuit de Google, avec des outils non destructifs de niveau professionnel dont l'édition RAW et les ajustements sélectifs."
+    },
+    "longDescription": {
+      "en": "Snapseed packs selective adjustments (healing, brush, curves), RAW (DNG) editing and non-destructive edit stacks into a phone app, alongside a library of one-tap filters and looks for faster edits. It has no desktop or web version and no account-based collaboration features, since it is built as a single-user consumer app.\n\nThe entire app is free, with no ads, subscription or in-app purchases, and every tool is unlocked from install. That makes the usual pricing comparison moot: there is nothing to upgrade to, and no plan to outgrow.",
+      "fr": "Snapseed regroupe des ajustements sélectifs (tampon, pinceau, courbes), l'édition RAW (DNG) et des piles d'édition non destructives dans une application mobile, avec en plus une bibliothèque de filtres et looks en un geste pour des retouches plus rapides. Il n'existe pas de version bureau ou web, ni de fonctionnalités de collaboration liées à un compte, car c'est une application grand public mono-utilisateur.\n\nL'application entière est gratuite, sans publicité, abonnement ni achat intégré, et tous les outils sont débloqués dès l'installation. La comparaison de prix habituelle ne s'applique donc pas : il n'y a rien vers quoi évoluer, ni de plan à dépasser."
+    },
+    "pros": [
+      {
+        "en": "Every tool, including RAW editing and non-destructive stacks, is unlocked at install with no paywall anywhere in the app.",
+        "fr": "Chaque outil, y compris l'édition RAW et les piles non destructives, est débloqué dès l'installation, sans aucune barrière payante dans l'application."
+      },
+      {
+        "en": "Non-destructive edit stacks let earlier adjustments stay editable instead of being permanently applied.",
+        "fr": "Les piles d'édition non destructives permettent aux ajustements antérieurs de rester modifiables au lieu d'être appliqués définitivement."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Mobile-only, with no desktop or web app for a workflow that starts or continues on a computer.",
+        "fr": "Mobile uniquement, sans application bureau ou web pour un workflow qui commence ou se poursuit sur ordinateur."
+      },
+      {
+        "en": "No cloud sync across devices and no collaboration features, since there is no account-based plan.",
+        "fr": "Aucune synchronisation cloud entre appareils et aucune fonctionnalité de collaboration, faute de plan basé sur un compte."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you edit photos primarily on a phone and want professional-grade, non-destructive tools at no cost.",
+        "fr": "Garde-le si tu retouches tes photos principalement sur téléphone et veux des outils non destructifs de niveau professionnel sans payer."
+      },
+      "avoidIf": {
+        "en": "Avoid it if your workflow needs cross-device cloud sync, team collaboration, or a desktop application, none of which Snapseed offers.",
+        "fr": "Évite-le si ton workflow a besoin de synchronisation cloud entre appareils, de collaboration en équipe ou d'une application de bureau, aucun de ces éléments n'étant proposé par Snapseed."
+      },
+      "threshold": {
+        "en": "There is no threshold to weigh: the app is entirely free with every tool unlocked, so the only real question is whether a mobile-only, single-user workflow fits your needs.",
+        "fr": "Il n'y a pas de seuil à évaluer : l'application est entièrement gratuite avec tous les outils débloqués, donc la seule vraie question est de savoir si un workflow mobile mono-utilisateur te convient."
+      }
+    }
+  },
   "unknowns": [
     "The seed website URL (snapseed.online) does not resolve and appears to be an unofficial/fan domain rather than Google's product; officialUrl was corrected to the Google Play listing during this pass, but the App Store URL was not separately verified.",
     "No dedicated docs or changelog page exists for Snapseed; release history is only visible through app-store update notes, not checked here."

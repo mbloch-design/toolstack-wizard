@@ -207,6 +207,11 @@ function validate(d, errors, warnings) {
       if (words > 4) errors.push(`editorial.tagline.${lang}: ${words} words, 2 to 3 expected`);
     }
     bi(e.shortDescription, "editorial.shortDescription");
+  const words = (text) => String(text || "").trim().split(/\s+/).filter(Boolean).length;
+  for (const lang of LANGS) {
+    if (words(e.shortDescription?.[lang]) > 25) warnings.push(`editorial.shortDescription.${lang}: ${words(e.shortDescription[lang])} words, 25 max`);
+    if (e.longDescription && words(e.longDescription[lang]) > 120) warnings.push(`editorial.longDescription.${lang}: ${words(e.longDescription[lang])} words, 120 max`);
+  }
     if (d.tier === "A") {
       const a = d.audience || {};
       if (!PERSONAS.includes(a.persona)) errors.push(`audience.persona must be one of ${PERSONAS.join(", ")} (one target only)`);

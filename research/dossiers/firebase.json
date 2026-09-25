@@ -3,7 +3,8 @@
   "slug": "firebase",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Firebase",
     "vendor": "Google LLC",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "Spark plan: no payment method needed. Includes e.g. Cloud Firestore (1 GB stored, 50K daily reads, 20K daily writes), Realtime Database (1 GB storage, 10 GB/month downloads, 100 concurrent connections), Cloud Storage (5 GB storage, 1 GB/day downloads), Authentication (50K monthly active users), Cloud Functions (2M invocations/month), Hosting (10 GB storage, 360 MB/day transfer). Analytics, A/B Testing, Crashlytics and Performance Monitoring are no-cost.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Spark plan: no payment method needed. Includes e.g. Cloud Firestore (1 GB stored, 50K daily reads, 20K daily writes), Realtime Database (1 GB storage, 10 GB/month downloads, 100 concurrent connections), Cloud Storage (5 GB storage, 1 GB/day downloads), Authentication (50K monthly active users), Cloud Functions (2M invocations/month), Hosting (10 GB storage, 360 MB/day transfer). Analytics, A/B Testing, Crashlytics and Performance Monitoring are no-cost.", "fr": "Plan Spark : aucun moyen de paiement requis. Inclut par exemple Cloud Firestore (1 Go stocké, 50K lectures/jour, 20K écritures/jour), Realtime Database (1 Go de stockage, 10 Go/mois de téléchargement, 100 connexions simultanées), Cloud Storage (5 Go de stockage, 1 Go/jour de téléchargement), Authentication (50K utilisateurs actifs mensuels), Cloud Functions (2M invocations/mois), Hosting (10 Go de stockage, 360 Mo/jour de transfert). Analytics, A/B Testing, Crashlytics et Performance Monitoring sont gratuits." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,41 +35,145 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "No base subscription fee; includes all Spark no-cost usage, then charges per unit beyond it, e.g. Cloud Functions $0.40 per million invocations beyond the 2M/month free tier. Eligible new users may receive $300 in free credit.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "No base subscription fee; includes all Spark no-cost usage, then charges per unit beyond it, e.g. Cloud Functions $0.40 per million invocations beyond the 2M/month free tier. Eligible new users may receive $300 in free credit.", "fr": "Aucun abonnement de base ; inclut tous les quotas gratuits de Spark, puis facture à l'unité au-delà, par exemple Cloud Functions à 0,40$ par million d'invocations au-delà des 2M/mois gratuits. Les nouveaux utilisateurs éligibles peuvent recevoir 300$ de crédit gratuit.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "blaze",
     "addOns": [],
     "cautions": [
-      { "en": "Usage pricing: the Blaze plan bills per-service consumption (reads/writes/invocations/storage/egress) beyond generous free quotas rather than a flat fee, so cost scales with traffic and can be hard to predict for a growing app.", "sourceIds": ["s1"] }
+      { "en": "Usage pricing: the Blaze plan bills per-service consumption (reads/writes/invocations/storage/egress) beyond generous free quotas rather than a flat fee, so cost scales with traffic and can be hard to predict for a growing app.", "fr": "Prix à l'usage : le plan Blaze facture la consommation par service (lectures/écritures/invocations/stockage/sortie) au-delà de quotas gratuits généreux plutôt qu'un tarif fixe, donc le coût évolue avec le trafic et peut être difficile à prévoir pour une application en croissance.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Managed backend building blocks: Cloud Firestore and Realtime Database (NoSQL databases), Authentication, Cloud Storage, and Cloud Functions for serverless backend logic.", "sourceIds": ["s1"] },
-      { "en": "App Hosting/Hosting for deploying static and server-rendered web content with CDN delivery.", "sourceIds": ["s1"] },
-      { "en": "Built-in product analytics (Google Analytics), A/B testing, Crashlytics crash reporting and Performance Monitoring, all offered at no cost.", "sourceIds": ["s1"] },
-      { "en": "Unified SDKs across web, iOS, Android and Flutter for a shared backend across platforms.", "sourceIds": ["s1"] }
+      { "en": "Managed backend building blocks: Cloud Firestore and Realtime Database (NoSQL databases), Authentication, Cloud Storage, and Cloud Functions for serverless backend logic.", "fr": "Briques backend gérées : Cloud Firestore et Realtime Database (bases NoSQL), Authentication, Cloud Storage, et Cloud Functions pour la logique backend serverless.", "sourceIds": ["s1"] },
+      { "en": "App Hosting/Hosting for deploying static and server-rendered web content with CDN delivery.", "fr": "App Hosting/Hosting pour déployer du contenu web statique et rendu côté serveur avec livraison CDN.", "sourceIds": ["s1"] },
+      { "en": "Built-in product analytics (Google Analytics), A/B testing, Crashlytics crash reporting and Performance Monitoring, all offered at no cost.", "fr": "Analytics produit intégré (Google Analytics), A/B testing, rapports de crash Crashlytics et Performance Monitoring, tous proposés gratuitement.", "sourceIds": ["s1"] },
+      { "en": "Unified SDKs across web, iOS, Android and Flutter for a shared backend across platforms.", "fr": "SDKs unifiés sur web, iOS, Android et Flutter pour un backend partagé entre plateformes.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Usage-based Blaze pricing means a spike in reads/writes or function invocations can lead to unpredictable bills once free quotas are exceeded.", "sourceIds": ["s1"] },
-      { "en": "A credit card / billing account is required to unlock the Blaze plan, even to access some services only available beyond Spark's free tier.", "sourceIds": ["s1"] }
+      { "en": "Usage-based Blaze pricing means a spike in reads/writes or function invocations can lead to unpredictable bills once free quotas are exceeded.", "fr": "La facturation à l'usage de Blaze signifie qu'un pic de lectures/écritures ou d'invocations de fonctions peut entraîner une facture imprévisible une fois les quotas gratuits dépassés.", "sourceIds": ["s1"] },
+      { "en": "A credit card / billing account is required to unlock the Blaze plan, even to access some services only available beyond Spark's free tier.", "fr": "Une carte bancaire / un compte de facturation est nécessaire pour activer le plan Blaze, même pour accéder à certains services disponibles seulement au-delà du plan gratuit Spark.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers building a web or mobile app who want a managed database, authentication and hosting without standing up and operating their own backend infrastructure.",
+      "fr": "Développeurs qui construisent une application web ou mobile et veulent une base de données, une authentification et un hébergement gérés sans monter et exploiter leur propre infrastructure backend."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: wire up Firebase Authentication and Cloud Firestore in a new app on the Spark plan, result: a working login and database backend ships without writing or hosting a custom server.",
+      "fr": "Usage : brancher Firebase Authentication et Cloud Firestore dans une nouvelle application sur le plan Spark, résultat : une authentification et une base de données fonctionnelles sont livrées sans écrire ni héberger de serveur sur mesure."
+    },
+    {
+      "en": "Usage: switch to the Blaze plan when traffic exceeds Spark's free quotas, result: the app keeps running and only the usage beyond the free tier is billed, instead of the service being cut off.",
+      "fr": "Usage : passer au plan Blaze quand le trafic dépasse les quotas gratuits de Spark, résultat : l'application continue de fonctionner et seul l'usage au-delà du plan gratuit est facturé, au lieu d'une coupure de service."
+    }
+  ],
   "alternatives": [
-    { "slug": "supabase", "reason": { "en": "Direct backend-as-a-service competitor (Postgres-based) offering a comparable free tier and usage-based pricing." } },
-    { "slug": "vercel", "reason": { "en": "Common companion/alternative for hosting and serverless functions in modern web app stacks, though not a full BaaS with database/auth like Firebase." } }
+    { "slug": "supabase", "reason": { "en": "Direct backend-as-a-service competitor (Postgres-based) offering a comparable free tier and usage-based pricing.", "fr": "Concurrent direct en tant que backend-as-a-service (basé sur Postgres) avec un plan gratuit comparable et une tarification à l'usage." } }
   ],
   "missingAlternatives": [
     { "name": "Appwrite", "officialUrl": "https://appwrite.io", "reason": "Open-source backend-as-a-service directly competing with Firebase's auth/database/functions bundle; not present in the candidate list." },
     { "name": "AWS Amplify", "officialUrl": "https://aws.amazon.com/amplify/", "reason": "AWS's equivalent managed mobile/web backend platform, a direct Firebase alternative; absent from the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Spark free tier's quotas (50K Firestore reads/day, 2M function invocations/month, 50K monthly active users for auth) are generous enough to run a real early-stage app at no cost, and Blaze only charges for usage beyond that.",
+        "fr": "Les quotas du plan gratuit Spark (50K lectures Firestore/jour, 2M invocations de fonctions/mois, 50K utilisateurs actifs mensuels pour l'auth) sont assez généreux pour faire tourner une vraie application en phase de démarrage sans frais, et Blaze ne facture que l'usage au-delà.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to wire up a first working backend is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour brancher un premier backend fonctionnel ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The documented building blocks (Firestore, Realtime Database, Auth, Storage, Functions, Hosting) deliver a working backend without needing a third-party service to fill a gap.",
+        "fr": "Les briques documentées (Firestore, Realtime Database, Auth, Storage, Functions, Hosting) livrent un backend fonctionnel sans avoir besoin d'un service tiers pour combler un manque.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Unified SDKs across web, iOS, Android and Flutter, plus built-in analytics, A/B testing and crash reporting at no extra cost, make it a broad platform rather than a single-purpose database.",
+        "fr": "Des SDKs unifiés sur web, iOS, Android et Flutter, plus des analytics, de l'A/B testing et un rapport de crash intégrés sans coût supplémentaire, en font une plateforme large plutôt qu'une simple base de données.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export tooling and migration paths away from Firestore/Realtime Database are not covered by the collected sources.",
+        "fr": "Note neutre : les outils d'export de données et les chemins de migration hors de Firestore/Realtime Database ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "App backend platform",
+      "fr": "Backend d'application"
+    },
+    "shortDescription": {
+      "en": "Firebase is Google's managed backend platform, bundling database, authentication, storage, serverless functions and hosting under one usage-based billing model.",
+      "fr": "Firebase est la plateforme backend gérée de Google : base de données, authentification, stockage, fonctions serverless et hébergement, facturés à l'usage."
+    },
+    "longDescription": {
+      "en": "Firebase gives a developer the pieces a backend usually needs: Cloud Firestore or Realtime Database, Authentication, Cloud Storage, Cloud Functions and Hosting, as managed services with unified SDKs on web, iOS, Android and Flutter. Analytics, A/B testing, Crashlytics and Performance Monitoring are included at no cost.\n\nThe Spark plan is free, no payment method needed, with quotas generous enough for an early app (1 GB Firestore storage, 50K daily reads, 2M monthly function invocations, 50K monthly active auth users). Once traffic outgrows those quotas, Blaze removes the caps and bills per unit beyond them, for example $0.40 per million Cloud Functions invocations. There is no flat monthly fee, but a traffic spike can turn into an unpredictable bill.",
+      "fr": "Firebase donne à un développeur les briques qu'un backend demande généralement : Cloud Firestore ou Realtime Database, Authentication, Cloud Storage, Cloud Functions et Hosting, en services gérés avec des SDKs unifiés sur web, iOS, Android et Flutter. Analytics, A/B testing, Crashlytics et Performance Monitoring sont inclus gratuitement.\n\nLe plan Spark est gratuit, sans moyen de paiement requis, avec des quotas généreux pour une application en démarrage (1 Go Firestore, 50K lectures/jour, 2M invocations de fonctions/mois, 50K utilisateurs actifs pour l'auth). Au-delà, Blaze supprime les plafonds et facture à l'unité, par exemple 0,40$ par million d'invocations Cloud Functions. Pas de forfait fixe, mais un pic de trafic peut donner une facture imprévisible."
+    },
+    "pros": [
+      {
+        "en": "The free Spark plan needs no payment method and covers auth, database, storage and functions at once.",
+        "fr": "Le plan gratuit Spark ne demande aucun moyen de paiement et couvre à la fois l'auth, la base de données, le stockage et les fonctions."
+      },
+      {
+        "en": "Analytics, A/B testing, crash reporting and performance monitoring are included at no extra cost on every plan.",
+        "fr": "Analytics, A/B testing, rapport de crash et suivi de performance sont inclus sans coût supplémentaire sur tous les plans."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Usage-based Blaze billing has no ceiling, so a traffic spike can produce a bill that is hard to predict in advance.",
+        "fr": "La facturation à l'usage de Blaze n'a pas de plafond, donc un pic de trafic peut produire une facture difficile à prévoir à l'avance."
+      },
+      {
+        "en": "A billing account with a credit card is required to unlock Blaze, even for services only partially available on the free Spark plan.",
+        "fr": "Un compte de facturation avec carte bancaire est nécessaire pour activer Blaze, même pour des services seulement partiellement disponibles sur le plan gratuit Spark."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you want a working app backend (auth, database, hosting) without operating your own servers, and can monitor usage as traffic grows.",
+        "fr": "Garde-le si tu veux un backend d'application fonctionnel (auth, base de données, hébergement) sans exploiter tes propres serveurs, et peux surveiller l'usage à mesure que le trafic grandit."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need predictable flat monthly costs, since usage-based Blaze billing scales with traffic rather than a fixed fee.",
+        "fr": "Évite-le si tu as besoin de coûts mensuels fixes et prévisibles, car la facturation à l'usage de Blaze évolue avec le trafic plutôt qu'un tarif figé."
+      },
+      "threshold": {
+        "en": "The Spark free plan covers a real early-stage app at no cost; move to Blaze only once actual usage (reads, writes, invocations) approaches Spark's documented daily or monthly quotas.",
+        "fr": "Le plan gratuit Spark couvre une vraie application en phase de démarrage sans frais ; passe à Blaze seulement quand l'usage réel (lectures, écritures, invocations) approche les quotas quotidiens ou mensuels documentés de Spark."
+      }
+    }
+  },
   "unknowns": [
     "Exact per-unit Blaze rates for every service (Firestore reads/writes, Storage egress, Hosting transfer beyond free tier) were not fully itemized in this pass; only Cloud Functions' $0.40/million was explicitly captured.",
     "Regional pricing variation was not checked."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Vercel was removed from alternatives: it is a hosting/serverless-functions platform, not a full backend-as-a-service (no managed database or auth) like Firebase, so it is a complementary tool rather than a direct alternative."
+  ]
 }

@@ -3,7 +3,8 @@
   "slug": "frame-io",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Frame.io",
     "vendor": "Adobe Inc.",
@@ -44,6 +45,25 @@
     },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 2 members, 2 projects, 2GB standard storage + 2GB mounted storage",
+            "fr": "Jusqu'à 2 membres, 2 projets, 2 Go de stockage standard + 2 Go de stockage monté"
+          }
+        ],
+        "sourceIds": ["s1"]
+      },
       {
         "key": "pro",
         "name": "Pro",
@@ -172,6 +192,25 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Video editors and freelance video producers who need to send cuts to clients and collect precise, timecoded feedback without a back-and-forth of emails and file exports.",
+      "fr": "Monteurs vidéo et vidéastes freelances qui envoient leurs montages à des clients et récoltent des retours précis, calés à l'image, sans échanges interminables d'e-mails et d'exports de fichiers."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: upload a rough cut and share a public review link, result: the client leaves timecoded comments directly on the frame instead of a written list of timestamps.",
+      "fr": "Usage : uploader un premier montage et partager un lien de review public, résultat : le client dépose des commentaires calés à l'image plutôt qu'une liste de timecodes écrite."
+    },
+    {
+      "en": "Usage: shoot on location and enable Camera to Cloud, result: the editor starts working on footage minutes after it is recorded instead of waiting for a card transfer.",
+      "fr": "Usage : tourner sur le terrain avec Camera to Cloud activé, résultat : le monteur travaille sur les rushs quelques minutes après la prise de vue au lieu d'attendre un transfert de carte."
+    }
+  ],
   "alternatives": [],
   "missingAlternatives": [
     {
@@ -185,6 +224,89 @@
       "reason": "Video collaboration and review platform for media teams, direct competitor not in the catalogue"
     }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "For $15/month, a solo editor gets frame-accurate review, Camera to Cloud and 2TB of storage, replacing the manual export-and-email cycle that eats time on every client round.",
+        "fr": "Pour 15$/mois, un monteur seul obtient une review précise à l'image, Camera to Cloud et 2 To de stockage, ce qui remplace le cycle manuel export-et-email qui consomme du temps à chaque aller-retour client.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to get a first useful client review is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir une première review client utile ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The documented feature set (frame-accurate comments, version stacks, public share links, transcription) directly delivers the promised review-and-approval workflow without third-party workarounds.",
+        "fr": "L'ensemble des fonctionnalités documentées (commentaires à l'image, empilement de versions, liens de partage publics, transcription) livre directement le workflow de review et validation promis, sans contournement tiers.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Camera to Cloud, forensic watermarking and TPN+ Gold Shield accreditation on Enterprise place it among the most complete tools for professional video review and content security.",
+        "fr": "Camera to Cloud, le filigrane forensique et l'accréditation TPN+ Gold Shield sur Enterprise en font l'un des outils les plus complets pour la review vidéo professionnelle et la sécurité des contenus.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if leaving the platform are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ de la plateforme ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Video review platform",
+      "fr": "Review vidéo"
+    },
+    "shortDescription": {
+      "en": "Frame.io lets video teams and their clients comment frame-by-frame on cuts, stack versions and share footage straight from the camera.",
+      "fr": "Frame.io permet aux équipes vidéo et à leurs clients de commenter les montages image par image et de partager les rushs directement depuis la caméra."
+    },
+    "longDescription": {
+      "en": "Frame.io centers on one workflow: get a video in front of the people who need to approve it, and collect precise, timecoded feedback instead of a scattered thread of emails and screenshots. Version stacks keep every cut linked together, and Camera to Cloud pushes footage from set straight into a shared review link.\n\nThe free plan (2 members, 2 projects, 2GB storage) is only enough to try the workflow. A solo editor who wants real project storage and 5 seats needs Pro at $15/month; a small studio moving to 15 seats and separated internal/client comments needs Team at $25/month. Annual billing brings roughly a 13% discount. Enterprise adds SSO, forensic watermarking and TPN+ Gold Shield accreditation, at a custom quote.",
+      "fr": "Frame.io se concentre sur un seul workflow : mettre une vidéo sous les yeux des personnes qui doivent la valider, et récolter des retours précis calés à l'image plutôt qu'un fil d'e-mails dispersé. Les empilements de versions gardent les montages liés entre eux, et Camera to Cloud pousse les rushs directement vers un lien de review partagé.\n\nLe plan gratuit (2 membres, 2 projets, 2 Go) sert seulement à tester. Un monteur seul veut le plan Pro à 15$/mois ; un studio qui passe à 15 sièges et des commentaires internes séparés a besoin du plan Team à 25$/mois. L'annuel apporte une remise d'environ 13%. Enterprise ajoute SSO, filigrane forensique et accréditation TPN+ Gold Shield, sur devis."
+    },
+    "pros": [
+      {
+        "en": "Camera to Cloud removes the manual step of transferring and uploading footage after a shoot.",
+        "fr": "Camera to Cloud supprime l'étape manuelle de transfert et d'upload des rushs après un tournage."
+      },
+      {
+        "en": "Every paid plan, including the entry Pro tier, already includes SOC 2 Type 2 compliance.",
+        "fr": "Chaque plan payant, y compris le plan Pro d'entrée, inclut déjà la conformité SOC 2 Type 2."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan's 2GB storage and 2-project cap make it unusable for anything beyond a quick test.",
+        "fr": "Le stockage de 2 Go et la limite de 2 projets du plan gratuit le rendent inutilisable au-delà d'un test rapide."
+      },
+      {
+        "en": "Separated internal/client comments and unlimited projects require jumping from Pro to the pricier Team plan.",
+        "fr": "Les commentaires internes séparés des commentaires client et les projets illimités demandent de passer du plan Pro au plan Team, plus cher."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you regularly send video cuts to clients or collaborators and need frame-accurate, timecoded feedback instead of email threads.",
+        "fr": "Garde-le si tu envoies régulièrement des montages vidéo à des clients ou collaborateurs et as besoin de retours précis à l'image plutôt que des fils d'e-mails."
+      },
+      "avoidIf": {
+        "en": "Avoid it if your review volume is low enough that a shared cloud folder with comments already works, or if you never shoot with Camera to Cloud compatible gear.",
+        "fr": "Évite-le si ton volume de review est assez faible pour qu'un dossier cloud partagé avec commentaires suffise déjà, ou si tu ne tournes jamais avec du matériel compatible Camera to Cloud."
+      },
+      "threshold": {
+        "en": "The Pro plan costs $15/month per seat (5 seats included), so a solo editor pays $180/year for frame-accurate review and 2TB of storage.",
+        "fr": "Le plan Pro coûte 15$/mois par siège (5 sièges inclus), donc un monteur seul paie 180$/an pour la review précise à l'image et 2 To de stockage."
+      }
+    }
+  },
   "unknowns": [
     "Exact annual price per seat in dollars not shown directly on the page, only the 13% discount percentage"
   ],

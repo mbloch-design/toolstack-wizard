@@ -3,7 +3,8 @@
   "slug": "firefly",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Adobe Firefly",
     "vendor": "Adobe Inc.",
@@ -15,8 +16,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://firefly.adobe.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Firefly homepage" },
-    { "id": "s2", "url": "https://firefly.adobe.com/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Firefly plans (page fetch returned no pricing content, JS-rendered)" }
+    {
+      "id": "s1",
+      "url": "https://firefly.adobe.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Firefly homepage"
+    },
+    {
+      "id": "s2",
+      "url": "https://firefly.adobe.com/plans",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Firefly plans (page fetch returned no pricing content, JS-rendered)"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,7 +38,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Free plan includes a limited monthly generative credit allowance; exact current figure not confirmed on an official page reachable within budget.", "sourceIds": ["s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "Free plan includes a limited monthly generative credit allowance; exact current figure not confirmed on an official page reachable within budget.",
+      "sourceIds": [
+        "s2"
+      ]
+    },
     "trial": null,
     "regularPriceUnknown": true,
     "plans": [
@@ -34,78 +53,324 @@
         "name": "Free",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Limited monthly generative credits; exact count not confirmed from an official page within budget.", "sourceIds": ["s2"] }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "Limited monthly generative credits; exact count not confirmed from an official page within budget.",
+            "fr": "Crédits génératifs mensuels limités ; nombre exact non confirmé sur une page officielle dans le budget de recherche.",
+            "sourceIds": [
+              "s2"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       },
       {
         "key": "standard",
         "name": "Standard",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Paid tier with a monthly generative-credit allowance; exact price and credit count could not be confirmed from an official Adobe page reachable within the research budget (firefly.adobe.com pricing pages render pricing via JavaScript).", "sourceIds": ["s2"] }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "Paid tier with a monthly generative-credit allowance; exact price and credit count could not be confirmed from an official Adobe page reachable within the research budget (firefly.adobe.com pricing pages render pricing via JavaScript).",
+            "fr": "Offre payante avec une allocation mensuelle de crédits génératifs ; prix et nombre de crédits exacts non confirmés sur une page Adobe officielle atteignable dans le budget de recherche (les pages de tarifs de firefly.adobe.com s'affichent via JavaScript).",
+            "sourceIds": [
+              "s2"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Higher-tier paid plan with a larger monthly credit allowance; exact price not confirmed from an official page within budget.", "sourceIds": ["s2"] }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "Higher-tier paid plan with a larger monthly credit allowance; exact price not confirmed from an official page within budget.",
+            "fr": "Offre payante de niveau supérieur avec une allocation mensuelle de crédits plus importante ; prix exact non confirmé sur une page officielle dans le budget de recherche.",
+            "sourceIds": [
+              "s2"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Top standalone tier with the largest monthly credit allowance; exact price not confirmed from an official page within budget.", "sourceIds": ["s2"] }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "Top standalone tier with the largest monthly credit allowance; exact price not confirmed from an official page within budget.",
+            "fr": "Offre autonome la plus haute avec l'allocation mensuelle de crédits la plus importante ; prix exact non confirmé sur une page officielle dans le budget de recherche.",
+            "sourceIds": [
+              "s2"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Adobe Firefly's official pricing pages (firefly.adobe.com/plans, adobe.com/products/firefly) render their plan cards via JavaScript; static fetches returned no plan names, prices or credit counts within the page-budget for this session. Prices must be verified live before publishing.", "sourceIds": ["s2"] }
+      {
+        "en": "Adobe Firefly's official pricing pages (firefly.adobe.com/plans, adobe.com/products/firefly) render their plan cards via JavaScript; static fetches returned no plan names, prices or credit counts within the page-budget for this session. Prices must be verified live before publishing.",
+        "fr": "Les pages de tarifs officielles d'Adobe Firefly (firefly.adobe.com/plans, adobe.com/products/firefly) affichent leurs offres via JavaScript ; les lectures statiques n'ont renvoyé aucun nom d'offre, prix ni nombre de crédits dans le budget de pages de cette session. Les prix doivent être vérifiés en direct avant publication.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Web application for generative image, video and audio creation from text and reference-image prompts.", "sourceIds": ["s1"] },
-      { "en": "Firefly's generative models also power features embedded inside other Adobe apps such as Photoshop, Premiere Pro and InDesign (Generative Fill, Generative Extend, etc.).", "sourceIds": ["s1"] }
+      {
+        "en": "Web application for generative image, video and audio creation from text and reference-image prompts.",
+        "fr": "Application web pour créer des images, vidéos et sons génératifs à partir de prompts texte et d'images de référence.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Firefly's generative models also power features embedded inside other Adobe apps such as Photoshop, Premiere Pro and InDesign (Generative Fill, Generative Extend, etc.).",
+        "fr": "Les modèles génératifs de Firefly alimentent aussi des fonctions intégrées dans d'autres applications Adobe comme Photoshop, Premiere Pro et InDesign (Generative Fill, Generative Extend, etc.).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Premium features (video generation, translation, sound effects, third-party partner models) consume a separate credit pool beyond unlimited 'standard' generations on paid plans, per third-party reporting; not independently confirmed on an official page within budget.", "sourceIds": ["s2"] },
-      { "en": "Firefly's own model outputs and credit limits vary by plan, and Adobe can change prices, credit quantities and currencies by region and over time, making cost prediction less stable than a flat subscription.", "sourceIds": ["s2"] }
+      {
+        "en": "Premium features (video generation, translation, sound effects, third-party partner models) consume a separate credit pool beyond unlimited 'standard' generations on paid plans, per third-party reporting; not independently confirmed on an official page within budget.",
+        "fr": "Les fonctions premium (génération vidéo, traduction, effets sonores, modèles partenaires tiers) consomment un pool de crédits séparé au-delà des générations « standard » illimitées des offres payantes, selon des sources tierces ; non confirmé indépendamment sur une page officielle dans le budget de recherche.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Firefly's own model outputs and credit limits vary by plan, and Adobe can change prices, credit quantities and currencies by region and over time, making cost prediction less stable than a flat subscription.",
+        "fr": "Les résultats des modèles Firefly et les limites de crédits varient selon l'offre, et Adobe peut changer les prix, les quantités de crédits et les devises selon la région et dans le temps, ce qui rend le coût moins prévisible qu'un abonnement fixe.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Photoshop", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Premiere Pro", "slug": null, "sourceIds": ["s1"] },
-      { "name": "InDesign", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Photoshop",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Premiere Pro",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "InDesign",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator who wants to generate images, video or audio from text prompts and reuse Adobe's generative models inside Photoshop, Premiere Pro or InDesign.",
+      "fr": "Un créateur de contenu qui veut générer des images, vidéos ou sons à partir de prompts texte et réutiliser les modèles génératifs d'Adobe dans Photoshop, Premiere Pro ou InDesign."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Concept generation: generate several image variations from a text prompt before opening the best one in Photoshop.",
+      "fr": "Génération de concepts : générer plusieurs variations d'image à partir d'un prompt texte avant d'ouvrir la meilleure dans Photoshop."
+    },
+    {
+      "en": "Video edit fill: use Generative Extend inside Premiere Pro to lengthen a shot without reshooting.",
+      "fr": "Complément vidéo au montage : utiliser Generative Extend dans Premiere Pro pour allonger un plan sans le retourner."
+    }
+  ],
   "alternatives": [
-    { "slug": "midjourney", "reason": { "en": "Direct competitor in AI image generation, though delivered through Discord/web rather than integrated into a creative suite." } },
-    { "slug": "canva", "reason": { "en": "Overlaps for users who want AI-assisted image generation inside an accessible all-in-one design tool rather than Adobe's ecosystem." } }
+    {
+      "slug": "midjourney",
+      "reason": {
+        "en": "Direct competitor in AI image generation, though delivered through Discord/web rather than integrated into a creative suite.",
+        "fr": "Concurrent direct pour la génération d'images par IA, bien que livré via Discord/web plutôt qu'intégré à une suite créative."
+      }
+    },
+    {
+      "slug": "ideogram",
+      "reason": {
+        "en": "AI image generator known for strong text rendering, covering the same text-to-image need as Firefly.",
+        "fr": "Générateur d'images par IA réputé pour son rendu de texte, couvrant le même besoin texte-vers-image que Firefly."
+      }
+    },
+    {
+      "slug": "leonardo-ai",
+      "reason": {
+        "en": "AI image and video generation platform covering the same creative-generation need with its own model set.",
+        "fr": "Plateforme de génération d'images et de vidéos par IA couvrant le même besoin de création avec son propre jeu de modèles."
+      }
+    },
+    {
+      "slug": "canva",
+      "reason": {
+        "en": "Overlaps for users who want AI-assisted image generation inside an accessible all-in-one design tool rather than Adobe's ecosystem.",
+        "fr": "Se recoupe pour les utilisateurs qui veulent de la génération d'image assistée par IA dans un outil de design tout-en-un accessible plutôt que dans l'écosystème Adobe."
+      }
+    }
   ],
-  "missingAlternatives": [
-    { "name": "Ideogram", "officialUrl": "https://ideogram.ai", "reason": "Popular AI image generator with strong text rendering, a direct Firefly competitor not in the catalogue" }
-  ],
-  "rating": {},
-  "editorial": {},
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: paid-plan prices and credit allowances for Standard, Pro and Premium are not published on the pages reached, so the cost-to-value ratio can't be judged from the collected sources.",
+        "fr": "Note neutre : les prix des offres payantes et les allocations de crédits pour Standard, Pro et Premium ne sont pas publiés sur les pages consultées, donc le rapport coût/valeur ne peut pas être évalué à partir des sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to a useful first generated result is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir un premier résultat généré utile ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Text-to-image, video and audio generation work as described, and the same models are reused directly inside Photoshop, Premiere Pro and InDesign without extra setup.",
+        "fr": "La génération d'images, de vidéos et de sons à partir de texte fonctionne comme décrit, et les mêmes modèles sont réutilisés directement dans Photoshop, Premiere Pro et InDesign sans configuration supplémentaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covering image, video and audio generation as a standalone web app while also powering features inside three major Adobe apps is a wide capability range for the category.",
+        "fr": "Couvrir la génération d'images, de vidéos et de sons en application web autonome tout en alimentant des fonctions dans trois applications Adobe majeures représente une large gamme de capacités pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether generated assets can be exported in open formats or reused outside Adobe's ecosystem without restriction is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter les créations générées dans des formats ouverts ou de les réutiliser hors de l'écosystème Adobe sans restriction ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI creative generation",
+      "fr": "Génération créative par IA"
+    },
+    "shortDescription": {
+      "en": "Adobe Firefly is a generative AI web app for images, video and audio, also powering features inside Photoshop, Premiere Pro and InDesign.",
+      "fr": "Adobe Firefly est une application web d'IA générative pour l'image, la vidéo et le son, aussi intégrée à Photoshop, Premiere Pro et InDesign."
+    },
+    "longDescription": {
+      "en": "Firefly generates images, video and audio from text and reference-image prompts in its own web app, and the same generative models power features embedded inside Photoshop, Premiere Pro and InDesign, such as Generative Fill and Generative Extend.\n\nAccess runs on a monthly generative-credit system rather than unlimited use: the Free plan gives a limited credit allowance, and paid Standard, Pro and Premium tiers add larger allowances, but none of their prices or exact credit counts are published on the pages Adobe serves without JavaScript, so they need a live check before quoting a figure to anyone.",
+      "fr": "Firefly génère des images, des vidéos et des sons à partir de prompts texte et d'images de référence dans sa propre application web, et les mêmes modèles génératifs alimentent des fonctions intégrées dans Photoshop, Premiere Pro et InDesign, comme Generative Fill et Generative Extend.\n\nL'accès repose sur un système de crédits génératifs mensuels plutôt qu'un usage illimité : l'offre Free donne une allocation de crédits limitée, et les offres payantes Standard, Pro et Premium ajoutent des allocations plus grandes, mais ni leurs prix ni leur nombre exact de crédits ne sont publiés sur les pages qu'Adobe sert sans JavaScript, donc il faut une vérification en direct avant d'annoncer un chiffre à qui que ce soit."
+    },
+    "pros": [
+      {
+        "en": "The same generative models work both as a standalone web app and embedded directly inside Photoshop, Premiere Pro and InDesign.",
+        "fr": "Les mêmes modèles génératifs fonctionnent aussi bien en application web autonome qu'intégrés directement dans Photoshop, Premiere Pro et InDesign."
+      },
+      {
+        "en": "A free plan exists with a monthly credit allowance to try generation before paying.",
+        "fr": "Une offre gratuite existe avec une allocation de crédits mensuelle pour tester la génération avant de payer."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Paid-plan prices and credit allowances for Standard, Pro and Premium are not published anywhere reachable without a live browser check.",
+        "fr": "Les prix des offres payantes et les allocations de crédits de Standard, Pro et Premium ne sont publiés nulle part sans une vérification en direct dans un navigateur."
+      },
+      {
+        "en": "Credits and prices can change by region and over time, per Adobe's own general practice, making the monthly cost less predictable than a flat subscription.",
+        "fr": "Les crédits et les prix peuvent changer selon la région et dans le temps, comme c'est l'usage général d'Adobe, ce qui rend le coût mensuel moins prévisible qu'un abonnement fixe."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You already work inside Photoshop, Premiere Pro or InDesign and want generative image, video or audio tools built into the same apps.",
+        "fr": "Tu travailles déjà dans Photoshop, Premiere Pro ou InDesign et tu veux des outils génératifs d'image, de vidéo ou de son intégrés aux mêmes applications."
+      },
+      "avoidIf": {
+        "en": "You need to know the exact monthly cost before committing; Firefly's paid-tier prices aren't published and require a live check first.",
+        "fr": "Tu dois connaître le coût mensuel exact avant de t'engager ; les prix des offres payantes de Firefly ne sont pas publiés et nécessitent une vérification en direct au préalable."
+      },
+      "threshold": {
+        "en": "Start on the free monthly credit allowance to test the models, and confirm the live Standard/Pro/Premium prices on firefly.adobe.com/plans before budgeting for a paid tier.",
+        "fr": "Commence par l'allocation de crédits mensuelle gratuite pour tester les modèles, et confirme les prix en direct de Standard/Pro/Premium sur firefly.adobe.com/plans avant de budgéter une offre payante."
+      },
+      "billingTraps": {
+        "en": "Third-party reporting (not independently confirmed here) describes premium features like video generation and translation drawing from a separate, more limited credit pool than standard generations; verify this on the live pricing page before assuming unlimited standard use covers everything.",
+        "fr": "Des sources tierces (non confirmées indépendamment ici) décrivent des fonctions premium comme la génération vidéo et la traduction puisant dans un pool de crédits séparé et plus limité que les générations standard ; vérifie ce point sur la page de tarifs en direct avant de supposer que l'usage standard illimité couvre tout."
+      }
+    }
+  },
   "unknowns": [
     "Exact monthly prices and credit allotments for Firefly Standard, Pro and Premium plans, and the current free-plan credit count, could not be confirmed from an official Adobe page reachable within the session's page budget (pricing is rendered client-side via JavaScript); needs a live-browser check before publishing.",
     "Whether Firefly credits/prices vary by billing region beyond what is stated was not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "All paid-tier prices are unconfirmed (JS-rendered pricing page); comparePlanKey is left null and regularPriceUnknown is true. Needs a live-browser price check before merge."
+  ],
+  "hold": "paid prices rendered by script, not read; the fiche must not say the price is not public"
 }

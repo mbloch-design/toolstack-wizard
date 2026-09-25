@@ -3,7 +3,8 @@
   "slug": "helpscout",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Help Scout",
     "vendor": "Help Scout PBC",
@@ -35,7 +36,7 @@
         "minSeats": 1,
         "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 25 users, 2 inboxes included (extra inboxes +$10/month), unlimited contacts, 150 basic workflows, 1 basic SLA policy" }],
+        "keyLimits": [{ "en": "Up to 25 users, 2 inboxes included (extra inboxes +$10/month), unlimited contacts, 150 basic workflows, 1 basic SLA policy", "fr": "Jusqu'à 25 utilisateurs, 2 boîtes de réception incluses (boîtes supplémentaires +10 $/mois), contacts illimités, 150 workflows basiques, 1 politique SLA basique" }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": 1,
         "price": { "monthly": 45, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 50 users, 5 inboxes included, 25 included light users, 500 advanced workflows, 2 advanced SLA policies" }],
+        "keyLimits": [{ "en": "Up to 50 users, 5 inboxes included, 25 included light users, 500 advanced workflows, 2 advanced SLA policies", "fr": "Jusqu'à 50 utilisateurs, 5 boîtes de réception incluses, 25 utilisateurs light inclus, 500 workflows avancés, 2 politiques SLA avancées" }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,43 +56,93 @@
         "minSeats": 10,
         "price": { "monthly": 75, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users (10-seat minimum), 10 inboxes included, 50 included light users, unlimited workflows and SLA policies, advanced permissions, HIPAA compliance option" }],
+        "keyLimits": [{ "en": "Unlimited users (10-seat minimum), 10 inboxes included, 50 included light users, unlimited workflows and SLA policies, advanced permissions, HIPAA compliance option", "fr": "Utilisateurs illimités (minimum 10 sièges), 10 boîtes de réception incluses, 50 utilisateurs light inclus, workflows et politiques SLA illimités, permissions avancées, option de conformité HIPAA" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [
-      { "en": "AI Answers add-on billed at $0.75 per resolution, with a 3-month free trial of unlimited resolutions.", "sourceIds": ["s1"] },
-      { "en": "Additional inboxes beyond a plan's included count cost +$10/month each.", "sourceIds": ["s1"] }
+      { "en": "AI Answers add-on billed at $0.75 per resolution, with a 3-month free trial of unlimited resolutions.", "fr": "Add-on AI Answers facturé 0,75 $ par résolution, avec un essai gratuit de 3 mois de résolutions illimitées.", "sourceIds": ["s1"] },
+      { "en": "Additional inboxes beyond a plan's included count cost +$10/month each.", "fr": "Les boîtes de réception supplémentaires au-delà du quota du plan coûtent +10 $/mois chacune.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Displayed per-user prices ($25/$45/$75) reflect an annual billing commitment; an explicit month-to-month rate and the stated ~16% annual discount were not both cleanly separated on the fetched page, so the true monthly-billed price may be higher.", "sourceIds": ["s1"] },
-      { "en": "The Pro plan requires a minimum of 10 seats even for a smaller team, which raises the effective entry cost of that tier.", "sourceIds": ["s1"] }
+      { "en": "Displayed per-user prices ($25/$45/$75) reflect an annual billing commitment; an explicit month-to-month rate and the stated ~16% annual discount were not both cleanly separated on the fetched page, so the true monthly-billed price may be higher.", "fr": "Les prix par utilisateur affichés (25 $/45 $/75 $) reflètent un engagement de facturation annuel ; un tarif mensuel explicite sans engagement et la remise annuelle d'environ 16 % annoncée n'étaient pas clairement séparés sur la page consultée, donc le prix réel facturé au mois pourrait être plus élevé.", "sourceIds": ["s1"] },
+      { "en": "The Pro plan requires a minimum of 10 seats even for a smaller team, which raises the effective entry cost of that tier.", "fr": "Le plan Pro exige un minimum de 10 sièges même pour une petite équipe, ce qui augmente le coût d'entrée effectif de ce palier.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Unified shared inbox for email and other channels, with saved replies, snooze, and send-later scheduling.", "sourceIds": ["s2"] },
-      { "en": "AI-assisted message drafting, conversation recapping, and translation.", "sourceIds": ["s2"] },
-      { "en": "Beacon: an embeddable support widget combining live chat, self-service help content, and AI-powered answers.", "sourceIds": ["s2"] },
-      { "en": "Workflow automation for routing and organizing conversations, plus reporting on response time and team performance.", "sourceIds": ["s2"] }
+      { "en": "Unified shared inbox for email and other channels, with saved replies, snooze, and send-later scheduling.", "fr": "Boîte de réception partagée unifiée pour l'email et d'autres canaux, avec réponses enregistrées, mise en veille et envoi différé.", "sourceIds": ["s2"] },
+      { "en": "AI-assisted message drafting, conversation recapping, and translation.", "fr": "Rédaction de messages assistée par IA, récapitulatif de conversation et traduction.", "sourceIds": ["s2"] },
+      { "en": "Beacon: an embeddable support widget combining live chat, self-service help content, and AI-powered answers.", "fr": "Beacon : un widget de support intégrable combinant chat en direct, contenu d'aide en libre-service et réponses assistées par IA.", "sourceIds": ["s2"] },
+      { "en": "Workflow automation for routing and organizing conversations, plus reporting on response time and team performance.", "fr": "Automatisation de workflow pour router et organiser les conversations, plus des rapports sur le temps de réponse et la performance de l'équipe.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 1 inbox and 100 contacts/month, too small for most active support teams.", "sourceIds": ["s1"] },
-      { "en": "Advanced permissions and HIPAA compliance are reserved for the top Pro tier, which has a 10-seat minimum.", "sourceIds": ["s1"] }
+      { "en": "Free plan is capped at 1 inbox and 100 contacts/month, too small for most active support teams.", "fr": "Le plan gratuit est limité à 1 boîte de réception et 100 contacts/mois, trop peu pour la plupart des équipes support actives.", "sourceIds": ["s1"] },
+      { "en": "Advanced permissions and HIPAA compliance are reserved for the top Pro tier, which has a 10-seat minimum.", "fr": "Les permissions avancées et la conformité HIPAA sont réservées au palier Pro, qui exige un minimum de 10 sièges.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Shopify", "slug": null, "sourceIds": ["s2"] }
     ],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small support or ops teams handling customer email and chat who need a shared inbox and a basic knowledge base without a large helpdesk platform.",
+      "fr": "Petites équipes support ou ops qui gèrent l'email et le chat client et ont besoin d'une boîte partagée et d'une base de connaissance basique sans une grosse plateforme de helpdesk."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Consolidate support channels: connect the team inbox and the Beacon widget so email and live chat land in one shared queue.", "fr": "Consolider les canaux de support : connecter la boîte de réception d'équipe et le widget Beacon pour que l'email et le chat en direct arrivent dans une seule file partagée." },
+    { "en": "Speed up replies with AI: use AI-assisted drafting and saved replies to answer common tickets faster on the Standard plan.", "fr": "Accélérer les réponses avec l'IA : utiliser la rédaction assistée par IA et les réponses enregistrées pour répondre plus vite aux tickets courants sur le plan Standard." }
+  ],
   "alternatives": [
-    { "slug": "intercom", "reason": { "en": "Direct competitor in email/chat customer support with a similar shared-inbox model." } },
-    { "slug": "crisp", "reason": { "en": "Lower-cost multi-channel customer support alternative." } },
-    { "slug": "zendesk", "reason": { "en": "Larger-scale customer support platform competitor with a broader feature set." } },
-    { "slug": "freshservice", "reason": { "en": "Alternative helpdesk platform, more IT/ITSM oriented but overlapping on ticketing." } }
+    { "slug": "intercom", "reason": { "en": "Direct competitor in email/chat customer support with a similar shared-inbox model.", "fr": "Concurrent direct en support client email/chat avec un modèle de boîte partagée similaire." } },
+    { "slug": "crisp", "reason": { "en": "Lower-cost multi-channel customer support alternative.", "fr": "Alternative de support client multicanal moins chère." } },
+    { "slug": "zendesk", "reason": { "en": "Larger-scale customer support platform competitor with a broader feature set.", "fr": "Concurrent de support client à plus grande échelle avec un ensemble de fonctionnalités plus large." } },
+    { "slug": "freshservice", "reason": { "en": "Alternative helpdesk platform, more IT/ITSM oriented but overlapping on ticketing.", "fr": "Plateforme de helpdesk alternative, plus orientée IT/ITSM mais avec un socle de ticketing qui se recoupe." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Standard bundles a shared inbox, AI-assisted drafting and the Beacon live-chat widget in one $25/user/month plan, which replaces the cost of separate email helpdesk and live-chat tools for a small team.", "fr": "Standard regroupe boîte partagée, rédaction assistée par IA et le widget de chat en direct Beacon dans un seul plan à 25 $/utilisateur/mois, ce qui remplace le coût d'outils séparés de helpdesk email et de chat en direct pour une petite équipe.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "The sources describe the inbox and Beacon features but do not state a setup time or onboarding effort, so time-to-first-result cannot be confirmed beyond the fact that it is email-based rather than a specialist ticketing system.", "fr": "Les sources décrivent la boîte de réception et Beacon mais ne précisent pas de temps de mise en place ni d'effort d'onboarding, donc le temps jusqu'au premier résultat utile n'est pas confirmé au-delà du fait que c'est un outil basé sur l'email plutôt qu'un système de ticketing spécialisé.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "AI-assisted drafting, recapping, translation, Beacon live chat and workflow automation are all delivered natively in the sources, matching the shared-inbox promise without third-party tools mentioned.", "fr": "Rédaction assistée par IA, récapitulatif, traduction, chat en direct Beacon et automatisation de workflow sont tous livrés nativement dans les sources, ce qui tient la promesse de boîte partagée sans outil tiers mentionné.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Advanced permissions and HIPAA compliance, the ceiling features, are reserved for the Pro tier with a 10-seat minimum, so the full capability ceiling is gated behind a higher-cost tier rather than available broadly.", "fr": "Les permissions avancées et la conformité HIPAA, les fonctions les plus poussées, sont réservées au palier Pro avec un minimum de 10 sièges, donc le plafond de capacité complet est verrouillé derrière un palier plus cher plutôt qu'accessible largement.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and account portability are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité du compte ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Customer support", "fr": "Support client" },
+    "shortDescription": { "en": "Help Scout is an email-based customer support platform with a shared inbox, a help center and the embeddable Beacon widget, starting at $25 per user/month after a 5-user free plan.", "fr": "Help Scout est une plateforme de support client par email avec boîte de réception partagée, base de connaissance et widget Beacon intégrable, dès 25 $/utilisateur/mois après un plan gratuit à 5 utilisateurs." },
+    "longDescription": {
+      "en": "Help Scout centers on a shared inbox for email and other channels, with saved replies, AI-assisted drafting, conversation recapping and translation. Beacon, an embeddable widget, adds live chat and self-service help content on top of the inbox, and workflow automation routes and organizes conversations with reporting on response time and team performance.\n\nThe free plan covers up to 5 users, 1 inbox, 1 Docs site and 100 contacts a month. The Standard plan is $25/user/month for up to 25 users and 2 inboxes, Plus is $45/user/month for up to 50 users and 5 inboxes, and Pro is $75/user/month with a 10-seat minimum, unlimited users beyond that, and HIPAA compliance. Extra inboxes cost $10/month each, and an AI Answers add-on bills $0.75 per resolution after a 3-month free trial.",
+      "fr": "Help Scout s'articule autour d'une boîte de réception partagée pour l'email et d'autres canaux, avec réponses enregistrées, rédaction assistée par IA, récapitulatif de conversation et traduction. Beacon, un widget intégrable, ajoute le chat en direct et du contenu d'aide en libre-service par-dessus la boîte de réception, et l'automatisation de workflow organise les conversations avec des rapports sur le temps de réponse et la performance de l'équipe.\n\nLe plan gratuit couvre jusqu'à 5 utilisateurs, 1 boîte de réception, 1 site Docs et 100 contacts par mois. Le plan Standard coûte 25 $/utilisateur/mois pour jusqu'à 25 utilisateurs et 2 boîtes de réception, Plus est à 45 $/utilisateur/mois pour jusqu'à 50 utilisateurs et 5 boîtes, et Pro est à 75 $/utilisateur/mois avec un minimum de 10 sièges, des utilisateurs illimités au-delà, et la conformité HIPAA. Les boîtes de réception supplémentaires coûtent 10 $/mois chacune, et l'add-on AI Answers facture 0,75 $ par résolution après un essai gratuit de 3 mois."
+    },
+    "pros": [
+      { "en": "One shared inbox covers email plus live chat via Beacon, instead of separate tools for each channel.", "fr": "Une seule boîte de réception partagée couvre l'email et le chat en direct via Beacon, au lieu d'outils séparés pour chaque canal." },
+      { "en": "AI-assisted drafting, recapping and translation are built into the inbox rather than sold as a separate add-on.", "fr": "La rédaction assistée par IA, le récapitulatif et la traduction sont intégrés à la boîte de réception plutôt que vendus à part." }
+    ],
+    "cons": [
+      { "en": "The Pro tier, the only one with advanced permissions and HIPAA compliance, requires a 10-seat minimum even for a smaller team.", "fr": "Le palier Pro, le seul avec permissions avancées et conformité HIPAA, exige un minimum de 10 sièges même pour une petite équipe." },
+      { "en": "Extra inboxes beyond a plan's included count add $10/month each, on top of the per-user price.", "fr": "Les boîtes de réception supplémentaires au-delà du quota du plan ajoutent 10 $/mois chacune, en plus du prix par utilisateur." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a small support team on email, optionally with live chat, and want AI-assisted replies and a shared inbox without a large per-seat IT helpdesk.", "fr": "Tu gères une petite équipe support par email, avec chat en direct en option, et tu veux des réponses assistées par IA et une boîte partagée sans un gros helpdesk IT facturé par siège." },
+      "avoidIf": { "en": "You need HIPAA compliance or advanced permissions with fewer than 10 seats, since that tier has a 10-seat minimum.", "fr": "Tu as besoin de la conformité HIPAA ou de permissions avancées avec moins de 10 sièges, car ce palier exige un minimum de 10 sièges." },
+      "threshold": { "en": "Worth it once the Standard plan, $25/user/month (about $300/user/year), replaces a separate live-chat tool and a basic knowledge base.", "fr": "Rentable dès que le plan Standard, 25 $/utilisateur/mois (environ 300 $/utilisateur/an), remplace un outil de chat en direct séparé et une base de connaissance basique." },
+      "billingTraps": { "en": "The $25/$45/$75 per-user prices reflect an annual billing commitment and were not clearly separated from a month-to-month rate on the pricing page; confirm the non-annual price before subscribing, and note that extra inboxes and AI Answers resolutions are billed on top.", "fr": "Les prix par utilisateur de 25 $/45 $/75 $ reflètent un engagement annuel et n'étaient pas clairement séparés d'un tarif mensuel sans engagement sur la page tarifs ; vérifie le prix hors engagement avant de t'abonner, et note que les boîtes de réception supplémentaires et les résolutions AI Answers sont facturées en plus." }
+    }
+  },
   "unknowns": [
     "Exact month-to-month (non-annual) per-user price was not clearly isolated from the annual price on the fetched pricing page.",
     "Whether displayed USD prices include tax was not stated on the pricing page.",
@@ -99,5 +150,9 @@
   ],
   "conflicts": [
     { "en": "The seed data's pricingText listed Standard ~$25, Plus ~$38, Pro ~$63-65 per user/month, while the pricing page fetched in this session showed Standard $25, Plus $45, Pro $75. Kept the freshly fetched figures and flagged the discrepancy for review." }
+  ],
+  "reviewNotes": [
+    "Help Scout's $25/$45/$75 per-user prices are described in cautions as reflecting an annual commitment, but are stored under price.monthly with annualPerMonth left null; confirm on helpscout.com/pricing whether a separate, higher month-to-month rate exists.",
+    "Seed data listed different figures (Standard ~$25, Plus ~$38, Pro ~$63-65) than the freshly fetched pricing page (Standard $25, Plus $45, Pro $75); re-verify the current numbers on the live pricing page before publishing."
   ]
 }

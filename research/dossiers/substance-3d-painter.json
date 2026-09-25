@@ -3,7 +3,8 @@
   "slug": "substance-3d-painter",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Adobe Substance 3D Painter",
     "vendor": "Adobe Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 59.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Bundles Painter, Designer, Sampler and Stager, 20,000+ 3D assets, and 100GB cloud storage. Painter is not sold as a lower-priced standalone plan on this page.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Bundles Painter, Designer, Sampler and Stager, 20,000+ 3D assets, and 100GB cloud storage. Painter is not sold as a lower-priced standalone plan on this page.", "fr": "Regroupe Painter, Designer, Sampler et Stager, plus de 20 000 assets 3D, et 100 Go de stockage cloud. Painter n'est pas vendu comme un plan autonome moins cher sur cette page.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 119.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Per-license price; annual commitment billed monthly. Adds 1TB cloud storage and business-only capabilities.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Per-license price; annual commitment billed monthly. Adds 1TB cloud storage and business-only capabilities.", "fr": "Prix par licence ; engagement annuel facturé au mois. Ajoute 1 To de stockage cloud et des capacités réservées aux entreprises.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,42 +55,146 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free full app access with community assets and 5GB cloud storage, restricted to personal/non-commercial use.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Free full app access with community assets and 5GB cloud storage, restricted to personal/non-commercial use.", "fr": "Accès gratuit à l'application complète avec des assets communautaires et 5 Go de stockage cloud, réservé à un usage personnel non commercial.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "collection-individual",
     "addOns": [],
     "cautions": [
-      { "en": "Painter is not offered as a standalone single-app plan on the official page seen during this pass; the entry price to use it commercially is the full Collection bundle at $59.99/mo, not a cheaper Painter-only tier that the earlier seed data (24.99$/mo) implied.", "sourceIds": ["s1"] }
+      { "en": "Painter is not offered as a standalone single-app plan on the official page seen during this pass; the entry price to use it commercially is the full Collection bundle at $59.99/mo, not a cheaper Painter-only tier that the earlier seed data (24.99$/mo) implied.", "fr": "Painter n'est pas proposé en plan autonome mono-application sur la page officielle vue pendant cette recherche ; le tarif d'entrée pour un usage commercial est le bundle Collection complet à 59,99$/mois, pas un plan Painter seul moins cher comme le suggéraient les données de départ (24,99$/mois).", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Real-time PBR texture painting engine with smart masks and materials that mimic real-world surface behavior.", "sourceIds": ["s1"] },
-      { "en": "Non-destructive editing: every stroke and action is recorded and can be recomputed at any time.", "sourceIds": ["s1"] },
-      { "en": "Automatic UV generation and support for VFX pipelines (UDIMs, Alembic, Python scripting).", "sourceIds": ["s1"] },
-      { "en": "Exports to major renderers and game engines, with compatibility for .fbx, .obj, .abc, .gltf and .usd formats.", "sourceIds": ["s1"] }
+      { "en": "Real-time PBR texture painting engine with smart masks and materials that mimic real-world surface behavior.", "fr": "Moteur de texturing PBR en temps réel avec masques et matériaux intelligents qui imitent le comportement réel des surfaces.", "sourceIds": ["s1"] },
+      { "en": "Non-destructive editing: every stroke and action is recorded and can be recomputed at any time.", "fr": "Édition non destructive : chaque coup de pinceau et action est enregistré et peut être recalculé à tout moment.", "sourceIds": ["s1"] },
+      { "en": "Automatic UV generation and support for VFX pipelines (UDIMs, Alembic, Python scripting).", "fr": "Génération automatique d'UV et support des pipelines VFX (UDIMs, Alembic, scripting Python).", "sourceIds": ["s1"] },
+      { "en": "Exports to major renderers and game engines, with compatibility for .fbx, .obj, .abc, .gltf and .usd formats.", "fr": "Exporte vers les principaux moteurs de rendu et moteurs de jeu, avec une compatibilité pour les formats .fbx, .obj, .abc, .gltf et .usd.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No standalone lower-cost Painter-only plan visible on the official page; commercial access requires the full Substance 3D Collection subscription.", "sourceIds": ["s1"] },
-      { "en": "No permanent free tier for commercial use; the free option is restricted to students/teachers for personal, non-commercial work.", "sourceIds": ["s1"] }
+      { "en": "No standalone lower-cost Painter-only plan visible on the official page; commercial access requires the full Substance 3D Collection subscription.", "fr": "Aucun plan autonome Painter seul moins cher visible sur la page officielle ; l'accès commercial demande l'abonnement Substance 3D Collection complet.", "sourceIds": ["s1"] },
+      { "en": "No permanent free tier for commercial use; the free option is restricted to students/teachers for personal, non-commercial work.", "fr": "Aucun plan gratuit permanent pour un usage commercial ; l'option gratuite est réservée aux étudiants/enseignants pour un travail personnel non commercial.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows", "mac"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "3D artists working on games, product visualization or VFX who need to paint physically-based textures on a mesh without leaving a non-destructive pipeline.",
+      "fr": "Artistes 3D qui travaillent sur des jeux vidéo, de la visualisation produit ou des VFX, et ont besoin de peindre des textures physiquement réalistes sur un mesh sans sortir d'un pipeline non destructif."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: paint a smart material onto a 3D asset's UVs, result: a physically-based texture that reacts correctly to light in a game engine or renderer, without hand-painting each map.",
+      "fr": "Usage : peindre un matériau intelligent sur les UV d'un asset 3D, résultat : une texture physiquement réaliste qui réagit correctement à la lumière dans un moteur de jeu ou de rendu, sans peindre chaque carte à la main."
+    },
+    {
+      "en": "Usage: revisit an earlier brush stroke in the non-destructive stack, result: the texture updates without repainting the asset from scratch.",
+      "fr": "Usage : revenir sur un coup de pinceau antérieur dans la pile non destructive, résultat : la texture se met à jour sans repeindre l'asset depuis le début."
+    }
+  ],
   "alternatives": [
-    { "slug": "substance-3d-designer", "reason": { "en": "Sibling Adobe tool focused on procedural material authoring rather than direct mesh painting, often used alongside or instead of Painter." } }
+    { "slug": "substance-3d-designer", "reason": { "en": "Sibling Adobe tool focused on procedural material authoring rather than direct mesh painting, often used alongside or instead of Painter.", "fr": "Outil Adobe complémentaire centré sur la création procédurale de matériaux plutôt que la peinture directe sur mesh, souvent utilisé en complément ou à la place de Painter." } },
+    { "slug": "mari", "reason": { "en": "High-end VFX/film-industry texture-painting competitor to Substance 3D Painter, aimed at the same mesh-painting workflow.", "fr": "Concurrent en texturing haut de gamme pour le VFX et le cinéma face à Substance 3D Painter, ciblant le même workflow de peinture sur mesh." } },
+    { "slug": "blender", "reason": { "en": "Free, open-source 3D suite with a built-in texture-paint workflow covering basic PBR painting needs at no cost.", "fr": "Suite 3D libre et gratuite avec un workflow de texture-paint intégré qui couvre les besoins de base en peinture PBR sans frais." } }
   ],
-  "missingAlternatives": [
-    { "name": "Mari (Foundry)", "officialUrl": "https://www.foundry.com/products/mari", "reason": "High-end VFX/film-industry texture-painting competitor to Substance 3D Painter, not present in the catalogue." },
-    { "name": "Blender (texture paint)", "officialUrl": "https://www.blender.org", "reason": "Free, open-source alternative offering basic PBR texture painting, commonly cited as a no-cost entry point versus Painter; absent from the candidate list." }
-  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Painter is not sold standalone; the entry price to use it commercially is the full $59.99/month Collection bundle (Painter, Designer, Sampler, Stager), so a solo artist who only needs Painter pays for three extra apps.",
+        "fr": "Painter n'est pas vendu seul ; le tarif d'entrée pour un usage commercial est le bundle Collection complet à 59,99$/mois (Painter, Designer, Sampler, Stager), donc un artiste seul qui n'a besoin que de Painter paie pour trois applications supplémentaires.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to get a first usable texture is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir une première texture utilisable ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The real-time PBR painting engine, non-destructive edit stack and exports to major renderers/engines deliver the promised texturing pipeline as documented, without third-party plugins.",
+        "fr": "Le moteur de peinture PBR en temps réel, la pile d'édition non destructive et les exports vers les principaux moteurs de rendu/jeu livrent le pipeline de texturing promis tel que documenté, sans plugin tiers.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Automatic UV generation, VFX-pipeline support (UDIMs, Alembic, Python scripting) and broad export compatibility (.fbx, .obj, .abc, .gltf, .usd) make it a reference tool for professional texturing pipelines.",
+        "fr": "La génération automatique d'UV, le support des pipelines VFX (UDIMs, Alembic, scripting Python) et une large compatibilité d'export (.fbx, .obj, .abc, .gltf, .usd) en font un outil de référence pour les pipelines de texturing professionnels.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: what happens to non-destructive project files and their editability outside Substance 3D is not covered by the collected sources.",
+        "fr": "Note neutre : ce qu'il advient des fichiers de projet non destructifs et de leur modifiabilité en dehors de Substance 3D ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "3D texture painting",
+      "fr": "Peinture de textures 3D"
+    },
+    "shortDescription": {
+      "en": "Substance 3D Painter is Adobe's real-time PBR texture-painting tool for games, product visualization and VFX, sold only inside the Substance 3D Collection subscription.",
+      "fr": "Substance 3D Painter est l'outil Adobe de peinture de textures PBR en temps réel pour jeu vidéo, produit et VFX, vendu dans l'abonnement Collection."
+    },
+    "longDescription": {
+      "en": "Painter's core is a real-time, physically-based texture-painting engine with smart materials and masks, wrapped in a non-destructive stack where every stroke stays editable. It generates UVs automatically, supports VFX-pipeline needs (UDIMs, Alembic, Python scripting), and exports to major renderers and game engines in formats like .fbx, .abc, .gltf and .usd.\n\nThere is no standalone Painter-only plan: commercial access starts at the full Substance 3D Collection, $59.99/month for an individual, which bundles Painter with Designer, Sampler, Stager, 20,000+ assets and 100GB of cloud storage. A team license costs $119.99/month per seat with 1TB of storage. Students and teachers get the full app free for personal, non-commercial use, and everyone else gets a 30-day trial before deciding.",
+      "fr": "Le cœur de Painter est un moteur de peinture de textures physiquement réaliste en temps réel, avec matériaux et masques intelligents, dans une pile non destructive où chaque coup de pinceau reste modifiable. Il génère les UV automatiquement, gère les pipelines VFX (UDIMs, Alembic, scripting Python), et exporte vers les moteurs de rendu et de jeu (.fbx, .abc, .gltf, .usd).\n\nPas de plan Painter seul : l'accès commercial démarre avec le Collection complet, 59,99$/mois par particulier, qui regroupe Painter, Designer, Sampler, Stager, plus de 20 000 assets et 100 Go de stockage. Une licence d'équipe coûte 119,99$/mois avec 1 To. Étudiants et enseignants ont l'application gratuite en usage non commercial, et un essai de 30 jours existe pour tous."
+    },
+    "pros": [
+      {
+        "en": "Non-destructive editing means every earlier brush stroke or mask stays adjustable instead of being permanently baked into the texture.",
+        "fr": "L'édition non destructive signifie que chaque coup de pinceau ou masque antérieur reste ajustable au lieu d'être définitivement figé dans la texture."
+      },
+      {
+        "en": "Broad export compatibility (.fbx, .obj, .abc, .gltf, .usd) covers most game engines and renderers without a conversion step.",
+        "fr": "Une large compatibilité d'export (.fbx, .obj, .abc, .gltf, .usd) couvre la plupart des moteurs de jeu et de rendu sans étape de conversion."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Painter can only be bought as part of the full Collection bundle, so a solo artist pays for Designer, Sampler and Stager even if unused.",
+        "fr": "Painter ne peut être acheté que dans le bundle Collection complet, donc un artiste seul paie pour Designer, Sampler et Stager même sans les utiliser."
+      },
+      {
+        "en": "No commercial free tier: the free option only covers personal, non-commercial use for students and teachers.",
+        "fr": "Aucun plan gratuit commercial : l'option gratuite ne couvre qu'un usage personnel non commercial pour étudiants et enseignants."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you need professional, non-destructive PBR texture painting for games, product or VFX work and will use enough of the Collection bundle to justify its price.",
+        "fr": "Garde-le si tu as besoin d'une peinture de textures PBR professionnelle et non destructive pour du jeu vidéo, du produit ou des VFX, et utiliseras assez du bundle Collection pour justifier son prix."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you only need basic texture painting occasionally, since there is no cheaper Painter-only commercial plan to fall back on.",
+        "fr": "Évite-le si tu n'as besoin que d'une peinture de textures basique et occasionnelle, faute de plan Painter seul moins cher vers lequel te replier."
+      },
+      "threshold": {
+        "en": "The entry commercial price is the Collection bundle at $59.99/month (about $719.88/year) for an individual, whether or not the other three bundled apps are used.",
+        "fr": "Le tarif d'entrée commercial est le bundle Collection à 59,99$/mois (environ 719,88$/an) pour un particulier, que les trois autres applications du bundle soient utilisées ou non."
+      }
+    }
+  },
   "unknowns": [
     "Whether a lower-priced Painter-only subscription still exists outside the Collection bundle was not confirmed; the seed data's $24.99/mo 'Texturing plan' figure could not be verified on the current official page and may be outdated.",
     "Linux support/compatibility was not confirmed on the official page."
   ],
   "conflicts": [
     "Seed pricingText mentioned a 'Texturing' plan at $24.99/mo and a 'Collection' plan at $59.99/mo; the official page fetched during this pass only surfaced the Collection (individual/teams) and Students & Teachers plans, with no visible standalone Texturing tier."
+  ],
+  "reviewNotes": [
+    "Mari and Blender were moved from missingAlternatives into alternatives: both are valid catalogue slugs (mari, blender), matching this tool's own currentAlternatives record."
   ]
 }

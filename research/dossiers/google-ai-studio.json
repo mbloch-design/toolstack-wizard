@@ -3,7 +3,8 @@
   "slug": "google-ai-studio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Google AI Studio",
     "vendor": "Google LLC",
@@ -26,7 +27,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Free access to Google AI Studio interface and a free tier of the Gemini API with limited access to certain models; content may be used to improve Google products." }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Free access to Google AI Studio interface and a free tier of the Gemini API with limited access to certain models; content may be used to improve Google products.", "fr": "Accès gratuit à l'interface Google AI Studio et à un palier gratuit de l'API Gemini avec accès limité à certains modèles ; le contenu peut être utilisé pour améliorer les produits Google." }, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "free-tier",
@@ -79,22 +80,71 @@
     ],
     "platforms": ["web", "android"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers prototyping or shipping small features on Google's Gemini models who want to pay per token rather than commit to a base subscription.",
+      "fr": "Développeurs qui prototypent ou livrent de petites fonctionnalités sur les modèles Gemini de Google et préfèrent payer au token plutôt que s'engager sur un abonnement de base."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Prototype an AI feature: test prompts against Gemini models in the free playground before writing any code.", "fr": "Prototyper une fonctionnalité IA : tester des prompts sur les modèles Gemini dans le bac à sable gratuit avant d'écrire du code." },
+    { "en": "Ship a Gemini-powered feature: generate an API key, call Gemini 3.5 Flash-Lite at $0.30 per million input tokens, and iterate on structured JSON output.", "fr": "Livrer une fonctionnalité propulsée par Gemini : générer une clé API, appeler Gemini 3.5 Flash-Lite à 0,30 $ par million de tokens en entrée, et itérer sur une sortie JSON structurée." }
+  ],
   "alternatives": [
-    { "slug": "chatgpt", "reason": { "en": "Comparable free playground plus API access to a leading general-purpose AI model family." } },
-    { "slug": "claude", "reason": { "en": "Competing frontier AI model with a similar developer console and API pricing model." } },
-    { "slug": "deepseek", "reason": { "en": "Alternative low-cost AI model API for similar prompt-testing and integration use cases." } }
+    { "slug": "chatgpt", "reason": { "en": "Comparable free playground plus API access to a leading general-purpose AI model family.", "fr": "Bac à sable gratuit comparable plus accès API à une famille de modèles IA généralistes de premier plan." } },
+    { "slug": "claude", "reason": { "en": "Competing frontier AI model with a similar developer console and API pricing model.", "fr": "Modèle IA concurrent de pointe avec une console développeur et un modèle de tarification API similaires." } },
+    { "slug": "deepseek", "reason": { "en": "Alternative low-cost AI model API for similar prompt-testing and integration use cases.", "fr": "API de modèle IA alternative à bas coût pour des cas d'usage similaires de test de prompts et d'intégration." } }
   ],
   "missingAlternatives": [
     { "name": "Vertex AI Studio", "officialUrl": "https://cloud.google.com/vertex-ai", "reason": "Google's own enterprise-grade successor/complement to AI Studio, not in the catalogue as a distinct entry" },
     { "name": "OpenAI Platform (Playground)", "officialUrl": "https://platform.openai.com/", "reason": "Direct equivalent playground + API product from OpenAI, not in the catalogue" }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A free playground plus a paid API tier with no base fee, starting at $0.30 per million input tokens on the entry model, gives cheap access to a frontier model family compared to a flat subscription.", "fr": "Un bac à sable gratuit plus un palier API payant sans forfait de base, dès 0,30 $ par million de tokens en entrée sur le modèle d'entrée, donne un accès peu coûteux à une famille de modèles de pointe comparé à un abonnement fixe.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The web-based playground lets a developer write and iterate on a prompt immediately, and generates an API key for integration without a separate setup step described in the sources.", "fr": "Le bac à sable web permet à un développeur d'écrire et d'itérer sur un prompt immédiatement, et génère une clé API pour l'intégration sans étape de configuration séparée décrite dans les sources.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Prompt testing, multimodal input and API key generation work as described, but the sources state that production or enterprise use is expected to move to Vertex AI instead, so AI Studio alone does not cover that scale.", "fr": "Le test de prompts, l'entrée multimodale et la génération de clé API fonctionnent comme décrit, mais les sources indiquent qu'un usage en production ou en entreprise est censé migrer vers Vertex AI, donc AI Studio seul ne couvre pas cette échelle.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Multimodal input, structured JSON output and simple app generation with GitHub/Colab export cover a solid feature set, but the sources place a ceiling on it by pointing enterprise-scale needs toward Vertex AI.", "fr": "L'entrée multimodale, la sortie JSON structurée et la génération de petites applications avec export GitHub/Colab couvrent un ensemble de fonctionnalités solide, mais les sources posent un plafond en orientant les besoins à l'échelle entreprise vers Vertex AI.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: exporting or migrating a project built in AI Studio away from Google's models is not covered by the collected sources.", "fr": "Note neutre : exporter ou migrer un projet construit dans AI Studio en dehors des modèles Google ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Gemini playground", "fr": "Bac à sable Gemini" },
+    "shortDescription": { "en": "Google AI Studio is a free web playground plus API console for building with Google's Gemini models, billed per token from $0.30 per million input tokens on the entry model.", "fr": "Google AI Studio est un bac à sable web gratuit et une console API pour construire avec les modèles Gemini de Google, facturé au token dès 0,30 $ par million de tokens en entrée sur le modèle d'entrée." },
+    "longDescription": {
+      "en": "Google AI Studio is a free browser-based playground for writing and iterating on prompts against Gemini models, with multimodal input (text, image, audio, video) and structured JSON output support. It generates API keys to call Gemini from an external application, and supports building small apps for web and Android with code that can be exported or pushed to GitHub or Google Colab.\n\nThe interface and a free API tier are free to use, though free-tier prompts and data may be used by Google to improve its products. Paid API usage is billed per token with no base fee: Gemini 3.5 Flash-Lite starts at $0.30 per million input tokens and $2.50 per million output tokens, and Gemini 3.8 Flash is $0.75/$3.75 per million tokens through the end of 2026 before rising to $1.50/$7.50 from January 2027. A Google Search grounding add-on gives 5,000 free requests a month, then $14 per 1,000 requests. For production or enterprise use, Google points users toward the fully managed Vertex AI platform instead.",
+      "fr": "Google AI Studio est un bac à sable web gratuit pour écrire et itérer sur des prompts avec les modèles Gemini, avec une entrée multimodale (texte, image, audio, vidéo) et la prise en charge de sorties JSON structurées. Il génère des clés API pour appeler Gemini depuis une application externe, et permet de construire de petites applications pour le web et Android avec un code exportable ou poussable vers GitHub ou Google Colab.\n\nL'interface et un palier API gratuit sont gratuits, bien que les prompts et données du palier gratuit puissent être utilisés par Google pour améliorer ses produits. L'usage API payant est facturé au token sans forfait de base : Gemini 3.5 Flash-Lite démarre à 0,30 $ par million de tokens en entrée et 2,50 $ en sortie, et Gemini 3.8 Flash est à 0,75 $/3,75 $ par million de tokens jusqu'à fin 2026 avant de monter à 1,50 $/7,50 $ à partir de janvier 2027. Un add-on de grounding Google Search donne 5 000 requêtes gratuites par mois, puis 14 $ pour 1 000 requêtes. Pour un usage en production ou en entreprise, Google oriente vers la plateforme managée Vertex AI à la place."
+    },
+    "pros": [
+      { "en": "No base fee on the paid API tier: cost is purely per token, so a small project can start very cheap.", "fr": "Aucun forfait de base sur le palier API payant : le coût est purement au token, donc un petit projet peut démarrer très peu cher." },
+      { "en": "Generated code for small apps can be exported or pushed directly to GitHub or Google Colab.", "fr": "Le code généré pour de petites applications peut être exporté ou poussé directement vers GitHub ou Google Colab." }
+    ],
+    "cons": [
+      { "en": "Free-tier prompts and data may be used by Google to improve its products, unlike the paid tier.", "fr": "Les prompts et données du palier gratuit peuvent être utilisés par Google pour améliorer ses produits, contrairement au palier payant." },
+      { "en": "Gemini API token prices are scheduled to rise on January 1, 2027, so a cost estimate made today may not hold next year.", "fr": "Les prix des tokens de l'API Gemini doivent augmenter le 1er janvier 2027, donc une estimation de coût faite aujourd'hui pourrait ne plus tenir l'an prochain." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want to prototype or ship a small feature on Gemini models and pay only for the tokens you use, without a base subscription.", "fr": "Tu veux prototyper ou livrer une petite fonctionnalité sur les modèles Gemini et payer seulement les tokens utilisés, sans abonnement de base." },
+      "avoidIf": { "en": "You are building a production or enterprise-scale application, since Google directs that use case to Vertex AI instead of AI Studio.", "fr": "Tu construis une application en production ou à l'échelle entreprise, car Google oriente ce cas d'usage vers Vertex AI plutôt que vers AI Studio." },
+      "threshold": { "en": "Cheap to try: the entry model (Gemini 3.5 Flash-Lite) starts at $0.30 per million input tokens, so budgeting depends on estimated token volume rather than a fixed monthly threshold.", "fr": "Peu coûteux à essayer : le modèle d'entrée (Gemini 3.5 Flash-Lite) démarre à 0,30 $ par million de tokens en entrée, donc le budget dépend du volume de tokens estimé plutôt que d'un seuil mensuel fixe." },
+      "billingTraps": { "en": "Token prices for Gemini 3.8 Flash are scheduled to rise on January 1, 2027 (from $0.75/$3.75 to $1.50/$7.50 per million tokens), and Search grounding requests beyond the free 5,000/month bill separately at $14 per 1,000.", "fr": "Les prix des tokens de Gemini 3.8 Flash doivent monter le 1er janvier 2027 (de 0,75 $/3,75 $ à 1,50 $/7,50 $ par million de tokens), et les requêtes de grounding Search au-delà des 5 000 gratuites par mois sont facturées à part, 14 $ pour 1 000." }
+    }
+  },
   "unknowns": [
     "No official page within the pages read gave explicit free-tier rate limits (requests per minute/day); this should be confirmed on ai.google.dev before publishing pricing claims.",
     "Exact list of platforms (e.g. dedicated iOS app) was not confirmed on a tier-1 source; only a mobile app mention appeared in secondary sources."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "comparePlanKey 'pay-as-you-go' has price.monthly set to 0 because there is no base fee; the real cost is the per-token rates listed in that plan's keyLimits. Confirm this displays sensibly wherever the catalogue shows a single comparison price."
+  ]
 }
