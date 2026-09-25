@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "slug": "datadog",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Datadog",
+    "vendor": "Datadog, Inc.",
+    "officialUrl": "https://www.datadoghq.com",
+    "docsUrl": "https://docs.datadoghq.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.datadoghq.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Datadog pricing" },
+    { "id": "s2", "url": "https://www.datadoghq.com/product/", "tier": 1, "accessedOn": "2026-09-25", "title": "Datadog product overview" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.datadoghq.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Up to 5 hosts, 1-day metric retention (Infrastructure Free)", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "infra-free",
+        "name": "Infrastructure Free",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 5 hosts, 1-day metric retention" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "infra-pro",
+        "name": "Infrastructure Pro",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 18, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Priced per host per month; 15-month data retention; 100 custom metrics and 500 custom events per host" }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "infra-enterprise",
+        "name": "Infrastructure Enterprise",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 27, "annualPerMonth": 23, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Priced per host per month; machine learning alerts, live processes, governance console; 200 custom metrics and 1,000 custom events per host" }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "infra-pro",
+    "addOns": [
+      { "en": "APM (Application Performance Monitoring): from $36/host/month standalone (annual), or from $31/host/month bundled with Infrastructure", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Log Management: ingest $0.10/GB, standard indexing $1.70 per million events/month (annual), flex storage $0.05 per million events/month", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Feature Flags: $55/month per 1M monthly flag configuration requests (annual)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Code Coverage: $8 per active committer/month (annual)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI Credits (Bits Chat, Investigation, Code, Agent Builder): $500 for 500 credits/month (annual) or $1.30/credit on-demand", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pricing is primarily per-host and per-usage across many separately billed modules (infra, APM, logs, feature flags, AI credits); the total cost scales with the number of hosts and volume of telemetry, not a flat per-seat fee.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "On-demand (month-to-month) pricing is notably higher than annual commitment pricing across all modules (e.g. Infrastructure Pro is $15/host/month annual vs $18/host/month on-demand).", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Infrastructure, application (APM), network, and log monitoring in one integrated platform.", "sourceIds": ["s2"] },
+      { "en": "Real User Monitoring (RUM) and synthetic testing for frontend/user-facing performance.", "sourceIds": ["s2"] },
+      { "en": "Security features including cloud security posture management, code security (SAST/SCA/IaC scanning), and Cloud SIEM.", "sourceIds": ["s2"] },
+      { "en": "Developer tooling: CI/CD visibility, test optimization, feature flags, code coverage, and an internal developer portal.", "sourceIds": ["s2"] },
+      { "en": "AI-assisted troubleshooting and chat features (Bits Investigation, Bits Chat) for incident response.", "sourceIds": ["s2", "s1"] }
+    ],
+    "limitations": [
+      { "en": "Cost structure is complex and modular: infrastructure, APM, logs, feature flags, code coverage, and AI credits are billed separately, making total spend hard to predict without usage history.", "sourceIds": ["s1"] },
+      { "en": "The free Infrastructure plan is capped at 5 hosts and only 1-day metric retention, unsuitable for production use beyond small test environments.", "sourceIds": ["s1"] },
+      { "en": "Full capability (APM, logs, security) requires stacking multiple paid modules on top of Infrastructure Pro/Enterprise, not a single flat plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "AWS", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Microsoft Azure", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Google Cloud", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Kubernetes", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Docker", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": null,
+  "alternatives": [
+    { "slug": "sentry", "reason": { "en": "Focused alternative for error tracking and application monitoring, lighter weight than Datadog's full observability suite." } },
+    { "slug": "prometheus", "reason": { "en": "Open-source metrics monitoring alternative with no per-host licensing cost, requiring self-hosting and more setup." } },
+    { "slug": "grafana", "reason": { "en": "Open-source/self-hostable observability and dashboarding platform, a common lower-cost substitute for Datadog dashboards and alerting." } },
+    { "slug": "better-stack", "reason": { "en": "Simpler, more affordably priced uptime, logs, and incident monitoring platform aimed at smaller teams." } },
+    { "slug": "pagerduty", "reason": { "en": "Alternative or complement focused specifically on incident management and on-call alerting rather than full observability." } }
+  ],
+  "missingAlternatives": [
+    { "name": "New Relic", "officialUrl": "https://newrelic.com", "reason": "Major direct competitor in full-stack observability (APM, infrastructure, logs) not in the catalogue." },
+    { "name": "Dynatrace", "officialUrl": "https://www.dynatrace.com", "reason": "Enterprise-grade observability platform competing directly with Datadog, not in the catalogue." }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "No explicit trial length stated on the pricing page for most Datadog products.",
+    "Whether taxes are included in listed prices is not stated on the pricing page.",
+    "Exact scope of what counts as a 'host' for billing purposes (e.g. containers, serverless functions) is not detailed on the pricing page itself and requires deeper docs review."
+  ],
+  "conflicts": []
+}

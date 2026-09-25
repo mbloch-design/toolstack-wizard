@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "slug": "zbrush",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ZBrush",
+    "vendor": "Maxon Computer GmbH",
+    "officialUrl": "https://www.maxon.net/en/zbrush",
+    "docsUrl": "https://support.maxon.net/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "ZBrush is now subscription-only; perpetual licenses are no longer sold (confirmed by third-party source, not the official pricing page directly).",
+    "urlStatusSource": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy / pricing page" },
+    { "id": "s2", "url": "https://www.maxon.net/en/zbrush-plan-options", "tier": 1, "accessedOn": "2026-09-25", "title": "ZBrush plan options comparison" },
+    { "id": "s3", "url": "https://www.maxon.net/en/zbrush", "tier": 1, "accessedOn": "2026-09-25", "title": "ZBrush product page" },
+    { "id": "s4", "url": "https://novedge.com/products/buy-zbrush-subscription", "tier": 2, "accessedOn": "2026-09-25", "title": "NOVEDGE - Buy ZBrush Subscription (authorized reseller)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.maxon.net/en/buy",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "ZBrush for iPad free tier: 28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh. No free desktop version.", "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "zbrush-ipad-free",
+        "name": "ZBrush for iPad (Free)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh." }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "zbrush-desktop",
+        "name": "ZBrush (desktop + iPad)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 49, "annualPerMonth": 33.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Includes both ZBrush desktop and ZBrush for iPad; 440+ brushes, up to 100 million polygons; desktop-exclusive features (2D/2.5D painting, plugin/ZScript support)." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "zbrush-desktop",
+    "addOns": [
+      { "en": "ZBrush for iPad standalone subscription: $9.99/month or $89.99/year, for users who only want the iPad app rather than the full desktop bundle.", "sourceIds": ["s4"] },
+      { "en": "Maxon One bundle (ZBrush + Cinema 4D + Redshift + Red Giant Complete + Forger): from $99.91/month billed annually.", "sourceIds": ["s4"] }
+    ],
+    "cautions": [
+      { "en": "ZBrush moved to a rental-only (subscription) model; perpetual licenses are no longer sold, unlike some other 3D tools.", "sourceIds": ["s4"] },
+      { "en": "The exact annual price ($399/year per a third-party reseller, equivalent to $33.25/month) could not be independently confirmed by extracting the live pricing table directly from maxon.net; it is corroborated by a search summary and an authorized reseller listing, not a direct page read.", "sourceIds": ["s4"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Digital sculpting with 200+ (desktop: 440+) proprietary brushes for working at very high polygon counts with topological flexibility.", "sourceIds": ["s3"] },
+      { "en": "Hard-surface and polygon modeling via ZModeler and Live Boolean tools.", "sourceIds": ["s3"] },
+      { "en": "PolyPaint direct-surface texture painting and UV Master for UV mapping.", "sourceIds": ["s3"] },
+      { "en": "Pipeline integration via GoZ for direct transfer to/from Cinema 4D, Maya, and 3ds Max, and Cineware integration with After Effects.", "sourceIds": ["s3"] }
+    ],
+    "limitations": [
+      { "en": "No perpetual license option remains; long-term cost is an ongoing subscription with no path to a one-time purchase.", "sourceIds": ["s4"] },
+      { "en": "The free tier is limited to ZBrush for iPad only, with a reduced brush set (28 vs 440+) and lower polygon ceiling (20M vs 100M); there is no free desktop version.", "sourceIds": ["s2"] },
+      { "en": "Specialized for sculpting/digital art rather than a general-purpose 3D modeling, rigging, and animation suite.", "sourceIds": ["s3"] }
+    ],
+    "integrations": [
+      { "name": "Cinema 4D", "slug": null, "sourceIds": ["s3"] },
+      { "name": "Maya", "slug": null, "sourceIds": ["s3"] },
+      { "name": "3ds Max", "slug": null, "sourceIds": ["s3"] },
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s3"] },
+      { "name": "Redshift", "slug": null, "sourceIds": ["s3"] }
+    ],
+    "platforms": ["windows", "macos", "ipad"]
+  },
+  "audience": null,
+  "useCases": null,
+  "alternatives": [
+    { "slug": "nomad-sculpt", "reason": { "en": "Much cheaper mobile/tablet-first sculpting app covering similar core sculpting workflows, without the desktop feature depth." } },
+    { "slug": "blender", "reason": { "en": "Free, open-source alternative with built-in sculpting tools, at the cost of a less specialized/refined sculpting toolset than ZBrush." } },
+    { "slug": "houdini", "reason": { "en": "Alternative for procedural 3D content creation, overlapping for parts of a character/creature production pipeline." } },
+    { "slug": "substance-3d-painter", "reason": { "en": "Alternative for texturing workflows that can complement or partly replace ZBrush's PolyPaint for surface detail." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Mudbox", "officialUrl": "https://www.autodesk.com/products/mudbox/overview", "reason": "Direct competitor for digital sculpting and texture painting, not in the catalogue." }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "The exact current monthly/annual price could not be confirmed via a direct extraction of maxon.net/en/buy (the page returned only navigation content); figures are corroborated by search summary and a reseller page instead of the primary pricing table itself.",
+    "Whether ZBrush pricing shown is region/currency-specific to the US was not confirmed.",
+    "No explicit trial period is stated on the official plan comparison page."
+  ],
+  "conflicts": []
+}

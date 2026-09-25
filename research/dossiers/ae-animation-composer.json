@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-animation-composer",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Animation Composer",
+    "vendor": "Mister Horse",
+    "officialUrl": "https://misterhorse.com/animation-composer",
+    "docsUrl": "https://misterhorse.com/animation-composer",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "renamed",
+    "statusNote": "The site notes Animation Composer was renamed to 'Premiere Composer' for the Premiere Pro side of the product, while the After Effects plugin and the unified subscription still operate under the Mister Horse / Animation Composer branding."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://misterhorse.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Mister Horse pricing" },
+    { "id": "s2", "url": "https://misterhorse.com/animation-composer", "tier": 1, "accessedOn": "2026-09-25", "title": "Animation Composer product page" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://misterhorse.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Free plan includes over 1,000 assets and the 4 time-saving tools, versus 6,000+ assets on the paid subscription; brief also notes a library limit of up to 500 items on the free tier per the seed data.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Over 1,000 assets and 4 time-saving tools included; personal library capped (up to 500 items per prior seed data)." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "subscription-monthly",
+        "name": "Mister Horse Subscription (monthly)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 19.90, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Over 6,000 assets and the 4 time-saving tools, across both After Effects and Premiere Pro." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "subscription-annual",
+        "name": "Mister Horse Subscription (annual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 16.50, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Over 6,000 assets and the 4 time-saving tools; billed yearly at $198, saving $40 versus paying monthly." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "subscription-annual",
+    "addOns": [],
+    "cautions": [
+      { "en": "Prorated charges apply when adding new team members to a subscription account, so team cost scales beyond the listed single-account price.", "sourceIds": ["s1"] },
+      { "en": "Owners of previous perpetual licenses may see different, discounted upgrade pricing only visible after logging in, not shown on the public pricing page.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Provides a large, browsable library of pre-built animation presets and reusable components for After Effects (6,000+ assets on paid plan).", "sourceIds": ["s1"] },
+      { "en": "Works across both Adobe After Effects and Premiere Pro under one unified subscription.", "sourceIds": ["s1", "s2"] },
+      { "en": "Includes 4 dedicated time-saving tools bundled with both the free and paid tiers.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free tier caps the personal asset library and offers a much smaller preset library (1,000+ vs 6,000+ assets) than the paid subscription.", "sourceIds": ["s1"] },
+      { "en": "Requires Adobe After Effects and/or Premiere Pro as host applications; it is a plugin, not a standalone tool, so it adds to an existing Adobe Creative Cloud cost.", "sourceIds": ["s2"] },
+      { "en": "Team/multi-user usage incurs prorated per-member charges rather than a flat team price.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s2"] },
+      { "name": "Adobe Premiere Pro", "slug": "adobe-premiere-pro", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["windows", "macos"]
+  },
+  "audience": null,
+  "useCases": null,
+  "alternatives": [
+    { "slug": "motion-bro", "reason": { "en": "Direct competitor plugin offering a similar preset/asset library and animation tools for After Effects." } },
+    { "slug": "ae-red-giant", "reason": { "en": "Alternative plugin suite for After Effects and Premiere Pro adding effects and animation tools, overlapping in target workflow." } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact platform compatibility (Windows/macOS) was not explicitly confirmed on the pages read; inferred from standard Adobe host app support.",
+    "No explicit trial period is stated beyond the existence of a free tier; the product page mentions a 'free trial access... through their product manager' without further detail.",
+    "Precise current free-tier asset library cap (500 items per prior seed data vs '1,000+ assets' stated on the live pricing page) shows a minor discrepancy between sources; flagged for review rather than resolved here."
+  ],
+  "conflicts": [
+    { "en": "Seed data describes the free tier limit as 'up to 500 items in personal library', while the live pricing page states the free plan includes 'over 1,000 assets'. These may refer to different things (personal saved library vs. total browsable preset count) but could not be reconciled from the pages read.", "sourceIds": ["s1"] }
+  ]
+}
