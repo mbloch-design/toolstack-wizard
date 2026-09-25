@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "slug": "coupler-io",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Coupler.io",
+    "vendor": "Coupler.io",
+    "officialUrl": "https://www.coupler.io",
+    "docsUrl": "https://www.coupler.io/pricing",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.coupler.io/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Coupler.io pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.coupler.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "1 account, 1 data destination, manual refresh only, 100 rows/run, 1 user", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 account, 1 destination, manual refresh, 100 rows per run, 1 user" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 32, "annualPerMonth": 24, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "3 accounts, 1 destination, daily refresh, 5,000 rows per run, 1 user" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "active",
+        "name": "Active",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 132, "annualPerMonth": 99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "15 accounts, 3 destinations, daily refresh, unlimited data volume and users, adds transformations" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 259, "annualPerMonth": 199, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "50 accounts, unlimited destinations, hourly refresh, team workspaces, automations, account manager" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Agency & Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom refresh down to 15 minutes, custom sources, SSO, dedicated account manager, enterprise SLA" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Data transformation features (formulas, joins, aggregation) are not available below the Active plan; the Free and Starter plans only move raw data.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "No-code data integration connecting 400+ apps to spreadsheets, BI tools, and data warehouses", "sourceIds": ["s1"] },
+      { "en": "Data transformations including formulas, append, join, and aggregation (Active plan and above)", "sourceIds": ["s1"] },
+      { "en": "230+ prebuilt dashboard templates and AI integrations (Claude, ChatGPT, Gemini, Copilot, Perplexity)", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is restricted to manual refresh and a 100-row cap per run, unsuitable for automated reporting", "sourceIds": ["s1"] },
+      { "en": "Team workspaces and workflow automations are exclusive to the Pro plan and above", "sourceIds": ["s1"] },
+      { "en": "SSO is only available on the custom-priced Enterprise plan", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "BigQuery", "slug": "bigquery", "sourceIds": ["s1"] },
+      { "name": "Google Analytics", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "airbyte", "reason": { "en": "Open-source data integration and ELT alternative covering a similar range of connectors" } },
+    { "slug": "dbt", "reason": { "en": "Overlaps for data transformation once pipelines feed a warehouse" } }
+  ],
+  "missingAlternatives": [
+    { "name": "Fivetran", "officialUrl": "https://www.fivetran.com", "reason": "Major managed data-integration competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact list beyond 400+ data sources not fully enumerated on the pricing page",
+    "Tax treatment (taxIncluded) not stated on the pricing page"
+  ],
+  "conflicts": []
+}

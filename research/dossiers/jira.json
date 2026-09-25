@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "slug": "jira",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Jira",
+    "vendor": "Atlassian Corporation",
+    "officialUrl": "https://www.atlassian.com/software/jira",
+    "docsUrl": "https://support.atlassian.com/jira-software-cloud/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.atlassian.com/software/jira/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Jira pricing: Free, Standard, Premium, Enterprise" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.atlassian.com/software/jira/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Free forever for up to 10 users", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Capped at 10 users" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 7.91, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Per-user price shown is for annual billing" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 14.54, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds advanced roadmaps and cross-team alignment features" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 801,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Requires between 801 and 100,000 users; advanced analytics, scale and security" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [],
+    "cautions": [
+      { "en": "The per-user prices published on the pricing page ($7.91 and $14.54) are for annual billing; the monthly-billed rate is not shown on this page.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Agile issue tracking with Scrum and Kanban boards", "sourceIds": ["s1"] },
+      { "en": "Customizable workflows for software development teams", "sourceIds": ["s1"] },
+      { "en": "Advanced roadmaps and cross-team alignment on the Premium plan", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 10 users, forcing a move to a paid plan for larger teams", "sourceIds": ["s1"] },
+      { "en": "Enterprise pricing requires a minimum of 801 users, unsuitable for small teams needing enterprise features", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "productboard", "reason": { "en": "Alternative for product roadmapping and prioritization" } }
+  ],
+  "missingAlternatives": [
+    { "name": "Linear", "officialUrl": "https://linear.app", "reason": "Main lightweight issue-tracking competitor aimed at software teams, not in the catalogue" },
+    { "name": "Asana", "officialUrl": "https://asana.com", "reason": "Common project-management alternative frequently compared to Jira, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Monthly-billed (non-annual) per-user price not shown on the pricing page",
+    "Tax treatment (taxIncluded) not stated on the pricing page"
+  ],
+  "conflicts": []
+}

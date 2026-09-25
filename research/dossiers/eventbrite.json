@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "slug": "eventbrite",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Eventbrite",
+    "vendor": "Eventbrite, Inc.",
+    "officialUrl": "https://www.eventbrite.com",
+    "docsUrl": "https://www.eventbrite.com/organizer/pricing/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.eventbrite.com/organizer/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Eventbrite pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.eventbrite.com/organizer/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Unlimited free events at no cost; fees only apply to paid tickets", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free events",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited free events, no platform fee" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro (email marketing add-on)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10,000 daily emails; available only in US, Canada, Australia, New Zealand, UK, Ireland" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Includes strategic advisor, sponsored marketing, priority support" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Paid tickets carry a per-ticket service fee of 3.7% + $1.79, plus a 2.9% payment processing fee; these are separate from the free/Pro plan cost and can be passed to attendees.", "sourceIds": ["s1"] },
+      { "en": "Eventbrite Ads and ad spend are billed separately from the platform fees and are only available in select markets.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI-powered event page creation with multiple ticket types, reserved seating and timed entry", "sourceIds": ["s1"] },
+      { "en": "Email marketing automation and social media ad tools (Facebook, Instagram, TikTok)", "sourceIds": ["s1"] },
+      { "en": "Mobile check-in app and secure payment processing with pre-event payouts", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Eventbrite Ads and the Pro email marketing add-on are only available in a handful of markets (US, Canada, Australia, New Zealand, UK, Ireland)", "sourceIds": ["s1"] },
+      { "en": "Per-ticket service and processing fees apply to every paid ticket regardless of plan, with no flat-fee alternative", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Luma", "officialUrl": "https://lu.ma", "reason": "Popular lightweight event ticketing competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "No current catalogue alternatives listed for this slug (alternativeCandidates for eventbrite covers unrelated categories, not direct ticketing competitors)",
+    "Tax treatment (taxIncluded) not stated on the pricing page"
+  ],
+  "conflicts": []
+}
