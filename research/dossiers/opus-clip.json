@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 2,
+  "slug": "opus-clip",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Opus Clip",
+    "vendor": "Opus Pro Inc.",
+    "officialUrl": "https://www.opus.pro",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.opus.pro/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Opus Clip pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.opus.pro/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Post one clip per day, 3-day media storage, watermarked animated captions, single 9:16 aspect ratio, no credit card required.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "3 AI B-Roll clips/month, 3 stock clips/month, 20 AI voiceovers/day, watermark-free exports for 30 days, 29-day media storage.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 30GB video files, 100GB fixed storage, unlimited stock B-roll, 50 AI image clips/day, team workspace for 2-4 users, scheduler for 6 platforms.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Unlimited storage and team members, dedicated processing queue, custom branding, priority support, full API access.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Free plan limits exports to a single daily post with a 3-day storage expiration, and adds watermarked animated captions, which is a hard constraint for regular use.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "AI-driven detection of clip-worthy moments in long-form video using spoken words, visual objects, sound and emotion analysis.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatic reframing, virality scoring, and AI B-roll/voiceover generation for short-form output.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in social scheduler posting to up to 6 platforms (YouTube Shorts, TikTok, Instagram and others) on paid plans.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free tier caps output to one clip per day and expires stored media after 3 days.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI B-roll, stock clips and voiceovers are metered per month/day even on paid tiers below Business, requiring an upgrade for heavier use.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "descript",
+      "reason": {
+        "en": "Video/audio editor with AI clipping and repurposing features aimed at content creators.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "capcut",
+      "reason": {
+        "en": "Popular free/low-cost video editor with short-form clipping and auto-captioning tools.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "crayo-ai",
+      "reason": {
+        "en": "AI short-form video generation tool targeting the same creator repurposing use case.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Annual/discounted pricing for Starter and Pro plans not shown on the pricing page in this session; only monthly prices were visible."
+  ],
+  "conflicts": []
+}

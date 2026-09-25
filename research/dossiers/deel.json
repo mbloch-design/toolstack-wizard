@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 2,
+  "slug": "deel",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Deel",
+    "vendor": "Deel, Inc.",
+    "officialUrl": "https://www.deel.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.deel.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Deel pricing"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.deel.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "contractor-management",
+        "name": "Contractor Management",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Centralized contractor management, payments in 120+ currencies, automated invoicing, tax-form guidance, worker classification compliance.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "contractor-of-record",
+        "name": "Contractor of Record",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 325,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds compliant misclassification protection on top of contractor management.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "us-peo",
+        "name": "US PEO",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 125,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Co-employment across all 50 US states, managed payroll/tax filings, benefits (healthcare, dental, vision, 401(k)).",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "eor-global",
+        "name": "EOR (Global)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 599,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Full legal employment in 130+ countries via Employer of Record, automated onboarding, on-demand HR/legal/tax support.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "contractor-management",
+    "addOns": [
+      {
+        "en": "Find Talent (recruiting): $14 per worker/month for job posting, AI-powered screening and interview scheduling.",
+        "fr": null,
+        "sourceIds": ["s1"]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Pricing is per worker/employee, not a flat account fee, and varies widely by hiring type: $49/contractor/month for management vs $599/employee/month for global EOR.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No long-term contract required (month-to-month available), but total cost scales directly with headcount across each hiring category used.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Global payroll, contracts and Employer-of-Record services covering 150+ countries.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Contractor payment automation with invoicing and tax-form (e.g. W-9/W-8) guidance in 120+ currencies.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "US PEO co-employment offering managed benefits and payroll tax filings across all 50 states.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free tier; every hiring type (contractor, PEO, EOR) is billed per person per month starting at $49.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "EOR pricing at $599/employee/month is materially higher than direct local payroll for companies already established in a country.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "rippling",
+      "reason": {
+        "en": "HR/IT/payroll platform covering overlapping global workforce management needs.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "bamboohr",
+      "reason": {
+        "en": "HR platform sometimes compared for core HRIS features, though narrower on global EOR.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    { "name": "Remote", "officialUrl": "https://remote.com", "reason": "Direct global EOR, payroll and contractor management competitor to Deel, listed in the seed alternativeCandidates but not present as a catalogue slug." }
+  ],
+  "unknowns": [
+    "Annual billing discounts, if any, not shown on the pricing page in this session; only monthly per-worker prices were visible."
+  ],
+  "conflicts": []
+}

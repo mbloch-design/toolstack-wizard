@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 2,
+  "slug": "loopio",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Loopio",
+    "vendor": "Loopio Inc.",
+    "officialUrl": "https://loopio.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://loopio.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Loopio pricing (tier names only, no public dollar amounts)"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://loopio.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "foundations",
+        "name": "Foundations",
+        "unit": "seat",
+        "minSeats": 10,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Entry tier; Loopio does not publish dollar pricing, only tier names and seat counts on its official pricing page.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enhanced",
+        "name": "Enhanced",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Mid tier, on quote, requires contacting sales for pricing.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Top tier, custom pricing negotiated with sales based on team size and contract length.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "No public dollar figures are shown on the official pricing page; all tiers require contacting sales, so this dossier's seed estimate (~$20,000/year for 10 seats on Foundations) comes from third-party procurement trackers, not a primary source, and is not repeated as fact here.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Centralized content library for RFP, RFI and security-questionnaire responses.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-assisted automation to draft and populate tender/proposal answers from the content library.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Collaboration workflow for multiple contributors and reviewers on a single response project.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No self-serve free trial; access requires booking a demo with sales.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No public pricing at all, making budget comparison against competitors difficult without a sales conversation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "process-street",
+      "reason": {
+        "en": "Workflow and process documentation tool sometimes used to manage RFP checklists.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "confluence",
+      "reason": {
+        "en": "Knowledge base tool teams sometimes repurpose as a lightweight RFP content library.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Responsive (RFPIO)",
+      "officialUrl": "https://www.responsive.io/",
+      "reason": "Direct, well-known RFP/proposal-response software competitor, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "No public dollar pricing found on the official pricing page for any tier (Foundations, Enhanced, Enterprise); all require a sales quote.",
+    "Minimum contract length and exact seat-pricing mechanics beyond the 10-seat Foundations starting point not confirmed on the official site."
+  ],
+  "conflicts": []
+}

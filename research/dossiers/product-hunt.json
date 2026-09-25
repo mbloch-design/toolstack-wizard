@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 2,
+  "slug": "product-hunt",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Product Hunt",
+    "vendor": "Product Hunt (AngelList/Neo backed)",
+    "officialUrl": "https://producthunt.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.producthunt.com/about",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Product Hunt about page"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://producthunt.com",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free to browse, upvote, comment and launch a product on the daily leaderboard.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "advertise",
+        "name": "Advertise / Sponsor",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Paid promotion/sponsorship option for companies to promote products; no public price found.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "regularPriceUnknown": true,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "The core product-discovery and launch experience is free; monetization (advertising/sponsorship, a subscription referenced as 'Subscribe' in navigation) has no public dollar pricing visible on the about page.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Community-driven daily leaderboard ranking new tech products by user votes and reviews.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Discovery across categories including AI, design and developer tools.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Paid advertising/sponsorship option for companies to promote products on the platform.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No transparent public pricing for paid features (advertising, subscription); details require contacting the team.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Ranking depends on community voting, which the about page did not detail in terms of moderation or anti-gaming mechanics.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No public pricing figures found for advertising/sponsorship or any subscription tier.",
+    "No catalogue alternativeCandidates fit Product Hunt's core discovery/launch use case in the seed list; none selected."
+  ],
+  "conflicts": []
+}

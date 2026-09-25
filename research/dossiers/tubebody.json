@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "slug": "tubebody",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "TubeBuddy",
+    "vendor": "TubeBuddy, LLC",
+    "officialUrl": "https://tubebuddy.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://tubebuddy.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "TubeBuddy pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://tubebuddy.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Basic video and thumbnail tools with limited access to features like Next Video Ideas.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Smart tools for new creators: basic video/thumbnail tools, basic title and tag optimization, limited Next Video Ideas. Tied to a single YouTube channel, one user per license. Exact dollar price not confirmed on the official pricing page in this session (renders dynamically by region); third-party trackers cite figures ranging roughly $15-49/month depending on region and billing cycle.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "legend",
+        "name": "Legend",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "All Pro features plus content strategy tools, advanced reporting, full search/SEO access, bulk processing, audience tools, YouTube Shorts linking, topical analysis. Includes 2 user seats. Exact dollar price not confirmed on the official pricing page in this session (renders dynamically by region).",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Unlimited Next Video Ideas, 1:1 training, dedicated support, automated channel reviews, advanced AI analytics, unlimited user seats.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "TubeBuddy localizes displayed prices by region and offers both monthly and annual billing; exact dollar figures for Pro and Legend were not readable from the official pricing page content fetched in this session, so no price is stated as fact here (see unknowns).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "30-day refund policy available through TubeBuddy Support; no long-term contract, cancel anytime.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "YouTube SEO and tag optimization tools to improve video discoverability.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Content strategy tools including audience understanding, topical analysis and Next Video Ideas (on Legend and above).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Bulk processing/editing tools for managing multiple videos at once (Legend and above).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free and Pro licenses are tied to a single YouTube channel and a single user; multi-seat access starts at Legend (2 seats).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Content strategy tools, advanced reporting and full SEO access are gated behind the Legend tier, not available on Pro.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "vidiq",
+      "reason": {
+        "en": "Direct competitor offering YouTube SEO, tag research and channel analytics tools.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact monthly/annual dollar prices for the Pro and Legend plans could not be confirmed from the official pricing page content fetched in this session; the page renders prices dynamically by region."
+  ],
+  "conflicts": []
+}

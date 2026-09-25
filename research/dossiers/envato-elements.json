@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 2,
+  "slug": "envato-elements",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Envato Elements",
+    "vendor": "Envato Pty Ltd",
+    "officialUrl": "https://elements.envato.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://elements.envato.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Envato Elements pricing"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://elements.envato.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "core",
+        "name": "Core",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 39,
+          "annualPerMonth": 16.5,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited downloads of the 29M+ creative asset library, 20 AI credits/month, lifetime commercial license.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 59,
+          "annualPerMonth": 39,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "200 AI credits/month, up to 3 parallel AI generations, unlimited stock downloads.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Ultimate",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 259,
+          "annualPerMonth": 168,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "500 to 2,000 AI credits/month (selectable tiers), 10 parallel AI generations, unlimited stock downloads.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Custom seats, unlimited stock downloads, custom licensing terms, dedicated account manager.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "core",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Stock asset downloads are unlimited but subject to a Fair Use Policy not detailed on the pricing page itself.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Unlimited downloads of a library of 29M+ creative assets: photos, video, music, sound effects, graphics, fonts, 3D templates.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Bundled AI generation tools (image, video, audio) consuming a monthly AI-credit allowance.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Lifetime commercial license included with every download.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free tier or usage-based entry point; the cheapest plan is a $39/month (or $16.50/month annual) subscription.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI generation is capped by a monthly credit allowance that varies by plan, unlike the unlimited stock downloads.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "storyblocks",
+      "reason": {
+        "en": "Comparable all-in-one stock asset subscription (video, audio, images) for creators.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "motion-array",
+      "reason": {
+        "en": "Subscription library of video templates, stock footage and music aimed at video creators.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "adobe-cc",
+      "reason": {
+        "en": "Broader creative suite subscription that also bundles Adobe Stock assets.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No free trial confirmed on the pricing page; third-party trackers sometimes mention trial offers that were not visible in this session.",
+    "Exact AI-credit cost per generation type (image vs video vs audio) not detailed on the pricing page."
+  ],
+  "conflicts": []
+}

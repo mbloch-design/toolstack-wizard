@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 2,
+  "slug": "gmail",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Gmail",
+    "vendor": "Google LLC",
+    "officialUrl": "https://gmail.com",
+    "docsUrl": "https://workspace.google.com/pricing",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://mail.google.com/mail/u/0/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Gmail (redirect target of gmail.com)"
+    },
+    {
+      "id": "s2",
+      "url": "https://workspace.google.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Google Workspace pricing (storage tiers)"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.name.com/blog/google-workspace-pricing",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Third-party summary of Google Workspace per-user prices (Business Starter/Standard/Plus)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://workspace.google.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free personal @gmail.com account with 15GB storage shared across Gmail, Drive and Photos.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "business-starter",
+        "name": "Google Workspace Business Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 8.4,
+          "annualPerMonth": 7,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Custom @company email via Gmail, 30GB pooled storage per user, no Gemini AI features. Price is a third-party estimate, not independently confirmed on workspace.google.com's interactive calculator in this session.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "key": "business-standard",
+        "name": "Google Workspace Business Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 16.8,
+          "annualPerMonth": 14,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "2TB pooled storage per user, adds Gemini AI in Docs/Sheets/Slides/Drive/Meet/Chat. Price is a third-party estimate.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "key": "business-plus",
+        "name": "Google Workspace Business Plus",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 26.4,
+          "annualPerMonth": 22,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5TB pooled storage per user, adds eSignature with Docs/PDFs. Price is a third-party estimate.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Google Workspace Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "5TB+ storage per user (expandable on request), no minimum or maximum user count, unlike Starter/Standard/Plus which cap at 300 users.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "business-starter",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Business Starter/Standard/Plus per-user prices come from a third-party summary, not directly confirmed on workspace.google.com's official pricing page in this session, which requires an interactive calculator for exact figures.",
+        "fr": null,
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      {
+        "en": "Business Starter, Standard and Plus plans are capped at a maximum of 300 users; only Enterprise has no user limit.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Free @gmail.com email with 15GB storage shared across Gmail, Drive and Photos.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Business email with custom domain and pooled per-user storage (30GB to 5TB+) via Google Workspace plans.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "AI features (Gemini in Docs, Sheets, Slides, Drive, Meet, Chat) available from Business Standard tier upward.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free personal tier lacks a custom domain and is limited to 15GB storage shared across all Google services.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Business Starter plan does not include Gemini AI features, which require at least the Standard tier.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Official per-user dollar prices for Business Starter/Standard/Plus not confirmed directly on workspace.google.com's official pricing page in this session (it requires an interactive calculator); figures used here come from a third-party source and should be re-verified.",
+    "No alternativeCandidates were provided in the seed for this slug; no catalogue alternatives could be selected."
+  ],
+  "conflicts": []
+}

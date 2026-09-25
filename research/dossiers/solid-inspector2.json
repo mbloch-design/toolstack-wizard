@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "slug": "solid-inspector2",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Solid Inspector\u00b2",
+    "vendor": "Thomas Thomassen (thomthom)",
+    "officialUrl": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector",
+    "docsUrl": "https://github.com/thomthom/solid-inspector",
+    "changelogUrl": "https://github.com/thomthom/solid-inspector/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Solid Inspector\u00b2 \u2013 SketchUp Extension Warehouse"
+    },
+    {
+      "id": "s2",
+      "url": "https://github.com/thomthom/solid-inspector",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "thomthom/solid-inspector GitHub repository"
+    }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Fully free and open-source SketchUp extension; no paid tier.", "fr": null }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Inspects solid groups and components in SketchUp for geometry errors: non-solid model, stray/useless faces, inverted faces, hidden edges.",
+        "fr": null,
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "en": "Offers automatic repair actions to fix detected solid-geometry issues.",
+        "fr": null,
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "en": "Open-source, with source code and releases published on GitHub.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Requires SketchUp 2014 or later; it is a plugin, not a standalone product, and needs a SketchUp license to run.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Scope is limited to solid-geometry inspection and repair, not general modeling or rendering.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "sketchup-pro",
+      "reason": {
+        "en": "The host application this extension plugs into; users needing broader modeling tools go directly to SketchUp Pro.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No pricing or licensing terms beyond 'free' found; extension is distributed via the SketchUp Extension Warehouse and GitHub without a paid tier.",
+    "Exact list of supported SketchUp platforms (Windows/Mac specifics) not confirmed in this session."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "slug": "stripe",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Stripe",
+    "vendor": "Stripe, Inc.",
+    "officialUrl": "https://stripe.com",
+    "docsUrl": "https://stripe.com/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://stripe.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Stripe pricing"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://stripe.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard processing",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "2.9% + 30\u00a2 per successful domestic card transaction, no setup or monthly fee. International cards add 1.5%, currency conversion adds 1%, manually entered cards add 0.5%. Usage-based, no fixed plan price.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "regularPriceUnknown": true,
+    "addOns": [
+      {
+        "en": "Custom domain for hosted pages/checkout: $10/month.",
+        "fr": null,
+        "sourceIds": ["s1"]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "No flat subscription fee; cost scales with transaction volume and card type (domestic vs international, manual entry, currency conversion each add a surcharge on top of the base rate).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Custom/enterprise pricing available for high-volume merchants, negotiated directly and not published.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Payment processing across 195 countries and 135+ currencies, with access to 100+ payment methods.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in fraud prevention via Radar Lite and PCI compliance included at no extra cost.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "99.999% average historical uptime and 24/7 customer support.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No flat monthly plan for standard payments; every transaction incurs a fee, which can be costly at scale compared to negotiated enterprise rates.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "International and manually entered cards, plus currency conversion, each add extra surcharges on top of the base processing rate.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "paypal",
+      "reason": {
+        "en": "Widely used competing payment processor with comparable per-transaction pricing.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "razorpay",
+      "reason": {
+        "en": "Payment processing competitor, particularly strong in emerging markets.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "gocardless",
+      "reason": {
+        "en": "Alternative payments infrastructure focused on bank-to-bank and recurring payments.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No explicit maximum transaction volume cap stated; enterprise/custom pricing exists but exact thresholds and negotiated rates are not public."
+  ],
+  "conflicts": []
+}

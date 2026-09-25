@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "slug": "airtable",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Airtable",
+    "vendor": "Formagrid, Inc. (Airtable)",
+    "officialUrl": "https://airtable.com",
+    "docsUrl": "https://support.airtable.com/docs/changes-to-airtable-plans",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://airtable.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Airtable pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://airtable.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free for teams; read-only collaborators, form submissions and share links do not count toward seats.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 20,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Billed per seat with edit permissions, annual billing; read-only collaborators and form submissions are free.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 45,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds customization, larger data scale and administrative features; prorated billing for mid-cycle additions.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise-scale",
+        "name": "Enterprise Scale",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Unlimited org units, workspaces and bases; requires sales consultation for pricing.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "team",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Monthly (non-annual) price for Team and Business not shown on the pricing page in this session; only the annual-billed per-seat rate was visible ($20 and $45 respectively).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Flexible relational-database-style workspace combining spreadsheet UI with linked records, views and automations.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Free plan available to teams with core building blocks, positioned to replace lighter CRM, project and content tools.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Data retention policy: Airtable states it will never remove data when plan limits (records, attachments) are reached, only prompt an upgrade.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Records, attachments, automations and API usage are capped by plan; exceeding them requires an upgrade rather than pay-as-you-go overage.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Only seats with edit permissions are billed, so per-seat costs can be hard to predict for teams with mixed access levels.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "smartsheet",
+      "reason": {
+        "en": "Spreadsheet/database hybrid work management tool targeting similar flexible-database use cases.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "notion",
+      "reason": {
+        "en": "All-in-one workspace often compared to Airtable for lightweight database and project tracking needs.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "monday-com",
+      "reason": {
+        "en": "Work OS platform competing for team project/database management budgets.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact numeric limits for records, attachments, and automations per plan not extracted in this session (page referenced them without listing figures)."
+  ],
+  "conflicts": []
+}
