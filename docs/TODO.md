@@ -12,8 +12,11 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 Brief : `docs/CLOUD_RESEARCH_BRIEF.md`. File : `research/queue.json`.
 Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [x] Préparation : brief allégé, schéma v2, `scripts/research/validate.mjs`, `scripts/research/seed.mjs`, file de priorité (25/09/2026)
-- [ ] Pousser la préparation sur `main` pour que les sessions cloud la lisent
-- [ ] Lot test (lot 0 : nordpass, mongodb-atlas, motion-bro, capture-one, ae-gifgun, freshservice, adobe-lightroom, notion, dependabot, clerk), puis mesurer le coût par outil
+- [x] Pousser la préparation sur `main` pour que les sessions cloud la lisent (25/09/2026, `ed584dd3`)
+- [x] Lot test (lot 0) produit le 25/09/2026 : 10 dossiers tier A, 0 erreur, 32 pages web ouvertes. Branche `research/batch-0`, copiés dans `research/dossiers/`.
+- [ ] Le lot test a tourné **en local** (worktree `.claude/worktrees/`), pas dans le cloud : le crédit n'a sans doute pas bougé. Trouver comment lancer une vraie session cloud (claude.ai/code) avant la production.
+- [x] Dossiers v2 déplacés de `research/tool-pages/` vers `research/dossiers/` : le lot avait écrasé `notion.json`, fichier du circuit d'attestation (`scripts/research-attest.mjs`), comme il l'aurait fait pour framer, figma, linear, loom, n8n, webflow, wix, squarespace, calendly, google-workspace.
+- [ ] Points de relecture du lot test **[décision]** : NordPass Premium 1,99 €/mois vu sous une bannière promo (prix hors promo à revérifier) ; MongoDB Atlas comparé sur le palier dédié M10 (57 $) plutôt que Flex (8 $), règle précisée depuis ; Freshservice et Capture One sans tarif mensuel sans engagement (pages par défaut en annuel).
 - [ ] Relecture du lot test par Michael **[décision]** : qualité suffisante pour lancer la production ?
 - [ ] Script de fusion des dossiers validés vers `tools_v4.json` (prix de comparaison calculé depuis `comparePlanKey`, conversion de devise, note v2, alternatives), à écrire après le test
 - [ ] Production : 290 outils en tier A (lots 1 à 29), 236 en tier B (lots 30 à 53), dans la limite du budget

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "slug": "motion-bro",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Motion Bro",
+    "vendor": "Motion Bro",
+    "officialUrl": "https://motionbro.com",
+    "docsUrl": "https://motionbro.com/help-center/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://motionbro.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Motion Bro homepage" },
+    { "id": "s2", "url": "https://motionbro.com/products/motion-bro-transitions-bundle/", "tier": 1, "accessedOn": "2026-09-25", "title": "Essential Motion Bro Transitions Bundle" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://motionbro.com/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Motion Bro plugin itself is free with no paid tier; only individual asset packs and bundles are paid", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "plugin-free",
+        "name": "Motion Bro plugin",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free plugin for After Effects and Premiere Pro; unlocks compatibility with paid and free asset packs", "fr": "Plugin gratuit pour After Effects et Premiere Pro ; permet d'utiliser les packs d'assets payants et gratuits" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "essential-transitions-personal",
+        "name": "Essential Transitions Bundle (Personal)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 50 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "23 packages, 5,330 transitions, personal/non-commercial use only", "fr": "23 packages, 5 330 transitions, usage personnel/non commercial uniquement" }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "essential-transitions-commercial",
+        "name": "Essential Transitions Bundle (Commercial)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 100 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Same bundle, cleared for commercial/client work", "fr": "Même pack, autorisé pour un usage commercial/client" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "plugin-free",
+    "addOns": [
+      { "name": "Individual transition/preset packs sold separately from bundles", "unit": "one_time", "sourceIds": ["s1"] },
+      { "name": "Motion Bro Sound FX Pack", "unit": "one_time", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The plugin is free forever; only content packs and bundles are paid, each as a one-time purchase with separate personal and commercial license prices.", "fr": "Le plugin est gratuit pour toujours ; seuls les packs de contenu et les bundles sont payants, chacun en achat unique avec des prix distincts pour l'usage personnel et commercial.", "sourceIds": ["s1", "s2"] },
+      { "en": "Checkout runs through Paddle or Gumroad, not a Motion Bro account billing system.", "fr": "Le paiement passe par Paddle ou Gumroad, pas par un système de facturation propre à Motion Bro.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "One free plugin installs into After Effects and Premiere Pro and applies any compatible preset pack with one click.", "fr": "Un seul plugin gratuit s'installe dans After Effects et Premiere Pro et applique n'importe quel pack de presets compatible en un clic.", "sourceIds": ["s1"] },
+      { "en": "Master Scene lets one control panel drive every instance of a preset applied across a project.", "fr": "Master Scene permet à un seul panneau de contrôle de piloter toutes les instances d'un preset appliqué dans un projet.", "sourceIds": ["s1"] },
+      { "en": "Most presets adapt automatically to horizontal, square or vertical video formats.", "fr": "La plupart des presets s'adaptent automatiquement aux formats horizontal, carré ou vertical.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The plugin only works inside Adobe After Effects and Premiere Pro; it is not a standalone editor.", "fr": "Le plugin fonctionne uniquement dans Adobe After Effects et Premiere Pro ; ce n'est pas un logiciel de montage autonome.", "sourceIds": ["s1"] },
+      { "en": "Commercial use of any bought pack requires the separate, more expensive commercial license.", "fr": "L'usage commercial d'un pack acheté nécessite la licence commerciale séparée, plus chère.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] },
+      { "name": "Adobe Premiere Pro", "slug": "adobe-premiere-pro", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "Fits a solo video editor or content creator who wants ready-made transitions and effects without building them from scratch.", "fr": "Convient à un monteur vidéo ou créateur de contenu seul qui veut des transitions et effets prêts à l'emploi sans les construire lui-même." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "A content creator adding polished transitions to short-form social videos without motion design skills.", "fr": "Un créateur de contenu qui ajoute des transitions soignées à des vidéos courtes sans compétences en motion design." },
+    { "en": "A freelance editor buying one commercial-licensed bundle to reuse across multiple client projects.", "fr": "Un monteur freelance qui achète un seul bundle sous licence commerciale pour le réutiliser sur plusieurs projets clients." }
+  ],
+  "alternatives": [
+    { "slug": "ae-animation-composer", "reason": { "en": "Same free-plugin-plus-paid-packs model for After Effects presets and transitions.", "fr": "Même modèle plugin gratuit plus packs payants pour des presets et transitions After Effects." } },
+    { "slug": "ae-red-giant", "reason": { "en": "Broader professional effects and transitions suite for After Effects and Premiere Pro, at a higher price point.", "fr": "Suite d'effets et transitions professionnelle plus large pour After Effects et Premiere Pro, à un prix plus élevé." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "A one-time $50 personal bundle replaces hours of building transitions by hand, with no ongoing fee.", "fr": "Un bundle personnel à 50 $ en achat unique remplace des heures de création de transitions à la main, sans frais récurrent.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "The plugin's own pitch is applying a preset in one click, with no editing experience required.", "fr": "Le plugin lui-même met en avant l'application d'un preset en un clic, sans expérience de montage requise.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Presets install and apply as advertised inside After Effects and Premiere Pro without extra tools.", "fr": "Les presets s'installent et s'appliquent comme annoncé dans After Effects et Premiere Pro sans outil supplémentaire.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers transitions, sound effects and preset packs well, but stays a preset library rather than a full effects/compositing toolkit.", "fr": "Couvre bien les transitions, effets sonores et packs de presets, mais reste une bibliothèque de presets plutôt qu'une boîte à outils d'effets/compositing complète.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Presets are baked into the After Effects/Premiere project and depend on the free plugin being installed to remain editable; there is no data export beyond the project file itself.", "fr": "Les presets sont intégrés au projet After Effects/Premiere et dépendent du plugin gratuit installé pour rester modifiables ; il n'y a pas d'export de données au-delà du fichier projet lui-même.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AE/Premiere transitions", "fr": "Transitions AE/Premiere" },
+    "shortDescription": { "en": "Free plugin for After Effects and Premiere Pro giving one-click access to paid transition and preset packs.", "fr": "Plugin gratuit pour After Effects et Premiere Pro donnant accès en un clic à des packs de transitions et presets payants." },
+    "longDescription": {
+      "en": "Motion Bro is a free plugin for After Effects and Premiere Pro that applies transitions, presets, lower thirds and sound effects with one click. The plugin costs nothing; the actual business model is a marketplace of preset packs and bundles, each sold as a one-time purchase.\n\nEvery pack carries two prices: a cheaper personal-use license and a roughly double-priced commercial license required for client or monetized work. Checkout runs through Paddle or Gumroad rather than a native Motion Bro account, which is a normal but noticeable detour.\n\nFor a solo editor doing personal or social content, the free plugin plus a handful of free packages already covers a lot. A freelancer selling client work needs to budget for the commercial license on any pack used, which changes the real cost per project.",
+      "fr": "Motion Bro est un plugin gratuit pour After Effects et Premiere Pro qui applique transitions, presets, lower thirds et effets sonores en un clic. Le plugin ne coûte rien ; le vrai modèle économique est une marketplace de packs de presets et de bundles, chacun vendu en achat unique.\n\nChaque pack a deux prix : une licence usage personnel moins chère et une licence commerciale environ deux fois plus chère, obligatoire pour du travail client ou monétisé. Le paiement passe par Paddle ou Gumroad plutôt que par un compte Motion Bro natif, un détour normal mais à noter.\n\nPour un monteur seul qui fait du contenu personnel ou social, le plugin gratuit plus quelques packs gratuits couvre déjà beaucoup. Un freelance qui vend du travail client doit budgéter la licence commerciale sur chaque pack utilisé, ce qui change le vrai coût par projet."
+    },
+    "pros": [
+      { "en": "Core plugin is free forever, no subscription required to start.", "fr": "Le plugin de base est gratuit pour toujours, aucun abonnement requis pour démarrer." },
+      { "en": "One-time purchases instead of a recurring subscription for asset packs.", "fr": "Achats uniques plutôt qu'un abonnement récurrent pour les packs d'assets." },
+      { "en": "Large, well-organized library of transitions and presets that adapt to video aspect ratio.", "fr": "Grande bibliothèque bien organisée de transitions et presets qui s'adaptent au format vidéo." }
+    ],
+    "cons": [
+      { "en": "Commercial license roughly doubles the price of any pack used for client work.", "fr": "La licence commerciale double à peu près le prix de tout pack utilisé pour un travail client." },
+      { "en": "Locked to Adobe After Effects and Premiere Pro; no standalone or other NLE support.", "fr": "Verrouillé à Adobe After Effects et Premiere Pro ; aucun support autonome ou pour une autre suite de montage." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already edit in After Effects or Premiere Pro and want ready-made transitions without a subscription.", "fr": "Tu montes déjà dans After Effects ou Premiere Pro et tu veux des transitions prêtes à l'emploi sans abonnement." },
+      "avoidIf": { "en": "You edit outside the Adobe ecosystem, or need a fully custom look rather than preset-based transitions.", "fr": "Tu montes en dehors de l'écosystème Adobe, ou tu as besoin d'un rendu totalement sur-mesure plutôt que de transitions à base de presets." },
+      "threshold": { "en": "Budget the commercial license ($100 for the Essential bundle) as soon as any output will be sold or monetized.", "fr": "Prévois la licence commerciale (100 $ pour le bundle Essential) dès qu'une sortie sera vendue ou monétisée." },
+      "billingTraps": { "en": "Buying the personal license and using the output commercially violates the license terms; the commercial upgrade is roughly double the price.", "fr": "Acheter la licence personnelle et l'utiliser commercialement viole les conditions de licence ; la mise à niveau commerciale coûte environ le double." }
+    }
+  },
+  "unknowns": [
+    "Exact per-pack pricing outside the Essential Transitions bundle (individual packages, other bundles) was not itemized within the page budget.",
+    "Whether a subscription or 'all bundles' access option exists was not found on the pages visited."
+  ],
+  "conflicts": []
+}

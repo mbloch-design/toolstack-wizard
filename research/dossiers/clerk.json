@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "slug": "clerk",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Clerk",
+    "vendor": "Clerk Inc.",
+    "officialUrl": "https://clerk.com",
+    "docsUrl": "https://clerk.com/docs",
+    "changelogUrl": "https://clerk.com/changelog",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://clerk.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Clerk pricing" },
+    { "id": "s2", "url": "https://clerk.com/articles/clerk-pricing-explained", "tier": 1, "accessedOn": "2026-09-25", "title": "Clerk pricing explained" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://clerk.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Up to 50,000 monthly retained users per app, up to 3 dashboard seats, fixed 7-day session lifetime, no credit card required", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "hobby",
+        "name": "Hobby",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited applications, 50,000 MRU per app, up to 3 dashboard seats, fixed 7-day session lifetime, no MFA or enterprise SSO", "fr": "Applications illimitées, 50 000 MRU par app, jusqu'à 3 sièges dans le dashboard, durée de session fixe de 7 jours, sans MFA ni SSO entreprise" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 25, "annualPerMonth": 20, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds MFA, custom session lifetime, removes Clerk branding, 1 enterprise SSO connection included, 50,000 MRU included then $0.02/mo each extra", "fr": "Ajoute le MFA, une durée de session personnalisable, retire le branding Clerk, 1 connexion SSO entreprise incluse, 50 000 MRU inclus puis 0,02 $/mois chacun en plus" }],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 300, "annualPerMonth": 250, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "10 dashboard seats included, SOC2 report, priority support, 30-day log retention", "fr": "10 sièges dashboard inclus, rapport SOC2, support prioritaire, rétention des logs de 30 jours" }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Adds 99.99% uptime SLA, enterprise SSO for workspace, custom log retention, HIPAA BAA available", "fr": "Ajoute un SLA de disponibilité de 99,99 %, le SSO entreprise pour l'espace de travail, une rétention de logs personnalisée, un BAA HIPAA disponible" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      { "name": "B2B Authentication (enhanced multi-tenancy)", "unit": "usage", "sourceIds": ["s1"] },
+      { "name": "Administration (unlimited user impersonation)", "unit": "usage", "sourceIds": ["s1"] },
+      { "name": "Billing (0.7% of billing volume, on top of Stripe fees)", "unit": "usage", "sourceIds": ["s1"] },
+      { "name": "Additional dashboard seats, satellite domains and enterprise connections", "unit": "usage", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Extra monthly retained users beyond the 50,000 included in Hobby/Pro cost $0.02 each, so usage above the free allocation is metered, not flat.", "fr": "Les utilisateurs actifs mensuels supplémentaires au-delà des 50 000 inclus en Hobby/Pro coûtent 0,02 $ chacun, donc l'usage au-delà de l'allocation gratuite est mesuré, pas fixe.", "sourceIds": ["s1"] },
+      { "en": "B2B Authentication and Administration add-ons are billed separately ($100/mo, or $85/mo annual) on top of the base plan.", "fr": "Les add-ons B2B Authentication et Administration sont facturés séparément (100 $/mois, ou 85 $/mois en annuel) en plus du plan de base.", "sourceIds": ["s1"] },
+      { "en": "Clerk Billing charges 0.7% of billing volume on top of Stripe's own processing fees when used.", "fr": "Clerk Billing facture 0,7 % du volume facturé, en plus des frais de traitement Stripe eux-mêmes, en cas d'usage.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Prebuilt UI components and APIs for sign-up, sign-in and user profile, usable across unlimited applications on every plan.", "fr": "Composants d'interface préconstruits et API pour l'inscription, la connexion et le profil utilisateur, utilisables sur un nombre illimité d'applications, sur tous les plans.", "sourceIds": ["s1"] },
+      { "en": "B2B multi-tenancy (organizations, roles, invitations) included free up to 100 monthly retained organizations per app.", "fr": "Multi-tenancy B2B (organisations, rôles, invitations) inclus gratuitement jusqu'à 100 organisations actives mensuelles par app.", "sourceIds": ["s1"] },
+      { "en": "Machine authentication via API keys and M2M tokens for service-to-service auth, included with monthly limits even on the free plan.", "fr": "Authentification machine via clés API et tokens M2M pour l'auth service à service, incluse avec des limites mensuelles même sur le plan gratuit.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Hobby plan session lifetime is fixed at 7 days and cannot be customized; MFA and custom sessions require Pro.", "fr": "La durée de session du plan Hobby est fixée à 7 jours et ne peut pas être personnalisée ; le MFA et les sessions personnalisées nécessitent Pro.", "sourceIds": ["s1"] },
+      { "en": "SOC2 report and priority support are locked behind Business, a large jump from Pro at $250 to $300/month.", "fr": "Le rapport SOC2 et le support prioritaire sont réservés à Business, un saut important depuis Pro, à 250-300 $/mois.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Stripe", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "Fits a developer building a web app who wants ready-made authentication UI and APIs instead of building login from scratch.", "fr": "Convient à un développeur qui construit une app web et veut une interface et des API d'authentification prêtes à l'emploi plutôt que de construire le login à partir de zéro." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Adding sign-up, sign-in and user profile screens to a new app without building an auth system from scratch.", "fr": "Ajouter les écrans d'inscription, de connexion et de profil utilisateur à une nouvelle app sans construire un système d'auth à partir de zéro." },
+    { "en": "Building a B2B SaaS with organizations, roles and invitations using Clerk's built-in multi-tenancy.", "fr": "Construire un SaaS B2B avec organisations, rôles et invitations grâce à la multi-tenancy intégrée de Clerk." }
+  ],
+  "alternatives": [
+    { "slug": "auth-js", "reason": { "en": "Open-source, self-hosted authentication library for developers who want to avoid a per-user metered SaaS bill.", "fr": "Bibliothèque d'authentification open source et auto-hébergée pour qui veut éviter une facture SaaS mesurée par utilisateur." } },
+    { "slug": "okta", "reason": { "en": "Enterprise-grade identity platform, a heavier alternative once Clerk's Business/Enterprise pricing becomes relevant.", "fr": "Plateforme d'identité de niveau entreprise, une alternative plus lourde une fois que la tarification Business/Enterprise de Clerk devient pertinente." } },
+    { "slug": "microsoft-entra-id", "reason": { "en": "Microsoft's identity platform, a common enterprise SSO alternative for larger organizations.", "fr": "La plateforme d'identité de Microsoft, une alternative SSO entreprise courante pour les grandes organisations." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Auth0", "officialUrl": "https://auth0.com", "reason": "Clerk's own pricing page directly compares itself to Auth0; a major direct competitor not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Free up to 50,000 monthly retained users removes authentication build cost entirely for most early-stage apps.", "fr": "Gratuit jusqu'à 50 000 utilisateurs actifs mensuels, ce qui supprime totalement le coût de développement de l'authentification pour la plupart des apps en démarrage.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Prebuilt sign-up/sign-in UI components let a developer ship working authentication in well under an hour.", "fr": "Les composants d'interface d'inscription/connexion préconstruits permettent à un développeur de livrer une authentification fonctionnelle en bien moins d'une heure.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers production-grade authentication, session management and B2B organizations as advertised without third-party glue code.", "fr": "Fournit une authentification, une gestion de session et des organisations B2B de niveau production comme annoncé, sans code de liaison tiers.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers social login, MFA, passkeys, machine auth, B2B multi-tenancy and billing integration, a broad feature set for an auth provider.", "fr": "Couvre le login social, le MFA, les passkeys, l'auth machine, la multi-tenancy B2B et l'intégration de facturation, un périmètre large pour un fournisseur d'auth.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Full, no-questions-asked user data export is included on every plan, including Hobby.", "fr": "L'export complet des données utilisateur, sans question posée, est inclus sur tous les plans, y compris Hobby.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "App authentication", "fr": "Authentification d'app" },
+    "shortDescription": { "en": "Authentication and user management platform with prebuilt UI, free up to 50,000 monthly retained users per app.", "fr": "Plateforme d'authentification et de gestion utilisateur avec interface préconstruite, gratuite jusqu'à 50 000 utilisateurs actifs mensuels par app." },
+    "longDescription": {
+      "en": "Clerk handles sign-up, sign-in and user profile screens with prebuilt UI components and APIs, so a developer does not have to build authentication from scratch. The Hobby plan is free up to 50,000 monthly retained users per app with unlimited applications, which covers most side projects and early-stage products at zero cost.\n\nPro at $20 to $25/month adds MFA, custom session lifetimes and removes Clerk's branding, with extra retained users metered at $0.02 each beyond the included 50,000. Business jumps sharply to $250 to $300/month for SOC2 reporting, priority support and more dashboard seats, a large step for a small team that mainly needs compliance paperwork.\n\nB2B multi-tenancy (organizations, roles, invitations) is included free on every plan up to 100 monthly retained organizations, with an enhanced add-on for unlimited members and custom roles.",
+      "fr": "Clerk gère les écrans d'inscription, de connexion et de profil utilisateur avec des composants d'interface et des API préconstruits, pour éviter à un développeur de construire l'authentification à partir de zéro. Le plan Hobby est gratuit jusqu'à 50 000 utilisateurs actifs mensuels par app avec des applications illimitées, ce qui couvre la plupart des side projects et produits en démarrage à coût nul.\n\nPro à 20-25 $/mois ajoute le MFA, des durées de session personnalisables et retire le branding Clerk, avec des utilisateurs actifs supplémentaires facturés 0,02 $ chacun au-delà des 50 000 inclus. Business saute fortement à 250-300 $/mois pour le rapport SOC2, le support prioritaire et plus de sièges dashboard, un grand pas pour une petite équipe qui a surtout besoin de la paperasse de conformité.\n\nLa multi-tenancy B2B (organisations, rôles, invitations) est incluse gratuitement sur tous les plans jusqu'à 100 organisations actives mensuelles, avec un add-on amélioré pour des membres illimités et des rôles personnalisés."
+    },
+    "pros": [
+      { "en": "Free tier covers up to 50,000 monthly retained users, generous for most solo or small-team apps.", "fr": "Le plan gratuit couvre jusqu'à 50 000 utilisateurs actifs mensuels, généreux pour la plupart des apps solo ou petite équipe." },
+      { "en": "Prebuilt UI components cut real integration time versus building authentication from scratch.", "fr": "Les composants d'interface préconstruits réduisent vraiment le temps d'intégration comparé à construire l'authentification à partir de zéro." },
+      { "en": "B2B organizations and roles are included free, not a separate paid module for basic use.", "fr": "Les organisations et rôles B2B sont inclus gratuitement, pas un module payant séparé pour un usage basique." }
+    ],
+    "cons": [
+      { "en": "Business plan jumps to $250-300/month, a steep step up from Pro for compliance features alone.", "fr": "Le plan Business saute à 250-300 $/mois, un grand pas depuis Pro rien que pour les fonctionnalités de conformité." },
+      { "en": "Usage beyond the included monthly retained users is metered and can add up unpredictably at scale.", "fr": "L'usage au-delà des utilisateurs actifs mensuels inclus est mesuré et peut s'additionner de façon imprévisible à l'échelle." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You are building a web app and want authentication working in under an hour, free until real scale.", "fr": "Tu construis une app web et veux une authentification fonctionnelle en moins d'une heure, gratuite jusqu'à une vraie échelle." },
+      "avoidIf": { "en": "You need SOC2 compliance or priority support immediately, since that means jumping straight to the $250-300/month Business tier.", "fr": "Tu as besoin de conformité SOC2 ou de support prioritaire immédiatement, ce qui veut dire sauter directement au palier Business à 250-300 $/mois." },
+      "threshold": { "en": "Budget for metered growth past 50,000 monthly retained users at $0.02 each once the free allocation is exceeded.", "fr": "Prévois une croissance mesurée au-delà de 50 000 utilisateurs actifs mensuels à 0,02 $ chacun une fois l'allocation gratuite dépassée." },
+      "billingTraps": { "en": "B2B Authentication, Administration and Billing are separate metered add-ons that are easy to miss when budgeting the base plan price.", "fr": "B2B Authentication, Administration et Billing sont des add-ons mesurés séparés, faciles à oublier en budgétant le prix du plan de base." }
+    }
+  },
+  "unknowns": [
+    "Business plan pricing was confirmed via a Clerk-published article rather than the live pricing page table itself, since the Business column was not fully visible during the browsing session."
+  ],
+  "conflicts": []
+}

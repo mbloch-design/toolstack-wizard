@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "slug": "dependabot",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Dependabot",
+    "vendor": "GitHub, Inc. (Microsoft)",
+    "officialUrl": "https://github.com/dependabot",
+    "docsUrl": "https://docs.github.com/en/code-security/dependabot",
+    "changelogUrl": "https://github.blog/changelog/label/dependabot/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates", "tier": 1, "accessedOn": "2026-09-25", "title": "About Dependabot security updates" },
+    { "id": "s2", "url": "https://github.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "GitHub pricing" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://github.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "global",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Fully free on all GitHub plans, for both public and private repositories, no usage limits", "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Dependabot (all GitHub plans)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No limits: included free on every GitHub plan for public and private repositories", "fr": "Aucune limite : inclus gratuitement sur tous les plans GitHub, pour les dépôts publics et privés" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Dependabot alerts and updates are free, but they are distinct from GitHub Advanced Security paid add-ons (Secret Protection, Code Security) sold separately per active committer.", "fr": "Les alertes et mises à jour Dependabot sont gratuites, mais elles sont distinctes des add-ons payants GitHub Advanced Security (Secret Protection, Code Security) vendus séparément par contributeur actif.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Automatically opens pull requests to patch vulnerable dependencies once a fix is available.", "fr": "Ouvre automatiquement des pull requests pour corriger les dépendances vulnérables dès qu'un correctif est disponible.", "sourceIds": ["s1"] },
+      { "en": "Groups multiple security fixes into a single pull request to reduce PR volume, configurable via dependabot.yml.", "fr": "Regroupe plusieurs correctifs de sécurité dans une seule pull request pour réduire le volume de PR, configurable via dependabot.yml.", "sourceIds": ["s1"] },
+      { "en": "Also patches vulnerable GitHub Actions used in CI/CD workflows, not just application dependencies.", "fr": "Corrige aussi les GitHub Actions vulnérables utilisées dans les workflows CI/CD, pas seulement les dépendances applicatives.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "For most ecosystems (npm is an exception), Dependabot cannot update a transitive dependency if its parent dependency also needs an update.", "fr": "Pour la plupart des écosystèmes (npm excepté), Dependabot ne peut pas mettre à jour une dépendance transitive si sa dépendance parente doit aussi être mise à jour.", "sourceIds": ["s1"] },
+      { "en": "Cannot group updates across different package ecosystems in one pull request.", "fr": "Ne peut pas regrouper des mises à jour de différents écosystèmes de paquets dans une seule pull request.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub Actions", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "Fits any developer or small team hosting code on GitHub who wants dependency vulnerabilities patched automatically.", "fr": "Convient à tout développeur ou petite équipe hébergeant du code sur GitHub qui veut que les vulnérabilités de dépendances soient corrigées automatiquement." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Automatically receiving a pull request when a dependency in a repo has a known security vulnerability.", "fr": "Recevoir automatiquement une pull request quand une dépendance d'un dépôt a une vulnérabilité de sécurité connue." },
+    { "en": "Keeping GitHub Actions workflow versions patched against known CVEs without manual tracking.", "fr": "Garder les versions des workflows GitHub Actions corrigées contre les CVE connues, sans suivi manuel." }
+  ],
+  "alternatives": [
+    { "slug": "snyk", "reason": { "en": "Broader dependency and code vulnerability scanning platform with cross-ecosystem grouping Dependabot lacks.", "fr": "Plateforme plus large de scan de vulnérabilités des dépendances et du code, avec un regroupement inter-écosystèmes que Dependabot n'a pas." } },
+    { "slug": "github-advanced-security", "reason": { "en": "GitHub's own paid security suite that extends beyond Dependabot's free dependency updates (secret scanning, code scanning).", "fr": "La suite de sécurité payante de GitHub qui va au-delà des mises à jour gratuites de Dependabot (scan de secrets, scan de code)." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "Free on every GitHub plan for public and private repos, removing a real security risk at zero cost.", "fr": "Gratuit sur tous les plans GitHub pour les dépôts publics et privés, supprimant un vrai risque de sécurité à coût nul.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Enabling Dependabot alerts and updates takes a couple of settings toggles or a minimal dependabot.yml file.", "fr": "Activer les alertes et mises à jour Dependabot demande quelques bascules de réglages ou un fichier dependabot.yml minimal.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Opens working pull requests for patchable vulnerabilities as advertised, though transitive-dependency limits mean some fixes still need manual work.", "fr": "Ouvre des pull requests fonctionnelles pour les vulnérabilités corrigeables comme annoncé, mais les limites sur les dépendances transitives signifient que certains correctifs demandent encore un travail manuel.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers dependency and Actions patching well, but stays narrower than a full application security platform (no secret scanning, no code scanning included).", "fr": "Couvre bien le correctif des dépendances et des Actions, mais reste plus étroit qu'une plateforme de sécurité applicative complète (pas de scan de secrets ni de code inclus).", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Dependabot only opens standard pull requests in the repo; disabling it leaves no lock-in and no data to migrate.", "fr": "Dependabot ne fait qu'ouvrir des pull requests standards dans le dépôt ; le désactiver ne crée aucun verrouillage ni donnée à migrer.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Dependency alerts", "fr": "Alertes de dépendances" },
+    "shortDescription": { "en": "GitHub's free, built-in bot that opens pull requests to patch vulnerable or outdated dependencies.", "fr": "Le bot gratuit et intégré de GitHub qui ouvre des pull requests pour corriger les dépendances vulnérables ou obsolètes." },
+    "longDescription": {
+      "en": "Dependabot is a built-in GitHub feature, not a separate product to buy: it scans a repository's dependency graph and opens pull requests to patch known vulnerabilities or bump outdated packages. It is free on every GitHub plan, public or private repo, with no usage cap.\n\nIt is deliberately narrow: it patches dependencies and GitHub Actions versions, and groups fixes to cut down on pull request noise, but it does not scan source code or secrets. Those live in GitHub's paid Advanced Security add-ons, billed separately per active committer.\n\nFor most transitive-dependency ecosystems (npm excluded), Dependabot cannot patch an indirect dependency if its parent also needs updating, so some fixes still land on a human.",
+      "fr": "Dependabot est une fonctionnalité intégrée à GitHub, pas un produit séparé à acheter : il scanne le graphe de dépendances d'un dépôt et ouvre des pull requests pour corriger les vulnérabilités connues ou mettre à jour les paquets obsolètes. Il est gratuit sur tous les plans GitHub, dépôt public ou privé, sans limite d'usage.\n\nSon périmètre est volontairement étroit : il corrige les dépendances et les versions des GitHub Actions, et regroupe les correctifs pour limiter le bruit des pull requests, mais il ne scanne ni le code source ni les secrets. Cela vit dans les add-ons payants GitHub Advanced Security, facturés séparément par contributeur actif.\n\nPour la plupart des écosystèmes de dépendances transitives (npm excepté), Dependabot ne peut pas corriger une dépendance indirecte si sa dépendance parente doit aussi être mise à jour, donc certains correctifs retombent encore sur un humain."
+    },
+    "pros": [
+      { "en": "Completely free on every plan, no seat or usage cost.", "fr": "Complètement gratuit sur tous les plans, aucun coût par siège ou par usage." },
+      { "en": "Works out of the box on any GitHub repo with minimal configuration.", "fr": "Fonctionne dès le départ sur tout dépôt GitHub avec une configuration minimale." },
+      { "en": "Grouped updates reduce pull request noise for large dependency trees.", "fr": "Les mises à jour groupées réduisent le bruit des pull requests pour les grands arbres de dépendances." }
+    ],
+    "cons": [
+      { "en": "Cannot patch transitive dependencies in most ecosystems when the parent also needs updating.", "fr": "Ne peut pas corriger les dépendances transitives dans la plupart des écosystèmes quand la dépendance parente doit aussi être mise à jour." },
+      { "en": "Only covers dependencies and Actions; code and secret scanning require separate paid GitHub Advanced Security add-ons.", "fr": "Ne couvre que les dépendances et les Actions ; le scan de code et de secrets nécessite les add-ons payants séparés GitHub Advanced Security." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Your code lives on GitHub; there is no reason not to enable it, since it is free.", "fr": "Ton code vit sur GitHub ; il n'y a aucune raison de ne pas l'activer, puisqu'il est gratuit." },
+      "avoidIf": { "en": "You need code or secret scanning, which Dependabot does not do on its own.", "fr": "Tu as besoin de scan de code ou de secrets, ce que Dependabot ne fait pas seul." },
+      "threshold": { "en": "No cost threshold applies; enable it regardless of team size or budget.", "fr": "Aucun seuil de coût ne s'applique ; active-le quel que soit la taille de l'équipe ou le budget." },
+      "billingTraps": { "en": "None: Dependabot itself carries no charge. Only the separate GitHub Advanced Security add-ons bill per active committer.", "fr": "Aucun : Dependabot lui-même ne comporte aucun frais. Seuls les add-ons séparés GitHub Advanced Security se facturent par contributeur actif." }
+    }
+  },
+  "unknowns": [],
+  "conflicts": []
+}

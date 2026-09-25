@@ -8,7 +8,7 @@ celui-ci en est la version d'exécution, allégée pour tenir un budget.
 ## 1. Mission
 
 Pour chaque outil d'un lot, produire **un dossier de recherche** dans
-`research/tool-pages/<slug>.json` : des faits sourcés et datés, la grille de
+`research/dossiers/<slug>.json` : des faits sourcés et datés, la grille de
 prix complète, la note ToolTrim sur 5 axes justifiée, et les textes de la
 fiche en anglais puis en français.
 
@@ -44,12 +44,14 @@ git checkout -b research/batch-<ID>
 node scripts/research/seed.mjs --batch <ID>      # données existantes du lot
 # … recherche et rédaction, un fichier par outil …
 node scripts/research/validate.mjs <slug1> <slug2> …   # doit finir sans erreur
-git add research/tool-pages/*.json && git commit -m "research(batch-<ID>): <slugs>"
+git add research/dossiers/*.json && git commit -m "research(batch-<ID>): <slugs>"
 git push -u origin research/batch-<ID>
 ```
 
-Ne modifie **aucun autre fichier** que `research/tool-pages/<slug>.json` des
-slugs du lot. Termine par le compte rendu de la section 11.
+Ne modifie **aucun autre fichier** que `research/dossiers/<slug>.json` des
+slugs du lot. **Ne touche jamais `research/tool-pages/`** : ce dossier
+appartient au circuit d'attestation, et certains fichiers y sont des données
+de production. Termine par le compte rendu de la section 11.
 
 ## 4. Contrat du dossier (schemaVersion 2)
 
@@ -225,6 +227,17 @@ retire la fonction principale ne compte pas. Le montant retenu à la fusion
 sera `annualPerMonth` s'il existe, sinon `monthly`, pour un siège. Pour
 `free`, `open_source` et `quote`, `comparePlanKey` peut être `null`.
 
+Cas particuliers :
+- **Usage** : le plus petit palier payant qui fait tourner un vrai projet de
+  la cible (ex. un palier « Flex » avant un palier dédié), pas le palier
+  « production » le plus courant.
+- **Gratuit + achats à l'unité** (plugin gratuit, packs payants) : le plan
+  gratuit, car l'usage courant ne coûte rien chaque mois ; les packs restent
+  dans `addOns` ou dans des plans `one_time`.
+- **Prix promotionnel** (bannière, offre 2 ans, « -60 % ») : il ne va jamais
+  dans `annualPerMonth`. Relève le prix hors promotion, ou mets `null` et
+  explique dans `unknowns`.
+
 ## 6. Note ToolTrim (5 axes, entiers de 1 à 5)
 
 Chaque axe a une preuve en anglais et en français, reliée à des sources.
@@ -312,7 +325,7 @@ BRANCHE
 Exécute docs/CLOUD_RESEARCH_BRIEF.md dans le dépôt ToolTrim pour le lot <ID>
 de research/queue.json. Lis uniquement ce brief, puis lance
 `node scripts/research/seed.mjs --batch <ID>`. Respecte strictement la
-section 2 (budget). Un fichier research/tool-pages/<slug>.json par outil,
+section 2 (budget). Un fichier research/dossiers/<slug>.json par outil,
 validé par scripts/research/validate.mjs, sur la branche research/batch-<ID>.
 Termine par le compte rendu de la section 11.
 ```

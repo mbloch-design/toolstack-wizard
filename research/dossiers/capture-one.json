@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "slug": "capture-one",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Capture One",
+    "vendor": "Capture One A/S",
+    "officialUrl": "https://www.captureone.com",
+    "docsUrl": "https://support.captureone.com/hc/en-us",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.captureone.com/en/pricing/capture-one-pro", "tier": 1, "accessedOn": "2026-09-25", "title": "Capture One plans and pricing" },
+    { "id": "s2", "url": "https://support.captureone.com/hc/en-us/articles/32415642246941-How-the-new-Capture-One-Seven-Day-Trial-Works", "tier": 1, "accessedOn": "2026-09-25", "title": "How the new Capture One Seven-Day Trial Works" }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "EUR",
+    "pricingUrl": "https://www.captureone.com/en/pricing/capture-one-pro",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "pro-subscription",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 20.50, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Full desktop RAW editing and tethering, support for 550+ cameras, no mobile app or cloud collaboration", "fr": "Édition RAW et tethering complets sur ordinateur, support de 550+ appareils photo, sans application mobile ni collaboration cloud" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "all-in-one-subscription",
+        "name": "All in One",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 28.00, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds iPad/iPhone app, online collaboration, cloud-shared settings and priority support", "fr": "Ajoute l'app iPad/iPhone, la collaboration en ligne, les réglages partagés dans le cloud et le support prioritaire" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "studio-subscription",
+        "name": "Studio",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 52.92, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds offline collaboration, multiple viewer screens, automated cropping and automatic backup for high-volume studios", "fr": "Ajoute la collaboration hors ligne, plusieurs écrans de visionnage, le recadrage automatisé et la sauvegarde automatique pour les studios à fort volume" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro-license",
+        "name": "Pro (Perpetual License)",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 391.00 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "One-time purchase, no future feature updates or new camera support included", "fr": "Achat unique, sans mises à jour de fonctionnalités futures ni support de nouveaux appareils photo inclus" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro-subscription",
+    "addOns": [],
+    "cautions": [
+      { "en": "Capture One removed its free tier; the trial is now a 7-day full-access trial instead of a permanent free plan.", "fr": "Capture One a supprimé son offre gratuite ; l'essai est désormais un essai complet de 7 jours plutôt qu'un plan gratuit permanent.", "sourceIds": ["s2"] },
+      { "en": "Prices shown default to annual billing per month; monthly (no annual commitment) billing exists per the FAQ but the exact monthly rate was not captured.", "fr": "Les prix affichés sont par défaut ceux de la facturation annuelle au mois ; la facturation mensuelle sans engagement existe selon la FAQ mais le tarif mensuel exact n'a pas été capturé.", "sourceIds": ["s1"] },
+      { "en": "Subscribers can switch to a perpetual license at any time, and get it free after 5 years of subscription.", "fr": "Les abonnés peuvent passer à une licence perpétuelle à tout moment, et l'obtiennent gratuitement après 5 ans d'abonnement.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Advanced RAW conversion and color profiles with support for 550+ camera models.", "fr": "Conversion RAW avancée et profils colorimétriques avec support de 550+ modèles d'appareils photo.", "sourceIds": ["s1"] },
+      { "en": "Industry-standard tethered shooting with live view, camera controls and next-capture adjustments.", "fr": "Prise de vue tethering reconnue du secteur, avec visionnage en direct, contrôle de l'appareil et ajustements en temps réel.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted tools: one-click masking, AI crop, Match Look, Snap to Eye and background replacement via Photoroom (higher tiers).", "fr": "Outils assistés par IA : masquage en un clic, AI Crop, Match Look, Snap to Eye et remplacement de fond via Photoroom (paliers supérieurs).", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; evaluating the software requires starting a time-limited trial.", "fr": "Aucun plan gratuit permanent ; évaluer le logiciel nécessite de démarrer un essai limité dans le temps.", "sourceIds": ["s1"] },
+      { "en": "Online collaboration, cloud settings and the mobile app are locked to the All in One tier and above.", "fr": "La collaboration en ligne, les réglages cloud et l'app mobile sont réservés au palier All in One et au-dessus.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Photoroom", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos", "ios"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "Fits a professional or serious amateur photographer who needs studio-grade RAW editing and tethering, not a casual photo touch-up tool.", "fr": "Convient à un photographe professionnel ou amateur avancé qui a besoin d'édition RAW et de tethering de niveau studio, pas d'un simple outil de retouche." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "A product or fashion photographer tethering to a laptop during a studio shoot for real-time client review.", "fr": "Un photographe produit ou mode qui fait du tethering vers un ordinateur pendant une séance studio pour une revue client en temps réel." },
+    { "en": "A wedding or landscape photographer batch-editing thousands of RAW files with consistent color profiles.", "fr": "Un photographe mariage ou paysage qui édite par lot des milliers de fichiers RAW avec des profils colorimétriques cohérents." }
+  ],
+  "alternatives": [
+    { "slug": "adobe-lightroom", "reason": { "en": "The main direct competitor for RAW editing and photo management, bundled with Adobe Creative Cloud.", "fr": "Le principal concurrent direct pour l'édition RAW et la gestion photo, inclus dans Adobe Creative Cloud." } },
+    { "slug": "affinity-photo", "reason": { "en": "One-time-purchase photo editor for users who want to avoid a subscription entirely.", "fr": "Éditeur photo en achat unique pour ceux qui veulent éviter tout abonnement." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Luminar Neo", "officialUrl": "https://skylum.com/luminar", "reason": "AI-focused RAW editor and Lightroom/Capture One alternative, not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Tethering and color quality save real editing time for paid shoots, justifying the 20.50 EUR/month entry price for a working photographer.", "fr": "Le tethering et la qualité colorimétrique font gagner un vrai temps d'édition sur des shootings payants, justifiant le prix d'entrée de 20,50 €/mois pour un photographe en activité.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The interface exposes many advanced controls; getting a professional-grade result takes longer than a point-and-click editor.", "fr": "L'interface expose de nombreux réglages avancés ; obtenir un résultat pro prend plus de temps qu'un éditeur simplifié.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers advertised RAW conversion, tethering and color control without third-party plugins for the core workflow.", "fr": "Fournit la conversion RAW, le tethering et le contrôle colorimétrique annoncés sans plugin tiers pour le flux de travail principal.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Tethering and color tools are considered an industry reference point among RAW editors.", "fr": "Les outils de tethering et de couleur sont considérés comme une référence du secteur parmi les éditeurs RAW.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Exports to standard TIFF/JPEG/PSD formats, but edits and catalog structure stay in Capture One's proprietary session/catalog format.", "fr": "Exporte vers les formats standards TIFF/JPEG/PSD, mais les retouches et la structure du catalogue restent dans le format propriétaire de session/catalogue de Capture One.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Pro RAW editor", "fr": "Éditeur RAW pro" },
+    "shortDescription": { "en": "Professional RAW photo editing and tethering software, available as a subscription or a perpetual license.", "fr": "Logiciel professionnel d'édition RAW et de tethering, disponible en abonnement ou en licence perpétuelle." },
+    "longDescription": {
+      "en": "Capture One targets photographers who need studio-grade color control and tethered shooting, not casual editing. The Pro tier covers desktop RAW editing and tethering for 20.50 EUR/month billed annually; All in One and Studio add mobile, cloud collaboration and high-volume studio tools at a higher price.\n\nThe company dropped its free tier and now offers a 7-day full-access trial instead. Anyone who wants to avoid a subscription can still buy the Pro perpetual license for a one-time 391 EUR, though it comes without future feature updates or new camera support.\n\nThe learning curve is real: this is a tool built around precise color and tethering workflows, and getting a first professional-grade result takes longer than in a simplified editor.",
+      "fr": "Capture One cible les photographes qui ont besoin d'un contrôle colorimétrique de niveau studio et de tethering, pas d'une retouche occasionnelle. Le palier Pro couvre l'édition RAW et le tethering sur ordinateur pour 20,50 €/mois facturé annuellement ; All in One et Studio ajoutent le mobile, la collaboration cloud et des outils pour studios à fort volume, à un prix plus élevé.\n\nL'éditeur a supprimé son offre gratuite et propose désormais un essai complet de 7 jours à la place. Qui veut éviter l'abonnement peut toujours acheter la licence perpétuelle Pro pour 391 € en achat unique, mais sans les futures mises à jour de fonctionnalités ni le support des nouveaux appareils photo.\n\nLa courbe d'apprentissage est réelle : c'est un outil construit autour de flux de travail colorimétriques et de tethering précis, et obtenir un premier résultat pro prend plus de temps que dans un éditeur simplifié."
+    },
+    "pros": [
+      { "en": "Tethering and color accuracy considered a reference point among RAW editors.", "fr": "Tethering et précision colorimétrique considérés comme une référence parmi les éditeurs RAW." },
+      { "en": "Perpetual license option for anyone who wants to avoid a subscription long-term.", "fr": "Option de licence perpétuelle pour qui veut éviter l'abonnement sur le long terme." },
+      { "en": "AI-assisted tools (masking, crop, background replacement) reduce manual retouching time.", "fr": "Outils assistés par IA (masquage, recadrage, remplacement de fond) réduisent le temps de retouche manuelle." }
+    ],
+    "cons": [
+      { "en": "No free tier anymore; evaluating the software means starting a 7-day trial clock.", "fr": "Plus d'offre gratuite ; évaluer le logiciel signifie démarrer un essai limité à 7 jours." },
+      { "en": "Mobile app, cloud settings and online collaboration are locked out of the entry Pro tier.", "fr": "L'app mobile, les réglages cloud et la collaboration en ligne sont exclus du palier Pro d'entrée." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You shoot professionally and need tethering plus precise color control worth 20.50 EUR/month or more.", "fr": "Tu shootes professionnellement et as besoin de tethering et d'un contrôle colorimétrique précis qui vaut 20,50 €/mois ou plus." },
+      "avoidIf": { "en": "You want a simple, casual photo editor, or need the mobile/cloud workflow without paying for All in One.", "fr": "Tu veux un éditeur photo simple et occasionnel, ou as besoin du flux mobile/cloud sans payer All in One." },
+      "threshold": { "en": "If tethering or color precision does not directly affect billable work, a cheaper editor covers most casual needs.", "fr": "Si le tethering ou la précision colorimétrique n'affecte pas directement du travail facturable, un éditeur moins cher couvre la plupart des besoins occasionnels." },
+      "billingTraps": { "en": "Switching from perpetual license back to subscription, or the reverse, has its own rules; check the FAQ before assuming a mid-year switch is free.", "fr": "Passer de la licence perpétuelle à l'abonnement, ou l'inverse, a ses propres règles ; vérifie la FAQ avant de supposer qu'un changement en cours d'année est gratuit." }
+    }
+  },
+  "unknowns": [
+    "Exact monthly (no annual commitment) price per tier was not captured; the pricing page defaulted to the annual view.",
+    "Pricing shown is in EUR from an EU-localized page view; USD or other regional pricing was not verified."
+  ],
+  "conflicts": []
+}

@@ -14,7 +14,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
-const DIR = path.join(ROOT, "research/tool-pages");
+// v2 dossiers live apart from research/tool-pages/, which holds the
+// attestation pipeline files (scripts/research-attest.mjs) and must not be
+// overwritten.
+const DIR = path.join(ROOT, "research/dossiers");
 const catalogue = JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/tools_v4.json"), "utf8"));
 const SLUGS = new Set(catalogue.map((t) => t.slug || t.id));
 
@@ -29,7 +32,7 @@ const TIERS = ["A", "B"];
 
 const args = process.argv.slice(2);
 const files = args.includes("--all")
-  ? fs.readdirSync(DIR).filter((f) => f.endsWith(".json") && f !== "index.json")
+  ? fs.readdirSync(DIR).filter((f) => f.endsWith(".json"))
   : args.map((slug) => `${slug}.json`);
 
 let failed = 0;
