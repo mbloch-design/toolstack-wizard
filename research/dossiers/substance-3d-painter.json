@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "substance-3d-painter",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Substance 3D Painter",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/substance3d/apps/painter.html",
+    "docsUrl": "https://helpx.adobe.com/substance-3d-painter/home.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/substance3d/apps/painter.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Substance 3D Painter - product & pricing page" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/substance3d/apps/painter.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "collection-individual",
+        "name": "Substance 3D Collection (individual)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 59.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Bundles Painter, Designer, Sampler and Stager, 20,000+ 3D assets, and 100GB cloud storage. Painter is not sold as a lower-priced standalone plan on this page.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "collection-teams",
+        "name": "Substance 3D Collection for Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 119.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Per-license price; annual commitment billed monthly. Adds 1TB cloud storage and business-only capabilities.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "students-teachers",
+        "name": "Students & Teachers",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free full app access with community assets and 5GB cloud storage, restricted to personal/non-commercial use.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "collection-individual",
+    "addOns": [],
+    "cautions": [
+      { "en": "Painter is not offered as a standalone single-app plan on the official page seen during this pass; the entry price to use it commercially is the full Collection bundle at $59.99/mo, not a cheaper Painter-only tier that the earlier seed data (24.99$/mo) implied.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time PBR texture painting engine with smart masks and materials that mimic real-world surface behavior.", "sourceIds": ["s1"] },
+      { "en": "Non-destructive editing: every stroke and action is recorded and can be recomputed at any time.", "sourceIds": ["s1"] },
+      { "en": "Automatic UV generation and support for VFX pipelines (UDIMs, Alembic, Python scripting).", "sourceIds": ["s1"] },
+      { "en": "Exports to major renderers and game engines, with compatibility for .fbx, .obj, .abc, .gltf and .usd formats.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No standalone lower-cost Painter-only plan visible on the official page; commercial access requires the full Substance 3D Collection subscription.", "sourceIds": ["s1"] },
+      { "en": "No permanent free tier for commercial use; the free option is restricted to students/teachers for personal, non-commercial work.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "mac"]
+  },
+  "alternatives": [
+    { "slug": "substance-3d-designer", "reason": { "en": "Sibling Adobe tool focused on procedural material authoring rather than direct mesh painting, often used alongside or instead of Painter." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Mari (Foundry)", "officialUrl": "https://www.foundry.com/products/mari", "reason": "High-end VFX/film-industry texture-painting competitor to Substance 3D Painter, not present in the catalogue." },
+    { "name": "Blender (texture paint)", "officialUrl": "https://www.blender.org", "reason": "Free, open-source alternative offering basic PBR texture painting, commonly cited as a no-cost entry point versus Painter; absent from the candidate list." }
+  ],
+  "unknowns": [
+    "Whether a lower-priced Painter-only subscription still exists outside the Collection bundle was not confirmed; the seed data's $24.99/mo 'Texturing plan' figure could not be verified on the current official page and may be outdated.",
+    "Linux support/compatibility was not confirmed on the official page."
+  ],
+  "conflicts": [
+    "Seed pricingText mentioned a 'Texturing' plan at $24.99/mo and a 'Collection' plan at $59.99/mo; the official page fetched during this pass only surfaced the Collection (individual/teams) and Students & Teachers plans, with no visible standalone Texturing tier."
+  ]
+}

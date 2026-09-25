@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "slug": "fly-io",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Fly.io",
+    "vendor": "Fly.io (Superfly, Inc.)",
+    "officialUrl": "https://fly.io",
+    "docsUrl": "https://docs.fly.io",
+    "changelogUrl": "https://fly.io/docs/about/changelog/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://docs.fly.io/about/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Fly.io - Pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://docs.fly.io/about/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "global",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": "No dedicated free plan, but small free allowances are included: community support, first 10 single-hostname SSL certificates per org, first 10GB of volume snapshot storage per month, shared IPv4 and unlimited Anycast IPv6.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pay-as-you-go",
+        "name": "Pay as you go",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No base subscription fee; per-organization usage billing, pro-rated by provisioning time. Shared-CPU Machines from about $0.00000078 to $0.00003429 per second depending on cores/RAM; Performance-CPU Machines from about $0.00001242 to $0.00019556 per second; stopped Machines billed at $0.15/GB rootfs per month. Volumes $0.15/GB per month; volume snapshots $0.08/GB per month (first 10GB free); dedicated IPv4 $2/month; data egress $0.02-$0.12/GB depending on region.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pay-as-you-go",
+    "addOns": [
+      { "en": "Reservation discounts of about 40% on committed compute blocks (roughly $36 to $14,400/year).", "sourceIds": ["s1"] },
+      { "en": "Fly Kubernetes at a $75/month base plus compute costs.", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pure usage-based billing with no flat subscription tier: total monthly cost depends on how many Machines run, for how long, and how much storage/egress is used, making it hard to predict without modeling actual traffic.", "sourceIds": ["s1"] },
+      { "en": "A credit card is required for most organizations even to start using paid resources beyond the small included allowances.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Deploys containerized applications as 'Fly Machines' (VMs) across a global network of regions, close to end users.", "sourceIds": ["s1"] },
+      { "en": "Managed Postgres, Fly Volumes for persistent storage, and third-party extensions such as Tigris and Upstash Redis.", "sourceIds": ["s1"] },
+      { "en": "Fly Kubernetes for teams that want a managed Kubernetes control plane on top of Fly's infrastructure.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No flat, predictable subscription plan; billing is fully usage-based per organization.", "sourceIds": ["s1"] },
+      { "en": "Managed Postgres instances exist outside of regular apps, so deleting an app does not automatically delete its associated database, a common source of surprise cost.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "heroku", "reason": { "en": "Comparable PaaS for deploying containerized/web apps quickly, with a more classic dyno-based pricing model versus Fly's usage-based Machines." } },
+    { "slug": "digitalocean", "reason": { "en": "Overlaps for deploying containerized apps and managed infrastructure at usage-based or flat-rate pricing." } },
+    { "slug": "vercel", "reason": { "en": "Common alternative for deploying web apps/serverless functions, though more frontend-framework-focused than Fly's general container hosting." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Railway", "officialUrl": "https://railway.com", "reason": "Frequently cited direct competitor to Fly.io for deploying containerized apps with usage-based pricing; not present in the catalogue." }
+  ],
+  "unknowns": [
+    "Full per-service rate card (every storage/network/Postgres tier) was not exhaustively captured; only the rates surfaced on the pricing overview page were recorded.",
+    "Whether any legacy free-tier allowance for compute hours still applies (Fly.io removed a broader free tier in the past) was not explicitly reconfirmed beyond the small allowances listed."
+  ],
+  "conflicts": []
+}

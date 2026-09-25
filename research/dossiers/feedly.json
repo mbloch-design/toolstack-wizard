@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "feedly",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Feedly",
+    "vendor": "Feedly Inc.",
+    "officialUrl": "https://feedly.com",
+    "docsUrl": "https://docs.feedly.com",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "feedly.com returned an app-loading error (likely anti-bot/JS wall) during automated fetches; docs.feedly.com was reachable and confirms the product is active."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://docs.feedly.com/article/140-what-is-the-difference-between-feedly-basic-pro-and-teams", "tier": 1, "accessedOn": "2026-09-25", "title": "Feedly Documentation - difference between Free, Pro, Pro+ and Teams" },
+    { "id": "s2", "url": "https://www.readless.app/blog/feedly-pro-pricing-vs-readless-2026", "tier": 2, "accessedOn": "2026-09-25", "title": "Feedly pricing 2026: Pro vs Pro+ and the first-year offer" },
+    { "id": "s3", "url": "https://www.readless.app/blog/feedly-pricing-2026-free-vs-pro-limits", "tier": 2, "accessedOn": "2026-09-25", "title": "Feedly Pricing 2026: Free vs Pro Limits Compared" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://feedly.com/i/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Basic RSS reading with a limited number of sources/feeds; no AI Feeds.", "sourceIds": ["s1", "s3"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 6, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Advanced features and enhanced sharing beyond the free tier; billed annually (~$72/year).", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "pro-plus",
+        "name": "Pro+",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 12.99, "annualPerMonth": 12, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds AI Feeds (Leo AI) that analyze articles, reports and social posts, plus an RSS Builder for sites without native RSS. A discounted first-year introductory rate (~$8.25/mo, $99/yr) was seen and is excluded from the compare price.", "sourceIds": ["s1", "s2"] }],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Team/organization intelligence workflows (Threat Intelligence, Market Intelligence, Biopharma Research, Competitive Intelligence); third-party sources report pricing starting around $1,600/month.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pro+ has been seen advertised at a discounted first-year rate (~$99/year); the regular recurring price is closer to $144/year ($12/mo equivalent) or $12.99/mo billed monthly. Exact current figures could not be confirmed on an official Feedly page during this pass and should be re-verified.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Aggregates RSS/Atom feeds, blogs, news sites and YouTube channels into a single reading stream.", "sourceIds": ["s1"] },
+      { "en": "AI Feeds (Leo AI) on Pro+ that filter, prioritize and summarize large volumes of articles around a topic.", "sourceIds": ["s1"] },
+      { "en": "RSS Builder to generate a feed for websites that don't publish native RSS.", "sourceIds": ["s1"] },
+      { "en": "Enterprise-tier intelligence modules for market, threat, biopharma and competitive monitoring.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The free plan has no AI-assisted filtering (Leo AI) and a limited number of sources, so serious monitoring workflows require Pro+ or Enterprise.", "sourceIds": ["s1", "s3"] },
+      { "en": "Official pricing page (feedly.com) was not reliably reachable via automated tools during this research pass, so exact current prices rely partly on third-party sources.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "readwise", "reason": { "en": "Overlaps on aggregating and prioritizing reading material, though Readwise focuses more on highlights/annotations than live feed monitoring." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Inoreader", "officialUrl": "https://www.inoreader.com", "reason": "Direct RSS-reader competitor with similar AI/filtering features, not present in the catalogue candidates for this pass." }
+  ],
+  "unknowns": [
+    "feedly.com (including /i/pricing) returned an app-loading error on every automated fetch attempt during this session; current exact prices for Pro and Pro+ rely on third-party (tier 2) sources and should be re-verified directly on feedly.com.",
+    "Whether the Pro plan has a monthly (non-annual) price option was not confirmed.",
+    "Exact source/feed limits on the Free plan were not confirmed on an official page."
+  ],
+  "conflicts": []
+}

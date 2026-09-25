@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "slug": "firebase",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Firebase",
+    "vendor": "Google LLC",
+    "officialUrl": "https://firebase.google.com",
+    "docsUrl": "https://firebase.google.com/docs",
+    "changelogUrl": "https://firebase.google.com/support/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://firebase.google.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Firebase Pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://firebase.google.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "Spark plan: no payment method needed. Includes e.g. Cloud Firestore (1 GB stored, 50K daily reads, 20K daily writes), Realtime Database (1 GB storage, 10 GB/month downloads, 100 concurrent connections), Cloud Storage (5 GB storage, 1 GB/day downloads), Authentication (50K monthly active users), Cloud Functions (2M invocations/month), Hosting (10 GB storage, 360 MB/day transfer). Analytics, A/B Testing, Crashlytics and Performance Monitoring are no-cost.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "blaze",
+        "name": "Blaze (pay as you go)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No base subscription fee; includes all Spark no-cost usage, then charges per unit beyond it, e.g. Cloud Functions $0.40 per million invocations beyond the 2M/month free tier. Eligible new users may receive $300 in free credit.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "blaze",
+    "addOns": [],
+    "cautions": [
+      { "en": "Usage pricing: the Blaze plan bills per-service consumption (reads/writes/invocations/storage/egress) beyond generous free quotas rather than a flat fee, so cost scales with traffic and can be hard to predict for a growing app.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Managed backend building blocks: Cloud Firestore and Realtime Database (NoSQL databases), Authentication, Cloud Storage, and Cloud Functions for serverless backend logic.", "sourceIds": ["s1"] },
+      { "en": "App Hosting/Hosting for deploying static and server-rendered web content with CDN delivery.", "sourceIds": ["s1"] },
+      { "en": "Built-in product analytics (Google Analytics), A/B testing, Crashlytics crash reporting and Performance Monitoring, all offered at no cost.", "sourceIds": ["s1"] },
+      { "en": "Unified SDKs across web, iOS, Android and Flutter for a shared backend across platforms.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Usage-based Blaze pricing means a spike in reads/writes or function invocations can lead to unpredictable bills once free quotas are exceeded.", "sourceIds": ["s1"] },
+      { "en": "A credit card / billing account is required to unlock the Blaze plan, even to access some services only available beyond Spark's free tier.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "supabase", "reason": { "en": "Direct backend-as-a-service competitor (Postgres-based) offering a comparable free tier and usage-based pricing." } },
+    { "slug": "vercel", "reason": { "en": "Common companion/alternative for hosting and serverless functions in modern web app stacks, though not a full BaaS with database/auth like Firebase." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Appwrite", "officialUrl": "https://appwrite.io", "reason": "Open-source backend-as-a-service directly competing with Firebase's auth/database/functions bundle; not present in the candidate list." },
+    { "name": "AWS Amplify", "officialUrl": "https://aws.amazon.com/amplify/", "reason": "AWS's equivalent managed mobile/web backend platform, a direct Firebase alternative; absent from the candidate list." }
+  ],
+  "unknowns": [
+    "Exact per-unit Blaze rates for every service (Firestore reads/writes, Storage egress, Hosting transfer beyond free tier) were not fully itemized in this pass; only Cloud Functions' $0.40/million was explicitly captured.",
+    "Regional pricing variation was not checked."
+  ],
+  "conflicts": []
+}

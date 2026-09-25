@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-illustrator",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Illustrator",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/illustrator.html",
+    "docsUrl": "https://helpx.adobe.com/illustrator/user-guide.html",
+    "changelogUrl": "https://helpx.adobe.com/illustrator/using/whats-new.html",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/illustrator.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Illustrator - product & pricing page" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/illustrator.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "illustrator-single-app",
+        "name": "Illustrator (single app, individual)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 22.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Annual commitment billed monthly; standalone plan (Illustrator only, no other Creative Cloud apps).", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "illustrator-teams",
+        "name": "Illustrator (team license)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 37.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Per-license price for business use; annual commitment billed monthly.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "creative-cloud-pro-individual",
+        "name": "Creative Cloud Pro (all apps, individual)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 69.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Bundle of 20+ Creative Cloud apps including Illustrator, plus Firefly generative AI credits. A promotional price of $34.99/mo for the first 3 months was observed at time of research (excluded from compare price).", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "creative-cloud-pro-teams",
+        "name": "Creative Cloud Pro (all apps, team license)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 99.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Full Creative Cloud bundle per team license; annual commitment billed monthly.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "illustrator-single-app",
+    "addOns": [],
+    "cautions": [
+      { "en": "The advertised monthly price is billed under a mandatory 12-month commitment (annual, billed monthly), not a flexible month-to-month plan; cancelling early can trigger an early termination fee per Adobe's subscription terms (not itemized on this page).", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Vector graphic creation and editing for logos, icons, illustrations and print/digital layouts.", "sourceIds": ["s1"] },
+      { "en": "AI-powered generative tools: Generative Shape Fill, Text to Vector, and Generative Expand.", "sourceIds": ["s1"] },
+      { "en": "Sketch-to-vector conversion and 3D design perspectives (Turntable).", "sourceIds": ["s1"] },
+      { "en": "Cross-platform editing on desktop (Windows/macOS) and iPad with synced projects.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free tier; full functionality requires an ongoing paid subscription after the 7-day trial.", "sourceIds": ["s1"] },
+      { "en": "Standalone Illustrator plan does not include other Creative Cloud apps (Photoshop, InDesign, etc.); those require a separate purchase or the all-apps bundle.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Photoshop", "slug": "adobe-photoshop", "sourceIds": ["s1"] },
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "mac", "ipad"]
+  },
+  "alternatives": [
+    { "slug": "figma", "reason": { "en": "Overlaps for vector/icon and UI-adjacent illustration work with a genuinely usable free tier, though it is browser-first and less print/production-oriented than Illustrator." } },
+    { "slug": "affinity-photo", "reason": { "en": "Affinity's vector app (Designer) is the closest one-time-purchase alternative in the same suite family as Illustrator, avoiding the subscription model." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Affinity Designer", "officialUrl": "https://affinity.serif.com/designer/", "reason": "The most cited one-time-purchase vector-editor alternative to Illustrator; not present as its own catalogue entry (only Affinity Photo is)." },
+    { "name": "Inkscape", "officialUrl": "https://inkscape.org", "reason": "Free, open-source vector editor commonly recommended as a no-cost Illustrator alternative; absent from the candidate list." }
+  ],
+  "unknowns": [
+    "Exact early-termination-fee terms for the annual-billed-monthly commitment were not re-verified on Adobe's official subscription-terms page during this pass.",
+    "Student/teacher pricing for the standalone Illustrator plan (vs. Creative Cloud Pro) was not checked."
+  ],
+  "conflicts": []
+}

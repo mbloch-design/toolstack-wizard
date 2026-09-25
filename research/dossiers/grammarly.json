@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "slug": "grammarly",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Grammarly",
+    "vendor": "Grammarly, Inc.",
+    "officialUrl": "https://www.grammarly.com",
+    "docsUrl": "https://support.grammarly.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.grammarly.com/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "Grammarly - Plans and pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.grammarly.com/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 12, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Full sentence rewrites, tone adjustment, fluency suggestions, plagiarism and AI-generated-text detection, 2,000 AI prompts/member/month, account roles, up to 2 user groups and 1 style guide/brand tone, team analytics.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Everything in Pro plus proactive AI, dedicated support, BYOK encryption, custom roles, data loss prevention, SAML SSO, SCIM, managed mode, unlimited prompts/style guides/brand tones/user groups, and advanced security controls (confidential mode, audit logs, session timeout).", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "The $12/mo figure was shown as the Pro plan's price; whether this is a monthly or annual-billed rate was not explicitly labeled on the page and should be re-verified before use in a billing comparison.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Grammar, spelling and style checking with tone detection across writing surfaces.", "sourceIds": ["s1"] },
+      { "en": "AI writing assistance: sentence rewriting, tone adjustment, and fluency suggestions for non-native English writers (Pro).", "sourceIds": ["s1"] },
+      { "en": "Plagiarism and AI-generated-text detection (Pro).", "sourceIds": ["s1"] },
+      { "en": "Team features on Pro/Enterprise: account roles, user groups, shared style guides and brand tone, and team analytics.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "AI prompt usage is capped even on the paid Pro plan (2,000 prompts/member/month); the free plan is capped at 100 prompts/month.", "sourceIds": ["s1"] },
+      { "en": "Advanced security and compliance features (SSO, SCIM, DLP, BYOK) are Enterprise-only and require a custom quote.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "windows", "mac", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "chatgpt", "reason": { "en": "General-purpose AI assistant increasingly used for writing/editing tasks that overlap with Grammarly's rewriting and tone features, though without dedicated in-line grammar checking across every app." } }
+  ],
+  "missingAlternatives": [
+    { "name": "ProWritingAid", "officialUrl": "https://prowritingaid.com", "reason": "Direct grammar/style-checking competitor to Grammarly with a similar freemium model; not present in the catalogue." }
+  ],
+  "unknowns": [
+    "Whether the Pro plan's $12/mo price is billed monthly or annually was not explicitly confirmed on the pricing page.",
+    "Team-specific pricing (as opposed to per-seat Pro pricing) was not broken out separately in this pass."
+  ],
+  "conflicts": []
+}

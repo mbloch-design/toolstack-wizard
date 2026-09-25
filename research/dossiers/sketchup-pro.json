@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "slug": "sketchup-pro",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SketchUp Pro",
+    "vendor": "Trimble Inc.",
+    "officialUrl": "https://sketchup.trimble.com",
+    "docsUrl": "https://help.sketchup.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://sketchup.trimble.com/en/plans-and-pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "SketchUp - Plans and pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://sketchup.trimble.com/en/plans-and-pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "SketchUp for Schools is free but requires a K-12 Google Workspace for Education or Microsoft Education account; not available to the general public.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "go",
+        "name": "Go",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 10.75, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Essential 3D design on iPad and web only, no desktop modeling; includes cloud storage, mobile viewer, real-time sharing.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 33.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Full toolkit including desktop modeling, LayOut documentation, and access to 1000+ extensions.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "studio",
+        "name": "Studio",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 71.58, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Advanced visualization and BIM workflows, including Revit importer and point-cloud modeling; restricted to Windows.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "go",
+    "addOns": [],
+    "cautions": [
+      { "en": "Prices shown are annual billing; a monthly (no-commitment) billing option exists but at a higher per-month rate than the annual-equivalent figures above.", "sourceIds": ["s1"] },
+      { "en": "The Go plan, the cheapest paid tier, does not include desktop modeling, so a freelancer needing full desktop functionality must buy Pro or Studio instead.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "3D modeling for architecture, interior design and product design across desktop, web and mobile.", "sourceIds": ["s1"] },
+      { "en": "LayOut for producing construction/presentation documentation from 3D models (Pro/Studio).", "sourceIds": ["s1"] },
+      { "en": "Library of 1000+ extensions for specialized workflows (Pro/Studio).", "sourceIds": ["s1"] },
+      { "en": "Studio tier adds a Revit importer, point-cloud modeling and photorealistic rendering for BIM workflows.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Desktop modeling is unavailable on the entry-level Go plan (iPad/web only).", "sourceIds": ["s1"] },
+      { "en": "Studio, the tier with BIM/Revit interoperability and advanced rendering, is Windows-only.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "mac", "web", "ipad"]
+  },
+  "alternatives": [
+    { "slug": "blender", "reason": { "en": "Free, open-source 3D modeling tool covering overlapping architectural/product-visualization use cases, though with a steeper general-purpose learning curve than SketchUp." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Revit", "officialUrl": "https://www.autodesk.com/products/revit/overview", "reason": "Direct BIM/architecture competitor to SketchUp Studio, already referenced as a currentAlternative but absent as its own catalogue entry." },
+    { "name": "ArchiCAD", "officialUrl": "https://graphisoft.com/solutions/archicad", "reason": "Direct architecture/BIM competitor already referenced as a currentAlternative but absent as its own catalogue entry." }
+  ],
+  "unknowns": [
+    "Exact monthly (non-annual) pricing figures for Go/Pro/Studio were not captured, only the annual-billing per-month equivalents.",
+    "macOS availability for Studio's Windows-only features (Revit importer, point-cloud) beyond the base app was not fully detailed."
+  ],
+  "conflicts": []
+}

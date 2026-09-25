@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "slug": "react-router",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "React Router",
+    "vendor": "Shopify Inc. (remix-run open-source project)",
+    "officialUrl": "https://reactrouter.com",
+    "docsUrl": "https://reactrouter.com/start/modes",
+    "changelogUrl": "https://github.com/remix-run/react-router/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://reactrouter.com", "tier": 1, "accessedOn": "2026-09-25", "title": "React Router - homepage" },
+    { "id": "s2", "url": "https://reactrouter.com/start/modes", "tier": 1, "accessedOn": "2026-09-25", "title": "React Router - start/modes" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": "global",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Fully open-source library, free to use with no paid tier.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Standards-focused, multi-strategy routing for React applications, deployable as a client-side library or full-stack framework mode.", "sourceIds": ["s1"] },
+      { "en": "Non-breaking upgrade path: v8 maintains backward compatibility with v7 APIs.", "sourceIds": ["s1"] },
+      { "en": "Built on a modern baseline (Node 22+, Vite 7+, React 19+, ESM-only) with an Open Governance model for community-proposed features.", "sourceIds": ["s1"] },
+      { "en": "Large ecosystem maturity: reported 4.5+ billion npm downloads and 3.6M+ dependent packages.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Requires a modern toolchain baseline (Node 22+, ESM-only) which can force upgrades in older codebases.", "sourceIds": ["s1"] },
+      { "en": "As a routing library rather than a hosted product, there is no vendor support tier or SLA; support is community-driven (GitHub Discussions, Discord).", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "React", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "tanstack-router", "reason": { "en": "Direct type-safe routing competitor for React apps, an increasingly common alternative to React Router." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Detailed differences between the library-only mode and the full 'framework mode' (formerly Remix) were not fully explored beyond the homepage summary."
+  ],
+  "conflicts": []
+}

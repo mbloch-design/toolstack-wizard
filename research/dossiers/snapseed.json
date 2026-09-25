@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "slug": "snapseed",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Snapseed",
+    "vendor": "Google LLC (Nik Software)",
+    "officialUrl": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "The seed URL https://snapseed.online does not resolve (DNS failure) and is not an official Google domain. Snapseed has no dedicated marketing website; its official presence is the Google Play and App Store listings."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed&hl=en", "tier": 1, "accessedOn": "2026-09-25", "title": "Snapseed - Apps on Google Play" },
+    { "id": "s2", "url": "https://en.wikipedia.org/wiki/Snapseed", "tier": 2, "accessedOn": "2026-09-25", "title": "Snapseed - Wikipedia" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Entirely free app, no ads, no subscription, no in-app purchases; all editing tools and filters are available from install.", "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "All editing tools, filters and looks are available from install, with no ads, subscription or in-app purchases.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Professional-grade mobile photo editing: selective adjustments (healing, brush, curves), RAW (DNG) editing, and non-destructive edit stacks.", "sourceIds": ["s2"] },
+      { "en": "A library of one-tap filters and looks alongside granular manual controls.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Mobile-only (Android/iOS); no desktop or web application.", "sourceIds": ["s1"] },
+      { "en": "No collaboration, cloud sync across devices, or team features, since it is a single-user consumer app with no account-based plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "adobe-lightroom", "reason": { "en": "Direct mobile photo-editing competitor with a comparable feature set, but Lightroom uses a freemium/subscription model versus Snapseed's fully free app." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The seed website URL (snapseed.online) does not resolve and appears to be an unofficial/fan domain rather than Google's product; officialUrl was corrected to the Google Play listing during this pass, but the App Store URL was not separately verified.",
+    "No dedicated docs or changelog page exists for Snapseed; release history is only visible through app-store update notes, not checked here."
+  ],
+  "conflicts": []
+}
