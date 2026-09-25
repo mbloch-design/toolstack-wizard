@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 2,
+  "slug": "chakra-ui",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Chakra UI",
+    "vendor": "Chakra UI open source project",
+    "officialUrl": "https://chakra-ui.com",
+    "docsUrl": "https://chakra-ui.com/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://chakra-ui.com/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Chakra UI homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Accessible, pre-built React component library (sliders, tabs, menus, switches, pin inputs, etc.) with built-in focus styling and animations.",
+        "fr": "Bibliothèque de composants React accessibles et prêts à l'emploi (sliders, onglets, menus, switches, pin inputs, etc.) avec style de focus et animations intégrés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Design system tooling: semantic design tokens, centralized typography, and recipe-based component variants, with built-in dark mode.",
+        "fr": "Outils de design system : tokens sémantiques, typographie centralisée, variantes de composants via recipes, mode sombre intégré.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "React-only: not usable with Vue, Svelte or other frameworks.",
+        "fr": "React uniquement : non utilisable avec Vue, Svelte ou d'autres frameworks.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Requires adopting its token/theme system to fully customize the design, which adds a learning curve versus plain CSS.",
+        "fr": "Nécessite d'adopter son système de tokens/thèmes pour personnaliser pleinement le design, ce qui ajoute une courbe d'apprentissage par rapport au CSS simple.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Next.js",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "shadcn-ui",
+      "reason": {
+        "en": "Popular alternative React component approach with copy-in components instead of an installed library.",
+        "fr": "Alternative populaire pour React basée sur des composants copiés dans le projet plutôt qu'une bibliothèque installée."
+      }
+    },
+    {
+      "slug": "material-ui",
+      "reason": {
+        "en": "Direct competitor React component library following Material Design.",
+        "fr": "Bibliothèque de composants React concurrente directe suivant le Material Design."
+      }
+    },
+    {
+      "slug": "mantine",
+      "reason": {
+        "en": "Direct competitor offering a similarly broad React component and hooks library.",
+        "fr": "Concurrent direct proposant une bibliothèque de composants et de hooks React tout aussi large."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact open-source license (MIT) not explicitly re-confirmed on the fetched homepage."
+  ],
+  "conflicts": []
+}

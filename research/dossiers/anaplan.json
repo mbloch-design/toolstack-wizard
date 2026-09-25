@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "slug": "anaplan",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Anaplan",
+    "vendor": "Anaplan, Inc.",
+    "officialUrl": "https://www.anaplan.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.anaplan.com/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Anaplan homepage"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.anaplan.com/",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "platform",
+        "name": "Anaplan Platform",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "No public tiers; pricing scoped per deployment (users, modules, data volume) via sales.",
+            "fr": "Pas de paliers publics ; le prix est défini par déploiement (utilisateurs, modules, volume de données) via l'équipe commerciale."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "No pricing published anywhere on the official site; every deal is negotiated with sales, so cost cannot be estimated without a quote.",
+        "fr": "Aucun prix publié sur le site officiel ; chaque contrat est négocié avec l'équipe commerciale, impossible d'estimer le coût sans devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Cloud-based multi-dimensional modeling and calculation engine for enterprise planning (finance, sales, supply chain, HR, retail).",
+        "fr": "Moteur de modélisation multi-dimensionnelle et de calcul cloud pour la planification d'entreprise (finance, ventes, supply chain, RH, retail).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Role-based AI agents (Finance Analyst, Sales Analyst, Supply Chain Analyst, Workforce Analyst) for predictive scenario analysis.",
+        "fr": "Agents IA par rôle (Finance, Ventes, Supply Chain, RH) pour l'analyse de scénarios prédictifs.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No self-serve pricing or trial: every engagement requires a sales conversation before any cost estimate.",
+        "fr": "Pas de prix ni d'essai en libre-service : chaque projet nécessite un échange commercial avant toute estimation de coût.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Positioned for large enterprises (48% of Fortune 50 customers cited), implying setup complexity not aimed at solo users or very small teams.",
+        "fr": "Positionné pour les grandes entreprises (48 % des clients Fortune 50 cités), ce qui suppose une mise en place complexe, peu adaptée aux indépendants ou très petites équipes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "pigment",
+      "reason": {
+        "en": "Direct competitor in modern business planning and modeling software.",
+        "fr": "Concurrent direct en logiciel de planification et modélisation d'entreprise moderne."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Workday Adaptive Planning",
+      "officialUrl": "https://www.workday.com/en-us/products/adaptive-planning/overview.html",
+      "reason": "Major enterprise CPM/FP&A competitor, not in the catalogue"
+    }
+  ],
+  "unknowns": [
+    "No pricing model details (per-seat, per-module, usage-based) available without a sales quote.",
+    "No trial or free tier information found on the official site."
+  ],
+  "conflicts": []
+}

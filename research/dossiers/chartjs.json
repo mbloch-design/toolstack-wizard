@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "slug": "chartjs",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Chart.js",
+    "vendor": "Chart.js open source project",
+    "officialUrl": "https://www.chartjs.org",
+    "docsUrl": "https://www.chartjs.org/docs/latest/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.chartjs.org/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Chart.js homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Renders 8 chart types (bar, line, pie, radar, etc.) on HTML5 Canvas with animations, responsive resizing and mixed chart types.",
+        "fr": "Génère 8 types de graphiques (barres, lignes, camembert, radar, etc.) sur Canvas HTML5, avec animations, redimensionnement réactif et graphiques mixtes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Tree-shaking support to register only needed components, and a decimation plugin for datasets with 1M+ points.",
+        "fr": "Support du tree-shaking pour n'enregistrer que les composants nécessaires, et un plugin de décimation pour les jeux de données de plus d'1 million de points.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No official React/Vue components bundled; framework wrappers are separate community packages.",
+        "fr": "Pas de composants React/Vue officiels inclus ; les wrappers pour frameworks sont des paquets communautaires séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Canvas-based rendering, unlike SVG-based libraries, which can limit fine-grained DOM styling/interaction of individual chart elements.",
+        "fr": "Rendu basé sur Canvas, contrairement aux bibliothèques SVG, ce qui limite le style/l'interaction fine au niveau du DOM sur chaque élément du graphique.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "d3js",
+      "reason": {
+        "en": "Lower-level, more flexible charting/visualization library, common alternative for custom charts.",
+        "fr": "Bibliothèque de visualisation plus bas niveau et plus flexible, alternative courante pour des graphiques personnalisés."
+      }
+    },
+    {
+      "slug": "apexcharts",
+      "reason": {
+        "en": "Direct competitor offering similar out-of-the-box interactive chart types.",
+        "fr": "Concurrent direct proposant des types de graphiques interactifs similaires prêts à l'emploi."
+      }
+    },
+    {
+      "slug": "recharts",
+      "reason": {
+        "en": "React-native charting alternative built specifically for React component composition.",
+        "fr": "Alternative de graphiques pensée nativement pour React et la composition de composants."
+      }
+    },
+    {
+      "slug": "highcharts",
+      "reason": {
+        "en": "Commercial alternative with a broader chart type catalogue and paid support/license.",
+        "fr": "Alternative commerciale avec un catalogue de types de graphiques plus large et licence/support payants."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact open-source license (MIT) not explicitly re-confirmed on the fetched homepage."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "slug": "eagle",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Eagle",
+    "vendor": "Eagle",
+    "officialUrl": "https://eagle.cool",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://eagle.cool", "tier": 1, "accessedOn": "2026-09-25", "title": "Eagle homepage" },
+    { "id": "s2", "url": "https://eagle.cool/store", "tier": 1, "accessedOn": "2026-09-25", "title": "Eagle license store" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://eagle.cool/store",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "license",
+        "name": "Eagle license",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 34.95 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "One license key usable on 2 devices, lifetime access, free future updates, unlimited deactivations.", "fr": "Une clé de licence utilisable sur 2 appareils, accès à vie, mises à jour futures gratuites, désactivations illimitées." }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "license",
+    "addOns": [],
+    "cautions": [
+      { "en": "No subscription or team/bundle pricing is published; each additional user needs a separate license.", "fr": "Aucune formule abonnement ni tarif équipe/lot n'est publié ; chaque utilisateur supplémentaire nécessite une licence séparée.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Centralizes and visually organizes creative assets (images, videos, fonts, PDFs, audio, web bookmarks) with tags, colors, ratings and smart folders.", "fr": "Centralise et organise visuellement les assets créatifs (images, vidéos, fonts, PDFs, audio, favoris web) avec tags, couleurs, notes et dossiers intelligents.", "sourceIds": ["s1"] },
+      { "en": "AI-powered visual and semantic search across the asset library, plus a browser extension for batch saving.", "fr": "Recherche visuelle et sémantique alimentée par l'IA dans la bibliothèque, plus une extension navigateur pour l'enregistrement par lot.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Desktop-only application (Windows 10+ / macOS 10.15+); no official web or mobile app.", "fr": "Application desktop uniquement (Windows 10+ / macOS 10.15+) ; pas d'application web ou mobile officielle.", "sourceIds": ["s1"] },
+      { "en": "No permanent free tier; requires a paid one-time license after the 30-day trial ends.", "fr": "Pas de palier gratuit permanent ; nécessite une licence payante à l'achat unique après les 30 jours d'essai.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "dropbox", "reason": { "en": "Alternative for centralizing and storing creative files, though without Eagle's visual tagging and search system.", "fr": "Alternative pour centraliser et stocker des fichiers créatifs, sans le système de tags et de recherche visuelle d'Eagle." } },
+    { "slug": "box", "reason": { "en": "Cloud file storage alternative usable for asset organization, though less specialized for visual/creative search.", "fr": "Alternative de stockage cloud utilisable pour l'organisation d'assets, mais moins spécialisée pour la recherche visuelle/créative." } },
+    { "slug": "bynder", "reason": { "en": "Dedicated digital asset management alternative aimed at organizing creative files for teams.", "fr": "Alternative dédiée de gestion d'assets numériques pour organiser des fichiers créatifs en équipe." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Pinterest boards / Are.na", "officialUrl": "https://www.are.na", "reason": "Are.na is already a candidate but other moodboard-style asset tools like Milanote could also compete for visual reference collection" }
+  ],
+  "unknowns": [
+    "Legal vendor entity behind Eagle not clearly stated on the official site.",
+    "No published team/multi-seat pricing option."
+  ],
+  "conflicts": []
+}

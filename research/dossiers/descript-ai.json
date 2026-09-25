@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "slug": "descript-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Descript",
+    "vendor": "Descript, Inc.",
+    "officialUrl": "https://www.descript.com/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "The seed URL descriptai.com is a parked domain (for sale, GoDaddy landing page), not the real product. The tool described (edit audio/video by editing text, AI voice cloning, transcription) matches Descript, whose real official site is descript.com."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.descript.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Descript pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.descript.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "60 media minutes/month equivalent quota, 100 one-time AI credits, 5GB cloud storage, watermarked exports at 720p, limited AI tool access.",
+        "fr": "Quota équivalent à 60 minutes de média/mois, 100 crédits IA à usage unique, 5 Go de stockage cloud, exports filigranés en 720p, accès limité aux outils IA."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "hobbyist",
+        "name": "Hobbyist",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 16,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "10 media hours/month, 400 AI credits/month, 100GB cloud storage, watermark-free 1080p exports.",
+            "fr": "10 heures de média/mois, 400 crédits IA/mois, 100 Go de stockage cloud, exports 1080p sans filigrane."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "creator",
+        "name": "Creator",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 24,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "30 media hours/month, 800 AI credits/month, 1TB storage, 4K exports, unlimited royalty-free stock media, up to 3 team members.",
+            "fr": "30 heures de média/mois, 800 crédits IA/mois, 1 To de stockage, exports 4K, médias libres de droits illimités, jusqu'à 3 membres d'équipe."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 50,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "40 media hours/month, 1,500 AI credits/month, 2TB storage, translation/dubbing in 30+ languages, custom avatar generation, up to 5 team members.",
+            "fr": "40 heures de média/mois, 1 500 crédits IA/mois, 2 To de stockage, traduction/doublage dans plus de 30 langues, génération d'avatar personnalisé, jusqu'à 5 membres d'équipe."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "hobbyist",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Annual pricing was not reliably distinguishable from monthly pricing on the fetched page (the extracted annual figures appeared higher than monthly ones, which is inconsistent with typical annual discounts); annualPerMonth values were left unset pending direct re-verification.",
+        "fr": "Le prix annuel n'a pas pu être distingué de façon fiable du prix mensuel sur la page consultée (les montants annuels extraits semblaient plus élevés que les montants mensuels, ce qui est incohérent avec une remise annuelle classique) ; les valeurs annualPerMonth ont été laissées vides en attendant une revérification directe.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Edits audio and video by editing an automatically generated text transcript; changes to the text update the media instantly.",
+        "fr": "Monte l'audio et la vidéo en éditant une transcription textuelle générée automatiquement ; les modifications du texte mettent à jour le média instantanément.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Offers AI voice cloning/generation (Overdub-style custom avatar and voice tools) plus an AI co-editor (Underlord) that can edit video from instructions.",
+        "fr": "Propose le clonage/la génération de voix IA (outils de voix et d'avatar personnalisés) ainsi qu'un co-éditeur IA (Underlord) capable de monter la vidéo à partir d'instructions.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan exports are watermarked and capped at 720p with very limited AI credits (100 one-time).",
+        "fr": "Les exports du plan gratuit sont filigranés, plafonnés à 720p, avec des crédits IA très limités (100 à usage unique).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Media hours and AI credits are capped per plan (10 to 40 hours/month), so heavy usage requires the custom Enterprise tier.",
+        "fr": "Les heures de média et les crédits IA sont plafonnés par plan (10 à 40 heures/mois), donc un usage intensif nécessite le palier Enterprise sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "riverside",
+      "reason": {
+        "en": "Direct competitor for recording plus text-based editing of podcasts/video.",
+        "fr": "Concurrent direct pour l'enregistrement et le montage basé sur le texte de podcasts/vidéos."
+      }
+    },
+    {
+      "slug": "opus-clip",
+      "reason": {
+        "en": "Alternative focused on AI-driven video clip repurposing rather than full editing.",
+        "fr": "Alternative centrée sur la réutilisation de clips vidéo par IA plutôt que sur le montage complet."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The seed's website URL (descriptai.com) points to a parked/for-sale domain, not an active product; facts were gathered from descript.com, assumed to be the intended product, but this mismatch should be confirmed before the catalogue entry is finalized.",
+    "Annual (vs monthly) pricing figures could not be reliably confirmed from the fetched page."
+  ],
+  "conflicts": [
+    "Seed officialUrl (descriptai.com) is a parked domain; researched facts instead describe descript.com, the well-known 'Descript' product, based on matching feature description."
+  ]
+}

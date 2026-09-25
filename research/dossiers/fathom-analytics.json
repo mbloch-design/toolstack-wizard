@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "fathom-analytics",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Fathom Analytics",
+    "vendor": "Fathom Analytics",
+    "officialUrl": "https://usefathom.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://usefathom.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Fathom Analytics pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://usefathom.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 100,000 monthly pageviews, up to 50 sites.", "fr": "Jusqu'à 100 000 pages vues mensuelles, jusqu'à 50 sites." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "growth",
+        "name": "Growth (200k)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 200,000 monthly pageviews, up to 50 sites.", "fr": "Jusqu'à 200 000 pages vues mensuelles, jusqu'à 50 sites." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro (500k)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 45, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 500,000 monthly pageviews, up to 50 sites.", "fr": "Jusqu'à 500 000 pages vues mensuelles, jusqu'à 50 sites." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "en": "Extra site packs of 50 sites for $10/month or $100/year beyond plan allowance.", "fr": "Lots supplémentaires de 50 sites pour 10 $/mois ou 100 $/an au-delà du quota du plan.", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "7-day trial requires a credit card and billing starts automatically once it ends.", "fr": "L'essai de 7 jours nécessite une carte bancaire et la facturation démarre automatiquement à la fin de l'essai.", "sourceIds": ["s1"] },
+      { "en": "Annual billing gives 2 months free (~17% discount) versus monthly.", "fr": "La facturation annuelle offre 2 mois gratuits (environ 17 % de remise) par rapport au mensuel.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cookie-free, privacy-first web analytics that does not require a cookie consent banner under GDPR.", "fr": "Analytics web sans cookies et respectueux de la vie privée, sans bandeau de consentement RGPD nécessaire.", "sourceIds": ["s1"] },
+      { "en": "Tracks traffic sources, top pages, conversions and marketing campaigns.", "fr": "Suit les sources de trafic, les pages populaires, les conversions et les campagnes marketing.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; the cheapest tier starts at $15/month for 100k pageviews.", "fr": "Pas de plan gratuit ; le palier le moins cher démarre à 15 $/mois pour 100 000 pages vues.", "sourceIds": ["s1"] },
+      { "en": "Pricing scales with pageview volume, which can become costly for high-traffic sites beyond 25M pageviews (custom pricing).", "fr": "Le prix évolue avec le volume de pages vues, ce qui peut devenir coûteux pour des sites à fort trafic au-delà de 25 M de pages vues (tarif sur devis).", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "plausible", "reason": { "en": "Direct competitor: cookie-free, privacy-focused web analytics.", "fr": "Concurrent direct : analytics web sans cookies, axé vie privée." } },
+    { "slug": "simple-analytics", "reason": { "en": "Direct competitor targeting the same privacy-first analytics niche.", "fr": "Concurrent direct visant le même créneau d'analytics respectueux de la vie privée." } },
+    { "slug": "google-analytics", "reason": { "en": "Mainstream free alternative, though it relies on cookies and requires consent banners in the EU.", "fr": "Alternative gratuite grand public, mais qui repose sur des cookies et nécessite des bandeaux de consentement en UE." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact annual price per pageview tier not shown numerically on the fetched pricing page (only described as '2 months free').",
+    "Vendor legal entity not confirmed on the fetched pages."
+  ],
+  "conflicts": []
+}

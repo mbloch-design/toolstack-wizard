@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 2,
+  "slug": "drata",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Drata",
+    "vendor": "Drata Inc.",
+    "officialUrl": "https://drata.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://drata.com/plans",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Drata plans/pricing"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://drata.com/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "foundation",
+        "name": "Foundation (GRC Platform)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Up to 50 FTEs, 1 pre-mapped framework (limited to SOC 2, ISO 27001, Cyber Essentials, HIPAA, GDPR), pre-built integrations, custom controls.",
+            "fr": "Jusqu'à 50 ETP, 1 framework pré-cartographié (limité à SOC 2, ISO 27001, Cyber Essentials, HIPAA, GDPR), intégrations prêtes à l'emploi, contrôles personnalisés."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced (GRC Platform)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Any available compliance framework, custom connections/tests and fields, Risk Management Pro, Workspaces.",
+            "fr": "N'importe quel framework de conformité disponible, connexions/tests et champs personnalisés, Risk Management Pro, Workspaces."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise (GRC Platform)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Compliance as Code Pro, Agentic TPRM Assessment, for mature GRC programs.",
+            "fr": "Compliance as Code Pro, évaluation agentique TPRM, pour programmes GRC matures."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      {
+        "en": "Assurance Platform (Trust Center) is a separate product line with its own Foundation/Advanced/Enterprise tiers, including AI questionnaire assistance and NDA integrations.",
+        "fr": "L'Assurance Platform (Trust Center) est une gamme séparée avec ses propres paliers Foundation/Advanced/Enterprise, incluant l'assistance IA aux questionnaires et l'intégration de NDA.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "No public pricing anywhere; all tiers require a sales quote, so real cost cannot be compared without contacting Drata.",
+        "fr": "Aucun prix public nulle part ; tous les paliers nécessitent un devis commercial, impossible de comparer le coût réel sans contacter Drata.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Automates SOC 2 / ISO 27001 and other compliance frameworks with pre-built integrations, continuous control monitoring and custom controls.",
+        "fr": "Automatise la conformité SOC 2 / ISO 27001 et d'autres frameworks avec des intégrations prêtes à l'emploi, un suivi continu des contrôles et des contrôles personnalisés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Separate Trust Center (Assurance Platform) to publish compliance posture externally, handle NDAs and answer security questionnaires with AI assistance.",
+        "fr": "Trust Center séparé (Assurance Platform) pour publier sa posture de conformité en externe, gérer les NDA et répondre aux questionnaires de sécurité avec assistance IA.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free plan or trial disclosed; pricing requires a sales conversation for every tier.",
+        "fr": "Aucun plan gratuit ni essai annoncé ; le prix nécessite un échange commercial pour chaque palier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The entry Foundation tier caps out at 50 FTEs and only 1 pre-mapped framework, so growing or multi-framework needs require upgrading.",
+        "fr": "Le palier d'entrée Foundation est plafonné à 50 ETP et un seul framework pré-cartographié, donc les besoins en croissance ou multi-frameworks nécessitent une montée en gamme.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Google Drive",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Salesforce",
+        "slug": "salesforce",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "HubSpot",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Microsoft Dynamics",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "vanta",
+      "reason": {
+        "en": "Direct competitor for automated SOC 2/ISO 27001 compliance.",
+        "fr": "Concurrent direct pour l'automatisation de la conformité SOC 2/ISO 27001."
+      }
+    },
+    {
+      "slug": "onetrust",
+      "reason": {
+        "en": "Competing platform for compliance, privacy and trust management.",
+        "fr": "Plateforme concurrente pour la gestion de la conformité, de la vie privée et de la confiance."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Secureframe",
+      "officialUrl": "https://secureframe.com",
+      "reason": "Major direct competitor in automated compliance (SOC 2/ISO 27001), not in the catalogue"
+    },
+    {
+      "name": "Sprinto",
+      "officialUrl": "https://sprinto.com",
+      "reason": "Another significant compliance automation competitor, not in the catalogue"
+    }
+  ],
+  "unknowns": [
+    "No numeric pricing available anywhere; external estimates (e.g. ~$7,500-$24,600/year) exist but are not sourced from the official site and were excluded.",
+    "No trial policy stated on the official plans page."
+  ],
+  "conflicts": []
+}

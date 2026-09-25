@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "slug": "luminar-neo",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Luminar Neo",
+    "vendor": "Skylum",
+    "officialUrl": "https://skylum.com/luminar-neo",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://skylum.com/luminar-neo",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Luminar Neo product page"
+    }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://skylum.com/luminar-neo",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "desktop-only",
+        "name": "Desktop Only License",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Perpetual license usable on 2 devices, desktop app only, includes 1 year of access to AI tools (Restoration, GenErase, GenSwap, GenExpand, AI Assistant).",
+            "fr": "Licence perpétuelle utilisable sur 2 appareils, application desktop uniquement, inclut 1 an d'accès aux outils IA (Restoration, GenErase, GenSwap, GenExpand, AI Assistant)."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "all-platforms",
+        "name": "All Platforms License",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Perpetual license including desktop, mobile, and web access (web planned for Fall 2026).",
+            "fr": "Licence perpétuelle incluant l'accès desktop, mobile et web (web prévu pour l'automne 2026)."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "max",
+        "name": "Max License",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Annual subscription with ongoing access to new features and the asset library.",
+            "fr": "Abonnement annuel avec accès continu aux nouvelles fonctionnalités et à la bibliothèque d'assets."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "desktop-only",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Exact prices were not shown on the fetched product page; only license types and inclusions were listed, plus a '10% off first purchase' promotion to exclude from the regular price.",
+        "fr": "Les prix exacts n'apparaissaient pas sur la page produit consultée ; seuls les types de licence et leur contenu étaient listés, avec une promotion « 10 % sur le premier achat » à exclure du prix régulier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The perpetual license only guarantees 1 year of access to the newest AI tools; continued access to future AI features likely requires renewal.",
+        "fr": "La licence perpétuelle ne garantit qu'1 an d'accès aux derniers outils IA ; l'accès continu aux futures fonctions IA nécessite probablement un renouvellement.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "24+ AI-based tools and 100+ features for portrait retouching (skin smoothing, face/body enhancement), landscape editing (sky replacement, fog/haze removal) and generative editing (object removal, scene expansion/replacement).",
+        "fr": "Plus de 24 outils IA et 100+ fonctionnalités pour la retouche portrait (lissage de peau, amélioration visage/corps), l'édition paysage (remplacement de ciel, suppression brume) et l'édition générative (suppression d'objet, extension/remplacement de scène).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Non-destructive layer-based editing with RAW support, upscaling, HDR merge and panorama stitching.",
+        "fr": "Édition non destructive par calques avec support RAW, upscaling, fusion HDR et assemblage panoramique.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No permanent free plan; only a trial and the money-back guarantee window are offered before purchase.",
+        "fr": "Pas de plan gratuit permanent ; seuls un essai et la garantie de remboursement sont proposés avant l'achat.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Web version was not yet available at research time (planned for Fall 2026), limiting access to desktop/mobile only for now.",
+        "fr": "La version web n'était pas encore disponible au moment de la recherche (prévue pour l'automne 2026), limitant l'accès au desktop/mobile pour l'instant.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "macos",
+      "ios"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "adobe-lightroom",
+      "reason": {
+        "en": "Direct competitor for photo editing with AI-assisted tools.",
+        "fr": "Concurrent direct pour l'édition photo avec outils assistés par IA."
+      }
+    },
+    {
+      "slug": "capture-one",
+      "reason": {
+        "en": "Professional photo editing alternative with strong RAW processing.",
+        "fr": "Alternative professionnelle d'édition photo avec un traitement RAW performant."
+      }
+    },
+    {
+      "slug": "topaz-gigapixel",
+      "reason": {
+        "en": "Alternative for AI-based image upscaling and enhancement.",
+        "fr": "Alternative pour l'upscaling et l'amélioration d'image par IA."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact license prices in USD/EUR were not visible on the fetched page and need direct pricing-page verification.",
+    "Whether the Max License includes desktop-only or all-platform access was not fully clarified."
+  ],
+  "conflicts": []
+}

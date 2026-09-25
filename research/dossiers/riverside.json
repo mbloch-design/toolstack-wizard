@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 2,
+  "slug": "riverside",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Riverside",
+    "vendor": "Riverside.fm Ltd.",
+    "officialUrl": "https://riverside.fm",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://riverside.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Riverside pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://riverside.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "2 hours of multi-track recording total, up to 720p video export with watermark, unlimited single-track recording/editing.",
+        "fr": "2 heures d'enregistrement multipiste au total, export vidéo jusqu'à 720p avec filigrane, enregistrement/montage monopiste illimité."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": 24,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 4K video / 48kHz audio, no watermark, unlimited text-based editing and transcription, 1 studio, 15h/month of separate-track downloads.",
+            "fr": "Jusqu'à 4K vidéo / 48kHz audio, sans filigrane, montage texte et transcription illimités, 1 studio, 15h/mois de téléchargements de pistes séparées."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "grow",
+        "name": "Grow",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 39,
+          "annualPerMonth": 34,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Everything in Pro plus social scheduling, newsletter, podcast hosting for 2 shows, 1080p live streaming, 2 studios, 20h/month track downloads.",
+            "fr": "Tout Pro plus planification réseaux sociaux, newsletter, hébergement podcast pour 2 émissions, streaming live 1080p, 2 studios, 20h/mois de téléchargements de pistes."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "webinar",
+        "name": "Webinar",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 99,
+          "annualPerMonth": 79,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Everything in Grow plus webinars up to 100 registrants, HubSpot CRM integration, 3 studios, 25h/month track downloads.",
+            "fr": "Tout Grow plus webinars jusqu'à 100 inscrits, intégration CRM HubSpot, 3 studios, 25h/mois de téléchargements de pistes."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Unlimited studios and track downloads, up to 10,000 webinar registrants, SSO, SOC2/ISO27001 compliance, dedicated CSM.",
+            "fr": "Studios et téléchargements de pistes illimités, jusqu'à 10 000 inscrits webinar, SSO, conformité SOC2/ISO27001, CSM dédié."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Annual billing saves up to 20% versus monthly across all paid tiers.",
+        "fr": "La facturation annuelle permet jusqu'à 20 % d'économie par rapport au mensuel sur tous les paliers payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Records studio-quality, separate local audio/video tracks per participant remotely, up to 4K video and 48kHz audio on paid plans.",
+        "fr": "Enregistre à distance des pistes audio/vidéo locales séparées par participant en qualité studio, jusqu'à 4K vidéo et 48kHz audio sur les plans payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Includes text-based editing, AI transcription, live streaming/multistreaming and podcast hosting on higher tiers.",
+        "fr": "Inclut le montage basé sur le texte, la transcription IA, le streaming live/multistream et l'hébergement podcast sur les paliers supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan is capped at 2 hours of multi-track recording total (not monthly) and exports carry a watermark.",
+        "fr": "Le plan gratuit est plafonné à 2 heures d'enregistrement multipiste au total (pas par mois) et les exports comportent un filigrane.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Separate-track download hours are capped even on paid plans (15 to 25h/month depending on tier).",
+        "fr": "Les heures de téléchargement de pistes séparées sont plafonnées même sur les plans payants (15 à 25h/mois selon le palier).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "HubSpot",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "descript",
+      "reason": {
+        "en": "Direct competitor for remote recording plus text-based editing of audio/video.",
+        "fr": "Concurrent direct pour l'enregistrement à distance et le montage audio/vidéo basé sur le texte."
+      }
+    },
+    {
+      "slug": "podcastle",
+      "reason": {
+        "en": "Direct competitor for remote podcast recording with AI editing tools.",
+        "fr": "Concurrent direct pour l'enregistrement podcast à distance avec outils de montage IA."
+      }
+    },
+    {
+      "slug": "auphonic",
+      "reason": {
+        "en": "Complementary/competing tool for automated audio post-production of recorded content.",
+        "fr": "Outil complémentaire/concurrent pour la post-production audio automatisée du contenu enregistré."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Business plan pricing is fully quote-based; no indicative range published.",
+    "Exact vendor legal entity name not independently re-verified beyond public knowledge."
+  ],
+  "conflicts": []
+}
