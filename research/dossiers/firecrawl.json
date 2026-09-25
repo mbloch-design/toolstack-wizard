@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "slug": "firecrawl",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Firecrawl",
+    "vendor": "Firecrawl (Mendable AI Inc.)",
+    "officialUrl": "https://firecrawl.dev",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://firecrawl.dev/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Firecrawl pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://firecrawl.dev/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "1,000 credits/month, ~500 searches or 1,000 pages scraped, 2 concurrent requests, community support", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1,000 credits/month (~500 searches or 1,000 pages scraped), 2 concurrent requests, community support", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "hobby",
+        "name": "Hobby",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 19, "annualPerMonth": 16, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5,000 credits/month (~2,500 searches or 5,000 pages scraped), 5 concurrent requests, basic support", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 83, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "100,000 credits/month (~50,000 searches or 100,000 pages scraped), 25 concurrent requests, standard support", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 333, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "500,000 credits/month (~250,000 searches or 500,000 pages scraped), 50 concurrent requests, priority support", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "scale",
+        "name": "Scale",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 599, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1,000,000 credits/month (~500,000 searches or 1,000,000 pages scraped), 100 concurrent requests, priority support", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom credits, zero-data retention, SSO, API key restrictions, static egress IPs, dedicated support with SLA", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "hobby",
+    "addOns": [
+      { "name": "Extra credits (1,000 per $5 on Hobby, cheaper per-credit rate on higher tiers)", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Costs scale by API operation: scrape/crawl/map cost 1 credit/page, search costs 2 credits per 10 results, browser 'interact' costs 2 credits/minute, and monitoring costs 1 credit per page per check; actual spend depends heavily on usage pattern, not just the plan's monthly credit allowance.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Converts any website into clean, structured data (Markdown/JSON) via a scraping and crawling API.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Offers a search API and a site-mapping capability alongside scraping, plus browser-based 'interact' actions for dynamic pages.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Provides a monitoring feature to re-check pages for changes on a schedule.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Usage is credit-metered; scraping large sites or using search/interact features can consume the monthly allowance quickly.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Concurrency (parallel requests) is capped per plan (2 on Free up to 100 on Scale), which limits large-batch crawling speed on lower tiers.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "crawlbase", "reason": { "en": "Direct competitor offering web scraping/crawling APIs for structured data extraction.", "fr": null } },
+    { "slug": "hyperbrowser", "reason": { "en": "Competing browser-automation/scraping API used for similar structured web data extraction workflows.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "ScrapingBee", "officialUrl": "https://www.scrapingbee.com/", "reason": "Well-known web scraping API competitor to Firecrawl, not present in the catalogue." },
+    { "name": "Apify", "officialUrl": "https://apify.com/", "reason": "Major web scraping and automation platform competing directly with Firecrawl, not present in the catalogue." }
+  ],
+  "unknowns": [
+    "Whether the Standard/Growth/Scale monthly (non-annual) prices differ from the annual-equivalent figures shown was not fully confirmed; only Hobby showed both monthly and annual prices on the fetched page."
+  ],
+  "conflicts": []
+}

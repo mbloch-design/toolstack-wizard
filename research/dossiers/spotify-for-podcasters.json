@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "slug": "spotify-for-podcasters",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Spotify for Creators",
+    "vendor": "Spotify AB",
+    "officialUrl": "https://creators.spotify.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "renamed",
+    "statusNote": "podcasters.spotify.com now redirects (301) to creators.spotify.com; the product has been rebranded from 'Spotify for Podcasters' to 'Spotify for Creators' and now supports both audio and video podcasts."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://creators.spotify.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Spotify for Creators homepage" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://creators.spotify.com/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Free hosting and distribution tools for podcast creators, with optional monetization through the Spotify Partner Program", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free hosting and distribution tools for podcast creators, with optional monetization through the Spotify Partner Program", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "No paid subscription tier is advertised on the homepage; monetization is revenue-share based through the Spotify Partner Program rather than a flat plan price.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Upload and distribute audio and video podcast episodes to Spotify listeners.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Audience engagement tools including clip creation and comment management.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Built-in analytics for tracking episode performance and audience growth.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Monetization options through the Spotify Partner Program for eligible creators.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No advanced/paid tier is documented; deeper analytics or team collaboration features beyond the free toolset are not detailed on the homepage.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Distribution and growth tools are centered on the Spotify platform itself; cross-platform (Apple Podcasts, etc.) distribution mechanics are not detailed on this page.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Megaphone", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "buzzsprout", "reason": { "en": "Dedicated podcast hosting platform with cross-platform distribution, a common alternative for creators wanting a host independent of one listening app.", "fr": null } },
+    { "slug": "podbean", "reason": { "en": "Podcast hosting and monetization competitor covering the same creator workflow.", "fr": null } },
+    { "slug": "acast", "reason": { "en": "Podcast hosting and ad monetization network competing for the same creator audience.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Monetization eligibility criteria (region, audience size) for the Spotify Partner Program were not detailed on the homepage in this session.",
+    "Whether any paid/pro tier exists for larger creators or networks was not confirmed."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "slug": "netlify",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Netlify",
+    "vendor": "Netlify Inc.",
+    "officialUrl": "https://www.netlify.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.netlify.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Netlify pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.netlify.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1,000 monthly credits, adds smart secret detection, 1-day observability window, priority email support", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "workspace",
+        "minSeats": 1,
+        "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited team members, 3,000 monthly credits, private organization repositories, shared environment variables, 3+ concurrent builds, 30-day analytics", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "workspace",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Unlimited credits, 99.99% SLA, 24/7 dedicated support, SSO/SCIM, log drains, organization management", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "personal",
+    "addOns": [
+      { "name": "Usage-based credits: production deploys 15 credits ($0.10 each), bandwidth 20 credits/GB ($0.13/GB), compute 10 credits/GB-hour ($0.07/GB-hour), web requests 2 credits/10k ($0.01/10k), variable AI inference cost", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Netlify's model shifted to a credit-based system: monthly plan fees include a credit allowance, and usage beyond it (deploys, bandwidth, compute, requests) is billed per-credit, so effective monthly cost can exceed the headline plan price for high-traffic sites.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "JAMstack/modern web hosting with Git-based, AI-assisted, or API-driven deploys and unlimited deploy previews.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Serverless functions, AI model access, database storage, and blob storage available from the free tier.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Global CDN, custom domains with automatic SSL, and basic firewall/rate limiting included even on the free plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Usage-based credit billing means production deploys, bandwidth, and compute all consume credits, making costs less predictable than a flat monthly fee for high-traffic projects.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Advanced security/observability features (extended observability window, SSO/SCIM, log drains) are reserved for paid Personal/Pro tiers or Enterprise.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "vercel", "reason": { "en": "Direct competitor for JAMstack/frontend hosting and Git-based deploys.", "fr": null } },
+    { "slug": "fly-io", "reason": { "en": "Competing deployment platform for web apps, often compared for pricing and performance.", "fr": null } },
+    { "slug": "digitalocean", "reason": { "en": "Alternative hosting/deployment platform used for similar web app hosting needs, though with a broader infrastructure scope.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact credit-to-dollar conversion nuances for AI inference usage were only partially detailed (\"variable by model\") on the pricing page."
+  ],
+  "conflicts": []
+}

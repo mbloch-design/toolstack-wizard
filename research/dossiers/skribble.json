@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "slug": "skribble",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Skribble",
+    "vendor": "Skribble AG",
+    "officialUrl": "https://www.skribble.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.skribble.com/en-eu/pricing/", "tier": 1, "accessedOn": "2026-06-27", "title": "Skribble pricing (EU)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "CHF",
+    "pricingUrl": "https://www.skribble.com/en-eu/pricing/",
+    "verifiedOn": "2026-06-27",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "fair",
+        "name": "Fair",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users, pay-per-signature model on top of the base subscription: 1.80 CHF per Qualified Electronic Signature (QES) and 1.00 CHF per Advanced Electronic Signature (AES)", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "fair",
+    "addOns": [
+      { "name": "Per-signature fees: 1.80 CHF/QES, 1.00 CHF/AES, billed separately from the subscription", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The base subscription price does not include signatures: each qualified or advanced signature is billed per-unit on top of the monthly fee, which can make effective cost much higher than the headline 9 CHF/month depending on volume.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Qualified Electronic Signature (QES) compliant with EU eIDAS regulation, giving signatures the same legal standing as handwritten ones.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Supports multiple signature levels (Simple, Advanced, Qualified) for different legal requirements per document.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Unlimited users included even on the entry Fair plan, with cost driven by per-signature usage instead of seats.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free/permanent plan; only a 14-day trial with 20 free signatures before billing begins.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Per-signature pricing on top of the subscription makes total cost variable and harder to predict for high-volume signing needs.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "docusign", "reason": { "en": "Major e-signature competitor, though without Skribble's Swiss/EU qualified signature specialization.", "fr": null } },
+    { "slug": "yousign", "reason": { "en": "European e-signature provider competing directly on EU-compliant electronic signatures.", "fr": null } },
+    { "slug": "adobe-acrobat-sign", "reason": { "en": "Enterprise e-signature competitor offering similar compliance-grade signing options.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Higher pricing tiers above 'Fair' (if any) were not detailed in the seed or fetched data; only the entry plan and per-signature fees were confirmed."
+  ],
+  "conflicts": []
+}

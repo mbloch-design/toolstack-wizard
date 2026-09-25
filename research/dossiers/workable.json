@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "slug": "workable",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Workable",
+    "vendor": "Workable Software Ltd.",
+    "officialUrl": "https://www.workable.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.workable.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Workable pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.workable.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 15, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 299, "annualPerMonth": 299, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Candidate sourcing, ATS, unlimited active jobs, HRIS, onboarding, time off management; video interviews/assessments/texting are paid add-ons ($39-$109/month); scoped for companies of 1-20 employees before scaling.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premier",
+        "name": "Premier",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 599, "annualPerMonth": 599, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds texting, video interviews, assessments, and performance/engagement tools included (not add-ons)", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 719, "annualPerMonth": 719, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Highest tier with Premier features plus Workable Agent add-on availability", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [
+      { "name": "Video interviews, assessments, texting (Standard plan only, $39-$109/month)", "sourceIds": ["s1"] },
+      { "name": "AI Agent credit packages (600-4,750 USD for 5,000-50,000 credits; 3,000 credits included free on all plans, expire after 1 year)", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pricing is tied to total company employee headcount rather than a per-seat ATS user count; the fetched page did not clearly show annual-discount math beyond the plan totals given.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Third-party listings and the seed data reference a lower-priced 'Starter' plan around $149/month that was not visible on the pricing page fetched in this session; this may be an outdated or region-specific plan name. See conflicts.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Applicant tracking system (ATS) with unlimited active job postings and AI-assisted candidate sourcing.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Built-in HR information system (HRIS), onboarding, and time-off management.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Video interviews, skills assessments, and candidate texting (included or as paid add-ons depending on plan).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; only a 15-day trial before payment is required.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Video interviews, assessments and texting are gated as paid add-ons on the entry Standard plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "personio", "reason": { "en": "HR platform with recruiting/ATS features competing for the same small-to-mid company hiring workflow.", "fr": null } },
+    { "slug": "zoho", "reason": { "en": "Zoho's recruiting suite competes directly with Workable's ATS and hiring tools.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Greenhouse", "officialUrl": "https://www.greenhouse.com/", "reason": "Major direct ATS competitor to Workable, not present in the catalogue." },
+    { "name": "Lever", "officialUrl": "https://www.lever.co/", "reason": "Well-known ATS and recruiting CRM competitor to Workable, not present in the catalogue." }
+  ],
+  "unknowns": [
+    "A 'Starter' plan around $149/month referenced in the seed data was not visible on the current pricing page (only Standard $299, Premier $599, Enterprise $719 were shown); could be discontinued, renamed, or region-gated.",
+    "Whether the listed monthly prices differ from true annual-billing per-month equivalents was not fully clarified on the fetched page."
+  ],
+  "conflicts": [
+    "Seed data lists an entry 'Starter' plan at $149/month, but the official pricing page fetched in this session shows Standard as the entry tier at $299/month with no $149 option visible."
+  ]
+}

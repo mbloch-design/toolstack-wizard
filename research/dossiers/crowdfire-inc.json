@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "slug": "crowdfire-inc",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Crowdfire",
+    "vendor": "Crowdfire Inc.",
+    "officialUrl": "https://www.crowdfireapp.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "discontinued",
+    "statusNote": "Multiple third-party sources report Crowdfire's social media management service shut down around May 2025 with user data deleted by June 2025. However, crowdfireapp.com still resolves and its homepage in this session described a pivot to a broader 'media platform' covering social media, Web3 and AI news rather than a dead domain. Status is uncertain and should be re-verified before publishing a live tool page."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.crowdfireapp.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Crowdfire homepage" },
+    { "id": "s2", "url": "https://www.socialchamp.com/blog/crowdfire-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "Crowdfire pricing vs. Social Champ (third-party, references 2025 shutdown)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.crowdfireapp.com/pricing-page/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": "Historically had a free tier with basic scheduling features, but current availability is unconfirmed given the product's uncertain status.", "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry paid tier per historical pricing; not independently confirmed on the live site this session.", "fr": null }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "plus",
+    "addOns": [],
+    "cautions": [
+      { "en": "Product status is unclear: third-party sources say the service shut down in 2025, but the domain is still live with different messaging about a pivot to a media platform. Pricing figures here are historical and were not confirmed on a live, current pricing page.", "fr": null, "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Historically offered social media content scheduling across multiple networks.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Historically offered social listening and competitor analysis tools.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Service continuity is uncertain: reported shutdown of the social media management product in 2025 conflicts with the live domain's current content about a platform pivot.", "fr": null, "sourceIds": ["s1", "s2"] },
+      { "en": "No current, verifiable pricing or feature page was found in this session.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "hootsuite", "reason": { "en": "Established social media management competitor covering the same scheduling and analytics use case.", "fr": null } },
+    { "slug": "later", "reason": { "en": "Direct competitor for visual content scheduling across social networks.", "fr": null } },
+    { "slug": "sendible", "reason": { "en": "Comparable social media management platform for agencies and small teams.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether Crowdfire's social media management product is currently active, discontinued, or pivoted to a different product is unresolved; requires direct verification of crowdfireapp.com's current offering and any official shutdown announcement.",
+    "Current pricing (if the product is still active) is unconfirmed; figures used are from third-party trackers referencing pre-2025 plans."
+  ],
+  "conflicts": [
+    "crowdfireapp.com homepage content (accessed 2026-09-25) describes an active pivot to a 'media platform', while independent search results state the service shut down and deleted user data in mid-2025."
+  ]
+}

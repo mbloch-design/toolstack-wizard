@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "slug": "arnold",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Arnold",
+    "vendor": "Autodesk Inc.",
+    "officialUrl": "https://www.autodesk.com/products/arnold/overview",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Official product page returned HTTP 403 (anti-bot) during this session; facts below come from third-party/search sources and must be reverified against autodesk.com directly."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.vendr.com/marketplace/autodesk", "tier": 2, "accessedOn": "2026-09-25", "title": "Autodesk software pricing overview" },
+    { "id": "s2", "url": "https://www.autodesk.com/buying/flex", "tier": 1, "accessedOn": "2026-09-25", "title": "Autodesk Flex pay-as-you-go pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.autodesk.com/products/arnold/overview",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "single-user",
+        "name": "Arnold Single-User",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 55, "annualPerMonth": 36, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Standalone Arnold license for users without a Maya or 3ds Max subscription; ~$430/year equivalent per third-party trackers.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "flex",
+        "name": "Arnold via Flex Tokens",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Pay-as-you-go token model for occasional use, tokens purchased in advance and consumed per use.", "fr": null }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "single-user",
+    "addOns": [],
+    "cautions": [
+      { "en": "Arnold is included at no extra cost for users who already hold a Maya or 3ds Max subscription; the standalone price above only applies to Arnold-only licenses.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Exact current single-user monthly/annual price could not be confirmed on autodesk.com directly (page blocked); the $55/mo and $430/yr figures are third-party estimates and should be reverified.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Advanced Monte Carlo ray-tracing (path-tracing) renderer built for production-quality, physically based rendering.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Scales for large production pipelines in film, TV, games and design visualization.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Plugs into major 3D applications: Maya, 3ds Max, Houdini, Cinema 4D, Katana, and Blender via community/third-party plugins.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No standalone free tier; a paid subscription (or bundled Maya/3ds Max license) or Flex tokens are required beyond any trial.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Physically based path-tracing is compute-intensive and typically requires capable CPU/GPU hardware for production-time renders.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Autodesk Maya", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Autodesk 3ds Max", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Houdini", "slug": "houdini", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "alternatives": [
+    { "slug": "v-ray", "reason": { "en": "Direct competing production renderer used across the same DCC applications.", "fr": null } },
+    { "slug": "redshift", "reason": { "en": "GPU-accelerated production renderer competing for the same VFX/animation studios.", "fr": null } },
+    { "slug": "octane-render", "reason": { "en": "Another GPU renderer targeting similar 3D content creation pipelines.", "fr": null } },
+    { "slug": "corona-renderer", "reason": { "en": "Physically based renderer overlapping with Arnold's use cases in architectural visualization and VFX.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Official autodesk.com/products/arnold pricing page was blocked (403) during this session; current single-user price and Flex token cost per render are unconfirmed from a primary source.",
+    "Full platform support list (e.g. specific Linux distributions) not independently verified this session."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "slug": "shine",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Shine",
+    "vendor": "Shine (Qonto Group)",
+    "officialUrl": "https://www.shine.fr",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.shine.fr/tarifs", "tier": 1, "accessedOn": "2026-09-25", "title": "Shine - Tarifs" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "EUR",
+    "pricingUrl": "https://www.shine.fr/tarifs",
+    "verifiedOn": "2026-09-25",
+    "region": "FR",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "1 IBAN account, 5 free SEPA transfers/month (then 0.40 EUR each), 1 basic Mastercard, optional virtual cards at 2 EUR/month each", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Gratuit",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 IBAN account, 5 free SEPA transfers/month, 1 basic card", "fr": "1 compte IBAN, 5 virements SEPA gratuits/mois, 1 carte basique" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "start",
+        "name": "Start",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 main account plus 1 sub-account, 30 transfers included/month, income tracking dashboard, 1 basic card", "fr": "1 compte principal et 1 sous-compte, 30 virements inclus/mois, tableau de bord, 1 carte basique" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2 premium cards, 4 sub-accounts, 100 transfers included/month, insurance and assistance included", "fr": "2 cartes premium, 4 sous-comptes, 100 virements inclus/mois, assurance et assistance incluses" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 60, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited team access, 10 premium cards, unlimited virtual cards, 500 transfers included/month", "fr": "Accès équipe illimité, 10 cartes premium, cartes virtuelles illimitées, 500 virements inclus/mois" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "start",
+    "addOns": [
+      { "name": "Extra virtual card", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The fetched pricing page also mentioned annual billing figures (e.g. 108 EUR/year for Start) that appear inconsistent with the stated monthly rate; annual figures could not be reliably reconciled in this session and are omitted from plan pricing.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Extra SEPA transfers beyond the included quota cost 0.40 EUR each; international transfers cost 0.45%-1% and card payments abroad 1%-2%.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "French business bank account (IBAN) with free invoicing and quote creation tools.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Payment collection and administrative/charges tracking dashboard for freelancers.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Physical and virtual Mastercards issued per plan, with sub-accounts for budgeting.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 5 SEPA transfers/month before per-transfer fees apply.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Sub-accounts and premium cards are gated behind paid plans (Start and above).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "qonto", "reason": { "en": "Direct competitor French business account with invoicing and card features.", "fr": null } },
+    { "slug": "indy", "reason": { "en": "French freelancer administrative and invoicing tool overlapping with Shine's core use case.", "fr": null } },
+    { "slug": "pennylane", "reason": { "en": "French finance platform combining accounting and banking, competing on the same freelance/small business segment.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Annual billing amounts shown on the pricing page appeared internally inconsistent with monthly prices; could not be verified precisely in this session.",
+    "No platform confirmation source was opened beyond the pricing page; iOS/Android app existence is assumed from general knowledge of the product category, not directly sourced."
+  ],
+  "conflicts": []
+}

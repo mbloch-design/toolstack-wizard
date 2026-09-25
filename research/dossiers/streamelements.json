@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "streamelements",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "StreamElements",
+    "vendor": "StreamElements Inc.",
+    "officialUrl": "https://streamelements.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.softwaresuggest.com/streamelements", "tier": 2, "accessedOn": "2026-09-25", "title": "StreamElements pricing overview (third-party)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://streamelements.com/plus",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Overlays, chatbot, alerts, and a merch store with limited sizes and designs; 1 user, 1 project, 1 GB storage per third-party tracker", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Overlays, chatbot, alerts, and a merch store with limited sizes and designs; 1 user, 1 project, 1 GB storage per third-party tracker", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus-10",
+        "name": "Plus (entry tier)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 10, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "More merch sizes/designs and overlay options, 5 users, 5 projects, 10 GB storage per third-party tracker; not confirmed on the official pricing page in this session.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus-25",
+        "name": "Plus (top tier)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users/projects, 100 GB storage, priority support per third-party tracker; not confirmed on the official pricing page in this session.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "plus-10",
+    "addOns": [],
+    "cautions": [
+      { "en": "The official streamelements.com/plus pricing page could not be retrieved with full content in this session; prices above come from a third-party listing and should be reverified against the primary source.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cloud-based stream overlay editor with customizable alerts and widgets.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Stream chatbot with moderation and custom commands.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Integrated merch store (SE.Merch) and tipping/donation system, no subscription required to start.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Loyalty program with stream currency viewers can earn and spend.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan caps merch design/size options and overlay features compared to paid tiers.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Some features (larger storage, more projects/users) require a paid plan starting around 10 USD/month.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "OBS Studio", "slug": "obs", "sourceIds": ["s1"] },
+      { "name": "Twitch", "slug": null, "sourceIds": ["s1"] },
+      { "name": "YouTube", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "windows"]
+  },
+  "alternatives": [
+    { "slug": "streamlabs", "reason": { "en": "Direct competitor offering the same overlay/alerts/chatbot toolkit for streamers.", "fr": null } },
+    { "slug": "obs", "reason": { "en": "Free broadcasting software StreamElements integrates with; some streamers use OBS's native tools instead of StreamElements overlays.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact current paid plan pricing and feature breakdown were not confirmed on the official streamelements.com pricing page in this session; figures come from a third-party source.",
+    "Catalogue lacks enough direct StreamElements competitors beyond Streamlabs for a full 3-6 alternative list."
+  ],
+  "conflicts": []
+}

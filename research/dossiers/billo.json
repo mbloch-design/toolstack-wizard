@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "slug": "billo",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Billo",
+    "vendor": "Billo Inc.",
+    "officialUrl": "https://billo.app",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "The /pricing path redirects to a login/manage subdomain (manage.billo.app), so pricing details were sourced from third-party listings rather than the official site directly."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.ugcroster.com/blog/brands/billo-pricing-breakdown-2026-costs-plans-hidden-fees", "tier": 2, "accessedOn": "2026-09-25", "title": "Billo pricing breakdown (third-party)" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://billo.app",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "starter-package",
+        "name": "Entry credit package",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 500 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "One-time credit package covering roughly 1-5 UGC videos over 12 months, per third-party pricing breakdown; base cost is reported around 99 USD per video.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter-package",
+    "addOns": [
+      { "name": "Expedited delivery / enhanced creator selection add-ons, reported to push per-video cost to ~150 USD", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The official pricing page was not directly accessible (redirects to a login screen); all pricing figures come from third-party reviews and should be reverified once a public pricing page is confirmed.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Pricing is package/credit-based rather than a flat monthly subscription; per-video cost varies with add-ons like rush delivery.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Marketplace connecting brands with vetted UGC (user-generated content) creators to produce authentic ad-style videos on demand.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Brief-based creator matching with revision rounds included in each video order.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Bulk credit packages for brands needing recurring volumes of video content for ad campaigns.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public flat-rate pricing; costs depend on package size and optional add-ons like expedited delivery.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Video turnaround and quality depend on marketplace creator availability rather than an in-house production team.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Insense", "officialUrl": "https://insense.pro/", "reason": "Direct UGC creator marketplace competitor frequently compared to Billo, not present in the catalogue." },
+    { "name": "JoinBrands", "officialUrl": "https://www.joinbrands.com/", "reason": "UGC content marketplace competitor referenced alongside Billo in third-party comparisons, not present in the catalogue." },
+    { "name": "Trend", "officialUrl": "https://www.trend.io/", "reason": "UGC creator marketplace competitor referenced in third-party comparisons, not present in the catalogue." }
+  ],
+  "unknowns": [
+    "No official pricing page was accessible; exact current package prices and per-video costs are unconfirmed from a primary source.",
+    "The seed candidate list did not include any true UGC-marketplace competitors already in the catalogue, hence the missingAlternatives entries."
+  ],
+  "conflicts": []
+}
