@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "slug": "deputy",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Deputy",
+    "vendor": "Deputy",
+    "officialUrl": "https://deputy.com",
+    "docsUrl": "https://help.deputy.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.deputy.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Deputy pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.deputy.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "lite",
+        "name": "Lite",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 5, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Basic scheduling, timesheets, time clocking, labor law compliance, shift swapping" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "core",
+        "name": "Core",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 6.5, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds auto-scheduling, demand forecasting, labor optimization and wage budgets" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds custom access levels, SSO, 24/7 live chat and a sandbox environment" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "lite",
+    "addOns": [
+      { "name": { "en": "Payroll (Paycor)" }, "unit": "seat", "sourceIds": ["s1"] },
+      { "name": { "en": "HR" }, "unit": "seat", "sourceIds": ["s1"] },
+      { "name": { "en": "Messaging+" }, "unit": "seat", "sourceIds": ["s1"] },
+      { "name": { "en": "Analytics+" }, "unit": "seat", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "A minimum monthly spend of $30 applies per account regardless of how few users are on it, and every admin/manager role is billed as a user.", "sourceIds": ["s1"] },
+      { "en": "Monthly billing charges for a full month even when a user is added partway through the month, and annual plans allow no mid-term downgrades or refunds.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Staff scheduling with auto-scheduling and demand forecasting on the Core plan and above.", "sourceIds": ["s1"] },
+      { "en": "Time clocking and timesheets with built-in labor law compliance checks.", "sourceIds": ["s1"] },
+      { "en": "Team messaging and shift-swap workflows.", "sourceIds": ["s1"] },
+      { "en": "AI features (\"Deputy AI\") included across all plans.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; only a 30-day trial.", "sourceIds": ["s1"] },
+      { "en": "Auto-scheduling and demand forecasting are not available on the entry Lite plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Paycor", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "timecamp", "reason": { "en": "Time tracking and scheduling alternative for hourly and shift-based teams." } },
+    { "slug": "clockify", "reason": { "en": "Alternative time tracking tool that also covers basic scheduling needs." } }
+  ],
+  "missingAlternatives": [
+    { "name": "When I Work", "officialUrl": "https://wheniwork.com", "reason": "Direct competitor for shift scheduling and time tracking, not in the catalogue" },
+    { "name": "Homebase", "officialUrl": "https://joinhomebase.com", "reason": "Direct competitor for hourly team scheduling and time clocking, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Whether platform mobile apps support all Lite-plan features equally was not detailed on the pricing page."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "slug": "python",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Python",
+    "vendor": "Python Software Foundation",
+    "officialUrl": "https://www.python.org",
+    "docsUrl": "https://docs.python.org/3/",
+    "changelogUrl": "https://docs.python.org/3/whatsnew/index.html",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.python.org", "tier": 1, "accessedOn": "2026-09-25", "title": "Python.org" },
+    { "id": "s2", "url": "https://docs.python.org/3/", "tier": 1, "accessedOn": "2026-09-25", "title": "Python 3 documentation" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Fully free and open source under the PSF license, no paid tier for the language itself", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Python itself is free; costs come from hosting, managed runtimes or third-party libraries used alongside it, none of which are set by the Python Software Foundation.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "General-purpose programming language used for web backends, scripts, automation, data analysis and machine learning.", "sourceIds": ["s1"] },
+      { "en": "Large standard library and package ecosystem (PyPI) covering web frameworks, data science, testing and more.", "sourceIds": ["s2"] },
+      { "en": "Runs on Windows, macOS and Linux, and embeds in many other environments.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Slower raw execution speed than compiled languages for CPU-bound workloads.", "sourceIds": ["s2"] },
+      { "en": "The Global Interpreter Lock (GIL) limits true multi-threaded CPU parallelism in the standard CPython implementation.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "alternatives": [
+    { "slug": "php", "reason": { "en": "Another general-purpose scripting language commonly used for web backends." } },
+    { "slug": "nestjs", "reason": { "en": "Alternative backend framework/runtime (Node.js/TypeScript) for building APIs and services." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Node.js", "officialUrl": "https://nodejs.org", "reason": "Major general-purpose runtime competing with Python for backend and scripting use cases, not in the catalogue" },
+    { "name": "Go", "officialUrl": "https://go.dev", "reason": "Common alternative language for backend services and CLIs, not in the catalogue" }
+  ],
+  "unknowns": [],
+  "conflicts": []
+}

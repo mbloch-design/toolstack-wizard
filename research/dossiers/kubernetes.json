@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 2,
+  "slug": "kubernetes",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Kubernetes",
+    "vendor": "Cloud Native Computing Foundation",
+    "officialUrl": "https://kubernetes.io",
+    "docsUrl": "https://kubernetes.io/docs/home/",
+    "changelogUrl": "https://kubernetes.io/releases/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://kubernetes.io", "tier": 1, "accessedOn": "2026-09-25", "title": "Kubernetes.io" },
+    { "id": "s2", "url": "https://kubernetes.io/docs/home/", "tier": 1, "accessedOn": "2026-09-25", "title": "Kubernetes documentation" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Fully free and open source under Apache 2.0; costs come from the infrastructure or managed service running it", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Kubernetes itself has no license fee; the real cost is the compute, storage and managed control-plane fees charged by the cloud provider or self-hosted infrastructure running it.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Container orchestration: automated deployment, scaling and management of containerized applications.", "sourceIds": ["s1"] },
+      { "en": "Self-healing (automatic restarts, rescheduling and replacement of failed containers) and rolling updates/rollbacks.", "sourceIds": ["s2"] },
+      { "en": "Service discovery, load balancing and declarative configuration via YAML manifests.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Steep learning curve and significant operational complexity compared to simpler deployment platforms (e.g. Heroku, Netlify).", "sourceIds": ["s2"] },
+      { "en": "Requires ongoing cluster operations (upgrades, security patching, networking) unless using a fully managed offering.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["linux", "web"]
+  },
+  "alternatives": [
+    { "slug": "fly-io", "reason": { "en": "Simpler managed container deployment platform for teams that don't need full Kubernetes." } },
+    { "slug": "digitalocean", "reason": { "en": "Offers a managed Kubernetes service as a simpler entry point to container orchestration." } },
+    { "slug": "aws", "reason": { "en": "Provides managed Kubernetes (EKS) alongside its own container orchestration options." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Docker Swarm", "officialUrl": "https://docs.docker.com/engine/swarm/", "reason": "Simpler built-in container orchestration alternative to Kubernetes, not in the catalogue" },
+    { "name": "Nomad", "officialUrl": "https://www.nomadproject.io", "reason": "HashiCorp's lighter-weight workload orchestrator, an alternative to Kubernetes, not in the catalogue" }
+  ],
+  "unknowns": [],
+  "conflicts": []
+}

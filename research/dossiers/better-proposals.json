@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "better-proposals",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Better Proposals",
+    "vendor": "Better Proposals Ltd.",
+    "officialUrl": "https://betterproposals.io",
+    "docsUrl": "https://betterproposals.io/help",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://betterproposals.io/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Better Proposals pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://betterproposals.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 19, "annualPerMonth": 13, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 user seat, 10 documents per month" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": 29, "annualPerMonth": 21, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5 user seats included, 50 documents per month, custom domain, CRM integrations, API/Zapier" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": 42, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5 user seats included, unlimited documents, content locking, simultaneous editing, advanced permissions" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "name": { "en": "Nudge (follow-up automation)" }, "unit": "seat", "sourceIds": ["s1"] },
+      { "name": { "en": "Custom template design" }, "unit": "one_time", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The Starter plan is limited to a single user and 10 documents a month, so a small team quickly needs to move to Premium.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Proposal, quote and contract creation with a document editor, templates and a content library.", "sourceIds": ["s1"] },
+      { "en": "Legally binding electronic signatures built into each document.", "sourceIds": ["s1"] },
+      { "en": "Document tracking and live open/read notifications for sent proposals.", "sourceIds": ["s1"] },
+      { "en": "Payment collection directly inside an accepted proposal via Stripe, PayPal or GoCardless.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; only a 14-day trial without a credit card.", "sourceIds": ["s1"] },
+      { "en": "CRM integrations, API/Zapier access and a custom domain are gated behind the Premium plan and above.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Stripe", "slug": null, "sourceIds": ["s1"] },
+      { "name": "PayPal", "slug": null, "sourceIds": ["s1"] },
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Zapier", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "proposify", "reason": { "en": "Direct competitor for proposal creation, tracking and e-signatures." } },
+    { "slug": "plutio", "reason": { "en": "Freelancer/agency platform that also covers proposals alongside broader project management." } },
+    { "slug": "suitedash", "reason": { "en": "All-in-one client management suite with proposal and contract tools." } }
+  ],
+  "missingAlternatives": [
+    { "name": "PandaDoc", "officialUrl": "https://www.pandadoc.com", "reason": "Major proposal/document and e-signature competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Whether document limits on Premium/Enterprise apply per seat or per account was not fully clear from the pricing page alone."
+  ],
+  "conflicts": []
+}

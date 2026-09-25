@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "slug": "podbean",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Podbean",
+    "vendor": "Podbean",
+    "officialUrl": "https://podbean.com",
+    "docsUrl": "https://help.podbean.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://podbean.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Podbean pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://podbean.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Basic free account with limited storage and features, cannot be downgraded back to after subscribing", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "unlimited-audio",
+        "name": "Unlimited Audio",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 17, "annualPerMonth": 12, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 audio podcast, 1 GB monthly uploads (~16 hrs audio), unlimited total storage" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "unlimited-plus",
+        "name": "Unlimited Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 39, "annualPerMonth": 29, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2 audio/video podcasts, 10 GB monthly uploads (~160 hrs audio or 10 hrs video)" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "network",
+        "name": "Network",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 99, "annualPerMonth": 79, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited public podcasts, 40 GB monthly uploads, up to 50 team members, 3 TB monthly bandwidth" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 129, "annualPerMonth": 99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited private podcasts plus 2 public ones, 40 GB monthly uploads, unmetered bandwidth, unlimited team members" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "unlimited-audio",
+    "addOns": [],
+    "cautions": [
+      { "en": "Uploads are capped monthly even on \"Unlimited\" plans (e.g. 1 GB/month on Unlimited Audio); the \"unlimited\" branding refers to total storage retention, not monthly upload volume.", "sourceIds": ["s1"] },
+      { "en": "Once subscribed to a paid plan, an account cannot be downgraded back to the free tier.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Podcast hosting and one-click distribution to Spotify, Apple Podcasts, Amazon Music, iHeartRadio and other directories.", "sourceIds": ["s1"] },
+      { "en": "Built-in monetization: dynamic ad insertion, an ads marketplace, and listener subscriptions (Apple Podcasts subscriptions support).", "sourceIds": ["s1"] },
+      { "en": "AI credits included on paid plans for AI-assisted podcast production tools.", "sourceIds": ["s1"] },
+      { "en": "Network-level and advanced analytics on the Network and Business plans.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The entry paid plan (Unlimited Audio) allows only 1 podcast and 1 GB of monthly uploads, which is restrictive for active or multi-show creators.", "sourceIds": ["s1"] },
+      { "en": "Multiple team member/admin access is unavailable on the lower tiers (Unlimited Audio, Unlimited Plus).", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Spotify", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Apple Podcasts", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Amazon Music", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "buzzsprout", "reason": { "en": "Direct competitor for podcast hosting and distribution." } },
+    { "slug": "acast", "reason": { "en": "Podcast hosting platform with a strong monetization/ad marketplace focus, similar positioning." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Transistor", "officialUrl": "https://transistor.fm", "reason": "Podcast hosting competitor popular with independent creators, not in the catalogue" },
+    { "name": "Captivate", "officialUrl": "https://www.captivate.fm", "reason": "Podcast hosting platform aimed at podcasters wanting to grow a business, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact free-plan storage/upload limits were not fully detailed on the fetched pricing page."
+  ],
+  "conflicts": []
+}

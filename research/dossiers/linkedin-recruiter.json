@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 2,
+  "slug": "linkedin-recruiter",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "LinkedIn Recruiter",
+    "vendor": "LinkedIn Corporation (Microsoft)",
+    "officialUrl": "https://business.linkedin.com/talent-solutions/recruiter",
+    "docsUrl": "https://www.linkedin.com/help/recruiter",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://business.linkedin.com/talent-solutions/recruiter", "tier": 1, "accessedOn": "2026-09-25", "title": "LinkedIn Recruiter overview" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://business.linkedin.com/talent-solutions/recruiter",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "recruiter-lite",
+        "name": "Recruiter Lite",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "20 search filters, access limited to 3rd-degree connections, 30 InMails per month, no Hiring Assistant access" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "recruiter",
+        "name": "Recruiter (Corporate)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "40+ advanced search filters, 100-150 InMails per month per seat, AI-assisted search, ATS/CRM integrations, team collaboration and analytics" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      { "name": { "en": "Hiring Assistant" }, "unit": "seat", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "No public pricing is published; both Recruiter Lite and full Recruiter (Corporate) require contacting a sales consultant for a quote, and price depends on company size and seat count.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Candidate search across LinkedIn's professional network with advanced filters (job title, location, skills, industry).", "sourceIds": ["s1"] },
+      { "en": "InMail messaging to contact candidates outside a recruiter's existing network.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted search and personalized outreach message drafting.", "sourceIds": ["s1"] },
+      { "en": "Team collaboration and recruiting analytics tools, with ATS/CRM integrations on the full Recruiter plan.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Recruiter Lite restricts candidate visibility to 3rd-degree connections and provides only 20 search filters, well below the full Recruiter tier.", "sourceIds": ["s1"] },
+      { "en": "No public pricing is disclosed, making budget comparison against other sourcing tools difficult without contacting sales.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "greenhouse", "reason": { "en": "Applicant tracking system that also supports candidate sourcing workflows, often used alongside or instead of Recruiter." } },
+    { "slug": "ashby", "reason": { "en": "Recruiting platform combining ATS and sourcing features, a modern alternative to LinkedIn Recruiter for hiring teams." } }
+  ],
+  "missingAlternatives": [
+    { "name": "SeekOut", "officialUrl": "https://www.seekout.com", "reason": "Direct competitor for AI-powered candidate sourcing, not in the catalogue" },
+    { "name": "hireEZ", "officialUrl": "https://hireez.com", "reason": "Direct competitor for recruiting sourcing and outreach automation, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact Recruiter Lite and Corporate list prices were not published on the fetched page; sourcing data mentioned approximate figures (~$170/mo Lite, ~$1,000/mo/seat Corporate) that could not be directly verified against an official price list.",
+    "Whether a free trial is offered for Recruiter Lite was not confirmed."
+  ],
+  "conflicts": []
+}

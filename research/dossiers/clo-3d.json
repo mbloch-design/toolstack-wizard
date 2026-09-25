@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "slug": "clo-3d",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "CLO",
+    "vendor": "CLO Virtual Fashion Inc.",
+    "officialUrl": "https://www.clo3d.com",
+    "docsUrl": "https://www.clo3d.com/en/clo-set-connect",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.clo3d.com", "tier": 1, "accessedOn": "2026-09-25", "title": "CLO 3D homepage" },
+    { "id": "s2", "url": "https://www.spotsaas.com/product/clo-3d-fashion/pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "CLO 3D Fashion pricing (third-party aggregator)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.clo3d.com/en/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "trial": { "days": 30, "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "individual",
+        "name": "Individual",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 50, "annualPerMonth": 37.5, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Single-user license for 3D garment simulation and pattern making" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "individual",
+    "addOns": [],
+    "cautions": [
+      { "en": "Exact current pricing could not be confirmed directly from clo3d.com's own pricing page, which did not return content; figures are sourced from a third-party listing and should be reverified against the official site.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "3D garment simulation with realistic fabric physics for fashion design and prototyping.", "sourceIds": ["s1"] },
+      { "en": "2D pattern making linked live to the 3D simulated garment.", "sourceIds": ["s1"] },
+      { "en": "Digital sample and collection visualization intended to reduce physical sampling.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Steep learning curve for pattern-making features, aimed at users with garment construction knowledge.", "sourceIds": ["s1"] },
+      { "en": "Full-scene rendering and large collections can be resource-intensive, requiring a capable workstation.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "substance-3d-painter", "reason": { "en": "3D content creation tool used for texturing/material work that can complement or substitute parts of a 3D fashion pipeline." } },
+    { "slug": "zbrush", "reason": { "en": "General 3D modeling/sculpting tool sometimes used as an alternative for garment and character asset creation." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Browzwear", "officialUrl": "https://browzwear.com", "reason": "Direct competitor in 3D garment design and simulation software, not in the catalogue" },
+    { "name": "Marvelous Designer", "officialUrl": "https://marvelousdesigner.com", "reason": "3D clothing simulation tool made by the same parent company, close alternative, not in the catalogue" }
+  ],
+  "unknowns": [
+    "The official clo3d.com pricing page (/plans) did not return usable content during this session; plan names, exact prices and enterprise pricing should be reverified directly on the official site.",
+    "Whether there is a free/limited plan beyond the trial was not confirmed from a tier-1 source."
+  ],
+  "conflicts": []
+}

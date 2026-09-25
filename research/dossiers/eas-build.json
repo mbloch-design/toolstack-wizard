@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "slug": "eas-build",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "EAS Build",
+    "vendor": "Expo (650 Industries, Inc.)",
+    "officialUrl": "https://expo.dev/eas",
+    "docsUrl": "https://docs.expo.dev/build/introduction/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://expo.dev/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "EAS Pricing" },
+    { "id": "s2", "url": "https://expo.dev/eas", "tier": 1, "accessedOn": "2026-09-25", "title": "EAS overview" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://expo.dev/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "15 Android and 15 iOS builds per month, low-priority build queue, 20 GiB update storage, 1,000 monthly active users for updates", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "15 Android + 15 iOS builds/month, low-priority queue, 20 GiB update storage" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "production",
+        "name": "Production",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 199, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "$225 monthly build credit included then billed per build, high-priority queue, 2 concurrent builds, 1 TiB update storage, 50,000 monthly active users for updates" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom build credit starting at $1,000/month, SLA with 99.9% uptime, 10 TiB update storage, 1M+ monthly active users" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "production",
+    "addOns": [
+      { "name": { "en": "Extra build concurrency" }, "unit": "usage", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The Production plan's $199/month is a credit, not a flat fee: extra builds beyond the credit are billed per build ($1-4 each) and extra concurrency is $50/slot.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cloud build and code signing for React Native / Expo apps for both Android and iOS, including apps with custom native code.", "sourceIds": ["s2"] },
+      { "en": "Over-the-air (OTA) update delivery (EAS Update) without going through app store review.", "sourceIds": ["s2"] },
+      { "en": "Automated submission to the Google Play Store and Apple App Store (EAS Submit).", "sourceIds": ["s2"] },
+      { "en": "CI/CD workflow automation and app performance monitoring (EAS Workflows, EAS Insights).", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free tier is capped at 15 Android and 15 iOS builds per month and runs on a low-priority build queue, so builds can be slow at peak times.", "sourceIds": ["s1"] },
+      { "en": "The Production plan's headline price is a usage credit, not a fixed monthly fee: teams with heavy build or concurrency needs pay significantly more.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["ios", "android", "web"]
+  },
+  "alternatives": [
+    { "slug": "codemagic", "reason": { "en": "Direct competitor for cloud CI/CD builds of React Native and mobile apps." } },
+    { "slug": "fly-io", "reason": { "en": "Alternative cloud deployment target for the web/API side of Expo projects." } },
+    { "slug": "vercel", "reason": { "en": "Alternative hosting for the web output of an Expo project." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Bitrise", "officialUrl": "https://bitrise.io", "reason": "Major mobile CI/CD competitor to EAS Build, not in the catalogue" },
+    { "name": "App Center", "officialUrl": "https://appcenter.ms", "reason": "Microsoft's mobile build/distribution service, comparable to EAS Build" }
+  ],
+  "unknowns": [
+    "Exact per-build overage pricing ($1-4/build) was not broken down by platform or machine size on the fetched page.",
+    "Whether EAS Build offers a free trial of the Production plan was not stated."
+  ],
+  "conflicts": []
+}
