@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "slug": "topaz-video-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Topaz Video",
+    "vendor": "Topaz Labs",
+    "officialUrl": "https://www.topazlabs.com/topaz-video-ai",
+    "docsUrl": "https://docs.topazlabs.com/topaz-video/system-requirements",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "renamed",
+    "statusNote": "The product formerly marketed as \"Topaz Video AI\" now trades as \"Topaz Video\" on topazlabs.com/topaz-video; the legacy /topaz-video-ai URL still resolves and redirects to the current product/pricing content, and \"Topaz Video AI\" still appears in the page's schema markup. Same underlying desktop app."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.topazlabs.com/topaz-video", "tier": 1, "accessedOn": "2026-09-25", "title": "Topaz Video - Cinematic-Grade Video Quality Enhancement Software" },
+    { "id": "s2", "url": "https://www.topazlabs.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Product Pricing - Topaz Labs" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.topazlabs.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 39, "annualPerMonth": 25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited local (on-device) rendering, plus 25 monthly cloud rendering credits that expire and do not roll over.", "fr": "Rendu local illimité sur ta machine, plus 25 crédits de rendu cloud par mois qui expirent et ne se cumulent pas." },
+          { "en": "Commercial use limited to organizations under $1M USD annual revenue.", "fr": "Usage commercial limité aux structures de moins d'1 M$ de chiffre d'affaires annuel." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 74, "annualPerMonth": 58, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Full commercial use rights, no revenue cap.", "fr": "Usage commercial complet, sans plafond de chiffre d'affaires." },
+          { "en": "Higher monthly cloud rendering credit allowance than Personal.", "fr": "Allocation mensuelle de crédits de rendu cloud plus élevée que l'offre Personal." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "personal",
+    "addOns": [
+      { "en": "Extra pay-as-you-go cloud rendering credits beyond the plan's monthly allowance.", "fr": "Crédits de rendu cloud supplémentaires à la demande, au-delà de l'allocation mensuelle du plan.", "sourceIds": ["s2"] }
+    ],
+    "cautions": [
+      { "en": "There is no perpetual/one-time license anymore; Topaz has moved Video AI fully to subscription billing.", "fr": "Il n'existe plus de licence perpétuelle/à vie ; Topaz est passé entièrement à un abonnement pour Video AI.", "sourceIds": ["s1", "s2"] },
+      { "en": "A no-commitment monthly plan exists at $59/month, notably more expensive than the $39/month annual-commitment (billed monthly) or $25/month (paid upfront annually) options for the same Personal tier.", "fr": "Une offre mensuelle sans engagement existe à 59 $/mois, nettement plus chère que les options avec engagement annuel du même plan Personal (39 $/mois facturé mensuellement, ou 25 $/mois payé annuellement d'avance).", "sourceIds": ["s2"] },
+      { "en": "Cloud rendering credits expire at the end of each month and do not roll over.", "fr": "Les crédits de rendu cloud expirent à la fin de chaque mois et ne se reportent pas.", "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI upscaling of video footage up to 4K and 8K resolution.", "fr": "Upscaling vidéo par IA jusqu'en 4K et 8K.", "sourceIds": ["s1"] },
+      { "en": "Denoising, sharpening and smoothing of footage using temporally aware (multi-frame) AI models.", "fr": "Débruitage, netteté et lissage de l'image via des modèles IA qui analysent plusieurs images successives.", "sourceIds": ["s1"] },
+      { "en": "Frame interpolation to increase frame rate, up to 60-120 FPS, for smoother motion or slow-motion.", "fr": "Interpolation d'images pour augmenter la fréquence d'images, jusqu'à 60-120 IPS, pour un mouvement plus fluide ou du ralenti.", "sourceIds": ["s1"] },
+      { "en": "Video stabilization and SDR-to-HDR conversion.", "fr": "Stabilisation vidéo et conversion SDR vers HDR.", "sourceIds": ["s1"] },
+      { "en": "Local GPU rendering (NVIDIA, AMD, Apple Silicon) plus optional cloud rendering using included monthly credits.", "fr": "Rendu local sur GPU (NVIDIA, AMD, Apple Silicon), avec une option de rendu cloud via les crédits mensuels inclus.", "sourceIds": ["s1"] },
+      { "en": "Plugin integration inside Adobe Premiere Pro and DaVinci Resolve, plus batch processing.", "fr": "Intégration en plugin dans Adobe Premiere Pro et DaVinci Resolve, avec traitement par lot.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Certain top-tier models (Starlight Sharp/HQ/Fast) are not supported for local processing on Mac or AMD GPUs.", "fr": "Certains modèles haut de gamme (Starlight Sharp/HQ/Fast) ne sont pas pris en charge en traitement local sur Mac ou GPU AMD.", "sourceIds": ["s1"] },
+      { "en": "Desktop-only application (Windows/macOS); heavy AI models are GPU- and time-intensive, so real-world throughput depends heavily on the local machine's hardware.", "fr": "Application de bureau uniquement (Windows/macOS) ; les modèles IA sont gourmands en GPU et en temps, la vitesse réelle dépend donc beaucoup de la machine utilisée.", "sourceIds": ["s1"] },
+      { "en": "Personal plan's commercial-use rights are capped at organizations under $1M USD annual revenue; larger or agency use requires the Pro plan.", "fr": "Les droits d'usage commercial du plan Personal sont plafonnés aux structures de moins d'1 M$ de chiffre d'affaires annuel ; un usage en agence ou à plus grande échelle demande le plan Pro.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Premiere Pro", "slug": "adobe-premiere-pro", "sourceIds": ["s1"] },
+      { "name": "DaVinci Resolve", "slug": "davinci-resolve", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["mac", "windows"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A solo freelance video editor or small production team that needs to rescue, upscale or clean up footage (old archives, low-res source, noisy or shaky clips) without paying for a full post-production suite, and who is comfortable installing and configuring a desktop app.",
+      "fr": "Un monteur vidéo freelance ou une petite équipe de production qui doit sauver, upscaler ou nettoyer des rushs (archives, sources basse résolution, plans bruités ou tremblants) sans payer pour une suite de post-production complète, et qui est à l'aise pour installer et régler une appli de bureau."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Upscale old, low-resolution archival or personal footage to 4K for modern delivery or reuse.", "fr": "Upscaler de vieux rushs d'archive ou personnels en basse résolution vers de la 4K pour une diffusion ou une réutilisation moderne." },
+    { "en": "Clean up noisy, compressed or handheld footage (denoise, stabilize) before handing it off for editing or client delivery.", "fr": "Nettoyer un rush bruité, compressé ou tremblant (débruitage, stabilisation) avant de le transmettre pour montage ou livraison client." },
+    { "en": "Convert SDR footage to HDR, or interpolate frame rate for smoother slow-motion, as a finishing step before export.", "fr": "Convertir un rush SDR en HDR, ou interpoler la fréquence d'images pour un ralenti plus fluide, comme étape de finition avant export." }
+  ],
+  "alternatives": [
+    { "slug": "runway", "reason": { "en": "Cloud-based AI video tool with its own upscaling and enhancement features, useful for editors who prefer a browser workflow over a local desktop app.", "fr": "Outil vidéo IA basé sur le cloud avec ses propres fonctions d'amélioration et d'upscaling, utile pour qui préfère un flux dans le navigateur plutôt qu'une appli de bureau locale." } },
+    { "slug": "krea-ai", "reason": { "en": "AI image/video enhancement platform covering some of the same upscaling ground, cloud-based rather than a local render engine.", "fr": "Plateforme d'amélioration image/vidéo par IA qui couvre une partie du même terrain (upscaling), en mode cloud plutôt que moteur de rendu local." } }
+  ],
+  "missingAlternatives": [
+    { "name": "DaVinci Resolve", "officialUrl": "https://www.blackmagicdesign.com/products/davinciresolve", "reason": "Full NLE with its own noise reduction, stabilization and (via Neural Engine) some upscaling tools; the closer, free-tier-available competitor for editors already doing color/finishing there." },
+    { "name": "Neat Video", "officialUrl": "https://www.neatvideo.com", "reason": "Dedicated plugin-based denoiser for Premiere Pro/Resolve/After Effects/etc., a direct niche competitor to Topaz's denoise models for editors who only need noise reduction, not full upscaling." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Topaz is widely cited as a category-leading option for AI video upscaling/restoration, a task most editing suites still do poorly natively.", "fr": "Topaz est largement cité comme une référence pour l'upscaling/la restauration vidéo par IA, une tâche que la plupart des suites de montage gèrent encore mal nativement.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The app exposes many models, parameters and per-clip comparison previews; getting a good result takes some trial and error rather than a one-click flow.", "fr": "L'appli propose de nombreux modèles, paramètres et aperçus comparatifs par plan ; obtenir un bon résultat demande des essais plutôt qu'un flux en un clic.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Established desktop product with plugin integrations into two major NLEs (Premiere Pro, DaVinci Resolve), suggesting active real-world adoption.", "fr": "Produit de bureau établi, avec des plugins intégrés dans deux logiciels de montage majeurs (Premiere Pro, DaVinci Resolve), signe d'une adoption réelle.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines multiple specialized AI models (upscale, denoise, interpolate, stabilize, SDR-to-HDR) with local GPU and cloud rendering, well beyond a single-purpose filter.", "fr": "Combine plusieurs modèles IA spécialisés (upscale, débruitage, interpolation, stabilisation, SDR vers HDR) avec du rendu GPU local et cloud, bien au-delà d'un simple filtre.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Processing runs on your own footage files locally, so raw source material isn't locked into a vendor platform, but subscription-gated cloud credits and model access mean losing the plan removes some capabilities.", "fr": "Le traitement s'applique à tes propres fichiers en local, donc les rushs sources ne sont pas enfermés dans une plateforme, mais les crédits cloud et l'accès à certains modèles dépendent de l'abonnement, qui limite les capacités si tu résilies.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "AI video upscaling", "fr": "Upscaling vidéo par IA" },
+    "shortDescription": {
+      "en": "Desktop software (Mac/Windows) for AI video enhancement: upscaling, denoising, interpolation, and stabilization.",
+      "fr": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation."
+    },
+    "longDescription": {
+      "en": "Topaz Video (formerly marketed as Topaz Video AI) is a desktop application that runs specialized, temporally aware AI models over your footage to upscale resolution, remove noise, stabilize shake, interpolate frame rate and convert SDR to HDR. It processes files locally on your GPU, with optional cloud rendering credits included in each subscription for heavier jobs.\n\nIt plugs directly into Adobe Premiere Pro and DaVinci Resolve, so it fits into an existing edit rather than replacing it. The tradeoff is that it is subscription-only now: there is no perpetual license, cloud credits expire monthly, and the cheapest Personal tier caps commercial use to organizations under $1M in annual revenue.",
+      "fr": "Topaz Video (anciennement commercialisé sous le nom Topaz Video AI) est une application de bureau qui applique des modèles IA spécialisés, capables d'analyser plusieurs images successives, à tes rushs : upscaling de résolution, suppression du bruit, stabilisation, interpolation de fréquence d'images et conversion SDR vers HDR. Le traitement se fait en local sur ton GPU, avec des crédits de rendu cloud optionnels inclus dans chaque abonnement pour les tâches plus lourdes.\n\nL'outil s'intègre directement dans Adobe Premiere Pro et DaVinci Resolve, donc il vient compléter un montage existant plutôt que le remplacer. En contrepartie, c'est désormais uniquement de l'abonnement : plus de licence perpétuelle, les crédits cloud expirent chaque mois, et le plan Personal le moins cher plafonne l'usage commercial aux structures de moins d'1 M$ de chiffre d'affaires annuel."
+    },
+    "pros": [
+      { "en": "Strong, specialized results for upscaling and restoring low-quality or old footage, better than what most general editing suites offer out of the box.", "fr": "Résultats solides et spécialisés pour l'upscaling et la restauration de rushs de mauvaise qualité ou anciens, meilleurs que ce que propose la plupart des suites de montage généralistes." },
+      { "en": "Local processing on your own GPU means no mandatory upload of footage to a cloud service for the core rendering.", "fr": "Le traitement local sur ton propre GPU évite d'avoir à envoyer tes rushs vers un service cloud pour le rendu de base." },
+      { "en": "Plugs directly into Premiere Pro and DaVinci Resolve, fitting into an existing editing pipeline.", "fr": "S'intègre directement dans Premiere Pro et DaVinci Resolve, ce qui s'insère dans un pipeline de montage existant." }
+    ],
+    "cons": [
+      { "en": "No perpetual license anymore; subscription-only pricing with monthly-expiring cloud credits.", "fr": "Plus de licence perpétuelle ; uniquement de l'abonnement, avec des crédits cloud qui expirent chaque mois." },
+      { "en": "Personal tier's commercial-use rights are capped by organization revenue, which can force freelancers scaling up onto the pricier Pro plan.", "fr": "Les droits d'usage commercial du plan Personal sont plafonnés selon le chiffre d'affaires de la structure, ce qui peut forcer un freelance qui grandit à passer au plan Pro, plus cher." },
+      { "en": "Some top-tier models are unavailable locally on Mac and AMD GPUs, pushing those users toward paid cloud credits for the same quality.", "fr": "Certains modèles haut de gamme ne sont pas disponibles en local sur Mac et GPU AMD, ce qui pousse ces utilisateurs vers des crédits cloud payants pour obtenir la même qualité." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You regularly need to rescue, upscale or clean up footage as a discrete step in your workflow and can justify a recurring desktop-software subscription for it.", "fr": "Tu dois régulièrement sauver, upscaler ou nettoyer des rushs comme étape distincte de ton flux de travail, et un abonnement récurrent à un logiciel de bureau se justifie pour ça." },
+      "avoidIf": { "en": "You need occasional, one-off upscaling and don't want an ongoing subscription, or your GPU (especially on Mac/AMD) can't run the top-tier models locally.", "fr": "Tu n'as besoin d'upscaling qu'occasionnellement et ne veux pas d'abonnement récurrent, ou ton GPU (surtout sur Mac/AMD) ne peut pas faire tourner les modèles haut de gamme en local." },
+      "threshold": { "en": "If footage restoration/upscaling is a recurring line item in your delivery workflow, not a rare fix, the subscription starts paying for itself.", "fr": "Si la restauration/l'upscaling de rushs revient régulièrement dans ton flux de livraison, et n'est pas une correction ponctuelle rare, l'abonnement devient rentable." },
+      "billingTraps": { "en": "The no-commitment monthly plan ($59/mo) is markedly pricier than the annual-commitment options ($39/mo billed monthly, or $25/mo paid upfront) for the same Personal tier; cloud credits also expire unused each month.", "fr": "Le plan mensuel sans engagement (59 $/mois) coûte nettement plus cher que les options avec engagement annuel du même plan Personal (39 $/mois facturé mensuellement, ou 25 $/mois payé d'avance) ; les crédits cloud non utilisés expirent aussi chaque mois." }
+    }
+  },
+  "unknowns": [
+    "Exact free-trial/demo terms (whether it's time-limited or watermark-only, and any cloud-credit trial allowance) were only seen in an unopened search snippet, not confirmed on a directly fetched official page.",
+    "No changelog/release-notes URL was verified within the page budget.",
+    "Exact current Pro plan no-commitment monthly price (parallel to Personal's $59/mo) was not confirmed; only the annual-commitment Pro prices ($74/mo billed monthly, $58/mo paid upfront) were seen.",
+    "Whether existing owners of the legacy one-time/perpetual Topaz Video AI license still retain usage rights or updates was not addressed on the fetched pages."
+  ],
+  "conflicts": []
+}

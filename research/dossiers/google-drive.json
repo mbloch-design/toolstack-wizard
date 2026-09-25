@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "slug": "google-drive",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Google Drive",
+    "vendor": "Google LLC",
+    "officialUrl": "https://google.com/drive",
+    "docsUrl": "https://support.google.com/drive",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Personal storage is sold as Google One plans, shared across Drive/Gmail/Photos. A separate Google Workspace line exists for business use with different pricing; this dossier focuses on the consumer/freelancer-relevant Google One plans."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://one.google.com/about/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "Google One - Plans & Pricing" },
+    { "id": "s2", "url": "https://workspace.google.com/products/drive/", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Drive product page (Workspace)" },
+    { "id": "s3", "url": "https://blog.internxt.com/google-one-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "Google One Pricing 2026: Plans, Tiers & Alternatives" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://one.google.com/about/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "15 GB shared across Drive, Gmail, and Google Photos", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "15 GB shared across Drive, Gmail, and Google Photos.", "fr": "15 Go partagés entre Drive, Gmail et Google Photos." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "basic-100gb",
+        "name": "Google One Basic (100GB)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 1.99, "annualPerMonth": 1.67, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "100 GB shared storage across Drive, Gmail, Photos", "fr": "100 Go de stockage partagé entre Drive, Gmail et Photos" },
+          { "en": "Sharing with up to 5 family members", "fr": "Partage possible avec jusqu'à 5 membres de la famille" }
+        ],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "standard-200gb",
+        "name": "Google One Standard (200GB)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 2.99, "annualPerMonth": 2.5, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "200 GB shared storage, 3% back in Google Store", "fr": "200 Go de stockage partagé, 3% de remise sur le Google Store" }
+        ],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "premium-2tb",
+        "name": "Google One Premium (2TB)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 9.99, "annualPerMonth": 8.33, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "2 TB shared storage, 10% back in Google Store, family sharing up to 5 members", "fr": "2 To de stockage partagé, 10% de remise sur le Google Store, partage familial jusqu'à 5 membres" }
+        ],
+        "sourceIds": ["s3"]
+      }
+    ],
+    "comparePlanKey": "basic-100gb",
+    "addOns": [
+      { "en": "Google One AI Premium (2TB + Gemini Advanced access) at a higher monthly price", "fr": "Google One AI Premium (2 To + accès Gemini Advanced) à un tarif mensuel plus élevé", "sourceIds": ["s3"] }
+    ],
+    "cautions": [
+      { "en": "Storage is shared across Drive, Gmail and Photos, not dedicated Drive-only capacity, so a busy inbox eats into the quota.", "fr": "Le stockage est partagé entre Drive, Gmail et Photos, pas dédié à Drive, donc une boîte mail chargée grignote le quota.", "sourceIds": ["s1"] },
+      { "en": "Reported plan lineup varies by region and account, and Google has reportedly phased out the 200GB tier for some new signups, so the exact tiers shown at checkout may differ.", "fr": "L'offre affichée varie selon la région et le compte, et Google aurait retiré l'offre 200 Go pour certains nouveaux comptes, donc les paliers réels à l'achat peuvent différer.", "sourceIds": ["s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time collaborative editing of Docs, Sheets, Slides and 100+ other file types directly in the browser.", "fr": "Édition collaborative en temps réel des Docs, Sheets, Slides et plus de 100 autres types de fichiers directement dans le navigateur.", "sourceIds": ["s2"] },
+      { "en": "AI-powered search that surfaces relevant files based on activity and content.", "fr": "Recherche assistée par IA qui remonte les fichiers pertinents selon l'activité et le contenu.", "sourceIds": ["s2"] },
+      { "en": "Mobile scanning of receipts and documents into searchable PDFs.", "fr": "Numérisation mobile de reçus et documents en PDF consultables.", "sourceIds": ["s2"] },
+      { "en": "Desktop sync client (Drive for Desktop) for Windows and Mac with automatic backup.", "fr": "Client de synchronisation bureau (Drive pour ordinateur) pour Windows et Mac avec sauvegarde automatique.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Advanced collaboration features like shared drives, activity view, and e-signatures are gated behind Workspace Business/Enterprise plans, not available on personal Google One accounts.", "fr": "Les fonctions avancées comme les drives partagés, la vue d'activité et la signature électronique sont réservées aux offres Workspace Business/Enterprise, pas aux comptes Google One personnels.", "sourceIds": ["s2"] },
+      { "en": "Storage quota is shared with Gmail and Photos, so it is not dedicated file storage capacity.", "fr": "Le quota de stockage est partagé avec Gmail et Photos, ce n'est donc pas une capacité dédiée aux fichiers.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
+      { "name": "Zoom", "slug": "zoom", "sourceIds": ["s2"] },
+      { "name": "Salesforce", "slug": "salesforce", "sourceIds": ["s2"] },
+      { "name": "Atlassian", "slug": "atlassian", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "ios", "android", "windows", "mac"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Claire is a freelancer or small-team operator who already lives in the Google ecosystem (Gmail, Docs) and wants cheap, reliable cloud storage without learning a new tool.",
+      "fr": "Claire est freelance ou opère une petite équipe déjà installée dans l'écosystème Google (Gmail, Docs) et veut un stockage cloud fiable et bon marché sans apprendre un nouvel outil."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Backing up client files and project documents with automatic sync from a laptop.", "fr": "Sauvegarder les fichiers clients et documents de projet avec synchronisation automatique depuis un ordinateur." },
+    { "en": "Sharing folders and collaborating on Docs/Sheets with clients or teammates without extra software.", "fr": "Partager des dossiers et collaborer sur des Docs/Sheets avec des clients ou coéquipiers sans logiciel supplémentaire." },
+    { "en": "Scanning and storing receipts or contracts as searchable PDFs from a phone.", "fr": "Numériser et stocker des reçus ou contrats en PDF consultables depuis un téléphone." }
+  ],
+  "alternatives": [
+    { "slug": "dropbox", "reason": { "en": "Stronger dedicated sync engine and selective sync controls, independent of email/photos storage.", "fr": "Moteur de synchronisation dédié plus solide et contrôle de synchronisation sélective, indépendant du stockage email/photos." } },
+    { "slug": "onedrive", "reason": { "en": "Tighter fit for teams already on Microsoft 365 / Office files.", "fr": "Meilleure intégration pour les équipes déjà sur Microsoft 365 / fichiers Office." } },
+    { "slug": "box", "reason": { "en": "More enterprise-grade access controls and compliance features for regulated small teams.", "fr": "Contrôles d'accès et fonctions de conformité plus poussés pour les petites équipes réglementées." } },
+    { "slug": "sharepoint", "reason": { "en": "Deeper document governance and intranet-style structure for larger collaborative teams.", "fr": "Gouvernance documentaire plus poussée et structure type intranet pour des équipes collaboratives plus grandes." } },
+    { "slug": "wetransfer", "reason": { "en": "Simpler one-off large file sending without requiring the recipient to have an account.", "fr": "Envoi ponctuel de gros fichiers plus simple, sans exiger de compte chez le destinataire." } }
+  ],
+  "missingAlternatives": [
+    { "name": "pCloud", "officialUrl": "https://www.pcloud.com", "reason": "Genuine consumer cloud storage competitor with lifetime plans, not in the candidate list." },
+    { "name": "iCloud Drive", "officialUrl": "https://www.icloud.com", "reason": "Direct competitor for Apple-centric freelancers, absent from the candidate list." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "Cheapest entry paid tier in the category at $1.99/month for 100GB, tightly bundled with Gmail and Docs most freelancers already use.", "fr": "Palier payant d'entrée le moins cher de la catégorie à 1,99$/mois pour 100 Go, bien intégré avec Gmail et Docs déjà utilisés par la plupart des freelances.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Familiar web and mobile interface, near-zero learning curve for anyone with a Google account.", "fr": "Interface web et mobile familière, quasi aucune courbe d'apprentissage pour qui a déjà un compte Google.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Real-time collaboration and AI search make daily file work fast once set up.", "fr": "Collaboration en temps réel et recherche IA rendent le travail quotidien sur les fichiers rapide une fois configuré.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covers basic storage and collaboration well but lacks advanced access controls, shared drives, and e-signature without upgrading to Workspace Business.", "fr": "Couvre bien le stockage et la collaboration de base mais manque de contrôles d'accès avancés, de drives partagés et de signature électronique sans passer à Workspace Business.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Google Takeout allows bulk export of all Drive files, easing migration away.", "fr": "Google Takeout permet l'export en masse de tous les fichiers Drive, facilitant une migration ultérieure.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "Cloud storage, defaulted", "fr": "Stockage cloud par défaut" },
+    "shortDescription": { "en": "The standard for cloud storage.", "fr": "Le standard du stockage cloud." },
+    "longDescription": {
+      "en": "Google Drive is the file storage layer most freelancers already have without thinking about it, bundled into every Google account. For a couple of dollars a month it turns the free 15GB into a workable 100GB, shared across Drive, Gmail, and Photos, with real-time collaboration on Docs, Sheets, and Slides baked in.\n\nIt is not built to impress: there is no dedicated sync engine tuning, no granular team permissions, and the storage pool competes with your inbox. But for someone who just needs reliable, cheap, familiar storage that syncs across a laptop and a phone, it rarely needs replacing.",
+      "fr": "Google Drive est la couche de stockage que la plupart des freelances ont déjà sans y penser, intégrée à tout compte Google. Pour quelques dollars par mois, il transforme les 15 Go gratuits en 100 Go exploitables, partagés entre Drive, Gmail et Photos, avec une collaboration en temps réel sur Docs, Sheets et Slides déjà intégrée.\n\nCe n'est pas pensé pour impressionner: pas de moteur de synchronisation finement réglable, pas de permissions d'équipe granulaires, et le pool de stockage est partagé avec la boîte mail. Mais pour quelqu'un qui a juste besoin d'un stockage fiable, bon marché et familier qui se synchronise entre un ordinateur et un téléphone, il n'y a rarement besoin de le remplacer."
+    },
+    "pros": [
+      { "en": "Cheapest entry-level paid storage in the category.", "fr": "Stockage payant d'entrée le moins cher de la catégorie." },
+      { "en": "Zero learning curve if you already use Gmail or Docs.", "fr": "Aucune courbe d'apprentissage si tu utilises déjà Gmail ou Docs." },
+      { "en": "Solid real-time collaboration on documents built in.", "fr": "Collaboration en temps réel intégrée sur les documents." }
+    ],
+    "cons": [
+      { "en": "Storage quota is shared with Gmail and Photos, not dedicated to files.", "fr": "Le quota de stockage est partagé avec Gmail et Photos, pas dédié aux fichiers." },
+      { "en": "Advanced team permissions and e-signature require upgrading to Workspace Business.", "fr": "Les permissions d'équipe avancées et la signature électronique nécessitent de passer à Workspace Business." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already run on Gmail/Docs and just need cheap, reliable, synced storage.", "fr": "Tu es déjà sur Gmail/Docs et tu as juste besoin d'un stockage bon marché, fiable et synchronisé." },
+      "avoidIf": { "en": "You need granular team permissions, shared drives, or e-signature without paying for Workspace Business.", "fr": "Tu as besoin de permissions d'équipe fines, de drives partagés ou de signature électronique sans payer Workspace Business." },
+      "threshold": { "en": "Once your Gmail attachments and Photos backups start eating into the paid quota, budget for a plan tier above the entry one.", "fr": "Dès que tes pièces jointes Gmail et sauvegardes Photos grignotent le quota payant, prévois un palier au-dessus de l'offre d'entrée." },
+      "billingTraps": { "en": "The advertised plan lineup and 200GB tier availability can vary by account and region; confirm exact pricing at checkout before committing.", "fr": "L'offre affichée et la disponibilité du palier 200 Go peuvent varier selon le compte et la région ; vérifie le prix exact au moment du paiement avant de t'engager." }
+    }
+  },
+  "unknowns": [
+    "Could not confirm the current exact plan lineup and pricing directly from a rendered one.google.com/about/plans page (JS-heavy page returned only the free-tier text on fetch); prices were corroborated via web search and a tier-3 blog source instead of a direct tier-1 read of the pricing table.",
+    "Whether the 200GB Standard tier is still offered to new signups in all regions is unclear as of 2026-09-25; some sources report it removed for new accounts.",
+    "Exact current price and feature set of Google One AI Premium (Gemini-bundled tier) was not independently verified beyond a single search result ($19.99/month figure)."
+  ],
+  "conflicts": []
+}

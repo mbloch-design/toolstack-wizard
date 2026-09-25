@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-red-giant",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Red Giant",
+    "vendor": "Maxon Computer GmbH",
+    "officialUrl": "https://www.maxon.net/en/red-giant",
+    "docsUrl": "https://support.maxon.net/hc/en-us",
+    "changelogUrl": "https://www.cgchannel.com/2026/04/maxon-releases-red-giant-2026-4/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Red Giant was an independent company (Trapcode, Magic Bullet, Universe, VFX Suite) acquired by Maxon in 2019. The brand and all its plugin suites are still actively developed and sold, now bundled under a single Red Giant installer and Maxon's subscription platform (Maxon One)."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.maxon.net/en/red-giant", "tier": 1, "accessedOn": "2026-09-25", "title": "Red Giant | Professional Tools for Motion Graphics, VFX, and Video (Maxon)" },
+    { "id": "s2", "url": "https://www.maxon.net/en/buy?product=red-giant", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon Buy page - Red Giant" },
+    { "id": "s3", "url": "https://www.maxon.net/en/product-detail/red-giant", "tier": 1, "accessedOn": "2026-09-25", "title": "Red Giant product detail (Maxon)" },
+    { "id": "s4", "url": "https://support.maxon.net/hc/en-us/articles/21148760833180-How-do-I-install-the-individual-suites-within-my-Red-Giant-subscription-Magic-Bullet-Trapcode-VFX-Universe", "tier": 1, "accessedOn": "2026-09-25", "title": "How do I install the individual suites within my Red Giant subscription (Magic Bullet, Trapcode, VFX, Universe)? - Maxon Knowledge Base" },
+    { "id": "s5", "url": "https://www.cgchannel.com/2026/04/maxon-releases-red-giant-2026-4/", "tier": 2, "accessedOn": "2026-09-25", "title": "Maxon releases Red Giant 2026.4 - CG Channel" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.maxon.net/en/buy?product=red-giant",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1", "s2"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "red-giant-universe",
+        "name": "Red Giant (complet, avec Universe)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 85, "annualPerMonth": 53, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Includes the full Red Giant suite: Trapcode, Magic Bullet, VFX, Universe, and Maxon Studio project templates, installed via a single unified installer.", "fr": "Inclut toute la suite Red Giant : Trapcode, Magic Bullet, VFX, Universe et les modèles Maxon Studio, installés via un seul installeur unifié." },
+          { "en": "Monthly billing is $85/month with no commitment; annual billing is $639/year (about $53/month), the officially cheaper option.", "fr": "La facturation mensuelle est de 85 USD/mois sans engagement ; la facturation annuelle est de 639 USD/an (environ 53 USD/mois), l'option la moins chère." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "red-giant-universe",
+    "addOns": [],
+    "cautions": [
+      { "en": "No perpetual license is sold anymore; access to all plugins stops if the subscription lapses, and existing After Effects/Premiere projects using Red Giant effects become unusable without renewing.", "fr": "Plus aucune licence perpétuelle n'est vendue ; l'accès à tous les plugins s'arrête si l'abonnement expire, et les projets After Effects/Premiere utilisant des effets Red Giant deviennent inexploitables sans réabonnement.", "sourceIds": ["s2"] },
+      { "en": "Pricing may vary by region and is subject to periodic exchange-rate adjustments according to Maxon's own buy page.", "fr": "Les tarifs peuvent varier selon la région et sont sujets à des ajustements périodiques liés au taux de change, selon la page d'achat officielle de Maxon.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Trapcode suite for particle simulation, organic motion, lens flares, lighting, and 3D-aware effects inside After Effects.", "fr": "Suite Trapcode pour simulation de particules, mouvements organiques, éclats lens et effets 3D dans After Effects.", "sourceIds": ["s1", "s4"] },
+      { "en": "Universe suite delivers 100+ ready-to-use transitions, generators, and stylize/utility effects for editors working in After Effects and Premiere Pro.", "fr": "La suite Universe fournit plus de 100 transitions, générateurs et effets de style/utilitaires prêts à l'emploi pour les monteurs sous After Effects et Premiere Pro.", "sourceIds": ["s1", "s3"] },
+      { "en": "Magic Bullet suite provides professional color grading, film looks, and skin/beauty finishing tools.", "fr": "La suite Magic Bullet fournit un étalonnage professionnel, des looks pellicule et des outils de retouche peau/beauté.", "sourceIds": ["s4"] },
+      { "en": "VFX toolset covers keying, tracking, compositing and cinematic effects (fire, smoke, debris) for high-end VFX shots.", "fr": "L'ensemble VFX couvre l'incrustation (keying), le tracking, le compositing et les effets cinématiques (feu, fumée, débris) pour des plans VFX avancés.", "sourceIds": ["s4"] },
+      { "en": "All suites now install through one unified Red Giant installer and ship with monthly-ish version updates plus access to Maxon Studio project templates.", "fr": "Toutes les suites s'installent désormais via un seul installeur Red Giant unifié, avec des mises à jour régulières et l'accès aux modèles de projet Maxon Studio.", "sourceIds": ["s1", "s5"] }
+    ],
+    "limitations": [
+      { "en": "Red Giant is a plugin suite, not standalone software: it requires a compatible host application (primarily Adobe After Effects or Premiere Pro; some tools also run in DaVinci Resolve, Final Cut Pro, Avid Media Composer or Motion) to be usable at all.", "fr": "Red Giant est une suite de plugins, pas un logiciel autonome : elle nécessite une application hôte compatible (principalement Adobe After Effects ou Premiere Pro ; certains outils fonctionnent aussi dans DaVinci Resolve, Final Cut Pro, Avid Media Composer ou Motion) pour être utilisable.", "sourceIds": ["s4"] },
+      { "en": "After Effects has by far the deepest integration; other host apps get only a subset of tools and effects, which limits cross-app workflows.", "fr": "After Effects bénéficie de très loin de l'intégration la plus poussée ; les autres applications hôtes n'ont qu'un sous-ensemble des outils, ce qui limite les workflows multi-logiciels.", "sourceIds": ["s4"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s3", "s4"] },
+      { "name": "Adobe Premiere Pro", "slug": "adobe-premiere-pro", "sourceIds": ["s1", "s4"] },
+      { "name": "DaVinci Resolve", "slug": "davinci-resolve", "sourceIds": ["s4"] }
+    ],
+    "platforms": ["windows", "mac"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Freelance motion designers and video editors who already work inside After Effects or Premiere Pro and want a broad, ready-made toolkit for particles, transitions, color grading, and VFX shots without building custom effects from scratch.",
+      "fr": "Freelances motion design et monteurs vidéo qui travaillent déjà dans After Effects ou Premiere Pro et veulent une boîte à outils large et prête à l'emploi pour les particules, transitions, étalonnage et effets VFX, sans repartir de zéro."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Adding organic particle effects, light flares and 3D-aware motion graphics to an After Effects composition with Trapcode.", "fr": "Ajouter des effets de particules organiques, des éclats lumineux et des animations 3D à une composition After Effects avec Trapcode." },
+    { "en": "Dropping stylized transitions and generators from Universe into a Premiere Pro edit to speed up turnaround on client videos.", "fr": "Ajouter des transitions et générateurs stylisés d'Universe dans un montage Premiere Pro pour accélérer les livrables clients." },
+    { "en": "Color grading footage and matching skin tones with Magic Bullet before final delivery.", "fr": "Étalonner des rushs et harmoniser les teintes de peau avec Magic Bullet avant livraison finale." }
+  ],
+  "alternatives": [
+    { "slug": "motion-bro", "reason": { "en": "A cheaper, more focused After Effects transitions/effects plugin pack aimed at the same editors who mainly want Universe-style presets.", "fr": "Un pack de plugins de transitions/effets After Effects moins cher et plus ciblé, pour les monteurs qui veulent surtout des presets type Universe." } },
+    { "slug": "magic-bullet", "reason": { "en": "Listed separately because some users only need the color-grading and finishing toolset without the full Red Giant bundle.", "fr": "Listé séparément car certains utilisateurs n'ont besoin que de l'étalonnage et de la finition, sans la suite Red Giant complète." } },
+    { "slug": "davinci-resolve", "reason": { "en": "A free/paid all-in-one NLE with built-in color, VFX (Fusion) and audio tools, a partial alternative for teams willing to move editing and grading out of the Adobe/Red Giant pipeline entirely.", "fr": "Un logiciel de montage tout-en-un gratuit/payant avec étalonnage, VFX (Fusion) et audio intégrés, une alternative partielle pour sortir complètement du pipeline Adobe/Red Giant." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Boris FX Sapphire / Continuum", "officialUrl": "https://borisfx.com/products/sapphire/", "reason": "Direct high-end competitor for VFX/transition plugin suites in After Effects and Premiere Pro, not present in the candidate list." },
+    { "name": "Video Copilot Element 3D / Optical Flares", "officialUrl": "https://www.videocopilot.net/", "reason": "Widely used After Effects plugin line for 3D compositing and lens flares, competes directly with Trapcode/Universe, not present in the candidate list." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "At $53-85/month for a bundle of 50+ plugins the price is fair for studios using several suites, but steep for a freelancer who only needs one or two tools (e.g. just Universe transitions).", "fr": "À 53-85 USD/mois pour un pack de plus de 50 plugins, le prix est correct pour des studios utilisant plusieurs suites, mais élevé pour un freelance qui n'a besoin que d'un ou deux outils (par ex. seulement les transitions Universe).", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "Installation is now unified through a single Red Giant installer, but the suite still spans dozens of plugins across four toolsets, so the overall menu and settings surface stays large.", "fr": "L'installation est désormais unifiée via un seul installeur Red Giant, mais la suite reste composée de dizaines de plugins répartis sur quatre ensembles, donc l'interface globale reste dense.", "sourceIds": ["s4"] },
+      "utilisation": { "en": "Once installed, the plugins integrate directly into After Effects/Premiere Pro's native effects panel and timeline, which keeps the day-to-day workflow familiar for existing users of those apps.", "fr": "Une fois installés, les plugins s'intègrent directement dans le panneau d'effets natif et la timeline d'After Effects/Premiere Pro, ce qui garde un flux de travail familier pour les utilisateurs de ces logiciels.", "sourceIds": ["s3", "s4"] },
+      "puissance": { "en": "Red Giant's Trapcode (particles), Universe (transitions) and Magic Bullet (color) suites are long-established, well-regarded tools in the motion design and VFX industry, covering a very wide range of effect categories.", "fr": "Les suites Trapcode (particules), Universe (transitions) et Magic Bullet (couleur) de Red Giant sont des outils établis et reconnus dans l'industrie du motion design et des VFX, couvrant un très large éventail de catégories d'effets.", "sourceIds": ["s1", "s5"] },
+      "reversibilite": { "en": "Subscription-only; effects are baked into host-app project files as plugin-dependent layers, so projects become unusable or need re-editing if the subscription lapses, and there is no standalone export format to take the work elsewhere.", "fr": "Uniquement en abonnement ; les effets sont intégrés aux fichiers de projet de l'application hôte sous forme de calques dépendants du plugin, donc les projets deviennent inutilisables ou doivent être retravaillés si l'abonnement s'arrête, sans format d'export autonome pour emporter le travail ailleurs.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "VFX plugin powerhouse", "fr": "Suite VFX complète" },
+    "shortDescription": {
+      "en": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates).",
+      "fr": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates)."
+    },
+    "longDescription": {
+      "en": "Red Giant bundles four historically separate plugin suites (Trapcode, Universe, Magic Bullet and VFX) into one subscription, now installed through a single Maxon installer. It runs inside a host video app, mainly Adobe After Effects and Premiere Pro, and adds particle systems, transitions, color grading, keying and cinematic VFX that would otherwise take custom scripting to replicate.\n\nThe suite is strongest for solo motion designers and small studios that live inside the Adobe ecosystem and want a wide, ready-made effects library rather than assembling one from many smaller plugin vendors. The tradeoff is a recurring cost that only makes sense if several of the four suites get used regularly, and a plugin-dependent workflow: without a host app and an active subscription, none of it works and existing project files become unusable.",
+      "fr": "Red Giant regroupe quatre suites de plugins historiquement séparées (Trapcode, Universe, Magic Bullet et VFX) dans un seul abonnement, désormais installées via un unique installeur Maxon. Elle s'exécute dans une application vidéo hôte, principalement Adobe After Effects et Premiere Pro, et ajoute des systèmes de particules, des transitions, de l'étalonnage, de l'incrustation et des effets VFX cinématiques qu'il faudrait sinon recréer via du scripting sur mesure.\n\nLa suite est particulièrement adaptée aux motion designers solos et petites structures qui travaillent déjà dans l'écosystème Adobe et veulent une bibliothèque d'effets large et prête à l'emploi plutôt que d'assembler plusieurs petits plugins. Le compromis est un coût récurrent qui ne se justifie que si plusieurs des quatre suites sont utilisées régulièrement, et une dépendance forte à l'application hôte : sans elle et sans abonnement actif, rien ne fonctionne et les projets existants deviennent inexploitables."
+    },
+    "pros": [
+      { "en": "Very wide coverage of VFX/motion design needs (particles, transitions, color, keying) in one bundle.", "fr": "Couverture très large des besoins VFX/motion design (particules, transitions, couleur, incrustation) dans un seul pack." },
+      { "en": "Deep, native-feeling integration inside After Effects and Premiere Pro's own effects panel.", "fr": "Intégration profonde et native dans le panneau d'effets d'After Effects et Premiere Pro." },
+      { "en": "Single unified installer and regular version updates keep all four suites current together.", "fr": "Installeur unique et mises à jour régulières qui gardent les quatre suites à jour ensemble." }
+    ],
+    "cons": [
+      { "en": "Subscription-only pricing with no perpetual license option, unlike some competitors.", "fr": "Tarification uniquement par abonnement, sans option de licence perpétuelle, contrairement à certains concurrents." },
+      { "en": "Requires a compatible host app to function at all; it is not usable as standalone software.", "fr": "Nécessite une application hôte compatible pour fonctionner ; inutilisable en tant que logiciel autonome." },
+      { "en": "Poor value for someone who only needs one narrow effect category, since the price covers the whole 50+ plugin bundle.", "fr": "Mauvais rapport qualité-prix pour quelqu'un qui n'a besoin que d'une seule catégorie d'effets restreinte, car le prix couvre tout le pack de plus de 50 plugins." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already work daily in After Effects or Premiere Pro and regularly use effects from at least two or three of the four suites (particles, transitions, color, VFX).", "fr": "Tu travailles déjà quotidiennement dans After Effects ou Premiere Pro et utilises régulièrement des effets d'au moins deux ou trois des quatre suites (particules, transitions, couleur, VFX)." },
+      "avoidIf": { "en": "You only need one specific effect type (e.g. just transitions, or just color grading) or don't already use a compatible Adobe host app.", "fr": "Tu n'as besoin que d'un seul type d'effet précis (par ex. juste des transitions, ou juste l'étalonnage) ou tu n'utilises pas déjà une application Adobe hôte compatible." },
+      "threshold": { "en": "If you're using fewer than two of the four bundled suites on a regular basis, a narrower plugin (e.g. Universe alone, or a single Trapcode tool) is usually more cost-effective.", "fr": "Si tu utilises moins de deux des quatre suites incluses sur une base régulière, un plugin plus ciblé (par ex. Universe seul, ou un seul outil Trapcode) est généralement plus rentable." },
+      "billingTraps": { "en": "Monthly billing at $85/month is nearly 60% more expensive per month than the $53/month effective rate on annual billing; check whether canceling mid-cycle keeps access until the period ends before committing.", "fr": "La facturation mensuelle à 85 USD/mois coûte près de 60% de plus par mois que le tarif effectif de 53 USD/mois en facturation annuelle ; vérifie si l'annulation en cours de cycle conserve l'accès jusqu'à la fin de la période avant de t'engager." }
+    }
+  },
+  "unknowns": [
+    "Exact wording and any usage limits of the 14-day trial specifically for Red Giant (vs. the broader Maxon One trial) could not be confirmed; the official pages mention a 14-day trial that bundles Cinema 4D, Redshift and the full Maxon One suite rather than a Red-Giant-only trial page.",
+    "Whether a team/multi-seat licensing discount or floating license option exists beyond the per-seat subscription was not found on the pages accessed.",
+    "Full current list of all 50+ individual plugins and their exact host-app compatibility matrix (After Effects vs Premiere Pro vs DaVinci Resolve vs Final Cut Pro vs Avid) was not fully verifiable within the page budget; partial confirmation came from a Maxon Knowledge Base support article rather than the primary product page."
+  ],
+  "conflicts": []
+}

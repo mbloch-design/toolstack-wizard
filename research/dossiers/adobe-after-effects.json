@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-after-effects",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Adobe After Effects",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/aftereffects.html",
+    "docsUrl": "https://helpx.adobe.com/after-effects/user-guide.html",
+    "changelogUrl": "https://helpx.adobe.com/after-effects/using/whats-new.html",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/aftereffects.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe After Effects - product & pricing page" },
+    { "id": "s2", "url": "https://www.adobe.com/creativecloud/plans.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Creative Cloud - plans & pricing" },
+    { "id": "s3", "url": "https://www.justcancel.io/blog/cancel-adobe-creative-cloud-2026", "tier": 2, "accessedOn": "2026-09-25", "title": "How to Cancel Adobe Creative Cloud in 2026 (Avoid the Early Termination Fee)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/aftereffects.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "after-effects-single-app",
+        "name": "After Effects (single app, individual)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 22.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Annual commitment billed monthly; standalone plan (After Effects only, no other Creative Cloud apps).", "fr": "Engagement annuel facturé mensuellement ; plan autonome (After Effects seul, sans les autres apps Creative Cloud)." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "after-effects-teams",
+        "name": "After Effects (team license)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 37.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Per-license price for business use; annual commitment billed monthly.", "fr": "Prix par licence pour usage professionnel ; engagement annuel facturé mensuellement." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "creative-cloud-pro-individual",
+        "name": "Creative Cloud Pro (all apps, individual)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 69.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Bundle of 20+ Creative Cloud apps including After Effects, plus Firefly generative AI credits. Promotional price of $34.99/mo for the first 3 months seen at time of research (excluded from compare price).", "fr": "Bouquet de plus de 20 applications Creative Cloud incluant After Effects, plus des crédits IA générative Firefly. Un tarif promo de 34,99 $/mois observé pour les 3 premiers mois lors de la recherche (exclu du prix de comparaison)." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "after-effects-single-app",
+    "addOns": [],
+    "cautions": [
+      { "en": "The advertised monthly price is billed under a mandatory 12-month commitment (\"annual, billed monthly\"), not a flexible month-to-month plan.", "fr": "Le prix mensuel affiché correspond à un engagement obligatoire de 12 mois (\"annuel, facturé mensuellement\"), pas à un abonnement mensuel sans engagement.", "sourceIds": ["s1", "s2"] },
+      { "en": "Cancelling after the 14-day refund window but before the 12 months are up triggers an early termination fee (commonly reported as 50% of the remaining months owed); this is not detailed on the pricing page itself and should be re-verified on Adobe's official subscription terms page, which returned an access error during this research pass.", "fr": "Annuler après les 14 jours de remboursement mais avant la fin des 12 mois déclenche des frais de résiliation anticipée (généralement 50 % des mensualités restantes) ; ce n'est pas détaillé sur la page tarifs elle-même et doit être revérifié sur la page officielle des conditions d'abonnement Adobe, inaccessible lors de cette recherche.", "sourceIds": ["s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Motion graphics and text animation with a keyframe-based timeline and expressions engine.", "fr": "Motion design et animation de texte via une timeline à keyframes et un moteur d'expressions.", "sourceIds": ["s1"] },
+      { "en": "Compositing and visual effects tools, including chroma keying, rotoscoping and AI-assisted object matting.", "fr": "Compositing et effets visuels, avec incrustation chroma, rotoscopie et détourage d'objet assisté par IA.", "sourceIds": ["s1"] },
+      { "en": "3D animation workspace for building and animating scenes with shape layers and materials.", "fr": "Espace de travail 3D pour construire et animer des scènes avec calques de formes et matériaux.", "sourceIds": ["s1"] },
+      { "en": "Content-Aware Fill for removing objects or replacing backgrounds across a video clip.", "fr": "Content-Aware Fill pour supprimer des objets ou remplacer des arrière-plans sur un clip vidéo.", "sourceIds": ["s1"] },
+      { "en": "Deep integration with other Creative Cloud apps (Premiere Pro, Illustrator, Photoshop) via Dynamic Link and shared libraries.", "fr": "Intégration poussée avec les autres apps Creative Cloud (Premiere Pro, Illustrator, Photoshop) via Dynamic Link et les bibliothèques partagées.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Windows and macOS only; no native Linux support and no web/browser version.", "fr": "Windows et macOS uniquement ; pas de support Linux natif ni de version web/navigateur.", "sourceIds": ["s1"] },
+      { "en": "No permanent free tier; full functionality requires an ongoing paid subscription after the 7-day trial.", "fr": "Aucune offre gratuite permanente ; l'usage complet nécessite un abonnement payant continu après l'essai de 7 jours.", "sourceIds": ["s1"] },
+      { "en": "Steep learning curve and heavy hardware requirements (GPU/RAM) for complex compositions.", "fr": "Courbe d'apprentissage raide et exigences matérielles élevées (GPU/RAM) pour les compositions complexes.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Premiere Pro", "slug": "adobe-premiere-pro", "sourceIds": ["s1"] },
+      { "name": "Adobe Photoshop", "slug": "adobe-photoshop", "sourceIds": ["s1"] },
+      { "name": "Adobe Illustrator", "slug": "adobe-illustrator", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "mac"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Freelance motion designers, video editors and small creative studios producing branded video content, explainer animations or VFX shots who need an industry-standard tool that integrates with the rest of an Adobe-based pipeline.",
+      "fr": "Motion designers freelances, monteurs vidéo et petits studios créatifs produisant du contenu vidéo de marque, des animations explicatives ou des effets visuels, qui ont besoin d'un outil standard du secteur intégré au reste d'un pipeline Adobe."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Animating title sequences, lower thirds and Motion Graphics templates for video content.", "fr": "Animer génériques, bandeaux de texte et templates Motion Graphics pour du contenu vidéo." },
+    { "en": "Compositing VFX shots (green screen keying, object removal, tracking) for short films or ads.", "fr": "Compositer des plans VFX (incrustation fond vert, suppression d'objets, tracking) pour des courts-métrages ou publicités." },
+    { "en": "Building animated explainer videos and social media motion content for a brand or client.", "fr": "Créer des vidéos explicatives animées et du contenu motion pour réseaux sociaux, pour une marque ou un client." }
+  ],
+  "alternatives": [
+    { "slug": "davinci-resolve", "reason": { "en": "Overlaps on VFX/compositing (Fusion page) and color grading, with a genuinely usable free tier, though its motion-graphics toolset is less mature than After Effects.", "fr": "Recoupe le VFX/compositing (page Fusion) et l'étalonnage, avec une offre gratuite réellement utilisable, même si ses outils de motion design sont moins aboutis qu'After Effects." } },
+    { "slug": "rive", "reason": { "en": "Purpose-built for lightweight, interactive/real-time motion graphics shipped into apps and web, a different workflow than After Effects' rendered-video output.", "fr": "Conçu pour du motion graphics léger et interactif/temps réel destiné aux apps et au web, un workflow différent de la sortie vidéo rendue d'After Effects." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Blender (Grease Pencil / VFX)", "officialUrl": "https://www.blender.org", "reason": "Free, open-source 3D/VFX/compositing suite genuinely competing with After Effects on VFX work; not present in the candidate list for this pass." },
+    { "name": "Nuke", "officialUrl": "https://www.foundry.com/products/nuke-family/nuke", "reason": "Industry-standard node-based compositor used as a direct AE alternative in VFX pipelines; absent from the candidate list." },
+    { "name": "Cavalry", "officialUrl": "https://cavalry.scenegroup.co", "reason": "Motion-graphics-specific competitor increasingly cited as an AE alternative for 2D/3D motion design; absent from the candidate list." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 5,
+    "puissance": 5,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "Industry-standard motion/VFX toolset bundled with tight Creative Cloud integration, but the mandatory subscription with an annual commitment limits flexibility for occasional users.", "fr": "Boîte à outils motion/VFX standard du secteur avec une intégration Creative Cloud poussée, mais l'abonnement obligatoire avec engagement annuel limite la flexibilité pour un usage occasionnel.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "Keyframe/expression-based workflow and a dense UI give After Effects a notoriously steep learning curve compared to simpler motion tools.", "fr": "Le workflow basé sur keyframes/expressions et une interface dense donnent à After Effects une courbe d'apprentissage réputée raide, comparée à des outils de motion plus simples.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Once mastered, it is used daily by motion designers as the default tool for nearly any animation or compositing task in a video pipeline.", "fr": "Une fois maîtrisé, c'est l'outil par défaut utilisé quotidiennement par les motion designers pour quasiment toute tâche d'animation ou de compositing dans un pipeline vidéo.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Deep compositing, 3D, expressions and plugin ecosystem (Red Giant, aescripts) make it one of the most capable motion/VFX applications on the market.", "fr": "Compositing poussé, 3D, expressions et écosystème de plugins (Red Giant, aescripts) en font l'une des applications de motion/VFX les plus puissantes du marché.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Projects are stored as proprietary .aep files with no clean cross-tool export; migrating a complex project to another tool means largely rebuilding it.", "fr": "Les projets sont stockés en fichiers .aep propriétaires sans export propre vers un autre outil ; migrer un projet complexe vers un autre logiciel implique de le reconstruire en grande partie.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "Motion & VFX standard", "fr": "Référence motion & VFX" },
+    "shortDescription": {
+      "en": "Adobe's visual effects, motion graphics, and compositing application (Windows/macOS).",
+      "fr": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS)."
+    },
+    "longDescription": {
+      "en": "After Effects is the industry-default tool for motion graphics, title animation and VFX compositing, used by freelancers and studios that need keyframe-precise control, a deep expressions engine, and a mature plugin ecosystem. It plugs directly into the rest of the Creative Cloud pipeline, which matters for anyone already cutting in Premiere Pro or designing in Illustrator or Photoshop.\n\nThat power comes at the cost of a genuinely steep learning curve and a subscription-only model: there is no permanent free tier, only a 7-day full-featured trial, and the standard plan is an annual commitment billed monthly rather than a flexible month-to-month subscription.\n\nProjects live in a proprietary .aep format, so there is no clean path to export a complex composition into another tool if you decide to switch later.",
+      "fr": "After Effects est l'outil de référence du secteur pour le motion design, l'animation de titrage et le compositing VFX, utilisé par les freelances et studios qui ont besoin d'un contrôle précis à la keyframe, d'un moteur d'expressions poussé et d'un écosystème de plugins mature. Il s'intègre directement au reste du pipeline Creative Cloud, ce qui compte pour qui monte déjà sous Premiere Pro ou conçoit sous Illustrator ou Photoshop.\n\nCette puissance a un coût : une courbe d'apprentissage réellement raide et un modèle uniquement par abonnement, sans offre gratuite permanente, avec seulement un essai complet de 7 jours, et un plan standard vendu comme un engagement annuel facturé mensuellement plutôt qu'un abonnement mensuel flexible.\n\nLes projets vivent dans un format .aep propriétaire, donc il n'existe pas de chemin propre pour exporter une composition complexe vers un autre outil si tu changes d'avis plus tard."
+    },
+    "pros": [
+      { "en": "Industry-standard capability for motion graphics, animation and VFX compositing.", "fr": "Capacités standard du secteur pour le motion design, l'animation et le compositing VFX." },
+      { "en": "Deep, mature ecosystem of plugins, templates and tutorials.", "fr": "Écosystème mature et profond de plugins, templates et tutoriels." },
+      { "en": "Tight integration with Premiere Pro, Photoshop and Illustrator for a full Adobe pipeline.", "fr": "Intégration étroite avec Premiere Pro, Photoshop et Illustrator pour un pipeline Adobe complet." }
+    ],
+    "cons": [
+      { "en": "No permanent free plan, and the standard pricing is an annual commitment billed monthly, not month-to-month.", "fr": "Aucune offre gratuite permanente, et le tarif standard est un engagement annuel facturé mensuellement, pas un abonnement mois par mois." },
+      { "en": "Steep learning curve that requires real time investment before becoming productive.", "fr": "Courbe d'apprentissage raide qui demande un vrai investissement en temps avant d'être productif." },
+      { "en": "Proprietary project format with no clean export path to competing tools.", "fr": "Format de projet propriétaire sans chemin d'export propre vers des outils concurrents." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You do recurring motion-graphics or VFX compositing work and already live in the Adobe ecosystem.", "fr": "Tu fais régulièrement du motion design ou du compositing VFX et tu es déjà dans l'écosystème Adobe." },
+      "avoidIf": { "en": "You need occasional, lightweight animation and don't want a 12-month billing commitment.", "fr": "Tu as besoin d'animation occasionnelle et légère, sans vouloir d'engagement de facturation sur 12 mois." },
+      "threshold": { "en": "If you're not producing motion/VFX work at least a few times a month, the subscription cost and learning curve are hard to justify.", "fr": "Si tu ne produis pas de motion/VFX au moins quelques fois par mois, le coût de l'abonnement et la courbe d'apprentissage sont difficiles à justifier." },
+      "billingTraps": { "en": "The visible monthly price hides a 12-month commitment ('annual, billed monthly'); cancelling after the 14-day refund window but before the year is up is commonly reported to trigger an early termination fee of roughly 50% of the remaining months, though this figure should be re-verified against Adobe's official subscription terms page.", "fr": "Le prix mensuel affiché masque un engagement de 12 mois ('annuel, facturé mensuellement') ; annuler après les 14 jours de remboursement mais avant la fin de l'année déclenche généralement, selon des sources tierces, des frais de résiliation anticipée d'environ 50 % des mensualités restantes, un chiffre à revérifier sur la page officielle des conditions d'abonnement Adobe." }
+    }
+  },
+  "unknowns": [
+    "Official Adobe subscription-terms page (helpx.adobe.com/manage-account/using/creative-cloud-subscription-terms.html) returned an access error (403) during this research pass; the exact early-termination-fee percentage is sourced from a third-party (tier 3) blog and should be re-verified against an official Adobe source.",
+    "helpx.adobe.com/after-effects/user-guide.html also returned a 403 during this pass; docsUrl/changelogUrl are recorded from prior knowledge of Adobe's site structure but were not freshly verified.",
+    "Whether the After Effects team plan price ($37.99/mo) is still current versus the $99.99/mo Creative Cloud Pro for teams bundle was not cross-checked beyond the seed data and the product page."
+  ],
+  "conflicts": []
+}

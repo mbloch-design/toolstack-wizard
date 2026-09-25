@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-podcast-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Adobe Podcast",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://podcast.adobe.com",
+    "docsUrl": "https://helpx.adobe.com/podcast/using/pricing-faq.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Adobe now brands the product simply 'Adobe Podcast' (AI audio recording and editing on the web). 'Adobe Podcast AI' is used informally/in marketing to describe the AI features (Enhance Speech, Mic Check) but is not the official product name. It is a standalone web product, distinct from Adobe Express and Premiere, though its paid tier bundles Adobe Express Premium."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://podcast.adobe.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Podcast - AI audio recording and editing, all on the web" },
+    { "id": "s2", "url": "https://podcast.adobe.com/en/enhance", "tier": 1, "accessedOn": "2026-09-25", "title": "Enhance Speech from Adobe | Free AI filter for cleaning up spoken audio" },
+    { "id": "s3", "url": "https://podcast.adobe.com/en/enhance/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Podcast pricing (official, JS-rendered)" },
+    { "id": "s4", "url": "https://comparedge.com/tools/adobe-podcast/pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Adobe Podcast (Enhance) Pricing 2026: Free Plan from $9.99/mo" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://podcast.adobe.com/en/enhance/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": true,
+      "limits": "Audio-only enhancement (no video), single-file processing, files capped at 30 minutes / 500 MB, 1 hour of enhancement per day, Studio downloads capped at 30-minute projects twice a day, no original-recording downloads, audiograms are branded.",
+      "sourceIds": ["s2", "s4"]
+    },
+    "trial": { "days": 30, "sourceIds": ["s4"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Audio only, 30 min / 500 MB files, 1h/day enhancement", "fr": "Audio uniquement, fichiers de 30 min / 500 Mo max, 1h d'amélioration par jour" },
+          { "en": "Studio downloads limited to 30-minute projects, twice a day", "fr": "Téléchargements Studio limités à des projets de 30 minutes, deux fois par jour" }
+        ],
+        "sourceIds": ["s2", "s4"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Video support (MP4/MOV), batch uploads, files up to 1 GB, up to 4 hours enhancement per day", "fr": "Support vidéo (MP4/MOV), envois par lot, fichiers jusqu'à 1 Go, jusqu'à 4h d'amélioration par jour" },
+          { "en": "Unlimited Studio downloads, speaker-separated stems, unbranded exports", "fr": "Téléchargements Studio illimités, pistes séparées par intervenant, exports sans branding" },
+          { "en": "Includes Adobe Express Premium design tools at no extra cost", "fr": "Inclut les outils de design Adobe Express Premium sans coût supplémentaire" }
+        ],
+        "sourceIds": ["s4"]
+      }
+    ],
+    "comparePlanKey": "premium",
+    "addOns": [],
+    "cautions": [
+      { "en": "Billed monthly only on podcast.adobe.com; no annual discount is offered for this specific plan, unlike most Adobe Creative Cloud subscriptions.", "fr": "Facturation mensuelle uniquement sur podcast.adobe.com ; pas de remise annuelle pour ce plan précis, contrairement à la plupart des abonnements Creative Cloud.", "sourceIds": ["s4"] },
+      { "en": "Full Creative Cloud plans (Adobe Express, Premiere Pro) are separate, more expensive subscriptions and are not required to use Adobe Podcast's core Enhance Speech / Studio features.", "fr": "Les abonnements Creative Cloud complets (Adobe Express, Premiere Pro) sont des offres séparées et plus chères, non nécessaires pour utiliser les fonctions principales d'Adobe Podcast (Enhance Speech / Studio).", "sourceIds": ["s1", "s4"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Enhance Speech: AI filter that removes background noise, echo and room reverb from spoken audio in one click, free with an Adobe account.", "fr": "Enhance Speech : filtre IA qui supprime bruit de fond, écho et réverbération d'une voix en un clic, gratuit avec un compte Adobe.", "sourceIds": ["s2"] },
+      { "en": "Studio: browser-based multitrack recording and editing for podcasts, with transcript-based editing and remote co-recording.", "fr": "Studio : enregistrement et montage multipiste dans le navigateur pour podcasts, avec édition par transcription et co-enregistrement à distance.", "sourceIds": ["s1"] },
+      { "en": "Mic Check: quick pre-recording test of microphone setup and room acoustics before a session.", "fr": "Mic Check : test rapide du micro et de l'acoustique de la pièce avant un enregistrement.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free tier is capped tightly (30-minute/500MB files, 1h/day enhancement, no video), pushing regular users toward the $9.99/month Premium plan.", "fr": "Le plan gratuit est très limité (fichiers 30 min/500 Mo, 1h d'amélioration par jour, pas de vidéo), ce qui pousse les utilisateurs réguliers vers le plan Premium à 9,99 $/mois.", "sourceIds": ["s2", "s4"] },
+      { "en": "No documented public API; the product is a hosted web app rather than an SDK or integrable enhancement engine.", "fr": "Aucune API publique documentée ; le produit est une application web hébergée et non un SDK ou moteur d'amélioration intégrable.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Express", "slug": "adobe-express", "sourceIds": ["s4"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A solo freelancer or small-team creator (podcaster, YouTuber, coach) who records voice with imperfect gear and needs quick, no-training audio cleanup and light podcast production without hiring an audio engineer.",
+      "fr": "Un freelance ou une petite équipe créative (podcasteur, YouTubeur, coach) qui enregistre sa voix avec un matériel imparfait et a besoin d'un nettoyage audio rapide, sans formation, et d'une production podcast légère sans engager un ingénieur du son."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Cleaning up a phone or laptop-mic voice recording before publishing a podcast episode or video voiceover.", "fr": "Nettoyer un enregistrement vocal fait au téléphone ou au micro d'un ordinateur portable avant de publier un épisode de podcast ou une voix off vidéo." },
+    { "en": "Recording a remote podcast interview directly in the browser with Studio, without extra recording software.", "fr": "Enregistrer une interview de podcast à distance directement dans le navigateur avec Studio, sans logiciel d'enregistrement supplémentaire." },
+    { "en": "Testing a new microphone and room setup with Mic Check before an important recording session.", "fr": "Tester un nouveau micro et l'acoustique d'une pièce avec Mic Check avant une session d'enregistrement importante." }
+  ],
+  "alternatives": [
+    { "slug": "descript", "reason": { "en": "Full podcast/video editor with AI transcription and its own studio-quality voice enhancement, a step up from Adobe Podcast's single-purpose cleanup tool.", "fr": "Éditeur complet de podcast/vidéo avec transcription IA et sa propre amélioration vocale, une alternative plus complète que l'outil de nettoyage mono-fonction d'Adobe Podcast." } },
+    { "slug": "auphonic", "reason": { "en": "Automated audio post-production (leveling, noise reduction, loudness) aimed specifically at podcasters, with API access Adobe Podcast lacks.", "fr": "Post-production audio automatisée (égalisation, réduction de bruit, normalisation) pensée pour les podcasteurs, avec un accès API qu'Adobe Podcast n'offre pas." } },
+    { "slug": "cleanvoice", "reason": { "en": "Focused specifically on removing filler words, mouth noises and silences from podcast audio, a narrower but deeper cleanup than Enhance Speech.", "fr": "Spécialisé dans la suppression des mots de remplissage, bruits de bouche et silences dans l'audio de podcast, un nettoyage plus ciblé et poussé qu'Enhance Speech." } },
+    { "slug": "elevenlabs", "reason": { "en": "AI voice generation and cloning platform relevant for creators who need synthetic voiceover or dubbing beyond simple noise cleanup.", "fr": "Plateforme de génération et clonage de voix IA utile pour les créateurs ayant besoin de voix off synthétique ou de doublage au-delà du simple nettoyage audio." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The core Enhance Speech filter is free and solves a real, common problem (bad room/mic audio) in one click, and Premium at $9.99/month is cheap next to a full DAW workflow or hiring an editor.", "fr": "Le filtre Enhance Speech est gratuit et résout un problème courant (mauvais son de pièce/micro) en un clic ; Premium à 9,99 $/mois reste bon marché comparé à un vrai DAW ou à un monteur audio.", "sourceIds": ["s2", "s4"] },
+      "simplicite": { "en": "Drag a file in, click enhance, download; no account setup beyond a free Adobe ID and no learning curve for the core filter.", "fr": "Glisser un fichier, cliquer sur enhance, télécharger ; aucune configuration hormis un compte Adobe gratuit et aucune courbe d'apprentissage pour le filtre principal.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers audibly cleaner speech reliably for the common case (voice + background noise/room echo), though free-tier caps (30 min, 1h/day) can force workarounds for heavier users.", "fr": "Produit une voix nettement plus propre de façon fiable dans le cas courant (voix + bruit de fond/écho), mais les limites du plan gratuit (30 min, 1h/jour) obligent parfois à des contournements pour les utilisateurs intensifs.", "sourceIds": ["s2", "s4"] },
+      "puissance": { "en": "Good for cleanup and light multitrack recording, but it is not a full DAW: no advanced mixing, no plugin ecosystem, no API for programmatic processing.", "fr": "Correct pour le nettoyage et l'enregistrement multipiste léger, mais ce n'est pas un DAW complet : pas de mixage avancé, pas d'écosystème de plugins, pas d'API pour un traitement programmatique.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Enhanced files download as standard audio/video files with no lock-in, but there is no API or bulk-export tooling to automate migration away from the platform.", "fr": "Les fichiers améliorés se téléchargent en formats audio/vidéo standards sans verrouillage, mais il n'y a ni API ni outil d'export en masse pour automatiser une migration hors de la plateforme.", "sourceIds": ["s1", "s2"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "Instant voice cleanup", "fr": "Voix nette, instantané" },
+    "shortDescription": {
+      "en": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality.",
+      "fr": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off)."
+    },
+    "longDescription": {
+      "en": "Adobe Podcast is a free, browser-based tool built around Enhance Speech, an AI filter that strips background noise and room echo from voice recordings in a single click. It also includes Mic Check for testing your setup before recording and Studio, a lightweight multitrack recording and transcript-based editing tool for podcasts.\n\nThe core cleanup feature is genuinely free with just an Adobe account, but usage caps (30-minute files, 1 hour of processing per day, audio only) push regular creators toward the $9.99/month Premium plan, which adds video support, bigger files, unlimited Studio downloads and bundles Adobe Express Premium.\n\nIt is best understood as a fast fix for one specific problem, cleaning up imperfect voice audio, rather than a full podcast production suite. Creators who need deeper editing, automation or an API should look at more specialized tools.",
+      "fr": "Adobe Podcast est un outil gratuit dans le navigateur construit autour d'Enhance Speech, un filtre IA qui retire le bruit de fond et l'écho d'une pièce sur un enregistrement vocal en un seul clic. Il inclut aussi Mic Check pour tester son installation avant d'enregistrer, et Studio, un outil léger d'enregistrement multipiste et de montage par transcription pour les podcasts.\n\nLa fonction de nettoyage principale est réellement gratuite avec un simple compte Adobe, mais les limites d'usage (fichiers de 30 minutes, 1h de traitement par jour, audio uniquement) poussent les créateurs réguliers vers le plan Premium à 9,99 $/mois, qui ajoute le support vidéo, des fichiers plus gros, des téléchargements Studio illimités et inclut Adobe Express Premium.\n\nÀ retenir : c'est une solution rapide pour un problème précis, nettoyer un audio vocal imparfait, pas une suite de production podcast complète. Les créateurs ayant besoin d'un montage plus poussé, d'automatisation ou d'une API devraient regarder des outils plus spécialisés."
+    },
+    "pros": [
+      { "en": "Genuinely free core feature with no credit card required to start", "fr": "Fonction principale réellement gratuite, sans carte bancaire pour commencer" },
+      { "en": "One-click result with no audio engineering skill needed", "fr": "Résultat en un clic, sans compétence en ingénierie audio" },
+      { "en": "Premium tier is cheap and bundles Adobe Express Premium design tools", "fr": "Le plan Premium est peu cher et inclut les outils de design Adobe Express Premium" }
+    ],
+    "cons": [
+      { "en": "Free tier limits (30 min/day, audio only) are restrictive for regular podcasters", "fr": "Les limites du plan gratuit (30 min/jour, audio uniquement) sont contraignantes pour un podcasteur régulier" },
+      { "en": "No API and no advanced mixing, so it does not replace a real DAW or podcast editor for complex projects", "fr": "Pas d'API ni de mixage avancé, donc ça ne remplace pas un vrai DAW ou un éditeur de podcast pour des projets complexes" }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You occasionally need to clean up voice recordings and want a free, instant, no-skill fix.", "fr": "Tu as régulièrement besoin de nettoyer des enregistrements vocaux et veux une solution gratuite, instantanée, sans compétence requise." },
+      "avoidIf": { "en": "You produce podcasts daily and need bulk processing, an API, or advanced mixing controls.", "fr": "Tu produis des podcasts quotidiennement et as besoin de traitement en masse, d'une API ou de contrôles de mixage avancés." },
+      "threshold": { "en": "If you hit the 1-hour daily enhancement cap or need video support more than occasionally, Premium at $9.99/month pays for itself fast.", "fr": "Si tu atteins la limite quotidienne d'1h d'amélioration ou as besoin du support vidéo plus qu'occasionnellement, Premium à 9,99 $/mois se rentabilise vite." },
+      "billingTraps": { "en": "Premium is billed monthly only on podcast.adobe.com, with no annual discount for this specific plan; do not confuse it with a full Creative Cloud subscription, which is separate and more expensive.", "fr": "Premium est facturé uniquement au mois sur podcast.adobe.com, sans remise annuelle pour ce plan précis ; ne le confonds pas avec un abonnement Creative Cloud complet, qui est séparé et plus cher." }
+    }
+  },
+  "unknowns": [
+    "Official podcast.adobe.com pages are JavaScript-rendered and could not be fully scraped via WebFetch; pricing figures ($9.99/month, free-tier limits) are corroborated via a third-party pricing aggregator (comparedge.com) rather than directly read off the raw official HTML.",
+    "helpx.adobe.com/podcast/using/pricing-faq.html returned HTTP 403 and could not be accessed to cross-verify official FAQ pricing language.",
+    "No official annual pricing option was found for the Premium plan; unclear if this is permanent policy or a regional/temporary limitation.",
+    "Exact current status of 'Adobe Podcast AI' as a marketing label (vs. the official 'Adobe Podcast' product name) was not found in an explicit Adobe statement; inferred from page titles."
+  ],
+  "conflicts": []
+}

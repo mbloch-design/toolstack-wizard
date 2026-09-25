@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "slug": "basecamp",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Basecamp",
+    "vendor": "37signals, LLC",
+    "officialUrl": "https://basecamp.com",
+    "docsUrl": "https://3.basecamp-help.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://basecamp.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Basecamp Pricing" },
+    { "id": "s2", "url": "https://basecamp.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Basecamp homepage" },
+    { "id": "s3", "url": "https://basecamp.com/features", "tier": 1, "accessedOn": "2026-09-25", "title": "Basecamp Features" },
+    { "id": "s4", "url": "https://www.capterra.com/p/56808/Basecamp/pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "Basecamp Pricing | Capterra" },
+    { "id": "s5", "url": "https://basecamp.com/apps", "tier": 1, "accessedOn": "2026-09-25", "title": "Basecamp apps for iOS, Android, Mac, Windows" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://basecamp.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": true,
+      "limits": "1 active project, up to 20 people, 1 GB storage, no time limit",
+      "sourceIds": ["s1", "s4"]
+    },
+    "trial": { "days": 30, "sourceIds": ["s1", "s4"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 active project, up to 20 people, 1 GB storage, no time limit.", "fr": "1 projet actif, jusqu'à 20 personnes, 1 Go de stockage, sans limite de temps." }
+        ],
+        "sourceIds": ["s1", "s4"]
+      },
+      {
+        "key": "plus",
+        "name": "Basecamp Plus",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited projects, 500 GB storage per account", "fr": "Projets illimités, 500 Go de stockage par compte" },
+          { "en": "Billed per user, per month, month-to-month", "fr": "Facturé par utilisateur et par mois, sans engagement" }
+        ],
+        "sourceIds": ["s1", "s4"]
+      },
+      {
+        "key": "pro-unlimited",
+        "name": "Basecamp Pro Unlimited",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 349, "annualPerMonth": 299, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited users and projects for one flat account fee", "fr": "Utilisateurs et projets illimités pour un tarif de compte unique" },
+          { "en": "5 TB storage, priority 24/7 support, 1:1 onboarding", "fr": "5 To de stockage, support prioritaire 24/7, accompagnement personnalisé au démarrage" }
+        ],
+        "sourceIds": ["s1", "s4"]
+      }
+    ],
+    "comparePlanKey": "plus",
+    "addOns": [
+      { "en": "Extra storage: +5 TB for $100/month", "fr": "Stockage supplémentaire : +5 To pour 100 $/mois", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pro Unlimited's advertised $299/mo price only applies to annual billing; monthly billing is $349/mo.", "fr": "Le prix affiché de 299 $/mois pour Pro Unlimited ne s'applique qu'à la facturation annuelle ; en mensuel, c'est 349 $/mois.", "sourceIds": ["s1", "s4"] },
+      { "en": "For a single freelancer or very small team, Plus at $15/user/mo is far cheaper than Pro Unlimited; the flat plan only pays off once headcount is roughly 20+ users.", "fr": "Pour un freelance seul ou une toute petite équipe, le plan Plus à 15 $/utilisateur/mois est bien moins cher que Pro Unlimited ; le plan à tarif fixe ne devient rentable qu'à partir d'environ 20 utilisateurs.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Message boards keep announcements and discussion threads attached to a single post, avoiding scattered email chains.", "fr": "Les tableaux de messages regroupent annonces et discussions autour d'un même post, évitant les fils d'e-mails éparpillés.", "sourceIds": ["s3"] },
+      { "en": "To-do lists with assignees, due dates, file attachments and subtasks give simple task tracking without a steep learning curve.", "fr": "Les listes de tâches avec responsables, échéances, pièces jointes et sous-tâches offrent un suivi simple sans courbe d'apprentissage.", "sourceIds": ["s3"] },
+      { "en": "Built-in real-time chat (Campfire), a shared calendar, Hill Charts for visual progress, and Card Tables (kanban) cover most day-to-day team coordination in one app.", "fr": "Un chat en temps réel intégré (Campfire), un calendrier partagé, les Hill Charts pour visualiser l'avancement et les Card Tables (kanban) couvrent la coordination d'équipe au quotidien dans une seule appli.", "sourceIds": ["s3"] },
+      { "en": "Automatic Check-ins collect recurring status updates from the team without needing a live meeting.", "fr": "Les Check-ins automatiques récoltent les points d'avancement récurrents de l'équipe sans réunion en direct.", "sourceIds": ["s3"] }
+    ],
+    "limitations": [
+      { "en": "No true resource management, Gantt charts, time tracking, or advanced reporting; Basecamp deliberately stays simple rather than covering these power-user PM features.", "fr": "Pas de gestion de ressources avancée, de diagrammes de Gantt, de suivi du temps natif ni de reporting poussé ; Basecamp reste volontairement simple plutôt que de couvrir ces fonctions de gestion de projet avancée.", "sourceIds": ["s3"] },
+      { "en": "The free plan is capped at a single active project and 1 GB storage, unusable for running more than one client or initiative at a time.", "fr": "Le plan gratuit est limité à un seul projet actif et 1 Go de stockage, inutilisable pour gérer plus d'un client ou d'un projet à la fois.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google Calendar", "slug": "google-calendar", "sourceIds": ["s3"] },
+      { "name": "Outlook", "slug": "outlook", "sourceIds": ["s3"] },
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s3"] },
+      { "name": "Google Docs", "slug": "google-docs", "sourceIds": ["s3"] },
+      { "name": "Dropbox", "slug": "dropbox", "sourceIds": ["s3"] }
+    ],
+    "platforms": ["web", "ios", "android", "mac", "windows"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Claire runs a small team or manages freelance clients and wants one shared place for tasks, files, and updates without configuring a complex PM tool.",
+      "fr": "Claire dirige une petite équipe ou gère des clients en freelance et veut un espace unique pour les tâches, fichiers et mises à jour, sans avoir à configurer un outil de gestion de projet complexe."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Running client projects where each client gets their own Basecamp project with shared to-dos, files, and message boards.", "fr": "Gérer des projets clients où chaque client dispose de son propre projet Basecamp avec tâches, fichiers et messages partagés." },
+    { "en": "Replacing scattered email threads and Slack channels with a single message board per topic for a small team.", "fr": "Remplacer des fils d'e-mails et canaux Slack dispersés par un seul tableau de messages par sujet pour une petite équipe." },
+    { "en": "Tracking a handful of ongoing initiatives with Hill Charts to show real progress instead of just percentage-complete.", "fr": "Suivre quelques initiatives en cours avec les Hill Charts pour montrer une progression réelle plutôt qu'un simple pourcentage." }
+  ],
+  "alternatives": [
+    { "slug": "asana", "reason": { "en": "Asana covers similar task and project tracking with more structured views (timeline, portfolios) for teams that outgrow Basecamp's simplicity.", "fr": "Asana couvre un suivi de tâches et de projets similaire avec des vues plus structurées (timeline, portefeuilles) pour les équipes qui dépassent la simplicité de Basecamp." } },
+    { "slug": "trello", "reason": { "en": "Trello offers a lighter, purely kanban-based alternative for teams that only need Basecamp's Card Table view.", "fr": "Trello propose une alternative plus légère, purement kanban, pour les équipes qui n'ont besoin que de la vue Card Table de Basecamp." } },
+    { "slug": "notion", "reason": { "en": "Notion combines docs, wikis and lightweight task tracking, appealing to teams that want more flexible knowledge management than Basecamp's fixed structure.", "fr": "Notion combine documents, wiki et suivi de tâches léger, séduisant les équipes qui veulent une gestion des connaissances plus flexible que la structure fixe de Basecamp." } },
+    { "slug": "clickup", "reason": { "en": "ClickUp targets the same team-collaboration space but with far more configurable views and automation for teams wanting more power.", "fr": "ClickUp vise le même segment de collaboration d'équipe mais avec des vues et automatisations bien plus configurables pour les équipes voulant plus de puissance." } },
+    { "slug": "airtable", "reason": { "en": "Airtable suits teams that want to model client and project data as a database rather than Basecamp's fixed project template.", "fr": "Airtable convient aux équipes qui veulent modéliser leurs données clients et projets comme une base de données plutôt que le modèle de projet fixe de Basecamp." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Monday.com", "officialUrl": "https://monday.com", "reason": "Widely used project/work management competitor directly comparable to Basecamp for team collaboration, absent from the candidate list." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The flat Pro Unlimited price is a real differentiator for larger teams, but the free plan is too limited (1 project) to be useful beyond a trial.", "fr": "Le tarif fixe de Pro Unlimited est un vrai différenciateur pour les grandes équipes, mais le plan gratuit est trop limité (1 projet) pour être utile au-delà d'un essai.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Basecamp is known for a deliberately simple, opinionated structure (one set of tools per project) that a small team can start using within an hour.", "fr": "Basecamp est connu pour sa structure volontairement simple et cadrée (un même ensemble d'outils par projet), qu'une petite équipe peut commencer à utiliser en moins d'une heure.", "sourceIds": ["s3"] },
+      "utilisation": { "en": "Native web, iOS, Android, Mac and Windows apps with a consistent interface support daily use across devices.", "fr": "Des applis natives web, iOS, Android, Mac et Windows avec une interface cohérente permettent un usage quotidien sur tous les appareils.", "sourceIds": ["s5"] },
+      "puissance": { "en": "Deliberately lacks Gantt charts, time tracking and advanced reporting found in ClickUp or Asana, capping its power for complex project portfolios.", "fr": "Basecamp n'a volontairement ni diagrammes de Gantt, ni suivi du temps natif, ni reporting avancé qu'on trouve chez ClickUp ou Asana, ce qui limite sa puissance pour des portefeuilles de projets complexes.", "sourceIds": ["s3"] },
+      "reversibilite": { "en": "Basecamp exposes an API for exporting data and integrating with other tools, but there is no built-in one-click full data export documented on the marketing pages.", "fr": "Basecamp expose une API pour exporter les données et s'intégrer à d'autres outils, mais aucun export complet en un clic n'est documenté sur les pages marketing.", "sourceIds": ["s3"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "Simple, flat-rate PM", "fr": "Gestion de projet simple" },
+    "shortDescription": { "en": "Project management and team collaboration software.", "fr": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe." },
+    "longDescription": {
+      "en": "Basecamp bundles message boards, to-dos, files, chat, a calendar, and Hill Charts into one opinionated tool per project, avoiding the sprawl of scattered emails and channels. It deliberately skips advanced features like Gantt charts or native time tracking, aiming instead for a small team or client-facing freelancer to get productive within the hour.\n\nPricing is the notable part of its story: a per-seat Plus plan at $15/user/month suits small teams, while the flat Pro Unlimited plan ($299/mo billed annually, $349/mo monthly) gives unlimited users for one price, which becomes cheaper than per-seat billing once a team crosses roughly 20 people. The free plan is real but capped at a single active project, useful mainly as a trial run rather than day-to-day use.",
+      "fr": "Basecamp regroupe tableaux de messages, tâches, fichiers, chat, calendrier et Hill Charts dans un outil cadré par projet, pour éviter la dispersion des e-mails et des canaux. Il fait volontairement l'impasse sur des fonctions avancées comme les diagrammes de Gantt ou le suivi du temps natif, misant plutôt sur la rapidité de prise en main pour une petite équipe ou un freelance travaillant avec des clients.\n\nLa tarification est l'élément marquant : un plan Plus par utilisateur à 15 $/mois convient aux petites équipes, tandis que le plan Pro Unlimited à tarif fixe (299 $/mois en annuel, 349 $/mois en mensuel) donne un accès illimité pour un prix unique, plus intéressant que la facturation par utilisateur au-delà d'une vingtaine de personnes. Le plan gratuit existe bel et bien mais reste limité à un seul projet actif, utile surtout pour tester l'outil plutôt que pour un usage quotidien."
+    },
+    "pros": [
+      { "en": "Deliberately simple interface, usable productively within an hour with no training.", "fr": "Interface volontairement simple, exploitable de manière productive en moins d'une heure sans formation." },
+      { "en": "Flat-rate Pro Unlimited plan removes per-seat cost anxiety once a team is large enough.", "fr": "Le plan Pro Unlimited à tarif fixe supprime l'angoisse du coût par utilisateur une fois l'équipe assez grande." },
+      { "en": "Native apps on web, iOS, Android, Mac and Windows for consistent daily use.", "fr": "Applis natives web, iOS, Android, Mac et Windows pour un usage quotidien cohérent." }
+    ],
+    "cons": [
+      { "en": "No Gantt charts, native time tracking, or advanced reporting compared to ClickUp or Asana.", "fr": "Pas de diagrammes de Gantt, de suivi du temps natif ni de reporting avancé comparé à ClickUp ou Asana." },
+      { "en": "Free plan's single-project cap makes it a trial more than a usable long-term free tier.", "fr": "La limite d'un seul projet sur le plan gratuit en fait davantage un essai qu'un vrai forfait gratuit utilisable durablement." },
+      { "en": "Pro Unlimited's headline $299/mo price requires annual billing; month-to-month costs $349/mo.", "fr": "Le prix phare de 299 $/mois pour Pro Unlimited suppose une facturation annuelle ; en mensuel, c'est 349 $/mois." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a small team or client-facing freelance business and want one simple, no-frills tool for tasks, files, and discussion.", "fr": "Tu diriges une petite équipe ou une activité freelance orientée client et tu veux un seul outil simple, sans fioritures, pour les tâches, fichiers et discussions." },
+      "avoidIf": { "en": "You need Gantt charts, native time tracking, resource planning, or deep reporting for complex project portfolios.", "fr": "Tu as besoin de diagrammes de Gantt, de suivi du temps natif, de planification de ressources ou de reporting poussé pour des portefeuilles de projets complexes." },
+      "threshold": { "en": "Once your team crosses roughly 20 paid users, compare Pro Unlimited's flat fee against Plus's per-seat cost before renewing.", "fr": "Une fois ton équipe au-dessus d'une vingtaine d'utilisateurs payants, compare le tarif fixe de Pro Unlimited au coût par utilisateur de Plus avant de renouveler." },
+      "billingTraps": { "en": "The advertised $299/mo Pro Unlimited price only applies with annual billing; monthly billing is $349/mo, a 17% premium.", "fr": "Le prix affiché de 299 $/mois pour Pro Unlimited ne s'applique qu'en facturation annuelle ; en mensuel, c'est 349 $/mois, soit 17% plus cher." }
+    }
+  },
+  "unknowns": [
+    "Exact trial length for Pro Unlimited specifically (sources conflict between 30, 45, and 60 days); used 30 days as the conservative general figure.",
+    "Whether the free plan cap is 5 or 20 users (third-party sources disagree); used the seed's stated 20.",
+    "No official changelog URL found; Basecamp does not appear to publish a public changelog page."
+  ],
+  "conflicts": []
+}
