@@ -16,7 +16,9 @@ const budgets = {
   // 12_900 (2026-09-25): category pages aligned on /tools, about twenty
   // critical CSS variants across the 48 pages; shared catalogue modules are
   // already grouped in one chunk (vite.config.ts, "catalog-shared").
-  files: 12_900,
+  // 13_000 (2026-09-25): 1179 tools (two added) and researched fiches with
+  // full plan grids, each tool is about ten prerendered files.
+  files: 13_000,
   totalBytes: 850 * MiB,
   htmlBytes: 750 * MiB,
   javascriptBytes: 15 * MiB,

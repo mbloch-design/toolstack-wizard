@@ -783,14 +783,14 @@
     "slug": "adobe-illustrator",
     "name": "Adobe Illustrator",
     "categoryId": "design-tools",
-    "shortDescription": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.",
-    "shortDescriptionEn": "Adobe's flagship vector graphics editor for creating visuals that scale across all formats.",
+    "shortDescription": "Adobe Illustrator est l'éditeur vectoriel de référence pour logos, icônes et mises en page print ou digital, vendu en abonnement.",
+    "shortDescriptionEn": "Adobe Illustrator is the industry-standard vector graphics editor for logos, icons and print or digital layouts, sold as a subscription.",
     "pricing": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 22,99 $/mois, plan Illustrator (single app, individual)."
     },
-    "defaultMonthlyPrice": 23.99,
-    "compareMonthlyPrice": 26.21,
+    "defaultMonthlyPrice": 19.74,
+    "compareMonthlyPrice": 19.74,
     "affiliateLink": "https://adobe.com/products/illustrator",
     "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -813,8 +813,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "freeAlternative": "Affinity Designer",
     "substitutable": false
@@ -1384,13 +1383,14 @@
     "slug": "ahrefs",
     "name": "Ahrefs",
     "categoryId": "analytics",
-    "shortDescription": "Plateforme marketing IA pour analyser le SEO, suivre les classements, explorer les mots-clés, auditer les sites, et explorer le contenu concurrent avec une base de données de 170 milliards de pages indexées.",
-    "shortDescriptionEn": "AI-powered marketing platform for SEO analysis, rank tracking, keyword research, site audits, and competitive content insights with a database of 170 billion indexed pages.",
+    "shortDescription": "Ahrefs est une plateforme SEO combinant backlinks, mots-clés, suivi de classement et audits de site, dès 29 $/mois pour un niveau limité.",
+    "shortDescriptionEn": "Ahrefs is an SEO platform for backlinks, keywords, rank tracking and site audits, with plans starting at $29/month for a limited lookup tier.",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Ahrefs Webmaster Tools gratuit pour propriétaires de sites vérifiés (accès limité).",
-      "paid": "Starter: 29 $/mois (exploration basique) ; Lite: 129 $/mois ou 108 $/mois annuel ; Standard: 249 $/mois ou 208 $/mois annuel ; Advanced: 449 $/mois ou 374 $/mois annuel ; Enterprise: À partir de 1 499 $/mois annuel"
+      "free": "Plan gratuit : Ahrefs Free donne un accès de base aux données du site (fonctions limitées de Site Explorer / Webmaster Tools pour les propriétaires de site vérifiés).",
+      "paid": "Dès 108 $/mois, plan Lite."
     },
-    "defaultMonthlyPrice": 25,
+    "defaultMonthlyPrice": 92.74,
+    "compareMonthlyPrice": 92.74,
     "affiliateLink": "https://ahrefs.com",
     "ogImageUrl": "https://static.ahrefs.com/assets/img/og/ahrefs.png?v=2",
     "substitution_cluster_v2": "seo-tools",
@@ -1409,9 +1409,7 @@
     ],
     "prescription_quality": "ferme",
     "personas": [
-      "marketer",
-      "dev",
-      "content"
+      "MARC"
     ],
     "freeAlternative": "Ahrefs Webmaster Tools"
   },
@@ -1919,13 +1917,14 @@
     "slug": "ae-animation-composer",
     "name": "Animation Composer 3",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin After Effects créé par Mister Horse permettant de composer et d'organiser les animations via des présets et des composants réutilisables. Autrefois vendu individuellement, il est maintenant inclus dans l'abonnement unified Mister Horse (qui couvre aussi Premiere Pro).",
-    "shortDescriptionEn": "After Effects plugin by Mister Horse for composing and organizing animations via presets and reusable components. Formerly sold standalone; now included in the unified Mister Horse subscription (covering both After Effects and Premiere Pro).",
+    "shortDescription": "Animation Composer est un plugin Mister Horse pour After Effects et Premiere Pro qui fournit une bibliothèque d'animations prêtes à l'emploi, gratuite avec plus de 1 000 assets ou à 16,50 $/mois (annuel) pour plus de 6 000.",
+    "shortDescriptionEn": "Animation Composer is a Mister Horse plugin for After Effects and Premiere Pro that provides a browsable library of animation presets, free with 1,000+ assets or $16.50/month (annual) for 6,000+.",
     "pricing": {
-      "free": "Version gratuite limitée : jusqu'à 500 items en bibliothèque personnelle. L'abonnement supprime la limite et déverrouille d'autres extensions Mister Horse.",
-      "paid": "Mister Horse Subscription: Montants sur la page officielle (réduction disponible paiement annuel)"
+      "free": "Plan gratuit : Free plan includes over 1,000 assets and the 4 time-saving tools, versus 6,000+ assets on the paid subscription; brief also notes a library limit of up to 500 items on the free tier per the seed data.",
+      "paid": "Dès 16,50 $/mois, plan Mister Horse Subscription (annual)."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 14.17,
+    "compareMonthlyPrice": 14.17,
     "affiliateLink": "https://misterhorse.com/animation-composer",
     "ogImageUrl": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/ac.png",
     "tool_type": "plugin",
@@ -1945,8 +1944,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "ALIX"
     ],
     "substitutable": false
   },
@@ -7078,13 +7076,14 @@
     "slug": "contra",
     "name": "Contra",
     "categoryId": "project-management",
-    "shortDescription": "Plateforme sans commission pour freelances créatifs : portfolio, découverte de clients et encaissement, avec une offre gratuite durable et un abonnement Pro optionnel.",
-    "shortDescriptionEn": "Commission-free platform for creative freelancers: portfolio, client discovery and payment collection, with a durable free offer and an optional Pro subscription.",
+    "shortDescription": "Contra est une plateforme sans commission où les freelances créatifs et techniques publient un portfolio, trouvent des clients et encaissent leurs paiements.",
+    "shortDescriptionEn": "Contra is a commission-free platform where creative and technical freelancers publish a portfolio, find clients and collect payments.",
     "pricing": {
-      "free": "Gratuit — profil, propositions, paiements, 0% de commission",
-      "paid": "Pro 29$/mois ou 199$/an"
+      "free": "Plan gratuit : Accès à la communauté, aux offres de mission, à une visibilité standard et à des paiements standards. Des frais de paiement client de 15$ ou 29$ s'appliquent sur les paiements au-dessus de 500$, et les frais sur les produits numériques sont plafonnés à 5% (entre 3$ et 29$).",
+      "paid": "Dès 16,58 $/mois, plan Pro."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 14.24,
+    "compareMonthlyPrice": 14.24,
     "websiteUrl": "https://contra.com",
     "ogImageUrl": "https://contra.com/static/opengraph-assets/v2/fallbacks/contra-fallback-open-graph-image.png",
     "substitution_cluster_v2": "freelance-marketplace",
@@ -7104,7 +7103,10 @@
       "creative",
       "freelance"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "convertkit-analytics",
@@ -8025,13 +8027,14 @@
     "slug": "datadog",
     "name": "Datadog",
     "categoryId": "analytics",
-    "shortDescription": "Observabilité complète : logs, métriques, APM, alertes en temps réel.",
-    "shortDescriptionEn": "Full observability: logs, metrics, APM, real-time alerts.",
+    "shortDescription": "Datadog est une plateforme d'observabilité complète (infrastructure, APM, logs, sécurité) facturée par host et à l'usage, avec un palier gratuit jusqu'à 5 hosts et Infrastructure Pro dès 15 $/host/mois facturé annuellement.",
+    "shortDescriptionEn": "Datadog is a full observability platform (infrastructure, APM, logs, security) priced per host and by usage, with a free tier for up to 5 hosts and Infrastructure Pro from $15/host/month billed annually.",
     "pricing": {
-      "free": "Gratuit jusqu'à 5 hosts, 1 jour de rétention",
-      "paid": "Pro à 15$/host/mois, plus facturation à l'usage (logs, APM, etc.)"
+      "free": "Plan gratuit : Up to 5 hosts, 1-day metric retention (Infrastructure Free)",
+      "paid": "Dès 15 $/mois, plan Infrastructure Pro."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": "https://datadoghq.com",
     "ogImageUrl": "https://corp.dd-static.net/img/og/og-image-10-25.png?fit=crop&w=1200&h=630",
     "tool_type": "metier",
@@ -8053,8 +8056,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "theo",
-      "marc"
+      "THEO"
     ],
     "freeAlternative": "Sentry",
     "substitutable": false
@@ -9045,14 +9047,14 @@
     "slug": "dropbox",
     "name": "Dropbox",
     "categoryId": "organization",
-    "shortDescription": "Stockage cloud et synchronisation de fichiers, avec partage et historique de versions.",
-    "shortDescriptionEn": "Cloud storage and file synchronization service.",
+    "shortDescription": "Dropbox est un service de stockage cloud et de synchronisation de fichiers avec sync automatique, partage et historique de versions, d'un plan gratuit à 2 Go jusqu'à un plan Advanced à 24 $/siège/mois.",
+    "shortDescriptionEn": "Dropbox is a cloud storage and file-sync service with automatic sync, sharing and version history, from a 2 GB free plan up to a $24/seat/month Advanced plan.",
     "pricing": {
-      "free": "Basic gratuit, 2 Go de stockage",
-      "paid": "Plus à ~12$/mois (2 To), Professional à 20$/mois (3 To)"
+      "free": "Plan gratuit : Basic plan: 2 GB storage, store and share files.",
+      "paid": "Dès 9,99 $/mois, plan Plus."
     },
-    "defaultMonthlyPrice": 12,
-    "compareMonthlyPrice": 12,
+    "defaultMonthlyPrice": 8.58,
+    "compareMonthlyPrice": 8.58,
     "affiliateLink": "https://dropbox.com",
     "ogImageUrl": "https://cfl.dropboxstatic.com/static/metaserver/static/images/logo_catalog/dropbox_opengraph_image%402x.png",
     "substitution_cluster_v2": "cloud-storage",
@@ -9072,6 +9074,9 @@
       "Professionnels"
     ],
     "prescription_quality": "ferme",
+    "personas": [
+      "CLAIRE"
+    ],
     "freeAlternative": "Google Drive",
     "betterAlternative": {
       "tool": "google-drive",
@@ -9381,12 +9386,13 @@
     "slug": "echarts",
     "name": "ECharts",
     "categoryId": "design-tools",
-    "shortDescription": "Bibliothèque de visualisation de données puissante et gratuite par Apache.",
-    "shortDescriptionEn": "Powerful and free data visualization library by Apache.",
+    "shortDescription": "Apache ECharts est une bibliothèque JavaScript de graphiques gratuite et open source, avec plus de 20 types de graphiques.",
+    "shortDescriptionEn": "Apache ECharts is a free, open-source JavaScript charting library with more than 20 chart types and support for very large datasets.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://echarts.apache.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/echarts.jpg",
     "substitution_cluster_v2": "charting-library",
@@ -9405,7 +9411,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "DEV"
+      "THEO"
     ]
   },
   {
@@ -10957,12 +10963,13 @@
     "slug": "firebase",
     "name": "Firebase",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme backend Google (auth, DB, hosting)",
-    "shortDescriptionEn": "Google backend platform (auth, database, hosting).",
+    "shortDescription": "Firebase est la plateforme backend gérée de Google : base de données, authentification, stockage, fonctions serverless et hébergement, facturés à l'usage.",
+    "shortDescriptionEn": "Firebase is Google's managed backend platform, bundling database, authentication, storage, serverless functions and hosting under one usage-based billing model.",
     "pricing": {
-      "free": "Plan Spark gratuit avec quotas généreux (auth, hosting, Firestore de base)",
-      "paid": "Plan Blaze à l'usage (paiement à la consommation au-delà des quotas gratuits, ex: ~0,18$/100k lectures Firestore)"
+      "free": "Plan gratuit : Plan Spark : aucun moyen de paiement requis. Inclut par exemple Cloud Firestore (1 Go stocké, 50K lectures/jour, 20K écritures/jour), Realtime Database (1 Go de stockage, 10 Go/mois de téléchargement, 100 connexions simultanées), Cloud Storage (5 Go de stockage, 1 Go/jour de téléchargement), Authentication (50K utilisateurs actifs mensuels), Cloud Functions (2M invocations/mois), Hosting (10 Go de stockage, 360 Mo/jour de transfert). Analytics, A/B Testing, Crashlytics et Performance Monitoring sont gratuits.",
+      "paid": "Dès 0 $/mois, plan Blaze (pay as you go)."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://firebase.google.com",
     "ogImageUrl": "https://firebase.google.com/images/social.png",
     "tool_type": "core",
@@ -10982,7 +10989,10 @@
       "Équipes mobiles",
       "Constructeurs de MVP"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "firecrawl",
@@ -11668,14 +11678,14 @@
     "slug": "frame-io",
     "name": "Frame.io",
     "categoryId": "communication",
-    "shortDescription": "La plateforme de review et collaboration vidéo pour les équipes créatives.",
-    "shortDescriptionEn": "The video review and collaboration platform for creative teams.",
+    "shortDescription": "Frame.io permet aux équipes vidéo et à leurs clients de commenter les montages image par image et de partager les rushs directement depuis la caméra.",
+    "shortDescriptionEn": "Frame.io lets video teams and their clients comment frame-by-frame on cuts, stack versions and share footage straight from the camera.",
     "pricing": {
-      "free": "Gratuit (2 utilisateurs, 2 Go de stockage)",
-      "paid": "Pro à 15$/utilisateur/mois, Team à 25$"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 15 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": "https://frame.io",
     "ogImageUrl": "https://cdn.sanity.io/images/s6lu43cv/production-v4/c9bc38aba1856b5c2664f207a2436851730e6a0d-1200x630.png?w=1200&amp;h=630&amp;fm=jpg&amp;q=60",
     "bundle_parent": "adobe-creative-cloud",
@@ -11696,9 +11706,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "marc",
-      "theo"
+      "ALIX"
     ],
     "betterAlternative": {
       "tool": "dropbox-replay",
@@ -12884,11 +12892,11 @@
     "slug": "google-ai-studio",
     "name": "Google AI Studio",
     "categoryId": "ai-general",
-    "shortDescription": "Playground gratuit pour tester et intégrer les modèles Gemini de Google.",
-    "shortDescriptionEn": "Free playground to test and integrate Google's Gemini models.",
+    "shortDescription": "Google AI Studio est un bac à sable web gratuit et une console API pour construire avec les modèles Gemini de Google, facturé au token dès 0,30 $ par million de tokens en entrée sur le modèle d'entrée.",
+    "shortDescriptionEn": "Google AI Studio is a free web playground plus API console for building with Google's Gemini models, billed per token from $0.30 per million input tokens on the entry model.",
     "pricing": {
-      "free": "Interface gratuite + palier API gratuit",
-      "paid": "API à l'usage : à partir de 0,30$/M tokens (Flash)"
+      "free": "Plan gratuit : Accès gratuit à l'interface Google AI Studio et à un palier gratuit de l'API Gemini avec accès limité à certains modèles ; le contenu peut être utilisé pour améliorer les produits Google.",
+      "paid": "Dès 0 $/mois, plan Gemini API pay-as-you-go (paid tier)."
     },
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://aistudio.google.com",
@@ -12909,7 +12917,10 @@
       "Équipes produit IA",
       "Prototypage"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "google-analytics",
@@ -14182,15 +14193,14 @@
     "slug": "helpscout",
     "name": "Helpscout",
     "categoryId": "communication",
-    "shortDescription": "Support client par email avec base de connaissance, dès 25$/mois/utilisateur (annuel).",
-    "shortDescriptionEn": "Email-based customer support with a knowledge base, from $25/user/month (annual).",
+    "shortDescription": "Help Scout est une plateforme de support client par email avec boîte de réception partagée, base de connaissance et widget Beacon intégrable, dès 25 $/utilisateur/mois après un plan gratuit à 5 utilisateurs.",
+    "shortDescriptionEn": "Help Scout is an email-based customer support platform with a shared inbox, a help center and the embeddable Beacon widget, starting at $25 per user/month after a 5-user free plan.",
     "pricing": {
-      "free": "5 utilisateurs, 1 boîte de réception, 1 base de connaissance, 100 contacts/mois.",
-      "paid": "Standard ~25$/mois/utilisateur (annuel) ; Plus ~38$ ; Pro ~63-65$/mois/utilisateur (permissions avancées, conformité HIPAA). IA Réponses en option à 0,75$/résolution."
+      "free": "Plan gratuit : Up to 5 users, 1 inbox, 1 Docs (knowledge base) site, 100 contacts/month",
+      "paid": "Dès 25 $/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 25,
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
+    "defaultMonthlyPrice": 21.47,
+    "compareMonthlyPrice": 21.47,
     "affiliateLink": "https://helpscout.com",
     "ogImageUrl": "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F4Rbim8xrCA6BCte94E1xnZ%2F6085a0847d360320af712ff86a342307%2Fhome--meta.jpg?ixlib=gatsbySourceUrl-2.1.3&amp;auto=format%2C%20compress&amp;q=75&amp;s=0aba9a73fb57c247551a2df98f436358",
     "logo": "https://logo.clearbit.com/helpscout.com",
@@ -14210,7 +14220,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "marc"
+      "CLAIRE"
     ]
   },
   {
@@ -14585,14 +14595,14 @@
     "slug": "houdini",
     "name": "Houdini",
     "categoryId": "creation",
-    "shortDescription": "Le logiciel de référence pour les FX et le procédural (simulations, VFX cinéma).",
-    "shortDescriptionEn": "The reference software for FX and procedural work (simulations, film VFX).",
+    "shortDescription": "Houdini est une application 3D et VFX procédurale à nœuds, gratuite en usage non commercial et à 299 $/an via l'offre Indie.",
+    "shortDescriptionEn": "Houdini is a node-based procedural 3D and VFX application, free for non-commercial use and $299/year for eligible small studios via the Indie tier.",
     "pricing": {
-      "free": "Apprentice gratuit (non-commercial, watermark)",
-      "paid": "Indie 299$/an (<100k$ de CA) ; Core ~1 995$/an. Version FX studio plus chère."
+      "free": "Plan gratuit : Houdini Apprentice: non-commercial use only, near-full feature access, watermarked renders and file format restricted to Apprentice-only files.",
+      "paid": "Dès 24,92 $/mois, plan Houdini Indie."
     },
-    "defaultMonthlyPrice": 25,
-    "compareMonthlyPrice": 25,
+    "defaultMonthlyPrice": 21.4,
+    "compareMonthlyPrice": 21.4,
     "affiliateLink": "https://www.sidefx.com",
     "ogImageUrl": "https://static.sidefx.com/images/apple-touch-icon.png",
     "tool_type": "metier",
@@ -14612,7 +14622,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "designer"
+      "ALIX"
     ],
     "freeAlternative": "blender"
   },
@@ -16425,13 +16435,14 @@
     "slug": "klaviyo",
     "name": "Klaviyo",
     "categoryId": "marketing",
-    "shortDescription": "Email et SMS marketing orientés e-commerce.",
-    "shortDescriptionEn": "E-commerce email and SMS marketing.",
+    "shortDescription": "Klaviyo est une plateforme d'email et SMS marketing pensée pour l'e-commerce, avec un plan gratuit jusqu'à 250 contacts et des plans payants dès 60 $/mois selon la taille de la liste.",
+    "shortDescriptionEn": "Klaviyo is an email and SMS marketing platform built for ecommerce, with a free plan up to 250 contacts and paid plans starting at $60/month as the contact list grows.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Prix variable selon contacts et canaux"
+      "free": "Plan gratuit : Up to 250 active profiles, 500 email sends/month, $5/month SMS credit, email support limited to first 60 days",
+      "paid": "Dès 60 $/mois, plan Marketing."
     },
-    "defaultMonthlyPrice": 45,
+    "defaultMonthlyPrice": 51.52,
+    "compareMonthlyPrice": 51.52,
     "websiteUrl": "https://www.klaviyo.com/",
     "ogImageUrl": "https://www.klaviyo.com/static/klaviyo-social-share-image.jpg",
     "tool_type": "metier",
@@ -16452,8 +16463,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "ops",
-      "solo"
+      "CLAIRE"
     ]
   },
   {
@@ -21858,11 +21868,11 @@
     "slug": "nik-collection",
     "name": "Nik Collection",
     "categoryId": "design-tools",
-    "shortDescription": "Suite d'édition photo professionnelle avec filtres avancés et maskage IA, fonctionnant comme plugin Photoshop, Lightroom Classic et Affinity Photo.",
-    "shortDescriptionEn": "Professional photo editing suite with advanced filters and AI masking, available as a plugin for Photoshop, Lightroom Classic, and Affinity Photo.",
+    "shortDescription": "Nik Collection est une suite de huit plugins photo créatifs vendue en licence unique, utilisable seule ou en plugin Adobe et Affinity Photo.",
+    "shortDescriptionEn": "Nik Collection is a one-time-purchase suite of eight creative photo-editing plugins that work standalone or inside Photoshop, Lightroom Classic and Affinity Photo.",
     "pricing": {
-      "free": "Essai gratuit complet (version d'évaluation) pour tester avant achat. Pas de version gratuite permanente.",
-      "paid": "Licence complète (nouveau client): €89.99 (ou €22.50 x 4 versements PayPal) ; Licence complète (standard): €169.99 (ou €42.50 x 4 versements PayPal) ; Upgrade (Nik Collection 7 ou 8): Montants sur la page officielle"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 179,99 $ (licence à vie), plan New customer license."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://nikcollection.dxo.com",
@@ -21885,7 +21895,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia"
+      "ALIX"
     ],
     "substitutable": false
   },
@@ -22313,13 +22323,14 @@
     "slug": "obsidian",
     "name": "Obsidian",
     "categoryId": "organization",
-    "shortDescription": "Votre second cerveau, en local.",
-    "shortDescriptionEn": "Your second brain, stored locally.",
+    "shortDescription": "Obsidian est une application gratuite de prise de notes en Markdown, locale par défaut, avec liens bidirectionnels et un écosystème de plugins.",
+    "shortDescriptionEn": "Obsidian is a free, local-first Markdown note-taking app with bidirectional linking, a plugin ecosystem, and optional paid sync and publish services.",
     "pricing": {
-      "free": "Core app gratuite sans limites",
-      "paid": "Sync 5$/mois ou 4$/mois annuel; Publish 10$/mois ou 8$/mois annuel"
+      "free": "Plan gratuit : L'application principale (bureau/mobile) est gratuite sans restriction de fonctionnalités ; l'usage commercial est autorisé sans paiement",
+      "paid": "Dès 4 $/mois, plan Sync."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 3.43,
+    "compareMonthlyPrice": 3.43,
     "affiliateLink": "https://obsidian.md",
     "ogImageUrl": "https://obsidian.md/images/banner.png",
     "substitution_cluster_v2": "knowledge-workspace",
@@ -22339,6 +22350,9 @@
       "Professionnels en gestion de connaissance (Knowledge workers)"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "THEO"
+    ],
     "freeAlternative": "obsidian"
   },
   {
@@ -29953,14 +29967,14 @@
     "slug": "sentry",
     "name": "Sentry",
     "categoryId": "analytics",
-    "shortDescription": "Suivi des erreurs et de la performance des applications, le standard des développeurs.",
-    "shortDescriptionEn": "Error and performance monitoring for apps, the developer standard.",
+    "shortDescription": "Sentry est une plateforme de suivi des erreurs et de la performance pour applications, avec un plan gratuit à un utilisateur et un plan Team à 26 $/mois pour des utilisateurs illimités et un quota de base de 50 000 erreurs.",
+    "shortDescriptionEn": "Sentry is an error and performance monitoring platform for applications, with a single-user free plan and a Team plan at $26/month for unlimited users plus a 50,000-error base quota.",
     "pricing": {
-      "free": "Plan Developer gratuit (jusqu'à 5 000 erreurs/mois, 1 utilisateur)",
-      "paid": "Team à 26$/mois, Business à 80$, facturation à l'événement"
+      "free": "Plan gratuit : 1 utilisateur ; 5 000 erreurs/mois ; 5 millions de spans ; 50 relectures de session ; 10 tableaux de bord personnalisés",
+      "paid": "Dès 26 $/mois, plan Team."
     },
-    "defaultMonthlyPrice": 26,
-    "compareMonthlyPrice": 26,
+    "defaultMonthlyPrice": 22.33,
+    "compareMonthlyPrice": 22.33,
     "affiliateLink": "https://sentry.io",
     "ogImageUrl": "https://sentry.io/_astro/home-hero-meta.DJDejDMD.webp",
     "tool_type": "metier",
@@ -29983,8 +29997,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "theo",
-      "marc"
+      "THEO"
     ],
     "substitutable": false
   },
@@ -30802,14 +30815,14 @@
     "slug": "sketchup-pro",
     "name": "SketchUp Pro",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel de modélisation 3D (Trimble) pour l'architecture, l'aménagement et le design produit, sur bureau, web et mobile.",
-    "shortDescriptionEn": "3D modeling software (Trimble) for architecture, interior design, and product design, on desktop, web, and mobile.",
+    "shortDescription": "SketchUp Pro est le logiciel de modélisation 3D de Trimble pour l'architecture, l'aménagement intérieur et le design produit, sur bureau, web et mobile.",
+    "shortDescriptionEn": "SketchUp Pro is Trimble's 3D modeling software for architecture, interior and product design, spanning desktop, web and mobile.",
     "pricing": {
-      "free": "SketchUp for Schools gratuit avec un compte éducation Google/Microsoft ; pas de plan gratuit grand public.",
-      "paid": "Go: 10,75 $/mois (annuel) ; Pro: 33,25 $/mois (annuel) ; Studio: 68,25 $/mois (annuel)"
+      "free": "Plan gratuit : SketchUp for Schools est gratuit mais demande un compte Google Workspace for Education ou Microsoft Education K-12 ; non disponible pour le grand public.",
+      "paid": "Dès 33,25 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 29.44,
-    "compareMonthlyPrice": 29.44,
+    "defaultMonthlyPrice": 28.55,
+    "compareMonthlyPrice": 28.55,
     "affiliateLink": "https://sketchup.com",
     "ogImageUrl": "https://images.ctfassets.net/5qimfmsew7zl/1M12I2Eyw59Y4U4SJqCGin/a46834b0caf27f29ea566755506da7f2/SU2025-Website-NavigationPromo-WhySketchUp.jpg?w=400&h=300&fm=webp",
     "tool_type": "metier",
@@ -30831,8 +30844,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "marc"
+      "SOFIA"
     ],
     "freeAlternative": "Blender",
     "substitutable": false
@@ -31032,13 +31044,14 @@
     "slug": "snapseed",
     "name": "Snapseed",
     "categoryId": "design-tools",
-    "shortDescription": "Retouche photo mobile gratuite et complète, signée Google.",
-    "shortDescriptionEn": "Free, full-featured mobile photo editing by Google.",
+    "shortDescription": "Snapseed est l'éditeur photo mobile gratuit de Google, avec des outils non destructifs de niveau professionnel dont l'édition RAW et les ajustements sélectifs.",
+    "shortDescriptionEn": "Snapseed is Google's free mobile photo editor with professional-grade, non-destructive tools including RAW editing and selective adjustments.",
     "pricing": {
-      "free": "Gratuit, toutes les fonctionnalités, sans pub"
+      "free": "Plan gratuit : Application entièrement gratuite, sans publicité, sans abonnement, sans achat intégré ; tous les outils d'édition et filtres sont disponibles dès l'installation.",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
-    "websiteUrl": "https://snapseed.online",
+    "websiteUrl": "https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",
     "substitution_cluster_v2": "photo-editor",
     "functional_needs": [
       "retouche-photo",
@@ -31052,7 +31065,10 @@
       "Créateurs de contenu social",
       "Utilisateurs casuel/semi-pro"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "snipe-it",
@@ -32382,14 +32398,14 @@
     "slug": "substance-3d-painter",
     "name": "Substance 3D Painter",
     "categoryId": "creation",
-    "shortDescription": "Le standard du texturing 3D PBR (Adobe), pour le jeu vidéo, le produit et les VFX.",
-    "shortDescriptionEn": "The 3D PBR texturing standard (Adobe), for games, product and VFX.",
+    "shortDescription": "Substance 3D Painter est l'outil Adobe de peinture de textures PBR en temps réel pour jeu vidéo, produit et VFX, vendu dans l'abonnement Collection.",
+    "shortDescriptionEn": "Substance 3D Painter is Adobe's real-time PBR texture-painting tool for games, product visualization and VFX, sold only inside the Substance 3D Collection subscription.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Plan Texturing 24,99$/mois (249,88$/an) ou Collection 59,99$/mois."
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 59,99 $/mois, plan Substance 3D Collection (individual)."
     },
-    "defaultMonthlyPrice": 21,
-    "compareMonthlyPrice": 21,
+    "defaultMonthlyPrice": 51.52,
+    "compareMonthlyPrice": 51.52,
     "websiteUrl": "https://www.adobe.com/products/substance3d-painter.html",
     "ogImageUrl": "https://www.adobe.com/products/substance3d/apps/media_183d4d1c0a6b3a13fe026090e990b96157c3a3ee7.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "tool_type": "metier",
@@ -32408,7 +32424,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "designer"
+      "SOFIA"
     ],
     "freeAlternative": "blender"
   },
@@ -34298,13 +34314,14 @@
     "slug": "topaz-gigapixel",
     "name": "Topaz Gigapixel AI",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel d'agrandissement d'images alimenté par l'IA, capable d'augmenter les photos jusqu'à 16x tout en conservant les détails et la qualité. Disponible pour Windows et macOS, avec intégration aux plugins Photoshop et Lightroom.",
-    "shortDescriptionEn": "AI-powered desktop image upscaling software that enlarges images up to 16x while maintaining detail and quality. Available for Windows and macOS with Adobe Photoshop and Lightroom Classic plugin integration.",
+    "shortDescription": "Topaz Gigapixel AI est une application par abonnement pour l'agrandissement d'image par IA jusqu'à 16x, avec rendu local et cloud illimité.",
+    "shortDescriptionEn": "Topaz Gigapixel AI is a subscription app for AI-powered image upscaling up to 16x, with unlimited local and cloud rendering and a Photoshop/Lightroom plugin.",
     "pricing": {
-      "free": "Pas de version gratuite. Accès par abonnement uniquement.",
-      "paid": "Personal (mensuel): $29/mois ; Personal (annuel): $149/an ($12.42/mois) ; Pro (mensuel): $54/mois ; Pro (annuel): $499/an ($41.58/mois) ; Topaz Studio Bundle: $69/mois ou $399/an"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 12,42 $/mois, plan Personal."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 10.67,
+    "compareMonthlyPrice": 10.67,
     "affiliateLink": "https://topazlabs.com/gigapixel",
     "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before.webp",
     "tool_type": "plugin",
@@ -34326,7 +34343,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia"
+      "ALIX"
     ],
     "substitutable": false
   },
@@ -36993,14 +37010,14 @@
     "slug": "wix",
     "name": "Wix",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme hébergée pour créer des sites web, boutiques et services en ligne avec éditeur visuel, génération IA, modèles et outils métier intégrés.",
-    "shortDescriptionEn": "Hosted platform for creating websites, stores, and online services with a visual editor, AI generation, templates, and integrated business tools.",
+    "shortDescription": "Wix est un créateur de site hébergé combinant éditeur visuel, génération de site par IA, e-commerce intégré et outils marketing, avec des plans payants dès 17,77 $ par mois.",
+    "shortDescriptionEn": "Wix is a hosted website builder combining a visual editor, AI site generation, built-in ecommerce and marketing tools, with paid plans starting at $17.77 per month.",
     "pricing": {
-      "free": "Plan gratuit avec hébergement et URL Wix, sans domaine personnalisé.",
-      "paid": "Free: Gratuit ; Light: Tarif localisé sur la page officielle ; Core: Tarif localisé sur la page officielle ; Business: Tarif localisé sur la page officielle ; Business Elite: Tarif localisé sur la page officielle"
+      "free": "Plan gratuit : Wix-branded subdomain (mysite.wixsite.com), no custom domain, Wix ads/branding, basic storage",
+      "paid": "Dès 17,77 $/mois, plan Light."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 15.26,
+    "compareMonthlyPrice": 15.26,
     "affiliateLink": "https://wix.com",
     "ogImageUrl": "https://static.wixstatic.com/media/343a2a_383f6393fabd4a0fa7f4732b1dd7cdb4~mv2.jpg/v1/fill/w_1200,h_630,al_c/343a2a_383f6393fabd4a0fa7f4732b1dd7cdb4~mv2.jpg",
     "substitution_cluster_v2": "website-builder",
@@ -37017,7 +37034,10 @@
       "Petites équipes",
       "Équipes marketing et opérations"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "wized",
@@ -38845,7 +38865,8 @@
       "TPE et PME belges",
       "Commerçants et entreprises avec gestion de stock",
       "Fiduciaires et leurs clients"
-    ]
+    ],
+    "prescription_quality": "question"
   },
   {
     "id": "convoscore",
@@ -38882,6 +38903,7 @@
       "SaaS avec demandes de démonstration",
       "Petites équipes support ou avant-vente"
     ],
+    "prescription_quality": "question",
     "freeAlternative": "tally"
   }
 ]

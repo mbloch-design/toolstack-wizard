@@ -61,6 +61,8 @@ let merged = 0;
 for (const slug of slugs) {
   const file = path.join(DOSSIERS, `${slug}.json`);
   if (!fs.existsSync(file)) { console.log(`✖ ${slug}: no dossier`); continue; }
+  // Facts-only dossiers wait for local completion: not an error.
+  if (JSON.parse(fs.readFileSync(file, "utf8")).status === "facts_collected") continue;
   try {
     execFileSync("node", [path.join(ROOT, "scripts/research/validate.mjs"), slug], { stdio: "pipe" });
   } catch {
