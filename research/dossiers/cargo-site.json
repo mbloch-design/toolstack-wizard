@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "slug": "cargo-site",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Cargo",
+    "vendor": "Cargo",
+    "officialUrl": "https://cargo.site/",
+    "docsUrl": "https://cargo.site/information",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://cargo.site/information", "tier": 1, "accessedOn": "2026-09-25", "title": "Cargo pricing and information" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://cargo.site/information",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Build and edit privately, cannot publish the site publicly", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Site stays private, cannot be published publicly" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 19, "annualPerMonth": 14, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 free custom domain included; additional custom domains cost $2-3/month" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [
+      { "name": "Additional custom domain", "unit": "site", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Publishing the site publicly requires the paid Standard plan; the free tier only allows private building and editing.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Design and publish one or many public portfolio/design sites from a single account", "sourceIds": ["s1"] },
+      { "en": "Real-time, multi-user collaborative editing", "sourceIds": ["s1"] },
+      { "en": "Built-in commerce platform for selling physical and digital goods with payment processing", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan cannot publish a site publicly, only build and edit in private", "sourceIds": ["s1"] },
+      { "en": "Only 1 custom domain included per paid site; extra domains are a paid add-on", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "framer", "reason": { "en": "Another design-forward no-code site builder popular with designers" } },
+    { "slug": "webflow", "reason": { "en": "More capable no-code builder for complex, custom-designed sites" } },
+    { "slug": "squarespace", "reason": { "en": "Mainstream all-in-one site builder with broader templates and commerce" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact tax treatment (taxIncluded) not stated on the pricing page",
+    "Whether the free plan has a project/page limit is not explicitly stated"
+  ],
+  "conflicts": []
+}

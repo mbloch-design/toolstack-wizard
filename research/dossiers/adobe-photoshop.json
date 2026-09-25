@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-photoshop",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Photoshop",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/photoshop.html",
+    "docsUrl": "https://helpx.adobe.com/photoshop/user-guide.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/photoshop.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Photoshop pricing, features and platforms" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/photoshop.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "single-app",
+        "name": "Photoshop (single app)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 22.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Photoshop only, annual plan billed monthly; includes 100GB cloud storage and 25 monthly generative credits" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "single-app",
+    "addOns": [],
+    "cautions": [
+      { "en": "Adobe Photoshop is subscription-only: no perpetual license is offered.", "sourceIds": ["s1"] },
+      { "en": "The Creative Cloud Pro bundle price shown ($34.99/mo) is an introductory offer for the first 3 months, rising to $69.99/mo after; this is excluded from the compared plan.", "sourceIds": ["s1"] },
+      { "en": "Generative AI credits are capped per month (25 on the single-app plan) and usage beyond that limit is restricted, not billed transparently per generation.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Raster image editing and design tools with layers, adjustment layers, and non-destructive editing", "sourceIds": ["s1"] },
+      { "en": "Generative Fill, Generative Expand, and AI-powered Remove tool", "sourceIds": ["s1"] },
+      { "en": "Cross-platform editing across desktop, web, and mobile with cloud-synced documents", "sourceIds": ["s1"] },
+      { "en": "100GB of Creative Cloud storage and Adobe Express Premium access included with the subscription", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free mobile version has limited features and requires a paid subscription to unlock full editing", "sourceIds": ["s1"] },
+      { "en": "Free web version requires an Adobe account signup before uploading or editing photos", "sourceIds": ["s1"] },
+      { "en": "Generative AI credits are usage-limited per billing tier (25/month on the single-app plan)", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Express", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos", "web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "affinity-photo", "reason": { "en": "One-time-purchase raster editor covering most of Photoshop's core editing workflow" } },
+    { "slug": "canva", "reason": { "en": "Simpler browser-based design tool for quick graphics without Photoshop's learning curve" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact desktop system requirements (minimum OS versions) not extracted",
+    "Tax treatment (taxIncluded) not stated on the pricing page"
+  ],
+  "conflicts": []
+}
