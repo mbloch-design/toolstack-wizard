@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "slug": "firefly",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Firefly",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://firefly.adobe.com",
+    "docsUrl": "https://helpx.adobe.com/firefly/get-started.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://firefly.adobe.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Firefly homepage" },
+    { "id": "s2", "url": "https://firefly.adobe.com/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Firefly plans (page fetch returned no pricing content, JS-rendered)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://firefly.adobe.com/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Free plan includes a limited monthly generative credit allowance; exact current figure not confirmed on an official page reachable within budget.", "sourceIds": ["s2"] },
+    "trial": null,
+    "regularPriceUnknown": true,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Limited monthly generative credits; exact count not confirmed from an official page within budget.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Paid tier with a monthly generative-credit allowance; exact price and credit count could not be confirmed from an official Adobe page reachable within the research budget (firefly.adobe.com pricing pages render pricing via JavaScript).", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Higher-tier paid plan with a larger monthly credit allowance; exact price not confirmed from an official page within budget.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Top standalone tier with the largest monthly credit allowance; exact price not confirmed from an official page within budget.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Adobe Firefly's official pricing pages (firefly.adobe.com/plans, adobe.com/products/firefly) render their plan cards via JavaScript; static fetches returned no plan names, prices or credit counts within the page-budget for this session. Prices must be verified live before publishing.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Web application for generative image, video and audio creation from text and reference-image prompts.", "sourceIds": ["s1"] },
+      { "en": "Firefly's generative models also power features embedded inside other Adobe apps such as Photoshop, Premiere Pro and InDesign (Generative Fill, Generative Extend, etc.).", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Premium features (video generation, translation, sound effects, third-party partner models) consume a separate credit pool beyond unlimited 'standard' generations on paid plans, per third-party reporting; not independently confirmed on an official page within budget.", "sourceIds": ["s2"] },
+      { "en": "Firefly's own model outputs and credit limits vary by plan, and Adobe can change prices, credit quantities and currencies by region and over time, making cost prediction less stable than a flat subscription.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Photoshop", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Premiere Pro", "slug": null, "sourceIds": ["s1"] },
+      { "name": "InDesign", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    { "slug": "midjourney", "reason": { "en": "Direct competitor in AI image generation, though delivered through Discord/web rather than integrated into a creative suite." } },
+    { "slug": "canva", "reason": { "en": "Overlaps for users who want AI-assisted image generation inside an accessible all-in-one design tool rather than Adobe's ecosystem." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Ideogram", "officialUrl": "https://ideogram.ai", "reason": "Popular AI image generator with strong text rendering, a direct Firefly competitor not in the catalogue" }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact monthly prices and credit allotments for Firefly Standard, Pro and Premium plans, and the current free-plan credit count, could not be confirmed from an official Adobe page reachable within the session's page budget (pricing is rendered client-side via JavaScript); needs a live-browser check before publishing.",
+    "Whether Firefly credits/prices vary by billing region beyond what is stated was not confirmed."
+  ],
+  "conflicts": []
+}

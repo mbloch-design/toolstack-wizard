@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "slug": "gitlens",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "GitLens",
+    "vendor": "GitKraken (Axosoft LLC)",
+    "officialUrl": "https://www.gitkraken.com/gitlens",
+    "docsUrl": "https://help.gitkraken.com/gitlens/gitlens-home/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.gitkraken.com/gitlens/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "GitLens pricing" },
+    { "id": "s2", "url": "https://www.gitkraken.com/gitlens", "tier": 1, "accessedOn": "2026-09-25", "title": "GitLens product page" },
+    { "id": "s3", "url": "https://gitkraken.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "GitKraken plans pricing" },
+    { "id": "s4", "url": "https://gitkraken.com/gitlens/pro-features", "tier": 1, "accessedOn": "2026-09-25", "title": "GitLens Pro features" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://gitkraken.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Community edition: public and local repositories only, basic blame/history views, GitHub Copilot support with weekly AI credit cap.", "sourceIds": ["s1", "s3"] },
+    "trial": { "days": 14, "sourceIds": ["s1", "s3"] },
+    "regularPriceUnknown": true,
+    "plans": [
+      {
+        "key": "community",
+        "name": "Community",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Public and local repositories only; basic blame/history views; GitHub Copilot support with a weekly AI credit cap.", "sourceIds": ["s1", "s3"] }],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Up to 2 seats; private repo access; up to 1,000,000 weekly AI credits per user. Exact seat price is not displayed on the public page without starting checkout (JS-rendered).", "sourceIds": ["s3", "s4"] }],
+        "sourceIds": ["s3", "s4"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Up to 10 seats; self-hosted Git integrations, single-domain SSO, team Launchpad, up to 2,000,000 weekly AI credits per user. Price not publicly displayed on the fetched page.", "sourceIds": ["s3"] }],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Up to 100 seats; multi-domain SSO, customer success manager, GitKraken Insights, up to 3,000,000 weekly AI credits per user. Price not publicly displayed on the fetched page.", "sourceIds": ["s3"] }],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 20,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom terms and master service agreements, minimum 20+ seats, 30-day trial.", "sourceIds": ["s3"] }],
+        "sourceIds": ["s3"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "GitKraken's pricing page renders plan prices via JavaScript; the exact per-seat dollar amounts for Pro, Advanced and Business were not retrievable through static page fetches and must be confirmed on gitkraken.com/pricing before publishing.", "sourceIds": ["s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Commit Graph showing branches, commits, worktrees and working changes in one visual view.", "sourceIds": ["s2"] },
+      { "en": "Inline blame annotations, Git CodeLens, file/line history and a Visual File History timeline.", "sourceIds": ["s2"] },
+      { "en": "AI-powered commit message generation, PR descriptions, changelog creation and merge-conflict assistance.", "sourceIds": ["s2"] },
+      { "en": "Launchpad for centralized pull request tracking across repositories.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Private repository features require a paid Pro subscription; the free Community edition only supports public and local repositories.", "sourceIds": ["s1", "s2"] },
+      { "en": "Advanced features such as Commit Graph extras, Worktrees, Visual File History and GitKraken AI are limited or gated in the free tier.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": null, "sourceIds": ["s2"] },
+      { "name": "GitLab", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Bitbucket", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Jira", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "desktop"]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    { "slug": "vercel", "reason": { "en": "Both are core developer-workflow tools frequently used alongside VS Code, though for a different job (deployment vs. Git visualization)." } }
+  ],
+  "missingAlternatives": [
+    { "name": "GitHub Desktop", "officialUrl": "https://desktop.github.com/", "reason": "Free alternative Git GUI many solo developers compare GitLens against, not in the catalogue" },
+    { "name": "Sourcetree", "officialUrl": "https://www.sourcetreeapp.com/", "reason": "Free Git GUI client, a direct alternative for visual Git history, not in the catalogue" }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact monthly/annual per-seat USD prices for GitLens Pro, Advanced and Business are not statically retrievable from gitkraken.com/pricing (JS-rendered checkout); needs a live-browser check before publishing.",
+    "Whether taxes are included in listed prices is not stated."
+  ],
+  "conflicts": []
+}

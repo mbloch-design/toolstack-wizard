@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "slug": "houdini",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Houdini",
+    "vendor": "SideFX",
+    "officialUrl": "https://www.sidefx.com",
+    "docsUrl": "https://www.sidefx.com/docs/houdini/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.sidefx.com/buy/", "tier": 1, "accessedOn": "2026-09-25", "title": "Houdini Store" },
+    { "id": "s2", "url": "https://www.sidefx.com/products/houdini-indie/", "tier": 1, "accessedOn": "2026-09-25", "title": "Houdini Indie product page" },
+    { "id": "s3", "url": "https://www.sidefx.com/products/houdini-core/", "tier": 1, "accessedOn": "2026-09-25", "title": "Houdini Core product page" }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://www.sidefx.com/buy/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Houdini Apprentice: non-commercial use only, near-full feature access, watermarked renders and file format restricted to Apprentice-only files.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "apprentice",
+        "name": "Houdini Apprentice",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free, non-commercial use only; renders carry a watermark; access to nearly all Houdini FX features.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "indie",
+        "name": "Houdini Indie",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 24.92, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Annual license priced at $299/year (or $449 for a 2-year term); limited to 3 licenses per commercial entity.", "sourceIds": ["s2"] },
+          { "en": "Only for commercial/contracting entities with annual gross revenue under $100,000 USD and under $1,000,000 USD in total funding raised in the last 24 months.", "sourceIds": ["s2"] },
+          { "en": "Includes Houdini Engine Indie and SideFX Labs production tools at no extra cost.", "sourceIds": ["s2"] }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "core",
+        "name": "Houdini Core",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "No public price shown on the Houdini Core product page; purchase/licensing requires going through the Buy flow or contacting SideFX. Limited to 5 workstation licenses per studio.", "sourceIds": ["s1", "s3"] }],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "fx",
+        "name": "Houdini FX",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Full VFX and animation capabilities; no public price shown on the fetched pages; limited to 5 workstation licenses per studio.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "indie",
+    "addOns": [],
+    "cautions": [
+      { "en": "Houdini Indie is only available to entities under $100K annual revenue and under $1M total funding raised; a growing studio will eventually need to move to Core or FX at unpublished, higher prices.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Procedural modeling, rigging and animation workflows built around a node-based system.", "sourceIds": ["s2"] },
+      { "en": "VFX simulation tools for particles, dynamics, fluids and terrain generation.", "sourceIds": ["s2"] },
+      { "en": "Built-in Karma XPU renderer plus support for third-party renderers including RenderMan, Arnold, Redshift, V-Ray, 3Delight and OctaneRender.", "sourceIds": ["s2"] },
+      { "en": "Houdini Engine plugin for integrating Houdini's procedural assets into other DCC and game-engine pipelines.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free Apprentice tier is strictly non-commercial and watermarks all renders.", "sourceIds": ["s1"] },
+      { "en": "Indie tier is gated by revenue and funding caps, and capped at 3 licenses per studio.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "RenderMan", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Arnold", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Redshift", "slug": null, "sourceIds": ["s2"] },
+      { "name": "V-Ray", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    { "slug": "blender", "reason": { "en": "Free, open-source 3D suite covering modeling, simulation and rendering, the main lower-cost alternative to Houdini for procedural and VFX work." } },
+    { "slug": "cinema-4d", "reason": { "en": "Competing 3D/motion graphics application with its own procedural and simulation toolset." } },
+    { "slug": "maya", "reason": { "en": "Industry-standard 3D animation and VFX package that overlaps with Houdini in film and game production pipelines." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Public prices for Houdini Core and Houdini FX are not shown on their SideFX product pages or the Buy page as fetched; they require going through the interactive purchase flow or contacting SideFX directly.",
+    "Whether Houdini Indie offers a free trial period was not stated on the fetched pages."
+  ],
+  "conflicts": []
+}
