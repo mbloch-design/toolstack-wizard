@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 2,
+  "slug": "prometheus",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Prometheus",
+    "vendor": "Prometheus Authors (Cloud Native Computing Foundation, graduated project)",
+    "officialUrl": "https://prometheus.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://prometheus.io",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Prometheus homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "Entirely free and open source under the Apache 2.0 license; no paid tier from the project itself.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "self-hosted",
+        "name": "Self-hosted (open source)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free to self-host; statically linked binaries with no external dependencies. No official managed/hosted offering from the Prometheus project itself.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Prometheus itself has no paid plan or vendor; hosting costs and managed-service offerings (e.g. from cloud providers) are separate and not covered by the project's own site.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Dimensional data model for time series metrics with flexible key-value labeling.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "PromQL query language for real-time metric transformation and correlation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in alerting rule engine paired with a separate Alertmanager for notification routing and silencing.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Hundreds of official and community-contributed exporters/integrations for extracting metrics from existing systems.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No official managed/hosted version; teams must self-host and operate the storage, scaling and high-availability setup themselves.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No built-in long-term dashboarding UI comparable to Grafana; visualization typically requires a separate tool.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Kubernetes",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "datadog",
+      "reason": {
+        "en": "Commercial, fully managed monitoring and metrics platform covering similar time-series alerting use cases without self-hosting.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "grafana",
+      "reason": {
+        "en": "Commonly paired with or compared to Prometheus for dashboarding and visualization of monitoring data.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "better-stack",
+      "reason": {
+        "en": "Managed monitoring and alerting alternative for teams that don't want to operate Prometheus themselves.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "VictoriaMetrics",
+      "officialUrl": "https://victoriametrics.com/",
+      "reason": "Prometheus-compatible open-source and managed time-series monitoring alternative, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Supported deployment platforms beyond Kubernetes/containers were not detailed on the homepage checked."
+  ],
+  "conflicts": []
+}

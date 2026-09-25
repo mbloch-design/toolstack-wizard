@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "slug": "zoho",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Zoho One",
+    "vendor": "Zoho Corporation",
+    "officialUrl": "https://www.zoho.com/one/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Zoho is a broad suite of 50+ individually sold SaaS apps; this dossier covers the Zoho One bundle specifically, since 'zoho' as a single product corresponds to that unified offering."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.zoho.com/one/pricing.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Zoho One pricing"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.zoho.com/one/pricing.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "all-employee",
+        "name": "All Employee Pricing",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Requires purchasing a license for every employee in the organization; exact per-user rate not published without this commitment. Includes 50+ business applications.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "flexible-users",
+        "name": "Flexible Users",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 90,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$90/user/month billed annually, licensing only the specific users who need access rather than the whole company; includes 50+ business applications.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "flexible-users",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Switching between the 'Essentials' tier and 'Standard' tier of Zoho One requires upgrading or downgrading ALL users in the organization at once, not per-user.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The 'All Employee Pricing' plan mandates buying a license for every person on payroll, even non-users, which can inflate cost for organizations with many non-software users.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Bundles 50+ Zoho business applications (CRM, collaboration, finance, marketing, customer service, HR) under one subscription and single invoice.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Centralized administrative control across all bundled apps, including mobile device management.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Available as web, mobile and desktop applications, plus browser extensions.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Plan changes (Essentials/Standard) apply to the whole organization, not individual users, reducing flexibility for mixed usage needs.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The lower headline per-user price requires either committing to license every employee or paying a higher flexible-user rate ($90/month) for partial adoption.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android",
+      "desktop"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "netsuite",
+      "reason": {
+        "en": "Broader ERP suite competitor for businesses needing a unified operations platform, at a higher price point.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "microsoft-dynamics-business-central",
+      "reason": {
+        "en": "All-in-one business application suite competing for the same unified-platform buyer.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "hive",
+      "reason": {
+        "en": "Alternative all-in-one work platform combining collaboration and business tools for small teams.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Odoo",
+      "officialUrl": "https://www.odoo.com/",
+      "reason": "Direct competitor as an all-in-one, modular business application suite with per-app or bundled pricing, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Exact per-user price for the 'All Employee Pricing' plan was not published on the page without initiating a quote.",
+    "Pricing for the Essentials tier specifically (as opposed to Standard) was not itemized with a monthly figure on the page checked."
+  ],
+  "conflicts": []
+}

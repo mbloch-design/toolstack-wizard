@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "slug": "posthog",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "PostHog",
+    "vendor": "PostHog Inc.",
+    "officialUrl": "https://posthog.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://posthog.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "PostHog pricing"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://posthog.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "1M analytics events, 5K session recordings, 1M feature flag requests, 100K exception events, 1,500 survey responses, 1M data warehouse rows + free historical data, 10K events + 1M rows for data pipelines, 100K AI observability events, 10 GB ingested logs, all reset monthly.",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Generous monthly free allowances across every product (analytics, replay, feature flags, error tracking, surveys, data warehouse, pipelines, AI observability, logs); no payment method required until limits are exceeded.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pay-as-you-go",
+        "name": "Pay-as-you-go",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Usage-based pricing kicks in once free monthly allowances are exceeded, billed per unit consumed per product; exact per-unit rates were not itemized on the page checked.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "PostHog bundles many separate products (analytics, session replay, feature flags, error tracking, surveys, data warehouse, data pipelines, AI observability, logs) each with its own free allowance and usage-based overage pricing, so total cost depends on which products are used, not a single flat rate.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Product analytics with event tracking, funnels and dashboards.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Session replay (recordings) of user sessions.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Feature flags and A/B experimentation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Error tracking, surveys, a data warehouse, data pipelines, AI observability and log ingestion as additional bundled products.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free monthly allowances vary widely by product and reset monthly, which can make total cost estimation complex for teams using several PostHog products at once.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Exact pay-as-you-go per-unit overage rates were not itemized on the pricing page checked and require deeper review of the pricing calculator.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "mixpanel",
+      "reason": {
+        "en": "Direct product analytics competitor with events, funnels and a comparable free tier.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "amplitude",
+      "reason": {
+        "en": "Product analytics platform covering similar event tracking and experimentation use cases.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "plausible",
+      "reason": {
+        "en": "Lighter-weight, privacy-focused analytics alternative for teams that don't need PostHog's full product suite.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact pay-as-you-go per-unit prices for each product (analytics events, replay recordings, etc.) beyond the free allowance were not detailed on the pricing page checked."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "slug": "krea-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Krea AI",
+    "vendor": "Krea AI",
+    "officialUrl": "https://www.krea.ai",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "krea.ai and www.krea.ai returned a header-overflow/bot-blocking error on every direct fetch attempt in this session (pricing, homepage, /apps); the pricing figures below come from third-party pricing trackers via web search, not the official page, and need re-verification against krea.ai/pricing directly."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://costbench.com/software/ai-image-generators/krea/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Krea AI Pricing 2026 (third-party tracker, official page was inaccessible to this session)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.krea.ai/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": "100 compute units per day",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Reported at roughly 5,000 compute units/month; figure from a third-party pricing tracker, not confirmed on the official page in this session.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 35,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Reported at roughly 20,000 compute units/month; figure from a third-party pricing tracker, not confirmed on the official page in this session.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Pricing figures in this dossier come from third-party pricing trackers, not krea.ai/pricing directly, because the official domain could not be fetched in this session (bot-blocking behavior). Third-party sources also disagree on exact Max-plan pricing ($70 vs $105/month for different compute-unit configurations), suggesting Krea uses a configurable/tiered compute-unit selector rather than fixed plans above Pro. Treat all figures here as provisional until re-verified on the official page.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Aggregates 60+ third-party and proprietary AI image/video generation models (e.g. Flux, Runway, Veo) in one unified interface with a shared compute-unit credit system.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Offers real-time AI art/image generation alongside standard asynchronous generation workflows.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Usage is metered via compute units shared across all models, so heavier or more expensive models consume the monthly allowance faster than others.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plan structure above the Pro tier appears configurable rather than fixed, making it harder to compare a single flat price across tools.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "midjourney",
+      "reason": {
+        "en": "Direct AI image generation competitor and one of the model providers aggregated by Krea itself.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "leonardo-ai",
+      "reason": {
+        "en": "AI image/video generation platform competing directly for the same creative use cases.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "magnific-ai",
+      "reason": {
+        "en": "AI image upscaling/enhancement tool with overlapping creative use cases.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "krea.ai's own pricing page could not be fetched in this session (header-overflow/bot-blocking error on every attempt: pricing, homepage, /apps); all pricing figures here are sourced from a third-party tracker and require re-verification directly on krea.ai/pricing.",
+    "Exact platform support (mobile apps vs. web-only) was not confirmed from an official source."
+  ],
+  "conflicts": [
+    "Third-party sources disagree on Max-plan pricing ($70/month for 40,000 units vs. $105/month for a 60,000-unit configuration), likely because higher tiers use a configurable compute-unit selector rather than one fixed price; not resolved here for lack of official-page access."
+  ]
+}

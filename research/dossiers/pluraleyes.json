@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "slug": "pluraleyes",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "PluralEyes",
+    "vendor": "Maxon Computer GmbH (Red Giant)",
+    "officialUrl": "https://www.maxon.net/en/product-detail/red-giant/pluraleyes",
+    "docsUrl": "https://support.maxon.net/hc/en-us/articles/7389361453340-PluralEyes-Limited-Maintenance-Mode",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "discontinued",
+    "statusNote": "PluralEyes entered limited maintenance mode on February 1, 2023: no new feature development. Technical support and critical bug fixes for version 2023.0.0 ended February 1, 2024. The product page remains live and still lists TRY/BUY options, but the underlying audio/video sync-by-waveform capability it pioneered is now natively built into Premiere Pro, Final Cut Pro X, DaVinci Resolve and Avid Media Composer, which is the stated reason for discontinuation."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.maxon.net/en/product-detail/red-giant/pluraleyes",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "PluralEyes product page (limited maintenance mode notice)"
+    },
+    {
+      "id": "s2",
+      "url": "https://support.maxon.net/hc/en-us/articles/7389361453340-PluralEyes-Limited-Maintenance-Mode",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "PluralEyes: Limited Maintenance Mode (Maxon knowledge base)"
+    }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://www.maxon.net/en/product-detail/red-giant/pluraleyes",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "red-giant-complete",
+        "name": "Red Giant Complete (bundle access)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 50,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "PluralEyes is not sold as a standalone purchase on the current page checked; TRY/BUY links route through the broader Red Giant Complete subscription bundle rather than a dedicated PluralEyes-only price.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "red-giant-complete",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "No standalone PluralEyes-only price is displayed on the current product page; existing standalone license holders can keep using their software, but the page routes new buyers toward the Red Giant Complete bundle instead.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Since February 1, 2024, Maxon no longer provides technical support or critical bug fixes for PluralEyes, so it will not be updated for compatibility with newer host application versions.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Automatically synchronizes video and audio footage by comparing waveforms, syncing multi-camera/multi-recorder footage in seconds.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Designed to integrate with NLEs as a syncing utility rather than a full editor.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "In limited maintenance mode since February 1, 2023: no new features, and technical support/critical bug fixes ended February 1, 2024, so compatibility with newer host application versions is not guaranteed.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Its core value proposition (waveform-based auto-sync) is now natively built into Premiere Pro, Final Cut Pro X, DaVinci Resolve and Avid Media Composer, reducing the need for a separate tool.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "davinci-resolve",
+      "reason": {
+        "en": "Full NLE with native waveform-based audio/video auto-sync built in, replacing the need for a separate PluralEyes purchase.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "ae-red-giant",
+      "reason": {
+        "en": "PluralEyes is now bundled within the broader Red Giant Complete subscription rather than sold standalone.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No standalone PluralEyes-only price is currently listed; whether legacy standalone perpetual licenses can still be purchased new was not confirmed on the pages checked.",
+    "Exact minimum OS versions still supported were not itemized on the product page checked."
+  ],
+  "conflicts": []
+}

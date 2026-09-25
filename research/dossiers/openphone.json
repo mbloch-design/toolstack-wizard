@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 2,
+  "slug": "openphone",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Quo (formerly OpenPhone)",
+    "vendor": "Quo, Inc. (Y Combinator-backed)",
+    "officialUrl": "https://www.quo.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "renamed",
+    "statusNote": "openphone.com/pricing redirects (301) to quo.com/pricing; the product has been rebranded from OpenPhone to Quo."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.quo.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Quo (formerly OpenPhone) pricing"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.quo.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": 15,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One phone number per user, unlimited calling/messaging to US & Canada, voicemail transcripts, API access, manual call recording, limited task management.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 33,
+          "annualPerMonth": 23,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds AI call summaries/transcripts, group calling and call transfers, HubSpot/Salesforce integrations, phone menus (IVR), analytics/reporting, automatic call recording, live chat support.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "scale",
+        "name": "Scale",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 47,
+          "annualPerMonth": 35,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds AI call tags, dedicated onboarding, priority live chat/email support, inbound phone support.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      {
+        "en": "Additional phone numbers at $5/month each; automated SMS at $0.01 per segment; international calling/messaging billed per-minute/per-message at variable rates.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Only Starter offers month-to-month billing at $19/user; the advertised lower per-seat rates ($15/$23/$35) require annual commitment.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Business phone numbers (local or toll-free) per user with unlimited calling/messaging to US and Canadian numbers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Shared phone numbers with team collaboration, internal messaging threads, auto-replies and scheduled messages.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI features: an AI agent (Sona), AI call summaries/transcripts and AI call tags on higher tiers, plus MCP integration for ChatGPT/Claude.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Phone menus (IVR), group calling, call transfers and call recording (manual on Starter, automatic on Business/Scale).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free plan; only a 7-day trial before billing begins.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatic call recording, IVR, CRM integrations (HubSpot/Salesforce) and analytics all require at least the Business tier, not available on Starter.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "HubSpot",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Salesforce",
+        "slug": "salesforce",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Zapier",
+        "slug": "zapier",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Pipedrive",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "aircall",
+      "reason": {
+        "en": "Direct business phone system competitor with similar per-seat pricing and CRM integrations.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "zoom-pro",
+      "reason": {
+        "en": "Offers a business phone add-on that overlaps with Quo's core calling functionality for small teams.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "calltrackingmetrics",
+      "reason": {
+        "en": "Alternative call management platform with analytics and call tracking for small teams.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Dialpad",
+      "officialUrl": "https://www.dialpad.com/",
+      "reason": "Major direct competitor in AI-powered business phone systems, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Whether the seed's 'openphone' slug should be renamed to reflect the Quo rebrand is a catalogue/editorial decision, not resolved here."
+  ],
+  "conflicts": [
+    "openphone.com now redirects to quo.com: the product has been rebranded from OpenPhone to Quo. This dossier records facts from the current quo.com/pricing page under the existing 'openphone' slug per the batch assignment."
+  ]
+}

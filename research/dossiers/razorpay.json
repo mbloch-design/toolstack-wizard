@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 2,
+  "slug": "razorpay",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Razorpay",
+    "vendor": "Razorpay Software Private Limited",
+    "officialUrl": "https://razorpay.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://razorpay.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Razorpay pricing"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "INR",
+    "pricingUrl": "https://razorpay.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "IN",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "standard-domestic",
+        "name": "Standard domestic payments",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "No monthly or setup fee; cost is a flat 2% transaction fee across all domestic payment instruments (cards, UPI, netbanking, wallets, Pay Later, EMI), with no annual maintenance or refund processing charges. 18% GST applies on top of platform fees.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "razorpayx-payroll-prime",
+        "name": "RazorpayX Payroll Prime",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 2499,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 20 employees; a separate payroll product billed monthly in INR.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "standard-domestic",
+    "addOns": [
+      {
+        "en": "International card payments up to 3% per transaction; international bank transfers at 1% with zero forex markup.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "UPI QR codes at 0.99% per transaction; Smart Collect at 1% or ₹10 per transaction, whichever is lower.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Subscription billing (card-based) at 0.9% plus platform fees; Instant Refund at ₹7.99–14.99 depending on amount.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Pricing is usage-based per transaction rather than a flat subscription; the 2% headline rate applies to standard domestic volume only, while international payments, UPI recurring (NACH/e-mandate), Magic Checkout and Optimizer pricing require contacting sales or are quote-based.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Enterprise/negotiated pricing is available above roughly ₹5,00,000 in monthly volume.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Accepts domestic payments across cards, UPI, netbanking (72+ banks), wallets, Pay Later and EMI.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Provides payment links, hosted payment pages, payment buttons, invoices and UPI QR codes at no extra platform cost.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "International payment acceptance in 135+ currencies across 180+ countries.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "RESTful API, official SDKs, webhooks and a dashboard with analytics; PCI-DSS, SOC 2 and ISO 27001 compliance.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No public pricing for several products (Magic Checkout, Optimizer, UPI recurring/e-mandate); they require a custom quote request.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Payroll and payout products (RazorpayX) are separate, additional subscription products billed on their own quarterly/monthly schedules rather than included in the core payment gateway fee.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "stripe",
+      "reason": {
+        "en": "Global payment gateway competitor with a comparable usage-based transaction fee model and broader international reach.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "payoneer",
+      "reason": {
+        "en": "Cross-border payment and payout alternative for businesses needing international collections.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "qonto",
+      "reason": {
+        "en": "Business account and payment alternative for teams outside India, comparable for basic invoicing and payment collection needs.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "PayU",
+      "officialUrl": "https://payu.in/",
+      "reason": "Major Indian payment gateway competitor to Razorpay, not in the catalogue."
+    },
+    {
+      "name": "Cashfree Payments",
+      "officialUrl": "https://www.cashfree.com/",
+      "reason": "Direct Indian payment gateway competitor with a similar usage-based fee model, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Exact per-user pricing for RazorpayX Payroll Elite and Enterprise tiers beyond the headline monthly figure was not fully broken down on the page checked.",
+    "Whether prices shown are exclusive or inclusive of the 18% GST beyond the flat transaction fee was only confirmed for platform fees, not for all add-on products."
+  ],
+  "conflicts": [
+    "The seed data suggested a flat monthly subscription price (~€15/month, 'Pro' plan); the official pricing page shows a usage-based (per-transaction) fee model instead, with no simple flat monthly consumer-facing plan for the core payment gateway. The official page was used as the source of truth."
+  ]
+}

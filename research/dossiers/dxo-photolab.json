@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "slug": "dxo-photolab",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "DxO PhotoLab 10",
+    "vendor": "DxO Labs",
+    "officialUrl": "https://www.dxo.com/dxo-photolab/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://shop.dxo.com/en/dxo-photolab-10-essential.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "DxO PhotoLab 10 Essential shop page"
+    },
+    {
+      "id": "s2",
+      "url": "https://shop.dxo.com/en/dxo-photolab-10-elite.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "DxO PhotoLab 10 Elite shop page"
+    }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://shop.dxo.com/en/dxo-photolab-10-essential.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "essential",
+        "name": "Essential",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 159.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Lifetime license activatable on 2 computers (Mac and/or PC); upgrade pricing from versions 8/9 available from $84.99.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "elite",
+        "name": "Elite",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 249.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Lifetime license activatable on 3 computers; adds advanced features over Essential (e.g. more correction tools); upgrade from Essential costs $99.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "essential",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "No subscription option exists; both editions are perpetual, one-time-purchase licenses, with paid upgrade pricing for future major versions.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "License requires periodic online reactivation; offline usage is limited to 37 days after the last online activation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "End-to-end RAW photo editing with DxO's optics-based automatic corrections (lens sharpness, distortion, vignetting).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-powered denoising and other AI features, which require a dedicated GPU (NVIDIA RTX 3000+, AMD Radeon RX6000+, Intel ARC, or Apple M1+).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Available in English, French, German, Japanese and Simplified Chinese.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No monthly subscription plan; buyers pay a full one-time price per major version, with separate paid upgrades for future releases.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI features require a fairly recent, capable GPU (8GB VRAM minimum on supported cards), which not all users' machines will have.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "License activation is capped at 2 computers on Essential and 3 on Elite, with only 37 days of offline use before requiring reactivation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "adobe-lightroom",
+      "reason": {
+        "en": "Dominant subscription-based RAW editor and asset manager, the main alternative for photographers comparing pricing models.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "capture-one",
+      "reason": {
+        "en": "Professional RAW editing competitor offering both subscription and perpetual license options.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "darktable",
+      "reason": {
+        "en": "Free, open-source RAW editor alternative for users who don't want to pay for a perpetual license.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Trial duration/availability for DxO PhotoLab 10 was not stated on the shop pages checked.",
+    "Precise feature differences between Essential and Elite editions beyond activation count were not fully itemized on the pages checked."
+  ],
+  "conflicts": [
+    "The current product version is DxO PhotoLab 10 (Essential $159.99 / Elite $249.99), not version 7/8 or the $99.99 Essential price implied by the seed data's earlier pricingText, which appears outdated."
+  ]
+}
