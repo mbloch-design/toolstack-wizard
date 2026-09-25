@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "slug": "woocommerce",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "WooCommerce",
+    "vendor": "Automattic Inc.",
+    "officialUrl": "https://woocommerce.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://woocommerce.com/features/", "tier": 1, "accessedOn": "2026-09-25", "title": "WooCommerce features" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://woocommerce.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "The core WooCommerce plugin is free to add to an existing WordPress site; scales from 1 to 100,000+ orders/day.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "core-plugin",
+        "name": "WooCommerce (core plugin)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Free to install on a WordPress site; scales from 1 to 100,000+ orders/day. Requires separate WordPress hosting and, for most production stores, paid extensions.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "core-plugin",
+    "addOns": [
+      { "en": "Hundreds of paid extensions available on the Woo Marketplace (shipping, subscriptions, memberships, etc.) sold separately from the free core plugin.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The plugin itself is free but requires WordPress hosting plus paid extensions/payment-gateway fees for a full production store, so total cost is not visible on a single pricing page.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Open-source e-commerce plugin turning a WordPress site into an online store, selling physical products, digital content, subscriptions, memberships and bookings.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "140+ region-specific payment gateways including WooPayments, Stripe, PayPal, Square and Amazon Pay, plus automated tax calculation and live shipping rates.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "REST API and hundreds of free/paid extensions for custom integrations via the Woo Marketplace.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Not a standalone product: requires a WordPress installation and its own hosting to run.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Many features that come built-in with hosted competitors (advanced shipping, subscriptions) require separately purchased extensions.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "WordPress", "slug": "wordpress", "sourceIds": ["s1"] },
+      { "name": "Stripe", "slug": "stripe", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No relevant e-commerce alternativeCandidates were present in the seed's list (mostly unrelated dev/nocode tools), so alternatives were left empty rather than guessed."
+  ],
+  "conflicts": []
+}

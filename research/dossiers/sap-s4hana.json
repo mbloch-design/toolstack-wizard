@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "slug": "sap-s4hana",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SAP S/4HANA",
+    "vendor": "SAP SE",
+    "officialUrl": "https://www.sap.com/products/erp/s4hana.html",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.sap.com/products/erp/s4hana.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "SAP S/4HANA product page"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.sap.com/products/erp/s4hana.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "No public pricing; deployment (cloud vs on-premise), licensing model and implementation scope are negotiated per customer, so total cost of ownership varies widely and typically includes large implementation/consulting fees.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Next-generation enterprise ERP suite covering finance, supply chain, manufacturing and procurement with an in-memory (HANA) database for real-time analytics.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Embedded AI features for process automation and decision support across ERP modules.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Available in cloud (public/private) and on-premise deployment options.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No self-serve pricing or sign-up; requires a sales engagement and implementation project before go-live.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Designed for large organizations replacing legacy ERP systems, not for solo freelancers or very small teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "netsuite",
+      "reason": {
+        "en": "Cloud ERP competitor targeting mid-market to large organizations.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "microsoft-dynamics-365-finance-operations",
+      "reason": {
+        "en": "Direct enterprise ERP/finance competitor from Microsoft.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "oracle-fusion-cloud",
+      "reason": {
+        "en": "Major cloud ERP suite competing for the same large-enterprise segment.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No indicative pricing figures exist publicly; cost depends entirely on a custom quote and implementation scope."
+  ],
+  "conflicts": []
+}

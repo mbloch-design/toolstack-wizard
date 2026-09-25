@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "slug": "clickup",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ClickUp",
+    "vendor": "ClickUp",
+    "officialUrl": "https://clickup.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://clickup.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "ClickUp pricing"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://clickup.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "60 MB storage, unlimited tasks, up to 2 teams/spaces, 1 form, basic views, 100 automation executions/month.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "unlimited",
+        "name": "Unlimited",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 10,
+          "annualPerMonth": 7,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited storage, all integrations, native time tracking, up to 3 teams/spaces.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": 12,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited dashboards, 5,000 automation executions/month, mind mapping, up to 10 teams/spaces.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "250,000 automation executions/month, custom roles, SAML SSO, dedicated support.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "unlimited",
+    "addOns": [
+      {
+        "en": "Brain AI add-on: $9/mo (~$7.20 annualized) for unlimited assistant and 1,500 AI Super Credits; Everything AI at $28/mo for the full agentic suite and 5,000 AI Super Credits.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Automation execution caps (100 free / 5,000 Business / 250,000 Enterprise) can force an upgrade for heavy automation users even if seat count stays low.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "All-in-one work management: tasks, docs, dashboards, chat, whiteboards and goal tracking in one workspace.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in native time tracking and automations, configurable per space/folder/list.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Optional \"Brain\" AI layer (assistant, agents, image generation) sold as a per-seat add-on on top of the core plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan storage is capped at only 60 MB, far below most competitors' free tiers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Full AI feature set is a separate paid add-on rather than bundled into the paid plans.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "asana",
+      "reason": {
+        "en": "Widely used project management competitor with similar task/workflow focus.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "monday",
+      "reason": {
+        "en": "Direct competitor in the all-in-one work OS category.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "trello",
+      "reason": {
+        "en": "Simpler board-based alternative often compared to ClickUp for smaller teams.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact list of native integrations and mobile platform availability (iOS/Android) was not re-verified on an official page in this session."
+  ],
+  "conflicts": []
+}

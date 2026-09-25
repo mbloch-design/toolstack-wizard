@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "slug": "securityscorecard",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SecurityScorecard",
+    "vendor": "SecurityScorecard, Inc.",
+    "officialUrl": "https://securityscorecard.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://securityscorecard.com/product/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "SecurityScorecard TITAN AI product page"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://securityscorecard.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "A free account is available giving access to a scorecard for one's own domain, questionnaire responses and basic dashboards.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "No public price list; paid tiers (reported informally as Core, Premium, Elite) require contacting sales, and cost scales with the number of vendors/domains monitored plus optional add-on modules.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Continuous third-party risk monitoring producing A-F security ratings for vendors and one's own organization.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatic discovery of hidden third- and fourth-party vendors across the extended supply chain.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-accelerated security questionnaire automation and predictive attack-path analytics (TITAN suite).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No self-serve pricing; a sales engagement is required to get a quote for any paid tier.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Oriented toward enterprise vendor-risk programs, not toward assessing one's own product for a small team.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "ServiceNow",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "OneTrust",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "creditsafe",
+      "reason": {
+        "en": "Alternative source of third-party risk/business data used in vendor due diligence.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "dun-bradstreet",
+      "reason": {
+        "en": "Established provider of business and vendor risk data competing for the same due-diligence use case.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No public pricing figures could be verified for any paid tier; third-party estimates exist but are not confirmed by SecurityScorecard's own site and were excluded."
+  ],
+  "conflicts": []
+}

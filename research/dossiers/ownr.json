@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "slug": "ownr",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Ownr",
+    "vendor": "Ownr Inc. (RBC Ventures)",
+    "officialUrl": "https://ownr.co",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.ownr.co/blog/ownr-lowers-sole-proprietorship-fee/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Ownr blog: sole proprietorship fee reduced to $49"
+    }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "CAD",
+    "pricingUrl": "https://ownr.co",
+    "verifiedOn": "2026-09-25",
+    "region": "CA",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "sole-proprietorship",
+        "name": "Sole Proprietorship Registration",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 49
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Includes government filing fees; available in BC, Alberta, Ontario and Quebec.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "incorporation",
+        "name": "Business Incorporation",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Ranges roughly CAD 499-699 depending on province; includes corporate formation documents (director/shareholder resolutions, bylaws, share register) per third-party reporting, not independently confirmed on ownr.co in this session.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "sole-proprietorship",
+    "addOns": [
+      {
+        "en": "Ongoing compliance add-ons reported: an annual \"Online Minute Book\" plan and a \"Managed Corporation\" plan, priced in the low hundreds of CAD per year; exact current prices not independently confirmed on the official site in this session.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Pricing for incorporation and annual compliance plans could not be directly confirmed on ownr.co's own pricing page in this session; only the sole-proprietorship fee ($49 CAD) was confirmed via an official Ownr blog post.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Online business registration and incorporation for Canadian entrepreneurs (sole proprietorship, partnership, corporation).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Generates corporate formation documents (director/shareholder resolutions, bylaws) as part of incorporation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Service coverage is limited to specific Canadian provinces (confirmed: BC, Alberta, Ontario, Quebec for sole proprietorship).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Only serves Canadian business registration; not usable for businesses outside Canada.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Could not load ownr.co's own pricing page directly in this session (content returned empty); current incorporation and compliance-plan prices come from third-party review sites and need re-verification against the official pricing page.",
+    "No relevant business-registration alternativeCandidates were present in the seed's list; alternatives left empty."
+  ],
+  "conflicts": []
+}

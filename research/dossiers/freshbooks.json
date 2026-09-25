@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "slug": "freshbooks",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "FreshBooks",
+    "vendor": "FreshBooks",
+    "officialUrl": "https://www.freshbooks.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.freshbooks.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "FreshBooks pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.freshbooks.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "lite",
+        "name": "Lite",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 23, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Up to 5 billable clients; basic invoicing, expense tracking, estimates, payment acceptance.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 43, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Up to 50 billable clients; proposals, client retainers, financial reports, receipt scanning, accountant access.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 70, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited billable clients; project profitability, custom email templates, line-item receipt capture.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "select",
+        "name": "Select",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Unlimited billable clients; lower transaction fees, dedicated support, 2 included team members, guided data migration, advanced permissions.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "lite",
+    "addOns": [],
+    "cautions": [
+      { "en": "The pricing page displays heavily discounted promotional rates (Lite from $1/mo, Plus/Premium up to 80% off) that apply only for a limited introductory period; regular list prices ($23 / $43 / $70) were used here and should be reconfirmed at merge time in case they change.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Invoicing, expense tracking, estimates and online payment acceptance for freelancers and small businesses.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Unlimited time tracking, automated bank imports, tax reports and a mobile app on all plans.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; only a 30-day trial before a paid subscription is required.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Entry-level Lite plan caps billable clients at 5, forcing an upgrade as a freelancer's client base grows.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Full integrations list and exact team-member limits per plan were not confirmed on an official page in this session.",
+    "No alternativeCandidates were provided in the seed for this slug; alternatives left empty rather than guessed."
+  ],
+  "conflicts": []
+}

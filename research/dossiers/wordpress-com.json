@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 2,
+  "slug": "wordpress-com",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "WordPress.com",
+    "vendor": "Automattic Inc.",
+    "officialUrl": "https://wordpress.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://wordpress.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "WordPress.com pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://wordpress.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "1 GB storage, WordPress.com subdomain only, unlimited pages/posts, basic 7-day stats, no plugins or custom domain, ads shown to visitors.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": 4,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "6 GB storage; free domain for 1 year, removes visitor ads, guided site builder, premium themes.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 18,
+          "annualPerMonth": 8,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "13 GB storage; adds payment buttons, video uploads, premium analytics with UTM tracking.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 40,
+          "annualPerMonth": 25,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "50 GB storage (expandable); plugin support, built-in AI assistant, 250 GB VideoPress, email marketing, one-click restores.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "commerce",
+        "name": "Commerce",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 70,
+          "annualPerMonth": 45,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "50 GB storage (expandable); WooCommerce integration, unlimited products, sell in 60+ countries, 0% transaction fees.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "personal",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Monthly prices are roughly double the annual-equivalent rate shown on the pricing page (e.g. Personal $9/mo vs $4/mo billed annually); multi-year commitments unlock further discounts.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plugin support and a custom domain are unavailable below the Business plan, a common upgrade trigger.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Hosted website builder and blogging platform built on WordPress, with guided site setup and premium themes.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in AI assistant and e-commerce (WooCommerce) integration on higher-tier plans.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan cannot use a custom domain, cannot install plugins, and shows ads to visitors.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Third-party plugin support (beyond built-in features) requires the Business plan or above.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "WooCommerce",
+        "slug": "woocommerce",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No directly comparable website-builder alternativeCandidates (e.g. Wix, Squarespace) were present in the seed's list; alternatives left empty rather than guessed from unrelated automation tools."
+  ],
+  "conflicts": []
+}

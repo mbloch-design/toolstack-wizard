@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "slug": "jobber",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Jobber",
+    "vendor": "Jobber Software Inc.",
+    "officialUrl": "https://www.getjobber.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.getjobber.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Jobber pricing" },
+    { "id": "s2", "url": "https://www.getjobber.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Jobber homepage" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.getjobber.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "core",
+        "name": "Core",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 49, "annualPerMonth": 21, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 user included, $29/mo per extra user; online booking, quotes, invoicing, online payments, basic reporting.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "connect",
+        "name": "Connect",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 139, "annualPerMonth": 70, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 user included, $29/mo per extra user; adds automated reminders, automatic payments, checklists, QuickBooks sync, time/expense tracking.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "grow",
+        "name": "Grow",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 199, "annualPerMonth": 105, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 user included (tiers up to 15 users at $499/mo), $29/mo per extra user; adds rich quote customization, job costing, two-way SMS, workflow automation.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": 499, "annualPerMonth": 280, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "5 users included (tiers up to 15 users at $699/mo), $29/mo per extra user; adds unlimited media storage, crew scheduling, custom reports, AI receptionist, dedicated support.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "core",
+    "addOns": [
+      { "en": "Extra users on any plan cost $29/mo each beyond the included seats.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Listed monthly prices carry a promotional annual discount of up to 40% (ending September 30, 2026); the non-discounted monthly price is what's recorded here.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Per-extra-user pricing ($29/mo) means a small crew quickly multiplies the base plan cost.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Field service management: quoting, scheduling, invoicing and online payments for service businesses (HVAC, plumbing, landscaping, cleaning, etc.).", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Jobber AI assists with pricing, upsell suggestions and job time estimation; higher tiers add an AI receptionist.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; only a 14-day trial before a paid subscription is required.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Core plan (cheapest tier) lacks QuickBooks sync and automated reminders, available only from Connect upward.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "QuickBooks", "slug": "quickbooks", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No alternativeCandidates for this slug's actual field-service-management competitors were present in the seed (the provided list is mostly unrelated productivity tools), so alternatives were left empty rather than guessed."
+  ],
+  "conflicts": [
+    "Seed pricingText stated Core at $39/mo, but the official pricing page (accessed 2026-09-25) shows Core at $49/mo monthly / $21/mo annualized; the current official figure was used."
+  ]
+}
