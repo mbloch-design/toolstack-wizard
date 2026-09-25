@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "slug": "dbt",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "dbt (dbt Cloud)",
+    "vendor": "dbt Labs, Inc.",
+    "officialUrl": "https://www.getdbt.com",
+    "docsUrl": "https://docs.getdbt.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.getdbt.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "dbt pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.getdbt.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "1 seat, 3,000 models/month, 1 project (dbt Core/Developer plan).", "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "developer",
+        "name": "Developer",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 seat, 3,000 models run/month, 1 project.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": 100, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "5 seats included, 15,000 models/month, 5,000 queried metrics/month, 1 project. Billed monthly by credit card.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "100,000 models/month, 20,000 metrics/month, up to 30 projects, SSO and role-based access control.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise-plus",
+        "name": "Enterprise+",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Unlimited projects, column-level lineage, multi-project dbt Mesh, PrivateLink and IP restrictions.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Usage caps (models run/month, metrics queried/month) can force an upgrade even for a single small team if pipelines run frequently.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "SQL-based data transformation with version-controlled, testable data models.", "sourceIds": ["s1"] },
+      { "en": "Browser-based IDE with git safeguards, job scheduling, and monitoring.", "sourceIds": ["s1"] },
+      { "en": "dbt Semantic Layer for querying shared business metrics (Starter and above).", "sourceIds": ["s1"] },
+      { "en": "GitHub/GitLab CI integration for automated pipeline testing.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free Developer plan is capped at 1 seat and 3,000 model runs/month, unsuitable for a team.", "sourceIds": ["s1"] },
+      { "en": "Column-level lineage and multi-project architecture (dbt Mesh) require Enterprise+.", "sourceIds": ["s1"] },
+      { "en": "SSO and role-based access control are Enterprise-tier only, not available on Starter.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": "github", "sourceIds": ["s1"] },
+      { "name": "GitLab", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "bigquery", "reason": { "en": "Often paired with or substituted by warehouse-native transformation, overlapping on the analytics-pipeline job." } },
+    { "slug": "airbyte", "reason": { "en": "Adjacent data-pipeline tool sometimes used to replace parts of a dbt-based workflow." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether the free Developer/dbt Core plan is offered as hosted (dbt Cloud) or only as the open-source dbt Core CLI is not fully disentangled from the pricing page alone."
+  ],
+  "conflicts": []
+}

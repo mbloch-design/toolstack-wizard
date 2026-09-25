@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "slug": "wolters-kluwer",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Wolters Kluwer",
+    "vendor": "Wolters Kluwer N.V.",
+    "officialUrl": "https://www.wolterskluwer.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Corporate homepage returned HTTP 403 to automated fetch; content confirmed via search instead."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.wolterskluwer.com/en/solutions/compliance-intelligence", "tier": 1, "accessedOn": "2026-09-25", "title": "Compliance Intelligence | Wolters Kluwer" },
+    { "id": "s2", "url": "https://www.wolterskluwer.com/en/about-us/organization/legal-and-regulatory", "tier": 1, "accessedOn": "2026-09-25", "title": "Legal & Regulatory Division | Wolters Kluwer" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.wolterskluwer.com/en/solutions/compliance-intelligence",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": [] },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "No public price list found for any Wolters Kluwer compliance/legal product; enterprise sales is quote-only.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Compliance Intelligence: AI-powered monitoring of global regulatory bodies, summarizing proposed changes, guidance, and enforcement actions with red-lined updates.", "sourceIds": ["s1"] },
+      { "en": "A portfolio of separate legal/regulatory products (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) rather than a single tool.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "'Wolters Kluwer' is a corporate umbrella, not one product; a prospective buyer must pick a specific solution (e.g. Compliance Intelligence, Legisway) before pricing or scope can be evaluated.", "sourceIds": ["s2"] },
+      { "en": "No self-serve trial or public pricing; all engagement goes through enterprise sales.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "docusign", "reason": { "en": "Overlaps for contract/e-signature workflows offered within the Wolters Kluwer legal portfolio." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The catalogue entry treats 'Wolters Kluwer' as a single tool, but it is actually a multi-brand conglomerate; which specific product (Compliance Intelligence, Legisway, VitalLaw, etc.) the fiche should describe is unresolved.",
+    "No pricing figures found anywhere, official or third-party."
+  ],
+  "conflicts": [
+    "Seed pricingText claims 'À partir de 49€/mois' but no source on the official domain confirms any public monthly price; this figure could not be verified and is not carried into pricing.plans."
+  ]
+}

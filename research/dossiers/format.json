@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "slug": "format",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Format",
+    "vendor": "Format.com",
+    "officialUrl": "https://www.format.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.format.com/pricing-portfolio", "tier": 1, "accessedOn": "2026-09-25", "title": "Format pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.format.com/pricing-portfolio",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 14, "annualPerMonth": 10, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "10 website pages, 70 high-resolution images, no image storage add-on, 10 client galleries.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 24, "annualPerMonth": 12, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited pages, 1,500 high-resolution images, 100GB image storage, 15 hosted video minutes, 50 client galleries.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro-plus",
+        "name": "Pro Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 36, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited pages and images, 1TB image storage, 120 hosted video minutes, 250 client galleries, CRM Light, client contracts.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "The pricing page shows a promotional annual discount (up to 50%, time-limited); regular monthly prices are the ones recorded here.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Mobile-optimized portfolio website builder with award-winning templates.", "sourceIds": ["s1"] },
+      { "en": "Built-in client galleries with proofing, download, and password protection.", "sourceIds": ["s1"] },
+      { "en": "Online store for selling prints and digital products (Pro and above).", "sourceIds": ["s1"] },
+      { "en": "Lightroom plugin for direct publishing from Adobe Lightroom.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; only a 14-day trial before a paid subscription is required.", "sourceIds": ["s1"] },
+      { "en": "Custom code editor and custom fonts are unavailable on the entry Basic plan.", "sourceIds": ["s1"] },
+      { "en": "Client galleries, storage, and hosted video minutes are capped even on paid plans.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Lightroom", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "pixieset", "reason": { "en": "Direct competitor: portfolio and client-gallery builder for photographers." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No annual list price shown independent of the current promotional discount; regular annual pricing could not be confirmed beyond the monthly rate."
+  ],
+  "conflicts": []
+}

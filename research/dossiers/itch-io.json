@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "slug": "itch-io",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "itch.io",
+    "vendor": "itch.io (Leaf Corcoran)",
+    "officialUrl": "https://itch.io",
+    "docsUrl": "https://itch.io/docs/general/about",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://itch.io/docs/general/about", "tier": 1, "accessedOn": "2026-09-25", "title": "About itch.io" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://itch.io/docs/general/about",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Free to browse, buy, and publish; itch.io takes a creator-chosen revenue share (0% to 30%) on paid sales instead of charging a subscription.", "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (platform access)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "No subscription; itch.io instead takes a creator-chosen revenue share (0-30%, default around 10%) on paid sales.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Not a subscription product: creators set their own price (including pay-what-you-want) and choose itch.io's cut themselves, from 0% to 30%.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Open marketplace for distributing independent games, prototypes, assets, and comics without an approval process.", "sourceIds": ["s1"] },
+      { "en": "Pay-what-you-want pricing with a creator-controlled revenue share (0-30%) instead of a fixed platform cut.", "sourceIds": ["s1"] },
+      { "en": "Analytics dashboard covering discovery, downloads, and engagement per project.", "sourceIds": ["s1"] },
+      { "en": "Support for pre-orders, early access, bundling, and crowdfunding campaigns.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No paid 'pro' tier with extra features; monetization depends entirely on direct sales, not platform-provided premium tools.", "sourceIds": ["s1"] },
+      { "en": "Discovery is not algorithmically curated in the way larger storefronts are, so visibility depends on the creator's own audience.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Steam / Steamworks", "officialUrl": "https://partner.steamgames.com", "reason": "Main competing distribution platform for indie games, already in the catalogue as steamworks." }
+  ],
+  "unknowns": [
+    "No page-count breakdown for platform fees on payment processing (Stripe/PayPal) separate from itch.io's own revenue share was found within budget."
+  ],
+  "conflicts": []
+}

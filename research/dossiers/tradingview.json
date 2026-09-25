@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "slug": "tradingview",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "TradingView",
+    "vendor": "TradingView, Inc.",
+    "officialUrl": "https://www.tradingview.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.tradingview.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "TradingView pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.tradingview.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "1 chart per tab, 2 indicators per chart, 5,000 historical bars, 3 price alerts.", "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 chart per tab, 2 indicators per chart, 5,000 historical bars, 2 parallel chart connections, 3 price alerts.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "essential",
+        "name": "Essential",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 12.95, "annualPerMonth": 12.95, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "2 charts per tab, 5 indicators, 10,000 historical bars, 20 price alerts, 20 technical alerts.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 29.95, "annualPerMonth": 29.95, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "4 charts per tab, 10 indicators, 10,000 historical bars, 100 price alerts.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 59.95, "annualPerMonth": 59.95, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "8 charts per tab, 25 indicators, 20,000 historical bars, 400 price alerts, 2 watchlist alerts.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "ultimate",
+        "name": "Ultimate",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 199.95, "annualPerMonth": 199.95, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "16 charts per tab, 50 indicators, 40,000 historical bars, 1,000 price alerts, 15 watchlist alerts.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "essential",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pricing page shows identical monthly and 'annual' per-month rates but frames annual billing as saving a fixed dollar amount per year; the underlying billing cadence difference could not be fully disentangled within budget.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time and historical stock/crypto/forex charting with technical analysis tools.", "sourceIds": ["s1"] },
+      { "en": "Custom price and technical alerts, scaling with plan tier.", "sourceIds": ["s1"] },
+      { "en": "Built-in social trading community for sharing charts and ideas.", "sourceIds": ["s1"] },
+      { "en": "Multi-chart layouts with an increasing number of simultaneous charts per tier.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 1 chart per tab and only 2 indicators, too limited for serious multi-asset analysis.", "sourceIds": ["s1"] },
+      { "en": "Historical bar depth (5,000 on Free) restricts long-range backtesting without a paid plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether sales tax is included in the displayed USD prices is not stated ('sales tax may apply by location')."
+  ],
+  "conflicts": []
+}

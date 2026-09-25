@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "slug": "ashby",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Ashby",
+    "vendor": "Ashby HQ, Inc.",
+    "officialUrl": "https://www.ashbyhq.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.ashbyhq.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Ashby pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.ashbyhq.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "foundations",
+        "name": "All-In-One Foundations",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 400, "annualPerMonth": 360, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Flat price covering up to 100 employees; 10% discount available with annual commitment.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "For companies with 101 to 1,000 employees; price based on company size, usage, and commitment length.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "For companies over 1,000 employees.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "foundations",
+    "addOns": [
+      { "en": "Ashby Analytics: usage-based add-on for advanced reporting, for companies over 100 employees, on top of any ATS plan.", "sourceIds": ["s1"] },
+      { "en": "Advanced Scheduling Automation (AI auto-scheduler) and AI Notetaker: paid add-ons.", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Foundations pricing is flat per company (up to 100 employees), not per seat: a small team pays the same $400/month as one near the 100-employee ceiling.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Full applicant tracking system with sourcing, CRM, structured interview scheduling, and offer/approval workflows.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted candidate search, AI interview interpretation, and diversity analytics in reporting dashboards.", "sourceIds": ["s1"] },
+      { "en": "250+ marketplace integrations plus native Slack, Google Workspace, and Office 365 sync.", "sourceIds": ["s1"] },
+      { "en": "eSignature-backed offer templates and approval workflows.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan or published free trial; the entry point is a $400/month flat subscription.", "sourceIds": ["s1"] },
+      { "en": "AI Notetaker and advanced scheduling automation are separate paid add-ons, not included by default.", "sourceIds": ["s1"] },
+      { "en": "Pricing beyond 100 employees is entirely custom-quoted, with no published rate card.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
+      { "name": "Google Workspace", "slug": "google-workspace", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "greenhouse", "reason": { "en": "Leading ATS competitor for structured hiring and interview processes." } },
+    { "slug": "linkedin-recruiter", "reason": { "en": "Overlaps on sourcing and candidate outreach for the same hiring workflow." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No explicit free-trial length is published on the pricing page."
+  ],
+  "conflicts": []
+}

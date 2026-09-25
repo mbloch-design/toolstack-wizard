@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "productive-io",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Productive",
+    "vendor": "Productive.io",
+    "officialUrl": "https://productive.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://productive.io/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Productive pricing" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://productive.io/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "essential",
+        "name": "Essential",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 10, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "5 account-level custom fields, 1 sales pipeline, 7-day recycle bin retention.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "15 account-level custom fields, 3 sales pipelines, 180-day recycle bin retention, adds HRIS/invoicing integrations and rate cards.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "ultimate",
+        "name": "Ultimate",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "20+ custom fields, 5 pipelines, revenue forecasting, multiple subsidiaries, advanced security (SSO, 2FA enforcement, SCIM).", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "professional",
+    "addOns": [],
+    "cautions": [
+      { "en": "Note: the seed's own snapshot listed pricing as unpublished/on-quote, but the live pricing page shows public per-seat rates for Essential and Professional; only Ultimate is quote-based.", "sourceIds": ["s1"] },
+      { "en": "The pricing page's annual-vs-monthly figures for Essential/Professional could not be resolved cleanly (annual appeared to price higher per month than monthly billing), so only the monthly rate is recorded; verify the annual rate locally before publishing.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "All-in-one agency management: project management, resource planning, budgeting, and invoicing in one platform.", "sourceIds": ["s1"] },
+      { "en": "Time tracking with an AI assistant and AI-assisted time entries.", "sourceIds": ["s1"] },
+      { "en": "Reporting and forecasting, with a Scenario Builder on higher tiers.", "sourceIds": ["s1"] },
+      { "en": "API access and native Slack integration on all plans.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Advanced security controls (SSO, 2FA enforcement, SCIM) are Ultimate-only and require a custom quote.", "sourceIds": ["s1"] },
+      { "en": "HubSpot integration and webhooks are limited to the top Ultimate tier.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "asana", "reason": { "en": "Project management competitor used by agencies for delivery tracking." } },
+    { "slug": "clickup", "reason": { "en": "All-in-one work management tool covering similar project and time-tracking ground." } },
+    { "slug": "monday-com", "reason": { "en": "Work OS competitor with project, resource, and budget tracking." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Minimum seat count for Essential/Professional not stated as a hard requirement on the pricing page beyond the 10-user example used in the calculator."
+  ],
+  "conflicts": [
+    "The queue seed snapshot flagged pricing as unpublished (comparePlan: 'Prix non public'), but the current official pricing page publishes per-seat rates for two of the three plans."
+  ]
+}

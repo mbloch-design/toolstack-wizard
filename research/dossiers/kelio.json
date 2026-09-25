@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 2,
+  "slug": "kelio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Kelio",
+    "vendor": "Bodet Software",
+    "officialUrl": "https://www.kelio.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.kelio.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Kelio homepage" },
+    { "id": "s2", "url": "https://www.capterra.com/p/181942/Kelio/", "tier": 2, "accessedOn": "2026-09-25", "title": "Kelio (Capterra profile)" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "EUR",
+    "pricingUrl": "https://www.kelio.com",
+    "verifiedOn": "2026-09-25",
+    "region": "FR",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "No public pricing grid; cost depends on activated modules, employee headcount, and any hardware (clocking terminals, badges).", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Time and attendance tracking with clocking terminals and remote-work supervision.", "sourceIds": ["s1"] },
+      { "en": "Staff scheduling, leave and absence management.", "sourceIds": ["s1"] },
+      { "en": "HR portal with electronic signatures, expense forms, and internal communications.", "sourceIds": ["s1"] },
+      { "en": "Physical access control: building access, visitor management, room booking, video surveillance.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public pricing; requires a custom quote before purchase.", "sourceIds": ["s2"] },
+      { "en": "Full value requires proprietary hardware (badges, clocking terminals, access readers).", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No pricing figures published anywhere on the official site; third-party sources confirm quote-only pricing but give no indicative range.",
+    "Specific integration partners (payroll, ERP) are referenced generically as 'interoperable via API' without named partners."
+  ],
+  "conflicts": []
+}

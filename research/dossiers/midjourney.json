@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "slug": "midjourney",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Midjourney",
+    "vendor": "Midjourney, Inc.",
+    "officialUrl": "https://www.midjourney.com",
+    "docsUrl": "https://docs.midjourney.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans", "tier": 2, "accessedOn": "2026-09-25", "title": "Comparing Midjourney Plans (search-summarized, official docs page returned 403 to direct fetch)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 10, "annualPerMonth": 8, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "3.3 fast GPU hours/month, commercial usage rights.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 30, "annualPerMonth": 24, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "15 fast GPU hours/month plus unlimited Relax-mode generations.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 60, "annualPerMonth": 48, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "30 fast GPU hours/month, adds Stealth Mode (private, non-public generations).", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "mega",
+        "name": "Mega",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 120, "annualPerMonth": 96, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "60 fast GPU hours/month, highest generation throughput.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      { "en": "No free tier; every account requires a paid subscription to generate images. Fast GPU hours are the real usage constraint, not a simple image count.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Text-to-image generation aimed at professional/commercial output quality.", "sourceIds": ["s1"] },
+      { "en": "Fast GPU mode for quick generations plus unlimited Relax mode on Standard and above.", "sourceIds": ["s1"] },
+      { "en": "Stealth Mode for private, non-publicly-visible generations, available from Pro upward.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free trial or free tier; commitment requires an immediate paid subscription.", "sourceIds": ["s1"] },
+      { "en": "Privacy (Stealth Mode) is gated behind the Pro plan ($60/month), not available on Basic or Standard.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "flux", "reason": { "en": "Competing text-to-image model with comparable output quality." } },
+    { "slug": "firefly", "reason": { "en": "Adobe's commercial-safe image generator, a direct alternative for professional use." } },
+    { "slug": "leonardo-ai", "reason": { "en": "Competing AI image generation platform aimed at similar creative use cases." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Official docs.midjourney.com pricing page returned HTTP 403 to direct fetch; figures here come from a search-engine synthesis of the same official page rather than a direct read, so exact wording (e.g. rounded GPU-hour numbers) should be re-verified locally."
+  ],
+  "conflicts": []
+}

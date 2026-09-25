@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "slug": "vectorworks",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Vectorworks",
+    "vendor": "Vectorworks, Inc. (Nemetschek Group)",
+    "officialUrl": "https://www.vectorworks.net",
+    "docsUrl": "https://university.vectorworks.net",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.vectorworks.net", "tier": 1, "accessedOn": "2026-09-25", "title": "Vectorworks homepage" },
+    { "id": "s2", "url": "https://www.vectorworks.net/en-US/subscription-switch", "tier": 1, "accessedOn": "2026-09-25", "title": "Switch to Subscription" },
+    { "id": "s3", "url": "https://serviceselect.vectorworks.net/learn-more", "tier": 1, "accessedOn": "2026-09-25", "title": "Vectorworks Service Select" }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://www.vectorworks.net",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "regularPriceUnknown": true,
+    "freePlan": { "exists": false, "limits": "Academic access available for students, not a public free plan.", "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "quote",
+        "name": "Subscription / Perpetual license (Architect, Landmark, Spotlight, Fundamentals variants)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Pricing varies by product line (Architect, Landmark, Spotlight, Fundamentals) and by subscription vs. perpetual-license path; not published as a fixed list price.", "sourceIds": ["s1", "s2"] }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      { "en": "Vectorworks Service Select: annual software-service plan for perpetual-license holders, included free for subscription customers.", "sourceIds": ["s3"] }
+    ],
+    "cautions": [
+      { "en": "No published price list on the official site; a reseller/quote process determines the final price by product variant, region, and license type.", "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Integrated 3D CAD/BIM modeling across architecture, landscape, lighting, and scenic design.", "sourceIds": ["s1"] },
+      { "en": "Native BIM authoring with project documentation tools.", "sourceIds": ["s1"] },
+      { "en": "Specialist product lines for different disciplines: Architect, Landmark, Spotlight, Fundamentals.", "sourceIds": ["s1"] },
+      { "en": "Cloud services integration alongside desktop modeling.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public price list; buyers must go through sales or a reseller for a quote.", "sourceIds": ["s1", "s2"] },
+      { "en": "Service Select (support/updates plan) availability varies by country.", "sourceIds": ["s3"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "sketchup-pro", "reason": { "en": "Competing 3D CAD tool used across architecture and design workflows." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No numeric pricing found anywhere on official pages; third-party estimator sites give ranges but are not treated as proof.",
+    "Desktop OS platform support (Windows/Mac specifics) not confirmed from the pages read."
+  ],
+  "conflicts": []
+}
