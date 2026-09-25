@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "slug": "acast",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Acast",
+    "vendor": "Acast AB",
+    "officialUrl": "https://acast.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://acast.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Acast pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://acast.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "1 show, 5 episodes (unlimited episodes once the show is monetized via ads).", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "essential",
+        "name": "Essential",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 25, "annualPerMonth": 14.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Multiple shows, unlimited episodes, ad and sponsorship monetization, advanced analytics.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 40, "annualPerMonth": 29.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Everything in Essential plus team management, prioritized support, publishing API.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "video",
+        "name": "Video",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 50, "annualPerMonth": 39.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Everything in Pro plus up to 10,000 monthly video views, video publishing to Apple Podcasts, automatic video-to-audio conversion.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "creator-network",
+        "name": "Acast Creator Network",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom pricing for established creators with significant audiences, contact required.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "essential",
+    "addOns": [],
+    "cautions": [
+      { "en": "Exact ad-revenue share percentage taken by Acast on monetized shows was not disclosed on the pricing page fetched in this session.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Podcast hosting with RSS distribution to major listening platforms.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Built-in ad and sponsorship monetization tools with advanced analytics on paid plans.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Video podcast publishing and automatic video-to-audio conversion on the Video plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 1 show and 5 episodes unless the show becomes ad-monetized.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Video features and the publishing API are gated behind the two highest paid tiers.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "podbean", "reason": { "en": "Direct competitor podcast hosting and monetization platform.", "fr": null } },
+    { "slug": "spotify-for-podcasters", "reason": { "en": "Free podcast hosting and distribution tool from Spotify, overlapping on the core hosting use case.", "fr": null } },
+    { "slug": "buzzsprout", "reason": { "en": "Another podcast hosting platform with monetization and analytics features targeting the same audience.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Ad-revenue share percentage taken by Acast on monetized episodes was not disclosed on the fetched pricing page."
+  ],
+  "conflicts": []
+}

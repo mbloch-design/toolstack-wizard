@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 2,
+  "slug": "figma-anima",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Anima",
+    "vendor": "AnimaApp",
+    "officialUrl": "https://animaapp.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://animaapp.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Anima pricing (plan prices not fully rendered in fetched content)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://animaapp.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "5 chat messages/day in AI Playground, 5 Figma design imports or website clones/day, 5 code generations/day in the Figma plugin.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 24, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5,000 code exports/month, unlimited Figma inspects, higher AI Playground usage.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Starts around $500/month (paid annually per secondary sources); includes SSO, MFA, enterprise-grade SLAs and enhanced security; requires contacting sales, no public fixed price on the official page.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "The official pricing page's detailed plan table (exact monthly vs. annual prices for Pro and any mid-tier plan) did not fully render in this session's fetch; the $24/mo annual Pro figure comes from secondary sources and should be re-verified against the live pricing table.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Converts Figma designs into production-ready code (React, HTML, Vue, Tailwind CSS).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI Playground for prototyping full apps from natural-language prompts, including Figma imports and website cloning.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan caps daily usage (5 chat messages, 5 imports/clones, 5 code generations per day), unsuitable for regular production use.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Generated code from design tools like this typically needs manual cleanup/integration into an existing codebase.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "figma", "reason": { "en": "Anima operates as a plugin/extension of Figma, addressing the same design-to-code workflow within the same tool.", "fr": null } },
+    { "slug": "figma-tokens", "reason": { "en": "Another Figma-ecosystem plugin targeting design-to-code/design-system workflows.", "fr": null } },
+    { "slug": "framer", "reason": { "en": "Also converts design into a publishable/functional product, overlapping on the design-to-production use case.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Locofy", "officialUrl": "https://www.locofy.ai", "reason": "Direct competitor in Figma-to-code AI plugins, referenced in comparison content but absent from the catalogue." }
+  ],
+  "unknowns": [
+    "Exact monthly (non-annual) Pro price and whether a mid-tier plan exists between Free and Pro could not be confirmed; the pricing table did not fully render in this session's fetch.",
+    "Precise definition of what counts as a 'code export' toward the 5,000/month Pro limit was not detailed on the fetched content."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "slug": "clip-studio-paint",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Clip Studio Paint",
+    "vendor": "Celsys, Inc.",
+    "officialUrl": "https://www.clipstudio.net/",
+    "docsUrl": "https://tips.clip-studio.com/en-us/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.clipstudio.net/en/purchase/", "tier": 1, "accessedOn": "2026-09-25", "title": "Clip Studio Paint purchase page" },
+    { "id": "s2", "url": "https://www.clipstudio.net/en/lineup/", "tier": 1, "accessedOn": "2026-09-25", "title": "Clip Studio Paint product lineup (search snippet only)" }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://www.clipstudio.net/en/purchase/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro-subscription",
+        "name": "PRO (subscription)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Introductory subscription price starting at $0.99/month (first period); works across iPad, Android, Windows, macOS, iPhone; includes 10GB cloud storage and monthly bonus materials.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro-perpetual",
+        "name": "PRO (perpetual license, Ver. 5.0)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 49.99 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Windows/macOS only. Includes brushes, 3D models, comic tools, up to 24 animation frames. Pay once, use forever; separate Update Pass needed for ongoing new features.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "ex-perpetual",
+        "name": "EX (perpetual license, Ver. 5.0)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 219 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Windows/macOS only. Adds unlimited animation frames, multi-page project management, line extraction from images. Can be purchased as an upgrade from PRO for the price difference.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro-perpetual",
+    "addOns": [
+      { "en": "GOLD in-app currency for purchasing materials, roughly $1 USD per 100 GOLD.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Update Pass (annual renewal) for perpetual license holders to keep receiving new features.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Perpetual (one-time) licenses are Windows/macOS only; iPad, Android, Galaxy and Chromebook require a subscription.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "The $0.99/month subscription price is an introductory rate for a limited period, not the ongoing price; the page did not display the regular recurring subscription price clearly in this session.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Drawing, illustration, comics/manga and animation tool with pressure-sensitive brush engine.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Dedicated comic/manga page layout and multi-page project management (EX tier).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Frame-by-frame animation support, with a 24-frame cap on PRO and unlimited frames on EX.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Multi-page comic management and unlimited animation frames require the more expensive EX tier.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Perpetual license does not include ongoing feature updates without purchasing a separate Update Pass.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos", "ipad", "android", "web"]
+  },
+  "alternatives": [
+    { "slug": "procreate", "reason": { "en": "Popular iPad-first illustration app frequently compared for digital painting workflows.", "fr": null } },
+    { "slug": "krita", "reason": { "en": "Free, open-source painting/illustration tool covering similar drawing and animation use cases.", "fr": null } },
+    { "slug": "adobe-fresco", "reason": { "en": "Adobe's illustration/painting app competing for the same digital art audience.", "fr": null } },
+    { "slug": "adobe-photoshop", "reason": { "en": "General-purpose raster tool used for illustration by some of the same audience.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact regular (non-introductory) subscription price per month could not be confirmed on the official page in this session.",
+    "Whether the 12-month license codes noted as 'temporarily unavailable' have since returned was not checked further to respect the page budget."
+  ],
+  "conflicts": []
+}

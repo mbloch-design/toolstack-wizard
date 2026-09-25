@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "slug": "artstation",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ArtStation",
+    "vendor": "ArtStation (Epic Games)",
+    "officialUrl": "https://www.artstation.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.artstation.com/subscribe/pro", "tier": 1, "accessedOn": "2026-09-25", "title": "ArtStation subscribe/pro page (blocked by anti-bot in this session)" },
+    { "id": "s2", "url": "https://magazine.artstation.com/2018/06/pro-member-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "ArtStation Magazine - Pro pricing announcement" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.artstation.com/subscribe/compare",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Free portfolio and community access with basic features; ad-supported.", "fr": null }, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 9.95, "annualPerMonth": 4.98, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Custom domain support, advanced analytics, priority support, ad-free experience.", "fr": null }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "The official artstation.com pricing pages returned HTTP 403 (anti-bot) in this session; the $9.95/mo (monthly) and $4.98/mo (annual) figures come from a secondary source (ArtStation Magazine) and a Studio tier at $29.99/mo was mentioned in search snippets but not independently confirmed on the official page.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Hosts online portfolios for concept, 3D and game artists with a searchable community feed.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Includes a marketplace for selling brushes, assets, tutorials and prints.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free tier is ad-supported and lacks custom domain and advanced analytics.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Primarily a visibility/portfolio platform, not a project management or client-delivery tool.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "canva", "reason": { "en": "Also used by creators to build visual portfolios and share work, though more general-purpose.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Behance", "officialUrl": "https://www.behance.net", "reason": "Main direct competitor portfolio platform for creative professionals, not in the catalogue." }
+  ],
+  "unknowns": [
+    "The official artstation.com pricing pages (subscribe/pro and subscribe/compare) returned HTTP 403 (anti-bot) in this session; Studio plan price and exact free-plan limits could not be independently verified against the primary source.",
+    "Whether a Plus tier (mentioned at $6.99/mo in some third-party sources) is still current could not be confirmed."
+  ],
+  "conflicts": []
+}

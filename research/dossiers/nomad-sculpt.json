@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 2,
+  "slug": "nomad-sculpt",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Nomad Sculpt",
+    "vendor": "Nomad Sculpt (independent developer)",
+    "officialUrl": "https://nomadsculpt.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://nomadsculpt.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Nomad Sculpt official site" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://nomadsculpt.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "desktop",
+        "name": "Desktop license (Windows/macOS)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 35 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "One license covers 2 computers (Windows x64 and/or macOS universal). No cross-platform purchases with mobile.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "mobile",
+        "name": "Mobile license (iPad/iPhone/Android, per platform)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 15 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Purchased separately per app store (App Store, Google Play, Huawei AppGallery); desktop key does not unlock mobile.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "mobile",
+    "addOns": [],
+    "cautions": [
+      { "en": "No cross-platform license sharing: desktop and each mobile store purchase are billed separately, so a user on both iPad and desktop pays twice.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Full 3D sculpting and painting toolset (multires sculpting, dynamic tessellation, PBR materials).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Cloud-based license activation with offline use for up to 15 days without reverification.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Multi-seat and classroom licensing with command-line activation for lab deployment.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "An activation is tied to a specific computer, not an account; reformatting or replacing a machine consumes a new activation.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "No educational discounts except through Apple School Manager on iOS; purchase orders not accepted.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos", "ipad", "android", "ios"]
+  },
+  "alternatives": [
+    { "slug": "zbrush", "reason": { "en": "The dominant professional 3D sculpting tool that Nomad Sculpt is commonly positioned as an affordable, mobile-friendly alternative to.", "fr": null } },
+    { "slug": "blender", "reason": { "en": "Free, general-purpose 3D suite that includes sculpting tools covering an overlapping use case.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact current mobile price could vary slightly by app store/region; only the figure shown on the official site was captured."
+  ],
+  "conflicts": []
+}

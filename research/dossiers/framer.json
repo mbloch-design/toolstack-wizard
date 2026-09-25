@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "framer",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Framer",
+    "vendor": "Framer B.V.",
+    "officialUrl": "https://framer.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.framer.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Framer pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.framer.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "framer.site domain, 1,000 pages, 10 CMS collections, 1 GB bandwidth, 5 MB file uploads, 500 AI credits, no custom domain.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 10, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Custom domain included, 30 site pages, 2 CMS collections, 50 GB bandwidth, built-in SEO.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 30, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "150 site pages (expandable to 700 with add-ons), 10 CMS collections, 100 GB bandwidth, staging environment, branching with previews.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom limits, unlimited editors, enterprise-grade security, uptime guarantee, SCIM, SSO.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [
+      { "en": "Extra editor seat: $20/month; content editor seat: $10/month; viewer seats are free.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Displayed plan prices are billed yearly; monthly-billing prices were not separately confirmed on the page in this session.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI credits are limited (500 on free plan) and consumed by AI-assisted features, a mechanism worth checking before relying on them heavily.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "No-code/low-code visual website builder with a built-in CMS for content-driven pages.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Staging environment and branching with previews on the Pro plan for safer publishing workflows.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI credits for AI-assisted design/content features included on all plans.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan has no custom domain and caps CMS collections and bandwidth.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Page count is capped even on Pro (150, extendable to 700 max via add-ons), which can limit large content sites.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "webflow", "reason": { "en": "Direct competitor no-code website builder with a similar visual design + CMS approach.", "fr": null } },
+    { "slug": "wix", "reason": { "en": "Mainstream website builder targeting a similar non-developer audience.", "fr": null } },
+    { "slug": "squarespace", "reason": { "en": "Another all-in-one website builder competing for the same small-business/portfolio use case.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Monthly (non-annual) billing prices for Basic and Pro were not separately displayed/confirmed on the page fetched in this session."
+  ],
+  "conflicts": []
+}

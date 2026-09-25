@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-bao-boa",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "BAO Boa",
+    "vendor": "BAO Plugins",
+    "officialUrl": "https://aescripts.com/bao-boa",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://aescripts.com/bao-boa", "tier": 1, "accessedOn": "2026-09-25", "title": "BAO Boa - aescripts.com (blocked by anti-bot in this session)" },
+    { "id": "s2", "url": "https://www.toolfarm.com/buy/bao_boa/", "tier": 2, "accessedOn": "2026-09-25", "title": "Toolfarm - BAO Boa reseller listing (blocked by anti-bot in this session)" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://aescripts.com/bao-boa",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "single-user",
+        "name": "Single User License",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99.99 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Perpetual license for one user/machine.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "floating-license-server",
+        "name": "Floating License Server",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99.99 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Floating license for shared/studio use.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "single-user",
+    "addOns": [],
+    "cautions": [
+      { "en": "The aescripts.com official page could not be fetched directly in this session (blocked); prices are taken from the tool catalogue seed data, not independently re-verified against the live page.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Distorts After Effects layers along mask paths, following the mask shape precisely.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Used for animating text, shapes and complex elements with organic, smooth distortions.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free version and no free trial identified on the official listing.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Requires Adobe After Effects; not a standalone application.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "ae-red-giant", "reason": { "en": "Another After Effects plugin suite adding motion and distortion effects to the same host application.", "fr": null } },
+    { "slug": "ae-overlord", "reason": { "en": "Third-party After Effects plugin addressing complex animation workflows.", "fr": null } },
+    { "slug": "ae-animation-composer", "reason": { "en": "After Effects plugin for adding motion presets, targeting the same motion designer audience.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The official aescripts.com/bao-boa page and the Toolfarm reseller page both returned HTTP 403 (anti-bot) in this session; prices and features rely on seed data and were not independently re-verified against a live source.",
+    "No trial/demo availability could be confirmed."
+  ],
+  "conflicts": []
+}

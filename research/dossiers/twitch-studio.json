@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "slug": "twitch-studio",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Twitch Studio",
+    "vendor": "Twitch Interactive, Inc.",
+    "officialUrl": "https://twitch.tv",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "discontinued",
+    "statusNote": "Twitch's own streaming software is no longer actively developed; Twitch itself recommends third-party tools like OBS Studio or Streamlabs instead."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://twitch.tv", "tier": 1, "accessedOn": "2026-09-25", "title": "Twitch homepage (Twitch Studio product page not independently re-fetched in this session; discontinued status per seed data)" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://twitch.tv",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Entirely free streaming/broadcasting software, no paid tiers.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Twitch Studio",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entirely free desktop broadcasting software with no paid tiers.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Product is discontinued/no longer actively developed by Twitch; no pricing to verify since it was always free, but the tool itself should be treated as legacy.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Free desktop streaming/broadcasting software built specifically for streaming to Twitch, with built-in scene and overlay tools.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Simplified setup wizard aimed at first-time streamers compared to general-purpose broadcasting tools.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No longer actively maintained/developed; feature set has stalled compared to actively developed alternatives.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Tied specifically to streaming toward Twitch, unlike general-purpose tools that support multiple platforms.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "discord", "reason": { "en": "Overlapping use in live communication/streaming setups for creator communities, though not a direct broadcasting-software substitute.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "OBS Studio", "officialUrl": "https://obsproject.com/", "reason": "Direct, actively developed free replacement recommended for Twitch Studio users; referenced in currentAlternatives but should be confirmed as a full catalogue entry." },
+    { "name": "Streamlabs", "officialUrl": "https://streamlabs.com/", "reason": "Direct, actively developed alternative broadcasting tool also referenced in currentAlternatives." }
+  ],
+  "unknowns": [
+    "The dedicated Twitch Studio product page was not independently re-fetched in this session (only the Twitch homepage); discontinued status and feature details rely on the seed data and general knowledge rather than a freshly verified primary source.",
+    "No official discontinuation announcement URL was located within the page budget."
+  ],
+  "conflicts": []
+}
