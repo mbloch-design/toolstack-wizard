@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "slug": "ahrefs",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Ahrefs",
+    "vendor": "Ahrefs Pte. Ltd.",
+    "officialUrl": "https://ahrefs.com",
+    "docsUrl": "https://ahrefs.com/blog/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://ahrefs.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Ahrefs pricing" },
+    { "id": "s2", "url": "https://ahrefs.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Ahrefs homepage - product capabilities" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://ahrefs.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Ahrefs Free gives basic access to site data (limited Site Explorer / Webmaster Tools features for verified site owners)." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Ahrefs Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Limited Site Explorer / Webmaster Tools access for verified site owners; not a full SEO suite." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry-level plan focused on keyword/competitor lookups, no full project suite." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "lite",
+        "name": "Lite",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 129, "annualPerMonth": 108, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "5 projects, 750 tracked keywords, 100,000 crawl credits, 1 user included (+2 extra seats at $40/mo each)." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 249, "annualPerMonth": 208, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "20 projects, 2,000 tracked keywords, 500,000 crawl credits, 1 user included (+5 extra seats at $60/mo each)." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 449, "annualPerMonth": 374, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "50 projects, 5,000 tracked keywords, 1,500,000 crawl credits, 1 user included (+10 extra seats at $80/mo each)." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom limits, uncapped API access, SSO, unlimited historical data; requires annual commitment; list price around $1,499/mo billed annually." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "lite",
+    "addOns": [
+      { "name": "Extra seats", "unit": "seat", "note": { "en": "Additional users priced per plan: +$40/mo (Lite), +$60/mo (Standard), +$80/mo (Advanced)." }, "sourceIds": ["s1"] },
+      { "name": "Brand Radar AI", "unit": "account", "note": { "en": "Starting at $199/mo, tracks 475M+ organic AI-search prompts." }, "sourceIds": ["s1"] },
+      { "name": "Custom Prompt Packages", "unit": "account", "note": { "en": "Basic $50/mo (+2,500 checks), Growth $100/mo (+7,000 checks), Scale $250/mo (+25,000 checks)." }, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Starter ($29/mo) is a limited lookup tool, not a full SEO suite; the first plan with projects, rank tracking and site audit together is Lite at $129/mo ($108/mo annual).", "sourceIds": ["s1"] },
+      { "en": "Enterprise pricing requires an annual commitment despite being listed as a monthly figure.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Site Explorer for competitor backlink and traffic analysis, backed by a stated 170 trillion-page web index.", "sourceIds": ["s2"] },
+      { "en": "Keywords Explorer, Rank Tracker and Site Audit covering keyword research, SERP monitoring and technical SEO.", "sourceIds": ["s2"] },
+      { "en": "AI Content Helper, Content Explorer and an 'Ask Ahrefs' AI assistant for content and data analysis.", "sourceIds": ["s2"] },
+      { "en": "Brand Radar for tracking brand visibility in AI search results (ChatGPT, etc.), plus Web Analytics and Bot Analytics.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "No permanent full-featured free plan; free access is limited to basic Webmaster Tools for verified site owners.", "sourceIds": ["s1"] },
+      { "en": "Crawl credits, tracked keywords and project counts are capped per plan and consumed by usage, so heavy audits or large keyword sets require upgrading.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google Search Console", "slug": "google-search-console", "sourceIds": ["s2"] },
+      { "name": "ChatGPT", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "semrush", "reason": { "en": "Closest direct competitor with a comparable all-in-one SEO suite and similarly tiered pricing." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Moz", "officialUrl": "https://moz.com", "reason": "Established SEO suite with keyword research and site audit at a generally lower entry price, not in the catalogue." },
+    { "name": "SE Ranking", "officialUrl": "https://seranking.com", "reason": "Lower-cost SEO suite competitor frequently compared to Ahrefs, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Exact keyword/crawl-credit limits for the Starter ($29/mo) plan were not detailed on the pricing page excerpt retrieved.",
+    "Whether annual billing is available for Starter and Enterprise was not confirmed (Enterprise appears annual-only)."
+  ],
+  "conflicts": []
+}

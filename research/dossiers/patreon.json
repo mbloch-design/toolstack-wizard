@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "slug": "patreon",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Patreon",
+    "vendor": "Patreon, Inc.",
+    "officialUrl": "https://www.patreon.com",
+    "docsUrl": "https://support.patreon.com/",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Official site and help center returned HTTP 403 to automated fetches (anti-bot) in this session; fee structure sourced from third-party trackers referencing Patreon's own published support article."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview", "tier": 1, "accessedOn": "2026-09-25", "title": "Creator fees overview (blocked, 403)" },
+    { "id": "s2", "url": "https://payoutmath.com/patreon-pricing-guide/", "tier": 2, "accessedOn": "2026-09-25", "title": "Patreon Pricing & Fees 2026 - Lite vs Pro vs Premium" },
+    { "id": "s3", "url": "https://www.unilink.us/blog/patreon-fees-explained-2026", "tier": 2, "accessedOn": "2026-09-25", "title": "Patreon Fees Explained in 2026" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.patreon.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Free to create a creator page; Patreon only takes a cut of actual patron payments, there is no monthly subscription fee for creators." }, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free-page",
+        "name": "Creator page (free to start)",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Creating a Patreon page costs nothing; Patreon only takes a cut once patrons actually pay." }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard (new creators since Aug 2025)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Flat 10% platform fee on membership income for all creators who joined after August 4, 2025, plus payment processing, currency conversion and payout fees." }
+        ],
+        "sourceIds": ["s2", "s3"]
+      },
+      {
+        "key": "legacy-lite",
+        "name": "Legacy Lite",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "5% platform fee, available only to creators grandfathered from before August 2025; basic page, posts and patron engagement tools." }
+        ],
+        "sourceIds": ["s2", "s3"]
+      },
+      {
+        "key": "legacy-pro",
+        "name": "Legacy Pro",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "8% platform fee (legacy, grandfathered); adds membership tiers, analytics, special offers and app integrations." }
+        ],
+        "sourceIds": ["s2", "s3"]
+      },
+      {
+        "key": "legacy-premium",
+        "name": "Legacy Premium",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "12% platform fee (legacy, grandfathered), aimed at established creators with larger operations." }
+        ],
+        "sourceIds": ["s2", "s3"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [],
+    "cautions": [
+      { "en": "On top of the platform fee, payment processing costs 2.9% + $0.30 per charge (or 5% + $0.10 for pledges under $3), which materially reduces creator take-home.", "sourceIds": ["s2", "s3"] },
+      { "en": "New creators since August 2025 are locked into the single 10% Standard plan; the cheaper 5%/8% legacy tiers are closed to new signups.", "sourceIds": ["s2", "s3"] },
+      { "en": "Exact current fee figures could not be verified directly on patreon.com or support.patreon.com in this session (both blocked automated access); figures come from third-party trackers citing Patreon's help center and should be reverified before publishing.", "sourceIds": ["s2", "s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Recurring membership/subscription pages letting creators charge patrons monthly (or per-post) in exchange for exclusive content and perks.", "sourceIds": ["s2"] },
+      { "en": "Membership tiers, analytics, special offers and third-party app integrations available on higher (legacy Pro/Premium or feature-gated) plans.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Platform fee (10% for all new creators) plus separate payment-processing fees stack on top of each other, which is less transparent than a flat all-in percentage.", "sourceIds": ["s2", "s3"] },
+      { "en": "No self-serve way for new creators to access the lower legacy fee tiers; they are closed to new accounts.", "sourceIds": ["s2", "s3"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Ko-fi", "officialUrl": "https://ko-fi.com", "reason": "Direct creator-membership competitor with lower/no platform fees on some tiers, not in the catalogue." },
+    { "name": "Substack", "officialUrl": "https://substack.com", "reason": "Newsletter-based creator subscription platform frequently compared to Patreon, not in the catalogue." },
+    { "name": "Buy Me a Coffee", "officialUrl": "https://www.buymeacoffee.com", "reason": "Lower-friction creator support/membership platform, direct competitor, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Could not access patreon.com or support.patreon.com directly in this session (HTTP 403); exact current fee percentages and whether the 10% Standard rate has changed since August 2025 should be reverified against the official Creator fees overview page before publishing.",
+    "No slugs from the catalogue's alternativeCandidates matched a same-need competitor for this seed, so `alternatives` is left empty and candidates are listed under missingAlternatives instead."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "slug": "namecheap",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Namecheap",
+    "vendor": "Namecheap, Inc.",
+    "officialUrl": "https://www.namecheap.com",
+    "docsUrl": "https://www.namecheap.com/support/knowledgebase/",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Official site returns HTTP 403 to automated fetches (anti-bot); domain, hosting and email products are otherwise well documented via third-party sources."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.namecheap.com/domains/", "tier": 1, "accessedOn": "2026-09-25", "title": "Namecheap domain pricing (blocked, 403)" },
+    { "id": "s2", "url": "https://saveloot.com/blog/namecheap-com-domain-price-2026", "tier": 2, "accessedOn": "2026-09-25", "title": "Namecheap .com domain price 2026 - registration and renewal" },
+    { "id": "s3", "url": "https://checkthat.ai/brands/namecheap/pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Namecheap pricing overview" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.namecheap.com/domains/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "dot-com-domain",
+        "name": ".com domain (first year)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 9.58 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "First-year introductory price; renewal is significantly higher (see cautions).", "sourceIds": ["s2"] },
+          { "en": "Free WHOIS privacy protection (WhoisGuard) included on eligible TLDs.", "sourceIds": ["s2", "s3"] }
+        ],
+        "sourceIds": ["s2", "s3"]
+      }
+    ],
+    "comparePlanKey": "dot-com-domain",
+    "addOns": [
+      { "name": "Shared hosting", "unit": "account", "note": { "en": "Separate hosting plans exist alongside domain registration; pricing changed as of May 2026 per Namecheap's own knowledge base article title." }, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": ".com renewal is typically 30-50% higher than the first-year introductory price (roughly $14-19/year vs ~$9.58 first year).", "fr": null, "sourceIds": ["s2"] },
+      { "en": "ICANN adds a mandatory ~$0.20/year fee per domain on top of the listed price.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Exact current prices could not be verified directly on namecheap.com in this session (site blocked automated access); figures come from third-party pricing trackers and should be reverified before publishing.", "fr": null, "sourceIds": ["s2", "s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Domain registration and transfer across hundreds of TLDs, with free WHOIS privacy (WhoisGuard) on most.", "sourceIds": ["s2", "s3"] },
+      { "en": "Bundled services beyond domains: shared/VPS/dedicated hosting, free SSL certificates on some plans, and email hosting (Private Email).", "sourceIds": ["s1", "s3"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; every product (domain, hosting, email) is paid, with low first-year introductory pricing on domains that rises at renewal.", "sourceIds": ["s2"] },
+      { "en": "Support and account management primarily self-service via knowledge base and ticketing rather than phone-first support.", "sourceIds": ["s3"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "cloudflare", "reason": { "en": "Domain registration at near-cost pricing with no markup on renewal, plus DNS and security tooling." } },
+    { "slug": "ovh", "reason": { "en": "European registrar and hosting provider with comparable domain/hosting bundle." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Gandi", "officialUrl": "https://www.gandi.net", "reason": "Domain registrar known for transparent, no-markup renewal pricing and strong support, not in the catalogue." },
+    { "name": "GoDaddy", "officialUrl": "https://www.godaddy.com", "reason": "Largest global domain registrar and direct competitor, not in the catalogue." },
+    { "name": "Porkbun", "officialUrl": "https://porkbun.com", "reason": "Popular low-cost registrar frequently compared to Namecheap, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Could not access namecheap.com directly in this session (HTTP 403 on all attempted URLs); exact current .com registration/renewal prices, hosting plan prices, and email plan prices are sourced from third-party trackers (2026) and should be reverified against the official pricing page before publishing.",
+    "taxIncluded status not confirmed from an official source."
+  ],
+  "conflicts": []
+}
