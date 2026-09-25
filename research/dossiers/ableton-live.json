@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "slug": "ableton-live",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Ableton Live",
+    "vendor": "Ableton AG",
+    "officialUrl": "https://www.ableton.com/en/live/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.ableton.com/en/shop/live/", "tier": 1, "accessedOn": "2026-09-25", "title": "Ableton Live shop / editions" },
+    { "id": "s2", "url": "https://www.audeobox.com/learn/compare/ableton-pricing-guide/", "tier": 2, "accessedOn": "2026-09-25", "title": "Ableton pricing guide (third-party, used to corroborate list prices)" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://www.ableton.com/en/shop/live/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "trial": { "days": 90, "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "intro",
+        "name": "Live Intro",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Entry edition with a reduced number of tracks, scenes, and included instruments/effects compared to Standard and Suite.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "standard",
+        "name": "Live Standard",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 439 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited tracks and scenes, full audio/MIDI editing, larger instrument and effect library than Intro.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "suite",
+        "name": "Live Suite",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 749 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Adds full instrument/sound-pack collection, Max for Live, and additional production tools not in Standard.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "intro",
+    "addOns": [],
+    "cautions": [
+      { "en": "List prices confirmed via a third-party pricing guide (Live Intro $99, Standard $439, Suite $749); the official shop page did not render itemized prices in this session's fetch and should be re-verified before publication.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Ableton typically runs seasonal discounts (around Black Friday) of 20-25% off list price, per third-party sources; not confirmed on the official page.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Digital audio workstation combining a linear arrangement view with a non-linear Session view for live performance and improvisation.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Built-in instruments, audio effects, and MIDI effects for music production and sound design.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Live Intro caps the number of tracks/scenes and included content, making it unsuitable for larger productions.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "One-time license with no bundled cloud collaboration features comparable to some subscription-based competitors.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["macos", "windows"]
+  },
+  "alternatives": [
+    { "slug": "reaper", "reason": { "en": "Lower-cost DAW alternative with a comparable feature set for music production.", "fr": null } },
+    { "slug": "davinci-resolve", "reason": { "en": "Not a direct DAW competitor but frequently paired or compared for AV production workflows.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "FL Studio", "officialUrl": "https://www.image-line.com/fl-studio/", "reason": "Major direct competitor DAW, especially popular for electronic music production, absent from the catalogue." },
+    { "name": "Logic Pro", "officialUrl": "https://www.apple.com/logic-pro/", "reason": "Leading macOS-only DAW competitor with a one-time price, not present in the catalogue." }
+  ],
+  "unknowns": [
+    "Official ableton.com shop page did not return itemized pricing in this session (fetch returned only a product title); prices were corroborated via a third-party comparison site and should be re-verified against ableton.com directly.",
+    "Exact discounted/upgrade pricing between editions was not confirmed."
+  ],
+  "conflicts": []
+}

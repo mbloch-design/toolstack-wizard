@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "slug": "thinkific",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Thinkific",
+    "vendor": "Thinkific Labs Inc.",
+    "officialUrl": "https://www.thinkific.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.thinkific.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Thinkific pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.thinkific.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 54, "annualPerMonth": 40, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited courses, 1 community (5 spaces), 5 digital downloads, basic ecommerce, custom domain, email/chat support only.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "start",
+        "name": "Start",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 109, "annualPerMonth": 82, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Adds live Zoom sessions, completion certificates, graded quizzes, payment plans, memberships, 2 site administrators.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "grow",
+        "name": "Grow",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 219, "annualPerMonth": 164, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Removes Thinkific branding, 3 communities (20 spaces each), B2B invoicing, API access and webhooks, 6 administrators.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Dedicated support, AI teaching assistant, SSO, SCORM compliance, CRM integrations, 10,000+ user seats, custom roles.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [
+      { "en": "Branded mobile app add-on: $199/month for white-labeled iOS and Android app.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "No free plan; only a 30-day trial. The cheapest plan usable for real course sales is Basic at $54/mo (or $40/mo billed annually).", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Drag-and-drop online course builder with video hosting and multimedia content support.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Built-in ecommerce: checkout, coupons, order bumps, payment plans, and multiple payment processors (Thinkific Payments, Stripe, PayPal, Apple/Google Pay).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Community features (spaces), live Zoom sessions, and completion certificates from the Start plan up.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan; every plan is a paid subscription after the 30-day trial.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "API access and webhooks are gated behind the Grow plan ($219/mo or $164/mo annual).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "kajabi", "reason": { "en": "Direct all-in-one competitor for course creators, bundling marketing tools with course hosting.", "fr": null } },
+    { "slug": "learnworlds", "reason": { "en": "Similar course platform with strong customization and branding options.", "fr": null } },
+    { "slug": "podia", "reason": { "en": "Simpler, lower-cost alternative for selling courses, memberships and digital downloads.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Teachable", "officialUrl": "https://teachable.com", "reason": "Major direct competitor in the course-hosting space, not present in the catalogue." }
+  ],
+  "unknowns": [
+    "Exact bandwidth caps per plan (100GB-7,500GB+) were only given as a broad range on the pricing page, not per-plan figures."
+  ],
+  "conflicts": []
+}

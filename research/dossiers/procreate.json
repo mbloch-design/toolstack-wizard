@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "slug": "procreate",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Procreate",
+    "vendor": "Savage Interactive Pty Ltd",
+    "officialUrl": "https://procreate.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://procreate.com/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Procreate homepage"
+    },
+    {
+      "id": "s2",
+      "url": "https://comparedge.com/tools/procreate/pricing",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Procreate pricing breakdown (third-party, used to corroborate App Store prices)"
+    }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://apps.apple.com/app/procreate/id425073498",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "procreate",
+        "name": "Procreate (iPad)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 12.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Full digital painting and illustration app for iPad, one-time purchase including all current features and future updates, no subscription.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "procreate-pocket",
+        "name": "Procreate Pocket (iPhone)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 4.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Scaled-down version of Procreate tailored for iPhone's smaller screen.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "procreate-dreams",
+        "name": "Procreate Dreams",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 12.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Separate animation app from the same publisher, one-time purchase, no subscription.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "procreate",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Procreate.com's homepage does not display pricing directly; the $12.99/$4.99 figures were corroborated via a third-party pricing tracker referencing the App Store listing and should be re-verified against the App Store directly.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Full-featured digital painting and illustration app built specifically for iPad, used by illustrators and concept artists.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Companion apps extend the ecosystem: Procreate Pocket for iPhone and Procreate Dreams for animation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "iPad/iPhone only; no Windows, Android, or web version exists, unlike some cross-platform illustration competitors.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No cloud sync or multi-device account system described on the homepage; each app is a standalone local purchase.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "ios"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "adobe-fresco",
+      "reason": {
+        "en": "Direct illustration app competitor also available on iPad with both free and subscription tiers.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "clip-studio-paint",
+      "reason": {
+        "en": "Illustration and comic-art competitor available across more platforms (Windows, Mac, iPad).",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact current App Store price for Procreate and Procreate Pocket was not confirmed directly from apple.com or procreate.com in this session; figures come from a third-party price tracker."
+  ],
+  "conflicts": []
+}

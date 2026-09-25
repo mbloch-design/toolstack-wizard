@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "slug": "auto-rig-pro",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Auto-Rig Pro",
+    "vendor": "Artell (independent developer, distributed via Superhive Market / Blender Market)",
+    "officialUrl": "https://superhivemarket.com/products/auto-rig-pro",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://superhivemarket.com/products/auto-rig-pro",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Auto-Rig Pro product page"
+    }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://superhivemarket.com/products/auto-rig-pro",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "lite",
+        "name": "Auto-Rig Pro Lite",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 25
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Core rigging functionality only, includes 12 months of support and updates.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "full",
+        "name": "Auto-Rig Pro Full",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 50
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Core plus Smart tool (automatic biped bone placement), FBX/GLTF export for game engines, and animation retargeting (Remap tool); includes 12 months of support and updates.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "team-10",
+        "name": "Team License (10 seats)",
+        "unit": "seat",
+        "minSeats": 10,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 162
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "10-seat team license bundle.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "team-20",
+        "name": "Team License (20 seats)",
+        "unit": "seat",
+        "minSeats": 20,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 227
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "20-seat team license bundle.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "full",
+    "addOns": [
+      {
+        "en": "Support/update extension beyond the initial 12 months costs 25% of the product price annually.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Perpetual license usable across Blender 2.93 to 5.2 at time of check, but support and updates beyond 12 months require an additional paid extension.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Automatic bone placement solver for biped humanoid characters, generating an articulated rig from mesh recognition.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Modular rig customization: fingers, toes, ears, tail and spine variations, plus advanced facial rigging with automated setup.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Animation retargeting (Remap tool) and FBX/GLTF export presets for Unity, Unreal Engine, and Godot.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Automatic Smart placement works primarily for humanoid bipeds; quadrupeds and other creature types require manual rig setup.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatic skinning results depend on water-tight mesh geometry, which not all source models provide.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Auto-Rig Pro is an add-on built specifically on top of Blender's native rigging tools.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Mixamo",
+      "officialUrl": "https://www.mixamo.com/",
+      "reason": "Free auto-rigging and animation service for humanoid characters, a common alternative to manual Blender rigging add-ons."
+    }
+  ],
+  "unknowns": [
+    "No stated region/currency variation was found; prices are assumed USD as displayed on the Superhive Market listing."
+  ],
+  "conflicts": []
+}

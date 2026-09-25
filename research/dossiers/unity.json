@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 2,
+  "slug": "unity",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Unity",
+    "vendor": "Unity Technologies",
+    "officialUrl": "https://unity.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://unity.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Unity pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://unity.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Unity Personal: free for hobbyists, individuals and small teams with under $200K revenue/funding in the prior 12 months; publish to web, desktop, AR/VR and mobile; 1,000 monthly AI credits.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "personal",
+        "name": "Unity Personal",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free for individuals/small teams under $200K revenue or funding in the prior 12 months; 1,000 monthly AI credits.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Unity Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 210,
+          "annualPerMonth": 192.5,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Required for businesses with over $200K in annual revenue/funding; adds console and Apple Vision Pro publishing, 2,000 monthly AI credits, expedited support.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Unity Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Required for businesses exceeding $25M annual revenue; adds cloud/on-prem build automation, read-only source code access, 3,000 monthly AI credits, dedicated support.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "industry",
+        "name": "Unity Industry",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "For non-gaming/entertainment applications at companies with over $1M in finances; includes industry-specific solution toolkits.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Revenue/funding thresholds gate which plan is legally required (Personal under $200K, Pro under $25M, Enterprise above), a licensing mechanic distinct from feature-based tiering.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Real-time engine for building games, interactive applications, and 3D/AR/VR experiences, publishing to web, desktop, mobile, and consoles (Pro+).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Includes a monthly allowance of AI credits across all tiers (1,000 on Personal, up to 3,000 on Enterprise).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Console and Apple Vision Pro publishing require Unity Pro or above; not available on the free Personal tier.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Mandatory upgrade to Pro once a project/company crosses the $200K revenue or funding threshold, even if usage otherwise stays modest.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "macos",
+      "windows",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Free/open-source 3D tool with overlapping real-time and game-content creation use cases.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Unreal Engine",
+      "officialUrl": "https://www.unrealengine.com/",
+      "reason": "The primary direct competitor real-time/game engine, absent from the catalogue."
+    },
+    {
+      "name": "Godot",
+      "officialUrl": "https://godotengine.org/",
+      "reason": "Free, open-source game engine competitor increasingly compared to Unity, not present in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Annual per-month equivalent for Unity Pro ($192.50) was calculated from the stated $2,310/year figure, not shown as an explicit monthly-equivalent line on the page."
+  ],
+  "conflicts": []
+}

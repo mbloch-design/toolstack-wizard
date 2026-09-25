@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 2,
+  "slug": "bubble",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Bubble",
+    "vendor": "Bubble Group, Inc.",
+    "officialUrl": "https://bubble.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://bubble.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Bubble pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://bubble.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Development-version access only, 1 app editor, 6 hours of server logs, 50K workload units/month, includes API connector.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Development-version access only, 1 app editor, 50K workload units/month.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 59,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Live website with custom domain, 175K workload units/month, 5 mobile build submissions/month, 3 live app versions, basic version control, 2 days of server logs.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 209,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "250K workload units/month, 2 app editors, 10 custom branches, premium version control with 2FA, 14 days of server logs, 10 mobile build submissions/month.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 549,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "500K workload units/month, 5 app editors, 25 custom branches, 20 days of server logs, 20 mobile build submissions/month, sub-apps feature.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Custom workload, hosting location and build limits, dedicated support team, invoice/ACH payment options.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Pricing is measured in workload units (WU), a consumption metric representing server resources used, rather than a flat seat-based or usage-tier model, so real monthly cost depends on app complexity and traffic.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The Free plan only supports a development version; a live public website with a custom domain requires at least the Starter plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "No-code visual builder for creating full web applications with a database and custom business logic (workflows).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Native mobile app build/submission pipeline included on paid plans (5 to 20 submissions per month depending on tier).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan cannot publish a live website with a custom domain, restricting it to development/prototyping use.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Cost scales with workload units consumed, which can be hard to predict in advance for a non-technical builder before launch.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "wordpress",
+      "reason": {
+        "en": "Broader web-building alternative, though more content-site oriented than full app logic.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "wix",
+      "reason": {
+        "en": "No-code website builder competitor, though generally less suited to complex app logic than Bubble.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "budibase",
+      "reason": {
+        "en": "No-code/low-code app builder competitor with an open-source option.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Adalo",
+      "officialUrl": "https://www.adalo.com/",
+      "reason": "Direct no-code app-builder competitor, especially for mobile apps, not present in the catalogue."
+    },
+    {
+      "name": "Webflow",
+      "officialUrl": "https://webflow.com/",
+      "reason": "Major no-code web builder frequently compared to Bubble, absent from the catalogue."
+    }
+  ],
+  "unknowns": [
+    "annualPerMonth pricing was not shown separately from monthly on the fetched page; only a single price per plan was displayed, so annual billing terms are unconfirmed."
+  ],
+  "conflicts": []
+}

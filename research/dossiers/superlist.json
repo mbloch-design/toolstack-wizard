@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "slug": "superlist",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Superlist",
+    "vendor": "Superlist GmbH",
+    "officialUrl": "https://www.superlist.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.superlist.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Superlist pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.superlist.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Up to 5 private/shared lists, up to 5 people per shared list, unlimited tasks and notes, 25MB uploads and 500MB storage.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Up to 5 private/shared lists, up to 5 people per shared list, unlimited tasks and notes, 25MB uploads and 500MB storage.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 5,
+          "annualPerMonth": 4.92,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited lists/sublists, unlimited team members, all integrations, voice AI for tasks, 100MB uploads and 25GB storage.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "super",
+        "name": "Super",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 21,
+          "annualPerMonth": 20.75,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited AI meeting notes and AI chat messages, AI generation (Make AI), email and Slack task summarization.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Annual per-seat prices were derived from the stated yearly totals ($59/year for Basic, $249/year for Super) divided by 12; the page lists these as yearly amounts rather than an explicit monthly-equivalent figure.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Personal and team task management app with shared lists, sublists, and native apps for macOS, iOS, Android, and web.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI features on paid plans: voice-to-task capture, AI meeting notes, AI chat, and email/Slack task summarization.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan caps shared lists at 5 people and 5 lists total, restrictive for growing teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Storage and upload limits are modest even on Basic (100MB uploads, 25GB storage) compared to general-purpose cloud storage tools.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "macos",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "todoist",
+      "reason": {
+        "en": "Direct competitor task-management app with a comparable free tier and paid plans.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "notion",
+      "reason": {
+        "en": "Broader workspace tool frequently used for task lists and personal/team organization.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Things 3",
+      "officialUrl": "https://culturedcode.com/things/",
+      "reason": "Premium task manager alternative, though one-time purchase rather than subscription."
+    }
+  ],
+  "unknowns": [
+    "Whether 'unlimited team members' on paid plans has any soft cap or fair-use limit was not stated on the pricing page."
+  ],
+  "conflicts": []
+}

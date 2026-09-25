@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 2,
+  "slug": "highcharts",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Highcharts",
+    "vendor": "Highsoft AS",
+    "officialUrl": "https://www.highcharts.com",
+    "docsUrl": "https://www.highcharts.com/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.highcharts.com/products",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Highcharts products overview"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.componentsource.com/product/highcharts/prices",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Highcharts Core price list (third-party reseller, used to corroborate license tiers)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://shop.highcharts.com/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free for non-commercial use only: personal projects, school websites, charitable and non-profit organizations. No trial license required.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Non-commercial (free)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free for personal, school, charitable and non-profit non-commercial use.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "single-dev",
+        "name": "Single Developer License (without Premium Support)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 430
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Commercial license for 1 developer, no premium support included.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "single-dev-support",
+        "name": "Single Developer License (with Premium Support)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 595
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Commercial license for 1 developer with premium support included.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "single-dev",
+    "addOns": [
+      {
+        "en": "5-developer and 10-developer license bundles are available (with or without Premium Support), priced above single-developer tiers.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Commercial license pricing was confirmed via a third-party reseller (ComponentSource), not directly itemized on the official shop.highcharts.com configurator in this session; figures should be re-verified against the primary shop page.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Both perpetual (one-time) and annual subscription license models exist per the official site; this dossier records the perpetual developer-license price as the entry point.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Interactive, highly configurable JavaScript charting library covering standard charts (Highcharts Core), financial/timeline charts (Stock), maps (Maps), and Gantt/project timelines (Gantt).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Extended product suite includes Highcharts Grid for tabular data and Highcharts Dashboards for KPI/component-based dashboards.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free use is restricted to non-commercial projects; any commercial product or website requires a paid license.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Licensing is per-developer, so team costs scale with headcount rather than a flat product fee.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "chartjs",
+      "reason": {
+        "en": "Free, open-source charting library often compared directly to Highcharts for JavaScript projects.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "d3js",
+      "reason": {
+        "en": "Lower-level, free charting/visualization library offering more customization at the cost of more code.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "apexcharts",
+      "reason": {
+        "en": "Free, MIT-licensed charting library alternative with similar out-of-the-box chart types.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact prices on the official shop.highcharts.com configurator could not be itemized directly in this session; the developer-license figures come from a third-party reseller and should be re-verified.",
+    "Whether the perpetual license quoted includes 1 year of updates/support by default, or if that is the separate 'annual license' model, was not fully clarified from the sources read."
+  ],
+  "conflicts": []
+}

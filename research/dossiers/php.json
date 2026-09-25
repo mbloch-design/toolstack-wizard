@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "slug": "php",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "PHP",
+    "vendor": "The PHP Foundation / PHP Group (open-source)",
+    "officialUrl": "https://www.php.net",
+    "docsUrl": "https://www.php.net/docs.php",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.php.net/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "PHP official homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Fully free and open-source language, no paid tier for the language itself; costs come from hosting/infrastructure chosen separately.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Open source",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free and open-source, no paid tier for the language itself.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "General-purpose server-side scripting language especially suited to web development, powering platforms like WordPress and WooCommerce.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Actively maintained with regular security and bug-fix releases across multiple version branches (8.2 through 8.5 stable, 8.6 in release-candidate testing as of the check date).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "As a language rather than a hosted product, it provides no built-in hosting, billing, or managed infrastructure; these must be sourced separately.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Requires ongoing manual version upgrades to stay on a supported/secure branch, since older branches are deprecated over time.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "python",
+      "reason": {
+        "en": "Alternative general-purpose server-side language used heavily for web backends.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "wordpress",
+      "reason": {
+        "en": "The dominant CMS built on PHP; often the practical reason teams touch PHP at all.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Node.js",
+      "officialUrl": "https://nodejs.org",
+      "reason": "Major alternative server-side runtime (JavaScript) commonly compared to PHP for web backends, not present in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "No pricing page exists since PHP is a free open-source language; no unknowns beyond confirming the current stable version list stays accurate over time."
+  ],
+  "conflicts": []
+}
