@@ -1798,6 +1798,363 @@
     "jotform",
     "trello"
    ]
+  },
+  {
+   "id": "c22",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "embergen",
+    "cloudinary",
+    "razorpay",
+    "posthog",
+    "krea-ai",
+    "prometheus",
+    "dxo-photolab",
+    "openphone",
+    "zoho",
+    "pluraleyes"
+   ]
+  },
+  {
+   "id": "c23",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "personio",
+    "suno",
+    "eslint",
+    "xero",
+    "pagerduty",
+    "autodesk-flow-studio",
+    "callrail",
+    "rydoo",
+    "microsoft-defender",
+    "pennylane"
+   ]
+  },
+  {
+   "id": "c24",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "heptabase",
+    "fredo6-bundle",
+    "plausible",
+    "sellfy",
+    "browzwear",
+    "signrequest",
+    "restream",
+    "soldo",
+    "autocad-lt",
+    "cleanup3"
+   ]
+  },
+  {
+   "id": "c25",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "envato-elements",
+    "solid-inspector2",
+    "stripe",
+    "loopio",
+    "opus-clip",
+    "deel",
+    "airtable",
+    "product-hunt",
+    "gmail",
+    "tubebody"
+   ]
+  },
+  {
+   "id": "c26",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "heroku",
+    "google-earth-studio",
+    "adobe-acrobat",
+    "vercel",
+    "blender",
+    "pika-labs",
+    "google-play-console",
+    "move-ai",
+    "gaea",
+    "ignition"
+   ]
+  },
+  {
+   "id": "c27",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "zed",
+    "flask",
+    "doola",
+    "typeform",
+    "payhawk",
+    "shadcn-ui",
+    "yousign",
+    "indy",
+    "shopify-payments",
+    "sysaid"
+   ]
+  },
+  {
+   "id": "c28",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "d5-render",
+    "elfsight",
+    "creditsafe",
+    "plasticity",
+    "tiktok-studio",
+    "lovable",
+    "onetrust",
+    "reflect-notes",
+    "renderman",
+    "octane-render"
+   ]
+  },
+  {
+   "id": "c29",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "shine",
+    "arnold",
+    "crowdfire-inc",
+    "spotify-for-podcasters",
+    "streamelements",
+    "billo",
+    "firecrawl",
+    "workable",
+    "skribble",
+    "netlify"
+   ]
+  },
+  {
+   "id": "c30",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "astute-graphics",
+    "leonardo-ai",
+    "revit",
+    "youtube-studio",
+    "spline",
+    "darktable",
+    "softr",
+    "gelato",
+    "quarkxpress",
+    "localwp"
+   ]
+  },
+  {
+   "id": "c31",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "eas-build",
+    "better-proposals",
+    "plutio",
+    "python",
+    "quickbooks",
+    "clo-3d",
+    "deputy",
+    "kubernetes",
+    "podbean",
+    "linkedin-recruiter"
+   ]
+  },
+  {
+   "id": "c32",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "adobe-substance-3d",
+    "anaplan",
+    "eagle",
+    "fathom-analytics",
+    "chartjs",
+    "descript-ai",
+    "riverside",
+    "drata",
+    "luminar-neo",
+    "chakra-ui"
+   ]
+  },
+  {
+   "id": "c33",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "thinkific",
+    "ableton-live",
+    "udio",
+    "auto-rig-pro",
+    "php",
+    "highcharts",
+    "superlist",
+    "unity",
+    "procreate",
+    "bubble"
+   ]
+  },
+  {
+   "id": "c34",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "react",
+    "netsuite",
+    "unbounce",
+    "fellow",
+    "esko-studio",
+    "aloware",
+    "bolt-new",
+    "prezi",
+    "aws",
+    "dext"
+   ]
+  },
+  {
+   "id": "c35",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "format",
+    "kelio",
+    "vectorworks",
+    "productive-io",
+    "wolters-kluwer",
+    "ashby",
+    "dbt",
+    "midjourney",
+    "itch-io",
+    "tradingview"
+   ]
+  },
+  {
+   "id": "c36",
+   "tier": "B",
+   "stage": "facts",
+   "slugs": [
+    "hyperbrowser",
+    "clickup",
+    "sap-s4hana",
+    "freshbooks",
+    "memberstack",
+    "securityscorecard",
+    "jobber",
+    "woocommerce",
+    "wordpress-com",
+    "ownr"
+   ]
+  },
+  {
+   "id": "c37",
+   "tier": "B",
+   "stage": "facts",
+   "slugs": [
+    "rocket-lawyer",
+    "maced-ai",
+    "legalplace",
+    "bots-discord",
+    "didomi",
+    "apexcharts",
+    "bloom-crm",
+    "la-growth-machine",
+    "substance-3d-designer",
+    "archicad"
+   ]
+  },
+  {
+   "id": "c38",
+   "tier": "B",
+   "stage": "facts",
+   "slugs": [
+    "expo",
+    "gusto",
+    "infisical",
+    "nestjs",
+    "dashlane",
+    "lightroom-mobile",
+    "smartsuite",
+    "apollo-io",
+    "microsoft-dynamics-365-finance-operations",
+    "mixpanel"
+   ]
+  },
+  {
+   "id": "c39",
+   "tier": "B",
+   "stage": "facts",
+   "slugs": [
+    "twinmotion",
+    "cinema-4d",
+    "photopea",
+    "redshift",
+    "socialbee",
+    "simvoly",
+    "bolt-business",
+    "discord",
+    "lottie",
+    "later"
+   ]
+  },
+  {
+   "id": "c40",
+   "tier": "B",
+   "stage": "facts",
+   "slugs": [
+    "bullmq",
+    "kajabi",
+    "quixel-megascans",
+    "recharts",
+    "digitalocean",
+    "rocketlink",
+    "chatgpt",
+    "knockout",
+    "zoom",
+    "budibase"
+   ]
+  },
+  {
+   "id": "c41",
+   "tier": "B",
+   "stage": "facts",
+   "slugs": [
+    "dovetail",
+    "fusion-360",
+    "gcp",
+    "proposify",
+    "roam-research",
+    "circle",
+    "getida",
+    "profile-builder-3",
+    "calltrackingmetrics",
+    "oracle-fusion-cloud"
+   ]
+  },
+  {
+   "id": "c42",
+   "tier": "B",
+   "stage": "facts",
+   "slugs": [
+    "resend",
+    "bigquery",
+    "quickbooks-online",
+    "shipstation",
+    "ae-duik",
+    "hostfully",
+    "vimeo",
+    "canva-ai",
+    "ae-newton3",
+    "artlist"
+   ]
   }
  ],
  "cloudNote": "Cloud sessions (credit): facts only, low effort. c1 to c10 hold 3 tools each; from c11 on, 10 tools per batch (decided 2026-09-25). Rating and bilingual editorial are completed locally."
