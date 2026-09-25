@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "slug": "contra",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Contra",
+    "vendor": "Contra Labs, Inc.",
+    "officialUrl": "https://contra.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://contra.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Contra pricing" },
+    { "id": "s2", "url": "https://contra.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Contra homepage" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://contra.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Community access, job opportunities, standard discoverability and standard payouts. Client payment fees of $15 or $29 apply on payments above $500, and digital product fees are capped at 5% ($3-$29).", "fr": null }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Client payment fees of $15 or $29 per payment above $500", "fr": null },
+          { "en": "Digital product fees capped at 5% (min $3, max $29)", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 29, "annualPerMonth": 16.58, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Eliminates client payment fees and digital product fees; boosted visibility in Discover and job listings; faster payouts (2% fee) and crypto payouts (1% fee) remain optional paid add-ons", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      { "en": "Faster payouts: 2% fee per payout", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Crypto payouts: 1% fee per payout", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The Free plan is commission-free but not fee-free: client payment fees ($15 or $29 above $500) and digital product fees (up to 5%) apply until upgrading to Pro.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Public portfolio and role-based freelancer profile (web developer, designer, etc.) for client discovery", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Project posting and browsing, with tool-based filtering (Framer, Figma, Midjourney, etc.)", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Commission-free payment collection from clients", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Custom invoicing and contract creation on the Pro plan", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan carries per-payment and per-product fees that Pro removes, so heavy users effectively need the paid tier", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Invoicing and proposal workflow details are not documented on the public marketing pages", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s2"] },
+      { "name": "Framer", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Webflow", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "upwork", "reason": { "en": "Broader freelance marketplace with similar client discovery and project posting." } },
+    { "slug": "fiverr", "reason": { "en": "Competing freelance marketplace for commission-based service sales." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact invoicing and proposal system mechanics not documented on public pages",
+    "No documented free trial for Pro plan"
+  ],
+  "conflicts": []
+}

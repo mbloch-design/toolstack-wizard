@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "slug": "aescripts-flow",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Flow",
+    "vendor": "aescripts + aeplugins (Zack Lovatt / renderTom)",
+    "officialUrl": "https://aescripts.com/flow/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "aescripts.com returned HTTP 403 to automated fetch; facts below come from search-indexed summaries and third-party review sites, not a direct read of the official page."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://aescripts.com/flow/", "tier": 1, "accessedOn": "2026-09-25", "title": "Flow - aescripts.com (blocked, 403, indexed summary only)" },
+    { "id": "s2", "url": "https://motionarray.com/learn/after-effects/flow-after-effects-extension-review/", "tier": 2, "accessedOn": "2026-09-25", "title": "Flow After Effects Extension Review - Motion Array" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://aescripts.com/flow/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "flow",
+        "name": "Flow",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 35 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Single-user license for the Flow After Effects extension; exact price not directly confirmed from the official page due to a 403 block", "fr": null }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "flow",
+    "addOns": [],
+    "cautions": [
+      { "en": "Price ($35) could not be directly confirmed on the official pricing page (blocked by anti-bot protection); it comes from third-party review/search summaries and should be re-verified.", "fr": null, "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Replaces Adobe After Effects' native Graph Editor with a modern, normalized easing-curve editor", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Ships with 25 built-in easing curves based on Robert Penner's easing functions", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Library system to save, reuse and share custom easing presets across projects, with multi-library support", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Exports easing curves as CSS cubic-bezier values for handoff to web developers", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Requires Adobe After Effects; not a standalone tool", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Official pricing and system-requirements page could not be directly verified due to anti-bot blocking; details rely on third-party sources", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact official price not confirmed directly (site blocked automated access); third-party sources cite $35, an older source cites $30",
+    "Trial availability and duration not confirmed from the official page",
+    "Supported After Effects versions and OS requirements not confirmed"
+  ],
+  "conflicts": [
+    "Search-indexed summaries disagree on price: $35 (most recent) vs $30 (older source)"
+  ]
+}
