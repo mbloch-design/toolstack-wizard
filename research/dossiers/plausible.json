@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "slug": "plausible",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Plausible Analytics",
+    "vendor": "Plausible Insights OÜ",
+    "officialUrl": "https://plausible.io",
+    "docsUrl": "https://plausible.io/docs",
+    "changelogUrl": "https://plausible.io/changelog",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://plausible.io/", "tier": 1, "accessedOn": "2026-09-25", "title": "Plausible Analytics homepage/pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://plausible.io/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10k monthly pageviews, 1 site, 3 years data retention" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 14, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10k pageviews (expandable), up to 3 sites, up to 3 team members" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 19, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10k pageviews (expandable), up to 10 sites, up to 10 team members, 5 years retention, Stats API 600 req/hour" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "10+ sites/team members, SSO, managed proxy, raw data exports" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pricing scales with monthly pageviews within each tier; higher pageview volumes cost more even on the same plan name.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Privacy-focused, cookieless web analytics presented as a GDPR-friendly alternative to Google Analytics", "sourceIds": ["s1"] },
+      { "en": "Google Analytics data import and Google Tag Manager template for setup", "sourceIds": ["s1"] },
+      { "en": "Stats API and Data Studio connector on Business plan for custom reporting", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan, only a 30-day trial", "sourceIds": ["s1"] },
+      { "en": "Advanced features (custom properties, funnels, revenue attribution) reserved for the Business tier", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google Analytics", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Google Tag Manager", "slug": "google-tag-manager", "sourceIds": ["s1"] },
+      { "name": "Looker Studio", "slug": "looker-studio", "sourceIds": ["s1"] },
+      { "name": "Slack", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "fathom-analytics", "reason": { "en": "Direct privacy-first analytics competitor with a similar pricing model" } },
+    { "slug": "simple-analytics", "reason": { "en": "Another lightweight, cookieless GA alternative" } },
+    { "slug": "posthog", "reason": { "en": "Broader product analytics suite that also covers web analytics" } },
+    { "slug": "mixpanel", "reason": { "en": "Event-based analytics alternative for product teams" } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact annual discount percentage not stated on the fetched page",
+    "Pageview overage pricing beyond the base 10k tier not detailed"
+  ],
+  "conflicts": []
+}

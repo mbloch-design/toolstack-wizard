@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 2,
+  "slug": "autocad-lt",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "AutoCAD LT",
+    "vendor": "Autodesk, Inc.",
+    "officialUrl": "https://www.autodesk.com/products/autocad-lt/overview",
+    "docsUrl": "https://www.autodesk.com/support/technical/product/autocad-lt",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Direct fetch of the official Autodesk pricing page returned HTTP 403; facts sourced from search result summaries citing the official Autodesk source."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://blog.nobledesktop.com/learn/autocad/autocad-cost", "tier": 2, "accessedOn": "2026-09-25", "title": "How Much Does AutoCAD Cost? (citing Autodesk official pricing)" },
+    { "id": "s2", "url": "https://www.autodesk.com/solutions/autocad-subscription-faq", "tier": 1, "accessedOn": "2026-09-25", "title": "AutoCAD License & Subscription FAQ" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.autodesk.com/products/autocad-lt/overview",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 15, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "subscription",
+        "name": "AutoCAD LT Subscription",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 70, "annualPerMonth": 45, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2D drafting and documentation only; no 3D modeling toolset included (that is reserved for full AutoCAD)" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "subscription",
+    "addOns": [],
+    "cautions": [
+      { "en": "Reported prices vary between sources ($540/year via one figure, ~$440-520/year via others); revalidate the current figure directly on autodesk.com before publishing, since direct access was blocked during this research.", "sourceIds": ["s1"] },
+      { "en": "A 30-day return policy applies to annual/multi-year subscriptions; monthly subscriptions have a 15-day return window.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "2D technical drafting and documentation tool, a lighter version of full AutoCAD", "sourceIds": ["s1"] },
+      { "en": "Aimed at small teams and freelancers who need basic CAD without 3D modeling tools", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No 3D modeling toolset, unlike the full AutoCAD subscription", "sourceIds": ["s1"] },
+      { "en": "No permanent free tier, only a 15-day trial", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "sketchup-pro", "reason": { "en": "Alternative CAD/drafting tool for smaller studios needing 2D/3D drawing" } }
+  ],
+  "missingAlternatives": [
+    { "name": "ARES Commander", "officialUrl": "https://www.graebert.com/ares-commander", "reason": "Direct lower-cost AutoCAD LT alternative for 2D/3D CAD, not in the catalogue" },
+    { "name": "DraftSight", "officialUrl": "https://www.draftsight.com", "reason": "Common budget 2D CAD alternative to AutoCAD LT, not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Official Autodesk pricing page returned HTTP 403 during direct fetch; exact current monthly/annual price should be reverified directly before publishing",
+    "Regional pricing (non-US) not verified"
+  ],
+  "conflicts": [
+    "Search sources disagree on the current annual price: one figure states $540/year while others state $440-$520/year; not resolved during this research pass."
+  ]
+}

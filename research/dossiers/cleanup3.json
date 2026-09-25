@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "slug": "cleanup3",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "CleanUp³",
+    "vendor": "Thomas Thomassen (ThomThom)",
+    "officialUrl": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
+    "docsUrl": "https://github.com/thomthom/cleanup",
+    "changelogUrl": "https://www.thomthom.net/thoughts/2015/01/cleanup-3-3-for-sketchup-respecting-your-locks/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://github.com/thomthom/cleanup", "tier": 1, "accessedOn": "2026-09-25", "title": "CleanUp GitHub repository" },
+    { "id": "s2", "url": "https://sketchucation.com/plugin/1402-tt_cleanup", "tier": 2, "accessedOn": "2026-09-25", "title": "CleanUp on SketchUcation" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Fully free extension, no paid tier" }], "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Fully free extension, no paid tier" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cleans up SketchUp models by removing unnecessary geometry, unused materials, duplicate faces, and stray edges", "sourceIds": ["s2"] },
+      { "en": "Reduces file size to keep large 3D models lighter and faster", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Requires the companion library TT_Lib2 as a mandatory dependency", "sourceIds": ["s2"] },
+      { "en": "Latest release (v3.4.6, Feb 2024) supports SketchUp 2022-2026 only, no legacy version support confirmed", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "sketchup-pro", "reason": { "en": "Host application this plugin extends" } }
+  ],
+  "missingAlternatives": [
+    { "name": "Solid Inspector²", "officialUrl": "https://sketchucation.com/plugin/1751-solid_inspector%C2%B2", "reason": "Common companion/alternative SketchUp cleanup tool, referenced as a current alternative in the seed but not present in the catalogue as a full entry" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "No official standalone pricing page found beyond the SketchUp Extension Warehouse listing, which could not be scraped for full detail"
+  ],
+  "conflicts": []
+}

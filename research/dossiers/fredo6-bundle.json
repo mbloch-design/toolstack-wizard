@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "slug": "fredo6-bundle",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Fredo6 Bundle",
+    "vendor": "Fredo6 (independent developer)",
+    "officialUrl": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+    "docsUrl": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://sketchucation.com/pluginstore?pauthor=fredo6", "tier": 1, "accessedOn": "2026-09-25", "title": "Fredo6 plugins on SketchUcation" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Most Fredo6 plugins (FredoScale, FredoCorner, FredoBend, Curviloft, etc.) are free; only a few (FredoPortrait, FredoSpline) are marked licensed/paid" }], "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free-plugins",
+        "name": "Free plugins",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Most of the 40+ plugins in the bundle (FredoScale, FredoCorner, Curviloft, etc.) are free to download" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free-plugins",
+    "addOns": [
+      { "en": "FredoPortrait and FredoSpline require a separate paid license; exact prices not published on the listing page", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The 'bundle' is not a single purchase: it is a collection of 40+ individually distributed plugins, most free, a couple paid, requiring the shared LibFredo6 library.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Grouped distribution of 40+ specialized SketchUp modeling extensions (FredoScale, FredoCorner, FredoBend, Curviloft, BezierSpline, etc.)", "sourceIds": ["s1"] },
+      { "en": "Covers geometric transformation, curve/spline drawing, and toolbar management workflows", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Not a unified product: each plugin is installed and updated separately from SketchUcation", "sourceIds": ["s1"] },
+      { "en": "Requires the shared LibFredo6 library (SketchUp 2017+) as infrastructure, not a standalone tool", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "sketchup-pro", "reason": { "en": "Host application these plugins extend; some equivalent modeling tools are native in Pro" } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact prices for the paid plugins (FredoPortrait, FredoSpline) not shown on the SketchUcation listing",
+    "No single official 'bundle' purchase page found; distribution is per-plugin"
+  ],
+  "conflicts": []
+}

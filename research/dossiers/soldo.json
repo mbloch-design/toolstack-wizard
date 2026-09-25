@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "slug": "soldo",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Soldo",
+    "vendor": "Soldo Financial Services Ireland DAC",
+    "officialUrl": "https://www.soldo.com",
+    "docsUrl": "https://www.soldo.com/en-gb/pricing/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.soldo.com/en-gb/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Soldo pricing (UK)" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "GBP",
+    "pricingUrl": "https://www.soldo.com/en-gb/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "UK",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 27, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 wallet, 3 users, 3 cards, up to 20 monthly bank transfers" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 39, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "3 wallets, 3 users, 3 cards, up to 30 monthly bank transfers, budget management, multi-currency" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "unlimited",
+        "name": "Unlimited",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Unlimited wallets, users, cards and bank transfers; role-based access; custom approval workflows; SAP Concur integration" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [
+      { "en": "Additional fees for extra card issuance and cash withdrawals, listed separately from plan prices", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Base plan prices exclude VAT (+VAT stated explicitly).", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Prepaid company cards with per-card spending controls and receipt capture", "sourceIds": ["s1"] },
+      { "en": "Multi-wallet budget management with multi-currency spending on Plus plan", "sourceIds": ["s1"] },
+      { "en": "100+ system integrations and SAP Concur connector on the Unlimited plan", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan, only a 30-day trial", "sourceIds": ["s1"] },
+      { "en": "Entry Standard plan caps monthly bank transfers at 20 and is limited to 3 users/cards", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "SAP Concur", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Amazon Business", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "spendesk", "reason": { "en": "Direct competitor for company cards and spend management" } },
+    { "slug": "payhawk", "reason": { "en": "Similar European expense/card management platform" } },
+    { "slug": "qonto", "reason": { "en": "Business account with card/expense features aimed at the same target" } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Claimed '62% time savings on claims' and '80% time savings on reporting' figures are unsubstantiated marketing claims from Soldo's own site and were excluded from facts",
+    "No stated per-seat pricing beyond the plan base price (Standard/Plus include only 3 users at the listed price)"
+  ],
+  "conflicts": []
+}

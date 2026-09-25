@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 2,
+  "slug": "restream",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Restream",
+    "vendor": "Restream, Inc.",
+    "officialUrl": "https://restream.io",
+    "docsUrl": "https://support.restream.io/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://restream.io/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Restream pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://restream.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Stream to 2 channels simultaneously, includes Restream branding" }], "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 19, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Stream on 3 channels at once, removes branding, guest channel access" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 49, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Multistream to 5 channels, full HD 1080p, 4K recording, dual-format streaming" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 2,
+        "price": { "monthly": 239, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Stream on 8 channels, website player with 1,000 concurrent viewers, 2 included team seats" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "SSO, dedicated account management, unlimited capabilities" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [
+      { "en": "Clips add-on: from $19/mo (50 clips) up to $59/mo (250 clips) depending on plan", "sourceIds": ["s1"] },
+      { "en": "Webinars add-on: from $99/mo (100 attendees) up to $299/mo (500 attendees) depending on plan", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Annual billing gives a 20% discount across all paid plans, but the page shows monthly prices by default.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Simultaneous multi-platform live streaming (multistreaming) to several social/video platforms at once", "sourceIds": ["s1"] },
+      { "en": "Studio for co-hosting guests and branded overlays", "sourceIds": ["s1"] },
+      { "en": "4K recording and dual horizontal/vertical format streaming on Professional plan", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan limited to 2 simultaneous channels and carries Restream branding", "sourceIds": ["s1"] },
+      { "en": "Clips and Webinars are paid add-ons on top of the base plan price, not included by default", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "opus-clip", "reason": { "en": "Overlapping use case for repurposing live/video content into clips" } }
+  ],
+  "missingAlternatives": [
+    { "name": "StreamYard", "officialUrl": "https://streamyard.com", "reason": "Main direct competitor for multistreaming studio software, not in the catalogue" },
+    { "name": "Streamlabs", "officialUrl": "https://streamlabs.com", "reason": "Popular multistreaming/broadcast competitor, not in the catalogue" }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact platform list supported for simultaneous streaming not detailed on the fetched summary",
+    "Annual price-per-month equivalents not captured (only the 20% discount rate is known)"
+  ],
+  "conflicts": []
+}

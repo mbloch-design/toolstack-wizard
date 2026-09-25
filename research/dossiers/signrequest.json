@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "slug": "signrequest",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "SignRequest",
+    "vendor": "SignRequest B.V. (a Box company)",
+    "officialUrl": "https://signrequest.com",
+    "docsUrl": "https://signrequest.com/en/plans",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://signrequest.com/en/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "SignRequest plans" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "EUR",
+    "pricingUrl": "https://signrequest.com/en/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "10 documents signed per user per month, basic signing features" }], "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited documents (fair use), 1 team, up to 5 users, 5 templates, custom branding, 17 languages" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited teams and users, unlimited templates, API access (extra fee), Slack/Zapier/Salesforce integrations, SSO" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "professional",
+    "addOns": [
+      { "en": "Bulk send and API access on the Business plan require additional fees", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Yearly plans require a minimum one-year commitment, while monthly plans can be cancelled immediately.", "sourceIds": ["s1"] },
+      { "en": "\"Unlimited\" documents on paid plans is governed by a Fair Use Policy; sending more than twice the average volume requires purchasing document bundles.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Electronic signature workflow with secure audit trail and legal proof", "sourceIds": ["s1"] },
+      { "en": "Support for 17 languages and cloud document storage", "sourceIds": ["s1"] },
+      { "en": "Integrations with Slack, Zapier, Salesforce and premium connectors (M-Files, Topdesk, Formdesk) on Business plan", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan capped at 10 documents per user per month", "sourceIds": ["s1"] },
+      { "en": "API access and bulk send require additional fees even on the Business plan", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Zapier", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Google", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "docusign", "reason": { "en": "Larger, more established e-signature competitor" } },
+    { "slug": "yousign", "reason": { "en": "European e-signature alternative with similar pricing positioning" } },
+    { "slug": "pandadoc", "reason": { "en": "E-signature plus document workflow competitor" } },
+    { "slug": "adobe-acrobat-sign", "reason": { "en": "Enterprise-grade e-signature alternative" } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Annual discount amount not stated on the fetched page (only monthly prices given)",
+    "Exact cost of bulk-send document bundles not published"
+  ],
+  "conflicts": []
+}

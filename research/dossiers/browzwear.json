@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "slug": "browzwear",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Browzwear",
+    "vendor": "Browzwear Solutions Pte Ltd",
+    "officialUrl": "https://browzwear.com",
+    "docsUrl": "https://browzwear.com/pricing-plans",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://browzwear.com/blog/browzwear-pricing-plan", "tier": 2, "accessedOn": "2026-09-25", "title": "Browzwear announces new pricing plans (blog)" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://browzwear.com/pricing-plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "freelancer",
+        "name": "Freelancer",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 75, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Full 3D digital product creation functionality on a single-user license" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "freelancer",
+    "addOns": [],
+    "cautions": [
+      { "en": "Most pricing beyond the entry Freelancer tier is not publicly disclosed; teams and larger organizations must contact sales for a quote.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "3D garment prototyping and digital twin creation for fashion (VStitcher)", "sourceIds": ["s1"] },
+      { "en": "New self-serve pricing plans (launched Feb 2026) targeting independent designers and small teams", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Full pricing for teams/organizations is not published and requires a custom quote", "sourceIds": ["s1"] },
+      { "en": "The official pricing page could not be accessed directly during research (404/blocked)", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "clo-3d", "reason": { "en": "Direct competitor in 3D fashion/garment design software" } },
+    { "slug": "adobe-substance-3d", "reason": { "en": "General 3D content creation suite also used in fashion/product visualization" } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Official pricing page (browzwear.com/pricing-plans and browzwear.com/pricing) returned a 404 during research; pricing confirmed only via a secondary blog post",
+    "Pricing for tiers above Freelancer (teams, enterprise) not public",
+    "Learner License (student) terms mentioned in secondary sources but not verified on an official page"
+  ],
+  "conflicts": []
+}
