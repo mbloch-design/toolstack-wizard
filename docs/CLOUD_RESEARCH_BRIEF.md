@@ -9,8 +9,12 @@ celui-ci en est la version d'exécution, allégée pour tenir un budget.
 
 Les sessions cloud tournent sur un crédit très limité. Elles font **uniquement
 la collecte des faits**, sur les lots `c1`, `c2`… de `research/queue.json`
-(`cloudBatches`, 3 outils par lot). La note, la cible et les textes bilingues
-sont rédigés ensuite en local, hors crédit.
+(`cloudBatches` : 3 outils par lot jusqu'à `c10`, 10 outils par lot à partir
+de `c11`). La note, la cible et les textes bilingues sont rédigés ensuite en
+local, hors crédit.
+
+Avec 10 outils par lot, garde la conversation courte : pas de résumé entre
+deux outils, et écris chaque dossier dès que ses faits sont réunis.
 
 Dans ce mode, remplis seulement :
 - `identity`, `sources`, `pricing` (complet, section 5) ;

@@ -1619,7 +1619,14 @@
    "slugs": [
     "feedly",
     "firebase",
-    "snapseed"
+    "snapseed",
+    "adobe-illustrator",
+    "substance-3d-painter",
+    "sketchup-pro",
+    "fly-io",
+    "react-router",
+    "grammarly",
+    "lemlist"
    ]
   },
   {
@@ -1627,9 +1634,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "adobe-illustrator",
-    "substance-3d-painter",
-    "sketchup-pro"
+    "vidiq",
+    "codemagic",
+    "pixieset",
+    "ant-design",
+    "linear",
+    "runway",
+    "figma",
+    "excalidraw",
+    "zoom-pro",
+    "confluence"
    ]
   },
   {
@@ -1637,9 +1651,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "fly-io",
-    "react-router",
-    "grammarly"
+    "payoneer",
+    "silae",
+    "sendible",
+    "ae-bodymovin",
+    "figma-tokens",
+    "brand24",
+    "ovh",
+    "ae-overlord",
+    "vault",
+    "1password"
    ]
   },
   {
@@ -1647,9 +1668,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "lemlist",
-    "vidiq",
-    "codemagic"
+    "audacity",
+    "qonto",
+    "milanote",
+    "magnific-ai",
+    "logseq",
+    "madmapper",
+    "touchdesigner",
+    "material-ui",
+    "productioncrate",
+    "safetyculture"
    ]
   },
   {
@@ -1657,9 +1685,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "pixieset",
-    "ant-design",
-    "linear"
+    "buffer",
+    "reaper",
+    "aircall",
+    "neon",
+    "box",
+    "invision",
+    "wordpress",
+    "davinci-resolve",
+    "zotero",
+    "canva-pro"
    ]
   },
   {
@@ -1667,9 +1702,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "runway",
-    "figma",
-    "excalidraw"
+    "metabase",
+    "intercom",
+    "scribe",
+    "crayo-ai",
+    "affinity-photo",
+    "buzzsprout",
+    "n8n",
+    "rive",
+    "adobe-fresco",
+    "indesign"
    ]
   },
   {
@@ -1677,9 +1719,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "zoom-pro",
-    "confluence",
-    "payoneer"
+    "canva",
+    "corona-renderer",
+    "topaz-photo-ai",
+    "adobe",
+    "elgato-stream-deck",
+    "looker-studio",
+    "linktree",
+    "semrush",
+    "postman",
+    "sprout-social"
    ]
   },
   {
@@ -1687,9 +1736,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "silae",
-    "sendible",
-    "ae-bodymovin"
+    "storybook",
+    "hugeicons",
+    "mailchimp",
+    "toggl",
+    "adobe-cc",
+    "magic-bullet",
+    "steamworks",
+    "simpletexting",
+    "maxon-one",
+    "spendesk"
    ]
   },
   {
@@ -1697,9 +1753,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "figma-tokens",
-    "brand24",
-    "ovh"
+    "google-docs",
+    "clockify",
+    "google-search-console",
+    "mapbox",
+    "printify",
+    "honeybook",
+    "storyblocks",
+    "asana",
+    "tally",
+    "trainerize"
    ]
   },
   {
@@ -1707,9 +1770,16 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "ae-overlord",
-    "vault",
-    "1password"
+    "ae-bao-boa",
+    "artstation",
+    "clip-studio-paint",
+    "nomad-sculpt",
+    "framer",
+    "samcart",
+    "elevenlabs",
+    "figma-anima",
+    "twitch-studio",
+    "acast"
    ]
   },
   {
@@ -1717,70 +1787,18 @@
    "tier": "A",
    "stage": "facts",
    "slugs": [
-    "audacity",
-    "qonto",
-    "milanote"
-   ]
-  },
-  {
-   "id": "c22",
-   "tier": "A",
-   "stage": "facts",
-   "slugs": [
-    "magnific-ai",
-    "logseq",
-    "madmapper"
-   ]
-  },
-  {
-   "id": "c23",
-   "tier": "A",
-   "stage": "facts",
-   "slugs": [
-    "touchdesigner",
-    "material-ui",
-    "productioncrate"
-   ]
-  },
-  {
-   "id": "c24",
-   "tier": "A",
-   "stage": "facts",
-   "slugs": [
-    "safetyculture",
-    "buffer",
-    "reaper"
-   ]
-  },
-  {
-   "id": "c25",
-   "tier": "A",
-   "stage": "facts",
-   "slugs": [
-    "aircall",
-    "neon",
-    "box"
-   ]
-  },
-  {
-   "id": "c26",
-   "tier": "A",
-   "stage": "facts",
-   "slugs": [
-    "invision",
-    "wordpress",
-    "davinci-resolve"
-   ]
-  },
-  {
-   "id": "c27",
-   "tier": "A",
-   "stage": "facts",
-   "slugs": [
-    "zotero",
-    "canva-pro"
+    "angular-material",
+    "cursor",
+    "pagespeed-insights",
+    "revenuecat",
+    "zendesk",
+    "supabase",
+    "maze",
+    "dovetail-ai",
+    "jotform",
+    "trello"
    ]
   }
  ],
- "cloudNote": "Cloud sessions (credit): facts only, 3 tools per session, effort low. Covers the 100 most searched tools with lots 0 and 1 (done). Rating and bilingual editorial are completed locally. Other tools are researched locally from the batches list."
+ "cloudNote": "Cloud sessions (credit): facts only, low effort. c1 to c10 hold 3 tools each; from c11 on, 10 tools per batch (decided 2026-09-25). Rating and bilingual editorial are completed locally."
 }
