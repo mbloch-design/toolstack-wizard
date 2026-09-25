@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 2,
+  "slug": "rydoo",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Rydoo",
+    "vendor": "Rydoo",
+    "officialUrl": "https://www.rydoo.com",
+    "docsUrl": "https://www.rydoo.com/pricing/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.rydoo.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Rydoo pricing"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "EUR",
+    "pricingUrl": "https://www.rydoo.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "essentials",
+        "name": "Essentials",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": {
+          "monthly": 10,
+          "annualPerMonth": 8,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Mobile app with receipt scanner, unlimited expenses, mileage tracking, basic integrations (Uber, Lyft, Slack), single approval flow, multi-country compliance."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": {
+          "monthly": 12,
+          "annualPerMonth": 10,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds per diems/daily allowances, online accounting integrations (QuickBooks, Xero, Exact), automated card reconciliation, customizable policies, multi-level approvals, custom fields."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 30,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Adds Rydoo Cards, SFTP access, API access, priority support. Active-user pricing: billed only for users who perform an action that month."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 50,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Adds AI-powered Smart Audit, advanced approval workflows, insights dashboard, SAML SSO, HR connect, scheduled exports."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "essentials",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Essentials and Pro require a minimum of 5 users; not usable as a true single-seat plan.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Business and Enterprise plans use active-user billing, so cost is not simply seats x price.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "OCR receipt scanning via mobile app for automated expense capture.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Mileage tracking and multi-country tax/compliance support.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-powered Smart Audit that automatically analyzes all expenses (Enterprise tier).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Accounting integrations with QuickBooks, Xero and Exact from the Pro tier up.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Essentials and Pro plans require a minimum of 5 seats, ruling out true solo use.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "API access and SFTP export are gated behind the Business plan (30-seat minimum, quote-based).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Xero",
+        "slug": "xero",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "QuickBooks",
+        "slug": "quickbooks",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "spendesk",
+      "reason": {
+        "en": "Direct competitor for expense management and card spend control for SMEs."
+      }
+    },
+    {
+      "slug": "payhawk",
+      "reason": {
+        "en": "Overlaps for expense reports, cards and finance automation in Europe."
+      }
+    },
+    {
+      "slug": "soldo",
+      "reason": {
+        "en": "Competes for expense tracking and company card management."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Expensify",
+      "officialUrl": "https://www.expensify.com/",
+      "reason": "Major expense reporting competitor with OCR receipt scanning, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "No free trial length was stated on the pricing page; self-service signup exists but trial terms are unclear."
+  ],
+  "conflicts": []
+}

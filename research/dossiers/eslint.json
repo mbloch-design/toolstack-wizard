@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "slug": "eslint",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ESLint",
+    "vendor": "OpenJS Foundation",
+    "officialUrl": "https://eslint.org",
+    "docsUrl": "https://eslint.org/docs/latest/",
+    "changelogUrl": "https://github.com/eslint/eslint/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://eslint.org/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "ESLint homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Fully free and open source, no paid tier."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free / open source",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Fully free, open source under MIT license; no paid tier or usage cap." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Statically analyzes JavaScript/TypeScript code to find problems and enforce code style.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Auto-fixes many problems with syntax-aware fixes, avoiding naive find-and-replace errors.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supports custom parsers and user-defined rules alongside a large built-in rule set.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Works in browser or server-side JavaScript, with or without frameworks, and with JSX.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No built-in dashboard or team analytics; reporting and CI aggregation require third-party tooling.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Configuration and rule tuning require developer expertise, unlike zero-config alternatives.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Biome",
+      "officialUrl": "https://biomejs.dev/",
+      "reason": "Fast all-in-one linter/formatter competing directly with ESLint, not in the catalogue."
+    },
+    {
+      "name": "Prettier",
+      "officialUrl": "https://prettier.io/",
+      "reason": "Commonly paired with or compared to ESLint for JS/TS code quality, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "No direct in-catalogue alternatives were found among the provided candidate list (mostly unrelated no-code/dev tools), so `alternatives` is left empty."
+  ],
+  "conflicts": []
+}

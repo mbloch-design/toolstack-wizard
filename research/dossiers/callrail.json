@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "slug": "callrail",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "CallRail",
+    "vendor": "CallRail, Inc.",
+    "officialUrl": "https://www.callrail.com",
+    "docsUrl": "https://apidocs.callrail.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.callrail.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "CallRail pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.callrail.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "lead-tracking",
+        "name": "Lead Tracking",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 50, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5 local numbers, 250 minutes, 25 SMS included; call & text tracking, recording, routing, transcription, automation rules." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "lead-tracking-complete",
+        "name": "Lead Tracking Complete",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 95, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds 1,000 form submissions, form tracking & attribution, custom form builder, multi-touch CPL reporting." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "lead-conversion",
+        "name": "Lead Conversion",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 150, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "10,000 analysis/transcription minutes; call summaries, sentiment analysis, conversation trends, automatic conversion tagging, coaching tools." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "lead-conversion-complete",
+        "name": "Lead Conversion Complete",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 195, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Combines all features and maximum included usage from lower tiers." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "lead-tracking",
+    "addOns": [
+      { "en": "AI Voice Assistant from $95/month, requiring the $55 Lead Tracking add-on minimum; includes 50 calls, then $1/call.", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Usage overages billed separately: local minutes $0.05-0.06 each, extra local numbers $3 each, toll-free numbers $5 each, SMS $0.03 each, form submissions $0.02 each.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Call tracking with dynamic number insertion to attribute inbound calls to marketing sources.", "sourceIds": ["s1"] },
+      { "en": "Call recording, transcription and AI-driven sentiment/conversation analysis on higher tiers.", "sourceIds": ["s1"] },
+      { "en": "Form tracking and multi-touch conversion attribution on the Complete plans.", "sourceIds": ["s1"] },
+      { "en": "Public API with tiered pricing (free up to 1,500 calls/month, then paid tiers up to 300,000 calls).", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Entry plan excludes form tracking and conversation-intelligence features, which require upgrading.", "sourceIds": ["s1"] },
+      { "en": "Included usage (minutes, numbers, SMS) is modest and overage fees apply quickly beyond the base allotment.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "hotjar", "reason": { "en": "Overlaps for marketing attribution and conversion analytics, though behavior-tracking rather than call-based." } }
+  ],
+  "missingAlternatives": [
+    { "name": "WhatConverts", "officialUrl": "https://www.whatconverts.com/", "reason": "Direct call tracking and lead attribution competitor, not in the catalogue." },
+    { "name": "Aircall", "officialUrl": "https://aircall.io/", "reason": "Business phone and call analytics competitor; not accepted as an alternatives slug because \"aircall-inc\" is not a recognized catalogue slug." }
+  ],
+  "unknowns": [
+    "Whether a lower-cost entry tier or freemium option exists beyond the 14-day trial was not confirmed."
+  ],
+  "conflicts": []
+}

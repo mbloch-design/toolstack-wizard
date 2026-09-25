@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "slug": "pennylane",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Pennylane",
+    "vendor": "Pennylane",
+    "officialUrl": "https://www.pennylane.com",
+    "docsUrl": "https://www.pennylane.com/fr/tarifs/small",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.pennylane.com/fr/tarifs/small", "tier": 1, "accessedOn": "2026-09-25", "title": "Pennylane tarifs indépendants" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "EUR",
+    "pricingUrl": "https://www.pennylane.com/fr/tarifs/small",
+    "verifiedOn": "2026-09-25",
+    "region": "FR",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 15, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 7, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 user, up to 1,200 invoices/year, core invoicing and payment features; requires activating a Pennylane Pro account." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "basique",
+        "name": "Basique",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 14, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 user, up to 1,200 invoices/year, adds partial invoices, commercial documents, supplier management." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "essentiel",
+        "name": "Essentiel",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 24, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 user, up to 1,200 invoices/year, adds cash flow forecasting, expense tracking, analytics, recurring invoices." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 79, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds accounting module: validation workflows, financial reports, tax declarations." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Prices shown are HT (excl. tax) for the independent/small business pricing page; other pricing pages may apply to larger businesses.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time collaborative accounting shared between the business owner and their accountant.", "sourceIds": ["s1"] },
+      { "en": "Built-in electronic invoicing compliance included at no additional cost across all plans.", "sourceIds": ["s1"] },
+      { "en": "Cash flow forecasting, expense tracking and recurring invoices from the Essentiel tier.", "sourceIds": ["s1"] },
+      { "en": "Full accounting module (validation circuits, financial reports, tax declarations) at the Premium tier.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "All plans are single-user and capped at 1,200 invoices/year, unsuitable for larger volumes.", "sourceIds": ["s1"] },
+      { "en": "The Starter plan requires activating a separate Pennylane Pro account, adding a setup step.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "shine", "reason": { "en": "French freelancer/small-business finance competitor covering banking and invoicing." } },
+    { "slug": "qonto", "reason": { "en": "Overlaps in French SME finance and expense/invoicing management." } },
+    { "slug": "freshbooks", "reason": { "en": "Cloud accounting and invoicing competitor for freelancers and small businesses." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether prices differ for non-independent (larger company) tiers was not checked; only the small-business pricing page was reviewed."
+  ],
+  "conflicts": []
+}

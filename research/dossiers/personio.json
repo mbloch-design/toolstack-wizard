@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 2,
+  "slug": "personio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Personio",
+    "vendor": "Personio SE & Co. KG",
+    "officialUrl": "https://www.personio.com",
+    "docsUrl": "https://www.marketplace.personio.com/collection/personio/",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://peoplemanagingpeople.com/tools/personio-pricing/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Personio Pricing Tiers & Costs (Updated for 2026)"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.marketplace.personio.com/collection/personio/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Personio Marketplace integrations"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.getapp.com/hr-employee-management-software/a/personio/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Personio Features, Reviews & Alternatives"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "EUR",
+    "pricingUrl": "https://www.personio.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "core",
+        "name": "Core",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Custom quote based on employee count, modules and contract length; official site could not be accessed (HTTP 429) to confirm exact figures."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      {
+        "en": "Recruiting module (applicant tracking), estimated separately by third parties, not confirmed on official site.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Payroll module, integrated with time tracking and employee data.",
+        "fr": null,
+        "sourceIds": [
+          "s3"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "No public price list; official pricing page returned HTTP 429 during research and could not be verified directly.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Core HR: employee records, absence and leave management, org charts in one system.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Structured onboarding workflows with automated task assignment for new hires.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Integrated payroll processing that syncs with employee data and time tracking.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Optional applicant tracking (Personio Recruiting) add-on for end-to-end hiring.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No public pricing; buyers must request a custom quote before knowing the real cost.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Recruiting and payroll are separate paid modules, not included in the base HR package.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "name": "Greenhouse",
+        "slug": "greenhouse",
+        "sourceIds": [
+          "s3"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "bamboohr",
+      "reason": {
+        "en": "Comparable all-in-one HRIS for SMEs with similar core HR, time-off and onboarding scope."
+      }
+    },
+    {
+      "slug": "hibob",
+      "reason": {
+        "en": "Modern HRIS competitor targeting the same SME segment with people analytics and onboarding."
+      }
+    },
+    {
+      "slug": "factorial",
+      "reason": {
+        "en": "European HRIS competitor with a similar mix of core HR, payroll and recruiting modules."
+      }
+    },
+    {
+      "slug": "deel",
+      "reason": {
+        "en": "Overlaps for HR and payroll, particularly for distributed or international teams."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact plan names, tiers and per-employee prices could not be verified: personio.com/pricing/ returned HTTP 429 during research.",
+    "Trial length, free plan existence and full platform/mobile app availability not confirmed from an official source."
+  ],
+  "conflicts": []
+}

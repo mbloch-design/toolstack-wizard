@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "slug": "microsoft-defender",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Microsoft Defender for Business",
+    "vendor": "Microsoft Corporation",
+    "officialUrl": "https://www.microsoft.com/en-us/security/business/microsoft-defender",
+    "docsUrl": "https://learn.microsoft.com/en-us/defender-business/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.microsoft.com/en-us/security/pricing/small-medium-business",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Microsoft Security pricing for small/medium business"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.microsoft.com/en-us/security/pricing/small-medium-business",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "defender-for-business",
+        "name": "Defender for Business (standalone)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 3,
+          "annualPerMonth": 3,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Annual subscription (auto-renews), up to 300 users, up to 5 devices per user, no minimum device requirement."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "m365-business-premium",
+        "name": "Microsoft 365 Business Premium (bundle)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 22,
+          "annualPerMonth": 22,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Includes Defender for Business plus the full Microsoft 365 productivity suite."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "defender-for-business",
+    "addOns": [
+      {
+        "en": "Defender for Business Servers add-on to protect Windows and Linux servers under the same admin console.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Standalone plan is capped at 300 users, so it is not viable for larger organizations without moving to enterprise Defender plans.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "AI-powered endpoint detection and response (EDR) against malware and ransomware.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatic attack disruption for human-operated ransomware.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Attack surface reduction: network protection, firewall, reduction rules, web category blocking.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automated investigation, threat response and vulnerability management, with a simplified setup wizard.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Standalone plan caps out at 300 users and 5 devices per user, unsuitable for larger deployments.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Server protection is a separate paid add-on, not included in the base per-user price.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "windows",
+      "macos",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "crowdstrike",
+      "reason": {
+        "en": "Direct competitor in AI-powered endpoint detection and response for SMBs and enterprises."
+      }
+    },
+    {
+      "slug": "vanta",
+      "reason": {
+        "en": "Overlaps in the broader SMB security/compliance space, though focused on compliance automation rather than EDR."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "SentinelOne",
+      "officialUrl": "https://www.sentinelone.com/",
+      "reason": "Major AI-driven endpoint protection competitor, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Whether a free trial is offered for Defender for Business was not confirmed on the pricing page."
+  ],
+  "conflicts": []
+}

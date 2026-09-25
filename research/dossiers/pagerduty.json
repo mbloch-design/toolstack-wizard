@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 2,
+  "slug": "pagerduty",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "PagerDuty",
+    "vendor": "PagerDuty, Inc.",
+    "officialUrl": "https://www.pagerduty.com",
+    "docsUrl": "https://support.pagerduty.com/",
+    "changelogUrl": "https://www.pagerduty.com/newsroom/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.pagerduty.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "PagerDuty pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.pagerduty.com/newsroom/pagerduty-operations-cloud-spring-2026-release/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "PagerDuty Spring 2026 Release"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.pagerduty.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Legacy Incident Management free tier: up to 5 users, 1 schedule, 1 escalation policy, 100 SMS/phone notifications per month."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (Incident Management)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 5 users, 1 schedule, 1 escalation policy, 100 SMS/phone notifications per month." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional",
+        "name": "Professional (Incident Management)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 21,
+          "annualPerMonth": 21,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Annual billing at $252/user/year (about 16% discount vs monthly); includes enhanced chat and post-incident reviews."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "reliability-starter",
+        "name": "PD Reliability Platform - Starter",
+        "unit": "account",
+        "minSeats": 10,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "$2,800/year platform fee, 10 seats, 5,000 Signal Intelligence events, 5,000 AI actions, 1 Live Call Routing line."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "professional",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "PagerDuty now sells two distinct product lines: legacy per-seat Incident Management (Free/Professional) and the newer PD Reliability Platform priced as an annual platform fee with seat and usage caps; do not mix the two pricing models when comparing.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Real-time incident management with on-call scheduling and automatic escalation policies.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-assisted operations: SRE Agent can detect, triage and diagnose incidents before waking a human (Spring 2026 release).",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Integrates with over 700 native applications and supports MCP plugins (e.g. for Claude Code, Cursor).",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Works across web, mobile and chat-ops surfaces so teams can respond where they already work.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free tier is capped at 5 users, 1 schedule and 1 escalation policy, unsuitable beyond a very small team.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The newer PD Reliability Platform tiers are usage-capped (events, AI actions) and largely quote-based above the entry tier.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "better-stack",
+      "reason": {
+        "en": "Competes directly for incident management, on-call and uptime alerting for smaller teams."
+      }
+    },
+    {
+      "slug": "datadog",
+      "reason": {
+        "en": "Overlaps for monitoring and alerting workflows that feed into incident response."
+      }
+    },
+    {
+      "slug": "sentry",
+      "reason": {
+        "en": "Used for error/incident alerting in a similar on-call workflow, though more developer-error focused."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Opsgenie",
+      "officialUrl": "https://www.atlassian.com/software/opsgenie",
+      "reason": "Direct incident management and on-call competitor, not in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Exact seat/usage limits for the Essential, Plus and Ultimate PD Reliability Platform tiers were captured but not independently re-verified beyond the single pricing page fetch.",
+    "Whether the legacy Incident Management Professional plan remains sold to new customers alongside the new Reliability Platform was not clarified."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "xero",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Xero",
+    "vendor": "Xero Limited",
+    "officialUrl": "https://www.xero.com",
+    "docsUrl": "https://central.xero.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.xero.com/us/pricing-plans/update/", "tier": 1, "accessedOn": "2026-09-25", "title": "Xero US pricing plans" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.xero.com/us/pricing-plans/update/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "early",
+        "name": "Early",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry-level plan; monthly billing only in the US as of March 2026." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "growing",
+        "name": "Growing",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 55, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Mid-tier plan, feature limits not detailed on the pricing page fetched." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "established",
+        "name": "Established",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 90, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Top-tier plan with the fullest feature set, exact limits not detailed on the page fetched." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "early",
+    "addOns": [],
+    "cautions": [
+      { "en": "US prices increase to $27/$59/$97 (Early/Growing/Established) starting October 1, 2026.", "sourceIds": ["s1"] },
+      { "en": "Multi-organization discounts are being phased out starting October 1, 2026.", "sourceIds": ["s1"] },
+      { "en": "A limited-time offer of 90% off the first 6 months was live through September 30, 2026; treat as promotional, not the regular price.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cloud accounting: invoicing, bank reconciliation and bookkeeping in a single platform.", "sourceIds": ["s1"] },
+      { "en": "30-day free trial available before committing to a paid plan.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Feature limits (invoice counts, users) per plan are not detailed on the official pricing page as fetched; only headline prices are public.", "sourceIds": ["s1"] },
+      { "en": "US pricing is monthly-billing only; annual discounted billing not offered there as of March 2026.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "quickbooks", "reason": { "en": "Direct competitor in cloud accounting for small businesses with a similar tiered pricing structure." } },
+    { "slug": "quickbooks-online", "reason": { "en": "Same segment, cloud-based bookkeeping and invoicing for SMEs." } },
+    { "slug": "freshbooks", "reason": { "en": "Cloud accounting aimed at freelancers and small businesses, comparable scope." } },
+    { "slug": "pennylane", "reason": { "en": "Cloud accounting competitor, though more focused on the French/EU market." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Per-plan feature limits (invoices, bank accounts, multi-currency, number of users) were not detailed on the pricing page as fetched.",
+    "Whether annual/discounted billing exists in other regions besides the US was not confirmed."
+  ],
+  "conflicts": []
+}
