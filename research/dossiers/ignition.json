@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "slug": "ignition",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Ignition",
+    "vendor": "Ignition (formerly Practice Ignition)",
+    "officialUrl": "https://www.ignitionapp.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "The seed URL practiceignition.com now 301-redirects permanently to ignitionapp.com, reflecting the vendor's rebrand from Practice Ignition to Ignition."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.ignitionapp.com/au/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Ignition Pricing (AU)" },
+    { "id": "s2", "url": "https://www.ignitionapp.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Ignition product page" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.ignitionapp.com/au/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "AU",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [
+      { "name": "Deals Pipeline", "unit": "account", "price": {}, "sourceIds": ["s1"] },
+      { "name": "Online Forms", "unit": "account", "price": {}, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The pricing page renders plan names and dollar amounts dynamically (monthly/annual toggle); the fetched content only confirmed the 14-day trial and add-on names, not the underlying tier prices, which must be reverified on a rendered page before use.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Creates professional online proposals with upselling options for service-based businesses.", "sourceIds": ["s2"] },
+      { "en": "Manages contracts and engagement letters digitally alongside proposals.", "sourceIds": ["s2"] },
+      { "en": "Captures client payment details upfront and automates billing and invoicing.", "sourceIds": ["s2"] },
+      { "en": "AI-powered price insights to help set service pricing, plus workflow automation templates and custom intake forms.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Exact pricing tiers and dollar amounts are not published as static content; they require a JavaScript-rendered page or contacting sales to see plan costs.", "sourceIds": ["s1"] },
+      { "en": "Positioned for accounting, bookkeeping, consulting and professional services firms rather than a general-purpose proposal tool, per the target industries listed.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Xero", "slug": null, "sourceIds": ["s2"] },
+      { "name": "QuickBooks", "slug": "quickbooks", "sourceIds": ["s2"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
+      { "name": "Zapier", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "PandaDoc", "officialUrl": "https://www.pandadoc.com", "reason": "Common proposal and e-signature competitor for service businesses, not in the catalogue" }
+  ],
+  "unknowns": ["Exact monthly/annual price for each plan (Solo/Core/Pro or similar tier names) could not be confirmed from official sources: the pricing page requires JavaScript rendering not available to this session, and only listicle/comparison sites (not admissible as proof) showed figures."],
+  "conflicts": []
+}

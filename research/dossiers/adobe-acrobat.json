@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-acrobat",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Acrobat Pro",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/acrobat.html",
+    "docsUrl": "https://helpx.adobe.com/acrobat/user-guide.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/acrobat/pricing/pricing.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Acrobat Pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/acrobat/pricing/pricing.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "express",
+        "name": "Acrobat Express",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9.99, "annualPerMonth": 9.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Basic PDF tools (create, convert, export, password-protect, compress), AI summaries and PDF Spaces.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Acrobat Standard",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 14.99, "annualPerMonth": 14.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "PDF editing and organization, e-signature collection, form filling and signing.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Acrobat Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 19.99, "annualPerMonth": 19.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "70+ advanced PDF tools, redaction, web forms, OCR for scans.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "studio",
+        "name": "Acrobat Studio",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 24.99, "annualPerMonth": 24.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Everything in Pro plus an AI Assistant, PDF Spaces, and design tools via Adobe Express.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "The advertised monthly price is only for an annual commitment billed monthly; the true pay-monthly (cancel anytime) price is higher, e.g. Pro is $19.99/mo on an annual plan versus $29.99/mo cancel-anytime.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Create, convert, export, compress and password-protect PDFs across the plan range.", "sourceIds": ["s1"] },
+      { "en": "70+ advanced PDF tools in the Pro tier, including redaction, web forms and OCR for scanned documents.", "sourceIds": ["s1"] },
+      { "en": "E-signature collection and form filling/signing built into Standard and above.", "sourceIds": ["s1"] },
+      { "en": "AI Assistant and AI summaries/insights available on higher tiers (Express and Studio).", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free usage is limited to Acrobat Reader (view/print only); any editing, conversion or signing feature requires a paid plan.", "sourceIds": ["s1"] },
+      { "en": "Advanced tools like redaction and OCR are gated to the Pro and Studio tiers, not available on Express or Standard.", "sourceIds": ["s1"] },
+      { "en": "The headline monthly price requires an annual commitment; monthly billing without commitment costs noticeably more.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "windows", "macos", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Foxit PDF Editor", "officialUrl": "https://www.foxit.com/pdf-editor/", "reason": "Common lower-cost Acrobat alternative for PDF editing/signing, not in the catalogue" }
+  ],
+  "unknowns": ["Whether the Standard/Pro/Studio Reader mobile apps carry any feature restrictions versus desktop was not detailed on the pricing page.", "Free trial length is mentioned as available but the exact number of days is not stated on the pricing page."],
+  "conflicts": []
+}

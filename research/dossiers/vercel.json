@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 2,
+  "slug": "vercel",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Vercel",
+    "vendor": "Vercel Inc.",
+    "officialUrl": "https://vercel.com",
+    "docsUrl": "https://vercel.com/docs",
+    "changelogUrl": "https://vercel.com/changelog",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://vercel.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Vercel Pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://vercel.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "1M function invocations/month, 1M edge requests/month, 100 GB data transfer/month.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "hobby",
+        "name": "Hobby",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1M function invocations/month, 1M edge requests/month, 100 GB data transfer/month; cannot purchase extra usage beyond caps.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Includes $20 monthly usage credit; 10M edge requests/month then $2 per 1M; 1TB data transfer/month then $0.15/GB.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom limits, advanced security/compliance (SOC 2, ISO 27001, PCI DSS), dedicated support and SLAs.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pro plan usage beyond the included $20 credit is billed per unit (e.g. $2 per extra 1M edge requests, $0.15/GB beyond 1TB transfer), so real cost depends on traffic.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Frontend deployment platform with git-based deploys, preview environments and edge network delivery.", "sourceIds": ["s1"] },
+      { "en": "Serverless and edge functions billed on the Pro plan with a default $20 usage credit.", "sourceIds": ["s1"] },
+      { "en": "Spend management with a default $200 usage budget, notifications and optional hard limits.", "sourceIds": ["s1"] },
+      { "en": "Paid custom build machines available at $0.007 to $0.105 per minute depending on machine type.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Hobby plan cannot purchase additional usage beyond its included caps once exceeded.", "sourceIds": ["s1"] },
+      { "en": "Hobby plan is limited to 3 custom firewall rules and has no webhook triggers.", "sourceIds": ["s1"] },
+      { "en": "No stated free trial for Pro; usage-based overage costs on Pro can be unpredictable for traffic spikes.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "netlify", "reason": { "en": "Direct competitor with a similar git-based deploy workflow and comparable free tier." } },
+    { "slug": "heroku", "reason": { "en": "Broader PaaS alternative for full backend apps rather than frontend-focused deployments." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Exact number of team seats included by default on the Pro plan before per-seat billing kicks in was not stated on the pricing page."],
+  "conflicts": []
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "slug": "move-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Move AI",
+    "vendor": "Move AI Ltd.",
+    "officialUrl": "https://www.move.ai",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.move.ai", "tier": 1, "accessedOn": "2026-09-25", "title": "Move AI product page" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.move.ai",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "No public pricing page exists; the official site directs prospects to book a demo and request a quote.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Markerless motion capture using a multi-camera setup, without physical suits or markers, powered by a patented AI motion engine.", "sourceIds": ["s1"] },
+      { "en": "Cloud-based Move One platform with scalable capture volumes and claimed data quality comparable to traditional optical mocap.", "sourceIds": ["s1"] },
+      { "en": "Integration with Unreal Engine for direct use of captured motion data in production pipelines.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No self-serve pricing; access requires booking a demo and going through a sales process.", "sourceIds": ["s1"] },
+      { "en": "Targeted at studio-scale production (VFX, gaming, entertainment) with named enterprise clients (Ubisoft, Disney, Sony), suggesting a cost structure not aimed at solo freelancers.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Unreal Engine", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "autodesk-flow-studio", "reason": { "en": "Alternative animation/production tool also used in VFX and game pipelines." } },
+    { "slug": "blender", "reason": { "en": "Free option for 3D animation, though without markerless motion capture hardware/AI pipeline." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["No pricing tiers, trial terms, or currency published anywhere on the official site; all commercial terms are behind a sales/demo process."],
+  "conflicts": []
+}

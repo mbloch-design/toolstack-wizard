@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "slug": "gaea",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Gaea",
+    "vendor": "QuadSpinner",
+    "officialUrl": "https://quadspinner.com",
+    "docsUrl": "https://docs.quadspinner.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://quadspinner.com/Order", "tier": 1, "accessedOn": "2026-09-25", "title": "Gaea Order / Editions" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://quadspinner.com/Order",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Community edition: max resolution 1024x1024, no commercial use, no tiled builds, no Unreal Engine or Houdini integration, no macros.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "community",
+        "name": "Community",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Max resolution 1024x1024, non-commercial use only, no macros, no Unreal Engine/Houdini integration.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "indie",
+        "name": "Indie",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Max resolution 8192x8192, commercial use permitted, node-locked license on up to 2 computers, no Houdini support, no macro creation.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 199 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Max resolution 16,384x16,384 (up to 262,144x262,144 with tiles), limited automation, Houdini support, macro creation, node-locked license, revenue must be under $1M/year.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 299 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Same max resolution as Professional, full automation workflow, transferable (movable) license within a company, required for revenue over $1M/year.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "indie",
+    "addOns": [],
+    "cautions": [
+      { "en": "Licenses are one-time (perpetual) purchases, node-locked by default; floating or offline licensing is only available on higher tiers, not on Indie.", "sourceIds": ["s1"] },
+      { "en": "Commercial eligibility depends on company revenue: Professional is capped under $1M/year revenue, above that Enterprise is required.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Node-based procedural 3D terrain generator used as a standard for landscape and environment creation.", "sourceIds": ["s1"] },
+      { "en": "Supports tiled builds at very high resolution (up to 262,144x262,144) on the Professional and Enterprise editions.", "sourceIds": ["s1"] },
+      { "en": "Integrates with Unreal Engine and Houdini on paid editions (Houdini support from Professional up).", "sourceIds": ["s1"] },
+      { "en": "Macro creation and automation workflows available from Professional (limited) and Enterprise (full).", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free Community edition is capped at 1024x1024 resolution and forbids commercial use entirely.", "sourceIds": ["s1"] },
+      { "en": "Indie edition, the cheapest commercial tier, has no Houdini support and cannot create macros, only use them.", "sourceIds": ["s1"] },
+      { "en": "Node-locked licensing is the default across tiers; floating/offline licenses are not available on Indie.", "sourceIds": ["s1"] },
+      { "en": "Commercial use above $1M annual company revenue legally requires the more expensive Enterprise edition regardless of feature needs.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Unreal Engine", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Houdini", "slug": "houdini", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows"]
+  },
+  "alternatives": [
+    { "slug": "blender", "reason": { "en": "Free general-purpose 3D suite that can also build terrains via add-ons, at zero cost." } },
+    { "slug": "houdini", "reason": { "en": "Node-based procedural tool with broader scope than terrain, used alongside or instead of Gaea in VFX pipelines." } }
+  ],
+  "missingAlternatives": [
+    { "name": "World Machine", "officialUrl": "https://www.world-machine.com", "reason": "Direct procedural terrain generator competitor, not in the catalogue" }
+  ],
+  "unknowns": ["Whether macOS or Linux versions exist was not stated; the product appears Windows-only based on available material."],
+  "conflicts": []
+}

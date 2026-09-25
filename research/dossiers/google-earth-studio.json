@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 2,
+  "slug": "google-earth-studio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Google Earth Studio",
+    "vendor": "Google LLC",
+    "officialUrl": "https://www.google.com/earth/studio/",
+    "docsUrl": "https://earth.google.com/studio/docs/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.google.com/earth/studio/", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Earth Studio" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://www.google.com/earth/studio/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Full tool free; requires Chrome desktop and a Google account, access granted after signup request.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Full tool free; requires Chrome desktop and a Google account, access granted after signup request.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Keyframe-based animation tool over Google Earth's satellite and 3D imagery, matching the workflow of industry-standard motion design tools.", "sourceIds": ["s1"] },
+      { "en": "Pre-built templates for common moves such as orbits and point-to-point flights.", "sourceIds": ["s1"] },
+      { "en": "Customizable effects including sun position and camera field of view, plus map label and pin placement.", "sourceIds": ["s1"] },
+      { "en": "Camera export compatible with Adobe After Effects for further post-production.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Runs only in the desktop version of Google Chrome, no native app or mobile support.", "sourceIds": ["s1"] },
+      { "en": "Access requires signing in with a Google account and requesting permission before use, not instant self-serve.", "sourceIds": ["s1"] },
+      { "en": "Camera export interoperability is documented specifically for Adobe After Effects, limiting portability to other compositing tools.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "blender", "reason": { "en": "General-purpose 3D animation suite that can also produce map/terrain flythroughs, with far more creative control." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Whether the tool is still actively maintained by Google (no changelog or last-update date found on the official page)."],
+  "conflicts": []
+}

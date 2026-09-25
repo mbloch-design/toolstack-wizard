@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "slug": "blender",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Blender",
+    "vendor": "Blender Foundation",
+    "officialUrl": "https://www.blender.org",
+    "docsUrl": "https://docs.blender.org/",
+    "changelogUrl": "https://www.blender.org/download/releases/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.blender.org/about/license/", "tier": 1, "accessedOn": "2026-09-25", "title": "Blender License" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://www.blender.org/about/license/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Entirely free, no paid tier for core functionality.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Complete 3D suite covering modeling, animation, rendering and compositing.", "sourceIds": ["s1"] },
+      { "en": "Released under GPL (core, version 2 or later), with some components under Apache 2.0, MIT or BSD licenses (e.g. Cycles rendering engine).", "sourceIds": ["s1"] },
+      { "en": "Free to use, distribute, modify and sell work created with it, including commercial use, with no registration or mandatory internet connection.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No official paid support tier; the project relies on voluntary donations to the Blender Development Fund rather than a commercial support contract.", "sourceIds": ["s1"] },
+      { "en": "As free open-source software, there is no vendor SLA or guaranteed response time for issues.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "alternatives": [
+    { "slug": "cinema-4d", "reason": { "en": "Commercial 3D suite aimed at motion graphics, with paid support and a more polished UI." } },
+    { "slug": "maya", "reason": { "en": "Industry-standard commercial 3D animation tool for studios, subscription-based." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [],
+  "conflicts": []
+}

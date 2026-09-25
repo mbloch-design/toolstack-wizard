@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "slug": "google-play-console",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Google Play Console",
+    "vendor": "Google LLC",
+    "officialUrl": "https://play.google.com/console",
+    "docsUrl": "https://support.google.com/googleplay/android-developer",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://google.play/business/", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Play for Business" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://google.play/business/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "The one-time developer registration fee amount was not visible on the fetched page; it is a one-time cost per developer account, not a subscription.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "App release management: internal sharing, closed/open testing, pre-launch reports and staged production releases.", "sourceIds": ["s1"] },
+      { "en": "Growth and analytics tools including acquisition reporting, store listing A/B experiments, custom store listings and translation services.", "sourceIds": ["s1"] },
+      { "en": "Monetization via Google Play Billing for in-app products and subscriptions, with price experiments.", "sourceIds": ["s1"] },
+      { "en": "Quality monitoring through Android vitals reports, Android Performance Tuner and app size analysis.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Requires a one-time paid developer registration to publish any app; the exact fee was not shown on the page fetched.", "sourceIds": ["s1"] },
+      { "en": "Tied exclusively to distribution on the Google Play Store; not usable for other Android app stores or platforms.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Apple App Store Connect", "officialUrl": "https://appstoreconnect.apple.com", "reason": "Direct equivalent console for publishing iOS apps, not in the catalogue" }
+  ],
+  "unknowns": ["The exact one-time developer registration fee amount was not visible on the fetched business overview page (a redirect from the console 'about' URL)."],
+  "conflicts": []
+}
