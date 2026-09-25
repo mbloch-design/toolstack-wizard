@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "slug": "intercom",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Intercom",
+    "vendor": "Intercom, Inc.",
+    "officialUrl": "https://www.intercom.com",
+    "docsUrl": "https://www.intercom.com/help",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.intercom.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Intercom pricing" },
+    { "id": "s2", "url": "https://www.intercom.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Intercom homepage" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.intercom.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "essential",
+        "name": "Essential",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Messenger, shared inbox, ticketing, pre-built reports, public help center; includes Fin AI Agent" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 85, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Multiple team inboxes, workflow automation, round robin assignment, private/multilingual help center; 20 free Lite seats" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "expert",
+        "name": "Expert",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 132, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "SSO & identity management, HIPAA support, SLAs, multibrand messaging; 50 free Lite seats" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "essential",
+    "addOns": [
+      { "en": "Fin AI Agent: $0.99 per resolved outcome, charged once per conversation", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Copilot: $29/agent/month (annual) or $35/agent/month (monthly)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Proactive Support Plus: $99/month (includes 500 messages)", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Seat price is only the base cost; Fin AI resolutions bill separately per outcome and can add up quickly at volume.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Fin AI Agent resolves customer conversations across chat, email and phone, with a reported ~76% average resolution rate across customers", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Omnichannel shared inbox with AI-powered ticketing for customer issues and internal collaboration", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Copilot gives real-time AI assistance to human agents inside the inbox", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Public, private and multilingual help center / knowledge base shared by AI and human agents", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Fin needs to be trained on company processes and policies to perform well; it hands off complex queries to human agents", "fr": null, "sourceIds": ["s2"] },
+      { "en": "No free plan; a paid seat is required even to trial most features", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
+      { "name": "Salesforce", "slug": "salesforce", "sourceIds": ["s2"] },
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Shopify", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    { "slug": "zendesk", "reason": { "en": "Direct competitor in helpdesk/support software with similar omnichannel ticketing." } },
+    { "slug": "helpscout", "reason": { "en": "Simpler, cheaper shared-inbox support tool aimed at smaller teams than Intercom." } },
+    { "slug": "crisp", "reason": { "en": "Lighter-weight live chat and support inbox alternative, more budget-friendly for solos and small teams." } },
+    { "slug": "tidio", "reason": { "en": "Live chat + AI chatbot for support, positioned as a lower-cost alternative to Intercom." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact annual discount percentage for seat plans not stated on the pricing page seen",
+    "Full list of Fin AI outcome definitions and spend-limit controls not detailed beyond the summary"
+  ],
+  "conflicts": []
+}

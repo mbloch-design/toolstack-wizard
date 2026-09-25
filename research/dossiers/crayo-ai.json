@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 2,
+  "slug": "crayo-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Crayo AI",
+    "vendor": "Crayo AI",
+    "officialUrl": "https://crayo.ai",
+    "docsUrl": "https://crayo.ai/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://crayo.ai/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Crayo AI pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://crayo.ai/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Crayo AI homepage"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://crayo.ai/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "hobby",
+        "name": "Hobby",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 13,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "250 workflow credits/month, 2h export/month, 30min AI voiceover/month, 100 AI images/month, 25GB storage, 1 social account"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "clipper",
+        "name": "Clipper",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 27,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "1,000 workflow credits/month, 10h export/month, 120min AI voiceover/month, 300 AI images/month, 100GB storage, 3 social accounts"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 55,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "3,000 workflow credits/month, 30h export/month, 180min AI voiceover/month, 500 AI images/month, 500GB storage, 10 social accounts"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "hobby",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Monthly workflow credits do not roll over to the next billing cycle, and no refunds are offered once a plan is purchased.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "AI auto-clipping to turn long videos into short-form clips, plus Reddit-story and fake-text video generators",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "AI voiceovers, voice changer, face swap, background removal and an icon generator",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "15+ built-in viral subtitle styles with a web-based video editor (trim, crop, merge, speed, volume, aspect-ratio conversion)",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Direct import from YouTube and TikTok links, and a developer API for integrations",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free plan; every account requires a paid subscription",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No refund policy, and unused monthly workflow credits are lost at renewal",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "YouTube",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "TikTok",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "opus-clip",
+      "reason": {
+        "en": "Direct competitor for AI-powered long-to-short video clipping for social media."
+      }
+    },
+    {
+      "slug": "capcut",
+      "reason": {
+        "en": "Broader, free-to-start short-form video editor with similar auto-captioning and clipping features."
+      }
+    },
+    {
+      "slug": "descript",
+      "reason": {
+        "en": "Alternative AI video/audio editor, more text-based editing workflow than Crayo's clip-focused approach."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact refund/cancellation terms beyond 'no refund policy' not detailed on pages seen",
+    "Supported languages for AI voiceover not fully listed"
+  ],
+  "conflicts": [
+    "Seed pricingV5 lists Hobby at ~$19/month, Clipper $39/month, Pro $79/month (monthly billing), but the current pricing page shows Hobby $13, Clipper $27, Pro $55/month; prices may have changed or the seed reflected a different promotion."
+  ]
+}

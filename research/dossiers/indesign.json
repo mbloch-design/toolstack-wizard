@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "slug": "indesign",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe InDesign",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/indesign.html",
+    "docsUrl": "https://helpx.adobe.com/indesign/user-guide.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/indesign.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe InDesign pricing and features (USD)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/indesign.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "single-app",
+        "name": "InDesign (single app)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 22.99, "annualPerMonth": 22.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Annual plan billed monthly; includes 100GB cloud storage and 25 monthly generative credits" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "creative-cloud-pro",
+        "name": "Creative Cloud Pro (all apps)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 69.99, "annualPerMonth": 69.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "$34.99/month for first 3 months (new subscribers), then $69.99/month; 20+ apps including InDesign, Illustrator, Photoshop; 4,000 monthly generative credits" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams-single-app",
+        "name": "InDesign for teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Business/team licensing, price shown only in local currency on region-specific pages" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "single-app",
+    "addOns": [],
+    "cautions": [
+      { "en": "The headline Creative Cloud Pro price ($34.99/month) is a 3-month new-subscriber promo before it jumps to $69.99/month; the regular, non-promotional price should be used for comparison.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Professional page layout for brochures, digital magazines, eBooks, posters and presentations", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI Assistant (beta) and Flex Layout for adaptive, responsive design", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Layout-aware copy-fit rewriting and PDF-to-InDesign document conversion", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Automatic alt-text generation for accessibility and Generative Expand for AI-powered image resizing", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free tier; only a 7-day trial before requiring a paid subscription", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Generative credits are capped (25/month on the single-app plan), limiting AI feature usage without upgrading", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["macos", "windows"]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    { "slug": "canva", "reason": { "en": "Much simpler, largely free/low-cost layout and design tool covering similar print/digital publication needs." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Affinity Publisher", "officialUrl": "https://www.affinity.studio", "reason": "One-time-purchase desktop publishing app, the main non-subscription alternative to InDesign, not present in this batch's alternativeCandidates list." }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact team/business plan price in USD not shown (only Argentine peso figures appeared on a regional pricing page)",
+    "iPad or web version availability not confirmed"
+  ],
+  "conflicts": []
+}

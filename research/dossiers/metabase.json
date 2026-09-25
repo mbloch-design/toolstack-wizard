@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "slug": "metabase",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Metabase",
+    "vendor": "Metabase, Inc.",
+    "officialUrl": "https://www.metabase.com",
+    "docsUrl": "https://www.metabase.com/docs/latest/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.metabase.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Metabase pricing" },
+    { "id": "s2", "url": "https://www.metabase.com/product/", "tier": 1, "accessedOn": "2026-09-25", "title": "Metabase product" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.metabase.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Open source, self-hosted, unlimited users and dashboards" }, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "open-source",
+        "name": "Open Source",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Self-hosted only, unlimited users, dashboards and data sources" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": 100, "annualPerMonth": 90, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "First 5 users included, then $6/month per extra user ($65/year); 3-day email/Slack support" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 10,
+        "price": { "monthly": 575, "annualPerMonth": 517.5, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "First 10 users included, then $12/month per extra user; adds row/column permissions, SSO, caching, white-label" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Starts around $20,000/year; dedicated success engineer, 1-day support SLA, air-gap deployment" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "en": "AI usage: $3.75 per 1M tokens (1M included)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Transforms: $0.01/run after 1,000 included runs", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Storage: from $2 per 1M rows (1M rows free)", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The open-source edition is fully free but self-hosted only; the cloud Starter/Pro plans price by seat and usage add-ons stack on top.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Visual query builder with joins, aggregations and 15+ built-in chart types", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Native SQL editor with templates and snippets for advanced users", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Interactive dashboards shareable by URL, plus scheduled email/Slack reports", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Row, table and dashboard-level permissions, query logs and audit trails; SOC 2 Type II compliant", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Web-based only, no desktop or mobile apps", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Requires a database connection to be useful beyond CSV upload; the visual builder has limits for highly complex queries, where SQL is still needed", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    { "slug": "looker-studio", "reason": { "en": "Both build BI dashboards from company data; Looker Studio is Google's free option while Metabase can be self-hosted for full control." } },
+    { "slug": "grafana", "reason": { "en": "Also open-source and self-hostable for dashboards, more oriented toward metrics/observability than business SQL analytics." } },
+    { "slug": "hex", "reason": { "en": "Competes for team data exploration and dashboards, with a stronger notebook/analytics-engineering angle." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Mobile app availability not confirmed on official pages seen",
+    "Exact list of supported data source connectors (count of '20+ data sources') not itemized"
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "slug": "affinity-photo",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Affinity Photo",
+    "vendor": "Canva (Serif Ltd.)",
+    "officialUrl": "https://www.affinity.studio/photo-editing-software",
+    "docsUrl": "https://www.affinity.studio/photo-editing-software",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "affinity.serif.com/photo now redirects (301) to affinity.studio/photo-editing-software, reflecting the 2024 Canva acquisition and the app becoming free."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.affinity.studio/photo-editing-software",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Affinity Photo product/pricing"
+    }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://www.affinity.studio/photo-editing-software",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "All core photo editing tools free with a Canva account; AI tools require a Canva premium plan"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (Canva account)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Full core editing app free; AI features (Generative Fill/Expand, Smart Selections, Colorize, Super Resolve) gated behind Canva premium"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      {
+        "en": "Canva premium subscription unlocks AI Studio tools inside Affinity Photo (price shared with Canva's own plans, not itemized on this page)",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "The app itself is entirely free since the 2024 Canva acquisition; only advanced AI features require a separate Canva premium subscription, whose price is not shown on the Affinity page itself.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Non-destructive, reversible editing with layer-based compositing (unlimited raster, vector and text layers)",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "RAW development with lens correction and noise reduction, plus HDR Merge, Focus Merge and astrophotography stacking",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced retouching (frequency separation, liquify), refine-edge selections and 30+ blend modes",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Batch processing and macro automation, high-bit-depth workflow with ICC profile support",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "PSD import can flatten smart objects and advanced Photoshop filters",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Exporting to Photoshop does not preserve editability; must save as PDF or PNG instead",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI tools (Generative Fill/Expand, Super Resolve, etc.) require a paid Canva premium account",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Canva",
+        "slug": "canva",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "macos",
+      "windows"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "adobe-photoshop",
+      "reason": {
+        "en": "The main paid subscription alternative for professional raster photo editing."
+      }
+    },
+    {
+      "slug": "adobe-lightroom",
+      "reason": {
+        "en": "Competes for RAW development and photo cataloguing workflows."
+      }
+    },
+    {
+      "slug": "capture-one",
+      "reason": {
+        "en": "Premium RAW editing and color-grading alternative aimed at professional photographers."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "iPad app pricing/availability not confirmed on the page fetched (only macOS and Windows explicitly mentioned)",
+    "Exact price of the Canva premium plan required for AI features not shown on this page"
+  ],
+  "conflicts": []
+}

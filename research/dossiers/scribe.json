@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 2,
+  "slug": "scribe",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Scribe",
+    "vendor": "Scribe (Scribe How, Inc.)",
+    "officialUrl": "https://scribe.com",
+    "docsUrl": "https://scribe.com/",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "scribehow.com now redirects (301) to scribe.com"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://scribe.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Scribe pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://scribe.com/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Scribe homepage"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://scribe.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Basic: web app documentation, shareable links, no desktop capture"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic (Free)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Web app documentation only, no desktop capture"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-personal",
+        "name": "Pro Personal",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 35,
+          "annualPerMonth": 25,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Web/mobile/desktop capture, company branding, screenshot editing, PDF/HTML/Markdown export"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-team",
+        "name": "Pro Team",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": {
+          "monthly": 17,
+          "annualPerMonth": 13,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "All Pro Personal features plus collaboration comments; minimum 5 seats"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Auto-redaction of PII/PHI, SSO/SAML, SCIM provisioning, IP whitelisting, dedicated success manager"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro-personal",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "All team members on a team must share the same tier (Basic and Pro cannot be mixed), and Pro Team requires a 5-seat minimum, which raises the effective entry cost for a small team.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Automatically captures on-screen workflows and turns them into step-by-step guides without manual writing",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "AI-powered process analysis that flags inefficiencies and bottlenecks in recorded workflows",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Automatic redaction of sensitive data (PII/PHI) in captured guides",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Exports to PDF, HTML and Markdown, with API and MCP (Model Context Protocol) integrations for feeding AI agents",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Desktop capture (Windows/Mac apps) is limited to Pro and Enterprise tiers; the free Basic plan only documents web apps",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pro Team requires a minimum of 5 seats, making it a poor fit for very small teams",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Chrome",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Edge",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "windows",
+      "macos"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "loom",
+      "reason": {
+        "en": "Also documents workflows via screen capture, though as video rather than step-by-step text/screenshot guides."
+      }
+    },
+    {
+      "slug": "notion",
+      "reason": {
+        "en": "General-purpose documentation tool teams use for the same kind of SOPs and how-to guides, without automatic capture."
+      }
+    },
+    {
+      "slug": "guideless",
+      "reason": {
+        "en": "A closer direct competitor focused specifically on auto-generated step-by-step guides."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Whether the free Basic plan has a cap on number of guides was not stated explicitly on the pricing page",
+    "No stated trial length for the paid Pro plans (marketing implies self-serve upgrade from free rather than a timed trial)"
+  ],
+  "conflicts": [
+    "Seed pricingV5 lists Pro at 20\u20ac/month with no seat minimum, but the current pricing page shows Pro Personal at $35/seat/month ($25 annual) and Pro Team at $17/seat/month with a 5-seat minimum; figures may reflect a past promotional price or a different currency/region."
+  ]
+}
