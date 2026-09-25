@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 2,
+  "slug": "aircall",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Aircall",
+    "vendor": "Aircall SAS",
+    "officialUrl": "https://aircall.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://aircall.io/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Aircall pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://aircall.io/integrations/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Aircall integrations"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://aircall.io/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "essentials",
+        "name": "Essentials",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": {
+          "monthly": 30,
+          "annualPerMonth": 22.5,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Minimum 3 seats. Unlimited US/Canada calls, SMS/MMS, 250+ integrations, 50 AI Voice Agent minutes/month, 6 months of dashboard analytics history.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": {
+          "monthly": 50,
+          "annualPerMonth": 37.5,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Minimum 3 seats. Adds AI call summaries and conversation intelligence, smart routing, queue callback, Power Dialer, outbound campaigns, live monitoring, full API access.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 25,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Minimum 25 seats. Unlimited global calls, HIPAA/GDPR/SOC2 compliance, SSO and SCIM, dedicated support and developer API access.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "essentials",
+    "addOns": [
+      {
+        "en": "Additional phone numbers: $6/month each.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI Voice Agents: from $100/month minimum, plus included minutes per plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Essentials and Professional require a minimum of 3 seats, and Enterprise a minimum of 25, so the advertised per-seat price cannot be bought for a single user.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "International outbound calling is billed separately (rates on request) except on Enterprise, which includes unlimited global calls.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Cloud-based business phone system with call routing, IVR and shared numbers for sales and support teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI call summaries and conversation intelligence (sentiment, key topics, talk-to-listen ratio) on Professional and above.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Deep CRM and helpdesk integrations including HubSpot, Salesforce, Pipedrive, Zoho CRM, Zendesk, Freshdesk, Intercom and Help Scout.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Power Dialer and outbound campaign tools for sales teams on the Professional plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free plan; all paid tiers require a minimum seat count (3 for Essentials/Professional, 25 for Enterprise).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced conversation intelligence and full API access are locked behind the Professional tier, not available on Essentials.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "HubSpot",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Salesforce",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Zendesk",
+        "slug": "zendesk",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Intercom",
+        "slug": "intercom",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Help Scout",
+        "slug": "helpscout",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "openphone",
+      "reason": {
+        "en": "Cloud business phone competitor aimed at smaller teams with lower per-seat pricing.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "kixie",
+      "reason": {
+        "en": "Sales-focused cloud calling platform with power dialer, overlapping with Aircall's Professional tier.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "intercom",
+      "reason": {
+        "en": "Customer communication platform with call/support workflows adjacent to Aircall's use case.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "RingCentral",
+      "officialUrl": "https://www.ringcentral.com/",
+      "reason": "Major cloud business phone/VoIP competitor, not present in the seed candidate list."
+    }
+  ],
+  "unknowns": [
+    "Free trial length not stated on the pricing page in this session (only 'free access to test the platform' mentioned without a specific duration)."
+  ],
+  "conflicts": []
+}

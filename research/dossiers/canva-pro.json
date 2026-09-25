@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "slug": "canva-pro",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Canva Pro",
+    "vendor": "Canva Pty Ltd",
+    "officialUrl": "https://www.canva.com/pro/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Canva Pro is a paid tier of the Canva product, not a separately branded standalone tool."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.canva.com/pricing/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Third-party summary of Canva pricing (direct fetch of canva.com/pricing/ was blocked, HTTP 403)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.canva.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free Canva plan available with limited templates and no Magic Studio AI feature access; Canva Pro is the upgraded paid tier.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Canva Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 18,
+          "annualPerMonth": 12,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$18/month billed monthly, or $144/year (≈$12/month) billed annually. Full access to Magic Studio AI tools, premium templates, brand kit, background remover and automatic resizing.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "The official canva.com/pricing/ page returned HTTP 403 when fetched directly in this session; the price figures come from independent pricing-tracker sites rather than Canva's own page, and should be re-verified against the official source before publication.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Full access to Magic Studio AI features (image generation, background removal, Magic Write) beyond what the free Canva plan offers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Brand kit for storing brand colors, fonts and logos consistently across designs.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Premium template and stock asset library not available on the free plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automatic resizing (Magic Resize) to adapt a single design across multiple formats and platforms.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Pricing could not be independently confirmed on Canva's own official pricing page in this session (blocked, HTTP 403), only via third-party trackers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Canva Pro is single-user; multi-user teams need the separate, more expensive Canva Teams plan for shared brand controls and approval workflows.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Official canva.com/pricing/ page blocked direct fetch (HTTP 403) in this session; the $18/month and $144/year figures are taken from independent pricing-tracker sites, not Canva's own page, and need re-verification.",
+    "Canva Teams price not confirmed in this session."
+  ],
+  "conflicts": [
+    "The seed's shortDescription for canva-pro (an entry in the design-tools/creation catalogue) describes it as the paid tier of Canva rather than a fully separate tool; alternativeCandidates provided in the seed largely list unrelated creative tools rather than direct Canva-tier competitors, so no in-catalogue alternatives were selected."
+  ]
+}

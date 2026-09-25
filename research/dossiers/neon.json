@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "slug": "neon",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Neon",
+    "vendor": "Neon Inc. (Databricks)",
+    "officialUrl": "https://neon.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://neon.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Neon pricing"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://neon.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "100 CU-hours/project, 0.5 GB storage per project, up to 100 projects, 10 branches per project, 5 GB network egress, 6-hour point-in-time history window.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "launch",
+        "name": "Launch",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Pay-as-you-go with no monthly minimum: compute at $0.106/CU-hour, storage at $0.35/GB-month (unlimited), up to 100 projects, 10 branches/project, 500 GB network egress included, up to 7-day history window, autoscaling up to 16 CU.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "scale",
+        "name": "Scale",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Pay-as-you-go: compute at $0.222/CU-hour, storage at $0.35/GB-month (unlimited), up to 1,000 projects, 25 branches/project, 500 GB network egress included, up to 30-day history window, autoscaling up to 56 CU.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "launch",
+    "addOns": [
+      {
+        "en": "Extra branches beyond plan limit: $1.50/month each on Launch and Scale.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Both paid tiers are pure usage billing with no flat monthly price; actual monthly cost depends on compute-hours and storage consumed, not a fixed seat price.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Serverless Postgres with autoscaling compute and scale-to-zero when idle.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Instant database branching for creating isolated copies of a database for development, testing or preview environments.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Point-in-time restore within a configurable history window (6 hours to 30 days depending on plan).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan storage is capped at only 0.5 GB per project, limiting it to prototypes and small side projects.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No flat-rate plan: cost predictability requires actively monitoring compute-hour and storage usage under the pay-as-you-go model.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "supabase",
+      "reason": {
+        "en": "Direct competitor offering managed Postgres with a similar free tier and developer-first branching workflow.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "firebase",
+      "reason": {
+        "en": "Alternative backend-as-a-service with managed database and scale-to-zero-style free tier for small projects.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "PlanetScale",
+      "officialUrl": "https://planetscale.com/",
+      "reason": "Serverless database competitor (MySQL-based) with branching, not present in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Business and Enterprise plan pricing/limits not detailed on the fetched pricing page (only Free, Launch and Scale were shown)."
+  ],
+  "conflicts": []
+}

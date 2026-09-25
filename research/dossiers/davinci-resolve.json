@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "slug": "davinci-resolve",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "DaVinci Resolve",
+    "vendor": "Blackmagic Design",
+    "officialUrl": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve/price",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "DaVinci Resolve pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.blackmagicdesign.com/products/davinciresolve/price",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Full editing, color grading, VFX and audio for virtually all 8-bit video formats up to 60fps, resolutions up to Ultra HD 3840x2160, includes multi-user collaboration and HDR grading.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "studio",
+        "name": "DaVinci Resolve Studio",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 295
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds DaVinci AI Neural Engine features, additional ResolveFX filters, more Fairlight audio plugins, and support for 10-bit video up to 120fps beyond 4K resolution.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "studio",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "DaVinci Resolve Studio is a one-time perpetual license, not a subscription; upgrades to future major versions may require repurchasing depending on Blackmagic's policy at the time.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Combines non-linear video editing, professional color grading, visual effects (Fusion) and audio post-production (Fairlight) in one application.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Free version supports resolutions up to Ultra HD 4K at 60fps for virtually all 8-bit formats, with multi-user collaborative project features.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Studio version adds AI-powered tools (DaVinci Neural Engine) and higher-bit-depth/frame-rate/resolution support for professional delivery.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free version caps out at 8-bit color and Ultra HD 4K resolution/60fps; higher bit depth, frame rates and resolutions require the paid Studio license.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Some AI-powered Neural Engine features and advanced ResolveFX/Fairlight plugins are Studio-only, unavailable in the free version.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "adobe-premiere-pro",
+      "reason": {
+        "en": "Leading subscription-based video editing competitor covering the same core NLE workflow.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "final-cut-pro",
+      "reason": {
+        "en": "Mac-native one-time-purchase video editor competing directly with DaVinci Resolve's perpetual-license model.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact platform list (Windows/macOS/Linux availability nuances) not re-verified from the pricing page fetched in this session."
+  ],
+  "conflicts": []
+}

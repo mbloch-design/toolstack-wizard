@@ -1,0 +1,247 @@
+{
+  "schemaVersion": 2,
+  "slug": "box",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Box",
+    "vendor": "Box, Inc.",
+    "officialUrl": "https://box.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.box.com/pricing/individual",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Box individual/business pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.box.com/pricing/business",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Box business pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.box.com/pricing/individual",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "10 GB storage, 250 MB file upload limit, 1 file version, 5 Box Sign requests/month, single user.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "business-starter",
+        "name": "Business Starter",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": {
+          "monthly": 7,
+          "annualPerMonth": 7,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Minimum 3 users. 100 GB storage per user, 2 GB file upload limit, 25 file versions, 10 Box Sign requests/month.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 15,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Minimum 3 users. Unlimited storage, 5 GB file upload limit, includes Box AI content insights.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "key": "business-plus",
+        "name": "Business Plus",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 33,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Minimum 3 users. Unlimited storage, 15 GB file upload limit, unlimited external collaborators.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 3,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 47,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited storage, 50 GB file upload limit, 1,000 Box AI units/month included, includes Box Hubs.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "business-starter",
+    "addOns": [
+      {
+        "en": "Platform API calls: sold in blocks starting at 1,000 API calls/month, requires annual commitment.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Business/Business Plus/Enterprise per-user prices reflect annual billing shown on the pricing page; monthly-billing equivalents were not separately confirmed for those tiers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "All business tiers require a minimum of 3 users, so the advertised per-seat price cannot be bought for a single user.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Cloud content storage and file sharing with granular permission and collaboration controls for teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Box AI for content insights (summarization, Q&A) included from the Business tier upward, with monthly AI unit allowances on higher tiers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in e-signature (Box Sign) with a monthly request quota per plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Enterprise-grade security and compliance features aimed at regulated industries.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free Individual plan is capped at 10 GB storage and a small 250 MB file upload limit, unsuitable for large media files.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Every business tier requires a minimum of 3 paid seats, so it cannot be bought as a single-user paid plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "google-drive",
+      "reason": {
+        "en": "Direct cloud storage competitor with similar per-seat business pricing and collaboration features.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "dropbox",
+      "reason": {
+        "en": "Established file storage and sharing competitor targeting the same team collaboration use case.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "OneDrive / SharePoint",
+      "officialUrl": "https://www.microsoft.com/microsoft-365/onedrive/onedrive-for-business",
+      "reason": "Major enterprise content storage competitor bundled with Microsoft 365, not present in the catalogue."
+    }
+  ],
+  "unknowns": [
+    "Enterprise Plus and Enterprise Advanced prices are not public (page requires switching to annual billing or contacting sales)."
+  ],
+  "conflicts": []
+}

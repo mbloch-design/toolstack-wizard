@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 2,
+  "slug": "invision",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "InVision",
+    "vendor": "InVisionApp, Inc.",
+    "officialUrl": "https://www.invisionapp.com",
+    "docsUrl": "https://support.invisionapp.com/",
+    "changelogUrl": null,
+    "urlStatus": "dead",
+    "productStatus": "discontinued",
+    "statusNote": "InVision's design collaboration services (prototypes, Freehand, DSM, boards, specs) were shut down on December 31, 2024; all account assets were deleted shortly after. The Freehand product was sold to Miro before the shutdown."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.siliconrepublic.com/business/invision-shutting-down-ux-design-figma",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "UX design company InVision is shutting down this year"
+    },
+    {
+      "id": "s2",
+      "url": "https://support.invisionapp.com/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "InVision support portal"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.invisionapp.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "InVision's design collaboration service is discontinued (shut down December 31, 2024); no pricing plans are purchasable and none are documented here.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Historically offered interactive prototyping from static design files, with commenting and stakeholder feedback workflows.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Included a Digital Design System Manager (DSM) for maintaining shared design libraries across teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Service is fully discontinued since December 31, 2024; all prototypes, boards, DSM libraries and other assets were deleted after shutdown.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No migration path is offered by InVision itself; users were told to export their work before the shutdown date.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "figma",
+      "reason": {
+        "en": "The dominant replacement for InVision's prototyping and design collaboration workflow, cited by press coverage as the main reason InVision shut down.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "framer",
+      "reason": {
+        "en": "Alternative interactive prototyping tool covering the same design-to-prototype workflow InVision offered.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Miro",
+      "officialUrl": "https://miro.com/",
+      "reason": "Acquired InVision's Freehand whiteboard product directly and is the natural destination for that specific workflow, not present in the catalogue under this angle."
+    }
+  ],
+  "unknowns": [
+    "Exact reopening/legacy-access status of support.invisionapp.com not independently confirmed beyond it still resolving; treated as a legacy support page for a discontinued product."
+  ],
+  "conflicts": []
+}

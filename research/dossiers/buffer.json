@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "slug": "buffer",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Buffer",
+    "vendor": "Buffer Inc.",
+    "officialUrl": "https://buffer.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://buffer.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Buffer pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://buffer.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Up to 3 channels, 10 scheduled posts per channel, 1 user, 100 saved ideas, 30-day analytics history.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "essentials",
+        "name": "Essentials",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 5, "annualPerMonth": 5, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Priced per connected channel, not per user: $5/month or $60/year per channel. Unlimited scheduled posts, 1 user, advanced analytics, hashtag manager.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 10, "annualPerMonth": 10, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Priced per connected channel: $10/month or $120/year per channel. Unlimited users, approval workflows, custom access permissions, branded reports.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "essentials",
+    "addOns": [],
+    "cautions": [
+      { "en": "Buffer bills per connected social channel, not per seat: adding more channels multiplies the monthly cost even on a single-user account. Volume discounts apply above 10 channels.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Schedules and publishes posts across major social networks from one calendar.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "AI Assistant to help draft post copy and repurpose content ideas.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Built-in analytics/Insights dashboard and a shared team content calendar.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "API access for custom integrations, with request limits that scale by plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan capped at 3 channels and 10 queued posts per channel, with no analytics beyond 30 days.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Per-channel pricing means teams managing many brand accounts pay proportionally more than flat per-seat tools.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "hootsuite", "reason": { "en": "Direct competitor in social media scheduling with a broader per-seat pricing model.", "fr": null } },
+    { "slug": "later", "reason": { "en": "Similar visual-first social scheduling tool aimed at small teams and creators.", "fr": null } },
+    { "slug": "sprout-social", "reason": { "en": "More enterprise-oriented social media management suite covering the same core scheduling need.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact volume-discount rate for channels beyond 10 not confirmed with a specific number."
+  ],
+  "conflicts": []
+}

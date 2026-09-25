@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "slug": "reaper",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "REAPER",
+    "vendor": "Cockos Incorporated",
+    "officialUrl": "https://www.reaper.fm/",
+    "docsUrl": "https://www.reaper.fm/userguide.php",
+    "changelogUrl": "https://www.reaper.fm/whatsnew.txt",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.reaper.fm/purchase.php", "tier": 1, "accessedOn": "2026-09-25", "title": "REAPER purchase / license pricing" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://www.reaper.fm/purchase.php",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 60, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "discounted",
+        "name": "Discounted / Personal License",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 60 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "For individuals using REAPER personally, and for businesses/organizations with yearly gross revenue not exceeding $20,000 (includes education and non-profit use). Includes free upgrades through version 8.99.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "commercial",
+        "name": "Commercial License",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 225 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Required for commercial use by organizations with yearly gross revenue exceeding $20,000. Includes free upgrades through version 8.99.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "discounted",
+    "addOns": [],
+    "cautions": [
+      { "en": "Prices are a one-time perpetual license fee excluding VAT and local taxes; free upgrades are capped at version 8.99, after which a discounted upgrade fee applies for later major versions.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Full digital audio workstation for recording, editing, mixing and mastering with unlimited tracks.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Highly customizable UI, routing and scripting (ReaScript, JSFX) for building custom workflows.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Extensive native and third-party VST/AU plugin ecosystem support.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Single license key can be used on multiple computers, as long as only one is running at a time.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free tier; only a 60-day full-featured evaluation before a license is required to keep using it.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Interface is less polished/opinionated out of the box than competitors like Logic Pro or Ableton Live, requiring more manual customization to feel comfortable.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "pro-tools", "reason": { "en": "Industry-standard DAW covering the same recording/mixing/mastering workflow.", "fr": null } },
+    { "slug": "logic-pro", "reason": { "en": "Mac-native DAW competing directly for music production and post-production audio work.", "fr": null } },
+    { "slug": "ableton-live", "reason": { "en": "Popular DAW for music production, especially electronic and live performance workflows.", "fr": null } },
+    { "slug": "adobe-audition", "reason": { "en": "DAW-adjacent audio editing tool used for similar recording and mixing tasks.", "fr": null } },
+    { "slug": "audacity", "reason": { "en": "Free, simpler multitrack audio editor covering overlapping basic use cases.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Actual platform list (Windows/macOS/Linux) not explicitly re-confirmed from the purchase page content fetched in this session."
+  ],
+  "conflicts": []
+}

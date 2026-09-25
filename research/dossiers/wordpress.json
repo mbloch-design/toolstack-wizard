@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 2,
+  "slug": "wordpress",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "WordPress",
+    "vendor": "WordPress.org (open source) / Automattic (WordPress.com)",
+    "officialUrl": "https://wordpress.org",
+    "docsUrl": "https://wordpress.org/documentation/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Two distinct offerings share the WordPress name: the free open-source WordPress.org software (self-hosted) and the hosted WordPress.com SaaS with paid plans."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://wordpress.org",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "WordPress.org open-source software"
+    },
+    {
+      "id": "s2",
+      "url": "https://wordpress.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "WordPress.com pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://wordpress.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "WordPress.org software itself is free and open source (self-hosted, requires separate hosting). WordPress.com free plan gives a wordpress.com subdomain, 1 GB storage, unlimited pages/posts, no custom domain, no plugin access, basic 7-day analytics.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "personal",
+        "name": "Personal (WordPress.com)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": 4,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$9/month billed monthly, $4/month billed annually. 6 GB storage.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Premium (WordPress.com)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 18,
+          "annualPerMonth": 8,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$18/month billed monthly, $8/month billed annually. 13 GB storage.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business (WordPress.com)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 40,
+          "annualPerMonth": 25,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$40/month billed monthly, $25/month billed annually. 50 GB storage, plugin and theme installation.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "commerce",
+        "name": "Commerce (WordPress.com)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 70,
+          "annualPerMonth": 45,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$70/month billed monthly, $45/month billed annually. 50 GB storage, e-commerce features included.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "personal",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "WordPress is really two offerings: the WordPress.org software is free forever but requires paying separately for hosting; WordPress.com is a hosted SaaS with the plans and prices listed above. The comparePlanKey is left null because the self-hosted open-source route has no single canonical entry price.",
+        "fr": null,
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Open-source content management system for editorial sites, blogs and business websites, with an extensive plugin and theme ecosystem when self-hosted.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "WordPress.com hosted plans bundle hosting, backups and support, removing the need to manage a server.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Business and Commerce WordPress.com plans unlock installing custom plugins and themes, matching self-hosted flexibility with managed hosting.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free WordPress.com plan cannot use a custom domain, install plugins, or remove WordPress.com branding/ads.",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Self-hosted WordPress.org route is free in software cost but requires separate hosting, security updates and maintenance, which is real ongoing cost and effort not shown on either pricing page.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "squarespace",
+      "reason": {
+        "en": "All-in-one hosted website builder competing directly with WordPress.com's managed plans.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "ghost",
+      "reason": {
+        "en": "Publishing-focused CMS alternative aimed at editorial/newsletter sites, overlapping with WordPress's core use case.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "wix",
+      "reason": {
+        "en": "Hosted website builder targeting the same non-technical site-building audience.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Enterprise WordPress.com plan pricing not public (requires contacting sales).",
+    "The seed's currentAlternatives only lists squarespace and ghost from the catalogue; wix was added here as it appeared in alternativeCandidates and is a direct competitor."
+  ],
+  "conflicts": []
+}
