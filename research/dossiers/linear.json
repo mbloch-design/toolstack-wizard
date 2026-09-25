@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "slug": "linear",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Linear",
+    "vendor": "Linear Orbit, Inc.",
+    "officialUrl": "https://linear.app",
+    "docsUrl": "https://linear.app/docs",
+    "changelogUrl": "https://linear.app/changelog",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://linear.app/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Linear pricing" },
+    { "id": "s2", "url": "https://linear.app/features", "tier": 1, "accessedOn": "2026-09-25", "title": "Linear features" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://linear.app/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "Unlimited members, 2 teams, 250 issues, 10MB file upload", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited members, 2 teams, 250 issues total, 10MB file uploads.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 10, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Billed annually only at this rate; 5 teams, unlimited issues and file uploads.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 16, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Billed annually only at this rate; unlimited teams and guests, Triage Intelligence, Loops, Code Intelligence, Insights.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom pricing, annual billing only.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      { "en": "Basic and Business list prices are annual-billing rates only; no monthly-billing price is published on the pricing page.", "fr": "Les prix Basic et Business affichés sont des tarifs à l'engagement annuel uniquement ; aucun tarif mensuel n'est publié.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Issue tracking with cycles and project/initiative planning for product and engineering teams.", "sourceIds": ["s2"] },
+      { "en": "AI-powered workflows and agents to help move issues and product work forward.", "sourceIds": ["s2"] },
+      { "en": "Built-in analytics and insights for any stream of work.", "sourceIds": ["s2"] },
+      { "en": "Customer request and workplace request (Linear Asks) intake that converts into actionable issues.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 250 total issues and 2 teams, tight for any active engineering team.", "sourceIds": ["s1"] },
+      { "en": "Discounted per-seat pricing (Basic, Business) is only available with annual billing.", "sourceIds": ["s1"] },
+      { "en": "Advanced features (Triage Intelligence, Loops, Code Intelligence, Insights, guests) require the Business tier.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": "github", "sourceIds": ["s2"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "mac", "windows", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "jira", "reason": { "en": "Direct competitor: both are issue tracking and product development tools for engineering teams." } },
+    { "slug": "notion", "reason": { "en": "Overlapping use case for planning and tracking work, though Notion is broader in scope." } },
+    { "slug": "asana", "reason": { "en": "Alternative project/issue tracking tool aimed at product and team workflows." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether Basic/Business plans offer any monthly-billing option at a higher price was not stated on the pricing page as fetched.",
+    "Exact list of native integrations beyond GitHub and Slack was not detailed on the features page as fetched."
+  ],
+  "conflicts": []
+}

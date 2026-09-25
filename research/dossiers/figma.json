@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "slug": "figma",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Figma",
+    "vendor": "Figma, Inc.",
+    "officialUrl": "https://www.figma.com",
+    "docsUrl": "https://help.figma.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.figma.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Figma pricing" },
+    { "id": "s2", "url": "https://www.figma.com/design/", "tier": 1, "accessedOn": "2026-09-25", "title": "Figma Design product page" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.figma.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "Unlimited drafts, UI kits and templates, 150 AI credits/day (max 500/mo)", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited drafts, access to UI kits/templates, 150 AI credits/day capped at 500/month.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional-full-seat",
+        "name": "Professional (Full seat)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 16, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited files/projects, team design libraries, advanced prototyping, Dev Mode inspection, 3,000 AI credits/month.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional-dev-seat",
+        "name": "Professional (Dev seat)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 12, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Dev Mode access, 500 AI credits/month.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "organization-full-seat",
+        "name": "Organization (Full seat)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 55, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Billed annually only; shared libraries across teams, centralized admin tools, 3,500 AI credits/month.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise-full-seat",
+        "name": "Enterprise (Full seat)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 90, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Billed annually only; custom workspaces, design system APIs, SCIM seat management, advanced security, 4,250 AI credits/month.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "professional-full-seat",
+    "addOns": [],
+    "cautions": [
+      { "en": "Organization and Enterprise seat prices are annual-billing only; no monthly-billing option is published for those tiers.", "fr": "Les tarifs Organization et Enterprise sont uniquement en facturation annuelle ; aucune option mensuelle n'est publiée pour ces paliers.", "sourceIds": ["s1"] },
+      { "en": "AI credits are capped per seat type (500/month for Dev and Collab seats regardless of plan tier), so heavy AI usage requires Full seats.", "fr": "Les crédits IA sont plafonnés selon le type de siège (500/mois pour les sièges Dev et Collab quel que soit le plan), un usage IA intensif nécessite des sièges Full.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Vector-based interface design and prototyping with real-time multiplayer collaboration.", "sourceIds": ["s2"] },
+      { "en": "Reusable components, variables and design-system tooling shared across files and teams.", "sourceIds": ["s2"] },
+      { "en": "Dev Mode and Code Connect for translating designs into code and linking design systems to codebases.", "sourceIds": ["s2"] },
+      { "en": "AI design agent and Figma MCP server for AI-assisted design generation and coding-tool integration.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "AI credits are limited even on paid seats and are further restricted for Dev and Collab seat types.", "sourceIds": ["s1"] },
+      { "en": "Several newer features (Figma Weave, Sites, Buzz, Motion) are still in Beta.", "sourceIds": ["s2"] },
+      { "en": "Cheaper seat discounts (Organization, Enterprise) require committing to annual billing.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma Make", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "mac", "windows"]
+  },
+  "alternatives": [
+    { "slug": "canva", "reason": { "en": "Overlapping use case for visual design, though Canva is broader and less focused on interface design." } },
+    { "slug": "adobe-xd", "reason": { "en": "Direct competitor in UI/UX design and prototyping tools." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Whether Sketch remains listed as a current alternative in the catalogue was not verified (seed listed sketch under currentAlternatives but it was absent from the fetched alternativeCandidates pool)."
+  ],
+  "conflicts": []
+}

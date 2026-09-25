@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "slug": "codemagic",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Codemagic",
+    "vendor": "Nevercode OÜ",
+    "officialUrl": "https://codemagic.io",
+    "docsUrl": "https://docs.codemagic.io/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://codemagic.io/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Codemagic pricing" },
+    { "id": "s2", "url": "https://codemagic.io/", "tier": 1, "accessedOn": "2026-09-25", "title": "Codemagic homepage" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://codemagic.io/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "500 free macOS M2 build minutes per month, 1 parallel build, community support only", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "500 macOS M2 build minutes per month, 1 parallel build, 30-day build history, 1 team member.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pay-as-you-go",
+        "name": "Pay as You Go",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Usage-based: $0.045/min Linux or Windows, $0.095/min Mac mini M2, $0.114/min Mac mini M4; unlimited team members, 60-day build history, $49/month per extra concurrency.", "sourceIds": ["s1"] }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "fixed-m2",
+        "name": "Fixed Price - M2",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 332.5, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Billed as $3,990/year (about $332.50/month equivalent), 3 concurrent builds included, 1-year build history.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Starting at $12,000/year, custom configuration, SSO, priority support and dedicated account management.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pay-as-you-go",
+    "addOns": [
+      { "name": "Extra concurrency (Pay as You Go)", "sourceIds": ["s1"] },
+      { "name": "App preview add-on ($0.095/min)", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Mac build minutes are billed at a much higher rate than Linux/Windows ($0.095-0.114/min vs $0.045/min), which matters for iOS-heavy pipelines.", "fr": "Les minutes de build Mac coûtent beaucoup plus cher que Linux/Windows (0,095-0,114$/min contre 0,045$/min), ce qui pèse sur les pipelines iOS.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "CI/CD pipelines for Flutter, React Native, native iOS/Android, Ionic, Unity and .NET MAUI.", "sourceIds": ["s2"] },
+      { "en": "Automates code signing, building, uploading new app versions and store submissions.", "sourceIds": ["s2"] },
+      { "en": "Configuration via UI or codemagic.yaml (infrastructure-as-code).", "sourceIds": ["s2"] },
+      { "en": "Mobile CodePush-style over-the-air updates billed separately per install or MAU.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free tier gives only 1 parallel build and 500 minutes/month, too little for an active mobile team.", "sourceIds": ["s1"] },
+      { "en": "SSO is Enterprise-only, unavailable even on the Fixed Price tiers.", "sourceIds": ["s1"] },
+      { "en": "Mac hardware minutes are priced well above Linux/Windows minutes, so iOS build costs scale fast.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": "github", "sourceIds": ["s2"] },
+      { "name": "GitLab", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Bitbucket", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Azure DevOps", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Bitrise", "officialUrl": "https://bitrise.io", "reason": "Main direct competitor in mobile CI/CD, not in the catalogue." },
+    { "name": "GitHub Actions", "officialUrl": "https://github.com/features/actions", "reason": "Widely used alternative for mobile CI/CD pipelines, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Exact Mobile CodePush pricing tiers (per-MAU fixed price) not fully detailed on the fetched pricing page.",
+    "Whether Linux/Windows build minutes apply the same free-plan quota as macOS was not confirmed."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "slug": "confluence",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Confluence",
+    "vendor": "Atlassian Corporation",
+    "officialUrl": "https://www.atlassian.com/software/confluence",
+    "docsUrl": "https://support.atlassian.com/confluence-cloud/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.atlassian.com/software/confluence/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Confluence pricing (official, page content did not render fully in this session)" },
+    { "id": "s2", "url": "https://costbench.com/software/it-documentation/confluence/", "tier": 2, "accessedOn": "2026-09-25", "title": "Confluence Pricing 2026: 4 Plans from Free to $10.44/user/month" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.atlassian.com/software/confluence/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": "Up to 10 users", "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10 users on the workspace.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 5.42, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Advanced permissions, 100 automation rule runs/month, unlimited pages, page insights, 250GB storage.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 10.44, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited automation rules, advanced admin controls, unlimited whiteboards, analytics, priority support, 1TB storage.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom pricing through Atlassian sales.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [],
+    "cautions": [
+      { "en": "Per-user rates decrease as team size grows, so a small team's effective price per seat can be higher than headline figures suggest.", "fr": "Le prix par utilisateur diminue avec la taille de l'équipe, donc une petite équipe peut payer plus cher par siège que ne le laissent penser les tarifs affichés.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Team wiki and knowledge base for technical documentation, shared with rich page editing.", "sourceIds": ["s1"] },
+      { "en": "Page permissions, spaces and templates for organizing documentation by team or project.", "sourceIds": ["s2"] },
+      { "en": "Automation rules and whiteboards on higher tiers for structured collaboration.", "sourceIds": ["s2"] },
+      { "en": "Tight integration with other Atlassian products (Jira) for linking documentation to work items.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 10 users, unsuitable for any team beyond a very small group.", "sourceIds": ["s2"] },
+      { "en": "Automation rules are capped at 100 runs/month on Standard; unlimited automation requires Premium.", "sourceIds": ["s2"] },
+      { "en": "Advanced admin controls, analytics and priority support are Premium-and-above only.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Jira", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Notion", "officialUrl": "https://www.notion.so", "reason": "Widely used alternative for team documentation and knowledge bases; appears in catalogue as notion, worth linking as an alternative at editorial stage." }
+  ],
+  "unknowns": [
+    "The official Atlassian pricing page (atlassian.com/software/confluence/pricing) returned truncated content on repeated fetch attempts in this session; plan prices above are sourced from an independent 2026 pricing round-up (tier 2), not verified directly against the official page.",
+    "Monthly (non-annual) billing rate per plan not confirmed; only annual per-user rates were found."
+  ],
+  "conflicts": []
+}

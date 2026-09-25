@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "slug": "ant-design",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Ant Design",
+    "vendor": "Ant Group (open source project)",
+    "officialUrl": "https://ant.design",
+    "docsUrl": "https://ant.design/docs/react/introduce",
+    "changelogUrl": "https://ant.design/changelog",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://ant.design/", "tier": 1, "accessedOn": "2026-09-25", "title": "Ant Design homepage" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://ant.design/",
+    "verifiedOn": "2026-09-25",
+    "region": "global",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Fully free and open source, no paid tier", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "open-source",
+        "name": "Open Source",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free React (and Angular/Vue variants) component library, no paid tier or hosted service.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Large set of ready-made React UI components for enterprise applications.", "sourceIds": ["s1"] },
+      { "en": "Theme customization via CSS-in-JS with several pre-built themes.", "sourceIds": ["s1"] },
+      { "en": "Companion ecosystem: Ant Design Mobile, AntV data visualization, and a design toolkit (Kitchen).", "sourceIds": ["s1"] },
+      { "en": "Ports available for Angular and Vue in addition to the primary React library.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No official paid support tier; support relies on the open-source community and GitHub issues.", "sourceIds": ["s1"] },
+      { "en": "Visual style is distinctly opinionated (enterprise/admin-panel look), which requires real customization work to diverge from.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "material-ui", "reason": { "en": "Direct competitor: another free, opinionated React component library for building application UIs." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Chakra UI", "officialUrl": "https://www.chakra-ui.com", "reason": "Widely used alternative React component library, not in the catalogue." }
+  ],
+  "unknowns": [
+    "No dedicated pricing page exists since the product is fully open source; commercial/enterprise support offerings (if any) were not found on the homepage."
+  ],
+  "conflicts": []
+}
