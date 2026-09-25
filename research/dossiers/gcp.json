@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "slug": "gcp",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Google Cloud Platform",
+    "vendor": "Google LLC",
+    "officialUrl": "https://cloud.google.com",
+    "docsUrl": "https://cloud.google.com/docs",
+    "changelogUrl": "https://cloud.google.com/release-notes",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://cloud.google.com/free", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Cloud Free Trial and Free Tier" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://cloud.google.com/free",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Always Free: capped monthly usage of 20+ products (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE, etc.), no end date but usage caps and terms can change with 30 days notice" }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "always-free",
+        "name": "Always Free",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Capped free monthly usage across 20+ products (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE)" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pay-as-you-go",
+        "name": "Pay-as-you-go",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Billed per-resource consumption (compute, storage, network, API calls); no flat plan price" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "always-free",
+    "addOns": [],
+    "cautions": [
+      { "en": "Google Cloud also offers $300 in free trial credits for new accounts, separate from the permanent Always Free tier; do not conflate the two.", "sourceIds": ["s1"] },
+      { "en": "As a usage-based platform, there is no single 'entry price'; real cost depends entirely on the services and volumes consumed.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Broad catalogue of compute, storage, database, networking, and data-analytics managed services", "sourceIds": ["s1"] },
+      { "en": "Managed AI/ML services (Vertex AI) alongside core infrastructure", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No fixed pricing plan makes cost forecasting harder for teams without cloud cost management expertise" },
+      { "en": "Always Free tier usage caps are modest and easily exceeded by production workloads", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "aws", "reason": { "en": "Primary competing hyperscale cloud provider with an equivalent usage-based service catalogue." } },
+    { "slug": "digitalocean", "reason": { "en": "Simpler, more predictably priced cloud alternative for smaller teams." } },
+    { "slug": "vercel", "reason": { "en": "Alternative for frontend/serverless hosting workloads that would otherwise run on GCP." } },
+    { "slug": "supabase", "reason": { "en": "Alternative managed backend/database platform for teams not needing full GCP breadth." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Microsoft Azure", "officialUrl": "https://azure.microsoft.com", "reason": "Third major hyperscale cloud competitor, not in the catalogue." }
+  ],
+  "unknowns": [
+    "No single comparable 'entry paid plan' price exists for this catalogue's comparison field given the pure usage-based model"
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "slug": "circle",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Circle",
+    "vendor": "Circle Technologies, Inc.",
+    "officialUrl": "https://circle.so",
+    "docsUrl": "https://help.circle.so/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://circle.so/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Circle pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://circle.so/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 89, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "3 admins, 10 moderators, 20 spaces, 200GB storage, 2,500 AI credits/month" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 199, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5 admins, 15 moderators, 30 spaces, 500GB storage, workflows included, 2,500 AI credits/month" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "scale",
+        "name": "Scale",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 419, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "10 admins, 100 moderators, 100 spaces, 1TB storage, advanced automation, 5,000 AI credits/month" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "circle-plus",
+        "name": "Circle Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Unlimited admins, moderators and spaces, 1TB+ storage, dedicated support, negotiable AI credits" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "professional",
+    "addOns": [],
+    "cautions": [
+      { "en": "Listed prices appear to reflect annual billing; monthly-billing prices are not explicitly stated on the pricing page.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Community platform combining discussion spaces, courses, events and member management", "sourceIds": ["s1"] },
+      { "en": "Built-in AI credits for content/community features across all paid plans", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; entry price of $89/month is high relative to simpler community tools", "sourceIds": ["s1"] },
+      { "en": "Admin, moderator and space counts are capped even on the entry Professional plan", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Zapier", "slug": "zapier", "sourceIds": ["s1"] },
+      { "name": "WordPress", "slug": "wordpress", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "thinkific", "reason": { "en": "Alternative combining courses and community for creators and educators." } },
+    { "slug": "kajabi", "reason": { "en": "All-in-one platform for courses, community and membership monetization." } },
+    { "slug": "podia", "reason": { "en": "Simpler, cheaper alternative for creators combining courses and community." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Mighty Networks", "officialUrl": "https://www.mightynetworks.com", "reason": "Main direct competitor for community + courses platforms, not in the catalogue." },
+    { "name": "Discourse", "officialUrl": "https://www.discourse.org", "reason": "Open-source community forum alternative, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Monthly (non-annual) billing prices for each plan were not explicitly stated on the pricing page reached"
+  ],
+  "conflicts": []
+}

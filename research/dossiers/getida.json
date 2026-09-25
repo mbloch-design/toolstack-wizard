@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "slug": "getida",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "GETIDA",
+    "vendor": "GETIDA Inc.",
+    "officialUrl": "https://getida.com",
+    "docsUrl": "https://getida.com/resources/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://getida.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "GETIDA homepage" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://getida.com/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Free to join, no subscription or setup fees; charged only as a commission on successful reimbursements recovered" }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "commission",
+        "name": "Commission-based recovery",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "25% commission on successful Amazon FBA reimbursements recovered; first $400 in recovered refunds not charged; enterprise/high-volume rates negotiable (~10-18%)" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "commission",
+    "addOns": [],
+    "cautions": [
+      { "en": "This is a pure success-fee / commission model, not a subscription: there is no fixed monthly price, only a percentage of recovered reimbursements, invoiced every 30 days.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Automated auditing of Amazon FBA accounts to detect lost, damaged or overcharged inventory eligible for reimbursement", "sourceIds": ["s1"] },
+      { "en": "Files and manages reimbursement claims with Amazon on the seller's behalf", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Commission-based pricing means costs scale with recovered amounts and are not predictable upfront" },
+      { "en": "Only useful for active Amazon FBA sellers, not a general-purpose analytics or business tool" }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "Refunds Manager", "officialUrl": "https://www.refundsmanager.com", "reason": "Direct competitor for Amazon FBA reimbursement auditing, not in the catalogue." },
+    { "name": "SellerLocker", "officialUrl": "https://sellerlocker.com", "reason": "Direct competitor for Amazon FBA reimbursement services, not in the catalogue." }
+  ],
+  "unknowns": [
+    "No close catalogue alternatives found among the provided candidate list; the candidates offered are general dev/cloud/analytics tools unrelated to Amazon FBA auditing"
+  ],
+  "conflicts": [
+    { "en": "Seed pricingText described a '10€/month Pro version', but the official homepage describes a pure commission-based (no subscription) pricing model; no fixed monthly fee was found." }
+  ]
+}

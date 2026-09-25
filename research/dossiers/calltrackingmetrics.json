@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "calltrackingmetrics",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "CTM (CallTrackingMetrics)",
+    "vendor": "CallTrackingMetrics, LLC",
+    "officialUrl": "https://www.ctm.com",
+    "docsUrl": "https://www.ctm.com/support/",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "calltrackingmetrics.com now 301-redirects to ctm.com; the product still refers to itself as CallTrackingMetrics (CTM) throughout the site, so this is a domain/branding shorthand change, not a product rename."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.ctm.com/plans-pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "CTM plans & pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.ctm.com/plans-pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "marketing-lite",
+        "name": "Marketing Lite",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 79, "annualPerMonth": 65, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users, 25 sub-accounts, no included transcription minutes ($0.02/minute)" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "marketing-pro",
+        "name": "Marketing Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 179, "annualPerMonth": 149, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users and sub-accounts, 3,000 transcription minutes included, 5,000 form submissions/month" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "sales-engage",
+        "name": "Sales Engage",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 329, "annualPerMonth": 274, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users and sub-accounts, 3,000 transcription minutes included, 10,000 form submissions/month" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Volume-based custom pricing (list price shown around $1,999/mo), indefinite data retention and version history" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "marketing-lite",
+    "addOns": [
+      { "en": "Call transcription billed at $0.02/minute beyond any included allowance", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Site advertises 'Pay $0 in Plan Fees for the First Month' as a promotional offer, not a permanent free tier.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Multi-channel call, SMS, form and chat tracking with marketing attribution", "sourceIds": ["s1"] },
+      { "en": "Call transcription and analytics across included/paid minutes", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Entry Marketing Lite plan includes no transcription minutes at all, all billed per-minute", "sourceIds": ["s1"] },
+      { "en": "No free or freemium tier; lowest paid plan starts at $65-79/month", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "aircall", "reason": { "en": "Alternative cloud call platform with tracking and integration capabilities." } },
+    { "slug": "aloware", "reason": { "en": "Competing call tracking and dialer platform for sales/marketing teams." } },
+    { "slug": "callhippo", "reason": { "en": "Alternative call tracking and virtual phone system." } }
+  ],
+  "missingAlternatives": [
+    { "name": "CallRail", "officialUrl": "https://www.callrail.com", "reason": "Main direct competitor for call tracking and marketing attribution, appears in another tool's candidate list but should be checked for this tool's page too." }
+  ],
+  "unknowns": [
+    "Whether calltrackingmetrics.com's permanent redirect to ctm.com should trigger an officialUrl update to https://www.ctm.com in the live catalogue"
+  ],
+  "conflicts": []
+}

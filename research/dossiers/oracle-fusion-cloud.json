@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "slug": "oracle-fusion-cloud",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Oracle Fusion Cloud",
+    "vendor": "Oracle Corporation",
+    "officialUrl": "https://www.oracle.com/cloud",
+    "docsUrl": "https://docs.oracle.com/en/cloud/saas/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.oracle.com/cloud", "tier": 1, "accessedOn": "2026-09-25", "title": "Oracle Cloud overview" },
+    { "id": "s2", "url": "https://www.erpresearch.com/en-us/oracle-erp-fusion-cloud-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Oracle ERP Fusion Cloud pricing (ERP Research)" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.oracle.com/cloud",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "quote",
+        "name": "Custom enterprise quote",
+        "unit": "seat",
+        "minSeats": 25,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Per-user, per-month subscription billed annually; typical named-user rates $375-475/mo for core financials, $300-550/mo for full ERP suite, $50-100/mo for limited self-service users; minimum 25 users to start" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Oracle does not publish an official price list; figures above are third-party estimates (ERP Research), not confirmed on Oracle's own site, and list prices are typically discounted through negotiation.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Modular cloud ERP suite covering Finance, Supply Chain, HCM and Manufacturing", "sourceIds": ["s1"] },
+      { "en": "Native AI and machine learning embedded across ERP modules", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public pricing; requires a sales engagement and minimum user commitment (25 users)", "sourceIds": ["s2"] },
+      { "en": "Aimed at large organizations, with implementation complexity and cost well beyond solo/small-team budgets" }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "netsuite", "reason": { "en": "Direct competitor cloud ERP suite, also from Oracle's ecosystem, targeting a comparable enterprise segment." } },
+    { "slug": "sap-s4hana", "reason": { "en": "Main direct competitor for large-enterprise cloud ERP." } },
+    { "slug": "workday-financial-management", "reason": { "en": "Competing cloud financial management suite for large organizations." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No official public pricing page exists; all figures are third-party estimates and may not reflect actual Oracle list prices",
+    "Exact module bundling and per-module pricing were not confirmed on an Oracle-owned source"
+  ],
+  "conflicts": []
+}

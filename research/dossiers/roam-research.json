@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "roam-research",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Roam Research",
+    "vendor": "Roam Research, Inc.",
+    "officialUrl": "https://roamresearch.com",
+    "docsUrl": "https://roamresearch.com/#/app/help",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Pricing has reportedly not changed meaningfully since 2020."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://roamresearch.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Roam Research homepage" },
+    { "id": "s2", "url": "https://costbench.com/software/note-taking/roam-research/", "tier": 2, "accessedOn": "2026-09-25", "title": "Roam Research pricing 2026" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://roamresearch.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "trial": { "days": 31, "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 15, "annualPerMonth": 13.75, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited graphs and blocks, daily notes, bidirectional links, block references, queries, native mobile apps" }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "believer",
+        "name": "Believer",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 500 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5-year access to all Pro features for a single upfront payment (~$8.33/month equivalent)" }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "scholar",
+        "name": "Scholar",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 13.75, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Same features as Pro, requires a valid student/educator .edu email" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "No free plan exists; only a 31-day trial. The Believer plan is a one-time 5-year payment, not a recurring subscription.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Networked, bidirectional-link note-taking with daily notes and block references", "sourceIds": ["s1"] },
+      { "en": "Query system and roam/js customization for building custom workflows inside the graph", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free tier; commitment required after the 31-day trial", "sourceIds": ["s2"] },
+      { "en": "Pricing has stayed flat since 2020, making it comparatively expensive against newer note-taking tools", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "logseq", "reason": { "en": "Open-source, free alternative with the same bidirectional-link / block-based note-taking model." } },
+    { "slug": "obsidian", "reason": { "en": "Local-first networked notes app covering a similar personal knowledge management use case." } },
+    { "slug": "heptabase", "reason": { "en": "Visual networked-notes alternative aimed at a similar personal knowledge management audience." } },
+    { "slug": "reflect-notes", "reason": { "en": "Subscription-based networked notes app competing directly on daily-notes and backlinks workflow." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Tana", "officialUrl": "https://tana.inc", "reason": "Direct competitor for networked, block-based note-taking with a similar power-user audience, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Whether Roam Research still offers team/graph-sharing pricing beyond the individual Pro/Believer/Scholar tiers"
+  ],
+  "conflicts": []
+}

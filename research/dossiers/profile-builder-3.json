@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "slug": "profile-builder-3",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Profile Builder 4",
+    "vendor": "MindSight Studios",
+    "officialUrl": "https://profilebuilder4sketchup.com",
+    "docsUrl": "https://profilebuilder4sketchup.com/support/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "renamed",
+    "statusNote": "Catalogue slug and prior product name refer to Profile Builder 3; the current active product sold by MindSight Studios is Profile Builder 4."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://profilebuilder4sketchup.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Profile Builder 4 homepage" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://profilebuilder4sketchup.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro License",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 119 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Single-seat perpetual license, requires SketchUp Pro" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "student",
+        "name": "Student/Educator License",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 29.75 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "75% discount off the Pro license, non-commercial use only, proof of student/teacher status required" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "This is a plugin for SketchUp Pro, not a standalone application: a separate SketchUp Pro license is also required.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Parametric profiles and assemblies for adaptable, non-destructive modeling in SketchUp", "sourceIds": ["s1"] },
+      { "en": "Smart-path selection and hole creation/editing tools", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Requires SketchUp Pro as a host application; not usable standalone", "sourceIds": ["s1"] },
+      { "en": "No explicit BIM-specific feature set stated on the current product page", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "SketchUp Pro", "slug": "sketchup-pro", "sourceIds": ["s1"] },
+      { "name": "Quantifier Pro", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "sketchup-pro", "reason": { "en": "Host application for this plugin; often considered together in a design-tools stack decision." } },
+    { "slug": "enscape", "reason": { "en": "Complementary/competing extension used for architectural visualization workflows around SketchUp." } }
+  ],
+  "missingAlternatives": [
+    { "name": "1001bit Pro", "officialUrl": "https://sketchucation.com", "reason": "Alternative parametric profile/molding plugin for SketchUp, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Whether the catalogue slug should be migrated from 'Profile Builder 3' to 'Profile Builder 4' given the product has moved to version 4"
+  ],
+  "conflicts": [
+    { "en": "The catalogue entry is named 'Profile Builder 3', but the vendor's current, actively sold and documented product is Profile Builder 4; no separate page for version 3 was found." }
+  ]
+}

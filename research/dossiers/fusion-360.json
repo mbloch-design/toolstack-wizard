@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "fusion-360",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Autodesk Fusion (formerly Fusion 360)",
+    "vendor": "Autodesk, Inc.",
+    "officialUrl": "https://www.autodesk.com/products/fusion-360/overview",
+    "docsUrl": "https://help.autodesk.com/view/fusion360/ENU/",
+    "changelogUrl": "https://www.autodesk.com/products/fusion-360/blog/",
+    "urlStatus": "ok",
+    "productStatus": "renamed",
+    "statusNote": "Product renamed from 'Fusion 360' to 'Autodesk Fusion' around 2023-2024; the slug and search term remain 'Fusion 360' in common use."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.autodesk.com/products/fusion-360/blog/how-much-will-fusion-360-cost/", "tier": 1, "accessedOn": "2026-09-25", "title": "How much does Fusion cost (Autodesk blog)" },
+    { "id": "s2", "url": "https://vagon.io/blog/fusion-360-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Fusion 360 pricing overview" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.autodesk.com/products/fusion-360/overview",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Fusion for personal use: free for non-commercial hobbyist projects, reduced feature set" }, "sourceIds": ["s1", "s2"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "personal",
+        "name": "Fusion (personal use)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Non-commercial use only, reduced CAM/CAE/PCB features vs paid tier" }],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "standard",
+        "name": "Fusion (standard subscription)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 85, "annualPerMonth": 57, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Full CAD, CAM, CAE and PCB design toolset; commercial use allowed" }],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "startup",
+        "name": "Fusion for Startups",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom quote; typically $150/user for a 3-year term, up to 10 users per approved startup, eligibility conditions apply" }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [
+      { "en": "Manufacturing and Design extensions priced separately, roughly $595-1,465/year", "sourceIds": ["s2"] }
+    ],
+    "cautions": [
+      { "en": "Annual subscription equivalent is $680/year (~$57/month), notably cheaper than the $85/month month-to-month rate.", "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Combines CAD, CAM (manufacturing), CAE (simulation) and PCB/electronics design in a single tool", "sourceIds": ["s1"] },
+      { "en": "Built-in cloud data management and collaboration for design files", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free personal-use tier is restricted to non-commercial projects only", "sourceIds": ["s1", "s2"] },
+      { "en": "Advanced manufacturing and design capabilities require separately priced extensions on top of the base subscription", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "sketchup-pro", "reason": { "en": "Alternative 3D design tool, though more architecture/interior-design oriented than mechanical CAD." } },
+    { "slug": "houdini", "reason": { "en": "Alternative 3D and simulation-capable tool used in adjacent design/production workflows." } }
+  ],
+  "missingAlternatives": [
+    { "name": "SolidWorks", "officialUrl": "https://www.solidworks.com", "reason": "Main direct competitor for professional parametric mechanical CAD, not in the catalogue." },
+    { "name": "Onshape", "officialUrl": "https://www.onshape.com", "reason": "Cloud-native CAD competitor with a comparable subscription model, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Exact feature differences between the free personal-use tier and the paid Standard subscription were not fully itemized on the pages reached",
+    "Current regional pricing outside the US (page returned 403 to automated fetch; figures taken from secondary sources)"
+  ],
+  "conflicts": []
+}
