@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "asana",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Asana",
+    "vendor": "Asana, Inc.",
+    "officialUrl": "https://asana.com",
+    "docsUrl": "https://asana.com/guide",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://asana.com/pricing", "tier": 1, "accessedOn": "2026-06-24", "title": "Asana pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://asana.com/pricing",
+    "verifiedOn": "2026-06-24",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Basic project and task management for individuals and small teams up to 10 members." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10 team members, basic task/project management." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 10.99, "annualPerMonth": 9.63, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Timeline, workflows, custom fields, unlimited free guests." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "seat",
+        "minSeats": 2,
+        "price": { "monthly": 24.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Requires a minimum of 2 seats; adds portfolios, goals, advanced reporting and approvals." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Advanced plan has a 2-seat minimum, so a true solo user cannot buy it alone; Starter is the smallest paid tier a single person can purchase.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Task and project management with lists, boards, timeline (Gantt) and calendar views.", "sourceIds": ["s1"] },
+      { "en": "Workflow automation rules and cross-project reporting dashboards.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 10 team members.", "sourceIds": ["s1"] },
+      { "en": "Portfolios, goals and advanced reporting require the Advanced tier, which has a 2-seat purchase minimum.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
+      { "name": "Google Drive", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "windows", "macos", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "clickup", "reason": { "en": "Direct all-in-one project management competitor with a similar freemium structure." } },
+    { "slug": "monday", "reason": { "en": "Work OS competitor covering similar project and workflow management use cases." } },
+    { "slug": "trello", "reason": { "en": "Lighter, board-based alternative for teams that find Asana too structured." } },
+    { "slug": "notion", "reason": { "en": "Flexible workspace alternative often chosen by solo freelancers instead of a dedicated PM tool." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Enterprise plan pricing is quote-only and was not captured numerically."
+  ],
+  "conflicts": []
+}

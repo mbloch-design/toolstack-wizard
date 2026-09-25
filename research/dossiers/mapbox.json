@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 2,
+  "slug": "mapbox",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Mapbox",
+    "vendor": "Mapbox, Inc.",
+    "officialUrl": "https://www.mapbox.com",
+    "docsUrl": "https://docs.mapbox.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://mapbox.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Mapbox pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://mapbox.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Free monthly allowances vary by API, e.g. up to 50,000 Mapbox GL JS map loads, 25,000 monthly active users on Maps SDKs, 100,000 geocoding requests." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free tier (per-API allowances)",
+        "unit": "usage",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free monthly allowances vary by API, e.g. up to 50,000 Mapbox GL JS map loads, 25,000 MAU on Maps SDKs, 100,000 geocoding requests." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [
+      { "name": "Individual premium support", "unit": "account", "price": { "monthly": 50 }, "sourceIds": ["s1"] },
+      { "name": "Business premium support", "unit": "account", "price": { "monthly": null }, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pricing is pay-as-you-go per API (Maps SDK, GL JS, Directions, Geocoding, etc.), each with its own free allowance and volume-discounted tiers past it; there is no single flat plan price.", "sourceIds": ["s1"] },
+      { "en": "Traffic Data, Movement Data and Boundaries products require custom licensing, sold on quote only.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Customizable web and mobile map rendering (Mapbox GL JS, Maps SDKs for iOS/Android).", "sourceIds": ["s1"] },
+      { "en": "Geocoding, directions/navigation and static image generation APIs.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No flat subscription; cost scales with usage and can become unpredictable at scale without monitoring.", "sourceIds": ["s1"] },
+      { "en": "High-value geospatial datasets (traffic, movement, boundaries) are not self-serve and require a sales conversation.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "google-maps", "reason": { "en": "Direct competitor for map rendering, geocoding and directions APIs." } }
+  ],
+  "missingAlternatives": [
+    { "name": "MapTiler", "officialUrl": "https://www.maptiler.com", "reason": "Usage-based map/geocoding API competitor not in the catalogue" },
+    { "name": "OpenStreetMap / Leaflet ecosystem", "officialUrl": "https://www.openstreetmap.org", "reason": "Free open-data alternative frequently compared to Mapbox" }
+  ],
+  "unknowns": [
+    "Exact free-tier allowance and unit price for every Mapbox API were not enumerated; only representative examples (Maps SDK, Directions) were captured within the page-budget.",
+    "No entry-level flat paid plan exists, so a single comparePriceMonthly figure cannot be derived without an assumed usage volume."
+  ],
+  "conflicts": []
+}

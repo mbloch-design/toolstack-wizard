@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "slug": "clockify",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Clockify",
+    "vendor": "CAKE.com Inc.",
+    "officialUrl": "https://clockify.me",
+    "docsUrl": "https://clockify.me/help",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://clockify.me/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Clockify pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://clockify.me/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Unlimited users and projects; time tracking, timesheet, calendar; reports limited to a 1-month range; PDF-only export." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users and projects; reports limited to a 1-month range." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 4.99, "annualPerMonth": 3.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds bulk editing, kiosk mode, time import." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 6.99, "annualPerMonth": 5.49, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds invoicing, time off, attendance, approval workflows." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 9.99, "annualPerMonth": 7.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds activity monitoring, scheduling, forecasting, expenses, budget tracking, GPS tracking." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 14.99, "annualPerMonth": 11.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds SSO, custom subdomain, SCIM provisioning, audit log." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      { "en": "Annual billing is roughly 20% cheaper per seat than monthly billing across all paid tiers.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Unlimited-user time tracking with timer, timesheet and calendar views on web, desktop and mobile apps.", "sourceIds": ["s1"] },
+      { "en": "80+ native integrations plus a public API and browser extension.", "sourceIds": ["s1"] },
+      { "en": "Invoicing, budgeting and time-off management available from the Standard plan up.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan report history is capped at a 1-month range and only exports to PDF.", "sourceIds": ["s1"] },
+      { "en": "Advanced admin/security features (SSO, SCIM, audit log) require the top Enterprise tier.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Asana", "slug": "asana", "sourceIds": ["s1"] },
+      { "name": "Trello", "slug": "trello", "sourceIds": ["s1"] },
+      { "name": "QuickBooks", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "windows", "macos", "linux", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "timecamp", "reason": { "en": "Direct time-tracking competitor with a similar freemium model." } },
+    { "slug": "asana", "reason": { "en": "Broader project management tool with time-tracking overlap for teams." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Toggl Track", "officialUrl": "https://toggl.com/track/", "reason": "Leading time-tracking competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Free plan user cap: pricing page snapshot showed a table implying 'up to 5 users' in one summary but Clockify's public marketing elsewhere states the free plan is unlimited-user; not fully reconciled from the single page fetched."
+  ],
+  "conflicts": []
+}

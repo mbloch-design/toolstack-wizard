@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "slug": "printify",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Printify",
+    "vendor": "Printify, Inc.",
+    "officialUrl": "https://printify.com",
+    "docsUrl": "https://help.printify.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://printify.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Printify pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://printify.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Up to 5 stores per account, unlimited product designs, manual order creation, integrations with Shopify/Etsy/eBay etc." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 5 stores, unlimited product designs, manual order creation." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 39, "annualPerMonth": 24.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10 stores; up to 33% product discount; AI Mockups; 1:1 mentorship." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Unlimited stores, custom API integration, dedicated account manager." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [],
+    "cautions": [
+      { "en": "Premium annual billing saves 36% vs monthly ($24.99 vs $39/month); the everyday print-on-demand workflow (unlimited designs, 5 stores) works fully on the free plan.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Print-on-demand product creation and mockup generator with a large supplier/blank-product catalogue.", "sourceIds": ["s1"] },
+      { "en": "Native integrations to sell on Shopify, Etsy, eBay and other storefronts, with automated order routing to print partners.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan caps accounts at 5 connected stores; scaling past that needs the Premium plan.", "sourceIds": ["s1"] },
+      { "en": "Custom API integration is only available on the quote-only Enterprise plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Shopify", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Etsy", "slug": null, "sourceIds": ["s1"] },
+      { "name": "eBay", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "gelato", "reason": { "en": "Direct print-on-demand production and fulfillment competitor." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Printful", "officialUrl": "https://www.printful.com", "reason": "Main direct print-on-demand competitor, not in the catalogue" },
+    { "name": "Gooten", "officialUrl": "https://www.gooten.com", "reason": "Print-on-demand competitor not in the catalogue" }
+  ],
+  "unknowns": [
+    "Per-product discount percentages on Premium vary by product category; exact figures were not itemized on the pricing page snapshot."
+  ],
+  "conflicts": []
+}

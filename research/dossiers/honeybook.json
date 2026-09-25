@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "slug": "honeybook",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "HoneyBook",
+    "vendor": "HoneyBook, Inc.",
+    "officialUrl": "https://www.honeybook.com",
+    "docsUrl": "https://help.honeybook.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.honeybook.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "HoneyBook pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.honeybook.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 29, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited clients and projects; up to 2 live lead forms; basic reports." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "essentials",
+        "name": "Essentials",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 49, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 2 team members; up to 10 live lead forms; scheduler, automations, QuickBooks Online integration." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 109, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited team members; multiple companies management; unlimited live lead forms." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "name": "Card payment processing", "unit": "usage", "price": { "monthly": null }, "sourceIds": ["s1"] },
+      { "name": "ACH bank transfer processing (1.5%)", "unit": "usage", "price": { "monthly": null }, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Prices shown ($29/$49/$109) are the annual-billing monthly-equivalent rate; the separate monthly-billing rate was not captured on this page.", "sourceIds": ["s1"] },
+      { "en": "Payment processing carries its own fee (2.7% + 10c for cards, 1.5% for ACH) on top of the subscription.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Client relationship management with proposals, contracts, invoices and online payments in one workflow.", "sourceIds": ["s1"] },
+      { "en": "Client portal and scheduling with automations available from the Essentials plan.", "sourceIds": ["s1"] },
+      { "en": "Built-in HoneyBook AI assistant included from the Starter plan.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; smallest commitment is a 30-day trial then a paid subscription.", "sourceIds": ["s1"] },
+      { "en": "Starter plan is single-user; adding team members requires upgrading to Essentials or Premium.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "QuickBooks Online", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "dubsado", "reason": { "en": "Direct client-management/CRM competitor for creative freelancers." } },
+    { "slug": "plutio", "reason": { "en": "Similar all-in-one client and project management tool for solo businesses." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Bonsai", "officialUrl": "https://www.hellobonsai.com", "reason": "Direct client management / proposals / invoicing competitor for freelancers, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Monthly (non-annual) billing prices for Starter, Essentials and Premium were not shown on the fetched page.",
+    "Exact per-plan storage or automation-run limits were not itemized in the fetched summary."
+  ],
+  "conflicts": []
+}

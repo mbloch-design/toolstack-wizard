@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 2,
+  "slug": "storyblocks",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Storyblocks",
+    "vendor": "Storyblocks, Inc.",
+    "officialUrl": "https://storyblocks.com",
+    "docsUrl": "https://support.storyblocks.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.storyblocks.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Storyblocks pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.storyblocks.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "essentials",
+        "name": "Essentials",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 21, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited downloads of video, photos, vectors, illustrations at up to 8K; 3,000 AI credits/month; individual license only." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "unlimited-all-access",
+        "name": "Unlimited All Access",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 30, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds music, sound effects, voiceover and the Maker tool; 4,500 AI credits/month." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "small-business",
+        "name": "Small Business",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 40, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Small-business license (under 50 employees); 6,000 AI credits/month." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "$1M indemnification, broadcast & OTT rights, dedicated support and admin controls." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "essentials",
+    "addOns": [],
+    "cautions": [
+      { "en": "The $21/month Essentials price is the annual-billing monthly-equivalent rate; a separate monthly-billing rate was not captured on this page.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Unlimited-download subscription stock library covering video, music, photos, vectors and illustrations.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI generation (image and video) and editing tools, metered by a monthly AI-credit allowance.", "sourceIds": ["s1"] },
+      { "en": "Adobe Creative Cloud plugin for in-app asset search and insertion.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; entry cost is a paid annual-billed subscription.", "sourceIds": ["s1"] },
+      { "en": "Music, sound effects and voiceover assets are gated behind the Unlimited All Access tier or higher.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Creative Cloud", "slug": "adobe", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "envato-elements", "reason": { "en": "Direct unlimited-download subscription stock library competitor." } },
+    { "slug": "motion-array", "reason": { "en": "Subscription stock footage and templates competitor for video production." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Artgrid", "officialUrl": "https://artgrid.io", "reason": "Subscription stock footage competitor not in the catalogue" }
+  ],
+  "unknowns": [
+    "Separate monthly (non-annual) billing prices were not shown on the fetched page.",
+    "Free trial length and terms mentioned as an FAQ topic on the page but not detailed in the fetched content."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "slug": "google-search-console",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Google Search Console",
+    "vendor": "Google LLC",
+    "officialUrl": "https://search.google.com/search-console/about",
+    "docsUrl": "https://support.google.com/webmasters",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://search.google.com/search-console/about", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Search Console about page" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://search.google.com/search-console/about",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Fully free, no paid tier exists." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Search analytics on queries, clicks, impressions and ranking positions.", "sourceIds": ["s1"] },
+      { "en": "Sitemap submission and index-coverage reporting.", "sourceIds": ["s1"] },
+      { "en": "URL Inspection tool showing how Google crawls, indexes and renders a given page.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Requires a Google account and site ownership verification; no anonymous or agency-wide multi-site view without adding each property.", "sourceIds": ["s1"] },
+      { "en": "Historical search-performance data is limited to roughly 16 months in the standard UI.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google Analytics", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Looker Studio", "slug": "looker-studio", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "ahrefs", "reason": { "en": "Broader SEO suite covering keyword research and backlinks beyond Search Console's own-site scope." } },
+    { "slug": "plausible", "reason": { "en": "Alternative site-performance monitoring tool, privacy-focused." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Bing Webmaster Tools", "officialUrl": "https://www.bing.com/webmasters", "reason": "Direct free equivalent for Bing search, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact retention window for historical performance data and any API-specific rate limits were not verified beyond the marketing overview page."
+  ],
+  "conflicts": []
+}

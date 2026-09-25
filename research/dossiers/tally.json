@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "slug": "tally",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Tally",
+    "vendor": "Tally Labs",
+    "officialUrl": "https://tally.so",
+    "docsUrl": "https://tally.so/help",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://tally.so/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Tally pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://tally.so/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Unlimited forms and submissions within fair-usage guidelines; payments, e-signatures, file uploads (10MB/file), conditional logic, 45+ languages." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "workspace",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited forms and submissions within fair-usage guidelines; 10MB per-file upload cap." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "workspace",
+        "minSeats": 1,
+        "price": { "monthly": 24, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Removes Tally branding, custom domains, unlimited team collaboration, unlimited file uploads, extended analytics and version history." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "workspace",
+        "minSeats": 1,
+        "price": { "monthly": 74, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds automatic data retention controls, respondent email verification, 90-day version history." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Annual billing is described as '2 months free' (roughly a 17% discount) versus monthly, but the exact annual-per-month figure was not itemized on the page.", "sourceIds": ["s1"] },
+      { "en": "The free plan already covers most solo use cases (unlimited forms/submissions, payments, e-signatures); Pro mainly buys branding removal and team features.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Notion-style block-based form builder with conditional logic and payment/e-signature collection.", "sourceIds": ["s1"] },
+      { "en": "Native integrations with Google Sheets, Notion, Airtable, Zapier, Make and webhooks.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan caps file uploads at 10MB per file; removed only on the Pro plan.", "sourceIds": ["s1"] },
+      { "en": "Custom domains and branding removal require the paid Pro plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google Sheets", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Notion", "slug": "notion", "sourceIds": ["s1"] },
+      { "name": "Zapier", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "typeform", "reason": { "en": "Direct form-builder competitor, more polished but priced higher." } },
+    { "slug": "jotform", "reason": { "en": "Established form builder competitor with a comparable freemium model." } },
+    { "slug": "fillout", "reason": { "en": "Newer flexible form-builder competitor in the same segment." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact annual per-month price for Pro and Business plans was not captured; only the monthly rate and a general 'save 2 months' claim were shown."
+  ],
+  "conflicts": []
+}

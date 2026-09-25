@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "slug": "google-docs",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Google Docs",
+    "vendor": "Google LLC",
+    "officialUrl": "https://www.google.com/docs/about",
+    "docsUrl": "https://support.google.com/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.google.com/docs/about", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Docs about page" },
+    { "id": "s2", "url": "https://workspace.google.com/pricing.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Workspace pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://workspace.google.com/pricing.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (personal Google account)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Storage shared with Drive/Gmail/Photos (15 GB total)" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [
+      { "name": "Google Workspace Business Starter (30GB pooled storage/user, admin controls)", "unit": "seat", "price": { "monthly": 8.40, "annualPerMonth": 7 }, "sourceIds": ["s2"] },
+      { "name": "Google Workspace Business Standard (2TB/user)", "unit": "seat", "price": { "monthly": 16.80, "annualPerMonth": 14 }, "sourceIds": ["s2"] },
+      { "name": "Google Workspace Business Plus (5TB/user)", "unit": "seat", "price": { "monthly": 26.40, "annualPerMonth": 22 }, "sourceIds": ["s2"] }
+    ],
+    "cautions": [
+      { "en": "Google Docs itself is fully usable free with any Google account. Paying only matters for storage pooling and admin/security features via Google Workspace, sold per user with a 300-user cap on Starter/Standard/Plus.", "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time collaborative word processing with comments, suggestions and version history.", "sourceIds": ["s1"] },
+      { "en": "Works offline and syncs automatically when back online.", "sourceIds": ["s1"] },
+      { "en": "Imports and exports Microsoft Word (.docx) files without a separate conversion step.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Advanced layout/print-design features (e.g. complex desktop-publishing layouts) are weaker than dedicated word processors.", "sourceIds": ["s1"] },
+      { "en": "Storage is pooled with the rest of the free Google account (15 GB total across Gmail, Drive, Photos), so heavy users hit limits without a paid Workspace/Drive plan.", "sourceIds": ["s1", "s2"] }
+    ],
+    "integrations": [
+      { "name": "Google Drive", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Google Sheets", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Microsoft Word", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "microsoft-365", "reason": { "en": "Direct competitor for cloud word processing bundled with a productivity suite." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Zoho Writer", "officialUrl": "https://www.zoho.com/writer/", "reason": "Free collaborative word processor competitor not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact current per-GB overage cost or Google One storage add-on price for free-tier accounts not confirmed on the fetched page.",
+    "Google Workspace Enterprise pricing is quote-only and was not captured in numeric form."
+  ],
+  "conflicts": []
+}

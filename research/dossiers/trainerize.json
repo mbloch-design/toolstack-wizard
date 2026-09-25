@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 2,
+  "slug": "trainerize",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Trainerize",
+    "vendor": "ABC Fitness (Trainerize)",
+    "officialUrl": "https://trainerize.com",
+    "docsUrl": "https://help.trainerize.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.trainerize.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Trainerize pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.trainerize.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": true, "limits": { "en": "Free plan for a small number of clients to trial the coaching workflow." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Small number of clients to trial the coaching workflow." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "grow",
+        "name": "Grow",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry paid tier for managing client training programs remotely." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "grow",
+    "addOns": [],
+    "cautions": [
+      { "en": "Only the Free and Grow tiers' prices were confirmed; higher tiers (for larger client rosters or studios) exist but their prices were not captured within the page budget.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Remote fitness coaching workflow: assign workout and nutrition programs, track client progress.", "sourceIds": ["s1"] },
+      { "en": "Client-facing mobile app for logging workouts and communicating with the coach.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is limited to a small number of clients, unsuitable for a growing coaching business.", "sourceIds": ["s1"] },
+      { "en": "Higher-volume or studio-level features require upgrading beyond the entry Grow plan.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "TrueCoach", "officialUrl": "https://truecoach.co", "reason": "Direct remote fitness coaching competitor, not in the catalogue" },
+    { "name": "My PT Hub", "officialUrl": "https://www.myPThub.net", "reason": "Fitness coaching client-management competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "No relevant fitness/coaching-software alternatives were present in the seed's alternativeCandidates list (candidates were all unrelated creative-tool slugs), so `alternatives` is left empty rather than forcing an unfit match.",
+    "Prices for Trainerize tiers above Grow (e.g. for larger client counts or multi-trainer studios) were not captured."
+  ],
+  "conflicts": []
+}
