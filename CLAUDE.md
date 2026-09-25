@@ -21,6 +21,8 @@ Stack : React 18 + React Router v6 + Vite + TypeScript + Tailwind CSS v3.
 | `docs/ARCHITECTURE.md` | Structure des pages et conventions techniques |
 | `docs/CHANGELOG_AI.md` | Historique des sessions Claude |
 | `docs/ROADMAP.md` | Phases de développement et dette technique |
+| `docs/TODO.md` | To-do vivante : chantiers, constats, décisions attendues. À mettre à jour à chaque session |
+| `docs/CLOUD_RESEARCH_BRIEF.md` | Brief des sessions cloud de recherche fiches (schéma v2) |
 
 ## Conventions CSS
 
