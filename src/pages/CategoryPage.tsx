@@ -1,55 +1,39 @@
 import { useLocation, useParams, Link } from "react-router-dom";
-import { fitBrandedTitle } from "@/lib/seoTitle";
 import { useState, useEffect, useMemo, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
-import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { ChevronDown, Filter, X } from "@/lib/icons";
+import { useToolSummaries, useCategories, usePosts, type ToolSummary } from "@/hooks/useSupabaseData";
+import { Filter, Search, X } from "@/lib/icons";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
-import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { GuideCardEditorial } from "@/components/GuideCardEditorial";
-import ToolLogo from "@/components/ToolLogo";
-import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
+import { CATALOG_NEEDS } from "@/data/catalogNeeds";
+import { activePlacements, type CatalogPlacement } from "@/data/catalogPlacements";
+import { toolTagline } from "@/data/toolTaglines";
+import { compareByDemand, formatFacetLabel, hasFreePlan, isPaid, knownPrice, toolFacets } from "@/lib/catalogFilters";
+import { categorySeoDescription, categorySeoTitle, isCategoryIndexable } from "@/lib/categorySeo";
 
-type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
-type PriceFilter = "all" | "free" | "freemium" | "paid";
-const PER_PAGE = 20;
+type SortKey = "popular" | "name" | "price-asc";
+type PriceFilter = "all" | "free" | "paid";
+type TopPick = { entry?: CatalogPlacement; tool: ToolSummary };
+
+const PER_PAGE = 24;
 const REDIRECTED_TOOL_SLUGS = new Set(["anthropic", "motion-app", "anchor-spotify"]);
 
-// ── Profile options (mapped from relevantFor values) ──
-const PROFILE_OPTIONS = [
-  { key: "consultant", labelFr: "Consultant", labelEn: "Consultant" },
-  { key: "tech",       labelFr: "Tech / Dev",  labelEn: "Tech / Dev"  },
-  { key: "designer",   labelFr: "Designer",    labelEn: "Designer"    },
-  { key: "writer",     labelFr: "Rédacteur",   labelEn: "Writer"      },
-  { key: "content-creator", labelFr: "Content", labelEn: "Content"   },
-];
-
-// ── Tool type options ──
-const TYPE_OPTIONS = [
-  { key: "ia",        labelFr: "Intelligence artificielle", labelEn: "Artificial intelligence", short: "IA" },
-  { key: "metier",    labelFr: "Outil métier",  labelEn: "Core tool",   short: "Métier"  },
-  { key: "gestion",   labelFr: "Gestion",       labelEn: "Management",  short: "Gestion" },
-  { key: "satellite", labelFr: "Satellite",     labelEn: "Satellite",   short: "Satellite" },
-  { key: "plugin",    labelFr: "Plugin / Extension", labelEn: "Plugin / Extension", short: "Plugin" },
-];
-
-// ── Savings potential options ──
-const SAVINGS_OPTIONS = [
-  { key: "freeAlt",     labelFr: "Alternative gratuite dispo",    labelEn: "Free alternative available" },
-  { key: "substitutable", labelFr: "Outil remplaçable",           labelEn: "Replaceable tool"           },
-  { key: "cheaperAlt",  labelFr: "Alternative moins chère",       labelEn: "Cheaper alternative exists" },
-];
-
-// (Local Breadcrumb component removed — uses the shared editorial
-//  Breadcrumb from @/components/Breadcrumb instead, with ▪ publication
-//  mark + JSON-LD schema.)
-
+/**
+ * Category landing page, the indexable counterpart of /tools?need=…
+ *
+ * Same logic as the catalogue: sibling categories of the same need as pills,
+ * sort, price and uses in the Filters panel, the three most searched tools
+ * first (the first slot can be a labelled placement), then the grid. Every
+ * tool of the category is also linked in an A to Z index, so the prerendered
+ * page is a real crawl path to each fiche, not only to its first page.
+ */
 const CategoryPage = () => {
   const location = useLocation();
   const { lang, t, prefix } = useLang();
@@ -60,79 +44,73 @@ const CategoryPage = () => {
   const category = categories.find((c) => c.slug === slug);
   const allCatTools = useMemo(
     () => category
-      ? tools.filter((tool) => tool.categoryId === category.id && !REDIRECTED_TOOL_SLUGS.has(tool.slug))
+      ? tools.filter((tool) => tool.categoryId === category.id && !REDIRECTED_TOOL_SLUGS.has(tool.slug || tool.id))
       : [],
-    [category, tools]
+    [category, tools],
   );
+  const toolCountByCategory = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const tool of tools) counts.set(tool.categoryId, (counts.get(tool.categoryId) || 0) + 1);
+    return counts;
+  }, [tools]);
 
-  // Landing-page shelves above the filtered grid: a quality-ranked pick,
-  // category-relevant editorial posts, and a second slice of the catalog
-  // for browsing before committing to filters — same spirit as the
-  // homepage's own shelves, scoped to this category.
-  const rankedCatTools = useMemo(() => allCatTools.filter((tool) => !TOOL_IMAGE_BLOCKLIST.has(tool.slug)).sort((a, b) => {
-    const recommendationDelta = Number(b.prescription_quality === "ferme") - Number(a.prescription_quality === "ferme");
-    if (recommendationDelta) return recommendationDelta;
-    const mediaDelta = Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl));
-    if (mediaDelta) return mediaDelta;
-    return (a.name ?? "").localeCompare(b.name ?? "");
-  }), [allCatTools]);
-  const featuredCatTools = useMemo(() => rankedCatTools.slice(0, 4), [rankedCatTools]);
-  const moreCatTools = useMemo(() => rankedCatTools.slice(4, 16), [rankedCatTools]);
+  const need = category ? CATALOG_NEEDS.find((item) => item.categoryIds.includes(category.id)) : undefined;
+  // Pills: the other categories of the same need, in the need's own order.
+  const siblings = useMemo(() => (need
+    ? need.categoryIds
+      .map((id) => categories.find((c) => c.id === id))
+      .filter((c): c is NonNullable<typeof c> => Boolean(c) && (toolCountByCategory.get(c!.id) || 0) > 0)
+    : []), [categories, need, toolCountByCategory]);
+
   const categoryArticles = useMemo(
     () => (category ? posts.filter((post) => post.category === category.id || (post.tags || []).includes(category.id)).slice(0, 3) : []),
-    [posts, category]
+    [posts, category],
   );
 
-  const [sort, setSort]                   = useState<SortKey>("name");
-  const [priceFilter, setPriceFilter]     = useState<PriceFilter>("all");
-  const [profileFilter, setProfileFilter] = useState<string[]>([]);
-  const [typeFilter, setTypeFilter]       = useState<string[]>([]);
-  const [savingsFilter, setSavingsFilter] = useState<string[]>([]);
-  const [visibleCount, setVisibleCount]   = useState(PER_PAGE);
-  const [panelOpen, setPanelOpen]         = useState(false);
+  const [sort, setSort] = useState<SortKey>("popular");
+  const [priceFilter, setPriceFilter] = useState<PriceFilter>("all");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [visibleCount, setVisibleCount] = useState(PER_PAGE);
+  const [panelOpen, setPanelOpen] = useState(false);
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
-
   const year = useMemo(() => new Date().getFullYear(), []);
 
-  const toggleArr = (arr: string[], val: string) =>
-    arr.includes(val) ? arr.filter((x) => x !== val) : [...arr, val];
-
-  const secondaryFilterCount = profileFilter.length + typeFilter.length + savingsFilter.length;
-  const hasActiveFilters = priceFilter !== "all" || secondaryFilterCount > 0;
-  // The panel also holds the sort: a non-default order counts as active.
-  const panelBadgeCount = secondaryFilterCount + (sort !== "name" ? 1 : 0);
-
-  const resetFilters = () => {
+  // A new category starts clean.
+  useEffect(() => {
+    setSort("popular");
     setPriceFilter("all");
-    setProfileFilter([]); setTypeFilter([]); setSavingsFilter([]);
-    setSort("name");
-  };
+    setSelectedTags([]);
+    setVisibleCount(PER_PAGE);
+  }, [slug]);
 
-  // SEO
+  const catName = category ? stripLeadingEmoji(category.name, category.id) : "";
+  const catNameEn = category ? stripLeadingEmoji(category.nameEn, catName) : "";
+  const displayName = t(catName, catNameEn) as string;
+  const lead = category ? (lang === "en" ? category.descriptionEn || category.description : category.description) || "" : "";
+  const indexable = isCategoryIndexable(allCatTools.length);
+
+  // SEO: same title and description helpers as the prerender.
   useEffect(() => {
     if (!category) return;
-    const catName = stripLeadingEmoji(category.name, category.id);
-    const catNameEn = stripLeadingEmoji(category.nameEn, catName);
-    const title = lang === "fr"
-      ? fitBrandedTitle(`Outils ${catName} — comparatif prix et alternatives ${year}`)
-      : fitBrandedTitle(`${catNameEn} tools — pricing comparison & alternatives ${year}`);
-    const desc = lang === "fr"
-      ? `On a analysé et classé les meilleurs outils ${catName} : prix vérifiés manuellement, alternatives gratuites identifiées, sans affiliation.`
-      : `We ranked the best ${catNameEn} tools with manually verified pricing, free alternatives, and zero affiliate bias.`;
+    const name = lang === "fr" ? catName : catNameEn;
+    const title = categorySeoTitle(name, lang, year);
+    const desc = categorySeoDescription(name, lead, lang);
     const url = `${SEO_BASE}/${lang}/category/${category.slug}`;
-
-    if (allCatTools.length === 0) setNoindex();
-
+    // Client navigation between categories must also lift a previous noindex.
+    if (indexable) removeNoindex();
+    else setNoindex();
     setSeoTags({ title, description: desc, url });
     setHreflang(`/${lang}/category/${category.slug}`);
     setJsonLd("cat-jsonld", {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: title, description: desc, url,
+      name: title,
+      description: desc,
+      url,
       mainEntity: {
         "@type": "ItemList",
         numberOfItems: allCatTools.length,
-        itemListElement: allCatTools.slice(0, 20).map((tool, i) => ({
+        itemListElement: [...allCatTools].sort(compareByDemand).slice(0, 20).map((tool, i) => ({
           "@type": "ListItem",
           position: i + 1,
           name: tool.name,
@@ -141,136 +119,164 @@ const CategoryPage = () => {
       },
     });
     return () => cleanupSeo(["cat-jsonld"]);
-  }, [category, lang, allCatTools, year]);
+  }, [allCatTools, catName, catNameEn, category, indexable, lang, lead, year]);
 
-  // Filter & sort
+  const matchesPrice = (tool: ToolSummary) =>
+    priceFilter === "free" ? hasFreePlan(tool) : priceFilter === "paid" ? isPaid(tool) : true;
+
+  // Uses of this category, counted as if ticked on top of the current filters.
+  const facetOptions = useMemo(() => {
+    const pool = allCatTools.filter(matchesPrice);
+    const all = new Set<string>();
+    const reachable = new Map<string, number>();
+    for (const tool of pool) {
+      const facets = toolFacets(tool);
+      const kept = selectedTags.every((tag) => facets.has(tag));
+      for (const facet of facets) {
+        all.add(facet);
+        if (kept) reachable.set(facet, (reachable.get(facet) || 0) + 1);
+      }
+    }
+    return [...all]
+      .map((id) => ({ id, count: reachable.get(id) || 0, label: formatFacetLabel(id, lang) }))
+      .filter((facet) => facet.count >= 3 || selectedTags.includes(facet.id))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
+      .slice(0, 16);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allCatTools, lang, priceFilter, selectedTags]);
+
   const filtered = useMemo(() => {
     const result = allCatTools.filter((tool) => {
-      const matchPrice =
-        priceFilter === "all" ? true :
-        priceFilter === "free" ? (tool.defaultMonthlyPrice === 0 && !tool.pricing?.paid) :
-        priceFilter === "freemium" ? isFreemiumPricing(tool.pricing) :
-        priceFilter === "paid" ? (tool.defaultMonthlyPrice > 0 && !hasGenuineFreeTier(tool.pricing?.free)) : true;
-
-      const matchProfile =
-        profileFilter.length === 0 ||
-        profileFilter.some((r) =>
-          tool.relevantFor?.includes(r) ||
-          tool.relevantFor?.includes("all")
-        );
-
-      const matchType =
-        typeFilter.length === 0 || typeFilter.includes(tool.tool_type);
-
-      const matchSavings =
-        savingsFilter.length === 0 ||
-        savingsFilter.every((s) => {
-          if (s === "freeAlt")      return !!tool.freeAlternative;
-          if (s === "substitutable") return tool.substitutable === true;
-          if (s === "cheaperAlt")   return !!tool.betterAlternative;
-          return true;
-        });
-
-      return matchPrice && matchProfile && matchType && matchSavings;
+      const facets = toolFacets(tool);
+      return matchesPrice(tool) && selectedTags.every((tag) => facets.has(tag));
     });
-
     result.sort((a, b) => {
-      switch (sort) {
-        case "name":      return (a.name ?? "").localeCompare(b.name ?? "");
-        case "price-asc": return (a.defaultMonthlyPrice || 0) - (b.defaultMonthlyPrice || 0);
-        case "price-desc":return (b.defaultMonthlyPrice || 0) - (a.defaultMonthlyPrice || 0);
-        case "free-first":return (a.defaultMonthlyPrice === 0 ? 0 : 1) - (b.defaultMonthlyPrice === 0 ? 0 : 1);
-        case "savings":   return (b.betterAlternative?.saving || 0) - (a.betterAlternative?.saving || 0);
-        default: return 0;
+      if (sort === "name") return (a.name ?? "").localeCompare(b.name ?? "");
+      if (sort === "price-asc") {
+        const pa = knownPrice(a), pb = knownPrice(b);
+        if (pa === null || pb === null) return (pa === null ? 1 : 0) - (pb === null ? 1 : 0);
+        return pa - pb;
       }
+      return compareByDemand(a, b);
     });
     return result;
-  }, [allCatTools, sort, priceFilter, profileFilter, typeFilter, savingsFilter]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allCatTools, priceFilter, selectedTags, sort]);
 
-  useEffect(() => { setVisibleCount(PER_PAGE); }, [sort, priceFilter, profileFilter, typeFilter, savingsFilter]);
+  const isRefined = priceFilter !== "all" || selectedTags.length > 0 || sort !== "popular";
+  const activeFilterCount = selectedTags.length + (priceFilter !== "all" ? 1 : 0) + (sort !== "popular" ? 1 : 0);
+
+  // Top picks: a placement for this category first (labelled when paid), then
+  // the most searched tools, whatever their cover (a blocked one shows the
+  // logo panel). Only on the untouched page.
+  const topPicks = useMemo<TopPick[]>(() => {
+    if (!category || isRefined) return [];
+    const placed = activePlacements(new Date().toISOString().slice(0, 10))
+      .filter((entry) => entry.placement === category.id)
+      .map((entry) => ({ entry, tool: allCatTools.find((tool) => (tool.slug || tool.id) === entry.slug) }))
+      .filter((item): item is { entry: CatalogPlacement; tool: ToolSummary } => Boolean(item.tool));
+    const taken = new Set(placed.map((item) => item.tool.id));
+    const ranked = filtered
+      .filter((tool) => !taken.has(tool.id))
+      .map((tool) => ({ tool }));
+    return [...placed, ...ranked].slice(0, 3);
+  }, [allCatTools, category, filtered, isRefined]);
+
+  const gridTools = useMemo(() => {
+    const topIds = new Set(topPicks.map((item) => item.tool.id));
+    return filtered.filter((tool) => !topIds.has(tool.id));
+  }, [filtered, topPicks]);
+
+  useEffect(() => { setVisibleCount(PER_PAGE); }, [sort, priceFilter, selectedTags]);
+
+  const azTools = useMemo(
+    () => [...allCatTools].sort((a, b) => (a.name ?? "").localeCompare(b.name ?? "", lang)),
+    [allCatTools, lang],
+  );
 
   if (!category) {
     return (
-      <div className="container py-20 text-center">
-        <p className="text-muted-foreground">{t("Catégorie non trouvée.", "Category not found.")}</p>
-        <Link to={`${prefix}/tools`} className="mt-4 inline-block text-primary hover:underline">
-          {t("Retour au catalogue", "Back to catalog")}
-        </Link>
+      <div className="tt-catalog-page min-h-screen">
+        <div className="cat-body tt-catalog-empty">
+          <p>{t("Catégorie non trouvée", "Category not found")}</p>
+          <Link to={`${prefix}/tools`} className="tt-pill">{t("Voir tout le catalogue", "See the whole catalogue")}</Link>
+        </div>
       </div>
     );
   }
 
-  const catName = stripLeadingEmoji(category.name, category.id);
-  const catNameEn = stripLeadingEmoji(category.nameEn, catName);
-  const visible   = filtered.slice(0, visibleCount);
-  const hasMore   = visibleCount < filtered.length;
-  const relatedCats = categories.filter((c) => c.id !== category.id).slice(0, 4);
+  const visible = gridTools.slice(0, visibleCount);
+  const hasMore = visibleCount < gridTools.length;
+  const needLabel = need ? (lang === "en" ? need.en : need.fr) : "";
+  const relatedCats = categories
+    .filter((c) => c.id !== category.id && !siblings.some((s) => s.id === c.id) && isCategoryIndexable(toolCountByCategory.get(c.id) || 0))
+    .sort((a, b) => (toolCountByCategory.get(b.id) || 0) - (toolCountByCategory.get(a.id) || 0))
+    .slice(0, 4);
+  const exploreState = { explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName };
 
-  const displayName = t(catName, catNameEn) as string;
-  const catIntro = lang === "fr"
-    ? `On a analysé et classé les meilleurs outils ${catName} : prix vérifiés manuellement, alternatives gratuites identifiées, sans affiliation.`
-    : `We ranked the best ${catNameEn} tools with manually verified pricing, free alternatives, and zero affiliate bias.`;
+  const resetFilters = () => {
+    setPriceFilter("all");
+    setSelectedTags([]);
+    setSort("popular");
+  };
+  const toggleTag = (id: string) =>
+    setSelectedTags((current) => (current.includes(id) ? current.filter((tag) => tag !== id) : [...current, id]));
+
+  function renderPick({ entry, tool }: TopPick) {
+    const pitch = (lang === "en" ? entry?.pitchEn : entry?.pitchFr) || toolTagline(tool.slug || tool.id, lang);
+    // No category eyebrow: the page already is the category.
+    const eyebrow = (lang === "en" ? entry?.eyebrowEn : entry?.eyebrowFr) || "";
+    return (
+      <Link key={tool.id} to={`${prefix}/tool/${tool.slug || tool.id}`} className="tt-pepite">
+        <ToolCardImage tool={tool} logoSize={56} className="tt-pepite-media" />
+        {eyebrow || entry?.sponsored ? (
+          <span className="tt-pepite-eyebrow">
+            {eyebrow}
+            {entry?.sponsored ? <span className="tt-sponsored">{t("Sponsorisé", "Sponsored")}</span> : null}
+          </span>
+        ) : null}
+        <span className="tt-pepite-title">{tool.name}</span>
+        {pitch ? <span className="tt-pepite-sub">{pitch}</span> : null}
+      </Link>
+    );
+  }
 
   return (
     <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#78EB2B" } as CSSProperties}>
-
-      {/* ── Body — same horizontal constraints used across the site
-            (1280 max / 48px gutter). */}
       <div className="cat-body">
         <Breadcrumb
           items={[
             { label: t("Outils", "Tools") as string, href: `${prefix}/tools` },
+            ...(need && siblings.length > 1 ? [{ label: needLabel, href: `${prefix}/tools?need=${need.id}` }] : []),
             { label: displayName },
           ]}
           includeSchema={false}
         />
-        {/* ── Compact header: title + a category-specific lead, so the page
-              reads as its own landing page rather than a bare directory
-              listing (and carries unique, crawlable copy per category). ── */}
+        {/* Title and the category's own lead: unique, crawlable copy. */}
         <div className="tt-catalog-compact-header">
           <h1 className="tt-catalog-compact-title">{displayName}</h1>
-          <p className="tt-catalog-compact-intro">{catIntro}</p>
+          {lead ? <p className="tt-catalog-compact-intro">{lead}</p> : null}
         </div>
 
         <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
-        {/* ══════════════ FILTER BAR — same pilule row + « Plus de filtres »
-            popover + libellé de tri that ToolsPage uses, so every catalogue
-            listing on the site behaves and reads the same way. ══ */}
         <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
-          <nav className="tt-pillrow" aria-label={t("Filtrer par tarif", "Filter by pricing") as string}>
-            <button
-              type="button"
-              className={`tt-pill${priceFilter === "all" ? " tt-pill--active" : ""}`}
-              onClick={() => setPriceFilter("all")}
-              aria-pressed={priceFilter === "all"}
-            >
-              {t("Tout", "All")}
-            </button>
-            <button
-              type="button"
-              className={`tt-pill${priceFilter === "free" ? " tt-pill--active" : ""}`}
-              onClick={() => setPriceFilter(priceFilter === "free" ? "all" : "free")}
-              aria-pressed={priceFilter === "free"}
-            >
-              {t("Gratuit", "Free")}
-            </button>
-            <button
-              type="button"
-              className={`tt-pill${priceFilter === "freemium" ? " tt-pill--active" : ""}`}
-              onClick={() => setPriceFilter(priceFilter === "freemium" ? "all" : "freemium")}
-              aria-pressed={priceFilter === "freemium"}
-            >
-              Freemium
-            </button>
-            <button
-              type="button"
-              className={`tt-pill${priceFilter === "paid" ? " tt-pill--active" : ""}`}
-              onClick={() => setPriceFilter(priceFilter === "paid" ? "all" : "paid")}
-              aria-pressed={priceFilter === "paid"}
-            >
-              {t("Payant", "Paid")}
-            </button>
+          {/* Real links: each sibling category is its own indexable page. */}
+          <nav className="tt-pillrow" aria-label={t(`Catégories ${needLabel}`, `${needLabel} categories`) as string}>
+            {siblings.length > 1 && siblings.map((sibling) => {
+              const active = sibling.id === category.id;
+              const name = stripLeadingEmoji(sibling.name, sibling.id);
+              return (
+                <Link
+                  key={sibling.id}
+                  to={`${prefix}/category/${sibling.slug}`}
+                  className={`tt-pill${active ? " tt-pill--active" : ""}`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {t(name, stripLeadingEmoji(sibling.nameEn, name))}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="tt-catalog-toolbar-tail">
@@ -278,29 +284,24 @@ const CategoryPage = () => {
               <PopoverTrigger asChild>
                 <button
                   type="button"
-                  className={`tt-pill tt-pill--more${panelBadgeCount > 0 ? " tt-pill--active" : ""}`}
+                  className={`tt-pill tt-pill--more${activeFilterCount > 0 ? " tt-pill--active" : ""}`}
                   aria-label={t("Filtres et tri", "Filters and sort") as string}
                 >
                   <Filter size={16} aria-hidden />
                   <span className="tt-pill-label">{t("Filtres", "Filters")}</span>
-                  {panelBadgeCount > 0 && <span className="tt-pill-count">{panelBadgeCount}</span>}
+                  {activeFilterCount > 0 && <span className="tt-pill-count">{activeFilterCount}</span>}
                 </button>
               </PopoverTrigger>
               <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
                 <div className="tt-filter-panel-head">
                   <strong>{t("Filtres", "Filters")}</strong>
                   <div className="tt-filter-panel-head-actions">
-                    {(hasActiveFilters || panelBadgeCount > 0) && (
+                    {activeFilterCount > 0 && (
                       <button type="button" className="tt-filter-panel-reset" onClick={resetFilters}>
                         {t("Tout effacer", "Clear all")}
                       </button>
                     )}
-                    <button
-                      type="button"
-                      className="tt-filter-panel-close"
-                      onClick={() => setPanelOpen(false)}
-                      aria-label={t("Fermer", "Close") as string}
-                    >
+                    <button type="button" className="tt-filter-panel-close" onClick={() => setPanelOpen(false)} aria-label={t("Fermer", "Close") as string}>
                       <X size={18} aria-hidden />
                     </button>
                   </div>
@@ -310,11 +311,9 @@ const CategoryPage = () => {
                     <h3>{t("Trier par", "Sort by")}</h3>
                     <div className="tt-filter-segmented" role="radiogroup" aria-label={t("Trier par", "Sort by") as string}>
                       {([
+                        { id: "popular", label: t("Populaire", "Popular") },
                         { id: "name", label: "A → Z" },
                         { id: "price-asc", label: t("Prix croissant", "Price: low to high") },
-                        { id: "price-desc", label: t("Prix décroissant", "Price: high to low") },
-                        { id: "free-first", label: t("Gratuit d'abord", "Free first") },
-                        { id: "savings", label: t("Économie max", "Max savings") },
                       ] as Array<{ id: SortKey; label: string }>).map((option) => (
                         <button
                           key={option.id}
@@ -330,62 +329,49 @@ const CategoryPage = () => {
                     </div>
                   </section>
                   <section className="tt-filter-group">
-                    <h3>{t("Profil", "Profile")}</h3>
-                    <div className="tt-filter-facets">
-                      {PROFILE_OPTIONS.map((p) => {
-                        const checked = profileFilter.includes(p.key);
-                        return (
-                          <button
-                            key={p.key}
-                            type="button"
-                            className={`tt-pill${checked ? " tt-pill--active" : ""}`}
-                            onClick={() => setProfileFilter(toggleArr(profileFilter, p.key))}
-                            aria-pressed={checked}
-                          >
-                            {lang === "fr" ? p.labelFr : p.labelEn}
-                          </button>
-                        );
-                      })}
+                    <h3>{t("Prix", "Price")}</h3>
+                    <div className="tt-filter-segmented" role="radiogroup" aria-label={t("Prix", "Price") as string}>
+                      {([
+                        { id: "all", label: t("Tous", "All") },
+                        { id: "free", label: t("Plan gratuit", "Free plan") },
+                        { id: "paid", label: t("Payant", "Paid") },
+                      ] as Array<{ id: PriceFilter; label: string }>).map((option) => (
+                        <button
+                          key={option.id}
+                          type="button"
+                          role="radio"
+                          aria-checked={priceFilter === option.id}
+                          className={`tt-pill${priceFilter === option.id ? " tt-pill--active" : ""}`}
+                          onClick={() => setPriceFilter(option.id)}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
                     </div>
                   </section>
-                  <section className="tt-filter-group">
-                    <h3>{t("Type", "Type")}</h3>
-                    <div className="tt-filter-facets">
-                      {TYPE_OPTIONS.map((ty) => {
-                        const checked = typeFilter.includes(ty.key);
-                        return (
-                          <button
-                            key={ty.key}
-                            type="button"
-                            className={`tt-pill${checked ? " tt-pill--active" : ""}`}
-                            onClick={() => setTypeFilter(toggleArr(typeFilter, ty.key))}
-                            aria-pressed={checked}
-                          >
-                            {ty.short}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </section>
-                  <section className="tt-filter-group">
-                    <h3>{t("Économies", "Savings")}</h3>
-                    <div className="tt-filter-facets">
-                      {SAVINGS_OPTIONS.map((s) => {
-                        const checked = savingsFilter.includes(s.key);
-                        return (
-                          <button
-                            key={s.key}
-                            type="button"
-                            className={`tt-pill${checked ? " tt-pill--active" : ""}`}
-                            onClick={() => setSavingsFilter(toggleArr(savingsFilter, s.key))}
-                            aria-pressed={checked}
-                          >
-                            {lang === "fr" ? s.labelFr : s.labelEn}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </section>
+                  {facetOptions.length > 0 && (
+                    <section className="tt-filter-group">
+                      <h3>{t("Usages", "Uses")}</h3>
+                      <div className="tt-filter-facets">
+                        {facetOptions.map((facet) => {
+                          const checked = selectedTags.includes(facet.id);
+                          return (
+                            <button
+                              key={facet.id}
+                              type="button"
+                              className={`tt-pill${checked ? " tt-pill--active" : ""}`}
+                              onClick={() => toggleTag(facet.id)}
+                              aria-pressed={checked}
+                              disabled={!checked && facet.count === 0}
+                            >
+                              {facet.label}
+                              <span className="tt-pill-count">{facet.count}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </section>
+                  )}
                 </div>
               </PopoverContent>
             </Popover>
@@ -395,174 +381,140 @@ const CategoryPage = () => {
             would trap this fixed scrim inside the bar's own box. */}
         {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
 
-        {/* ══════════════ Landing-page shelves — a quality pick, the category's
-            own editorial coverage, and a second browsing slice — all above the
-            filtered grid, same spirit as the homepage's own shelves. ══ */}
-        <div className="home-v2">
-          {featuredCatTools.length > 0 && (
-            <section className="v2-catalog-section">
-              <div className="v2-section-head">
-                <div className="v2-section-heading-copy">
-                  <h2 className="v2-section-title">{t("Sélection", "Featured")}</h2>
-                  <p className="v2-section-description">
-                    {t(
-                      `Les outils ${displayName} qu'on recommande en premier, sur la base du prix et de la qualité vérifiée.`,
-                      `The ${displayName} tools we'd recommend first, based on verified pricing and quality.`
+        {topPicks.length > 0 && (
+          <section className="tt-spotlight" aria-labelledby="cat-top-title">
+            <h2 id="cat-top-title" className="tt-section-title">
+              {/* "Most searched" would misdescribe a paid slot. */}
+              {topPicks.some((item) => item.entry?.sponsored)
+                ? t("À la une", "Featured")
+                : t("Les plus recherchés", "Most searched")}
+            </h2>
+            <div className="tt-pepites">{topPicks.map(renderPick)}</div>
+          </section>
+        )}
+
+        <section className="tt-catalog-results" aria-labelledby="cat-results-title">
+          {filtered.length === 0 ? (
+            <div className="tt-catalog-empty">
+              <Search size={28} aria-hidden />
+              <p>{t("Aucun outil ne correspond", "No tool matches")}</p>
+              <button type="button" className="tt-pill" onClick={resetFilters}>
+                {t("Retirer les filtres", "Remove filters")}
+              </button>
+            </div>
+          ) : (
+            <>
+              <header className="tt-catalog-results-header">
+                <p className="tt-catalog-results-kicker">
+                  {t(`${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)}
+                </p>
+                <h2 id="cat-results-title" className="tt-catalog-results-title">
+                  {topPicks.length > 0
+                    ? t(`Plus d'outils ${catName}`, `More ${catNameEn} tools`)
+                    : t(`Outils ${catName}`, `${catNameEn} tools`)}
+                </h2>
+                {activeFilterCount > 0 && (
+                  <div className="tt-active-filters" aria-label={t("Filtres actifs", "Active filters") as string}>
+                    {priceFilter !== "all" && (
+                      <button type="button" className="tt-active-chip" onClick={() => setPriceFilter("all")}>
+                        {priceFilter === "free" ? t("Plan gratuit", "Free plan") : t("Payant", "Paid")}
+                        <X size={14} aria-hidden />
+                      </button>
                     )}
-                  </p>
-                </div>
-              </div>
+                    {selectedTags.map((tagId) => (
+                      <button key={tagId} type="button" className="tt-active-chip" onClick={() => toggleTag(tagId)}>
+                        {formatFacetLabel(tagId, lang)}
+                        <X size={14} aria-hidden />
+                      </button>
+                    ))}
+                    {sort !== "popular" && (
+                      <button type="button" className="tt-active-chip" onClick={() => setSort("popular")}>
+                        {sort === "name" ? "A → Z" : t("Prix croissant", "Price: low to high")}
+                        <X size={14} aria-hidden />
+                      </button>
+                    )}
+                    {activeFilterCount > 1 && (
+                      <button type="button" className="tt-active-clear" onClick={resetFilters}>
+                        {t("Tout effacer", "Clear all")}
+                      </button>
+                    )}
+                  </div>
+                )}
+              </header>
               <div className="tc-grid">
-                {featuredCatTools.map((tool) => (
+                {visible.map((tool) => (
                   <ToolCardEditorial
                     key={tool.id}
                     tool={tool}
                     prefix={prefix}
                     t={t}
                     lang={lang}
-                    categoryLabel={displayName}
+                    // What the tool does; the category is the page itself.
+                    categoryLabel={toolTagline(tool.slug || tool.id, lang) || undefined}
+                    showPrice={false}
+                    identityLogoSize={56}
                     exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
-                    exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName }}
+                    exploreState={exploreState}
                   />
                 ))}
               </div>
-            </section>
-          )}
-
-          {categoryArticles.length > 0 && (
-            <section className="v2-catalog-section">
-              <div className="v2-section-head">
-                <div className="v2-section-heading-copy">
-                  <h2 className="v2-section-title">{t(`Articles ${displayName}`, `${displayName} articles`)}</h2>
+              {hasMore && (
+                <div className="tt-catalog-more">
+                  <button type="button" className="tt-pill" onClick={() => setVisibleCount((count) => count + PER_PAGE)}>
+                    {t("Afficher plus", "Show more")}
+                  </button>
                 </div>
-              </div>
-              <div className="cat-article-grid">
-                {categoryArticles.map((post) => (
-                  <GuideCardEditorial key={post.id} post={post} prefix={prefix} ctaLabel={t("Lire →", "Read →") as string} />
-                ))}
-              </div>
-            </section>
+              )}
+            </>
           )}
+        </section>
 
-          {moreCatTools.length > 0 && (
-            <section className="v2-catalog-section">
-              <div className="v2-section-head">
-                <div className="v2-section-heading-copy">
-                  <h2 className="v2-section-title">{t("À explorer aussi", "Also worth a look")}</h2>
-                  <p className="v2-section-description">
-                    {t(
-                      `D'autres outils ${displayName} à comparer avant de trancher.`,
-                      `More ${displayName} options worth comparing before you commit.`
-                    )}
-                  </p>
-                </div>
-              </div>
-              <div className="v2-new-grid">
-                {moreCatTools.map((tool) => (
-                  <Link key={tool.id} to={`${prefix}/tool/${tool.slug}`} className="v2-new-card">
-                    <div className="v2-new-logo">
-                      <ToolLogo tool={tool} size={40} />
-                    </div>
-                    <div className="v2-new-info">
-                      <span className="v2-new-name">{tool.name}</span>
-                      <span className="v2-new-cat">{displayName}</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-        </div>
-
-        {/* ══════════════ TOOL LIST — same tc-grid + ToolCardEditorial as
-            ToolsPage (image, name, inline price, hover-reveal description
-            + CTA on the image) instead of the old editorial list rows. ══ */}
-        <div className="min-w-0">
-            <div className="home-v2" style={{ marginTop: "var(--v2-section-gap)" }}>
-              <div className="v2-section-head" style={{ marginBottom: 16 }}>
-                <div className="v2-section-heading-copy">
-                  <h2 className="v2-section-title">{t("Tous les outils", "All tools")}</h2>
-                  <p className="v2-section-description">
-                    {t(
-                      `Le catalogue ${displayName} complet, filtrable par prix, profil et type.`,
-                      `The full ${displayName} catalog, filterable by price, profile, and type.`
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="tc-grid">
-              {visible.map((tool) => (
-                <ToolCardEditorial
-                  key={tool.id}
-                  tool={tool}
-                  prefix={prefix}
-                  t={t}
-                  lang={lang}
-                  categoryLabel={displayName}
-                  exploreHref={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
-                  exploreState={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName }}
-                />
+        {categoryArticles.length > 0 && (
+          <section className="cat-guides" aria-labelledby="cat-guides-title">
+            <h2 id="cat-guides-title" className="tt-section-title">{t("Guides", "Guides")}</h2>
+            <div className="cat-article-grid">
+              {categoryArticles.map((post) => (
+                <GuideCardEditorial key={post.id} post={post} prefix={prefix} ctaLabel={t("Lire", "Read") as string} />
               ))}
             </div>
-            {/* Load more */}
-            {hasMore && (
-              <div className="mt-8 text-center">
-                <button
-                  onClick={() => setVisibleCount((c) => c + PER_PAGE)}
-                  className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
-                  style={{ fontFamily: "inherit" }}
-                >
-                  <ChevronDown className="h-4 w-4" />
-                  {t(
-                    `Afficher plus (${filtered.length - visibleCount} restants)`,
-                    `Show more (${filtered.length - visibleCount} remaining)`
-                  )}
-                </button>
-              </div>
-            )}
+          </section>
+        )}
 
-            {filtered.length === 0 && (
-              <div className="mt-16 text-center">
-                <p
-                  className="text-sm"
-                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "inherit" }}
-                >
-                  {t("Aucun outil trouvé pour ces filtres.", "No tools match these filters.")}
-                </p>
-                <button
-                  onClick={resetFilters}
-                  className="mt-3 text-xs text-primary underline underline-offset-2"
-                  style={{ fontFamily: "ui-monospace, monospace" }}
-                >
-                  {t("Réinitialiser les filtres", "Reset filters")}
-                </button>
-              </div>
-            )}
+        {/* Every tool of the category, linked: the grid only shows its first
+            page, and crawlers do not press "Show more". */}
+        {azTools.length > PER_PAGE && (
+          <section className="cat-az" aria-labelledby="cat-az-title">
+            <h2 id="cat-az-title" className="cat-az-title">
+              {t(`Tous les outils ${catName} de A à Z`, `All ${catNameEn} tools from A to Z`)}
+            </h2>
+            <ul className="cat-az-list">
+              {azTools.map((tool) => (
+                <li key={tool.id}>
+                  <Link to={`${prefix}/tool/${tool.slug || tool.id}`}>{tool.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-            {/* Related categories — editorial list, no card grid */}
-            {relatedCats.length > 0 && (
-              <section className="cat-related">
-                <span className="cat-related-eyebrow">{t("Catégories connexes", "Related categories")}</span>
-                <ul className="cat-related-list" role="list">
-                  {relatedCats.map((cat) => {
-                    const count = tools.filter((tool) => tool.categoryId === cat.id).length;
-                    const cName = stripLeadingEmoji(cat.name, cat.id);
-                    return (
-                      <li key={cat.id} className="cat-related-item">
-                        <Link to={`${prefix}/category/${cat.slug}`} className="cat-related-row">
-                          <span className="cat-related-name">{t(cName, cat.nameEn || cName)}</span>
-                          <span className="cat-related-count">
-                            {count} {t("outils", "tools")}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </section>
-            )}
-        </div>
+        {relatedCats.length > 0 && (
+          <section className="cat-related">
+            <span className="cat-related-eyebrow">{t("Autres catégories", "Other categories")}</span>
+            <ul className="cat-related-list" role="list">
+              {relatedCats.map((cat) => {
+                const name = stripLeadingEmoji(cat.name, cat.id);
+                return (
+                  <li key={cat.id} className="cat-related-item">
+                    <Link to={`${prefix}/category/${cat.slug}`} className="cat-related-row">
+                      <span className="cat-related-name">{t(name, cat.nameEn || name)}</span>
+                      <span className="cat-related-count">{toolCountByCategory.get(cat.id) || 0} {t("outils", "tools")}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
       </div>
     </div>
   );

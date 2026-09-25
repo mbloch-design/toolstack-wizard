@@ -1,3 +1,10 @@
+## 2026-09-25 : Pages catégorie alignées sur /tools et crawl complet
+
+- Pages catégorie : pilules vers les catégories sœurs du même besoin, 3 outils les plus recherchés en tête (emplacement sponsorisable), panneau Filtres (tri, prix, usages), mêmes cartes que /tools. Retrait de « Also worth a look » et du classement par maturité de fiche.
+- SEO : index de A à Z de tous les outils de la catégorie dans le HTML servi (Content Creation passe de 27 à 174 liens vers des fiches), noindex et retrait du sitemap des catégories de moins de 10 outils, titre identique entre prérendu et client (`categorySeo.ts`).
+- Filtres partagés entre /tools et les catégories (`catalogFilters.ts`), modules catalogue groupés dans un chunk `catalog-shared`, budget de fichiers porté à 12 900.
+- Couvertures : 57 outils dont la capture est inutilisable (vérification Cloudflare, domaine parqué, page vide) passent sur la tuile logo partout.
+
 ## 2026-09-25 : Catalogue /tools, filtres par besoin et barres de filtres
 
 - /tools : une une éditoriale prête pour le sponsoring (`catalogPlacements.ts`, étiquette « Sponsorisé » obligatoire), étagères par catégorie classées sur la demande Search Console (`tool_demand.json`), accroches de 2 ou 3 mots (`toolTaglines.ts`, 92 outils).

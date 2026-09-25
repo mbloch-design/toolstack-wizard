@@ -13,7 +13,10 @@ const MiB = 1024 * 1024;
 const budgets = {
   // 12_800 left 4 files of headroom; guide pages gained cover/tools/related
   // variants (2026-09-24), a handful of small shared critical CSS files.
-  files: 12_850,
+  // 12_900 (2026-09-25): category pages aligned on /tools, about twenty
+  // critical CSS variants across the 48 pages; shared catalogue modules are
+  // already grouped in one chunk (vite.config.ts, "catalog-shared").
+  files: 12_900,
   totalBytes: 850 * MiB,
   htmlBytes: 750 * MiB,
   javascriptBytes: 15 * MiB,

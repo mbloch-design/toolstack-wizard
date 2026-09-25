@@ -16,6 +16,7 @@ import { localizePlanName } from "./src/lib/planNames";
 import { TOOLS_TABLE_SELECT } from "./src/lib/toolsTableColumns";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 import { getCategoryLabel } from "./src/lib/categoryLabel";
+import { categorySeoDescription, categorySeoTitle, isCategoryIndexable } from "./src/lib/categorySeo";
 
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
@@ -768,7 +769,10 @@ function sitemapPlugin(): Plugin {
         }
 
         // ── Category pages ────────────────────────────────────────────────────
+        // Thin categories are noindex (src/lib/categorySeo.ts): keep them out.
         for (const c of categories || []) {
+          const count = (tools || []).filter((t: any) => (t.categoryId || t.category) === c.id).length;
+          if (!isCategoryIndexable(count)) continue;
           addPair(`${BASE}/fr/category/${c.slug}`, `${BASE}/en/category/${c.slug}`, "weekly", "0.7");
         }
 
@@ -1971,12 +1975,11 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const isFr = lang === "fr";
             const catName = isFr ? frName : enData.name;
             const catDesc = isFr ? frDesc : enData.description;
-            const title = isFr
-              ? fitBrandedTitle(`${catName} : meilleurs outils SaaS pour freelances 2026`)
-              : fitBrandedTitle(`${catName}: best SaaS tools for freelancers 2026`);
-            const description = isFr
-              ? `${catDesc} Comparez les meilleurs outils de la catégorie ${catName} : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.`
-              : `${catDesc} Compare the best ${catName} tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.`;
+            // Same helpers as CategoryPage, so hydration keeps this title.
+            const title = categorySeoTitle(catName, lang, new Date().getFullYear());
+            const description = categorySeoDescription(catName, catDesc, lang);
+            // Records carry either field (tools_v4.json mixes `category` and `categoryId`).
+            const indexable = isCategoryIndexable(tools.filter((t: any) => (t.categoryId || t.category) === cat.id).length);
             const url = `${BASE}/${lang}/category/${slug}`;
             const frUrl = `${BASE}/fr/category/${slug}`;
             const enUrl = `${BASE}/en/category/${slug}`;
@@ -2011,6 +2014,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
               `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
               `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
+              ...(indexable ? [] : [`<meta name="robots" content="noindex, follow" />`]),
               `<title>${title}</title>`,
               `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -2025,6 +2029,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
             html = html.replace(/<title>[^<]*<\/title>/, "");
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+            if (!indexable) html = html.replace(/<meta\s+name="robots"[^>]*\/?>/, "");
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
             html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
 
@@ -2607,6 +2612,9 @@ export default defineConfig(({ mode, isSsrBuild }) => {
           if (id.includes("/src/data/content.json")) return "data-content";
           if (id.includes("/src/data/posts-fr.json")) return "data-posts-fr";
           if (id.includes("/src/data/posts-en.json")) return "data-posts-en";
+          // Catalogue helpers shared by /tools and the category pages: one
+          // chunk instead of one per module (the artefact has a file budget).
+          if (/\/src\/(data\/(catalogPlacements|catalogNeeds|toolTaglines)\.ts|data\/tool_demand\.json|lib\/(catalogFilters|categorySeo)\.ts)/.test(id)) return "catalog-shared";
           return undefined;
         },
       },

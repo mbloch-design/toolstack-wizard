@@ -33445,3 +33445,59 @@ img[data-logo-loading] {
 /* A need's top picks sit between the results header and the grid. */
 .tt-catalog-results .tt-need-top { margin-bottom: 56px; }
 @media (max-width: 640px) { .tt-catalog-results .tt-need-top { margin-bottom: 40px; } }
+
+/* ── Category pages, aligned on /tools ─────────────────────────────────── */
+.tt-catalog-page .cat-body .tt-spotlight { margin-bottom: clamp(48px, 5vw, 72px); }
+.cat-guides { margin-top: clamp(56px, 6vw, 88px); }
+
+/* A to Z index: every tool of the category as a plain link, so the page is a
+   crawl path to each fiche. Quiet on purpose: a directory, not a feature. */
+.cat-az { margin-top: clamp(56px, 6vw, 88px); }
+.cat-az-title {
+  margin: 0 0 16px;
+  color: var(--color-text-strong);
+  font: 600 18px/1.3 var(--font-brand);
+  letter-spacing: -0.015em;
+}
+.cat-az-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 4 180px;
+  column-gap: 28px;
+}
+.cat-az-list li { break-inside: avoid; }
+.cat-az-list a {
+  display: inline-block;
+  padding: 3px 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.cat-az-list a:hover { color: var(--color-text); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Other categories: pills, no rules between rows. */
+.tt-catalog-page .cat-related {
+  margin-top: clamp(48px, 5vw, 72px);
+  padding-top: 0;
+  border-top: 0;
+}
+.tt-catalog-page .cat-related-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.tt-catalog-page .cat-related-item { border-bottom: 0; }
+.tt-catalog-page .cat-related-row {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-soft);
+}
+.tt-catalog-page .cat-related-row:hover { background: var(--color-chip); }
+.tt-catalog-page .cat-related-name { font-size: 15px; font-weight: 560; }
+.tt-catalog-page .cat-related-count { font-family: var(--font-ui); font-size: 13px; letter-spacing: 0; }
+/* Category pages keep their lead visible: it is the page's own copy. */
+.tt-catalog-page .cat-body .tt-catalog-compact-intro { display: block; margin-top: 14px; }
+/* Without an eyebrow, the title needs the spacing the eyebrow gave. */
+.tt-catalog-page .cat-body .tt-pepite-media + .tt-pepite-title { margin-top: 16px; }
