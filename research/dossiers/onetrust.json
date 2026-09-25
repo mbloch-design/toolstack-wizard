@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "slug": "onetrust",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "OneTrust",
+    "vendor": "OneTrust LLC",
+    "officialUrl": "https://www.onetrust.com",
+    "docsUrl": "https://www.onetrust.com/products/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.onetrust.com/products/", "tier": 1, "accessedOn": "2026-09-25", "title": "OneTrust products overview" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.onetrust.com/products/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "enterprise",
+        "name": "Custom plan",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "No public pricing; access via demo request and sales quote, priced per module chosen", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "The platform is sold as a set of separate modules (consent, privacy ops, AI governance, third-party risk); the overall bill depends on which modules are licensed.", "fr": "", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Universal consent and preference management across websites, mobile apps, OTT and connected TVs", "sourceIds": ["s1"] },
+      { "en": "Privacy operations automation with data flow visibility, asset classification and incident management", "sourceIds": ["s1"] },
+      { "en": "AI governance tooling embedding compliance controls across the AI lifecycle", "sourceIds": ["s1"] },
+      { "en": "Third-party risk management automating the vendor lifecycle from onboarding to offboarding", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No self-serve pricing; every deployment requires a sales-led quote and demo", "sourceIds": ["s1"] },
+      { "en": "Capability set is split across many separate modules, so a small team likely needs several to cover full privacy/risk needs", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "vanta", "reason": { "en": "Competing compliance automation platform covering overlapping risk and trust workflows" } },
+    { "slug": "drata", "reason": { "en": "Competing compliance and third-party risk automation platform" } }
+  ],
+  "missingAlternatives": [
+    { "name": "TrustArc", "officialUrl": "https://trustarc.com", "reason": "Direct privacy and consent management competitor, not in the catalogue" }
+  ],
+  "unknowns": ["No pricing figures published anywhere on the site; specific named integrations not listed beyond a generic mention of 'native integrations'"],
+  "conflicts": []
+}

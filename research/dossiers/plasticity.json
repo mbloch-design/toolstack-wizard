@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "slug": "plasticity",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Plasticity",
+    "vendor": "Plasticity",
+    "officialUrl": "https://www.plasticity.xyz",
+    "docsUrl": "https://www.plasticity.xyz",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.plasticity.xyz/", "tier": 1, "accessedOn": "2026-09-25", "title": "Plasticity homepage / pricing" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://www.plasticity.xyz/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "indie",
+        "name": "Indie",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 175 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Node-locked to 2 machines (10 activations/year), 12 months of updates included, STEP/OBJ/STL/Parasolid export, FBX import", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "studio",
+        "name": "Studio",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 299 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Node-locked to 4 machines, professional surfacing tools, IGES/ACIS/Rhino/DXF/DWG support, beta program access", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "indie",
+    "addOns": [],
+    "cautions": [
+      { "en": "Licenses are perpetual but only include 12 months of version updates; continuing to get new versions afterward likely requires renewing maintenance (not fully detailed on the page).", "fr": "", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Direct, non-history-based 3D modeling with NURBS surfacing (Parasolid and xNURBS kernels)", "sourceIds": ["s1"] },
+      { "en": "Complex Boolean operations with watertight results", "sourceIds": ["s1"] },
+      { "en": "Intelligent fillets, construction planes, bridge curves and live engineering-grade dimensions", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Starter/trial tier restricted to non-commercial use and limited export formats (STEP, low-res OBJ/STL)", "sourceIds": ["s1"] },
+      { "en": "Licenses are node-locked to a limited number of machines (2 for Indie, 4 for Studio)", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Blender", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Rhino", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": ["Whether renewing updates after 12 months requires an additional fee is not stated on the page reviewed"],
+  "conflicts": ["Seed data listed an Indie/Studio one-time price of $149; the live pricing page shows Indie at $175 and Studio at $299."]
+}

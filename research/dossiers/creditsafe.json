@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 2,
+  "slug": "creditsafe",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Creditsafe",
+    "vendor": "Creditsafe Group",
+    "officialUrl": "https://www.creditsafe.com",
+    "docsUrl": "https://www.creditsafe.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.creditsafe.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Creditsafe homepage" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.creditsafe.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "enterprise",
+        "name": "Custom plan",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "No public pricing; quote depends on report volume and data coverage needed", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "No pricing is published; every quote depends on report volume and coverage negotiated with sales.", "fr": "", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Business credit reports and credit risk scores covering 430+ million companies worldwide", "sourceIds": ["s1"] },
+      { "en": "Real-time monitoring and alerts on changes to a business's credit status", "sourceIds": ["s1"] },
+      { "en": "Uses machine learning and alternative data sources to enrich risk analysis", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No self-serve pricing or plan comparison published; access requires going through sales", "sourceIds": ["s1"] },
+      { "en": "Specific API or CRM integrations are not detailed on the public marketing pages", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "dun-bradstreet", "reason": { "en": "Direct competitor in global business credit reporting and risk scoring" } }
+  ],
+  "missingAlternatives": [
+    { "name": "Experian Business", "officialUrl": "https://www.experian.com/business-information/business-credit.html", "reason": "Major business credit reporting competitor, not in the catalogue" }
+  ],
+  "unknowns": ["No pricing figures published anywhere on the site; integrations and platform details not documented on the pages reviewed"],
+  "conflicts": []
+}

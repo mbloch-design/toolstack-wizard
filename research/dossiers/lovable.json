@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "slug": "lovable",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Lovable",
+    "vendor": "Lovable Labs",
+    "officialUrl": "https://lovable.dev",
+    "docsUrl": "https://docs.lovable.dev",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://lovable.dev/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Lovable pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://lovable.dev/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "5 daily build credits (up to 30/month), 20 monthly Cloud credits, 4 AI feature credits", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "5 daily build credits (~30/month), limited Cloud and AI feature credits", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Monthly credit balance covering builds, Cloud hosting and AI features; credits expire after 2 months", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 50, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Larger credit balance plus additional team/admin features versus Pro", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Task cost varies by complexity (roughly 0.5 credits for a simple change up to 1.7+ for a complex one), so the effective number of usable prompts per month is variable, not fixed.", "fr": "", "sourceIds": ["s1"] },
+      { "en": "Credits are non-refundable and expire: monthly credits after 2 months, annual grants after 1 month, top-ups after 12 months.", "fr": "", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI software engineer that builds a web app or website from a natural-language chat", "sourceIds": ["s1"] },
+      { "en": "Cloud hosting included as part of the credit system, no separate hosting purchase needed", "sourceIds": ["s1"] },
+      { "en": "Shared workspace credits for teams, with admins able to cap monthly credit usage per member", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Cost per task is variable and complexity-dependent, making monthly usage harder to predict than a flat seat price", "sourceIds": ["s1"] },
+      { "en": "Credits are non-refundable and expire on a schedule, so unused capacity is lost rather than rolled over indefinitely", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": "github-copilot", "sourceIds": ["s1"] },
+      { "name": "Supabase", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "bolt-new", "reason": { "en": "Direct AI web app builder competitor with a similar chat-to-code, live preview workflow" } },
+    { "slug": "base44", "reason": { "en": "Competing no-code/AI app builder targeting the same non-technical and solo builder audience" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Exact Student plan price and eligibility rules not re-verified beyond the seed note of -50% first year", "Full integrations list (beyond GitHub and Supabase) not confirmed from the homepage, which returned a 403 on this pass"],
+  "conflicts": []
+}

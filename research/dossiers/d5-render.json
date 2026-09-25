@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "slug": "d5-render",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "D5 Render",
+    "vendor": "D5 Technologies",
+    "officialUrl": "https://www.d5render.com",
+    "docsUrl": "https://www.d5render.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.d5render.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "D5 Render pricing" },
+    { "id": "s2", "url": "https://www.d5render.com", "tier": 1, "accessedOn": "2026-09-25", "title": "D5 Render homepage" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.d5render.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Non-commercial use only, limited AI credits, capped storage", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "community",
+        "name": "Community",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Non-commercial use only, 50 AI trial credits, up to 16K images / 4K video, limited cloud storage", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 38, "annualPerMonth": 30, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited AI features, up to 16K rendering, 4K video, 16,000+ assets, 10 GB cloud storage", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 75, "annualPerMonth": 59, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "All Pro features, multi-user scene editing, up to 8K video, 100 GB cloud storage, member access control", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Team seats are billed per member on top of the Teams base price on the official pricing page.", "fr": "", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time ray-traced rendering with instant preview while editing the scene", "sourceIds": ["s2"] },
+      { "en": "AI-native visualization tools through the D5 Lite plugin for fast material and lighting generation", "sourceIds": ["s2"] },
+      { "en": "Cloud collaboration allowing distributed teams to access the same project", "sourceIds": ["s2"] },
+      { "en": "Interactive presentations with live material, lighting and design swaps for client walkthroughs", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "D5 Arco, the contextual AI co-design engine, is listed as coming soon and not yet available", "sourceIds": ["s2"] },
+      { "en": "Community (free) tier is restricted to non-commercial use", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "SketchUp", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Revit", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Rhino", "slug": null, "sourceIds": ["s2"] },
+      { "name": "3ds Max", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Cinema 4D", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Archicad", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Blender", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Vectorworks", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["windows"]
+  },
+  "alternatives": [
+    { "slug": "enscape", "reason": { "en": "Direct real-time rendering competitor plugged into the same BIM/CAD tools" } },
+    { "slug": "twinmotion", "reason": { "en": "Real-time visualization tool for architecture with a free tier" } },
+    { "slug": "lumion", "reason": { "en": "Established real-time architectural rendering competitor" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Exact desktop OS support (Windows/Mac) not explicitly stated on the pages reviewed; tax treatment not stated"],
+  "conflicts": []
+}

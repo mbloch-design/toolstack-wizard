@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "slug": "tiktok-studio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "TikTok Studio",
+    "vendor": "TikTok (ByteDance)",
+    "officialUrl": "https://www.tiktok.com/tiktok-studio",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.tiktok.com/tiktok-studio", "tier": 1, "accessedOn": "2026-09-25", "title": "TikTok Studio official page" },
+    { "id": "s2", "url": "https://www.conbersa.ai/learn/what-is-tiktok-studio", "tier": 2, "accessedOn": "2026-09-25", "title": "What is TikTok Studio" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://www.tiktok.com/tiktok-studio",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Full channel management, analytics, comment management and scheduling included at no cost", "sourceIds": ["s2"] }], "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Requires a TikTok business or creator account for post scheduling; personal accounts lack scheduling", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Desktop channel management with analytics (views, follower growth, per-video engagement)", "sourceIds": ["s2"] },
+      { "en": "Post scheduling up to 10 days in advance for business/creator accounts", "sourceIds": ["s2"] },
+      { "en": "Comments manager for replying to and moderating comments from desktop", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Post scheduling requires a business or creator account; personal accounts cannot schedule", "sourceIds": ["s2"] },
+      { "en": "Scheduled posts cannot be edited after the fact; they must be deleted and re-uploaded to make changes", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "youtube-studio", "reason": { "en": "Equivalent first-party channel management and analytics dashboard for another short-video platform" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["The official tiktok.com/tiktok-studio page renders via JavaScript and did not return readable content directly; facts here rely on a secondary source", "Exact monetization tool details and full analytics feature list not confirmed from a primary source"],
+  "conflicts": []
+}

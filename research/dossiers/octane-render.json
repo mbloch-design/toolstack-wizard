@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "slug": "octane-render",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "OctaneRender",
+    "vendor": "OTOY Inc.",
+    "officialUrl": "https://home.otoy.com/render/octane-render/",
+    "docsUrl": "https://home.otoy.com/render/octane-render/purchase/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://home.otoy.com/render/octane-render/", "tier": 1, "accessedOn": "2026-09-25", "title": "OctaneRender homepage" },
+    { "id": "s2", "url": "https://www.cgchannel.com/2022/11/otoy-launches-octanerender-studio-subscriptions/", "tier": 2, "accessedOn": "2026-09-25", "title": "Otoy launches OctaneRender Studio+ subscriptions" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "EUR",
+    "pricingUrl": "https://home.otoy.com/render/octane-render/purchase/",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "studio-plus",
+        "name": "Octane Studio+",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 24, "annualPerMonth": 20, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited network rendering across 10+ nodes, full access to the OTOY ecosystem", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "studio-plus",
+    "addOns": [],
+    "cautions": [
+      { "en": "OTOY has consolidated the older Studio/Enterprise/Enterprise+ tiers into a single Studio+ subscription; older plan names still referenced in some third-party listings no longer reflect current pricing.", "fr": "", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "GPU-based, physically correct spectral renderer with RTX acceleration (2-5x speedup on NVIDIA raytracing GPUs)", "sourceIds": ["s1"] },
+      { "en": "Layered materials, spectral hair materials and random-walk subsurface scattering", "sourceIds": ["s1"] },
+      { "en": "AI-powered Spectral AI Denoiser and AI Light system", "sourceIds": ["s1"] },
+      { "en": "Procedural content generation via the VECTRON and SPECTRON modules", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Requires NVIDIA GPUs to get RTX-accelerated raytracing speed gains", "sourceIds": ["s1"] },
+      { "en": "Named host-application integrations (3ds Max, Cinema 4D, Blender, etc.) are not detailed on the marketing pages reviewed", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "redshift", "reason": { "en": "Direct GPU-accelerated rendering competitor targeting the same production studios" } },
+    { "slug": "v-ray", "reason": { "en": "Widely adopted rendering engine competing across the same host applications" } },
+    { "slug": "corona-renderer", "reason": { "en": "Rendering engine competitor aimed at the same architectural/VFX visualization market" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Exact list of supported host applications (3ds Max, Cinema 4D, Blender, Maya, etc.) not confirmed from a primary source on this pass", "Whether taxes are included in the listed EUR price is not stated"],
+  "conflicts": []
+}

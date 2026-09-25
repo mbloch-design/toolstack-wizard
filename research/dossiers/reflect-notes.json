@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 2,
+  "slug": "reflect-notes",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Reflect",
+    "vendor": "Reflect",
+    "officialUrl": "https://reflect.app",
+    "docsUrl": "https://reflect.app",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://reflect.app", "tier": 1, "accessedOn": "2026-09-25", "title": "Reflect homepage/pricing" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://reflect.app",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 12, "annualPerMonth": 10, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Single plan covering all features; no tiered feature gating", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "No permanent free plan; only a 14-day trial before billing starts.", "fr": "", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Networked note-taking with backlinks and real-time cross-device sync", "sourceIds": ["s1"] },
+      { "en": "AI writing assistance and voice transcription using GPT-4 and Whisper", "sourceIds": ["s1"] },
+      { "en": "Meeting notes organized with calendar integration, plus a web clipper for browser and Kindle highlights", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Single plan with one price; no lower-cost tier for lighter use", "sourceIds": ["s1"] },
+      { "en": "No permanent free plan, only a 14-day trial", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google Calendar", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Outlook", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Zapier", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Readwise", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios"]
+  },
+  "alternatives": [
+    { "slug": "obsidian", "reason": { "en": "Direct networked note-taking competitor with backlinks" } },
+    { "slug": "roam-research", "reason": { "en": "Original networked notes tool with the same backlink-centric approach" } },
+    { "slug": "logseq", "reason": { "en": "Backlink-based note-taking competitor" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Exact monthly (non-annual) price not fully confirmed beyond the seed's $12/month figure; Android support not mentioned on the page reviewed"],
+  "conflicts": []
+}

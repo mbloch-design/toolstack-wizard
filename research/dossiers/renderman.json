@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "slug": "renderman",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "RenderMan",
+    "vendor": "Pixar Animation Studios",
+    "officialUrl": "https://renderman.pixar.com",
+    "docsUrl": "https://renderman.pixar.com/store",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://renderman.pixar.com/store", "tier": 1, "accessedOn": "2026-09-25", "title": "RenderMan store / pricing" }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://renderman.pixar.com/store",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": [{ "en": "Free for non-commercial use, students and educators, but limited to the latest version", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "non-commercial",
+        "name": "Non-Commercial",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free for students, educators and non-commercial use, limited to latest version only", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "commercial",
+        "name": "Commercial license",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 595 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Includes one Tractor render-farm-management license; annual maintenance renewal is $250/license for upgrades", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "commercial",
+    "addOns": [
+      { "name": "Tractor (standalone render farm management)", "price": { "oneTime": 100 }, "unit": "one_time", "sourceIds": ["s1"] },
+      { "name": "Tractor annual maintenance", "price": { "monthly": null, "oneTime": 20 }, "unit": "one_time", "sourceIds": ["s1"] },
+      { "name": "Rental license (minimum 10 licenses, 7 days)", "price": { "oneTime": 5 }, "unit": "one_time", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The commercial license is perpetual, but staying on the latest version requires paying $250/year in maintenance; lapsed maintenance keeps the current version usable but stops upgrades.", "fr": "", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Batch rendering and artist seat rendering for production pipelines", "sourceIds": ["s1"] },
+      { "en": "Render farm management through the bundled Tractor tool", "sourceIds": ["s1"] },
+      { "en": "Cloud rendering integration available", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Non-commercial tier is restricted to the latest version only; older versions require a commercial purchase", "sourceIds": ["s1"] },
+      { "en": "Ongoing upgrades on the commercial license require paying annual maintenance separately from the base license fee", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "alternatives": [
+    { "slug": "arnold", "reason": { "en": "Direct competitor as a production-grade renderer used across the same VFX/animation pipelines" } },
+    { "slug": "v-ray", "reason": { "en": "Widely used commercial rendering engine competing on the same professional segment" } },
+    { "slug": "redshift", "reason": { "en": "GPU-accelerated rendering competitor aimed at the same professional studios" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": ["Named host application integrations (Maya, Houdini, Katana) referenced generically as 'interfaces to all supported authoring applications' but not listed explicitly on the page reviewed"],
+  "conflicts": []
+}
