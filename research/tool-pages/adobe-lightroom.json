@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-lightroom",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Adobe Lightroom",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/photoshop-lightroom.html",
+    "docsUrl": "https://helpx.adobe.com/lightroom.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/photoshop-lightroom.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Lightroom plans and pricing" },
+    { "id": "s2", "url": "https://www.adobe.com/products/photoshop-lightroom/free-trial-download.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Lightroom free trial download" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/photoshop-lightroom.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "trial": { "days": 7, "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "lightroom",
+        "name": "Lightroom",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 11.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Lightroom desktop, mobile and web, plus Lightroom Classic, 1TB cloud storage, 250 generative credits/month", "fr": "Lightroom bureau, mobile et web, plus Lightroom Classic, 1 To de stockage cloud, 250 crédits génératifs/mois" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "photography-plan",
+        "name": "Photography Plan (Lightroom + Photoshop)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 19.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds Photoshop, 1TB cloud storage, 1,000 generative credits/month", "fr": "Ajoute Photoshop, 1 To de stockage cloud, 1 000 crédits génératifs/mois" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "creative-cloud-pro",
+        "name": "Creative Cloud Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 69.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "20+ Adobe apps including Lightroom, unlimited standard AI features, 4,000 generative credits/month, only 100GB cloud storage", "fr": "20+ applications Adobe dont Lightroom, fonctionnalités IA standards illimitées, 4 000 crédits génératifs/mois, seulement 100 Go de stockage cloud" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "lightroom-teams",
+        "name": "Lightroom for Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 37.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1TB storage, 250 generative credits/month, per licensed seat", "fr": "1 To de stockage, 250 crédits génératifs/mois, par siège sous licence" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "lightroom",
+    "addOns": [],
+    "cautions": [
+      { "en": "Creative Cloud Pro's $69.99/month price is often shown discounted to $34.99 for the first 3 months, new subscribers only; the discount expires after that.", "fr": "Le prix de 69,99 $/mois de Creative Cloud Pro est souvent affiché réduit à 34,99 $ pour les 3 premiers mois, nouveaux abonnés uniquement ; la réduction s'arrête ensuite.", "sourceIds": ["s1"] },
+      { "en": "Lightroom is never sold as a one-time purchase or permanent free app; it is Creative Cloud subscription only.", "fr": "Lightroom n'est jamais vendu en achat unique ou en app gratuite permanente ; c'est uniquement un abonnement Creative Cloud.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI-powered editing, upscaling and adaptive presets across desktop, mobile and web with cloud sync.", "fr": "Édition assistée par IA, agrandissement et préréglages adaptatifs sur bureau, mobile et web avec synchronisation cloud.", "sourceIds": ["s1"] },
+      { "en": "Intelligent photo organization and search across the whole cloud library.", "fr": "Organisation et recherche intelligente des photos sur toute la bibliothèque cloud.", "sourceIds": ["s1"] },
+      { "en": "Built-in dust removal, lens blur simulation and portrait retouching tools.", "fr": "Outils intégrés de suppression de poussière, simulation de flou d'objectif et retouche de portrait.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan or one-time license; access requires an active Creative Cloud subscription at all times.", "fr": "Aucun plan gratuit permanent ni licence à vie ; l'accès nécessite un abonnement Creative Cloud actif en permanence.", "sourceIds": ["s2"] },
+      { "en": "The entry Lightroom plan caps generative AI credits at 250/month; heavier AI use requires the pricier Photography or Creative Cloud Pro plans.", "fr": "Le plan Lightroom d'entrée limite les crédits IA génératifs à 250/mois ; un usage IA plus intensif nécessite les plans Photography ou Creative Cloud Pro, plus chers.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "windows", "macos", "ios", "android"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "Fits a photographer or content creator who wants cloud-synced photo editing across devices without managing a proprietary catalog file.", "fr": "Convient à un photographe ou créateur de contenu qui veut une édition photo synchronisée dans le cloud entre appareils, sans gérer un fichier catalogue propriétaire." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Editing and organizing a growing photo library synced automatically between a laptop and a phone.", "fr": "Éditer et organiser une bibliothèque photo grandissante, synchronisée automatiquement entre un ordinateur et un téléphone." },
+    { "en": "A content creator batch-applying AI presets to a shoot before exporting for social media.", "fr": "Un créateur de contenu qui applique des préréglages IA en lot sur un shooting avant d'exporter pour les réseaux sociaux." }
+  ],
+  "alternatives": [
+    { "slug": "capture-one", "reason": { "en": "The main professional alternative for RAW editing and tethering, available as a subscription or perpetual license.", "fr": "La principale alternative professionnelle pour l'édition RAW et le tethering, disponible en abonnement ou en licence perpétuelle." } },
+    { "slug": "adobe-photoshop", "reason": { "en": "Adobe's own pixel-editing tool, bundled together in the Photography plan for deeper retouching needs.", "fr": "L'outil de retouche pixel d'Adobe lui-même, inclus avec le plan Photography pour des besoins de retouche plus poussés." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "At $11.99/month the entry plan is reasonable for cloud-synced editing, but the value drops for anyone who only needs occasional edits, since there is no one-time purchase option.", "fr": "À 11,99 $/mois, le plan d'entrée est raisonnable pour une édition synchronisée dans le cloud, mais la valeur baisse pour qui n'a besoin que d'édits occasionnels, faute d'option d'achat unique.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Adaptive presets and AI tools get a usable edit quickly without a steep learning curve.", "fr": "Les préréglages adaptatifs et les outils IA permettent un édit exploitable rapidement, sans grosse courbe d'apprentissage.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers cloud photo editing, organization and AI tools as advertised across devices.", "fr": "Fournit l'édition photo cloud, l'organisation et les outils IA comme annoncé, sur tous les appareils.", "sourceIds": ["s1"] },
+      "puissance": { "en": "AI editing, upscaling and adaptive presets place it among the stronger consumer/prosumer photo editors, though behind Capture One on tethering and color precision.", "fr": "L'édition IA, l'agrandissement et les préréglages adaptatifs le placent parmi les éditeurs photo grand public/semi-pro les plus solides, mais derrière Capture One sur le tethering et la précision colorimétrique.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Photos can be exported, but the cloud library and edit history are tied to an active Creative Cloud subscription; access stops if the subscription lapses.", "fr": "Les photos peuvent être exportées, mais la bibliothèque cloud et l'historique d'édition restent liés à un abonnement Creative Cloud actif ; l'accès s'arrête si l'abonnement expire.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cloud photo editor", "fr": "Édition photo cloud" },
+    "shortDescription": { "en": "Adobe's cloud-synced photo editing and organization app, sold only as a Creative Cloud subscription.", "fr": "Application Adobe d'édition et d'organisation photo synchronisée dans le cloud, vendue uniquement en abonnement Creative Cloud." },
+    "longDescription": {
+      "en": "Lightroom is Adobe's cloud-first photo editor: edits and the library sync automatically across desktop, mobile and web, and AI tools handle a lot of the repetitive work (dust removal, adaptive presets, upscaling). The entry Lightroom plan is $11.99/month with 1TB of storage and 250 generative credits.\n\nThere is no free plan and no one-time purchase: Lightroom only exists inside a Creative Cloud subscription, so the tool disappears if the subscription lapses. Stepping up to the Photography plan adds Photoshop for $19.99/month, while Creative Cloud Pro unlocks the full app suite but actually reduces cloud storage to 100GB.\n\nFor a solo photographer, the entry plan covers the core job well. Anyone who wants a perpetual license instead of a subscription needs to look elsewhere, since Adobe does not offer one for Lightroom.",
+      "fr": "Lightroom est l'éditeur photo cloud-first d'Adobe : les édits et la bibliothèque se synchronisent automatiquement entre bureau, mobile et web, et les outils IA gèrent une bonne partie du travail répétitif (suppression de poussière, préréglages adaptatifs, agrandissement). Le plan Lightroom d'entrée est à 11,99 $/mois avec 1 To de stockage et 250 crédits génératifs.\n\nIl n'y a ni plan gratuit ni achat unique : Lightroom n'existe que dans un abonnement Creative Cloud, donc l'outil disparaît si l'abonnement expire. Passer au plan Photography ajoute Photoshop pour 19,99 $/mois, tandis que Creative Cloud Pro débloque toute la suite d'apps mais réduit en fait le stockage cloud à 100 Go.\n\nPour un photographe seul, le plan d'entrée couvre bien le besoin principal. Qui veut une licence perpétuelle plutôt qu'un abonnement doit regarder ailleurs, Adobe n'en proposant pas pour Lightroom."
+    },
+    "pros": [
+      { "en": "Automatic cross-device sync of both edits and the photo library.", "fr": "Synchronisation automatique multi-appareils des édits et de la bibliothèque photo." },
+      { "en": "AI tools (adaptive presets, upscaling, dust removal) genuinely cut editing time.", "fr": "Les outils IA (préréglages adaptatifs, agrandissement, suppression de poussière) réduisent vraiment le temps d'édition." },
+      { "en": "Entry plan includes a generous 1TB of cloud storage.", "fr": "Le plan d'entrée inclut 1 To de stockage cloud généreux." }
+    ],
+    "cons": [
+      { "en": "No perpetual license or free plan; the tool stops working without an active subscription.", "fr": "Aucune licence perpétuelle ni plan gratuit ; l'outil cesse de fonctionner sans abonnement actif." },
+      { "en": "Upgrading to Creative Cloud Pro for the full app suite actually cuts cloud storage from 1TB to 100GB.", "fr": "Passer à Creative Cloud Pro pour la suite complète réduit en fait le stockage cloud de 1 To à 100 Go." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want cloud-synced editing across devices and are fine with an ongoing subscription.", "fr": "Tu veux une édition synchronisée dans le cloud entre appareils et un abonnement continu ne te dérange pas." },
+      "avoidIf": { "en": "You want to own your editing software outright, or edit rarely enough that a subscription is not worth it.", "fr": "Tu veux posséder ton logiciel d'édition définitivement, ou tu édites trop rarement pour qu'un abonnement en vaille la peine." },
+      "threshold": { "en": "If Photoshop-level retouching is needed regularly, the Photography plan at $19.99/month is cheaper than buying Lightroom and Photoshop separately.", "fr": "Si une retouche de niveau Photoshop est nécessaire régulièrement, le plan Photography à 19,99 $/mois revient moins cher que Lightroom et Photoshop séparés." },
+      "billingTraps": { "en": "Creative Cloud Pro's promotional price is for new subscribers' first 3 months only; it reverts to $69.99/month after.", "fr": "Le prix promotionnel de Creative Cloud Pro ne vaut que pour les 3 premiers mois des nouveaux abonnés ; il repasse à 69,99 $/mois ensuite." }
+    }
+  },
+  "unknowns": [
+    "Annual prepay pricing (annualPerMonth) was not clearly separated from the 'annual plan billed monthly' figures shown on the page.",
+    "Region/currency shown (USD) may differ from prices seen from other countries; not verified."
+  ],
+  "conflicts": []
+}

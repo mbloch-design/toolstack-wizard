@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-gifgun",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "GifGun 2",
+    "vendor": "Nik Ska & Mikhail Afanasev (via aescripts.com)",
+    "officialUrl": "https://aescripts.com/gifgun/",
+    "docsUrl": "https://aescripts.com/gifgun/",
+    "changelogUrl": "https://aescripts.com/gifgun/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://aescripts.com/gifgun/", "tier": 1, "accessedOn": "2026-09-25", "title": "GifGun 2 product and pricing page" }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://aescripts.com/gifgun/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "single-user-license",
+        "name": "Single User License",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 39.99 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "One license covers the After Effects plugin, the standalone desktop app and the web app", "fr": "Une licence couvre le plugin After Effects, l'application de bureau autonome et l'application web" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "single-user-license",
+    "addOns": [
+      { "name": "Floating Server License (price not shown without selecting it at checkout)", "unit": "one_time", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "A free trial is offered but its exact duration is not stated on the product page.", "fr": "Un essai gratuit est proposé mais sa durée exacte n'est pas indiquée sur la page produit.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "One-click export from After Effects to GIF, WEBP, WEBM and MP4 with smart compression that cuts file size by about 15 percent.", "fr": "Export en un clic depuis After Effects vers GIF, WEBP, WEBM et MP4 avec une compression intelligente qui réduit la taille des fichiers d'environ 15 %.", "sourceIds": ["s1"] },
+      { "en": "Target File Size mode automatically tunes quality to hit exact size limits (e.g. Twitter's 15 MB cap).", "fr": "Le mode Target File Size ajuste automatiquement la qualité pour atteindre des limites de taille précises (par exemple la limite de 15 Mo de Twitter/X).", "sourceIds": ["s1"] },
+      { "en": "Batch rendering across multiple compositions, plus custom render presets saved and shared as JSON.", "fr": "Rendu par lot sur plusieurs compositions, plus des préréglages de rendu personnalisés sauvegardés et partagés en JSON.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Only works as an After Effects plugin, standalone app or web app; it is not a general video editor.", "fr": "Fonctionne uniquement comme plugin After Effects, application autonome ou application web ; ce n'est pas un logiciel de montage général.", "sourceIds": ["s1"] },
+      { "en": "Single User License restricts installation and use to one user/one computer at a time per its EULA.", "fr": "La licence Single User restreint l'installation et l'usage à un seul utilisateur/un seul ordinateur à la fois selon son contrat de licence.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos", "web"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "Fits a motion designer or content creator who needs quick, small looped GIF/video exports from After Effects without manual compression work.", "fr": "Convient à un motion designer ou créateur de contenu qui a besoin d'exports GIF/vidéo courts et légers depuis After Effects sans travail de compression manuel." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Exporting a looped product demo GIF sized to fit a specific platform's file-size limit.", "fr": "Exporter un GIF de démo produit en boucle, dimensionné pour respecter la limite de taille d'une plateforme donnée." },
+    { "en": "Batch-rendering multiple After Effects compositions into WEBM or MP4 for social posts in one pass.", "fr": "Rendre par lot plusieurs compositions After Effects en WEBM ou MP4 pour des posts sociaux en une seule passe." }
+  ],
+  "alternatives": [
+    { "slug": "adobe-photoshop", "reason": { "en": "Photoshop's own 'Save for Web' GIF export covers the same need without a plugin, at higher effort per the vendor's own marketing.", "fr": "L'export GIF 'Enregistrer pour le web' de Photoshop répond au même besoin sans plugin, avec plus d'efforts selon le marketing de l'éditeur lui-même." } },
+    { "slug": "motion-bro", "reason": { "en": "Another one-time-purchase After Effects plugin ecosystem, though focused on transitions rather than export.", "fr": "Un autre écosystème de plugin After Effects en achat unique, mais centré sur les transitions plutôt que l'export." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "A one-time $39.99 purchase removes recurring manual export/compression work, per repeated user testimonials citing hours saved.", "fr": "Un achat unique de 39,99 $ supprime le travail manuel récurrent d'export/compression, selon plusieurs témoignages utilisateurs citant des heures gagnées.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Marketed and reviewed as a one-click workflow from composition to finished GIF/video file.", "fr": "Présenté et confirmé par les avis comme un flux en un clic, de la composition au fichier GIF/vidéo final.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers multi-format export and compression as advertised inside After Effects.", "fr": "Fournit l'export multi-format et la compression comme annoncé, directement dans After Effects.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers export/compression well but is a narrow, single-purpose tool compared to a full compositing or NLE suite.", "fr": "Couvre bien l'export/compression mais reste un outil étroit et mono-usage comparé à une suite de compositing ou de montage complète.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Output files (GIF/WEBP/WEBM/MP4) are standard formats usable anywhere, but render presets are tied to the plugin's own JSON format.", "fr": "Les fichiers produits (GIF/WEBP/WEBM/MP4) sont des formats standards utilisables partout, mais les préréglages de rendu restent liés au format JSON propre au plugin.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": "2026-04-08"
+  },
+  "editorial": {
+    "tagline": { "en": "AE GIF exporter", "fr": "Export GIF pour AE" },
+    "shortDescription": { "en": "One-time-purchase After Effects plugin, desktop app and web app for exporting compressed GIF, WEBP, WEBM and MP4 files.", "fr": "Plugin After Effects, application de bureau et application web en achat unique pour exporter des fichiers GIF, WEBP, WEBM et MP4 compressés." },
+    "longDescription": {
+      "en": "GifGun 2 solves one narrow problem well: getting a small, good-looking looped file out of After Effects without manually tuning compression settings. A single $39.99 license covers the After Effects plugin, a standalone desktop app, and a web app, so it works even outside a full After Effects license for some workflows.\n\nThe Target File Size feature is the standout: instead of guessing quality settings, it automatically balances frame rate, dimensions and quality to hit a specific size cap, which matters for platforms with strict upload limits. Batch rendering and shareable JSON presets extend it to small studio workflows.\n\nIt stays a single-purpose export tool: no editing, no compositing, just format conversion and compression on top of an existing After Effects project.",
+      "fr": "GifGun 2 règle bien un problème précis : sortir un fichier en boucle léger et de bonne qualité depuis After Effects sans régler la compression à la main. Une seule licence à 39,99 $ couvre le plugin After Effects, une application de bureau autonome et une application web, ce qui la rend utilisable même hors d'une licence After Effects complète pour certains usages.\n\nLa fonctionnalité Target File Size est le point fort : plutôt que de deviner les réglages de qualité, elle ajuste automatiquement fréquence d'images, dimensions et qualité pour atteindre une taille de fichier précise, ce qui compte pour les plateformes avec des limites d'upload strictes. Le rendu par lot et les préréglages JSON partageables l'étendent à des usages de petit studio.\n\nL'outil reste mono-usage : pas de montage, pas de compositing, juste la conversion de format et la compression sur un projet After Effects existant."
+    },
+    "pros": [
+      { "en": "Low one-time cost with no recurring subscription.", "fr": "Coût unique faible, sans abonnement récurrent." },
+      { "en": "Target File Size removes trial-and-error on compression settings.", "fr": "Target File Size supprime les essais-erreurs sur les réglages de compression." },
+      { "en": "One license covers plugin, standalone app and web app.", "fr": "Une seule licence couvre le plugin, l'app autonome et l'app web." }
+    ],
+    "cons": [
+      { "en": "Requires an existing After Effects license for the plugin workflow; it does not replace After Effects.", "fr": "Nécessite une licence After Effects existante pour le workflow plugin ; ne remplace pas After Effects." },
+      { "en": "Single User License restricts use to one user on one computer at a time.", "fr": "La licence Single User restreint l'usage à un utilisateur sur un ordinateur à la fois." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You regularly export short looped clips from After Effects and want a fast, size-controlled workflow.", "fr": "Tu exportes régulièrement des clips courts en boucle depuis After Effects et veux un flux rapide avec contrôle de taille." },
+      "avoidIf": { "en": "You do not use After Effects, or only need GIF export occasionally, since a built-in export tool may already suffice.", "fr": "Tu n'utilises pas After Effects, ou n'as besoin d'exporter en GIF qu'occasionnellement, un outil d'export déjà intégré peut suffire." },
+      "threshold": { "en": "If exporting looped GIFs/video takes more than a few minutes of manual compression tuning per file, the $39.99 one-time cost pays for itself quickly.", "fr": "Si exporter des GIF/vidéos en boucle prend plus de quelques minutes de réglage manuel de compression par fichier, le coût unique de 39,99 $ se rentabilise vite." },
+      "billingTraps": { "en": "None found beyond the standard single-user license restriction; it is a one-time purchase with no recurring charge.", "fr": "Aucun piège trouvé au-delà de la restriction standard de licence mono-utilisateur ; c'est un achat unique sans frais récurrent." }
+    }
+  },
+  "unknowns": [
+    "Exact price of the Floating Server License variant was not shown without going through checkout.",
+    "Exact free trial duration is not stated on the product page."
+  ],
+  "conflicts": []
+}

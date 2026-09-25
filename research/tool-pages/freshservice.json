@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "slug": "freshservice",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Freshservice",
+    "vendor": "Freshworks Inc.",
+    "officialUrl": "https://www.freshworks.com/freshservice/",
+    "docsUrl": "https://support.freshservice.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.freshworks.com/freshservice/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Freshservice pricing" },
+    { "id": "s2", "url": "https://www.freshworks.com/freshservice/features/", "tier": 1, "accessedOn": "2026-09-25", "title": "Freshservice features" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "EUR",
+    "pricingUrl": "https://www.freshworks.com/freshservice/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Incident management, knowledge management, task management and support portal only", "fr": "Gestion des incidents, base de connaissances, gestion des tâches et portail de support uniquement" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 40, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds service catalog, SLA management, on-call management and cloud management", "fr": "Ajoute le catalogue de services, la gestion des SLA, la gestion d'astreinte et la gestion cloud" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 84, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Adds problem, change and major incident management, workload management, release management and employee journeys", "fr": "Ajoute la gestion des problèmes, des changements, des incidents majeurs, la gestion de charge, la gestion des releases et les parcours employés" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Adds sandbox, audit logs, Freddy AI Agent (Classic) and Freddy AI Insights included", "fr": "Ajoute le sandbox, les journaux d'audit, Freddy AI Agent (Classic) et Freddy AI Insights inclus" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "name": "Freddy AI Copilot", "unit": "seat", "sourceIds": ["s1"] },
+      { "name": "Asset Units (IT Asset Management), sold in packs of 500", "unit": "usage", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Price is per agent per month: a 5-agent Starter desk costs five times the listed rate, not the headline number.", "fr": "Le prix est par agent et par mois : un support à 5 agents coûte cinq fois le tarif affiché, pas le montant en une.", "sourceIds": ["s1"] },
+      { "en": "Freddy AI Copilot (€29/agent/month) is a separate add-on on top of Pro and Enterprise, not bundled into the base seat price.", "fr": "Freddy AI Copilot (29 €/agent/mois) est un add-on séparé sur Pro et Enterprise, non inclus dans le prix de base du siège.", "sourceIds": ["s1"] },
+      { "en": "Exact monthly (no annual commitment) per-agent price could not be confirmed; the pricing page defaulted to annual billing.", "fr": "Le tarif mensuel exact sans engagement annuel n'a pas pu être confirmé ; la page de tarifs affichait par défaut la facturation annuelle.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Incident, problem and change management with AI-assisted routing and auto-generated incident reports.", "fr": "Gestion des incidents, problèmes et changements avec routage assisté par IA et rapports d'incidents générés automatiquement.", "sourceIds": ["s2"] },
+      { "en": "IT asset management (ITAM) with automated discovery, a CMDB and full asset lifecycle tracking.", "fr": "Gestion des actifs IT (ITAM) avec découverte automatisée, une CMDB et le suivi complet du cycle de vie des actifs.", "sourceIds": ["s2"] },
+      { "en": "Enterprise service management workspaces for HR, Legal and Finance beyond IT, plus employee onboarding/offboarding journeys.", "fr": "Espaces de gestion de service d'entreprise pour RH, Juridique et Finance au-delà de l'IT, plus des parcours d'onboarding/offboarding employés.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Problem, change and major incident management require Pro or above; Starter and Growth only cover basic incident/knowledge/task management.", "fr": "La gestion des problèmes, des changements et des incidents majeurs nécessite Pro ou plus ; Starter et Growth ne couvrent que la gestion basique des incidents/connaissances/tâches.", "sourceIds": ["s1"] },
+      { "en": "Freddy AI Copilot is a paid add-on on every tier except Enterprise, where it is still a separate line item at €29/agent/month.", "fr": "Freddy AI Copilot est un add-on payant sur tous les paliers sauf Enterprise, où il reste une ligne séparée à 29 €/agent/mois.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
+      { "name": "Microsoft Teams", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Device42", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "Fits an ops or IT lead running ticketing and asset management for a small team that has outgrown a basic helpdesk.", "fr": "Convient à une personne ops ou IT qui gère le ticketing et les actifs pour une petite équipe ayant dépassé un helpdesk basique." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "A small IT team centralizing incident tickets, a knowledge base and a self-service portal in one place.", "fr": "Une petite équipe IT qui centralise les tickets d'incidents, une base de connaissances et un portail libre-service au même endroit." },
+    { "en": "Tracking company hardware and software licenses through an automated CMDB instead of a spreadsheet.", "fr": "Suivre le matériel et les licences logicielles de l'entreprise via une CMDB automatisée plutôt qu'un tableur." }
+  ],
+  "alternatives": [
+    { "slug": "zendesk", "reason": { "en": "The closest direct competitor for ticketing and service management at a similar per-agent price.", "fr": "Le concurrent direct le plus proche pour le ticketing et la gestion de service à un prix par agent similaire." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Jira Service Management", "officialUrl": "https://www.atlassian.com/software/jira/service-management", "reason": "Main ITSM competitor, not in the catalogue" },
+    { "name": "SysAid", "officialUrl": "https://www.sysaid.com/", "reason": "Comparable ITSM/helpdesk tool already referenced as an alternative candidate but not yet in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Starter at €15/agent/month covers basic ticketing cheaply, but the features a growing team actually needs sit behind Growth and Pro, raising the real cost per agent.", "fr": "Starter à 15 €/agent/mois couvre le ticketing basique à bas coût, mais les fonctionnalités dont une équipe en croissance a réellement besoin sont derrière Growth et Pro, ce qui augmente le coût réel par agent.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Ticketing and the self-service portal are usable quickly, but ITAM discovery and workflow automation need real configuration time.", "fr": "Le ticketing et le portail libre-service sont utilisables rapidement, mais la découverte ITAM et l'automatisation de workflows demandent un vrai temps de configuration.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers incident, asset and service management as advertised without needing third-party tools for the core ITSM workflow.", "fr": "Fournit la gestion des incidents, des actifs et des services comme annoncé, sans outil tiers pour le flux ITSM principal.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covers ITSM, ITAM, ITOM and enterprise service management in one platform, a broad feature set among helpdesk tools.", "fr": "Couvre ITSM, ITAM, ITOM et la gestion de service d'entreprise dans une seule plateforme, un périmètre large parmi les outils de helpdesk.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Freshservice is a hosted SaaS product; data export options exist but were not detailed on the pages reviewed here.", "fr": "Freshservice est un SaaS hébergé ; des options d'export de données existent mais n'ont pas été détaillées sur les pages consultées ici.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "IT helpdesk", "fr": "Helpdesk IT" },
+    "shortDescription": { "en": "IT service and asset management platform with a per-agent pricing ladder from basic ticketing to enterprise ITSM.", "fr": "Plateforme de gestion de service et d'actifs IT avec une grille de prix par agent, du ticketing basique à l'ITSM d'entreprise." },
+    "longDescription": {
+      "en": "Freshservice covers the standard ITSM stack: incident, problem and change management, an asset CMDB, and a self-service portal, sold per agent per month. Starter at €15/agent/month is genuinely cheap for basic ticketing, but the tools that make an ITSM platform worth adopting, service catalog, SLA management, change management, only appear from Growth (€40) and Pro (€84) up.\n\nFreddy AI Copilot is priced and sold separately (€29/agent/month) on every tier except Enterprise, where it comes bundled. For a small IT team, the real monthly cost is the agent count times the tier price, plus any AI add-on, not the headline Starter number.\n\nEnterprise service management extends the same ticketing engine to HR, Legal and Finance, which is useful once a company outgrows a single-department helpdesk but adds complexity a very small team may not need yet.",
+      "fr": "Freshservice couvre la pile ITSM standard : gestion des incidents, des problèmes et des changements, une CMDB d'actifs, et un portail libre-service, vendus par agent et par mois. Starter à 15 €/agent/mois est vraiment peu cher pour du ticketing basique, mais les outils qui justifient d'adopter une plateforme ITSM, catalogue de services, gestion des SLA, gestion des changements, n'apparaissent qu'à partir de Growth (40 €) et Pro (84 €).\n\nFreddy AI Copilot est tarifé et vendu séparément (29 €/agent/mois) sur tous les paliers sauf Enterprise, où il est inclus. Pour une petite équipe IT, le coût mensuel réel est le nombre d'agents multiplié par le prix du palier, plus l'add-on IA éventuel, pas le chiffre Starter en une.\n\nLa gestion de service d'entreprise étend le même moteur de ticketing aux RH, au Juridique et à la Finance, utile une fois qu'une entreprise dépasse un helpdesk mono-département, mais ajoute une complexité dont une très petite équipe n'a pas forcément besoin tout de suite."
+    },
+    "pros": [
+      { "en": "Broad ITSM/ITAM/ITOM feature set under one platform and one price ladder.", "fr": "Périmètre ITSM/ITAM/ITOM large sous une seule plateforme et une seule grille de prix." },
+      { "en": "14-day trial gives full, unrestricted access to evaluate before buying.", "fr": "L'essai de 14 jours donne un accès complet et sans restriction pour évaluer avant d'acheter." },
+      { "en": "Automated asset discovery and CMDB replace manual inventory spreadsheets.", "fr": "La découverte automatisée des actifs et la CMDB remplacent les tableurs d'inventaire manuels." }
+    ],
+    "cons": [
+      { "en": "Core ITSM features (SLA management, change management) require upgrading past Starter.", "fr": "Les fonctionnalités ITSM clés (gestion des SLA, des changements) demandent de dépasser Starter." },
+      { "en": "Freddy AI Copilot is billed as a separate per-agent add-on on top of the plan price.", "fr": "Freddy AI Copilot est facturé comme un add-on séparé par agent, en plus du prix du plan." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You manage IT support and assets for a team that needs SLA and change management, not just a ticket queue.", "fr": "Tu gères le support IT et les actifs d'une équipe qui a besoin de gestion des SLA et des changements, pas juste une file de tickets." },
+      "avoidIf": { "en": "You are a solo freelancer or a 2-person team with no formal IT process to manage.", "fr": "Tu es indépendant ou en équipe de 2 personnes sans processus IT formel à gérer." },
+      "threshold": { "en": "Budget per-agent cost at the tier that includes SLA and change management (Growth or Pro), not the Starter headline price.", "fr": "Budgète le coût par agent au palier qui inclut la gestion des SLA et des changements (Growth ou Pro), pas le prix d'appel Starter." },
+      "billingTraps": { "en": "Freddy AI Copilot and Asset Units both bill separately per agent/per pack on top of the base plan.", "fr": "Freddy AI Copilot et les Asset Units se facturent tous deux séparément par agent/par pack, en plus du plan de base." }
+    }
+  },
+  "unknowns": [
+    "Exact monthly (no annual commitment) per-agent price for each tier was not confirmed; the pricing page defaulted to annual billing.",
+    "Whether displayed EUR prices apply globally or vary by region/country was not confirmed."
+  ],
+  "conflicts": []
+}
