@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "slug": "localwp",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Local (LocalWP)",
+    "vendor": "WP Engine, Inc.",
+    "officialUrl": "https://localwp.com",
+    "docsUrl": "https://localwp.com/help-docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "As of Local 6.0 (announced by WP Engine), all previously paid 'Local Pro' features are now included free for every user; the product no longer has a paid tier of its own."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://localwp.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Local WordPress development tool - homepage" },
+    { "id": "s2", "url": "https://localwp.com/pro-for-everyone/", "tier": 1, "accessedOn": "2026-09-25", "title": "Local 6.0 - Pro for everyone (via search snippet)" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://localwp.com",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "All features, including the formerly paid 'Local Pro' add-ons (Live Links, Connect, Cloud Backups, Image Optimizer), are free for every user as of Local 6.0.", "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "All features, including the formerly paid Pro add-ons, included at no cost.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "Local previously sold a paid 'Local Pro' subscription; WP Engine made all Pro features free for everyone starting with Local 6.0, so older third-party pricing information referencing a paid Pro tier is stale.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Local WordPress development environment for building, testing and iterating on WordPress sites offline.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Live Links: shareable temporary public URLs for a local site, for client or team review.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Connect and Cloud Backups: syncing and backing up local sites, with the Image Optimizer add-on for compressing site assets.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Add-ons ecosystem extending core functionality (e.g. integrations with Advanced Custom Fields, WP Migrate).", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Focused on WordPress specifically; not a general-purpose local dev environment for other CMS or frameworks.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Owned and maintained by WP Engine, which also sells managed WordPress hosting, a potential conflict of interest for hosting-agnostic workflows.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Advanced Custom Fields", "slug": null, "sourceIds": ["s1"] },
+      { "name": "WP Engine", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "DevKinsta", "officialUrl": "https://kinsta.com/devkinsta/", "reason": "Direct free local WordPress development tool competitor from hosting provider Kinsta, not in the catalogue." },
+    { "name": "XAMPP / MAMP", "officialUrl": "https://www.mamp.info/en/", "reason": "General-purpose local server stacks commonly used for WordPress development as a lower-level alternative, not in the catalogue." }
+  ],
+  "unknowns": [
+    "No slug in this tool's alternativeCandidates list (a generic nocode-web/hosting list) represents a genuine same-need local WordPress development competitor, so no in-catalogue alternatives could be selected; closest real competitors are listed under missingAlternatives instead.",
+    "Exact release date of the Local 6.0 free-for-everyone change was not independently confirmed beyond a search snippet referencing 'May 2025'."
+  ],
+  "conflicts": []
+}

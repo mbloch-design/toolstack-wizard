@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "slug": "leonardo-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Leonardo AI",
+    "vendor": "Leonardo Interactive Pty Ltd (Canva)",
+    "officialUrl": "https://leonardo.ai",
+    "docsUrl": "https://docs.leonardo.ai",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Official leonardo.ai and docs.leonardo.ai pages returned HTTP 403 to automated fetch in this session; pricing facts below come from search-engine snippets of the official pricing page title plus independent trackers, and should be re-verified directly."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://leonardo.ai/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Leonardo.Ai Pricing: Individual, Team & API Plans (fetch blocked, title/snippet only)" },
+    { "id": "s2", "url": "https://docs.leonardo.ai/docs/pricing-and-plans-faq", "tier": 1, "accessedOn": "2026-09-25", "title": "Pricing & Plans FAQ - confirms move toward Pay-As-You-Go model" },
+    { "id": "s3", "url": "https://fluxnote.io/guides/leonardo-ai-pricing-guide-2026", "tier": 2, "accessedOn": "2026-09-25", "title": "Leonardo AI Pricing 2026 (third-party tracker)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://leonardo.ai/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "150 fast tokens/day, generations carry a watermark, non-commercial use only.", "sourceIds": ["s3"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "150 fast tokens/day, watermarked output, non-commercial use only.", "fr": null }
+        ],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "essential",
+        "name": "Essential (formerly Apprentice)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 12, "annualPerMonth": 9.6, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "8,500 fast tokens/month, commercial use permitted.", "fr": null }
+        ],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium (formerly Artisan)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 30, "annualPerMonth": 24, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "25,000 fast tokens/month, adds relaxed (queued) generation on selected models.", "fr": null }
+        ],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "ultimate",
+        "name": "Ultimate (formerly Maestro)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 60, "annualPerMonth": 48, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "60,000 fast tokens/month, extends relaxed access to selected image and video models.", "fr": null }
+        ],
+        "sourceIds": ["s3"]
+      }
+    ],
+    "comparePlanKey": "essential",
+    "addOns": [],
+    "cautions": [
+      { "en": "Leonardo AI's own documentation (pricing-and-plans FAQ) describes the product as moving to a Pay-As-You-Go model with no monthly fees, which conflicts with the tiered Essential/Premium/Ultimate subscription pricing reported by third-party trackers; the plan names and figures here could not be confirmed on the official pricing page directly (403 blocked) and should be re-verified.", "fr": null, "sourceIds": ["s2", "s3"] },
+      { "en": "Older plan names (Apprentice, Artisan, Maestro) have reportedly been renamed to Essential, Premium, Ultimate; some still-live third-party content uses the old names interchangeably.", "fr": null, "sourceIds": ["s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI image generation using proprietary Leonardo models and third-party models (e.g. Flux), with fine-tuned styles.", "fr": null, "sourceIds": ["s3"] },
+      { "en": "Image editing, upscaling and photo-to-painting style transformation tools.", "fr": null, "sourceIds": ["s3"] },
+      { "en": "Credit/token-based generation system shared across image (and on higher plans, video) models.", "fr": null, "sourceIds": ["s3"] }
+    ],
+    "limitations": [
+      { "en": "Free tier output carries a watermark and is restricted to non-commercial use.", "fr": null, "sourceIds": ["s3"] },
+      { "en": "Usage is metered by a token/credit system, so heavy generation workloads can exhaust a plan's monthly allotment before the billing cycle ends.", "fr": null, "sourceIds": ["s3"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "midjourney", "reason": { "en": "Leading commercial AI image generator frequently compared to Leonardo AI on quality and pricing.", "fr": null } },
+    { "slug": "firefly", "reason": { "en": "Adobe's AI image generator, a direct competitor with tighter Creative Cloud integration.", "fr": null } },
+    { "slug": "krea-ai", "reason": { "en": "Another AI image generation and editing platform targeting a similar creative audience.", "fr": null } },
+    { "slug": "flux-ai", "reason": { "en": "Flux models compete directly with Leonardo's own image models and are also usable inside Leonardo itself.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Official leonardo.ai pricing page and docs.leonardo.ai were blocked (HTTP 403) to automated fetch in this session; the plan names (Essential/Premium/Ultimate vs. Apprentice/Artisan/Maestro) and exact prices come from third-party trackers and a search snippet, not a directly read official page.",
+    "Whether Leonardo AI has fully transitioned to Pay-As-You-Go pricing (as its own FAQ doc states) or still runs tiered monthly subscriptions (as trackers report) is unresolved.",
+    "Team plan pricing (Starter/Growth) mentioned by trackers was not verified."
+  ],
+  "conflicts": [
+    "Official docs.leonardo.ai/docs/pricing-and-plans-faq describes a Pay-As-You-Go, no-monthly-fee model, while multiple independent pricing trackers describe fixed monthly subscription tiers (Essential $12, Premium $30, Ultimate $60); could not reconcile within this session's budget."
+  ]
+}

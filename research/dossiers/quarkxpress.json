@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "slug": "quarkxpress",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "QuarkXPress",
+    "vendor": "Quark Software Inc.",
+    "officialUrl": "https://www.quark.com/products/quarkxpress",
+    "docsUrl": "https://www.quark.com/documentation/quarkxpress/2026/english/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.quark.com/choose-how-you-buy-complete", "tier": 1, "accessedOn": "2026-09-25", "title": "QuarkXPress - Choose how you buy (perpetual vs. subscription, via search snippet)" },
+    { "id": "s2", "url": "https://www.quark.com/shop", "tier": 1, "accessedOn": "2026-09-25", "title": "QuarkXPress Store" }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://www.quark.com/choose-how-you-buy-complete",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "annual-subscription",
+        "name": "Prepaid Annual Subscription",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 23.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "USD 279/year, includes upgrades, updates and technical support while active, with automatic renewal.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "perpetual",
+        "name": "Perpetual License",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 699 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "USD 699 one-time purchase; no upgrades or support included after purchase unless a separate Advantage maintenance plan is added.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "annual-subscription",
+    "addOns": [
+      { "en": "QuarkXPress Advantage Plan: optional maintenance/support add-on for perpetual license holders.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The perpetual license does not include ongoing upgrades or support by default; customers must add a separate Advantage maintenance plan to keep receiving updates.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Professional desktop publishing (DTP) for brochures, magazines, books and multi-channel documents with advanced typography and style-sheet management.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Collaborative workflows for teams working on layout projects.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "No free tier or ongoing free version; access requires either a paid subscription or a one-time perpetual license purchase.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Perpetual license buyers lose access to new feature updates unless they separately purchase an Advantage maintenance plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos"]
+  },
+  "alternatives": [
+    { "slug": "indesign", "reason": { "en": "Adobe's dominant desktop publishing tool and QuarkXPress's main direct competitor in professional layout work.", "fr": null } },
+    { "slug": "affinity-publisher", "reason": { "en": "Lower-cost desktop publishing alternative with a one-time purchase model, appealing to the same budget-conscious segment as QuarkXPress's perpetual license.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The main product page (quark.com/products/quarkxpress) returned empty content to automated fetch in this session; pricing and buying-options details rely on search-engine snippets of official Quark pages instead of a direct read.",
+    "Exact contents of the Advantage maintenance plan (price, duration) were not verified."
+  ],
+  "conflicts": []
+}

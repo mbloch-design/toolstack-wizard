@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "slug": "youtube-studio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "YouTube Studio",
+    "vendor": "Google LLC",
+    "officialUrl": "https://studio.youtube.com",
+    "docsUrl": "https://support.google.com/youtube/answer/72851?hl=en",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "studio.youtube.com requires a signed-in Google account; automated fetch redirected to the Google sign-in page (login-gated, not broken)."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://support.google.com/youtube/answer/72851?hl=en", "tier": 1, "accessedOn": "2026-09-25", "title": "YouTube Partner Program overview & eligibility" }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://studio.youtube.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Fully free channel management, analytics, upload and editing interface; no paid tier of YouTube Studio itself.", "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Full channel management, upload, editing and analytics tools at no cost; monetization access depends on separate Partner Program eligibility, not a paid plan.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "YouTube Studio itself has no paid plan; monetization through the YouTube Partner Program is a separate eligibility gate (subscriber and watch-hour thresholds, or the expanded program's lower thresholds), not a purchase.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Channel management dashboard: video upload, editing, thumbnails, playlists and content organization.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Analytics on views, watch time, audience retention and subscriber growth.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Monetization management via the YouTube Partner Program once eligibility thresholds are met: traditional path requires 1,000 subscribers and 4,000 valid public watch hours in the past 12 months (plus 2-step verification and a linked AdSense account); an expanded path allows 500 subscribers with 3 uploads in 90 days and 3,000 watch hours in 12 months, or 1,000 subscribers with 10 million qualified Shorts views in 90 days, in eligible countries.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Monetization access is gated by subscriber/watch-hour thresholds and country eligibility, not available immediately to new channels.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Channels must have no active Community Guidelines strikes and must comply with YouTube's monetization policies to apply or remain in the Partner Program.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google AdSense", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "twitch", "reason": { "en": "Live-streaming platform with its own creator dashboard and monetization program, a common alternative for video creators.", "fr": null } },
+    { "slug": "tiktok", "reason": { "en": "Short-form video platform with its own creator studio and monetization tools, competing for creator attention and revenue.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "studio.youtube.com could not be fetched directly in this session because it requires a signed-in Google account; interface details rely on the official YouTube Partner Program help page instead of the Studio dashboard itself."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 2,
+  "slug": "astute-graphics",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Astute Graphics",
+    "vendor": "Astute Graphics Ltd.",
+    "officialUrl": "https://astutegraphics.com",
+    "docsUrl": "https://docs.astutegraphics.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://astutegraphics.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Astute Graphics pricing" },
+    { "id": "s2", "url": "https://docs.astutegraphics.com/support/what-is-the-astute-graphics-subscription", "tier": 1, "accessedOn": "2026-09-25", "title": "What is the Astute Graphics subscription?" },
+    { "id": "s3", "url": "https://docs.astutegraphics.com/faqs/pricing-discounts", "tier": 2, "accessedOn": "2026-09-25", "title": "Pricing & discounts FAQ (search snippet)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://astutegraphics.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "individual",
+        "name": "Individual (Annual Bundle)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 12.42, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Approx. USD 149/year (about USD 12.42/month equivalent) for the full collection of Adobe Illustrator plugins, 12 months of updates, tutorials and support; exact figure not shown on the pricing page itself but confirmed via search of official/docs sources; price rose in February 2026 for new and existing customers.", "fr": null }
+        ],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Per-seat annual pricing with volume discounts for teams of 5 and 11+ members; exact amount not public, requires quote.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "individual",
+    "addOns": [],
+    "cautions": [
+      { "en": "The pricing page did not display the exact individual-plan dollar amount directly in this session; the commonly cited USD 149/year figure comes from official/docs sources found via search and should be re-verified on a future pass.", "fr": null, "sourceIds": ["s1", "s3"] },
+      { "en": "Subscription lapses end plugin access entirely per the official subscription FAQ; it does not confirm any plugins remaining usable for free after cancellation, contradicting some third-party claims.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Suite of specialized Adobe Illustrator plugins (around 18-21 tools) covering vector cleanup (Vector First Aid), sketching (DynamicSketch), ink/line work (InkFlow, InkScribe), and color/geometry utilities.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Subscription includes the entire plugin collection plus 12 months of updates and new features.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Extensive tutorial library (video and blog resources) and technical support included with subscription.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Stylus/tablet compatibility for sketch-oriented tools.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No standalone free version; a 7-day trial (no payment details required) is the only no-cost access to the full suite.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Plugins only extend Adobe Illustrator and require an active, compatible Illustrator installation (2021-2026); they are not a standalone application.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Illustrator", "slug": "adobe-illustrator", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["macos", "windows"]
+  },
+  "alternatives": [
+    { "slug": "adobe-illustrator", "reason": { "en": "Astute Graphics plugins extend Illustrator directly; some users compare the cost of the add-on suite against staying with Illustrator's native tools alone.", "fr": null } },
+    { "slug": "affinity-photo", "reason": { "en": "Alternative vector/raster design suite sometimes chosen instead of an Illustrator-plus-plugins workflow.", "fr": null } },
+    { "slug": "figma", "reason": { "en": "Vector design tool increasingly used for illustration and iconography work that would otherwise rely on Illustrator plus Astute Graphics.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Vectornator / Linearity Curve", "officialUrl": "https://www.linearity.io/curve/", "reason": "Standalone vector illustration app with built-in precision tools comparable to some Astute Graphics plugins, not in the catalogue." }
+  ],
+  "unknowns": [
+    "Exact individual-plan annual price (USD 149/year per third-party/docs mentions) was not directly visible on the fetched pricing page in this session; needs re-verification.",
+    "Enterprise per-seat price and exact discount tiers for 5+ and 11+ seats are not public."
+  ],
+  "conflicts": []
+}

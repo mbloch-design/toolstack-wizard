@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 2,
+  "slug": "revit",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Autodesk Revit",
+    "vendor": "Autodesk, Inc.",
+    "officialUrl": "https://www.autodesk.com/products/revit/overview",
+    "docsUrl": "https://help.autodesk.com/view/RVT/2026/ENU/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.autodesk.com/solutions/revit-subscription-faq", "tier": 1, "accessedOn": "2026-09-25", "title": "Revit Subscription and License FAQs (via search snippet, official Autodesk source)" },
+    { "id": "s2", "url": "https://www.autodesk.com/products/revit/overview", "tier": 1, "accessedOn": "2026-09-25", "title": "Autodesk Revit product overview (fetch blocked, HTTP 403)" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.autodesk.com/solutions/revit-subscription-faq",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "revit-annual",
+        "name": "Revit (annual subscription)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 380, "annualPerMonth": 250.42, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Full Revit BIM software, annual subscription billed as USD 3,005/year (approx. USD 250/month equivalent) for one seat; a 3-year term is also offered at USD 9,020 total; a monthly plan is billed at USD 380/month.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "revit-lt-annual",
+        "name": "Revit LT (annual subscription)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 70, "annualPerMonth": 46.67, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Lighter, lower-cost edition of Revit for small teams and sole practitioners; USD 560/year (about USD 46.67/month equivalent), or USD 70/month billed monthly; feature set is reduced compared to full Revit (e.g. no worksharing/multi-user collaboration).", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "revit-lt-annual",
+    "addOns": [],
+    "cautions": [
+      { "en": "Autodesk no longer sells perpetual licenses for Revit; a subscription (monthly, annual, or 3-year term) is the only way to access the software.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Revit LT is a separate, cheaper edition with reduced functionality (e.g. no multi-user worksharing), not simply a discount on full Revit; the two should not be treated as the same plan tier.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Building Information Modeling (BIM) for architectural design, structural engineering and MEP (mechanical/electrical/plumbing).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Automatically coordinates plans, elevations, sections and schedules from a single parametric building model.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Cloud services for collaboration and access to previous software versions included with an active subscription.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No perpetual license option; access requires an ongoing paid subscription indefinitely.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Revit LT, the lower-cost edition, drops key collaboration features (such as multi-user worksharing) compared to full Revit.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows"]
+  },
+  "alternatives": [
+    { "slug": "archicad", "reason": { "en": "Direct BIM competitor for architectural design, already listed as a current alternative for Revit.", "fr": null } },
+    { "slug": "sketchup-pro", "reason": { "en": "Lower-cost 3D modeling tool used by smaller practices as an alternative or complement to full BIM software like Revit.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Vectorworks Architect", "officialUrl": "https://www.vectorworks.net/en-US/architect", "reason": "BIM/CAD competitor for architecture, not in the catalogue." }
+  ],
+  "unknowns": [
+    "The main Revit product overview page (autodesk.com/products/revit/overview) returned HTTP 403 to automated fetch in this session; capability and pricing details rely on the subscription FAQ page reached via search snippet instead.",
+    "Exact regional/tax treatment outside the US was not verified."
+  ],
+  "conflicts": []
+}

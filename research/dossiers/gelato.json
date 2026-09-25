@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "slug": "gelato",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Gelato",
+    "vendor": "Gelato Group",
+    "officialUrl": "https://www.gelato.com",
+    "docsUrl": "https://support.gelato.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://support.gelato.com/en/articles/8996313-how-much-does-gelato-subscription-cost", "tier": 1, "accessedOn": "2026-09-25", "title": "How much does Gelato+ subscription cost? (official help center, content not fully retrievable)" },
+    { "id": "s2", "url": "https://www.inso.codes/apps/pricing/gelato-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Gelato Pricing 2026 (third-party tracker)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.gelato.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Full access to the print-on-demand production network, store integrations (Shopify, Etsy, WooCommerce) and unlimited product creation, without the Gelato+ discounts and extras.", "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Full production network access, unlimited product creation, Shopify/Etsy/WooCommerce integrations, no discounts or branded packaging.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "gelato-plus",
+        "name": "Gelato+",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 23.99, "annualPerMonth": 19.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Adds product discounts (up to 25%, up to 35% in the first subscription year), branded packaging options, advanced mockup tools, the Creative Vault image library and unlimited storefronts; exact price could not be confirmed directly on the official help center article, which did not return its full pricing content in this session.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "platinum",
+        "name": "Platinum",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Higher-volume tier with custom pricing, above Gelato+; exact terms not public.", "fr": null }
+        ],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "gelato-plus",
+    "addOns": [],
+    "cautions": [
+      { "en": "The official Gelato support article on Gelato+ pricing did not return its full pricing content to automated fetch in this session; the USD 19.99-23.99/month figures come from a third-party tracker and should be re-verified against the live official page.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Free plan already includes unlimited product creation and full production network access; Gelato+ is a discount/perks subscription layered on top rather than a feature unlock, which changes how it should be evaluated against other print-on-demand tools.", "fr": null, "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Print-on-demand platform with a distributed local production network, printing and shipping orders from facilities close to the end customer.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Native integrations with e-commerce platforms including Shopify, Etsy and WooCommerce for automated order fulfillment.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Design and mockup tools, plus a stock image library (Creative Vault) for product design.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Product quality and print options can vary by region since orders route to different local production partners.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Full store branding tools and product discounts require the paid Gelato+ subscription rather than being available on the free plan.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Shopify", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Etsy", "slug": null, "sourceIds": ["s2"] },
+      { "name": "WooCommerce", "slug": "woocommerce", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "printify", "reason": { "en": "Direct print-on-demand competitor with a comparable free-plus-paid-tier model and similar e-commerce integrations.", "fr": null } },
+    { "slug": "shipstation", "reason": { "en": "Order fulfillment and shipping platform that overlaps with Gelato's fulfillment role for e-commerce sellers, though less specialized in print-on-demand.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Printful", "officialUrl": "https://www.printful.com", "reason": "One of the largest print-on-demand competitors to Gelato, not present in the catalogue." }
+  ],
+  "unknowns": [
+    "Exact current Gelato+ monthly/annual price could not be confirmed directly from the official support article (content did not load fully); figures rely on a third-party tracker.",
+    "Platinum tier pricing and exact terms are not public."
+  ],
+  "conflicts": [
+    "Different third-party sources report Gelato+ monthly pricing anywhere from $19.99 to $29.99, and annual pricing around $19.99/month; could not reconcile against the official page within this session's budget."
+  ]
+}

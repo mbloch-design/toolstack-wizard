@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 2,
+  "slug": "darktable",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "darktable",
+    "vendor": "darktable open-source project",
+    "officialUrl": "https://www.darktable.org",
+    "docsUrl": "https://docs.darktable.org",
+    "changelogUrl": "https://www.darktable.org/install/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.darktable.org/about/", "tier": 1, "accessedOn": "2026-09-25", "title": "darktable - about" },
+    { "id": "s2", "url": "https://www.darktable.org/install/", "tier": 1, "accessedOn": "2026-09-25", "title": "darktable - install (version 5.6.1, supported platforms)" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://www.darktable.org",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Entirely free and open source, no limitations or paid tier; licensed under GNU GPL v3 or later.", "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "open-source",
+        "name": "Open source",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Entirely free, no limitations, GNU GPL v3 licensed.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Non-destructive RAW photo processing and development using a caching architecture: edits apply only at export time, originals stay untouched.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Database-driven image management with a zoomable lighttable interface for browsing and organizing large photo collections.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Modules ranging from basic adjustments (crop, exposure) to advanced color and effect processing, using rawspeed for camera RAW decoding.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Tethered shooting support, described by the project as one of the few free/open-source tools offering this capability.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Floating-point processing pipeline that also supports scientific/non-photography imaging use cases.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No official mobile app; darktable is a desktop-only application.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Being community-maintained open source software, support relies on documentation and community forums rather than a commercial support line.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "alternatives": [
+    { "slug": "adobe-lightroom", "reason": { "en": "Leading commercial RAW processing and photo management tool, the main alternative darktable is positioned against.", "fr": null } },
+    { "slug": "capture-one", "reason": { "en": "Professional commercial RAW editor with similar non-destructive workflow, a direct paid alternative.", "fr": null } },
+    { "slug": "dxo-photolab", "reason": { "en": "Commercial RAW processing software with advanced optical corrections, competing on image quality.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact list of currently supported camera RAW formats/models not verified (referenced via a separate camera support page not fetched in this session)."
+  ],
+  "conflicts": []
+}
