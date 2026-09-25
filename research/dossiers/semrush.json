@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 2,
+  "slug": "semrush",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Semrush",
+    "vendor": "Semrush Inc.",
+    "officialUrl": "https://www.semrush.com",
+    "docsUrl": "https://www.semrush.com/kb/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.semrush.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Semrush pricing"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.semrush.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "1 demo project, 10 reports/day, basic AI visibility features"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "seo",
+        "name": "SEO",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 139,
+          "annualPerMonth": 117.33,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5 websites, 500 keywords tracked daily, basic research tools, position tracking, site audit"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "starter",
+        "name": "Starter (SEO + AI Search)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 199,
+          "annualPerMonth": 165.17,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5 websites, 500 keywords, MCP access, 50 AI prompts tracked daily"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-plus",
+        "name": "Pro+ (SEO + AI Search)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 299,
+          "annualPerMonth": 248.17,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "15 websites, 1,500 keywords, historical data, content optimization, 100 AI prompts/day"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced (SEO + AI Search)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 549,
+          "annualPerMonth": 455.67,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "40 websites, 5,000 keywords, share of voice, API access, 200 AI prompts/day"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "seo",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "The free plan is a limited demo tier, not a full free version of the tool; 7-day trial requires no credit card.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Keyword research, rank tracking, backlink analysis, and competitor research in one platform.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI Search visibility tracking (AI Overviews/AI prompt monitoring) layered on top of classic SEO tools.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Website and keyword tracking limits scale sharply by tier (5 sites/500 keywords on entry vs 40 sites/5,000 keywords on Advanced).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "API access is reserved for the top Advanced tier.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "similarweb",
+      "reason": {
+        "en": "Overlaps on competitive traffic and market intelligence analysis."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact per-integration list (Google Analytics, Search Console, etc.) not detailed on the fetched pricing page.",
+    "Category mismatch in the seed data ('email-productivity') versus Semrush's actual SEO/marketing positioning was noted but not corrected here (out of scope for facts-only mode)."
+  ],
+  "conflicts": []
+}

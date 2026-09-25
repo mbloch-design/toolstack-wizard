@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "slug": "linktree",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Linktree",
+    "vendor": "Linktree Pty Ltd",
+    "officialUrl": "https://linktr.ee",
+    "docsUrl": "https://help.linktr.ee/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://linktr.ee/s/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Linktree pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "EUR",
+    "pricingUrl": "https://linktr.ee/s/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Unlimited links, core appearance options, basic analytics"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 8,
+          "annualPerMonth": 6,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Expanded customization, link scheduling, additional icon options"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Advanced reporting, priority link placement, monetization features, SEO management"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Comprehensive analytics, commerce features, marketing integrations, priority support, remove Linktree branding"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Exact Pro and Premium prices were not shown as numbers on the fetched page (only feature descriptions); only Starter pricing (€6-8) is confirmed.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "'Link in bio' landing page centralizing all of a creator's important links in one place.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in analytics and, on paid tiers, monetization and commerce features.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan analytics are basic; deeper reporting is a paid-tier feature.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Linktree branding is only removable on the top Premium tier.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Numeric prices for Pro and Premium plans not published as plain figures on the fetched page; only feature lists were extracted.",
+    "No currentAlternatives were seeded for this slug."
+  ],
+  "conflicts": []
+}

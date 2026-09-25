@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "slug": "looker-studio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Looker Studio",
+    "vendor": "Google LLC",
+    "officialUrl": "https://lookerstudio.google.com",
+    "docsUrl": "https://support.google.com/looker-studio",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://lookerstudio.google.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Looker Studio homepage"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://lookerstudio.google.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Unlimited reports and sharing; free tier is fully featured for individual reporting"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Looker Studio Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds team collaboration, content management, and support on top of the free product"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Looker Studio Pro pricing was not re-confirmed on the official pricing/help pages this session (redirect and 404 encountered); figure carried from prior seed data only.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Free, no-code report and dashboard builder connecting to Google Analytics 4, Google Sheets, and BigQuery.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Shareable, embeddable dashboards with live data connections and community/partner connectors.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Advanced team management, asset organization, and support require the paid Pro tier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Data freshness and connector reliability depend on third-party/community connectors, which are outside Google's direct support.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Google Analytics",
+        "slug": "google-analytics",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Google Sheets",
+        "slug": "google-sheets",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "BigQuery",
+        "slug": "bigquery",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "metabase",
+      "reason": {
+        "en": "Alternative BI/reporting tool covering similar dashboard and data-connection needs."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Could not reach a live Looker Studio Pro pricing/help page this session (lookerstudio.google.com redirects to a dead datastudio.google.com URL); pricing not independently re-verified.",
+    "Exact free-tier limits (e.g. viewer/report caps) not detailed on the fetched homepage."
+  ],
+  "conflicts": []
+}

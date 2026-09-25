@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "slug": "corona-renderer",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Corona Renderer",
+    "vendor": "Chaos Software s.r.o.",
+    "officialUrl": "https://www.chaos.com/corona",
+    "docsUrl": "https://support.chaos.com/hc/en-us/categories/360000000000-Corona-Renderer",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.chaos.com/corona/buy-online",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Corona Renderer buy online / pricing"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.chaos.com/corona/buy-online",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "solo",
+        "name": "Corona Solo",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 34.5,
+          "annualPerMonth": 34.5,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Named license (single device); up to 15,000 3D assets/materials; 100 monthly Chaos AI credits"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Corona Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 110.0,
+          "annualPerMonth": 46.9,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Floating (team-shared) license; 18,500+ assets/materials; 5x the Chaos AI credits of Solo"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "collection",
+        "name": "Corona Collection",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 225.0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Floating license bundling additional Chaos tools"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "solo",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Annual subscriptions auto-renew; cancellation is required to stop renewal.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No free trial period; instead a 14-day money-back guarantee applies to purchases.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Photorealistic biased/unbiased render engine known for ease of use in archviz workflows.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plugs into 3ds Max and Cinema 4D with a large bundled library of 3D assets and materials.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No perpetual/one-time license option; access requires an active subscription.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Solo tier is locked to a single named device, unlike the floating Premium/Collection tiers.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "3ds Max",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Cinema 4D",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "windows"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "v-ray",
+      "reason": {
+        "en": "Chaos's own higher-end renderer, direct archviz/production competitor."
+      }
+    },
+    {
+      "slug": "octane-render",
+      "reason": {
+        "en": "GPU-based photorealistic renderer used for similar visualization work."
+      }
+    },
+    {
+      "slug": "redshift",
+      "reason": {
+        "en": "Biased GPU renderer competing for the same 3D/archviz rendering budget."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Educational licensing pricing not published on the page (mentioned but no figures shown).",
+    "macOS/Linux support not confirmed; page and plugin ecosystem suggest Windows-centric usage."
+  ],
+  "conflicts": []
+}

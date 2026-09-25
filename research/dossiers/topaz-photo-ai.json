@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 2,
+  "slug": "topaz-photo-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Topaz Photo AI",
+    "vendor": "Topaz Labs LLC",
+    "officialUrl": "https://www.topazlabs.com/topaz-photo-ai",
+    "docsUrl": "https://help.topazlabs.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.topazlabs.com/topaz-photo-ai",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Topaz Photo AI product/pricing page"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.topazlabs.com/topaz-photo-ai",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "personal-monthly",
+        "name": "Photo (month-to-month)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 39,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited local rendering; commercial use restricted to orgs under $1M annual revenue"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "personal-annual",
+        "name": "Photo (annual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 16.58,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$199/year prepaid, or $25/month billed monthly on an annual term"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-annual",
+        "name": "Pro (annual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 49.92,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$599/year prepaid; adds higher cloud credit allowance"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "studio-bundle",
+        "name": "Topaz Studio Bundle",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 33.25,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$399/year, bundles Photo, Video, Gigapixel and Astra apps"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "personal-annual",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Cloud rendering (video/Bloom/Image Web) is credit-limited (e.g. 300 credits/month, 32MP cloud export cap); heavy use needs local GPU rendering instead.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "AI upscaling up to 16x, denoising, sharpening, and lighting/color correction in one app.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Specialized tools: face recovery, dust/scratch removal, object removal, and 'Super Focus' correction for missed-focus shots.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Batch processing and an 'autopilot' mode alongside manual per-image control.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free plan; access is subscription-only.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Cloud-based features are capped by monthly credits and a 32MP export limit on some products.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Personal tier commercial use is restricted to organizations under $1M annual revenue.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Adobe Lightroom Classic",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Adobe Photoshop",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Capture One",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "windows",
+      "macos",
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "topaz-gigapixel",
+      "reason": {
+        "en": "Sibling Topaz product focused specifically on AI upscaling."
+      }
+    },
+    {
+      "slug": "luminar-neo",
+      "reason": {
+        "en": "Competing AI-assisted photo editor with similar enhancement tools."
+      }
+    },
+    {
+      "slug": "nik-collection",
+      "reason": {
+        "en": "Alternative AI/plugin-based photo finishing suite."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "DxO PhotoLab",
+      "officialUrl": "https://www.dxo.com/dxo-photolab/",
+      "reason": "Strong AI denoise/upscale competitor, appears only as a candidate slug not yet in catalogue"
+    }
+  ],
+  "unknowns": [
+    "Exact GPU/hardware requirements for local rendering not detailed on this page.",
+    "Whether a perpetual/legacy license option still exists was not confirmed."
+  ],
+  "conflicts": []
+}

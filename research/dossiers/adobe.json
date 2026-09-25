@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Creative Cloud",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/creativecloud/plans.html",
+    "docsUrl": "https://helpx.adobe.com/creative-cloud.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.adobe.com/creativecloud/plans.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Creative Cloud plans & pricing"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/creativecloud/plans.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "single-app-photography",
+        "name": "Photography",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 19.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Photoshop, Lightroom, Lightroom Classic plus 1TB cloud storage"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "cc-pro",
+        "name": "Creative Cloud Pro (individual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 69.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "promoPrice": {
+          "monthly": 34.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "keyLimits": [
+          {
+            "en": "20+ apps including Photoshop, Illustrator, Premiere, plus Adobe Firefly AI. Promo price is for the first 3 months only, new subscribers."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "cc-standard",
+        "name": "Creative Cloud Standard (individual)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 54.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Photoshop, Illustrator, Acrobat Pro, and more, without the full 20+ app catalogue"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "team-cc-pro",
+        "name": "Creative Cloud Pro (team)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 99.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Per-license team pricing, marked 'most popular'"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "single-app-photography",
+    "addOns": [
+      {
+        "en": "Adobe Firefly credit add-ons (Standard/Pro/Premium tiers, $9.99 to $199.99/mo) for extra generative AI usage",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "The headline Creative Cloud Pro individual price ($34.99/mo) is a first-3-months promotional rate for new subscribers only; the regular price is $69.99/mo.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Full professional creative suite covering photo (Photoshop, Lightroom), vector (Illustrator), video (Premiere, After Effects), layout (InDesign) and 3D (Substance 3D).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Adobe Firefly generative AI built into apps and available as standalone credit plans.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Single-app plans let buyers license just one tool (e.g. Photoshop, Illustrator, Premiere) instead of the whole suite.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free tier; every app requires a paid subscription after the 14-day trial.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Generative AI usage is credit-limited per plan; heavy Firefly use requires a separate paid Firefly tier.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "macos",
+      "web",
+      "ios",
+      "ipados"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "No currentAlternatives were seeded for this slug; catalogue alternatives (e.g. Affinity, Canva) not assigned in this pass.",
+    "Regional pricing outside the US and exact institutional/education pricing require a sales call, not published."
+  ],
+  "conflicts": []
+}

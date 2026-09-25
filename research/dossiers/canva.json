@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "slug": "canva",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Canva",
+    "vendor": "Canva Pty Ltd",
+    "officialUrl": "https://www.canva.com",
+    "docsUrl": "https://www.canva.com/help/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.canva.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Canva pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "EUR",
+    "pricingUrl": "https://www.canva.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "EU",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Over 1.6M templates, 5GB storage, limited AI credits"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Canva Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 9.17,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Priced at €110/year for one person"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-plus",
+        "name": "Canva Pro+",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 14.17,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "€170/year per person, adds expanded AI features"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      {
+        "en": "Optional AI Pass for extra generative AI usage",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Free plan AI generation quota is limited; heavy AI use requires Pro or the AI Pass add-on.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Drag-and-drop design editor for social posts, presentations, video, and print with a large template library.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Magic Studio AI tools: text-to-image, background removal, Magic Write copywriting, and AI video editing.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Brand Kit for consistent logos, colors, and fonts across a team's designs.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan caps premium templates, stock assets, and AI generation credits.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced brand controls (brand voice, approval workflows) require the higher Pro+/Teams tiers, not base Pro.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Google Drive",
+        "slug": "google-drive",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Instagram",
+        "slug": "instagram",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "ios",
+      "android",
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "adobe-express",
+      "reason": {
+        "en": "Direct freemium competitor with a similar template-first design approach."
+      }
+    },
+    {
+      "slug": "visme",
+      "reason": {
+        "en": "Overlaps on presentations and infographic templates."
+      }
+    },
+    {
+      "slug": "figma",
+      "reason": {
+        "en": "Overlaps for quick social/marketing visuals, though positioned more for product design."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Direct fetch of canva.com/pricing returned HTTP 403 this session (anti-bot); pricing figures rely on the previously seeded, verified values rather than a fresh in-session read.",
+    "Exact free-plan AI credit quota and full integration catalogue not confirmed this session."
+  ],
+  "conflicts": []
+}

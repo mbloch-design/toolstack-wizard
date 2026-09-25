@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "slug": "elgato-stream-deck",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Elgato Stream Deck",
+    "vendor": "Corsair (Elgato)",
+    "officialUrl": "https://www.elgato.com/us/en/p/stream-deck-mk2-black",
+    "docsUrl": "https://help.elgato.com/hc/en-us/categories/360002505538-Stream-Deck",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.elgato.com/us/en/p/stream-deck-mk2-black",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Stream Deck MK.2 product page"
+    }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://www.elgato.com/us/en/p/stream-deck-mk2-black",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "The companion Stream Deck software is a free download; only the physical hardware is paid"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "mk2",
+        "name": "Stream Deck MK.2",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 149.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "15 customizable LCD keys, USB-C, includes desktop stand"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "mk2",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "This is a hardware purchase; the underlying software (plugins, profiles) is free, so cost scales with which physical unit is bought, not usage.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "15 customizable LCD keys to trigger actions, macros, and app-specific automations.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Smart Profiles automatically switch key layouts based on the active application; a key can hold up to three chained actions.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plugin marketplace extends support to streaming, productivity, and communication apps.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Requires the paid physical controller; the software alone does not replicate the hardware key experience.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Compatibility limited to Windows 11+ and macOS 13+ per this product page.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "OBS Studio",
+        "slug": "obs",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "obs",
+      "reason": {
+        "en": "Commonly paired/overlapping for stream production control, though OBS is software-only."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Price outside the US not confirmed; page states it varies by country/reseller.",
+    "Other Stream Deck hardware variants (Mini, Plus, Neo, Pedal) and their prices not covered by this page."
+  ],
+  "conflicts": []
+}

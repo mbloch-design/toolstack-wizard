@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 2,
+  "slug": "sprout-social",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Sprout Social",
+    "vendor": "Sprout Social, Inc.",
+    "officialUrl": "https://sproutsocial.com",
+    "docsUrl": "https://support.sproutsocial.com/hc/en-us",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://sproutsocial.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Sprout Social pricing"
+    }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://sproutsocial.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "essentials",
+        "name": "Essentials",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 99,
+          "annualPerMonth": 79,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5 social profiles, 100 AI credits/month, consolidated inbox, review management"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 199,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5 social profiles, 10 brand keywords, adds keyword/location monitoring"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 299,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited profiles, 10 brand keywords, message tagging, competitor insights"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 399,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited profiles, 20 brand keywords, AI-assisted replies, sentiment analysis, Sprout API"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "White-glove onboarding, dedicated SSO support, priority support"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "essentials",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Essentials is the only tier with published monthly (non-annual) billing at $99/seat; Standard and above prices shown are annual billing only.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Unified social inbox, scheduling, and publishing across major social networks.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Social listening and competitor insights via brand keyword monitoring.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Trellis AI agent and AI-assisted reply/post enhancement on higher tiers.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Entry tiers (Essentials, Standard) cap social profiles at 5; unlimited profiles require Professional or above.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "API access, sentiment analysis, and AI-assisted replies are reserved for the Advanced tier and up.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "buffer",
+      "reason": {
+        "en": "Lighter-weight, cheaper social media scheduling competitor for the same core job."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Detailed integration list (e.g. helpdesk tools mentioned for Advanced) not itemized by name on the pricing page.",
+    "Seed category 'creation' likely mismatched with Sprout Social's actual social-media-management positioning; left unresolved in facts-only mode."
+  ],
+  "conflicts": []
+}
