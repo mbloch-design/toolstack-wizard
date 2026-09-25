@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 2,
+  "slug": "touchdesigner",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "TouchDesigner",
+    "vendor": "Derivative",
+    "officialUrl": "https://derivative.ca",
+    "docsUrl": "https://derivative.ca/UserGuide/TouchDesigner_Products",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://derivative.ca/UserGuide/TouchDesigner_Products",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "TouchDesigner license tiers"
+    }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://derivative.ca/UserGuide/TouchDesigner_Products",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Non-Commercial edition is free for personal/non-commercial use, with image resolution capped at 1280x1280, excludes some specialized operators, limited to 10 keys per account, forum support only.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Non-Commercial",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Free for personal/non-commercial use; resolution capped at 1280x1280, excludes some operators, 10 keys per account, forum support only.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "educational",
+        "name": "Educational",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 300
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Non-commercial/educational use only; requires student or institution registration and Derivative approval.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "commercial",
+        "name": "Commercial",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 600
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Required for any paid/commercial project; unlocks unlimited resolution, H.264/H.265 realtime encoding, Shared Memory and DirectX operators, TouchEngine integration, transferable license keys.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 2200
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Includes 6 hours of Pro Support, unlimited Notch operator resolution, advanced tracking (Stype, BlackTrax), file privacy protection, motion channel blending.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "commercial",
+    "addOns": [
+      {
+        "en": "Floating Cloud Commercial license: $900 USD, for cloud/floating deployment instead of a single dongle-bound seat.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Licenses are perpetual one-time purchases per seat rather than a recurring subscription; the free Non-Commercial tier cannot legally be used for any paid project.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Node-based visual programming environment for real-time interactive visuals, projection and installations.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Realtime video encoding, TouchEngine integration to embed TouchDesigner networks in other applications, and advanced motion-tracking device support (Commercial/Pro tiers).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Non-Commercial free tier is capped at 1280x1280 resolution and excludes several specialized operators.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Any commercial or compensated use legally requires purchasing a Commercial or Pro license; the free tier cannot be used for paid work.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "macos"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Notch",
+      "officialUrl": "https://www.notch.one/",
+      "reason": "Direct real-time visuals/VJ competitor to TouchDesigner, not present in the seed's alternativeCandidates for this tool."
+    }
+  ],
+  "unknowns": [
+    "No alternativeCandidates specific to real-time visual/node-based software were provided in the seed for this tool, so no in-catalogue alternatives could be confidently listed."
+  ],
+  "conflicts": []
+}

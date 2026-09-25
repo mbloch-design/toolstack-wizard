@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "slug": "audacity",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Audacity",
+    "vendor": "Muse Group (Audacity Team)",
+    "officialUrl": "https://www.audacityteam.org",
+    "docsUrl": "https://www.audacityteam.org/faq/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.audacityteam.org/faq/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Audacity FAQ"
+    }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "USD",
+    "pricingUrl": "https://www.audacityteam.org/faq/",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Fully free and open source with no feature restrictions; desktop only.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "free",
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Multi-track audio recording and non-destructive editing with real-time effects.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in effects such as noise reduction, EQ, distortion, reverb and echo, plus spectrogram analysis.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Imports, exports and converts most common audio formats including MP3, M4A, AIFF, FLAC and WAV.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supports VST3 and Nyquist plugins on all platforms, plus LV2 on Linux and Audio Units on macOS.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Optional cloud project backup and sharing via Audio.com.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Not a full digital audio workstation: no MIDI editing and no virtual instruments.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Desktop-only; no official mobile apps for iOS or Android.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Some audio format support (e.g. certain MP3 encoding) requires a separate FFmpeg library installation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "macos",
+      "windows",
+      "linux"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "descript",
+      "reason": {
+        "en": "Audio/video editor with transcript-based editing, competing for podcast and voice editing workflows.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "adobe-podcast-ai",
+      "reason": {
+        "en": "AI-driven audio enhancement tool targeted at podcasters and voice recording cleanup.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact Linux distribution compatibility beyond Ubuntu 22.04+ not detailed on the FAQ page consulted."
+  ],
+  "conflicts": []
+}

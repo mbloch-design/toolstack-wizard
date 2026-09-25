@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "slug": "milanote",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Milanote",
+    "vendor": "Milanote Ltd.",
+    "officialUrl": "https://milanote.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://milanote.com/plans",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Milanote plans & pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://milanote.com/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "100 notes/images/links, 10 file uploads, unlimited shared boards.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "100 notes/images/links, 10 file uploads, unlimited shared boards.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 12.5,
+          "annualPerMonth": 9.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited notes, images, links and file uploads; unlimited shared boards.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "workspace",
+        "minSeats": 1,
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Flat rate covering up to 50 people; unlimited notes, images, links and file uploads.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "personal",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Team plan is flat-rate up to 50 users rather than per-seat; larger teams need to contact sales.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Visual boards combining notes, images, links, files and to-do lists for creative organization.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Real-time collaboration with unlimited shared boards, even on the free plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan caps content at 100 notes/images/links and 10 file uploads total.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Team plan is a flat fee for up to 50 people, not a true per-seat model, which can be inefficient for very small teams.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "notion",
+      "reason": {
+        "en": "All-in-one workspace often used for similar moodboard/planning use cases.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "figma",
+      "reason": {
+        "en": "Design tool sometimes used for moodboards and visual brainstorming.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "miro",
+      "reason": {
+        "en": "Visual whiteboard competitor covering brainstorming and board-based organization.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Milanote platform availability on desktop apps (Windows/Mac) beyond web/iOS/Android not confirmed on the plans page."
+  ],
+  "conflicts": []
+}

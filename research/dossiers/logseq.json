@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 2,
+  "slug": "logseq",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Logseq",
+    "vendor": "Logseq Inc.",
+    "officialUrl": "https://logseq.com/",
+    "docsUrl": "https://blog.logseq.com/how-to-setup-and-use-logseq-sync/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://blog.logseq.com/how-to-setup-and-use-logseq-sync/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Logseq Sync setup and pricing"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://blog.logseq.com/how-to-setup-and-use-logseq-sync/",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "The core local-first app is free and open source; Sync (cloud sync/backup) is only available via a recurring Open Collective contribution during its beta phase.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (local app)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Full local-first app with knowledge graph and outliner; no cloud sync.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "sync-backer",
+        "name": "Sync - Backer tier",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 5,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Access to Sync (beta) with up to 10 remote graphs per account, 10GB per graph, 100MB per asset file.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "sync-sponsor",
+        "name": "Sync - Sponsor tier",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Same Sync limits as Backer tier, plus access to Whiteboards, which are Sponsor-only.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Sync access is currently structured as a recurring Open Collective donation during beta, not a standard commercial subscription; Logseq states it plans to move to a normal subscription system once Sync is publicly launched.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Local-first, open-source personal knowledge management app built around a bidirectional-linking knowledge graph and outliner.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Optional cloud Sync (beta) for multi-device access, with Smart Merge for simultaneous multi-device editing (experimental).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Whiteboards feature is restricted to Sponsor-tier Sync contributors only.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Sync storage is capped at 10 remote graphs per account, 10GB per graph and 100MB per asset file during the beta.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Smart Merge for simultaneous multi-device editing is still experimental and may be unreliable.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "macos",
+      "windows",
+      "linux",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "obsidian",
+      "reason": {
+        "en": "Direct competitor: local-first, markdown-based PKM tool with a similar plugin/graph ecosystem.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "roam-research",
+      "reason": {
+        "en": "Pioneer of the networked-notes/knowledge-graph category that Logseq is modeled after.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "notion",
+      "reason": {
+        "en": "General-purpose note and knowledge tool often compared for PKM workflows.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Logseq's open-source license type (e.g. AGPL vs other) was not stated in the page consulted.",
+    "Final commercial pricing for Sync once it exits beta is not yet published."
+  ],
+  "conflicts": []
+}

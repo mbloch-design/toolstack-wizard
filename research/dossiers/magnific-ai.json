@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "slug": "magnific-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Magnific",
+    "vendor": "Freepik Company S.L.",
+    "officialUrl": "https://www.magnific.com",
+    "docsUrl": "https://www.magnific.com/ai/docs/plans-and-pricing",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "renamed",
+    "statusNote": {
+      "en": "Magnific AI's standalone upscaler was folded into a unified Freepik/Magnific creative platform (single credit-based subscription) as of 2026; magnific.ai now redirects to magnific.com.",
+      "fr": null
+    }
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.magnific.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Magnific pricing plans"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.magnific.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 20,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 7.25,
+          "oneTime": null
+        },
+        "keyLimits": [
+          {
+            "en": "240,000 credits/year (~3,200 images), access to image, video and audio generation models plus 250M+ stock assets.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium-plus",
+        "name": "Premium+",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 45,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 33.75,
+          "oneTime": null
+        },
+        "keyLimits": [
+          {
+            "en": "600,000 credits/year (~8,000 images), commercial license, unlimited access to the Nano Banana 2 model.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-starter",
+        "name": "Pro Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 110,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 82.5,
+          "oneTime": null
+        },
+        "keyLimits": [
+          {
+            "en": "1.5M credits/year, aimed at professional/agency-level content production.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "premium",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Displayed prices exclude VAT and local taxes; a 50%-off promotional rate is shown alongside the regular price for annual billing, and regular monthly prices apply without commitment.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Credits are pooled annually across Freepik's image, video and audio tools rather than dedicated solely to the upscaler, so real upscaling capacity per plan varies with other usage.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "AI image upscaling, enhancement and creative reimagining with controls for creativity, resemblance and HDR.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Bundled access to Freepik's broader AI suite: image, video and audio generation models plus a large stock asset library.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free plan; every tier requires a paid subscription.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Credit-based system shared across multiple AI tools makes heavy upscaling usage consume the same pool as image/video/audio generation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "krea-ai",
+      "reason": {
+        "en": "Direct competitor for AI image upscaling and enhancement.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "figma-weave",
+      "reason": {
+        "en": "AI creative generation tool overlapping in image enhancement workflows.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Topaz Gigapixel AI",
+      "officialUrl": "https://www.topazlabs.com/topaz-gigapixel-ai",
+      "reason": "Well-known dedicated AI image upscaler, direct competitor not confirmed in the catalogue's alternativeCandidates for this tool."
+    }
+  ],
+  "unknowns": [
+    "Exact standalone (non-promotional) monthly-billed price and Business per-seat plan price for Magnific were not fully confirmed on the source page; Business plan figure came only from a secondary search summary, not the primary pricing page content extracted."
+  ],
+  "conflicts": []
+}

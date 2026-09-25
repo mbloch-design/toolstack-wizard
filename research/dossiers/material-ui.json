@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "slug": "material-ui",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "MUI (Material UI / MUI X)",
+    "vendor": "MUI (Material-UI SAS)",
+    "officialUrl": "https://mui.com",
+    "docsUrl": "https://mui.com/pricing/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://mui.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "MUI X pricing (Community, Pro, Premium, Enterprise)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://mui.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Community edition is free forever, MIT-licensed, includes 40+ free components, community support only.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "community",
+        "name": "Community",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Free forever, MIT-licensed, includes 40+ free components, community support only.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 24.92,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$299/year per developer; adds Pro support and 10+ Pro-only components on top of Community.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 49.92,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$599/year per developer; adds Premium support tier, early access to new features, 5+ additional Premium components.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 15,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 116.58,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "$1,399/year per developer, minimum 15 seats; priority support, dedicated account management, guaranteed response time.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Developer seat count must match the maximum number of concurrent developers contributing changes to the front-end code, not total headcount.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Licenses are perpetual (continued production use allowed after support expires), unlike a typical SaaS subscription.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Comprehensive React component library implementing Google's Material Design, free and open source (Community/MIT).",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced MUI X components (Data Grid, Date/Time Pickers, Charts, Tree View) available in paid Pro/Premium tiers.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Advanced data-grid, chart and picker features are gated behind paid Pro/Premium licenses, not part of the free Community edition.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Enterprise tier requires a minimum purchase of 15 developer seats.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "shadcn-ui",
+      "reason": {
+        "en": "Popular free, copy-paste React component library competing for the same developer audience.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "ant-design",
+      "reason": {
+        "en": "Another comprehensive open-source React UI component library and design system.",
+        "fr": null
+      }
+    },
+    {
+      "slug": "chakra-ui",
+      "reason": {
+        "en": "Accessible, themeable React component library used as an alternative to MUI.",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "50% student/non-profit discount and 25+ developer volume discount terms not fully detailed on the page reviewed."
+  ],
+  "conflicts": []
+}

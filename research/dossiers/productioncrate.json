@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "slug": "productioncrate",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ProductionCrate",
+    "vendor": "ProductionCrate",
+    "officialUrl": "https://productioncrate.com",
+    "docsUrl": "https://www.productioncrate.com/questions-answers.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.productioncrate.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "ProductionCrate homepage (nav/footer only, pricing page not reachable via static fetch)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.productioncrate.com/bundled-licenses.html",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "regularPriceUnknown": true,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free 'Sample' tier with limited access to VFX, sound, graphics and 3D assets; full-resolution/unwatermarked downloads require a paid plan.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (Sample)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Limited/sample access to VFX, sound, graphics and 3D assets; no full-resolution or unwatermarked downloads.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Exact paid plan prices could not be confirmed: the pricing/upgrade pages are dynamic (JavaScript-rendered) and returned only navigation content when fetched; third-party trackers mention figures around $19-49/month for Pro tiers but these are not independently verified against the official page.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Stock library of VFX elements, sound effects/music, motion graphics and 3D models for video production.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Separate sub-brand sites (e.g. SoundCrate, GraphicsCrate, RenderCrate) organized by asset category.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free tier assets are limited/sample-only; full commercial-use downloads require a paid subscription.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pricing structure and plan tiers are not transparently documented on a static, easily-crawlable page, making self-service comparison harder.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Storyblocks",
+      "officialUrl": "https://www.storyblocks.com/",
+      "reason": "Well-known stock VFX/footage/asset subscription competitor already present in the seed's alternativeCandidates list for this tool, suggesting it should exist as a full catalogue entry."
+    }
+  ],
+  "unknowns": [
+    "Exact paid plan names, prices and per-plan limits for ProductionCrate could not be verified from the official site in this session; the pricing pages did not return usable content via automated fetch (dynamic/JS-rendered), and the budget (max 8 pages) was reached without finding a static pricing table.",
+    "No alternativeCandidates in the seed matched ProductionCrate's actual category (stock VFX/asset libraries) precisely, so no in-catalogue alternatives were listed with confidence."
+  ],
+  "conflicts": []
+}

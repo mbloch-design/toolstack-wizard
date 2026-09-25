@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "safetyculture",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Mitti (formerly SafetyCulture / iAuditor)",
+    "vendor": "SafetyCulture Pty Ltd",
+    "officialUrl": "https://mitti.com",
+    "docsUrl": "https://help.safetyculture.com/000867",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "renamed",
+    "statusNote": { "en": "SafetyCulture's product was rebranded to 'Mitti'; safetyculture.com/pricing now redirects (301) to mitti.com/pricing.", "fr": null }
+  },
+  "sources": [
+    { "id": "s1", "url": "https://mitti.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Mitti (by SafetyCulture) pricing plans" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://mitti.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Up to 10 users, 5 active inspection templates, basic analytics/training/tasks, up to 300 AI credits per seat per month.", "fr": null }, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Up to 10 users, 5 active inspection templates, basic analytics/training/tasks, up to 300 AI credits/seat/month.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 29, "annualPerMonth": 24, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited active and multi-language templates, advanced analytics/training, permissions management, integrations, SSO, automated maintenance, at least 500 AI credits/seat/month.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Everything in Premium plus enterprise user management, enforced login controls, SCIM provisioning, 24/7 priority support, advanced integrations builder, sandbox environment, at least 800 AI credits/seat/month.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "premium",
+    "addOns": [],
+    "cautions": [
+      { "en": "Location-based pricing is also available for multi-site operations at a fixed cost per location with unlimited users per site, a different model than per-seat.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Digital inspection checklists, safety audits and observations for frontline/field operations.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Training modules, task/issue reporting, and advanced analytics dashboards on paid tiers.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Built-in AI credits per seat for AI-assisted features across all plans.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 5 active inspection templates and 10 users.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Advanced security features (SSO, SCIM, enforced login controls) require Premium or Enterprise.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "iAuditor by SafetyCulture (legacy name)", "officialUrl": "https://mitti.com", "reason": "Same product under its former brand name; flagging so the catalogue can update references from 'SafetyCulture/iAuditor' to 'Mitti'." }
+  ],
+  "unknowns": [
+    "No alternativeCandidates in the seed matched SafetyCulture/Mitti's actual category (inspection checklists/frontline operations/EHS), so no in-catalogue alternatives were listed with confidence.",
+    "Currency for mitti.com/pricing was not explicitly labeled on the page; USD assumed based on $ symbol shown."
+  ],
+  "conflicts": []
+}

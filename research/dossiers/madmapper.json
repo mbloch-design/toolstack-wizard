@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "slug": "madmapper",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "MadMapper",
+    "vendor": "Garage Cube / 1minus1",
+    "officialUrl": "https://madmapper.com",
+    "docsUrl": "https://madmapper.com/madmapper/faq",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://madmapper.com/madmapper/faq",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "MadMapper FAQ (licensing, platforms, demo limits)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "EUR",
+    "pricingUrl": "https://madmapper.com/madmapper/faq",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Demo version with watermarked output, project saving/loading disabled, no SVG/PNG/PDF export, Spatial Scanner cropped to 1/4 resolution, DMX blackouts every 30 seconds, no material library installation.",
+        "fr": null
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free (demo)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Watermarked output, no project save/load, no export, limited features; evaluation only.", "fr": null }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "rental",
+        "name": "Rental license",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 44,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Time-limited license for a single computer; identical feature set to the perpetual license.",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "perpetual",
+        "name": "Perpetual license",
+        "unit": "seat",
+        "minSeats": 2,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 479
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Minimum 2 seats (includes an extra backup seat for hardware failure during live performances).",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "rental",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Perpetual license pricing starts with a minimum of 2 seats bundled together, not a single-seat purchase, which affects the effective per-seat cost.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Real-time video mapping onto physical surfaces, projection and LED installations.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "DMX lighting control integration for combined video/lighting mapping shows.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free demo version is watermarked and cannot save or load projects, limiting it to evaluation only.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Not designed to run in virtual machines on Windows.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "macos",
+      "windows"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Resolume",
+      "officialUrl": "https://resolume.com/",
+      "reason": "Well-known direct competitor for projection mapping and VJ software, not present in the seed's alternativeCandidates list for this tool."
+    }
+  ],
+  "unknowns": [
+    "No alternativeCandidates specific to video-mapping software were provided in the seed for this tool; the closest catalogue matches (e.g. TouchDesigner) were not confirmed as true substitutes so none was listed in alternatives."
+  ],
+  "conflicts": []
+}
