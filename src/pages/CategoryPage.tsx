@@ -3,7 +3,7 @@ import { fitBrandedTitle } from "@/lib/seoTitle";
 import { useState, useEffect, useMemo, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { ChevronDown, SlidersHorizontal, X } from "@/lib/icons";
+import { ChevronDown, Filter, X } from "@/lib/icons";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
@@ -99,10 +99,13 @@ const CategoryPage = () => {
 
   const secondaryFilterCount = profileFilter.length + typeFilter.length + savingsFilter.length;
   const hasActiveFilters = priceFilter !== "all" || secondaryFilterCount > 0;
+  // The panel also holds the sort: a non-default order counts as active.
+  const panelBadgeCount = secondaryFilterCount + (sort !== "name" ? 1 : 0);
 
   const resetFilters = () => {
     setPriceFilter("all");
     setProfileFilter([]); setTypeFilter([]); setSavingsFilter([]);
+    setSort("name");
   };
 
   // SEO
@@ -234,7 +237,7 @@ const CategoryPage = () => {
         {/* ══════════════ FILTER BAR — same pilule row + « Plus de filtres »
             popover + libellé de tri that ToolsPage uses, so every catalogue
             listing on the site behaves and reads the same way. ══ */}
-        <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
+        <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
           <nav className="tt-pillrow" aria-label={t("Filtrer par tarif", "Filter by pricing") as string}>
             <button
               type="button"
@@ -275,19 +278,19 @@ const CategoryPage = () => {
               <PopoverTrigger asChild>
                 <button
                   type="button"
-                  className={`tt-pill tt-pill--more${secondaryFilterCount > 0 ? " tt-pill--active" : ""}`}
+                  className={`tt-pill tt-pill--more${panelBadgeCount > 0 ? " tt-pill--active" : ""}`}
+                  aria-label={t("Filtres et tri", "Filters and sort") as string}
                 >
-                  <SlidersHorizontal size={16} aria-hidden />
-                  <span>{t("Plus de filtres", "More filters")}</span>
-                  {secondaryFilterCount > 0 && <span className="tt-pill-count">{secondaryFilterCount}</span>}
+                  <Filter size={16} aria-hidden />
+                  <span className="tt-pill-label">{t("Filtres", "Filters")}</span>
+                  {panelBadgeCount > 0 && <span className="tt-pill-count">{panelBadgeCount}</span>}
                 </button>
               </PopoverTrigger>
-              {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
               <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
                 <div className="tt-filter-panel-head">
                   <strong>{t("Filtres", "Filters")}</strong>
                   <div className="tt-filter-panel-head-actions">
-                    {hasActiveFilters && (
+                    {(hasActiveFilters || panelBadgeCount > 0) && (
                       <button type="button" className="tt-filter-panel-reset" onClick={resetFilters}>
                         {t("Tout effacer", "Clear all")}
                       </button>
@@ -303,6 +306,29 @@ const CategoryPage = () => {
                   </div>
                 </div>
                 <div className="tt-filter-panel-body">
+                  <section className="tt-filter-group">
+                    <h3>{t("Trier par", "Sort by")}</h3>
+                    <div className="tt-filter-segmented" role="radiogroup" aria-label={t("Trier par", "Sort by") as string}>
+                      {([
+                        { id: "name", label: "A → Z" },
+                        { id: "price-asc", label: t("Prix croissant", "Price: low to high") },
+                        { id: "price-desc", label: t("Prix décroissant", "Price: high to low") },
+                        { id: "free-first", label: t("Gratuit d'abord", "Free first") },
+                        { id: "savings", label: t("Économie max", "Max savings") },
+                      ] as Array<{ id: SortKey; label: string }>).map((option) => (
+                        <button
+                          key={option.id}
+                          type="button"
+                          role="radio"
+                          aria-checked={sort === option.id}
+                          className={`tt-pill${sort === option.id ? " tt-pill--active" : ""}`}
+                          onClick={() => setSort(option.id)}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
+                  </section>
                   <section className="tt-filter-group">
                     <h3>{t("Profil", "Profile")}</h3>
                     <div className="tt-filter-facets">
@@ -363,24 +389,11 @@ const CategoryPage = () => {
                 </div>
               </PopoverContent>
             </Popover>
-
-            <label className="tt-catalog-sort-control" title={t("Trier les outils", "Sort tools") as string}>
-              <select
-                className="tt-catalog-sort-select"
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortKey)}
-                aria-label={t("Trier par", "Sort by") as string}
-              >
-                <option value="name">{t("A → Z", "A → Z")}</option>
-                <option value="price-asc">{t("Prix croissant", "Price: low to high")}</option>
-                <option value="price-desc">{t("Prix décroissant", "Price: high to low")}</option>
-                <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
-                <option value="savings">{t("Économie max", "Max savings")}</option>
-              </select>
-              <ChevronDown size={15} aria-hidden />
-            </label>
           </div>
         </div>
+        {/* Outside the bar: its stuck-state animation leaves a transform that
+            would trap this fixed scrim inside the bar's own box. */}
+        {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
 
         {/* ══════════════ Landing-page shelves — a quality pick, the category's
             own editorial coverage, and a second browsing slice — all above the

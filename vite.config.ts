@@ -1690,8 +1690,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
         // --- Prerender static section pages (/fr/tools, /fr/guides, etc.) ---
         const SECTION_PAGES: { path: string; lang: string; title: string; description: string; noindex?: boolean; canonicalPath?: string }[] = [
-          { path: "/fr/tools",      lang: "fr", title: "Tous les outils SaaS pour freelances | ToolTrim",         description: "Comparez 200+ outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité." },
-          { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 200+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
+          { path: "/fr/tools",      lang: "fr", title: "Tous les outils SaaS pour freelances | ToolTrim",         description: "Comparez plus de 1 000 outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité." },
+          { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 1,000+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
           // No dedicated file existed for the bare index at all (only
           // /category/:slug detail pages were prerendered) — it had no
           // canonical/title of its own and fell back to whatever static

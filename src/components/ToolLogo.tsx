@@ -121,6 +121,9 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }
         width={size}
         height={size}
         loading={eager ? "eager" : "lazy"}
+        // Styled as a soft tile until the file arrives: a lazy logo not yet
+        // loaded otherwise shows as an empty white square.
+        data-logo-loading={loaded ? undefined : ""}
         className={`shrink-0 rounded-lg bg-card object-contain ring-1 ring-border/50 ${className}`}
         style={{ width: size, height: size, minWidth: size, minHeight: size, padding: Math.max(2, Math.round(size * 0.14)) }}
         onLoad={() => setLoaded(true)}

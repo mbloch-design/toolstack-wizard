@@ -780,7 +780,7 @@ const StacksPage = () => {
             navLabel={t("Naviguer par besoin", "Browse by need") as string}
             stuck={toolbarStuck}
             panelTitle={t("Filtres", "Filters") as string}
-            moreLabel={t("Plus de filtres", "More filters") as string}
+            moreLabel={t("Filtres", "Filters") as string}
             clearLabel={t("Tout effacer", "Clear all") as string}
             closeLabel={t("Fermer", "Close") as string}
             activeFilterCount={panelFilterCount}

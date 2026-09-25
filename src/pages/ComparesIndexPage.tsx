@@ -250,9 +250,10 @@ const ComparesIndexPage = () => {
               active: categoryFilter === filter.id,
               onClick: () => setCategoryFilter(filter.id),
             }))}
-            panelTitle={t("Filtres", "Filters") as string}
+            panelTitle={t("Trier", "Sort") as string}
             closeLabel={t("Fermer", "Close") as string}
-            moreLabel={t("Plus de filtres", "More filters") as string}
+            moreLabel={t("Trier", "Sort") as string}
+            clearLabel={t("Réinitialiser", "Reset") as string}
             sort={{
               value: sortBy,
               options: [

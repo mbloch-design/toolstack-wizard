@@ -58,6 +58,8 @@ const summaries = tools.map((tool, index) => {
     ...(tool.functional_needs?.length ? { functional_needs: tool.functional_needs } : {}),
     ...(tool.verticals?.length ? { verticals: tool.verticals } : {}),
     ...(tool.relevantFor?.length ? { relevantFor: tool.relevantFor } : {}),
+    // Editorial strength of the recommendation: the catalogue shelves rank on it.
+    ...(tool.prescription_quality ? { prescription_quality: tool.prescription_quality } : {}),
     // Les pages piliers persona filtrent sur ce champ. Sans lui dans l'index,
     // le filtre tourne a vide cote application, meme si tools_v4.json le porte.
     ...(tool.personas?.length ? { personas: tool.personas } : {}),

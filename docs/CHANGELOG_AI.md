@@ -1,3 +1,11 @@
+## 2026-09-25 : Catalogue /tools, filtres par besoin et barres de filtres
+
+- /tools : une une éditoriale prête pour le sponsoring (`catalogPlacements.ts`, étiquette « Sponsorisé » obligatoire), étagères par catégorie classées sur la demande Search Console (`tool_demand.json`), accroches de 2 ou 3 mots (`toolTaglines.ts`, 92 outils).
+- Filtre principal par besoin (`catalogNeeds.ts`, 37 catégories rangées en 10 besoins), panneau Filtres avec tri, prix et usages. « Plan gratuit » exclut désormais les prix non publics. En-tête de résultats contextuel avec filtres actifs retirables ; un besoin seul affiche ses 3 outils les plus recherchés, dont un emplacement `need:<id>` sponsorisable.
+- Barres de filtres de /tools, des pages catégorie, de /stacks et de /comparatifs : une seule ligne à toutes les largeurs, tri déplacé dans le panneau, fond vitré fiable après redimensionnement, position sous le header sur mobile, voile de la feuille mobile réparé.
+- Mobile : résultats en lignes façon App Store, étagères en carrousel avec aperçu de la colonne suivante, signet « Ma stack » sur chaque ligne. Tuile grise pendant le chargement des logos (tout le site).
+- Données : 7 outils recatégorisés (Wix, Squarespace, Freshservice, Zendesk, HoneyBook, Instantly, Gusto) et 5 fiches réparées après un décalage CSV (URL officielles vérifiées, descriptions complétées). Liste de réinjection dans `SUPABASE_REPRISE.md`.
+
 ## 2026-09-24 — Correction factuelle de la fiche Happia
 
 - Corrige l'essai Pro de 14 jours : aucune carte bancaire au démarrage.

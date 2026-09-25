@@ -32978,3 +32978,470 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
   line-height: 1.2;
 }
 .gi-card--featured .gi-card-body { padding-top: 16px; }
+
+/* ── Tools catalogue: category shelves (App Store "Apps" tab) ────────── */
+.tt-shelf { margin-top: 56px; }
+.tt-shelf + .tt-shelf { margin-top: 44px; }
+.tt-shelf-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+.tt-shelf-head h2 { display: flex; align-items: baseline; gap: 10px; margin: 0; font: 600 22px/1.2 var(--font-brand); letter-spacing: -0.02em; color: var(--color-text-strong); }
+.tt-shelf-head h2 span { font: 500 14px/1 var(--font-ui); letter-spacing: 0; color: var(--color-muted); }
+.tt-shelf-all { display: inline-flex; align-items: center; gap: 2px; font-size: 14px; font-weight: 600; color: var(--color-text-strong); text-decoration: none; }
+.tt-shelf-all svg { width: 16px; height: 16px; }
+.tt-shelf-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px 24px;
+  margin: 0 -12px;
+  padding: 0;
+  list-style: none;
+}
+.tt-shelf-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+.tt-shelf-row:hover { background: var(--color-surface-soft); }
+.tt-shelf-row:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+.tt-shelf-icon { padding: 2px !important; border-radius: 13px !important; background: var(--color-surface) !important; box-shadow: inset 0 0 0 1px var(--color-border); }
+.tt-shelf-copy { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
+.tt-shelf-name { overflow: hidden; font: 600 15px/1.3 var(--font-ui); color: var(--color-text-strong); text-overflow: ellipsis; white-space: nowrap; }
+.tt-shelf-meta { font-size: 13px; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+@media (max-width: 1100px) { .tt-shelf-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  /* Phone: a horizontal pager of three-row columns, like App Store charts. */
+  .tt-shelf-list {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-columns: 82%;
+    margin-inline: -20px;
+    padding: 0 20px 4px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .tt-shelf-list::-webkit-scrollbar { display: none; }
+  .tt-shelf-list > li { scroll-snap-align: start; }
+}
+
+/* ── Catalogue shelves, App Store list rhythm ────────────────────────── */
+.tt-shelf-head { margin-bottom: 6px; padding-bottom: 0; }
+.tt-shelf-head h2 { font-size: clamp(22px, 2.2vw, 28px); letter-spacing: -0.025em; }
+.tt-shelf-list { gap: 0 28px; margin: 0; }
+.tt-shelf-list > li { min-width: 0; }
+.tt-shelf-row {
+  position: relative;
+  gap: 16px;
+  padding: 16px 0;
+  border-radius: 0;
+}
+.tt-shelf-row:hover { background: transparent; }
+.tt-shelf-row:hover .tt-shelf-name { text-decoration: underline; text-underline-offset: 3px; }
+/* inset divider, from the text column to the end, never after the last row
+   of a column */
+.tt-shelf-row::after {
+  content: "";
+  position: absolute;
+  left: 80px;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--color-border);
+}
+@media (min-width: 1101px) { .tt-shelf-list > li:nth-child(3n) .tt-shelf-row::after, .tt-shelf-list > li:nth-last-child(-n + 3) .tt-shelf-row::after { display: none; } }
+.tt-shelf-list > li:nth-child(3n) .tt-shelf-row::after { display: none; }
+.tt-shelf-icon {
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  min-height: 64px !important;
+  padding: 3px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 6px 16px rgb(0 0 0 / 0.08), inset 0 0 0 1px var(--color-border) !important;
+}
+.tt-shelf-copy { flex: 1; }
+.tt-shelf-name { font-size: 16px; font-weight: 500; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.tt-shelf-meta { overflow: hidden; font-size: 14px; text-overflow: ellipsis; white-space: nowrap; }
+.tt-shelf-action { display: flex; flex: none; flex-direction: column; align-items: center; gap: 4px; }
+.tt-shelf-capsule {
+  min-width: 72px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--color-surface-soft);
+  font: 600 13px/1.2 var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: var(--color-text-strong);
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.tt-shelf-row:hover .tt-shelf-capsule { background: var(--color-text-strong); color: var(--color-surface); }
+.tt-shelf-note { font-size: 10px; letter-spacing: 0.01em; color: var(--color-muted); }
+@media (max-width: 1100px) {
+  .tt-shelf-list > li .tt-shelf-row::after { display: block; }
+  .tt-shelf-list > li:nth-child(2n) .tt-shelf-row::after { display: block; }
+}
+@media (max-width: 640px) {
+  .tt-shelf-row::after { display: block !important; }
+  .tt-shelf-list > li:nth-child(3n) .tt-shelf-row::after { display: none !important; }
+  .tt-shelf-icon { width: 56px !important; height: 56px !important; min-width: 56px !important; min-height: 56px !important; }
+  .tt-shelf-row::after { left: 72px; }
+}
+
+/* ── Catalogue editorial opening, App Store "pépites" cards ──────────── */
+.tt-pepites { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.tt-pepite { display: flex; min-width: 0; flex-direction: column; color: inherit; text-decoration: none; }
+.tt-pepite-media { aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px; }
+.tt-pepite-media img { transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.tt-pepite:hover .tt-pepite-media img { transform: scale(1.03); }
+.tt-pepite-eyebrow { margin-top: 16px; font: 600 12px/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+.tt-pepite-title { margin-top: 4px; font: 600 clamp(20px, 1.8vw, 24px)/1.2 var(--font-brand); letter-spacing: -0.02em; color: var(--color-text-strong); }
+.tt-pepite-sub {
+  display: -webkit-box;
+  margin-top: 4px;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-muted);
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tt-pepite:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 4px; border-radius: 18px; }
+@media (max-width: 900px) { .tt-pepites { grid-template-columns: 1fr; gap: 32px; } }
+@media (prefers-reduced-motion: reduce) { .tt-pepite:hover .tt-pepite-media img { transform: none; } }
+/* Divider rules, per layout (supersede the ones above): the grid fills row by
+   row, so the rows without a divider are the last row, not a column. */
+.tt-shelf-list > li .tt-shelf-row::after { display: block !important; }
+@media (min-width: 1101px) { .tt-shelf-list > li:nth-last-child(-n + 3) .tt-shelf-row::after { display: none !important; } }
+@media (min-width: 641px) and (max-width: 1100px) { .tt-shelf-list > li:nth-last-child(-n + 2) .tt-shelf-row::after { display: none !important; } }
+/* Phone pager fills column by column, three rows each. */
+@media (max-width: 640px) { .tt-shelf-list > li:nth-child(3n) .tt-shelf-row::after { display: none !important; } }
+
+/* ── Catalogue: one grid for the whole page ──────────────────────────
+   Featured cards, category shelves and the full grid share the same three
+   columns and the same gutter, so every column edge lines up down the page
+   (the full grid used to jump to four columns at 1280px). */
+.tt-catalog-page { --tt-grid-gap: 28px; }
+.tt-catalog-page .tt-pepites,
+.tt-catalog-page .tt-shelf-list,
+.tt-catalog-page .tt-catalog-results .tc-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--tt-grid-gap);
+}
+.tt-catalog-page .tt-pepites { row-gap: var(--tt-grid-gap); }
+@media (max-width: 1100px) {
+  .tt-catalog-page .tt-pepites,
+  .tt-catalog-page .tt-shelf-list,
+  .tt-catalog-page .tt-catalog-results .tc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .tt-catalog-page .tt-pepites,
+  .tt-catalog-page .tt-catalog-results .tc-grid { grid-template-columns: 1fr; }
+  .tt-catalog-page .tt-shelf-list { grid-template-columns: none; }
+}
+/* Fixed-width action so the text column has the same width on every row. */
+.tt-shelf-action { width: 72px; }
+.tt-shelf-capsule { width: 100%; min-width: 0; padding-inline: 0; }
+/* Shelves without CTA or hairlines: the row is the link, space separates. */
+.tt-shelf-list > li .tt-shelf-row::after { display: none !important; }
+.tt-shelf-row { padding: 12px 0; }
+
+
+/* ── Catalogue: featured band + sponsored label ──────────────────────── */
+.tt-spotlight { margin-top: 12px; }
+.tt-section-title { margin: 0 0 16px; font: 600 clamp(22px, 2.2vw, 28px)/1.2 var(--font-brand); letter-spacing: -0.025em; color: var(--color-text-strong); }
+/* Paid placements must read as ads: a plain, legible label, never hidden. */
+.tt-sponsored {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  font: 600 10px/1.5 var(--font-ui);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  vertical-align: middle;
+}
+.tt-shelf-copy > .tt-sponsored { align-self: flex-start; margin-left: 0; }
+/* The generic card image bleeds with -24px margins; the featured cards are
+   not padded cards, so the image sits flush in its own column. */
+.tt-pepite .tt-pepite-media { width: 100%; margin: 0 !important; }
+/* Three featured cards never leave an orphan: three columns down to 760px. */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .tt-catalog-page .tt-spotlight .tt-pepites { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .tt-catalog-page .tt-spotlight .tt-pepites { grid-template-columns: 1fr; }
+}
+
+/* ── Catalogue command bar: one row at every width ───────────────────────────
+   /tools, category pages, /stacks and /comparatifs. Pills scroll on the left,
+   a single "Filters" (or "Sort") button stays on the right; sort lives in its
+   panel. The shared ≤900px rule wrapped the tail onto a second line, which
+   doubled the sticky bar over the cards. */
+.tt-catalog-page [data-toolbar] {
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+}
+.tt-catalog-page [data-toolbar] .tt-pillrow {
+  flex: 1 1 auto;
+  order: 0;
+  mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
+}
+.tt-catalog-page [data-toolbar] .tt-catalog-toolbar-tail {
+  flex: 0 0 auto;
+}
+.tt-catalog-page [data-toolbar] .tt-pill--more {
+  position: relative;
+  gap: 8px;
+  padding-inline: 16px;
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
+.tt-catalog-page [data-toolbar] .tt-pill--more:hover:not(:disabled) {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface);
+}
+.tt-catalog-page [data-toolbar] .tt-pill--more.tt-pill--active {
+  border-color: var(--color-text);
+}
+@media (max-width: 900px) {
+  .tt-catalog-page [data-toolbar] { min-height: 60px; }
+}
+@media (max-width: 640px) {
+  /* The page scrolls as a whole here and .asv2-topbar sticks at the top:
+     a catalogue bar stuck at 0 slid underneath it and vanished. */
+  .tt-catalog-page .tt-sticky-toolbar,
+  .tt-catalog-page .tt-sticky-toolbar--stuck { top: 56px; z-index: 19; }
+  .tt-catalog-page [data-toolbar] { gap: 8px; }
+  .tt-catalog-page [data-toolbar] .tt-pill {
+    height: 36px;
+    padding-inline: 14px;
+    font-size: 14px;
+  }
+  /* Icon only: the badge carries the state, the aria-label the meaning. */
+  .tt-catalog-page [data-toolbar] .tt-pill--more {
+    width: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+  .tt-catalog-page [data-toolbar] .tt-pill--more .tt-pill-label { display: none; }
+  .tt-catalog-page [data-toolbar] .tt-pill--more.tt-pill--active .tt-pill-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    font-size: 11px;
+  }
+}
+
+/* ── /tools results: contextual header, active filters, quiet controls ──── */
+.tt-catalog-results--after-editorial { border-top: 0; }
+.tt-catalog-page .tt-catalog-results-header { margin-bottom: 28px; }
+.tt-active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.tt-active-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 10px 0 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: 540 14px/1 var(--font-ui);
+  cursor: pointer;
+  transition: border-color 140ms ease-out;
+}
+.tt-active-chip svg { color: var(--color-muted); }
+.tt-active-chip:hover { border-color: var(--color-text); }
+.tt-active-chip:hover svg { color: var(--color-text); }
+.tt-active-chip:focus-visible,
+.tt-active-clear:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+.tt-active-clear {
+  padding: 0 6px;
+  color: var(--color-muted);
+  font: 540 14px/32px var(--font-ui);
+  cursor: pointer;
+}
+.tt-active-clear:hover { color: var(--color-text); }
+.tt-catalog-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.tt-catalog-more .tt-pill { padding-inline: 28px; }
+.tt-catalog-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 72px 16px;
+  color: var(--color-muted);
+  text-align: center;
+}
+.tt-catalog-empty p {
+  margin: 0;
+  color: var(--color-text);
+  font: 600 18px/1.3 var(--font-brand);
+}
+
+/* Phone shelves: the page-wide grid rule above forced three 242px columns on
+   the pager, so the next column showed only its icons. One column per screen
+   with a peek wide enough to reveal the next names, full-bleed scroll,
+   snapping to the gutter. */
+@media (max-width: 640px) {
+  .tt-catalog-page .tt-shelf-list {
+    grid-template-columns: none;
+    grid-auto-columns: calc(100% - 100px);
+    column-gap: 20px;
+    margin-inline: -20px;
+    padding-inline: 20px;
+    scroll-padding-inline: 20px;
+  }
+}
+
+/* /tools grid cards ask ToolLogo for a 56px logo so the phone rows below stay
+   sharp; on wider screens the identity logo keeps its 24px size. */
+.tt-catalog-results .tce-logo {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  padding: 2px !important;
+}
+
+/* Phone results: App Store rows, like the shelves. A column of full-width
+   covers gave one tool per screen and kept touch buttons over every image. */
+@media (max-width: 640px) {
+  .tt-catalog-page .tt-catalog-results .tc-grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+  }
+  /* The cover keeps only its save button, moved to the end of the row; the
+     image, its gradient and the explore shortcut stay hidden. */
+  .tt-catalog-page .tt-catalog-results .tce-cover {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 6;
+    transform: translateY(-50%);
+  }
+  .tt-catalog-page .tt-catalog-results .tce-cover > :not(.tce-hover-actions),
+  .tt-catalog-page .tt-catalog-results .tce-cover::after,
+  .tt-catalog-page .tt-catalog-results .tce-hover-action { display: none; }
+  .tt-catalog-page .tt-catalog-results .tce-hover-actions {
+    position: static;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+  .tt-catalog-page .tt-catalog-results .tce-identity-copy { padding-right: 44px; }
+  .tt-catalog-page .tt-catalog-results .tce-card--media .tce-body { padding: 12px 0; }
+  .tt-catalog-page .tt-catalog-results .tce-identity-link {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .tt-catalog-page .tt-catalog-results .tce-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
+    padding: 3px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 0.08), inset 0 0 0 1px var(--color-border) !important;
+  }
+  .tt-catalog-page .tt-catalog-results .tce-identity-copy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .tt-catalog-page .tt-catalog-results .tce-name { max-width: 100%; font-size: 16px; font-weight: 500; }
+  .tt-catalog-page .tt-catalog-results .tce-category { max-width: 100%; font-size: 14px; }
+  .tt-catalog-page .tt-catalog-results .tce-category::before { display: none; }
+}
+/* Once the row has scrolled, its start fades too instead of cutting a pill. */
+.tt-catalog-page [data-toolbar] .tt-pillrow[data-scrolled="true"] {
+  mask-image: linear-gradient(90deg, transparent, #000 32px, #000 calc(100% - 40px), transparent);
+}
+
+/* ToolLogo while its file is on the way (data-logo-loading): a soft tile
+   instead of an empty white square. Beats the white !important tile
+   backgrounds of shelf and card logos by specificity. */
+img[data-logo-loading] {
+  background-color: var(--color-surface-soft) !important;
+  transition: background-color 200ms ease-out;
+}
+
+/* Save to "My stack" from the catalogue: a quiet bookmark at the end of each
+   shelf row and phone result row, filled once saved. */
+.tt-shelf-list > li { position: relative; }
+.tt-shelf-list > li .tt-shelf-copy { padding-right: 44px; }
+.tt-save {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+.tt-save .pin-tool-button {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-circle);
+  background: transparent;
+  box-shadow: none;
+  color: var(--color-muted);
+  transition: background-color 140ms ease-out, color 140ms ease-out;
+}
+.tt-save .pin-tool-button svg { width: 18px; height: 18px; }
+.tt-save .pin-tool-button:hover {
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+}
+.tt-save .pin-tool-button--active { color: var(--color-text); }
+.tt-save .pin-tool-button::after { display: none; }
+/* Same bookmark on the phone result rows; desktop cards keep their cover
+   buttons. */
+@media (max-width: 640px) {
+  .tt-catalog-page .tt-catalog-results .tce-hover-actions .pin-tool-button {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-circle);
+    background: transparent;
+    box-shadow: none;
+    color: var(--color-muted);
+    transition: background-color 140ms ease-out, color 140ms ease-out;
+  }
+  .tt-catalog-page .tt-catalog-results .tce-hover-actions .pin-tool-button svg { width: 18px; height: 18px; }
+  .tt-catalog-page .tt-catalog-results .tce-hover-actions .pin-tool-button:hover {
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+  }
+  .tt-catalog-page .tt-catalog-results .tce-hover-actions .pin-tool-button--active { color: var(--color-text); }
+  .tt-catalog-page .tt-catalog-results .tce-hover-actions .pin-tool-button::after { display: none; }
+}
+/* A need's top picks sit between the results header and the grid. */
+.tt-catalog-results .tt-need-top { margin-bottom: 56px; }
+@media (max-width: 640px) { .tt-catalog-results .tt-need-top { margin-bottom: 40px; } }

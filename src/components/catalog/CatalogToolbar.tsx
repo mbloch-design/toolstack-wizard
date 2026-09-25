@@ -1,5 +1,5 @@
 import { Fragment, useState, type ReactNode } from "react";
-import { ChevronDown, MoreHorizontal, X } from "@/lib/icons";
+import { ArrowUpDown, Filter, X } from "@/lib/icons";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export type ToolbarPill = {
@@ -16,6 +16,10 @@ export type ToolbarSort = {
   /** Libellé lu par les lecteurs d'écran, ex. « Trier par ». */
   ariaLabel: string;
   title?: string;
+  /** Titre du groupe de tri dans le panneau. Défaut : ariaLabel. */
+  groupLabel?: string;
+  /** Valeur par défaut, qui ne compte pas comme un filtre actif. Défaut : la première option. */
+  defaultValue?: string;
 };
 
 type Props = {
@@ -24,7 +28,7 @@ type Props = {
   dividerAfter?: number;
   navLabel: string;
   sort: ToolbarSort;
-  /** Contenu du panneau « Plus de filtres ». Absent : pas de bouton. */
+  /** Filtres du panneau, rendus sous le tri. Absent : le panneau ne porte que le tri. */
   panel?: ReactNode;
   panelTitle: string;
   moreLabel: string;
@@ -44,11 +48,12 @@ type Props = {
 };
 
 /**
- * Barre de filtres commune aux catalogues (outils, stacks, comparatifs, guides).
+ * Barre de filtres commune aux catalogues (stacks, comparatifs), alignée sur
+ * celle de /tools.
  *
- * Une seule rangée de pilules qui défile, et une queue qui ne défile jamais :
- * « Plus de filtres » puis le tri. Ce qui déborde de la rangée reste donc
- * toujours joignable par le panneau, à n'importe quelle largeur d'écran.
+ * Une seule ligne à toutes les largeurs : la rangée de pilules défile, et un
+ * unique bouton reste à droite. Le tri vit dans son panneau, en premier
+ * groupe ; un tri autre que celui par défaut compte comme un filtre actif.
  *
  * Le motif remplace les rails à flèches, qui posaient un bouton opaque sur un
  * libellé de catégorie — masqué en permanence et inatteignable au clic — et
@@ -72,51 +77,62 @@ export default function CatalogToolbar({
   className = "",
 }: Props) {
   const [panelOpen, setPanelOpen] = useState(false);
+  const defaultSort = sort.defaultValue ?? sort.options[0]?.value;
+  const sortChanged = sort.value !== defaultSort;
+  const badgeCount = activeFilterCount + (sortChanged ? 1 : 0);
+  // Sans facettes, le bouton n'ouvre que le tri : il le dit et le montre.
+  const TriggerIcon = panel ? Filter : ArrowUpDown;
 
   function handlePanelOpenChange(next: boolean) {
     setPanelOpen(next);
     onPanelOpenChange?.(next);
   }
 
-  return (
-    <div className={`tt-catalog-toolbar tt-sticky-toolbar${stuck ? " tt-sticky-toolbar--stuck" : ""}${className ? ` ${className}` : ""}`}>
-      <nav className="tt-pillrow" aria-label={navLabel}>
-        {pills.map((pill, index) => (
-          <Fragment key={pill.id}>
-            <button
-              type="button"
-              className={`tt-pill${pill.active ? " tt-pill--active" : ""}`}
-              onClick={pill.onClick}
-              aria-pressed={!!pill.active}
-            >
-              {pill.label}
-            </button>
-            {dividerAfter === index && <span className="tt-pillrow-divider" aria-hidden />}
-          </Fragment>
-        ))}
-      </nav>
+  function clearAll() {
+    onClearFilters?.();
+    if (sortChanged && defaultSort) sort.onChange(defaultSort);
+  }
 
-      <div className="tt-catalog-toolbar-tail">
-        {extraTail}
-        {panel && (
+  return (
+    <>
+      <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${stuck ? " tt-sticky-toolbar--stuck" : ""}${className ? ` ${className}` : ""}`}>
+        <nav className="tt-pillrow" aria-label={navLabel}>
+          {pills.map((pill, index) => (
+            <Fragment key={pill.id}>
+              <button
+                type="button"
+                className={`tt-pill${pill.active ? " tt-pill--active" : ""}`}
+                onClick={pill.onClick}
+                aria-pressed={!!pill.active}
+              >
+                {pill.label}
+              </button>
+              {dividerAfter === index && <span className="tt-pillrow-divider" aria-hidden />}
+            </Fragment>
+          ))}
+        </nav>
+
+        <div className="tt-catalog-toolbar-tail">
+          {extraTail}
           <Popover open={panelOpen} onOpenChange={handlePanelOpenChange}>
             <PopoverTrigger asChild>
               <button
                 type="button"
-                className={`tt-pill tt-pill--more${activeFilterCount > 0 ? " tt-pill--active" : ""}`}
+                className={`tt-pill tt-pill--more${badgeCount > 0 ? " tt-pill--active" : ""}`}
+                aria-label={moreLabel}
+                title={sort.title}
               >
-                <MoreHorizontal size={16} aria-hidden />
-                <span>{moreLabel}</span>
-                {activeFilterCount > 0 && <span className="tt-pill-count">{activeFilterCount}</span>}
+                <TriggerIcon size={16} aria-hidden />
+                <span className="tt-pill-label">{moreLabel}</span>
+                {badgeCount > 0 && <span className="tt-pill-count">{badgeCount}</span>}
               </button>
             </PopoverTrigger>
-            {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
             <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
               <div className="tt-filter-panel-head">
                 <strong>{panelTitle}</strong>
                 <div className="tt-filter-panel-head-actions">
-                  {activeFilterCount > 0 && onClearFilters && clearLabel && (
-                    <button type="button" className="tt-filter-panel-reset" onClick={onClearFilters}>
+                  {badgeCount > 0 && clearLabel && (
+                    <button type="button" className="tt-filter-panel-reset" onClick={clearAll}>
                       {clearLabel}
                     </button>
                   )}
@@ -130,25 +146,33 @@ export default function CatalogToolbar({
                   </button>
                 </div>
               </div>
-              <div className="tt-filter-panel-body">{panel}</div>
+              <div className="tt-filter-panel-body">
+                <section className="tt-filter-group">
+                  <h3>{sort.groupLabel ?? sort.ariaLabel}</h3>
+                  <div className="tt-filter-segmented" role="radiogroup" aria-label={sort.ariaLabel}>
+                    {sort.options.map((option) => (
+                      <button
+                        key={option.value}
+                        type="button"
+                        role="radio"
+                        aria-checked={sort.value === option.value}
+                        className={`tt-pill${sort.value === option.value ? " tt-pill--active" : ""}`}
+                        onClick={() => sort.onChange(option.value)}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </section>
+                {panel}
+              </div>
             </PopoverContent>
           </Popover>
-        )}
-
-        <label className="tt-catalog-sort-control" title={sort.title}>
-          <select
-            className="tt-catalog-sort-select"
-            value={sort.value}
-            onChange={(event) => sort.onChange(event.target.value)}
-            aria-label={sort.ariaLabel}
-          >
-            {sort.options.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-          <ChevronDown size={15} aria-hidden />
-        </label>
+        </div>
       </div>
-    </div>
+      {/* Outside the bar: its stuck-state animation leaves a transform that
+          would trap this fixed scrim inside the bar's own box. */}
+      {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
+    </>
   );
 }

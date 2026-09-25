@@ -104,6 +104,26 @@ A reinjecter : `pricing_v5` et `default_monthly_price` de
 Controle : aucune de ces fiches ne doit repasser a `"Prix non public"` apres
 le retour de Supabase.
 
+## 2 ter. Categories et liens corriges le 25/09/2026
+
+Les etageres et les besoins du catalogue `/tools` exposaient des outils mal
+ranges. Champ `tools.category` :
+
+- `wix`, `squarespace` : `automation` vers `nocode-web` (createurs de sites)
+- `freshservice`, `zendesk` : `organization` vers `communication` (helpdesks,
+  comme `crisp`, `intercom`, `helpscout`)
+- `honeybook` : `organization` vers `crm`
+- `instantly` : `project-management` vers `email-productivity` (cold email)
+- `gusto` : `finance` vers `hris-payroll` (paie)
+
+Cinq fiches avaient subi un decalage CSV : la description etait coupee a une
+virgule et sa fin atterrissait dans les champs d'URL. A reinjecter :
+`website`, `website_url`, `affiliate_link`, `short_description`,
+`short_description_en`, `description`, `long_description`,
+`long_description_en` de `prowritingaid`, `visme`, `sendible`, et les trois
+champs d'URL seuls pour `dubsado` et `honeybook`. Les URL officielles ont ete
+verifiees (HTTP 200) le 25/09/2026.
+
 ## 3. Verification apres reinjection
 
 ```bash

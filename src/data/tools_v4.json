@@ -40759,8 +40759,8 @@
       "free": "Essai gratuit illimité dans le temps, limité à 3 clients (fonctionnalités Premier complètes)",
       "paid": "Starter à 20$/mois (sans les workflows automatisés) ; Premier à 40$/mois (avec workflows). 3 membres d'équipe inclus, puis paliers : 4-10 à +25$/mois, 11-20 à +45$/mois, 21-30 à +60$/mois."
     },
-    "website": " planning).",
-    "affiliateLink": " planning).",
+    "website": "https://www.dubsado.com",
+    "affiliateLink": "https://www.dubsado.com",
     "pros": [
       "Solution complète pour freelancers à budget réduit.",
       "Interface intuitive, peu de courbe d'apprentissage.",
@@ -40855,7 +40855,7 @@
       "verification_status": "official_contextual",
       "compare_price_monthly_eur": 20
     },
-    "websiteUrl": " planning).",
+    "websiteUrl": "https://www.dubsado.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -53036,7 +53036,7 @@
     "id": "freshservice",
     "slug": "freshservice",
     "name": "Freshservice",
-    "category": "organization",
+    "category": "communication",
     "shortDescription": "Helpdesk IT et ITSM avec gestion d'actifs, conforme ITIL, pour équipes support qui dépassent le ticketing basique.",
     "shortDescriptionEn": "IT helpdesk and ITSM with asset management, ITIL-aligned, for support teams outgrowing basic ticketing.",
     "description": "Freshservice couvre le ticketing IT, la gestion d'actifs (CMDB), la gestion des changements et un catalogue de services, avec un alignement ITIL prêt à l'emploi. Le plan d'entrée (Starter) couvre le ticketing et la base de connaissances ; la gestion d'actifs et les workflows d'automatisation n'arrivent qu'à partir de Growth. Les plans inférieurs plafonnent les appels API par heure et par jour, ce qui peut bloquer des intégrations lourdes.",
@@ -62071,7 +62071,7 @@
     "id": "gusto",
     "slug": "gusto",
     "name": "Gusto",
-    "category": "finance",
+    "category": "hris-payroll",
     "shortDescription": "Paie et avantages sociaux",
     "shortDescriptionEn": "Payroll and employee benefits.",
     "description": "Gusto, c'est paie et avantages sociaux. À partir de 40€/mois.",
@@ -64436,13 +64436,13 @@
     "name": "HoneyBook",
     "shortDescription": "Gestion de projets clients et facturation créative.",
     "description": "HoneyBook, c'est gestion de projets clients et facturation créative. À partir de 16€/mois. Pensé pour les consultants B2B et les photographes.\n\nWorkflow client de bout en bout. contrats et paiements intégrés, templates professionnels. Interface moderne et intuitive. Concrètement : envoyer des propositions avec paiement intégré. Ou encore : automatiser le suivi client. Gain de temps estimé : 3h/mois.\n\nÀ garder si : créatif ou consultant avec flux client récurrent ou besoin de contrats + paiements intégrés. À éviter si : marché exclusivement français ou besoin d'un CRM puissant. Limite principale : principalement anglophone. Rentable dès 3+ projets clients par mois.",
-    "category": "organization",
+    "category": "crm",
     "pricing": {
       "free": "Essai gratuit 7 jours",
       "paid": "À partir de 16$/mois"
     },
-    "website": " facturation).",
-    "affiliateLink": " facturation).",
+    "website": "https://www.honeybook.com",
+    "affiliateLink": "https://www.honeybook.com",
     "pros": [
       "Solution complète : tous les outils en un.",
       "Interface intuitive, facile à apprendre.",
@@ -64546,7 +64546,7 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
-    "websiteUrl": " facturation).",
+    "websiteUrl": "https://www.honeybook.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -68870,7 +68870,7 @@
     "id": "instantly",
     "slug": "instantly",
     "name": "Instantly",
-    "category": "project-management",
+    "category": "email-productivity",
     "shortDescription": "Logiciel de cold email B2B : envoi à froid à volume avec comptes multiples, warmup (chauffe des boîtes), campagnes et suivi de délivrabilité.",
     "shortDescriptionEn": "B2B cold email software: high-volume sending with multiple accounts, account warm-up, campaign management, and deliverability tracking.",
     "description": "Logiciel de cold email B2B : envoi à froid à volume avec comptes multiples, warmup (chauffe des boîtes), campagnes et suivi de délivrabilité.\n\nFonctions clés : Envoi cold email multi-comptes ; Warmup automatique des boîtes ; Campagnes et séquences de relance ; Suivi de délivrabilité.\n\nInstantly s'impose pour de l'outbound à froid à volume avec plusieurs boîtes ; pour une newsletter ou du transactionnel, un autre type d'outil convient mieux.",
@@ -117499,15 +117499,15 @@
   {
     "id": "prowritingaid",
     "name": "ProWritingAid",
-    "shortDescription": "Assistant d’écriture pour améliorer style",
-    "description": "ProWritingAid, c'est assistant d’écriture pour améliorer style. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les auteurs et newslettistes et les consultants B2B.\n\nSpécialisé en writing assistant, et interface professionnelle. Gain de temps estimé : 6h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "shortDescription": "Assistant d’écriture pour améliorer style, grammaire et clarté.",
+    "description": "ProWritingAid, c'est assistant d’écriture pour améliorer style, grammaire et clarté. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les auteurs et newslettistes et les consultants B2B.\n\nSpécialisé en writing assistant, et interface professionnelle. Gain de temps estimé : 6h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
     "category": "creation",
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
     },
-    "website": " grammaire et clarté.",
-    "affiliateLink": " grammaire et clarté.",
+    "website": "https://prowritingaid.com",
+    "affiliateLink": "https://prowritingaid.com",
     "pros": [
       "Analyse de style bien plus poussée que la seule grammaire.",
       "Rapports utiles pour l'écriture longue et la fiction.",
@@ -117571,9 +117571,9 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "prowritingaid",
-    "shortDescriptionEn": "Writing assistant to improve style",
-    "longDescription": "ProWritingAid, c'est assistant d’écriture pour améliorer style. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les auteurs et newslettistes et les consultants B2B.\n\nSpécialisé en writing assistant, et interface professionnelle. Gain de temps estimé : 6h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "ProWritingAid is writing assistant to improve style. Free to start, paid plans for more. Built for writers and newsletter creators and B2B consultants.\n\nSpecialized in writing assistant, and professional interface. Estimated time saving: 6h/month.\n\nKeep it if: regular usage or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. Free, worth keeping if useful.",
+    "shortDescriptionEn": "Writing assistant to improve style, grammar and clarity.",
+    "longDescription": "ProWritingAid, c'est assistant d’écriture pour améliorer style, grammaire et clarté. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les auteurs et newslettistes et les consultants B2B.\n\nSpécialisé en writing assistant, et interface professionnelle. Gain de temps estimé : 6h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "longDescriptionEn": "ProWritingAid is writing assistant to improve style, grammar and clarity. Free to start, paid plans for more. Built for writers and newsletter creators and B2B consultants.\n\nSpecialized in writing assistant, and professional interface. Estimated time saving: 6h/month.\n\nKeep it if: regular usage or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. Free, worth keeping if useful.",
     "pricingEn": {
       "free": "All features",
       "paid": "Paid version available"
@@ -117591,7 +117591,7 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
-    "websiteUrl": " grammaire et clarté.",
+    "websiteUrl": "https://prowritingaid.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -134327,15 +134327,15 @@
   {
     "id": "sendible",
     "name": "Sendible",
-    "shortDescription": "Outil de gestion des réseaux sociaux pour agences (programmation",
-    "description": "Sendible, c'est outil de gestion des réseaux sociaux pour agences (programmation. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "shortDescription": "Outil de gestion des réseaux sociaux pour agences (programmation, analyses, rapports).",
+    "description": "Sendible, c'est outil de gestion des réseaux sociaux pour agences (programmation, analyses, rapports). Gratuit pour commencer, payant pour aller plus loin. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
     "category": "email-productivity",
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
     },
-    "website": " rapports).",
-    "affiliateLink": " rapports).",
+    "website": "https://www.sendible.com",
+    "affiliateLink": "https://www.sendible.com",
     "pros": [
       "Utilisateurs illimités sur tous les plans.",
       "Tarification simple et prévisible (par workspace, pas par siège).",
@@ -134402,7 +134402,7 @@
     "ia_use_case": null,
     "slug": "sendible",
     "shortDescriptionEn": "Social media management tool for agencies (scheduling, analytics, reporting).",
-    "longDescription": "Sendible, c'est outil de gestion des réseaux sociaux pour agences (programmation. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "longDescription": "Sendible, c'est outil de gestion des réseaux sociaux pour agences (programmation, analyses, rapports). Gratuit pour commencer, payant pour aller plus loin. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
     "longDescriptionEn": "Sendible is social media management tool for agencies (scheduling, analytics, reporting). Free to start, paid plans for more. Built for e-commerce sellers and SaaS founders.\n\nEstimated time saving: 3h/month.",
     "pricingEn": null,
     "pricing_v5": {
@@ -134418,7 +134418,7 @@
       "verification_status": "official_site_only",
       "compare_price_monthly_eur": 0
     },
-    "websiteUrl": " rapports).",
+    "websiteUrl": "https://www.sendible.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -142578,7 +142578,7 @@
     "name": "Squarespace",
     "shortDescription": "Plateforme hébergée pour créer des sites, boutiques et espaces de contenu avec éditeur visuel, modèles, hébergement, SEO et outils commerciaux intégrés.",
     "description": "Plateforme hébergée pour créer des sites, boutiques et espaces de contenu avec éditeur visuel, modèles, hébergement, SEO et outils commerciaux intégrés.\n\nFonctions clés : Éditeur visuel et modèles adaptatifs ; Hébergement géré, SSL et bande passante ; Vente de produits, services et contenus ; Outils SEO, statistiques et visibilité IA.\n\nChoisissez Squarespace si la plateforme remplace plusieurs étapes récurrentes; sinon, une solution plus légère suffit.",
-    "category": "automation",
+    "category": "nocode-web",
     "pricing": {
       "free": "Essai gratuit de 14 jours sans carte bancaire, sans plan gratuit permanent.",
       "paid": "Basic: À partir de 19 $/mois avec facturation annuelle, tarif localisé ; Core: Montant localisé sur la page officielle ; Plus: Montant localisé sur la page officielle ; Advanced: Montant localisé sur la page officielle"
@@ -162169,15 +162169,15 @@
   {
     "id": "visme",
     "name": "Visme",
-    "shortDescription": "Plateforme de création de contenus visuels (présentations",
-    "description": "Visme, c'est plateforme de création de contenus visuels (présentations. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les community managers.\n\nSpécialisé en visual content, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "shortDescription": "Plateforme de création de contenus visuels (présentations, infographies).",
+    "description": "Visme, c'est plateforme de création de contenus visuels (présentations, infographies). Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les community managers.\n\nSpécialisé en visual content, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
     "category": "creation",
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
     },
-    "website": " infographies).",
-    "affiliateLink": " infographies).",
+    "website": "https://www.visme.co",
+    "affiliateLink": "https://www.visme.co",
     "pros": [
       "Large éventail de types de contenus (présentations, infographies…).",
       "Modèles et assets nombreux.",
@@ -162241,9 +162241,9 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "visme",
-    "shortDescriptionEn": "Visual content creation platform (presentations",
-    "longDescription": "Visme, c'est plateforme de création de contenus visuels (présentations. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les community managers.\n\nSpécialisé en visual content, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
-    "longDescriptionEn": "Visme is visual content creation platform (presentations. Free to start, paid plans for more. Built for graphic designers and community managers.\n\nSpecialized in visual content, and professional interface. Estimated time saving: 5h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to check depending on usage. Free, keep it if it's useful.",
+    "shortDescriptionEn": "Visual content creation platform (presentations, infographics).",
+    "longDescription": "Visme, c'est plateforme de création de contenus visuels (présentations, infographies). Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les community managers.\n\nSpécialisé en visual content, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Gratuit, à garder si utile.",
+    "longDescriptionEn": "Visme is visual content creation platform (presentations, infographics). Free to start, paid plans for more. Built for graphic designers and community managers.\n\nSpecialized in visual content, and professional interface. Estimated time saving: 5h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to check depending on usage. Free, keep it if it's useful.",
     "pricingEn": {
       "free": "All features",
       "paid": "Paid version available"
@@ -162261,7 +162261,7 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
-    "websiteUrl": " infographies).",
+    "websiteUrl": "https://www.visme.co",
     "logo": "",
     "verdictEn": {
       "keepIf": [
@@ -166128,7 +166128,7 @@
     "name": "Wix",
     "shortDescription": "Plateforme hébergée pour créer des sites web, boutiques et services en ligne avec éditeur visuel, génération IA, modèles et outils métier intégrés.",
     "description": "Plateforme hébergée pour créer des sites web, boutiques et services en ligne avec éditeur visuel, génération IA, modèles et outils métier intégrés.\n\nFonctions clés : Éditeur visuel et constructeur par IA ; Plus de 2 000 modèles personnalisables ; Hébergement géré et sécurité intégrée ; Boutique, paiements, réservations et marketing.\n\nChoisissez Wix si la plateforme remplace plusieurs étapes récurrentes; sinon, une solution plus légère suffit.",
-    "category": "automation",
+    "category": "nocode-web",
     "pricing": {
       "free": "Plan gratuit avec hébergement et URL Wix, sans domaine personnalisé.",
       "paid": "Free: Gratuit ; Light: Tarif localisé sur la page officielle ; Core: Tarif localisé sur la page officielle ; Business: Tarif localisé sur la page officielle ; Business Elite: Tarif localisé sur la page officielle"
@@ -170656,7 +170656,7 @@
     "name": "Zendesk",
     "shortDescription": "Plateforme de support client omnicanal (email, chat, social, téléphone) avec IA intégrée.",
     "description": "Zendesk centralise toutes les conversations client (email, chat, réseaux sociaux, téléphone) dans un seul tableau de bord, avec des outils d'automatisation (triggers, macros, routage omnicanal) qui font gagner du temps aux équipes support.\n\nSon prix grimpe vite à mesure que l'équipe grandit, et le modèle tarifaire est l'un des plus complexes à anticiper du secteur — le prix affiché n'est rarement celui payé une fois les add-ons ajoutés.",
-    "category": "organization",
+    "category": "communication",
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 14 jours du plan Suite Professional",
       "paid": "Support Team à 19$/agent/mois (ticketing e-mail seul) ; Suite Team à 55$/agent/mois ; Suite Professional à 115$/agent/mois ; Enterprise sur devis."

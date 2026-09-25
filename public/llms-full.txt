@@ -4144,7 +4144,7 @@
     "slug": "dubsado",
     "url_fr": "https://tooltrim.com/fr/tool/dubsado",
     "url_en": "https://tooltrim.com/en/tool/dubsado",
-    "website": " planning).",
+    "website": "https://www.dubsado.com",
     "category": "crm",
     "monthly_price_eur": 20,
     "pricing": {
@@ -5423,7 +5423,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/freshservice",
     "url_en": "https://tooltrim.com/en/tool/freshservice",
     "website": "https://freshworks.com/freshservice",
-    "category": "organization",
+    "category": "communication",
     "monthly_price_eur": 19,
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 14 jours.",
@@ -6357,7 +6357,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/gusto",
     "url_en": "https://tooltrim.com/en/tool/gusto",
     "website": "https://gusto.com",
-    "category": "finance",
+    "category": "hris-payroll",
     "monthly_price_eur": 40,
     "pricing": {
       "free": "Non communiqué",
@@ -6596,8 +6596,8 @@
     "slug": "honeybook",
     "url_fr": "https://tooltrim.com/fr/tool/honeybook",
     "url_en": "https://tooltrim.com/en/tool/honeybook",
-    "website": " facturation).",
-    "category": "organization",
+    "website": "https://www.honeybook.com",
+    "category": "crm",
     "monthly_price_eur": 16,
     "pricing": {
       "free": "Essai gratuit 7 jours",
@@ -7007,7 +7007,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/instantly",
     "url_en": "https://tooltrim.com/en/tool/instantly",
     "website": "https://instantly.com",
-    "category": "project-management",
+    "category": "email-productivity",
     "monthly_price_eur": 40.36,
     "pricing": {
       "free": "Pas de palier gratuit permanent ; abonnement selon volume d'emails et de contacts.",
@@ -11972,15 +11972,15 @@
     "slug": "prowritingaid",
     "url_fr": "https://tooltrim.com/fr/tool/prowritingaid",
     "url_en": "https://tooltrim.com/en/tool/prowritingaid",
-    "website": " grammaire et clarté.",
+    "website": "https://prowritingaid.com",
     "category": "creation",
     "monthly_price_eur": 0,
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
     },
-    "description_fr": "Assistant d’écriture pour améliorer style",
-    "description_en": "Writing assistant to improve style"
+    "description_fr": "Assistant d’écriture pour améliorer style, grammaire et clarté.",
+    "description_en": "Writing assistant to improve style, grammar and clarity."
   },
   {
     "name": "Pterocos",
@@ -13689,14 +13689,14 @@
     "slug": "sendible",
     "url_fr": "https://tooltrim.com/fr/tool/sendible",
     "url_en": "https://tooltrim.com/en/tool/sendible",
-    "website": " rapports).",
+    "website": "https://www.sendible.com",
     "category": "email-productivity",
     "monthly_price_eur": 0,
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
     },
-    "description_fr": "Outil de gestion des réseaux sociaux pour agences (programmation",
+    "description_fr": "Outil de gestion des réseaux sociaux pour agences (programmation, analyses, rapports).",
     "description_en": "Social media management tool for agencies (scheduling, analytics, reporting)."
   },
   {
@@ -14534,7 +14534,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/squarespace",
     "url_en": "https://tooltrim.com/en/tool/squarespace",
     "website": "https://squarespace.com",
-    "category": "automation",
+    "category": "nocode-web",
     "monthly_price_eur": 20,
     "pricing": {
       "free": "Essai gratuit de 14 jours sans carte bancaire, sans plan gratuit permanent.",
@@ -16493,15 +16493,15 @@
     "slug": "visme",
     "url_fr": "https://tooltrim.com/fr/tool/visme",
     "url_en": "https://tooltrim.com/en/tool/visme",
-    "website": " infographies).",
+    "website": "https://www.visme.co",
     "category": "creation",
     "monthly_price_eur": 0,
     "pricing": {
       "free": "Toutes les fonctionnalités",
       "paid": "Version payante disponible"
     },
-    "description_fr": "Plateforme de création de contenus visuels (présentations",
-    "description_en": "Visual content creation platform (presentations"
+    "description_fr": "Plateforme de création de contenus visuels (présentations, infographies).",
+    "description_en": "Visual content creation platform (presentations, infographics)."
   },
   {
     "name": "VisualCV",
@@ -16918,7 +16918,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/wix",
     "url_en": "https://tooltrim.com/en/tool/wix",
     "website": "https://wix.com",
-    "category": "automation",
+    "category": "nocode-web",
     "monthly_price_eur": 20,
     "pricing": {
       "free": "Plan gratuit avec hébergement et URL Wix, sans domaine personnalisé.",
@@ -17368,7 +17368,7 @@
     "url_fr": "https://tooltrim.com/fr/tool/zendesk",
     "url_en": "https://tooltrim.com/en/tool/zendesk",
     "website": "https://zendesk.com",
-    "category": "organization",
+    "category": "communication",
     "monthly_price_eur": 19,
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 14 jours du plan Suite Professional",
