@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "slug": "wix",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Wix",
+    "vendor": "Wix.com Ltd.",
+    "officialUrl": "https://www.wix.com",
+    "docsUrl": "https://support.wix.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.wix.com/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "Wix Premium Plans" },
+    { "id": "s2", "url": "https://www.wix.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Wix homepage" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.wix.com/plans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Wix-branded subdomain (mysite.wixsite.com), no custom domain, Wix ads/branding, basic storage", "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "light",
+        "name": "Light",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 17.77, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2 GB storage, free custom domain (1 year), 2 site collaborators" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "core",
+        "name": "Core",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 29.77, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "50 GB storage, free custom domain (1 year), 5 site collaborators, ecommerce features" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 39.77, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "100 GB storage, free custom domain (1 year), 10 site collaborators" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business-elite",
+        "name": "Business Elite",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 159.77, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited storage, free custom domain (1 year), 100 site collaborators" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "light",
+    "addOns": [],
+    "cautions": [
+      { "en": "Monthly prices shown on the pricing page are already discounted list prices; an annual commitment is required to lock them in and the source page did not show a separate month-to-month rate.", "sourceIds": ["s1"] },
+      { "en": "The free plan does not allow a custom domain; a paid plan is required to remove Wix branding and use your own domain.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Drag-and-drop visual editor plus an AI website builder that generates a site from a text prompt.", "sourceIds": ["s2"] },
+      { "en": "Built-in ecommerce (product sales, subscriptions, memberships) and payment processing via Wix Payments.", "sourceIds": ["s2"] },
+      { "en": "Appointment scheduling, lead management/CRM, email marketing, and SEO tools included natively.", "sourceIds": ["s2"] },
+      { "en": "2000+ industry templates and a library of free graphics/animations.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free plan keeps a Wix-branded subdomain (mysite.wixsite.com); a custom domain requires a paid plan.", "sourceIds": ["s1"] },
+      { "en": "Switching templates after publishing a site is limited compared to code-based site builders; deep customization beyond the visual editor is constrained.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Google Analytics", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Facebook Pixel", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Zapier", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Google Search Console", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "wordpress", "reason": { "en": "Main competitor for building a full website with more code-level flexibility." } },
+    { "slug": "wordpress-com", "reason": { "en": "Hosted, no-code website builder aimed at a similar non-technical audience." } },
+    { "slug": "woocommerce", "reason": { "en": "Alternative when the priority is ecommerce on a self-hosted stack rather than an all-in-one hosted builder." } },
+    { "slug": "bubble", "reason": { "en": "No-code builder alternative for more app-like, logic-driven sites." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Squarespace", "officialUrl": "https://www.squarespace.com", "reason": "Major hosted website builder competitor, not in the catalogue" },
+    { "name": "Webflow", "officialUrl": "https://webflow.com", "reason": "Major visual web design competitor with more design control, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Exact annual (yearly-billed) per-month prices were not clearly separated from the monthly rate on the fetched pricing page; the page showed one set of prices with a general '50% savings' banner rather than two clean monthly/annual columns.",
+    "Whether displayed USD prices include tax was not stated on the pricing page.",
+    "Free plan exact storage/bandwidth caps were not itemized on the fetched page."
+  ],
+  "conflicts": []
+}

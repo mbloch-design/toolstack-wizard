@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "slug": "klaviyo",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Klaviyo",
+    "vendor": "Klaviyo, Inc.",
+    "officialUrl": "https://www.klaviyo.com/",
+    "docsUrl": "https://developers.klaviyo.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.klaviyo.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Klaviyo pricing" },
+    { "id": "s2", "url": "https://www.klaviyo.com/email-marketing", "tier": 1, "accessedOn": "2026-09-25", "title": "Klaviyo email marketing product page" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.klaviyo.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Up to 250 active profiles, 500 email sends/month, $5/month SMS credit, email support limited to first 60 days", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "marketing-starter",
+        "name": "Marketing",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 60, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry paid tier price scales with number of active contact profiles; $60/month is the starting rate above the free 250-profile threshold." }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "marketing-starter",
+    "addOns": [
+      { "en": "SMS/mobile messaging billed separately from email, usage-based on message volume.", "sourceIds": ["s1"] },
+      { "en": "Composer (AI campaign generation) has its own usage allowance, $5/month included on the free plan.", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Pricing is usage-based on the number of active contact profiles; the pricing page did not expose a full tiered price table by profile count during this pass, only the free threshold (250 profiles) and a starting paid rate.", "sourceIds": ["s1", "s2"] },
+      { "en": "SMS and email are priced and metered separately; a plan's email price does not include SMS sending volume.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Email marketing with campaign creation, automation flows (welcome, abandoned cart, post-purchase), A/B testing, and segmentation.", "sourceIds": ["s2"] },
+      { "en": "Omnichannel messaging: SMS, WhatsApp, mobile push, and social ad audience sync alongside email.", "sourceIds": ["s2"] },
+      { "en": "Unified customer profiles (B2C CRM) with predictive analytics for lifetime value and churn risk.", "sourceIds": ["s2"] },
+      { "en": "AI tools: Composer for prompt-based campaign generation and an AI Customer Agent.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free plan support is time-limited to the first 60 days rather than ongoing.", "sourceIds": ["s1"] },
+      { "en": "Pricing scales with contact list size, so cost grows automatically as an account's audience grows, independent of feature needs.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Shopify", "slug": null, "sourceIds": ["s2"] },
+      { "name": "WooCommerce", "slug": "woocommerce", "sourceIds": ["s2"] },
+      { "name": "BigCommerce", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Magento", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Wix", "slug": "wix", "sourceIds": ["s2"] },
+      { "name": "Salesforce Commerce Cloud", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "alternatives": [
+    { "slug": "mailchimp", "reason": { "en": "General email marketing competitor with a similar freemium entry point." } },
+    { "slug": "brevo", "reason": { "en": "Alternative email/SMS marketing platform with usage-based pricing on a similar audience." } },
+    { "slug": "activecampaign", "reason": { "en": "Competing marketing automation platform combining email and CRM-style features." } },
+    { "slug": "mailerlite", "reason": { "en": "Lower-cost email marketing alternative for smaller lists." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Omnisend", "officialUrl": "https://www.omnisend.com", "reason": "Direct ecommerce-focused email/SMS marketing competitor, not in the catalogue" }
+  ],
+  "unknowns": [
+    "Full tiered pricing table by active-profile count was not directly visible on the fetched pricing page in this pass; only the free tier (250 profiles) and a starting paid rate ($60/month) were confirmed.",
+    "Whether a free trial period exists for paid tiers was not clearly stated on the pricing page.",
+    "Exact SMS pricing mechanics (per-message cost, regional variation) were not captured in this pass."
+  ],
+  "conflicts": []
+}

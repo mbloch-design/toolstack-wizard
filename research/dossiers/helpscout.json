@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "slug": "helpscout",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Help Scout",
+    "vendor": "Help Scout PBC",
+    "officialUrl": "https://helpscout.com",
+    "docsUrl": "https://docs.helpscout.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://helpscout.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Help Scout pricing" },
+    { "id": "s2", "url": "https://helpscout.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Help Scout homepage" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://helpscout.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Up to 5 users, 1 inbox, 1 Docs (knowledge base) site, 100 contacts/month", "sourceIds": ["s1"] },
+    "trial": { "days": 15, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 25 users, 2 inboxes included (extra inboxes +$10/month), unlimited contacts, 150 basic workflows, 1 basic SLA policy" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 45, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 50 users, 5 inboxes included, 25 included light users, 500 advanced workflows, 2 advanced SLA policies" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 10,
+        "price": { "monthly": 75, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited users (10-seat minimum), 10 inboxes included, 50 included light users, unlimited workflows and SLA policies, advanced permissions, HIPAA compliance option" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [
+      { "en": "AI Answers add-on billed at $0.75 per resolution, with a 3-month free trial of unlimited resolutions.", "sourceIds": ["s1"] },
+      { "en": "Additional inboxes beyond a plan's included count cost +$10/month each.", "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Displayed per-user prices ($25/$45/$75) reflect an annual billing commitment; an explicit month-to-month rate and the stated ~16% annual discount were not both cleanly separated on the fetched page, so the true monthly-billed price may be higher.", "sourceIds": ["s1"] },
+      { "en": "The Pro plan requires a minimum of 10 seats even for a smaller team, which raises the effective entry cost of that tier.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Unified shared inbox for email and other channels, with saved replies, snooze, and send-later scheduling.", "sourceIds": ["s2"] },
+      { "en": "AI-assisted message drafting, conversation recapping, and translation.", "sourceIds": ["s2"] },
+      { "en": "Beacon: an embeddable support widget combining live chat, self-service help content, and AI-powered answers.", "sourceIds": ["s2"] },
+      { "en": "Workflow automation for routing and organizing conversations, plus reporting on response time and team performance.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 1 inbox and 100 contacts/month, too small for most active support teams.", "sourceIds": ["s1"] },
+      { "en": "Advanced permissions and HIPAA compliance are reserved for the top Pro tier, which has a 10-seat minimum.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Shopify", "slug": null, "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "intercom", "reason": { "en": "Direct competitor in email/chat customer support with a similar shared-inbox model." } },
+    { "slug": "crisp", "reason": { "en": "Lower-cost multi-channel customer support alternative." } },
+    { "slug": "zendesk", "reason": { "en": "Larger-scale customer support platform competitor with a broader feature set." } },
+    { "slug": "freshservice", "reason": { "en": "Alternative helpdesk platform, more IT/ITSM oriented but overlapping on ticketing." } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact month-to-month (non-annual) per-user price was not clearly isolated from the annual price on the fetched pricing page.",
+    "Whether displayed USD prices include tax was not stated on the pricing page.",
+    "Full list of the '100+ tools' referenced as integrations was not itemized in this pass beyond Shopify."
+  ],
+  "conflicts": [
+    { "en": "The seed data's pricingText listed Standard ~$25, Plus ~$38, Pro ~$63-65 per user/month, while the pricing page fetched in this session showed Standard $25, Plus $45, Pro $75. Kept the freshly fetched figures and flagged the discrepancy for review." }
+  ]
+}
