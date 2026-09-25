@@ -478,11 +478,11 @@
     "shortDescription": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
     "shortDescriptionEn": "Adobe's visual effects, motion graphics, and compositing application (Windows/macOS).",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai complet de 7 jours, converti en abonnement s'il n'est pas annulé.",
-      "paid": "After Effects individuel: 22,99 USD/mois, engagement annuel facturé mensuellement ; After Effects équipe: 37,99 USD/mois par licence, engagement annuel facturé mensuellement ; Creative Cloud Pro individuel: 69,99 USD/mois, engagement annuel facturé mensuellement"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 22,99 $/mois, plan After Effects (single app, individual)."
     },
-    "defaultMonthlyPrice": 26.21,
-    "compareMonthlyPrice": 26.21,
+    "defaultMonthlyPrice": 19.74,
+    "compareMonthlyPrice": 19.74,
     "affiliateLink": "https://adobe.com/products/aftereffects",
     "ogImageUrl": "https://www.adobe.com/cc-shared/fragments/products/after-effects/media_16c76e52536bb6390f3efd8c5d09ebd0dd95d28ed.jpg?format=jpg&optimize=medium&width=750",
     "tool_type": "metier",
@@ -503,8 +503,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "freeAlternative": "DaVinci Resolve",
     "substitutable": false
@@ -860,14 +859,14 @@
     "slug": "adobe-lightroom",
     "name": "Adobe Lightroom",
     "categoryId": "design-tools",
-    "shortDescription": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.",
-    "shortDescriptionEn": "Adobe's photo organization and editing application, designed to manage and batch-edit thousands of photos.",
+    "shortDescription": "Application Adobe d'édition et d'organisation photo synchronisée dans le cloud, vendue uniquement en abonnement Creative Cloud.",
+    "shortDescriptionEn": "Adobe's cloud-synced photo editing and organization app, sold only as a Creative Cloud subscription.",
     "pricing": {
-      "free": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite).",
-      "paid": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 11,99 $/mois, plan Lightroom."
     },
-    "defaultMonthlyPrice": 11.03,
-    "compareMonthlyPrice": 11.03,
+    "defaultMonthlyPrice": 10.3,
+    "compareMonthlyPrice": 10.3,
     "affiliateLink": "https://adobe.com/products/lightroom",
     "ogImageUrl": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -889,8 +888,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "substitutable": false,
     "betterAlternative": {
@@ -950,10 +948,11 @@
     "shortDescription": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
     "shortDescriptionEn": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality.",
     "pricing": {
-      "free": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite).",
-      "paid": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite)."
+      "free": "Plan gratuit : Audio-only enhancement (no video), single-file processing, files capped at 30 minutes / 500 MB, 1 hour of enhancement per day, Studio downloads capped at 30-minute projects twice a day, no original-recording downloads, audiograms are branded.",
+      "paid": "Dès 9,99 $/mois, plan Premium."
     },
-    "compareMonthlyPrice": 11.99,
+    "defaultMonthlyPrice": 8.58,
+    "compareMonthlyPrice": 8.58,
     "affiliateLink": "https://podcast.adobe.com",
     "ogImageUrl": "/tool-media/adobe-podcast/enhance-speech.webp",
     "tool_type": "ia",
@@ -975,8 +974,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "alix"
+      "THEO"
     ]
   },
   {
@@ -3522,11 +3520,11 @@
     "shortDescription": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
     "shortDescriptionEn": "Project management and team collaboration software.",
     "pricing": {
-      "free": "Plan gratuit limité (1 projet, jusqu'à 20 personnes)",
-      "paid": "Plus à 15$/utilisateur/mois, ou Pro Unlimited à 299$/mois (utilisateurs illimités)"
+      "free": "Plan gratuit : 1 active project, up to 20 people, 1 GB storage, no time limit",
+      "paid": "Dès 15 $/mois, plan Basecamp Plus."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": "https://basecamp.com",
     "ogImageUrl": "https://basecamp.com/assets/images/opengraph/basecamp.png?v=1.3.12",
     "substitution_cluster_v2": "project-management-general",
@@ -3545,7 +3543,10 @@
       "PME",
       "Agences"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "bear",
@@ -5493,14 +5494,14 @@
     "slug": "capture-one",
     "name": "Capture One",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel professionnel d'édition et de gestion de photos pour photographes. Offre contrôle avancé couleur/détail, tethering en temps réel, gestion d'assets, collaboration. Utilisé en studio par photographes de mode, produit, mariage, paysage.",
-    "shortDescriptionEn": "Professional photo editing and management software for photographers. Offers advanced color/detail control, real-time tethering, asset management, collaboration. Used in studios by fashion, product, wedding, and landscape photographers.",
+    "shortDescription": "Logiciel professionnel d'édition RAW et de tethering, disponible en abonnement ou en licence perpétuelle.",
+    "shortDescriptionEn": "Professional RAW photo editing and tethering software, available as a subscription or a perpetual license.",
     "pricing": {
-      "free": "Essai gratuit 30 jours complet. Essai gratuit 7 jours sur iOS/iPad inclus.",
-      "paid": "Capture One Pro: 17 $/mois (annuel) ou 26 $/mois (mensuel) ; Capture One All-in-One: 23,25 $/mois (annuel) ou 36 $/mois (mensuel, avec iPad/mobile/cloud) ; Capture One Studio: 45,75 $/mois (annuel) ou 59 $/mois (mensuel, équipes/volumes) ; Licence perpétuelle desktop: ~317 $ (sans mises à jour features incluses)"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 20,50 €/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 24,
-    "compareMonthlyPrice": 24,
+    "defaultMonthlyPrice": 20.5,
+    "compareMonthlyPrice": 20.5,
     "affiliateLink": "https://captureone.com",
     "ogImageUrl": "https://cdn.captureone.com/images/fpl48n9r/production/e3a4a775b5052c37ae8630062ba2485fe520d80d-1456x970.jpg?auto=format",
     "tool_type": "metier",
@@ -5520,7 +5521,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia"
+      "SOFIA"
     ],
     "substitutable": false
   },
@@ -6272,13 +6273,14 @@
     "slug": "clerk",
     "name": "Clerk",
     "categoryId": "security",
-    "shortDescription": "Authentification moderne pour apps web avec login, organisations et gestion utilisateurs.",
-    "shortDescriptionEn": "Modern authentication for web apps with login, organizations, and user management.",
+    "shortDescription": "Plateforme d'authentification et de gestion utilisateur avec interface préconstruite, gratuite jusqu'à 50 000 utilisateurs actifs mensuels par app.",
+    "shortDescriptionEn": "Authentication and user management platform with prebuilt UI, free up to 50,000 monthly retained users per app.",
     "pricing": {
-      "free": "",
-      "paid": "Tarif à vérifier selon plan et usage"
+      "free": "Plan gratuit : Up to 50,000 monthly retained users per app, up to 3 dashboard seats, fixed 7-day session lifetime, no credit card required",
+      "paid": "Dès 20 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 25,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "websiteUrl": "https://clerk.com",
     "ogImageUrl": "https://clerk.com/opengraph-image.jpg?opengraph-image.0goco-shezoln.jpg?dpl=dpl_ajEdGFdpAStkW6FsrkyGKbGcMsxE",
     "tool_type": "metier",
@@ -8304,12 +8306,13 @@
     "slug": "dependabot",
     "name": "Dependabot",
     "categoryId": "security",
-    "shortDescription": "Mises à jour automatiques des dépendances et alertes de sécurité, 100% gratuit sur GitHub.",
-    "shortDescriptionEn": "Automatic dependency updates and security alerts, 100% free on GitHub.",
+    "shortDescription": "Le bot gratuit et intégré de GitHub qui ouvre des pull requests pour corriger les dépendances vulnérables ou obsolètes.",
+    "shortDescriptionEn": "GitHub's free, built-in bot that opens pull requests to patch vulnerable or outdated dependencies.",
     "pricing": {
-      "free": "100% gratuit, sur tout repo GitHub (public ou privé), tous plans.",
-      "paid": ""
+      "free": "Plan gratuit : Fully free on all GitHub plans, for both public and private repositories, no usage limits",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://github.com/dependabot",
     "ogImageUrl": "https://avatars.githubusercontent.com/u/27347476?s=280&amp;v=4",
     "tool_type": "metier",
@@ -11912,14 +11915,14 @@
     "slug": "freshservice",
     "name": "Freshservice",
     "categoryId": "communication",
-    "shortDescription": "Helpdesk IT et ITSM avec gestion d'actifs, conforme ITIL, pour équipes support qui dépassent le ticketing basique.",
-    "shortDescriptionEn": "IT helpdesk and ITSM with asset management, ITIL-aligned, for support teams outgrowing basic ticketing.",
+    "shortDescription": "Plateforme de gestion de service et d'actifs IT avec une grille de prix par agent, du ticketing basique à l'ITSM d'entreprise.",
+    "shortDescriptionEn": "IT service and asset management platform with a per-agent pricing ladder from basic ticketing to enterprise ITSM.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours.",
-      "paid": "Starter 19$/agent/mois (facturation annuelle, 29$ en mensuel) ; Growth 49$/59$ ; Pro 99$ ; Enterprise sur devis."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 €/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 19,
-    "compareMonthlyPrice": 19,
+    "defaultMonthlyPrice": 15,
+    "compareMonthlyPrice": 15,
     "affiliateLink": "https://freshworks.com/freshservice",
     "ogImageUrl": "https://dam.freshworks.com/asset/aac3abf3-7dca-4397-b868-c29415ecebaa/ex-lp-og-image.webp",
     "logo": "https://logo.clearbit.com/freshworks.com",
@@ -11938,7 +11941,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "marc"
+      "CLAIRE"
     ]
   },
   {
@@ -12400,11 +12403,11 @@
     "slug": "ae-gifgun",
     "name": "GifGun",
     "categoryId": "design-tools",
-    "shortDescription": "GifGun 2 est un plugin After Effects et un outil de bureau qui exporte les compositions After Effects en formats multiples : GIF, WEBP, WEBM, et MP4. Réputé pour son interface simple et ses optimisations de compression (réduction de taille jusqu'à 15% avec qualité améliorée).",
-    "shortDescriptionEn": "GifGun 2 is an After Effects plugin and desktop tool that exports compositions to multiple formats: GIF, WEBP, WEBM, and MP4. Known for simple interface and compression optimization (up to 15% size reduction with improved quality).",
+    "shortDescription": "Plugin After Effects, application de bureau et application web en achat unique pour exporter des fichiers GIF, WEBP, WEBM et MP4 compressés.",
+    "shortDescriptionEn": "One-time-purchase After Effects plugin, desktop app and web app for exporting compressed GIF, WEBP, WEBM and MP4 files.",
     "pricing": {
-      "free": "Pas de version gratuite, pas d'essai gratuit visible. Achat unique requis pour accéder au plugin et à l'application.",
-      "paid": "GifGun 2 (Single Purchase): 39,99 USD (licence perpétuelle pour v2, accès plugin + app desktop) ; Upgrade de v1 à v2: Tarifs réduits selon date d'achat de v1"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 39,99 $ (licence à vie), plan Single User License."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://aescripts.com/gifgun",
@@ -12427,8 +12430,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "ALIX"
     ],
     "substitutable": false
   },
@@ -13067,11 +13069,11 @@
     "shortDescription": "Le standard du stockage cloud.",
     "shortDescriptionEn": "The standard for cloud storage.",
     "pricing": {
-      "free": "15 Go",
-      "paid": "2$/mois pour 100 Go"
+      "free": "Plan gratuit : 15 GB shared across Drive, Gmail, and Google Photos",
+      "paid": "Dès 1,67 $/mois, plan Google One Basic (100GB)."
     },
-    "defaultMonthlyPrice": 1.73,
-    "compareMonthlyPrice": 1.73,
+    "defaultMonthlyPrice": 1.43,
+    "compareMonthlyPrice": 1.43,
     "affiliateLink": "https://google.com/drive",
     "ogImageUrl": "https://lh3.googleusercontent.com/_HSqqBvJJpopAd2znZ8-VHWZ2-470iy7MSjVhdcJfXMF3-caNsWDwJrHQkBxbdGVg_tfsiAWOTpIzVJjARBVeHSlwXWxhQPULyP4=w1200-e365",
     "bundle_parent": "google-workspace",
@@ -13094,6 +13096,9 @@
       "Utilisateurs de Google Workspace"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ],
     "freeAlternative": "google-drive"
   },
   {
@@ -14545,12 +14550,12 @@
     "shortDescription": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
     "shortDescriptionEn": "Heatmaps, session replays, and surveys to understand user behaviour.",
     "pricing": {
-      "free": "Offre gratuite limitée (longtemps 35 sessions par jour)",
-      "paid": "Plus à environ 32$/mois, Business au-delà"
+      "free": "Plan gratuit : Experience Analytics (heatmaps + session replay): 200,000 sessions/month, 1 project. Includes 100 survey responses/month and 5 user interviews/month (Voice of Customer free tier).",
+      "paid": "Dès 49 $/mois, plan Growth."
     },
-    "defaultMonthlyPrice": 32,
-    "compareMonthlyPrice": 32,
-    "affiliateLink": "https://hotjar.com",
+    "defaultMonthlyPrice": 42.08,
+    "compareMonthlyPrice": 42.08,
+    "affiliateLink": "https://contentsquare.com/hotjar/",
     "ogImageUrl": "https://images.ctfassets.net/lh3zuq09vnm2/zsJe5ujXWMeNJScarO5jX/92ee747a96ef4a5998f9a1b10b2bb737/hotjar_og_image_Jul22.png",
     "substitution_cluster_v2": "analytics",
     "functional_needs": [
@@ -14570,8 +14575,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "theo"
+      "SOFIA"
     ],
     "betterAlternative": {
       "tool": "microsoft-clarity",
@@ -20938,13 +20942,14 @@
     "slug": "mongodb-atlas",
     "name": "MongoDB Atlas",
     "categoryId": "nocode-web",
-    "shortDescription": "Base de données NoSQL managée dans le cloud, avec une offre gratuite pour démarrer.",
-    "shortDescriptionEn": "Managed cloud NoSQL database, with a free tier to get started.",
+    "shortDescription": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage.",
+    "shortDescriptionEn": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.",
     "pricing": {
-      "free": "Cluster gratuit M0 (512 Mo, partagé)",
-      "paid": "Paliers Flex à l'usage, clusters dédiés à partir de 57$/mois (M10)"
+      "free": "Plan gratuit : M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
+      "paid": "Dès 57 $/mois, plan Dedicated (M10)."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 48.95,
+    "compareMonthlyPrice": 48.95,
     "websiteUrl": "https://mongodb.com/atlas",
     "ogImageUrl": "https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png",
     "tool_type": "metier",
@@ -20963,7 +20968,10 @@
       "Startups",
       "Équipes produit"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "moobot",
@@ -21197,11 +21205,11 @@
     "slug": "motion-bro",
     "name": "Motion Bro",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin et marché d'assets pour After Effects et Premiere Pro, fournissant accès à un panel de transitions, presets, lower thirds et effets sonores directement intégrés à la timeline.",
-    "shortDescriptionEn": "Plugin and asset marketplace for After Effects and Premiere Pro, providing access to a library of transitions, presets, lower thirds, and sound effects directly within the timeline.",
+    "shortDescription": "Plugin gratuit pour After Effects et Premiere Pro donnant accès en un clic à des packs de transitions et presets payants.",
+    "shortDescriptionEn": "Free plugin for After Effects and Premiere Pro giving one-click access to paid transition and preset packs.",
     "pricing": {
-      "free": "Plugin gratuit pour tous + 1 400 assets. Accès illimité à la bibliothèque de transitions, presets et effets.",
-      "paid": "Essential Transitions Bundle (After Effects) — Personal: $55 (one-time purchase) ; Essential Transitions Bundle (After Effects) — Commercial: $110 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Personal: $68 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Commercial: $136 (one-time purchase)"
+      "free": "Plan gratuit : Motion Bro plugin itself is free with no paid tier; only individual asset packs and bundles are paid",
+      "paid": "Dès 0 $ (licence à vie), plan Motion Bro plugin."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://motionbro.com",
@@ -21223,8 +21231,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "sofia",
-      "alix"
+      "ALIX"
     ],
     "substitutable": false
   },
@@ -21958,9 +21965,14 @@
     "slug": "nordpass",
     "name": "NordPass",
     "categoryId": "security",
-    "shortDescription": "Gestionnaire de mots de passe par NordVPN",
-    "shortDescriptionEn": "Password manager by NordVPN.",
+    "shortDescription": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège.",
+    "shortDescriptionEn": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
+    "pricing": {
+      "free": "Plan gratuit : 1 account, single device only, no Password Health or Data Breach Scanner",
+      "paid": "Dès 1,99 €/mois, plan Premium."
+    },
     "defaultMonthlyPrice": 1.99,
+    "compareMonthlyPrice": 1.99,
     "websiteUrl": "https://nordpass.com",
     "ogImageUrl": "https://sb.nordcdn.com/transform/3d7f8d78-75bf-422b-9481-bc4a26643afe/nordpass-meta-trademark",
     "substitution_cluster_v2": "password-manager",
@@ -21975,7 +21987,10 @@
       "Familles",
       "Petites équipes"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "notch",
@@ -22016,14 +22031,14 @@
     "slug": "notion",
     "name": "Notion",
     "categoryId": "organization",
-    "shortDescription": "Espace de travail connecté qui réunit notes, documents, wikis, bases de données et gestion de projets, avec une couche d'IA intégrée.",
-    "shortDescriptionEn": "Connected workspace bringing together notes, docs, wikis, databases and project management, with a built-in AI layer.",
+    "shortDescription": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+    "shortDescriptionEn": "All-in-one workspace for notes, docs, wikis and databases, with a generous free plan and per-seat paid tiers.",
     "pricing": {
-      "free": "Gratuit et très généreux pour un usage individuel",
-      "paid": "Plus à 10$/utilisateur/mois (annuel) ; Business à 24$/utilisateur/mois (IA Notion incluse)"
+      "free": "Plan gratuit : Unlimited pages/blocks for individuals (limited for 2+ members), 5MB file uploads, 7-day page history, 10 guests",
+      "paid": "Dès 9,50 €/mois, plan Plus."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "defaultMonthlyPrice": 9.5,
+    "compareMonthlyPrice": 9.5,
     "affiliateLink": "https://notion.so",
     "ogImageUrl": "https://www.notion.com/front-static/meta/teams-and-agents.jpg",
     "substitution_cluster_v2": "knowledge-workspace",
@@ -22049,6 +22064,9 @@
       "founders"
     ],
     "prescription_quality": "ferme",
+    "personas": [
+      "CLAIRE"
+    ],
     "freeAlternative": "Obsidian"
   },
   {
@@ -27419,11 +27437,11 @@
     "shortDescription": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
     "shortDescriptionEn": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates).",
     "pricing": {
-      "free": "Pas de version gratuite. Essai possible (durée non spécifiée) via site Maxon. Abonnement seul modèle de facturation.",
-      "paid": "Red Giant + Universe (annuel): 639 USD/an (environ 53 USD/mois, facturé annuellement) ; Red Giant + Universe (mensuel): 85 USD/mois (facturation mensuelle, aucun engagement)"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 53 $/mois, plan Red Giant (complet, avec Universe)."
     },
-    "defaultMonthlyPrice": 53,
-    "compareMonthlyPrice": 53,
+    "defaultMonthlyPrice": 45.51,
+    "compareMonthlyPrice": 45.51,
     "affiliateLink": "https://maxon.net/red-giant",
     "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Red-Giant/RLF_Zoom_Flower_Loop_01.gif?fm=webp&auto=format,compress&w=586&h=330&ar=16:9&fit=clip&crop=faces",
     "tool_type": "plugin",
@@ -27446,8 +27464,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "freeAlternative": "DaVinci Resolve",
     "substitutable": false
@@ -27771,9 +27788,10 @@
     "shortDescription": "Framework React full-stack (routes, loaders, rendu serveur), aujourd'hui fusionné dans React Router v7.",
     "shortDescriptionEn": "Full-stack React framework (routes, loaders, server rendering), now merged into React Router v7.",
     "pricing": {
-      "free": "Gratuit et open source (licence MIT)",
-      "paid": ""
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://remix.run",
     "tool_type": "metier",
     "substitution_cluster_v2": "nocode-web",
@@ -30600,11 +30618,11 @@
     "shortDescription": "Fournit des données numériques pour améliorer les stratégies marketing.",
     "shortDescriptionEn": "Provides digital data to improve marketing strategies.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://similarweb.com",
     "ogImageUrl": "https://static-us-east-1.similarcdn.com/build/20260630.master.80d6b3e/dist/scripts/lite-app/assets/e23cf3508cf10cb3b580.png",
     "substitution_cluster_v2": "email-outreach",
@@ -30620,7 +30638,10 @@
       "SEO / growth",
       "Analystes de marché"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "simple-analytics",
@@ -34380,12 +34401,12 @@
     "shortDescription": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.",
     "shortDescriptionEn": "Desktop software (Mac/Windows) for AI video enhancement: upscaling, denoising, interpolation, and stabilization.",
     "pricing": {
-      "free": "Essai possible selon l'éditeur ; traitement en local sur la machine.",
-      "paid": "Personal: 25 $/mois (annuel) ou 39 $/mois (mensuel) ; Pro: 58 $/mois (annuel) ou 74 $/mois (mensuel)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 25 $/mois, plan Personal."
     },
-    "defaultMonthlyPrice": 21.4,
-    "compareMonthlyPrice": 21.4,
-    "affiliateLink": "https://topazlabs.com/topaz-video-ai",
+    "defaultMonthlyPrice": 21.47,
+    "compareMonthlyPrice": 21.47,
+    "affiliateLink": "https://www.topazlabs.com/topaz-video-ai",
     "ogImageUrl": "/tool-media/topaz-video-ai/interface.webp",
     "substitution_cluster_v2": "ai-video-enhancement",
     "functional_needs": [
@@ -34403,8 +34424,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ]
   },
   {
@@ -36711,10 +36731,11 @@
     "shortDescription": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024.",
     "shortDescriptionEn": "Send large files by link, no account needed. Free tier capped since 2024.",
     "pricing": {
-      "free": "3 Go par envoi, 10 transferts par mois, liens valables 3 jours",
-      "paid": "Starter à 6,99 $/mois (300 Go par envoi), formules supérieures au-delà"
+      "free": "Plan gratuit : 3 GB per transfer, capped at 10 transfers per rolling 30 days, links valid 3 days, individual non-commercial use only, ads shown",
+      "paid": "Dès 7 $/mois, plan Starter."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 6.01,
+    "compareMonthlyPrice": 6.01,
     "websiteUrl": "https://wetransfer.com",
     "ogImageUrl": "/wt-facebook.png",
     "substitution_cluster_v2": "file-transfer",
@@ -36732,6 +36753,9 @@
       "Petites équipes"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "ALIX"
+    ],
     "freeAlternative": "Google Drive",
     "betterAlternative": {
       "tool": "google-drive",

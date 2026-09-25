@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "slug": "adobe-premiere-pro",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Adobe Premiere Pro",
+    "vendor": "Adobe Inc.",
+    "officialUrl": "https://www.adobe.com/products/premiere.html",
+    "docsUrl": "https://helpx.adobe.com/premiere-pro/user-guide.html",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.adobe.com/products/premiere.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Premiere Pro pricing and details" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.adobe.com/products/premiere.html",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "single-app",
+        "name": "Premiere Pro (single app)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 22.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Premiere Pro only, annual plan billed monthly; does not include the rest of Creative Cloud" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Premiere Pro for teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 37.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Per-license team pricing, annual plan billed monthly" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "single-app",
+    "addOns": [],
+    "cautions": [
+      { "en": "Adobe Premiere Pro is subscription-only: no perpetual license is offered.", "sourceIds": ["s1"] },
+      { "en": "The Creative Cloud Pro bundle price shown ($34.99/mo) is an introductory offer for the first 3 months, rising to $69.99/mo after; this is excluded from the compared plan.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Video editing, title animation, effects, and sound mixing in one timeline-based editor", "sourceIds": ["s1"] },
+      { "en": "AI-powered media search and text-based editing", "sourceIds": ["s1"] },
+      { "en": "Generative effects via Adobe Firefly integration", "sourceIds": ["s1"] },
+      { "en": "Mobile editing on iOS and Android with cloud synchronization", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Subscription-only pricing, no one-time purchase or perpetual license option", "sourceIds": ["s1"] },
+      { "en": "Full Frame.io collaboration features and generative AI credits are gated behind higher-tier Creative Cloud plans", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Frame.io", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Adobe Firefly", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["windows", "macos", "ios", "android"]
+  },
+  "alternatives": [
+    { "slug": "davinci-resolve", "reason": { "en": "Professional NLE with a strong free tier and perpetual-license paid version" } },
+    { "slug": "adobe-after-effects", "reason": { "en": "Companion Adobe tool for motion graphics and compositing, often paired with Premiere" } }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact desktop platform requirements (Windows/Mac minimum versions) not extracted",
+    "Tax treatment (taxIncluded) not stated on the pricing page"
+  ],
+  "conflicts": []
+}

@@ -124,6 +124,19 @@ virgule et sa fin atterrissait dans les champs d'URL. A reinjecter :
 champs d'URL seuls pour `dubsado` et `honeybook`. Les URL officielles ont ete
 verifiees (HTTP 200) le 25/09/2026.
 
+## 2 quater. Fiches issues des dossiers de recherche (25/09/2026)
+
+Fusionnees par `scripts/research/merge.mjs` depuis `research/dossiers/<slug>.json`.
+A reinjecter pour chaque slug : `pricing_v5`, `pricing_v5_en`, `pricing`,
+`pricing_en`, `default_monthly_price`, `alternatives`, `tool_trim_rating`,
+`short_description(_en)`, `long_description(_en)`, `pros(_en)`, `cons(_en)`,
+`use_cases(_en)`, `verdict(_en)`, `personas`, `solo_relevance`,
+`team_relevance`, `seo`. Trois champs nouveaux n'existent pas encore dans la
+table (`tagline`, `lifecycle`, `research`) : a ajouter au schema ou a laisser
+dans le JSON.
+
+`adobe-after-effects`, `adobe-lightroom`, `adobe-podcast-ai`, `ae-gifgun`, `ae-red-giant`, `basecamp`, `capture-one`, `clerk`, `dependabot`, `freshservice`, `google-drive`, `hotjar`, `mongodb-atlas`, `motion-bro`, `nordpass`, `notion`, `remix`, `similarweb`, `topaz-video-ai`, `wetransfer`.
+
 ## 3. Verification apres reinjection
 
 ```bash

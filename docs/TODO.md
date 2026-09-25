@@ -18,10 +18,13 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [x] Dossiers v2 déplacés de `research/tool-pages/` vers `research/dossiers/` : le lot avait écrasé `notion.json`, fichier du circuit d'attestation (`scripts/research-attest.mjs`), comme il l'aurait fait pour framer, figma, linear, loom, n8n, webflow, wix, squarespace, calendly, google-workspace.
 - [ ] Points de relecture du lot test **[décision]** : NordPass Premium 1,99 €/mois vu sous une bannière promo (prix hors promo à revérifier) ; MongoDB Atlas comparé sur le palier dédié M10 (57 $) plutôt que Flex (8 $), règle précisée depuis ; Freshservice et Capture One sans tarif mensuel sans engagement (pages par défaut en annuel).
 - [ ] Relecture du lot test par Michael **[décision]** : qualité suffisante pour lancer la production ?
-- [ ] Script de fusion des dossiers validés vers `tools_v4.json` (prix de comparaison calculé depuis `comparePlanKey`, conversion de devise, note v2, alternatives), à écrire après le test
 - [x] Lot 1 fait en session cloud le 25/09/2026 : 10 dossiers valides, **coût 10 $ (1 $ par outil), jugé trop cher**. Trouvé : Hotjar racheté (Contentsquare), Remix fusionné dans React Router, Topaz Video AI renommé.
 - [x] Nouveau découpage décidé le 25/09/2026 : le crédit ne sert qu'aux 100 outils les plus cherchés (72 % de la demande), en mode « faits seuls » (section 0 du brief), 3 outils par session, effort bas. Lots `c1` à `c27` dans `research/queue.json` (`cloudBatches`).
-- [ ] Lot test `c1` (cargo-site, adobe-premiere-pro, adobe-photoshop) pour mesurer le coût du nouveau mode
+- [x] Lot test `c1` fait le 25/09/2026 (branche `research/c1`) : coût par fiche jugé acceptable par Michael. Limites : 1 source par outil, et pour Adobe un seul prix sur trois (22,99 $ = annuel payé au mois, noté « mensuel »).
+- [x] Script de fusion `scripts/research/merge.mjs` écrit et appliqué aux 20 dossiers complets (lots 0 et 1) le 25/09/2026, en local
+- [ ] Pousser les 20 fiches fusionnées, après décision sur NordPass et MongoDB Atlas **[décision]**
+- [ ] Lots `c2` à `c27` en cloud (3 outils par session)
+- [ ] Afficher le champ `tagline` des fiches dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « produit arrêté / racheté » depuis `lifecycle`
 - [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
 - [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`
 - [ ] 638 outils sans impression Google : non planifiés

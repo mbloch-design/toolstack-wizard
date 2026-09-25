@@ -41,10 +41,13 @@ export function convertAmount(amount: number, from: Currency, to: Currency): num
 }
 
 export function formatAmount(amount: number, currency: Currency, lang: string): string {
+  // Whole amounts stay whole (12 €); any cent shows both digits (9,50 €, not
+  // 9,5 €), the way a price is written everywhere else.
+  const cents = Math.round(amount * 100) % 100 !== 0;
   return new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", {
     style: "currency",
     currency,
-    minimumFractionDigits: 0,
+    minimumFractionDigits: cents ? 2 : 0,
     maximumFractionDigits: 2,
   }).format(amount);
 }
