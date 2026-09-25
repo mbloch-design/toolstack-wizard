@@ -66,14 +66,21 @@ La session tourne sur un crédit limité. Chaque action coûte.
 
 ## 3. Déroulé d'une session
 
+On travaille **directement sur `main`**, sans branche : les dossiers ne sont
+pas lus par le site, et un envoi qui ne touche que `research/` ou `docs/` ne
+déclenche aucun déploiement (règle `ignoreCommand` de `vercel.json`).
+
 ```bash
-git checkout -b research/batch-<ID>
 node scripts/research/seed.mjs --batch <ID>      # données existantes du lot
-# … recherche et rédaction, un fichier par outil …
-node scripts/research/validate.mjs <slug1> <slug2> …   # doit finir sans erreur
-git add research/dossiers/*.json && git commit -m "research(batch-<ID>): <slugs>"
-git push -u origin research/batch-<ID>
+# … recherche, un fichier par outil …
+node scripts/research/validate.mjs --stage facts <slug1> <slug2> …   # zéro erreur
+git add research/dossiers/<slug1>.json research/dossiers/<slug2>.json …
+git commit -m "research(<ID>): <slugs>"
+git pull --rebase origin main    # d'autres sessions ont pu pousser entre-temps
+git push origin main             # si refusé : refais pull --rebase puis push
 ```
+
+Ne commite **que** les fichiers des slugs du lot : jamais `git add .` ni `-a`.
 
 Ne modifie **aucun autre fichier** que `research/dossiers/<slug>.json` des
 slugs du lot. **Ne touche jamais `research/tool-pages/`** : ce dossier
@@ -356,7 +363,7 @@ Exécute docs/CLOUD_RESEARCH_BRIEF.md en mode cloud (section 0, faits seulement)
 Lis uniquement ce brief, puis lance `node scripts/research/seed.mjs --batch c1`.
 Respecte strictement la section 2 (budget) et la section 0. Un fichier research/dossiers/<slug>.json par outil, status "facts_collected", en anglais seulement. Ne touche jamais research/tool-pages/.
 Valide avec `node scripts/research/validate.mjs --stage facts <les slugs du lot>` jusqu'à zéro erreur.
-Commite uniquement ces fichiers sur une nouvelle branche research/c1, pousse-la, ne fusionne pas dans main.
+Commite uniquement ces fichiers directement sur main (pas de branche), puis `git pull --rebase origin main` et `git push origin main` (section 3).
 Termine par le compte rendu de la section 11, en bref.
 ```
 
@@ -373,12 +380,11 @@ Règles :
   par fiche au niveau d'une session courte. Ne fais jamais la recherche dans
   la session principale.
 - Les lots s'enchaînent **l'un après l'autre**, jamais en parallèle.
-- Tout se fait sur **une seule branche**, `research/<premier>-<dernier>`
-  (ex. `research/c3-c10`). Chaque sous-agent y commite ses fichiers, et la
-  session principale **pousse après chaque lot** : si la session s'arrête,
-  les lots finis sont conservés.
-- Le sous-agent ne crée pas de branche : il travaille sur la branche de la
-  session principale et ne pousse pas lui-même.
+- Tout se fait **directement sur `main`**, sans branche. Chaque sous-agent
+  commite ses fichiers, et la session principale **pousse après chaque lot**
+  (`git pull --rebase origin main` puis `git push origin main`) : si la
+  session s'arrête, les lots finis sont conservés.
+- Le sous-agent ne crée pas de branche et ne pousse pas lui-même.
 - La session principale ne garde de chaque lot que son compte rendu bref
   (section 11). Elle ne relit pas les dossiers.
 - Si un lot échoue deux fois à la validation, note-le et passe au suivant.
@@ -388,7 +394,7 @@ Règles :
 Prompt à coller (remplace `c3` et `c10`) :
 
 ```text
-Exécute la section 13 de docs/CLOUD_RESEARCH_BRIEF.md (mode enchaîné) pour les lots c3 à c10 de research/queue.json (cloudBatches), sur la branche research/c3-c10.
-Tu es le chef d'orchestre : pour chaque lot, lance un sous-agent qui exécute le prompt de la section 12 pour ce lot, sur ta branche, sans créer de branche ni pousser. Un lot après l'autre. Après chaque lot, vérifie que `node scripts/research/validate.mjs --stage facts` passe sur ses slugs, commite si besoin et pousse la branche.
+Exécute la section 13 de docs/CLOUD_RESEARCH_BRIEF.md (mode enchaîné) pour les lots c3 à c10 de research/queue.json (cloudBatches), directement sur main.
+Tu es le chef d'orchestre : pour chaque lot, lance un sous-agent qui exécute le prompt de la section 12 pour ce lot, sur main, sans créer de branche ni pousser. Un lot après l'autre. Après chaque lot, vérifie que `node scripts/research/validate.mjs --stage facts` passe sur ses slugs, commite si besoin, puis `git pull --rebase origin main` et `git push origin main`.
 Ne fais aucune recherche toi-même. Termine par le compte rendu global de la section 13.
 ```
