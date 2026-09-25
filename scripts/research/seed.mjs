@@ -6,6 +6,7 @@
  *
  *   node scripts/research/seed.mjs framer figma
  *   node scripts/research/seed.mjs --batch 3        # slugs of batch 3 in research/queue.json
+ *   node scripts/research/seed.mjs --batch c1       # a cloud batch (cloudBatches)
  *
  * Also lists, per tool, the catalogue slugs that may serve as alternatives
  * (same category or same substitution cluster): alternatives must be real
@@ -24,7 +25,7 @@ let slugs = process.argv.slice(2);
 const batchFlag = slugs.indexOf("--batch");
 if (batchFlag >= 0) {
   const queue = JSON.parse(fs.readFileSync(path.join(ROOT, "research/queue.json"), "utf8"));
-  const batch = queue.batches.find((b) => String(b.id) === String(slugs[batchFlag + 1]));
+  const batch = [...queue.batches, ...(queue.cloudBatches || [])].find((b) => String(b.id) === String(slugs[batchFlag + 1]));
   if (!batch) throw new Error(`batch ${slugs[batchFlag + 1]} not found in research/queue.json`);
   slugs = batch.slugs;
 }

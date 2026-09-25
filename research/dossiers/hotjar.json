@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "slug": "hotjar",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Hotjar",
+    "vendor": "Contentsquare",
+    "officialUrl": "https://contentsquare.com/hotjar/",
+    "docsUrl": "https://docs.contentsquare.com",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "acquired",
+    "statusNote": "Hotjar was acquired by Contentsquare (deal closed mid-2025). hotjar.com now 301/308-redirects to contentsquare.com (homepage to contentsquare.com/hotjar/, pricing page to contentsquare.com/pricing/). The Hotjar brand and product still exist inside the Contentsquare platform, but pricing and plans were restructured into three separately billed product lines: Experience Analytics (heatmaps/session replay, the historical core of Hotjar), Voice of Customer (surveys/interviews), and Product Analytics."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://contentsquare.com/hotjar/", "tier": 1, "accessedOn": "2026-09-25", "title": "Hotjar (Contentsquare) product page" },
+    { "id": "s2", "url": "https://contentsquare.com/pricing/?utm_source=hotjar-pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Contentsquare pricing page (JS-rendered, plan details not exposed to fetch)" },
+    { "id": "s3", "url": "https://quackback.io/blog/hotjar-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Hotjar Pricing in 2026: Plans, Session Limits, and the Contentsquare Merger (secondary source, used to cross-check plan numbers since the official pricing page is JS-rendered and the official support article was blocked)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://contentsquare.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": true,
+      "limits": "Experience Analytics (heatmaps + session replay): 200,000 sessions/month, 1 project. Includes 100 survey responses/month and 5 user interviews/month (Voice of Customer free tier).",
+      "sourceIds": ["s1", "s3"]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "200,000 sessions/month for heatmaps and session replay, 1 project.", "fr": "200 000 sessions/mois pour les heatmaps et les replays de sessions, 1 projet." },
+          { "en": "Unlimited seats included.", "fr": "Nombre de sièges illimité inclus." }
+        ],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 49, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Starts at $49/month (annual billing, card/PayPal) for the lowest session tier; scales with session volume up to roughly $739/month at 200K+ sessions.", "fr": "A partir de 49 $/mois (facturation annuelle, carte/PayPal) pour le palier de sessions le plus bas ; le prix augmente avec le volume, jusqu'a environ 739 $/mois pour 200 000+ sessions." },
+          { "en": "Invoice-based (non-card) billing is quoted separately, around $588/year at the entry tier, with no card-payment discount.", "fr": "La facturation sur facture (hors carte) est cotee separement, environ 588 $/an au palier d'entree, sans la remise reservee au paiement par carte." }
+        ],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom pricing, from roughly 1M+ sessions/month, up to 3 projects, retroactive filtering, AI replay summaries, revenue tracking.", "fr": "Prix sur devis, a partir d'environ 1 M+ sessions/mois, jusqu'a 3 projets, filtrage retroactif, resumes de replays par IA, suivi du revenu." }
+        ],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom pricing, unlimited projects, experience monitoring, error summaries, data feeds, SLAs.", "fr": "Prix sur devis, projets illimites, monitoring d'experience, synthese des erreurs, exports de donnees, SLA." }
+        ],
+        "sourceIds": ["s3"]
+      }
+    ],
+    "comparePlanKey": "growth",
+    "addOns": [
+      { "en": "Voice of Customer (surveys, interviews) is now a separate product/bill, starting around $99/month on Growth.", "fr": "Voice of Customer (sondages, entretiens) est desormais un produit et une facturation a part, a partir d'environ 99 $/mois sur Growth.", "sourceIds": ["s3"] },
+      { "en": "Product Analytics is a third separate product line with its own free and custom-priced tiers.", "fr": "Product Analytics est une troisieme ligne de produit distincte, avec ses propres paliers gratuits et sur devis.", "sourceIds": ["s3"] }
+    ],
+    "cautions": [
+      { "en": "The single Hotjar bill of the pre-acquisition era is gone: heatmaps/session replay, surveys, and product analytics are now three separately priced products, so replicating old Hotjar coverage can mean paying multiple bills.", "fr": "La facture unique Hotjar d'avant le rachat n'existe plus : heatmaps/replays, sondages et analytics produit sont desormais trois produits factures separement, donc retrouver la couverture de l'ancien Hotjar peut demander plusieurs factures.", "sourceIds": ["s3"] },
+      { "en": "Growth-tier price scales steeply with session volume (roughly 15x between the entry and top sub-tier), which is easy to underestimate when budgeting.", "fr": "Le prix du palier Growth grimpe fortement avec le volume de sessions (environ 15x entre le bas et le haut de la fourchette), ce qui est facile a sous-estimer lors du budget.", "sourceIds": ["s3"] },
+      { "en": "The official pricing page is JavaScript-rendered and could not be fully read directly; current figures were cross-checked against a secondary source and should be reverified before publishing exact numbers.", "fr": "La page de prix officielle est rendue en JavaScript et n'a pas pu etre lue integralement ; les chiffres actuels ont ete recoupes avec une source secondaire et devraient etre reverifies avant publication de montants exacts.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Heatmaps and 'Attention Maps' to visualize where users click, move, and scroll on a page.", "fr": "Heatmaps et 'Attention Maps' pour visualiser ou les utilisateurs cliquent, se deplacent et scrollent sur une page.", "sourceIds": ["s1"] },
+      { "en": "Session replay to watch recordings of real user sessions and spot friction or errors.", "fr": "Replay de sessions pour regarder des enregistrements d'utilisateurs reels et reperer les points de friction ou les erreurs.", "sourceIds": ["s1"] },
+      { "en": "On-site surveys and feedback widgets, plus recruiting for user interviews.", "fr": "Sondages sur site et widgets de feedback, ainsi que le recrutement pour des entretiens utilisateurs.", "sourceIds": ["s1"] },
+      { "en": "AI-generated summaries of heatmaps and recordings ('Sense AI'), plus a chat interface to query data in plain language.", "fr": "Resumes generes par IA des heatmaps et enregistrements ('Sense AI'), avec une interface de chat pour interroger les donnees en langage naturel.", "sourceIds": ["s1"] },
+      { "en": "Funnel and error monitoring to track drop-off and JavaScript errors affecting conversion.", "fr": "Suivi de funnels et des erreurs pour identifier l'abandon et les erreurs JavaScript qui impactent la conversion.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Core heatmap/session-replay coverage, surveys, and product analytics are now three separately priced products instead of one bundled plan.", "fr": "La couverture heatmaps/replays, les sondages et l'analytics produit sont desormais trois produits factures separement plutot qu'un seul forfait groupe.", "sourceIds": ["s3"] },
+      { "en": "Higher session volumes push pricing into steep, non-linear tiers, and Pro/Enterprise pricing is hidden behind a sales conversation.", "fr": "Les volumes de sessions eleves font grimper le prix de facon non lineaire, et les tarifs Pro/Enterprise ne sont accessibles qu'apres un echange commercial.", "sourceIds": ["s3"] },
+      { "en": "Session data on lower tiers is sampled/capped rather than exhaustive, which can miss lower-traffic pages or intermittent issues.", "fr": "Sur les paliers d'entree, les donnees de sessions sont echantillonnees/plafonnees plutot qu'exhaustives, ce qui peut faire manquer des pages a faible trafic ou des problemes intermittents.", "sourceIds": ["s3"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
+      { "name": "Jira", "slug": "jira", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "mobile"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A marketer, growth lead, or product person on a small team who needs to see how visitors actually behave on a site or app (where they click, where they drop off, what confuses them) without setting up a full analytics engineering stack.",
+      "fr": "Un ou une marketeur/growth/product dans une petite equipe qui a besoin de voir comment les visiteurs se comportent reellement sur un site ou une app (ou ils cliquent, ou ils abandonnent, ce qui les bloque) sans monter toute une stack d'analytics."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Spotting why visitors abandon a checkout or signup flow by watching session replays of real drop-offs.", "fr": "Comprendre pourquoi des visiteurs abandonnent un tunnel d'achat ou d'inscription en regardant les replays de sessions reelles." },
+    { "en": "Using heatmaps to check whether a redesigned landing page actually gets attention on the elements that matter.", "fr": "Utiliser les heatmaps pour verifier si une landing page redesignee attire vraiment l'attention sur les elements qui comptent." },
+    { "en": "Running an on-site survey to collect qualitative feedback on a specific page or feature.", "fr": "Lancer un sondage sur site pour recueillir du feedback qualitatif sur une page ou une fonctionnalite precise." }
+  ],
+  "alternatives": [
+    { "slug": "posthog", "reason": { "en": "The closest direct competitor: session replay, heatmaps, surveys, and product analytics in one open-core product, with a generous free tier.", "fr": "Le concurrent direct le plus proche : replay de sessions, heatmaps, sondages et analytics produit dans un seul outil open-core, avec un palier gratuit genereux." } },
+    { "slug": "amplitude", "reason": { "en": "Overlaps on behavioral/session analytics for product teams that want deeper funnel and retention analysis alongside session-level detail.", "fr": "Chevauche sur l'analytics comportementale/de sessions pour les equipes produit qui veulent une analyse de funnel et de retention plus poussee en plus du detail par session." } },
+    { "slug": "dovetail", "reason": { "en": "Competes on the qualitative side: centralizing user feedback, interviews, and survey responses that Hotjar's Voice of Customer product also targets.", "fr": "Concurrent sur le volet qualitatif : centraliser le feedback utilisateur, les entretiens et les reponses aux sondages, un terrain que vise aussi le produit Voice of Customer de Hotjar." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Microsoft Clarity", "officialUrl": "https://clarity.microsoft.com", "reason": "Free, direct heatmap and session-replay competitor; already tracked elsewhere in the catalogue as a current alternative but not present in the allowed candidate list for this dossier." },
+    { "name": "FullStory", "officialUrl": "https://www.fullstory.com", "reason": "Enterprise-grade session replay and behavioral analytics platform frequently shortlisted against Hotjar/Contentsquare." },
+    { "name": "Crazy Egg", "officialUrl": "https://www.crazyegg.com", "reason": "Long-standing heatmap and A/B testing tool aimed at the same small-business/marketer audience as Hotjar." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "Still gives fast qualitative insight into user behavior, but the post-acquisition split into three separately billed products (heatmaps/replay, surveys, product analytics) raises the effective cost of getting the same coverage the old bundled Hotjar plan gave.", "fr": "L'outil donne toujours rapidement des insights qualitatifs sur le comportement utilisateur, mais la scission post-rachat en trois produits factures separement (heatmaps/replay, sondages, analytics produit) augmente le cout effectif pour retrouver la couverture de l'ancien forfait groupe.", "sourceIds": ["s3"] },
+      "simplicite": { "en": "Historically one of the fastest tools to get a first heatmap or recording running, with a simple free tier and no engineering setup required.", "fr": "Historiquement l'un des outils les plus rapides pour obtenir une premiere heatmap ou un premier enregistrement, avec un palier gratuit simple et sans configuration technique lourde.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers on its core promise (see real visitor behavior) without workarounds, and now adds AI-generated summaries to speed up analysis.", "fr": "Tient sa promesse principale (voir le comportement reel des visiteurs) sans contournement, et ajoute desormais des resumes generes par IA pour accelerer l'analyse.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Feature ceiling is now backed by Contentsquare's broader experience-analytics platform (funnels, error/performance monitoring, retroactive filtering on higher tiers), well above a standalone heatmap tool.", "fr": "Le plafond fonctionnel s'appuie desormais sur la plateforme plus large de Contentsquare (funnels, monitoring d'erreurs/performance, filtrage retroactif sur les paliers superieurs), bien au-dela d'un simple outil de heatmaps.", "sourceIds": ["s1", "s3"] },
+      "reversibilite": { "en": "No clear self-serve bulk-export or open API for historical recordings/heatmaps was found on the accessible pages; data appears to stay largely inside the platform.", "fr": "Aucune option claire d'export en masse en libre-service ni d'API ouverte pour les enregistrements/heatmaps historiques n'a ete trouvee sur les pages accessibles ; les donnees semblent rester majoritairement dans la plateforme.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "Heatmaps and replays", "fr": "Heatmaps et replays" },
+    "shortDescription": {
+      "en": "Heatmaps, session replays, and surveys to understand user behaviour.",
+      "fr": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur."
+    },
+    "longDescription": {
+      "en": "Hotjar remains one of the easiest ways to see what visitors actually do on a site: heatmaps for attention, session replays for individual journeys, and on-site surveys for direct feedback. First-run setup stays simple, and the free tier is generous enough to run a real audit before paying anything.\n\nThe catch is what happened after Contentsquare's acquisition: the product that used to be one bill for heatmaps, replay, and surveys is now three separately priced product lines (Experience Analytics, Voice of Customer, Product Analytics). A team that wants the full old-Hotjar experience now stitches together multiple subscriptions instead of one plan, and pricing on the paid Growth tier scales steeply with session volume.\n\nFor a solo freelancer or a small team that just needs occasional heatmaps and a handful of session replays, the free tier or an entry Growth plan still does the job well. For anyone who needs surveys and product analytics too, budget for more than the historical single Hotjar price.", "fr": "Hotjar reste l'un des moyens les plus simples de voir ce que font vraiment les visiteurs sur un site : heatmaps pour l'attention, replays de sessions pour les parcours individuels, et sondages sur site pour du feedback direct. La prise en main reste simple, et le palier gratuit est assez genereux pour faire un vrai audit avant de payer quoi que ce soit.\n\nLe hic, c'est ce qui s'est passe apres le rachat par Contentsquare : le produit qui etait autrefois facture en une fois pour heatmaps, replay et sondages est desormais scinde en trois lignes de produits facturees separement (Experience Analytics, Voice of Customer, Product Analytics). Une equipe qui veut retrouver l'experience complete de l'ancien Hotjar doit donc cumuler plusieurs abonnements au lieu d'un seul forfait, et le prix du palier Growth grimpe fortement avec le volume de sessions.\n\nPour un freelance solo ou une petite equipe qui a juste besoin de heatmaps occasionnelles et de quelques replays, le palier gratuit ou un plan Growth d'entree suffit largement. Pour qui a aussi besoin des sondages et de l'analytics produit, il faut prevoir un budget superieur au prix historique de Hotjar seul."
+    },
+    "pros": [
+      { "en": "Fast to set up, no engineering work needed for a first useful result.", "fr": "Mise en place rapide, aucun travail d'ingenierie necessaire pour un premier resultat utile." },
+      { "en": "Generous free tier (200K sessions/month) is enough for many small sites to run a real audit.", "fr": "Palier gratuit genereux (200 000 sessions/mois), suffisant pour de nombreux petits sites pour faire un vrai audit." },
+      { "en": "AI-generated summaries of heatmaps and recordings speed up analysis on busier sites.", "fr": "Les resumes generes par IA des heatmaps et enregistrements accelerent l'analyse sur les sites a fort trafic." }
+    ],
+    "cons": [
+      { "en": "Heatmaps/replay, surveys, and product analytics are now three separately billed products instead of one plan.", "fr": "Heatmaps/replay, sondages et analytics produit sont desormais trois produits factures separement au lieu d'un seul forfait." },
+      { "en": "Paid tier pricing scales steeply with session volume and can surprise teams that grow past the entry tier.", "fr": "Le prix du palier payant grimpe fortement avec le volume de sessions et peut surprendre une equipe qui depasse le palier d'entree." },
+      { "en": "No clear self-serve bulk data export was found, which weighs on portability if the team switches tools later.", "fr": "Aucun export de donnees en masse en libre-service n'a ete trouve clairement, ce qui pese sur la portabilite en cas de changement d'outil plus tard." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You mainly need occasional heatmaps and session replays on one site and can live inside the free tier or a low-volume Growth plan.", "fr": "Tu as surtout besoin de heatmaps et de replays occasionnels sur un site, et tu peux rester dans le palier gratuit ou un plan Growth a faible volume." },
+      "avoidIf": { "en": "You need heatmaps, surveys, and product analytics together at real volume; the combined bill across three product lines can get expensive fast.", "fr": "Tu as besoin de heatmaps, de sondages et d'analytics produit ensemble, a volume reel ; la facture cumulee des trois lignes de produits peut vite devenir chere." },
+      "threshold": { "en": "If your monthly sessions push you past the entry Growth tier, get an exact quote before committing; the jump between tiers is steep.", "fr": "Si ton volume de sessions mensuel depasse le palier d'entree Growth, demande un devis precis avant de t'engager ; le saut entre paliers est important." },
+      "billingTraps": { "en": "Annual, card-paid billing looks cheaper per month than invoice billing at the same tier; check which one a quote actually assumes before comparing prices.", "fr": "La facturation annuelle par carte affiche un prix mensuel plus bas que la facturation sur facture au meme palier ; verifie laquelle un devis suppose reellement avant de comparer les prix." }
+    }
+  },
+  "unknowns": [
+    "The seed's officialSourceUrl (support.contentsquare.com Hotjar Plans and Pricing article) returned HTTP 403 and could not be read; pricing figures here were cross-checked from a secondary blog source instead and should be reverified against that article or a live pricing page render.",
+    "contentsquare.com/pricing renders its plan grid via JavaScript, so the fetch tool could not extract concrete plan numbers directly from the primary source.",
+    "Trial length (if any) for Growth/Pro was not found on the accessible pages.",
+    "Exact current price for the top of the Growth session-volume range ($739/month figure) and for Voice of Customer/Product Analytics plans is from a secondary source only, not independently confirmed on an official page.",
+    "Whether a self-serve bulk data export/API exists for historical heatmaps and recordings was not confirmed on the pages accessed."
+  ],
+  "conflicts": [
+    "Seed data listed a 'Plus' plan at 32 EUR/month sourced from the Contentsquare support article; that plan name no longer appears in the current three-product structure found during this research (Free/Growth/Pro/Enterprise per product line), and the support article itself could not be re-verified (403 blocked)."
+  ]
+}

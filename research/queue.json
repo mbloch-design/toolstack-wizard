@@ -1510,5 +1510,277 @@
   "zelt",
   "zeplin",
   "zoom-ai-companion"
- ]
+ ],
+ "cloudBatches": [
+  {
+   "id": "c1",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "cargo-site",
+    "adobe-premiere-pro",
+    "adobe-photoshop"
+   ]
+  },
+  {
+   "id": "c2",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "jira",
+    "eventbrite",
+    "coupler-io"
+   ]
+  },
+  {
+   "id": "c3",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "wix",
+    "klaviyo",
+    "helpscout"
+   ]
+  },
+  {
+   "id": "c4",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "motion-array",
+    "google-ai-studio",
+    "dropbox"
+   ]
+  },
+  {
+   "id": "c5",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "datadog",
+    "zbrush",
+    "ae-animation-composer"
+   ]
+  },
+  {
+   "id": "c6",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "sentry",
+    "nik-collection",
+    "obsidian"
+   ]
+  },
+  {
+   "id": "c7",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "namecheap",
+    "ahrefs",
+    "patreon"
+   ]
+  },
+  {
+   "id": "c8",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "gitlens",
+    "houdini",
+    "firefly"
+   ]
+  },
+  {
+   "id": "c9",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "echarts",
+    "topaz-gigapixel",
+    "frame-io"
+   ]
+  },
+  {
+   "id": "c10",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "contra",
+    "enscape",
+    "aescripts-flow"
+   ]
+  },
+  {
+   "id": "c11",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "feedly",
+    "firebase",
+    "snapseed"
+   ]
+  },
+  {
+   "id": "c12",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "adobe-illustrator",
+    "substance-3d-painter",
+    "sketchup-pro"
+   ]
+  },
+  {
+   "id": "c13",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "fly-io",
+    "react-router",
+    "grammarly"
+   ]
+  },
+  {
+   "id": "c14",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "lemlist",
+    "vidiq",
+    "codemagic"
+   ]
+  },
+  {
+   "id": "c15",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "pixieset",
+    "ant-design",
+    "linear"
+   ]
+  },
+  {
+   "id": "c16",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "runway",
+    "figma",
+    "excalidraw"
+   ]
+  },
+  {
+   "id": "c17",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "zoom-pro",
+    "confluence",
+    "payoneer"
+   ]
+  },
+  {
+   "id": "c18",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "silae",
+    "sendible",
+    "ae-bodymovin"
+   ]
+  },
+  {
+   "id": "c19",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "figma-tokens",
+    "brand24",
+    "ovh"
+   ]
+  },
+  {
+   "id": "c20",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "ae-overlord",
+    "vault",
+    "1password"
+   ]
+  },
+  {
+   "id": "c21",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "audacity",
+    "qonto",
+    "milanote"
+   ]
+  },
+  {
+   "id": "c22",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "magnific-ai",
+    "logseq",
+    "madmapper"
+   ]
+  },
+  {
+   "id": "c23",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "touchdesigner",
+    "material-ui",
+    "productioncrate"
+   ]
+  },
+  {
+   "id": "c24",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "safetyculture",
+    "buffer",
+    "reaper"
+   ]
+  },
+  {
+   "id": "c25",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "aircall",
+    "neon",
+    "box"
+   ]
+  },
+  {
+   "id": "c26",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "invision",
+    "wordpress",
+    "davinci-resolve"
+   ]
+  },
+  {
+   "id": "c27",
+   "tier": "A",
+   "stage": "facts",
+   "slugs": [
+    "zotero",
+    "canva-pro"
+   ]
+  }
+ ],
+ "cloudNote": "Cloud sessions (credit): facts only, 3 tools per session, effort low. Covers the 100 most searched tools with lots 0 and 1 (done). Rating and bilingual editorial are completed locally. Other tools are researched locally from the batches list."
 }

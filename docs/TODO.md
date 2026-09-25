@@ -14,12 +14,16 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [x] Préparation : brief allégé, schéma v2, `scripts/research/validate.mjs`, `scripts/research/seed.mjs`, file de priorité (25/09/2026)
 - [x] Pousser la préparation sur `main` pour que les sessions cloud la lisent (25/09/2026, `ed584dd3`)
 - [x] Lot test (lot 0) produit le 25/09/2026 : 10 dossiers tier A, 0 erreur, 32 pages web ouvertes. Branche `research/batch-0`, copiés dans `research/dossiers/`.
-- [ ] Le lot test a tourné **en local** (worktree `.claude/worktrees/`), pas dans le cloud : le crédit n'a sans doute pas bougé. Trouver comment lancer une vraie session cloud (claude.ai/code) avant la production.
+- [x] Le lot test a tourné en local, pas dans le cloud. Réglé : Michael lance les sessions depuis claude.ai/code (environnement cloud avec accès Internet, Sonnet).
 - [x] Dossiers v2 déplacés de `research/tool-pages/` vers `research/dossiers/` : le lot avait écrasé `notion.json`, fichier du circuit d'attestation (`scripts/research-attest.mjs`), comme il l'aurait fait pour framer, figma, linear, loom, n8n, webflow, wix, squarespace, calendly, google-workspace.
 - [ ] Points de relecture du lot test **[décision]** : NordPass Premium 1,99 €/mois vu sous une bannière promo (prix hors promo à revérifier) ; MongoDB Atlas comparé sur le palier dédié M10 (57 $) plutôt que Flex (8 $), règle précisée depuis ; Freshservice et Capture One sans tarif mensuel sans engagement (pages par défaut en annuel).
 - [ ] Relecture du lot test par Michael **[décision]** : qualité suffisante pour lancer la production ?
 - [ ] Script de fusion des dossiers validés vers `tools_v4.json` (prix de comparaison calculé depuis `comparePlanKey`, conversion de devise, note v2, alternatives), à écrire après le test
-- [ ] Production : 290 outils en tier A (lots 1 à 29), 236 en tier B (lots 30 à 53), dans la limite du budget
+- [x] Lot 1 fait en session cloud le 25/09/2026 : 10 dossiers valides, **coût 10 $ (1 $ par outil), jugé trop cher**. Trouvé : Hotjar racheté (Contentsquare), Remix fusionné dans React Router, Topaz Video AI renommé.
+- [x] Nouveau découpage décidé le 25/09/2026 : le crédit ne sert qu'aux 100 outils les plus cherchés (72 % de la demande), en mode « faits seuls » (section 0 du brief), 3 outils par session, effort bas. Lots `c1` à `c27` dans `research/queue.json` (`cloudBatches`).
+- [ ] Lot test `c1` (cargo-site, adobe-premiere-pro, adobe-photoshop) pour mesurer le coût du nouveau mode
+- [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
+- [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`
 - [ ] 638 outils sans impression Google : non planifiés
 
 ### Mesure SEO

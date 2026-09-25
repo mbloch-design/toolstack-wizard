@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "slug": "similarweb",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Similarweb",
+    "vendor": "Similarweb Ltd.",
+    "officialUrl": "https://www.similarweb.com",
+    "docsUrl": "https://support.similarweb.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.similarweb.com/packages/web/", "tier": 1, "accessedOn": "2026-09-25", "title": "Web Intelligence Pricing & Packages | Similarweb" },
+    { "id": "s2", "url": "https://www.similarweb.com/corp/", "tier": 1, "accessedOn": "2026-09-25", "title": "Similarweb corporate homepage" },
+    { "id": "s3", "url": "https://www.vendr.com/marketplace/similarweb", "tier": 2, "accessedOn": "2026-09-25", "title": "SimilarWeb Software Pricing & Plans 2026: See Your Cost (Vendr)" },
+    { "id": "s4", "url": "https://www.g2.com/products/similarweb/reviews", "tier": 2, "accessedOn": "2026-09-25", "title": "Similarweb Reviews 2026 | G2" },
+    { "id": "s5", "url": "https://www.capterra.com/p/148472/SimilarWeb-Pro/reviews/", "tier": 2, "accessedOn": "2026-09-25", "title": "Similarweb Reviews 2026 | Capterra" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.similarweb.com/packages/web/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": "No standing free plan; the public site exposes only a limited free traffic-overview lookup tool, not an account tier.", "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter (Web Intelligence, self-service)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Single-user Web Intelligence license; third-party trackers report roughly $125/mo billed annually or $199/mo billed monthly, but Similarweb does not publish this figure on its own site.", "fr": "Licence Web Intelligence mono-utilisateur ; des trackers tiers évoquent environ 125 $/mois en facturation annuelle ou 199 $/mois en mensuel, mais Similarweb ne publie pas ce chiffre sur son propre site." }
+        ],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "professional",
+        "name": "Professional (adds SEO / Ads modules)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Third-party estimates put this tier around $399/mo, with deeper historical data and added SEO/Ads intelligence, but no price appears on similarweb.com.", "fr": "Des estimations tierces situent ce palier autour de 399 $/mois, avec un historique plus profond et des modules SEO/Ads en plus, mais aucun prix n'apparaît sur similarweb.com." }
+        ],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Multi-seat collaboration tier, sales-quoted only; secondary sources estimate low five-figure annual contracts.", "fr": "Palier collaboratif multi-sièges, uniquement sur devis commercial ; des sources secondaires estiment des contrats annuels à cinq chiffres (bas de fourchette)." }
+        ],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Fully custom package (modules like Sales/Shopper/Stock Intelligence, API/data feeds, larger user counts); requires a sales conversation.", "fr": "Offre entièrement sur mesure (modules Sales/Shopper/Stock Intelligence, API/flux de données, plus d'utilisateurs) ; nécessite un échange commercial." }
+        ],
+        "sourceIds": ["s1", "s3"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      { "en": "Standalone AEO Intelligence add-on (AI brand visibility, tracked prompts, citation analysis) reported around $99-129/mo by third parties, not confirmed on the official site.", "fr": "Module additionnel AEO Intelligence (visibilité de marque IA, suivi de prompts, analyse de citations) évoqué autour de 99-129 $/mois par des tiers, non confirmé sur le site officiel.", "sourceIds": ["s3"] }
+    ],
+    "cautions": [
+      { "en": "Similarweb publishes no self-serve prices on its own site as of this research; every number above comes from third-party trackers (Vendr, review sites), not similarweb.com, and should be treated as indicative only.", "fr": "Similarweb ne publie aucun prix en libre-service sur son propre site au moment de cette recherche ; tous les chiffres ci-dessus proviennent de trackers tiers (Vendr, sites d'avis), pas de similarweb.com, et doivent être considérés comme indicatifs uniquement.", "sourceIds": ["s1", "s3"] },
+      { "en": "Third-party sources describe a steep jump between the entry self-service tier and Team/Enterprise pricing, with contract values reportedly ranging from roughly $14K to $150K+ per year depending on modules and seats.", "fr": "Des sources tierces décrivent un saut important entre le palier d'entrée en libre-service et les tarifs Team/Enterprise, avec des contrats annuels allant, selon elles, d'environ 14 000 $ à plus de 150 000 $ selon les modules et le nombre de sièges.", "sourceIds": ["s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Web traffic and competitor analysis (visits, sources, engagement, market share) across 100M+ tracked websites.", "fr": "Analyse du trafic web et de la concurrence (visites, sources, engagement, parts de marché) sur plus de 100 millions de sites suivis.", "sourceIds": ["s2"] },
+      { "en": "App analytics covering performance, demographics, revenue estimates and ratings for millions of mobile apps.", "fr": "Analytique d'applications couvrant performance, démographie, estimations de revenus et notes pour des millions d'apps mobiles.", "sourceIds": ["s2"] },
+      { "en": "SEO and keyword research (search terms, content gaps, ranking data) plus paid Ads intelligence.", "fr": "Recherche SEO et mots-clés (termes de recherche, écarts de contenu, données de classement) et intelligence sur les publicités payantes.", "sourceIds": ["s2"] },
+      { "en": "Sales/lead intelligence for prospecting (buyer intent signals, company research) and Retail/Shopper intelligence for e-commerce benchmarking.", "fr": "Intelligence commerciale pour la prospection (signaux d'intention d'achat, recherche d'entreprises) et intelligence retail/shopper pour le benchmarking e-commerce.", "sourceIds": ["s2"] },
+      { "en": "Data access via dashboards, browser extension, API/Data-as-a-Service, and BI tool integrations (e.g. Tableau, Google Data Studio) on higher tiers.", "fr": "Accès aux données via tableaux de bord, extension navigateur, API/Data-as-a-Service, et intégrations BI (ex. Tableau, Google Data Studio) sur les paliers supérieurs.", "sourceIds": ["s2", "s4"] }
+    ],
+    "limitations": [
+      { "en": "Traffic and audience estimates are modeled, not measured; multiple user reviews report estimates for smaller/lower-traffic sites can be off by 50% or more.", "fr": "Les estimations de trafic et d'audience sont modélisées, pas mesurées ; plusieurs avis utilisateurs signalent des écarts de 50 % ou plus pour les sites à faible trafic.", "sourceIds": ["s4", "s5"] },
+      { "en": "Standard dashboards show one market/country at a time, making cross-market comparison more cumbersome without add-on exports.", "fr": "Les tableaux de bord standard n'affichent qu'un marché/pays à la fois, ce qui complique la comparaison entre marchés sans exports additionnels.", "sourceIds": ["s4"] },
+      { "en": "API access, deeper historical data, and several intelligence modules (Sales, Shopper, Stock) sit behind paid or custom-quoted tiers, not the entry plan.", "fr": "L'accès API, un historique de données plus profond et plusieurs modules d'intelligence (Sales, Shopper, Stock) sont réservés aux paliers payants ou sur devis, pas au plan d'entrée.", "sourceIds": ["s1", "s2"] }
+    ],
+    "integrations": [
+      { "name": "Google Data Studio / Looker Studio", "slug": null, "sourceIds": ["s4"] },
+      { "name": "Tableau", "slug": null, "sourceIds": ["s4"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Marc runs a small team and needs to size up competitors' traffic, keywords and ad strategy before deciding where to invest, but he isn't going to justify a five-figure annual contract for occasional competitive checks.",
+      "fr": "Marc dirige une petite équipe et a besoin de jauger le trafic, les mots-clés et la stratégie publicitaire de ses concurrents avant d'investir, mais il ne va pas justifier un contrat annuel à cinq chiffres pour des vérifications concurrentielles occasionnelles."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Sizing up a competitor's estimated traffic, top channels and audience overlap before a market-entry decision.", "fr": "Évaluer le trafic estimé d'un concurrent, ses principaux canaux et le chevauchement d'audience avant une décision d'entrée sur un marché." },
+    { "en": "Finding keyword and content gaps versus competing sites to prioritize an SEO roadmap.", "fr": "Identifier les écarts de mots-clés et de contenu par rapport aux sites concurrents pour prioriser une feuille de route SEO." },
+    { "en": "Benchmarking app store performance and user acquisition channels for a competing mobile app.", "fr": "Comparer la performance sur les stores et les canaux d'acquisition d'une application mobile concurrente." }
+  ],
+  "alternatives": [
+    { "slug": "semrush", "reason": { "en": "SEMrush covers the same core need (competitive SEO, keyword and traffic intelligence) with transparent self-serve pricing, making it a more accessible entry point for small teams.", "fr": "SEMrush répond au même besoin central (SEO concurrentiel, intelligence mots-clés et trafic) avec une tarification en libre-service transparente, ce qui en fait un point d'entrée plus accessible pour les petites équipes." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Ahrefs", "officialUrl": "https://ahrefs.com", "reason": "Direct competitor for SEO and competitive traffic/keyword research, with published self-serve pricing starting well under Similarweb's entry tier; absent from the given alternativeCandidates list." },
+    { "name": "SpyFu", "officialUrl": "https://www.spyfu.com", "reason": "Focused competitor-keyword and ad-spy tool aimed at the same 'check what a competitor is doing' use case as Similarweb, at a much lower self-serve price point; absent from the given alternativeCandidates list." },
+    { "name": "SE Ranking", "officialUrl": "https://seranking.com", "reason": "SEO/traffic/competitor research suite with transparent low-cost plans, a closer budget-tier substitute for Similarweb's core web-intelligence use case; absent from the given alternativeCandidates list." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "Useful for competitive/market sizing, but the core web-intelligence use case is covered by cheaper, transparently-priced tools, and Similarweb's own pricing is largely gated behind sales.", "fr": "Utile pour le dimensionnement concurrentiel/marché, mais le besoin central en intelligence web est couvert par des outils moins chers et à tarification transparente, tandis que la tarification de Similarweb reste largement verrouillée derrière un contact commercial.", "sourceIds": ["s1", "s3"] },
+      "simplicite": { "en": "Dashboards are described as intuitive, but the product spans many modules (web, app, SEO, ads, sales, retail, stock) that add navigational complexity, and market/country views are shown one at a time.", "fr": "Les tableaux de bord sont décrits comme intuitifs, mais le produit couvre de nombreux modules (web, app, SEO, ads, sales, retail, stock) qui ajoutent de la complexité de navigation, et les vues par marché/pays s'affichent une à la fois.", "sourceIds": ["s2", "s4"] },
+      "utilisation": { "en": "Reviewers consistently praise ease of use and data visualization for day-to-day competitive research tasks.", "fr": "Les utilisateurs saluent régulièrement la facilité d'usage et la visualisation des données pour les tâches quotidiennes de veille concurrentielle.", "sourceIds": ["s4", "s5"] },
+      "puissance": { "en": "Broad data coverage (100M+ sites, 4M+ apps, 10 years of history) and multiple specialized modules cover most competitive-intelligence needs an organization has, though estimates are modeled rather than exact.", "fr": "Une large couverture de données (plus de 100 millions de sites, plus de 4 millions d'apps, 10 ans d'historique) et de nombreux modules spécialisés couvrent la plupart des besoins d'intelligence concurrentielle d'une organisation, même si les estimations restent modélisées et non exactes.", "sourceIds": ["s2", "s4"] },
+      "reversibilite": { "en": "No published self-serve free plan or clear low-cost export path; API and BI-tool integrations for taking data out exist but sit behind paid/custom tiers, making it harder to walk away with your data at low cost.", "fr": "Pas de plan gratuit en libre-service publié ni de chemin d'export clair à bas coût ; l'API et les intégrations BI pour extraire les données existent mais sont réservées aux paliers payants/sur devis, ce qui rend plus difficile de repartir avec ses données à faible coût.", "sourceIds": ["s1", "s4"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "Competitive web intelligence", "fr": "Intelligence web concurrentielle" },
+    "shortDescription": { "en": "Provides digital data to improve marketing strategies.", "fr": "Fournit des données numériques pour améliorer les stratégies marketing." },
+    "longDescription": {
+      "en": "Similarweb estimates traffic, audience and marketing data for millions of websites and apps, letting teams benchmark competitors on channels, keywords, ads and app performance. It bundles this into modules for web, SEO, ads, sales prospecting, retail and app intelligence.\n\nThe catch is pricing: Similarweb publishes no self-serve numbers on its own site, and most of what small teams need beyond a single-user starter license sits behind a sales conversation. Third-party trackers describe a steep jump from an entry tier to team and enterprise contracts that can run into the tens of thousands of dollars a year.\n\nFor freelancers and small teams doing occasional competitive checks, Similarweb is usually more tool than they need at a price that is hard to plan around; cheaper, transparently-priced SEO/competitive-intelligence tools cover the same core job for most of them.",
+      "fr": "Similarweb estime le trafic, l'audience et les données marketing de millions de sites et d'applications, ce qui permet aux équipes de comparer leurs concurrents sur les canaux, les mots-clés, les publicités et la performance des apps. L'outil regroupe cela en modules web, SEO, publicité, prospection commerciale, retail et applications.\n\nLe hic, c'est la tarification : Similarweb ne publie aucun chiffre en libre-service sur son propre site, et l'essentiel de ce dont une petite équipe a besoin au-delà d'une licence mono-utilisateur passe par un échange commercial. Des trackers tiers décrivent un saut important entre le palier d'entrée et des contrats team/enterprise pouvant atteindre plusieurs dizaines de milliers de dollars par an.\n\nPour des freelances ou petites équipes qui font des vérifications concurrentielles ponctuelles, Similarweb est généralement plus lourd que nécessaire, avec un prix difficile à anticiper ; des outils SEO/veille concurrentielle moins chers et à tarification transparente couvrent le même besoin de base pour la plupart d'entre eux."
+    },
+    "pros": [
+      { "en": "Very broad data coverage across web, app, SEO, ads and retail in one platform.", "fr": "Couverture de données très large sur le web, les apps, le SEO, la pub et le retail dans une seule plateforme." },
+      { "en": "Dashboards and visualizations are widely praised as intuitive for day-to-day competitive research.", "fr": "Les tableaux de bord et visualisations sont largement salués comme intuitifs pour la veille concurrentielle au quotidien." }
+    ],
+    "cons": [
+      { "en": "No public self-serve pricing; most useful tiers require a sales conversation and can run into five figures a year.", "fr": "Pas de tarification publique en libre-service ; la plupart des paliers utiles nécessitent un échange commercial et peuvent atteindre cinq chiffres par an." },
+      { "en": "Estimated (not measured) traffic data can be significantly off for smaller, lower-traffic sites.", "fr": "Les données de trafic estimées (et non mesurées) peuvent être significativement erronées pour les sites à faible trafic." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're a team that regularly needs multi-market competitive intelligence across web, SEO, ads and apps, and can justify a recurring sales-quoted contract.", "fr": "Tu es une équipe qui a régulièrement besoin d'intelligence concurrentielle multi-marchés sur le web, le SEO, la pub et les apps, et qui peut justifier un contrat récurrent négocié avec les ventes." },
+      "avoidIf": { "en": "You need occasional competitive snapshots as a freelancer or small team and don't want an opaque, sales-gated price to plan around.", "fr": "Tu as besoin de vérifications concurrentielles ponctuelles en tant que freelance ou petite équipe et tu ne veux pas d'un prix opaque et négocié à anticiper." },
+      "threshold": { "en": "If you find yourself contacting sales just to learn the price of the plan you'd actually need, that's the signal to compare against a transparently-priced alternative first.", "fr": "Si tu dois contacter les ventes juste pour connaître le prix du plan dont tu aurais réellement besoin, c'est le signal de comparer d'abord avec une alternative à tarification transparente." },
+      "billingTraps": { "en": "The advertised entry price (where quoted by third parties) is single-user and monthly-billed is markedly more expensive than annual; the real jump comes at the next tier, which is quote-only and reportedly far higher.", "fr": "Le prix d'entrée annoncé (là où des tiers le citent) est mono-utilisateur, et la facturation mensuelle coûte nettement plus cher que l'annuelle ; le vrai saut de prix intervient au palier suivant, uniquement sur devis et réputé bien plus élevé." }
+    }
+  },
+  "unknowns": [
+    "The seed category 'email-productivity' does not match Similarweb's actual product (web/app traffic and competitive intelligence, not email marketing); this looks like a data-quality mismatch in the seed and should be reviewed separately from this dossier's content.",
+    "No exact self-serve prices are published on similarweb.com as of 2026-09-25; all numeric figures in this dossier (Starter ~$125-199/mo, Professional ~$399/mo, Team/Enterprise five-to-six-figure annual contracts) come from third-party trackers (Vendr and pricing-aggregator blogs), not confirmed on an official page, so they carry meaningful uncertainty.",
+    "Whether a genuine free tier or free trial exists for a self-service account (vs. the free public traffic-lookup widget) could not be confirmed from the pages opened; the official packages page mentions 'free trials' generically without duration or plan scope.",
+    "Full API/Data-as-a-Service pricing and terms were not accessible without a sales contact."
+  ],
+  "conflicts": []
+}

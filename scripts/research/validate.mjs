@@ -6,6 +6,12 @@
  *
  *   node scripts/research/validate.mjs framer figma      # given slugs
  *   node scripts/research/validate.mjs --all             # every v2 dossier
+ *   node scripts/research/validate.mjs --stage facts a b # cloud output: facts only
+ *
+ * Stage "facts" is what a cloud session delivers: identity, sources,
+ * pricing, product facts and alternatives, in English only. The rating,
+ * audience and bilingual editorial are added locally afterwards, and the
+ * default stage "full" then checks the whole dossier.
  *
  * Exit code 1 when any dossier has an error. Warnings never block.
  * The contract lives in docs/CLOUD_RESEARCH_BRIEF.md.
@@ -30,7 +36,13 @@ const LEVELS = ["low", "medium", "high"];
 const AXES = ["valeurAjoutee", "simplicite", "utilisation", "puissance", "reversibilite"];
 const TIERS = ["A", "B"];
 
-const args = process.argv.slice(2);
+const rawArgs = process.argv.slice(2);
+const stageAt = rawArgs.indexOf("--stage");
+const STAGE = stageAt >= 0 ? rawArgs[stageAt + 1] : "full";
+if (!["facts", "full"].includes(STAGE)) throw new Error(`unknown stage "${STAGE}" (facts | full)`);
+const args = stageAt >= 0 ? rawArgs.filter((_, i) => i !== stageAt && i !== stageAt + 1) : rawArgs;
+const FACTS = STAGE === "facts";
+const LANGS = FACTS ? ["en"] : ["en", "fr"];
 const files = args.includes("--all")
   ? fs.readdirSync(DIR).filter((f) => f.endsWith(".json"))
   : args.map((slug) => `${slug}.json`);
@@ -71,8 +83,8 @@ function validate(d, errors, warnings) {
   const isDate = (v) => typeof v === "string" && /^\d{4}-\d{2}-\d{2}$/.test(v);
   const isUrl = (v) => typeof v === "string" && /^https?:\/\/\S+$/.test(v);
   const bi = (v, where, { required = true } = {}) => {
-    if (v == null) { if (required) errors.push(`${where}: missing {en, fr}`); return; }
-    for (const lang of ["en", "fr"]) {
+    if (v == null) { if (required) errors.push(`${where}: missing {${LANGS.join(", ")}}`); return; }
+    for (const lang of LANGS) {
       if (typeof v[lang] !== "string" || !v[lang].trim()) errors.push(`${where}.${lang}: empty`);
       else if (v[lang].includes("—")) errors.push(`${where}.${lang}: em dash (—) is not allowed`);
     }
@@ -82,7 +94,8 @@ function validate(d, errors, warnings) {
   if (!SLUGS.has(d.slug)) errors.push(`slug "${d.slug}" is not in the catalogue`);
   if (!TIERS.includes(d.tier)) errors.push(`tier must be one of ${TIERS.join(", ")}`);
   if (!isDate(d.researchedOn)) errors.push("researchedOn must be YYYY-MM-DD");
-  if (d.status !== "needs_review") errors.push('status must be "needs_review" (only a human approves)');
+  const expectedStatus = FACTS ? "facts_collected" : "needs_review";
+  if (d.status !== expectedStatus) errors.push(`status must be "${expectedStatus}" at stage ${STAGE} (only a human approves)`);
 
   // Sources: every fact points to one of these.
   const sources = Array.isArray(d.sources) ? d.sources : [];
@@ -162,44 +175,51 @@ function validate(d, errors, warnings) {
     if (!m.name || !isUrl(m.officialUrl)) errors.push(`missingAlternatives[${i}]: name and officialUrl required`);
   }
 
-  // Rating: five axes, each with evidence tied to sources. No favours.
-  const r = d.rating || {};
-  for (const axis of AXES) {
-    if (![1, 2, 3, 4, 5].includes(r[axis])) errors.push(`rating.${axis} must be an integer 1-5`);
-    const ev = r.evidence?.[axis];
-    bi(ev, `rating.evidence.${axis}`);
-    if (ev) cite(ev.sourceIds, `rating.evidence.${axis}`);
-  }
-  if (r.lastActivityVerifiedOn != null && !isDate(r.lastActivityVerifiedOn)) errors.push("rating.lastActivityVerifiedOn must be YYYY-MM-DD or null");
-
-  // Editorial drafts: tier B needs the essentials, tier A the full fiche.
-  const e = d.editorial || {};
-  bi(e.tagline, "editorial.tagline");
-  if (e.tagline) for (const lang of ["en", "fr"]) {
-    const words = String(e.tagline[lang] || "").trim().split(/\s+/).length;
-    if (words > 4) errors.push(`editorial.tagline.${lang}: ${words} words, 2 to 3 expected`);
-  }
-  bi(e.shortDescription, "editorial.shortDescription");
+  // Product facts are collected at both stages for tier A.
   if (d.tier === "A") {
-    const a = d.audience || {};
-    if (!PERSONAS.includes(a.persona)) errors.push(`audience.persona must be one of ${PERSONAS.join(", ")} (one target only)`);
-    bi(a.description, "audience.description");
-    if (!LEVELS.includes(a.soloRelevance)) errors.push(`audience.soloRelevance must be ${LEVELS.join(" | ")}`);
-    if (!LEVELS.includes(a.teamRelevance)) errors.push(`audience.teamRelevance must be ${LEVELS.join(" | ")}`);
     for (const key of ["capabilities", "limitations"]) {
       const list = d.product?.[key] || [];
       if (list.length < 2) errors.push(`product.${key}: at least 2 expected for tier A`);
       list.forEach((item, i) => { bi(item, `product.${key}[${i}]`); cite(item.sourceIds, `product.${key}[${i}]`); });
     }
-    if ((d.useCases || []).length < 2) errors.push("useCases: at least 2 expected for tier A");
-    (d.useCases || []).forEach((u, i) => bi(u, `useCases[${i}]`));
-    bi(e.longDescription, "editorial.longDescription");
-    for (const key of ["pros", "cons"]) {
-      if ((e[key] || []).length < 2) errors.push(`editorial.${key}: at least 2 expected for tier A`);
-      (e[key] || []).forEach((item, i) => bi(item, `editorial.${key}[${i}]`));
+  }
+
+  // Rating, audience and editorial are written locally, not in the cloud.
+  if (!FACTS) {
+    // Rating: five axes, each with evidence tied to sources. No favours.
+    const r = d.rating || {};
+    for (const axis of AXES) {
+      if (![1, 2, 3, 4, 5].includes(r[axis])) errors.push(`rating.${axis} must be an integer 1-5`);
+      const ev = r.evidence?.[axis];
+      bi(ev, `rating.evidence.${axis}`);
+      if (ev) cite(ev.sourceIds, `rating.evidence.${axis}`);
     }
-    for (const key of ["keepIf", "avoidIf", "threshold"]) bi(e.verdict?.[key], `editorial.verdict.${key}`);
-    if ((d.alternatives || []).length + (d.missingAlternatives || []).length < 2) warnings.push("fewer than 2 alternatives for a tier A tool");
+    if (r.lastActivityVerifiedOn != null && !isDate(r.lastActivityVerifiedOn)) errors.push("rating.lastActivityVerifiedOn must be YYYY-MM-DD or null");
+
+    // Editorial drafts: tier B needs the essentials, tier A the full fiche.
+    const e = d.editorial || {};
+    bi(e.tagline, "editorial.tagline");
+    if (e.tagline) for (const lang of ["en", "fr"]) {
+      const words = String(e.tagline[lang] || "").trim().split(/\s+/).length;
+      if (words > 4) errors.push(`editorial.tagline.${lang}: ${words} words, 2 to 3 expected`);
+    }
+    bi(e.shortDescription, "editorial.shortDescription");
+    if (d.tier === "A") {
+      const a = d.audience || {};
+      if (!PERSONAS.includes(a.persona)) errors.push(`audience.persona must be one of ${PERSONAS.join(", ")} (one target only)`);
+      bi(a.description, "audience.description");
+      if (!LEVELS.includes(a.soloRelevance)) errors.push(`audience.soloRelevance must be ${LEVELS.join(" | ")}`);
+      if (!LEVELS.includes(a.teamRelevance)) errors.push(`audience.teamRelevance must be ${LEVELS.join(" | ")}`);
+      if ((d.useCases || []).length < 2) errors.push("useCases: at least 2 expected for tier A");
+      (d.useCases || []).forEach((u, i) => bi(u, `useCases[${i}]`));
+      bi(e.longDescription, "editorial.longDescription");
+      for (const key of ["pros", "cons"]) {
+        if ((e[key] || []).length < 2) errors.push(`editorial.${key}: at least 2 expected for tier A`);
+        (e[key] || []).forEach((item, i) => bi(item, `editorial.${key}[${i}]`));
+      }
+      for (const key of ["keepIf", "avoidIf", "threshold"]) bi(e.verdict?.[key], `editorial.verdict.${key}`);
+      if ((d.alternatives || []).length + (d.missingAlternatives || []).length < 2) warnings.push("fewer than 2 alternatives for a tier A tool");
+    }
   }
 
   // Honesty checks on the whole dossier.

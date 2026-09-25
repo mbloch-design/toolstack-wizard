@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "slug": "wetransfer",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "WeTransfer",
+    "vendor": "WeTransfer B.V.",
+    "officialUrl": "https://wetransfer.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Official site (homepage, pricing, terms) renders via JavaScript and returned only skeleton content to automated fetches; pricing and ToS details below are cross-verified via secondary sources dated September 2026 and the well-documented July 2025 ToS controversy."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://wetransfer.com", "tier": 1, "accessedOn": "2026-09-25", "title": "WeTransfer homepage (official, JS-blocked at fetch time)" },
+    { "id": "s2", "url": "https://brault.app/blog/file-transfer-and-sharing/wetransfer-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "WeTransfer pricing 2026: plans, real cost, alternatives (verified 2026-09-17)" },
+    { "id": "s3", "url": "https://www.medianama.com/2025/07/223-wetransfer-terms-of-service-backlash-ai-training/", "tier": 2, "accessedOn": "2026-09-25", "title": "WeTransfer Clarifies Terms Of Service Amid AI Training Backlash" },
+    { "id": "s4", "url": "https://wetransfer.com/explore/legal/terms", "tier": 1, "accessedOn": "2026-09-25", "title": "WeTransfer Terms of Service (official, JS-blocked at fetch time; last publicly noted update August 2026)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://wetransfer.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": true,
+      "limits": "3 GB per transfer, capped at 10 transfers per rolling 30 days, links valid 3 days, individual non-commercial use only, ads shown",
+      "sourceIds": ["s2"]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "3 GB per transfer, capped at 10 transfers per rolling 30 days, links valid 3 days, individual non-commercial use only, ads shown.", "fr": "3 Go par envoi, plafonné à 10 envois par période glissante de 30 jours, liens valables 3 jours, usage individuel non commercial uniquement, publicités affichées." }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 8, "annualPerMonth": 7, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "300 GB per rolling 30 days, commercial use allowed", "fr": "300 Go par période glissante de 30 jours, usage commercial autorisé" },
+          { "en": "Still capped at 10 transfers/month, 3-day link expiry, ads remain", "fr": "Toujours plafonné à 10 envois/mois, liens valables 3 jours, publicités toujours présentes" }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "ultimate",
+        "name": "Ultimate",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 23, "annualPerMonth": 19, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited transfers, up to 1 TB per transfer", "fr": "Envois illimités, jusqu'à 1 To par envoi" },
+          { "en": "Custom or no link expiry with recovery option, branded pages, no ads, automatic malware scanning", "fr": "Expiration des liens personnalisable ou désactivable avec récupération, pages personnalisées, sans publicité, scan antivirus automatique" }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "teams",
+        "name": "Teams",
+        "unit": "seat",
+        "minSeats": 2,
+        "price": { "monthly": 19, "annualPerMonth": 16.58, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Everything in Ultimate for 2 to 50 members, shared branding", "fr": "Tout Ultimate pour 2 à 50 membres, marque partagée" },
+          { "en": "5 TB shared archive", "fr": "5 To d'archive partagée" }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": 50,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "For 50+ members, includes SSO and custom transfer rules", "fr": "Pour 50 membres et plus, avec SSO et règles d'envoi personnalisées" }
+        ],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Starter's monthly price rose from $6.99 to $8 since mid-2026; check the live pricing page before quoting a figure.", "fr": "Le prix mensuel de Starter est passé de 6,99 $ à 8 $ depuis mi-2026 ; vérifie la page tarifs en direct avant de citer un chiffre.", "sourceIds": ["s2"] },
+      { "en": "Even paid Starter keeps the 10-transfers-per-month cap and ads, which surprises users expecting an ad-free experience once they pay.", "fr": "Même en payant Starter, le plafond de 10 envois par mois et les publicités restent, ce qui surprend les utilisateurs qui pensaient payer pour s'en débarrasser.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Send files by shareable link with no account or signup required on the free tier.", "fr": "Envoi de fichiers par lien partageable sans compte ni inscription sur l'offre gratuite.", "sourceIds": ["s1", "s2"] },
+      { "en": "Large single-transfer capacity on paid plans, up to 1 TB per transfer on Ultimate.", "fr": "Grande capacité par envoi sur les offres payantes, jusqu'à 1 To par envoi sur Ultimate.", "sourceIds": ["s2"] },
+      { "en": "Branded, customizable transfer pages and automatic malware scanning on Ultimate/Teams.", "fr": "Pages d'envoi personnalisables à ta marque et scan antivirus automatique sur Ultimate/Teams.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free tier capped since 2024 to 3 GB per transfer and only 10 transfers per month, with links expiring after 3 days.", "fr": "Offre gratuite plafonnée depuis 2024 à 3 Go par envoi et seulement 10 envois par mois, avec des liens qui expirent au bout de 3 jours.", "sourceIds": ["s2"] },
+      { "en": "No real file storage, versioning, or folder-sync concept; transfers are temporary by design even on paid tiers unless expiry is explicitly extended.", "fr": "Pas de véritable stockage, de versioning ni de synchronisation de dossiers ; les envois restent temporaires par nature, même sur les offres payantes, sauf extension explicite de l'expiration.", "sourceIds": ["s2"] },
+      { "en": "Ads persist on the free and Starter tiers even though Starter is a paid plan.", "fr": "Les publicités persistent sur les offres gratuite et Starter, alors que Starter est une offre payante.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A freelancer or small-team operator who occasionally needs to send a large video, design, or archive file to a client and doesn't want to manage cloud storage permissions for a one-off transfer.",
+      "fr": "Un freelance ou une petite équipe qui doit de temps en temps envoyer une grosse vidéo, un fichier design ou une archive à un client, sans vouloir gérer des droits d'accès cloud pour un envoi ponctuel."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Sending a large finished video, design, or photo archive to a client who doesn't have (and shouldn't need) an account.", "fr": "Envoyer une grosse vidéo finalisée, un fichier design ou une archive photo à un client qui n'a pas (et n'a pas besoin d')un compte." },
+    { "en": "Getting around email attachment size limits for an occasional big file without setting up shared cloud folders.", "fr": "Contourner les limites de taille des pièces jointes email pour un gros fichier ponctuel, sans mettre en place de dossiers cloud partagés." }
+  ],
+  "alternatives": [
+    { "slug": "google-drive", "reason": { "en": "Free tier isn't capped by transfer count and doubles as real storage, at the cost of requiring a Google account on both ends for private links.", "fr": "L'offre gratuite n'est pas plafonnée en nombre d'envois et sert aussi de vrai stockage, au prix d'un compte Google requis des deux côtés pour les liens privés." } },
+    { "slug": "onedrive", "reason": { "en": "Better fit for teams already on Microsoft 365, with persistent storage instead of expiring links.", "fr": "Plus adapté aux équipes déjà sur Microsoft 365, avec un stockage persistant plutôt que des liens qui expirent." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Dropbox", "officialUrl": "https://www.dropbox.com", "reason": "Direct large-file-transfer competitor with a comparable no-account share-link flow (Dropbox Transfer); listed in the seed's currentAlternatives but absent from alternativeCandidates." },
+    { "name": "Smash", "officialUrl": "https://smash.pm", "reason": "Purpose-built large-file-transfer competitor with an uncapped free tier by file count, a closer like-for-like alternative than general cloud storage." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 2,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Useful for the specific job of one-off large-file transfer, but the 2024 free-tier cuts and 2026 price rise narrow the value versus general-purpose cloud storage that does the same for less.", "fr": "Utile pour le besoin précis d'un envoi ponctuel de gros fichier, mais les coupes de 2024 sur le gratuit et la hausse de prix de 2026 réduisent la valeur face à un stockage cloud généraliste qui fait la même chose pour moins cher.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "No account needed to send a file on the free tier; drag, drop, get a link in seconds.", "fr": "Aucun compte nécessaire pour envoyer un fichier sur l'offre gratuite ; on glisse, dépose, et on a un lien en quelques secondes.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The link-based flow is intuitive for both sender and recipient with minimal learning curve.", "fr": "Le fonctionnement par lien est intuitif pour l'expéditeur comme pour le destinataire, avec une courbe d'apprentissage minimale.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Feature set is narrow: file transfer and light branding, no storage, collaboration, or workflow depth beyond that.", "fr": "Le périmètre fonctionnel est étroit : transfert de fichiers et un peu de branding, sans stockage, collaboration ni profondeur de workflow au-delà.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Free and Starter links expire after 3 days by design and there's no export/storage concept to fall back on; Ultimate's recovery option and unlimited expiry improve this but require staying on a paid plan.", "fr": "Les liens gratuits et Starter expirent après 3 jours par conception, sans stockage ni export de secours ; l'option de récupération et l'expiration illimitée d'Ultimate améliorent ça mais imposent de rester sur une offre payante.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-17"
+  },
+  "editorial": {
+    "tagline": { "en": "Send, don't store", "fr": "Envoyer, pas stocker" },
+    "shortDescription": {
+      "en": "Send large files by link, no account needed. Free tier capped since 2024.",
+      "fr": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024."
+    },
+    "longDescription": {
+      "en": "WeTransfer solves one narrow problem well: getting a large file from you to someone else without either of you needing an account. The free tier still works for occasional use, but it has shrunk since 2024 to 3 GB per transfer and 10 transfers a month, with links that expire in 3 days.\n\nPaying doesn't remove the friction as much as you'd expect: Starter, at $8/month as of late 2026, lifts the size cap to 300 GB but keeps the 10-transfer limit and the ads. Only Ultimate ($23/month) removes ads and gives real flexibility on expiry, at which point it competes directly with general cloud storage that does more for a similar price.\n\nIn 2025, WeTransfer briefly rewrote its terms to claim a broad license over uploaded content, including for machine-learning uses, then walked it back within two weeks after public backlash and clarified it does not train AI on user files.",
+      "fr": "WeTransfer règle bien un problème précis : faire passer un gros fichier de toi à quelqu'un d'autre sans que ni l'un ni l'autre n'ait besoin d'un compte. L'offre gratuite reste utilisable pour un usage occasionnel, mais elle a rétréci depuis 2024 à 3 Go par envoi et 10 envois par mois, avec des liens qui expirent en 3 jours.\n\nPayer ne retire pas autant de friction qu'on pourrait l'espérer : Starter, à 8 $/mois fin 2026, fait passer la limite de taille à 300 Go mais garde le plafond de 10 envois et les publicités. Seule l'offre Ultimate (23 $/mois) retire les pubs et assouplit vraiment l'expiration, à un tarif qui rivalise directement avec du stockage cloud généraliste offrant plus pour un prix comparable.\n\nEn 2025, WeTransfer a brièvement réécrit ses conditions pour revendiquer une licence large sur les contenus envoyés, y compris pour des usages de machine learning, avant de faire marche arrière sous deux semaines suite à la controverse publique et de clarifier qu'il n'entraîne pas d'IA sur les fichiers des utilisateurs."
+    },
+    "pros": [
+      { "en": "No account required to send or receive on the free tier.", "fr": "Aucun compte requis pour envoyer ou recevoir sur l'offre gratuite." },
+      { "en": "Extremely low learning curve, works in seconds for a one-off send.", "fr": "Courbe d'apprentissage quasi nulle, fonctionne en quelques secondes pour un envoi ponctuel." }
+    ],
+    "cons": [
+      { "en": "Free tier caps have tightened since 2024, and the Starter price rose to $8/month by late 2026.", "fr": "Les plafonds de l'offre gratuite se sont resserrés depuis 2024, et le prix de Starter est passé à 8 $/mois fin 2026." },
+      { "en": "Paying doesn't remove the transfer-count cap or ads until the pricier Ultimate tier.", "fr": "Payer ne fait pas disparaître le plafond d'envois ni les publicités avant l'offre Ultimate, plus chère." },
+      { "en": "2025 terms-of-service episode briefly granted WeTransfer broad rights over uploaded content for machine-learning uses, later reversed; worth a quick check of current terms before trusting sensitive files.", "fr": "En 2025, les conditions d'utilisation ont brièvement accordé à WeTransfer des droits larges sur les contenus envoyés pour des usages de machine learning, avant marche arrière ; ça vaut le coup de vérifier rapidement les conditions actuelles avant d'y envoyer des fichiers sensibles." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You only need to send a large file occasionally and don't want to manage cloud storage permissions for it.", "fr": "Tu as juste besoin d'envoyer un gros fichier de temps en temps et tu ne veux pas gérer des droits d'accès cloud pour ça." },
+      "avoidIf": { "en": "You send large files regularly, need persistent storage, or are already paying for Google Drive/OneDrive that can do the same job.", "fr": "Tu envoies de gros fichiers régulièrement, tu as besoin de stockage persistant, ou tu paies déjà pour Google Drive/OneDrive qui fait le même travail." },
+      "threshold": { "en": "If you're hitting the 10-transfers-per-month cap or the 3-day expiry regularly, a general cloud storage plan is cheaper and more flexible.", "fr": "Si tu bute régulièrement sur le plafond de 10 envois par mois ou l'expiration à 3 jours, une offre de stockage cloud généraliste est moins chère et plus flexible." },
+      "billingTraps": { "en": "Starter is a paid plan that still shows ads and caps you at 10 transfers/month; only Ultimate removes both, at nearly 3x the price.", "fr": "Starter est une offre payante qui affiche toujours des publicités et te plafonne à 10 envois/mois ; seule Ultimate retire les deux, pour un prix presque 3 fois plus élevé." }
+    }
+  },
+  "unknowns": [
+    "Official pricing page (wetransfer.com/pricing) and terms page (wetransfer.com/explore/legal/terms) render via JavaScript and returned only skeleton content to automated fetch; figures here are cross-verified via a secondary source dated 2026-09-17 rather than read directly from the live official page on 2026-09-25.",
+    "Exact current wording of the content license clause in WeTransfer's terms of service was not independently read from the primary source at research time; the reversal is documented via secondary reporting (medianama, July 2025) which itself references WeTransfer's own clarifying statement.",
+    "No dedicated docs/help-center URL was verified for this dossier; integrations list is empty because none could be confirmed from an official source within the fetch budget."
+  ],
+  "conflicts": [
+    "Seed pricingV5 (verifiedOn 2026-06-15) listed Starter at $6.99/month; research on 2026-09-25 (via secondary source dated 2026-09-17) finds Starter at $8/month ($7/month annual), suggesting a price increase between June and September 2026 that should be reconfirmed on the live pricing page."
+  ]
+}

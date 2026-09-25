@@ -5,6 +5,33 @@ Document d'exécution pour une session Claude Code dans le cloud. Il se suffit
 Le brief complet de référence reste `docs/CLAUDE_CODE_TOOL_ENRICHMENT_BRIEF.md` ;
 celui-ci en est la version d'exécution, allégée pour tenir un budget.
 
+## 0. Mode cloud : les faits seulement (à lire en premier)
+
+Les sessions cloud tournent sur un crédit très limité. Elles font **uniquement
+la collecte des faits**, sur les lots `c1`, `c2`… de `research/queue.json`
+(`cloudBatches`, 3 outils par lot). La note, la cible et les textes bilingues
+sont rédigés ensuite en local, hors crédit.
+
+Dans ce mode, remplis seulement :
+- `identity`, `sources`, `pricing` (complet, section 5) ;
+- `product.capabilities`, `product.limitations` (au moins 2 chacun),
+  `product.integrations`, `product.platforms` ;
+- `alternatives` et `missingAlternatives` ;
+- `unknowns`, `conflicts`.
+
+Règles propres à ce mode :
+- **Anglais seulement** : chaque texte est `{ "en": "…" }`, sans `fr`.
+- `status` vaut `"facts_collected"`.
+- **Ne remplis pas** `rating`, `audience`, `useCases`, `editorial`.
+- Pour chaque page, **extrais seulement ce qu'il faut** (plans, prix, unités,
+  limites, fonctionnalités clés) au lieu de charger la page entière : c'est
+  ce qui coûte le plus.
+- Validation : `node scripts/research/validate.mjs --stage facts <slugs>`.
+- Sois bref dans tes réponses intermédiaires : pas de résumé entre deux
+  outils, seulement le compte rendu final.
+
+Le reste du brief (budget, prix, identité, alternatives) s'applique tel quel.
+
 ## 1. Mission
 
 Pour chaque outil d'un lot, produire **un dossier de recherche** dans
@@ -321,11 +348,14 @@ BRANCHE
 
 ## 12. Prompt à coller dans la session cloud
 
+Réglages : modèle Sonnet, effort **Bas**, environnement avec accès Internet
+complet. Remplace `c1` par le numéro du lot.
+
 ```text
-Exécute docs/CLOUD_RESEARCH_BRIEF.md dans le dépôt ToolTrim pour le lot <ID>
-de research/queue.json. Lis uniquement ce brief, puis lance
-`node scripts/research/seed.mjs --batch <ID>`. Respecte strictement la
-section 2 (budget). Un fichier research/dossiers/<slug>.json par outil,
-validé par scripts/research/validate.mjs, sur la branche research/batch-<ID>.
-Termine par le compte rendu de la section 11.
+Exécute docs/CLOUD_RESEARCH_BRIEF.md en mode cloud (section 0, faits seulement) pour le lot c1 de research/queue.json (cloudBatches).
+Lis uniquement ce brief, puis lance `node scripts/research/seed.mjs --batch c1`.
+Respecte strictement la section 2 (budget) et la section 0. Un fichier research/dossiers/<slug>.json par outil, status "facts_collected", en anglais seulement. Ne touche jamais research/tool-pages/.
+Valide avec `node scripts/research/validate.mjs --stage facts <les slugs du lot>` jusqu'à zéro erreur.
+Commite uniquement ces fichiers sur une nouvelle branche research/c1, pousse-la, ne fusionne pas dans main.
+Termine par le compte rendu de la section 11, en bref.
 ```

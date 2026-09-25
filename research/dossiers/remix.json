@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "slug": "remix",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Remix",
+    "vendor": "Shopify, Inc.",
+    "officialUrl": "https://remix.run",
+    "docsUrl": "https://remix.run/docs",
+    "changelogUrl": "https://github.com/remix-run/remix/releases",
+    "urlStatus": "ok",
+    "productStatus": "renamed",
+    "statusNote": "The React-based full-stack framework known as Remix (v2, the product this dossier describes: routes, loaders, server rendering) was merged into React Router v7 in 2024 rather than being released as 'Remix v3'. The Remix team said the Remix packages would 'take a little nap' while development continued under the React Router name. Separately, in 2025 the team announced a new project also called 'Remix v3', but it is not React-based (a fork of Preact with a custom component model) and is a different product still in active beta (install via the npm 'next' tag). For anyone building a React full-stack app today, the maintained continuation of the original Remix is React Router v7."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://remix.run", "tier": 1, "accessedOn": "2026-09-25", "title": "Remix, official site" },
+    { "id": "s2", "url": "https://remix.run/blog/merging-remix-and-react-router", "tier": 1, "accessedOn": "2026-09-25", "title": "Merging Remix and React Router" },
+    { "id": "s3", "url": "https://remix.run/blog/wake-up-remix", "tier": 1, "accessedOn": "2026-09-25", "title": "Wake up, Remix" },
+    { "id": "s4", "url": "https://github.com/remix-run/remix", "tier": 2, "accessedOn": "2026-09-25", "title": "remix-run/remix on GitHub" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1", "s4"] },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "The React-based Remix (v2) is no longer where active development happens; new features and fixes land in React Router v7 instead.", "fr": "Le Remix basé sur React (v2) n'est plus le foyer du développement actif : les nouveautés et correctifs arrivent désormais dans React Router v7.", "sourceIds": ["s2"] },
+      { "en": "The current 'Remix v3' project sharing the name is a separate, non-React framework in beta, not a continuation of the tool most sites integrate with today.", "fr": "Le projet 'Remix v3' qui partage aujourd'hui ce nom est un framework distinct, sans React, encore en bêta, différent de l'outil que la plupart des sites intègrent actuellement.", "sourceIds": ["s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "File-based nested routing with loaders and actions that fetch and mutate data on the server before rendering.", "fr": "Routage imbriqué basé sur les fichiers, avec loaders et actions qui récupèrent et modifient les données côté serveur avant le rendu.", "sourceIds": ["s1", "s2"] },
+      { "en": "Server-side rendering out of the box, with progressive enhancement so forms and navigation work before JavaScript loads.", "fr": "Rendu côté serveur par défaut, avec amélioration progressive : formulaires et navigation fonctionnent avant même le chargement du JavaScript.", "sourceIds": ["s1"] },
+      { "en": "Deployable to multiple runtimes (Node, Cloudflare, Deno) via adapters rather than being locked to one hosting platform.", "fr": "Déployable sur plusieurs runtimes (Node, Cloudflare, Deno) via des adaptateurs, sans dépendance exclusive à une seule plateforme d'hébergement.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The original React-based framework is in maintenance mode; teams starting new projects are steered toward React Router v7 instead.", "fr": "Le framework original basé sur React est en mode maintenance ; les nouvelles équipes sont orientées vers React Router v7.", "sourceIds": ["s2"] },
+      { "en": "Migrating means changing imports from the @remix-run/* packages to react-router packages, an extra step compared to a tool with a single stable identity.", "fr": "La migration implique de remplacer les imports des paquets @remix-run/* par react-router, une étape supplémentaire comparée à un outil à identité unique et stable.", "sourceIds": ["s2"] },
+      { "en": "The 'Remix' name now also refers to an unrelated, pre-release, non-React framework, which creates confusion when researching the product.", "fr": "Le nom 'Remix' désigne aussi désormais un framework distinct, non-React et pas encore publié, ce qui crée de la confusion au moment des recherches.", "sourceIds": ["s3", "s4"] }
+    ],
+    "integrations": [
+      { "name": "React Router", "slug": "react-router", "sourceIds": ["s2"] },
+      { "name": "Cloudflare", "slug": "cloudflare", "sourceIds": ["s1"] },
+      { "name": "Vercel", "slug": "vercel", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A freelance or small-team developer building a full-stack React app who wants server rendering and data loading conventions without assembling them by hand.",
+      "fr": "Un développeur freelance ou une petite équipe qui construit une app React full-stack et veut du rendu serveur et des conventions de chargement de données sans tout assembler à la main."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Existing Remix v2 codebases that need to keep running and eventually migrate their imports to React Router v7.", "fr": "Bases de code Remix v2 existantes qui doivent continuer à tourner puis migrer leurs imports vers React Router v7." },
+    { "en": "Learning the loader/action/nested-route model, since it's the same model now shipped as React Router v7's framework mode.", "fr": "Apprendre le modèle loader/action/routes imbriquées, puisque c'est le même modèle livré aujourd'hui dans le mode framework de React Router v7." }
+  ],
+  "alternatives": [
+    { "slug": "vercel", "reason": { "en": "Common deployment target for React full-stack apps, including Remix/React Router projects.", "fr": "Plateforme de déploiement courante pour les apps React full-stack, y compris les projets Remix/React Router." } },
+    { "slug": "netlify", "reason": { "en": "Another frequent hosting choice for server-rendered React apps built with Remix-style frameworks.", "fr": "Autre choix d'hébergement fréquent pour les apps React rendues côté serveur avec des frameworks type Remix." } },
+    { "slug": "firebase", "reason": { "en": "Often paired as backend/auth/hosting when a Remix app needs a managed backend.", "fr": "Souvent associé comme backend/auth/hébergement quand une app Remix a besoin d'un backend managé." } },
+    { "slug": "supabase", "reason": { "en": "Popular managed database/auth backend paired with Remix-style loaders and actions.", "fr": "Backend base de données/auth managé populaire, associé aux loaders et actions façon Remix." } }
+  ],
+  "missingAlternatives": [
+    { "name": "React Router", "officialUrl": "https://reactrouter.com", "reason": "Direct successor: Remix v2's engine and framework mode now ship under the React Router v7 name, making it the closest and most current alternative." },
+    { "name": "Next.js", "officialUrl": "https://nextjs.org", "reason": "The other dominant full-stack React framework, competing directly on routing, server rendering, and data loading conventions." },
+    { "name": "TanStack Router", "officialUrl": "https://tanstack.com/router", "reason": "A type-safe React routing alternative increasingly used for full-stack apps, competing on the same routing/data-loading layer." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "Its core ideas (loaders, actions, nested routes) were valuable enough to become the basis of React Router v7 itself, but the standalone product is no longer where that value is being developed.", "fr": "Ses idées principales (loaders, actions, routes imbriquées) ont eu assez de valeur pour devenir la base de React Router v7, mais le produit autonome n'est plus le lieu où cette valeur continue d'être développée.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "File-based routing and conventions get a project running quickly, though understanding loaders/actions/server vs client boundaries takes some ramp-up.", "fr": "Le routage par fichiers et les conventions permettent de démarrer vite, même si comprendre les frontières loaders/actions/serveur-client demande un peu d'apprentissage.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers on server rendering and progressive enhancement as advertised, without requiring extra libraries for basic data loading.", "fr": "Tient sa promesse de rendu serveur et d'amélioration progressive, sans bibliothèques supplémentaires pour le chargement de données basique.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Handles nested layouts, parallel data loading, and multi-runtime deployment well for typical full-stack apps, matching category leaders.", "fr": "Gère bien les layouts imbriqués, le chargement de données en parallèle et le déploiement multi-runtime pour des apps full-stack classiques, au niveau des leaders de la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "MIT-licensed and open source, and the migration path to React Router v7 is documented as an import rename rather than a rewrite.", "fr": "Sous licence MIT et open source, avec un chemin de migration vers React Router v7 documenté comme un simple renommage d'imports plutôt qu'une réécriture.", "sourceIds": ["s1", "s2"] }
+    },
+    "lastActivityVerifiedOn": "2026-09-25"
+  },
+  "editorial": {
+    "tagline": { "en": "Merged into React Router", "fr": "Fusionné dans React Router" },
+    "shortDescription": {
+      "en": "Full-stack React framework (routes, loaders, server rendering), now merged into React Router v7.",
+      "fr": "Framework React full-stack (routes, loaders, rendu serveur), aujourd'hui fusionné dans React Router v7."
+    },
+    "longDescription": {
+      "en": "Remix popularized a full-stack React model built on nested routes, loaders, and actions: fetch and mutate data on the server, render on the server first, and enhance progressively on the client. It shipped as an open-source, MIT-licensed framework with adapters for multiple hosting runtimes.\n\nIn 2024 the Remix team folded this framework directly into React Router v7, describing the Remix packages as taking 'a little nap' rather than continuing independent development. Existing Remix v2 apps keep working and can move to React Router v7 mainly by renaming imports.\n\nA separate project also called 'Remix' (v3) was announced in 2025, but it drops React entirely in favor of a custom component model forked from Preact, and is still in beta. For anyone evaluating the tool this catalogue entry describes, React Router v7 is the maintained continuation.",
+      "fr": "Remix a popularisé un modèle React full-stack basé sur des routes imbriquées, des loaders et des actions : récupérer et modifier les données côté serveur, rendre côté serveur en premier, puis améliorer progressivement côté client. Il était livré en open source, sous licence MIT, avec des adaptateurs pour plusieurs runtimes d'hébergement.\n\nEn 2024, l'équipe Remix a intégré ce framework directement dans React Router v7, décrivant les paquets Remix comme partant faire 'une petite sieste' plutôt que de continuer un développement indépendant. Les applications Remix v2 existantes continuent de fonctionner et peuvent migrer vers React Router v7 principalement en renommant leurs imports.\n\nUn autre projet également appelé 'Remix' (v3) a été annoncé en 2025, mais il abandonne complètement React au profit d'un modèle de composants maison dérivé de Preact, et reste en bêta. Pour qui évalue l'outil décrit dans cette fiche, React Router v7 en est la continuation maintenue."
+    },
+    "pros": [
+      { "en": "Solid, battle-tested routing/data-loading model that lives on, unchanged in spirit, inside React Router v7.", "fr": "Modèle de routage et de chargement de données solide et éprouvé, qui perdure, dans le même esprit, au sein de React Router v7." },
+      { "en": "Open source, MIT-licensed, with a documented low-friction migration path.", "fr": "Open source, sous licence MIT, avec un chemin de migration documenté et à faible friction." },
+      { "en": "Deployable to several runtimes (Node, Cloudflare, Deno) rather than tied to one host.", "fr": "Déployable sur plusieurs runtimes (Node, Cloudflare, Deno) plutôt que lié à un seul hébergeur." }
+    ],
+    "cons": [
+      { "en": "Starting a brand-new project as 'Remix' today is confusing: the React framework is dormant, and the active 'Remix' project is an unrelated, pre-release, non-React tool.", "fr": "Démarrer un nouveau projet sous le nom 'Remix' aujourd'hui prête à confusion : le framework React est en sommeil, et le projet 'Remix' actif est un outil distinct, non-React, pas encore publié." },
+      { "en": "No new features or roadmap for the React-based version; all forward development happens under React Router.", "fr": "Aucune nouvelle fonctionnalité ni feuille de route pour la version basée sur React ; tout le développement futur se fait sous React Router." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already run a Remix v2 app and just need it stable while you plan a React Router v7 migration.", "fr": "Tu fais déjà tourner une app Remix v2 et as juste besoin de stabilité en attendant de planifier la migration vers React Router v7." },
+      "avoidIf": { "en": "You're starting a new full-stack React project: go straight to React Router v7 instead of Remix.", "fr": "Tu démarres un nouveau projet React full-stack : va directement sur React Router v7 plutôt que sur Remix." },
+      "threshold": { "en": "If you're choosing between frameworks today, treat 'Remix' as historical and evaluate React Router v7 (or Next.js) on their current docs instead.", "fr": "Si tu choisis un framework aujourd'hui, considère 'Remix' comme historique et évalue plutôt React Router v7 (ou Next.js) sur leur documentation actuelle." },
+      "billingTraps": { "en": "None: the framework itself is free and open source. The only cost risk is indirect, through whatever hosting platform you deploy to.", "fr": "Aucun : le framework lui-même est gratuit et open source. Le seul risque de coût est indirect, via la plateforme d'hébergement choisie." }
+    }
+  },
+  "unknowns": [
+    "Exact date the React-based Remix (v2) packages stopped receiving updates, and whether any security-only patches are still issued.",
+    "Release date or roadmap for the non-React Remix v3 (still in beta as of research date, install via the npm 'next' tag).",
+    "Whether remix.run/docs still hosts the full Remix v2 documentation long-term or will eventually redirect entirely to reactrouter.com."
+  ],
+  "conflicts": []
+}
