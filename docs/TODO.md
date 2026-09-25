@@ -22,8 +22,11 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [x] Nouveau découpage décidé le 25/09/2026 : le crédit ne sert qu'aux 100 outils les plus cherchés (72 % de la demande), en mode « faits seuls » (section 0 du brief), 3 outils par session, effort bas. Lots `c1` à `c27` dans `research/queue.json` (`cloudBatches`).
 - [x] Lot test `c1` fait le 25/09/2026 (branche `research/c1`) : coût par fiche jugé acceptable par Michael. Limites : 1 source par outil, et pour Adobe un seul prix sur trois (22,99 $ = annuel payé au mois, noté « mensuel »).
 - [x] Script de fusion `scripts/research/merge.mjs` écrit et appliqué aux 20 dossiers complets (lots 0 et 1) le 25/09/2026, en local
-- [ ] Pousser les 20 fiches fusionnées, après décision sur NordPass et MongoDB Atlas **[décision]**
-- [ ] Lots `c2` à `c27` en cloud (3 outils par session)
+- [x] 26 fiches en ligne le 25/09/2026 (`cb0cefc0`) : lots 0, 1, c1, c2. NordPass sans prix promotionnel dans la grille (`promoPrice`), MongoDB Atlas comparé sur Flex.
+- [x] Coût mesuré : 0,50 $ par fiche en mode « faits seuls » (c1 et c2), solde 87 $ après c2.
+- [ ] Session enchaînée c3 à c10 (24 outils) en cours, directement sur `main`
+- [ ] Lots c11 à c21 (10 outils chacun, 110 outils) : d'abord c11 à c13, vérifier le coût par fiche, puis c14 à c21
+- [ ] Compléter en local puis fusionner chaque lot reçu (c3 et suivants)
 - [ ] Afficher le champ `tagline` des fiches dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « produit arrêté / racheté » depuis `lifecycle`
 - [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
 - [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`
