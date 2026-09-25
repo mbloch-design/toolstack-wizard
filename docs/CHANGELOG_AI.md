@@ -20,6 +20,13 @@
 - Mobile : résultats en lignes façon App Store, étagères en carrousel avec aperçu de la colonne suivante, signet « Ma stack » sur chaque ligne. Tuile grise pendant le chargement des logos (tout le site).
 - Données : 7 outils recatégorisés (Wix, Squarespace, Freshservice, Zendesk, HoneyBook, Instantly, Gusto) et 5 fiches réparées après un décalage CSV (URL officielles vérifiées, descriptions complétées). Liste de réinjection dans `SUPABASE_REPRISE.md`.
 
+## 2026-09-25 — Nouvelle fiche Novadesko
+
+- Ajoute une fiche bilingue centrée sur la facturation Peppol, la liaison bancaire, le suivi TVA et la collaboration avec le comptable pour les entreprises belges.
+- Documente un tarif à partir de 19 € HT/mois, modulable selon les fonctions activées, ainsi qu'un essai de 14 jours sans carte bancaire.
+- Intègre trois médias officiels, une notation ToolTrim sourcée et des réserves sur le tarif final et la portabilité après résiliation.
+- Maintient le site officiel et la page tarifaire en `nofollow`, avec un test de non-régression dédié.
+
 ## 2026-09-24 — Correction factuelle de la fiche Happia
 
 - Corrige l'essai Pro de 14 jours : aucune carte bancaire au démarrage.

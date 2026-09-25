@@ -38810,5 +38810,41 @@
     ],
     "prescription_quality": "question",
     "freeAlternative": "Lindy"
+  },
+  {
+    "id": "novadesko",
+    "slug": "novadesko",
+    "name": "Novadesko",
+    "categoryId": "finance",
+    "shortDescription": "Centralise facturation Peppol, banque, TVA et collaboration comptable pour les entreprises belges.",
+    "shortDescriptionEn": "Brings Peppol invoicing, banking, VAT and accountant collaboration together for Belgian businesses.",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte bancaire",
+      "paid": "À partir de 19 € HT/mois, selon les modules activés"
+    },
+    "defaultMonthlyPrice": 19,
+    "compareMonthlyPrice": 19,
+    "websiteUrl": "https://novadesko.com/",
+    "ogImageUrl": "https://novadesko.com/images/preview-1.webp",
+    "logo": "https://novadesko.com/favicon.svg",
+    "tool_type": "gestion",
+    "substitution_cluster_v2": "finance-ops",
+    "functional_needs": [
+      "facturation",
+      "comptabilite",
+      "paiements",
+      "gestion-stock"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "daf-finance",
+      "ecommercant"
+    ],
+    "relevantFor": [
+      "Indépendants belges",
+      "TPE et PME belges",
+      "Commerçants et entreprises avec gestion de stock",
+      "Fiduciaires et leurs clients"
+    ]
   }
 ]

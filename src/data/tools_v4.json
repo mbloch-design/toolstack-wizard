@@ -181048,5 +181048,234 @@
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-03"
     }
+  },
+  {
+    "id": "novadesko",
+    "slug": "novadesko",
+    "name": "Novadesko",
+    "category": "finance",
+    "shortDescription": "Centralise facturation Peppol, banque, TVA et collaboration comptable pour les entreprises belges.",
+    "shortDescriptionEn": "Brings Peppol invoicing, banking, VAT and accountant collaboration together for Belgian businesses.",
+    "description": "Novadesko est un logiciel belge de gestion et de facturation conçu pour les indépendants, TPE et PME. Il réunit devis, factures, suivi des paiements, CRM et gestion de stock, avec un positionnement particulièrement adapté aux obligations et pratiques comptables belges.\n\nSon point fort est la continuité entre facturation et comptabilité : envoi et réception des factures structurées via Peppol, import CODA ou connexion bancaire, rapprochement des justificatifs et accès dédié pour le comptable. Le portail comptable permet notamment de récupérer les documents et exports sans échanges répétés par e-mail.\n\nNovadesko convient surtout aux structures belges qui veulent réduire les doubles saisies entre gestion commerciale, banque et fiduciaire. Le tarif démarre à 19 € HT par mois, mais le montant final dépend des modules activés. L'essai dure 14 jours, sans carte bancaire ni prélèvement automatique à son terme.",
+    "longDescription": "Novadesko est un logiciel belge de gestion et de facturation conçu pour les indépendants, TPE et PME. Il réunit devis, factures, suivi des paiements, CRM et gestion de stock, avec un positionnement particulièrement adapté aux obligations et pratiques comptables belges.\n\nSon point fort est la continuité entre facturation et comptabilité : envoi et réception des factures structurées via Peppol, import CODA ou connexion bancaire, rapprochement des justificatifs et accès dédié pour le comptable. Le portail comptable permet notamment de récupérer les documents et exports sans échanges répétés par e-mail.\n\nNovadesko convient surtout aux structures belges qui veulent réduire les doubles saisies entre gestion commerciale, banque et fiduciaire. Le tarif démarre à 19 € HT par mois, mais le montant final dépend des modules activés. L'essai dure 14 jours, sans carte bancaire ni prélèvement automatique à son terme.",
+    "longDescriptionEn": "Novadesko is a Belgian business management and invoicing platform for freelancers and SMBs. It combines quotes, invoices, payment tracking, CRM and inventory, with a strong fit for Belgian accounting rules and workflows.\n\nIts main advantage is the continuity between invoicing and accounting: structured invoices sent and received through Peppol, CODA imports or bank connections, document matching and a dedicated accountant portal. Accountants can retrieve documents and exports without repeated email exchanges.\n\nNovadesko is best suited to Belgian businesses that want to reduce duplicate work between sales administration, banking and their accounting firm. Pricing starts at €19 excluding VAT per month, but the final amount depends on the enabled modules. The trial lasts 14 days, requires no credit card and does not convert automatically into a paid subscription.",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte bancaire",
+      "paid": "À partir de 19 € HT/mois, selon les modules activés"
+    },
+    "pricingEn": {
+      "free": "14-day free trial with no credit card required",
+      "paid": "From €19 excl. VAT/month, depending on enabled modules"
+    },
+    "defaultMonthlyPrice": 19,
+    "pricing_v5": {
+      "cautions": [
+        "Prix affiché hors TVA.",
+        "Le tarif final dépend des modules activés, notamment facturation, CRM, caisse, stock ou connexion bancaire.",
+        "L'abonnement mensuel est sans engagement ; une remise annuelle est proposée sans être obligatoire."
+      ],
+      "cautionsEn": [
+        "Displayed price excludes VAT.",
+        "The final price depends on enabled modules, including invoicing, CRM, point of sale, inventory or bank connection.",
+        "The monthly subscription has no minimum term; an optional annual discount is available."
+      ],
+      "verified_on": "2026-09-25",
+      "source_domain": "novadesko.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Offre à partir de",
+      "price_reliability": "medium",
+      "location_sensitive": true,
+      "official_source_url": "https://novadesko.com/fr/tarifs",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 19,
+      "plans": [
+        {
+          "planKey": "starting-price",
+          "displayName": "Offre à partir de",
+          "summary": "Configuration modulaire adaptée à l'activité et aux fonctions activées.",
+          "featureHighlights": [
+            "Essai de 14 jours sans carte bancaire",
+            "Facturation Peppol incluse dans le module de facturation",
+            "Accès au portail comptable sans supplément"
+          ],
+          "detailsSourceUrl": "https://novadesko.com/fr/tarifs",
+          "pricingUnit": "par entreprise",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "BE",
+          "observedLocale": "fr-BE",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "websiteUrl": "https://novadesko.com/",
+    "affiliateLink": "",
+    "logo": "https://novadesko.com/favicon.svg",
+    "verdict": {
+      "keepIf": [
+        "Vous êtes indépendant ou dirigez une petite entreprise en Belgique.",
+        "Vous voulez relier facturation Peppol, banque et échanges avec votre comptable.",
+        "Vous préférez centraliser devis, factures, justificatifs, TVA et suivi client."
+      ],
+      "avoidIf": [
+        "Votre activité n'a pas besoin des spécificités fiscales et bancaires belges.",
+        "Vous cherchez un tarif fixe avant de choisir vos modules.",
+        "Vous voulez uniquement un outil minimal pour éditer quelques factures."
+      ],
+      "threshold": "Testez Novadesko si les ressaisies entre facturation, banque et comptable vous prennent du temps. Avant de souscrire, demandez le prix exact de votre configuration et vérifiez avec votre fiduciaire que les exports proposés correspondent à son logiciel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You are self-employed or run a small business in Belgium.",
+        "You want to connect Peppol invoicing, banking and accountant collaboration.",
+        "You prefer to centralize quotes, invoices, supporting documents, VAT and customer tracking."
+      ],
+      "avoidIf": [
+        "Your business does not need Belgian tax and banking specifics.",
+        "You need a fixed price before choosing modules.",
+        "You only need a minimal tool for issuing a few invoices."
+      ],
+      "threshold": "Test Novadesko if re-entering data across invoicing, banking and your accountant takes meaningful time. Before subscribing, request the exact price for your setup and confirm that the available exports match your accountant's software."
+    },
+    "pros": [
+      "Facturation électronique Peppol intégrée à l'environnement de gestion.",
+      "Import CODA, connexion bancaire et rapprochement des justificatifs.",
+      "Portail dédié pour partager documents et exports avec le comptable.",
+      "Essai de 14 jours sans carte bancaire ni conversion automatique.",
+      "Support et hébergement annoncés en Belgique."
+    ],
+    "prosEn": [
+      "Peppol e-invoicing integrated into the management environment.",
+      "CODA import, bank connection and supporting-document matching.",
+      "Dedicated portal for sharing documents and exports with an accountant.",
+      "14-day trial without a credit card or automatic paid conversion.",
+      "Support and hosting advertised as Belgian."
+    ],
+    "cons": [
+      "Le prix exact n'est pas public pour chaque combinaison de modules.",
+      "La valeur du produit est surtout concentrée sur les entreprises belges.",
+      "Les affirmations de gain de temps et les avis disponibles proviennent principalement de l'éditeur.",
+      "Les modalités d'export complet des données après résiliation ne sont pas détaillées sur la page tarifaire."
+    ],
+    "consEn": [
+      "Exact pricing is not public for every module combination.",
+      "Most of the product's value is specific to Belgian businesses.",
+      "Available time-saving claims and reviews mainly come from the vendor.",
+      "Full data-export terms after cancellation are not detailed on the pricing page."
+    ],
+    "useCases": [
+      "Créer des devis et envoyer des factures structurées via Peppol.",
+      "Rapprocher transactions bancaires, factures et justificatifs.",
+      "Suivre la TVA et préparer les exports destinés à une fiduciaire.",
+      "Centraliser clients, paiements, stock et rapports de gestion."
+    ],
+    "useCasesEn": [
+      "Create quotes and send structured invoices through Peppol.",
+      "Match bank transactions with invoices and supporting documents.",
+      "Track VAT and prepare exports for an accounting firm.",
+      "Centralize customers, payments, inventory and management reports."
+    ],
+    "covers": [
+      "facturation",
+      "comptabilite",
+      "paiements",
+      "crm",
+      "gestion-stock"
+    ],
+    "functional_needs": [
+      "facturation",
+      "comptabilite",
+      "paiements",
+      "gestion-stock"
+    ],
+    "relevantFor": [
+      "Indépendants belges",
+      "TPE et PME belges",
+      "Commerçants et entreprises avec gestion de stock",
+      "Fiduciaires et leurs clients"
+    ],
+    "alternatives": [
+      "xero",
+      "quickbooks",
+      "indy"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour une entreprise belge qui veut réunir facturation Peppol, banque et collaboration comptable.",
+      "idealForEn": "Ideal for a Belgian business that wants Peppol invoicing, banking and accountant collaboration in one place.",
+      "metaDescription": "Novadesko : avis, prix, facturation Peppol, connexion bancaire, TVA, portail comptable et limites pour les indépendants et PME belges."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consultant-b2b",
+      "daf-finance",
+      "ecommercant"
+    ],
+    "ia_use_case": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 2,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "country_compliance",
+      "bank_sync_needed",
+      "enabled_modules",
+      "accountant_software"
+    ],
+    "substitution_cluster_v2": "finance-ops",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://novadesko.com/images/preview-1.webp",
+    "galleryImages": [
+      "https://novadesko.com/images/preview-2.webp",
+      "https://novadesko.com/images/preview-3.webp"
+    ],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "La combinaison facturation Peppol, banque, TVA et portail comptable répond à un flux administratif cohérent pour les entreprises belges. Le prix démarre à 19 € HT/mois, mais le retour réel dépend des modules utilisés (source : novadesko.com/fr et /fr/pricing, consulté le 2026-09-25).",
+        "simplicite": "L'essai de 14 jours ne demande pas de carte bancaire et ne se transforme pas automatiquement en abonnement. La tarification modulaire exige toutefois une proposition personnalisée pour connaître le coût final (source : novadesko.com/fr/pricing, consulté le 2026-09-25).",
+        "utilisation": "Des interfaces web et mobiles ainsi qu'un scan de justificatifs sont présentés par l'éditeur. Aucun test indépendant du produit n'a été retenu pour confirmer la fluidité ou la qualité de reconnaissance (source : novadesko.com/fr, consulté le 2026-09-25).",
+        "puissance": "Le périmètre annoncé couvre devis, facturation, Peppol, CODA, banque, TVA, CRM, stock, paiements et accès comptable. Cette couverture est large, mais certaines fonctions et leur prix dépendent des modules activés (source : novadesko.com/fr et /fr/pricing, consulté le 2026-09-25).",
+        "reversibilite": "Le plan mensuel est annoncé sans engagement et résiliable depuis l'espace client. La page tarifaire ne précise pas les formats ni le délai d'un export complet après résiliation, ce qui limite la note (source : novadesko.com/fr/pricing, consulté le 2026-09-25)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The combination of Peppol invoicing, banking, VAT and an accountant portal addresses a coherent administrative workflow for Belgian businesses. Pricing starts at €19 excl. VAT/month, but actual value depends on the modules used (source: novadesko.com/en and /en/pricing, checked 2026-09-25).",
+        "simplicite": "The 14-day trial requires no credit card and does not convert automatically into a subscription. Modular pricing still requires a tailored proposal to know the final cost (source: novadesko.com/en/pricing, checked 2026-09-25).",
+        "utilisation": "The vendor presents web and mobile interfaces plus document scanning. No independent product test was used to confirm workflow smoothness or recognition quality (source: novadesko.com/en, checked 2026-09-25).",
+        "puissance": "The advertised scope covers quotes, invoicing, Peppol, CODA, banking, VAT, CRM, inventory, payments and accountant access. This is broad, but some capabilities and their price depend on enabled modules (source: novadesko.com/en and /en/pricing, checked 2026-09-25).",
+        "reversibilite": "The monthly plan is advertised as commitment-free and cancellable from the customer area. The pricing page does not specify full-export formats or availability after cancellation, which limits the score (source: novadesko.com/en/pricing, checked 2026-09-25)."
+      },
+      "lastActivityVerifiedOn": "2026-09-25",
+      "notedOn": "2026-09-25"
+    }
   }
 ]

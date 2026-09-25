@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { safeExternalUrl } from "./externalLink";
+import { relPourLienOutil, safeExternalUrl } from "./externalLink";
 
 describe("safeExternalUrl", () => {
   it("accepts absolute HTTP and HTTPS links", () => {
@@ -12,5 +12,13 @@ describe("safeExternalUrl", () => {
     expect(safeExternalUrl(" grammaire et clarté.")).toBeUndefined();
     expect(safeExternalUrl("/fr/tools")).toBeUndefined();
     expect(safeExternalUrl("javascript:alert(1)")).toBeUndefined();
+  });
+});
+
+describe("relPourLienOutil", () => {
+  it("marks the Novadesko website link as nofollow", () => {
+    expect(relPourLienOutil("https://novadesko.com/", "", "https://novadesko.com/")).toBe(
+      "nofollow noopener noreferrer",
+    );
   });
 });

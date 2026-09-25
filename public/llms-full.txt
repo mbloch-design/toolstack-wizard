@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1177
+# Records: 1178
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17745,5 +17745,20 @@
     "alternatives": [
       "Lindy"
     ]
+  },
+  {
+    "name": "Novadesko",
+    "slug": "novadesko",
+    "url_fr": "https://tooltrim.com/fr/tool/novadesko",
+    "url_en": "https://tooltrim.com/en/tool/novadesko",
+    "website": "https://novadesko.com/",
+    "category": "finance",
+    "monthly_price_eur": 19,
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte bancaire",
+      "paid": "À partir de 19 € HT/mois, selon les modules activés"
+    },
+    "description_fr": "Centralise facturation Peppol, banque, TVA et collaboration comptable pour les entreprises belges.",
+    "description_en": "Brings Peppol invoicing, banking, VAT and accountant collaboration together for Belgian businesses."
   }
 ]
