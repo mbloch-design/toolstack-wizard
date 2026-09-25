@@ -359,3 +359,36 @@ Valide avec `node scripts/research/validate.mjs --stage facts <les slugs du lot>
 Commite uniquement ces fichiers sur une nouvelle branche research/c1, pousse-la, ne fusionne pas dans main.
 Termine par le compte rendu de la section 11, en bref.
 ```
+
+## 13. Mode enchaîné : plusieurs lots dans une seule session
+
+Pour traiter une série de lots (par exemple `c3` à `c10`) sans lancer une
+session par lot. La session principale est un **chef d'orchestre** : elle ne
+fait aucune recherche elle-même.
+
+Règles :
+- Pour **chaque lot**, lance **un sous-agent** (outil Agent/Task) qui reçoit
+  uniquement le prompt de la section 12 adapté au lot (mode faits seulement).
+  Un sous-agent repart d'une conversation vide : c'est ce qui garde le coût
+  par fiche au niveau d'une session courte. Ne fais jamais la recherche dans
+  la session principale.
+- Les lots s'enchaînent **l'un après l'autre**, jamais en parallèle.
+- Tout se fait sur **une seule branche**, `research/<premier>-<dernier>`
+  (ex. `research/c3-c10`). Chaque sous-agent y commite ses fichiers, et la
+  session principale **pousse après chaque lot** : si la session s'arrête,
+  les lots finis sont conservés.
+- Le sous-agent ne crée pas de branche : il travaille sur la branche de la
+  session principale et ne pousse pas lui-même.
+- La session principale ne garde de chaque lot que son compte rendu bref
+  (section 11). Elle ne relit pas les dossiers.
+- Si un lot échoue deux fois à la validation, note-le et passe au suivant.
+- À la fin : un compte rendu global, avec un tableau lot par lot (outils,
+  erreurs, cas ambigus, concurrents manquants).
+
+Prompt à coller (remplace `c3` et `c10`) :
+
+```text
+Exécute la section 13 de docs/CLOUD_RESEARCH_BRIEF.md (mode enchaîné) pour les lots c3 à c10 de research/queue.json (cloudBatches), sur la branche research/c3-c10.
+Tu es le chef d'orchestre : pour chaque lot, lance un sous-agent qui exécute le prompt de la section 12 pour ce lot, sur ta branche, sans créer de branche ni pousser. Un lot après l'autre. Après chaque lot, vérifie que `node scripts/research/validate.mjs --stage facts` passe sur ses slugs, commite si besoin et pousse la branche.
+Ne fais aucune recherche toi-même. Termine par le compte rendu global de la section 13.
+```
