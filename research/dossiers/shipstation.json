@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "shipstation",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ShipStation",
+    "vendor": "Auctane, Inc.",
+    "officialUrl": "https://www.shipstation.com",
+    "docsUrl": "https://www.shipstation.com/docs/api/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.shipstation.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "ShipStation pricing" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.shipstation.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 14.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry tier covers 50 shipments/month, scaling to 174.99 USD/month at 5,000 shipments; 3 users included; basic automation, rate shopping, LTL comparison, return labels, email support" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 29.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry tier from 50 shipments/month up to 100,000+ (3,599.99 USD/month at top tier); 10 users included; unlimited automations, order combining/splitting, API access, phone support, branded returns portal" }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 349.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Scales up to 7,499.99 USD/month at 100,000+ shipments; 15 users included; advanced inventory/warehouse management, custom analytics, ODBC access, dedicated implementation" }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Price scales by monthly shipment volume within each plan tier (e.g. Standard ranges from $29.99 to $3,599.99/month), not a flat fee; the entry price only applies at the lowest shipment tier.", "sourceIds": ["s1"] },
+      { "en": "Annual billing gives a 20% discount versus monthly; figures recorded here are monthly billing.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Multi-carrier shipping label generation, rate shopping across carriers, and LTL freight comparison for e-commerce order fulfillment.", "sourceIds": ["s1"] },
+      { "en": "Order automation rules, order combining/splitting, and a branded customer returns portal on Standard and above.", "sourceIds": ["s1"] },
+      { "en": "API access for custom integrations, and advanced inventory/warehouse management plus custom analytics on the Premium tier.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Advanced inventory and warehouse management features are reserved for the Premium tier, starting at $349.99/month.", "sourceIds": ["s1"] },
+      { "en": "Cost rises steeply with shipment volume within the same plan, which can make budgeting unpredictable for growing stores.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [],
+  "missingAlternatives": [
+    { "name": "ShipBob", "officialUrl": "https://www.shipbob.com", "reason": "Fulfillment and shipping platform competing directly with ShipStation, not in the catalogue" },
+    { "name": "EasyShip", "officialUrl": "https://www.easyship.com", "reason": "Multi-carrier shipping software alternative for e-commerce, not in the catalogue" }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "The catalogue's alternativeCandidates list for shipstation contained no direct shipping/fulfillment competitors (only generic dev/no-code tools), so no in-catalogue alternatives could be selected.",
+    "Whether taxes are included in listed USD prices is not stated on the pricing page."
+  ],
+  "conflicts": []
+}

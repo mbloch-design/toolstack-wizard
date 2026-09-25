@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "slug": "bigquery",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "BigQuery",
+    "vendor": "Google LLC",
+    "officialUrl": "https://cloud.google.com/bigquery",
+    "docsUrl": "https://cloud.google.com/bigquery/docs",
+    "changelogUrl": "https://cloud.google.com/bigquery/docs/release-notes",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://cloud.google.com/bigquery/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "BigQuery pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://cloud.google.com/bigquery",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "BigQuery product page"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://cloud.google.com/bigquery/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "1 TB of query processing per month and 10 GB of active storage per month at no charge (Google Cloud free tier)."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "on-demand",
+        "name": "On-demand (Standard Edition, pay-per-use)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Approximately $6.25 per TB of data queried (US multi-region), first 1 TB/month free; active storage ~$0.02/GB/month, long-term storage (no edits for 90 days) ~$0.01/GB/month."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise Edition (capacity-based)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Committed or on-demand slot pricing (compute capacity), billed per slot-hour rather than per byte scanned; used for predictable, high-volume workloads."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "on-demand",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "On-demand pricing is billed per TB of data scanned by a query, not a flat monthly fee; costs scale directly with query volume and table design (partitioning/clustering affects cost significantly).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Storage and compute (query) costs are billed separately and both apply even on the free tier once thresholds are exceeded.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Serverless, fully-managed enterprise data warehouse for running SQL analytics at petabyte scale without managing infrastructure.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Built-in machine learning via BigQuery ML, allowing models to be trained and run using SQL directly on stored data.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Native integration with the Google Cloud ecosystem (Cloud Storage, Pub/Sub, Dataflow) plus third-party BI tools (Looker, Tableau, Power BI) and ETL platforms (Airflow, dbt).",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Cost can be unpredictable for ad hoc or poorly optimized queries under the on-demand model, since price scales with bytes scanned.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Requires SQL and data-modeling expertise (partitioning, clustering) to control cost and performance; not a point-and-click tool.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Looker Studio",
+        "slug": "looker-studio",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "dbt",
+        "slug": "dbt",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Airbyte",
+        "slug": "airbyte",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "metabase",
+      "reason": {
+        "en": "BI/analytics layer often paired with or compared to BigQuery for querying and visualizing data."
+      }
+    },
+    {
+      "slug": "posthog",
+      "reason": {
+        "en": "Alternative analytics platform for product/event data that competes for some of the same analytics workloads."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Snowflake",
+      "officialUrl": "https://www.snowflake.com",
+      "reason": "Major cloud data warehouse competitor to BigQuery, not in the catalogue"
+    },
+    {
+      "name": "Amazon Redshift",
+      "officialUrl": "https://aws.amazon.com/redshift/",
+      "reason": "AWS's equivalent managed data warehouse, direct BigQuery competitor, not in the catalogue"
+    }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact current on-demand per-TB rate and storage rates could not be independently re-verified from the live pricing page (fetch returned truncated content); figures above reflect well-established public pricing and should be re-checked at fusion time.",
+    "Enterprise Edition slot pricing is quote/consumption based and was not itemized in detail."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "slug": "hostfully",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Hostfully",
+    "vendor": "Hostfully, Inc.",
+    "officialUrl": "https://hostfully.com",
+    "docsUrl": "https://help.hostfully.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.hostfully.com/faq/how-much-does-hostfully-cost/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Hostfully pricing FAQ"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.hostfully.com/faq/how-much-does-hostfully-cost/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Per-property pricing starting at $15/property/month, plus a platform fee, for operators managing 1-50 listings."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 25,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Per-property pricing starting at $25/property/month, plus a platform fee, for operators managing 51-199 listings."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "growth",
+    "addOns": [
+      {
+        "en": "API Access, Devices, and Screen & Protect are optional paid add-ons.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "The official pricing page does not publish numbers directly and routes visitors to sales; per-property rates and platform fee were found via third-party sources, not the vendor's own published figures, and should be reverified before publishing.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "A separate legacy 'Premium' per-property pricing model exists in Hostfully's own help documentation, suggesting past pricing structure changes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Short-term rental property management software: reservations, channel management, and guest communication.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in direct booking website/site generator to reduce reliance on OTAs like Airbnb and Booking.com.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Pricing is not transparently published on the official site; prospective customers must talk to sales to get an exact quote.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Per-property pricing plus a separate platform fee means monthly cost is not a single flat number and requires calculation based on portfolio size.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Guesty",
+      "officialUrl": "https://www.guesty.com",
+      "reason": "Major short-term rental property management competitor, not in the catalogue"
+    },
+    {
+      "name": "OwnerRez",
+      "officialUrl": "https://www.ownerrez.com",
+      "reason": "Vacation rental management and direct booking competitor, not in the catalogue"
+    }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact published price points were not confirmed directly on hostfully.com; the official FAQ page withholds numbers and routes to sales, so the $15/$25 per-property figures come from third-party review sites and need reverification.",
+    "The catalogue's alternativeCandidates list for hostfully contained no direct property-management competitors (only generic dev/no-code tools), so no in-catalogue alternatives could be selected."
+  ],
+  "conflicts": []
+}

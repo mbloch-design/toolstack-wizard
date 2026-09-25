@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-duik",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Duik Ángela",
+    "vendor": "RxLaboratorio",
+    "officialUrl": "https://rxlaboratorio.org/rx-tool/duik/",
+    "docsUrl": "https://rxlaboratorio.org/rx-tool/duik/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://rxlaboratorio.org/rx-tool/duik/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Duik Ángela official page"
+    }
+  ],
+  "pricing": {
+    "model": "free",
+    "currency": "EUR",
+    "pricingUrl": "https://rxlaboratorio.org/rx-tool/duik/",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Fully free and open-source (GNU GPL-v3), no feature restrictions."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Complete rigging and animation toolkit, no paywall for core features."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      {
+        "en": "Optional paid User Guide, 39 EUR one-time.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Optional video courses on a name-your-own-price model.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Character, prop and camera rigging toolkit for After Effects, described as the industry-standard rigging tool.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automation features for common animation tasks: wiggle, random motion, wheel, spring, bounce, looper, swing, blink, and walk/run cycles.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Keyframe and interpolation management tools, plus camera controls and scripting/expression utilities.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Works only inside Adobe After Effects; not a standalone application.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Requires learning a rigging-specific workflow; official paid guide and video courses exist because the learning curve is non-trivial.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "mac"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "ae-rubberhose",
+      "reason": {
+        "en": "Existing catalogue alternative, another After Effects rigging tool with a simpler limb-rigging focus."
+      }
+    },
+    {
+      "slug": "ae-bao-boa",
+      "reason": {
+        "en": "Existing catalogue alternative, bone/rigging plugin for After Effects."
+      }
+    },
+    {
+      "slug": "ae-overlord",
+      "reason": {
+        "en": "Existing catalogue alternative, After Effects rigging and animation plugin."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact current version number and release cadence beyond what was shown (v17.1.21, with an alpha pre-release for members) may have changed since access."
+  ],
+  "conflicts": []
+}

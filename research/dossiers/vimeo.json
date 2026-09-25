@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 2,
+  "slug": "vimeo",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Vimeo",
+    "vendor": "Vimeo, Inc.",
+    "officialUrl": "https://vimeo.com",
+    "docsUrl": "https://help.vimeo.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://help.vimeo.com/hc/en-us/articles/12425432033937-About-Vimeo-plans",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "About Vimeo plans (Vimeo Help Center)"
+    },
+    {
+      "id": "s2",
+      "url": "https://vimeo.com/upgrade-plan",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Vimeo upgrade plan page"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://vimeo.com/upgrade-plan",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free plan exists but is very limited (small weekly upload cap, Vimeo branding, no ad-free player)."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 20,
+          "annualPerMonth": 12,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Entry paid plan, ad-free player, 2 TB shared monthly bandwidth cap across self-serve tiers"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 41,
+          "annualPerMonth": 25,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "More storage and customization than Starter"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 125,
+          "annualPerMonth": 75,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Advanced analytics, larger team features"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Custom security, compliance and integration requirements"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Monthly billing costs roughly 65% more than annual billing across all self-serve tiers (e.g. Starter is $20/mo billed monthly vs $12/mo billed annually).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "All self-serve plans share a 2 TB monthly bandwidth cap, which can be a hidden limitation for high-traffic embeds.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Ad-free professional video hosting and sharing with customizable, brandable players.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Privacy and access controls for restricting who can view or embed videos.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan is very limited compared to competitors, pushing most real use to paid tiers.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Shared 2 TB monthly bandwidth cap across self-serve plans can constrain high-traffic use cases.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "loom",
+      "reason": {
+        "en": "Existing catalogue alternative, video recording and sharing tool with a different focus (async communication vs. professional hosting)."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Wistia",
+      "officialUrl": "https://wistia.com",
+      "reason": "Direct professional video hosting competitor with marketing-focused features, not in the catalogue"
+    }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact free-plan upload/storage caps were not independently re-verified from the live pricing page (fetch returned only footer content); figures rely on third-party summaries and the help center article.",
+    "Whether taxes are included in listed USD prices is not stated."
+  ],
+  "conflicts": []
+}

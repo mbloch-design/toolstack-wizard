@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "slug": "canva-ai",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Canva AI (Magic Studio)",
+    "vendor": "Canva Pty Ltd",
+    "officialUrl": "https://www.canva.com/ai/",
+    "docsUrl": "https://www.canva.com/help/",
+    "changelogUrl": null,
+    "urlStatus": "blocked",
+    "productStatus": "active",
+    "statusNote": "Canva AI is a feature set (Magic Studio) inside Canva, not a standalone product with its own pricing page."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.canva.com/ai/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Canva AI page (fetch blocked by anti-bot, 403)"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.canva.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Canva pricing (via search summary)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.canva.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "50 Magic Studio (AI) uses per month, limited Text to Image, Magic Write; Background Remover, Magic Eraser and Magic Expand are paid-plan-only."
+      },
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Canva Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "500 Magic Studio (AI) uses per month, unlimited Background Remover, Brand Kit, 100M+ premium assets"
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Canva Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 20,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Per-user pricing, adds team collaboration and brand management features on top of Pro's AI allowance"
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Canva AI is not sold separately; its features and monthly usage caps (Magic Studio credits) are bundled into and gated by the underlying Canva Free/Pro/Business plan tier.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "AI image generation (Text to Image), background removal, object/element manipulation, and AI-assisted layout suggestions, bundled as 'Magic Studio' inside Canva.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Magic Write for AI-generated text/copy directly inside Canva designs.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Monthly usage caps on AI (Magic Studio) actions apply even on paid plans: 50/month on Free, 500/month on Pro.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Core AI removal/expansion tools (Background Remover, Magic Eraser, Magic Expand) are locked behind a paid plan entirely.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "firefly",
+      "reason": {
+        "en": "Adobe's AI creative suite offering comparable generative image and design features."
+      }
+    },
+    {
+      "slug": "leonardo-ai",
+      "reason": {
+        "en": "AI image generation tool that overlaps with Canva AI's Text to Image capability."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "The official canva.com/ai page returned HTTP 403 (anti-bot block); pricing and plan details were sourced from the general Canva pricing page and third-party summaries instead, and should be reverified directly at fusion time.",
+    "Exact list of features gated behind Free vs Pro vs Business (beyond the ones listed) was not fully itemized."
+  ],
+  "conflicts": []
+}

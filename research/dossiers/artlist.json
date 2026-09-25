@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 2,
+  "slug": "artlist",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Artlist",
+    "vendor": "Artlist Ltd.",
+    "officialUrl": "https://artlist.io",
+    "docsUrl": "https://artlist.io/help",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://artlist.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Artlist AI/pricing page"
+    },
+    {
+      "id": "s2",
+      "url": "https://artlist.io/page/pricing/max",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Artlist Max pricing page"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://artlist.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "music-sfx-social",
+        "name": "Music & SFX Social",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 14.99,
+          "annualPerMonth": 9.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Music and sound effects for one personal channel per social platform (Facebook, YouTube, Instagram, TikTok, Twitch); not licensed for commercial/client use."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "music-sfx-pro",
+        "name": "Music & SFX Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 24.92,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Commercial-use license for music and sound effects, for client work or broader business use."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "max",
+        "name": "Artlist Max",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 39.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Bundles full music, SFX, footage, templates and AI generation library in one plan; 5 free team seats unlocked at 180,000+ AI credits usage tier."
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "music-sfx-social",
+    "addOns": [
+      {
+        "en": "Separate AI plans (AI Starter, AI Core, AI Creator) offer AI image/video/voiceover/music generation on a credits system, sold independently from the core music/SFX/footage subscriptions.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Prices exclude VAT and local taxes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Annual billing gives roughly 40% savings versus monthly across plans; the Social plan is not licensed for commercial/client use, unlike the Pro tier.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Large royalty-free library of licensed music tracks and sound effects for video and content creation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Stock video footage and templates, bundled together with music/SFX in the Max plan.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Separate AI generation tools (image, video, voiceover, music) available via dedicated AI-credit plans or bundled in Max.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Entry-level Social plan restricts usage to one personal channel per platform and excludes commercial/client work, which requires upgrading to a Pro-tier license.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Full asset library (music + SFX + footage + AI) requires the higher-priced Max plan; lower tiers only cover a subset of asset types.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [
+    {
+      "slug": "storyblocks",
+      "reason": {
+        "en": "Comparable stock media subscription for music, video footage and sound effects."
+      }
+    },
+    {
+      "slug": "envato-elements",
+      "reason": {
+        "en": "Broad creative asset subscription overlapping with Artlist's music, footage and template offering."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Epidemic Sound",
+      "officialUrl": "https://www.epidemicsound.com",
+      "reason": "Major royalty-free music and SFX licensing competitor to Artlist, not in the catalogue"
+    }
+  ],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "Exact monthly (non-annual) price for Music & SFX Pro was not found; only the annual-billed monthly-equivalent figure ($24.92) was available.",
+    "Full list of what counts toward 'commercial use' license restrictions on lower tiers was not itemized in detail."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "slug": "ae-newton3",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Newton",
+    "vendor": "Motion Boutique / aescripts + aeplugins",
+    "officialUrl": "https://aescripts.com/newton/",
+    "docsUrl": "https://aescripts.com/faq/article/view/faq/newton-frequently-asked-questions/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "renamed",
+    "statusNote": "Newton 3 has been superseded by Newton 4, the current version sold on the official page; Newton 3 owners get a discounted upgrade path."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://aescripts.com/newton/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Newton product/pricing page (aescripts)"
+    },
+    {
+      "id": "s2",
+      "url": "https://aescripts.com/faq/article/view/faq/newton-frequently-asked-questions/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Newton FAQ"
+    }
+  ],
+  "pricing": {
+    "model": "one_time",
+    "currency": "USD",
+    "pricingUrl": "https://aescripts.com/newton/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "newton4",
+        "name": "Newton 4 (current version)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 249.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Perpetual license, no subscription; 50% student/faculty discount with valid ID."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "newton3-to-4-upgrade",
+        "name": "Newton 3 to 4 upgrade",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 99.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Discounted upgrade price for existing Newton 3 license owners."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "newton4",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Newton 3 (the slug's originally researched product) is no longer the current sale version; the official page now sells Newton 4 at 249.99 USD, with a 99.99 USD upgrade price for Newton 3 owners. No public price for standalone Newton 3 remains on the live page.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "2D physics simulation engine for After Effects: makes layers behave like solid objects with gravity, collisions, friction and springs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Applies realistic forces (bounces, oscillations) to text, shapes and other layers without manual keyframing.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "One-time purchase with no free trial mentioned; buyers cannot test before purchasing.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plugin-only tool, works exclusively inside After Effects and adds no value without it.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "windows",
+      "mac"
+    ]
+  },
+  "audience": {},
+  "useCases": [],
+  "alternatives": [],
+  "missingAlternatives": [],
+  "rating": {},
+  "editorial": {},
+  "unknowns": [
+    "No free trial availability could be confirmed; the FAQ page was not fully accessible for a definitive answer.",
+    "Whether Newton 3 (the base slug's named version) is still purchasable standalone, or only via the Newton 4 upgrade path, was not fully clarified from the pages reached."
+  ],
+  "conflicts": [
+    "The seed data (queue) describes this slug as 'Newton 3' with a 249.99 USD price and a separate 99.99 USD Newton 4 upgrade, but the live official page now sells Newton 4 itself at 249.99 USD with the 99.99 USD price being the Newton-3-owner upgrade discount, not a Newton 4 standalone upgrade fee from a different base. This should be reconciled at fusion time."
+  ]
+}
