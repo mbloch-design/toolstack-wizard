@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 2,
+  "slug": "aws",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Amazon Web Services (AWS)",
+    "vendor": "Amazon.com, Inc.",
+    "officialUrl": "https://aws.amazon.com",
+    "docsUrl": "https://docs.aws.amazon.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://aws.amazon.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "AWS Product and Service Pricing" },
+    { "id": "s2", "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html", "tier": 1, "accessedOn": "2026-09-25", "title": "AWS Billing - Choosing a plan / Free Tier" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://aws.amazon.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Free Tier spans three types: always-free resources within limits, 12-months-free resources for new accounts (e.g. 750 hours/month of EC2 t3.micro), and time-limited free trials of specific services.", "sourceIds": ["s2"] },
+    "plans": [
+      {
+        "key": "pay-as-you-go",
+        "name": "Pay-as-you-go (on-demand)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "No fixed price: billed per-service, per-unit of consumption (compute hours, storage GB, requests, etc.) across hundreds of independently priced services.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": null,
+    "regularPriceUnknown": true,
+    "addOns": [],
+    "cautions": [
+      { "en": "AWS is a pay-as-you-go usage platform across hundreds of services (compute, storage, database, networking, AI, etc.); there is no single account-level plan or seat price, so cost depends entirely on which services and how much of each are consumed.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Beyond on-demand pay-as-you-go pricing, AWS offers commitment-based discounts: Savings Plans and Reserved Instances can cut costs up to 72-75% for 1-3 year commitments, and Spot Instances up to 90% for interruptible workloads, per AWS documentation and third-party analysis.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Broad cloud platform covering compute (EC2, Lambda), storage (S3), databases, networking, AI/ML services and hundreds of other managed services.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Multiple pricing models beyond on-demand: Reserved Instances, Savings Plans and Spot Instances for cost optimization at scale.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No flat, predictable pricing: costs vary continuously with usage across many billable dimensions, making budgeting difficult without dedicated cost-management tooling.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Breadth of services and configuration options creates a steep learning curve compared to single-purpose hosting platforms.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "gcp", "reason": { "en": "Comparable full-scale cloud platform (Google Cloud) covering the same breadth of compute, storage and managed services.", "fr": null } },
+    { "slug": "digitalocean", "reason": { "en": "Simpler, more predictably priced cloud hosting platform for teams that do not need AWS's full service breadth.", "fr": null } },
+    { "slug": "heroku", "reason": { "en": "Higher-level platform-as-a-service alternative for deploying apps without managing AWS-style infrastructure directly.", "fr": null } },
+    { "slug": "vercel", "reason": { "en": "Frontend/full-stack hosting platform, a simpler alternative for web app deployment compared to raw AWS services.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "AWS's catalogue entry as a single 'tool' is unusual: it groups hundreds of independently priced services, so a single comparePlanKey or plan list is not meaningful and was intentionally left empty."
+  ],
+  "conflicts": []
+}

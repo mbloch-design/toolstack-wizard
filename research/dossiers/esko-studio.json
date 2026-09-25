@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 2,
+  "slug": "esko-studio",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Esko Studio",
+    "vendor": "Esko (Veralto)",
+    "officialUrl": "https://www.esko.com/en/products/studio",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.esko.com/en/products/studio", "tier": 1, "accessedOn": "2026-09-25", "title": "Esko Studio product page" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.esko.com/en/products/studio",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "No public pricing tiers are disclosed on the official product page; only a free trial and a 'Buy Now' contact path are offered.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "3D packaging design and visualization: creates 3D content, movies, virtual packshots and virtual shopping-shelf renders.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Print modeling technology that syncs 3D models with actual production assets for accurate packaging previews.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Dedicated shrink sleeve simulation and ray-traced photorealistic rendering, with material experimentation across substrates, inks, varnishes, foils and holograms.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No public pricing or self-serve purchase path; access requires a sales contact or trial request.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Requires Adobe Illustrator as the design environment (plugin-based), so it is not a standalone application.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Adobe Illustrator", "slug": "adobe-illustrator", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["desktop"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "No pricing figures disclosed publicly; not covered within the 8-page research budget for this batch.",
+    "Supported operating systems (Windows/macOS) not explicitly stated on the product page."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "fellow",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Fellow",
+    "vendor": "Fellow.app Inc.",
+    "officialUrl": "https://fellow.ai",
+    "docsUrl": "https://fellow.ai/help",
+    "changelogUrl": null,
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "fellow.app now redirects (301) to fellow.ai; the product itself is unchanged."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://fellow.ai/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Fellow pricing" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://fellow.ai/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "5 AI notes lifetime, 5 AI recordings lifetime, up to 5 seats.", "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 11, "annualPerMonth": 7, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "10 AI notes/user/month, 10 AI recordings/user, meeting automations, project management integrations, up to 20 seats.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 23, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited AI notes and recordings, sales AI templates, org-wide meeting templates, advanced CRM integration (Salesforce, HubSpot), up to 50 seats.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 10,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Minimum 10 users, custom contracts; third-party guidance suggests around $25/user/month billed annually, advanced recording permissions, domain control, user provisioning, security reviews.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "team",
+    "addOns": [],
+    "cautions": [
+      { "en": "Free plan AI note and recording quotas are lifetime totals (5 each), not monthly, so they are consumed quickly for regular meeting use.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI meeting assistant with collaborative agendas, automated notes and transcription, and action-item tracking.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Integrates with Google Meet, Zoom, Microsoft Teams and Slack for meeting capture, plus Confluence and Notion for notes on paid plans.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "CRM integrations (Salesforce, HubSpot) and API access on Business and above for syncing meeting data into sales workflows.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at lifetime totals of 5 AI notes and 5 AI recordings, not renewed monthly.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "API access and advanced CRM integrations require the Team plan or above; not available on the free tier.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Google Meet", "slug": "google-meet", "sourceIds": ["s1"] },
+      { "name": "Zoom", "slug": "zoom", "sourceIds": ["s1"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "fathom", "reason": { "en": "Direct competitor offering free AI meeting notes and recordings with similar calendar/video integrations.", "fr": null } },
+    { "slug": "granola", "reason": { "en": "AI meeting notes tool aimed at the same use case of automated notetaking during calls.", "fr": null } },
+    { "slug": "notion", "reason": { "en": "General workspace that can host meeting notes and action items, an alternative for teams not needing dedicated meeting AI.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [],
+  "conflicts": []
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "slug": "bolt-new",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Bolt.new",
+    "vendor": "StackBlitz Inc.",
+    "officialUrl": "https://bolt.new",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://bolt.new/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Bolt pricing" },
+    { "id": "s2", "url": "https://bolt.new", "tier": 1, "accessedOn": "2026-09-25", "title": "Bolt.new homepage" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://bolt.new/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "300K tokens/day, 1M tokens/month, public/private projects, 10MB file uploads, website hosting with Bolt branding.", "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "No daily token limit; 10M tokens/month included, unused tokens roll over one additional month; removes Bolt branding, custom domains, SEO tools, 100MB file uploads.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 30, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Everything in Pro plus team collaboration, centralized billing and admin controls, private NPM registry support.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "SSO, audit logs, dedicated account manager, 24/7 priority support, custom SLAs.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Usage is metered in tokens rather than a flat seat price; most token consumption comes from syncing the project's file system to the AI, so token needs scale with project size, not just feature use.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI-powered full-stack web app generator: describes an app in natural language and generates executable, deployable code (React frontend, Node.js backend) directly in the browser.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Includes hosting, custom domains, SEO tooling and analytics, plus unlimited databases and enterprise-grade backend infrastructure with authentication and user management.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Requires no local development environment setup; runs entirely in-browser via StackBlitz's WebContainers technology.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Free plan is capped at 300K tokens/day and 1M tokens/month, and displays Bolt branding on published sites.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "File upload size is capped at 10MB on the free plan and 100MB on Pro, limiting large-asset projects.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "lovable", "reason": { "en": "Direct AI app-generation competitor building full-stack web apps from natural-language prompts.", "fr": null } },
+    { "slug": "cursor", "reason": { "en": "AI-assisted coding tool for building apps, though oriented more toward an IDE workflow than in-browser generation.", "fr": null } },
+    { "slug": "base44", "reason": { "en": "AI app builder targeting the same no-setup, prompt-to-app workflow.", "fr": null } },
+    { "slug": "emergent", "reason": { "en": "AI full-stack app generator competing for the same rapid-prototyping use case.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Whether Pro and Teams plans offer an annual discount (annualPerMonth) was not shown on the pricing page; only monthly prices were listed."
+  ],
+  "conflicts": []
+}

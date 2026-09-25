@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 2,
+  "slug": "netsuite",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "NetSuite",
+    "vendor": "Oracle Corporation",
+    "officialUrl": "https://www.netsuite.com",
+    "docsUrl": "https://docs.oracle.com/en/cloud/saas/netsuite/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.netsuite.com", "tier": 1, "accessedOn": "2026-09-25", "title": "NetSuite official site" },
+    { "id": "s2", "url": "https://epiqinfo.com/netsuite-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "NetSuite Pricing 2026: Cost Per User, Modules & TCO" },
+    { "id": "s3", "url": "https://epiqinfo.com/netsuite-license-cost/", "tier": 2, "accessedOn": "2026-09-25", "title": "NetSuite License Cost 2026: User Seats Explained" },
+    { "id": "s4", "url": "https://www.erpresearch.com/pricing/oracle-netsuite", "tier": 2, "accessedOn": "2026-09-25", "title": "NetSuite Pricing 2026: $999 to $25K/mo" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.netsuite.com",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "base",
+        "name": "Base platform license",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Third-party estimates put the base platform license around $999-$5,000/month depending on edition and tier, plus $129-$199/month per full user license and $10-$25/month per self-service user; NetSuite publishes no official list price.", "fr": null }],
+        "sourceIds": ["s2", "s3", "s4"]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [
+      { "en": "Self-service / limited-access user licenses billed separately from full user licenses, per third-party estimates.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "cautions": [
+      { "en": "NetSuite prices by named user: every person who logs in needs a license, whether used daily or monthly. No public price list exists; each contract is negotiated and bundles a base edition, user licenses and add-on modules. One-time implementation costs can add $25,000 to $750,000 depending on scope, per third-party estimates.", "fr": null, "sourceIds": ["s2", "s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cloud ERP suite covering financial management, order management, inventory, procurement and revenue recognition in a single system.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Modular architecture with optional editions (Starter, Mid-Market, Enterprise) and add-on modules such as CRM, e-commerce (SuiteCommerce), and warehouse/inventory management, per third-party pricing research.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "No self-serve pricing or sign-up: every deployment requires a sales negotiation and implementation partner, per third-party pricing research.", "fr": null, "sourceIds": ["s2", "s4"] },
+      { "en": "Per-named-user licensing means costs scale directly with headcount, including occasional/self-service users, per third-party pricing research.", "fr": null, "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "sap-business-one", "reason": { "en": "Comparable mid-market ERP suite covering finance, inventory and operations for growing companies.", "fr": null } },
+    { "slug": "sage-intacct", "reason": { "en": "Cloud financial management platform competing for the same mid-market ERP budget.", "fr": null } },
+    { "slug": "microsoft-dynamics-business-central", "reason": { "en": "Microsoft's cloud ERP aimed at the same small-to-mid-market segment as NetSuite.", "fr": null } },
+    { "slug": "sap-business-bydesign", "reason": { "en": "SAP's cloud ERP for mid-market companies, a direct alternative to NetSuite's positioning.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "No official published price list; all monetary figures come from third-party pricing research firms, not Oracle/NetSuite directly.",
+    "Exact current base license and per-user rates could not be confirmed on an Oracle-owned page within this session's page budget."
+  ],
+  "conflicts": []
+}

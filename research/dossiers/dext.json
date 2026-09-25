@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 2,
+  "slug": "dext",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Dext",
+    "vendor": "Dext (formerly Receipt Bank / Sync)",
+    "officialUrl": "https://dext.com",
+    "docsUrl": "https://dext.com/en/help",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://dext.com/en/business/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Dext Pricing | Plans for Every Business" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://dext.com/en/business/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "base",
+        "name": "Base plan",
+        "unit": "account",
+        "minSeats": 5,
+        "price": { "monthly": 25.21, "annualPerMonth": 25.21, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "250 documents/month, 5 users included; annual billing option available at $302.50/year (up to 20% savings versus monthly).", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "base",
+    "addOns": [
+      { "en": "AI Assist (bookkeeping automation), from $10.50/month (promotional pricing seen through Oct 31).", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Commerce Lite (connect up to 5 e-commerce platforms, auto-import transactions), from $7.50/month.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Line Item Extraction, from $20.50/month or $0.50/document pay-as-you-go.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Supplier Statement Extraction, from $20.50/month or $0.50/document pay-as-you-go.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Bank Statement Extraction, from $13.00/month or $0.32/document pay-as-you-go.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Vault digital storage: free up to 100MB, additional storage from $4/month.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The base plan's document allowance (250/month) is easy to exceed for active bookkeeping use; extraction features beyond basic receipt capture (line items, supplier statements, bank statements) are unbundled add-ons billed separately, either as a flat monthly fee or per document.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Custom pricing applies for businesses with high document volumes or 5+ entities, so the listed base price does not scale linearly for larger operations.", "fr": null, "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Receipt and invoice capture with OCR, expense management and document storage, built for bookkeeping preparation.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Integrations with accounting software for pushing captured documents directly into the books.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Optional add-on extraction engines for bank statements, supplier statements and itemized line items, sold separately from the base plan.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free plan; only a 14-day trial before the base subscription is required.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Core document-processing capacity (250 documents/month on the base plan) is capped, and advanced extraction (line items, bank/supplier statements) is not included by default.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "quickbooks", "reason": { "en": "Full accounting platform with its own receipt-capture features, competing at the broader bookkeeping layer.", "fr": null } },
+    { "slug": "xero", "reason": { "en": "Cloud accounting software with native or integrated receipt/expense capture, an alternative to pairing Dext with a separate accounting tool.", "fr": null } },
+    { "slug": "pennylane", "reason": { "en": "All-in-one accounting and bookkeeping platform for SMBs, covering document capture alongside full accounting.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Whether the $25.21/month base price is itself billed monthly or is the monthly-equivalent of the $302.50 annual price was not stated unambiguously on the pricing page; both values are recorded here as seen.",
+    "Currency shown was USD by default on the fetched page; Dext prices in multiple currencies (GBP, EUR, CAD, AUD, ZAR) by region, per third-party sources, not independently confirmed here."
+  ],
+  "conflicts": []
+}

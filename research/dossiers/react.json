@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "slug": "react",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "React",
+    "vendor": "React Foundation (Linux Foundation); originally created by Meta",
+    "officialUrl": "https://react.dev",
+    "docsUrl": "https://react.dev/learn",
+    "changelogUrl": "https://github.com/facebook/react/blob/main/CHANGELOG.md",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "In February 2026 Meta transferred React's governance to the independent React Foundation, hosted by the Linux Foundation. Source: The Register."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://github.com/facebook/react/blob/main/LICENSE", "tier": 1, "accessedOn": "2026-09-25", "title": "React LICENSE (MIT)" },
+    { "id": "s2", "url": "https://www.theregister.com/software/2026/02/25/meta-frees-react-to-live-in-its-own-foundation/4094718", "tier": 2, "accessedOn": "2026-09-25", "title": "Meta frees React to live in its own foundation" },
+    { "id": "s3", "url": "https://en.wikipedia.org/wiki/React_(software)", "tier": 2, "accessedOn": "2026-09-25", "title": "React (software) - Wikipedia" },
+    { "id": "s4", "url": "https://opensource.fb.com/projects/react/", "tier": 1, "accessedOn": "2026-09-25", "title": "Meta Open Source - React project page" }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": "https://react.dev",
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Component-based JavaScript library for building user interfaces, with a declarative model and virtual DOM diffing for efficient updates.", "fr": null, "sourceIds": ["s3"] },
+      { "en": "Backed by an ecosystem of official tooling and community frameworks (Next.js, Remix, React Router) for routing, data fetching and server rendering.", "fr": null, "sourceIds": ["s3"] },
+      { "en": "Extends to native mobile apps via React Native, sharing the same component model across web and mobile.", "fr": null, "sourceIds": ["s3"] }
+    ],
+    "limitations": [
+      { "en": "Only a view library, not a full framework: routing, state management and data fetching require separate third-party libraries or a meta-framework.", "fr": null, "sourceIds": ["s3"] },
+      { "en": "No official long-term support channel of its own; production apps typically depend on a framework layer (e.g. Next.js) for build tooling and deployment.", "fr": null, "sourceIds": ["s3"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "svelte", "reason": { "en": "Compiler-based alternative with less runtime overhead and a simpler mental model for building UI components.", "fr": null } },
+    { "slug": "vue-cli", "reason": { "en": "Progressive framework often seen as gentler to learn than the React ecosystem while covering similar UI needs.", "fr": null } },
+    { "slug": "preact", "reason": { "en": "Drop-in, lighter-weight alternative implementing much of the React API with a smaller bundle size.", "fr": null } },
+    { "slug": "solid-js", "reason": { "en": "Fine-grained reactive alternative to React's virtual DOM model, aimed at similar component-based UI work.", "fr": null } }
+  ],
+  "missingAlternatives": [],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Exact scope of React Foundation's authority versus Meta's continued involvement in React core development was not fully detailed in the sources found.",
+    "No official pricing page exists since React is a free open-source library; this dossier records pricing.model as open_source with no plans."
+  ],
+  "conflicts": []
+}

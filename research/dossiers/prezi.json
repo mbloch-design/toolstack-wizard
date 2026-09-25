@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "slug": "prezi",
+  "tier": "A",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Prezi",
+    "vendor": "Prezi Inc.",
+    "officialUrl": "https://prezi.com",
+    "docsUrl": "https://support.prezi.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.presentations.ai/blog/prezi-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Prezi Pricing 2026: Plans, Cost, Better Alternatives" },
+    { "id": "s2", "url": "https://costbench.com/software/ai-presentations/prezi/", "tier": 2, "accessedOn": "2026-09-25", "title": "Prezi Pricing 2026: 5 Plans from Free to $39/user/month" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://prezi.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": "Basic plan: public presentations only, limited storage, per third-party pricing research.", "sourceIds": ["s2"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 7, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Entry paid tier, private presentations, per third-party pricing research; official plan naming not independently confirmed on prezi.com within this session.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Mid tier with more storage/features, per third-party pricing research.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Top individual tier, per third-party pricing research.", "fr": null }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 39, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Team collaboration tier, per third-party pricing research.", "fr": null }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [],
+    "cautions": [
+      { "en": "The official prezi.com/pricing page could not be fetched directly in this session (empty response); plan names and prices above come from third-party pricing-research sites and should be re-verified against the official page before publication.", "fr": null, "sourceIds": ["s1", "s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Zooming, non-linear presentation format that moves around a large canvas rather than flipping through static slides.", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Animated transitions and spatial storytelling positioned as a differentiator from traditional slide decks.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Free (Basic) plan restricts presentations to public visibility, unsuitable for confidential content, per third-party pricing research.", "fr": null, "sourceIds": ["s2"] },
+      { "en": "Non-linear zooming format has a steeper authoring learning curve than standard slide tools, per third-party reviews.", "fr": null, "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": null,
+  "useCases": [],
+  "alternatives": [
+    { "slug": "canva", "reason": { "en": "Design-led alternative with a presentation module, much cheaper for teams already using Canva for other visual content.", "fr": null } }
+  ],
+  "missingAlternatives": [
+    { "name": "Google Slides", "officialUrl": "https://workspace.google.com/products/slides/", "reason": "Free, collaborative, and the most common comparison point cited for Prezi in third-party research." },
+    { "name": "Pitch", "officialUrl": "https://pitch.com", "reason": "Modern presentation tool with real-time collaboration and professional templates, a direct Prezi alternative cited in third-party research." }
+  ],
+  "rating": null,
+  "editorial": null,
+  "unknowns": [
+    "Official prezi.com/pricing page did not return content in this session; plan names/prices are sourced from third-party research and need re-verification against the official source.",
+    "Whether Standard/Plus/Premium/Teams are the current official plan names, or renamed, could not be confirmed directly."
+  ],
+  "conflicts": []
+}
