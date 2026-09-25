@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "slug": "quixel-megascans",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Quixel Megascans",
+    "vendor": "Epic Games, Inc.",
+    "officialUrl": "https://quixel.com/megascans",
+    "docsUrl": "https://quixel.com/license",
+    "changelogUrl": "https://quixel.com/news/quixel-on-fab-new-megascans-and-megaplants",
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "Distribution moved from the standalone Quixel Bridge/site to the Fab marketplace (fab.com) in October 2024; quixel.com now redirects/links into Fab."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.cgchannel.com/2024/10/epic-games-has-made-megascans-free-to-all-but-only-until-the-end-of-2024/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Epic has made Megascans free to all - but only until end of 2024"
+    },
+    {
+      "id": "s2",
+      "url": "https://quixel.com/news/quixel-on-fab-new-megascans-and-megaplants",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Quixel on Fab: New Megascans and Megaplants"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.fab.com/megascans",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "A growing selection of Megascans and Megaplants assets is free to use under the Fab Standard License across all engines and tools"
+      },
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "individual-assets",
+        "name": "Individual paid assets",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Paid assets are priced individually on Fab; no fixed subscription plan is published",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Megascans was free unlimited through the end of 2024; since 2025 Epic Games began charging for a majority of the library while keeping a growing subset free, so exact current pricing per asset is not published as a fixed plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    ],
+    "regularPriceUnknown": true
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Library of photoscanned 3D surfaces, props, and plants (Megascans and Megaplants) for use in games, film, and archviz",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Assets usable across multiple engines and tools under the Fab Standard License, not limited to Unreal Engine",
+        "fr": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Distribution now goes exclusively through the Fab marketplace; the original standalone Quixel Bridge plugin/site model was retired",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Not all assets are free; individual paid assets exist on Fab and exact current pricing per asset was not accessible from this session",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Unreal Engine",
+        "slug": "unreal-engine",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "The official fab.com/megascans pricing/product page returned HTTP 403 (anti-bot) during this session; current per-asset pricing structure could not be directly verified on the source page."
+  ],
+  "conflicts": []
+}

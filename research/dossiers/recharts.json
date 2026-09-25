@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "slug": "recharts",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Recharts",
+    "vendor": "Recharts Group (open source project)",
+    "officialUrl": "https://recharts.github.io",
+    "docsUrl": "https://recharts.github.io/en-US/",
+    "changelogUrl": "https://github.com/recharts/recharts/releases",
+    "urlStatus": "moved",
+    "productStatus": "active",
+    "statusNote": "The old recharts.org domain now redirects to recharts.github.io."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://recharts.github.io",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Recharts homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Fully free MIT-licensed library, no paid tier"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Composable React charting components (line, area, bar, and more) built on SVG",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Customizable charts through component properties and custom sub-components",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Relies only minimally on D3 internally, so it lacks some of D3's lower-level flexibility for highly custom visualizations",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Homepage documentation does not state a minimum required React version",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "chartjs",
+      "reason": {
+        "en": "Popular alternative charting library, canvas-based rather than SVG/React-component based",
+        "fr": null
+      }
+    },
+    {
+      "slug": "d3js",
+      "reason": {
+        "en": "Lower-level charting/visualization library that Recharts is partly built on top of",
+        "fr": null
+      }
+    },
+    {
+      "slug": "apexcharts",
+      "reason": {
+        "en": "Alternative JS charting library with similar declarative chart types",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [],
+  "conflicts": []
+}

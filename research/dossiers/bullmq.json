@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "slug": "bullmq",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "BullMQ",
+    "vendor": "Taskforce.sh Inc.",
+    "officialUrl": "https://bullmq.io",
+    "docsUrl": "https://docs.bullmq.io/",
+    "changelogUrl": "https://github.com/taskforcesh/bullmq/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://bullmq.io",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "BullMQ homepage"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://bullmq.io",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Full open source library (MIT), no artificial limits on workers/concurrency"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro-standard",
+        "name": "BullMQ Pro Standard",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 139,
+          "annualPerMonth": 116.25,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Node.js and Bun only; grouping, batches, observables, professional support",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro-standard",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "The core BullMQ library is free and open source; BullMQ Pro is a separate paid commercial add-on ($139/month or $1,395/year) for advanced features and support.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Redis-backed job queues for Node.js (and Bun, with Python/Rust/Elixir/PHP clients) with workers, delayed jobs, and rate limiting",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Recurring job schedulers using cron expressions or fixed intervals, plus job flows with parent-child relationships",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Auto-retry with exponential backoff and event monitoring",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Advanced features like job grouping, batching, and RxJS observables require the paid BullMQ Pro tier",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Requires a self-managed Redis instance; BullMQ itself is a library, not a hosted service",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "BullMQ Pro Enterprise and Embedded plan pricing are on quote only, not published publicly."
+  ],
+  "conflicts": []
+}

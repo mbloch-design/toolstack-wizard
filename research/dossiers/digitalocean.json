@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 2,
+  "slug": "digitalocean",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "DigitalOcean",
+    "vendor": "DigitalOcean Holdings, Inc.",
+    "officialUrl": "https://digitalocean.com",
+    "docsUrl": "https://docs.digitalocean.com/",
+    "changelogUrl": "https://docs.digitalocean.com/release-notes/",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.digitalocean.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "DigitalOcean pricing"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://www.digitalocean.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 90,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "droplets",
+        "name": "Droplets",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 4,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Per-second billing (60-second minimum), free outbound data transfer starting at 500 GiB/month",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "app-platform",
+        "name": "App Platform",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free entry tier for managed app hosting",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "kubernetes",
+        "name": "Kubernetes",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 12,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Free managed control plane",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "spaces",
+        "name": "Spaces (object storage)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 5,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "S3-compatible object storage with integrated CDN",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "droplets",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Pricing is usage-based per product (compute, storage, Kubernetes); the $4/month Droplet is the smallest entry point, not a flat account price.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Virtual machines (Droplets), managed Kubernetes, managed App Platform PaaS, and S3-compatible object storage (Spaces)",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Simple, predictable per-second or monthly pricing compared to larger hyperscale clouds",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No permanent free tier for compute; only a $5, 90-day trial credit for new accounts",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Fewer regions and managed-service breadth than AWS or Google Cloud",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "aws",
+      "reason": {
+        "en": "Larger hyperscale cloud competitor with a much broader (and more complex) service catalogue",
+        "fr": null
+      }
+    },
+    {
+      "slug": "gcp",
+      "reason": {
+        "en": "Hyperscale cloud alternative for compute, storage, and Kubernetes",
+        "fr": null
+      }
+    },
+    {
+      "slug": "vercel",
+      "reason": {
+        "en": "Simpler deployment platform overlapping with App Platform for web app hosting",
+        "fr": null
+      }
+    },
+    {
+      "slug": "fly-io",
+      "reason": {
+        "en": "Developer-focused cloud hosting alternative with usage-based pricing",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [],
+  "conflicts": []
+}

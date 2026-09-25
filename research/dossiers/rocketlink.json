@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "slug": "rocketlink",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "RocketLink",
+    "vendor": "RocketLink",
+    "officialUrl": "https://rocketlink.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://rocketlink.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "RocketLink pricing"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://rocketlink.io/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 10,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "liftoff",
+        "name": "Liftoff",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "20 links/month, 2 pixels, 4 custom scripts/CTAs, 1 custom domain",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "space",
+        "name": "Space",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "100 links/month, 5 pixels, 20 custom scripts/CTAs, 5 custom domains",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "galaxy",
+        "name": "Galaxy",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 69,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "1,000 links/month, 50 pixels, 100 custom scripts/CTAs, 50 custom domains",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "liftoff",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "No free plan; link creation is capped per month on every tier (20 to 1,000), unlike some competitors with unlimited link creation.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "URL shortening with click analytics and ad retargeting pixels (Facebook/Google-style pixel tracking)",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Custom domains with free SSL, browser extensions, and CSV export of reports",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Monthly link creation is capped by plan (20 on the entry tier); no free plan available",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Number of pixels and custom scripts/CTAs is limited by plan tier",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "SocialBee",
+        "slug": "socialbee",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact annual/discounted pricing was not shown on the pricing page during this session; only monthly prices were confirmed."
+  ],
+  "conflicts": []
+}

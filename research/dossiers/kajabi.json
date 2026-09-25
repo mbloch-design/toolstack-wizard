@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 2,
+  "slug": "kajabi",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Kajabi",
+    "vendor": "Kajabi LLC",
+    "officialUrl": "https://kajabi.com",
+    "docsUrl": "https://help.kajabi.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://kajabi.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Kajabi pricing"
+    }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://kajabi.com/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 179,
+          "annualPerMonth": 143,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5 products, 2,500 contacts, 1 community, 1 website, 2 admin users",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "growth",
+        "name": "Growth",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 249,
+          "annualPerMonth": 199,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "50 products, 25,000 contacts, 1 community, 1 website, 11 admin users, 500 AI credits",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 499,
+          "annualPerMonth": 399,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited products, 100,000 contacts, 3 communities, 3 websites, 26 admin users, 1,000 AI credits",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [
+      {
+        "en": "Extra contact blocks of 25,000 for $125/month; additional AI credits at $15/month",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Payment processing fees of 2.7% to 2.9% plus $0.30 apply per transaction depending on plan.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Course and community hosting with unlimited marketing emails, landing pages, and funnels on every plan",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in payments and product sales without needing separate checkout tools",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI credits included for content generation, scaling with plan tier",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Number of products, contacts, and admin users is capped by plan; Basic is limited to 5 products and 2 admin users",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No free plan; all tiers require a paid subscription starting at $179/month (or $143/month annual)",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "thinkific",
+      "reason": {
+        "en": "Direct course-platform competitor with a similar all-in-one positioning",
+        "fr": null
+      }
+    },
+    {
+      "slug": "podia",
+      "reason": {
+        "en": "All-in-one creator platform for courses, communities, and digital products",
+        "fr": null
+      }
+    },
+    {
+      "slug": "learnworlds",
+      "reason": {
+        "en": "Course platform aimed at similar creator/coach audience",
+        "fr": null
+      }
+    },
+    {
+      "slug": "circle",
+      "reason": {
+        "en": "Community-first alternative overlapping with Kajabi communities feature",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [],
+  "conflicts": [
+    "The internal catalogue seed listed Kajabi at $55-199/month; the current official pricing page (accessed 2026-09-25) shows $179-499/month, a significant increase over the seed figure."
+  ]
+}

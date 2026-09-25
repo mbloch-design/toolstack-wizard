@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "slug": "zoom",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Zoom Workplace",
+    "vendor": "Zoom Communications, Inc.",
+    "officialUrl": "https://zoom.us",
+    "docsUrl": "https://support.zoom.com/",
+    "changelogUrl": "https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0065544",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://zoom.us/en/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Zoom Workplace pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://zoom.us/en/pricing",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "40-minute limit per meeting, up to 100 participants, no cloud storage, limited AI features (3 summaries/month, 20 AI queries/month)"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 16.99,
+          "annualPerMonth": 14.16,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Meetings up to 30 hours, 100 participants, 10 GB cloud storage per user, unlimited AI summaries/queries, Zoom Mail and Calendar included",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 21.99,
+          "annualPerMonth": 18.33,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "300 participants, 10 GB cloud storage per user, unlimited whiteboards and scheduler pages, SSO and managed domains",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "1,000+ participants, unlimited cloud storage, full PBX phone system, end-to-end encryption",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Video conferencing and online meetings with cloud recording, whiteboards, and built-in AI meeting summaries on paid tiers",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Zoom Mail and Calendar bundled from the Pro plan upward",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free plan caps group meetings at 40 minutes and provides no cloud storage",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Larger meeting sizes (300+, 1,000+ participants) and unlimited storage require Business or Enterprise tiers",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "google-meet",
+      "reason": {
+        "en": "Direct video conferencing competitor bundled with Google Workspace",
+        "fr": null
+      }
+    },
+    {
+      "slug": "microsoft-teams",
+      "reason": {
+        "en": "Direct video conferencing and meetings competitor bundled with Microsoft 365",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [],
+  "conflicts": []
+}

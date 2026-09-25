@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "slug": "knockout",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Knockout.js",
+    "vendor": "Knockout.js (open source project)",
+    "officialUrl": "https://knockoutjs.com",
+    "docsUrl": "https://knockoutjs.com/documentation/introduction.html",
+    "changelogUrl": "https://github.com/knockout/knockout/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Development pace has slowed significantly; latest stable version is 3.5.3, and the framework has been largely superseded by React/Vue in new projects."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://knockoutjs.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Knockout.js homepage"
+    }
+  ],
+  "pricing": {
+    "model": "open_source",
+    "currency": "USD",
+    "pricingUrl": null,
+    "verifiedOn": "2026-09-25",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Fully free MIT-licensed library"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": []
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Declarative data-bindings linking DOM elements to a JavaScript view model, with automatic UI refresh on data changes",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Dependency tracking between model properties and templating for dynamic UI generation",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Small and lightweight (66kb minified) by design, offering a narrower scope than full frameworks like React or Vue",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Development has slowed considerably; latest stable release is 3.5.3 with limited recent updates compared to modern frameworks",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "react",
+      "reason": {
+        "en": "Modern component-based UI library that has largely superseded Knockout for new projects",
+        "fr": null
+      }
+    },
+    {
+      "slug": "vue-cli",
+      "reason": {
+        "en": "Modern reactive framework covering similar declarative-binding use cases",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [],
+  "conflicts": []
+}

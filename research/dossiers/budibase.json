@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "slug": "budibase",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "Budibase",
+    "vendor": "Budibase Ltd.",
+    "officialUrl": "https://budibase.com",
+    "docsUrl": "https://docs.budibase.com/",
+    "changelogUrl": "https://github.com/Budibase/budibase/releases",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://budibase.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Budibase pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://budibase.com/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free self-hosted open source edition with unlimited actions, apps, automations, agents, and users; community support only"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5K actions/month (10K annually), 2K AI credits, 1 creator, 1 workspace",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "20K actions/month (50K annually), 10K AI credits, expandable creators at $50 each, custom branding, SSO",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 299,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "250K actions/month, 50K AI credits, 3 creators included, 30 days logs, unlimited workspaces",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [
+      {
+        "en": "End users at $5/month; additional creators at $50/month",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Action quotas are hard monthly limits on cloud plans; exceeding them requires upgrading rather than paying overages.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Low-code builder for internal apps, forms, and workflows with automations and AI agents",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Free, unlimited self-hosted open source edition alongside a managed cloud offering",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Cloud plans cap monthly actions (agent calls, automation steps, database operations) by tier, from 5K on Pro up to 250K on Business",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Only 1 creator seat included on Pro; additional creators cost $50/month each",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "bubble",
+      "reason": {
+        "en": "No-code/low-code app builder competitor for internal tools and web apps",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [],
+  "conflicts": []
+}

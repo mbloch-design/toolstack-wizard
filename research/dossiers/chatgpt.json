@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 2,
+  "slug": "chatgpt",
+  "tier": "B",
+  "researchedOn": "2026-09-25",
+  "status": "facts_collected",
+  "identity": {
+    "officialName": "ChatGPT",
+    "vendor": "OpenAI OpCo, LLC",
+    "officialUrl": "https://chatgpt.com",
+    "docsUrl": "https://help.openai.com/",
+    "changelogUrl": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://openai.com/chatgpt/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "ChatGPT pricing (from seed data, direct access blocked this session)"
+    },
+    {
+      "id": "s2",
+      "url": "https://openai.com/business/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "OpenAI Business pricing"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://openai.com/chatgpt/pricing/",
+    "verifiedOn": "2026-09-25",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free access to a base model with limited usage; flagship models reserved for paid tiers"
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": null,
+    "plans": [
+      {
+        "key": "go",
+        "name": "Go",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 8,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Entry paid tier with expanded usage over Free",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 20,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Roughly 160 messages per 3 hours on fast models, ~25 deep research runs/month, custom GPTs, projects, scheduled tasks",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 200,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Highest usage limits and access to most capable models; a second $100/month Pro tier also exists between Plus and this tier",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 25,
+          "annualPerMonth": 20,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Standard seat; a Premium seat also exists at $100-125/user/month",
+            "fr": null
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "comparePlanKey": "plus",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Direct access to the official pricing page was blocked (HTTP 403) during this session; plan prices were cross-checked against the internal catalogue seed (verified 2026-07-24) and independent reporting rather than re-read live.",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Conversational AI assistant for writing, coding, analysis, and automation across web, desktop/mobile apps, and a developer API",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Custom GPTs, projects, scheduled tasks, and deep research runs available on paid tiers",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Free tier restricted to a base model with limited usage; flagship models require a paid plan",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Message and deep-research quotas are capped even on the Plus tier (roughly 160 messages/3h, ~25 deep research runs/month)",
+        "fr": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "alternatives": [
+    {
+      "slug": "claude",
+      "reason": {
+        "en": "Direct conversational AI assistant competitor with web, app, and API access",
+        "fr": null
+      }
+    },
+    {
+      "slug": "gemini",
+      "reason": {
+        "en": "Google's competing conversational AI assistant with similar consumer and business tiers",
+        "fr": null
+      }
+    },
+    {
+      "slug": "grok",
+      "reason": {
+        "en": "Competing AI chat assistant with consumer subscription tiers",
+        "fr": null
+      }
+    },
+    {
+      "slug": "deepseek",
+      "reason": {
+        "en": "Lower-cost AI chat assistant competitor",
+        "fr": null
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "unknowns": [
+    "Exact current Go/Plus/Pro/Business feature limits could not be re-verified live on openai.com this session (403 error); figures rely on the existing catalogue seed and secondary reporting."
+  ],
+  "conflicts": []
+}
