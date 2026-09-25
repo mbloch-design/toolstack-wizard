@@ -17,6 +17,10 @@ import { TOOLS_TABLE_SELECT } from "./src/lib/toolsTableColumns";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 import { getCategoryLabel } from "./src/lib/categoryLabel";
 import { categorySeoDescription, categorySeoTitle, isCategoryIndexable } from "./src/lib/categorySeo";
+import { toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "./src/lib/toolSeo";
+
+/** Year in tool titles; the client uses the same clock (ToolDetailPage). */
+const SEO_YEAR = new Date().getFullYear();
 
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
@@ -194,66 +198,6 @@ function usd(tool: any, eur: number, round = false): string {
 // balises SEO prerendues, memes celles generees hors du composant React.
 function fr(tool: any, eur: number, round = false): string {
   return formatToolPrice(tool, eur, "EUR", "fr", { round }).text;
-}
-
-function buildToolMetaDesc(tool: any, lang: string): string {
-  // Snippet SERP orienté CTR : valeur (description courte) + signal PRIX
-  // (l'intention dominante) + crochet aligné sur le titre. Borné à 160c.
-  const isFr = lang === "fr";
-  const rawShort = isFr
-    ? (tool.shortDescription || "")
-    : (tool.shortDescriptionEn || tool.shortDescription || "");
-  const long = isFr
-    ? (tool.longDescription || "")
-    : (tool.longDescriptionEn || tool.longDescription || "");
-  const price = resolveMonthlyPrice(tool);
-  const hasFree = !!(tool.pricing && tool.pricing.free);
-
-  // Base = description courte (curatée, punchy) ; on ne bascule sur la 1re
-  // phrase de la longue que si la courte est vraiment trop maigre.
-  let base = (rawShort || "").replace(/\s+/g, " ").trim();
-  if (base.length < 45 && long) {
-    const sentence = (long.split(/(?<=[.!?])\s/)[0] || "").trim();
-    if (sentence.length > base.length) base = sentence;
-  }
-
-  const mentionsFree = /gratuit|free/i.test(base);
-  // Licence à vie / perpétuelle : pas de "/mois" dans le snippet.
-  const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time"
-    || /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
-  const per = isFr ? (oneTime ? "" : "/mois") : (oneTime ? "" : "/mo");
-  const priceClause = isFr
-    ? (oneTime ? "Licence à vie, sans abonnement." : price > 0 ? `Prix dès ${fr(tool, price, true)}${per}.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
-    : (oneTime ? "Lifetime license with no subscription." : price > 0 ? `From ${usd(tool, price)}${per}.` : (hasFree && !mentionsFree ? "Free version." : ""));
-  const hook = isFr
-    ? "Avis ToolTrim et alternatives moins chères."
-    : "ToolTrim review and cheaper alternatives.";
-
-  const tail = [priceClause, hook].filter(Boolean).join(" ");
-  // Rogne la base pour réserver la place au prix + crochet (sans couper un mot).
-  const avail = 160 - tail.length - 1;
-  if (base.length > avail) {
-    base = base.substring(0, Math.max(40, avail)).replace(/\s+\S*$/, "");
-    // Le mot entier restant en fin de chaîne peut être une préposition/article
-    // isolé (ex: "…gestion de", "…partenariats), avec") qui donne l'impression
-    // d'une phrase coupée. On retire ces mots creux tant qu'ils traînent en bout.
-    // Le préfixe autorise aussi une élision ("d'une", "qu'un") : ces mots ne
-    // sont jamais précédés d'un espace, seulement de l'apostrophe. Une fois
-    // le mot élidé retiré, la consonne élidée qui reste seule ("d'", "l'"…
-    // devenu juste "d", "l"…) est tout aussi creuse et doit partir aussi —
-    // d'où sa présence dans la même liste.
-    const trailingStopWord = isFr
-      ? /(?:^|\s|['’])(de|du|des|un|une|la|le|les|et|à|en|sur|pour|avec|au|aux|par|ou|qui|que|dont|sans|dans|ni|d|l|j|n|s|c|m|t|qu)$/i
-      : /(?:^|\s)(of|the|a|an|and|or|to|for|with|on|in|at|by|from|as|that|which|but)$/i;
-    let match: RegExpMatchArray | null;
-    while ((match = base.match(trailingStopWord))) {
-      base = base.slice(0, base.length - match[0].length).trimEnd();
-    }
-  }
-  base = base.replace(/[\s.,;:!?–—-]+$/, "").trim();
-  if (base) base += ".";
-
-  return `${base} ${tail}`.replace(/\s+/g, " ").trim().substring(0, 160);
 }
 
 /** Four-question FAQPage schema embedded on the canonical tool page. */
@@ -1018,25 +962,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
-            // Titre mené par le prix : la requête dominante est "combien ça coûte".
-            // Prix concret si payant, "gratuit" si offre gratuite, sinon "prix".
-            const priceTag = isFr
-              ? (oneTime ? "licence à vie" : priceDisplay && priceDisplay > 0 ? `prix dès ${fr(tool, priceDisplay, true)}` : (tool.pricing?.free ? "gratuit" : "prix"))
-              : (oneTime ? "lifetime license" : priceDisplay && priceDisplay > 0 ? `pricing from ${usd(tool, priceDisplay, true)}` : (tool.pricing?.free ? "free" : "pricing"));
-            const presentationOverride = isFr ? tool.seo?.presentationTitleFr : tool.seo?.presentationTitleEn;
-            // Drop the " | ToolTrim" brand suffix when the full title would
-            // overflow Google's ~60-char SERP truncation point — long tool
-            // names (e.g. "Microsoft Dynamics 365 Finance and Operations")
-            // need every character for the actual message, and Google
-            // appends the site name in the SERP on its own anyway.
-            // fitBrandedTitle porte desormais la regle de retrait du suffixe,
-            // partagee avec ToolDetailPage : le mecanisme local faisait la meme
-            // chose cote prerendu seulement, d'ou un titre d'onglet different
-            // apres hydratation.
-            const title = presentationOverride || (isFr
-              ? fitBrandedTitle(`${name} : ${priceTag}, avis et alternatives 2026`)
-              : fitBrandedTitle(`${name}: ${priceTag}, review & alternatives 2026`));
-            const description = buildToolMetaDesc(tool, lang);
+            // Title and description come from src/lib/toolSeo.ts, the module
+            // ToolDetailPage uses too: the tab keeps them after hydration.
+            const title = toolSeoTitle(tool, "presentation", lang, SEO_YEAR);
+            const description = toolSeoDescription(tool, "presentation", lang, SEO_YEAR);
             const url = `${BASE}/${lang}/tool/${slug}`;
 
 
@@ -1193,26 +1122,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
         type SubPageDef = {
           path: string;
-          buildTitle: (name: string, isFr: boolean, tool: any) => string;
-          buildDesc: (name: string, price: number | null, isFr: boolean, tool: any) => string;
           buildBody: (name: string, price: number | null, isFr: boolean, tool: any) => string;
         };
 
         const TOOL_SUB_PAGES: SubPageDef[] = [
           {
             path: "prix",
-            buildTitle: (name, isFr, tool) => {
-              const override = isFr ? tool?.seo?.prixTitleFr : tool?.seo?.prixTitleEn;
-              if (override) return override;
-              return isFr
-                ? fitBrandedTitle(`${name} : prix et tarifs 2026`)
-                : fitBrandedTitle(`${name} pricing & plans 2026`);
-            },
-            buildDesc: (name, price, isFr, tool) => tool.pricing_v5?.compare_plan_kind === "one_time"
-              ? (isFr ? `${name} est vendu en licence à vie, sans abonnement. Tarif, conditions et alternatives analysés par ToolTrim.` : `${name} is sold as a lifetime license with no subscription. Price, terms and alternatives reviewed by ToolTrim.`)
-              : isFr
-                ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${fr(tool, price)}/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
-                : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth ${usd(tool, price)}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
             buildBody: (name, price, isFr, tool) => {
               const v5 = tool.pricing_v5;
               const planLabel = localizePlanName(v5?.compare_plan_name, isFr ? "fr" : "en");
@@ -1231,22 +1146,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           },
           {
             path: "alternatives",
-            // tool.seo.altTitle/altMetaDescription let a fiche override the generic
-            // template when there's a sharper, situational hook (e.g. "X merged into Y").
-            buildTitle: (name, isFr, tool) => {
-              const override = isFr ? tool?.seo?.altTitleFr : tool?.seo?.altTitleEn;
-              if (override) return override;
-              return isFr
-                ? fitBrandedTitle(`Meilleures alternatives à ${name} en 2026`)
-                : fitBrandedTitle(`Best ${name} alternatives in 2026`);
-            },
-            buildDesc: (name, _price, isFr, tool) => {
-              const override = isFr ? tool?.seo?.altMetaDescriptionFr : tool?.seo?.altMetaDescriptionEn;
-              if (override) return override;
-              return isFr
-                ? `Quelles sont les meilleures alternatives à ${name} ? ToolTrim compare les options moins chères, gratuites ou plus adaptées, à jour 2026.`
-                : `What are the best alternatives to ${name}? ToolTrim compares cheaper, free and better-fit options, updated 2026.`;
-            },
             buildBody: (name, _price, isFr, tool) => {
               const altIds: string[] = tool.alternatives || [];
               const altNames = altIds.slice(0, 5).map((id: string) => slugToName[id] || id).filter(Boolean);
@@ -1261,19 +1160,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           },
           {
             path: "avis",
-            buildTitle: (name, isFr) => isFr
-              // Voir ToolDetailPage : gabarit raccourci, ToolTrim n'y figure
-              // plus qu'une fois. Les deux copies doivent rester alignees.
-              ? fitBrandedTitle(`Avis ${name} 2026 : note et retours`)
-              : fitBrandedTitle(`${name} reviews 2026: rating and feedback`),
-            buildDesc: (name, _price, isFr, tool) => {
-              const short = (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || "";
-              const excerpt = short.split(/[.!?]/)[0]?.trim() || "";
-              const part = excerpt.length > 30 ? `${excerpt}. ` : "";
-              return isFr
-                ? `${part}Avis indépendant sur ${name} : points forts, points faibles, rapport qualité-prix et verdict ToolTrim, à jour 2026.`
-                : `${part}Independent review of ${name}: pros, cons, value for money and ToolTrim verdict, updated 2026.`;
-            },
             buildBody: (name, price, isFr, tool) => {
               const threshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
               const pros = (isFr ? tool.pros : tool.prosEn || tool.pros) || [];
@@ -1311,13 +1197,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               const frUrl    = `${BASE}/fr/tool/${slug}/${sub.path}`;
               const enUrl    = `${BASE}/en/tool/${slug}/${EN_SUB_PATH[sub.path] ?? sub.path}`;
               const mainUrl  = `${BASE}/${lang}/tool/${slug}`;
-              // tool.seo.<prefix>Title/MetaDescription override any subpage's
-              // generic template (prefix: "alt" for /alternatives, else sub.path).
-              const overridePrefix = sub.path === "alternatives" ? "alt" : sub.path;
-              const titleOverride = isFr ? tool.seo?.[`${overridePrefix}TitleFr`] : tool.seo?.[`${overridePrefix}TitleEn`];
-              const descOverride  = isFr ? tool.seo?.[`${overridePrefix}MetaDescriptionFr`] : tool.seo?.[`${overridePrefix}MetaDescriptionEn`];
-              const title    = titleOverride || sub.buildTitle(name, isFr, tool);
-              const desc     = descOverride  || sub.buildDesc(name, price, isFr, tool);
+              // Shared with ToolDetailPage (src/lib/toolSeo.ts), overrides included.
+              const title    = toolSeoTitle(tool, sub.path as ToolSeoPage, lang, SEO_YEAR);
+              const desc     = toolSeoDescription(tool, sub.path as ToolSeoPage, lang, SEO_YEAR);
               const bodyText = sub.buildBody(name, price, isFr, tool);
 
               // BreadcrumbList for sub-page

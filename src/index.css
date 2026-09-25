@@ -33501,3 +33501,9 @@ img[data-logo-loading] {
 .tt-catalog-page .cat-body .tt-catalog-compact-intro { display: block; margin-top: 14px; }
 /* Without an eyebrow, the title needs the spacing the eyebrow gave. */
 .tt-catalog-page .cat-body .tt-pepite-media + .tt-pepite-title { margin-top: 16px; }
+
+/* Tool sub-pages: "NordPass pricing". The page name reads as a quiet second
+   part of the title through weight, not grey (the site keeps text near-black);
+   the compact sticky header keeps only the tool name. */
+.td-hero-h1-page { font-weight: 400; }
+.td-hero.is-compact .td-hero-h1-page { display: none; }

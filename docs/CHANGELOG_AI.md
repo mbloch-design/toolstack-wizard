@@ -1,3 +1,10 @@
+## 2026-09-25 : SEO des fiches outil, titres et descriptions unifiés
+
+- `src/lib/toolSeo.ts` sert désormais le prérendu et ToolDetailPage : le titre et la description ne changent plus à l'hydratation (les deux gabarits avaient divergé). Surcharges `tool.seo.*` conservées.
+- Pages prix : le titre répond à la requête (« NordPass pricing 2026: from €1.99/mo », « Is Dependabot free? », « licence à vie »). Une offre gratuite ou un prix mensuel prime sur la mention d'une licence (Motion Bro, Capture One).
+- Descriptions coupées à une fin de proposition, sans « plan plan » ni arrondi trompeur sous 10. H1 des sous-pages explicite (« NordPass pricing », « MongoDB Atlas : prix »).
+- Constats non traités : 814 outils sans alternatives renseignées (pages alternatives vides ou hors sujet), pages prix minces, 689 `seo.metaDescription` non utilisées.
+
 ## 2026-09-25 : Pages catégorie alignées sur /tools et crawl complet
 
 - Pages catégorie : pilules vers les catégories sœurs du même besoin, 3 outils les plus recherchés en tête (emplacement sponsorisable), panneau Filtres (tri, prix, usages), mêmes cartes que /tools. Retrait de « Also worth a look » et du classement par maturité de fiche.

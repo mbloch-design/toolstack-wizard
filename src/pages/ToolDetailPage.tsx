@@ -1,7 +1,6 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
-import { formatToolPrice } from "@/lib/currencyRates";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb, Star, StarSolid } from "@/lib/icons";
@@ -34,9 +33,8 @@ import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
-import { localizePlanName } from "@/lib/planNames";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
-import { fitBrandedTitle } from "@/lib/seoTitle";
+import { toolPageHeadingSuffix, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "@/lib/toolSeo";
 import { getExplorerHref } from "@/lib/toolExploration";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -85,156 +83,24 @@ const ToolDetailPage = () => {
     : pathEnd === "faq" ? "faq"
     : pathEnd === "avis" || pathEnd === "reviews" ? "avis"
     : "presentation";
+  const headingSuffix = toolPageHeadingSuffix(subPage === "faq" ? "presentation" : subPage, lang);
 
   /* ── SEO ── */
   useEffect(() => {
     if (!tool) return;
-    const price = resolveMonthlyPrice(tool);
-    const hasPrice = price != null && price > 0;
-    const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
-    // Same rule as the prerendered title (vite.config.ts): "free" only when a
-    // free offer is documented, otherwise the neutral "pricing". The client
-    // title used to say "free" for every 0-priced tool, including the 237
-    // with no public price, and overwrote the prerendered one on hydration.
-    const freeTitleTag = Boolean((tool as any).pricing?.free);
+    // Same builders as the prerender (src/lib/toolSeo.ts): the tab title and
+    // the description must not change once the page hydrates.
+    // /faq permanently redirects to the fiche (vercel.json): same tags.
+    const seoPage: ToolSeoPage = subPage === "faq" ? "presentation" : subPage;
     const year = new Date().getFullYear();
     const baseSlug = tool.slug || tool.id;
-    const planName = tool.pricing_v5?.compare_plan_name || null;
-    const planSuffixFr = planName ? ` (plan ${planName})` : "";
-    const planNameEn = localizePlanName(planName, "en");
-    const planSuffixEn = planNameEn ? ` (${planNameEn} plan)` : "";
-    // Les balises SEO sont figées au prérendu, donc elles suivent la devise de
-    // la langue et non le sélecteur de l'utilisateur : sinon le titre de l'onglet
-    // changerait au clic et le SSR ne correspondrait plus au premier rendu client.
-    // Le prix affiché par l'éditeur prime quand il est déjà dans la bonne devise.
-    const enPrice = formatToolPrice(tool, price as number, "USD", "en", { round: true }).text;
-    const enPriceExact = formatToolPrice(tool, price as number, "USD", "en").text;
-    // Le prix natif prime aussi cote francais : un outil facture en dollars
-    // (ex. Traceo, FlexClip) ne doit jamais s'afficher avec un symbole euro
-    // invente sur ces balises.
-    const frPrice = formatToolPrice(tool, price as number, "EUR", "fr", { round: true }).text;
-    const localizedShortDescription = lang === "en"
-      ? ((tool as any).shortDescriptionEn || tool.shortDescription || "")
-      : (tool.shortDescription || "");
-    const rawExcerpt = localizedShortDescription.split(/[.!?]/)[0].trim();
-    const shortExcerpt = rawExcerpt.length > 90 ? rawExcerpt.slice(0, 87) + "…" : rawExcerpt;
-    const cat = categories.find((c: any) => c.id === tool.categoryId);
-    const catLabel = cat
-      ? stripLeadingEmoji(lang === "en" ? (cat.nameEn || cat.name) : cat.name, cat.id || "")
-      : lang === "fr" ? "outil SaaS" : "SaaS tool";
-
-    const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {
-      presentation: {
-        titleFr: oneTime
-          ? fitBrandedTitle(`${tool.name} : licence à vie, avis et alternatives ${year}`)
-          : hasPrice
-          ? fitBrandedTitle(`${tool.name} : prix dès ${frPrice}, avis et alternatives ${year}`)
-          : fitBrandedTitle(`${tool.name} : ${freeTitleTag ? "gratuit" : "prix"}, avis et alternatives ${year}`),
-        titleEn: oneTime
-          ? fitBrandedTitle(`${tool.name}: lifetime license, review & alternatives ${year}`)
-          : hasPrice
-          ? fitBrandedTitle(`${tool.name}: pricing from ${enPrice}, review & alternatives ${year}`)
-          : fitBrandedTitle(`${tool.name}: ${freeTitleTag ? "free" : "pricing"}, review & alternatives ${year}`),
-        descFr: shortExcerpt
-          ? `${shortExcerpt}. ${oneTime ? "Licence à vie, sans abonnement." : hasPrice ? `Coûte ${price}€/mois${planSuffixFr}, vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
-          : oneTime
-            ? `${tool.name} est proposé en licence à vie, sans abonnement. Alternatives et verdict ToolTrim ${year}.`
-          : hasPrice
-            ? `${tool.name} coûte ${price}€/mois${planSuffixFr}. Verdict ToolTrim : vaut-il le coût ? Meilleures alternatives moins chères en ${year}.`
-            : `${tool.name} est-il vraiment gratuit ? Plans, tarifs cachés et meilleures alternatives analysés, mis à jour ${year}.`,
-        descEn: shortExcerpt
-          ? `${shortExcerpt}. ${oneTime ? "Lifetime license with no subscription." : hasPrice ? `Costs ${enPriceExact}/mo${planSuffixEn}, is it worth it?` : "Free or freemium?"} Alternatives and ToolTrim verdict ${year}.`
-          : oneTime
-            ? `${tool.name} is sold as a lifetime license with no subscription. Alternatives and ToolTrim verdict ${year}.`
-          : hasPrice
-            ? `${tool.name} costs ${enPriceExact}/mo${planSuffixEn}. ToolTrim verdict: is it worth it? Best cheaper alternatives for ${year}.`
-            : `Is ${tool.name} really free? Plans, hidden costs and best alternatives, updated ${year}.`,
-        suffix: "",
-      },
-      prix: {
-        titleFr: hasPrice
-          ? fitBrandedTitle(`${tool.name} : prix et tarifs ${year}`)
-          : fitBrandedTitle(`${tool.name} Tarifs ${year} : Gratuit, Freemium ou Payant ?`),
-        titleEn: hasPrice
-          ? fitBrandedTitle(`${tool.name} pricing & plans ${year}`)
-          : fitBrandedTitle(`${tool.name} Pricing ${year}: Free, Freemium or Paid?`),
-        descFr: oneTime
-          ? `Combien coûte ${tool.name} en ${year} ? Licence à vie sans abonnement. Détail du tarif, des conditions et des alternatives.`
-          : hasPrice
-          ? `Combien coûte ${tool.name} en ${year} ? ${frPrice}/mois${planName ? ` (plan ${planName})` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} Détail des plans et alternatives moins chères.`
-          : `${tool.name} est-il gratuit en ${year} ?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Plans gratuits, freemium et payants comparés avec les meilleures alternatives.`,
-        descEn: oneTime
-          ? `How much does ${tool.name} cost in ${year}? Lifetime license with no subscription. Price, terms and alternatives explained.`
-          : hasPrice
-          ? `How much does ${tool.name} cost in ${year}? ${enPrice}/mo${planNameEn ? ` (${planNameEn} plan)` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} All plans and cheaper alternatives.`
-          : `Is ${tool.name} free in ${year}?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Free, freemium and paid plans compared with top alternatives.`,
-        suffix: "/prix",
-      },
-      alternatives: {
-        titleFr: hasPrice
-          ? fitBrandedTitle(`Meilleures alternatives à ${tool.name} en ${year}`)
-          : fitBrandedTitle(`Meilleures alternatives à ${tool.name}, ${catLabel}`),
-        titleEn: hasPrice
-          ? fitBrandedTitle(`Best ${tool.name} alternatives in ${year}`)
-          : fitBrandedTitle(`Best ${tool.name} Alternatives, ${catLabel}`),
-        descFr: oneTime
-          ? `${tool.name} est vendu en licence à vie, pas au mois. Voici les meilleures alternatives gratuites ou payantes, comparées par ToolTrim en ${year}.`
-          : hasPrice
-          ? `Vous payez ${frPrice}/mois pour ${tool.name} (${catLabel}) ? Voici les meilleures alternatives moins chères ou gratuites, comparées par ToolTrim en ${year}.`
-          : `Quelles sont les meilleures alternatives à ${tool.name} en ${catLabel} ? ToolTrim compare les options gratuites, freemium et payantes les plus adaptées en ${year}.`,
-        descEn: oneTime
-          ? `${tool.name} is sold as a lifetime license, not monthly. Best free and paid alternatives compared by ToolTrim for ${year}.`
-          : hasPrice
-          ? `Paying ${enPrice}/mo for ${tool.name} (${catLabel})? Best cheaper or free alternatives, compared by ToolTrim for ${year}.`
-          : `What are the best alternatives to ${tool.name} in ${catLabel}? ToolTrim compares the top free, freemium and paid options for ${year}.`,
-        suffix: "/alternatives",
-      },
-      avis: {
-        // Le gabarit precedent citait ToolTrim deux fois et faisait 48 caracteres
-        // de remplissage apres le nom : 895 titres francais et 487 anglais
-        // depassaient 65 caracteres, donc etaient tronques en resultat de
-        // recherche. Le nom reste en tete, pour coller a la requete reelle.
-        titleFr: fitBrandedTitle(`Avis ${tool.name} ${year} : note et retours`),
-        titleEn: fitBrandedTitle(`${tool.name} reviews ${year}: rating and feedback`),
-        descFr: shortExcerpt
-          ? `${shortExcerpt}. Score ToolTrim, analyse indépendante et retours d'utilisateurs sur ${tool.name} en ${year}.`
-          : `Score ToolTrim pour ${tool.name}, analyse indépendante et retours d'utilisateurs. Verdict honnête sur la valeur réelle en ${year}.`,
-        descEn: shortExcerpt
-          ? `${shortExcerpt}. ToolTrim score, independent analysis and user feedback on ${tool.name} for ${year}.`
-          : `ToolTrim score for ${tool.name}, independent analysis and user feedback. Honest verdict on real value in ${year}.`,
-        suffix: "/avis",
-      },
-      faq: {
-        titleFr: fitBrandedTitle(`${tool.name} : questions fréquentes ${year}`),
-        titleEn: fitBrandedTitle(`${tool.name} FAQ ${year}`),
-        descFr: shortExcerpt
-          ? `${shortExcerpt}. Prix, plans, cas d'usage et alternatives à ${tool.name}, toutes les réponses clés en ${year}.`
-          : `Tout ce que vous devez savoir sur ${tool.name} : prix, plans, utilité et meilleures alternatives, mis à jour ${year}.`,
-        descEn: shortExcerpt
-          ? `${shortExcerpt}. Pricing, plans, use cases and alternatives to ${tool.name}, all key answers for ${year}.`
-          : `Everything you need to know about ${tool.name}: pricing, plans, use cases and best alternatives, updated ${year}.`,
-        suffix: "/faq",
-      },
-    };
-
-    const meta = SEO[subPage] ?? SEO.presentation;
-    // tool.seo.<prefix>Title/MetaDescription override the generic per-subpage
-    // template when there's a sharper, situational hook (e.g. "X merged into Y",
-    // a concrete plan detail, or a missing-localization angle).
-    const overridePrefix = subPage === "alternatives" ? "alt" : subPage;
-    const seoOverrides = (tool as any).seo || {};
-    const overrideTitle = lang === "fr"
-      ? seoOverrides[`${overridePrefix}TitleFr`]
-      : seoOverrides[`${overridePrefix}TitleEn`];
-    const overrideDesc = lang === "fr"
-      ? seoOverrides[`${overridePrefix}MetaDescriptionFr`]
-      : seoOverrides[`${overridePrefix}MetaDescriptionEn`];
-    const seoTitle = overrideTitle || (lang === "fr" ? meta.titleFr : meta.titleEn);
-    const seoDesc  = overrideDesc  || (lang === "fr" ? meta.descFr  : meta.descEn);
+    const seoTitle = toolSeoTitle(tool, seoPage, lang, year);
+    const seoDesc = toolSeoDescription(tool, seoPage, lang, year);
     const canonicalSuffix =
-      subPage === "prix" && lang === "en" ? "/pricing" :
-      subPage === "avis" && lang === "en" ? "/reviews" :
-      meta.suffix;
+      seoPage === "prix" ? (lang === "en" ? "/pricing" : "/prix") :
+      seoPage === "avis" ? (lang === "en" ? "/reviews" : "/avis") :
+      seoPage === "alternatives" ? "/alternatives" :
+      "";
     const canonicalPath = `/${lang}/tool/${baseSlug}${canonicalSuffix}`;
     const canonicalUrl = `${SEO_BASE}${canonicalPath}`;
 
@@ -246,7 +112,7 @@ const ToolDetailPage = () => {
     if (tool.pricing_v5?.verified_on) setMeta("article:modified_time", tool.pricing_v5.verified_on);
     setHreflang(canonicalPath);
     return () => cleanupSeo([]);
-  }, [tool, lang, subPage, categories]);
+  }, [tool, lang, subPage]);
 
   /* ── Tous les hooks doivent être déclarés AVANT les returns conditionnels ──
      (Rules of Hooks — sinon React error #300/#310 en concurrent mode)        */
@@ -583,7 +449,11 @@ const ToolDetailPage = () => {
                         </span>
 
                         <div className="td-hero-name-block">
-                          <h1 className="td-hero-h1">{tool.name}</h1>
+                          <h1 className="td-hero-h1">
+                            {tool.name}
+                            {/* Sub-pages say what they are about: "NordPass pricing". */}
+                            {headingSuffix ? <span className="td-hero-h1-page">{headingSuffix}</span> : null}
+                          </h1>
                           {tool.shortDescription && (
                             <p className="td-hero-desc">
                               {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
