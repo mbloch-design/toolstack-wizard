@@ -38846,5 +38846,42 @@
       "Commerçants et entreprises avec gestion de stock",
       "Fiduciaires et leurs clients"
     ]
+  },
+  {
+    "id": "convoscore",
+    "slug": "convoscore",
+    "name": "ConvoScore",
+    "categoryId": "marketing",
+    "shortDescription": "Remplace un formulaire de contact par un chatbot qui structure et priorise les demandes entrantes.",
+    "shortDescriptionEn": "Replaces a contact form with a chatbot that structures and prioritizes inbound requests.",
+    "pricing": {
+      "free": "Gratuit : 1 site, 1 chatbot et badge ConvoScore",
+      "paid": "Starter 49 $/mois ou 490 $/an ; Growth 129 $/mois ou 1 290 $/an ; Enterprise sur devis"
+    },
+    "defaultMonthlyPrice": 49,
+    "compareMonthlyPrice": 43.1,
+    "websiteUrl": "https://www.convoscore.com/",
+    "ogImageUrl": "https://www.convoscore.com/marketing/dashboard-team.jpg",
+    "logo": "https://www.convoscore.com/icon.svg",
+    "tool_type": "gestion",
+    "substitution_cluster_v2": "lead-qualification",
+    "functional_needs": [
+      "capture-leads",
+      "qualification-leads",
+      "lead-scoring"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "consultant-b2b",
+      "agence-studio",
+      "commercial-b2b"
+    ],
+    "relevantFor": [
+      "Équipes commerciales B2B",
+      "Agences et cabinets de services",
+      "SaaS avec demandes de démonstration",
+      "Petites équipes support ou avant-vente"
+    ],
+    "freeAlternative": "tally"
   }
 ]

@@ -16,9 +16,10 @@ describe("safeExternalUrl", () => {
 });
 
 describe("relPourLienOutil", () => {
-  it("marks the Novadesko website link as nofollow", () => {
-    expect(relPourLienOutil("https://novadesko.com/", "", "https://novadesko.com/")).toBe(
-      "nofollow noopener noreferrer",
-    );
-  });
+  it.each(["https://novadesko.com/", "https://www.convoscore.com/"])(
+    "marks the official website link as nofollow: %s",
+    (url) => {
+      expect(relPourLienOutil(url, "", url)).toBe("nofollow noopener noreferrer");
+    },
+  );
 });

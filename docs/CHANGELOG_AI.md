@@ -20,6 +20,13 @@
 - Mobile : résultats en lignes façon App Store, étagères en carrousel avec aperçu de la colonne suivante, signet « Ma stack » sur chaque ligne. Tuile grise pendant le chargement des logos (tout le site).
 - Données : 7 outils recatégorisés (Wix, Squarespace, Freshservice, Zendesk, HoneyBook, Instantly, Gusto) et 5 fiches réparées après un décalage CSV (URL officielles vérifiées, descriptions complétées). Liste de réinjection dans `SUPABASE_REPRISE.md`.
 
+## 2026-09-25 — Nouvelle fiche ConvoScore
+
+- Ajoute une fiche bilingue sur le widget conversationnel, l'extraction structurée des demandes et le scoring de priorité.
+- Distingue les règles de scoring consultables des limites du traitement IA, sans reprendre de promesse de conversion non démontrée.
+- Documente les plans Free, Starter, Growth et Enterprise, la conversion indicative USD/EUR et les limites d'intégration.
+- Intègre trois médias officiels, les conditions de traitement et d'export des données, une notation sourcée et un lien officiel en `nofollow`.
+
 ## 2026-09-25 — Nouvelle fiche Novadesko
 
 - Ajoute une fiche bilingue centrée sur la facturation Peppol, la liaison bancaire, le suivi TVA et la collaboration avec le comptable pour les entreprises belges.

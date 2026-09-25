@@ -181277,5 +181277,286 @@
       "lastActivityVerifiedOn": "2026-09-25",
       "notedOn": "2026-09-25"
     }
+  },
+  {
+    "id": "convoscore",
+    "slug": "convoscore",
+    "name": "ConvoScore",
+    "category": "marketing",
+    "shortDescription": "Remplace un formulaire de contact par un chatbot qui structure et priorise les demandes entrantes.",
+    "shortDescriptionEn": "Replaces a contact form with a chatbot that structures and prioritizes inbound requests.",
+    "description": "ConvoScore remplace le formulaire de contact statique d'un site par un widget conversationnel. Le chatbot recueille les coordonnées et le besoin du visiteur, transforme les réponses libres en champs structurés, puis classe chaque demande en priorité haute, moyenne ou basse.\n\nLe scoring repose sur des règles consultables comme la complétude des informations, l'urgence, la taille de l'entreprise et la clarté du besoin. Le tableau de bord conserve la transcription, les champs extraits et la raison du score. Cette transparence facilite le tri, sans rendre l'évaluation infaillible : les conditions du service précisent que les scores et extractions produits avec l'IA peuvent être incomplets ou erronés.\n\nConvoScore vise surtout les petites équipes commerciales ou de services qui reçoivent assez de demandes pour avoir besoin de les prioriser. Le plan gratuit couvre un site et un chatbot. Les offres payantes commencent à 49 $/mois ; les demandes d'intégration et l'accompagnement apparaissent au plan Growth à 129 $/mois.",
+    "longDescription": "ConvoScore remplace le formulaire de contact statique d'un site par un widget conversationnel. Le chatbot recueille les coordonnées et le besoin du visiteur, transforme les réponses libres en champs structurés, puis classe chaque demande en priorité haute, moyenne ou basse.\n\nLe scoring repose sur des règles consultables comme la complétude des informations, l'urgence, la taille de l'entreprise et la clarté du besoin. Le tableau de bord conserve la transcription, les champs extraits et la raison du score. Cette transparence facilite le tri, sans rendre l'évaluation infaillible : les conditions du service précisent que les scores et extractions produits avec l'IA peuvent être incomplets ou erronés.\n\nConvoScore vise surtout les petites équipes commerciales ou de services qui reçoivent assez de demandes pour avoir besoin de les prioriser. Le plan gratuit couvre un site et un chatbot. Les offres payantes commencent à 49 $/mois ; les demandes d'intégration et l'accompagnement apparaissent au plan Growth à 129 $/mois.",
+    "longDescriptionEn": "ConvoScore replaces a website's static contact form with a conversational widget. The chatbot collects contact details and the visitor's need, turns free-text answers into structured fields, then assigns each request a High, Medium or Low priority.\n\nScoring uses visible rules such as information completeness, urgency, company size and clarity of need. The dashboard keeps the transcript, extracted fields and score rationale. This transparency helps teams triage requests, but does not make the assessment infallible: the service terms state that AI-produced scores and extracted data may be incomplete or wrong.\n\nConvoScore is mainly relevant to small sales or service teams receiving enough inbound requests to need prioritization. The free plan covers one site and one chatbot. Paid plans start at $49/month; integration requests and guided onboarding are limited to the $129/month Growth plan.",
+    "pricing": {
+      "free": "Gratuit : 1 site, 1 chatbot et badge ConvoScore",
+      "paid": "Starter 49 $/mois ou 490 $/an ; Growth 129 $/mois ou 1 290 $/an ; Enterprise sur devis"
+    },
+    "pricingEn": {
+      "free": "Free: 1 site, 1 chatbot and ConvoScore badge",
+      "paid": "Starter $49/month or $490/year; Growth $129/month or $1,290/year; Enterprise custom-priced"
+    },
+    "defaultMonthlyPrice": 49,
+    "pricing_v5": {
+      "cautions": [
+        "Prix facturés en dollars américains ; TVA ou taxes ajoutées par Paddle selon le pays.",
+        "Le taux indicatif utilisé pour la comparaison est celui du 24 septembre 2026 : 1 $ = 0,8797 €.",
+        "Les demandes d'intégration sont incluses à partir du plan Growth, sans catalogue de connecteurs garantis."
+      ],
+      "cautionsEn": [
+        "Prices are billed in US dollars; Paddle adds VAT or sales tax based on location.",
+        "The comparison uses the indicative September 24, 2026 rate: $1 = €0.8797.",
+        "Integration requests start on the Growth plan, without a guaranteed connector catalog."
+      ],
+      "verified_on": "2026-09-25",
+      "source_domain": "convoscore.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.convoscore.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 43.1,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Un site et un chatbot pour tester la qualification sur du trafic réel.",
+          "featureHighlights": [
+            "1 site et 1 chatbot",
+            "Capture structurée et scoring",
+            "Badge ConvoScore visible"
+          ],
+          "detailsSourceUrl": "https://www.convoscore.com/pricing",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "GLOBAL",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "Pour une petite équipe utilisant ConvoScore sur plusieurs parcours.",
+          "featureHighlights": [
+            "Jusqu'à 5 chatbots",
+            "Suppression du badge",
+            "Support sous un jour ouvré"
+          ],
+          "detailsSourceUrl": "https://www.convoscore.com/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "GLOBAL",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "growth",
+          "displayName": "Growth",
+          "summary": "Pour une équipe commerciale qui demande des intégrations et un accompagnement.",
+          "featureHighlights": [
+            "Jusqu'à 25 chatbots",
+            "Demandes d'intégration",
+            "Session d'onboarding guidée"
+          ],
+          "detailsSourceUrl": "https://www.convoscore.com/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 129,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "GLOBAL",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.convoscore.com/",
+    "affiliateLink": "",
+    "logo": "https://www.convoscore.com/icon.svg",
+    "verdict": {
+      "keepIf": [
+        "Votre équipe perd du temps à lire et classer des demandes entrantes hétérogènes.",
+        "Vous voulez conserver la transcription et comprendre pourquoi un lead reçoit une priorité.",
+        "Un plan gratuit limité à un site suffit pour tester l'impact sur votre vrai trafic."
+      ],
+      "avoidIf": [
+        "Votre formulaire actuel reçoit peu de demandes ou collecte déjà les bons champs.",
+        "Vous avez besoin d'intégrations CRM prêtes à l'emploi et garanties dès le premier plan payant.",
+        "Vous ne pouvez pas faire transiter le contenu des conversations par Gemini et des infrastructures américaines."
+      ],
+      "threshold": "Testez d'abord le plan gratuit sur une page à trafic réel. Gardez ConvoScore seulement si le taux de demandes exploitables progresse sans augmenter les abandons, et contrôlez manuellement la justesse du scoring sur les premières conversations."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your team spends meaningful time reading and sorting uneven inbound requests.",
+        "You want to keep the transcript and understand why a lead received its priority.",
+        "A free one-site plan is enough to test the impact on real traffic."
+      ],
+      "avoidIf": [
+        "Your current form receives few requests or already captures the right fields.",
+        "You need guaranteed, ready-made CRM integrations on the first paid plan.",
+        "You cannot send conversation content through Gemini and US-based infrastructure."
+      ],
+      "threshold": "Test the free plan on a page with real traffic first. Keep ConvoScore only if usable requests increase without raising abandonment, and manually review scoring accuracy across the first conversations."
+    },
+    "pros": [
+      "Plan gratuit exploitable sur un site avec accès au tableau de bord.",
+      "Règles de priorité annoncées comme consultables, avec raison du score.",
+      "Transcription complète et champs structurés conservés pour chaque demande.",
+      "Export et suppression des données documentés dans la politique de confidentialité.",
+      "Données principales hébergées dans l'Union européenne à Francfort."
+    ],
+    "prosEn": [
+      "Usable free plan for one site with dashboard access.",
+      "Priority rules advertised as auditable, with score rationale.",
+      "Full transcript and structured fields retained for each request.",
+      "Data export and deletion documented in the privacy policy.",
+      "Primary data hosted in the European Union in Frankfurt."
+    ],
+    "cons": [
+      "Aucune preuve indépendante publiée sur l'effet du widget sur la conversion ou la qualité des leads.",
+      "Les extractions et scores assistés par IA peuvent être incomplets ou erronés.",
+      "Les conversations sont traitées par Gemini, principalement aux États-Unis.",
+      "Les demandes d'intégration et l'onboarding sont réservés au plan Growth à 129 $/mois.",
+      "Le plan Starter reste limité à cinq chatbots."
+    ],
+    "consEn": [
+      "No published independent evidence of the widget's effect on conversion or lead quality.",
+      "AI-assisted extraction and scoring can be incomplete or wrong.",
+      "Conversations are processed by Gemini, primarily in the United States.",
+      "Integration requests and guided onboarding require the $129/month Growth plan.",
+      "The Starter plan remains limited to five chatbots."
+    ],
+    "useCases": [
+      "Qualifier les demandes reçues depuis une page de contact ou de démonstration.",
+      "Transformer une conversation libre en coordonnées, besoin, urgence et taille d'entreprise.",
+      "Prioriser les rappels commerciaux selon des règles visibles.",
+      "Conserver la transcription et analyser l'activité du widget."
+    ],
+    "useCasesEn": [
+      "Qualify requests from a contact or demo page.",
+      "Turn free-form conversation into contact details, need, urgency and company size.",
+      "Prioritize sales follow-up using visible rules.",
+      "Keep transcripts and analyze widget activity."
+    ],
+    "covers": [
+      "capture-leads",
+      "qualification-leads",
+      "lead-scoring",
+      "chatbot-site"
+    ],
+    "functional_needs": [
+      "capture-leads",
+      "qualification-leads",
+      "lead-scoring"
+    ],
+    "relevantFor": [
+      "Équipes commerciales B2B",
+      "Agences et cabinets de services",
+      "SaaS avec demandes de démonstration",
+      "Petites équipes support ou avant-vente"
+    ],
+    "alternatives": [
+      "intercom",
+      "chatbase",
+      "landbot",
+      "typeform",
+      "tally"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour une petite équipe qui veut qualifier des demandes entrantes sans déployer une suite commerciale complète.",
+      "idealForEn": "Ideal for a small team that wants to qualify inbound requests without deploying a full sales suite.",
+      "metaDescription": "ConvoScore : avis, prix, widget conversationnel, extraction structurée, scoring des leads, confidentialité et limites."
+    },
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "fondateur-saas",
+      "consultant-b2b",
+      "agence-studio",
+      "commercial-b2b"
+    ],
+    "ia_use_case": [
+      "qualification-leads",
+      "extraction-structuree"
+    ],
+    "freeAlternative": "tally",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": "Revenir au plan gratuit avec un site et un chatbot, ou restaurer un formulaire classique si le volume ne justifie plus le widget.",
+    "personas": [],
+    "timeGainedHoursPerMonth": 2,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "monthly_inbound_requests",
+      "current_form_completion_rate",
+      "crm_integration_needed",
+      "ai_data_processing_policy"
+    ],
+    "substitution_cluster_v2": "lead-qualification",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://www.convoscore.com/marketing/dashboard-team.jpg",
+    "galleryImages": [
+      "https://www.convoscore.com/marketing/use-case.jpg",
+      "https://www.convoscore.com/marketing/hero-office.jpg"
+    ],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Le produit relie conversation, extraction structurée et priorité dans un même flux. Aucun résultat indépendant sur la conversion ou la qualité des leads n'est publié, donc la valeur doit être mesurée sur le trafic réel (source : convoscore.com et /terms, consulté le 2026-09-25).",
+        "simplicite": "Le plan gratuit inclut un site, un chatbot, le constructeur visuel et le tableau de bord. L'installation repose sur un script intégré au site, mais la facilité annoncée en quelques minutes reste une affirmation de l'éditeur (source : convoscore.com et /pricing, consulté le 2026-09-25).",
+        "utilisation": "Le tableau de bord montre les demandes, transcriptions, champs extraits et motifs du score. Les médias et la démonstration viennent de l'éditeur ; aucun test indépendant n'a été retenu pour confirmer l'expérience en production (source : convoscore.com, consulté le 2026-09-25).",
+        "puissance": "Le scoring combine règles visibles et traitement Gemini, avec jusqu'à 5 chatbots en Starter et 25 en Growth. Les intégrations sont formulées comme des demandes à construire, pas comme un catalogue de connecteurs existants (source : convoscore.com/pricing, consulté le 2026-09-25).",
+        "reversibilite": "La politique autorise l'export et la suppression des données ; après fermeture du compte, un export peut être demandé pendant 30 jours. Un retour vers le plan gratuit ou un formulaire classique reste possible (source : convoscore.com/privacy et /terms, consulté le 2026-09-25)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The product connects conversation, structured extraction and priority in one workflow. No independent conversion or lead-quality results are published, so value must be measured on real traffic (source: convoscore.com and /terms, checked 2026-09-25).",
+        "simplicite": "The free plan includes one site, one chatbot, the visual builder and the dashboard. Installation uses an embedded script, but the claimed minutes-long setup remains vendor-provided (source: convoscore.com and /pricing, checked 2026-09-25).",
+        "utilisation": "The dashboard displays requests, transcripts, extracted fields and score reasons. Media and the demo come from the vendor; no independent test was used to confirm the production experience (source: convoscore.com, checked 2026-09-25).",
+        "puissance": "Scoring combines visible rules and Gemini processing, with up to 5 chatbots on Starter and 25 on Growth. Integrations are described as requests to build, not an existing connector catalog (source: convoscore.com/pricing, checked 2026-09-25).",
+        "reversibilite": "The policy allows data export and deletion; after account closure, an export can be requested for 30 days. Teams can also return to the free plan or a standard form (source: convoscore.com/privacy and /terms, checked 2026-09-25)."
+      },
+      "lastActivityVerifiedOn": "2026-09-25",
+      "notedOn": "2026-09-25"
+    }
   }
 ]

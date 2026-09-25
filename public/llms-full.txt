@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1178
+# Records: 1179
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17760,5 +17760,23 @@
     },
     "description_fr": "Centralise facturation Peppol, banque, TVA et collaboration comptable pour les entreprises belges.",
     "description_en": "Brings Peppol invoicing, banking, VAT and accountant collaboration together for Belgian businesses."
+  },
+  {
+    "name": "ConvoScore",
+    "slug": "convoscore",
+    "url_fr": "https://tooltrim.com/fr/tool/convoscore",
+    "url_en": "https://tooltrim.com/en/tool/convoscore",
+    "website": "https://www.convoscore.com/",
+    "category": "marketing",
+    "monthly_price_eur": 49,
+    "pricing": {
+      "free": "Gratuit : 1 site, 1 chatbot et badge ConvoScore",
+      "paid": "Starter 49 $/mois ou 490 $/an ; Growth 129 $/mois ou 1 290 $/an ; Enterprise sur devis"
+    },
+    "description_fr": "Remplace un formulaire de contact par un chatbot qui structure et priorise les demandes entrantes.",
+    "description_en": "Replaces a contact form with a chatbot that structures and prioritizes inbound requests.",
+    "alternatives": [
+      "tally"
+    ]
   }
 ]
