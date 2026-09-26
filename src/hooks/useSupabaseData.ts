@@ -6,7 +6,7 @@ import toolsIndexJson from "@/data/tools_index.json";
 import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
 import { TOOLS_TABLE_SELECT } from "@/lib/toolsTableColumns";
 // Local reviews pending reinjection, consistent with the JSON-only build.
-const LOCAL_REVIEW_SLUGS = new Set(['turbotic', 'kit', 'convertkit', 'activecampaign', 'adcreative-ai', 'aircall', 'amplemarket', 'apollo-io', 'brand24', 'brevo', 'buddy-punch', 'callrail', 'clickup', 'deel']);
+const LOCAL_REVIEW_SLUGS = new Set(['turbotic', 'kit', 'convertkit', 'activecampaign', 'adcreative-ai', 'aircall', 'amplemarket', 'apollo-io', 'brand24', 'brevo', 'buddy-punch', 'callrail', 'clickup', 'deel', 'descript']);
 
 // Pre-resolved tool data injected by the SSR build step (see entry-server.tsx),
 // so useToolBySlug can skip its loading state when the markup was already

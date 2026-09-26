@@ -8370,16 +8370,16 @@
     "slug": "descript",
     "name": "Descript",
     "categoryId": "ai-general",
-    "shortDescription": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.",
-    "shortDescriptionEn": "Descript is a transcript-driven audio and video editor with recording, editing, AI voice, and sound enhancement tools.",
+    "shortDescription": "Montez podcasts et vidéos en modifiant leur transcription, avec des outils audio et IA intégrés.",
+    "shortDescriptionEn": "Edit podcasts and videos through their transcript, with built-in audio and AI tools.",
     "pricing": {
-      "free": "Accès gratuit pour tester l'éditeur avec limites d'usage et d'export.",
-      "paid": "Hobbyist: 16 USD par utilisateur et par mois avec facturation annuelle ; Creator: 24 USD par utilisateur et par mois avec facturation annuelle ; Business: 50 USD par utilisateur et par mois avec facturation annuelle"
+      "free": "Free : 1 h de médias/mois et 100 crédits IA une seule fois.",
+      "paid": "Par personne : Hobbyist 24 $US/mois ou 16 $US en annuel ; Creator 35 $US ou 24 $US en annuel ; Business 65 $US ou 50 $US en annuel. Enterprise sur devis. Heures médias et crédits IA plafonnés."
     },
-    "defaultMonthlyPrice": 13.86,
-    "compareMonthlyPrice": 13.86,
-    "affiliateLink": "https://descript.com",
-    "ogImageUrl": "https://www.descript.com/favicon.ico",
+    "affiliateLink": "https://get.descript.com/nvex67sqobyv",
+    "websiteUrl": "https://www.descript.com/",
+    "ogImageUrl": "/og-images/descript.jpg",
+    "logo": "/tool-media/logos/descript.png",
     "tool_type": "ia",
     "substitution_cluster_v2": "ai-transcription-editing",
     "functional_needs": [

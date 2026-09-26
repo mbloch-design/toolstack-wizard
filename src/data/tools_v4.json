@@ -41963,11 +41963,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.",
-    "defaultMonthlyPrice": 13.86,
+    "shortDescription": "Montez podcasts et vidéos en modifiant leur transcription, avec des outils audio et IA intégrés.",
+    "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Accès gratuit pour tester l'éditeur avec limites d'usage et d'export.",
-      "paid": "Hobbyist: 16 USD par utilisateur et par mois avec facturation annuelle ; Creator: 24 USD par utilisateur et par mois avec facturation annuelle ; Business: 50 USD par utilisateur et par mois avec facturation annuelle"
+      "free": "Free : 1 h de médias/mois et 100 crédits IA une seule fois.",
+      "paid": "Par personne : Hobbyist 24 $US/mois ou 16 $US en annuel ; Creator 35 $US ou 24 $US en annuel ; Business 65 $US ou 50 $US en annuel. Enterprise sur devis. Heures médias et crédits IA plafonnés."
     },
     "covers": [
       "enregistrement-multipistes",
@@ -41996,56 +41996,46 @@
       "alix",
       "theo"
     ],
-    "timeGainedHoursPerMonth": 8,
+    "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": {
-      "freeTier": "1h transcription/mois",
-      "available": true
+      "available": true,
+      "freeTier": "1 h de médias/mois ; 100 crédits IA une seule fois"
     },
-    "affiliateLink": "https://descript.com",
+    "affiliateLink": "https://get.descript.com/nvex67sqobyv",
     "verdict": {
       "keepIf": [
-        "Vous utilisez régulièrement le workflow central de Descript.",
-        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
-        "Les limites officielles correspondent à votre volume réel."
+        "Vos contenus reposent principalement sur la parole.",
+        "Le montage par texte vous convient sur un épisode réel."
       ],
       "avoidIf": [
-        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
-        "Votre stack couvre déjà le même workflow.",
-        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+        "Votre besoin central est l’étalonnage ou les effets complexes.",
+        "Les quotas et les limites d’export ne couvrent pas vos productions."
       ],
-      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+      "threshold": "Testez une production complète, export compris. Le choix se joue sur le volume média, les crédits IA et la finition nécessaire."
     },
     "pros": [
-      "Workflow produit bien défini.",
-      "Documentation officielle et développement actif.",
-      "S'intègre aux processus professionnels.",
-      "Point d'entrée disponible avant de monter en charge."
+      "Montage de contenus parlés depuis la transcription.",
+      "Enregistrement, sous-titres et outils audio réunis.",
+      "Offre gratuite pour vérifier le fonctionnement.",
+      "Export de timeline vers d’autres éditeurs dès Creator."
     ],
     "cons": [
-      "Le coût peut augmenter avec l'usage ou les sièges.",
-      "Les fonctions avancées exigent une offre payante.",
-      "La qualité du paramétrage influence le résultat."
+      "Transcription et coupes IA à contrôler.",
+      "Heures de médias et crédits IA distincts.",
+      "Crédits gratuits non renouvelés chaque mois.",
+      "Exports de timeline incomplets pour certains effets et éléments."
     ],
     "useCases": [
-      "Utiliser montage depuis la transcription dans un workflow récurrent.",
-      "Utiliser studio sound dans un workflow récurrent.",
-      "Utiliser suppression des hésitations dans un workflow récurrent."
+      "Monter une interview en supprimant des passages dans le texte.",
+      "Créer des extraits sous-titrés d’un podcast vidéo.",
+      "Préparer un premier montage avant finition dans un autre éditeur."
     ],
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [
-          "chatgpt",
-          "runway"
-        ],
-        "augmentEn": "Descript IS an AI product: it transcribes your video or podcast, and you edit it like a text document (delete a word in the text, the audio disappears). It adds voice cloning, filler-word removal, AI editing. AI is not a threat here, it is the core of the product.",
-        "augmentFr": "Descript EST un produit IA : il transcrit ta vidéo ou ton podcast, et tu l'édites comme un document texte (supprime un mot du texte, le son disparaît). Il ajoute le clonage de voix, la suppression des heu, l'IA de montage. L'IA n'est pas une menace ici, c'est le coeur du produit.",
-        "replaceEn": "Replace Descript with a general AI? No: ChatGPT gives you a script, but it does not edit your podcast or clone your voice. Where Descript is challenged is by video editors adding the same AI features. For text-driven audio/video editing, it stays one of the most polished. Verdict: AI carries it more than it threatens it.",
-        "replaceFr": "Remplacer Descript par une IA généraliste ? Non : ChatGPT te donne un script, mais il ne monte pas ton podcast ni ne clone ta voix. Là où Descript est challengé, c'est par les éditeurs vidéo qui ajoutent les mêmes fonctions IA. Pour de l'édition audio/vidéo pilotée par le texte, il reste l'un des plus aboutis. Verdict : l'IA le porte plus qu'elle ne le menace."
-      }
+      "metaDescription": "Descript : avis, montage audio et vidéo par texte, gratuit et tarifs Hobbyist, Creator, Business. Crédits IA et limites d’export expliqués.",
+      "metaDescriptionEn": "Descript review: text-based audio and video editing, Free, Hobbyist, Creator and Business pricing, AI credits and export limits."
     },
     "articles": [],
     "soloRelevance": "medium",
@@ -42057,10 +42047,10 @@
       "Équipes marketing"
     ],
     "pricingTiers": {
-      "free": "1 heure média et 100 crédits IA par mois",
-      "paid": "Hobbyist dès 16 $/mois avec facturation annuelle"
+      "free": "Free : 1 h de médias/mois et 100 crédits IA une seule fois.",
+      "paid": "Par personne : Hobbyist 24 $US/mois ou 16 $US en annuel ; Creator 35 $US ou 24 $US en annuel ; Business 65 $US ou 50 $US en annuel. Enterprise sur devis. Heures médias et crédits IA plafonnés."
     },
-    "longDescription": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.\n\nFonctions clés : Montage depuis la transcription ; Studio Sound ; Suppression des hésitations ; Clips et doublage IA ; Enregistrement écran et caméra.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
+    "longDescription": "Descript s’adresse aux créateurs de podcasts, interviews et vidéos parlées. Son intérêt principal : couper et réorganiser un enregistrement à partir du texte, puis ajouter sous-titres et éléments visuels. Studio Sound et Underlord complètent le montage, sans supprimer la nécessité de réécouter les coupes et de relire la transcription.\n\nPour ToolTrim, testez un épisode réel avant de migrer. Vérifiez la transcription dans votre langue, les noms propres, les transitions et le rendu sonore. Descript peut servir au premier montage avant une finition dans un autre éditeur ; les exports de timeline ne transfèrent cependant pas tous les effets et éléments.\n\nChoisissez l’offre selon les heures de médias traités, les crédits IA et les exports nécessaires. Le gratuit inclut 100 crédits IA une seule fois, pas chaque mois. L’ancien gain estimé de huit heures n’était pas étayé : cette analyse est documentaire, sans test terrain ni économie de temps garantie.",
     "alternatives": [
       "adobe-podcast-ai",
       "auphonic",
@@ -42071,60 +42061,134 @@
       "adobe-premiere-pro"
     ],
     "slug": "descript",
-    "shortDescriptionEn": "Descript is a transcript-driven audio and video editor with recording, editing, AI voice, and sound enhancement tools.",
-    "description": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.\n\nFonctions clés : Montage depuis la transcription ; Studio Sound ; Suppression des hésitations ; Clips et doublage IA ; Enregistrement écran et caméra.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
-    "longDescriptionEn": "Descript is a transcript-driven audio and video editor with recording, editing, AI voice, and sound enhancement tools.\n\nKey strengths: Focused product workflow.; Official documentation and active development.; Integrates into professional processes.; Entry path available before scaling..\n\nKeep it when recurring usage replaces a clear manual or fragmented workflow.",
+    "shortDescriptionEn": "Edit podcasts and videos through their transcript, with built-in audio and AI tools.",
+    "description": "Descript s’adresse aux créateurs de podcasts, interviews et vidéos parlées. Son intérêt principal : couper et réorganiser un enregistrement à partir du texte, puis ajouter sous-titres et éléments visuels. Studio Sound et Underlord complètent le montage, sans supprimer la nécessité de réécouter les coupes et de relire la transcription.\n\nPour ToolTrim, testez un épisode réel avant de migrer. Vérifiez la transcription dans votre langue, les noms propres, les transitions et le rendu sonore. Descript peut servir au premier montage avant une finition dans un autre éditeur ; les exports de timeline ne transfèrent cependant pas tous les effets et éléments.\n\nChoisissez l’offre selon les heures de médias traités, les crédits IA et les exports nécessaires. Le gratuit inclut 100 crédits IA une seule fois, pas chaque mois. L’ancien gain estimé de huit heures n’était pas étayé : cette analyse est documentaire, sans test terrain ni économie de temps garantie.",
+    "longDescriptionEn": "Descript is built for podcasts, interviews and speech-led videos. Its main value is cutting and rearranging recordings through text, then adding captions and visuals. Studio Sound and Underlord support editing, but cuts still need listening checks and transcripts need proofreading.\n\nToolTrim recommends testing a real episode before migrating. Check your language, proper names, transitions and sound quality. Descript can handle a rough cut before finishing in another editor, but timeline exports do not transfer every effect or element.\n\nChoose a plan by processed media hours, AI credits and export requirements. Free includes 100 AI credits once, not every month. The previous eight-hour saving estimate was unsupported: this is a documentation-based review, without hands-on testing or guaranteed time savings.",
     "pricingEn": {
-      "free": "Accès gratuit pour tester l'éditeur avec limites d'usage et d'export.",
-      "paid": "Hobbyist: 16 USD par utilisateur et par mois avec facturation annuelle ; Creator: 24 USD par utilisateur et par mois avec facturation annuelle ; Business: 50 USD par utilisateur et par mois avec facturation annuelle"
+      "free": "Free: 1 media hour/month and 100 one-time AI credits.",
+      "paid": "Per person: Hobbyist $24/month or $16 billed annually; Creator $35 or $24 annually; Business $65 or $50 annually. Enterprise is custom priced. Media hours and AI credits are capped."
     },
     "pricing_v5": {
       "cautions": [
-        "Prix officiels en dollars par utilisateur",
-        "Les prix les plus bas exigent une facturation annuelle",
-        "Les outils IA consomment des crédits selon la fonction"
+        "USD par personne, sans conversion EUR. Prix réduits avec facturation annuelle. Crédits IA gratuits accordés une seule fois ; recharges sur Creator et Business."
       ],
-      "verified_on": "2026-08-30",
+      "verified_on": "2026-09-26",
       "source_domain": "descript.com",
-      "usage_sensitive": false,
+      "usage_sensitive": true,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Hobbyist annual",
+      "compare_plan_name": "Hobbyist",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.descript.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 13.86
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "Gratuit, avec crédits IA non renouvelables.",
+          "featureHighlights": [
+            "1 h de médias/mois",
+            "100 crédits IA une seule fois"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "hobbyist",
+          "displayName": "Hobbyist",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 16,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "16 $US/personne/mois facturé annuellement ; 24 $US en mensuel.",
+          "featureHighlights": [
+            "10 h de médias/mois",
+            "400 crédits IA par mois"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "creator",
+          "displayName": "Creator",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "24 $US/personne/mois facturé annuellement ; 35 $US en mensuel.",
+          "featureHighlights": [
+            "30 h de médias/mois",
+            "800 crédits IA par mois"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "50 $US/personne/mois facturé annuellement ; 65 $US en mensuel.",
+          "featureHighlights": [
+            "40 h de médias/mois",
+            "1500 crédits IA par mois"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
-    "websiteUrl": "https://descript.com",
-    "logo": "",
+    "websiteUrl": "https://www.descript.com/",
+    "logo": "/tool-media/logos/descript.png",
     "verdictEn": {
       "keepIf": [
-        "You need Descript's core workflow regularly.",
-        "You value an integrated product over stitching several tools together.",
-        "The official usage limits match your real volume."
+        "Your content is mainly speech-led.",
+        "Text-based editing fits a real episode."
       ],
       "avoidIf": [
-        "Your need is occasional and a simpler free tool is enough.",
-        "You already cover the same workflow in your current stack.",
-        "The usage or seat model makes costs hard to predict."
+        "Your main need is color grading or complex effects.",
+        "Usage caps and export limits do not cover your work."
       ],
-      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+      "threshold": "Test a complete production, including export. Choose by media volume, AI credits and finishing requirements."
     },
     "prosEn": [
-      "Focused product workflow.",
-      "Official documentation and active development.",
-      "Integrates into professional processes.",
-      "Entry path available before scaling."
+      "Transcript-based editing for speech-led content.",
+      "Recording, captions and audio tools together.",
+      "Free plan to assess the workflow.",
+      "Timeline export to other editors from Creator."
     ],
     "consEn": [
-      "Costs can grow with usage or seats.",
-      "Advanced capabilities require a paid tier.",
-      "Setup quality affects the result."
+      "Transcripts and AI cuts need review.",
+      "Media hours and AI credits are separate limits.",
+      "Free AI credits do not renew monthly.",
+      "Timeline exports omit some effects and elements."
     ],
     "useCasesEn": [
-      "Use montage depuis la transcription in a recurring workflow.",
-      "Use studio sound in a recurring workflow.",
-      "Use suppression des hésitations in a recurring workflow."
+      "Cut an interview by removing transcript passages.",
+      "Create captioned clips from a video podcast.",
+      "Prepare a rough cut before finishing in another editor."
     ],
     "prescription_quality": "question",
     "prescription_output": null,
@@ -42147,8 +42211,129 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://www.descript.com/favicon.ico",
-    "galleryImages": []
+    "ogImageUrl": "/og-images/descript.jpg",
+    "galleryImages": [
+      "/tool-media/descript/workflow.webp",
+      "/tool-media/descript/editor.webp",
+      "/tool-media/descript/media.webp"
+    ],
+    "affiliateCtaLabelFr": "Commencer gratuitement",
+    "affiliateCtaLabelEn": "Get started for free",
+    "pricing_v5En": {
+      "cautions": [
+        "USD per person, no EUR conversion. Lower prices require annual billing. Free AI credits are one-time; top-ups on Creator and Business."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "descript.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Hobbyist",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.descript.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "Free, with non-renewing AI credits.",
+          "featureHighlights": [
+            "1 media hours/month",
+            "100 AI credits one-time"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "hobbyist",
+          "displayName": "Hobbyist",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 16,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$16/person/month billed annually; $24 billed monthly.",
+          "featureHighlights": [
+            "10 media hours/month",
+            "400 AI credits per month"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "creator",
+          "displayName": "Creator",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$24/person/month billed annually; $35 billed monthly.",
+          "featureHighlights": [
+            "30 media hours/month",
+            "800 AI credits per month"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$50/person/month billed annually; $65 billed monthly.",
+          "featureHighlights": [
+            "40 media hours/month",
+            "1500 AI credits per month"
+          ],
+          "detailsSourceUrl": "https://www.descript.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Montage par texte pertinent pour contenus parlés ; ROI non mesuré. https://www.descript.com/pricing (2026-09-26).",
+        "simplicite": "Interface textuelle, mais vérification des coupes nécessaire ; pas de test terrain. https://www.descript.com/pricing (2026-09-26).",
+        "utilisation": "Production récurrente limitée par heures médias et crédits IA. https://www.descript.com/pricing (2026-09-26).",
+        "puissance": "Enregistrement, montage, Studio Sound et Underlord selon offre. https://www.descript.com/pricing (2026-09-26).",
+        "reversibilite": "Timeline dès Creator, mais séquences, avatars et plusieurs effets non transférés. https://help.descript.com/export-and-share/timeline-exports (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Text editing suits speech-led content; ROI not measured. https://www.descript.com/pricing (2026-09-26).",
+        "simplicite": "Text interface still requires cut review; not hands-on tested. https://www.descript.com/pricing (2026-09-26).",
+        "utilisation": "Recurring production subject to media and AI quotas. https://www.descript.com/pricing (2026-09-26).",
+        "puissance": "Recording, editing, Studio Sound and Underlord vary by plan. https://www.descript.com/pricing (2026-09-26).",
+        "reversibilite": "Timeline from Creator, but sequences, avatars and several effects do not transfer. https://help.descript.com/export-and-share/timeline-exports (2026-09-26)."
+      }
+    }
   },
   {
     "id": "descript-ai",

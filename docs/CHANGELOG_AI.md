@@ -1,3 +1,10 @@
+## 2026-09-26 : Descript, révision affiliée FR/EN
+
+- Corrige contenu générique et traductions, prix USD mensuels/annuels, crédits Free non renouvelables et exports Creator. Retire conversion EUR et gain horaire non sourcé. Note documentaire 3,8/5.
+- Lien partenaire validé HTTP 200 ; CTA gratuit. Logo officiel static-cdn.descript.com/web/icons/apple-touch-icon.png ; OG Sanity 126b70d12a747eb60c81bad5b72942f7d75041dd ; galerie Sanity d57caa94647cd700ce209af3b619b56241a5c722, 911bc2e36110a7bed71b97cc97a899a44f403e45, e0c6d91d959c7169651f6f44cba048f910e11ac9, provenant de la page officielle. Aucune capture maison.
+- Sources : https://www.descript.com/ ; https://www.descript.com/pricing ; https://help.descript.com/export-and-share/timeline-exports .
+- Révision guidée par content-writer ; registres narrative/claims absents, conventions projet et sources publiques utilisés. Trafic : inconnu, aucun gain SEO revendiqué. narrative_canon_id/version et claims_projection_offset : unknown ; dependency_status: approved-fallback (révision locale demandée, non publiée).
+
 ## 2026-09-26 : ClickUp, révision affiliée FR/EN
 
 - Actualise contenu, gratuit à 60 Mo, tarifs USD annuels/mensuels et coûts par membre. Distingue offres IA. Retire conversion EUR et gains horaires non démontrés.
