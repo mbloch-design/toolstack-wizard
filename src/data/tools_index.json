@@ -16709,17 +16709,16 @@
     "slug": "krispcall",
     "name": "KrispCall",
     "categoryId": "communication",
-    "shortDescription": "Téléphonie cloud, numéros virtuels et centre d’appels léger.",
-    "shortDescriptionEn": "Cloud telephony, virtual numbers and lightweight call center features.",
+    "shortDescription": "Téléphonie cloud et boîte partagée pour appels, SMS et suivi des échanges clients.",
+    "shortDescriptionEn": "Cloud phone system and shared inbox for calls, texts and customer conversations.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics à partir d’environ 12 $/utilisateur/mois selon facturation."
+      "free": "Pas de forfait gratuit identifié. Remboursement de l’abonnement sous 14 jours selon conditions, à ne pas confondre avec un essai gratuit.",
+      "paid": "USD par utilisateur : Starter 15 $/mois, Advance 40 $, Max 60 $ en mensuel ; 12 $, 32 $, 48 $/mois facturés annuellement. Enterprise sur devis. Dépassements, numéros et options en sus ; taxes à confirmer."
     },
-    "defaultMonthlyPrice": 12,
-    "compareMonthlyPrice": 12,
     "affiliateLink": "https://try.krispcall.com/t1akmbaetinc",
-    "websiteUrl": "https://krispcall.com",
-    "ogImageUrl": "https://krispcall.com/wp-content/uploads/2025/06/KrispCall-Open-Graph-Banner.png",
+    "websiteUrl": "https://krispcall.com/",
+    "ogImageUrl": "/og-images/krispcall.png",
+    "logo": "/tool-media/logos/krispcall.png",
     "substitution_cluster_v2": "business-phone",
     "functional_needs": [
       "business-phone",
@@ -16730,17 +16729,15 @@
       "consultant-b2b"
     ],
     "relevantFor": [
-      "Petites équipes commerciales",
-      "Startups",
-      "PME cherchant VoIP + CRM",
-      "Utilisateurs Pipedrive"
+      "Équipes commerciales",
+      "Équipes support",
+      "Agences avec numéros partagés"
     ],
     "prescription_quality": "question",
     "personas": [
       "MARC",
       "CLAIRE"
-    ],
-    "freeAlternative": "google-meet"
+    ]
   },
   {
     "id": "krita",

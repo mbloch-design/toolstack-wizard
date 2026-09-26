@@ -1,3 +1,11 @@
+## 2026-09-26 : KrispCall, révision affiliée FR/EN
+
+- Remplace Essential/Standard par Starter/Advance/Max, selon https://krispcall.com/pricing/ : 15/40/60 USD par utilisateur/mois mensuels, 12/32/48 en annuel. Taxes non établies, aucune conversion EUR. Quotas et routes éligibles explicités ; numéro inclus limité US/CA/UK. Enterprise sur devis. Alternatives corrigées vers les slugs existants.
+- Retire faux essai gratuit et appels illimités généralisés. Source remboursement : https://krispcall.com/legal/refund-policy/ ; source restrictions Max : https://krispcall.com/legal/fair-usage-policy/ (Power Dialer et automatisations exclus des communications incluses). Les sources tarifaires et contractuelles divergent sur certains détails ; aucune promesse de remboursement inconditionnel ni de coût tout compris. Note documentaire 3,4/5, réversibilité prudente faute de confirmation des exports complets et du portage sortant. Suppression des gains horaires non mesurés.
+- Lien exact https://try.krispcall.com/t1akmbaetinc vérifié dans le navigateur : redirection officielle avec paramètres partenaire. CTA vers les offres, sans promesse de gratuité.
+- Médias officiels inspectés : favicon-krispcall.png (wp-content/uploads/2025/01), KrispCall-Open-Graph-Banner.png (2025/06) ; trois WebP du CDN krispcall-website.sgp1.cdn.digitaloceanspaces.com : 20260428_123538/Unified-Callbox-img.webp, Power-Dialer-img.webp et 20260421_130615/Call-Summary.webp. Source https://krispcall.com/ ; aucune capture fabriquée.
+- Guide rédaction appliqué en fallback aux conventions projet : narrative_canon_id, narrative_canon_version et claims_projection_offset inconnus, dependency_status approved-fallback. Révision pour obsolescence constatée, pas pour baisse SEO mesurée. Plafond global de build préexistant non modifié.
+
 ## 2026-09-26 : Ignition, révision affiliée FR/EN
 
 - Révision du contenu, verdict et SEO ; anciens tarifs convertis EUR, gains horaires et fausses alternatives gratuites retirés. Périmètre recentré sur propositions, signatures, facturation et paiements, sans promesse de comptabilité complète ni paie. Note documentaire 3,6/5, sans test terrain.

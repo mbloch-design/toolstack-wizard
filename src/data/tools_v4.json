@@ -82972,63 +82972,54 @@
     "id": "krispcall",
     "name": "KrispCall",
     "category": "communication",
-    "description": "KrispCall est une alternative de téléphonie cloud plus accessible pour gérer numéros virtuels, appels, SMS et workflows d’équipe. ToolTrim le positionne comme option pragmatique si Aircall est trop lourd, mais le besoin doit rester réel : sans volume d’appels, le coût reste une friction de plus.",
+    "description": "KrispCall centralise appels, SMS, messages vocaux et notes dans une boîte de réception partagée, avec des numéros professionnels et des intégrations CRM. Il s’adresse aux équipes commerciales et support qui veulent suivre les échanges clients sans dépendre d’un téléphone individuel. Les fonctions de contacts ne remplacent pas nécessairement votre CRM commercial.\n\nPour ToolTrim, commencez par vos destinations et votre volume d’appels, pas seulement par le prix par utilisateur. Starter couvre jusqu’à cinq utilisateurs ; Advance ajoute notamment l’enregistrement et le Power Dialer. Les transcriptions et résumés sont des options payantes selon la grille actuelle. Testez le routage, la qualité audio et la synchronisation CRM sur un petit périmètre avant de transférer votre numéro principal.\n\nLes forfaits incluent des volumes d’appels et de SMS sur des routes éligibles, pas des communications gratuites partout. Le numéro inclus concerne les États-Unis, le Canada ou le Royaume-Uni ; les autres pays impliquent des frais et des justificatifs. Même Max impose une politique d’usage raisonnable et exclut notamment les appels du Power Dialer et certaines automatisations de ses communications incluses. Demandez un chiffrage adapté à vos destinations, en particulier pour un usage en France.\n\nLes 14 jours annoncés correspondent à une possibilité de remboursement de l’abonnement sous conditions, pas à un essai gratuit. Numéros, crédits et usages sont à distinguer de l’abonnement. Préparez aussi votre sortie : confirmez la portabilité sortante et les exports nécessaires avant engagement ; la politique d’annulation annonce la suppression des données à la prochaine échéance de facturation.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics à partir d’environ 12 $/utilisateur/mois selon facturation."
+      "free": "Pas de forfait gratuit identifié. Remboursement de l’abonnement sous 14 jours selon conditions, à ne pas confondre avec un essai gratuit.",
+      "paid": "USD par utilisateur : Starter 15 $/mois, Advance 40 $, Max 60 $ en mensuel ; 12 $, 32 $, 48 $/mois facturés annuellement. Enterprise sur devis. Dépassements, numéros et options en sus ; taxes à confirmer."
     },
     "link": "https://try.krispcall.com/t1akmbaetinc",
     "verdict": {
       "keepIf": [
-        "Vous cherchez une téléphonie cloud simple avec CRM léger inclus.",
-        "Vous utilisez déjà Pipedrive ou Zapier (intégrations natives).",
-        "Vous avez une petite équipe de vente (3-20 personnes)."
+        "Vous partagez des numéros et devez retrouver les conversations clients en équipe.",
+        "Votre CRM et vos destinations d’appel sont compatibles avec le forfait choisi."
       ],
       "avoidIf": [
-        "Vous demandez un CRM très robuste (préférez Close ou Salesforce).",
-        "Vous n'avez besoin que de téléphonie sans CRM.",
-        "Votre budget est extrêmement limité."
+        "Vous attendez des appels illimités partout au seul prix de l’abonnement.",
+        "Votre besoin est limité à des réunions vidéo ou à un CRM sans téléphonie."
       ],
-      "threshold": "KrispCall excelle pour les petites équipes cherchant téléphonie + CRM léger ; pour un CRM complet ou une téléphonie ultra-basique, d'autres options s'imposent."
+      "threshold": "Comparez abonnement, destinations, consommation et options. Validez la qualité audio, le routage et les conditions de portabilité avant de migrer."
     },
     "alternatives": [
-      "aircall-inc",
+      "aircall",
+      "openphone",
       "callrail"
     ],
-    "shortDescription": "Téléphonie cloud, numéros virtuels et centre d’appels léger.",
+    "shortDescription": "Téléphonie cloud et boîte partagée pour appels, SMS et suivi des échanges clients.",
     "affiliateLink": "https://try.krispcall.com/t1akmbaetinc",
     "covers": [
       "business-phone",
       "call-center",
       "virtual-number"
     ],
-    "freeAlternative": "google-meet",
-    "soloRelevance": "à vérifier selon volume",
-    "teamRelevance": "utile si usage récurrent",
+    "freeAlternative": null,
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
     "bestFor": [
       "consultant"
     ],
-    "defaultMonthlyPrice": 12,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 15$/mois (Essential) - 45$/mois (Enterprise)"
+      "free": "Pas de forfait gratuit identifié. Remboursement de l’abonnement sous 14 jours selon conditions, à ne pas confondre avec un essai gratuit.",
+      "paid": "USD par utilisateur : Starter 15 $/mois, Advance 40 $, Max 60 $ en mensuel ; 12 $, 32 $, 48 $/mois facturés annuellement. Enterprise sur devis. Dépassements, numéros et options en sus ; taxes à confirmer."
     },
     "relevantFor": [
-      "Petites équipes commerciales",
-      "Startups",
-      "PME cherchant VoIP + CRM",
-      "Utilisateurs Pipedrive"
+      "Équipes commerciales",
+      "Équipes support",
+      "Agences avec numéros partagés"
     ],
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [],
-        "augmentEn": "KrispCall added AI to transcribe and summarize calls, but remains cloud phone infrastructure (virtual numbers, routing) for sales and support teams.",
-        "augmentFr": "KrispCall a ajouté l'IA pour transcrire et résumer les appels, mais reste l'infrastructure téléphonique cloud (numéros virtuels, routage) pour les équipes commerciales et support.",
-        "replaceEn": "Replace KrispCall with an AI? No: managing virtual phone numbers and routing calls remains a phone infrastructure need. AI helps summarize calls afterward, it doesn't replace the phone system. Verdict: AI augments call tracking, phone infrastructure remains the product.",
-        "replaceFr": "Remplacer KrispCall par une IA ? Non : gérer des numéros de téléphone virtuels et router les appels reste un besoin d'infrastructure téléphonique. L'IA aide à résumer les appels après coup, elle ne remplace pas le système téléphonique. Verdict : l'IA augmente le suivi des appels, l'infrastructure téléphonique reste le produit."
-      },
-      "metaDescription": "KrispCall sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si KrispCall mérite sa place dans ta stack."
+      "metaDescription": "KrispCall : avis, tarifs Starter, Advance et Max, appels inclus et frais supplémentaires. Numéros virtuels, CRM et conditions de remboursement.",
+      "metaDescriptionEn": "KrispCall review: Starter, Advance and Max pricing, included calls and extra fees. Virtual numbers, CRM integrations and refund conditions."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -83047,86 +83038,124 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "krispcall",
-    "shortDescriptionEn": "Cloud telephony, virtual numbers and lightweight call center features.",
-    "longDescription": "KrispCall est une alternative de téléphonie cloud plus accessible pour gérer numéros virtuels, appels, SMS et workflows d’équipe. ToolTrim le positionne comme option pragmatique si Aircall est trop lourd, mais le besoin doit rester réel : sans volume d’appels, le coût reste une friction de plus.",
-    "longDescriptionEn": "KrispCall is a pragmatic cloud telephony option with virtual numbers, calls, SMS and lightweight team workflows.",
+    "shortDescriptionEn": "Cloud phone system and shared inbox for calls, texts and customer conversations.",
+    "longDescription": "KrispCall centralise appels, SMS, messages vocaux et notes dans une boîte de réception partagée, avec des numéros professionnels et des intégrations CRM. Il s’adresse aux équipes commerciales et support qui veulent suivre les échanges clients sans dépendre d’un téléphone individuel. Les fonctions de contacts ne remplacent pas nécessairement votre CRM commercial.\n\nPour ToolTrim, commencez par vos destinations et votre volume d’appels, pas seulement par le prix par utilisateur. Starter couvre jusqu’à cinq utilisateurs ; Advance ajoute notamment l’enregistrement et le Power Dialer. Les transcriptions et résumés sont des options payantes selon la grille actuelle. Testez le routage, la qualité audio et la synchronisation CRM sur un petit périmètre avant de transférer votre numéro principal.\n\nLes forfaits incluent des volumes d’appels et de SMS sur des routes éligibles, pas des communications gratuites partout. Le numéro inclus concerne les États-Unis, le Canada ou le Royaume-Uni ; les autres pays impliquent des frais et des justificatifs. Même Max impose une politique d’usage raisonnable et exclut notamment les appels du Power Dialer et certaines automatisations de ses communications incluses. Demandez un chiffrage adapté à vos destinations, en particulier pour un usage en France.\n\nLes 14 jours annoncés correspondent à une possibilité de remboursement de l’abonnement sous conditions, pas à un essai gratuit. Numéros, crédits et usages sont à distinguer de l’abonnement. Préparez aussi votre sortie : confirmez la portabilité sortante et les exports nécessaires avant engagement ; la politique d’annulation annonce la suppression des données à la prochaine échéance de facturation.",
+    "longDescriptionEn": "KrispCall brings calls, texts, voicemail and notes into a shared inbox, with business numbers and CRM integrations. It suits sales and support teams that need customer conversations to remain accessible beyond an individual phone. Contact management is not necessarily a replacement for your sales CRM.\n\nToolTrim recommends starting with destinations and call volume, not just the per-user price. Starter supports up to five users; Advance adds call recording and Power Dialer. Transcription and summaries are add-ons in the current pricing grid. Test routing, audio quality and CRM synchronization on a limited setup before transferring your main number.\n\nPlans include calling and messaging allowances on eligible routes, not free communications everywhere. Included numbers are for the US, Canada or UK; other countries involve fees and documentation. Even Max has a fair usage policy and excludes Power Dialer calls and certain automated workflows from included usage. Request a destination-specific estimate.\n\nThe advertised 14 days refer to a subscription refund window subject to terms, not a free trial. Separate number, credit and usage charges from subscription costs. Plan your exit too: confirm outbound number portability and required exports before committing; the cancellation policy says account data is deleted at the next billing date.",
     "pricingEn": {
-      "free": "No durable free plan identified.",
-      "paid": "Public plans start around $12/user/month depending on billing."
+      "free": "No free plan identified. Subscription refund within 14 days subject to terms, not a free trial.",
+      "paid": "USD per user: Starter $15/month, Advance $40, Max $60 billed monthly; $12, $32, $48/month billed annually. Enterprise is custom-priced. Overage, numbers and add-ons cost extra; tax treatment to confirm."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-05-03",
+      "cautions": [
+        "USD, traitement fiscal non confirmé. Numéros, consommation supplémentaire et options IA facturés séparément. Routes éligibles et usage raisonnable applicables."
+      ],
+      "verified_on": "2026-09-26",
       "source_domain": "krispcall.com",
       "usage_sensitive": true,
-      "compare_plan_kind": "paid_per_seat",
-      "compare_plan_name": "Essential",
-      "price_reliability": "public_pricing_or_public_entry_plan",
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
       "location_sensitive": true,
       "official_source_url": "https://krispcall.com/pricing/",
-      "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 12
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "15 $US/utilisateur/mois en mensuel ; 12 $US/mois facturé annuellement. Jusqu’à 5 utilisateurs. 200 minutes sortantes + 200 entrantes et 100 segments SMS par utilisateur/mois sur routes éligibles. Taxes à confirmer ; suppléments en sus.",
+          "detailsSourceUrl": "https://krispcall.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "advance",
+          "displayName": "Advance",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 40,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "40 $US/utilisateur/mois en mensuel ; 32 $US/mois facturé annuellement. Jusqu’à 50 utilisateurs. 1 000 minutes sortantes + 1 000 entrantes et 500 segments SMS par utilisateur/mois sur routes éligibles. Taxes à confirmer ; suppléments en sus.",
+          "detailsSourceUrl": "https://krispcall.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "max",
+          "displayName": "Max",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 60,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "60 $US/utilisateur/mois en mensuel ; 48 $US/mois facturé annuellement. Sans limite de membres. Appels éligibles sous usage raisonnable ; 1 000 segments SMS par utilisateur/mois US/Canada. Power Dialer et automatisations exclus des communications incluses. Taxes à confirmer ; suppléments en sus.",
+          "detailsSourceUrl": "https://krispcall.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
-    "websiteUrl": "https://krispcall.com",
-    "logo": "",
+    "websiteUrl": "https://krispcall.com/",
+    "logo": "/tool-media/logos/krispcall.png",
     "verdictEn": {
       "keepIf": [
-        "You want simple cloud phone with lightweight CRM included.",
-        "You already use Pipedrive or Zapier (native integrations).",
-        "You have a small sales team (3-20 people)."
+        "Your team shares business numbers and needs conversation history.",
+        "Your CRM and calling destinations fit the chosen plan."
       ],
       "avoidIf": [
-        "You need a robust CRM (prefer Close or Salesforce).",
-        "You only need phone without CRM.",
-        "Your budget is extremely tight."
+        "You expect unlimited worldwide calls for the subscription price alone.",
+        "You only need video meetings or a CRM without telephony."
       ],
-      "threshold": "KrispCall excels for small teams wanting phone + light CRM; for a complete CRM or basic phone only, other options work better."
+      "threshold": "Compare seats, destinations, usage and add-ons. Validate audio quality, routing and portability terms before migrating."
     },
     "pros": [
-      "Appels illimités inclus (USA/Canada).",
-      "CRM léger mais fonctionnel intégré.",
-      "Intégrations natives Pipedrive, Zapier, Slack.",
-      "Tarification transparente et accessible.",
-      "Garantie 14 jours remboursement sur plans payants.",
-      "IVR et call recording inclus."
+      "Appels, SMS, messages vocaux et notes dans une boîte partagée.",
+      "Routage IVR et intégrations CRM disponibles.",
+      "Enregistrement et Power Dialer à partir d’Advance.",
+      "Numéro US, canadien ou britannique inclus par utilisateur selon conditions."
     ],
     "prosEn": [
-      "Unlimited calls included (USA/Canada).",
-      "Lightweight but functional CRM built-in.",
-      "Native integrations with Pipedrive, Zapier, Slack.",
-      "Transparent and affordable pricing.",
-      "14-day money-back guarantee on paid plans.",
-      "IVR and call recording included."
+      "Shared inbox for calls, texts, voicemail and notes.",
+      "IVR routing and CRM integrations.",
+      "Recording and Power Dialer from Advance.",
+      "Included US, Canadian or UK number per user, subject to conditions."
     ],
     "cons": [
-      "Pas de plan gratuit.",
-      "CRM intégré moins riche qu'une solution spécialisée.",
-      "Plan Essential limité à 5 utilisateurs.",
-      "Support technique peut être variable."
+      "Quotas et destinations éligibles à vérifier avant achat.",
+      "Power Dialer exclu des communications incluses de Max.",
+      "Transcription et résumé proposés en supplément.",
+      "Remboursement distinct d’un essai gratuit ; sortie et export des données à anticiper."
     ],
     "consEn": [
-      "No free plan.",
-      "Built-in CRM less rich than specialized solutions.",
-      "Essential plan limited to 5 users.",
-      "Support quality can be variable."
+      "Check allowances and eligible routes before purchase.",
+      "Power Dialer is excluded from Max included calling.",
+      "Transcription and summaries cost extra.",
+      "Refund window is not a free trial; plan data exports and exit."
     ],
     "useCases": [
-      "PME avec petite équipe de vente cherchant téléphonie + CRM simple.",
-      "Équipes Pipedrive cherchant une téléphonie intégrée.",
-      "Agences cherchant à ajouter VoIP à leur stack Zapier.",
-      "Startups avec budget limité pour téléphonie + CRM."
+      "Partager la réception des appels clients entre agents.",
+      "Relier l’historique téléphonique à un CRM compatible.",
+      "Organiser des appels sortants et suivre les rappels."
     ],
     "useCasesEn": [
-      "SMBs with small sales team wanting phone + simple CRM.",
-      "Pipedrive teams seeking integrated phone.",
-      "Agencies adding VoIP to their Zapier stack.",
-      "Startups with limited budget for phone + CRM."
+      "Share inbound customer calls across agents.",
+      "Connect phone history to a compatible CRM.",
+      "Organize outbound calls and follow-ups."
     ],
     "personas": [
       "MARC",
       "CLAIRE"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -83148,7 +83177,96 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://krispcall.com/wp-content/uploads/2025/06/KrispCall-Open-Graph-Banner.png"
+    "ogImageUrl": "/og-images/krispcall.png",
+    "affiliateCtaLabelFr": "Découvrir les offres KrispCall",
+    "affiliateCtaLabelEn": "Explore KrispCall plans",
+    "galleryImages": [
+      "/tool-media/krispcall/callbox.webp",
+      "/tool-media/krispcall/dialer.webp",
+      "/tool-media/krispcall/summary.webp"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "USD, tax treatment unconfirmed. Extra numbers, usage and AI add-ons are billed separately. Included routes and fair usage restrictions apply."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "krispcall.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://krispcall.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "US$15/user/month billed monthly; $12/month billed annually. Up to 5 users. 200 outbound + 200 inbound minutes and 100 SMS segments per user/month on eligible routes. Tax treatment to confirm; extras billed separately.",
+          "detailsSourceUrl": "https://krispcall.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "advance",
+          "displayName": "Advance",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 40,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "US$40/user/month billed monthly; $32/month billed annually. Up to 50 users. 1,000 outbound + 1,000 inbound minutes and 500 SMS segments per user/month on eligible routes. Tax treatment to confirm; extras billed separately.",
+          "detailsSourceUrl": "https://krispcall.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "max",
+          "displayName": "Max",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 60,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "US$60/user/month billed monthly; $48/month billed annually. No member limit. Eligible calls subject to fair usage; 1,000 US/Canada SMS segments per user/month. Power Dialer and automated workflows excluded from included usage. Tax treatment to confirm; extras billed separately.",
+          "detailsSourceUrl": "https://krispcall.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 2,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Boîte partagée et suivi CRM utiles aux équipes ; ROI non mesuré. https://krispcall.com/feature/unified-callbox/ (2026-09-26).",
+        "simplicite": "Routage, KYC et intégrations à configurer. Analyse documentaire, pas de test audio terrain. https://krispcall.com/pricing/ (2026-09-26).",
+        "utilisation": "Usage récurrent pertinent pour équipes commerciales/support, dépendant des routes et quotas. https://krispcall.com/pricing/ (2026-09-26).",
+        "puissance": "IVR, enregistrement et dialer selon forfait ; IA et usages spécifiques en supplément. https://krispcall.com/legal/fair-usage-policy/ (2026-09-26).",
+        "reversibilite": "Portabilité sortante et exports complets non confirmés. La politique annonce une suppression des données à la prochaine échéance après annulation. https://krispcall.com/legal/refund-policy/ (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Shared inbox and CRM context can help teams; ROI not measured. https://krispcall.com/feature/unified-callbox/ (2026-09-26).",
+        "simplicite": "Routing, KYC and integrations need setup. Desk research, not a live audio test. https://krispcall.com/pricing/ (2026-09-26).",
+        "utilisation": "Recurring sales/support use depends on routes and allowances. https://krispcall.com/pricing/ (2026-09-26).",
+        "puissance": "IVR, recording and dialer vary by tier; AI and specific usage cost extra. https://krispcall.com/legal/fair-usage-policy/ (2026-09-26).",
+        "reversibilite": "Outbound portability and complete exports unconfirmed. Policy states data deletion at the next billing date after cancellation. https://krispcall.com/legal/refund-policy/ (2026-09-26)."
+      }
+    }
   },
   {
     "id": "krita",
