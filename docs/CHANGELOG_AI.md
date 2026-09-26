@@ -1,3 +1,9 @@
+## 2026-09-26 : Gamma, révision affiliée FR/EN
+
+- Tarifs EUR natifs relevés dans le navigateur sur https://gamma.app/fr/pricing, bascule mensuel/annuel : 10/24/86 EUR mensuels, 96/216/928 EUR annuels. Taxes non déduites. Crédits gratuits non renouvelables ; quotas payants explicités. Retire promesses de vitesse, conversion EUR et Ultra sur devis.
+- Note documentaire 3,8/5. Sources complémentaires : help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma et /8022861-what-s-the-easiest-way-to-export-my-gamma. Lien affilié confirmé dans le navigateur malgré 403 en téléchargement direct.
+- Médias officiels : static.gamma.app/favicons/favicon_dark.svg et /images/gamma-banner-8d71c455.png ; illustrations sous gamma.app/_next/static/immutable/media/ : presentations.0honzbuj5lg-l.png, documents.0f9m0el5ax6av.png, websites.3sqowogmkl63m.png. Import via ressources navigateur, aucune capture maison.
+
 ## 2026-09-26 : Dext, révision affiliée FR/EN
 
 - Lien partenaire vérifié HTTP 200 vers Dext France. Contenu international avec repère tarifaire explicitement France, offre gratuite distinguée et configurateur à confirmer. Pas de tarif global inventé, ni d’engagement annuel assimilé à un paiement anticipé.

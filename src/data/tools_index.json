@@ -12085,17 +12085,17 @@
     "slug": "gamma",
     "name": "Gamma",
     "categoryId": "creation",
-    "shortDescription": "Génération IA de présentations, docs et sites web en quelques secondes.",
-    "shortDescriptionEn": "AI-powered generator for presentations, docs and websites in seconds.",
+    "shortDescription": "Créez des présentations, documents et pages web à partir d’un plan, avec l’aide de l’IA.",
+    "shortDescriptionEn": "Create presentations, documents and web pages from an outline with AI assistance.",
     "pricing": {
-      "free": "Plan gratuit (10 cards/prompt, watermark)",
-      "paid": "Plus 10$/mois — Pro 20$/mois — Ultra sur devis"
+      "free": "Free : 400 crédits à l’inscription, non renouvelables ; jusqu’à 10 diapositives par invite.",
+      "paid": "Prix EUR observés : Plus 10 €/utilisateur/mois, Pro 24 €, Ultra 86 € en mensuel. En annuel : Plus 96 €/an (8 €/mois), Pro 216 €/an (18 €/mois), Ultra 928 €/an. Taxes selon localisation."
     },
-    "defaultMonthlyPrice": 10,
     "compareMonthlyPrice": 10,
     "affiliateLink": "https://try.gamma.app/bu5hfvmiagd8",
     "websiteUrl": "https://gamma.app",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma.jpg",
+    "ogImageUrl": "/og-images/gamma.jpg",
+    "logo": "/tool-media/logos/gamma.svg",
     "substitution_cluster_v2": "presentation-software",
     "functional_needs": [
       "content-generation",

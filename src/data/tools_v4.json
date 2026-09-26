@@ -59724,41 +59724,116 @@
     "slug": "gamma",
     "name": "Gamma",
     "category": "creation",
-    "shortDescription": "Génération IA de présentations, docs et sites web en quelques secondes.",
-    "shortDescriptionEn": "AI-powered generator for presentations, docs and websites in seconds.",
-    "description": "Gamma transforme un prompt ou un PDF en présentation, document ou mini-site en quelques secondes. Rendu propre par défaut (typo, palette, layouts modernes), export PDF, PPTX ou Google Slides. Plan Free pour tester, Plus à 10$/mois enlève le watermark et débloque les exports illimités.\n\nÀ garder si : tu fais des slides régulièrement (offres clients, pitch, formations) et perds 2-3h sur PowerPoint.\n\nÀ éviter si : ta charte graphique est stricte, ou tu utilises déjà Pitch/Canva avec satisfaction.",
-    "longDescription": "Gamma transforme un prompt ou un PDF en présentation, document ou mini-site en quelques secondes. Rendu propre par défaut (typo, palette, layouts modernes), export PDF, PPTX ou Google Slides. Plan Free pour tester, Plus à 10$/mois enlève le watermark et débloque les exports illimités.\n\nÀ garder si : tu fais des slides régulièrement (offres clients, pitch, formations) et perds 2-3h sur PowerPoint.\n\nÀ éviter si : ta charte graphique est stricte, ou tu utilises déjà Pitch/Canva avec satisfaction.",
-    "longDescriptionEn": "Gamma turns a prompt or PDF into a clean presentation, doc or mini-site in seconds. Free plan to test, Plus at $10/mo removes watermark and unlocks unlimited exports.",
+    "shortDescription": "Créez des présentations, documents et pages web à partir d’un plan, avec l’aide de l’IA.",
+    "shortDescriptionEn": "Create presentations, documents and web pages from an outline with AI assistance.",
+    "description": "Gamma aide à transformer une idée ou un document en support structuré, puis à retravailler le texte et la mise en page. Il convient notamment aux propositions clients, supports de formation et présentations partagées en ligne. Son intérêt est de faciliter le premier montage du contenu, pas de garantir une présentation prête à livrer sans relecture.\n\nPour ToolTrim, testez un vrai brief : vérifiez les faits, la hiérarchie des messages et le respect de votre identité visuelle. Si le livrable doit être modifié dans PowerPoint ou Google Slides, contrôlez l’export avant d’adopter Gamma. Les polices et certains effets peuvent différer selon le logiciel destinataire.\n\nLe forfait gratuit permet de tester avec 400 crédits initiaux non renouvelables. Les offres payantes ajoutent des crédits mensuels et des fonctions de personnalisation. Vérifiez les crédits consommés par les fonctions avancées et le coût par membre ; les promesses de création en quelques secondes et d’heures économisées ne constituent pas une mesure du résultat.",
+    "longDescription": "Gamma aide à transformer une idée ou un document en support structuré, puis à retravailler le texte et la mise en page. Il convient notamment aux propositions clients, supports de formation et présentations partagées en ligne. Son intérêt est de faciliter le premier montage du contenu, pas de garantir une présentation prête à livrer sans relecture.\n\nPour ToolTrim, testez un vrai brief : vérifiez les faits, la hiérarchie des messages et le respect de votre identité visuelle. Si le livrable doit être modifié dans PowerPoint ou Google Slides, contrôlez l’export avant d’adopter Gamma. Les polices et certains effets peuvent différer selon le logiciel destinataire.\n\nLe forfait gratuit permet de tester avec 400 crédits initiaux non renouvelables. Les offres payantes ajoutent des crédits mensuels et des fonctions de personnalisation. Vérifiez les crédits consommés par les fonctions avancées et le coût par membre ; les promesses de création en quelques secondes et d’heures économisées ne constituent pas une mesure du résultat.",
+    "longDescriptionEn": "Gamma helps turn an idea or document into a structured presentation, then refine text and layout. It suits client proposals, training material and presentations shared online. Its value is assisting the first draft, not guaranteeing a finished deliverable without review.\n\nToolTrim recommends using a real brief to assess factual accuracy, message hierarchy and brand fit. If clients need to edit in PowerPoint or Google Slides, check the export before adopting Gamma. Fonts and some effects may differ in the destination application.\n\nFree provides 400 initial, non-renewing credits. Paid plans add monthly credits and customization. Check advanced-feature consumption and per-member costs; claims about seconds-to-create or hours saved are not measured outcomes.",
     "pricing": {
-      "free": "Plan gratuit (10 cards/prompt, watermark)",
-      "paid": "Plus 10$/mois — Pro 20$/mois — Ultra sur devis"
+      "free": "Free : 400 crédits à l’inscription, non renouvelables ; jusqu’à 10 diapositives par invite.",
+      "paid": "Prix EUR observés : Plus 10 €/utilisateur/mois, Pro 24 €, Ultra 86 € en mensuel. En annuel : Plus 96 €/an (8 €/mois), Pro 216 €/an (18 €/mois), Ultra 928 €/an. Taxes selon localisation."
     },
     "pricingEn": {
-      "free": "Free plan (10 cards/prompt, watermark)",
-      "paid": "Plus $10/mo — Pro $20/mo — Ultra custom"
+      "free": "Free: 400 initial non-renewing credits; up to 10 slides per prompt.",
+      "paid": "Observed EUR pricing: Plus €10/user/month, Pro €24, Ultra €86 monthly. Annual billing: Plus €96/year (€8/month), Pro €216/year (€18/month), Ultra €928/year. Taxes depend on location."
     },
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
-        "Prix en USD. Crédits IA limités selon plan."
+        "Prix natifs EUR observés, pas de conversion. Taxes selon localisation. Les crédits gratuits ne se renouvellent pas ; abonnements par utilisateur."
       ],
-      "verified_on": "2026-05-06",
+      "verified_on": "2026-09-26",
       "source_domain": "gamma.app",
       "usage_sensitive": true,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Plus",
+      "compare_plan_name": "Plus mensuel",
       "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://gamma.app/pricing",
-      "verification_status": "official_verified",
-      "compare_price_monthly_eur": 10
+      "location_sensitive": true,
+      "official_source_url": "https://gamma.app/fr/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 10,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "400 crédits initiaux non renouvelables.",
+          "featureHighlights": [
+            "400 crédits à l’inscription"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 10,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "10 €/utilisateur/mois, facturation mensuelle. Taxes selon localisation. Annuel : 96 €/an (8 €/mois).",
+          "featureHighlights": [
+            "1000 crédits par mois",
+            "Sans logo Gamma"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 24,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "24 €/utilisateur/mois, facturation mensuelle. Taxes selon localisation. Annuel : 216 €/an (18 €/mois).",
+          "featureHighlights": [
+            "4000 crédits par mois"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "ultra",
+          "displayName": "Ultra",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 86,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "86 €/utilisateur/mois, facturation mensuelle. Taxes selon localisation. Annuel : 928 €/an.",
+          "featureHighlights": [
+            "20000 crédits par mois"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "affiliateLink": "https://try.gamma.app/bu5hfvmiagd8",
     "websiteUrl": "https://gamma.app",
-    "logo": "",
+    "logo": "/tool-media/logos/gamma.svg",
     "seo": {
-      "metaTitle": "Gamma avis 2026 : prix, IA, alternatives | Tooltrim",
-      "metaDescription": "Gamma pour présentations IA : 10$/mois, génération en 30s. Notre verdict, les limites, et quand préférer Pitch ou Canva."
+      "metaDescription": "Gamma : avis, présentations IA, crédits gratuits, tarifs Plus, Pro et Ultra. Limites d’export et points à vérifier avant de choisir.",
+      "metaDescriptionEn": "Gamma review: AI presentations, free credits, Plus, Pro and Ultra pricing, export limitations and checks before choosing."
     },
     "articles": [],
     "covers": [
@@ -59767,8 +59842,8 @@
       "creation"
     ],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
     "relevantFor": [
       "Freelances",
       "Startups / fondateurs",
@@ -59777,67 +59852,64 @@
     "alternatives": [
       "pitch",
       "canva",
-      "tome",
       "beautiful-ai",
       "google-slides"
     ],
     "verdict": {
       "keepIf": [
-        "Vous voulez produire vite des présentations soignées.",
-        "Vous partez d'un prompt ou d'un plan à mettre en forme.",
-        "Vous aimez publier en ligne plutôt qu'exporter un PPT."
+        "Vous partez régulièrement d’un plan à transformer en support visuel.",
+        "Le partage web correspond à votre usage."
       ],
       "avoidIf": [
-        "Vous voulez un contrôle typographique et de mise en page très fin.",
-        "Vous êtes déjà à l'aise dans PowerPoint/Keynote.",
-        "Un usage intensif épuise vite le stock de crédits."
+        "Votre client exige un fichier source parfaitement fidèle dans un autre éditeur.",
+        "Votre outil actuel répond déjà au besoin sans étape supplémentaire."
       ],
-      "threshold": "Gamma s'impose pour créer vite des présentations et pages web par IA ; pour un contrôle graphique poussé, un outil de design classique convient mieux."
+      "threshold": "Validez un brief complet et son export. Choisissez le forfait selon la personnalisation, les crédits et les membres nécessaires."
     },
     "verdictEn": {
       "keepIf": [
-        "You want to produce polished presentations fast.",
-        "You start from a prompt or outline to format.",
-        "You like publishing online rather than exporting a PPT."
+        "You regularly turn outlines into visual material.",
+        "Web sharing fits your workflow."
       ],
       "avoidIf": [
-        "You want very fine control over typography and layout.",
-        "You're already comfortable in PowerPoint/Keynote.",
-        "Heavy use quickly drains the credit balance."
+        "Your client requires a perfectly faithful source file in another editor.",
+        "Your existing tool already meets the need without another step."
       ],
-      "threshold": "Gamma fits fast AI creation of presentations and web pages; for deep design control, a traditional design tool fits better."
+      "threshold": "Validate a complete brief and its export. Choose by customization, credits and required members."
     },
     "pros": [
-      "Génération très rapide depuis un prompt.",
-      "Mise en page automatique cohérente.",
-      "Publication web native.",
-      "Plan gratuit pour tester."
+      "Présentation et mise en forme assistées par IA.",
+      "Partage en ligne et plusieurs formats d’export.",
+      "Offre gratuite pour valider un cas réel.",
+      "Personnalisation et API selon forfait."
     ],
     "prosEn": [
-      "Very fast generation from a prompt.",
-      "Consistent automatic layout.",
-      "Native web publishing.",
-      "Free plan to try it out."
+      "AI-assisted content and layout.",
+      "Online sharing and multiple export formats.",
+      "Free plan to assess a real use case.",
+      "Customization and API access depending on plan."
     ],
     "cons": [
-      "Contrôle de design moins fin qu'un outil dédié.",
-      "Fonctionnement par crédits qui peut limiter l'usage.",
-      "Branding Gamma sur le plan gratuit."
+      "Faits et texte générés à relire.",
+      "400 crédits gratuits non renouvelables.",
+      "Fonctions avancées et membres à budgéter.",
+      "Différences possibles entre rendu web et export."
     ],
     "consEn": [
-      "Less fine design control than a dedicated tool.",
-      "Credit-based model can limit usage.",
-      "Gamma branding on the free plan."
+      "Generated facts and text require review.",
+      "400 free credits do not renew.",
+      "Budget for advanced features and members.",
+      "Web and exported output may differ."
     ],
     "useCases": [
-      "Générer un deck de présentation en quelques minutes.",
-      "Créer une page web simple à partir d'un texte.",
-      "Transformer des notes en document mis en forme."
+      "Préparer une proposition client structurée.",
+      "Mettre en forme un support de formation.",
+      "Publier une présentation ou une page de synthèse."
     ],
     "useCasesEn": [
-      "Generate a presentation deck in minutes.",
-      "Create a simple web page from text.",
-      "Turn notes into a formatted document."
+      "Prepare a structured client proposal.",
+      "Lay out training material.",
+      "Publish a presentation or summary page."
     ],
     "personas": [
       "marc",
@@ -59870,7 +59942,132 @@
     "substitution_cluster_v2": "presentation-software",
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma.jpg"
+    "ogImageUrl": "/og-images/gamma.jpg",
+    "timeGainedHoursPerMonth": null,
+    "galleryImages": [
+      "/tool-media/gamma/presentations.png",
+      "/tool-media/gamma/documents.png",
+      "/tool-media/gamma/websites.png"
+    ],
+    "affiliateCtaLabelFr": "Commencer gratuitement",
+    "affiliateCtaLabelEn": "Start for free",
+    "pricingTiers": {
+      "free": "Free : 400 crédits à l’inscription, non renouvelables ; jusqu’à 10 diapositives par invite.",
+      "paid": "Prix EUR observés : Plus 10 €/utilisateur/mois, Pro 24 €, Ultra 86 € en mensuel. En annuel : Plus 96 €/an (8 €/mois), Pro 216 €/an (18 €/mois), Ultra 928 €/an. Taxes selon localisation."
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "Observed native EUR pricing, not converted. Taxes depend on location. Free credits do not renew; subscriptions are per user."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "gamma.app",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Plus monthly",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://gamma.app/fr/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 10,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "400 initial non-renewing credits.",
+          "featureHighlights": [
+            "400 credits at signup"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 10,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "€10/user/month billed monthly. Taxes depend on location. Annual: €96/year.",
+          "featureHighlights": [
+            "1000 credits per month",
+            "Remove Gamma branding"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 24,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "€24/user/month billed monthly. Taxes depend on location. Annual: €216/year.",
+          "featureHighlights": [
+            "4000 credits per month"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "ultra",
+          "displayName": "Ultra",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 86,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "€86/user/month billed monthly. Taxes depend on location. Annual: €928/year.",
+          "featureHighlights": [
+            "20000 credits per month"
+          ],
+          "detailsSourceUrl": "https://gamma.app/fr/pricing",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Structure et mise en page assistées ; ROI non mesuré. https://gamma.app/fr/pricing (2026-09-26).",
+        "simplicite": "Départ depuis un plan, relecture nécessaire ; pas de test terrain. https://gamma.app/fr/pricing (2026-09-26).",
+        "utilisation": "Présentations récurrentes, usage avancé lié aux crédits. https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma (2026-09-26).",
+        "puissance": "Documents, présentations, sites et API selon forfait. https://gamma.app/fr/pricing (2026-09-26).",
+        "reversibilite": "Exports PDF/PPTX/PNG/Slides ; différences d’effets et de polices possibles. https://help.gamma.app/en/articles/8022861-what-s-the-easiest-way-to-export-my-gamma (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Assisted structure and layout; ROI not measured. https://gamma.app/fr/pricing (2026-09-26).",
+        "simplicite": "Outline-based starting point requires review; not hands-on tested. https://gamma.app/fr/pricing (2026-09-26).",
+        "utilisation": "Recurring presentations; advanced use depends on credits. https://help.gamma.app/en/articles/7834324-how-do-credits-work-in-gamma (2026-09-26).",
+        "puissance": "Documents, presentations, websites and API vary by plan. https://gamma.app/fr/pricing (2026-09-26).",
+        "reversibilite": "PDF/PPTX/PNG/Slides exports; effects and fonts may differ. https://help.gamma.app/en/articles/8022861-what-s-the-easiest-way-to-export-my-gamma (2026-09-26)."
+      }
+    }
   },
   {
     "id": "gamma-ai",
