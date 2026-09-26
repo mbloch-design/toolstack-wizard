@@ -1,3 +1,10 @@
+## 2026-09-26 : reprise de la file affiliation
+
+- État Git vérifié : dernier commit publié 11af3ba4 (Leadpages). Les révisions demandées ensuite ne sont pas présentes dans ce checkout.
+- Liens fournis remplacés pour Reply.io, SurveyMonkey, Tidio et Trainual ; URL officielle de Reply.io séparée de son lien partenaire. Index régénéré, sans changement de prix, note ou date de vérification.
+- Révisions complètes encore à faire : LearnWorlds, Lusha, Murf, Prezi, Reclaim, Reply.io, SaneBox, Seamless.AI, SocialBee, SurveyMonkey, ThorData, Tidio, Trainual, Unbounce. Beefree, Shade et Tapstitch non trouvés dans le catalogue. Reclaim existe sous deux slugs, à réconcilier avant modification structurelle.
+- Contrôles : comparaison ciblée des quatre liens dans le catalogue et l’index, diff sans erreur. Ce lot ne constitue ni une revue factuelle des produits ni une vérification de redirection ou de déploiement. Limite globale de build connue inchangée.
+
 ## 2026-09-26 : KrispCall, révision affiliée FR/EN
 
 - Remplace Essential/Standard par Starter/Advance/Max, selon https://krispcall.com/pricing/ : 15/40/60 USD par utilisateur/mois mensuels, 12/32/48 en annuel. Taxes non établies, aucune conversion EUR. Quotas et routes éligibles explicités ; numéro inclus limité US/CA/UK. Enterprise sur devis. Alternatives corrigées vers les slugs existants.
