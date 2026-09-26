@@ -11,6 +11,15 @@
 - Renforce visuellement le bouton d’essai ActiveCampaign avec un fond sombre et une zone cliquable plus grande.
 - Retire les phrases sous les deux CTA pour alléger le bloc, en français et en anglais.
 
+## 2026-09-26 : Médias officiels des fiches Kit, ActiveCampaign et Turbotic
+
+- Remplace les logos génériques par les favicons officiels locaux des trois éditeurs.
+- Kit : retire la capture Cloudflare de la galerie et des aperçus sociaux ; ajoute l’Open Graph de Kit et une capture officielle de l’interface Visual Automations.
+- ActiveCampaign : ajoute son visuel Open Graph et deux captures de son centre d’aide sur l’éditeur d’automatisations et les déclencheurs.
+- Turbotic : remplace l’image cassée `logo.png` par un visuel officiel de la page Automation AI, au format social 1200 × 630.
+- Le prérendu choisit désormais les visuels officiels locaux vérifiés avant les captures locales pour les métadonnées Open Graph et Twitter ; les liens d’images tiers arbitraires restent exclus.
+- Sources : `kit.com/brand`, centre d’aide Kit, centre d’aide ActiveCampaign et `turbotic.com/automation-ai`.
+
 ## 2026-09-25 : SEO des fiches outil, titres et descriptions unifiés
 
 - `src/lib/toolSeo.ts` sert désormais le prérendu et ToolDetailPage : le titre et la description ne changent plus à l'hydratation (les deux gabarits avaient divergé). Surcharges `tool.seo.*` conservées.

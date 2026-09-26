@@ -1161,7 +1161,7 @@
     },
     "affiliateLink": "https://try.activecampaign.com/twe5oenri4zv-b9q17i",
     "websiteUrl": "https://www.activecampaign.com",
-    "logo": "",
+    "logo": "/tool-media/logos/activecampaign.png",
     "seo": {
       "aiAngle": {
         "stance": "augmente",
@@ -1295,9 +1295,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://active-campaign.transforms.svdcdn.com/production/general/AC_Opengraph-1.png?w=1200&h=630&q=82&auto=format&fit=clip&dm=1753306175&s=1b0f698fac52d45ef9b2f8a250d6f8f5",
+    "ogImageUrl": "/og-images/activecampaign.jpg",
     "description": "ActiveCampaign réunit campagnes email, segmentation et automatisations marketing pour créer des parcours qui s’adaptent aux actions et aux caractéristiques des contacts. L’offre comprend aussi des fonctions CRM, des pages d’atterrissage et plus de 1 000 intégrations, selon le forfait choisi.\n\nL’email et l’automatisation sont le cœur du produit. Les fonctions CRM avancées, SMS et WhatsApp peuvent dépendre d’options payantes, du forfait et du pays. Les fonctions d’IA assistent notamment la création de campagnes et la configuration des automatisations, sans remplacer le travail de définition des objectifs et des règles.\n\nL’essai dure 14 jours et est limité à 100 contacts et 100 emails envoyés. Il n’existe pas de forfait gratuit permanent. ActiveCampaign mérite d’être comparé si vous avez besoin de scénarios conditionnels, de segmentation et d’un lien avec les processus commerciaux. Pour une newsletter simple ou une petite liste, comparez le coût selon votre volume et le temps de configuration avec des solutions plus légères.",
-    "galleryImages": [],
+    "galleryImages": [
+      "/tool-media/activecampaign/automation-builder.png",
+      "/tool-media/activecampaign/automation-triggers.png"
+    ],
     "pricing_v5En": {
       "cautions": [
         "Reference rates are for 1,000 contacts. Pricing varies by contact count and market. The official selector defaults to annual billing; confirm the amount and add-ons before subscribing."
@@ -79064,7 +79067,7 @@
       ]
     },
     "websiteUrl": "https://kit.com",
-    "logo": "",
+    "logo": "/tool-media/logos/kit.png",
     "verdictEn": {
       "keepIf": [
         "You are building an owned audience and send newsletters regularly.",
@@ -79146,7 +79149,10 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.jpg",
+    "ogImageUrl": "/og-images/kit.jpg",
+    "galleryImages": [
+      "/tool-media/kit/visual-automations.png"
+    ],
     "affiliateDisclosureFr": "Lien affilié : ToolTrim peut percevoir une commission si vous souscrivez à un forfait payant, sans coût supplémentaire pour vous.",
     "affiliateDisclosureEn": "Affiliate link: ToolTrim may earn a commission if you subscribe to a paid plan, at no extra cost to you.",
     "affiliateCtaLabelFr": "Commencer gratuitement",
@@ -165071,7 +165077,7 @@
       "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://turbotic.com/automation-ai",
-    "logo": "",
+    "logo": "/tool-media/logos/turbotic.png",
     "verdictEn": {
       "keepIf": [
         "You want to create automations by describing the desired outcome in natural language.",
@@ -165139,7 +165145,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://turbotic.com/logo.png"
+    "ogImageUrl": "/og-images/turbotic.jpg",
+    "galleryImages": []
   },
   {
     "id": "twinmotion",

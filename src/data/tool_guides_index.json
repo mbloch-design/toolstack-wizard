@@ -752,6 +752,7 @@
           "slug": "kit",
           "name": "Kit",
           "hasPricing": true,
+          "logo": "/tool-media/logos/kit.png",
           "websiteUrl": "https://kit.com"
         }
       ],
@@ -2724,6 +2725,7 @@
           "slug": "kit",
           "name": "Kit",
           "hasPricing": true,
+          "logo": "/tool-media/logos/kit.png",
           "websiteUrl": "https://kit.com"
         }
       ],

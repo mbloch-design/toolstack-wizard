@@ -254,7 +254,8 @@
     "compareMonthlyPrice": 13.15,
     "affiliateLink": "https://try.activecampaign.com/twe5oenri4zv-b9q17i",
     "websiteUrl": "https://www.activecampaign.com",
-    "ogImageUrl": "https://active-campaign.transforms.svdcdn.com/production/general/AC_Opengraph-1.png?w=1200&h=630&q=82&auto=format&fit=clip&dm=1753306175&s=1b0f698fac52d45ef9b2f8a250d6f8f5",
+    "ogImageUrl": "/og-images/activecampaign.jpg",
+    "logo": "/tool-media/logos/activecampaign.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "marketing-automation",
     "functional_needs": [
@@ -16374,7 +16375,8 @@
     "compareMonthlyPrice": 29.03,
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "websiteUrl": "https://kit.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.jpg",
+    "ogImageUrl": "/og-images/kit.jpg",
+    "logo": "/tool-media/logos/kit.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "newsletter-platform",
     "functional_needs": [
@@ -34914,7 +34916,8 @@
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://try.turbotic.com/0ijk0lvs0etc",
     "websiteUrl": "https://turbotic.com/automation-ai",
-    "ogImageUrl": "https://turbotic.com/logo.png",
+    "ogImageUrl": "/og-images/turbotic.jpg",
+    "logo": "/tool-media/logos/turbotic.png",
     "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",

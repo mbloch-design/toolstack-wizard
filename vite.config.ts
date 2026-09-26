@@ -854,14 +854,20 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         };
 
         const distDir = path.resolve(__dirname, "dist");
-        // Per-tool OG image: use our own captured screenshot when one exists
-        // AND is light enough that a social/SERP crawler won't skip it (a
-        // >300KB OG image is often ignored). Otherwise fall back to the
-        // generic head default. Only our own /og-screenshots/ files are wired
-        // here — never the unverified third-party ogImageUrl hotlinks.
+        // Per-tool OG image: prefer a locally stored, editor-verified image
+        // from the tool's official media, then fall back to our own captured
+        // screenshot. Keep assets light enough for social/SERP crawlers.
+        // Never wire an arbitrary third-party ogImageUrl hotlink into HTML.
+        const OG_CURATED_DIR = path.resolve(__dirname, "public/og-images");
         const OG_SHOTS_DIR = path.resolve(__dirname, "public/og-screenshots");
         const OG_MAX_BYTES = 300 * 1024;
-        const toolOgScreenshot = (s: string): string | null => {
+        const toolOgImage = (s: string): string | null => {
+          for (const ext of ["jpg", "png", "webp"]) {
+            try {
+              const st = fs.statSync(path.join(OG_CURATED_DIR, `${s}.${ext}`));
+              if (st.isFile() && st.size <= OG_MAX_BYTES) return `${BASE}/og-images/${s}.${ext}`;
+            } catch { /* no curated image at this extension */ }
+          }
           for (const ext of ["jpg", "png"]) {
             try {
               const st = fs.statSync(path.join(OG_SHOTS_DIR, `${s}.${ext}`));
@@ -945,7 +951,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const slug = tool.slug || tool.id;
           if (DEPRECATED_TOOL_SLUGS.has(slug)) continue;
           const name = tool.name || slug;
-          const ogImage = toolOgScreenshot(slug); // per-tool screenshot or null
+          const ogImage = toolOgImage(slug); // curated official media or screenshot
           // Rounded for display (title/priceTag): "64.39€" reads as an odd,
           // overly-precise price next to competitors who round, and the raw
           // decimal was pushing ~144 titles past Google's ~60-char SERP
