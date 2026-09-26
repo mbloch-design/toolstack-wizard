@@ -6305,17 +6305,16 @@
     "slug": "clickup",
     "name": "ClickUp",
     "categoryId": "project-management",
-    "shortDescription": "La plateforme tout-en-un pour gérer projets, tâches et collaboration.",
-    "shortDescriptionEn": "The all-in-one platform to manage projects, tasks, and collaboration.",
+    "shortDescription": "Tâches, documents et vues projet dans un espace de travail personnalisable.",
+    "shortDescriptionEn": "Tasks, documents and project views in a customizable workspace.",
     "pricing": {
-      "free": "Illimité avec 100 MB de stockage",
-      "paid": "7$/mois par utilisateur (Unlimited)"
+      "free": "Free Forever : tâches et membres illimités, 60 Mo de stockage partagé, fonctionnalités avancées limitées.",
+      "paid": "Unlimited : 10 $US/utilisateur/mois en mensuel ou 7 $US en annuel. Business : 19 $US en mensuel ou 12 $US en annuel. Enterprise sur devis. Offres IA et crédits à budgéter séparément ; tous les membres de l’espace passent au payant."
     },
-    "defaultMonthlyPrice": 6.06,
-    "compareMonthlyPrice": 6.06,
     "affiliateLink": "https://try.web.clickup.com/setp3llooogk",
     "websiteUrl": "https://clickup.com",
-    "ogImageUrl": "/assets/brand/clickup-meta.png",
+    "ogImageUrl": "/og-images/clickup.jpg",
+    "logo": "/tool-media/logos/clickup.png",
     "substitution_cluster_v2": "project-management-general",
     "functional_needs": [
       "collaboration",

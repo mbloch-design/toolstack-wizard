@@ -1,3 +1,10 @@
+## 2026-09-26 : ClickUp, révision affiliée FR/EN
+
+- Actualise contenu, gratuit à 60 Mo, tarifs USD annuels/mensuels et coûts par membre. Distingue offres IA. Retire conversion EUR et gains horaires non démontrés.
+- Lien partenaire vérifié HTTP 200 ; CTA gratuit ; note v2 documentaire 3,6/5 avec preuves, limites des exports comprises.
+- Logo `/favicons/apple-touch-icon.png`, OG `/assets/brand/clickup-meta.png` issus de clickup.com. Galerie officielle de https://clickup.com/teams/project-management : `hero_projects__latest_.png`, `Docs_530x365_Bordered__IT-PMO.png`, `Gantt_view_530x365_Bordered.png` sous images.ctfassets.net/w8fc6tgspyjz. Aucune capture réalisée.
+- Sources : https://clickup.com/pricing ; https://help.clickup.com/hc/en-us/articles/33463620625559-Workspace-storage-limits ; https://help.clickup.com/hc/en-us/articles/30782347809815-Import-and-export-feature-availability-and-limits .
+
 ## 2026-09-26 : CallRail, révision affiliée FR/EN
 
 - Actualise les offres Lead Tracking/Conversion, quotas, frais additionnels et disponibilité géographique. Retire le faux prix EUR et les gains non sourcés. Note v2 documentaire : 3,6/5.

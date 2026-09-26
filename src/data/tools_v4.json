@@ -31730,23 +31730,21 @@
     "id": "clickup",
     "name": "ClickUp",
     "category": "project-management",
-    "shortDescription": "La plateforme tout-en-un pour gérer projets, tâches et collaboration.",
+    "shortDescription": "Tâches, documents et vues projet dans un espace de travail personnalisable.",
     "verdict": {
       "keepIf": [
-        "Vous cherchez une solution tout-en-un de gestion de projets.",
-        "Votre équipe préfère avoir outils et chat au même endroit.",
-        "Vous voulez tirer parti des automations IA pour réduire le travail."
+        "L’équipe adopte une structure commune de suivi.",
+        "Vous utilisez réellement tâches, documents et vues projet ensemble."
       ],
       "avoidIf": [
-        "Vous préférez une solution minimaliste et légère.",
-        "Votre équipe est déjà fortement investie dans d'autres outils.",
-        "Vous avez une petite équipe (2-3 personnes) avec besoins simples."
+        "Une liste simple couvre déjà votre besoin.",
+        "Vous n’avez pas de responsable pour maintenir l’espace et accompagner l’équipe."
       ],
-      "threshold": "ClickUp convient aux équipes recherchant une plateforme centrale ; pour des besoins ponctuels, une solution mono-tâche sera plus légère."
+      "threshold": "Validez un projet sur le gratuit avant de migrer. Choisissez le forfait selon les vues, droits et automatisations nécessaires, pas selon la promesse de tout remplacer."
     },
     "pricing": {
-      "free": "Illimité avec 100 MB de stockage",
-      "paid": "7$/mois par utilisateur (Unlimited)"
+      "free": "Free Forever : tâches et membres illimités, 60 Mo de stockage partagé, fonctionnalités avancées limitées.",
+      "paid": "Unlimited : 10 $US/utilisateur/mois en mensuel ou 7 $US en annuel. Business : 19 $US en mensuel ou 12 $US en annuel. Enterprise sur devis. Offres IA et crédits à budgéter séparément ; tous les membres de l’espace passent au payant."
     },
     "affiliateLink": "https://try.web.clickup.com/setp3llooogk",
     "articles": [],
@@ -31763,10 +31761,10 @@
       "designer",
       "consultant"
     ],
-    "defaultMonthlyPrice": 6.06,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Illimité avec 100 MB de stockage",
-      "paid": "7$/mois par utilisateur (Unlimited)"
+      "free": "Free Forever : tâches et membres illimités, 60 Mo de stockage partagé, fonctionnalités avancées limitées.",
+      "paid": "Unlimited : 10 $US/utilisateur/mois en mensuel ou 7 $US en annuel. Business : 19 $US en mensuel ou 12 $US en annuel. Enterprise sur devis. Offres IA et crédits à budgéter séparément ; tous les membres de l’espace passent au payant."
     },
     "relevantFor": [
       "Équipes agiles",
@@ -31779,19 +31777,8 @@
       "trello"
     ],
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [
-          "chatgpt"
-        ],
-        "augmentEn": "ClickUp pushed hard on cross-product AI (ClickUp Brain): automatic summaries, ticket drafting, and answers based on the workspace's history.",
-        "augmentFr": "ClickUp a poussé fort sur l'IA transverse (ClickUp Brain) : résumés automatiques, rédaction de tickets, et des réponses basées sur l'historique du workspace.",
-        "replaceEn": "Replace ClickUp with an AI? No: the project management structure (views, automations, task hierarchy) remains the product. Verdict: AI boosts productivity inside ClickUp, it doesn't replace it.",
-        "replaceFr": "Remplacer ClickUp par une IA ? Non : la structure de gestion de projet (vues, automatisations, hiérarchie de tâches) reste le produit. Verdict : l'IA augmente la productivité dans ClickUp, elle ne le remplace pas."
-      },
-      "idealForEn": "Ideal for teams wanting to replace several tools with one, provided they accept its setup complexity. Overkill for very simple solo use.",
-      "idealForFr": "Idéal pour les équipes qui veulent remplacer plusieurs outils par un seul, à condition d'accepter sa complexité de configuration. Surdimensionné pour un usage solo très simple.",
-      "metaDescription": "ClickUp : La plateforme tout-en-un pour gérer projets, tâches et collaboration. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "ClickUp : avis, Free Forever 60 Mo, Unlimited dès 7 $US/utilisateur/mois en annuel, coûts IA et limites à vérifier avant migration.",
+      "metaDescriptionEn": "ClickUp review: Free Forever with 60 MB, Unlimited from $7/user/month billed annually, AI costs and migration limits."
     },
     "tool_type": "satellite",
     "substitutable": true,
@@ -31811,83 +31798,136 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "clickup",
-    "shortDescriptionEn": "The all-in-one platform to manage projects, tasks, and collaboration.",
-    "description": "ClickUp, c'est la plateforme tout-en-un pour gérer projets, tâches et collaboration. À partir de 6.06€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : vous gérez plusieurs projets simultanément ou vous travaillez en équipe (2+ personnes). À éviter si : vous êtes freelance solo avec des besoins simples (Notion suffit) ou vous détestez les interfaces complexes. Dès que vous avez +3 projets actifs ou que vous collaborez avec une équipe régulièrement. Alternative gratuite : notion.",
-    "longDescription": "ClickUp, c'est la plateforme tout-en-un pour gérer projets, tâches et collaboration. À partir de 6.06€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : vous gérez plusieurs projets simultanément ou vous travaillez en équipe (2+ personnes). À éviter si : vous êtes freelance solo avec des besoins simples (Notion suffit) ou vous détestez les interfaces complexes. Dès que vous avez +3 projets actifs ou que vous collaborez avec une équipe régulièrement. Alternative gratuite : notion.",
-    "longDescriptionEn": "ClickUp is the all-in-one platform to manage projects, tasks, and collaboration. Starting at €6.06/month. Built for managers and IT directors and SaaS founders.\n\nEstimated time saving: 4h/month.\n\nKeep it if: you manage multiple projects simultaneously or you work in a team (2+ people). Skip it if: you are a solo freelancer with simple needs (Notion is enough) or you hate complex interfaces. As soon as you have 3+ active projects or collaborate with a team on a regular basis. Free alternative: notion.",
+    "shortDescriptionEn": "Tasks, documents and project views in a customizable workspace.",
+    "description": "ClickUp regroupe tâches, documents, vues projet et collaboration. Son intérêt est de relier le travail à ses consignes et à son suivi, avec des listes, tableaux et plannings adaptés aux équipes. ToolTrim le retient lorsqu’une équipe accepte de définir une structure commune, plutôt que d’ajouter un outil de plus sans changer ses habitudes.\n\nCommencez par un projet réel et quelques statuts simples. Vérifiez qui met à jour les tâches, quelles vues sont utiles et comment les invités accèdent aux informations. La richesse fonctionnelle peut aider une équipe organisée, mais augmente aussi le travail de configuration. Aucun seuil arbitraire de taille d’équipe ne suffit à justifier une migration.\n\nFree Forever est permanent, avec 60 Mo de stockage partagé. Les tarifs payants sont par utilisateur et le passage au payant concerne tous les membres de l’espace. Les offres IA ont leur propre tarification et leurs limites d’usage : elles ne sont pas à considérer comme entièrement incluses dans Unlimited. Cette analyse repose sur les sources publiques, sans test terrain ni gain horaire garanti.",
+    "longDescription": "ClickUp regroupe tâches, documents, vues projet et collaboration. Son intérêt est de relier le travail à ses consignes et à son suivi, avec des listes, tableaux et plannings adaptés aux équipes. ToolTrim le retient lorsqu’une équipe accepte de définir une structure commune, plutôt que d’ajouter un outil de plus sans changer ses habitudes.\n\nCommencez par un projet réel et quelques statuts simples. Vérifiez qui met à jour les tâches, quelles vues sont utiles et comment les invités accèdent aux informations. La richesse fonctionnelle peut aider une équipe organisée, mais augmente aussi le travail de configuration. Aucun seuil arbitraire de taille d’équipe ne suffit à justifier une migration.\n\nFree Forever est permanent, avec 60 Mo de stockage partagé. Les tarifs payants sont par utilisateur et le passage au payant concerne tous les membres de l’espace. Les offres IA ont leur propre tarification et leurs limites d’usage : elles ne sont pas à considérer comme entièrement incluses dans Unlimited. Cette analyse repose sur les sources publiques, sans test terrain ni gain horaire garanti.",
+    "longDescriptionEn": "ClickUp combines tasks, documents, project views and collaboration. Its value is connecting work to its context and progress, using lists, boards and schedules that fit a team. ToolTrim sees a fit when people agree on a shared structure, rather than adding another tool without changing their habits.\n\nStart with a real project and a few simple statuses. Check who updates tasks, which views matter and how guests access information. Breadth can help an organized team, but also adds configuration work. An arbitrary team-size threshold is not enough to justify migration.\n\nFree Forever is permanent with 60 MB of shared storage. Paid pricing is per user and upgrading applies to all workspace members. AI offers have separate pricing and usage limits: do not assume they are fully included in Unlimited. This review uses public documentation, without hands-on testing or guaranteed time savings.",
     "pricingEn": {
-      "free": "Unlimited with 100 MB of storage",
-      "paid": "$7/month per user (Unlimited)"
+      "free": "Free Forever: unlimited tasks and members, 60 MB shared storage, limited advanced features.",
+      "paid": "Unlimited: $10/user/month monthly or $7 billed annually. Business: $19 monthly or $12 billed annually. Enterprise is custom priced. Budget separately for AI offers and credits; all workspace members must upgrade."
     },
     "pricing_v5": {
       "cautions": [
-        "Plan gratuit limité à 100 automatisations/mois et 100 Mo de stockage partagé pour tout l'espace."
+        "USD, sans conversion EUR. Prix par utilisateur. Tout l’espace passe au payant ; IA et crédits distincts."
       ],
-      "cautionsEn": [
-        "Free plan limited to 100 automations/month and 100MB of shared workspace storage."
-      ],
-      "verified_on": "2026-03-13",
-      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who spends 1h/month hunting for files scattered across several tools is losing $50/month in hidden time. ClickUp Unlimited at $7/month (no seat minimum) pays for itself from the first search avoided — but the real hidden cost is the setup time needed to merge the tools it replaces.",
-      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et passe 1h/mois à chercher des fichiers éparpillés entre plusieurs outils perd 50$/mois en temps masqué. ClickUp Unlimited à 7$/mois (aucun minimum de sièges) est rentabilisé dès la première recherche évitée — mais le vrai coût caché est le temps de configuration initiale pour fusionner les outils remplacés.",
+      "verified_on": "2026-09-26",
       "source_domain": "clickup.com",
-      "usage_sensitive": false,
+      "usage_sensitive": true,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Unlimited",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://clickup.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 6.06
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free Forever",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "Gratuit permanent, stockage partagé limité à 60 Mo.",
+          "featureHighlights": [
+            "Tâches et membres illimités",
+            "60 Mo de stockage"
+          ],
+          "detailsSourceUrl": "https://clickup.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "unlimited",
+          "displayName": "Unlimited",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 7,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "7 $US/utilisateur/mois facturé annuellement ; 10 $US en mensuel.",
+          "featureHighlights": [
+            "Stockage illimité",
+            "Suivi du temps natif"
+          ],
+          "detailsSourceUrl": "https://clickup.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 12,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "12 $US/utilisateur/mois facturé annuellement ; 19 $US en mensuel.",
+          "featureHighlights": [
+            "Tableaux de bord avancés",
+            "5 000 automatisations/mois"
+          ],
+          "detailsSourceUrl": "https://clickup.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://clickup.com",
-    "logo": "",
+    "logo": "/tool-media/logos/clickup.png",
     "verdictEn": {
       "keepIf": [
-        "You want an all-in-one project management solution.",
-        "Your team prefers having tools and chat in one place.",
-        "You want to leverage AI automations to reduce manual work."
+        "The team adopts a shared tracking structure.",
+        "You actually use tasks, documents and project views together."
       ],
       "avoidIf": [
-        "You prefer a minimal, lightweight solution.",
-        "Your team is already heavily invested in other tools.",
-        "You have a small team (2-3 people) with simple needs."
+        "A simple task list already covers your needs.",
+        "Nobody can maintain the workspace and support team adoption."
       ],
-      "threshold": "ClickUp suits teams seeking a central platform; for specific needs, a single-purpose tool will be lighter."
+      "threshold": "Validate a project on the free plan before migrating. Choose a plan by required views, permissions and automation, not the promise of replacing everything."
     },
     "pros": [
-      "Offre gratuite permamente et généreuse.",
-      "Interface flexible adaptable à plusieurs méthodologies.",
-      "Agents IA pour automatiser les processus.",
-      "Écosystème fermé (tout en un seul endroit)."
+      "Tâches et documents reliés dans un même espace.",
+      "Vues adaptées à différents modes de suivi.",
+      "Forfait gratuit permanent pour valider un projet.",
+      "Automatisations et tableaux de bord selon le forfait."
     ],
     "prosEn": [
-      "Generous free tier available forever.",
-      "Flexible interface adaptable to multiple methodologies.",
-      "AI agents to automate processes.",
-      "Closed ecosystem (everything in one place)."
+      "Tasks and documents connected in one workspace.",
+      "Views for different project workflows.",
+      "Permanent free plan to validate a project.",
+      "Automation and dashboards depending on plan."
     ],
     "cons": [
-      "Interface peut être overwhelming au premier abord.",
-      "Stockage limité sur le plan gratuit.",
-      "Les options IA requièrent un paiement additionnel."
+      "Structure, statuts et permissions à configurer.",
+      "Seulement 60 Mo sur le gratuit.",
+      "Le coût augmente avec tous les membres payants.",
+      "Exports de vues et fonctions IA soumis à des limites."
     ],
     "consEn": [
-      "Interface can be overwhelming at first.",
-      "Limited storage on free plan.",
-      "AI options require additional payment."
+      "Structure, statuses and permissions require configuration.",
+      "Only 60 MB on the free plan.",
+      "Cost grows with all paid members.",
+      "View exports and AI features have limits."
     ],
     "useCases": [
-      "Gérer un projet transverse avec équipes distribuées.",
-      "Centraliser documents, tâches et communications de sprint.",
-      "Automatiser les tâches répétitives avec des agents IA."
+      "Piloter les livrables d’un projet client.",
+      "Relier les tâches aux documents de cadrage.",
+      "Suivre dépendances et avancement de plusieurs projets."
     ],
     "useCasesEn": [
-      "Manage a cross-functional project with distributed teams.",
-      "Centralize documents, tasks and sprint communications.",
-      "Automate repetitive tasks with AI agents."
+      "Manage client project deliverables.",
+      "Link tasks to project documentation.",
+      "Track dependencies and progress across projects."
     ],
     "personas": [],
-    "timeGainedHoursPerMonth": 4,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "silence",
     "prescription_output": null,
@@ -31912,7 +31952,110 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "/assets/brand/clickup-meta.png"
+    "ogImageUrl": "/og-images/clickup.jpg",
+    "galleryImages": [
+      "/tool-media/clickup/projects.png",
+      "/tool-media/clickup/docs.png",
+      "/tool-media/clickup/gantt.png"
+    ],
+    "affiliateCtaLabelFr": "Commencer gratuitement",
+    "affiliateCtaLabelEn": "Get started for free",
+    "pricing_v5En": {
+      "cautions": [
+        "USD per-user prices, no EUR conversion. The whole workspace upgrades; AI and credits are separate."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "clickup.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Unlimited",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://clickup.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free Forever",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "Permanent free plan with 60 MB shared storage.",
+          "featureHighlights": [
+            "Unlimited tasks and members",
+            "60 MB storage"
+          ],
+          "detailsSourceUrl": "https://clickup.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "unlimited",
+          "displayName": "Unlimited",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 7,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$7/user/month billed annually; $10 billed monthly.",
+          "featureHighlights": [
+            "Unlimited storage",
+            "Native time tracking"
+          ],
+          "detailsSourceUrl": "https://clickup.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 12,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$12/user/month billed annually; $19 billed monthly.",
+          "featureHighlights": [
+            "Advanced dashboards",
+            "5,000 automations/month"
+          ],
+          "detailsSourceUrl": "https://clickup.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Centralisation tâches/docs ; coût lié aux membres, ROI non mesuré. https://clickup.com/pricing (26/09/2026).",
+        "simplicite": "Nombreuses vues et réglages, nécessite une structure ; pas de test terrain. https://clickup.com/teams/project-management (26/09/2026).",
+        "utilisation": "Suivi de projets récurrent, avec un gratuit limité à 60 Mo. https://clickup.com/pricing (26/09/2026).",
+        "puissance": "Vues, automatisations et intégrations selon forfait ; IA distincte. https://clickup.com/pricing (26/09/2026).",
+        "reversibilite": "Export workspace pour administrateurs/propriétaires ; cinq exports de vues sur Free et Unlimited. https://help.clickup.com/hc/en-us/articles/30782347809815-Import-and-export-feature-availability-and-limits (26/09/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Centralizes tasks/docs; member-based cost, ROI not measured. https://clickup.com/pricing (2026-09-26).",
+        "simplicite": "Many views and settings require a shared structure; not hands-on tested. https://clickup.com/teams/project-management (2026-09-26).",
+        "utilisation": "Recurring project workflows; free storage capped at 60 MB. https://clickup.com/pricing (2026-09-26).",
+        "puissance": "Views, automation and integrations vary by plan; AI is separate. https://clickup.com/pricing (2026-09-26).",
+        "reversibilite": "Workspace export for admins/owners; five view exports on Free and Unlimited. https://help.clickup.com/hc/en-us/articles/30782347809815-Import-and-export-feature-availability-and-limits (2026-09-26)."
+      }
+    }
   },
   {
     "id": "clickup-ai",
