@@ -23213,26 +23213,26 @@
   {
     "id": "buddy-punch",
     "name": "Buddy Punch",
-    "shortDescription": "Logiciel de suivi du temps et d'ordonnancement pour équipes horaires en Amérique du Nord. Propose GPS, géofencing, vérification photo, et gestion des pauses conformes aux lois locales.",
-    "description": "Logiciel de suivi du temps et d'ordonnancement pour équipes horaires en Amérique du Nord. Propose GPS, géofencing, vérification photo, et gestion des pauses conformes aux lois locales.\n\nFonctions clés : Suivi du temps par GPS et géofencing ; Vérification photo pour prévenir les fraudes ; Gestion des pauses conforme à la loi ; Ordonnancement par glisser-déposer ; Intégration QuickBooks, Gusto, ADP ; Notations 4.8/5 (1 600+ avis).\n\nBuddy Punch s'impose pour les entreprises avec travailleurs horaires mobiles ; pour du personnel salarié classique, un outil plus simple suffira.",
+    "shortDescription": "Pointage, feuilles de temps et planning pour équipes à horaires variables.",
+    "description": "Buddy Punch centralise les heures travaillées, les absences et la préparation des relevés pour la paie. Les employés pointent sur ordinateur ou mobile ; le responsable contrôle les feuilles de temps et exporte les rapports. ToolTrim le retient pour une équipe qui remplace des relevés manuels, plutôt que pour un indépendant qui veut seulement chronométrer ses missions.\n\nStarter couvre le pointage et la localisation au moment du pointage. Pro ajoute notamment le planning, le géofencing et la photo au pointage. Ne confondez pas ces fonctions avec le suivi GPS continu : celui-ci est une option sur Starter et Pro, incluse dans Advanced.\n\nTestez une période de travail complète pendant l’essai de 14 jours : corrections, approbation et export vers votre paie. L’offre combine un forfait fixe et un prix par utilisateur. Les fonctions de contrôle ne remplacent ni une politique interne adaptée ni la vérification des règles applicables à votre équipe. Analyse documentaire, sans test terrain ni gain de temps garanti.",
     "category": "productivity-tracking",
     "pricing": {
-      "free": "Essai gratuit de 14 jours sans carte bancaire, sans plan gratuit permanent.",
-      "paid": "Starter: 4,99 $/utilisateur/mois + 19 $ de frais de base mensuels ; Pro: 6,99 $/utilisateur/mois + 19 $ de frais de base mensuels ; Advanced: 12,99 $/utilisateur/mois + 19 $ de frais de base mensuels"
+      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Paiement mensuel : Starter 5,99 $US, Pro 7,99 $US, Advanced 13,99 $US par utilisateur/mois, plus 19 $US/mois par compte. En annuel : 4,99 / 6,99 / 12,99 $US par utilisateur/mois, plus la base. Exemple Starter pour 10 utilisateurs en mensuel : 78,90 $US/mois, hors options."
     },
     "website": "https://buddypunch.com",
     "affiliateLink": "https://try.buddypunch.com/6oeemql0j0q3",
     "pros": [
-      "Géofencing et GPS pour suivi précis.",
-      "Vérification photo intégrée.",
-      "Gestion des pauses automatisée et légale.",
-      "Excellente intégration payroll (QuickBooks, Gusto).",
-      "Très bien noté (4.8/5)."
+      "Pointage et feuilles de temps centralisés.",
+      "Exports CSV, PDF et Excel selon le rapport.",
+      "Planning inclus avec Pro et Advanced.",
+      "Essai de 14 jours sans carte bancaire."
     ],
     "cons": [
-      "Tarifé par utilisateur, coûteux pour grandes équipes.",
-      "Limité à l'Amérique du Nord.",
-      "Pas de version gratuite permanente."
+      "19 $US de frais fixes en plus des utilisateurs.",
+      "Planning en option sur Starter.",
+      "GPS continu en supplément sur Starter et Pro.",
+      "Paramétrage et validation du flux de paie à prévoir."
     ],
     "bestFor": [
       "all"
@@ -23245,10 +23245,10 @@
     "freeAlternative": null,
     "soloRelevance": "à vérifier selon volume",
     "teamRelevance": "utile si usage récurrent",
-    "defaultMonthlyPrice": 24,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Paiement mensuel : Starter 5,99 $US, Pro 7,99 $US, Advanced 13,99 $US par utilisateur/mois, plus 19 $US/mois par compte. En annuel : 4,99 / 6,99 / 12,99 $US par utilisateur/mois, plus la base. Exemple Starter pour 10 utilisateurs en mensuel : 78,90 $US/mois, hors options."
     },
     "relevantFor": [
       "Managers RH",
@@ -23257,24 +23257,22 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous gérez une équipe horaire avec travailleurs sur le terrain.",
-        "Vous avez besoin de prévention de fraude et de géofencing.",
-        "Vous utilisez QuickBooks ou Gusto pour la paie."
+        "Votre équipe saisit encore ses heures manuellement.",
+        "Vous avez validé les exports et les fonctions du forfait pendant l’essai."
       ],
       "avoidIf": [
-        "Vous employez exclusivement du personnel salarié.",
-        "Vous opérez en dehors de l'Amérique du Nord.",
-        "Vous cherchez une solution gratuite ou ultra-légère."
+        "Vous cherchez un simple chronomètre personnel gratuit.",
+        "Vous attendez une paie locale et une conformité garanties sans vérification."
       ],
-      "threshold": "Buddy Punch s'impose pour les entreprises avec travailleurs horaires mobiles ; pour du personnel salarié classique, un outil plus simple suffira."
+      "threshold": "Utile pour fiabiliser les relevés d’une équipe. Calculez le coût complet, base fixe et options comprises, avant de remplacer votre système."
     },
     "alternatives": [
-      "toggl-track",
       "clockify",
-      "trainual"
+      "toggl"
     ],
     "seo": {
-      "metaDescription": "Buddy Punch sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Buddy Punch mérite sa place dans ta stack."
+      "metaDescription": "Buddy Punch : avis, essai 14 jours, tarifs par utilisateur + 19 $US de base, pointage, planning et limites du GPS.",
+      "metaDescriptionEn": "Buddy Punch review: 14-day trial, per-user pricing plus a $19 base fee, timesheets, scheduling and GPS limits."
     },
     "articles": [],
     "tool_type": "gestion",
@@ -23293,69 +23291,123 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "buddy-punch",
-    "shortDescriptionEn": "Time tracking and scheduling software for hourly teams in North America. Offers GPS, geofencing, photo verification, and break management compliant with local labor laws.",
-    "longDescription": "Logiciel de suivi du temps et d'ordonnancement pour équipes horaires en Amérique du Nord. Propose GPS, géofencing, vérification photo, et gestion des pauses conformes aux lois locales.\n\nFonctions clés : Suivi du temps par GPS et géofencing ; Vérification photo pour prévenir les fraudes ; Gestion des pauses conforme à la loi ; Ordonnancement par glisser-déposer ; Intégration QuickBooks, Gusto, ADP ; Notations 4.8/5 (1 600+ avis).\n\nBuddy Punch s'impose pour les entreprises avec travailleurs horaires mobiles ; pour du personnel salarié classique, un outil plus simple suffira.",
-    "longDescriptionEn": "Time tracking and scheduling software for hourly teams in North America. Offers GPS, geofencing, photo verification, and break management compliant with local labor laws.\n\nKey strengths: Geofencing and GPS for precise tracking.; Photo verification built-in.; Automated and legally compliant break management.; Strong payroll integration (QuickBooks, Gusto).; Excellent ratings (4.8/5)..\n\nBuddy Punch is essential for businesses with mobile hourly workers; for traditional salaried staff, a simpler tool will suffice.",
+    "shortDescriptionEn": "Time clocks, timesheets and scheduling for shift-based teams.",
+    "longDescription": "Buddy Punch centralise les heures travaillées, les absences et la préparation des relevés pour la paie. Les employés pointent sur ordinateur ou mobile ; le responsable contrôle les feuilles de temps et exporte les rapports. ToolTrim le retient pour une équipe qui remplace des relevés manuels, plutôt que pour un indépendant qui veut seulement chronométrer ses missions.\n\nStarter couvre le pointage et la localisation au moment du pointage. Pro ajoute notamment le planning, le géofencing et la photo au pointage. Ne confondez pas ces fonctions avec le suivi GPS continu : celui-ci est une option sur Starter et Pro, incluse dans Advanced.\n\nTestez une période de travail complète pendant l’essai de 14 jours : corrections, approbation et export vers votre paie. L’offre combine un forfait fixe et un prix par utilisateur. Les fonctions de contrôle ne remplacent ni une politique interne adaptée ni la vérification des règles applicables à votre équipe. Analyse documentaire, sans test terrain ni gain de temps garanti.",
+    "longDescriptionEn": "Buddy Punch brings working hours, leave and payroll-ready records together. Employees clock in on desktop or mobile; managers review timesheets and export reports. ToolTrim sees a fit for teams replacing manual time records, rather than solo freelancers who only need a project timer.\n\nStarter includes time tracking and location capture at clock-in. Pro adds scheduling, geofencing and punch photos. These are not the same as continuous GPS tracking: real-time GPS is an add-on on Starter and Pro and included in Advanced.\n\nUse the 14-day trial to test a complete work period, including corrections, approvals and your payroll export. Pricing combines a fixed fee with a per-user charge. Monitoring features do not replace an appropriate internal policy or checking the rules applicable to your workforce. Documentation-based review, without a hands-on test or guaranteed time savings.",
     "pricingEn": {
-      "free": "Essai gratuit de 14 jours sans carte bancaire, sans plan gratuit permanent.",
-      "paid": "Starter: 4,99 $/utilisateur/mois + 19 $ de frais de base mensuels ; Pro: 6,99 $/utilisateur/mois + 19 $ de frais de base mensuels ; Advanced: 12,99 $/utilisateur/mois + 19 $ de frais de base mensuels"
+      "free": "14-day trial without a credit card; no permanent free plan.",
+      "paid": "Monthly billing: Starter $5.99, Pro $7.99, Advanced $13.99 per user/month, plus $19/month per account. Annual rates: $4.99 / $6.99 / $12.99 per user/month, plus the base fee. Example: Starter for 10 users on monthly billing costs $78.90/month before add-ons."
     },
     "pricing_v5": {
       "cautions": [
-        "Comparer le coût total avec base fee + utilisateurs, pas seulement le prix par personne."
+        "USD, sans conversion. Prix ci-dessous pour un utilisateur avec les 19 USD de base inclus. Utilisateurs supplémentaires et options en supplément."
       ],
-      "verified_on": "2026-08-30",
+      "verified_on": "2026-09-26",
       "source_domain": "buddypunch.com",
       "usage_sensitive": true,
       "compare_plan_kind": "paid_per_seat",
-      "compare_plan_name": "Entry team setup",
+      "compare_plan_name": "Starter (1 utilisateur, base incluse)",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
       "official_source_url": "https://buddypunch.com/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 24
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter (1 utilisateur)",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 24.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "5.99 $US/utilisateur/mois + 19 $US/mois de base, paiement mensuel.",
+          "featureHighlights": [
+            "Pointage et absences",
+            "GPS au pointage"
+          ],
+          "detailsSourceUrl": "https://buddypunch.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro (1 utilisateur)",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 26.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "7.99 $US/utilisateur/mois + 19 $US/mois de base, paiement mensuel.",
+          "featureHighlights": [
+            "Planning inclus",
+            "Géofencing et photo au pointage"
+          ],
+          "detailsSourceUrl": "https://buddypunch.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "advanced",
+          "displayName": "Advanced (1 utilisateur)",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 32.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "13.99 $US/utilisateur/mois + 19 $US/mois de base, paiement mensuel.",
+          "featureHighlights": [
+            "GPS continu inclus",
+            "SSO et rapports avancés"
+          ],
+          "detailsSourceUrl": "https://buddypunch.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://buddypunch.com",
-    "logo": "",
+    "logo": "/tool-media/logos/buddy-punch.png",
     "verdictEn": {
       "keepIf": [
-        "You manage an hourly workforce with field workers.",
-        "You need fraud prevention and geofencing.",
-        "You use QuickBooks or Gusto for payroll."
+        "Your team still records working hours manually.",
+        "You have validated exports and plan features during the trial."
       ],
       "avoidIf": [
-        "You employ only salaried staff.",
-        "You operate outside North America.",
-        "You need a free or ultra-lightweight solution."
+        "You need a simple free personal timer.",
+        "You expect guaranteed local payroll and compliance without verification."
       ],
-      "threshold": "Buddy Punch is essential for businesses with mobile hourly workers; for traditional salaried staff, a simpler tool will suffice."
+      "threshold": "Useful for improving team time records. Calculate the full cost, including the base fee and add-ons, before replacing your current system."
     },
     "prosEn": [
-      "Geofencing and GPS for precise tracking.",
-      "Photo verification built-in.",
-      "Automated and legally compliant break management.",
-      "Strong payroll integration (QuickBooks, Gusto).",
-      "Excellent ratings (4.8/5)."
+      "Centralized time clocks and timesheets.",
+      "CSV, PDF and Excel exports depending on report.",
+      "Scheduling included with Pro and Advanced.",
+      "14-day trial without a credit card."
     ],
     "consEn": [
-      "Per-user pricing, costly for large teams.",
-      "Limited to North America.",
-      "No permanent free version."
+      "$19 base fee on top of user charges.",
+      "Scheduling is an add-on on Starter.",
+      "Continuous GPS costs extra on Starter and Pro.",
+      "Setup and payroll workflow validation are still required."
     ],
     "useCases": [
-      "Suivre la présence d'une équipe de maintenance.",
-      "Gérer l'ordonnancement de serveurs en restaurant.",
-      "Prévenir la fraude temps sur chantier."
+      "Valider les heures avant la préparation de la paie.",
+      "Planifier les postes d’une équipe de services.",
+      "Suivre heures et absences sur plusieurs sites."
     ],
     "useCasesEn": [
-      "Track attendance on a maintenance team.",
-      "Manage scheduling for restaurant servers.",
-      "Prevent time fraud on construction sites."
+      "Approve working hours before payroll preparation.",
+      "Schedule shifts for a service team.",
+      "Track time and leave across locations."
     ],
     "personas": [
       "CLAIRE"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -23377,8 +23429,107 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://buddypunch.com/wp-content/uploads/2025/11/map-icon.png",
-    "galleryImages": []
+    "ogImageUrl": "/og-images/buddy-punch.jpg",
+    "galleryImages": [
+      "/tool-media/buddy-punch/time-card.png",
+      "/tool-media/buddy-punch/scheduling.jpg"
+    ],
+    "affiliateCtaLabelFr": "Essayer gratuitement pendant 14 jours",
+    "affiliateCtaLabelEn": "Start a free 14-day trial",
+    "pricing_v5En": {
+      "cautions": [
+        "USD, no conversion. Displayed totals include one user and the $19 base fee. Extra users and add-ons cost more."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "buddypunch.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid_per_seat",
+      "compare_plan_name": "Starter (1 user, base included)",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://buddypunch.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter (1 user)",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 24.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "$5.99/user/month + $19/month base fee, monthly billing.",
+          "featureHighlights": [
+            "Time and leave tracking",
+            "GPS at clock-in"
+          ],
+          "detailsSourceUrl": "https://buddypunch.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro (1 user)",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 26.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "$7.99/user/month + $19/month base fee, monthly billing.",
+          "featureHighlights": [
+            "Scheduling included",
+            "Geofencing and punch photos"
+          ],
+          "detailsSourceUrl": "https://buddypunch.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "advanced",
+          "displayName": "Advanced (1 user)",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 32.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "$13.99/user/month + $19/month base fee, monthly billing.",
+          "featureHighlights": [
+            "Real-time GPS included",
+            "SSO and advanced reports"
+          ],
+          "detailsSourceUrl": "https://buddypunch.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Centralise les relevés ; frais fixes à amortir selon l’effectif. ROI non mesuré. https://buddypunch.com/pricing/ (26/09/2026).",
+        "simplicite": "Pointage mobile documenté ; règles et exports à paramétrer. Pas de test terrain. https://buddypunch.com/ (26/09/2026).",
+        "utilisation": "Pointage, absences et planning selon forfait adaptés à un usage récurrent. https://buddypunch.com/pricing/ (26/09/2026).",
+        "puissance": "Géofencing, API et GPS continu selon forfait ou option. https://buddypunch.com/pricing/ (26/09/2026).",
+        "reversibilite": "Rapports CSV/PDF et exports Excel documentés ; migration des règles non vérifiée. https://buddypunch.com/time-clock-software/features/reports/ (26/09/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Centralizes time records; base fee value depends on team size. ROI not measured. https://buddypunch.com/pricing/ (2026-09-26).",
+        "simplicite": "Documented mobile clock-in; rules and exports require setup. Not hands-on tested. https://buddypunch.com/ (2026-09-26).",
+        "utilisation": "Time, leave and scheduling support recurring workflows depending on plan. https://buddypunch.com/pricing/ (2026-09-26).",
+        "puissance": "Geofencing, API and live GPS depend on plan or add-on. https://buddypunch.com/pricing/ (2026-09-26).",
+        "reversibilite": "Documented CSV/PDF reports and Excel exports; rule migration not verified. https://buddypunch.com/time-clock-software/features/reports/ (2026-09-26)."
+      }
+    }
   },
   {
     "id": "budibase",

@@ -1,3 +1,10 @@
+## 2026-09-26 : Buddy Punch, révision affiliée FR/EN
+
+- Corrige contenu, SEO, alternatives et notation v2 documentaire (3,8/5). Retire le gain horaire non prouvé et les garanties de conformité.
+- Vérifie le lien affilié fourni (redirection HTTP 200). Distingue prix mensuels/annuels et les 19 USD de base. Cartes tarifaires : un utilisateur avec base incluse, sans conversion EUR.
+- Sources : https://buddypunch.com/pricing/ ; https://buddypunch.com/time-clock-software/features/reports/ ; https://buddypunch.com/scheduling/ .
+- Ajoute logo et trois visuels officiels : `/wp-content/uploads/2024/10/cropped-512x5122-1-180x180.png`, `/2026/02/real-time-visibility.jpg.webp`, `/2025/05/Time-card-reports.png`, `/2026/03/Drag-and-drop-1024x697.jpg` sur le domaine éditeur (trois derniers sous `/wp-content/uploads`). Le visuel GPS sert aussi d’OG. Aucune capture ToolTrim.
+
 ## 2026-09-26 : Brevo, fiche affiliée FR/EN
 
 - Revoit contenu, SEO, usages et limites ; corrige la promesse erronée de facturation sans limite de contacts.

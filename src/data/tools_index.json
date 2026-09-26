@@ -4608,17 +4608,16 @@
     "slug": "buddy-punch",
     "name": "Buddy Punch",
     "categoryId": "productivity-tracking",
-    "shortDescription": "Logiciel de suivi du temps et d'ordonnancement pour équipes horaires en Amérique du Nord. Propose GPS, géofencing, vérification photo, et gestion des pauses conformes aux lois locales.",
-    "shortDescriptionEn": "Time tracking and scheduling software for hourly teams in North America. Offers GPS, geofencing, photo verification, and break management compliant with local labor laws.",
+    "shortDescription": "Pointage, feuilles de temps et planning pour équipes à horaires variables.",
+    "shortDescriptionEn": "Time clocks, timesheets and scheduling for shift-based teams.",
     "pricing": {
-      "free": "Essai gratuit de 14 jours sans carte bancaire, sans plan gratuit permanent.",
-      "paid": "Starter: 4,99 $/utilisateur/mois + 19 $ de frais de base mensuels ; Pro: 6,99 $/utilisateur/mois + 19 $ de frais de base mensuels ; Advanced: 12,99 $/utilisateur/mois + 19 $ de frais de base mensuels"
+      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Paiement mensuel : Starter 5,99 $US, Pro 7,99 $US, Advanced 13,99 $US par utilisateur/mois, plus 19 $US/mois par compte. En annuel : 4,99 / 6,99 / 12,99 $US par utilisateur/mois, plus la base. Exemple Starter pour 10 utilisateurs en mensuel : 78,90 $US/mois, hors options."
     },
-    "defaultMonthlyPrice": 24,
-    "compareMonthlyPrice": 24,
     "affiliateLink": "https://try.buddypunch.com/6oeemql0j0q3",
     "websiteUrl": "https://buddypunch.com",
-    "ogImageUrl": "https://buddypunch.com/wp-content/uploads/2025/11/map-icon.png",
+    "ogImageUrl": "/og-images/buddy-punch.jpg",
+    "logo": "/tool-media/logos/buddy-punch.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "hr-time-tracking",
     "functional_needs": [
