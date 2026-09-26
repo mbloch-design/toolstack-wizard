@@ -4569,3 +4569,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Note documentaire v2 3,6/5, axes 4/3/4/4/3 et preuves FR/EN ; aucun test terrain revendiqué. Exports : https://knowledge.apollo.io/hc/en-us/articles/4409237712141-Export-Contacts-to-a-CSV.
 - Logo apple-touch, OG /og-images/home.jpg et trois images officielles issues du HTML https://www.apollo.io/ : homepage-static-for-video.0h98v3yl13hkl.png, source-of-truth.0c.nui1qdm-rq.png, ai-busywork.0ws5ft2is7ov-.png. Aucune capture créée.
 - Retrait des gains de temps non sourcés et du remplacement forfaitaire de cinq outils. Affiliation indépendante de la note.
+# Brand24 : revue affiliée et notation, 2026-09-26
+
+- Lien https://try.brand24.com/2jbwm4slry45 testé : redirection 200 vers Brand24 avec suivi partenaire.
+- Tarifs FR/EN corrigés depuis https://brand24.com/prices/ : Individual 249 USD mensuels / 199 USD équivalent mensuel annuel ; actualisation toutes les 12 heures. Team horaire ; temps réel à partir de Pro. Essai 14 jours sans carte confirmé.
+- Note documentaire v2 3,6/5 : axes 3/4/4/4/3, preuves FR/EN. Sources complémentaires : https://brand24.com/tour/ et https://help.brand24.com/en/articles/5336569-excel-report. Pas de test terrain revendiqué.
+- Logo et OG officiels ; galerie issue du tour produit : Header-tour.png, Sekcja-1-jpg.jpg et Sekcja-2-jpg.jpg depuis https://brand24.com/app/uploads/. Aucune capture créée.
+- Correction du cluster email-outreach vers brand-monitoring et questions de contexte associées ; recommandations automatiques désactivées en l’absence de contexte. Suppression du gain de temps non étayé.

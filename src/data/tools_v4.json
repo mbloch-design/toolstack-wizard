@@ -21281,23 +21281,26 @@
   {
     "id": "brand24",
     "name": "Brand24",
-    "shortDescription": "Veille de marque en temps réel sur réseaux sociaux, presse et forums, avec analyse de sentiment.",
-    "description": "Brand24 surveille les mentions de marque en temps réel sur plus de 25 millions de sources (réseaux sociaux, presse, forums), avec une analyse de sentiment automatique et, depuis 2026, une détection des mentions vocales dans des vidéos YouTube avec horodatage.\n\nSon prix d'entrée (119$/mois) reste nettement inférieur aux solutions enterprise, et la mise en route est rapide. Ce n'est pas un outil tout-en-un : aucune fonctionnalité de publication, planification ou gestion de commentaires — uniquement de la veille.",
+    "shortDescription": "Veille des mentions de marque, analyse de sentiment et rapports de réputation.",
+    "description": "Brand24 rassemble les mentions de mots-clés sur le web et les réseaux sociaux pour suivre une marque, une campagne ou un concurrent. Les filtres, l’analyse de sentiment et les rapports aident à repérer les conversations importantes. Il s’agit d’un outil de veille, pas d’un calendrier de publication ni d’une boîte de réception pour répondre aux commentaires.\n\nToolTrim le retient lorsqu’une équipe suit régulièrement sa réputation et peut agir sur les informations collectées. Testez pendant les 14 jours d’essai les variantes de votre nom, les exclusions et les sources réellement couvertes. Le sentiment automatique doit être relu dans son contexte ; la collecte n’est pas une garantie d’exhaustivité.\n\nAttention au rythme d’actualisation : Individual est actualisé toutes les 12 heures, Team toutes les heures, et le temps réel commence avec Pro. Cette analyse repose sur les sources publiques, sans test terrain de collecte.",
     "category": "analytics",
-    "pricing": "À partir de 119$/mois. Essai gratuit de 14 jours sans carte bancaire.",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Individual : 249 $US/mois ou 199 $US/mois facturé annuellement. Team : 349/299 $US ; Pro : 499/399 $US ; Business : 699/599 $US (mensuel/équivalent mensuel annuel). Enterprise dès 1 499 $US/mois facturé annuellement."
+    },
     "website": "https://brand24.com",
     "affiliateLink": "https://try.brand24.com/2jbwm4slry45",
     "pros": [
-      "Couverture de sources très large (25M+).",
-      "Détection sentiment avancée avec sarcasme.",
-      "Alertes temps réel pratiques via Slack/Email.",
-      "Suivi concurrence intégré.",
-      "Essai 14 jours offert."
+      "Mentions et indicateurs de réputation centralisés.",
+      "Filtres et sentiment pour prioriser la lecture.",
+      "Rapports et exports documentés.",
+      "Essai de 14 jours sans carte bancaire."
     ],
     "cons": [
-      "Pas de version gratuite.",
-      "Prix plus élevé pour petites équipes.",
-      "Moins de fonctionnalités de publication que Hootsuite."
+      "Coût important pour une veille occasionnelle.",
+      "Pas de temps réel sur Individual et Team.",
+      "Quotas de mots-clés et mentions selon le forfait.",
+      "Exports de certains réseaux sociaux limités par leurs règles."
     ],
     "bestFor": [
       "all"
@@ -21306,12 +21309,12 @@
       "brand-monitoring"
     ],
     "freeAlternative": null,
-    "soloRelevance": "high",
-    "teamRelevance": "medium",
-    "defaultMonthlyPrice": 104.24,
+    "soloRelevance": "pertinent pour une mission de veille récurrente",
+    "teamRelevance": "pertinent si les alertes sont suivies et traitées",
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Essai gratuit de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Individual : 249 $US/mois ou 199 $US/mois facturé annuellement. Team : 349/299 $US ; Pro : 499/399 $US ; Business : 699/599 $US (mensuel/équivalent mensuel annuel). Enterprise dès 1 499 $US/mois facturé annuellement."
     },
     "relevantFor": [
       "Community managers",
@@ -21321,20 +21324,20 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous gérez la réputation d'une marque ou produit.",
-        "Vous avez besoin de surveiller mentions en temps réel.",
-        "Vous analysez stratégies concurrents."
+        "Votre équipe exploite régulièrement les mentions et rapports.",
+        "Vous devez suivre une marque ou plusieurs campagnes."
       ],
       "avoidIf": [
-        "Vous ne cherchez que social media management standard.",
-        "Vous avez un budget très limité.",
-        "Vous n'avez pas besoin d'alertes temps réel."
+        "Vous voulez surtout publier ou répondre aux commentaires.",
+        "Votre besoin ponctuel ne justifie pas l’abonnement."
       ],
-      "threshold": "Brand24 convient aux équipes marketing/communications professionnelles ; pour besoins simples de social management, autres outils suffisent."
+      "threshold": "Utile pour une veille de réputation suivie d’actions. Choisissez le forfait selon les mots-clés, le volume et le délai d’actualisation réellement nécessaires.",
+      "faqPriceAnswer": "Individual : 249 $US/mois ou 199 $US/mois facturé annuellement. Team : 349/299 $US ; Pro : 499/399 $US ; Business : 699/599 $US (mensuel/équivalent mensuel annuel). Enterprise dès 1 499 $US/mois facturé annuellement."
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Brand24 : Outil de veille médiatique pour suivre les mentions de marque en ligne. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Brand24 : avis, essai 14 jours, prix Individual dès 199 $US/mois facturé annuellement, quotas et limites du temps réel.",
+      "metaDescriptionEn": "Brand24 review: 14-day trial, Individual from $199/month billed annually, quotas and real-time monitoring limits."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -21354,66 +21357,152 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "brand24",
-    "shortDescriptionEn": "Real-time brand monitoring across social media, news, and forums, with sentiment analysis.",
-    "longDescription": "Brand24 surveille les mentions de marque en temps réel sur plus de 25 millions de sources (réseaux sociaux, presse, forums), avec une analyse de sentiment automatique et, depuis 2026, une détection des mentions vocales dans des vidéos YouTube avec horodatage.\n\nSon prix d'entrée (119$/mois) reste nettement inférieur aux solutions enterprise, et la mise en route est rapide. Ce n'est pas un outil tout-en-un : aucune fonctionnalité de publication, planification ou gestion de commentaires — uniquement de la veille.",
-    "longDescriptionEn": "Brand24 monitors brand mentions in real time across over 25 million sources (social media, news, forums), with automatic sentiment analysis and, since 2026, voice mention detection in YouTube videos with timestamps.\n\nIts entry price ($119/month) remains notably lower than enterprise solutions, and setup is fast. It's not an all-in-one tool: no publishing, scheduling, or comment management features — monitoring only.",
-    "pricingEn": "From $119/month. 14-day free trial with no credit card.",
+    "shortDescriptionEn": "Brand mention monitoring, sentiment analysis and reputation reporting.",
+    "longDescription": "Brand24 rassemble les mentions de mots-clés sur le web et les réseaux sociaux pour suivre une marque, une campagne ou un concurrent. Les filtres, l’analyse de sentiment et les rapports aident à repérer les conversations importantes. Il s’agit d’un outil de veille, pas d’un calendrier de publication ni d’une boîte de réception pour répondre aux commentaires.\n\nToolTrim le retient lorsqu’une équipe suit régulièrement sa réputation et peut agir sur les informations collectées. Testez pendant les 14 jours d’essai les variantes de votre nom, les exclusions et les sources réellement couvertes. Le sentiment automatique doit être relu dans son contexte ; la collecte n’est pas une garantie d’exhaustivité.\n\nAttention au rythme d’actualisation : Individual est actualisé toutes les 12 heures, Team toutes les heures, et le temps réel commence avec Pro. Cette analyse repose sur les sources publiques, sans test terrain de collecte.",
+    "longDescriptionEn": "Brand24 collects keyword mentions across the web and social media to monitor a brand, campaign or competitor. Filters, sentiment analysis and reporting help surface relevant conversations. It is a monitoring tool, not a publishing calendar or an inbox for replying to comments.\n\nToolTrim sees the best fit for teams that regularly review reputation and can act on the findings. Use the 14-day trial to test name variants, exclusions and actual source coverage. Automated sentiment needs contextual review; collection is not a guarantee of completeness.\n\nUpdate frequency matters: Individual refreshes every 12 hours, Team hourly, and real-time updates start with Pro. This review uses public documentation, not a hands-on collection test.",
+    "pricingEn": {
+      "free": "14-day free trial without a credit card; no permanent free plan.",
+      "paid": "Individual: $249/month or $199/month billed annually. Team: $349/$299; Pro: $499/$399; Business: $699/$599 (monthly/annual monthly equivalent). Enterprise from $1,499/month billed annually."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Prix en USD. Tarifs annuels exprimés en équivalent mensuel. Fréquence et quotas selon forfait."
+      ],
+      "verified_on": "2026-09-26",
       "source_domain": "brand24.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Individual",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://brand24.com/prices/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "individual",
+          "displayName": "Individual",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 199,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "199 $US/mois facturé annuellement, ou 249 $US en paiement mensuel.",
+          "featureHighlights": [
+            "3 mots-clés",
+            "2000 mentions/mois",
+            "Actualisation toutes les 12 heures"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 299,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "299 $US/mois facturé annuellement, ou 349 $US en paiement mensuel.",
+          "featureHighlights": [
+            "7 mots-clés",
+            "10000 mentions/mois",
+            "Actualisation horaire"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 399,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "399 $US/mois facturé annuellement, ou 499 $US en paiement mensuel.",
+          "featureHighlights": [
+            "12 mots-clés",
+            "40000 mentions/mois",
+            "Actualisation en temps réel"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 599,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "599 $US/mois facturé annuellement, ou 699 $US en paiement mensuel.",
+          "featureHighlights": [
+            "25 mots-clés",
+            "100000 mentions/mois",
+            "Actualisation en temps réel"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://brand24.com",
-    "logo": "",
+    "logo": "/tool-media/logos/brand24.png",
     "verdictEn": {
       "keepIf": [
-        "You manage brand or product reputation.",
-        "You need real-time mention monitoring.",
-        "You analyze competitor strategies."
+        "Your team regularly acts on mentions and reports.",
+        "You monitor a brand or recurring campaigns."
       ],
       "avoidIf": [
-        "You only want standard social media management.",
-        "Your budget is very tight.",
-        "You don't need real-time alerts."
+        "You mainly need publishing or comment replies.",
+        "Occasional monitoring does not justify the subscription."
       ],
-      "threshold": "Brand24 suits professional marketing/communications teams; for simple social management needs, other tools suffice."
+      "threshold": "Useful for reputation monitoring that leads to action. Choose a plan by keyword count, volume and the update frequency you actually need.",
+      "faqPriceAnswer": "Individual: $249/month or $199/month billed annually. Team: $349/$299; Pro: $499/$399; Business: $699/$599 (monthly/annual monthly equivalent). Enterprise from $1,499/month billed annually."
     },
     "prosEn": [
-      "Very wide coverage of sources (25M+).",
-      "Advanced sentiment detection with sarcasm.",
-      "Real-time alerts via Slack/Email.",
-      "Built-in competitor tracking.",
-      "14-day trial offered."
+      "Centralized mentions and reputation indicators.",
+      "Filters and sentiment to prioritize review.",
+      "Documented reports and exports.",
+      "14-day trial without a credit card."
     ],
     "consEn": [
-      "No free version.",
-      "Higher price for small teams.",
-      "Fewer publishing features than Hootsuite."
+      "High cost for occasional monitoring.",
+      "Individual and Team do not offer real-time updates.",
+      "Keyword and mention quotas depend on plan.",
+      "Some social network exports are restricted by platform rules."
     ],
     "useCases": [
-      "Monitorer réputation de marque en temps réel.",
-      "Analyser sentiment envers concurrents.",
-      "Générer rapports influenceurs et mentions clés."
+      "Suivre les mentions de sa marque et filtrer les homonymes.",
+      "Comparer la visibilité d’une campagne et de concurrents.",
+      "Préparer un rapport de réputation pour un client ou une équipe."
     ],
     "useCasesEn": [
-      "Monitor brand reputation in real-time.",
-      "Analyze sentiment toward competitors.",
-      "Generate influencer and mention reports."
+      "Track brand mentions and filter unrelated names.",
+      "Compare campaign and competitor visibility.",
+      "Prepare reputation reports for clients or teams."
     ],
     "personas": [
       "marc",
       "alix",
       "claire"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -21421,21 +21510,148 @@
       "cluster-trop-large"
     ],
     "prescription_context_questions": [
-      "contact_volume",
-      "deliverability_requirement",
-      "multichannel_requirement"
+      "monitoring_keywords",
+      "mention_volume",
+      "update_frequency"
     ],
-    "substitution_cluster_v2": "email-outreach",
+    "substitution_cluster_v2": "brand-monitoring",
     "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "question",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": "Vérifier mots-clés, volume, sources et fréquence de veille avant toute recommandation.",
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://brand24.com/app/themes/b24/assets/v4/images/og-image.png"
+    "ogImageUrl": "/og-images/brand24.jpg",
+    "affiliateCtaLabelFr": "Essayer gratuitement pendant 14 jours",
+    "affiliateCtaLabelEn": "Start a free 14-day trial",
+    "galleryImages": [
+      "/tool-media/brand24/product-tour.png",
+      "/tool-media/brand24/monitoring.jpg",
+      "/tool-media/brand24/analysis.jpg"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "USD prices. Annual prices are monthly equivalents. Update frequency and mention limits vary by plan."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "brand24.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Individual",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://brand24.com/prices/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "individual",
+          "displayName": "Individual",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 199,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$199/month billed annually, or $249 billed monthly.",
+          "featureHighlights": [
+            "3 keywords",
+            "2000 mentions/month",
+            "Updates every 12 hours"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 299,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$299/month billed annually, or $349 billed monthly.",
+          "featureHighlights": [
+            "7 keywords",
+            "10000 mentions/month",
+            "Hourly updates"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 399,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$399/month billed annually, or $499 billed monthly.",
+          "featureHighlights": [
+            "12 keywords",
+            "40000 mentions/month",
+            "Real-time updates"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 599,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$599/month billed annually, or $699 billed monthly.",
+          "featureHighlights": [
+            "25 keywords",
+            "100000 mentions/month",
+            "Real-time updates"
+          ],
+          "detailsSourceUrl": "https://brand24.com/prices/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Veille et rapports centralisés, mais coût d’entrée de 199 USD/mois avec paiement annuel. Rentabilité non mesurée. https://brand24.com/prices/ (26/09/2026).",
+        "simplicite": "Création de projets par mots-clés et essai 14 jours sans carte ; les exclusions restent à régler. Évaluation documentaire, pas de test de prise en main. https://brand24.com/tour/ (26/09/2026).",
+        "utilisation": "Mentions, sentiment et rapports couvrent la veille ; actualisation 12 h sur Individual, horaire sur Team. Pas de garantie de collecte exhaustive. https://brand24.com/prices/ (26/09/2026).",
+        "puissance": "Montée en volume, temps réel à partir de Pro et analyses IA selon forfait. https://brand24.com/prices/ (26/09/2026).",
+        "reversibilite": "Export XLSX documenté ; données X, Facebook et Instagram limitées dans les exports. https://help.brand24.com/en/articles/5336569-excel-report (26/09/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Centralized monitoring and reporting, but a $199/month entry price billed annually. ROI not measured. https://brand24.com/prices/ (2026-09-26).",
+        "simplicite": "Keyword-based project setup and a 14-day no-card trial; exclusions still need configuration. Documentation-based, not a hands-on onboarding test. https://brand24.com/tour/ (2026-09-26).",
+        "utilisation": "Mentions, sentiment and reporting cover monitoring; Individual updates every 12 hours and Team hourly. Collection completeness is not guaranteed. https://brand24.com/prices/ (2026-09-26).",
+        "puissance": "Higher volumes, real-time updates from Pro and AI analysis depending on plan. https://brand24.com/prices/ (2026-09-26).",
+        "reversibilite": "Documented XLSX export; X, Facebook and Instagram data are restricted in exports. https://help.brand24.com/en/articles/5336569-excel-report (2026-09-26)."
+      }
+    }
   },
   {
     "id": "brandcrowd",

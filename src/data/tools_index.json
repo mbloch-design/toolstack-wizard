@@ -4270,15 +4270,17 @@
     "slug": "brand24",
     "name": "Brand24",
     "categoryId": "analytics",
-    "shortDescription": "Veille de marque en temps réel sur réseaux sociaux, presse et forums, avec analyse de sentiment.",
-    "shortDescriptionEn": "Real-time brand monitoring across social media, news, and forums, with sentiment analysis.",
-    "pricing": "À partir de 119$/mois. Essai gratuit de 14 jours sans carte bancaire.",
-    "defaultMonthlyPrice": 104.24,
-    "compareMonthlyPrice": 15,
+    "shortDescription": "Veille des mentions de marque, analyse de sentiment et rapports de réputation.",
+    "shortDescriptionEn": "Brand mention monitoring, sentiment analysis and reputation reporting.",
+    "pricing": {
+      "free": "Essai gratuit de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Individual : 249 $US/mois ou 199 $US/mois facturé annuellement. Team : 349/299 $US ; Pro : 499/399 $US ; Business : 699/599 $US (mensuel/équivalent mensuel annuel). Enterprise dès 1 499 $US/mois facturé annuellement."
+    },
     "affiliateLink": "https://try.brand24.com/2jbwm4slry45",
     "websiteUrl": "https://brand24.com",
-    "ogImageUrl": "https://brand24.com/app/themes/b24/assets/v4/images/og-image.png",
-    "substitution_cluster_v2": "email-outreach",
+    "ogImageUrl": "/og-images/brand24.jpg",
+    "logo": "/tool-media/logos/brand24.png",
+    "substitution_cluster_v2": "brand-monitoring",
     "functional_needs": [
       "brand-monitoring",
       "veille"
