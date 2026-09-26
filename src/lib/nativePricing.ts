@@ -89,7 +89,8 @@ export function getNativeComparePrice(tool: Tool, preferredCurrency?: Currency):
   const match = preferredCurrency ? candidates.find((item) => item.nativeCurrency === preferredCurrency) : undefined;
   const plan = match || candidates[0];
   if (plan) {
-    return { amount: plan.nativeAmount!, currency: plan.nativeCurrency as Currency, source: "canonical_plan" };
+    const amount = plan.billingPeriod === "annual" ? plan.nativeAmount! / 12 : plan.nativeAmount!;
+    return { amount, currency: plan.nativeCurrency as Currency, source: "canonical_plan" };
   }
   const id = tool.slug || tool.id;
   return pricingTruth.get(id) || pricingTruth.get(tool.id) || null;

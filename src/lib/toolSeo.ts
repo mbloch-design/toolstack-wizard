@@ -10,7 +10,7 @@
  * override any template (prefix: presentation, prix, alt, avis).
  */
 import { fitBrandedTitle } from "./seoTitle";
-import { formatToolPrice } from "./currencyRates";
+import { formatToolPrice, nativePriceFromTool } from "./currencyRates";
 import { hasGenuineFreeTier, resolveMonthlyPrice } from "./pricing";
 import { localizePlanName } from "./planNames";
 
@@ -21,7 +21,7 @@ export type ToolSeoPage = "presentation" | "prix" | "alternatives" | "avis";
 type SeoTool = any;
 
 export function toolPriceFacts(tool: SeoTool) {
-  const price = resolveMonthlyPrice(tool);
+  const price = nativePriceFromTool(tool)?.amount ?? resolveMonthlyPrice(tool);
   const hasPrice = price != null && price > 0;
   const free = hasGenuineFreeTier(tool.pricing?.free);
   // The wording of the paid offer alone is not enough: Motion Bro (free

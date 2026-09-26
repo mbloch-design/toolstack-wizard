@@ -12,6 +12,7 @@ import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, isOneTimePrice, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
 import { stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "@/lib/pricing";
+import { nativePriceFromTool } from "@/lib/currencyRates";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
@@ -314,7 +315,7 @@ const ToolDetailPage = () => {
       })}
     </ul>
   );
-  const displayPrice  = resolveMonthlyPrice(tool);
+  const displayPrice  = resolveMonthlyPrice(tool) || nativePriceFromTool(tool)?.amount || 0;
   // Pas de date de repli. Elle valait « 2026-03-29 » et s'affichait comme
   // « Dernière vérification » sur les 325 fiches sans `pricing_v5`, soit 644
   // pages, en plus d'alimenter le `dateModified` des données structurées et la
@@ -481,7 +482,6 @@ const ToolDetailPage = () => {
                           <ExternalLink aria-hidden />
                         </a>}
                         <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
-                        {(lang === "en" ? tool.affiliateDisclosureEn : tool.affiliateDisclosureFr) && <p className="td-hero-affiliate-disclosure">{lang === "en" ? tool.affiliateDisclosureEn : tool.affiliateDisclosureFr}</p>}
                         </div>
                       </div>
 

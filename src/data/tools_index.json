@@ -315,17 +315,19 @@
   {
     "id": "adcreative-ai",
     "slug": "adcreative-ai",
-    "name": "Adcreative AI",
+    "name": "AdCreative.ai",
     "categoryId": "creation",
-    "shortDescription": "Génère automatiquement des visuels publicitaires optimisés pour la conversion, avec score de performance prédictif.",
-    "shortDescriptionEn": "Automatically generates conversion-optimized ad creatives, with a predictive performance score.",
-    "pricing": "À partir de ~21$/mois selon le volume de créations générées.",
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
-    "affiliateLink": "https://adcreativeai.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adcreative-ai.jpg",
-    "logo": "https://logo.clearbit.com/adcreativeai.com",
-    "tool_type": "specialise",
+    "shortDescription": "Création de visuels publicitaires par IA, avec variantes de marque et scoring pour préparer vos tests.",
+    "shortDescriptionEn": "AI ad creative generation, with brand variants and scoring to prepare campaign tests.",
+    "pricing": {
+      "free": "Essai de 7 jours avec 10 crédits annoncés.",
+      "paid": "Starter : 39 $US/mois en paiement mensuel, pour 10 crédits et 1 marque. L’offre annuelle affiche 20 $US/mois, facturés annuellement. Vérifiez le total, les options et le renouvellement à l’inscription."
+    },
+    "affiliateLink": "https://free-trial.adcreative.ai/bl7nxarn1exp",
+    "websiteUrl": "https://www.adcreative.ai/",
+    "ogImageUrl": "/og-images/adcreative-ai.jpg",
+    "logo": "/tool-media/logos/adcreative-ai.png",
+    "tool_type": "ia",
     "substitution_cluster_v2": "content-creation",
     "functional_needs": [
       "creator-workflow"
@@ -341,7 +343,8 @@
     "prescription_quality": "medium",
     "personas": [
       "lina"
-    ]
+    ],
+    "freeAlternative": "canva"
   },
   {
     "id": "adcreative",

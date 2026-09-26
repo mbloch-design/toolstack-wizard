@@ -99,7 +99,10 @@ export function nativePriceFromTool(tool: any, preferredCurrency?: Currency): Na
   const match = preferredCurrency ? candidates.find((item: any) => item.nativeCurrency === preferredCurrency) : undefined;
   const plan = match || candidates[0];
   if (plan) {
-    return { amount: Number(plan.nativeAmount), currency: plan.nativeCurrency };
+    // Comparison labels are monthly. An annual subscription's native total
+    // must not be presented as a monthly charge; one-time licences stay intact.
+    const amount = Number(plan.nativeAmount);
+    return { amount: plan.billingPeriod === "annual" ? amount / 12 : amount, currency: plan.nativeCurrency };
   }
 
   const attested = NATIVE_PRICES[tool?.slug] || NATIVE_PRICES[tool?.id];

@@ -1535,75 +1535,122 @@
   {
     "id": "adcreative-ai",
     "slug": "adcreative-ai",
-    "name": "Adcreative AI",
+    "name": "AdCreative.ai",
     "category": "creation",
-    "shortDescription": "Génère automatiquement des visuels publicitaires optimisés pour la conversion, avec score de performance prédictif.",
-    "shortDescriptionEn": "Automatically generates conversion-optimized ad creatives, with a predictive performance score.",
-    "description": "AdCreative.ai génère des visuels publicitaires (bannières, posts) à partir des éléments de marque (logo, couleurs, produits), avec un score IA qui prédit la probabilité de performance de chaque création avant même de la publier — pensé pour accélérer la production de variantes publicitaires à tester.\n\nPour qui gère des campagnes publicitaires (Meta Ads, Google Ads) et doit produire de nombreuses variantes créatives à tester, c'est un gain de temps significatif comparé à un designer qui produirait chaque variante à la main.",
-    "longDescription": "AdCreative.ai génère des visuels publicitaires (bannières, posts) à partir des éléments de marque (logo, couleurs, produits), avec un score IA qui prédit la probabilité de performance de chaque création avant même de la publier — pensé pour accélérer la production de variantes publicitaires à tester.\n\nPour qui gère des campagnes publicitaires (Meta Ads, Google Ads) et doit produire de nombreuses variantes créatives à tester, c'est un gain de temps significatif comparé à un designer qui produirait chaque variante à la main.",
-    "longDescriptionEn": "AdCreative.ai generates ad creatives (banners, posts) from brand elements (logo, colors, products), with an AI score predicting each creative's likely performance before it's even published — designed to speed up producing ad variants to test.\n\nFor anyone managing ad campaigns (Meta Ads, Google Ads) who needs to produce many creative variants to test, it's a significant time saver compared to a designer manually producing each variant.",
-    "pricing": "À partir de ~21$/mois selon le volume de créations générées.",
-    "pricingEn": "From ~$21/month depending on the volume of creatives generated.",
+    "shortDescription": "Création de visuels publicitaires par IA, avec variantes de marque et scoring pour préparer vos tests.",
+    "shortDescriptionEn": "AI ad creative generation, with brand variants and scoring to prepare campaign tests.",
+    "description": "AdCreative.ai aide les équipes marketing et les e-commerçants à décliner leurs éléments de marque en visuels publicitaires et accroches. La génération permet de préparer plusieurs variantes avant téléchargement.\n\nLe scoring créatif sert à prioriser les annonces à tester. Il ne garantit ni conversions ni rentabilité : mesurez les résultats dans vos campagnes, avec votre audience et votre offre.\n\nNotre conseil : utilisez l’essai de 7 jours sur un produit réel. Comparez les exports utilisables, le temps de retouche et les crédits consommés avec votre méthode actuelle. Pour quelques publications occasionnelles ou une direction artistique très précise, Canva ou un travail de design manuel peuvent mieux convenir.",
+    "longDescription": "AdCreative.ai aide les équipes marketing et les e-commerçants à décliner leurs éléments de marque en visuels publicitaires et accroches. La génération permet de préparer plusieurs variantes avant téléchargement.\n\nLe scoring créatif sert à prioriser les annonces à tester. Il ne garantit ni conversions ni rentabilité : mesurez les résultats dans vos campagnes, avec votre audience et votre offre.\n\nNotre conseil : utilisez l’essai de 7 jours sur un produit réel. Comparez les exports utilisables, le temps de retouche et les crédits consommés avec votre méthode actuelle. Pour quelques publications occasionnelles ou une direction artistique très précise, Canva ou un travail de design manuel peuvent mieux convenir.",
+    "longDescriptionEn": "AdCreative.ai helps marketing teams and e-commerce sellers turn brand assets into ad visuals and copy. Generate multiple variants before choosing which ones to download.\n\nCreative scoring helps prioritize ads to test. It guarantees neither conversions nor profitability: measure results in your own campaigns, with your audience and offer.\n\nOur advice: use the 7-day trial on a real product. Compare usable exports, editing time and credits consumed with your current workflow. Canva or manual design may better suit occasional posts or very specific art direction.",
+    "pricing": {
+      "free": "Essai de 7 jours avec 10 crédits annoncés.",
+      "paid": "Starter : 39 $US/mois en paiement mensuel, pour 10 crédits et 1 marque. L’offre annuelle affiche 20 $US/mois, facturés annuellement. Vérifiez le total, les options et le renouvellement à l’inscription."
+    },
+    "pricingEn": {
+      "free": "7-day trial with 10 advertised credits.",
+      "paid": "Starter: US$39/month billed monthly, for 10 credits and 1 brand. The annual offer displays US$20/month, billed yearly. Check the total, options and renewal terms when signing up."
+    },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Le prix annuel est un équivalent mensuel avec paiement annuel. Vérifiez les conditions de l’essai et de renouvellement à l’inscription."
       ],
-      "verified_on": "2026-05-11",
-      "source_domain": "adcreativeai.com",
+      "verified_on": "2026-09-26",
+      "source_domain": "adcreative.ai",
       "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
-      "location_sensitive": false,
-      "official_source_url": "https://adcreativeai.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Starter",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://www.adcreative.ai/#pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter mensuel",
+          "summary": "39 $US par mois, facturés mensuellement.",
+          "featureHighlights": [
+            "10 crédits par mois",
+            "1 marque",
+            "Les téléchargements de visuels consomment des crédits"
+          ],
+          "detailsSourceUrl": "https://www.adcreative.ai/#pricing",
+          "pricingUnit": "mois",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 39,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "starter-annual",
+          "displayName": "Starter annuel",
+          "summary": "20 $US/mois affichés, facturés annuellement. Vérifiez le total au paiement.",
+          "featureHighlights": [
+            "10 crédits par mois",
+            "1 marque",
+            "Paiement annuel"
+          ],
+          "detailsSourceUrl": "https://www.adcreative.ai/#pricing",
+          "pricingUnit": "mois, facturé annuellement",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
-    "affiliateLink": "https://adcreativeai.com",
-    "websiteUrl": "https://adcreativeai.com",
-    "logo": "https://logo.clearbit.com/adcreativeai.com",
+    "affiliateLink": "https://free-trial.adcreative.ai/bl7nxarn1exp",
+    "websiteUrl": "https://www.adcreative.ai/",
+    "logo": "/tool-media/logos/adcreative-ai.png",
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [],
-        "augmentEn": "AdCreative.ai is an AI whose entire job is precisely to generate ad creatives and predict their likely conversion rate — AI isn't an added feature, it's the product itself.",
-        "augmentFr": "AdCreative.ai est une IA dont le métier est précisément de générer des visuels publicitaires et de prédire leur taux de conversion probable — l'IA n'est pas une fonctionnalité ajoutée, c'est le produit lui-même.",
-        "replaceEn": "Replace AdCreative.ai with another AI? The question barely applies, since it's already an AI-native ad generation tool. Verdict: AdCreative.ai was built around AI from the start rather than being challenged by it.",
-        "replaceFr": "Remplacer AdCreative.ai par une autre IA ? La question ne se pose pas vraiment, il s'agit déjà d'un outil IA-natif de génération publicitaire. Verdict : AdCreative.ai a été conçu autour de l'IA dès le départ plutôt que d'être challengé par elle."
-      }
+      "metaDescription": "AdCreative.ai : avis, prix, crédits et essai de 7 jours. Une IA publicitaire à tester avant de souscrire.",
+      "presentationTitleFr": "AdCreative.ai : avis, prix et essai gratuit",
+      "presentationTitleEn": "AdCreative.ai review, pricing and free trial",
+      "presentationMetaDescriptionFr": "AdCreative.ai : visuels publicitaires IA, essai de 7 jours, prix Starter et crédits. Notre avis pour choisir avant vos prochaines campagnes.",
+      "presentationMetaDescriptionEn": "AdCreative.ai review: AI ad creatives, 7-day trial, Starter pricing and credit limits. Compare alternatives before your next campaign.",
+      "idealForFr": "Pour les e-commerçants, freelances acquisition et petites équipes marketing qui disposent déjà d’une offre et d’un protocole de test.",
+      "idealForEn": "For e-commerce sellers, acquisition freelancers and small marketing teams with an offer and a testing process."
     },
     "pros": [
-      "Génération rapide de nombreuses variantes de créas.",
-      "Scores prédictifs pour prioriser les visuels.",
-      "Respect des éléments de marque.",
-      "Adapté aux formats des grandes régies publicitaires."
+      "Déclinaisons publicitaires à partir des éléments de marque.",
+      "Sélection des variantes avant téléchargement.",
+      "Scoring créatif pour organiser les tests."
     ],
     "prosEn": [
-      "Fast generation of many creative variants.",
-      "Predictive scores to prioritize visuals.",
-      "Respects brand assets.",
-      "Fits the formats of major ad networks."
+      "Ad variants built from brand assets.",
+      "Select variants before downloading.",
+      "Creative scoring to organize tests."
     ],
     "cons": [
-      "Système de crédits qui ne se reportent pas.",
-      "Contrôle créatif limité par rapport à un designer.",
-      "Pas de plan gratuit permanent."
+      "Les crédits limitent le volume de téléchargements.",
+      "Un score IA ne garantit pas la performance d’une campagne.",
+      "Des retouches et une validation de marque restent nécessaires."
     ],
     "consEn": [
-      "Credit system with no rollover.",
-      "Limited creative control versus a designer.",
-      "No permanent free plan."
+      "Credits limit download volume.",
+      "AI scores do not guarantee campaign performance.",
+      "Editing and brand review are still needed."
     ],
     "useCases": [
-      "Produire des variantes de bannières pour un test A/B.",
-      "Alimenter des campagnes Meta/Google en continu.",
-      "Générer des accroches publicitaires rapidement."
+      "Décliner une offre e-commerce en bannières.",
+      "Préparer des variantes pour un test A/B.",
+      "Renouveler les créations d’une campagne."
     ],
     "useCasesEn": [
-      "Produce banner variants for an A/B test.",
-      "Continuously feed Meta/Google campaigns.",
-      "Generate ad hooks quickly."
+      "Turn an e-commerce offer into banners.",
+      "Prepare variants for an A/B test.",
+      "Refresh campaign creatives."
     ],
     "covers": [
       "creator-workflow"
@@ -1616,39 +1663,39 @@
     "personas": [
       "lina"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "canva",
+      "figma"
+    ],
     "verdict": {
       "keepIf": [
-        "Vous produisez beaucoup de visuels publicitaires régulièrement.",
-        "Vous gérez des campagnes Meta/Google et voulez itérer vite.",
-        "Vous voulez tester des créas sans designer dédié."
+        "Vous produisez régulièrement des variantes pour des campagnes payantes.",
+        "Vous mesurez les créations testées pour sélectionner les meilleures."
       ],
       "avoidIf": [
-        "Vous ne lancez que quelques annonces par an.",
-        "Vous voulez un contrôle créatif fin, pixel par pixel.",
-        "Le système de crédits vous semble contraignant."
+        "Vous cherchez seulement quelques publications occasionnelles.",
+        "Vous attendez une garantie de performance ou du design sur mesure."
       ],
-      "threshold": "AdCreative.ai vaut son abonnement pour un flux soutenu de créas publicitaires ; pour un usage ponctuel, un outil de design généraliste suffit."
+      "threshold": "À tester sur une campagne réelle : les variantes utilisables et le temps gagné doivent justifier les crédits consommés.",
+      "faqPriceAnswer": "Comparez les exports et le temps de retouche avec votre méthode actuelle. Aucun gain de temps chiffré n’est garanti."
     },
     "verdictEn": {
       "keepIf": [
-        "You produce lots of ad creatives regularly.",
-        "You run Meta/Google campaigns and want to iterate fast.",
-        "You want to test creatives without a dedicated designer."
+        "You regularly produce variants for paid campaigns.",
+        "You measure tested creatives to select the best ones."
       ],
       "avoidIf": [
-        "You only launch a few ads per year.",
-        "You want fine, pixel-level creative control.",
-        "The credit system feels too restrictive."
+        "You only need occasional posts.",
+        "You expect guaranteed performance or bespoke design."
       ],
-      "threshold": "AdCreative.ai earns its subscription for a steady flow of ad creatives; for occasional use, a general design tool is enough."
+      "threshold": "Test it on a real campaign: usable variants and time saved must justify the credits consumed.",
+      "faqPriceAnswer": "Compare exports and editing time with your current workflow. No fixed time saving is guaranteed."
     },
     "articles": [],
-    "timeGainedHoursPerMonth": 3,
-    "freeAlternative": null,
+    "freeAlternative": "canva",
     "soloRelevance": "medium",
     "teamRelevance": "medium",
-    "tool_type": "specialise",
+    "tool_type": "ia",
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
@@ -1668,8 +1715,73 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": "content-creation",
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adcreative-ai.jpg",
-    "force_silence": false
+    "ogImageUrl": "/og-images/adcreative-ai.jpg",
+    "force_silence": false,
+    "affiliateCtaLabelFr": "Essayer pendant 7 jours",
+    "affiliateCtaLabelEn": "Try it for 7 days",
+    "galleryImages": [
+      "/tool-media/adcreative-ai/ad-variants.avif",
+      "/tool-media/adcreative-ai/creative-workflow.avif"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "The annual rate is a monthly equivalent billed yearly. Check trial and renewal terms when signing up."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "adcreative.ai",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Starter",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://www.adcreative.ai/#pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter monthly",
+          "summary": "US$39 per month, billed monthly.",
+          "featureHighlights": [
+            "10 credits per month",
+            "1 brand",
+            "Downloading ad creatives consumes credits"
+          ],
+          "detailsSourceUrl": "https://www.adcreative.ai/#pricing",
+          "pricingUnit": "month",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 39,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "starter-annual",
+          "displayName": "Starter annual",
+          "summary": "Displayed US$20/month equivalent, billed yearly. Confirm the total at checkout.",
+          "featureHighlights": [
+            "10 credits per month",
+            "1 brand",
+            "Annual billing"
+          ],
+          "detailsSourceUrl": "https://www.adcreative.ai/#pricing",
+          "pricingUnit": "month, billed yearly",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    }
   },
   {
     "id": "adcreative",

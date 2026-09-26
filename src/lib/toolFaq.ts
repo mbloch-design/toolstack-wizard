@@ -53,7 +53,7 @@ export function buildToolFaqs(
           ? `${tool.name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedSuffixFr}`
           : `${tool.name} doesn't publish a price list; check the official page for current pricing.${verifiedSuffixEn}`)
         : isFr
-          ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${plan}.${verifiedSuffixFr}`
+          ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${formatToolPrice(tool, displayPrice, "EUR", "fr").text}/mois`}${plan}.${verifiedSuffixFr}`
           : `${tool.name} costs ${displayPrice === 0 ? "$0 (free)" : `${formatToolPrice(tool, displayPrice, "USD", "en").text}/month`}${plan}.${verifiedSuffixEn}`,
     },
     {

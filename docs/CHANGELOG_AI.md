@@ -1,3 +1,18 @@
+## 2026-09-26 : Fiche AdCreative.ai et lien partenaire
+
+- Révise la fiche canonique `adcreative-ai` en FR/EN : usages, limites du scoring, alternatives et SEO. L’alias `adcreative` conserve sa redirection existante.
+- Installe le lien partenaire fourni sur le CTA d’essai de 7 jours et corrige le domaine officiel.
+- Tarifs officiels relevés : Starter 39 USD/mois en mensuel ; équivalent annuel affiché 20 USD/mois. Aucune conversion EUR inventée. Retire l’estimation horaire non étayée.
+- Ajoute le logo officiel, l’image Open Graph et deux illustrations produit issues du CDN de l’éditeur, sans capture réalisée par ToolTrim.
+- Corrige l’affichage de la devise native dans la fiche, la FAQ et les données structurées lorsque le prix EUR normalisé est absent.
+- Le prérendu distingue un essai d’un forfait gratuit permanent. Les montants annuels des abonnements sont ramenés à leur équivalent mensuel pour les comparaisons, sans convertir les licences à vie.
+- Sources : https://www.adcreative.ai/ ; https://www.adcreative.ai/ad-creatives ; https://www.adcreative.ai/creative-scoring. Images : `6798994af847e3d5f12f2e3f_Home.png`, `66aa467aba9463ef88f4949d_256.png`, `66f43875d8de96142e8e7d82_f1-s1.avif`, `66f4395692316a89f9adba71_Group%2033970.avif` sous `https://cdn.prod.website-files.com/661ce890f68a1d352ebbed35/`.
+
+## 2026-09-26 : Retrait de la mention d’affiliation sous le CTA des fiches
+
+- Retire la ligne de divulgation d’affiliation sous le bouton principal des fiches outil, dont Kit et ActiveCampaign.
+- Conserve les URLs affiliées et leurs attributs de lien, ainsi que les champs de transparence des données pour les autres emplacements.
+
 ## 2026-09-26 : Fiches affiliées et comparaison ActiveCampaign / Klaviyo
 
 - Report ciblé des révisions FR/EN Turbotic, Kit et ActiveCampaign sur le main distant actuel : contenu, tarifs documentés, SEO et liens partenaires.

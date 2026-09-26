@@ -6,6 +6,7 @@ import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { safeExternalUrl } from "@/lib/externalLink";
+import { nativePriceFromTool } from "@/lib/currencyRates";
 
 interface Props {
   tool: Tool;
@@ -27,6 +28,9 @@ interface Props {
  */
 export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false, canonicalUrl: pageCanonicalUrl }: Props) {
   useEffect(() => {
+    const nativePrice = nativePriceFromTool(tool);
+    const offerPrice = nativePrice?.amount ?? displayPrice;
+    const offerCurrency = nativePrice?.currency ?? "EUR";
     const canonicalUrl = pageCanonicalUrl || `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
     const pageIntent = canonicalUrl.endsWith("/prix") || canonicalUrl.endsWith("/pricing")
       ? (lang === "fr" ? "Prix et tarifs" : "Pricing and plans")
@@ -74,18 +78,18 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       url: safeExternalUrl(tool.websiteUrl) || canonicalUrl,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      offers: hasGenuineFreeTier(tool.pricing?.free) && displayPrice > 0
+      offers: hasGenuineFreeTier(tool.pricing?.free) && offerPrice > 0
         ? {
             "@type": "AggregateOffer",
             lowPrice: "0",
-            highPrice: String(displayPrice),
-            priceCurrency: "EUR",
+            highPrice: String(offerPrice),
+            priceCurrency: offerCurrency,
             offerCount: "2",
           }
         : {
             "@type": "Offer",
-            price: String(displayPrice || 0),
-            priceCurrency: "EUR",
+            price: String(offerPrice || 0),
+            priceCurrency: offerCurrency,
           },
       review: {
         "@type": "Review",

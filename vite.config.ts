@@ -8,8 +8,8 @@ import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
-import { isPriceUndisclosed, resolveMonthlyPrice } from "./src/lib/pricing";
-import { formatToolPrice, usdFromEur } from "./src/lib/currencyRates";
+import { hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "./src/lib/pricing";
+import { formatToolPrice, nativePriceFromTool, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
 import { localizePlanName } from "./src/lib/planNames";
@@ -275,7 +275,7 @@ function buildToolFaqSchema(params: {
 /** True when a tool has a real free plan (freemium or free). */
 function toolHasFreePlan(tool: any): boolean {
   const p = tool.pricing;
-  return !!(p && typeof p === "object" && p.free);
+  return !!(p && typeof p === "object" && hasGenuineFreeTier(p.free));
 }
 
 /**
@@ -290,7 +290,8 @@ function toolHasFreePlan(tool: any): boolean {
 function buildToolOffersFor(tool: any, price: number | null, url: string) {
   const hasFree = toolHasFreePlan(tool);
   if (isPriceUndisclosed(tool) && !hasFree) return undefined;
-  return buildToolOffers(price, hasFree, "EUR", url);
+  const native = nativePriceFromTool(tool);
+  return buildToolOffers(native?.amount ?? price, hasFree, native?.currency ?? "EUR", url);
 }
 
 function buildToolOffers(price: number | null, hasFree: boolean, currency: string, url: string) {
@@ -962,7 +963,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // free tool's price is legitimately 0, which is falsy but not
           // absent — `0 || null` and `price ? ... : null` both silently
           // turn a real "it's free" value into "price unknown".
-          const price = resolveMonthlyPrice(tool);
+          const price = nativePriceFromTool(tool)?.amount ?? resolveMonthlyPrice(tool);
           const priceDisplay = price != null ? Math.round(price) : null;
           const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
 
@@ -1187,7 +1188,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const name = tool.name || slug;
           // ?? not ||: a free tool's price is legitimately 0 (see the
           // matching fix in the main-page loop above).
-          const price = resolveMonthlyPrice(tool);
+          const price = nativePriceFromTool(tool)?.amount ?? resolveMonthlyPrice(tool);
           // Rounded value for the FAQ's natural-language pricing answer,
           // so it matches the main tool page's FAQPage answer to the same
           // question instead of disagreeing on precision (64€ vs 64.39€).
