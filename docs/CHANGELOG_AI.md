@@ -4605,3 +4605,8 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Note documentaire v2 3,6/5 : axes 3/4/4/4/3, preuves FR/EN. Sources complémentaires : https://brand24.com/tour/ et https://help.brand24.com/en/articles/5336569-excel-report. Pas de test terrain revendiqué.
 - Logo et OG officiels ; galerie issue du tour produit : Header-tour.png, Sekcja-1-jpg.jpg et Sekcja-2-jpg.jpg depuis https://brand24.com/app/uploads/. Aucune capture créée.
 - Correction du cluster email-outreach vers brand-monitoring et questions de contexte associées ; recommandations automatiques désactivées en l’absence de contexte. Suppression du gain de temps non étayé.
+## 2026-09-26 : Deel, révision affiliée FR/EN
+
+- Services et prix USD par personne distingués, démo et non essai gratuit. Note documentaire v2 : 3,4/5. Retire conversion EUR, gains horaires et garanties non démontrés.
+- Sources : https://www.deel.com/pricing/ et https://www.deel.com/partners/affiliates/ . Lien partenaire conservé, CTA démo.
+- Logo officiel `/icon.png`, OG `General_Purple_f6b2f3f9bd.png`, illustrations `card_universal_benefit_1_41de0ffdb8.png`, `card_universal_benefit_3_0590855b14.png`, `feature_card_3col_headcount_approvals_d1d4b1b286.png` sur website-media.deel.com. Pas de capture ToolTrim.

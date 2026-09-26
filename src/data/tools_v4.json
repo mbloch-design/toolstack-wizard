@@ -41034,26 +41034,24 @@
   {
     "id": "deel",
     "name": "Deel",
-    "shortDescription": "Contrats, paie internationale, EOR et gestion de collaborateurs distribués.",
-    "description": "Deel aide à contractualiser, payer et gérer des collaborateurs ou prestataires dans plusieurs pays. Pour ToolTrim, c’est pertinent dès que le sujet légal/RH dépasse la simple facture freelance. En dessous, il peut être trop structurant et coûteux.",
+    "shortDescription": "Contrats et paiements internationaux, gestion des prestataires et emploi via EOR.",
+    "description": "Deel centralise les contrats, documents et paiements d’une équipe internationale. Distinguez la gestion des prestataires, leur engagement via Contractor of Record et l’emploi de salariés via Employer of Record (EOR), sans ouvrir votre propre entité locale.\n\nPour ToolTrim, partez d’un pays et d’un statut de travailleur précis. Confirmez la couverture, les responsabilités, l’intégration et le coût complet avant de déplacer vos contrats. Le nombre de pays ne suffit pas à justifier le choix.\n\nLa démo n’est pas un essai gratuit des services payants. Les prix sont par personne et par service ; les obligations locales d’emploi restent à prendre en compte lors d’une sortie. Analyse documentaire, sans test terrain ni gain horaire garanti.",
     "category": "hris-payroll",
     "pricing": {
-      "free": "Certains modules RH peuvent être gratuits ou inclus selon offre.",
-      "paid": "Deel Contractor Management affiché à partir d’environ 49 $/mois ; EOR, Payroll et modules avancés sur devis."
+      "free": "Démo gratuite sur demande, pas un essai gratuit des services payants.",
+      "paid": "Contractor Management : 49 $US/prestataire/mois. Contractor of Record : 325 $US/prestataire/mois. EOR : 599 $US/salarié/mois. PEO États-Unis : 125 $US/salarié/mois. Coût complet et conditions par pays à confirmer."
     },
-    "website": "https://deel.com",
+    "website": "https://www.deel.com/",
     "affiliateLink": "https://get.deel.com/hftlk37l5raa",
     "pros": [
-      "Paie dans 150+ pays avec compliance locale automatique.",
-      "Solution tout-en-un (paie, HR, visa, IT).",
-      "Gestion visa et mobilité intégrée.",
-      "Conformité SOC 2 et GDPR robuste.",
-      "Support d'experts locaux dans 150+ pays."
+      "Contrats et paiements centralisés.",
+      "Modèles distincts selon le statut du travailleur.",
+      "EOR sans ouvrir sa propre entité locale."
     ],
     "cons": [
-      "Pas de tier gratuit (consultation vente requise).",
-      "Coûts potentiellement élevés pour grandes équipes.",
-      "Complexité de mise en œuvre."
+      "Services distincts, pas un abonnement couvrant tout.",
+      "Budget par personne et conditions par pays.",
+      "Changer d’EOR implique plus qu’un export de données."
     ],
     "bestFor": [
       "all"
@@ -41064,45 +41062,35 @@
       "hr-compliance"
     ],
     "freeAlternative": null,
-    "soloRelevance": "à vérifier selon volume",
-    "teamRelevance": "utile si usage récurrent",
-    "defaultMonthlyPrice": 49,
+    "soloRelevance": "low",
+    "teamRelevance": "high",
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "0€/mois"
+      "free": "Démo gratuite sur demande, pas un essai gratuit des services payants.",
+      "paid": "Contractor Management : 49 $US/prestataire/mois. Contractor of Record : 325 $US/prestataire/mois. EOR : 599 $US/salarié/mois. PEO États-Unis : 125 $US/salarié/mois. Coût complet et conditions par pays à confirmer."
     },
     "relevantFor": [
-      "Entreprises globales",
-      "Startups distributes"
+      "Équipes internationales",
+      "Responsables RH"
     ],
     "verdict": {
       "keepIf": [
-        "Vous opérez dans 5+ pays et avez besoin de paie centralisée.",
-        "Vous embauchez de freelances ou contractors globalement.",
-        "Vous cherchez une solution tout-en-un (paie, HR, visa, IT)."
+        "Vous gérez régulièrement des prestataires internationaux.",
+        "Vous avez besoin d’un EOR dans un pays couvert."
       ],
       "avoidIf": [
-        "Vous n'opérez qu'en un seul pays.",
-        "Vous avez un budget serré (coûts d'entreprise).",
-        "Vous cherchez une solution simple sans complexité multi-pays."
+        "Vous cherchez seulement un outil de facturation personnelle.",
+        "Le statut des travailleurs et le coût complet restent à valider."
       ],
-      "threshold": "Deel s'adresse aux entreprises globales cherchant une solution centralisée pour paie multi-pays, conformité locale et gestion d'équipes distribuées."
+      "threshold": "Comparez une même population, un même pays et un même service. Les 49 $US du Contractor Management ne sont pas le tarif EOR."
     },
     "alternatives": [
       "remote",
-      "rippling",
-      "bamboohr"
+      "rippling"
     ],
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [],
-        "augmentEn": "Deel uses AI to generate country-compliant contracts and speed up onboarding, but the Employer of Record (EOR) status — the entity that legally hires on your behalf abroad — remains a human, regulatory responsibility that AI can't carry on its own.",
-        "augmentFr": "Deel utilise l'IA pour générer des contrats conformes selon le pays et accélérer l'onboarding, mais le statut d'Employer of Record (EOR) — l'entité qui embauche légalement à ta place à l'étranger — reste une responsabilité humaine et réglementaire que l'IA ne peut pas porter seule.",
-        "replaceEn": "Replace Deel with an AI? No: international payroll and EOR status involve real legal and tax liability in each country, not just document generation. AI speeds up contract drafting and compliance, but the legal infrastructure behind it (local entities, labor law) remains the actual product. Verdict: AI augments speed, not legal coverage.",
-        "replaceFr": "Remplacer Deel par une IA ? Non : la paie internationale et le statut d'EOR impliquent une responsabilité légale et fiscale réelle dans chaque pays, pas seulement de la génération de documents. L'IA accélère la rédaction des contrats et la conformité, mais l'infrastructure légale derrière (entités locales, droit du travail) reste le vrai produit. Verdict : l'IA augmente la rapidité, pas la couverture légale."
-      },
-      "metaDescription": "Deel sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Deel mérite sa place dans ta stack."
+      "metaDescription": "Deel : avis, tarifs par prestataire et salarié, EOR et Contractor of Record. Comparez les services avant de demander une démo.",
+      "metaDescriptionEn": "Deel review: contractor and employee pricing, EOR and Contractor of Record. Compare services before booking a demo."
     },
     "articles": [],
     "tool_type": "gestion",
@@ -41122,69 +41110,127 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "deel",
-    "shortDescriptionEn": "Contracts, global payroll, EOR and distributed workforce management.",
-    "longDescription": "Deel aide à contractualiser, payer et gérer des collaborateurs ou prestataires dans plusieurs pays. Pour ToolTrim, c’est pertinent dès que le sujet légal/RH dépasse la simple facture freelance. En dessous, il peut être trop structurant et coûteux.",
-    "longDescriptionEn": "Deel helps manage contractors, global payroll and EOR workflows. ToolTrim sees it as useful when international hiring becomes operationally risky.",
+    "shortDescriptionEn": "International contracts and payments, contractor management and EOR employment.",
+    "longDescription": "Deel centralise les contrats, documents et paiements d’une équipe internationale. Distinguez la gestion des prestataires, leur engagement via Contractor of Record et l’emploi de salariés via Employer of Record (EOR), sans ouvrir votre propre entité locale.\n\nPour ToolTrim, partez d’un pays et d’un statut de travailleur précis. Confirmez la couverture, les responsabilités, l’intégration et le coût complet avant de déplacer vos contrats. Le nombre de pays ne suffit pas à justifier le choix.\n\nLa démo n’est pas un essai gratuit des services payants. Les prix sont par personne et par service ; les obligations locales d’emploi restent à prendre en compte lors d’une sortie. Analyse documentaire, sans test terrain ni gain horaire garanti.",
+    "longDescriptionEn": "Deel centralizes international workforce contracts, documents and payments. Distinguish contractor management, Contractor of Record engagement and Employer of Record (EOR) employment without opening your own local entity.\n\nToolTrim recommends starting with a specific country and worker status. Confirm coverage, responsibilities, onboarding and full cost before moving contracts. Country count alone does not justify the choice.\n\nA demo is not a free trial of paid services. Prices are per person and service; local employment obligations still apply when leaving. Documentation-based review, without hands-on testing or guaranteed time savings.",
     "pricingEn": {
-      "free": "Some HR modules may be free or included depending on offer.",
-      "paid": "Contractor Management starts around $49/month; EOR, Payroll and advanced modules are quote-based."
+      "free": "Free demo on request, not a free trial of paid services.",
+      "paid": "Contractor Management: $49/contractor/month. Contractor of Record: $325/contractor/month. EOR: $599/employee/month. US PEO: $125/employee/month. Confirm full cost and country-specific terms."
     },
     "pricing_v5": {
       "cautions": [
-        "Le coût varie fortement entre contractor, EOR, payroll et pays concernés."
+        "USD par personne et par service, sans conversion EUR. Couverture et coût complet à confirmer par pays."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "deel.com",
       "usage_sensitive": true,
       "compare_plan_kind": "paid",
       "compare_plan_name": "Contractor Management",
-      "price_reliability": "public_pricing_or_public_entry_plan",
+      "price_reliability": "high",
       "location_sensitive": true,
-      "official_source_url": "https://www.deel.com/pricing",
-      "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 49
+      "official_source_url": "https://www.deel.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "contractor-management",
+          "displayName": "Contractor Management",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "49 $US par prestataire et par mois. Coût complet et conditions à confirmer.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "contractor-of-record",
+          "displayName": "Contractor of Record",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 325,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "325 $US par prestataire et par mois. Coût complet et conditions à confirmer.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "eor",
+          "displayName": "Employer of Record",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 599,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "599 $US par salarié et par mois. Coût complet et conditions à confirmer.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "us-peo",
+          "displayName": "US PEO",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 125,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "125 $US par salarié aux États-Unis et par mois. Coût complet et conditions à confirmer.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
-    "websiteUrl": "https://www.deel.com",
-    "logo": "",
+    "websiteUrl": "https://www.deel.com/",
+    "logo": "/tool-media/logos/deel.png",
     "verdictEn": {
       "keepIf": [
-        "You operate in 5+ countries and need centralized payroll.",
-        "You hire freelancers or contractors globally.",
-        "You seek an all-in-one solution (payroll, HR, visa, IT)."
+        "You regularly manage international contractors.",
+        "You need an EOR in a supported country."
       ],
       "avoidIf": [
-        "You operate in only one country.",
-        "You have a tight budget (enterprise costs).",
-        "You seek a simple single-country solution."
+        "You only need personal invoicing software.",
+        "Worker status and full cost remain unvalidated."
       ],
-      "threshold": "Deel targets global enterprises seeking a centralized solution for multi-country payroll, local compliance, and distributed team management."
+      "threshold": "Compare the same workforce, country and service. The $49 Contractor Management fee is not the EOR price."
     },
     "prosEn": [
-      "Payroll in 150+ countries with automated local compliance.",
-      "All-in-one solution (payroll, HR, visa, IT).",
-      "Integrated visa and mobility management.",
-      "Robust SOC 2 and GDPR compliance.",
-      "Local expert support across 150+ countries."
+      "Centralized contracts and payments.",
+      "Different models for different worker statuses.",
+      "EOR without opening your own local entity."
     ],
     "consEn": [
-      "No free tier (sales consultation required).",
-      "Potential high costs for large teams.",
-      "Implementation complexity."
+      "Separate services, not one subscription covering everything.",
+      "Per-person costs and country-specific terms.",
+      "Switching EOR involves more than exporting data."
     ],
     "useCases": [
-      "Centraliser paie pour équipe distribuée (5+ pays).",
-      "Gérer contractors et freelancers mondialement.",
-      "Automatiser conformité de paie multi-juridictions."
+      "Gérer des prestataires internationaux.",
+      "Recruter via un EOR.",
+      "Centraliser les opérations RH et paie."
     ],
     "useCasesEn": [
-      "Centralize payroll for distributed team (5+ countries).",
-      "Manage contractors and freelancers globally.",
-      "Automate multi-jurisdiction payroll compliance."
+      "Manage international contractors.",
+      "Hire through an EOR.",
+      "Centralize HR and payroll operations."
     ],
     "personas": [
       "CLAIRE"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -41207,7 +41253,114 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://website-media.deel.com/General_Purple_f6b2f3f9bd.png"
+    "ogImageUrl": "/og-images/deel.jpg",
+    "affiliateCtaLabelFr": "Demander une démo",
+    "affiliateCtaLabelEn": "Book a demo",
+    "galleryImages": [
+      "/tool-media/deel/headcount.png",
+      "/tool-media/deel/payroll.png",
+      "/tool-media/deel/compliance.png"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "USD per person and service, no EUR conversion. Confirm coverage and full cost by country."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "deel.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Contractor Management",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.deel.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "contractor-management",
+          "displayName": "Contractor Management",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "$49 per contractor per month. Confirm terms and full cost.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "contractor-of-record",
+          "displayName": "Contractor of Record",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 325,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "$325 per contractor per month. Confirm terms and full cost.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "eor",
+          "displayName": "Employer of Record",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 599,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "$599 per employee per month. Confirm terms and full cost.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "us-peo",
+          "displayName": "US PEO",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 125,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "$125 per US employee per month. Confirm terms and full cost.",
+          "featureHighlights": [],
+          "detailsSourceUrl": "https://www.deel.com/pricing/",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 2,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Centralisation contrats et paiements, ROI non mesuré. https://www.deel.com/pricing/ (2026-09-26).",
+        "simplicite": "Services et statuts à distinguer ; pas de test terrain. https://www.deel.com/pricing/ (2026-09-26).",
+        "utilisation": "Usage récurrent pour une équipe internationale. https://www.deel.com/pricing/ (2026-09-26).",
+        "puissance": "Prestataires, EOR et PEO selon couverture. https://www.deel.com/pricing/ (2026-09-26).",
+        "reversibilite": "Sortie EOR soumise aux préavis et obligations locales. https://www.deel.com/pricing/ (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Centralized contracts and payments; ROI not measured. https://www.deel.com/pricing/ (2026-09-26).",
+        "simplicite": "Services and statuses require assessment; not hands-on tested. https://www.deel.com/pricing/ (2026-09-26).",
+        "utilisation": "Recurring international workforce workflows. https://www.deel.com/pricing/ (2026-09-26).",
+        "puissance": "Contractors, EOR and PEO depending on coverage. https://www.deel.com/pricing/ (2026-09-26).",
+        "reversibilite": "EOR exit subject to local notice and employment obligations. https://www.deel.com/pricing/ (2026-09-26)."
+      }
+    }
   },
   {
     "id": "deepseek",

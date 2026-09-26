@@ -8231,17 +8231,16 @@
     "slug": "deel",
     "name": "Deel",
     "categoryId": "hris-payroll",
-    "shortDescription": "Contrats, paie internationale, EOR et gestion de collaborateurs distribués.",
-    "shortDescriptionEn": "Contracts, global payroll, EOR and distributed workforce management.",
+    "shortDescription": "Contrats et paiements internationaux, gestion des prestataires et emploi via EOR.",
+    "shortDescriptionEn": "International contracts and payments, contractor management and EOR employment.",
     "pricing": {
-      "free": "Certains modules RH peuvent être gratuits ou inclus selon offre.",
-      "paid": "Deel Contractor Management affiché à partir d’environ 49 $/mois ; EOR, Payroll et modules avancés sur devis."
+      "free": "Démo gratuite sur demande, pas un essai gratuit des services payants.",
+      "paid": "Contractor Management : 49 $US/prestataire/mois. Contractor of Record : 325 $US/prestataire/mois. EOR : 599 $US/salarié/mois. PEO États-Unis : 125 $US/salarié/mois. Coût complet et conditions par pays à confirmer."
     },
-    "defaultMonthlyPrice": 49,
-    "compareMonthlyPrice": 49,
     "affiliateLink": "https://get.deel.com/hftlk37l5raa",
-    "websiteUrl": "https://www.deel.com",
-    "ogImageUrl": "https://website-media.deel.com/General_Purple_f6b2f3f9bd.png",
+    "websiteUrl": "https://www.deel.com/",
+    "ogImageUrl": "/og-images/deel.jpg",
+    "logo": "/tool-media/logos/deel.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "hris-payroll",
     "functional_needs": [
@@ -8254,8 +8253,8 @@
       "fondateur-saas"
     ],
     "relevantFor": [
-      "Entreprises globales",
-      "Startups distributes"
+      "Équipes internationales",
+      "Responsables RH"
     ],
     "prescription_quality": "question",
     "personas": [
