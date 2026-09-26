@@ -15003,22 +15003,20 @@
     "slug": "ignition",
     "name": "Ignition",
     "categoryId": "finance",
-    "shortDescription": "Propositions commerciales et contrats professionnels.",
-    "shortDescriptionEn": "Professional business proposals and contracts.",
+    "shortDescription": "Propositions, signatures, facturation et encaissements reliés pour les cabinets et agences.",
+    "shortDescriptionEn": "Connected proposals, signatures, billing and payment collection for service firms and agencies.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 69$/mois (Professional) - 149$/mois (Business)"
+      "free": "Essai de 14 jours sans carte bancaire, pas de forfait gratuit permanent. Offre US : jusqu’à 10 000 $US encaissés sans frais pendant l’essai, puis paiements suspendus jusqu’au passage à une offre payante.",
+      "paid": "Tarifs US hors taxes, en mensuel : Solo 49 $US (sous conditions), Core 149 $, Pro 279 $, Pro+ 499 $. En annuel : équivalents de 39 $, 99 $, 229 $ et 399 $/mois. Clients supplémentaires, options et paiements en sus."
     },
-    "defaultMonthlyPrice": 59.76,
-    "compareMonthlyPrice": 59.76,
     "affiliateLink": "https://get.practiceignition.com/e261f8d417a0",
-    "ogImageUrl": "https://cache.ignitionapp.com/misc/_1200x630_crop_center-center_82_none/2411-GLOBAL-WEBSITE-MetaImage-1200x628.png?mtime=1733727482",
+    "websiteUrl": "https://www.ignitionapp.com/",
+    "ogImageUrl": "/og-images/ignition.png",
+    "logo": "/tool-media/logos/ignition.svg",
     "tool_type": "gestion",
     "substitution_cluster_v2": "finance-ops",
     "functional_needs": [
-      "comptabilite",
       "facturation",
-      "paie",
       "paiements"
     ],
     "verticals": [
@@ -15031,8 +15029,7 @@
       "Agences digitales/marketing",
       "Consulting"
     ],
-    "prescription_quality": "question",
-    "freeAlternative": "indy"
+    "prescription_quality": "question"
   },
   {
     "id": "impact",

@@ -1,3 +1,12 @@
+## 2026-09-26 : Ignition, révision affiliée FR/EN
+
+- Révision du contenu, verdict et SEO ; anciens tarifs convertis EUR, gains horaires et fausses alternatives gratuites retirés. Périmètre recentré sur propositions, signatures, facturation et paiements, sans promesse de comptabilité complète ni paie. Note documentaire 3,6/5, sans test terrain.
+- Tarifs US observés sur https://www.ignitionapp.com/pricing dans le navigateur, bascules mensuel/annuel : 49/149/279/499 USD mensuels ; équivalents annuels 39/99/229/399. Hors taxes, clients actifs et utilisateurs précisés. Solo exige moins de 150 000 USD de CA, connexion Xero/QuickBooks et paiements activés. FAQ essai : 14 jours, sans carte, collecte US jusqu’à 10 000 USD sans frais puis suspension avant passage payant. Frais récurrents variables : https://support.ignitionapp.com/en/articles/9489207-how-payment-fees-are-calculated.
+- Lien exact fourni testé dans le navigateur : redirection referral-gift avec identifiant partenaire. Aucune remise chiffrée promise car titre et contenu de cette page divergent. Site officiel séparé du lien affilié.
+- Sources produit : https://www.ignitionapp.com/product/online-proposal-management ; https://support.ignitionapp.com/en/articles/6446488-proposals-3-services-and-billing-5-mins ; exports : https://support.ignitionapp.com/en/articles/5440306-how-to-export-a-report-for-your-proposals et /600809-import-and-edit-your-clients-in-bulk.
+- Médias éditeur : logo-dark.svg sous cache.ignitionapp.com/assets/2049dccb1a8081df41f8f4e3a61550f0/img/ignition/ ; OG cache.ignitionapp.com/misc/2411-GLOBAL-WEBSITE-MetaImage-1200x628.png. Trois SVG officiels sous ignition-www.imgix.net/features/ : Feature-Proposals-Subfeature-Options-735x652-v2.svg, Feature-Proposals-Subfeature-BrandedProposals-735x652-v2.svg et Feature-Proposals-Subfeature-PaymentCollection-735x652-v1-2.svg. Aucune capture fabriquée.
+- Guide rédaction : dépendances canon/claims absentes (approved-fallback, identifiants et offset inconnus) ; faits tirés des sources officielles et structure existante conservée. Limite de build globale préexistante de 13 000 fichiers à surveiller séparément.
+
 ## 2026-09-26 : GetResponse, révision affiliée FR/EN
 
 - Lien affilié fourni conservé et vérifié ; CTA gratuit. Contenu et verdict réécrits, anciennes promesses de délivrabilité et gains horaires non sourcés retirées. Note documentaire 3,6/5 sur cinq axes, sans test terrain.

@@ -74509,43 +74509,33 @@
     "id": "ignition",
     "name": "Ignition",
     "category": "finance",
-    "description": "Ignition, c'est propositions commerciales et contrats professionnels. À partir de 59.76€/mois. Pensé pour les consultants B2B et les DAF et responsables finance.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : 5+ propositions commerciales par mois ou revenus 10k+$/mois. À éviter si : moins de 3 propositions/mois ou budget <69$/mois. Si vous envoyez 5+ propositions commerciales par mois. Alternative gratuite : indy.",
-    "shortDescription": "Propositions commerciales et contrats professionnels.",
+    "description": "Ignition relie propositions commerciales, signature des conditions, facturation et encaissement pour les cabinets comptables, agences et consultants. Il permet de définir une prestation et son échéancier, puis de déclencher la facturation après acceptation. Son intérêt est de garder un lien entre ce qui a été vendu et ce qui doit être facturé, notamment pour les missions récurrentes ou les prestations supplémentaires.\n\nPour ToolTrim, testez une mission réelle pendant l’essai de 14 jours : préparez la proposition, vérifiez le parcours de signature, le calendrier de facturation et la synchronisation avec votre logiciel comptable. L’outil ne remplace pas à lui seul toute votre comptabilité. Les moyens de paiement et intégrations disponibles doivent être validés pour votre pays ; une disponibilité en France n’est pas présumée.\n\nLe coût combine abonnement, éventuels clients actifs supplémentaires, options et frais de transaction. Les prix présentés ici sont ceux du marché américain, en dollars US hors taxes, sans conversion en euros. Solo est soumis à des conditions : moins de 150 000 $US de chiffre d’affaires annuel, un seul utilisateur, connexion à Xero ou QuickBooks Online et activation des paiements. Si vous n’êtes pas éligible, comparez Core plutôt que le seul prix d’appel.\n\nLes clients et rapports de propositions sont exportables en CSV. Avant une migration, archivez également vos documents signés et vérifiez comment reprendre les échéanciers et paiements dans le nouvel outil. Les promesses commerciales de croissance et de temps gagné ne constituent pas une mesure des résultats de votre cabinet.",
+    "shortDescription": "Propositions, signatures, facturation et encaissements reliés pour les cabinets et agences.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 69$/mois (Professional) - 149$/mois (Business)"
+      "free": "Essai de 14 jours sans carte bancaire, pas de forfait gratuit permanent. Offre US : jusqu’à 10 000 $US encaissés sans frais pendant l’essai, puis paiements suspendus jusqu’au passage à une offre payante.",
+      "paid": "Tarifs US hors taxes, en mensuel : Solo 49 $US (sous conditions), Core 149 $, Pro 279 $, Pro+ 499 $. En annuel : équivalents de 39 $, 99 $, 229 $ et 399 $/mois. Clients supplémentaires, options et paiements en sus."
     },
     "affiliateLink": "https://get.practiceignition.com/e261f8d417a0",
     "verdict": {
       "keepIf": [
-        "Vous dirigez un cabinet de services (comptabilité, conseil, agences).",
-        "Vous facturez régulièrement des clients et devez améliorer la trésorerie.",
-        "Vous avez plusieurs contrats/projets à gérer en parallèle."
+        "Vous voulez relier accords clients, factures et encaissements dans un même parcours.",
+        "Vous gérez des prestations récurrentes et utilisez une intégration comptable compatible."
       ],
       "avoidIf": [
-        "Vous cherchez un logiciel entièrement gratuit.",
-        "Vous avez surtout des factures simples et peu de workflows.",
-        "Vous êtes déjà satisfait de votre ERPodule de gestion existant."
+        "Votre besoin se limite à quelques signatures ou factures ponctuelles.",
+        "Les paiements ou intégrations nécessaires ne sont pas disponibles dans votre pays."
       ],
-      "threshold": "Ignition convient pour les cabinets de services croissants qui veulent automatiser proposal-to-paid ; pour solo freelance avec peu de clients, un modèle plus léger suffit."
+      "threshold": "Validez un parcours complet pendant l’essai et calculez le coût avec vos clients actifs, les options et les frais de paiement. Vérifiez l’éligibilité avant de choisir Solo."
     },
     "seo": {
-      "metaDescription": "Ignition vaut-il 69€/mois ? Analyse complète pour freelances : propositions commerciales, engagement letters, alternatives gratuites (DocuSign, PandaDoc)."
+      "metaDescription": "Ignition : avis, essai de 14 jours, tarifs Solo et Core, frais de paiement. Comparez propositions, signatures et facturation pour cabinets et agences.",
+      "metaDescriptionEn": "Ignition review: 14-day trial, Solo and Core pricing, payment fees, proposals, signing and billing for accounting firms and agencies."
     },
     "articles": [],
     "alternatives": [
-      {
-        "name": "Google Docs + DocuSign gratuit",
-        "reason": "Gratuit, 3 signatures/mois suffisent pour la plupart"
-      },
-      {
-        "name": "PandaDoc",
-        "reason": "1 document/mois gratuit, puis 19$/mois"
-      },
-      {
-        "name": "Notion + Stripe Payment Links",
-        "reason": "Gratuit, DIY mais fonctionnel"
-      }
+      "pandadoc",
+      "proposify",
+      "dubsado"
     ],
     "tags": [
       "propositions",
@@ -74560,22 +74550,20 @@
       "facturation"
     ],
     "covers": [
-      "comptabilite",
       "facturation",
-      "paie",
       "paiements"
     ],
-    "freeAlternative": "indy",
+    "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "bestFor": [
       "consultant",
       "designer"
     ],
-    "defaultMonthlyPrice": 59.76,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 69$/mois (Professional) - 149$/mois (Business)"
+      "free": "Essai de 14 jours sans carte bancaire, pas de forfait gratuit permanent. Offre US : jusqu’à 10 000 $US encaissés sans frais pendant l’essai, puis paiements suspendus jusqu’au passage à une offre payante.",
+      "paid": "Tarifs US hors taxes, en mensuel : Solo 49 $US (sous conditions), Core 149 $, Pro 279 $, Pro+ 499 $. En annuel : équivalents de 39 $, 99 $, 229 $ et 399 $/mois. Clients supplémentaires, options et paiements en sus."
     },
     "relevantFor": [
       "Cabinets comptables",
@@ -74590,9 +74578,7 @@
       "daf-finance"
     ],
     "functional_needs": [
-      "comptabilite",
       "facturation",
-      "paie",
       "paiements"
     ],
     "betterAlternative": null,
@@ -74601,77 +74587,139 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "ignition",
-    "shortDescriptionEn": "Professional business proposals and contracts.",
-    "longDescription": "Ignition, c'est propositions commerciales et contrats professionnels. À partir de 59.76€/mois. Pensé pour les consultants B2B et les DAF et responsables finance.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : 5+ propositions commerciales par mois ou revenus 10k+$/mois. À éviter si : moins de 3 propositions/mois ou budget <69$/mois. Si vous envoyez 5+ propositions commerciales par mois. Alternative gratuite : indy.",
-    "longDescriptionEn": "Ignition is professional business proposals and contracts. Starting at €59.76/month. Built for B2B consultants and CFOs and finance managers.\n\nEstimated time saving: 2h/month.\n\nKeep it if: 5+ sales proposals per month or revenue $10k+/month. Skip it if: less than 3 proposals/month or budget <$69/month. If you send 5+ sales proposals per month. Free alternative: indy.",
+    "shortDescriptionEn": "Connected proposals, signatures, billing and payment collection for service firms and agencies.",
+    "longDescription": "Ignition relie propositions commerciales, signature des conditions, facturation et encaissement pour les cabinets comptables, agences et consultants. Il permet de définir une prestation et son échéancier, puis de déclencher la facturation après acceptation. Son intérêt est de garder un lien entre ce qui a été vendu et ce qui doit être facturé, notamment pour les missions récurrentes ou les prestations supplémentaires.\n\nPour ToolTrim, testez une mission réelle pendant l’essai de 14 jours : préparez la proposition, vérifiez le parcours de signature, le calendrier de facturation et la synchronisation avec votre logiciel comptable. L’outil ne remplace pas à lui seul toute votre comptabilité. Les moyens de paiement et intégrations disponibles doivent être validés pour votre pays ; une disponibilité en France n’est pas présumée.\n\nLe coût combine abonnement, éventuels clients actifs supplémentaires, options et frais de transaction. Les prix présentés ici sont ceux du marché américain, en dollars US hors taxes, sans conversion en euros. Solo est soumis à des conditions : moins de 150 000 $US de chiffre d’affaires annuel, un seul utilisateur, connexion à Xero ou QuickBooks Online et activation des paiements. Si vous n’êtes pas éligible, comparez Core plutôt que le seul prix d’appel.\n\nLes clients et rapports de propositions sont exportables en CSV. Avant une migration, archivez également vos documents signés et vérifiez comment reprendre les échéanciers et paiements dans le nouvel outil. Les promesses commerciales de croissance et de temps gagné ne constituent pas une mesure des résultats de votre cabinet.",
+    "longDescriptionEn": "Ignition connects proposals, signed terms, billing and payment collection for accounting firms, agencies and consultants. You define a service and billing schedule, then trigger invoicing after acceptance. Its value is keeping sold work connected to billable work, particularly for recurring engagements and additional services.\n\nToolTrim recommends testing a real engagement during the 14-day trial: prepare the proposal, review signing, check the billing schedule and test your accounting integration. Ignition is not a complete replacement for accounting software. Confirm payment and integration availability in your country before adopting it.\n\nBudget for the subscription, additional active clients, optional features and transaction fees. Prices shown are US-market prices in US dollars excluding tax, not euro conversions. Solo requires annual revenue below US$150,000, one user, a Xero or QuickBooks Online connection and enabled payments. If you do not qualify, compare Core rather than relying on the entry price.\n\nClient and proposal reports can be exported as CSV. Before migrating, also archive signed documents and check how billing schedules and payments will transfer. Vendor claims about revenue growth or time saved are not measured results for your business.",
     "pricingEn": {
-      "free": "14-day free trial",
-      "paid": "From $69/month (Professional) - $149/month (Business)"
+      "free": "14-day trial without a credit card; no permanent free plan. US offer: collect up to US$10,000 without fees during the trial, then payments pause until upgrading to a paid plan.",
+      "paid": "US monthly prices excluding tax: Solo US$49 (eligibility required), Core $149, Pro $279, Pro+ $499. Annual billing equivalents: $39, $99, $229 and $399/month. Additional clients, add-ons and payment fees cost extra."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "practiceignition.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "cautions": [
+        "Prix US hors taxes. Frais de transaction, clients actifs supplémentaires et options en sus. Solo exige des critères de revenus, une connexion comptable et l’activation des paiements."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "ignitionapp.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Solo",
       "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://www.practiceignition.com/au/pricing",
+      "location_sensitive": true,
+      "official_source_url": "https://www.ignitionapp.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 59.76
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "solo",
+          "displayName": "Solo",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "49 $US/mois en mensuel, hors taxes ; 39 $US/mois facturé annuellement. 20 clients actifs et 1 utilisateur(s). Frais de paiement en sus. CA annuel inférieur à 150 000 $US, connexion Xero ou QuickBooks Online et paiements activés obligatoires.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "core",
+          "displayName": "Core",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 149,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "149 $US/mois en mensuel, hors taxes ; 99 $US/mois facturé annuellement. 50 clients actifs et 3 utilisateur(s). Frais de paiement en sus.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 279,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "279 $US/mois en mensuel, hors taxes ; 229 $US/mois facturé annuellement. 350 clients actifs et 15 utilisateur(s). Frais de paiement en sus.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro-plus",
+          "displayName": "Pro+",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 499,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "499 $US/mois en mensuel, hors taxes ; 399 $US/mois facturé annuellement. 600 clients actifs et 20 utilisateur(s). Frais de paiement en sus.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
-    "websiteUrl": "https://get.practiceignition.com/e261f8d417a0",
-    "logo": "",
+    "websiteUrl": "https://www.ignitionapp.com/",
+    "logo": "/tool-media/logos/ignition.svg",
     "verdictEn": {
       "keepIf": [
-        "You run a service-based firm (accounting, consulting, agencies).",
-        "You invoice clients regularly and want to improve cash flow.",
-        "You manage multiple contracts or projects in parallel."
+        "You need connected client agreements, invoices and collections.",
+        "You manage recurring services with a compatible accounting integration."
       ],
       "avoidIf": [
-        "You need a completely free solution.",
-        "You have mostly simple invoices and light workflows.",
-        "You're already satisfied with your existing ERP."
+        "You only need a few signatures or occasional invoices.",
+        "Required payment methods or integrations are unavailable in your country."
       ],
-      "threshold": "Ignition works for growing service firms automating prospect-to-paid pipelines; for solo freelancers with few clients, lighter software is enough."
+      "threshold": "Test an end-to-end engagement and budget for active clients, add-ons and payment fees. Check eligibility before choosing Solo."
     },
     "pros": [
-      "Flux complet du prospect au paiement en une seule plateforme.",
-      "Automatisation des workflows métier et des approvals.",
-      "IA pour l'optimisation des tarifs et les insights revenue.",
-      "Integrations riches avec ERP et outils métier.",
-      "Essai gratuit de 14 jours sans engagement."
+      "Proposition, signature et facturation liées à la prestation.",
+      "Échéanciers récurrents, ponctuels ou avec acompte.",
+      "Intégrations comptables, notamment Xero et QuickBooks Online.",
+      "Exports CSV des clients et rapports de propositions."
     ],
     "prosEn": [
-      "Complete prospect-to-paid pipeline in one platform.",
-      "Workflow automation and approval orchestration.",
-      "AI for pricing optimization and revenue insights.",
-      "Rich integrations with ERP and business tools.",
-      "Free 14-day trial with no commitment."
+      "Proposals, signing and billing linked to services.",
+      "Recurring, one-off and deposit billing.",
+      "Accounting integrations including Xero and QuickBooks Online.",
+      "CSV exports for clients and proposal reports."
     ],
     "cons": [
-      "Tarification opaque (sur demande).",
-      "Meilleure adaptée aux cabinets de services ; moins pertinent pour retail/SaaS.",
-      "Nécessite formation initiale pour maximaliser la valeur."
+      "Solo soumis à des critères d’éligibilité.",
+      "Frais de paiement en plus de l’abonnement.",
+      "Clients actifs supplémentaires et options à budgéter.",
+      "Disponibilité des paiements et intégrations à vérifier selon le pays."
     ],
     "consEn": [
-      "Pricing is opaque (custom quotes only).",
-      "Best suited for service firms; less relevant for retail/SaaS.",
-      "Requires initial training to maximize value."
+      "Solo has eligibility requirements.",
+      "Payment fees are separate from the subscription.",
+      "Additional active clients and add-ons increase costs.",
+      "Payment and integration availability varies by region."
     ],
     "useCases": [
-      "Automatiser les propositions et contrats pour un cabinet comptable.",
-      "Améliorer la trésorerie en accélérant les paiements.",
-      "Centraliser la facturation multi-projets pour une agence."
+      "Formaliser et facturer une mission comptable récurrente.",
+      "Présenter plusieurs offres de services à un client.",
+      "Facturer les prestations supplémentaires d’une agence."
     ],
     "useCasesEn": [
-      "Automate proposals and contracts for an accounting firm.",
-      "Improve cash flow by accelerating payments.",
-      "Centralize multi-project billing for an agency."
+      "Agree and bill recurring accounting engagements.",
+      "Present service packages for clients to choose from.",
+      "Bill additional agency work."
     ],
     "personas": [],
-    "timeGainedHoursPerMonth": 2,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -74694,7 +74742,114 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://cache.ignitionapp.com/misc/_1200x630_crop_center-center_82_none/2411-GLOBAL-WEBSITE-MetaImage-1200x628.png?mtime=1733727482"
+    "ogImageUrl": "/og-images/ignition.png",
+    "affiliateCtaLabelFr": "Essayer pendant 14 jours",
+    "affiliateCtaLabelEn": "Start a 14-day trial",
+    "galleryImages": [
+      "/tool-media/ignition/options.svg",
+      "/tool-media/ignition/proposals.svg",
+      "/tool-media/ignition/payments.svg"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "US prices exclude tax. Transaction fees, additional active clients and add-ons are extra. Solo has revenue, accounting connection and payment activation requirements."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "ignitionapp.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Solo",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.ignitionapp.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "solo",
+          "displayName": "Solo",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "US$49/month billed monthly, excluding tax; $39/month billed annually. 20 active clients and 1 user(s). Payment fees extra. Annual revenue below US$150,000, Xero or QuickBooks Online connection and enabled payments required.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "core",
+          "displayName": "Core",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 149,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "US$149/month billed monthly, excluding tax; $99/month billed annually. 50 active clients and 3 user(s). Payment fees extra.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 279,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "US$279/month billed monthly, excluding tax; $229/month billed annually. 350 active clients and 15 user(s). Payment fees extra.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro-plus",
+          "displayName": "Pro+",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 499,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "US$499/month billed monthly, excluding tax; $399/month billed annually. 600 active clients and 20 user(s). Payment fees extra.",
+          "detailsSourceUrl": "https://www.ignitionapp.com/pricing",
+          "taxInclusion": "ht",
+          "observedMarket": "US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Relie vente, signature et facturation ; ROI non mesuré. https://www.ignitionapp.com/product/online-proposal-management (2026-09-26).",
+        "simplicite": "Modèles disponibles mais services, échéanciers et intégrations à configurer. Analyse documentaire, sans test terrain. https://support.ignitionapp.com/en/articles/6446488-proposals-3-services-and-billing-5-mins (2026-09-26).",
+        "utilisation": "Pertinent pour engagements récurrents ; limites selon clients actifs et pays. https://www.ignitionapp.com/pricing (2026-09-26).",
+        "puissance": "Automatisations et intégrations selon forfait ; frais et options supplémentaires. https://www.ignitionapp.com/pricing (2026-09-26).",
+        "reversibilite": "Rapports CSV avec références et liens PDF ; reprise des paiements et automatisations à vérifier séparément. https://support.ignitionapp.com/en/articles/5440306-how-to-export-a-report-for-your-proposals (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Connects sales, signing and billing; ROI not measured. https://www.ignitionapp.com/product/online-proposal-management (2026-09-26).",
+        "simplicite": "Templates available, but services, schedules and integrations need setup. Desk research, not hands-on tested. https://support.ignitionapp.com/en/articles/6446488-proposals-3-services-and-billing-5-mins (2026-09-26).",
+        "utilisation": "Fits recurring engagements; active-client and regional limits apply. https://www.ignitionapp.com/pricing (2026-09-26).",
+        "puissance": "Automation and integrations vary by tier; extra fees and add-ons. https://www.ignitionapp.com/pricing (2026-09-26).",
+        "reversibilite": "CSV reports include references and PDF links; payment and automation migration must be checked separately. https://support.ignitionapp.com/en/articles/5440306-how-to-export-a-report-for-your-proposals (2026-09-26)."
+      }
+    }
   },
   {
     "id": "impact",
