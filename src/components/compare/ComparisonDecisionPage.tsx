@@ -119,12 +119,10 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
         <h2>{t('Essayez sur vos propres campagnes.', 'Try it with your own campaigns.')}</h2>
         <div className="cp-guide-outbound-grid">
           <div className="cp-guide-outbound-item">
-            <a className="cp-guide-outbound-button" href="https://try.activecampaign.com/twe5oenri4zv-b9q17i" target="_blank" rel={relExterne('affilie')}>{t('Essayer ActiveCampaign pendant 14 jours', 'Try ActiveCampaign for 14 days')}<ArrowRight aria-hidden="true" /></a>
-            <p>{t('Lien affilié : ToolTrim peut percevoir une commission si vous souscrivez, sans coût supplémentaire pour vous.', 'Affiliate link: ToolTrim may earn a commission if you subscribe, at no extra cost to you.')}</p>
+            <a className="cp-guide-outbound-button cp-guide-outbound-button--primary" href="https://try.activecampaign.com/twe5oenri4zv-b9q17i" target="_blank" rel={relExterne('affilie')}>{t('Essayer ActiveCampaign pendant 14 jours', 'Try ActiveCampaign for 14 days')}<ArrowRight aria-hidden="true" /></a>
           </div>
           <div className="cp-guide-outbound-item">
             <a className="cp-guide-outbound-button" href="https://www.klaviyo.com/pricing/" target="_blank" rel={relExterne('source')}>{t('Voir les offres Klaviyo', 'View Klaviyo plans')}<ArrowRight aria-hidden="true" /></a>
-            <p>{t('Lien direct vers Klaviyo, sans affiliation ToolTrim.', 'Direct link to Klaviyo, not an affiliate link.')}</p>
           </div>
         </div>
       </aside>}

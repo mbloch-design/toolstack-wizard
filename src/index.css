@@ -31405,10 +31405,11 @@ section[id]:not(.cp-guide-section) {
   .cp-guide-outbound { margin-top: 36px; padding: 24px; border: 1px solid var(--color-border); border-radius: 18px; }
   .cp-guide-outbound h2 { margin: 0 0 20px; font-size: 21px; letter-spacing: -.02em; }
   .cp-guide-outbound-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
-  .cp-guide-outbound-button { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 50px; padding: 12px 16px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 14px; font-weight: 600; }
+  .cp-guide-outbound-button { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; padding: 14px 18px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 15px; font-weight: 650; transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
   .cp-guide-outbound-button:hover { background: var(--color-surface-soft); }
+  .cp-guide-outbound-button--primary { background: var(--color-text); border-color: var(--color-text); color: var(--color-bg); }
+  .cp-guide-outbound-button--primary:hover { background: #3b3b3b; border-color: #3b3b3b; color: var(--color-bg); }
   .cp-guide-outbound-button svg { width: 18px; height: 18px; flex-shrink: 0; }
-  .cp-guide-outbound-item p { margin: 8px 0 0; font-size: 12px; }
   .cp-guide-matrix { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: left; }
   .cp-guide-matrix th, .cp-guide-matrix td { padding: 22px 20px; vertical-align: top; overflow-wrap: break-word; }
   .cp-guide-matrix thead th { font-size: 15px; font-weight: 650; padding-top: 16px; padding-bottom: 16px; background: var(--color-surface-soft); }

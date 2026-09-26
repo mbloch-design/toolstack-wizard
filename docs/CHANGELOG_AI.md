@@ -6,6 +6,11 @@
 - Navigation client : les trois fiches utilisent temporairement leur révision JSON, comme le build, en attendant réinjection de ces données dans la base. Les champs CTA, transparence et tarifs anglais traversent le mapper client.
 - Validation : compilation, contrôle des données et des liens, rendu des pages concernées avant publication.
 
+## 2026-09-26 : CTA du comparatif ActiveCampaign / Klaviyo
+
+- Renforce visuellement le bouton d’essai ActiveCampaign avec un fond sombre et une zone cliquable plus grande.
+- Retire les phrases sous les deux CTA pour alléger le bloc, en français et en anglais.
+
 ## 2026-09-25 : SEO des fiches outil, titres et descriptions unifiés
 
 - `src/lib/toolSeo.ts` sert désormais le prérendu et ToolDetailPage : le titre et la description ne changent plus à l'hydratation (les deux gabarits avaient divergé). Surcharges `tool.seo.*` conservées.
