@@ -42807,79 +42807,114 @@
     "slug": "dext",
     "name": "Dext",
     "category": "finance",
-    "shortDescription": "Collecte, OCR et préparation des justificatifs comptables pour cabinets et PME.",
-    "shortDescriptionEn": "Receipt capture, OCR and bookkeeping preparation for accountants and SMBs.",
-    "longDescription": "Dext aide à récupérer factures, reçus et justificatifs, puis à les préparer pour la comptabilité. ToolTrim le positionne comme un outil de back-office : très utile quand les documents comptables deviennent récurrents, moins pertinent pour un solo qui peut encore gérer avec son outil de facturation et son expert-comptable.",
-    "longDescriptionEn": "Dext captures receipts and invoices, then prepares bookkeeping data. ToolTrim sees it as a back-office tool for recurring finance operations.",
+    "shortDescription": "Collecte de justificatifs, extraction des données et transmission à votre comptabilité.",
+    "shortDescriptionEn": "Capture receipts and invoices, extract data and send it to your accounting workflow.",
+    "longDescription": "Dext relie la collecte des justificatifs à leur traitement comptable : réception par mobile, email ou connecteurs, extraction des données et préparation des écritures. Pour une entreprise, son intérêt dépend surtout du temps consacré à rassembler les pièces et à les transmettre. Pour un cabinet, il faut aussi évaluer la gestion des dossiers clients.\n\nToolTrim recommande de tester un cycle complet avec votre comptable : importez des factures représentatives, contrôlez les données extraites puis vérifiez la transmission dans le logiciel cible. Les intégrations et exports peuvent éviter une ressaisie, mais ne garantissent ni l’absence d’erreurs ni la prise en charge de toutes vos particularités comptables.\n\nLes offres diffèrent selon le pays. En France, le compte gratuit de facturation ne remplace pas l’offre payante de traitement comptable. Le budget dépend des utilisateurs, des documents et des options ; un cabinet raisonne en dossiers clients. Cette évaluation repose sur la documentation publique, sans test terrain ni économie horaire garantie.",
+    "longDescriptionEn": "Dext connects receipt and invoice collection to bookkeeping: capture through mobile, email or connectors, extract data and prepare it for accounting. For a business, its value depends on the work involved in gathering and handing over documents. Accounting practices also need to assess client management.\n\nToolTrim recommends testing a full cycle with your accountant: import representative invoices, check extracted data and verify delivery to the target accounting software. Integrations and exports can reduce re-entry, but do not guarantee error-free processing or support for every accounting requirement.\n\nOffers vary by country. In France, the free invoicing account is not the paid bookkeeping automation service. Budget depends on users, documents and add-ons; practices are priced by client files. This assessment uses public documentation, without hands-on testing or guaranteed time savings.",
     "pricing": {
-      "free": "Pas de prix public simple et universel identifié.",
-      "paid": "Tarif selon produit, pays, volume et cabinet comptable."
+      "free": "France : compte gratuit pour 1 utilisateur, jusqu’à 5 factures électroniques émises/an et réception illimitée.",
+      "paid": "Repère France : 25 € HT/mois avec engagement annuel, 250 documents/mois et 1 à 5 utilisateurs. Prix à confirmer dans le configurateur. Cabinets : selon dossiers clients. Autres pays et options : tarifs distincts."
     },
     "pricingEn": {
-      "free": "No simple universal public price identified.",
-      "paid": "Pricing depends on product, country, volume and accounting partner."
+      "free": "France only: free account for 1 user, up to 5 outgoing electronic invoices/year and unlimited receipt of electronic invoices.",
+      "paid": "France reference: €25 excluding tax/month with annual commitment, 250 documents/month and 1–5 users. Confirm in the configurator. Practices: priced by client files. Other countries and add-ons have separate pricing."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
-        "Prix dépendant du pays, du produit Dext et du volume de documents."
+        "Repère France uniquement, hors taxes. Configurateur à confirmer selon volume ; prix mensuel sans engagement non vérifié. Options et cabinets distincts."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "dext.com",
       "usage_sensitive": true,
       "compare_plan_kind": "quote",
-      "compare_plan_name": "Sur devis / selon produit",
+      "compare_plan_name": "Selon pays et volume",
       "price_reliability": "quote_or_location_sensitive",
       "location_sensitive": true,
-      "official_source_url": "https://dext.com/pricing",
-      "verification_status": "public_pricing_not_universal",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://dext.com/fr/tarifs/entreprise-tpe-pme",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "fr-free",
+          "displayName": "Gratuit (France)",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "France uniquement : 1 utilisateur ; jusqu’à 5 factures électroniques émises par an.",
+          "featureHighlights": [
+            "Réception de factures électroniques illimitée",
+            "Collecte et stockage de documents"
+          ],
+          "detailsSourceUrl": "https://dext.com/fr/tarifs/entreprise-tpe-pme",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "fr-business",
+          "displayName": "Business (France)",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 25,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "25 € HT/mois avec engagement annuel. Repère affiché pour 250 documents/mois et 1 à 5 utilisateurs ; à confirmer dans le configurateur.",
+          "featureHighlights": [
+            "Extraction OCR et automatisation comptable",
+            "Options facturées séparément"
+          ],
+          "detailsSourceUrl": "https://dext.com/fr/tarifs/entreprise-tpe-pme",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "affiliateLink": "https://join.dext.com/n2kppk0g4xq5",
     "websiteUrl": "https://dext.com",
-    "logo": "",
+    "logo": "/tool-media/logos/dext.ico",
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [],
-        "augmentEn": "Dext uses AI to automatically extract data from a photographed receipt or invoice (amount, VAT, supplier), but remains a pre-accounting tool that prepares data for accounting software.",
-        "augmentFr": "Dext utilise l'IA pour extraire automatiquement les données d'un reçu ou d'une facture photographiée (montant, TVA, fournisseur), mais reste un outil de pré-comptabilité qui prépare les données pour un logiciel comptable.",
-        "replaceEn": "Replace Dext with an AI? No: reliably extracting accounting data from real documents (receipts, invoices) remains a precise technical need. AI speeds up entry, it doesn't replace the downstream accounting system. Verdict: AI augments expense entry, accounting remains a separate system.",
-        "replaceFr": "Remplacer Dext par une IA ? Non : extraire fiablement des données comptables de documents réels (reçus, factures) reste un besoin technique précis. L'IA accélère la saisie, elle ne remplace pas le système comptable en aval. Verdict : l'IA augmente la saisie de dépenses, la comptabilité reste un système séparé."
-      },
-      "metaDescription": "Dext sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Dext mérite sa place dans ta stack."
+      "metaDescription": "Dext : avis, collecte de factures et justificatifs, offre gratuite France, prix et limites. Vérifiez les intégrations avec votre comptable.",
+      "metaDescriptionEn": "Dext review: receipt capture, bookkeeping automation, France pricing reference and regional differences. Check integrations with your accountant."
     },
     "pros": [
-      "Capture et extraction automatiques des reçus et factures.",
-      "Intégration avec les principaux logiciels de comptabilité.",
-      "Stockage et centralisation des documents.",
-      "Outils dédiés aux cabinets (gestion des clients, workflows)."
+      "Collecte par plusieurs canaux réunie au même endroit.",
+      "Extraction et catégorisation des justificatifs.",
+      "Connexions et exports vers les logiciels comptables compatibles.",
+      "Parcours pour entreprises et cabinets."
     ],
     "prosEn": [
-      "Automatic capture and extraction of receipts and invoices.",
-      "Integration with major accounting software.",
-      "Document storage and centralisation.",
-      "Practice tools (client management, workflows)."
+      "Multiple capture channels in one place.",
+      "Document extraction and categorization.",
+      "Connections and exports for compatible accounting software.",
+      "Workflows for businesses and practices."
     ],
     "cons": [
-      "Pas de plan gratuit : essai 14 jours puis abonnement.",
-      "Tarification selon le volume/les clients, à cadrer.",
-      "Pensé pour la comptabilité : peu utile hors de ce cadre."
+      "Données extraites et règles à vérifier.",
+      "Offres et fonctionnalités variables selon le marché.",
+      "Coût lié aux volumes et aux options.",
+      "Engagement annuel : réduction des utilisateurs limitée en France."
     ],
     "consEn": [
-      "No free plan: 14-day trial then subscription.",
-      "Pricing by volume/clients, to scope.",
-      "Built for accounting: little use outside that context."
+      "Extracted data and rules require checking.",
+      "Offers and capabilities vary by market.",
+      "Costs depend on volumes and add-ons.",
+      "Annual commitment restricts user reductions in France."
     ],
     "useCases": [
-      "Numériser reçus et factures et en extraire les données.",
-      "Alimenter automatiquement un logiciel de comptabilité.",
-      "Gérer la comptabilité de plusieurs clients dans un cabinet."
+      "Collecter les justificatifs des collaborateurs.",
+      "Préparer les données pour le cabinet comptable.",
+      "Centraliser les documents de plusieurs dossiers clients."
     ],
     "useCasesEn": [
-      "Digitise receipts and invoices and extract their data.",
-      "Feed an accounting software automatically.",
-      "Manage several clients' bookkeeping in a firm."
+      "Gather employee receipts.",
+      "Prepare data for an accounting practice.",
+      "Centralize documents across client files."
     ],
     "covers": [
       "bookkeeping-prep",
@@ -42901,35 +42936,31 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous voulez automatiser la capture de reçus/factures et l'extraction de données.",
-        "Vous êtes cabinet comptable ou entreprise gérant beaucoup de pièces.",
-        "Vous voulez alimenter automatiquement votre logiciel de comptabilité."
+        "La collecte des pièces et la ressaisie prennent une place importante.",
+        "Votre comptable a validé le format ou la connexion cible."
       ],
       "avoidIf": [
-        "Votre volume de documents est très faible : la saisie manuelle suffit.",
-        "Vous n'avez pas de logiciel comptable à intégrer.",
-        "Vous cherchez une solution gratuite."
+        "Votre logiciel actuel couvre déjà ce circuit de collecte.",
+        "Vous cherchez un remplacement automatique de votre comptable."
       ],
-      "threshold": "Dext s'impose quand le volume de pièces comptables justifie l'automatisation de la capture et de l'extraction ; pour un volume marginal, la saisie manuelle reste plus simple."
+      "threshold": "Testez la chaîne document, extraction, contrôle et export. Comparez le coût au volume réellement traité, pas à une promesse d’automatisation totale."
     },
     "verdictEn": {
       "keepIf": [
-        "You want to automate receipt/invoice capture and data extraction.",
-        "You are an accounting firm or business handling many documents.",
-        "You want to feed your accounting software automatically."
+        "Document collection and re-entry are significant tasks.",
+        "Your accountant has validated the target format or connection."
       ],
       "avoidIf": [
-        "Your document volume is very low: manual entry is enough.",
-        "You have no accounting software to integrate.",
-        "You want a free solution."
+        "Your current software already covers this collection workflow.",
+        "You want an automatic replacement for your accountant."
       ],
-      "threshold": "Dext makes sense when document volume justifies automating capture and extraction; for marginal volume, manual entry stays simpler."
+      "threshold": "Test capture, extraction, review and export together. Compare cost against actual volume, not a promise of complete automation."
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
-    "soloRelevance": "à vérifier selon volume",
-    "teamRelevance": "utile si usage récurrent",
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
     "tool_type": "gestion",
     "substitutable": true,
     "host_app": null,
@@ -42960,8 +42991,97 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://dext.com/og-logo.png",
-    "description": "Dext aide à récupérer factures, reçus et justificatifs, puis à les préparer pour la comptabilité. ToolTrim le positionne comme un outil de back-office : très utile quand les documents comptables deviennent récurrents, moins pertinent pour un solo qui peut encore gérer avec son outil de facturation et son expert-comptable."
+    "ogImageUrl": "/og-images/dext.jpg",
+    "description": "Dext relie la collecte des justificatifs à leur traitement comptable : réception par mobile, email ou connecteurs, extraction des données et préparation des écritures. Pour une entreprise, son intérêt dépend surtout du temps consacré à rassembler les pièces et à les transmettre. Pour un cabinet, il faut aussi évaluer la gestion des dossiers clients.\n\nToolTrim recommande de tester un cycle complet avec votre comptable : importez des factures représentatives, contrôlez les données extraites puis vérifiez la transmission dans le logiciel cible. Les intégrations et exports peuvent éviter une ressaisie, mais ne garantissent ni l’absence d’erreurs ni la prise en charge de toutes vos particularités comptables.\n\nLes offres diffèrent selon le pays. En France, le compte gratuit de facturation ne remplace pas l’offre payante de traitement comptable. Le budget dépend des utilisateurs, des documents et des options ; un cabinet raisonne en dossiers clients. Cette évaluation repose sur la documentation publique, sans test terrain ni économie horaire garantie.",
+    "affiliateCtaLabelFr": "Découvrir les offres Dext",
+    "affiliateCtaLabelEn": "Explore Dext plans",
+    "galleryImages": [
+      "/tool-media/dext/business.webp",
+      "/tool-media/dext/documents.webp",
+      "/tool-media/dext/expenses.webp"
+    ],
+    "pricingTiers": {
+      "free": "France : compte gratuit pour 1 utilisateur, jusqu’à 5 factures électroniques émises/an et réception illimitée.",
+      "paid": "Repère France : 25 € HT/mois avec engagement annuel, 250 documents/mois et 1 à 5 utilisateurs. Prix à confirmer dans le configurateur. Cabinets : selon dossiers clients. Autres pays et options : tarifs distincts."
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "France reference only, excluding tax. Confirm volume-based pricing in the configurator; rolling monthly price not verified. Add-ons and practice pricing are separate."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "dext.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "quote",
+      "compare_plan_name": "By country and volume",
+      "price_reliability": "quote_or_location_sensitive",
+      "location_sensitive": true,
+      "official_source_url": "https://dext.com/fr/tarifs/entreprise-tpe-pme",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "fr-free",
+          "displayName": "Free (France)",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "France only: 1 user; up to 5 outgoing electronic invoices per year.",
+          "featureHighlights": [
+            "Unlimited receipt of electronic invoices",
+            "Document capture and storage"
+          ],
+          "detailsSourceUrl": "https://dext.com/fr/tarifs/entreprise-tpe-pme",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "fr-business",
+          "displayName": "Business (France)",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 25,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "€25 excluding tax/month with annual commitment. Displayed reference for 250 documents/month and 1–5 users; confirm in the configurator.",
+          "featureHighlights": [
+            "OCR extraction and bookkeeping automation",
+            "Add-ons charged separately"
+          ],
+          "detailsSourceUrl": "https://dext.com/fr/tarifs/entreprise-tpe-pme",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Réduit les manipulations entre collecte et comptabilité ; ROI non mesuré. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "simplicite": "Plusieurs canaux de collecte mais règles à paramétrer ; pas de test terrain. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "utilisation": "Circuit récurrent de factures, reçus et pièces clients. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "puissance": "Extraction, catégorisation et connexions comptables, selon offre. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "reversibilite": "Exports FEC avec images, Quadra ASCII et Cegid TRA ; migration à tester avec le comptable. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Connects capture to bookkeeping; ROI not measured. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "simplicite": "Multiple capture channels but rules need setup; not hands-on tested. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "utilisation": "Recurring invoices, receipts and client documentation. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "puissance": "Extraction, categorization and accounting connections vary by offer. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26).",
+        "reversibilite": "FEC with images, Quadra ASCII and Cegid TRA exports; test migration with your accountant. https://dext.com/fr/offres/logiciel-comptabilite-entreprise (2026-09-26)."
+      }
+    }
   },
   {
     "id": "didomi",

@@ -1,3 +1,9 @@
+## 2026-09-26 : Dext, révision affiliée FR/EN
+
+- Lien partenaire vérifié HTTP 200 vers Dext France. Contenu international avec repère tarifaire explicitement France, offre gratuite distinguée et configurateur à confirmer. Pas de tarif global inventé, ni d’engagement annuel assimilé à un paiement anticipé.
+- Note documentaire 3,6/5. Sources : https://dext.com/fr/tarifs/entreprise-tpe-pme ; https://dext.com/fr/offres/logiciel-comptabilite-entreprise ; https://dext.com/fr/cabinet/tarifs/expertise-comptable .
+- Logo favicon officiel, OG /og-logo.png, trois illustrations produit assets.dext.com (espace 1b6ae8870b9341c0bb10634cd51cea2b, IDs 502ee385b48743f7893a959dac6c3a16, 971a42ce6e4d43268bce1f12f18e1c81, a933cfe022754707ac0410e6fa2818f5). Aucune capture maison.
+
 ## 2026-09-26 : Descript, révision affiliée FR/EN
 
 - Corrige contenu générique et traductions, prix USD mensuels/annuels, crédits Free non renouvelables et exports Creator. Retire conversion EUR et gain horaire non sourcé. Note documentaire 3,8/5.

@@ -8502,16 +8502,16 @@
     "slug": "dext",
     "name": "Dext",
     "categoryId": "finance",
-    "shortDescription": "Collecte, OCR et préparation des justificatifs comptables pour cabinets et PME.",
-    "shortDescriptionEn": "Receipt capture, OCR and bookkeeping preparation for accountants and SMBs.",
+    "shortDescription": "Collecte de justificatifs, extraction des données et transmission à votre comptabilité.",
+    "shortDescriptionEn": "Capture receipts and invoices, extract data and send it to your accounting workflow.",
     "pricing": {
-      "free": "Pas de prix public simple et universel identifié.",
-      "paid": "Tarif selon produit, pays, volume et cabinet comptable."
+      "free": "France : compte gratuit pour 1 utilisateur, jusqu’à 5 factures électroniques émises/an et réception illimitée.",
+      "paid": "Repère France : 25 € HT/mois avec engagement annuel, 250 documents/mois et 1 à 5 utilisateurs. Prix à confirmer dans le configurateur. Cabinets : selon dossiers clients. Autres pays et options : tarifs distincts."
     },
-    "compareMonthlyPrice": 0,
     "affiliateLink": "https://join.dext.com/n2kppk0g4xq5",
     "websiteUrl": "https://dext.com",
-    "ogImageUrl": "https://dext.com/og-logo.png",
+    "ogImageUrl": "/og-images/dext.jpg",
+    "logo": "/tool-media/logos/dext.ico",
     "tool_type": "gestion",
     "substitution_cluster_v2": "accounting-ops",
     "functional_needs": [
