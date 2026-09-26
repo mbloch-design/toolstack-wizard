@@ -4976,14 +4976,13 @@
     "shortDescription": "Call tracking, attribution marketing et analyse des appels entrants.",
     "shortDescriptionEn": "Call tracking, marketing attribution and inbound call analytics.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plan Call Tracking public à partir d’environ 45 $/mois, options et volumes en supplément."
+      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Tarifs US : Lead Tracking 55 $US/mois en mensuel, ou 50 $US/mois avec paiement annuel. En annuel : Lead Tracking Complete 95, Lead Conversion 150 et Lead Conversion Complete 195 $US/mois. Usage supplémentaire en sus. Base : 5 numéros locaux et 250 minutes/mois."
     },
-    "defaultMonthlyPrice": 45,
-    "compareMonthlyPrice": 45,
     "affiliateLink": "https://partners.callrail.com/80aos1quxy64",
     "websiteUrl": "https://www.callrail.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/callrail.jpg",
+    "ogImageUrl": "/og-images/callrail.jpg",
+    "logo": "/tool-media/logos/callrail.png",
     "substitution_cluster_v2": "call-tracking",
     "functional_needs": [
       "call-tracking",

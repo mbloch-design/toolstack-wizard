@@ -1,3 +1,10 @@
+## 2026-09-26 : CallRail, révision affiliée FR/EN
+
+- Actualise les offres Lead Tracking/Conversion, quotas, frais additionnels et disponibilité géographique. Retire le faux prix EUR et les gains non sourcés. Note v2 documentaire : 3,6/5.
+- Lien partenaire vérifié : redirection HTTP 200 vers la tarification officielle. CTA d’essai 14 jours.
+- Trois visuels produit officiels (dashboard, transcription, intelligence) et favicon local. Sources médias : CDN Builder de la page https://www.callrail.com/call-tracking et https://www.callrail.com/premium-conversation-intelligence ; IDs `22518bdde77940a8bd9b97bea91df343`, `4f3c91d992574164a91841577f0b2e81`, `b14bf5ea063f44b989f087c54a61a72a` sous l’espace `18cf0bc1157f43cbaa8aed1276d9b9ad`. Dashboard également utilisé pour l’OG.
+- Sources : https://www.callrail.com/pricing ; https://support.callrail.com/hc/en-us/articles/5711458151053-Exporting-account-level-data ; https://www.callrail.com/call-tracking/call-recording .
+
 ## 2026-09-26 : Buddy Punch, révision affiliée FR/EN
 
 - Corrige contenu, SEO, alternatives et notation v2 documentaire (3,8/5). Retire le gain horaire non prouvé et les garanties de conformité.

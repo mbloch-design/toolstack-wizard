@@ -25056,24 +25056,25 @@
     "id": "callrail",
     "name": "CallRail",
     "shortDescription": "Call tracking, attribution marketing et analyse des appels entrants.",
-    "description": "CallRail sert à comprendre quelles campagnes, pages ou mots-clés déclenchent des appels. C'est pertinent pour les activités où le téléphone est un vrai canal de conversion. Pour ToolTrim, ce n'est pas un outil de communication généraliste : c'est un outil d'attribution à activer quand les appels pèsent réellement dans le chiffre d'affaires.",
+    "description": "CallRail relie les appels entrants aux campagnes qui les génèrent. Les numéros de suivi et leur insertion dynamique sur le site permettent d’analyser les sources de leads téléphoniques. Ce n’est pas un remplacement généraliste de votre téléphonie : son intérêt est d’éclairer les décisions marketing lorsque le téléphone compte dans l’acquisition.\n\nLead Tracking inclut le suivi des appels et SMS, l’enregistrement, le routage et la transcription. Les offres Complete ajoutent les formulaires ; Lead Conversion apporte les analyses conversationnelles avancées. Les résultats de l’IA restent à relire, et l’attribution dépend d’un suivi correctement installé.\n\nPoint décisif avant l’essai : CallRail annonce une disponibilité aux États-Unis, au Canada, au Royaume-Uni et en Australie. La France n’est pas dans cette liste. Vérifiez les numéros et intégrations nécessaires avant toute migration. Les frais d’usage s’ajoutent au forfait ; aucune rentabilité ou économie de temps n’est garantie dans cette analyse documentaire.",
     "category": "analytics",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plan Call Tracking public à partir d’environ 45 $/mois, options et volumes en supplément."
+      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Tarifs US : Lead Tracking 55 $US/mois en mensuel, ou 50 $US/mois avec paiement annuel. En annuel : Lead Tracking Complete 95, Lead Conversion 150 et Lead Conversion Complete 195 $US/mois. Usage supplémentaire en sus. Base : 5 numéros locaux et 250 minutes/mois."
     },
     "website": "https://callrail.com",
     "affiliateLink": "https://partners.callrail.com/80aos1quxy64",
     "pros": [
-      "Transcription et analyse IA robustes des appels.",
-      "Attribution multi-canal intégrée.",
-      "Intégrations CRM natives (HubSpot, Salesforce).",
-      "Tableaux de bord de tendances conversationnelles."
+      "Attribution des appels aux sources marketing.",
+      "Transcription incluse dans Lead Tracking.",
+      "Formulaires et analyses avancées disponibles selon l’offre.",
+      "Export des données du compte documenté."
     ],
     "cons": [
-      "Frais d'utilisation substantiels en plus de l'abonnement.",
-      "Les paliers supérieurs sont nécessaires pour l'IA.",
-      "Coûts totaux souvent 1,5x à 3x le tarif affiché."
+      "Disponibilité annoncée limitée à quatre pays, hors France.",
+      "Numéros, minutes et usage API peuvent ajouter des frais.",
+      "Installation et contrôle du suivi nécessaires.",
+      "Export des transcriptions soumis à l’offre Premium Conversation Intelligence."
     ],
     "bestFor": [
       "all"
@@ -25086,10 +25087,10 @@
     "freeAlternative": null,
     "soloRelevance": "à vérifier selon volume",
     "teamRelevance": "utile si usage récurrent",
-    "defaultMonthlyPrice": 45,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "0€/mois"
+      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
+      "paid": "Tarifs US : Lead Tracking 55 $US/mois en mensuel, ou 50 $US/mois avec paiement annuel. En annuel : Lead Tracking Complete 95, Lead Conversion 150 et Lead Conversion Complete 195 $US/mois. Usage supplémentaire en sus. Base : 5 numéros locaux et 250 minutes/mois."
     },
     "relevantFor": [
       "Agences marketing",
@@ -25098,31 +25099,19 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous avez besoin de suivre les appels entrants pour attrribuer les leads.",
-        "Vous faites du marketing entrant ou du service client multi-canal.",
-        "Vous voulez transcription et analyse IA des conversations."
+        "Les appels représentent un canal d’acquisition important.",
+        "Vos numéros et votre activité sont couverts par les pays disponibles."
       ],
       "avoidIf": [
-        "Vous n'avez pas besoin de suivi d'appels.",
-        "Votre budget est très serré (frais d'utilisation substantiels).",
-        "Vous préférez un outil plus simple."
+        "Vous cherchez une solution annoncée comme disponible pour des numéros français.",
+        "Vous voulez uniquement une téléphonie d’équipe ou de l’analytics web."
       ],
-      "threshold": "CallRail convient aux agences et PME qui financent la prospection par appels et veulent en mesurer l'efficacité ; pour la plupart des autres, un outil d'analytics web suffit."
+      "threshold": "Testez l’attribution de vraies campagnes pendant l’essai, puis estimez le coût des numéros, minutes et intégrations."
     },
-    "alternatives": [
-      "aircall-inc",
-      "krispcall"
-    ],
+    "alternatives": [],
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [],
-        "augmentEn": "CallRail added AI to transcribe and summarize incoming calls, but remains call tracking infrastructure (which marketing channel generates which call) to measure ad ROI.",
-        "augmentFr": "CallRail a ajouté l'IA pour transcrire et résumer les appels entrants, mais reste l'infrastructure de suivi d'appels (quel canal marketing génère quel appel) pour mesurer le ROI publicitaire.",
-        "replaceEn": "Replace CallRail with an AI? No: attributing a real phone call to a specific marketing campaign requires real technical tracking (dynamic numbers), not generation. AI helps summarize call content. Verdict: AI augments call analysis, marketing attribution remains the key infrastructure.",
-        "replaceFr": "Remplacer CallRail par une IA ? Non : attribuer un appel téléphonique réel à une campagne marketing spécifique nécessite un suivi technique réel (numéros dynamiques), pas de la génération. L'IA aide à résumer le contenu de l'appel. Verdict : l'IA augmente l'analyse d'appels, l'attribution marketing reste l'infrastructure clé."
-      },
-      "metaDescription": "CallRail sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si CallRail mérite sa place dans ta stack."
+      "metaDescription": "CallRail : avis, essai 14 jours, Lead Tracking dès 50 $US/mois en annuel, frais d’usage et pays disponibles. Vérifiez l’adéquation avant de choisir.",
+      "metaDescriptionEn": "CallRail review: 14-day trial, Lead Tracking from $50/month billed annually, usage fees and supported countries. Check fit before choosing."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -25142,68 +25131,145 @@
     "ia_use_case": null,
     "slug": "callrail",
     "shortDescriptionEn": "Call tracking, marketing attribution and inbound call analytics.",
-    "longDescription": "CallRail sert à comprendre quelles campagnes, pages ou mots-clés déclenchent des appels. C'est pertinent pour les activités où le téléphone est un vrai canal de conversion. Pour ToolTrim, ce n'est pas un outil de communication généraliste : c'est un outil d'attribution à activer quand les appels pèsent réellement dans le chiffre d'affaires.",
-    "longDescriptionEn": "CallRail helps attribute inbound calls to campaigns, landing pages and keywords. It is relevant when phone calls are a measurable acquisition channel.",
+    "longDescription": "CallRail relie les appels entrants aux campagnes qui les génèrent. Les numéros de suivi et leur insertion dynamique sur le site permettent d’analyser les sources de leads téléphoniques. Ce n’est pas un remplacement généraliste de votre téléphonie : son intérêt est d’éclairer les décisions marketing lorsque le téléphone compte dans l’acquisition.\n\nLead Tracking inclut le suivi des appels et SMS, l’enregistrement, le routage et la transcription. Les offres Complete ajoutent les formulaires ; Lead Conversion apporte les analyses conversationnelles avancées. Les résultats de l’IA restent à relire, et l’attribution dépend d’un suivi correctement installé.\n\nPoint décisif avant l’essai : CallRail annonce une disponibilité aux États-Unis, au Canada, au Royaume-Uni et en Australie. La France n’est pas dans cette liste. Vérifiez les numéros et intégrations nécessaires avant toute migration. Les frais d’usage s’ajoutent au forfait ; aucune rentabilité ou économie de temps n’est garantie dans cette analyse documentaire.",
+    "longDescriptionEn": "CallRail connects incoming calls to the campaigns that generate them. Tracking numbers and dynamic number insertion on your website help identify the sources of phone leads. It is not a general replacement for your phone system: its value is informing marketing decisions when calls matter to acquisition.\n\nLead Tracking includes call and text tracking, recording, routing and transcription. Complete plans add forms, while Lead Conversion adds premium conversation analytics. AI outputs still need review, and attribution depends on correctly configured tracking.\n\nCheck availability before testing: CallRail lists the United States, Canada, the UK and Australia. France is not on that list. Verify required numbers and integrations before migrating. Usage charges sit on top of the subscription. This documentation-based review does not guarantee ROI or time savings.",
     "pricingEn": {
-      "free": "No durable free plan identified.",
-      "paid": "Call tracking plan starts around $45/month, with add-ons and usage depending on volume."
+      "free": "14-day trial without a credit card; no permanent free plan.",
+      "paid": "US pricing: Lead Tracking $55/month on monthly billing, or $50/month billed annually. Annual rates: Lead Tracking Complete $95, Lead Conversion $150 and Lead Conversion Complete $195/month. Additional usage costs extra. Base allowance: 5 local numbers and 250 minutes/month."
     },
     "pricing_v5": {
       "cautions": [
-        "Les numéros, minutes et options d’attribution peuvent ajouter du coût."
+        "Prix US en USD, paiement annuel anticipé. Usage supplémentaire facturé séparément. Disponibilité : États-Unis, Canada, Royaume-Uni, Australie."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "callrail.com",
       "usage_sensitive": true,
       "compare_plan_kind": "paid",
-      "compare_plan_name": "Call Tracking",
+      "compare_plan_name": "Lead Tracking",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
-      "official_source_url": "https://www.callrail.com/pricing/",
+      "official_source_url": "https://www.callrail.com/pricing",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 45
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "lead-tracking",
+          "displayName": "Lead Tracking",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "50 $US/mois, payé annuellement, hors usage supplémentaire.",
+          "featureHighlights": [
+            "5 numéros locaux et 250 minutes/mois",
+            "Suivi des appels et transcription"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "lead-tracking-complete",
+          "displayName": "Lead Tracking Complete",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 95,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "95 $US/mois, payé annuellement, hors usage supplémentaire.",
+          "featureHighlights": [
+            "Formulaires et attribution",
+            "1 000 formulaires/mois"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "lead-conversion",
+          "displayName": "Lead Conversion",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 150,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "150 $US/mois, payé annuellement, hors usage supplémentaire.",
+          "featureHighlights": [
+            "Analyses conversationnelles avancées",
+            "10 000 minutes d’analyse/mois"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "lead-conversion-complete",
+          "displayName": "Lead Conversion Complete",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 195,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "195 $US/mois, payé annuellement, hors usage supplémentaire.",
+          "featureHighlights": [
+            "Formulaires et analyses avancées",
+            "1 000 formulaires/mois"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://www.callrail.com",
-    "logo": "",
+    "logo": "/tool-media/logos/callrail.png",
     "verdictEn": {
       "keepIf": [
-        "You need to track inbound calls and attribute leads.",
-        "You do inbound marketing or omnichannel customer service.",
-        "You want AI-driven transcription and conversation analysis."
+        "Calls are an important acquisition channel.",
+        "Your business and required numbers are supported in available countries."
       ],
       "avoidIf": [
-        "You don't rely on phone calls for lead generation.",
-        "Your budget is very tight (usage fees add up).",
-        "You prefer a simpler tool."
+        "You need a solution advertised as supporting French numbers.",
+        "You only need a team phone system or website analytics."
       ],
-      "threshold": "CallRail suits agencies and SMBs that fund prospecting by phone and want to measure ROI; for most others, web analytics suffice."
+      "threshold": "Test attribution on real campaigns during the trial, then budget for numbers, minutes and integrations."
     },
     "prosEn": [
-      "Robust AI transcription and analysis of calls.",
-      "Built-in omnichannel attribution.",
-      "Native CRM integrations (HubSpot, Salesforce).",
-      "Conversation trend dashboards."
+      "Attributes calls to marketing sources.",
+      "Transcription included in Lead Tracking.",
+      "Forms and premium analytics available by plan.",
+      "Documented account data export."
     ],
     "consEn": [
-      "Usage fees add up significantly on top of subscription.",
-      "AI features require higher-tier plans.",
-      "Total costs often run 1.5x to 3x the advertised price."
+      "Advertised availability covers four countries, not France.",
+      "Extra numbers, minutes and API usage can add charges.",
+      "Tracking requires setup and validation.",
+      "Transcript exports require Premium Conversation Intelligence."
     ],
     "useCases": [
-      "Suivre et optimiser les appels entrants pour une agence marketing.",
-      "Analyser les tendances des conversations clients.",
-      "Attribuer les leads issus d'appels téléphoniques."
+      "Identifier les campagnes qui génèrent des appels qualifiés.",
+      "Mesurer les leads téléphoniques pour un client d’agence.",
+      "Relier appels et formulaires dans les offres Complete."
     ],
     "useCasesEn": [
-      "Track and optimize inbound calls for a marketing agency.",
-      "Analyze customer conversation trends.",
-      "Attribute phone-sourced leads to campaigns."
+      "Identify campaigns generating qualified calls.",
+      "Measure phone leads for agency clients.",
+      "Connect calls and forms on Complete plans."
     ],
     "personas": [
       "MARC",
       "CLAIRE"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -25226,7 +25292,129 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/callrail.jpg"
+    "ogImageUrl": "/og-images/callrail.jpg",
+    "galleryImages": [
+      "/tool-media/callrail/transcript.webp",
+      "/tool-media/callrail/intelligence.webp"
+    ],
+    "affiliateCtaLabelFr": "Essayer gratuitement pendant 14 jours",
+    "affiliateCtaLabelEn": "Start a free 14-day trial",
+    "pricing_v5En": {
+      "cautions": [
+        "US prices in USD, annual prepayment. Extra usage billed separately. Available in the US, Canada, UK and Australia."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "callrail.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Lead Tracking",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://www.callrail.com/pricing",
+      "verification_status": "verified_public_pricing_page",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "lead-tracking",
+          "displayName": "Lead Tracking",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$50/month billed annually, plus additional usage.",
+          "featureHighlights": [
+            "5 local numbers and 250 minutes/month",
+            "Call tracking and transcription"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "lead-tracking-complete",
+          "displayName": "Lead Tracking Complete",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 95,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$95/month billed annually, plus additional usage.",
+          "featureHighlights": [
+            "Form tracking and attribution",
+            "1,000 forms/month"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "lead-conversion",
+          "displayName": "Lead Conversion",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 150,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$150/month billed annually, plus additional usage.",
+          "featureHighlights": [
+            "Premium conversation analytics",
+            "10,000 analysis minutes/month"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "lead-conversion-complete",
+          "displayName": "Lead Conversion Complete",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 195,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$195/month billed annually, plus additional usage.",
+          "featureHighlights": [
+            "Forms and premium analytics",
+            "1,000 forms/month"
+          ],
+          "detailsSourceUrl": "https://www.callrail.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Attribution utile si le téléphone génère des leads ; ROI non mesuré. https://www.callrail.com/call-tracking (26/09/2026).",
+        "simplicite": "Numéros et script d’insertion dynamique à configurer ; pas de test terrain. https://www.callrail.com/call-tracking (26/09/2026).",
+        "utilisation": "Suivi récurrent des campagnes, mais disponibilité limitée aux pays annoncés. https://www.callrail.com/pricing (26/09/2026).",
+        "puissance": "Routage, transcription, formulaires et analyses selon offre ; quotas et frais d’usage. https://www.callrail.com/pricing (26/09/2026).",
+        "reversibilite": "Export administrateur sur compte ouvert ; conservation des communications limitée à 25 mois. https://support.callrail.com/hc/en-us/articles/5711458151053-Exporting-account-level-data (26/09/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Attribution is useful when calls generate leads; ROI not measured. https://www.callrail.com/call-tracking (2026-09-26).",
+        "simplicite": "Numbers and dynamic insertion script require configuration; not hands-on tested. https://www.callrail.com/call-tracking (2026-09-26).",
+        "utilisation": "Recurring campaign tracking, restricted to advertised countries. https://www.callrail.com/pricing (2026-09-26).",
+        "puissance": "Routing, transcripts, forms and analytics by plan; quotas and usage charges apply. https://www.callrail.com/pricing (2026-09-26).",
+        "reversibilite": "Administrator export requires an open account; communication records retained for 25 months. https://support.callrail.com/hc/en-us/articles/5711458151053-Exporting-account-level-data (2026-09-26)."
+      }
+    }
   },
   {
     "id": "calltrackingmetrics",
