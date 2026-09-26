@@ -1,5 +1,5 @@
 import ComparisonDecisionPage from "@/components/compare/ComparisonDecisionPage";
-import { chatgptClaudeGuides } from "@/data/comparisonDecisionGuides";
+import { activeCampaignKlaviyoGuides, chatgptClaudeGuides } from "@/data/comparisonDecisionGuides";
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolPair } from "@/hooks/useSupabaseData";
@@ -2033,7 +2033,7 @@ const ComparePage = () => {
       : fitBrandedTitle(`${toolA.name} vs ${toolB.name}: comparison ${year}`);
 
     // Decision-framing description: verb-driven, no audience assumption, no hardcoded copy.
-    const guide = slugPair === "chatgpt-vs-claude" ? chatgptClaudeGuides[lang] : undefined;
+    const guide = slugPair === "chatgpt-vs-claude" ? chatgptClaudeGuides[lang] : slugPair === "activecampaign-vs-klaviyo" ? activeCampaignKlaviyoGuides[lang] : undefined;
     const decisionLine = guide?.intro ?? (battleDataForSeo
       ? (lang === "fr"
           ? (battleDataForSeo.comparison.decisionSummary || battleDataForSeo.comparison.mainDifference)

@@ -5,6 +5,8 @@ import categoriesIndexJson from "@/data/categories_index.json";
 import toolsIndexJson from "@/data/tools_index.json";
 import { getToolLogoUrl as resolveToolLogoUrl } from "@/lib/toolLogos";
 import { TOOLS_TABLE_SELECT } from "@/lib/toolsTableColumns";
+// Local reviews pending reinjection, consistent with the JSON-only build.
+const LOCAL_REVIEW_SLUGS = new Set(['turbotic', 'kit', 'convertkit', 'activecampaign']);
 
 // Pre-resolved tool data injected by the SSR build step (see entry-server.tsx),
 // so useToolBySlug can skip its loading state when the markup was already
@@ -77,6 +79,10 @@ function mapToolFromJson(t: any): Tool {
     relevantFor: t.relevantFor || t.relevant_for || [],
     personas: t.personas || [],
     affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
+    affiliateDisclosureFr: t.affiliateDisclosureFr,
+    affiliateDisclosureEn: t.affiliateDisclosureEn,
+    affiliateCtaLabelFr: t.affiliateCtaLabelFr,
+    affiliateCtaLabelEn: t.affiliateCtaLabelEn,
     websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
     logo: asLocalizedText(t.logo, ""),
     ogImageUrl: t.ogImageUrl || t.og_image_url || null,
@@ -104,6 +110,7 @@ function mapToolFromJson(t: any): Tool {
     prescription_context_questions: t.prescription_context_questions || [],
     substitution_cluster_v2: t.substitution_cluster_v2 || null,
     pricing_v5: t.pricing_v5 || null,
+    pricing_v5En: t.pricing_v5En || null,
     decision_policy_v3: t.decision_policy_v3 || null,
     toolTrimRating: t.toolTrimRating || null,
   };
@@ -416,6 +423,11 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
         list.find((t) => t.id === key || t.slug === key);
 
       // 1) Targeted Supabase query — ~2 rows
+      if (LOCAL_REVIEW_SLUGS.has(slugA) || LOCAL_REVIEW_SLUGS.has(slugB)) {
+        const [a, b] = await Promise.all([loadLocalTool(slugA), loadLocalTool(slugB)]);
+        if (cancelled) return;
+        if (a && b) { setToolA(a); setToolB(b); setLoading(false); return; }
+      }
       try {
         const { data, error } = await supabase
           .from("tools")
@@ -555,6 +567,11 @@ export function useToolBySlug(slug: string | undefined) {
 
     (async () => {
       setLoading(true);
+      if (LOCAL_REVIEW_SLUGS.has(slug)) {
+        const local = await loadLocalTool(slug);
+        if (cancelled) return;
+        if (local) { setTool(local); setLoading(false); return; }
+      }
       // Refresh remotely in parallel, but never keep client navigation behind
       // Supabase. The local catalogue is the immediate rendering source.
       const remoteToolPromise = (async (): Promise<Tool | null> => {

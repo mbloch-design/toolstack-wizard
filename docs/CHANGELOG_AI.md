@@ -1,3 +1,11 @@
+## 2026-09-26 : Fiches affiliées et comparaison ActiveCampaign / Klaviyo
+
+- Report ciblé des révisions FR/EN Turbotic, Kit et ActiveCampaign sur le main distant actuel : contenu, tarifs documentés, SEO et liens partenaires.
+- Ajout du comparatif ActiveCampaign / Klaviyo en FR/EN, avec sources officielles, limites des offres et accès affilié ActiveCampaign clairement indiqué. Klaviyo conserve son lien officiel direct.
+- Conservation du gabarit actuel des comparatifs ; les affirmations obsolètes du document fournisseur ne sont pas reprises comme preuves.
+- Navigation client : les trois fiches utilisent temporairement leur révision JSON, comme le build, en attendant réinjection de ces données dans la base. Les champs CTA, transparence et tarifs anglais traversent le mapper client.
+- Validation : compilation, contrôle des données et des liens, rendu des pages concernées avant publication.
+
 ## 2026-09-25 : SEO des fiches outil, titres et descriptions unifiés
 
 - `src/lib/toolSeo.ts` sert désormais le prérendu et ToolDetailPage : le titre et la description ne changent plus à l'hydratation (les deux gabarits avaient divergé). Surcharges `tool.seo.*` conservées.

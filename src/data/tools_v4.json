@@ -1039,33 +1039,125 @@
     "slug": "activecampaign",
     "name": "ActiveCampaign",
     "category": "crm",
-    "shortDescription": "Plateforme d'automatisation marketing autonome pour email, SMS, WhatsApp et autres canaux, avec des agents IA pilotant les campagnes et des analyses avancées.",
-    "shortDescriptionEn": "Autonomous marketing automation platform for email, SMS, WhatsApp and multichannel engagement, with AI agents managing campaigns and advanced analytics.",
-    "longDescription": "Plateforme d'automatisation marketing autonome pour email, SMS, WhatsApp et autres canaux, avec des agents IA pilotant les campagnes et des analyses avancées.\n\nFonctions clés : Agents IA autonomes (Active Intelligence 2.8) adaptés à votre brand ; Multi-canal : email, SMS, WhatsApp, 1000+ intégrations ; Automatisation des journées clients et lead scoring ; Analyses IA et synthèse de campagnes.\n\nActiveCampaign s'impose pour des entreprises consolidant plusieurs canaux sous un seul outil IA ; pour un usage email simple, une alternative gratuite suffit.",
-    "longDescriptionEn": "Autonomous marketing automation platform for email, SMS, WhatsApp and multichannel engagement, with AI agents managing campaigns and advanced analytics.\n\nKey strengths: Powerful AI agents for multichannel automation.; Extensive integrations (1000+).; Advanced analytics and insights for optimization.; 14-day free trial with no strings attached..\n\nActiveCampaign makes sense for consolidating multiple channels under one AI platform; for simple email-only needs, a free alternative is sufficient.",
+    "shortDescription": "Email marketing et automatisation des parcours clients, avec segmentation et options CRM.",
+    "shortDescriptionEn": "Email marketing and customer journey automation, with segmentation and optional CRM capabilities.",
+    "longDescription": "ActiveCampaign réunit campagnes email, segmentation et automatisations marketing pour créer des parcours qui s’adaptent aux actions et aux caractéristiques des contacts. L’offre comprend aussi des fonctions CRM, des pages d’atterrissage et plus de 1 000 intégrations, selon le forfait choisi.\n\nL’email et l’automatisation sont le cœur du produit. Les fonctions CRM avancées, SMS et WhatsApp peuvent dépendre d’options payantes, du forfait et du pays. Les fonctions d’IA assistent notamment la création de campagnes et la configuration des automatisations, sans remplacer le travail de définition des objectifs et des règles.\n\nL’essai dure 14 jours et est limité à 100 contacts et 100 emails envoyés. Il n’existe pas de forfait gratuit permanent. ActiveCampaign mérite d’être comparé si vous avez besoin de scénarios conditionnels, de segmentation et d’un lien avec les processus commerciaux. Pour une newsletter simple ou une petite liste, comparez le coût selon votre volume et le temps de configuration avec des solutions plus légères.",
+    "longDescriptionEn": "ActiveCampaign brings together email campaigns, segmentation and marketing automations to build customer journeys that respond to contact behavior and attributes. The platform also offers CRM capabilities, landing pages and more than 1,000 integrations, depending on the plan.\n\nEmail and automation are the product’s core. Advanced CRM features, SMS and WhatsApp may depend on paid add-ons, plan and country. AI features can assist with campaign creation and automation setup, but do not replace the work of defining goals and workflow rules.\n\nThe trial lasts 14 days and is limited to 100 contacts and 100 emails sent. There is no permanent free plan. ActiveCampaign is worth comparing when you need conditional journeys, segmentation and a connection to sales workflows. For a simple newsletter or a small list, compare the cost at your contact volume and setup effort with lighter tools.",
     "pricing": {
-      "free": "Essai gratuit de 14 jours sans carte bancaire ; pas de plan gratuit permanent",
-      "paid": "Starter: À partir de montants sur la page officielle selon le nombre de contacts ; Plus: Montants sur la page officielle ; Pro: Montants sur la page officielle ; Enterprise: Montants sur demande"
+      "free": "Essai de 14 jours sans carte bancaire, limité à 100 contacts et 100 emails envoyés. Aucun forfait gratuit permanent.",
+      "paid": "Pour 1 000 contacts, les tarifs affichés commencent à 15 $US/mois pour Starter, 49 $US/mois pour Plus et 79 $US/mois pour Pro, avec facturation annuelle. Le prix évolue selon le nombre de contacts, le forfait, le pays et les options."
     },
     "pricingEn": {
-      "free": "Essai gratuit de 14 jours sans carte bancaire ; pas de plan gratuit permanent",
-      "paid": "Starter: À partir de montants sur la page officielle selon le nombre de contacts ; Plus: Montants sur la page officielle ; Pro: Montants sur la page officielle ; Enterprise: Montants sur demande"
+      "free": "14-day trial with no credit card, limited to 100 contacts and 100 emails sent. No permanent free plan.",
+      "paid": "For 1,000 contacts, displayed rates start at $15/month for Starter, $49/month for Plus and $79/month for Pro, billed annually. Pricing varies by contact count, plan, country and add-ons."
     },
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 13.15,
     "pricing_v5": {
       "cautions": [
-        "Le prix évolue avec le nombre de contacts et les modules marketing/CRM."
+        "Tarif indicatif pour 1 000 contacts. Le prix dépend du volume et du marché. Le sélecteur officiel affiche une facturation annuelle par défaut ; vérifiez le montant et les options avant souscription."
       ],
-      "verified_on": "2026-08-30",
+      "verified_on": "2026-09-26",
       "source_domain": "activecampaign.com",
       "usage_sensitive": true,
       "compare_plan_kind": "paid",
       "compare_plan_name": "Starter",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
-      "official_source_url": "https://www.activecampaign.com",
+      "official_source_url": "https://www.activecampaign.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 15
+      "compare_price_monthly_eur": 13.15,
+      "free_plan_card": "Essai 14 jours, plafonné à 100 contacts et 100 emails envoyés. Sans carte bancaire. Aucun forfait gratuit permanent.",
+      "free_plan_cardEn": "14-day trial, capped at 100 contacts and 100 emails sent. No credit card required. No permanent free plan.",
+      "cautionsEn": [
+        "Reference rates are for 1,000 contacts. Price varies by contact count and market. The official selector defaults to annual billing; confirm the amount and add-ons before subscribing."
+      ],
+      "plans": [
+        {
+          "planKey": "trial",
+          "displayName": "Essai 14 jours",
+          "summary": "Testez les principales fonctions sans carte bancaire. L’accès d’essai expire après 14 jours.",
+          "featureHighlights": [
+            "Jusqu’à 100 contacts",
+            "Jusqu’à 100 emails envoyés",
+            "Sans carte bancaire"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/about/faq",
+          "pricingUnit": "trial",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "15 $US/mois affichés pour 1 000 contacts, avec facturation annuelle. Le tarif dépend du volume et du marché.",
+          "featureHighlights": [
+            "Email marketing et automatisations",
+            "Segmentation limitée",
+            "5 actions par automatisation"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/pricing",
+          "pricingUnit": "1 000 contacts, tarif affiché avec facturation annuelle",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "summary": "49 $US/mois affichés pour 1 000 contacts, avec facturation annuelle. Le tarif dépend du volume et du marché.",
+          "featureHighlights": [
+            "Actions d’automatisation illimitées",
+            "Segmentation standard",
+            "Pages d’atterrissage"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/pricing",
+          "pricingUnit": "1 000 contacts, tarif affiché avec facturation annuelle",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "79 $US/mois affichés pour 1 000 contacts, avec facturation annuelle. Le tarif dépend du volume et du marché.",
+          "featureHighlights": [
+            "Segmentation avancée",
+            "Contenu prédictif et conditionnel",
+            "Suivi d’attribution et des conversions"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/pricing",
+          "pricingUnit": "1 000 contacts, tarif affiché avec facturation annuelle",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 79,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "affiliateLink": "https://try.activecampaign.com/twe5oenri4zv-b9q17i",
     "websiteUrl": "https://www.activecampaign.com",
@@ -1076,44 +1168,50 @@
         "aiTools": [
           "chatgpt"
         ],
-        "augmentEn": "ActiveCampaign added AI content generation and automation suggestions. Like its competitors, it eases onboarding without changing the core product: marketing automation journeys.",
-        "augmentFr": "ActiveCampaign a ajouté la génération de contenu IA et des suggestions d'automatisation. Comme chez ses concurrents, ça facilite la prise en main sans changer le coeur du produit : les parcours d'automatisation marketing.",
-        "replaceEn": "Replace ActiveCampaign with an AI? No: building conditional automation journeys tied to a CRM is configuration work, not text generation. Verdict: AI helps write, automation remains the real product.",
-        "replaceFr": "Remplacer ActiveCampaign par une IA ? Non : construire des parcours d'automatisation conditionnels reliés à un CRM est un travail de configuration, pas de génération de texte. Verdict : l'IA aide à rédiger, l'automatisation reste le vrai produit."
+        "augmentEn": "ActiveCampaign's AI features assist with campaign creation, content and automation setup. The core value remains the email platform, segmentation and customer journey workflows.",
+        "augmentFr": "Les fonctions d’IA d’ActiveCampaign assistent la création de campagnes, de contenus et d’automatisations. La valeur centrale reste la plateforme email, la segmentation et les parcours clients.",
+        "replaceEn": "AI can draft campaign content, but it does not replace an email platform that manages contacts, consent, delivery, segmentation and conditional workflows. Check which AI tools are included in your plan.",
+        "replaceFr": "Une IA peut proposer du contenu de campagne, mais ne remplace pas une plateforme qui gère les contacts, le consentement, l’envoi, la segmentation et les parcours conditionnels. Vérifiez les fonctions d’IA incluses dans le forfait choisi."
       },
-      "metaDescription": "ActiveCampaign sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si ActiveCampaign mérite sa place dans ta stack."
+      "presentationTitleFr": "ActiveCampaign : prix, essai gratuit et avis 2026 | ToolTrim",
+      "presentationTitleEn": "ActiveCampaign: pricing, free trial and review 2026 | ToolTrim",
+      "presentationMetaDescriptionFr": "ActiveCampaign combine email marketing, segmentation et automatisation des parcours clients. Essai de 14 jours, prix selon vos contacts et limites des forfaits.",
+      "presentationMetaDescriptionEn": "ActiveCampaign combines email marketing, segmentation and customer journey automation. Review its 14-day trial, contact-based pricing and plan limits.",
+      "metaDescription": "ActiveCampaign sur ToolTrim : email marketing, automatisations, prix selon le nombre de contacts, essai limité et avis pour choisir le bon forfait."
     },
     "pros": [
-      "Agents IA robustes pour l'automatisation multichannel.",
-      "Intégrations très nombreuses (1000+).",
-      "Analytics et insights avancés pour optimiser les résultats.",
-      "Essai gratuit 14 jours sans engagement."
+      "Automatisations conditionnelles pour adapter les parcours aux actions des contacts.",
+      "Segmentation et campagnes email réunies dans le même environnement.",
+      "Plus de 1 000 intégrations annoncées par l’éditeur.",
+      "Essai de 14 jours sans carte bancaire pour évaluer les fonctions avant de payer."
     ],
     "prosEn": [
-      "Powerful AI agents for multichannel automation.",
-      "Extensive integrations (1000+).",
-      "Advanced analytics and insights for optimization.",
-      "14-day free trial with no strings attached."
+      "Conditional automations adapt customer journeys to contact behavior.",
+      "Email campaigns and segmentation in one platform.",
+      "More than 1,000 integrations, according to the vendor.",
+      "A 14-day trial with no credit card required lets you evaluate the product before paying."
     ],
     "cons": [
-      "Pas de plan gratuit permanent.",
-      "Prix élevé à grande échelle de contacts.",
-      "Interface dense pour les débutants."
+      "Aucun forfait gratuit permanent ; l’essai est limité à 100 contacts et 100 emails envoyés.",
+      "Le prix augmente avec le volume de contacts et les options retenues.",
+      "Le forfait Starter limite la segmentation et à cinq actions par automatisation."
     ],
     "consEn": [
-      "No permanent free plan.",
-      "Pricing climbs steeply with contact volume.",
-      "Dense interface for beginners."
+      "No permanent free plan; the trial is limited to 100 contacts and 100 emails sent.",
+      "Pricing increases with contact volume and selected add-ons.",
+      "Starter limits segmentation and allows five actions per automation."
     ],
     "useCases": [
-      "Construire une stratégie multi-canal (email + SMS + WhatsApp).",
-      "Automatiser des séquences de vente complexes.",
-      "Analyser en profondeur la performance des campagnes."
+      "Automatiser l’accueil, le suivi ou la réactivation selon les actions d’un contact.",
+      "Segmenter une audience et personnaliser des campagnes email récurrentes.",
+      "Relier les campagnes marketing aux processus commerciaux, après vérification des fonctions CRM incluses ou en option.",
+      "Ajouter SMS ou WhatsApp si le canal, le forfait et le budget le permettent."
     ],
     "useCasesEn": [
-      "Build a multi-channel strategy (email + SMS + WhatsApp).",
-      "Automate complex sales sequences.",
-      "Deep-dive campaign performance analysis."
+      "Automate onboarding, follow-up or re-engagement based on contact behavior.",
+      "Segment an audience and personalize recurring email campaigns.",
+      "Connect marketing campaigns with sales workflows after checking which CRM features are included or add-ons.",
+      "Add SMS or WhatsApp only when the channel is available for your market and budget."
     ],
     "covers": [
       "crm-marketing",
@@ -1132,34 +1230,34 @@
     ],
     "alternatives": [
       "brevo",
-      "convertkit",
+      "hubspot",
       "mailchimp"
     ],
     "verdict": {
       "keepIf": [
-        "Vous gérez plusieurs canaux (email, SMS, WhatsApp) et besoin d'une automation avancée.",
-        "Vous voulez des agents IA gérant vos campagnes automatiquement.",
-        "Vous avez une base de contacts volumineuse à segmenter."
+        "Vous envoyez des campagnes régulières et avez besoin de parcours conditionnels selon les comportements ou attributs des contacts.",
+        "La segmentation et l’automatisation justifient leur coût pour votre volume de contacts.",
+        "Vous souhaitez relier marketing et ventes, après avoir vérifié les fonctions CRM et options nécessaires."
       ],
       "avoidIf": [
-        "Vous cherchez un outil gratuit sans limitation.",
-        "Vous vous concentrez uniquement sur l'email sans multi-canal.",
-        "Votre budget est très limité et vous débutez."
+        "Vous voulez un forfait gratuit durable ou votre liste dépasse les limites de l’essai sans budget établi.",
+        "Vous envoyez surtout une newsletter simple et n’utiliserez pas les automatisations avancées.",
+        "Le coût selon le nombre de contacts et les options dépasse la valeur attendue."
       ],
-      "threshold": "ActiveCampaign s'impose pour des entreprises consolidant plusieurs canaux sous un seul outil IA ; pour un usage email simple, une alternative gratuite suffit."
+      "threshold": "ActiveCampaign est surtout pertinent lorsque les parcours conditionnels et la segmentation servent une stratégie marketing régulière. Testez d’abord le parcours complet dans les limites de l’essai, puis vérifiez le prix associé à votre nombre de contacts, au mode de facturation et aux options indispensables."
     },
     "verdictEn": {
       "keepIf": [
-        "You manage multiple marketing channels (email, SMS, WhatsApp) and need advanced automation.",
-        "You want AI agents managing your campaigns autonomously.",
-        "You have a large contact database requiring complex segmentation."
+        "You send campaigns regularly and need conditional journeys based on contact behavior or attributes.",
+        "Segmentation and automation justify the cost at your contact volume.",
+        "You want to connect marketing and sales after checking which CRM capabilities and add-ons you need."
       ],
       "avoidIf": [
-        "You're looking for a free tool without limitations.",
-        "You focus purely on email marketing without multi-channel needs.",
-        "Your budget is tight and you're just starting out."
+        "You need a lasting free plan, or the trial limits do not fit and you have no paid-tool budget.",
+        "You mainly send a simple newsletter and would not use advanced automations.",
+        "Pricing at your contact count and required add-ons exceeds the expected value."
       ],
-      "threshold": "ActiveCampaign makes sense for consolidating multiple channels under one AI platform; for simple email-only needs, a free alternative is sufficient."
+      "threshold": "ActiveCampaign is most relevant when conditional journeys and segmentation support a recurring marketing strategy. Test the full workflow within the trial limits, then confirm pricing for your contact count, billing term and required add-ons."
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
@@ -1198,8 +1296,115 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://active-campaign.transforms.svdcdn.com/production/general/AC_Opengraph-1.png?w=1200&h=630&q=82&auto=format&fit=clip&dm=1753306175&s=1b0f698fac52d45ef9b2f8a250d6f8f5",
-    "description": "Plateforme d'automatisation marketing autonome pour email, SMS, WhatsApp et autres canaux, avec des agents IA pilotant les campagnes et des analyses avancées.\n\nFonctions clés : Agents IA autonomes (Active Intelligence 2.8) adaptés à votre brand ; Multi-canal : email, SMS, WhatsApp, 1000+ intégrations ; Automatisation des journées clients et lead scoring ; Analyses IA et synthèse de campagnes.\n\nActiveCampaign s'impose pour des entreprises consolidant plusieurs canaux sous un seul outil IA ; pour un usage email simple, une alternative gratuite suffit.",
-    "galleryImages": []
+    "description": "ActiveCampaign réunit campagnes email, segmentation et automatisations marketing pour créer des parcours qui s’adaptent aux actions et aux caractéristiques des contacts. L’offre comprend aussi des fonctions CRM, des pages d’atterrissage et plus de 1 000 intégrations, selon le forfait choisi.\n\nL’email et l’automatisation sont le cœur du produit. Les fonctions CRM avancées, SMS et WhatsApp peuvent dépendre d’options payantes, du forfait et du pays. Les fonctions d’IA assistent notamment la création de campagnes et la configuration des automatisations, sans remplacer le travail de définition des objectifs et des règles.\n\nL’essai dure 14 jours et est limité à 100 contacts et 100 emails envoyés. Il n’existe pas de forfait gratuit permanent. ActiveCampaign mérite d’être comparé si vous avez besoin de scénarios conditionnels, de segmentation et d’un lien avec les processus commerciaux. Pour une newsletter simple ou une petite liste, comparez le coût selon votre volume et le temps de configuration avec des solutions plus légères.",
+    "galleryImages": [],
+    "pricing_v5En": {
+      "cautions": [
+        "Reference rates are for 1,000 contacts. Pricing varies by contact count and market. The official selector defaults to annual billing; confirm the amount and add-ons before subscribing."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "activecampaign.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Starter",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://www.activecampaign.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 13.15,
+      "free_plan_card": "14-day trial, capped at 100 contacts and 100 emails sent. No credit card required. No permanent free plan.",
+      "plans": [
+        {
+          "planKey": "trial",
+          "displayName": "14-day trial",
+          "summary": "Try the main features without a credit card. Trial access expires after 14 days.",
+          "featureHighlights": [
+            "Up to 100 contacts",
+            "Up to 100 emails sent",
+            "No credit card required"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/about/faq",
+          "pricingUnit": "trial",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "Displayed at $15/month for 1,000 contacts, billed annually. Pricing varies by volume and market.",
+          "featureHighlights": [
+            "Email marketing and automations",
+            "Limited segmentation",
+            "5 actions per automation"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/pricing",
+          "pricingUnit": "1,000 contacts, displayed rate with annual billing",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "summary": "Displayed at $49/month for 1,000 contacts, billed annually. Pricing varies by volume and market.",
+          "featureHighlights": [
+            "Unlimited automation actions",
+            "Standard segmentation",
+            "Landing pages"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/pricing",
+          "pricingUnit": "1,000 contacts, displayed rate with annual billing",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "Displayed at $79/month for 1,000 contacts, billed annually. Pricing varies by volume and market.",
+          "featureHighlights": [
+            "Advanced segmentation",
+            "Predictive and conditional content",
+            "Attribution and conversion tracking"
+          ],
+          "detailsSourceUrl": "https://www.activecampaign.com/pricing",
+          "pricingUnit": "1,000 contacts, displayed rate with annual billing",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 79,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "affiliateDisclosureFr": "Lien affilié : ToolTrim peut percevoir une commission si vous souscrivez à un forfait payant, sans coût supplémentaire pour vous.",
+    "affiliateDisclosureEn": "Affiliate link: ToolTrim may earn a commission if you subscribe to a paid plan, at no extra cost to you.",
+    "affiliateCtaLabelFr": "Essayer gratuitement pendant 14 jours",
+    "affiliateCtaLabelEn": "Start a free 14-day trial"
   },
   {
     "id": "activepieces",
@@ -78672,32 +78877,36 @@
     "id": "convertkit",
     "name": "Kit",
     "category": "email-productivity",
-    "description": "Kit, anciennement ConvertKit, est pensé pour les créateurs, auteurs et indépendants qui construisent une audience. ToolTrim le considère pertinent quand la newsletter est un actif business. Si l’email n’est qu’un canal occasionnel, un outil plus simple ou gratuit peut suffire.",
-    "shortDescription": "Newsletter, formulaires et automatisations pour créateurs et indépendants.",
+    "description": "Kit (anciennement ConvertKit) réunit l’email marketing, les formulaires d’inscription et les automatisations pour les créateurs qui développent une audience. La plateforme permet aussi de vendre des produits numériques et des abonnements. Son plan gratuit va jusqu’à 10 000 abonnés, tandis que les séquences email et les automatisations visuelles sont réservées aux offres payantes. Le bon choix dépend donc surtout de la taille de votre liste et des fonctions dont vous avez réellement besoin.",
+    "shortDescription": "Newsletter, formulaires, automatisations et ventes numériques pour créateurs d’audience.",
     "pricing": {
-      "free": "Plan gratuit selon volume et fonctionnalités disponibles.",
-      "paid": "Plan Creator autour de 25 $/mois selon taille de liste et facturation."
+      "free": "Plan gratuit jusqu’à 10 000 abonnés, avec formulaires, pages d’inscription, newsletters et segmentation. Les automatisations visuelles et séquences email ne sont pas incluses.",
+      "paid": "Creator : 390 $US/an, soit 33 $US/mois équivalent, pour 1 000 abonnés avec facturation annuelle. Le prix évolue avec la taille de la liste. Pro : 790 $US/an, soit 66 $US/mois équivalent, pour 1 000 abonnés."
     },
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "verdict": {
       "keepIf": [
-        "Vous êtes creator monétisant newsletter + courses + digital products.",
-        "Vous cherchez alternative à ConvertKit sans commissions.",
-        "Vous utilisez Claude/IA et veux gérer business depuis chat."
+        "Vous développez une audience propriétaire et envoyez des newsletters régulièrement.",
+        "Vous voulez relier formulaires, segmentation et séquences email dans le même outil.",
+        "Vous vendez des produits numériques ou une newsletter payante depuis votre activité de créateur."
       ],
       "avoidIf": [
-        "Vous faites email marketing B2B pure (Mailchimp mieux).",
-        "Vous avez besoin multi-canal (SMS, etc).",
-        "Vous débutez et cherchez outils simple gratuit."
+        "Vous avez seulement besoin d’envoyer quelques emails sans automatisation ni gestion d’audience.",
+        "Votre priorité est une plateforme marketing multicanale complète plutôt qu’un outil centré sur l’email des créateurs.",
+        "Votre liste dépasse le volume inclus dans le plan gratuit et votre budget ne permet pas un forfait payant."
       ],
-      "threshold": "Kit gagne pour creators monétisant ; pour B2B email ou features avancées, Mailchimp/ActiveCampaign meilleur."
+      "threshold": "Kit est à considérer si la newsletter est un canal durable pour développer et monétiser votre audience. Commencez par le plan gratuit si ses limites fonctionnelles vous conviennent. Avant de passer à Creator ou Pro, comparez le tarif selon votre nombre d’abonnés et vérifiez que les séquences, automatisations ou outils d’analyse supplémentaires répondent à un besoin réel."
     },
     "seo": {
+      "presentationTitleFr": "Kit (ex-ConvertKit) : prix, fonctionnalités et avis 2026 | ToolTrim",
+      "presentationTitleEn": "Kit (formerly ConvertKit): pricing, features and review 2026 | ToolTrim",
+      "presentationMetaDescriptionFr": "Kit, ex-ConvertKit, propose newsletters, formulaires, automatisations et vente de produits numériques. Prix vérifiés, limites du gratuit et avis indépendant.",
+      "presentationMetaDescriptionEn": "Kit, formerly ConvertKit, combines newsletters, forms, automations and digital product sales. Explore current pricing, free-plan limits and an independent review.",
       "aiAngle": {
         "stance": "augmente",
         "aiTools": [],
-        "augmentEn": "Kit (formerly ConvertKit) added AI to generate emails and automations, but remains email marketing infrastructure specifically designed for creators monetizing an audience.",
-        "augmentFr": "Kit (anciennement ConvertKit) a ajouté l'IA pour générer des emails et automatisations, mais reste l'infrastructure d'email marketing pensée spécifiquement pour les créateurs qui monétisent une audience.",
+        "augmentEn": "AI can assist with drafting and adapting email content, while Kit provides the audience management, forms, delivery and automation workflow around it.",
+        "augmentFr": "L’IA peut aider à rédiger et adapter les emails, tandis que Kit fournit les outils de gestion d’audience, de formulaires, d’envoi et d’automatisation qui les entourent.",
         "replaceEn": "Replace Kit with an AI? No: sending emails to a subscriber list with deliverability and automations remains a technical infrastructure need. AI helps write the emails, it doesn't replace the sending platform. Verdict: AI augments writing, sending infrastructure remains the product.",
         "replaceFr": "Remplacer Kit par une IA ? Non : envoyer des emails à une liste d'abonnés avec délivrabilité et automatisations reste un besoin d'infrastructure technique. L'IA aide à rédiger les emails, elle ne remplace pas la plateforme d'envoi. Verdict : l'IA augmente la rédaction, l'infrastructure d'envoi reste le produit."
       },
@@ -78706,7 +78915,8 @@
     "articles": [],
     "alternatives": [
       "brevo",
-      "mailchimp",
+      "mailerlite",
+      "beehiiv",
       "substack"
     ],
     "tags": [
@@ -78734,10 +78944,10 @@
       "content-creator",
       "writer"
     ],
-    "defaultMonthlyPrice": 25,
+    "defaultMonthlyPrice": 29.03,
     "pricingTiers": {
-      "free": "Gratuit jusqu'à 1000 abonnés (fonctionnalités limitées)",
-      "paid": "À partir de 15$/mois (Creator) - 29$/mois (Creator Pro)"
+      "free": "Gratuit jusqu’à 10 000 abonnés. Les automatisations visuelles et séquences email ne sont pas incluses.",
+      "paid": "À 1 000 abonnés, Creator coûte 390 $US/an (33 $US/mois équivalent) et Pro 790 $US/an (66 $US/mois équivalent), avec facturation annuelle. Les tarifs varient selon le nombre d’abonnés."
     },
     "relevantFor": [
       "Creators et writers indépendants",
@@ -78762,18 +78972,18 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "kit",
-    "shortDescriptionEn": "Newsletter, forms and automations for creators and independent businesses.",
-    "longDescription": "Kit, anciennement ConvertKit, est pensé pour les créateurs, auteurs et indépendants qui construisent une audience. ToolTrim le considère pertinent quand la newsletter est un actif business. Si l’email n’est qu’un canal occasionnel, un outil plus simple ou gratuit peut suffire.",
-    "longDescriptionEn": "Kit, formerly ConvertKit, is built for creators and solo businesses growing an audience through email.",
+    "shortDescriptionEn": "Email marketing, forms, automations and digital sales for audience-led creators.",
+    "longDescription": "Kit (anciennement ConvertKit) est une plateforme d’email marketing destinée aux créateurs, auteurs, formateurs et indépendants qui construisent une audience. Elle rassemble formulaires et pages d’inscription, newsletters, segmentation des abonnés et automatisations visuelles. Les créateurs peuvent également vendre des produits numériques ou des abonnements. Le plan gratuit couvre jusqu’à 10 000 abonnés, mais sans séquences email ni automatisations visuelles. Les forfaits payants ajoutent ces fonctions et leur prix dépend du volume d’abonnés. Kit convient surtout si l’email joue un rôle régulier dans l’acquisition, la relation ou la monétisation de votre audience. Pour un usage ponctuel ou une stratégie marketing fortement multicanale, comparez d’abord les besoins et les coûts avec d’autres plateformes.",
+    "longDescriptionEn": "Kit, formerly ConvertKit, is an email marketing platform for creators, authors, educators and independent businesses building an audience. It brings together signup forms and landing pages, newsletters, subscriber segmentation and visual automations. Creators can also sell digital products and subscriptions. The free plan covers up to 10,000 subscribers but does not include email sequences or visual automations. Paid plans add those features, with prices based on subscriber count. Kit is most relevant when email plays a regular role in growing, engaging or monetizing an audience. For occasional email use or a strongly multi-channel marketing strategy, compare your requirements and total costs with other platforms first.",
     "pricingEn": {
-      "free": "Free plan depending on list size and available features.",
-      "paid": "Creator plan around $25/month depending on list size and billing."
+      "free": "Free plan for up to 10,000 subscribers, with forms, landing pages, broadcasts and segmentation. Visual automations and email sequences are not included.",
+      "paid": "For 1,000 subscribers, Creator is $390/year ($33/month equivalent) and Pro is $790/year ($66/month equivalent), billed annually. Pricing changes with subscriber count."
     },
     "pricing_v5": {
       "cautions": [
-        "Le prix dépend de la taille de liste et des fonctionnalités choisies."
+        "Les forfaits payants dépendent du nombre d’abonnés. Les tarifs affichés sont des équivalents mensuels avec facturation annuelle, pour 1 000 abonnés."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "kit.com",
       "usage_sensitive": true,
       "compare_plan_kind": "paid",
@@ -78782,77 +78992,141 @@
       "location_sensitive": true,
       "official_source_url": "https://kit.com/pricing",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 25
+      "compare_price_monthly_eur": 29.03,
+      "free_plan_card": "Jusqu’à 10 000 abonnés. Formulaires, pages d’inscription, newsletters et segmentation inclus. Pas de séquences email ni d’automatisations visuelles.",
+      "free_plan_cardEn": "Up to 10,000 subscribers. Includes forms, landing pages, broadcasts and segmentation. Email sequences and visual automations are not included.",
+      "cautionsEn": [
+        "Paid pricing depends on subscriber count. The displayed Creator and Pro rates are monthly equivalents for annual billing at 1,000 subscribers."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Jusqu’à 10 000 abonnés, avec formulaires, pages d’inscription et newsletters.",
+          "featureHighlights": [
+            "Formulaires et pages illimités",
+            "Newsletters et segmentation",
+            "Sans séquences email ni automatisations visuelles"
+          ],
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "pricingUnit": "jusqu’à 10 000 abonnés",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD"
+        },
+        {
+          "planKey": "creator",
+          "displayName": "Creator",
+          "summary": "390 $US/an, soit 33 $US/mois équivalent, pour 1 000 abonnés. Tarif payé annuellement et variable selon la taille de la liste.",
+          "featureHighlights": [
+            "Automatisations visuelles",
+            "Séquences email",
+            "Kit MCP et tests A/B d’objet"
+          ],
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "pricingUnit": "jusqu’à 1 000 abonnés",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 390,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "790 $US/an, soit 66 $US/mois équivalent, pour 1 000 abonnés. Tarif payé annuellement et variable selon la taille de la liste.",
+          "featureHighlights": [
+            "Subscriber Signals et analyses d’engagement",
+            "Utilisateurs illimités",
+            "Rapports de délivrabilité"
+          ],
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "pricingUnit": "jusqu’à 1 000 abonnés",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 790,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://kit.com",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "You're a creator monetizing newsletter + courses + digital products.",
-        "You want a ConvertKit alternative without commissions.",
-        "You use Claude/AI and want to manage business from chat."
+        "You are building an owned audience and send newsletters regularly.",
+        "You want forms, segmentation and email sequences in one platform.",
+        "You sell digital products or a paid newsletter as part of your creator business."
       ],
       "avoidIf": [
-        "You're doing pure B2B email marketing (Mailchimp better).",
-        "You need multi-channel (SMS, etc).",
-        "You're starting and want simple free tools."
+        "You only need to send occasional emails without automations or audience management.",
+        "You need a full multi-channel marketing suite rather than creator-focused email tools.",
+        "Your list exceeds the free-plan limit and paid pricing is outside your budget."
       ],
-      "threshold": "Kit wins for monetizing creators; for B2B email or advanced features, Mailchimp/ActiveCampaign better."
+      "threshold": "Consider Kit when newsletters are a consistent channel for growing and monetizing your audience. Start with the free plan if its feature limits fit your workflow. Before upgrading to Creator or Pro, check pricing for your subscriber count and confirm you need the additional sequences, automations or analytics."
     },
     "pros": [
-      "Plan gratuit généreux (10k abonnés).",
-      "Aucune commission prélevée sur vos revenus.",
-      "Everything-in-one : newsletter + courses + products.",
-      "Visual automation builder accessible.",
-      "MCP Claude integration pour management via chat.",
-      "Templates modernes et pro."
+      "Plan gratuit jusqu’à 10 000 abonnés.",
+      "Formulaires, pages d’inscription, newsletters et segmentation réunis au même endroit.",
+      "Vente de produits numériques et d’abonnements possible depuis la plateforme.",
+      "Creator ajoute les automatisations visuelles et les séquences email.",
+      "Kit MCP est inclus dans Creator et Pro.",
+      "Kit annonce une migration gratuite."
     ],
     "prosEn": [
-      "Generous free tier (10k subscribers).",
-      "Aucune commission prélevée sur vos revenus.",
-      "Everything-in-one: newsletter + courses + products.",
-      "Visual automation builder accessible.",
-      "MCP Claude integration for chat-based management.",
-      "Modern, professional templates."
+      "Free plan for up to 10,000 subscribers.",
+      "Landing pages, forms, broadcasts and audience segmentation in one platform.",
+      "Digital product and subscription sales are supported.",
+      "Creator adds visual automations and email sequences.",
+      "Creator and Pro include Kit MCP.",
+      "Free migration is advertised by Kit."
     ],
     "cons": [
-      "Orienté creators (pas B2B).",
-      "Automation moins avancée que ActiveCampaign.",
-      "Pas de SMS/multi-canal.",
-      "Audience plus petite que Mailchimp.",
-      "Courbe apprentissage sur MCP si nouveau."
+      "Le plan gratuit n’inclut pas les automatisations visuelles ni les séquences email.",
+      "Les forfaits payants évoluent avec le nombre d’abonnés : le tarif d’entrée ne vaut pas pour toutes les listes.",
+      "L’outil est centré sur l’email des créateurs et ne remplace pas une suite marketing multicanale complète."
     ],
     "consEn": [
-      "Creator-focused (not B2B).",
-      "Automation less advanced than ActiveCampaign.",
-      "No SMS/multi-channel.",
-      "Smaller audience than Mailchimp.",
-      "Learning curve with MCP if new."
+      "The free plan does not include visual automations or email sequences.",
+      "Paid plans scale with subscriber count, so the displayed entry price is not universal.",
+      "The product is centered on creator email workflows, not a complete multichannel marketing suite."
     ],
     "useCases": [
-      "Monétiser newsletter via subscriptions payantes.",
-      "Vendre courses et digital products intégrés.",
-      "Automation bienvenue et upsell sequences.",
-      "Gestion newsletter depuis Claude chat.",
-      "Analytics audience et performance newsletter."
+      "Créer des formulaires et pages d’inscription pour développer une liste email.",
+      "Envoyer des newsletters et segmenter les abonnés selon leurs intérêts.",
+      "Automatiser une séquence de bienvenue ou une campagne de lancement avec Creator.",
+      "Vendre des produits numériques ou proposer un abonnement payant.",
+      "Suivre l’engagement des abonnés avec les outils inclus dans Pro."
     ],
     "useCasesEn": [
-      "Monetize newsletter via paid subscriptions.",
-      "Sell integrated courses and digital products.",
-      "Welcome and upsell sequence automation.",
-      "Manage newsletter from Claude chat.",
-      "Audience analytics and newsletter performance."
+      "Create signup forms and landing pages to grow an email list.",
+      "Send newsletters and segment subscribers by interest.",
+      "Automate a welcome sequence or launch campaign with Creator.",
+      "Sell digital products or offer a paid newsletter.",
+      "Monitor subscriber engagement with Pro features."
     ],
     "personas": [
       "ALIX",
       "MARC"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
-      "prix-non-vérifié",
       "auto-replace-bloqué",
       "prix-variable"
     ],
@@ -78872,7 +79146,91 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.jpg"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.jpg",
+    "affiliateDisclosureFr": "Lien affilié : ToolTrim peut percevoir une commission si vous souscrivez à un forfait payant, sans coût supplémentaire pour vous.",
+    "affiliateDisclosureEn": "Affiliate link: ToolTrim may earn a commission if you subscribe to a paid plan, at no extra cost to you.",
+    "affiliateCtaLabelFr": "Commencer gratuitement",
+    "affiliateCtaLabelEn": "Start for free",
+    "pricing_v5En": {
+      "cautions": [
+        "Paid pricing depends on subscriber count. Displayed rates are monthly equivalents with annual billing, for 1,000 subscribers."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "kit.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Creator",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://kit.com/pricing",
+      "verification_status": "verified_public_pricing_page",
+      "compare_price_monthly_eur": 29.03,
+      "free_plan_card": "Up to 10,000 subscribers. Includes forms, landing pages, broadcasts and segmentation. Email sequences and visual automations are not included.",
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Up to 10,000 subscribers, with forms, landing pages and broadcasts.",
+          "featureHighlights": [
+            "Unlimited forms and landing pages",
+            "Broadcasts and segmentation",
+            "No email sequences or visual automations"
+          ],
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "pricingUnit": "up to 10,000 subscribers",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD"
+        },
+        {
+          "planKey": "creator",
+          "displayName": "Creator",
+          "summary": "$390/year, or $33/month equivalent, for 1,000 subscribers. Billed annually; price varies with list size.",
+          "featureHighlights": [
+            "Visual automations",
+            "Email sequences",
+            "Kit MCP and subject-line A/B tests"
+          ],
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "pricingUnit": "up to 1,000 subscribers",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 390,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "$790/year, or $66/month equivalent, for 1,000 subscribers. Billed annually; price varies with list size.",
+          "featureHighlights": [
+            "Subscriber Signals and engagement analytics",
+            "Unlimited users",
+            "Deliverability reporting"
+          ],
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "pricingUnit": "up to 1,000 subscribers",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 790,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    }
   },
   {
     "id": "kixie",
@@ -164598,38 +164956,38 @@
     "id": "turbotic",
     "name": "Turbotic",
     "category": "automation",
-    "description": "Turbotic, c'est automatisation IA pour orchestrer vos processus métier. À partir de 8.66€/mois. Pensé pour les managers et DSI et les consultants B2B.\n\nGain de temps estimé : 8h/mois.\n\nDès que vous automatisez 3+ processus répétitifs par semaine. Alternative gratuite : make.",
-    "shortDescription": "Automatisation IA pour orchestrer vos processus métier.",
+    "description": "Turbotic Automation AI transforme une demande formulée en langage naturel en workflow automatisé, que vous pouvez tester, planifier et suivre depuis la plateforme. Une approche no-code pour les indépendants et petites équipes qui veulent automatiser des tâches récurrentes sans assembler chaque étape à la main.\n\nLa plateforme propose une offre gratuite limitée, puis des forfaits payants. Les fonctions et limites dépendent du plan choisi.",
+    "shortDescription": "Créez, testez et suivez des workflows automatisés à partir d'instructions en langage naturel.",
     "pricing": {
-      "free": "Essai gratuit disponible",
-      "paid": "À partir de 10$/utilisateur/mois (Professional) - 25$/utilisateur/mois (Premium)"
+      "free": "Offre gratuite : jusqu'à 3 automatisations, 100 exécutions et 100 chats",
+      "paid": "Basic : 14,99 $/mois avec facturation annuelle ; Pro : 79,99 $/mois avec facturation annuelle ; Enterprise : sur devis"
     },
     "affiliateLink": "https://try.turbotic.com/0ijk0lvs0etc",
     "verdict": {
       "keepIf": [
-        "Vous avez besoin d'orchestration d'automations complexes cross-tools.",
-        "Vous cherchez à lancer des automations RPA/AI sans développement.",
-        "Vous gérez une infrastructure multi-vendor (UiPath, etc.)."
+        "Vous voulez créer des automatisations en décrivant le résultat attendu en langage naturel.",
+        "Vous cherchez à tester puis planifier des workflows sans écrire le code d'intégration vous-même.",
+        "Vous avez vérifié que les intégrations et les limites d'exécution du plan couvrent vos besoins."
       ],
       "avoidIf": [
-        "Vous cherchez une solution gratuite ou low-cost.",
-        "Vous avez des besoins d'automation simples (2-3 apps).",
-        "Vous préférez une plateforme open-source ou légère."
+        "Vous avez seulement quelques automatisations simples et préférez payer uniquement à l'usage.",
+        "Vous avez besoin d'un contrôle technique poussé ou d'une solution auto-hébergée.",
+        "Vous comptez sur une intégration précise qui n'est pas confirmée dans le catalogue Turbotic."
       ],
-      "threshold": "Turbotic s'adresse aux grandes organisations cherchant l'orchestration d'automations et d'AI agents complexes avec self-healing et optimisation autonome."
+      "threshold": "À considérer si vous voulez passer d'une consigne en langage naturel à un workflow automatisé, puis le tester et le suivre. Comparez les quotas d'exécution, les intégrations disponibles et le coût annuel avant de déplacer un processus important."
     },
     "alternatives": [
       {
         "name": "Zapier",
-        "reason": "Leader de l'automatisation, 100 tâches/mois gratuit"
+        "reason": "Automatisations entre de nombreuses applications avec un éditeur visuel et une offre gratuite limitée."
       },
       {
         "name": "Make (ex-Integromat)",
-        "reason": "Plus puissant que Zapier, 1000 ops/mois gratuit"
+        "reason": "Constructeur visuel de scénarios pour relier applications et données."
       },
       {
         "name": "n8n",
-        "reason": "Open-source, auto-hébergeable, gratuit illimité"
+        "reason": "Automatisation orientée workflows, avec option d'auto-hébergement."
       }
     ],
     "tags": [
@@ -164656,24 +165014,27 @@
       "tech",
       "consultant"
     ],
-    "defaultMonthlyPrice": 8.66,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Essai gratuit disponible",
-      "paid": "À partir de 10$/utilisateur/mois (Professional) - 25$/utilisateur/mois (Premium)"
+      "free": "Offre gratuite : jusqu'à 3 automatisations, 100 exécutions et 100 chats",
+      "paid": "Basic : 14,99 $/mois avec facturation annuelle ; Pro : 79,99 $/mois avec facturation annuelle ; Enterprise : sur devis"
     },
     "relevantFor": [
-      "Grandes organisations",
-      "IT ops teams",
-      "Équipes RPA"
+      "Indépendants et petites équipes",
+      "Utilisateurs métier à l'aise avec les outils numériques",
+      "Équipes tech qui souhaitent prototyper des automatisations assistées par IA"
     ],
     "seo": {
-      "metaDescription": "Turbotic : Automatisation IA pour orchestrer vos processus métier. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "presentationTitleFr": "Turbotic : automatisation IA, prix et avis | ToolTrim",
+      "presentationTitleEn": "Turbotic review: AI workflows, pricing and free plan | ToolTrim",
+      "metaDescription": "Turbotic crée des workflows à partir d'instructions en langage naturel. Offre gratuite, prix Basic et Pro facturés à l'année, fonctionnalités et limites à comparer.",
+      "presentationMetaDescriptionFr": "Turbotic crée des workflows automatisés à partir du langage naturel. Découvrez l'offre gratuite, les prix Basic et Pro facturés à l'année et les limites avant de vous inscrire.",
+      "presentationMetaDescriptionEn": "Turbotic builds automated workflows from natural-language instructions. Compare the free plan, Basic and Pro annual pricing, features, and limits before signing up."
     },
     "articles": [],
     "tool_type": "satellite",
     "substitutable": true,
     "verticals": [
-      "manager-dsi",
       "consultant-b2b"
     ],
     "functional_needs": [
@@ -164687,81 +165048,81 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "turbotic",
-    "shortDescriptionEn": "AI automation to orchestrate your business processes.",
-    "longDescription": "Turbotic, c'est automatisation IA pour orchestrer vos processus métier. À partir de 8.66€/mois. Pensé pour les managers et DSI et les consultants B2B.\n\nGain de temps estimé : 8h/mois.\n\nDès que vous automatisez 3+ processus répétitifs par semaine. Alternative gratuite : make.",
-    "longDescriptionEn": "Turbotic is aI automation to orchestrate your business processes. Starting at €8.66/month. Built for managers and IT directors and B2B consultants.\n\nEstimated time saving: 8h/month.\n\nAs soon as you automate 3+ repetitive processes per week. Free alternative: make.",
+    "shortDescriptionEn": "Create, test, and monitor automated workflows from natural-language instructions.",
+    "longDescription": "Turbotic Automation AI transforme une demande formulée en langage naturel en workflow automatisé, que vous pouvez tester, planifier et suivre depuis la plateforme. Une approche no-code pour les indépendants et petites équipes qui veulent automatiser des tâches récurrentes sans assembler chaque étape à la main.\n\nLa plateforme propose une offre gratuite limitée, puis des forfaits payants. Les fonctions et limites dépendent du plan choisi.",
+    "longDescriptionEn": "Turbotic Automation AI turns a natural-language request into an automated workflow that you can test, schedule, and monitor in the platform. It is a no-code approach for freelancers and small teams looking to automate recurring tasks without wiring every step by hand.\n\nThe platform offers a limited free plan, followed by paid plans. Features and limits depend on the selected plan.",
     "pricingEn": {
-      "free": "Free trial available",
-      "paid": "From $10/user/month (Professional) - $25/user/month (Premium)"
+      "free": "Free plan: up to 3 automations, 100 executions, and 100 chats",
+      "paid": "Basic: $14.99/month billed annually; Pro: $79.99/month billed annually; Enterprise: custom quote"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "try.turbotic.com",
+      "cautions": [
+        "Les forfaits Basic et Pro sont affichés en USD avec facturation annuelle ; aucun montant EUR n'est renseigné dans la fiche."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "turbotic.com",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://try.turbotic.com/0ijk0lvs0etc",
+      "official_source_url": "https://turbotic.com/automation-ai",
       "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 8.66
+      "compare_price_monthly_eur": 0
     },
-    "websiteUrl": "https://try.turbotic.com/0ijk0lvs0etc",
+    "websiteUrl": "https://turbotic.com/automation-ai",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "You need orchestration of complex cross-tool automations.",
-        "You want to launch RPA/AI automations without development.",
-        "You manage multi-vendor infrastructure (UiPath, etc.)."
+        "You want to create automations by describing the desired outcome in natural language.",
+        "You want to test and schedule workflows without writing the integration code yourself.",
+        "You have verified that the available integrations and plan limits fit your needs."
       ],
       "avoidIf": [
-        "You seek a free or low-cost solution.",
-        "You have simple 2-3 app automation needs.",
-        "You prefer open-source or lightweight platforms."
+        "You only need a few simple automations and prefer usage-based pricing.",
+        "You need deep technical control or a self-hosted solution.",
+        "You depend on a specific integration that is not confirmed in Turbotic's directory."
       ],
-      "threshold": "Turbotic targets large organizations seeking orchestration of complex automations and AI agents with self-healing and autonomous optimization."
+      "threshold": "Consider it if you want to turn a natural-language instruction into an automated workflow, then test and monitor it. Compare execution quotas, available integrations, and annual billing before moving an important process."
     },
     "pros": [
-      "Construction d'automations via langage naturel (pas de code).",
-      "Orchestration multi-vendor (UiPath, etc.).",
-      "Self-healing execution et optimisation IA automatique.",
-      "Détection d'anomalies et actions remédiatrices intégrées."
+      "Création de workflows à partir d'instructions en langage naturel.",
+      "Possibilité de tester puis planifier les automatisations.",
+      "Offre gratuite pour découvrir le produit avec des quotas annoncés.",
+      "Suivi des workflows depuis la plateforme."
     ],
     "prosEn": [
-      "Build automations via natural language (no code).",
-      "Multi-vendor orchestration (UiPath, etc.).",
-      "Self-healing execution and automatic AI optimization.",
-      "Integrated anomaly detection and remediation."
+      "Create workflows from natural-language instructions.",
+      "Option to test and schedule automations.",
+      "Free plan with published usage limits.",
+      "Monitor workflows from the platform."
     ],
     "cons": [
-      "Pas de tier gratuit.",
-      "Tarification non transparente (consultation requise).",
-      "Orienté grandes organisations (complexité élevée)."
+      "Les forfaits payants affichés sont facturés annuellement.",
+      "Les quotas du plan gratuit peuvent être vite atteints selon le volume.",
+      "Vérifiez la disponibilité des intégrations et les résultats générés avant un déploiement en production."
     ],
     "consEn": [
-      "No free tier.",
-      "Pricing not transparent (consultation required).",
-      "Geared toward large organizations (high complexity)."
+      "Published paid-plan prices are billed annually.",
+      "The free-plan quotas may be reached quickly depending on usage.",
+      "Check integration availability and generated results before production use."
     ],
     "useCases": [
-      "Orchestrer des automations RPA complexes entre multiples outils.",
-      "Déployer des AI agents autonomes pour opérations.",
-      "Monitorer et optimiser des workflows de traitement de données massives."
+      "Automatiser une tâche répétitive à partir d'une consigne en langage naturel.",
+      "Tester un workflow avant de le planifier.",
+      "Suivre l'exécution de workflows reliant les applications prises en charge."
     ],
     "useCasesEn": [
-      "Orchestrate complex RPA automations across multiple tools.",
-      "Deploy autonomous AI agents for operations.",
-      "Monitor and optimize massive data processing workflows."
+      "Automate a recurring task from a natural-language instruction.",
+      "Test a workflow before scheduling it.",
+      "Monitor workflows across supported applications."
     ],
     "personas": [],
-    "timeGainedHoursPerMonth": 8,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
-    "prescription_block_reasons": [
-      "prix-non-vérifié"
-    ],
+    "prescription_block_reasons": [],
     "prescription_context_questions": [
       "automation_runs_per_month",
       "technical_tolerance",
@@ -164778,7 +165139,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b624e249-35f0-46f4-9b8d-11e8b783ecda/id-preview-a2601e3e--a8c1ac83-10de-40d5-88c8-8bb21a51fadb.lovable.app-1771426508781.png"
+    "ogImageUrl": "https://turbotic.com/logo.png"
   },
   {
     "id": "twinmotion",

@@ -6,9 +6,10 @@ import ToolLogo from '@/components/ToolLogo';
 import ToolCardEditorial from '@/components/ToolCardEditorial';
 import Breadcrumb from '@/components/Breadcrumb';
 import { ArrowRight, ChevronDown, CheckCircle2, RefreshCw } from '@/lib/icons';
+import { relExterne } from '@/lib/externalLink';
 import type { Tool } from '@/data/types';
 import type { CompareEditorialContent } from '@/pages/ComparePage';
-import { chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
+import { activeCampaignKlaviyoGuides, chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
 import { useToolSummaries } from '@/hooks/useSupabaseData';
 import { useCurrency } from '@/hooks/useCurrency';
 import { formatPriceLabel } from '@/lib/toolUtils';
@@ -40,8 +41,10 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const toolHref = (tool: Tool) => `${prefix}/tool/${tool.slug || tool.id}`;
   const pricingHref = (tool: Tool) => `${toolHref(tool)}/${lang === 'fr' ? 'prix' : 'pricing'}`;
   const pick = (fr: string, en: string) => lang === 'fr' ? fr : en;
-  const curated = slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined;
-  const scenarios = toolsForEditorial();
+  const affiliateComparison = slugPair === 'activecampaign-vs-klaviyo';
+  const reviewed = affiliateComparison ? activeCampaignKlaviyoGuides[lang] : undefined;
+  const curated = reviewed || (slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
+  const scenarios = reviewed ? [reviewed.scenarios[1], reviewed.scenarios[0]].map(s => ({ choice: s.choice, reason: s.reason, limits: [s.limit] })) : toolsForEditorial();
   function toolsForEditorial() {
     return [
       { choice: pick(content.verdictCardTitleA || `Choisir ${toolA.name}`, content.verdictCardTitleAEn || `Choose ${toolA.name}`), reason: pick(content.verdictCardTextA || content.quickVerdictA, content.verdictCardTextAEn || content.quickVerdictAEn), limits: content.limitsA.length ? pickList(content.limitsA, content.limitsAEn) : content.avoidAIfList.map(value => lang === 'fr' ? value : translateBattleCopy(value)) },
@@ -49,13 +52,13 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
     ];
   }
   function pickList(fr: string[], en: string[]) { return lang === 'fr' ? fr : en; }
-  const criteria: ComparisonDecisionGuide['criteria'] = content.decisiveCriteria.length
+  const criteria: ComparisonDecisionGuide['criteria'] = reviewed?.criteria ?? (content.decisiveCriteria.length
     ? content.decisiveCriteria.map(c => ({ title: pick(c.title, c.titleEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.decision, c.decisionEn) }))
-    : content.tableRows.filter(c => !/prix|price|coût|cost/i.test(c.criterion)).map(c => ({ title: pick(c.criterion, c.criterionEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.verdictLabel, c.verdictLabelEn) }));
-  const faq = content.faq.map(f => ({ question: pick(f.q, f.qEn), answer: pick(f.a, f.aEn) }));
+    : content.tableRows.filter(c => !/prix|price|coût|cost/i.test(c.criterion)).map(c => ({ title: pick(c.criterion, c.criterionEn), a: pick(c.toolA, c.toolAEn), b: pick(c.toolB, c.toolBEn), takeaway: pick(c.verdictLabel, c.verdictLabelEn) })));
+  const faq = reviewed?.faq ?? content.faq.map(f => ({ question: pick(f.q, f.qEn), answer: pick(f.a, f.aEn) }));
   const alternatives = curated?.alternatives ?? content.alternatives.map(a => ({ ...a, reason: pick(a.reason, a.reasonEn) }));
   const tools = [toolA, toolB];
-  const date = content.checkedAt;
+  const date = reviewed?.checkedAt || content.checkedAt;
   return (
     <article className="cp-guide">
       <header className="cp-guide-hero">
@@ -65,7 +68,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           {date && <time dateTime={date}>{t('Revue éditoriale', 'Editorial review')} · {new Date(`${date}T12:00:00Z`).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time>}
         </div>
         <h1 className="cp-vs-title">{toolA.name} <span>vs</span> {toolB.name}</h1>
-        <p className="cp-guide-intro">{pick(content.framing, content.framingEn)}</p>
+        <p className="cp-guide-intro">{reviewed?.intro || pick(content.framing, content.framingEn)}</p>
         {/* The duel, App Store style: two app cards face to face, each with
             its icon, pitch, price and ToolTrim score, one link per card. */}
         <div className="cp-vs-duel">
@@ -81,7 +84,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
               <span className="cp-vs-name">{tool.name}</span>
               {pitch && <span className="cp-vs-pitch">{pitch}</span>}
               <span className="cp-vs-meta">
-                <span className="cp-vs-price">{priceOf(tool)}</span>
+                <span className="cp-vs-price">{reviewed ? (tool.id === 'activecampaign' ? t('Essai de 14 jours', '14-day trial') : t('Forfait gratuit disponible', 'Free plan available')) : priceOf(tool)}</span>
                 {score && score.score > 0 && <span className="cp-vs-score">★ {score.score.toFixed(1)}</span>}
               </span>
             </Link>;
@@ -99,7 +102,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
         {(() => {
           // Generated pages build the lead from the same reasons as the cards
           // below; show it only when it adds something.
-          const lead = pick(content.finalRecommendation, content.finalRecommendationEn);
+          const lead = reviewed ? '' : pick(content.finalRecommendation, content.finalRecommendationEn);
           const norm = (x: string) => x.toLowerCase().replace(/[^a-zà-ÿ0-9]+/g, ' ').trim();
           const repeats = scenarios.slice(0, 2).some(sc => { const first = norm(sc.reason.split('.')[0]); return first.length > 12 && norm(lead).includes(first); });
           return lead && !repeats ? <p className="cp-glance-lead">{lead}</p> : null;
@@ -112,6 +115,19 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           </article>)}
         </div>
       </section>
+      {affiliateComparison && <aside className="cp-guide-outbound" aria-label={t('Accéder aux offres', 'Explore the plans')}>
+        <h2>{t('Essayez sur vos propres campagnes.', 'Try it with your own campaigns.')}</h2>
+        <div className="cp-guide-outbound-grid">
+          <div className="cp-guide-outbound-item">
+            <a className="cp-guide-outbound-button" href="https://try.activecampaign.com/twe5oenri4zv-b9q17i" target="_blank" rel={relExterne('affilie')}>{t('Essayer ActiveCampaign pendant 14 jours', 'Try ActiveCampaign for 14 days')}<ArrowRight aria-hidden="true" /></a>
+            <p>{t('Lien affilié : ToolTrim peut percevoir une commission si vous souscrivez, sans coût supplémentaire pour vous.', 'Affiliate link: ToolTrim may earn a commission if you subscribe, at no extra cost to you.')}</p>
+          </div>
+          <div className="cp-guide-outbound-item">
+            <a className="cp-guide-outbound-button" href="https://www.klaviyo.com/pricing/" target="_blank" rel={relExterne('source')}>{t('Voir les offres Klaviyo', 'View Klaviyo plans')}<ArrowRight aria-hidden="true" /></a>
+            <p>{t('Lien direct vers Klaviyo, sans affiliation ToolTrim.', 'Direct link to Klaviyo, not an affiliate link.')}</p>
+          </div>
+        </div>
+      </aside>}
       {/* Spec sheet, Apple "Compare" style: criteria down the left, the two
           tools in aligned columns, so a row reads in one sweep. */}
       <section id="comparaison" className="cp-guide-section cp-spec" aria-labelledby="cp-differences-title">
@@ -147,7 +163,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
               <p className="cp-guide-price-note">{row.note}</p>
             </div>)}
             {curated.prices.filter(row => row.audience === audience && !row.featured).map(row => <div className="cp-guide-annual" key={row.label}>
-              <h3>{t('Paiement annuel', 'Annual billing')}</h3>
+              <h3>{row.label}</h3>
               <div className="cp-guide-pair"><p><strong>{toolA.name}</strong> {row.a}</p><p><strong>{toolB.name}</strong> {row.b}</p></div>
               <p className="cp-guide-price-note">{row.note}</p>
             </div>)}
@@ -184,9 +200,9 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           </>}
       </section>
       {(() => {
-        const stay = pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn);
-        const go = pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn);
-        const signals = pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn);
+        const stay = reviewed?.switching[0].text || pick(content.tippingPoint.defaultChoice, content.tippingPoint.defaultChoiceEn);
+        const go = reviewed?.switching[1].text || pick(content.tippingPoint.switchWhen, content.tippingPoint.switchWhenEn);
+        const signals = reviewed ? [] : pickList(content.tippingPoint.signals, content.tippingPoint.signalsEn);
         // Which tool each card is about: the one named first in its sentence.
         const firstNamed = (text: string) => [...tools].sort((x, y) => {
           const ix = text.indexOf(x.name), iy = text.indexOf(y.name);
@@ -212,13 +228,17 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           </div>}
         </section>;
       })()}
-      {content.profiles.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-profiles-title">
+      {reviewed && <section className="cp-guide-section" aria-labelledby="cp-trial-title">
+        <h2 id="cp-trial-title">{t('Comment les tester', 'How to test them')}</h2>
+        <ol>{reviewed.trial.map(step => <li key={step}>{step}</li>)}</ol>
+      </section>}
+      {!reviewed && content.profiles.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-profiles-title">
         <h2 id="cp-profiles-title">{t('Par profil', 'By role')}</h2>
         <div className="cp-guide-editorial-grid">{content.profiles.map(profile => <article key={profile.persona}>
           <h3>{pick(profile.persona, profile.personaEn)}</h3><p><strong>{profile.choice}</strong></p><p>{pick(profile.reason, profile.reasonEn)}</p><p className="cp-guide-editorial-limit">{pick(profile.limit, profile.limitEn)}</p>
         </article>)}</div>
       </section>}
-      {content.tooltrimRisks.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-risks-title">
+      {!reviewed && content.tooltrimRisks.length > 0 && <section className="cp-guide-section" aria-labelledby="cp-risks-title">
         <h2 id="cp-risks-title">{t('Les erreurs à éviter', 'Mistakes to avoid')}</h2>
         <div className="cp-guide-faq">{content.tooltrimRisks.map(risk => <details key={risk.mistake}>
           <summary>{pick(risk.mistake, risk.mistakeEn)}<ChevronDown aria-hidden="true" /></summary><p>{pick(risk.consequence, risk.consequenceEn)}</p><p>{pick(risk.recommendation, risk.recommendationEn)}</p>

@@ -8335,7 +8335,9 @@
     min-height: 58px !important;
   }
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
-  .td-hero-actions { display: flex; align-items: center; gap: 10px; }
+  .td-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .td-hero-affiliate-disclosure { flex: 0 0 100%; margin: 0; color: var(--color-muted); font: 400 11px/1.4 var(--font-ui); }
+  .td-hero.is-compact .td-hero-affiliate-disclosure { display: none; }
   .td-hero-actions .pin-tool-button { position: static; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text); display: inline-flex; align-items: center; justify-content: center; }
   .td-hero-actions .pin-tool-button--active {
     border-color: var(--color-text);
@@ -31400,6 +31402,13 @@ section[id]:not(.cp-guide-section) {
   .cp-guide-shortcuts a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 8px 0; font-size: 13px; }
   .cp-guide-shortcuts strong { display: block; margin-top: 4px; font-weight: 550; }
   .cp-guide-shortcuts a:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+  .cp-guide-outbound { margin-top: 36px; padding: 24px; border: 1px solid var(--color-border); border-radius: 18px; }
+  .cp-guide-outbound h2 { margin: 0 0 20px; font-size: 21px; letter-spacing: -.02em; }
+  .cp-guide-outbound-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; }
+  .cp-guide-outbound-button { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 50px; padding: 12px 16px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 14px; font-weight: 600; }
+  .cp-guide-outbound-button:hover { background: var(--color-surface-soft); }
+  .cp-guide-outbound-button svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .cp-guide-outbound-item p { margin: 8px 0 0; font-size: 12px; }
   .cp-guide-matrix { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: left; }
   .cp-guide-matrix th, .cp-guide-matrix td { padding: 22px 20px; vertical-align: top; overflow-wrap: break-word; }
   .cp-guide-matrix thead th { font-size: 15px; font-weight: 650; padding-top: 16px; padding-bottom: 16px; background: var(--color-surface-soft); }

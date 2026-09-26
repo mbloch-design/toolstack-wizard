@@ -242,6 +242,10 @@ export interface Tool {
   personas?: string[];
   websiteUrl?: string;
   affiliateLink: string;
+  affiliateDisclosureFr?: string;
+  affiliateDisclosureEn?: string;
+  affiliateCtaLabelFr?: string;
+  affiliateCtaLabelEn?: string;
   logo?: string;
   ogImageUrl?: string | null;
   galleryImages?: string[];

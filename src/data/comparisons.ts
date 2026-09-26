@@ -7,6 +7,7 @@ export interface FeaturedComparison {
 }
 
 export const FEATURED_COMPARISONS: FeaturedComparison[] = [
+  { slugPair: "activecampaign-vs-klaviyo", toolA: "activecampaign", toolB: "klaviyo", summary: "Automatisation marketing ou CRM B2C : comparez les usages, les coûts et les limites avant de choisir.", summaryEn: "Marketing automation or B2C CRM: compare workflows, costs and limits before choosing." },
   // AI / Writing
   { slugPair: "chatgpt-vs-claude", summary: "Un assistant pour des tâches variées ou un travail centré sur les documents longs ? Choisissez selon vos livrables.", summaryEn: "An assistant for varied tasks or work centred on long documents? Choose around your deliverables.", toolA: "chatgpt", toolB: "claude" },
   { slugPair: "chatgpt-vs-gemini", summary: "Votre assistant doit-il suivre vos outils ou vivre dans Google Workspace ? C’est le premier arbitrage.", summaryEn: "Should your assistant follow your tools or live in Google Workspace? Start with that decision.", toolA: "chatgpt", toolB: "gemini" },

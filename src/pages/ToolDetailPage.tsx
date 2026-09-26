@@ -327,7 +327,7 @@ const ToolDetailPage = () => {
   const safeWebsiteUrl = safeExternalUrl(tool.websiteUrl);
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
-  const primaryCtaLabel = t("Visiter le site", "Visit website");
+  const primaryCtaLabel = (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t("Visiter le site", "Visit website");
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -481,6 +481,7 @@ const ToolDetailPage = () => {
                           <ExternalLink aria-hidden />
                         </a>}
                         <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
+                        {(lang === "en" ? tool.affiliateDisclosureEn : tool.affiliateDisclosureFr) && <p className="td-hero-affiliate-disclosure">{lang === "en" ? tool.affiliateDisclosureEn : tool.affiliateDisclosureFr}</p>}
                         </div>
                       </div>
 

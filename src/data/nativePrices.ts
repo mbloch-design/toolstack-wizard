@@ -13,6 +13,7 @@ export type NativePriceRecord = {
 
 export const NATIVE_PRICES: Record<string, NativePriceRecord> = {
   "1password": { amount: 3.99, currency: "USD", verifiedOn: "2026-03-13" },
+  "activecampaign": { amount: 15, currency: "USD", verifiedOn: "2026-09-26" },
   "adobe-after-effects": { amount: 26.21, currency: "EUR", verifiedOn: "2026-03-13" },
   "adobe-cc": { amount: 78.65, currency: "EUR", verifiedOn: "2026-03-13" },
   "adobe-illustrator": { amount: 26.21, currency: "EUR", verifiedOn: "2026-03-13" },
@@ -28,7 +29,7 @@ export const NATIVE_PRICES: Record<string, NativePriceRecord> = {
   "chatgpt": { amount: 20, currency: "USD", verifiedOn: "2026-03-13" },
   "claude": { amount: 20, currency: "USD", verifiedOn: "2026-03-13" },
   "clickup": { amount: 7, currency: "USD", verifiedOn: "2026-03-13" },
-  "convertkit": { amount: 33, currency: "USD", verifiedOn: "2026-03-13" },
+  "convertkit": { amount: 33, currency: "USD", verifiedOn: "2026-09-26" },
   "cursor": { amount: 20, currency: "USD", verifiedOn: "2026-03-13" },
   "elevenlabs": { amount: 5, currency: "USD", verifiedOn: "2026-03-13" },
   "figma": { amount: 15, currency: "EUR", verifiedOn: "2026-03-13" },

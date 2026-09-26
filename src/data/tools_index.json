@@ -244,14 +244,14 @@
     "slug": "activecampaign",
     "name": "ActiveCampaign",
     "categoryId": "crm",
-    "shortDescription": "Plateforme d'automatisation marketing autonome pour email, SMS, WhatsApp et autres canaux, avec des agents IA pilotant les campagnes et des analyses avancées.",
-    "shortDescriptionEn": "Autonomous marketing automation platform for email, SMS, WhatsApp and multichannel engagement, with AI agents managing campaigns and advanced analytics.",
+    "shortDescription": "Email marketing et automatisation des parcours clients, avec segmentation et options CRM.",
+    "shortDescriptionEn": "Email marketing and customer journey automation, with segmentation and optional CRM capabilities.",
     "pricing": {
-      "free": "Essai gratuit de 14 jours sans carte bancaire ; pas de plan gratuit permanent",
-      "paid": "Starter: À partir de montants sur la page officielle selon le nombre de contacts ; Plus: Montants sur la page officielle ; Pro: Montants sur la page officielle ; Enterprise: Montants sur demande"
+      "free": "Essai de 14 jours sans carte bancaire, limité à 100 contacts et 100 emails envoyés. Aucun forfait gratuit permanent.",
+      "paid": "Pour 1 000 contacts, les tarifs affichés commencent à 15 $US/mois pour Starter, 49 $US/mois pour Plus et 79 $US/mois pour Pro, avec facturation annuelle. Le prix évolue selon le nombre de contacts, le forfait, le pays et les options."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 13.15,
+    "compareMonthlyPrice": 13.15,
     "affiliateLink": "https://try.activecampaign.com/twe5oenri4zv-b9q17i",
     "websiteUrl": "https://www.activecampaign.com",
     "ogImageUrl": "https://active-campaign.transforms.svdcdn.com/production/general/AC_Opengraph-1.png?w=1200&h=630&q=82&auto=format&fit=clip&dm=1753306175&s=1b0f698fac52d45ef9b2f8a250d6f8f5",
@@ -16364,14 +16364,14 @@
     "slug": "kit",
     "name": "Kit",
     "categoryId": "email-productivity",
-    "shortDescription": "Newsletter, formulaires et automatisations pour créateurs et indépendants.",
-    "shortDescriptionEn": "Newsletter, forms and automations for creators and independent businesses.",
+    "shortDescription": "Newsletter, formulaires, automatisations et ventes numériques pour créateurs d’audience.",
+    "shortDescriptionEn": "Email marketing, forms, automations and digital sales for audience-led creators.",
     "pricing": {
-      "free": "Plan gratuit selon volume et fonctionnalités disponibles.",
-      "paid": "Plan Creator autour de 25 $/mois selon taille de liste et facturation."
+      "free": "Plan gratuit jusqu’à 10 000 abonnés, avec formulaires, pages d’inscription, newsletters et segmentation. Les automatisations visuelles et séquences email ne sont pas incluses.",
+      "paid": "Creator : 390 $US/an, soit 33 $US/mois équivalent, pour 1 000 abonnés avec facturation annuelle. Le prix évolue avec la taille de la liste. Pro : 790 $US/an, soit 66 $US/mois équivalent, pour 1 000 abonnés."
     },
-    "defaultMonthlyPrice": 25,
-    "compareMonthlyPrice": 25,
+    "defaultMonthlyPrice": 29.03,
+    "compareMonthlyPrice": 29.03,
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "websiteUrl": "https://kit.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.jpg",
@@ -34905,16 +34905,16 @@
     "slug": "turbotic",
     "name": "Turbotic",
     "categoryId": "automation",
-    "shortDescription": "Automatisation IA pour orchestrer vos processus métier.",
-    "shortDescriptionEn": "AI automation to orchestrate your business processes.",
+    "shortDescription": "Créez, testez et suivez des workflows automatisés à partir d'instructions en langage naturel.",
+    "shortDescriptionEn": "Create, test, and monitor automated workflows from natural-language instructions.",
     "pricing": {
-      "free": "Essai gratuit disponible",
-      "paid": "À partir de 10$/utilisateur/mois (Professional) - 25$/utilisateur/mois (Premium)"
+      "free": "Offre gratuite : jusqu'à 3 automatisations, 100 exécutions et 100 chats",
+      "paid": "Basic : 14,99 $/mois avec facturation annuelle ; Pro : 79,99 $/mois avec facturation annuelle ; Enterprise : sur devis"
     },
-    "defaultMonthlyPrice": 8.66,
-    "compareMonthlyPrice": 8.66,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://try.turbotic.com/0ijk0lvs0etc",
-    "ogImageUrl": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b624e249-35f0-46f4-9b8d-11e8b783ecda/id-preview-a2601e3e--a8c1ac83-10de-40d5-88c8-8bb21a51fadb.lovable.app-1771426508781.png",
+    "websiteUrl": "https://turbotic.com/automation-ai",
+    "ogImageUrl": "https://turbotic.com/logo.png",
     "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "automatisation",
@@ -34922,13 +34922,12 @@
       "workflows"
     ],
     "verticals": [
-      "manager-dsi",
       "consultant-b2b"
     ],
     "relevantFor": [
-      "Grandes organisations",
-      "IT ops teams",
-      "Équipes RPA"
+      "Indépendants et petites équipes",
+      "Utilisateurs métier à l'aise avec les outils numériques",
+      "Équipes tech qui souhaitent prototyper des automatisations assistées par IA"
     ],
     "prescription_quality": "question",
     "freeAlternative": "make"

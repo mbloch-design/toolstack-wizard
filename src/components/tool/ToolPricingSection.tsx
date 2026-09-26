@@ -129,13 +129,13 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                 <span className="td-pricing-plan-name">
                   {plan.isFree ? <Sparkles aria-hidden /> : <CreditCard aria-hidden />}
                   {plan.isFree
-                    ? (plan.pricingUnit === "open_source" ? t("Open source", "Open source") : t("Gratuit", "Free"))
+                    ? (plan.pricingUnit === "open_source" ? t("Open source", "Open source") : plan.pricingUnit === "trial" ? t("Essai gratuit", "Free trial") : t("Gratuit", "Free"))
                     : plan.displayName}
                   {plan.comingSoon && <span className="td-pricing-plan-soon-badge">{t("Bientôt", "Coming soon")}</span>}
                 </span>
                 {(plan.isFree || plan.nativeAmount != null) && (
                   <strong className="td-pricing-price">
-                    {plan.isFree ? formatCurrencyAmount(0, currency, lang || "fr") : formatNativeAmount(plan.nativeAmount!, plan.nativeCurrency)}
+                    {plan.isFree && plan.pricingUnit === "trial" ? plan.displayName : plan.isFree ? formatCurrencyAmount(0, currency, lang || "fr") : formatNativeAmount(plan.nativeAmount!, plan.nativeCurrency)}
                     {plan.isFree && plan.pricingUnit === "open_source" && <small>{t(" licence", " license")}</small>}
                     {!plan.isFree && plan.billingPeriod === "monthly" && <small>/{t("mois", "mo")}</small>}
                   </strong>
@@ -152,6 +152,8 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               <p className="td-pricing-plan-meta">
                 {plan.comingSoon
                   ? t("Pas encore disponible à l’achat", "Not purchasable yet")
+                  : plan.isFree && plan.pricingUnit === "trial"
+                  ? t("Essai temporaire, sans forfait gratuit permanent", "Temporary trial, no permanent free plan")
                   : plan.isFree
                   ? (freeCard
                       ?? (plan.pricingUnit === "open_source"
