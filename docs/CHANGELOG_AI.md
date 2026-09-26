@@ -4562,3 +4562,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Note ToolTrim v2 documentaire 3,4/5 : axes 3/3/4/4/3, preuves FR/EN ; aucun test de campagne ni rendement promis. Sources complémentaires : https://www.amplemarket.com/data-enrichment et https://knowledge.amplemarket.com/articles/5152680997-roles-permissions.
 - Logo, OG et trois visuels officiels téléchargés depuis les références du HTML https://www.amplemarket.com/ : am-webclip-256.png, am-opengraph-v2.jpg, am_duo_copilot.avif, am-pillars-engagement.avif, am-pillars-deliver.avif. Aucune capture créée.
 - Contrôle éditorial complémentaire content-quality-auditor : moteur standalone sans scorer ; NOT_SCORED, score_confidence not_scored (schema 3.0, runbook 3.0.0, catalogue 19.2.0). Ce contrôle distinct ne constitue pas une certification de publication. Analyse produit fondée sur sources publiques, pas sur expérience terrain.
+# Apollo.io : revue affiliée FR/EN, 2026-09-26
+
+- Lien utilisateur conservé et testé : https://get.apollo.io/i3ymfre21zro, redirection 200 vers inscription avec suivi PartnerStack.
+- Plan gratuit et prix annuels 49/79/119 USD par utilisateur, minimum 3 sièges pour Organization. Sources : https://www.apollo.io/pricing et https://www.apollo.io/insights/more-information-on-what-they-are-paying-for-in-apollo-plan-detailsusage-walkthrough. Le tableau dynamique ne se chargeait pas dans le navigateur ; montants recoupés dans les publications officielles récentes et la version indexée de la page tarifs.
+- Note documentaire v2 3,6/5, axes 4/3/4/4/3 et preuves FR/EN ; aucun test terrain revendiqué. Exports : https://knowledge.apollo.io/hc/en-us/articles/4409237712141-Export-Contacts-to-a-CSV.
+- Logo apple-touch, OG /og-images/home.jpg et trois images officielles issues du HTML https://www.apollo.io/ : homepage-static-for-video.0h98v3yl13hkl.png, source-of-truth.0c.nui1qdm-rq.png, ai-busywork.0ws5ft2is7ov-.png. Aucune capture créée.
+- Retrait des gains de temps non sourcés et du remplacement forfaitaire de cinq outils. Affiliation indépendante de la note.

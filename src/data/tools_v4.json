@@ -11406,24 +11406,25 @@
     "id": "apollo-io",
     "name": "Apollo.io",
     "shortDescription": "Base de prospection B2B et séquences outbound pour trouver, qualifier et contacter des leads.",
-    "description": "Apollo.io réunit base de contacts B2B, enrichissement, scoring et séquences de prospection. C'est puissant pour un freelance ou une petite équipe commerciale qui veut industrialiser l'outbound, mais ToolTrim le considère comme un outil à cadrer : sans ICP clair, listes propres et volume raisonnable, le coût monte vite et la qualité commerciale baisse.",
+    "description": "Apollo.io combine recherche de contacts B2B, enrichissement et séquences de prospection. Une équipe peut constituer ses listes, préparer les messages et suivre les actions commerciales dans un même environnement, avec des intégrations CRM. Les données et fonctions disponibles dépendent du forfait et des crédits.\n\nToolTrim le retient pour un indépendant ou une petite équipe qui a déjà défini son marché cible et veut structurer sa prospection. Commencez avec le plan gratuit pour vérifier la couverture de votre secteur et la pertinence des contacts, puis évaluez les crédits nécessaires avant de payer. Apollo ne garantit ni la validité de chaque contact, ni les réponses, ni les rendez-vous.\n\nCette analyse est documentaire, sans test terrain de campagne. Un export CSV est possible, mais peut consommer des crédits ; les conditions standard ne permettent pas de revendre les données à vos clients.",
     "category": "communication",
     "pricing": {
-      "free": "Plan gratuit limité selon volume.",
-      "paid": "Plans payants publics autour de l’entrée de gamme commerciale, puis tarifs plus élevés selon crédits et sièges."
+      "free": "Plan gratuit limité disponible.",
+      "paid": "Avec facturation annuelle : Basic 49 $US/utilisateur/mois ; Professional 79 $US ; Organization 119 $US avec 3 utilisateurs minimum (357 $US/mois minimum). Crédits supplémentaires et options à vérifier."
     },
     "website": "https://apollo.io",
     "affiliateLink": "https://get.apollo.io/i3ymfre21zro",
     "pros": [
-      "Base de données énorme et continuellement actualisée.",
-      "Plateforme intégrée remplaçant plusieurs outils.",
-      "Campagnes multicanales automatisées.",
-      "Plan gratuit pour débuter."
+      "Plan gratuit pour vérifier l’adéquation avant achat.",
+      "Recherche de contacts et séquences dans une même plateforme.",
+      "Enrichissement et intégrations CRM documentés.",
+      "Exports CSV pour récupérer les contacts."
     ],
     "cons": [
-      "Apprentissage de la complexité des crédits.",
-      "Pricing flexible mais exigeant de consulter le site.",
-      "Meilleur pour équipes prospection plutôt que support."
+      "Crédits et limites à suivre en plus du prix par utilisateur.",
+      "Qualité des contacts variable selon votre cible, à tester.",
+      "Paramétrage des boîtes mail et du ciblage nécessaire.",
+      "Exports pouvant consommer des crédits ; revente des données exclue des conditions standard."
     ],
     "bestFor": [
       "consultant",
@@ -11438,10 +11439,10 @@
     "freeAlternative": null,
     "soloRelevance": "à vérifier selon volume",
     "teamRelevance": "utile si usage récurrent",
-    "defaultMonthlyPrice": 49,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Plan gratuit limité disponible.",
+      "paid": "Avec facturation annuelle : Basic 49 $US/utilisateur/mois ; Professional 79 $US ; Organization 119 $US avec 3 utilisateurs minimum (357 $US/mois minimum). Crédits supplémentaires et options à vérifier."
     },
     "relevantFor": [
       "Équipes de vente B2B",
@@ -11450,16 +11451,15 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous prospectez massivement avec données fiables requises.",
-        "Vous cherchez une plateforme tout-en-un (données + outreach + CRM).",
-        "Vous voulez une base de contacts actualisée et vérifiée."
+        "Vous avez une cible B2B définie et une prospection régulière.",
+        "Vous voulez réunir données et séquences sans multiplier les outils."
       ],
       "avoidIf": [
-        "Vous n'avez besoin que d'un outil CRM réactif.",
-        "Vous préférez des outils spécialisés légers.",
-        "Votre liste de prospects provient d'une source de données propriétaire interne."
+        "Vous attendez des rendez-vous garantis sans ciblage ni personnalisation.",
+        "Vous voulez revendre la base de contacts sous les conditions standard."
       ],
-      "threshold": "Apollo.io remplace cinq outils distincts pour la prospection ; pour une utilisation CRM simple, d'autres solutions suffisent."
+      "threshold": "Une option accessible pour tester une prospection structurée, puis évoluer selon les crédits réellement consommés. Validez les données sur votre marché avant de monter en volume.",
+      "faqPriceAnswer": "Avec facturation annuelle : Basic 49 $US/utilisateur/mois ; Professional 79 $US ; Organization 119 $US avec 3 utilisateurs minimum (357 $US/mois minimum). Crédits supplémentaires et options à vérifier."
     },
     "alternatives": [
       "hubspot",
@@ -11468,15 +11468,10 @@
       "la-growth-machine"
     ],
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [],
-        "augmentEn": "Apollo.io combines a B2B contact database with AI prospecting features (email drafting, lead scoring), but its core value remains its verified contact database.",
-        "augmentFr": "Apollo.io combine une base de données de contacts B2B avec des fonctionnalités IA de prospection (rédaction d'emails, scoring de leads), mais sa valeur fondamentale reste sa base de données de contacts vérifiés.",
-        "replaceEn": "Replace Apollo.io with an AI? No: having a verified, up-to-date B2B contact database requires real data collection and verification, not just generation. AI helps write and prioritize prospects, it doesn't replace the database. Verdict: AI augments prospecting, verified data remains the key infrastructure.",
-        "replaceFr": "Remplacer Apollo.io par une IA ? Non : disposer d'une base de données de contacts B2B vérifiés et à jour nécessite une collecte et une vérification de données réelles, pas seulement de la génération. L'IA aide à rédiger et prioriser les prospects, elle ne remplace pas la base de données. Verdict : l'IA augmente la prospection, la donnée vérifiée reste l'infrastructure clé."
-      },
-      "metaDescription": "Apollo.io sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Apollo.io mérite sa place dans ta stack."
+      "metaDescription": "Apollo.io : avis, plan gratuit, prix Basic à 49 $US par utilisateur avec facturation annuelle, crédits, exports et alternatives.",
+      "metaDescriptionEn": "Apollo.io review: free plan, Basic at $49 per user billed annually, credits, exports and alternatives.",
+      "idealForFr": "indépendants et équipes commerciales B2B",
+      "idealForEn": "solo operators and B2B sales teams"
     },
     "articles": [],
     "tool_type": "gestion",
@@ -11498,68 +11493,142 @@
     "ia_use_case": null,
     "slug": "apollo-io",
     "shortDescriptionEn": "B2B sales intelligence and outbound sequencing to find, qualify and contact leads.",
-    "longDescription": "Apollo.io réunit base de contacts B2B, enrichissement, scoring et séquences de prospection. C'est puissant pour un freelance ou une petite équipe commerciale qui veut industrialiser l'outbound, mais ToolTrim le considère comme un outil à cadrer : sans ICP clair, listes propres et volume raisonnable, le coût monte vite et la qualité commerciale baisse.",
-    "longDescriptionEn": "Apollo.io combines B2B contact data, enrichment, scoring and outbound sequences. ToolTrim sees it as useful when prospecting is already structured, not as a substitute for positioning.",
+    "longDescription": "Apollo.io combine recherche de contacts B2B, enrichissement et séquences de prospection. Une équipe peut constituer ses listes, préparer les messages et suivre les actions commerciales dans un même environnement, avec des intégrations CRM. Les données et fonctions disponibles dépendent du forfait et des crédits.\n\nToolTrim le retient pour un indépendant ou une petite équipe qui a déjà défini son marché cible et veut structurer sa prospection. Commencez avec le plan gratuit pour vérifier la couverture de votre secteur et la pertinence des contacts, puis évaluez les crédits nécessaires avant de payer. Apollo ne garantit ni la validité de chaque contact, ni les réponses, ni les rendez-vous.\n\nCette analyse est documentaire, sans test terrain de campagne. Un export CSV est possible, mais peut consommer des crédits ; les conditions standard ne permettent pas de revendre les données à vos clients.",
+    "longDescriptionEn": "Apollo.io combines B2B contact search, enrichment and prospecting sequences. Teams can build lists, prepare outreach and track sales actions in one environment with CRM integrations. Available data and features depend on the plan and credits.\n\nToolTrim sees a fit for solo operators and small teams that already know their target market and want structured prospecting. Use the free plan to check coverage and contact relevance in your segment, then estimate credit needs before upgrading. Apollo does not guarantee that every contact is accurate, or that outreach will generate replies or meetings.\n\nThis is a documentation-based review, not a hands-on campaign test. CSV export is available but may consume credits; standard terms do not allow reselling data to clients.",
     "pricingEn": {
-      "free": "Limited free plan depending on volume.",
-      "paid": "Paid plans scale by credits, seats and sales features."
+      "free": "Limited free plan available.",
+      "paid": "Billed annually: Basic $49/user/month; Professional $79; Organization $119 with a 3-user minimum ($357/month minimum). Check additional credits and add-ons."
     },
     "pricing_v5": {
       "cautions": [
-        "Les crédits, enrichissements et sièges peuvent changer fortement le coût réel."
+        "Prix par utilisateur avec facturation annuelle. Organization : 3 sièges minimum. Crédits et exports selon forfait."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "apollo.io",
       "usage_sensitive": true,
       "compare_plan_kind": "paid",
-      "compare_plan_name": "Basic / entry paid plan",
+      "compare_plan_name": "Basic",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
       "official_source_url": "https://www.apollo.io/pricing",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 49
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "none",
+          "summary": "Plan gratuit avec limites d’usage.",
+          "featureHighlights": [
+            "Crédits et fonctions selon le forfait"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "49 $US/utilisateur/mois, facturé annuellement.",
+          "featureHighlights": [
+            "Crédits et fonctions selon le forfait"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 79,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "79 $US/utilisateur/mois, facturé annuellement.",
+          "featureHighlights": [
+            "Crédits et fonctions selon le forfait"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "organization",
+          "displayName": "Organization",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 119,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "119 $US/utilisateur/mois, facturé annuellement. Minimum 3 utilisateurs (357 $US/mois).",
+          "featureHighlights": [
+            "Crédits et fonctions selon le forfait"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://www.apollo.io",
-    "logo": "",
+    "logo": "/tool-media/logos/apollo-io.png",
     "verdictEn": {
       "keepIf": [
-        "You prospect at scale with accurate data requirements.",
-        "You want an all-in-one platform (data + outreach + CRM).",
-        "You need a constantly updated, verified contact database."
+        "You have a defined B2B target and recurring outreach.",
+        "You want data and sequences in one environment."
       ],
       "avoidIf": [
-        "You only need reactive CRM features.",
-        "You prefer lightweight specialized tools.",
-        "Your prospect list comes from proprietary internal data sources."
+        "You expect guaranteed meetings without targeting or personalization.",
+        "You want to resell contact data under standard terms."
       ],
-      "threshold": "Apollo.io consolidates five tools for outbound; for simple CRM use, other solutions suffice."
+      "threshold": "An accessible way to test structured prospecting, then scale with actual credit use. Validate data in your market before increasing volume.",
+      "faqPriceAnswer": "Billed annually: Basic $49/user/month; Professional $79; Organization $119 with a 3-user minimum ($357/month minimum). Check additional credits and add-ons."
     },
     "prosEn": [
-      "Massive, continuously refreshed contact database.",
-      "Integrated platform replacing multiple tools.",
-      "Automated multi-channel campaigns.",
-      "Free plan to get started."
+      "Free plan to assess fit before buying.",
+      "Contact search and sequences in one platform.",
+      "Documented enrichment and CRM integrations.",
+      "CSV exports to retrieve contacts."
     ],
     "consEn": [
-      "Learning curve around credit system.",
-      "Flexible pricing requires site consultation.",
-      "Better for outbound than reactive support."
+      "Credits and limits to track alongside per-seat pricing.",
+      "Contact quality must be tested for your target segment.",
+      "Mailbox and targeting configuration required.",
+      "Exports may consume credits; standard terms exclude data resale."
     ],
     "useCases": [
-      "Bâtir des listes de prospection massives vérifiées.",
-      "Lancer des campagnes outbound multicanales automatisées.",
-      "Qualifier les visitants du site avec synchronisation CRM."
+      "Construire une liste de prospects ciblés.",
+      "Enrichir les contacts avant leur synchronisation CRM.",
+      "Organiser des séquences de prise de contact et relance."
     ],
     "useCasesEn": [
-      "Build massive verified prospecting lists.",
-      "Launch automated multi-channel outbound campaigns.",
-      "Qualify website visitors with CRM sync."
+      "Build a targeted prospect list.",
+      "Enrich contacts before CRM synchronization.",
+      "Organize outreach and follow-up sequences."
     ],
     "personas": [
       "MARC",
       "CLAIRE"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -11581,7 +11650,126 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://www.apollo.io/og-images/home.jpg"
+    "ogImageUrl": "/og-images/apollo-io.jpg",
+    "affiliateCtaLabelFr": "Commencer gratuitement",
+    "affiliateCtaLabelEn": "Get started for free",
+    "galleryImages": [
+      "/tool-media/apollo-io/workspace.png",
+      "/tool-media/apollo-io/data.png",
+      "/tool-media/apollo-io/automation.png"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "Per-seat annual billing. Organization requires 3 seats. Credits and export rules depend on plan."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "apollo.io",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Basic",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://www.apollo.io/pricing",
+      "verification_status": "verified_public_pricing_page",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "none",
+          "summary": "Free plan with limited usage.",
+          "featureHighlights": [
+            "Credits and features vary by plan"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 49,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$49/user/month billed annually.",
+          "featureHighlights": [
+            "Credits and features vary by plan"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 79,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$79/user/month billed annually.",
+          "featureHighlights": [
+            "Credits and features vary by plan"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "organization",
+          "displayName": "Organization",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 119,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "$119/user/month billed annually. Minimum 3 users ($357/month).",
+          "featureHighlights": [
+            "Credits and features vary by plan"
+          ],
+          "detailsSourceUrl": "https://www.apollo.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Plan gratuit puis données et séquences payantes réunies ; intérêt pour limiter les achats séparés, sans ROI mesuré. https://www.apollo.io/pricing (26/09/2026).",
+        "simplicite": "Plusieurs forfaits, crédits et intégrations à configurer. Évaluation documentaire, sans temps de prise en main mesuré. https://www.apollo.io/pricing (26/09/2026).",
+        "utilisation": "Recherche, séquences et enrichissement couvrent le parcours de prospection ; les résultats réels dépendent du ciblage. https://www.apollo.io/pricing (26/09/2026).",
+        "puissance": "Intégrations CRM, séquences et API selon forfait : couverture large, avec limites de crédits et fonctions. https://www.apollo.io/pricing (26/09/2026).",
+        "reversibilite": "Export CSV documenté, pouvant consommer des crédits selon le plan. Les automatisations ne sont pas garanties portables. https://knowledge.apollo.io/hc/en-us/articles/4409237712141-Export-Contacts-to-a-CSV (26/09/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Free entry plan followed by bundled data and sequences can reduce separate purchases; ROI not measured. https://www.apollo.io/pricing (2026-09-26).",
+        "simplicite": "Several plans, credits and integrations need configuration. Documentation-based assessment, no onboarding time measured. https://www.apollo.io/pricing (2026-09-26).",
+        "utilisation": "Search, sequences and enrichment cover the prospecting workflow; actual outcomes depend on targeting. https://www.apollo.io/pricing (2026-09-26).",
+        "puissance": "CRM integrations, sequences and API depending on plan: broad coverage with credit and feature limits. https://www.apollo.io/pricing (2026-09-26).",
+        "reversibilite": "Documented CSV export may consume credits depending on plan. Automation portability is not guaranteed. https://knowledge.apollo.io/hc/en-us/articles/4409237712141-Export-Contacts-to-a-CSV (2026-09-26)."
+      }
+    }
   },
   {
     "id": "app-store-connect",

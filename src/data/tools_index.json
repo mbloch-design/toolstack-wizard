@@ -2128,14 +2128,13 @@
     "shortDescription": "Base de prospection B2B et séquences outbound pour trouver, qualifier et contacter des leads.",
     "shortDescriptionEn": "B2B sales intelligence and outbound sequencing to find, qualify and contact leads.",
     "pricing": {
-      "free": "Plan gratuit limité selon volume.",
-      "paid": "Plans payants publics autour de l’entrée de gamme commerciale, puis tarifs plus élevés selon crédits et sièges."
+      "free": "Plan gratuit limité disponible.",
+      "paid": "Avec facturation annuelle : Basic 49 $US/utilisateur/mois ; Professional 79 $US ; Organization 119 $US avec 3 utilisateurs minimum (357 $US/mois minimum). Crédits supplémentaires et options à vérifier."
     },
-    "defaultMonthlyPrice": 49,
-    "compareMonthlyPrice": 49,
     "affiliateLink": "https://get.apollo.io/i3ymfre21zro",
     "websiteUrl": "https://www.apollo.io",
-    "ogImageUrl": "https://www.apollo.io/og-images/home.jpg",
+    "ogImageUrl": "/og-images/apollo-io.jpg",
+    "logo": "/tool-media/logos/apollo-io.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
