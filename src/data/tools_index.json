@@ -17182,17 +17182,18 @@
     "slug": "leadpages",
     "name": "Leadpages",
     "categoryId": "nocode-web",
-    "shortDescription": "Création de landing pages, pop-ups et formulaires orientés conversion.",
-    "shortDescriptionEn": "Landing pages, pop-ups and forms built for conversion.",
+    "shortDescription": "Landing pages assistées par IA, tests A/B et collecte de prospects.",
+    "shortDescriptionEn": "AI-assisted landing pages, A/B testing and lead capture.",
     "pricing": {
-      "free": "Essai gratuit selon période commerciale.",
-      "paid": "Plans publics à partir d’environ 37 $/mois en facturation annuelle, plus en mensuel."
+      "free": "Essai de 7 jours avec carte bancaire.",
+      "paid": "EUR affichés : Grow 115 €/mois, Optimize 229 €, Scale 399 € en mensuel. Équivalents mensuels payés annuellement : 91,67 €, 183,33 €, 319,17 €. HTML Pub distinct. Taxes à confirmer."
     },
-    "defaultMonthlyPrice": 37,
-    "compareMonthlyPrice": 37,
+    "defaultMonthlyPrice": 115,
+    "compareMonthlyPrice": 115,
     "affiliateLink": "https://try.leadpages.com/dzadrshoyk4d",
-    "websiteUrl": "https://www.leadpages.com",
-    "ogImageUrl": "https://leadpages.com/og-image.png",
+    "websiteUrl": "https://leadpages.com/",
+    "ogImageUrl": "/og-images/leadpages.jpg",
+    "logo": "/tool-media/logos/leadpages.png",
     "substitution_cluster_v2": "landing-page-builder",
     "functional_needs": [
       "conversion-testing",

@@ -85304,27 +85304,26 @@
   {
     "id": "leadpages",
     "name": "Leadpages",
-    "shortDescription": "Création de landing pages, pop-ups et formulaires orientés conversion.",
-    "description": "Leadpages est un constructeur de pages d’atterrissage pensé pour la conversion plus que pour le design complet d’un site. ToolTrim le classe comme utile quand tu testes des offres, pages ads ou magnets. Si ton site est déjà bien tenu sur Webflow, Framer ou WordPress, il faut éviter la surcouche inutile.",
+    "shortDescription": "Landing pages assistées par IA, tests A/B et collecte de prospects.",
+    "description": "Leadpages réunit pages de campagne, formulaires et tests de conversion. À privilégier pour des campagnes récurrentes, plutôt que pour doubler un CMS déjà suffisant.",
     "category": "nocode-web",
     "pricing": {
-      "free": "Essai gratuit selon période commerciale.",
-      "paid": "Plans publics à partir d’environ 37 $/mois en facturation annuelle, plus en mensuel."
+      "free": "Essai de 7 jours avec carte bancaire.",
+      "paid": "EUR affichés : Grow 115 €/mois, Optimize 229 €, Scale 399 € en mensuel. Équivalents mensuels payés annuellement : 91,67 €, 183,33 €, 319,17 €. HTML Pub distinct. Taxes à confirmer."
     },
-    "website": "https://leadpages.com",
+    "website": "https://leadpages.com/",
     "affiliateLink": "https://try.leadpages.com/dzadrshoyk4d",
     "pros": [
-      "Interface intuitive, peu ou pas de courbe d'apprentissage.",
-      "Création assistée par IA très rapide.",
-      "Tests A/B natifs sans outils tiers.",
-      "Analytique et suivi des conversions intégrés.",
-      "Vaste écosystème d'intégrations."
+      "Pages et tests réunis.",
+      "Tests A/B dès Grow.",
+      "Export CSV et connexions CRM.",
+      "Trafic annoncé sans plafond."
     ],
     "cons": [
-      "Essentiellement limité aux pages de capture de leads.",
-      "Coûts additionnels pour les crédits IA au-delà du forfait.",
-      "Plan Scale élevé pour les petites équipes.",
-      "Fonctionnalités avancées concentrées sur les plans supérieurs."
+      "Coût élevé pour une page occasionnelle.",
+      "Cartes de chaleur dès Optimize seulement.",
+      "Quotas IA et connexions selon forfait.",
+      "Export complet du site à confirmer."
     ],
     "bestFor": [
       "all"
@@ -85335,13 +85334,9 @@
       "lead-capture"
     ],
     "freeAlternative": null,
-    "soloRelevance": "à vérifier selon volume",
-    "teamRelevance": "utile si usage récurrent",
-    "defaultMonthlyPrice": 37,
-    "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
-    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "defaultMonthlyPrice": 115,
     "relevantFor": [
       "Marketeurs numériques",
       "Propriétaires de petites entreprises",
@@ -85350,35 +85345,23 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous devez lancer rapidement des pages de capture de leads ou de vente.",
-        "Vous testez plusieurs variantes pour optimiser vos conversions.",
-        "Vous cherchez un outil sans codage avec IA intégrée."
+        "Vous lancez des campagnes récurrentes.",
+        "Vous exploitez les tests et les connexions CRM."
       ],
       "avoidIf": [
-        "Vous avez besoin d'un site web complet et complexe.",
-        "Vous préférez coder vous-même vos landing pages.",
-        "Un budget très limité ne permet qu'une solution gratuite."
+        "Votre CMS actuel suffit.",
+        "Votre trafic ne permet pas encore de tests utiles."
       ],
-      "threshold": "Leadpages convient aux marketeurs et freelances ayant besoin de pages de conversion rapides et testables ; pour un site web généraliste ou une présence en ligne complète, une solution plus large s'impose."
+      "threshold": "Pertinent pour tester des campagnes récurrentes. Comparez le coût et les limites à votre CMS avant d’ajouter un abonnement."
     },
     "alternatives": [
-      "webflow",
-      "framer",
-      "wordpress-com"
+      "unbounce",
+      "instapage",
+      "framer"
     ],
     "seo": {
-      "aiAngle": {
-        "stance": "challenge",
-        "aiTools": [
-          "framer",
-          "lovable"
-        ],
-        "augmentEn": "Leadpages added an AI generator to write landing page text, but now faces AI-first generators like Framer AI or Lovable that create a full page from a simple prompt.",
-        "augmentFr": "Leadpages a ajouté un générateur IA pour rédiger du texte de landing page, mais affronte désormais des générateurs IA-first comme Framer AI ou Lovable qui créent une page complète depuis un simple prompt.",
-        "replaceEn": "Replace Leadpages with an AI? For a first landing page draft, AI-first generators often move faster. Leadpages keeps the edge of conversion-oriented templates and built-in A/B testing. Verdict: challenged on initial generation, solid on conversion optimization.",
-        "replaceFr": "Remplacer Leadpages par une IA ? Pour un premier jet de landing page, les générateurs IA-first vont souvent plus vite. Leadpages garde l'avantage des templates orientés conversion et de l'A/B testing intégré. Verdict : challengé sur la génération initiale, solide sur l'optimisation de conversion."
-      },
-      "metaDescription": "Leadpages sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Leadpages mérite sa place dans ta stack."
+      "metaDescription": "Leadpages : tarifs, essai de 7 jours, tests A/B et limites. Notre avis pour choisir entre publication simple et optimisation des conversions.",
+      "metaDescriptionEn": "Leadpages pricing, 7-day trial, A/B testing and limits. Compare simple publishing with conversion optimization before subscribing."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -85398,55 +85381,96 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "leadpages",
-    "shortDescriptionEn": "Landing pages, pop-ups and forms built for conversion.",
-    "longDescription": "Leadpages est un constructeur de pages d’atterrissage pensé pour la conversion plus que pour le design complet d’un site. ToolTrim le classe comme utile quand tu testes des offres, pages ads ou magnets. Si ton site est déjà bien tenu sur Webflow, Framer ou WordPress, il faut éviter la surcouche inutile.",
-    "longDescriptionEn": "Leadpages is a conversion-focused landing page builder. ToolTrim recommends it for offer tests and acquisition pages, not as another layer on top of an already solid website.",
+    "shortDescriptionEn": "AI-assisted landing pages, A/B testing and lead capture.",
+    "longDescription": "Leadpages réunit création de pages, formulaires et tests A/B. L’éditeur assisté par IA couvre les landing pages, sites et blogs. Les contacts peuvent être transmis au CRM ou exportés en CSV. La galerie présente des modèles de l’éditeur, pas des résultats commerciaux ToolTrim.\n\nPour ToolTrim, l’intérêt dépend de vos campagnes : définissez une action cible, vérifiez la remontée d’un prospect test dans votre CRM, puis comparez deux variantes. Un faible trafic ralentit l’obtention de conclusions fiables. Aucune hausse de conversion n’est garantie.\n\nLa gamme distingue HTML Pub pour publier simplement et Leadpages Grow, Optimize et Scale pour optimiser les conversions. Grow inclut les tests A/B manuels ; cartes de chaleur et Smart Traffic commencent avec Optimize. Les crédits IA, domaines et connexions actives restent limités selon le forfait. Évitez ce coût si votre CMS couvre déjà le besoin.\n\nL’essai de sept jours demande une carte bancaire. Vérifiez les conditions au paiement et annulez avant l’échéance si vous ne poursuivez pas. Exportez vos contacts avant de partir ; confirmez séparément la récupération des pages et médias, car un export CSV ne garantit pas une reprise complète du site.",
+    "longDescriptionEn": "Leadpages combines campaign pages, forms and A/B testing. Its AI-assisted editor supports landing pages, websites and blogs. Leads can flow into your CRM or be exported as CSV. Gallery images show publisher templates, not ToolTrim business results.\n\nToolTrim sees the strongest fit in recurring campaigns: define a target action, verify a test lead reaches your CRM, then compare two variants. Low traffic makes reliable conclusions slower. Higher conversion is not guaranteed.\n\nThe range separates HTML Pub for simple publishing from Leadpages Grow, Optimize and Scale for conversion optimization. Grow includes manual A/B tests; heatmaps and Smart Traffic start with Optimize. AI credits, domains and active connections remain tier-limited. Avoid this cost if your CMS already covers the need.\n\nThe seven-day trial requires a card. Check checkout terms and cancel before the deadline if you do not continue. Export contacts before leaving; confirm page and asset recovery separately, since CSV export does not guarantee a fully portable website.",
     "pricingEn": {
-      "free": "Free trial depending on current offer.",
-      "paid": "Public plans start around $37/month billed annually, higher monthly."
+      "free": "7-day trial requiring a payment card.",
+      "paid": "Observed EUR prices: Grow €115/month, Optimize €229, Scale €399 monthly. Annual monthly equivalents: €91.67, €183.33, €319.17, paid annually. HTML Pub is separate. Tax treatment to confirm."
     },
     "pricing_v5": {
       "cautions": [
-        "Comparer avec ton CMS actuel : le doublon avec Webflow, Framer ou WordPress est fréquent."
+        "EUR observés dans le navigateur. Tarifs localisés variables, taxes à confirmer, crédits supplémentaires payants."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "leadpages.com",
-      "usage_sensitive": false,
+      "usage_sensitive": true,
       "compare_plan_kind": "paid",
-      "compare_plan_name": "Standard",
-      "price_reliability": "public_pricing_or_public_entry_plan",
+      "compare_plan_name": "Grow",
+      "price_reliability": "high",
       "location_sensitive": true,
-      "official_source_url": "https://www.leadpages.com/pricing",
-      "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 37
+      "official_source_url": "https://leadpages.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 115,
+      "plans": [
+        {
+          "planKey": "grow",
+          "displayName": "Grow",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 115,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Équivalent annuel affiché : 91,67 €/mois, payé annuellement. 4 domaines, 5 connexions actives, 40000 crédits IA/mois. Tests A/B manuels. Taxes à confirmer.",
+          "detailsSourceUrl": "https://leadpages.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "optimize",
+          "displayName": "Optimize",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 229,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Équivalent annuel affiché : 183,33 €/mois, payé annuellement. 6 domaines, 10 connexions actives, 80000 crédits IA/mois. Ajoute cartes de chaleur et Smart Traffic, 3 sièges. Taxes à confirmer.",
+          "detailsSourceUrl": "https://leadpages.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "scale",
+          "displayName": "Scale",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 399,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Équivalent annuel affiché : 319,17 €/mois, payé annuellement. 10 domaines, 25 connexions actives, 160000 crédits IA/mois. Ajoute automatisation des tests et espaces de travail, 10 sièges. Taxes à confirmer.",
+          "detailsSourceUrl": "https://leadpages.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
-    "websiteUrl": "https://www.leadpages.com",
-    "logo": "",
+    "websiteUrl": "https://leadpages.com/",
+    "logo": "/tool-media/logos/leadpages.png",
     "verdictEn": {
       "keepIf": [
-        "You need to launch lead capture or sales pages quickly.",
-        "You want built-in A/B testing without external tools.",
-        "You value AI-assisted design and rapid iteration."
+        "You run recurring campaigns.",
+        "You actively use testing and CRM connections."
       ],
       "avoidIf": [
-        "You're building a complex, multi-page website.",
-        "You prefer hand-coding your pages.",
-        "Your budget requires a free solution."
+        "Your current CMS is enough.",
+        "Your traffic is too low for useful testing."
       ],
-      "threshold": "Leadpages is ideal for marketers and freelancers needing fast, conversion-focused pages; for a comprehensive website presence, a broader platform fits better."
+      "threshold": "A fit for recurring campaign testing. Compare costs and limits with your CMS before adding a subscription."
     },
     "prosEn": [
-      "Intuitive, low learning curve.",
-      "AI-powered design cuts creation time dramatically.",
-      "Native A/B testing.",
-      "Built-in heatmaps and conversion analytics.",
-      "Extensive integration ecosystem."
+      "Pages and tests together.",
+      "A/B testing from Grow.",
+      "CSV export and CRM connections.",
+      "Traffic advertised without caps."
     ],
     "consEn": [
-      "Focused narrowly on lead capture pages.",
-      "Additional AI credits beyond plan allocation.",
-      "Scale plan expensive for small teams.",
-      "Advanced features locked to higher tiers."
+      "Costly for an occasional page.",
+      "Heatmaps require Optimize or above.",
+      "Tier-specific AI and connection limits.",
+      "Complete site export unconfirmed."
     ],
     "useCases": [
       "Créer une landing page pour une campagne publicitaire.",
@@ -85464,7 +85488,7 @@
       "MARC",
       "ALIX"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -85486,7 +85510,97 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://leadpages.com/og-image.png"
+    "ogImageUrl": "/og-images/leadpages.jpg",
+    "link": "https://try.leadpages.com/dzadrshoyk4d",
+    "affiliateCtaLabelFr": "Essayer Leadpages pendant 7 jours",
+    "affiliateCtaLabelEn": "Try Leadpages for 7 days",
+    "galleryImages": [
+      "/tool-media/leadpages/saas-template.jpg",
+      "/tool-media/leadpages/summit-template.jpg",
+      "/tool-media/leadpages/real-estate-template.jpg"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "EUR observed in the browser. Localized prices vary; tax treatment unconfirmed; extra credits cost more."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "leadpages.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Grow",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://leadpages.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 115,
+      "plans": [
+        {
+          "planKey": "grow",
+          "displayName": "Grow",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 115,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Displayed annual equivalent: €91.67/month paid annually. 4 domains, 5 active connections, 40000 AI credits/month. Manual A/B testing. Tax treatment to confirm.",
+          "detailsSourceUrl": "https://leadpages.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "optimize",
+          "displayName": "Optimize",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 229,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Displayed annual equivalent: €183.33/month paid annually. 6 domains, 10 active connections, 80000 AI credits/month. Adds heatmaps and Smart Traffic, 3 seats. Tax treatment to confirm.",
+          "detailsSourceUrl": "https://leadpages.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "scale",
+          "displayName": "Scale",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 399,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Displayed annual equivalent: €319.17/month paid annually. 10 domains, 25 active connections, 160000 AI credits/month. Adds automated testing and workspaces, 10 seats. Tax treatment to confirm.",
+          "detailsSourceUrl": "https://leadpages.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Pages et tests réunis ; ROI non mesuré. https://leadpages.com/ (2026-09-26).",
+        "simplicite": "Configuration CRM et domaines nécessaire. Analyse documentaire, pas de test terrain. https://leadpages.com/product/ai-page-builder (2026-09-26).",
+        "utilisation": "Pertinence liée aux campagnes et au trafic. https://leadpages.com/ (2026-09-26).",
+        "puissance": "Tests dès Grow, cartes de chaleur dès Optimize ; quotas applicables. https://leadpages.com/pricing (2026-09-26).",
+        "reversibilite": "CSV confirmé ; reprise complète du site non établie. https://leadpages.com/product/form-collection (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Pages and tests together; ROI not measured. https://leadpages.com/ (2026-09-26).",
+        "simplicite": "CRM and domain setup needed. Desk research, not a hands-on test. https://leadpages.com/product/ai-page-builder (2026-09-26).",
+        "utilisation": "Fit depends on campaigns and traffic. https://leadpages.com/ (2026-09-26).",
+        "puissance": "Testing from Grow, heatmaps from Optimize; quotas apply. https://leadpages.com/pricing (2026-09-26).",
+        "reversibilite": "CSV confirmed; full website portability not established. https://leadpages.com/product/form-collection (2026-09-26)."
+      }
+    }
   },
   {
     "id": "leadsquared",

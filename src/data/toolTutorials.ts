@@ -15,6 +15,13 @@ export interface ToolTutorial {
  * Every entry must be checked against the provider's oEmbed endpoint.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  leadpages: [{
+    provider: "youtube", videoId: "rQzOrBETqPU",
+    titleFr: "Découvrir le nouveau constructeur Leadpages", titleEn: "Meet Leadpages' New Agentic-First Builder (Pt1)",
+    author: "Leadpages", duration: "Official walkthrough",
+    sourceUrl: "https://www.youtube.com/watch?v=rQzOrBETqPU",
+    verifiedOn: "2026-09-26",
+  }],
   claude: [{
     provider: "youtube", videoId: "0vZ_UVLhSQQ",
     titleFr: "Bien démarrer avec Claude.ai", titleEn: "Getting started with Claude.ai",
