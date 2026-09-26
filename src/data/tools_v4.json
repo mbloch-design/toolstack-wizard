@@ -7992,24 +7992,23 @@
     "id": "aircall-inc",
     "name": "Aircall",
     "shortDescription": "Téléphonie cloud pour équipes commerciales et support, intégrée au CRM.",
-    "description": "Aircall remplace la téléphonie classique par un système cloud connecté au CRM, au support et aux workflows commerciaux. ToolTrim le recommande surtout quand plusieurs personnes gèrent appels entrants, sortants et suivi client. Pour un freelance solo, l’intérêt dépend du volume d’appels et du besoin de reporting.",
+    "description": "Aircall connecte les appels commerciaux et le support au CRM. Routage, enregistrements et historique partagé facilitent le suivi client. ToolTrim le retient pour une équipe avec un volume régulier d’appels, plutôt que pour un indépendant seul : Essentials et Professional imposent trois licences minimum. Les fonctions de supervision, de prospection et d’IA dépendent du forfait. Comparez le coût complet des licences, numéros et communications avant de vous engager.",
     "category": "communication",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics par utilisateur, souvent à partir d’environ 30 $/utilisateur/mois selon facturation."
+      "free": "Essai proposé ; pas de forfait gratuit permanent annoncé.",
+      "paid": "Tarifs US, facturation annuelle : Essentials 30 $US/licence/mois, minimum 3 licences (90 $US/mois). Professional 50 $US/licence/mois, minimum 3 licences (150 $US/mois). Enterprise sur devis. Communications, taxes et options à vérifier selon le pays."
     },
     "website": "https://aircall.io",
     "affiliateLink": "https://get.aircall.io/inlxr1yjycil",
     "pros": [
-      "Agents vocaux IA performants en multilingue.",
-      "Intégration profonde aux CRM principaux.",
-      "Interface intuitive et setup rapide.",
-      "Support de la conformité entreprise."
+      "Historique téléphonique connecté au CRM.",
+      "Routage et enregistrements pour les équipes.",
+      "Power Dialer et supervision sur Professional."
     ],
     "cons": [
-      "Tarification élevée pour les petites équipes.",
-      "Minimum de 3 licences requis sur certains plans.",
-      "Modules IA supplémentaires à coûts additionnels."
+      "Minimum de 3 licences sur Essentials et Professional.",
+      "Coût variable selon pays, numéros et usages.",
+      "Connexion internet fiable nécessaire."
     ],
     "bestFor": [
       "all"
@@ -8022,10 +8021,10 @@
     "freeAlternative": null,
     "soloRelevance": "à vérifier selon volume",
     "teamRelevance": "utile si usage récurrent",
-    "defaultMonthlyPrice": 30,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
+      "free": "Essai proposé ; pas de forfait gratuit permanent annoncé.",
+      "paid": "Tarifs US, facturation annuelle : Essentials 30 $US/licence/mois, minimum 3 licences (90 $US/mois). Professional 50 $US/licence/mois, minimum 3 licences (150 $US/mois). Enterprise sur devis. Communications, taxes et options à vérifier selon le pays."
     },
     "relevantFor": [
       "Équipes commerciales",
@@ -8043,7 +8042,8 @@
         "Vous n'avez besoin que de communication basique sans IA.",
         "Vous avez une infrastructure téléphonique privée que vous ne voulez pas remplacer."
       ],
-      "threshold": "Aircall convient aux équipes modernes cherchant une solution téléphonique avec IA ; pour des besoins simples, des alternatives plus légères suffisent."
+      "threshold": "Aircall convient aux équipes avec un flux régulier d’appels et un besoin de suivi CRM. Le minimum de trois licences est difficile à rentabiliser en solo.",
+      "faqPriceAnswer": "Essentials coûte 30 $US par licence et par mois avec paiement annuel, avec un minimum de trois licences : comptez au moins 90 $US par mois. Professional est à 50 $US par licence, soit 150 $US par mois minimum. Tarifs US ; communications et options peuvent augmenter le total."
     },
     "alternatives": [
       "krispcall",
@@ -8058,7 +8058,8 @@
         "replaceEn": "Replace Aircall with an AI? No: managing professional phone numbers and routing calls to the right team remains a phone infrastructure need. AI helps summarize calls afterward, it doesn't replace the phone system. Verdict: AI augments call tracking, phone infrastructure remains the product.",
         "replaceFr": "Remplacer Aircall par une IA ? Non : gérer des numéros de téléphone professionnels et router les appels vers la bonne équipe reste un besoin d'infrastructure téléphonique. L'IA aide à résumer les appels après coup, elle ne remplace pas le système téléphonique. Verdict : l'IA augmente le suivi des appels, l'infrastructure téléphonique reste le produit."
       },
-      "metaDescription": "Aircall sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Aircall mérite sa place dans ta stack."
+      "metaDescription": "Aircall : avis, téléphonie CRM et prix. Minimum 3 licences, Essentials ou Professional, limites et essai pour équipes commerciales et support.",
+      "metaDescriptionEn": "Aircall review and pricing: CRM calling, three-license minimum, Essentials and Professional, limits and trial for sales and support teams."
     },
     "articles": [],
     "tool_type": "gestion",
@@ -8079,17 +8080,17 @@
     "ia_use_case": null,
     "slug": "aircall",
     "shortDescriptionEn": "Cloud phone system for sales and support teams, integrated with CRM workflows.",
-    "longDescription": "Aircall remplace la téléphonie classique par un système cloud connecté au CRM, au support et aux workflows commerciaux. ToolTrim le recommande surtout quand plusieurs personnes gèrent appels entrants, sortants et suivi client. Pour un freelance solo, l’intérêt dépend du volume d’appels et du besoin de reporting.",
-    "longDescriptionEn": "Aircall is a cloud phone system connected to CRM and support workflows. It is strongest for teams handling measurable sales or support calls.",
+    "longDescription": "Aircall connecte les appels commerciaux et le support au CRM. Routage, enregistrements et historique partagé facilitent le suivi client. ToolTrim le retient pour une équipe avec un volume régulier d’appels, plutôt que pour un indépendant seul : Essentials et Professional imposent trois licences minimum. Les fonctions de supervision, de prospection et d’IA dépendent du forfait. Comparez le coût complet des licences, numéros et communications avant de vous engager.",
+    "longDescriptionEn": "Aircall connects sales and support calls to CRM workflows. Routing, recordings and shared history help teams coordinate customer follow-up. ToolTrim sees the best fit for teams with recurring call volumes, not solo operators: Essentials and Professional require at least three licenses. Monitoring, outbound and AI features depend on the plan. Compare the total cost of licenses, numbers and calling before committing.",
     "pricingEn": {
-      "free": "No durable free plan identified.",
-      "paid": "Public per-seat plans often start around $30/user/month depending on billing."
+      "free": "Trial available; no permanent free plan advertised.",
+      "paid": "US prices, billed annually: Essentials $30/license/month, minimum 3 licenses ($90/month). Professional $50/license/month, minimum 3 licenses ($150/month). Enterprise custom pricing. Confirm country-specific calling charges, taxes and extras."
     },
     "pricing_v5": {
       "cautions": [
-        "Prix par utilisateur ; le coût réel dépend du nombre de sièges et des options."
+        "Tarifs US avec paiement annuel. Minimum 3 licences ; communications et options variables."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "aircall.io",
       "usage_sensitive": true,
       "compare_plan_kind": "paid_per_seat",
@@ -8098,10 +8099,50 @@
       "location_sensitive": true,
       "official_source_url": "https://aircall.io/pricing/",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 30
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "essentials",
+          "displayName": "Essentials",
+          "summary": "30 $US/licence/mois facturé annuellement. Minimum 3 licences (90 $US/mois).",
+          "featureHighlights": [
+            "Minimum 3 licences"
+          ],
+          "detailsSourceUrl": "https://aircall.io/pricing/",
+          "pricingUnit": "licence/mois, paiement annuel",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 30,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "summary": "50 $US/licence/mois facturé annuellement. Minimum 3 licences (150 $US/mois).",
+          "featureHighlights": [
+            "Minimum 3 licences"
+          ],
+          "detailsSourceUrl": "https://aircall.io/pricing/",
+          "pricingUnit": "licence/mois, paiement annuel",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://aircall.io",
-    "logo": "",
+    "logo": "/tool-media/logos/aircall.png",
     "verdictEn": {
       "keepIf": [
         "You manage sales or support teams with complex phone needs.",
@@ -8113,34 +8154,34 @@
         "You only need basic phone features without AI.",
         "You have existing private phone infrastructure you don't want to replace."
       ],
-      "threshold": "Aircall suits modern teams seeking smart telephony with AI; for simple needs, lighter tools work."
+      "threshold": "Aircall fits teams with regular call volumes and CRM tracking needs. Its three-license minimum is harder to justify for solo users.",
+      "faqPriceAnswer": "Essentials costs $30 per license per month billed annually, with at least three licenses: a minimum of $90 per month. Professional is $50 per license, or at least $150 per month. US pricing; calling charges and add-ons can increase the total."
     },
     "prosEn": [
-      "Powerful multilingual AI voice agents.",
-      "Deep integrations with major CRMs.",
-      "Intuitive interface and fast setup.",
-      "Enterprise compliance support."
+      "Call history connected to the CRM.",
+      "Routing and recordings for teams.",
+      "Power Dialer and monitoring on Professional."
     ],
     "consEn": [
-      "Expensive for small teams.",
-      "Minimum 3 licenses required on some plans.",
-      "AI modules come with extra costs."
+      "Three-license minimum on Essentials and Professional.",
+      "Costs vary by country, numbers and usage.",
+      "Reliable internet required."
     ],
     "useCases": [
-      "Automatiser le répondeur téléphonique avec IA.",
-      "Suivre les appels commerciaux et analyser les conversations.",
-      "Centraliser l'accueil omnicanal (voix, SMS, email)."
+      "Distribuer les appels entrants entre collaborateurs.",
+      "Retrouver les appels dans le CRM.",
+      "Superviser les appels et la prospection sur Professional."
     ],
     "useCasesEn": [
-      "Automate phone reception with AI.",
-      "Track and analyze sales calls in detail.",
-      "Centralize omnichannel reception (voice, SMS, email)."
+      "Distribute incoming calls across teammates.",
+      "Log calls in the CRM.",
+      "Monitor calls and outbound work on Professional."
     ],
     "personas": [
       "MARC",
       "CLAIRE"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -8162,7 +8203,68 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://a.storyblok.com/f/157376/1200x630/e9706cdc7b/og-image-en_1200x630.png/m/1200x0"
+    "ogImageUrl": "/og-images/aircall.jpg",
+    "affiliateCtaLabelFr": "Essayer Aircall",
+    "affiliateCtaLabelEn": "Try Aircall",
+    "galleryImages": [
+      "/tool-media/aircall/workspace.png",
+      "/tool-media/aircall/ai-agent.png"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "US annual billing. Minimum 3 licenses; local call rates and extras vary."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "aircall.io",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid_per_seat",
+      "compare_plan_name": "Essentials",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://aircall.io/pricing/",
+      "verification_status": "verified_public_pricing_page",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "essentials",
+          "displayName": "Essentials",
+          "summary": "$30/license/month billed annually. Minimum 3 licenses ($90/month).",
+          "featureHighlights": [
+            "Minimum 3 licenses"
+          ],
+          "detailsSourceUrl": "https://aircall.io/pricing/",
+          "pricingUnit": "license/month, annual billing",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 30,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "summary": "$50/license/month billed annually. Minimum 3 licenses ($150/month).",
+          "featureHighlights": [
+            "Minimum 3 licenses"
+          ],
+          "detailsSourceUrl": "https://aircall.io/pricing/",
+          "pricingUnit": "license/month, annual billing",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    }
   },
   {
     "id": "airslate",

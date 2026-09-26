@@ -4549,3 +4549,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 ## 2026-09-23 — Stacks : retrait de la capsule flottante
 
 - Retrait de SectionPillNav du template stack après retour utilisateur : cette ancienne navigation recouvrait le contenu et avait été réintroduite par erreur.
+# Aircall : revue affiliation et médias, 2026-09-26
+
+- Contenu FR/EN, CTA affilié fourni et redirection Aircall vérifiée.
+- Source tarifaire : https://aircall.io/pricing/ ; USD, paiement annuel, minimum 3 licences clairement indiqué. Pas de conversion EUR implicite.
+- Logo officiel : https://aircall.io/apple-touch-icon.png ; OG et deux visuels produit repris du site https://aircall.io/ (CDN Storyblok, fichiers og-image-en_1200x630.png, hero-ws.png et hero-01-resolved.png).
+- Suppression du gain de temps non sourcé. Aucun changement de note ni publication automatique.

@@ -1457,14 +1457,13 @@
     "shortDescription": "Téléphonie cloud pour équipes commerciales et support, intégrée au CRM.",
     "shortDescriptionEn": "Cloud phone system for sales and support teams, integrated with CRM workflows.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics par utilisateur, souvent à partir d’environ 30 $/utilisateur/mois selon facturation."
+      "free": "Essai proposé ; pas de forfait gratuit permanent annoncé.",
+      "paid": "Tarifs US, facturation annuelle : Essentials 30 $US/licence/mois, minimum 3 licences (90 $US/mois). Professional 50 $US/licence/mois, minimum 3 licences (150 $US/mois). Enterprise sur devis. Communications, taxes et options à vérifier selon le pays."
     },
-    "defaultMonthlyPrice": 30,
-    "compareMonthlyPrice": 30,
     "affiliateLink": "https://get.aircall.io/inlxr1yjycil",
     "websiteUrl": "https://aircall.io",
-    "ogImageUrl": "https://a.storyblok.com/f/157376/1200x630/e9706cdc7b/og-image-en_1200x630.png/m/1200x0",
+    "ogImageUrl": "/og-images/aircall.jpg",
+    "logo": "/tool-media/logos/aircall.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "business-phone",
     "functional_needs": [
