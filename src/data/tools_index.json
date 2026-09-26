@@ -12346,16 +12346,16 @@
     "slug": "getresponse",
     "name": "GetResponse",
     "categoryId": "email-productivity",
-    "shortDescription": "La plateforme tout-en-un pour email marketing et automatisation.",
-    "shortDescriptionEn": "The all-in-one platform for email marketing and automation.",
+    "shortDescription": "Newsletters, automatisations et parcours e-commerce, avec webinaires et cours selon le forfait.",
+    "shortDescriptionEn": "Email campaigns, automation and e-commerce journeys, with webinars and courses on selected plans.",
     "pricing": {
-      "free": "Gratuit jusqu'à 500 contacts",
-      "paid": "19$/mois (Email Marketing) à 99$/mois (Marketing Automation)"
+      "free": "Jusqu’à 500 contacts et 2 500 messages/mois. Essai premium de 14 jours sans carte bancaire.",
+      "paid": "Pour 1 000 abonnés : Starter 19 $US/mois, Marketer 59 $, Creator 69 $ en mensuel, hors taxes. Équivalents mensuels en annuel : 15,58 $, 48,38 $ et 56,58 $. Enterprise sur devis."
     },
-    "defaultMonthlyPrice": 12.99,
-    "compareMonthlyPrice": 12.99,
-    "affiliateLink": "https://www.getresponse.com",
-    "ogImageUrl": "https://us-wn-g.gr-cdn.com/_next/static/media/share.5be0c165.jpg",
+    "affiliateLink": "https://try.getresponsetoday.com/k3g20w6hpboy",
+    "websiteUrl": "https://www.getresponse.com",
+    "ogImageUrl": "/og-images/getresponse.jpg",
+    "logo": "/tool-media/logos/getresponse.png",
     "substitution_cluster_v2": "newsletter-platform",
     "functional_needs": [
       "email",

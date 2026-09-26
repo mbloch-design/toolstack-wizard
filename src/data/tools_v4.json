@@ -61125,25 +61125,23 @@
     "id": "getresponse",
     "name": "GetResponse",
     "category": "email-productivity",
-    "shortDescription": "La plateforme tout-en-un pour email marketing et automatisation.",
+    "shortDescription": "Newsletters, automatisations et parcours e-commerce, avec webinaires et cours selon le forfait.",
     "verdict": {
       "keepIf": [
-        "Vous utilisez webinars comme outil marketing principal.",
-        "Vous besoin all-in-one (email + landing pages + funnels).",
-        "Vous cherchez alternative à ActiveCampaign moins chère."
+        "Vous voulez relier formulaires, newsletters et séquences automatisées.",
+        "Les fonctions e-commerce de Marketer ou les webinaires de Creator répondent à un besoin réel."
       ],
       "avoidIf": [
-        "Vous voulez plan gratuit ou très bon marché.",
-        "Vous avez besoin de CRM avancé.",
-        "Vous débutez et interface simple est priorité."
+        "Vous cherchez uniquement un outil d’envoi ponctuel sans automatisation.",
+        "Vous attendez un CRM commercial complet au tarif d’entrée."
       ],
-      "threshold": "GetResponse gagne pour webinars intégrés ; sans webinars, Mailchimp/MailerLite meilleur rapport qualité-prix."
+      "threshold": "Testez un parcours complet et comparez le forfait requis à votre nombre de contacts, sans confondre le gratuit avec l’essai premium."
     },
     "pricing": {
-      "free": "Gratuit jusqu'à 500 contacts",
-      "paid": "19$/mois (Email Marketing) à 99$/mois (Marketing Automation)"
+      "free": "Jusqu’à 500 contacts et 2 500 messages/mois. Essai premium de 14 jours sans carte bancaire.",
+      "paid": "Pour 1 000 abonnés : Starter 19 $US/mois, Marketer 59 $, Creator 69 $ en mensuel, hors taxes. Équivalents mensuels en annuel : 15,58 $, 48,38 $ et 56,58 $. Enterprise sur devis."
     },
-    "affiliateLink": "https://www.getresponse.com",
+    "affiliateLink": "https://try.getresponsetoday.com/k3g20w6hpboy",
     "articles": [],
     "link": "https://try.getresponsetoday.com/k3g20w6hpboy",
     "covers": [
@@ -61158,19 +61156,25 @@
       "content-creator",
       "consultant"
     ],
-    "defaultMonthlyPrice": 12.99,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Gratuit jusqu'à 500 contacts",
-      "paid": "19$/mois (Email Marketing) à 99$/mois (Marketing Automation)"
+      "free": "Jusqu’à 500 contacts et 2 500 messages/mois. Essai premium de 14 jours sans carte bancaire.",
+      "paid": "Pour 1 000 abonnés : Starter 19 $US/mois, Marketer 59 $, Creator 69 $ en mensuel, hors taxes. Équivalents mensuels en annuel : 15,58 $, 48,38 $ et 56,58 $. Enterprise sur devis."
     },
     "relevantFor": [
       "Entrepreneurs et coaches",
       "E-commerce",
       "Agences marketing"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "brevo",
+      "activecampaign",
+      "kit",
+      "mailerlite"
+    ],
     "seo": {
-      "metaDescription": "GetResponse : La plateforme tout-en-un pour email marketing et automatisation. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "GetResponse : avis, forfait gratuit, essai de 14 jours et tarifs Starter, Marketer, Creator. Comparez automatisations, webinaires et limites avant de choisir.",
+      "metaDescriptionEn": "GetResponse review: free plan, 14-day trial and Starter, Marketer, Creator pricing. Compare automation, webinars and limits before choosing."
     },
     "tool_type": "satellite",
     "substitutable": true,
@@ -61190,86 +61194,136 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "getresponse",
-    "shortDescriptionEn": "The all-in-one platform for email marketing and automation.",
-    "description": "GetResponse, c'est la plateforme tout-en-un pour email marketing et automatisation. À partir de 12.99€/mois. Pensé pour les coachs et formateurs et les e-commerçants.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : vous construisez une liste email (+500 abonnés) ou vous voulez automatiser vos campagnes marketing. À éviter si : vous n'avez pas encore de liste email ou vous envoyez moins de 2 newsletters par mois. Dès que vous avez +200 abonnés et que vous voulez automatiser votre marketing par email. Alternative gratuite : brevo.",
-    "longDescription": "GetResponse, c'est la plateforme tout-en-un pour email marketing et automatisation. À partir de 12.99€/mois. Pensé pour les coachs et formateurs et les e-commerçants.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : vous construisez une liste email (+500 abonnés) ou vous voulez automatiser vos campagnes marketing. À éviter si : vous n'avez pas encore de liste email ou vous envoyez moins de 2 newsletters par mois. Dès que vous avez +200 abonnés et que vous voulez automatiser votre marketing par email. Alternative gratuite : brevo.",
-    "longDescriptionEn": "GetResponse is the all-in-one platform for email marketing and automation. Starting at €12.99/month. Built for coaches and trainers and e-commerce sellers.\n\nEstimated time saving: 3h/month.\n\nKeep it if: you are building an email list (+500 subscribers) or you want to automate your marketing campaigns. Skip it if: you don't have an email list yet or you send fewer than 2 newsletters per month. As soon as you have more than 200 subscribers and want to automate your email marketing. Free alternative: brevo.",
+    "shortDescriptionEn": "Email campaigns, automation and e-commerce journeys, with webinars and courses on selected plans.",
+    "description": "GetResponse réunit newsletters, formulaires, pages de destination et automatisation marketing. L’intérêt est de relier l’acquisition d’un contact à une séquence de bienvenue, puis à des campagnes ciblées sans multiplier les outils. Les fonctions disponibles dépendent toutefois fortement du forfait : Starter inclut un workflow personnalisé, Marketer débloque les automatisations illimitées et les scénarios e-commerce, tandis que Creator ajoute notamment les webinaires et les cours.\n\nPour ToolTrim, le bon test consiste à construire votre parcours réel : formulaire, consentement, segmentation, séquence et suivi des résultats. Une équipe qui utilise seulement une newsletter peut ne pas avoir besoin des offres supérieures. Vérifiez le coût à la taille actuelle de votre liste et au palier suivant avant de migrer.\n\nLe forfait gratuit permet de conserver jusqu’à 500 contacts et d’envoyer 2 500 messages par mois. Il est distinct de l’essai premium de 14 jours sans carte bancaire. Les tarifs payants démarrent à 19 $US/mois pour 1 000 abonnés en paiement mensuel, hors taxes. Les contacts s’exportent en CSV ou XLSX ; les automatisations et configurations demandent une vérification séparée avant un changement d’outil.",
+    "longDescription": "GetResponse réunit newsletters, formulaires, pages de destination et automatisation marketing. L’intérêt est de relier l’acquisition d’un contact à une séquence de bienvenue, puis à des campagnes ciblées sans multiplier les outils. Les fonctions disponibles dépendent toutefois fortement du forfait : Starter inclut un workflow personnalisé, Marketer débloque les automatisations illimitées et les scénarios e-commerce, tandis que Creator ajoute notamment les webinaires et les cours.\n\nPour ToolTrim, le bon test consiste à construire votre parcours réel : formulaire, consentement, segmentation, séquence et suivi des résultats. Une équipe qui utilise seulement une newsletter peut ne pas avoir besoin des offres supérieures. Vérifiez le coût à la taille actuelle de votre liste et au palier suivant avant de migrer.\n\nLe forfait gratuit permet de conserver jusqu’à 500 contacts et d’envoyer 2 500 messages par mois. Il est distinct de l’essai premium de 14 jours sans carte bancaire. Les tarifs payants démarrent à 19 $US/mois pour 1 000 abonnés en paiement mensuel, hors taxes. Les contacts s’exportent en CSV ou XLSX ; les automatisations et configurations demandent une vérification séparée avant un changement d’outil.",
+    "longDescriptionEn": "GetResponse combines newsletters, forms, landing pages and marketing automation. Its value is connecting lead capture to welcome sequences and targeted campaigns without adding separate tools. Features vary substantially by plan: Starter includes one custom workflow, Marketer adds unlimited workflows and e-commerce journeys, while Creator adds webinars and courses.\n\nToolTrim recommends testing your actual journey: form, consent, segmentation, sequence and reporting. A team sending only newsletters may not need a higher tier. Check the price at your current list size and the next bracket before migrating.\n\nFree supports up to 500 contacts and 2,500 messages per month. It is separate from the 14-day premium trial without a credit card. Paid plans start at US$19/month for 1,000 subscribers with monthly billing, excluding taxes. Contacts can be exported as CSV or XLSX; check workflows and configuration separately before switching.",
     "pricingEn": {
-      "free": "Free for up to 500 contacts",
-      "paid": "$19/month (Email Marketing) to $99/month (Marketing Automation)"
+      "free": "Up to 500 contacts and 2,500 messages/month. 14-day premium trial without a credit card.",
+      "paid": "For 1,000 subscribers: Starter US$19/month, Marketer $59, Creator $69 billed monthly, excluding taxes. Annual billing equivalents: $15.58, $48.38 and $56.58/month. Enterprise is custom-priced."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Prix USD hors taxes, variables selon la taille de la liste. Les tarifs annuels nécessitent une facturation annuelle. Enterprise sur devis."
+      ],
+      "verified_on": "2026-09-26",
       "source_domain": "getresponse.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Starter",
       "price_reliability": "high",
-      "location_sensitive": false,
+      "location_sensitive": true,
       "official_source_url": "https://www.getresponse.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 12.99
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "500 contacts, 2 500 messages/mois.",
+          "detailsSourceUrl": "https://www.getresponse.com/help/can-i-try-getresponse-before-i-buy.html",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "1 000 abonnés. 19 $US/mois ; 15,58 $US/mois facturé annuellement. Un workflow personnalisé. Prix hors taxes, variable selon la taille de la liste.",
+          "detailsSourceUrl": "https://www.getresponse.com/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "marketer",
+          "displayName": "Marketer",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 59,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "1 000 abonnés. 59 $US/mois ; 48,38 $US/mois facturé annuellement. Workflows illimités. Prix hors taxes, variable selon la taille de la liste.",
+          "detailsSourceUrl": "https://www.getresponse.com/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "creator",
+          "displayName": "Creator",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 69,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "1 000 abonnés. 69 $US/mois ; 56,58 $US/mois facturé annuellement. Webinaires et cours. Prix hors taxes, variable selon la taille de la liste.",
+          "detailsSourceUrl": "https://www.getresponse.com/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "websiteUrl": "https://www.getresponse.com",
-    "logo": "",
+    "logo": "/tool-media/logos/getresponse.png",
     "verdictEn": {
       "keepIf": [
-        "You use webinars as a primary marketing tool.",
-        "You need all-in-one (email + landing pages + funnels).",
-        "You want a cheaper ActiveCampaign alternative."
+        "You want connected forms, newsletters and automated sequences.",
+        "Marketer e-commerce features or Creator webinars meet an actual need."
       ],
       "avoidIf": [
-        "You want a free or very affordable plan.",
-        "You need advanced CRM features.",
-        "You're starting out and want simplicity."
+        "You only need occasional broadcasts without automation.",
+        "You expect a full sales CRM at the entry price."
       ],
-      "threshold": "GetResponse wins for integrated webinars; without webinars, Mailchimp/MailerLite better value."
+      "threshold": "Test a complete journey and price the required plan for your contact count. Free and the premium trial are different offers."
     },
     "pros": [
-      "Webinars hosting intégré (avantage unique).",
-      "All-in-one : email + landing pages + funnels.",
-      "AI subject line generator et email creator.",
-      "Délivrabilité solide, bon taux de placement en boîte de réception.",
-      "Bon rapport features/prix."
+      "Formulaires, pages de destination et emails réunis.",
+      "Automatisations illimitées à partir de Marketer.",
+      "Webinaires et cours intégrés avec Creator.",
+      "Contacts exportables en CSV ou XLSX."
     ],
     "prosEn": [
-      "Integrated webinar hosting (unique advantage).",
-      "All-in-one: email + landing pages + funnels.",
-      "AI subject line and email generator.",
-      "Strong deliverability and inbox placement.",
-      "Good features-to-price ratio."
+      "Forms, landing pages and email in one platform.",
+      "Unlimited workflows from Marketer.",
+      "Integrated webinars and courses with Creator.",
+      "Contacts exportable as CSV or XLSX."
     ],
     "cons": [
-      "Pas de plan gratuit.",
-      "Interface moins intuitive que beehiiv/MailerLite.",
-      "CRM léger comparé à ActiveCampaign.",
-      "Automation moins flexible que Campaigner.",
-      "Support moins réactif."
+      "Prix croissant avec la taille de la liste.",
+      "Starter limité à un workflow personnalisé.",
+      "Fonctions premium absentes du gratuit après l’essai.",
+      "Migration des scénarios à préparer séparément de l’export des contacts."
     ],
     "consEn": [
-      "No free plan.",
-      "Less intuitive interface than beehiiv/MailerLite.",
-      "Light CRM vs ActiveCampaign.",
-      "Less flexible automation than Campaigner.",
-      "Slower support response."
+      "Pricing increases with list size.",
+      "Starter allows one custom workflow.",
+      "Premium features do not remain in Free after the trial.",
+      "Workflow migration needs planning beyond contact exports."
     ],
     "useCases": [
-      "Webinars + email marketing coordonnés.",
-      "Funnels de vente avec landing pages intégrées.",
-      "Email automation avec AI subject optimization.",
-      "SMS + email multi-channel.",
-      "Analytics ROI sur campaigns complètes."
+      "Accueillir et segmenter les nouveaux abonnés.",
+      "Relancer les paniers abandonnés avec Marketer.",
+      "Associer webinaires, cours et emails avec Creator."
     ],
     "useCasesEn": [
-      "Coordinated webinars + email marketing.",
-      "Sales funnels with integrated landing pages.",
-      "Email automation with AI subject optimization.",
-      "Multi-channel SMS + email.",
-      "Complete campaign ROI analytics."
+      "Welcome and segment new subscribers.",
+      "Recover abandoned carts with Marketer.",
+      "Combine webinars, courses and email with Creator."
     ],
     "personas": [],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "downgradePlan": null,
     "prescription_quality": "question",
     "prescription_output": null,
@@ -61293,7 +61347,110 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://us-wn-g.gr-cdn.com/_next/static/media/share.5be0c165.jpg"
+    "ogImageUrl": "/og-images/getresponse.jpg",
+    "affiliateCtaLabelFr": "Commencer gratuitement",
+    "affiliateCtaLabelEn": "Start for free",
+    "galleryImages": [
+      "/tool-media/getresponse/overview.webp",
+      "/tool-media/getresponse/automation.png",
+      "/tool-media/getresponse/workflow.webp"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "USD prices exclude taxes and increase with list size. Annual rates require annual billing. Enterprise is custom-priced."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "getresponse.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.getresponse.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "500 contacts, 2,500 messages/month.",
+          "detailsSourceUrl": "https://www.getresponse.com/help/can-i-try-getresponse-before-i-buy.html",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "1,000 subscribers. US$19/month; $15.58/month billed annually. One custom workflow. Excludes taxes; price varies with list size.",
+          "detailsSourceUrl": "https://www.getresponse.com/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "marketer",
+          "displayName": "Marketer",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 59,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "1,000 subscribers. US$59/month; $48.38/month billed annually. Unlimited workflows. Excludes taxes; price varies with list size.",
+          "detailsSourceUrl": "https://www.getresponse.com/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "creator",
+          "displayName": "Creator",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 69,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "summary": "1,000 subscribers. US$69/month; $56.58/month billed annually. Webinars and courses. Excludes taxes; price varies with list size.",
+          "detailsSourceUrl": "https://www.getresponse.com/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Parcours acquisition/email réunis ; gain financier non mesuré. https://www.getresponse.com/pricing (2026-09-26).",
+        "simplicite": "Paramétrage des segments et scénarios nécessaire ; analyse documentaire, sans test terrain. https://www.getresponse.com/pricing (2026-09-26).",
+        "utilisation": "Usage récurrent pour campagnes et séquences, sous limites du forfait. https://www.getresponse.com/pricing (2026-09-26).",
+        "puissance": "Automatisation, e-commerce, webinaires et cours selon forfait. https://www.getresponse.com/pricing (2026-09-26).",
+        "reversibilite": "Contacts CSV/XLSX exportables ; configurations et workflows à migrer séparément. https://www.getresponse.com/help/how-to-export-your-data-from-getresponse.html (2026-09-26)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Connected acquisition and email journeys; financial benefit not measured. https://www.getresponse.com/pricing (2026-09-26).",
+        "simplicite": "Segments and workflows require setup; desk research, not hands-on testing. https://www.getresponse.com/pricing (2026-09-26).",
+        "utilisation": "Recurring campaign and sequence use, subject to plan limits. https://www.getresponse.com/pricing (2026-09-26).",
+        "puissance": "Automation, e-commerce, webinars and courses vary by plan. https://www.getresponse.com/pricing (2026-09-26).",
+        "reversibilite": "CSV/XLSX contact exports; configuration and workflows require separate migration. https://www.getresponse.com/help/how-to-export-your-data-from-getresponse.html (2026-09-26)."
+      }
+    }
   },
   {
     "id": "ghost",

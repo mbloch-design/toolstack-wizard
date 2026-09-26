@@ -1,3 +1,9 @@
+## 2026-09-26 : GetResponse, révision affiliée FR/EN
+
+- Lien affilié fourni conservé et vérifié ; CTA gratuit. Contenu et verdict réécrits, anciennes promesses de délivrabilité et gains horaires non sourcés retirées. Note documentaire 3,6/5 sur cinq axes, sans test terrain.
+- Tarifs USD hors taxes : Starter 19, Marketer 59, Creator 69 par mois pour 1 000 abonnés ; annuel distingué. Sources : https://www.getresponse.com/pricing ; https://www.getresponse.com/help/can-i-try-getresponse-before-i-buy.html ; https://www.getresponse.com/help/how-many-messages-can-i-send-using-my-free-account.html ; https://www.getresponse.com/help/how-to-export-your-data-from-getresponse.html. Gratuit 500 contacts / 2 500 messages, distinct de l’essai premium 14 jours sans carte.
+- Logo officiel global/favicons/apple-touch-icon-180x180.png ; OG us-wn-g.gr-cdn.com/_next/static/media/share.5be0c165.jpg. Trois illustrations éditeur, sans capture maison : même CDN img@2x.f0a8231f.webp, et us-ws-g.gr-cdn.com/images/pages/features/marketing-automation/hero.png et img-01@2x.webp. Les chiffres promotionnels visibles dans ces illustrations ne sont pas des résultats ToolTrim.
+
 ## 2026-09-26 : Gamma, révision affiliée FR/EN
 
 - Tarifs EUR natifs relevés dans le navigateur sur https://gamma.app/fr/pricing, bascule mensuel/annuel : 10/24/86 EUR mensuels, 96/216/928 EUR annuels. Taxes non déduites. Crédits gratuits non renouvelables ; quotas payants explicités. Retire promesses de vitesse, conversion EUR et Ultra sur devis.
