@@ -1,3 +1,11 @@
+## 2026-09-26 : Brevo, fiche affiliée FR/EN
+
+- Revoit contenu, SEO, usages et limites ; corrige la promesse erronée de facturation sans limite de contacts.
+- Tarifs EUR officiels : Starter dès 7 €/mois, Standard dès 17 €, Pro dès 499 €. Distingue quotas, options et crédits SMS. Aucune conversion monétaire.
+- Conserve le lien partenaire fourni et ajoute le CTA gratuit FR/EN. Note documentaire v2 : 3,6/5, avec preuves par axe.
+- Logo officiel `https://corp-backend.brevo.com/wp-content/uploads/2025/07/Brevo_logo.svg` ; quatre visuels officiels sous `https://corp-backend.brevo.com/wp-content/uploads/2025/12/` : `hero-image.webp` (également OG JPEG), `Email-marketing.webp`, `MULTICHANNEL-MARKETING-AUTOMATION.webp`, `All-in-one.webp`. Aucune capture ToolTrim.
+- Sources : https://help.brevo.com/hc/fr/articles/208589409 ; https://help.brevo.com/hc/en-us/articles/5310065850642 ; https://www.brevo.com/ .
+
 ## 2026-09-26 : Fiche AdCreative.ai et lien partenaire
 
 - Révise la fiche canonique `adcreative-ai` en FR/EN : usages, limites du scoring, alternatives et SEO. L’alias `adcreative` conserve sa redirection existante.

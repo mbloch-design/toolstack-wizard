@@ -4438,17 +4438,18 @@
     "slug": "brevo",
     "name": "Brevo",
     "categoryId": "email-productivity",
-    "shortDescription": "Email marketing, automation, SMS et CRM léger pour PME.",
-    "shortDescriptionEn": "Email marketing, automation, SMS and lightweight CRM for SMBs.",
+    "shortDescription": "Email marketing, automatisations et messages transactionnels pour petites équipes.",
+    "shortDescriptionEn": "Email marketing, automation and transactional messaging for small teams.",
     "pricing": {
-      "free": "Plan gratuit limité en volume quotidien.",
-      "paid": "Plans publics à partir d’environ 9 €/mois selon volume et fonctionnalités."
+      "free": "Gratuit sans carte bancaire : 300 emails/jour, jusqu’à 100 000 contacts. Quota quotidien non reportable.",
+      "paid": "Tarifs publics en EUR : Starter dès 7 €/mois, Standard dès 17 €/mois, Pro dès 499 €/mois. Volume, contacts et options déterminent le coût final."
     },
-    "defaultMonthlyPrice": 9,
-    "compareMonthlyPrice": 9,
+    "defaultMonthlyPrice": 7,
+    "compareMonthlyPrice": 7,
     "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
     "websiteUrl": "https://www.brevo.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/brevo.jpg",
+    "ogImageUrl": "/og-images/brevo.jpg",
+    "logo": "/tool-media/logos/brevo.svg",
     "tool_type": "gestion",
     "substitution_cluster_v2": "email-marketing",
     "functional_needs": [

@@ -22292,50 +22292,115 @@
     "slug": "brevo",
     "name": "Brevo",
     "category": "email-productivity",
-    "shortDescription": "Email marketing, automation, SMS et CRM léger pour PME.",
-    "shortDescriptionEn": "Email marketing, automation, SMS and lightweight CRM for SMBs.",
-    "description": "Brevo est une suite marketing accessible pour newsletters, automatisations, SMS et CRM léger. ToolTrim l’apprécie quand il faut un outil robuste sans prix enterprise, mais recommande de vérifier le volume d’emails et le besoin réel d’automation avant d’empiler avec un CRM ou une plateforme newsletter.",
-    "longDescription": "Brevo est une suite marketing accessible pour newsletters, automatisations, SMS et CRM léger. ToolTrim l’apprécie quand il faut un outil robuste sans prix enterprise, mais recommande de vérifier le volume d’emails et le besoin réel d’automation avant d’empiler avec un CRM ou une plateforme newsletter.",
-    "longDescriptionEn": "Brevo is an accessible marketing suite for newsletters, automation, SMS and lightweight CRM. ToolTrim likes it when email volume and automation needs are real.",
+    "shortDescription": "Email marketing, automatisations et messages transactionnels pour petites équipes.",
+    "shortDescriptionEn": "Email marketing, automation and transactional messaging for small teams.",
+    "description": "Brevo réunit newsletters, automatisations marketing et emails transactionnels, avec des fonctions commerciales et des canaux SMS ou WhatsApp selon l’offre. L’intérêt est de centraliser les contacts et les campagnes sans ajouter un outil pour chaque canal.\n\nToolTrim le retient pour une petite équipe qui envoie régulièrement des campagnes et veut faire évoluer ses automatisations. Le gratuit permet de commencer sans carte bancaire, mais son plafond de 300 emails par jour ne convient pas à une newsletter envoyée en une fois à plusieurs milliers de personnes.\n\nLe prix ne dépend pas seulement des emails : le palier choisi fixe aussi le nombre de contacts stockés. Starter et Standard commencent à 5 000 emails par mois avec 500 contacts. Vérifiez ensemble la taille de votre base, le volume d’envoi et les options avant de choisir. Les crédits SMS et certaines fonctions Sales s’ajoutent au budget. Analyse documentaire, sans test terrain ni promesse de gain chiffré.",
+    "longDescription": "Brevo réunit newsletters, automatisations marketing et emails transactionnels, avec des fonctions commerciales et des canaux SMS ou WhatsApp selon l’offre. L’intérêt est de centraliser les contacts et les campagnes sans ajouter un outil pour chaque canal.\n\nToolTrim le retient pour une petite équipe qui envoie régulièrement des campagnes et veut faire évoluer ses automatisations. Le gratuit permet de commencer sans carte bancaire, mais son plafond de 300 emails par jour ne convient pas à une newsletter envoyée en une fois à plusieurs milliers de personnes.\n\nLe prix ne dépend pas seulement des emails : le palier choisi fixe aussi le nombre de contacts stockés. Starter et Standard commencent à 5 000 emails par mois avec 500 contacts. Vérifiez ensemble la taille de votre base, le volume d’envoi et les options avant de choisir. Les crédits SMS et certaines fonctions Sales s’ajoutent au budget. Analyse documentaire, sans test terrain ni promesse de gain chiffré.",
+    "longDescriptionEn": "Brevo combines newsletters, marketing automation and transactional emails, with sales features and SMS or WhatsApp channels depending on the plan. Its appeal is keeping contacts and campaigns together instead of adding a separate tool for every channel.\n\nToolTrim sees a fit for small teams running recurring campaigns and gradually expanding automation. The permanent free plan requires no credit card, but its 300-email daily cap does not suit a newsletter sent to thousands of subscribers at once.\n\nPricing is not based on email volume alone: the selected tier also determines contact storage. Starter and Standard begin at 5,000 emails per month and 500 contacts. Check your list size, sends and add-ons together before choosing. SMS credits and some Sales features cost extra. This is a documentation-based review, not a hands-on test or a quantified productivity claim.",
     "pricing": {
-      "free": "Plan gratuit limité en volume quotidien.",
-      "paid": "Plans publics à partir d’environ 9 €/mois selon volume et fonctionnalités."
+      "free": "Gratuit sans carte bancaire : 300 emails/jour, jusqu’à 100 000 contacts. Quota quotidien non reportable.",
+      "paid": "Tarifs publics en EUR : Starter dès 7 €/mois, Standard dès 17 €/mois, Pro dès 499 €/mois. Volume, contacts et options déterminent le coût final."
     },
     "pricingEn": {
-      "free": "Free plan with daily send limits.",
-      "paid": "Public plans start around €9/month depending on volume and features."
+      "free": "Free without a credit card: 300 emails/day and up to 100,000 contacts. Unused daily quota does not roll over.",
+      "paid": "Published EUR prices: Starter from €7/month, Standard from €17/month, Pro from €499/month. Sending volume, contacts and add-ons determine the final cost. No currency conversion applied."
     },
-    "defaultMonthlyPrice": 9,
+    "defaultMonthlyPrice": 7,
     "pricing_v5": {
       "cautions": [
-        "Le prix dépend surtout du volume d’emails et des options marketing."
+        "Prix EUR publiés par Brevo. Le volume d’emails détermine aussi le stockage de contacts. SMS et options en supplément."
       ],
-      "verified_on": "2026-05-03",
+      "verified_on": "2026-09-26",
       "source_domain": "brevo.com",
       "usage_sensitive": true,
       "compare_plan_kind": "paid",
       "compare_plan_name": "Starter",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
-      "official_source_url": "https://www.brevo.com/pricing/",
+      "official_source_url": "https://help.brevo.com/hc/fr/articles/208589409",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 9
+      "compare_price_monthly_eur": 7,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Gratuit",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Gratuit permanent, sans carte bancaire.",
+          "featureHighlights": [
+            "300 emails/jour",
+            "100 000 contacts maximum"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 7,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "À partir de 7 €/mois, selon le volume et les options.",
+          "featureHighlights": [
+            "5 000 emails/mois au palier initial",
+            "500 contacts au palier initial"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 17,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "À partir de 17 €/mois, selon le volume et les options.",
+          "featureHighlights": [
+            "5 000 emails/mois au palier initial",
+            "Tests A/B et rapports avancés"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 499,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "À partir de 499 €/mois, selon le volume et les options.",
+          "featureHighlights": [
+            "150 000 emails/mois au palier initial",
+            "10 utilisateurs"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
     "websiteUrl": "https://www.brevo.com",
-    "logo": "",
+    "logo": "/tool-media/logos/brevo.svg",
     "seo": {
-      "aiAngle": {
-        "stance": "augmente",
-        "aiTools": [
-          "chatgpt"
-        ],
-        "augmentEn": "Brevo added an AI assistant to generate emails and SMS from a brief. Useful to get started fast, especially for a small team with no dedicated copywriter.",
-        "augmentFr": "Brevo a ajouté un assistant IA pour générer des emails et des SMS à partir d'un brief. C'est utile pour démarrer vite, surtout pour une petite équipe sans rédacteur dédié.",
-        "replaceEn": "Replace Brevo with an AI? No: the platform handles sending, deliverability, CRM and multichannel (email, SMS, WhatsApp), which a writing AI doesn't cover. Verdict: AI writes, Brevo sends and orchestrates.",
-        "replaceFr": "Remplacer Brevo par une IA ? Non : la plateforme gère l'envoi, la délivrabilité, le CRM et le multicanal (email, SMS, WhatsApp), ce qu'une IA de rédaction ne couvre pas. Verdict : l'IA écrit, Brevo envoie et orchestre."
-      },
-      "metaDescription": "Brevo sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Brevo mérite sa place dans ta stack."
+      "metaDescription": "Brevo : avis, forfait gratuit 300 emails/jour, Starter dès 7 €/mois, limites de contacts, automatisations et options à vérifier.",
+      "metaDescriptionEn": "Brevo review: free 300 emails/day, Starter from €7/month, contact limits, automation and add-on costs to check."
     },
     "articles": [],
     "covers": [
@@ -22359,67 +22424,59 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous avez une large base de contacts mais une fréquence d'envoi modérée.",
-        "Vous besoin email + SMS + CRM dans un seul outil.",
-        "Vous cherchez une alternative abordable à ActiveCampaign."
+        "Vous envoyez régulièrement des campagnes et souhaitez automatiser les suivis.",
+        "Vous avez vérifié que le palier couvre à la fois vos contacts et vos emails."
       ],
       "avoidIf": [
-        "Vous n'envoyez que peu d'emails (plan gratuit Mailchimp/AWeber meilleur).",
-        "Vous avez besoin d'automation très avancée.",
-        "Vous requérez support premium 24/7."
+        "Vous cherchez seulement un éditeur de newsletter sans gestion marketing.",
+        "Vous supposez que SMS, CRM avancé et contacts illimités sont inclus au prix d’entrée."
       ],
-      "threshold": "Brevo excelle pour SMB avec large base de contacts et multi-canal ; pour pure email gratuit, AWeber/Mailchimp suffisent."
+      "threshold": "Commencez gratuitement pour valider le flux. Passez à Starter pour dépasser le plafond quotidien, ou à Standard pour les tests A/B et l’automatisation élargie."
     },
     "verdictEn": {
       "keepIf": [
-        "You have a large contact base but moderate send frequency.",
-        "You need email + SMS + CRM in one tool.",
-        "You want an affordable alternative to ActiveCampaign."
+        "You send recurring campaigns and want automated follow-ups.",
+        "Your selected tier covers both contact storage and email volume."
       ],
       "avoidIf": [
-        "You send very few emails (free Mailchimp/AWeber better).",
-        "You need very advanced automation.",
-        "You require 24/7 premium support."
+        "You only need a newsletter editor without marketing operations.",
+        "You expect SMS, advanced CRM and unlimited contacts at the entry price."
       ],
-      "threshold": "Brevo excels for SMBs with large contact bases and multi-channel needs; for email-only free options, AWeber/Mailchimp suffice."
+      "threshold": "Start free to validate the workflow. Choose Starter to remove the daily send cap, or Standard for A/B testing and expanded automation."
     },
     "pros": [
-      "Facturation par emails (non contacts) = avantage base large/envois rares.",
-      "All-in-one email + SMS + CRM.",
-      "Plan gratuit généreux et durable.",
-      "500k+ clients = stabilité proven.",
-      "Multi-canal intégré."
+      "Forfait gratuit permanent sans carte bancaire.",
+      "Emails marketing et transactionnels dans la même plateforme.",
+      "Automatisations, tests A/B et rapports avancés avec Standard.",
+      "Export CSV des contacts et de leurs attributs documenté."
     ],
     "prosEn": [
-      "Pay-per-email billing (not per contact) = advantage for large, infrequent lists.",
-      "All-in-one: email + SMS + CRM.",
-      "Generous, permanent free tier.",
-      "500k+ customers = proven stability.",
-      "Integrated multi-channel."
+      "Permanent free plan without a credit card.",
+      "Marketing and transactional email in one platform.",
+      "Automation, A/B testing and advanced reports on Standard.",
+      "Documented CSV export of contacts and their attributes."
     ],
     "cons": [
-      "Interface moins moderne que concurrents.",
-      "Automation moins avancée qu'ActiveCampaign.",
-      "Courbe d'apprentissage sur le modèle de facturation.",
-      "Support moins réactif que beehiiv/Mailchimp."
+      "Gratuit limité à 300 emails par jour, sans report.",
+      "Le palier email détermine aussi la limite de contacts.",
+      "Retrait du logo en option sur Starter.",
+      "Crédits SMS et fonctions Sales avancées facturés séparément."
     ],
     "consEn": [
-      "Less modern interface than competitors.",
-      "Automation less advanced than ActiveCampaign.",
-      "Learning curve on billing model.",
-      "Support less responsive than beehiiv/Mailchimp."
+      "Free plan capped at 300 emails daily with no rollover.",
+      "Email tiers also determine contact storage limits.",
+      "Logo removal is an add-on on Starter.",
+      "SMS credits and advanced Sales features cost extra."
     ],
     "useCases": [
-      "Email + SMS pour SMB avec base large de contacts.",
-      "Gestion client simple avec CRM intégré.",
-      "Newsletter infrequente mais volumeuse.",
-      "Prospection SME avec multi-canal."
+      "Envoyer une newsletter à une audience inscrite.",
+      "Automatiser un parcours de bienvenue ou de fidélisation.",
+      "Centraliser emails transactionnels et campagnes marketing."
     ],
     "useCasesEn": [
-      "Email + SMS for SMBs with large contact bases.",
-      "Simple customer management with integrated CRM.",
-      "Infrequent but high-volume newsletters.",
-      "Multi-channel SME prospecting."
+      "Send newsletters to subscribed audiences.",
+      "Automate welcome or retention journeys.",
+      "Centralize transactional email and marketing campaigns."
     ],
     "personas": [
       "ALIX",
@@ -22458,7 +22515,130 @@
     },
     "force_silence": false,
     "timeGainedHoursPerMonth": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/brevo.jpg"
+    "ogImageUrl": "/og-images/brevo.jpg",
+    "galleryImages": [
+      "/tool-media/brevo/email-marketing.webp",
+      "/tool-media/brevo/automation.webp",
+      "/tool-media/brevo/platform.webp"
+    ],
+    "affiliateCtaLabelFr": "Commencer gratuitement",
+    "affiliateCtaLabelEn": "Get started for free",
+    "pricingTiers": {
+      "free": "Gratuit sans carte bancaire : 300 emails/jour, jusqu’à 100 000 contacts. Quota quotidien non reportable.",
+      "paid": "Tarifs publics en EUR : Starter dès 7 €/mois, Standard dès 17 €/mois, Pro dès 499 €/mois. Volume, contacts et options déterminent le coût final."
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "Published EUR prices, not a conversion. Email tiers also set contact storage limits. SMS and add-ons cost extra."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "brevo.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Starter",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "location_sensitive": true,
+      "official_source_url": "https://help.brevo.com/hc/fr/articles/208589409",
+      "verification_status": "verified_public_pricing_page",
+      "compare_price_monthly_eur": 7,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "Permanent free plan without a credit card.",
+          "featureHighlights": [
+            "300 emails/day",
+            "Up to 100,000 contacts"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 7,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "From €7/month depending on volume and add-ons.",
+          "featureHighlights": [
+            "5,000 emails/month at entry tier",
+            "500 contacts at entry tier"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 17,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "From €17/month depending on volume and add-ons.",
+          "featureHighlights": [
+            "5,000 emails/month at entry tier",
+            "A/B testing and advanced reports"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 499,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "summary": "From €499/month depending on volume and add-ons.",
+          "featureHighlights": [
+            "150,000 emails/month at entry tier",
+            "10 users"
+          ],
+          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Centralisation email et automatisations ; gratuit permanent, rentabilité non mesurée. https://help.brevo.com/hc/fr/articles/208589409 (26/09/2026).",
+        "simplicite": "Éditeur visuel documenté, mais paliers contacts/emails et options à comprendre. Pas de test terrain. https://help.brevo.com/hc/fr/articles/208589409 (26/09/2026).",
+        "utilisation": "Campagnes récurrentes et transactionnel ; plafond quotidien sur le gratuit. https://help.brevo.com/hc/fr/articles/208589409 (26/09/2026).",
+        "puissance": "Automatisations, A/B testing et rapports avancés selon forfait. https://help.brevo.com/hc/fr/articles/208589409 (26/09/2026).",
+        "reversibilite": "Export CSV des contacts et attributs ; portabilité des automatisations non établie. https://help.brevo.com/hc/en-us/articles/5310065850642 (26/09/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Centralized email and automation with a permanent free tier; ROI not measured. https://help.brevo.com/hc/en-us/articles/208589409 (2026-09-26).",
+        "simplicite": "Documented visual editor, but contact/email tiers and add-ons need attention. Not a hands-on test. https://help.brevo.com/hc/en-us/articles/208589409 (2026-09-26).",
+        "utilisation": "Recurring campaigns and transactional email; daily free-tier cap. https://help.brevo.com/hc/en-us/articles/208589409 (2026-09-26).",
+        "puissance": "Automation, A/B testing and advanced reports depending on plan. https://help.brevo.com/hc/en-us/articles/208589409 (2026-09-26).",
+        "reversibilite": "CSV contact and attribute export; automation portability not established. https://help.brevo.com/hc/en-us/articles/5310065850642 (2026-09-26)."
+      }
+    }
   },
   {
     "id": "bricks",
