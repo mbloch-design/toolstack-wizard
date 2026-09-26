@@ -18,7 +18,10 @@ const budgets = {
   // already grouped in one chunk (vite.config.ts, "catalog-shared").
   // 13_000 (2026-09-25): 1179 tools (two added) and researched fiches with
   // full plan grids, each tool is about ten prerendered files.
-  files: 13_000,
+  // 13_200 (2026-09-27): verified baseline 13_022, plus 3 new tools
+  // (30 routes), 78 sourced media assets and 2 shared CSS variants = 13_132.
+  // Keep the byte budgets unchanged; this is catalogue growth, not a bypass.
+  files: 13_200,
   totalBytes: 850 * MiB,
   htmlBytes: 750 * MiB,
   javascriptBytes: 15 * MiB,

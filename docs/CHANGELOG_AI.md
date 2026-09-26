@@ -1,3 +1,12 @@
+## 2026-09-27 : lot affiliation, 17 fiches FR/EN validées
+
+- Révision de LearnWorlds, Lusha, Murf, Prezi, Reclaim, Reply.io, SaneBox, Seamless.AI, SocialBee, SurveyMonkey, ThorData, Tidio, Trainual et Unbounce. Création de RGE Studio (Beefree), Shade et Tapstitch. Liens partenaires exacts conservés, balisage sponsored maintenu.
+- Contenu et limites réécrits à partir des sources officielles, tarifs en devises natives, engagements annuels explicités, montants non publics non affichés comme gratuits. Notes documentaires sur cinq axes avec preuves, sans revendication de test terrain ni gains horaires inventés. Guide rédaction appliqué avec fallback éditorial documenté dans research.
+- 78 médias officiels locaux : 17 logos, 17 OG et 44 images de galerie. Manifest des URL sources et empreintes originales ; aucune capture fabriquée. Vidéo SurveyMonkey existante conservée.
+- Index régénéré (1182 outils), protection des révisions locales contre les anciennes données distantes. Taxonomie des trois créations renseignée ; alias Reclaim existant conservé.
+- Validation : build production PASS, vérificateur des 17 fiches et 34 pages générées PASS, rendu FR/EN et navigation des galeries contrôlés. 16 redirections partenaires HTTP réussies ; Reply.io confirmé dans le navigateur après un 403 automatisé. Pas de validation mobile revendiquée.
+- Budget fichiers porté de 13000 à 13200 pour les 30 nouvelles routes et 78 médias, sans relever les budgets de poids. Fichiers générés préexistants hors périmètre préservés.
+
 ## 2026-09-26 : reprise de la file affiliation
 
 - État Git vérifié : dernier commit publié 11af3ba4 (Leadpages). Les révisions demandées ensuite ne sont pas présentes dans ce checkout.

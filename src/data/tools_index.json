@@ -1,5 +1,79 @@
 [
   {
+    "id": "tapstitch",
+    "slug": "tapstitch",
+    "name": "Tapstitch",
+    "categoryId": "creation",
+    "shortDescription": "Vêtements personnalisés produits à la demande et expédiés aux clients.",
+    "shortDescriptionEn": "Custom apparel produced on demand and shipped to customers.",
+    "pricing": {
+      "free": "Pas de forfait gratuit : la production et la livraison sont payantes.",
+      "paid": "Coût par vêtement, impression, options et livraison. Prix d’appel du catalogue variables selon référence. Calculer le coût rendu, les taxes et les retours ; aucun équivalent mensuel pertinent."
+    },
+    "priceUndisclosed": true,
+    "affiliateLink": "https://affiliate.tapstitch.com/9xmwrs4csvpu",
+    "websiteUrl": "https://www.tapstitch.com/",
+    "ogImageUrl": "/og-images/tapstitch-review.webp",
+    "logo": "/tool-media/logos/tapstitch.png",
+    "functional_needs": [
+      "print-on-demand"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "createur-contenu"
+    ]
+  },
+  {
+    "id": "shade",
+    "slug": "shade",
+    "name": "Shade",
+    "categoryId": "assets",
+    "shortDescription": "Bibliothèque de médias partagée, recherche IA et revue pour équipes créatives.",
+    "shortDescriptionEn": "Shared media library, AI search and review for creative teams.",
+    "pricing": {
+      "free": "Essai annoncé ; durée et conditions à confirmer.",
+      "paid": "Growth : 29,75 USD/siège/mois équivalent en facturation annuelle, 35 USD affichés comme référence. 500 Go de stockage actif par siège, jusqu’à 15 sièges. Enterprise sur devis. Stockage supplémentaire et taxes à confirmer."
+    },
+    "affiliateLink": "https://join.shade.inc/mqs23o4a7g72",
+    "websiteUrl": "https://shade.inc/",
+    "ogImageUrl": "/og-images/shade-review.webp",
+    "logo": "/tool-media/logos/shade.png",
+    "functional_needs": [
+      "cloud-storage",
+      "review-client-video",
+      "organization"
+    ],
+    "verticals": [
+      "motion-video",
+      "photographe",
+      "createur-contenu"
+    ]
+  },
+  {
+    "id": "beefree",
+    "slug": "beefree",
+    "name": "RGE Studio (Beefree)",
+    "categoryId": "email-productivity",
+    "shortDescription": "Conception collaborative d’emails HTML, sans remplacer votre plateforme d’envoi.",
+    "shortDescriptionEn": "Collaborative HTML email design without replacing your sending platform.",
+    "pricing": {
+      "free": "Starter : 10 designs et 6 exports par mois. Essai Business de 15 jours.",
+      "paid": "Professional 30 USD/mois, Business 160 USD/mois en mensuel. Équivalents annuels affichés : 25 et 134 USD/mois. Enterprise sur devis. Plateforme d’envoi non incluse, taxes à confirmer."
+    },
+    "affiliateLink": "https://partners.beefree.io/6vs5w5zechoq",
+    "websiteUrl": "https://beefree.io/",
+    "ogImageUrl": "/og-images/beefree-review.webp",
+    "logo": "/tool-media/logos/beefree.png",
+    "functional_needs": [
+      "newsletter",
+      "email-marketing"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "consultant-b2b"
+    ]
+  },
+  {
     "id": "1001bit-tools",
     "slug": "1001bit-tools",
     "name": "1001bit Tools",
@@ -17252,16 +17326,15 @@
     "slug": "learnworlds",
     "name": "LearnWorlds",
     "categoryId": "formation-education",
-    "shortDescription": "Plateforme pour créer, héberger et vendre des cours en ligne : école de formation en marque blanche, pages de vente, interactivité vidéo et certifications.",
-    "shortDescriptionEn": "Platform to create, host and sell online courses: a white-label training school with sales pages, interactive video and certifications.",
+    "shortDescription": "Créer, vendre et administrer une école de formation en ligne.",
+    "shortDescriptionEn": "Build, sell and manage an online learning school.",
     "pricing": {
-      "free": "Essai gratuit 30 jours",
-      "paid": "À partir de 29$/mois (Starter) - 99$/mois (Pro Trainer) - 299$/mois (Learning Center)"
+      "free": "Essai de 30 jours sans carte bancaire.",
+      "paid": "Starter 29 USD/mois, plus 5 USD par inscription payante. Pro Trainer 99 USD/mois, Learning Center 299 USD/mois, hors TVA. Facturation mensuelle, hors promotions. Corporate sur devis."
     },
-    "defaultMonthlyPrice": 25.11,
-    "compareMonthlyPrice": 25.11,
     "affiliateLink": "https://get.learnworlds.com/7gzw9pjf9sz6",
-    "ogImageUrl": "https://www.learnworlds.com/app/uploads/2026/05/Homepage-Meta-data.png",
+    "ogImageUrl": "/og-images/learnworlds-review.webp",
+    "logo": "/tool-media/logos/learnworlds.png",
     "substitution_cluster_v2": "learning-platform",
     "functional_needs": [
       "cours-en-ligne",
@@ -17276,8 +17349,7 @@
       "Créateurs de contenu",
       "Organismes de formation"
     ],
-    "prescription_quality": "question",
-    "freeAlternative": "youtube"
+    "prescription_quality": "question"
   },
   {
     "id": "legalplace",
@@ -18839,16 +18911,16 @@
     "slug": "lusha",
     "name": "Lusha",
     "categoryId": "email-productivity",
-    "shortDescription": "Base de contacts B2B (emails, téléphones) à crédits, dès 37,45$/mois.",
-    "shortDescriptionEn": "B2B contact database (emails, phones) on credits, from $37.45/month.",
+    "shortDescription": "Données de contacts B2B, enrichissement CRM et prospection.",
+    "shortDescriptionEn": "B2B contact data, CRM enrichment and prospecting.",
     "pricing": {
-      "free": "40 crédits/mois, 1 utilisateur.",
-      "paid": "Starter 37,45$/mois/utilisateur (4800 crédits/an) ; Pro 52 à 175$/mois selon volume ; Premium 300 à 660$/mois. 1 crédit = 1 email, 10 crédits = 1 téléphone (doublé depuis mi-2026, contre 5 avant)."
+      "free": "Free : 40 crédits par mois, un siège.",
+      "paid": "Équivalents mensuels payés annuellement : Starter 37,45 USD, Pro 52,45 USD, Premium 299,95 USD. Volumes affichés : 4 800, 7 200 et 40 800 crédits/an. Scale sur devis. Taxes à confirmer."
     },
-    "defaultMonthlyPrice": 37,
     "affiliateLink": "https://partnerstack.lusha.com/sghwggbyjyc2-omvn4r",
     "websiteUrl": "https://www.lusha.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lusha.jpg",
+    "ogImageUrl": "/og-images/lusha-review.webp",
+    "logo": "/tool-media/logos/lusha.png",
     "substitution_cluster_v2": "lead-enrichment",
     "functional_needs": [
       "b2b-data",
@@ -18868,9 +18940,7 @@
     "prescription_quality": "question",
     "personas": [
       "marc"
-    ],
-    "freeAlternative": "Hunter.io",
-    "betterAlternative": "apollo"
+    ]
   },
   {
     "id": "maced-ai",
@@ -21306,17 +21376,16 @@
     "slug": "murf",
     "name": "Murf",
     "categoryId": "creation",
-    "shortDescription": "Générateur de voix-off IA pour vidéos, podcasts, formations — 200+ voix en 20 langues.",
-    "shortDescriptionEn": "AI voice generator for videos and e-learning — 200+ voices in 20 languages.",
+    "shortDescription": "Voix off IA pour vidéos, formations et présentations.",
+    "shortDescriptionEn": "AI voiceovers for videos, training and presentations.",
     "pricing": {
-      "free": "Plan gratuit 10 min de génération",
-      "paid": "Creator 19$/mois — Business 79$/mois — Enterprise sur devis"
+      "free": "10 minutes de génération, sans téléchargement ni droits commerciaux.",
+      "paid": "Murf Studio : Creator 228 USD/an (19 USD/mois équivalent), Business 792 USD/an (66 USD/mois équivalent). Un éditeur, respectivement 24 et 96 heures de génération/an. Enterprise sur devis. API et doublage distincts, taxes à confirmer."
     },
-    "defaultMonthlyPrice": 19,
-    "compareMonthlyPrice": 19,
     "affiliateLink": "https://get.murf.ai/bo0qgxuctslr",
     "websiteUrl": "https://murf.ai",
-    "ogImageUrl": "https://cdn.prod.website-files.com/66b3765153a8a0c399c70981/670584e2dab709883eed3793_Home.webp",
+    "ogImageUrl": "/og-images/murf-review.webp",
+    "logo": "/tool-media/logos/murf.png",
     "substitution_cluster_v2": "ai-voice-generation",
     "functional_needs": [
       "generation-audio",
@@ -25488,16 +25557,17 @@
     "slug": "prezi",
     "name": "Prezi",
     "categoryId": "creation",
-    "shortDescription": "Présentations dynamiques avec zoom et animations.",
-    "shortDescriptionEn": "Dynamic presentations with zoom and animations.",
+    "shortDescription": "Présentations visuelles avec navigation non linéaire.",
+    "shortDescriptionEn": "Visual presentations with non-linear navigation.",
     "pricing": {
-      "free": "Plan Basic gratuit (présentations publiques uniquement)",
-      "paid": "À partir de 5$/mois (Plus) - 15$/mois (Premium)"
+      "free": "Basic disponible ; essai gratuit de 14 jours sur les offres payantes.",
+      "paid": "Tarifs individuels localisés : Standard 5 €, Plus 15 €, Premium 25 € par mois équivalent, facturés annuellement. Taxes et offres entreprises/éducation à vérifier séparément."
     },
-    "defaultMonthlyPrice": 4.33,
-    "compareMonthlyPrice": 4.33,
+    "defaultMonthlyPrice": 5,
+    "compareMonthlyPrice": 5,
     "affiliateLink": "https://try.prezi.com/6op8bpbxu641",
-    "ogImageUrl": "https://assets.prezicdn.net/assets-versioned/staticpages-versioned/v1.4.0-r27953943018a1/staticpages/webflow/images/Versions%3Dv1.webp",
+    "ogImageUrl": "/og-images/prezi-review.webp",
+    "logo": "/tool-media/logos/prezi.png",
     "substitution_cluster_v2": "content-creation",
     "functional_needs": [
       "pitch",
@@ -25513,8 +25583,7 @@
       "Formateurs et enseignants",
       "Marketeurs"
     ],
-    "prescription_quality": "question",
-    "freeAlternative": "canva"
+    "prescription_quality": "question"
   },
   {
     "id": "printify",
@@ -27399,17 +27468,16 @@
     "slug": "reclaim",
     "name": "Reclaim.ai",
     "categoryId": "productivity-tracking",
-    "shortDescription": "Calendrier IA qui auto-planifie tâches, habitudes et focus dans les trous de ton agenda.",
-    "shortDescriptionEn": "AI calendar that auto-schedules tasks, habits and focus time.",
+    "shortDescription": "Planification automatique des tâches et plages de concentration.",
+    "shortDescriptionEn": "Automatic scheduling for tasks and focus time.",
     "pricing": {
-      "free": "Plan Lite gratuit",
-      "paid": "Starter 8$/mois — Business 12$/mois — Enterprise 18$/mois (annuel)"
+      "free": "Lite gratuit pour un utilisateur, horizon de planification d’une semaine.",
+      "paid": "Starter 12 USD/siège/mois, Business 18 USD en mensuel. Équivalents annuels affichés : 10 et 15 USD ; Enterprise 22 USD/siège/mois en annuel. Taxes à confirmer, hors promotions."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
     "affiliateLink": "https://go.reclaim.ai/vl7x78i6mn0n",
     "websiteUrl": "https://reclaim.ai",
-    "ogImageUrl": "https://cdn.prod.website-files.com/5ec848ec2b50b6cfae06f6cc/65e2563b7c0658aed71828ac_open_graph_final.png",
+    "ogImageUrl": "/og-images/reclaim-review.webp",
+    "logo": "/tool-media/logos/reclaim.png",
     "substitution_cluster_v2": "ai-planning",
     "functional_needs": [
       "calendar",
@@ -27961,17 +28029,16 @@
     "slug": "replyio",
     "name": "Reply.io",
     "categoryId": "email-productivity",
-    "shortDescription": "Automatisation cold email et prospection multi-canaux.",
-    "shortDescriptionEn": "Cold email automation and multi-channel prospecting.",
+    "shortDescription": "Séquences de prospection email et multicanales pour équipes commerciales.",
+    "shortDescriptionEn": "Email and multichannel outreach sequences for sales teams.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 60$/mois (Starter) - 90$/mois (Professional)"
+      "free": "Essai de 14 jours.",
+      "paid": "À partir de 49 USD/mois pour Email Volume et 89 USD/utilisateur/mois pour Multichannel, paiement annuel. Jason AI SDR à partir de 500 USD/mois. Options et volumes supplémentaires payants, taxes à confirmer."
     },
-    "defaultMonthlyPrice": 51.96,
-    "compareMonthlyPrice": 51.96,
     "affiliateLink": "https://get.reply.io/9plo7y6f8ypu",
     "websiteUrl": "https://reply.io/",
-    "ogImageUrl": "https://reply.io/wp-content/uploads/OG-Image.png",
+    "ogImageUrl": "/og-images/replyio-review.webp",
+    "logo": "/tool-media/logos/replyio.png",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
       "cold-email",
@@ -27987,8 +28054,7 @@
       "Agences sales development",
       "Entreprises SaaS"
     ],
-    "prescription_quality": "question",
-    "freeAlternative": "gmail"
+    "prescription_quality": "question"
   },
   {
     "id": "repurpose-io",
@@ -29243,17 +29309,16 @@
     "slug": "sanebox",
     "name": "SaneBox",
     "categoryId": "email-productivity",
-    "shortDescription": "L'IA qui trie vos emails et vous fait gagner 12h par mois.",
-    "shortDescriptionEn": "The AI that sorts your emails and saves you 12 hours per month.",
+    "shortDescription": "Tri des emails, récapitulatifs et rappels dans votre messagerie.",
+    "shortDescriptionEn": "Email sorting, digests and reminders in your existing mailbox.",
     "pricing": {
-      "free": "Essai 14 jours (pas de version gratuite)",
-      "paid": "7$/mois (Snack) à 36$/mois (Lunch)"
+      "free": "Essai de 7 jours.",
+      "paid": "Paiement mensuel : Snack 9,49 USD, Lunch 15,99 USD, Dinner 42,99 USD. Respectivement 1, 2 et 4 comptes email ; 2, 6 ou toutes les fonctions au choix. Remises annuelles/bisannuelles distinctes, taxes à confirmer."
     },
-    "defaultMonthlyPrice": 6.06,
-    "compareMonthlyPrice": 6.06,
     "affiliateLink": "https://try.sanebox.com/rk8ios56srwj",
     "websiteUrl": "https://www.sanebox.com",
-    "ogImageUrl": "https://assets.sanebox.com/assets/sanebox-preview-a018f6ff814a731a6f0c6aa7a56550e43f03775c4ae42c7f485fd8afbf043c50.jpg",
+    "ogImageUrl": "/og-images/sanebox-review.webp",
+    "logo": "/tool-media/logos/sanebox.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
@@ -29276,8 +29341,7 @@
       "marc",
       "alix",
       "sofia"
-    ],
-    "freeAlternative": "gmail"
+    ]
   },
   {
     "id": "sanity",
@@ -29675,17 +29739,17 @@
     "slug": "seamless-ai",
     "name": "Seamless.AI",
     "categoryId": "email-productivity",
-    "shortDescription": "Moteur de recherche IA temps réel pour emails et téléphones B2B.",
-    "shortDescriptionEn": "Real-time AI search engine for B2B emails and phones.",
+    "shortDescription": "Recherche de contacts B2B et enrichissement pour la prospection.",
+    "shortDescriptionEn": "B2B contact research and enrichment for prospecting.",
     "pricing": {
-      "free": "Plan Free (50 crédits/mois)",
-      "paid": "Basic 147$/utilisateur/mois (annuel) — Pro sur devis — Enterprise sur devis"
+      "free": "Free : un utilisateur et 50 crédits ; renouvellement non annoncé.",
+      "paid": "Pro et Enterprise sur devis. Pro commence à 10 000 crédits annuels d’après la FAQ. Aucun ancien tarif Basic repris. Options d’enrichissement et d’intention à chiffrer avec le commercial."
     },
-    "defaultMonthlyPrice": 147,
-    "compareMonthlyPrice": 147,
+    "priceUndisclosed": true,
     "affiliateLink": "https://get.seamless.ai/j4xyra5zowrh",
     "websiteUrl": "https://seamless.ai",
-    "ogImageUrl": "https://cdn.prod.website-files.com/62226180d38a78472cd35dd2/698a4de6ea5c3c3eaa59b2d5_2026-01_Open-Graph_Generic_Dark.png",
+    "ogImageUrl": "/og-images/seamless-ai-review.webp",
+    "logo": "/tool-media/logos/seamless-ai.png",
     "substitution_cluster_v2": "sales-prospecting-data",
     "functional_needs": [
       "b2b-data",
@@ -31228,17 +31292,16 @@
     "slug": "socialbee",
     "name": "SocialBee",
     "categoryId": "email-productivity",
-    "shortDescription": "Planification, recyclage et organisation de contenus social media.",
-    "shortDescriptionEn": "Social media scheduling, content categories and evergreen recycling.",
+    "shortDescription": "Calendrier social, recyclage de contenus et publication multiréseaux.",
+    "shortDescriptionEn": "Social calendars, content recycling and multi-network publishing.",
     "pricing": {
-      "free": "Essai gratuit selon offre.",
-      "paid": "Plans publics à partir d’environ 29 $/mois."
+      "free": "Essai Pro de 14 jours sans carte bancaire.",
+      "paid": "Bootstrap 29 USD/mois pour 5 profils, Accelerate 49 USD pour 10, Pro 99 USD pour 25. Annuel : 290, 490 ou 990 USD/an. Utilisateurs et espaces supplémentaires payants, taxes à confirmer."
     },
-    "defaultMonthlyPrice": 29,
-    "compareMonthlyPrice": 29,
     "affiliateLink": "https://get.socialbee.io/ezo1u6nhi8ow",
     "websiteUrl": "https://socialbee.com",
-    "ogImageUrl": "https://socialbee.com/wp-content/uploads/2023/11/SocialBee-AI-powered-social-media-management-tool.png",
+    "ogImageUrl": "/og-images/socialbee-review.webp",
+    "logo": "/tool-media/logos/socialbee.png",
     "substitution_cluster_v2": "social-media-scheduler",
     "functional_needs": [
       "content-recycling",
@@ -32836,16 +32899,18 @@
     "slug": "surveymonkey",
     "name": "SurveyMonkey",
     "categoryId": "communication",
-    "shortDescription": "Plateforme web pour créer, diffuser et analyser des sondages, formulaires et quiz, avec modèles, logique conditionnelle et fonctions de collaboration.",
-    "shortDescriptionEn": "Web platform for creating, distributing, and analyzing surveys, forms, and quizzes, with templates, conditional logic, and collaboration features.",
+    "shortDescription": "Questionnaires, collecte de réponses et analyse des retours.",
+    "shortDescriptionEn": "Surveys, response collection and feedback analysis.",
     "pricing": {
-      "free": "Basic gratuit: sondages illimités, 10 questions et 25 réponses visibles par sondage.",
-      "paid": "Basic: Gratuit ; Standard Monthly: 99 $/mois ; Team Premier: 92 $/utilisateur/mois, minimum 3 utilisateurs, facturation annuelle ; Enterprise: Sur devis"
+      "free": "Basic gratuit avec limites de questions et réponses consultables à vérifier.",
+      "paid": "Offres équipes observées en EUR : Team Advantage 30 €/utilisateur/mois équivalent, Team Premier 75 €, facturés annuellement, minimum 3 utilisateurs. Quotas 50 000/100 000 réponses par an ; 0,10 € par réponse supplémentaire. Audience vendu séparément, taxes à confirmer."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 30,
+    "compareMonthlyPrice": 30,
     "affiliateLink": "https://get.surveymonkey.com/f33fice6dgg1-yspnvs",
     "websiteUrl": "https://www.surveymonkey.com/",
-    "ogImageUrl": "https://prod.smassets.net/assets/content/sm/resources-let-the-feedback-flow.webp",
+    "ogImageUrl": "/og-images/surveymonkey-review.webp",
+    "logo": "/tool-media/logos/surveymonkey.png",
     "substitution_cluster_v2": "form-builder",
     "functional_needs": [
       "surveys",
@@ -32862,8 +32927,7 @@
       "Petites équipes",
       "Équipes marketing et opérations"
     ],
-    "prescription_quality": "question",
-    "freeAlternative": "tally"
+    "prescription_quality": "question"
   },
   {
     "id": "svelte",
@@ -33796,16 +33860,17 @@
     "slug": "thordata",
     "name": "ThorData",
     "categoryId": "vendor-risk-data",
-    "shortDescription": "Proxy, données web et infrastructure de collecte pour cas d’usage data avancés.",
-    "shortDescriptionEn": "Proxy, web data and collection infrastructure for advanced data workflows.",
+    "shortDescription": "Proxies et API de collecte de données web pour équipes techniques.",
+    "shortDescriptionEn": "Proxies and web-data collection APIs for technical teams.",
     "pricing": {
-      "free": "Pas de prix mensuel universel fiable : souvent usage, volume ou devis.",
-      "paid": "Tarifs selon type de proxy, volume de trafic et cas d’usage."
+      "free": "Conditions d’essai à confirmer auprès de l’éditeur.",
+      "paid": "Facturation à l’usage selon produit : Go de trafic ou adresses IP. Le tarif résidentiel promotionnel de 0,65 USD/Go suppose 5 000 Go, soit 3 250 USD. Ce n’est pas un abonnement mensuel à 0,65 USD. Prix et taxes à reconfirmer avant achat."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://affiliate.thordata.com/ylwo4jsttq39",
     "websiteUrl": "https://www.thordata.com",
-    "ogImageUrl": "/favicon.ico",
+    "ogImageUrl": "/og-images/thordata-review.webp",
+    "logo": "/tool-media/logos/thordata.png",
     "substitution_cluster_v2": "web-data-proxy",
     "functional_needs": [
       "data-collection",
@@ -33924,17 +33989,18 @@
     "slug": "tidio",
     "name": "Tidio",
     "categoryId": "communication",
-    "shortDescription": "Solution de chat en direct et chatbot pour entreprises.",
-    "shortDescriptionEn": "Live chat and chatbot solution for businesses.",
+    "shortDescription": "Chat client, tickets et agent IA Lyro pour le support.",
+    "shortDescriptionEn": "Customer chat, tickets and the Lyro AI support agent.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Free limité ; essai de 7 jours sans carte, puis retour au gratuit.",
+      "paid": "Tarifs EUR localisés : Starter 29 €/mois pour 100 conversations facturables ; Growth dès 59 € pour 250. Quotas Lyro AI et Flows distincts. Les 50 conversations Lyro offertes sont uniques, pas mensuelles. Taxes à confirmer."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 29,
+    "compareMonthlyPrice": 29,
     "affiliateLink": "https://affiliate.tidio.com/1w3jegq6qug4",
     "websiteUrl": "https://tidio.com",
-    "ogImageUrl": "https://www.tidio.com/wp-content/uploads/tidio-og.png",
+    "ogImageUrl": "/og-images/tidio-review.webp",
+    "logo": "/tool-media/logos/tidio.png",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
       "live-chat"
@@ -34536,17 +34602,17 @@
     "slug": "trainual",
     "name": "Trainual",
     "categoryId": "formation-education",
-    "shortDescription": "Documentation des process, onboarding et formation interne pour petites équipes.",
-    "shortDescriptionEn": "Process documentation, onboarding and internal training for small teams.",
+    "shortDescription": "Procédures internes, onboarding et suivi de formation des équipes.",
+    "shortDescriptionEn": "Internal procedures, onboarding and employee training tracking.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics orientés équipe, avec entrée généralement autour de plusieurs centaines de dollars par mois."
+      "free": "Tarif non communiqué ; démonstration sur rendez-vous.",
+      "paid": "Core, Pro, Premium et Enterprise sur devis. Mise en place obligatoire : 1 000 USD en une fois selon la FAQ officielle. Montant récurrent, taxes et options à chiffrer séparément."
     },
-    "defaultMonthlyPrice": 249,
-    "compareMonthlyPrice": 249,
+    "priceUndisclosed": true,
     "affiliateLink": "https://start.trainual.com/vkl24s4zrv0a",
     "websiteUrl": "https://trainual.com",
-    "ogImageUrl": "https://cdn.prod.website-files.com/61aa482275701e897156da77/68a5fd9ea9ca647ae2674e56_trainual-og-thumbnail.avif",
+    "ogImageUrl": "/og-images/trainual-review.webp",
+    "logo": "/tool-media/logos/trainual.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "ops-training",
     "functional_needs": [
@@ -35306,17 +35372,16 @@
     "slug": "unbounce",
     "name": "Unbounce",
     "categoryId": "nocode-web",
-    "shortDescription": "Constructeur de landing pages avec tests A/B et IA pour booster la conversion.",
-    "shortDescriptionEn": "AI landing page builder with A/B testing to lift conversion rates.",
+    "shortDescription": "Landing pages de campagne et tests de conversion.",
+    "shortDescriptionEn": "Campaign landing pages and conversion testing.",
     "pricing": {
-      "free": "Essai 14 jours",
-      "paid": "Build 74$/mois — Experiment 109$/mois — Optimize 180$/mois — Concierge sur devis"
+      "free": "Essai de 14 jours, démarrage annoncé sans carte bancaire.",
+      "paid": "Mensuel : Starter 29 USD, Build 99 USD, Experiment 149 USD, Optimize 249 USD. Limites de trafic : 500, 20 000, 30 000 et 50 000. Tests A/B dès Experiment. Offres Agency/Concierge sur devis, taxes à confirmer."
     },
-    "defaultMonthlyPrice": 74,
-    "compareMonthlyPrice": 74,
     "affiliateLink": "https://unbounce.partnerlinks.io/qkwrva723hqq",
     "websiteUrl": "https://unbounce.com",
-    "ogImageUrl": "https://unbounce.com/photos/Open-graph-3.jpg",
+    "ogImageUrl": "/og-images/unbounce-review.webp",
+    "logo": "/tool-media/logos/unbounce.png",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
       "analytics",

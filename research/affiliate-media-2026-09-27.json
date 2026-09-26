@@ -1,0 +1,581 @@
+{
+  "verified_on": "2026-09-27",
+  "mode": "sourced",
+  "items": {
+    "learnworlds": [
+      {
+        "path": "/tool-media/logos/learnworlds.png",
+        "source_url": "https://www.learnworlds.com/apple-touch-icon.png",
+        "source_page": "https://www.learnworlds.com/",
+        "alt": "",
+        "sha256": "6e526a3a20f7e97cb49336455672a003622c1def893c5f98522125ae89024faf"
+      },
+      {
+        "path": "/og-images/learnworlds-review.webp",
+        "source_url": "https://www.learnworlds.com/app/uploads/2026/05/Homepage-Meta-data.png",
+        "source_page": "https://www.learnworlds.com/",
+        "alt": "",
+        "sha256": "b3a61e75ec10dce881543614792ee5803d95aa26395ca66cdda10b5f62265835"
+      },
+      {
+        "path": "/tool-media/learnworlds/official-1.webp",
+        "source_url": "https://www.learnworlds.com/app/uploads/2026/05/B2B-Image.png",
+        "source_page": "https://www.learnworlds.com/",
+        "alt": "Professional working on a laptop beside a LearnWorlds training platform preview designed for HR and corporate training programs.",
+        "sha256": "b3449643a94e80f1ede128a4918aa53f847941c159edf9dc7ed4a954c0bbf4a6"
+      },
+      {
+        "path": "/tool-media/learnworlds/official-2.webp",
+        "source_url": "https://www.learnworlds.com/app/uploads/2026/05/Sellers.png",
+        "source_page": "https://www.learnworlds.com/",
+        "alt": "Course creator using a laptop next to a dark-themed online course marketplace interface showcasing video classes and educational content.",
+        "sha256": "89a63f1cff0685ef5443c7a76b68a8002085177989dd93482f7a98b1aa1916f8"
+      },
+      {
+        "path": "/tool-media/learnworlds/official-3.webp",
+        "source_url": "https://www.learnworlds.com/app/uploads/2026/05/NGOs.png",
+        "source_page": "https://www.learnworlds.com/",
+        "alt": "Professional holding a tablet beside an online learning website focused on environmental education and global learning initiatives.",
+        "sha256": "4df957da94c17c6249a11a5fdcd6dda19618e2b607a465756b79c53ebbeab1bb"
+      }
+    ],
+    "lusha": [
+      {
+        "path": "/tool-media/logos/lusha.png",
+        "source_url": "https://www.lusha.com/wp-content/uploads/2020/09/cropped-Favicon-180x180.png",
+        "source_page": "https://www.lusha.com/",
+        "alt": "",
+        "sha256": "ca8e1534dae0b608631c48c8cc50e381daf2b6e326e8b532682d68f517f5c3fb"
+      },
+      {
+        "path": "/og-images/lusha-review.webp",
+        "source_url": "https://www.lusha.com/wp-content/uploads/2025/02/Website-thumbnail-560x292-1.png",
+        "source_page": "https://www.lusha.com/",
+        "alt": "",
+        "sha256": "e6785b647691a43a6c8d667dcf7799a0df7698152cf377d992f6fa740579cd02"
+      },
+      {
+        "path": "/tool-media/lusha/official-1.webp",
+        "source_url": "https://www.lusha.com/wp-content/uploads/2026/07/gtm_tab_enrichment.png",
+        "source_page": "https://www.lusha.com/",
+        "alt": "Enrichment ",
+        "sha256": "dcaeeb28e3005fac7149b9dcd849e8dd0d39ea8d124d9278235cb31fcef13a6e"
+      },
+      {
+        "path": "/tool-media/lusha/official-2.webp",
+        "source_url": "https://www.lusha.com/wp-content/uploads/2026/09/inbound_desktop.png",
+        "source_page": "https://www.lusha.com/",
+        "alt": "Inbound",
+        "sha256": "668051e2b25551343671a31819cb5d4e70ca1c87eea8b762906daa2cfcdfe71a"
+      },
+      {
+        "path": "/tool-media/lusha/official-3.webp",
+        "source_url": "https://www.lusha.com/wp-content/uploads/2026/09/outbound_desktop.png",
+        "source_page": "https://www.lusha.com/",
+        "alt": "Prospecting",
+        "sha256": "490d4c750140b80d949b542e65cd9eb8b95e3e1323a813ae65eb0d854148f872"
+      }
+    ],
+    "murf": [
+      {
+        "path": "/tool-media/logos/murf.png",
+        "source_url": "https://cdn.prod.website-files.com/66b3765153a8a0c399c70981/67065c22d34646f3bb23b232_android-chrome-256x256.png",
+        "source_page": "https://murf.ai/",
+        "alt": "",
+        "sha256": "5d1237d3a15e57e1ffcb275d069821a1a8a85cccddf1be6ba76b974b4c6fa853"
+      },
+      {
+        "path": "/og-images/murf-review.webp",
+        "source_url": "https://cdn.prod.website-files.com/66b3765153a8a0c399c70981/670584e2dab709883eed3793_Home.webp",
+        "source_page": "https://murf.ai/",
+        "alt": "",
+        "sha256": "d4bf6ac745025ff5fca1866e763cad64b09d20df31674adcc44a0cf7bab5c378"
+      },
+      {
+        "path": "/tool-media/murf/official-1.webp",
+        "source_url": "https://cdn.prod.website-files.com/66b3765153a8a0c399c70981/6970c834d453e3a91064bdaa_Masked%20Image.png",
+        "source_page": "https://murf.ai/",
+        "alt": "",
+        "sha256": "284c69af7555e273b5732f788ec3051c7dfc95cdfdbf8fc85b978676e37a4e97"
+      },
+      {
+        "path": "/tool-media/murf/official-2.webp",
+        "source_url": "https://cdn.prod.website-files.com/66b3765153a8a0c399c70981/69720c7abfd8cc0b01dbc87e_xmvb6c4h36xl7go574dk.webp",
+        "source_page": "https://murf.ai/",
+        "alt": "",
+        "sha256": "6651d0bff876a8a05b37fa4804274b84f0c8646c2b5c5a9a298bdb5ac00d3113"
+      }
+    ],
+    "prezi": [
+      {
+        "path": "/tool-media/logos/prezi.png",
+        "source_url": "https://prezi.com/favicon.ico",
+        "source_page": "https://prezi.com/",
+        "alt": "Prezi logo",
+        "sha256": "73f0b41fffa68dfaadd8b33027c2fb8169cd969cc308d47dc6958c30faedffd3"
+      },
+      {
+        "path": "/og-images/prezi-review.webp",
+        "source_url": "https://d1yd7w8qu2dp4i.cloudfront.net/craft/_next/static/media/hero_iPad.2vrqrhmp47byu.png",
+        "source_page": "https://prezi.com/",
+        "alt": "Hands holding an iPad with a Prezi presentation",
+        "sha256": "88398f0e62c3ce6961a9ce5fd0dfa24fafec53b42b31e6c4888919bf7a30b7a8"
+      },
+      {
+        "path": "/tool-media/prezi/official-1.webp",
+        "source_url": "https://d1yd7w8qu2dp4i.cloudfront.net/craft/_next/static/media/Quiz.2hv1_7huqrhil.png",
+        "source_page": "https://prezi.com/",
+        "alt": "A live quiz showing multiple-choice questions",
+        "sha256": "0fc5c4a065b0b2f727b698a0bdb2134059f5c93103cce15263258c38706a8cf0"
+      },
+      {
+        "path": "/tool-media/prezi/official-2.webp",
+        "source_url": "https://d1yd7w8qu2dp4i.cloudfront.net/craft/_next/static/media/session_UI.40x18f2axpl58.png",
+        "source_page": "https://prezi.com/",
+        "alt": "A recap of the session with highlights and next steps",
+        "sha256": "c5c4772d4cafb97f168ac1f1291301ee91847c798a0f9408d10247a73e89a13b"
+      },
+      {
+        "path": "/tool-media/prezi/official-3.webp",
+        "source_url": "https://d1yd7w8qu2dp4i.cloudfront.net/craft/_next/static/media/close_gap_data.1mxqlqm-_zo5e.png",
+        "source_page": "https://prezi.com/",
+        "alt": "Session analytics showing engagement and quiz scores",
+        "sha256": "969fb11039a6c318988e9351e2d031e08da709ba7a4a2340dfc896c10131373c"
+      }
+    ],
+    "reclaim": [
+      {
+        "path": "/tool-media/logos/reclaim.png",
+        "source_url": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/67859049c02d67b2cfccf4f1_logomark256maskable.png",
+        "source_page": "https://reclaim.ai/",
+        "alt": "",
+        "sha256": "a7949462d65d06a7ab13b9a8036e134346bd14a83e415a8f55dd89cc0009cdd3"
+      },
+      {
+        "path": "/og-images/reclaim-review.webp",
+        "source_url": "https://cdn.prod.website-files.com/5ec848ec2b50b6cfae06f6cc/65e2563b7c0658aed71828ac_open_graph_final.png",
+        "source_page": "https://reclaim.ai/",
+        "alt": "",
+        "sha256": "727d5ed3c5ef8b4567d1fc0b464869a7e2998ca16b602b263b0a439462a6cec0"
+      },
+      {
+        "path": "/tool-media/reclaim/official-1.webp",
+        "source_url": "https://cdn.prod.website-files.com/67859049c02d67b2cfcceebf/69ab4d7465e9f4b715d03563_analyze_productivity_img.png",
+        "source_page": "https://reclaim.ai/",
+        "alt": "Weekly productivity dashboard showing 20h focus time on track, 12.1h meetings with 6h increase, 3.8h other scheduled time with 32h decrease, 11.7h free time with 11h increase, daily focus time chart from Monday to Friday, and a pie chart of time breakdown by activity type.",
+        "sha256": "05b4bdc93aaeeab7b621d9c4866dc906ed78987c32f3ca7f2f3f273894efcae7"
+      }
+    ],
+    "sanebox": [
+      {
+        "path": "/tool-media/logos/sanebox.png",
+        "source_url": "https://assets.sanebox.com/assets/favicons/apple-touch-icon-e2a9713300a3ea17f5eec7465ff586f5170dcf80a7eca352593a86d6bd44bb10.png",
+        "source_page": "https://www.sanebox.com/",
+        "alt": "",
+        "sha256": "c95914f78886e5f9800add129d33f0e32da196cbabdaf1b3b8566a5941b5da54"
+      },
+      {
+        "path": "/og-images/sanebox-review.webp",
+        "source_url": "https://assets.sanebox.com/assets/sanebox-preview-a018f6ff814a731a6f0c6aa7a56550e43f03775c4ae42c7f485fd8afbf043c50.jpg",
+        "source_page": "https://www.sanebox.com/",
+        "alt": "",
+        "sha256": "618bad22ad41ddec0228bd1b262ac76b115ae69574019cd96fe4ce693eb39dfc"
+      },
+      {
+        "path": "/tool-media/sanebox/official-1.webp",
+        "source_url": "https://assets.sanebox.com/assets/welcome/sellit/image-sbh-b9f5a1a98ee22d418f2b0733d2ba64d7aade350129fe8b44ae1a68d9f3ccf79c.jpg",
+        "source_page": "https://www.sanebox.com/",
+        "alt": "",
+        "sha256": "a53adf3be7fda7994d3381c4859fc3a3b833e176ec7ff86ceb09cee5a9aa571d"
+      },
+      {
+        "path": "/tool-media/sanebox/official-2.webp",
+        "source_url": "https://assets.sanebox.com/assets/welcome/sellit/image-digest-79c3bd7f5190ccb01dd79cbca48fa6400b82c7767122c46d24063bf6df34962d.jpg",
+        "source_page": "https://www.sanebox.com/",
+        "alt": "",
+        "sha256": "57c0693efc9123c72798cc60ac917e7335c2cfc14931f75c6a851f7c3e0e0cf8"
+      },
+      {
+        "path": "/tool-media/sanebox/official-3.webp",
+        "source_url": "https://assets.sanebox.com/assets/welcome/sellit/image-reminder-937a4c1819c40cc30df0b2c4e7000b92a22b1516573dccad9b8f73d45b046845.jpg",
+        "source_page": "https://www.sanebox.com/",
+        "alt": "",
+        "sha256": "8da91c62c48a630dbdee11ef3d90d8a2f50818606c49b65edc198f8c56d8836c"
+      }
+    ],
+    "seamless-ai": [
+      {
+        "path": "/tool-media/logos/seamless-ai.png",
+        "source_url": "https://cdn.prod.website-files.com/62226180d38a78472cd35dd2/698a587caa020edf9c80bcd3_Seamless_webclip.png",
+        "source_page": "https://seamless.ai/",
+        "alt": "",
+        "sha256": "ddbc04c6580e18278044c1486cbaf0c735c994a16fe4f7a6a0ce96e4964258ba"
+      },
+      {
+        "path": "/og-images/seamless-ai-review.webp",
+        "source_url": "https://cdn.prod.website-files.com/62226180d38a78472cd35dd2/698a4de6ea5c3c3eaa59b2d5_2026-01_Open-Graph_Generic_Dark.png",
+        "source_page": "https://seamless.ai/",
+        "alt": "",
+        "sha256": "746fd7523cefd7bd2f2ab55d114c5f1bed1e157267ed3b98fcab830cd6488161"
+      },
+      {
+        "path": "/tool-media/seamless-ai/official-1.webp",
+        "source_url": "https://cdn.prod.website-files.com/62226180d38a78472cd35dd2/69752775cee12a32887eda30_2026-01_Platform_Contact-Search_16-9.webp",
+        "source_page": "https://seamless.ai/",
+        "alt": "Zoomed in mock up of the Contact Search screen in the Seamless platform.",
+        "sha256": "558485f1d4d40c1ab4de37bfa0059270c9b2e07f01e19f47e50c91bb637f9111"
+      },
+      {
+        "path": "/tool-media/seamless-ai/official-2.webp",
+        "source_url": "https://cdn.prod.website-files.com/62226180d38a78472cd35dd2/69752776f6cfe5b9d0b346dd_2026-01_Platform_My-Contact-Flyout_16-9.webp",
+        "source_page": "https://seamless.ai/",
+        "alt": "Zoomed in My Contacts sidebar mock up in the Seamless platform.",
+        "sha256": "95f0f6f3505e3cdc7b05ab3b70adc2a4790b928c86240edf26d042146014ec65"
+      },
+      {
+        "path": "/tool-media/seamless-ai/official-3.webp",
+        "source_url": "https://cdn.prod.website-files.com/62226180d38a78472cd35dd2/697527759f2dc31e3fe8ac12_01b95d0077baba9326ecfac6faf001f9_2026-01_Platform_Automation-Dashboard_16-9.webp",
+        "source_page": "https://seamless.ai/",
+        "alt": "Mock up of the AI dashboard within the Seamless platform.",
+        "sha256": "ea2a9b441010b5499e2863cb232fc9002ea7a7e749d7a73f35e13e5e3da130a0"
+      }
+    ],
+    "socialbee": [
+      {
+        "path": "/tool-media/logos/socialbee.png",
+        "source_url": "https://socialbee.com/wp-content/uploads/2022/09/cropped-favicon-180x180.png",
+        "source_page": "https://socialbee.com/",
+        "alt": "",
+        "sha256": "eb67c5b61d2b950eed705691b5dc73f1a1e0eb4dfe03bb8b0585b7301da4a6f1"
+      },
+      {
+        "path": "/og-images/socialbee-review.webp",
+        "source_url": "https://socialbee.com/wp-content/uploads/2023/11/SocialBee-AI-powered-social-media-management-tool.png",
+        "source_page": "https://socialbee.com/",
+        "alt": "",
+        "sha256": "5fb134347a733d63e9a303d45bdd7532095a12b4f0d2d01091b3e267559ef558"
+      },
+      {
+        "path": "/tool-media/socialbee/official-1.webp",
+        "source_url": "https://socialbee.com/wp-content/uploads/2026/04/Content-Calendar-with-Category-Based-Scheduling-768x737.webp",
+        "source_page": "https://socialbee.com/",
+        "alt": "SocialBee content calendar displaying scheduled posts organized by categories like curated, promotional, blogs, and engaging across different days",
+        "sha256": "b01d7404d40cdcb220368bb99b0064d917f58a4b7954b3cffe1eca240234e429"
+      },
+      {
+        "path": "/tool-media/socialbee/official-2.webp",
+        "source_url": "https://socialbee.com/wp-content/uploads/2026/04/Social-Media-Performance-Analytics-Dashboard-768x737.webp",
+        "source_page": "https://socialbee.com/",
+        "alt": "SocialBee analytics dashboard showing social media performance by platform with engagement percentages for Instagram, Facebook, X, LinkedIn, and Pinterest",
+        "sha256": "ce23a4df31cbb1a53e4a85d687beb26d57612f7ac4b55ef81ed29df2892b930f"
+      },
+      {
+        "path": "/tool-media/socialbee/official-3.webp",
+        "source_url": "https://socialbee.com/wp-content/uploads/2026/04/Unified-Social-Inbox-for-Messages-and-Mentions-768x737.webp",
+        "source_page": "https://socialbee.com/",
+        "alt": "SocialBee social inbox interface showing messages, mentions, and replies from multiple platforms in one dashboard for easy engagement",
+        "sha256": "124fc87b5d8c86176755e307d33693a5eb07551f818dbfde14d6d0d666aa3203"
+      }
+    ],
+    "surveymonkey": [
+      {
+        "path": "/tool-media/logos/surveymonkey.png",
+        "source_url": "https://prod.smassets.net/assets/static/images/surveymonkey/favicon-180.png",
+        "source_page": "https://www.surveymonkey.com/",
+        "alt": "",
+        "sha256": "ffdd50ac2e670b13e681eb6a21a14b507c65feca96b276fde4eea27dc9553e80"
+      },
+      {
+        "path": "/og-images/surveymonkey-review.webp",
+        "source_url": "https://prod.smassets.net/assets/content/sm/featured-social-homepage-og-card.webp",
+        "source_page": "https://www.surveymonkey.com/",
+        "alt": "",
+        "sha256": "5053d3c4393a2a9011ecd58b1fe9e3af16c283cef300ac0beb2722794886d283"
+      },
+      {
+        "path": "/tool-media/surveymonkey/official-1.webp",
+        "source_url": "https://prod.smassets.net/assets/website/2.378.1/_next/static/media/employee-engagement.54e5a6bc.webp",
+        "source_page": "https://www.surveymonkey.com/",
+        "alt": "Two coworkers smiling with an employee engagement score of 83% and an eNPS chart showing promoters, passives, and detractors",
+        "sha256": "6a09ee240d1d3880c7a668ae754cad7a3f91b998a4a791d56ed7a9032996909f"
+      }
+    ],
+    "thordata": [
+      {
+        "path": "/tool-media/logos/thordata.png",
+        "source_url": "https://www.thordata.com/favicon.ico",
+        "source_page": "https://www.thordata.com/",
+        "alt": "",
+        "sha256": "a42abe24ef9280c4fc34321092c0a5624d0204e72359a69bad71266f512d142f"
+      },
+      {
+        "path": "/og-images/thordata-review.webp",
+        "source_url": "https://www.thordata.com/img/v2/index/proxy-products-visual.webp",
+        "source_page": "https://www.thordata.com/",
+        "alt": "Residential proxy network with real user IPs",
+        "sha256": "fbe818319ece9a56942238c3066c0b57e2dae2f7d0cf9888603011033b299d04"
+      },
+      {
+        "path": "/tool-media/thordata/official-1.webp",
+        "source_url": "https://www.thordata.com/img/v2/index/location-visual.webp",
+        "source_page": "https://www.thordata.com/",
+        "alt": "",
+        "sha256": "ff437a2d0a05e99ec8fa4761ccfedc0827f02cd3b7b2cb8ac7d1d11b8f283ffd"
+      },
+      {
+        "path": "/tool-media/thordata/official-2.webp",
+        "source_url": "https://www.thordata.com/img/v2/index/automation-workflow.webp",
+        "source_page": "https://www.thordata.com/",
+        "alt": "Web data flowing through an MCP server into AI workflows",
+        "sha256": "e415cf5471fc7b74876fd6320082cabb6973a50cfa7b3eec57f0f0bff8820a3a"
+      }
+    ],
+    "tidio": [
+      {
+        "path": "/tool-media/logos/tidio.png",
+        "source_url": "https://www.tidio.com/images/favicon/web-app-manifest-512x512.png",
+        "source_page": "https://www.tidio.com/",
+        "alt": "",
+        "sha256": "291574cb0b99f2c157a15f135a6962cb257b2b0f4a5b6cc8ec65c989ac0307cb"
+      },
+      {
+        "path": "/og-images/tidio-review.webp",
+        "source_url": "https://www.tidio.com/images/seo/tidio-og.png",
+        "source_page": "https://www.tidio.com/",
+        "alt": "",
+        "sha256": "b1fd81c0ea5bf059de45091cc4d73485232b549a83d2661137cada17ee97133a"
+      },
+      {
+        "path": "/tool-media/tidio/official-1.webp",
+        "source_url": "https://www.tidio.com/_next/image/?url=%2Fimages%2Fcomponents%2Ffeature-grid%2Flyro.png&w=3840&q=75",
+        "source_page": "https://www.tidio.com/",
+        "alt": "AI agent that customers actually love",
+        "sha256": "c244a643d1b92d7e00589b9f71e1c82d73b0e1e6ceeb23661c05a85888fda67e"
+      },
+      {
+        "path": "/tool-media/tidio/official-2.webp",
+        "source_url": "https://www.tidio.com/_next/image/?url=%2Fimages%2Fcomponents%2Ffeature-grid%2Fhelpdesk.png&w=3840&q=75",
+        "source_page": "https://www.tidio.com/",
+        "alt": "The help desk your team deserves",
+        "sha256": "ac35c4a68731285c99661bf50da509139e6823c20f511b89f413187e7d1f064c"
+      },
+      {
+        "path": "/tool-media/tidio/official-3.webp",
+        "source_url": "https://www.tidio.com/_next/image/?url=%2Fimages%2Fcomponents%2Ffeature-grid%2Fflows.png&w=3840&q=75",
+        "source_page": "https://www.tidio.com/",
+        "alt": "Proactive automations that convert",
+        "sha256": "fe4246d5866f918fc8321d838b19555019b38e3c223207fbe2e49a8a3e665958"
+      }
+    ],
+    "trainual": [
+      {
+        "path": "/tool-media/logos/trainual.png",
+        "source_url": "https://cdn.prod.website-files.com/61aa482275701e897156da77/61aa6cdb27e62304a08423f2_Webclip%20icon-16.png",
+        "source_page": "https://trainual.com/",
+        "alt": "",
+        "sha256": "fcf4230102874873c701a99c5a2a5ef08dc45bca43fe0fe22310505f5a686ac3"
+      },
+      {
+        "path": "/og-images/trainual-review.webp",
+        "source_url": "https://cdn.prod.website-files.com/61aa482275701e897156da77/68a5fd9ea9ca647ae2674e56_trainual-og-thumbnail.avif",
+        "source_page": "https://trainual.com/",
+        "alt": "",
+        "sha256": "8924071a501c13bfc795bfda018dc7a09d32ba69db6b30b43068a8219d84f54e"
+      },
+      {
+        "path": "/tool-media/trainual/official-1.webp",
+        "source_url": "https://cdn.prod.website-files.com/61aa482275701e897156da77/6a45ecc7bdc7438dfb48bd06_what-we-do-video-cover.webp",
+        "source_page": "https://trainual.com/",
+        "alt": "",
+        "sha256": "e936a2c9bf266e7d99be8e288b23a04d75a4898e8ad0cccede92663ff66ecb3b"
+      },
+      {
+        "path": "/tool-media/trainual/official-2.webp",
+        "source_url": "https://cdn.prod.website-files.com/61aa482275701e897156da77/6a8ec369be89cdabeec28514_video-cover-1217718926.webp",
+        "source_page": "https://trainual.com/",
+        "alt": "",
+        "sha256": "9c4882531da893de5117383b7040e30e40716c8e89c44c92a0a9e18304579b84"
+      }
+    ],
+    "unbounce": [
+      {
+        "path": "/tool-media/logos/unbounce.png",
+        "source_url": "https://unbounce.com/photos/cropped-unbounce-favicon-2-180x180.png",
+        "source_page": "https://unbounce.com/",
+        "alt": "",
+        "sha256": "b5cd157705d9df776e197f0148e72ee016bba00b01877b63a207fa83636b0177"
+      },
+      {
+        "path": "/og-images/unbounce-review.webp",
+        "source_url": "https://unbounce.com/photos/Open-graph-3.jpg",
+        "source_page": "https://unbounce.com/",
+        "alt": "",
+        "sha256": "69c6cb51af73573b937732fde3566f819b9307531d847e6ac90627ca5df79c59"
+      },
+      {
+        "path": "/tool-media/unbounce/official-1.webp",
+        "source_url": "https://unbounce.com/photos/home-hero-banner-1.png",
+        "source_page": "https://unbounce.com/",
+        "alt": "home-hero-banner",
+        "sha256": "06431fc7ce92531388760952604328a0bb28222d20928c5cf704ea456fec941a"
+      },
+      {
+        "path": "/tool-media/unbounce/official-2.webp",
+        "source_url": "https://unbounce.com/photos/Launch-tailored.png",
+        "source_page": "https://unbounce.com/",
+        "alt": "Launch-tailored",
+        "sha256": "ea57214cb7dbce3aab9dd2648c378a09d7b38433da1b8d3d98c1b002ebb4e659"
+      },
+      {
+        "path": "/tool-media/unbounce/official-3.webp",
+        "source_url": "https://unbounce.com/photos/abtesting_desktop.png",
+        "source_page": "https://unbounce.com/",
+        "alt": "A/B testing",
+        "sha256": "5c9c085ab308f8788bc97c4c4aeedab0c9264e34dd93da8c3aaaa35ba3a46ec7"
+      }
+    ],
+    "beefree": [
+      {
+        "path": "/tool-media/logos/beefree.png",
+        "source_url": "https://cdn.prod.website-files.com/64942e7300c2898fa7449d1c/64bf830bda9442a29de6f9ba_Beefree-webclip.png",
+        "source_page": "https://beefree.io/",
+        "alt": "",
+        "sha256": "a21e1ece47d90f372c8513069bb9ed7594cf45a501a6f7e59e158d7b856d3525"
+      },
+      {
+        "path": "/og-images/beefree-review.webp",
+        "source_url": "https://cdn.prod.website-files.com/64942e7300c2898fa7449d1c/64e5c643ac3786b770160996_Beefree-OG-image.webp",
+        "source_page": "https://beefree.io/",
+        "alt": "",
+        "sha256": "f6dc7dec489b499c39e5dcb5a84c0adf5e7c9f3bb0873f63adb7451dc93d3a77"
+      },
+      {
+        "path": "/tool-media/beefree/official-1.webp",
+        "source_url": "https://cdn.prod.website-files.com/64942e7300c2898fa7449d1c/64a87f835b0fb260f9971c68_Editor-video.webp",
+        "source_page": "https://beefree.io/",
+        "alt": "Beefree email editor",
+        "sha256": "60b1547cf4d838d274e96071cffa10ee217d21a90435d4535f8bfaeb1e8acd28"
+      },
+      {
+        "path": "/tool-media/beefree/official-2.webp",
+        "source_url": "https://cdn.prod.website-files.com/64942e7300c2898fa7449d1c/64dbab332c92201d77af79d1_4.webp",
+        "source_page": "https://beefree.io/",
+        "alt": "",
+        "sha256": "0ac9cdf7f8fc643b4e0decc0a22b6262dde3996d3af8b2e50bb0086bfc393105"
+      },
+      {
+        "path": "/tool-media/beefree/official-3.webp",
+        "source_url": "https://cdn.prod.website-files.com/64942e7300c2898fa7449d1c/64dbab32c23f2e8a8a8ba3b6_2.webp",
+        "source_page": "https://beefree.io/",
+        "alt": "",
+        "sha256": "872bcdf705abeb5214785148c6056833c3af8e266032d8fadafbb1cd782903bf"
+      }
+    ],
+    "shade": [
+      {
+        "path": "/tool-media/logos/shade.png",
+        "source_url": "https://framerusercontent.com/images/ER0k4PXik3zVaMI6ZQ9w6p57ejo.png",
+        "source_page": "https://shade.inc/",
+        "alt": "",
+        "sha256": "83407bafe250e8afa026e8e61ed17fc815eb292de8ad368e7d5d25d666eb9e41"
+      },
+      {
+        "path": "/og-images/shade-review.webp",
+        "source_url": "https://framerusercontent.com/assets/CZwcsAEfOXKWR15ALE4FrcylYlA.png",
+        "source_page": "https://shade.inc/",
+        "alt": "",
+        "sha256": "c4c13d42af071444f65de4bf4d3a40e3c06b5e90a0fa6229d9b842078c44341a"
+      },
+      {
+        "path": "/tool-media/shade/official-1.webp",
+        "source_url": "https://framerusercontent.com/images/4ZCGSCAJeeqDTFdwLj5JAHXg.png?width=1086&height=702",
+        "source_page": "https://shade.inc/",
+        "alt": "",
+        "sha256": "1c97d106ba38eea6eff0fa8324aae59e193893e825787b4a44ffa18f9f710944"
+      },
+      {
+        "path": "/tool-media/shade/official-2.webp",
+        "source_url": "https://framerusercontent.com/images/6Xa1aukxxcwHRRn2JtivT6LHpqk.png?width=7202&height=4672",
+        "source_page": "https://shade.inc/",
+        "alt": "",
+        "sha256": "f00eff29e23f50877e18ed225cde4db3146e67773cd898db90205fd1530c7b76"
+      },
+      {
+        "path": "/tool-media/shade/official-3.webp",
+        "source_url": "https://framerusercontent.com/images/fr1tTMAZU5IoGaWqcWp0XWQ0dQo.png?width=3072&height=1986",
+        "source_page": "https://shade.inc/",
+        "alt": "",
+        "sha256": "3edc15a623a8d3c40a5b1c80e56fe56d1ec9a85a3760bcb78e7137d59b03ee48"
+      }
+    ],
+    "tapstitch": [
+      {
+        "path": "/tool-media/logos/tapstitch.png",
+        "source_url": "https://files.tapstitch.com/tapstitch/site-static/tapstitch/apple-touch-icon.png",
+        "source_page": "https://www.tapstitch.com/",
+        "alt": "",
+        "sha256": "0a076bdb25a4ac26a2b6231a0fe25c0bfba9ced5deaa213e0983bffa3dc8f7c8"
+      },
+      {
+        "path": "/og-images/tapstitch-review.webp",
+        "source_url": "https://files.tapstitch.com/tapstitch/site-static/tapstitch/images/seo/2025-01-17.jpg",
+        "source_page": "https://www.tapstitch.com/",
+        "alt": "",
+        "sha256": "ccc82d1a3e0f56dbcb3d5e6e77a34d2f4ef90908b853f86a577d0d74e92f2d12"
+      },
+      {
+        "path": "/tool-media/tapstitch/official-1.webp",
+        "source_url": "https://files.tapstitch.com/tapstitch/site-static/tapstitch/images/home/banner_6.jpg?width=600/height=600/quality=80",
+        "source_page": "https://www.tapstitch.com/",
+        "alt": "Male model wearing oversized graphic t-shirt with abstract face design covering mouth",
+        "sha256": "d0a98ad9d4a51673a6209d5260417426f3798f3fda8f2659e99a986509e1552f"
+      },
+      {
+        "path": "/tool-media/tapstitch/official-2.webp",
+        "source_url": "https://files.tapstitch.com/tapstitch/site-static/tapstitch/images/home/banner_1.jpg?width=600/height=600/quality=80",
+        "source_page": "https://www.tapstitch.com/",
+        "alt": "Stack of printed graphic t-shirts with custom designs",
+        "sha256": "12d32615e4a7bf2380227fac124b770caea87552b98bc7e02d7b6a0a8c4cd272"
+      },
+      {
+        "path": "/tool-media/tapstitch/official-3.webp",
+        "source_url": "https://files.tapstitch.com/tapstitch/site-static/tapstitch/images/home/intro_2.png",
+        "source_page": "https://www.tapstitch.com/",
+        "alt": "Custom streetwear clothing and graphic t-shirts shown in lifestyle photography across urban and retail settings",
+        "sha256": "4ac2fa3976cac207983fd70b46a4ef3dcf5e14fa7d34ddc3f421c96584a3a7b7"
+      }
+    ],
+    "replyio": [
+      {
+        "path": "/tool-media/logos/replyio.png",
+        "source_url": "https://reply.io/apple-touch-icon.png",
+        "source_page": "https://reply.io/features/",
+        "sha256": "f269a7451adcf895dc02cb4c473d45ecd53828d0a2939b1909dee69ccaa132af"
+      },
+      {
+        "path": "/og-images/replyio-review.webp",
+        "source_url": "https://reply.io/wp-content/uploads/OG-Image.png",
+        "source_page": "https://reply.io/features/",
+        "sha256": "3bd3993977384ea61a41909e163bbce62b79e7144ef02b3ae342a9842843b833"
+      },
+      {
+        "path": "/tool-media/replyio/inbox.webp",
+        "source_url": "https://reply.io/wp-content/uploads/Inbox-1.png",
+        "source_page": "https://reply.io/features/",
+        "sha256": "7b85c9bac938319591df95360dae1cd233b394f2f0df1f959cbd3c96a9d4500e"
+      },
+      {
+        "path": "/tool-media/replyio/analytics.webp",
+        "source_url": "https://reply.io/wp-content/uploads/image-40.png",
+        "source_page": "https://reply.io/features/",
+        "sha256": "f44918b53f9550ac60a4b9f488c04cfb66cbf22c311223fd17e5bf8406662699"
+      },
+      {
+        "path": "/tool-media/replyio/automations.webp",
+        "source_url": "https://reply.io/wp-content/uploads/image-36.png",
+        "source_page": "https://reply.io/features/",
+        "sha256": "7feaf28770e57e20e3c5af429015b8e4c9e7e1cef49846c412ee4e19b5a136f3"
+      }
+    ]
+  }
+}
