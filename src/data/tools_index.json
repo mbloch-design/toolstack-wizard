@@ -1707,17 +1707,16 @@
     "slug": "amplemarket",
     "name": "Amplemarket",
     "categoryId": "email-productivity",
-    "shortDescription": "Plateforme IA de prospection multicanal : data, séquences, deliverability, intent signals.",
-    "shortDescriptionEn": "All-in-one AI prospecting platform: data, multi-channel sequences, intent.",
+    "shortDescription": "Prospection B2B : contacts, séquences multicanal et assistant IA dans une même plateforme.",
+    "shortDescriptionEn": "B2B prospecting with contact data, multichannel sequences and an AI assistant in one platform.",
     "pricing": {
-      "free": "Démo sur demande",
-      "paid": "Startup 300$/mois/utilisateur (2 utilisateurs min, annuel) — Growth sur devis — Elite sur devis"
+      "free": "Essai gratuit annoncé sur tous les forfaits ; durée et conditions à confirmer.",
+      "paid": "Startup : 600 $US/mois avec engagement annuel, 2 utilisateurs inclus. Growth et Elite : sur devis, respectivement 4 et 10 utilisateurs inclus. Utilisateurs supplémentaires payants."
     },
-    "defaultMonthlyPrice": 300,
-    "compareMonthlyPrice": 300,
-    "affiliateLink": "https://grow.amplemarket.com/sczblo59razk",
+    "affiliateLink": "https://grow.amplemarket.com/e261f8d417a0-affiliate",
     "websiteUrl": "https://www.amplemarket.com",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6350808bc45bd0c902af10e6/671bb77ae2ed5e51f8dcae2b_e05a75f5cee34196fe6f70e9d7f57d31_am-opengraph-v2.jpg",
+    "ogImageUrl": "/og-images/amplemarket.jpg",
+    "logo": "/tool-media/logos/amplemarket.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "sales-prospecting-data",
     "functional_needs": [

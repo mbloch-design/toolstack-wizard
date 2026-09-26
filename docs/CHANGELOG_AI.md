@@ -4555,3 +4555,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Source tarifaire : https://aircall.io/pricing/ ; USD, paiement annuel, minimum 3 licences clairement indiqué. Pas de conversion EUR implicite.
 - Logo officiel : https://aircall.io/apple-touch-icon.png ; OG et deux visuels produit repris du site https://aircall.io/ (CDN Storyblok, fichiers og-image-en_1200x630.png, hero-ws.png et hero-01-resolved.png).
 - Suppression du gain de temps non sourcé. Aucun changement de note ni publication automatique.
+# Amplemarket : contenu, affiliation et notation, 2026-09-26
+
+- Nouveau lien fourni : https://grow.amplemarket.com/e261f8d417a0-affiliate ; redirection 200 vers la landing officielle avec suivi PartnerStack vérifiée.
+- Revue FR/EN : Startup 600 USD/mois pour deux utilisateurs, engagement annuel, essai annoncé sans durée inventée. Source : https://www.amplemarket.com/pricing.
+- Note ToolTrim v2 documentaire 3,4/5 : axes 3/3/4/4/3, preuves FR/EN ; aucun test de campagne ni rendement promis. Sources complémentaires : https://www.amplemarket.com/data-enrichment et https://knowledge.amplemarket.com/articles/5152680997-roles-permissions.
+- Logo, OG et trois visuels officiels téléchargés depuis les références du HTML https://www.amplemarket.com/ : am-webclip-256.png, am-opengraph-v2.jpg, am_duo_copilot.avif, am-pillars-engagement.avif, am-pillars-deliver.avif. Aucune capture créée.
+- Contrôle éditorial complémentaire content-quality-auditor : moteur standalone sans scorer ; NOT_SCORED, score_confidence not_scored (schema 3.0, runbook 3.0.0, catalogue 19.2.0). Ce contrôle distinct ne constitue pas une certification de publication. Analyse produit fondée sur sources publiques, pas sur expérience terrain.

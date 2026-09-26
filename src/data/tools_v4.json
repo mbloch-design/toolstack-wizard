@@ -9375,47 +9375,47 @@
     "name": "Amplemarket",
     "slug": "amplemarket",
     "category": "email-productivity",
-    "shortDescription": "Plateforme IA de prospection multicanal : data, séquences, deliverability, intent signals.",
-    "longDescription": "Amplemarket réunit data B2B, séquences multicanal (email, LinkedIn, téléphone), deliverability monitoring et signaux d'intent dans un seul outil. À partir de 300$/mois/user (Startup, 2 users min). Pour équipes commerciales sérieuses.\n\nÀ garder si : tu pilotes une équipe sales 2+ ou tu fais 100+ touches/semaine.\n\nÀ éviter si : tu es freelance solo (Apollo + Lemlist coûtent 5x moins), ou tu prospectes moins de 50 leads/mois.",
-    "affiliateLink": "https://grow.amplemarket.com/sczblo59razk",
+    "shortDescription": "Prospection B2B : contacts, séquences multicanal et assistant IA dans une même plateforme.",
+    "longDescription": "Amplemarket réunit la recherche de contacts, l’enrichissement des données et les séquences de prospection par email, LinkedIn et téléphone. Duo Copilot aide à repérer des prospects à partir de signaux et à préparer les prises de contact. Les outils de délivrabilité servent à surveiller la santé des domaines et des boîtes mail, sans garantir l’arrivée en boîte principale ni les rendez-vous.\n\nToolTrim le recommande surtout à une équipe commerciale qui veut remplacer plusieurs outils de prospection et dispose déjà d’un ciblage clair. Avant de vous engager, testez la qualité des contacts sur votre marché, la synchronisation CRM et les réponses obtenues sur un échantillon représentatif. Le forfait Startup commence à 600 $US par mois pour deux utilisateurs avec engagement annuel : un coût difficile à justifier pour des campagnes occasionnelles.\n\nCette analyse repose sur la documentation publique de l’éditeur, pas sur un test terrain de campagne.",
+    "affiliateLink": "https://grow.amplemarket.com/e261f8d417a0-affiliate",
     "websiteUrl": "https://www.amplemarket.com",
-    "defaultMonthlyPrice": 300,
+    "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Démo sur demande",
-      "paid": "Startup 300$/mois/utilisateur (2 utilisateurs min, annuel) — Growth sur devis — Elite sur devis"
+      "free": "Essai gratuit annoncé sur tous les forfaits ; durée et conditions à confirmer.",
+      "paid": "Startup : 600 $US/mois avec engagement annuel, 2 utilisateurs inclus. Growth et Elite : sur devis, respectivement 4 et 10 utilisateurs inclus. Utilisateurs supplémentaires payants."
     },
-    "logo": "",
+    "logo": "/tool-media/logos/amplemarket.png",
     "soloRelevance": null,
     "teamRelevance": null,
     "verdict": {
       "keepIf": [
-        "Vous faites de la prospection B2B intensive et besoin d'une multi-canal.",
-        "Vous avez des listes de leads volumineuses à qualifier et enrichir.",
-        "Vous acceptez un contrat annuel et un budget marketing conséquent."
+        "Votre équipe utilise déjà plusieurs outils de prospection.",
+        "Le ciblage et le suivi commercial sont structurés."
       ],
       "avoidIf": [
-        "Vous cherchez un outil de prospection simple et gratuit.",
-        "Vous préférez une facturation mensuelle flexible.",
-        "Vous débutez avec la prospection B2B."
+        "Vous prospectez ponctuellement ou seul avec un petit budget.",
+        "Vous attendez des rendez-vous garantis sans travail de ciblage."
       ],
-      "threshold": "Amplemarket convient aux équipes scaling la prospection multi-canal ; pour débuter ou avec budget limité, d'autres outils gratuits/freemium suffisent."
+      "threshold": "Une plateforme intégrée intéressante pour une équipe outbound structurée. À tester sur votre marché avant d’accepter le coût et l’engagement annuel.",
+      "faqPriceAnswer": "Startup : 600 $US/mois avec engagement annuel, 2 utilisateurs inclus. Growth et Elite : sur devis, respectivement 4 et 10 utilisateurs inclus. Utilisateurs supplémentaires payants."
     },
     "pros": [
-      "Multi-canal robuste et intégré (7 canaux).",
-      "IA copilot pour rechercher et qualifier les leads.",
-      "Base de contacts vérifiés mondiale (200M+).",
-      "Automatisation des séquences déclenchées par signaux."
+      "Données B2B et séquences multicanal réunies.",
+      "Duo Copilot et signaux pour prioriser la prospection.",
+      "Intégrations CRM et exports de données documentés.",
+      "Suivi de la santé des domaines et boîtes mail."
     ],
     "cons": [
-      "Pas de plan gratuit.",
-      "Contrat annuel obligatoire (pas de mois à mois).",
-      "Prix élevé pour les petites équipes.",
-      "Courbe d'apprentissage pour exploiter la multi-canal."
+      "600 $US/mois pour l’offre Startup, avec engagement annuel.",
+      "Qualité des contacts à vérifier sur votre marché.",
+      "Paramétrage du ciblage, des boîtes mail et du CRM nécessaire.",
+      "Les séquences et réglages devront être reconstruits en cas de migration."
     ],
     "useCases": [
-      "Générer et qualifier des leads B2B à grande échelle.",
-      "Coordonner prospection email + LinkedIn + phone.",
-      "Automatiser des séquences déclenchées par changements détectés."
+      "Enrichir une liste de contacts avant une campagne.",
+      "Coordonner emails, actions LinkedIn et appels.",
+      "Prioriser les comptes à partir de signaux commerciaux.",
+      "Centraliser le suivi des réponses et la synchronisation CRM."
     ],
     "covers": [
       "prospection",
@@ -9434,8 +9434,10 @@
       "instantly"
     ],
     "seo": {
-      "metaTitle": "Amplemarket avis 2026 : prix, alternatives | Tooltrim",
-      "metaDescription": "Amplemarket pour outbound : 300$/user/mois, all-in-one. Notre verdict, les limites, et quand préférer Apollo + Lemlist."
+      "metaDescription": "Amplemarket : avis, prix Startup à 600 $US/mois pour 2 utilisateurs, Duo Copilot, prospection multicanal, limites et alternatives.",
+      "metaDescriptionEn": "Amplemarket review: Startup at $600/month for 2 users, Duo Copilot, multichannel prospecting, limitations and alternatives.",
+      "idealForFr": "équipes commerciales B2B avec une prospection régulière",
+      "idealForEn": "B2B sales teams with regular outbound activity"
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
@@ -9467,59 +9469,148 @@
     "substitution_cluster_v2": "sales-prospecting-data",
     "pricing_v5": {
       "cautions": [
-        "2 users min, annuel obligatoire. Prix en USD."
+        "Engagement annuel. Deux utilisateurs inclus. Confirmer utilisateurs supplémentaires, quotas et taxes au devis."
       ],
-      "verified_on": "2026-05-06",
+      "verified_on": "2026-09-26",
       "source_domain": "amplemarket.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
+      "usage_sensitive": true,
+      "compare_plan_kind": "team",
       "compare_plan_name": "Startup",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.amplemarket.com/pricing",
-      "verification_status": "official_verified",
-      "compare_price_monthly_eur": 300
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "startup",
+          "displayName": "Startup",
+          "summary": "600 $US/mois pour deux utilisateurs avec engagement annuel.",
+          "featureHighlights": [
+            "2 utilisateurs inclus",
+            "Séquences multicanal",
+            "Duo Copilot et signaux"
+          ],
+          "detailsSourceUrl": "https://www.amplemarket.com/pricing",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 600,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
     },
     "decision_policy_v3": null,
-    "shortDescriptionEn": "All-in-one AI prospecting platform: data, multi-channel sequences, intent.",
-    "longDescriptionEn": "Amplemarket bundles B2B data, multi-channel sequences, deliverability and intent signals. From $300/user/mo (Startup, 2 users min).",
+    "shortDescriptionEn": "B2B prospecting with contact data, multichannel sequences and an AI assistant in one platform.",
+    "longDescriptionEn": "Amplemarket combines contact search, data enrichment and email, LinkedIn and phone prospecting sequences. Duo Copilot uses signals to help identify prospects and prepare outreach. Deliverability tools monitor domain and mailbox health; they do not guarantee inbox placement or meetings.\n\nToolTrim sees the strongest fit for sales teams consolidating several prospecting tools with a clear target market. Before committing, test contact quality in your segment, CRM synchronization and replies on a representative sample. Startup starts at $600 per month for two users with an annual term, making occasional outreach harder to justify.\n\nThis review is based on public vendor documentation, not a hands-on campaign test.",
     "prosEn": [
-      "Robust, integrated multi-channel (7 channels).",
-      "AI copilot for lead research and qualification.",
-      "Verified global contact database (200M+).",
-      "Automated sequences triggered by behavioral signals."
+      "B2B data and multichannel sequences in one platform.",
+      "Duo Copilot and signals for prospect prioritization.",
+      "Documented CRM integrations and data exports.",
+      "Domain and mailbox health monitoring."
     ],
     "consEn": [
-      "No free plan.",
-      "Annual contracts required (no monthly options).",
-      "Expensive for small teams.",
-      "Learning curve to maximize multi-channel capabilities."
+      "Startup costs $600/month with an annual term.",
+      "Contact quality must be checked in your target market.",
+      "Targeting, mailbox and CRM setup are required.",
+      "Sequences and configuration need rebuilding when migrating."
     ],
     "useCasesEn": [
-      "Generate and qualify B2B leads at scale.",
-      "Coordinate email + LinkedIn + phone prospecting.",
-      "Automate sequences triggered by job changes and market signals."
+      "Enrich a contact list before outreach.",
+      "Coordinate email, LinkedIn actions and calls.",
+      "Prioritize accounts using sales signals.",
+      "Centralize reply tracking and CRM synchronization."
     ],
     "verdictEn": {
       "keepIf": [
-        "You're doing intensive B2B prospecting and need multi-channel outreach.",
-        "You have large lead lists to qualify and enrich.",
-        "You're committed to annual contracts and have a marketing budget."
+        "Your team already uses several prospecting tools.",
+        "Targeting and sales follow-up are structured."
       ],
       "avoidIf": [
-        "You want a simple, free prospecting tool.",
-        "You prefer flexible month-to-month billing.",
-        "You're new to B2B prospecting."
+        "You prospect occasionally or alone on a small budget.",
+        "You expect guaranteed meetings without targeting work."
       ],
-      "threshold": "Amplemarket fits teams scaling multi-channel prospecting; for beginners or tight budgets, free/freemium alternatives are sufficient."
+      "threshold": "A useful integrated option for structured outbound teams. Test it in your market before accepting the cost and annual term.",
+      "faqPriceAnswer": "Startup: $600/month with an annual term, including 2 users. Growth and Elite: custom pricing, including 4 and 10 users respectively. Additional users cost extra."
     },
     "pricingEn": {
-      "free": "Demo",
-      "paid": "Startup $300/user/mo (2 users min, annual) — Growth custom — Elite custom"
+      "free": "Free trial advertised on all plans; confirm duration and conditions.",
+      "paid": "Startup: $600/month with an annual term, including 2 users. Growth and Elite: custom pricing, including 4 and 10 users respectively. Additional users cost extra."
     },
     "force_silence": false,
-    "description": "Amplemarket réunit data B2B, séquences multicanal (email, LinkedIn, téléphone), deliverability monitoring et signaux d'intent dans un seul outil. À partir de 300$/mois/user (Startup, 2 users min). Pour équipes commerciales sérieuses.\n\nÀ garder si : tu pilotes une équipe sales 2+ ou tu fais 100+ touches/semaine.\n\nÀ éviter si : tu es freelance solo (Apollo + Lemlist coûtent 5x moins), ou tu prospectes moins de 50 leads/mois.",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6350808bc45bd0c902af10e6/671bb77ae2ed5e51f8dcae2b_e05a75f5cee34196fe6f70e9d7f57d31_am-opengraph-v2.jpg"
+    "description": "Amplemarket réunit la recherche de contacts, l’enrichissement des données et les séquences de prospection par email, LinkedIn et téléphone. Duo Copilot aide à repérer des prospects à partir de signaux et à préparer les prises de contact. Les outils de délivrabilité servent à surveiller la santé des domaines et des boîtes mail, sans garantir l’arrivée en boîte principale ni les rendez-vous.\n\nToolTrim le recommande surtout à une équipe commerciale qui veut remplacer plusieurs outils de prospection et dispose déjà d’un ciblage clair. Avant de vous engager, testez la qualité des contacts sur votre marché, la synchronisation CRM et les réponses obtenues sur un échantillon représentatif. Le forfait Startup commence à 600 $US par mois pour deux utilisateurs avec engagement annuel : un coût difficile à justifier pour des campagnes occasionnelles.\n\nCette analyse repose sur la documentation publique de l’éditeur, pas sur un test terrain de campagne.",
+    "ogImageUrl": "/og-images/amplemarket.jpg",
+    "affiliateCtaLabelFr": "Découvrir Amplemarket",
+    "affiliateCtaLabelEn": "Explore Amplemarket",
+    "galleryImages": [
+      "/tool-media/amplemarket/duo-copilot.avif",
+      "/tool-media/amplemarket/engagement.avif",
+      "/tool-media/amplemarket/deliverability.avif"
+    ],
+    "pricing_v5En": {
+      "cautions": [
+        "Annual term. Two users included. Confirm extra users, usage quotas and taxes in the quote."
+      ],
+      "verified_on": "2026-09-26",
+      "source_domain": "amplemarket.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "team",
+      "compare_plan_name": "Startup",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.amplemarket.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "startup",
+          "displayName": "Startup",
+          "summary": "$600/month for two users with an annual term.",
+          "featureHighlights": [
+            "2 users included",
+            "Multichannel sequences",
+            "Duo Copilot and intent signals"
+          ],
+          "detailsSourceUrl": "https://www.amplemarket.com/pricing",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 600,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-26",
+          "lastConfirmedOn": "2026-09-26"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-26",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Évaluation documentaire : consolidation de données et séquences, mais coût initial de 600 $US/mois avec engagement annuel. Rentabilité non mesurée. Source : https://www.amplemarket.com/pricing (26/09/2026).",
+        "simplicite": "Onboarding prévu ; ciblage, boîtes mail et CRM à configurer. Pas de mesure terrain du temps de prise en main. Source : https://www.amplemarket.com/pricing (26/09/2026).",
+        "utilisation": "Enrichissement CSV, CRM et API documentés : parcours cohérent pour préparer les contacts. Qualité réelle à tester sur votre segment. Source : https://www.amplemarket.com/data-enrichment (26/09/2026).",
+        "puissance": "Séquences multicanal, signaux et Duo Copilot ; fonctions et volumes dépendants du forfait. Source : https://www.amplemarket.com/pricing (26/09/2026).",
+        "reversibilite": "Export des données de prospection et gestion des intégrations/API documentés. Cela ne garantit pas le transfert des séquences et réglages vers un concurrent. Source : https://knowledge.amplemarket.com/articles/5152680997-roles-permissions (26/09/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Documentation-based assessment: data and sequence consolidation, but a $600/month starting cost with an annual term. ROI not measured. Source: https://www.amplemarket.com/pricing (2026-09-26).",
+        "simplicite": "Onboarding is offered; targeting, mailboxes and CRM need setup. No hands-on onboarding time measured. Source: https://www.amplemarket.com/pricing (2026-09-26).",
+        "utilisation": "CSV, CRM and API enrichment are documented, supporting contact preparation. Test actual quality in your segment. Source: https://www.amplemarket.com/data-enrichment (2026-09-26).",
+        "puissance": "Multichannel sequences, signals and Duo Copilot; features and volumes depend on plan. Source: https://www.amplemarket.com/pricing (2026-09-26).",
+        "reversibilite": "Prospecting data exports and integration/API management are documented. This does not guarantee sequence or configuration portability to competitors. Source: https://knowledge.amplemarket.com/articles/5152680997-roles-permissions (2026-09-26)."
+      }
+    }
   },
   {
     "id": "amplitude",
