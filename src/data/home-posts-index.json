@@ -1,6 +1,31 @@
 {
   "fr": [
     {
+      "slug": "creer-video-produit-sans-montage",
+      "title": "Créer une vidéo produit sans savoir monter : une méthode simple",
+      "date": "2026-09-27",
+      "tags": [
+        "flexclip",
+        "video",
+        "marketing",
+        "e-commerce"
+      ],
+      "thumbnail": "/tool-media/flexclip/editor.webp"
+    },
+    {
+      "slug": "choisir-outil-premiere-newsletter",
+      "title": "Première newsletter : choisir entre Brevo, GetResponse et Kit",
+      "date": "2026-09-27",
+      "tags": [
+        "brevo",
+        "getresponse",
+        "kit",
+        "newsletter",
+        "email-marketing"
+      ],
+      "thumbnail": "/tool-media/brevo/email-marketing.webp"
+    },
+    {
       "slug": "notion-canva-ai-tax-pricing-2026",
       "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
       "date": "2026-09-20",
@@ -165,37 +190,34 @@
         "outils"
       ],
       "thumbnail": "/editorial/stack-visuale/hero-stack-visuelle.jpg"
-    },
-    {
-      "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
-      "title": "Remettre de la clarté dans une entreprise qui grandit trop vite",
-      "date": "2026-07-27",
-      "tags": [
-        "stories",
-        "consultant opérations",
-        "petite entreprise",
-        "automatisation",
-        "workflow",
-        "croissance"
-      ],
-      "thumbnail": "/editorial/stories/marc-operations/hero.jpg"
-    },
-    {
-      "slug": "nora-bensaid-produit-sante-depuis-terrain",
-      "title": "Construire un produit numérique à partir du terrain",
-      "date": "2026-07-26",
-      "tags": [
-        "stories",
-        "développeuse freelance",
-        "produit numérique",
-        "santé",
-        "recherche utilisateur",
-        "workflow"
-      ],
-      "thumbnail": "/editorial/stories/nora-sante/hero.jpg"
     }
   ],
   "en": [
+    {
+      "slug": "creer-video-produit-sans-montage",
+      "title": "Create a product video without editing experience: a practical method",
+      "date": "2026-09-27",
+      "tags": [
+        "flexclip",
+        "video",
+        "marketing",
+        "e-commerce"
+      ],
+      "thumbnail": "/tool-media/flexclip/editor.webp"
+    },
+    {
+      "slug": "choisir-outil-premiere-newsletter",
+      "title": "Your first newsletter: choosing Brevo, GetResponse or Kit",
+      "date": "2026-09-27",
+      "tags": [
+        "brevo",
+        "getresponse",
+        "kit",
+        "newsletter",
+        "email-marketing"
+      ],
+      "thumbnail": "/tool-media/brevo/email-marketing.webp"
+    },
     {
       "slug": "notion-canva-ai-tax-pricing-2026",
       "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
@@ -369,34 +391,6 @@
         "workflow"
       ],
       "thumbnail": "/editorial/stories/anna-morel/hero.jpg"
-    },
-    {
-      "slug": "pourquoi-visualiser-stack-saas",
-      "title": "Why Visualize Your SaaS Stack Instead of Managing It in Excel",
-      "date": "2026-07-28",
-      "tags": [
-        "saas stack",
-        "organisation",
-        "productivity",
-        "workflow",
-        "freelance",
-        "tools"
-      ],
-      "thumbnail": "/editorial/stack-visuale/hero-stack-visuelle.jpg"
-    },
-    {
-      "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
-      "title": "Bringing Clarity Back to a Company Growing Too Fast",
-      "date": "2026-07-27",
-      "tags": [
-        "stories",
-        "operations consultant",
-        "small business",
-        "automation",
-        "workflow",
-        "growth"
-      ],
-      "thumbnail": "/editorial/stories/marc-operations/hero.jpg"
     }
   ]
 }

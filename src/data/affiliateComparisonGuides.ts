@@ -1,9 +1,11 @@
 import type { ComparisonDecisionGuide } from './comparisonDecisionGuides';
 import { creativeComparisonGuides, creativeOffers, creativeVisuals } from './creativeComparisonGuides';
+import { websiteComparisonGuides, websiteOffers, websiteVisuals } from './websiteComparisonGuides';
 
 // Existing official product assets; provenance is retained in the catalogue research.
 export const comparisonVisuals: Record<string, { src: string; name: string }> = {
   ...creativeVisuals,
+  ...websiteVisuals,
   'getresponse-vs-brevo': { src: '/tool-media/getresponse/overview.webp', name: 'GetResponse' },
   'engagebay-vs-hubspot': { src: '/tool-media/engagebay/official-1.webp', name: 'EngageBay' },
   'flexclip-vs-canva': { src: '/tool-media/flexclip/editor.webp', name: 'FlexClip' },
@@ -11,6 +13,7 @@ export const comparisonVisuals: Record<string, { src: string; name: string }> = 
 
 export const comparisonOffers: Record<string, { name: string; url: string; affiliated: boolean }[]> = {
   ...creativeOffers,
+  ...websiteOffers,
   'getresponse-vs-brevo': [
     { name: 'GetResponse', url: 'https://try.getresponsetoday.com/k3g20w6hpboy', affiliated: true },
     { name: 'Brevo', url: 'https://get.brevo.com/k11w0iqmh2r0-m7y3c', affiliated: true },
@@ -40,6 +43,7 @@ const videoSources = [
 
 export const affiliateComparisonGuides: Record<string, Record<'fr' | 'en', ComparisonDecisionGuide>> = {
   ...creativeComparisonGuides,
+  ...websiteComparisonGuides,
   'getresponse-vs-brevo': {
     fr: {
       checkedAt: '2026-09-27', scope: '',

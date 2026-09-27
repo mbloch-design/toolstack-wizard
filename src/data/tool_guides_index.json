@@ -1,5 +1,41 @@
 {
   "byTool": {
+    "flexclip": {
+      "fr": [
+        {
+          "slug": "creer-video-produit-sans-montage",
+          "title": "Créer une vidéo produit sans savoir monter : une méthode simple",
+          "date": "2026-09-27",
+          "category": "Guides pratiques"
+        }
+      ],
+      "en": [
+        {
+          "slug": "creer-video-produit-sans-montage",
+          "title": "Create a product video without editing experience: a practical method",
+          "date": "2026-09-27",
+          "category": "Practical guides"
+        }
+      ]
+    },
+    "brevo": {
+      "fr": [
+        {
+          "slug": "choisir-outil-premiere-newsletter",
+          "title": "Première newsletter : choisir entre Brevo, GetResponse et Kit",
+          "date": "2026-09-27",
+          "category": "Guides pratiques"
+        }
+      ],
+      "en": [
+        {
+          "slug": "choisir-outil-premiere-newsletter",
+          "title": "Your first newsletter: choosing Brevo, GetResponse or Kit",
+          "date": "2026-09-27",
+          "category": "Practical guides"
+        }
+      ]
+    },
     "freshservice": {
       "fr": [
         {
@@ -410,6 +446,16 @@
     }
   },
   "byGuide": {
+    "fr:creer-video-produit-sans-montage": {
+      "slug": "flexclip",
+      "name": "FlexClip",
+      "hasPricing": true
+    },
+    "fr:choisir-outil-premiere-newsletter": {
+      "slug": "brevo",
+      "name": "Brevo",
+      "hasPricing": true
+    },
     "fr:alternatives-freshservice-2026": {
       "slug": "freshservice",
       "name": "Freshservice",
@@ -523,6 +569,16 @@
     "fr:notion-canva-ai-tax-pricing-2026": {
       "slug": "notion",
       "name": "Notion",
+      "hasPricing": true
+    },
+    "en:creer-video-produit-sans-montage": {
+      "slug": "flexclip",
+      "name": "FlexClip",
+      "hasPricing": true
+    },
+    "en:choisir-outil-premiere-newsletter": {
+      "slug": "brevo",
+      "name": "Brevo",
       "hasPricing": true
     },
     "en:chatgpt-pro-worth-it": {
@@ -677,6 +733,52 @@
     }
   },
   "guideExtras": {
+    "fr:creer-video-produit-sans-montage": {
+      "tools": [
+        {
+          "slug": "flexclip",
+          "name": "FlexClip",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/flexclip.svg",
+          "websiteUrl": "https://www.flexclip.com/"
+        }
+      ],
+      "related": []
+    },
+    "fr:choisir-outil-premiere-newsletter": {
+      "tools": [
+        {
+          "slug": "brevo",
+          "name": "Brevo",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/brevo.svg",
+          "websiteUrl": "https://www.brevo.com"
+        },
+        {
+          "slug": "getresponse",
+          "name": "GetResponse",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/getresponse.png",
+          "websiteUrl": "https://www.getresponse.com"
+        },
+        {
+          "slug": "kit",
+          "name": "Kit",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/kit.png",
+          "websiteUrl": "https://kit.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "andrew-huberman-kit-systeme-audience",
+          "title": "Comment Huberman Lab a construit une audience de plus d’un million d’abonnés avec Kit",
+          "thumbnail": "/editorial/guides/kit-huberman-systeme-audience/hero.jpg",
+          "readTime": "8 min",
+          "category": "Marketing"
+        }
+      ]
+    },
     "fr:alternatives-freshservice-2026": {
       "tools": [
         {
@@ -757,6 +859,13 @@
         }
       ],
       "related": [
+        {
+          "slug": "choisir-outil-premiere-newsletter",
+          "title": "Première newsletter : choisir entre Brevo, GetResponse et Kit",
+          "thumbnail": "/tool-media/brevo/email-marketing.webp",
+          "readTime": "6 min",
+          "category": "Guides pratiques"
+        },
         {
           "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
           "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
@@ -2211,6 +2320,52 @@
         }
       ]
     },
+    "en:creer-video-produit-sans-montage": {
+      "tools": [
+        {
+          "slug": "flexclip",
+          "name": "FlexClip",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/flexclip.svg",
+          "websiteUrl": "https://www.flexclip.com/"
+        }
+      ],
+      "related": []
+    },
+    "en:choisir-outil-premiere-newsletter": {
+      "tools": [
+        {
+          "slug": "brevo",
+          "name": "Brevo",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/brevo.svg",
+          "websiteUrl": "https://www.brevo.com"
+        },
+        {
+          "slug": "getresponse",
+          "name": "GetResponse",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/getresponse.png",
+          "websiteUrl": "https://www.getresponse.com"
+        },
+        {
+          "slug": "kit",
+          "name": "Kit",
+          "hasPricing": true,
+          "logo": "/tool-media/logos/kit.png",
+          "websiteUrl": "https://kit.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "andrew-huberman-kit-systeme-audience",
+          "title": "How Huberman Lab Built an Audience of Over One Million Subscribers with Kit",
+          "thumbnail": "/editorial/guides/kit-huberman-systeme-audience/hero.jpg",
+          "readTime": "8 min",
+          "category": "Marketing"
+        }
+      ]
+    },
     "en:chatgpt-pro-worth-it": {
       "tools": [
         {
@@ -2731,6 +2886,13 @@
       ],
       "related": [
         {
+          "slug": "choisir-outil-premiere-newsletter",
+          "title": "Your first newsletter: choosing Brevo, GetResponse or Kit",
+          "thumbnail": "/tool-media/brevo/email-marketing.webp",
+          "readTime": "6 min",
+          "category": "Practical guides"
+        },
+        {
           "slug": "ai-agents-freelancers-2026",
           "title": "AI agents for freelancers in 2026: which ones earn a place",
           "readTime": "8 min",
@@ -2753,13 +2915,6 @@
             "hasPricing": true,
             "websiteUrl": "https://zapier.com"
           }
-        },
-        {
-          "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
-          "title": "Bringing Clarity Back to a Company Growing Too Fast",
-          "thumbnail": "/editorial/stories/marc-operations/hero.jpg",
-          "readTime": "9 min",
-          "category": "Stories"
         }
       ]
     },

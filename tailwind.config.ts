@@ -16,6 +16,8 @@ export default {
     "!./src/components/dashboard/**/*.{ts,tsx}",
   ],
   prefix: "",
+  // Editorial HTML lives in posts JSON, outside the source glob.
+  safelist: ['ga-cta-btn'],
   theme: {
     container: {
       center: true,

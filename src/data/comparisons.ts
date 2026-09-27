@@ -7,6 +7,7 @@ export interface FeaturedComparison {
 }
 
 export const FEATURED_COMPARISONS: FeaturedComparison[] = [
+  { slugPair: 'b12-vs-wix', toolA: 'b12', toolB: 'wix', summary: 'Créer et entretenir un site professionnel : comparez édition, fonctions métier et coût complet.', summaryEn: 'Build and maintain a business website: compare editing, business features and total cost.' },
   { slugPair: 'pdf-agile-vs-adobe-acrobat', toolA: 'pdf-agile', toolB: 'adobe-acrobat', summary: 'Paiement unique ou abonnement : comparez édition PDF, exports et circuit de validation.', summaryEn: 'One-time purchase or subscription: compare PDF editing, exports and approvals.' },
   { slugPair: 'piktochart-vs-canva', toolA: 'piktochart', toolB: 'canva', summary: 'Infographies ou communication multiformat : choisissez selon le livrable et les exports.', summaryEn: 'Infographics or mixed-format communication: choose around deliverables and exports.' },
   { slugPair: 'pixlr-vs-photopea', toolA: 'pixlr', toolB: 'photopea', summary: 'Retouche assistée ou projet PSD : comparez formats, crédits et fichiers éditables.', summaryEn: 'Assisted retouching or PSD projects: compare formats, credits and editable files.' },
