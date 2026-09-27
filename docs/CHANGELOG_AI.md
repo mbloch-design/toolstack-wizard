@@ -1,3 +1,8 @@
+## 2026-09-27 — Analytics DataFast
+
+- Ajout du script cookieless DataFast dans le document HTML racine afin de couvrir toutes les routes Vite, avec l’identifiant et le domaine fournis.
+- Autorisation de `https://datafa.st` dans les directives CSP `script-src` et `connect-src` pour permettre le chargement du script et l’envoi des mesures en production.
+
 ## 2026-09-27 : présentation Tapstitch adaptée à la vente de vêtements
 
 - Sur cette fiche uniquement, remplace le score SaaS de la sidebar et le détail des cinq axes par un parcours de choix du vêtement, design et échantillon. CTA affilié « Créer mon premier produit » en FR/EN ; coûts et absence de commande test explicites. Autres logiciels inchangés.
