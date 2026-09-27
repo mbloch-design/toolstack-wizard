@@ -4785,3 +4785,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Registre partagé : liens entrants depuis les six fiches, index et routes pré-rendues. Prix non vérifiés laissés explicites ; pas de conversion implicite ni verdict acheté.
 - Sources et limites : research/affiliate-comparisons-2026-09-27.md. Travail local, non publié.
 - Routes FR/EN et douze liens entrants vérifiés ; contrôle mobile non validé à cause du navigateur. TypeScript global bloqué hors périmètre. Budget fichiers ajusté à 13290 pour 13277 mesurés, tailles inchangées.
+
+## 2026-09-27 : comparatifs affiliés, lot 1
+
+- PDF Agile/Acrobat Pro, Piktochart/Canva et Pixlr/Photopea en FR/EN. Prix et périodes distingués, critères par usage, protocole de test et FAQ.
+- Médias officiels existants, liens affiliés fournis, liens entrants via le registre des comparatifs. Aucun changement de notation.
+- Sources et limites consignées dans research/creative-comparisons-2026-09-27.md.
+- Six rendus locaux et douze liens entrants vérifiés. Génération complète réussie ; plafond HTML ajusté de 752 à 753 MiB pour 752,2 MiB mesurés après ajout des six routes. Autres limites inchangées.

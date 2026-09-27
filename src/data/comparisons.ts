@@ -7,6 +7,9 @@ export interface FeaturedComparison {
 }
 
 export const FEATURED_COMPARISONS: FeaturedComparison[] = [
+  { slugPair: 'pdf-agile-vs-adobe-acrobat', toolA: 'pdf-agile', toolB: 'adobe-acrobat', summary: 'Paiement unique ou abonnement : comparez édition PDF, exports et circuit de validation.', summaryEn: 'One-time purchase or subscription: compare PDF editing, exports and approvals.' },
+  { slugPair: 'piktochart-vs-canva', toolA: 'piktochart', toolB: 'canva', summary: 'Infographies ou communication multiformat : choisissez selon le livrable et les exports.', summaryEn: 'Infographics or mixed-format communication: choose around deliverables and exports.' },
+  { slugPair: 'pixlr-vs-photopea', toolA: 'pixlr', toolB: 'photopea', summary: 'Retouche assistée ou projet PSD : comparez formats, crédits et fichiers éditables.', summaryEn: 'Assisted retouching or PSD projects: compare formats, credits and editable files.' },
   { slugPair: 'getresponse-vs-brevo', toolA: 'getresponse', toolB: 'brevo', summary: 'Parcours marketing ou campagnes email : comparez contacts, envois et automatisations.', summaryEn: 'Marketing journeys or email campaigns: compare contacts, sends and automation.' },
   { slugPair: 'engagebay-vs-hubspot', toolA: 'engagebay', toolB: 'hubspot', summary: 'CRM pour petite équipe : comparez processus, intégrations et coût total.', summaryEn: 'Small-team CRM: compare processes, integrations and total cost.' },
   { slugPair: 'flexclip-vs-canva', toolA: 'flexclip', toolB: 'canva', summary: 'Vidéo marketing : un éditeur spécialisé ou votre espace créatif existant ?', summaryEn: 'Marketing video: a focused editor or your existing creative workspace?' },

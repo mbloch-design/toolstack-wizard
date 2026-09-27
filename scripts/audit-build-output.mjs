@@ -27,7 +27,8 @@ const budgets = {
   files: 13_290,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   totalBytes: 852 * MiB,
-  htmlBytes: 752 * MiB,
+  // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
+  htmlBytes: 753 * MiB,
   javascriptBytes: 15 * MiB,
   cssBytes: 30 * MiB,
   duplicateBytes: 3 * MiB,
