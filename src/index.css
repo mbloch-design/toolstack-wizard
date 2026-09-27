@@ -33541,3 +33541,9 @@ img[data-logo-loading] {
   .td-tapstitch-decision .td-hero-site-link { white-space: normal; text-align: center; }
   .td-tapstitch-note { font-size: 14px; }
 }
+@layer components {
+  .cp-guide-product-visual { margin: 2rem 0; }
+  .cp-guide-product-visual img { display: block; width: 100%; max-height: 480px; object-fit: contain; border-radius: 16px; background: #F8F8F4; }
+  .cp-guide-product-visual figcaption { margin-top: .5rem; font-size: .875rem; color: #6F6F68; }
+  .cp-guide-source-url { display: block; overflow-wrap: anywhere; font-size: .875rem; }
+}

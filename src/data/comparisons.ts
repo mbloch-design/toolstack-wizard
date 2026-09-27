@@ -7,6 +7,9 @@ export interface FeaturedComparison {
 }
 
 export const FEATURED_COMPARISONS: FeaturedComparison[] = [
+  { slugPair: 'getresponse-vs-brevo', toolA: 'getresponse', toolB: 'brevo', summary: 'Parcours marketing ou campagnes email : comparez contacts, envois et automatisations.', summaryEn: 'Marketing journeys or email campaigns: compare contacts, sends and automation.' },
+  { slugPair: 'engagebay-vs-hubspot', toolA: 'engagebay', toolB: 'hubspot', summary: 'CRM pour petite équipe : comparez processus, intégrations et coût total.', summaryEn: 'Small-team CRM: compare processes, integrations and total cost.' },
+  { slugPair: 'flexclip-vs-canva', toolA: 'flexclip', toolB: 'canva', summary: 'Vidéo marketing : un éditeur spécialisé ou votre espace créatif existant ?', summaryEn: 'Marketing video: a focused editor or your existing creative workspace?' },
   { slugPair: "activecampaign-vs-klaviyo", toolA: "activecampaign", toolB: "klaviyo", summary: "Automatisation marketing ou CRM B2C : comparez les usages, les coûts et les limites avant de choisir.", summaryEn: "Marketing automation or B2C CRM: compare workflows, costs and limits before choosing." },
   // AI / Writing
   { slugPair: "chatgpt-vs-claude", summary: "Un assistant pour des tâches variées ou un travail centré sur les documents longs ? Choisissez selon vos livrables.", summaryEn: "An assistant for varied tasks or work centred on long documents? Choose around your deliverables.", toolA: "chatgpt", toolB: "claude" },

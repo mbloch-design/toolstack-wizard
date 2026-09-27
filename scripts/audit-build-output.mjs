@@ -24,7 +24,7 @@ const budgets = {
   // 13_250 (2026-09-27): five new tool records (50 routes), sourced
   // media and shared CSS; measured output 13_217. Byte limits unchanged.
   // PDF Agile and Piktochart additions: measured 13,251 files, 750.5 MiB HTML.
-  files: 13_275,
+  files: 13_290,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   totalBytes: 852 * MiB,
   htmlBytes: 752 * MiB,

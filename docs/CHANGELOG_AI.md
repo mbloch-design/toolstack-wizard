@@ -4779,3 +4779,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Contournement reloadDocument retiré. Route /fr/tool/tapstitch existante, aucun alias ou redirect serveur spécifique trouvé. Défaut confirmé : fichiers /assets/tool-catalog/*.json stables déclarés immutable un an et lus avec force-cache. Revalidation HTTP désormais obligatoire, exception de cache serveur limitée au catalogue.
 - Retrait du renvoi silencieux vers /tools lorsque les données manquent : message local avec réessai, URL conservée. Corrige aussi le retour vers une fiche SSR après navigation vers une autre fiche (restauration de la bonne identité).
 - Tests de non-régression : navigation Gamma > Tapstitch > Gamma et revalidation du catalogue en mode production. Le retour exact à l’accueil rapporté n’a pas été reproduit ; distinguer le défaut démontré du symptôme signalé.
+## 2026-09-27 : trois comparatifs affiliés FR/EN
+
+- GetResponse/Brevo, EngageBay/HubSpot et FlexClip/Canva : critères éditoriaux, tarifs contextualisés, essai, FAQ, visuels officiels existants et CTA.
+- Registre partagé : liens entrants depuis les six fiches, index et routes pré-rendues. Prix non vérifiés laissés explicites ; pas de conversion implicite ni verdict acheté.
+- Sources et limites : research/affiliate-comparisons-2026-09-27.md. Travail local, non publié.
+- Routes FR/EN et douze liens entrants vérifiés ; contrôle mobile non validé à cause du navigateur. TypeScript global bloqué hors périmètre. Budget fichiers ajusté à 13290 pour 13277 mesurés, tailles inchangées.

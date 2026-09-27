@@ -1,4 +1,5 @@
 import { translateBattleCopy } from '@/data/comparisonBattlesEn';
+import { affiliateComparisonGuides, comparisonOffers, comparisonVisuals } from '@/data/affiliateComparisonGuides';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useLang } from '@/hooks/useLang';
@@ -42,9 +43,12 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const pricingHref = (tool: Tool) => `${toolHref(tool)}/${lang === 'fr' ? 'prix' : 'pricing'}`;
   const pick = (fr: string, en: string) => lang === 'fr' ? fr : en;
   const affiliateComparison = slugPair === 'activecampaign-vs-klaviyo';
-  const reviewed = affiliateComparison ? activeCampaignKlaviyoGuides[lang] : undefined;
+  const newGuide = affiliateComparisonGuides[slugPair]?.[lang];
+  const offers = comparisonOffers[slugPair];
+  const visual = comparisonVisuals[slugPair];
+  const reviewed = newGuide || (affiliateComparison ? activeCampaignKlaviyoGuides[lang] : undefined);
   const curated = reviewed || (slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
-  const scenarios = reviewed ? [reviewed.scenarios[1], reviewed.scenarios[0]].map(s => ({ choice: s.choice, reason: s.reason, limits: [s.limit] })) : toolsForEditorial();
+  const scenarios = reviewed ? (affiliateComparison ? [reviewed.scenarios[1], reviewed.scenarios[0]] : reviewed.scenarios).map(s => ({ choice: s.choice, reason: s.reason, limits: [s.limit] })) : toolsForEditorial();
   function toolsForEditorial() {
     return [
       { choice: pick(content.verdictCardTitleA || `Choisir ${toolA.name}`, content.verdictCardTitleAEn || `Choose ${toolA.name}`), reason: pick(content.verdictCardTextA || content.quickVerdictA, content.verdictCardTextAEn || content.quickVerdictAEn), limits: content.limitsA.length ? pickList(content.limitsA, content.limitsAEn) : content.avoidAIfList.map(value => lang === 'fr' ? value : translateBattleCopy(value)) },
@@ -84,14 +88,14 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
               <span className="cp-vs-name">{tool.name}</span>
               {pitch && <span className="cp-vs-pitch">{pitch}</span>}
               <span className="cp-vs-meta">
-                <span className="cp-vs-price">{reviewed ? (tool.id === 'activecampaign' ? t('Essai de 14 jours', '14-day trial') : t('Forfait gratuit disponible', 'Free plan available')) : priceOf(tool)}</span>
+                {!newGuide && <span className="cp-vs-price">{affiliateComparison ? (tool.id === 'activecampaign' ? t('Essai de 14 jours', '14-day trial') : t('Forfait gratuit disponible', 'Free plan available')) : priceOf(tool)}</span>}
                 {score && score.score > 0 && <span className="cp-vs-score">★ {score.score.toFixed(1)}</span>}
               </span>
             </Link>;
           })}
           <span className="cp-vs-badge" aria-hidden="true">vs</span>
         </div>
-        {curated && <p className="cp-guide-scope">{curated.scope}</p>}
+        {curated?.scope && <p className="cp-guide-scope">{curated.scope}</p>}
       </header>
       {/* Verdict first: the answer a reader came for, readable at a glance.
           Two compact cards, the reason in one or two sentences, at most two
@@ -126,6 +130,12 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           </div>
         </div>
       </aside>}
+      {offers && <aside className="cp-guide-outbound" aria-label={t('Accéder aux offres', 'Explore the plans')}>
+        <h2>{t('Passez au test sur votre propre projet.', 'Try it on your own project.')}</h2>
+        <div className="cp-guide-outbound-grid">{offers.map(offer => <div className="cp-guide-outbound-item" key={offer.name}>
+          <a className="cp-guide-outbound-button cp-guide-outbound-button--primary" href={offer.url} target="_blank" rel={relExterne(offer.affiliated ? 'affilie' : 'source')}>{t(`Découvrir ${offer.name}`, `Explore ${offer.name}`)}<ArrowRight aria-hidden="true" /></a>
+        </div>)}</div>
+      </aside>}
       {/* Spec sheet, Apple "Compare" style: criteria down the left, the two
           tools in aligned columns, so a row reads in one sweep. */}
       <section id="comparaison" className="cp-guide-section cp-spec" aria-labelledby="cp-differences-title">
@@ -142,11 +152,22 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
           </div>)}
         </div>
       </section>
+      {visual && <figure className="cp-guide-product-visual">
+        <img src={visual.src} alt={t(`Aperçu officiel du produit ${visual.name}`, `Official ${visual.name} product preview`)} loading="lazy" />
+        <figcaption>{t('Visuel fourni par', 'Visual supplied by')} {visual.name}.</figcaption>
+      </figure>}
       <section id="cout" className="cp-guide-section" aria-labelledby="cp-pricing-title">
 
         <h2 id="cp-pricing-title">{t('Tarifs', 'Pricing')}</h2>
 
-        {curated ? <>
+        {newGuide ? <>
+          <div className="cp-guide-prices">{newGuide.prices.map(row => <div className="cp-guide-annual" key={row.label}>
+            <h3>{row.label}</h3>
+            <div className="cp-guide-pair"><p><strong>{toolA.name}</strong> {row.a}</p><p><strong>{toolB.name}</strong> {row.b}</p></div>
+            <p className="cp-guide-price-note">{row.note}</p>
+          </div>)}</div>
+          <p className="cp-guide-source-note">{newGuide.priceNote}</p>
+        </> : curated ? <>
           <div className="cp-guide-segmented" role="group" aria-label={t('Comparer les tarifs pour', 'Compare pricing for')}>
             <button type="button" aria-pressed={audience === 'solo'} onClick={() => setAudience('solo')}>{t('En solo', 'Just me')}</button>
             <button type="button" aria-pressed={audience === 'team'} onClick={() => setAudience('team')}>{t('En équipe', 'A team')}</button>
@@ -246,7 +267,13 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       <section id="sources" className="cp-guide-section cp-guide-method" aria-label={t('Sources et méthode', 'Sources and methodology')}>
         <details className="cp-guide-disclosure"><summary>{t('Sources, conditions et méthode', 'Sources, terms and methodology')}<ChevronDown aria-hidden="true" /></summary>
           <p>{t('Les recommandations sont des appréciations éditoriales, fondées sur les offres documentées. Aucun benchmark pratique ToolTrim n’est présenté ici.', 'Recommendations are editorial judgements based on documented plans. No hands-on ToolTrim benchmark is presented here.')}</p>
-          {curated && <><p>{curated.priceNote}</p><ol className="cp-guide-sources">{curated.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}<ArrowRight aria-hidden="true" /></a></li>)}</ol></>}
+          {curated && <><p>{curated.priceNote}</p><ol className="cp-guide-sources">{curated.sources.map((source, index) => {
+            const offer = offers?.[index];
+            return <li key={source.url}>{offer ? <>
+              <span>{source.label}</span><span className="cp-guide-source-url">{source.url}</span>
+              <a href={offer.url} target="_blank" rel={relExterne(offer.affiliated ? 'affilie' : 'source')}>{t(`Accéder à ${offer.name}`, `Visit ${offer.name}`)}<ArrowRight aria-hidden="true" /></a>
+            </> : <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}<ArrowRight aria-hidden="true" /></a>}</li>;
+          })}</ol></>}
           <Link to={`${prefix}/transparency`}>{t('Lire la méthode ToolTrim', 'Read the ToolTrim methodology')} →</Link>
         </details>
       </section>

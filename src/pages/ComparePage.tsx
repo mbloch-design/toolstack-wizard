@@ -1,5 +1,6 @@
 import ComparisonDecisionPage from "@/components/compare/ComparisonDecisionPage";
 import { activeCampaignKlaviyoGuides, chatgptClaudeGuides } from "@/data/comparisonDecisionGuides";
+import { affiliateComparisonGuides } from "@/data/affiliateComparisonGuides";
 import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolPair } from "@/hooks/useSupabaseData";
@@ -2033,13 +2034,18 @@ const ComparePage = () => {
       : fitBrandedTitle(`${toolA.name} vs ${toolB.name}: comparison ${year}`);
 
     // Decision-framing description: verb-driven, no audience assumption, no hardcoded copy.
-    const guide = slugPair === "chatgpt-vs-claude" ? chatgptClaudeGuides[lang] : slugPair === "activecampaign-vs-klaviyo" ? activeCampaignKlaviyoGuides[lang] : undefined;
+    const guide = affiliateComparisonGuides[slugPair || '']?.[lang] || (slugPair === "chatgpt-vs-claude" ? chatgptClaudeGuides[lang] : slugPair === "activecampaign-vs-klaviyo" ? activeCampaignKlaviyoGuides[lang] : undefined);
     const decisionLine = guide?.intro ?? (battleDataForSeo
       ? (lang === "fr"
           ? (battleDataForSeo.comparison.decisionSummary || battleDataForSeo.comparison.mainDifference)
           : (battleDataForSeo.comparison.decisionSummary || battleDataForSeo.comparison.mainDifference))
       : (lang === "fr" ? "Deux logiques différentes, un seul bon choix selon ton usage." : "Two different logics, one right choice for your use case."));
-    const desc = lang === "fr"
+    const affiliateSummary = affiliateComparisonGuides[slugPair || '']
+      ? COMPARISONS.find(pair => pair.slugPair === slugPair)
+      : undefined;
+    const desc = affiliateSummary
+      ? `${toolA.name} vs ${toolB.name} : ${lang === 'fr' ? affiliateSummary.summary : affiliateSummary.summaryEn}`
+      : lang === "fr"
       ? `${toolA.name} vs ${toolB.name} : ${decisionLine} Prix réels, verdict ToolTrim et critères de décision.`
       : `${toolA.name} vs ${toolB.name}: ${decisionLine} Real pricing, ToolTrim verdict and decision criteria.`;
 
@@ -2060,7 +2066,7 @@ const ComparePage = () => {
     if (verifiedDate) setMeta("data-verified-date", verifiedDate);
 
     // Rich schema: Article (editorial content) + SoftwareApplication (the two tools).
-    const datePublished = battleDataForSeo?.checkedAt || year.toString();
+    const datePublished = guide?.checkedAt || battleDataForSeo?.checkedAt || year.toString();
     const dateModified = guide?.checkedAt || battleDataForSeo?.lastUpdatedAt || battleDataForSeo?.checkedAt || year.toString();
     const comparatifsLabel = lang === "fr" ? "Comparatifs" : "Comparisons";
     const comparatifsPath = `${SEO_BASE}/${lang}/comparatifs`;
