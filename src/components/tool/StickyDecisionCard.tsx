@@ -7,6 +7,7 @@ import type { Tool } from "@/data/types";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { trackEvent } from "@/lib/analytics";
+import TapstitchDecision from "./TapstitchDecision";
 
 interface Props {
   tool: Tool;
@@ -101,7 +102,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
 
   return (
     <div className="td-decision-card td-decision-card--utility">
-      {section !== "actions" && <div className="td-decision-verdict">
+      {section !== "actions" && (slug === "tapstitch" ? <TapstitchDecision t={t} compact /> : <div className="td-decision-verdict">
         <span className="td-decision-verdict-label">
           {t("L’avis ToolTrim", "ToolTrim verdict")}
           <Link
@@ -132,7 +133,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
         </span>
         <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
         {conclusion && <p className="td-decision-conclusion">{conclusion}</p>}
-      </div>}
+      </div>)}
 
       {section !== "verdict" && <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>
         <Link

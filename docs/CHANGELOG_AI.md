@@ -1,3 +1,9 @@
+## 2026-09-27 : présentation Tapstitch adaptée à la vente de vêtements
+
+- Sur cette fiche uniquement, remplace le score SaaS de la sidebar et le détail des cinq axes par un parcours de choix du vêtement, design et échantillon. CTA affilié « Créer mon premier produit » en FR/EN ; coûts et absence de commande test explicites. Autres logiciels inchangés.
+- Guide content-writer appliqué au brief validé, sans nouvelle promesse produit ni mesure de conversion. dependency_status: approved-fallback ; narrative_canon_id, narrative_canon_version, claims_projection_offset : inconnus.
+- Recherche : lien public Tapstitch correct et navigation clavier confirmée ; parcours local Gamma > recherche globale > Tapstitch testé avec succès. Serveur 4193 relancé, auparavant inaccessible. Retour à l’accueil signalé non reproduit, contexte demandé au propriétaire.
+
 ## 2026-09-27 : lot affiliation, 17 fiches FR/EN validées
 
 - Révision de LearnWorlds, Lusha, Murf, Prezi, Reclaim, Reply.io, SaneBox, Seamless.AI, SocialBee, SurveyMonkey, ThorData, Tidio, Trainual et Unbounce. Création de RGE Studio (Beefree), Shade et Tapstitch. Liens partenaires exacts conservés, balisage sponsored maintenu.

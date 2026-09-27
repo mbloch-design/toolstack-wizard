@@ -33517,3 +33517,10 @@ img[data-logo-loading] {
    the compact sticky header keeps only the tool name. */
 .td-hero-h1-page { font-weight: 400; }
 .td-hero.is-compact .td-hero-h1-page { display: none; }
+@layer components {
+  .td-tapstitch-decision { display: grid; gap: 16px; color: inherit; }
+  .td-tapstitch-decision p { margin: 0; line-height: 1.6; }
+  .td-tapstitch-decision ol { padding-left: 22px; display: grid; gap: 14px; }
+  .td-tapstitch-decision .td-hero-site-link { white-space: normal; text-align: center; }
+  .td-tapstitch-note { font-size: 14px; }
+}

@@ -33,6 +33,7 @@ import { getGuidesForTool } from "@/lib/toolGuides";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
+import TapstitchDecision from "@/components/tool/TapstitchDecision";
 import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
 import { toolPageHeadingSuffix, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "@/lib/toolSeo";
@@ -328,7 +329,7 @@ const ToolDetailPage = () => {
   const safeWebsiteUrl = safeExternalUrl(tool.websiteUrl);
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
-  const primaryCtaLabel = (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t("Visiter le site", "Visit website");
+  const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t("Visiter le site", "Visit website");
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -921,6 +922,7 @@ const ToolDetailPage = () => {
             {showReview && (
               <div id="avis" className="td-subpage-content">
                 {(() => {
+                  if (tool.slug === "tapstitch") return <div className="td-section"><TapstitchDecision t={t} /></div>;
                   const ts = computeToolTrimScore(tool);
                   // One synthesized sentence instead of a 6-item checklist
                   // with half the items greyed out — a list of "things that
