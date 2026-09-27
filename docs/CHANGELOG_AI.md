@@ -1,3 +1,8 @@
+## 2026-09-27 : Domain Rating de la page de soumission
+
+- DR porté de 36 à 40 dans le composant commun FR/EN, selon la valeur communiquée par l'utilisateur. Date et mise en page conservées.
+- Affichage navigateur et HTML généré FR/EN vérifiés ; build production PASS. Non publié.
+
 ## 2026-09-27 : publication PDF Agile, FlexClip, Piktochart et Pixlr
 
 - Contrôles FR/EN, médias, sorties affiliées et routes de recherche vérifiés. Compilation et audit SEO réussis ; dernier audit de budget relancé après ajustement total à 852 MiB pour 850,2 MiB mesurés.
