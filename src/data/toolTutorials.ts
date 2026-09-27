@@ -17,6 +17,22 @@ export interface ToolTutorial {
  * YouTube entries are checked against oEmbed; native videos against the official page and media URL.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  piktochart: [{
+    provider: 'native', videoId: 'pikto-ai-official',
+    videoUrl: 'https://piktochart.com/wp-content/uploads/2025/08/pikto-ai-hero-1.webm',
+    posterUrl: '/tool-media/piktochart/overview.jpg',
+    titleFr: 'Présentation officielle Pikto AI', titleEn: 'Official Pikto AI introduction',
+    author: 'Piktochart', duration: 'Piktochart',
+    sourceUrl: 'https://piktochart.com/', verifiedOn: '2026-09-27',
+  }],
+  flexclip: [{
+    provider: 'native', videoId: 'flexclip-official-introduction',
+    videoUrl: 'https://resource.flexclip.com/pages/home/video/banner-compress3.mp4',
+    posterUrl: '/tool-media/flexclip/editor.webp',
+    titleFr: 'Présentation officielle FlexClip', titleEn: 'Official FlexClip introduction',
+    author: 'FlexClip', duration: 'FlexClip',
+    sourceUrl: 'https://www.flexclip.com/', verifiedOn: '2026-09-27',
+  }],
   maniana: [{
     provider: 'native', videoId: 'meet-maniana',
     videoUrl: 'https://maniana.ai/videos/meet-maniana.mp4',

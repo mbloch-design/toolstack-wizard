@@ -38370,13 +38370,12 @@
     "shortDescriptionEn": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software.",
     "pricing": {
       "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
-      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+      "paid": "Plus : 143,88 USD/an (11,99 USD/mois équivalent). Business : 239,88 USD/an (19,99 USD/mois équivalent). Offres mensuelles et Teams distinctes."
     },
-    "defaultMonthlyPrice": 10.3,
-    "compareMonthlyPrice": 10.3,
+    "affiliateLink": "https://tidd.ly/4hRTGb1",
     "websiteUrl": "https://www.flexclip.com/",
-    "ogImageUrl": "https://resource.flexclip.com/share/current.webp",
-    "logo": "https://logo.clearbit.com/flexclip.com",
+    "ogImageUrl": "/tool-media/flexclip/overview.webp",
+    "logo": "/tool-media/logos/flexclip.svg",
     "tool_type": "specialise",
     "substitution_cluster_v2": "content-creation",
     "functional_needs": [
@@ -39089,6 +39088,82 @@
     ],
     "verticals": [
       "consultant-b2b"
+    ]
+  },
+  {
+    "id": "pdf-agile",
+    "slug": "pdf-agile",
+    "name": "PDF Agile",
+    "categoryId": "legal-contracts",
+    "shortDescription": "Éditer, convertir et organiser des PDF, avec OCR et une offre de licence à vie.",
+    "shortDescriptionEn": "Edit, convert and organize PDFs, with OCR and a lifetime licence option.",
+    "pricing": {
+      "free": "Téléchargement gratuit ; conversions limitées selon la grille.",
+      "paid": "Licence à vie : 119 USD, paiement unique promotionnel. Annual : 59 USD ; Semi-Annual : 39 USD. Aucun prélèvement récurrent annoncé."
+    },
+    "affiliateLink": "https://tidd.ly/4iWjapP",
+    "websiteUrl": "https://www.pdfagile.com/",
+    "ogImageUrl": "/tool-media/pdf-agile/edit.png",
+    "logo": "/tool-media/logos/pdf-agile.svg",
+    "functional_needs": [
+      "signature",
+      "pdf-review",
+      "document-delivery"
+    ],
+    "verticals": [
+      "consultant-b2b"
+    ]
+  },
+  {
+    "id": "piktochart",
+    "slug": "piktochart",
+    "name": "Piktochart",
+    "categoryId": "creation",
+    "shortDescription": "Infographies, rapports et présentations visuelles, avec modèles et assistance IA.",
+    "shortDescriptionEn": "Infographics, reports and visual presentations, with templates and AI assistance.",
+    "pricing": {
+      "free": "Free : deux téléchargements PNG.",
+      "paid": "Pro : 120 USD/membre/an ou 15 USD/mois. Business : 204 USD/membre/an ou 20 USD/mois."
+    },
+    "affiliateLink": "https://tidd.ly/3V5Yxh1",
+    "websiteUrl": "https://piktochart.com/",
+    "ogImageUrl": "/tool-media/piktochart/overview.jpg",
+    "logo": "/tool-media/logos/piktochart.png",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "creation-contenu",
+      "presentations"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "community-manager"
+    ]
+  },
+  {
+    "id": "pixlr",
+    "slug": "pixlr",
+    "name": "Pixlr",
+    "categoryId": "creation",
+    "shortDescription": "Retouche photo dans le navigateur, avec Pixlr Editor, Express et des outils IA.",
+    "shortDescriptionEn": "Browser-based photo editing with Pixlr Editor, Express and AI tools.",
+    "pricing": {
+      "free": "Accès gratuit avec limites ; vérifier les fonctions nécessaires.",
+      "paid": "Tarifs mensuels observés en EUR : Plus 2,49 €, Premium 9,99 €, Ultra dès 24,99 €. Formules annuelles distinctes."
+    },
+    "defaultMonthlyPrice": 2.49,
+    "compareMonthlyPrice": 2.49,
+    "affiliateLink": "https://tidd.ly/4xN3vg8",
+    "websiteUrl": "https://pixlr.com/",
+    "ogImageUrl": "/tool-media/pixlr/overview.jpg",
+    "logo": "/tool-media/logos/pixlr.png",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "retouche-photo",
+      "creation-contenu"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "community-manager"
     ]
   }
 ]

@@ -1,3 +1,34 @@
+## 2026-09-27 : publication PDF Agile, FlexClip, Piktochart et Pixlr
+
+- Contrôles FR/EN, médias, sorties affiliées et routes de recherche vérifiés. Compilation et audit SEO réussis ; dernier audit de budget relancé après ajustement total à 852 MiB pour 850,2 MiB mesurés.
+- Changements préexistants stacks-catalog-index, tool_guides_index et llms-full exclus du lot.
+
+## 2026-09-27 : création Pixlr
+
+- Nouvelle fiche FR/EN sur main, prix mensuels EUR observés, crédits IA et limites précisés.
+- Lien affilié vérifié, logo et trois images officielles. Note documentaire, aucun test pratique ou gain horaire inventé. Guide de rédaction appliqué.
+- Sources : research/pixlr-2026-09-27.md. Non publié.
+
+## 2026-09-27 : création Piktochart
+
+- Fiche FR/EN, tarification native par membre, différences d'export Free/Pro/Business et note documentaire.
+- Lien affilié Awin sur les sorties éditeur ; logo, trois images officielles et vidéo Pikto AI. Guide de rédaction appliqué, sans gain de temps inventé.
+- Sources : research/piktochart-2026-09-27.md. Non publié.
+- Vérifications FR/EN, cinq liens affiliés, images, lecture vidéo et recherche vers fiche réussies. Build compilé et audit SEO réussi ; budgets fichiers/HTML ajustés à 13 275/752 MiB pour 13 251/750,5 MiB mesurés. Plafond global inchangé.
+
+## 2026-09-27 : actualisation FlexClip
+
+- FR/EN, lien affilié sur les sorties éditeur, montants annuels natifs USD sans conversion implicite, quotas IA/stock clarifiés.
+- Logo, trois images et vidéo de présentation officiels. Note documentaire justifiée, aucune estimation de gain horaire.
+- Sources et limites dans research/flexclip-2026-09-27.md. Non publié.
+- Contrôles navigateur : FR/EN, cinq sorties affiliées, troisième image et lecture vidéo (readyState 4) vérifiés. Compilation validée.
+
+## 2026-09-27 : création PDF Agile
+
+- Fiche FR/EN, lien affilié sur toutes les sorties éditeur, licence à vie 119 USD en paiement unique sans mensualisation ; autres offres et limites explicites.
+- Logo et trois visuels officiels, notation documentaire et guide rédaction appliqué. Sources dans research/pdf-agile-2026-09-27.md.
+- Contrôles : FR/EN, prix à vie sans mensualisation, cinq liens affiliés et recherche vers fiche vérifiés. Build production et budgets PASS. Non publié.
+
 ## 2026-09-27 : publication du lot affilié
 
 - B12, BetterDay AI, EngageBay, eSign, FaceReady et actualisation Maniana ; sorties éditeur affiliées dans le modèle commun.

@@ -185492,39 +185492,41 @@
     "category": "creation",
     "shortDescription": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
     "shortDescriptionEn": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software.",
-    "description": "FlexClip est un éditeur vidéo qui tourne entièrement dans le navigateur (Chrome, Safari, Firefox), pensé pour créer une vidéo à partir d'un modèle plutôt que sur une timeline vierge. Le catalogue dépasse 6 000 modèles, complétés par plus de 4 millions de vidéos et photos libres de droits, 74 000 pistes audio et 3 millions d'éléments graphiques.\n\nLa suite IA couvre le texte-vers-vidéo, la synthèse vocale, la génération de script, la génération d'image, le sous-titrage automatique, la suppression d'arrière-plan, la réduction de bruit, la suppression de voix et plusieurs outils photo (colorisation, restauration, agrandissement). Un enregistreur d'écran et de webcam ainsi que des utilitaires de compression et de conversion vidéo sont inclus dans l'outil.\n\nLe plan gratuit exporte en 720p avec 12 projets maximum et une vidéo limitée à 10 minutes ; il reste utilisable pour un premier test réel, pas seulement une démo. Le plan Plus (11,99 $/mois facturé annuellement) lève l'essentiel des limites (export 1080p, projets et durée illimités) et retire le filigrane FlexClip ; Business (19,99 $/mois facturé annuellement) ajoute l'export 4K et les ressources illimitées. Un plan Équipes à sièges (1-3, 5 ou 10) existe séparément sur devis.",
-    "longDescription": "FlexClip est un éditeur vidéo qui tourne entièrement dans le navigateur (Chrome, Safari, Firefox), pensé pour créer une vidéo à partir d'un modèle plutôt que sur une timeline vierge. Le catalogue dépasse 6 000 modèles, complétés par plus de 4 millions de vidéos et photos libres de droits, 74 000 pistes audio et 3 millions d'éléments graphiques.\n\nLa suite IA couvre le texte-vers-vidéo, la synthèse vocale, la génération de script, la génération d'image, le sous-titrage automatique, la suppression d'arrière-plan, la réduction de bruit, la suppression de voix et plusieurs outils photo (colorisation, restauration, agrandissement). Un enregistreur d'écran et de webcam ainsi que des utilitaires de compression et de conversion vidéo sont inclus dans l'outil.\n\nLe plan gratuit exporte en 720p avec 12 projets maximum et une vidéo limitée à 10 minutes ; il reste utilisable pour un premier test réel, pas seulement une démo. Le plan Plus (11,99 $/mois facturé annuellement) lève l'essentiel des limites (export 1080p, projets et durée illimités) et retire le filigrane FlexClip ; Business (19,99 $/mois facturé annuellement) ajoute l'export 4K et les ressources illimitées. Un plan Équipes à sièges (1-3, 5 ou 10) existe séparément sur devis.\n\nFlexClip est édité par PearlMountain Limited.",
-    "longDescriptionEn": "FlexClip is a video editor that runs entirely in the browser (Chrome, Safari, Firefox), built around starting from a template rather than a blank timeline. The library exceeds 6,000 templates, backed by more than 4 million royalty-free videos and photos, 74,000 audio tracks and 3 million graphic elements.\n\nThe AI suite covers text-to-video, text-to-speech, script generation, image generation, auto-subtitling, background removal, noise reduction, vocal removal and several photo tools (colorization, restoration, upscaling). A built-in screen and webcam recorder plus video compression and conversion utilities ship inside the tool.\n\nThe free plan exports at 720p with a 12-project cap and a 10-minute video limit; it stays usable for a genuine first test, not just a demo. The Plus plan ($11.99/month billed annually) lifts most limits (1080p export, unlimited projects and length) and removes the FlexClip watermark; Business ($19.99/month billed annually) adds 4K export and unlimited resources. A seat-based Teams plan (1-3, 5 or 10 seats) exists separately, quote-based.\n\nFlexClip is published by PearlMountain Limited.",
+    "description": "FlexClip réunit un éditeur vidéo dans le navigateur, des modèles et des outils IA pour préparer des vidéos marketing, des publications sociales ou des tutoriels. Vous assemblez vos séquences, ajoutez du texte, une voix off et des sous-titres, puis exportez le résultat sans installer un logiciel de montage.\n\nSon intérêt pour une petite équipe est de rassembler modèles, médias de stock et fonctions comme le texte-vers-vidéo, la synthèse vocale ou le sous-titrage automatique. Les fonctions IA ont leurs propres crédits : un abonnement vidéo ne signifie pas une génération IA illimitée.\n\nLe plan Free permet de vérifier le rendu avec un export 720p, 12 projets et des vidéos de 10 minutes maximum. Plus passe au 1080p, inclut cinq vidéos et cinq pistes audio de stock par projet, 30 Go de stockage et retire le filigrane FlexClip. Business ajoute le 4K, davantage de stockage et le stock vidéo/audio illimité.\n\nNotre conseil : exportez d'abord une vidéo représentative. Plus suffit si le 1080p et ses quotas de stock conviennent ; Business se justifie surtout par le 4K et l'usage plus intensif de ressources. Cette analyse repose sur les informations publiques, pas sur un test pratique.",
+    "longDescription": "FlexClip réunit un éditeur vidéo dans le navigateur, des modèles et des outils IA pour préparer des vidéos marketing, des publications sociales ou des tutoriels. Vous assemblez vos séquences, ajoutez du texte, une voix off et des sous-titres, puis exportez le résultat sans installer un logiciel de montage.\n\nSon intérêt pour une petite équipe est de rassembler modèles, médias de stock et fonctions comme le texte-vers-vidéo, la synthèse vocale ou le sous-titrage automatique. Les fonctions IA ont leurs propres crédits : un abonnement vidéo ne signifie pas une génération IA illimitée.\n\nLe plan Free permet de vérifier le rendu avec un export 720p, 12 projets et des vidéos de 10 minutes maximum. Plus passe au 1080p, inclut cinq vidéos et cinq pistes audio de stock par projet, 30 Go de stockage et retire le filigrane FlexClip. Business ajoute le 4K, davantage de stockage et le stock vidéo/audio illimité.\n\nNotre conseil : exportez d'abord une vidéo représentative. Plus suffit si le 1080p et ses quotas de stock conviennent ; Business se justifie surtout par le 4K et l'usage plus intensif de ressources. Cette analyse repose sur les informations publiques, pas sur un test pratique.",
+    "longDescriptionEn": "FlexClip combines a browser-based video editor, templates and AI tools for marketing videos, social posts and tutorials. Assemble footage, add text, voiceovers and subtitles, then export without installing desktop editing software.\n\nFor a small team, its appeal is combining templates, stock media and features such as text-to-video, text-to-speech and automatic subtitles. AI features have their own credits: a video subscription does not mean unlimited AI generation.\n\nFree lets you check the output with 720p exports, 12 projects and videos up to 10 minutes. Plus offers 1080p, five stock videos and five stock audio tracks per project, 30GB of storage and no FlexClip watermark. Business adds 4K, more storage and unlimited stock video/audio.\n\nOur advice: export a representative video first. Plus is enough if 1080p and its stock quotas fit; Business is mainly justified by 4K and heavier stock use. This review is based on public documentation, not hands-on testing.",
     "pricing": {
       "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
-      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+      "paid": "Plus : 143,88 USD/an (11,99 USD/mois équivalent). Business : 239,88 USD/an (19,99 USD/mois équivalent). Offres mensuelles et Teams distinctes."
     },
     "pricingEn": {
       "free": "Permanent Free plan: 720p export, 12 projects, videos up to 10 min",
-      "paid": "Plus: $11.99/month (billed annually) or $19.99/month (monthly); Business: $19.99/month (billed annually) or $29.99/month (monthly); Teams on quote"
+      "paid": "Plus: USD 143.88/year (USD 11.99/month equivalent). Business: USD 239.88/year (USD 19.99/month equivalent). Separate monthly and Teams options."
     },
-    "defaultMonthlyPrice": 10.3,
+    "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
-        "Prix officiels en dollars ; le tarif mensuel réduit exige un engagement annuel.",
-        "Le filigrane FlexClip s'applique dès que l'usage dépasse les ressources du plan (stock vidéo/audio).",
-        "Le plan Équipes (sièges) n'a pas de prix public, uniquement un formulaire de contact."
+        "Montants en USD, facturation annuelle payée d'avance ; taxes non précisées.",
+        "Crédits IA limités : 3600/an avec Plus, 9600/an avec Business sur les offres annuelles.",
+        "Un filigrane peut apparaître si les ressources utilisées dépassent celles de votre plan.",
+        "Les offres Teams sont distinctes des abonnements individuels."
       ],
       "cautionsEn": [
-        "Official prices are in US dollars; the lower monthly rate requires an annual commitment.",
-        "The FlexClip watermark applies as soon as usage exceeds the plan's resources (stock video/audio).",
-        "The Teams (seats) plan has no public price, only a contact form."
+        "USD amounts, annual billing paid upfront; tax treatment unspecified.",
+        "AI credits are limited: 3,600/year on Plus and 9,600/year on Business with annual plans.",
+        "A watermark may appear when resources exceed your plan allowance.",
+        "Teams plans are separate from individual subscriptions."
       ],
-      "verified_on": "2026-09-11",
+      "verified_on": "2026-09-27",
       "source_domain": "flexclip.com",
-      "usage_sensitive": false,
+      "usage_sensitive": true,
       "compare_plan_kind": "account",
       "compare_plan_name": "Plus (facturation annuelle)",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.flexclip.com/pricing.html",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10.3,
+      "compare_price_monthly_eur": null,
       "plans": [
         {
           "planKey": "free",
@@ -185538,7 +185540,14 @@
           "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
           "pricingUnit": "par compte",
           "isFree": true,
-          "isComparePlan": false
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
         },
         {
           "planKey": "plus",
@@ -185553,8 +185562,13 @@
           "pricingUnit": "par compte",
           "isFree": false,
           "isComparePlan": true,
-          "nativeAmount": 11.99,
-          "nativeCurrency": "USD"
+          "nativeAmount": 143.88,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
         },
         {
           "planKey": "business",
@@ -185569,14 +185583,19 @@
           "pricingUnit": "par compte",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 19.99,
-          "nativeCurrency": "USD"
+          "nativeAmount": 239.88,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
         }
       ]
     },
     "websiteUrl": "https://www.flexclip.com/",
-    "affiliateLink": "",
-    "logo": "https://logo.clearbit.com/flexclip.com",
+    "affiliateLink": "https://tidd.ly/4hRTGb1",
+    "logo": "/tool-media/logos/flexclip.svg",
     "verdict": {
       "keepIf": [
         "Vous produisez régulièrement des vidéos marketing ou promotionnelles courtes.",
@@ -185604,30 +185623,28 @@
       "threshold": "Choose FlexClip when your main need is producing marketing videos quickly from templates, with built-in AI tools rather than frame-by-frame editing. Test the free plan on a real project before upgrading to Plus to remove the watermark and limits."
     },
     "pros": [
-      "Plan gratuit réellement utilisable, pas seulement une démo limitée.",
-      "Plus de 6 000 modèles et une bibliothèque de stock très large incluse.",
-      "Suite IA large : texte-vers-vidéo, sous-titres, retrait d'arrière-plan, retrait de voix.",
-      "Fonctionne entièrement dans le navigateur, aucune installation.",
-      "Export de la vidéo finale toujours possible, à toutes les formules."
+      "Édition dans le navigateur avec modèles et médias intégrés.",
+      "Plan gratuit pour vérifier le rendu avant de payer.",
+      "Sous-titrage, synthèse vocale et génération vidéo dans le même environnement.",
+      "Export 1080p avec Plus et 4K avec Business."
     ],
     "prosEn": [
-      "Genuinely usable free plan, not just a limited demo.",
-      "Over 6,000 templates plus a very large stock library included.",
-      "Broad AI suite: text-to-video, subtitles, background removal, vocal removal.",
-      "Runs entirely in the browser, no installation.",
-      "Exporting the finished video is always possible, on every plan."
+      "Browser editing with built-in templates and media.",
+      "Free plan to check the output before paying.",
+      "Subtitles, text-to-speech and video generation in one environment.",
+      "1080p export on Plus and 4K on Business."
     ],
     "cons": [
-      "Filigrane appliqué dès que l'usage dépasse les ressources du plan gratuit.",
-      "Tarif réduit réservé à l'engagement annuel, sinon le mensuel coûte 60 à 65 % plus cher.",
-      "Plan Équipes sans prix public, seulement un formulaire de contact.",
-      "Reste un outil de montage par modèles, pas un logiciel de montage professionnel avancé."
+      "Free limité au 720p, à 12 projets et à 10 minutes par vidéo.",
+      "Plus limité à cinq vidéos et cinq pistes audio de stock par projet.",
+      "Crédits IA limités, même avec un abonnement vidéo payant.",
+      "Le prix annuel est payé d'avance ; le tarif mensuel est distinct."
     ],
     "consEn": [
-      "Watermark applies as soon as usage exceeds the free plan's resources.",
-      "The lower rate requires an annual commitment; monthly billing costs 60-65% more.",
-      "Teams plan has no public price, only a contact form.",
-      "Remains a template-based editor, not an advanced professional editing tool."
+      "Free is limited to 720p, 12 projects and 10 minutes per video.",
+      "Plus allows five stock videos and five stock audio tracks per project.",
+      "AI credits are limited even with a paid video subscription.",
+      "Annual pricing is paid upfront; monthly pricing is separate."
     ],
     "useCases": [
       "Créer une vidéo promotionnelle pour les réseaux sociaux à partir d'un modèle.",
@@ -185662,7 +185679,8 @@
     "seo": {
       "idealForFr": "Idéal pour créer rapidement des vidéos marketing à partir de modèles, sans logiciel de montage.",
       "idealForEn": "Ideal for quickly creating marketing videos from templates, with no editing software.",
-      "metaDescription": "FlexClip : avis, tarifs Free, Plus et Business, éditeur vidéo à modèles, suite IA et limites pour créateurs et petites marques."
+      "metaDescription": "FlexClip : avis, prix en USD, limites du gratuit, exports 1080p et 4K, crédits IA et visuels officiels. Quel plan choisir pour vos vidéos ?",
+      "metaDescriptionEn": "FlexClip review: USD pricing, free plan limits, 1080p and 4K exports, AI credits and official visuals. Choose the right plan for your videos."
     },
     "articles": [],
     "soloRelevance": "high",
@@ -185682,7 +185700,7 @@
     "migrationGuide": null,
     "downgradePlan": null,
     "personas": [],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
@@ -185700,31 +185718,126 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "ogImageUrl": "https://resource.flexclip.com/share/current.webp",
-    "galleryImages": [],
+    "ogImageUrl": "/tool-media/flexclip/overview.webp",
+    "galleryImages": [
+      "/tool-media/flexclip/editor.webp",
+      "/tool-media/flexclip/ai-video.webp"
+    ],
     "force_silence": false,
     "toolTrimRating": {
       "valeurAjoutee": 4,
-      "simplicite": 3,
+      "simplicite": 4,
       "utilisation": 4,
       "puissance": 4,
-      "reversibilite": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
       "evidence": {
-        "valeurAjoutee": "Le plan gratuit permanent (12 projets, export 720p) est réellement utilisable pour un premier projet complet, pas seulement une démo bridée, et remplace à lui seul un accès à une banque d'images/vidéos, un outil de sous-titrage et un éditeur basique (source : flexclip.com/pricing.html, vérifié le 2026-09-11).",
-        "simplicite": "L'édition par modèle et l'absence d'installation abaissent la barrière d'entrée, mais les avis mis en avant sur le site ne citent que des prénoms sans lien vérifiable vers un profil réel, donc sans validation indépendante de l'ergonomie au quotidien (source : flexclip.com, vérifié le 2026-09-11).",
-        "utilisation": "L'usage quotidien couvre le montage par modèles, l'enregistrement d'écran/webcam, la conversion et la compression vidéo, en plus d'une douzaine d'outils IA (texte-vers-vidéo, script, sous-titres, suppression de bruit et de voix), un périmètre large pour un créateur ou une petite équipe marketing (source : flexclip.com, vérifié le 2026-09-11).",
-        "puissance": "La combinaison modèles + banque de 4M+ médias + suite IA complète (texte-vers-vidéo, TTS, retrait d'arrière-plan, upscaling photo) est rare à ce prix, mais reste un outil de montage assisté par modèles, pas un logiciel de montage professionnel avec étalonnage ou mixage audio avancé (source : flexclip.com, vérifié le 2026-09-11).",
-        "reversibilite": "L'export de la vidéo finale est la fonction même du produit et reste possible à tous les plans (avec filigrane et résolution réduite en gratuit) ; la politique de confidentialité garantit en plus les droits RGPD d'accès, de suppression et de portabilité pour les résidents de l'Espace économique européen (source : flexclip.com/privacy.html, vérifié le 2026-09-11)."
+        "valeurAjoutee": "Modèles, stock, édition et IA réunis pour des vidéos marketing. Le plan Free permet de vérifier un export 720p. Analyse documentaire du site et des tarifs officiels, 27/09/2026.",
+        "simplicite": "Le parcours par modèles et le navigateur réduisent la mise en place. L'ergonomie n'a pas été testée en session de production.",
+        "utilisation": "Montage, textes, voix off et sous-titres couvrent la préparation de vidéos sociales et de tutoriels. L'intérêt dépend du volume réel de publication.",
+        "puissance": "1080p avec Plus, 4K avec Business et outils IA intégrés. Les crédits IA et les quotas de stock limitent l'usage selon le plan.",
+        "reversibilite": "Les vidéos finales sont exportables. Aucun format de projet éditable transférable vers un autre éditeur n'a été confirmé dans les sources consultées."
       },
       "evidenceEn": {
-        "valeurAjoutee": "The permanent free plan (12 projects, 720p export) is genuinely usable for a first complete project, not just a capped demo, and on its own replaces access to a stock media library, a subtitling tool and a basic editor (source: flexclip.com/pricing.html, verified 2026-09-11).",
-        "simplicite": "Template-based editing and no installation lower the entry barrier, but the testimonials featured on the site cite only first names with no verifiable link to a real profile, so there's no independent validation of day-to-day ergonomics (source: flexclip.com, verified 2026-09-11).",
-        "utilisation": "Daily usage spans template-based editing, screen/webcam recording, video conversion and compression, plus a dozen AI tools (text-to-video, script, subtitles, noise and vocal removal), a broad scope for a creator or a small marketing team (source: flexclip.com, verified 2026-09-11).",
-        "puissance": "The combination of templates plus a 4M+ media library plus a full AI suite (text-to-video, TTS, background removal, photo upscaling) is unusual at this price, but it remains a template-assisted editor, not professional editing software with advanced color grading or audio mixing (source: flexclip.com, verified 2026-09-11).",
-        "reversibilite": "Exporting the finished video is the product's core function and stays possible on every plan (with a watermark and lower resolution on Free); the privacy policy additionally guarantees GDPR access, deletion and portability rights for European Economic Area residents (source: flexclip.com/privacy.html, verified 2026-09-11)."
-      },
-      "lastActivityVerifiedOn": "2026-09-11",
-      "notedOn": "2026-09-11"
+        "valeurAjoutee": "Templates, stock, editing and AI combined for marketing videos. Free allows a 720p export check. Documentary review of the official website and pricing, 2026-09-27.",
+        "simplicite": "Templates and browser access reduce setup. Usability has not been tested in a production session.",
+        "utilisation": "Editing, text, voiceovers and subtitles cover social videos and tutorials. Value depends on actual publishing volume.",
+        "puissance": "1080p on Plus, 4K on Business and integrated AI tools. AI credits and stock quotas limit usage by plan.",
+        "reversibilite": "Finished videos can be exported. An editable project format transferable to another editor was not confirmed in the sources reviewed."
+      }
+    },
+    "link": "https://tidd.ly/4hRTGb1",
+    "affiliateCtaLabelFr": "Créer une vidéo gratuitement",
+    "affiliateCtaLabelEn": "Create a video for free",
+    "pricing_v5En": {
+      "cautions": [
+        "USD amounts, annual billing paid upfront; tax treatment unspecified.",
+        "AI credits are limited: 3,600/year on Plus and 9,600/year on Business with annual plans.",
+        "A watermark may appear when resources exceed your plan allowance.",
+        "Teams plans are separate from individual subscriptions."
+      ],
+      "cautionsEn": [
+        "USD amounts, annual billing paid upfront; tax treatment unspecified.",
+        "AI credits are limited: 3,600/year on Plus and 9,600/year on Business with annual plans.",
+        "A watermark may appear when resources exceed your plan allowance.",
+        "Teams plans are separate from individual subscriptions."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "flexclip.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Plus (annual billing)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.flexclip.com/pricing.html",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "720p exports, up to 12 projects and 10-minute videos.",
+          "featureHighlights": [
+            "720p export",
+            "1 stock video and audio per project",
+            "Up to 12 projects"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "per account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "summary": "1080p exports, unlimited projects and length, no FlexClip watermark.",
+          "featureHighlights": [
+            "1080p Full HD",
+            "3,600 AI credits per year",
+            "30GB cloud storage"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "per account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 143.88,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "summary": "4K exports, unlimited stock, 100GB cloud and 1TB video hosting.",
+          "featureHighlights": [
+            "4K Ultra HD",
+            "9,600 AI credits per year",
+            "Unlimited stock video and audio"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "per account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 239.88,
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
     }
   },
   {
@@ -191604,6 +191717,801 @@
         "utilisation": "Relevant to frequent calls; appearance needs are not universal. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27).",
         "puissance": "Live facial and colour controls; performance not measured. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27).",
         "reversibilite": "You can switch back to the original webcam; cancel the subscription separately. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27)."
+      }
+    }
+  },
+  {
+    "id": "pdf-agile",
+    "slug": "pdf-agile",
+    "name": "PDF Agile",
+    "category": "legal-contracts",
+    "bestFor": [
+      "all"
+    ],
+    "covers": [
+      "signature",
+      "pdf-review",
+      "document-delivery"
+    ],
+    "functional_needs": [
+      "signature",
+      "pdf-review",
+      "document-delivery"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b"
+    ],
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "websiteUrl": "https://www.pdfagile.com/",
+    "website": "https://www.pdfagile.com/",
+    "affiliateLink": "https://tidd.ly/4iWjapP",
+    "link": "https://tidd.ly/4iWjapP",
+    "affiliateCtaLabelFr": "Découvrir PDF Agile",
+    "affiliateCtaLabelEn": "Explore PDF Agile",
+    "shortDescription": "Éditer, convertir et organiser des PDF, avec OCR et une offre de licence à vie.",
+    "shortDescriptionEn": "Edit, convert and organize PDFs, with OCR and a lifetime licence option.",
+    "longDescription": "PDF Agile regroupe l’édition de texte et d’images, la conversion de formats, l’organisation de pages et la reconnaissance de caractères dans les documents numérisés. Pour un indépendant, il peut servir à corriger un document reçu, assembler un dossier et récupérer du texte sans multiplier les utilitaires.\n\nLa licence à vie est affichée à 119 USD lors de cette vérification, en promotion. Il s’agit d’un paiement unique, pas d’un montant mensuel. La grille indique aussi 39 USD pour l’offre Semi-Annual et 59 USD pour Annual, avec respectivement six mois et un an de mises à jour et de support. L’éditeur précise que ses achats depuis 2023 ne comportent pas de prélèvements récurrents. L’offre Lifetime annonce les mises à jour à vie. Une licence permet l’activation sur deux ordinateurs via un compte.\n\nAvant d’acheter, utilisez le téléchargement gratuit sur un document non sensible : contrôlez la mise en page après conversion, les accents après OCR et le résultat exporté. La version gratuite limite les conversions à deux pages par tâche et cinq tâches selon la grille. Ne confondez pas insertion d’une signature et circuit de signature certifié. La fidélité des conversions et la qualité OCR ne sont pas testées par ToolTrim ; vérifiez aussi la compatibilité de votre système et le traitement des fichiers dans les outils en ligne avant usage.",
+    "longDescriptionEn": "PDF Agile combines text and image editing, format conversion, page organization and optical character recognition for scanned documents. For an independent professional, it can help correct a received document, assemble a file and recover text without collecting separate utilities.\n\nThe lifetime licence is advertised at $119 at this check, as a promotion. This is a one-time payment, not a monthly amount. The price list also shows $39 for Semi-Annual and $59 for Annual, with six months and one year of upgrades and support respectively. The vendor states that purchases since 2023 have no recurring charges. Lifetime includes advertised lifetime upgrades. One licence supports activation on two computers through an account.\n\nBefore buying, try the free download with a non-sensitive document: check layout after conversion, characters after OCR and the exported result. The price table limits free conversion to two pages per task and five tasks. Do not equate adding a signature with a certified signing workflow. ToolTrim has not tested conversion fidelity or OCR quality; also check your operating system compatibility and how the online tools handle files before use.",
+    "pricing": {
+      "free": "Téléchargement gratuit ; conversions limitées selon la grille.",
+      "paid": "Licence à vie : 119 USD, paiement unique promotionnel. Annual : 59 USD ; Semi-Annual : 39 USD. Aucun prélèvement récurrent annoncé."
+    },
+    "pricingEn": {
+      "free": "Free download; conversion limits apply.",
+      "paid": "Lifetime licence: promotional $119 one-time payment. Annual: $59; Semi-Annual: $39. No recurring charges advertised."
+    },
+    "pros": [
+      "Édition, conversion et OCR réunis.",
+      "Licence à vie proposée sans paiement mensuel.",
+      "Activation sur deux ordinateurs annoncée."
+    ],
+    "prosEn": [
+      "Editing, conversion and OCR together.",
+      "Lifetime option without monthly payments.",
+      "Advertised activation on two computers."
+    ],
+    "cons": [
+      "Conversion gratuite limitée.",
+      "Prix à vie promotionnel susceptible de changer.",
+      "Qualité OCR et mise en page à tester sur ses documents."
+    ],
+    "consEn": [
+      "Limited free conversion.",
+      "Promotional lifetime price may change.",
+      "Test OCR and layout on your own documents."
+    ],
+    "alternatives": [
+      "adobe-acrobat"
+    ],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "downgradePlan": null,
+    "defaultMonthlyPrice": 0,
+    "logo": "/tool-media/logos/pdf-agile.svg",
+    "ogImageUrl": "/tool-media/pdf-agile/edit.png",
+    "galleryImages": [
+      "/tool-media/pdf-agile/convert.png",
+      "/tool-media/pdf-agile/ocr.png"
+    ],
+    "seo": {
+      "metaDescription": "PDF Agile : édition PDF, OCR et conversion. Licence à vie à 119 USD en paiement unique, limites du gratuit et visuels officiels.",
+      "metaDescriptionEn": "PDF Agile PDF editing, OCR and conversion: $119 one-time lifetime licence, free limits and official product visuals."
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous modifiez régulièrement des PDF et préférez une licence sans prélèvement récurrent."
+      ],
+      "avoidIf": [
+        "Votre besoin se limite à lire des PDF ou exige un circuit de signature certifié."
+      ],
+      "threshold": "Testez conversion et OCR sur vos documents avant d’acheter la licence à vie."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly edit PDFs and prefer a licence without recurring charges."
+      ],
+      "avoidIf": [
+        "You only read PDFs or require a certified signing workflow."
+      ],
+      "threshold": "Test conversion and OCR on your documents before buying the lifetime licence."
+    },
+    "useCases": [
+      "Corriger le texte d’un PDF reçu.",
+      "Assembler et réorganiser un dossier.",
+      "Extraire du texte d’un document numérisé."
+    ],
+    "useCasesEn": [
+      "Correct text in a received PDF.",
+      "Combine and rearrange a document pack.",
+      "Extract text from a scanned document."
+    ],
+    "description": "Éditer, convertir et organiser des PDF, avec OCR et une offre de licence à vie.",
+    "pricing_v5": {
+      "cautions": [
+        "Prix à vie promotionnel ; taxes non précisées. Achats sans prélèvement récurrent selon l’éditeur."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "pdfagile.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Licence à vie",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.pdfagile.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "nativeAmount": 119,
+          "planKey": "lifetime",
+          "displayName": "Licence à vie",
+          "summary": "Paiement unique. Mises à jour à vie annoncées ; tarif promotionnel.",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "detailsSourceUrl": "https://www.pdfagile.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "nativeAmount": 59,
+          "planKey": "annual",
+          "displayName": "Annual",
+          "summary": "Paiement unique, un an de mises à jour et de support prioritaire.",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "detailsSourceUrl": "https://www.pdfagile.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "nativeAmount": 39,
+          "planKey": "semiannual",
+          "displayName": "Semi-Annual",
+          "summary": "Paiement unique, six mois de mises à jour et de support prioritaire.",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "detailsSourceUrl": "https://www.pdfagile.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "Promotional lifetime price; taxes unspecified. All listed purchases are non-recurring according to the vendor."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "pdfagile.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Lifetime licence",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.pdfagile.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "nativeAmount": 119,
+          "planKey": "lifetime",
+          "displayName": "Lifetime licence",
+          "summary": "One-time payment. Lifetime upgrades advertised; promotional price.",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "detailsSourceUrl": "https://www.pdfagile.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "nativeAmount": 59,
+          "planKey": "annual",
+          "displayName": "Annual",
+          "summary": "One-time payment, one year of upgrades and priority support.",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "detailsSourceUrl": "https://www.pdfagile.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "nativeAmount": 39,
+          "planKey": "semiannual",
+          "displayName": "Semi-Annual",
+          "summary": "One-time payment, six months of upgrades and priority support.",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "detailsSourceUrl": "https://www.pdfagile.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Édition, conversion et OCR réunis avec achat unique. Analyse documentaire, sans test logiciel. https://www.pdfagile.com/pricing (2026-09-27).",
+        "simplicite": "Outils regroupés ; prise en main non testée. Analyse documentaire, sans test logiciel. https://www.pdfagile.com/pricing (2026-09-27).",
+        "utilisation": "Pertinent pour le traitement régulier de documents. Analyse documentaire, sans test logiciel. https://www.pdfagile.com/pricing (2026-09-27).",
+        "puissance": "OCR et conversion annoncés, fidélité non mesurée. Analyse documentaire, sans test logiciel. https://www.pdfagile.com/pricing (2026-09-27).",
+        "reversibilite": "Fichiers PDF et exports réutilisables ; activation liée au compte. Analyse documentaire, sans test logiciel. https://www.pdfagile.com/pricing (2026-09-27)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Editing, conversion and OCR with a one-time purchase. Desk research, no software test. https://www.pdfagile.com/pricing (2026-09-27).",
+        "simplicite": "Unified toolset; ease of use not tested. Desk research, no software test. https://www.pdfagile.com/pricing (2026-09-27).",
+        "utilisation": "Relevant to recurring document work. Desk research, no software test. https://www.pdfagile.com/pricing (2026-09-27).",
+        "puissance": "Advertised OCR and conversion; fidelity not measured. Desk research, no software test. https://www.pdfagile.com/pricing (2026-09-27).",
+        "reversibilite": "Reusable PDF files and exports; account-based activation. Desk research, no software test. https://www.pdfagile.com/pricing (2026-09-27)."
+      }
+    }
+  },
+  {
+    "id": "piktochart",
+    "slug": "piktochart",
+    "name": "Piktochart",
+    "category": "creation",
+    "bestFor": [
+      "all"
+    ],
+    "tool_type": "specialise",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "community-manager"
+    ],
+    "covers": [
+      "creation-contenu",
+      "presentations"
+    ],
+    "functional_needs": [
+      "creation-contenu",
+      "presentations"
+    ],
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "websiteUrl": "https://piktochart.com/",
+    "website": "https://piktochart.com/",
+    "affiliateLink": "https://tidd.ly/3V5Yxh1",
+    "link": "https://tidd.ly/3V5Yxh1",
+    "affiliateCtaLabelFr": "Créer un visuel gratuitement",
+    "affiliateCtaLabelEn": "Create a visual for free",
+    "shortDescription": "Infographies, rapports et présentations visuelles, avec modèles et assistance IA.",
+    "shortDescriptionEn": "Infographics, reports and visual presentations, with templates and AI assistance.",
+    "longDescription": "Piktochart aide à transformer un contenu dense en support visuel : infographie, rapport, présentation ou document de communication. Il s'adresse notamment aux consultants, formateurs et petites équipes qui doivent expliquer une idée sans repartir d'une page blanche.\n\nSon intérêt est de structurer une information avant de la mettre en forme. Modèles, graphiques, diagrammes et outils IA donnent un point de départ ; les chiffres, le texte et la hiérarchie restent à relire avant diffusion.\n\nPour choisir, partez du livrable demandé par votre client. Un visuel destiné au web n'a pas les mêmes contraintes qu'un document à imprimer ou qu'une présentation à reprendre. Vérifiez donc le format d'export avant de payer, puis testez un vrai dossier avec votre contenu. Notre analyse est documentaire, sans test pratique.",
+    "longDescriptionEn": "Piktochart helps turn dense content into a visual deliverable: an infographic, report, presentation or communication document. It is relevant to consultants, trainers and small teams who need to explain an idea without starting from a blank page.\n\nIts value lies in structuring information before styling it. Templates, charts, diagrams and AI tools provide a starting point; figures, wording and hierarchy still need review before sharing.\n\nChoose based on the deliverable your client requires. A web graphic has different constraints from a printed document or a presentation that needs further editing. Check the export format before paying, then test a real brief with your own content. This is a documentary review, not a hands-on test.",
+    "pros": [
+      "Supports centrés sur l'explication d'informations.",
+      "Modèles, graphiques et diagrammes réunis.",
+      "Assistance IA pour démarrer un visuel."
+    ],
+    "prosEn": [
+      "Formats focused on explaining information.",
+      "Templates, charts and diagrams together.",
+      "AI assistance for an initial visual draft."
+    ],
+    "cons": [
+      "Gratuit limité à deux téléchargements PNG.",
+      "PDF et PowerPoint réservés à Business dans la grille standard.",
+      "Tarification par membre : le coût augmente avec l'équipe."
+    ],
+    "consEn": [
+      "Free is limited to two PNG downloads.",
+      "PDF and PowerPoint require Business in the standard pricing grid.",
+      "Per-member pricing increases the team cost."
+    ],
+    "useCases": [
+      "Présenter une méthode sous forme d'infographie.",
+      "Synthétiser un bilan client.",
+      "Préparer un support pédagogique."
+    ],
+    "useCasesEn": [
+      "Explain a method with an infographic.",
+      "Summarize a client report.",
+      "Prepare training material."
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous devez expliquer régulièrement des informations complexes.",
+        "Vous préférez adapter une structure existante."
+      ],
+      "avoidIf": [
+        "Votre outil actuel couvre déjà ces livrables.",
+        "Vous cherchez un outil de création graphique totalement libre."
+      ],
+      "threshold": "Testez votre document le plus représentatif. Pro peut convenir pour le PNG ; choisissez Business si PDF ou PowerPoint sont indispensables."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly explain complex information.",
+        "You prefer adapting an existing structure."
+      ],
+      "avoidIf": [
+        "Your current tool already covers these deliverables.",
+        "You need completely free-form graphic design."
+      ],
+      "threshold": "Test your most representative document. Pro may fit PNG delivery; choose Business if PDF or PowerPoint are essential."
+    },
+    "alternatives": [
+      "canva",
+      "visme"
+    ],
+    "defaultMonthlyPrice": 0,
+    "timeGainedHoursPerMonth": null,
+    "pricing": {
+      "free": "Free : deux téléchargements PNG.",
+      "paid": "Pro : 120 USD/membre/an ou 15 USD/mois. Business : 204 USD/membre/an ou 20 USD/mois."
+    },
+    "pricingEn": {
+      "free": "Free: two PNG downloads.",
+      "paid": "Pro: USD 120/member/year or USD 15/month. Business: USD 204/member/year or USD 20/month."
+    },
+    "logo": "/tool-media/logos/piktochart.png",
+    "ogImageUrl": "/tool-media/piktochart/overview.jpg",
+    "galleryImages": [
+      "/tool-media/piktochart/diagrams.png",
+      "/tool-media/piktochart/collaboration.png"
+    ],
+    "seo": {
+      "metaDescription": "Piktochart : avis, prix, limites du gratuit et différences Pro/Business. Comparez les exports PNG, PDF et PowerPoint avant de choisir.",
+      "metaDescriptionEn": "Piktochart review, pricing, free plan limits and Pro vs Business. Compare PNG, PDF and PowerPoint exports before choosing.",
+      "idealForFr": "Expliquer des informations dans des rapports, infographies et présentations.",
+      "idealForEn": "Explain information through reports, infographics and presentations."
+    },
+    "description": "Piktochart aide à transformer un contenu dense en support visuel : infographie, rapport, présentation ou document de communication. Il s'adresse notamment aux consultants, formateurs et petites équipes qui doivent expliquer une idée sans repartir d'une page blanche.\n\nSon intérêt est de structurer une information avant de la mettre en forme. Modèles, graphiques, diagrammes et outils IA donnent un point de départ ; les chiffres, le texte et la hiérarchie restent à relire avant diffusion.\n\nPour choisir, partez du livrable demandé par votre client. Un visuel destiné au web n'a pas les mêmes contraintes qu'un document à imprimer ou qu'une présentation à reprendre. Vérifiez donc le format d'export avant de payer, puis testez un vrai dossier avec votre contenu. Notre analyse est documentaire, sans test pratique.",
+    "pricing_v5": {
+      "verified_on": "2026-09-27",
+      "source_domain": "piktochart.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "per_seat",
+      "compare_plan_name": "Pro",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://piktochart.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "cautions": [
+        "Prix USD par membre ; paiement annuel anticipé pour les montants annuels. Taxes non précisées.",
+        "Crédits IA limités ; vérifier leur consommation selon la fonction."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "nativeAmount": 0,
+          "summary": "Deux téléchargements PNG.",
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "par membre",
+          "isFree": true,
+          "isComparePlan": false,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://piktochart.com/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "nativeAmount": 120,
+          "summary": "PNG illimités. Paiement annuel, soit 10 USD/mois équivalent.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "par membre",
+          "isFree": false,
+          "isComparePlan": true,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://piktochart.com/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "nativeAmount": 204,
+          "summary": "PNG, PDF et PowerPoint. Paiement annuel, soit 17 USD/mois équivalent.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "par membre",
+          "isFree": false,
+          "isComparePlan": false,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://piktochart.com/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-27",
+      "source_domain": "piktochart.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "per_seat",
+      "compare_plan_name": "Pro",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://piktochart.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "cautions": [
+        "USD per member; annual amounts are paid upfront. Taxes unspecified.",
+        "AI credits are limited; check consumption for each feature."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "nativeAmount": 0,
+          "summary": "Two PNG downloads.",
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "per member",
+          "isFree": true,
+          "isComparePlan": false,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://piktochart.com/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "nativeAmount": 120,
+          "summary": "Unlimited PNG. Annual payment, equivalent to USD 10/month.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "per member",
+          "isFree": false,
+          "isComparePlan": true,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://piktochart.com/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "nativeAmount": 204,
+          "summary": "PNG, PDF and PowerPoint. Annual payment, equivalent to USD 17/month.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "per member",
+          "isFree": false,
+          "isComparePlan": false,
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://piktochart.com/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Pertinent pour transformer un contenu dense en livrable visuel, si ce besoin revient régulièrement. Analyse documentaire des pages officielles, 27/09/2026.",
+        "simplicite": "Les modèles réduisent le travail de départ. Prise en main non testée. Analyse documentaire des pages officielles, 27/09/2026.",
+        "utilisation": "Rapports et supports explicatifs correspondent à des usages de conseil et de formation. Analyse documentaire des pages officielles, 27/09/2026.",
+        "puissance": "Graphiques, diagrammes et IA couvrent plusieurs étapes ; qualité des résultats IA non mesurée. Analyse documentaire des pages officielles, 27/09/2026.",
+        "reversibilite": "Exports disponibles selon le plan ; ne pas assimiler le PNG à un document entièrement éditable. Analyse documentaire des pages officielles, 27/09/2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Useful for turning dense content into a visual deliverable when the need is recurring. Documentary review of official pages, 2026-09-27.",
+        "simplicite": "Templates reduce initial setup. Usability not tested. Documentary review of official pages, 2026-09-27.",
+        "utilisation": "Reports and explanatory material fit consulting and training work. Documentary review of official pages, 2026-09-27.",
+        "puissance": "Charts, diagrams and AI cover several steps; AI output quality not measured. Documentary review of official pages, 2026-09-27.",
+        "reversibilite": "Exports depend on the plan; PNG should not be treated as a fully editable document. Documentary review of official pages, 2026-09-27."
+      }
+    }
+  },
+  {
+    "id": "pixlr",
+    "slug": "pixlr",
+    "name": "Pixlr",
+    "category": "creation",
+    "bestFor": [
+      "all"
+    ],
+    "tool_type": "specialise",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "community-manager"
+    ],
+    "covers": [
+      "retouche-photo",
+      "creation-contenu"
+    ],
+    "functional_needs": [
+      "retouche-photo",
+      "creation-contenu"
+    ],
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "websiteUrl": "https://pixlr.com/",
+    "website": "https://pixlr.com/",
+    "affiliateLink": "https://tidd.ly/4xN3vg8",
+    "link": "https://tidd.ly/4xN3vg8",
+    "affiliateCtaLabelFr": "Essayer Pixlr gratuitement",
+    "affiliateCtaLabelEn": "Try Pixlr for free",
+    "shortDescription": "Retouche photo dans le navigateur, avec Pixlr Editor, Express et des outils IA.",
+    "shortDescriptionEn": "Browser-based photo editing with Pixlr Editor, Express and AI tools.",
+    "longDescription": "Pixlr regroupe des outils de retouche photo accessibles dans le navigateur. Editor et Express couvrent des besoins différents, du travail sur une image aux corrections rapides. La suite propose aussi le détourage, la suppression d'objets et la génération d'images par IA.\n\nPour un indépendant ou une petite équipe, le bon point de départ est une tâche précise : nettoyer une photo produit, adapter un visuel à une publication ou préparer une composition. Cela permet de comparer Pixlr à votre outil actuel sur un résultat concret, plutôt que sur le nombre de fonctions annoncées.\n\nAvant de vous abonner, vérifiez le rendu à la taille finale et les possibilités de reprise de votre document. Si votre travail repose sur des fichiers complexes, testez leur compatibilité au lieu de supposer une équivalence avec un logiciel professionnel. L'analyse présentée ici est documentaire, sans test pratique.",
+    "longDescriptionEn": "Pixlr brings together photo-editing tools that run in your browser. Editor and Express address different needs, from working on an image to quick corrections. The suite also offers background removal, object removal and AI image generation.\n\nFor a freelancer or small team, start with a specific task: clean up a product photo, adapt an image for a post or prepare a composition. This lets you compare Pixlr with your existing tool using a concrete deliverable rather than a feature count.\n\nBefore subscribing, check the output at its final size and how you can resume editing the document. If you rely on complex files, test compatibility instead of assuming equivalence with professional software. This review is based on documentation, not hands-on testing.",
+    "pros": [
+      "Retouche accessible sans installation.",
+      "Corrections photo et outils IA dans la même suite.",
+      "Offre Plus pour travailler sans publicité."
+    ],
+    "prosEn": [
+      "Photo editing without installation.",
+      "Photo corrections and AI tools in one suite.",
+      "Plus plan for ad-free editing."
+    ],
+    "cons": [
+      "Les crédits IA d'abonnement expirent ; ce n'est pas une réserve permanente.",
+      "Les fonctions et modèles IA accessibles varient selon le plan.",
+      "Compatibilité des projets complexes à tester avant migration."
+    ],
+    "consEn": [
+      "Subscription AI credits expire; they are not a permanent balance.",
+      "Available AI features and models depend on the plan.",
+      "Test complex project compatibility before migrating."
+    ],
+    "useCases": [
+      "Retoucher une photo destinée à une fiche produit.",
+      "Adapter un visuel pour les réseaux sociaux.",
+      "Détourer un sujet ou retirer un élément gênant."
+    ],
+    "useCasesEn": [
+      "Retouch a product listing photo.",
+      "Adapt an image for social media.",
+      "Remove a background or unwanted object."
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous faites des retouches régulières dans le navigateur.",
+        "Vous cherchez un complément léger à vos outils de création."
+      ],
+      "avoidIf": [
+        "Votre chaîne de production exige une compatibilité non vérifiée.",
+        "Vous n'avez besoin que d'une correction ponctuelle déjà couverte ailleurs."
+      ],
+      "threshold": "Testez une photo représentative et son export. Plus vise les besoins de base ; Premium devient pertinent si ses modèles et son quota IA correspondent à votre usage."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly edit images in a browser.",
+        "You want a lightweight addition to your creative tools."
+      ],
+      "avoidIf": [
+        "Your workflow requires compatibility you have not verified.",
+        "You only need a one-off edit already covered by another tool."
+      ],
+      "threshold": "Test a representative photo and its export. Plus targets basic needs; Premium makes sense when its models and AI allowance match your usage."
+    },
+    "alternatives": [
+      "canva",
+      "adobe-photoshop"
+    ],
+    "defaultMonthlyPrice": 2.49,
+    "timeGainedHoursPerMonth": null,
+    "pricing": {
+      "free": "Accès gratuit avec limites ; vérifier les fonctions nécessaires.",
+      "paid": "Tarifs mensuels observés en EUR : Plus 2,49 €, Premium 9,99 €, Ultra dès 24,99 €. Formules annuelles distinctes."
+    },
+    "pricingEn": {
+      "free": "Free access with limits; check the features you need.",
+      "paid": "Monthly EUR prices observed: Plus €2.49, Premium €9.99, Ultra from €24.99. Separate annual options."
+    },
+    "logo": "/tool-media/logos/pixlr.png",
+    "ogImageUrl": "/tool-media/pixlr/overview.jpg",
+    "galleryImages": [
+      "/tool-media/pixlr/editor.jpg",
+      "/tool-media/pixlr/background.webp"
+    ],
+    "seo": {
+      "metaDescription": "Pixlr : avis, prix Plus et Premium, crédits IA et retouche photo en ligne. Découvrez les limites et les visuels officiels avant de choisir.",
+      "metaDescriptionEn": "Pixlr review: Plus and Premium pricing, AI credits and online photo editing. Explore limits and official visuals before choosing.",
+      "idealForFr": "Retouche photo et visuels web dans le navigateur.",
+      "idealForEn": "Browser-based photo editing and web visuals."
+    },
+    "description": "Pixlr regroupe des outils de retouche photo accessibles dans le navigateur. Editor et Express couvrent des besoins différents, du travail sur une image aux corrections rapides. La suite propose aussi le détourage, la suppression d'objets et la génération d'images par IA.\n\nPour un indépendant ou une petite équipe, le bon point de départ est une tâche précise : nettoyer une photo produit, adapter un visuel à une publication ou préparer une composition. Cela permet de comparer Pixlr à votre outil actuel sur un résultat concret, plutôt que sur le nombre de fonctions annoncées.\n\nAvant de vous abonner, vérifiez le rendu à la taille finale et les possibilités de reprise de votre document. Si votre travail repose sur des fichiers complexes, testez leur compatibilité au lieu de supposer une équivalence avec un logiciel professionnel. L'analyse présentée ici est documentaire, sans test pratique.",
+    "pricing_v5": {
+      "verified_on": "2026-09-27",
+      "source_domain": "pixlr.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Plus (mensuel)",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://pixlr.com/fr/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 2.49,
+      "cautions": [
+        "Prix EUR observés depuis la France ; taxes non précisées.",
+        "Crédits d'abonnement à durée limitée. Les packs de crédits sont distincts.",
+        "Ultra inclut des conditions d'usage raisonnable ; ne pas assimiler illimité à tous les modèles."
+      ],
+      "plans": [
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "nativeAmount": 2.49,
+          "summary": "Sans publicité, sauvegardes illimitées et 80 crédits IA/mois.",
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "isFree": false,
+          "isComparePlan": true,
+          "detailsSourceUrl": "https://pixlr.com/fr/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "nativeAmount": 9.99,
+          "summary": "1000 crédits IA/mois et mode privé pour les générations.",
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "isFree": false,
+          "isComparePlan": false,
+          "detailsSourceUrl": "https://pixlr.com/fr/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "ultra",
+          "displayName": "Ultra",
+          "nativeAmount": 24.99,
+          "summary": "Prix de départ ; Ultra MAX est une offre supérieure distincte.",
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "isFree": false,
+          "isComparePlan": false,
+          "detailsSourceUrl": "https://pixlr.com/fr/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-27",
+      "source_domain": "pixlr.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Plus (monthly)",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://pixlr.com/fr/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 2.49,
+      "cautions": [
+        "EUR prices observed from France; taxes unspecified.",
+        "Subscription credits expire. Credit packs are separate.",
+        "Ultra is subject to fair use; unlimited does not mean every model."
+      ],
+      "plans": [
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "nativeAmount": 2.49,
+          "summary": "Ad-free, unlimited saves and 80 AI credits/month.",
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "isFree": false,
+          "isComparePlan": true,
+          "detailsSourceUrl": "https://pixlr.com/fr/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "nativeAmount": 9.99,
+          "summary": "1,000 AI credits/month and private generation mode.",
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "isFree": false,
+          "isComparePlan": false,
+          "detailsSourceUrl": "https://pixlr.com/fr/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "ultra",
+          "displayName": "Ultra",
+          "nativeAmount": 24.99,
+          "summary": "Starting price; Ultra MAX is a separate higher tier.",
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "isFree": false,
+          "isComparePlan": false,
+          "detailsSourceUrl": "https://pixlr.com/fr/pricing/",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Suite adaptée aux retouches web récurrentes. Analyse documentaire, sources officielles du 27/09/2026.",
+        "simplicite": "Accès navigateur, mais les outils Editor et Express nécessitent de choisir son parcours. Analyse documentaire, sources officielles du 27/09/2026.",
+        "utilisation": "Photos produit et publications sociales sont des usages concrets. Analyse documentaire, sources officielles du 27/09/2026.",
+        "puissance": "Retouche et génération réunies ; qualité IA non mesurée. Analyse documentaire, sources officielles du 27/09/2026.",
+        "reversibilite": "Exports à tester avec vos fichiers ; aucune équivalence complète de projet avec Photoshop n'est présumée. Analyse documentaire, sources officielles du 27/09/2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Suitable for recurring web image edits. Documentary review, official sources on 2026-09-27.",
+        "simplicite": "Browser access, but users must choose between Editor and Express workflows. Documentary review, official sources on 2026-09-27.",
+        "utilisation": "Product photos and social posts are concrete use cases. Documentary review, official sources on 2026-09-27.",
+        "puissance": "Editing and generation together; AI quality not measured. Documentary review, official sources on 2026-09-27.",
+        "reversibilite": "Test exports with your files; full Photoshop project equivalence is not assumed. Documentary review, official sources on 2026-09-27."
       }
     }
   }

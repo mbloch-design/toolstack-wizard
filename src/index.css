@@ -23896,6 +23896,10 @@ section[id]:not(.cp-guide-section) {
   display: block;
 }
 .tg-main-img[src*="/tool-media/maniana/"],
+.tg-main-img[src*="/tool-media/pdf-agile/"],
+.tg-main-img[src*="/tool-media/flexclip/"],
+.tg-main-img[src*="/tool-media/piktochart/"],
+.tg-main-img[src*="/tool-media/pixlr/"],
 .tg-main-img[src*="/og-images/maniana-review"],
 .tg-main-img[src*="/tool-media/faceready/"],
 .tg-main-img[src*="/og-images/faceready-review"] {
