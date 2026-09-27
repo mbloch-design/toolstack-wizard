@@ -4684,3 +4684,8 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 
 - Ajout du badge officiel Twelve Tools dans le rail « Repéré sur », avec lien externe sécurisé et chargement différé.
 - Vérification du rendu dans les thèmes clair et sombre ; build production validé.
+## 2026-09-27 : navigation des résultats vers les fiches
+
+- Contournement reloadDocument retiré. Route /fr/tool/tapstitch existante, aucun alias ou redirect serveur spécifique trouvé. Défaut confirmé : fichiers /assets/tool-catalog/*.json stables déclarés immutable un an et lus avec force-cache. Revalidation HTTP désormais obligatoire, exception de cache serveur limitée au catalogue.
+- Retrait du renvoi silencieux vers /tools lorsque les données manquent : message local avec réessai, URL conservée. Corrige aussi le retour vers une fiche SSR après navigation vers une autre fiche (restauration de la bonne identité).
+- Tests de non-régression : navigation Gamma > Tapstitch > Gamma et revalidation du catalogue en mode production. Le retour exact à l’accueil rapporté n’a pas été reproduit ; distinguer le défaut démontré du symptôme signalé.

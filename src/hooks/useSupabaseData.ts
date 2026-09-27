@@ -140,7 +140,9 @@ async function loadLocalTool(slug: string): Promise<Tool | null> {
   const shardKey = getToolShardKey(slug);
   let pending = localToolShardPromises.get(shardKey);
   if (!pending) {
-    pending = fetch(`/assets/tool-catalog/${shardKey}.json`, { cache: "force-cache" })
+    // These filenames are stable across releases, unlike hashed JS assets.
+    // Revalidate even an old browser entry marked immutable by a prior deploy.
+    pending = fetch(`/assets/tool-catalog/${shardKey}.json`, { cache: "no-cache" })
       .then((response) => {
         if (!response.ok) throw new Error(`Catalogue shard ${shardKey}: HTTP ${response.status}`);
         return response.json() as Promise<unknown[]>;
@@ -562,7 +564,11 @@ export function useToolBySlug(slug: string | undefined) {
     // full Supabase round-trip (~1.1s, confirmed in a real PageSpeed run)
     // sitting in the LCP-relevant critical request chain for no visible
     // benefit on a normal page view. Skip it when SSR already matches.
-    if (ssrMatches) return;
+    if (ssrMatches) {
+      setTool(ssrTool!);
+      setLoading(false);
+      return;
+    }
     let cancelled = false;
 
     (async () => {
@@ -612,7 +618,10 @@ export function useToolBySlug(slug: string | undefined) {
     };
   }, [slug]);
 
-  return { tool, loading };
+  // Never expose the previous route's record during the first render of a
+  // slug change, before its loading effect runs.
+  const matchesRoute = !!tool && (tool.slug === slug || tool.id === slug);
+  return { tool: ssrMatches ? ssrTool! : matchesRoute ? tool : null, loading: ssrMatches ? false : loading };
 }
 
 export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions = {}) {

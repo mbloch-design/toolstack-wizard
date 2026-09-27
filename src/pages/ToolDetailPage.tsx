@@ -1,4 +1,4 @@
-import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
@@ -67,7 +67,6 @@ const ToolDetailPage = () => {
   const { currency } = useCurrency();
   const { slug } = useParams();
   const location = useLocation();
-  const navigate = useNavigate();
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
@@ -119,12 +118,6 @@ const ToolDetailPage = () => {
   /* ── Tous les hooks doivent être déclarés AVANT les returns conditionnels ──
      (Rules of Hooks — sinon React error #300/#310 en concurrent mode)        */
 
-  /* Redirect outil non trouvé → /tools */
-  useEffect(() => {
-    if (!loading && !tool) {
-      navigate(`${prefix}/tools`, { replace: true });
-    }
-  }, [loading, tool, navigate, prefix]);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -177,7 +170,12 @@ const ToolDetailPage = () => {
     );
   }
 
-  if (!tool) return null;
+  if (!tool) return <section className="td-section" role="status">
+    <h1 className="td-title">{t("Fiche indisponible", "Listing unavailable")}</h1>
+    <p>{t("La fiche n’a pas pu être chargée. Réessayez sans perdre votre recherche.", "The listing could not be loaded. Retry without losing your search.")}</p>
+    <a href={location.pathname} className="td-hero-site-link">{t("Réessayer", "Try again")}</a>
+    <Link to={`${prefix}/search?q=${encodeURIComponent(slug || "")}`}>{t("Revenir à la recherche", "Back to search")}</Link>
+  </section>;
 
   /* ── Derived values ── */
   const category   = categories.find((c: any) => c.id === tool.categoryId);
