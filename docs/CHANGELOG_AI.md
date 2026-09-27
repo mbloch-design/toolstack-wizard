@@ -4680,3 +4680,7 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Note documentaire 3,6/5, gains horaires retirés. Export CSV sourcé sur https://leadpages.com/product/form-collection ; export complet du site non établi. Fonctions : https://leadpages.com/product/ai-page-builder. Pas de promesse de conversion ni de test terrain.
 - Logo officiel /apple-icon.png. OG repris de la miniature officielle YouTube rQzOrBETqPU, vidéo validée via oEmbed (Leadpages). OG du site écarté car pictogramme HTML Pub. Trois modèles officiels SAAS Launch, Virtual Summit, Real Estate Agent téléchargés depuis les URL signées du catalogue de https://leadpages.com/ et conservés localement. Aucune capture fabriquée.
 - Guide content-writer appliqué en fallback aux conventions projet : narrative_canon_id/version et claims_projection_offset inconnus, dependency_status approved-fallback. Révision pour faits périmés, trafic inconnu. Plafond de build global non modifié.
+## 2026-09-27 — Footer : badge Twelve Tools
+
+- Ajout du badge officiel Twelve Tools dans le rail « Repéré sur », avec lien externe sécurisé et chargement différé.
+- Vérification du rendu dans les thèmes clair et sombre ; build production validé.

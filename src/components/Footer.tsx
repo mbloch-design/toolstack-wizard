@@ -479,6 +479,21 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://twelve.tools"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tt-footer-badge"
+                aria-label="Featured on Twelve Tools"
+              >
+                <img
+                  src="https://twelve.tools/badge0-white.svg"
+                  alt="Featured on Twelve Tools"
+                  width={148}
+                  height={40}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
