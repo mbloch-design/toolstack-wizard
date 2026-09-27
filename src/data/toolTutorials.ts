@@ -1,5 +1,7 @@
 export interface ToolTutorial {
-  provider: "youtube";
+  provider: "youtube" | "native";
+  videoUrl?: string;
+  posterUrl?: string;
   videoId: string;
   titleFr: string;
   titleEn: string;
@@ -12,9 +14,34 @@ export interface ToolTutorial {
 
 /**
  * Curated official tutorials for priority tool pages.
- * Every entry must be checked against the provider's oEmbed endpoint.
+ * YouTube entries are checked against oEmbed; native videos against the official page and media URL.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  maniana: [{
+    provider: 'native', videoId: 'meet-maniana',
+    videoUrl: 'https://maniana.ai/videos/meet-maniana.mp4',
+    posterUrl: '/tool-media/maniana/team-dashboard.png',
+    titleFr: 'Présentation officielle de Maniana', titleEn: 'Official Maniana introduction',
+    author: 'Maniana', duration: 'Maniana',
+    sourceUrl: 'https://maniana.ai/', verifiedOn: '2026-09-27',
+  }],
+  faceready: [{
+    provider: 'native', videoId: 'faceready-official-demo',
+    videoUrl: 'https://assets.faceready.co/clips/faceready_montage_30s_wide.mp4',
+    posterUrl: '/tool-media/faceready/demo.jpg',
+    titleFr: 'Démonstration officielle FaceReady : visages de démonstration',
+    titleEn: 'Official FaceReady demonstration: demo faces',
+    author: 'FaceReady', duration: 'FaceReady',
+    sourceUrl: 'https://faceready.ai/creators', verifiedOn: '2026-09-27',
+  }],
+  'betterday-ai': [{
+    provider: 'native', videoId: 'betterday-intro',
+    videoUrl: 'https://www.mybetterdayai.com/BetterDay%20AI%20Intro%20Video.mp4',
+    posterUrl: '/og-images/betterday-ai-review.webp',
+    titleFr: 'Présentation officielle de BetterDay AI', titleEn: 'Official BetterDay AI introduction',
+    author: 'BetterDay AI', duration: 'BetterDay AI',
+    sourceUrl: 'https://www.mybetterdayai.com/', verifiedOn: '2026-09-27',
+  }],
   leadpages: [{
     provider: "youtube", videoId: "rQzOrBETqPU",
     titleFr: "Découvrir le nouveau constructeur Leadpages", titleEn: "Meet Leadpages' New Agentic-First Builder (Pt1)",

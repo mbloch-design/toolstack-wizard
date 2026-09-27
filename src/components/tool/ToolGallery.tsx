@@ -54,6 +54,10 @@ export default function ToolGallery({ images, videos = [], toolName, lang = "fr"
         setActive(0);
       }}
     />
+  ) : playingVideoId === media.video.videoId && media.video.provider === 'native' ? (
+    <video key={media.key} className="tg-main-video" src={media.video.videoUrl}
+      poster={media.video.posterUrl} controls autoPlay playsInline preload="metadata"
+      aria-label={lang === 'en' ? media.video.titleEn : media.video.titleFr} />
   ) : playingVideoId === media.video.videoId ? (
     <iframe
       key={media.key}
@@ -71,7 +75,7 @@ export default function ToolGallery({ images, videos = [], toolName, lang = "fr"
       onClick={() => setPlayingVideoId(media.video.videoId)}
       aria-label={lang === "en" ? `Play video: ${media.video.titleEn}` : `Lire la vidéo : ${media.video.titleFr}`}
     >
-      <img src={`https://i.ytimg.com/vi/${media.video.videoId}/hqdefault.jpg`} alt="" />
+      <img src={media.video.posterUrl || `https://i.ytimg.com/vi/${media.video.videoId}/hqdefault.jpg`} alt="" />
       <span className="tg-video-play"><Play aria-hidden fill="currentColor" /></span>
       <span className="tg-video-caption"><strong>{lang === "en" ? media.video.titleEn : media.video.titleFr}</strong><small>{media.video.duration}</small></span>
     </button>
@@ -127,7 +131,7 @@ export default function ToolGallery({ images, videos = [], toolName, lang = "fr"
               aria-current={i === safeActive}
             >
               <img
-                src={thumb.type === "image" ? thumb.src : `https://i.ytimg.com/vi/${thumb.video.videoId}/mqdefault.jpg`}
+                src={thumb.type === "image" ? thumb.src : thumb.video.posterUrl || `https://i.ytimg.com/vi/${thumb.video.videoId}/mqdefault.jpg`}
                 alt=""
                 className="tg-dot-img"
               />

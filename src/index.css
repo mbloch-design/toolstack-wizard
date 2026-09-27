@@ -8699,6 +8699,7 @@
     background: var(--color-text);
   }
   .td-tutorial-media iframe,
+  .td-tutorial-media video,
   .td-tutorial-poster {
     display: block;
     width: 100%;
@@ -23894,12 +23895,24 @@ section[id]:not(.cp-guide-section) {
   object-fit: cover;
   display: block;
 }
+.tg-main-img[src*="/tool-media/maniana/"],
+.tg-main-img[src*="/og-images/maniana-review"],
+.tg-main-img[src*="/tool-media/faceready/"],
+.tg-main-img[src*="/og-images/faceready-review"] {
+  object-fit: contain;
+  background: #F8F8F4;
+}
 .tg-main-video,
 .tg-video-poster {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
+}
+.tg-main-img[src*="/tool-media/esign/"],
+.tg-main-img[src*="/og-images/esign-review"] {
+  object-fit: contain;
+  background: #000;
 }
 .tg-video-poster {
   position: relative;

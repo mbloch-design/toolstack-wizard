@@ -38543,12 +38543,10 @@
       "free": "Plan Free permanent : 0 $, fonctions de base de génération et de collaboration",
       "paid": "Starter 20 $/mois, Builder 50 $/mois, Manianaer 200 $/mois"
     },
-    "defaultMonthlyPrice": 17.17,
-    "compareMonthlyPrice": 17.17,
-    "affiliateLink": "https://tidd.ly/46ti79o",
+    "affiliateLink": "https://tidd.ly/4hf439F",
     "websiteUrl": "https://maniana.ai/",
-    "ogImageUrl": "https://maniana.ai/showcase/team-dashboard.png",
-    "logo": "https://logo.clearbit.com/maniana.ai",
+    "ogImageUrl": "/og-images/maniana-review.png",
+    "logo": "/tool-media/logos/maniana.png",
     "tool_type": "specialise",
     "substitution_cluster_v2": "ai-app-builder",
     "functional_needs": [
@@ -38968,5 +38966,129 @@
     ],
     "prescription_quality": "question",
     "freeAlternative": "tally"
+  },
+  {
+    "id": "b12",
+    "slug": "b12",
+    "name": "B12",
+    "categoryId": "design-tools",
+    "shortDescription": "Création de sites par IA, hébergement et outils de relation client selon le forfait.",
+    "shortDescriptionEn": "AI website creation, hosting and plan-dependent client engagement tools.",
+    "pricing": {
+      "free": "Plan Free sur un sous-domaine B12.",
+      "paid": "Website : 24 USD/mois. Website + Client Engagement : 78 USD/mois. Facturation mensuelle, taxes à confirmer."
+    },
+    "affiliateLink": "https://tidd.ly/4hRTys3",
+    "websiteUrl": "https://www.b12.io/",
+    "ogImageUrl": "/og-images/b12-review.webp",
+    "logo": "/tool-media/logos/b12.png",
+    "tool_type": "metier",
+    "functional_needs": [
+      "website-builder",
+      "hosting",
+      "landing-page"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "createur-contenu"
+    ]
+  },
+  {
+    "id": "betterday-ai",
+    "slug": "betterday-ai",
+    "name": "BetterDay AI",
+    "categoryId": "organization",
+    "shortDescription": "Transformer une décision ou un objectif en plan d’action et calendrier avec l’IA.",
+    "shortDescriptionEn": "Turn a decision or goal into an action plan and timeline with AI.",
+    "pricing": {
+      "free": "2 décisions IA par mois, plans enregistrés localement, sans carte bancaire.",
+      "paid": "Basic 4,99 USD/mois ; Personal et Education 9,99 USD/mois chacun ; Executive 29,99 USD/mois. Forfaits mensuels, taxes à confirmer."
+    },
+    "affiliateLink": "https://tidd.ly/4xJtUvr",
+    "websiteUrl": "https://www.mybetterdayai.com/",
+    "ogImageUrl": "/og-images/betterday-ai-review.webp",
+    "logo": "/tool-media/logos/betterday-ai.png",
+    "functional_needs": [
+      "planning",
+      "taches",
+      "ai-general"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas"
+    ]
+  },
+  {
+    "id": "engagebay",
+    "slug": "engagebay",
+    "name": "EngageBay",
+    "categoryId": "crm",
+    "shortDescription": "CRM, email marketing et support client réunis pour les petites équipes.",
+    "shortDescriptionEn": "CRM, email marketing and customer support in one platform for small teams.",
+    "pricing": {
+      "free": "All-in-One Free : 250 contacts.",
+      "paid": "All-in-One, engagement annuel : Basic 13,79, Growth 59,79 et Pro 110,39 USD/utilisateur/mois équivalent. Taxes à confirmer."
+    },
+    "affiliateLink": "https://www.awin1.com/cread.php?awinmid=127075&awinaffid=2901291&clickref=tooltrim",
+    "websiteUrl": "https://www.engagebay.com/",
+    "ogImageUrl": "/og-images/engagebay-review.webp",
+    "logo": "/tool-media/logos/engagebay.png",
+    "tool_type": "metier",
+    "functional_needs": [
+      "crm",
+      "email-marketing",
+      "marketing-automation"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "ecommercant"
+    ]
+  },
+  {
+    "id": "esign",
+    "slug": "esign",
+    "name": "eSign",
+    "categoryId": "legal-contracts",
+    "shortDescription": "Ajouter sa signature aux PDF, DOCX et scans sur iPhone ou iPad, puis exporter en PDF.",
+    "shortDescriptionEn": "Add your signature to PDFs, DOCX files and scans on iPhone or iPad, then export to PDF.",
+    "pricing": {
+      "free": "Téléchargement gratuit ; publicités lors des exports.",
+      "paid": "App Store US : Premium mensuel 10,99 USD ; hebdomadaire 4,99 USD ; annuel 58,99 USD/an. Prix locaux à vérifier dans l’application."
+    },
+    "affiliateLink": "https://tidd.ly/4yekYiv",
+    "websiteUrl": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+    "ogImageUrl": "/og-images/esign-review.webp",
+    "logo": "/tool-media/logos/esign.png",
+    "functional_needs": [
+      "signature",
+      "pdf-review",
+      "document-delivery"
+    ],
+    "verticals": [
+      "consultant-b2b"
+    ]
+  },
+  {
+    "id": "faceready",
+    "slug": "faceready",
+    "name": "FaceReady",
+    "categoryId": "communication",
+    "shortDescription": "Retouche du visage en direct via une caméra virtuelle pour les appels vidéo sur Mac et Windows.",
+    "shortDescriptionEn": "Live facial touch-ups through a virtual camera for video calls on Mac and Windows.",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte, avec filigrane. Pas de forfait gratuit permanent annoncé.",
+      "paid": "19,99 USD/mois ou 119,88 USD/an payés d’avance (équivalent 9,99 USD/mois). Taxes en sus si applicables."
+    },
+    "affiliateLink": "https://tidd.ly/3TSWo7W",
+    "websiteUrl": "https://faceready.ai/",
+    "ogImageUrl": "/og-images/faceready-review.jpg",
+    "logo": "/tool-media/logos/faceready.svg",
+    "functional_needs": [
+      "video-calls"
+    ],
+    "verticals": [
+      "consultant-b2b"
+    ]
   }
 ]

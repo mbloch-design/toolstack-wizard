@@ -66,6 +66,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
   const verifiedOn = pv5?.verified_on;
   const officialUrl = safeExternalUrl(pv5?.official_source_url);
+  const affiliateUrl = safeExternalUrl(tool.affiliateLink);
   const isOneTime = pv5?.compare_plan_kind === "one_time";
   const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
 
@@ -169,8 +170,8 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                     ].filter(Boolean).join(" · ")}
               </p>
               {plan.detailsSourceUrl && !plan.comingSoon && (
-                <a className="td-pricing-plan-source" href={plan.detailsSourceUrl} target="_blank" rel={relExterne("source")}>
-                  {t("Détail officiel de l’offre", "Official plan details")}
+                <a className="td-pricing-plan-source" href={affiliateUrl || safeExternalUrl(plan.detailsSourceUrl)} target="_blank" rel={relExterne(affiliateUrl ? "affilie" : "source")}>
+                  {affiliateUrl ? t("Voir les offres sur le site", "View offers on the website") : t("Détail officiel de l’offre", "Official plan details")}
                 </a>
               )}
             </article>
@@ -217,7 +218,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
 
       {(verifiedOn || officialUrl) && (
         <p className="td-pricing-evidence">
-          {officialUrl ? (
+          {affiliateUrl ? t("Tarif vérifié auprès de l’éditeur", "Pricing verified with the vendor") : officialUrl ? (
             <a href={officialUrl} target="_blank" rel={relExterne("source")}>
               {t("Source tarifaire officielle", "Official pricing source")}
             </a>

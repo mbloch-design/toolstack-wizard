@@ -34,7 +34,7 @@ import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import TapstitchDecision from "@/components/tool/TapstitchDecision";
-import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
+import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
 import { toolPageHeadingSuffix, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "@/lib/toolSeo";
 import { getExplorerHref } from "@/lib/toolExploration";
@@ -619,10 +619,10 @@ const ToolDetailPage = () => {
                     )}
                   </dl>
 
-                  {safeWebsiteUrl && (
+                  {primaryCtaUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
-                      <a className="td-editorial-official-link" href={safeWebsiteUrl} target="_blank" rel={relExterne("source")}>
+                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}>
                         <span>{t("Site officiel", "Official website")}</span>
                         <ExternalLink aria-hidden />
                       </a>

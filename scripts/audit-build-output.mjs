@@ -21,7 +21,9 @@ const budgets = {
   // 13_200 (2026-09-27): verified baseline 13_022, plus 3 new tools
   // (30 routes), 78 sourced media assets and 2 shared CSS variants = 13_132.
   // Keep the byte budgets unchanged; this is catalogue growth, not a bypass.
-  files: 13_200,
+  // 13_250 (2026-09-27): five new tool records (50 routes), sourced
+  // media and shared CSS; measured output 13_217. Byte limits unchanged.
+  files: 13_250,
   totalBytes: 850 * MiB,
   htmlBytes: 750 * MiB,
   javascriptBytes: 15 * MiB,

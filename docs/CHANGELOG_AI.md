@@ -1,3 +1,57 @@
+## 2026-09-27 : publication du lot affilié
+
+- B12, BetterDay AI, EngageBay, eSign, FaceReady et actualisation Maniana ; sorties éditeur affiliées dans le modèle commun.
+- Budget de fichiers ajusté à 13 250 pour la croissance mesurée (13 217 fichiers, cinq nouvelles fiches). Plafonds en octets inchangés. Sélecteur commun des vidéos préservé après ajout des styles média.
+- Validation finale : build production, audit SEO et budgets PASS. Trois fichiers de travail préexistants non inclus dans le commit.
+
+## 2026-09-27 : actualisation Maniana
+
+- Nouveau lien affilié fourni, fiche FR/EN et quotas corrigés : Manianaer ne rend pas messages et crédits illimités. Conversion implicite EUR et gain de temps non mesuré retirés.
+- Logo, OG, deux images et vidéo officiels ; guide rédaction appliqué pour distinguer promesses et capacités non testées. Sources dans research/maniana-2026-09-27.md.
+- Validation : FR/EN, six sorties affiliées, recherche vers fiche, images chargées et vidéo de 46,7 secondes prête à lire. Compilation réussie ; budget global de fichiers toujours dépassé. Non publié.
+
+## 2026-09-27 : sorties affiliées des fiches
+
+- Modèle commun : le lien « Site officiel » utilise désormais le même lien affilié que le CTA. Les liens des forfaits utilisent l’affiliation avec un libellé qui ne promet plus une page tarifaire précise.
+- Source tarifaire conservée dans les données ; mention de vérification non cliquable quand une affiliation existe. Les outils sans affiliation gardent leurs liens officiels.
+- Rendu contrôlé sur FaceReady EN (quatre sorties affiliées) et BetterDay AI FR (dix sorties affiliées), attribut sponsored préservé.
+- Compilation et audit SEO réussis ; contrôle final bloqué par le budget global de fichiers (13 211 pour une limite de 13 200). Non publié.
+
+## 2026-09-27 : création de FaceReady
+
+- Fiche FR/EN, lien affilié Awin fourni, prix mensuel et annuel USD, essai de 7 jours avec filigrane sans carte, compatibilité et confidentialité précisées.
+- Logo, OG, interface et illustration officiels ; vidéo de démonstration éditeur intégrée sans recadrage. CSP vidéo limitée au domaine média officiel.
+- Guide rédaction appliqué : pas de performance mesurée ou d’absence totale de données revendiquée, notation documentaire et sources dans research/faceready-2026-09-27.md.
+- Rendu FR/EN, recherche vers fiche et vidéo officielle prête à lire (27,8 secondes) vérifiés. Valeurs annuelles alignées sur le schéma tarifaire après le build ; budget global à traiter avant publication.
+
+## 2026-09-27 : création d’eSign
+
+- Fiche FR/EN pour l’application iPhone/iPad d’Evgenii Aleksanov, App Store 6755193759, lien Awin fourni vérifié. Abonnement mensuel US et options semaine/année sans conversion trompeuse.
+- Icône officielle et trois captures App Store. Guide rédaction appliqué : publicité des exports gratuits, collecte analytics distincte des documents locaux et absence de certification établie précisées.
+- Recherche documentée dans research/esign-2026-09-27.md ; index et protection des revues locales actualisés.
+- Validation : build production et budgets PASS, rendu FR/EN et lien affilié sponsored contrôlés ; galerie officielle non recadrée et accès depuis la liste complète des résultats de recherche vérifiés. Non publié.
+
+## 2026-09-27 : création d’EngageBay
+
+- Fiche FR/EN All-in-One, lien affilié Awin vérifié et URL officielle sans identifiant de clic. Tarifs annuels USD par utilisateur et quotas explicites, ambiguïté Basic mensuel écartée.
+- Logo officiel, OG et deux visuels éditeur. Note documentaire sur cinq axes, export CSV sourcé et limites de portabilité précisées avec le guide rédaction.
+- Sources : research/engagebay-2026-09-27.md. Index et protection des revues locales actualisés.
+- Validation : build production et budgets PASS, rendu FR/EN, prix annuels et lien Awin sponsored contrôlés ; recherche puis clic sur EngageBay aboutissent à la bonne fiche. Non publié.
+
+## 2026-09-27 : création de BetterDay AI
+
+- Fiche FR/EN, lien Awin vérifié, huit forfaits mensuels en USD, notation documentaire et distinction des éditions. Enterprise annoncé à venir, non présenté comme actif.
+- Logo, OG et vidéo officielle intégrés. Support vidéo natif ajouté à la galerie et au bloc tutoriels ; autorisation média limitée au domaine éditeur dans la CSP.
+- Guide rédaction appliqué pour séparer les fonctions documentées des promesses de résultat. Sources dans research/betterday-ai-2026-09-27.md. Protection revue locale et index régénéré.
+- Validation : build production et budgets PASS, rendu FR/EN, recherche vers fiche et vidéo native (82,7 secondes, prête à lire, sans erreur) vérifiés en local. Non publié.
+
+## 2026-09-27 : création de B12
+
+- Fiche FR/EN avec lien Awin fourni, tarifs mensuels USD vérifiés dans la page officielle rendue, note documentaire et limites de sortie explicites.
+- Logo, OG et deux exemples officiels en galerie. Guide rédaction appliqué pour distinguer les promesses éditeur des éléments vérifiés ; sources et conflit tarifaire documentés dans research/b12-2026-09-27.md.
+- Ajout à la protection des revues locales et régénération de l’index de recherche.
+- Validation : build production et budgets PASS ; rendu FR/EN, devise USD, CTA sponsored, galerie et clic recherche vers B12 vérifiés en navigateur local. Non publié à ce stade.
+
 ## 2026-09-27 — Analytics DataFast
 
 - Ajout du script cookieless DataFast dans le document HTML racine afin de couvrir toutes les routes Vite, avec l’identifiant et le domaine fournis.

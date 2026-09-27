@@ -38,7 +38,9 @@ export default function ToolTutorialsSection({ tutorials, toolName, lang, t }: P
           return (
             <article className="td-tutorial-card" key={tutorial.videoId}>
               <div className="td-tutorial-media">
-                {isActive ? (
+                {isActive && tutorial.provider === 'native' ? (
+                  <video src={tutorial.videoUrl} poster={tutorial.posterUrl} controls autoPlay playsInline preload="metadata" aria-label={title} />
+                ) : isActive ? (
                   <iframe
                     src={`https://www.youtube-nocookie.com/embed/${tutorial.videoId}?autoplay=1&rel=0`}
                     title={title}
@@ -54,7 +56,7 @@ export default function ToolTutorialsSection({ tutorials, toolName, lang, t }: P
                     aria-label={t(`Lire la vidéo : ${title}`, `Play video: ${title}`)}
                   >
                     <img
-                      src={`https://i.ytimg.com/vi/${tutorial.videoId}/hqdefault.jpg`}
+                      src={tutorial.posterUrl || `https://i.ytimg.com/vi/${tutorial.videoId}/hqdefault.jpg`}
                       alt=""
                       width="480"
                       height="360"
@@ -68,10 +70,10 @@ export default function ToolTutorialsSection({ tutorials, toolName, lang, t }: P
               <div className="td-tutorial-copy">
                 <div>
                   <h3>{title}</h3>
-                  <p>{tutorial.author} · YouTube</p>
+                  <p>{tutorial.author}{tutorial.provider === 'youtube' ? ' · YouTube' : ''}</p>
                 </div>
                 <a href={tutorial.sourceUrl} target="_blank" rel={relExterne("source")}>
-                  {t("Voir sur YouTube", "View on YouTube")}
+                  {tutorial.provider === 'youtube' ? t("Voir sur YouTube", "View on YouTube") : t("Voir la source officielle", "View official source")}
                   <ExternalLink aria-hidden="true" />
                 </a>
               </div>

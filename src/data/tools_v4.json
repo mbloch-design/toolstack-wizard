@@ -186706,9 +186706,9 @@
     "category": "creation",
     "shortDescription": "Générateur d'applications par description texte, avec une suite d'outils IA (support, planning, marketing) pour faire tourner l'app une fois publiée.",
     "shortDescriptionEn": "Text-to-app builder with an AI operations suite (support, planning, marketing) to run the app once shipped.",
-    "description": "Maniana génère une application ou un site à partir d'une description en langage naturel, avec un aperçu qui se construit en direct et un mode conversationnel pour ajuster l'écran, le style ou les données. Des « verticales » prêtes à l'emploi (funnel, onboarding, email marketing) accélèrent le départ sur des cas d'usage courants.\n\nAu-delà de la génération, chaque app publiée est accompagnée d'un « Virtual Office » : une messagerie entrante avec tri IA (Frontdesk), un support voix/email/tickets, une planification en tableau/liste/calendrier et un module marketing, tous connectés au même modèle et aux mêmes données client.\n\nQuatre paliers actifs et achetables dès aujourd'hui : Free (0 $), Starter (20 $/mois, 100 messages et 5 applications verticales), Builder (50 $/mois, 250 messages et 15 applications), Manianaer (200 $/mois, usage illimité). Aucune structure légale (société, adresse) n'est précisée dans la politique de confidentialité ou les CGU ; l'export et la suppression de données se font sur demande par email, pas en libre-service.",
-    "longDescription": "Maniana génère une application ou un site à partir d'une description en langage naturel, avec un aperçu qui se construit en direct et un mode conversationnel pour ajuster l'écran, le style ou les données. Des « verticales » prêtes à l'emploi (funnel, onboarding, email marketing) accélèrent le départ sur des cas d'usage courants.\n\nAu-delà de la génération, chaque app publiée est accompagnée d'un « Virtual Office » : une messagerie entrante avec tri IA (Frontdesk), un support voix/email/tickets, une planification en tableau/liste/calendrier et un module marketing, tous connectés au même modèle et aux mêmes données client.\n\nQuatre paliers actifs et achetables dès aujourd'hui : Free (0 $), Starter (20 $/mois, 100 messages et 5 applications verticales), Builder (50 $/mois, 250 messages et 15 applications), Manianaer (200 $/mois, usage illimité). Aucune structure légale (société, adresse) n'est précisée dans la politique de confidentialité ou les CGU ; l'export et la suppression de données se font sur demande par email, pas en libre-service.",
-    "longDescriptionEn": "Maniana generates an application or site from a natural-language description, with a live-building preview and a conversational mode to adjust a screen, the style or the data. Ready-made \"verticals\" (funnel, onboarding, email marketing) speed up common use cases.\n\nBeyond generation, every published app ships with a \"Virtual Office\": an inbound mailbox with AI triage (Frontdesk), voice/email/ticket support, board/list/calendar planning, and a marketing module, all connected to the same model and the same customer data.\n\nFour active, purchasable tiers today: Free ($0), Starter ($20/month, 100 messages and 5 vertical apps), Builder ($50/month, 250 messages and 15 apps), Manianaer ($200/month, unlimited usage). No legal entity (company, address) is disclosed in the privacy policy or terms; data export and deletion are handled on request by email, not self-service.",
+    "description": "Maniana permet de créer une application ou un site à partir d’une description, puis d’ajuster le résultat par conversation. Des modèles spécialisés couvrent les tunnels de conversion, l’onboarding et l’email marketing. Le Virtual Office réunit des fonctions de messagerie, support, planification, marketing et ventes autour du produit créé.\n\nPour un indépendant, l’intérêt est de tester une idée et son fonctionnement quotidien dans un même environnement. Commencez avec le plan Free sur un parcours simple : saisie d’une demande, enregistrement des données et publication. Contrôlez ensuite les permissions, les erreurs et les crédits consommés avant d’y transférer un processus client.\n\nLes offres payantes ne rendent pas tous les usages illimités. Starter inclut 100 messages mensuels, Builder 250 et Manianaer 1 200 ; les crédits d’exécution constituent une limite distincte. Les domaines personnalisés sont annoncés à partir de Builder. La documentation permet de suivre la consommation dans Billing. L’export complet du code et la possibilité de réhéberger l’application ailleurs ne sont pas établis par les sources consultées : les mises en page exportables ne suffisent pas à prouver cette portabilité. Évaluation documentaire, sans test de génération ni promesse de remplacement intégral de vos outils.",
+    "longDescription": "Maniana permet de créer une application ou un site à partir d’une description, puis d’ajuster le résultat par conversation. Des modèles spécialisés couvrent les tunnels de conversion, l’onboarding et l’email marketing. Le Virtual Office réunit des fonctions de messagerie, support, planification, marketing et ventes autour du produit créé.\n\nPour un indépendant, l’intérêt est de tester une idée et son fonctionnement quotidien dans un même environnement. Commencez avec le plan Free sur un parcours simple : saisie d’une demande, enregistrement des données et publication. Contrôlez ensuite les permissions, les erreurs et les crédits consommés avant d’y transférer un processus client.\n\nLes offres payantes ne rendent pas tous les usages illimités. Starter inclut 100 messages mensuels, Builder 250 et Manianaer 1 200 ; les crédits d’exécution constituent une limite distincte. Les domaines personnalisés sont annoncés à partir de Builder. La documentation permet de suivre la consommation dans Billing. L’export complet du code et la possibilité de réhéberger l’application ailleurs ne sont pas établis par les sources consultées : les mises en page exportables ne suffisent pas à prouver cette portabilité. Évaluation documentaire, sans test de génération ni promesse de remplacement intégral de vos outils.",
+    "longDescriptionEn": "Maniana builds an app or website from a description, then lets you refine it through conversation. Specialized builders cover funnels, onboarding and email marketing. Its Virtual Office brings together inbox, support, planning, marketing and sales functions around the product you create.\n\nFor an independent professional, the appeal is testing an idea and its everyday operations in one environment. Start with Free on a simple flow: submit a request, save the data and publish. Check permissions, errors and credit usage before moving a client process into it.\n\nPaid plans do not make every activity unlimited. Starter includes 100 monthly messages, Builder 250 and Manianaer 1,200; execution credits are a separate limit. Custom domains are advertised from Builder. Documentation explains how to monitor consumption in Billing. Full source-code export and external hosting are not established by the reviewed sources: export-ready layouts do not prove that portability. This is a documentation-based assessment, not a generation test or a promise to replace your entire tool stack.",
     "pricing": {
       "free": "Plan Free permanent : 0 $, fonctions de base de génération et de collaboration",
       "paid": "Starter 20 $/mois, Builder 50 $/mois, Manianaer 200 $/mois"
@@ -186717,19 +186717,13 @@
       "free": "Permanent Free plan: $0, core generation and collaboration features",
       "paid": "Starter $20/month, Builder $50/month, Manianaer $200/month"
     },
-    "defaultMonthlyPrice": 17.17,
+    "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
-        "Prix officiels en dollars.",
-        "Aucune structure légale (société, adresse) n'est précisée sur le site.",
-        "Export et suppression de données sur demande par email, pas en libre-service dans l'interface."
+        "Tarifs USD ; taxes et dépassements non précisés sur la grille consultée.",
+        "Messages, crédits et sessions limités selon le forfait. Export complet du code non confirmé."
       ],
-      "cautionsEn": [
-        "Official prices are in US dollars.",
-        "No legal entity (company, address) is disclosed on the site.",
-        "Data export and deletion are handled on request by email, not self-service in the app."
-      ],
-      "verified_on": "2026-09-16",
+      "verified_on": "2026-09-27",
       "source_domain": "maniana.ai",
       "usage_sensitive": true,
       "compare_plan_kind": "account",
@@ -186738,7 +186732,7 @@
       "location_sensitive": false,
       "official_source_url": "https://maniana.ai/#pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 17.17,
+      "compare_price_monthly_eur": null,
       "plans": [
         {
           "planKey": "free",
@@ -186750,9 +186744,15 @@
             "Mises en page export-ready"
           ],
           "detailsSourceUrl": "https://maniana.ai/#pricing",
-          "pricingUnit": "par compte",
           "isFree": true,
-          "isComparePlan": false
+          "isComparePlan": false,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27",
+          "nativeAmount": 0
         },
         {
           "planKey": "starter",
@@ -186764,12 +186764,15 @@
             "Nombre d'apps illimité, backend complet"
           ],
           "detailsSourceUrl": "https://maniana.ai/#pricing",
-          "pricingUnit": "par compte",
           "isFree": false,
           "isComparePlan": true,
           "nativeAmount": 20,
           "nativeCurrency": "USD",
-          "billingPeriod": "monthly"
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
         },
         {
           "planKey": "builder",
@@ -186781,35 +186784,41 @@
             "Domaines personnalisés"
           ],
           "detailsSourceUrl": "https://maniana.ai/#pricing",
-          "pricingUnit": "par compte",
           "isFree": false,
           "isComparePlan": false,
           "nativeAmount": 50,
           "nativeCurrency": "USD",
-          "billingPeriod": "monthly"
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
         },
         {
           "planKey": "manianaer",
           "displayName": "Manianaer",
-          "summary": "Usage illimité (messages, apps, sessions) et support prioritaire.",
+          "summary": "1 200 messages et 180 000 crédits d’exécution ; applications verticales et sessions illimitées.",
           "featureHighlights": [
             "1 200 messages et 180k crédits d'exécution par mois",
             "Applications verticales et sessions illimitées",
             "Support prioritaire"
           ],
           "detailsSourceUrl": "https://maniana.ai/#pricing",
-          "pricingUnit": "par compte",
           "isFree": false,
           "isComparePlan": false,
           "nativeAmount": 200,
           "nativeCurrency": "USD",
-          "billingPeriod": "monthly"
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
         }
       ]
     },
     "websiteUrl": "https://maniana.ai/",
-    "affiliateLink": "https://tidd.ly/46ti79o",
-    "logo": "https://logo.clearbit.com/maniana.ai",
+    "affiliateLink": "https://tidd.ly/4hf439F",
+    "logo": "/tool-media/logos/maniana.png",
     "verdict": {
       "keepIf": [
         "Vous voulez générer une application ou un site à partir d'une description en langage naturel, sans écrire de code.",
@@ -186817,9 +186826,7 @@
         "Un des paliers payants (20 à 200 $/mois selon le volume) reste proportionné à votre usage réel."
       ],
       "avoidIf": [
-        "Vous avez besoin d'exporter le code source complet de l'application, pas seulement des mises en page.",
-        "L'absence de structure légale précisée sur le site est un frein pour votre organisation.",
-        "Vous préférez un outil déjà éprouvé avec un historique d'avis publics indépendants."
+        "L’export complet du code et le réhébergement indépendant sont indispensables sans validation préalable."
       ],
       "threshold": "Choisissez Maniana si le besoin est de générer une app par description texte et de la faire tourner avec une suite d'outils d'exploitation IA déjà connectée, plutôt que d'assembler plusieurs outils séparés. Testez le plan Free sur un vrai projet avant de passer sur un palier payant."
     },
@@ -186830,37 +186837,29 @@
         "One of the paid tiers ($20 to $200/month depending on volume) stays proportionate to your real usage."
       ],
       "avoidIf": [
-        "You need to export the app's full source code, not just layouts.",
-        "The lack of a disclosed legal entity on the site is a blocker for your organization.",
-        "You prefer an already-proven tool with a track record of independent public reviews."
+        "Full source-code export and independent hosting are mandatory without further verification."
       ],
       "threshold": "Choose Maniana if the need is generating an app from a text description and running it with an already-connected AI operations suite, rather than assembling several separate tools. Test the Free plan on a real project before moving to a paid tier."
     },
     "pros": [
-      "Génération d'app par description texte avec aperçu construit en direct.",
-      "Suite d'exploitation IA incluse (support, planning, marketing) connectée aux mêmes données.",
-      "Verticales prêtes à l'emploi pour démarrer plus vite sur des cas courants.",
-      "Plan gratuit permanent réel pour tester avant de payer.",
-      "Droits d'export et de suppression de données confirmés, même s'ils passent par une demande manuelle."
+      "Création et itération par conversation.",
+      "Plan Free pour explorer avant abonnement.",
+      "Fonctions de construction et d’exploitation regroupées."
     ],
     "prosEn": [
-      "Text-to-app generation with a live-building preview.",
-      "Included AI operations suite (support, planning, marketing) connected to the same data.",
-      "Ready-made verticals to get started faster on common use cases.",
-      "Genuine permanent free plan to test before paying.",
-      "Data export and deletion rights confirmed, even if handled through a manual request."
+      "Conversational building and iteration.",
+      "Free plan to explore before subscribing.",
+      "Building and operations functions in one environment."
     ],
     "cons": [
-      "Aucune structure légale ou adresse d'éditeur communiquée sur le site.",
-      "Aucun avis public indépendant trouvé (Trustpilot, Product Hunt, G2).",
-      "Export du code source de l'app non confirmé, seulement des « mises en page export-ready ».",
-      "Combine beaucoup de fonctions (génération, support, planning, marketing) pour un produit encore jeune."
+      "Messages, crédits d’exécution et sessions sont des limites distinctes.",
+      "Domaines personnalisés à partir de Builder.",
+      "Export complet du code et réhébergement non confirmés."
     ],
     "consEn": [
-      "No legal entity or publisher address disclosed on the site.",
-      "No independent public review found (Trustpilot, Product Hunt, G2).",
-      "Full app source-code export not confirmed, only \"export-ready layouts\".",
-      "Combines a lot of functions (generation, support, planning, marketing) for a still-young product."
+      "Messages, execution credits and sessions are separate limits.",
+      "Custom domains from Builder.",
+      "Full source-code export and external hosting unconfirmed."
     ],
     "useCases": [
       "Générer une première version d'une app ou d'un site à partir d'une description texte.",
@@ -186892,7 +186891,8 @@
     "seo": {
       "idealForFr": "Idéal pour générer une app par description texte et la faire tourner avec une suite d'outils IA déjà connectée.",
       "idealForEn": "Ideal for generating an app from a text description and running it with an already-connected AI operations suite.",
-      "metaDescription": "Maniana : avis, tarifs Free à Manianaer, génération d'application par IA, suite d'exploitation et alternatives à Lovable et Base44."
+      "metaDescription": "Maniana : création d’applications par IA, Virtual Office, prix en USD, quotas de crédits, visuels officiels et limites avant de choisir.",
+      "metaDescriptionEn": "Maniana AI app builder: Virtual Office, USD pricing, credit limits, official visuals and portability questions before choosing."
     },
     "articles": [],
     "soloRelevance": "high",
@@ -186911,7 +186911,7 @@
     "migrationGuide": null,
     "downgradePlan": null,
     "personas": [],
-    "timeGainedHoursPerMonth": 4,
+    "timeGainedHoursPerMonth": null,
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
@@ -186928,8 +186928,11 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "ogImageUrl": "https://maniana.ai/showcase/team-dashboard.png",
-    "galleryImages": [],
+    "ogImageUrl": "/og-images/maniana-review.png",
+    "galleryImages": [
+      "/tool-media/maniana/team-dashboard.png",
+      "/tool-media/maniana/maxhub-crm.png"
+    ],
     "force_silence": false,
     "toolTrimRating": {
       "valeurAjoutee": 4,
@@ -186938,21 +186941,102 @@
       "puissance": 3,
       "reversibilite": 3,
       "evidence": {
-        "valeurAjoutee": "Combine la génération d'application par texte et une suite d'exploitation (support, planning, marketing) déjà connectée aux mêmes données, avec un vrai plan gratuit pour tester avant de payer 20 à 200 $/mois selon le volume (source : maniana.ai/#pricing, vérifié le 2026-09-16).",
-        "simplicite": "L'interface conversationnelle et l'aperçu en direct abaissent la barrière d'entrée d'après la démonstration du site, mais aucun avis public indépendant (Trustpilot, Product Hunt, G2) n'a été trouvé pour confirmer la fiabilité réelle de la génération (source : maniana.ai, vérifié le 2026-09-16).",
-        "utilisation": "L'usage dépasse la seule génération : Frontdesk, support, planning et marketing sont utilisables au quotidien une fois l'app publiée, un périmètre large pour une petite équipe ou un solo (source : maniana.ai, vérifié le 2026-09-16).",
-        "puissance": "La combinaison génération + verticales + suite d'exploitation à 5 modules est ambitieuse, mais reste un produit jeune sans capacité de génération vérifiée indépendamment ni export de code source confirmé, seulement des « mises en page export-ready » (source : maniana.ai/#pricing, vérifié le 2026-09-16).",
-        "reversibilite": "L'export et la suppression des données sont confirmés dans la politique de confidentialité, mais passent par une demande manuelle par email plutôt qu'un outil en libre-service, et aucune structure légale n'est communiquée pour identifier l'éditeur (source : app.maniana.ai/privacy, vérifié le 2026-09-16)."
+        "valeurAjoutee": "Construction et exploitation réunies ; intérêt à valider sur un projet réel. Analyse documentaire : https://maniana.ai/ et https://docs.maniana.ai/ (2026-09-27).",
+        "simplicite": "Itération conversationnelle documentée ; qualité de génération non testée. Analyse documentaire : https://maniana.ai/ et https://docs.maniana.ai/ (2026-09-27).",
+        "utilisation": "Fonctions récurrentes de support et planning annoncées, au-delà du prototype. Analyse documentaire : https://maniana.ai/ et https://docs.maniana.ai/ (2026-09-27).",
+        "puissance": "Périmètre large mais crédits et quotas distincts à contrôler. Analyse documentaire : https://maniana.ai/ et https://docs.maniana.ai/ (2026-09-27).",
+        "reversibilite": "Export complet du code et réhébergement non confirmés. Analyse documentaire : https://maniana.ai/ et https://docs.maniana.ai/ (2026-09-27)."
       },
       "evidenceEn": {
-        "valeurAjoutee": "Combines text-to-app generation with an operations suite (support, planning, marketing) already connected to the same data, with a genuine free plan to test before paying $20 to $200/month depending on volume (source: maniana.ai/#pricing, verified 2026-09-16).",
-        "simplicite": "The conversational interface and live preview lower the entry barrier per the site's own demo, but no independent public review (Trustpilot, Product Hunt, G2) was found to confirm the real reliability of the generation (source: maniana.ai, verified 2026-09-16).",
-        "utilisation": "Usage extends beyond generation alone: Frontdesk, support, planning and marketing are usable day-to-day once the app is published, a broad scope for a small team or solo founder (source: maniana.ai, verified 2026-09-16).",
-        "puissance": "The combination of generation, verticals and a 5-module operations suite is ambitious, but remains a young product with no independently verified generation quality nor confirmed source-code export, only \"export-ready layouts\" (source: maniana.ai/#pricing, verified 2026-09-16).",
-        "reversibilite": "Data export and deletion are confirmed in the privacy policy, but go through a manual email request rather than a self-service tool, and no legal entity is disclosed to identify the publisher (source: app.maniana.ai/privacy, verified 2026-09-16)."
+        "valeurAjoutee": "Building and operations combined; validate the value on a real project. Desk research: https://maniana.ai/ and https://docs.maniana.ai/ (2026-09-27).",
+        "simplicite": "Documented conversational iteration; generation quality untested. Desk research: https://maniana.ai/ and https://docs.maniana.ai/ (2026-09-27).",
+        "utilisation": "Advertised support and planning functions beyond prototyping. Desk research: https://maniana.ai/ and https://docs.maniana.ai/ (2026-09-27).",
+        "puissance": "Broad scope, with separate credits and quotas to monitor. Desk research: https://maniana.ai/ and https://docs.maniana.ai/ (2026-09-27).",
+        "reversibilite": "Full source-code export and external hosting unconfirmed. Desk research: https://maniana.ai/ and https://docs.maniana.ai/ (2026-09-27)."
       },
-      "lastActivityVerifiedOn": "2026-09-16",
-      "notedOn": "2026-09-16"
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-27"
+    },
+    "link": "https://tidd.ly/4hf439F",
+    "affiliateCtaLabelFr": "Commencer avec Maniana gratuitement",
+    "affiliateCtaLabelEn": "Start with Maniana for free",
+    "pricing_v5En": {
+      "cautions": [
+        "USD prices; taxes and overages not specified in the reviewed price list.",
+        "Messages, credits and sessions depend on the plan. Full source-code export unconfirmed."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "maniana.ai",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://maniana.ai/#pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Core building, collaboration and version history.",
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27",
+          "nativeAmount": 0
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "100 monthly messages, 15,000 execution credits, 5 vertical apps and 3,000 user sessions.",
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "builder",
+          "displayName": "Builder",
+          "summary": "250 monthly messages, 37,500 execution credits, 15 vertical apps, 10,000 sessions and custom domains.",
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "manianaer",
+          "displayName": "Manianaer",
+          "summary": "1,200 monthly messages, 180,000 execution credits, unlimited vertical apps and sessions.",
+          "detailsSourceUrl": "https://maniana.ai/#pricing",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 200,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
     }
   },
   {
@@ -190097,6 +190181,1430 @@
       },
       "lastActivityVerifiedOn": "2026-09-25",
       "notedOn": "2026-09-25"
+    }
+  },
+  {
+    "id": "b12",
+    "slug": "b12",
+    "name": "B12",
+    "category": "design-tools",
+    "bestFor": [
+      "all"
+    ],
+    "covers": [
+      "website-builder",
+      "hosting",
+      "landing-page"
+    ],
+    "functional_needs": [
+      "website-builder",
+      "hosting",
+      "landing-page"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "createur-contenu"
+    ],
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "websiteUrl": "https://www.b12.io/",
+    "website": "https://www.b12.io/",
+    "affiliateLink": "https://tidd.ly/4hRTys3",
+    "link": "https://tidd.ly/4hRTys3",
+    "affiliateCtaLabelFr": "Créer mon site avec B12",
+    "affiliateCtaLabelEn": "Build my website with B12",
+    "shortDescription": "Création de sites par IA, hébergement et outils de relation client selon le forfait.",
+    "shortDescriptionEn": "AI website creation, hosting and plan-dependent client engagement tools.",
+    "longDescription": "B12 permet de créer un premier site à partir d’une description, puis de modifier son contenu avec un agent IA ou un éditeur visuel. La plateforme héberge le résultat. Pour un indépendant ou une petite entreprise de services, son intérêt est de réunir le site et, avec le forfait adapté, la collecte des demandes clients, les contacts et les contrats. Les images présentées sont des exemples fournis par B12, pas des réalisations testées par ToolTrim.\n\nCommencez par construire une page représentative dans le plan gratuit : présentation de votre activité, formulaire et affichage mobile. Passez au payant si le domaine personnalisé et les fonctions supplémentaires répondent à un besoin réel. Si vous disposez déjà d’un CRM et d’un outil email, vérifiez les intégrations avant de payer pour des fonctions en doublon. La génération IA ne dispense pas de relire les textes, de vérifier les obligations locales et de tester les formulaires.\n\nL’accompagnement humain est une offre distincte, avec des conditions et frais propres. Les restrictions de changement de forfait sur Professional et Advanced méritent une lecture avant engagement. Pour un projet exigeant une reprise complète du code chez un autre hébergeur, demandez une confirmation écrite des possibilités d’export.",
+    "longDescriptionEn": "B12 creates an initial website from a description, then lets you update it through an AI agent or visual editor. The platform hosts the result. For freelancers and small service businesses, the appeal is combining a website with client intake, contacts and contracts on the appropriate plan. The images shown are examples supplied by B12, not projects tested by ToolTrim.\n\nStart by building a representative page on the free plan: your services, a form and a mobile layout. Upgrade when a custom domain and extra features meet a real need. If you already have a CRM and email platform, check integrations before paying for overlapping functionality. AI generation does not remove the need to review copy, check local requirements and test forms.\n\nHuman-assisted setup is a separate offering with its own fees and conditions. Review the plan-switching restrictions on Professional and Advanced before committing. If your project requires moving the full codebase to another host, obtain written confirmation of export capabilities.",
+    "pricing": {
+      "free": "Plan Free sur un sous-domaine B12.",
+      "paid": "Website : 24 USD/mois. Website + Client Engagement : 78 USD/mois. Facturation mensuelle, taxes à confirmer."
+    },
+    "pricingEn": {
+      "free": "Free plan on a B12 subdomain.",
+      "paid": "Website: $24/month. Website + Client Engagement: $78/month. Monthly billing; tax treatment unconfirmed."
+    },
+    "pros": [
+      "Création assistée par IA et édition visuelle.",
+      "Hébergement intégré et plan gratuit pour préparer son site.",
+      "Outils clients regroupés dans le forfait Client Engagement."
+    ],
+    "prosEn": [
+      "AI-assisted creation and visual editing.",
+      "Integrated hosting and a free plan to build your first site.",
+      "Client tools bundled in the Client Engagement plan."
+    ],
+    "cons": [
+      "Domaine personnalisé et retrait des publicités réservés au payant.",
+      "Crédits IA limités par forfait.",
+      "Accompagnement humain distinct ; conditions de sortie à vérifier."
+    ],
+    "consEn": [
+      "Custom domain and ad removal require a paid plan.",
+      "AI credits are capped by plan.",
+      "Human assistance is separate; review exit conditions."
+    ],
+    "alternatives": [
+      "wix",
+      "squarespace",
+      "framer"
+    ],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "downgradePlan": null,
+    "defaultMonthlyPrice": 0,
+    "logo": "/tool-media/logos/b12.png",
+    "ogImageUrl": "/og-images/b12-review.webp",
+    "galleryImages": [
+      "/tool-media/b12/official-1.webp",
+      "/tool-media/b12/official-2.webp"
+    ],
+    "seo": {
+      "metaDescription": "B12 : création de sites par IA, tarifs en USD, plan gratuit, outils clients et limites. Découvrez si ce constructeur convient à votre activité.",
+      "metaDescriptionEn": "B12 AI website builder: USD pricing, free plan, client tools and limitations. Find out whether it fits your business."
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous voulez publier un site de services sans gérer un hébergement séparé.",
+        "Vous cherchez à réunir site et premières demandes clients."
+      ],
+      "avoidIf": [
+        "Vous exigez un hébergement indépendant avec export complet garanti."
+      ],
+      "threshold": "Essayez votre page principale gratuitement avant de choisir le forfait et les outils clients."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a service-business website without managing separate hosting.",
+        "You want to connect your website and initial client inquiries."
+      ],
+      "avoidIf": [
+        "You require independent hosting with guaranteed full export."
+      ],
+      "threshold": "Build your main page for free before choosing a plan and client tools."
+    },
+    "useCases": [
+      "Site vitrine pour consultant ou indépendant.",
+      "Portfolio avec formulaire de contact.",
+      "Site de petite entreprise avec collecte des demandes clients."
+    ],
+    "useCasesEn": [
+      "Consultant or freelancer business website.",
+      "Portfolio with a contact form.",
+      "Small-business site with client intake."
+    ],
+    "description": "Création de sites par IA, hébergement et outils de relation client selon le forfait.",
+    "pricing_v5": {
+      "cautions": [
+        "Offre de lancement payante : 1 USD pour 7 jours pour les nouveaux utilisateurs, pas un essai gratuit. Accompagnement humain distinct."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "b12.io",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Website",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.b12.io/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Sous-domaine B12. 5 crédits IA par jour, plafond de 30/mois.",
+          "detailsSourceUrl": "https://www.b12.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "website",
+          "displayName": "Website",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Facturation mensuelle. Domaine offert la première année, 100 crédits IA/mois, jusqu’à 10 projets lancés.",
+          "detailsSourceUrl": "https://www.b12.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "client-engagement",
+          "displayName": "Website + Client Engagement",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 78,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Facturation mensuelle. 300 crédits IA/mois, jusqu’à 30 projets lancés. Ajoute demandes clients, contacts, email marketing et signatures électroniques.",
+          "detailsSourceUrl": "https://www.b12.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "Paid introductory offer: $1 for 7 days for new users, not a free trial. Expert-assisted services are separate."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "b12.io",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Website",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.b12.io/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "B12 subdomain. 5 daily AI credits, capped at 30/month.",
+          "detailsSourceUrl": "https://www.b12.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "website",
+          "displayName": "Website",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Monthly billing. Custom domain free for the first year, 100 AI credits/month, up to 10 launched projects.",
+          "detailsSourceUrl": "https://www.b12.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "client-engagement",
+          "displayName": "Website + Client Engagement",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 78,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Monthly billing. 300 AI credits/month, up to 30 launched projects. Adds client intake, contacts, email marketing and eSignatures.",
+          "detailsSourceUrl": "https://www.b12.io/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 2,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Site hébergé et outils clients dans une même plateforme. Analyse documentaire, sans test terrain. https://www.b12.io/pricing (2026-09-27).",
+        "simplicite": "Édition visuelle et assistance IA ; prise en main non testée. Analyse documentaire, sans test terrain. https://www.b12.io/pricing (2026-09-27).",
+        "utilisation": "Utile pour entretenir un site, moins pertinent comme outil quotidien sans activité éditoriale. Analyse documentaire, sans test terrain. https://www.b12.io/pricing (2026-09-27).",
+        "puissance": "Intégrations et fonctions clients selon forfait, avec quotas IA. Analyse documentaire, sans test terrain. https://www.b12.io/pricing (2026-09-27).",
+        "reversibilite": "Restrictions de rétrogradation des offres Professional et Advanced ; export complet non vérifié. Analyse documentaire, sans test terrain. https://www.b12.io/pricing (2026-09-27)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Hosted site and client tools in one platform. Desk research, not a hands-on test. https://www.b12.io/pricing (2026-09-27).",
+        "simplicite": "Visual editing and AI assistance; onboarding not tested. Desk research, not a hands-on test. https://www.b12.io/pricing (2026-09-27).",
+        "utilisation": "Useful for maintaining a site; less relevant daily without regular publishing. Desk research, not a hands-on test. https://www.b12.io/pricing (2026-09-27).",
+        "puissance": "Plan-dependent integrations and client features, with AI quotas. Desk research, not a hands-on test. https://www.b12.io/pricing (2026-09-27).",
+        "reversibilite": "Professional and Advanced downgrade restrictions; full export not verified. Desk research, not a hands-on test. https://www.b12.io/pricing (2026-09-27)."
+      }
+    }
+  },
+  {
+    "id": "betterday-ai",
+    "slug": "betterday-ai",
+    "name": "BetterDay AI",
+    "category": "organization",
+    "bestFor": [
+      "all"
+    ],
+    "covers": [
+      "planning",
+      "taches",
+      "ai-general"
+    ],
+    "functional_needs": [
+      "planning",
+      "taches",
+      "ai-general"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas"
+    ],
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "websiteUrl": "https://www.mybetterdayai.com/",
+    "website": "https://www.mybetterdayai.com/",
+    "affiliateLink": "https://tidd.ly/4xJtUvr",
+    "link": "https://tidd.ly/4xJtUvr",
+    "affiliateCtaLabelFr": "Essayer BetterDay AI gratuitement",
+    "affiliateCtaLabelEn": "Try BetterDay AI for free",
+    "shortDescription": "Transformer une décision ou un objectif en plan d’action et calendrier avec l’IA.",
+    "shortDescriptionEn": "Turn a decision or goal into an action plan and timeline with AI.",
+    "longDescription": "BetterDay AI organise la réflexion en quatre étapes : Decision, Advisor, Planner et Timeline. Vous décrivez une situation, précisez le contexte avec les questions de l’assistant, puis obtenez un plan et un calendrier. Pour un indépendant qui sait ce qu’il souhaite avancer mais peine à découper son objectif, ce parcours peut être plus structurant qu’une conversation libre avec un chatbot.\n\nLe plan gratuit permet de découvrir le parcours avec deux décisions IA par mois et des plans enregistrés localement. Basic ajoute notamment la synchronisation cloud. Personal étend les espaces de vie et d’organisation ; Education cible les cours et échéances scolaires. Executive regroupe des espaces professionnels comme les projets, les contacts et les réunions. Ces éditions ne sont pas interchangeables : Education seule n’inclut pas Personal ou Executive, et Executive n’inclut pas Education.\n\nL’angle ToolTrim : commencez avec un seul objectif concret, puis vérifiez que les tâches proposées correspondent à votre temps disponible. L’IA fournit des suggestions, pas une garantie de bonne décision ni un conseil professionnel. Avant de remplacer un gestionnaire de projets ou un CRM, testez les besoins précis de collaboration et d’export. L’offre Enterprise est annoncée à venir : ses fonctionnalités ne doivent pas être considérées comme disponibles.",
+    "longDescriptionEn": "BetterDay AI structures planning into four steps: Decision, Advisor, Planner and Timeline. Describe a situation, add context through follow-up questions, then receive a plan and schedule. For a freelancer who knows what to move forward but struggles to break a goal down, this guided workflow may be more structured than an open-ended chatbot conversation.\n\nThe free plan offers two AI decisions per month and locally saved plans. Basic adds cloud sync. Personal expands everyday planning workspaces, while Education focuses on courses and academic deadlines. Executive brings together business workspaces such as projects, contacts and meetings. The editions are not interchangeable: Education alone excludes Personal and Executive, and Executive excludes Education.\n\nToolTrim’s view: start with one concrete goal and check whether the suggested tasks fit your available time. AI provides suggestions, not a guarantee of sound decisions or professional advice. Before replacing a project manager or CRM, test your specific collaboration and export needs. Enterprise is marked as coming soon, so its advertised capabilities should not be treated as available.",
+    "pricing": {
+      "free": "2 décisions IA par mois, plans enregistrés localement, sans carte bancaire.",
+      "paid": "Basic 4,99 USD/mois ; Personal et Education 9,99 USD/mois chacun ; Executive 29,99 USD/mois. Forfaits mensuels, taxes à confirmer."
+    },
+    "pricingEn": {
+      "free": "2 AI decisions per month, locally saved plans, no credit card required.",
+      "paid": "Basic $4.99/month; Personal and Education $9.99/month each; Executive $29.99/month. Monthly billing; taxes unconfirmed."
+    },
+    "pros": [
+      "Parcours guidé de l’objectif au calendrier.",
+      "Plan gratuit pour tester avant de payer.",
+      "Export du calendrier au format ICS."
+    ],
+    "prosEn": [
+      "Guided workflow from goal to schedule.",
+      "Free plan to try before paying.",
+      "Calendar export in ICS format."
+    ],
+    "cons": [
+      "Éditions distinctes : vérifier les modules inclus.",
+      "Usage IA illimité soumis à une politique d’usage raisonnable.",
+      "Interface publique partiellement traduite ; résultats IA non testés par ToolTrim."
+    ],
+    "consEn": [
+      "Separate editions: check which modules are included.",
+      "Unlimited AI use is subject to fair-use restrictions.",
+      "Public interface is partly localized; ToolTrim has not tested AI output."
+    ],
+    "alternatives": [
+      "todoist",
+      "reclaim",
+      "notion"
+    ],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "downgradePlan": null,
+    "defaultMonthlyPrice": 0,
+    "logo": "/tool-media/logos/betterday-ai.png",
+    "ogImageUrl": "/og-images/betterday-ai-review.webp",
+    "galleryImages": [],
+    "seo": {
+      "metaDescription": "BetterDay AI : planification guidée par IA, plan gratuit, prix en USD et différences entre Basic, Personal, Education et Executive.",
+      "metaDescriptionEn": "BetterDay AI: guided AI planning, free plan, USD pricing and differences between Basic, Personal, Education and Executive."
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un parcours guidé pour transformer un objectif en actions."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d’un CRM d’équipe ou d’une collaboration avancée déjà éprouvés."
+      ],
+      "threshold": "Testez un objectif avec les deux décisions gratuites avant de choisir une édition."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a guided workflow to turn a goal into actions."
+      ],
+      "avoidIf": [
+        "You need an established team CRM or advanced collaboration."
+      ],
+      "threshold": "Try one goal with the two free decisions before choosing an edition."
+    },
+    "useCases": [
+      "Découper un objectif personnel en tâches.",
+      "Planifier des échéances de cours avec Education.",
+      "Préparer les étapes d’un projet indépendant."
+    ],
+    "useCasesEn": [
+      "Break a personal goal into tasks.",
+      "Plan academic deadlines with Education.",
+      "Prepare the next steps of a freelance project."
+    ],
+    "description": "Transformer une décision ou un objectif en plan d’action et calendrier avec l’IA.",
+    "pricing_v5": {
+      "cautions": [
+        "Prix mensuels USD. Politique d’usage raisonnable. Paiements généralement non remboursables selon les conditions éditeur, sous réserve du droit applicable."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "mybetterdayai.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Basic",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.mybetterdayai.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "isFree": true,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "2 décisions IA/mois ; sauvegarde locale.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "nativeAmount": 4.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": true,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Parcours IA et sauvegardes illimités pour un usage personnel raisonnable ; synchronisation cloud.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "personal",
+          "displayName": "Personal",
+          "nativeAmount": 9.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Basic et espaces Personal, rappels et documents.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "education",
+          "displayName": "Education",
+          "nativeAmount": 9.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Édition Education seule ; ni Personal ni Executive.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "student",
+          "displayName": "Student Bundle",
+          "nativeAmount": 14.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Personal et Education pour une personne.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "family",
+          "displayName": "Student & Family Bundle",
+          "nativeAmount": 24.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Jusqu’à 5 comptes : 2 adultes et 3 étudiants.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "executive",
+          "displayName": "Executive",
+          "nativeAmount": 29.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Personal et suite professionnelle ; Education exclue.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "complete",
+          "displayName": "Complete AI",
+          "nativeAmount": 34.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Personal, Education et Executive pour une personne.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "Monthly USD prices. Fair-use policy applies. Payments are generally non-refundable under the publisher’s policy, subject to applicable law."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "mybetterdayai.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Basic",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.mybetterdayai.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "isFree": true,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "2 AI decisions/month; local saving.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "nativeAmount": 4.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": true,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Unlimited AI workflow and saved plans for normal personal use; cloud sync.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "personal",
+          "displayName": "Personal",
+          "nativeAmount": 9.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Basic plus Personal workspaces, reminders and documents.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "education",
+          "displayName": "Education",
+          "nativeAmount": 9.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Education only; excludes Personal and Executive.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "student",
+          "displayName": "Student Bundle",
+          "nativeAmount": 14.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Personal and Education for one person.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "family",
+          "displayName": "Student & Family Bundle",
+          "nativeAmount": 24.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Up to 5 accounts: 2 adults and 3 students.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "executive",
+          "displayName": "Executive",
+          "nativeAmount": 29.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Personal plus business suite; excludes Education.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "complete",
+          "displayName": "Complete AI",
+          "nativeAmount": 34.99,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "Personal, Education and Executive for one person.",
+          "detailsSourceUrl": "https://www.mybetterdayai.com/pricing",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Parcours décision, conseil et planification intégré ; bénéfice réel à tester. Analyse documentaire, sans test terrain. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "simplicite": "Étapes guidées et offre gratuite ; localisation partielle observée. Analyse documentaire, sans test terrain. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "utilisation": "Adapté à la préparation et au suivi régulier d’objectifs individuels. Analyse documentaire, sans test terrain. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "puissance": "Espaces professionnels selon édition ; Enterprise encore annoncé à venir. Analyse documentaire, sans test terrain. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "reversibilite": "Export ICS et conservation locale annoncés ; export complet des autres données non vérifié. Analyse documentaire, sans test terrain. https://www.mybetterdayai.com/pricing (2026-09-27)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Integrated decision, advice and planning workflow; practical benefit requires testing. Desk research, not a hands-on test. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "simplicite": "Guided steps and free entry; partial localization observed. Desk research, not a hands-on test. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "utilisation": "Fits preparation and recurring follow-up of individual goals. Desk research, not a hands-on test. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "puissance": "Business workspaces depend on edition; Enterprise still marked coming soon. Desk research, not a hands-on test. https://www.mybetterdayai.com/pricing (2026-09-27).",
+        "reversibilite": "ICS export and local retention advertised; full export of other data unverified. Desk research, not a hands-on test. https://www.mybetterdayai.com/pricing (2026-09-27)."
+      }
+    }
+  },
+  {
+    "id": "engagebay",
+    "slug": "engagebay",
+    "name": "EngageBay",
+    "category": "crm",
+    "bestFor": [
+      "all"
+    ],
+    "covers": [
+      "crm",
+      "email-marketing",
+      "marketing-automation"
+    ],
+    "functional_needs": [
+      "crm",
+      "email-marketing",
+      "marketing-automation"
+    ],
+    "tool_type": "metier",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "ecommercant"
+    ],
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "websiteUrl": "https://www.engagebay.com/",
+    "website": "https://www.engagebay.com/",
+    "affiliateLink": "https://www.awin1.com/cread.php?awinmid=127075&awinaffid=2901291&clickref=tooltrim",
+    "link": "https://www.awin1.com/cread.php?awinmid=127075&awinaffid=2901291&clickref=tooltrim",
+    "affiliateCtaLabelFr": "Essayer EngageBay gratuitement",
+    "affiliateCtaLabelEn": "Try EngageBay for free",
+    "shortDescription": "CRM, email marketing et support client réunis pour les petites équipes.",
+    "shortDescriptionEn": "CRM, email marketing and customer support in one platform for small teams.",
+    "longDescription": "EngageBay réunit les contacts, le suivi commercial, les campagnes email et le support client dans une suite All-in-One. Il propose aussi des offres Marketing et Sales & CRM séparées. Pour une petite équipe qui jongle entre une base de prospects, un outil email et un helpdesk, l’intérêt est de centraliser le parcours client plutôt que d’ajouter une application de plus.\n\nLa fiche compare la suite All-in-One. Le plan gratuit permet de démarrer avec 250 contacts. Les fonctions plus avancées, comme l’automatisation marketing et les tests A/B, dépendent du forfait. Le prix doit se lire avec trois paramètres : le nombre d’utilisateurs, le volume de contacts et la durée d’engagement. Le tarif d’appel affiché sur le site correspond à un engagement de deux ans, pas à un paiement mensuel sans engagement.\n\nPour ToolTrim, le bon test consiste à importer un petit échantillon de contacts, créer une opportunité commerciale et préparer une relance. Vérifiez ensuite les règles de consentement, les intégrations nécessaires et les quotas d’envoi avant une migration. L’export des contacts en CSV est documenté, mais il ne prouve pas que les historiques et automatisations se transfèrent intégralement vers un autre CRM. Les visuels viennent de l’éditeur ; aucun gain de vente ou de délivrabilité n’a été mesuré par ToolTrim.",
+    "longDescriptionEn": "EngageBay combines contacts, sales tracking, email campaigns and customer support in an All-in-One suite. Separate Marketing and Sales & CRM products are also available. For a small team switching between a prospect database, email software and a helpdesk, the appeal is consolidating the customer journey rather than adding another application.\n\nThis listing compares the All-in-One suite. The free plan starts with 250 contacts. Advanced capabilities such as marketing automation and A/B testing depend on the tier. Read the price alongside three factors: user count, contact volume and commitment length. The headline starting price on the vendor site requires a two-year commitment, not flexible monthly billing.\n\nToolTrim suggests importing a small sample of contacts, creating a sales opportunity and preparing a follow-up. Then check consent handling, required integrations and sending quotas before migrating. CSV contact export is documented, but this does not establish that histories and automations can be transferred in full to another CRM. Visuals are supplied by the publisher; ToolTrim has not measured sales or deliverability improvements.",
+    "pricing": {
+      "free": "All-in-One Free : 250 contacts.",
+      "paid": "All-in-One, engagement annuel : Basic 13,79, Growth 59,79 et Pro 110,39 USD/utilisateur/mois équivalent. Taxes à confirmer."
+    },
+    "pricingEn": {
+      "free": "All-in-One Free: 250 contacts.",
+      "paid": "All-in-One, annual commitment: Basic $13.79, Growth $59.79 and Pro $110.39/user/month equivalent. Taxes unconfirmed."
+    },
+    "pros": [
+      "CRM, marketing et support dans une même suite.",
+      "Offre gratuite pour démarrer avec une petite base.",
+      "Import et export CSV des contacts documentés."
+    ],
+    "prosEn": [
+      "CRM, marketing and support in one suite.",
+      "Free plan for a small initial database.",
+      "Documented CSV contact import and export."
+    ],
+    "cons": [
+      "Prix par utilisateur et quotas de contacts à anticiper.",
+      "Automatisations avancées réservées aux offres supérieures.",
+      "Migration des historiques et automatisations à vérifier séparément."
+    ],
+    "consEn": [
+      "Account for per-user prices and contact caps.",
+      "Advanced automation requires higher tiers.",
+      "Verify history and automation migration separately."
+    ],
+    "alternatives": [
+      "hubspot",
+      "brevo",
+      "activecampaign"
+    ],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "downgradePlan": null,
+    "defaultMonthlyPrice": 0,
+    "logo": "/tool-media/logos/engagebay.png",
+    "ogImageUrl": "/og-images/engagebay-review.webp",
+    "galleryImages": [
+      "/tool-media/engagebay/official-1.webp",
+      "/tool-media/engagebay/official-2.webp"
+    ],
+    "seo": {
+      "metaDescription": "EngageBay : CRM, email marketing et support client. Tarifs All-in-One en USD, quotas, avis et alternatives pour les petites équipes.",
+      "metaDescriptionEn": "EngageBay CRM, email marketing and customer support: All-in-One USD pricing, contact caps, review and small-team alternatives."
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous souhaitez regrouper contacts, relances et support dans une petite équipe."
+      ],
+      "avoidIf": [
+        "Un CRM existant répond déjà au besoin ou vos automatisations sont très spécifiques."
+      ],
+      "threshold": "Testez le parcours d’un prospect avec le plan gratuit avant de migrer votre base."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your small team wants to consolidate contacts, follow-ups and support."
+      ],
+      "avoidIf": [
+        "An existing CRM already fits or your automations are highly specialized."
+      ],
+      "threshold": "Test one prospect journey on the free plan before migrating your database."
+    },
+    "useCases": [
+      "Suivre les prospects et opportunités commerciales.",
+      "Relancer les contacts avec des campagnes email.",
+      "Centraliser demandes de support et échanges clients."
+    ],
+    "useCasesEn": [
+      "Track prospects and sales opportunities.",
+      "Follow up with contacts through email campaigns.",
+      "Centralize support requests and customer conversations."
+    ],
+    "description": "CRM, email marketing et support client réunis pour les petites équipes.",
+    "pricing_v5": {
+      "cautions": [
+        "Suite All-in-One uniquement. Facturation annuelle par utilisateur. Le prix de départ de 12,74 USD exige deux ans. Le libellé de Basic mensuel est contradictoire sur la source : confirmer avant achat."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "engagebay.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "All-in-One Basic",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.engagebay.com/pricing/all-in-one",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "All-in-One Free",
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "isFree": true,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "250 contacts. Plan gratuit.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "All-in-One Basic",
+          "nativeAmount": 13.79,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": true,
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "500 contacts. Par utilisateur/mois équivalent, facturé annuellement. Taxes à confirmer.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "growth",
+          "displayName": "All-in-One Growth",
+          "nativeAmount": 59.79,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "5 000 contacts. Par utilisateur/mois équivalent, facturé annuellement. Taxes à confirmer.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "All-in-One Pro",
+          "nativeAmount": 110.39,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "10 000 contacts. Par utilisateur/mois équivalent, facturé annuellement. Taxes à confirmer.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "All-in-One only. Annual billing, per user. The $12.74 starting price requires a two-year commitment. Basic monthly wording is inconsistent on the official page; confirm before checkout."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "engagebay.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "All-in-One Basic",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.engagebay.com/pricing/all-in-one",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "All-in-One Free",
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "isFree": true,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "summary": "250 contacts. Free plan.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "All-in-One Basic",
+          "nativeAmount": 13.79,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": true,
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "500 contacts. Per user/month equivalent, billed annually. Taxes unconfirmed.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "growth",
+          "displayName": "All-in-One Growth",
+          "nativeAmount": 59.79,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "5,000 contacts. Per user/month equivalent, billed annually. Taxes unconfirmed.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "All-in-One Pro",
+          "nativeAmount": 110.39,
+          "nativeCurrency": "USD",
+          "isFree": false,
+          "isComparePlan": false,
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "summary": "10,000 contacts. Per user/month equivalent, billed annually. Taxes unconfirmed.",
+          "detailsSourceUrl": "https://www.engagebay.com/pricing/all-in-one",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Regroupe CRM, email et support pour limiter la dispersion. Analyse documentaire, sans test terrain. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "simplicite": "Périmètre large ; configuration des contacts et campagnes nécessaire. Analyse documentaire, sans test terrain. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "utilisation": "Suivi commercial et demandes clients récurrents. Analyse documentaire, sans test terrain. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "puissance": "Automatisations et reporting avancés selon forfait. Analyse documentaire, sans test terrain. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "reversibilite": "Export CSV des contacts documenté ; portabilité complète non testée. Analyse documentaire, sans test terrain. https://help.engagebay.com/articles/how-to-export-contacts/ (2026-09-27)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Combines CRM, email and support to reduce fragmentation. Desk research, not a hands-on test. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "simplicite": "Broad scope; contacts and campaigns require setup. Desk research, not a hands-on test. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "utilisation": "Recurring sales follow-up and customer requests. Desk research, not a hands-on test. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "puissance": "Advanced automation and reporting depend on tier. Desk research, not a hands-on test. https://www.engagebay.com/pricing/all-in-one (2026-09-27).",
+        "reversibilite": "Documented CSV contact export; full portability not tested. Desk research, not a hands-on test. https://help.engagebay.com/articles/how-to-export-contacts/ (2026-09-27)."
+      }
+    }
+  },
+  {
+    "id": "esign",
+    "slug": "esign",
+    "name": "eSign",
+    "category": "legal-contracts",
+    "bestFor": [
+      "all"
+    ],
+    "covers": [
+      "signature",
+      "pdf-review",
+      "document-delivery"
+    ],
+    "functional_needs": [
+      "signature",
+      "pdf-review",
+      "document-delivery"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b"
+    ],
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "websiteUrl": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+    "website": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+    "affiliateLink": "https://tidd.ly/4yekYiv",
+    "link": "https://tidd.ly/4yekYiv",
+    "affiliateCtaLabelFr": "Découvrir eSign sur l’App Store",
+    "affiliateCtaLabelEn": "View eSign on the App Store",
+    "shortDescription": "Ajouter sa signature aux PDF, DOCX et scans sur iPhone ou iPad, puis exporter en PDF.",
+    "shortDescriptionEn": "Add your signature to PDFs, DOCX files and scans on iPhone or iPad, then export to PDF.",
+    "longDescription": "eSign: Sign PDF DOCX Documents, d’Evgenii Aleksanov, est une application pour préparer et signer ses propres documents sur iPhone et iPad. Elle importe des PDF, DOCX et images, permet de réorganiser les pages et produit un PDF à partager. Son intérêt est un parcours mobile ciblé, sans compte à créer, plutôt qu’une suite bureautique complète.\n\nLe traitement des documents est annoncé comme local par l’éditeur. Cela ne signifie pas absence de collecte : la fiche App Store déclare des identifiants, données d’usage et diagnostics, et la politique de confidentialité décrit des services d’analyse et d’attribution. Les exports gratuits impliquent des publicités ; Premium les retire et permet l’export entièrement hors ligne. Sauvegardez vos PDF exportés ailleurs : la suppression de l’application peut supprimer les données locales.\n\nPour ToolTrim, commencez avec un document non sensible et contrôlez chaque page du PDF exporté, notamment après import DOCX. L’application exige iOS ou iPadOS 15.1 au minimum. Ne l’assimilez pas à une plateforme de collecte de signatures multi-parties : piste d’audit, vérification des signataires et certification ne sont pas établies par les sources consultées. Aucun test sur appareil ni qualification juridique n’est revendiqué.",
+    "longDescriptionEn": "eSign: Sign PDF DOCX Documents, by Evgenii Aleksanov, is an iPhone and iPad app for preparing and signing your own documents. It imports PDFs, DOCX files and images, lets you rearrange pages and produces a PDF to share. Its appeal is a focused mobile workflow without creating an account, rather than a full office suite.\n\nThe developer says documents are processed locally. That does not mean no data collection: the App Store label lists identifiers, usage data and diagnostics, while the privacy policy describes analytics and attribution services. Free exports involve ads; Premium removes them and enables fully offline exports. Save exported PDFs elsewhere: uninstalling the app can remove local data.\n\nToolTrim suggests starting with a non-sensitive document and checking every exported page, particularly after DOCX import. The app requires iOS or iPadOS 15.1 or later. Do not assume it offers a multi-party signing platform: audit trails, signer verification and certification are not established by the sources reviewed. No device testing or legal assessment is claimed.",
+    "pricing": {
+      "free": "Téléchargement gratuit ; publicités lors des exports.",
+      "paid": "App Store US : Premium mensuel 10,99 USD ; hebdomadaire 4,99 USD ; annuel 58,99 USD/an. Prix locaux à vérifier dans l’application."
+    },
+    "pricingEn": {
+      "free": "Free download; ads during exports.",
+      "paid": "US App Store: Premium monthly $10.99; weekly $4.99; yearly $58.99/year. Check local in-app prices."
+    },
+    "pros": [
+      "Import PDF, DOCX et images.",
+      "Sans création de compte, documents traités localement selon l’éditeur.",
+      "Export PDF indépendant de l’application."
+    ],
+    "prosEn": [
+      "PDF, DOCX and image import.",
+      "No account creation; local document processing according to the developer.",
+      "PDF export usable outside the app."
+    ],
+    "cons": [
+      "Publicités à l’export gratuit ; hors ligne complet réservé à Premium.",
+      "Gros documents dépendants des ressources de l’appareil.",
+      "Pas de preuve d’un workflow de signature certifiée ou multi-parties."
+    ],
+    "consEn": [
+      "Free exports include ads; full offline export requires Premium.",
+      "Large files depend on device resources.",
+      "No established certified or multi-party signing workflow."
+    ],
+    "alternatives": [
+      "adobe-acrobat",
+      "docusign",
+      "yousign"
+    ],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "downgradePlan": null,
+    "defaultMonthlyPrice": 0,
+    "logo": "/tool-media/logos/esign.png",
+    "ogImageUrl": "/og-images/esign-review.webp",
+    "galleryImages": [
+      "/tool-media/esign/official-1.webp",
+      "/tool-media/esign/official-2.webp",
+      "/tool-media/esign/official-3.webp"
+    ],
+    "seo": {
+      "metaDescription": "eSign pour iPhone et iPad : signature de PDF et DOCX, tarifs App Store US, publicités, confidentialité et limites avant téléchargement.",
+      "metaDescriptionEn": "eSign for iPhone and iPad: PDF and DOCX signing, US App Store pricing, ads, privacy and limitations before downloading."
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous devez apposer votre signature et renvoyer un PDF depuis un iPhone ou iPad."
+      ],
+      "avoidIf": [
+        "Vous cherchez un circuit de signatures avec preuves et contrôle des signataires."
+      ],
+      "threshold": "Testez l’export gratuit avant de souscrire à Premium pour supprimer les publicités."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need to add your signature and return a PDF from an iPhone or iPad."
+      ],
+      "avoidIf": [
+        "You need a signing workflow with evidence and signer verification."
+      ],
+      "threshold": "Test free export before subscribing to Premium to remove ads."
+    },
+    "useCases": [
+      "Apposer sa signature sur un document reçu.",
+      "Assembler et réorganiser des scans avant export.",
+      "Renvoyer un PDF préparé depuis son téléphone."
+    ],
+    "useCasesEn": [
+      "Add your signature to a received document.",
+      "Combine and rearrange scans before export.",
+      "Return a prepared PDF from your phone."
+    ],
+    "description": "Ajouter sa signature aux PDF, DOCX et scans sur iPhone ou iPad, puis exporter en PDF.",
+    "pricing_v5": {
+      "cautions": [
+        "Tarifs App Store US ; prix régionaux variables. Aucun achat à vie vérifié."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "apps.apple.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Premium Monthly (US)",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "nativeAmount": 0,
+          "isFree": true,
+          "isComparePlan": false,
+          "summary": "Outils essentiels avec publicités à l’export.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "detailsSourceUrl": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "monthly",
+          "displayName": "Premium Monthly (US)",
+          "nativeAmount": 10.99,
+          "isFree": false,
+          "isComparePlan": true,
+          "summary": "Abonnement mensuel intégré, App Store US. Autres options : 4,99 USD/semaine ou 58,99 USD/an, pas des licences à vie. Retire les publicités à l’export.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "detailsSourceUrl": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "US App Store prices; regional prices may differ. No lifetime purchase verified."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "apps.apple.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Premium Monthly (US)",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "nativeAmount": 0,
+          "isFree": true,
+          "isComparePlan": false,
+          "summary": "Core tools with ads on export.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "detailsSourceUrl": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "monthly",
+          "displayName": "Premium Monthly (US)",
+          "nativeAmount": 10.99,
+          "isFree": false,
+          "isComparePlan": true,
+          "summary": "US in-app monthly subscription. Also listed: $4.99/week or $58.99/year, not lifetime purchases. Removes export ads.",
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "detailsSourceUrl": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
+          "taxInclusion": "unknown",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 2,
+      "reversibilite": 4,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Signature mobile ciblée, sans suite bureautique complète. Analyse documentaire, sans test sur appareil. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "simplicite": "Parcours sans compte annoncé ; publicités à l’export gratuit. Analyse documentaire, sans test sur appareil. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "utilisation": "Usage ponctuel pour ses propres documents. Analyse documentaire, sans test sur appareil. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "puissance": "Préparation de pages et PDF ; workflow multi-parties non établi. Analyse documentaire, sans test sur appareil. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "reversibilite": "Export PDF ; conserver une sauvegarde hors de l’application. Analyse documentaire, sans test sur appareil. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Focused mobile signing, not a complete office suite. Desk research, not a device test. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "simplicite": "Advertised account-free workflow; ads on free exports. Desk research, not a device test. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "utilisation": "Occasional use for your own documents. Desk research, not a device test. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "puissance": "Page preparation and PDF export; multi-party workflow unverified. Desk research, not a device test. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27).",
+        "reversibilite": "PDF export; keep a backup outside the app. Desk research, not a device test. https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759 (2026-09-27)."
+      }
+    }
+  },
+  {
+    "id": "faceready",
+    "slug": "faceready",
+    "name": "FaceReady",
+    "category": "communication",
+    "bestFor": [
+      "all"
+    ],
+    "covers": [
+      "video-calls"
+    ],
+    "functional_needs": [
+      "video-calls"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b"
+    ],
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "low",
+    "websiteUrl": "https://faceready.ai/",
+    "website": "https://faceready.ai/",
+    "affiliateLink": "https://tidd.ly/3TSWo7W",
+    "link": "https://tidd.ly/3TSWo7W",
+    "affiliateCtaLabelFr": "Essayer FaceReady pendant 7 jours",
+    "affiliateCtaLabelEn": "Try FaceReady for 7 days",
+    "shortDescription": "Retouche du visage en direct via une caméra virtuelle pour les appels vidéo sur Mac et Windows.",
+    "shortDescriptionEn": "Live facial touch-ups through a virtual camera for video calls on Mac and Windows.",
+    "longDescription": "FaceReady, de Trucode Limited, ajoute une caméra virtuelle à vos applications de visioconférence. Les réglages portent notamment sur le lissage, les cheveux gris, les yeux et l’apparence du visage. Il s’adresse aux indépendants qui enchaînent les rendez-vous vidéo et souhaitent retrouver les mêmes réglages dans plusieurs applications.\n\nL’éditeur annonce un traitement vidéo local. La politique de confidentialité distingue toutefois ce flux des vérifications de licence et de mise à jour : une clé de licence, un identifiant d’appareil et les informations de facturation restent concernés. La vidéo envoyée aux participants passe toujours par votre application de réunion et ses propres règles.\n\nCommencez par l’essai de 7 jours sans carte, avec filigrane. Vérifiez le rendu en mouvement et la fluidité pendant un appel sur votre matériel avant de payer. Le site annonce Mac Apple Silicon et Windows 11 : ne présumez pas une compatibilité avec les Mac Intel ou les appareils mobiles. La note repose sur les sources publiques, pas sur un test logiciel. Si une simple correction de l’éclairage ou les réglages intégrés de votre outil de réunion suffisent, cet abonnement supplémentaire n’est pas indispensable.",
+    "longDescriptionEn": "FaceReady, by Trucode Limited, adds a virtual camera to your video-call apps. Controls include smoothing, grey hair, eyes and facial appearance. It targets independent professionals who spend time in video meetings and want consistent adjustments across several apps.\n\nThe developer describes local video processing. Its privacy policy distinguishes the video feed from licence and update checks: a licence key, device identifier and billing information are still involved. Video sent to meeting participants continues through your meeting app under its own policies.\n\nStart with the seven-day, no-card trial, which includes a watermark. Check movement and call performance on your own hardware before subscribing. The website lists Apple Silicon Macs and Windows 11: do not assume support for Intel Macs or mobile devices. The rating is based on public documentation, not hands-on testing. If better lighting or your meeting app’s built-in adjustments meet your needs, another subscription may be unnecessary.",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte, avec filigrane. Pas de forfait gratuit permanent annoncé.",
+      "paid": "19,99 USD/mois ou 119,88 USD/an payés d’avance (équivalent 9,99 USD/mois). Taxes en sus si applicables."
+    },
+    "pricingEn": {
+      "free": "Seven-day trial without a card, with watermark. No permanent free plan advertised.",
+      "paid": "$19.99/month or $119.88/year paid upfront ($9.99/month equivalent). Applicable taxes extra."
+    },
+    "pros": [
+      "Mêmes réglages via une caméra virtuelle dans plusieurs applications.",
+      "Traitement vidéo local annoncé par l’éditeur.",
+      "Essai sans carte pour vérifier le rendu avant abonnement."
+    ],
+    "prosEn": [
+      "Consistent adjustments through a virtual camera across apps.",
+      "Developer-reported local video processing.",
+      "No-card trial to check results before subscribing."
+    ],
+    "cons": [
+      "Abonnement supplémentaire pour un besoin esthétique ciblé.",
+      "Mac Apple Silicon ou Windows 11 annoncés ; compatibilité à vérifier.",
+      "Rendu et fluidité non testés par ToolTrim."
+    ],
+    "consEn": [
+      "An additional subscription for a focused appearance use case.",
+      "Apple Silicon Mac or Windows 11 advertised; check compatibility.",
+      "Results and performance not tested by ToolTrim."
+    ],
+    "alternatives": [
+      "zoom",
+      "obs"
+    ],
+    "timeGainedHoursPerMonth": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "downgradePlan": null,
+    "defaultMonthlyPrice": 0,
+    "logo": "/tool-media/logos/faceready.svg",
+    "ogImageUrl": "/og-images/faceready-review.jpg",
+    "galleryImages": [
+      "/tool-media/faceready/interface.png",
+      "/tool-media/faceready/demo.jpg"
+    ],
+    "seo": {
+      "metaDescription": "FaceReady : caméra virtuelle et retouche IA en direct sur Mac et Windows. Prix, essai de 7 jours, confidentialité et démo officielle.",
+      "metaDescriptionEn": "FaceReady live AI webcam touch-ups for Mac and Windows: pricing, seven-day trial, privacy limits and official demonstration."
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous voulez conserver les mêmes retouches d’un outil de visioconférence à l’autre."
+      ],
+      "avoidIf": [
+        "Les réglages intégrés de votre application de réunion vous suffisent."
+      ],
+      "threshold": "Validez le rendu en mouvement et la fluidité pendant les 7 jours d’essai avant de choisir un abonnement."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want consistent touch-ups across video-call apps."
+      ],
+      "avoidIf": [
+        "Your meeting app’s built-in adjustments are enough."
+      ],
+      "threshold": "Check motion and call performance during the seven-day trial before choosing a subscription."
+    },
+    "useCases": [
+      "Harmoniser son apparence entre Zoom, Teams et Meet.",
+      "Préparer une caméra virtuelle pour les rendez-vous clients.",
+      "Tester différents réglages avant un entretien vidéo."
+    ],
+    "useCasesEn": [
+      "Use consistent adjustments across Zoom, Teams and Meet.",
+      "Prepare a virtual camera for client meetings.",
+      "Try appearance settings before a video interview."
+    ],
+    "description": "Retouche du visage en direct via une caméra virtuelle pour les appels vidéo sur Mac et Windows.",
+    "pricing_v5": {
+      "cautions": [
+        "Essai de 7 jours avec filigrane, sans carte. Taxes en sus si applicables. Annuel prépayé, pas une licence à vie."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "faceready.ai",
+      "usage_sensitive": false,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Monthly",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://faceready.ai/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "monthly",
+          "displayName": "Monthly",
+          "nativeAmount": 19.99,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "isComparePlan": true,
+          "summary": "Abonnement mensuel. Usage illimité sans filigrane.",
+          "isFree": false,
+          "nativeCurrency": "USD",
+          "detailsSourceUrl": "https://faceready.ai/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "yearly",
+          "displayName": "Yearly",
+          "nativeAmount": 119.88,
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "isComparePlan": false,
+          "summary": "119,88 USD payés d’avance par an, soit 9,99 USD/mois en équivalent.",
+          "isFree": false,
+          "nativeCurrency": "USD",
+          "detailsSourceUrl": "https://faceready.ai/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "Seven-day watermarked trial, no card. Taxes extra where applicable. Annual plan is prepaid, not a lifetime licence."
+      ],
+      "verified_on": "2026-09-27",
+      "source_domain": "faceready.ai",
+      "usage_sensitive": false,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Monthly",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://faceready.ai/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "monthly",
+          "displayName": "Monthly",
+          "nativeAmount": 19.99,
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "isComparePlan": true,
+          "summary": "Monthly subscription. Unlimited use, no watermark.",
+          "isFree": false,
+          "nativeCurrency": "USD",
+          "detailsSourceUrl": "https://faceready.ai/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        },
+        {
+          "planKey": "yearly",
+          "displayName": "Yearly",
+          "nativeAmount": 119.88,
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "isComparePlan": false,
+          "summary": "$119.88 paid upfront per year, equivalent to $9.99/month.",
+          "isFree": false,
+          "nativeCurrency": "USD",
+          "detailsSourceUrl": "https://faceready.ai/pricing",
+          "taxInclusion": "ht",
+          "observedOn": "2026-09-27",
+          "lastConfirmedOn": "2026-09-27"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 4,
+      "notedOn": "2026-09-27",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Réglages partagés entre applications, valeur limitée si les retouches intégrées suffisent. Analyse documentaire, sans test logiciel. https://faceready.ai/ (2026-09-27).",
+        "simplicite": "Caméra virtuelle à sélectionner, essai sans carte ; configuration matérielle à vérifier. Analyse documentaire, sans test logiciel. https://faceready.ai/ (2026-09-27).",
+        "utilisation": "Pertinent pour des appels fréquents, besoin esthétique non universel. Analyse documentaire, sans test logiciel. https://faceready.ai/ (2026-09-27).",
+        "puissance": "Réglages visage et couleur en direct, performances non mesurées. Analyse documentaire, sans test logiciel. https://faceready.ai/ (2026-09-27).",
+        "reversibilite": "Retour possible à la webcam d’origine ; abonnement à résilier séparément. Analyse documentaire, sans test logiciel. https://faceready.ai/ (2026-09-27)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Shared adjustments across apps; limited extra value when built-in touch-ups suffice. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27).",
+        "simplicite": "Virtual camera selection and no-card trial; check hardware requirements. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27).",
+        "utilisation": "Relevant to frequent calls; appearance needs are not universal. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27).",
+        "puissance": "Live facial and colour controls; performance not measured. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27).",
+        "reversibilite": "You can switch back to the original webcam; cancel the subscription separately. Desk research, no hands-on software test. https://faceready.ai/ (2026-09-27)."
+      }
     }
   }
 ]
