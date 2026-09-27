@@ -4801,3 +4801,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - CTA éditoriaux existants conservés dans le CSS compilé via une seule classe autorisée ; contraste dans le contenu et retour à la ligne sur petits écrans. FAQ visibles alignées sur les données structurées.
 - Ajout de six routes : 13294 fichiers mesurés, plafond ciblé porté à 13310. Limites de taille inchangées.
 - Build final PASS : 13295 fichiers, 851,9 MiB ; SEO généré, six rendus locaux, CTA et liens entrants validés. TypeScript global reste bloqué par des erreurs antérieures hors périmètre ; aucun diagnostic dans les nouveaux modules. Vérification mobile non effectuée.
+
+## 2026-09-27 : export LLM des prix et pages éditoriales
+
+- Suppression du champ mensuel EUR non attesté : les prix éditoriaux conservent leur devise et leur période, sans zéro par défaut ni mensualisation des licences à vie. Aucune description française présentée comme anglaise en l'absence de traduction.
+- Ajout de llms-editorial.txt avec titres, résumés et URL localisées des guides et comparatifs indexables. Génération après le sitemap et le prerender, contrôle des URL canoniques et du noindex, ressources identiques dans public et dist.
+- Le format tableau du catalogue outils est conservé ; llms.txt référence le nouvel index éditorial. Tests de non-régression sur les prix, les routes et les fichiers livrés. Aucun changement de politique robots ou d'interface.
+- Validation : 12 tests réussis, build production et budgets PASS, 11 624 URL validées dans le sitemap. Export de 1 190 outils et 250 pages éditoriales (84 guides, 166 comparatifs localisés). Deux pages du guide stack rédaction n'ont pas de résumé source ; leur titre et leur URL restent exportés sans résumé inventé. Non publié.

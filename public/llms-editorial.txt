@@ -1,0 +1,2005 @@
+# ToolTrim editorial index
+# Generated from dist/sitemap.xml and its canonical prerendered pages.
+# Records: 250 (84 guides, 166 comparisons, localized FR/EN pages)
+# Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
+
+[
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "creer-video-produit-sans-montage",
+    "url": "https://tooltrim.com/fr/guide/creer-video-produit-sans-montage",
+    "title": "Créer une vidéo produit sans savoir monter | ToolTrim",
+    "summary": "Du brief au fichier exporté : préparez une vidéo produit courte avec FlexClip ou Movavi, sans confondre essai gratuit, effets payants et droits des médias."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "creer-video-produit-sans-montage",
+    "url": "https://tooltrim.com/en/guide/creer-video-produit-sans-montage",
+    "title": "Create a product video without editing experience | ToolTrim",
+    "summary": "From brief to export: make a short product video with FlexClip or Movavi while checking trial limits, paid effects and media rights."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "choisir-outil-premiere-newsletter",
+    "url": "https://tooltrim.com/fr/guide/choisir-outil-premiere-newsletter",
+    "title": "Première newsletter : Brevo, GetResponse ou Kit ? | ToolTrim",
+    "summary": "Choisissez selon votre cadence, votre nombre d’abonnés et votre parcours d’inscription. Trois options, leurs limites utiles et un test avant de payer."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "choisir-outil-premiere-newsletter",
+    "url": "https://tooltrim.com/en/guide/choisir-outil-premiere-newsletter",
+    "title": "First newsletter: Brevo, GetResponse or Kit? | ToolTrim",
+    "summary": "Choose around sending frequency, subscribers and the signup journey. Three starting points, practical limits and a test before paying."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "alternatives-freshservice-2026",
+    "url": "https://tooltrim.com/fr/guide/alternatives-freshservice-2026",
+    "title": "Alternatives à Freshservice : que choisir, et pourquoi",
+    "summary": "Freshservice réserve la CMDB et l’automatisation au plan Growth : 19 $ qui passent à 49 $ par agent. Les alternatives comparées par motif de départ, prix offici"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "freshservice-alternatives-2026",
+    "url": "https://tooltrim.com/en/guide/freshservice-alternatives-2026",
+    "title": "Freshservice alternatives: what to pick, and why",
+    "summary": "Freshservice keeps the CMDB and automation behind Growth, taking $19 to $49 per agent. Alternatives compared by reason for leaving, prices verified."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "adobe-podcast-ai-gratuit-alternatives-2026",
+    "url": "https://tooltrim.com/fr/guide/adobe-podcast-ai-gratuit-alternatives-2026",
+    "title": "Adobe Podcast AI : limites et alternatives 2026",
+    "summary": "Adobe Podcast Enhance Speech est-il gratuit ? Prix, limites et comparatif avec Auphonic, Cleanvoice, Descript, Async et Riverside."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "adobe-podcast-ai-free-limits-alternatives-2026",
+    "url": "https://tooltrim.com/en/guide/adobe-podcast-ai-free-limits-alternatives-2026",
+    "title": "Adobe Podcast AI Free: Limits and Alternatives 2026 | ToolTrim",
+    "summary": "Is Adobe Podcast Enhance Speech free? Pricing, limits, and comparisons with Auphonic, Cleanvoice, Descript, Async, and Riverside."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "andrew-huberman-kit-systeme-audience",
+    "url": "https://tooltrim.com/fr/guide/andrew-huberman-kit-systeme-audience",
+    "title": "Huberman Lab : un million d'abonnés avec Kit",
+    "summary": "Étude de cas Huberman Lab : découvrez comment Kit a relié lead magnet, automatisations et recommandations pour dépasser un million d’abonnés."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "andrew-huberman-kit-systeme-audience",
+    "url": "https://tooltrim.com/en/guide/andrew-huberman-kit-systeme-audience",
+    "title": "How Huberman Lab passed a million subscribers",
+    "summary": "Huberman Lab case study: discover how Kit connected a lead magnet, automations and recommendations to grow past one million email subscribers."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "atelier-hors-champ-scenographie-espace-raconte",
+    "url": "https://tooltrim.com/fr/guide/atelier-hors-champ-scenographie-espace-raconte",
+    "title": "Atelier Hors-Champ : une scénographie en chantier",
+    "summary": "Dans les coulisses d’Atelier Hors-Champ : maquette, lumière, montage et outils au service d’une scénographie pensée à l’échelle du visiteur."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "atelier-hors-champ-scenographie-espace-raconte",
+    "url": "https://tooltrim.com/en/guide/atelier-hors-champ-scenographie-espace-raconte",
+    "title": "Atelier Hors-Champ: a scenography studio at work",
+    "summary": "Behind the scenes at Atelier Hors-Champ: model-making, lighting, installation, and tools in service of a scenography conceived at the scale of the visitor."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "auditer-stack-saas-45-minutes",
+    "url": "https://tooltrim.com/fr/guide/auditer-stack-saas-45-minutes",
+    "title": "Auditer sa stack SaaS en 45 minutes : la méthode",
+    "summary": "Auditez vos abonnements SaaS en 45 minutes : usages, doublons, dépendances, coûts et matrice pour garder, challenger, remplacer ou supprimer."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "auditer-stack-saas-45-minutes",
+    "url": "https://tooltrim.com/en/guide/auditer-stack-saas-45-minutes",
+    "title": "Audit your SaaS stack in 45 minutes: the method",
+    "summary": "Audit your SaaS subscriptions in 45 minutes: usage, overlaps, dependencies, costs, and a decision matrix to keep, challenge, replace, or remove."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+    "url": "https://tooltrim.com/fr/guide/marc-delmas-clarifier-entreprise-qui-grandit",
+    "title": "Clarifier une entreprise qui grandit trop vite",
+    "summary": "Marc Delmas aide une petite manufacture à structurer ses opérations avec Airtable, Make, Pipedrive et des décisions mieux partagées."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+    "url": "https://tooltrim.com/en/guide/marc-delmas-clarifier-entreprise-qui-grandit",
+    "title": "Bringing Clarity Back to a Growing Company | ToolTrim Stories",
+    "summary": "Marc Delmas helps a small manufacturer structure its operations with Airtable, Make, Pipedrive and better-shared decisions."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "nora-bensaid-produit-sante-depuis-terrain",
+    "url": "https://tooltrim.com/fr/guide/nora-bensaid-produit-sante-depuis-terrain",
+    "title": "Construire un produit numérique depuis le terrain",
+    "summary": "Nora Bensaïd conçoit un produit de coordination en santé avec Dovetail, Figma, Storybook, Sentry et une recherche ancrée dans le terrain."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "nora-bensaid-produit-sante-depuis-terrain",
+    "url": "https://tooltrim.com/en/guide/nora-bensaid-produit-sante-depuis-terrain",
+    "title": "Building a Digital Product from the Field | ToolTrim Stories",
+    "summary": "Nora Bensaïd designs a healthcare coordination product with Dovetail, Figma, Storybook, Sentry and field-based user research."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "anna-morel-designer-studio-augmente",
+    "url": "https://tooltrim.com/fr/guide/anna-morel-designer-studio-augmente",
+    "title": "Concevoir comme un studio quand on travaille seule",
+    "summary": "Le portrait d’Anna Morel, designer indépendante, et de son workflow créatif augmenté par l’IA, de la recherche visuelle au système de marque."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "anna-morel-designer-studio-augmente",
+    "url": "https://tooltrim.com/en/guide/anna-morel-designer-studio-augmente",
+    "title": "Designing like a studio when you work alone | ToolTrim Stories",
+    "summary": "A portrait of Anna Morel, independent designer, and her AI-augmented creative workflow: from visual research to brand system."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "pourquoi-visualiser-stack-saas",
+    "url": "https://tooltrim.com/fr/guide/pourquoi-visualiser-stack-saas",
+    "title": "Visualiser sa stack SaaS plutôt qu'un tableur",
+    "summary": "Découvrez pourquoi une carte visuelle révèle mieux qu'Excel les doublons, les trous et les frictions de votre stack SaaS."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "pourquoi-visualiser-stack-saas",
+    "url": "https://tooltrim.com/en/guide/pourquoi-visualiser-stack-saas",
+    "title": "Why map your SaaS stack instead of using Excel",
+    "summary": "Discover why a visual map reveals duplicates, gaps, and friction in your SaaS stack far better than Excel ever could."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "outils-facturation-freelance-2026",
+    "url": "https://tooltrim.com/fr/guide/outils-facturation-freelance-2026",
+    "title": "Logiciel de facturation freelance 2026 : le guide",
+    "summary": "Comparatif sans filtre des meilleurs outils de facturation pour freelances et TPE en 2026 : Shine, Pennylane, Indy, Freebe, Dougs, Qonto. Et tout ce qu'il faut"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "outils-facturation-freelance-2026",
+    "url": "https://tooltrim.com/en/guide/outils-facturation-freelance-2026",
+    "title": "Freelance Invoicing Software in France for 2026 | ToolTrim",
+    "summary": "Compare Freebe, Indy, Shine, Pennylane, Dougs and Qonto, and understand France’s 2026–2027 electronic-invoicing requirements."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "top-5-competences-ia-freelance-2026",
+    "url": "https://tooltrim.com/fr/guide/top-5-competences-ia-freelance-2026",
+    "title": "Top 5 des compétences IA freelance en 2026",
+    "summary": "Les 5 compétences IA freelance les plus rentables en 2026 : Recherche, Web Building, UGC, Funnels et CRO. Stack à moins de 60€/mois et ordre d'apprentissage."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "top-5-competences-ia-freelance-2026",
+    "url": "https://tooltrim.com/en/guide/top-5-competences-ia-freelance-2026",
+    "title": "Top 5 freelance AI skills to learn in 2026",
+    "summary": "The five most profitable freelance AI skills in 2026: Research, Web Building, UGC, Funnels and CRO. A stack under €60/month and the right learning order."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "conseils-ia-freelances-2026",
+    "url": "https://tooltrim.com/fr/guide/conseils-ia-freelances-2026",
+    "title": "Conseils IA freelance : stack, prompts, gaspillage",
+    "summary": "Combien d'abonnements IA un freelance utilise vraiment, les prompts qui tiennent en conditions réelles, et celui que tu paies deux fois."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "ai-tips-freelancers-2026",
+    "url": "https://tooltrim.com/en/guide/ai-tips-freelancers-2026",
+    "title": "AI for freelancers 2026: stack, prompts, and waste",
+    "summary": "How many AI subscriptions a freelancer actually needs, the prompts that hold up in real work, and how to spot the one you pay for twice."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "loom-prix-alternatives",
+    "url": "https://tooltrim.com/fr/guide/loom-prix-alternatives",
+    "title": "Prix Loom 2026 : ça vaut le coup ? Et les alternatives",
+    "summary": "Loom coûte 15$/mois par utilisateur en 2026. Beaucoup de freelances paient Loom pour un usage bien plus léger que ce que le plan facture. Verdict honnête et 4 a"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "loom-pricing-alternatives",
+    "url": "https://tooltrim.com/en/guide/loom-pricing-alternatives",
+    "title": "Loom pricing 2026: worth it, and what else exists",
+    "summary": "Loom costs $15 per user per month in 2026. The honest verdict on whether it is worth it for a freelancer, plus four cheaper alternatives compared."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+    "url": "https://tooltrim.com/fr/guide/zapier-vs-make-vs-n8n-2026-automatiser-stack",
+    "title": "Zapier vs Make vs n8n : l'écart de prix est de 14x",
+    "summary": "Zapier facture des tâches, Make des crédits, n8n des exécutions. Même automatisation, 14x d'écart. Les trois unités comparées, prix vérifiés à la source."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "zapier-vs-make-vs-n8n-pricing",
+    "url": "https://tooltrim.com/en/guide/zapier-vs-make-vs-n8n-pricing",
+    "title": "Zapier vs Make vs n8n: why the price gap is 14x",
+    "summary": "Zapier bills tasks, Make credits, n8n executions. Same automation, 14x price gap. The three units compared with prices verified at source."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "agents-ia-freelances-2026-lesquels-valent-le-coup",
+    "url": "https://tooltrim.com/fr/guide/agents-ia-freelances-2026-lesquels-valent-le-coup",
+    "title": "Agents IA pour freelances en 2026 : guide pratique | ToolTrim",
+    "summary": "Découvrez quels agents IA peuvent réellement aider un freelance, comment les tester et où conserver une validation humaine."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "ai-agents-freelancers-2026",
+    "url": "https://tooltrim.com/en/guide/ai-agents-freelancers-2026",
+    "title": "AI agents for freelancers: which ones earn a place",
+    "summary": "AI agents for freelancers: which families exist, which task to delegate first, and the five-point test to run before connecting your tools."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "claude-vs-chatgpt-2026-lequel-choisir-business",
+    "url": "https://tooltrim.com/fr/guide/claude-vs-chatgpt-2026-lequel-choisir-business",
+    "title": "Claude ou ChatGPT en 2026 : lequel choisir ? | ToolTrim",
+    "summary": "Comparez Claude et ChatGPT sur des usages concrets, le temps de correction et l’intégration à votre travail pour choisir le bon assistant IA."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "claude-vs-chatgpt-deepseek",
+    "url": "https://tooltrim.com/en/guide/claude-vs-chatgpt-deepseek",
+    "title": "ChatGPT, Claude or DeepSeek: which one pays off?",
+    "summary": "ChatGPT, Claude or DeepSeek: there is no best AI, only the one that pays off on your own tasks. Costs, strengths and real limits compared here."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+    "url": "https://tooltrim.com/fr/guide/claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+    "title": "Claude vs ChatGPT vs DeepSeek vs Gemini : lequel",
+    "summary": "Février 2026 : Claude Sonnet 4.6, Gemini 3.1 Pro, DeepSeek V4 sortent en 72h. ChatGPT glisse hors du top 10. Guide complet avec calcul ROI, benchmarks réels et"
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-outils-ia-freelances-2026",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-outils-ia-freelances-2026",
+    "title": "Meilleurs outils IA pour freelances en 2026",
+    "summary": "Quels outils IA un freelance utilise vraiment en 2026, classés par catégorie et par métier, avec les trois erreurs qui coûtent le plus cher."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "meilleurs-outils-ia-freelances-2026",
+    "url": "https://tooltrim.com/en/guide/meilleurs-outils-ia-freelances-2026",
+    "title": "Best AI tools for freelancers in 2026",
+    "summary": "Which AI tools a freelancer actually needs in 2026, sorted by category and by profession, with the three mistakes that cost the most."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "claude-opus-4-6-guide-complet-freelances",
+    "url": "https://tooltrim.com/fr/guide/claude-opus-4-6-guide-complet-freelances",
+    "title": "Claude Opus : Le Guide Complet pour Freelances en 2026",
+    "summary": "Claude Opus révolutionne la productivité des freelances avec des capacités de raisonnement avancées et un outil de codage révolutionnaire. Découvrez comment l'i"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "claude-opus-4-6-guide-complet-freelances",
+    "url": "https://tooltrim.com/en/guide/claude-opus-4-6-guide-complet-freelances",
+    "title": "Claude Opus: the freelancer's guide for 2026",
+    "summary": "Discover how Claude Opus can transform your freelance work. Advanced reasoning, revolutionary coding, and multi-agent orchestration to save time and improve qua"
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "alternatives-gratuites-notion-freelance-2026",
+    "url": "https://tooltrim.com/fr/guide/alternatives-gratuites-notion-freelance-2026",
+    "title": "Alternatives gratuites à Notion pour freelances",
+    "summary": "Notion payant coûte 144 € par an. Cinq alternatives gratuites comparées, avec leurs limites, pour organiser ton activité sans cet abonnement."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "alternatives-gratuites-notion-freelance-2026",
+    "url": "https://tooltrim.com/en/guide/alternatives-gratuites-notion-freelance-2026",
+    "title": "Free Notion Alternatives for Freelancers (2026) - ToolTrim Guide",
+    "summary": "Paid Notion costs 144 € a year. Five free alternatives compared, with their real limits, so you can run your freelance business without paying."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "stack-minimaliste-freelance-2026",
+    "url": "https://tooltrim.com/fr/guide/stack-minimaliste-freelance-2026",
+    "title": "Stack minimaliste freelance 2026 : 7 outils, 15 à couper",
+    "summary": "Découvrez la méthodologie complète pour construire une stack d'outils rentable : 7 outils essentiels avec ROI calculé, 15 outils à annuler immédiatement, et un"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "stack-minimaliste-freelance-2026",
+    "url": "https://tooltrim.com/en/guide/stack-minimaliste-freelance-2026",
+    "title": "Freelance Minimalist Stack 2026: 7 Essential Tools & 15 to Cancel",
+    "summary": "Optimize your freelance budget with this minimalist stack guide for 2026. Discover 7 essential tools with calculated ROI and 15 tools to cancel immediately. Max"
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "notion-gratuit-ou-payant",
+    "url": "https://tooltrim.com/fr/guide/notion-gratuit-ou-payant",
+    "title": "Trois clients à la fois : Notion gratuit suffit-il ?",
+    "summary": "Notion gratuit peut gérer 3 clients. Notion Pro aussi. La différence ? Notion Pro te permet de faire des choses que tu n'as probablement pas besoin de faire."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "notion-free-or-paid",
+    "url": "https://tooltrim.com/en/guide/notion-free-or-paid",
+    "title": "Three clients at once: is free Notion enough?",
+    "summary": "Notion free can handle 3 clients. Notion Pro can too. The difference? Notion Pro lets you do things you probably don't need to do."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "calendly-gratuit-suffisant",
+    "url": "https://tooltrim.com/fr/guide/calendly-gratuit-suffisant",
+    "title": "2e client signé : as-tu besoin de Calendly Pro ?",
+    "summary": "Calendly gratuit peut gérer 2 clients. Calendly Pro aussi. La différence ? Calendly Pro te permet de faire des choses que tu n'as probablement pas besoin de fai"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "calendly-free-enough",
+    "url": "https://tooltrim.com/en/guide/calendly-free-enough",
+    "title": "Second client signed: do you need Calendly Pro?",
+    "summary": "Calendly free can handle 2 clients. Calendly Pro can too. The difference? Calendly Pro lets you do things you probably don't need to do."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "canva-pro-rentable",
+    "url": "https://tooltrim.com/fr/guide/canva-pro-rentable",
+    "title": "Canva Pro : l'investissement le plus rentable ? | ToolTrim",
+    "summary": "C'est rare chez ToolTrim, mais voici un outil payant qu'on recommande presque les yeux fermés."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "canva-pro-rentable",
+    "url": "https://tooltrim.com/en/guide/canva-pro-rentable",
+    "title": "Canva Pro: is it worth it for a solo freelancer?",
+    "summary": "Discover why Canva Pro is considered one of the most profitable investments for freelancers and solopreneurs, offering significant time savings and an immediate"
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "pourquoi-payer-loom",
+    "url": "https://tooltrim.com/fr/guide/pourquoi-payer-loom",
+    "title": "Pourquoi payer Loom si QuickTime est gratuit ?",
+    "summary": "L'enregistrement d'écran est une commodité. Pourquoi payer 12,50$ pour ça ? La réponse est dans l'hébergement."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "pourquoi-payer-loom",
+    "url": "https://tooltrim.com/en/guide/pourquoi-payer-loom",
+    "title": "Why Pay for Loom? Free vs. Paid Features Explained",
+    "summary": "Is Loom worth the cost? Understand the key differences between the free and paid versions, and when to upgrade for asynchronous communication and video archivin"
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "stripe-vs-virement",
+    "url": "https://tooltrim.com/fr/guide/stripe-vs-virement",
+    "title": "1er client signé : comment te faire payer ?",
+    "summary": "Virement bancaire peut fonctionner. Stripe aussi. La différence ? Stripe te force à être professionnel."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "stripe-vs-bank-transfer",
+    "url": "https://tooltrim.com/en/guide/stripe-vs-bank-transfer",
+    "title": "First client signed: how should you get paid?",
+    "summary": "Bank transfer or Stripe for your first client: what each option really costs you, what it signals to them, and when paying the fee is worth it."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "chatgpt-plus-utile-ou-inutile",
+    "url": "https://tooltrim.com/fr/guide/chatgpt-plus-utile-ou-inutile",
+    "title": "GPT-6 Astra : ChatGPT Pro vaut-il son prix ? | ToolTrim",
+    "summary": "GPT-6 Astra justifie-t-il ChatGPT Pro pour un freelance ? Prix, accès, limites et calcul du ROI avant de payer 80 $ de plus par mois."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "chatgpt-pro-worth-it",
+    "url": "https://tooltrim.com/en/guide/chatgpt-pro-worth-it",
+    "title": "GPT-6 Astra: is ChatGPT Pro actually worth it? | ToolTrim",
+    "summary": "Does GPT-6 Astra justify ChatGPT Pro for a freelancer? Pricing, access, limits and the break-even calculation before paying $80 more per month."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "grammarly-gratuit-ou-payant",
+    "url": "https://tooltrim.com/fr/guide/grammarly-gratuit-ou-payant",
+    "title": "Une faute chez le client : Grammarly Premium ?",
+    "summary": "Grammarly gratuit détecte 90% des erreurs. Grammarly Premium en détecte 95%. La différence ? 5%. Pour un freelance solo, c'est souvent du luxe."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "grammarly-free-or-paid",
+    "url": "https://tooltrim.com/en/guide/grammarly-free-or-paid",
+    "title": "A typo reached the client: is Grammarly Premium worth it?",
+    "summary": "Grammarly free catches 90% of errors. Grammarly Premium catches 95%. The difference? 5%. For a solo freelancer, it's often a luxury."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "stripe-freelance-tarifs-alternatives",
+    "url": "https://tooltrim.com/fr/guide/stripe-freelance-tarifs-alternatives",
+    "title": "Stripe pour freelances : tarifs et alternatives",
+    "summary": "1,5% + 0,25€ par transaction, ça fait mal. Mais est-ce vraiment évitable ? Analyse complète des vrais coûts et alternatives pour freelances."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "stripe-freelance-tarifs-alternatives",
+    "url": "https://tooltrim.com/en/guide/stripe-freelance-tarifs-alternatives",
+    "title": "Stripe for freelancers: pricing and alternatives",
+    "summary": "What Stripe really costs a freelancer per transaction, and when GoCardless or SumUp works out cheaper. Fees compared, with no affiliate bias."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "perplexity-vs-chatgpt-recherche",
+    "url": "https://tooltrim.com/fr/guide/perplexity-vs-chatgpt-recherche",
+    "title": "Perplexity ou ChatGPT pour la recherche ?",
+    "summary": "Perplexity se présente comme le 'moteur de réponse' qui va tuer Google. Mais est-il vraiment meilleur que ChatGPT pour un freelance ? Test complet."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "perplexity-vs-chatgpt-recherche",
+    "url": "https://tooltrim.com/en/guide/perplexity-vs-chatgpt-recherche",
+    "title": "Perplexity vs ChatGPT: which one for research?",
+    "summary": "Perplexity against ChatGPT for research work: what each one actually does better, and which one is worth paying for when you work on your own."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "notion-gratuit-vs-payant-vrai-calcul",
+    "url": "https://tooltrim.com/fr/guide/notion-gratuit-vs-payant-vrai-calcul",
+    "title": "Notion gratuit vs payant : le vrai calcul (2026) | ToolTrim",
+    "summary": "Faut-il payer Notion 10$/mois ou rester gratuit ? Calcul de rentabilité : seuils de rentabilité, fonctionnalités cachées, et le moment exact où upgrader."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "notion-gratuit-vs-payant-vrai-calcul",
+    "url": "https://tooltrim.com/en/guide/notion-gratuit-vs-payant-vrai-calcul",
+    "title": "Notion free vs paid: is the paid plan worth it?",
+    "summary": "Is Notion's paid plan worth it for freelancers? Discover the real ROI calculation, hidden features, and when to upgrade (or switch to a free alternative)."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "grammarly-vs-languagetool-comparaison",
+    "url": "https://tooltrim.com/fr/guide/grammarly-vs-languagetool-comparaison",
+    "title": "Grammarly vs LanguageTool : faut-il payer 12 € ?",
+    "summary": "Grammarly Premium coûte 12€/mois, LanguageTool 5€/mois. Mais les versions gratuites suffisent-elles ? Comparatif détaillé avec calcul ROI réel pour freelances."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "grammarly-vs-languagetool-comparison-2026",
+    "url": "https://tooltrim.com/en/guide/grammarly-vs-languagetool-comparison-2026",
+    "title": "Grammarly vs LanguageTool: which one is worth paying",
+    "summary": "Grammarly costs $12/mo vs LanguageTool at $4/mo. Most freelancers do not need Grammarly Premium. Honest comparison + verdict."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "toggl-track-gratuit-ou-payant",
+    "url": "https://tooltrim.com/fr/guide/toggl-track-gratuit-ou-payant",
+    "title": "Toggl Track : gratuit ou payant ? Guide freelance",
+    "summary": "Toggl Track est l'outil de suivi du temps le plus populaire chez les freelances. Faut-il vraiment payer 9€/mois ? La version gratuite est-elle suffisante ? Calc"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "toggl-track-free-or-paid",
+    "url": "https://tooltrim.com/en/guide/toggl-track-free-or-paid",
+    "title": "Toggl Track: free or paid? A freelancer's guide",
+    "summary": "Toggl Track free or paid: what the free plan really covers, when 9 € a month pays for itself, and how to decide from your own billing data now."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "stack-redactrice-freelance",
+    "url": "https://tooltrim.com/fr/guide/stack-redactrice-freelance",
+    "title": "Rédactrice freelance : la stack qui te suffit"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "stack-freelance-writer",
+    "url": "https://tooltrim.com/en/guide/stack-freelance-writer",
+    "title": "Freelance writer: the minimal stack that suffices"
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "notion-canva-ai-tax-pricing-2026",
+    "url": "https://tooltrim.com/fr/guide/notion-canva-ai-tax-pricing-2026",
+    "title": "La taxe IA cachée : tarifs Notion & Canva 2026",
+    "summary": "Notion a retiré son add-on IA à 10$. Canva a intégré des crédits IA dans Pro. Les deux fonctionnent comme une hausse de prix, vérifiée à la source, chiffres et"
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "notion-canva-ai-tax-pricing-2026",
+    "url": "https://tooltrim.com/en/guide/notion-canva-ai-tax-pricing-2026",
+    "title": "The Hidden AI Tax: Notion & Canva Pricing 2026",
+    "summary": "Notion retired its $10 AI add-on. Canva bundled AI credits into Pro. Both function as a price increase, verified at source with the numbers and what to do."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "chatgpt-plus-worth-it",
+    "url": "https://tooltrim.com/en/guide/chatgpt-plus-worth-it",
+    "title": "2h a day on repetitive work: does ChatGPT Plus help?",
+    "summary": "ChatGPT Plus isn't 2x faster than free. It's maybe 20-30% faster. But for a solo freelancer, it's often a luxury."
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "b12-vs-wix",
+    "url": "https://tooltrim.com/fr/comparatif/b12-vs-wix",
+    "title": "B12 vs Wix : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif B12 vs Wix : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "b12-vs-wix",
+    "url": "https://tooltrim.com/en/comparatif/b12-vs-wix",
+    "title": "B12 vs Wix: comparison 2026 | ToolTrim",
+    "summary": "B12 vs Wix comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "pdf-agile-vs-adobe-acrobat",
+    "url": "https://tooltrim.com/fr/comparatif/pdf-agile-vs-adobe-acrobat",
+    "title": "PDF Agile vs Adobe Acrobat Pro : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif PDF Agile vs Adobe Acrobat Pro : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "pdf-agile-vs-adobe-acrobat",
+    "url": "https://tooltrim.com/en/comparatif/pdf-agile-vs-adobe-acrobat",
+    "title": "PDF Agile vs Adobe Acrobat Pro: comparison 2026 | ToolTrim",
+    "summary": "PDF Agile vs Adobe Acrobat Pro comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "piktochart-vs-canva",
+    "url": "https://tooltrim.com/fr/comparatif/piktochart-vs-canva",
+    "title": "Piktochart vs Canva : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Piktochart vs Canva : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "piktochart-vs-canva",
+    "url": "https://tooltrim.com/en/comparatif/piktochart-vs-canva",
+    "title": "Piktochart vs Canva: comparison 2026 | ToolTrim",
+    "summary": "Piktochart vs Canva comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "pixlr-vs-photopea",
+    "url": "https://tooltrim.com/fr/comparatif/pixlr-vs-photopea",
+    "title": "Pixlr vs Photopea : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Pixlr vs Photopea : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "pixlr-vs-photopea",
+    "url": "https://tooltrim.com/en/comparatif/pixlr-vs-photopea",
+    "title": "Pixlr vs Photopea: comparison 2026 | ToolTrim",
+    "summary": "Pixlr vs Photopea comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "getresponse-vs-brevo",
+    "url": "https://tooltrim.com/fr/comparatif/getresponse-vs-brevo",
+    "title": "GetResponse vs Brevo : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif GetResponse vs Brevo : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "getresponse-vs-brevo",
+    "url": "https://tooltrim.com/en/comparatif/getresponse-vs-brevo",
+    "title": "GetResponse vs Brevo: comparison 2026 | ToolTrim",
+    "summary": "GetResponse vs Brevo comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "engagebay-vs-hubspot",
+    "url": "https://tooltrim.com/fr/comparatif/engagebay-vs-hubspot",
+    "title": "EngageBay vs HubSpot : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif EngageBay vs HubSpot : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "engagebay-vs-hubspot",
+    "url": "https://tooltrim.com/en/comparatif/engagebay-vs-hubspot",
+    "title": "EngageBay vs HubSpot: comparison 2026 | ToolTrim",
+    "summary": "EngageBay vs HubSpot comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "flexclip-vs-canva",
+    "url": "https://tooltrim.com/fr/comparatif/flexclip-vs-canva",
+    "title": "FlexClip vs Canva : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif FlexClip vs Canva : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "flexclip-vs-canva",
+    "url": "https://tooltrim.com/en/comparatif/flexclip-vs-canva",
+    "title": "FlexClip vs Canva: comparison 2026 | ToolTrim",
+    "summary": "FlexClip vs Canva comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "activecampaign-vs-klaviyo",
+    "url": "https://tooltrim.com/fr/comparatif/activecampaign-vs-klaviyo",
+    "title": "ActiveCampaign vs Klaviyo : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif ActiveCampaign vs Klaviyo : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "activecampaign-vs-klaviyo",
+    "url": "https://tooltrim.com/en/comparatif/activecampaign-vs-klaviyo",
+    "title": "ActiveCampaign vs Klaviyo: comparison 2026 | ToolTrim",
+    "summary": "ActiveCampaign vs Klaviyo comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "chatgpt-vs-claude",
+    "url": "https://tooltrim.com/fr/comparatif/chatgpt-vs-claude",
+    "title": "ChatGPT vs Claude : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif ChatGPT vs Claude : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "chatgpt-vs-claude",
+    "url": "https://tooltrim.com/en/comparatif/chatgpt-vs-claude",
+    "title": "ChatGPT vs Claude: comparison 2026 | ToolTrim",
+    "summary": "ChatGPT vs Claude comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "chatgpt-vs-gemini",
+    "url": "https://tooltrim.com/fr/comparatif/chatgpt-vs-gemini",
+    "title": "ChatGPT vs Gemini : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif ChatGPT vs Gemini : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "chatgpt-vs-gemini",
+    "url": "https://tooltrim.com/en/comparatif/chatgpt-vs-gemini",
+    "title": "ChatGPT vs Gemini: comparison 2026 | ToolTrim",
+    "summary": "ChatGPT vs Gemini comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "chatgpt-vs-perplexity",
+    "url": "https://tooltrim.com/fr/comparatif/chatgpt-vs-perplexity",
+    "title": "ChatGPT vs Perplexity : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif ChatGPT vs Perplexity : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "chatgpt-vs-perplexity",
+    "url": "https://tooltrim.com/en/comparatif/chatgpt-vs-perplexity",
+    "title": "ChatGPT vs Perplexity: comparison 2026 | ToolTrim",
+    "summary": "ChatGPT vs Perplexity comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "claude-vs-gemini",
+    "url": "https://tooltrim.com/fr/comparatif/claude-vs-gemini",
+    "title": "Claude vs Gemini : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Claude vs Gemini : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "claude-vs-gemini",
+    "url": "https://tooltrim.com/en/comparatif/claude-vs-gemini",
+    "title": "Claude vs Gemini: comparison 2026 | ToolTrim",
+    "summary": "Claude vs Gemini comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "deepseek-vs-chatgpt",
+    "url": "https://tooltrim.com/fr/comparatif/deepseek-vs-chatgpt",
+    "title": "DeepSeek vs ChatGPT : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif DeepSeek vs ChatGPT : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "deepseek-vs-chatgpt",
+    "url": "https://tooltrim.com/en/comparatif/deepseek-vs-chatgpt",
+    "title": "DeepSeek vs ChatGPT: comparison 2026 | ToolTrim",
+    "summary": "DeepSeek vs ChatGPT comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "grammarly-vs-claude",
+    "url": "https://tooltrim.com/fr/comparatif/grammarly-vs-claude",
+    "title": "Grammarly vs Claude : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Grammarly vs Claude : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "grammarly-vs-claude",
+    "url": "https://tooltrim.com/en/comparatif/grammarly-vs-claude",
+    "title": "Grammarly vs Claude: comparison 2026 | ToolTrim",
+    "summary": "Grammarly vs Claude comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "grammarly-vs-prowritingaid",
+    "url": "https://tooltrim.com/fr/comparatif/grammarly-vs-prowritingaid",
+    "title": "Grammarly vs ProWritingAid : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Grammarly vs ProWritingAid : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "grammarly-vs-prowritingaid",
+    "url": "https://tooltrim.com/en/comparatif/grammarly-vs-prowritingaid",
+    "title": "Grammarly vs ProWritingAid: comparison 2026 | ToolTrim",
+    "summary": "Grammarly vs ProWritingAid comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "midjourney-vs-firefly",
+    "url": "https://tooltrim.com/fr/comparatif/midjourney-vs-firefly",
+    "title": "Midjourney vs Adobe Firefly : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Midjourney vs Adobe Firefly : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "midjourney-vs-firefly",
+    "url": "https://tooltrim.com/en/comparatif/midjourney-vs-firefly",
+    "title": "Midjourney vs Adobe Firefly: comparison 2026 | ToolTrim",
+    "summary": "Midjourney vs Adobe Firefly comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "github-copilot-vs-cursor",
+    "url": "https://tooltrim.com/fr/comparatif/github-copilot-vs-cursor",
+    "title": "GitHub Copilot vs Cursor : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif GitHub Copilot vs Cursor : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "github-copilot-vs-cursor",
+    "url": "https://tooltrim.com/en/comparatif/github-copilot-vs-cursor",
+    "title": "GitHub Copilot vs Cursor: comparison 2026 | ToolTrim",
+    "summary": "GitHub Copilot vs Cursor comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "notion-vs-obsidian",
+    "url": "https://tooltrim.com/fr/comparatif/notion-vs-obsidian",
+    "title": "Notion vs Obsidian : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Notion vs Obsidian : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "notion-vs-obsidian",
+    "url": "https://tooltrim.com/en/comparatif/notion-vs-obsidian",
+    "title": "Notion vs Obsidian: comparison 2026 | ToolTrim",
+    "summary": "Notion vs Obsidian comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "notion-vs-airtable",
+    "url": "https://tooltrim.com/fr/comparatif/notion-vs-airtable",
+    "title": "Notion vs Airtable : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Notion vs Airtable : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "notion-vs-airtable",
+    "url": "https://tooltrim.com/en/comparatif/notion-vs-airtable",
+    "title": "Notion vs Airtable: comparison 2026 | ToolTrim",
+    "summary": "Notion vs Airtable comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "notion-vs-trello",
+    "url": "https://tooltrim.com/fr/comparatif/notion-vs-trello",
+    "title": "Notion vs Trello : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Notion vs Trello : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "notion-vs-trello",
+    "url": "https://tooltrim.com/en/comparatif/notion-vs-trello",
+    "title": "Notion vs Trello: comparison 2026 | ToolTrim",
+    "summary": "Notion vs Trello comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "notion-vs-clickup",
+    "url": "https://tooltrim.com/fr/comparatif/notion-vs-clickup",
+    "title": "Notion vs ClickUp : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Notion vs ClickUp : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "notion-vs-clickup",
+    "url": "https://tooltrim.com/en/comparatif/notion-vs-clickup",
+    "title": "Notion vs ClickUp: comparison 2026 | ToolTrim",
+    "summary": "Notion vs ClickUp comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "notion-vs-coda",
+    "url": "https://tooltrim.com/fr/comparatif/notion-vs-coda",
+    "title": "Notion vs Coda : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Notion vs Coda : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "notion-vs-coda",
+    "url": "https://tooltrim.com/en/comparatif/notion-vs-coda",
+    "title": "Notion vs Coda: comparison 2026 | ToolTrim",
+    "summary": "Notion vs Coda comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "asana-vs-trello",
+    "url": "https://tooltrim.com/fr/comparatif/asana-vs-trello",
+    "title": "Asana vs Trello : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Asana vs Trello : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "asana-vs-trello",
+    "url": "https://tooltrim.com/en/comparatif/asana-vs-trello",
+    "title": "Asana vs Trello: comparison 2026 | ToolTrim",
+    "summary": "Asana vs Trello comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "asana-vs-clickup",
+    "url": "https://tooltrim.com/fr/comparatif/asana-vs-clickup",
+    "title": "Asana vs ClickUp : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Asana vs ClickUp : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "asana-vs-clickup",
+    "url": "https://tooltrim.com/en/comparatif/asana-vs-clickup",
+    "title": "Asana vs ClickUp: comparison 2026 | ToolTrim",
+    "summary": "Asana vs ClickUp comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "clickup-vs-asana",
+    "url": "https://tooltrim.com/fr/comparatif/clickup-vs-asana",
+    "title": "ClickUp vs Asana : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif ClickUp vs Asana : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "clickup-vs-asana",
+    "url": "https://tooltrim.com/en/comparatif/clickup-vs-asana",
+    "title": "ClickUp vs Asana: comparison 2026 | ToolTrim",
+    "summary": "ClickUp vs Asana comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "clickup-vs-trello",
+    "url": "https://tooltrim.com/fr/comparatif/clickup-vs-trello",
+    "title": "ClickUp vs Trello : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif ClickUp vs Trello : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "clickup-vs-trello",
+    "url": "https://tooltrim.com/en/comparatif/clickup-vs-trello",
+    "title": "ClickUp vs Trello: comparison 2026 | ToolTrim",
+    "summary": "ClickUp vs Trello comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "trello-vs-linear",
+    "url": "https://tooltrim.com/fr/comparatif/trello-vs-linear",
+    "title": "Trello vs Linear : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Trello vs Linear : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "trello-vs-linear",
+    "url": "https://tooltrim.com/en/comparatif/trello-vs-linear",
+    "title": "Trello vs Linear: comparison 2026 | ToolTrim",
+    "summary": "Trello vs Linear comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "wrike-vs-asana",
+    "url": "https://tooltrim.com/fr/comparatif/wrike-vs-asana",
+    "title": "Wrike vs Asana : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Wrike vs Asana : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "wrike-vs-asana",
+    "url": "https://tooltrim.com/en/comparatif/wrike-vs-asana",
+    "title": "Wrike vs Asana: comparison 2026 | ToolTrim",
+    "summary": "Wrike vs Asana comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "basecamp-vs-asana",
+    "url": "https://tooltrim.com/fr/comparatif/basecamp-vs-asana",
+    "title": "Basecamp vs Asana : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Basecamp vs Asana : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "basecamp-vs-asana",
+    "url": "https://tooltrim.com/en/comparatif/basecamp-vs-asana",
+    "title": "Basecamp vs Asana: comparison 2026 | ToolTrim",
+    "summary": "Basecamp vs Asana comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "hive-vs-asana",
+    "url": "https://tooltrim.com/fr/comparatif/hive-vs-asana",
+    "title": "Hive vs Asana : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Hive vs Asana : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "hive-vs-asana",
+    "url": "https://tooltrim.com/en/comparatif/hive-vs-asana",
+    "title": "Hive vs Asana: comparison 2026 | ToolTrim",
+    "summary": "Hive vs Asana comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "todoist-vs-trello",
+    "url": "https://tooltrim.com/fr/comparatif/todoist-vs-trello",
+    "title": "Todoist vs Trello : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Todoist vs Trello : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "todoist-vs-trello",
+    "url": "https://tooltrim.com/en/comparatif/todoist-vs-trello",
+    "title": "Todoist vs Trello: comparison 2026 | ToolTrim",
+    "summary": "Todoist vs Trello comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "smartsuite-vs-notion",
+    "url": "https://tooltrim.com/fr/comparatif/smartsuite-vs-notion",
+    "title": "SmartSuite vs Notion : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif SmartSuite vs Notion : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "smartsuite-vs-notion",
+    "url": "https://tooltrim.com/en/comparatif/smartsuite-vs-notion",
+    "title": "SmartSuite vs Notion: comparison 2026 | ToolTrim",
+    "summary": "SmartSuite vs Notion comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "linear-vs-jira",
+    "url": "https://tooltrim.com/fr/comparatif/linear-vs-jira",
+    "title": "Linear vs Jira : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Linear vs Jira : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "linear-vs-jira",
+    "url": "https://tooltrim.com/en/comparatif/linear-vs-jira",
+    "title": "Linear vs Jira: comparison 2026 | ToolTrim",
+    "summary": "Linear vs Jira comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "zapier-vs-make",
+    "url": "https://tooltrim.com/fr/comparatif/zapier-vs-make",
+    "title": "Zapier vs Make : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Zapier vs Make : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "zapier-vs-make",
+    "url": "https://tooltrim.com/en/comparatif/zapier-vs-make",
+    "title": "Zapier vs Make: comparison 2026 | ToolTrim",
+    "summary": "Zapier vs Make comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "make-vs-zapier",
+    "url": "https://tooltrim.com/fr/comparatif/make-vs-zapier",
+    "title": "Make vs Zapier : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Make vs Zapier : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "make-vs-zapier",
+    "url": "https://tooltrim.com/en/comparatif/make-vs-zapier",
+    "title": "Make vs Zapier: comparison 2026 | ToolTrim",
+    "summary": "Make vs Zapier comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "zapier-vs-albato",
+    "url": "https://tooltrim.com/fr/comparatif/zapier-vs-albato",
+    "title": "Zapier vs Albato : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Zapier vs Albato : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "zapier-vs-albato",
+    "url": "https://tooltrim.com/en/comparatif/zapier-vs-albato",
+    "title": "Zapier vs Albato: comparison 2026 | ToolTrim",
+    "summary": "Zapier vs Albato comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "figma-vs-canva",
+    "url": "https://tooltrim.com/fr/comparatif/figma-vs-canva",
+    "title": "Figma vs Canva : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Figma vs Canva : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "figma-vs-canva",
+    "url": "https://tooltrim.com/en/comparatif/figma-vs-canva",
+    "title": "Figma vs Canva: comparison 2026 | ToolTrim",
+    "summary": "Figma vs Canva comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "visme-vs-canva",
+    "url": "https://tooltrim.com/fr/comparatif/visme-vs-canva",
+    "title": "Visme vs Canva : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Visme vs Canva : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "visme-vs-canva",
+    "url": "https://tooltrim.com/en/comparatif/visme-vs-canva",
+    "title": "Visme vs Canva: comparison 2026 | ToolTrim",
+    "summary": "Visme vs Canva comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "prezi-vs-pitch",
+    "url": "https://tooltrim.com/fr/comparatif/prezi-vs-pitch",
+    "title": "Prezi vs Pitch : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Prezi vs Pitch : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "prezi-vs-pitch",
+    "url": "https://tooltrim.com/en/comparatif/prezi-vs-pitch",
+    "title": "Prezi vs Pitch: comparison 2026 | ToolTrim",
+    "summary": "Prezi vs Pitch comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "dropbox-vs-google-drive",
+    "url": "https://tooltrim.com/fr/comparatif/dropbox-vs-google-drive",
+    "title": "Dropbox vs Google Drive : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Dropbox vs Google Drive : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "dropbox-vs-google-drive",
+    "url": "https://tooltrim.com/en/comparatif/dropbox-vs-google-drive",
+    "title": "Dropbox vs Google Drive: comparison 2026 | ToolTrim",
+    "summary": "Dropbox vs Google Drive comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "box-vs-dropbox",
+    "url": "https://tooltrim.com/fr/comparatif/box-vs-dropbox",
+    "title": "Box vs Dropbox : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Box vs Dropbox : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "box-vs-dropbox",
+    "url": "https://tooltrim.com/en/comparatif/box-vs-dropbox",
+    "title": "Box vs Dropbox: comparison 2026 | ToolTrim",
+    "summary": "Box vs Dropbox comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "box-vs-google-drive",
+    "url": "https://tooltrim.com/fr/comparatif/box-vs-google-drive",
+    "title": "Box vs Google Drive : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Box vs Google Drive : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "box-vs-google-drive",
+    "url": "https://tooltrim.com/en/comparatif/box-vs-google-drive",
+    "title": "Box vs Google Drive: comparison 2026 | ToolTrim",
+    "summary": "Box vs Google Drive comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "mailchimp-vs-brevo",
+    "url": "https://tooltrim.com/fr/comparatif/mailchimp-vs-brevo",
+    "title": "Mailchimp vs Brevo : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Mailchimp vs Brevo : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "mailchimp-vs-brevo",
+    "url": "https://tooltrim.com/en/comparatif/mailchimp-vs-brevo",
+    "title": "Mailchimp vs Brevo: comparison 2026 | ToolTrim",
+    "summary": "Mailchimp vs Brevo comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "mailchimp-vs-getresponse",
+    "url": "https://tooltrim.com/fr/comparatif/mailchimp-vs-getresponse",
+    "title": "Mailchimp vs GetResponse : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Mailchimp vs GetResponse : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "mailchimp-vs-getresponse",
+    "url": "https://tooltrim.com/en/comparatif/mailchimp-vs-getresponse",
+    "title": "Mailchimp vs GetResponse: comparison 2026 | ToolTrim",
+    "summary": "Mailchimp vs GetResponse comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "mailchimp-vs-convertkit",
+    "url": "https://tooltrim.com/fr/comparatif/mailchimp-vs-convertkit",
+    "title": "Mailchimp vs Kit : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Mailchimp vs Kit : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "mailchimp-vs-convertkit",
+    "url": "https://tooltrim.com/en/comparatif/mailchimp-vs-convertkit",
+    "title": "Mailchimp vs Kit: comparison 2026 | ToolTrim",
+    "summary": "Mailchimp vs Kit comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "convertkit-vs-getresponse",
+    "url": "https://tooltrim.com/fr/comparatif/convertkit-vs-getresponse",
+    "title": "Kit vs GetResponse : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Kit vs GetResponse : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "convertkit-vs-getresponse",
+    "url": "https://tooltrim.com/en/comparatif/convertkit-vs-getresponse",
+    "title": "Kit vs GetResponse: comparison 2026 | ToolTrim",
+    "summary": "Kit vs GetResponse comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "moosend-vs-mailchimp",
+    "url": "https://tooltrim.com/fr/comparatif/moosend-vs-mailchimp",
+    "title": "Moosend vs Mailchimp : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Moosend vs Mailchimp : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "moosend-vs-mailchimp",
+    "url": "https://tooltrim.com/en/comparatif/moosend-vs-mailchimp",
+    "title": "Moosend vs Mailchimp: comparison 2026 | ToolTrim",
+    "summary": "Moosend vs Mailchimp comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "hubspot-vs-pipedrive",
+    "url": "https://tooltrim.com/fr/comparatif/hubspot-vs-pipedrive",
+    "title": "HubSpot vs Pipedrive : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif HubSpot vs Pipedrive : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "hubspot-vs-pipedrive",
+    "url": "https://tooltrim.com/en/comparatif/hubspot-vs-pipedrive",
+    "title": "HubSpot vs Pipedrive: comparison 2026 | ToolTrim",
+    "summary": "HubSpot vs Pipedrive comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "pipedrive-vs-salesforce",
+    "url": "https://tooltrim.com/fr/comparatif/pipedrive-vs-salesforce",
+    "title": "Pipedrive vs Salesforce : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Pipedrive vs Salesforce : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "pipedrive-vs-salesforce",
+    "url": "https://tooltrim.com/en/comparatif/pipedrive-vs-salesforce",
+    "title": "Pipedrive vs Salesforce: comparison 2026 | ToolTrim",
+    "summary": "Pipedrive vs Salesforce comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "pipedrive-vs-zoho",
+    "url": "https://tooltrim.com/fr/comparatif/pipedrive-vs-zoho",
+    "title": "Pipedrive vs Zoho : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Pipedrive vs Zoho : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "pipedrive-vs-zoho",
+    "url": "https://tooltrim.com/en/comparatif/pipedrive-vs-zoho",
+    "title": "Pipedrive vs Zoho: comparison 2026 | ToolTrim",
+    "summary": "Pipedrive vs Zoho comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "salesforce-vs-zoho",
+    "url": "https://tooltrim.com/fr/comparatif/salesforce-vs-zoho",
+    "title": "Salesforce vs Zoho : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Salesforce vs Zoho : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "salesforce-vs-zoho",
+    "url": "https://tooltrim.com/en/comparatif/salesforce-vs-zoho",
+    "title": "Salesforce vs Zoho: comparison 2026 | ToolTrim",
+    "summary": "Salesforce vs Zoho comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "close-vs-pipedrive",
+    "url": "https://tooltrim.com/fr/comparatif/close-vs-pipedrive",
+    "title": "Close vs Pipedrive : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Close vs Pipedrive : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "close-vs-pipedrive",
+    "url": "https://tooltrim.com/en/comparatif/close-vs-pipedrive",
+    "title": "Close vs Pipedrive: comparison 2026 | ToolTrim",
+    "summary": "Close vs Pipedrive comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "capsule-vs-pipedrive",
+    "url": "https://tooltrim.com/fr/comparatif/capsule-vs-pipedrive",
+    "title": "Capsule vs Pipedrive : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Capsule vs Pipedrive : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "capsule-vs-pipedrive",
+    "url": "https://tooltrim.com/en/comparatif/capsule-vs-pipedrive",
+    "title": "Capsule vs Pipedrive: comparison 2026 | ToolTrim",
+    "summary": "Capsule vs Pipedrive comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "webflow-vs-squarespace",
+    "url": "https://tooltrim.com/fr/comparatif/webflow-vs-squarespace",
+    "title": "Webflow vs Squarespace : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Webflow vs Squarespace : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "webflow-vs-squarespace",
+    "url": "https://tooltrim.com/en/comparatif/webflow-vs-squarespace",
+    "title": "Webflow vs Squarespace: comparison 2026 | ToolTrim",
+    "summary": "Webflow vs Squarespace comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "webflow-vs-framer",
+    "url": "https://tooltrim.com/fr/comparatif/webflow-vs-framer",
+    "title": "Webflow vs Framer : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Webflow vs Framer : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "webflow-vs-framer",
+    "url": "https://tooltrim.com/en/comparatif/webflow-vs-framer",
+    "title": "Webflow vs Framer: comparison 2026 | ToolTrim",
+    "summary": "Webflow vs Framer comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "webflow-vs-wix",
+    "url": "https://tooltrim.com/fr/comparatif/webflow-vs-wix",
+    "title": "Webflow vs Wix : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Webflow vs Wix : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "webflow-vs-wix",
+    "url": "https://tooltrim.com/en/comparatif/webflow-vs-wix",
+    "title": "Webflow vs Wix: comparison 2026 | ToolTrim",
+    "summary": "Webflow vs Wix comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "wix-vs-squarespace",
+    "url": "https://tooltrim.com/fr/comparatif/wix-vs-squarespace",
+    "title": "Wix vs Squarespace : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Wix vs Squarespace : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "wix-vs-squarespace",
+    "url": "https://tooltrim.com/en/comparatif/wix-vs-squarespace",
+    "title": "Wix vs Squarespace: comparison 2026 | ToolTrim",
+    "summary": "Wix vs Squarespace comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "wordpress-com-vs-wix",
+    "url": "https://tooltrim.com/fr/comparatif/wordpress-com-vs-wix",
+    "title": "WordPress.com vs Wix : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif WordPress.com vs Wix : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "wordpress-com-vs-wix",
+    "url": "https://tooltrim.com/en/comparatif/wordpress-com-vs-wix",
+    "title": "WordPress.com vs Wix: comparison 2026 | ToolTrim",
+    "summary": "WordPress.com vs Wix comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "shopify-vs-wix",
+    "url": "https://tooltrim.com/fr/comparatif/shopify-vs-wix",
+    "title": "Shopify vs Wix : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Shopify vs Wix : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "shopify-vs-wix",
+    "url": "https://tooltrim.com/en/comparatif/shopify-vs-wix",
+    "title": "Shopify vs Wix: comparison 2026 | ToolTrim",
+    "summary": "Shopify vs Wix comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "vercel-vs-replit",
+    "url": "https://tooltrim.com/fr/comparatif/vercel-vs-replit",
+    "title": "Vercel vs Replit : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Vercel vs Replit : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "vercel-vs-replit",
+    "url": "https://tooltrim.com/en/comparatif/vercel-vs-replit",
+    "title": "Vercel vs Replit: comparison 2026 | ToolTrim",
+    "summary": "Vercel vs Replit comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "shopify-vs-woocommerce",
+    "url": "https://tooltrim.com/fr/comparatif/shopify-vs-woocommerce",
+    "title": "Shopify vs WooCommerce : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Shopify vs WooCommerce : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "shopify-vs-woocommerce",
+    "url": "https://tooltrim.com/en/comparatif/shopify-vs-woocommerce",
+    "title": "Shopify vs WooCommerce: comparison 2026 | ToolTrim",
+    "summary": "Shopify vs WooCommerce comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "hootsuite-vs-later",
+    "url": "https://tooltrim.com/fr/comparatif/hootsuite-vs-later",
+    "title": "Hootsuite vs Later : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Hootsuite vs Later : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "hootsuite-vs-later",
+    "url": "https://tooltrim.com/en/comparatif/hootsuite-vs-later",
+    "title": "Hootsuite vs Later: comparison 2026 | ToolTrim",
+    "summary": "Hootsuite vs Later comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "hootsuite-vs-socialbee",
+    "url": "https://tooltrim.com/fr/comparatif/hootsuite-vs-socialbee",
+    "title": "Hootsuite vs SocialBee : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Hootsuite vs SocialBee : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "hootsuite-vs-socialbee",
+    "url": "https://tooltrim.com/en/comparatif/hootsuite-vs-socialbee",
+    "title": "Hootsuite vs SocialBee: comparison 2026 | ToolTrim",
+    "summary": "Hootsuite vs SocialBee comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "later-vs-socialbee",
+    "url": "https://tooltrim.com/fr/comparatif/later-vs-socialbee",
+    "title": "Later vs SocialBee : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Later vs SocialBee : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "later-vs-socialbee",
+    "url": "https://tooltrim.com/en/comparatif/later-vs-socialbee",
+    "title": "Later vs SocialBee: comparison 2026 | ToolTrim",
+    "summary": "Later vs SocialBee comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "sendible-vs-hootsuite",
+    "url": "https://tooltrim.com/fr/comparatif/sendible-vs-hootsuite",
+    "title": "Sendible vs Hootsuite : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Sendible vs Hootsuite : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "sendible-vs-hootsuite",
+    "url": "https://tooltrim.com/en/comparatif/sendible-vs-hootsuite",
+    "title": "Sendible vs Hootsuite: comparison 2026 | ToolTrim",
+    "summary": "Sendible vs Hootsuite comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "toggl-vs-clockify",
+    "url": "https://tooltrim.com/fr/comparatif/toggl-vs-clockify",
+    "title": "Toggl Track vs Clockify : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Toggl Track vs Clockify : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "toggl-vs-clockify",
+    "url": "https://tooltrim.com/en/comparatif/toggl-vs-clockify",
+    "title": "Toggl Track vs Clockify: comparison 2026 | ToolTrim",
+    "summary": "Toggl Track vs Clockify comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "toggl-vs-timecamp",
+    "url": "https://tooltrim.com/fr/comparatif/toggl-vs-timecamp",
+    "title": "Toggl Track vs TimeCamp : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Toggl Track vs TimeCamp : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "toggl-vs-timecamp",
+    "url": "https://tooltrim.com/en/comparatif/toggl-vs-timecamp",
+    "title": "Toggl Track vs TimeCamp: comparison 2026 | ToolTrim",
+    "summary": "Toggl Track vs TimeCamp comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "clockify-vs-timecamp",
+    "url": "https://tooltrim.com/fr/comparatif/clockify-vs-timecamp",
+    "title": "Clockify vs TimeCamp : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Clockify vs TimeCamp : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "clockify-vs-timecamp",
+    "url": "https://tooltrim.com/en/comparatif/clockify-vs-timecamp",
+    "title": "Clockify vs TimeCamp: comparison 2026 | ToolTrim",
+    "summary": "Clockify vs TimeCamp comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "time-doctor-vs-clockify",
+    "url": "https://tooltrim.com/fr/comparatif/time-doctor-vs-clockify",
+    "title": "Time Doctor vs Clockify : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Time Doctor vs Clockify : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "time-doctor-vs-clockify",
+    "url": "https://tooltrim.com/en/comparatif/time-doctor-vs-clockify",
+    "title": "Time Doctor vs Clockify: comparison 2026 | ToolTrim",
+    "summary": "Time Doctor vs Clockify comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "unbounce-vs-instapage",
+    "url": "https://tooltrim.com/fr/comparatif/unbounce-vs-instapage",
+    "title": "Unbounce vs Instapage : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Unbounce vs Instapage : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "unbounce-vs-instapage",
+    "url": "https://tooltrim.com/en/comparatif/unbounce-vs-instapage",
+    "title": "Unbounce vs Instapage: comparison 2026 | ToolTrim",
+    "summary": "Unbounce vs Instapage comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "unbounce-vs-leadpages",
+    "url": "https://tooltrim.com/fr/comparatif/unbounce-vs-leadpages",
+    "title": "Unbounce vs Leadpages : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Unbounce vs Leadpages : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "unbounce-vs-leadpages",
+    "url": "https://tooltrim.com/en/comparatif/unbounce-vs-leadpages",
+    "title": "Unbounce vs Leadpages: comparison 2026 | ToolTrim",
+    "summary": "Unbounce vs Leadpages comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "instapage-vs-leadpages",
+    "url": "https://tooltrim.com/fr/comparatif/instapage-vs-leadpages",
+    "title": "Instapage vs Leadpages : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Instapage vs Leadpages : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "instapage-vs-leadpages",
+    "url": "https://tooltrim.com/en/comparatif/instapage-vs-leadpages",
+    "title": "Instapage vs Leadpages: comparison 2026 | ToolTrim",
+    "summary": "Instapage vs Leadpages comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "stripe-vs-paypal",
+    "url": "https://tooltrim.com/fr/comparatif/stripe-vs-paypal",
+    "title": "Stripe vs PayPal : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Stripe vs PayPal : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "stripe-vs-paypal",
+    "url": "https://tooltrim.com/en/comparatif/stripe-vs-paypal",
+    "title": "Stripe vs PayPal: comparison 2026 | ToolTrim",
+    "summary": "Stripe vs PayPal comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "stripe-vs-razorpay",
+    "url": "https://tooltrim.com/fr/comparatif/stripe-vs-razorpay",
+    "title": "Stripe vs Razorpay : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Stripe vs Razorpay : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "stripe-vs-razorpay",
+    "url": "https://tooltrim.com/en/comparatif/stripe-vs-razorpay",
+    "title": "Stripe vs Razorpay: comparison 2026 | ToolTrim",
+    "summary": "Stripe vs Razorpay comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "quickbooks-vs-freshbooks",
+    "url": "https://tooltrim.com/fr/comparatif/quickbooks-vs-freshbooks",
+    "title": "QuickBooks vs FreshBooks : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif QuickBooks vs FreshBooks : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "quickbooks-vs-freshbooks",
+    "url": "https://tooltrim.com/en/comparatif/quickbooks-vs-freshbooks",
+    "title": "QuickBooks vs FreshBooks: comparison 2026 | ToolTrim",
+    "summary": "QuickBooks vs FreshBooks comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "typeform-vs-tally",
+    "url": "https://tooltrim.com/fr/comparatif/typeform-vs-tally",
+    "title": "Typeform vs Tally : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Typeform vs Tally : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "typeform-vs-tally",
+    "url": "https://tooltrim.com/en/comparatif/typeform-vs-tally",
+    "title": "Typeform vs Tally: comparison 2026 | ToolTrim",
+    "summary": "Typeform vs Tally comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "typeform-vs-surveysparrow",
+    "url": "https://tooltrim.com/fr/comparatif/typeform-vs-surveysparrow",
+    "title": "Typeform vs SurveySparrow : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Typeform vs SurveySparrow : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "typeform-vs-surveysparrow",
+    "url": "https://tooltrim.com/en/comparatif/typeform-vs-surveysparrow",
+    "title": "Typeform vs SurveySparrow: comparison 2026 | ToolTrim",
+    "summary": "Typeform vs SurveySparrow comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "slack-vs-microsoft-teams",
+    "url": "https://tooltrim.com/fr/comparatif/slack-vs-microsoft-teams",
+    "title": "Slack vs Microsoft Teams : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Slack vs Microsoft Teams : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "slack-vs-microsoft-teams",
+    "url": "https://tooltrim.com/en/comparatif/slack-vs-microsoft-teams",
+    "title": "Slack vs Microsoft Teams: comparison 2026 | ToolTrim",
+    "summary": "Slack vs Microsoft Teams comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "slack-vs-front",
+    "url": "https://tooltrim.com/fr/comparatif/slack-vs-front",
+    "title": "Slack vs Front : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Slack vs Front : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "slack-vs-front",
+    "url": "https://tooltrim.com/en/comparatif/slack-vs-front",
+    "title": "Slack vs Front: comparison 2026 | ToolTrim",
+    "summary": "Slack vs Front comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "tidio-vs-zendesk",
+    "url": "https://tooltrim.com/fr/comparatif/tidio-vs-zendesk",
+    "title": "Tidio vs Zendesk : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Tidio vs Zendesk : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "tidio-vs-zendesk",
+    "url": "https://tooltrim.com/en/comparatif/tidio-vs-zendesk",
+    "title": "Tidio vs Zendesk: comparison 2026 | ToolTrim",
+    "summary": "Tidio vs Zendesk comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "loom-vs-vimeo",
+    "url": "https://tooltrim.com/fr/comparatif/loom-vs-vimeo",
+    "title": "Loom vs Vimeo : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Loom vs Vimeo : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "loom-vs-vimeo",
+    "url": "https://tooltrim.com/en/comparatif/loom-vs-vimeo",
+    "title": "Loom vs Vimeo: comparison 2026 | ToolTrim",
+    "summary": "Loom vs Vimeo comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "dubsado-vs-honeybook",
+    "url": "https://tooltrim.com/fr/comparatif/dubsado-vs-honeybook",
+    "title": "Dubsado vs HoneyBook : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif Dubsado vs HoneyBook : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "dubsado-vs-honeybook",
+    "url": "https://tooltrim.com/en/comparatif/dubsado-vs-honeybook",
+    "title": "Dubsado vs HoneyBook: comparison 2026 | ToolTrim",
+    "summary": "Dubsado vs HoneyBook comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "comparison",
+    "language": "fr",
+    "slug": "semrush-vs-similarweb",
+    "url": "https://tooltrim.com/fr/comparatif/semrush-vs-similarweb",
+    "title": "SEMrush vs Similarweb : comparatif 2026 | ToolTrim",
+    "summary": "Comparatif SEMrush vs Similarweb : fonctionnalités, prix réels et verdict selon tooltrim.com. Quel outil choisir pour votre stack freelance en 2026 ?"
+  },
+  {
+    "type": "comparison",
+    "language": "en",
+    "slug": "semrush-vs-similarweb",
+    "url": "https://tooltrim.com/en/comparatif/semrush-vs-similarweb",
+    "title": "SEMrush vs Similarweb: comparison 2026 | ToolTrim",
+    "summary": "SEMrush vs Similarweb comparison: features, real pricing and verdict by tooltrim.com. Which tool should you choose for your freelance stack in 2026?"
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-outils-developpeur-freelance",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-outils-developpeur-freelance",
+    "title": "Meilleurs outils pour développeur freelance en 2026",
+    "summary": "Stack dev freelance : Cursor, Vercel, Supabase, ChatGPT Pro. Les doublons qui coûtent le plus cher, et comment trancher entre deux outils qui font le même travail."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-tools-freelance-developer",
+    "url": "https://tooltrim.com/en/guide/best-tools-freelance-developer",
+    "title": "Best tools for freelance developers in 2026",
+    "summary": "Freelance dev stack: Cursor, Vercel, Supabase, ChatGPT Pro. The duplicates that cost the most, and how to choose between two tools doing the same job."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-outils-designer-freelance",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-outils-designer-freelance",
+    "title": "Meilleurs outils pour designer freelance en 2026",
+    "summary": "Stack designer freelance : Figma, Adobe, Midjourney, Loom. Où part le budget créatif, et quels abonnements font double emploi sans que ça se voie."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-tools-freelance-designer",
+    "url": "https://tooltrim.com/en/guide/best-tools-freelance-designer",
+    "title": "Best tools for freelance designers in 2026",
+    "summary": "Freelance designer stack: Figma, Adobe, Midjourney, Loom. Where the creative budget actually goes, and which subscriptions quietly overlap."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-outils-consultant-freelance",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-outils-consultant-freelance",
+    "title": "Meilleurs outils pour consultant freelance en 2026",
+    "summary": "Stack consultant freelance : Calendly, CRM, visio, Notion. Le cumul CRM qui passe inaperçu et les abonnements que ton volume d'appels ne justifie pas."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-tools-freelance-consultant",
+    "url": "https://tooltrim.com/en/guide/best-tools-freelance-consultant",
+    "title": "Best tools for freelance consultants in 2026",
+    "summary": "Freelance consultant stack: Calendly, CRM, video, Notion. The CRM overlap nobody notices, and the subscriptions your call volume does not justify."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-outils-createur-contenu-freelance",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-outils-createur-contenu-freelance",
+    "title": "Meilleurs outils pour créateur de contenu freelance",
+    "summary": "Stack créateur de contenu : newsletter, IA rédactionnelle, Canva, scheduler. Les trois familles d'outils où le cumul est le plus coûteux."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-tools-freelance-content-creator",
+    "url": "https://tooltrim.com/en/guide/best-tools-freelance-content-creator",
+    "title": "Best tools for freelance content creators in 2026",
+    "summary": "Content creator stack: newsletter, writing AI, Canva, scheduler. The three tool families where stacking costs the most."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-outils-ops-manager-freelance",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-outils-ops-manager-freelance",
+    "title": "Meilleurs outils pour ops manager freelance en 2026",
+    "summary": "Stack ops freelance : compta, banque pro, signature, gestion de projet. La stack la plus fragmentée, donc celle où les doublons se cachent le mieux."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-tools-freelance-ops-manager",
+    "url": "https://tooltrim.com/en/guide/best-tools-freelance-ops-manager",
+    "title": "Best tools for freelance ops managers in 2026",
+    "summary": "Freelance ops stack: accounting, business banking, e-signature, project management. The most fragmented stack, so the one where duplicates hide best."
+  }
+]

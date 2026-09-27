@@ -103,7 +103,6 @@ function run(label, command, args) {
 console.log("Tooltrim — build production reproductible");
 run("Index léger des outils", "node", ["scripts/gen-tools-index.mjs"]);
 run("Prix natifs attestés", "node", ["scripts/gen-native-prices.mjs"]);
-run("Fichiers llms canoniques", "node", ["scripts/gen-llms-files.mjs"]);
 run(
   "Index catalogue stacks",
   process.platform === "win32" ? "node_modules\\.bin\\tsx.cmd" : "node_modules/.bin/tsx",
@@ -142,6 +141,7 @@ run(
 );
 run("Mutualisation du CSS critique", "node", ["scripts/externalize-critical-css.mjs"]);
 run("Validation SEO du sitemap généré", "node", ["scripts/validate-generated-seo.mjs"]);
+run("Fichiers llms canoniques", "node", ["scripts/gen-llms-files.mjs"]);
 run("Audit SEO des pages Explorer", "node", ["scripts/audit-explorer-seo.mjs"]);
 run("Budget et doublons de l'artefact", "node", ["scripts/audit-build-output.mjs"]);
 

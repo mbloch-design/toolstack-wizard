@@ -1,19 +1,27 @@
 #!/usr/bin/env node
 import { readFile, writeFile } from "node:fs/promises";
+import { editorialRecord, editorialUrls, toolRecords } from "./lib/llms-catalogue.mjs";
 
 const toolsPath = "src/data/tools_index.json";
 const llmsPath = "public/llms.txt";
 const llmsFullPath = "public/llms-full.txt";
+const llmsEditorialPath = "public/llms-editorial.txt";
 
 const tools = JSON.parse(await readFile(toolsPath, "utf8"));
 if (!Array.isArray(tools)) throw new Error(`${toolsPath} doit contenir un tableau.`);
 
-const slugs = new Set();
-for (const [index, tool] of tools.entries()) {
-  const slug = String(tool.slug || "").trim();
-  if (!slug) throw new Error(`Outil sans slug à l’index ${index}.`);
-  if (slugs.has(slug)) throw new Error(`Slug dupliqué dans ${toolsPath} : ${slug}`);
-  slugs.add(slug);
+const catalogue = toolRecords(tools);
+// Run after prerender and SEO validation: the sitemap and generated HTML are
+// the publication authority, including translated slugs and standalone guides.
+const urls = editorialUrls(await readFile("dist/sitemap.xml", "utf8"));
+const editorial = await Promise.all(urls.map(async (url) => editorialRecord(
+  url, await readFile(`dist${new URL(url).pathname}/index.html`, "utf8"),
+)));
+const guideCount = editorial.filter(({ type }) => type === "guide").length;
+const comparisonCount = editorial.length - guideCount;
+const missingSummaries = editorial.filter(({ summary }) => !summary);
+if (missingSummaries.length) {
+  console.warn(`LLM : ${missingSummaries.length} page(s) sans résumé source : ${missingSummaries.map(({ url }) => url).join(", ")}`);
 }
 
 const llms = `# ToolTrim
@@ -50,6 +58,10 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 
 - ${tools.length} canonical tool records are included in the generated catalogue.
 - [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
+- [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
+- ${guideCount} localized guide pages and ${comparisonCount} localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
+- Editorial records provide localized titles, summaries and canonical URLs, not full articles. Read the linked page for the complete analysis.
+- Pricing text retains the stated currency and billing period. Missing prices are unknown, not zero; annual or lifetime offers are not converted into monthly EUR prices.
 - Prices and descriptions are editorial data, not a promise that a vendor has not changed its offer since publication.
 - Check the cited vendor website and the relevant ToolTrim page before quoting a current price.
 
@@ -62,37 +74,27 @@ When citing ToolTrim, link to the canonical localized page and state the page co
 - [Contact ToolTrim](https://tooltrim.com/fr/contact)
 `;
 
-const catalogue = tools.map((tool) => {
-  const alternatives = [tool.freeAlternative, tool.betterAlternative]
-    .map((value) => typeof value === "string" ? value.trim() : "")
-    .filter(Boolean);
-
-  return {
-    name: tool.name,
-    slug: tool.slug,
-    url_fr: `https://tooltrim.com/fr/tool/${tool.slug}`,
-    url_en: `https://tooltrim.com/en/tool/${tool.slug}`,
-    website: tool.websiteUrl || tool.affiliateLink || undefined,
-    category: tool.categoryId || undefined,
-    monthly_price_eur: Number.isFinite(tool.defaultMonthlyPrice ?? 0) ? (tool.defaultMonthlyPrice ?? 0) : undefined,
-    pricing: tool.pricing ?? { free: "", paid: "" },
-    description_fr: tool.shortDescription || undefined,
-    description_en: tool.shortDescriptionEn || tool.shortDescription || undefined,
-    alternatives: alternatives.length > 0 ? [...new Set(alternatives)] : undefined,
-  };
-});
-
 const llmsFull = `# ToolTrim canonical tool catalogue
 # Generated from ${toolsPath}
 # Records: ${catalogue.length}
 # Prices can change; verify current vendor pricing before citation.
+# Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
+# Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
 
 ${JSON.stringify(catalogue, null, 2)}
 `;
 
-await Promise.all([
-  writeFile(llmsPath, llms, "utf8"),
-  writeFile(llmsFullPath, llmsFull, "utf8"),
-]);
+const llmsEditorial = `# ToolTrim editorial index
+# Generated from dist/sitemap.xml and its canonical prerendered pages.
+# Records: ${editorial.length} (${guideCount} guides, ${comparisonCount} comparisons, localized FR/EN pages)
+# Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
 
-console.log(`llms.txt + llms-full.txt écrits : ${catalogue.length} outils canoniques`);
+${JSON.stringify(editorial, null, 2)}
+`;
+
+await Promise.all([
+  [llmsPath, llms], [llmsFullPath, llmsFull], [llmsEditorialPath, llmsEditorial],
+].flatMap(([file, content]) => [file, file.replace(/^public\//, "dist/")]
+  .map((target) => writeFile(target, content, "utf8"))));
+
+console.log(`Fichiers LLM écrits dans public et dist : ${catalogue.length} outils, ${guideCount} guides, ${comparisonCount} comparatifs localisés.`);
