@@ -217005,5 +217005,90 @@
       "idealForFr": "Créateurs et petites équipes produisant régulièrement des variantes visuelles avec plusieurs modèles IA.",
       "idealForEn": "Creators and small teams producing regular visual batches across multiple AI models."
     }
+  },
+  {
+    "id": "georankers",
+    "slug": "georankers",
+    "name": "GeoRankers",
+    "category": "marketing",
+    "categoryId": "marketing",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bestFor": ["b2b-saas", "marketing-teams"],
+    "verticals": ["marketing", "saas"],
+    "covers": ["ai-search-visibility", "geo-monitoring"],
+    "functional_needs": ["ai-search-visibility", "competitor-monitoring"],
+    "shortDescription": "Suit la présence d'une marque B2B dans des réponses IA et la compare à ses concurrents.",
+    "shortDescriptionEn": "Tracks a B2B brand's presence in AI answers and compares it with competitors.",
+    "description": "Suivi de visibilité dans les réponses IA, analyse de prompts et de citations, avec recommandations éditoriales.",
+    "longDescription": "GeoRankers suit, sur les requêtes qu'il analyse, la présence d'une marque dans les réponses de ChatGPT, Google AI Search et Perplexity. Le tableau de bord regroupe mentions, positionnement, concurrents, citations et recommandations de contenu. L'éditeur vise surtout les équipes marketing B2B SaaS. La mesure porte sur un échantillon de prompts et des réponses à un instant donné : elle ne représente ni toutes les conversations des utilisateurs ni un classement stable ou garanti.\n\nL'essai annoncé dure sept jours sans carte bancaire. Au paiement mensuel, le site indique 49 USD par mois pour Launch et 159 USD par mois pour Grow. La formule trimestrielle affiche des équivalents de 41 et 129 USD par mois, facturés respectivement 123 et 387 USD par trimestre. Enterprise est sur devis. Launch annonce plus de 450 réponses IA analysées, cinq concurrents et un siège ; Grow, plus de 1 100 réponses, dix concurrents et trois sièges. Les volumes sont ceux affichés par l'éditeur, non vérifiés en usage.\n\nAvant de souscrire, prépare une liste de prompts qui reflète vraiment tes acheteurs et contrôle quelques réponses brutes. Demande comment les requêtes sont échantillonnées, quels pays et modèles sont couverts, et quelles données restent exportables. Les intégrations Google Analytics et Search Console et les alertes Slack sont marquées comme à venir sur la page tarifaire, pas comme des fonctions déjà disponibles.",
+    "longDescriptionEn": "GeoRankers tracks a brand's presence in the ChatGPT, Google AI Search and Perplexity answers it samples. Its dashboard groups mentions, positioning, competitors, citations and content recommendations. The vendor primarily targets B2B SaaS marketing teams. Measurements reflect a set of prompts and point-in-time answers, not every user conversation or a stable, guaranteed ranking.\n\nThe advertised trial lasts seven days without a card. For monthly billing, the site lists USD 49 per month for Launch and USD 159 for Grow. Quarterly billing shows equivalents of USD 41 and USD 129 per month, charged as USD 123 and USD 387 per quarter respectively. Enterprise is custom-priced. Launch lists 450+ AI answers analyzed, five competitors and one seat; Grow lists 1,100+ answers, ten competitors and three seats. These are vendor-stated allowances, not independently tested usage.\n\nBefore subscribing, prepare prompts that reflect your actual buyers and inspect a sample of raw answers. Ask how prompts are sampled, which countries and models are covered, and what data you can export. Google Analytics and Search Console integrations and Slack alerts are marked as roadmap items on the pricing page, not current features.",
+    "pricing": {"free": "Essai de 7 jours sans carte bancaire ; aucun forfait gratuit permanent annoncé.", "paid": "Launch : 49 USD/mois ou équivalent 41 USD/mois facturé 123 USD/trimestre. Grow : 159 USD/mois ou équivalent 129 USD/mois facturé 387 USD/trimestre. Enterprise sur devis."},
+    "pricingEn": {"free": "Seven-day trial without a credit card; no permanent free plan advertised.", "paid": "Launch: USD 49/month, or USD 41/month equivalent billed USD 123/quarter. Grow: USD 159/month, or USD 129/month equivalent billed USD 387/quarter. Enterprise custom-priced."},
+    "defaultMonthlyPrice": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": null, "compare_plan_name": "Launch mensuel", "compare_plan_kind": "subscription", "price_reliability": "high", "location_sensitive": true, "usage_sensitive": true, "verified_on": "2026-09-28", "source_domain": "georankers.ai", "official_source_url": "https://georankers.ai/pricing", "verification_status": "official_explicit",
+      "cautions": ["41 et 129 USD par mois sont des équivalents de paiement trimestriel, pas des abonnements mensuels.", "Les volumes de réponses sont annoncés par l'éditeur ; une analyse manuelle supplémentaire dépend du plan.", "Slack, Google Analytics et Search Console figurent comme fonctions à venir."],
+      "plans": [
+        {"planKey":"launch-monthly","displayName":"Launch, paiement mensuel","summary":"Un siège, cinq concurrents et plus de 450 réponses IA annoncées.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"par mois","isFree":false,"isComparePlan":true,"nativeAmount":49,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"monthly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"launch-quarterly","displayName":"Launch, paiement trimestriel","summary":"123 USD facturés par trimestre, soit 41 USD par mois en équivalent.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"par trimestre","isFree":false,"isComparePlan":false,"nativeAmount":123,"nativeCurrency":"USD","billingPeriod":"quarterly","billingCommitment":"quarterly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"grow-monthly","displayName":"Grow, paiement mensuel","summary":"Trois sièges, dix concurrents et plus de 1 100 réponses IA annoncées.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"par mois","isFree":false,"isComparePlan":false,"nativeAmount":159,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"monthly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"grow-quarterly","displayName":"Grow, paiement trimestriel","summary":"387 USD facturés par trimestre, soit 129 USD par mois en équivalent.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"par trimestre","isFree":false,"isComparePlan":false,"nativeAmount":387,"nativeCurrency":"USD","billingPeriod":"quarterly","billingCommitment":"quarterly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"enterprise","displayName":"Enterprise","summary":"Volume, sièges et accompagnement sur devis.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"sur devis","isFree":false,"isComparePlan":false,"nativeAmount":null,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"}
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": null, "compare_plan_name": "Launch monthly", "compare_plan_kind": "subscription", "price_reliability": "high", "location_sensitive": true, "usage_sensitive": true, "verified_on": "2026-09-28", "source_domain": "georankers.ai", "official_source_url": "https://georankers.ai/pricing", "verification_status": "official_explicit",
+      "cautions": ["USD 41 and USD 129 per month are equivalents for quarterly billing, not monthly subscriptions.", "Answer volumes are vendor-stated; on-demand runs depend on the plan.", "Slack, Google Analytics and Search Console are roadmap items."],
+      "plans": [
+        {"planKey":"launch-monthly","displayName":"Launch, monthly billing","summary":"One seat, five competitors and 450+ AI answers listed.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"per month","isFree":false,"isComparePlan":true,"nativeAmount":49,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"monthly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"launch-quarterly","displayName":"Launch, quarterly billing","summary":"USD 123 charged per quarter, equivalent to USD 41 per month.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"per quarter","isFree":false,"isComparePlan":false,"nativeAmount":123,"nativeCurrency":"USD","billingPeriod":"quarterly","billingCommitment":"quarterly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"grow-monthly","displayName":"Grow, monthly billing","summary":"Three seats, ten competitors and 1,100+ AI answers listed.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"per month","isFree":false,"isComparePlan":false,"nativeAmount":159,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"monthly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"grow-quarterly","displayName":"Grow, quarterly billing","summary":"USD 387 charged per quarter, equivalent to USD 129 per month.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"per quarter","isFree":false,"isComparePlan":false,"nativeAmount":387,"nativeCurrency":"USD","billingPeriod":"quarterly","billingCommitment":"quarterly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"enterprise","displayName":"Enterprise","summary":"Custom answer volume, seats and support.","detailsSourceUrl":"https://georankers.ai/pricing","pricingUnit":"custom quote","isFree":false,"isComparePlan":false,"nativeAmount":null,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"}
+      ]
+    },
+    "websiteUrl": "https://georankers.ai/", "website": "https://georankers.ai/", "link": "https://georankers.ai/", "affiliateLink": "",
+    "logo": "https://georankers.ai/georankers-logo.svg", "ogImageUrl": "https://georankers.ai/og-image.png",
+    "galleryImages": ["https://georankers.ai/assets/hero-dashboard--2DBfIch.webp", "https://georankers.ai/assets/image_1775465238496-CMHZuTbJ.png"],
+    "pros": ["Analyse des mentions, citations et concurrents par plateforme IA.", "Réponses brutes et prompts personnalisés annoncés dans les plans.", "Essai de sept jours sans carte bancaire."],
+    "prosEn": ["Brand, citation and competitor analysis by AI platform.", "Raw answers and custom prompts listed across plans.", "Seven-day trial without a credit card."],
+    "cons": ["Mesures dépendantes des prompts choisis et du moment de capture.", "Tarif trimestriel affiché en équivalent mensuel, à ne pas confondre avec la facturation mensuelle.", "Plusieurs intégrations annoncées sont encore en feuille de route."],
+    "consEn": ["Measurements depend on prompt selection and capture time.", "Quarterly prices shown as monthly equivalents must not be confused with monthly billing.", "Several listed integrations remain roadmap items."],
+    "useCases": ["Suivre les mentions d'une marque SaaS sur un panel de requêtes d'achat.", "Comparer les réponses IA obtenues par plusieurs concurrents.", "Prioriser des contenus à partir de citations et de lacunes observées."],
+    "useCasesEn": ["Track a SaaS brand across a panel of buyer prompts.", "Compare AI answers mentioning several competitors.", "Prioritize content from observed citations and gaps."],
+    "verdict": {"keepIf":["Tu peux définir un panel stable de prompts B2B et vérifier les réponses brutes.", "Tu veux comparer les mentions, citations et concurrents sur plusieurs plateformes IA."],"avoidIf":["Tu attends une mesure exhaustive de toutes les conversations IA.", "Tu veux attribuer directement du revenu aux scores de visibilité sans autre preuve."],"threshold":"Teste d'abord dix prompts réellement utilisés par tes acheteurs, puis vérifie si les réponses et recommandations justifient le coût mensuel ou trimestriel."},
+    "verdictEn": {"keepIf":["You can define a stable B2B prompt panel and inspect raw answers.", "You need to compare mentions, citations and competitors across AI platforms."],"avoidIf":["You expect a complete census of all AI conversations.", "You would attribute revenue directly to visibility scores without other evidence."],"threshold":"Start with ten buyer-relevant prompts, then see whether the answers and recommendations justify monthly or quarterly spend."},
+    "alternatives": ["semrush", "ahrefs"],
+    "soloRelevance": "medium", "teamRelevance": "high", "timeGainedHoursPerMonth": null,
+    "toolTrimRating": {
+      "valeurAjoutee": 3, "simplicite": 3, "utilisation": 3, "puissance": 3, "reversibilite": 3, "notedOn": "2026-09-28", "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Mentions, citations et concurrents réunis dans un suivi B2B ; aucun effet sur le trafic ou le revenu mesuré par ToolTrim. Sources : georankers.ai et /terms, 28 septembre 2026.",
+        "simplicite": "Tableau de bord et recommandations annoncés ; leur utilité dépend d'un panel de prompts bien choisi. Aucun test pratique. Source : georankers.ai/features, 28 septembre 2026.",
+        "utilisation": "Exécutions hebdomadaires annoncées et une relance manuelle par mois en Launch ; fréquence réelle non testée. Sources : georankers.ai/pricing et /, 28 septembre 2026.",
+        "puissance": "Trois plateformes citées, concurrents, pays, citations et prompts ; les nombres de réponses sont ceux du fournisseur. Source : georankers.ai/pricing, 28 septembre 2026.",
+        "reversibilite": "Réponses brutes annoncées, mais export de rapport absent de Launch et documentation de récupération à vérifier. Source : georankers.ai/pricing, 28 septembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "B2B mention, citation and competitor tracking; ToolTrim has measured no traffic or revenue outcome. Sources: georankers.ai and /terms, September 28, 2026.",
+        "simplicite": "A dashboard and recommendations are listed; usefulness depends on choosing an appropriate prompt panel. No hands-on test. Source: georankers.ai/features, September 28, 2026.",
+        "utilisation": "Weekly runs and one monthly on-demand run listed for Launch; actual usage not tested. Sources: georankers.ai/pricing and homepage, September 28, 2026.",
+        "puissance": "Three named platforms, competitors, countries, citations and prompts; answer volumes are vendor-stated. Source: georankers.ai/pricing, September 28, 2026.",
+        "reversibilite": "Raw answers are listed, but report export is absent from Launch and data retrieval needs checking. Source: georankers.ai/pricing, September 28, 2026."
+      }
+    },
+    "seo": {
+      "presentationTitleFr": "GeoRankers : suivi de visibilité dans les réponses IA | ToolTrim",
+      "presentationTitleEn": "GeoRankers review: AI search visibility tracking | ToolTrim",
+      "prixTitleFr": "GeoRankers prix : 49 $/mois ou 123 $/trimestre | ToolTrim",
+      "prixTitleEn": "GeoRankers pricing: $49 monthly or $123 quarterly | ToolTrim",
+      "presentationMetaDescriptionFr": "GeoRankers suit mentions, citations et concurrents dans des réponses IA. Avis ToolTrim, limites de mesure et tarifs sans confondre mois et trimestre.",
+      "presentationMetaDescriptionEn": "GeoRankers tracks brand mentions, citations and competitors in AI answers. Review its measurement limits and monthly versus quarterly pricing.",
+      "prixMetaDescriptionFr": "Launch : 49 $/mois ou 123 $/trimestre. Grow : 159 $/mois ou 387 $/trimestre. Essai de 7 jours sans carte et limites des plans.",
+      "prixMetaDescriptionEn": "Launch: $49/month or $123/quarter. Grow: $159/month or $387/quarter. Seven-day no-card trial and plan limits.",
+      "idealForFr": "Équipes marketing B2B SaaS capables de suivre un panel régulier de prompts d'achat.",
+      "idealForEn": "B2B SaaS marketing teams tracking a consistent set of buyer prompts."
+    }
   }
 ]

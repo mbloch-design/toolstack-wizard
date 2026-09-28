@@ -4821,6 +4821,12 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction des titres SEO, FAQ et étiquettes de prix des produits inclus, en bêta ou arrêtés ; limitation des suggestions d'alternatives non comparables et des longues listes de plugins sur les fiches enfants.
 - Les suites à paiement annuel affichent le total annuel dans les cartes, les FAQ, les titres SEO et les offres structurées, sans assimiler une équivalence mensuelle à un paiement mensuel.
 - Build production PASS : 13 134 URL uniques dans le sitemap, audit Explorer PASS, budget de sortie réétalonné sur 14 828 fichiers mesurés. TypeScript et rendu local FR/EN vérifiés. Aucun push demandé à ce stade.
+## 2026-09-28 : fiche GeoRankers
+
+- Nouvelle fiche FR/EN, sources, limites des captures IA, prix mensuels et équivalents trimestriels documentés dans `research/georankers-2026-09-28.md`.
+- Deux vues produit, logo et OG officiels ; intégrations marquées comme à venir distinguées des fonctions disponibles.
+- Lien direct sans affiliation et en nofollow vérifié dans le HTML généré. TypeScript, prérendu, SEO et audit final des budgets PASS ; plafond réétalonné à 14 870 pour 14 863 fichiers mesurés. Non publié.
+
 ## 2026-09-28 : fiche Seam UI
 
 - Nouvelle fiche FR/EN : génération d'images et vidéos IA en lots avec clés API personnelles, source et limites documentées dans `research/seamui-2026-09-28.md`.

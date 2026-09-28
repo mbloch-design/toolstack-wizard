@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1343
+# Records: 1344
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18718,5 +18718,19 @@
     },
     "description_fr": "Espace de travail pour produire des images et vidéos IA en lots avec ses propres clés API.",
     "description_en": "Workspace for batch AI image and video production using your own API keys."
+  },
+  {
+    "name": "GeoRankers",
+    "slug": "georankers",
+    "url_fr": "https://tooltrim.com/fr/tool/georankers",
+    "url_en": "https://tooltrim.com/en/tool/georankers",
+    "website": "https://georankers.ai/",
+    "category": "marketing",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte bancaire ; aucun forfait gratuit permanent annoncé.",
+      "paid": "Launch : 49 USD/mois ou équivalent 41 USD/mois facturé 123 USD/trimestre. Grow : 159 USD/mois ou équivalent 129 USD/mois facturé 387 USD/trimestre. Enterprise sur devis."
+    },
+    "description_fr": "Suit la présence d'une marque B2B dans des réponses IA et la compare à ses concurrents.",
+    "description_en": "Tracks a B2B brand's presence in AI answers and compares it with competitors."
   }
 ]

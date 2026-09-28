@@ -42720,5 +42720,28 @@
       "createur-contenu",
       "graphiste-da"
     ]
+  },
+  {
+    "id": "georankers",
+    "slug": "georankers",
+    "name": "GeoRankers",
+    "categoryId": "marketing",
+    "shortDescription": "Suit la présence d'une marque B2B dans des réponses IA et la compare à ses concurrents.",
+    "shortDescriptionEn": "Tracks a B2B brand's presence in AI answers and compares it with competitors.",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte bancaire ; aucun forfait gratuit permanent annoncé.",
+      "paid": "Launch : 49 USD/mois ou équivalent 41 USD/mois facturé 123 USD/trimestre. Grow : 159 USD/mois ou équivalent 129 USD/mois facturé 387 USD/trimestre. Enterprise sur devis."
+    },
+    "websiteUrl": "https://georankers.ai/",
+    "ogImageUrl": "https://georankers.ai/og-image.png",
+    "logo": "https://georankers.ai/georankers-logo.svg",
+    "functional_needs": [
+      "ai-search-visibility",
+      "competitor-monitoring"
+    ],
+    "verticals": [
+      "marketing",
+      "saas"
+    ]
   }
 ]
