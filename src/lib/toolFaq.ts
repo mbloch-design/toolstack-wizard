@@ -31,6 +31,7 @@ export function buildToolFaqs(
     ? isFr ? ` (plan ${planLabel})` : ` (${planLabel} plan)`
     : "";
   const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
+  const lifetimeLicense = /licence (?:à vie|perp[ée]tuelle)|lifetime|perpetual/i.test(`${tool.pricing_v5?.compare_plan_name || ""} ${tool.pricing?.paid || ""}`);
   const maxonAnnual = tool.pricing_v5?.source_domain === "maxon.net"
     ? tool.pricing_v5.plans?.find((entry) => entry.isComparePlan && entry.billingPeriod === "annual" && entry.nativeAmount != null)
     : null;
@@ -58,8 +59,8 @@ export function buildToolFaqs(
         ? (isFr ? `${tool.name} est en bêta. Vérifiez ses conditions d'accès sur le site officiel.` : `${tool.name} is in beta. Check access terms on the official website.`)
         : oneTime
         ? (isFr
-          ? `${tool.name} est vendu en licence à vie, sans abonnement. ${tool.pricing?.paid || "Consultez le tarif officiel."}${verifiedSuffixFr}`
-          : `${tool.name} is sold as a lifetime license with no subscription. ${tool.pricingEn?.paid || "See the official price."}${verifiedSuffixEn}`)
+          ? `${tool.name} est proposé en ${lifetimeLicense ? "licence à vie" : "achat unique"}. ${tool.pricing?.paid || "Consultez le tarif officiel."}${verifiedSuffixFr}`
+          : `${tool.name} is sold as ${lifetimeLicense ? "a lifetime license" : "a one-time purchase"}. ${tool.pricingEn?.paid || "See the official price."}${verifiedSuffixEn}`)
         : displayPrice === 0 && isPriceUndisclosed(tool)
         ? (isFr
           ? `${tool.name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedSuffixFr}`

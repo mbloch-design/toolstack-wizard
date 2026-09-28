@@ -216799,5 +216799,130 @@
       "prixMetaDescriptionEn": "Maxon App is free. Check installation requirements and any licences needed for related products."
     },
     "description": "Maxon App : Gestionnaire d'installation, de mises à jour et de licences pour les produits Maxon.\n\nL'application regroupe les produits installés, les mises à jour disponibles et les licences liées à un identifiant Maxon. Elle ne remplace pas l'abonnement aux outils créatifs : elle sert à les installer, les mettre à jour et gérer leur activation. Vérifie la compatibilité de la version de l'application et des produits avant de modifier un poste de production.\n\nAvant de choisir, vérifie les prérequis de ta machine, le format de livraison et les licences déjà incluses dans ta stack. Cette fiche repose sur la documentation officielle, pas sur un test pratique."
+  },
+  {
+    "id": "mybestresume-ai",
+    "slug": "mybestresume-ai",
+    "name": "My Best Resume",
+    "category": "organization",
+    "categoryId": "organization",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bestFor": ["job-seekers", "career-change"],
+    "verticals": ["career", "recruitment"],
+    "covers": ["resume-builder", "resume-building"],
+    "functional_needs": ["resume-building", "job-application"],
+    "shortDescription": "Analyse le parcours professionnel et aide à créer un CV ciblé pour une offre d'emploi.",
+    "shortDescriptionEn": "Analyzes career experience and helps create a resume tailored to a target role.",
+    "longDescription": "My Best Resume commence par analyser un CV existant ou des informations saisies dans un questionnaire. L'outil présente les forces et les éléments manquants, puis propose un CV adapté au poste visé à partir des faits fournis. Les affirmations générées restent à relire : ni la compatibilité avec chaque logiciel de recrutement ni l'obtention d'un entretien ne sont garanties.\n\nLe premier CV complet coûte 1,99 USD en achat unique sur le site anglophone. Une version supplémentaire coûte 4,99 USD. L'achat comprend les exports PDF, DOCX et texte, ainsi que sept jours de modification et jusqu'à 20 régénérations. L'abonnement Career Momentum à 8,88 USD par mois est facultatif et distinct de ces achats. Les prix et la disponibilité varient selon le marché.\n\nToolTrim y voit un intérêt si tu veux retravailler un CV pour un poste précis sans souscrire immédiatement. Vérifie les formulations, les chiffres et les compétences avant chaque candidature. L'éditeur indique traiter les fichiers importés pour en extraire le texte et proposer une suppression des données en libre-service ; ces pratiques n'ont pas été auditées par ToolTrim. Le site ne propose pas actuellement de parcours français explicite.",
+    "longDescriptionEn": "My Best Resume first analyzes an existing resume or information entered through a guided questionnaire. It highlights strengths and missing evidence, then proposes a resume tailored to a target role using facts you supplied. Generated claims still need review: compatibility with every applicant tracking system and interview outcomes are not guaranteed.\n\nThe first complete resume costs USD 1.99 as a one-time website purchase. An additional version costs USD 4.99. A purchase includes PDF, editable DOCX and plain-text exports, seven days of edits, and up to 20 regenerations. The USD 8.88 per month Career Momentum membership is optional and separate. Prices and availability vary by market.\n\nToolTrim sees a fit when you need to tailor a resume to one role without subscribing first. Check every claim, number and skill before applying. The vendor says uploaded files are processed for text extraction and offers self-service data deletion; ToolTrim has not audited these practices. A dedicated French-language workflow is not currently listed.",
+    "description": "Analyse de parcours, ciblage d'un poste et création d'un CV exportable, avec achat unique facultatif pour le document complet.",
+    "pricing": {
+      "free": "Aperçu gratuit avant achat, aucun CV complet gratuit.",
+      "paid": "Premier CV ciblé : 1,99 USD en achat unique ; CV supplémentaire : 4,99 USD. Career Momentum : 8,88 USD/mois, facultatif."
+    },
+    "pricingEn": {
+      "free": "Free strengths preview before purchase; no free complete resume.",
+      "paid": "First targeted resume: USD 1.99 one-time; additional resume: USD 4.99. Career Momentum: USD 8.88/month, optional."
+    },
+    "defaultMonthlyPrice": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": null,
+      "compare_plan_name": "Premier CV ciblé",
+      "compare_plan_kind": "one_time",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "verified_on": "2026-09-28",
+      "source_domain": "mybestresume.ai",
+      "official_source_url": "https://mybestresume.ai/pricing",
+      "verification_status": "official_explicit",
+      "free_plan_card": "Aperçu des forces seulement. Le CV complet et les exports nécessitent un achat.",
+      "cautions": [
+        "Prix observés en USD sur le site anglophone ; le montant et la disponibilité dépendent du marché.",
+        "Chaque CV supplémentaire est un nouvel achat ; Career Momentum est un abonnement distinct et facultatif.",
+        "La fenêtre de modification et de re-téléchargement dure sept jours après l'achat."
+      ],
+      "plans": [
+        {"planKey":"strengths-preview","displayName":"Aperçu des forces","summary":"Analyse initiale avant achat, sans CV complet exportable.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"preview","isFree":true,"isComparePlan":false,"nativeAmount":0,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"first-resume","displayName":"Premier CV ciblé","summary":"Achat unique, PDF, DOCX et texte ; sept jours de modification et jusqu'à 20 régénérations.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"par CV","isFree":false,"isComparePlan":true,"nativeAmount":1.99,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"additional-resume","displayName":"CV supplémentaire","summary":"Nouvel achat unique pour un autre poste ou une autre direction.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"par CV","isFree":false,"isComparePlan":false,"nativeAmount":4.99,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"career-momentum","displayName":"Career Momentum, facultatif","summary":"Dix crédits de révision et un Career Brief par période payée ; renouvellement mensuel.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"par compte","isFree":false,"isComparePlan":false,"nativeAmount":8.88,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"monthly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"}
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": null,
+      "compare_plan_name": "First targeted resume",
+      "compare_plan_kind": "one_time",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "usage_sensitive": true,
+      "verified_on": "2026-09-28",
+      "source_domain": "mybestresume.ai",
+      "official_source_url": "https://mybestresume.ai/pricing",
+      "verification_status": "official_explicit",
+      "free_plan_card": "Strengths preview only. A complete resume and exports require a purchase.",
+      "cautions": ["Prices observed in USD on the English website; amount and availability vary by market.","Each additional resume is a separate purchase; Career Momentum is an optional subscription.","The edit and re-download window lasts seven days after purchase."],
+      "plans": [
+        {"planKey":"strengths-preview","displayName":"Strengths preview","summary":"Initial analysis before purchase, without a complete exportable resume.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"preview","isFree":true,"isComparePlan":false,"nativeAmount":0,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"first-resume","displayName":"First targeted resume","summary":"One-time purchase with PDF, DOCX and text; seven days of edits and up to 20 regenerations.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"per resume","isFree":false,"isComparePlan":true,"nativeAmount":1.99,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"additional-resume","displayName":"Additional resume","summary":"A separate one-time purchase for another role or direction.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"per resume","isFree":false,"isComparePlan":false,"nativeAmount":4.99,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"career-momentum","displayName":"Career Momentum, optional","summary":"Ten revision credits and one Career Brief per paid billing period; monthly renewal.","detailsSourceUrl":"https://mybestresume.ai/pricing","pricingUnit":"per account","isFree":false,"isComparePlan":false,"nativeAmount":8.88,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"monthly","taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"}
+      ]
+    },
+    "websiteUrl": "https://mybestresume.ai/",
+    "website": "https://mybestresume.ai/",
+    "link": "https://mybestresume.ai/",
+    "affiliateLink": "",
+    "logo": "https://mybestresume.ai/favicon.svg",
+    "ogImageUrl": "https://mybestresume.ai/opengraph-image",
+    "galleryImages": ["https://mybestresume.ai/step3/resume.jpg","https://mybestresume.ai/templates/product-manager-preview.png","https://mybestresume.ai/templates/modern-professional-preview.png"],
+    "pros": ["Aperçu des points forts avant achat.","CV exportable en PDF, DOCX modifiable et texte.","Premier CV accessible sans abonnement obligatoire."],
+    "prosEn": ["Strengths preview before purchase.","Resume exports in PDF, editable DOCX and plain text.","First resume available without a required subscription."],
+    "cons": ["Aucun résultat de recrutement ni score ATS universel garanti.","Sept jours seulement pour modifier et re-télécharger chaque CV acheté.","Prix et parcours affichés pour le marché anglophone ; pas de parcours français explicite."],
+    "consEn": ["No hiring outcome or universal ATS score is guaranteed.","Only seven days to edit and re-download each purchased resume.","Pricing and workflow shown for the English-language market; no dedicated French flow is listed."],
+    "useCases": ["Adapter un CV existant à une offre précise.","Faire ressortir les preuves concrètes d'une reconversion.","Exporter une version modifiable avant de candidater."],
+    "useCasesEn": ["Tailor an existing resume to a specific job.","Surface concrete evidence for a career change.","Export an editable version before applying."],
+    "verdict": {"keepIf":["Tu veux cibler un poste précis en gardant la main sur les affirmations du CV.","Tu préfères payer un document plutôt qu'un abonnement récurrent."],"avoidIf":["Tu attends une garantie d'entretien ou un score ATS valable pour tous les recruteurs.","Tu as besoin d'un parcours et d'un support explicitement en français."],"threshold":"Commence par l'analyse gratuite. Ne paie que si les éléments retenus reflètent bien ton parcours et si les formats d'export correspondent à ta candidature."},
+    "verdictEn": {"keepIf":["You need a resume for a specific role and want to review every claim.","You prefer paying for one document instead of a recurring subscription."],"avoidIf":["You expect a guaranteed interview or a universal ATS score.","You need a dedicated French-language workflow."],"threshold":"Start with the free analysis. Purchase only if the highlighted evidence reflects your experience and the export formats fit your application."},
+    "alternatives": ["rezi", "visualcv"],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "timeGainedHoursPerMonth": null,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 4,
+      "notedOn": "2026-09-28",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Aperçu gratuit puis premier CV à 1,99 USD en achat unique, mais aucun gain de candidature mesuré par ToolTrim. Source : mybestresume.ai/pricing, consultée le 28 septembre 2026.",
+        "simplicite": "Le parcours comporte import ou questionnaire, analyse, choix du poste et relecture avant export. Aucune mesure indépendante de facilité d'usage. Sources : mybestresume.ai et /faq, consultées le 28 septembre 2026.",
+        "utilisation": "Le produit annonce un CV ciblé et des exports PDF, DOCX et texte ; ToolTrim n'a pas testé la qualité du document sur une candidature réelle. Source : mybestresume.ai/pricing, consultée le 28 septembre 2026.",
+        "puissance": "Onze modèles, ciblage de poste et jusqu'à 20 régénérations durant sept jours pour un CV acheté. Profondeur appréciée sur documentation, sans test pratique. Source : mybestresume.ai/pricing, consultée le 28 septembre 2026.",
+        "reversibilite": "Exports PDF, DOCX modifiable et texte, suppression des données en libre-service annoncée par l'éditeur. Déclarations non auditées par ToolTrim. Sources : mybestresume.ai/pricing et /privacy, consultées le 28 septembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Free preview then a USD 1.99 one-time first resume, but ToolTrim has not measured application outcomes. Source: mybestresume.ai/pricing, checked September 28, 2026.",
+        "simplicite": "The workflow includes import or questionnaire, analysis, target-role choice and review before export. No independent ease-of-use test. Sources: mybestresume.ai and /faq, checked September 28, 2026.",
+        "utilisation": "The vendor offers a targeted resume and PDF, DOCX and text exports; ToolTrim has not tested a real job application. Source: mybestresume.ai/pricing, checked September 28, 2026.",
+        "puissance": "Eleven templates, role targeting and up to 20 regenerations during a purchased resume's seven-day edit window. Document-based assessment, no hands-on test. Source: mybestresume.ai/pricing, checked September 28, 2026.",
+        "reversibilite": "PDF, editable DOCX and text exports plus vendor-stated self-service data deletion. ToolTrim has not audited these claims. Sources: mybestresume.ai/pricing and /privacy, checked September 28, 2026."
+      }
+    },
+    "seo": {
+      "presentationTitleFr": "My Best Resume : créer un CV ciblé sans abonnement | ToolTrim",
+      "presentationTitleEn": "My Best Resume review: targeted resume, one-time price | ToolTrim",
+      "prixTitleFr": "My Best Resume prix : 1,99 $ le premier CV | ToolTrim",
+      "prixTitleEn": "My Best Resume pricing: $1.99 first resume | ToolTrim",
+      "presentationMetaDescriptionFr": "My Best Resume analyse ton parcours puis aide à créer un CV ciblé. Aperçu gratuit, premier CV à 1,99 $ en achat unique. Notre avis et les limites.",
+      "presentationMetaDescriptionEn": "My Best Resume analyzes your experience and builds a targeted resume. Free preview, $1.99 one-time first resume. Review its limits and exports.",
+      "prixMetaDescriptionFr": "Analyse gratuite, puis 1,99 $ pour le premier CV. Achats supplémentaires et abonnement Career Momentum facultatif : tarifs et conditions vérifiés.",
+      "prixMetaDescriptionEn": "Free preview, then $1.99 for the first resume. Additional purchases and optional Career Momentum membership: verified pricing and terms.",
+      "idealForFr": "Personnes qui veulent adapter un CV à un poste précis et vérifier chaque affirmation avant de postuler.",
+      "idealForEn": "Job seekers tailoring a resume to one role and reviewing every claim before applying."
+    }
   }
 ]

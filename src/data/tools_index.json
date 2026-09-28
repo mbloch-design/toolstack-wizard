@@ -42674,5 +42674,28 @@
       "motion-video",
       "creative"
     ]
+  },
+  {
+    "id": "mybestresume-ai",
+    "slug": "mybestresume-ai",
+    "name": "My Best Resume",
+    "categoryId": "organization",
+    "shortDescription": "Analyse le parcours professionnel et aide à créer un CV ciblé pour une offre d'emploi.",
+    "shortDescriptionEn": "Analyzes career experience and helps create a resume tailored to a target role.",
+    "pricing": {
+      "free": "Aperçu gratuit avant achat, aucun CV complet gratuit.",
+      "paid": "Premier CV ciblé : 1,99 USD en achat unique ; CV supplémentaire : 4,99 USD. Career Momentum : 8,88 USD/mois, facultatif."
+    },
+    "websiteUrl": "https://mybestresume.ai/",
+    "ogImageUrl": "https://mybestresume.ai/opengraph-image",
+    "logo": "https://mybestresume.ai/favicon.svg",
+    "functional_needs": [
+      "resume-building",
+      "job-application"
+    ],
+    "verticals": [
+      "career",
+      "recruitment"
+    ]
   }
 ]

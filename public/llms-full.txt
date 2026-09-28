@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1341
+# Records: 1342
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18690,5 +18690,19 @@
     },
     "description_fr": "Gestionnaire d'installation, de mises à jour et de licences pour les produits Maxon.",
     "description_en": "Installation, update and licence manager for Maxon products."
+  },
+  {
+    "name": "My Best Resume",
+    "slug": "mybestresume-ai",
+    "url_fr": "https://tooltrim.com/fr/tool/mybestresume-ai",
+    "url_en": "https://tooltrim.com/en/tool/mybestresume-ai",
+    "website": "https://mybestresume.ai/",
+    "category": "organization",
+    "pricing": {
+      "free": "Aperçu gratuit avant achat, aucun CV complet gratuit.",
+      "paid": "Premier CV ciblé : 1,99 USD en achat unique ; CV supplémentaire : 4,99 USD. Career Momentum : 8,88 USD/mois, facultatif."
+    },
+    "description_fr": "Analyse le parcours professionnel et aide à créer un CV ciblé pour une offre d'emploi.",
+    "description_en": "Analyzes career experience and helps create a resume tailored to a target role."
   }
 ]

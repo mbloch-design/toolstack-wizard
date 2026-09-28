@@ -4821,3 +4821,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction des titres SEO, FAQ et étiquettes de prix des produits inclus, en bêta ou arrêtés ; limitation des suggestions d'alternatives non comparables et des longues listes de plugins sur les fiches enfants.
 - Les suites à paiement annuel affichent le total annuel dans les cartes, les FAQ, les titres SEO et les offres structurées, sans assimiler une équivalence mensuelle à un paiement mensuel.
 - Build production PASS : 13 134 URL uniques dans le sitemap, audit Explorer PASS, budget de sortie réétalonné sur 14 828 fichiers mesurés. TypeScript et rendu local FR/EN vérifiés. Aucun push demandé à ce stade.
+## 2026-09-28 : fiche My Best Resume
+
+- Nouvelle fiche FR/EN pour My Best Resume, issue des pages officielles produit, tarifs, FAQ et confidentialité. Guide rédactionnel appliqué en mode nouvelle fiche, avec limites et absence de test pratique explicites.
+- Achat unique du premier CV à 1,99 USD distingué de l'abonnement Career Momentum facultatif à 8,88 USD/mois. Pas de conversion implicite ni de prix mensuel inventé pour le CV.
+- Logo, visuel OG et trois aperçus officiels vérifiés. Sortie vers le site officiel en nofollow selon la politique commune, sans lien affilié.
+- Libellé générique des achats uniques corrigé : ne plus qualifier de « licence à vie » un document acheté à l'unité.
+- Sources et périmètre de la revue : `research/mybestresume-2026-09-28.md`. TypeScript, build production, SEO et budgets PASS ; sorties officielles vérifiées en `nofollow noopener noreferrer` dans le HTML généré. Non publié.
