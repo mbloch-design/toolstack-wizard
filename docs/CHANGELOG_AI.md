@@ -4821,6 +4821,12 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction des titres SEO, FAQ et étiquettes de prix des produits inclus, en bêta ou arrêtés ; limitation des suggestions d'alternatives non comparables et des longues listes de plugins sur les fiches enfants.
 - Les suites à paiement annuel affichent le total annuel dans les cartes, les FAQ, les titres SEO et les offres structurées, sans assimiler une équivalence mensuelle à un paiement mensuel.
 - Build production PASS : 13 134 URL uniques dans le sitemap, audit Explorer PASS, budget de sortie réétalonné sur 14 828 fichiers mesurés. TypeScript et rendu local FR/EN vérifiés. Aucun push demandé à ce stade.
+## 2026-09-28 : fiche Seam UI
+
+- Nouvelle fiche FR/EN : génération d'images et vidéos IA en lots avec clés API personnelles, source et limites documentées dans `research/seamui-2026-09-28.md`.
+- Licence à vie Indie 99 USD, Business 199 USD et Scale 249 USD séparée des frais de modèles facturés par les fournisseurs. Aucune mensualité ou économie de temps inventée.
+- Logo, OG et vue produit officiels vérifiés ; une seule vue produit distincte exploitable. Site officiel sans affiliation et en nofollow. Budget de sortie réétalonné à 14 860 fichiers après mesure de 14 852 fichiers. Non publié.
+
 ## 2026-09-28 : fiche My Best Resume
 
 - Nouvelle fiche FR/EN pour My Best Resume, issue des pages officielles produit, tarifs, FAQ et confidentialité. Guide rédactionnel appliqué en mode nouvelle fiche, avec limites et absence de test pratique explicites.
@@ -4828,3 +4834,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Logo, visuel OG et trois aperçus officiels vérifiés. Sortie vers le site officiel en nofollow selon la politique commune, sans lien affilié.
 - Libellé générique des achats uniques corrigé : ne plus qualifier de « licence à vie » un document acheté à l'unité.
 - Sources et périmètre de la revue : `research/mybestresume-2026-09-28.md`. TypeScript, build production, SEO et budgets PASS ; sorties officielles vérifiées en `nofollow noopener noreferrer` dans le HTML généré. Non publié.
+- Contrôle ATS clarifié après nouvelle lecture de la page officielle : inspection du texte et de signaux de structure, sans simulation d'un ATS employeur ni score de passage universel.

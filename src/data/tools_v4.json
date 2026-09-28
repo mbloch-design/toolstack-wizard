@@ -216814,8 +216814,8 @@
     "functional_needs": ["resume-building", "job-application"],
     "shortDescription": "Analyse le parcours professionnel et aide à créer un CV ciblé pour une offre d'emploi.",
     "shortDescriptionEn": "Analyzes career experience and helps create a resume tailored to a target role.",
-    "longDescription": "My Best Resume commence par analyser un CV existant ou des informations saisies dans un questionnaire. L'outil présente les forces et les éléments manquants, puis propose un CV adapté au poste visé à partir des faits fournis. Les affirmations générées restent à relire : ni la compatibilité avec chaque logiciel de recrutement ni l'obtention d'un entretien ne sont garanties.\n\nLe premier CV complet coûte 1,99 USD en achat unique sur le site anglophone. Une version supplémentaire coûte 4,99 USD. L'achat comprend les exports PDF, DOCX et texte, ainsi que sept jours de modification et jusqu'à 20 régénérations. L'abonnement Career Momentum à 8,88 USD par mois est facultatif et distinct de ces achats. Les prix et la disponibilité varient selon le marché.\n\nToolTrim y voit un intérêt si tu veux retravailler un CV pour un poste précis sans souscrire immédiatement. Vérifie les formulations, les chiffres et les compétences avant chaque candidature. L'éditeur indique traiter les fichiers importés pour en extraire le texte et proposer une suppression des données en libre-service ; ces pratiques n'ont pas été auditées par ToolTrim. Le site ne propose pas actuellement de parcours français explicite.",
-    "longDescriptionEn": "My Best Resume first analyzes an existing resume or information entered through a guided questionnaire. It highlights strengths and missing evidence, then proposes a resume tailored to a target role using facts you supplied. Generated claims still need review: compatibility with every applicant tracking system and interview outcomes are not guaranteed.\n\nThe first complete resume costs USD 1.99 as a one-time website purchase. An additional version costs USD 4.99. A purchase includes PDF, editable DOCX and plain-text exports, seven days of edits, and up to 20 regenerations. The USD 8.88 per month Career Momentum membership is optional and separate. Prices and availability vary by market.\n\nToolTrim sees a fit when you need to tailor a resume to one role without subscribing first. Check every claim, number and skill before applying. The vendor says uploaded files are processed for text extraction and offers self-service data deletion; ToolTrim has not audited these practices. A dedicated French-language workflow is not currently listed.",
+    "longDescription": "My Best Resume commence par analyser un CV existant ou des informations saisies dans un questionnaire. L'outil présente les forces et les éléments manquants, puis propose un CV adapté au poste visé à partir des faits fournis. Son contrôle ATS gratuit examine le texte extrait et des points de structure, avec un compte requis. Il ne simule pas l'ATS d'un employeur et ne délivre aucun score universel de passage. Les affirmations générées restent à relire : ni la compatibilité avec chaque logiciel de recrutement ni l'obtention d'un entretien ne sont garanties.\n\nLe premier CV complet coûte 1,99 USD en achat unique sur le site anglophone. Une version supplémentaire coûte 4,99 USD. L'achat comprend les exports PDF, DOCX et texte, ainsi que sept jours de modification et jusqu'à 20 régénérations. L'abonnement Career Momentum à 8,88 USD par mois est facultatif et distinct de ces achats. Les prix et la disponibilité varient selon le marché.\n\nToolTrim y voit un intérêt si tu veux retravailler un CV pour un poste précis sans souscrire immédiatement. Vérifie les formulations, les chiffres et les compétences avant chaque candidature. L'éditeur indique traiter les fichiers importés pour en extraire le texte et proposer une suppression des données en libre-service ; ces pratiques n'ont pas été auditées par ToolTrim. Le site ne propose pas actuellement de parcours français explicite.",
+    "longDescriptionEn": "My Best Resume first analyzes an existing resume or information entered through a guided questionnaire. It highlights strengths and missing evidence, then proposes a resume tailored to a target role using facts you supplied. Its free ATS checker reviews extracted text and structural signals, with an account required. It does not simulate an employer's ATS or produce a universal pass score. Generated claims still need review: compatibility with every applicant tracking system and interview outcomes are not guaranteed.\n\nThe first complete resume costs USD 1.99 as a one-time website purchase. An additional version costs USD 4.99. A purchase includes PDF, editable DOCX and plain-text exports, seven days of edits, and up to 20 regenerations. The USD 8.88 per month Career Momentum membership is optional and separate. Prices and availability vary by market.\n\nToolTrim sees a fit when you need to tailor a resume to one role without subscribing first. Check every claim, number and skill before applying. The vendor says uploaded files are processed for text extraction and offers self-service data deletion; ToolTrim has not audited these practices. A dedicated French-language workflow is not currently listed.",
     "description": "Analyse de parcours, ciblage d'un poste et création d'un CV exportable, avec achat unique facultatif pour le document complet.",
     "pricing": {
       "free": "Aperçu gratuit avant achat, aucun CV complet gratuit.",
@@ -216923,6 +216923,87 @@
       "prixMetaDescriptionEn": "Free preview, then $1.99 for the first resume. Additional purchases and optional Career Momentum membership: verified pricing and terms.",
       "idealForFr": "Personnes qui veulent adapter un CV à un poste précis et vérifier chaque affirmation avant de postuler.",
       "idealForEn": "Job seekers tailoring a resume to one role and reviewing every claim before applying."
+    }
+  },
+  {
+    "id": "seamui",
+    "slug": "seamui",
+    "name": "Seam UI",
+    "category": "creation",
+    "categoryId": "creation",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "bestFor": ["creators", "agencies"],
+    "verticals": ["createur-contenu", "graphiste-da"],
+    "covers": ["ai-image-generation", "ai-video-generation"],
+    "functional_needs": ["ai-image-generation", "ai-video-generation"],
+    "shortDescription": "Espace de travail pour produire des images et vidéos IA en lots avec ses propres clés API.",
+    "shortDescriptionEn": "Workspace for batch AI image and video production using your own API keys.",
+    "description": "Génération d'images et de vidéos IA en lots, projets partagés et recettes de prompts réutilisables.",
+    "longDescription": "Seam UI regroupe plusieurs modèles d'image et de vidéo dans un espace de travail. Tu peux lancer jusqu'à dix variantes d'image en parallèle, conserver les prompts et paramètres comme recettes, puis classer les résultats par projet. La version Business ajoute notamment l'import CSV pour des lots d'images et plusieurs sièges. Les fonctions et modèles disponibles dépendent des intégrations annoncées par l'éditeur ; ToolTrim n'a pas testé les sorties ni mesuré le temps gagné.\n\nLe modèle économique est à deux étages : licence Seam UI à vie payée une fois, puis coût des modèles facturé séparément par leurs fournisseurs sur tes propres clés API. L'essai dure sept jours sans carte selon le site. Les prix affichés sont de 99 USD pour Indie, 199 USD pour Business et 249 USD pour Scale, sans conversion implicite en euros ou en mensualité. Stockage et nombre de sièges varient selon le plan.\n\nAvant d'acheter, vérifie que tes fournisseurs et modèles habituels sont pris en charge, chiffre une campagne réelle avec les frais API, puis teste la récupération des images, vidéos et recettes. L'éditeur annonce des clés chiffrées et des rôles d'équipe, mais ces pratiques n'ont pas été auditées par ToolTrim.",
+    "longDescriptionEn": "Seam UI brings several image and video models into one workspace. You can launch up to ten image variants in parallel, save prompts and settings as reusable recipes, and organize outputs by project. Business adds CSV image batching and multiple seats. Available models and capabilities rely on vendor-listed integrations; ToolTrim has not tested outputs or measured time savings.\n\nPricing has two layers: a one-time lifetime Seam UI licence, then model usage billed separately by providers through your own API keys. The vendor offers a seven-day trial without a card. Listed prices are USD 99 for Indie, USD 199 for Business and USD 249 for Scale, without an implied EUR or monthly conversion. Storage and seats vary by plan.\n\nBefore purchasing, check that your usual providers and models are supported, cost a real campaign including API charges, and test how to retrieve images, videos and saved recipes. The vendor says keys are encrypted and team roles are available; ToolTrim has not audited these practices.",
+    "pricing": {"free": "Essai de 7 jours sans carte, pas de forfait gratuit permanent annoncé.", "paid": "Licence à vie : Indie 99 USD, Business 199 USD, Scale 249 USD en achat unique. Générations facturées séparément par les fournisseurs sur tes clés API."},
+    "pricingEn": {"free": "Seven-day trial without a card; no permanent free plan advertised.", "paid": "Lifetime licence: Indie USD 99, Business USD 199, Scale USD 249 as one-time purchases. Model usage is billed separately by providers through your API keys."},
+    "defaultMonthlyPrice": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": null, "compare_plan_name": "Indie", "compare_plan_kind": "one_time", "price_reliability": "high", "usage_sensitive": true, "verified_on": "2026-09-28", "source_domain": "seamui.com", "official_source_url": "https://www.seamui.com/#pricing", "verification_status": "official_explicit",
+      "cautions": ["Licence Seam UI à vie, mais consommation des modèles facturée séparément par les fournisseurs.", "Vérifier les modèles disponibles, les limites de stockage et les conditions de l'essai avant achat."],
+      "plans": [
+        {"planKey":"indie","displayName":"Indie","summary":"Licence à vie, un siège et 500 Go de stockage ; frais API en sus.","detailsSourceUrl":"https://www.seamui.com/#pricing","pricingUnit":"licence à vie","isFree":false,"isComparePlan":true,"nativeAmount":99,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"business","displayName":"Business","summary":"Licence à vie, cinq sièges, 1 To de stockage et lots CSV ; frais API en sus.","detailsSourceUrl":"https://www.seamui.com/#pricing","pricingUnit":"licence à vie","isFree":false,"isComparePlan":false,"nativeAmount":199,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"scale","displayName":"Scale","summary":"Licence à vie, vingt sièges et 2 To de stockage ; frais API en sus.","detailsSourceUrl":"https://www.seamui.com/#pricing","pricingUnit":"licence à vie","isFree":false,"isComparePlan":false,"nativeAmount":249,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"}
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": null, "compare_plan_name": "Indie", "compare_plan_kind": "one_time", "price_reliability": "high", "usage_sensitive": true, "verified_on": "2026-09-28", "source_domain": "seamui.com", "official_source_url": "https://www.seamui.com/#pricing", "verification_status": "official_explicit",
+      "cautions": ["Lifetime Seam UI licence; model usage is billed separately by providers.", "Check available models, storage limits and trial terms before purchase."],
+      "plans": [
+        {"planKey":"indie","displayName":"Indie","summary":"Lifetime licence, one seat and 500 GB of storage; API charges extra.","detailsSourceUrl":"https://www.seamui.com/#pricing","pricingUnit":"lifetime licence","isFree":false,"isComparePlan":true,"nativeAmount":99,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"business","displayName":"Business","summary":"Lifetime licence, five seats, 1 TB of storage and CSV batches; API charges extra.","detailsSourceUrl":"https://www.seamui.com/#pricing","pricingUnit":"lifetime licence","isFree":false,"isComparePlan":false,"nativeAmount":199,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"},
+        {"planKey":"scale","displayName":"Scale","summary":"Lifetime licence, twenty seats and 2 TB of storage; API charges extra.","detailsSourceUrl":"https://www.seamui.com/#pricing","pricingUnit":"lifetime licence","isFree":false,"isComparePlan":false,"nativeAmount":249,"nativeCurrency":"USD","billingPeriod":null,"billingCommitment":null,"taxInclusion":"unknown","observedMarket":"US","observedLocale":"en-US","observedOn":"2026-09-28","lastConfirmedOn":"2026-09-28"}
+      ]
+    },
+    "websiteUrl": "https://www.seamui.com/", "website": "https://www.seamui.com/", "link": "https://www.seamui.com/", "affiliateLink": "",
+    "logo": "https://www.seamui.com/seamuilogo.webp", "ogImageUrl": "https://www.seamui.com/og-image.webp",
+    "galleryImages": ["https://www.seamui.com/images/features/batches.webp"],
+    "pros": ["Lots de dix variantes d'image et prompts réutilisables annoncés.", "Licence sans renouvellement pour l'espace de travail.", "Plusieurs fournisseurs accessibles depuis un projet."],
+    "prosEn": ["Vendor-listed batches of ten image variants and reusable prompts.", "No-renewal workspace licence.", "Multiple providers available within a project."],
+    "cons": ["Clés API et facturation des modèles à gérer séparément.", "Coût total variable selon les modèles et le volume.", "Qualité des sorties et portabilité non testées par ToolTrim."],
+    "consEn": ["API keys and model billing need separate management.", "Total cost varies by model and volume.", "Output quality and portability not tested by ToolTrim."],
+    "useCases": ["Produire des variantes d'image pour une campagne.", "Conserver des recettes de prompts dans une équipe.", "Comparer plusieurs modèles dans un même projet."],
+    "useCasesEn": ["Produce image variants for a campaign.", "Keep reusable prompt recipes across a team.", "Compare models within one project."],
+    "verdict": {"keepIf":["Tu produis régulièrement des lots d'images avec plusieurs fournisseurs.", "Tu veux payer l'espace de travail une fois et suivre séparément les frais API."],"avoidIf":["Tu cherches un prix tout compris sans clé API.", "Tu n'as besoin que de quelques générations ponctuelles."],"threshold":"Teste une campagne réelle durant l'essai et additionne licence, consommation API et stockage avant de choisir un plan."},
+    "verdictEn": {"keepIf":["You regularly make image batches with multiple providers.", "You prefer a one-time workspace licence with separate API spending."],"avoidIf":["You need an all-inclusive price with no API key.", "You only generate a few assets occasionally."],"threshold":"Run one real campaign during the trial, then add the licence, API spend and storage needs before choosing a plan."},
+    "alternatives": ["krea-ai", "runway"],
+    "soloRelevance": "high", "teamRelevance": "medium", "timeGainedHoursPerMonth": null,
+    "toolTrimRating": {
+      "valeurAjoutee": 3, "simplicite": 3, "utilisation": 3, "puissance": 4, "reversibilite": 3, "notedOn": "2026-09-28", "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Licence Indie à 99 USD en achat unique, mais usage des modèles à payer séparément. Aucun gain de temps indépendant mesuré. Source : seamui.com, 28 septembre 2026.",
+        "simplicite": "Le flux réunit projets, lots et recettes, mais demande de configurer ses clés API. Analyse documentaire sans test pratique. Source : seamui.com, 28 septembre 2026.",
+        "utilisation": "Pertinence pour des lots récurrents d'images ou de vidéos ; fréquence d'usage non mesurée par ToolTrim. Source : seamui.com, 28 septembre 2026.",
+        "puissance": "Jusqu'à dix images en parallèle, plusieurs modèles et fonctions vidéo annoncés ; qualité et stabilité non testées. Source : seamui.com, 28 septembre 2026.",
+        "reversibilite": "Projets et recettes conservés dans l'espace Seam UI ; vérifier concrètement les exports et la récupération avant achat. Source : seamui.com, 28 septembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "USD 99 one-time Indie licence, with separate provider charges. No independent time savings measured. Source: seamui.com, September 28, 2026.",
+        "simplicite": "Projects, batches and recipes share one workflow, but API keys need setup. Document review, no hands-on test. Source: seamui.com, September 28, 2026.",
+        "utilisation": "Relevant to recurring image or video batches; ToolTrim has not measured actual usage frequency. Source: seamui.com, September 28, 2026.",
+        "puissance": "Up to ten parallel images, multiple models and video functions are vendor-listed; output quality and reliability are untested. Source: seamui.com, September 28, 2026.",
+        "reversibilite": "Projects and recipes live in Seam UI; verify exports and retrieval before purchasing. Source: seamui.com, September 28, 2026."
+      }
+    },
+    "seo": {
+      "presentationTitleFr": "Seam UI : images et vidéos IA en lots | ToolTrim",
+      "presentationTitleEn": "Seam UI review: batch AI images and video | ToolTrim",
+      "prixTitleFr": "Seam UI prix : licence à vie dès 99 $ + API | ToolTrim",
+      "prixTitleEn": "Seam UI pricing: lifetime from $99 plus API | ToolTrim",
+      "presentationMetaDescriptionFr": "Seam UI regroupe les modèles d'image et vidéo IA, les lots et les recettes de prompts. Licence à vie dès 99 $, usage API en sus. Notre avis.",
+      "presentationMetaDescriptionEn": "Seam UI combines AI image and video models, batch runs and prompt recipes. Lifetime licence from $99, plus API usage. Review its limits.",
+      "prixMetaDescriptionFr": "Indie 99 $, Business 199 $, Scale 249 $ en achat unique. L'utilisation des modèles reste facturée séparément via tes propres clés API.",
+      "prixMetaDescriptionEn": "Indie $99, Business $199, Scale $249 one-time. Model usage is billed separately through your own API keys.",
+      "idealForFr": "Créateurs et petites équipes produisant régulièrement des variantes visuelles avec plusieurs modèles IA.",
+      "idealForEn": "Creators and small teams producing regular visual batches across multiple AI models."
     }
   }
 ]

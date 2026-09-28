@@ -42697,5 +42697,28 @@
       "career",
       "recruitment"
     ]
+  },
+  {
+    "id": "seamui",
+    "slug": "seamui",
+    "name": "Seam UI",
+    "categoryId": "creation",
+    "shortDescription": "Espace de travail pour produire des images et vidéos IA en lots avec ses propres clés API.",
+    "shortDescriptionEn": "Workspace for batch AI image and video production using your own API keys.",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte, pas de forfait gratuit permanent annoncé.",
+      "paid": "Licence à vie : Indie 99 USD, Business 199 USD, Scale 249 USD en achat unique. Générations facturées séparément par les fournisseurs sur tes clés API."
+    },
+    "websiteUrl": "https://www.seamui.com/",
+    "ogImageUrl": "https://www.seamui.com/og-image.webp",
+    "logo": "https://www.seamui.com/seamuilogo.webp",
+    "functional_needs": [
+      "ai-image-generation",
+      "ai-video-generation"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "graphiste-da"
+    ]
   }
 ]

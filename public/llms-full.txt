@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1342
+# Records: 1343
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18704,5 +18704,19 @@
     },
     "description_fr": "Analyse le parcours professionnel et aide à créer un CV ciblé pour une offre d'emploi.",
     "description_en": "Analyzes career experience and helps create a resume tailored to a target role."
+  },
+  {
+    "name": "Seam UI",
+    "slug": "seamui",
+    "url_fr": "https://tooltrim.com/fr/tool/seamui",
+    "url_en": "https://tooltrim.com/en/tool/seamui",
+    "website": "https://www.seamui.com/",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de 7 jours sans carte, pas de forfait gratuit permanent annoncé.",
+      "paid": "Licence à vie : Indie 99 USD, Business 199 USD, Scale 249 USD en achat unique. Générations facturées séparément par les fournisseurs sur tes clés API."
+    },
+    "description_fr": "Espace de travail pour produire des images et vidéos IA en lots avec ses propres clés API.",
+    "description_en": "Workspace for batch AI image and video production using your own API keys."
   }
 ]
