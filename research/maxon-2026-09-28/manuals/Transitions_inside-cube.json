@@ -1,0 +1,30 @@
+{
+  "name": "Inside Cube",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_inside-cube.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:08.236Z",
+  "sha256": "f31f1b5503716a3f586c91481cd7107700bbdbcf983b17ad87f208282668c1bd",
+  "paragraphs": [
+    "A 3D transition that places your layers onto the sides of an inverse cube which rotates right, left, upward, or downward to reveal the second footage layer. Inside Cube is just like Universe Fold, except it applies to the interior surface of the form.",
+    "Use the four Inside Cube presets — one for each direction — for single-click setup of your transitions. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create an Inside Cube look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_Dolly.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_MotionBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_MotionBlurShutter.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_LightType.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_Lights.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_LightExponent.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_Camera.png"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Fractal Background",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Generators-fractal-background.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:24.547Z",
+  "sha256": "b3931392357af9b6998c6c5867bdd8fa03166d981add1cf488a3d9b83713444b",
+  "paragraphs": [
+    "Quickly create complex and colorful looping fractal-based backgrounds for your motion graphics work. The effect includes predesigned noise patterns and color maps as well as lower-third and blend mode features for easy customization.",
+    "Get started instantly in Spectralicious with over two dozen presets that simulate sky color tones, warm/cool moods, and more. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Fractal Background look and then save it under its own name by pressing the Save Preset... button.",
+    "Sometimes, you may want to composite text over the background. Fractal Background includes seven Text Strips presets in the Universe Dashboard. Alternatively, the Text Area Group can help quickly put readable text into your composition. The following image shows default settings for the Text Strip Lava preset."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Scale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Contrast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Aspect.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Complexity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_BlurV.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_ColorMap.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_TextLava.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_TextPoints.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_TextColor.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_TextMask.png"
+  ]
+}

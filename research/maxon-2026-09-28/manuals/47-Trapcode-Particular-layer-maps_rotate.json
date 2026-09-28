@@ -1,0 +1,19 @@
+{
+  "name": "47 - Layer Maps &gt; Rotate Subgroup",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/47-Trapcode-Particular-layer-maps_rotate.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:41.590Z",
+  "sha256": "7755fdd621bf84f85178f5b946638f2609548f8c7647e2a40362fcb9bf44b9f7",
+  "paragraphs": [
+    "Trapcode Particular",
+    "The Rotate group lets you specify a source layer whose luminance values define the extent to which particles will rotate. Note that this group is only active when using a Star or Sprite particle type (set under Particle &gt; Particle Type ). Areas light in color (or luminance) will be affected by the Rotation, while darker parts will be less affected. Black parts will experience no effect. White parts, by default, rotate 180 degrees.",
+    "A layer with a gradient ramp (left) and the particle field with the Particle Type set to Sprite and an arrow sprite selected (center). The gradient ramp is applied (right) as the Rotate map with Strength set to 180.",
+    "Rotate &gt; Layer for X, Layer for Y, Layer for Z: These controls set the layer map for identified planes. Layer for Z sets the source to the z plane, and so on. Layer for X and Layer for Y are only active when the Face Camera checkbox in the Particle &gt; Sprite Controls group is unchecked.",
+    "Rotate &gt; Strength: This control sets how much the particle will rotate when presented with a white value in your luminance map. Strength defaults to 180, which means that when you have a white value, that particle will be rotated 180 degrees."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup16.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup17.png"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Quantum",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-quantum.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:19.175Z",
+  "sha256": "6f5da539312c52cb31540d5414a952d6db9eed2141892f90c1f03f7fc781b348",
+  "paragraphs": [
+    "Quantum creates the illusion of an animated light trail in front of or behind a layer. Customize the effect for speed, complexity, and looping shimmer animations before or behind your on-screen elements to really make your titles or graphics pop with vibrance!",
+    "Discover a seeming multiverse of multifarious presets already bundled within Quantum. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Quantum look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_hero.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_Position.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_ThresholdBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_StreakLength.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_Glows.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_ColorMap.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_Mask.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Quantum_Mask2.png"
+  ]
+}

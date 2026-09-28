@@ -1,0 +1,21 @@
+{
+  "name": "Texturize Motion",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_texturize-motion.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:37.443Z",
+  "sha256": "a10643e5a8cdc2f99cd2c5d5b6a45a1c5c9608b374da54b5a1f6b593c096ca8b",
+  "paragraphs": [
+    "This effect animates various tiled textures over the output, adding a lively, grungy quality to footage.",
+    "Apply any of more than 50 texture patterns to your compositions with Texturize Motion's convenient presets. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "Once you select a preset, its effect type will automatically populate the Texture Select &#160;drop-down menu field. (Alternatively, you can simply pick a preset from this pull-down and sidestep the Presets pop-up. However, as you can see in the above screencap, each effect type has four iterations: Color Burn, Darken, Displaced, and Overylay. These sub-presets are not directly available in the ECP (you'd need to recreate them via additional parameter settings), so the Preset menu may be your quickest path to a given look.",
+    "As with all other Universe tools, you can modify or create a Texturize Motion look and then save it under its own name by pressing the Save Preset... button.",
+    "Texturize Motion is even better when used in conjunction with other Universe tools. Watch the following two-minute video to see what happens when we combine Texturize Motion with Universe Compound Blur and Gradient Ramp ."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Texture-Motion_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_TextureMotion_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_TextureMotion_Contrast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_TextureMotion_Invert.png"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Glo Fi II",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi-ii.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:15.969Z",
+  "sha256": "1330743a388198e6392a0e74451aac38be605b386c34de8a82f95a775079f33b",
+  "paragraphs": [
+    "Glo Fi II is a self-animating, fractal-based glow effect for text. Add a unique, organic glow with presets and advanced controls.",
+    "With three dozen presets to choose from, you're ready to apply stunning Glo Fi II&#160;effects in seconds. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Glo Fi II&#160;look and then save it under its own name by pressing the Save Preset... button.",
+    "You might notice that there are actually twelve color schemes in the presets, each of which replicates in the Gaussian, horizontal, and vertical groups. If you don't need to change your glow's directional orientation, the Color Map pull-down in the ECP&#160;provides quicker access to the presets' color shortcuts. To illustrate how these different orientations appear when animated, examine the following three clips based on the Chlorophyll color scheme.",
+    "Your browser does not support the video tag. Gaussian",
+    "Your browser does not support the video tag. Horizontal",
+    "Your browser does not support the video tag. Vertical",
+    "In the following examples, we show the impact of these Gaussian and streak controls with the Ice color scheme. In the first image (left), we have Gaussian Blur Size , Gaussian Blur Mix , and Streak Blur Size all set to 20. (We keep Streak Blur Mix at 100 throughout for easier effect visibility.) At center, we max out Gaussian Blur Size at 200 and increase Gaussian Blur Mix to 70. It may be hard to spot the difference without enlarging the image to full size. At right, we increase Streak Blur Mix to 70.",
+    "Interested to see these controls put into action and learn more about how Glo Fi II&#160;effects layer and operate? Be sure to watch our quick Cineversity overview RIGHT&#160;HERE ."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glo-Fi2_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/unmult_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_GloFi2_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_GloFi2_Blur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_GloFi2_Scale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_GloFi2_VidCap.png"
+  ]
+}

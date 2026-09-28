@@ -1,0 +1,35 @@
+{
+  "name": "MisFire",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_misfire.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:05.028Z",
+  "sha256": "3bc7def44fb833f04d5a2c098d67c383f982cc70513d9862c481dee7c380b53a",
+  "paragraphs": [
+    "The classic Magic Bullet MisFire plugin for creating film damage effects now runs on the GPU within Universe! MisFire adds scratches, dust, flicker, noise, and more, giving your footage a stylized, aged look. Check out Universe's Retrograde tool for even more authentic aged film effects.",
+    "Apply pre-styled MisFire film damage to your compositions with only a few clicks. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a MisFire look and then save it under its own name by pressing the Save Preset... button.",
+    "Example: The All On preset defaults to setting Damage Amount and Color Amount to their 100 maximums.",
+    "MisFire includes 16 effects that can be applied either individually or as a part of a selected preset. Click the checkbox next to any effect to apply it, then use the settings below it to modify each one.",
+    "https://twitter.com/RedGiantNews/status/1691477544191590402",
+    "A wealth of information, advice, and how-to content exists for Maxon plugins beyond our user guides. Think of sources like @RedGiantNews on X/Twitter as must-see bonus content. The linked Tip Tuesday post above offers a great example. In it, Maxon's Michael Szalapski takes a two-minute tour through modifying Misfire defaults to achieve a desired look. He touches on ideas like keyframing scratches, comparing deep vs. micro scratches, and not doubling up on effects already covered by Magic Bullet Looks. Resources like this offer advanced tactics to execute alongside your winning workflow strategy. Don't miss them!"
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Misfire_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_AllOn.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_Softness.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_Fading.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_Funk.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_Splotches.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_Dust.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_Vignette.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_MicroScratches.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_ColorGrain.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_LumNoise.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_DeepScratches.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_BasicScratches.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_PostContrast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_tweet.png"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Progresso",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Motion-Graphics-progresso.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:34.201Z",
+  "sha256": "29c67d9c6c0aaf90c94903d0e432a63db73882aca1fe24e0db3bdb2db952d5c2",
+  "paragraphs": [
+    "Creates an adjustable loading screen motion graphic displaying progress from zero to completion.",
+    "Progresso's many presets deliver one-click shortcuts to get you to an attractive, easily customizable progress indicator. Find our presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Progresso look and then save it under its own name by pressing the Save Preset... button.",
+    "Unlike most Universe plugins, Progresso offers a Text Style... button below the Save Preset... button. Click this to adjust your text's font and other text attributes.",
+    "If you'd like a visual overview of the plugin before diving into this guide, we recommend giving our Cineversity tutorial a watch. Your browser does not support the video tag."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Universe-Progresso_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_TextStyle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/charttypes_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_ColorMap.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_FillStyle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_GradientAnchor.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_BGStroke.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_Justification.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_Decimal.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_Time.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_Marker.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_LinearBar.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_Rounding.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_StrokeColor.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_Strokes.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_ArcSegments.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_SegmentRadius.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_PieAngle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Progresso_SeqSegments.png"
+  ]
+}

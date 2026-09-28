@@ -1,0 +1,14 @@
+{
+  "name": "Type On",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Text-type-on.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:46.640Z",
+  "sha256": "2f23a80093b3a472fd2fee9010cfe1e078ba904fec670b1c21a191bc4a97a14c",
+  "paragraphs": [
+    "Quickly create computer terminal-style type reveals. Includes tons of options for customizations and randomizations."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Universe-Type-On-Hero_universe.jpg"
+  ]
+}

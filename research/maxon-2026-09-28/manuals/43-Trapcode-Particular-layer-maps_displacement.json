@@ -1,0 +1,23 @@
+{
+  "name": "43 - Layer Maps &gt; Displacement Subgroup",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/43-Trapcode-Particular-layer-maps_displacement.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:37.316Z",
+  "sha256": "914c5c7373152002b79afc2e169123cee26f3e1ce405977d107cde131add1826",
+  "paragraphs": [
+    "Particular",
+    "The Displacement subgroup lets you displace system particles using a source layer's luminance values.",
+    "A neutral gray (128, 128, 128 in 8-bit RGB) means no displacement. Colors darker than neutral gray will generate negative displacement and be pushed farther away from the viewer on the z axis. Lighter colors result in positive displacement and will be pushed closer to the viewer.",
+    "Your browser does not support the video tag. A fractal noise layer (left), the particle field (center), and the noise layer applied as the Displacement map in Layer for Z, with Functionality at Individual XYZ, Map Over at XY, and Strength at 100 (right).",
+    "Displacement &gt; Functionality pop-up: This control determines whether you will apply source layer values across all three axes or split them apart in the event you wish to apply your map to individual axes.",
+    "Displacement &gt; Layer for X, Y, Z pop-ups: This control sets the Layer Map for identified planes. These controls are enabled by the Functionality menu.",
+    "Layer for XYZ: This is a single pop-up that sets the Displacement Layer Map to the x, y, and z planes. This pop-up is enabled by the RGB to XYZ option.",
+    "Layer for X, Layer for Y, Layer for Z: : These three pop-ups set the Displacement Layer Map to the x, y, and z planes. This control is enabled by the Individual XYZ option.",
+    "Displacement &gt; Strength: This control sets the displacement strength. At a value of 0, there is no effect. As you move into positive values, the displacement becomes more extreme. In negative values, the displacement will recede into the original particle field and eventually move in the opposite direction."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup07.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup09.png"
+  ]
+}

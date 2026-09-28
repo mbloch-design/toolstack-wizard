@@ -1,0 +1,27 @@
+{
+  "name": "Knoll Light Transition",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_knoll-light-transition.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:09.319Z",
+  "sha256": "2b2a8cab4f1b27ac37890599869b27cf4d55d272ea9e49aaa41d2b0564965613",
+  "paragraphs": [
+    "A transition that uses animated Knoll Light Factory flares, with 31 unique presets to move you quickly from shot to shot. Includes control over brightness, angle, and edge feathering as well as a choice of dissolve or linear wipe transitions.",
+    "Use the dozens of lens- and direction-based presets in Knoll Light Transition to do most of your A-to-B heavy lifting. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Knoll Light Transition look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_KnollTrans_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_KnollTrans_LensPresets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_KnollTrans_Wireframe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_KnollTrans_PathWidth.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_KnollTrans_Points.png"
+  ]
+}

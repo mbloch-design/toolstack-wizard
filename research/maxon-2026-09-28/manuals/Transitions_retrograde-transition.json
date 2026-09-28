@@ -1,0 +1,32 @@
+{
+  "name": "Retrograde Transition",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_retrograde-transition.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:11.462Z",
+  "sha256": "d2016b929175aa0e41127ff9c9a49302958d86a583133673cb4ce8d1e8ad9872",
+  "paragraphs": [
+    "A transition mimicking the look of a film reel scrolling into the next shot, with customizations for altering the frame size, color treatment, and other stylizations.",
+    "You know that one particular look you want for transitioning between two strips of the same retro film? You don't have to create it from scratch. Pick one of our presets instead! Simply keyframe the Mix duration (see below)&#160;and tune to taste. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Retrograde Transition look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_EnableColor.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_FilmFading.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_Exposure.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_Soundtrack.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_Vignette.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_LightLeak.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_FilmGrain.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_MotionBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_Opacity.png"
+  ]
+}

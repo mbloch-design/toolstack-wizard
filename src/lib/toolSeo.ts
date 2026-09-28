@@ -28,7 +28,7 @@ export function toolPriceFacts(tool: SeoTool) {
   // plugin, one-off packs) or Capture One (subscription, perpetual option)
   // mention a licence without being sold that way first.
   const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time"
-    || (!hasPrice && !free && /licence|à vie|perp[ée]tuel|one-?time|perpetual|lifetime/i.test(String(tool.pricing?.paid || "")));
+    || (!tool.pricing_v5?.compare_plan_kind && !hasPrice && !free && /licence à vie|licence perp[ée]tuelle|one-?time|perpetual license|lifetime license/i.test(String(tool.pricing?.paid || "")));
   return { price, hasPrice, oneTime, free };
 }
 
@@ -95,6 +95,14 @@ export function toolSeoTitle(tool: SeoTool, page: ToolSeoPage, lang: string, yea
   const name = tool.name || tool.slug || tool.id;
   const fr = lang === "fr";
   const { price, hasPrice, oneTime, free } = toolPriceFacts(tool);
+  const access = tool.pricing_v5?.compare_plan_kind;
+  const suite = tool.pricing_v5?.compare_plan_name || "la suite";
+  if (page === "prix" && access === "included") return fitBrandedTitle(fr ? `${name} prix ${year} : inclus dans ${suite}` : `${name} pricing ${year}: included in ${suite}`);
+  if (page === "prix" && access === "discontinued") return fitBrandedTitle(fr ? `${name} prix ${year} : produit arrêté` : `${name} pricing ${year}: discontinued`);
+  if (page === "prix" && access === "beta") return fitBrandedTitle(fr ? `${name} prix ${year} : bêta` : `${name} pricing ${year}: beta`);
+  if (page === "presentation" && access === "included") return fitBrandedTitle(fr ? `${name} : inclus dans ${suite}, avis ${year}` : `${name}: included in ${suite}, review ${year}`);
+  if (page === "presentation" && access === "discontinued") return fitBrandedTitle(fr ? `${name} : produit arrêté, alternatives ${year}` : `${name}: discontinued, alternatives ${year}`);
+  if (page === "presentation" && access === "beta") return fitBrandedTitle(fr ? `${name} : bêta, disponibilité et avis ${year}` : `${name}: beta, availability and review ${year}`);
 
   if (page === "prix") {
     // Pricing queries ask a question ("nordpass cost", "is dependabot
@@ -131,6 +139,8 @@ function presentationDescription(tool: SeoTool, lang: string): string {
   const fr = lang === "fr";
   const long = fr ? (tool.longDescription || "") : (tool.longDescriptionEn || tool.longDescription || "");
   const { price, hasPrice, oneTime, free } = toolPriceFacts(tool);
+  const access = tool.pricing_v5?.compare_plan_kind;
+  const suite = tool.pricing_v5?.compare_plan_name || (fr ? "la suite" : "the suite");
   let base = localizedShort(tool, lang).replace(/\s+/g, " ").trim();
   // A very thin short description gives way to the first sentence of the long one.
   if (base.length < 45 && long) {
@@ -139,9 +149,11 @@ function presentationDescription(tool: SeoTool, lang: string): string {
   }
   const mentionsFree = /gratuit|free/i.test(base);
   const priceClause = fr
-    ? (oneTime ? "Licence à vie, sans abonnement." : hasPrice ? `Prix dès ${priceLabel(tool, price, lang)}/mois.` : free && !mentionsFree ? "Version gratuite." : "")
-    : (oneTime ? "Lifetime license with no subscription." : hasPrice ? `From ${priceLabel(tool, price, lang, false)}/mo.` : free && !mentionsFree ? "Free version." : "");
-  const hook = fr ? "Avis ToolTrim et alternatives moins chères." : "ToolTrim review and cheaper alternatives.";
+    ? (access === "included" ? `Inclus dans ${suite}, sans tarif autonome.` : access === "discontinued" ? "Produit arrêté." : access === "beta" ? "Disponible en bêta." : oneTime ? "Licence à vie, sans abonnement." : hasPrice ? `Prix dès ${priceLabel(tool, price, lang)}/mois.` : free && !mentionsFree ? "Version gratuite." : "")
+    : (access === "included" ? `Included in ${suite}, no standalone price.` : access === "discontinued" ? "Discontinued product." : access === "beta" ? "Available in beta." : oneTime ? "Lifetime license with no subscription." : hasPrice ? `From ${priceLabel(tool, price, lang, false)}/mo.` : free && !mentionsFree ? "Free version." : "");
+  const hook = access === "included" || access === "discontinued" || access === "beta"
+    ? (fr ? "Avis ToolTrim et options à comparer." : "ToolTrim review and options to compare.")
+    : (fr ? "Avis ToolTrim et alternatives moins chères." : "ToolTrim review and cheaper alternatives.");
   const tail = [priceClause, hook].filter(Boolean).join(" ");
   const excerpt = clauseExcerpt(base, Math.max(40, 160 - tail.length - 2));
   return `${excerpt ? `${closeSentence(excerpt)} ` : ""}${tail}`.replace(/\s+/g, " ").trim();
@@ -161,6 +173,10 @@ export function toolSeoDescription(tool: SeoTool, page: ToolSeoPage, lang: strin
   const plan = planNote(localizePlanName(tool.pricing_v5?.compare_plan_name || null, fr ? "fr" : "en"), fr);
 
   if (page === "prix") {
+    const access = tool.pricing_v5?.compare_plan_kind;
+    if (access === "included") return fr ? `${name} est inclus dans ${tool.pricing_v5?.compare_plan_name || "une suite"}. Aucun tarif individuel confirmé. Vérifiez la licence et la compatibilité.` : `${name} is included in ${tool.pricing_v5?.compare_plan_name || "a suite"}. No confirmed standalone price. Check licensing and compatibility.`;
+    if (access === "discontinued") return fr ? `${name} est arrêté. Aucune nouvelle licence vendue. Découvrez les alternatives disponibles.` : `${name} is discontinued. No new licenses are sold. Explore available alternatives.`;
+    if (access === "beta") return fr ? `${name} est en bêta. Vérifiez la disponibilité et les conditions d'accès auprès de l'éditeur.` : `${name} is in beta. Check availability and access terms with the vendor.`;
     if (oneTime) {
       return fr
         ? `Combien coûte ${name} en ${year} ? Licence à vie, sans abonnement. Tarif, conditions et alternatives.`

@@ -29,8 +29,12 @@ interface Props {
 export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false, canonicalUrl: pageCanonicalUrl }: Props) {
   useEffect(() => {
     const nativePrice = nativePriceFromTool(tool);
-    const offerPrice = nativePrice?.amount ?? displayPrice;
-    const offerCurrency = nativePrice?.currency ?? "EUR";
+    const maxonAnnual = tool.pricing_v5?.source_domain === "maxon.net"
+      ? tool.pricing_v5.plans?.find((plan) => plan.isComparePlan && plan.billingPeriod === "annual" && plan.nativeAmount != null)
+      : null;
+    const offerPrice = maxonAnnual?.nativeAmount ?? nativePrice?.amount ?? displayPrice;
+    const offerCurrency = maxonAnnual?.nativeCurrency ?? nativePrice?.currency ?? "EUR";
+    const noVerifiedOffer = ["included", "beta", "discontinued", "unknown"].includes(tool.pricing_v5?.compare_plan_kind || "");
     const canonicalUrl = pageCanonicalUrl || `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
     const pageIntent = canonicalUrl.endsWith("/prix") || canonicalUrl.endsWith("/pricing")
       ? (lang === "fr" ? "Prix et tarifs" : "Pricing and plans")
@@ -78,7 +82,14 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       url: safeExternalUrl(tool.websiteUrl) || canonicalUrl,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
-      offers: hasGenuineFreeTier(tool.pricing?.free) && offerPrice > 0
+      ...(noVerifiedOffer ? {} : { offers: maxonAnnual
+        ? {
+            "@type": "Offer",
+            price: String(offerPrice),
+            priceCurrency: offerCurrency,
+            priceSpecification: { "@type": "UnitPriceSpecification", price: String(offerPrice), priceCurrency: offerCurrency, billingDuration: "P1Y" },
+          }
+        : hasGenuineFreeTier(tool.pricing?.free) && offerPrice > 0
         ? {
             "@type": "AggregateOffer",
             lowPrice: "0",
@@ -90,7 +101,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
             "@type": "Offer",
             price: String(offerPrice || 0),
             priceCurrency: offerCurrency,
-          },
+          } }),
       review: {
         "@type": "Review",
         author: {

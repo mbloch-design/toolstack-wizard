@@ -1,0 +1,18 @@
+{
+  "name": "RGB Separation",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Distortions_rgb-separation.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:23.456Z",
+  "sha256": "a2965e5c2eb099b045fd569632764eca4f86987903944969898331d262b0a6f4",
+  "paragraphs": [
+    "Separates and offsets the RGB channels in an image. Controls adjust the radius and angle of the channel separation.",
+    "Try any of our 16 presets for instant previewing of how RGB&#160;Separation can enliven your footage. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create an RGB&#160;Separation look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_RGB_Seperation_AR_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_RGBSep_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_RGBSep_Distortion.png"
+  ]
+}

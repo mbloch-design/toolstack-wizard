@@ -1,0 +1,17 @@
+{
+  "name": "45 - Layer Maps &gt; Turbulence Strength Subgroup",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/45-Trapcode-Particular-layer-maps_turbulence-strength.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:39.450Z",
+  "sha256": "5a5d1b0d70c1f4759826000a212991fe3c5528b635c26d54f8f41d0d519997fd",
+  "paragraphs": [
+    "Particular",
+    "The Turbulence Strength group lets you specify a layer whose luminance values define the extent to which any turbulence information affects the field. Areas light in color (or luminance) will be affected by the Turbulence Strength settings, while darker areas will be less affected. Black parts experience no effect.",
+    "You set the amount of turbulence influence in the Turbulence Field group. If the Turbulence Field &gt; TF Displace control is set to 0, no deformation will occur. Once TF Displace has a non-zero value, the layer map will start pushing particles around, and you can use the other Turbulence Field controls to affect the map.",
+    "Your browser does not support the video tag. A layer with a gradient ramp (left) and the particle field (center). The gradient ramp is applied (right)&#160;as the Turbulence Strength map. In Displace &gt; Turbulence Field, the TF Affect Size, TF Affect Opacity, and TF Displace XYZ are all set to 100."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup12.png"
+  ]
+}

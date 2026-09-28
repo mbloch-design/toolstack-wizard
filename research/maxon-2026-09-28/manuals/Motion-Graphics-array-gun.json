@@ -1,0 +1,35 @@
+{
+  "name": "Array Gun",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Motion-Graphics-array-gun.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:29.907Z",
+  "sha256": "d861f4f7d7386a5747b25be3cabfd7d832f2523c2e3557f0501447bd814fcb1a",
+  "paragraphs": [
+    "Easily add and modify an array of shapes to create fun background patterns, with options to customize columns, rows, and the interlocking areas between them.",
+    "Array Gun can help create such a dizzying array of backgrounds that it can be hard to know where and how to start. This plugin's dozens of presets deliver one-click shortcuts to get you to a finished design from which you can then reverse engineer and fine tune to you exact vision. Find our presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create an Array Gun look and then save it under its own name by pressing the Save Preset... button.",
+    "As you'll soon see, Array Gun offers a surprising amount of depth and control over fixed and animated, geometrically-based backgrounds. If you'd like a visual overview of the plugin before diving into this guide, we recommend giving our Cineversity tutorial a watch."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Universe-Array-Gun_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_ColumnsRows.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_LineGrid.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_GridControls.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_ShapeGridOnOff.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/colorwheels_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_ShapeScale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_Stagger.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_Shape.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_Shape-modded.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_ShapeColor.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_Effector.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_PositionX.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_CellGrid.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_CellSize.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_SingleShape.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_ArrayGun_MatteShapeGrid.png"
+  ]
+}

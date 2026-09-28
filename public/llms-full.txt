@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1190
+# Records: 1341
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -2576,14 +2576,14 @@
     "slug": "cinema-4d",
     "url_fr": "https://tooltrim.com/fr/tool/cinema-4d",
     "url_en": "https://tooltrim.com/en/tool/cinema-4d",
-    "website": "https://www.maxon.net/cinema-4d",
+    "website": "https://www.maxon.net/en/cinema-4d",
     "category": "creation",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "59,91$/mois (annuel) ou 94$/mois. Inclus dans Maxon One (~100$/mois)."
+      "free": "Essai proposé par Maxon.",
+      "paid": "838,8 EUR facturés par an pour Cinema 4D. Prix régional et TVA définitifs au panier."
     },
-    "description_fr": "Logiciel 3D de Maxon, référence du motion design et de la visualisation produit.",
-    "description_en": "Maxon's 3D software, a reference for motion design and product visualization.",
+    "description_fr": "Modélisation, animation et motion design 3D, avec le moteur Redshift inclus dans l'abonnement.",
+    "description_en": "3D modelling, animation and motion design, with Redshift included in the subscription.",
     "alternatives": [
       "blender"
     ]
@@ -8039,14 +8039,14 @@
     "slug": "magic-bullet",
     "url_fr": "https://tooltrim.com/fr/tool/magic-bullet",
     "url_en": "https://tooltrim.com/en/tool/magic-bullet",
-    "website": "https://www.maxon.net/en/red-giant",
-    "category": "design-tools",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
+    "category": "creation",
     "pricing": {
-      "free": "Pas de version gratuite. Essai téléchargeable disponible pour tester avant achat.",
-      "paid": "Red Giant Complete Annual Subscription: Abonnement annuel (montants sur la page officielle) ; Magic Bullet Suite (partie de Red Giant): Inclus dans l'abonnement Red Giant annuel"
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
     },
-    "description_fr": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.",
-    "description_en": "Red Giant video effects plugin suite including Color Looks (cinematic color grading), Colorista (three-way color correction), and Denoiser (noise reduction) for After Effects, Premiere Pro, and DaVinci Resolve.",
+    "description_fr": "Famille Red Giant dédiée à la correction colorimétrique, aux looks et à la texture de l'image.",
+    "description_en": "A Red Giant family for colour correction, looks and image texture.",
     "alternatives": [
       "davinci-resolve"
     ]
@@ -8356,14 +8356,14 @@
     "slug": "maxon-one",
     "url_fr": "https://tooltrim.com/fr/tool/maxon-one",
     "url_en": "https://tooltrim.com/en/tool/maxon-one",
-    "website": "https://www.maxon.net/maxon-one",
+    "website": "https://www.maxon.net/en/maxon-one",
     "category": "creation",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "~99,91$/mois (annuel, ~1199$/an). Tout l'écosystème Maxon."
+      "free": "Essai proposé par Maxon.",
+      "paid": "1 390,8 EUR facturés par an pour Maxon One. Prix régional et TVA définitifs au panier."
     },
-    "description_fr": "Le bundle Maxon : Cinema 4D, Redshift, ZBrush, Red Giant et Universe réunis.",
-    "description_en": "The Maxon bundle: Cinema 4D, Redshift, ZBrush, Red Giant and Universe together.",
+    "description_fr": "Suite réunissant Cinema 4D, Redshift, ZBrush et Red Giant pour la création 3D et vidéo.",
+    "description_en": "A suite combining Cinema 4D, Redshift, ZBrush and Red Giant for 3D and video work.",
     "alternatives": [
       "blender"
     ]
@@ -10558,14 +10558,14 @@
     "slug": "pluraleyes",
     "url_fr": "https://tooltrim.com/fr/tool/pluraleyes",
     "url_en": "https://tooltrim.com/en/tool/pluraleyes",
-    "website": "https://www.maxon.net/red-giant/pluraleyes",
+    "website": "https://support.maxon.net/hc/en-us/articles/7389361453340-PluralEyes-Limited-Maintenance-Mode",
     "category": "design-tools",
     "pricing": {
-      "free": "Aucune version gratuite ni aucun essai actuel. Les installateurs compatibles sont fournis par le support aux détenteurs d'un numéro de série valide.",
-      "paid": "Nouvelle licence: Indisponible, produit arrêté ; Licence historique: Utilisable uniquement dans les anciens environnements officiellement compatibles"
+      "free": "Aucun téléchargement public pour les nouveaux utilisateurs.",
+      "paid": "Produit arrêté ; aucune nouvelle licence vendue."
     },
-    "description_fr": "Ancienne application Maxon de synchronisation automatique de rushes vidéo et audio par comparaison des formes d'onde. PluralEyes est arrêté commercialement et placé en maintenance limitée depuis le 1er février 2023.",
-    "description_en": "Former Maxon application for automatically synchronizing video and audio footage by comparing waveforms. PluralEyes is commercially discontinued and has been in limited maintenance mode since February 1, 2023.",
+    "description_fr": "Ancien synchroniseur audio et vidéo de Maxon, en maintenance limitée et indisponible à l’achat.",
+    "description_en": "Former Maxon audio and video synchroniser in limited maintenance and unavailable for new purchase.",
     "alternatives": [
       "davinci-resolve"
     ]
@@ -11631,14 +11631,14 @@
     "slug": "ae-red-giant",
     "url_fr": "https://tooltrim.com/fr/tool/ae-red-giant",
     "url_en": "https://tooltrim.com/en/tool/ae-red-giant",
-    "website": "https://maxon.net/red-giant",
-    "category": "design-tools",
+    "website": "https://www.maxon.net/en/red-giant",
+    "category": "creation",
     "pricing": {
-      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
-      "paid": "Dès 53 $/mois, plan Red Giant (complet, avec Universe)."
+      "free": "Essai proposé par Maxon.",
+      "paid": "718,8 EUR facturés par an pour Red Giant. Prix régional et TVA définitifs au panier."
     },
-    "description_fr": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
-    "description_en": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates).",
+    "description_fr": "Plugins de particules, étalonnage et compositing pour la postproduction, avec Universe et Maxon Studio.",
+    "description_en": "Particle, colour and compositing plugins for postproduction, including Universe and Maxon Studio.",
     "alternatives": [
       "DaVinci Resolve"
     ]
@@ -11648,14 +11648,14 @@
     "slug": "red-giant-universe",
     "url_fr": "https://tooltrim.com/fr/tool/red-giant-universe",
     "url_en": "https://tooltrim.com/en/tool/red-giant-universe",
-    "website": "https://www.maxon.net/red-giant/universe",
-    "category": "design-tools",
+    "website": "https://www.maxon.net/en/red-giant/universe",
+    "category": "creation",
     "pricing": {
-      "free": "Essai gratuit de 14 jours ; Maxon One offre également un essai de 14 jours",
-      "paid": "Universe Individual (Monthly): USD 32/mois ; Universe Individual (Annual): USD 214/an ; Red Giant Suite (Monthly): USD 85/mois ; Red Giant Suite (Annual): USD 639/an"
+      "free": "Essai proposé par Maxon.",
+      "paid": "238,8 EUR facturés par an pour Red Giant Universe. Prix régional et TVA définitifs au panier."
     },
-    "description_fr": "Suite de plugin d'effets GPU-accélérés pour After Effects, Premiere Pro, Final Cut Pro et Motion. Propose transitions, effets de mouvement, animations de texte et outils de stylisation pour la production vidéo et motion design.",
-    "description_en": "Suite of GPU-accelerated effects plugins for After Effects, Premiere Pro, Final Cut Pro, and Motion. Provides transitions, motion effects, text animation, and stylization tools for video and motion design."
+    "description_fr": "Bibliothèque de plugins de transitions, effets vidéo et animation graphique.",
+    "description_en": "A plugin library for transitions, video effects and motion graphics."
   },
   {
     "name": "Redirect Path",
@@ -11690,14 +11690,14 @@
     "slug": "redshift",
     "url_fr": "https://tooltrim.com/fr/tool/redshift",
     "url_en": "https://tooltrim.com/en/tool/redshift",
-    "website": "https://www.maxon.net/redshift",
+    "website": "https://www.maxon.net/en/redshift",
     "category": "creation",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "~45$/mois (annuel). Inclus avec Cinema 4D et Maxon One."
+      "free": "Essai proposé par Maxon.",
+      "paid": "298,8 EUR facturés par an pour Redshift. Prix régional et TVA définitifs au panier."
     },
-    "description_fr": "Moteur de rendu GPU rapide de Maxon, standard du motion design et de la 3D.",
-    "description_en": "Maxon's fast GPU render engine, a standard in motion design and 3D.",
+    "description_fr": "Moteur de rendu 3D pour éclairer et finaliser des scènes dans les applications compatibles.",
+    "description_en": "A 3D renderer for lighting and finishing scenes in compatible applications.",
     "alternatives": [
       "blender"
     ]
@@ -14654,14 +14654,14 @@
     "slug": "trapcode",
     "url_fr": "https://tooltrim.com/fr/tool/trapcode",
     "url_en": "https://tooltrim.com/en/tool/trapcode",
-    "website": "https://www.maxon.net/red-giant/trapcode",
-    "category": "design-tools",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+    "category": "creation",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai gratuit Maxon One de 14 jours, sans carte bancaire selon Maxon.",
-      "paid": "Trapcode: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
     },
-    "description_fr": "Famille de plugins de particules et d'effets 3D pour Adobe After Effects, dont Trapcode Particular est l'outil principal. Depuis 2024, Trapcode est installé et commercialisé dans l'abonnement Red Giant plutôt que comme suite autonome.",
-    "description_en": "Family of particle and 3D effects plugins for Adobe After Effects, led by Trapcode Particular. Since 2024, Trapcode has been installed and sold through the Red Giant subscription rather than as a standalone suite."
+    "description_fr": "Famille d'outils Red Giant pour particules et motion design dans After Effects.",
+    "description_en": "A Red Giant tool family for particles and motion graphics in After Effects."
   },
   {
     "name": "Trello",
@@ -15206,14 +15206,14 @@
     "slug": "vfx-suite",
     "url_fr": "https://tooltrim.com/fr/tool/vfx-suite",
     "url_en": "https://tooltrim.com/en/tool/vfx-suite",
-    "website": "https://www.maxon.net/red-giant/vfx-suite",
-    "category": "design-tools",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/supercomp",
+    "category": "creation",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai gratuit de 14 jours, sans carte bancaire selon Maxon.",
-      "paid": "VFX Suite: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
     },
-    "description_fr": "Famille de plugins de keying, tracking, nettoyage et compositing dont Adobe After Effects est l'hôte principal. Depuis 2024, VFX Suite n'est plus installée ou vendue séparément et ses outils sont inclus dans Red Giant.",
-    "description_en": "Family of keying, tracking, cleanup, and compositing plugins primarily hosted in Adobe After Effects. Since 2024, VFX Suite is no longer installed or sold separately and its tools are included with Red Giant."
+    "description_fr": "Famille Red Giant pour incrustation, suivi, nettoyage et intégration d'effets dans une vidéo.",
+    "description_en": "A Red Giant family for keying, tracking, cleanup and effects compositing."
   },
   {
     "name": "VidIQ",
@@ -16022,14 +16022,14 @@
     "slug": "zbrush",
     "url_fr": "https://tooltrim.com/fr/tool/zbrush",
     "url_en": "https://tooltrim.com/en/tool/zbrush",
-    "website": "https://www.maxon.net/zbrush",
+    "website": "https://www.maxon.net/en/zbrush",
     "category": "creation",
     "pricing": {
-      "free": "ZBrushCoreMini gratuit (limité)",
-      "paid": "29,91$/mois (annuel). Inclus dans Maxon One."
+      "free": "Essai proposé par Maxon.",
+      "paid": "430,8 EUR facturés par an pour ZBrush. Prix régional et TVA définitifs au panier."
     },
-    "description_fr": "La référence de la sculpture numérique 3D (personnages, créatures, props), chez Maxon.",
-    "description_en": "The reference for digital 3D sculpting (characters, creatures, props), by Maxon.",
+    "description_fr": "Sculpture et peinture numériques pour personnages, créatures et modèles détaillés.",
+    "description_en": "Digital sculpting and painting for characters, creatures and detailed models.",
     "alternatives": [
       "blender"
     ]
@@ -16576,5 +16576,2119 @@
     },
     "description_fr": "Retouche photo dans le navigateur, avec Pixlr Editor, Express et des outils IA.",
     "description_en": "Browser-based photo editing with Pixlr Editor, Express and AI tools."
+  },
+  {
+    "name": "Maxon Autograph",
+    "slug": "autograph",
+    "url_fr": "https://tooltrim.com/fr/tool/autograph",
+    "url_en": "https://tooltrim.com/en/tool/autograph",
+    "website": "https://www.maxon.net/en/autograph",
+    "category": "creation",
+    "pricing": {
+      "free": "Gratuit.",
+      "paid": ""
+    },
+    "description_fr": "Application gratuite de motion design et compositing 2D/3D pour Windows et macOS.",
+    "description_en": "A free 2D/3D motion design and compositing application for Windows and macOS."
+  },
+  {
+    "name": "ZBrush pour iPad",
+    "slug": "zbrush-for-ipad",
+    "url_fr": "https://tooltrim.com/fr/tool/zbrush-for-ipad",
+    "url_en": "https://tooltrim.com/en/tool/zbrush-for-ipad",
+    "website": "https://www.maxon.net/en/zbrush-for-ipad",
+    "category": "creation",
+    "pricing": {
+      "free": "Version gratuite limitée.",
+      "paid": "Accès lié à ZBrush ou Maxon One. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Sculpture 3D tactile sur iPad, avec une version gratuite limitée et un accès Premium par abonnement.",
+    "description_en": "Touch-based 3D sculpting on iPad, with a limited free edition and subscription-based Premium access."
+  },
+  {
+    "name": "Cinebench",
+    "slug": "cinebench",
+    "url_fr": "https://tooltrim.com/fr/tool/cinebench",
+    "url_en": "https://tooltrim.com/en/tool/cinebench",
+    "website": "https://www.maxon.net/en/cinebench",
+    "category": "creation",
+    "pricing": {
+      "free": "Gratuit.",
+      "paid": ""
+    },
+    "description_fr": "Benchmark gratuit pour comparer les performances CPU et GPU dans une charge de rendu Redshift.",
+    "description_en": "A free benchmark for comparing CPU and GPU performance under a Redshift rendering workload."
+  },
+  {
+    "name": "Cineware",
+    "slug": "cineware",
+    "url_fr": "https://tooltrim.com/fr/tool/cineware",
+    "url_en": "https://tooltrim.com/en/tool/cineware",
+    "website": "https://www.maxon.net/en/cineware",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Conditions à vérifier sur le site officiel et selon les logiciels hôtes."
+    },
+    "description_fr": "Passerelles entre Cinema 4D et des logiciels comme After Effects, Unreal Engine ou des outils d'architecture.",
+    "description_en": "Bridges between Cinema 4D and applications such as After Effects, Unreal Engine and architectural tools."
+  },
+  {
+    "name": "Maxon Capsules",
+    "slug": "maxon-capsules",
+    "url_fr": "https://tooltrim.com/fr/tool/maxon-capsules",
+    "url_en": "https://tooltrim.com/en/tool/maxon-capsules",
+    "website": "https://www.maxon.net/en/capsules",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à Maxon One. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Bibliothèque d'assets, matériaux, modèles et presets pour les applications Maxon.",
+    "description_en": "An asset, material, model and preset library for Maxon applications."
+  },
+  {
+    "name": "Maxon Studio",
+    "slug": "maxon-studio",
+    "url_fr": "https://tooltrim.com/fr/tool/maxon-studio",
+    "url_en": "https://tooltrim.com/en/tool/maxon-studio",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/maxon-studio",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Interface pour trouver et personnaliser les outils, presets et Capsules de l'écosystème Red Giant.",
+    "description_en": "An interface for finding and customising tools, presets and Capsules in the Red Giant ecosystem."
+  },
+  {
+    "name": "Moves by Maxon",
+    "slug": "moves-by-maxon",
+    "url_fr": "https://tooltrim.com/fr/tool/moves-by-maxon",
+    "url_en": "https://tooltrim.com/en/tool/moves-by-maxon",
+    "website": "https://www.maxon.net/en/cinema-4d/features/moves-by-maxon",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Conditions à vérifier sur le site officiel et selon les logiciels hôtes."
+    },
+    "description_fr": "Capture d'objets, de mouvements du visage et du corps sur iPhone ou iPad pour Cinema 4D.",
+    "description_en": "Object, facial and body capture on iPhone or iPad for Cinema 4D."
+  },
+  {
+    "name": "3D Stroke",
+    "slug": "red-giant-3d-stroke",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-3d-stroke",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-3d-stroke",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/motion-graphics/3d-stroke",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Animer des tracés avec épaisseur, lumière et répétitions dans un espace 3D.",
+    "description_en": "Animate paths with thickness, light and repeated strokes in 3D space."
+  },
+  {
+    "name": "Universe Analog",
+    "slug": "universe-analog",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-analog",
+    "url_en": "https://tooltrim.com/en/tool/universe-analog",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/analog",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Reproduire les couleurs, parasites et lignes de balayage d'un téléviseur analogique.",
+    "description_en": "Recreate analog television colour, interference and scan lines."
+  },
+  {
+    "name": "Universe Array Gun",
+    "slug": "universe-array-gun",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-array-gun",
+    "url_en": "https://tooltrim.com/en/tool/universe-array-gun",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/array-gun",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Construire des grilles animées de formes et de lignes pour un habillage graphique.",
+    "description_en": "Build animated grids of shapes and lines for motion graphics."
+  },
+  {
+    "name": "Universe AV Club",
+    "slug": "universe-av-club",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-av-club",
+    "url_en": "https://tooltrim.com/en/tool/universe-av-club",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/av-club",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Donner aux titres un aspect vidéo ancien, bruité et peu défini.",
+    "description_en": "Give titles a noisy, low-resolution vintage video treatment."
+  },
+  {
+    "name": "Bang",
+    "slug": "red-giant-bang",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-bang",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-bang",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/bang",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Composer des flashes de tir en 3D dans After Effects et ajuster leur placement dans le plan.",
+    "description_en": "Composite 3D muzzle flashes in After Effects and adjust their placement in a shot."
+  },
+  {
+    "name": "Universe Bokeh",
+    "slug": "universe-bokeh",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-bokeh",
+    "url_en": "https://tooltrim.com/en/tool/universe-bokeh",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/bokeh",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler un flou de mise au point dont les lumières prennent des formes de bokeh réglables.",
+    "description_en": "Simulate defocus with adjustable bokeh shapes in bright image areas."
+  },
+  {
+    "name": "Universe Carousel",
+    "slug": "universe-carousel",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-carousel",
+    "url_en": "https://tooltrim.com/en/tool/universe-carousel",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/carousel",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Appliquer un rendu de pellicule vieillie avec dérives de couleur et vignettage.",
+    "description_en": "Apply aged-film colour shifts and vignetting."
+  },
+  {
+    "name": "Universe Chromatic Aberration",
+    "slug": "universe-chromatic-aberration",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-chromatic-aberration",
+    "url_en": "https://tooltrim.com/en/tool/universe-chromatic-aberration",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/chromatic-aberration",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler les défauts chromatiques d'un objectif avec séparation des couleurs et déformation.",
+    "description_en": "Simulate lens chromatic defects with colour separation and distortion."
+  },
+  {
+    "name": "Chromatic Displacement",
+    "slug": "red-giant-chromatic-displacement",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-chromatic-displacement",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-chromatic-displacement",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/distortions/chromatic-displacement",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Déformer une image à partir d'un autre calque tout en séparant ses couleurs.",
+    "description_en": "Displace an image using another layer while separating its colours."
+  },
+  {
+    "name": "Universe ChromaTown",
+    "slug": "universe-chromatown",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-chromatown",
+    "url_en": "https://tooltrim.com/en/tool/universe-chromatown",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/chromatown-tool",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Combiner traînées colorées, flous directionnels et transformations de l'image.",
+    "description_en": "Combine coloured streaks, directional blur and image transformations."
+  },
+  {
+    "name": "Colorista",
+    "slug": "red-giant-colorista",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-colorista",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-colorista",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/colorista",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Corriger l'exposition et les couleurs directement dans la timeline du logiciel hôte.",
+    "description_en": "Correct exposure and colour directly in the host application's timeline."
+  },
+  {
+    "name": "Cosmo",
+    "slug": "red-giant-cosmo",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-cosmo",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-cosmo",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/cosmo",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Cibler les tons de peau pour atténuer des imperfections et harmoniser un portrait vidéo.",
+    "description_en": "Target skin tones to soften blemishes and balance a video portrait."
+  },
+  {
+    "name": "Denoiser",
+    "slug": "red-giant-denoiser",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-denoiser",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-denoiser",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/denoiser",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Réduire le bruit visible dans des prises de vue réalisées en faible lumière.",
+    "description_en": "Reduce visible noise in footage captured in low light."
+  },
+  {
+    "name": "Depth Generator",
+    "slug": "red-giant-depth-generator",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-depth-generator",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-depth-generator",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/depth-generator",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer une passe de profondeur à partir d'une vidéo dans After Effects.",
+    "description_en": "Generate a depth pass from footage inside After Effects."
+  },
+  {
+    "name": "Universe Ecto",
+    "slug": "universe-ecto",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-ecto",
+    "url_en": "https://tooltrim.com/en/tool/universe-ecto",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/ecto",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer des titres lumineux aux contours fractals et évolutifs.",
+    "description_en": "Create glowing titles with evolving fractal edges."
+  },
+  {
+    "name": "Universe Electrify",
+    "slug": "universe-electrify",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-electrify",
+    "url_en": "https://tooltrim.com/en/tool/universe-electrify",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/electrify",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Générer des arcs électriques à partir des contours d'une image ou d'un bruit fractal.",
+    "description_en": "Generate electrical arcs from image contours or fractal noise."
+  },
+  {
+    "name": "Magic Bullet Film",
+    "slug": "red-giant-film",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-film",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-film",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/film",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Recréer un traitement de pellicule en combinant négatif, étalonnage et tirage.",
+    "description_en": "Recreate a film treatment through negative stock, grading and print-stock controls."
+  },
+  {
+    "name": "Universe Finisher",
+    "slug": "universe-finisher",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-finisher",
+    "url_en": "https://tooltrim.com/en/tool/universe-finisher",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/finisher",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajuster le détail et la finition d'une image à partir de plusieurs couches de luminance.",
+    "description_en": "Adjust image detail and finishing across multiple luminance layers."
+  },
+  {
+    "name": "Trapcode Form",
+    "slug": "red-giant-form",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-form",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-form",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/form",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Construire des formes en particules persistantes, puis modifier leur organisation dans After Effects.",
+    "description_en": "Build persistent particle forms and reshape their arrangement in After Effects."
+  },
+  {
+    "name": "Geo",
+    "slug": "red-giant-geo",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-geo",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-geo",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/geo",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Importer, texturer, éclairer et cloner des modèles 3D directement dans After Effects.",
+    "description_en": "Import, texture, light and clone 3D models directly in After Effects."
+  },
+  {
+    "name": "Universe Glimmer",
+    "slug": "universe-glimmer",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-glimmer",
+    "url_en": "https://tooltrim.com/en/tool/universe-glimmer",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/glimmer",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajouter des éclats étoilés animés sur les zones lumineuses d'une image.",
+    "description_en": "Add animated star-like glints to bright image areas."
+  },
+  {
+    "name": "Universe Glitch",
+    "slug": "universe-glitch",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-glitch",
+    "url_en": "https://tooltrim.com/en/tool/universe-glitch",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/glitch",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler une vidéo corrompue avec compression, ruptures de signal et décalages numériques.",
+    "description_en": "Simulate corrupted video through compression, signal breakup and digital offsets."
+  },
+  {
+    "name": "Universe Glow",
+    "slug": "universe-glow",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-glow",
+    "url_en": "https://tooltrim.com/en/tool/universe-glow",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/glow",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Diffuser les hautes lumières avec un halo dont la couleur et l'intensité restent réglables.",
+    "description_en": "Spread highlights into a glow with adjustable colour and intensity."
+  },
+  {
+    "name": "Universe Grain16",
+    "slug": "universe-grain16",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-grain16",
+    "url_en": "https://tooltrim.com/en/tool/universe-grain16",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/grain16",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajouter une texture de grain issue de scans de pellicules 16 mm.",
+    "description_en": "Add grain texture sourced from scans of 16 mm film stocks."
+  },
+  {
+    "name": "Universe Hacker Text",
+    "slug": "universe-hacker-text",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-hacker-text",
+    "url_en": "https://tooltrim.com/en/tool/universe-hacker-text",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/hacker-text",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Animer un texte brouillé qui se transforme progressivement en message lisible.",
+    "description_en": "Animate scrambled text as it resolves into a readable message."
+  },
+  {
+    "name": "Universe HalfLight",
+    "slug": "universe-halflight",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-halflight",
+    "url_en": "https://tooltrim.com/en/tool/universe-halflight",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/halflight",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Relier deux plans par une transition de fuite de lumière réglable.",
+    "description_en": "Connect two shots with an adjustable light-leak transition."
+  },
+  {
+    "name": "Universe Heatwave",
+    "slug": "universe-heatwave",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-heatwave",
+    "url_en": "https://tooltrim.com/en/tool/universe-heatwave",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/heatwave",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Déformer une image avec des ondulations qui évoquent la chaleur.",
+    "description_en": "Distort an image with ripples that suggest heat haze."
+  },
+  {
+    "name": "Universe Holomatrix II",
+    "slug": "universe-holomatrix",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-holomatrix",
+    "url_en": "https://tooltrim.com/en/tool/universe-holomatrix",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/holomatrix",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Transformer textes, logos et images en affichages holographiques perturbés.",
+    "description_en": "Turn text, logos and footage into disrupted holographic displays."
+  },
+  {
+    "name": "Universe HUD Components",
+    "slug": "universe-hud-components",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-hud-components",
+    "url_en": "https://tooltrim.com/en/tool/universe-hud-components",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/hud-components",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Assembler des éléments animés d'interface et d'affichage tête haute.",
+    "description_en": "Assemble animated interface and heads-up display elements."
+  },
+  {
+    "name": "King Pin Tracker",
+    "slug": "red-giant-king-pin-tracker",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-king-pin-tracker",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-king-pin-tracker",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/king-pin-tracker",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Suivre une surface plane pour remplacer une enseigne ou intégrer une image dans un plan.",
+    "description_en": "Track a planar surface to replace a sign or insert an image into a shot."
+  },
+  {
+    "name": "Universe Knoll Light Factory EZ",
+    "slug": "universe-knoll-light-factory-ez",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-knoll-light-factory-ez",
+    "url_en": "https://tooltrim.com/en/tool/universe-knoll-light-factory-ez",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/knoll-light-factory-ez",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajouter des effets de flare prédéfinis et adapter leur position à une source lumineuse.",
+    "description_en": "Add preset lens flares and position them around a light source."
+  },
+  {
+    "name": "Lens Distortion Matcher",
+    "slug": "red-giant-lens-distortion-matcher",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-lens-distortion-matcher",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-lens-distortion-matcher",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/lens-distortion-matcher",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Corriger la distorsion d'un objectif pour composer un plan, puis la réappliquer au résultat.",
+    "description_en": "Undistort lens footage for compositing, then reapply the distortion to the result."
+  },
+  {
+    "name": "Universe Line",
+    "slug": "universe-line",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-line",
+    "url_en": "https://tooltrim.com/en/tool/universe-line",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/line",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Animer une ligne droite ou courbe entre plusieurs points pour illustrer un trajet.",
+    "description_en": "Animate a straight or curved line between points to illustrate a route."
+  },
+  {
+    "name": "Universe Luster",
+    "slug": "universe-luster",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-luster",
+    "url_en": "https://tooltrim.com/en/tool/universe-luster",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/luster",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer un traitement métallique ou vitré sur du texte, avec un relief de biseau.",
+    "description_en": "Create metallic or glass-like text treatments with a bevelled appearance."
+  },
+  {
+    "name": "Magic Bullet Looks",
+    "slug": "red-giant-magicbullet-looks",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-magicbullet-looks",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-magicbullet-looks",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Construire un rendu colorimétrique en combinant des outils de correction et des looks personnalisables.",
+    "description_en": "Build a colour treatment by combining correction tools and customisable looks."
+  },
+  {
+    "name": "Trapcode Mir",
+    "slug": "red-giant-mir",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-mir",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-mir",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/mir",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer des surfaces, tunnels et terrains procéduraux dans After Effects.",
+    "description_en": "Create procedural surfaces, tunnels and terrain in After Effects."
+  },
+  {
+    "name": "Universe Modes",
+    "slug": "universe-modes",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-modes",
+    "url_en": "https://tooltrim.com/en/tool/universe-modes",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/modes",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Combiner plusieurs calques avec des modes de fusion et des contrôles supplémentaires.",
+    "description_en": "Combine layers with additional blending modes and controls."
+  },
+  {
+    "name": "Magic Bullet Mojo",
+    "slug": "red-giant-mojo",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-mojo",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-mojo",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/mojo",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Appliquer un traitement colorimétrique stylisé puis ajuster contraste, exposition et balance.",
+    "description_en": "Apply a stylised colour treatment, then adjust contrast, exposure and balance."
+  },
+  {
+    "name": "Universe Numbers",
+    "slug": "universe-numbers",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-numbers",
+    "url_en": "https://tooltrim.com/en/tool/universe-numbers",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/numbers",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Afficher et animer des compteurs, pourcentages, montants, dates ou heures.",
+    "description_en": "Display and animate counters, percentages, amounts, dates or times."
+  },
+  {
+    "name": "Optical Glow",
+    "slug": "red-giant-optical-glow",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-optical-glow",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-optical-glow",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/optical-glow",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer des halos lumineux avec gestion du gamma et décroissance de la lumière.",
+    "description_en": "Create light blooms with gamma handling and controlled light falloff."
+  },
+  {
+    "name": "Universe OverLight",
+    "slug": "universe-overlight",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-overlight",
+    "url_en": "https://tooltrim.com/en/tool/universe-overlight",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/overlight",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Superposer des fuites de lumière et des textures lumineuses à une vidéo.",
+    "description_en": "Overlay light leaks and light textures onto footage."
+  },
+  {
+    "name": "Parametric Curve",
+    "slug": "red-giant-parametric-curve",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-parametric-curve",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-parametric-curve",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/parametric-curve",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajuster une image et ses hautes lumières avec des courbes HDR paramétrables.",
+    "description_en": "Adjust an image and its highlights using configurable HDR curves."
+  },
+  {
+    "name": "Universe Pixel Dither",
+    "slug": "universe-pixel-dither",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-pixel-dither",
+    "url_en": "https://tooltrim.com/en/tool/universe-pixel-dither",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/pixel-dither",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Transformer des images en rendus pixel art avec palettes limitées et tramage.",
+    "description_en": "Turn images into pixel-art treatments with limited palettes and dithering."
+  },
+  {
+    "name": "Primatte Keyer",
+    "slug": "red-giant-primatte-keyer",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-primatte-keyer",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-primatte-keyer",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/primatte-keyer",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Extraire un sujet filmé sur fond vert ou bleu, puis affiner les contours et les débordements de couleur.",
+    "description_en": "Extract a subject shot against green or blue screen, then refine edges and colour spill."
+  },
+  {
+    "name": "Universe Progresso",
+    "slug": "universe-progresso",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-progresso",
+    "url_en": "https://tooltrim.com/en/tool/universe-progresso",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/progresso",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Animer des barres de progression, arcs et graphiques pour une infographie vidéo.",
+    "description_en": "Animate progress bars, arcs and charts for video infographics."
+  },
+  {
+    "name": "Universe Quantum",
+    "slug": "universe-quantum",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-quantum",
+    "url_en": "https://tooltrim.com/en/tool/universe-quantum",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/quantum",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer des traînées lumineuses déformées et animées autour d'un calque.",
+    "description_en": "Create animated, warped light trails around a layer."
+  },
+  {
+    "name": "Real Lens Flares",
+    "slug": "red-giant-real-lens-flares",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-real-lens-flares",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-real-lens-flares",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/real-lens-flares",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Construire des effets de flare en réglant le modèle d'objectif et la position de la lumière.",
+    "description_en": "Build lens flares by adjusting the lens model and light position."
+  },
+  {
+    "name": "Reflection",
+    "slug": "red-giant-reflection",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-reflection",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-reflection",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/reflection",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajouter un reflet à un calque avec contrôle du flou et de l'atténuation.",
+    "description_en": "Add a reflection to a layer with blur and fade controls."
+  },
+  {
+    "name": "Universe Reframe",
+    "slug": "universe-reframe",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-reframe",
+    "url_en": "https://tooltrim.com/en/tool/universe-reframe",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/reframe",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Composer une image dans l'image avec animation, bordures et rotation.",
+    "description_en": "Build animated picture-in-picture layouts with borders and rotation."
+  },
+  {
+    "name": "Renoiser",
+    "slug": "red-giant-renoiser",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-renoiser",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-renoiser",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/color/renoiser",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Redonner une texture de grain à des images numériques ou préalablement débruitées.",
+    "description_en": "Restore grain texture to digital or previously denoised images."
+  },
+  {
+    "name": "Universe Retrograde",
+    "slug": "universe-retrograde",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-retrograde",
+    "url_en": "https://tooltrim.com/en/tool/universe-retrograde",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/retrograde",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler le grain, la couleur et les défauts de films 8 mm et 16 mm.",
+    "description_en": "Simulate the grain, colour and damage of 8 mm and 16 mm film."
+  },
+  {
+    "name": "Universe Screen Text",
+    "slug": "universe-screen-text",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-screen-text",
+    "url_en": "https://tooltrim.com/en/tool/universe-screen-text",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/screen-text",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Faire défiler du texte comme dans un terminal informatique.",
+    "description_en": "Scroll text in the style of a computer terminal."
+  },
+  {
+    "name": "Shadow",
+    "slug": "red-giant-shadow",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-shadow",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-shadow",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/shadow",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer une ombre en perspective à partir d'un calque et régler sa longueur et sa douceur.",
+    "description_en": "Create a perspective shadow from a layer and adjust its length and softness."
+  },
+  {
+    "name": "Red Giant Shine",
+    "slug": "red-giant-shine",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-shine",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-shine",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/shine",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Générer des rayons lumineux à partir d'une image pour un habillage ou un effet atmosphérique.",
+    "description_en": "Generate light rays from an image for motion graphics or atmospheric effects."
+  },
+  {
+    "name": "Universe ShrinkRay",
+    "slug": "universe-shrinkray",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-shrinkray",
+    "url_en": "https://tooltrim.com/en/tool/universe-shrinkray",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/shrinkray",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler une faible profondeur de champ de type tilt-shift pour donner un effet miniature.",
+    "description_en": "Simulate tilt-shift-style shallow depth of field for a miniature effect."
+  },
+  {
+    "name": "Universe Sketchify",
+    "slug": "universe-sketchify",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-sketchify",
+    "url_en": "https://tooltrim.com/en/tool/universe-sketchify",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/sketchify-tool",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Transformer une vidéo en rendu dessiné avec contours d'encre et textures.",
+    "description_en": "Turn footage into an illustrated treatment with ink outlines and textures."
+  },
+  {
+    "name": "Sound Keys",
+    "slug": "red-giant-sound-keys",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-sound-keys",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-sound-keys",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/utilities/sound-keys",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Analyser un signal audio pour piloter des propriétés d'animation avec des images clés.",
+    "description_en": "Analyse audio to drive animation properties through keyframes."
+  },
+  {
+    "name": "Spot Clone Tracker",
+    "slug": "red-giant-spot-clone-tracker",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-spot-clone-tracker",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-spot-clone-tracker",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/spot-clone-tracker",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Masquer de petites imperfections en clonant une zone voisine et en suivant son mouvement.",
+    "description_en": "Hide small blemishes by cloning a nearby area and tracking its motion."
+  },
+  {
+    "name": "Starglow",
+    "slug": "red-giant-starglow",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-starglow",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-starglow",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/starglow",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Transformer les hautes lumières en étoiles colorées aux branches réglables.",
+    "description_en": "Turn highlights into coloured stars with adjustable streaks."
+  },
+  {
+    "name": "Supercomp",
+    "slug": "red-giant-supercomp",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-supercomp",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-supercomp",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/vfx/supercomp",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Faire interagir lumière, diffusion et atmosphère entre plusieurs calques de compositing.",
+    "description_en": "Combine layers with shared light interaction, diffusion and atmospheric effects."
+  },
+  {
+    "name": "Universe Symbol Mapper",
+    "slug": "universe-symbol-mapper",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-symbol-mapper",
+    "url_en": "https://tooltrim.com/en/tool/universe-symbol-mapper",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/symbol-mapper-tool",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Reconstruire une image avec des lettres, chiffres et symboles selon sa luminosité.",
+    "description_en": "Rebuild an image with letters, numbers and symbols according to brightness."
+  },
+  {
+    "name": "Trapcode Tao",
+    "slug": "red-giant-tao",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-tao",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-tao",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/tao",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Construire des formes 3D animées à partir d'extrusions et de chemins dans After Effects.",
+    "description_en": "Build animated 3D forms from extrusions and paths in After Effects."
+  },
+  {
+    "name": "Universe Text Tile",
+    "slug": "universe-text-tile",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-text-tile",
+    "url_en": "https://tooltrim.com/en/tool/universe-text-tile",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/text-tile",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Générer des colonnes de données animées pour une interface fictive ou un habillage technique.",
+    "description_en": "Generate animated data columns for fictional interfaces or technical graphics."
+  },
+  {
+    "name": "Universe Texturize",
+    "slug": "universe-texturize",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-texturize",
+    "url_en": "https://tooltrim.com/en/tool/universe-texturize",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/texturize",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Appliquer des textures grunge répétables et régler leur échelle, couleur et mélange.",
+    "description_en": "Apply tiling grunge textures and adjust their scale, colour and blending."
+  },
+  {
+    "name": "Universe Texturize Motion",
+    "slug": "universe-texturize-motion",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-texturize-motion",
+    "url_en": "https://tooltrim.com/en/tool/universe-texturize-motion",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/texturize-motion",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Superposer des textures animées et régler leurs mouvements sur une vidéo.",
+    "description_en": "Overlay animated textures and adjust their movement over footage."
+  },
+  {
+    "name": "Universe Title Motion",
+    "slug": "universe-title-motion",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-title-motion",
+    "url_en": "https://tooltrim.com/en/tool/universe-title-motion",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/title-motion",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer des titres et des formes avec animations d'entrée et de sortie personnalisables.",
+    "description_en": "Create titles and shapes with customisable entrance and exit animations."
+  },
+  {
+    "name": "Trapcode Particular",
+    "slug": "red-giant-trapcode-particular",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-trapcode-particular",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-trapcode-particular",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer des systèmes de particules 3D avec forces, comportements physiques et émetteurs liés.",
+    "description_en": "Create 3D particle systems with forces, physical behaviours and linked emitters."
+  },
+  {
+    "name": "Universe Type Cast",
+    "slug": "universe-type-cast",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-type-cast",
+    "url_en": "https://tooltrim.com/en/tool/universe-type-cast",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/type-cast",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Animer couleur, taille, position et rotation du texte par caractère ou par mot.",
+    "description_en": "Animate text colour, size, position and rotation by character or word."
+  },
+  {
+    "name": "Universe Type On",
+    "slug": "universe-type-on",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-type-on",
+    "url_en": "https://tooltrim.com/en/tool/universe-type-on",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/type-on",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Révéler un texte caractère par caractère avec un rendu de saisie informatique.",
+    "description_en": "Reveal text character by character with a computer-typing effect."
+  },
+  {
+    "name": "Universe Typographic",
+    "slug": "universe-typographic",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-typographic",
+    "url_en": "https://tooltrim.com/en/tool/universe-typographic",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/typographic",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Combiner formes et texte pour créer des animations typographiques.",
+    "description_en": "Combine shapes and text to create typographic animations."
+  },
+  {
+    "name": "Universe VHS",
+    "slug": "universe-vhs",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-vhs",
+    "url_en": "https://tooltrim.com/en/tool/universe-vhs",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/vhs",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Recréer la couleur, les déformations et les incrustations d'une cassette vidéo VHS.",
+    "description_en": "Recreate VHS tape colour, distortion and on-screen overlays."
+  },
+  {
+    "name": "Universe Blur",
+    "slug": "universe-blur",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-blur",
+    "url_en": "https://tooltrim.com/en/tool/universe-blur",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-blur.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Appliquer un flou réglable en rayon et en direction, notamment en espace gamma linéaire.",
+    "description_en": "Apply blur with radius and direction controls, including in linear gamma space."
+  },
+  {
+    "name": "Universe Chromatic Glow",
+    "slug": "universe-chromatic-glow",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-chromatic-glow",
+    "url_en": "https://tooltrim.com/en/tool/universe-chromatic-glow",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-chromatic-glow.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajouter des halos multicolores aux hautes lumières ou aux titres.",
+    "description_en": "Add multicoloured glows to highlights or titles."
+  },
+  {
+    "name": "Universe Compound Blur",
+    "slug": "universe-compound-blur",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-compound-blur",
+    "url_en": "https://tooltrim.com/en/tool/universe-compound-blur",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-compound-blur.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Moduler le flou d'une image avec la luminance d'un autre calque.",
+    "description_en": "Control image blur using another layer's luminance."
+  },
+  {
+    "name": "Universe Edge Glow",
+    "slug": "universe-edge-glow",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-edge-glow",
+    "url_en": "https://tooltrim.com/en/tool/universe-edge-glow",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-edge-glow.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Faire ressortir les contours d'une image avec un halo lumineux.",
+    "description_en": "Highlight image edges with a luminous glow."
+  },
+  {
+    "name": "Universe Glo Fi II",
+    "slug": "universe-glo-fi-ii",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-glo-fi-ii",
+    "url_en": "https://tooltrim.com/en/tool/universe-glo-fi-ii",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi-ii.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Animer un halo fractal organique autour d'un texte.",
+    "description_en": "Animate an organic fractal glow around text."
+  },
+  {
+    "name": "Universe Glo Fi",
+    "slug": "universe-glo-fi",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-glo-fi",
+    "url_en": "https://tooltrim.com/en/tool/universe-glo-fi",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer un halo de texte animé à partir de motifs fractals.",
+    "description_en": "Create animated text glow using fractal patterns."
+  },
+  {
+    "name": "Universe Point Zoom",
+    "slug": "universe-point-zoom",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-point-zoom",
+    "url_en": "https://tooltrim.com/en/tool/universe-point-zoom",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-point-zoom.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Combiner un flou de zoom et une lueur pour simuler une projection lumineuse.",
+    "description_en": "Combine zoom blur and glow to suggest a light projection."
+  },
+  {
+    "name": "Universe Spot Blur",
+    "slug": "universe-spot-blur",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-spot-blur",
+    "url_en": "https://tooltrim.com/en/tool/universe-spot-blur",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-spot-blur.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Flouter l'intérieur ou l'extérieur d'une zone rectangulaire ou elliptique.",
+    "description_en": "Blur inside or outside a rectangular or elliptical region."
+  },
+  {
+    "name": "Universe Fractal Background",
+    "slug": "universe-fractal-background",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-fractal-background",
+    "url_en": "https://tooltrim.com/en/tool/universe-fractal-background",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Generators-fractal-background.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Générer des fonds fractals colorés et animés en boucle.",
+    "description_en": "Generate colourful, looping fractal backgrounds."
+  },
+  {
+    "name": "Universe Gradient Ramp",
+    "slug": "universe-gradient-ramp",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-gradient-ramp",
+    "url_en": "https://tooltrim.com/en/tool/universe-gradient-ramp",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Generators-gradient-ramp.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer un dégradé de deux ou trois couleurs avec contrôle de transparence et de bruit.",
+    "description_en": "Create two- or three-colour gradients with transparency and noise controls."
+  },
+  {
+    "name": "Universe Soft Gradient Background",
+    "slug": "universe-soft-gradient-background",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-soft-gradient-background",
+    "url_en": "https://tooltrim.com/en/tool/universe-soft-gradient-background",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Generators-soft-gradient-background.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer des arrière-plans en dégradé animé avec bruit et texture.",
+    "description_en": "Create animated gradient backgrounds with noise and texture."
+  },
+  {
+    "name": "Universe Spectralicious",
+    "slug": "universe-spectralicious",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-spectralicious",
+    "url_en": "https://tooltrim.com/en/tool/universe-spectralicious",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Generators-spectralicious.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Composer un dégradé à six couleurs et régler la netteté de ses zones de transition.",
+    "description_en": "Build a six-colour gradient and adjust the sharpness of its transitions."
+  },
+  {
+    "name": "Universe Turbulence Noise",
+    "slug": "universe-turbulence-noise",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-turbulence-noise",
+    "url_en": "https://tooltrim.com/en/tool/universe-turbulence-noise",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Generators-turbulence-noise.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Générer des motifs de bruit animés avec paramètres de turbulence.",
+    "description_en": "Generate animated noise patterns with turbulence controls."
+  },
+  {
+    "name": "Universe Blinds",
+    "slug": "universe-blinds",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-blinds",
+    "url_en": "https://tooltrim.com/en/tool/universe-blinds",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_blinds.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Révéler le plan suivant en faisant pivoter des bandes horizontales ou verticales.",
+    "description_en": "Reveal the next shot by rotating horizontal or vertical strips."
+  },
+  {
+    "name": "Universe Bokeh Transition",
+    "slug": "universe-bokeh-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-bokeh-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-bokeh-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_bokeh-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Passer d'un plan à l'autre par un flou de type bokeh.",
+    "description_en": "Move between shots through a bokeh-style blur."
+  },
+  {
+    "name": "Universe Camera Shake Transition",
+    "slug": "universe-camera-shake-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-camera-shake-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-camera-shake-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_camera-shake-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Associer un changement de plan à une secousse de caméra simulée.",
+    "description_en": "Combine a shot change with simulated camera shake."
+  },
+  {
+    "name": "Universe Carousel Transition",
+    "slug": "universe-carousel-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-carousel-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-carousel-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_carousel-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler un changement de diapositive avec une esthétique rétro.",
+    "description_en": "Simulate a slide-projector change with a retro treatment."
+  },
+  {
+    "name": "Universe Channel Blur",
+    "slug": "universe-channel-blur",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-channel-blur",
+    "url_en": "https://tooltrim.com/en/tool/universe-channel-blur",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_channel-blur.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer une transition en floutant séparément les canaux de couleur.",
+    "description_en": "Create a transition by blurring colour channels separately."
+  },
+  {
+    "name": "Universe Channel Surf",
+    "slug": "universe-channel-surf",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-channel-surf",
+    "url_en": "https://tooltrim.com/en/tool/universe-channel-surf",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_channel-surf.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Passer d'un plan à l'autre comme lors d'un changement de chaîne sur un téléviseur analogique.",
+    "description_en": "Switch between shots like changing channels on an analog television."
+  },
+  {
+    "name": "Universe Clock Wipe",
+    "slug": "universe-clock-wipe",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-clock-wipe",
+    "url_en": "https://tooltrim.com/en/tool/universe-clock-wipe",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_clock-wipe.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Révéler un plan avec un balayage radial autour du centre de l'image.",
+    "description_en": "Reveal a shot with a radial wipe around the image centre."
+  },
+  {
+    "name": "Universe Color Mosaic Transition",
+    "slug": "universe-color-mosaic",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-color-mosaic",
+    "url_en": "https://tooltrim.com/en/tool/universe-color-mosaic",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_color-mosaic.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Relier deux plans avec une mosaïque colorée personnalisable.",
+    "description_en": "Connect two shots with a customisable coloured mosaic."
+  },
+  {
+    "name": "Universe Color Stripe",
+    "slug": "universe-color-stripe",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-color-stripe",
+    "url_en": "https://tooltrim.com/en/tool/universe-color-stripe",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_color-stripe.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Faire traverser l'écran par des bandes colorées pour révéler le plan suivant.",
+    "description_en": "Sweep colour bands across the screen to reveal the next shot."
+  },
+  {
+    "name": "Universe Cube",
+    "slug": "universe-cube",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-cube",
+    "url_en": "https://tooltrim.com/en/tool/universe-cube",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_cube.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Placer deux plans sur les faces d'un cube et passer de l'un à l'autre par rotation.",
+    "description_en": "Place shots on cube faces and rotate between them."
+  },
+  {
+    "name": "Universe Diamond Wave",
+    "slug": "universe-diamond-wave",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-diamond-wave",
+    "url_en": "https://tooltrim.com/en/tool/universe-diamond-wave",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_diamond-wave.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Découper l'image en losanges qui pivotent pour révéler un autre plan.",
+    "description_en": "Split an image into rotating diamond segments to reveal another shot."
+  },
+  {
+    "name": "Universe Dolly Fade",
+    "slug": "universe-dolly-fade",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-dolly-fade",
+    "url_en": "https://tooltrim.com/en/tool/universe-dolly-fade",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_dolly-fade.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Combiner un déplacement en profondeur et un fondu entre deux plans.",
+    "description_en": "Combine depth movement and fading between two shots."
+  },
+  {
+    "name": "Universe Exposure Blur",
+    "slug": "universe-exposure-blur-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-exposure-blur-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-exposure-blur-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_exposure-blur.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer une transition qui associe flou et hausse d'exposition.",
+    "description_en": "Create a transition combining blur and increased exposure."
+  },
+  {
+    "name": "Universe Film Transition",
+    "slug": "universe-film-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-film-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-film-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_film-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Insérer une transition de type amorce ou compte à rebours de pellicule.",
+    "description_en": "Insert a film-leader or film-countdown-style transition."
+  },
+  {
+    "name": "Universe Flicker Cut",
+    "slug": "universe-flicker-cut",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-flicker-cut",
+    "url_en": "https://tooltrim.com/en/tool/universe-flicker-cut",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_flicker-cut.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Alterner rapidement entre deux plans ou une couleur pour créer une transition clignotante.",
+    "description_en": "Rapidly alternate between shots or a solid colour for a flickering transition."
+  },
+  {
+    "name": "Universe Fold",
+    "slug": "universe-fold",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-fold",
+    "url_en": "https://tooltrim.com/en/tool/universe-fold",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_fold.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Plier un plan sur lui-même tout en dépliant le suivant.",
+    "description_en": "Fold one shot away while unfolding the next."
+  },
+  {
+    "name": "Universe Glitch Transition",
+    "slug": "universe-glitch-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-glitch-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-glitch-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_glitch-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Relier deux plans par des ruptures numériques et des artefacts de compression.",
+    "description_en": "Connect shots through digital breakup and compression artefacts."
+  },
+  {
+    "name": "Universe Inside Cube",
+    "slug": "universe-inside-cube",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-inside-cube",
+    "url_en": "https://tooltrim.com/en/tool/universe-inside-cube",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_inside-cube.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Faire tourner les plans sur les faces intérieures d'un cube virtuel.",
+    "description_en": "Rotate shots on the inner faces of a virtual cube."
+  },
+  {
+    "name": "Universe Knoll Light Transition",
+    "slug": "universe-knoll-light-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-knoll-light-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-knoll-light-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_knoll-light-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Utiliser un flare animé pour masquer le passage d'un plan à l'autre.",
+    "description_en": "Use an animated lens flare to bridge a shot change."
+  },
+  {
+    "name": "Universe Linear Wipe",
+    "slug": "universe-linear-wipe",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-linear-wipe",
+    "url_en": "https://tooltrim.com/en/tool/universe-linear-wipe",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_linear-wipe.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer un balayage linéaire avec origine, couleur et douceur de bord réglables.",
+    "description_en": "Create a linear wipe with adjustable origin, colour and edge softness."
+  },
+  {
+    "name": "Universe Retrograde Transition",
+    "slug": "universe-retrograde-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-retrograde-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-retrograde-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_retrograde-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler le défilement d'une bobine de film lors du changement de plan.",
+    "description_en": "Simulate a film reel scrolling during a shot change."
+  },
+  {
+    "name": "Universe Rubix Cube",
+    "slug": "universe-rubix-cube",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-rubix-cube",
+    "url_en": "https://tooltrim.com/en/tool/universe-rubix-cube",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_rubix-cube.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Segmenter un cube vidéo et faire pivoter ses blocs en directions opposées.",
+    "description_en": "Segment a video cube and rotate its blocks in opposing directions."
+  },
+  {
+    "name": "Universe Shape Wipe",
+    "slug": "universe-shape-wipe",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-shape-wipe",
+    "url_en": "https://tooltrim.com/en/tool/universe-shape-wipe",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_shape-wipe.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Utiliser une forme réglable comme masque de transition entre deux vidéos.",
+    "description_en": "Use an adjustable shape as a transition mask between videos."
+  },
+  {
+    "name": "Universe Slide",
+    "slug": "universe-slide",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-slide",
+    "url_en": "https://tooltrim.com/en/tool/universe-slide",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_slide.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Faire glisser un plan hors du cadre pour révéler le suivant.",
+    "description_en": "Slide a shot out of frame to reveal the next one."
+  },
+  {
+    "name": "Universe Soft Edge Wipe",
+    "slug": "universe-soft-edge-wipe",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-soft-edge-wipe",
+    "url_en": "https://tooltrim.com/en/tool/universe-soft-edge-wipe",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_soft-edge-wipe.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Mélanger deux plans avec un balayage linéaire à bord progressif.",
+    "description_en": "Blend shots through a linear wipe with a feathered edge."
+  },
+  {
+    "name": "Universe Spectralicious Transition",
+    "slug": "universe-spectralicious-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-spectralicious-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-spectralicious-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_spectralicious-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Passer entre deux plans à l'aide d'une carte de couleurs animée.",
+    "description_en": "Move between shots using an animated colour map."
+  },
+  {
+    "name": "Universe Stretch",
+    "slug": "universe-stretch-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-stretch-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-stretch-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_stretch.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Étirer le premier plan pendant que le suivant se contracte pour prendre sa place.",
+    "description_en": "Stretch the first shot away as the next contracts into place."
+  },
+  {
+    "name": "Universe Swish Pan",
+    "slug": "universe-swish-pan",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-swish-pan",
+    "url_en": "https://tooltrim.com/en/tool/universe-swish-pan",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_swish-pan.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler un mouvement panoramique rapide entre deux plans.",
+    "description_en": "Simulate a fast camera pan between shots."
+  },
+  {
+    "name": "Universe Triangle Wave",
+    "slug": "universe-triangle-wave",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-triangle-wave",
+    "url_en": "https://tooltrim.com/en/tool/universe-triangle-wave",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_triangle-wave.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Révéler le plan suivant par une vague de triangles en rotation.",
+    "description_en": "Reveal the next shot through a wave of rotating triangles."
+  },
+  {
+    "name": "Universe Turbulence Transition",
+    "slug": "universe-turbulence-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-turbulence-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-turbulence-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_turbulence-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer un fondu piloté par un motif fractal de luminance.",
+    "description_en": "Create a dissolve driven by a fractal luminance pattern."
+  },
+  {
+    "name": "Universe Unfold",
+    "slug": "universe-unfold",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-unfold",
+    "url_en": "https://tooltrim.com/en/tool/universe-unfold",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_unfold.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Faire sortir un plan et déplier le suivant dans le cadre.",
+    "description_en": "Move one shot out and unfold the next into the frame."
+  },
+  {
+    "name": "Universe VHS Transition",
+    "slug": "universe-vhs-transition",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-vhs-transition",
+    "url_en": "https://tooltrim.com/en/tool/universe-vhs-transition",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_vhs-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler une bande VHS réenregistrée pendant un changement de plan.",
+    "description_en": "Simulate overwritten VHS tape during a shot change."
+  },
+  {
+    "name": "Universe Warp",
+    "slug": "universe-warp",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-warp",
+    "url_en": "https://tooltrim.com/en/tool/universe-warp",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Transitions_warp-transition.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Déformer progressivement deux images pour effectuer la transition.",
+    "description_en": "Progressively warp two images to transition between them."
+  },
+  {
+    "name": "Universe Camera Shake",
+    "slug": "universe-camera-shake",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-camera-shake",
+    "url_en": "https://tooltrim.com/en/tool/universe-camera-shake",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Utilities_camera-shake.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajouter des secousses et du flou de mouvement à une prise de vue stable.",
+    "description_en": "Add camera shake and motion blur to steady footage."
+  },
+  {
+    "name": "Universe Fisheye Fixer",
+    "slug": "universe-fisheye-fixer",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-fisheye-fixer",
+    "url_en": "https://tooltrim.com/en/tool/universe-fisheye-fixer",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Utilities_fisheye-fixer.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Corriger une déformation de type fisheye dans une vidéo.",
+    "description_en": "Correct fisheye-style distortion in footage."
+  },
+  {
+    "name": "Universe Picture in Picture",
+    "slug": "universe-picture-in-picture",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-picture-in-picture",
+    "url_en": "https://tooltrim.com/en/tool/universe-picture-in-picture",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Utilities_picture-in-picture.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Composer un plan secondaire dans le cadre d'une vidéo principale.",
+    "description_en": "Compose a secondary shot inside the main video frame."
+  },
+  {
+    "name": "Universe Socialize",
+    "slug": "universe-socialize",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-socialize",
+    "url_en": "https://tooltrim.com/en/tool/universe-socialize",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Utilities_socialize.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Préparer le cadrage d'une composition pour différents formats de réseaux sociaux.",
+    "description_en": "Prepare composition framing for different social media formats."
+  },
+  {
+    "name": "Universe Unmult",
+    "slug": "universe-unmult",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-unmult",
+    "url_en": "https://tooltrim.com/en/tool/universe-unmult",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Utilities_unmult.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Transformer un fond noir en transparence pour intégrer fumée, feu ou autres éléments filmés.",
+    "description_en": "Turn a black background into transparency to composite smoke, fire or other filmed elements."
+  },
+  {
+    "name": "Universe Multitone",
+    "slug": "universe-multitone",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-multitone",
+    "url_en": "https://tooltrim.com/en/tool/universe-multitone",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_multitone.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Remapper les tons d'une image vers une palette de couleurs stylisée.",
+    "description_en": "Remap image tones into a stylised colour palette."
+  },
+  {
+    "name": "Universe Long Shadow",
+    "slug": "universe-long-shadow",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-long-shadow",
+    "url_en": "https://tooltrim.com/en/tool/universe-long-shadow",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_long-shadow.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Ajouter une ombre allongée à un texte ou à un élément graphique.",
+    "description_en": "Add an extended shadow to text or graphics."
+  },
+  {
+    "name": "Universe MisFire",
+    "slug": "universe-misfire",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-misfire",
+    "url_en": "https://tooltrim.com/en/tool/universe-misfire",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_misfire.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Reproduire des défauts de pellicule pour vieillir un plan numérique.",
+    "description_en": "Reproduce film imperfections to age a digital shot."
+  },
+  {
+    "name": "Universe Noir",
+    "slug": "universe-noir-moderne",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-noir-moderne",
+    "url_en": "https://tooltrim.com/en/tool/universe-noir-moderne",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_noir.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Créer un traitement monochrome et contrôler le contraste de l'image.",
+    "description_en": "Create a monochrome treatment and control image contrast."
+  },
+  {
+    "name": "Cinema 4D Lite",
+    "slug": "cinema-4d-lite",
+    "url_fr": "https://tooltrim.com/fr/tool/cinema-4d-lite",
+    "url_en": "https://tooltrim.com/en/tool/cinema-4d-lite",
+    "website": "https://www.maxon.net/en/cinema-4d/features/cineware-for-after-effects",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à After Effects. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Version limitée de Cinema 4D accessible depuis After Effects pour créer des scènes 3D.",
+    "description_en": "A limited Cinema 4D edition accessed through After Effects for creating 3D scenes."
+  },
+  {
+    "name": "Echospace",
+    "slug": "red-giant-echospace",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-echospace",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-echospace",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/motion-graphics/echospace",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Dupliquer des calques 3D et décaler leurs animations pour créer un mouvement en cascade.",
+    "description_en": "Duplicate 3D layers and offset their animation to create cascading motion."
+  },
+  {
+    "name": "Horizon",
+    "slug": "red-giant-horizon",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-horizon",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-horizon",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/horizon",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Placer un fond panoramique à 360 degrés qui suit la caméra 3D d'After Effects.",
+    "description_en": "Place a 360-degree background that responds to the After Effects 3D camera."
+  },
+  {
+    "name": "Universe Logo Motion",
+    "slug": "universe-logo-motion",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-logo-motion",
+    "url_en": "https://tooltrim.com/en/tool/universe-logo-motion",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/universe/logo-motion",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Animer l'entrée, la présence et la sortie d'un logo ou d'un calque de texte.",
+    "description_en": "Animate the entrance, hold and exit of a logo or text layer."
+  },
+  {
+    "name": "Lux",
+    "slug": "red-giant-lux",
+    "url_fr": "https://tooltrim.com/fr/tool/red-giant-lux",
+    "url_en": "https://tooltrim.com/en/tool/red-giant-lux",
+    "website": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/lux",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Rendre visibles les faisceaux des lumières ponctuelles et spots d'une scène After Effects.",
+    "description_en": "Make point and spot lights visible as volumetric beams in an After Effects scene."
+  },
+  {
+    "name": "Universe Halftone Dither",
+    "slug": "universe-halftone-dither",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-halftone-dither",
+    "url_en": "https://tooltrim.com/en/tool/universe-halftone-dither",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Simuler une trame d'impression avec des points dont la forme et la taille restent réglables.",
+    "description_en": "Simulate print halftoning with adjustable dot shape and size."
+  },
+  {
+    "name": "Universe Ordered Dither",
+    "slug": "universe-ordered-dither",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-ordered-dither",
+    "url_en": "https://tooltrim.com/en/tool/universe-ordered-dither",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Réduire les couleurs d'une image à l'aide d'un motif de tramage régulier.",
+    "description_en": "Reduce image colours using a regular dithering pattern."
+  },
+  {
+    "name": "Universe Threshold Dither",
+    "slug": "universe-threshold-dither",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-threshold-dither",
+    "url_en": "https://tooltrim.com/en/tool/universe-threshold-dither",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Transformer les niveaux de l'image en zones de couleur à partir de seuils.",
+    "description_en": "Turn image levels into colour regions using thresholds."
+  },
+  {
+    "name": "Universe Error Diffuse Dither",
+    "slug": "universe-error-diffuse-dither",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-error-diffuse-dither",
+    "url_en": "https://tooltrim.com/en/tool/universe-error-diffuse-dither",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Distribuer les erreurs de quantification entre pixels pour créer un tramage à palette réduite.",
+    "description_en": "Distribute quantisation error between pixels to dither a limited palette."
+  },
+  {
+    "name": "Universe Custom Dither",
+    "slug": "universe-custom-dither",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-custom-dither",
+    "url_en": "https://tooltrim.com/en/tool/universe-custom-dither",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Personnaliser un rendu tramé pour créer une esthétique de pixel art.",
+    "description_en": "Customise a dithered treatment for a pixel-art aesthetic."
+  },
+  {
+    "name": "Universe Palettes",
+    "slug": "universe-palettes",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-palettes",
+    "url_en": "https://tooltrim.com/en/tool/universe-palettes",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Limiter et remapper les couleurs d'une image avec une palette choisie.",
+    "description_en": "Limit and remap image colours through a chosen palette."
+  },
+  {
+    "name": "Cineware pour After Effects",
+    "slug": "cineware-for-after-effects",
+    "url_fr": "https://tooltrim.com/fr/tool/cineware-for-after-effects",
+    "url_en": "https://tooltrim.com/en/tool/cineware-for-after-effects",
+    "website": "https://www.maxon.net/en/cinema-4d/features/cineware-for-after-effects",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à logiciels hôtes compatibles. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Intégration de scènes Cinema 4D dans After Effects, avec accès à Cinema 4D Lite.",
+    "description_en": "Cinema 4D scene integration in After Effects, including access to Cinema 4D Lite."
+  },
+  {
+    "name": "Cineware pour Illustrator",
+    "slug": "cineware-for-illustrator",
+    "url_fr": "https://tooltrim.com/fr/tool/cineware-for-illustrator",
+    "url_en": "https://tooltrim.com/en/tool/cineware-for-illustrator",
+    "website": "https://www.maxon.net/en/cinema-4d/features/cineware-for-illustrator",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à logiciels hôtes compatibles. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Manipulation de modèles 3D Cinema 4D dans des compositions Adobe Illustrator.",
+    "description_en": "Work with Cinema 4D models inside Adobe Illustrator artwork."
+  },
+  {
+    "name": "Cineware pour Unreal Engine",
+    "slug": "cineware-for-unreal",
+    "url_fr": "https://tooltrim.com/fr/tool/cineware-for-unreal",
+    "url_en": "https://tooltrim.com/en/tool/cineware-for-unreal",
+    "website": "https://www.maxon.net/en/cineware",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à logiciels hôtes compatibles. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Passerelle pour transférer des scènes Cinema 4D vers Unreal Engine.",
+    "description_en": "A bridge for transferring Cinema 4D scenes into Unreal Engine."
+  },
+  {
+    "name": "Redshift for Architects",
+    "slug": "redshift-for-architects",
+    "url_fr": "https://tooltrim.com/fr/tool/redshift-for-architects",
+    "url_en": "https://tooltrim.com/en/tool/redshift-for-architects",
+    "website": "https://www.maxon.net/en/redshift-for-architects",
+    "category": "creation",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à bêta Redshift for Architects. Vérifie les conditions de la formule."
+    },
+    "description_fr": "Rendu architectural Redshift intégré aux logiciels BIM compatibles, actuellement proposé en bêta.",
+    "description_en": "Redshift architectural rendering integrated into compatible BIM applications, currently offered as a beta."
+  },
+  {
+    "name": "Universe Prism Displacement",
+    "slug": "universe-prism-displacement",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-prism-displacement",
+    "url_en": "https://tooltrim.com/en/tool/universe-prism-displacement",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Distortions_prism-displacement.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Déformer une vidéo en séparant ses composantes colorées comme à travers un prisme.",
+    "description_en": "Distort footage by separating colour components as though through a prism."
+  },
+  {
+    "name": "Universe RGB Separation",
+    "slug": "universe-rgb-separation",
+    "url_fr": "https://tooltrim.com/fr/tool/universe-rgb-separation",
+    "url_en": "https://tooltrim.com/en/tool/universe-rgb-separation",
+    "website": "https://help.maxon.net/rg/en-us/Content/html/Distortions_rgb-separation.html",
+    "category": "creation",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "description_fr": "Décaler séparément les canaux rouge, vert et bleu d'une image.",
+    "description_en": "Offset the red, green and blue image channels separately."
+  },
+  {
+    "name": "Maxon App",
+    "slug": "maxon-app",
+    "url_fr": "https://tooltrim.com/fr/tool/maxon-app",
+    "url_en": "https://tooltrim.com/en/tool/maxon-app",
+    "website": "https://www.maxon.net/en/downloads",
+    "category": "creation",
+    "pricing": {
+      "free": "Gratuit.",
+      "paid": ""
+    },
+    "description_fr": "Gestionnaire d'installation, de mises à jour et de licences pour les produits Maxon.",
+    "description_en": "Installation, update and licence manager for Maxon products."
   }
 ]

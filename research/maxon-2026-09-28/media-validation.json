@@ -1,0 +1,2329 @@
+{
+  "checkedOn": "2026-09-28T12:46:40.582Z",
+  "total": 387,
+  "bad": [],
+  "results": [
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Who-Maxon-One-is-for-1-motion-designers.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1803162
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/MaxonOne-icon_100_px.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 14253
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Who-Maxon-One-is-for-2a-3d-generalists.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1435745
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/C4D_icon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 3256
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Hero_Banner-Netflix_-Super_Very_More-gradient.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1176484
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Hero_banner-1.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1086645
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Built_the_way_you_create-3D-artists.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1845691
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/Built_the_way_you_scuplt-Character_Creature_Artists.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1268132
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 3236
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_Hero_banner-1.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1158967
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/Built_the_way_you_scuplt-Digital_Sculptors_Concept_Artists.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1874172
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Built_the_way_you_create-Motion_designers.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2182532
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 1956
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 1274
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift-Hero-banner-gradient-new.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 796635
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Built_the_way_you-2-Lightining_look.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1320686
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Built_the_way_you-1-Motion_designers.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 940641
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Red-Giant-Hero_banner-AUV_Creative_darker.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1192834
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Built_the_way_you-3-VFX-Artists.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1541986
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Built_the_way_you-1-Motion_designers.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1768154
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Autograph_Hero-banner-Still_from_video.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1291014
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Autograph-Horizontal.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 4279
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Motion-Graphics_Streamlined_tools.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 731966
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Motion-Graphics_Responsive_Design.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1390036
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush-for-iPad-Highly-Customizable-UI-Tomas_Wittelsbach.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2191389
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Cinebench-Horizontal.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 5979
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Maxon_Cinebench_2026_UI_Desktop.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1251643
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush-for-iPad-Hero-Still_01.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1690479
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Maxon_Cinebench_2026_UI_Laptop.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 958982
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush-for-iPad-Improved-User-Experience-J_Hill.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1786973
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 6999
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Cinema_4D_Inside_After_Effects_Cineware_After_Effects.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 646618
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Capsules/Capsules-Dec_2024_Hero_Banner.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 861544
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Capsules/Capsules-vertical.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 9106
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Cineware.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 593526
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Unreal_02.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 821902
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-Studio/Maxon_Studio-banner_202509.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1418553
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Capsules_Substance_Materials_2024_02.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1424690
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-Studio/MaxonStudio_Bento.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1211164
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Laubwerk-Capsules_page.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2407986
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-Studio/Maxon_Studio-Create_Page.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 464986
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Moves-Inline-Vertical-240px.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 15051
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_GSA_HERO.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 673769
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Moves-by-Maxon-Header-Image_3.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 323763
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_icon.svg",
+      "status": 200,
+      "type": "image/svg+xml",
+      "bytes": 1501
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Body.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 482274
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Facial.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 645442
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_Texturize.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2477273
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_Bokeh_2024.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 949601
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 841413
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Territory_Nightflyers.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 761629
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic-Bullet-Looks-2024-loop.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 886978
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 735277
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Looks_2024_01.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 690599
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 713693
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Looks_September_2023_Presets.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1371427
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Florian_Renner__-Magnatron-035.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 889108
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Mech.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2694162
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Gleann_Cineware_ae.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 121020
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_2023_03.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1439715
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Alex_Maltsev__Dope_6.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 949007
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Illlustrator_primitives_v2.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 111231
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Illlustrator_C4D_Globe.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 8392
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ArchViz/Core_benefits-seamless_integration.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2124411
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-Banner_202512.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1386586
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ArchViz/Redshift-architects-hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1364407
+    },
+    {
+      "url": "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_license-status.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 48267
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ArchViz/Powerful_features_Ai_search-banner.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1364705
+    },
+    {
+      "url": "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_groups.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 149117
+    },
+    {
+      "url": "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_three-dots.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 14851
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_3D_Stroke_Motion_Graphics.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 60097
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_3D_Stroke_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 100929
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_3D_Stroke_Repeater.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 95394
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_6.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 960243
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 983477
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 989225
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_2.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1081327
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_4.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1031257
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 358369
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Suite_2_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 420693
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 362582
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun_Shapes_and_Lines.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1351739
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club_Downgrade.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 282243
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Bang_UI.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 640924
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Bang_Alignment.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2822697
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1114510
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 433356
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_Take_Control_in_PrPro.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 542152
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_Shape.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1028332
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_2024_01.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 602948
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 553739
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 238897
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Chromatic_Displacement_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 10487604
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration_Centerpoint.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 267605
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel_10_Looks.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 357601
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Chromatic_Displacement.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 512636
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Chromatown_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 114973
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1089549
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Colorista_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1746919
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Chromatic_Displacement_VFX.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 452845
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Chromatown_Chroma_Style.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 653510
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Colorista_UI.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 561112
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Cosmo_Hero_2.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1170034
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Denoiser_Before_3.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1211496
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Colorista_Guided_Color_Correction.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1102059
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Cosmo_After.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 365722
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Cosmo_Before.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 604314
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Denoiser.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1446452
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/DepthGen-hero_banner.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 671196
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Echospace_AE_Step_Repeat.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 37872
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Denoiser_After_3.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 308615
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Getting_started_DepthGen_option_3.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 297774
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Echospace.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 355132
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/DepthGen-banner-1.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2043336
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto_Glows.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 401274
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_6.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1033253
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1246649
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto_Animated.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 220468
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 902745
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_4.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1750842
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 445109
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Film_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2512492
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Film_Stock.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 107566
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Film_Chemistry.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 161640
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher_Recover_Shadows.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2151636
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 371486
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Form_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2674176
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Maxon_Red_Giant_Geo_Header.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 447557
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Form-banner-presets-February-2025.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 601154
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Form_Immortal_Particle_Grids.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1371353
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Maxon_Red_Giant_Geo_Model_Library.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 576187
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Geo-whats-new-february-2025.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1232690
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer_6_Streaks.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 228522
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer_Strength_and_Color.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 344622
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Compression.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1280388
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 515907
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Logos.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 552779
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1228381
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow_Aberration.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 301650
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow_Inverse_Square.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 150093
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 256142
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 565800
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 713649
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16_Film_Stock_Options.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2907406
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 462770
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text_Encrypt_Decrypt.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 499323
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Halflight_Customizable.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 750678
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Halflight_Customize.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 726606
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HalfLight_Presets.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1414398
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 462770
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 455392
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 225662
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 417403
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave_Distortion_Ridged.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 500186
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix_Tutorial.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 146515
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix_II_Transmit.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 919216
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD_Presets.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1427753
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD_Create.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 629552
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Horizon_3D_Backgrounds.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 73248
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Horizon.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 308431
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_King_Pin_Planar_Tracker.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2338517
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1102453
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_King_Pin_Tracker_Demo.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1290326
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1101155
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_King_Pin_Gun_HUD.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1002916
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Lens_Distortion_Matcher_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 8467998
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ_Presets.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 627467
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 785738
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line_Stylize.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 246358
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1298115
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line_Create.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 204242
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Lens_Distortion_Matcher_After.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 875679
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 113091
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Lens_Distortion_Matcher_Before.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 708786
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 456049
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster_Reflection.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 762703
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion_Idle_Behavior.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 584109
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion_Instant_Mograph.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 915338
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 339031
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Lux_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 104174
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Lux_Visible_AE_Lights.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 32336
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Mir_Terrain_Landscape.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 14152882
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Mir_Motion_Graphics.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1573895
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Mir_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2947866
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 240084
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes_Blend.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 183248
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 949490
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Mojo_Instant_Hollywood.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 97974
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes_Combine.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 240348
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers_Currencies.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1183111
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Mojo_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1405645
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Mojo_Customize.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 199998
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight_Light_Textures.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 303258
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers_Animate.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1097893
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Optical_Glow_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 459817
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 205435
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Optical_Glow_Visual_Effects.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1132686
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Optical_Glow_Eye.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 8580423
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Red-Giant-ParametricCurve_NoHDRcurve-2.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 327675
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight_20_Overlays.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 520025
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Red-Giant-Parametric-Curve.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1118664
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Red-Giant-ParametricCurve_SomethingNew.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 170041
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe-Pixel_art_Hero-Image-dark.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1769200
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_Getting_Started_With_Pixel_Dither_2.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1626038
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Primatte_Keyer_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 694230
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Primatte_Keyer_Before.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 422541
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Primatte_Keyer_After.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 737788
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1103635
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso_Animate.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 918793
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe-Halftone-Dither.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 3617738
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso_Create.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1041156
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_HUD.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 222080
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Real_Lens_Flares_2024.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 144774
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_Presets.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 205618
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/ZoomLensVisualizationUI.jpeg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 145439
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_Combined_Forces.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 129076
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Reflection_Visual_Effects.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 779183
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX-Real-Lens-Flares-2D-Distance.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 347426
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Reflection_Fast.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 522099
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 807543
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 807543
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Reflection_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 644977
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Renoiser_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1806528
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 996489
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe_Perspective.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 865418
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Renoiser_After.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 580695
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 482971
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Renoiser_Before.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 218698
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde_Made_With_Film.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 298978
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text_Code_Warrior.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 722934
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 745038
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Shadow_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1285517
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 722934
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Shadow_Fast.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1251076
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Shadow_Visual_Effects.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 187500
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Shine_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 154594
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Shine_Natural_Light_Rays.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 102201
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Shine_Motion_Graphics.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 67039
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Tilt_Shift.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1421631
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Hero.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 2599429
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Sketchify_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 448847
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Blur_and_Focus.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1945391
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Sketchify_Ink_Outlines.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 914465
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Sound_Keys_Animation.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 102497
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Sketchify-Getting-Startet.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1483595
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Sound_Keys.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 217250
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Sound_Keys_Visual_Effects.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 86956
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Spot_Clone_Tracker_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1837397
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Starglow_Glimmer_Effects.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 122865
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Spot_Clone_Tracker_2024_01.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1117549
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Starglow.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 339826
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Spot_Clone_Tracker_Comparison.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 544226
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 300801
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Tao.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 157080
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Tao_Geometric_Shapes.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 105211
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Starglow_Presets.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2274611
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Grid.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 390702
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Getting_Started.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 400383
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Tao_Paths.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 72714
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 454170
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 702948
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 534946
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile_Complexity.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 454170
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 2475146
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_2.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1385843
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize_Texture_Options.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1898138
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Instant.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 524109
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_1.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1530944
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_3.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 965568
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 711083
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Idle_Behavior.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 418266
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 533863
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On_Customization.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 503329
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Beautiful.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 339317
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Action.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 364393
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 150100
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Typographic_Hero.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 332669
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Typographic_Social.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1523946
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS_Presets2.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 546037
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 754140
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On_Bring_It_On.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 286239
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Presets_Lower_Thirds.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 969613
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Chromatic_Glow_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 550129
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 163237
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blur_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 231861
+    },
+    {
+      "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS_Tape_Stock.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 335315
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Blur_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 31439
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Blur_BlurWidth.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 560370
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 6067
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Compound_Blur_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 414746
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_Threshold.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1086190
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 3441
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 126947
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Edge_Glow_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 425886
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 4675
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glo-Fi2_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 335368
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_default.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 754202
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_Scale.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 195558
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 134506
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_hero.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 108297
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_Position.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1089011
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_Feather.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1205583
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Point_Zoom_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 399305
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 54125
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spot_Blur_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 805674
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 120635
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 605725
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generators_GradientRamp_Xaxis.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 244890
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Scale.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 804864
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generators_GradientRamp_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 277707
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Contrast.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 484723
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Gradient_Ramp2_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 311111
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_SourceAdjust.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1191894
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 644312
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_BlendPoints.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 258674
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spectralicious_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 729643
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 255400
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Soft_Gradient_BG_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 876463
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 350184
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blinds_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 223855
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_hero2.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 755969
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 104697
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Turbulence_Noise_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 125507
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_Zoom.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 444147
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 242577
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ChannelBlur_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 209708
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 108229
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CarouselTrans_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 657788
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Select.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 14963
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ClockWipe_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 173847
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 74227
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FilmTransition_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 151044
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DollyFade_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 47659
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 63498
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DiamondWave_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 94675
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 346713
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Fold_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 77093
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 439395
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_KnollTrans_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 234711
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_LinearWipe_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 333835
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 129600
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 108796
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RubixCube_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 43453
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 147517
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 149241
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Slide_Presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 114875
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 37217
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 203708
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 100047
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TurbulenceTransition_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 267677
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 73869
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_stretch.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 40727
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SwishPan_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 47638
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Stretch_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 226004
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Camera_Shake_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 418511
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 323786
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_VHSTransition_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 585027
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_CP_Fisheye_Fixer_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 672233
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 53332
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_Scale.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 561954
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_FishFix_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 79098
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Picture_In_Picture_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 363306
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 115056
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/socialize_universe.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 62968
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_PicInPic_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 67373
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_FishFix_LensAngle.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 889253
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Unmult_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 113296
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_RatioWH.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 750341
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/mulitone_universe.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 65615
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 35348
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_Unmult.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 582179
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Multitone_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 206820
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Long-Shadow_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 91746
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 199664
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Noir_Moderne_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 202929
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_AllOn.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1506353
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Multitone_DuoTri.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1244259
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Misfire_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1085828
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_BWdither.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 587470
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 66679
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Noir_Venetian.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 563788
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Noir_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 74368
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Prism_Displacement_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 481478
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_PaletteDoggo.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1116476
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_RGB_Seperation_AR_universe.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 1429267
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_RGBSep_presets.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 224063
+    },
+    {
+      "url": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_RGBSep_Distortion.png",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 1155156
+    }
+  ]
+}

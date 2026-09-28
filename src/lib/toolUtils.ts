@@ -11,7 +11,7 @@ import { isPriceUndisclosed } from "@/lib/pricing";
 /** True if the tool's paid pricing is a one-time/perpetual license, not a subscription. */
 export function isOneTimePrice(tool: { pricing?: { paid?: string }; pricing_v5?: { compare_plan_kind?: string | null } | null }): boolean {
   return tool.pricing_v5?.compare_plan_kind === "one_time"
-    || /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
+    || (!tool.pricing_v5?.compare_plan_kind && /licence à vie|licence perp[ée]tuelle|one-?time|perpetual license|lifetime license/i.test(tool.pricing?.paid || ""));
 }
 
 /** Format a displayable price label ("16,80€" or "16,80€/mois"), without hiding observed decimals. */
@@ -22,6 +22,14 @@ export function formatPriceLabel(
   currency: Currency = "EUR",
   lang: string = "fr",
 ): string {
+  const access = tool.pricing_v5?.compare_plan_kind;
+  if (access === "included") return t(`Inclus dans ${tool.pricing_v5?.compare_plan_name || "la suite"}`, `Included in ${tool.pricing_v5?.compare_plan_name || "the suite"}`);
+  if (access === "discontinued") return t("Produit arrêté", "Discontinued");
+  if (access === "beta") return t("En bêta", "In beta");
+  const maxonAnnual = tool.pricing_v5?.source_domain === "maxon.net"
+    ? tool.pricing_v5.plans?.find((plan) => plan.isComparePlan && plan.billingPeriod === "annual" && plan.nativeAmount != null)
+    : null;
+  if (maxonAnnual) return `${formatCurrencyAmount(maxonAnnual.nativeAmount!, (maxonAnnual.nativeCurrency as Currency) || "EUR", lang)}/${t("an", "yr")}`;
   if (isOneTimePrice(tool) && price === 0) {
     return tool.pricing_v5?.compare_plan_name || t("Licence à vie", "Lifetime license");
   }

@@ -1,0 +1,21 @@
+{
+  "name": "Overlight",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_overlight.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:08.223Z",
+  "sha256": "dd1a2349bd032a07462ac7170bd7852e8c737f144b6b3b56359cbba7b6597ab3",
+  "paragraphs": [
+    "`",
+    "OverLight is a lens flare and light leak texture plug-in that makes it easy to apply washed-out glows and lens flares to your footage.",
+    "Apply any of several common light patterns to your compositions with OverLight's convenient presets. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "Once you select a preset, its name&#160;will automatically populate the OverLight Preset &#160;drop-down menu field. Alternatively, you can simply pick a preset from this pull-down and sidestep the Presets pop-up.",
+    "As with all other Universe tools, you can modify or create an OverLight look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_CP_Overlight_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_OverLight_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_OverLight_BlendModes.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_OverLight_Hue.png"
+  ]
+}

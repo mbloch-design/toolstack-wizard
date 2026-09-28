@@ -1,0 +1,18 @@
+{
+  "name": "Grain 16",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Color-grain-16.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:22.390Z",
+  "sha256": "dd6d3c61489c5c00851373df0826b526335d250e08467bdcb3a25a34962982b5",
+  "paragraphs": [
+    "Grain16 is real 16mm film grain you can easily add to your footage. Place Grain16 onto your clips to add the dynamic texture of authentic film.",
+    "Apply already-optimized Electrify motion patterns and color schemes to your text and images with lightning fast ease. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it. Note that these presets correlate to the five Grain Type options mentioned below.",
+    "As with all other Universe tools, you can modify or create a Glitch look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Grain16_hero.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Grain16_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Grain16_GrainOpacity.png"
+  ]
+}

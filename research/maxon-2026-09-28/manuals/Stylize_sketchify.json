@@ -1,0 +1,22 @@
+{
+  "name": "Sketchify",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_sketchify.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:11.396Z",
+  "sha256": "36f29fe3d22e34ad9febe551ad65d1f8a41a4bd701e796c2284aa693ff7abd7d",
+  "paragraphs": [
+    "Turn your video into living art. From pencil drawings to fine art on canvas, it's all possible with this fast tool. For those who miss the old Red Giant Toonit tool, your wait is over. Its replacement, Sketchify, is better than ever.",
+    "Sketchify's presets put over 20 different texture and color schemes at your fingertips. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Sketchify look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Sketchify.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Sketchify_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Sketchify_presprocess.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Sketchify_inkintensity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Sketchify_concrete.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Sketchify_cartoon.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Sketchify_colorize.png"
+  ]
+}

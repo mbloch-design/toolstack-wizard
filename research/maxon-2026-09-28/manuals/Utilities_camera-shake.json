@@ -1,0 +1,21 @@
+{
+  "name": "Camera Shake",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Utilities_camera-shake.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:25.352Z",
+  "sha256": "39398698927c3a2c108a1f8adeea327d595db38afbb5d178d021f807e819ef65",
+  "paragraphs": [
+    "Add simulated, realistic camera motion blur to your footage to emulate a simple wiggle or a violent earthquake.",
+    "Get your live-action effect off to a quick, stable start with Camera Shake's seven convenient presets. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Camera Shake look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Camera_Shake_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_Scale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_Rotation.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_TileEdges.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_Blur.png"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Hacker Text",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Text-hacker-text.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:40.199Z",
+  "sha256": "4d85dac4f82e47179c336ab130b956f4d337c77cb838943fe5feb3899618d992",
+  "paragraphs": [
+    "Universe Hacker Text transitions between two text inputs by altering individual characters and text lines.",
+    "Hacker Text presets deliver one-click shortcuts to get you various visually interesting means of scrambling and \"decrypting\"&#160;text lines. Find our presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Hacker Text look and then save it under its own name by pressing the Save Preset... button.",
+    "If you'd like a visual overview of the plugin before diving into this guide, we recommend giving our Cineversity tutorial a watch."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Universe-Hacker-Text_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_EditText.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_alignment.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_TextDirection.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_WipeRandom.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_Intro1.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_TransitionText.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_Outro.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_CustomChar.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_Filler.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_RandoCustomText.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_Flicker.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_Glow.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_GlowBoostLight.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_HackerText_ScanLines.png"
+  ]
+}

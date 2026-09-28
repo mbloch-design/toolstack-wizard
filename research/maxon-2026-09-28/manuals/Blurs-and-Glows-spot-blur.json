@@ -1,0 +1,21 @@
+{
+  "name": "Spot Blur",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-spot-blur.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:20.257Z",
+  "sha256": "36a1b61c5282fcb3f21dd89a7199414382aa88164d2384d23fdd320cd6bafb4d",
+  "paragraphs": [
+    "Blurs the area of the frame inside or outside a rectangle or ellipse.",
+    "Spot Blur provides eight presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Spot Blur look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spot_Blur_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_Feather.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_BlurSize.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_Angle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_InvertMask.png"
+  ]
+}

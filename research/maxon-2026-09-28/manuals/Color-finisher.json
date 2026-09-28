@@ -1,0 +1,20 @@
+{
+  "name": "Finisher",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Color-finisher.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:21.315Z",
+  "sha256": "f584db7ae610d6f5d7e384d09ee8d8bb2baf2de048adc603cffc6b541f0840b7",
+  "paragraphs": [
+    "Finisher makes it easy to dramatically improve DSLR footage image quality."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_CP_Finisher_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Finisher_settings.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Finisher_ConNone.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Finisher_ConEnh.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Finisher_Con.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Finisher_Detail.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Finisher_Filters.png"
+  ]
+}

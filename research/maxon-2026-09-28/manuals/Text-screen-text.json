@@ -1,0 +1,24 @@
+{
+  "name": "Screen Text",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Text-screen-text.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:42.350Z",
+  "sha256": "f596aa8fc65648175180270a36a5c4f2bdfe6fdf3f0db44c0d3706efe1de292e",
+  "paragraphs": [
+    "Universe Screen Text is designed to imitate text scrolling up a screen. The plugin can generate random text streams, or you can enter your own text and set up a text scroll. The scrolling text can slowly reveal itself as if it's being typed in. Alternatively, text lines can appear all at once, or one line can display at a time.",
+    "Screen Text presets deliver one-click shortcuts to get you to a convincing scroll of text lines. Find our presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Screen Text look and then save it under its own name by pressing the Save Preset... button.",
+    "If you'd like a visual overview of the plugin before diving into this guide, we recommend giving our Cineversity tutorial a watch."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Universe-Screen-Text_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_ScreenText_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_ScreenText_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_ScreenText_EditText.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_ScreenText_LineShiftStart.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_ScreenText_CursorColor.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_ScreenText_Glow.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_ScreenText_ScanLineSpacing.png"
+  ]
+}

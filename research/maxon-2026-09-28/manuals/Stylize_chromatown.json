@@ -1,0 +1,29 @@
+{
+  "name": "ChromaTown",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_chromatown.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:55.419Z",
+  "sha256": "6b3a69ec06cc5f269b0b715a3849cfe1622bf23141e09ba30b68ddf909e2b8b3",
+  "paragraphs": [
+    "Warping meets blur meets light rays meets chroma explosion with ChromaTown. Bend and warp the image with pseudo light rays, splitting the image into numerous colored subdivisions. Energize your text or video, or go wild and create stunning imagery from scratch.",
+    "ChromaTown offers a host of handy shortcuts that will make your text and imagery pop with drama. Locate ChromaTown's presets in the Red Giant Universe Dashboard (accessible via the blue Open Dashboard... button or the Choose a Preset... button below it).",
+    "As with all other Universe tools, you can modify or create a ChromaTown look and then save it under its own name by pressing the Save Preset... button.",
+    "ChromaTown is even better when used in conjunction with other Universe tools. Watch the following two-minute video to see what happens when we combine ChromaTown with Universe Turbulence Noise and Symbol Mapper .",
+    "OK, and maybe one more, this time combining ChromaTown with Universe Line and Turbulent Noise."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_hero2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_ChromaStyle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_Falloff.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_Completeness.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_CompletenessCenter.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_Color.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_StartPosition.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_Scale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_Rotation.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_ChromaticSpectrum.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_chromatown_Quality.png"
+  ]
+}

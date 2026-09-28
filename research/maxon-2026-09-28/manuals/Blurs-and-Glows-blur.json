@@ -1,0 +1,19 @@
+{
+  "name": "Blur",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-blur.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:08.441Z",
+  "sha256": "3b3ec903d8fd1c1703668c95bbd1129871bd5dcb5d3fb70f9d6b5ce9ffe0dd3d",
+  "paragraphs": [
+    "A simple, high quality blur effect that can work in linear gamma space and blur along a line with controls for angle and radius.",
+    "We're keeping it simple and sweet. Blur offers two presets to help get you fuzzy in just seconds. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "Want an example? Imagine you're traveling abroad on business. One polite drink after work turns into two. Next thing you know, you awake on the outskirts of Dubai blearily gazing up into camel nostrils. How would you convey this in video? Try keyframing the H&#160;Blur preset! Your browser does not support the video tag.",
+    "As with all other Universe tools, you can modify or create a Blur look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blur_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Blur_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Blur_BlurWidth.png"
+  ]
+}

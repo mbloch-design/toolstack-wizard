@@ -1,0 +1,27 @@
+{
+  "name": "VHS",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_vhs.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:39.134Z",
+  "sha256": "f93dc4c7e3ce19842a72b1b87f0f1138251809065d21e0693ccc8c5460f74383",
+  "paragraphs": [
+    "VHS gives you the look of real video tape from inside your favorite editing program. By simply dragging and dropping VHS onto your clip, you can quickly create the iconic look of '70s, '80s, and '90s home video. We used real analog source material to create the unique textures in VHS, which means that you can create the true color, distortion, and damage seen in old video.",
+    "Press play on any of our 18 ready-to-roll VHS&#160;presets. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a VHS look and then save it under its own name by pressing the Save Preset... button.",
+    "&#160;",
+    "*&#160; Image attribution:&#160;© Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons )",
+    "** We award 1000 bonus \"Boomer Points\" to anyone who knew that the device shown in this image is, in fact, a Betamax machine, not VHS. Please redeem your boomer points during your next visit to 1979."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_VHS_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_LumBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_ColorOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_ChannelOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_TapeNoise.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_TapeWrinkle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_Text.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_VHS_LUT.png"
+  ]
+}

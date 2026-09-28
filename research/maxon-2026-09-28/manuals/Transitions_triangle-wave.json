@@ -1,0 +1,32 @@
+{
+  "name": "Triangle Wave",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_triangle-wave.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:20.034Z",
+  "sha256": "b1f5fd4738932da95377762eb6cd93bbe9636aedaa087ecd1625ea335f2d4020",
+  "paragraphs": [
+    "A 3D transition that divides the layers into triangular segments which rotate in an offset fashion vertically or horizontally to reveal the second layer.",
+    "Four Triangle Wave presets mean waving goodbye to long effect setup times. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Triangle Wave look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_Tiles.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_Dolly.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_MotionBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_Spotlight.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_LightIntensity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_Cutoff.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_LightExponent.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_LightFactorConstant.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_CamRotate.png"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Edge Glow",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-edge-glow.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:12.714Z",
+  "sha256": "15539ac16e1732a6d409222de2261e0d2160ebbdca546279724b2a63b33d05e0",
+  "paragraphs": [
+    "Create a glowing effect on image edges and outlines. Perfect for titles and logos with controls for glow, brightness, saturation, and tint.",
+    "Edge Glow offers eight presets that apply ready-made combinations of the tool's key controls. Find these",
+    "via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create an Edge Glow look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Edge_Glow_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_default.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_Colorize.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_EdgeDetect.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_Brightnesst.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_compared.png"
+  ]
+}

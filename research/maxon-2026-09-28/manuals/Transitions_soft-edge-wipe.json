@@ -1,0 +1,27 @@
+{
+  "name": "Soft Edge Wipe",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_soft-edge-wipe.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:15.753Z",
+  "sha256": "3e67cc710e98a600f09b3c0b5fff80dcc911d3fe1088c12b69415fa7f02c7117",
+  "paragraphs": [
+    "A linear wipe transition with an adjustable feathered edge, used for transitioning between two layers of footage with a subtle blend. Soft Edge Wipe includes angle control and the ability to add a colored stroke as a part of the transition.",
+    "Universe Dashboard presets for Soft Edge Wipe make A-B linear transitions smooth, simple, and easy to set up. Just keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Soft Edge Wipe look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_EdgeStart.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_EdgeSoftness.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_Width0.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_Color.png"
+  ]
+}

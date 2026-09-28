@@ -1,0 +1,30 @@
+{
+  "name": "Warp",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_warp-transition.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:24.287Z",
+  "sha256": "264d23a85722dc499cff99c2f3e7a4c68b529b0a41d181db2ca8546f0d8c96be",
+  "paragraphs": [
+    "Transition seamlessly by warping two images from one image to the next in a fresh and fluid way.",
+    "Ready to beam up some easy but impressive presets for slides, swirls, and other creative transitions? Engage! Simply keyframe the Mix duration (see below)&#160;and tune to taste. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Warp&#160;Transition look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_SlideDirection.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_LensDistortion.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_ClipPosition.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_Scale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_ChannelRGB.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_RadialBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_ZoomBlur.png"
+  ]
+}

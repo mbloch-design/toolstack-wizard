@@ -6104,21 +6104,21 @@
     "slug": "cinema-4d",
     "name": "Cinema 4D",
     "categoryId": "creation",
-    "shortDescription": "Logiciel 3D de Maxon, référence du motion design et de la visualisation produit.",
-    "shortDescriptionEn": "Maxon's 3D software, a reference for motion design and product visualization.",
+    "shortDescription": "Modélisation, animation et motion design 3D, avec le moteur Redshift inclus dans l'abonnement.",
+    "shortDescriptionEn": "3D modelling, animation and motion design, with Redshift included in the subscription.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "59,91$/mois (annuel) ou 94$/mois. Inclus dans Maxon One (~100$/mois)."
+      "free": "Essai proposé par Maxon.",
+      "paid": "838,8 EUR facturés par an pour Cinema 4D. Prix régional et TVA définitifs au panier."
     },
-    "defaultMonthlyPrice": 60,
-    "compareMonthlyPrice": 60,
-    "websiteUrl": "https://www.maxon.net/cinema-4d",
-    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/_1200x630_crop_center-center_82_none/C4D-April2025-loop-video.jpg?mtime=1767802091",
+    "defaultMonthlyPrice": 69.89999999999999,
+    "compareMonthlyPrice": 69.89999999999999,
+    "websiteUrl": "https://www.maxon.net/en/cinema-4d",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Hero_banner-1.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/C4D_icon.svg",
     "tool_type": "metier",
     "bundle_parent": "maxon-one",
     "substitution_cluster_v2": "3d-software",
     "functional_needs": [
-      "3d",
       "motion-design"
     ],
     "verticals": [
@@ -19015,25 +19015,26 @@
     "id": "magic-bullet",
     "slug": "magic-bullet",
     "name": "Magic Bullet",
-    "categoryId": "design-tools",
-    "shortDescription": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.",
-    "shortDescriptionEn": "Red Giant video effects plugin suite including Color Looks (cinematic color grading), Colorista (three-way color correction), and Denoiser (noise reduction) for After Effects, Premiere Pro, and DaVinci Resolve.",
+    "categoryId": "creation",
+    "shortDescription": "Famille Red Giant dédiée à la correction colorimétrique, aux looks et à la texture de l'image.",
+    "shortDescriptionEn": "A Red Giant family for colour correction, looks and image texture.",
     "pricing": {
-      "free": "Pas de version gratuite. Essai téléchargeable disponible pour tester avant achat.",
-      "paid": "Red Giant Complete Annual Subscription: Abonnement annuel (montants sur la page officielle) ; Magic Bullet Suite (partie de Red Giant): Inclus dans l'abonnement Red Giant annuel"
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
     },
-    "compareMonthlyPrice": 0,
-    "affiliateLink": "https://www.maxon.net/en/red-giant",
-    "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg",
-    "tool_type": "plugin",
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic-Bullet-Looks-2024-loop.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+    "tool_type": "bundle",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
     "substitution_cluster_v2": "plugin-after-effects",
     "functional_needs": [
-      "color-grading"
+      "motion-design"
     ],
     "verticals": [
-      "motion-video"
+      "motion-video",
+      "creative"
     ],
     "relevantFor": [
       "Coloristes vidéo",
@@ -19046,8 +19047,7 @@
     "personas": [
       "designer"
     ],
-    "freeAlternative": "davinci-resolve",
-    "substitutable": false
+    "freeAlternative": "davinci-resolve"
   },
   {
     "id": "magic-patterns",
@@ -19745,22 +19745,21 @@
     "slug": "maxon-one",
     "name": "Maxon One",
     "categoryId": "creation",
-    "shortDescription": "Le bundle Maxon : Cinema 4D, Redshift, ZBrush, Red Giant et Universe réunis.",
-    "shortDescriptionEn": "The Maxon bundle: Cinema 4D, Redshift, ZBrush, Red Giant and Universe together.",
+    "shortDescription": "Suite réunissant Cinema 4D, Redshift, ZBrush et Red Giant pour la création 3D et vidéo.",
+    "shortDescriptionEn": "A suite combining Cinema 4D, Redshift, ZBrush and Red Giant for 3D and video work.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "~99,91$/mois (annuel, ~1199$/an). Tout l'écosystème Maxon."
+      "free": "Essai proposé par Maxon.",
+      "paid": "1 390,8 EUR facturés par an pour Maxon One. Prix régional et TVA définitifs au panier."
     },
-    "defaultMonthlyPrice": 100,
-    "compareMonthlyPrice": 100,
-    "websiteUrl": "https://www.maxon.net/maxon-one",
-    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/_1200x630_crop_center-center_82_none/Maxon-Fall-Release-2024-Hero-Image.jpg?mtime=1727343363",
-    "tool_type": "metier",
+    "defaultMonthlyPrice": 115.89999999999999,
+    "compareMonthlyPrice": 115.89999999999999,
+    "websiteUrl": "https://www.maxon.net/en/maxon-one",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Hero_Banner-Netflix_-Super_Very_More-gradient.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/MaxonOne-icon_100_px.png",
+    "tool_type": "bundle",
     "substitution_cluster_v2": "3d-software",
     "functional_needs": [
-      "3d",
-      "motion-design",
-      "rendu-3d"
+      "motion-design"
     ],
     "verticals": [
       "motion-video",
@@ -19775,8 +19774,7 @@
     "personas": [
       "designer"
     ],
-    "freeAlternative": "blender",
-    "substitutable": false
+    "freeAlternative": "blender"
   },
   {
     "id": "maya",
@@ -24988,19 +24986,17 @@
     "slug": "pluraleyes",
     "name": "PluralEyes",
     "categoryId": "design-tools",
-    "shortDescription": "Ancienne application Maxon de synchronisation automatique de rushes vidéo et audio par comparaison des formes d'onde. PluralEyes est arrêté commercialement et placé en maintenance limitée depuis le 1er février 2023.",
-    "shortDescriptionEn": "Former Maxon application for automatically synchronizing video and audio footage by comparing waveforms. PluralEyes is commercially discontinued and has been in limited maintenance mode since February 1, 2023.",
+    "shortDescription": "Ancien synchroniseur audio et vidéo de Maxon, en maintenance limitée et indisponible à l’achat.",
+    "shortDescriptionEn": "Former Maxon audio and video synchroniser in limited maintenance and unavailable for new purchase.",
     "pricing": {
-      "free": "Aucune version gratuite ni aucun essai actuel. Les installateurs compatibles sont fournis par le support aux détenteurs d'un numéro de série valide.",
-      "paid": "Nouvelle licence: Indisponible, produit arrêté ; Licence historique: Utilisable uniquement dans les anciens environnements officiellement compatibles"
+      "free": "Aucun téléchargement public pour les nouveaux utilisateurs.",
+      "paid": "Produit arrêté ; aucune nouvelle licence vendue."
     },
-    "defaultMonthlyPrice": 50,
-    "compareMonthlyPrice": 50,
     "affiliateLink": "https://www.maxon.net/red-giant/pluraleyes",
+    "websiteUrl": "https://support.maxon.net/hc/en-us/articles/7389361453340-PluralEyes-Limited-Maintenance-Mode",
     "ogImageUrl": "https://img.youtube.com/vi/oNwq2w2mNuA/maxresdefault.jpg",
     "tool_type": "plugin",
     "host_app": "adobe-premiere-pro",
-    "bundle_parent": "ae-red-giant",
     "substitution_cluster_v2": "plugin-after-effects",
     "functional_needs": [
       "montage-video"
@@ -27506,28 +27502,28 @@
     "id": "ae-red-giant",
     "slug": "ae-red-giant",
     "name": "Red Giant",
-    "categoryId": "design-tools",
-    "shortDescription": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
-    "shortDescriptionEn": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates).",
+    "categoryId": "creation",
+    "shortDescription": "Plugins de particules, étalonnage et compositing pour la postproduction, avec Universe et Maxon Studio.",
+    "shortDescriptionEn": "Particle, colour and compositing plugins for postproduction, including Universe and Maxon Studio.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
-      "paid": "Dès 53 $/mois, plan Red Giant (complet, avec Universe)."
+      "free": "Essai proposé par Maxon.",
+      "paid": "718,8 EUR facturés par an pour Red Giant. Prix régional et TVA définitifs au panier."
     },
-    "defaultMonthlyPrice": 45.51,
-    "compareMonthlyPrice": 45.51,
-    "affiliateLink": "https://maxon.net/red-giant",
-    "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Red-Giant/RLF_Zoom_Flower_Loop_01.gif?fm=webp&auto=format,compress&w=586&h=330&ar=16:9&fit=clip&crop=faces",
-    "tool_type": "plugin",
+    "defaultMonthlyPrice": 59.9,
+    "compareMonthlyPrice": 59.9,
+    "websiteUrl": "https://www.maxon.net/en/red-giant",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Red-Giant-Hero_banner-AUV_Creative_darker.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+    "tool_type": "bundle",
     "host_app": "adobe-after-effects",
     "bundle_parent": "maxon-one",
     "substitution_cluster_v2": "plugin-after-effects",
     "functional_needs": [
-      "color-grading",
-      "effets-visuels"
+      "motion-design"
     ],
     "verticals": [
       "motion-video",
-      "photographe"
+      "creative"
     ],
     "relevantFor": [
       "Studios de production",
@@ -27539,33 +27535,34 @@
     "personas": [
       "SOFIA"
     ],
-    "freeAlternative": "DaVinci Resolve",
-    "substitutable": false
+    "freeAlternative": "DaVinci Resolve"
   },
   {
     "id": "red-giant-universe",
     "slug": "red-giant-universe",
     "name": "Red Giant Universe",
-    "categoryId": "design-tools",
-    "shortDescription": "Suite de plugin d'effets GPU-accélérés pour After Effects, Premiere Pro, Final Cut Pro et Motion. Propose transitions, effets de mouvement, animations de texte et outils de stylisation pour la production vidéo et motion design.",
-    "shortDescriptionEn": "Suite of GPU-accelerated effects plugins for After Effects, Premiere Pro, Final Cut Pro, and Motion. Provides transitions, motion effects, text animation, and stylization tools for video and motion design.",
+    "categoryId": "creation",
+    "shortDescription": "Bibliothèque de plugins de transitions, effets vidéo et animation graphique.",
+    "shortDescriptionEn": "A plugin library for transitions, video effects and motion graphics.",
     "pricing": {
-      "free": "Essai gratuit de 14 jours ; Maxon One offre également un essai de 14 jours",
-      "paid": "Universe Individual (Monthly): USD 32/mois ; Universe Individual (Annual): USD 214/an ; Red Giant Suite (Monthly): USD 85/mois ; Red Giant Suite (Annual): USD 639/an"
+      "free": "Essai proposé par Maxon.",
+      "paid": "238,8 EUR facturés par an pour Red Giant Universe. Prix régional et TVA définitifs au panier."
     },
-    "defaultMonthlyPrice": 50,
-    "compareMonthlyPrice": 50,
-    "affiliateLink": "https://www.maxon.net/red-giant/universe",
-    "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Texturize.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
-    "tool_type": "plugin",
+    "defaultMonthlyPrice": 19.900000000000002,
+    "compareMonthlyPrice": 19.900000000000002,
+    "websiteUrl": "https://www.maxon.net/en/red-giant/universe",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_GSA_HERO.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_icon.svg",
+    "tool_type": "bundle",
     "host_app": "adobe-premiere-pro",
     "bundle_parent": "ae-red-giant",
     "substitution_cluster_v2": "plugin-after-effects",
     "functional_needs": [
-      "montage-video"
+      "motion-design"
     ],
     "verticals": [
-      "motion-video"
+      "motion-video",
+      "creative"
     ],
     "relevantFor": [
       "Motion designers",
@@ -27575,8 +27572,7 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
-    ],
-    "substitutable": false
+    ]
   },
   {
     "id": "redirect-path",
@@ -27647,21 +27643,22 @@
     "slug": "redshift",
     "name": "Redshift",
     "categoryId": "creation",
-    "shortDescription": "Moteur de rendu GPU rapide de Maxon, standard du motion design et de la 3D.",
-    "shortDescriptionEn": "Maxon's fast GPU render engine, a standard in motion design and 3D.",
+    "shortDescription": "Moteur de rendu 3D pour éclairer et finaliser des scènes dans les applications compatibles.",
+    "shortDescriptionEn": "A 3D renderer for lighting and finishing scenes in compatible applications.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "~45$/mois (annuel). Inclus avec Cinema 4D et Maxon One."
+      "free": "Essai proposé par Maxon.",
+      "paid": "298,8 EUR facturés par an pour Redshift. Prix régional et TVA définitifs au panier."
     },
-    "defaultMonthlyPrice": 45,
-    "compareMonthlyPrice": 45,
-    "websiteUrl": "https://www.maxon.net/redshift",
-    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/_1200x630_crop_center-center_82_none/Redshift-April2025-video_loop_still-banner.jpg?mtime=1743079487",
-    "tool_type": "metier",
+    "defaultMonthlyPrice": 24.900000000000002,
+    "compareMonthlyPrice": 24.900000000000002,
+    "websiteUrl": "https://www.maxon.net/en/redshift",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift-Hero-banner-gradient-new.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
+    "tool_type": "specialise",
     "bundle_parent": "maxon-one",
     "substitution_cluster_v2": "render-engine",
     "functional_needs": [
-      "rendu-3d"
+      "motion-design"
     ],
     "verticals": [
       "motion-video",
@@ -34669,26 +34666,26 @@
     "id": "trapcode",
     "slug": "trapcode",
     "name": "Trapcode",
-    "categoryId": "design-tools",
-    "shortDescription": "Famille de plugins de particules et d'effets 3D pour Adobe After Effects, dont Trapcode Particular est l'outil principal. Depuis 2024, Trapcode est installé et commercialisé dans l'abonnement Red Giant plutôt que comme suite autonome.",
-    "shortDescriptionEn": "Family of particle and 3D effects plugins for Adobe After Effects, led by Trapcode Particular. Since 2024, Trapcode has been installed and sold through the Red Giant subscription rather than as a standalone suite.",
+    "categoryId": "creation",
+    "shortDescription": "Famille d'outils Red Giant pour particules et motion design dans After Effects.",
+    "shortDescriptionEn": "A Red Giant tool family for particles and motion graphics in After Effects.",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai gratuit Maxon One de 14 jours, sans carte bancaire selon Maxon.",
-      "paid": "Trapcode: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
     },
-    "defaultMonthlyPrice": 50,
-    "compareMonthlyPrice": 50,
-    "affiliateLink": "https://www.maxon.net/red-giant/trapcode",
-    "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920",
-    "tool_type": "plugin",
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Hero.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+    "tool_type": "bundle",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
     "substitution_cluster_v2": "plugin-after-effects",
     "functional_needs": [
-      "effets-visuels"
+      "motion-design"
     ],
     "verticals": [
-      "motion-video"
+      "motion-video",
+      "creative"
     ],
     "relevantFor": [
       "Motion designers",
@@ -34699,8 +34696,7 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
-    ],
-    "substitutable": false
+    ]
   },
   {
     "id": "trello",
@@ -35999,26 +35995,26 @@
     "id": "vfx-suite",
     "slug": "vfx-suite",
     "name": "VFX Suite",
-    "categoryId": "design-tools",
-    "shortDescription": "Famille de plugins de keying, tracking, nettoyage et compositing dont Adobe After Effects est l'hôte principal. Depuis 2024, VFX Suite n'est plus installée ou vendue séparément et ses outils sont inclus dans Red Giant.",
-    "shortDescriptionEn": "Family of keying, tracking, cleanup, and compositing plugins primarily hosted in Adobe After Effects. Since 2024, VFX Suite is no longer installed or sold separately and its tools are included with Red Giant.",
+    "categoryId": "creation",
+    "shortDescription": "Famille Red Giant pour incrustation, suivi, nettoyage et intégration d'effets dans une vidéo.",
+    "shortDescriptionEn": "A Red Giant family for keying, tracking, cleanup and effects compositing.",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai gratuit de 14 jours, sans carte bancaire selon Maxon.",
-      "paid": "VFX Suite: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
     },
-    "defaultMonthlyPrice": 50,
-    "compareMonthlyPrice": 50,
-    "affiliateLink": "https://www.maxon.net/red-giant/vfx-suite",
-    "ogImageUrl": "https://maxonassets.imgix.net/images/Solution-Pages/Compositing/Compositing-Capabilities-01.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920",
-    "tool_type": "plugin",
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/supercomp",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Hero.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+    "tool_type": "bundle",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
     "substitution_cluster_v2": "plugin-after-effects",
     "functional_needs": [
-      "effets-visuels"
+      "motion-design"
     ],
     "verticals": [
-      "motion-video"
+      "motion-video",
+      "creative"
     ],
     "relevantFor": [
       "Motion designers",
@@ -36030,8 +36026,7 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
-    ],
-    "substitutable": false
+    ]
   },
   {
     "id": "vidiq",
@@ -37937,23 +37932,25 @@
     "slug": "zbrush",
     "name": "ZBrush",
     "categoryId": "creation",
-    "shortDescription": "La référence de la sculpture numérique 3D (personnages, créatures, props), chez Maxon.",
-    "shortDescriptionEn": "The reference for digital 3D sculpting (characters, creatures, props), by Maxon.",
+    "shortDescription": "Sculpture et peinture numériques pour personnages, créatures et modèles détaillés.",
+    "shortDescriptionEn": "Digital sculpting and painting for characters, creatures and detailed models.",
     "pricing": {
-      "free": "ZBrushCoreMini gratuit (limité)",
-      "paid": "29,91$/mois (annuel). Inclus dans Maxon One."
+      "free": "Essai proposé par Maxon.",
+      "paid": "430,8 EUR facturés par an pour ZBrush. Prix régional et TVA définitifs au panier."
     },
-    "defaultMonthlyPrice": 30,
-    "compareMonthlyPrice": 30,
-    "websiteUrl": "https://www.maxon.net/zbrush",
-    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/_1200x630_crop_center-center_82_none/ZBrush-April2025-Loop-video.jpg?mtime=1743079530",
+    "defaultMonthlyPrice": 35.9,
+    "compareMonthlyPrice": 35.9,
+    "websiteUrl": "https://www.maxon.net/en/zbrush",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_Hero_banner-1.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
     "tool_type": "metier",
     "bundle_parent": "maxon-one",
     "substitution_cluster_v2": "3d-software",
     "functional_needs": [
-      "sculpture-3d"
+      "motion-design"
     ],
     "verticals": [
+      "motion-video",
       "creative"
     ],
     "relevantFor": [
@@ -39164,6 +39161,3518 @@
     "verticals": [
       "consultant-b2b",
       "community-manager"
+    ]
+  },
+  {
+    "id": "autograph",
+    "slug": "autograph",
+    "name": "Maxon Autograph",
+    "categoryId": "creation",
+    "shortDescription": "Application gratuite de motion design et compositing 2D/3D pour Windows et macOS.",
+    "shortDescriptionEn": "A free 2D/3D motion design and compositing application for Windows and macOS.",
+    "pricing": {
+      "free": "Gratuit.",
+      "paid": ""
+    },
+    "websiteUrl": "https://www.maxon.net/en/autograph",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Autograph_Hero-banner-Still_from_video.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Autograph-Horizontal.png",
+    "tool_type": "metier",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "zbrush-for-ipad",
+    "slug": "zbrush-for-ipad",
+    "name": "ZBrush pour iPad",
+    "categoryId": "creation",
+    "shortDescription": "Sculpture 3D tactile sur iPad, avec une version gratuite limitée et un accès Premium par abonnement.",
+    "shortDescriptionEn": "Touch-based 3D sculpting on iPad, with a limited free edition and subscription-based Premium access.",
+    "pricing": {
+      "free": "Version gratuite limitée.",
+      "paid": "Accès lié à ZBrush ou Maxon One. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/zbrush-for-ipad",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush-for-iPad-Hero-Still_01.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
+    "tool_type": "metier",
+    "bundle_parent": "zbrush",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "cinebench",
+    "slug": "cinebench",
+    "name": "Cinebench",
+    "categoryId": "creation",
+    "shortDescription": "Benchmark gratuit pour comparer les performances CPU et GPU dans une charge de rendu Redshift.",
+    "shortDescriptionEn": "A free benchmark for comparing CPU and GPU performance under a Redshift rendering workload.",
+    "pricing": {
+      "free": "Gratuit.",
+      "paid": ""
+    },
+    "websiteUrl": "https://www.maxon.net/en/cinebench",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Maxon_Cinebench_2026_UI_Laptop.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Cinebench-Horizontal.png",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "cineware",
+    "slug": "cineware",
+    "name": "Cineware",
+    "categoryId": "creation",
+    "shortDescription": "Passerelles entre Cinema 4D et des logiciels comme After Effects, Unreal Engine ou des outils d'architecture.",
+    "shortDescriptionEn": "Bridges between Cinema 4D and applications such as After Effects, Unreal Engine and architectural tools.",
+    "pricing": {
+      "free": "",
+      "paid": "Conditions à vérifier sur le site officiel et selon les logiciels hôtes."
+    },
+    "websiteUrl": "https://www.maxon.net/en/cineware",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Cineware.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "maxon-capsules",
+    "slug": "maxon-capsules",
+    "name": "Maxon Capsules",
+    "categoryId": "creation",
+    "shortDescription": "Bibliothèque d'assets, matériaux, modèles et presets pour les applications Maxon.",
+    "shortDescriptionEn": "An asset, material, model and preset library for Maxon applications.",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à Maxon One. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/capsules",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Capsules/Capsules-Dec_2024_Hero_Banner.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Capsules/Capsules-vertical.svg",
+    "tool_type": "specialise",
+    "bundle_parent": "maxon-one",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "maxon-studio",
+    "slug": "maxon-studio",
+    "name": "Maxon Studio",
+    "categoryId": "creation",
+    "shortDescription": "Interface pour trouver et personnaliser les outils, presets et Capsules de l'écosystème Red Giant.",
+    "shortDescriptionEn": "An interface for finding and customising tools, presets and Capsules in the Red Giant ecosystem.",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/maxon-studio",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-Studio/Maxon_Studio-banner_202509.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+    "tool_type": "plugin",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "moves-by-maxon",
+    "slug": "moves-by-maxon",
+    "name": "Moves by Maxon",
+    "categoryId": "creation",
+    "shortDescription": "Capture d'objets, de mouvements du visage et du corps sur iPhone ou iPad pour Cinema 4D.",
+    "shortDescriptionEn": "Object, facial and body capture on iPhone or iPad for Cinema 4D.",
+    "pricing": {
+      "free": "",
+      "paid": "Conditions à vérifier sur le site officiel et selon les logiciels hôtes."
+    },
+    "websiteUrl": "https://www.maxon.net/en/cinema-4d/features/moves-by-maxon",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Moves-by-Maxon-Header-Image_3.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Moves-Inline-Vertical-240px.png",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-3d-stroke",
+    "slug": "red-giant-3d-stroke",
+    "name": "3D Stroke",
+    "categoryId": "creation",
+    "shortDescription": "Animer des tracés avec épaisseur, lumière et répétitions dans un espace 3D.",
+    "shortDescriptionEn": "Animate paths with thickness, light and repeated strokes in 3D space.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/motion-graphics/3d-stroke",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_3D_Stroke_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:3d-stroke"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-analog",
+    "slug": "universe-analog",
+    "name": "Universe Analog",
+    "categoryId": "creation",
+    "shortDescription": "Reproduire les couleurs, parasites et lignes de balayage d'un téléviseur analogique.",
+    "shortDescriptionEn": "Recreate analog television colour, interference and scan lines.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/analog",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_6.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:analog"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-array-gun",
+    "slug": "universe-array-gun",
+    "name": "Universe Array Gun",
+    "categoryId": "creation",
+    "shortDescription": "Construire des grilles animées de formes et de lignes pour un habillage graphique.",
+    "shortDescriptionEn": "Build animated grids of shapes and lines for motion graphics.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/array-gun",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:array-gun"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-av-club",
+    "slug": "universe-av-club",
+    "name": "Universe AV Club",
+    "categoryId": "creation",
+    "shortDescription": "Donner aux titres un aspect vidéo ancien, bruité et peu défini.",
+    "shortDescriptionEn": "Give titles a noisy, low-resolution vintage video treatment.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/av-club",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:av-club"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-bang",
+    "slug": "red-giant-bang",
+    "name": "Bang",
+    "categoryId": "creation",
+    "shortDescription": "Composer des flashes de tir en 3D dans After Effects et ajuster leur placement dans le plan.",
+    "shortDescriptionEn": "Composite 3D muzzle flashes in After Effects and adjust their placement in a shot.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/bang",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Suite_2_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:bang"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-bokeh",
+    "slug": "universe-bokeh",
+    "name": "Universe Bokeh",
+    "categoryId": "creation",
+    "shortDescription": "Simuler un flou de mise au point dont les lumières prennent des formes de bokeh réglables.",
+    "shortDescriptionEn": "Simulate defocus with adjustable bokeh shapes in bright image areas.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/bokeh",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_2024_01.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:bokeh"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-carousel",
+    "slug": "universe-carousel",
+    "name": "Universe Carousel",
+    "categoryId": "creation",
+    "shortDescription": "Appliquer un rendu de pellicule vieillie avec dérives de couleur et vignettage.",
+    "shortDescriptionEn": "Apply aged-film colour shifts and vignetting.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/carousel",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:carousel"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-chromatic-aberration",
+    "slug": "universe-chromatic-aberration",
+    "name": "Universe Chromatic Aberration",
+    "categoryId": "creation",
+    "shortDescription": "Simuler les défauts chromatiques d'un objectif avec séparation des couleurs et déformation.",
+    "shortDescriptionEn": "Simulate lens chromatic defects with colour separation and distortion.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/chromatic-aberration",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:chromatic-aberration"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-chromatic-displacement",
+    "slug": "red-giant-chromatic-displacement",
+    "name": "Chromatic Displacement",
+    "categoryId": "creation",
+    "shortDescription": "Déformer une image à partir d'un autre calque tout en séparant ses couleurs.",
+    "shortDescriptionEn": "Displace an image using another layer while separating its colours.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/distortions/chromatic-displacement",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Chromatic_Displacement_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:chromatic-displacement"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-chromatown",
+    "slug": "universe-chromatown",
+    "name": "Universe ChromaTown",
+    "categoryId": "creation",
+    "shortDescription": "Combiner traînées colorées, flous directionnels et transformations de l'image.",
+    "shortDescriptionEn": "Combine coloured streaks, directional blur and image transformations.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/chromatown-tool",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Chromatown_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:chromatown-tool"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-colorista",
+    "slug": "red-giant-colorista",
+    "name": "Colorista",
+    "categoryId": "creation",
+    "shortDescription": "Corriger l'exposition et les couleurs directement dans la timeline du logiciel hôte.",
+    "shortDescriptionEn": "Correct exposure and colour directly in the host application's timeline.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/colorista",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Colorista_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:colorista"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-cosmo",
+    "slug": "red-giant-cosmo",
+    "name": "Cosmo",
+    "categoryId": "creation",
+    "shortDescription": "Cibler les tons de peau pour atténuer des imperfections et harmoniser un portrait vidéo.",
+    "shortDescriptionEn": "Target skin tones to soften blemishes and balance a video portrait.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/cosmo",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Cosmo_Hero_2.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:cosmo"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-denoiser",
+    "slug": "red-giant-denoiser",
+    "name": "Denoiser",
+    "categoryId": "creation",
+    "shortDescription": "Réduire le bruit visible dans des prises de vue réalisées en faible lumière.",
+    "shortDescriptionEn": "Reduce visible noise in footage captured in low light.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/denoiser",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Denoiser.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:denoiser"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-depth-generator",
+    "slug": "red-giant-depth-generator",
+    "name": "Depth Generator",
+    "categoryId": "creation",
+    "shortDescription": "Créer une passe de profondeur à partir d'une vidéo dans After Effects.",
+    "shortDescriptionEn": "Generate a depth pass from footage inside After Effects.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/depth-generator",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/DepthGen-hero_banner.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:depth-generator"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-ecto",
+    "slug": "universe-ecto",
+    "name": "Universe Ecto",
+    "categoryId": "creation",
+    "shortDescription": "Créer des titres lumineux aux contours fractals et évolutifs.",
+    "shortDescriptionEn": "Create glowing titles with evolving fractal edges.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/ecto",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:ecto"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-electrify",
+    "slug": "universe-electrify",
+    "name": "Universe Electrify",
+    "categoryId": "creation",
+    "shortDescription": "Générer des arcs électriques à partir des contours d'une image ou d'un bruit fractal.",
+    "shortDescriptionEn": "Generate electrical arcs from image contours or fractal noise.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/electrify",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_4.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:electrify"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-film",
+    "slug": "red-giant-film",
+    "name": "Magic Bullet Film",
+    "categoryId": "creation",
+    "shortDescription": "Recréer un traitement de pellicule en combinant négatif, étalonnage et tirage.",
+    "shortDescriptionEn": "Recreate a film treatment through negative stock, grading and print-stock controls.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/film",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Film_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:film"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-finisher",
+    "slug": "universe-finisher",
+    "name": "Universe Finisher",
+    "categoryId": "creation",
+    "shortDescription": "Ajuster le détail et la finition d'une image à partir de plusieurs couches de luminance.",
+    "shortDescriptionEn": "Adjust image detail and finishing across multiple luminance layers.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/finisher",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:finisher"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-form",
+    "slug": "red-giant-form",
+    "name": "Trapcode Form",
+    "categoryId": "creation",
+    "shortDescription": "Construire des formes en particules persistantes, puis modifier leur organisation dans After Effects.",
+    "shortDescriptionEn": "Build persistent particle forms and reshape their arrangement in After Effects.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/form",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Form_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:form"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-geo",
+    "slug": "red-giant-geo",
+    "name": "Geo",
+    "categoryId": "creation",
+    "shortDescription": "Importer, texturer, éclairer et cloner des modèles 3D directement dans After Effects.",
+    "shortDescriptionEn": "Import, texture, light and clone 3D models directly in After Effects.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/geo",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Maxon_Red_Giant_Geo_Header.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:geo"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-glimmer",
+    "slug": "universe-glimmer",
+    "name": "Universe Glimmer",
+    "categoryId": "creation",
+    "shortDescription": "Ajouter des éclats étoilés animés sur les zones lumineuses d'une image.",
+    "shortDescriptionEn": "Add animated star-like glints to bright image areas.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/glimmer",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:glimmer"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-glitch",
+    "slug": "universe-glitch",
+    "name": "Universe Glitch",
+    "categoryId": "creation",
+    "shortDescription": "Simuler une vidéo corrompue avec compression, ruptures de signal et décalages numériques.",
+    "shortDescriptionEn": "Simulate corrupted video through compression, signal breakup and digital offsets.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/glitch",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:glitch"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-glow",
+    "slug": "universe-glow",
+    "name": "Universe Glow",
+    "categoryId": "creation",
+    "shortDescription": "Diffuser les hautes lumières avec un halo dont la couleur et l'intensité restent réglables.",
+    "shortDescriptionEn": "Spread highlights into a glow with adjustable colour and intensity.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/glow",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:glow"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-grain16",
+    "slug": "universe-grain16",
+    "name": "Universe Grain16",
+    "categoryId": "creation",
+    "shortDescription": "Ajouter une texture de grain issue de scans de pellicules 16 mm.",
+    "shortDescriptionEn": "Add grain texture sourced from scans of 16 mm film stocks.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/grain16",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:grain16"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-hacker-text",
+    "slug": "universe-hacker-text",
+    "name": "Universe Hacker Text",
+    "categoryId": "creation",
+    "shortDescription": "Animer un texte brouillé qui se transforme progressivement en message lisible.",
+    "shortDescriptionEn": "Animate scrambled text as it resolves into a readable message.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/hacker-text",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:hacker-text"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-halflight",
+    "slug": "universe-halflight",
+    "name": "Universe HalfLight",
+    "categoryId": "creation",
+    "shortDescription": "Relier deux plans par une transition de fuite de lumière réglable.",
+    "shortDescriptionEn": "Connect two shots with an adjustable light-leak transition.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/halflight",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Halflight_Customizable.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:halflight"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-heatwave",
+    "slug": "universe-heatwave",
+    "name": "Universe Heatwave",
+    "categoryId": "creation",
+    "shortDescription": "Déformer une image avec des ondulations qui évoquent la chaleur.",
+    "shortDescriptionEn": "Distort an image with ripples that suggest heat haze.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/heatwave",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:heatwave"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-holomatrix",
+    "slug": "universe-holomatrix",
+    "name": "Universe Holomatrix II",
+    "categoryId": "creation",
+    "shortDescription": "Transformer textes, logos et images en affichages holographiques perturbés.",
+    "shortDescriptionEn": "Turn text, logos and footage into disrupted holographic displays.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/holomatrix",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:holomatrix"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-hud-components",
+    "slug": "universe-hud-components",
+    "name": "Universe HUD Components",
+    "categoryId": "creation",
+    "shortDescription": "Assembler des éléments animés d'interface et d'affichage tête haute.",
+    "shortDescriptionEn": "Assemble animated interface and heads-up display elements.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/hud-components",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:hud-components"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-king-pin-tracker",
+    "slug": "red-giant-king-pin-tracker",
+    "name": "King Pin Tracker",
+    "categoryId": "creation",
+    "shortDescription": "Suivre une surface plane pour remplacer une enseigne ou intégrer une image dans un plan.",
+    "shortDescriptionEn": "Track a planar surface to replace a sign or insert an image into a shot.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/king-pin-tracker",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_King_Pin_Planar_Tracker.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:king-pin-tracker"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-knoll-light-factory-ez",
+    "slug": "universe-knoll-light-factory-ez",
+    "name": "Universe Knoll Light Factory EZ",
+    "categoryId": "creation",
+    "shortDescription": "Ajouter des effets de flare prédéfinis et adapter leur position à une source lumineuse.",
+    "shortDescriptionEn": "Add preset lens flares and position them around a light source.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/knoll-light-factory-ez",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:knoll-light-factory-ez"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-lens-distortion-matcher",
+    "slug": "red-giant-lens-distortion-matcher",
+    "name": "Lens Distortion Matcher",
+    "categoryId": "creation",
+    "shortDescription": "Corriger la distorsion d'un objectif pour composer un plan, puis la réappliquer au résultat.",
+    "shortDescriptionEn": "Undistort lens footage for compositing, then reapply the distortion to the result.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/lens-distortion-matcher",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Lens_Distortion_Matcher_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:lens-distortion-matcher"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-line",
+    "slug": "universe-line",
+    "name": "Universe Line",
+    "categoryId": "creation",
+    "shortDescription": "Animer une ligne droite ou courbe entre plusieurs points pour illustrer un trajet.",
+    "shortDescriptionEn": "Animate a straight or curved line between points to illustrate a route.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/line",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:line"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-luster",
+    "slug": "universe-luster",
+    "name": "Universe Luster",
+    "categoryId": "creation",
+    "shortDescription": "Créer un traitement métallique ou vitré sur du texte, avec un relief de biseau.",
+    "shortDescriptionEn": "Create metallic or glass-like text treatments with a bevelled appearance.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/luster",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:luster"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-magicbullet-looks",
+    "slug": "red-giant-magicbullet-looks",
+    "name": "Magic Bullet Looks",
+    "categoryId": "creation",
+    "shortDescription": "Construire un rendu colorimétrique en combinant des outils de correction et des looks personnalisables.",
+    "shortDescriptionEn": "Build a colour treatment by combining correction tools and customisable looks.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic-Bullet-Looks-2024-loop.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:magicbullet-looks"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-mir",
+    "slug": "red-giant-mir",
+    "name": "Trapcode Mir",
+    "categoryId": "creation",
+    "shortDescription": "Créer des surfaces, tunnels et terrains procéduraux dans After Effects.",
+    "shortDescriptionEn": "Create procedural surfaces, tunnels and terrain in After Effects.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/mir",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Mir_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:mir"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-modes",
+    "slug": "universe-modes",
+    "name": "Universe Modes",
+    "categoryId": "creation",
+    "shortDescription": "Combiner plusieurs calques avec des modes de fusion et des contrôles supplémentaires.",
+    "shortDescriptionEn": "Combine layers with additional blending modes and controls.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/modes",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:modes"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-mojo",
+    "slug": "red-giant-mojo",
+    "name": "Magic Bullet Mojo",
+    "categoryId": "creation",
+    "shortDescription": "Appliquer un traitement colorimétrique stylisé puis ajuster contraste, exposition et balance.",
+    "shortDescriptionEn": "Apply a stylised colour treatment, then adjust contrast, exposure and balance.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/mojo",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Mojo_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:mojo"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-numbers",
+    "slug": "universe-numbers",
+    "name": "Universe Numbers",
+    "categoryId": "creation",
+    "shortDescription": "Afficher et animer des compteurs, pourcentages, montants, dates ou heures.",
+    "shortDescriptionEn": "Display and animate counters, percentages, amounts, dates or times.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/numbers",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers_Currencies.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:numbers"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-optical-glow",
+    "slug": "red-giant-optical-glow",
+    "name": "Optical Glow",
+    "categoryId": "creation",
+    "shortDescription": "Créer des halos lumineux avec gestion du gamma et décroissance de la lumière.",
+    "shortDescriptionEn": "Create light blooms with gamma handling and controlled light falloff.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/optical-glow",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Optical_Glow_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:optical-glow"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-overlight",
+    "slug": "universe-overlight",
+    "name": "Universe OverLight",
+    "categoryId": "creation",
+    "shortDescription": "Superposer des fuites de lumière et des textures lumineuses à une vidéo.",
+    "shortDescriptionEn": "Overlay light leaks and light textures onto footage.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/overlight",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:overlight"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-parametric-curve",
+    "slug": "red-giant-parametric-curve",
+    "name": "Parametric Curve",
+    "categoryId": "creation",
+    "shortDescription": "Ajuster une image et ses hautes lumières avec des courbes HDR paramétrables.",
+    "shortDescriptionEn": "Adjust an image and its highlights using configurable HDR curves.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/parametric-curve",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Red-Giant-Parametric-Curve.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:parametric-curve"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-pixel-dither",
+    "slug": "universe-pixel-dither",
+    "name": "Universe Pixel Dither",
+    "categoryId": "creation",
+    "shortDescription": "Transformer des images en rendus pixel art avec palettes limitées et tramage.",
+    "shortDescriptionEn": "Turn images into pixel-art treatments with limited palettes and dithering.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/pixel-dither",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe-Pixel_art_Hero-Image-dark.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:pixel-dither"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-primatte-keyer",
+    "slug": "red-giant-primatte-keyer",
+    "name": "Primatte Keyer",
+    "categoryId": "creation",
+    "shortDescription": "Extraire un sujet filmé sur fond vert ou bleu, puis affiner les contours et les débordements de couleur.",
+    "shortDescriptionEn": "Extract a subject shot against green or blue screen, then refine edges and colour spill.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/primatte-keyer",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Primatte_Keyer_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:primatte-keyer"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-progresso",
+    "slug": "universe-progresso",
+    "name": "Universe Progresso",
+    "categoryId": "creation",
+    "shortDescription": "Animer des barres de progression, arcs et graphiques pour une infographie vidéo.",
+    "shortDescriptionEn": "Animate progress bars, arcs and charts for video infographics.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/progresso",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso_Animate.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:progresso"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-quantum",
+    "slug": "universe-quantum",
+    "name": "Universe Quantum",
+    "categoryId": "creation",
+    "shortDescription": "Créer des traînées lumineuses déformées et animées autour d'un calque.",
+    "shortDescriptionEn": "Create animated, warped light trails around a layer.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/quantum",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_HUD.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:quantum"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-real-lens-flares",
+    "slug": "red-giant-real-lens-flares",
+    "name": "Real Lens Flares",
+    "categoryId": "creation",
+    "shortDescription": "Construire des effets de flare en réglant le modèle d'objectif et la position de la lumière.",
+    "shortDescriptionEn": "Build lens flares by adjusting the lens model and light position.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/real-lens-flares",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Real_Lens_Flares_2024.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:real-lens-flares"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-reflection",
+    "slug": "red-giant-reflection",
+    "name": "Reflection",
+    "categoryId": "creation",
+    "shortDescription": "Ajouter un reflet à un calque avec contrôle du flou et de l'atténuation.",
+    "shortDescriptionEn": "Add a reflection to a layer with blur and fade controls.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/reflection",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Reflection_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:reflection"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-reframe",
+    "slug": "universe-reframe",
+    "name": "Universe Reframe",
+    "categoryId": "creation",
+    "shortDescription": "Composer une image dans l'image avec animation, bordures et rotation.",
+    "shortDescriptionEn": "Build animated picture-in-picture layouts with borders and rotation.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/reframe",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:reframe"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-renoiser",
+    "slug": "red-giant-renoiser",
+    "name": "Renoiser",
+    "categoryId": "creation",
+    "shortDescription": "Redonner une texture de grain à des images numériques ou préalablement débruitées.",
+    "shortDescriptionEn": "Restore grain texture to digital or previously denoised images.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/renoiser",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Renoiser_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:renoiser"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-retrograde",
+    "slug": "universe-retrograde",
+    "name": "Universe Retrograde",
+    "categoryId": "creation",
+    "shortDescription": "Simuler le grain, la couleur et les défauts de films 8 mm et 16 mm.",
+    "shortDescriptionEn": "Simulate the grain, colour and damage of 8 mm and 16 mm film.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/retrograde",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:retrograde"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-screen-text",
+    "slug": "universe-screen-text",
+    "name": "Universe Screen Text",
+    "categoryId": "creation",
+    "shortDescription": "Faire défiler du texte comme dans un terminal informatique.",
+    "shortDescriptionEn": "Scroll text in the style of a computer terminal.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/screen-text",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text_Code_Warrior.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:screen-text"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-shadow",
+    "slug": "red-giant-shadow",
+    "name": "Shadow",
+    "categoryId": "creation",
+    "shortDescription": "Créer une ombre en perspective à partir d'un calque et régler sa longueur et sa douceur.",
+    "shortDescriptionEn": "Create a perspective shadow from a layer and adjust its length and softness.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/shadow",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Shadow_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:shadow"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-shine",
+    "slug": "red-giant-shine",
+    "name": "Red Giant Shine",
+    "categoryId": "creation",
+    "shortDescription": "Générer des rayons lumineux à partir d'une image pour un habillage ou un effet atmosphérique.",
+    "shortDescriptionEn": "Generate light rays from an image for motion graphics or atmospheric effects.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/shine",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Shine_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:shine"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-shrinkray",
+    "slug": "universe-shrinkray",
+    "name": "Universe ShrinkRay",
+    "categoryId": "creation",
+    "shortDescription": "Simuler une faible profondeur de champ de type tilt-shift pour donner un effet miniature.",
+    "shortDescriptionEn": "Simulate tilt-shift-style shallow depth of field for a miniature effect.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/shrinkray",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:shrinkray"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-sketchify",
+    "slug": "universe-sketchify",
+    "name": "Universe Sketchify",
+    "categoryId": "creation",
+    "shortDescription": "Transformer une vidéo en rendu dessiné avec contours d'encre et textures.",
+    "shortDescriptionEn": "Turn footage into an illustrated treatment with ink outlines and textures.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/sketchify-tool",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Sketchify_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:sketchify-tool"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-sound-keys",
+    "slug": "red-giant-sound-keys",
+    "name": "Sound Keys",
+    "categoryId": "creation",
+    "shortDescription": "Analyser un signal audio pour piloter des propriétés d'animation avec des images clés.",
+    "shortDescriptionEn": "Analyse audio to drive animation properties through keyframes.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/utilities/sound-keys",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Sound_Keys.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:sound-keys"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-spot-clone-tracker",
+    "slug": "red-giant-spot-clone-tracker",
+    "name": "Spot Clone Tracker",
+    "categoryId": "creation",
+    "shortDescription": "Masquer de petites imperfections en clonant une zone voisine et en suivant son mouvement.",
+    "shortDescriptionEn": "Hide small blemishes by cloning a nearby area and tracking its motion.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/spot-clone-tracker",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Spot_Clone_Tracker_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:spot-clone-tracker"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-starglow",
+    "slug": "red-giant-starglow",
+    "name": "Starglow",
+    "categoryId": "creation",
+    "shortDescription": "Transformer les hautes lumières en étoiles colorées aux branches réglables.",
+    "shortDescriptionEn": "Turn highlights into coloured stars with adjustable streaks.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/starglow",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Starglow.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:starglow"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-supercomp",
+    "slug": "red-giant-supercomp",
+    "name": "Supercomp",
+    "categoryId": "creation",
+    "shortDescription": "Faire interagir lumière, diffusion et atmosphère entre plusieurs calques de compositing.",
+    "shortDescriptionEn": "Combine layers with shared light interaction, diffusion and atmospheric effects.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/vfx/supercomp",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:supercomp"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-symbol-mapper",
+    "slug": "universe-symbol-mapper",
+    "name": "Universe Symbol Mapper",
+    "categoryId": "creation",
+    "shortDescription": "Reconstruire une image avec des lettres, chiffres et symboles selon sa luminosité.",
+    "shortDescriptionEn": "Rebuild an image with letters, numbers and symbols according to brightness.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/symbol-mapper-tool",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:symbol-mapper-tool"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-tao",
+    "slug": "red-giant-tao",
+    "name": "Trapcode Tao",
+    "categoryId": "creation",
+    "shortDescription": "Construire des formes 3D animées à partir d'extrusions et de chemins dans After Effects.",
+    "shortDescriptionEn": "Build animated 3D forms from extrusions and paths in After Effects.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/tao",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Tao.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:tao"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-text-tile",
+    "slug": "universe-text-tile",
+    "name": "Universe Text Tile",
+    "categoryId": "creation",
+    "shortDescription": "Générer des colonnes de données animées pour une interface fictive ou un habillage technique.",
+    "shortDescriptionEn": "Generate animated data columns for fictional interfaces or technical graphics.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/text-tile",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:text-tile"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-texturize",
+    "slug": "universe-texturize",
+    "name": "Universe Texturize",
+    "categoryId": "creation",
+    "shortDescription": "Appliquer des textures grunge répétables et régler leur échelle, couleur et mélange.",
+    "shortDescriptionEn": "Apply tiling grunge textures and adjust their scale, colour and blending.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/texturize",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:texturize"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-texturize-motion",
+    "slug": "universe-texturize-motion",
+    "name": "Universe Texturize Motion",
+    "categoryId": "creation",
+    "shortDescription": "Superposer des textures animées et régler leurs mouvements sur une vidéo.",
+    "shortDescriptionEn": "Overlay animated textures and adjust their movement over footage.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/texturize-motion",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_2.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:texturize-motion"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-title-motion",
+    "slug": "universe-title-motion",
+    "name": "Universe Title Motion",
+    "categoryId": "creation",
+    "shortDescription": "Créer des titres et des formes avec animations d'entrée et de sortie personnalisables.",
+    "shortDescriptionEn": "Create titles and shapes with customisable entrance and exit animations.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/title-motion",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Instant.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:title-motion"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-trapcode-particular",
+    "slug": "red-giant-trapcode-particular",
+    "name": "Trapcode Particular",
+    "categoryId": "creation",
+    "shortDescription": "Créer des systèmes de particules 3D avec forces, comportements physiques et émetteurs liés.",
+    "shortDescriptionEn": "Create 3D particle systems with forces, physical behaviours and linked emitters.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:trapcode-particular"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-type-cast",
+    "slug": "universe-type-cast",
+    "name": "Universe Type Cast",
+    "categoryId": "creation",
+    "shortDescription": "Animer couleur, taille, position et rotation du texte par caractère ou par mot.",
+    "shortDescriptionEn": "Animate text colour, size, position and rotation by character or word.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/type-cast",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Hero.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:type-cast"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-type-on",
+    "slug": "universe-type-on",
+    "name": "Universe Type On",
+    "categoryId": "creation",
+    "shortDescription": "Révéler un texte caractère par caractère avec un rendu de saisie informatique.",
+    "shortDescriptionEn": "Reveal text character by character with a computer-typing effect.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/type-on",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On_Customization.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:type-on"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-typographic",
+    "slug": "universe-typographic",
+    "name": "Universe Typographic",
+    "categoryId": "creation",
+    "shortDescription": "Combiner formes et texte pour créer des animations typographiques.",
+    "shortDescriptionEn": "Combine shapes and text to create typographic animations.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/typographic",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Typographic_Social.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:typographic"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-vhs",
+    "slug": "universe-vhs",
+    "name": "Universe VHS",
+    "categoryId": "creation",
+    "shortDescription": "Recréer la couleur, les déformations et les incrustations d'une cassette vidéo VHS.",
+    "shortDescriptionEn": "Recreate VHS tape colour, distortion and on-screen overlays.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/vhs",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS_Presets2.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:vhs"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-blur",
+    "slug": "universe-blur",
+    "name": "Universe Blur",
+    "categoryId": "creation",
+    "shortDescription": "Appliquer un flou réglable en rayon et en direction, notamment en espace gamma linéaire.",
+    "shortDescriptionEn": "Apply blur with radius and direction controls, including in linear gamma space.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-blur.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blur_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:blur"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-chromatic-glow",
+    "slug": "universe-chromatic-glow",
+    "name": "Universe Chromatic Glow",
+    "categoryId": "creation",
+    "shortDescription": "Ajouter des halos multicolores aux hautes lumières ou aux titres.",
+    "shortDescriptionEn": "Add multicoloured glows to highlights or titles.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-chromatic-glow.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Chromatic_Glow_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:chromatic-glow"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-compound-blur",
+    "slug": "universe-compound-blur",
+    "name": "Universe Compound Blur",
+    "categoryId": "creation",
+    "shortDescription": "Moduler le flou d'une image avec la luminance d'un autre calque.",
+    "shortDescriptionEn": "Control image blur using another layer's luminance.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-compound-blur.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Compound_Blur_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:compound-blur"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-edge-glow",
+    "slug": "universe-edge-glow",
+    "name": "Universe Edge Glow",
+    "categoryId": "creation",
+    "shortDescription": "Faire ressortir les contours d'une image avec un halo lumineux.",
+    "shortDescriptionEn": "Highlight image edges with a luminous glow.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-edge-glow.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Edge_Glow_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:edge-glow"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-glo-fi-ii",
+    "slug": "universe-glo-fi-ii",
+    "name": "Universe Glo Fi II",
+    "categoryId": "creation",
+    "shortDescription": "Animer un halo fractal organique autour d'un texte.",
+    "shortDescriptionEn": "Animate an organic fractal glow around text.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi-ii.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glo-Fi2_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:glo-fi-ii"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-glo-fi",
+    "slug": "universe-glo-fi",
+    "name": "Universe Glo Fi",
+    "categoryId": "creation",
+    "shortDescription": "Créer un halo de texte animé à partir de motifs fractals.",
+    "shortDescriptionEn": "Create animated text glow using fractal patterns.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:glo-fi"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-point-zoom",
+    "slug": "universe-point-zoom",
+    "name": "Universe Point Zoom",
+    "categoryId": "creation",
+    "shortDescription": "Combiner un flou de zoom et une lueur pour simuler une projection lumineuse.",
+    "shortDescriptionEn": "Combine zoom blur and glow to suggest a light projection.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-point-zoom.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Point_Zoom_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:point-zoom"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-spot-blur",
+    "slug": "universe-spot-blur",
+    "name": "Universe Spot Blur",
+    "categoryId": "creation",
+    "shortDescription": "Flouter l'intérieur ou l'extérieur d'une zone rectangulaire ou elliptique.",
+    "shortDescriptionEn": "Blur inside or outside a rectangular or elliptical region.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-spot-blur.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spot_Blur_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:spot-blur"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-fractal-background",
+    "slug": "universe-fractal-background",
+    "name": "Universe Fractal Background",
+    "categoryId": "creation",
+    "shortDescription": "Générer des fonds fractals colorés et animés en boucle.",
+    "shortDescriptionEn": "Generate colourful, looping fractal backgrounds.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Generators-fractal-background.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:fractal-background"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-gradient-ramp",
+    "slug": "universe-gradient-ramp",
+    "name": "Universe Gradient Ramp",
+    "categoryId": "creation",
+    "shortDescription": "Créer un dégradé de deux ou trois couleurs avec contrôle de transparence et de bruit.",
+    "shortDescriptionEn": "Create two- or three-colour gradients with transparency and noise controls.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Generators-gradient-ramp.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Gradient_Ramp2_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:gradient-ramp"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-soft-gradient-background",
+    "slug": "universe-soft-gradient-background",
+    "name": "Universe Soft Gradient Background",
+    "categoryId": "creation",
+    "shortDescription": "Créer des arrière-plans en dégradé animé avec bruit et texture.",
+    "shortDescriptionEn": "Create animated gradient backgrounds with noise and texture.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Generators-soft-gradient-background.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Soft_Gradient_BG_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:soft-gradient-background"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-spectralicious",
+    "slug": "universe-spectralicious",
+    "name": "Universe Spectralicious",
+    "categoryId": "creation",
+    "shortDescription": "Composer un dégradé à six couleurs et régler la netteté de ses zones de transition.",
+    "shortDescriptionEn": "Build a six-colour gradient and adjust the sharpness of its transitions.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Generators-spectralicious.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spectralicious_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:spectralicious"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-turbulence-noise",
+    "slug": "universe-turbulence-noise",
+    "name": "Universe Turbulence Noise",
+    "categoryId": "creation",
+    "shortDescription": "Générer des motifs de bruit animés avec paramètres de turbulence.",
+    "shortDescriptionEn": "Generate animated noise patterns with turbulence controls.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Generators-turbulence-noise.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Turbulence_Noise_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:turbulence-noise"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-blinds",
+    "slug": "universe-blinds",
+    "name": "Universe Blinds",
+    "categoryId": "creation",
+    "shortDescription": "Révéler le plan suivant en faisant pivoter des bandes horizontales ou verticales.",
+    "shortDescriptionEn": "Reveal the next shot by rotating horizontal or vertical strips.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_blinds.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blinds_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:blinds"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-bokeh-transition",
+    "slug": "universe-bokeh-transition",
+    "name": "Universe Bokeh Transition",
+    "categoryId": "creation",
+    "shortDescription": "Passer d'un plan à l'autre par un flou de type bokeh.",
+    "shortDescriptionEn": "Move between shots through a bokeh-style blur.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_bokeh-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_hero2.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:bokeh-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-camera-shake-transition",
+    "slug": "universe-camera-shake-transition",
+    "name": "Universe Camera Shake Transition",
+    "categoryId": "creation",
+    "shortDescription": "Associer un changement de plan à une secousse de caméra simulée.",
+    "shortDescriptionEn": "Combine a shot change with simulated camera shake.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_camera-shake-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:camera-shake-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-carousel-transition",
+    "slug": "universe-carousel-transition",
+    "name": "Universe Carousel Transition",
+    "categoryId": "creation",
+    "shortDescription": "Simuler un changement de diapositive avec une esthétique rétro.",
+    "shortDescriptionEn": "Simulate a slide-projector change with a retro treatment.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_carousel-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CarouselTrans_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:carousel-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-channel-blur",
+    "slug": "universe-channel-blur",
+    "name": "Universe Channel Blur",
+    "categoryId": "creation",
+    "shortDescription": "Créer une transition en floutant séparément les canaux de couleur.",
+    "shortDescriptionEn": "Create a transition by blurring colour channels separately.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_channel-blur.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ChannelBlur_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:channel-blur"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-channel-surf",
+    "slug": "universe-channel-surf",
+    "name": "Universe Channel Surf",
+    "categoryId": "creation",
+    "shortDescription": "Passer d'un plan à l'autre comme lors d'un changement de chaîne sur un téléviseur analogique.",
+    "shortDescriptionEn": "Switch between shots like changing channels on an analog television.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_channel-surf.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ChannelBlur_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:channel-surf"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-clock-wipe",
+    "slug": "universe-clock-wipe",
+    "name": "Universe Clock Wipe",
+    "categoryId": "creation",
+    "shortDescription": "Révéler un plan avec un balayage radial autour du centre de l'image.",
+    "shortDescriptionEn": "Reveal a shot with a radial wipe around the image centre.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_clock-wipe.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ClockWipe_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:clock-wipe"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-color-mosaic",
+    "slug": "universe-color-mosaic",
+    "name": "Universe Color Mosaic Transition",
+    "categoryId": "creation",
+    "shortDescription": "Relier deux plans avec une mosaïque colorée personnalisable.",
+    "shortDescriptionEn": "Connect two shots with a customisable coloured mosaic.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_color-mosaic.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CarouselTrans_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:color-mosaic"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-color-stripe",
+    "slug": "universe-color-stripe",
+    "name": "Universe Color Stripe",
+    "categoryId": "creation",
+    "shortDescription": "Faire traverser l'écran par des bandes colorées pour révéler le plan suivant.",
+    "shortDescriptionEn": "Sweep colour bands across the screen to reveal the next shot.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_color-stripe.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:color-stripe"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-cube",
+    "slug": "universe-cube",
+    "name": "Universe Cube",
+    "categoryId": "creation",
+    "shortDescription": "Placer deux plans sur les faces d'un cube et passer de l'un à l'autre par rotation.",
+    "shortDescriptionEn": "Place shots on cube faces and rotate between them.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_cube.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:cube"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-diamond-wave",
+    "slug": "universe-diamond-wave",
+    "name": "Universe Diamond Wave",
+    "categoryId": "creation",
+    "shortDescription": "Découper l'image en losanges qui pivotent pour révéler un autre plan.",
+    "shortDescriptionEn": "Split an image into rotating diamond segments to reveal another shot.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_diamond-wave.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DiamondWave_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:diamond-wave"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-dolly-fade",
+    "slug": "universe-dolly-fade",
+    "name": "Universe Dolly Fade",
+    "categoryId": "creation",
+    "shortDescription": "Combiner un déplacement en profondeur et un fondu entre deux plans.",
+    "shortDescriptionEn": "Combine depth movement and fading between two shots.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_dolly-fade.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DollyFade_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:dolly-fade"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-exposure-blur-transition",
+    "slug": "universe-exposure-blur-transition",
+    "name": "Universe Exposure Blur",
+    "categoryId": "creation",
+    "shortDescription": "Créer une transition qui associe flou et hausse d'exposition.",
+    "shortDescriptionEn": "Create a transition combining blur and increased exposure.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_exposure-blur.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:exposure-blur-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-film-transition",
+    "slug": "universe-film-transition",
+    "name": "Universe Film Transition",
+    "categoryId": "creation",
+    "shortDescription": "Insérer une transition de type amorce ou compte à rebours de pellicule.",
+    "shortDescriptionEn": "Insert a film-leader or film-countdown-style transition.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_film-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FilmTransition_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:film-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-flicker-cut",
+    "slug": "universe-flicker-cut",
+    "name": "Universe Flicker Cut",
+    "categoryId": "creation",
+    "shortDescription": "Alterner rapidement entre deux plans ou une couleur pour créer une transition clignotante.",
+    "shortDescriptionEn": "Rapidly alternate between shots or a solid colour for a flickering transition.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_flicker-cut.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:flicker-cut"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-fold",
+    "slug": "universe-fold",
+    "name": "Universe Fold",
+    "categoryId": "creation",
+    "shortDescription": "Plier un plan sur lui-même tout en dépliant le suivant.",
+    "shortDescriptionEn": "Fold one shot away while unfolding the next.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_fold.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Fold_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:fold"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-glitch-transition",
+    "slug": "universe-glitch-transition",
+    "name": "Universe Glitch Transition",
+    "categoryId": "creation",
+    "shortDescription": "Relier deux plans par des ruptures numériques et des artefacts de compression.",
+    "shortDescriptionEn": "Connect shots through digital breakup and compression artefacts.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_glitch-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:glitch-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-inside-cube",
+    "slug": "universe-inside-cube",
+    "name": "Universe Inside Cube",
+    "categoryId": "creation",
+    "shortDescription": "Faire tourner les plans sur les faces intérieures d'un cube virtuel.",
+    "shortDescriptionEn": "Rotate shots on the inner faces of a virtual cube.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_inside-cube.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:inside-cube"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-knoll-light-transition",
+    "slug": "universe-knoll-light-transition",
+    "name": "Universe Knoll Light Transition",
+    "categoryId": "creation",
+    "shortDescription": "Utiliser un flare animé pour masquer le passage d'un plan à l'autre.",
+    "shortDescriptionEn": "Use an animated lens flare to bridge a shot change.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_knoll-light-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_KnollTrans_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:knoll-light-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-linear-wipe",
+    "slug": "universe-linear-wipe",
+    "name": "Universe Linear Wipe",
+    "categoryId": "creation",
+    "shortDescription": "Créer un balayage linéaire avec origine, couleur et douceur de bord réglables.",
+    "shortDescriptionEn": "Create a linear wipe with adjustable origin, colour and edge softness.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_linear-wipe.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_LinearWipe_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:linear-wipe"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-retrograde-transition",
+    "slug": "universe-retrograde-transition",
+    "name": "Universe Retrograde Transition",
+    "categoryId": "creation",
+    "shortDescription": "Simuler le défilement d'une bobine de film lors du changement de plan.",
+    "shortDescriptionEn": "Simulate a film reel scrolling during a shot change.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_retrograde-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:retrograde-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-rubix-cube",
+    "slug": "universe-rubix-cube",
+    "name": "Universe Rubix Cube",
+    "categoryId": "creation",
+    "shortDescription": "Segmenter un cube vidéo et faire pivoter ses blocs en directions opposées.",
+    "shortDescriptionEn": "Segment a video cube and rotate its blocks in opposing directions.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_rubix-cube.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RubixCube_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:rubix-cube"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-shape-wipe",
+    "slug": "universe-shape-wipe",
+    "name": "Universe Shape Wipe",
+    "categoryId": "creation",
+    "shortDescription": "Utiliser une forme réglable comme masque de transition entre deux vidéos.",
+    "shortDescriptionEn": "Use an adjustable shape as a transition mask between videos.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_shape-wipe.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:shape-wipe"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-slide",
+    "slug": "universe-slide",
+    "name": "Universe Slide",
+    "categoryId": "creation",
+    "shortDescription": "Faire glisser un plan hors du cadre pour révéler le suivant.",
+    "shortDescriptionEn": "Slide a shot out of frame to reveal the next one.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_slide.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Slide_Presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:slide"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-soft-edge-wipe",
+    "slug": "universe-soft-edge-wipe",
+    "name": "Universe Soft Edge Wipe",
+    "categoryId": "creation",
+    "shortDescription": "Mélanger deux plans avec un balayage linéaire à bord progressif.",
+    "shortDescriptionEn": "Blend shots through a linear wipe with a feathered edge.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_soft-edge-wipe.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:soft-edge-wipe"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-spectralicious-transition",
+    "slug": "universe-spectralicious-transition",
+    "name": "Universe Spectralicious Transition",
+    "categoryId": "creation",
+    "shortDescription": "Passer entre deux plans à l'aide d'une carte de couleurs animée.",
+    "shortDescriptionEn": "Move between shots using an animated colour map.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_spectralicious-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:spectralicious-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-stretch-transition",
+    "slug": "universe-stretch-transition",
+    "name": "Universe Stretch",
+    "categoryId": "creation",
+    "shortDescription": "Étirer le premier plan pendant que le suivant se contracte pour prendre sa place.",
+    "shortDescriptionEn": "Stretch the first shot away as the next contracts into place.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_stretch.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_stretch.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:stretch-transition-tool"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-swish-pan",
+    "slug": "universe-swish-pan",
+    "name": "Universe Swish Pan",
+    "categoryId": "creation",
+    "shortDescription": "Simuler un mouvement panoramique rapide entre deux plans.",
+    "shortDescriptionEn": "Simulate a fast camera pan between shots.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_swish-pan.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SwishPan_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:swish-pan"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-triangle-wave",
+    "slug": "universe-triangle-wave",
+    "name": "Universe Triangle Wave",
+    "categoryId": "creation",
+    "shortDescription": "Révéler le plan suivant par une vague de triangles en rotation.",
+    "shortDescriptionEn": "Reveal the next shot through a wave of rotating triangles.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_triangle-wave.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:triangle-wave"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-turbulence-transition",
+    "slug": "universe-turbulence-transition",
+    "name": "Universe Turbulence Transition",
+    "categoryId": "creation",
+    "shortDescription": "Créer un fondu piloté par un motif fractal de luminance.",
+    "shortDescriptionEn": "Create a dissolve driven by a fractal luminance pattern.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_turbulence-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TurbulenceTransition_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:turbulence-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-unfold",
+    "slug": "universe-unfold",
+    "name": "Universe Unfold",
+    "categoryId": "creation",
+    "shortDescription": "Faire sortir un plan et déplier le suivant dans le cadre.",
+    "shortDescriptionEn": "Move one shot out and unfold the next into the frame.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_unfold.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:unfold"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-vhs-transition",
+    "slug": "universe-vhs-transition",
+    "name": "Universe VHS Transition",
+    "categoryId": "creation",
+    "shortDescription": "Simuler une bande VHS réenregistrée pendant un changement de plan.",
+    "shortDescriptionEn": "Simulate overwritten VHS tape during a shot change.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_vhs-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_VHSTransition_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:vhs-transition"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-warp",
+    "slug": "universe-warp",
+    "name": "Universe Warp",
+    "categoryId": "creation",
+    "shortDescription": "Déformer progressivement deux images pour effectuer la transition.",
+    "shortDescriptionEn": "Progressively warp two images to transition between them.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Transitions_warp-transition.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_presets.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:warp"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-camera-shake",
+    "slug": "universe-camera-shake",
+    "name": "Universe Camera Shake",
+    "categoryId": "creation",
+    "shortDescription": "Ajouter des secousses et du flou de mouvement à une prise de vue stable.",
+    "shortDescriptionEn": "Add camera shake and motion blur to steady footage.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Utilities_camera-shake.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Camera_Shake_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:camera-shake"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-fisheye-fixer",
+    "slug": "universe-fisheye-fixer",
+    "name": "Universe Fisheye Fixer",
+    "categoryId": "creation",
+    "shortDescription": "Corriger une déformation de type fisheye dans une vidéo.",
+    "shortDescriptionEn": "Correct fisheye-style distortion in footage.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Utilities_fisheye-fixer.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_CP_Fisheye_Fixer_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:fisheye-fixer"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-picture-in-picture",
+    "slug": "universe-picture-in-picture",
+    "name": "Universe Picture in Picture",
+    "categoryId": "creation",
+    "shortDescription": "Composer un plan secondaire dans le cadre d'une vidéo principale.",
+    "shortDescriptionEn": "Compose a secondary shot inside the main video frame.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Utilities_picture-in-picture.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Picture_In_Picture_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:picture-in-picture"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-socialize",
+    "slug": "universe-socialize",
+    "name": "Universe Socialize",
+    "categoryId": "creation",
+    "shortDescription": "Préparer le cadrage d'une composition pour différents formats de réseaux sociaux.",
+    "shortDescriptionEn": "Prepare composition framing for different social media formats.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Utilities_socialize.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/socialize_universe.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:socialize"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-unmult",
+    "slug": "universe-unmult",
+    "name": "Universe Unmult",
+    "categoryId": "creation",
+    "shortDescription": "Transformer un fond noir en transparence pour intégrer fumée, feu ou autres éléments filmés.",
+    "shortDescriptionEn": "Turn a black background into transparency to composite smoke, fire or other filmed elements.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Utilities_unmult.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Unmult_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:unmult"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-multitone",
+    "slug": "universe-multitone",
+    "name": "Universe Multitone",
+    "categoryId": "creation",
+    "shortDescription": "Remapper les tons d'une image vers une palette de couleurs stylisée.",
+    "shortDescriptionEn": "Remap image tones into a stylised colour palette.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_multitone.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/mulitone_universe.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:multitone"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-long-shadow",
+    "slug": "universe-long-shadow",
+    "name": "Universe Long Shadow",
+    "categoryId": "creation",
+    "shortDescription": "Ajouter une ombre allongée à un texte ou à un élément graphique.",
+    "shortDescriptionEn": "Add an extended shadow to text or graphics.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_long-shadow.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Long-Shadow_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:long-shadow"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-misfire",
+    "slug": "universe-misfire",
+    "name": "Universe MisFire",
+    "categoryId": "creation",
+    "shortDescription": "Reproduire des défauts de pellicule pour vieillir un plan numérique.",
+    "shortDescriptionEn": "Reproduce film imperfections to age a digital shot.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_misfire.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Misfire_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:misfire"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-noir-moderne",
+    "slug": "universe-noir-moderne",
+    "name": "Universe Noir",
+    "categoryId": "creation",
+    "shortDescription": "Créer un traitement monochrome et contrôler le contraste de l'image.",
+    "shortDescriptionEn": "Create a monochrome treatment and control image contrast.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_noir.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Noir_Moderne_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:noir-moderne"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "cinema-4d-lite",
+    "slug": "cinema-4d-lite",
+    "name": "Cinema 4D Lite",
+    "categoryId": "creation",
+    "shortDescription": "Version limitée de Cinema 4D accessible depuis After Effects pour créer des scènes 3D.",
+    "shortDescriptionEn": "A limited Cinema 4D edition accessed through After Effects for creating 3D scenes.",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à After Effects. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/cinema-4d/features/cineware-for-after-effects",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Florian_Renner__-Magnatron-035.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/C4D_icon.svg",
+    "tool_type": "metier",
+    "bundle_parent": "adobe-after-effects",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-echospace",
+    "slug": "red-giant-echospace",
+    "name": "Echospace",
+    "categoryId": "creation",
+    "shortDescription": "Dupliquer des calques 3D et décaler leurs animations pour créer un mouvement en cascade.",
+    "shortDescriptionEn": "Duplicate 3D layers and offset their animation to create cascading motion.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/motion-graphics/echospace",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Echospace.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:echospace"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-horizon",
+    "slug": "red-giant-horizon",
+    "name": "Horizon",
+    "categoryId": "creation",
+    "shortDescription": "Placer un fond panoramique à 360 degrés qui suit la caméra 3D d'After Effects.",
+    "shortDescriptionEn": "Place a 360-degree background that responds to the After Effects 3D camera.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/horizon",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Horizon.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:horizon"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-logo-motion",
+    "slug": "universe-logo-motion",
+    "name": "Universe Logo Motion",
+    "categoryId": "creation",
+    "shortDescription": "Animer l'entrée, la présence et la sortie d'un logo ou d'un calque de texte.",
+    "shortDescriptionEn": "Animate the entrance, hold and exit of a logo or text layer.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/universe/logo-motion",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:logo-motion"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "red-giant-lux",
+    "slug": "red-giant-lux",
+    "name": "Lux",
+    "categoryId": "creation",
+    "shortDescription": "Rendre visibles les faisceaux des lumières ponctuelles et spots d'une scène After Effects.",
+    "shortDescriptionEn": "Make point and spot lights visible as volumetric beams in an After Effects scene.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Red Giant. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/lux",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Lux_Hero.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "bundle_parent": "ae-red-giant",
+    "functional_needs": [
+      "maxon-effect:lux"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-halftone-dither",
+    "slug": "universe-halftone-dither",
+    "name": "Universe Halftone Dither",
+    "categoryId": "creation",
+    "shortDescription": "Simuler une trame d'impression avec des points dont la forme et la taille restent réglables.",
+    "shortDescriptionEn": "Simulate print halftoning with adjustable dot shape and size.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:halftone-dither"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-ordered-dither",
+    "slug": "universe-ordered-dither",
+    "name": "Universe Ordered Dither",
+    "categoryId": "creation",
+    "shortDescription": "Réduire les couleurs d'une image à l'aide d'un motif de tramage régulier.",
+    "shortDescriptionEn": "Reduce image colours using a regular dithering pattern.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:ordered-dither"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-threshold-dither",
+    "slug": "universe-threshold-dither",
+    "name": "Universe Threshold Dither",
+    "categoryId": "creation",
+    "shortDescription": "Transformer les niveaux de l'image en zones de couleur à partir de seuils.",
+    "shortDescriptionEn": "Turn image levels into colour regions using thresholds.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:threshold-dither"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-error-diffuse-dither",
+    "slug": "universe-error-diffuse-dither",
+    "name": "Universe Error Diffuse Dither",
+    "categoryId": "creation",
+    "shortDescription": "Distribuer les erreurs de quantification entre pixels pour créer un tramage à palette réduite.",
+    "shortDescriptionEn": "Distribute quantisation error between pixels to dither a limited palette.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:error-diffuse-dither"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-custom-dither",
+    "slug": "universe-custom-dither",
+    "name": "Universe Custom Dither",
+    "categoryId": "creation",
+    "shortDescription": "Personnaliser un rendu tramé pour créer une esthétique de pixel art.",
+    "shortDescriptionEn": "Customise a dithered treatment for a pixel-art aesthetic.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:custom-dither"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-palettes",
+    "slug": "universe-palettes",
+    "name": "Universe Palettes",
+    "categoryId": "creation",
+    "shortDescription": "Limiter et remapper les couleurs d'une image avec une palette choisie.",
+    "shortDescriptionEn": "Limit and remap image colours through a chosen palette.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:palettes"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "cineware-for-after-effects",
+    "slug": "cineware-for-after-effects",
+    "name": "Cineware pour After Effects",
+    "categoryId": "creation",
+    "shortDescription": "Intégration de scènes Cinema 4D dans After Effects, avec accès à Cinema 4D Lite.",
+    "shortDescriptionEn": "Cinema 4D scene integration in After Effects, including access to Cinema 4D Lite.",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à logiciels hôtes compatibles. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/cinema-4d/features/cineware-for-after-effects",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Florian_Renner__-Magnatron-035.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+    "tool_type": "plugin",
+    "bundle_parent": "cineware",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "cineware-for-illustrator",
+    "slug": "cineware-for-illustrator",
+    "name": "Cineware pour Illustrator",
+    "categoryId": "creation",
+    "shortDescription": "Manipulation de modèles 3D Cinema 4D dans des compositions Adobe Illustrator.",
+    "shortDescriptionEn": "Work with Cinema 4D models inside Adobe Illustrator artwork.",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à logiciels hôtes compatibles. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/cinema-4d/features/cineware-for-illustrator",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Alex_Maltsev__Dope_6.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+    "tool_type": "plugin",
+    "bundle_parent": "cineware",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "cineware-for-unreal",
+    "slug": "cineware-for-unreal",
+    "name": "Cineware pour Unreal Engine",
+    "categoryId": "creation",
+    "shortDescription": "Passerelle pour transférer des scènes Cinema 4D vers Unreal Engine.",
+    "shortDescriptionEn": "A bridge for transferring Cinema 4D scenes into Unreal Engine.",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à logiciels hôtes compatibles. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/cineware",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Unreal_02.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+    "tool_type": "plugin",
+    "bundle_parent": "cineware",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "redshift-for-architects",
+    "slug": "redshift-for-architects",
+    "name": "Redshift for Architects",
+    "categoryId": "creation",
+    "shortDescription": "Rendu architectural Redshift intégré aux logiciels BIM compatibles, actuellement proposé en bêta.",
+    "shortDescriptionEn": "Redshift architectural rendering integrated into compatible BIM applications, currently offered as a beta.",
+    "pricing": {
+      "free": "",
+      "paid": "Accès lié à bêta Redshift for Architects. Vérifie les conditions de la formule."
+    },
+    "websiteUrl": "https://www.maxon.net/en/redshift-for-architects",
+    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ArchViz/Redshift-architects-hero.jpg",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
+    "tool_type": "plugin",
+    "bundle_parent": "redshift",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-prism-displacement",
+    "slug": "universe-prism-displacement",
+    "name": "Universe Prism Displacement",
+    "categoryId": "creation",
+    "shortDescription": "Déformer une vidéo en séparant ses composantes colorées comme à travers un prisme.",
+    "shortDescriptionEn": "Distort footage by separating colour components as though through a prism.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Distortions_prism-displacement.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Prism_Displacement_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:prism-displacement"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "universe-rgb-separation",
+    "slug": "universe-rgb-separation",
+    "name": "Universe RGB Separation",
+    "categoryId": "creation",
+    "shortDescription": "Décaler séparément les canaux rouge, vert et bleu d'une image.",
+    "shortDescriptionEn": "Offset the red, green and blue image channels separately.",
+    "pricing": {
+      "free": "Essai de la suite, pas une version gratuite permanente.",
+      "paid": "Inclus dans Universe. Licence de suite requise ; pas de tarif autonome confirmé."
+    },
+    "websiteUrl": "https://help.maxon.net/rg/en-us/Content/html/Distortions_rgb-separation.html",
+    "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_RGB_Seperation_AR_universe.jpg",
+    "tool_type": "plugin",
+    "bundle_parent": "red-giant-universe",
+    "functional_needs": [
+      "maxon-effect:rgb-separation"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
+    ]
+  },
+  {
+    "id": "maxon-app",
+    "slug": "maxon-app",
+    "name": "Maxon App",
+    "categoryId": "creation",
+    "shortDescription": "Gestionnaire d'installation, de mises à jour et de licences pour les produits Maxon.",
+    "shortDescriptionEn": "Installation, update and licence manager for Maxon products.",
+    "pricing": {
+      "free": "Gratuit.",
+      "paid": ""
+    },
+    "websiteUrl": "https://www.maxon.net/en/downloads",
+    "ogImageUrl": "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_groups.png",
+    "tool_type": "utilitaire",
+    "functional_needs": [
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video",
+      "creative"
     ]
   }
 ]

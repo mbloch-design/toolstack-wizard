@@ -1,0 +1,30 @@
+{
+  "name": "Long Shadow",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_long-shadow.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:02.892Z",
+  "sha256": "7e0213adecd4f33de4b11d8583a1b8f456b79e92ab26f9d0efbca6cddf0c2544",
+  "paragraphs": [
+    "Universe Long Shadow adds a shadow to any text (or other object)&#160;you select. The shadow extends off the edges of the composition&#160;in whatever distance or angle you prefer.",
+    "Fifteen handy, preconfigured presets come ready to help you implement the shadow look you want in seconds. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Long Shadow look and then save it under its own name by pressing the Save Preset... button.",
+    "Fun Fact: Why \"The Shadow Nose\"? Because we're here to talk about a shadow effect, noses very often cast shadows, and we can't resist a lame dad joke. If you're familiar with U.S. popular entertainment from the days before TV, then you already know what evil lurks in the hearts of men. And if you don't know, maybe read this .",
+    "Long Shadow is great on its own, but simple shadows can be just the beginning! Watch the following two-minute video to see what happens when we combine Long Shadow with Universe Turbulence Noise ."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Long-Shadow_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/keyed-760x177_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_LongShadow_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_LongShadow_Expansion.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_LongShadow_Crop.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_LongShadow_Mask.png"
+  ]
+}

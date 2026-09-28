@@ -1,0 +1,33 @@
+{
+  "name": "Bokeh Transition",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_bokeh-transition.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:49.875Z",
+  "sha256": "b80e6324d9b07e8815a4e5339346aca2ba97ab8954114f87a9b3bdae3793b068",
+  "paragraphs": [
+    "Quickly blend from A into B video clips with the gorgeous blur effects of Universe Bokeh.",
+    "Note that Bokeh Transition is particularly helpful for hosts that lack native camera lens blur transition effects, including Final Cut Pro, DaVinci Resolve, Adobe Premiere Pro, Vegas Pro, and Motion.",
+    "Bokeh Transition presets apply a range of Universe Bokeh-driven rising and falling blur actions, helping you slide between clips with compelling, beautiful smoothness. Find several options via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Bokeh Transition look and then save it under its own name by pressing the Save Preset... button.",
+    "Begin by applying Bokeh Transition to your clip(s). Then, in Premiere Pro, for instance, you would adjoin your two assets, search for uni.Bokeh Transition from the Effects list, right-click the effect, and select Set Selected as Default Transition .",
+    "Right-click on the cut between the two clips and select Apply Default Transitions . The transition strip then overlays the two clips. Click on the strip to reveal all of the Bokeh Transition controls in the ECP.",
+    "In the ECP&#160;area under your Sequence heading, a white \"play\" triangle sits above a little rectangular window containing the letter A, representing your A clip. When you enable the Show Actual Sources box, this window displays the first frame of your transition. Click the play triangle to set the transition animation on a loop.",
+    "Your browser does not support the video tag.",
+    "This ECP&#160;area offers two controls:",
+    "As with the Bokeh plug-in, Bokeh Transition offers a range of controls that let you fine-tune your bokeh effect's appearance."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_hero2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Select.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_ECP-UI.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Duration.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Custom.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Shape.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Amount.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Angle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Highlight.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Ratio.png"
+  ]
+}

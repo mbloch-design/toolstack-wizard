@@ -1,0 +1,23 @@
+{
+  "name": "AV Club",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_av-club.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:53.303Z",
+  "sha256": "f25a071494fa675410ddeddb1b5dc581e754e4ac47b7e7a779d30ab9df549f8a",
+  "paragraphs": [
+    "Universe AV Club&#160;gives text and anything with alpha information the retro look of an old commercial or poorly-keyed footage.",
+    "AV&#160;Club applies to footage in the usual way . However, in Resolve, you'll need to follow a few extra steps:",
+    "As detailed below, Analog offers dozens of controls. You can change everything from image dimensions to color characteristics to lighting. However, you might find a handy shortcut in Analog's presets, located in the Red Giant Universe Dashboard (accessible via the blue Open Dashboard... button or the Choose a Preset... button below it).",
+    "As with all other Universe tools, you can modify or create an AV&#160;Club look and then save it under its own name by pressing the Save Preset... button.",
+    "AV&#160;Club's default settings produce a text effect like that shown in the image below. However, by tweaking any or all of the effect's controls, you can achieve some striking results."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/AV-Club-Main_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_AVClub_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_avclub-controls.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_avclub-tint-edge.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_avclub-separation.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_avclub-shadow.png"
+  ]
+}

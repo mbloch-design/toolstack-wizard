@@ -1,0 +1,26 @@
+{
+  "name": "Compound Blur",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-compound-blur.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:11.643Z",
+  "sha256": "abdc0b1e8ee770641fe28bb54494e7f6509e2651ae6d7b8479be1c92f973efb1",
+  "paragraphs": [
+    "Blurs pixels based on the luminance values of another layer. Note: Compound Blur is not supported in Avid&#160;Media Composer.",
+    "Compound Blur provides five presets via the blue Open Dashboard... button or the Choose a Preset... button below it. You can also find these along with another four presets in the Blur Channel(s) pull-down menu.",
+    "As with all other Universe tools, you can modify or create a Compound Blur look and then save it under its own name by pressing the Save Preset... button.",
+    "Compound Blur is even better when used in conjunction with other Universe tools. Watch the following two-minute video to see what happens when we combine Compound Blur with Universe Texturize Motion and Gradient Ramp ."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Compound_Blur_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_CompoundBlur_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Blur_MaxBlurSize.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_CompoundBlur_Quality.png"
+  ]
+}

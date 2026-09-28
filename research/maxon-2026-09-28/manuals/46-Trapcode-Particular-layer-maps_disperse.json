@@ -1,0 +1,18 @@
+{
+  "name": "46 - Layer Maps &gt; Disperse Subgroup",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/46-Trapcode-Particular-layer-maps_disperse.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:40.521Z",
+  "sha256": "09ff41fe7ef239617f43a40c6b3234fba2487c52f112a1ef6656dd40e1267ecf",
+  "paragraphs": [
+    "Particular",
+    "The Disperse group uses a layer map to create particle dispersion in the system, similar to how the Turbulence Strength group works.",
+    "You set the amount of dispersion in the Disperse and Twist group. If the Disperse and Twist &gt; Disperse control is set to 0, no dispersion will occur. Once Disperse has a non-zero value, the layer map will start pushing particles around.",
+    "A layer with a gradient ramp (left) and a particle field (center). The gradient ramp is applied (right)&#160;as the Disperse map, with Disperse set to 50 in the Displace &gt; Disperse and Twist group."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup14.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup15.png"
+  ]
+}

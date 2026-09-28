@@ -1,0 +1,30 @@
+{
+  "name": "Unfold",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_unfold.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:22.161Z",
+  "sha256": "14aa79ec658262037ef9469faca8ce64f65a336def13ab9a192c7ece11c07cc1",
+  "paragraphs": [
+    "A 3D transition that moves the top layer out of the frame in a chosen direction while the second layer unfolds itself into the frame moving right, left, upward, or downward.",
+    "Use the four Unfold presets — one for each direction — for single-click setup of your origami-esque transitions. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Unfold look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_Dolly.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_MotionBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_Shutter.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_LightType.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_LightColors.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_LightExp.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_Camera.png"
+  ]
+}

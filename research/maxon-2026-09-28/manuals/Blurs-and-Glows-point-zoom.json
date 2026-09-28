@@ -1,0 +1,23 @@
+{
+  "name": "Point Zoom",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-point-zoom.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:18.101Z",
+  "sha256": "64579c88b2aec39bb747b32b06dd5f2f71eb32e228d22dd5ab7702a2f173aed3",
+  "paragraphs": [
+    "Use zoom blur with added glow to create a \"holographic projection\" look when applied to text or images. Create the illusion that your object is coming from a light source.",
+    "Point Zoom's presets offer shortcuts to four common effect implementations. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Point Zoom look and then save it under its own name by pressing the Save Preset... button.",
+    "Bonus note: Point Zoom lends itself well to combining with other Universe tools. The \"X\"&#160;image above shows Point Zoom essentially running in a vacuum by itself. Here's the same idea when combined with one of the \"X\" images we developed in the Ecto guide:"
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Point_Zoom_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_Position.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_Length.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_Blend.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_Mask.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_X.png"
+  ]
+}

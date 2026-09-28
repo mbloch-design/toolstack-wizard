@@ -1,0 +1,40 @@
+{
+  "name": "Flicker Cut",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_flicker-cut.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:03.951Z",
+  "sha256": "0dec2335348431b2146cd226018790356bbc801971e279dbed018a14b0b3afa6",
+  "paragraphs": [
+    "A transition that rapidly cuts between two clips or a solid color. The effect can also invert the clips or add fades.",
+    "Trigger warning:&#160;The visual examples in this page may cause undesired pizza cravings. Sorry.",
+    "A range of Flicker Cut preset types give you one-click access to fully configured transitions. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Flicker Cut look and then save it under its own name by pressing the Save Preset... button.",
+    "Your browser does not support the video tag.",
+    "In the above video, we started with the Color - A Inv - Color B preset. This resulted in the following default values:",
+    "We used the eye dropper tool to change our Color to tomato sauce red, just to make tracking events and cycles a bit easier.",
+    "You see how our A source plays for the first second of the video (left, below), then the Flicker Cut Transition kicks in. The transition begins with the beginning of our B source because Hold A/B Frames is checked. With a Pattern Select of C/A/C/B , we normally would have started the transition with C, or our tomato-red frame. However, Hold A/B Frames overrides that for the first transition cycle. After that held B source, we're back to the A clip — the second event in our C/A/C/B progression — only it's solarized, because Invert A Clip is checked.",
+    "After the inverted bit, then we get the red frame, the third event in our pattern. Then, we're back to the B source, the last event in our first cycle.",
+    "Ultimately, the event flow goes like this:",
+    "Before transition: A source",
+    "Transition (cycle 1): B ( from Hold A/B Frames ), A inverted, C, B",
+    "Transition (cycle 2): A inverted, C, B",
+    "Transition (cycle 3): A inverted, C, B, C (because End Behavior is Solid Color )",
+    "After transition: B source"
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_EndBehavior.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_Flash.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_Invert.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_Values.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_Action1png.png"
+  ]
+}

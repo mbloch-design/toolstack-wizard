@@ -87,6 +87,7 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
 
   const isViewingParent = selfKey === bundleKey;
   const parentName = parent?.name || humanizeSlug(bundleKey);
+  const visibleMembers = isViewingParent ? members : members.filter((member) => member.slug === selfKey).concat(members.filter((member) => member.slug !== selfKey).slice(0, 8));
 
   const Tag = (m: Member, opts: { parent?: boolean } = {}) => {
     const current = m.slug === selfKey;
@@ -110,20 +111,20 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
           <Package aria-hidden />
           {isViewingParent
             ? t(`Les outils de ${parentName}`, `Tools in ${parentName}`)
-            : t(`${parentName} — la suite complète`, `${parentName} — the full suite`)}
+            : t(`${parentName} : la suite complète`, `${parentName}: the full suite`)}
         </h2>
         <p className="td-bundle-sub">
           {isViewingParent
             ? t(`Cette suite regroupe ${members.length} outils, inclus dans l'abonnement.`,
                 `This suite bundles ${members.length} tools, included in the subscription.`)
-            : t(`${tool.name} fait partie de ${parentName}. Les autres outils inclus dans la suite :`,
-                `${tool.name} is part of ${parentName}. The other tools included in the suite:`)}
+            : t(`${tool.name} fait partie de ${parentName}. ${members.length} outils sont répertoriés dans la suite.`,
+                `${tool.name} is part of ${parentName}. ${members.length} tools are listed in the suite.`)}
         </p>
       </header>
 
       <ul className="td-bundle-tags">
         {!isViewingParent && parent && Tag(parent, { parent: true })}
-        {members.map((m) => Tag(m))}
+        {visibleMembers.map((m) => Tag(m))}
       </ul>
     </div>
   );

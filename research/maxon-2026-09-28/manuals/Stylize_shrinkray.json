@@ -1,0 +1,23 @@
+{
+  "name": "ShrinkRay",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_shrinkray.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:10.332Z",
+  "sha256": "da887776a9b217d1eafc5ddc422f4dad0ed07689b21ca719b0e4bda284facc29",
+  "paragraphs": [
+    "ShrinkRay is a fast and easy way to make big things look tiny by simulating a tilt-shift effect.",
+    "Apply any of six tilt-shift patterns to your compositions with ShrinkRay's convenient presets. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a ShrinkRay look and then save it under its own name by pressing the Save Preset... button.",
+    "If you're new to tilt-shift photography, Adobe offers a brief but excellent over view on its topic page . For the more video-inclined, Jake In Motion has a great conceptual overview. Once you're comfortable with the core concepts, dig into our following tool controls. Or just figure it out as you go. Whatever makes you happy, right?",
+    "The two Patch Controls allow you to clean up the frame and choose which area of the screen you want blurred or focused in addition to the main mask view area. For example, in the example below, we used a focus patch to bring a second skyscraper into focus while leaving the space between them blurred."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_ShrinkRay2_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_ShrinkRay_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_ShrinkRay_Mask.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_ShrinkRay_MaskBlurFalloff.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_ShrinkRay_Gain.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_ShrinkRay_Patches.png"
+  ]
+}

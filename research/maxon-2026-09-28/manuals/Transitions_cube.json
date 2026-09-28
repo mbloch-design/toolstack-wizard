@@ -1,0 +1,28 @@
+{
+  "name": "Cube",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_cube.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:58.574Z",
+  "sha256": "63673eb2709bb73cde2e3432cd40b378fd0b2ac4aa163608b8ec14ad983e9371",
+  "paragraphs": [
+    "A 3D transition that places layers onto the sides of a cube, which can rotate right, left, upward, or downward to reveal a second layer of footage.",
+    "Four Cube presets make short work out of setting up your transition's directional movement. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Cube look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_MotionBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_Spotlight.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_Lights.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_CameraRotate.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_Translation.png"
+  ]
+}

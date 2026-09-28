@@ -1,0 +1,28 @@
+{
+  "name": "Prism Displacement",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Distortions_prism-displacement.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:22.395Z",
+  "sha256": "f43fecfd6e09438df7038668c383f8403826a23f6056780903393516979cd88d",
+  "paragraphs": [
+    "Prism Displacement distorts and displaces the pixels in your image with a prism-like, chromatic effect based on the luminance values of another layer.",
+    "A wealth of Prism Displacement presets will help slash the time needed to apply fascinating, oily or opalescent looks to your images and text. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Prism Displacement look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Prism_Displacement_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_PrismDist_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_PrismDist_Preset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_PrismDist_PresetNone.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_PrismDist_GlassRef.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_PrismDist_DispMap.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_PrismDist_MapLevels.png"
+  ]
+}

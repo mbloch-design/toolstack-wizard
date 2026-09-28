@@ -1,0 +1,28 @@
+{
+  "name": "Camera Shake Transition",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_camera-shake-transition.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:50.960Z",
+  "sha256": "b069591f5681f9233d7938593fb0471cf6add931199445622e8c378349e25b5b",
+  "paragraphs": [
+    "Add simulated camera motion to your footage to emulate a simple wiggle or a violent earthquake with motion blur while switching from one shot to the next.",
+    "Explore these 15 Camera Shake Transition presets that hit with nearly literal impact. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Camera Shake Transition look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_Mix.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_Amplitude.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_Dampening.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_RGPSeparation.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_MotionBlurShutter.png"
+  ]
+}

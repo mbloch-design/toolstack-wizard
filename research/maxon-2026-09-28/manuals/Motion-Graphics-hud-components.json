@@ -1,0 +1,43 @@
+{
+  "name": "HUD Components",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Motion-Graphics-hud-components.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:30.984Z",
+  "sha256": "bd767934eccc313711098d68126f2bc46fbfa4c08b154e0b23cfed2777f83364",
+  "paragraphs": [
+    "Quickly add animated heads-up display elements into your motion graphics, interface animations, and visual effects shots.",
+    "Get your HUD&#160;effects quickly locked on target with this tool's dozens of varied and convenient presets. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a HUD&#160;Components look and then save it under its own name by pressing the Save Preset... button.",
+    "Presets are now available in six categories: Analog, Arcs, Bug, Fantasy User Interface, Keyframable, Reset Elements, Science, and Targeting.",
+    "Before we dig in, you might want a more visual overview of HUD Components' capabilities and features. If so, please CLICK&#160;HERE to watch our Cineversity Getting Started video.",
+    "You will see controls for each HUD effect's four elements (Element 1 = E1, Element 2 = E2, Element 3 = E3, Element 4 =E4).&#160;By default, all scaling, positioning, and animation for the four elements tie to Element 1 as the master. Each can be unlinked within the element controls."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/HUD-Hero-Final_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_Elements.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_AniRadius.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_Transforms.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ArcOptions.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesNumber.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesPosition.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesRotateScale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesRotation.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesUniformScale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesXYScale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_CloneFade.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesRadiusOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesSegmentOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesStrokeWidthOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_CloneTimeOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesRandomOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_ClonesRandomSegmentAngle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_Noise.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_GlowRadius.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_GlowIntensity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_GlowMix.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_HUDComponents_MotionBlur.png"
+  ]
+}

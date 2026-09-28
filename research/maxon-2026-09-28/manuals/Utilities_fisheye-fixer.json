@@ -1,0 +1,19 @@
+{
+  "name": "Fisheye Fixer",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Utilities_fisheye-fixer.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:26.417Z",
+  "sha256": "239690bb9603f7daae065c38d2497273510f45bde28cbbcd6619667158d2a93e",
+  "paragraphs": [
+    "Fisheye Fixer corrects a range of fisheye lens distortion.",
+    "Fisheye Fixer is a simple tool, but you can make it a pinch simpler and quicker with its four presets. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Fisheye Fixer look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_CP_Fisheye_Fixer_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_FishFix_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_FishFix_LensAngle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_FishFix_FineTune.png"
+  ]
+}

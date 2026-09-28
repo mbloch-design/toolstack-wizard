@@ -1,0 +1,17 @@
+{
+  "slug": "maxon-app-doc",
+  "sourceUrl": "https://help.maxon.net/mxa/en-us/Content/html/program-tabs.html",
+  "status": 200,
+  "title": "Program Tabs in Maxon App",
+  "observedOn": "2026-09-28",
+  "relatedSource": "https://support.maxon.net/hc/en-us/articles/4402060502930-What-is-The-Maxon-App-",
+  "paragraphs": [
+    "Maxon App manages the installation, updates, licensing and upgrades of Maxon products on a given system.",
+    "The Products, Updates and My Licenses tabs provide product installation and licensing controls."
+  ],
+  "images": [
+    "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_groups.png",
+    "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_license-status.png",
+    "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_three-dots.png"
+  ]
+}

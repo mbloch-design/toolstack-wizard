@@ -1,0 +1,30 @@
+{
+  "name": "Glitch Transition",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_glitch-transition.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:06.089Z",
+  "sha256": "98830336d83b90f49ece97213a9052e213bd2178858ed60544181fd00762c9e1",
+  "paragraphs": [
+    "An effect that transitions your footage and text by creating the look of compressed, glitched video, corrupt data streams, and low-bandwidth broadcasts.",
+    "Glitch Transition bundles a host of presets to let you implement a range of convincing, analog-style distortions in mere seconds. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button, the Choose a Preset... button below it, or the Preset pull-down menu.",
+    "As with all other Universe tools, you can modify or create a GlitchTransition look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_TransitionStyle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_CompressionMax.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_CompressionLast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_RGBSplit.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_WideGlitchesMax.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_Size.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_Displacement.png"
+  ]
+}

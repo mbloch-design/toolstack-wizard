@@ -1,0 +1,26 @@
+{
+  "name": "Knoll Light Factory EZ",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_knoll-light-factory-ez.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:01.828Z",
+  "sha256": "d1fa592c4056aa27a95fed70b4016742867a9ccb24ac31ef37970b1085e5ff17",
+  "paragraphs": [
+    "Knoll Light Factory EZ is a collection of quick-setup lens flare tools from Industrial Light &amp; Magic’s John Knoll. Use it to instantly add color, depth, and excitement to a live-action scene or your motion graphics.",
+    "Knoll Light Factory has been used on the Star Wars films and countless others for over a decade.&#160;Knoll Light Factory EZ is found under the Universe Stylize effects category. It is a simplified version of the Knoll Light Factory plug-in found in Red Giant's Effects Suite.",
+    "When you select a Flare Category , that particular category its corresponding item from the following four control lines. In the following example, you can see that selecting Action &amp;&#160;SciFi for our Flare Category enabled the Action &amp;&#160;SciFi Lenses line, and from that pull-down menu we selected Botany Bay .",
+    "We liked Botany Bay's particular flare pattern for our footage of a spaceship's engine roaring into view. We positioned the light location over the engine exhaust (more or less), boosted the brightness, and adjusted the color closer to our ship's native blue-purple. For 30 seconds of work, we achieved this before-and-after comparison.",
+    "Tip: The Angle control will not rotate lens elements, so in many presets the Angle control may appear to have no effect.",
+    "Location Tracking adjusts lens flare visibility, including where its light source is located and if that light source is turned on.",
+    "Note: Location Layer searches the alpha channel of the selected layer for non-black pixels and calculates their average position. If you have a small white dot in a black alpha channel, the light effect will appear at the dot's center. If the alpha channel contains multiple white dots, the plugin will average the positions of each dot and place the light at that averaged location. If no non-black pixels exist in the alpha channel, the light effect will default to the image's center.",
+    "Obscuration Layer. Choose a layer that will obscure (hide) the flare, making it appear to pass behind objects in another layer. The default setting of None causes no layer to be used.",
+    "At the default value of 2, the Obscuration Layer Knoll Light Factory EZ examines a two-pixel radius around the light source for obscuring values (white or black). If 20% of the pixels inside that radius are obscured, the brightness of the flare will reduce by 20 percent.",
+    "With this checkbox enabled, all black in the lens flare becomes transparent. Render Alpha generates an alpha matte for the lens flare's black pixels. This is helpful for compositing your flare against other project clips."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_KLFEZ_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Knoll_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Knoll_FlareCat1.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Knoll_FlareCat2.png"
+  ]
+}

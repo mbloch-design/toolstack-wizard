@@ -1,0 +1,23 @@
+{
+  "name": "Numbers",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Text-numbers.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:41.270Z",
+  "sha256": "46c55bbadfed8b9a8088a46624a41db24957ecb57cb57e6d8b3730c5d179b2b5",
+  "paragraphs": [
+    "Provides multiple number formats along with accessible ways to modify their values within the constraints of their data type.",
+    "Numbers provides plenty of presets to help pre-format your numbers, very much like formatting the numbers in a spreadsheet. Find our presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Numbers look and then save it under its own name by pressing the Save Preset... button.",
+    "If you'd like a visual overview of Numbers before diving into this guide, we recommend giving our Cineversity tutorial a watch."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Universe-Numbers_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_Numbers_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_Numbers_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_Numbers_TextStyle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_Numbers_Value.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_Numbers_YearOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Text_Numbers_Time.png"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Heatwave",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Distortions_heatwave.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:21.346Z",
+  "sha256": "3b9020bc1d7a2f1831e2c5f40804d2b9ed58a76f8667d81f305c7bb5cea1e54e",
+  "paragraphs": [
+    "Heatwave is a realistic rippling heat distortion effect with controls for intensity, direction, speed, amount, and more.",
+    "Five fiery presets come ready to help you simulate a variety of simmering looks. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Heatwave look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Heatwave_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_Heatwave_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_Heatwave_Blur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_Heatwave_HeatDetailScale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_Heatwave_BlurSize.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_Heatwave_Mask.png"
+  ]
+}

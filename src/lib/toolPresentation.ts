@@ -1,5 +1,6 @@
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import { formatToolPrice } from "@/lib/currencyRates";
+import { formatCurrencyAmount } from "@/lib/currency";
 
 export type ToolPresentationInput = {
   id: string;
@@ -11,6 +12,8 @@ export type ToolPresentationInput = {
   pricing_v5?: {
     compare_price_monthly_eur?: number | null;
     compare_plan_kind?: string | null;
+    source_domain?: string | null;
+    plans?: { isComparePlan?: boolean; billingPeriod?: string | null; nativeAmount?: number | null; nativeCurrency?: string | null }[];
   } | null;
   defaultMonthlyPrice?: number | null;
   substitutable?: boolean | null;
@@ -35,7 +38,12 @@ export function getToolPresentation(tool: ToolPresentationInput, lang: "fr" | "e
   const freeTier = hasGenuineFreeTier(tool.pricing?.free);
   const freemium = isFreemiumPricing(tool.pricing);
   const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
-  const planLabel = freemium
+  const maxonAnnual = tool.pricing_v5?.source_domain === "maxon.net"
+    ? tool.pricing_v5.plans?.find((plan) => plan.isComparePlan && plan.billingPeriod === "annual" && plan.nativeAmount != null)
+    : null;
+  const planLabel = maxonAnnual
+    ? `${formatCurrencyAmount(maxonAnnual.nativeAmount!, "EUR", lang)}/${lang === "fr" ? "an" : "yr"}`
+    : freemium
     ? "Freemium"
     : freeTier
       ? (lang === "fr" ? "Gratuit" : "Free")

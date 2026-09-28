@@ -1,0 +1,19 @@
+{
+  "name": "Noir",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_noir.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:07.168Z",
+  "sha256": "7f8767ab8c48bb6b348562bfa18aa53f7610246572c719c2b9b40a3ea053dc51",
+  "paragraphs": [
+    "Create dramatic noir lighting effects with saturation controls, optically captured vignettes, flickering, Venetian patterns, and more using Noir.",
+    "Click the Choose a Preset... button to see an animated preview of all available presets. Double-click any preset to apply it. Once a preset is selected, you will see its name&#160;highlighted within the Vignette Preset drop-down menu below. Presets can also be applied directly from this Vignette&#160;Preset menu.",
+    "The images below illustrate how Noir changes a portrait with the Venetian preset's default values.",
+    "As with all other Universe tools, you can modify or create a Noir look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Noir_Moderne_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Noir_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Noir_Venetian.png"
+  ]
+}

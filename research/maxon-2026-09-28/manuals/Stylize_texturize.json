@@ -1,0 +1,22 @@
+{
+  "name": "Texturize",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_texturize.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:36.366Z",
+  "sha256": "e14a781136a6cafdfed777cd747d8ee2dfb61698c8db7977063ebfd9b3bda059",
+  "paragraphs": [
+    "Quickly give your footage a Walking Dead -style, grungy, textured treatment. Texturize’s seamless tiling textures make it easy to animate and bring life (or death) to your video or still imagery.",
+    "Apply any of several common texture patterns to your compositions with Texturize's convenient presets. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "Once you select a preset, its name&#160;will automatically populate the Texture &#160;drop-down menu field. (Note that there are three more entries in the drop-down than the Presets window. Easter eggs!) Alternatively, you can simply pick a preset from this pull-down and sidestep the Presets pop-up.",
+    "As with all other Universe tools, you can modify or create a Texturize look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Texturize_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Texturize_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Texturize_Textures.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Texturize_TextureBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Texturize_Tint.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Texturize_Mask.png"
+  ]
+}

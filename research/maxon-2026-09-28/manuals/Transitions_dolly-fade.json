@@ -1,0 +1,24 @@
+{
+  "name": "Dolly Fade",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_dolly-fade.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:00.719Z",
+  "sha256": "b0a3f9915355e648b6463ab64cfa464a5bfe5ea50b499c3bc73614c3ad09a7e3",
+  "paragraphs": [
+    "A 3D transition that moves a layer in z space while fading the other layer's&#160;opacity.",
+    "Do you want the camera to move in or out? That's all you need to know when using these two presets to set up your transition. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Dolly Fade look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DollyFade_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DollyFade_Dolly.png"
+  ]
+}

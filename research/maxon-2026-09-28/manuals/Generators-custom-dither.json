@@ -1,0 +1,14 @@
+{
+  "name": "Custom Dither",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Generators-custom-dither.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:23.474Z",
+  "sha256": "d9574ca2606dd69d6c59c1f4b330118b2705e6df4b826b9a9d4b7e206d7871b9",
+  "paragraphs": [
+    "Custom Dither gives you advanced control over a wealth of Universe dithering parameters. Create incredible textures and pixelated imagery with just a few clicks! To learn how, dive into our full Dither &amp; Palettes user guide."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "42 - Layer Maps &gt; Color And Alpha Subgroup",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/42-Trapcode-Particular-layer-maps_color-alpha.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:36.262Z",
+  "sha256": "dbbcbed25fac41ed42760783490efa860560ecad510c7d55c5ccc744aba4bef6",
+  "paragraphs": [
+    "Particular",
+    "The Color and Alpha group lets you use a layer to control the particle field with the color and alpha channels. The colors used for each particle come from RGB channels. The alpha channel defines transparency, making particles 100% transparent where the layer's alpha channel is black.",
+    "In the image above, the left image shows a precomp of a shape layer star with color and alpha information. The middle image shows is a particle field. At right, the precomp applies to the particle field as the Color and Alpha map, with Functionality at RGBA to RGBA and Map Over set to XY. Notice how any color choice applied to particles previously is ignored in favor of color from the source layer. If you wish to retain color selection, you'll want to select A to A or Lightness to A.",
+    "Color and Alpha &gt; Functionality pop-up: This control sets how particles interact with the layer map's color and alpha properties."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup05.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup06.png"
+  ]
+}

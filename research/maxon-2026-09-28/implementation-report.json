@@ -1,0 +1,1931 @@
+{
+  "updatedOn": "2026-09-28",
+  "dependency_status": "approved-fallback",
+  "narrative_canon_id": null,
+  "narrative_canon_version": null,
+  "claims_projection_offset": null,
+  "editorialBasis": "ToolTrim editorial guidelines and official Maxon documentation; standalone skill projections unavailable.",
+  "added": 151,
+  "updated": 9,
+  "changes": [
+    {
+      "slug": "maxon-one",
+      "name": "Maxon One",
+      "source": "https://www.maxon.net/en/maxon-one",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Hero_Banner-Netflix_-Super_Very_More-gradient.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Who-Maxon-One-is-for-1-motion-designers.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Who-Maxon-One-is-for-2a-3d-generalists.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/MaxonOne-icon_100_px.png",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "cinema-4d",
+      "name": "Cinema 4D",
+      "source": "https://www.maxon.net/en/cinema-4d",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Hero_banner-1.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Built_the_way_you_create-Motion_designers.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Built_the_way_you_create-3D-artists.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/C4D_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "zbrush",
+      "name": "ZBrush",
+      "source": "https://www.maxon.net/en/zbrush",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_Hero_banner-1.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/Built_the_way_you_scuplt-Character_Creature_Artists.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/Built_the_way_you_scuplt-Digital_Sculptors_Concept_Artists.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "redshift",
+      "name": "Redshift",
+      "source": "https://www.maxon.net/en/redshift",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift-Hero-banner-gradient-new.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Built_the_way_you-1-Motion_designers.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Built_the_way_you-2-Lightining_look.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "ae-red-giant",
+      "name": "Red Giant",
+      "source": "https://www.maxon.net/en/red-giant",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Red-Giant-Hero_banner-AUV_Creative_darker.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Built_the_way_you-1-Motion_designers.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Built_the_way_you-3-VFX-Artists.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "autograph",
+      "name": "Maxon Autograph",
+      "source": "https://www.maxon.net/en/autograph",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Autograph_Hero-banner-Still_from_video.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Motion-Graphics_Streamlined_tools.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Motion-Graphics_Responsive_Design.png"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Autograph/Autograph-Horizontal.png",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "zbrush-for-ipad",
+      "name": "ZBrush pour iPad",
+      "source": "https://www.maxon.net/en/zbrush-for-ipad",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush-for-iPad-Hero-Still_01.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush-for-iPad-Highly-Customizable-UI-Tomas_Wittelsbach.png",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush-for-iPad-Improved-User-Experience-J_Hill.png"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "cinebench",
+      "name": "Cinebench",
+      "source": "https://www.maxon.net/en/cinebench",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Maxon_Cinebench_2026_UI_Laptop.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Maxon_Cinebench_2026_UI_Desktop.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinebench/Cinebench-Horizontal.png",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "cineware",
+      "name": "Cineware",
+      "source": "https://www.maxon.net/en/cineware",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Cineware.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Cinema_4D_Inside_After_Effects_Cineware_After_Effects.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Unreal_02.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "maxon-capsules",
+      "name": "Maxon Capsules",
+      "source": "https://www.maxon.net/en/capsules",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Capsules/Capsules-Dec_2024_Hero_Banner.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Laubwerk-Capsules_page.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Capsules_Substance_Materials_2024_02.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Capsules/Capsules-vertical.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "maxon-studio",
+      "name": "Maxon Studio",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/maxon-studio",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-Studio/Maxon_Studio-banner_202509.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-Studio/MaxonStudio_Bento.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-Studio/Maxon_Studio-Create_Page.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "moves-by-maxon",
+      "name": "Moves by Maxon",
+      "source": "https://www.maxon.net/en/cinema-4d/features/moves-by-maxon",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Moves-by-Maxon-Header-Image_3.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Facial.png",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Body.png"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Moves-Inline-Vertical-240px.png",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-universe",
+      "name": "Red Giant Universe",
+      "source": "https://www.maxon.net/en/red-giant/universe",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_GSA_HERO.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_Texturize.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_Bokeh_2024.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "trapcode",
+      "name": "Trapcode",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Territory_Nightflyers.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "magic-bullet",
+      "name": "Magic Bullet",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic-Bullet-Looks-2024-loop.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Looks_2024_01.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Looks_September_2023_Presets.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "vfx-suite",
+      "name": "VFX Suite",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/supercomp",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_2023_03.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Mech.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "cinema-4d-lite",
+      "name": "Cinema 4D Lite",
+      "source": "https://www.maxon.net/en/cinema-4d/features/cineware-for-after-effects",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Florian_Renner__-Magnatron-035.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Gleann_Cineware_ae.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/C4D_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "cineware-for-after-effects",
+      "name": "Cineware pour After Effects",
+      "source": "https://www.maxon.net/en/cinema-4d/features/cineware-for-after-effects",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Florian_Renner__-Magnatron-035.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Gleann_Cineware_ae.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "cineware-for-illustrator",
+      "name": "Cineware pour Illustrator",
+      "source": "https://www.maxon.net/en/cinema-4d/features/cineware-for-illustrator",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Alex_Maltsev__Dope_6.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Illlustrator_C4D_Globe.png",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Illlustrator_primitives_v2.png"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "cineware-for-unreal",
+      "name": "Cineware pour Unreal Engine",
+      "source": "https://www.maxon.net/en/cineware",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware_Unreal_02.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-Banner_202512.png"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cineware/Cineware-vertical.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "redshift-for-architects",
+      "name": "Redshift for Architects",
+      "source": "https://www.maxon.net/en/redshift-for-architects",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ArchViz/Redshift-architects-hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ArchViz/Core_benefits-seamless_integration.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ArchViz/Powerful_features_Ai_search-banner.jpg"
+      ],
+      "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "maxon-app",
+      "name": "Maxon App",
+      "source": "https://help.maxon.net/mxa/en-us/Content/html/program-tabs.html",
+      "media": [
+        "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_groups.png",
+        "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_license-status.png",
+        "https://help.maxon.net/mxa/en-us/Content/Resources/Images/mxa_program-tabs_three-dots.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-3d-stroke",
+      "name": "3D Stroke",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/motion-graphics/3d-stroke",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_3D_Stroke_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_3D_Stroke_Motion_Graphics.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_3D_Stroke_Repeater.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-analog",
+      "name": "Universe Analog",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/analog",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_6.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_4.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_2.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-array-gun",
+      "name": "Universe Array Gun",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/array-gun",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun_Shapes_and_Lines.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-av-club",
+      "name": "Universe AV Club",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/av-club",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club_Downgrade.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-bang",
+      "name": "Bang",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/bang",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Suite_2_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Bang_UI.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Bang_Alignment.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-bokeh",
+      "name": "Universe Bokeh",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/bokeh",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_2024_01.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_Shape.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_Take_Control_in_PrPro.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-carousel",
+      "name": "Universe Carousel",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/carousel",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel_10_Looks.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-chromatic-aberration",
+      "name": "Universe Chromatic Aberration",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/chromatic-aberration",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration_Centerpoint.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-chromatic-displacement",
+      "name": "Chromatic Displacement",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/distortions/chromatic-displacement",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Chromatic_Displacement_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Chromatic_Displacement.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Chromatic_Displacement_VFX.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-chromatown",
+      "name": "Universe ChromaTown",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/chromatown-tool",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Chromatown_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Chromatown_Chroma_Style.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-colorista",
+      "name": "Colorista",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/colorista",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Colorista_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Colorista_UI.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Colorista_Guided_Color_Correction.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-cosmo",
+      "name": "Cosmo",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/cosmo",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Cosmo_Hero_2.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Cosmo_Before.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Cosmo_After.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-denoiser",
+      "name": "Denoiser",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/denoiser",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Denoiser.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Denoiser_Before_3.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Denoiser_After_3.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-depth-generator",
+      "name": "Depth Generator",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/depth-generator",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/DepthGen-hero_banner.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Getting_started_DepthGen_option_3.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/DepthGen-banner-1.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-echospace",
+      "name": "Echospace",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/motion-graphics/echospace",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Echospace.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Echospace_AE_Step_Repeat.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-ecto",
+      "name": "Universe Ecto",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/ecto",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto_Glows.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto_Animated.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-electrify",
+      "name": "Universe Electrify",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/electrify",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_4.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_6.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-film",
+      "name": "Magic Bullet Film",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/film",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Film_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Film_Chemistry.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Film_Stock.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-finisher",
+      "name": "Universe Finisher",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/finisher",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher_Recover_Shadows.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-form",
+      "name": "Trapcode Form",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/form",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Form_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Form-banner-presets-February-2025.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Form_Immortal_Particle_Grids.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-geo",
+      "name": "Geo",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/geo",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Maxon_Red_Giant_Geo_Header.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Geo-whats-new-february-2025.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Maxon_Red_Giant_Geo_Model_Library.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-glimmer",
+      "name": "Universe Glimmer",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/glimmer",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer_6_Streaks.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer_Strength_and_Color.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-glitch",
+      "name": "Universe Glitch",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/glitch",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Compression.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Logos.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-glow",
+      "name": "Universe Glow",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/glow",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow_Inverse_Square.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow_Aberration.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-grain16",
+      "name": "Universe Grain16",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/grain16",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16_Film_Stock_Options.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-hacker-text",
+      "name": "Universe Hacker Text",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/hacker-text",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text_Encrypt_Decrypt.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-halflight",
+      "name": "Universe HalfLight",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/halflight",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Halflight_Customizable.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HalfLight_Presets.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Halflight_Customize.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-heatwave",
+      "name": "Universe Heatwave",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/heatwave",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave_Distortion_Ridged.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-holomatrix",
+      "name": "Universe Holomatrix II",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/holomatrix",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix_Tutorial.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix_II_Transmit.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-horizon",
+      "name": "Horizon",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/horizon",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Horizon.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Horizon_3D_Backgrounds.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-hud-components",
+      "name": "Universe HUD Components",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/hud-components",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD_Presets.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD_Create.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-king-pin-tracker",
+      "name": "King Pin Tracker",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/king-pin-tracker",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_King_Pin_Planar_Tracker.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_King_Pin_Tracker_Demo.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_King_Pin_Gun_HUD.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-knoll-light-factory-ez",
+      "name": "Universe Knoll Light Factory EZ",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/knoll-light-factory-ez",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ_Presets.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-lens-distortion-matcher",
+      "name": "Lens Distortion Matcher",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/lens-distortion-matcher",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Lens_Distortion_Matcher_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Lens_Distortion_Matcher_Before.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Lens_Distortion_Matcher_After.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-line",
+      "name": "Universe Line",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/line",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line_Create.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line_Stylize.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-logo-motion",
+      "name": "Universe Logo Motion",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/logo-motion",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion_Instant_Mograph.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion_Idle_Behavior.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-luster",
+      "name": "Universe Luster",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/luster",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster_Reflection.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-lux",
+      "name": "Lux",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/lux",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Lux_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Lux_Visible_AE_Lights.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-magicbullet-looks",
+      "name": "Magic Bullet Looks",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic-Bullet-Looks-2024-loop.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Looks_2024_01.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Looks_September_2023_Presets.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-mir",
+      "name": "Trapcode Mir",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/mir",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Mir_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Mir_Motion_Graphics.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Mir_Terrain_Landscape.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-modes",
+      "name": "Universe Modes",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/modes",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes_Blend.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes_Combine.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-mojo",
+      "name": "Magic Bullet Mojo",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/mojo",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Mojo_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Mojo_Instant_Hollywood.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Mojo_Customize.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-numbers",
+      "name": "Universe Numbers",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/numbers",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers_Currencies.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers_Animate.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-optical-glow",
+      "name": "Optical Glow",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/optical-glow",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Optical_Glow_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Optical_Glow_Eye.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Optical_Glow_Visual_Effects.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-overlight",
+      "name": "Universe OverLight",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/overlight",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight_Light_Textures.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight_20_Overlays.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-parametric-curve",
+      "name": "Parametric Curve",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/parametric-curve",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Red-Giant-Parametric-Curve.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Red-Giant-ParametricCurve_SomethingNew.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Red-Giant-ParametricCurve_NoHDRcurve-2.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-pixel-dither",
+      "name": "Universe Pixel Dither",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/pixel-dither",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe-Pixel_art_Hero-Image-dark.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_Getting_Started_With_Pixel_Dither_2.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe-Halftone-Dither.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-primatte-keyer",
+      "name": "Primatte Keyer",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/primatte-keyer",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Primatte_Keyer_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Primatte_Keyer_Before.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Primatte_Keyer_After.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-progresso",
+      "name": "Universe Progresso",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/progresso",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso_Animate.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso_Create.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-quantum",
+      "name": "Universe Quantum",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/quantum",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_HUD.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_Combined_Forces.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_Presets.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-real-lens-flares",
+      "name": "Real Lens Flares",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/real-lens-flares",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Real_Lens_Flares_2024.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/ZoomLensVisualizationUI.jpeg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX-Real-Lens-Flares-2D-Distance.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-reflection",
+      "name": "Reflection",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/reflection",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Reflection_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Reflection_Fast.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Reflection_Visual_Effects.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-reframe",
+      "name": "Universe Reframe",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/reframe",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe_Perspective.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-renoiser",
+      "name": "Renoiser",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/color/renoiser",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Renoiser_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Renoiser_Before.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic_Bullet_Renoiser_After.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-retrograde",
+      "name": "Universe Retrograde",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/retrograde",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde_Made_With_Film.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-screen-text",
+      "name": "Universe Screen Text",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/screen-text",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text_Code_Warrior.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-shadow",
+      "name": "Shadow",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/shadow",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Shadow_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Shadow_Fast.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Shadow_Visual_Effects.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-shine",
+      "name": "Red Giant Shine",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/shine",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Shine_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Shine_Motion_Graphics.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Shine_Natural_Light_Rays.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-shrinkray",
+      "name": "Universe ShrinkRay",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/shrinkray",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Hero.png",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Tilt_Shift.png",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Blur_and_Focus.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-sketchify",
+      "name": "Universe Sketchify",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/sketchify-tool",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Sketchify_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Sketchify-Getting-Startet.png",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Sketchify_Ink_Outlines.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-sound-keys",
+      "name": "Sound Keys",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/utilities/sound-keys",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Sound_Keys.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Sound_Keys_Animation.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Sound_Keys_Visual_Effects.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-spot-clone-tracker",
+      "name": "Spot Clone Tracker",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/spot-clone-tracker",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Spot_Clone_Tracker_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Spot_Clone_Tracker_2024_01.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Spot_Clone_Tracker_Comparison.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-starglow",
+      "name": "Starglow",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/blurs-and-glows/starglow",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Starglow.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Starglow_Glimmer_Effects.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Starglow_Presets.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-supercomp",
+      "name": "Supercomp",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/vfx/supercomp",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_2023_03.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/VFX_Supercomp_Mech.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-symbol-mapper",
+      "name": "Universe Symbol Mapper",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/symbol-mapper-tool",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Getting_Started.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Grid.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-tao",
+      "name": "Trapcode Tao",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/tao",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Tao.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Tao_Geometric_Shapes.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Tao_Paths.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-text-tile",
+      "name": "Universe Text Tile",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/text-tile",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile_Complexity.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-texturize",
+      "name": "Universe Texturize",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/texturize",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize_Texture_Options.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-texturize-motion",
+      "name": "Universe Texturize Motion",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/texturize-motion",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_2.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_1.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_3.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-title-motion",
+      "name": "Universe Title Motion",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/title-motion",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Instant.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Idle_Behavior.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "red-giant-trapcode-particular",
+      "name": "Trapcode Particular",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Trapcode_Particular_Territory_Nightflyers.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-type-cast",
+      "name": "Universe Type Cast",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/type-cast",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Action.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Beautiful.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-type-on",
+      "name": "Universe Type On",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/type-on",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On_Customization.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On_Bring_It_On.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-typographic",
+      "name": "Universe Typographic",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/typographic",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Typographic_Social.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Typographic_Hero.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Presets_Lower_Thirds.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-vhs",
+      "name": "Universe VHS",
+      "source": "https://www.maxon.net/en/product-detail/red-giant/universe/vhs",
+      "media": [
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS_Presets2.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS.jpg",
+        "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS_Tape_Stock.jpg"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-blur",
+      "name": "Universe Blur",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-blur.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blur_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Blur_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Blur_BlurWidth.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-chromatic-glow",
+      "name": "Universe Chromatic Glow",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-chromatic-glow.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Chromatic_Glow_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_Threshold.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-compound-blur",
+      "name": "Universe Compound Blur",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-compound-blur.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Compound_Blur_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-edge-glow",
+      "name": "Universe Edge Glow",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-edge-glow.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Edge_Glow_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_EdgeGlow_default.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-glo-fi-ii",
+      "name": "Universe Glo Fi II",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi-ii.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glo-Fi2_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-glo-fi",
+      "name": "Universe Glo Fi",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_hero.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_Scale.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-point-zoom",
+      "name": "Universe Point Zoom",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-point-zoom.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Point_Zoom_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_PointZoom_Position.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-spot-blur",
+      "name": "Universe Spot Blur",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-spot-blur.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spot_Blur_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_SpotBlur_Feather.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-fractal-background",
+      "name": "Universe Fractal Background",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Generators-fractal-background.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Scale.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_Contrast.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-gradient-ramp",
+      "name": "Universe Gradient Ramp",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Generators-gradient-ramp.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Gradient_Ramp2_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generators_GradientRamp_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generators_GradientRamp_Xaxis.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-soft-gradient-background",
+      "name": "Universe Soft Gradient Background",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Generators-soft-gradient-background.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Soft_Gradient_BG_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_SourceAdjust.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-spectralicious",
+      "name": "Universe Spectralicious",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Generators-spectralicious.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spectralicious_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_BlendPoints.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-turbulence-noise",
+      "name": "Universe Turbulence Noise",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Generators-turbulence-noise.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Turbulence_Noise_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_Zoom.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-blinds",
+      "name": "Universe Blinds",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_blinds.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blinds_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-bokeh-transition",
+      "name": "Universe Bokeh Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_bokeh-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_hero2.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_Select.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-camera-shake-transition",
+      "name": "Universe Camera Shake Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_camera-shake-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-carousel-transition",
+      "name": "Universe Carousel Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_carousel-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CarouselTrans_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-channel-blur",
+      "name": "Universe Channel Blur",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_channel-blur.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ChannelBlur_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-channel-surf",
+      "name": "Universe Channel Surf",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_channel-surf.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ChannelBlur_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-clock-wipe",
+      "name": "Universe Clock Wipe",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_clock-wipe.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ClockWipe_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-color-mosaic",
+      "name": "Universe Color Mosaic Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_color-mosaic.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CarouselTrans_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-color-stripe",
+      "name": "Universe Color Stripe",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_color-stripe.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-cube",
+      "name": "Universe Cube",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_cube.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-diamond-wave",
+      "name": "Universe Diamond Wave",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_diamond-wave.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DiamondWave_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-dolly-fade",
+      "name": "Universe Dolly Fade",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_dolly-fade.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DollyFade_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-exposure-blur-transition",
+      "name": "Universe Exposure Blur",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_exposure-blur.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-film-transition",
+      "name": "Universe Film Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_film-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FilmTransition_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-flicker-cut",
+      "name": "Universe Flicker Cut",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_flicker-cut.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-fold",
+      "name": "Universe Fold",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_fold.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Fold_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-glitch-transition",
+      "name": "Universe Glitch Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_glitch-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-inside-cube",
+      "name": "Universe Inside Cube",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_inside-cube.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-knoll-light-transition",
+      "name": "Universe Knoll Light Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_knoll-light-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_KnollTrans_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-linear-wipe",
+      "name": "Universe Linear Wipe",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_linear-wipe.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_LinearWipe_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-retrograde-transition",
+      "name": "Universe Retrograde Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_retrograde-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-rubix-cube",
+      "name": "Universe Rubix Cube",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_rubix-cube.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RubixCube_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-shape-wipe",
+      "name": "Universe Shape Wipe",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_shape-wipe.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-slide",
+      "name": "Universe Slide",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_slide.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Slide_Presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-soft-edge-wipe",
+      "name": "Universe Soft Edge Wipe",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_soft-edge-wipe.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-spectralicious-transition",
+      "name": "Universe Spectralicious Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_spectralicious-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-stretch-transition",
+      "name": "Universe Stretch",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_stretch.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_stretch.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Stretch_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-swish-pan",
+      "name": "Universe Swish Pan",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_swish-pan.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SwishPan_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-triangle-wave",
+      "name": "Universe Triangle Wave",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_triangle-wave.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-turbulence-transition",
+      "name": "Universe Turbulence Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_turbulence-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TurbulenceTransition_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-unfold",
+      "name": "Universe Unfold",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_unfold.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-vhs-transition",
+      "name": "Universe VHS Transition",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_vhs-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_VHSTransition_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-warp",
+      "name": "Universe Warp",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Transitions_warp-transition.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-camera-shake",
+      "name": "Universe Camera Shake",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Utilities_camera-shake.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Camera_Shake_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_CameraShake_Scale.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-fisheye-fixer",
+      "name": "Universe Fisheye Fixer",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Utilities_fisheye-fixer.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_CP_Fisheye_Fixer_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_FishFix_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_FishFix_LensAngle.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-picture-in-picture",
+      "name": "Universe Picture in Picture",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Utilities_picture-in-picture.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Picture_In_Picture_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_PicInPic_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-socialize",
+      "name": "Universe Socialize",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Utilities_socialize.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/socialize_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_RatioWH.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-unmult",
+      "name": "Universe Unmult",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Utilities_unmult.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Unmult_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_Unmult.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-multitone",
+      "name": "Universe Multitone",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_multitone.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/mulitone_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Multitone_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Multitone_DuoTri.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-long-shadow",
+      "name": "Universe Long Shadow",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_long-shadow.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Long-Shadow_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-misfire",
+      "name": "Universe MisFire",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_misfire.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Misfire_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Misfire_AllOn.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-noir-moderne",
+      "name": "Universe Noir",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_noir.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Noir_Moderne_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Noir_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Noir_Venetian.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-halftone-dither",
+      "name": "Universe Halftone Dither",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_BWdither.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_PaletteDoggo.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-ordered-dither",
+      "name": "Universe Ordered Dither",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_BWdither.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_PaletteDoggo.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-threshold-dither",
+      "name": "Universe Threshold Dither",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_BWdither.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_PaletteDoggo.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-error-diffuse-dither",
+      "name": "Universe Error Diffuse Dither",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_BWdither.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_PaletteDoggo.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-custom-dither",
+      "name": "Universe Custom Dither",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_BWdither.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_PaletteDoggo.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-palettes",
+      "name": "Universe Palettes",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Stylize_dither-palettes.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_BWdither.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Dither_PaletteDoggo.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-prism-displacement",
+      "name": "Universe Prism Displacement",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Distortions_prism-displacement.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Prism_Displacement_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "universe-rgb-separation",
+      "name": "Universe RGB Separation",
+      "source": "https://help.maxon.net/rg/en-us/Content/html/Distortions_rgb-separation.html",
+      "media": [
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_RGB_Seperation_AR_universe.jpg",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_RGBSep_presets.png",
+        "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_RGBSep_Distortion.png"
+      ],
+      "logo": "",
+      "status": "implemented-awaiting-validation"
+    },
+    {
+      "slug": "pluraleyes",
+      "status": "retired-corrected",
+      "source": "https://support.maxon.net/hc/en-us/articles/7389361453340-PluralEyes-Limited-Maintenance-Mode"
+    }
+  ],
+  "blocked": []
+}

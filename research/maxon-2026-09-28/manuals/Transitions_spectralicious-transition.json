@@ -1,0 +1,26 @@
+{
+  "name": "Spectralicious Transition",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_spectralicious-transition.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:16.820Z",
+  "sha256": "8274af2a893b37c7e3488530946922fe65864abb996c0af9585cc443e27985a7",
+  "paragraphs": [
+    "An effect that creates a six-point color map from your A and B footage and uses the colors to transition between the two. Change the motion of the transition with 23 animation style options. Randomize points and time offset options to create unique movements between frames.",
+    "Universe Dashboard presets for Spectralicious Transition make soft, gentle A-B linear transitions a snap. Just keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Spectralicious Transition look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_MasterSpread.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_Lighten.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_AnimatePoints.png"
+  ]
+}

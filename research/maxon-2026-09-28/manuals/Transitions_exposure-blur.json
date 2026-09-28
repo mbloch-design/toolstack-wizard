@@ -1,0 +1,28 @@
+{
+  "name": "Exposure Blur",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_exposure-blur.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:01.798Z",
+  "sha256": "fa7484b99d0258a429d7ff59619ef61d35f54821754e1de373fbd00d970ab046",
+  "paragraphs": [
+    "A transition that blurs footage while bumping up the exposure to create a dynamic blend.",
+    "If you need a flash of inspiration in applying Exposure Blur to transition between your clips, our one-click presets have you covered. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create an Exposure Blur look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_Exposure.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_Proportional.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_VertiHori.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_Dolly.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_Tint.png"
+  ]
+}

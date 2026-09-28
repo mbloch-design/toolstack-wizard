@@ -1,0 +1,26 @@
+{
+  "name": "HalfLight",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_halflight.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:07.170Z",
+  "sha256": "44ac545dc1f39f04cf1b47f0d2d44416ec8fec1a1844a1c3d18600ec0a46e890",
+  "paragraphs": [
+    "A library of optically-captured, highly customizable light leak transitions that give your footage a moody, filmic look.",
+    "These HalfLight presets deliver one-click application of transition effects including solarization, light beams, and circular light artifacts. Find the presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a HalfLight look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Halflight_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Halflight_BlendMode.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Halflight_Brightness.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Halflight_Flip.png"
+  ]
+}

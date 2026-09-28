@@ -139,6 +139,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                     {plan.isFree && plan.pricingUnit === "trial" ? plan.displayName : plan.isFree ? formatCurrencyAmount(0, currency, lang || "fr") : formatNativeAmount(plan.nativeAmount!, plan.nativeCurrency)}
                     {plan.isFree && plan.pricingUnit === "open_source" && <small>{t(" licence", " license")}</small>}
                     {!plan.isFree && plan.billingPeriod === "monthly" && <small>/{t("mois", "mo")}</small>}
+                    {!plan.isFree && plan.billingPeriod === "annual" && <small>/{t("an", "yr")}</small>}
                   </strong>
                 )}
               </div>

@@ -589,7 +589,9 @@ const ToolDetailPage = () => {
                   <dl className="td-editorial-fact-list">
                     <div>
                       <dt>{t("Prix", "Pricing")}</dt>
-                      <dd>{displayPrice === 0 && !isOneTimePrice(tool)
+                      <dd>{["included", "discontinued", "beta"].includes(tool.pricing_v5?.compare_plan_kind || "")
+                        ? formatPriceLabel(tool, displayPrice, t, currency, lang)
+                        : displayPrice === 0 && !isOneTimePrice(tool)
                         ? (isPriceUndisclosed(tool) ? t("Prix non communiqué", "Price not public") : t("Gratuit", "Free"))
                         : displayPrice != null && (displayPrice > 0 || isOneTimePrice(tool))
                           ? formatPriceLabel(tool, displayPrice, t, currency, lang)
@@ -608,7 +610,7 @@ const ToolDetailPage = () => {
                     {(tool as any).host_app && (
                       <div>
                         <dt>{t("Plateforme", "Platform")}</dt>
-                        <dd>{(tool as any).host_app}</dd>
+                        <dd>{tools.find((candidate: any) => candidate.slug === (tool as any).host_app)?.name || (tool as any).host_app}</dd>
                       </div>
                     )}
                     {verifiedOn && (

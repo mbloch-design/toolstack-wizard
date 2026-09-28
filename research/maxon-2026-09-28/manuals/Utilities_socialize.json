@@ -1,0 +1,24 @@
+{
+  "name": "Socialize",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Utilities_socialize.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:30.721Z",
+  "sha256": "1bbd09985925eeb80751d3a548e219a50f547f7926da097b8f69e55202a6f4b5",
+  "paragraphs": [
+    "Arrange and frame your compositions for various social media platforms, making sure it all looks correct before finalizing the export.",
+    "Socialize contains over a dozen convenient presets for making quick work of optimizing video clips for today's most popular social media outlets. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Socialize look and then save it under its own name by pressing the Save Preset... button.",
+    "Care for a more video-oriented walk-through of Universe Socialize? We've got you covered over at Maxon Cineversity. Check it out HERE ."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/socialize_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_RatioWH.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_Offset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_Overlay.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_Background.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_Stretch.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Socialize_cineversity.png"
+  ]
+}

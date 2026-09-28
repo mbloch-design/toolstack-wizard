@@ -1,0 +1,17 @@
+{
+  "name": "44 - Layer Maps &gt; Size Subgroup",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/44-Trapcode-Particular-layer-maps_size.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:38.383Z",
+  "sha256": "e4363b9715c52c32f8697e1ba428c2942e421ffeb5bb7c93e1941bf84ceb3b30",
+  "paragraphs": [
+    "Particular",
+    "The Size group lets you change the size of system particles by using a source layer's luminance values. Black regions of the layer image will have a particle size of 0, which creates holes in the field. White regions have their particle size set to the maximum value of the Particle group &gt; Size control.",
+    "A layer with a gradient ramp (left), a particle field with Particle Size set to 8 (middle), and the gradient ramp applied as the Size map with Map Over set to XY (right)."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup10.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/TC_Particular_LayerGroup11.png"
+  ]
+}

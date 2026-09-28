@@ -1,0 +1,19 @@
+{
+  "name": "Multitone",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_multitone.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:06.100Z",
+  "sha256": "e0f8c3fb358709e83e9321e23e701ead5f0633ce0a8f4e3ba3e1a2210aa29101",
+  "paragraphs": [
+    "This tool colorizes your image's entire range of contrasts into two or three colors.",
+    "Try our dozen Multitone presets to bring instant, impossible-to-ignore color schemes to your footage. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Multitone look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/mulitone_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Multitone_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Multitone_DuoTri.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Multitone_Contrast.png"
+  ]
+}

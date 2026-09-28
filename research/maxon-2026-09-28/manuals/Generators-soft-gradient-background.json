@@ -1,0 +1,33 @@
+{
+  "name": "Soft Gradient Background",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Generators-soft-gradient-background.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:26.692Z",
+  "sha256": "de017ccedd5e5d13ea11dc995f45cbaf2c3e7d069d6b3176dcad64fcc359fb15",
+  "paragraphs": [
+    "A looping gradient background generator with fractal noise, textures, and more. Choose from different noise types for a variety of moving gradients. Add color, texture, and vignetting to customize your background.",
+    "From soothing pastels to grungy concrete, Soft Gradient Background offers a wide array of color patterns and overlays to give your compositions easy, potentially radically different moods and looks. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Soft Gradient Background look and then save it under its own name by pressing the Save Preset... button.",
+    "Fancy a more video-oriented walk through Soft Gradient Background?&#160;Check out our quick overview on Maxon's Cineversity!"
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Soft_Gradient_BG_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_SourceAdjust.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_Contrast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_Aspect.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_Complexity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_GradientCenter.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_MidAdjust1.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_MidAdjust2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_MidAdjust3.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_ColorMix.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_Mask1.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_Mask2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_Vignette.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_Vignette2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_PostContrast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_SoftGradBack_CineversityVideo.png"
+  ]
+}

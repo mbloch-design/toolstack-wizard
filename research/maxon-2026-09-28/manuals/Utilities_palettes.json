@@ -1,0 +1,14 @@
+{
+  "name": "Palettes",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Utilities_palettes.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:28.561Z",
+  "sha256": "e89f6fb7f5bdd3630b3a9424db2bd43461ba23fc80516fb85875435d402c3b7e",
+  "paragraphs": [
+    "Palettes gives you precise control over which colors comprise your image, allowing you to fine-tune your creation with a specific look and feel. To learn all about this tool, dive into our full Dither &amp; Palettes user guide."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png"
+  ]
+}

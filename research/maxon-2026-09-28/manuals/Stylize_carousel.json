@@ -1,0 +1,19 @@
+{
+  "name": "Carousel",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_carousel.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:54.355Z",
+  "sha256": "bfc0239e795208db912ce1fe2b1e4a2aa94a74721186e9710556444123e62c8e",
+  "paragraphs": [
+    "Universe Carousel captures the classic look of vintage color cross-processing, film fading, and vignettes.",
+    "For a quick shortut to great results, try any of Carousel's 10 bundled presets. Find these in the Red Giant Universe Dashboard (accessible via the blue Open Dashboard... button or the Choose a Preset... button below it)."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Carousel_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_carousel_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_carousel_frame.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_carousel_color.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_stylize_carousel_lightleaks.png"
+  ]
+}

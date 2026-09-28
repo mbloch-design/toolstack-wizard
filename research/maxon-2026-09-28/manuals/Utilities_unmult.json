@@ -1,0 +1,20 @@
+{
+  "name": "Unmult",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Utilities_unmult.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:31.791Z",
+  "sha256": "55f51769eca193e79a123c9226d7a9bc434ea8ec6a8f8118d40bb153be7f9780",
+  "paragraphs": [
+    "Create an alpha channel for any image or video shot on a black background. This tool is extremely useful for compositing footage of fire, smoke, water, and more.",
+    "Unmult offers two easy presets for turning black or white backgrounds into transparent alpha channels. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create an Unmult look and then save it under its own name by pressing the Save Preset... button. In Unmult's case, though, you probably won't...unless you just enjoy making presets."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Unmult_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_Unmult.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_Invert.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Unmult_Tolerance.png"
+  ]
+}

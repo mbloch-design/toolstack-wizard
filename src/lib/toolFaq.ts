@@ -1,5 +1,6 @@
 import type { Tool } from "@/data/types";
 import { formatToolPrice } from "@/lib/currencyRates";
+import { formatCurrencyAmount } from "@/lib/currency";
 import { localizePlanName } from "@/lib/planNames";
 import { isPriceUndisclosed } from "@/lib/pricing";
 
@@ -30,6 +31,9 @@ export function buildToolFaqs(
     ? isFr ? ` (plan ${planLabel})` : ` (${planLabel} plan)`
     : "";
   const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
+  const maxonAnnual = tool.pricing_v5?.source_domain === "maxon.net"
+    ? tool.pricing_v5.plans?.find((entry) => entry.isComparePlan && entry.billingPeriod === "annual" && entry.nativeAmount != null)
+    : null;
   // Sans date de verification, la reponse s'arrete au prix. Ecrire « Prix
   // verifie le 2026-03-29 » a partir d'un repli code en dur affirmait un
   // controle qui n'avait pas eu lieu, sur 644 pages.
@@ -44,7 +48,15 @@ export function buildToolFaqs(
     },
     {
       q: isFr ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
-      a: oneTime
+      a: maxonAnnual
+        ? (isFr ? `${tool.name} coûte ${formatCurrencyAmount(maxonAnnual.nativeAmount!, "EUR", "fr")} par an, avec paiement annuel anticipé. Le montant définitif dépend du pays et des taxes affichées au panier.${verifiedSuffixFr}` : `${tool.name} costs ${formatCurrencyAmount(maxonAnnual.nativeAmount!, "EUR", "en")} per year, billed annually upfront. Final pricing depends on region and taxes at checkout.${verifiedSuffixEn}`)
+        : tool.pricing_v5?.compare_plan_kind === "included"
+        ? (isFr ? `${tool.name} est inclus dans ${tool.pricing_v5.compare_plan_name || "une suite"}. Aucun tarif individuel n'est confirmé. Vérifiez les conditions de la licence.` : `${tool.name} is included in ${tool.pricing_v5.compare_plan_name || "a suite"}. No standalone price is confirmed. Check the licence terms.`)
+        : tool.pricing_v5?.compare_plan_kind === "discontinued"
+        ? (isFr ? `${tool.name} est arrêté et n'est plus vendu aux nouveaux utilisateurs.` : `${tool.name} is discontinued and is no longer sold to new users.`)
+        : tool.pricing_v5?.compare_plan_kind === "beta"
+        ? (isFr ? `${tool.name} est en bêta. Vérifiez ses conditions d'accès sur le site officiel.` : `${tool.name} is in beta. Check access terms on the official website.`)
+        : oneTime
         ? (isFr
           ? `${tool.name} est vendu en licence à vie, sans abonnement. ${tool.pricing?.paid || "Consultez le tarif officiel."}${verifiedSuffixFr}`
           : `${tool.name} is sold as a lifetime license with no subscription. ${tool.pricingEn?.paid || "See the official price."}${verifiedSuffixEn}`)

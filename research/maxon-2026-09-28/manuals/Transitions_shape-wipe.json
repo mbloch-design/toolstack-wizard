@@ -1,0 +1,30 @@
+{
+  "name": "Shape Wipe",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_shape-wipe.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:13.625Z",
+  "sha256": "618463ad885d5c4cf05030611f273f7e6a2e68c3fca39052a4a3efd51678f258",
+  "paragraphs": [
+    "Change from one footage source to the next using a modifiable shape of your choosing. Shape Wipe allows you to control its position, direction, stroke, and other properties to get the look just how you want.",
+    "Use the Shape Wipe presets to streamline your form-centric A-B transitions. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Shape Wipe look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_ShapeOptions2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_StarInset2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_RotationSpeed2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Reverse2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Strokes2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Normal2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Glow2.png"
+  ]
+}

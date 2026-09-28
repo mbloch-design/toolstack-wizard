@@ -1,0 +1,25 @@
+{
+  "name": "Picture in Picture",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Utilities_picture-in-picture.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:29.638Z",
+  "sha256": "787a6b1162bcaf7b890b96998a8b9afc364801f5d0fbfae1f0bd3e3d507e7c59",
+  "paragraphs": [
+    "Easily composite and frame one footage layer over a larger layer. Includes the ability to add and customize a colored border and drop shadow."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Picture_In_Picture_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_PicInPic_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_PicInPic_Source.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_PicInPic_Position.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_PicInPic_Border.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_PicInPic_Shadow.png"
+  ]
+}

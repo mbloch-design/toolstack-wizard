@@ -1,0 +1,24 @@
+{
+  "name": "Chromatic Aberration",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Distortions_chromatic-aberration.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:19.219Z",
+  "sha256": "0ee6debb133f8c71fa4a9a87da2e3d891f54b7424ff53beef3695c47b815e059",
+  "paragraphs": [
+    "A simulated lens distortion effect that mimics real-world lens aberration in which a lens fails to focus all colors to the same convergence point. This effect includes color splitting, lens distortion, blurs, and lens textures for added realism.",
+    "Sixteen preconfigured presets offer a wide variety of RGB mayhem and textural variety. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "Note that the above snapshot doesn't do these presets justice. This is a case where you'll want to apply the presets to your clip to fully appreciate their appearance and range.",
+    "As with all other Universe tools, you can modify or create a Chromatic Aberration look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Chromatic_Aberration_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_ChromAber_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_ChromAber_Center.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_ChromAber_LensRadius.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_ChromAber_ChromaticTint.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_ChromAber_RGB-Scale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_ChromAber_LensTexture.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Distort_ChromAber_TextureMask.png"
+  ]
+}

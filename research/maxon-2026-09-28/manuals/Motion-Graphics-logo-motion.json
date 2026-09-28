@@ -1,0 +1,31 @@
+{
+  "name": "Logo Motion",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Motion-Graphics-logo-motion.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:33.119Z",
+  "sha256": "08b48e09528585ac18a11e64042769cb86b5a2979878a67a0ddff0ba984e809d",
+  "paragraphs": [
+    "Instantly add dynamic animations that bring your text and logos to life.",
+    "Logo Motion delivers a host of presets to get your graphics animated in seconds. Then, if you like, just tweak the parameters to taste. Find our presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Logo Motion look and then save it under its own name by pressing the Save Preset... button.",
+    "Adjust the following properties for the transition's start.",
+    "Again, the idle phase is the period between the end of the element's entrance and the beginning of its exit. Adjust the following idle phase properties as needed.",
+    "These controls copy the previously discussed Start Properties , except they apply to the animation's exit phase.",
+    "If you want certain adjustments made to the entire Logo Motion effect, using the following global controls may be more convenient than making more granular changes to each animation phase.",
+    "Since Universe's Logo Motion effect relies on time factors pulled from&#160;your composition's information (i.e., when&#160;the motion&#160;starts, when it ends, how long to idle), it sometimes doesn't seem to work well when used with other effects that also utilize time factors.",
+    "Holomatrix II, for example, disables Logo Motion when applied alongside it because Holomatrix uses time variables&#160;to determine things like how often it should flicker, glitch, or damage.",
+    "For this reason, you should use the Disable Time FX toggle whenever it's present if you find Logo Motion isn't operating properly.",
+    "If the effect you're using doesn't have this toggle available and it seems to disable Logo Motion, try nesting your clip with Logo Motion applied to it in its own composition/timeline. Then apply the effect on top of that.",
+    "You mainly want to allow Logo Motion to work with your composition/sequence's time data without other plugins behaving as a third party between the two."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/LogoMotion4_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_LogoMotion_crop.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_LogoMotion_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_LogoMotion_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_LogoMotion_PositionStart.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_LogoMotion_MotionBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/disabletimefx_universe.jpg"
+  ]
+}

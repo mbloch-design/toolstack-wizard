@@ -1,0 +1,22 @@
+{
+  "name": "Glo Fi",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glo-fi.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:14.905Z",
+  "sha256": "9611f18ced0e7933226b08c838b78834db3b2b199c4b60f873ea499cc751b006",
+  "paragraphs": [
+    "Glow Fi is a self-animating, fractal-based glow effect for text. Add a unique, organic glow with presets and advanced controls.",
+    "Glo Fi offers a range of ready-made, animated preset schemes. Find these",
+    "via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Glo Fi look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_hero.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_Scale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_Contrast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_BlurDirection.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_Boost.png"
+  ]
+}

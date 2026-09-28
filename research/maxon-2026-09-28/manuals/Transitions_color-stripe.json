@@ -1,0 +1,30 @@
+{
+  "name": "Color Stripe",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_color-stripe.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:57.376Z",
+  "sha256": "8c93e3cf313a02f3633626b5eb77fff5b1c1e4fe38c884aaf59293ad8191103d",
+  "paragraphs": [
+    "Create a transition that wipes color bands across the screen to reveal a second layer.",
+    "A range of Color Stripe preset types give you one-click access to fully configured wipes. Simply keyframe the Mix duration (see below)&#160;and tune to taste! Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Color Stripe look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_TimeOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_ColorScheme.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_CustomColors.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_HueOffset.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_DropShadow.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_MotionBlur-bands.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_MotionBlur.png"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Bokeh",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-bokeh.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:09.505Z",
+  "sha256": "aa8eee903c693ec6163abd9db7b70bf7a04a6de44b1dae6cc11d279b939d3580",
+  "paragraphs": [
+    "Create realistic lens blur effects from almost any video with a range of stunningly beautiful bokeh geometries.",
+    "Bokeh presets instantly bathe your images in beautiful blurred foreground effects. Find several options via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Bokeh look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_hero.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_Shape.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_BlurAmount.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_BlurAngle.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_Highlight.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_Ratio.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_CustomBlurMap.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_GS-DepthMap.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_FocalLength.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_FocusPosition.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_Attenuation2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_Bokeh_AspectRatio.png"
+  ]
+}

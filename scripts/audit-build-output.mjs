@@ -25,11 +25,14 @@ const budgets = {
   // media and shared CSS; measured output 13_217. Byte limits unchanged.
   // PDF Agile and Piktochart additions: measured 13,251 files, 750.5 MiB HTML.
   // B12/Wix and two bilingual guides: measured 13,294 files, six new routes.
-  files: 13_310,
+  // 2026-09-28: 150 sourced Maxon listings generate 1,500 additional
+  // localized tool routes. Measured output: 14,816 files, 975.7 MiB total,
+  // 873.5 MiB HTML. Retain a narrow margin rather than disabling the audit.
+  files: 14_850,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
-  totalBytes: 852 * MiB,
+  totalBytes: 985 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
-  htmlBytes: 753 * MiB,
+  htmlBytes: 880 * MiB,
   javascriptBytes: 15 * MiB,
   cssBytes: 30 * MiB,
   duplicateBytes: 3 * MiB,

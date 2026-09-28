@@ -1,0 +1,138 @@
+3d-stroke	3D Stroke	Animer des tracés avec épaisseur, lumière et répétitions dans un espace 3D.	Animate paths with thickness, light and repeated strokes in 3D space.
+analog	Universe Analog	Reproduire les couleurs, parasites et lignes de balayage d'un téléviseur analogique.	Recreate analog television colour, interference and scan lines.
+array-gun	Universe Array Gun	Construire des grilles animées de formes et de lignes pour un habillage graphique.	Build animated grids of shapes and lines for motion graphics.
+av-club	Universe AV Club	Donner aux titres un aspect vidéo ancien, bruité et peu défini.	Give titles a noisy, low-resolution vintage video treatment.
+bang	Bang	Composer des flashes de tir en 3D dans After Effects et ajuster leur placement dans le plan.	Composite 3D muzzle flashes in After Effects and adjust their placement in a shot.
+bokeh	Universe Bokeh	Simuler un flou de mise au point dont les lumières prennent des formes de bokeh réglables.	Simulate defocus with adjustable bokeh shapes in bright image areas.
+carousel	Universe Carousel	Appliquer un rendu de pellicule vieillie avec dérives de couleur et vignettage.	Apply aged-film colour shifts and vignetting.
+chromatic-aberration	Universe Chromatic Aberration	Simuler les défauts chromatiques d'un objectif avec séparation des couleurs et déformation.	Simulate lens chromatic defects with colour separation and distortion.
+chromatic-displacement	Chromatic Displacement	Déformer une image à partir d'un autre calque tout en séparant ses couleurs.	Displace an image using another layer while separating its colours.
+chromatown-tool	Universe ChromaTown	Combiner traînées colorées, flous directionnels et transformations de l'image.	Combine coloured streaks, directional blur and image transformations.
+colorista	Colorista	Corriger l'exposition et les couleurs directement dans la timeline du logiciel hôte.	Correct exposure and colour directly in the host application's timeline.
+cosmo	Cosmo	Cibler les tons de peau pour atténuer des imperfections et harmoniser un portrait vidéo.	Target skin tones to soften blemishes and balance a video portrait.
+denoiser	Denoiser	Réduire le bruit visible dans des prises de vue réalisées en faible lumière.	Reduce visible noise in footage captured in low light.
+depth-generator	Depth Generator	Créer une passe de profondeur à partir d'une vidéo dans After Effects.	Generate a depth pass from footage inside After Effects.
+echospace	Echospace	Dupliquer des calques 3D et décaler leurs animations pour créer un mouvement en cascade.	Duplicate 3D layers and offset their animation to create cascading motion.
+ecto	Universe Ecto	Créer des titres lumineux aux contours fractals et évolutifs.	Create glowing titles with evolving fractal edges.
+electrify	Universe Electrify	Générer des arcs électriques à partir des contours d'une image ou d'un bruit fractal.	Generate electrical arcs from image contours or fractal noise.
+film	Magic Bullet Film	Recréer un traitement de pellicule en combinant négatif, étalonnage et tirage.	Recreate a film treatment through negative stock, grading and print-stock controls.
+finisher	Universe Finisher	Ajuster le détail et la finition d'une image à partir de plusieurs couches de luminance.	Adjust image detail and finishing across multiple luminance layers.
+form	Trapcode Form	Construire des formes en particules persistantes, puis modifier leur organisation dans After Effects.	Build persistent particle forms and reshape their arrangement in After Effects.
+geo	Geo	Importer, texturer, éclairer et cloner des modèles 3D directement dans After Effects.	Import, texture, light and clone 3D models directly in After Effects.
+glimmer	Universe Glimmer	Ajouter des éclats étoilés animés sur les zones lumineuses d'une image.	Add animated star-like glints to bright image areas.
+glitch	Universe Glitch	Simuler une vidéo corrompue avec compression, ruptures de signal et décalages numériques.	Simulate corrupted video through compression, signal breakup and digital offsets.
+glow	Universe Glow	Diffuser les hautes lumières avec un halo dont la couleur et l'intensité restent réglables.	Spread highlights into a glow with adjustable colour and intensity.
+grain16	Universe Grain16	Ajouter une texture de grain issue de scans de pellicules 16 mm.	Add grain texture sourced from scans of 16 mm film stocks.
+hacker-text	Universe Hacker Text	Animer un texte brouillé qui se transforme progressivement en message lisible.	Animate scrambled text as it resolves into a readable message.
+halflight	Universe HalfLight	Relier deux plans par une transition de fuite de lumière réglable.	Connect two shots with an adjustable light-leak transition.
+heatwave	Universe Heatwave	Déformer une image avec des ondulations qui évoquent la chaleur.	Distort an image with ripples that suggest heat haze.
+holomatrix	Universe Holomatrix II	Transformer textes, logos et images en affichages holographiques perturbés.	Turn text, logos and footage into disrupted holographic displays.
+horizon	Horizon	Placer un fond panoramique à 360 degrés qui suit la caméra 3D d'After Effects.	Place a 360-degree background that responds to the After Effects 3D camera.
+hud-components	Universe HUD Components	Assembler des éléments animés d'interface et d'affichage tête haute.	Assemble animated interface and heads-up display elements.
+king-pin-tracker	King Pin Tracker	Suivre une surface plane pour remplacer une enseigne ou intégrer une image dans un plan.	Track a planar surface to replace a sign or insert an image into a shot.
+knoll-light-factory-ez	Universe Knoll Light Factory EZ	Ajouter des effets de flare prédéfinis et adapter leur position à une source lumineuse.	Add preset lens flares and position them around a light source.
+lens-distortion-matcher	Lens Distortion Matcher	Corriger la distorsion d'un objectif pour composer un plan, puis la réappliquer au résultat.	Undistort lens footage for compositing, then reapply the distortion to the result.
+line	Universe Line	Animer une ligne droite ou courbe entre plusieurs points pour illustrer un trajet.	Animate a straight or curved line between points to illustrate a route.
+logo-motion	Universe Logo Motion	Animer l'entrée, la présence et la sortie d'un logo ou d'un calque de texte.	Animate the entrance, hold and exit of a logo or text layer.
+luster	Universe Luster	Créer un traitement métallique ou vitré sur du texte, avec un relief de biseau.	Create metallic or glass-like text treatments with a bevelled appearance.
+lux	Lux	Rendre visibles les faisceaux des lumières ponctuelles et spots d'une scène After Effects.	Make point and spot lights visible as volumetric beams in an After Effects scene.
+magicbullet-looks	Magic Bullet Looks	Construire un rendu colorimétrique en combinant des outils de correction et des looks personnalisables.	Build a colour treatment by combining correction tools and customisable looks.
+mir	Trapcode Mir	Créer des surfaces, tunnels et terrains procéduraux dans After Effects.	Create procedural surfaces, tunnels and terrain in After Effects.
+modes	Universe Modes	Combiner plusieurs calques avec des modes de fusion et des contrôles supplémentaires.	Combine layers with additional blending modes and controls.
+mojo	Magic Bullet Mojo	Appliquer un traitement colorimétrique stylisé puis ajuster contraste, exposition et balance.	Apply a stylised colour treatment, then adjust contrast, exposure and balance.
+numbers	Universe Numbers	Afficher et animer des compteurs, pourcentages, montants, dates ou heures.	Display and animate counters, percentages, amounts, dates or times.
+optical-glow	Optical Glow	Créer des halos lumineux avec gestion du gamma et décroissance de la lumière.	Create light blooms with gamma handling and controlled light falloff.
+overlight	Universe OverLight	Superposer des fuites de lumière et des textures lumineuses à une vidéo.	Overlay light leaks and light textures onto footage.
+parametric-curve	Parametric Curve	Ajuster une image et ses hautes lumières avec des courbes HDR paramétrables.	Adjust an image and its highlights using configurable HDR curves.
+pixel-dither	Universe Pixel Dither	Transformer des images en rendus pixel art avec palettes limitées et tramage.	Turn images into pixel-art treatments with limited palettes and dithering.
+primatte-keyer	Primatte Keyer	Extraire un sujet filmé sur fond vert ou bleu, puis affiner les contours et les débordements de couleur.	Extract a subject shot against green or blue screen, then refine edges and colour spill.
+progresso	Universe Progresso	Animer des barres de progression, arcs et graphiques pour une infographie vidéo.	Animate progress bars, arcs and charts for video infographics.
+quantum	Universe Quantum	Créer des traînées lumineuses déformées et animées autour d'un calque.	Create animated, warped light trails around a layer.
+real-lens-flares	Real Lens Flares	Construire des effets de flare en réglant le modèle d'objectif et la position de la lumière.	Build lens flares by adjusting the lens model and light position.
+reflection	Reflection	Ajouter un reflet à un calque avec contrôle du flou et de l'atténuation.	Add a reflection to a layer with blur and fade controls.
+reframe	Universe Reframe	Composer une image dans l'image avec animation, bordures et rotation.	Build animated picture-in-picture layouts with borders and rotation.
+renoiser	Renoiser	Redonner une texture de grain à des images numériques ou préalablement débruitées.	Restore grain texture to digital or previously denoised images.
+retrograde	Universe Retrograde	Simuler le grain, la couleur et les défauts de films 8 mm et 16 mm.	Simulate the grain, colour and damage of 8 mm and 16 mm film.
+screen-text	Universe Screen Text	Faire défiler du texte comme dans un terminal informatique.	Scroll text in the style of a computer terminal.
+shadow	Shadow	Créer une ombre en perspective à partir d'un calque et régler sa longueur et sa douceur.	Create a perspective shadow from a layer and adjust its length and softness.
+shine	Red Giant Shine	Générer des rayons lumineux à partir d'une image pour un habillage ou un effet atmosphérique.	Generate light rays from an image for motion graphics or atmospheric effects.
+shrinkray	Universe ShrinkRay	Simuler une faible profondeur de champ de type tilt-shift pour donner un effet miniature.	Simulate tilt-shift-style shallow depth of field for a miniature effect.
+sketchify-tool	Universe Sketchify	Transformer une vidéo en rendu dessiné avec contours d'encre et textures.	Turn footage into an illustrated treatment with ink outlines and textures.
+sound-keys	Sound Keys	Analyser un signal audio pour piloter des propriétés d'animation avec des images clés.	Analyse audio to drive animation properties through keyframes.
+spot-clone-tracker	Spot Clone Tracker	Masquer de petites imperfections en clonant une zone voisine et en suivant son mouvement.	Hide small blemishes by cloning a nearby area and tracking its motion.
+starglow	Starglow	Transformer les hautes lumières en étoiles colorées aux branches réglables.	Turn highlights into coloured stars with adjustable streaks.
+supercomp	Supercomp	Faire interagir lumière, diffusion et atmosphère entre plusieurs calques de compositing.	Combine layers with shared light interaction, diffusion and atmospheric effects.
+symbol-mapper-tool	Universe Symbol Mapper	Reconstruire une image avec des lettres, chiffres et symboles selon sa luminosité.	Rebuild an image with letters, numbers and symbols according to brightness.
+tao	Trapcode Tao	Construire des formes 3D animées à partir d'extrusions et de chemins dans After Effects.	Build animated 3D forms from extrusions and paths in After Effects.
+text-tile	Universe Text Tile	Générer des colonnes de données animées pour une interface fictive ou un habillage technique.	Generate animated data columns for fictional interfaces or technical graphics.
+texturize	Universe Texturize	Appliquer des textures grunge répétables et régler leur échelle, couleur et mélange.	Apply tiling grunge textures and adjust their scale, colour and blending.
+texturize-motion	Universe Texturize Motion	Superposer des textures animées et régler leurs mouvements sur une vidéo.	Overlay animated textures and adjust their movement over footage.
+title-motion	Universe Title Motion	Créer des titres et des formes avec animations d'entrée et de sortie personnalisables.	Create titles and shapes with customisable entrance and exit animations.
+trapcode-particular	Trapcode Particular	Créer des systèmes de particules 3D avec forces, comportements physiques et émetteurs liés.	Create 3D particle systems with forces, physical behaviours and linked emitters.
+type-cast	Universe Type Cast	Animer couleur, taille, position et rotation du texte par caractère ou par mot.	Animate text colour, size, position and rotation by character or word.
+type-on	Universe Type On	Révéler un texte caractère par caractère avec un rendu de saisie informatique.	Reveal text character by character with a computer-typing effect.
+typographic	Universe Typographic	Combiner formes et texte pour créer des animations typographiques.	Combine shapes and text to create typographic animations.
+vhs	Universe VHS	Recréer la couleur, les déformations et les incrustations d'une cassette vidéo VHS.	Recreate VHS tape colour, distortion and on-screen overlays.
+blur	Universe Blur	Appliquer un flou réglable en rayon et en direction, notamment en espace gamma linéaire.	Apply blur with radius and direction controls, including in linear gamma space.
+chromatic-glow	Universe Chromatic Glow	Ajouter des halos multicolores aux hautes lumières ou aux titres.	Add multicoloured glows to highlights or titles.
+compound-blur	Universe Compound Blur	Moduler le flou d'une image avec la luminance d'un autre calque.	Control image blur using another layer's luminance.
+edge-glow	Universe Edge Glow	Faire ressortir les contours d'une image avec un halo lumineux.	Highlight image edges with a luminous glow.
+glo-fi-ii	Universe Glo Fi II	Animer un halo fractal organique autour d'un texte.	Animate an organic fractal glow around text.
+glo-fi	Universe Glo Fi	Créer un halo de texte animé à partir de motifs fractals.	Create animated text glow using fractal patterns.
+point-zoom	Universe Point Zoom	Combiner un flou de zoom et une lueur pour simuler une projection lumineuse.	Combine zoom blur and glow to suggest a light projection.
+spot-blur	Universe Spot Blur	Flouter l'intérieur ou l'extérieur d'une zone rectangulaire ou elliptique.	Blur inside or outside a rectangular or elliptical region.
+fractal-background	Universe Fractal Background	Générer des fonds fractals colorés et animés en boucle.	Generate colourful, looping fractal backgrounds.
+gradient-ramp	Universe Gradient Ramp	Créer un dégradé de deux ou trois couleurs avec contrôle de transparence et de bruit.	Create two- or three-colour gradients with transparency and noise controls.
+soft-gradient-background	Universe Soft Gradient Background	Créer des arrière-plans en dégradé animé avec bruit et texture.	Create animated gradient backgrounds with noise and texture.
+spectralicious	Universe Spectralicious	Composer un dégradé à six couleurs et régler la netteté de ses zones de transition.	Build a six-colour gradient and adjust the sharpness of its transitions.
+turbulence-noise	Universe Turbulence Noise	Générer des motifs de bruit animés avec paramètres de turbulence.	Generate animated noise patterns with turbulence controls.
+blinds	Universe Blinds	Révéler le plan suivant en faisant pivoter des bandes horizontales ou verticales.	Reveal the next shot by rotating horizontal or vertical strips.
+bokeh-transition	Universe Bokeh Transition	Passer d'un plan à l'autre par un flou de type bokeh.	Move between shots through a bokeh-style blur.
+camera-shake-transition	Universe Camera Shake Transition	Associer un changement de plan à une secousse de caméra simulée.	Combine a shot change with simulated camera shake.
+carousel-transition	Universe Carousel Transition	Simuler un changement de diapositive avec une esthétique rétro.	Simulate a slide-projector change with a retro treatment.
+channel-blur	Universe Channel Blur	Créer une transition en floutant séparément les canaux de couleur.	Create a transition by blurring colour channels separately.
+channel-surf	Universe Channel Surf	Passer d'un plan à l'autre comme lors d'un changement de chaîne sur un téléviseur analogique.	Switch between shots like changing channels on an analog television.
+clock-wipe	Universe Clock Wipe	Révéler un plan avec un balayage radial autour du centre de l'image.	Reveal a shot with a radial wipe around the image centre.
+color-mosaic	Universe Color Mosaic Transition	Relier deux plans avec une mosaïque colorée personnalisable.	Connect two shots with a customisable coloured mosaic.
+color-stripe	Universe Color Stripe	Faire traverser l'écran par des bandes colorées pour révéler le plan suivant.	Sweep colour bands across the screen to reveal the next shot.
+cube	Universe Cube	Placer deux plans sur les faces d'un cube et passer de l'un à l'autre par rotation.	Place shots on cube faces and rotate between them.
+diamond-wave	Universe Diamond Wave	Découper l'image en losanges qui pivotent pour révéler un autre plan.	Split an image into rotating diamond segments to reveal another shot.
+dolly-fade	Universe Dolly Fade	Combiner un déplacement en profondeur et un fondu entre deux plans.	Combine depth movement and fading between two shots.
+exposure-blur-transition	Universe Exposure Blur	Créer une transition qui associe flou et hausse d'exposition.	Create a transition combining blur and increased exposure.
+film-transition	Universe Film Transition	Insérer une transition de type amorce ou compte à rebours de pellicule.	Insert a film-leader or film-countdown-style transition.
+flicker-cut	Universe Flicker Cut	Alterner rapidement entre deux plans ou une couleur pour créer une transition clignotante.	Rapidly alternate between shots or a solid colour for a flickering transition.
+fold	Universe Fold	Plier un plan sur lui-même tout en dépliant le suivant.	Fold one shot away while unfolding the next.
+glitch-transition	Universe Glitch Transition	Relier deux plans par des ruptures numériques et des artefacts de compression.	Connect shots through digital breakup and compression artefacts.
+inside-cube	Universe Inside Cube	Faire tourner les plans sur les faces intérieures d'un cube virtuel.	Rotate shots on the inner faces of a virtual cube.
+knoll-light-transition	Universe Knoll Light Transition	Utiliser un flare animé pour masquer le passage d'un plan à l'autre.	Use an animated lens flare to bridge a shot change.
+linear-wipe	Universe Linear Wipe	Créer un balayage linéaire avec origine, couleur et douceur de bord réglables.	Create a linear wipe with adjustable origin, colour and edge softness.
+retrograde-transition	Universe Retrograde Transition	Simuler le défilement d'une bobine de film lors du changement de plan.	Simulate a film reel scrolling during a shot change.
+rubix-cube	Universe Rubix Cube	Segmenter un cube vidéo et faire pivoter ses blocs en directions opposées.	Segment a video cube and rotate its blocks in opposing directions.
+shape-wipe	Universe Shape Wipe	Utiliser une forme réglable comme masque de transition entre deux vidéos.	Use an adjustable shape as a transition mask between videos.
+slide	Universe Slide	Faire glisser un plan hors du cadre pour révéler le suivant.	Slide a shot out of frame to reveal the next one.
+soft-edge-wipe	Universe Soft Edge Wipe	Mélanger deux plans avec un balayage linéaire à bord progressif.	Blend shots through a linear wipe with a feathered edge.
+spectralicious-transition	Universe Spectralicious Transition	Passer entre deux plans à l'aide d'une carte de couleurs animée.	Move between shots using an animated colour map.
+stretch-transition-tool	Universe Stretch	Étirer le premier plan pendant que le suivant se contracte pour prendre sa place.	Stretch the first shot away as the next contracts into place.
+swish-pan	Universe Swish Pan	Simuler un mouvement panoramique rapide entre deux plans.	Simulate a fast camera pan between shots.
+triangle-wave	Universe Triangle Wave	Révéler le plan suivant par une vague de triangles en rotation.	Reveal the next shot through a wave of rotating triangles.
+turbulence-transition	Universe Turbulence Transition	Créer un fondu piloté par un motif fractal de luminance.	Create a dissolve driven by a fractal luminance pattern.
+unfold	Universe Unfold	Faire sortir un plan et déplier le suivant dans le cadre.	Move one shot out and unfold the next into the frame.
+vhs-transition	Universe VHS Transition	Simuler une bande VHS réenregistrée pendant un changement de plan.	Simulate overwritten VHS tape during a shot change.
+warp	Universe Warp	Déformer progressivement deux images pour effectuer la transition.	Progressively warp two images to transition between them.
+camera-shake	Universe Camera Shake	Ajouter des secousses et du flou de mouvement à une prise de vue stable.	Add camera shake and motion blur to steady footage.
+fisheye-fixer	Universe Fisheye Fixer	Corriger une déformation de type fisheye dans une vidéo.	Correct fisheye-style distortion in footage.
+picture-in-picture	Universe Picture in Picture	Composer un plan secondaire dans le cadre d'une vidéo principale.	Compose a secondary shot inside the main video frame.
+socialize	Universe Socialize	Préparer le cadrage d'une composition pour différents formats de réseaux sociaux.	Prepare composition framing for different social media formats.
+unmult	Universe Unmult	Transformer un fond noir en transparence pour intégrer fumée, feu ou autres éléments filmés.	Turn a black background into transparency to composite smoke, fire or other filmed elements.
+multitone	Universe Multitone	Remapper les tons d'une image vers une palette de couleurs stylisée.	Remap image tones into a stylised colour palette.
+long-shadow	Universe Long Shadow	Ajouter une ombre allongée à un texte ou à un élément graphique.	Add an extended shadow to text or graphics.
+misfire	Universe MisFire	Reproduire des défauts de pellicule pour vieillir un plan numérique.	Reproduce film imperfections to age a digital shot.
+noir-moderne	Universe Noir	Créer un traitement monochrome et contrôler le contraste de l'image.	Create a monochrome treatment and control image contrast.
+halftone-dither	Universe Halftone Dither	Simuler une trame d'impression avec des points dont la forme et la taille restent réglables.	Simulate print halftoning with adjustable dot shape and size.
+ordered-dither	Universe Ordered Dither	Réduire les couleurs d'une image à l'aide d'un motif de tramage régulier.	Reduce image colours using a regular dithering pattern.
+threshold-dither	Universe Threshold Dither	Transformer les niveaux de l'image en zones de couleur à partir de seuils.	Turn image levels into colour regions using thresholds.
+error-diffuse-dither	Universe Error Diffuse Dither	Distribuer les erreurs de quantification entre pixels pour créer un tramage à palette réduite.	Distribute quantisation error between pixels to dither a limited palette.
+custom-dither	Universe Custom Dither	Personnaliser un rendu tramé pour créer une esthétique de pixel art.	Customise a dithered treatment for a pixel-art aesthetic.
+palettes	Universe Palettes	Limiter et remapper les couleurs d'une image avec une palette choisie.	Limit and remap image colours through a chosen palette.
+prism-displacement	Universe Prism Displacement	Déformer une vidéo en séparant ses composantes colorées comme à travers un prisme.	Distort footage by separating colour components as though through a prism.
+rgb-separation	Universe RGB Separation	Décaler séparément les canaux rouge, vert et bleu d'une image.	Offset the red, green and blue image channels separately.

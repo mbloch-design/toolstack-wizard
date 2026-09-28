@@ -1,0 +1,39 @@
+{
+  "name": "Blinds",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Transitions_blinds.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:48.794Z",
+  "sha256": "d4dc6ac6b33a10003aa1e552f841c5f2c987044e69a43e86e35ac7ab1180d06b",
+  "paragraphs": [
+    "A 3D transition that divides the layer into sections that rotate in an offset fashion vertically or horizontally, revealing the second layer of footage.",
+    "Blinds arrives with four presets. Find them via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Blinds look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blinds_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/avidmedia_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/after-effects_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/motion_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_Tiles.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_Dolly.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_Direction.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_MotionBlur.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_MotionBlurShutter.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_LightAmbient.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_LightDirectional.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_LightPositional.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_LightSpotlight.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_LightPositionZ.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_LightDirection.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_LightCutoff.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_CameraRotate.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_CameraTrans.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Blinds_CameraOrtho.png"
+  ]
+}

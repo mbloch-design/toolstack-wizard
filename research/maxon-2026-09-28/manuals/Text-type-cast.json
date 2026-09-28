@@ -1,0 +1,14 @@
+{
+  "name": "Type Cast",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Text-type-cast.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:45.548Z",
+  "sha256": "96a2f747a09c0817ee60ecac9d2c7f1b2fc4c2ec64915108e26055a4db1e14f2",
+  "paragraphs": [
+    "Type Cast animates text properties like color, opacity, size, position, and rotation either by word or by character."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Type-Cast-Action_universe.jpg"
+  ]
+}

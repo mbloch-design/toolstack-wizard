@@ -1,0 +1,33 @@
+{
+  "name": "Glimmer",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glimmer.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:13.822Z",
+  "sha256": "120dd11e8374e66de4670960d3dcec95c754f5f9ed646e83bb731100fe138945",
+  "paragraphs": [
+    "Create colorful glints and animated twinkling effects in your image's bright areas. Great for beauty shots, titles, music videos, and more.",
+    "Glimmer offers a wealth of glittering, multifarious presets that bring instant sparkle to your footage. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Glimmer look and then save it under its own name by pressing the Save Preset... button.",
+    "The Mask control group makes quick work of masking your glow effect, if desired.",
+    "Glimmer Opacity lowers the transparency of the effect on the layer. This is another method for lowering the strength of Glimmer's presence in your comp without modifying other effect characteristics.",
+    "Source Opacity , when lowered from its default of 100, increasingly renders the source layer as transparent.",
+    "The Blend Mode drop-down menu offers the usual assortment of blending modes to composite Glimmer results over the original image."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glimmer_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_FirstShots.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_Input.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_Threshold.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_Threshold2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_Boost.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_StreaksColors.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_Hue.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_Streaks456.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_ColorMap.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_ShimmerAmount.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_ShimmerScale.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glimmer_Mask.png"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Title Motion",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Text-title-motion.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:44.484Z",
+  "sha256": "ca05f8f749b5633740eedceb401a9983d2264cee05a70faf3037da39a9718700",
+  "paragraphs": [
+    "Title Motion features a gallery of animated, customizable presets for you to bring titles on and off screen."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Title-Motion-b_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Screen-Shot-2017-04-27-at-4.19.22-PM-215x300_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/left_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/center_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/rightalign_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/spacing_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/textSize_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/kerning_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/undo_universe.png"
+  ]
+}

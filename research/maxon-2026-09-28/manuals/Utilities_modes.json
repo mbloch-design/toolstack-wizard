@@ -1,0 +1,43 @@
+{
+  "name": "Modes",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Utilities_modes.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:18:27.494Z",
+  "sha256": "717bebbb5143b4d57d61b5f99119e429ebfc60f91f7b3f22fbc401e327cd230a",
+  "paragraphs": [
+    "Modes is a technical artist tool for blending images with more control than you would get from most host applications. It allows you to combine multiple blend modes within a single image rather then having to duplicate layers and then combine and adjust them."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Modes_hero2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Modes_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Modes_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/premiere-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/final-cut-pro-x_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/sony-vegas-pro_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/resolve_universe.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_none.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_darken.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_multiply.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_colorburn.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_add.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_lighten.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_screen.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_colordodge.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_overlay.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_softlight.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_colorBurn2.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_vividlight.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_linearlightae.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_pinlight.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_differenceAE.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_exclusionAE.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_subtract.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_hueAE.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_saturation.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_colorAE.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_luminosity.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_RGBValues.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Utilities_Modes_Equations.png"
+  ]
+}

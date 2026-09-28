@@ -1,0 +1,23 @@
+{
+  "name": "Turbulence Noise",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Generators-turbulence-noise.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:28.833Z",
+  "sha256": "eedf756d008788619413ead789a76cbaf85db38e5e172aecf5ec32cd08d55c2c",
+  "paragraphs": [
+    "This plug-in creates noise with control over patterns, interpolations, appearance, animation, transformation, opacity, and advanced turbulence options.",
+    "Turbulence Noise offers a host of noise pattern and overlay shortcuts to help accelerate your search for just the right random patterns for your effects. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Turbulence Noise look and then save it under its own name by pressing the Save Preset... button.",
+    "Turbulence Noise is great on its own, but its potential magnifies when used in conjunction with other Universe tools. Watch the following two-minute video to see what happens when we combine Turbulence Noise with Universe Chromatown and Symbol Mapper .",
+    "Want another one? We've got you covered, this time with a mashup of Turbulence Noise with Universe Long Shadow ."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Turbulence_Noise_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_Zoom.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_Aspect.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_Influence.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_TurbulenceNoise_Turbulence.png"
+  ]
+}

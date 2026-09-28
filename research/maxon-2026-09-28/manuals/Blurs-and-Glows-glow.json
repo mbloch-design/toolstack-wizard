@@ -1,0 +1,28 @@
+{
+  "name": "Glow",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-glow.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:17.037Z",
+  "sha256": "761516ee676b87513879332b506d564d3a335dd6ff0a304c26c22ef679f6967c",
+  "paragraphs": [
+    "A diffused glow that softens the bright parts of the image. Isolate a specific color within your footage and apply a glow to just that color.",
+    "Glow presets bring you instant application of a range of luminous light blooms. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "Presets also serve as a shortcut for learning a Universe tool's capabilities and potential. For example, compare the default Glow settings (left) with the Green Tint (center) and Vertical Spectrum (right) presets below. It can be easy to come into a tool like Glow and think, \"This just adds a same-color glow around rights, like a neon effect.\" Sure, Glow does that, but the presets quickly reveal that it can do much more.",
+    "As with all other Universe tools, you can modify or create a Glow look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glow_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_presets3.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_InputChannel.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_Intensity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_Colors.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_Aberration.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_Mask.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_MaskInvert.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_Noise.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_Opacity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_Glow_Quality.png"
+  ]
+}

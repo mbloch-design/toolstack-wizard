@@ -4813,3 +4813,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Ajout de llms-editorial.txt avec titres, résumés et URL localisées des guides et comparatifs indexables. Génération après le sitemap et le prerender, contrôle des URL canoniques et du noindex, ressources identiques dans public et dist.
 - Le format tableau du catalogue outils est conservé ; llms.txt référence le nouvel index éditorial. Tests de non-régression sur les prix, les routes et les fichiers livrés. Aucun changement de politique robots ou d'interface.
 - Validation : 12 tests réussis, build production et budgets PASS, 11 624 URL validées dans le sitemap. Export de 1 190 outils et 250 pages éditoriales (84 guides, 166 comparatifs localisés). Deux pages du guide stack rédaction n'ont pas de résumé source ; leur titre et leur URL restent exportés sans résumé inventé. Non publié.
+## 2026-09-28 : catalogue Maxon, fiches et médias officiels
+
+- 151 fiches Maxon ajoutées et 9 fiches existantes reprises, avec suites, produits, Maxon App, intégrations, effets Red Giant et Universe. PluralEyes signalé comme produit historique arrêté.
+- Descriptions françaises et anglaises, prix des suites en EUR avec engagement annuel explicite, accès des plugins indiqué comme inclus dans une suite sans faux prix individuel.
+- Sources officielles et inventaire des médias conservés dans `research/maxon-2026-09-28/`. Contrôle HTTP des 387 médias officiels, avec nouvelle vérification séquentielle des échecs transitoires.
+- Correction des titres SEO, FAQ et étiquettes de prix des produits inclus, en bêta ou arrêtés ; limitation des suggestions d'alternatives non comparables et des longues listes de plugins sur les fiches enfants.
+- Les suites à paiement annuel affichent le total annuel dans les cartes, les FAQ, les titres SEO et les offres structurées, sans assimiler une équivalence mensuelle à un paiement mensuel.
+- Build production PASS : 13 134 URL uniques dans le sitemap, audit Explorer PASS, budget de sortie réétalonné sur 14 828 fichiers mesurés. TypeScript et rendu local FR/EN vérifiés. Aucun push demandé à ce stade.

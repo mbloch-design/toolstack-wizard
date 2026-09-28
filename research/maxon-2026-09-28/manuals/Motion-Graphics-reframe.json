@@ -1,0 +1,23 @@
+{
+  "name": "Reframe",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Motion-Graphics-reframe.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:35.276Z",
+  "sha256": "bb226df1450ab23cfef78a431fe7f18fada8f136b00fdb6eb5335659a11b7ad4",
+  "paragraphs": [
+    "Easily composite and frame one layer of footage over a larger layer. Includes the ability to add and customize a colored border and feathering.",
+    "Reframe offers eight shortcuts to help you quickly apply your second clip in a picture-in-picture overlay atop a primary clip, either as a static box or an animated effect that begins at full screen, then quickly shrinks to a corner position. Find our presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Reframe look and then save it under its own name by pressing the Save Preset... button.",
+    "If you'd like a visual overview of the plugin before diving into this guide, we recommend giving our Cineversity tutorial a watch."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/reframe_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Reframe_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Reframe_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Reframe_Manual.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Reframe_Border.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Reframe_Feather.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Reframe_Offset.png"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Spectralicious",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Generators-spectralicious.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:27.766Z",
+  "sha256": "3a96cf3cc15e6dc55becf4657df86f518f091de911ca0ed511ae50e49e625113",
+  "paragraphs": [
+    "A six-color gradient effect with controls for blending options, exposure, and saturation. Includes Master Spread settings for quick feathering or sharpening spectrum points' edges.",
+    "Get started instantly in Spectralicious with over two dozen presets that simulate sky color tones, warm/cool moods, and more. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Spectralicious look and then save it under its own name by pressing the Save Preset... button.",
+    "Before we jump into this tool's controls, it may be helpful to have a high-level understanding of what Spectralicious is and how it works. Essentially, Spectralicious creates a composition-wide color expanse comprised of six color regions. Each region links to its own control point. You can mark a certain region within that expanse for cropping, and only the color points within that region will render across the image's full frame.",
+    "Spectralicious can blend onto the underlying footage layer. If you have a mask on this layer, the results may look something like this:",
+    "Spectralicious excels at making background color textures for titling as well as highly customizable color progressions that work like camera filters when blended with underlying footage."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spectralicious_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_BlendPoints.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Points.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Points2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_MasterSpread.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Noise.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Mirror1.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Mirror2.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Mirror3.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Mirror4.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_Spectralicious_Exposure.png"
+  ]
+}

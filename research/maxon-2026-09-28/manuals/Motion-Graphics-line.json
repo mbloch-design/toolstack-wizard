@@ -1,0 +1,32 @@
+{
+  "name": "Line",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Motion-Graphics-line.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:32.057Z",
+  "sha256": "e53ace1bb70ab30c02841d41e9343a3a110b5961962536fc004fe2932bdef2fb",
+  "paragraphs": [
+    "Create an animated straight or curved line between two points with elements that move along that path. Useful for flight path simulations, drawing paths on maps, and a variety of other motion graphics projects.",
+    "From gradient-colored arcs to animated, dotted paths, Universe Line presets are your convenient shortcut to line overlays. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "Presets are available in three categories:",
+    "As with all other Universe tools, you can modify or create a Line look and then save it under its own name by pressing the Save Preset... button.",
+    "Before we delve into each of Line's parameters, you might find it useful to begin with a video overview of the tool over on our Cineversity site. The Getting Started with Universe Line tutorial will take you from point selection to modifying curves to a couple of excellent use cases that involve applying Line with your host application. Once you've digested these concepts, this user guide will help explore Line's controls in more detail.",
+    "Universe Line by itself is great, but it has much more to offer when combined with other tools. If you skipped that video we recommended at the top of this page, maybe you'd like to give it a second chance when you see how to combine Line with tracking. Your browser does not support the video tag. Or maybe you'd like to know how to create an Indiana Jones -style panning map line? Same video . Your browser does not support the video tag.",
+    "Or just perhaps you'd like some ideas on how to combine Line with other Universe Tools. Wouldn't you know it?&#160;We've got a video on mashing together Universe Line with ChromaTown and Turbulent Noise. Have fun experimenting!"
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Line2_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_video.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_PointShape.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_OrientToMotion.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_Text.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_3PointBezier.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_4PointBezier.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_AutoTweak.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_PrimaryLineColors.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_PrimaryLineOpacity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_PrimaryShape.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_MotionGraphics_Line_SecondaryLine.png"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Chromatic Glow",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Blurs-and-Glows-chromatic-glow.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:17:10.567Z",
+  "sha256": "28abce6f07cf7839138499d14b7ff0789930fc07210fa1323cf76317917a487d",
+  "paragraphs": [
+    "Add colorful, rainbow-like glows around titles and bright areas in any shot. Creates multi-chromatic diffuse glows or sharp-edged highlights.",
+    "Chromatic Glow offers a diverse collection of presets that showcase various colorful glow results. Find these via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Chromatic Glow look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Chromatic_Glow_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_Threshold.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_ShowThreshold.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_Boost.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_GlowRadius.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_Radius.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_Tint.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_ShiftV.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_ChromaticGlow_Mask.png"
+  ]
+}

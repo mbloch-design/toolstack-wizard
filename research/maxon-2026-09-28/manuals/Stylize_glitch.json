@@ -1,0 +1,25 @@
+{
+  "name": "Glitch",
+  "url": "https://help.maxon.net/rg/en-us/Content/html/Stylize_glitch.html",
+  "status": 200,
+  "fetchedAt": "2026-09-28T06:16:59.682Z",
+  "sha256": "3dec5a2152961cfcc65323832e45d69faf8ec54364db1c80a7fb58e7a8794e59",
+  "paragraphs": [
+    "Universe Glitch gives your footage and text the look of compressed, glitched video. This tool emulates poor internet connections, bad video encoding, corrupt data streams, and low-bandwidth broadcasts.",
+    "Apply preconfigured Glitch distortions to your text and images with these convenient shortcuts. Find these presets via the blue Open Dashboard... button or the Choose a Preset... button below it.",
+    "As with all other Universe tools, you can modify or create a Glitch look and then save it under its own name by pressing the Save Preset... button."
+  ],
+  "images": [
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/maxon-logo.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glitch_universe.jpg",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_presets.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_compression.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_CompressionLast.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_SGComplexity.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_SGAspectt.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_SGPatternSize.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_WGHeight.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_WGPatternSize.png",
+    "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_Glitch_WGDisplacement.png"
+  ]
+}
