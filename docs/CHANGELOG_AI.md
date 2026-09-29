@@ -4821,6 +4821,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction des titres SEO, FAQ et étiquettes de prix des produits inclus, en bêta ou arrêtés ; limitation des suggestions d'alternatives non comparables et des longues listes de plugins sur les fiches enfants.
 - Les suites à paiement annuel affichent le total annuel dans les cartes, les FAQ, les titres SEO et les offres structurées, sans assimiler une équivalence mensuelle à un paiement mensuel.
 - Build production PASS : 13 134 URL uniques dans le sitemap, audit Explorer PASS, budget de sortie réétalonné sur 14 828 fichiers mesurés. TypeScript et rendu local FR/EN vérifiés. Aucun push demandé à ce stade.
+## 2026-09-29 : précisions PDF Agile
+
+- Complète la fiche FR/EN avec la disponibilité Windows/macOS, les prérequis officiels et les fonctions de comparaison, protection et annotation.
+- Sépare les fonctions annoncées de leur efficacité non testée, notamment masquage d'informations et portée juridique des signatures. Prix et lien affilié conservés. Sources dans `research/pdf-agile-2026-09-27.md`.
+
 ## 2026-09-28 : fiche GeoRankers
 
 - Nouvelle fiche FR/EN, sources, limites des captures IA, prix mensuels et équivalents trimestriels documentés dans `research/georankers-2026-09-28.md`.
