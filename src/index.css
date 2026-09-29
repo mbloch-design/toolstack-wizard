@@ -8339,9 +8339,9 @@
   }
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
   .td-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-  .td-hero-promo { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; margin-left: auto; padding: 8px 12px; border: 1px solid #ddc595; border-radius: 8px; background: #f7ebd2; color: #3d3020; font: 600 14px/1.2 var(--font-ui); white-space: nowrap; }
-  .td-hero-promo-label { padding-right: 10px; border-right: 1px solid #c9ad76; font-size: 15px; font-weight: 700; }
-  .td-hero-promo-code { color: #514536; font: 650 12px/1.2 var(--font-ui); letter-spacing: .035em; user-select: all; }
+  .td-hero-promo { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; margin-left: auto; padding: 8px 12px; border: 1px solid hsl(var(--primary) / .28); border-radius: 8px; background: hsl(var(--primary) / .08); color: hsl(var(--primary)); font: 600 14px/1.2 var(--font-ui); white-space: nowrap; }
+  .td-hero-promo-label { padding-right: 10px; border-right: 1px solid hsl(var(--primary) / .28); font-size: 15px; font-weight: 700; }
+  .td-hero-promo-code { color: var(--color-text); font: 650 12px/1.2 var(--font-ui); letter-spacing: .035em; user-select: all; }
   .td-hero.is-compact .td-hero-promo { padding: 7px 10px; font-size: 12px; }
   .td-hero.is-compact .td-hero-promo-label { font-size: 13px; }
   .td-hero.is-compact .td-hero-promo-code { font-size: 11px; }
