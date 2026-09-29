@@ -4851,3 +4851,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Code transmis par le partenaire mis en évidence près du CTA de la fiche FR/EN. Vérification directe au panier officiel : `AWINAGILE10%` est accepté sur la licence à vie, avec 11,90 USD déduits du prix affiché de 119 USD et un total de 107,10 USD avant taxes éventuelles au 29/09/2026.
 - Aucun cumul de 70 % ni exclusivité non vérifiée affichés. La remise séquentielle de 60 % puis 10 % n'équivaut pas à 70 %.
 - Le CTA de la fiche conserve le lien affilié existant et pointe vers l'offre PDF Agile. Aucune commande effectuée ; durée de validité du code non connue.
+- Présentation simplifiée après revue : badge `-10 % AWINAGILE10%` accolé au nom de l'outil, sans paragraphe promotionnel sous le CTA. Le contrôle du prix final reste consigné dans `research/pdf-agile-2026-09-27.md`.

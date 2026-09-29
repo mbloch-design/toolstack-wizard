@@ -8316,6 +8316,7 @@
     height: auto;
     min-width: 0;
   }
+  .td-hero-title-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; min-width: 0; }
   .td-hero-logo {
     display: grid;
     place-items: center;
@@ -8336,12 +8337,9 @@
   }
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
   .td-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-  .td-hero-promo { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 20px 0 0 96px; padding: 14px 18px; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-bg); font: 400 14px/1.4 var(--font-ui); }
-  .td-hero-promo-label { font-weight: 600; }
-  .td-hero-promo-code { padding: 7px 11px; border: 1px dashed var(--color-text); border-radius: 6px; background: var(--color-surface); font: 700 16px/1.2 var(--font-ui); letter-spacing: .03em; user-select: all; }
-  .td-hero-promo-description { flex-basis: 100%; color: var(--color-muted); }
+  .td-hero-promo { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-bg); font: 600 13px/1.2 var(--font-ui); white-space: nowrap; }
+  .td-hero-promo-code { font: 700 13px/1.2 var(--font-ui); letter-spacing: .02em; user-select: all; }
   .td-hero.is-compact .td-hero-promo { display: none; }
-  @media (max-width: 640px) { .td-hero-promo { margin: 18px 0 0; } }
   .td-hero-affiliate-disclosure { flex: 0 0 100%; margin: 0; color: var(--color-muted); font: 400 11px/1.4 var(--font-ui); }
   .td-hero.is-compact .td-hero-affiliate-disclosure { display: none; }
   .td-hero-actions .pin-tool-button { position: static; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text); display: inline-flex; align-items: center; justify-content: center; }

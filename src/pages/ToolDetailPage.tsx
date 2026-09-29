@@ -449,11 +449,17 @@ const ToolDetailPage = () => {
                         </span>
 
                         <div className="td-hero-name-block">
-                          <h1 className="td-hero-h1">
-                            {tool.name}
-                            {/* Sub-pages say what they are about: "NordPass pricing". */}
-                            {headingSuffix ? <span className="td-hero-h1-page">{headingSuffix}</span> : null}
-                          </h1>
+                          <div className="td-hero-title-row">
+                            <h1 className="td-hero-h1">
+                              {tool.name}
+                              {/* Sub-pages say what they are about: "NordPass pricing". */}
+                              {headingSuffix ? <span className="td-hero-h1-page">{headingSuffix}</span> : null}
+                            </h1>
+                            {tool.promoCode && <span className="td-hero-promo" aria-label={t(`Code de réduction ${tool.promoCode}, ${tool.promoDescriptionFr || ""}`, `Discount code ${tool.promoCode}, ${tool.promoDescriptionEn || ""}`)}>
+                              <span className="td-hero-promo-label">{t(tool.promoDescriptionFr || "", tool.promoDescriptionEn || "")}</span>
+                              <strong className="td-hero-promo-code">{tool.promoCode}</strong>
+                            </span>}
+                          </div>
                           {tool.shortDescription && (
                             <p className="td-hero-desc">
                               {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
@@ -483,12 +489,6 @@ const ToolDetailPage = () => {
                         <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
                         </div>
                       </div>
-
-                      {tool.promoCode && <div className="td-hero-promo">
-                        <span className="td-hero-promo-label">{t("Code de réduction", "Discount code")}</span>
-                        <strong className="td-hero-promo-code">{tool.promoCode}</strong>
-                        <span className="td-hero-promo-description">{t(tool.promoDescriptionFr || "", tool.promoDescriptionEn || "")}</span>
-                      </div>}
 
                     </div>
                   </div>
