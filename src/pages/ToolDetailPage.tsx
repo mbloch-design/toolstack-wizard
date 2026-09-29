@@ -484,6 +484,12 @@ const ToolDetailPage = () => {
                         </div>
                       </div>
 
+                      {tool.promoCode && <div className="td-hero-promo">
+                        <span className="td-hero-promo-label">{t("Code de réduction", "Discount code")}</span>
+                        <strong className="td-hero-promo-code">{tool.promoCode}</strong>
+                        <span className="td-hero-promo-description">{t(tool.promoDescriptionFr || "", tool.promoDescriptionEn || "")}</span>
+                      </div>}
+
                     </div>
                   </div>
                   <div className="td-sidebar-mobile td-opening-verdict">

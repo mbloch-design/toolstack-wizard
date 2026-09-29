@@ -4846,3 +4846,8 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Libellé générique des achats uniques corrigé : ne plus qualifier de « licence à vie » un document acheté à l'unité.
 - Sources et périmètre de la revue : `research/mybestresume-2026-09-28.md`. TypeScript, build production, SEO et budgets PASS ; sorties officielles vérifiées en `nofollow noopener noreferrer` dans le HTML généré. Non publié.
 - Contrôle ATS clarifié après nouvelle lecture de la page officielle : inspection du texte et de signaux de structure, sans simulation d'un ATS employeur ni score de passage universel.
+## 2026-09-29 : code promotionnel PDF Agile
+
+- Code transmis par le partenaire mis en évidence près du CTA de la fiche FR/EN, avec l'offre de 10 % supplémentaires présentée comme annoncée et à vérifier au panier.
+- Aucun cumul de 70 % ni exclusivité non vérifiée affichés. La remise séquentielle de 60 % puis 10 % n'équivaut pas à 70 %.
+- Le CTA de la fiche conserve le lien affilié existant et pointe vers l'offre PDF Agile. Contrôle documentaire du prix officiel et de la redirection Awin ; validité du code au panier non confirmée.

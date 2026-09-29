@@ -246,6 +246,9 @@ export interface Tool {
   affiliateDisclosureEn?: string;
   affiliateCtaLabelFr?: string;
   affiliateCtaLabelEn?: string;
+  promoCode?: string;
+  promoDescriptionFr?: string;
+  promoDescriptionEn?: string;
   logo?: string;
   ogImageUrl?: string | null;
   galleryImages?: string[];
