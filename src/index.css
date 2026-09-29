@@ -8339,9 +8339,10 @@
   }
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
   .td-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-  .td-hero-promo { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; margin-left: auto; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-bg); font: 600 13px/1.2 var(--font-ui); white-space: nowrap; }
-  .td-hero-promo-code { font: 700 13px/1.2 var(--font-ui); letter-spacing: .02em; user-select: all; }
-  .td-hero.is-compact .td-hero-promo { padding: 6px 8px; font-size: 12px; }
+  .td-hero-promo { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; margin-left: auto; padding: 10px 14px; border: 1px solid var(--color-text); border-radius: 9px; background: var(--color-text); color: var(--color-surface); font: 700 14px/1.2 var(--font-ui); white-space: nowrap; }
+  .td-hero-promo-label { padding-right: 10px; border-right: 1px solid color-mix(in srgb, var(--color-surface) 45%, transparent); }
+  .td-hero-promo-code { font: 700 14px/1.2 var(--font-ui); letter-spacing: .025em; user-select: all; }
+  .td-hero.is-compact .td-hero-promo { padding: 8px 10px; font-size: 12px; }
   .td-hero.is-compact .td-hero-promo-code { font-size: 12px; }
   .td-hero-affiliate-disclosure { flex: 0 0 100%; margin: 0; color: var(--color-muted); font: 400 11px/1.4 var(--font-ui); }
   .td-hero.is-compact .td-hero-affiliate-disclosure { display: none; }
