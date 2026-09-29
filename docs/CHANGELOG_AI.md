@@ -4854,3 +4854,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Présentation simplifiée après revue : badge `-10 % AWINAGILE10%` accolé au nom de l'outil, sans paragraphe promotionnel sous le CTA. Le contrôle du prix final reste consigné dans `research/pdf-agile-2026-09-27.md`.
 - Ajustement visuel : pastille alignée à droite de la zone titre sur la fiche et conservée dans l'en-tête sticky ; retour à la ligne possible sur petit écran.
 - Contraste renforcé de la pastille de réduction : fond texte sombre, libellé et code blancs, séparateur interne et dimensions lisibles aussi dans l'en-tête sticky.
+- Revue visuelle après retour utilisateur : abandon du fond sombre trop proche du CTA au profit d'une surface crème chaude, d'un contour discret et d'une hiérarchie typographique remise/code.
