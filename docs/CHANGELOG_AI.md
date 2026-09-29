@@ -4848,6 +4848,6 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Contrôle ATS clarifié après nouvelle lecture de la page officielle : inspection du texte et de signaux de structure, sans simulation d'un ATS employeur ni score de passage universel.
 ## 2026-09-29 : code promotionnel PDF Agile
 
-- Code transmis par le partenaire mis en évidence près du CTA de la fiche FR/EN, avec l'offre de 10 % supplémentaires présentée comme annoncée et à vérifier au panier.
+- Code transmis par le partenaire mis en évidence près du CTA de la fiche FR/EN. Vérification directe au panier officiel : `AWINAGILE10%` est accepté sur la licence à vie, avec 11,90 USD déduits du prix affiché de 119 USD et un total de 107,10 USD avant taxes éventuelles au 29/09/2026.
 - Aucun cumul de 70 % ni exclusivité non vérifiée affichés. La remise séquentielle de 60 % puis 10 % n'équivaut pas à 70 %.
-- Le CTA de la fiche conserve le lien affilié existant et pointe vers l'offre PDF Agile. Contrôle documentaire du prix officiel et de la redirection Awin ; validité du code au panier non confirmée.
+- Le CTA de la fiche conserve le lien affilié existant et pointe vers l'offre PDF Agile. Aucune commande effectuée ; durée de validité du code non connue.
