@@ -4852,3 +4852,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Aucun cumul de 70 % ni exclusivité non vérifiée affichés. La remise séquentielle de 60 % puis 10 % n'équivaut pas à 70 %.
 - Le CTA de la fiche conserve le lien affilié existant et pointe vers l'offre PDF Agile. Aucune commande effectuée ; durée de validité du code non connue.
 - Présentation simplifiée après revue : badge `-10 % AWINAGILE10%` accolé au nom de l'outil, sans paragraphe promotionnel sous le CTA. Le contrôle du prix final reste consigné dans `research/pdf-agile-2026-09-27.md`.
+- Ajustement visuel : pastille alignée à droite de la zone titre sur la fiche et conservée dans l'en-tête sticky ; retour à la ligne possible sur petit écran.
