@@ -3,7 +3,8 @@
   "slug": "linktree",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Linktree",
     "vendor": "Linktree Pty Ltd",
@@ -33,7 +34,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Unlimited links, core appearance options, basic analytics"
+        "en": "Unlimited links, core appearance options, basic analytics",
+        "fr": "Liens illimités, options d'apparence de base, statistiques simples"
       },
       "sourceIds": [
         "s1"
@@ -41,6 +43,27 @@
     },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited links, core appearance options, basic analytics",
+            "fr": "Liens illimités, options d'apparence de base, statistiques simples"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
       {
         "key": "starter",
         "name": "Starter",
@@ -54,7 +77,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Expanded customization, link scheduling, additional icon options"
+            "en": "Expanded customization, link scheduling, additional icon options",
+            "fr": "Personnalisation étendue, planification des liens, options d'icônes supplémentaires"
           }
         ],
         "sourceIds": [
@@ -74,7 +98,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Advanced reporting, priority link placement, monetization features, SEO management"
+            "en": "Advanced reporting, priority link placement, monetization features, SEO management",
+            "fr": "Reporting avancé, placement prioritaire des liens, fonctions de monétisation, gestion SEO"
           }
         ],
         "sourceIds": [
@@ -94,7 +119,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Comprehensive analytics, commerce features, marketing integrations, priority support, remove Linktree branding"
+            "en": "Comprehensive analytics, commerce features, marketing integrations, priority support, remove Linktree branding",
+            "fr": "Statistiques complètes, fonctions de commerce, intégrations marketing, support prioritaire, suppression du branding Linktree"
           }
         ],
         "sourceIds": [
@@ -107,6 +133,7 @@
     "cautions": [
       {
         "en": "Exact Pro and Premium prices were not shown as numbers on the fetched page (only feature descriptions); only Starter pricing (€6-8) is confirmed.",
+        "fr": "Les prix exacts de Pro et Premium n'apparaissaient pas en chiffres sur la page récupérée (seulement des descriptions de fonctions) ; seul le tarif Starter (6-8 €) est confirmé.",
         "sourceIds": [
           "s1"
         ]
@@ -117,12 +144,14 @@
     "capabilities": [
       {
         "en": "'Link in bio' landing page centralizing all of a creator's important links in one place.",
+        "fr": "Page « link in bio » qui centralise tous les liens importants d'un créateur au même endroit.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Built-in analytics and, on paid tiers, monetization and commerce features.",
+        "fr": "Statistiques intégrées et, sur les paliers payants, des fonctions de monétisation et de commerce.",
         "sourceIds": [
           "s1"
         ]
@@ -131,12 +160,14 @@
     "limitations": [
       {
         "en": "Free plan analytics are basic; deeper reporting is a paid-tier feature.",
+        "fr": "Les statistiques du plan gratuit restent basiques ; un reporting plus poussé est réservé aux paliers payants.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Linktree branding is only removable on the top Premium tier.",
+        "fr": "Le branding Linktree n'est supprimable que sur le palier Premium, le plus élevé.",
         "sourceIds": [
           "s1"
         ]
@@ -149,11 +180,137 @@
       "android"
     ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator who wants one simple page to centralize social, shop and content links shared from a bio.",
+      "fr": "Un créateur de contenu qui veut une seule page simple pour centraliser ses liens sociaux, boutique et contenu, partagée depuis sa bio."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a content creator centralizes all their social and shop links on one Linktree page linked from their Instagram bio.",
+      "fr": "Cas d'usage : un créateur de contenu centralise tous ses liens sociaux et boutique sur une page Linktree liée depuis sa bio Instagram."
+    },
+    {
+      "en": "Use case: a creator upgrades to Starter to schedule links and unlock extra icon customization ahead of a product launch.",
+      "fr": "Cas d'usage : un créateur passe à Starter pour planifier ses liens et débloquer des options d'icônes supplémentaires avant le lancement d'un produit."
+    }
+  ],
   "alternatives": [],
-  "missingAlternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Beacons",
+      "officialUrl": "https://beacons.ai",
+      "reason": "Direct link-in-bio competitor with built-in monetization tools, not present in this batch's alternativeCandidates list."
+    },
+    {
+      "name": "Bio.link",
+      "officialUrl": "https://bio.link",
+      "reason": "Simpler, cheaper link-in-bio competitor, not present in this batch's alternativeCandidates list."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free plan already covers unlimited links, and Starter is cheap at €6-8/month, but Pro/Premium value can't be fully judged since their prices weren't published as numbers.",
+        "fr": "Le plan gratuit couvre déjà des liens illimités, et Starter reste bon marché à 6-8 €/mois, mais la valeur de Pro/Premium ne peut pas être pleinement jugée puisque leurs prix ne sont pas publiés en chiffres.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A single 'link in bio' landing page is a simple concept by design, meant to be set up quickly.",
+        "fr": "Une seule page « link in bio » reste un concept simple par construction, pensé pour être mis en place rapidement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Linktree centralizes a creator's links as promised, with analytics and, on paid tiers, monetization features working as described.",
+        "fr": "Linktree centralise les liens d'un créateur comme promis, avec des statistiques et, sur les paliers payants, des fonctions de monétisation qui fonctionnent comme décrit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Free-plan analytics stay basic and deeper reporting, commerce and branding removal are locked behind paid tiers, so the free product covers only the essentials of the category.",
+        "fr": "Les statistiques du plan gratuit restent basiques, et le reporting poussé, le commerce et la suppression du branding restent réservés aux paliers payants ; le produit gratuit ne couvre donc que l'essentiel de la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: link/data export portability if leaving Linktree is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des liens et des données en cas de départ de Linktree ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Bio link page",
+      "fr": "Page liens bio"
+    },
+    "shortDescription": {
+      "en": "A link-in-bio landing page that centralizes a creator's important links, with basic free analytics and paid monetization features.",
+      "fr": "Une page link in bio qui centralise les liens importants d'un créateur, avec des statistiques gratuites basiques et des fonctions de monétisation payantes."
+    },
+    "longDescription": {
+      "en": "Linktree is a 'link in bio' landing page that centralizes all of a creator's important links in one place, with built-in analytics and, on paid tiers, monetization and commerce features.\n\nThe free plan covers unlimited links with core appearance options and basic analytics. Starter adds scheduling and extra customization for €6 to €8/month. Pro and Premium add deeper reporting, priority placement and branding removal, but their exact prices weren't shown as numbers on the fetched pricing page, only feature lists, so treat those figures as unconfirmed.",
+      "fr": "Linktree est une page « link in bio » qui centralise tous les liens importants d'un créateur au même endroit, avec des statistiques intégrées et, sur les paliers payants, des fonctions de monétisation et de commerce.\n\nLe plan gratuit couvre des liens illimités avec des options d'apparence de base et des statistiques simples. Starter ajoute la planification de liens et des options de personnalisation supplémentaires pour 6 à 8 €/mois. Pro et Premium ajoutent un reporting plus poussé, un placement prioritaire et la suppression du branding, mais leurs prix exacts n'apparaissaient pas en chiffres sur la page tarifs récupérée, seulement des listes de fonctions ; ces montants restent donc à confirmer."
+    },
+    "pros": [
+      {
+        "en": "The free plan already covers unlimited links with core customization, not just a stripped demo.",
+        "fr": "Le plan gratuit couvre déjà des liens illimités avec une personnalisation de base, pas juste une démo bridée."
+      },
+      {
+        "en": "Starter is cheap (€6 to €8/month) for scheduling and extra customization needs.",
+        "fr": "Starter reste bon marché (6 à 8 €/mois) pour des besoins de planification et de personnalisation supplémentaires."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free-plan analytics stay basic; deeper reporting is a paid-tier feature.",
+        "fr": "Les statistiques du plan gratuit restent basiques ; un reporting plus poussé est réservé aux paliers payants."
+      },
+      {
+        "en": "Removing Linktree branding requires the top Premium tier, not an entry paid plan.",
+        "fr": "Supprimer le branding Linktree exige le palier Premium, le plus élevé, pas un plan payant d'entrée."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need one simple page to centralize your social and shop links, and don't need deep analytics or monetization yet.",
+        "fr": "Tu as besoin d'une seule page simple pour centraliser tes liens sociaux et boutique, et tu n'as pas encore besoin de statistiques poussées ni de monétisation."
+      },
+      "avoidIf": {
+        "en": "You need Linktree branding removed or advanced monetization without first confirming Premium's real price.",
+        "fr": "Tu as besoin de supprimer le branding Linktree ou d'une monétisation avancée sans d'abord confirmer le vrai prix de Premium."
+      },
+      "threshold": {
+        "en": "Starter costs €6/month billed annually (€72/year); that's the entry paid cost, since Pro and Premium prices aren't published as numbers.",
+        "fr": "Starter coûte 6 €/mois facturé à l'année (72 €/an) ; c'est le coût d'entrée payant, puisque les prix de Pro et Premium ne sont pas publiés en chiffres."
+      }
+    }
+  },
   "unknowns": [
     "Numeric prices for Pro and Premium plans not published as plain figures on the fetched page; only feature lists were extracted.",
     "No currentAlternatives were seeded for this slug."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Pro and Premium are marked onQuote because no numeric price was found on the fetched page, not because Linktree sells them strictly by custom quote; re-verify the real listed prices on linktr.ee/s/pricing."
+  ]
 }

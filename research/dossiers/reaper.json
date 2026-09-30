@@ -3,7 +3,8 @@
   "slug": "reaper",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "REAPER",
     "vendor": "Cockos Incorporated",
@@ -35,7 +36,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 60 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "For individuals using REAPER personally, and for businesses/organizations with yearly gross revenue not exceeding $20,000 (includes education and non-profit use). Includes free upgrades through version 8.99.", "fr": null }
+          { "en": "For individuals using REAPER personally, and for businesses/organizations with yearly gross revenue not exceeding $20,000 (includes education and non-profit use). Includes free upgrades through version 8.99.", "fr": "Pour un usage personnel, ou pour des entreprises/organisations avec un chiffre d'affaires annuel ne dépassant pas 20 000 USD (usage éducatif et associatif inclus). Mises à jour gratuites jusqu'à la version 8.99." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 225 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Required for commercial use by organizations with yearly gross revenue exceeding $20,000. Includes free upgrades through version 8.99.", "fr": null }
+          { "en": "Required for commercial use by organizations with yearly gross revenue exceeding $20,000. Includes free upgrades through version 8.99.", "fr": "Obligatoire pour un usage commercial par des organisations avec un chiffre d'affaires annuel supérieur à 20 000 USD. Mises à jour gratuites jusqu'à la version 8.99." }
         ],
         "sourceIds": ["s1"]
       }
@@ -55,33 +56,123 @@
     "comparePlanKey": "discounted",
     "addOns": [],
     "cautions": [
-      { "en": "Prices are a one-time perpetual license fee excluding VAT and local taxes; free upgrades are capped at version 8.99, after which a discounted upgrade fee applies for later major versions.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Prices are a one-time perpetual license fee excluding VAT and local taxes; free upgrades are capped at version 8.99, after which a discounted upgrade fee applies for later major versions.", "fr": "Les prix correspondent à une licence perpétuelle payée une fois, hors TVA et taxes locales ; les mises à jour gratuites s'arrêtent à la version 8.99, au-delà de laquelle une mise à jour payante à tarif réduit s'applique.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Full digital audio workstation for recording, editing, mixing and mastering with unlimited tracks.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Highly customizable UI, routing and scripting (ReaScript, JSFX) for building custom workflows.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Extensive native and third-party VST/AU plugin ecosystem support.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Single license key can be used on multiple computers, as long as only one is running at a time.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Full digital audio workstation for recording, editing, mixing and mastering with unlimited tracks.", "fr": "Station de travail audio numérique complète pour l'enregistrement, le montage, le mixage et le mastering avec des pistes illimitées.", "sourceIds": ["s1"] },
+      { "en": "Highly customizable UI, routing and scripting (ReaScript, JSFX) for building custom workflows.", "fr": "Interface, routage et scripting (ReaScript, JSFX) hautement personnalisables pour construire des workflows sur mesure.", "sourceIds": ["s1"] },
+      { "en": "Extensive native and third-party VST/AU plugin ecosystem support.", "fr": "Prise en charge étendue des plugins VST/AU natifs et tiers.", "sourceIds": ["s1"] },
+      { "en": "Single license key can be used on multiple computers, as long as only one is running at a time.", "fr": "Une même clé de licence peut être utilisée sur plusieurs ordinateurs, tant qu'un seul tourne à la fois.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No permanent free tier; only a 60-day full-featured evaluation before a license is required to keep using it.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Interface is less polished/opinionated out of the box than competitors like Logic Pro or Ableton Live, requiring more manual customization to feel comfortable.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No permanent free tier; only a 60-day full-featured evaluation before a license is required to keep using it.", "fr": "Pas d'offre gratuite permanente ; seulement une évaluation complète de 60 jours avant qu'une licence soit nécessaire pour continuer à l'utiliser.", "sourceIds": ["s1"] },
+      { "en": "Interface is less polished/opinionated out of the box than competitors like Logic Pro or Ableton Live, requiring more manual customization to feel comfortable.", "fr": "L'interface est moins soignée et moins guidée par défaut que des concurrents comme Logic Pro ou Ableton Live, ce qui demande plus de personnalisation manuelle pour être à l'aise.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent musicians and audio producers who record, edit and mix their own tracks and want a low-cost, scriptable DAW.",
+      "fr": "Musiciens indépendants et producteurs audio qui enregistrent, montent et mixent leurs propres morceaux et veulent une DAW peu chère et scriptable."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Recording: buy the $60 Personal license once and record, edit and mix a project with unlimited tracks.",
+      "fr": "Enregistrement : achète la licence Personal à 60 USD une seule fois et enregistre, monte et mixe un projet avec des pistes illimitées."
+    },
+    {
+      "en": "Customization: script a repeated editing task with ReaScript instead of doing it by hand in every session.",
+      "fr": "Personnalisation : automatise une tâche de montage répétitive avec ReaScript au lieu de la refaire à la main à chaque session."
+    }
+  ],
   "alternatives": [
-    { "slug": "pro-tools", "reason": { "en": "Industry-standard DAW covering the same recording/mixing/mastering workflow.", "fr": null } },
-    { "slug": "logic-pro", "reason": { "en": "Mac-native DAW competing directly for music production and post-production audio work.", "fr": null } },
-    { "slug": "ableton-live", "reason": { "en": "Popular DAW for music production, especially electronic and live performance workflows.", "fr": null } },
-    { "slug": "adobe-audition", "reason": { "en": "DAW-adjacent audio editing tool used for similar recording and mixing tasks.", "fr": null } },
-    { "slug": "audacity", "reason": { "en": "Free, simpler multitrack audio editor covering overlapping basic use cases.", "fr": null } }
+    { "slug": "pro-tools", "reason": { "en": "Industry-standard DAW covering the same recording/mixing/mastering workflow.", "fr": "DAW de référence dans l'industrie, couvrant le même workflow d'enregistrement, de mixage et de mastering." } },
+    { "slug": "logic-pro", "reason": { "en": "Mac-native DAW competing directly for music production and post-production audio work.", "fr": "DAW native Mac, concurrente directe pour la production musicale et le travail audio de post-production." } },
+    { "slug": "ableton-live", "reason": { "en": "Popular DAW for music production, especially electronic and live performance workflows.", "fr": "DAW populaire pour la production musicale, notamment les workflows électroniques et de performance live." } },
+    { "slug": "adobe-audition", "reason": { "en": "DAW-adjacent audio editing tool used for similar recording and mixing tasks.", "fr": "Outil de montage audio proche d'une DAW, utilisé pour des tâches similaires d'enregistrement et de mixage." } },
+    { "slug": "audacity", "reason": { "en": "Free, simpler multitrack audio editor covering overlapping basic use cases.", "fr": "Éditeur audio multipiste gratuit et plus simple, qui couvre des cas d'usage de base similaires." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A one-time $60 personal license with unlimited tracks and free upgrades through version 8.99 avoids the recurring cost of subscription-based DAWs.",
+        "fr": "Une licence personnelle à 60 USD payée une fois, avec pistes illimitées et mises à jour gratuites jusqu'à la version 8.99, évite le coût récurrent des DAW par abonnement.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "The interface is described as less polished and less opinionated than competitors, requiring more manual customization to feel comfortable.",
+        "fr": "L'interface est décrite comme moins soignée et moins guidée que les concurrents, demandant plus de personnalisation manuelle pour être à l'aise.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Recording, editing, mixing and mastering with unlimited tracks work as advertised, with extensive VST/AU plugin support rather than workarounds.",
+        "fr": "L'enregistrement, le montage, le mixage et le mastering avec pistes illimitées fonctionnent comme annoncé, avec une large prise en charge de plugins VST/AU plutôt que des contournements.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Unlimited tracks, deep customization via ReaScript/JSFX and extensive plugin support indicate a high capability ceiling for a DAW.",
+        "fr": "Pistes illimitées, personnalisation poussée via ReaScript/JSFX et large prise en charge de plugins indiquent un plafond de capacité élevé pour une DAW.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and project-file portability to other DAWs are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des fichiers de projet vers d'autres DAW ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Low-cost DAW", "fr": "DAW peu chère" },
+    "shortDescription": {
+      "en": "Full digital audio workstation with unlimited tracks and deep scripting, sold as a one-time license instead of a subscription.",
+      "fr": "Station de travail audio complète avec pistes illimitées et scripting poussé, vendue sous licence unique plutôt qu'en abonnement."
+    },
+    "longDescription": {
+      "en": "REAPER is a full digital audio workstation for recording, editing, mixing and mastering, with unlimited tracks and deep customization through ReaScript and JSFX scripting plus broad VST/AU plugin support. A 60-day full-featured trial precedes any purchase.\n\nThe Personal license costs $60 once for individuals or organizations under $20,000 in yearly revenue, rising to $225 for commercial use above that threshold, both including free upgrades through version 8.99. The interface is less polished out of the box than Logic Pro or Ableton Live, so it suits independent musicians and audio producers comfortable customizing their own workflow more than teams wanting a guided experience.",
+      "fr": "REAPER est une station de travail audio complète pour l'enregistrement, le montage, le mixage et le mastering, avec des pistes illimitées, un scripting poussé (ReaScript, JSFX) et une large prise en charge de plugins VST/AU. Un essai complet de 60 jours précède tout achat.\n\nLa licence Personal coûte 60 USD une fois pour les particuliers ou organisations sous 20 000 USD de chiffre d'affaires annuel, et monte à 225 USD au-delà, les deux incluant les mises à jour gratuites jusqu'à la version 8.99. L'interface est moins soignée par défaut que Logic Pro ou Ableton Live, donc l'outil convient aux musiciens indépendants à l'aise pour personnaliser leur workflow, plus qu'aux équipes cherchant une expérience guidée."
+    },
+    "pros": [
+      { "en": "One-time $60 license instead of a recurring subscription, with free upgrades through version 8.99.", "fr": "Licence unique à 60 USD au lieu d'un abonnement récurrent, avec mises à jour gratuites jusqu'à la version 8.99." },
+      { "en": "Unlimited tracks and deep scripting for building a fully custom workflow.", "fr": "Pistes illimitées et scripting poussé pour construire un workflow entièrement personnalisé." }
+    ],
+    "cons": [
+      { "en": "Interface requires more manual customization to feel comfortable than competing DAWs.", "fr": "L'interface demande plus de personnalisation manuelle pour être confortable que les DAW concurrentes." },
+      { "en": "No permanent free tier, only a 60-day evaluation before a license is required.", "fr": "Pas d'offre gratuite permanente, seulement une évaluation de 60 jours avant qu'une licence soit nécessaire." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a full-featured DAW for a one-time cost and are comfortable customizing your own workflow.",
+        "fr": "Tu veux une DAW complète pour un coût unique et es à l'aise pour personnaliser ton propre workflow."
+      },
+      "avoidIf": {
+        "en": "You want a polished, guided interface out of the box without manual customization.",
+        "fr": "Tu veux une interface soignée et guidée dès l'installation, sans personnalisation manuelle."
+      },
+      "threshold": {
+        "en": "The Personal license costs $60 once for individuals or organizations under $20,000/year revenue; it pays for itself versus even a few months of a subscription DAW.",
+        "fr": "La licence Personal coûte 60 USD une fois pour les particuliers ou organisations sous 20 000 USD de chiffre d'affaires annuel ; elle se rentabilise face à quelques mois seulement d'une DAW par abonnement."
+      }
+    }
+  },
   "unknowns": [
     "Actual platform list (Windows/macOS/Linux) not explicitly re-confirmed from the purchase page content fetched in this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "product.platforms is set to [\"web\"], but REAPER is a desktop application (Windows/macOS/Linux per the vendor); verify the correct platform list on reaper.fm before merging."
+  ]
 }

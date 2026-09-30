@@ -3,7 +3,7 @@
   "slug": "buzzsprout",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Buzzsprout",
     "vendor": "Buzzsprout",
@@ -40,7 +40,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "2 hours of uploads per month, episodes hosted 90 days only, no video distribution"
+        "en": "2 hours of uploads per month, episodes hosted 90 days only, no video distribution",
+        "fr": "2 heures d'upload par mois, episodes heberges seulement 90 jours, pas de distribution video."
       },
       "sourceIds": [
         "s1"
@@ -61,7 +62,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "2 hours of uploads/month, episodes hosted only 90 days, no video distribution"
+            "en": "2 hours of uploads/month, episodes hosted only 90 days, no video distribution",
+            "fr": "2 heures d'upload/mois, episodes heberges seulement 90 jours, pas de distribution video."
           }
         ],
         "sourceIds": [
@@ -81,7 +83,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "72 hours of uploads per year, single podcast, unlimited episodes, listed in directories, advanced stats"
+            "en": "72 hours of uploads per year, single podcast, unlimited episodes, listed in directories, advanced stats",
+            "fr": "72 heures d'upload par an, un seul podcast, episodes illimites, liste dans les annuaires, statistiques avancees."
           }
         ],
         "sourceIds": [
@@ -101,7 +104,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "72 hours/year, video distribution to Apple Podcasts/Spotify/YouTube, 1080p resolution"
+            "en": "72 hours/year, video distribution to Apple Podcasts/Spotify/YouTube, 1080p resolution",
+            "fr": "72 heures/an, distribution video vers Apple Podcasts/Spotify/YouTube, resolution 1080p."
           }
         ],
         "sourceIds": [
@@ -121,7 +125,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "180 hours/year, up to 5 audio-only or 10 audio+video podcasts"
+            "en": "180 hours/year, up to 5 audio-only or 10 audio+video podcasts",
+            "fr": "180 heures/an, jusqu'a 5 podcasts audio seul ou 10 audio+video."
           }
         ],
         "sourceIds": [
@@ -133,14 +138,14 @@
     "addOns": [
       {
         "en": "Archive plan: $5/month for inactive podcasts",
-        "fr": null,
+        "fr": "Plan Archive : 5 $/mois pour les podcasts inactifs",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Cohost AI and Magic Mastering available as optional add-ons",
-        "fr": null,
+        "fr": "Cohost AI et Magic Mastering disponibles en extensions optionnelles",
         "sourceIds": [
           "s1"
         ]
@@ -149,7 +154,7 @@
     "cautions": [
       {
         "en": "The three paid plans' prices shown are annual-billing monthly equivalents; monthly (non-annual) billing prices were not separately shown on the page fetched. Upload hours are a yearly allocation and don't roll over month to month; overage is billed hourly.",
-        "fr": null,
+        "fr": "Les prix des trois plans payants affiches sont les equivalents mensuels de la facturation annuelle ; les prix en facturation mensuelle (non annuelle) n'etaient pas affiches separement sur la page consultee. Les heures d'upload sont une allocation annuelle qui ne se reporte pas de mois en mois ; le depassement est facture a l'heure.",
         "sourceIds": [
           "s1"
         ]
@@ -160,28 +165,28 @@
     "capabilities": [
       {
         "en": "Distributes episodes to 18+ platforms including Apple Podcasts, Spotify, YouTube and Amazon Music",
-        "fr": null,
+        "fr": "Distribue les episodes vers plus de 18 plateformes dont Apple Podcasts, Spotify, YouTube et Amazon Music",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Magic Mastering automatically balances audio levels and removes background noise",
-        "fr": null,
+        "fr": "Magic Mastering equilibre automatiquement les niveaux audio et retire le bruit de fond",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Automatic, industry-standard transcripts included on all paid plans",
-        "fr": null,
+        "fr": "Transcriptions automatiques aux standards du secteur incluses sur tous les plans payants",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "IAB 2.2 certified analytics with bot filtering, plus a built-in SEO-optimized podcast website builder",
-        "fr": null,
+        "fr": "Analytique certifiee IAB 2.2 avec filtrage des bots, plus un createur de site de podcast integre optimise pour le SEO",
         "sourceIds": [
           "s2"
         ]
@@ -190,14 +195,14 @@
     "limitations": [
       {
         "en": "Free plan episodes are only hosted for 90 days, and uploads are capped at 2 hours/month with no video distribution",
-        "fr": null,
+        "fr": "Les episodes du plan gratuit ne sont heberges que 90 jours, et les uploads sont plafonnes a 2h/mois sans distribution video",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Advanced features (video distribution, Magic Mastering, Cohost AI) require a paid tier",
-        "fr": null,
+        "fr": "Les fonctions avancees (distribution video, Magic Mastering, Cohost AI) demandent un palier payant",
         "sourceIds": [
           "s2"
         ]
@@ -218,34 +223,146 @@
       "android"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A podcast creator who needs reliable hosting, distribution to major platforms and certified analytics without managing infrastructure.",
+      "fr": "Un createur de podcast qui a besoin d'un hebergement fiable, d'une distribution vers les plateformes majeures et d'une analytique certifiee sans gerer d'infrastructure."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Weekly podcast launch: upload episodes to the Audio Podcast plan and get automatic distribution to Apple Podcasts, Spotify and other directories.",
+      "fr": "Lancement de podcast hebdomadaire : uploader les episodes sur le plan Audio Podcast et obtenir une distribution automatique vers Apple Podcasts, Spotify et les autres annuaires."
+    },
+    {
+      "en": "Video podcast: upgrade to the Audio + Video plan to distribute the same episode as video to YouTube alongside the audio feed.",
+      "fr": "Podcast video : passer au plan Audio + Video pour distribuer le meme episode en video sur YouTube en plus du flux audio."
+    }
+  ],
   "alternatives": [
     {
       "slug": "spotify-for-podcasters",
       "reason": {
-        "en": "Free podcast hosting and distribution directly from Spotify, a major low-cost competitor."
+        "en": "Free podcast hosting and distribution directly from Spotify, a major low-cost competitor.",
+        "fr": "Hebergement et distribution de podcast gratuits directement depuis Spotify, un concurrent majeur a faible cout."
       }
     },
     {
       "slug": "podbean",
       "reason": {
-        "en": "Similar tiered podcast hosting service with a free plan, direct competitor to Buzzsprout."
+        "en": "Similar tiered podcast hosting service with a free plan, direct competitor to Buzzsprout.",
+        "fr": "Service d'hebergement de podcast a paliers similaire avec un plan gratuit, concurrent direct de Buzzsprout."
       }
     },
     {
       "slug": "acast",
       "reason": {
-        "en": "Podcast hosting and monetization platform competing for the same creators."
+        "en": "Podcast hosting and monetization platform competing for the same creators.",
+        "fr": "Plateforme d'hebergement et de monetisation de podcast qui vise les memes createurs."
       }
     }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The cheapest paid plan at $15/month (annual) unlocks unlimited episode retention, directory listing and advanced stats over the free plan's 90-day hosting cap.",
+        "fr": "Le plan payant le moins cher a 15 $/mois (annuel) debloque une retention d'episodes illimitee, l'inscription dans les annuaires et des statistiques avancees par rapport au plafond de 90 jours du plan gratuit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Automatic distribution to 18+ platforms and a built-in podcast website builder get a show published without separate setup for each platform.",
+        "fr": "La distribution automatique vers plus de 18 plateformes et un createur de site de podcast integre permettent de publier une emission sans configuration separee pour chaque plateforme.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers IAB-certified analytics, automatic transcripts and Magic Mastering audio cleanup as advertised.",
+        "fr": "Fournit une analytique certifiee IAB, des transcriptions automatiques et un nettoyage audio Magic Mastering comme annonce.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Upload hours are a yearly allocation with hourly overage billing, and hosting multiple shows requires the separate Multi-Podcast plan, which caps how far a single plan scales.",
+        "fr": "Les heures d'upload sont une allocation annuelle avec facturation horaire du depassement, et heberger plusieurs emissions demande le plan Multi-Podcast a part, ce qui plafonne la portee d'un seul plan.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: exporting episodes or subscriber data out of Buzzsprout is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des episodes ou des donnees d'auditeurs hors de Buzzsprout ne figure pas dans les sources relevees.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Podcast hosting",
+      "fr": "Hebergement de podcast"
+    },
+    "shortDescription": {
+      "en": "Podcast hosting with automatic distribution to 18+ platforms and IAB-certified analytics, free for 90 days or from $15/month.",
+      "fr": "Hebergement de podcast avec distribution automatique vers plus de 18 plateformes et analytique certifiee IAB, gratuit pendant 90 jours ou a partir de 15 $/mois."
+    },
+    "longDescription": {
+      "en": "Buzzsprout hosts and distributes podcast episodes to 18+ platforms including Apple Podcasts, Spotify and YouTube, with IAB 2.2 certified analytics, automatic transcripts and Magic Mastering to clean up audio automatically.\n\nThe free plan caps uploads at 2 hours/month and hosts episodes for only 90 days. The Audio Podcast plan starts at $15/month (annual billing) for 72 hours/year and unlimited episode retention, with Audio + Video adding video distribution at $25/month. It fits a solo podcaster who wants distribution and analytics handled without extra tools.",
+      "fr": "Buzzsprout heberge et distribue les episodes de podcast vers plus de 18 plateformes dont Apple Podcasts, Spotify et YouTube, avec une analytique certifiee IAB 2.2, des transcriptions automatiques et Magic Mastering pour nettoyer l'audio automatiquement.\n\nLe plan gratuit plafonne les uploads a 2h/mois et n'heberge les episodes que 90 jours. Le plan Audio Podcast commence a 15 $/mois (facturation annuelle) pour 72 heures/an et une retention d'episodes illimitee, Audio + Video ajoutant la distribution video a 25 $/mois. Il convient a un podcasteur solo qui veut la distribution et l'analytique geres sans outils supplementaires."
+    },
+    "pros": [
+      {
+        "en": "Automatic distribution to 18+ platforms including Apple Podcasts, Spotify and YouTube.",
+        "fr": "Distribution automatique vers plus de 18 plateformes dont Apple Podcasts, Spotify et YouTube."
+      },
+      {
+        "en": "IAB-certified analytics and automatic transcripts included on paid plans.",
+        "fr": "Analytique certifiee IAB et transcriptions automatiques incluses sur les plans payants."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan only hosts episodes for 90 days, unsuitable for a permanent archive.",
+        "fr": "Le plan gratuit n'heberge les episodes que 90 jours, inadapte a une archive permanente."
+      },
+      {
+        "en": "Upload hours are a yearly allocation with hourly billing once exceeded.",
+        "fr": "Les heures d'upload sont une allocation annuelle facturee a l'heure en cas de depassement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want automatic multi-platform distribution and certified analytics without managing hosting yourself.",
+        "fr": "Tu veux une distribution multi-plateforme automatique et une analytique certifiee sans gerer l'hebergement toi-meme."
+      },
+      "avoidIf": {
+        "en": "You're only testing an idea and don't want episodes to disappear after the free plan's 90-day hosting window.",
+        "fr": "Tu testes juste une idee et tu ne veux pas que tes episodes disparaissent apres la fenetre d'hebergement de 90 jours du plan gratuit."
+      },
+      "threshold": {
+        "en": "Worth the $180/year (annual billing) Audio Podcast plan once you want episodes to stay listed permanently instead of expiring after 90 days.",
+        "fr": "Le plan Audio Podcast a 180 $/an (facturation annuelle) devient utile des que tu veux que tes episodes restent listes en permanence au lieu d'expirer apres 90 jours."
+      }
+    }
+  },
   "unknowns": [
     "Standalone monthly (non-annual) prices for the three paid plans not confirmed on the page fetched",
     "Whether the free plan allows multiple podcasts was not stated"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-25"
 }

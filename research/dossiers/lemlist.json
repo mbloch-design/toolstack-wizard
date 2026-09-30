@@ -3,7 +3,8 @@
   "slug": "lemlist",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Lemlist",
     "vendor": "lempire SAS",
@@ -64,28 +65,84 @@
       { "en": "Buying Intent Signals: $21/month for 100 signals/month.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The Email plan is billed per account with unlimited users, while the Multichannel plan switches to per-user billing; comparing the two by seat count is not apples-to-apples.", "sourceIds": ["s1"] }
+      { "en": "The Email plan is billed per account with unlimited users, while the Multichannel plan switches to per-user billing; comparing the two by seat count is not apples-to-apples.", "fr": "Le plan Email est facturé par compte avec des utilisateurs illimités, tandis que Multichannel passe à une facturation par utilisateur ; comparer les deux par nombre de sièges n'est pas équitable.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Outbound email sequence builder with personalization (dynamic images/text) for cold outreach.", "sourceIds": ["s1"] },
-      { "en": "Multichannel prospecting on the higher tier: LinkedIn automation, SMS, WhatsApp add-on, and a built-in call dialer.", "sourceIds": ["s1"] },
-      { "en": "Built-in lead database (650M+ leads) with email/phone finder, and email warm-up to protect sender reputation.", "sourceIds": ["s1"] },
-      { "en": "lemAgent (AI assistant) and native CRM integrations.", "sourceIds": ["s1"] }
+      { "en": "Outbound email sequence builder with personalization (dynamic images/text) for cold outreach.", "fr": "Constructeur de séquences d'email outbound avec personnalisation (images/texte dynamiques) pour la prospection à froid.", "sourceIds": ["s1"] },
+      { "en": "Multichannel prospecting on the higher tier: LinkedIn automation, SMS, WhatsApp add-on, and a built-in call dialer.", "fr": "Prospection multicanale sur le palier supérieur : automatisation LinkedIn, SMS, module WhatsApp, et un dialer d'appels intégré.", "sourceIds": ["s1"] },
+      { "en": "Built-in lead database (650M+ leads) with email/phone finder, and email warm-up to protect sender reputation.", "fr": "Base de leads intégrée (plus de 650 millions) avec recherche d'email/téléphone, et préchauffage des emails pour protéger la réputation d'envoi.", "sourceIds": ["s1"] },
+      { "en": "lemAgent (AI assistant) and native CRM integrations.", "fr": "lemAgent (assistant IA) et intégrations CRM natives.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No free plan; access starts with a 14-day trial before a paid subscription is required.", "sourceIds": ["s1"] },
-      { "en": "Multichannel features (LinkedIn, SMS, WhatsApp, dialer) are locked behind the more expensive Multichannel plan, not available on the base Email plan.", "sourceIds": ["s1"] }
+      { "en": "No free plan; access starts with a 14-day trial before a paid subscription is required.", "fr": "Pas de plan gratuit ; l'accès démarre par un essai de 14 jours avant de nécessiter un abonnement payant.", "sourceIds": ["s1"] },
+      { "en": "Multichannel features (LinkedIn, SMS, WhatsApp, dialer) are locked behind the more expensive Multichannel plan, not available on the base Email plan.", "fr": "Les fonctions multicanales (LinkedIn, SMS, WhatsApp, dialer) sont réservées au plan Multichannel, plus cher, et indisponibles sur le plan Email de base.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A small team running cold outbound prospecting who wants sequencing, a lead database and warm-up in one subscription.",
+      "fr": "Une petite équipe qui fait de la prospection outbound et veut séquences, base de leads et préchauffage dans un seul abonnement."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Run a cold email outreach campaign with personalized sequences and built-in sender warm-up to protect deliverability.", "fr": "Lancer une campagne de prospection par email froid avec des séquences personnalisées et un préchauffage intégré pour protéger la délivrabilité." },
+    { "en": "Combine email, LinkedIn and SMS touches in one multichannel sequence for a small sales team, on the Multichannel plan.", "fr": "Combiner email, LinkedIn et SMS dans une seule séquence multicanale pour une petite équipe commerciale, sur le plan Multichannel." }
+  ],
   "alternatives": [
-    { "slug": "apollo-io", "reason": { "en": "Direct competitor combining a lead database with outbound sequencing, overlapping with Lemlist's core use case." } },
-    { "slug": "activecampaign", "reason": { "en": "Overlaps on email sequencing/automation, though more broadly a marketing-automation platform than a cold-outbound specialist like Lemlist." } }
+    { "slug": "apollo-io", "reason": { "en": "Direct competitor combining a lead database with outbound sequencing, overlapping with Lemlist's core use case.", "fr": "Concurrent direct combinant base de leads et séquences outbound, sur le même cœur de métier que Lemlist." } },
+    { "slug": "activecampaign", "reason": { "en": "Overlaps on email sequencing/automation, though more broadly a marketing-automation platform than a cold-outbound specialist like Lemlist.", "fr": "Chevauchement sur les séquences et l'automatisation email, mais plus une plateforme de marketing automation généraliste qu'un spécialiste outbound comme Lemlist." } },
+    { "slug": "instantly", "reason": { "en": "Direct competitor for cold email sequencing and deliverability tools, overlapping with Lemlist's core outbound use case.", "fr": "Concurrent direct pour les séquences d'emails froids et les outils de délivrabilité, sur le même cœur de métier que Lemlist." } },
+    { "slug": "la-growth-machine", "reason": { "en": "Multichannel prospecting competitor combining email, LinkedIn and other channels, similar to Lemlist's Multichannel plan.", "fr": "Concurrent en prospection multicanale combinant email, LinkedIn et d'autres canaux, proche du plan Multichannel de Lemlist." } },
+    { "slug": "replyio", "reason": { "en": "Direct competitor for outbound email and multichannel sales engagement sequences.", "fr": "Concurrent direct pour les séquences d'engagement commercial par email et multicanal." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Email plan bundles a lead database, warm-up and unlimited users for $69/month (or $55/month annual), a real cost saver if you'd otherwise need separate list-building and warm-up tools, but Multichannel features require an upgrade.", "fr": "Le plan Email regroupe base de leads, préchauffage et utilisateurs illimités pour 69 $/mois (ou 55 $/mois en annuel), une vraie économie si tu devrais sinon payer des outils séparés, mais les fonctions Multichannel demandent une mise à niveau.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers outbound email sequencing with personalization and built-in warm-up as advertised, with multichannel outreach (LinkedIn, SMS, WhatsApp, dialer) added on the higher tier.", "fr": "Fournit des séquences d'email outbound personnalisées et un préchauffage intégré comme annoncé, avec la prospection multicanale (LinkedIn, SMS, WhatsApp, dialer) ajoutée sur le palier supérieur.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines a 650M+ lead database, an AI assistant (lemAgent), and multichannel channels (LinkedIn, SMS, WhatsApp, dialer) on Multichannel, more breadth than a plain email sequencer.", "fr": "Combine une base de plus de 650 millions de leads, un assistant IA (lemAgent), et des canaux multicanaux (LinkedIn, SMS, WhatsApp, dialer) sur Multichannel, plus large qu'un simple outil de séquences email.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or portability of leads and sequences is not covered by the collected sources.", "fr": "Note neutre : la portabilité des leads et des séquences ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cold outreach platform", "fr": "Plateforme de prospection" },
+    "shortDescription": {
+      "en": "Cold email and multichannel outreach platform with a built-in lead database, sender warm-up and AI personalization, no free plan.",
+      "fr": "Plateforme de prospection email et multicanale avec base de leads intégrée, préchauffage des expéditeurs et personnalisation par IA, sans plan gratuit."
+    },
+    "longDescription": {
+      "en": "Lemlist builds outbound email sequences with dynamic personalization (images, text) and includes sender warm-up to protect deliverability, plus a built-in database of over 650 million leads with an email and phone finder.\n\nThere's no free plan, only a 14-day trial. The Email plan starts at $69/month ($55/month billed annually) for unlimited users, while Multichannel at $109/month ($87/month annually) switches to per-user billing and unlocks LinkedIn automation, SMS, WhatsApp and a call dialer. It fits a small sales team that wants prospecting, sequencing and a lead database in one place rather than stitching several tools together.",
+      "fr": "Lemlist construit des séquences d'email outbound avec personnalisation dynamique (images, texte) et inclut un préchauffage des expéditeurs pour protéger la délivrabilité, plus une base de plus de 650 millions de leads avec recherche d'email et de téléphone.\n\nIl n'y a pas de plan gratuit, seulement un essai de 14 jours. Le plan Email démarre à 69 $/mois (55 $/mois en facturation annuelle) pour des utilisateurs illimités, tandis que Multichannel à 109 $/mois (87 $/mois en annuel) passe à une facturation par utilisateur et débloque l'automatisation LinkedIn, le SMS, WhatsApp et un dialer. Il convient à une petite équipe commerciale qui veut prospection, séquences et base de leads réunies en un seul outil plutôt que plusieurs."
+    },
+    "pros": [
+      { "en": "Built-in lead database and sender warm-up remove the need for separate list-building and deliverability tools.", "fr": "La base de leads intégrée et le préchauffage évitent d'avoir des outils séparés pour construire des listes et protéger la délivrabilité." },
+      { "en": "Unlimited users on the Email plan keeps per-seat costs down for a growing team.", "fr": "Les utilisateurs illimités sur le plan Email limitent le coût par siège pour une équipe qui grandit." }
+    ],
+    "cons": [
+      { "en": "No free plan; only a 14-day trial before paying.", "fr": "Pas de plan gratuit ; seulement un essai de 14 jours avant de payer." },
+      { "en": "Multichannel features (LinkedIn, SMS, WhatsApp, dialer) require the pricier per-user Multichannel plan.", "fr": "Les fonctions multicanales (LinkedIn, SMS, WhatsApp, dialer) demandent le plan Multichannel, plus cher et facturé par utilisateur." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Your team runs cold email at volume and wants a lead database and warm-up bundled in, without per-seat email pricing.", "fr": "Ton équipe fait du cold email en volume et tu veux une base de leads et un préchauffage inclus, sans facturation par siège pour l'email." },
+      "avoidIf": { "en": "You need LinkedIn or SMS touches from day one but want to stay on the cheaper Email plan.", "fr": "Tu as besoin de LinkedIn ou de SMS dès le départ mais tu veux rester sur le plan Email moins cher." },
+      "threshold": { "en": "At $69/month (Email, unlimited users) versus $109/month per user on Multichannel, the switch only pays off once you actually need LinkedIn/SMS/dialer outreach.", "fr": "Entre 69 $/mois (Email, utilisateurs illimités) et 109 $/mois par utilisateur sur Multichannel, le passage n'est rentable que si tu as vraiment besoin de LinkedIn, SMS ou dialer." },
+      "billingTraps": { "en": "The Email plan bills per account with unlimited users, while Multichannel switches to per-user billing, so adding teammates on Multichannel multiplies the cost in a way the Email plan doesn't.", "fr": "Le plan Email facture par compte avec des utilisateurs illimités, tandis que Multichannel passe à une facturation par utilisateur, donc ajouter des collègues sur Multichannel multiplie le coût, contrairement au plan Email." }
+    }
+  },
   "unknowns": [
     "Whether the Email plan's 'unlimited users' claim has any practical fair-use cap was not confirmed beyond the pricing page copy.",
     "Exact minimum seat count or billing mechanics for the Multichannel plan when a team adds more than one user were not detailed."

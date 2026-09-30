@@ -3,7 +3,8 @@
   "slug": "ant-design",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Ant Design",
     "vendor": "Ant Group (open source project)",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://ant.design/", "tier": 1, "accessedOn": "2026-09-25", "title": "Ant Design homepage" }
+    {
+      "id": "s1",
+      "url": "https://ant.design/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Ant Design homepage"
+    }
   ],
   "pricing": {
     "model": "open_source",
@@ -24,7 +31,13 @@
     "verifiedOn": "2026-09-25",
     "region": "global",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Fully free and open source, no paid tier", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "Fully free and open source, no paid tier",
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,10 +45,23 @@
         "name": "Open Source",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free React (and Angular/Vue variants) component library, no paid tier or hosted service.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Free React (and Angular/Vue variants) component library, no paid tier or hosted service.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
@@ -44,24 +70,191 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Large set of ready-made React UI components for enterprise applications.", "sourceIds": ["s1"] },
-      { "en": "Theme customization via CSS-in-JS with several pre-built themes.", "sourceIds": ["s1"] },
-      { "en": "Companion ecosystem: Ant Design Mobile, AntV data visualization, and a design toolkit (Kitchen).", "sourceIds": ["s1"] },
-      { "en": "Ports available for Angular and Vue in addition to the primary React library.", "sourceIds": ["s1"] }
+      {
+        "en": "Large set of ready-made React UI components for enterprise applications.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Un large ensemble de composants React prêts à l'emploi pour les applications d'entreprise."
+      },
+      {
+        "en": "Theme customization via CSS-in-JS with several pre-built themes.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Personnalisation des thèmes en CSS-in-JS, avec plusieurs thèmes prédéfinis."
+      },
+      {
+        "en": "Companion ecosystem: Ant Design Mobile, AntV data visualization, and a design toolkit (Kitchen).",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Un écosystème associé : Ant Design Mobile, la visualisation de données AntV et une boîte à outils de design (Kitchen)."
+      },
+      {
+        "en": "Ports available for Angular and Vue in addition to the primary React library.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Des portages pour Angular et Vue, en plus de la bibliothèque React principale."
+      }
     ],
     "limitations": [
-      { "en": "No official paid support tier; support relies on the open-source community and GitHub issues.", "sourceIds": ["s1"] },
-      { "en": "Visual style is distinctly opinionated (enterprise/admin-panel look), which requires real customization work to diverge from.", "sourceIds": ["s1"] }
+      {
+        "en": "No official paid support tier; support relies on the open-source community and GitHub issues.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Pas de support payant officiel : l'aide repose sur la communauté open source et les issues GitHub."
+      },
+      {
+        "en": "Visual style is distinctly opinionated (enterprise/admin-panel look), which requires real customization work to diverge from.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le style visuel est très marqué (look d'interface d'administration), et s'en éloigner demande un vrai travail de personnalisation."
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer building an internal tool or enterprise dashboard who wants a complete, free React component set out of the box.",
+      "fr": "Un développeur qui construit un outil interne ou un tableau de bord d'entreprise et veut un ensemble de composants React complet et gratuit, prêt à l'emploi."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Build an internal admin panel or enterprise dashboard quickly using Ant Design's ready-made React component set.",
+      "fr": "Construire rapidement un panneau d'administration interne ou un tableau de bord d'entreprise avec les composants React prêts à l'emploi d'Ant Design."
+    },
+    {
+      "en": "Combine Ant Design with AntV for data visualization needs in the same design system, without adding a separate charting library.",
+      "fr": "Combiner Ant Design avec AntV pour les besoins de visualisation de données dans le même design system, sans ajouter de bibliothèque de graphiques séparée."
+    }
+  ],
   "alternatives": [
-    { "slug": "material-ui", "reason": { "en": "Direct competitor: another free, opinionated React component library for building application UIs." } }
+    {
+      "slug": "material-ui",
+      "reason": {
+        "en": "Direct competitor: another free, opinionated React component library for building application UIs.",
+        "fr": "Concurrent direct : une autre bibliothèque de composants React gratuite et marquée visuellement pour construire des interfaces d'application."
+      }
+    },
+    {
+      "slug": "shadcn-ui",
+      "reason": {
+        "en": "Popular alternative React component approach (copy-paste components over Tailwind) instead of Ant Design's installed component library.",
+        "fr": "Approche alternative populaire de composants React (composants à copier-coller sur Tailwind) plutôt que la bibliothèque installée d'Ant Design."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Chakra UI", "officialUrl": "https://www.chakra-ui.com", "reason": "Widely used alternative React component library, not in the catalogue." }
+    {
+      "name": "Chakra UI",
+      "officialUrl": "https://www.chakra-ui.com",
+      "reason": "Widely used alternative React component library, not in the catalogue."
+    }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Fully free and open source with no paid tier, giving a large ready-made enterprise component set at zero licensing cost.",
+        "fr": "Entièrement gratuit et open source sans offre payante, offrant un large ensemble de composants d'entreprise prêts à l'emploi sans coût de licence.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Ships a large set of ready-made React components with CSS-in-JS theme customization and companion tools (Ant Design Mobile, AntV, Kitchen), delivering on its enterprise-UI promise.",
+        "fr": "Fournit un large ensemble de composants React prêts à l'emploi avec une personnalisation de thème en CSS-in-JS et des outils complémentaires (Ant Design Mobile, AntV, Kitchen), tenant sa promesse d'UI d'entreprise.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers enterprise UI components plus data visualization (AntV) and ports to Angular and Vue, but there's no official paid support tier, so scaling support relies on the open-source community.",
+        "fr": "Couvre les composants UI d'entreprise plus la visualisation de données (AntV) et des versions pour Angular et Vue, mais sans offre de support payant, le support à grande échelle repose sur la communauté open source.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export or portability away from Ant Design's component conventions is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité en dehors des conventions de composants d'Ant Design ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "React component library",
+      "fr": "Bibliothèque de composants React"
+    },
+    "shortDescription": {
+      "en": "Free, open source React component library for enterprise applications, with theme customization and companion tools for mobile and data visualization.",
+      "fr": "Bibliothèque de composants React gratuite et open source pour applications d'entreprise, avec personnalisation de thème et outils complémentaires pour le mobile et la visualisation de données."
+    },
+    "longDescription": {
+      "en": "Ant Design provides a large set of ready-made React components for enterprise applications, with CSS-in-JS theme customization and several pre-built themes, plus a companion ecosystem: Ant Design Mobile, the AntV data-visualization library, and a design toolkit (Kitchen). Ports exist for Angular and Vue.\n\nIt's fully free and open source with no paid tier. Support relies entirely on the open-source community and GitHub issues rather than a vendor SLA, and its enterprise/admin-panel visual style is distinctly opinionated, requiring real customization work to diverge from. It suits a developer building an internal tool or enterprise dashboard who wants a complete component set without building one from scratch.",
+      "fr": "Ant Design fournit un large ensemble de composants React prêts à l'emploi pour les applications d'entreprise, avec une personnalisation de thème en CSS-in-JS et plusieurs thèmes préconçus, ainsi qu'un écosystème complémentaire : Ant Design Mobile, la bibliothèque de visualisation de données AntV, et un kit de conception (Kitchen). Des versions existent pour Angular et Vue.\n\nIl est entièrement gratuit et open source, sans offre payante. Le support repose entièrement sur la communauté open source et les issues GitHub plutôt que sur un SLA éditeur, et son style visuel très marqué « admin d'entreprise » demande un vrai travail de personnalisation pour s'en écarter. Il convient à un développeur qui construit un outil interne ou un tableau de bord d'entreprise et veut un ensemble de composants complet sans tout construire lui-même."
+    },
+    "pros": [
+      {
+        "en": "Free and open source, with a large ready-made component set for enterprise UIs.",
+        "fr": "Gratuit et open source, avec un large ensemble de composants prêts à l'emploi pour les UI d'entreprise."
+      },
+      {
+        "en": "Companion ecosystem (AntV, Ant Design Mobile, Kitchen) covers visualization and mobile beyond the core library.",
+        "fr": "L'écosystème complémentaire (AntV, Ant Design Mobile, Kitchen) couvre la visualisation et le mobile au-delà de la bibliothèque principale."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No official paid support tier; help depends on the open-source community.",
+        "fr": "Pas d'offre de support payant officielle ; l'aide dépend de la communauté open source."
+      },
+      {
+        "en": "Visual style is distinctly opinionated, requiring real customization work to move away from the default enterprise look.",
+        "fr": "Le style visuel est très marqué, ce qui demande un vrai travail de personnalisation pour s'éloigner du look d'entreprise par défaut."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're building an enterprise or admin-style React app and want a complete, free component set out of the box.",
+        "fr": "Tu construis une app React de style entreprise ou admin et tu veux un ensemble de composants complet et gratuit, prêt à l'emploi."
+      },
+      "avoidIf": {
+        "en": "You need a distinctive visual identity without heavy theme customization, or a vendor support contract.",
+        "fr": "Tu as besoin d'une identité visuelle distinctive sans lourde personnalisation de thème, ou d'un contrat de support éditeur."
+      },
+      "threshold": {
+        "en": "Since it's free with no paid plan, the deciding factor is whether its default enterprise visual style fits your product, not cost.",
+        "fr": "Comme c'est gratuit et sans offre payante, ce qui décide c'est si son style visuel d'entreprise par défaut convient à ton produit, pas le prix."
+      }
+    }
+  },
   "unknowns": [
     "No dedicated pricing page exists since the product is fully open source; commercial/enterprise support offerings (if any) were not found on the homepage."
   ],

@@ -3,7 +3,8 @@
   "slug": "invision",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "InVision",
     "vendor": "InVisionApp, Inc.",
@@ -51,7 +52,7 @@
     "cautions": [
       {
         "en": "InVision's design collaboration service is discontinued (shut down December 31, 2024); no pricing plans are purchasable and none are documented here.",
-        "fr": null,
+        "fr": "Le service de collaboration design d'InVision est arrêté (fermeture le 31 décembre 2024) ; aucune offre n'est achetable et aucune n'est documentée ici.",
         "sourceIds": [
           "s1"
         ]
@@ -62,14 +63,14 @@
     "capabilities": [
       {
         "en": "Historically offered interactive prototyping from static design files, with commenting and stakeholder feedback workflows.",
-        "fr": null,
+        "fr": "Proposait auparavant du prototypage interactif à partir de maquettes statiques, avec des commentaires et des workflows de retour pour les parties prenantes.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Included a Digital Design System Manager (DSM) for maintaining shared design libraries across teams.",
-        "fr": null,
+        "fr": "Incluait un Digital Design System Manager (DSM) pour maintenir des bibliothèques de design partagées entre équipes.",
         "sourceIds": [
           "s1"
         ]
@@ -78,14 +79,14 @@
     "limitations": [
       {
         "en": "Service is fully discontinued since December 31, 2024; all prototypes, boards, DSM libraries and other assets were deleted after shutdown.",
-        "fr": null,
+        "fr": "Le service est totalement arrêté depuis le 31 décembre 2024 ; tous les prototypes, tableaux, bibliothèques DSM et autres ressources ont été supprimés après la fermeture.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "No migration path is offered by InVision itself; users were told to export their work before the shutdown date.",
-        "fr": null,
+        "fr": "InVision n'a proposé aucun chemin de migration ; les utilisateurs devaient exporter leur travail avant la date de fermeture.",
         "sourceIds": [
           "s1"
         ]
@@ -96,19 +97,38 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Historically product/UX designers building clickable prototypes and shared design systems; the service is now discontinued.",
+      "fr": "Historiquement des designers produit/UX qui créaient des prototypes cliquables et des systèmes de design partagés ; le service est désormais arrêté."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Reference: check support.invisionapp.com for legacy documentation if you need to reference an old client project built in InVision.",
+      "fr": "Référence : consulte support.invisionapp.com pour la documentation historique si tu dois te référer à un ancien projet client construit dans InVision."
+    },
+    {
+      "en": "Migration: if you kept a local export made before the shutdown, rebuild the prototype in Figma or Framer instead of InVision.",
+      "fr": "Migration : si tu as gardé un export local fait avant la fermeture, reconstruis le prototype dans Figma ou Framer plutôt que dans InVision."
+    }
+  ],
   "alternatives": [
     {
       "slug": "figma",
       "reason": {
         "en": "The dominant replacement for InVision's prototyping and design collaboration workflow, cited by press coverage as the main reason InVision shut down.",
-        "fr": null
+        "fr": "Le remplaçant dominant pour le workflow de prototypage et de collaboration design d'InVision, cité par la presse comme la principale raison de sa fermeture."
       }
     },
     {
       "slug": "framer",
       "reason": {
         "en": "Alternative interactive prototyping tool covering the same design-to-prototype workflow InVision offered.",
-        "fr": null
+        "fr": "Outil de prototypage interactif alternatif, qui couvre le même workflow de la maquette au prototype qu'offrait InVision."
       }
     }
   ],
@@ -119,8 +139,106 @@
       "reason": "Acquired InVision's Freehand whiteboard product directly and is the natural destination for that specific workflow, not present in the catalogue under this angle."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 1,
+    "simplicite": 1,
+    "utilisation": 1,
+    "puissance": 1,
+    "reversibilite": 1,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No plan is purchasable and the service is fully shut down, so there is no return on any spend today.",
+        "fr": "Aucune offre n'est achetable et le service est totalement fermé, donc aucun retour n'est possible sur une dépense aujourd'hui.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "There is no first result to reach: the service was shut down on December 31, 2024 and cannot be signed up for.",
+        "fr": "Aucun premier résultat n'est atteignable : le service a fermé le 31 décembre 2024 et ne peut plus accueillir d'inscription.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The service cannot deliver its prototyping or DSM promise at all: it is discontinued and all assets were deleted after shutdown.",
+        "fr": "Le service ne peut plus du tout tenir sa promesse de prototypage ou de DSM : il est arrêté et toutes les ressources ont été supprimées après la fermeture.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "With no live product, there is no current capability to measure against category competitors.",
+        "fr": "Sans produit actif, aucune capacité actuelle ne peut être mesurée face aux concurrents de la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "InVision offered no migration path before shutdown and deleted all prototypes, boards and DSM libraries shortly after, the worst possible outcome for data portability.",
+        "fr": "InVision n'a proposé aucun chemin de migration avant la fermeture et a supprimé tous les prototypes, tableaux et bibliothèques DSM peu après, le pire résultat possible pour la portabilité des données.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Discontinued prototyping tool",
+      "fr": "Prototypage arrêté"
+    },
+    "shortDescription": {
+      "en": "Design collaboration and prototyping service that shut down permanently on December 31, 2024, with all user data deleted shortly after.",
+      "fr": "Service de collaboration design et de prototypage fermé définitivement le 31 décembre 2024, avec toutes les données utilisateur supprimées peu après."
+    },
+    "longDescription": {
+      "en": "InVision let teams turn static design files into interactive prototypes with commenting and stakeholder feedback, plus a Digital Design System Manager (DSM) for shared component libraries. Figma became the dominant replacement for this workflow.\n\nThe service is fully discontinued since December 31, 2024: no plan can be bought, and InVision deleted all prototypes, boards and DSM libraries after shutdown without offering a migration path. This entry exists for reference only; anyone still choosing a design and prototyping tool today should look at Figma or Framer instead.",
+      "fr": "InVision permettait de transformer des maquettes statiques en prototypes interactifs avec des commentaires et des retours des parties prenantes, ainsi qu'un Digital Design System Manager (DSM) pour des bibliothèques de composants partagées. Figma est devenu le remplaçant dominant de ce workflow.\n\nLe service est totalement arrêté depuis le 31 décembre 2024 : aucune offre n'est achetable, et InVision a supprimé tous les prototypes, tableaux et bibliothèques DSM après la fermeture, sans proposer de chemin de migration. Cette fiche existe pour référence uniquement ; toute personne qui choisit encore un outil de design et de prototypage aujourd'hui devrait plutôt regarder Figma ou Framer."
+    },
+    "pros": [
+      {
+        "en": "Historically offered a straightforward path from static designs to clickable, commentable prototypes.",
+        "fr": "Offrait auparavant un chemin simple de la maquette statique au prototype cliquable et commentable."
+      },
+      {
+        "en": "Included a dedicated Digital Design System Manager for shared component libraries.",
+        "fr": "Incluait un Digital Design System Manager dédié pour des bibliothèques de composants partagées."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The service is fully shut down and cannot be signed up for or used at all.",
+        "fr": "Le service est totalement fermé et ne peut plus être ni souscrit ni utilisé."
+      },
+      {
+        "en": "All prototypes, boards and DSM libraries were deleted after shutdown with no migration path offered.",
+        "fr": "Tous les prototypes, tableaux et bibliothèques DSM ont été supprimés après la fermeture, sans chemin de migration proposé."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Never: the service is fully discontinued and cannot be purchased or used. This entry exists for reference only.",
+        "fr": "Jamais : le service est totalement arrêté et ne peut plus être acheté ni utilisé. Cette fiche existe pour référence uniquement."
+      },
+      "avoidIf": {
+        "en": "You are choosing a design and prototyping tool today, since InVision cannot be signed up for anymore.",
+        "fr": "Tu choisis aujourd'hui un outil de design et de prototypage, car InVision ne peut plus être souscrit."
+      },
+      "threshold": {
+        "en": "There is no active price or plan to compare; move to Figma or Framer instead of budgeting for InVision.",
+        "fr": "Il n'y a aucune offre ou prix actif à comparer ; passe à Figma ou Framer plutôt que de prévoir un budget pour InVision."
+      }
+    }
+  },
   "unknowns": [
     "Exact reopening/legacy-access status of support.invisionapp.com not independently confirmed beyond it still resolving; treated as a legacy support page for a discontinued product."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Only figma and framer are close-fit catalogue alternatives for InVision's former prototyping/DSM use case; Miro (which acquired InVision's Freehand product) is already noted in missingAlternatives, so the tier A target of 3-6 alternatives is not reached from the catalogue as it stands.",
+    "All five rating axes are scored 1 because the product is fully discontinued with all data deleted and no purchasable plan; confirm this treatment is the intended convention for dead-product dossiers before merging."
+  ],
+  "hold": "product shut down (Dec 2024): waiting for the decision on discontinued products"
 }

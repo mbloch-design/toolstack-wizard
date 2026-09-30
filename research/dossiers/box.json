@@ -3,7 +3,8 @@
   "slug": "box",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Box",
     "vendor": "Box, Inc.",
@@ -15,20 +16,8 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://www.box.com/pricing/individual",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Box individual/business pricing"
-    },
-    {
-      "id": "s2",
-      "url": "https://www.box.com/pricing/business",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Box business pricing"
-    }
+    { "id": "s1", "url": "https://www.box.com/pricing/individual", "tier": 1, "accessedOn": "2026-09-25", "title": "Box individual/business pricing" },
+    { "id": "s2", "url": "https://www.box.com/pricing/business", "tier": 1, "accessedOn": "2026-09-25", "title": "Box business pricing" }
   ],
   "pricing": {
     "model": "freemium",
@@ -37,16 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": {
-      "exists": true,
-      "limits": {
-        "en": "10 GB storage, 250 MB file upload limit, 1 file version, 5 Box Sign requests/month, single user.",
-        "fr": null
-      },
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": true, "limits": { "en": "10 GB storage, 250 MB file upload limit, 1 file version, 5 Box Sign requests/month, single user.", "fr": "10 Go de stockage, fichiers limités à 250 Mo, 1 version de fichier, 5 demandes Box Sign par mois, un seul utilisateur." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -54,194 +34,176 @@
         "name": "Business Starter",
         "unit": "seat",
         "minSeats": 3,
-        "price": {
-          "monthly": 7,
-          "annualPerMonth": 7,
-          "oneTime": null
-        },
+        "price": { "monthly": 7, "annualPerMonth": 7, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Minimum 3 users. 100 GB storage per user, 2 GB file upload limit, 25 file versions, 10 Box Sign requests/month.",
-            "fr": null
-          }
+          { "en": "Minimum 3 users. 100 GB storage per user, 2 GB file upload limit, 25 file versions, 10 Box Sign requests/month.", "fr": "Minimum 3 utilisateurs. 100 Go de stockage par utilisateur, fichiers limités à 2 Go, 25 versions de fichier, 10 demandes Box Sign par mois." }
         ],
-        "sourceIds": [
-          "s1",
-          "s2"
-        ]
+        "sourceIds": ["s1", "s2"]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 3,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 15,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 15, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Minimum 3 users. Unlimited storage, 5 GB file upload limit, includes Box AI content insights.",
-            "fr": null
-          }
+          { "en": "Minimum 3 users. Unlimited storage, 5 GB file upload limit, includes Box AI content insights.", "fr": "Minimum 3 utilisateurs. Stockage illimité, fichiers limités à 5 Go, inclut les analyses de contenu Box AI." }
         ],
-        "sourceIds": [
-          "s1",
-          "s2"
-        ]
+        "sourceIds": ["s1", "s2"]
       },
       {
         "key": "business-plus",
         "name": "Business Plus",
         "unit": "seat",
         "minSeats": 3,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 33,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 33, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Minimum 3 users. Unlimited storage, 15 GB file upload limit, unlimited external collaborators.",
-            "fr": null
-          }
+          { "en": "Minimum 3 users. Unlimited storage, 15 GB file upload limit, unlimited external collaborators.", "fr": "Minimum 3 utilisateurs. Stockage illimité, fichiers limités à 15 Go, collaborateurs externes illimités." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 3,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 47,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 47, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Unlimited storage, 50 GB file upload limit, 1,000 Box AI units/month included, includes Box Hubs.",
-            "fr": null
-          }
+          { "en": "Unlimited storage, 50 GB file upload limit, 1,000 Box AI units/month included, includes Box Hubs.", "fr": "Stockage illimité, fichiers limités à 50 Go, 1 000 unités Box AI par mois incluses, inclut Box Hubs.", "sourceIds": ["s1"] }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "business-starter",
     "addOns": [
-      {
-        "en": "Platform API calls: sold in blocks starting at 1,000 API calls/month, requires annual commitment.",
-        "fr": null,
-        "sourceIds": [
-          "s2"
-        ]
-      }
+      { "en": "Platform API calls: sold in blocks starting at 1,000 API calls/month, requires annual commitment.", "fr": "Appels API de plateforme : vendus par blocs à partir de 1 000 appels par mois, nécessite un engagement annuel.", "sourceIds": ["s2"] }
     ],
     "cautions": [
-      {
-        "en": "Business/Business Plus/Enterprise per-user prices reflect annual billing shown on the pricing page; monthly-billing equivalents were not separately confirmed for those tiers.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "All business tiers require a minimum of 3 users, so the advertised per-seat price cannot be bought for a single user.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Business/Business Plus/Enterprise per-user prices reflect annual billing shown on the pricing page; monthly-billing equivalents were not separately confirmed for those tiers.", "fr": "Les prix par utilisateur de Business, Business Plus et Enterprise reflètent la facturation annuelle affichée sur la page de tarifs ; les équivalents en facturation mensuelle n'ont pas été confirmés séparément pour ces offres.", "sourceIds": ["s1"] },
+      { "en": "All business tiers require a minimum of 3 users, so the advertised per-seat price cannot be bought for a single user.", "fr": "Toutes les offres business exigent un minimum de 3 utilisateurs, donc le prix par poste annoncé ne peut pas s'acheter pour un seul utilisateur.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Cloud content storage and file sharing with granular permission and collaboration controls for teams.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Box AI for content insights (summarization, Q&A) included from the Business tier upward, with monthly AI unit allowances on higher tiers.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Built-in e-signature (Box Sign) with a monthly request quota per plan.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Enterprise-grade security and compliance features aimed at regulated industries.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Cloud content storage and file sharing with granular permission and collaboration controls for teams.", "fr": "Stockage de contenu et partage de fichiers dans le cloud, avec des permissions fines et des outils de collaboration pour les équipes.", "sourceIds": ["s1"] },
+      { "en": "Box AI for content insights (summarization, Q&A) included from the Business tier upward, with monthly AI unit allowances on higher tiers.", "fr": "Box AI pour l'analyse de contenu (résumé, questions-réponses) inclus à partir de l'offre Business, avec des quotas mensuels d'unités IA sur les offres supérieures.", "sourceIds": ["s1"] },
+      { "en": "Built-in e-signature (Box Sign) with a monthly request quota per plan.", "fr": "Signature électronique intégrée (Box Sign) avec un quota de demandes mensuel selon l'offre.", "sourceIds": ["s1"] },
+      { "en": "Enterprise-grade security and compliance features aimed at regulated industries.", "fr": "Fonctions de sécurité et de conformité de niveau entreprise destinées aux secteurs réglementés.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "Free Individual plan is capped at 10 GB storage and a small 250 MB file upload limit, unsuitable for large media files.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Every business tier requires a minimum of 3 paid seats, so it cannot be bought as a single-user paid plan.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Free Individual plan is capped at 10 GB storage and a small 250 MB file upload limit, unsuitable for large media files.", "fr": "L'offre gratuite Individual est limitée à 10 Go de stockage et à des fichiers de 250 Mo, ce qui ne convient pas aux gros fichiers multimédias.", "sourceIds": ["s1"] },
+      { "en": "Every business tier requires a minimum of 3 paid seats, so it cannot be bought as a single-user paid plan.", "fr": "Chaque offre business exige un minimum de 3 postes payants, donc elle ne peut pas s'acheter en tant qu'offre payante pour un seul utilisateur.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web",
-      "ios",
-      "android"
-    ]
+    "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Ops and small teams that need shared cloud storage, file sharing and permission controls beyond a single free account.",
+      "fr": "Responsables ops et petites équipes qui ont besoin de stockage cloud partagé, de partage de fichiers et de gestion des permissions au-delà d'un simple compte gratuit."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
     {
-      "slug": "google-drive",
-      "reason": {
-        "en": "Direct cloud storage competitor with similar per-seat business pricing and collaboration features.",
-        "fr": null
-      }
+      "en": "Sharing: use the free Individual plan's 10 GB to share files with external contacts without paying for a seat.",
+      "fr": "Partage : utilise les 10 Go de l'offre gratuite Individual pour partager des fichiers avec des contacts externes sans payer de poste."
     },
     {
-      "slug": "dropbox",
-      "reason": {
-        "en": "Established file storage and sharing competitor targeting the same team collaboration use case.",
-        "fr": null
-      }
+      "en": "Scaling storage: move a 3-person team to Business once Business Starter's 100 GB per user cap is reached, for unlimited storage and Box AI.",
+      "fr": "Montée en stockage : fais passer une équipe de 3 personnes à Business une fois le plafond de 100 Go par utilisateur de Business Starter atteint, pour un stockage illimité et Box AI."
     }
+  ],
+  "alternatives": [
+    { "slug": "google-drive", "reason": { "en": "Direct cloud storage competitor with similar per-seat business pricing and collaboration features.", "fr": "Concurrent direct de stockage cloud, avec une tarification par poste et des fonctions de collaboration similaires." } },
+    { "slug": "dropbox", "reason": { "en": "Established file storage and sharing competitor targeting the same team collaboration use case.", "fr": "Concurrent établi de stockage et partage de fichiers, qui vise le même besoin de collaboration en équipe." } }
   ],
   "missingAlternatives": [
-    {
-      "name": "OneDrive / SharePoint",
-      "officialUrl": "https://www.microsoft.com/microsoft-365/onedrive/onedrive-for-business",
-      "reason": "Major enterprise content storage competitor bundled with Microsoft 365, not present in the catalogue."
-    }
+    { "name": "OneDrive / SharePoint", "officialUrl": "https://www.microsoft.com/microsoft-365/onedrive/onedrive-for-business", "reason": "Major enterprise content storage competitor bundled with Microsoft 365, not present in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Business Starter costs $7/user/month with a 3-seat minimum, so the real entry cost is $21/month even for a small team; value depends on storage/collaboration needs the sources do not benchmark against price.",
+        "fr": "Business Starter coûte 7 USD par utilisateur et par mois avec un minimum de 3 postes, donc le coût d'entrée réel est de 21 USD par mois même pour une petite équipe ; la valeur dépend de besoins de stockage et de collaboration que les sources ne comparent pas au prix.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to invite a team and share a first folder is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour inviter une équipe et partager un premier dossier ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Storage, sharing, permission controls and e-signature via Box Sign work as advertised across the stated tiers.",
+        "fr": "Le stockage, le partage, la gestion des permissions et la signature électronique via Box Sign fonctionnent comme annoncé sur les offres concernées.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Unlimited storage from Business upward plus Box AI and enterprise-grade compliance features indicate a high capability ceiling.",
+        "fr": "Le stockage illimité à partir de Business, ainsi que Box AI et les fonctions de conformité de niveau entreprise, indiquent un plafond de capacité élevé.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: bulk export options and data portability if leaving Box are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export en masse et la portabilité des données en cas de départ de Box ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cloud content storage", "fr": "Stockage cloud" },
+    "shortDescription": {
+      "en": "Cloud storage and file sharing with permission controls, e-signature and Box AI, free for a single user and per-seat with a 3-seat minimum for teams.",
+      "fr": "Stockage cloud et partage de fichiers avec permissions, signature et Box AI, gratuit en solo, par poste avec un minimum de 3 postes en équipe."
+    },
+    "longDescription": {
+      "en": "Box is cloud content storage and file sharing with granular permission controls, built-in e-signature via Box Sign and Box AI content insights from the Business tier up. The free Individual plan covers 10 GB storage for a single user.\n\nBusiness tiers require a minimum of 3 seats: Business Starter is $7/user/month with 100 GB per user, Business moves to unlimited storage at $15/user/month billed annually, and Enterprise adds Box Hubs and 1,000 monthly Box AI units at $47/user/month. It fits small teams sharing files and managing permissions together rather than a solo user needing more than 10 GB.",
+      "fr": "Box est un service de stockage cloud et de partage de fichiers avec des permissions fines, une signature électronique intégrée (Box Sign) et des analyses de contenu Box AI à partir de l'offre Business. L'offre gratuite Individual couvre 10 Go pour un seul utilisateur.\n\nLes offres business exigent un minimum de 3 postes : Business Starter coûte 7 USD par utilisateur et par mois avec 100 Go chacun, Business passe au stockage illimité à 15 USD par mois en facturation annuelle, et Enterprise ajoute Box Hubs à 47 USD par mois. L'outil convient aux petites équipes qui partagent des fichiers ensemble, plus qu'à un utilisateur seul."
+    },
+    "pros": [
+      { "en": "Free Individual plan already includes e-signature requests and granular sharing.", "fr": "L'offre gratuite Individual inclut déjà des demandes de signature électronique et un partage fin." },
+      { "en": "Unlimited storage starts at the Business tier rather than only on the top plan.", "fr": "Le stockage illimité démarre dès l'offre Business plutôt que seulement sur l'offre la plus haute." }
+    ],
+    "cons": [
+      { "en": "No business tier can be bought below 3 seats, even for a 1-2 person team.", "fr": "Aucune offre business ne peut s'acheter en dessous de 3 postes, même pour une équipe de 1 à 2 personnes." },
+      { "en": "Free plan's 250 MB file upload limit is too small for large media files.", "fr": "La limite de 250 Mo par fichier de l'offre gratuite est trop petite pour de gros fichiers multimédias." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You are at least 3 people who need shared cloud storage with fine-grained permissions and e-signature.",
+        "fr": "Vous êtes au moins 3 personnes ayant besoin de stockage cloud partagé avec des permissions fines et de la signature électronique."
+      },
+      "avoidIf": {
+        "en": "You work alone and only need more than the free plan's 10 GB, since business pricing requires 3 seats minimum.",
+        "fr": "Tu travailles seul et as juste besoin de plus que les 10 Go de l'offre gratuite, car les offres business exigent un minimum de 3 postes."
+      },
+      "threshold": {
+        "en": "Business Starter costs $7/user/month with a 3-seat minimum, so the real entry cost is $21/month for the smallest possible team.",
+        "fr": "Business Starter coûte 7 USD par utilisateur et par mois avec un minimum de 3 postes, donc le coût d'entrée réel est de 21 USD par mois pour la plus petite équipe possible."
+      },
+      "billingTraps": {
+        "en": "Every business tier has a 3-seat minimum, and the Business/Business Plus/Enterprise per-user prices shown are annual billing rates.",
+        "fr": "Chaque offre business impose un minimum de 3 postes, et les prix par utilisateur de Business, Business Plus et Enterprise affichés correspondent à la facturation annuelle."
+      }
+    }
+  },
   "unknowns": [
     "Enterprise Plus and Enterprise Advanced prices are not public (page requires switching to annual billing or contacting sales)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Only google-drive and dropbox are close-fit catalogue alternatives for Box; the seed's other candidates (Basecamp, Confluence, Notion...) are not primarily cloud storage competitors, so the tier A target of 3-6 alternatives is not reached from the catalogue as it stands (OneDrive/SharePoint noted in missingAlternatives)."
+  ]
 }

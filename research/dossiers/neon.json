@@ -3,7 +3,8 @@
   "slug": "neon",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Neon",
     "vendor": "Neon Inc. (Databricks)",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://neon.com/pricing",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Neon pricing"
-    }
+    { "id": "s1", "url": "https://neon.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Neon pricing" }
   ],
   "pricing": {
     "model": "usage",
@@ -30,16 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": {
-      "exists": true,
-      "limits": {
-        "en": "100 CU-hours/project, 0.5 GB storage per project, up to 100 projects, 10 branches per project, 5 GB network egress, 6-hour point-in-time history window.",
-        "fr": null
-      },
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": true, "limits": { "en": "100 CU-hours/project, 0.5 GB storage per project, up to 100 projects, 10 branches per project, 5 GB network egress, 6-hour point-in-time history window.", "fr": "100 heures-CU par projet, 0,5 Go de stockage par projet, jusqu'à 100 projets, 10 branches par projet, 5 Go de trafic sortant, fenêtre d'historique de 6 heures." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -47,134 +33,147 @@
         "name": "Launch",
         "unit": "usage",
         "minSeats": null,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          {
-            "en": "Pay-as-you-go with no monthly minimum: compute at $0.106/CU-hour, storage at $0.35/GB-month (unlimited), up to 100 projects, 10 branches/project, 500 GB network egress included, up to 7-day history window, autoscaling up to 16 CU.",
-            "fr": null
-          }
+          { "en": "Pay-as-you-go with no monthly minimum: compute at $0.106/CU-hour, storage at $0.35/GB-month (unlimited), up to 100 projects, 10 branches/project, 500 GB network egress included, up to 7-day history window, autoscaling up to 16 CU.", "fr": "Facturation à l'usage sans minimum mensuel : calcul à 0,106 USD/heure-CU, stockage à 0,35 USD/Go-mois (illimité), jusqu'à 100 projets, 10 branches par projet, 500 Go de trafic sortant inclus, fenêtre d'historique jusqu'à 7 jours, autoscaling jusqu'à 16 CU." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "scale",
         "name": "Scale",
         "unit": "usage",
         "minSeats": null,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          {
-            "en": "Pay-as-you-go: compute at $0.222/CU-hour, storage at $0.35/GB-month (unlimited), up to 1,000 projects, 25 branches/project, 500 GB network egress included, up to 30-day history window, autoscaling up to 56 CU.",
-            "fr": null
-          }
+          { "en": "Pay-as-you-go: compute at $0.222/CU-hour, storage at $0.35/GB-month (unlimited), up to 1,000 projects, 25 branches/project, 500 GB network egress included, up to 30-day history window, autoscaling up to 56 CU.", "fr": "Facturation à l'usage : calcul à 0,222 USD/heure-CU, stockage à 0,35 USD/Go-mois (illimité), jusqu'à 1 000 projets, 25 branches par projet, 500 Go de trafic sortant inclus, fenêtre d'historique jusqu'à 30 jours, autoscaling jusqu'à 56 CU." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "launch",
     "addOns": [
-      {
-        "en": "Extra branches beyond plan limit: $1.50/month each on Launch and Scale.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Extra branches beyond plan limit: $1.50/month each on Launch and Scale.", "fr": "Branches supplémentaires au-delà de la limite de l'offre : 1,50 USD par mois chacune sur Launch et Scale.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      {
-        "en": "Both paid tiers are pure usage billing with no flat monthly price; actual monthly cost depends on compute-hours and storage consumed, not a fixed seat price.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Both paid tiers are pure usage billing with no flat monthly price; actual monthly cost depends on compute-hours and storage consumed, not a fixed seat price.", "fr": "Les deux offres payantes sont facturées uniquement à l'usage, sans prix mensuel fixe ; le coût mensuel réel dépend des heures de calcul et du stockage consommés, pas d'un prix fixe par poste.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Serverless Postgres with autoscaling compute and scale-to-zero when idle.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Instant database branching for creating isolated copies of a database for development, testing or preview environments.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Point-in-time restore within a configurable history window (6 hours to 30 days depending on plan).",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Serverless Postgres with autoscaling compute and scale-to-zero when idle.", "fr": "Postgres serverless avec calcul en autoscaling et mise à zéro automatique en cas d'inactivité.", "sourceIds": ["s1"] },
+      { "en": "Instant database branching for creating isolated copies of a database for development, testing or preview environments.", "fr": "Branchement de base de données instantané pour créer des copies isolées destinées au développement, aux tests ou aux environnements de prévisualisation.", "sourceIds": ["s1"] },
+      { "en": "Point-in-time restore within a configurable history window (6 hours to 30 days depending on plan).", "fr": "Restauration à un instant donné dans une fenêtre d'historique configurable (de 6 heures à 30 jours selon l'offre).", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "Free plan storage is capped at only 0.5 GB per project, limiting it to prototypes and small side projects.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "No flat-rate plan: cost predictability requires actively monitoring compute-hour and storage usage under the pay-as-you-go model.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Free plan storage is capped at only 0.5 GB per project, limiting it to prototypes and small side projects.", "fr": "Le stockage de l'offre gratuite est limité à seulement 0,5 Go par projet, ce qui la réserve aux prototypes et petits projets personnels.", "sourceIds": ["s1"] },
+      { "en": "No flat-rate plan: cost predictability requires actively monitoring compute-hour and storage usage under the pay-as-you-go model.", "fr": "Pas d'offre à prix fixe : prévoir le coût demande de surveiller activement la consommation d'heures de calcul et de stockage dans le modèle à l'usage.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who need a serverless Postgres database with instant branching for development, testing and preview environments.",
+      "fr": "Développeurs qui ont besoin d'une base Postgres serverless avec branchement instantané pour le développement, les tests et les environnements de prévisualisation."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
     {
-      "slug": "supabase",
-      "reason": {
-        "en": "Direct competitor offering managed Postgres with a similar free tier and developer-first branching workflow.",
-        "fr": null
-      }
+      "en": "Prototyping: spin up a free-tier Postgres database with instant branching for a new project at no cost under 100 CU-hours.",
+      "fr": "Prototypage : crée une base Postgres gratuite avec branchement instantané pour un nouveau projet, sans coût sous les 100 heures-CU."
     },
     {
-      "slug": "firebase",
-      "reason": {
-        "en": "Alternative backend-as-a-service with managed database and scale-to-zero-style free tier for small projects.",
-        "fr": null
-      }
+      "en": "Preview environments: branch the database per pull request on the Launch plan instead of sharing one staging database.",
+      "fr": "Environnements de prévisualisation : crée une branche de base par pull request avec l'offre Launch au lieu de partager une seule base de staging."
     }
+  ],
+  "alternatives": [
+    { "slug": "supabase", "reason": { "en": "Direct competitor offering managed Postgres with a similar free tier and developer-first branching workflow.", "fr": "Concurrent direct qui propose du Postgres managé avec une offre gratuite similaire et un workflow de branchement pensé pour les développeurs." } },
+    { "slug": "firebase", "reason": { "en": "Alternative backend-as-a-service with managed database and scale-to-zero-style free tier for small projects.", "fr": "Backend-as-a-service alternatif avec base de données managée et une offre gratuite proche du scale-to-zero pour les petits projets." } },
+    { "slug": "mongodb-atlas", "reason": { "en": "Managed database competitor with its own free tier and usage-based scaling, though NoSQL rather than Postgres.", "fr": "Concurrent de base de données managée avec sa propre offre gratuite et une facturation à l'usage, bien que NoSQL plutôt que Postgres." } }
   ],
   "missingAlternatives": [
-    {
-      "name": "PlanetScale",
-      "officialUrl": "https://planetscale.com/",
-      "reason": "Serverless database competitor (MySQL-based) with branching, not present in the catalogue."
-    }
+    { "name": "PlanetScale", "officialUrl": "https://planetscale.com/", "reason": "Serverless database competitor (MySQL-based) with branching, not present in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free tier covers 100 CU-hours, 0.5 GB storage and up to 100 projects with no card required to start, and paid usage has no monthly minimum.",
+        "fr": "L'offre gratuite couvre 100 heures-CU, 0,5 Go de stockage et jusqu'à 100 projets sans carte requise pour démarrer, et l'usage payant n'a pas de minimum mensuel.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to a first connected database is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir une première base connectée ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Autoscaling, scale-to-zero, instant branching and point-in-time restore work as advertised across the stated plans.",
+        "fr": "L'autoscaling, la mise à zéro automatique, le branchement instantané et la restauration à un instant donné fonctionnent comme annoncé sur les offres concernées.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "The Scale plan autoscales up to 56 CU with unlimited storage and a 30-day history window, indicating a high capability ceiling.",
+        "fr": "L'offre Scale monte en autoscaling jusqu'à 56 CU avec un stockage illimité et une fenêtre d'historique de 30 jours, ce qui indique un plafond de capacité élevé.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neon runs standard Postgres, which is portable through the standard pg_dump/export tooling any Postgres database supports.",
+        "fr": "Neon fait tourner du Postgres standard, portable via les outils d'export habituels (pg_dump) que toute base Postgres prend en charge.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Serverless Postgres", "fr": "Postgres serverless" },
+    "shortDescription": {
+      "en": "Serverless Postgres database with autoscaling, instant branching and point-in-time restore, billed by compute and storage usage.",
+      "fr": "Base de données Postgres serverless avec autoscaling, branchement instantané et restauration à un instant donné, facturée à l'usage du calcul et du stockage."
+    },
+    "longDescription": {
+      "en": "Neon is a serverless Postgres database that autoscales compute and scales to zero when idle, with instant branching to spin up isolated database copies for development, testing or PR previews, plus point-in-time restore.\n\nThe free tier covers 100 CU-hours, 0.5 GB storage and up to 100 projects. Paid usage has no flat monthly price: Launch bills $0.106 per compute-hour and $0.35 per GB-month with no minimum, Scale raises the ceiling to 56 CU autoscaling and a 30-day restore window at $0.222 per compute-hour. It suits developers who want a standard Postgres database without managing servers, more than teams needing predictable flat pricing.",
+      "fr": "Neon est une base Postgres serverless qui adapte automatiquement le calcul et se met à zéro en cas d'inactivité, avec un branchement instantané pour créer des copies isolées de la base pour le développement, les tests ou les prévisualisations de pull requests, plus une restauration à un instant donné.\n\nL'offre gratuite couvre 100 heures-CU et 0,5 Go de stockage par projet. L'usage payant n'a pas de prix fixe : Launch facture 0,106 USD par heure-CU sans minimum, Scale monte le plafond à 56 CU en autoscaling à 0,222 USD par heure-CU. L'outil convient aux développeurs qui veulent du Postgres standard sans gérer de serveurs, plus qu'aux équipes cherchant un prix fixe prévisible."
+    },
+    "pros": [
+      { "en": "Generous free tier: 100 projects and 0.5 GB storage each with no card required.", "fr": "Offre gratuite généreuse : 100 projets avec 0,5 Go de stockage chacun, sans carte requise." },
+      { "en": "Instant database branching fits development, testing and PR preview workflows directly.", "fr": "Le branchement instantané de base de données colle directement aux workflows de développement, tests et prévisualisation de PR." }
+    ],
+    "cons": [
+      { "en": "No flat monthly price on paid tiers, so cost depends on actively monitoring compute-hour and storage usage.", "fr": "Pas de prix mensuel fixe sur les offres payantes, donc le coût dépend d'une surveillance active de la consommation de calcul et de stockage." },
+      { "en": "Free plan storage is capped at 0.5 GB per project, too small beyond prototypes.", "fr": "Le stockage de l'offre gratuite est limité à 0,5 Go par projet, trop petit au-delà des prototypes." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a serverless Postgres database with instant branching for development or preview environments.",
+        "fr": "Tu veux une base Postgres serverless avec branchement instantané pour le développement ou des environnements de prévisualisation."
+      },
+      "avoidIf": {
+        "en": "You need a fixed, predictable monthly bill rather than usage-based compute and storage pricing.",
+        "fr": "Tu as besoin d'une facture mensuelle fixe et prévisible plutôt que d'une tarification du calcul et du stockage à l'usage."
+      },
+      "threshold": {
+        "en": "The free tier's 100 CU-hours and 0.5 GB storage per project mark the point where a real project needs to move to Launch's $0.106/CU-hour, pay-as-you-go pricing.",
+        "fr": "Les 100 heures-CU et 0,5 Go de stockage par projet de l'offre gratuite marquent le seuil où un vrai projet doit passer à la facturation à l'usage de Launch, à 0,106 USD par heure-CU."
+      }
+    }
+  },
   "unknowns": [
     "Business and Enterprise plan pricing/limits not detailed on the fetched pricing page (only Free, Launch and Scale were shown)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Launch and Scale plans are marked onQuote: true even though the source gives public per-unit prices ($0.106 and $0.222 per CU-hour); onQuote is meant for plans with no public price. Verify on neon.com/pricing whether these should instead be usage plans with onQuote: false and the rates recorded as the reference price."
+  ]
 }

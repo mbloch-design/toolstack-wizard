@@ -3,7 +3,8 @@
   "slug": "zoom-pro",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Zoom Workplace Pro",
     "vendor": "Zoom Communications, Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "40-minute limit per meeting, 100 participants, limited AI features (3 summaries/month, 20 AI queries/month), 3 whiteboards, 5 two-minute clips.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "40-minute limit per meeting, 100 participants, limited AI features (3 summaries/month, 20 AI queries/month), 3 whiteboards, 5 two-minute clips.", "fr": "Limite de 40 minutes par réunion, 100 participants, fonctions IA limitées (3 résumés/mois, 20 requêtes IA/mois), 3 tableaux blancs, 5 clips de deux minutes.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 16.99, "annualPerMonth": 14.16, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "30-hour meeting duration, 100 participants, unlimited meeting summaries, 10GB cloud storage/user, unlimited clips.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "30-hour meeting duration, 100 participants, unlimited meeting summaries, 10GB cloud storage/user, unlimited clips.", "fr": "Réunions jusqu'à 30 heures, 100 participants, résumés de réunion illimités, 10 Go de stockage cloud par utilisateur, clips illimités.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": 21.99, "annualPerMonth": 18.33, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "300 participants per meeting, unlimited whiteboards and booking pages, admin portal, SSO and managed domains.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "300 participants per meeting, unlimited whiteboards and booking pages, admin portal, SSO and managed domains.", "fr": "300 participants par réunion, tableaux blancs et pages de réservation illimités, portail admin, SSO et domaines gérés.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +65,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "1,000+ participants, full PBX phone system, 500-attendee webinars, unlimited cloud recording, end-to-end encryption and customer-managed keys.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "1,000+ participants, full PBX phone system, 500-attendee webinars, unlimited cloud recording, end-to-end encryption and customer-managed keys.", "fr": "Plus de 1 000 participants, système téléphonique PBX complet, webinaires jusqu'à 500 participants, enregistrement cloud illimité, chiffrement de bout en bout avec clés gérées par le client.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
@@ -76,27 +77,84 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Video conferencing with cloud recording, AI meeting summaries and AI Companion queries.", "sourceIds": ["s1"] },
-      { "en": "Team chat, VoIP calling and collaborative whiteboards bundled into the same workspace.", "sourceIds": ["s1"] },
-      { "en": "Short video clip creation and sharing directly from meetings.", "sourceIds": ["s1"] },
-      { "en": "Admin portal, SSO and managed domains for organization-wide control on Business and above.", "sourceIds": ["s1"] }
+      { "en": "Video conferencing with cloud recording, AI meeting summaries and AI Companion queries.", "fr": "Visioconférence avec enregistrement cloud, résumés de réunion IA et requêtes AI Companion.", "sourceIds": ["s1"] },
+      { "en": "Team chat, VoIP calling and collaborative whiteboards bundled into the same workspace.", "fr": "Chat d'équipe, appels VoIP et tableaux blancs collaboratifs regroupés dans le même espace de travail.", "sourceIds": ["s1"] },
+      { "en": "Short video clip creation and sharing directly from meetings.", "fr": "Création et partage de courts clips vidéo directement depuis les réunions.", "sourceIds": ["s1"] },
+      { "en": "Admin portal, SSO and managed domains for organization-wide control on Business and above.", "fr": "Portail admin, SSO et domaines gérés pour un contrôle à l'échelle de l'organisation dès le plan Business.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan meetings are capped at 40 minutes, forcing an upgrade for any longer group call.", "sourceIds": ["s1"] },
-      { "en": "SSO and managed domains are only available from the Business tier up, not on Pro.", "sourceIds": ["s1"] },
-      { "en": "AI Companion usage is capped even on the free plan (3 summaries and 20 queries per month).", "sourceIds": ["s1"] }
+      { "en": "Free plan meetings are capped at 40 minutes, forcing an upgrade for any longer group call.", "fr": "Les réunions du plan gratuit sont limitées à 40 minutes, ce qui force à passer au payant pour tout appel de groupe plus long.", "sourceIds": ["s1"] },
+      { "en": "SSO and managed domains are only available from the Business tier up, not on Pro.", "fr": "Le SSO et les domaines gérés ne sont disponibles qu'à partir du plan Business, pas sur Pro.", "sourceIds": ["s1"] },
+      { "en": "AI Companion usage is capped even on the free plan (3 summaries and 20 queries per month).", "fr": "L'usage d'AI Companion est plafonné même sur le plan gratuit (3 résumés et 20 requêtes par mois).", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops person or small team lead who runs regular client or team calls and needs meetings longer than 40 minutes.",
+      "fr": "Une responsable ops ou d'une petite équipe qui gère des appels clients ou d'équipe réguliers et a besoin de réunions de plus de 40 minutes."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Client calls: run unlimited-length client meetings with cloud recording instead of hitting the free plan's 40-minute cutoff.", "fr": "Appels clients : gère des réunions clients sans limite de durée avec enregistrement cloud, sans subir la coupure à 40 minutes du plan gratuit." },
+    { "en": "Meeting recap: generate an automatic AI summary after each call instead of taking manual notes.", "fr": "Compte-rendu de réunion : génère un résumé automatique par IA après chaque appel au lieu de prendre des notes à la main." }
+  ],
   "alternatives": [
-    { "slug": "google-meet", "reason": { "en": "Direct competitor for video conferencing, bundled differently (within Google Workspace)." } }
+    { "slug": "google-meet", "reason": { "en": "Direct competitor for video conferencing, bundled differently (within Google Workspace).", "fr": "Concurrent direct pour la visioconférence, packagé différemment (au sein de Google Workspace)." } },
+    { "slug": "around", "reason": { "en": "Alternative video meeting tool built for small distributed teams.", "fr": "Outil de visio alternatif conçu pour les petites équipes distribuées." } }
   ],
   "missingAlternatives": [
     { "name": "Microsoft Teams", "officialUrl": "https://www.microsoft.com/microsoft-teams", "reason": "Major direct competitor in video conferencing, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Pro at $16.99/month removes the free plan's 40-minute cap and adds unlimited summaries and 10GB cloud storage per user, directly solving the free plan's main pain point.", "fr": "Pro à 16,99$/mois supprime la limite de 40 minutes du plan gratuit et ajoute résumés illimités et 10 Go de stockage cloud par utilisateur, réglant le vrai problème du plan gratuit.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Video conferencing, chat and whiteboards are bundled into a single workspace with no separate tools to configure.", "fr": "Visio, chat et tableaux blancs sont réunis dans un seul espace de travail, sans outils séparés à configurer.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the core promise of long, reliable video meetings with recording and summaries on the Pro plan.", "fr": "Tient sa promesse de réunions vidéo longues et fiables avec enregistrement et résumés sur le plan Pro.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Scales from 100-participant meetings on Pro to a full PBX phone system and 500-attendee webinars on Enterprise, a wide capability range for the category.", "fr": "S'étend de réunions à 100 participants sur Pro jusqu'à un système téléphonique PBX complet et des webinaires à 500 participants sur Enterprise, un large éventail pour la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or portability of recordings and data if leaving the platform is not covered by the collected sources.", "fr": "Note neutre : l'export ou la portabilité des enregistrements et des données en cas de départ ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Video meetings", "fr": "Réunions vidéo" },
+    "shortDescription": {
+      "en": "Paid Zoom plan removing the 40-minute meeting cap, with cloud recording, AI summaries and unlimited clips.",
+      "fr": "Plan payant de Zoom qui supprime la limite de 40 minutes, avec enregistrement cloud, résumés IA et clips illimités."
+    },
+    "longDescription": {
+      "en": "Zoom Workplace Pro is the paid tier of Zoom's video conferencing suite: meetings, team chat, VoIP calling and whiteboards in one workspace. It removes the free plan's 40-minute meeting cap, extends meetings to 30 hours, adds unlimited AI meeting summaries and 10GB of cloud recording storage per user.\n\nPro starts at $16.99/month billed monthly, or $14.16/month billed annually. Business, from $21.99/month, adds SSO, an admin portal and managed domains for organizations that need central control, while Enterprise moves to on-quote pricing for large-scale webinars and a full phone system.",
+      "fr": "Zoom Workplace Pro est le palier payant de la suite de visioconférence Zoom : réunions, chat d'équipe, appels VoIP et tableaux blancs dans un seul espace. Il supprime la limite de 40 minutes du plan gratuit, étend les réunions jusqu'à 30 heures, et ajoute résumés de réunion IA illimités et 10 Go de stockage cloud par utilisateur.\n\nPro démarre à 16,99$/mois en facturation mensuelle, ou 14,16$/mois en facturation annuelle. Business, à partir de 21,99$/mois, ajoute SSO, portail admin et domaines gérés pour les organisations qui ont besoin d'un contrôle centralisé, tandis qu'Enterprise passe sur devis pour les webinaires à grande échelle et un système téléphonique complet."
+    },
+    "pros": [
+      { "en": "Removes the free plan's 40-minute meeting cap and adds unlimited AI summaries.", "fr": "Supprime la limite de 40 minutes du plan gratuit et ajoute des résumés IA illimités." },
+      { "en": "Chat, VoIP calling and whiteboards are bundled in the same workspace as video meetings.", "fr": "Chat, appels VoIP et tableaux blancs sont regroupés dans le même espace que les réunions vidéo." }
+    ],
+    "cons": [
+      { "en": "SSO and managed domains require jumping to the Business tier, not available on Pro.", "fr": "Le SSO et les domaines gérés demandent de passer au plan Business, non disponibles sur Pro." },
+      { "en": "AI Companion queries stay capped even on the free plan, at only 20 per month.", "fr": "Les requêtes AI Companion restent plafonnées même sur le plan gratuit, à seulement 20 par mois." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You regularly run client or team calls longer than 40 minutes and want recording and AI summaries included.", "fr": "Tu gères régulièrement des appels clients ou d'équipe de plus de 40 minutes et veux enregistrement et résumés IA inclus." },
+      "avoidIf": { "en": "Your calls are occasional and stay under 40 minutes, where the free Basic plan already covers the need.", "fr": "Tes appels sont occasionnels et restent sous les 40 minutes, où le plan gratuit Basic couvre déjà le besoin." },
+      "threshold": { "en": "Pro costs $169.92/year at $14.16/month billed annually, the point where the 40-minute cap and storage limits of the free plan start costing more time than they save.", "fr": "Pro coûte 169,92$/an à 14,16$/mois en facturation annuelle, le seuil où la limite de 40 minutes et le stockage réduit du plan gratuit font perdre plus de temps qu'ils n'en font gagner." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "Whether Zoom offers a desktop-specific feature set beyond web/iOS/Android was not confirmed on the pricing page as fetched."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The dossier's Pro annualPerMonth ($14.16) differs from an earlier catalogue estimate ($13.33/month); reverify the current annual rate on zoom.us/pricing before publishing."
+  ]
 }

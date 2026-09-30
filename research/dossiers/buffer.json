@@ -3,7 +3,8 @@
   "slug": "buffer",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Buffer",
     "vendor": "Buffer Inc.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Up to 3 channels, 10 scheduled posts per channel, 1 user, 100 saved ideas, 30-day analytics history.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Up to 3 channels, 10 scheduled posts per channel, 1 user, 100 saved ideas, 30-day analytics history.", "fr": "Jusqu'à 3 canaux, 10 publications programmées par canal, 1 utilisateur, 100 idées enregistrées, 30 jours d'historique analytique." }, "sourceIds": ["s1"] },
     "trial": { "days": 14, "sourceIds": ["s1"] },
     "plans": [
       {
@@ -35,7 +36,7 @@
         "price": { "monthly": 5, "annualPerMonth": 5, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Priced per connected channel, not per user: $5/month or $60/year per channel. Unlimited scheduled posts, 1 user, advanced analytics, hashtag manager.", "fr": null }
+          { "en": "Priced per connected channel, not per user: $5/month or $60/year per channel. Unlimited scheduled posts, 1 user, advanced analytics, hashtag manager.", "fr": "Tarif par canal connecté, pas par utilisateur : 5 USD par mois ou 60 USD par an et par canal. Publications programmées illimitées, 1 utilisateur, analytique avancée, gestionnaire de hashtags." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 10, "annualPerMonth": 10, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Priced per connected channel: $10/month or $120/year per channel. Unlimited users, approval workflows, custom access permissions, branded reports.", "fr": null }
+          { "en": "Priced per connected channel: $10/month or $120/year per channel. Unlimited users, approval workflows, custom access permissions, branded reports.", "fr": "Tarif par canal connecté : 10 USD par mois ou 120 USD par an et par canal. Utilisateurs illimités, workflows d'approbation, permissions d'accès personnalisées, rapports à l'image de la marque." }
         ],
         "sourceIds": ["s1"]
       }
@@ -55,31 +56,121 @@
     "comparePlanKey": "essentials",
     "addOns": [],
     "cautions": [
-      { "en": "Buffer bills per connected social channel, not per seat: adding more channels multiplies the monthly cost even on a single-user account. Volume discounts apply above 10 channels.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Buffer bills per connected social channel, not per seat: adding more channels multiplies the monthly cost even on a single-user account. Volume discounts apply above 10 channels.", "fr": "Buffer facture par canal social connecté, pas par poste : ajouter des canaux multiplie le coût mensuel même sur un compte à un seul utilisateur. Des remises de volume s'appliquent au-delà de 10 canaux.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Schedules and publishes posts across major social networks from one calendar.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI Assistant to help draft post copy and repurpose content ideas.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in analytics/Insights dashboard and a shared team content calendar.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "API access for custom integrations, with request limits that scale by plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Schedules and publishes posts across major social networks from one calendar.", "fr": "Programme et publie des posts sur les principaux réseaux sociaux depuis un calendrier unique.", "sourceIds": ["s1"] },
+      { "en": "AI Assistant to help draft post copy and repurpose content ideas.", "fr": "Assistant IA pour aider à rédiger le texte des posts et recycler des idées de contenu.", "sourceIds": ["s1"] },
+      { "en": "Built-in analytics/Insights dashboard and a shared team content calendar.", "fr": "Tableau de bord analytique intégré et calendrier de contenu partagé en équipe.", "sourceIds": ["s1"] },
+      { "en": "API access for custom integrations, with request limits that scale by plan.", "fr": "Accès API pour des intégrations personnalisées, avec des limites de requêtes qui varient selon l'offre.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan capped at 3 channels and 10 queued posts per channel, with no analytics beyond 30 days.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Per-channel pricing means teams managing many brand accounts pay proportionally more than flat per-seat tools.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free plan capped at 3 channels and 10 queued posts per channel, with no analytics beyond 30 days.", "fr": "L'offre gratuite est limitée à 3 canaux et 10 publications en attente par canal, sans analytique au-delà de 30 jours.", "sourceIds": ["s1"] },
+      { "en": "Per-channel pricing means teams managing many brand accounts pay proportionally more than flat per-seat tools.", "fr": "Le prix par canal fait que les équipes gérant de nombreux comptes de marque paient proportionnellement plus que des outils à tarif fixe par poste.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Solo creators and small brands scheduling posts across a handful of social channels from one calendar.",
+      "fr": "Créateurs solo et petites marques qui programment leurs posts sur quelques canaux sociaux depuis un calendrier unique."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Scheduling: queue a week of posts across 3 channels on the free plan, no cost while staying under the channel limit.",
+      "fr": "Programmation : planifie une semaine de posts sur 3 canaux avec l'offre gratuite, sans coût tant que tu restes sous la limite de canaux."
+    },
+    {
+      "en": "Growth: add a 4th connected channel on Essentials ($5/month) to keep publishing once the free plan's 3-channel cap is reached.",
+      "fr": "Croissance : ajoute un 4e canal connecté avec Essentials (5 USD par mois) pour continuer à publier une fois la limite de 3 canaux de l'offre gratuite atteinte."
+    }
+  ],
   "alternatives": [
-    { "slug": "hootsuite", "reason": { "en": "Direct competitor in social media scheduling with a broader per-seat pricing model.", "fr": null } },
-    { "slug": "later", "reason": { "en": "Similar visual-first social scheduling tool aimed at small teams and creators.", "fr": null } },
-    { "slug": "sprout-social", "reason": { "en": "More enterprise-oriented social media management suite covering the same core scheduling need.", "fr": null } }
+    { "slug": "hootsuite", "reason": { "en": "Direct competitor in social media scheduling with a broader per-seat pricing model.", "fr": "Concurrent direct sur la programmation de réseaux sociaux, avec un modèle de tarification par poste plus large." } },
+    { "slug": "later", "reason": { "en": "Similar visual-first social scheduling tool aimed at small teams and creators.", "fr": "Outil de programmation sociale similaire, centré sur le visuel, destiné aux petites équipes et créateurs." } },
+    { "slug": "sprout-social", "reason": { "en": "More enterprise-oriented social media management suite covering the same core scheduling need.", "fr": "Suite de gestion de réseaux sociaux plus orientée entreprise, qui couvre le même besoin de base en programmation." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral-leaning score: the free plan covers 3 channels at no cost, but per-channel pricing on paid tiers means cost scales with growth in a way the sources do not benchmark against alternatives.",
+        "fr": "Note proche de la neutralité : l'offre gratuite couvre 3 canaux sans frais, mais le prix par canal des offres payantes fait grimper le coût avec la croissance, sans comparatif chiffré dans les sources face aux alternatives.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "A free 3-channel plan with a single scheduling calendar and an AI Assistant for drafting copy points to a quick first result.",
+        "fr": "Une offre gratuite à 3 canaux avec un calendrier de programmation unique et un assistant IA pour rédiger les textes suggère un premier résultat rapide.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Scheduling, publishing and analytics work as advertised on the free tier itself, with paid tiers adding stated features rather than workarounds.",
+        "fr": "La programmation, la publication et l'analytique fonctionnent comme annoncé dès l'offre gratuite, les offres payantes ajoutant des fonctions prévues plutôt que des contournements.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Neutral score: capability ceiling against enterprise social suites is not covered by the collected sources beyond the stated approval workflows and API limits.",
+        "fr": "Note neutre : le plafond de capacité face aux suites sociales pour entreprises ne figure pas dans les sources relevées, au-delà des workflows d'approbation et limites d'API mentionnés.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if leaving Buffer are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ de Buffer ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Social scheduling", "fr": "Programmation sociale" },
+    "shortDescription": {
+      "en": "Schedules and publishes social posts from one calendar, free for 3 channels and priced per connected channel beyond that.",
+      "fr": "Programme et publie des posts sociaux depuis un calendrier unique, gratuit jusqu'à 3 canaux puis facturé par canal connecté."
+    },
+    "longDescription": {
+      "en": "Buffer schedules and publishes posts across social networks from one calendar, with an AI Assistant for drafting copy and a shared team calendar plus analytics. The free plan covers 3 channels, 10 queued posts each and 30 days of analytics history, enough to test the workflow.\n\nPaid tiers bill per connected channel rather than per seat: Essentials is $5/month/channel with advanced analytics, Team is $10/month/channel with unlimited users and approval workflows. That model fits solo creators and small brands with a handful of channels better than teams managing many brand accounts, where the per-channel cost adds up.",
+      "fr": "Buffer programme et publie des posts sur les réseaux sociaux depuis un calendrier unique, avec un assistant IA pour rédiger les textes et un calendrier d'équipe partagé avec analytique. L'offre gratuite couvre 3 canaux, 10 publications en attente chacun et 30 jours d'historique analytique, de quoi tester le workflow.\n\nLes offres payantes facturent par canal connecté plutôt que par poste : Essentials coûte 5 USD par mois et par canal avec analytique avancée, Team coûte 10 USD par mois et par canal avec utilisateurs illimités et workflows d'approbation. Ce modèle convient mieux aux créateurs solo et petites marques avec quelques canaux qu'aux équipes qui gèrent de nombreux comptes de marque, où le coût par canal s'additionne vite."
+    },
+    "pros": [
+      { "en": "Free plan already covers 3 channels with a real scheduling calendar and analytics.", "fr": "L'offre gratuite couvre déjà 3 canaux avec un vrai calendrier de programmation et de l'analytique." },
+      { "en": "Team plan includes unlimited users at the same per-channel price as Essentials plus one user.", "fr": "L'offre Team inclut des utilisateurs illimités au même prix par canal qu'Essentials plus un utilisateur." }
+    ],
+    "cons": [
+      { "en": "Per-channel pricing means the bill grows with every new social account connected, not with team size.", "fr": "Le prix par canal fait grimper la facture à chaque nouveau compte social connecté, pas selon la taille de l'équipe." },
+      { "en": "Analytics history is capped at 30 days on the free plan.", "fr": "L'historique analytique est limité à 30 jours sur l'offre gratuite." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You manage a small, stable number of social channels and want a simple scheduling calendar.",
+        "fr": "Tu gères un nombre restreint et stable de canaux sociaux et veux un calendrier de programmation simple."
+      },
+      "avoidIf": {
+        "en": "You manage many brand accounts, where per-channel pricing costs more than a flat per-seat tool.",
+        "fr": "Tu gères de nombreux comptes de marque, cas où le prix par canal coûte plus cher qu'un outil à tarif fixe par poste."
+      },
+      "threshold": {
+        "en": "Essentials costs $5/month per channel ($60/year); each channel beyond the free plan's 3 adds that amount to the bill.",
+        "fr": "Essentials coûte 5 USD par mois et par canal (60 USD par an) ; chaque canal au-delà des 3 gratuits ajoute ce montant à la facture."
+      }
+    }
+  },
   "unknowns": [
     "Exact volume-discount rate for channels beyond 10 not confirmed with a specific number."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Essentials and Team plans have unit: seat in this dossier, but the source states pricing is per connected channel, not per user. Verify against buffer.com/pricing whether the catalogue's plan.unit should be something other than seat."
+  ]
 }

@@ -3,7 +3,8 @@
   "slug": "payoneer",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Payoneer",
     "vendor": "Payoneer Inc.",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": { "en": "Account creation and receiving from another Payoneer balance are free of charge, but there is no zero-cost plan overall: most activity incurs per-transaction fees (withdrawal, conversion, card use), and an inactive account under $6,000/year is charged $29.95 annually.", "fr": null }, "sourceIds": ["s2"] },
+    "freePlan": { "exists": false, "limits": { "en": "Account creation and receiving from another Payoneer balance are free of charge, but there is no zero-cost plan overall: most activity incurs per-transaction fees (withdrawal, conversion, card use), and an inactive account under $6,000/year is charged $29.95 annually.", "fr": "La création de compte et la réception depuis un autre solde Payoneer sont gratuites, mais il n'y a pas de forfait à coût nul dans l'ensemble : la plupart des opérations entraînent des frais par transaction (retrait, conversion, carte), et un compte inactif recevant moins de 6 000$/an est facturé 29,95$ par an." }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {
@@ -36,50 +37,103 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Annual account fee of $29.95 applies if the account receives less than $6,000 in any 12 consecutive months.", "fr": null, "sourceIds": ["s2"] },
-          { "en": "Withdrawal to local bank account in same currency, in 25+ eligible countries: $1.50 per withdrawal.", "fr": null, "sourceIds": ["s2"] },
-          { "en": "Withdrawal with currency conversion or to recipient's local currency: 1.2% to 4%, with a minimum fee up to $20 equivalent.", "fr": null, "sourceIds": ["s2"] },
-          { "en": "Receiving via credit card or PayPal: up to 3.99% + $0.49.", "fr": null, "sourceIds": ["s2"] },
-          { "en": "Payoneer card annual fee: $29.95; cash withdrawal fees apply on top of currency fees.", "fr": null, "sourceIds": ["s2"] }
+          { "en": "Annual account fee of $29.95 applies if the account receives less than $6,000 in any 12 consecutive months.", "fr": "Des frais annuels de 29,95$ s'appliquent si le compte reçoit moins de 6 000$ sur 12 mois glissants.", "sourceIds": ["s2"] },
+          { "en": "Withdrawal to local bank account in same currency, in 25+ eligible countries: $1.50 per withdrawal.", "fr": "Retrait vers un compte bancaire local dans la même devise, dans plus de 25 pays éligibles : 1,50$ par retrait.", "sourceIds": ["s2"] },
+          { "en": "Withdrawal with currency conversion or to recipient's local currency: 1.2% to 4%, with a minimum fee up to $20 equivalent.", "fr": "Retrait avec conversion de devise ou vers la devise locale du bénéficiaire : de 1,2% à 4%, avec des frais minimums pouvant atteindre l'équivalent de 20$.", "sourceIds": ["s2"] },
+          { "en": "Receiving via credit card or PayPal: up to 3.99% + $0.49.", "fr": "Réception par carte de crédit ou PayPal : jusqu'à 3,99% + 0,49$.", "sourceIds": ["s2"] },
+          { "en": "Payoneer card annual fee: $29.95; cash withdrawal fees apply on top of currency fees.", "fr": "Frais annuels de la carte Payoneer : 29,95$ ; des frais de retrait en espèces s'ajoutent aux frais de change.", "sourceIds": ["s2"] }
         ],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [
-      { "en": "Payoneer multi-currency card, physical or virtual, annual fee $29.95 plus per-transaction fees.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Payoneer multi-currency card, physical or virtual, annual fee $29.95 plus per-transaction fees.", "fr": "Carte multidevise Payoneer, physique ou virtuelle, frais annuels de 29,95$ plus frais par transaction.", "sourceIds": ["s2"] }
     ],
     "cautions": [
-      { "en": "Not a flat subscription: cost depends entirely on volume, currency conversion, and withdrawal method chosen, so the real monthly cost is impossible to state as a single price.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Accounts under $6,000 received per 12 months are charged a $29.95 annual fee even with no paid plan.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Not a flat subscription: cost depends entirely on volume, currency conversion, and withdrawal method chosen, so the real monthly cost is impossible to state as a single price.", "fr": "Ce n'est pas un abonnement fixe : le coût dépend entièrement du volume, de la conversion de devise et du mode de retrait choisi, impossible de donner un prix mensuel unique.", "sourceIds": ["s2"] },
+      { "en": "Accounts under $6,000 received per 12 months are charged a $29.95 annual fee even with no paid plan.", "fr": "Les comptes recevant moins de 6 000$ sur 12 mois sont facturés 29,95$ par an même sans forfait payant.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Receive payments in 70+ currencies across 190+ countries via a local receiving account.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Send payments globally as single payments, batch payments (up to 1,000 at once), or mass payouts.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Issue multi-currency physical and virtual corporate cards.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Onboard and pay employees or contractors across 160+ countries through Employer of Record / Agent of Record services.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Hold multiple currencies and convert between them (Smart FX).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Receive payments in 70+ currencies across 190+ countries via a local receiving account.", "fr": "Recevoir des paiements dans plus de 70 devises et 190 pays via un compte de réception local.", "sourceIds": ["s1"] },
+      { "en": "Send payments globally as single payments, batch payments (up to 1,000 at once), or mass payouts.", "fr": "Envoyer des paiements dans le monde entier en paiement unique, par lot (jusqu'à 1 000 à la fois), ou en versements de masse.", "sourceIds": ["s1"] },
+      { "en": "Issue multi-currency physical and virtual corporate cards.", "fr": "Émettre des cartes professionnelles multidevises, physiques et virtuelles.", "sourceIds": ["s1"] },
+      { "en": "Onboard and pay employees or contractors across 160+ countries through Employer of Record / Agent of Record services.", "fr": "Intégrer et payer des salariés ou freelances dans plus de 160 pays via des services d'Employer of Record / Agent of Record.", "sourceIds": ["s1"] },
+      { "en": "Hold multiple currencies and convert between them (Smart FX).", "fr": "Détenir plusieurs devises et les convertir entre elles (Smart FX).", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Card and product availability depends on customer eligibility and jurisdiction; not all products are available in every region.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "No flat monthly plan: fees are transactional and stack up (conversion, withdrawal, card), making costs hard to predict for irregular volume.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Card and product availability depends on customer eligibility and jurisdiction; not all products are available in every region.", "fr": "La disponibilité des cartes et des produits dépend de l'éligibilité du client et de la juridiction ; tous les produits ne sont pas disponibles partout.", "sourceIds": ["s1"] },
+      { "en": "No flat monthly plan: fees are transactional and stack up (conversion, withdrawal, card), making costs hard to predict for irregular volume.", "fr": "Pas de forfait mensuel fixe : les frais sont transactionnels et s'accumulent (conversion, retrait, carte), ce qui rend le coût difficile à prévoir pour un volume irrégulier.", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "A consultant or freelancer billing clients abroad who needs to receive payments in multiple currencies without opening a foreign bank account.",
+      "fr": "Un consultant ou freelance qui facture des clients à l'étranger et doit recevoir des paiements en plusieurs devises sans ouvrir de compte bancaire étranger."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Client billing abroad: receive a client payment in USD or another local currency through a local receiving account instead of an international wire.", "fr": "Facturation client à l'étranger : reçois un paiement client en dollars ou autre devise locale via un compte de réception local plutôt qu'un virement international." },
+    { "en": "Contractor payouts: pay several international contractors at once with a batch payment instead of processing each transfer separately.", "fr": "Versements aux freelances : paie plusieurs freelances internationaux en une fois avec un paiement par lot plutôt qu'en traitant chaque virement séparément." }
+  ],
   "alternatives": [
-    { "slug": "stripe", "reason": { "en": "Alternative for receiving cross-border payments, more developer/API oriented.", "fr": null } },
-    { "slug": "qonto", "reason": { "en": "European business account alternative with card issuing and expense tools.", "fr": null } },
-    { "slug": "revenuecat", "reason": { "en": "Not a direct overlap for freelancers wanting simple cross-border collection; listed as adjacent catalogue candidate.", "fr": null } }
+    { "slug": "stripe", "reason": { "en": "Alternative for receiving cross-border payments, more developer/API oriented.", "fr": "Alternative pour recevoir des paiements transfrontaliers, plus orientée développeur/API." } },
+    { "slug": "qonto", "reason": { "en": "European business account alternative with card issuing and expense tools.", "fr": "Alternative de compte pro européen avec émission de cartes et outils de gestion des dépenses." } }
   ],
   "missingAlternatives": [
     { "name": "Wise (TransferWise) Business", "officialUrl": "https://wise.com/business/", "reason": "Main direct competitor for multi-currency accounts and cross-border payments, not in the catalogue candidates seen here." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Receiving from another Payoneer balance and account creation are free, but conversion (1.2 to 4%) and card fees (up to 3.99% + $0.49) stack up, so the real cost varies by volume rather than being clearly favorable.", "fr": "La réception depuis un autre solde Payoneer et la création de compte sont gratuites, mais conversion (1,2 à 4%) et frais de carte (jusqu'à 3,99% + 0,49$) s'accumulent, le coût réel varie donc selon le volume plutôt que d'être clairement avantageux.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Neutral score: account setup time and onboarding steps are not covered by the collected sources.", "fr": "Note neutre : le temps de configuration du compte et les étapes d'inscription ne figurent pas dans les sources relevées.", "sourceIds": ["s1", "s2"] },
+      "utilisation": { "en": "Delivers the promised cross-border receiving, sending and card issuing across 70+ currencies and 190+ countries as described.", "fr": "Tient sa promesse de réception, d'envoi et d'émission de carte à l'international dans plus de 70 devises et 190 pays.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers receiving, batch sending up to 1,000 payments, multi-currency cards and Employer/Agent of Record services, a broad range for a cross-border payment product.", "fr": "Couvre réception, envoi par lot jusqu'à 1 000 paiements, cartes multidevises et services Employer/Agent of Record, un périmètre large pour un produit de paiement transfrontalier.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export or account portability if leaving Payoneer is not covered by the collected sources.", "fr": "Note neutre : l'export des données ou la portabilité du compte en cas de départ ne figurent pas dans les sources relevées.", "sourceIds": ["s1", "s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cross-border payments", "fr": "Paiements transfrontaliers" },
+    "shortDescription": {
+      "en": "Cross-border payment platform to receive, send and hold funds in 70+ currencies, with multi-currency cards.",
+      "fr": "Plateforme de paiement transfrontalier pour recevoir, envoyer et détenir des fonds dans plus de 70 devises, avec cartes multidevises."
+    },
+    "longDescription": {
+      "en": "Payoneer lets freelancers and businesses receive payments in 70+ currencies across 190+ countries through local receiving accounts, send single or batch payments (up to 1,000 at once), and issue multi-currency cards. Employer/Agent of Record services extend it to paying contractors in 160+ countries.\n\nThere is no flat monthly plan: costs come from per-transaction fees such as 1.2 to 4% on currency conversion, up to 3.99% + $0.49 on card or PayPal receiving, and a $29.95 annual fee on the card or on accounts receiving under $6,000 a year. It fits someone billing clients abroad who wants to avoid wire fees, more than someone with steady, predictable volume.",
+      "fr": "Payoneer permet de recevoir des paiements dans plus de 70 devises et 190 pays via des comptes de réception locaux, d'envoyer des paiements uniques ou par lot (jusqu'à 1 000 à la fois), et d'émettre des cartes multidevises. Les services Employer/Agent of Record étendent l'outil au paiement de freelances à l'étranger.\n\nPas de forfait mensuel fixe : le coût vient des frais par transaction, comme 1,2 à 4% sur la conversion de devise, jusqu'à 3,99% + 0,49$ sur la réception par carte ou PayPal, et 29,95$ par an sur la carte ou les comptes recevant moins de 6 000$ par an. L'outil convient à qui facture des clients à l'étranger et veut éviter les frais de virement."
+    },
+    "pros": [
+      { "en": "Local receiving accounts in many countries avoid international wire fees on incoming payments.", "fr": "Les comptes de réception locaux dans de nombreux pays évitent les frais de virement international sur les paiements reçus." },
+      { "en": "Batch payments to up to 1,000 recipients cover paying multiple contractors at once.", "fr": "Les paiements par lot jusqu'à 1 000 destinataires permettent de payer plusieurs freelances en une fois." }
+    ],
+    "cons": [
+      { "en": "No flat plan: currency conversion, card and receiving fees stack up and are hard to predict for irregular volume.", "fr": "Pas de forfait fixe : les frais de conversion, de carte et de réception s'accumulent et sont difficiles à prévoir pour un volume irrégulier." },
+      { "en": "An account receiving under $6,000 in 12 months is charged a $29.95 annual fee even without using paid features.", "fr": "Un compte recevant moins de 6 000$ sur 12 mois est facturé 29,95$ par an même sans utiliser de fonctions payantes." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You regularly bill clients abroad and want to receive payments locally instead of paying international wire fees each time.", "fr": "Tu factures régulièrement des clients à l'étranger et veux recevoir tes paiements localement plutôt que payer des frais de virement international à chaque fois." },
+      "avoidIf": { "en": "You receive under $6,000 a year through the account, where the $29.95 annual fee applies with no offsetting activity.", "fr": "Tu reçois moins de 6 000$ par an sur le compte, où les frais annuels de 29,95$ s'appliquent sans activité en contrepartie." },
+      "threshold": { "en": "The $6,000/12-month activity threshold determines whether the $29.95 annual fee applies; below it, the account costs money even when unused for payments.", "fr": "Le seuil d'activité de 6 000$ sur 12 mois détermine si les frais annuels de 29,95$ s'appliquent ; en dessous, le compte coûte de l'argent même sans paiement reçu." },
+      "billingTraps": { "en": "A $29.95 annual fee applies both to the card and to any account receiving less than $6,000 in a rolling 12-month period.", "fr": "Des frais annuels de 29,95$ s'appliquent à la fois à la carte et à tout compte recevant moins de 6 000$ sur une période glissante de 12 mois." }
+    }
+  },
   "unknowns": [
     "No single official comparePlanKey exists since Payoneer has no seat/subscription plan; pricing is entirely fee-based per transaction.",
     "Business/Enterprise-tier custom pricing not published."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

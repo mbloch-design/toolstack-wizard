@@ -3,7 +3,8 @@
   "slug": "milanote",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Milanote",
     "vendor": "Milanote Ltd.",
@@ -34,7 +35,7 @@
       "exists": true,
       "limits": {
         "en": "100 notes/images/links, 10 file uploads, unlimited shared boards.",
-        "fr": null
+        "fr": "100 notes/images/liens, 10 fichiers téléversés, tableaux partagés illimités."
       },
       "sourceIds": [
         "s1"
@@ -49,7 +50,7 @@
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "100 notes/images/links, 10 file uploads, unlimited shared boards.", "fr": null }
+          { "en": "100 notes/images/links, 10 file uploads, unlimited shared boards.", "fr": "100 notes/images/liens, 10 fichiers téléversés, tableaux partagés illimités." }
         ],
         "sourceIds": ["s1"]
       },
@@ -67,7 +68,7 @@
         "keyLimits": [
           {
             "en": "Unlimited notes, images, links and file uploads; unlimited shared boards.",
-            "fr": null
+            "fr": "Notes, images, liens et fichiers téléversés illimités ; tableaux partagés illimités."
           }
         ],
         "sourceIds": [
@@ -88,7 +89,7 @@
         "keyLimits": [
           {
             "en": "Flat rate covering up to 50 people; unlimited notes, images, links and file uploads.",
-            "fr": null
+            "fr": "Tarif forfaitaire couvrant jusqu'à 50 personnes ; notes, images, liens et fichiers téléversés illimités."
           }
         ],
         "sourceIds": [
@@ -101,7 +102,7 @@
     "cautions": [
       {
         "en": "Team plan is flat-rate up to 50 users rather than per-seat; larger teams need to contact sales.",
-        "fr": null,
+        "fr": "Le plan Team est forfaitaire jusqu'à 50 utilisateurs plutôt que par poste ; les équipes plus grandes doivent contacter le service commercial.",
         "sourceIds": [
           "s1"
         ]
@@ -112,14 +113,14 @@
     "capabilities": [
       {
         "en": "Visual boards combining notes, images, links, files and to-do lists for creative organization.",
-        "fr": null,
+        "fr": "Tableaux visuels combinant notes, images, liens, fichiers et listes de tâches pour organiser un projet créatif.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Real-time collaboration with unlimited shared boards, even on the free plan.",
-        "fr": null,
+        "fr": "Collaboration en temps réel avec des tableaux partagés illimités, même sur le plan gratuit.",
         "sourceIds": [
           "s1"
         ]
@@ -128,14 +129,14 @@
     "limitations": [
       {
         "en": "Free plan caps content at 100 notes/images/links and 10 file uploads total.",
-        "fr": null,
+        "fr": "Le plan gratuit plafonne le contenu à 100 notes/images/liens et 10 fichiers téléversés au total.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Team plan is a flat fee for up to 50 people, not a true per-seat model, which can be inefficient for very small teams.",
-        "fr": null,
+        "fr": "Le plan Team est un tarif forfaitaire pour jusqu'à 50 personnes, pas un vrai modèle par poste, ce qui peut être inefficace pour une toute petite équipe.",
         "sourceIds": [
           "s1"
         ]
@@ -148,32 +149,81 @@
       "android"
     ]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "A designer or creative professional organizing moodboards, references and project ideas visually before moving to production tools.", "fr": "Une designer ou professionnelle créative qui organise moodboards, références et idées de projet visuellement avant de passer aux outils de production." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Moodboard: collect images, links and notes on a visual board while researching a client's brand direction, free plan included.", "fr": "Moodboard : rassembler images, liens et notes sur un tableau visuel pendant la recherche de direction de marque d'un client, avec le plan gratuit." },
+    { "en": "Brainstorm: share a board in real time with a client or collaborator to organize project ideas and to-do lists together.", "fr": "Brainstorming : partager un tableau en temps réel avec un client ou collaborateur pour organiser ensemble idées de projet et listes de tâches." }
+  ],
   "alternatives": [
     {
       "slug": "notion",
       "reason": {
         "en": "All-in-one workspace often used for similar moodboard/planning use cases.",
-        "fr": null
+        "fr": "Espace de travail tout-en-un souvent utilisé pour des cas d'usage similaires de moodboard et de planification."
       }
     },
     {
       "slug": "figma",
       "reason": {
         "en": "Design tool sometimes used for moodboards and visual brainstorming.",
-        "fr": null
+        "fr": "Outil de design parfois utilisé pour les moodboards et le brainstorming visuel."
       }
     },
     {
       "slug": "miro",
       "reason": {
         "en": "Visual whiteboard competitor covering brainstorming and board-based organization.",
-        "fr": null
+        "fr": "Concurrent de tableau blanc visuel couvrant le brainstorming et l'organisation par tableaux."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free plan already covers unlimited shared boards, so the value case for paying rests mainly on lifting the 100-item content cap.", "fr": "Le plan gratuit couvre déjà les tableaux partagés illimités, donc l'intérêt de payer repose surtout sur le déplafonnement des 100 éléments de contenu.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Visual boards with notes, images and links are usable immediately without training.", "fr": "Les tableaux visuels avec notes, images et liens sont utilisables immédiatement sans formation.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers visual organization and real-time collaboration as promised, even on the free tier.", "fr": "Assure l'organisation visuelle et la collaboration en temps réel comme promis, même sur le palier gratuit.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers moodboards, notes and to-do lists well, but is a visual organizer rather than a full project or design production tool.", "fr": "Couvre bien moodboards, notes et listes de tâches, mais reste un organisateur visuel plutôt qu'un outil complet de production projet ou design.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or data portability options are not covered by the collected sources.", "fr": "Note neutre : les options d'export ou de portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Visual moodboards", "fr": "Moodboards visuels" },
+    "shortDescription": { "en": "Milanote organizes notes, images, links and files on visual boards for creative projects, with real-time board sharing.", "fr": "Milanote organise notes, images, liens et fichiers sur des tableaux visuels pour des projets créatifs, avec partage de tableau en temps réel." },
+    "longDescription": {
+      "en": "Milanote is a visual board tool for organizing notes, images, links, files and to-do lists into moodboards and project plans. Boards can be shared and edited in real time, and this collaboration works even on the free plan, unlike many competitors that gate it behind a paid tier.\n\nThe free plan caps content at 100 notes/images/links and 10 file uploads; Personal removes those caps starting at $9.99/month billed annually. Team is a flat $49/month for up to 50 people rather than per seat. It fits a designer or creative professional organizing references and ideas visually before moving into production tools.",
+      "fr": "Milanote est un outil de tableaux visuels pour organiser notes, images, liens, fichiers et listes de tâches en moodboards et plans de projet. Les tableaux peuvent être partagés et modifiés en temps réel, et cette collaboration fonctionne même sur le plan gratuit, contrairement à beaucoup de concurrents qui la réservent au payant.\n\nLe plan gratuit plafonne le contenu à 100 notes/images/liens et 10 fichiers téléversés ; Personal lève ces plafonds dès 9,99 $/mois en facturation annuelle. Team est un forfait fixe de 49 $/mois pour jusqu'à 50 personnes plutôt qu'au poste. Il convient à une designer ou professionnelle créative qui organise références et idées visuellement avant de passer aux outils de production."
+    },
+    "pros": [
+      { "en": "Real-time board sharing and collaboration available even on the free plan.", "fr": "Partage de tableau et collaboration en temps réel disponibles même sur le plan gratuit." },
+      { "en": "Simple, visual interface usable immediately for moodboards and project organization.", "fr": "Interface visuelle simple, utilisable immédiatement pour moodboards et organisation de projet." },
+      { "en": "Team plan is a flat rate that can be cost-effective for a group approaching 50 people.", "fr": "Le plan Team est un forfait qui peut être rentable pour un groupe qui se rapproche de 50 personnes." }
+    ],
+    "cons": [
+      { "en": "Free plan's 100-item cap is reached quickly on an active moodboard.", "fr": "Le plafond de 100 éléments du plan gratuit est vite atteint sur un moodboard actif." },
+      { "en": "Team's flat fee for up to 50 people is inefficient for a team of just two or three.", "fr": "Le forfait Team pour jusqu'à 50 personnes est peu rentable pour une équipe de deux ou trois seulement." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You organize visual references, moodboards or project ideas and want real-time sharing without a per-collaborator fee.", "fr": "Tu organises des références visuelles, des moodboards ou des idées de projet et tu veux du partage en temps réel sans frais par collaborateur." },
+      "avoidIf": { "en": "You need a full project management or design production tool, not just visual organization.", "fr": "Tu as besoin d'un outil complet de gestion de projet ou de production design, pas seulement d'organisation visuelle." },
+      "threshold": { "en": "Personal costs $119.88/year billed annually; compare that to how often the free plan's 100-item cap gets hit.", "fr": "Personal coûte 119,88 $/an en facturation annuelle ; compare ce coût à la fréquence à laquelle le plafond de 100 éléments du plan gratuit est atteint." },
+      "billingTraps": { "en": "The Personal plan's $9.99/month price is the annual-billing rate; monthly billing costs $12.50/month instead.", "fr": "Le prix de 9,99 $/mois du plan Personal correspond à la facturation annuelle ; la facturation mensuelle coûte 12,50 $/mois." }
+    }
+  },
   "unknowns": [
     "Milanote platform availability on desktop apps (Windows/Mac) beyond web/iOS/Android not confirmed on the plans page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

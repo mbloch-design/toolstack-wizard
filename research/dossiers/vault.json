@@ -3,7 +3,8 @@
   "slug": "vault",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "HashiCorp Vault",
     "vendor": "HashiCorp, Inc. (IBM)",
@@ -12,7 +13,7 @@
     "changelogUrl": null,
     "urlStatus": "ok",
     "productStatus": "active",
-    "statusNote": { "en": "HashiCorp was acquired by IBM in 2025; Vault continues to be sold under the HashiCorp brand.", "fr": null }
+    "statusNote": { "en": "HashiCorp was acquired by IBM in 2025; Vault continues to be sold under the HashiCorp brand.", "fr": "HashiCorp a été racheté par IBM en 2025 ; Vault continue d'être vendu sous la marque HashiCorp." }
   },
   "sources": [
     { "id": "s1", "url": "https://www.hashicorp.com/products/vault/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "HashiCorp Vault pricing page (Vault-specific tiers not rendered in fetch)" },
@@ -26,7 +27,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Vault Community edition is free and open source, self-hosted, with core secrets management, encryption and dynamic secrets features.", "fr": null }, "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "Vault Community edition is free and open source, self-hosted, with core secrets management, encryption and dynamic secrets features.", "fr": "L'édition Vault Community est gratuite et open source, à auto-héberger, avec la gestion de secrets, le chiffrement et les secrets dynamiques de base." }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {
@@ -37,7 +38,7 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Free, self-managed, no official support SLA.", "fr": null }
+          { "en": "Free, self-managed, no official support SLA.", "fr": "Gratuit, auto-géré, sans SLA de support officiel." }
         ],
         "sourceIds": ["s2"]
       },
@@ -49,7 +50,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Hourly-billed managed cluster on HashiCorp Cloud Platform, no per-client fee; exact hourly rate not confirmed on an official page in this session (search results cite roughly $0.03 to $0.62/hour for an extra-small cluster).", "fr": null }
+          { "en": "Hourly-billed managed cluster on HashiCorp Cloud Platform, no per-client fee; exact hourly rate not confirmed on an official page in this session (search results cite roughly $0.03 to $0.62/hour for an extra-small cluster).", "fr": "Cluster géré facturé à l'heure sur HashiCorp Cloud Platform, sans frais par client ; le tarif horaire exact n'a pas été confirmé sur une page officielle (des résultats de recherche évoquent environ 0,03 à 0,62 $/heure pour un cluster extra-small)." }
         ],
         "sourceIds": ["s1"]
       },
@@ -61,7 +62,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Self-managed enterprise binary with advanced features (replication, Sentinel policies, HSM support); sold as a custom annual license, no public list price.", "fr": null }
+          { "en": "Self-managed enterprise binary with advanced features (replication, Sentinel policies, HSM support); sold as a custom annual license, no public list price.", "fr": "Binaire enterprise auto-géré avec fonctionnalités avancées (réplication, politiques Sentinel, support HSM) ; vendu sous forme de licence annuelle sur devis, sans prix public." }
         ],
         "sourceIds": ["s2"]
       }
@@ -69,33 +70,84 @@
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "HCP Vault Dedicated production tiers (Essentials, Standard) reportedly add a per-authenticated-client monthly fee on top of the hourly cluster cost, which was not verified against an official HashiCorp page in this session and should be re-checked before quoting a figure.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "HCP Vault Dedicated production tiers (Essentials, Standard) reportedly add a per-authenticated-client monthly fee on top of the hourly cluster cost, which was not verified against an official HashiCorp page in this session and should be re-checked before quoting a figure.", "fr": "Les paliers de production HCP Vault Dedicated (Essentials, Standard) ajouteraient un frais mensuel par client authentifié en plus du coût horaire du cluster ; non vérifié sur une page officielle HashiCorp, à recontrôler avant de citer un chiffre.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Centrally stores, accesses and distributes secrets programmatically to humans, machines and applications.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Certificate lifecycle management: generate, rotate and revoke certificates on demand.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Encryption-as-a-service for data in transit and at rest, plus automated secret rotation via API.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Identity-based authentication and authorization for humans, machines and services.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Centrally stores, accesses and distributes secrets programmatically to humans, machines and applications.", "fr": "Stocke, accède et distribue les secrets de façon centralisée et programmatique aux humains, machines et applications.", "sourceIds": ["s2"] },
+      { "en": "Certificate lifecycle management: generate, rotate and revoke certificates on demand.", "fr": "Gestion du cycle de vie des certificats : génération, rotation et révocation à la demande.", "sourceIds": ["s2"] },
+      { "en": "Encryption-as-a-service for data in transit and at rest, plus automated secret rotation via API.", "fr": "Chiffrement en tant que service pour les données en transit et au repos, avec rotation automatisée des secrets par API.", "sourceIds": ["s2"] },
+      { "en": "Identity-based authentication and authorization for humans, machines and services.", "fr": "Authentification et autorisation basées sur l'identité pour les humains, machines et services.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Community edition has no official support SLA and lacks enterprise features like performance replication and Sentinel policy-as-code.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "No self-serve public pricing for Vault Enterprise; requires a sales quote, making budgeting difficult without contacting HashiCorp.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Community edition has no official support SLA and lacks enterprise features like performance replication and Sentinel policy-as-code.", "fr": "L'édition Community n'a pas de SLA de support officiel et se prive de fonctionnalités enterprise comme la réplication de performance et le policy-as-code Sentinel.", "sourceIds": ["s2"] },
+      { "en": "No self-serve public pricing for Vault Enterprise; requires a sales quote, making budgeting difficult without contacting HashiCorp.", "fr": "Pas de tarif public en libre-service pour Vault Enterprise ; un devis commercial est nécessaire, ce qui complique le budget sans contacter HashiCorp.", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer or small engineering team who needs to centralize and rotate secrets (API keys, certificates, credentials) across services instead of hardcoding them.", "fr": "Une développeuse ou petite équipe d'ingénierie qui doit centraliser et faire tourner les secrets (clés API, certificats, identifiants) entre services au lieu de les coder en dur." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Centralize: replace hardcoded API keys and database credentials scattered across services with secrets fetched dynamically from Vault Community.", "fr": "Centraliser : remplacer les clés API et identifiants de base de données codés en dur dans les services par des secrets récupérés dynamiquement depuis Vault Community." },
+    { "en": "Rotate: automate certificate generation and revocation for internal services instead of managing certificates manually.", "fr": "Automatiser : générer et révoquer automatiquement les certificats des services internes au lieu de les gérer à la main." }
+  ],
   "alternatives": [
-    { "slug": "doppler", "reason": { "en": "Simpler, fully managed secrets management SaaS, easier onboarding for small teams.", "fr": null } },
-    { "slug": "infisical", "reason": { "en": "Open-source secrets management alternative with a hosted option, positioned as a lighter-weight Vault competitor.", "fr": null } }
+    { "slug": "doppler", "reason": { "en": "Simpler, fully managed secrets management SaaS, easier onboarding for small teams.", "fr": "Solution SaaS de gestion de secrets entièrement gérée et plus simple, avec une prise en main plus rapide pour les petites équipes." } },
+    { "slug": "infisical", "reason": { "en": "Open-source secrets management alternative with a hosted option, positioned as a lighter-weight Vault competitor.", "fr": "Alternative open source de gestion de secrets avec une option hébergée, positionnée comme un concurrent plus léger de Vault." } }
   ],
   "missingAlternatives": [
     { "name": "AWS Secrets Manager", "officialUrl": "https://aws.amazon.com/secrets-manager/", "reason": "Major cloud-native secrets manager competitor, especially for teams already on AWS, not present in the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Community edition covers core secrets management, encryption and certificate lifecycle for free, with no equivalent free tier this complete among direct alternatives.", "fr": "L'édition Community couvre gratuitement la gestion de secrets, le chiffrement et le cycle de vie des certificats, sans équivalent gratuit aussi complet chez les alternatives directes.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Self-hosting the Community edition and configuring identity-based auth requires real setup work, and there is no support SLA to fall back on.", "fr": "Auto-héberger l'édition Community et configurer l'authentification par identité demande un vrai travail d'installation, sans SLA de support en secours.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers the promised centralized secrets storage, distribution, rotation and certificate lifecycle without needing third-party tools.", "fr": "Tient la promesse de stockage, distribution, rotation de secrets et cycle de vie de certificats centralisés, sans outil tiers indispensable.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covers secrets, encryption-as-a-service and certificate management with enterprise-grade features (replication, Sentinel policies, HSM) available, a reference in the category.", "fr": "Couvre secrets, chiffrement en tant que service et gestion de certificats, avec des fonctionnalités de niveau entreprise (réplication, politiques Sentinel, HSM) disponibles, une référence dans la catégorie.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: export or migration paths out of Vault are not covered by the collected sources.", "fr": "Note neutre : les chemins d'export ou de migration hors de Vault ne figurent pas dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Secrets management", "fr": "Gestion de secrets" },
+    "shortDescription": { "en": "HashiCorp Vault centrally stores, distributes and rotates secrets and certificates for humans, machines and applications.", "fr": "HashiCorp Vault stocke, distribue et fait tourner de façon centralisée les secrets et certificats pour humains, machines et applications." },
+    "longDescription": {
+      "en": "Vault centralizes secrets management: API keys, credentials and certificates are stored, distributed and rotated programmatically instead of being hardcoded across services. It handles encryption-as-a-service for data in transit and at rest, certificate lifecycle management, and identity-based authentication for humans, machines and services.\n\nThe Community edition is free and open source, self-hosted, with no official support SLA. HCP Vault Dedicated adds a managed cloud cluster billed hourly, and Vault Enterprise unlocks replication and policy-as-code on a custom quote. It fits a developer or small engineering team centralizing secrets across services, as long as someone owns the self-hosting and configuration work.",
+      "fr": "Vault centralise la gestion des secrets : clés API, identifiants et certificats sont stockés, distribués et renouvelés de façon programmatique au lieu d'être codés en dur. Il gère le chiffrement en tant que service pour les données en transit et au repos, le cycle de vie des certificats et l'authentification basée sur l'identité.\n\nL'édition Community est gratuite, open source et à auto-héberger, sans SLA de support officiel. HCP Vault Dedicated ajoute un cluster cloud géré facturé à l'heure, et Vault Enterprise débloque la réplication sur devis. Convient à une développeuse ou petite équipe qui centralise ses secrets, à condition d'assumer l'auto-hébergement."
+    },
+    "pros": [
+      { "en": "Free, feature-complete Community edition covers secrets, encryption and certificates without a paid tier.", "fr": "L'édition Community gratuite et complète couvre secrets, chiffrement et certificats sans passer par un palier payant." },
+      { "en": "Enterprise-grade features (replication, policy-as-code, HSM support) available for teams that need to scale.", "fr": "Fonctionnalités de niveau entreprise (réplication, policy-as-code, support HSM) disponibles pour les équipes qui doivent grandir." },
+      { "en": "Identity-based authentication works across humans, machines and services in one system.", "fr": "L'authentification basée sur l'identité fonctionne pour les humains, machines et services dans un seul système." }
+    ],
+    "cons": [
+      { "en": "Self-hosting the Community edition takes real setup and operational ownership, with no support SLA.", "fr": "Auto-héberger l'édition Community demande une vraie installation et une prise en charge opérationnelle, sans SLA de support." },
+      { "en": "No public pricing for Vault Enterprise or confirmed HCP production tier fees, so budgeting requires a sales conversation.", "fr": "Pas de tarif public pour Vault Enterprise ni de frais confirmés pour les paliers de production HCP, donc budgéter suppose de contacter le commercial." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need to centralize secrets and certificates across services and have the capacity to self-host or manage a cloud cluster.", "fr": "Tu dois centraliser secrets et certificats entre services et tu as la capacité d'auto-héberger ou de gérer un cluster cloud." },
+      "avoidIf": { "en": "You want a fully managed secrets tool with a simple UI and no self-hosting responsibility.", "fr": "Tu veux un outil de secrets entièrement géré avec une interface simple, sans responsabilité d'auto-hébergement." },
+      "threshold": { "en": "The Community edition is free to start; budget for HCP Dedicated's hourly cluster cost once secrets move to a managed cloud setup.", "fr": "L'édition Community est gratuite pour démarrer ; prévois le coût horaire du cluster HCP Dedicated dès que les secrets passent en configuration cloud gérée." },
+      "billingTraps": { "en": "HCP Vault Dedicated's production tiers reportedly add a per-authenticated-client fee on top of the hourly cluster cost, not fully confirmed on an official page; verify before committing.", "fr": "Les paliers de production HCP Vault Dedicated ajouteraient un frais par client authentifié en plus du coût horaire du cluster, non totalement confirmé sur une page officielle ; à vérifier avant de s'engager." }
+    }
+  },
   "unknowns": [
     "Exact hourly and per-client pricing for HCP Vault Dedicated tiers not confirmed from an official HashiCorp page (only third-party estimates found); needs direct verification.",
     "Vault Enterprise list pricing is not public; only obtainable via sales quote."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The candidate catalogue offers no true Vault-scale enterprise secrets-manager alternative beyond Doppler and Infisical; AWS Secrets Manager is the closest true competitor but is not yet in the catalogue (see missingAlternatives)."
+  ]
 }

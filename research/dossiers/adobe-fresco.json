@@ -3,7 +3,8 @@
   "slug": "adobe-fresco",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Adobe Fresco",
     "vendor": "Adobe Inc.",
@@ -33,7 +34,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Unlimited layers, thousands of vector/raster/live brushes, motion presets, free forever"
+        "en": "Unlimited layers, thousands of vector/raster/live brushes, motion presets, free forever",
+        "fr": "Calques illimités, des milliers de pinceaux vectoriels/raster/live, préréglages d'animation, gratuit sans limite de durée"
       },
       "sourceIds": [
         "s1"
@@ -54,7 +56,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Full drawing/painting toolset free"
+            "en": "Full drawing/painting toolset free",
+            "fr": "Ensemble complet d'outils de dessin et de peinture, gratuit"
           }
         ],
         "sourceIds": [
@@ -74,7 +77,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "$34.99/month for first 3 months then $69.99/month; bundles 20+ Adobe apps, not a Fresco-only paid plan"
+            "en": "$34.99/month for first 3 months then $69.99/month; bundles 20+ Adobe apps, not a Fresco-only paid plan",
+            "fr": "34,99 $/mois les 3 premiers mois puis 69,99 $/mois ; regroupe plus de 20 apps Adobe, ce n'est pas un plan payant propre à Fresco"
           }
         ],
         "sourceIds": [
@@ -87,7 +91,7 @@
     "cautions": [
       {
         "en": "Fresco itself has no standalone paid tier; premium features come only through a full Creative Cloud Pro subscription, which is a much larger purchase than the app alone.",
-        "fr": null,
+        "fr": "Fresco n'a pas de palier payant qui lui soit propre ; les fonctions premium ne s'obtiennent qu'avec un abonnement Creative Cloud Pro complet, un achat bien plus large que la seule appli.",
         "sourceIds": [
           "s1"
         ]
@@ -98,28 +102,28 @@
     "capabilities": [
       {
         "en": "Thousands of raster, vector and 'live' brushes that behave like real paint/ink media",
-        "fr": null,
+        "fr": "Des milliers de pinceaux raster, vectoriels et « live » qui se comportent comme de vrais médiums de peinture ou d'encre",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Frame-by-frame animation and motion presets to add movement to illustrations",
-        "fr": null,
+        "fr": "Animation image par image et préréglages de mouvement pour animer des illustrations",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Symmetry tool for mirrored strokes and Paint Inside to constrain color to enclosed areas",
-        "fr": null,
+        "fr": "Outil de symétrie pour des traits en miroir et Paint Inside pour contenir la couleur dans des zones fermées",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Cross-device syncing between mobile and desktop for a project",
-        "fr": null,
+        "fr": "Synchronisation d'un projet entre mobile et bureau",
         "sourceIds": [
           "s1"
         ]
@@ -128,14 +132,14 @@
     "limitations": [
       {
         "en": "No paid standalone plan; unlocking anything beyond the free app requires a full Creative Cloud Pro subscription",
-        "fr": null,
+        "fr": "Aucun plan payant propre à l'app ; débloquer quoi que ce soit au-delà de la version gratuite exige un abonnement Creative Cloud Pro complet",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Desktop support limited to Windows (no native macOS desktop version mentioned)",
-        "fr": null,
+        "fr": "Support bureau limité à Windows (aucune version de bureau native macOS mentionnée)",
         "sourceIds": [
           "s1"
         ]
@@ -147,34 +151,150 @@
       "windows"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator or illustrator who wants a free, natural-media painting app on iPad without committing to a full Creative Cloud subscription.",
+      "fr": "Un créateur de contenu ou illustrateur qui veut une app de peinture gratuite, aux médiums réalistes, sur iPad, sans s'engager sur un abonnement Creative Cloud complet."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Use case: an illustrator paints a portfolio piece on iPad with live watercolor and ink brushes, entirely on the free plan.",
+      "fr": "Cas d'usage : un illustrateur peint une pièce de portfolio sur iPad avec des pinceaux live aquarelle et encre, entièrement sur le plan gratuit."
+    },
+    {
+      "en": "Use case: a creator adds a short frame-by-frame animation to a static illustration to post as a looping social clip.",
+      "fr": "Cas d'usage : un créateur ajoute une courte animation image par image à une illustration statique pour la publier en clip en boucle sur les réseaux."
+    }
+  ],
   "alternatives": [
     {
       "slug": "procreate",
       "reason": {
-        "en": "Leading iPad digital painting app, one-time purchase versus Fresco's Creative Cloud model."
+        "en": "Leading iPad digital painting app, one-time purchase versus Fresco's Creative Cloud model.",
+        "fr": "App de peinture numérique iPad de référence, avec un achat unique plutôt que le modèle Creative Cloud de Fresco."
       }
     },
     {
       "slug": "clip-studio-paint",
       "reason": {
-        "en": "Popular illustration/comic app competing for digital painting workflows across platforms."
+        "en": "Popular illustration/comic app competing for digital painting workflows across platforms.",
+        "fr": "App d'illustration/BD très utilisée, en concurrence sur les mêmes usages de peinture numérique multiplateforme."
       }
     },
     {
       "slug": "krita",
       "reason": {
-        "en": "Free, open-source digital painting alternative to Fresco."
+        "en": "Free, open-source digital painting alternative to Fresco.",
+        "fr": "Alternative gratuite et open source à Fresco pour la peinture numérique."
       }
     }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The full drawing/painting toolset, animation and syncing are free forever, with no paywall inside the app itself, only Creative Cloud Pro adds anything beyond it.",
+        "fr": "L'ensemble des outils de dessin, de peinture, l'animation et la synchronisation sont gratuits sans limite de durée, sans mur payant dans l'app elle-même ; seul Creative Cloud Pro ajoute quelque chose au-delà.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Live brushes that mimic real media and simple tools like Symmetry or Paint Inside are aimed at quick, natural results without a steep learning curve.",
+        "fr": "Les pinceaux live qui imitent de vrais médiums et des outils simples comme la symétrie ou Paint Inside visent un résultat rapide et naturel sans courbe d'apprentissage abrupte.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Fresco delivers on its promise of natural-media painting and animation, with cross-device sync working as described.",
+        "fr": "Fresco tient sa promesse de peinture aux médiums réalistes et d'animation, avec une synchronisation multi-appareils qui fonctionne comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Strong for illustration and simple animation, but it covers a narrower scope than a full painting-plus-compositing suite, and no paid tier of its own extends it further.",
+        "fr": "Solide pour l'illustration et l'animation simple, mais couvre un périmètre plus étroit qu'une suite complète de peinture et de compositing, sans palier payant propre pour aller plus loin.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if leaving Fresco are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ de Fresco ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Digital painting app",
+      "fr": "Peinture numérique"
+    },
+    "shortDescription": {
+      "en": "A free iPad and Windows painting app with natural-media brushes, frame-by-frame animation and cross-device syncing.",
+      "fr": "Une app de peinture gratuite pour iPad et Windows, avec des pinceaux aux médiums réalistes, l'animation image par image et la synchronisation multi-appareils."
+    },
+    "longDescription": {
+      "en": "Adobe Fresco is a painting and illustration app built around raster, vector and 'live' brushes that behave like real watercolor, oil or ink, plus frame-by-frame animation and motion presets for adding movement to a still piece. Projects sync across an iPad and a Windows desktop.\n\nThe entire drawing and painting toolset is free, with no separate paid Fresco plan; the only upgrade path is a full Creative Cloud Pro subscription at $69.99/month, which bundles 20+ other Adobe apps rather than adding a Fresco-only tier. That makes Fresco a strong pick for a solo illustrator who wants a capable free app, but a poor fit for anyone wanting to pay just for more Fresco features.",
+      "fr": "Adobe Fresco est une app de peinture et d'illustration construite autour de pinceaux raster, vectoriels et « live » qui imitent de la vraie aquarelle, de l'huile ou de l'encre, avec de l'animation image par image et des préréglages de mouvement. Les projets se synchronisent entre un iPad et un bureau Windows.\n\nL'ensemble des outils de dessin est gratuit, sans plan Fresco payant à part ; le seul chemin d'évolution est un abonnement Creative Cloud Pro complet à 69,99 $/mois, qui regroupe plus de 20 autres apps Adobe. Fresco convient donc à un illustrateur seul voulant une app gratuite capable, mais mal à qui veut payer juste pour plus de fonctions Fresco."
+    },
+    "pros": [
+      {
+        "en": "The full painting and animation toolset is free forever, not a limited trial.",
+        "fr": "L'ensemble des outils de peinture et d'animation est gratuit sans limite de durée, pas un essai limité."
+      },
+      {
+        "en": "Live brushes give a natural-media feel that's quick to get a usable result from.",
+        "fr": "Les pinceaux live donnent une sensation de médium réaliste et permettent d'obtenir vite un résultat exploitable."
+      }
+    ],
+    "cons": [
+      {
+        "en": "There is no paid Fresco-only tier; going beyond the free app means buying all of Creative Cloud Pro.",
+        "fr": "Il n'existe pas de palier payant propre à Fresco ; aller au-delà de l'app gratuite oblige à acheter tout Creative Cloud Pro."
+      },
+      {
+        "en": "No native macOS desktop app is mentioned, only Windows for desktop use.",
+        "fr": "Aucune app de bureau native macOS n'est mentionnée, seul Windows est couvert côté bureau."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a free, natural-media painting and light-animation app on iPad or Windows without paying anything.",
+        "fr": "Tu veux une app de peinture gratuite aux médiums réalistes et à l'animation légère, sur iPad ou Windows, sans rien payer."
+      },
+      "avoidIf": {
+        "en": "You want a paid upgrade path scoped just to Fresco, or a native macOS desktop app.",
+        "fr": "Tu veux un chemin payant limité à Fresco seul, ou une app de bureau native macOS."
+      },
+      "threshold": {
+        "en": "The only upgrade is Creative Cloud Pro at $69.99/month ($839.88/year); that only makes sense if you also need the other 20+ Adobe apps it bundles.",
+        "fr": "La seule évolution possible est Creative Cloud Pro à 69,99 $/mois (839,88 $/an) ; cela n'a de sens que si tu as aussi besoin des plus de 20 autres apps Adobe qu'il regroupe."
+      },
+      "billingTraps": {
+        "en": "The Creative Cloud Pro promotional price ($34.99/month) only applies to new subscribers for the first 3 months before rising to $69.99/month.",
+        "fr": "Le prix promotionnel de Creative Cloud Pro (34,99 $/mois) ne s'applique qu'aux nouveaux abonnés pendant les 3 premiers mois, avant de passer à 69,99 $/mois."
+      }
+    }
+  },
   "unknowns": [
     "Whether a native macOS desktop app exists (only Windows was mentioned for desktop) not fully clarified",
     "Exact scope of features unlocked specifically by Creative Cloud Pro versus other Adobe plans not itemized on this page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

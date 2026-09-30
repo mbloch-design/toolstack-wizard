@@ -3,7 +3,8 @@
   "slug": "ae-bodymovin",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Bodymovin (Lottie for After Effects)",
     "vendor": "Hernan Torrisi / RxLaboratory (distributed via aescripts.com)",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Individual users can set their own price, including $0, to download the full plugin.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Individual users can set their own price, including $0, to download the full plugin.", "fr": "Les particuliers peuvent fixer eux-mêmes le prix, y compris 0$, pour télécharger le plugin complet." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +36,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Individuals can pay any amount, including zero; businesses and teams are expected to pay the suggested price for a valid license.", "fr": null }
+          { "en": "Individuals can pay any amount, including zero; businesses and teams are expected to pay the suggested price for a valid license.", "fr": "Les particuliers peuvent payer le montant de leur choix, y compris zéro ; les entreprises et équipes sont invitées à payer le prix suggéré pour une licence valide.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       }
@@ -43,32 +44,88 @@
     "comparePlanKey": "name-your-own-price",
     "addOns": [],
     "cautions": [
-      { "en": "The 'free for individuals' policy is a stated licensing expectation, not a technical restriction; businesses are asked to pay the suggested price but this is not enforced by the software itself.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The 'free for individuals' policy is a stated licensing expectation, not a technical restriction; businesses are asked to pay the suggested price but this is not enforced by the software itself.", "fr": "La politique « gratuit pour les particuliers » est une attente de licence déclarée, pas une restriction technique ; les entreprises sont invitées à payer le prix suggéré mais ce n'est pas imposé par le logiciel lui-même.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Exports After Effects shape-layer animations to Lottie JSON format, playable natively on web via the Lottie JS player.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Exported JSON files are also playable on iOS and Android through Lottie's native mobile libraries.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Exports After Effects shape-layer animations to Lottie JSON format, playable natively on web via the Lottie JS player.", "fr": "Exporte les animations par shape layers d'After Effects au format JSON Lottie, lisible nativement sur le web via le lecteur Lottie JS.", "sourceIds": ["s1"] },
+      { "en": "Exported JSON files are also playable on iOS and Android through Lottie's native mobile libraries.", "fr": "Les fichiers JSON exportés sont aussi lisibles sur iOS et Android via les bibliothèques mobiles natives de Lottie.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Limited to shape-layer based animations; not all After Effects features (e.g. some effects, expressions) translate to Lottie JSON.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Requires After Effects itself (paid Adobe subscription) to author the animation before export.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Limited to shape-layer based animations; not all After Effects features (e.g. some effects, expressions) translate to Lottie JSON.", "fr": "Limité aux animations basées sur des shape layers ; toutes les fonctions d'After Effects (certains effets, expressions) ne se traduisent pas en JSON Lottie.", "sourceIds": ["s1"] },
+      { "en": "Requires After Effects itself (paid Adobe subscription) to author the animation before export.", "fr": "Nécessite After Effects lui-même (abonnement Adobe payant) pour créer l'animation avant export.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] }
     ],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer or motion designer who animates in After Effects and needs to ship that animation as a lightweight, native file on web and mobile.",
+      "fr": "Une designeuse ou motion designeuse qui anime dans After Effects et doit livrer cette animation en fichier léger et natif sur le web et mobile."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Web animation delivery: export a shape-layer animation from After Effects to Lottie JSON so a developer can play it natively in the browser without a video file.", "fr": "Livraison d'animation web : exporte une animation par shape layers depuis After Effects en JSON Lottie pour qu'un développeur la joue nativement dans le navigateur sans fichier vidéo." },
+    { "en": "Mobile app animation: reuse the same exported JSON file in an iOS or Android app through Lottie's native libraries instead of re-animating for each platform.", "fr": "Animation d'app mobile : réutilise le même fichier JSON exporté dans une app iOS ou Android via les bibliothèques natives Lottie plutôt que de réanimer pour chaque plateforme." }
+  ],
   "alternatives": [
-    { "slug": "rive", "reason": { "en": "Alternative animation authoring tool that also exports lightweight interactive animations for web and mobile.", "fr": null } }
+    { "slug": "rive", "reason": { "en": "Alternative animation authoring tool that also exports lightweight interactive animations for web and mobile.", "fr": "Outil alternatif de création d'animation qui exporte aussi des animations interactives légères pour le web et mobile." } }
   ],
   "missingAlternatives": [
     { "name": "LottieFiles for After Effects", "officialUrl": "https://aescripts.com/lottiefiles/", "reason": "Direct successor/competitor plugin for Lottie export from After Effects, appeared in search results but not in the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "Individuals can download and use the full plugin at any price including $0, so there is effectively no cost barrier to exporting animations for personal or freelance use.", "fr": "Les particuliers peuvent télécharger et utiliser le plugin complet au prix de leur choix, y compris 0$, il n'y a donc quasiment aucune barrière de coût pour exporter des animations en usage personnel ou freelance.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: setup time and ease of a first export are not covered by the collected sources.", "fr": "Note neutre : le temps de configuration et la facilité d'un premier export ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Exports shape-layer animations to Lottie JSON as promised, but not all After Effects features (some effects, expressions) translate, so complex animations may need workarounds.", "fr": "Exporte les animations par shape layers en JSON Lottie comme promis, mais certaines fonctions d'After Effects (effets, expressions) ne se traduisent pas, ce qui peut demander des contournements pour des animations complexes.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Limited to shape-layer animations and requires a separate paid After Effects subscription to author anything, a narrower ceiling than a standalone animation tool.", "fr": "Limité aux animations par shape layers et nécessite un abonnement After Effects payant séparé pour créer quoi que ce soit, un plafond plus étroit qu'un outil d'animation autonome.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Output is the open, widely supported Lottie JSON format, playable through open-source libraries on web, iOS and Android, giving strong portability away from any single vendor.", "fr": "La sortie est le format JSON Lottie, ouvert et largement supporté, lisible via des bibliothèques open source sur web, iOS et Android, ce qui donne une bonne portabilité hors de tout éditeur unique.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "After Effects to Lottie", "fr": "After Effects vers Lottie" },
+    "shortDescription": {
+      "en": "After Effects plugin that exports shape-layer animations to the open Lottie JSON format for web and mobile.",
+      "fr": "Plugin After Effects qui exporte les animations par shape layers vers le format ouvert JSON Lottie pour le web et mobile."
+    },
+    "longDescription": {
+      "en": "Bodymovin is the After Effects plugin that exports shape-layer animations to Lottie JSON, an open format that plays natively on the web through the Lottie JS player and on iOS and Android through Lottie's native mobile libraries. It turns a motion design file into a lightweight animation a developer can drop into a product without shipping a video.\n\nIndividuals can download and use the full plugin at any price, including $0, while businesses are asked to pay the suggested price for a license, a request the software itself does not enforce. It requires an existing After Effects subscription to author the source animation, and works best for shape-layer based motion rather than effect-heavy compositions.",
+      "fr": "Bodymovin est le plugin After Effects qui exporte les animations par shape layers vers JSON Lottie, un format ouvert lisible nativement sur le web via le lecteur Lottie JS et sur iOS et Android via les bibliothèques mobiles natives de Lottie. Il transforme un fichier de motion design en animation légère à intégrer à un produit sans envoyer de vidéo.\n\nLes particuliers peuvent télécharger et utiliser le plugin complet au prix de leur choix, y compris 0$, tandis que les entreprises sont invitées à payer le prix suggéré, une demande que le logiciel n'impose pas techniquement. Il nécessite un abonnement After Effects existant pour créer l'animation source."
+    },
+    "pros": [
+      { "en": "Effectively free for individual use, with no technical restriction on the price paid.", "fr": "Pratiquement gratuit pour un usage individuel, sans restriction technique sur le prix payé." },
+      { "en": "Exports to an open format usable across web, iOS and Android from the same file.", "fr": "Exporte vers un format ouvert utilisable sur web, iOS et Android à partir du même fichier." }
+    ],
+    "cons": [
+      { "en": "Requires a paid After Effects subscription just to create the source animation.", "fr": "Nécessite un abonnement After Effects payant rien que pour créer l'animation source." },
+      { "en": "Not all After Effects effects and expressions convert to Lottie JSON, which can force manual rework.", "fr": "Tous les effets et expressions d'After Effects ne se convertissent pas en JSON Lottie, ce qui peut forcer un retravail manuel." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already animate in After Effects with shape layers and need to ship that animation natively on web or mobile.", "fr": "Tu animes déjà dans After Effects avec des shape layers et dois livrer cette animation nativement sur le web ou mobile." },
+      "avoidIf": { "en": "Your animations rely heavily on effects or expressions that don't translate to Lottie JSON.", "fr": "Tes animations reposent beaucoup sur des effets ou des expressions qui ne se traduisent pas en JSON Lottie." },
+      "threshold": { "en": "The plugin itself costs as little as $0 for individuals; the real cost is the underlying After Effects subscription needed to create the animation.", "fr": "Le plugin lui-même coûte aussi peu que 0$ pour les particuliers ; le vrai coût est l'abonnement After Effects sous-jacent nécessaire pour créer l'animation." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "Direct fetch of aescripts.com/bodymovin returned HTTP 403 (anti-bot); pricing and feature details were reconstructed from search-result snippets rather than the live page, so figures should be re-verified.",
     "Current version number and last update date not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Pricing model is classified as freemium with a single 'name your own price' plan set to $0; consider whether 'free' better reflects the fact there is no distinct paid tier with more features, only a suggested-price licensing request for businesses."
+  ]
 }

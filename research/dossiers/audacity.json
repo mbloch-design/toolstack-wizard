@@ -3,7 +3,8 @@
   "slug": "audacity",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Audacity",
     "vendor": "Muse Group (Audacity Team)",
@@ -46,7 +47,7 @@
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Fully free and open source with no feature restrictions; desktop only.", "fr": null }
+          { "en": "Fully free and open source with no feature restrictions; desktop only.", "fr": "Entièrement gratuit et open source sans restriction de fonctionnalité ; réservé au bureau." }
         ],
         "sourceIds": ["s1"]
       }
@@ -59,35 +60,35 @@
     "capabilities": [
       {
         "en": "Multi-track audio recording and non-destructive editing with real-time effects.",
-        "fr": null,
+        "fr": "Enregistrement audio multipiste et montage non destructif avec effets en temps réel.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Built-in effects such as noise reduction, EQ, distortion, reverb and echo, plus spectrogram analysis.",
-        "fr": null,
+        "fr": "Effets intégrés comme la réduction de bruit, l'égalisation, la distorsion, la réverbération et l'écho, plus l'analyse de spectrogramme.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Imports, exports and converts most common audio formats including MP3, M4A, AIFF, FLAC and WAV.",
-        "fr": null,
+        "fr": "Importe, exporte et convertit la plupart des formats audio courants, dont MP3, M4A, AIFF, FLAC et WAV.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Supports VST3 and Nyquist plugins on all platforms, plus LV2 on Linux and Audio Units on macOS.",
-        "fr": null,
+        "fr": "Prend en charge les plugins VST3 et Nyquist sur toutes les plateformes, plus LV2 sur Linux et Audio Units sur macOS.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Optional cloud project backup and sharing via Audio.com.",
-        "fr": null,
+        "fr": "Sauvegarde et partage de projet dans le cloud en option via Audio.com.",
         "sourceIds": [
           "s1"
         ]
@@ -96,21 +97,21 @@
     "limitations": [
       {
         "en": "Not a full digital audio workstation: no MIDI editing and no virtual instruments.",
-        "fr": null,
+        "fr": "Ce n'est pas une station de travail audio numérique complète : pas d'édition MIDI ni d'instruments virtuels.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Desktop-only; no official mobile apps for iOS or Android.",
-        "fr": null,
+        "fr": "Réservé au bureau ; pas d'application mobile officielle pour iOS ou Android.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Some audio format support (e.g. certain MP3 encoding) requires a separate FFmpeg library installation.",
-        "fr": null,
+        "fr": "Certains formats audio (par exemple certains encodages MP3) nécessitent l'installation séparée de la bibliothèque FFmpeg.",
         "sourceIds": [
           "s1"
         ]
@@ -124,25 +125,76 @@
       "linux"
     ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator recording and cleaning up podcast or voiceover audio who needs solid editing tools without paying for a full DAW.", "fr": "Une créatrice de contenu qui enregistre et nettoie de l'audio de podcast ou de voix off et a besoin d'outils de montage solides sans payer pour une station audio complète." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Clean up: record a podcast episode, apply noise reduction and EQ, then export as MP3 for publishing.", "fr": "Nettoyer : enregistrer un épisode de podcast, appliquer réduction de bruit et égalisation, puis exporter en MP3 pour la publication." },
+    { "en": "Multi-track: layer voiceover, music and sound effects on separate tracks before mixing down to a final WAV file.", "fr": "Multipiste : superposer voix off, musique et effets sonores sur des pistes séparées avant le mixage final en fichier WAV." }
+  ],
   "alternatives": [
     {
       "slug": "descript",
       "reason": {
         "en": "Audio/video editor with transcript-based editing, competing for podcast and voice editing workflows.",
-        "fr": null
+        "fr": "Éditeur audio/vidéo avec montage basé sur la transcription, en concurrence sur les flux de podcast et de montage vocal."
       }
     },
     {
       "slug": "adobe-podcast-ai",
       "reason": {
         "en": "AI-driven audio enhancement tool targeted at podcasters and voice recording cleanup.",
-        "fr": null
+        "fr": "Outil d'amélioration audio par IA destiné aux podcasteurs et au nettoyage d'enregistrements vocaux."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "Free and open source with multi-track editing, built-in effects and wide format support, no equivalent free desktop editor this complete.", "fr": "Gratuit et open source avec montage multipiste, effets intégrés et large prise en charge des formats, sans équivalent gratuit aussi complet sur bureau.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Getting a usable edit takes some learning of the interface and effects; some formats need a separate FFmpeg install first.", "fr": "Obtenir un montage utilisable demande un peu d'apprentissage de l'interface et des effets ; certains formats nécessitent d'abord l'installation séparée de FFmpeg.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Records, edits and exports audio in common formats as promised, with plugin support extending it further.", "fr": "Enregistre, monte et exporte l'audio dans les formats courants comme promis, avec un support de plugins pour aller plus loin.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Strong for recording and editing, but explicitly not a full DAW: no MIDI editing or virtual instruments.", "fr": "Solide pour l'enregistrement et le montage, mais explicitement pas une station audio complète : pas d'édition MIDI ni d'instruments virtuels.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Exports to open, standard formats (WAV, FLAC, MP3) and is open source itself, reducing lock-in.", "fr": "Exporte vers des formats ouverts et standards (WAV, FLAC, MP3) et est lui-même open source, ce qui réduit la dépendance.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Audio editor", "fr": "Éditeur audio" },
+    "shortDescription": { "en": "Audacity is a free, open-source multi-track audio editor for recording, cleaning up and exporting podcasts and voice recordings.", "fr": "Audacity est un éditeur audio multipiste gratuit et open source pour enregistrer, nettoyer et exporter podcasts et enregistrements vocaux." },
+    "longDescription": {
+      "en": "Audacity is a desktop multi-track audio recorder and non-destructive editor with built-in effects (noise reduction, EQ, reverb, echo) and spectrogram analysis. It imports, exports and converts common formats like MP3, WAV, FLAC and AIFF, and supports VST3 and Nyquist plugins, with LV2 on Linux and Audio Units on macOS.\n\nIt is entirely free and open source, with no paid tier or feature gating. It fits a solo podcaster or content creator recording and cleaning up voice audio on a desktop, though it lacks MIDI editing or virtual instruments, and has no official mobile app.",
+      "fr": "Audacity est un enregistreur et éditeur audio multipiste non destructif sur bureau, avec des effets intégrés (réduction de bruit, égalisation, réverbération, écho) et une analyse par spectrogramme. Il importe, exporte et convertit les formats courants comme MP3, WAV, FLAC et AIFF, et prend en charge les plugins VST3 et Nyquist, avec LV2 sur Linux et Audio Units sur macOS.\n\nIl est entièrement gratuit et open source, sans palier payant ni fonctionnalité verrouillée. Il convient à une podcasteuse ou créatrice de contenu solo qui enregistre et nettoie de la voix sur ordinateur, même s'il manque d'édition MIDI ou d'instruments virtuels, et n'a pas d'application mobile officielle."
+    },
+    "pros": [
+      { "en": "Completely free with no feature restrictions or paid tier.", "fr": "Entièrement gratuit sans restriction de fonctionnalité ni palier payant." },
+      { "en": "Wide format support and VST3/Nyquist plugin compatibility across platforms.", "fr": "Large prise en charge des formats et compatibilité plugins VST3/Nyquist sur toutes les plateformes." },
+      { "en": "Exports to open standard formats, keeping projects portable.", "fr": "Exporte vers des formats standards ouverts, ce qui garde les projets portables." }
+    ],
+    "cons": [
+      { "en": "No MIDI editing or virtual instruments, so it can't replace a full DAW for music production.", "fr": "Pas d'édition MIDI ni d'instruments virtuels, il ne peut donc pas remplacer une station audio complète pour la production musicale." },
+      { "en": "Desktop-only, with no official iOS or Android app for editing on the go.", "fr": "Réservé au bureau, sans application iOS ou Android officielle pour monter en déplacement." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You record and edit voice or podcast audio on a desktop and don't need MIDI or virtual instruments.", "fr": "Tu enregistres et montes de la voix ou du podcast sur ordinateur et tu n'as pas besoin de MIDI ni d'instruments virtuels." },
+      "avoidIf": { "en": "You need music production with MIDI and virtual instruments, or mobile editing.", "fr": "Tu as besoin de production musicale avec MIDI et instruments virtuels, ou de montage mobile." },
+      "threshold": { "en": "No cost threshold: the tool is free, so the only cost is the time spent learning the interface.", "fr": "Pas de seuil de coût : l'outil est gratuit, le seul coût est le temps passé à apprendre l'interface." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "Exact Linux distribution compatibility beyond Ubuntu 22.04+ not detailed on the FAQ page consulted."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The candidate catalogue has no dedicated free/open-source multi-track audio editor beyond Descript and Adobe Podcast AI to compare against Audacity; a third direct competitor (e.g. Reaper, Ocenaudio) is not present in the alternativeCandidates list."
+  ]
 }

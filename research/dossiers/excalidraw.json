@@ -3,7 +3,8 @@
   "slug": "excalidraw",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Excalidraw",
     "vendor": "Excalidraw (open source project / Excalidraw+ commercial offering)",
@@ -36,7 +37,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 infinite scene, unlimited collaborators, PNG/SVG export, integrations with Notion and Obsidian, end-to-end encryption.", "sourceIds": ["s3"] }],
+        "keyLimits": [{ "en": "1 infinite scene, unlimited collaborators, PNG/SVG export, integrations with Notion and Obsidian, end-to-end encryption.", "fr": "1 scène infinie, collaborateurs illimités, export PNG/SVG, intégrations avec Notion et Obsidian, chiffrement de bout en bout.", "sourceIds": ["s3"] }],
         "sourceIds": ["s3"]
       },
       {
@@ -46,7 +47,7 @@
         "minSeats": 1,
         "price": { "monthly": 6, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited scenes and folders, cloud storage, access management, edit/view sharing, read-only links and embeds, presentations, extended AI features, comments, team management; annual billing saves about 14%.", "sourceIds": ["s3"] }],
+        "keyLimits": [{ "en": "Unlimited scenes and folders, cloud storage, access management, edit/view sharing, read-only links and embeds, presentations, extended AI features, comments, team management; annual billing saves about 14%.", "fr": "Scènes et dossiers illimités, stockage cloud, gestion des accès, partage édition/lecture, liens et embeds en lecture seule, présentations, fonctions IA étendues, commentaires, gestion d'équipe ; la facturation annuelle fait environ 14% d'économie.", "sourceIds": ["s3"] }],
         "sourceIds": ["s3"]
       }
     ],
@@ -56,15 +57,15 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Infinite-canvas whiteboard with a hand-drawn visual style for diagrams and wireframes.", "sourceIds": ["s1"] },
-      { "en": "Real-time multiplayer collaboration via shareable links, free even without an account.", "sourceIds": ["s1"] },
-      { "en": "Generative AI features: text-to-diagram generation and wireframe-to-code conversion.", "sourceIds": ["s2"] },
-      { "en": "Open-source core with a self-hostable codebase and an npm package for embedding the editor.", "sourceIds": ["s1"] }
+      { "en": "Infinite-canvas whiteboard with a hand-drawn visual style for diagrams and wireframes.", "fr": "Tableau blanc à canevas infini avec un style dessiné à la main pour diagrammes et wireframes.", "sourceIds": ["s1"] },
+      { "en": "Real-time multiplayer collaboration via shareable links, free even without an account.", "fr": "Collaboration multi-utilisateurs en temps réel via liens partageables, gratuite même sans compte.", "sourceIds": ["s1"] },
+      { "en": "Generative AI features: text-to-diagram generation and wireframe-to-code conversion.", "fr": "Fonctions d'IA générative : génération de diagramme à partir de texte et conversion wireframe vers code.", "sourceIds": ["s2"] },
+      { "en": "Open-source core with a self-hostable codebase and an npm package for embedding the editor.", "fr": "Cœur open source, hébergeable soi-même, avec un package npm pour intégrer l'éditeur.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan is limited to a single infinite scene; multiple saved boards and folders require Excalidraw+.", "sourceIds": ["s3"] },
-      { "en": "Cloud storage, access management and team features are exclusive to the paid Excalidraw+ tier.", "sourceIds": ["s3"] },
-      { "en": "Advanced professional design features (precise layout tools, complex diagram types) are intentionally limited in favor of its simple, sketch-style focus.", "sourceIds": ["s1"] }
+      { "en": "Free plan is limited to a single infinite scene; multiple saved boards and folders require Excalidraw+.", "fr": "Le plan gratuit est limité à une seule scène infinie ; plusieurs tableaux et dossiers sauvegardés demandent Excalidraw+.", "sourceIds": ["s3"] },
+      { "en": "Cloud storage, access management and team features are exclusive to the paid Excalidraw+ tier.", "fr": "Le stockage cloud, la gestion des accès et les fonctions d'équipe sont réservés au palier payant Excalidraw+.", "sourceIds": ["s3"] },
+      { "en": "Advanced professional design features (precise layout tools, complex diagram types) are intentionally limited in favor of its simple, sketch-style focus.", "fr": "Les fonctions de design professionnel avancées (outils de mise en page précis, diagrammes complexes) sont volontairement limitées au profit d'un style simple, façon croquis.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Notion", "slug": null, "sourceIds": ["s3"] },
@@ -72,14 +73,68 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer who needs to sketch a quick diagram, architecture or wireframe during a call without opening a full design tool.",
+      "fr": "Un développeur qui doit croquer rapidement un diagramme, une architecture ou un wireframe pendant un appel sans ouvrir un outil de design complet."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Architecture sketch: draw a system diagram live during a technical discussion and share the link instantly.", "fr": "Croquis d'architecture : dessine un schéma système en direct pendant une discussion technique et partage le lien immédiatement." },
+    { "en": "Quick wireframe: sketch a screen layout in hand-drawn style before building it in a full design tool.", "fr": "Wireframe rapide : croque la structure d'un écran en style dessiné à la main avant de le construire dans un outil de design complet." }
+  ],
   "alternatives": [
-    { "slug": "miro", "reason": { "en": "Direct competitor for collaborative online whiteboarding." } },
-    { "slug": "whimsical", "reason": { "en": "Direct competitor for lightweight diagramming and collaborative whiteboards." } },
-    { "slug": "figma", "reason": { "en": "Overlapping use case for diagramming and quick visual collaboration, though Figma is a full design tool." } }
+    { "slug": "miro", "reason": { "en": "Direct competitor for collaborative online whiteboarding.", "fr": "Concurrent direct pour le tableau blanc collaboratif en ligne." } },
+    { "slug": "whimsical", "reason": { "en": "Direct competitor for lightweight diagramming and collaborative whiteboards.", "fr": "Concurrent direct pour le diagramme léger et les tableaux blancs collaboratifs." } },
+    { "slug": "figma", "reason": { "en": "Overlapping use case for diagramming and quick visual collaboration, though Figma is a full design tool.", "fr": "Usage proche pour le diagramme et la collaboration visuelle rapide, mais Figma est un outil de design complet." } }
   ],
   "missingAlternatives": [
     { "name": "tldraw", "officialUrl": "https://www.tldraw.com", "reason": "Direct open-source competitor to Excalidraw's infinite-canvas whiteboard, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free plan already covers unlimited collaborators and PNG/SVG export; Excalidraw+ adds cloud storage and team management for $6/seat/month.", "fr": "Le plan gratuit couvre déjà les collaborateurs illimités et l'export PNG/SVG ; Excalidraw+ ajoute stockage cloud et gestion d'équipe pour 6$/siège/mois.", "sourceIds": ["s3"] },
+      "simplicite": { "en": "Real-time collaboration works via a shareable link and is free even without creating an account, removing any setup step to start together.", "fr": "La collaboration en temps réel fonctionne via un simple lien partageable et est gratuite même sans compte, sans aucune étape de configuration pour démarrer à plusieurs.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised hand-drawn diagramming and real-time collaboration without workarounds.", "fr": "Tient sa promesse de diagramme façon croquis et de collaboration en temps réel sans détour.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Advanced professional design features are intentionally left out in favor of a simple sketch-style focus, so the ceiling is lower than a full design tool.", "fr": "Les fonctions de design professionnel avancées sont volontairement absentes au profit d'un style croquis simple, le plafond est donc plus bas qu'un outil de design complet.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Open-source core that is self-hostable, with an npm package to embed the editor and standard PNG/SVG export, giving strong portability out of the tool.", "fr": "Cœur open source hébergeable soi-même, avec un package npm pour intégrer l'éditeur et un export PNG/SVG standard, ce qui donne une bonne portabilité en cas de départ.", "sourceIds": ["s1", "s3"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Sketch-style whiteboard", "fr": "Tableau blanc façon croquis" },
+    "shortDescription": {
+      "en": "Infinite-canvas whiteboard with a hand-drawn style, free real-time collaboration, and an open-source core.",
+      "fr": "Tableau blanc à canevas infini au style dessiné à la main, collaboration en temps réel gratuite et cœur open source."
+    },
+    "longDescription": {
+      "en": "Excalidraw is a lightweight whiteboard for diagrams and wireframes in a hand-drawn visual style, with real-time multiplayer collaboration that works through a shareable link and requires no account. The open-source core can be self-hosted or embedded via an npm package, and text-to-diagram AI features speed up first drafts.\n\nThe free plan already includes unlimited collaborators and PNG/SVG export, enough for one-off sketches. Excalidraw+ starts at $6/seat/month and adds unlimited scenes and folders, cloud storage and team management, the entry point for anyone saving and organizing more than one board over time.",
+      "fr": "Excalidraw est un tableau blanc léger pour diagrammes et wireframes dans un style dessiné à la main, avec une collaboration multi-utilisateurs en temps réel qui passe par un simple lien partageable, sans compte requis. Le cœur open source peut être auto-hébergé ou intégré via un package npm, et des fonctions IA de génération de diagramme à partir de texte accélèrent les premiers jets.\n\nLe plan gratuit inclut déjà les collaborateurs illimités et l'export PNG/SVG, suffisant pour des croquis ponctuels. Excalidraw+ démarre à 6$/siège/mois et ajoute scènes et dossiers illimités, stockage cloud et gestion d'équipe, le vrai point d'entrée dès qu'on sauvegarde et organise plus d'un tableau dans la durée."
+    },
+    "pros": [
+      { "en": "Real-time collaboration works instantly via a link, with no account needed on either side.", "fr": "La collaboration en temps réel fonctionne instantanément via un lien, sans compte nécessaire d'aucun côté." },
+      { "en": "Open-source and self-hostable, so nothing is locked to a single vendor's cloud.", "fr": "Open source et auto-hébergeable, rien n'est enfermé dans le cloud d'un seul éditeur." }
+    ],
+    "cons": [
+      { "en": "Free plan is limited to a single saved scene, so keeping multiple boards over time requires the paid plan.", "fr": "Le plan gratuit est limité à une seule scène sauvegardée, garder plusieurs tableaux dans la durée demande le plan payant." },
+      { "en": "Not built for precise, complex diagrams; the style stays intentionally sketch-like.", "fr": "Pas conçu pour des diagrammes précis et complexes ; le style reste volontairement façon croquis." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need a fast, shareable whiteboard for sketches and diagrams without setting up accounts for collaborators.", "fr": "Tu as besoin d'un tableau blanc rapide et partageable pour des croquis et diagrammes, sans faire créer de compte à tes collaborateurs." },
+      "avoidIf": { "en": "You need precise, complex diagramming or a permanent library of many boards on the free tier.", "fr": "Tu as besoin de diagrammes précis et complexes ou d'une bibliothèque permanente de nombreux tableaux sur le plan gratuit." },
+      "threshold": { "en": "Excalidraw+ costs $72/year at $6/month per seat, the point where multiple saved boards and cloud storage become worth paying for.", "fr": "Excalidraw+ coûte 72$/an à 6$/mois par siège, le seuil à partir duquel plusieurs tableaux sauvegardés et le stockage cloud valent la dépense." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

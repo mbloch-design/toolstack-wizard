@@ -3,7 +3,8 @@
   "slug": "looker-studio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Looker Studio",
     "vendor": "Google LLC",
@@ -33,7 +34,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Unlimited reports and sharing; free tier is fully featured for individual reporting"
+        "en": "Unlimited reports and sharing; free tier is fully featured for individual reporting",
+        "fr": "Rapports et partage illimités ; le plan gratuit est complet pour un reporting individuel"
       },
       "sourceIds": [
         "s1"
@@ -41,6 +43,27 @@
     },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited reports and sharing; free tier is fully featured for individual reporting",
+            "fr": "Rapports et partage illimités ; le plan gratuit est complet pour un reporting individuel"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
       {
         "key": "pro",
         "name": "Looker Studio Pro",
@@ -54,7 +77,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Adds team collaboration, content management, and support on top of the free product"
+            "en": "Adds team collaboration, content management, and support on top of the free product",
+            "fr": "Ajoute la collaboration en équipe, la gestion de contenu et le support par rapport au produit gratuit"
           }
         ],
         "sourceIds": [
@@ -67,6 +91,7 @@
     "cautions": [
       {
         "en": "Looker Studio Pro pricing was not re-confirmed on the official pricing/help pages this session (redirect and 404 encountered); figure carried from prior seed data only.",
+        "fr": "Le prix de Looker Studio Pro n'a pas été reconfirmé sur les pages officielles de tarifs/aide cette session (redirection et page 404 rencontrées) ; le chiffre provient uniquement des données seed précédentes.",
         "sourceIds": [
           "s1"
         ]
@@ -77,12 +102,14 @@
     "capabilities": [
       {
         "en": "Free, no-code report and dashboard builder connecting to Google Analytics 4, Google Sheets, and BigQuery.",
+        "fr": "Créateur de rapports et de dashboards gratuit et sans code, connecté à Google Analytics 4, Google Sheets et BigQuery.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Shareable, embeddable dashboards with live data connections and community/partner connectors.",
+        "fr": "Dashboards partageables et intégrables avec des connexions de données en direct et des connecteurs communautaires ou partenaires.",
         "sourceIds": [
           "s1"
         ]
@@ -91,12 +118,14 @@
     "limitations": [
       {
         "en": "Advanced team management, asset organization, and support require the paid Pro tier.",
+        "fr": "La gestion avancée d'équipe, l'organisation des ressources et le support nécessitent le palier Pro payant.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Data freshness and connector reliability depend on third-party/community connectors, which are outside Google's direct support.",
+        "fr": "La fraîcheur des données et la fiabilité des connecteurs dépendent de connecteurs tiers/communautaires, hors du support direct de Google.",
         "sourceIds": [
           "s1"
         ]
@@ -129,18 +158,146 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or marketing lead on a small team who needs to share live dashboards from Google data sources without buying a dedicated BI tool.",
+      "fr": "Un responsable ops ou marketing dans une petite équipe qui doit partager des dashboards en direct à partir de sources de données Google, sans acheter un outil BI dédié."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a small team builds a free GA4 traffic dashboard in Looker Studio and shares it with stakeholders without paying for a BI tool.",
+      "fr": "Cas d'usage : une petite équipe construit gratuitement un dashboard de trafic GA4 dans Looker Studio et le partage avec les parties prenantes, sans payer d'outil BI."
+    },
+    {
+      "en": "Use case: an ops lead upgrades to Looker Studio Pro to centrally manage and organize dashboards for the whole team.",
+      "fr": "Cas d'usage : un responsable ops passe à Looker Studio Pro pour gérer et organiser les dashboards de toute l'équipe de façon centralisée."
+    }
+  ],
   "alternatives": [
     {
       "slug": "metabase",
       "reason": {
-        "en": "Alternative BI/reporting tool covering similar dashboard and data-connection needs."
+        "en": "Alternative BI/reporting tool covering similar dashboard and data-connection needs.",
+        "fr": "Outil BI/reporting alternatif, pour des besoins similaires de dashboards et de connexion aux données."
+      }
+    },
+    {
+      "slug": "hex",
+      "reason": {
+        "en": "Overlaps for building shareable data dashboards from connected sources, with more of a notebook-style workflow.",
+        "fr": "Chevauchement pour construire des dashboards de données partageables à partir de sources connectées, avec un workflow plus proche du notebook."
+      }
+    },
+    {
+      "slug": "grafana",
+      "reason": {
+        "en": "Open-source dashboard tool covering similar live-data visualization needs, free to self-host.",
+        "fr": "Outil de dashboards open source, pour des besoins similaires de visualisation de données en direct, gratuit en auto-hébergement."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free tier is fully featured for individual reporting with unlimited reports and sharing, and Pro only adds team features for $9/seat/month, a low cost for the collaboration gained.",
+        "fr": "Le plan gratuit est complet pour un reporting individuel, avec rapports et partage illimités, et Pro n'ajoute que des fonctions d'équipe pour 9 $/siège/mois, un coût faible pour la collaboration obtenue.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Described as a no-code report and dashboard builder, aimed at a usable result without needing engineering skills.",
+        "fr": "Décrit comme un créateur de rapports et de dashboards sans code, pensé pour un résultat exploitable sans compétences d'ingénierie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It connects directly to GA4, Sheets and BigQuery and produces shareable, embeddable dashboards as advertised.",
+        "fr": "Il se connecte directement à GA4, Sheets et BigQuery et produit des dashboards partageables et intégrables, comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Looker Studio covers standard reporting needs well, but reliability depends partly on third-party community connectors outside Google's direct support, which caps it below a dedicated BI platform.",
+        "fr": "Looker Studio couvre bien les besoins de reporting classiques, mais la fiabilité dépend en partie de connecteurs communautaires tiers hors du support direct de Google, ce qui le plafonne en dessous d'une plateforme BI dédiée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: report/data export portability if leaving Looker Studio is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des rapports et des données en cas de départ de Looker Studio ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Free BI dashboards",
+      "fr": "Dashboards data gratuits"
+    },
+    "shortDescription": {
+      "en": "A free, no-code dashboard and reporting builder connected to Google Analytics, Sheets and BigQuery, with a paid team tier.",
+      "fr": "Un créateur de dashboards et de rapports gratuit et sans code, connecté à Google Analytics, Sheets et BigQuery, avec un palier payant pour les équipes."
+    },
+    "longDescription": {
+      "en": "Looker Studio is a free, no-code report and dashboard builder that connects directly to Google Analytics 4, Google Sheets, BigQuery and a range of community/partner connectors, producing shareable, embeddable dashboards with live data.\n\nThe free tier is fully featured for individual reporting, with unlimited reports and sharing. Looker Studio Pro adds team collaboration, content management and support for $9/month per seat. Reliability depends partly on third-party community connectors, which sit outside Google's direct support, and Pro pricing wasn't re-confirmed on a live page this session.",
+      "fr": "Looker Studio est un créateur de rapports et de dashboards gratuit et sans code, connecté directement à Google Analytics 4, Google Sheets, BigQuery et une série de connecteurs communautaires ou partenaires, pour produire des dashboards partageables et intégrables avec des données en direct.\n\nLe plan gratuit est complet pour un reporting individuel, avec des rapports et un partage illimités. Looker Studio Pro ajoute la collaboration en équipe, la gestion de contenu et le support pour 9 $/mois par siège. La fiabilité dépend en partie de connecteurs communautaires tiers, hors du support direct de Google, et le prix de Pro n'a pas été reconfirmé sur une page en direct cette session."
+    },
+    "pros": [
+      {
+        "en": "The free tier is fully featured for individual reporting, not a crippled trial.",
+        "fr": "Le plan gratuit est complet pour un reporting individuel, pas un essai bridé."
+      },
+      {
+        "en": "Direct connectors to GA4, Sheets and BigQuery avoid manual data exports.",
+        "fr": "Les connecteurs directs vers GA4, Sheets et BigQuery évitent les exports de données manuels."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Advanced team management, asset organization and support require the paid Pro tier.",
+        "fr": "La gestion avancée d'équipe, l'organisation des ressources et le support nécessitent le palier Pro payant."
+      },
+      {
+        "en": "Data freshness and connector reliability depend on third-party community connectors outside Google's direct support.",
+        "fr": "La fraîcheur des données et la fiabilité des connecteurs dépendent de connecteurs communautaires tiers, hors du support direct de Google."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need free dashboards connected to Google Analytics, Sheets or BigQuery without buying a dedicated BI tool.",
+        "fr": "Tu as besoin de dashboards gratuits connectés à Google Analytics, Sheets ou BigQuery, sans acheter d'outil BI dédié."
+      },
+      "avoidIf": {
+        "en": "You need guaranteed connector reliability and vendor support beyond what community connectors offer.",
+        "fr": "Tu as besoin d'une fiabilité de connecteurs garantie et d'un support éditeur au-delà de ce qu'offrent les connecteurs communautaires."
+      },
+      "threshold": {
+        "en": "Looker Studio Pro costs $9/month per seat; that's only worth paying once you need team collaboration and content management, not for solo reporting.",
+        "fr": "Looker Studio Pro coûte 9 $/mois par siège ; ça ne vaut le coup qu'à partir du moment où tu as besoin de collaboration en équipe et de gestion de contenu, pas pour du reporting en solo."
+      }
+    }
+  },
   "unknowns": [
     "Could not reach a live Looker Studio Pro pricing/help page this session (lookerstudio.google.com redirects to a dead datastudio.google.com URL); pricing not independently re-verified.",
     "Exact free-tier limits (e.g. viewer/report caps) not detailed on the fetched homepage."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

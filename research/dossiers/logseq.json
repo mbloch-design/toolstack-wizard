@@ -3,7 +3,8 @@
   "slug": "logseq",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Logseq",
     "vendor": "Logseq Inc.",
@@ -34,7 +35,7 @@
       "exists": true,
       "limits": {
         "en": "The core local-first app is free and open source; Sync (cloud sync/backup) is only available via a recurring Open Collective contribution during its beta phase.",
-        "fr": null
+        "fr": "L'application locale principale est gratuite et open source ; Sync (synchronisation/sauvegarde cloud) n'est accessible que via une contribution récurrente Open Collective pendant sa phase bêta."
       },
       "sourceIds": [
         "s1"
@@ -49,7 +50,7 @@
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Full local-first app with knowledge graph and outliner; no cloud sync.", "fr": null }
+          { "en": "Full local-first app with knowledge graph and outliner; no cloud sync.", "fr": "Application locale complète avec graphe de connaissances et outliner ; pas de synchronisation cloud." }
         ],
         "sourceIds": ["s1"]
       },
@@ -67,7 +68,7 @@
         "keyLimits": [
           {
             "en": "Access to Sync (beta) with up to 10 remote graphs per account, 10GB per graph, 100MB per asset file.",
-            "fr": null
+            "fr": "Accès à Sync (bêta) avec jusqu'à 10 graphes distants par compte, 10 Go par graphe, 100 Mo par fichier joint."
           }
         ],
         "sourceIds": [
@@ -88,7 +89,7 @@
         "keyLimits": [
           {
             "en": "Same Sync limits as Backer tier, plus access to Whiteboards, which are Sponsor-only.",
-            "fr": null
+            "fr": "Mêmes limites Sync que le palier Backer, plus l'accès aux Whiteboards, réservé aux Sponsors."
           }
         ],
         "sourceIds": [
@@ -101,7 +102,7 @@
     "cautions": [
       {
         "en": "Sync access is currently structured as a recurring Open Collective donation during beta, not a standard commercial subscription; Logseq states it plans to move to a normal subscription system once Sync is publicly launched.",
-        "fr": null,
+        "fr": "L'accès à Sync est actuellement structuré comme un don récurrent Open Collective pendant la bêta, pas un abonnement commercial standard ; Logseq annonce vouloir passer à un système d'abonnement classique une fois Sync lancé publiquement.",
         "sourceIds": [
           "s1"
         ]
@@ -112,14 +113,14 @@
     "capabilities": [
       {
         "en": "Local-first, open-source personal knowledge management app built around a bidirectional-linking knowledge graph and outliner.",
-        "fr": null,
+        "fr": "Application de gestion de connaissances personnelles, locale et open source, construite autour d'un graphe de connaissances à liens bidirectionnels et d'un outliner.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Optional cloud Sync (beta) for multi-device access, with Smart Merge for simultaneous multi-device editing (experimental).",
-        "fr": null,
+        "fr": "Synchronisation cloud optionnelle (bêta) pour l'accès multi-appareils, avec Smart Merge pour l'édition simultanée sur plusieurs appareils (expérimental).",
         "sourceIds": [
           "s1"
         ]
@@ -128,21 +129,21 @@
     "limitations": [
       {
         "en": "Whiteboards feature is restricted to Sponsor-tier Sync contributors only.",
-        "fr": null,
+        "fr": "La fonctionnalité Whiteboards est réservée aux contributeurs Sync du palier Sponsor.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Sync storage is capped at 10 remote graphs per account, 10GB per graph and 100MB per asset file during the beta.",
-        "fr": null,
+        "fr": "Le stockage Sync est plafonné à 10 graphes distants par compte, 10 Go par graphe et 100 Mo par fichier joint pendant la bêta.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Smart Merge for simultaneous multi-device editing is still experimental and may be unreliable.",
-        "fr": null,
+        "fr": "Smart Merge pour l'édition simultanée sur plusieurs appareils reste expérimental et peut être instable.",
         "sourceIds": [
           "s1"
         ]
@@ -158,33 +159,82 @@
       "android"
     ]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer or technical solo worker who wants a local-first, markdown-based knowledge graph they fully control instead of a cloud-locked notes app.", "fr": "Une développeuse ou indépendante technique qui veut un graphe de connaissances local en markdown, entièrement sous son contrôle, plutôt qu'une appli de notes verrouillée dans le cloud." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Capture: build a linked knowledge graph of project notes and ideas locally, free, without any cloud dependency.", "fr": "Capturer : construire localement un graphe de connaissances lié entre notes et idées de projet, gratuitement, sans dépendance au cloud." },
+    { "en": "Sync: access the same graph from a laptop and a phone by contributing to the Backer tier of Sync (beta).", "fr": "Synchroniser : accéder au même graphe depuis un ordinateur portable et un téléphone en contribuant au palier Backer de Sync (bêta)." }
+  ],
   "alternatives": [
     {
       "slug": "obsidian",
       "reason": {
         "en": "Direct competitor: local-first, markdown-based PKM tool with a similar plugin/graph ecosystem.",
-        "fr": null
+        "fr": "Concurrent direct : outil de gestion de connaissances personnelles local et en markdown, avec un écosystème de plugins et de graphe similaire."
       }
     },
     {
       "slug": "roam-research",
       "reason": {
         "en": "Pioneer of the networked-notes/knowledge-graph category that Logseq is modeled after.",
-        "fr": null
+        "fr": "Pionnier de la catégorie des notes en réseau et du graphe de connaissances dont Logseq s'inspire."
       }
     },
     {
       "slug": "notion",
       "reason": {
         "en": "General-purpose note and knowledge tool often compared for PKM workflows.",
-        "fr": null
+        "fr": "Outil de notes et de connaissances généraliste souvent comparé pour les flux de gestion de connaissances personnelles."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "The core knowledge graph app is fully free and open source, with cloud sync available for a small recurring contribution during beta.", "fr": "L'application de graphe de connaissances principale est entièrement gratuite et open source, avec la synchronisation cloud disponible pour une petite contribution récurrente pendant la bêta.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The outliner and bidirectional linking take some learning to use well, and Sync setup adds an extra step via Open Collective.", "fr": "L'outliner et les liens bidirectionnels demandent un peu d'apprentissage pour être bien utilisés, et la configuration de Sync ajoute une étape supplémentaire via Open Collective.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers local-first note-taking and knowledge graphing as promised across desktop and mobile platforms.", "fr": "Assure la prise de notes locale et le graphe de connaissances comme promis, sur ordinateur et mobile.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Solid knowledge graph and outliner, but Whiteboards and reliable multi-device sync require the paid Sync tiers, and Smart Merge is still experimental.", "fr": "Graphe de connaissances et outliner solides, mais les Whiteboards et la synchronisation multi-appareils fiable nécessitent les paliers Sync payants, et Smart Merge reste expérimental.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Local-first, open-source app storing notes as plain markdown files gives full data ownership and easy export.", "fr": "Application locale et open source qui stocke les notes en fichiers markdown simples, offrant une pleine propriété des données et un export facile.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Local knowledge graph", "fr": "Graphe de connaissances local" },
+    "shortDescription": { "en": "Logseq is a free, open-source local-first knowledge graph app with an outliner and optional cloud sync.", "fr": "Logseq est une application de graphe de connaissances gratuite, open source et locale, avec un outliner et une synchronisation cloud optionnelle." },
+    "longDescription": {
+      "en": "Logseq is a local-first, open-source personal knowledge management app built around a bidirectional-linking knowledge graph and outliner. Notes are stored as plain markdown files on the device, and an optional cloud Sync (currently in beta) adds multi-device access with experimental Smart Merge for simultaneous editing.\n\nThe core app is entirely free. Sync access during beta runs through a recurring Open Collective contribution: $5/month unlocks synced graphs (10 per account, 10GB each), $15/month adds Whiteboards. It fits a developer or technical solo worker who wants full control and portability of their notes rather than a cloud-locked app.",
+      "fr": "Logseq est une application de gestion de connaissances personnelles locale et open source, construite autour d'un graphe de connaissances à liens bidirectionnels et d'un outliner. Les notes sont stockées en fichiers markdown simples sur l'appareil, et une synchronisation cloud optionnelle (actuellement en bêta) ajoute l'accès multi-appareils avec un Smart Merge expérimental pour l'édition simultanée.\n\nL'application principale est entièrement gratuite. L'accès à Sync pendant la bêta passe par une contribution récurrente Open Collective : 5 $/mois débloque les graphes synchronisés (10 par compte, 10 Go chacun), 15 $/mois ajoute les Whiteboards. Elle convient à une développeuse ou une indépendante technique qui veut garder un contrôle total et la portabilité de ses notes plutôt qu'une application verrouillée dans le cloud."
+    },
+    "pros": [
+      { "en": "Core app is completely free, open source and local-first, with no lock-in.", "fr": "L'application principale est entièrement gratuite, open source et locale, sans dépendance imposée." },
+      { "en": "Notes stored as plain markdown files, making export and backup straightforward.", "fr": "Notes stockées en fichiers markdown simples, ce qui simplifie l'export et la sauvegarde." },
+      { "en": "Available across desktop, iOS and Android for the same knowledge graph.", "fr": "Disponible sur ordinateur, iOS et Android pour le même graphe de connaissances." }
+    ],
+    "cons": [
+      { "en": "Sync is still in beta and priced as an Open Collective contribution, not a stable commercial plan.", "fr": "Sync reste en bêta et est facturé comme une contribution Open Collective, pas un plan commercial stable." },
+      { "en": "Whiteboards are locked behind the higher Sponsor tier, and Smart Merge for multi-device editing is experimental.", "fr": "Les Whiteboards sont réservés au palier Sponsor supérieur, et Smart Merge pour l'édition multi-appareils reste expérimental." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a free, local-first knowledge graph you fully own, with optional paid sync for multi-device access.", "fr": "Tu veux un graphe de connaissances gratuit et local, entièrement à toi, avec une synchronisation payante optionnelle pour le multi-appareils." },
+      "avoidIf": { "en": "You need a stable, fully commercial cloud sync today rather than a beta contribution model.", "fr": "Tu as besoin dès aujourd'hui d'une synchronisation cloud stable et commerciale plutôt que d'un modèle de contribution en bêta." },
+      "threshold": { "en": "The core app costs nothing; budget $5 to $15/month only if multi-device Sync or Whiteboards matter to you.", "fr": "L'application principale ne coûte rien ; prévois 5 à 15 $/mois seulement si Sync multi-appareils ou les Whiteboards t'intéressent." },
+      "billingTraps": { "en": "Sync pricing is currently a recurring donation during beta and is expected to change to a standard subscription once Sync launches publicly.", "fr": "Le tarif de Sync est actuellement un don récurrent pendant la bêta et devrait changer pour un abonnement standard une fois Sync lancé publiquement." }
+    }
+  },
   "unknowns": [
     "Logseq's open-source license type (e.g. AGPL vs other) was not stated in the page consulted.",
     "Final commercial pricing for Sync once it exits beta is not yet published."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

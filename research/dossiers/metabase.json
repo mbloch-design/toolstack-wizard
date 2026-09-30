@@ -3,7 +3,7 @@
   "slug": "metabase",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Metabase",
     "vendor": "Metabase, Inc.",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.metabase.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Metabase pricing" },
-    { "id": "s2", "url": "https://www.metabase.com/product/", "tier": 1, "accessedOn": "2026-09-25", "title": "Metabase product" }
+    {
+      "id": "s1",
+      "url": "https://www.metabase.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Metabase pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.metabase.com/product/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Metabase product"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,89 +37,342 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Open source, self-hosted, unlimited users and dashboards" }, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Open source, self-hosted, unlimited users and dashboards",
+        "fr": "Open source, auto-heberge, utilisateurs et tableaux de bord illimites."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "open-source",
         "name": "Open Source",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Self-hosted only, unlimited users, dashboards and data sources" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Self-hosted only, unlimited users, dashboards and data sources",
+            "fr": "Auto-heberge uniquement, utilisateurs, tableaux de bord et sources de donnees illimites."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "starter",
         "name": "Starter",
         "unit": "seat",
         "minSeats": 5,
-        "price": { "monthly": 100, "annualPerMonth": 90, "oneTime": null },
+        "price": {
+          "monthly": 100,
+          "annualPerMonth": 90,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "First 5 users included, then $6/month per extra user ($65/year); 3-day email/Slack support" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "First 5 users included, then $6/month per extra user ($65/year); 3-day email/Slack support",
+            "fr": "Les 5 premiers utilisateurs inclus, puis 6 $/mois par utilisateur supplementaire (65 $/an) ; support email/Slack sous 3 jours."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 10,
-        "price": { "monthly": 575, "annualPerMonth": 517.5, "oneTime": null },
+        "price": {
+          "monthly": 575,
+          "annualPerMonth": 517.5,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "First 10 users included, then $12/month per extra user; adds row/column permissions, SSO, caching, white-label" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "First 10 users included, then $12/month per extra user; adds row/column permissions, SSO, caching, white-label",
+            "fr": "Les 10 premiers utilisateurs inclus, puis 12 $/mois par utilisateur supplementaire ; ajoute permissions par ligne/colonne, SSO, mise en cache, marque blanche."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Starts around $20,000/year; dedicated success engineer, 1-day support SLA, air-gap deployment" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Starts around $20,000/year; dedicated success engineer, 1-day support SLA, air-gap deployment",
+            "fr": "A partir d'environ 20 000 $/an ; ingenieur de reussite dedie, SLA de support sous 1 jour, deploiement en environnement isole (air-gap)."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "en": "AI usage: $3.75 per 1M tokens (1M included)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Transforms: $0.01/run after 1,000 included runs", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Storage: from $2 per 1M rows (1M rows free)", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "AI usage: $3.75 per 1M tokens (1M included)",
+        "fr": "Usage IA : 3,75 $ par million de jetons (1 million inclus)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Transforms: $0.01/run after 1,000 included runs",
+        "fr": "Transforms : 0,01 $ par execution au-dela de 1 000 executions incluses",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Storage: from $2 per 1M rows (1M rows free)",
+        "fr": "Stockage : a partir de 2 $ par million de lignes (1 million de lignes gratuites)",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "The open-source edition is fully free but self-hosted only; the cloud Starter/Pro plans price by seat and usage add-ons stack on top.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "The open-source edition is fully free but self-hosted only; the cloud Starter/Pro plans price by seat and usage add-ons stack on top.",
+        "fr": "L'edition open source est entierement gratuite mais uniquement auto-hebergee ; les plans cloud Starter/Pro sont factures au siege, et les extensions payantes a l'usage s'ajoutent par-dessus.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Visual query builder with joins, aggregations and 15+ built-in chart types", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Native SQL editor with templates and snippets for advanced users", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Interactive dashboards shareable by URL, plus scheduled email/Slack reports", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Row, table and dashboard-level permissions, query logs and audit trails; SOC 2 Type II compliant", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Visual query builder with joins, aggregations and 15+ built-in chart types",
+        "fr": "Constructeur de requetes visuel avec jointures, agregations et plus de 15 types de graphiques integres",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Native SQL editor with templates and snippets for advanced users",
+        "fr": "Editeur SQL natif avec modeles et extraits de code pour les utilisateurs avances",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Interactive dashboards shareable by URL, plus scheduled email/Slack reports",
+        "fr": "Tableaux de bord interactifs partageables par URL, plus des rapports programmes par email/Slack",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Row, table and dashboard-level permissions, query logs and audit trails; SOC 2 Type II compliant",
+        "fr": "Permissions au niveau ligne, table et tableau de bord, journaux de requetes et pistes d'audit ; conforme SOC 2 Type II",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Web-based only, no desktop or mobile apps", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Requires a database connection to be useful beyond CSV upload; the visual builder has limits for highly complex queries, where SQL is still needed", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Web-based only, no desktop or mobile apps",
+        "fr": "Uniquement web, pas d'application de bureau ni mobile",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Requires a database connection to be useful beyond CSV upload; the visual builder has limits for highly complex queries, where SQL is still needed",
+        "fr": "Necessite une connexion a une base de donnees pour etre utile au-dela de l'import CSV ; le constructeur visuel a des limites pour les requetes tres complexes, ou le SQL reste necessaire",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] }
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or admin lead in a small team who needs shared dashboards from the company's database without paying per-seat BI fees.",
+      "fr": "Une responsable ops ou admin dans une petite equipe qui a besoin de tableaux de bord partages depuis la base de l'entreprise sans payer des frais BI par siege."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Weekly reporting: build a dashboard with the visual query builder and schedule it to email the team every Monday.",
+      "fr": "Reporting hebdomadaire : construire un tableau de bord avec le constructeur visuel et le programmer pour l'envoyer par email a l'equipe chaque lundi."
+    },
+    {
+      "en": "Self-hosted analytics: run the free open-source edition on your own server to give the whole team unlimited dashboards at no license cost.",
+      "fr": "Analytique auto-hebergee : faire tourner l'edition open source gratuite sur son propre serveur pour donner a toute l'equipe des tableaux de bord illimites sans cout de licence."
+    }
+  ],
   "alternatives": [
-    { "slug": "looker-studio", "reason": { "en": "Both build BI dashboards from company data; Looker Studio is Google's free option while Metabase can be self-hosted for full control." } },
-    { "slug": "grafana", "reason": { "en": "Also open-source and self-hostable for dashboards, more oriented toward metrics/observability than business SQL analytics." } },
-    { "slug": "hex", "reason": { "en": "Competes for team data exploration and dashboards, with a stronger notebook/analytics-engineering angle." } }
+    {
+      "slug": "looker-studio",
+      "reason": {
+        "en": "Both build BI dashboards from company data; Looker Studio is Google's free option while Metabase can be self-hosted for full control.",
+        "fr": "Les deux construisent des tableaux de bord BI a partir des donnees de l'entreprise ; Looker Studio est l'option gratuite de Google alors que Metabase peut etre auto-heberge pour un controle total."
+      }
+    },
+    {
+      "slug": "grafana",
+      "reason": {
+        "en": "Also open-source and self-hostable for dashboards, more oriented toward metrics/observability than business SQL analytics.",
+        "fr": "Egalement open source et auto-hebergeable pour les tableaux de bord, plus oriente metriques/observabilite que l'analytique SQL metier."
+      }
+    },
+    {
+      "slug": "hex",
+      "reason": {
+        "en": "Competes for team data exploration and dashboards, with a stronger notebook/analytics-engineering angle.",
+        "fr": "Concurrent sur l'exploration de donnees et les tableaux de bord d'equipe, avec un angle plus notebook/ingenierie analytique."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The self-hosted open-source edition is fully free with unlimited users, dashboards and data sources, a real cost advantage over per-seat BI tools.",
+        "fr": "L'edition open source auto-hebergee est entierement gratuite, avec utilisateurs, tableaux de bord et sources de donnees illimites, un vrai avantage de cout face aux outils BI factures au siege.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The visual query builder with joins and aggregations lets non-SQL users produce a usable chart without writing code.",
+        "fr": "Le constructeur de requetes visuel avec jointures et agregations permet a des utilisateurs non-SQL de produire un graphique utilisable sans ecrire de code.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers interactive dashboards, a native SQL editor and scheduled email/Slack reports as advertised.",
+        "fr": "Tient la promesse des tableaux de bord interactifs, de l'editeur SQL natif et des rapports programmes par email/Slack.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Row/table/dashboard permissions, audit trails and SOC 2 compliance cover team-level BI, but the visual builder hits limits on highly complex queries where SQL is still needed.",
+        "fr": "Les permissions par ligne/table/tableau de bord, les pistes d'audit et la conformite SOC 2 couvrent la BI d'equipe, mais le constructeur visuel atteint ses limites sur des requetes tres complexes ou le SQL reste necessaire.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability out of Metabase are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilite des donnees hors de Metabase ne figurent pas dans les sources relevees.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "BI dashboards",
+      "fr": "Tableaux de bord BI"
+    },
+    "shortDescription": {
+      "en": "Business intelligence dashboards and SQL analytics, free and unlimited self-hosted, or from $100/month for 5 cloud seats.",
+      "fr": "Tableaux de bord de business intelligence et analytique SQL, gratuits et illimites en auto-heberge, ou a partir de 100 $/mois pour 5 sieges cloud."
+    },
+    "longDescription": {
+      "en": "Metabase builds dashboards and reports from company data with a visual query builder for non-SQL users and a native SQL editor for advanced ones, plus scheduled email/Slack reports and row/table-level permissions.\n\nThe open-source edition is entirely free with unlimited users and dashboards if you self-host it. The cloud Starter plan costs $100/month for the first 5 users, then $6/user/month, with usage add-ons for AI, transforms and storage stacking on top. It suits a small ops team that wants shared dashboards without per-seat BI pricing.",
+      "fr": "Metabase construit des tableaux de bord et rapports a partir des donnees de l'entreprise avec un constructeur de requetes visuel pour les non-SQL et un editeur SQL natif pour les avances, plus des rapports programmes par email/Slack et des permissions par ligne/table.\n\nL'edition open source est entierement gratuite avec utilisateurs et tableaux de bord illimites en auto-hebergement. Le plan cloud Starter coute 100 $/mois pour les 5 premiers utilisateurs, puis 6 $/utilisateur/mois, avec des extensions a l'usage pour l'IA, les transformations et le stockage qui s'ajoutent. Il convient a une petite equipe ops qui veut des tableaux de bord partages sans tarification BI au siege."
+    },
+    "pros": [
+      {
+        "en": "Self-hosted open-source edition is fully free with no user or dashboard limit.",
+        "fr": "L'edition open source auto-hebergee est entierement gratuite, sans limite d'utilisateurs ni de tableaux de bord."
+      },
+      {
+        "en": "Covers both a visual query builder for non-SQL users and a native SQL editor for advanced ones.",
+        "fr": "Couvre a la fois un constructeur visuel pour les non-SQL et un editeur SQL natif pour les avances."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Web-based only, no desktop or mobile app.",
+        "fr": "Uniquement web, pas d'application de bureau ni mobile."
+      },
+      {
+        "en": "Cloud usage add-ons for AI, transforms and storage stack on top of the seat price.",
+        "fr": "Les extensions a l'usage pour l'IA, les transformations et le stockage s'ajoutent au prix par siege."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want shared BI dashboards and can either self-host for free or pay per seat on the cloud plan.",
+        "fr": "Tu veux des tableaux de bord BI partages et tu peux soit t'auto-heberger gratuitement, soit payer au siege sur le plan cloud."
+      },
+      "avoidIf": {
+        "en": "You need a native desktop or mobile app, which Metabase does not offer.",
+        "fr": "Tu as besoin d'une application de bureau ou mobile native, ce que Metabase ne propose pas."
+      },
+      "threshold": {
+        "en": "Worth the cloud Starter plan at $1,080/year (annual, for the first 5 users) once self-hosting maintenance costs more time than that.",
+        "fr": "Le plan cloud Starter a 1 080 $/an (facturation annuelle, pour les 5 premiers utilisateurs) devient rentable des que la maintenance de l'auto-heberge coute plus de temps que cela."
+      }
+    }
+  },
   "unknowns": [
     "Mobile app availability not confirmed on official pages seen",
     "Exact list of supported data source connectors (count of '20+ data sources') not itemized"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-25"
 }

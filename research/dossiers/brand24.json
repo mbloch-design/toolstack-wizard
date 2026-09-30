@@ -3,7 +3,8 @@
   "slug": "brand24",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Brand24",
     "vendor": "Brand24 S.A.",
@@ -35,7 +36,7 @@
         "price": { "monthly": 249, "annualPerMonth": 199, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "3 keywords tracked, up to 2,000 mentions per month.", "fr": null }
+          { "en": "3 keywords tracked, up to 2,000 mentions per month.", "fr": "3 mots-clés suivis, jusqu'à 2 000 mentions par mois.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 349, "annualPerMonth": 299, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "7 keywords tracked, up to 10,000 mentions per month.", "fr": null }
+          { "en": "7 keywords tracked, up to 10,000 mentions per month.", "fr": "7 mots-clés suivis, jusqu'à 10 000 mentions par mois.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": 499, "annualPerMonth": 399, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "12 keywords, up to 40,000 mentions/month, real-time updates, AI Events Detection, AI Brand Assistant.", "fr": null }
+          { "en": "12 keywords, up to 40,000 mentions/month, real-time updates, AI Events Detection, AI Brand Assistant.", "fr": "12 mots-clés, jusqu'à 40 000 mentions/mois, mises à jour en temps réel, AI Events Detection, AI Brand Assistant.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -71,7 +72,7 @@
         "price": { "monthly": 699, "annualPerMonth": 599, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "25 keywords, up to 100,000 mentions/month, unlimited AI Topics, advanced reports.", "fr": null }
+          { "en": "25 keywords, up to 100,000 mentions/month, unlimited AI Topics, advanced reports.", "fr": "25 mots-clés, jusqu'à 100 000 mentions/mois, AI Topics illimités, rapports avancés.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -83,7 +84,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Custom keywords and mentions volume, AI Visibility module, dedicated consulting.", "fr": null }
+          { "en": "Custom keywords and mentions volume, AI Visibility module, dedicated consulting.", "fr": "Volume de mots-clés et de mentions sur mesure, module AI Visibility, accompagnement dédié.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       }
@@ -91,34 +92,87 @@
     "comparePlanKey": "individual",
     "addOns": [],
     "cautions": [
-      { "en": "Pricing is driven by a low, fixed number of tracked keywords per tier (3 on the entry plan); a business tracking more than 3 brand terms must jump tiers.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "No automatic overage charges are billed if the mention volume is exceeded, per the vendor's own statement, but the practical effect on data completeness in that case is not detailed.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Pricing is driven by a low, fixed number of tracked keywords per tier (3 on the entry plan); a business tracking more than 3 brand terms must jump tiers.", "fr": "La tarification repose sur un nombre fixe et bas de mots-clés suivis par palier (3 sur le plan d'entrée) ; une entreprise suivant plus de 3 termes de marque doit changer de palier.", "sourceIds": ["s1"] },
+      { "en": "No automatic overage charges are billed if the mention volume is exceeded, per the vendor's own statement, but the practical effect on data completeness in that case is not detailed.", "fr": "Aucun frais de dépassement automatique n'est facturé si le volume de mentions est dépassé, selon l'éditeur, mais l'effet pratique sur la complétude des données dans ce cas n'est pas détaillé.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Real-time brand and keyword monitoring across social media (Facebook, Instagram, X, TikTok, LinkedIn, Reddit, YouTube), news, blogs, forums and reviews.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Sentiment analysis and engagement tracking on collected mentions.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI Brand Assistant and AI Events Detection on Pro tier and above.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Daily and weekly automated reports, with custom branded reports on higher tiers.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Real-time brand and keyword monitoring across social media (Facebook, Instagram, X, TikTok, LinkedIn, Reddit, YouTube), news, blogs, forums and reviews.", "fr": "Veille de marque et de mots-clés en temps réel sur les réseaux sociaux (Facebook, Instagram, X, TikTok, LinkedIn, Reddit, YouTube), la presse, les blogs, forums et avis.", "sourceIds": ["s1"] },
+      { "en": "Sentiment analysis and engagement tracking on collected mentions.", "fr": "Analyse de sentiment et suivi de l'engagement sur les mentions collectées.", "sourceIds": ["s1"] },
+      { "en": "AI Brand Assistant and AI Events Detection on Pro tier and above.", "fr": "AI Brand Assistant et AI Events Detection à partir du palier Pro.", "sourceIds": ["s1"] },
+      { "en": "Daily and weekly automated reports, with custom branded reports on higher tiers.", "fr": "Rapports automatisés quotidiens et hebdomadaires, avec rapports personnalisés à la marque sur les paliers supérieurs.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Entry-level Individual plan is capped at only 3 tracked keywords and 2,000 mentions/month, restrictive for multi-brand or multi-product tracking.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Real-time updates, AI features and advanced reports are gated behind the Pro tier and above ($499+/month), not available on entry plans.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Entry-level Individual plan is capped at only 3 tracked keywords and 2,000 mentions/month, restrictive for multi-brand or multi-product tracking.", "fr": "Le plan d'entrée Individual est plafonné à seulement 3 mots-clés suivis et 2 000 mentions/mois, restrictif pour suivre plusieurs marques ou produits.", "sourceIds": ["s1"] },
+      { "en": "Real-time updates, AI features and advanced reports are gated behind the Pro tier and above ($499+/month), not available on entry plans.", "fr": "Les mises à jour en temps réel, les fonctions IA et les rapports avancés sont réservés au palier Pro et au-dessus (499$+/mois), non disponibles sur les plans d'entrée.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or marketing lead of a small business who needs to track brand mentions and sentiment across social media and the web.",
+      "fr": "Une responsable ops ou marketing d'une petite entreprise qui doit suivre les mentions de marque et le sentiment sur les réseaux sociaux et le web."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Reputation tracking: monitor 3 brand keywords across social media, news and forums to catch negative mentions early.", "fr": "Suivi de réputation : surveille 3 mots-clés de marque sur les réseaux sociaux, la presse et les forums pour repérer les mentions négatives tôt." },
+    { "en": "Campaign monitoring: track sentiment and engagement on mentions during a product launch instead of checking each platform manually.", "fr": "Suivi de campagne : suis le sentiment et l'engagement des mentions pendant un lancement de produit plutôt que de vérifier chaque plateforme à la main." }
+  ],
   "alternatives": [
-    { "slug": "hotjar", "reason": { "en": "Adjacent analytics tool but not a direct social-listening competitor; listed among catalogue candidates.", "fr": null } },
-    { "slug": "similarweb", "reason": { "en": "Competitive/market intelligence tool with some brand-monitoring overlap.", "fr": null } },
-    { "slug": "semrush", "reason": { "en": "Includes brand/social monitoring features as part of a broader marketing suite.", "fr": null } }
+    { "slug": "similarweb", "reason": { "en": "Competitive and market intelligence tool with some brand-monitoring overlap.", "fr": "Outil de veille concurrentielle et de marché avec un certain recoupement sur la surveillance de marque." } },
+    { "slug": "semrush", "reason": { "en": "Includes brand and social monitoring features as part of a broader marketing suite.", "fr": "Inclut des fonctions de veille de marque et sociale au sein d'une suite marketing plus large." } }
   ],
   "missingAlternatives": [
     { "name": "Mention", "officialUrl": "https://mention.com/", "reason": "Direct, well-known competitor for social listening and brand monitoring, not present in the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The entry Individual plan costs $199 to $249/month for only 3 tracked keywords and 2,000 mentions/month, a high price for a solo user or very small brand.", "fr": "Le plan d'entrée Individual coûte de 199$ à 249$/mois pour seulement 3 mots-clés suivis et 2 000 mentions/mois, un prix élevé pour un utilisateur solo ou une toute petite marque.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: setup time to configure keyword tracking and get first results is not covered by the collected sources.", "fr": "Note neutre : le temps de configuration du suivi de mots-clés pour obtenir un premier résultat ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised real-time monitoring, sentiment analysis and automated reports across the listed sources.", "fr": "Tient sa promesse de veille en temps réel, d'analyse de sentiment et de rapports automatisés sur les sources listées.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers social media, news, blogs, forums and reviews with sentiment analysis and AI features, a broad monitoring scope once on the Pro tier and above.", "fr": "Couvre réseaux sociaux, presse, blogs, forums et avis avec analyse de sentiment et fonctions IA, un périmètre de veille large à partir du palier Pro.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or portability of tracked mentions and reports is not covered by the collected sources.", "fr": "Note neutre : l'export ou la portabilité des mentions suivies et des rapports ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Brand monitoring", "fr": "Veille de marque" },
+    "shortDescription": {
+      "en": "Real-time brand and keyword monitoring across social media, news and forums, with sentiment analysis.",
+      "fr": "Veille de marque et de mots-clés en temps réel sur les réseaux sociaux, la presse et les forums, avec analyse de sentiment."
+    },
+    "longDescription": {
+      "en": "Brand24 tracks keywords and brand mentions in real time across social media, news, blogs, forums and reviews, with sentiment analysis and engagement tracking on what it collects. Pro and above add an AI Brand Assistant and AI Events Detection for spotting spikes in mentions automatically.\n\nThe entry Individual plan costs $199/month billed annually (or $249 monthly) for just 3 tracked keywords and 2,000 mentions a month, which suits watching a single brand name closely rather than several products or competitors. Real-time updates and AI features only unlock from Pro ($399/month annually) upward, so a small operation tracking more than a couple of terms will move up tiers quickly.",
+      "fr": "Brand24 suit des mots-clés et des mentions de marque en temps réel sur les réseaux sociaux, la presse, les blogs, forums et avis, avec analyse de sentiment et suivi de l'engagement. Pro et au-dessus ajoutent un AI Brand Assistant et l'AI Events Detection pour repérer automatiquement les pics de mentions.\n\nLe plan d'entrée Individual coûte 199$/mois en facturation annuelle (ou 249$ en mensuel) pour seulement 3 mots-clés suivis et 2 000 mentions par mois, adapté pour surveiller de près une seule marque. Les mises à jour en temps réel et les fonctions IA ne se débloquent qu'à partir de Pro (399$/mois en annuel)."
+    },
+    "pros": [
+      { "en": "Covers a wide range of sources in one place: social media, news, blogs, forums and reviews.", "fr": "Couvre un large éventail de sources en un seul endroit : réseaux sociaux, presse, blogs, forums et avis." },
+      { "en": "Automated daily and weekly reports remove the need to compile mentions manually.", "fr": "Les rapports automatisés quotidiens et hebdomadaires évitent de compiler les mentions à la main." }
+    ],
+    "cons": [
+      { "en": "Entry plan tracks only 3 keywords, a hard limit for anyone monitoring more than one brand or product name.", "fr": "Le plan d'entrée ne suit que 3 mots-clés, une limite dure pour qui surveille plus d'un nom de marque ou de produit." },
+      { "en": "Real-time updates and AI features require the Pro tier at $399/month billed annually, not available on cheaper plans.", "fr": "Les mises à jour en temps réel et les fonctions IA demandent le palier Pro à 399$/mois en facturation annuelle, non disponibles sur les plans moins chers." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need to closely track a small number of brand keywords across many source types in one dashboard.", "fr": "Tu dois suivre de près un petit nombre de mots-clés de marque sur de nombreux types de sources dans un seul tableau de bord." },
+      "avoidIf": { "en": "You need to track more than 3 keywords or want real-time updates without paying for the Pro tier.", "fr": "Tu dois suivre plus de 3 mots-clés ou veux des mises à jour en temps réel sans payer le palier Pro." },
+      "threshold": { "en": "Individual costs $2,388/year at $199/month billed annually for 3 keywords, the point at which the cost per tracked keyword becomes clear.", "fr": "Individual coûte 2 388$/an à 199$/mois en facturation annuelle pour 3 mots-clés, le seuil qui rend visible le coût par mot-clé suivi." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "Exact currency/region shown may vary (page defaults to USD); no EUR pricing was captured for this fetch."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

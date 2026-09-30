@@ -3,7 +3,8 @@
   "slug": "linear",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Linear",
     "vendor": "Linear Orbit, Inc.",
@@ -15,8 +16,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://linear.app/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Linear pricing" },
-    { "id": "s2", "url": "https://linear.app/features", "tier": 1, "accessedOn": "2026-09-25", "title": "Linear features" }
+    {
+      "id": "s1",
+      "url": "https://linear.app/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Linear pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://linear.app/features",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Linear features"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,7 +38,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "Unlimited members, 2 teams, 250 issues, 10MB file upload", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "Unlimited members, 2 teams, 250 issues, 10MB file upload",
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,72 +52,325 @@
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited members, 2 teams, 250 issues total, 10MB file uploads.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited members, 2 teams, 250 issues total, 10MB file uploads.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "basic",
         "name": "Basic",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 10, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 10,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Billed annually only at this rate; 5 teams, unlimited issues and file uploads.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Billed annually only at this rate; 5 teams, unlimited issues and file uploads.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 16, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 16,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Billed annually only at this rate; unlimited teams and guests, Triage Intelligence, Loops, Code Intelligence, Insights.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Billed annually only at this rate; unlimited teams and guests, Triage Intelligence, Loops, Code Intelligence, Insights.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom pricing, annual billing only.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Custom pricing, annual billing only.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [],
     "cautions": [
-      { "en": "Basic and Business list prices are annual-billing rates only; no monthly-billing price is published on the pricing page.", "fr": "Les prix Basic et Business affichés sont des tarifs à l'engagement annuel uniquement ; aucun tarif mensuel n'est publié.", "sourceIds": ["s1"] }
+      {
+        "en": "Basic and Business list prices are annual-billing rates only; no monthly-billing price is published on the pricing page.",
+        "fr": "Les prix Basic et Business affichés sont des tarifs à l'engagement annuel uniquement ; aucun tarif mensuel n'est publié.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Issue tracking with cycles and project/initiative planning for product and engineering teams.", "sourceIds": ["s2"] },
-      { "en": "AI-powered workflows and agents to help move issues and product work forward.", "sourceIds": ["s2"] },
-      { "en": "Built-in analytics and insights for any stream of work.", "sourceIds": ["s2"] },
-      { "en": "Customer request and workplace request (Linear Asks) intake that converts into actionable issues.", "sourceIds": ["s2"] }
+      {
+        "en": "Issue tracking with cycles and project/initiative planning for product and engineering teams.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Suivi des tickets avec cycles, et planification des projets et initiatives pour les équipes produit et développement."
+      },
+      {
+        "en": "AI-powered workflows and agents to help move issues and product work forward.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Workflows et agents IA pour faire avancer les tickets et le travail produit."
+      },
+      {
+        "en": "Built-in analytics and insights for any stream of work.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Analyses et indicateurs intégrés pour n'importe quel flux de travail."
+      },
+      {
+        "en": "Customer request and workplace request (Linear Asks) intake that converts into actionable issues.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Collecte des demandes clients et internes (Linear Asks), transformées en tickets exploitables."
+      }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 250 total issues and 2 teams, tight for any active engineering team.", "sourceIds": ["s1"] },
-      { "en": "Discounted per-seat pricing (Basic, Business) is only available with annual billing.", "sourceIds": ["s1"] },
-      { "en": "Advanced features (Triage Intelligence, Loops, Code Intelligence, Insights, guests) require the Business tier.", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan is capped at 250 total issues and 2 teams, tight for any active engineering team.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le plan gratuit est limité à 250 tickets au total et 2 équipes, juste pour une équipe de développement active."
+      },
+      {
+        "en": "Discounted per-seat pricing (Basic, Business) is only available with annual billing.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les prix par siège réduits (Basic, Business) ne s'obtiennent qu'en facturation annuelle."
+      },
+      {
+        "en": "Advanced features (Triage Intelligence, Loops, Code Intelligence, Insights, guests) require the Business tier.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les fonctions avancées (Triage Intelligence, Loops, Code Intelligence, Insights, invités) demandent la formule Business."
+      }
     ],
     "integrations": [
-      { "name": "GitHub", "slug": "github", "sourceIds": ["s2"] },
-      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] }
+      {
+        "name": "GitHub",
+        "slug": "github",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web", "mac", "windows", "ios", "android"]
+    "platforms": [
+      "web",
+      "mac",
+      "windows",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer or small product/engineering team that has outgrown the Free plan's 250-issue cap and wants cycles, planning and AI-assisted triage.",
+      "fr": "Un développeur ou une petite équipe produit/ingénierie qui a dépassé le plafond de 250 tickets du plan Free et veut cycles, planification et triage assisté par IA."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Track engineering work in cycles and projects, moving beyond the Free plan's 250-issue cap once a team grows.",
+      "fr": "Suivre le travail d'ingénierie en cycles et en projets, au-delà du plafond de 250 tickets du plan Free une fois l'équipe agrandie."
+    },
+    {
+      "en": "Let customers or teammates submit requests through Linear Asks and have them converted directly into actionable issues.",
+      "fr": "Laisser les clients ou les collègues soumettre des demandes via Linear Asks et les convertir directement en tickets actionnables."
+    }
+  ],
   "alternatives": [
-    { "slug": "jira", "reason": { "en": "Direct competitor: both are issue tracking and product development tools for engineering teams." } },
-    { "slug": "notion", "reason": { "en": "Overlapping use case for planning and tracking work, though Notion is broader in scope." } },
-    { "slug": "asana", "reason": { "en": "Alternative project/issue tracking tool aimed at product and team workflows." } }
+    {
+      "slug": "jira",
+      "reason": {
+        "en": "Direct competitor: both are issue tracking and product development tools for engineering teams.",
+        "fr": "Concurrent direct : les deux sont des outils de suivi de tickets et de développement produit pour équipes d'ingénierie."
+      }
+    },
+    {
+      "slug": "notion",
+      "reason": {
+        "en": "Overlapping use case for planning and tracking work, though Notion is broader in scope.",
+        "fr": "Cas d'usage qui se chevauche pour planifier et suivre le travail, bien que Notion soit plus large dans sa portée."
+      }
+    },
+    {
+      "slug": "asana",
+      "reason": {
+        "en": "Alternative project/issue tracking tool aimed at product and team workflows.",
+        "fr": "Outil alternatif de suivi de projets et de tickets orienté vers les flux de travail produit et équipe."
+      }
+    }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Basic runs $10/seat/month billed annually for unlimited issues and file uploads across 5 teams, reasonable for a small team outgrowing the Free plan's 250-issue cap.",
+        "fr": "Basic coûte 10 $/siège/mois en facturation annuelle pour des tickets et fichiers illimités sur 5 équipes, raisonnable pour une petite équipe qui dépasse le plafond de 250 tickets du plan Free.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers issue tracking with cycles, project/initiative planning, built-in analytics, and customer/workplace request intake (Linear Asks) that converts into actionable issues, as advertised.",
+        "fr": "Fournit le suivi de tickets avec cycles, planification de projets/initiatives, analyses intégrées, et la prise en charge de demandes clients/internes (Linear Asks) convertie en tickets actionnables, comme annoncé.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Business tier adds Triage Intelligence, Loops, Code Intelligence and Insights on top of core issue tracking, extending well past a basic ticket tracker.",
+        "fr": "Le palier Business ajoute Triage Intelligence, Loops, Code Intelligence et Insights au-dessus du suivi de tickets de base, allant bien au-delà d'un simple outil de tickets.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export or portability of issues and history if leaving Linear is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des tickets et de l'historique en cas de départ de Linear ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Issue tracking",
+      "fr": "Suivi de tickets"
+    },
+    "shortDescription": {
+      "en": "Issue tracking and project planning for product and engineering teams, with cycles, AI workflows and a free plan capped at 250 issues.",
+      "fr": "Suivi de tickets et planification de projets pour équipes produit et ingénierie, avec cycles, flux IA et un plan gratuit limité à 250 tickets."
+    },
+    "longDescription": {
+      "en": "Linear tracks issues in cycles and projects for product and engineering teams, with AI-powered workflows and agents, built-in analytics, and Linear Asks, a customer or workplace request intake that converts into actionable issues.\n\nThe Free plan covers unlimited members but caps out at 2 teams and 250 total issues. Basic removes that cap at $10/seat/month (annual billing only), and Business at $16/seat/month adds Triage Intelligence, Loops, Code Intelligence and Insights, plus unlimited teams and guests. Both paid tiers publish annual-only pricing, with no monthly-billing option listed. It suits a small engineering or product team ready to move past a basic ticket tracker.",
+      "fr": "Linear suit les tickets en cycles et en projets pour les équipes produit et ingénierie, avec des flux de travail et agents alimentés par IA, des analyses intégrées, et Linear Asks, une prise en charge des demandes clients ou internes qui se convertissent en tickets actionnables.\n\nLe plan Free couvre des membres illimités mais plafonne à 2 équipes et 250 tickets au total. Basic supprime ce plafond à 10 $/siège/mois (facturation annuelle uniquement), et Business à 16 $/siège/mois ajoute Triage Intelligence, Loops, Code Intelligence et Insights, plus équipes et invités illimités. Les deux paliers payants n'affichent qu'un tarif annuel, sans option mensuelle. Il convient à une petite équipe produit ou ingénierie prête à dépasser un simple outil de tickets."
+    },
+    "pros": [
+      {
+        "en": "Basic plan removes the Free plan's 250-issue cap for a modest $10/seat/month (annual).",
+        "fr": "Le plan Basic supprime le plafond de 250 tickets du plan Free pour un modeste 10 $/siège/mois (annuel)."
+      },
+      {
+        "en": "Business tier adds AI-assisted triage, code intelligence and analytics beyond core issue tracking.",
+        "fr": "Le palier Business ajoute un triage assisté par IA, de l'intelligence de code et des analyses au-delà du suivi de tickets de base."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan is capped at 250 total issues and 2 teams, tight for an active team.",
+        "fr": "Le plan Free est plafonné à 250 tickets au total et 2 équipes, serré pour une équipe active."
+      },
+      {
+        "en": "Discounted per-seat pricing is only available with annual billing; no monthly rate is published.",
+        "fr": "Le tarif réduit par siège n'est disponible qu'en facturation annuelle ; aucun tarif mensuel n'est publié."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your team has outgrown the Free plan's 250-issue cap and wants cycles, planning and AI-assisted triage in one tool.",
+        "fr": "Ton équipe a dépassé le plafond de 250 tickets du plan Free et veut cycles, planification et triage assisté par IA dans un seul outil."
+      },
+      "avoidIf": {
+        "en": "You need monthly billing flexibility; both paid tiers publish annual-only rates.",
+        "fr": "Tu as besoin d'une facturation mensuelle flexible ; les deux paliers payants n'affichent que des tarifs annuels."
+      },
+      "threshold": {
+        "en": "At $10/seat/month billed annually (about $120/seat/year), Basic is worth it once a team's issue count regularly exceeds the Free plan's 250-issue limit.",
+        "fr": "À 10 $/siège/mois en facturation annuelle (environ 120 $/siège/an), Basic devient rentable dès que le nombre de tickets d'une équipe dépasse régulièrement la limite de 250 du plan Free."
+      },
+      "billingTraps": {
+        "en": "Basic and Business list prices are annual-billing rates only; there's no published monthly-billing option, so committing means a yearly contract per seat.",
+        "fr": "Les prix affichés de Basic et Business sont des tarifs en facturation annuelle uniquement ; aucune option mensuelle n'est publiée, donc s'engager implique un contrat annuel par siège."
+      }
+    }
+  },
   "unknowns": [
     "Whether Basic/Business plans offer any monthly-billing option at a higher price was not stated on the pricing page as fetched.",
     "Exact list of native integrations beyond GitHub and Slack was not detailed on the features page as fetched."

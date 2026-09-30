@@ -3,7 +3,7 @@
   "slug": "affinity-photo",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Affinity Photo",
     "vendor": "Canva (Serif Ltd.)",
@@ -33,7 +33,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "All core photo editing tools free with a Canva account; AI tools require a Canva premium plan"
+        "en": "All core photo editing tools free with a Canva account; AI tools require a Canva premium plan",
+        "fr": "Tous les outils d'edition photo essentiels gratuits avec un compte Canva ; les outils IA demandent un plan Canva payant."
       },
       "sourceIds": [
         "s1"
@@ -54,7 +55,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Full core editing app free; AI features (Generative Fill/Expand, Smart Selections, Colorize, Super Resolve) gated behind Canva premium"
+            "en": "Full core editing app free; AI features (Generative Fill/Expand, Smart Selections, Colorize, Super Resolve) gated behind Canva premium",
+            "fr": "Application d'edition principale entierement gratuite ; les fonctions IA (Remplissage/Extension generative, Selections intelligentes, Colorisation, Super Resolve) sont reservees au Canva payant."
           }
         ],
         "sourceIds": [
@@ -66,7 +68,7 @@
     "addOns": [
       {
         "en": "Canva premium subscription unlocks AI Studio tools inside Affinity Photo (price shared with Canva's own plans, not itemized on this page)",
-        "fr": null,
+        "fr": "L'abonnement Canva payant debloque les outils AI Studio dans Affinity Photo (prix partage avec les plans Canva eux-memes, non detaille sur cette page).",
         "sourceIds": [
           "s1"
         ]
@@ -75,7 +77,7 @@
     "cautions": [
       {
         "en": "The app itself is entirely free since the 2024 Canva acquisition; only advanced AI features require a separate Canva premium subscription, whose price is not shown on the Affinity page itself.",
-        "fr": null,
+        "fr": "L'application elle-meme est entierement gratuite depuis le rachat par Canva en 2024 ; seules les fonctions IA avancees demandent un abonnement Canva payant a part, dont le prix n'est pas affiche sur la page Affinity elle-meme.",
         "sourceIds": [
           "s1"
         ]
@@ -86,28 +88,28 @@
     "capabilities": [
       {
         "en": "Non-destructive, reversible editing with layer-based compositing (unlimited raster, vector and text layers)",
-        "fr": null,
+        "fr": "Edition non destructive et reversible avec compositing par calques (calques raster, vectoriels et texte illimites)",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "RAW development with lens correction and noise reduction, plus HDR Merge, Focus Merge and astrophotography stacking",
-        "fr": null,
+        "fr": "Developpement RAW avec correction d'objectif et reduction de bruit, plus fusion HDR, fusion de mise au point et empilement d'astrophotographie",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Advanced retouching (frequency separation, liquify), refine-edge selections and 30+ blend modes",
-        "fr": null,
+        "fr": "Retouche avancee (separation de frequences, liquify), selections par affinement des contours et plus de 30 modes de fusion",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Batch processing and macro automation, high-bit-depth workflow with ICC profile support",
-        "fr": null,
+        "fr": "Traitement par lot et automatisation par macros, flux de travail en haute profondeur de bits avec prise en charge des profils ICC",
         "sourceIds": [
           "s1"
         ]
@@ -116,21 +118,21 @@
     "limitations": [
       {
         "en": "PSD import can flatten smart objects and advanced Photoshop filters",
-        "fr": null,
+        "fr": "L'import PSD peut aplatir les objets dynamiques et les filtres Photoshop avances",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Exporting to Photoshop does not preserve editability; must save as PDF or PNG instead",
-        "fr": null,
+        "fr": "L'export vers Photoshop ne conserve pas la modifiabilite ; il faut enregistrer en PDF ou PNG a la place",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "AI tools (Generative Fill/Expand, Super Resolve, etc.) require a paid Canva premium account",
-        "fr": null,
+        "fr": "Les outils IA (Remplissage/Extension generative, Super Resolve, etc.) demandent un compte Canva payant",
         "sourceIds": [
           "s1"
         ]
@@ -150,34 +152,149 @@
       "windows"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer or photographer who needs professional-grade, non-destructive photo editing without paying a recurring subscription.",
+      "fr": "Une designer ou photographe qui a besoin d'une edition photo non destructive de niveau professionnel sans payer d'abonnement recurrent."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "RAW photo retouching: develop a RAW file with lens correction and noise reduction, then retouch with frequency separation, all for free.",
+      "fr": "Retouche de photo RAW : developper un fichier RAW avec correction d'objectif et reduction de bruit, puis retoucher par separation de frequences, le tout gratuitement."
+    },
+    {
+      "en": "Batch client delivery: apply a macro to batch-process a client's full photo set instead of editing each image by hand.",
+      "fr": "Livraison client par lot : appliquer une macro pour traiter par lot l'ensemble des photos d'un client au lieu d'editer chaque image a la main."
+    }
+  ],
   "alternatives": [
     {
       "slug": "adobe-photoshop",
       "reason": {
-        "en": "The main paid subscription alternative for professional raster photo editing."
+        "en": "The main paid subscription alternative for professional raster photo editing.",
+        "fr": "La principale alternative par abonnement payant pour l'edition photo raster professionnelle."
       }
     },
     {
       "slug": "adobe-lightroom",
       "reason": {
-        "en": "Competes for RAW development and photo cataloguing workflows."
+        "en": "Competes for RAW development and photo cataloguing workflows.",
+        "fr": "Concurrent sur les flux de developpement RAW et de catalogage photo."
       }
     },
     {
       "slug": "capture-one",
       "reason": {
-        "en": "Premium RAW editing and color-grading alternative aimed at professional photographers."
+        "en": "Premium RAW editing and color-grading alternative aimed at professional photographers.",
+        "fr": "Alternative premium pour le developpement RAW et l'etalonnage couleur, visant les photographes professionnels."
       }
     }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The full core editing app, including RAW development, HDR Merge, frequency separation and batch macros, is entirely free since the 2024 Canva acquisition, with only extra AI tools gated behind Canva premium.",
+        "fr": "L'application d'edition principale complete, developpement RAW, fusion HDR, separation de frequences et macros par lot inclus, est entierement gratuite depuis le rachat par Canva en 2024, seuls les outils IA supplementaires etant reserves au Canva payant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The feature set (frequency separation, liquify, batch macros, ICC profile workflow) targets skilled photo editors, not a result in under an hour without training.",
+        "fr": "L'ensemble de fonctions (separation de frequences, liquify, macros par lot, flux ICC) vise des editeurs photo entraines, pas un resultat en moins d'une heure sans formation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers layer-based non-destructive editing, RAW development and advanced retouching as described, matching what it promises.",
+        "fr": "Fournit une edition non destructive par calques, un developpement RAW et une retouche avancee comme decrit, conforme a ce qui est promis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "RAW development, HDR/Focus Merge, astrophotography stacking, frequency separation and 30+ blend modes cover professional-level photo editing, though the AI tools stay gated behind a separate Canva plan.",
+        "fr": "Developpement RAW, fusion HDR/mise au point, empilement d'astrophotographie, separation de frequences et plus de 30 modes de fusion couvrent une edition photo de niveau professionnel, meme si les outils IA restent reserves a un plan Canva a part.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Exporting to Photoshop does not preserve editability, forcing a save as PDF or PNG instead, a real limit on moving work to another tool.",
+        "fr": "L'export vers Photoshop ne conserve pas la modifiabilite, ce qui force un enregistrement en PDF ou PNG, une vraie limite pour deplacer le travail vers un autre outil.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Photo editor",
+      "fr": "Editeur photo"
+    },
+    "shortDescription": {
+      "en": "Professional, non-destructive photo editor with RAW development and layers, entirely free since Canva's 2024 acquisition.",
+      "fr": "Editeur photo professionnel non destructif avec developpement RAW et calques, entierement gratuit depuis le rachat par Canva en 2024."
+    },
+    "longDescription": {
+      "en": "Affinity Photo is a layer-based, non-destructive photo editor with RAW development, HDR and focus merging, astrophotography stacking, frequency-separation retouching and batch macro automation, built for professional workflows with ICC profile support.\n\nSince Canva's 2024 acquisition, the full core app is free with a Canva account; only extra AI tools (Generative Fill/Expand, Super Resolve) require a paid Canva plan whose price isn't shown on the Affinity page itself. It fits a designer or photographer who wants professional retouching without a subscription, though PSD round-tripping with Photoshop has real limits.",
+      "fr": "Affinity Photo est un editeur photo non destructif par calques avec developpement RAW, fusion HDR et de mise au point, empilement d'astrophotographie, retouche par separation de frequences et automatisation par macros par lot, concu pour des flux professionnels avec prise en charge des profils ICC.\n\nDepuis le rachat par Canva en 2024, l'application complete est gratuite avec un compte Canva ; seuls les outils IA supplementaires (Remplissage/Extension generative, Super Resolve) demandent un plan Canva payant dont le prix n'est pas affiche sur la page Affinity elle-meme. Il convient a une designer ou photographe qui veut une retouche professionnelle sans abonnement, meme si l'aller-retour PSD avec Photoshop a de vraies limites."
+    },
+    "pros": [
+      {
+        "en": "The full professional editing app, RAW development included, is entirely free.",
+        "fr": "L'application d'edition professionnelle complete, developpement RAW inclus, est entierement gratuite."
+      },
+      {
+        "en": "Batch macros and ICC profile support suit a real client-delivery workflow.",
+        "fr": "Les macros par lot et la prise en charge des profils ICC conviennent a un vrai flux de livraison client."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Exporting to Photoshop does not preserve editability; must save as PDF or PNG instead.",
+        "fr": "L'export vers Photoshop ne conserve pas la modifiabilite ; il faut enregistrer en PDF ou PNG a la place."
+      },
+      {
+        "en": "AI tools require a separate paid Canva plan whose price isn't shown on this page.",
+        "fr": "Les outils IA demandent un plan Canva payant a part, dont le prix n'est pas affiche sur cette page."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a professional, non-destructive photo editor without paying a subscription for the core app.",
+        "fr": "Tu veux un editeur photo professionnel non destructif sans payer d'abonnement pour l'application principale."
+      },
+      "avoidIf": {
+        "en": "You need reliable PSD round-tripping with Photoshop for a team already on Adobe's ecosystem.",
+        "fr": "Tu as besoin d'un aller-retour PSD fluide avec Photoshop pour une equipe deja sur l'ecosysteme Adobe."
+      },
+      "threshold": {
+        "en": "Worth switching once you'd otherwise pay for a photo editor subscription and don't need the AI tools gated behind Canva premium.",
+        "fr": "Ca vaut le changement des que tu paierais autrement un abonnement d'editeur photo et que tu n'as pas besoin des outils IA reserves au Canva payant."
+      }
+    }
+  },
   "unknowns": [
     "iPad app pricing/availability not confirmed on the page fetched (only macOS and Windows explicitly mentioned)",
     "Exact price of the Canva premium plan required for AI features not shown on this page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-25",
+  "reviewNotes": [
+    "pricing.model is set to \"free\" but the dossier also lists a Canva-premium addOn required for AI features (Generative Fill/Expand, Super Resolve), which matches the brief's own definition of \"freemium\" (free tool + paid add-on packs). Not changed here per the no-price/no-model-correction rule; flagging for review."
+  ]
 }

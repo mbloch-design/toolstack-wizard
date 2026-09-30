@@ -3,7 +3,8 @@
   "slug": "fly-io",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Fly.io",
     "vendor": "Fly.io (Superfly, Inc.)",
@@ -44,31 +45,84 @@
       { "en": "Fly Kubernetes at a $75/month base plus compute costs.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Pure usage-based billing with no flat subscription tier: total monthly cost depends on how many Machines run, for how long, and how much storage/egress is used, making it hard to predict without modeling actual traffic.", "sourceIds": ["s1"] },
-      { "en": "A credit card is required for most organizations even to start using paid resources beyond the small included allowances.", "sourceIds": ["s1"] }
+      { "en": "Pure usage-based billing with no flat subscription tier: total monthly cost depends on how many Machines run, for how long, and how much storage/egress is used, making it hard to predict without modeling actual traffic.", "fr": "Facturation entièrement à l'usage, sans palier fixe : le coût mensuel total dépend du nombre de Machines actives, de leur durée et du stockage/egress consommés, difficile à prévoir sans modéliser le trafic réel.", "sourceIds": ["s1"] },
+      { "en": "A credit card is required for most organizations even to start using paid resources beyond the small included allowances.", "fr": "Une carte bancaire est nécessaire pour la plupart des organisations dès qu'elles dépassent les petits crédits gratuits inclus.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Deploys containerized applications as 'Fly Machines' (VMs) across a global network of regions, close to end users.", "sourceIds": ["s1"] },
-      { "en": "Managed Postgres, Fly Volumes for persistent storage, and third-party extensions such as Tigris and Upstash Redis.", "sourceIds": ["s1"] },
-      { "en": "Fly Kubernetes for teams that want a managed Kubernetes control plane on top of Fly's infrastructure.", "sourceIds": ["s1"] }
+      { "en": "Deploys containerized applications as 'Fly Machines' (VMs) across a global network of regions, close to end users.", "fr": "Déploie des applications conteneurisées sous forme de « Fly Machines » (VM) sur un réseau mondial de régions, proches des utilisateurs.", "sourceIds": ["s1"] },
+      { "en": "Managed Postgres, Fly Volumes for persistent storage, and third-party extensions such as Tigris and Upstash Redis.", "fr": "Postgres géré, Fly Volumes pour le stockage persistant, et des extensions tierces comme Tigris et Upstash Redis.", "sourceIds": ["s1"] },
+      { "en": "Fly Kubernetes for teams that want a managed Kubernetes control plane on top of Fly's infrastructure.", "fr": "Fly Kubernetes pour les équipes qui veulent un plan de contrôle Kubernetes géré au-dessus de l'infrastructure Fly.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No flat, predictable subscription plan; billing is fully usage-based per organization.", "sourceIds": ["s1"] },
-      { "en": "Managed Postgres instances exist outside of regular apps, so deleting an app does not automatically delete its associated database, a common source of surprise cost.", "sourceIds": ["s1"] }
+      { "en": "No flat, predictable subscription plan; billing is fully usage-based per organization.", "fr": "Pas de forfait fixe et prévisible ; la facturation est entièrement à l'usage par organisation.", "sourceIds": ["s1"] },
+      { "en": "Managed Postgres instances exist outside of regular apps, so deleting an app does not automatically delete its associated database, a common source of surprise cost.", "fr": "Les instances Managed Postgres existent en dehors des apps classiques, donc supprimer une app ne supprime pas automatiquement sa base associée, une source fréquente de coût imprévu.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer deploying containerized apps and databases who wants usage-based global hosting instead of a fixed monthly plan.",
+      "fr": "Un développeur qui déploie des apps et bases de données conteneurisées et préfère un hébergement mondial facturé à l'usage plutôt qu'un forfait fixe."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Deploy a containerized side project or API worldwide without provisioning fixed servers, paying only for the seconds it runs.", "fr": "Déployer un side project ou une API conteneurisée dans le monde entier sans provisionner de serveurs fixes, en payant seulement les secondes d'exécution." },
+    { "en": "Run a Postgres-backed app with persistent storage across regions using Fly Volumes and Managed Postgres.", "fr": "Faire tourner une app avec Postgres et un stockage persistant réparti sur plusieurs régions grâce à Fly Volumes et Managed Postgres." }
+  ],
   "alternatives": [
-    { "slug": "heroku", "reason": { "en": "Comparable PaaS for deploying containerized/web apps quickly, with a more classic dyno-based pricing model versus Fly's usage-based Machines." } },
-    { "slug": "digitalocean", "reason": { "en": "Overlaps for deploying containerized apps and managed infrastructure at usage-based or flat-rate pricing." } },
-    { "slug": "vercel", "reason": { "en": "Common alternative for deploying web apps/serverless functions, though more frontend-framework-focused than Fly's general container hosting." } }
+    { "slug": "heroku", "reason": { "en": "Comparable PaaS for deploying containerized/web apps quickly, with a more classic dyno-based pricing model versus Fly's usage-based Machines.", "fr": "PaaS comparable pour déployer rapidement des apps web/conteneurisées, avec un modèle de prix classique par dyno face aux Machines à l'usage de Fly." } },
+    { "slug": "digitalocean", "reason": { "en": "Overlaps for deploying containerized apps and managed infrastructure at usage-based or flat-rate pricing.", "fr": "Chevauchement pour le déploiement d'apps conteneurisées et d'infrastructure gérée, en tarification à l'usage ou forfaitaire." } },
+    { "slug": "vercel", "reason": { "en": "Common alternative for deploying web apps/serverless functions, though more frontend-framework-focused than Fly's general container hosting.", "fr": "Alternative courante pour déployer des apps web ou des fonctions serverless, mais plus centrée frontend que l'hébergement de conteneurs généraliste de Fly." } }
   ],
   "missingAlternatives": [
     { "name": "Railway", "officialUrl": "https://railway.com", "reason": "Frequently cited direct competitor to Fly.io for deploying containerized apps with usage-based pricing; not present in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Usage-based pricing with no base subscription fee scales down to near zero for small workloads, a real advantage over flat-rate PaaS plans, though total cost isn't fixed.", "fr": "La tarification à l'usage sans abonnement de base descend près de zéro pour de petits projets, un vrai avantage face aux forfaits fixes, même si le coût total n'est pas fixe.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: onboarding and time-to-first-deploy are not covered by the collected sources.", "fr": "Note neutre : la prise en main et le temps avant premier déploiement ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Deploys containerized Fly Machines across global regions as advertised, with managed Postgres and volumes for persistent storage.", "fr": "Déploie des Fly Machines conteneurisées dans plusieurs régions du monde comme annoncé, avec Postgres géré et des volumes pour le stockage persistant.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Offers shared and performance-CPU compute tiers, managed Postgres, volumes, and a managed Kubernetes control plane (Fly Kubernetes), covering more than basic container hosting.", "fr": "Propose des paliers de calcul shared et performance-CPU, Postgres géré, des volumes, et un plan de contrôle Kubernetes géré (Fly Kubernetes), au-delà de l'hébergement de conteneurs basique.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export/portability of Managed Postgres and Volumes is not covered by the collected sources.", "fr": "Note neutre : la portabilité de Managed Postgres et des Volumes ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Global app hosting", "fr": "Hébergement d'apps mondial" },
+    "shortDescription": {
+      "en": "Usage-based platform for deploying containerized apps and databases across global regions, billed by the second instead of a flat subscription.",
+      "fr": "Plateforme d'hébergement d'apps conteneurisées facturée à la seconde selon l'usage, sans abonnement fixe, avec bases de données gérées et déploiement mondial."
+    },
+    "longDescription": {
+      "en": "Fly.io runs containerized applications as Fly Machines distributed across a global network of regions, close to end users, with managed Postgres, persistent volumes, and an optional managed Kubernetes control plane (Fly Kubernetes).\n\nThere is no flat subscription: billing is entirely usage-based, pro-rated by the second, starting near zero for small workloads. A small set of free allowances (SSL certificates, snapshot storage, shared IPv4) offsets some early costs, but a credit card is required once usage grows, and total monthly cost depends on traffic rather than a fixed plan. It suits developers comfortable reading a usage-based rate card.",
+      "fr": "Fly.io déploie des applications conteneurisées sous forme de Fly Machines réparties sur un réseau mondial de régions, proches des utilisateurs, avec Postgres géré, des volumes persistants et un contrôle Kubernetes géré en option (Fly Kubernetes).\n\nIl n'y a pas d'abonnement fixe : la facturation est entièrement basée sur l'usage, au prorata de la seconde, et démarre proche de zéro pour de petits projets. Quelques crédits gratuits (certificats SSL, stockage de snapshots, IPv4 partagée) allègent les débuts, mais une carte bancaire est nécessaire dès que l'usage grandit, et le coût mensuel dépend du trafic plutôt que d'un forfait fixe."
+    },
+    "pros": [
+      { "en": "No base subscription fee; costs scale down to near zero for small or intermittent workloads.", "fr": "Pas de frais d'abonnement de base ; les coûts descendent près de zéro pour de petits projets ou un usage intermittent." },
+      { "en": "Includes managed Postgres, persistent volumes, and an optional managed Kubernetes layer beyond plain container hosting.", "fr": "Inclut Postgres géré, des volumes persistants, et une couche Kubernetes gérée en option, au-delà du simple hébergement de conteneurs." }
+    ],
+    "cons": [
+      { "en": "Total monthly cost is hard to predict without modeling actual traffic and storage use.", "fr": "Le coût mensuel total est difficile à prévoir sans modéliser le trafic et le stockage réels." },
+      { "en": "Deleting an app does not automatically delete its associated Managed Postgres database, a common source of surprise cost.", "fr": "Supprimer une app ne supprime pas automatiquement sa base Managed Postgres associée, une source fréquente de coût imprévu." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're comfortable reading a usage-based rate card and want to pay only for compute you actually run, across global regions.", "fr": "Tu es à l'aise avec une grille de prix à l'usage et tu veux payer seulement le calcul réellement consommé, sur plusieurs régions du monde." },
+      "avoidIf": { "en": "You need a fixed, predictable monthly hosting bill without modeling traffic first.", "fr": "Tu as besoin d'une facture d'hébergement mensuelle fixe et prévisible sans devoir modéliser le trafic d'abord." },
+      "threshold": { "en": "Modeling a small workload against Fly's published per-second rates (from about $0.00000078/s per shared-CPU machine) before committing is worth it since there is no flat entry plan to compare against.", "fr": "Il vaut la peine de modéliser un petit projet avec les tarifs publiés à la seconde (à partir d'environ 0,00000078$/s par machine shared-CPU) avant de te lancer, faute de forfait d'entrée fixe pour comparer." },
+      "billingTraps": { "en": "Costs are billed per second of Machine runtime plus storage and egress; stopped Machines still incur rootfs storage charges, and deleting an app doesn't delete its linked Managed Postgres database, so orphaned resources keep billing.", "fr": "Les coûts sont facturés à la seconde de fonctionnement des Machines plus le stockage et l'egress ; une Machine arrêtée continue de facturer le stockage rootfs, et supprimer une app ne supprime pas sa base Managed Postgres liée, qui continue donc à être facturée." }
+    }
+  },
   "unknowns": [
     "Full per-service rate card (every storage/network/Postgres tier) was not exhaustively captured; only the rates surfaced on the pricing overview page were recorded.",
     "Whether any legacy free-tier allowance for compute hours still applies (Fly.io removed a broader free tier in the past) was not explicitly reconfirmed beyond the small allowances listed."

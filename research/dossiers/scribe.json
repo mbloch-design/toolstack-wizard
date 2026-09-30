@@ -3,7 +3,7 @@
   "slug": "scribe",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Scribe",
     "vendor": "Scribe (Scribe How, Inc.)",
@@ -40,7 +40,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Basic: web app documentation, shareable links, no desktop capture"
+        "en": "Basic: web app documentation, shareable links, no desktop capture",
+        "fr": "Basic : documentation d'applications web, liens partageables, pas de capture bureau."
       },
       "sourceIds": [
         "s1"
@@ -61,7 +62,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Web app documentation only, no desktop capture"
+            "en": "Web app documentation only, no desktop capture",
+            "fr": "Documentation d'applications web uniquement, pas de capture bureau."
           }
         ],
         "sourceIds": [
@@ -81,7 +83,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Web/mobile/desktop capture, company branding, screenshot editing, PDF/HTML/Markdown export"
+            "en": "Web/mobile/desktop capture, company branding, screenshot editing, PDF/HTML/Markdown export",
+            "fr": "Capture web/mobile/bureau, marque personnalisee, edition de captures d'ecran, export PDF/HTML/Markdown."
           }
         ],
         "sourceIds": [
@@ -101,7 +104,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "All Pro Personal features plus collaboration comments; minimum 5 seats"
+            "en": "All Pro Personal features plus collaboration comments; minimum 5 seats",
+            "fr": "Toutes les fonctions Pro Personal plus les commentaires collaboratifs ; minimum 5 sieges."
           }
         ],
         "sourceIds": [
@@ -121,7 +125,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Auto-redaction of PII/PHI, SSO/SAML, SCIM provisioning, IP whitelisting, dedicated success manager"
+            "en": "Auto-redaction of PII/PHI, SSO/SAML, SCIM provisioning, IP whitelisting, dedicated success manager",
+            "fr": "Redaction automatique des donnees PII/PHI, SSO/SAML, provisionnement SCIM, liste blanche d'IP, responsable de compte dedie."
           }
         ],
         "sourceIds": [
@@ -134,7 +139,7 @@
     "cautions": [
       {
         "en": "All team members on a team must share the same tier (Basic and Pro cannot be mixed), and Pro Team requires a 5-seat minimum, which raises the effective entry cost for a small team.",
-        "fr": null,
+        "fr": "Tous les membres d'une equipe doivent partager le meme palier (Basic et Pro ne peuvent pas etre melanges), et Pro Team demande un minimum de 5 sieges, ce qui releve le cout d'entree effectif pour une petite equipe.",
         "sourceIds": [
           "s1"
         ]
@@ -145,28 +150,28 @@
     "capabilities": [
       {
         "en": "Automatically captures on-screen workflows and turns them into step-by-step guides without manual writing",
-        "fr": null,
+        "fr": "Capture automatiquement les workflows a l'ecran et les transforme en guides pas a pas sans redaction manuelle",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "AI-powered process analysis that flags inefficiencies and bottlenecks in recorded workflows",
-        "fr": null,
+        "fr": "Analyse de processus assistee par IA qui signale les inefficacites et les points de blocage dans les workflows enregistres",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Automatic redaction of sensitive data (PII/PHI) in captured guides",
-        "fr": null,
+        "fr": "Redaction automatique des donnees sensibles (PII/PHI) dans les guides captures",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Exports to PDF, HTML and Markdown, with API and MCP (Model Context Protocol) integrations for feeding AI agents",
-        "fr": null,
+        "fr": "Exporte en PDF, HTML et Markdown, avec des integrations API et MCP (Model Context Protocol) pour alimenter des agents IA",
         "sourceIds": [
           "s2"
         ]
@@ -175,14 +180,14 @@
     "limitations": [
       {
         "en": "Desktop capture (Windows/Mac apps) is limited to Pro and Enterprise tiers; the free Basic plan only documents web apps",
-        "fr": null,
+        "fr": "La capture bureau (applications Windows/Mac) est reservee aux paliers Pro et Enterprise ; le plan gratuit Basic ne documente que les applications web",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Pro Team requires a minimum of 5 seats, making it a poor fit for very small teams",
-        "fr": null,
+        "fr": "Pro Team demande un minimum de 5 sieges, ce qui convient mal aux tres petites equipes",
         "sourceIds": [
           "s1"
         ]
@@ -210,36 +215,149 @@
       "macos"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or admin lead who needs to turn recurring on-screen processes into shareable step-by-step guides without writing them manually.",
+      "fr": "Une responsable ops ou admin qui doit transformer des processus recurrents a l'ecran en guides pas a pas partageables sans les rediger a la main."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "SOP documentation: record a workflow once, get an auto-generated step-by-step guide to share with new hires.",
+      "fr": "Documentation de procedures : enregistrer un workflow une fois, obtenir un guide pas a pas genere automatiquement a partager avec les nouvelles recrues."
+    },
+    {
+      "en": "Client onboarding: capture the exact steps of a software setup and export it as a branded PDF for the client.",
+      "fr": "Onboarding client : capturer les etapes exactes d'une configuration logicielle et l'exporter en PDF a la marque pour le client."
+    }
+  ],
   "alternatives": [
     {
       "slug": "loom",
       "reason": {
-        "en": "Also documents workflows via screen capture, though as video rather than step-by-step text/screenshot guides."
+        "en": "Also documents workflows via screen capture, though as video rather than step-by-step text/screenshot guides.",
+        "fr": "Documente aussi les workflows par capture d'ecran, mais en video plutot qu'en guide texte/captures pas a pas."
       }
     },
     {
       "slug": "notion",
       "reason": {
-        "en": "General-purpose documentation tool teams use for the same kind of SOPs and how-to guides, without automatic capture."
+        "en": "General-purpose documentation tool teams use for the same kind of SOPs and how-to guides, without automatic capture.",
+        "fr": "Outil de documentation generaliste que les equipes utilisent pour le meme type de procedures et guides, sans capture automatique."
       }
     },
     {
       "slug": "guideless",
       "reason": {
-        "en": "A closer direct competitor focused specifically on auto-generated step-by-step guides."
+        "en": "A closer direct competitor focused specifically on auto-generated step-by-step guides.",
+        "fr": "Concurrent plus direct, centre specifiquement sur les guides pas a pas generes automatiquement."
       }
     }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free Basic plan covers web app documentation, and Pro Personal at $25/month annual adds desktop capture and AI process analysis that flags inefficiencies, useful value for a team writing SOPs.",
+        "fr": "Le plan gratuit Basic couvre la documentation d'applications web, et Pro Personal a 25 $/mois annuel ajoute la capture bureau et une analyse IA des processus qui signale les inefficacites, une valeur utile pour une equipe qui redige des procedures.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Automatically captures on-screen workflows and turns them into step-by-step guides without manual writing, a fast first result.",
+        "fr": "Capture automatiquement les workflows a l'ecran et les transforme en guides pas a pas sans redaction manuelle, un premier resultat rapide.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the promised auto-generated guides with AI process analysis and sensitive-data redaction as described.",
+        "fr": "Tient la promesse des guides generes automatiquement avec analyse IA des processus et redaction des donnees sensibles.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Desktop capture and enterprise features (SSO, SCIM, IP whitelisting) are gated to paid tiers, and Pro Team's 5-seat minimum limits how a small team can scale usage.",
+        "fr": "La capture bureau et les fonctions entreprise (SSO, SCIM, liste blanche d'IP) sont reservees aux paliers payants, et le minimum de 5 sieges de Pro Team limite la montee en charge pour une petite equipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Exports to PDF, HTML and Markdown, plus API and MCP integrations, giving a real way to take guides out of Scribe.",
+        "fr": "Exporte en PDF, HTML et Markdown, avec des integrations API et MCP, ce qui donne un vrai moyen de sortir les guides de Scribe.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Auto step-by-step guides",
+      "fr": "Guides pas a pas"
+    },
+    "shortDescription": {
+      "en": "Turns recorded on-screen workflows into step-by-step guides automatically, free for web apps or from $25/month for desktop capture.",
+      "fr": "Transforme des workflows enregistres en guides pas a pas automatiques, gratuit pour le web ou a partir de 25 $/mois pour le bureau."
+    },
+    "longDescription": {
+      "en": "Scribe records a workflow on screen and automatically turns it into a step-by-step guide with screenshots, no manual writing needed. AI process analysis flags inefficiencies, and guides export to PDF, HTML or Markdown, or feed AI agents through an API and MCP integration.\n\nThe free Basic plan only documents web apps. Pro Personal, at $25/month billed annually, adds desktop capture and branding; Pro Team needs a 5-seat minimum, which raises the entry cost for small teams. It suits anyone who repeatedly writes the same how-to for teammates or clients.",
+      "fr": "Scribe enregistre un workflow a l'ecran et le transforme automatiquement en guide pas a pas avec captures d'ecran, sans redaction manuelle. L'analyse IA des processus signale les inefficacites, et les guides s'exportent en PDF, HTML ou Markdown, ou alimentent des agents IA via une integration API et MCP.\n\nLe plan gratuit Basic ne documente que les applications web. Pro Personal, a 25 $/mois facture a l'annee, ajoute la capture bureau et la marque personnalisee ; Pro Team demande un minimum de 5 sieges, ce qui releve le cout d'entree pour les petites equipes. Il convient a quiconque redige souvent le meme mode d'emploi pour ses collegues ou clients."
+    },
+    "pros": [
+      {
+        "en": "Generates a step-by-step guide automatically from a recorded workflow, no manual writing.",
+        "fr": "Genere un guide pas a pas automatiquement a partir d'un workflow enregistre, sans redaction manuelle."
+      },
+      {
+        "en": "Exports to PDF, HTML and Markdown, plus API/MCP integration to feed AI agents.",
+        "fr": "Exporte en PDF, HTML et Markdown, avec integration API/MCP pour alimenter des agents IA."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan only documents web apps; desktop capture needs a paid tier.",
+        "fr": "Le plan gratuit ne documente que les applications web ; la capture bureau demande un palier payant."
+      },
+      {
+        "en": "Pro Team requires a 5-seat minimum, raising the entry cost for a very small team.",
+        "fr": "Pro Team demande un minimum de 5 sieges, ce qui releve le cout d'entree pour une tres petite equipe."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You repeatedly write the same how-to guide for teammates, clients or onboarding.",
+        "fr": "Tu rediges souvent le meme guide pratique pour tes collegues, clients ou l'onboarding."
+      },
+      "avoidIf": {
+        "en": "You only ever document web apps and the free Basic plan already covers your need.",
+        "fr": "Tu ne documentes que des applications web et le plan gratuit Basic couvre deja ton besoin."
+      },
+      "threshold": {
+        "en": "Worth the $300/year (annual billing) Pro Personal plan once desktop app capture or removing the Scribe watermark matters.",
+        "fr": "Le plan Pro Personal a 300 $/an (facturation annuelle) devient utile des que la capture d'applications bureau ou le retrait du filigrane Scribe compte."
+      }
+    }
+  },
   "unknowns": [
     "Whether the free Basic plan has a cap on number of guides was not stated explicitly on the pricing page",
     "No stated trial length for the paid Pro plans (marketing implies self-serve upgrade from free rather than a timed trial)"
   ],
   "conflicts": [
-    "Seed pricingV5 lists Pro at 20\u20ac/month with no seat minimum, but the current pricing page shows Pro Personal at $35/seat/month ($25 annual) and Pro Team at $17/seat/month with a 5-seat minimum; figures may reflect a past promotional price or a different currency/region."
-  ]
+    "Seed pricingV5 lists Pro at 20€/month with no seat minimum, but the current pricing page shows Pro Personal at $35/seat/month ($25 annual) and Pro Team at $17/seat/month with a 5-seat minimum; figures may reflect a past promotional price or a different currency/region."
+  ],
+  "completedLocallyOn": "2026-09-25"
 }

@@ -3,7 +3,8 @@
   "slug": "madmapper",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "MadMapper",
     "vendor": "Garage Cube / 1minus1",
@@ -34,7 +35,7 @@
       "exists": true,
       "limits": {
         "en": "Demo version with watermarked output, project saving/loading disabled, no SVG/PNG/PDF export, Spatial Scanner cropped to 1/4 resolution, DMX blackouts every 30 seconds, no material library installation.",
-        "fr": null
+        "fr": "Version démo avec sortie filigranée, sauvegarde et chargement de projet désactivés, pas d'export SVG/PNG/PDF, Spatial Scanner limité au quart de la résolution, coupures DMX toutes les 30 secondes, pas d'installation de bibliothèque de matériaux."
       },
       "sourceIds": [
         "s1"
@@ -49,7 +50,7 @@
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Watermarked output, no project save/load, no export, limited features; evaluation only.", "fr": null }
+          { "en": "Watermarked output, no project save/load, no export, limited features; evaluation only.", "fr": "Sortie filigranée, pas de sauvegarde/chargement de projet, pas d'export, fonctionnalités limitées ; évaluation uniquement." }
         ],
         "sourceIds": ["s1"]
       },
@@ -67,7 +68,7 @@
         "keyLimits": [
           {
             "en": "Time-limited license for a single computer; identical feature set to the perpetual license.",
-            "fr": null
+            "fr": "Licence à durée limitée pour un seul ordinateur ; mêmes fonctionnalités que la licence perpétuelle."
           }
         ],
         "sourceIds": [
@@ -88,7 +89,7 @@
         "keyLimits": [
           {
             "en": "Minimum 2 seats (includes an extra backup seat for hardware failure during live performances).",
-            "fr": null
+            "fr": "Minimum 2 postes (inclut un poste de secours en cas de panne matérielle pendant un spectacle live)."
           }
         ],
         "sourceIds": [
@@ -101,7 +102,7 @@
     "cautions": [
       {
         "en": "Perpetual license pricing starts with a minimum of 2 seats bundled together, not a single-seat purchase, which affects the effective per-seat cost.",
-        "fr": null,
+        "fr": "La licence perpétuelle démarre avec un minimum de 2 postes vendus ensemble, pas un achat à un seul poste, ce qui affecte le coût réel par poste.",
         "sourceIds": [
           "s1"
         ]
@@ -112,14 +113,14 @@
     "capabilities": [
       {
         "en": "Real-time video mapping onto physical surfaces, projection and LED installations.",
-        "fr": null,
+        "fr": "Mapping vidéo en temps réel sur des surfaces physiques, projections et installations LED.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "DMX lighting control integration for combined video/lighting mapping shows.",
-        "fr": null,
+        "fr": "Intégration du contrôle d'éclairage DMX pour des shows combinant mapping vidéo et lumière.",
         "sourceIds": [
           "s1"
         ]
@@ -128,14 +129,14 @@
     "limitations": [
       {
         "en": "Free demo version is watermarked and cannot save or load projects, limiting it to evaluation only.",
-        "fr": null,
+        "fr": "La version démo gratuite est filigranée et ne permet ni sauvegarde ni chargement de projet, ce qui la limite à l'évaluation.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Not designed to run in virtual machines on Windows.",
-        "fr": null,
+        "fr": "Non conçu pour fonctionner dans des machines virtuelles sous Windows.",
         "sourceIds": [
           "s1"
         ]
@@ -147,7 +148,19 @@
       "windows"
     ]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "A visual/creative technologist producing live projection mapping or LED installations who needs real-time surface mapping software.", "fr": "Une technicienne créative qui produit des mappings vidéo live ou des installations LED et a besoin d'un logiciel de mapping de surface en temps réel." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Test: try MadMapper's projection mapping features on the watermarked demo before buying a license for a live show.", "fr": "Tester : essayer les fonctionnalités de mapping vidéo de MadMapper sur la démo filigranée avant d'acheter une licence pour un spectacle live." },
+    { "en": "Perform: run a live projection and DMX lighting show on a rental license for a single event without a permanent purchase.", "fr": "Performer : faire tourner un show live de projection et d'éclairage DMX avec une licence de location, pour un seul événement sans achat permanent." }
+  ],
+  "alternatives": [
+    { "slug": "touchdesigner", "reason": { "en": "Real-time visual programming tool also used for projection mapping and live visual shows, overlapping directly with MadMapper's core use case.", "fr": "Outil de programmation visuelle en temps réel aussi utilisé pour le mapping vidéo et les shows visuels live, en recoupement direct avec l'usage principal de MadMapper." } }
+  ],
   "missingAlternatives": [
     {
       "name": "Resolume",
@@ -155,8 +168,49 @@
       "reason": "Well-known direct competitor for projection mapping and VJ software, not present in the seed's alternativeCandidates list for this tool."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A rental license at 44 euros/month covers a single event without a permanent purchase, but the perpetual license's 2-seat minimum raises the effective entry cost.", "fr": "Une licence de location à 44 euros/mois couvre un seul événement sans achat permanent, mais le minimum de 2 postes de la licence perpétuelle augmente le coût d'entrée réel.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Real-time surface mapping requires some setup and familiarity with projection/DMX workflows before a usable result.", "fr": "Le mapping de surface en temps réel demande une certaine mise en place et une familiarité avec les flux projection/DMX avant d'obtenir un résultat utilisable.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers real-time video mapping and DMX lighting integration as promised for projection and LED installations.", "fr": "Assure le mapping vidéo en temps réel et l'intégration DMX comme promis pour les projections et installations LED.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines video mapping and DMX lighting control in one tool, covering both projection and lighting needs for live shows.", "fr": "Combine mapping vidéo et contrôle d'éclairage DMX dans un seul outil, couvrant à la fois les besoins de projection et d'éclairage pour les shows live.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: project export and portability outside MadMapper are not covered by the collected sources.", "fr": "Note neutre : l'export de projet et la portabilité hors de MadMapper ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Video mapping software", "fr": "Logiciel de mapping vidéo" },
+    "shortDescription": { "en": "MadMapper does real-time video mapping onto physical surfaces and projections, with DMX lighting control integration.", "fr": "MadMapper fait du mapping vidéo en temps réel sur des surfaces physiques et des projections, avec intégration du contrôle d'éclairage DMX." },
+    "longDescription": {
+      "en": "MadMapper maps video in real time onto physical surfaces for projection and LED installations, with DMX lighting control integration for combined video and lighting shows. It runs on macOS and Windows, though it is not designed to run inside a Windows virtual machine.\n\nA free demo lets you evaluate the software with a watermark, disabled project saving and cropped features. A rental license costs 44 euros/month for one computer, while a perpetual license is 479 euros one-time but requires a minimum of 2 seats. It fits a visual or creative technologist producing live projection mapping who needs both video and lighting control in one tool.",
+      "fr": "MadMapper mappe la vidéo en temps réel sur des surfaces physiques pour des projections et installations LED, avec une intégration du contrôle d'éclairage DMX pour des shows combinant vidéo et lumière. Il tourne sur macOS et Windows, mais n'est pas conçu pour fonctionner dans une machine virtuelle Windows.\n\nUne démo gratuite permet d'évaluer le logiciel avec un filigrane, la sauvegarde de projet désactivée et des fonctionnalités réduites. Une licence de location coûte 44 euros/mois pour un ordinateur, tandis qu'une licence perpétuelle coûte 479 euros en achat unique mais nécessite un minimum de 2 postes. Il convient à une technicienne créative qui produit du mapping vidéo live et a besoin de vidéo et d'éclairage dans un seul outil."
+    },
+    "pros": [
+      { "en": "Combines real-time video mapping and DMX lighting control in a single tool.", "fr": "Combine mapping vidéo en temps réel et contrôle d'éclairage DMX dans un seul outil." },
+      { "en": "Rental license offers a lower-commitment way to cover a single event or show.", "fr": "La licence de location offre un moyen moins engageant de couvrir un événement ou un show unique." },
+      { "en": "Free demo lets you test the workflow before paying.", "fr": "La démo gratuite permet de tester le flux de travail avant de payer." }
+    ],
+    "cons": [
+      { "en": "Perpetual license requires a minimum of 2 seats, raising the effective entry cost for a solo user.", "fr": "La licence perpétuelle nécessite un minimum de 2 postes, ce qui augmente le coût d'entrée réel pour une utilisatrice solo." },
+      { "en": "Free demo cannot save or load projects, limiting it to short evaluation sessions.", "fr": "La démo gratuite ne permet ni sauvegarde ni chargement de projet, ce qui la limite à de courtes sessions d'évaluation." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You produce live projection mapping or LED installations and need combined video and DMX lighting control.", "fr": "Tu produis du mapping vidéo live ou des installations LED et tu as besoin de contrôler vidéo et éclairage DMX ensemble." },
+      "avoidIf": { "en": "You only need occasional mapping for one event and don't want the 2-seat minimum of the perpetual license.", "fr": "Tu as seulement besoin de mapping occasionnel pour un événement et tu ne veux pas du minimum de 2 postes de la licence perpétuelle." },
+      "threshold": { "en": "A rental license covering roughly 11 months (44 euros/month) costs about as much as the 479-euro perpetual license, which also covers 2 seats.", "fr": "Une licence de location sur environ 11 mois (44 euros/mois) coûte à peu près autant que la licence perpétuelle à 479 euros, qui couvre en plus 2 postes." },
+      "billingTraps": { "en": "The perpetual license is sold as a bundle of a minimum 2 seats, not a single-seat purchase, which affects the real per-seat cost.", "fr": "La licence perpétuelle est vendue par lot d'un minimum de 2 postes, pas à l'unité, ce qui affecte le coût réel par poste." }
+    }
+  },
   "unknowns": [
-    "No alternativeCandidates specific to video-mapping software were provided in the seed for this tool; the closest catalogue matches (e.g. TouchDesigner) were not confirmed as true substitutes so none was listed in alternatives."
+    "Very few alternativeCandidates specific to video-mapping software were available in the catalogue seed for this tool; TouchDesigner was added as the closest real substitute found."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Only one true catalogue alternative (TouchDesigner) was found via seed.mjs; Resolume, the closest direct VJ/mapping competitor, is not yet in the catalogue (see missingAlternatives)."
+  ]
 }

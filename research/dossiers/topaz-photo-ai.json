@@ -3,7 +3,8 @@
   "slug": "topaz-photo-ai",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Topaz Photo AI",
     "vendor": "Topaz Labs LLC",
@@ -52,7 +53,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Unlimited local rendering; commercial use restricted to orgs under $1M annual revenue"
+            "en": "Unlimited local rendering; commercial use restricted to orgs under $1M annual revenue",
+            "fr": "Rendu local illimité ; usage commercial restreint aux organisations de moins d'1 million de dollars de chiffre d'affaires annuel"
           }
         ],
         "sourceIds": [
@@ -72,7 +74,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "$199/year prepaid, or $25/month billed monthly on an annual term"
+            "en": "$199/year prepaid, or $25/month billed monthly on an annual term",
+            "fr": "199 $/an prépayé, ou 25 $/mois facturé au mois sur un engagement annuel"
           }
         ],
         "sourceIds": [
@@ -92,7 +95,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "$599/year prepaid; adds higher cloud credit allowance"
+            "en": "$599/year prepaid; adds higher cloud credit allowance",
+            "fr": "599 $/an prépayé ; ajoute une allocation de crédits cloud plus élevée"
           }
         ],
         "sourceIds": [
@@ -112,7 +116,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "$399/year, bundles Photo, Video, Gigapixel and Astra apps"
+            "en": "$399/year, bundles Photo, Video, Gigapixel and Astra apps",
+            "fr": "399 $/an, regroupe les apps Photo, Video, Gigapixel et Astra"
           }
         ],
         "sourceIds": [
@@ -125,6 +130,7 @@
     "cautions": [
       {
         "en": "Cloud rendering (video/Bloom/Image Web) is credit-limited (e.g. 300 credits/month, 32MP cloud export cap); heavy use needs local GPU rendering instead.",
+        "fr": "Le rendu cloud (vidéo/Bloom/Image Web) est limité par des crédits (par exemple 300 crédits/mois, plafond d'export cloud à 32 Mpx) ; un usage intensif doit plutôt passer par le rendu GPU local.",
         "sourceIds": [
           "s1"
         ]
@@ -135,18 +141,21 @@
     "capabilities": [
       {
         "en": "AI upscaling up to 16x, denoising, sharpening, and lighting/color correction in one app.",
+        "fr": "Agrandissement par IA jusqu'à 16x, débruitage, affinage et correction de lumière/couleur dans une seule app.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Specialized tools: face recovery, dust/scratch removal, object removal, and 'Super Focus' correction for missed-focus shots.",
+        "fr": "Outils spécialisés : récupération de visages, retrait de poussière/rayures, suppression d'objets, et correction « Super Focus » pour les photos mal mises au point.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Batch processing and an 'autopilot' mode alongside manual per-image control.",
+        "fr": "Traitement par lots et un mode « autopilote », en plus du contrôle manuel image par image.",
         "sourceIds": [
           "s1"
         ]
@@ -155,18 +164,21 @@
     "limitations": [
       {
         "en": "No free plan; access is subscription-only.",
+        "fr": "Aucun plan gratuit ; l'accès se fait uniquement par abonnement.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Cloud-based features are capped by monthly credits and a 32MP export limit on some products.",
+        "fr": "Les fonctions basées sur le cloud sont plafonnées par des crédits mensuels et une limite d'export à 32 Mpx sur certains produits.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Personal tier commercial use is restricted to organizations under $1M annual revenue.",
+        "fr": "L'usage commercial du palier Personal est restreint aux organisations de moins d'1 million de dollars de chiffre d'affaires annuel.",
         "sourceIds": [
           "s1"
         ]
@@ -201,23 +213,45 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "A photographer or small photo studio needing to upscale, denoise and correct large batches of images without hiring a retoucher.",
+      "fr": "Un photographe ou un petit studio photo qui doit agrandir, débruiter et corriger de grands lots d'images sans embaucher de retoucheur."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a photographer batch-upscales a wedding shoot's files with autopilot mode before delivering client galleries.",
+      "fr": "Cas d'usage : un photographe agrandit en lot les fichiers d'un mariage avec le mode autopilote avant de livrer les galeries clients."
+    },
+    {
+      "en": "Use case: a photo studio removes dust and scratches from scanned archive photos using the Lightroom Classic plugin.",
+      "fr": "Cas d'usage : un studio photo retire la poussière et les rayures de photos d'archives scannées via le plugin Lightroom Classic."
+    }
+  ],
   "alternatives": [
     {
       "slug": "topaz-gigapixel",
       "reason": {
-        "en": "Sibling Topaz product focused specifically on AI upscaling."
+        "en": "Sibling Topaz product focused specifically on AI upscaling.",
+        "fr": "Produit Topaz de la même gamme, focalisé spécifiquement sur l'agrandissement par IA."
       }
     },
     {
       "slug": "luminar-neo",
       "reason": {
-        "en": "Competing AI-assisted photo editor with similar enhancement tools."
+        "en": "Competing AI-assisted photo editor with similar enhancement tools.",
+        "fr": "Éditeur photo concurrent assisté par IA, avec des outils d'amélioration similaires."
       }
     },
     {
       "slug": "nik-collection",
       "reason": {
-        "en": "Alternative AI/plugin-based photo finishing suite."
+        "en": "Alternative AI/plugin-based photo finishing suite.",
+        "fr": "Suite alternative de finition photo, sous forme de plugins assistés par IA."
       }
     }
   ],
@@ -228,9 +262,107 @@
       "reason": "Strong AI denoise/upscale competitor, appears only as a candidate slug not yet in catalogue"
     }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Bundling upscaling, denoise, sharpening and specialized repair tools into one $199/year app replaces several single-purpose plugins.",
+        "fr": "Regrouper l'agrandissement, le débruitage, l'affinage et des outils de réparation spécialisés dans une seule app à 199 $/an remplace plusieurs plugins mono-tâches.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "An autopilot mode is offered alongside manual controls, aimed at a quick usable result without deep per-image tuning.",
+        "fr": "Un mode autopilote est proposé en plus des réglages manuels, pour un résultat rapide et exploitable sans réglage fin image par image.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The app delivers the upscaling, denoising, sharpening and lighting correction it advertises, plus specialized repair tools that work as described.",
+        "fr": "L'app livre l'agrandissement, le débruitage, l'affinage et la correction de lumière annoncés, ainsi que des outils de réparation spécialisés qui fonctionnent comme décrit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Upscaling up to 16x, specialized tools like Super Focus, and integrations with Lightroom, Photoshop and Capture One position it as a category reference for AI photo enhancement.",
+        "fr": "L'agrandissement jusqu'à 16x, des outils spécialisés comme Super Focus et les intégrations avec Lightroom, Photoshop et Capture One en font une référence de sa catégorie pour la retouche photo par IA.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: file format portability and data ownership if leaving Topaz Photo AI are not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des formats de fichiers et la propriété des données en cas de départ de Topaz Photo AI ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI photo enhancer",
+      "fr": "Retouche photo IA"
+    },
+    "shortDescription": {
+      "en": "A desktop app for AI photo upscaling, denoising, sharpening and lighting correction, with cloud features capped by monthly credits.",
+      "fr": "Une app de bureau pour l'agrandissement, le débruitage, l'affinage et la correction de lumière par IA, avec des fonctions cloud limitées par des crédits mensuels."
+    },
+    "longDescription": {
+      "en": "Topaz Photo AI combines AI upscaling up to 16x, denoising, sharpening and lighting/color correction in one desktop app, alongside specialized tools like face recovery, dust and scratch removal, and Super Focus for missed-focus shots. It plugs into Lightroom Classic, Photoshop and Capture One, with batch processing and an autopilot mode for quick results.\n\nThere's no free plan: the annual Photo plan runs $199/year (about $16.58/month), or $39/month billed monthly. Cloud-based features are capped by monthly credits, so heavy use relies on local GPU rendering instead. The Personal tier's commercial use is limited to organizations under $1M in annual revenue.",
+      "fr": "Topaz Photo AI combine l'agrandissement par IA jusqu'à 16x, le débruitage, l'affinage et la correction de lumière dans une seule app, avec des outils spécialisés comme la récupération de visages, le retrait de poussière et Super Focus pour les photos mal mises au point. Il s'intègre à Lightroom Classic, Photoshop et Capture One, avec traitement par lots et un mode autopilote.\n\nIl n'existe pas de plan gratuit : le plan Photo annuel coûte 199 $/an (environ 16,58 $/mois), ou 39 $/mois au mois. Les fonctions cloud sont plafonnées par des crédits mensuels, un usage intensif s'appuyant plutôt sur le rendu GPU local. L'usage commercial du palier Personal est limité aux organisations de moins d'1 million de dollars de chiffre d'affaires annuel."
+    },
+    "pros": [
+      {
+        "en": "Combines upscaling, denoise, sharpening and lighting correction in one app instead of several separate tools.",
+        "fr": "Regroupe l'agrandissement, le débruitage, l'affinage et la correction de lumière dans une seule app plutôt que plusieurs outils séparés."
+      },
+      {
+        "en": "Batch processing and autopilot mode handle large photo sets without manual per-image tweaking.",
+        "fr": "Le traitement par lots et le mode autopilote gèrent de grands lots de photos sans réglage manuel image par image."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan; every use requires a paid subscription.",
+        "fr": "Aucun plan gratuit ; tout usage nécessite un abonnement payant."
+      },
+      {
+        "en": "Cloud-based features are capped by monthly credits and a 32MP export limit on some products.",
+        "fr": "Les fonctions cloud sont plafonnées par des crédits mensuels et une limite d'export à 32 Mpx sur certains produits."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You regularly need to upscale, denoise or sharpen photos and want one app instead of several plugins.",
+        "fr": "Tu dois régulièrement agrandir, débruiter ou affiner des photos, et veux une seule app plutôt que plusieurs plugins."
+      },
+      "avoidIf": {
+        "en": "Your business earns over $1M/year, since the Personal tier's commercial-use terms won't cover you.",
+        "fr": "Ton activité dépasse 1 million de dollars de chiffre d'affaires annuel, car les conditions d'usage commercial du palier Personal ne te couvrent plus."
+      },
+      "threshold": {
+        "en": "The annual Photo plan costs $199/year (about $16.58/month); that's the realistic entry cost since there's no free plan.",
+        "fr": "Le plan Photo annuel coûte 199 $/an (environ 16,58 $/mois) ; c'est le coût d'entrée réaliste puisqu'il n'y a pas de plan gratuit."
+      },
+      "billingTraps": {
+        "en": "Commercial use on the Personal tier is contractually limited to organizations under $1M in annual revenue; check the license terms if the business grows.",
+        "fr": "L'usage commercial sur le palier Personal est contractuellement limité aux organisations de moins d'1 million de dollars de chiffre d'affaires annuel ; vérifie les conditions de licence si l'activité grandit."
+      }
+    }
+  },
   "unknowns": [
     "Exact GPU/hardware requirements for local rendering not detailed on this page.",
     "Whether a perpetual/legacy license option still exists was not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

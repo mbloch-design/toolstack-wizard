@@ -3,7 +3,8 @@
   "slug": "corona-renderer",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Corona Renderer",
     "vendor": "Chaos Software s.r.o.",
@@ -52,7 +53,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Named license (single device); up to 15,000 3D assets/materials; 100 monthly Chaos AI credits"
+            "en": "Named license (single device); up to 15,000 3D assets/materials; 100 monthly Chaos AI credits",
+            "fr": "Licence nommée (un seul appareil) ; jusqu'à 15 000 ressources/matériaux 3D ; 100 crédits Chaos AI par mois"
           }
         ],
         "sourceIds": [
@@ -72,7 +74,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Floating (team-shared) license; 18,500+ assets/materials; 5x the Chaos AI credits of Solo"
+            "en": "Floating (team-shared) license; 18,500+ assets/materials; 5x the Chaos AI credits of Solo",
+            "fr": "Licence flottante (partagée en équipe) ; plus de 18 500 ressources/matériaux ; 5 fois plus de crédits Chaos AI que Solo"
           }
         ],
         "sourceIds": [
@@ -92,7 +95,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Floating license bundling additional Chaos tools"
+            "en": "Floating license bundling additional Chaos tools",
+            "fr": "Licence flottante qui regroupe des outils Chaos supplémentaires"
           }
         ],
         "sourceIds": [
@@ -105,12 +109,14 @@
     "cautions": [
       {
         "en": "Annual subscriptions auto-renew; cancellation is required to stop renewal.",
+        "fr": "Les abonnements annuels se renouvellent automatiquement ; il faut résilier pour stopper le renouvellement.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "No free trial period; instead a 14-day money-back guarantee applies to purchases.",
+        "fr": "Aucune période d'essai gratuite ; une garantie de remboursement de 14 jours s'applique en revanche aux achats.",
         "sourceIds": [
           "s1"
         ]
@@ -121,12 +127,14 @@
     "capabilities": [
       {
         "en": "Photorealistic biased/unbiased render engine known for ease of use in archviz workflows.",
+        "fr": "Moteur de rendu photoréaliste biaisé/non biaisé, réputé facile à prendre en main pour les workflows de visualisation architecturale.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Plugs into 3ds Max and Cinema 4D with a large bundled library of 3D assets and materials.",
+        "fr": "S'intègre à 3ds Max et Cinema 4D avec une large bibliothèque de ressources et matériaux 3D incluse.",
         "sourceIds": [
           "s1"
         ]
@@ -135,12 +143,14 @@
     "limitations": [
       {
         "en": "No perpetual/one-time license option; access requires an active subscription.",
+        "fr": "Aucune option de licence perpétuelle ou à achat unique ; l'accès exige un abonnement actif.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Solo tier is locked to a single named device, unlike the floating Premium/Collection tiers.",
+        "fr": "Le palier Solo est limité à un seul appareil nommé, contrairement aux licences flottantes Premium/Collection.",
         "sourceIds": [
           "s1"
         ]
@@ -166,30 +176,150 @@
       "windows"
     ]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "An archviz artist or small studio rendering interiors, buildings or products in 3ds Max or Cinema 4D who wants an easier learning curve than a full production renderer.",
+      "fr": "Un artiste archviz ou un petit studio qui rend des intérieurs, bâtiments ou produits dans 3ds Max ou Cinema 4D, et veut une prise en main plus facile qu'un moteur de rendu de production complet."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a solo archviz artist renders photorealistic interior scenes in 3ds Max on Corona Solo, staying within the single named-device license.",
+      "fr": "Cas d'usage : un artiste archviz seul rend des scènes d'intérieur photoréalistes dans 3ds Max avec Corona Solo, sur la licence à un seul appareil nommé."
+    },
+    {
+      "en": "Use case: a small studio switches to Corona Premium's floating license so several artists share render seats across projects.",
+      "fr": "Cas d'usage : un petit studio passe à la licence flottante de Corona Premium pour que plusieurs artistes partagent les sièges de rendu entre projets."
+    }
+  ],
   "alternatives": [
     {
       "slug": "v-ray",
       "reason": {
-        "en": "Chaos's own higher-end renderer, direct archviz/production competitor."
+        "en": "Chaos's own higher-end renderer, direct archviz/production competitor.",
+        "fr": "Le moteur de rendu haut de gamme de Chaos lui-même, concurrent direct en archviz et production."
       }
     },
     {
       "slug": "octane-render",
       "reason": {
-        "en": "GPU-based photorealistic renderer used for similar visualization work."
+        "en": "GPU-based photorealistic renderer used for similar visualization work.",
+        "fr": "Moteur de rendu photoréaliste sur GPU, utilisé pour des travaux de visualisation similaires."
       }
     },
     {
       "slug": "redshift",
       "reason": {
-        "en": "Biased GPU renderer competing for the same 3D/archviz rendering budget."
+        "en": "Biased GPU renderer competing for the same 3D/archviz rendering budget.",
+        "fr": "Moteur de rendu biaisé sur GPU, en concurrence pour le même budget de rendu 3D/archviz."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The bundled asset library and Chaos AI credits add value, but there's no perpetual license option, so the cost recurs indefinitely compared to a one-time purchase.",
+        "fr": "La bibliothèque de ressources incluse et les crédits Chaos AI ajoutent de la valeur, mais il n'existe pas d'option de licence perpétuelle, donc le coût se répète indéfiniment, contrairement à un achat unique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Corona is specifically known for ease of use in archviz workflows, positioning it as an easier entry than other production renderers.",
+        "fr": "Corona est spécifiquement réputé pour sa facilité d'usage dans les workflows archviz, ce qui en fait une entrée plus simple que d'autres moteurs de rendu de production.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers photorealistic rendering as advertised, integrated directly into 3ds Max and Cinema 4D with a bundled asset library.",
+        "fr": "Il livre un rendu photoréaliste comme annoncé, intégré directement à 3ds Max et Cinema 4D avec une bibliothèque de ressources incluse.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Corona is a capable production renderer for archviz, but its own alternatives (V-Ray, Octane, Redshift) exist for higher-end or GPU-heavy production work, so it isn't positioned as the ceiling of the category.",
+        "fr": "Corona est un moteur de rendu de production capable pour l'archviz, mais ses propres alternatives (V-Ray, Octane, Redshift) existent pour des besoins de production plus poussés ou intensifs en GPU, donc il n'est pas positionné comme le plafond de la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: scene/material portability if leaving Corona for another renderer is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des scènes et matériaux en cas de départ vers un autre moteur de rendu ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Archviz render engine",
+      "fr": "Rendu 3D archviz"
+    },
+    "shortDescription": {
+      "en": "A photorealistic render engine for 3ds Max and Cinema 4D, known for being easier to use in architectural visualization work.",
+      "fr": "Un moteur de rendu photoréaliste pour 3ds Max et Cinema 4D, réputé plus facile à prendre en main pour la visualisation architecturale."
+    },
+    "longDescription": {
+      "en": "Corona Renderer is a photorealistic biased/unbiased render engine that plugs into 3ds Max and Cinema 4D, bundled with a large library of ready-made 3D assets and materials. It's built around ease of use for architectural visualization work rather than maximum raw render control.\n\nAccess is subscription-only, starting at $34.50/month for Corona Solo, a single named-device license with 15,000 bundled assets and 100 monthly Chaos AI credits. Corona Premium ($46.90/month billed annually) adds a floating, team-shareable license and more assets. There is no perpetual license and no free trial, only a 14-day money-back guarantee.",
+      "fr": "Corona Renderer est un moteur de rendu photoréaliste biaisé/non biaisé qui s'intègre à 3ds Max et Cinema 4D, avec une large bibliothèque de ressources et matériaux 3D prêts à l'emploi. Il est pensé pour la facilité d'usage en visualisation architecturale plutôt que pour un contrôle brut maximal du rendu.\n\nL'accès se fait uniquement par abonnement, à partir de 34,50 $/mois pour Corona Solo, une licence nommée limitée à un seul appareil avec 15 000 ressources incluses et 100 crédits Chaos AI par mois. Corona Premium (46,90 $/mois facturé à l'année) ajoute une licence flottante partageable en équipe et plus de ressources. Il n'existe ni licence perpétuelle ni essai gratuit, seulement une garantie de remboursement de 14 jours."
+    },
+    "pros": [
+      {
+        "en": "A bundled library of 15,000+ 3D assets and materials saves sourcing time compared to a bare renderer.",
+        "fr": "Une bibliothèque de plus de 15 000 ressources et matériaux 3D incluse fait gagner le temps de les chercher ailleurs."
+      },
+      {
+        "en": "Known specifically for being easier to pick up than other production renderers in the same archviz space.",
+        "fr": "Réputé spécifiquement plus facile à prendre en main que d'autres moteurs de rendu de production du même segment archviz."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No perpetual license option; rendering stops working the moment the subscription lapses.",
+        "fr": "Aucune option de licence perpétuelle ; le rendu s'arrête dès que l'abonnement expire."
+      },
+      {
+        "en": "The entry Solo tier is locked to a single named device, unlike the floating Premium/Collection licenses.",
+        "fr": "Le palier Solo d'entrée est limité à un seul appareil nommé, contrairement aux licences flottantes Premium/Collection."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You do archviz rendering in 3ds Max or Cinema 4D and want an easier learning curve than V-Ray or Octane.",
+        "fr": "Tu fais du rendu archviz dans 3ds Max ou Cinema 4D et veux une prise en main plus facile que V-Ray ou Octane."
+      },
+      "avoidIf": {
+        "en": "You want a one-time license instead of a recurring subscription, or need to share one seat across a rotating team.",
+        "fr": "Tu veux une licence à achat unique plutôt qu'un abonnement récurrent, ou dois partager un même siège entre une équipe qui tourne."
+      },
+      "threshold": {
+        "en": "Corona Solo costs $34.50/month ($414/year); that's the real entry cost since there's no perpetual license or free tier.",
+        "fr": "Corona Solo coûte 34,50 $/mois (414 $/an) ; c'est le vrai coût d'entrée puisqu'il n'existe ni licence perpétuelle ni version gratuite."
+      },
+      "billingTraps": {
+        "en": "Annual subscriptions auto-renew; you need to cancel manually to stop the renewal.",
+        "fr": "Les abonnements annuels se renouvellent automatiquement ; il faut résilier toi-même pour stopper le renouvellement."
+      }
+    }
+  },
   "unknowns": [
     "Educational licensing pricing not published on the page (mentioned but no figures shown).",
     "macOS/Linux support not confirmed; page and plugin ecosystem suggest Windows-centric usage."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

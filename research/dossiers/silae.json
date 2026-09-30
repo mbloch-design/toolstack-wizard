@@ -3,7 +3,8 @@
   "slug": "silae",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Silae",
     "vendor": "Silae SAS",
@@ -30,34 +31,88 @@
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "No public price grid found on the official site; pricing is distributed through accounting-firm and integrator partners, not sold directly to end users at a listed rate.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No public price grid found on the official site; pricing is distributed through accounting-firm and integrator partners, not sold directly to end users at a listed rate.", "fr": "Aucune grille de prix publique trouvée sur le site officiel ; la tarification passe par des cabinets comptables et des intégrateurs partenaires, pas de vente directe à un tarif affiché.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Payroll production, control, and validation flow through to the payslip (bulletin), including automated DSN (French mandatory payroll declaration) generation.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Support for 900+ French collective bargaining agreements (conventions collectives).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "HR/SIRH modules: employee lifecycle, time tracking, leave management, telework management, electronic signature.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Additional modules: social reporting BI (mySilae BI), benefits management (mySilae Santé), expense management (mySilae Expense), legal document generation (mySilae Contrats).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Payroll production, control, and validation flow through to the payslip (bulletin), including automated DSN (French mandatory payroll declaration) generation.", "fr": "Production, contrôle et validation de la paie jusqu'au bulletin, avec génération automatisée de la DSN (déclaration sociale nominative obligatoire en France).", "sourceIds": ["s1"] },
+      { "en": "Support for 900+ French collective bargaining agreements (conventions collectives).", "fr": "Prise en charge de plus de 900 conventions collectives françaises.", "sourceIds": ["s1"] },
+      { "en": "HR/SIRH modules: employee lifecycle, time tracking, leave management, telework management, electronic signature.", "fr": "Modules RH/SIRH : cycle de vie du salarié, suivi du temps, gestion des congés, gestion du télétravail, signature électronique.", "sourceIds": ["s1"] },
+      { "en": "Additional modules: social reporting BI (mySilae BI), benefits management (mySilae Santé), expense management (mySilae Expense), legal document generation (mySilae Contrats).", "fr": "Modules additionnels : reporting social BI (mySilae BI), gestion des avantages (mySilae Santé), gestion des notes de frais (mySilae Expense), génération de documents juridiques (mySilae Contrats).", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Distribution model targets accounting firms, payroll BPOs and integrators rather than direct self-serve signup, so an individual freelancer or small team cannot easily buy or price it alone.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "No public pricing, so cost cannot be compared without contacting a partner or sales.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Distribution model targets accounting firms, payroll BPOs and integrators rather than direct self-serve signup, so an individual freelancer or small team cannot easily buy or price it alone.", "fr": "Le modèle de distribution cible les cabinets comptables, les BPO paie et les intégrateurs plutôt qu'une inscription directe en libre-service, donc un freelance ou une petite équipe ne peut pas facilement l'acheter ou en connaître le prix seul.", "sourceIds": ["s1"] },
+      { "en": "No public pricing, so cost cannot be compared without contacting a partner or sales.", "fr": "Pas de tarification publique, impossible de comparer le coût sans contacter un partenaire ou le service commercial.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or admin lead at a small business or accounting firm who needs French payroll compliance (DSN, collective agreements) handled by a partner-distributed tool.",
+      "fr": "Une responsable ops ou admin d'une petite entreprise ou d'un cabinet comptable qui a besoin de la conformité paie française (DSN, conventions collectives) via un outil distribué par des partenaires."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Payslip compliance: generate compliant payslips and the mandatory DSN declaration for a French collective agreement instead of building it manually.", "fr": "Conformité des bulletins : génère des bulletins de paie conformes et la DSN obligatoire pour une convention collective française plutôt que de la construire à la main." },
+    { "en": "HR administration: track leave, telework and employee lifecycle in the same suite as payroll instead of separate spreadsheets.", "fr": "Administration RH : suis congés, télétravail et cycle de vie des salariés dans la même suite que la paie plutôt que dans des tableurs séparés." }
+  ],
   "alternatives": [
-    { "slug": "pennylane", "reason": { "en": "French accounting/finance platform used by similar accounting-firm and SME customers.", "fr": null } },
-    { "slug": "payhawk", "reason": { "en": "Business spend and finance management alternative for European SMEs.", "fr": null } },
-    { "slug": "axonaut", "reason": { "en": "French all-in-one management software for small businesses, adjacent to payroll/admin needs.", "fr": null } }
+    { "slug": "pennylane", "reason": { "en": "French accounting/finance platform used by similar accounting-firm and SME customers.", "fr": "Plateforme comptable et financière française utilisée par des cabinets comptables et PME similaires." } },
+    { "slug": "axonaut", "reason": { "en": "French all-in-one management software for small businesses, adjacent to payroll/admin needs.", "fr": "Logiciel de gestion tout-en-un français pour petites entreprises, proche des besoins de paie et d'administration." } },
+    { "slug": "deel", "reason": { "en": "Direct competitor for payroll and contractor payment, though positioned more for international hiring than French-specific compliance.", "fr": "Concurrent direct pour la paie et le paiement de freelances, mais plus orienté embauche internationale que conformité spécifiquement française." } }
   ],
   "missingAlternatives": [
     { "name": "PayFit", "officialUrl": "https://payfit.com/", "reason": "Leading direct-to-SME French payroll competitor, self-serve unlike Silae's partner-only model, not present in the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Neutral score: with no public pricing, the cost side of the value equation is not covered by the collected sources.", "fr": "Note neutre : sans tarification publique, le volet coût de l'équation valeur/prix ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The tool is distributed only through accounting firms and integrators, so an individual freelancer or small team cannot sign up and get a first result alone.", "fr": "L'outil est distribué uniquement via des cabinets comptables et des intégrateurs, un freelance ou une petite équipe ne peut donc pas s'inscrire et obtenir un premier résultat seul.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised full payroll flow to the payslip with automated DSN generation and support for 900+ collective agreements.", "fr": "Tient sa promesse d'un flux de paie complet jusqu'au bulletin avec génération automatisée de la DSN et prise en charge de plus de 900 conventions collectives.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines payroll, DSN compliance, HR/SIRH modules, time tracking, benefits and legal document generation in one suite, a broad feature set for French payroll.", "fr": "Combine paie, conformité DSN, modules RH/SIRH, suivi du temps, avantages et génération de documents juridiques dans une seule suite, un périmètre large pour la paie française.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export or portability options if leaving Silae are not covered by the collected sources.", "fr": "Note neutre : les options d'export ou de portabilité des données en cas de départ de Silae ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "French payroll software", "fr": "Logiciel de paie français" },
+    "shortDescription": {
+      "en": "French payroll and HR software covering DSN declarations and 900+ collective agreements, sold through partners only.",
+      "fr": "Logiciel de paie et RH français couvrant les déclarations DSN et plus de 900 conventions collectives, vendu uniquement via des partenaires."
+    },
+    "longDescription": {
+      "en": "Silae handles French payroll from production to the final payslip, including automated DSN declarations and support for over 900 collective bargaining agreements. HR/SIRH modules add employee lifecycle, time tracking, leave, telework and electronic signature, with further add-ons for reporting, benefits, expenses and legal documents.\n\nSilae is not sold directly: it is distributed through accounting firms, payroll BPOs and integrators, so there is no public price list and a freelancer or small team cannot subscribe alone. It fits a small business or accounting firm already working with one of these partners, not someone looking for self-serve payroll software.",
+      "fr": "Silae gère la paie française de la production jusqu'au bulletin final, avec déclarations DSN automatisées et prise en charge de plus de 900 conventions collectives. Les modules RH/SIRH ajoutent cycle de vie du salarié, suivi du temps, congés, télétravail et signature électronique.\n\nSilae ne se vend pas en direct : l'outil est distribué via des cabinets comptables, des BPO paie et des intégrateurs, il n'y a donc pas de grille tarifaire publique et un freelance ne peut pas s'abonner seul. Il convient à une entreprise ou un cabinet déjà en lien avec un de ces partenaires, pas à qui cherche un logiciel de paie en libre-service."
+    },
+    "pros": [
+      { "en": "Covers 900+ collective agreements, a broad compliance base for French payroll.", "fr": "Couvre plus de 900 conventions collectives, une base de conformité large pour la paie française." },
+      { "en": "HR/SIRH modules bundle time tracking, leave and telework management alongside payroll.", "fr": "Les modules RH/SIRH regroupent suivi du temps, congés et télétravail aux côtés de la paie." }
+    ],
+    "cons": [
+      { "en": "No public pricing and no direct signup; access goes through an accounting firm or integrator partner.", "fr": "Pas de tarification publique ni d'inscription directe ; l'accès passe par un cabinet comptable ou un intégrateur partenaire." },
+      { "en": "Not usable by a solo freelancer without going through a partner first.", "fr": "Pas utilisable par un freelance seul sans passer d'abord par un partenaire." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run payroll through an accounting firm or integrator that already offers Silae and need broad French collective-agreement coverage.", "fr": "Tu gères la paie via un cabinet comptable ou un intégrateur qui propose déjà Silae et as besoin d'une large couverture des conventions collectives françaises." },
+      "avoidIf": { "en": "You want to sign up and see pricing directly as an individual freelancer or small team, without going through a partner.", "fr": "Tu veux t'inscrire et voir les tarifs directement en tant que freelance ou petite équipe, sans passer par un partenaire." },
+      "threshold": null,
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "No pricing figures published; distribution is via accounting firms and integrators (partner network), so comparePlanKey and price fields cannot be filled.",
     "Whether an individual freelancer/small team can subscribe directly is unclear from the homepage."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

@@ -3,7 +3,7 @@
   "slug": "intercom",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Intercom",
     "vendor": "Intercom, Inc.",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.intercom.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Intercom pricing" },
-    { "id": "s2", "url": "https://www.intercom.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Intercom homepage" }
+    {
+      "id": "s1",
+      "url": "https://www.intercom.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Intercom pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.intercom.com/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Intercom homepage"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -25,83 +37,347 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "essential",
         "name": "Essential",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Messenger, shared inbox, ticketing, pre-built reports, public help center; includes Fin AI Agent" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Messenger, shared inbox, ticketing, pre-built reports, public help center; includes Fin AI Agent",
+            "fr": "Messagerie, boite de reception partagee, ticketing, rapports predefinis, centre d'aide public ; inclut Fin AI Agent."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "advanced",
         "name": "Advanced",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 85, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 85,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Multiple team inboxes, workflow automation, round robin assignment, private/multilingual help center; 20 free Lite seats" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Multiple team inboxes, workflow automation, round robin assignment, private/multilingual help center; 20 free Lite seats",
+            "fr": "Plusieurs boites de reception d'equipe, automatisation de workflow, attribution round robin, centre d'aide prive/multilingue ; 20 sieges Lite gratuits."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "expert",
         "name": "Expert",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 132, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 132,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "SSO & identity management, HIPAA support, SLAs, multibrand messaging; 50 free Lite seats" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "SSO & identity management, HIPAA support, SLAs, multibrand messaging; 50 free Lite seats",
+            "fr": "SSO et gestion des identites, support HIPAA, SLA, messagerie multi-marque ; 50 sieges Lite gratuits."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "essential",
     "addOns": [
-      { "en": "Fin AI Agent: $0.99 per resolved outcome, charged once per conversation", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Copilot: $29/agent/month (annual) or $35/agent/month (monthly)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Proactive Support Plus: $99/month (includes 500 messages)", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Fin AI Agent: $0.99 per resolved outcome, charged once per conversation",
+        "fr": "Fin AI Agent : 0,99 $ par resultat resolu, facture une fois par conversation",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Copilot: $29/agent/month (annual) or $35/agent/month (monthly)",
+        "fr": "Copilot : 29 $/agent/mois (annuel) ou 35 $/agent/mois (mensuel)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Proactive Support Plus: $99/month (includes 500 messages)",
+        "fr": "Proactive Support Plus : 99 $/mois (inclut 500 messages)",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Seat price is only the base cost; Fin AI resolutions bill separately per outcome and can add up quickly at volume.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Seat price is only the base cost; Fin AI resolutions bill separately per outcome and can add up quickly at volume.",
+        "fr": "Le prix au siege n'est que le cout de base ; les resolutions Fin AI sont facturees separement par resultat et peuvent vite s'accumuler a fort volume.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Fin AI Agent resolves customer conversations across chat, email and phone, with a reported ~76% average resolution rate across customers", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Omnichannel shared inbox with AI-powered ticketing for customer issues and internal collaboration", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Copilot gives real-time AI assistance to human agents inside the inbox", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Public, private and multilingual help center / knowledge base shared by AI and human agents", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Fin AI Agent resolves customer conversations across chat, email and phone, with a reported ~76% average resolution rate across customers",
+        "fr": "Fin AI Agent resout les conversations client sur chat, email et telephone, avec un taux de resolution moyen rapporte d'environ 76 % sur l'ensemble des clients",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Omnichannel shared inbox with AI-powered ticketing for customer issues and internal collaboration",
+        "fr": "Boite de reception partagee omnicanale avec ticketing assiste par IA pour les problemes client et la collaboration interne",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Copilot gives real-time AI assistance to human agents inside the inbox",
+        "fr": "Copilot donne une assistance IA en temps reel aux agents humains directement dans la boite de reception",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Public, private and multilingual help center / knowledge base shared by AI and human agents",
+        "fr": "Centre d'aide / base de connaissances public, prive et multilingue, partage entre l'IA et les agents humains",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Fin needs to be trained on company processes and policies to perform well; it hands off complex queries to human agents", "fr": null, "sourceIds": ["s2"] },
-      { "en": "No free plan; a paid seat is required even to trial most features", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Fin needs to be trained on company processes and policies to perform well; it hands off complex queries to human agents",
+        "fr": "Fin doit etre entraine sur les processus et politiques de l'entreprise pour bien fonctionner ; il transmet les demandes complexes a un agent humain",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "No free plan; a paid seat is required even to trial most features",
+        "fr": "Pas de plan gratuit ; un siege payant est requis meme pour essayer la plupart des fonctions",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
-      { "name": "Salesforce", "slug": "salesforce", "sourceIds": ["s2"] },
-      { "name": "HubSpot", "slug": null, "sourceIds": ["s2"] },
-      { "name": "Shopify", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Salesforce",
+        "slug": "salesforce",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "HubSpot",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Shopify",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or support lead in a small team who wants an AI agent to resolve routine customer conversations before they reach a human.",
+      "fr": "Une responsable ops ou support dans une petite equipe qui veut qu'un agent IA resolve les conversations client courantes avant qu'elles n'atteignent un humain."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Support triage: let Fin AI Agent resolve routine chat and email questions, handing off complex ones to a human agent.",
+      "fr": "Tri du support : laisser Fin AI Agent resoudre les questions courantes de chat et email, en transmettant les cas complexes a un agent humain."
+    },
+    {
+      "en": "Help center launch: publish a public help center and let Fin answer from it while the team focuses on escalations.",
+      "fr": "Lancement d'un centre d'aide : publier un centre d'aide public et laisser Fin repondre a partir de son contenu pendant que l'equipe se concentre sur les escalades."
+    }
+  ],
   "alternatives": [
-    { "slug": "zendesk", "reason": { "en": "Direct competitor in helpdesk/support software with similar omnichannel ticketing." } },
-    { "slug": "helpscout", "reason": { "en": "Simpler, cheaper shared-inbox support tool aimed at smaller teams than Intercom." } },
-    { "slug": "crisp", "reason": { "en": "Lighter-weight live chat and support inbox alternative, more budget-friendly for solos and small teams." } },
-    { "slug": "tidio", "reason": { "en": "Live chat + AI chatbot for support, positioned as a lower-cost alternative to Intercom." } }
+    {
+      "slug": "zendesk",
+      "reason": {
+        "en": "Direct competitor in helpdesk/support software with similar omnichannel ticketing.",
+        "fr": "Concurrent direct sur le logiciel de helpdesk/support avec un ticketing omnicanal similaire."
+      }
+    },
+    {
+      "slug": "helpscout",
+      "reason": {
+        "en": "Simpler, cheaper shared-inbox support tool aimed at smaller teams than Intercom.",
+        "fr": "Outil de support en boite de reception partagee plus simple et moins cher, vise les petites equipes face a Intercom."
+      }
+    },
+    {
+      "slug": "crisp",
+      "reason": {
+        "en": "Lighter-weight live chat and support inbox alternative, more budget-friendly for solos and small teams.",
+        "fr": "Alternative plus legere de chat en direct et boite de reception de support, plus abordable pour les solos et petites equipes."
+      }
+    },
+    {
+      "slug": "tidio",
+      "reason": {
+        "en": "Live chat + AI chatbot for support, positioned as a lower-cost alternative to Intercom.",
+        "fr": "Chat en direct et chatbot IA pour le support, positionne comme une alternative moins chere a Intercom."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The $29/seat/month Essential plan looks affordable, but Fin AI resolutions bill separately per outcome and can add up quickly at volume, making the real cost harder to predict.",
+        "fr": "Le plan Essential a 29 $/siege/mois parait abordable, mais les resolutions Fin AI sont facturees separement par resultat et peuvent vite s'accumuler a fort volume, ce qui rend le cout reel difficile a prevoir.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Fin needs to be trained on company processes and policies to perform well, which means setup work before it resolves conversations reliably.",
+        "fr": "Fin doit etre entraine sur les processus et politiques de l'entreprise pour bien fonctionner, ce qui demande un travail de mise en place avant qu'il resolve les conversations de facon fiable.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Fin AI Agent reports an average resolution rate of about 76% across customers, resolving conversations across chat, email and phone as promised.",
+        "fr": "Fin AI Agent rapporte un taux de resolution moyen d'environ 76 % sur l'ensemble des clients, en resolvant les conversations sur chat, email et telephone comme promis.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Omnichannel inbox, real-time Copilot assistance, SSO/identity management and multibrand messaging on the top tier cover a full support operation.",
+        "fr": "Boite de reception omnicanale, assistance Copilot en temps reel, SSO/gestion des identites et messagerie multi-marque sur le palier superieur couvrent une operation de support complete.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability if leaving Intercom are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des donnees et la portabilite en quittant Intercom ne figurent pas dans les sources relevees.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI customer support",
+      "fr": "Support client IA"
+    },
+    "shortDescription": {
+      "en": "AI-powered customer support platform combining a shared inbox, help center and Fin AI Agent, from $29/seat/month.",
+      "fr": "Plateforme de support client assistee par IA combinant boite de reception partagee, centre d'aide et Fin AI Agent, a partir de 29 $/siege/mois."
+    },
+    "longDescription": {
+      "en": "Intercom combines an omnichannel shared inbox, ticketing and a public or private help center with Fin, an AI agent that resolves customer conversations across chat, email and phone with a reported ~76% average resolution rate, handing off complex cases to a human.\n\nSeats start at $29/month on the Essential plan, with no free tier, and Fin's resolutions bill separately at $0.99 per outcome, so real cost depends on support volume. It fits a small team that wants AI to absorb routine tickets before they reach a human agent.",
+      "fr": "Intercom combine une boite de reception partagee omnicanale, du ticketing et un centre d'aide public ou prive avec Fin, un agent IA qui resout les conversations client sur chat, email et telephone avec un taux de resolution moyen rapporte d'environ 76 %, en transmettant les cas complexes a un humain.\n\nLes sieges commencent a 29 $/mois sur le plan Essential, sans palier gratuit, et les resolutions de Fin sont facturees separement a 0,99 $ par resultat, donc le cout reel depend du volume de support. Il convient a une petite equipe qui veut que l'IA absorbe les tickets courants avant qu'ils n'atteignent un agent humain."
+    },
+    "pros": [
+      {
+        "en": "Fin AI Agent resolves a reported ~76% of conversations on average before reaching a human.",
+        "fr": "Fin AI Agent resout en moyenne environ 76 % des conversations rapportees avant d'atteindre un humain."
+      },
+      {
+        "en": "Combines inbox, ticketing, help center and AI agent in one platform.",
+        "fr": "Combine boite de reception, ticketing, centre d'aide et agent IA dans une seule plateforme."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan; every seat is paid from day one.",
+        "fr": "Pas de plan gratuit ; chaque siege est payant des le depart."
+      },
+      {
+        "en": "Fin AI resolutions bill separately per outcome on top of the seat price, and add up at volume.",
+        "fr": "Les resolutions Fin AI sont facturees separement par resultat en plus du prix du siege, et s'accumulent a fort volume."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You have enough support volume to justify an AI agent resolving conversations before a human sees them.",
+        "fr": "Tu as assez de volume de support pour justifier un agent IA qui resout les conversations avant qu'un humain ne les voie."
+      },
+      "avoidIf": {
+        "en": "Your conversation volume is low; the per-seat and per-resolution costs won't be worth it yet.",
+        "fr": "Ton volume de conversations est faible ; les couts par siege et par resolution ne seront pas encore rentables."
+      },
+      "threshold": {
+        "en": "Worth it once support volume passes the $348/year (12 x $29) Essential seat cost, plus Fin's $0.99-per-resolution add-on.",
+        "fr": "Rentable des que le volume de support depasse le cout du siege Essential de 348 $/an (12 x 29 $), plus l'extension Fin a 0,99 $ par resolution."
+      }
+    }
+  },
   "unknowns": [
     "Exact annual discount percentage for seat plans not stated on the pricing page seen",
     "Full list of Fin AI outcome definitions and spend-limit controls not detailed beyond the summary"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-25"
 }

@@ -3,7 +3,8 @@
   "slug": "runway",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Runway",
     "vendor": "Runway AI, Inc.",
@@ -15,8 +16,20 @@
     "statusNote": "runwayml.com now permanently redirects (308) to runway.com."
   },
   "sources": [
-    { "id": "s1", "url": "https://runway.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Runway pricing" },
-    { "id": "s2", "url": "https://runway.com/", "tier": 1, "accessedOn": "2026-09-25", "title": "Runway homepage" }
+    {
+      "id": "s1",
+      "url": "https://runway.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Runway pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://runway.com/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Runway homepage"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,7 +38,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "125 one-time credits, 5GB storage, exploration-only", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "125 one-time credits, 5GB storage, exploration-only",
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,72 +52,318 @@
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "125 one-time credits (not monthly), 5GB storage.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "125 one-time credits (not monthly), 5GB storage.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard",
         "name": "Standard",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 15, "annualPerMonth": 12, "oneTime": null },
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": 12,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "625 credits/month, 5 parallel generations, 3 projects, no watermarks, 4K upscaling, 20GB storage.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "625 credits/month, 5 parallel generations, 3 projects, no watermarks, 4K upscaling, 20GB storage.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 35, "annualPerMonth": 28, "oneTime": null },
+        "price": {
+          "monthly": 35,
+          "annualPerMonth": 28,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "2,250 credits/month, 15 parallel generations, 5 projects, 1 Brand Kit, 1 voice clone, credit top-ups available, 100GB storage.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "2,250 credits/month, 15 parallel generations, 5 projects, 1 Brand Kit, 1 voice clone, credit top-ups available, 100GB storage.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "max",
         "name": "Max",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 95, "annualPerMonth": 76, "oneTime": null },
+        "price": {
+          "monthly": 95,
+          "annualPerMonth": 76,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "9,500 credits/month with 1-month rollover, 20 parallel generations, 10 projects, 3 Brand Kits, 3 voice clones, studio-grade HDR/ProRes output, 500GB storage.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "9,500 credits/month with 1-month rollover, 20 parallel generations, 10 projects, 3 Brand Kits, 3 voice clones, studio-grade HDR/ProRes output, 500GB storage.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [
-      { "name": "Credit top-ups (Pro and above)", "sourceIds": ["s1"] }
+      {
+        "name": "Credit top-ups (Pro and above)",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Free plan credits are a one-time grant, not a recurring monthly allowance, so the free tier runs out quickly.", "fr": "Les crédits du plan gratuit sont accordés une seule fois, pas chaque mois, donc le plan gratuit est vite épuisé.", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan credits are a one-time grant, not a recurring monthly allowance, so the free tier runs out quickly.",
+        "fr": "Les crédits du plan gratuit sont accordés une seule fois, pas chaque mois, donc le plan gratuit est vite épuisé.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "AI video, image and audio generation and editing in one cloud workspace.", "sourceIds": ["s2"] },
-      { "en": "Multiple in-house generative models (Gen-4.5, Gen-4 Turbo, Gen-4 Images) with 4K upscaling.", "sourceIds": ["s1", "s2"] },
-      { "en": "Developer/API platform (Runway Dev) with a model router for programmatic access.", "sourceIds": ["s2"] },
-      { "en": "Robotics and world-simulation tools (Runway Robotics, General World Model) for policy training.", "sourceIds": ["s2"] }
+      {
+        "en": "AI video, image and audio generation and editing in one cloud workspace.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Génération et montage de vidéo, d'image et d'audio par IA dans un même espace cloud."
+      },
+      {
+        "en": "Multiple in-house generative models (Gen-4.5, Gen-4 Turbo, Gen-4 Images) with 4K upscaling.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ],
+        "fr": "Plusieurs modèles génératifs maison (Gen-4.5, Gen-4 Turbo, Gen-4 Images), avec agrandissement en 4K."
+      },
+      {
+        "en": "Developer/API platform (Runway Dev) with a model router for programmatic access.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Plateforme développeurs et API (Runway Dev) avec un routeur de modèles pour un accès programmatique."
+      },
+      {
+        "en": "Robotics and world-simulation tools (Runway Robotics, General World Model) for policy training.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Outils de robotique et de simulation de monde (Runway Robotics, General World Model) pour entraîner des politiques."
+      }
     ],
     "limitations": [
-      { "en": "Free plan credits are a one-time allowance rather than a recurring monthly quota.", "sourceIds": ["s1"] },
-      { "en": "Watermark-free output and 4K upscaling require at least the Standard paid plan.", "sourceIds": ["s1"] },
-      { "en": "Brand Kits and voice cloning are limited by tier (1 on Pro, 3 on Max) and unavailable below Pro.", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan credits are a one-time allowance rather than a recurring monthly quota.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les crédits du plan gratuit sont une dotation unique, pas un quota mensuel renouvelé."
+      },
+      {
+        "en": "Watermark-free output and 4K upscaling require at least the Standard paid plan.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les exports sans filigrane et l'agrandissement en 4K demandent au moins la formule payante Standard."
+      },
+      {
+        "en": "Brand Kits and voice cloning are limited by tier (1 on Pro, 3 on Max) and unavailable below Pro.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les kits de marque et le clonage de voix sont limités selon la formule (1 en Pro, 3 en Max) et absents en dessous de Pro."
+      }
     ],
     "integrations": [
-      { "name": "ChatGPT", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "ChatGPT",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A creator or small team producing AI video regularly who wants generation, editing and a developer API in one workspace.",
+      "fr": "Un créateur ou une petite équipe qui produit de la vidéo IA régulièrement et veut génération, édition et une API développeur dans un seul espace de travail."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Generate short AI video clips from text or image prompts for social content, starting on the Standard plan to avoid watermarks.",
+      "fr": "Générer de courts clips vidéo IA à partir de texte ou d'images pour du contenu social, en commençant sur le plan Standard pour éviter le filigrane."
+    },
+    {
+      "en": "Access Runway's generative models programmatically through Runway Dev's API for a custom video production workflow.",
+      "fr": "Accéder aux modèles génératifs de Runway par programmation via l'API de Runway Dev pour un flux de production vidéo sur mesure."
+    }
+  ],
   "alternatives": [
-    { "slug": "pika-labs", "reason": { "en": "Direct competitor in AI video generation from text and image prompts." } },
-    { "slug": "kling", "reason": { "en": "Direct competitor offering comparable AI video generation models." } }
+    {
+      "slug": "pika-labs",
+      "reason": {
+        "en": "Direct competitor in AI video generation from text and image prompts.",
+        "fr": "Concurrent direct en génération vidéo IA à partir de texte et d'images."
+      }
+    },
+    {
+      "slug": "kling",
+      "reason": {
+        "en": "Direct competitor offering comparable AI video generation models.",
+        "fr": "Concurrent direct proposant des modèles de génération vidéo IA comparables."
+      }
+    }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Standard removes watermarks and adds 4K upscaling for $15/month ($12/month annual), a reasonable entry price for AI video generation, but the free plan's 125 credits are a one-time grant rather than a monthly allowance.",
+        "fr": "Standard retire le filigrane et ajoute l'upscaling 4K pour 15 $/mois (12 $/mois en annuel), un prix d'entrée raisonnable pour la génération vidéo IA, mais les 125 crédits du plan gratuit sont accordés une seule fois, pas chaque mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers AI video, image and audio generation and editing in one workspace across multiple in-house models (Gen-4.5, Gen-4 Turbo, Gen-4 Images) with 4K upscaling, plus a developer API (Runway Dev).",
+        "fr": "Fournit la génération et l'édition vidéo, image et audio par IA dans un seul espace de travail avec plusieurs modèles maison (Gen-4.5, Gen-4 Turbo, Gen-4 Images) et upscaling 4K, plus une API développeur (Runway Dev).",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Max tier scales to 9,500 credits/month with studio-grade HDR/ProRes output, and the platform extends into a developer API and robotics/world-simulation tools beyond typical AI video generators.",
+        "fr": "Le palier Max monte jusqu'à 9 500 crédits/mois avec un rendu HDR/ProRes de qualité studio, et la plateforme s'étend à une API développeur et des outils de robotique/simulation de monde au-delà des générateurs vidéo IA classiques.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export or portability of generated assets and projects is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des contenus et projets générés ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI video generation",
+      "fr": "Génération vidéo IA"
+    },
+    "shortDescription": {
+      "en": "AI video, image and audio generation and editing platform with multiple in-house models, 4K upscaling, and a one-time free credit grant.",
+      "fr": "Plateforme de génération et d'édition vidéo, image et audio par IA avec plusieurs modèles maison, upscaling 4K, et des crédits gratuits accordés une seule fois."
+    },
+    "longDescription": {
+      "en": "Runway generates and edits AI video, image and audio in one cloud workspace, using several in-house models (Gen-4.5, Gen-4 Turbo, Gen-4 Images) with 4K upscaling, plus a developer API (Runway Dev) and robotics/world-simulation tools for policy training.\n\nThe free plan grants 125 credits once, not monthly, and produces watermarked output. Standard at $15/month ($12/month annual) removes the watermark and adds 4K upscaling with 625 credits a month; Pro and Max scale up to 2,250 and 9,500 credits with Brand Kits, voice cloning and studio-grade HDR/ProRes output. It suits a creator or small team producing AI video regularly rather than testing it once.",
+      "fr": "Runway génère et édite de la vidéo, de l'image et de l'audio par IA dans un espace de travail cloud unique, avec plusieurs modèles maison (Gen-4.5, Gen-4 Turbo, Gen-4 Images) et upscaling 4K, plus une API développeur (Runway Dev) et des outils de robotique/simulation de monde pour l'entraînement de politiques.\n\nLe plan gratuit accorde 125 crédits une seule fois, pas chaque mois, et produit un rendu avec filigrane. Standard à 15 $/mois (12 $/mois en annuel) retire le filigrane et ajoute l'upscaling 4K avec 625 crédits par mois ; Pro et Max montent jusqu'à 2 250 et 9 500 crédits avec Brand Kits, clonage vocal et rendu HDR/ProRes de qualité studio. Il convient à un créateur ou une petite équipe qui produit de la vidéo IA régulièrement plutôt qu'un test ponctuel."
+    },
+    "pros": [
+      {
+        "en": "Combines video, image and audio generation with a developer API in one platform.",
+        "fr": "Combine génération vidéo, image et audio avec une API développeur dans une seule plateforme."
+      },
+      {
+        "en": "Multiple in-house models and 4K upscaling from the Standard tier up.",
+        "fr": "Plusieurs modèles maison et upscaling 4K à partir du palier Standard."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan's 125 credits are a one-time grant, not a recurring monthly allowance.",
+        "fr": "Les 125 crédits du plan gratuit sont accordés une seule fois, pas chaque mois."
+      },
+      {
+        "en": "Watermark-free output and 4K upscaling require at least the Standard paid plan.",
+        "fr": "Le rendu sans filigrane et l'upscaling 4K demandent au moins le plan payant Standard."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You produce AI video regularly and want generation, editing and a developer API in one workspace.",
+        "fr": "Tu produis de la vidéo IA régulièrement et tu veux génération, édition et une API développeur dans un seul espace de travail."
+      },
+      "avoidIf": {
+        "en": "You just want to try AI video generation a few times; the free plan's credits run out after one-time use.",
+        "fr": "Tu veux juste tester la génération vidéo IA quelques fois ; les crédits du plan gratuit s'épuisent après un usage ponctuel."
+      },
+      "threshold": {
+        "en": "At $15/month ($12/month annual) for Standard's 625 credits and watermark-free output, it's worth it once the free plan's one-time 125 credits are used up.",
+        "fr": "À 15 $/mois (12 $/mois en annuel) pour les 625 crédits et le rendu sans filigrane de Standard, ça devient rentable une fois les 125 crédits ponctuels du plan gratuit épuisés."
+      },
+      "billingTraps": {
+        "en": "Credit top-ups on Pro and above let usage exceed the plan's monthly credit allowance, adding to the bill beyond the flat subscription.",
+        "fr": "Les recharges de crédits sur Pro et au-delà permettent de dépasser le quota mensuel du plan, ce qui s'ajoute à la facture au-delà de l'abonnement fixe."
+      }
+    }
+  },
   "unknowns": [
     "Whether Enterprise-level custom plans exist above Max was not confirmed on the pricing page as fetched."
   ],

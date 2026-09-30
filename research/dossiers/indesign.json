@@ -3,7 +3,8 @@
   "slug": "indesign",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Adobe InDesign",
     "vendor": "Adobe Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 22.99, "annualPerMonth": 22.99, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual plan billed monthly; includes 100GB cloud storage and 25 monthly generative credits" }],
+        "keyLimits": [{ "en": "Annual plan billed monthly; includes 100GB cloud storage and 25 monthly generative credits", "fr": "Plan annuel facturé au mois ; inclut 100 Go de stockage cloud et 25 crédits génératifs par mois" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 69.99, "annualPerMonth": 69.99, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "$34.99/month for first 3 months (new subscribers), then $69.99/month; 20+ apps including InDesign, Illustrator, Photoshop; 4,000 monthly generative credits" }],
+        "keyLimits": [{ "en": "$34.99/month for first 3 months (new subscribers), then $69.99/month; 20+ apps including InDesign, Illustrator, Photoshop; 4,000 monthly generative credits", "fr": "34,99 $/mois les 3 premiers mois (nouveaux abonnés) puis 69,99 $/mois ; plus de 20 apps dont InDesign, Illustrator, Photoshop ; 4 000 crédits génératifs par mois" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,43 +55,134 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Business/team licensing, price shown only in local currency on region-specific pages" }],
+        "keyLimits": [{ "en": "Business/team licensing, price shown only in local currency on region-specific pages", "fr": "Licence entreprise/équipe, prix affiché uniquement en devise locale sur des pages régionales" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "single-app",
     "addOns": [],
     "cautions": [
-      { "en": "The headline Creative Cloud Pro price ($34.99/month) is a 3-month new-subscriber promo before it jumps to $69.99/month; the regular, non-promotional price should be used for comparison.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The headline Creative Cloud Pro price ($34.99/month) is a 3-month new-subscriber promo before it jumps to $69.99/month; the regular, non-promotional price should be used for comparison.", "fr": "Le prix affiché de Creative Cloud Pro (34,99 $/mois) est une promo de 3 mois pour les nouveaux abonnés, avant de passer à 69,99 $/mois ; c'est le prix régulier, hors promo, qui doit servir de comparaison.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Professional page layout for brochures, digital magazines, eBooks, posters and presentations", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI Assistant (beta) and Flex Layout for adaptive, responsive design", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Layout-aware copy-fit rewriting and PDF-to-InDesign document conversion", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Automatic alt-text generation for accessibility and Generative Expand for AI-powered image resizing", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Professional page layout for brochures, digital magazines, eBooks, posters and presentations", "fr": "Mise en page professionnelle pour brochures, magazines numériques, eBooks, affiches et présentations", "sourceIds": ["s1"] },
+      { "en": "AI Assistant (beta) and Flex Layout for adaptive, responsive design", "fr": "AI Assistant (bêta) et Flex Layout pour des mises en page adaptatives et responsives", "sourceIds": ["s1"] },
+      { "en": "Layout-aware copy-fit rewriting and PDF-to-InDesign document conversion", "fr": "Réécriture de texte consciente de la mise en page (copy-fit) et conversion de PDF vers document InDesign", "sourceIds": ["s1"] },
+      { "en": "Automatic alt-text generation for accessibility and Generative Expand for AI-powered image resizing", "fr": "Génération automatique de texte alternatif pour l'accessibilité et Generative Expand pour redimensionner des images par IA", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No free tier; only a 7-day trial before requiring a paid subscription", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Generative credits are capped (25/month on the single-app plan), limiting AI feature usage without upgrading", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No free tier; only a 7-day trial before requiring a paid subscription", "fr": "Aucune version gratuite ; seulement un essai de 7 jours avant de devoir souscrire un abonnement payant", "sourceIds": ["s1"] },
+      { "en": "Generative credits are capped (25/month on the single-app plan), limiting AI feature usage without upgrading", "fr": "Les crédits génératifs sont plafonnés (25/mois sur le plan seule app), ce qui limite l'usage des fonctions IA sans passer à un plan supérieur", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["macos", "windows"]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer or small studio producing recurring print or digital publications (brochures, magazines, books) who needs professional layout precision, not a template tool.",
+      "fr": "Un designer ou un petit studio qui produit régulièrement des publications print ou digitales (brochures, magazines, livres) et a besoin d'une précision de mise en page professionnelle, pas d'un simple outil de templates."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a freelance designer lays out a 40-page print brochure using Flex Layout, so it adapts to multiple page sizes without redoing the design by hand.",
+      "fr": "Cas d'usage : un designer freelance met en page une brochure imprimée de 40 pages avec Flex Layout, qui s'adapte à plusieurs formats sans refaire la mise en page à la main."
+    },
+    {
+      "en": "Use case: a small studio converts a client-supplied PDF into an editable InDesign document instead of rebuilding the layout from scratch.",
+      "fr": "Cas d'usage : un petit studio convertit un PDF fourni par un client en document InDesign modifiable au lieu de refaire la mise en page à partir de zéro."
+    }
+  ],
   "alternatives": [
-    { "slug": "canva", "reason": { "en": "Much simpler, largely free/low-cost layout and design tool covering similar print/digital publication needs." } }
+    { "slug": "canva", "reason": { "en": "Much simpler, largely free/low-cost layout and design tool covering similar print/digital publication needs.", "fr": "Outil de mise en page bien plus simple, largement gratuit ou peu coûteux, pour des besoins de publication print et digitale similaires." } }
   ],
   "missingAlternatives": [
     { "name": "Affinity Publisher", "officialUrl": "https://www.affinity.studio", "reason": "One-time-purchase desktop publishing app, the main non-subscription alternative to InDesign, not present in this batch's alternativeCandidates list." }
   ],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Professional layout, AI-assisted copy-fit and PDF conversion justify the cost for recurring publication work, but there is no free tier and generative credits are capped even on the entry plan.",
+        "fr": "La mise en page professionnelle, la réécriture assistée par IA et la conversion PDF justifient le coût pour un travail récurrent de publication, mais il n'y a pas de version gratuite et les crédits génératifs restent plafonnés même sur le plan d'entrée.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a useful first layout is not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir une première mise en page utile ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "InDesign delivers the professional layout capabilities it advertises: adaptive Flex Layout, copy-fit rewriting, PDF conversion and accessibility alt-text.",
+        "fr": "InDesign tient ses promesses de mise en page professionnelle : Flex Layout adaptatif, réécriture copy-fit, conversion PDF et texte alternatif pour l'accessibilité.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "A broad set of professional publishing features (adaptive layout, AI-assisted text and image tools, PDF conversion) positions InDesign near the top of its category.",
+        "fr": "Un large éventail de fonctions professionnelles de publication (mise en page adaptative, outils texte et image assistés par IA, conversion PDF) place InDesign proche du haut de sa catégorie.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export portability and data ownership if leaving InDesign are not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des exports et la propriété des données en cas de départ d'InDesign ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Page layout software",
+      "fr": "Mise en page pro"
+    },
+    "shortDescription": {
+      "en": "Professional page-layout software for brochures, magazines, books and PDFs, sold only through a monthly Adobe subscription.",
+      "fr": "Un logiciel de mise en page professionnel pour brochures, magazines, livres et PDF, vendu uniquement par abonnement mensuel Adobe."
+    },
+    "longDescription": {
+      "en": "InDesign is Adobe's professional page-layout application for brochures, magazines, books, posters and presentations, with an AI Assistant (beta), Flex Layout for adaptive designs, layout-aware copy-fit rewriting and PDF-to-InDesign conversion.\n\nThere is no free tier: after a 7-day trial, the entry point is the single-app plan at $22.99/month, which includes 100GB of cloud storage and 25 monthly generative credits. A team plan exists but is priced on request. InDesign fits a freelancer or small studio doing recurring print or digital publication work, not an occasional one-off flyer.",
+      "fr": "InDesign est le logiciel de mise en page professionnel d'Adobe pour brochures, magazines, livres, affiches et présentations, avec un AI Assistant (bêta), Flex Layout pour des mises en page adaptatives, une réécriture de texte consciente de la mise en page et la conversion PDF vers InDesign.\n\nIl n'existe pas de version gratuite : après un essai de 7 jours, le plan d'entrée seule app coûte 22,99 $/mois, avec 100 Go de stockage cloud et 25 crédits génératifs par mois. Un plan équipe existe mais son prix est sur devis. InDesign convient à un freelance ou un petit studio avec un besoin récurrent de publication print ou digitale, pas pour un flyer ponctuel."
+    },
+    "pros": [
+      { "en": "Includes AI-assisted layout tools (copy-fit rewriting, Generative Expand, auto alt-text) built into the app.", "fr": "Intègre des outils de mise en page assistés par IA (réécriture copy-fit, Generative Expand, texte alternatif automatique)." },
+      { "en": "Cloud storage and generative credits are bundled into the entry plan, not sold separately.", "fr": "Le stockage cloud et les crédits génératifs sont inclus dans le plan d'entrée, pas vendus à part." }
+    ],
+    "cons": [
+      { "en": "No free tier at all; every use requires a paid subscription after a 7-day trial.", "fr": "Aucune version gratuite ; tout usage nécessite un abonnement payant après un essai de 7 jours." },
+      { "en": "Generative credits are capped at 25/month on the entry plan, limiting AI feature use without upgrading.", "fr": "Les crédits génératifs sont plafonnés à 25/mois sur le plan d'entrée, ce qui limite l'usage des fonctions IA sans passer à un plan supérieur." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You produce recurring print or digital publications (brochures, magazines, books) and need professional-grade layout tools.",
+        "fr": "Tu produis régulièrement des publications print ou digitales (brochures, magazines, livres) et as besoin d'outils de mise en page de niveau professionnel."
+      },
+      "avoidIf": {
+        "en": "You only need occasional simple layouts; a free or cheaper tool like Canva covers that without a subscription.",
+        "fr": "Tu n'as besoin que de mises en page simples et occasionnelles ; un outil gratuit ou moins cher comme Canva couvre ce besoin sans abonnement."
+      },
+      "threshold": {
+        "en": "The single-app plan costs $22.99/month ($275.88/year); that's the real entry cost since InDesign has no free tier.",
+        "fr": "Le plan seule app coûte 22,99 $/mois (275,88 $/an) ; c'est le vrai coût d'entrée puisqu'InDesign n'a pas de version gratuite."
+      },
+      "billingTraps": {
+        "en": "The entry plan is an annual commitment billed monthly, not a month-to-month plan; check the cancellation terms before subscribing.",
+        "fr": "Le plan d'entrée est un engagement annuel facturé au mois, pas un plan mensuel sans engagement ; vérifie les conditions de résiliation avant de souscrire."
+      }
+    }
+  },
   "unknowns": [
     "Exact team/business plan price in USD not shown (only Argentine peso figures appeared on a regional pricing page)",
     "iPad or web version availability not confirmed"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

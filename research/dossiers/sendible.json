@@ -3,7 +3,8 @@
   "slug": "sendible",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Sendible",
     "vendor": "Sendible (Vendasta)",
@@ -35,7 +36,7 @@
         "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 workspace, 6 social profiles, 100 sends/day, unlimited users and AI credits.", "fr": null }
+          { "en": "1 workspace, 6 social profiles, 100 sends/day, unlimited users and AI credits.", "fr": "1 espace de travail, 6 profils sociaux, 100 publications/jour, utilisateurs et crédits IA illimités.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 89, "annualPerMonth": 75.65, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "3 workspaces, 18 social profiles, 200 sends/day, assignment and approvals, 30 smart queues.", "fr": null }
+          { "en": "3 workspaces, 18 social profiles, 200 sends/day, assignment and approvals, 30 smart queues.", "fr": "3 espaces de travail, 18 profils sociaux, 200 publications/jour, assignation et validations, 30 files intelligentes.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": 199, "annualPerMonth": 169.15, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "7 workspaces, 42 social profiles, 300 sends/day, content libraries, custom branded reports, campaigns, dedicated onboarding.", "fr": null }
+          { "en": "7 workspaces, 42 social profiles, 300 sends/day, content libraries, custom branded reports, campaigns, dedicated onboarding.", "fr": "7 espaces de travail, 42 profils sociaux, 300 publications/jour, bibliothèques de contenu, rapports personnalisés à la marque, campagnes, accompagnement dédié.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -71,7 +72,7 @@
         "price": { "monthly": 499, "annualPerMonth": 424.15, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "15 workspaces, 90 social profiles, 500 sends/day, bulk posting with dynamic fields, advanced permissions, unlimited smart queues.", "fr": null }
+          { "en": "15 workspaces, 90 social profiles, 500 sends/day, bulk posting with dynamic fields, advanced permissions, unlimited smart queues.", "fr": "15 espaces de travail, 90 profils sociaux, 500 publications/jour, publication en masse avec champs dynamiques, permissions avancées, files intelligentes illimitées.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -83,43 +84,97 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Starting at $1,500+/month; 50 workspaces, 300 profiles, custom integrations, SSO, dedicated account manager.", "fr": null }
+          { "en": "Starting at $1,500+/month; 50 workspaces, 300 profiles, custom integrations, SSO, dedicated account manager.", "fr": "À partir de 1 500$+/mois ; 50 espaces de travail, 300 profils, intégrations sur mesure, SSO, chargé de compte dédié.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "core",
     "addOns": [
-      { "en": "White-label option available as a paid add-on.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "White-label option available as a paid add-on.", "fr": "Option marque blanche disponible en option payante.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Annual billing is described as saving 15%, but shown as a specific per-month equivalent that is not exactly monthly/12; verify at purchase.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Annual billing is described as saving 15%, but shown as a specific per-month equivalent that is not exactly monthly/12; verify at purchase.", "fr": "La facturation annuelle est présentée comme faisant économiser 15%, mais l'équivalent mensuel affiché ne correspond pas exactement à mensuel/12 ; à vérifier à l'achat.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Direct scheduling and posting to Instagram, Facebook, TikTok, LinkedIn, X, YouTube, Threads, Bluesky, and Google My Business.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Real-time comment/message monitoring and replies across connected social profiles.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Content libraries and campaign management for organizing and reusing assets.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Custom branded client reports (Premium and above).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Direct scheduling and posting to Instagram, Facebook, TikTok, LinkedIn, X, YouTube, Threads, Bluesky, and Google My Business.", "fr": "Planification et publication directe sur Instagram, Facebook, TikTok, LinkedIn, X, YouTube, Threads, Bluesky et Google My Business.", "sourceIds": ["s1"] },
+      { "en": "Real-time comment/message monitoring and replies across connected social profiles.", "fr": "Surveillance et réponse en temps réel aux commentaires et messages sur les profils sociaux connectés.", "sourceIds": ["s1"] },
+      { "en": "Content libraries and campaign management for organizing and reusing assets.", "fr": "Bibliothèques de contenu et gestion de campagnes pour organiser et réutiliser les visuels.", "sourceIds": ["s1"] },
+      { "en": "Custom branded client reports (Premium and above).", "fr": "Rapports clients personnalisés à la marque (à partir de Premium).", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No free plan; lowest paid tier (Core) is limited to 6 social profiles and 100 sends/day.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Advanced approval workflows and bulk posting are gated to Plus tier and above, not available on Core.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No free plan; lowest paid tier (Core) is limited to 6 social profiles and 100 sends/day.", "fr": "Pas de plan gratuit ; le palier payant le plus bas (Core) est limité à 6 profils sociaux et 100 publications/jour.", "sourceIds": ["s1"] },
+      { "en": "Advanced approval workflows and bulk posting are gated to Plus tier and above, not available on Core.", "fr": "Les flux de validation avancés et la publication en masse sont réservés au palier Plus et au-dessus, pas disponibles sur Core.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "A consultant or small agency managing social media for several clients who needs separate workspaces and approval workflows per account.",
+      "fr": "Un consultant ou une petite agence qui gère les réseaux sociaux de plusieurs clients et a besoin d'espaces de travail séparés et de flux de validation par compte."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Multi-client scheduling: manage 6 social profiles across several platforms from one Core workspace instead of switching between native apps.", "fr": "Planification multi-clients : gère 6 profils sociaux sur plusieurs plateformes depuis un seul espace Core plutôt que de jongler entre les apps natives." },
+    { "en": "Engagement monitoring: reply to comments and messages across connected profiles from one inbox instead of checking each platform separately.", "fr": "Suivi de l'engagement : réponds aux commentaires et messages sur les profils connectés depuis une seule boîte plutôt que de vérifier chaque plateforme séparément." }
+  ],
   "alternatives": [
-    { "slug": "hootsuite", "reason": { "en": "Direct competitor in social media management for agencies and teams.", "fr": null } },
-    { "slug": "socialbee", "reason": { "en": "Alternative social media scheduling tool aimed at smaller teams and solo users.", "fr": null } },
-    { "slug": "later", "reason": { "en": "Alternative visual-first social scheduling and analytics tool.", "fr": null } }
+    { "slug": "hootsuite", "reason": { "en": "Direct competitor in social media management for agencies and teams.", "fr": "Concurrent direct pour la gestion des réseaux sociaux, orienté agences et équipes." } },
+    { "slug": "socialbee", "reason": { "en": "Alternative social media scheduling tool aimed at smaller teams and solo users.", "fr": "Outil alternatif de planification sociale destiné aux petites équipes et aux utilisateurs solo." } },
+    { "slug": "later", "reason": { "en": "Alternative visual-first social scheduling and analytics tool.", "fr": "Outil alternatif de planification sociale et d'analytics, centré sur le visuel." } }
   ],
   "missingAlternatives": [
     { "name": "Buffer", "officialUrl": "https://buffer.com/", "reason": "Very common direct competitor for social media scheduling, not present in the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Core at $29/month already includes unlimited users and unlimited AI credits alongside 6 social profiles, a low entry price for a multi-platform scheduler.", "fr": "Core à 29$/mois inclut déjà utilisateurs et crédits IA illimités en plus de 6 profils sociaux, un prix d'entrée bas pour un planificateur multi-plateforme.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: onboarding time and setup steps for a first scheduled post are not covered by the collected sources.", "fr": "Note neutre : le temps de prise en main et les étapes pour publier une première fois ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised scheduling, posting and engagement monitoring across the listed platforms as described.", "fr": "Tient sa promesse de planification, publication et suivi de l'engagement sur les plateformes listées.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Scales from 6 profiles on Core to 90 profiles and bulk posting with dynamic fields on Elite, a wide range for agency-scale social management.", "fr": "S'étend de 6 profils sur Core à 90 profils et publication en masse avec champs dynamiques sur Elite, un large éventail pour une gestion sociale à échelle d'agence.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or portability of scheduled content and reports is not covered by the collected sources.", "fr": "Note neutre : l'export ou la portabilité du contenu planifié et des rapports ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Social media scheduling", "fr": "Planification réseaux sociaux" },
+    "shortDescription": {
+      "en": "Social media scheduling and monitoring tool with per-client workspaces, aimed at agencies and consultants.",
+      "fr": "Outil de planification et de suivi des réseaux sociaux avec espaces de travail par client, destiné aux agences et consultants."
+    },
+    "longDescription": {
+      "en": "Sendible schedules and posts to Instagram, Facebook, TikTok, LinkedIn, X, YouTube, Threads, Bluesky and Google My Business from one place, with real-time comment and message monitoring, content libraries and campaign management to reuse assets across clients.\n\nCore starts at $29/month for one workspace, 6 social profiles and 100 sends a day, with unlimited users and AI credits included, the entry point for a solo consultant or small agency. Plus, at $89/month, adds approval workflows and more workspaces for managing several client accounts, while Premium and Elite scale up to 90 profiles and custom branded client reports.",
+      "fr": "Sendible planifie et publie sur Instagram, Facebook, TikTok, LinkedIn, X, YouTube, Threads, Bluesky et Google My Business depuis un seul endroit, avec suivi des commentaires et messages en temps réel, bibliothèques de contenu et gestion de campagnes pour réutiliser les visuels entre clients.\n\nCore démarre à 29$/mois pour un espace de travail, 6 profils sociaux et 100 publications par jour, avec utilisateurs et crédits IA illimités inclus, le point d'entrée pour un consultant solo ou une petite agence. Plus, à 89$/mois, ajoute des flux de validation et plus d'espaces de travail pour gérer plusieurs comptes clients, tandis que Premium et Elite montent jusqu'à 90 profils et des rapports clients personnalisés à la marque."
+    },
+    "pros": [
+      { "en": "Core plan includes unlimited users and AI credits at a low entry price.", "fr": "Le plan Core inclut utilisateurs et crédits IA illimités à un prix d'entrée bas." },
+      { "en": "Separate workspaces per tier make managing several client accounts straightforward.", "fr": "Les espaces de travail séparés par palier facilitent la gestion de plusieurs comptes clients." }
+    ],
+    "cons": [
+      { "en": "No free plan to try the tool before paying.", "fr": "Pas de plan gratuit pour essayer l'outil avant de payer." },
+      { "en": "Approval workflows and bulk posting require upgrading past Core to the Plus tier.", "fr": "Les flux de validation et la publication en masse demandent de passer du palier Core au palier Plus." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You manage social media for several clients and need separate workspaces with approval workflows.", "fr": "Tu gères les réseaux sociaux de plusieurs clients et as besoin d'espaces de travail séparés avec des flux de validation." },
+      "avoidIf": { "en": "You only manage a single account and don't need multiple workspaces or client-branded reports.", "fr": "Tu ne gères qu'un seul compte et n'as pas besoin de plusieurs espaces de travail ni de rapports personnalisés à la marque." },
+      "threshold": { "en": "Core costs $348/year at $29/month, the entry cost for managing up to 6 social profiles from one workspace.", "fr": "Core coûte 348$/an à 29$/mois, le coût d'entrée pour gérer jusqu'à 6 profils sociaux depuis un espace de travail." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "Exact annual-billing percentage discount formula not fully clear from the displayed monthly equivalents."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

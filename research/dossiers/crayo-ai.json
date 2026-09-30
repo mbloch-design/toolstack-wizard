@@ -3,7 +3,7 @@
   "slug": "crayo-ai",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Crayo AI",
     "vendor": "Crayo AI",
@@ -59,7 +59,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "250 workflow credits/month, 2h export/month, 30min AI voiceover/month, 100 AI images/month, 25GB storage, 1 social account"
+            "en": "250 workflow credits/month, 2h export/month, 30min AI voiceover/month, 100 AI images/month, 25GB storage, 1 social account",
+            "fr": "250 credits de workflow/mois, 2h d'export/mois, 30 min de voix off IA/mois, 100 images IA/mois, 25 Go de stockage, 1 compte social."
           }
         ],
         "sourceIds": [
@@ -79,7 +80,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "1,000 workflow credits/month, 10h export/month, 120min AI voiceover/month, 300 AI images/month, 100GB storage, 3 social accounts"
+            "en": "1,000 workflow credits/month, 10h export/month, 120min AI voiceover/month, 300 AI images/month, 100GB storage, 3 social accounts",
+            "fr": "1 000 credits de workflow/mois, 10h d'export/mois, 120 min de voix off IA/mois, 300 images IA/mois, 100 Go de stockage, 3 comptes sociaux."
           }
         ],
         "sourceIds": [
@@ -99,7 +101,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "3,000 workflow credits/month, 30h export/month, 180min AI voiceover/month, 500 AI images/month, 500GB storage, 10 social accounts"
+            "en": "3,000 workflow credits/month, 30h export/month, 180min AI voiceover/month, 500 AI images/month, 500GB storage, 10 social accounts",
+            "fr": "3 000 credits de workflow/mois, 30h d'export/mois, 180 min de voix off IA/mois, 500 images IA/mois, 500 Go de stockage, 10 comptes sociaux."
           }
         ],
         "sourceIds": [
@@ -112,7 +115,7 @@
     "cautions": [
       {
         "en": "Monthly workflow credits do not roll over to the next billing cycle, and no refunds are offered once a plan is purchased.",
-        "fr": null,
+        "fr": "Les credits de workflow mensuels ne se reportent pas au cycle de facturation suivant, et aucun remboursement n'est propose une fois un plan achete.",
         "sourceIds": [
           "s2"
         ]
@@ -123,28 +126,28 @@
     "capabilities": [
       {
         "en": "AI auto-clipping to turn long videos into short-form clips, plus Reddit-story and fake-text video generators",
-        "fr": null,
+        "fr": "Decoupage automatique par IA pour transformer des videos longues en clips courts, plus des generateurs de videos histoires Reddit et fake-text",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "AI voiceovers, voice changer, face swap, background removal and an icon generator",
-        "fr": null,
+        "fr": "Voix off IA, changeur de voix, echange de visage, suppression d'arriere-plan et un generateur d'icones",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "15+ built-in viral subtitle styles with a web-based video editor (trim, crop, merge, speed, volume, aspect-ratio conversion)",
-        "fr": null,
+        "fr": "Plus de 15 styles de sous-titres viraux integres avec un editeur video web (decoupe, recadrage, fusion, vitesse, volume, conversion de format)",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Direct import from YouTube and TikTok links, and a developer API for integrations",
-        "fr": null,
+        "fr": "Import direct depuis des liens YouTube et TikTok, et une API developpeur pour les integrations",
         "sourceIds": [
           "s2"
         ]
@@ -153,14 +156,14 @@
     "limitations": [
       {
         "en": "No free plan; every account requires a paid subscription",
-        "fr": null,
+        "fr": "Pas de plan gratuit ; chaque compte demande un abonnement payant",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "No refund policy, and unused monthly workflow credits are lost at renewal",
-        "fr": null,
+        "fr": "Pas de politique de remboursement, et les credits de workflow mensuels non utilises sont perdus au renouvellement",
         "sourceIds": [
           "s2"
         ]
@@ -186,36 +189,152 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator turning long-form video into short-form clips for social media who wants AI to handle clipping, captions and voiceover.",
+      "fr": "Un createur de contenu qui transforme des videos longues en clips courts pour les reseaux sociaux et veut que l'IA gere le decoupage, les sous-titres et la voix off."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Podcast repurposing: import a YouTube link and let auto-clipping generate short-form clips with viral subtitle styles.",
+      "fr": "Reutilisation de podcast : importer un lien YouTube et laisser le decoupage automatique generer des clips courts avec des styles de sous-titres viraux."
+    },
+    {
+      "en": "Reddit-story videos: generate a Reddit-story or fake-text video with an AI voiceover, ready to post to a social account.",
+      "fr": "Videos histoires Reddit : generer une video histoire Reddit ou fake-text avec une voix off IA, prete a publier sur un compte social."
+    }
+  ],
   "alternatives": [
     {
       "slug": "opus-clip",
       "reason": {
-        "en": "Direct competitor for AI-powered long-to-short video clipping for social media."
+        "en": "Direct competitor for AI-powered long-to-short video clipping for social media.",
+        "fr": "Concurrent direct pour le decoupage de videos longues en clips courts assiste par IA pour les reseaux sociaux."
       }
     },
     {
       "slug": "capcut",
       "reason": {
-        "en": "Broader, free-to-start short-form video editor with similar auto-captioning and clipping features."
+        "en": "Broader, free-to-start short-form video editor with similar auto-captioning and clipping features.",
+        "fr": "Editeur video court format plus large et gratuit au depart, avec des fonctions de sous-titrage et decoupage automatique similaires."
       }
     },
     {
       "slug": "descript",
       "reason": {
-        "en": "Alternative AI video/audio editor, more text-based editing workflow than Crayo's clip-focused approach."
+        "en": "Alternative AI video/audio editor, more text-based editing workflow than Crayo's clip-focused approach.",
+        "fr": "Editeur video/audio IA alternatif, avec un flux d'edition base texte plutot que centre sur le clip comme Crayo."
       }
     }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The $13/month Hobby plan bundles clipping, voiceover and image generation, but unused monthly credits are lost at renewal and there is no refund policy, which limits the value if usage is uneven.",
+        "fr": "Le plan Hobby a 13 $/mois regroupe decoupage, voix off et generation d'images, mais les credits mensuels non utilises sont perdus au renouvellement et il n'y a pas de politique de remboursement, ce qui limite la valeur en cas d'usage irregulier.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Direct import from a YouTube or TikTok link plus AI auto-clipping gets a first short-form clip out quickly.",
+        "fr": "L'import direct depuis un lien YouTube ou TikTok et le decoupage automatique par IA permettent de sortir un premier clip court rapidement.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the promised auto-clipping, voiceover, subtitle styles and web editor features.",
+        "fr": "Tient la promesse du decoupage automatique, de la voix off, des styles de sous-titres et de l'editeur web.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Feature set is broad (voice changer, face swap, API) but every tier caps monthly workflow credits, export hours and voiceover minutes, which limits volume for heavy users.",
+        "fr": "L'ensemble de fonctions est large (changeur de voix, echange de visage, API), mais chaque palier plafonne les credits de workflow, les heures d'export et les minutes de voix off mensuels, ce qui limite le volume pour un usage intensif.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: exporting projects or account data out of Crayo AI is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des projets ou des donnees de compte hors de Crayo AI ne figure pas dans les sources relevees.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI short-form clipping",
+      "fr": "Clips courts par IA"
+    },
+    "shortDescription": {
+      "en": "AI tool that auto-clips long videos into short-form content with subtitles and voiceover, from $13/month, no free plan.",
+      "fr": "Outil IA qui decoupe automatiquement les videos longues en contenu court avec sous-titres et voix off, a partir de 13 $/mois, sans plan gratuit."
+    },
+    "longDescription": {
+      "en": "Crayo AI turns long videos into short-form clips with AI auto-clipping, viral subtitle styles, AI voiceover, voice changer and face swap, importing directly from a YouTube or TikTok link and exporting through a web-based editor.\n\nThere's no free plan: the Hobby tier starts at $13/month with 250 monthly workflow credits, 2 hours of export and 1 social account, scaling up to Pro at $55/month. Unused credits don't roll over and there is no refund policy, so it suits a creator with a steady, predictable clipping workload.",
+      "fr": "Crayo AI transforme des videos longues en clips courts avec decoupage automatique par IA, styles de sous-titres viraux, voix off IA, changeur de voix et echange de visage, en important directement depuis un lien YouTube ou TikTok et en exportant via un editeur web.\n\nIl n'y a pas de plan gratuit : le palier Hobby commence a 13 $/mois avec 250 credits de workflow mensuels, 2 heures d'export et 1 compte social, jusqu'a Pro a 55 $/mois. Les credits non utilises ne se reportent pas et il n'y a pas de politique de remboursement, ce qui convient a un createur avec un volume de decoupage regulier et previsible."
+    },
+    "pros": [
+      {
+        "en": "Bundles auto-clipping, voiceover, subtitles and a web editor in one subscription.",
+        "fr": "Regroupe decoupage automatique, voix off, sous-titres et editeur web dans un seul abonnement."
+      },
+      {
+        "en": "Direct import from YouTube and TikTok links speeds up the clipping workflow.",
+        "fr": "L'import direct depuis des liens YouTube et TikTok accelere le workflow de decoupage."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan and no refunds once a plan is purchased.",
+        "fr": "Pas de plan gratuit et aucun remboursement une fois un plan achete."
+      },
+      {
+        "en": "Unused monthly workflow credits are lost at renewal instead of rolling over.",
+        "fr": "Les credits de workflow mensuels non utilises sont perdus au renouvellement plutot que reportes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You clip long-form content into short-form videos regularly enough to use your monthly credits.",
+        "fr": "Tu decoupes du contenu long en videos courtes assez regulierement pour utiliser tes credits mensuels."
+      },
+      "avoidIf": {
+        "en": "Your clipping volume is irregular; unused credits are lost and there's no refund if you overpay.",
+        "fr": "Ton volume de decoupage est irregulier ; les credits non utilises sont perdus et il n'y a pas de remboursement en cas de trop-paye."
+      },
+      "threshold": {
+        "en": "Worth the $156/year (12 x $13) Hobby plan once you're clipping content monthly rather than occasionally.",
+        "fr": "Le plan Hobby a 156 $/an (12 x 13 $) devient rentable des que tu decoupes du contenu chaque mois plutot qu'occasionnellement."
+      }
+    }
+  },
   "unknowns": [
     "Exact refund/cancellation terms beyond 'no refund policy' not detailed on pages seen",
     "Supported languages for AI voiceover not fully listed"
   ],
   "conflicts": [
     "Seed pricingV5 lists Hobby at ~$19/month, Clipper $39/month, Pro $79/month (monthly billing), but the current pricing page shows Hobby $13, Clipper $27, Pro $55/month; prices may have changed or the seed reflected a different promotion."
+  ],
+  "completedLocallyOn": "2026-09-25",
+  "reviewNotes": [
+    "conflicts already flags a pricing discrepancy with the seed (Hobby ~$19 vs current $13, etc.); keeping the current pricing-page figures as instructed (no amounts changed here)."
   ]
 }

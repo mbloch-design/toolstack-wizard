@@ -229,5 +229,6 @@
     "Standalone (non-annual) monthly billing price for cloud plans not confirmed on the page fetched (annual figures shown)",
     "Business plan is listed as cloud-pending/waitlist only, so its actual availability and final price are unconfirmed"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "hold": "n8n has its own canonical rework (see the n8n mission): never merge automatically"
 }

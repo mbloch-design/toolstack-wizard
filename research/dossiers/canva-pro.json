@@ -3,7 +3,7 @@
   "slug": "canva-pro",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Canva Pro",
     "vendor": "Canva Pty Ltd",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "Free Canva plan available with limited templates and no Magic Studio AI feature access; Canva Pro is the upgraded paid tier.",
-        "fr": null
+        "fr": "Plan Canva gratuit disponible avec des modeles limites et sans acces aux fonctions IA Magic Studio ; Canva Pro est le palier payant superieur."
       },
       "sourceIds": [
         "s1"
@@ -56,7 +56,7 @@
         "keyLimits": [
           {
             "en": "$18/month billed monthly, or $144/year (≈$12/month) billed annually. Full access to Magic Studio AI tools, premium templates, brand kit, background remover and automatic resizing.",
-            "fr": null
+            "fr": "18 $/mois facture au mois, ou 144 $/an (environ 12 $/mois) facture a l'annee. Acces complet aux outils IA Magic Studio, modeles premium, kit de marque, suppression d'arriere-plan et redimensionnement automatique."
           }
         ],
         "sourceIds": [
@@ -69,7 +69,7 @@
     "cautions": [
       {
         "en": "The official canva.com/pricing/ page returned HTTP 403 when fetched directly in this session; the price figures come from independent pricing-tracker sites rather than Canva's own page, and should be re-verified against the official source before publication.",
-        "fr": null,
+        "fr": "La page officielle canva.com/pricing/ a renvoye une erreur HTTP 403 lors d'un acces direct dans cette session ; les montants viennent de sites tiers de suivi des prix plutot que de la page Canva elle-meme, a revrifier sur la source officielle avant publication.",
         "sourceIds": [
           "s1"
         ]
@@ -80,28 +80,28 @@
     "capabilities": [
       {
         "en": "Full access to Magic Studio AI features (image generation, background removal, Magic Write) beyond what the free Canva plan offers.",
-        "fr": null,
+        "fr": "Acces complet aux fonctions IA Magic Studio (generation d'images, suppression d'arriere-plan, Magic Write) au-dela de ce que propose le plan Canva gratuit.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Brand kit for storing brand colors, fonts and logos consistently across designs.",
-        "fr": null,
+        "fr": "Kit de marque pour stocker couleurs, polices et logos de maniere coherente sur tous les designs.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Premium template and stock asset library not available on the free plan.",
-        "fr": null,
+        "fr": "Bibliotheque de modeles et d'images premium indisponible sur le plan gratuit.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Automatic resizing (Magic Resize) to adapt a single design across multiple formats and platforms.",
-        "fr": null,
+        "fr": "Redimensionnement automatique (Magic Resize) pour adapter un seul design a plusieurs formats et plateformes.",
         "sourceIds": [
           "s1"
         ]
@@ -110,14 +110,14 @@
     "limitations": [
       {
         "en": "Pricing could not be independently confirmed on Canva's own official pricing page in this session (blocked, HTTP 403), only via third-party trackers.",
-        "fr": null,
+        "fr": "Le prix n'a pas pu etre confirme independamment sur la page tarifaire officielle de Canva dans cette session (bloquee, HTTP 403), seulement via des trackers tiers.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Canva Pro is single-user; multi-user teams need the separate, more expensive Canva Teams plan for shared brand controls and approval workflows.",
-        "fr": null,
+        "fr": "Canva Pro est mono-utilisateur ; les equipes multi-utilisateurs ont besoin du plan Canva Teams, separe et plus cher, pour les controles de marque partages et les workflows d'approbation.",
         "sourceIds": [
           "s1"
         ]
@@ -130,13 +130,150 @@
       "android"
     ]
   },
-  "alternatives": [],
-  "missingAlternatives": [],
+  "alternatives": [
+    {
+      "slug": "adobe-cc",
+      "reason": {
+        "en": "Broader professional creative suite competing for the same design and content production budget.",
+        "fr": "Suite creative professionnelle plus large qui concurrence pour le meme budget de production de design et de contenu."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Adobe Express",
+      "officialUrl": "https://www.adobe.com/express/",
+      "reason": "Direct template-based design tool competitor to Canva Pro, not present in the catalogue."
+    },
+    {
+      "name": "Visme",
+      "officialUrl": "https://www.visme.co/",
+      "reason": "Template-driven design and presentation tool aimed at the same non-designer audience, not present in the catalogue."
+    }
+  ],
   "unknowns": [
     "Official canva.com/pricing/ page blocked direct fetch (HTTP 403) in this session; the $18/month and $144/year figures are taken from independent pricing-tracker sites, not Canva's own page, and need re-verification.",
     "Canva Teams price not confirmed in this session."
   ],
   "conflicts": [
     "The seed's shortDescription for canva-pro (an entry in the design-tools/creation catalogue) describes it as the paid tier of Canva rather than a fully separate tool; alternativeCandidates provided in the seed largely list unrelated creative tools rather than direct Canva-tier competitors, so no in-catalogue alternatives were selected."
+  ],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator producing social media visuals and marketing assets who needs premium templates and AI tools without hiring a designer.",
+      "fr": "Un createur de contenu qui produit des visuels pour les reseaux sociaux et le marketing, et qui a besoin de modeles premium et d'outils IA sans embaucher de designer."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Social media batch: use premium templates and Magic Resize to adapt one campaign visual across Instagram, LinkedIn and YouTube thumbnails.",
+      "fr": "Lot pour reseaux sociaux : utiliser les modeles premium et Magic Resize pour adapter un visuel de campagne a Instagram, LinkedIn et aux miniatures YouTube."
+    },
+    {
+      "en": "Brand consistency: store brand colors, fonts and logo in the brand kit so every new design starts on-brand.",
+      "fr": "Coherence de marque : stocker couleurs, polices et logo dans le kit de marque pour que chaque nouveau design demarre deja aux couleurs de la marque."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Unlocks Magic Studio AI tools, a brand kit and premium templates for $12 to $18/month, though this figure comes from a third-party tracker rather than Canva's own pricing page.",
+        "fr": "Debloque les outils IA Magic Studio, un kit de marque et des modeles premium pour 12 a 18 $/mois, mais ce montant vient d'un tracker tiers plutot que de la page tarifaire de Canva elle-meme.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Premade premium templates and Magic Resize let a non-designer produce a finished, multi-format visual quickly.",
+        "fr": "Les modeles premium prets a l'emploi et Magic Resize permettent a un non-designer de produire rapidement un visuel fini en plusieurs formats.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the promised AI generation, background removal, brand kit and resizing features on top of the free plan.",
+        "fr": "Tient la promesse des fonctions de generation IA, suppression d'arriere-plan, kit de marque et redimensionnement en plus du plan gratuit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Canva Pro is single-user; a team needing shared brand controls and approval workflows must move to the separate, more expensive Canva Teams plan, which caps how far Pro alone scales.",
+        "fr": "Canva Pro est mono-utilisateur ; une equipe qui a besoin de controles de marque partages et de workflows d'approbation doit passer au plan Canva Teams, separe et plus cher, ce qui plafonne la portee de Pro seul.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilite des donnees ne figurent pas dans les sources relevees.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Design suite",
+      "fr": "Suite de design"
+    },
+    "shortDescription": {
+      "en": "Paid Canva tier unlocking Magic Studio AI tools, premium templates and a brand kit, from $12/month billed annually.",
+      "fr": "Palier payant de Canva : outils IA Magic Studio, modeles premium et kit de marque, a partir de 12 $/mois facture a l'annee."
+    },
+    "longDescription": {
+      "en": "Canva Pro is the paid tier of Canva, adding full access to Magic Studio AI tools (image generation, background removal, Magic Write), a brand kit for consistent colors and fonts, a premium template library, and Magic Resize to adapt one design across formats.\n\nPricing runs $18/month billed monthly or about $12/month billed annually, per the tracker data used here (Canva's own pricing page was blocked during research). It's built for a solo content creator; teams needing shared brand controls and approvals need the separate Canva Teams plan instead.",
+      "fr": "Canva Pro est le palier payant de Canva, qui donne un acces complet aux outils IA Magic Studio (generation d'images, suppression d'arriere-plan, Magic Write), un kit de marque pour des couleurs et polices coherentes, une bibliotheque de modeles premium, et Magic Resize pour adapter un design a plusieurs formats.\n\nLe prix est de 18 $/mois facture au mois ou environ 12 $/mois facture a l'annee, selon les donnees de tracker utilisees ici (la page tarifaire officielle de Canva etait bloquee durant la recherche). Il est pense pour un createur de contenu solo ; une equipe qui a besoin de controles de marque partages et d'approbations doit passer au plan Canva Teams separe."
+    },
+    "pros": [
+      {
+        "en": "Full Magic Studio AI toolset and premium template library in one subscription.",
+        "fr": "Ensemble complet des outils IA Magic Studio et bibliotheque de modeles premium dans un seul abonnement."
+      },
+      {
+        "en": "Magic Resize adapts one design across formats without rebuilding it.",
+        "fr": "Magic Resize adapte un design a plusieurs formats sans le refaire."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Single-user only; teams need the separate, pricier Canva Teams plan.",
+        "fr": "Mono-utilisateur seulement ; les equipes doivent passer au plan Canva Teams, separe et plus cher."
+      },
+      {
+        "en": "The pricing figures here come from a third-party tracker, not Canva's own pricing page, which was blocked.",
+        "fr": "Les montants ici viennent d'un tracker tiers, pas de la page tarifaire officielle de Canva, qui etait bloquee."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You regularly need premium templates and AI design tools as a solo creator.",
+        "fr": "Tu as regulierement besoin de modeles premium et d'outils IA de design en tant que createur solo."
+      },
+      "avoidIf": {
+        "en": "You need shared brand controls or approval workflows for a team, which require Canva Teams instead.",
+        "fr": "Tu as besoin de controles de marque partages ou de workflows d'approbation pour une equipe, ce qui demande Canva Teams a la place."
+      },
+      "threshold": {
+        "en": "Worth it once the $144/year (annual billing) cost is lower than what you'd otherwise pay for premium templates or a background-removal tool separately.",
+        "fr": "Rentable des que le cout de 144 $/an (facturation annuelle) est inferieur a ce que tu paierais autrement pour des modeles premium ou un outil de suppression d'arriere-plan a part."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25",
+  "reviewNotes": [
+    "Only one real in-catalogue alternative (adobe-cc) was found via scripts/research/seed.mjs canva-pro; most candidates returned (video/podcast/3D tools) are not template-based design suite competitors. Adobe Express and Visme were added to missingAlternatives instead.",
+    "pricing.cautions already flags that the $18/month and $144/year figures come from a third-party tracker (tier 2 source) because canva.com/pricing/ returned HTTP 403; these amounts should be re-verified on Canva's own page before publication.",
+    "pricing.freePlan.exists is true (free Canva tier) but no plan in pricing.plans is priced at $0; only the Pro plan was captured during the facts stage."
   ]
 }

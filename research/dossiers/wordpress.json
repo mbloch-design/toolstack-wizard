@@ -3,7 +3,7 @@
   "slug": "wordpress",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "WordPress",
     "vendor": "WordPress.org (open source) / Automattic (WordPress.com)",
@@ -41,7 +41,7 @@
       "exists": true,
       "limits": {
         "en": "WordPress.org software itself is free and open source (self-hosted, requires separate hosting). WordPress.com free plan gives a wordpress.com subdomain, 1 GB storage, unlimited pages/posts, no custom domain, no plugin access, basic 7-day analytics.",
-        "fr": null
+        "fr": "Le logiciel WordPress.org lui-même est gratuit et open source (auto-hebergement, hebergement a payer separement). Le plan gratuit WordPress.com donne un sous-domaine wordpress.com, 1 Go de stockage, pages/articles illimites, pas de domaine personnalise, pas d'acces aux extensions, statistiques basiques sur 7 jours."
       },
       "sourceIds": [
         "s1",
@@ -64,7 +64,7 @@
         "keyLimits": [
           {
             "en": "$9/month billed monthly, $4/month billed annually. 6 GB storage.",
-            "fr": null
+            "fr": "9 $/mois facture au mois, 4 $/mois facture a l'annee. 6 Go de stockage."
           }
         ],
         "sourceIds": [
@@ -85,7 +85,7 @@
         "keyLimits": [
           {
             "en": "$18/month billed monthly, $8/month billed annually. 13 GB storage.",
-            "fr": null
+            "fr": "18 $/mois facture au mois, 8 $/mois facture a l'annee. 13 Go de stockage."
           }
         ],
         "sourceIds": [
@@ -106,7 +106,7 @@
         "keyLimits": [
           {
             "en": "$40/month billed monthly, $25/month billed annually. 50 GB storage, plugin and theme installation.",
-            "fr": null
+            "fr": "40 $/mois facture au mois, 25 $/mois facture a l'annee. 50 Go de stockage, installation d'extensions et de themes."
           }
         ],
         "sourceIds": [
@@ -127,7 +127,7 @@
         "keyLimits": [
           {
             "en": "$70/month billed monthly, $45/month billed annually. 50 GB storage, e-commerce features included.",
-            "fr": null
+            "fr": "70 $/mois facture au mois, 45 $/mois facture a l'annee. 50 Go de stockage, fonctions e-commerce incluses."
           }
         ],
         "sourceIds": [
@@ -140,7 +140,7 @@
     "cautions": [
       {
         "en": "WordPress is really two offerings: the WordPress.org software is free forever but requires paying separately for hosting; WordPress.com is a hosted SaaS with the plans and prices listed above. The comparePlanKey is left null because the self-hosted open-source route has no single canonical entry price.",
-        "fr": null,
+        "fr": "WordPress recouvre en realite deux offres : le logiciel WordPress.org est gratuit a vie mais demande de payer l'hebergement a part ; WordPress.com est un SaaS heberge avec les plans et prix ci-dessus. Le comparePlanKey est laisse vide car la voie auto-hebergee open source n'a pas de prix d'entree unique.",
         "sourceIds": [
           "s1",
           "s2"
@@ -152,21 +152,21 @@
     "capabilities": [
       {
         "en": "Open-source content management system for editorial sites, blogs and business websites, with an extensive plugin and theme ecosystem when self-hosted.",
-        "fr": null,
+        "fr": "Systeme de gestion de contenu open source pour sites editoriaux, blogs et sites d'entreprise, avec un vaste ecosysteme d'extensions et de themes en auto-hebergement.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "WordPress.com hosted plans bundle hosting, backups and support, removing the need to manage a server.",
-        "fr": null,
+        "fr": "Les plans heberges WordPress.com regroupent hebergement, sauvegardes et support, sans avoir a gerer un serveur.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Business and Commerce WordPress.com plans unlock installing custom plugins and themes, matching self-hosted flexibility with managed hosting.",
-        "fr": null,
+        "fr": "Les plans WordPress.com Business et Commerce debloquent l'installation d'extensions et de themes personnalises, au niveau de flexibilite de l'auto-hebergement avec un hebergement gere.",
         "sourceIds": [
           "s2"
         ]
@@ -175,14 +175,14 @@
     "limitations": [
       {
         "en": "Free WordPress.com plan cannot use a custom domain, install plugins, or remove WordPress.com branding/ads.",
-        "fr": null,
+        "fr": "Le plan gratuit WordPress.com ne permet ni domaine personnalise, ni installation d'extensions, ni suppression de la marque/publicites WordPress.com.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Self-hosted WordPress.org route is free in software cost but requires separate hosting, security updates and maintenance, which is real ongoing cost and effort not shown on either pricing page.",
-        "fr": null,
+        "fr": "La voie auto-hebergee WordPress.org est gratuite cote logiciel mais demande un hebergement separe, des mises a jour de securite et une maintenance, un cout et un effort reels que n'affiche aucune des deux pages tarifaires.",
         "sourceIds": [
           "s1"
         ]
@@ -200,21 +200,21 @@
       "slug": "squarespace",
       "reason": {
         "en": "All-in-one hosted website builder competing directly with WordPress.com's managed plans.",
-        "fr": null
+        "fr": "Createur de site hebergee tout-en-un qui concurrence directement les plans geres de WordPress.com."
       }
     },
     {
       "slug": "ghost",
       "reason": {
         "en": "Publishing-focused CMS alternative aimed at editorial/newsletter sites, overlapping with WordPress's core use case.",
-        "fr": null
+        "fr": "CMS alternatif axe sur la publication, pense pour les sites editoriaux et newsletters, sur le meme usage principal que WordPress."
       }
     },
     {
       "slug": "wix",
       "reason": {
         "en": "Hosted website builder targeting the same non-technical site-building audience.",
-        "fr": null
+        "fr": "Createur de site heberge qui vise le meme public non technique de creation de site."
       }
     }
   ],
@@ -223,5 +223,125 @@
     "Enterprise WordPress.com plan pricing not public (requires contacting sales).",
     "The seed's currentAlternatives only lists squarespace and ghost from the catalogue; wix was added here as it appeared in alternativeCandidates and is a direct competitor."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "A freelance consultant building and maintaining client websites who needs a CMS flexible enough for any brief, from a portfolio to a small shop.",
+      "fr": "Un consultant independant qui construit et entretient des sites pour ses clients, avec un CMS assez flexible pour tout type de brief, du portfolio a la petite boutique."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Client website: build a business site on WordPress.com Business, install the plugins the client's brief needs, hand over the admin login.",
+      "fr": "Site client : monter un site vitrine sur WordPress.com Business, installer les extensions demandees par le brief, remettre les identifiants admin."
+    },
+    {
+      "en": "Self-hosted blog: install WordPress.org on paid hosting to keep full plugin freedom and avoid WordPress.com's per-plan limits.",
+      "fr": "Blog auto-heberge : installer WordPress.org sur un hebergement payant pour garder une liberte totale sur les extensions et eviter les limites des plans WordPress.com."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free self-hosted software, or a $4/month annual WordPress.com plan, gives access to a large plugin and theme ecosystem that few hosted site builders match at that price.",
+        "fr": "Le logiciel auto-heberge est gratuit, et le plan WordPress.com annuel a 4 $/mois donne acces a un vaste ecosysteme d'extensions et de themes que peu de createurs de site heberges egalent a ce prix.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "WordPress.com's free plan blocks custom domains and plugins, and the self-hosted route adds real hosting and maintenance work not shown on either pricing page, so a clean first result takes more than a few clicks.",
+        "fr": "Le plan gratuit WordPress.com bloque le domaine personnalise et les extensions, et la voie auto-hebergee ajoute un vrai travail d'hebergement et de maintenance non visible sur les pages tarifaires, donc un premier resultat propre demande plus que quelques clics.",
+        "sourceIds": [
+          "s2",
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers a full CMS for editorial and business sites out of the box, and the Business/Commerce plans unlock the same plugin flexibility as self-hosting without server management.",
+        "fr": "Fournit un CMS complet pour sites editoriaux et professionnels des le depart, et les plans Business/Commerce debloquent la meme flexibilite d'extensions que l'auto-hebergement sans gerer de serveur.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "The self-hosted plugin and theme ecosystem, matched by the paid WordPress.com Business/Commerce tiers, covers everything from a simple blog to an online shop.",
+        "fr": "L'ecosysteme d'extensions et de themes de la version auto-hebergee, egale par les plans payants WordPress.com Business/Commerce, couvre tout, du simple blog a la boutique en ligne.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data portability and export formats are not covered by the collected sources.",
+        "fr": "Note neutre : la portabilite des donnees et les formats d'export ne figurent pas dans les sources relevees.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Website CMS",
+      "fr": "CMS de site web"
+    },
+    "shortDescription": {
+      "en": "Open-source content management system, self-hosted for free or as a hosted WordPress.com plan starting at $4/month billed annually.",
+      "fr": "Systeme de gestion de contenu open source, gratuit en auto-hebergement ou en plan heberge WordPress.com a partir de 4 $/mois facture a l'annee."
+    },
+    "longDescription": {
+      "en": "WordPress covers two different products under one name: the free, open-source WordPress.org software you install on your own hosting, and WordPress.com, a hosted version that bundles hosting, backups and support. Both run on the same plugin and theme ecosystem, which is WordPress's main strength for client sites, blogs and small shops.\n\nWordPress.com starts at $4/month billed annually for a custom domain and more storage, but plugin installation only unlocks on the $25/month Business plan. The self-hosted route needs separate paid hosting plus your own security updates, which is real ongoing work. It suits freelancers and small teams who need full control over a client's site.",
+      "fr": "WordPress recouvre deux produits sous un seul nom : le logiciel WordPress.org, gratuit et open source, a installer sur son propre hebergement, et WordPress.com, une version hebergee qui regroupe hebergement, sauvegardes et support. Les deux partagent le meme ecosysteme d'extensions et de themes, la vraie force de WordPress pour les sites clients, blogs et petites boutiques.\n\nWordPress.com commence a 4 $/mois facture a l'annee pour un domaine personnalise et plus de stockage, mais l'installation d'extensions se debloque seulement au plan Business a 25 $/mois. L'auto-hebergement demande un hebergement payant separe et ses propres mises a jour de securite, un travail continu. Il convient aux independants et petites equipes qui veulent garder le controle total du site d'un client."
+    },
+    "pros": [
+      {
+        "en": "Free software core with an unmatched plugin and theme ecosystem when self-hosted.",
+        "fr": "Coeur logiciel gratuit avec un ecosysteme d'extensions et de themes inegale en auto-hebergement."
+      },
+      {
+        "en": "WordPress.com removes server management while keeping the same publishing workflow.",
+        "fr": "WordPress.com retire la gestion serveur tout en gardant le meme flux de publication."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Self-hosting adds real, recurring hosting and maintenance costs not shown on either pricing page.",
+        "fr": "L'auto-hebergement ajoute des couts reels et recurrents d'hebergement et de maintenance non affiches sur les pages tarifaires."
+      },
+      {
+        "en": "The WordPress.com free plan blocks custom domains, plugins and branding removal.",
+        "fr": "Le plan gratuit WordPress.com bloque le domaine personnalise, les extensions et le retrait de la marque."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a plugin ecosystem deep enough for any client brief, on a hosted plan or your own server.",
+        "fr": "Tu as besoin d'un ecosysteme d'extensions assez profond pour tout brief client, en heberge ou sur ton propre serveur."
+      },
+      "avoidIf": {
+        "en": "You want a single all-in-one price with no separate hosting decision to make.",
+        "fr": "Tu veux un seul prix tout-en-un sans decision d'hebergement a part."
+      },
+      "threshold": {
+        "en": "Worth it once the $48/year WordPress.com Personal plan (billed annually) or self-hosting cost is lower than a comparable website builder subscription.",
+        "fr": "Rentable des que le plan WordPress.com Personal a 48 $/an (facture annuellement) ou le cout de l'auto-hebergement reste inferieur a un abonnement comparable de createur de site."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25",
+  "reviewNotes": [
+    "pricing.freePlan.exists is true (WordPress.com free tier) but no plan in pricing.plans is priced at $0; the free WordPress.com tier itself was not captured as a plan entry during the facts stage. Verify on wordpress.com/pricing whether a Free plan row should be added."
+  ]
 }

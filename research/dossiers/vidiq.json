@@ -3,7 +3,8 @@
   "slug": "vidiq",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "VidIQ",
     "vendor": "vidIQ Inc.",
@@ -15,9 +16,27 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://1of10.com/blog/vidiq-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "vidIQ Pricing 2026: Every Plan and Cost Compared" },
-    { "id": "s2", "url": "https://comparedge.com/tools/vidiq-ai/pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "vidIQ AI Pricing 2026: Free, Boost & Max Plans" },
-    { "id": "s3", "url": "https://vidiq.com", "tier": 1, "accessedOn": "2026-09-25", "title": "VidIQ homepage" }
+    {
+      "id": "s1",
+      "url": "https://1of10.com/blog/vidiq-pricing/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "vidIQ Pricing 2026: Every Plan and Cost Compared"
+    },
+    {
+      "id": "s2",
+      "url": "https://comparedge.com/tools/vidiq-ai/pricing",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "vidIQ AI Pricing 2026: Free, Boost & Max Plans"
+    },
+    {
+      "id": "s3",
+      "url": "https://vidiq.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "VidIQ homepage"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -26,7 +45,14 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "150 AI credits per month; core YouTube analytics via browser extension", "sourceIds": ["s1", "s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "150 AI credits per month; core YouTube analytics via browser extension",
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -34,64 +60,290 @@
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "150 AI credits per month, basic browser-extension analytics only.", "sourceIds": ["s2"] }],
-        "sourceIds": ["s1", "s2"]
+        "keyLimits": [
+          {
+            "en": "150 AI credits per month, basic browser-extension analytics only.",
+            "sourceIds": [
+              "s2"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
       },
       {
         "key": "boost",
         "name": "Boost",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 39, "annualPerMonth": 16.58, "oneTime": null },
+        "price": {
+          "monthly": 39,
+          "annualPerMonth": 16.58,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Only tier that can be paid monthly; annual billing drops the effective price to about $199/year.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Only tier that can be paid monthly; annual billing drops the effective price to about $199/year.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "max",
         "name": "Max",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 39, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 39,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual billing only (about $468/year); 6,000 AI credits/month, up to 3x more AI Coach conversations, up to 11 hours of short-form clip generation.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Annual billing only (about $468/year); 6,000 AI credits/month, up to 3x more AI Coach conversations, up to 11 hours of short-form clip generation.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "boost",
     "addOns": [],
     "cautions": [
-      { "en": "Max and the Coaching add-on are annual-only; only Boost offers a monthly billing option.", "fr": "Max et le module Coaching sont facturés uniquement à l'année ; seul Boost propose un paiement mensuel.", "sourceIds": ["s1"] }
+      {
+        "en": "Max and the Coaching add-on are annual-only; only Boost offers a monthly billing option.",
+        "fr": "Max et le module Coaching sont facturés uniquement à l'année ; seul Boost propose un paiement mensuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "YouTube keyword and topic research to find video ideas with search demand.", "sourceIds": ["s3"] },
-      { "en": "AI-generated titles, descriptions, tags and thumbnail suggestions for a channel's videos.", "sourceIds": ["s3"] },
-      { "en": "Competitor and channel analytics beyond YouTube Studio's native data.", "sourceIds": ["s3"] },
-      { "en": "AI Coach and short-form clip generation from long-form video on higher tiers.", "sourceIds": ["s1"] }
+      {
+        "en": "YouTube keyword and topic research to find video ideas with search demand.",
+        "sourceIds": [
+          "s3"
+        ],
+        "fr": "Recherche de mots-clés et de sujets YouTube pour trouver des idées de vidéos qui ont de la demande."
+      },
+      {
+        "en": "AI-generated titles, descriptions, tags and thumbnail suggestions for a channel's videos.",
+        "sourceIds": [
+          "s3"
+        ],
+        "fr": "Titres, descriptions, tags et suggestions de miniatures générés par IA pour les vidéos d'une chaîne."
+      },
+      {
+        "en": "Competitor and channel analytics beyond YouTube Studio's native data.",
+        "sourceIds": [
+          "s3"
+        ],
+        "fr": "Analyse des concurrents et des chaînes au-delà des données natives de YouTube Studio."
+      },
+      {
+        "en": "AI Coach and short-form clip generation from long-form video on higher tiers.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Coach IA et création de clips courts à partir de vidéos longues sur les formules supérieures."
+      }
     ],
     "limitations": [
-      { "en": "Full analytics and AI features require the Chrome/browser extension alongside the web app.", "sourceIds": ["s2"] },
-      { "en": "Free plan is capped at 150 AI credits per month, well below what active channel management needs.", "sourceIds": ["s2"] },
-      { "en": "Higher-value tiers (Max, Coaching) lock users into annual billing with no monthly option.", "sourceIds": ["s1"] }
+      {
+        "en": "Full analytics and AI features require the Chrome/browser extension alongside the web app.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Les analyses complètes et les fonctions IA demandent l'extension de navigateur en plus de l'application web."
+      },
+      {
+        "en": "Free plan is capped at 150 AI credits per month, well below what active channel management needs.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Le plan gratuit est plafonné à 150 crédits IA par mois, bien en dessous des besoins d'une chaîne active."
+      },
+      {
+        "en": "Higher-value tiers (Max, Coaching) lock users into annual billing with no monthly option.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les formules les plus chères (Max, Coaching) imposent la facturation annuelle, sans option mensuelle."
+      }
     ],
     "integrations": [
-      { "name": "YouTube", "slug": null, "sourceIds": ["s3"] }
+      {
+        "name": "YouTube",
+        "slug": null,
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A solo content creator growing a YouTube channel who wants data-backed topic and title decisions beyond YouTube Studio.",
+      "fr": "Un créateur de contenu solo qui développe une chaîne YouTube et veut des décisions de sujets et de titres appuyées sur des données, au-delà de YouTube Studio."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Research YouTube keyword and topic demand before scripting a new video, to target searches viewers are already making.",
+      "fr": "Rechercher la demande de mots-clés et de sujets YouTube avant d'écrire une nouvelle vidéo, pour cibler des recherches déjà faites par les spectateurs."
+    },
+    {
+      "en": "Generate AI-suggested titles, descriptions and thumbnails for an existing video to improve click-through without redesigning it from scratch.",
+      "fr": "Générer des titres, descriptions et miniatures suggérés par IA pour une vidéo existante afin d'améliorer le taux de clic sans tout redessiner."
+    }
+  ],
   "alternatives": [
-    { "slug": "tubebuddy", "reason": { "en": "Direct competitor: same category of YouTube SEO and analytics browser extension." } }
+    {
+      "slug": "tubebuddy",
+      "reason": {
+        "en": "Direct competitor: same category of YouTube SEO and analytics browser extension.",
+        "fr": "Concurrent direct : même catégorie d'extension navigateur pour le SEO et les analytics YouTube."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "TubeBuddy", "officialUrl": "https://www.tubebuddy.com", "reason": "Main direct competitor; appears in currentAlternatives as tubebuddy, worth confirming catalogue slug." }
+    {
+      "name": "TubeBuddy",
+      "officialUrl": "https://www.tubebuddy.com",
+      "reason": "Main direct competitor; appears in currentAlternatives as tubebuddy, worth confirming catalogue slug."
+    }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Boost drops to about $16.58/month if billed annually (about $199/year), reasonable for a channel that needs consistent keyword research and AI titles, but the free plan's 150 AI credits/month cover very little.",
+        "fr": "Boost descend à environ 16,58 $/mois en facturation annuelle (environ 199 $/an), raisonnable pour une chaîne qui a besoin de recherche de mots-clés et de titres IA en continu, mais les 150 crédits IA/mois du plan gratuit couvrent très peu d'usage.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers keyword/topic research, AI-generated titles/descriptions/thumbnails and competitor analytics beyond YouTube Studio's native data, as advertised.",
+        "fr": "Fournit la recherche de mots-clés/sujets, des titres/descriptions/miniatures générés par IA et des analyses concurrentielles au-delà des données natives de YouTube Studio, comme annoncé.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "puissance": {
+        "en": "Adds AI Coach and short-form clip generation from long-form video on Max, but full analytics and AI features require installing a browser extension alongside the web app.",
+        "fr": "Ajoute un AI Coach et la génération de clips courts à partir de vidéos longues sur Max, mais les analyses et fonctions IA complètes demandent d'installer une extension navigateur en plus de l'appli web.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export or portability of channel data and history is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données et de l'historique de chaîne ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "YouTube growth tool",
+      "fr": "Outil de croissance YouTube"
+    },
+    "shortDescription": {
+      "en": "YouTube keyword research and AI-generated titles, descriptions and thumbnails, plus competitor analytics beyond YouTube Studio, via a free or paid browser extension.",
+      "fr": "Recherche de mots-clés YouTube et titres, descriptions et miniatures générés par IA, avec des analyses concurrentielles au-delà de YouTube Studio, via une extension gratuite ou payante."
+    },
+    "longDescription": {
+      "en": "VidIQ helps YouTube creators find video topics with real search demand, then generates AI-suggested titles, descriptions, tags and thumbnails, alongside competitor and channel analytics that go beyond YouTube Studio's native data.\n\nThe free plan gives 150 AI credits a month through the browser extension; Boost runs $39/month or drops to about $16.58/month billed annually, and Max (annual-only, about $39/month) adds an AI Coach and short-form clip generation from long-form video. Higher tiers lock you into annual billing with no monthly option. It suits a solo creator actively growing a channel who wants data-backed video ideas.",
+      "fr": "VidIQ aide les créateurs YouTube à trouver des sujets de vidéo avec une réelle demande de recherche, puis génère des titres, descriptions, tags et miniatures suggérés par IA, avec des analyses de concurrents et de chaîne qui vont au-delà des données natives de YouTube Studio.\n\nLe plan gratuit donne 150 crédits IA par mois via l'extension navigateur ; Boost coûte 39 $/mois ou environ 16,58 $/mois en facturation annuelle, et Max (annuel uniquement, environ 39 $/mois) ajoute un AI Coach et la génération de clips courts à partir de vidéos longues. Les paliers supérieurs imposent une facturation annuelle sans option mensuelle. Il convient à un créateur solo qui développe activement sa chaîne et veut des idées de vidéos appuyées sur des données."
+    },
+    "pros": [
+      {
+        "en": "Combines keyword research, AI title/thumbnail suggestions and competitor analytics in one tool.",
+        "fr": "Combine recherche de mots-clés, suggestions IA de titres/miniatures et analyses concurrentielles dans un seul outil."
+      },
+      {
+        "en": "Boost's annual price (about $16.58/month) is affordable for an active solo channel.",
+        "fr": "Le prix annuel de Boost (environ 16,58 $/mois) est abordable pour une chaîne solo active."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan's 150 AI credits/month cover very little active use.",
+        "fr": "Les 150 crédits IA/mois du plan gratuit couvrent très peu d'usage actif."
+      },
+      {
+        "en": "Max and the Coaching add-on are annual-only, with no monthly billing option.",
+        "fr": "Max et le module Coaching sont facturés uniquement à l'année, sans option mensuelle."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're actively growing a YouTube channel and want data-backed topic and title suggestions beyond YouTube Studio.",
+        "fr": "Tu développes activement une chaîne YouTube et tu veux des suggestions de sujets et de titres appuyées sur des données, au-delà de YouTube Studio."
+      },
+      "avoidIf": {
+        "en": "You only post occasionally and won't use more than the free plan's 150 AI credits a month.",
+        "fr": "Tu publies seulement de temps en temps et tu n'utiliseras pas plus que les 150 crédits IA mensuels du plan gratuit."
+      },
+      "threshold": {
+        "en": "Boost's annual rate (about $199/year) is the entry point worth comparing against the time cost of doing keyword research and title testing manually.",
+        "fr": "Le tarif annuel de Boost (environ 199 $/an) est le point d'entrée à comparer au temps que prendrait une recherche de mots-clés et un test de titres à la main."
+      },
+      "billingTraps": {
+        "en": "Max and the Coaching add-on only bill annually; there's no monthly option above the Boost plan.",
+        "fr": "Max et le module Coaching se facturent uniquement à l'année ; il n'y a pas d'option mensuelle au-delà du plan Boost."
+      }
+    }
+  },
   "unknowns": [
     "vidiq.com returned HTTP 429 (bot protection) on repeated direct fetch attempts during this session; pricing and feature facts above are sourced from independent 2026 pricing round-ups (tier 2), not the official pricing page directly.",
     "Exact currency handling (tax inclusion, regional pricing) not confirmed from an official source."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "vidIQ's official pricing page (vidiq.com/pricing) returned HTTP 429 during research; pricing and feature facts here come from third-party pricing round-ups (tier 2 sources), not the official page directly, and should be re-verified on vidiq.com before publishing these prices."
+  ]
 }

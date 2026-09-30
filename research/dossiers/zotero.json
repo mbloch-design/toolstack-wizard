@@ -3,7 +3,7 @@
   "slug": "zotero",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Zotero",
     "vendor": "Corporation for Digital Scholarship",
@@ -41,7 +41,7 @@
       "exists": true,
       "limits": {
         "en": "300 MB of file storage for PDFs, images, snapshots and attachments; library metadata, notes, tags and collections sync free and unlimited regardless of file storage tier.",
-        "fr": null
+        "fr": "300 Mo de stockage de fichiers pour PDF, images, captures et pieces jointes ; les metadonnees de bibliotheque, notes, tags et collections se synchronisent gratuitement et sans limite quel que soit le palier de stockage de fichiers."
       },
       "sourceIds": [
         "s2"
@@ -63,7 +63,7 @@
         "keyLimits": [
           {
             "en": "$20/year (≈$1.67/month), billed annually only. 2 GB of file storage.",
-            "fr": null
+            "fr": "20 $/an (environ 1,67 $/mois), facture uniquement a l'annee. 2 Go de stockage de fichiers."
           }
         ],
         "sourceIds": [
@@ -84,7 +84,7 @@
         "keyLimits": [
           {
             "en": "$60/year (≈$5/month), billed annually only. 6 GB of file storage.",
-            "fr": null
+            "fr": "60 $/an (environ 5 $/mois), facture uniquement a l'annee. 6 Go de stockage de fichiers."
           }
         ],
         "sourceIds": [
@@ -105,7 +105,7 @@
         "keyLimits": [
           {
             "en": "$120/year (≈$10/month), billed annually only. Unlimited file storage.",
-            "fr": null
+            "fr": "120 $/an (environ 10 $/mois), facture uniquement a l'annee. Stockage de fichiers illimite."
           }
         ],
         "sourceIds": [
@@ -118,14 +118,14 @@
     "cautions": [
       {
         "en": "All paid storage tiers are billed annually (no separate monthly billing option confirmed); the monthly figures shown are annual price divided by 12.",
-        "fr": null,
+        "fr": "Tous les paliers de stockage payants sont factures a l'annee (aucune option de facturation mensuelle distincte confirmee) ; les montants mensuels affiches sont le prix annuel divise par 12.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Storage plans cover only attached files (PDFs, images, snapshots); reference metadata itself always syncs free and without limit.",
-        "fr": null,
+        "fr": "Les paliers de stockage couvrent seulement les fichiers joints (PDF, images, captures) ; les metadonnees de reference se synchronisent toujours gratuitement et sans limite.",
         "sourceIds": [
           "s2"
         ]
@@ -136,28 +136,28 @@
     "capabilities": [
       {
         "en": "Free, open-source reference manager for collecting, organizing, citing and sharing bibliographic research.",
-        "fr": null,
+        "fr": "Gestionnaire de references bibliographiques gratuit et open source pour collecter, organiser, citer et partager des recherches.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Syncs PDFs, images, web snapshots and other attached files across devices via Zotero's own storage or a linked cloud service.",
-        "fr": null,
+        "fr": "Synchronise PDF, images, captures web et autres fichiers joints entre appareils via le stockage propre de Zotero ou un service cloud relie.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Group libraries allow shared research collections, with storage drawn from the group owner's paid quota if applicable.",
-        "fr": null,
+        "fr": "Les bibliotheques de groupe permettent des collections de recherche partagees, le stockage etant preleve sur le quota payant du proprietaire du groupe si applicable.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Browser connector for one-click saving of citations and full-text attachments from library databases and websites.",
-        "fr": null,
+        "fr": "Connecteur de navigateur pour sauvegarder en un clic les citations et pieces jointes en texte integral depuis des bases documentaires et des sites.",
         "sourceIds": [
           "s2"
         ]
@@ -166,14 +166,14 @@
     "limitations": [
       {
         "en": "Free tier's 300 MB file storage fills up quickly for researchers attaching many full-text PDFs.",
-        "fr": null,
+        "fr": "Les 300 Mo de stockage de fichiers du palier gratuit se remplissent vite pour un chercheur qui joint de nombreux PDF en texte integral.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Paid storage plans are billed annually only, with no monthly billing option, requiring upfront commitment.",
-        "fr": null,
+        "fr": "Les paliers de stockage payants sont factures uniquement a l'annee, sans option mensuelle, ce qui demande un engagement paye d'avance.",
         "sourceIds": [
           "s2"
         ]
@@ -201,5 +201,122 @@
     "www.zotero.org/storage returned HTTP 403 in this session; pricing figures were confirmed instead via the individual_storage documentation page and cross-checked with a web search.",
     "No alternativeCandidates were provided in the seed for this slug (education category list only), so no in-catalogue alternatives could be selected."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "An academic researcher or thesis writer who collects sources across databases and needs one place to cite and attach full-text PDFs.",
+      "fr": "Un chercheur ou redacteur de these qui collecte des sources dans plusieurs bases documentaires et a besoin d'un seul endroit pour citer et joindre les PDF en texte integral."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Literature review: save citations and PDFs with the browser connector while reading, then export a formatted bibliography.",
+      "fr": "Revue de litterature : sauvegarder citations et PDF avec le connecteur navigateur en lisant, puis exporter une bibliographie mise en forme."
+    },
+    {
+      "en": "Group thesis project: share a group library so co-authors see the same reference collection, upgrading storage if attachments exceed 300 MB.",
+      "fr": "Projet de these en groupe : partager une bibliotheque de groupe pour que les co-auteurs voient la meme collection de references, en augmentant le stockage si les pieces jointes depassent 300 Mo."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Core reference management stays free with 300 MB of storage, and paid tiers start at $20/year for 2 GB, cheap compared to most academic software.",
+        "fr": "La gestion des references de base reste gratuite avec 300 Mo de stockage, et les paliers payants commencent a 20 $/an pour 2 Go, peu cher pour un logiciel academique.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "The browser connector saves citations and attachments in one click while browsing, giving a usable library from the first session.",
+        "fr": "Le connecteur navigateur sauvegarde citations et pieces jointes en un clic pendant la navigation, ce qui donne une bibliotheque utilisable des la premiere session.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the promised workflow of collecting, organizing, citing and sharing research, with group libraries for shared collections.",
+        "fr": "Tient la promesse de collecter, organiser, citer et partager la recherche, avec des bibliotheques de groupe pour les collections partagees.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers core reference management, syncing and group libraries well, but the collected sources give no comparison point against dedicated competitors for advanced citation styles or institutional features.",
+        "fr": "Couvre bien la gestion des references, la synchronisation et les bibliotheques de groupe, mais les sources relevees ne donnent pas de comparaison avec des concurrents dedies sur les styles de citation avances ou les fonctions institutionnelles.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if leaving Zotero are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilite des donnees en quittant Zotero ne figurent pas dans les sources relevees.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Reference manager",
+      "fr": "Gestionnaire de references"
+    },
+    "shortDescription": {
+      "en": "Free, open-source reference manager with 300 MB of storage; paid storage tiers start at $20/year for 2 GB.",
+      "fr": "Gestionnaire de references gratuit et open source avec 300 Mo de stockage ; les paliers payants commencent a 20 $/an pour 2 Go."
+    },
+    "longDescription": {
+      "en": "Zotero is a free, open-source reference manager for collecting, organizing, citing and sharing research. A browser connector saves citations and full-text PDFs in one click, and library metadata syncs free and unlimited no matter which storage tier you're on.\n\nThe free plan includes 300 MB of file storage, which fills up quickly for anyone attaching many PDFs. Paid storage starts at $20/year for 2 GB, billed annually only, up to $120/year for unlimited storage. It fits a solo researcher or a small group sharing a library, more than a large lab with heavy institutional needs.",
+      "fr": "Zotero est un gestionnaire de references gratuit et open source pour collecter, organiser, citer et partager sa recherche. Un connecteur navigateur sauvegarde citations et PDF en texte integral en un clic, et les metadonnees de bibliotheque se synchronisent gratuitement et sans limite quel que soit le palier de stockage.\n\nLe plan gratuit inclut 300 Mo de stockage de fichiers, qui se remplit vite pour qui joint de nombreux PDF. Le stockage payant commence a 20 $/an pour 2 Go, facture uniquement a l'annee, jusqu'a 120 $/an pour un stockage illimite. Il convient a un chercheur solo ou un petit groupe qui partage une bibliotheque, plus qu'a un grand labo aux besoins institutionnels lourds."
+    },
+    "pros": [
+      {
+        "en": "Reference collection, citing and metadata sync stay free and unlimited regardless of storage tier.",
+        "fr": "Collecte de references, citation et synchronisation des metadonnees restent gratuites et illimitees quel que soit le palier de stockage."
+      },
+      {
+        "en": "One-click browser connector for saving citations and attachments while browsing.",
+        "fr": "Connecteur navigateur en un clic pour sauvegarder citations et pieces jointes en naviguant."
+      }
+    ],
+    "cons": [
+      {
+        "en": "300 MB of free file storage is tight for researchers attaching many full-text PDFs.",
+        "fr": "300 Mo de stockage gratuit, c'est juste pour un chercheur qui joint beaucoup de PDF en texte integral."
+      },
+      {
+        "en": "Paid storage is billed annually only, with no monthly option.",
+        "fr": "Le stockage payant est facture uniquement a l'annee, sans option mensuelle."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a free, open-source way to collect and cite sources with a one-click browser connector.",
+        "fr": "Tu as besoin d'un moyen gratuit et open source de collecter et citer tes sources avec un connecteur navigateur en un clic."
+      },
+      "avoidIf": {
+        "en": "You attach many large full-text PDFs and don't want to pay for storage upfront each year.",
+        "fr": "Tu joins beaucoup de gros PDF en texte integral et tu ne veux pas payer le stockage d'avance chaque annee."
+      },
+      "threshold": {
+        "en": "Worth the $20/year 2 GB storage plan once the free 300 MB tier fills up with attached PDFs.",
+        "fr": "Le plan de stockage a 20 $/an pour 2 Go devient utile des que le palier gratuit de 300 Mo est sature par les PDF joints."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25",
+  "reviewNotes": [
+    "scripts/research/seed.mjs zotero returns alternativeCandidates only from the formation-education category (e-learning platforms like Thinkific, Moodle, Podia), none of which is a real reference-manager competitor; alternatives stays empty and Mendeley/EndNote are listed in missingAlternatives instead.",
+    "pricing.freePlan.exists is true (300 MB free tier) but no plan in pricing.plans is priced at $0; the free tier itself was not captured as a plan entry during the facts stage."
+  ]
 }

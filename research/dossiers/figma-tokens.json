@@ -3,7 +3,8 @@
   "slug": "figma-tokens",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Tokens Studio (Figma Tokens)",
     "vendor": "Tokens Studio",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "EU",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Figma plugin usable free for Figma variables sync; Studio platform requires a paid plan after the 14-day trial.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Figma plugin usable free for Figma variables sync; Studio platform requires a paid plan after the 14-day trial.", "fr": "Plugin Figma utilisable gratuitement pour la synchronisation des variables Figma ; la plateforme Studio demande un plan payant après l'essai de 14 jours." }, "sourceIds": ["s1"] },
     "trial": { "days": 14, "sourceIds": ["s1"] },
     "plans": [
       {
@@ -35,7 +36,7 @@
         "price": { "monthly": null, "annualPerMonth": 17, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 editor included, additional editors at €17/mo each, unlimited viewers, up to 5 variable-based projects.", "fr": null }
+          { "en": "1 editor included, additional editors at €17/mo each, unlimited viewers, up to 5 variable-based projects.", "fr": "1 éditeur inclus, éditeurs supplémentaires à 17€/mois chacun, spectateurs illimités, jusqu'à 5 projets basés sur les variables.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": null, "annualPerMonth": 169, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 editor and 1 project included; additional editors €39/mo, max 3; unlimited viewers; direct-to-code workflow, branching.", "fr": null }
+          { "en": "1 editor and 1 project included; additional editors €39/mo, max 3; unlimited viewers; direct-to-code workflow, branching.", "fr": "1 éditeur et 1 projet inclus ; éditeurs supplémentaires 39€/mois, max 3 ; spectateurs illimités ; workflow direct vers le code, branches.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": null, "annualPerMonth": 499, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "5 editors, 20 projects, unlimited viewers, security & compliance support, asset management, documentation.", "fr": null }
+          { "en": "5 editors, 20 projects, unlimited viewers, security & compliance support, asset management, documentation.", "fr": "5 éditeurs, 20 projets, spectateurs illimités, support sécurité et conformité, gestion des assets, documentation.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       },
@@ -71,28 +72,28 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Custom pricing for security, compliance and scale needs.", "fr": null }
+          { "en": "Custom pricing for security, compliance and scale needs.", "fr": "Tarification sur mesure pour les besoins de sécurité, conformité et échelle.", "sourceIds": ["s1"] }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter-plus",
     "addOns": [
-      { "en": "The standalone Figma plugin can also be bought as a one-time purchase (around €39) separate from the Studio subscription tiers, per seed pricingText.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The standalone Figma plugin can also be bought as a one-time purchase (around €39) separate from the Studio subscription tiers, per seed pricingText.", "fr": "Le plugin Figma autonome peut aussi être acheté en une fois (environ 39€) séparément des paliers d'abonnement Studio, selon le pricingText du seed.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Prices shown are billed annually; monthly-billing equivalents not confirmed on this page.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Prices shown are billed annually; monthly-billing equivalents not confirmed on this page.", "fr": "Les prix affichés sont facturés à l'année ; les équivalents en facturation mensuelle ne sont pas confirmés sur cette page.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Manages design tokens (colors, typography, spacing) inside Figma and syncs them to code.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Git integration and multi-file support for versioned token releases.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Direct-to-code workflow and branching on paid Studio tiers.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Manages design tokens (colors, typography, spacing) inside Figma and syncs them to code.", "fr": "Gère les design tokens (couleurs, typographie, espacements) dans Figma et les synchronise vers le code.", "sourceIds": ["s1"] },
+      { "en": "Git integration and multi-file support for versioned token releases.", "fr": "Intégration Git et support multi-fichiers pour des versions de tokens suivies.", "sourceIds": ["s1"] },
+      { "en": "Direct-to-code workflow and branching on paid Studio tiers.", "fr": "Workflow direct vers le code et branches sur les paliers Studio payants.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free usage is limited to the Figma plugin itself; the Studio platform (versioning, branching, direct-to-code) requires a paid subscription after the 14-day trial.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Editor seats are capped per tier (1 on Essential with max 3 extra, 5 on Organization), which constrains larger teams without upgrading.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free usage is limited to the Figma plugin itself; the Studio platform (versioning, branching, direct-to-code) requires a paid subscription after the 14-day trial.", "fr": "L'usage gratuit se limite au plugin Figma lui-même ; la plateforme Studio (versioning, branches, direct vers le code) demande un abonnement payant après l'essai de 14 jours.", "sourceIds": ["s1"] },
+      { "en": "Editor seats are capped per tier (1 on Essential with max 3 extra, 5 on Organization), which constrains larger teams without upgrading.", "fr": "Les sièges éditeurs sont plafonnés par palier (1 sur Essential avec 3 en plus au max, 5 sur Organization), ce qui contraint les équipes plus grandes sans montée en gamme.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] },
@@ -100,15 +101,69 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer maintaining a design system who needs colors, type and spacing tokens kept in sync between Figma and code.",
+      "fr": "Une designeuse qui maintient un design system et doit garder les tokens de couleurs, typographie et espacements synchronisés entre Figma et le code."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Design system sync: update a color token once in Figma and push it to code through Git integration instead of manually editing each platform.", "fr": "Synchro de design system : mets à jour un token de couleur une fois dans Figma et pousse-le vers le code via l'intégration Git plutôt que d'éditer chaque plateforme à la main." },
+    { "en": "Token versioning: branch a set of typography tokens to test a redesign before merging it into the main design system.", "fr": "Versioning de tokens : crée une branche d'un jeu de tokens typographiques pour tester une refonte avant de la fusionner dans le design system principal." }
+  ],
   "alternatives": [
-    { "slug": "figma", "reason": { "en": "Figma's native Variables feature now covers part of the same design-token workflow.", "fr": null } }
+    { "slug": "figma", "reason": { "en": "Figma's native Variables feature now covers part of the same design-token workflow.", "fr": "La fonction Variables native de Figma couvre désormais une partie du même workflow de design tokens." } }
   ],
   "missingAlternatives": [
     { "name": "Specify", "officialUrl": "https://specifyapp.com/", "reason": "Direct competitor for design-token management and sync, already tracked as currentAlternatives in the seed but not present in alternativeCandidates for this batch." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Starter Plus costs €17/month for one editor, but Figma's own free Variables feature already covers part of the same token workflow, which limits the clear added value of paying.", "fr": "Starter Plus coûte 17€/mois pour un éditeur, mais la fonction Variables gratuite de Figma couvre déjà une partie du même workflow de tokens, ce qui limite la valeur ajoutée claire du fait de payer.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: setup time for a first token sync is not covered by the collected sources.", "fr": "Note neutre : le temps de configuration pour une première synchronisation de tokens ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised token management and code sync on paid tiers, with Git integration and branching for versioned releases.", "fr": "Tient sa promesse de gestion des tokens et de synchronisation code sur les paliers payants, avec intégration Git et branches pour des versions suivies.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Direct-to-code workflow and branching cover a real design-system need, but editor seats are capped low per tier (1 on Essential, 5 on Organization), limiting scale.", "fr": "Le workflow direct vers le code et les branches couvrent un vrai besoin de design system, mais les sièges éditeurs sont plafonnés bas par palier (1 sur Essential, 5 sur Organization), ce qui limite l'échelle.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats or data portability if leaving Tokens Studio are not covered by the collected sources.", "fr": "Note neutre : les formats d'export ou la portabilité des données en cas de départ de Tokens Studio ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Design tokens for Figma", "fr": "Design tokens pour Figma" },
+    "shortDescription": {
+      "en": "Manages design tokens inside Figma and syncs them to code through Git, with branching on paid tiers.",
+      "fr": "Gère les design tokens dans Figma et les synchronise vers le code via Git, avec des branches sur les paliers payants."
+    },
+    "longDescription": {
+      "en": "Tokens Studio (formerly Figma Tokens) manages design tokens such as colors, typography and spacing inside Figma and keeps them in sync with code through Git integration and multi-file support. Paid Studio tiers add a direct-to-code workflow and branching for testing token changes before merging.\n\nThe Figma plugin itself is usable for free to sync Figma variables, but the Studio platform needs a paid plan after a 14-day trial. Starter Plus starts at €17/month for one editor and up to 5 variable-based projects, the entry point once a team needs more than the free plugin's scope; Essential, at €169/month, adds the direct-to-code workflow and branching for a small design team maintaining a real design system.",
+      "fr": "Tokens Studio (anciennement Figma Tokens) gère les design tokens comme les couleurs, la typographie et les espacements dans Figma et les garde synchronisés avec le code via l'intégration Git. Les paliers Studio payants ajoutent un workflow direct vers le code et des branches pour tester des changements de tokens avant de les fusionner.\n\nLe plugin Figma est utilisable gratuitement pour synchroniser les variables Figma, mais la plateforme Studio demande un plan payant après un essai de 14 jours. Starter Plus démarre à 17€/mois pour un éditeur et jusqu'à 5 projets, le point d'entrée au-delà du plugin gratuit ; Essential, à 169€/mois, ajoute le workflow direct vers le code et les branches pour une équipe qui maintient un design system."
+    },
+    "pros": [
+      { "en": "The core Figma plugin for syncing variables is usable for free.", "fr": "Le plugin Figma de base pour synchroniser les variables est utilisable gratuitement." },
+      { "en": "Git integration and branching let a team version token changes before merging them.", "fr": "L'intégration Git et les branches permettent à une équipe de versionner les changements de tokens avant de les fusionner." }
+    ],
+    "cons": [
+      { "en": "Figma's own free Variables feature now covers part of the same workflow, reducing the case for paying.", "fr": "La fonction Variables gratuite de Figma couvre désormais une partie du même workflow, ce qui réduit l'intérêt de payer." },
+      { "en": "Editor seats are capped low per tier, from 1 on Essential to 5 on Organization.", "fr": "Les sièges éditeurs sont plafonnés bas par palier, de 1 sur Essential à 5 sur Organization." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You maintain a design system that needs versioned, branchable token sync between Figma and code through Git.", "fr": "Tu maintiens un design system qui a besoin d'une synchro de tokens versionnée et branchable entre Figma et le code via Git." },
+      "avoidIf": { "en": "Figma's native Variables feature already covers your token needs without a separate subscription.", "fr": "La fonction Variables native de Figma couvre déjà tes besoins en tokens sans abonnement séparé." },
+      "threshold": { "en": "Starter Plus costs €204/year at €17/month for one editor, the point where a team needs Git-versioned tokens beyond what Figma Variables offers alone.", "fr": "Starter Plus coûte 204€/an à 17€/mois pour un éditeur, le seuil où une équipe a besoin de tokens versionnés par Git au-delà de ce qu'offre seul Figma Variables." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "Exact price of the standalone one-time plugin purchase not independently re-verified on tokens.studio (sourced from seed pricingText).",
     "Monthly (non-annual) billing rates not shown on the fetched pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

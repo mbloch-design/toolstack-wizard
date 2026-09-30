@@ -3,7 +3,8 @@
   "slug": "touchdesigner",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "TouchDesigner",
     "vendor": "Derivative",
@@ -34,11 +35,9 @@
       "exists": true,
       "limits": {
         "en": "Non-Commercial edition is free for personal/non-commercial use, with image resolution capped at 1280x1280, excludes some specialized operators, limited to 10 keys per account, forum support only.",
-        "fr": null
+        "fr": "L'édition Non-Commercial est gratuite pour un usage personnel non commercial, avec une résolution limitée à 1280x1280, certains opérateurs spécialisés exclus, 10 clés par compte maximum et un support limité au forum."
       },
-      "sourceIds": [
-        "s1"
-      ]
+      "sourceIds": ["s1"]
     },
     "plans": [
       {
@@ -49,7 +48,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Free for personal/non-commercial use; resolution capped at 1280x1280, excludes some operators, 10 keys per account, forum support only.", "fr": null }
+          { "en": "Free for personal/non-commercial use; resolution capped at 1280x1280, excludes some operators, 10 keys per account, forum support only.", "fr": "Gratuit pour un usage personnel non commercial ; résolution limitée à 1280x1280, certains opérateurs exclus, 10 clés par compte, support limité au forum." }
         ],
         "sourceIds": ["s1"]
       },
@@ -58,82 +57,51 @@
         "name": "Educational",
         "unit": "one_time",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": 300
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 300 },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Non-commercial/educational use only; requires student or institution registration and Derivative approval.",
-            "fr": null
-          }
+          { "en": "Non-commercial/educational use only; requires student or institution registration and Derivative approval.", "fr": "Usage non commercial ou éducatif uniquement ; nécessite une inscription étudiante ou institutionnelle validée par Derivative." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "commercial",
         "name": "Commercial",
         "unit": "one_time",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": 600
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 600 },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Required for any paid/commercial project; unlocks unlimited resolution, H.264/H.265 realtime encoding, Shared Memory and DirectX operators, TouchEngine integration, transferable license keys.",
-            "fr": null
-          }
+          { "en": "Required for any paid/commercial project; unlocks unlimited resolution, H.264/H.265 realtime encoding, Shared Memory and DirectX operators, TouchEngine integration, transferable license keys.", "fr": "Obligatoire pour tout projet payant ou commercial ; débloque la résolution illimitée, l'encodage temps réel H.264/H.265, les opérateurs Shared Memory et DirectX, l'intégration TouchEngine et des clés de licence transférables." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "one_time",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": 2200
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 2200 },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Includes 6 hours of Pro Support, unlimited Notch operator resolution, advanced tracking (Stype, BlackTrax), file privacy protection, motion channel blending.",
-            "fr": null
-          }
+          { "en": "Includes 6 hours of Pro Support, unlimited Notch operator resolution, advanced tracking (Stype, BlackTrax), file privacy protection, motion channel blending.", "fr": "Inclut 6 heures de support Pro, une résolution illimitée pour l'opérateur Notch, le tracking avancé (Stype, BlackTrax), la protection de la confidentialité des fichiers et le mélange de canaux de mouvement." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "commercial",
     "addOns": [
       {
         "en": "Floating Cloud Commercial license: $900 USD, for cloud/floating deployment instead of a single dongle-bound seat.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Licence Floating Cloud Commercial : 900 USD, pour un déploiement cloud ou flottant au lieu d'un poste unique lié à une clé physique.",
+        "sourceIds": ["s1"]
       }
     ],
     "cautions": [
       {
         "en": "Licenses are perpetual one-time purchases per seat rather than a recurring subscription; the free Non-Commercial tier cannot legally be used for any paid project.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les licences sont des achats uniques perpétuels par poste et non un abonnement récurrent ; l'édition gratuite Non-Commercial ne peut légalement pas être utilisée pour un projet payant.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -141,42 +109,65 @@
     "capabilities": [
       {
         "en": "Node-based visual programming environment for real-time interactive visuals, projection and installations.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Environnement de programmation visuelle par nœuds pour créer des visuels interactifs, de la projection et des installations en temps réel.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Realtime video encoding, TouchEngine integration to embed TouchDesigner networks in other applications, and advanced motion-tracking device support (Commercial/Pro tiers).",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Encodage vidéo en temps réel, intégration TouchEngine pour embarquer des réseaux TouchDesigner dans d'autres applications, et prise en charge de dispositifs de tracking avancés (offres Commercial/Pro).",
+        "sourceIds": ["s1"]
       }
     ],
     "limitations": [
       {
         "en": "Non-Commercial free tier is capped at 1280x1280 resolution and excludes several specialized operators.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "L'édition gratuite Non-Commercial est limitée à une résolution de 1280x1280 et exclut plusieurs opérateurs spécialisés.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Any commercial or compensated use legally requires purchasing a Commercial or Pro license; the free tier cannot be used for paid work.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Tout usage commercial ou rémunéré nécessite légalement une licence Commercial ou Pro ; l'édition gratuite ne peut pas servir à un travail payant.",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [],
-    "platforms": [
-      "windows",
-      "macos"
-    ]
+    "platforms": ["windows", "macos"]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Visual/motion designers and technical artists building real-time projection, VJ sets or interactive installations.",
+      "fr": "Designers visuels et artistes techniques qui créent de la projection temps réel, des sets VJ ou des installations interactives."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Setup: buy the one-time Commercial license, unlock unlimited resolution and realtime encoding for a paid installation project.",
+      "fr": "Mise en place : achète la licence Commercial en un seul paiement, débloque la résolution illimitée et l'encodage temps réel pour un projet d'installation payant."
+    },
+    {
+      "en": "Live show: build a node network that reacts to audio and sensor input for a live VJ or performance set.",
+      "fr": "Spectacle live : construis un réseau de nœuds qui réagit à l'audio et aux capteurs pour un set VJ ou une performance en direct."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "houdini",
+      "reason": {
+        "en": "Another node-based procedural tool used by technical artists for real-time and simulation work overlapping with TouchDesigner's audience.",
+        "fr": "Un autre outil procédural par nœuds utilisé par les artistes techniques pour du temps réel et de la simulation, avec un public proche de celui de TouchDesigner."
+      }
+    },
+    {
+      "slug": "madmapper",
+      "reason": {
+        "en": "Direct competitor for projection mapping and live visual output, the core use case TouchDesigner's Commercial tier targets.",
+        "fr": "Concurrent direct sur le mapping vidéo et la sortie visuelle live, le cas d'usage principal ciblé par l'offre Commercial de TouchDesigner."
+      }
+    }
+  ],
   "missingAlternatives": [
     {
       "name": "Notch",
@@ -184,8 +175,76 @@
       "reason": "Direct real-time visuals/VJ competitor to TouchDesigner, not present in the seed's alternativeCandidates for this tool."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Commercial license ($600, perpetual) avoids recurring subscription fees, but its real return depends on project volume the sources do not quantify.",
+        "fr": "La licence Commercial (600 USD, perpétuelle) évite des frais d'abonnement récurrents, mais son retour réel dépend d'un volume de projets que les sources ne quantifient pas.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and learning curve are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la courbe d'apprentissage ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The Commercial/Pro tiers deliver the advertised real-time visuals, encoding and tracking features without stated workarounds.",
+        "fr": "Les offres Commercial/Pro livrent les visuels temps réel, l'encodage et le tracking annoncés, sans contournement mentionné.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Pro tier supports advanced tracking hardware (Stype, BlackTrax) and unlimited Notch operator resolution, indicating a high capability ceiling.",
+        "fr": "L'offre Pro prend en charge du matériel de tracking avancé (Stype, BlackTrax) et une résolution illimitée pour l'opérateur Notch, ce qui indique un plafond de capacité élevé.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if leaving the tool are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Real-time visuals", "fr": "Visuels temps réel" },
+    "shortDescription": {
+      "en": "Node-based visual programming software for real-time interactive visuals, projection mapping and installations, sold as a perpetual license.",
+      "fr": "Logiciel de programmation visuelle par nœuds pour des visuels interactifs, du mapping vidéo et des installations en temps réel, vendu sous licence perpétuelle."
+    },
+    "longDescription": {
+      "en": "TouchDesigner is a node-based environment for building real-time visuals: projection mapping, interactive installations and live VJ sets. Networks combine video, audio, sensor and tracking data without traditional code, and the Commercial tier adds realtime H.264/H.265 encoding and embedding via TouchEngine.\n\nThe free Non-Commercial edition caps resolution at 1280x1280 and cannot be used for paid work; any commercial project needs the one-time $600 Commercial license, with a $2,200 Pro tier adding advanced tracking hardware support and Pro support hours. There is no subscription: it suits solo visual artists and small studios doing recurring installation or live-visual work.",
+      "fr": "TouchDesigner est un environnement par nœuds pour construire des visuels temps réel : mapping vidéo, installations interactives et sets VJ en direct. Les réseaux combinent vidéo, audio, capteurs et tracking sans code traditionnel, et l'offre Commercial ajoute l'encodage temps réel H.264/H.265 et l'intégration via TouchEngine.\n\nL'édition gratuite Non-Commercial limite la résolution à 1280x1280 et ne peut pas servir à un travail payant ; tout projet commercial exige la licence Commercial à 600 USD payée une fois, avec une offre Pro à 2 200 USD qui ajoute le support de matériel de tracking avancé et des heures de support dédié. Pas d'abonnement : l'outil convient aux artistes visuels solo et petits studios qui font régulièrement de l'installation ou du live visuel."
+    },
+    "pros": [
+      { "en": "One-time license instead of a recurring subscription, once the project is commercial.", "fr": "Licence payée une fois plutôt qu'un abonnement récurrent, une fois le projet commercial." },
+      { "en": "Advanced tracking hardware and unlimited Notch resolution available on the Pro tier.", "fr": "Matériel de tracking avancé et résolution Notch illimitée disponibles dans l'offre Pro." }
+    ],
+    "cons": [
+      { "en": "The free tier cannot legally be used for any paid or compensated project.", "fr": "L'offre gratuite ne peut légalement pas servir à un projet payant ou rémunéré." },
+      { "en": "Jumping from free to Commercial is a $600 upfront cost with no monthly option.", "fr": "Passer du gratuit au Commercial demande 600 USD payés d'un coup, sans option mensuelle." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You do recurring paid installation, projection mapping or live-visual work and want to avoid subscription fees.",
+        "fr": "Tu fais régulièrement de l'installation payante, du mapping vidéo ou du live visuel et veux éviter les frais d'abonnement."
+      },
+      "avoidIf": {
+        "en": "Your work stays personal/non-commercial, or you need advanced tracking hardware support without paying for the Pro tier.",
+        "fr": "Ton travail reste personnel et non commercial, ou tu as besoin du tracking avancé sans payer l'offre Pro."
+      },
+      "threshold": {
+        "en": "The Commercial license costs $600 once; it pays for itself as soon as a single paid project would otherwise be blocked by the free tier's limits.",
+        "fr": "La licence Commercial coûte 600 USD une fois ; elle se rentabilise dès qu'un seul projet payant serait autrement bloqué par les limites de l'offre gratuite."
+      }
+    }
+  },
   "unknowns": [
-    "No alternativeCandidates specific to real-time visual/node-based software were provided in the seed for this tool, so no in-catalogue alternatives could be confidently listed."
+    "No alternativeCandidates specific to real-time visual/node-based software beyond houdini and madmapper were provided in the seed for this tool."
   ],
   "conflicts": []
 }

@@ -3,7 +3,8 @@
   "slug": "confluence",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Confluence",
     "vendor": "Atlassian Corporation",
@@ -35,7 +36,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 10 users on the workspace.", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Up to 10 users on the workspace.", "fr": "Jusqu'à 10 utilisateurs sur l'espace de travail.", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 5.42, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Advanced permissions, 100 automation rule runs/month, unlimited pages, page insights, 250GB storage.", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Advanced permissions, 100 automation rule runs/month, unlimited pages, page insights, 250GB storage.", "fr": "Permissions avancées, 100 exécutions de règles d'automatisation par mois, pages illimitées, statistiques de page, 250 Go de stockage.", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       },
       {
@@ -55,7 +56,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 10.44, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited automation rules, advanced admin controls, unlimited whiteboards, analytics, priority support, 1TB storage.", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Unlimited automation rules, advanced admin controls, unlimited whiteboards, analytics, priority support, 1TB storage.", "fr": "Règles d'automatisation illimitées, contrôles admin avancés, tableaux blancs illimités, statistiques, support prioritaire, 1 To de stockage.", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       },
       {
@@ -65,7 +66,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom pricing through Atlassian sales.", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Custom pricing through Atlassian sales.", "fr": "Tarification sur mesure via les équipes commerciales Atlassian.", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       }
     ],
@@ -77,28 +78,86 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Team wiki and knowledge base for technical documentation, shared with rich page editing.", "sourceIds": ["s1"] },
-      { "en": "Page permissions, spaces and templates for organizing documentation by team or project.", "sourceIds": ["s2"] },
-      { "en": "Automation rules and whiteboards on higher tiers for structured collaboration.", "sourceIds": ["s2"] },
-      { "en": "Tight integration with other Atlassian products (Jira) for linking documentation to work items.", "sourceIds": ["s1"] }
+      { "en": "Team wiki and knowledge base for technical documentation, shared with rich page editing.", "fr": "Wiki d'équipe et base de connaissances pour la documentation technique, avec édition de page riche.", "sourceIds": ["s1"] },
+      { "en": "Page permissions, spaces and templates for organizing documentation by team or project.", "fr": "Permissions de page, espaces et modèles pour organiser la documentation par équipe ou par projet.", "sourceIds": ["s2"] },
+      { "en": "Automation rules and whiteboards on higher tiers for structured collaboration.", "fr": "Règles d'automatisation et tableaux blancs sur les paliers supérieurs pour une collaboration structurée.", "sourceIds": ["s2"] },
+      { "en": "Tight integration with other Atlassian products (Jira) for linking documentation to work items.", "fr": "Intégration étroite avec les autres produits Atlassian (Jira) pour relier la documentation aux tâches.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 10 users, unsuitable for any team beyond a very small group.", "sourceIds": ["s2"] },
-      { "en": "Automation rules are capped at 100 runs/month on Standard; unlimited automation requires Premium.", "sourceIds": ["s2"] },
-      { "en": "Advanced admin controls, analytics and priority support are Premium-and-above only.", "sourceIds": ["s2"] }
+      { "en": "Free plan is capped at 10 users, unsuitable for any team beyond a very small group.", "fr": "Le plan gratuit est plafonné à 10 utilisateurs, inadapté à toute équipe au-delà d'un tout petit groupe.", "sourceIds": ["s2"] },
+      { "en": "Automation rules are capped at 100 runs/month on Standard; unlimited automation requires Premium.", "fr": "Les règles d'automatisation sont plafonnées à 100 exécutions par mois sur Standard ; l'automatisation illimitée demande Premium.", "sourceIds": ["s2"] },
+      { "en": "Advanced admin controls, analytics and priority support are Premium-and-above only.", "fr": "Les contrôles admin avancés, les statistiques et le support prioritaire sont réservés à Premium et au-dessus.", "sourceIds": ["s2"] }
     ],
     "integrations": [
       { "name": "Jira", "slug": null, "sourceIds": ["s1"] }
     ],
     "platforms": ["web"]
   },
-  "alternatives": [],
-  "missingAlternatives": [
-    { "name": "Notion", "officialUrl": "https://www.notion.so", "reason": "Widely used alternative for team documentation and knowledge bases; appears in catalogue as notion, worth linking as an alternative at editorial stage." }
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or admin lead of a small team who needs a shared, organized place to keep technical or process documentation.",
+      "fr": "Une responsable ops ou admin d'une petite équipe qui a besoin d'un espace partagé et organisé pour la documentation technique ou de process."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Technical documentation: keep product or process documentation organized in spaces and templates instead of scattered files.", "fr": "Documentation technique : organise la documentation produit ou process dans des espaces et modèles plutôt que dans des fichiers éparpillés." },
+    { "en": "Work item linking: connect documentation pages directly to Jira tickets so context stays attached to the work.", "fr": "Lien avec les tâches : relie les pages de documentation directement aux tickets Jira pour garder le contexte attaché au travail." }
   ],
+  "alternatives": [
+    { "slug": "notion", "reason": { "en": "Direct competitor for team documentation and knowledge bases, with a lighter setup.", "fr": "Concurrent direct pour la documentation d'équipe et les bases de connaissances, avec une prise en main plus légère." } },
+    { "slug": "obsidian", "reason": { "en": "Overlapping use case for a personal or small-team knowledge base, though built around local notes rather than a shared cloud wiki.", "fr": "Usage proche pour une base de connaissances personnelle ou de petite équipe, mais construite autour de notes locales plutôt que d'un wiki cloud partagé." } },
+    { "slug": "roam-research", "reason": { "en": "Overlapping use case for networked note-taking and documentation, aimed more at individuals than at team wikis.", "fr": "Usage proche pour la prise de notes en réseau et la documentation, plus orienté individu que wiki d'équipe." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Standard costs $5.42/user/month annually and already includes unlimited pages, advanced permissions and 250GB storage.", "fr": "Standard coûte 5,42$/utilisateur/mois en facturation annuelle et inclut déjà pages illimitées, permissions avancées et 250 Go de stockage.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Organizing documentation relies on setting up spaces, templates and page permissions, a structuring step before a team gets useful output.", "fr": "Organiser la documentation demande de configurer espaces, modèles et permissions de page, une étape de structuration avant d'obtenir un résultat utile.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers the promised team wiki and documentation function, with Jira linking closing the loop to actual work items.", "fr": "Tient sa promesse de wiki d'équipe et de documentation, avec le lien vers Jira pour relier au travail réel.", "sourceIds": ["s1", "s2"] },
+      "puissance": { "en": "Automation rules, advanced admin controls, analytics and Jira integration give it a broad feature set for structured team documentation.", "fr": "Règles d'automatisation, contrôles admin avancés, statistiques et intégration Jira lui donnent un périmètre large pour la documentation d'équipe structurée.", "sourceIds": ["s1", "s2"] },
+      "reversibilite": { "en": "Neutral score: export or data-portability options are not covered by the collected sources.", "fr": "Note neutre : les options d'export ou de portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1", "s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Team wiki", "fr": "Wiki d'équipe" },
+    "shortDescription": {
+      "en": "Atlassian's team wiki for technical documentation, with page permissions, templates and Jira linking.",
+      "fr": "Wiki d'équipe Atlassian pour la documentation technique, avec permissions de page, modèles et lien vers Jira."
+    },
+    "longDescription": {
+      "en": "Confluence is Atlassian's team wiki for keeping technical documentation, process guides and project notes in one organized, permissioned space. Spaces and templates structure the content by team or project, and its tight link with Jira keeps documentation pages attached to actual tickets and work items.\n\nA free plan covers up to 10 users, enough for a very small team to try it. Standard starts at $5.42/user/month billed annually and unlocks unlimited pages, advanced permissions and 250GB of storage, the entry point once a team outgrows the free cap. Premium, at $10.44/user/month, adds unlimited automation and advanced admin controls for larger, more structured teams.",
+      "fr": "Confluence est le wiki d'équipe d'Atlassian pour centraliser documentation technique, guides de process et notes de projet dans un espace organisé avec permissions. Espaces et modèles structurent le contenu par équipe ou par projet, et le lien étroit avec Jira garde les pages de documentation attachées aux tickets et tâches réelles.\n\nUn plan gratuit couvre jusqu'à 10 utilisateurs, suffisant pour qu'une toute petite équipe essaie l'outil. Standard démarre à 5,42$/utilisateur/mois en facturation annuelle et débloque pages illimitées, permissions avancées et 250 Go de stockage, le vrai point d'entrée une fois le plafond gratuit dépassé. Premium, à 10,44$/utilisateur/mois, ajoute automatisation illimitée et contrôles admin avancés pour des équipes plus grandes et plus structurées."
+    },
+    "pros": [
+      { "en": "Tight integration with Jira keeps documentation directly attached to work items.", "fr": "Intégration étroite avec Jira qui garde la documentation directement attachée aux tâches." },
+      { "en": "Standard plan already includes unlimited pages and 250GB of storage.", "fr": "Le plan Standard inclut déjà pages illimitées et 250 Go de stockage." }
+    ],
+    "cons": [
+      { "en": "Free plan is capped at 10 users, a hard wall for any team past that size.", "fr": "Le plan gratuit est plafonné à 10 utilisateurs, un mur dur pour toute équipe au-delà." },
+      { "en": "Getting useful organization requires setting up spaces, templates and permissions rather than writing pages freely from the start.", "fr": "Obtenir une organisation utile demande de configurer espaces, modèles et permissions plutôt que d'écrire des pages librement dès le départ." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Your team already uses Jira and needs documentation directly linked to tickets and work items.", "fr": "Ton équipe utilise déjà Jira et a besoin d'une documentation directement liée aux tickets et aux tâches." },
+      "avoidIf": { "en": "You want a lighter, freeform note-taking space without setting up spaces and permissions first.", "fr": "Tu veux un espace de prise de notes plus léger et libre, sans configurer espaces et permissions au préalable." },
+      "threshold": { "en": "Standard costs $65.04/year per user at $5.42/month billed annually, the point where the free plan's 10-user cap and lack of unlimited pages start limiting the team.", "fr": "Standard coûte 65,04$/an par utilisateur à 5,42$/mois en facturation annuelle, le seuil où le plafond de 10 utilisateurs et l'absence de pages illimitées du plan gratuit commencent à limiter l'équipe." },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "The official Atlassian pricing page (atlassian.com/software/confluence/pricing) returned truncated content on repeated fetch attempts in this session; plan prices above are sourced from an independent 2026 pricing round-up (tier 2), not verified directly against the official page.",
     "Monthly (non-annual) billing rate per plan not confirmed; only annual per-user rates were found."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Standard/Premium/Enterprise prices come from a tier-2 pricing round-up because the official Atlassian pricing page did not render in this session; reverify directly on atlassian.com/software/confluence/pricing before publishing."
+  ]
 }

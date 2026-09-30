@@ -3,7 +3,8 @@
   "slug": "figma",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Figma",
     "vendor": "Figma, Inc.",
@@ -35,7 +36,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited drafts, access to UI kits/templates, 150 AI credits/day capped at 500/month.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Unlimited drafts, access to UI kits/templates, 150 AI credits/day capped at 500/month.", "fr": "Brouillons illimités, accès aux kits UI et modèles, 150 crédits IA par jour plafonnés à 500 par mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": 1,
         "price": { "monthly": 16, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited files/projects, team design libraries, advanced prototyping, Dev Mode inspection, 3,000 AI credits/month.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Unlimited files/projects, team design libraries, advanced prototyping, Dev Mode inspection, 3,000 AI credits/month.", "fr": "Fichiers et projets illimités, bibliothèques de design d'équipe, prototypage avancé, inspection Dev Mode, 3 000 crédits IA par mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,7 +56,7 @@
         "minSeats": 1,
         "price": { "monthly": 12, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Dev Mode access, 500 AI credits/month.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Dev Mode access, 500 AI credits/month.", "fr": "Accès à Dev Mode, 500 crédits IA par mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -65,7 +66,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 55, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Billed annually only; shared libraries across teams, centralized admin tools, 3,500 AI credits/month.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Billed annually only; shared libraries across teams, centralized admin tools, 3,500 AI credits/month.", "fr": "Facturation annuelle uniquement ; bibliothèques partagées entre équipes, outils d'administration centralisés, 3 500 crédits IA par mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -75,7 +76,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 90, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Billed annually only; custom workspaces, design system APIs, SCIM seat management, advanced security, 4,250 AI credits/month.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Billed annually only; custom workspaces, design system APIs, SCIM seat management, advanced security, 4,250 AI credits/month.", "fr": "Facturation annuelle uniquement ; espaces sur mesure, API de design system, gestion des sièges SCIM, sécurité avancée, 4 250 crédits IA par mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
@@ -88,28 +89,84 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Vector-based interface design and prototyping with real-time multiplayer collaboration.", "sourceIds": ["s2"] },
-      { "en": "Reusable components, variables and design-system tooling shared across files and teams.", "sourceIds": ["s2"] },
-      { "en": "Dev Mode and Code Connect for translating designs into code and linking design systems to codebases.", "sourceIds": ["s2"] },
-      { "en": "AI design agent and Figma MCP server for AI-assisted design generation and coding-tool integration.", "sourceIds": ["s2"] }
+      { "en": "Vector-based interface design and prototyping with real-time multiplayer collaboration.", "fr": "Design d'interface vectoriel et prototypage avec collaboration multi-utilisateurs en temps réel.", "sourceIds": ["s2"] },
+      { "en": "Reusable components, variables and design-system tooling shared across files and teams.", "fr": "Composants réutilisables, variables et outils de design system partagés entre fichiers et équipes.", "sourceIds": ["s2"] },
+      { "en": "Dev Mode and Code Connect for translating designs into code and linking design systems to codebases.", "fr": "Dev Mode et Code Connect pour traduire les maquettes en code et relier les design systems au code source.", "sourceIds": ["s2"] },
+      { "en": "AI design agent and Figma MCP server for AI-assisted design generation and coding-tool integration.", "fr": "Agent de design IA et serveur MCP Figma pour la génération assistée par IA et l'intégration aux outils de code.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "AI credits are limited even on paid seats and are further restricted for Dev and Collab seat types.", "sourceIds": ["s1"] },
-      { "en": "Several newer features (Figma Weave, Sites, Buzz, Motion) are still in Beta.", "sourceIds": ["s2"] },
-      { "en": "Cheaper seat discounts (Organization, Enterprise) require committing to annual billing.", "sourceIds": ["s1"] }
+      { "en": "AI credits are limited even on paid seats and are further restricted for Dev and Collab seat types.", "fr": "Les crédits IA sont limités même sur les sièges payants et davantage restreints pour les sièges Dev et Collab.", "sourceIds": ["s1"] },
+      { "en": "Several newer features (Figma Weave, Sites, Buzz, Motion) are still in Beta.", "fr": "Plusieurs fonctionnalités récentes (Figma Weave, Sites, Buzz, Motion) sont encore en bêta.", "sourceIds": ["s2"] },
+      { "en": "Cheaper seat discounts (Organization, Enterprise) require committing to annual billing.", "fr": "Les tarifs réduits par siège (Organization, Enterprise) imposent un engagement annuel.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Figma Make", "slug": null, "sourceIds": ["s2"] }
     ],
     "platforms": ["web", "mac", "windows"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer who builds interfaces, prototypes and design systems and needs a shared file for handoff to developers.",
+      "fr": "Une designeuse qui construit interfaces, prototypes et design systems et a besoin d'un fichier partagé pour transmettre au dev."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Prototyping: build an interactive click-through prototype from a component library to test a flow before development.", "fr": "Prototypage : construis un prototype interactif cliquable à partir d'une bibliothèque de composants pour tester un parcours avant le développement." },
+    { "en": "Design handoff: inspect finished screens in Dev Mode to hand exact spacing and styles to a developer.", "fr": "Transmission au dev : inspecte les écrans finalisés dans Dev Mode pour transmettre les espacements et styles exacts à un développeur." }
+  ],
   "alternatives": [
-    { "slug": "canva", "reason": { "en": "Overlapping use case for visual design, though Canva is broader and less focused on interface design." } },
-    { "slug": "adobe-xd", "reason": { "en": "Direct competitor in UI/UX design and prototyping tools." } }
+    { "slug": "canva", "reason": { "en": "Overlapping use case for visual design, though Canva is broader and less focused on interface design.", "fr": "Usage proche pour le design visuel, mais Canva est plus généraliste et moins centré sur le design d'interface." } },
+    { "slug": "adobe-xd", "reason": { "en": "Direct competitor in UI/UX design and prototyping tools.", "fr": "Concurrent direct sur le design d'interface et le prototypage UI/UX." } },
+    { "slug": "invision", "reason": { "en": "Overlapping use case for prototyping and design handoff to developers.", "fr": "Usage proche pour le prototypage et la transmission des maquettes aux développeurs." } },
+    { "slug": "framer", "reason": { "en": "Direct competitor for interface design with a stronger focus on shipping live interactive prototypes.", "fr": "Concurrent direct pour le design d'interface, plus orienté sur la publication de prototypes interactifs." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free plan already covers unlimited drafts and UI kits, and Professional at $16/seat/month unlocks team libraries and Dev Mode.", "fr": "Le plan gratuit couvre déjà les brouillons et kits UI illimités, et Professional à 16$/siège/mois débloque bibliothèques d'équipe et Dev Mode.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Runs directly in the browser with real-time multiplayer collaboration, no install or setup step needed to start designing together.", "fr": "Fonctionne directement dans le navigateur avec collaboration multi-utilisateurs en temps réel, sans installation pour commencer à designer ensemble.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers vector design, prototyping and design-system tooling as described, with Dev Mode and Code Connect closing the loop to code.", "fr": "Tient sa promesse de design vectoriel, prototypage et outillage design system, avec Dev Mode et Code Connect pour aller jusqu'au code.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Combines full interface design, prototyping, shared design systems, Dev Mode, Code Connect and an AI design agent in one product, a broad capability set for the category.", "fr": "Combine design d'interface complet, prototypage, design systems partagés, Dev Mode, Code Connect et un agent de design IA dans un seul produit, un périmètre large pour la catégorie.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: export and file-portability options are not covered by the collected sources.", "fr": "Note neutre : les options d'export et de portabilité des fichiers ne figurent pas dans les sources relevées.", "sourceIds": ["s1", "s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Interface design", "fr": "Design d'interface" },
+    "shortDescription": {
+      "en": "Vector-based interface design tool with real-time collaboration, components and a Dev Mode handoff to code.",
+      "fr": "Outil de design d'interface vectoriel avec collaboration en temps réel, composants et transmission au code via Dev Mode."
+    },
+    "longDescription": {
+      "en": "Figma is a browser-based interface design tool built around real-time collaboration: several people can edit the same file at once, share component libraries and keep a design system consistent across projects. Dev Mode and Code Connect carry finished screens through to implementation.\n\nThe free Starter plan covers unlimited drafts and UI kits, enough to learn the tool or run a small project. A Professional full seat costs $16/month and adds unlimited files, team libraries and Dev Mode, the entry point for a designer handing work to developers. Organization and Enterprise tiers bill annually only and add cross-team libraries and admin controls for larger studios.",
+      "fr": "Figma est un outil de design d'interface qui tourne dans le navigateur, construit autour de la collaboration en temps réel : plusieurs personnes peuvent éditer le même fichier, partager des bibliothèques de composants et garder un design system cohérent entre les projets. Dev Mode et Code Connect permettent d'aller des écrans finalisés jusqu'à l'implémentation.\n\nLe plan gratuit Starter couvre les brouillons et kits UI illimités, suffisant pour apprendre l'outil ou mener un petit projet. Un siège Professional complet coûte 16$/mois et ajoute fichiers illimités, bibliothèques d'équipe et Dev Mode, le vrai point d'entrée pour transmettre son travail à des développeurs. Les paliers Organization et Enterprise, facturés uniquement à l'année, ajoutent bibliothèques inter-équipes et contrôles admin pour les studios plus grands."
+    },
+    "pros": [
+      { "en": "Generous free plan for solo use and learning, with no time limit.", "fr": "Plan gratuit généreux pour un usage solo ou l'apprentissage, sans limite de durée." },
+      { "en": "Dev Mode gives developers a direct inspection path into finished designs.", "fr": "Dev Mode donne aux développeurs un accès direct pour inspecter les maquettes finalisées." }
+    ],
+    "cons": [
+      { "en": "Organization and Enterprise pricing only exists as an annual commitment.", "fr": "Les tarifs Organization et Enterprise n'existent qu'en engagement annuel." },
+      { "en": "AI credits are capped per seat type, so heavy AI use pushes toward more expensive Full seats.", "fr": "Les crédits IA sont plafonnés par type de siège, un usage IA intensif pousse vers des sièges Full plus chers." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You design interfaces or prototypes and need to hand them off cleanly to developers or collaborate live with a team.", "fr": "Tu conçois des interfaces ou des prototypes et dois les transmettre proprement à des développeurs ou collaborer en direct avec une équipe." },
+      "avoidIf": { "en": "You only need occasional visual mockups without component libraries or developer handoff, where a simpler tool is enough.", "fr": "Tu n'as besoin que de maquettes visuelles occasionnelles sans bibliothèque de composants ni transmission aux développeurs, où un outil plus simple suffit." },
+      "threshold": { "en": "A single Professional full seat costs $192/year ($16/month), the entry cost for unlimited files, team libraries and Dev Mode.", "fr": "Un siège Professional complet coûte 192$/an (16$/mois), le coût d'entrée pour les fichiers illimités, les bibliothèques d'équipe et Dev Mode." },
+      "billingTraps": { "en": "Organization and Enterprise discounts require annual billing with no published monthly option.", "fr": "Les remises Organization et Enterprise imposent une facturation annuelle, sans option mensuelle publiée." }
+    }
+  },
   "unknowns": [
     "Whether Sketch remains listed as a current alternative in the catalogue was not verified (seed listed sketch under currentAlternatives but it was absent from the fetched alternativeCandidates pool)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

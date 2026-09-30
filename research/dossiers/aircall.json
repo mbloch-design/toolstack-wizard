@@ -3,7 +3,8 @@
   "slug": "aircall",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Aircall",
     "vendor": "Aircall SAS",
@@ -15,20 +16,8 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://aircall.io/pricing/",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Aircall pricing"
-    },
-    {
-      "id": "s2",
-      "url": "https://aircall.io/integrations/",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Aircall integrations"
-    }
+    { "id": "s1", "url": "https://aircall.io/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Aircall pricing" },
+    { "id": "s2", "url": "https://aircall.io/integrations/", "tier": 1, "accessedOn": "2026-09-25", "title": "Aircall integrations" }
   ],
   "pricing": {
     "model": "per_seat",
@@ -37,13 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": {
-      "exists": false,
-      "limits": null,
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -51,221 +34,173 @@
         "name": "Essentials",
         "unit": "seat",
         "minSeats": 3,
-        "price": {
-          "monthly": 30,
-          "annualPerMonth": 22.5,
-          "oneTime": null
-        },
+        "price": { "monthly": 30, "annualPerMonth": 22.5, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Minimum 3 seats. Unlimited US/Canada calls, SMS/MMS, 250+ integrations, 50 AI Voice Agent minutes/month, 6 months of dashboard analytics history.",
-            "fr": null
-          }
+          { "en": "Minimum 3 seats. Unlimited US/Canada calls, SMS/MMS, 250+ integrations, 50 AI Voice Agent minutes/month, 6 months of dashboard analytics history.", "fr": "Minimum 3 postes. Appels illimités vers les États-Unis et le Canada, SMS/MMS, plus de 250 intégrations, 50 minutes d'agent vocal IA par mois, 6 mois d'historique analytique." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "professional",
         "name": "Professional",
         "unit": "seat",
         "minSeats": 3,
-        "price": {
-          "monthly": 50,
-          "annualPerMonth": 37.5,
-          "oneTime": null
-        },
+        "price": { "monthly": 50, "annualPerMonth": 37.5, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Minimum 3 seats. Adds AI call summaries and conversation intelligence, smart routing, queue callback, Power Dialer, outbound campaigns, live monitoring, full API access.",
-            "fr": null
-          }
+          { "en": "Minimum 3 seats. Adds AI call summaries and conversation intelligence, smart routing, queue callback, Power Dialer, outbound campaigns, live monitoring, full API access.", "fr": "Minimum 3 postes. Ajoute les résumés d'appel IA et l'analyse de conversation, le routage intelligent, le rappel en file d'attente, le Power Dialer, les campagnes sortantes, la supervision en direct et l'accès API complet." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 25,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          {
-            "en": "Minimum 25 seats. Unlimited global calls, HIPAA/GDPR/SOC2 compliance, SSO and SCIM, dedicated support and developer API access.",
-            "fr": null
-          }
+          { "en": "Minimum 25 seats. Unlimited global calls, HIPAA/GDPR/SOC2 compliance, SSO and SCIM, dedicated support and developer API access.", "fr": "Minimum 25 postes. Appels internationaux illimités, conformité HIPAA/RGPD/SOC2, SSO et SCIM, support dédié et accès API développeur." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "essentials",
     "addOns": [
-      {
-        "en": "Additional phone numbers: $6/month each.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "AI Voice Agents: from $100/month minimum, plus included minutes per plan.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Additional phone numbers: $6/month each.", "fr": "Numéros de téléphone supplémentaires : 6 USD par mois chacun.", "sourceIds": ["s1"] },
+      { "en": "AI Voice Agents: from $100/month minimum, plus included minutes per plan.", "fr": "Agents vocaux IA : à partir de 100 USD par mois minimum, plus les minutes incluses selon l'offre.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      {
-        "en": "Essentials and Professional require a minimum of 3 seats, and Enterprise a minimum of 25, so the advertised per-seat price cannot be bought for a single user.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "International outbound calling is billed separately (rates on request) except on Enterprise, which includes unlimited global calls.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Essentials and Professional require a minimum of 3 seats, and Enterprise a minimum of 25, so the advertised per-seat price cannot be bought for a single user.", "fr": "Essentials et Professional exigent un minimum de 3 postes, et Enterprise un minimum de 25, donc le prix par poste annoncé ne peut pas s'acheter pour un seul utilisateur.", "sourceIds": ["s1"] },
+      { "en": "International outbound calling is billed separately (rates on request) except on Enterprise, which includes unlimited global calls.", "fr": "Les appels sortants internationaux sont facturés séparément (tarifs sur demande), sauf sur Enterprise qui inclut les appels internationaux illimités.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Cloud-based business phone system with call routing, IVR and shared numbers for sales and support teams.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "AI call summaries and conversation intelligence (sentiment, key topics, talk-to-listen ratio) on Professional and above.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Deep CRM and helpdesk integrations including HubSpot, Salesforce, Pipedrive, Zoho CRM, Zendesk, Freshdesk, Intercom and Help Scout.",
-        "fr": null,
-        "sourceIds": [
-          "s2"
-        ]
-      },
-      {
-        "en": "Power Dialer and outbound campaign tools for sales teams on the Professional plan.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Cloud-based business phone system with call routing, IVR and shared numbers for sales and support teams.", "fr": "Système téléphonique d'entreprise dans le cloud avec routage d'appels, SVI et numéros partagés pour les équipes vente et support.", "sourceIds": ["s1"] },
+      { "en": "AI call summaries and conversation intelligence (sentiment, key topics, talk-to-listen ratio) on Professional and above.", "fr": "Résumés d'appel IA et analyse de conversation (sentiment, sujets clés, ratio parole/écoute) sur Professional et au-dessus.", "sourceIds": ["s1"] },
+      { "en": "Deep CRM and helpdesk integrations including HubSpot, Salesforce, Pipedrive, Zoho CRM, Zendesk, Freshdesk, Intercom and Help Scout.", "fr": "Intégrations poussées avec des CRM et outils de support comme HubSpot, Salesforce, Pipedrive, Zoho CRM, Zendesk, Freshdesk, Intercom et Help Scout.", "sourceIds": ["s2"] },
+      { "en": "Power Dialer and outbound campaign tools for sales teams on the Professional plan.", "fr": "Power Dialer et outils de campagnes sortantes pour les équipes commerciales sur l'offre Professional.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "No free plan; all paid tiers require a minimum seat count (3 for Essentials/Professional, 25 for Enterprise).",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Advanced conversation intelligence and full API access are locked behind the Professional tier, not available on Essentials.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "No free plan; all paid tiers require a minimum seat count (3 for Essentials/Professional, 25 for Enterprise).", "fr": "Pas d'offre gratuite ; toutes les offres payantes imposent un nombre minimum de postes (3 pour Essentials/Professional, 25 pour Enterprise).", "sourceIds": ["s1"] },
+      { "en": "Advanced conversation intelligence and full API access are locked behind the Professional tier, not available on Essentials.", "fr": "L'analyse de conversation avancée et l'accès API complet sont réservés à l'offre Professional, indisponibles sur Essentials.", "sourceIds": ["s1"] }
     ],
     "integrations": [
-      {
-        "name": "HubSpot",
-        "slug": null,
-        "sourceIds": [
-          "s2"
-        ]
-      },
-      {
-        "name": "Salesforce",
-        "slug": null,
-        "sourceIds": [
-          "s2"
-        ]
-      },
-      {
-        "name": "Zendesk",
-        "slug": "zendesk",
-        "sourceIds": [
-          "s2"
-        ]
-      },
-      {
-        "name": "Intercom",
-        "slug": "intercom",
-        "sourceIds": [
-          "s2"
-        ]
-      },
-      {
-        "name": "Help Scout",
-        "slug": "helpscout",
-        "sourceIds": [
-          "s2"
-        ]
-      }
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Salesforce", "slug": null, "sourceIds": ["s2"] },
+      { "name": "Zendesk", "slug": "zendesk", "sourceIds": ["s2"] },
+      { "name": "Intercom", "slug": "intercom", "sourceIds": ["s2"] },
+      { "name": "Help Scout", "slug": "helpscout", "sourceIds": ["s2"] }
     ],
-    "platforms": [
-      "web",
-      "ios",
-      "android"
-    ]
+    "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Ops and team leads setting up a shared business phone line for a small sales or support team.",
+      "fr": "Responsables ops qui mettent en place une ligne téléphonique professionnelle partagée pour une petite équipe vente ou support."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
     {
-      "slug": "openphone",
-      "reason": {
-        "en": "Cloud business phone competitor aimed at smaller teams with lower per-seat pricing.",
-        "fr": null
-      }
+      "en": "Setup: buy Essentials for the minimum 3 seats to give a small sales team a shared business number and call routing.",
+      "fr": "Mise en place : achète Essentials pour le minimum de 3 postes afin de donner à une petite équipe commerciale un numéro partagé et le routage d'appels."
     },
     {
-      "slug": "kixie",
-      "reason": {
-        "en": "Sales-focused cloud calling platform with power dialer, overlapping with Aircall's Professional tier.",
-        "fr": null
-      }
-    },
-    {
-      "slug": "intercom",
-      "reason": {
-        "en": "Customer communication platform with call/support workflows adjacent to Aircall's use case.",
-        "fr": null
-      }
+      "en": "Outbound: upgrade to Professional to run Power Dialer campaigns with AI call summaries after each conversation.",
+      "fr": "Prospection : passe à Professional pour lancer des campagnes Power Dialer avec des résumés d'appel IA après chaque conversation."
     }
+  ],
+  "alternatives": [
+    { "slug": "openphone", "reason": { "en": "Cloud business phone competitor aimed at smaller teams with lower per-seat pricing.", "fr": "Concurrent de téléphonie cloud visant les petites équipes avec un prix par poste plus bas." } },
+    { "slug": "kixie", "reason": { "en": "Sales-focused cloud calling platform with power dialer, overlapping with Aircall's Professional tier.", "fr": "Plateforme d'appels cloud orientée vente avec power dialer, qui recoupe l'offre Professional d'Aircall." } },
+    { "slug": "aloware", "reason": { "en": "Cloud contact center and dialer platform competing directly for the same sales/support calling use case.", "fr": "Plateforme de centre de contact et de dialer dans le cloud, concurrente directe sur le même besoin d'appels vente/support." } },
+    { "slug": "callhippo", "reason": { "en": "Cloud business phone system with per-seat pricing targeting the same small-team telephony need.", "fr": "Système téléphonique d'entreprise dans le cloud, à tarif par poste, qui vise le même besoin de téléphonie pour petites équipes." } }
   ],
   "missingAlternatives": [
-    {
-      "name": "RingCentral",
-      "officialUrl": "https://www.ringcentral.com/",
-      "reason": "Major cloud business phone/VoIP competitor, not present in the seed candidate list."
-    }
+    { "name": "RingCentral", "officialUrl": "https://www.ringcentral.com/", "reason": "Major cloud business phone/VoIP competitor, not present in the seed candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The 3-seat minimum on every tier means even a very small team pays for seats it may not need, which tempers the per-seat price advertised.",
+        "fr": "Le minimum de 3 postes sur chaque offre fait qu'une équipe très réduite paie pour des postes dont elle n'a pas forcément besoin, ce qui nuance le prix par poste annoncé.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to set up call routing and IVR for a first working line is not covered by the collected sources.",
+        "fr": "Note neutre : le temps de mise en place du routage d'appels et du SVI pour une première ligne fonctionnelle ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Call routing, IVR, shared numbers and AI call summaries work as advertised on the stated tiers, without described workarounds.",
+        "fr": "Le routage d'appels, le SVI, les numéros partagés et les résumés d'appel IA fonctionnent comme annoncé sur les offres concernées, sans contournement décrit.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Enterprise adds unlimited global calls, HIPAA/GDPR/SOC2 compliance, SSO and SCIM, indicating a high capability ceiling for regulated or global teams.",
+        "fr": "Enterprise ajoute les appels internationaux illimités, la conformité HIPAA/RGPD/SOC2, le SSO et le SCIM, ce qui indique un plafond de capacité élevé pour les équipes réglementées ou internationales.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: call history and data export options if leaving Aircall are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export de l'historique d'appels et des données en cas de départ d'Aircall ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cloud business phone", "fr": "Téléphonie cloud" },
+    "shortDescription": {
+      "en": "Cloud business phone system with call routing, IVR and CRM integrations for sales and support teams, sold per seat with a 3-seat minimum.",
+      "fr": "Téléphonie cloud avec routage d'appels, SVI et intégrations CRM pour les équipes vente et support, vendue par poste avec un minimum de 3 postes."
+    },
+    "longDescription": {
+      "en": "Aircall is a cloud business phone system built for sales and support teams, with call routing, IVR, shared numbers and deep CRM/helpdesk integrations like HubSpot, Salesforce and Zendesk. Professional adds AI call summaries, smart routing and a Power Dialer for outbound campaigns.\n\nEssentials starts at $22.50/month per seat billed annually, Professional at $37.50/month per seat, both requiring a minimum of 3 seats; Enterprise is quote-based with a 25-seat minimum and adds compliance certifications and SSO. The seat minimums mean it fits a small sales or support team rather than a solo user.",
+      "fr": "Aircall est un système téléphonique d'entreprise dans le cloud pour les équipes vente et support, avec routage d'appels, SVI, numéros partagés et des intégrations CRM comme HubSpot, Salesforce et Zendesk. Professional ajoute les résumés d'appel IA, le routage intelligent et un Power Dialer pour les campagnes sortantes.\n\nEssentials démarre à 22,50 USD par mois et par poste en facturation annuelle, Professional à 37,50 USD, les deux exigeant un minimum de 3 postes ; Enterprise est sur devis avec un minimum de 25 postes et ajoute conformité et SSO. Les minimums de postes font que l'outil convient à une petite équipe plutôt qu'à un utilisateur seul."
+    },
+    "pros": [
+      { "en": "Deep CRM and helpdesk integrations available from the entry Essentials tier.", "fr": "Intégrations CRM et support poussées disponibles dès l'offre d'entrée Essentials." },
+      { "en": "Enterprise includes unlimited global calls instead of billing international minutes separately.", "fr": "Enterprise inclut les appels internationaux illimités au lieu de facturer les minutes internationales à part." }
+    ],
+    "cons": [
+      { "en": "No plan can be bought for a single user; every tier has a seat minimum.", "fr": "Aucune offre ne peut s'acheter pour un seul utilisateur ; chaque offre impose un minimum de postes." },
+      { "en": "Conversation intelligence and full API access require the Professional tier, not Essentials.", "fr": "L'analyse de conversation et l'accès API complet exigent l'offre Professional, pas Essentials." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You are setting up a shared phone line for at least 3 people in sales or support with CRM integrations.",
+        "fr": "Tu mets en place une ligne téléphonique partagée pour au moins 3 personnes en vente ou support avec des intégrations CRM."
+      },
+      "avoidIf": {
+        "en": "You are a solo user or a 1-2 person team, since no Aircall plan can be bought below 3 seats.",
+        "fr": "Tu es seul ou en équipe de 1 à 2 personnes, car aucune offre Aircall ne peut s'acheter en dessous de 3 postes."
+      },
+      "threshold": {
+        "en": "Essentials costs $22.50/month per seat billed annually with a 3-seat minimum, so the real entry cost is $67.50/month for the smallest possible team.",
+        "fr": "Essentials coûte 22,50 USD par mois et par poste en facturation annuelle avec un minimum de 3 postes, donc le coût d'entrée réel est de 67,50 USD par mois pour la plus petite équipe possible."
+      },
+      "billingTraps": {
+        "en": "Every tier has a hard seat minimum (3 for Essentials/Professional, 25 for Enterprise), and international calling is billed separately below Enterprise.",
+        "fr": "Chaque offre impose un minimum strict de postes (3 pour Essentials/Professional, 25 pour Enterprise), et les appels internationaux sont facturés à part en dessous d'Enterprise."
+      }
+    }
+  },
   "unknowns": [
     "Free trial length not stated on the pricing page in this session (only 'free access to test the platform' mentioned without a specific duration)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Removed Intercom from alternatives: it is a customer messaging/helpdesk platform, not a direct cloud-phone competitor to Aircall, and is already listed as an integration. Replaced with aloware and callhippo, both cloud business-phone competitors from the seed's candidate list."
+  ]
 }

@@ -3,7 +3,8 @@
   "slug": "rive",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Rive",
     "vendor": "Rive",
@@ -40,7 +41,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "3 collaborative files, 1 project, 10MB max asset size, 1 workspace"
+        "en": "3 collaborative files, 1 project, 10MB max asset size, 1 workspace",
+        "fr": "3 fichiers collaboratifs, 1 projet, 10 Mo maximum par ressource, 1 espace de travail"
       },
       "sourceIds": [
         "s1"
@@ -61,7 +63,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "3 collaborative files, 1 project, 10MB per asset, 1 workspace"
+            "en": "3 collaborative files, 1 project, 10MB per asset, 1 workspace",
+            "fr": "3 fichiers collaboratifs, 1 projet, 10 Mo par ressource, 1 espace de travail"
           }
         ],
         "sourceIds": [
@@ -81,7 +84,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Up to 3 seats, unlimited files and projects, but no exports, libraries or CDN hosting included"
+            "en": "Up to 3 seats, unlimited files and projects, but no exports, libraries or CDN hosting included",
+            "fr": "Jusqu'à 3 sièges, fichiers et projets illimités, mais aucun export, ni bibliothèque, ni hébergement CDN inclus"
           }
         ],
         "sourceIds": [
@@ -101,7 +105,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Up to 25 seats; adds libraries and embed/CDN hosting; includes $20/seat monthly AI Agent credits"
+            "en": "Up to 25 seats; adds libraries and embed/CDN hosting; includes $20/seat monthly AI Agent credits",
+            "fr": "Jusqu'à 25 sièges ; ajoute les bibliothèques et l'hébergement embed/CDN ; inclut 20 $/siège/mois de crédits AI Agent"
           }
         ],
         "sourceIds": [
@@ -121,7 +126,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Custom S3 bucket access, dedicated Slack support, SSO, $40/seat monthly AI Agent credits"
+            "en": "Custom S3 bucket access, dedicated Slack support, SSO, $40/seat monthly AI Agent credits",
+            "fr": "Accès à un bucket S3 personnalisé, support Slack dédié, SSO, 40 $/siège/mois de crédits AI Agent"
           }
         ],
         "sourceIds": [
@@ -134,7 +140,7 @@
     "cautions": [
       {
         "en": "The Cadet plan does not include exports or CDN hosting; a team needs Voyager to publish/embed assets, which roughly triples the per-seat cost.",
-        "fr": null,
+        "fr": "Le plan Cadet n'inclut ni export ni hébergement CDN ; une équipe doit passer à Voyager pour publier ou intégrer ses ressources, ce qui triple à peu près le coût par siège.",
         "sourceIds": [
           "s1"
         ]
@@ -145,28 +151,28 @@
     "capabilities": [
       {
         "en": "Unified editor to design, animate and code interactive UI/motion/game assets, avoiding a separate mockup-to-code handoff",
-        "fr": null,
+        "fr": "Éditeur unique pour concevoir, animer et coder des ressources UI/motion/jeu interactives, sans étape séparée de maquette puis développement",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "State Machine for state-driven, interactive animations that connect directly to app logic",
-        "fr": null,
+        "fr": "State Machine pour des animations interactives pilotées par état, connectées directement à la logique de l'application",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "GPU-accelerated vector rendering engine running at up to 120fps",
-        "fr": null,
+        "fr": "Moteur de rendu vectoriel accéléré par GPU, jusqu'à 120 images par seconde",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Native runtimes/integrations for iOS, Android, web (React, React Native, Flutter), Unity, Unreal, Defold, Framer, Webflow and Wix Studio",
-        "fr": null,
+        "fr": "Runtimes et intégrations natifs pour iOS, Android, le web (React, React Native, Flutter), Unity, Unreal, Defold, Framer, Webflow et Wix Studio",
         "sourceIds": [
           "s2"
         ]
@@ -175,14 +181,14 @@
     "limitations": [
       {
         "en": "Represents a different workflow paradigm from After Effects/Figma/Lottie/CSS animation, with a learning curve for teams switching over",
-        "fr": null,
+        "fr": "Impose un mode de travail différent d'After Effects, Figma, Lottie ou de l'animation CSS, avec une courbe d'apprentissage pour les équipes qui migrent",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "The cheapest paid plan (Cadet) excludes exports and CDN hosting, needed to actually ship assets",
-        "fr": null,
+        "fr": "Le plan payant le moins cher (Cadet) exclut les exports et l'hébergement CDN, pourtant nécessaires pour livrer réellement les ressources",
         "sourceIds": [
           "s1"
         ]
@@ -239,19 +245,45 @@
       "macos"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer shipping the same interactive animation across a web app, a mobile app and possibly a game engine, who wants to avoid re-implementing motion logic per platform.",
+      "fr": "Un développeur qui livre la même animation interactive sur une app web, une app mobile et parfois un moteur de jeu, et qui veut éviter de réécrire la logique d'animation pour chaque plateforme."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a solo developer builds a state-driven onboarding animation in Rive and ships the same file natively to a React Native app and a web app.",
+      "fr": "Cas d'usage : un développeur seul construit une animation d'onboarding pilotée par état dans Rive et livre le même fichier nativement sur une app React Native et une app web."
+    },
+    {
+      "en": "Use case: a small studio upgrades from Cadet to Voyager to unlock CDN hosting, so client marketing sites can embed animated components without a build step.",
+      "fr": "Cas d'usage : un petit studio passe de Cadet à Voyager pour débloquer l'hébergement CDN, afin que les sites clients intègrent des composants animés sans étape de build."
+    }
+  ],
   "alternatives": [
     {
       "slug": "ae-bodymovin",
       "reason": {
-        "en": "Lottie/Bodymovin is the established way to export After Effects animations to code, competing for the same interactive-motion use case."
+        "en": "Lottie/Bodymovin is the established way to export After Effects animations to code, competing for the same interactive-motion use case.",
+        "fr": "Lottie/Bodymovin est la méthode établie pour exporter des animations After Effects vers du code, pour le même usage d'animation interactive."
       }
     },
     {
       "slug": "framer",
       "reason": {
-        "en": "Overlaps for building interactive, code-connected interface prototypes and animations."
+        "en": "Overlaps for building interactive, code-connected interface prototypes and animations.",
+        "fr": "Chevauchement pour créer des prototypes d'interface interactifs et connectés au code."
+      }
+    },
+    {
+      "slug": "figma",
+      "reason": {
+        "en": "Also used to design interactive interfaces, though its native animation and code-connected state logic stay more limited than Rive's.",
+        "fr": "Sert aussi à concevoir des interfaces interactives, mais son animation native et sa logique d'état connectée au code restent plus limitées que celles de Rive."
       }
     }
   ],
@@ -262,11 +294,114 @@
       "reason": "Direct competitor for interactive design/animation with code export, referenced as a current alternative in the seed but not present in this batch's alternativeCandidates list."
     }
   ],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A single file replacing separate design/animation/code work justifies the cost, but the cheapest paid plan (Cadet) excludes exports, so real value only starts at Voyager's $32/seat/month.",
+        "fr": "Un seul fichier qui remplace un travail séparé de design, d'animation et de code justifie le coût, mais le plan payant le moins cher (Cadet) exclut les exports : la vraie valeur ne commence qu'avec Voyager à 32 $/siège/mois.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Rive is described as a different workflow paradigm from After Effects, Figma, Lottie or CSS animation, with a learning curve for teams switching over.",
+        "fr": "Rive impose un mode de travail différent d'After Effects, Figma, Lottie ou de l'animation CSS, avec une courbe d'apprentissage pour les équipes qui migrent.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "The State Machine connects animation states directly to app logic and ships through native runtimes on iOS, Android, web frameworks and game engines as advertised.",
+        "fr": "La State Machine relie directement les états d'animation à la logique applicative et se déploie via des runtimes natifs sur iOS, Android, les frameworks web et les moteurs de jeu, comme annoncé.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "GPU-accelerated rendering up to 120fps plus native runtimes across a wide range of platforms and engines positions Rive as a category reference for interactive vector motion.",
+        "fr": "Un rendu accéléré par GPU jusqu'à 120 images par seconde et des runtimes natifs sur un large éventail de plateformes et de moteurs placent Rive comme une référence de sa catégorie pour l'animation vectorielle interactive.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: portability if leaving Rive (open export formats, data ownership) is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité en cas de départ de Rive (formats d'export ouverts, propriété des données) ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Interactive animation editor",
+      "fr": "Animation interactive codée"
+    },
+    "shortDescription": {
+      "en": "A unified editor to design, animate and code interactive graphics that deploy natively to apps, web frameworks and game engines.",
+      "fr": "Un éditeur unique pour concevoir, animer et coder des graphismes interactifs déployés nativement sur les apps, le web et les moteurs de jeu."
+    },
+    "longDescription": {
+      "en": "Rive combines vector design, an animation timeline and a State Machine for interactive logic in one file, which then runs the same way across iOS, Android, web frameworks like React and Flutter, and engines such as Unity or Unreal. Teams skip the usual handoff between a static mockup and a hand-coded implementation, since one asset ships everywhere through native runtimes.\n\nThe entry paid plan, Cadet, starts at $9/month per seat for up to three seats, but it excludes exports and CDN-hosted embeds, features only unlocked on the $32/month Voyager plan. That gap makes Rive best suited to a team ready to commit past the free tier, rather than an occasional one-off need.",
+      "fr": "Rive réunit le design vectoriel, une timeline d'animation et une State Machine pour la logique interactive dans un seul fichier, qui tourne ensuite à l'identique sur iOS, Android, des frameworks web comme React et Flutter, et des moteurs comme Unity ou Unreal. Les équipes évitent ainsi le passage habituel d'une maquette statique à un développement fait à la main.\n\nLe plan payant d'entrée, Cadet, démarre à 9 $/mois par siège pour jusqu'à trois sièges, mais il exclut les exports et l'hébergement CDN, débloqués seulement avec Voyager à 32 $/mois. Rive convient donc mieux à une équipe prête à s'engager au-delà du gratuit qu'à un besoin ponctuel."
+    },
+    "pros": [
+      {
+        "en": "One file plays back natively across web, mobile and game engines, removing duplicate animation work.",
+        "fr": "Un seul fichier se lit nativement sur le web, le mobile et les moteurs de jeu, ce qui évite de refaire le travail d'animation pour chaque plateforme."
+      },
+      {
+        "en": "The State Machine ties animation states directly to app logic without extra glue code.",
+        "fr": "La State Machine relie directement les états d'animation à la logique de l'application, sans code de liaison supplémentaire."
+      },
+      {
+        "en": "Runtimes cover a wide range of frameworks and game engines out of the box.",
+        "fr": "Les runtimes couvrent d'entrée un large éventail de frameworks et de moteurs de jeu."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The cheapest paid plan does not include exports or CDN hosting, which most teams need to ship anything.",
+        "fr": "Le plan payant le moins cher n'inclut ni exports ni hébergement CDN, pourtant nécessaires pour livrer quoi que ce soit."
+      },
+      {
+        "en": "Adopting Rive means learning a different workflow than After Effects, Figma or CSS animation.",
+        "fr": "Adopter Rive impose d'apprendre un mode de travail différent d'After Effects, Figma ou de l'animation CSS."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need one interactive animation asset that runs natively across web, mobile and game engines, and you can commit to at least the Voyager plan to export it.",
+        "fr": "Tu as besoin d'une seule ressource d'animation interactive qui tourne nativement sur le web, le mobile et les moteurs de jeu, et tu peux t'engager au moins sur le plan Voyager pour l'exporter."
+      },
+      "avoidIf": {
+        "en": "You just need to export an occasional Lottie-style clip, or your team already has a working After Effects/Lottie pipeline.",
+        "fr": "Tu as juste besoin d'exporter un clip ponctuel façon Lottie, ou ton équipe a déjà un pipeline After Effects/Lottie qui fonctionne."
+      },
+      "threshold": {
+        "en": "Voyager costs $32/month per seat ($384/year); that is the real entry point once exports and CDN hosting are counted, not the $9 Cadet price.",
+        "fr": "Voyager coûte 32 $/mois par siège (384 $/an) ; c'est le vrai seuil d'entrée une fois les exports et l'hébergement CDN comptés, pas le prix de 9 $ de Cadet."
+      },
+      "billingTraps": {
+        "en": "Cadet ($9/month) looks like the entry plan but excludes exports and CDN hosting, the features needed to ship anything; teams end up needing Voyager to actually publish assets.",
+        "fr": "Cadet (9 $/mois) ressemble au plan d'entrée mais exclut les exports et l'hébergement CDN, pourtant nécessaires pour livrer quoi que ce soit ; les équipes finissent par avoir besoin de Voyager pour vraiment publier leurs ressources."
+      }
+    }
+  },
   "unknowns": [
     "Annual billing discount, if any, for Cadet/Voyager/Enterprise not shown on the pricing page fetched",
     "Exact desktop platform support (Windows availability) not explicitly confirmed"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "comparePlanKey is set to Cadet, but Cadet excludes exports and CDN hosting, arguably the tool's core deliverable function for shipping assets; per pricing rule 5.4 (a plan that removes the main function does not qualify), verify on the official site whether Voyager should be the comparison plan instead."
+  ]
 }

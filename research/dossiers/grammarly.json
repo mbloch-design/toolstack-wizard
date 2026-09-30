@@ -3,7 +3,8 @@
   "slug": "grammarly",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Grammarly",
     "vendor": "Grammarly, Inc.",
@@ -61,32 +62,88 @@
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "The $12/mo figure was shown as the Pro plan's price; whether this is a monthly or annual-billed rate was not explicitly labeled on the page and should be re-verified before use in a billing comparison.", "sourceIds": ["s1"] }
+      { "en": "The $12/mo figure was shown as the Pro plan's price; whether this is a monthly or annual-billed rate was not explicitly labeled on the page and should be re-verified before use in a billing comparison.", "fr": "Le tarif de 12 $/mois affiché est celui du plan Pro ; la page ne précise pas s'il s'agit d'un tarif mensuel ou annuel, à revérifier avant toute comparaison de facturation.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Grammar, spelling and style checking with tone detection across writing surfaces.", "sourceIds": ["s1"] },
-      { "en": "AI writing assistance: sentence rewriting, tone adjustment, and fluency suggestions for non-native English writers (Pro).", "sourceIds": ["s1"] },
-      { "en": "Plagiarism and AI-generated-text detection (Pro).", "sourceIds": ["s1"] },
-      { "en": "Team features on Pro/Enterprise: account roles, user groups, shared style guides and brand tone, and team analytics.", "sourceIds": ["s1"] }
+      { "en": "Grammar, spelling and style checking with tone detection across writing surfaces.", "fr": "Correction de grammaire, d'orthographe et de style avec détection du ton sur différentes surfaces d'écriture.", "sourceIds": ["s1"] },
+      { "en": "AI writing assistance: sentence rewriting, tone adjustment, and fluency suggestions for non-native English writers (Pro).", "fr": "Assistance de rédaction par IA : réécriture de phrases, ajustement du ton et suggestions de fluidité pour les rédacteurs non natifs (Pro).", "sourceIds": ["s1"] },
+      { "en": "Plagiarism and AI-generated-text detection (Pro).", "fr": "Détection de plagiat et de texte généré par IA (Pro).", "sourceIds": ["s1"] },
+      { "en": "Team features on Pro/Enterprise: account roles, user groups, shared style guides and brand tone, and team analytics.", "fr": "Fonctions d'équipe sur Pro/Enterprise : rôles de compte, groupes d'utilisateurs, guides de style et ton de marque partagés, et analyses d'équipe.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "AI prompt usage is capped even on the paid Pro plan (2,000 prompts/member/month); the free plan is capped at 100 prompts/month.", "sourceIds": ["s1"] },
-      { "en": "Advanced security and compliance features (SSO, SCIM, DLP, BYOK) are Enterprise-only and require a custom quote.", "sourceIds": ["s1"] }
+      { "en": "AI prompt usage is capped even on the paid Pro plan (2,000 prompts/member/month); the free plan is capped at 100 prompts/month.", "fr": "L'usage des requêtes IA est plafonné même sur le plan payant Pro (2 000 requêtes/membre/mois) ; le plan gratuit est limité à 100 requêtes/mois.", "sourceIds": ["s1"] },
+      { "en": "Advanced security and compliance features (SSO, SCIM, DLP, BYOK) are Enterprise-only and require a custom quote.", "fr": "Les fonctions avancées de sécurité et de conformité (SSO, SCIM, DLP, BYOK) sont réservées à Enterprise et demandent un devis sur mesure.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "windows", "mac", "ios", "android"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "An independent consultant who writes client-facing emails, reports and proposals in English and wants AI-assisted correction and rewriting.",
+      "fr": "Un consultant indépendant qui rédige des emails, rapports et propositions en anglais pour ses clients et veut une correction et une réécriture assistées par IA."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Polish a client email or report for grammar, tone and clarity before sending, with real-time AI-assisted rewriting.", "fr": "Corriger un email ou un rapport client sur la grammaire, le ton et la clarté avant l'envoi, avec une réécriture assistée par IA en temps réel." },
+    { "en": "Check drafts for accidental plagiarism or AI-generated-text flags on the Pro plan before delivering client work.", "fr": "Vérifier les brouillons pour un plagiat accidentel ou un texte détecté comme généré par IA sur le plan Pro avant de livrer un travail client." }
+  ],
   "alternatives": [
-    { "slug": "chatgpt", "reason": { "en": "General-purpose AI assistant increasingly used for writing/editing tasks that overlap with Grammarly's rewriting and tone features, though without dedicated in-line grammar checking across every app." } }
+    { "slug": "chatgpt", "reason": { "en": "General-purpose AI assistant increasingly used for writing/editing tasks that overlap with Grammarly's rewriting and tone features, though without dedicated in-line grammar checking across every app.", "fr": "Assistant IA généraliste de plus en plus utilisé pour la rédaction et l'édition, sur les mêmes tâches que la réécriture et le ton de Grammarly, mais sans vérification grammaticale intégrée dans chaque application." } },
+    { "slug": "claude", "reason": { "en": "General-purpose AI assistant also used for drafting and editing text, though without Grammarly's dedicated in-line grammar checking across apps.", "fr": "Assistant IA généraliste aussi utilisé pour rédiger et corriger du texte, mais sans la vérification grammaticale intégrée de Grammarly dans chaque application." } }
   ],
   "missingAlternatives": [
     { "name": "ProWritingAid", "officialUrl": "https://prowritingaid.com", "reason": "Direct grammar/style-checking competitor to Grammarly with a similar freemium model; not present in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Pro adds full rewrites, tone, plagiarism and AI-generated-text detection for a moderate per-seat price, but whether $12 is monthly or annual billing wasn't confirmed, so value can't be fully judged.", "fr": "Pro ajoute la réécriture complète, le ton et la détection de plagiat/texte IA pour un prix par siège modéré, mais sans confirmation que les 12$ sont mensuels ou annuels, la valeur ne peut pas être pleinement jugée.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Grammar, style and tone checking works across surfaces, but AI-heavy workflows are capped even on Pro (2,000 prompts/member/month), which can push heavy users toward another AI tool.", "fr": "La correction de grammaire, de style et de ton fonctionne sur plusieurs surfaces, mais les usages IA intensifs sont plafonnés même sur Pro (2 000 requêtes/membre/mois), ce qui peut pousser les gros utilisateurs vers un autre outil IA.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Pro covers full rewriting, tone, plagiarism/AI detection and basic team features, while advanced security/compliance (SSO, SCIM, DLP, BYOK) requires a custom Enterprise quote.", "fr": "Pro couvre la réécriture complète, le ton, la détection de plagiat/IA et des fonctions d'équipe de base, tandis que la sécurité et la conformité avancées (SSO, SCIM, DLP, BYOK) demandent un devis Enterprise.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or portability of stored style guides and brand tones is not covered by the collected sources.", "fr": "Note neutre : la portabilité des guides de style et tons de marque enregistrés ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Writing assistant", "fr": "Assistant de rédaction" },
+    "shortDescription": {
+      "en": "AI-assisted grammar, style and tone checker with sentence rewriting, plagiarism detection, and a free plan capped at 100 AI prompts a month.",
+      "fr": "Correcteur de grammaire, style et ton assisté par IA, avec réécriture, détection de plagiat, et un plan gratuit limité à 100 requêtes IA/mois."
+    },
+    "longDescription": {
+      "en": "Grammarly checks grammar, spelling and style across writing surfaces, with AI features on the paid Pro plan: full sentence rewrites, tone adjustment, and fluency suggestions aimed at non-native English writers, plus plagiarism and AI-generated-text detection.\n\nThe free plan covers basic corrections and 100 AI prompts a month; Pro runs $12 a month for full rewriting and 2,000 prompts per member, though it wasn't confirmed whether that rate is monthly or annual billing. Team features (roles, groups, shared style guides) sit on Pro and Enterprise, with SSO, SCIM and data-loss prevention reserved for a custom Enterprise quote. It suits a consultant polishing client-facing English writing.",
+      "fr": "Grammarly corrige la grammaire, l'orthographe et le style sur différentes surfaces d'écriture, avec des fonctions IA sur le plan payant Pro : réécriture complète, ajustement du ton et suggestions de fluidité pour les rédacteurs non natifs, plus détection de plagiat et de texte généré par IA.\n\nLe plan gratuit couvre les corrections de base et 100 requêtes IA par mois ; Pro coûte 12 $ par mois pour la réécriture complète et 2 000 requêtes par membre, sans confirmation qu'il s'agit d'un tarif mensuel ou annuel. Le SSO, le SCIM et la prévention de perte de données sont réservés à un devis Enterprise. Il convient à un consultant qui soigne ses écrits en anglais pour ses clients."
+    },
+    "pros": [
+      { "en": "Full sentence rewriting and tone adjustment go beyond basic grammar checking.", "fr": "La réécriture complète de phrases et l'ajustement du ton vont au-delà de la simple correction grammaticale." },
+      { "en": "Plagiarism and AI-generated-text detection included on Pro.", "fr": "Détection de plagiat et de texte généré par IA incluse dans Pro." }
+    ],
+    "cons": [
+      { "en": "AI prompt usage is capped even on the paid Pro plan (2,000/member/month).", "fr": "L'usage des requêtes IA est plafonné même sur le plan payant Pro (2 000/membre/mois)." },
+      { "en": "Advanced security and compliance features require a custom Enterprise quote.", "fr": "Les fonctions avancées de sécurité et de conformité demandent un devis Enterprise sur mesure." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You write in English regularly for clients and want AI-assisted rewriting plus plagiarism checks in one subscription.", "fr": "Tu rédiges régulièrement en anglais pour des clients et tu veux la réécriture assistée par IA et la vérification de plagiat dans un seul abonnement." },
+      "avoidIf": { "en": "You need unlimited AI rewriting volume or SSO/compliance features without an Enterprise quote.", "fr": "Tu as besoin d'un volume de réécriture IA illimité ou de fonctions SSO/conformité sans passer par un devis Enterprise." },
+      "threshold": { "en": "At $12/month for Pro (billing period to confirm on-site), the plan pays for itself if it replaces a separate plagiarism-checking subscription.", "fr": "À 12 $/mois pour Pro (période de facturation à confirmer sur le site), le plan se rentabilise s'il remplace un abonnement séparé de détection de plagiat." }
+    }
+  },
   "unknowns": [
     "Whether the Pro plan's $12/mo price is billed monthly or annually was not explicitly confirmed on the pricing page.",
     "Team-specific pricing (as opposed to per-seat Pro pricing) was not broken out separately in this pass."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Grammarly Pro's $12/month price billing period (monthly vs annual) was not explicitly labeled on the pricing page as fetched; verify on grammarly.com/plans before publishing this price point."
+  ]
 }

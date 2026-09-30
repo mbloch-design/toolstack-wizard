@@ -3,7 +3,8 @@
   "slug": "material-ui",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "MUI (Material UI / MUI X)",
     "vendor": "MUI (Material-UI SAS)",
@@ -34,11 +35,9 @@
       "exists": true,
       "limits": {
         "en": "Community edition is free forever, MIT-licensed, includes 40+ free components, community support only.",
-        "fr": null
+        "fr": "L'édition Community est gratuite à vie, sous licence MIT, avec plus de 40 composants gratuits et un support communautaire uniquement."
       },
-      "sourceIds": [
-        "s1"
-      ]
+      "sourceIds": ["s1"]
     },
     "plans": [
       {
@@ -49,7 +48,7 @@
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Free forever, MIT-licensed, includes 40+ free components, community support only.", "fr": null }
+          { "en": "Free forever, MIT-licensed, includes 40+ free components, community support only.", "fr": "Gratuit à vie, sous licence MIT, plus de 40 composants gratuits, support communautaire uniquement." }
         ],
         "sourceIds": ["s1"]
       },
@@ -58,63 +57,36 @@
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 24.92,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 24.92, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "$299/year per developer; adds Pro support and 10+ Pro-only components on top of Community.",
-            "fr": null
-          }
+          { "en": "$299/year per developer; adds Pro support and 10+ Pro-only components on top of Community.", "fr": "299 USD par an et par développeur ; ajoute le support Pro et plus de 10 composants réservés à l'offre Pro en plus de Community." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 49.92,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 49.92, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "$599/year per developer; adds Premium support tier, early access to new features, 5+ additional Premium components.",
-            "fr": null
-          }
+          { "en": "$599/year per developer; adds Premium support tier, early access to new features, 5+ additional Premium components.", "fr": "599 USD par an et par développeur ; ajoute un support Premium, un accès anticipé aux nouvelles fonctionnalités et plus de 5 composants Premium supplémentaires." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 15,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 116.58,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 116.58, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "$1,399/year per developer, minimum 15 seats; priority support, dedicated account management, guaranteed response time.",
-            "fr": null
-          }
+          { "en": "$1,399/year per developer, minimum 15 seats; priority support, dedicated account management, guaranteed response time.", "fr": "1 399 USD par an et par développeur, minimum 15 postes ; support prioritaire, gestion de compte dédiée, temps de réponse garanti." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
@@ -122,17 +94,13 @@
     "cautions": [
       {
         "en": "Developer seat count must match the maximum number of concurrent developers contributing changes to the front-end code, not total headcount.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Le nombre de postes de développeur correspond au nombre maximal de développeurs contribuant en même temps au code front-end, pas à l'effectif total.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Licenses are perpetual (continued production use allowed after support expires), unlike a typical SaaS subscription.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les licences sont perpétuelles (l'usage en production reste autorisé après l'expiration du support), contrairement à un abonnement SaaS classique.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -140,64 +108,145 @@
     "capabilities": [
       {
         "en": "Comprehensive React component library implementing Google's Material Design, free and open source (Community/MIT).",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Bibliothèque de composants React complète implémentant le Material Design de Google, gratuite et open source (Community/MIT).",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Advanced MUI X components (Data Grid, Date/Time Pickers, Charts, Tree View) available in paid Pro/Premium tiers.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Composants avancés MUI X (Data Grid, sélecteurs de date/heure, graphiques, arborescence) disponibles dans les offres payantes Pro/Premium.",
+        "sourceIds": ["s1"]
       }
     ],
     "limitations": [
       {
         "en": "Advanced data-grid, chart and picker features are gated behind paid Pro/Premium licenses, not part of the free Community edition.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les fonctions avancées de grille de données, de graphiques et de sélecteurs sont réservées aux licences payantes Pro/Premium, hors de l'édition gratuite Community.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Enterprise tier requires a minimum purchase of 15 developer seats.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "L'offre Enterprise impose un achat minimum de 15 postes de développeur.",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Front-end developers building React apps who need production-ready, accessible components without designing a system from scratch.",
+      "fr": "Développeurs front-end qui construisent des applications React et ont besoin de composants prêts pour la production, accessibles, sans concevoir un système de zéro."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Setup: install the free Community components and ship a React admin dashboard with no license cost.",
+      "fr": "Mise en place : installe les composants gratuits Community et livre un tableau de bord React sans frais de licence."
+    },
+    {
+      "en": "Upgrade: buy a Pro seat to add a sortable, filterable Data Grid and date pickers instead of building them from scratch.",
+      "fr": "Montée en gamme : achète un poste Pro pour ajouter une Data Grid triable et filtrable et des sélecteurs de date au lieu de les recoder."
+    }
+  ],
   "alternatives": [
     {
       "slug": "shadcn-ui",
       "reason": {
         "en": "Popular free, copy-paste React component library competing for the same developer audience.",
-        "fr": null
+        "fr": "Bibliothèque de composants React gratuite et populaire, à copier-coller, qui vise le même public de développeurs."
       }
     },
     {
       "slug": "ant-design",
       "reason": {
         "en": "Another comprehensive open-source React UI component library and design system.",
-        "fr": null
+        "fr": "Une autre bibliothèque de composants et système de design React open source complète."
       }
     },
     {
       "slug": "chakra-ui",
       "reason": {
         "en": "Accessible, themeable React component library used as an alternative to MUI.",
-        "fr": null
+        "fr": "Bibliothèque de composants React accessible et personnalisable, utilisée comme alternative à MUI."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free Community edition already covers 40+ components; Pro adds a Data Grid, pickers and charts for $299/year per developer instead of building them in-house.",
+        "fr": "L'édition gratuite Community couvre déjà plus de 40 composants ; Pro ajoute une Data Grid, des sélecteurs et des graphiques pour 299 USD par an et par développeur au lieu de les développer en interne.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to a first working result is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir un premier résultat utile ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers a comprehensive Material Design component set as advertised, with paid tiers adding stated components rather than workarounds.",
+        "fr": "Fournit l'ensemble de composants Material Design annoncé, les offres payantes ajoutant des composants prévus plutôt que des contournements.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "MUI X Premium/Enterprise tiers add a Data Grid, Charts and Tree View with priority support, indicating a high capability ceiling for React UI needs.",
+        "fr": "Les offres MUI X Premium/Enterprise ajoutent Data Grid, graphiques et arborescence avec support prioritaire, ce qui indique un plafond de capacité élevé pour les besoins d'UI React.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Community is MIT-licensed open source code that ships in the project itself, and paid licenses remain usable in production after support expires.",
+        "fr": "Community est du code open source sous licence MIT livré directement dans le projet, et les licences payantes restent utilisables en production même après l'expiration du support.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "React component library", "fr": "Composants React" },
+    "shortDescription": {
+      "en": "React component library implementing Material Design, free and MIT-licensed at its core, with paid per-developer tiers for advanced components.",
+      "fr": "Bibliothèque de composants React au Material Design, gratuite et sous licence MIT à la base, avec des offres payantes par développeur pour les composants avancés."
+    },
+    "longDescription": {
+      "en": "MUI (Material UI) is a React component library implementing Google's Material Design. The free, MIT-licensed Community edition covers 40+ components, enough to ship most interfaces without any license cost.\n\nPro ($299/year per developer) and Premium ($599/year) unlock MUI X components like the Data Grid, date pickers and charts, while Enterprise ($1,399/year, 15-seat minimum) adds priority support. Seats count concurrent contributing developers, not total headcount, and licenses stay usable in production after support expires. It suits solo developers and front-end teams who want production-ready components instead of building a design system from scratch.",
+      "fr": "MUI (Material UI) est une bibliothèque de composants React qui implémente le Material Design de Google. L'édition gratuite Community, sous licence MIT, couvre plus de 40 composants, de quoi livrer la plupart des interfaces sans frais de licence.\n\nPro (299 USD/an par développeur) et Premium (599 USD/an) débloquent des composants MUI X comme la Data Grid et les graphiques, tandis qu'Enterprise (1 399 USD/an, minimum 15 postes) ajoute un support prioritaire. Les postes comptent les développeurs actifs, pas l'effectif total, et les licences restent utilisables en production après expiration du support. L'outil convient aux développeurs solo et équipes front-end qui veulent des composants prêts à l'emploi plutôt que reconstruire un système de design."
+    },
+    "pros": [
+      { "en": "Free Community edition is MIT-licensed and covers 40+ components with no cost.", "fr": "L'édition gratuite Community est sous licence MIT et couvre plus de 40 composants sans coût." },
+      { "en": "Paid licenses stay usable in production even after the support period ends.", "fr": "Les licences payantes restent utilisables en production même après la fin de la période de support." }
+    ],
+    "cons": [
+      { "en": "Data Grid, pickers and charts require a paid Pro or Premium seat per developer.", "fr": "La Data Grid, les sélecteurs et les graphiques exigent un poste payant Pro ou Premium par développeur." },
+      { "en": "Enterprise pricing only applies from a 15-developer-seat minimum.", "fr": "Le tarif Enterprise ne s'applique qu'à partir d'un minimum de 15 postes de développeur." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You build React interfaces and want production-ready Material Design components without paying for basics.",
+        "fr": "Tu construis des interfaces React et veux des composants Material Design prêts à l'emploi sans payer pour les fonctions de base."
+      },
+      "avoidIf": {
+        "en": "You need advanced Data Grid, chart or picker components but only have a single developer for a project too small to justify $299/year.",
+        "fr": "Tu as besoin de la Data Grid, de graphiques ou de sélecteurs avancés mais pour un projet trop petit pour justifier 299 USD par an."
+      },
+      "threshold": {
+        "en": "Pro costs $299/year per developer; it pays off once you would otherwise spend more than that building a Data Grid or date pickers yourself.",
+        "fr": "Pro coûte 299 USD par an et par développeur ; ça se rentabilise dès que recoder soi-même une Data Grid ou des sélecteurs de date coûterait plus cher en temps."
+      },
+      "billingTraps": {
+        "en": "Enterprise cannot be bought below 15 developer seats, even for a team that only needs a few Enterprise-tier features.",
+        "fr": "L'offre Enterprise ne peut pas s'acheter en dessous de 15 postes de développeur, même pour une équipe qui n'a besoin que de quelques fonctions Enterprise."
+      }
+    }
+  },
   "unknowns": [
     "50% student/non-profit discount and 25+ developer volume discount terms not fully detailed on the page reviewed."
   ],

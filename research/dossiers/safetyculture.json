@@ -3,7 +3,8 @@
   "slug": "safetyculture",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Mitti (formerly SafetyCulture / iAuditor)",
     "vendor": "SafetyCulture Pty Ltd",
@@ -12,7 +13,7 @@
     "changelogUrl": null,
     "urlStatus": "moved",
     "productStatus": "renamed",
-    "statusNote": { "en": "SafetyCulture's product was rebranded to 'Mitti'; safetyculture.com/pricing now redirects (301) to mitti.com/pricing.", "fr": null }
+    "statusNote": { "en": "SafetyCulture's product was rebranded to 'Mitti'; safetyculture.com/pricing now redirects (301) to mitti.com/pricing.", "fr": "Le produit SafetyCulture a été rebaptisé « Mitti » ; safetyculture.com/pricing redirige désormais (301) vers mitti.com/pricing." }
   },
   "sources": [
     { "id": "s1", "url": "https://mitti.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Mitti (by SafetyCulture) pricing plans" }
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Up to 10 users, 5 active inspection templates, basic analytics/training/tasks, up to 300 AI credits per seat per month.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Up to 10 users, 5 active inspection templates, basic analytics/training/tasks, up to 300 AI credits per seat per month.", "fr": "Jusqu'à 10 utilisateurs, 5 modèles d'inspection actifs, analytique/formation/tâches de base, jusqu'à 300 crédits IA par poste et par mois." }, "sourceIds": ["s1"] },
     "trial": { "days": 30, "sourceIds": ["s1"] },
     "plans": [
       {
@@ -35,7 +36,7 @@
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Up to 10 users, 5 active inspection templates, basic analytics/training/tasks, up to 300 AI credits/seat/month.", "fr": null }
+          { "en": "Up to 10 users, 5 active inspection templates, basic analytics/training/tasks, up to 300 AI credits/seat/month.", "fr": "Jusqu'à 10 utilisateurs, 5 modèles d'inspection actifs, analytique/formation/tâches de base, jusqu'à 300 crédits IA par poste et par mois." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 29, "annualPerMonth": 24, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Unlimited active and multi-language templates, advanced analytics/training, permissions management, integrations, SSO, automated maintenance, at least 500 AI credits/seat/month.", "fr": null }
+          { "en": "Unlimited active and multi-language templates, advanced analytics/training, permissions management, integrations, SSO, automated maintenance, at least 500 AI credits/seat/month.", "fr": "Modèles actifs et multilingues illimités, analytique et formation avancées, gestion des permissions, intégrations, SSO, maintenance automatisée, au moins 500 crédits IA par poste et par mois." }
         ],
         "sourceIds": ["s1"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Everything in Premium plus enterprise user management, enforced login controls, SCIM provisioning, 24/7 priority support, advanced integrations builder, sandbox environment, at least 800 AI credits/seat/month.", "fr": null }
+          { "en": "Everything in Premium plus enterprise user management, enforced login controls, SCIM provisioning, 24/7 priority support, advanced integrations builder, sandbox environment, at least 800 AI credits/seat/month.", "fr": "Tout Premium plus la gestion des utilisateurs en entreprise, des contrôles de connexion renforcés, le provisionnement SCIM, un support prioritaire 24/7, un générateur d'intégrations avancé, un environnement bac à sable et au moins 800 crédits IA par poste et par mois." }
         ],
         "sourceIds": ["s1"]
       }
@@ -67,29 +68,127 @@
     "comparePlanKey": "premium",
     "addOns": [],
     "cautions": [
-      { "en": "Location-based pricing is also available for multi-site operations at a fixed cost per location with unlimited users per site, a different model than per-seat.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Location-based pricing is also available for multi-site operations at a fixed cost per location with unlimited users per site, a different model than per-seat.", "fr": "Une tarification par site est aussi proposée pour les opérations multi-sites, à coût fixe par site avec un nombre d'utilisateurs illimité par site, un modèle différent du prix par poste.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Digital inspection checklists, safety audits and observations for frontline/field operations.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Training modules, task/issue reporting, and advanced analytics dashboards on paid tiers.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in AI credits per seat for AI-assisted features across all plans.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Digital inspection checklists, safety audits and observations for frontline/field operations.", "fr": "Listes de contrôle d'inspection numériques, audits de sécurité et observations pour les équipes de terrain.", "sourceIds": ["s1"] },
+      { "en": "Training modules, task/issue reporting, and advanced analytics dashboards on paid tiers.", "fr": "Modules de formation, signalement de tâches et incidents, et tableaux de bord analytiques avancés sur les offres payantes.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI credits per seat for AI-assisted features across all plans.", "fr": "Crédits IA intégrés par poste pour les fonctions assistées par IA sur toutes les offres.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 5 active inspection templates and 10 users.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Advanced security features (SSO, SCIM, enforced login controls) require Premium or Enterprise.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free plan is capped at 5 active inspection templates and 10 users.", "fr": "L'offre gratuite est limitée à 5 modèles d'inspection actifs et 10 utilisateurs.", "sourceIds": ["s1"] },
+      { "en": "Advanced security features (SSO, SCIM, enforced login controls) require Premium or Enterprise.", "fr": "Les fonctions de sécurité avancées (SSO, SCIM, contrôles de connexion renforcés) exigent Premium ou Enterprise.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [],
-  "missingAlternatives": [
-    { "name": "iAuditor by SafetyCulture (legacy name)", "officialUrl": "https://mitti.com", "reason": "Same product under its former brand name; flagging so the catalogue can update references from 'SafetyCulture/iAuditor' to 'Mitti'." }
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Ops and frontline managers running safety inspections, audits and checklists across a small team or field workforce.",
+      "fr": "Responsables ops et terrain qui pilotent des inspections de sécurité, des audits et des listes de contrôle pour une petite équipe ou une force de terrain."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Inspection: run a digital checklist on-site with the mobile app instead of a paper form, then export the report.",
+      "fr": "Inspection : remplis une liste de contrôle numérique sur le terrain avec l'app mobile plutôt qu'un formulaire papier, puis exporte le rapport."
+    },
+    {
+      "en": "Compliance: upgrade to Premium to unlock unlimited templates and SSO once the team grows past the free plan's 10 users.",
+      "fr": "Conformité : passe à Premium pour débloquer les modèles illimités et le SSO une fois l'équipe plus grande que les 10 utilisateurs de l'offre gratuite."
+    }
   ],
+  "alternatives": [
+    {
+      "slug": "process-street",
+      "reason": {
+        "en": "Checklist and workflow platform for recurring operational processes, overlapping with Mitti's inspection template use case.",
+        "fr": "Plateforme de listes de contrôle et de workflows pour des processus opérationnels récurrents, qui recoupe le cas d'usage des modèles d'inspection de Mitti."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    { "name": "iAuditor by SafetyCulture (legacy name)", "officialUrl": "https://mitti.com", "reason": "Same product under its former brand name; flagging so the catalogue can update references from 'SafetyCulture/iAuditor' to 'Mitti'." },
+    { "name": "GoCanvas", "officialUrl": "https://www.gocanvas.com/", "reason": "Direct competitor for mobile inspection checklists and field data collection, not present in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: no data on time or cost saved versus paper-based inspections is covered by the collected sources.",
+        "fr": "Note neutre : aucune donnée sur le temps ou le coût économisé face aux inspections papier ne figure dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time for a first inspection template is not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main pour un premier modèle d'inspection ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The free plan already runs real digital inspections and reporting as advertised, with paid tiers adding stated features rather than workarounds.",
+        "fr": "L'offre gratuite fait déjà tourner de vraies inspections numériques et des rapports comme annoncé, les offres payantes ajoutant des fonctions prévues plutôt que des contournements.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Neutral score: capability ceiling versus dedicated EHS/inspection platforms is not covered by the collected sources.",
+        "fr": "Note neutre : le plafond de capacité face aux plateformes EHS ou d'inspection dédiées ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if leaving the tool are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Digital inspections", "fr": "Inspections numériques" },
+    "shortDescription": {
+      "en": "Mobile app for digital inspection checklists, safety audits and training for frontline teams, formerly known as SafetyCulture/iAuditor.",
+      "fr": "Application mobile pour des listes de contrôle d'inspection, des audits de sécurité et de la formation pour les équipes de terrain, anciennement SafetyCulture/iAuditor."
+    },
+    "longDescription": {
+      "en": "Mitti, formerly SafetyCulture/iAuditor, runs digital inspection checklists, safety audits and issue reporting for frontline and field teams. The free plan covers up to 10 users and 5 active templates, enough to test the workflow before scaling up.\n\nPremium ($29/month or $24/month billed annually) removes the template limit and adds SSO, permissions and integrations; Enterprise is quote-based with SCIM and 24/7 support. Location-based pricing is also available for multi-site operations. It fits ops or field managers coordinating recurring inspections across a small team rather than solo use.",
+      "fr": "Mitti, anciennement SafetyCulture/iAuditor, gère des listes de contrôle d'inspection numériques, des audits de sécurité et le signalement d'incidents pour les équipes de terrain. L'offre gratuite couvre jusqu'à 10 utilisateurs et 5 modèles actifs, de quoi tester le workflow avant de monter en charge.\n\nPremium (29 USD/mois ou 24 USD/mois en facturation annuelle) retire la limite de modèles et ajoute SSO, permissions et intégrations ; Enterprise est sur devis avec SCIM et support 24/7. Une tarification par site est aussi disponible pour les opérations multi-sites. L'outil convient aux responsables ops ou terrain qui coordonnent des inspections récurrentes pour une petite équipe, plus qu'à un usage solo."
+    },
+    "pros": [
+      { "en": "Free plan already runs real inspections and reporting for up to 10 users.", "fr": "L'offre gratuite fait déjà tourner de vraies inspections et des rapports pour jusqu'à 10 utilisateurs." },
+      { "en": "Location-based pricing exists for multi-site operations instead of counting every user.", "fr": "Une tarification par site existe pour les opérations multi-sites au lieu de compter chaque utilisateur." }
+    ],
+    "cons": [
+      { "en": "Free plan is capped at only 5 active inspection templates.", "fr": "L'offre gratuite est limitée à seulement 5 modèles d'inspection actifs." },
+      { "en": "SSO and SCIM, common needs for regulated teams, require Premium or Enterprise.", "fr": "Le SSO et le SCIM, souvent nécessaires aux équipes réglementées, exigent Premium ou Enterprise." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run recurring safety inspections or audits for a field team and need more than 5 templates or single sign-on.",
+        "fr": "Tu fais des inspections ou audits de sécurité récurrents pour une équipe de terrain et as besoin de plus de 5 modèles ou du SSO."
+      },
+      "avoidIf": {
+        "en": "You are a solo user or your team stays under 10 people and 5 templates, where the free plan already covers the need.",
+        "fr": "Tu es seul ou ton équipe reste sous les 10 personnes et 5 modèles, cas où l'offre gratuite couvre déjà le besoin."
+      },
+      "threshold": {
+        "en": "Premium costs $24/month per seat billed annually ($288/year); it makes sense once the free plan's 5-template cap becomes a real blocker.",
+        "fr": "Premium coûte 24 USD par mois et par poste en facturation annuelle (288 USD par an) ; ça se justifie dès que la limite de 5 modèles de l'offre gratuite devient un vrai blocage."
+      }
+    }
+  },
   "unknowns": [
-    "No alternativeCandidates in the seed matched SafetyCulture/Mitti's actual category (inspection checklists/frontline operations/EHS), so no in-catalogue alternatives were listed with confidence.",
     "Currency for mitti.com/pricing was not explicitly labeled on the page; USD assumed based on $ symbol shown."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Only one catalogue slug (process-street) is a reasonable alternative for Mitti's inspection-checklist category; GoCanvas and other dedicated EHS competitors are not in the catalogue (see missingAlternatives), so the tier A target of 3-6 alternatives cannot be met from the catalogue as it stands."
+  ]
 }

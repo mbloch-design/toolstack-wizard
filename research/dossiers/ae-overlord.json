@@ -3,7 +3,8 @@
   "slug": "ae-overlord",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Overlord",
     "vendor": "Battle Axe",
@@ -35,7 +36,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 75 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Perpetual license, one year of feature updates included; usable on up to 2 computers per license; renewal needed to receive feature releases issued after the first year.", "fr": null }
+          { "en": "Perpetual license, one year of feature updates included; usable on up to 2 computers per license; renewal needed to receive feature releases issued after the first year.", "fr": "Licence perpétuelle avec un an de mises à jour de fonctionnalités incluses ; utilisable sur 2 ordinateurs par licence ; un renouvellement est nécessaire pour recevoir les fonctionnalités publiées après la première année." }
         ],
         "sourceIds": ["s1"]
       }
@@ -43,19 +44,19 @@
     "comparePlanKey": "single-user",
     "addOns": [],
     "cautions": [
-      { "en": "No free trial mentioned; the $75 purchase is required to test the plugin.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No free trial mentioned; the $75 purchase is required to test the plugin.", "fr": "Aucun essai gratuit mentionné ; l'achat à 75 $ est nécessaire pour tester le plugin.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Transfers layers from Figma, Photoshop and Illustrator into After Effects while preserving properties (masks, gradients, styles, names).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Editable text layers with per-character styling (kerning, color, font weight) carried over from source apps.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Bidirectional transfers between Figma and Illustrator; fast precomp/decomp and clipping mask operations.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Figma frame transfers with pixel density matching.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Transfers layers from Figma, Photoshop and Illustrator into After Effects while preserving properties (masks, gradients, styles, names).", "fr": "Transfère les calques de Figma, Photoshop et Illustrator vers After Effects en préservant les propriétés (masques, dégradés, styles, noms).", "sourceIds": ["s1"] },
+      { "en": "Editable text layers with per-character styling (kerning, color, font weight) carried over from source apps.", "fr": "Calques de texte éditables avec le style caractère par caractère (crénage, couleur, graisse) conservé depuis les applications source.", "sourceIds": ["s1"] },
+      { "en": "Bidirectional transfers between Figma and Illustrator; fast precomp/decomp and clipping mask operations.", "fr": "Transferts bidirectionnels entre Figma et Illustrator ; opérations rapides de précomposition/décomposition et de masques d'écrêtage.", "sourceIds": ["s1"] },
+      { "en": "Figma frame transfers with pixel density matching.", "fr": "Transfert des cadres Figma avec correspondance de la densité de pixels.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Freeform and mesh gradients cannot be rendered as After Effects shape layers; they must be rasterized to PNG instead.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Requires specific minimum app versions: After Effects/Illustrator CC 2022+, Photoshop 2025+, Windows 10 22H2+ or macOS Monterey 12+.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Freeform and mesh gradients cannot be rendered as After Effects shape layers; they must be rasterized to PNG instead.", "fr": "Les dégradés libres et en maillage ne peuvent pas être rendus en calques de forme After Effects ; ils doivent être rasterisés en PNG.", "sourceIds": ["s1"] },
+      { "en": "Requires specific minimum app versions: After Effects/Illustrator CC 2022+, Photoshop 2025+, Windows 10 22H2+ or macOS Monterey 12+.", "fr": "Nécessite des versions minimales précises : After Effects/Illustrator CC 2022+, Photoshop 2025+, Windows 10 22H2+ ou macOS Monterey 12+.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] },
@@ -65,13 +66,63 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "A motion or product designer who animates Figma or Illustrator designs in After Effects and needs to stop rebuilding layers by hand.", "fr": "Une designer motion ou produit qui anime des maquettes Figma ou Illustrator dans After Effects et doit arrêter de reconstruire les calques à la main." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Handoff: bring a finished Figma UI frame into After Effects with layers, text styles and masks intact for a product demo animation.", "fr": "Transmission : importer une maquette Figma finalisée dans After Effects avec calques, styles de texte et masques intacts pour une animation de démo produit." },
+    { "en": "Iterate: push an edited Illustrator vector back and forth with After Effects during an animated logo revision without rebuilding shapes.", "fr": "Itération : faire aller-retour un vecteur Illustrator modifié avec After Effects pendant une révision de logo animé sans reconstruire les formes." }
+  ],
   "alternatives": [
-    { "slug": "ae-bodymovin", "reason": { "en": "Another After Effects plugin/extension used in motion design pipelines, though for a different purpose (Lottie export vs. layer transfer).", "fr": null } },
-    { "slug": "figma-anima", "reason": { "en": "Another cross-tool bridge plugin connecting Figma to other production workflows.", "fr": null } }
+    { "slug": "ae-bodymovin", "reason": { "en": "Another After Effects plugin/extension used in motion design pipelines, though for a different purpose (Lottie export vs. layer transfer).", "fr": "Un autre plugin/extension After Effects utilisé dans les pipelines motion design, mais pour un usage différent (export Lottie plutôt que transfert de calques)." } },
+    { "slug": "figma-anima", "reason": { "en": "Another cross-tool bridge plugin connecting Figma to other production workflows.", "fr": "Un autre plugin passerelle qui connecte Figma à d'autres flux de production." } },
+    { "slug": "aescripts-flow", "reason": { "en": "Another After Effects layer-transfer plugin bridging design apps into motion workflows.", "fr": "Un autre plugin de transfert de calques vers After Effects, qui relie les applications de design aux flux motion." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A one-time $75 purchase replaces repeated manual layer rebuilding across Figma, Illustrator, Photoshop and After Effects.", "fr": "Un achat unique à 75 $ remplace la reconstruction manuelle répétée des calques entre Figma, Illustrator, Photoshop et After Effects.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Requires specific up-to-date app versions on both ends of the transfer before it works, which adds setup friction.", "fr": "Nécessite des versions d'applications à jour précises des deux côtés du transfert avant de fonctionner, ce qui ajoute de la friction à l'installation.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Preserves masks, gradients, styles and per-character text styling as advertised, with only freeform/mesh gradients needing a workaround.", "fr": "Préserve masques, dégradés, styles et style de texte caractère par caractère comme annoncé, seuls les dégradés libres/maillage nécessitant un contournement.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers the main design apps used in motion pipelines (Figma, Photoshop, Illustrator, After Effects) but is limited to layer transfer, not a full animation toolkit.", "fr": "Couvre les principales applications de design utilisées en motion design (Figma, Photoshop, Illustrator, After Effects), mais se limite au transfert de calques, pas à une boîte à outils d'animation complète.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or data portability outside the supported apps is not covered by the collected sources.", "fr": "Note neutre : la portabilité ou l'export hors des applications prises en charge ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Design-to-motion bridge", "fr": "Passerelle design vers motion" },
+    "shortDescription": { "en": "Overlord transfers layered designs from Figma, Photoshop and Illustrator into After Effects, keeping masks, text and styles editable.", "fr": "Overlord transfère les designs en calques de Figma, Photoshop et Illustrator vers After Effects, en gardant masques, texte et styles éditables." },
+    "longDescription": {
+      "en": "Overlord is an After Effects and Illustrator plugin that moves layered artwork from Figma, Photoshop and Illustrator into After Effects without flattening it: masks, gradients, styles, layer names and per-character text formatting come across editable. It also supports bidirectional transfers between Figma and Illustrator, cutting out manual rebuilding when a motion designer animates a static design.\n\nThe plugin is a one-time $75 purchase per single-user license, covering two computers and one year of feature updates; there is no free trial, so testing it means buying it. It fits a solo motion or product designer who regularly moves Figma or Illustrator files into After Effects and wants to skip rebuilding shapes and text by hand.",
+      "fr": "Overlord est un plugin After Effects et Illustrator qui transfère des visuels en calques depuis Figma, Photoshop et Illustrator vers After Effects sans les aplatir : masques, dégradés, styles, noms de calques et texte restent éditables à l'arrivée. Il gère aussi les transferts bidirectionnels entre Figma et Illustrator, ce qui évite de reconstruire à la main une animation.\n\nLe plugin coûte 75 $ en achat unique pour une licence mono-utilisateur, valable sur deux ordinateurs et incluant un an de mises à jour ; pas d'essai gratuit, donc le tester revient à l'acheter. Il convient à une designer motion indépendante qui fait régulièrement passer des fichiers Figma ou Illustrator vers After Effects."
+    },
+    "pros": [
+      { "en": "One-time purchase, no recurring subscription to maintain access.", "fr": "Achat unique, pas d'abonnement récurrent à maintenir." },
+      { "en": "Preserves editable text styling and masks instead of flattening artwork.", "fr": "Préserve le style de texte éditable et les masques au lieu d'aplatir le visuel." },
+      { "en": "Bidirectional Figma-Illustrator transfer speeds up back-and-forth revisions.", "fr": "Le transfert bidirectionnel Figma-Illustrator accélère les allers-retours de révision." }
+    ],
+    "cons": [
+      { "en": "No free trial, so evaluating the plugin requires paying for it first.", "fr": "Pas d'essai gratuit, donc évaluer le plugin suppose de l'acheter d'abord." },
+      { "en": "Freeform and mesh gradients must be rasterized instead of transferring as editable shapes.", "fr": "Les dégradés libres et en maillage doivent être rasterisés au lieu de se transférer en formes éditables." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You regularly move Figma, Photoshop or Illustrator files into After Effects and are tired of rebuilding layers by hand.", "fr": "Tu fais régulièrement passer des fichiers Figma, Photoshop ou Illustrator vers After Effects et tu en as assez de reconstruire les calques à la main." },
+      "avoidIf": { "en": "You animate only occasionally, or your app versions don't meet the minimum requirements.", "fr": "Tu animes seulement de temps en temps, ou tes versions d'applications n'atteignent pas les prérequis minimums." },
+      "threshold": { "en": "Worth it once the $75 one-time license costs less than the time spent manually rebuilding layers on a couple of projects.", "fr": "Rentable dès que la licence à 75 $ coûte moins cher que le temps passé à reconstruire les calques à la main sur quelques projets." },
+      "billingTraps": { "en": "Feature updates are guaranteed for one year only; keeping up with new releases after that requires renewing the license.", "fr": "Les mises à jour de fonctionnalités ne sont garanties qu'un an ; suivre les nouvelles versions ensuite nécessite de renouveler la licence." }
+    }
+  },
   "unknowns": [
     "Team or multi-seat pricing beyond the Single User license is not published on the page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

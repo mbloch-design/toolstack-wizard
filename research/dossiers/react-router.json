@@ -3,7 +3,8 @@
   "slug": "react-router",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "React Router",
     "vendor": "Shopify Inc. (remix-run open-source project)",
@@ -27,31 +28,95 @@
     "taxIncluded": null,
     "freePlan": { "exists": true, "limits": "Fully open-source library, free to use with no paid tier.", "sourceIds": ["s1"] },
     "trial": null,
-    "plans": [],
+    "plans": [
+      {
+        "key": "open-source",
+        "name": "Open Source",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free routing library, no paid tier or hosted service.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": []
   },
   "product": {
     "capabilities": [
-      { "en": "Standards-focused, multi-strategy routing for React applications, deployable as a client-side library or full-stack framework mode.", "sourceIds": ["s1"] },
-      { "en": "Non-breaking upgrade path: v8 maintains backward compatibility with v7 APIs.", "sourceIds": ["s1"] },
-      { "en": "Built on a modern baseline (Node 22+, Vite 7+, React 19+, ESM-only) with an Open Governance model for community-proposed features.", "sourceIds": ["s1"] },
-      { "en": "Large ecosystem maturity: reported 4.5+ billion npm downloads and 3.6M+ dependent packages.", "sourceIds": ["s1"] }
+      { "en": "Standards-focused, multi-strategy routing for React applications, deployable as a client-side library or full-stack framework mode.", "fr": "Routing basé sur les standards et multi-stratégies pour les applications React, déployable comme bibliothèque côté client ou en mode framework full-stack.", "sourceIds": ["s1"] },
+      { "en": "Non-breaking upgrade path: v8 maintains backward compatibility with v7 APIs.", "fr": "Mise à jour non cassante : la v8 reste compatible avec les API de la v7.", "sourceIds": ["s1"] },
+      { "en": "Built on a modern baseline (Node 22+, Vite 7+, React 19+, ESM-only) with an Open Governance model for community-proposed features.", "fr": "Construit sur une base moderne (Node 22+, Vite 7+, React 19+, ESM uniquement) avec un modèle de gouvernance ouverte pour les fonctionnalités proposées par la communauté.", "sourceIds": ["s1"] },
+      { "en": "Large ecosystem maturity: reported 4.5+ billion npm downloads and 3.6M+ dependent packages.", "fr": "Écosystème très mature : 4,5 milliards de téléchargements npm et 3,6 millions de paquets dépendants rapportés.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Requires a modern toolchain baseline (Node 22+, ESM-only) which can force upgrades in older codebases.", "sourceIds": ["s1"] },
-      { "en": "As a routing library rather than a hosted product, there is no vendor support tier or SLA; support is community-driven (GitHub Discussions, Discord).", "sourceIds": ["s1"] }
+      { "en": "Requires a modern toolchain baseline (Node 22+, ESM-only) which can force upgrades in older codebases.", "fr": "Exige une chaîne d'outils récente (Node 22+, ESM uniquement), ce qui peut forcer une mise à jour sur d'anciens projets.", "sourceIds": ["s1"] },
+      { "en": "As a routing library rather than a hosted product, there is no vendor support tier or SLA; support is community-driven (GitHub Discussions, Discord).", "fr": "En tant que bibliothèque plutôt que produit hébergé, il n'y a ni support éditeur ni SLA ; l'aide vient de la communauté (GitHub Discussions, Discord).", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "React", "slug": null, "sourceIds": ["s1"] }
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer building a React app who needs routing that scales from a simple SPA to a full-stack framework.",
+      "fr": "Un développeur qui construit une app React et a besoin d'un routing qui va du simple SPA au framework complet."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Add nested, data-aware routing to a React single-page app without adopting a full framework.", "fr": "Ajouter un routing imbriqué et connecté aux données à une app React monopage sans adopter un framework complet." },
+    { "en": "Build a full-stack React app in framework mode (former Remix) with file-based conventions and non-breaking upgrades from v7.", "fr": "Construire une app React full-stack en mode framework (l'ancien Remix) avec des conventions basées sur les fichiers et des mises à jour non cassantes depuis la v7." }
+  ],
   "alternatives": [
-    { "slug": "tanstack-router", "reason": { "en": "Direct type-safe routing competitor for React apps, an increasingly common alternative to React Router." } }
+    { "slug": "tanstack-router", "reason": { "en": "Direct type-safe routing competitor for React apps, an increasingly common alternative to React Router.", "fr": "Concurrent direct de routing typé pour les apps React, une alternative de plus en plus courante à React Router." } },
+    { "slug": "next-js", "reason": { "en": "A full framework with file-based routing built in, a common alternative to adopting React Router as a separate routing library.", "fr": "Un framework complet avec un routing basé sur les fichiers intégré, une alternative courante à l'ajout de React Router comme bibliothèque séparée." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Free and open source with no paid tier, while providing a full routing solution and framework mode, a strong value proposition against commercial alternatives.", "fr": "Gratuit et open source sans offre payante, tout en fournissant une solution de routing complète et un mode framework, un bon rapport valeur/coût face aux alternatives commerciales.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers standards-based routing in both library and full-stack framework modes, with v8 keeping backward compatibility with v7 APIs.", "fr": "Fournit un routing basé sur les standards en mode bibliothèque comme en mode framework full-stack, la v8 restant compatible avec les API de la v7.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Large ecosystem maturity (reported 4.5+ billion npm downloads, 3.6M+ dependent packages) and both library and full-stack framework modes in one package.", "fr": "Écosystème très mature (4,5 milliards de téléchargements npm et 3,6 millions de paquets dépendants rapportés) et un mode bibliothèque comme un mode framework full-stack dans le même paquet.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: portability if you move away from it is not covered by the collected sources.", "fr": "Note neutre : la portabilité en cas d'abandon de l'outil ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "React routing library", "fr": "Bibliothèque de routing React" },
+    "shortDescription": {
+      "en": "Open source routing library for React apps, usable as a lightweight client-side router or a full-stack framework mode, free with no paid tier.",
+      "fr": "Bibliothèque de routing open source pour React, utilisable comme simple routeur côté client ou en mode framework complet, gratuite et sans offre payante."
+    },
+    "longDescription": {
+      "en": "React Router is a routing library for React applications: nested routes, data loading conventions, and either a lightweight client-side mode or a full-stack framework mode (the former Remix) in the same package.\n\nIt's fully open source and free, with no paid tier or vendor support plan; help comes from GitHub Discussions and Discord. Version 8 keeps backward compatibility with v7 APIs, but it requires a modern toolchain (Node 22+, ESM-only), which can force upgrades in older codebases. It suits developers building or maintaining React apps who want routing that scales from a simple SPA to a full framework.",
+      "fr": "React Router est une bibliothèque de routing pour les applications React : routes imbriquées, conventions de chargement de données, et un mode client léger ou un mode framework complet (l'ancien Remix) dans le même paquet.\n\nIl est entièrement open source et gratuit, sans offre payante ni support éditeur ; l'aide vient de GitHub Discussions et Discord. La version 8 reste compatible avec les API de la v7, mais elle exige une chaîne d'outils récente (Node 22+, ESM uniquement), ce qui peut forcer une mise à jour sur d'anciens projets. Elle convient aux développeurs qui construisent ou maintiennent une app React et veulent un routing qui va du simple SPA au framework complet."
+    },
+    "pros": [
+      { "en": "Free and open source, with no vendor lock-in on pricing.", "fr": "Gratuit et open source, sans dépendance à un éditeur sur le prix." },
+      { "en": "Non-breaking upgrade path from v7 to v8 APIs.", "fr": "Mise à jour non cassante des API de la v7 vers la v8." }
+    ],
+    "cons": [
+      { "en": "Requires a modern toolchain (Node 22+, ESM-only), which can force upgrades in older projects.", "fr": "Exige une chaîne d'outils récente (Node 22+, ESM uniquement), ce qui peut forcer une mise à jour sur d'anciens projets." },
+      { "en": "No vendor support tier or SLA; help is community-driven only.", "fr": "Aucun support éditeur ni SLA ; l'aide vient uniquement de la communauté." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're building a React app and want routing that grows from a simple SPA into a full-stack framework without changing libraries.", "fr": "Tu construis une app React et tu veux un routing qui évolue d'un simple SPA vers un framework full-stack sans changer de bibliothèque." },
+      "avoidIf": { "en": "Your codebase can't yet move to Node 22+ and an ESM-only toolchain.", "fr": "Ton projet ne peut pas encore passer à Node 22+ et une chaîne d'outils ESM uniquement." },
+      "threshold": { "en": "Since it's free with no paid plan, the deciding factor is toolchain compatibility, not cost.", "fr": "Comme c'est gratuit et sans offre payante, ce qui décide c'est la compatibilité de ta chaîne d'outils, pas le prix." }
+    }
+  },
   "unknowns": [
     "Detailed differences between the library-only mode and the full 'framework mode' (formerly Remix) were not fully explored beyond the homepage summary."
   ],

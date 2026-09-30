@@ -3,7 +3,7 @@
   "slug": "davinci-resolve",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "DaVinci Resolve",
     "vendor": "Blackmagic Design",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "Full editing, color grading, VFX and audio for virtually all 8-bit video formats up to 60fps, resolutions up to Ultra HD 3840x2160, includes multi-user collaboration and HDR grading.",
-        "fr": null
+        "fr": "Montage, etalonnage, effets visuels et audio complets pour quasiment tous les formats video 8 bits jusqu'a 60 im/s, resolutions jusqu'a l'Ultra HD 3840x2160, avec collaboration multi-utilisateurs et etalonnage HDR."
       },
       "sourceIds": [
         "s1"
@@ -56,7 +56,7 @@
         "keyLimits": [
           {
             "en": "Adds DaVinci AI Neural Engine features, additional ResolveFX filters, more Fairlight audio plugins, and support for 10-bit video up to 120fps beyond 4K resolution.",
-            "fr": null
+            "fr": "Ajoute les fonctions du DaVinci Neural Engine (IA), des filtres ResolveFX supplementaires, plus de plugins audio Fairlight, et la prise en charge de la video 10 bits jusqu'a 120 im/s au-dela de la 4K."
           }
         ],
         "sourceIds": [
@@ -69,7 +69,7 @@
     "cautions": [
       {
         "en": "DaVinci Resolve Studio is a one-time perpetual license, not a subscription; upgrades to future major versions may require repurchasing depending on Blackmagic's policy at the time.",
-        "fr": null,
+        "fr": "DaVinci Resolve Studio est une licence perpetuelle achetee une seule fois, pas un abonnement ; une mise a jour vers une future version majeure peut demander un nouvel achat selon la politique de Blackmagic au moment voulu.",
         "sourceIds": [
           "s1"
         ]
@@ -80,21 +80,21 @@
     "capabilities": [
       {
         "en": "Combines non-linear video editing, professional color grading, visual effects (Fusion) and audio post-production (Fairlight) in one application.",
-        "fr": null,
+        "fr": "Reunit montage video non lineaire, etalonnage colorimetrique professionnel, effets visuels (Fusion) et post-production audio (Fairlight) dans une seule application.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Free version supports resolutions up to Ultra HD 4K at 60fps for virtually all 8-bit formats, with multi-user collaborative project features.",
-        "fr": null,
+        "fr": "La version gratuite prend en charge des resolutions jusqu'a l'Ultra HD 4K a 60 im/s pour quasiment tous les formats 8 bits, avec des fonctions de projet collaboratif multi-utilisateurs.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Studio version adds AI-powered tools (DaVinci Neural Engine) and higher-bit-depth/frame-rate/resolution support for professional delivery.",
-        "fr": null,
+        "fr": "La version Studio ajoute des outils bases sur l'IA (DaVinci Neural Engine) et une prise en charge superieure en profondeur de bits, cadence et resolution pour une livraison professionnelle.",
         "sourceIds": [
           "s1"
         ]
@@ -103,14 +103,14 @@
     "limitations": [
       {
         "en": "Free version caps out at 8-bit color and Ultra HD 4K resolution/60fps; higher bit depth, frame rates and resolutions require the paid Studio license.",
-        "fr": null,
+        "fr": "La version gratuite plafonne a la couleur 8 bits et a la resolution/cadence Ultra HD 4K/60 im/s ; une profondeur de bits, une cadence ou une resolution superieures demandent la licence Studio payante.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Some AI-powered Neural Engine features and advanced ResolveFX/Fairlight plugins are Studio-only, unavailable in the free version.",
-        "fr": null,
+        "fr": "Certaines fonctions IA du Neural Engine et des plugins ResolveFX/Fairlight avances sont reserves a la version Studio, indisponibles dans la version gratuite.",
         "sourceIds": [
           "s1"
         ]
@@ -126,14 +126,14 @@
       "slug": "adobe-premiere-pro",
       "reason": {
         "en": "Leading subscription-based video editing competitor covering the same core NLE workflow.",
-        "fr": null
+        "fr": "Principal concurrent en montage video par abonnement, sur le meme flux de travail NLE."
       }
     },
     {
       "slug": "final-cut-pro",
       "reason": {
         "en": "Mac-native one-time-purchase video editor competing directly with DaVinci Resolve's perpetual-license model.",
-        "fr": null
+        "fr": "Editeur video Mac natif a achat unique, concurrent direct du modele de licence perpetuelle de DaVinci Resolve."
       }
     }
   ],
@@ -141,5 +141,123 @@
   "unknowns": [
     "Exact platform list (Windows/macOS/Linux availability nuances) not re-verified from the pricing page fetched in this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator editing and color-grading video who wants professional-grade tools without a recurring subscription.",
+      "fr": "Un createur de contenu qui monte et etalonne ses videos et veut des outils de niveau professionnel sans abonnement recurrent."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "YouTube channel: edit, color grade and mix audio for a video entirely in the free version before publishing.",
+      "fr": "Chaine YouTube : monter, etalonner et mixer l'audio d'une video entierement dans la version gratuite avant publication."
+    },
+    {
+      "en": "Client delivery: buy the one-time $295 Studio license to unlock 10-bit, higher frame rate exports a client's spec requires.",
+      "fr": "Livraison client : acheter la licence Studio a 295 $ une seule fois pour debloquer les exports 10 bits et cadences superieures exiges par le cahier des charges d'un client."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Studio tier is a one-time $295 purchase, not a subscription, and unlocks the AI Neural Engine plus higher-bit-depth export on top of an already capable free app.",
+        "fr": "Le palier Studio est un achat unique de 295 \\$, pas un abonnement, et debloque le Neural Engine et l'export en profondeur de bits superieure au-dessus d'une application gratuite deja capable.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to reach a first usable edit are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la competence necessaires pour un premier montage exploitable ne figurent pas dans les sources relevees.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Combines editing, color grading, VFX and audio post-production in one application, covering the full post-production workflow it promises.",
+        "fr": "Reunit montage, etalonnage, effets visuels et post-production audio dans une seule application, couvrant tout le flux de post-production promis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Four production disciplines (edit, color, VFX, audio) in one tool, with the Studio tier adding professional-delivery bit depth, frame rate and resolution.",
+        "fr": "Quatre disciplines de production (montage, etalonnage, VFX, audio) dans un seul outil, le palier Studio ajoutant la profondeur de bits, la cadence et la resolution pour une livraison professionnelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and project portability to other editors are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilite du projet vers d'autres logiciels ne figurent pas dans les sources relevees.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Video editing suite",
+      "fr": "Suite de montage video"
+    },
+    "shortDescription": {
+      "en": "Free editing, color grading, VFX and audio software, with a $295 one-time Studio license for higher-bit-depth professional delivery.",
+      "fr": "Logiciel gratuit de montage, etalonnage, effets visuels et audio, avec une licence Studio a 295 $ pour une livraison professionnelle en profondeur de bits superieure."
+    },
+    "longDescription": {
+      "en": "DaVinci Resolve combines non-linear editing, color grading, visual effects and audio post-production in one application, and the free version already supports Ultra HD 4K at 60fps for most 8-bit formats with multi-user collaboration.\n\nThe $295 Studio license is a one-time purchase, not a subscription: it adds AI-powered Neural Engine tools and higher bit-depth, frame-rate and resolution support for professional delivery. It fits a solo creator or small team that wants a full post-production toolkit without recurring software costs.",
+      "fr": "DaVinci Resolve reunit montage non lineaire, etalonnage, effets visuels et post-production audio dans une seule application, et la version gratuite prend deja en charge l'Ultra HD 4K a 60 im/s pour la plupart des formats 8 bits avec collaboration multi-utilisateurs.\n\nLa licence Studio a 295 \\$ est un achat unique, pas un abonnement : elle ajoute les outils IA du Neural Engine et une profondeur de bits, cadence et resolution superieures pour une livraison professionnelle. Elle convient a un createur solo ou une petite equipe qui veut une boite a outils de post-production complete sans cout logiciel recurrent."
+    },
+    "pros": [
+      {
+        "en": "Full editing, color grading, VFX and audio suite free, no subscription required.",
+        "fr": "Suite complete de montage, etalonnage, VFX et audio gratuite, sans abonnement."
+      },
+      {
+        "en": "Studio license is a one-time $295 purchase rather than a recurring fee.",
+        "fr": "La licence Studio est un achat unique de 295 $ plutot qu'un frais recurrent."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free version caps out at 8-bit color and Ultra HD 4K/60fps for higher-spec delivery.",
+        "fr": "La version gratuite plafonne a la couleur 8 bits et a l'Ultra HD 4K/60 im/s pour les livraisons plus exigeantes."
+      },
+      {
+        "en": "Some AI Neural Engine features and advanced plugins are Studio-only.",
+        "fr": "Certaines fonctions IA du Neural Engine et des plugins avances sont reserves a Studio."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need professional color, VFX or audio tools and prefer a one-time purchase over a subscription.",
+        "fr": "Tu as besoin d'outils professionnels de couleur, VFX ou audio et tu preferes un achat unique a un abonnement."
+      },
+      "avoidIf": {
+        "en": "The free version's 8-bit, 4K/60fps ceiling already covers every delivery spec you need.",
+        "fr": "Le plafond 8 bits, 4K/60 im/s de la version gratuite couvre deja toutes les specs de livraison dont tu as besoin."
+      },
+      "threshold": {
+        "en": "Worth the $295 one-time Studio license once a client or project spec requires 10-bit color, higher frame rates or AI Neural Engine tools.",
+        "fr": "La licence Studio a 295 \\$ (achat unique) devient rentable des qu'un client ou un projet exige la couleur 10 bits, des cadences superieures ou les outils du Neural Engine."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-25",
+  "reviewNotes": [
+    "Only 2 in-catalogue alternatives (adobe-premiere-pro, final-cut-pro) could be found via scripts/research/seed.mjs davinci-resolve; the candidate list returned by the seed contains no other real NLE video editor, so the alternatives list stays below the 3-6 target for tier A.",
+    "product.platforms lists only \"web\", which looks wrong for a desktop NLE application (Windows/macOS/Linux); not corrected here since it was set at the facts stage and no web research was done locally.",
+    "pricing.freePlan.exists is true but no plan in pricing.plans is priced at $0; the free DaVinci Resolve tier itself was not captured as a plan entry during the facts stage."
+  ]
 }

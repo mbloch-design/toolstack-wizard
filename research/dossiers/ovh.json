@@ -3,7 +3,8 @@
   "slug": "ovh",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "OVHcloud",
     "vendor": "OVH Groupe SA",
@@ -35,7 +36,7 @@
         "price": { "monthly": 1.89, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "First-year introductory price $1.89/month, renews at $3.09/month; 1 GB SSD storage, 2 email accounts (1 GB each), 1 database (250 MB), 1 site.", "fr": null }
+          { "en": "First-year introductory price $1.89/month, renews at $3.09/month; 1 GB SSD storage, 2 email accounts (1 GB each), 1 database (250 MB), 1 site.", "fr": "Prix de lancement la première année, 1,89 $/mois, puis 3,09 $/mois au renouvellement ; 1 Go de stockage SSD, 2 comptes email (1 Go chacun), 1 base de données (250 Mo), 1 site." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 3.59, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "First-year introductory price $3.59/month, renews at $7.09/month; 100 GB SSD storage, 10 email accounts, 5 databases (1 GB each), up to 15 sites.", "fr": null }
+          { "en": "First-year introductory price $3.59/month, renews at $7.09/month; 100 GB SSD storage, 10 email accounts, 5 databases (1 GB each), up to 15 sites.", "fr": "Prix de lancement la première année, 3,59 $/mois, puis 7,09 $/mois au renouvellement ; 100 Go de stockage SSD, 10 comptes email, 5 bases de données (1 Go chacune), jusqu'à 15 sites." }
         ],
         "sourceIds": ["s1"]
       }
@@ -55,35 +56,86 @@
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Listed prices are first-year introductory rates; renewal prices are roughly 1.6x to 2x higher (Starter renews at $3.09 vs $1.89, Personal at $7.09 vs $3.59).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "This dossier covers only the 'Personal offer' web hosting range; OVHcloud also sells VPS, Public Cloud (usage-based) and dedicated servers under separate pricing not captured here.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Listed prices are first-year introductory rates; renewal prices are roughly 1.6x to 2x higher (Starter renews at $3.09 vs $1.89, Personal at $7.09 vs $3.59).", "fr": "Les prix affichés sont des tarifs de lancement valables un an ; le renouvellement coûte environ 1,6 à 2 fois plus cher (Starter passe de 1,89 $ à 3,09 $, Personal de 3,59 $ à 7,09 $).", "sourceIds": ["s1"] },
+      { "en": "This dossier covers only the 'Personal offer' web hosting range; OVHcloud also sells VPS, Public Cloud (usage-based) and dedicated servers under separate pricing not captured here.", "fr": "Ce dossier ne couvre que la gamme d'hébergement web « offre personnelle » ; OVHcloud vend aussi des VPS, du Public Cloud (à l'usage) et des serveurs dédiés à des tarifs séparés non repris ici.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Shared web hosting with one-click WordPress installation.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Unlimited SSL certificates and unlimited traffic included on hosting plans.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Anti-DDoS protection and automatic backups included.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Free domain name included for the first year.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Shared web hosting with one-click WordPress installation.", "fr": "Hébergement web mutualisé avec installation de WordPress en un clic.", "sourceIds": ["s1"] },
+      { "en": "Unlimited SSL certificates and unlimited traffic included on hosting plans.", "fr": "Certificats SSL et trafic illimités inclus sur les plans d'hébergement.", "sourceIds": ["s1"] },
+      { "en": "Anti-DDoS protection and automatic backups included.", "fr": "Protection anti-DDoS et sauvegardes automatiques incluses.", "sourceIds": ["s1"] },
+      { "en": "Free domain name included for the first year.", "fr": "Nom de domaine offert la première année.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Entry Starter plan is limited to 1 GB storage and a single site, only suitable for a very small personal site.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "99.9% uptime guarantee only, not a higher SLA; higher-availability infrastructure (VPS, Public Cloud, dedicated) is a separate product line with separate pricing.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Entry Starter plan is limited to 1 GB storage and a single site, only suitable for a very small personal site.", "fr": "Le plan d'entrée Starter est limité à 1 Go de stockage et un seul site, adapté seulement à un tout petit site personnel.", "sourceIds": ["s1"] },
+      { "en": "99.9% uptime guarantee only, not a higher SLA; higher-availability infrastructure (VPS, Public Cloud, dedicated) is a separate product line with separate pricing.", "fr": "La garantie de disponibilité se limite à 99,9 %, sans SLA supérieur ; les infrastructures plus disponibles (VPS, Public Cloud, dédié) forment une gamme séparée avec ses propres tarifs.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "An independent consultant who needs a simple, low-cost website or WordPress blog online without managing servers.", "fr": "Un consultant indépendant qui a besoin d'un site simple et bon marché ou d'un blog WordPress en ligne, sans gérer de serveur." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Launch: put a one-page consulting portfolio online with WordPress, SSL and email preconfigured on the Starter plan.", "fr": "Lancement : mettre en ligne un portfolio de conseil d'une page avec WordPress, SSL et email préconfigurés sur le plan Starter." },
+    { "en": "Grow: host up to 15 small client sites with more storage and databases on the Personal plan.", "fr": "Croissance : héberger jusqu'à 15 petits sites clients avec plus de stockage et de bases de données sur le plan Personal." }
+  ],
   "alternatives": [
-    { "slug": "digitalocean", "reason": { "en": "Cloud infrastructure alternative, more developer/VPS-focused than shared hosting.", "fr": null } },
-    { "slug": "fly-io", "reason": { "en": "Alternative for deploying apps closer to compute rather than classic shared hosting.", "fr": null } },
-    { "slug": "vercel", "reason": { "en": "Alternative for hosting modern web front-ends, though usage-based and not comparable for classic PHP/WordPress hosting.", "fr": null } }
+    { "slug": "digitalocean", "reason": { "en": "Cloud infrastructure alternative, more developer/VPS-focused than shared hosting.", "fr": "Alternative d'infrastructure cloud, plus orientée développeur/VPS que l'hébergement mutualisé." } },
+    { "slug": "fly-io", "reason": { "en": "Alternative for deploying apps closer to compute rather than classic shared hosting.", "fr": "Alternative pour déployer des applications au plus près du calcul plutôt qu'un hébergement mutualisé classique." } },
+    { "slug": "vercel", "reason": { "en": "Alternative for hosting modern web front-ends, though usage-based and not comparable for classic PHP/WordPress hosting.", "fr": "Alternative pour héberger des front-ends web modernes, mais facturée à l'usage et peu comparable pour un hébergement PHP/WordPress classique." } }
   ],
   "missingAlternatives": [
     { "name": "Hostinger", "officialUrl": "https://www.hostinger.com/", "reason": "Very common direct competitor for budget shared web hosting, not present in the candidate list." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 2,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Introductory prices are low, but renewal prices roughly double, and the entry plan covers only a single site.", "fr": "Les prix de lancement sont bas, mais le renouvellement double quasiment le tarif, et le plan d'entrée ne couvre qu'un seul site.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "One-click WordPress installation gets a usable site online quickly without server management.", "fr": "L'installation de WordPress en un clic permet d'avoir un site utilisable rapidement, sans gestion serveur.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers on basic hosting with unlimited SSL and traffic included on both plans.", "fr": "Tient sa promesse d'hébergement de base, avec SSL et trafic illimités inclus sur les deux plans.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Shared hosting caps out at 100 GB storage and 15 sites on the top personal plan, only the strict minimum for anything beyond a small site.", "fr": "L'hébergement mutualisé plafonne à 100 Go de stockage et 15 sites sur le plan personnel le plus haut, le strict minimum au-delà d'un petit site.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: portability and export options are not covered by the collected sources.", "fr": "Note neutre : la portabilité et les options d'export ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Shared web hosting", "fr": "Hébergement web mutualisé" },
+    "shortDescription": { "en": "OVHcloud's entry-level shared web hosting for personal sites and small WordPress projects, with SSL and backups included.", "fr": "Hébergement web mutualisé d'entrée de gamme d'OVHcloud pour sites personnels et petits projets WordPress, avec SSL et sauvegardes inclus." },
+    "longDescription": {
+      "en": "OVHcloud's Personal offer is classic shared web hosting: one-click WordPress, unlimited SSL and traffic, automatic backups and anti-DDoS protection, aimed at small personal or client sites rather than high-traffic projects. The Starter plan is capped at a single site and 1 GB storage, so it fits a one-page site; the Personal plan extends to 15 sites and more databases for a small portfolio of client sites.\n\nThe Starter plan starts at $1.89/month, renewing at $3.09/month after the first year; Personal starts at $3.59/month, renewing at $7.09/month. It suits a freelancer or small business wanting a basic website online cheaply, as long as the renewal price increase is budgeted for.",
+      "fr": "L'offre personnelle d'OVHcloud est un hébergement web mutualisé classique : WordPress en un clic, SSL et trafic illimités, sauvegardes automatiques et anti-DDoS, pensé pour de petits sites plutôt que des projets à fort trafic. Starter se limite à un seul site et 1 Go de stockage ; Personal monte à 15 sites et plus de bases de données pour plusieurs sites clients.\n\nStarter démarre à 1,89 $/mois, puis 3,09 $/mois après un an ; Personal démarre à 3,59 $/mois, puis 7,09 $/mois. Convient à une freelance qui veut un site basique en ligne à petit prix, en budgétant la hausse au renouvellement."
+    },
+    "pros": [
+      { "en": "Low first-year entry price with SSL, backups and anti-DDoS included.", "fr": "Prix d'entrée bas la première année, avec SSL, sauvegardes et anti-DDoS inclus." },
+      { "en": "One-click WordPress installation for a quick launch.", "fr": "Installation de WordPress en un clic pour un lancement rapide." },
+      { "en": "Personal plan scales to 15 sites for managing several small client projects.", "fr": "Le plan Personal monte jusqu'à 15 sites pour gérer plusieurs petits projets clients." }
+    ],
+    "cons": [
+      { "en": "Renewal price roughly doubles after the first year on both plans.", "fr": "Le prix au renouvellement double quasiment après la première année, sur les deux plans." },
+      { "en": "Starter plan's 1 GB storage and single site limit rule out anything beyond a one-page site.", "fr": "Le Go de stockage et le site unique du plan Starter excluent tout ce qui dépasse un site d'une page." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need a simple site or WordPress blog online cheaply and can plan for the renewal price increase.", "fr": "Tu as besoin d'un site simple ou d'un blog WordPress en ligne à petit prix et tu peux anticiper la hausse au renouvellement." },
+      "avoidIf": { "en": "You need more than one site, more than 1 GB storage, or predictable pricing without a first-year discount.", "fr": "Tu as besoin de plus d'un site, de plus d'1 Go de stockage, ou d'un tarif prévisible sans remise la première année." },
+      "threshold": { "en": "Budget for the renewal rate ($3.09/month Starter, $7.09/month Personal), not the first-year introductory price.", "fr": "Prévois le tarif de renouvellement (3,09 $/mois pour Starter, 7,09 $/mois pour Personal), pas le prix de lancement de la première année." },
+      "billingTraps": { "en": "The advertised price is a first-year-only introductory rate; it renews at roughly 1.6x to 2x higher automatically.", "fr": "Le prix affiché n'est qu'un tarif de lancement valable un an ; il augmente automatiquement d'environ 1,6 à 2 fois au renouvellement." }
+    }
+  },
   "unknowns": [
     "Only the Eco/Personal-offer hosting range was checked; OVHcloud's VPS and Public Cloud pricing (mentioned in the seed's pricingText) were not independently re-verified in this session.",
     "Whether prices shown are US-region specific or apply globally is not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Confirm on the vendor site whether displayed prices are region-specific (US) or global, since the dossier's region is set to US but ToolTrim serves a French/EU audience."
+  ]
 }

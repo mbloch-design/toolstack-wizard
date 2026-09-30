@@ -3,7 +3,8 @@
   "slug": "canva",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-25",
   "identity": {
     "officialName": "Canva",
     "vendor": "Canva Pty Ltd",
@@ -33,7 +34,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Over 1.6M templates, 5GB storage, limited AI credits"
+        "en": "Over 1.6M templates, 5GB storage, limited AI credits",
+        "fr": "Plus de 1,6 million de templates, 5 Go de stockage, crédits IA limités"
       },
       "sourceIds": [
         "s1"
@@ -41,6 +43,27 @@
     },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Over 1.6M templates, 5GB storage, limited AI credits",
+            "fr": "Plus de 1,6 million de templates, 5 Go de stockage, crédits IA limités"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
       {
         "key": "pro",
         "name": "Canva Pro",
@@ -54,7 +77,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Priced at €110/year for one person"
+            "en": "Priced at €110/year for one person",
+            "fr": "Facturé 110 €/an pour une personne"
           }
         ],
         "sourceIds": [
@@ -74,7 +98,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "€170/year per person, adds expanded AI features"
+            "en": "€170/year per person, adds expanded AI features",
+            "fr": "170 €/an par personne, ajoute des fonctions IA étendues"
           }
         ],
         "sourceIds": [
@@ -86,6 +111,7 @@
     "addOns": [
       {
         "en": "Optional AI Pass for extra generative AI usage",
+        "fr": "AI Pass optionnel pour un usage IA générative supplémentaire",
         "sourceIds": [
           "s1"
         ]
@@ -94,6 +120,7 @@
     "cautions": [
       {
         "en": "Free plan AI generation quota is limited; heavy AI use requires Pro or the AI Pass add-on.",
+        "fr": "Le quota de génération IA du plan gratuit est limité ; un usage IA intensif nécessite Pro ou l'option AI Pass.",
         "sourceIds": [
           "s1"
         ]
@@ -104,18 +131,21 @@
     "capabilities": [
       {
         "en": "Drag-and-drop design editor for social posts, presentations, video, and print with a large template library.",
+        "fr": "Éditeur de design glisser-déposer pour posts sociaux, présentations, vidéo et impression, avec une large bibliothèque de templates.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Magic Studio AI tools: text-to-image, background removal, Magic Write copywriting, and AI video editing.",
+        "fr": "Outils IA Magic Studio : génération d'image à partir de texte, retrait d'arrière-plan, rédaction IA avec Magic Write et montage vidéo IA.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Brand Kit for consistent logos, colors, and fonts across a team's designs.",
+        "fr": "Brand Kit pour garder logos, couleurs et polices cohérents sur les designs d'une équipe.",
         "sourceIds": [
           "s1"
         ]
@@ -124,12 +154,14 @@
     "limitations": [
       {
         "en": "Free plan caps premium templates, stock assets, and AI generation credits.",
+        "fr": "Le plan gratuit plafonne les templates premium, les ressources stock et les crédits de génération IA.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Advanced brand controls (brand voice, approval workflows) require the higher Pro+/Teams tiers, not base Pro.",
+        "fr": "Les contrôles de marque avancés (brand voice, workflows de validation) demandent les paliers Pro+/Teams supérieurs, pas le Pro de base.",
         "sourceIds": [
           "s1"
         ]
@@ -166,30 +198,146 @@
       "macos"
     ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator or small team producing social posts, presentations and marketing visuals who wants fast, template-based design without a dedicated designer.",
+      "fr": "Un créateur de contenu ou une petite équipe qui produit des posts sociaux, des présentations et des visuels marketing, et veut un design rapide basé sur des templates, sans designer dédié."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a content creator batch-designs a week of Instagram posts from Canva's template library and Magic Studio AI tools without hiring a designer.",
+      "fr": "Cas d'usage : un créateur de contenu prépare en une fois une semaine de posts Instagram grâce à la bibliothèque de templates et aux outils IA Magic Studio, sans designer."
+    },
+    {
+      "en": "Use case: a small team applies its logo, colors and fonts through Brand Kit so every teammate's Canva design stays on brand.",
+      "fr": "Cas d'usage : une petite équipe applique son logo, ses couleurs et ses polices via Brand Kit pour que chaque design Canva reste cohérent avec la marque."
+    }
+  ],
   "alternatives": [
     {
       "slug": "adobe-express",
       "reason": {
-        "en": "Direct freemium competitor with a similar template-first design approach."
+        "en": "Direct freemium competitor with a similar template-first design approach.",
+        "fr": "Concurrent freemium direct avec une approche design par templates similaire."
       }
     },
     {
       "slug": "visme",
       "reason": {
-        "en": "Overlaps on presentations and infographic templates."
+        "en": "Overlaps on presentations and infographic templates.",
+        "fr": "Chevauchement sur les templates de présentations et d'infographies."
       }
     },
     {
       "slug": "figma",
       "reason": {
-        "en": "Overlaps for quick social/marketing visuals, though positioned more for product design."
+        "en": "Overlaps for quick social/marketing visuals, though positioned more for product design.",
+        "fr": "Chevauchement pour des visuels sociaux/marketing rapides, même si l'outil est plus positionné design produit."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A huge template library plus bundled Magic Studio AI tools for €110/year on Pro is cheap relative to hiring design time or buying separate AI tools.",
+        "fr": "Une immense bibliothèque de templates avec les outils IA Magic Studio inclus pour 110 €/an sur Pro reste bon marché par rapport à du temps de design ou des outils IA séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The drag-and-drop editor and template library are built for a fast, usable first result without design training.",
+        "fr": "L'éditeur glisser-déposer et la bibliothèque de templates visent un premier résultat rapide et exploitable sans formation au design.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Canva delivers on its core promise: a working design editor with AI tools and brand consistency features, as described.",
+        "fr": "Canva tient sa promesse centrale : un éditeur de design fonctionnel avec des outils IA et des fonctions de cohérence de marque, comme décrit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Canva covers a broad range of formats and AI tools, but advanced brand governance is locked behind pricier tiers, capping how far the base product goes.",
+        "fr": "Canva couvre un large éventail de formats et d'outils IA, mais la gouvernance de marque avancée reste réservée aux paliers plus chers, ce qui plafonne la portée du produit de base.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if leaving Canva are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ de Canva ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Template-based design",
+      "fr": "Design par templates"
+    },
+    "shortDescription": {
+      "en": "A drag-and-drop design tool with templates, AI image and video tools, and brand kits for social posts, presentations and print.",
+      "fr": "Un outil de design glisser-déposer avec templates, outils IA image et vidéo, et kits de marque pour réseaux sociaux, présentations et impression."
+    },
+    "longDescription": {
+      "en": "Canva pairs a drag-and-drop editor with a library of over 1.6 million templates for social posts, presentations, video and print. Magic Studio adds AI tools for text-to-image generation, background removal, AI copywriting and video editing, and a Brand Kit keeps logos, colors and fonts consistent across a team's designs.\n\nThe free plan covers templates and basic AI use with limited credits; Canva Pro costs €110/year (about €9.17/month) for one person and lifts those caps, while advanced brand controls and approval workflows sit behind the pricier Pro+/Teams tiers. It suits a solo creator or small team needing fast, template-based design more than pixel-level control.",
+      "fr": "Canva associe un éditeur glisser-déposer à une bibliothèque de plus de 1,6 million de templates pour les réseaux sociaux, les présentations, la vidéo et l'impression. Magic Studio ajoute des outils IA pour générer des images, retirer des arrière-plans, rédiger et monter des vidéos, et un Brand Kit garde logos, couleurs et polices cohérents sur les designs d'une équipe.\n\nLe plan gratuit couvre les templates et un usage IA de base avec des crédits limités ; Canva Pro coûte 110 €/an (environ 9,17 €/mois) et lève ces plafonds, tandis que les contrôles de marque avancés restent réservés aux paliers Pro+/Teams plus chers. Canva convient à un créateur seul ou une petite équipe qui veut un design rapide par templates, plus qu'un contrôle pixel par pixel."
+    },
+    "pros": [
+      {
+        "en": "A huge template library covers most common formats (social, print, presentations, video) out of the box.",
+        "fr": "Une immense bibliothèque de templates couvre d'emblée la plupart des formats courants (social, impression, présentations, vidéo)."
+      },
+      {
+        "en": "Magic Studio bundles several AI tools (image generation, background removal, copywriting) in one place instead of separate apps.",
+        "fr": "Magic Studio regroupe plusieurs outils IA (génération d'image, retrait d'arrière-plan, rédaction) au même endroit plutôt que dans des apps séparées."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free-plan AI generation credits run out quickly for regular use, pushing toward Pro or the paid AI Pass.",
+        "fr": "Les crédits IA du plan gratuit s'épuisent vite en usage régulier, ce qui pousse vers Pro ou l'AI Pass payant."
+      },
+      {
+        "en": "Advanced brand governance (brand voice, approval workflows) needs the pricier Pro+/Teams tiers, not base Pro.",
+        "fr": "La gouvernance de marque avancée (brand voice, workflows de validation) demande les paliers Pro+/Teams plus chers, pas le Pro de base."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need fast, template-based design for social, print or presentations without hiring a designer.",
+        "fr": "Tu as besoin d'un design rapide basé sur des templates pour le social, l'impression ou les présentations, sans embaucher de designer."
+      },
+      "avoidIf": {
+        "en": "You need precise, pixel-level control or advanced brand governance across a larger team.",
+        "fr": "Tu as besoin d'un contrôle précis, pixel par pixel, ou d'une gouvernance de marque avancée pour une grande équipe."
+      },
+      "threshold": {
+        "en": "Canva Pro costs €110/year (about €9.17/month); that's the real entry cost once the free plan's AI and template caps become limiting.",
+        "fr": "Canva Pro coûte 110 €/an (environ 9,17 €/mois) ; c'est le vrai coût d'entrée une fois que les plafonds IA et templates du plan gratuit deviennent limitants."
+      }
+    }
+  },
   "unknowns": [
     "Direct fetch of canva.com/pricing returned HTTP 403 this session (anti-bot); pricing figures rely on the previously seeded, verified values rather than a fresh in-session read.",
     "Exact free-plan AI credit quota and full integration catalogue not confirmed this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }
