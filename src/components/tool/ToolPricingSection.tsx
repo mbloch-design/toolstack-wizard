@@ -1,7 +1,7 @@
 import type { Tool } from "@/data/types";
 import { CreditCard, Sparkles, Package } from "@/lib/icons";
 import { hasGenuineFreeTier, isPriceUndisclosed } from "@/lib/pricing";
-import { relExterne, safeExternalUrl } from "@/lib/externalLink";
+import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import { localizePlanName } from "@/lib/planNames";
 import { useCurrency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
@@ -171,7 +171,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                     ].filter(Boolean).join(" · ")}
               </p>
               {plan.detailsSourceUrl && !plan.comingSoon && (
-                <a className="td-pricing-plan-source" href={affiliateUrl || safeExternalUrl(plan.detailsSourceUrl)} target="_blank" rel={relExterne(affiliateUrl ? "affilie" : "source")}>
+                <a className="td-pricing-plan-source" href={affiliateUrl || safeExternalUrl(plan.detailsSourceUrl)} target="_blank" rel={relPourLienOutil(affiliateUrl || plan.detailsSourceUrl, affiliateUrl, tool.websiteUrl)}>
                   {affiliateUrl ? t("Voir les offres sur le site", "View offers on the website") : t("Détail officiel de l’offre", "Official plan details")}
                 </a>
               )}
@@ -220,7 +220,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
       {(verifiedOn || officialUrl) && (
         <p className="td-pricing-evidence">
           {affiliateUrl ? t("Tarif vérifié auprès de l’éditeur", "Pricing verified with the vendor") : officialUrl ? (
-            <a href={officialUrl} target="_blank" rel={relExterne("source")}>
+            <a href={officialUrl} target="_blank" rel={relPourLienOutil(officialUrl, tool.affiliateLink, tool.websiteUrl)}>
               {t("Source tarifaire officielle", "Official pricing source")}
             </a>
           ) : t("Tarif vérifié par ToolTrim", "Pricing verified by ToolTrim")}

@@ -4857,3 +4857,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Revue visuelle après retour utilisateur : abandon du fond sombre trop proche du CTA au profit d'une surface crème chaude, d'un contour discret et d'une hiérarchie typographique remise/code.
 - Palette finale demandée : bleu ToolTrim via `--primary` pour le fond léger, le contour et la remise ; code foncé, CTA toujours noir.
 - 2026-09-30 : fiche Drone Ops Mission créée en français et en anglais, à partir du site officiel. Tarifs Découverte/Pro distingués, limites de l'aide GO/NOGO explicitées et cinq visuels officiels référencés (logo, carte, météo, vue 3D et assistant).
+- 2026-09-30 : lien officiel Drone Ops Mission autorisé en dofollow sur la fiche, sans modifier la règle `sponsored` des liens affiliés.

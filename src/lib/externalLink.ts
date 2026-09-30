@@ -63,6 +63,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.traceo.dev",
   "planeezy.com",
   "www.planeezy.com",
+  "drone-ops-mission.fr",
+  "www.drone-ops-mission.fr",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait

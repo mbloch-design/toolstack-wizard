@@ -16,6 +16,13 @@ describe("safeExternalUrl", () => {
 });
 
 describe("relPourLienOutil", () => {
+  it.each(["https://drone-ops-mission.fr/", "https://www.drone-ops-mission.fr/"])(
+    "keeps the Drone Ops Mission official link dofollow: %s",
+    (url) => {
+      expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
+    },
+  );
+
   it.each(["https://novadesko.com/", "https://www.convoscore.com/"])(
     "marks the official website link as nofollow: %s",
     (url) => {
