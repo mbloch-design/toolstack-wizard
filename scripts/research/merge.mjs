@@ -194,6 +194,8 @@ function applyDossier(tool, d) {
     if (p.model === "free" || p.model === "open_source") return fr ? "Pas d'offre payante obligatoire." : "No paid plan required.";
     if (!compare) return "";
     const amount = compare.price.oneTime ?? compare.price.annualPerMonth ?? compare.price.monthly;
+    // A compared plan on quote carries no amount.
+    if (amount == null) return fr ? `Plan ${compare.name} sur devis.` : `${compare.name} plan on quote.`;
     const per = compare.price.oneTime != null ? (fr ? " (licence à vie)" : " (lifetime license)") : fr ? "/mois" : "/mo";
     return fr ? `Dès ${money(amount, p.currency, "fr")}${per}, plan ${compare.name}.` : `From ${money(amount, p.currency, "en")}${per}, ${compare.name} plan.`;
   };

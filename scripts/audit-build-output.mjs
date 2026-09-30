@@ -28,13 +28,16 @@ const budgets = {
   // 2026-09-28: 150 sourced Maxon listings generate 1,500 additional
   // localized tool routes. Measured output: 14,816 files, 975.7 MiB total,
   // 873.5 MiB HTML. Retain a narrow margin rather than disabling the audit.
-  files: 14_870,
+  // 2026-09-30: 100 researched fiches merged (full plan grids per language):
+  // measured 14,886 files and 30.1 MiB CSS, the new critical CSS variants of
+  // the pricing cards. Narrow margin kept.
+  files: 14_920,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   totalBytes: 985 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
   htmlBytes: 880 * MiB,
   javascriptBytes: 15 * MiB,
-  cssBytes: 30 * MiB,
+  cssBytes: 30.5 * MiB,
   duplicateBytes: 3 * MiB,
 };
 
