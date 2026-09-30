@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1345
+# Records: 1346
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18775,8 +18775,6 @@
     },
     "description_fr": "Prépare un vol de drone avec carte aéronautique, météo et briefing GO/NOGO.",
     "description_en": "Plan drone flights with an aeronautical map, weather and a GO/NO-GO briefing."
-  }
-]
   },
   {
     "name": "Viso AI",
@@ -18785,10 +18783,11 @@
     "url_en": "https://tooltrim.com/en/tool/viso-ai",
     "website": "https://viso.ai/",
     "category": "ai-general",
-    "monthly_price_eur": 0,
     "pricing": {
       "free": "Forfait gratuit permanent, sans carte bancaire, avec 5 crédits par jour dans la limite de 30 crédits par mois.",
       "paid": "Viso Now Pro : 25 $US/mois. Business : 50 $US/mois. TVA incluse, crédits partagés entre utilisateurs. Viso Suite Enterprise : tarif sur devis selon la taille de l'entreprise et le déploiement."
     },
     "description_fr": "Créez des applications de vision par ordinateur à partir d'une consigne, d'une vidéo ou de flux caméra.",
     "description_en": "Build computer vision applications from a prompt, video, or camera feed."
+  }
+]
