@@ -25,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "global",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": "No dedicated free plan, but small free allowances are included: community support, first 10 single-hostname SSL certificates per org, first 10GB of volume snapshot storage per month, shared IPv4 and unlimited Anycast IPv6.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": false, "limits": { "en": "No dedicated free plan, but small free allowances are included: community support, first 10 single-hostname SSL certificates per org, first 10GB of volume snapshot storage per month, shared IPv4 and unlimited Anycast IPv6.", "fr": "Pas d'offre gratuite dédiée, mais quelques quotas gratuits sont inclus : support communautaire, 10 premiers certificats SSL à nom d'hôte unique par organisation, 10 premiers Go de stockage de snapshots de volumes par mois, IPv4 partagée et IPv6 Anycast illimitée." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,14 +35,14 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "No base subscription fee; per-organization usage billing, pro-rated by provisioning time. Shared-CPU Machines from about $0.00000078 to $0.00003429 per second depending on cores/RAM; Performance-CPU Machines from about $0.00001242 to $0.00019556 per second; stopped Machines billed at $0.15/GB rootfs per month. Volumes $0.15/GB per month; volume snapshots $0.08/GB per month (first 10GB free); dedicated IPv4 $2/month; data egress $0.02-$0.12/GB depending on region.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "No base subscription fee; per-organization usage billing, pro-rated by provisioning time. Shared-CPU Machines from about $0.00000078 to $0.00003429 per second depending on cores/RAM; Performance-CPU Machines from about $0.00001242 to $0.00019556 per second; stopped Machines billed at $0.15/GB rootfs per month. Volumes $0.15/GB per month; volume snapshots $0.08/GB per month (first 10GB free); dedicated IPv4 $2/month; data egress $0.02-$0.12/GB depending on region.", "fr": "Aucun abonnement de base ; facturation à l'usage par organisation, au prorata du temps de provisionnement. Machines Shared-CPU d'environ 0,00000078 $ à 0,00003429 $ par seconde selon les cœurs/la RAM ; Machines Performance-CPU d'environ 0,00001242 $ à 0,00019556 $ par seconde ; Machines arrêtées facturées 0,15 $/Go de rootfs par mois. Volumes à 0,15 $/Go par mois ; snapshots de volumes à 0,08 $/Go par mois (10 premiers Go gratuits) ; IPv4 dédiée à 2 $/mois ; sortie de données de 0,02 à 0,12 $/Go selon la région.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pay-as-you-go",
     "addOns": [
-      { "en": "Reservation discounts of about 40% on committed compute blocks (roughly $36 to $14,400/year).", "sourceIds": ["s1"] },
-      { "en": "Fly Kubernetes at a $75/month base plus compute costs.", "sourceIds": ["s1"] }
+      { "en": "Reservation discounts of about 40% on committed compute blocks (roughly $36 to $14,400/year).", "fr": "Remises de réservation d'environ 40 % sur des blocs de calcul engagés (environ 36 $ à 14 400 $ par an).", "sourceIds": ["s1"] },
+      { "en": "Fly Kubernetes at a $75/month base plus compute costs.", "fr": "Fly Kubernetes avec une base de 75 $/mois plus les coûts de calcul.", "sourceIds": ["s1"] }
     ],
     "cautions": [
       { "en": "Pure usage-based billing with no flat subscription tier: total monthly cost depends on how many Machines run, for how long, and how much storage/egress is used, making it hard to predict without modeling actual traffic.", "fr": "Facturation entièrement à l'usage, sans palier fixe : le coût mensuel total dépend du nombre de Machines actives, de leur durée et du stockage/egress consommés, difficile à prévoir sans modéliser le trafic réel.", "sourceIds": ["s1"] },

@@ -54,7 +54,7 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "Community edition: public and local repositories only, basic blame/history views, GitHub Copilot support with weekly AI credit cap.",
+      "limits": { "en": "Community edition: public and local repositories only, basic blame/history views, GitHub Copilot support with weekly AI credit cap.", "fr": "Édition Community : dépôts publics et locaux uniquement, vues blame/historique basiques, prise en charge de GitHub Copilot avec un plafond hebdomadaire de crédits IA." },
       "sourceIds": [
         "s1",
         "s3"

@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "Unlimited drafts, UI kits and templates, 150 AI credits/day (max 500/mo)", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Unlimited drafts, UI kits and templates, 150 AI credits/day (max 500/mo)", "fr": "Brouillons illimités, kits d'interface et modèles, 150 crédits IA par jour (500 max par mois)" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Wix-branded subdomain (mysite.wixsite.com), no custom domain, Wix ads/branding, basic storage", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Wix-branded subdomain (mysite.wixsite.com), no custom domain, Wix ads/branding, basic storage", "fr": "Sous-domaine à la marque Wix (mysite.wixsite.com), sans domaine personnalisé, publicités/marque Wix affichées, stockage basique" }, "sourceIds": ["s1"] },
     "trial": { "days": 14, "sourceIds": ["s1"] },
     "plans": [
       {

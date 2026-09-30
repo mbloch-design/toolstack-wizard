@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "global",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Fully open-source library, free to use with no paid tier.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Fully open-source library, free to use with no paid tier.", "fr": "Bibliothèque entièrement open source, gratuite à l'usage et sans offre payante." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -36,7 +36,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free routing library, no paid tier or hosted service.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Free routing library, no paid tier or hosted service.", "fr": "Bibliothèque de routage gratuite, sans offre payante ni service hébergé.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],

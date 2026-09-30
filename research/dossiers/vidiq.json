@@ -47,7 +47,7 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "150 AI credits per month; core YouTube analytics via browser extension",
+      "limits": { "en": "150 AI credits per month; core YouTube analytics via browser extension", "fr": "150 crédits IA par mois ; statistiques YouTube essentielles via l'extension navigateur" },
       "sourceIds": [
         "s1",
         "s2"
@@ -68,7 +68,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "150 AI credits per month, basic browser-extension analytics only.",
+            "en": "150 AI credits per month, basic browser-extension analytics only.", "fr": "150 crédits IA par mois, statistiques limitées à l'extension navigateur de base.",
             "sourceIds": [
               "s2"
             ]
@@ -92,7 +92,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Only tier that can be paid monthly; annual billing drops the effective price to about $199/year.",
+            "en": "Only tier that can be paid monthly; annual billing drops the effective price to about $199/year.", "fr": "Seule offre pouvant être payée au mois ; la facturation annuelle fait baisser le prix effectif à environ 199 $ par an.",
             "sourceIds": [
               "s1"
             ]
@@ -115,7 +115,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Annual billing only (about $468/year); 6,000 AI credits/month, up to 3x more AI Coach conversations, up to 11 hours of short-form clip generation.",
+            "en": "Annual billing only (about $468/year); 6,000 AI credits/month, up to 3x more AI Coach conversations, up to 11 hours of short-form clip generation.", "fr": "Facturation annuelle uniquement (environ 468 $ par an) ; 6 000 crédits IA par mois, jusqu'à 3 fois plus de conversations avec AI Coach, jusqu'à 11 heures de génération de clips courts.",
             "sourceIds": [
               "s1"
             ]

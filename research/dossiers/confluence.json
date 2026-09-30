@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "Up to 10 users", "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "Up to 10 users", "fr": "Jusqu'à 10 utilisateurs" }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {

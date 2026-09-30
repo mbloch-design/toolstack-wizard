@@ -33,12 +33,10 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": [
-        {
-          "en": "Up to 2 members, 2 projects, 2GB standard storage + 2GB mounted storage",
-          "fr": "Jusqu'à 2 membres, 2 projets, 2 Go de stockage standard + 2 Go de stockage monté"
-        }
-      ],
+      "limits": {
+        "en": "Up to 2 members, 2 projects, 2GB standard storage + 2GB mounted storage",
+        "fr": "Jusqu'à 2 membres, 2 projets, 2 Go de stockage standard + 2 Go de stockage monté"
+      },
       "sourceIds": [
         "s1"
       ]

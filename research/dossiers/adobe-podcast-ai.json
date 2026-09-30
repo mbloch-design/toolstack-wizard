@@ -29,7 +29,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "Audio-only enhancement (no video), single-file processing, files capped at 30 minutes / 500 MB, 1 hour of enhancement per day, Studio downloads capped at 30-minute projects twice a day, no original-recording downloads, audiograms are branded.",
+      "limits": { "en": "Audio-only enhancement (no video), single-file processing, files capped at 30 minutes / 500 MB, 1 hour of enhancement per day, Studio downloads capped at 30-minute projects twice a day, no original-recording downloads, audiograms are branded.", "fr": "Amélioration audio uniquement (pas de vidéo), traitement d'un seul fichier à la fois, fichiers limités à 30 minutes ou 500 Mo, 1 heure d'amélioration par jour, téléchargements Studio limités à des projets de 30 minutes deux fois par jour, pas de téléchargement de l'enregistrement original, audiogrammes marqués de la marque du service." },
       "sourceIds": ["s2", "s4"]
     },
     "trial": { "days": 30, "sourceIds": ["s4"] },

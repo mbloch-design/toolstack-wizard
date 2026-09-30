@@ -39,7 +39,7 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
+      "limits": { "en": "M0 cluster, 512 MB storage, shared RAM/vCPU, forever free", "fr": "Cluster M0, 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie" },
       "sourceIds": [
         "s1"
       ]

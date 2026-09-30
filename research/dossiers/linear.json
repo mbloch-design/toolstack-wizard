@@ -40,7 +40,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "Unlimited members, 2 teams, 250 issues, 10MB file upload",
+      "limits": { "en": "Unlimited members, 2 teams, 250 issues, 10MB file upload", "fr": "Membres illimités, 2 équipes, 250 tickets, fichiers de 10 Mo maximum" },
       "sourceIds": [
         "s1"
       ]
@@ -60,7 +60,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Unlimited members, 2 teams, 250 issues total, 10MB file uploads.",
+            "en": "Unlimited members, 2 teams, 250 issues total, 10MB file uploads.", "fr": "Membres illimités, 2 équipes, 250 tickets au total, fichiers de 10 Mo maximum.",
             "sourceIds": [
               "s1"
             ]
@@ -83,7 +83,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Billed annually only at this rate; 5 teams, unlimited issues and file uploads.",
+            "en": "Billed annually only at this rate; 5 teams, unlimited issues and file uploads.", "fr": "Facturé uniquement à l'année à ce tarif ; 5 équipes, tickets et fichiers illimités.",
             "sourceIds": [
               "s1"
             ]
@@ -106,7 +106,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Billed annually only at this rate; unlimited teams and guests, Triage Intelligence, Loops, Code Intelligence, Insights.",
+            "en": "Billed annually only at this rate; unlimited teams and guests, Triage Intelligence, Loops, Code Intelligence, Insights.", "fr": "Facturé uniquement à l'année à ce tarif ; équipes et invités illimités, Triage Intelligence, Loops, Code Intelligence, Insights.",
             "sourceIds": [
               "s1"
             ]
@@ -129,7 +129,7 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Custom pricing, annual billing only.",
+            "en": "Custom pricing, annual billing only.", "fr": "Tarification sur mesure, facturation annuelle uniquement.",
             "sourceIds": [
               "s1"
             ]

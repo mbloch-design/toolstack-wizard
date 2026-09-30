@@ -53,7 +53,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "1 account, single device only, no Password Health or Data Breach Scanner",
+      "limits": { "en": "1 account, single device only, no Password Health or Data Breach Scanner", "fr": "1 compte, un seul appareil, sans analyse de la santé des mots de passe ni scanner de fuites de données" },
       "sourceIds": [
         "s1"
       ]

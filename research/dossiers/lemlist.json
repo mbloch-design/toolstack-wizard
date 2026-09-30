@@ -35,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 69, "annualPerMonth": 55, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "50,000 emails/month, unlimited users and senders, email/phone finder, 650M+ leads database, lemAgent, email warm-up, CRM integrations.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "50,000 emails/month, unlimited users and senders, email/phone finder, 650M+ leads database, lemAgent, email warm-up, CRM integrations.", "fr": "50 000 e-mails par mois, utilisateurs et expéditeurs illimités, recherche d'e-mails/téléphones, base de plus de 650 millions de leads, lemAgent, préchauffage des e-mails, intégrations CRM.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 109, "annualPerMonth": 87, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited emails and messages; all Email plan features plus up to 5 senders per user, LinkedIn automation, SMS, WhatsApp add-on, and a built-in call dialer.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Unlimited emails and messages; all Email plan features plus up to 5 senders per user, LinkedIn automation, SMS, WhatsApp add-on, and a built-in call dialer.", "fr": "E-mails et messages illimités ; toutes les fonctionnalités de l'offre Email plus jusqu'à 5 expéditeurs par utilisateur, automatisation LinkedIn, SMS, module complémentaire WhatsApp et un numéroteur d'appels intégré.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,14 +55,14 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Multichannel features plus 5+ senders per user, CRM integration, custom roles, dedicated account manager, SSO/SAML, priority support.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Multichannel features plus 5+ senders per user, CRM integration, custom roles, dedicated account manager, SSO/SAML, priority support.", "fr": "Fonctionnalités multicanal plus 5 expéditeurs ou plus par utilisateur, intégration CRM, rôles personnalisés, chargé de compte dédié, SSO/SAML, support prioritaire.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "email",
     "addOns": [
-      { "en": "Lead Data Enrichment: $16/month for 2,000 credits (about 400 emails or 100 phone numbers).", "sourceIds": ["s1"] },
-      { "en": "Buying Intent Signals: $21/month for 100 signals/month.", "sourceIds": ["s1"] }
+      { "en": "Lead Data Enrichment: $16/month for 2,000 credits (about 400 emails or 100 phone numbers).", "fr": "Enrichissement des données de leads : 16 $/mois pour 2 000 crédits (environ 400 e-mails ou 100 numéros de téléphone).", "sourceIds": ["s1"] },
+      { "en": "Buying Intent Signals: $21/month for 100 signals/month.", "fr": "Signaux d'intention d'achat : 21 $/mois pour 100 signaux par mois.", "sourceIds": ["s1"] }
     ],
     "cautions": [
       { "en": "The Email plan is billed per account with unlimited users, while the Multichannel plan switches to per-user billing; comparing the two by seat count is not apples-to-apples.", "fr": "Le plan Email est facturé par compte avec des utilisateurs illimités, tandis que Multichannel passe à une facturation par utilisateur ; comparer les deux par nombre de sièges n'est pas équitable.", "sourceIds": ["s1"] }

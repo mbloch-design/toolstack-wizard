@@ -40,7 +40,7 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "Free plan includes a limited monthly generative credit allowance; exact current figure not confirmed on an official page reachable within budget.",
+      "limits": { "en": "Free plan includes a limited monthly generative credit allowance; exact current figure not confirmed on an official page reachable within budget.", "fr": "L'offre gratuite comprend un quota mensuel limité de crédits génératifs ; le chiffre exact n'a pas pu être confirmé sur une page officielle accessible dans le budget imparti." },
       "sourceIds": [
         "s2"
       ]

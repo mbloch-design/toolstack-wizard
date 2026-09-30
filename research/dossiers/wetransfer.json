@@ -29,7 +29,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "3 GB per transfer, capped at 10 transfers per rolling 30 days, links valid 3 days, individual non-commercial use only, ads shown",
+      "limits": { "en": "3 GB per transfer, capped at 10 transfers per rolling 30 days, links valid 3 days, individual non-commercial use only, ads shown", "fr": "3 Go par transfert, plafonné à 10 transferts sur une période glissante de 30 jours, liens valables 3 jours, usage individuel non commercial uniquement, publicités affichées" },
       "sourceIds": ["s2"]
     },
     "trial": null,

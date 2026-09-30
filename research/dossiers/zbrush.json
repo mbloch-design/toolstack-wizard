@@ -55,7 +55,7 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "ZBrush for iPad free tier: 28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh. No free desktop version.",
+      "limits": { "en": "ZBrush for iPad free tier: 28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh. No free desktop version.", "fr": "Offre gratuite de ZBrush pour iPad : 28 brosses, Dynamesh/SculptrisPro/ZSpheres/ZRemesher limités, maximum 20 millions de polygones par maillage. Pas de version bureau gratuite." },
       "sourceIds": [
         "s2"
       ]

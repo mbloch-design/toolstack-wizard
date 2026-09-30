@@ -40,7 +40,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "500 free macOS M2 build minutes per month, 1 parallel build, community support only",
+      "limits": { "en": "500 free macOS M2 build minutes per month, 1 parallel build, community support only", "fr": "500 minutes de build macOS M2 gratuites par mois, 1 build en parallèle, support communautaire uniquement" },
       "sourceIds": [
         "s1"
       ]
@@ -60,7 +60,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "500 macOS M2 build minutes per month, 1 parallel build, 30-day build history, 1 team member.",
+            "en": "500 macOS M2 build minutes per month, 1 parallel build, 30-day build history, 1 team member.", "fr": "500 minutes de build macOS M2 par mois, 1 build en parallèle, historique de build sur 30 jours, 1 membre d'équipe.",
             "sourceIds": [
               "s1"
             ]
@@ -83,7 +83,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Usage-based: $0.045/min Linux or Windows, $0.095/min Mac mini M2, $0.114/min Mac mini M4; unlimited team members, 60-day build history, $49/month per extra concurrency.",
+            "en": "Usage-based: $0.045/min Linux or Windows, $0.095/min Mac mini M2, $0.114/min Mac mini M4; unlimited team members, 60-day build history, $49/month per extra concurrency.", "fr": "Facturation à l'usage : 0,045 $/min sur Linux ou Windows, 0,095 $/min sur Mac mini M2, 0,114 $/min sur Mac mini M4 ; membres d'équipe illimités, historique de build sur 60 jours, 49 $/mois par concurrence supplémentaire.",
             "sourceIds": [
               "s1"
             ]
@@ -106,7 +106,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Billed as $3,990/year (about $332.50/month equivalent), 3 concurrent builds included, 1-year build history.",
+            "en": "Billed as $3,990/year (about $332.50/month equivalent), 3 concurrent builds included, 1-year build history.", "fr": "Facturé 3 990 $/an (soit environ 332,50 $/mois), 3 builds simultanés inclus, historique de build sur 1 an.",
             "sourceIds": [
               "s1"
             ]
@@ -129,7 +129,7 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Starting at $12,000/year, custom configuration, SSO, priority support and dedicated account management.",
+            "en": "Starting at $12,000/year, custom configuration, SSO, priority support and dedicated account management.", "fr": "À partir de 12 000 $/an, configuration sur mesure, SSO, support prioritaire et gestion de compte dédiée.",
             "sourceIds": [
               "s1"
             ]

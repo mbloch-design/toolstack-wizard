@@ -30,7 +30,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "1 active project, up to 20 people, 1 GB storage, no time limit",
+      "limits": { "en": "1 active project, up to 20 people, 1 GB storage, no time limit", "fr": "1 projet actif, jusqu'à 20 personnes, 1 Go de stockage, sans limite de durée" },
       "sourceIds": ["s1", "s4"]
     },
     "trial": { "days": 30, "sourceIds": ["s1", "s4"] },

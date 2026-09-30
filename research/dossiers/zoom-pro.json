@@ -25,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "40-minute meeting limit, 100 participants, 3 AI meeting summaries/month, 20 AI queries/month, 3 whiteboards", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "40-minute meeting limit, 100 participants, 3 AI meeting summaries/month, 20 AI queries/month, 3 whiteboards", "fr": "Réunions limitées à 40 minutes, 100 participants, 3 résumés de réunion IA par mois, 20 requêtes IA par mois, 3 tableaux blancs" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

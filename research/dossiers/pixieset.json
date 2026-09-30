@@ -40,7 +40,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "3 GB storage, unlimited galleries, up to 3 mobile apps, 15% commission on store sales",
+      "limits": { "en": "3 GB storage, unlimited galleries, up to 3 mobile apps, 15% commission on store sales", "fr": "3 Go de stockage, galeries illimitées, jusqu'à 3 applications mobiles, commission de 15 % sur les ventes en boutique" },
       "sourceIds": [
         "s1"
       ]
@@ -60,7 +60,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "3 GB storage; 15% commission on print/digital sales; no credit card required.",
+            "en": "3 GB storage; 15% commission on print/digital sales; no credit card required.", "fr": "3 Go de stockage ; commission de 15 % sur les ventes de tirages/numérique ; sans carte bancaire requise.",
             "sourceIds": [
               "s1"
             ]
@@ -83,7 +83,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "10 GB photo storage + 30 minutes HD video, custom domain, full-resolution downloads, 100 emails/month, commission-free sales.",
+            "en": "10 GB photo storage + 30 minutes HD video, custom domain, full-resolution downloads, 100 emails/month, commission-free sales.", "fr": "10 Go de stockage photo + 30 minutes de vidéo HD, domaine personnalisé, téléchargements en pleine résolution, 100 e-mails par mois, ventes sans commission.",
             "sourceIds": [
               "s1"
             ]
@@ -106,7 +106,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "100 GB storage with video support, 500 emails/month.",
+            "en": "100 GB storage with video support, 500 emails/month.", "fr": "100 Go de stockage avec prise en charge vidéo, 500 e-mails par mois.",
             "sourceIds": [
               "s1"
             ]
@@ -129,7 +129,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "1 TB photo storage, RAW support, bulk share collections, email campaigns, commission-free sales.",
+            "en": "1 TB photo storage, RAW support, bulk share collections, email campaigns, commission-free sales.", "fr": "1 To de stockage photo, prise en charge du RAW, partage de collections en masse, campagnes e-mail, ventes sans commission.",
             "sourceIds": [
               "s1"
             ]
@@ -152,7 +152,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Unlimited photo storage (RAW capped at 1 TB), video support, 10,000 emails/month.",
+            "en": "Unlimited photo storage (RAW capped at 1 TB), video support, 10,000 emails/month.", "fr": "Stockage photo illimité (RAW plafonné à 1 To), prise en charge vidéo, 10 000 e-mails par mois.",
             "sourceIds": [
               "s1"
             ]

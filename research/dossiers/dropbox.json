@@ -27,7 +27,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Basic plan: 2 GB storage, store and share files." }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Basic plan: 2 GB storage, store and share files.", "fr": "Offre Basic : 2 Go de stockage, pour stocker et partager des fichiers." }, "sourceIds": ["s1"] },
     "trial": { "days": 30, "sourceIds": ["s1"] },
     "plans": [
       {

@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Up to 250 active profiles, 500 email sends/month, $5/month SMS credit, email support limited to first 60 days", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Up to 250 active profiles, 500 email sends/month, $5/month SMS credit, email support limited to first 60 days", "fr": "Jusqu'à 250 profils actifs, 500 envois d'e-mails par mois, 5 $ de crédit SMS par mois, support par e-mail limité aux 60 premiers jours" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

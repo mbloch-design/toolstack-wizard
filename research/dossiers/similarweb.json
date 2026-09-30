@@ -28,7 +28,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": "No standing free plan; the public site exposes only a limited free traffic-overview lookup tool, not an account tier.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": false, "limits": { "en": "No standing free plan; the public site exposes only a limited free traffic-overview lookup tool, not an account tier.", "fr": "Pas d'offre gratuite permanente ; le site public propose uniquement un outil limité et gratuit d'aperçu du trafic, sans niveau de compte associé." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

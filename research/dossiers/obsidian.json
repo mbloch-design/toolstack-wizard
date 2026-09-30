@@ -62,8 +62,8 @@
     ],
     "comparePlanKey": "sync",
     "addOns": [
-      { "en": "Catalyst one-time support license: $25 (beta access, community badge)", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Commercial license: $50/user/year, optional (commercial use of the free app does not require it)", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Catalyst one-time support license: $25 (beta access, community badge)", "fr": "Licence de soutien Catalyst à paiement unique : 25 $ (accès bêta, badge communautaire)", "fr": null, "sourceIds": ["s1"] },
+      { "en": "Commercial license: $50/user/year, optional (commercial use of the free app does not require it)", "fr": "Licence commerciale : 50 $ par utilisateur et par an, optionnelle (l'usage commercial de l'application gratuite ne l'impose pas)", "fr": null, "sourceIds": ["s1"] }
     ],
     "cautions": [
       { "en": "Obsidian's core note-taking app is free even for commercial use; Sync and Publish are the only recurring paid services and are optional.", "fr": "L'application principale de prise de notes est gratuite même pour un usage commercial ; Sync et Publish sont les seuls services payants récurrents et restent optionnels.", "sourceIds": ["s1"] }

@@ -25,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "global",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Fully free on all GitHub plans, for both public and private repositories, no usage limits", "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "Fully free on all GitHub plans, for both public and private repositories, no usage limits", "fr": "Entièrement gratuit sur toutes les offres GitHub, pour les dépôts publics comme privés, sans limite d'utilisation" }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {

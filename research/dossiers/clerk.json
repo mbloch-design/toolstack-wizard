@@ -25,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Up to 50,000 monthly retained users per app, up to 3 dashboard seats, fixed 7-day session lifetime, no credit card required", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Up to 50,000 monthly retained users per app, up to 3 dashboard seats, fixed 7-day session lifetime, no credit card required", "fr": "Jusqu'à 50 000 utilisateurs actifs mensuels retenus par application, jusqu'à 3 sièges de tableau de bord, durée de session fixe de 7 jours, sans carte bancaire requise" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

@@ -24,7 +24,7 @@
     "verifiedOn": "2026-09-25",
     "region": "EU",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Unlimited pages/blocks for individuals (limited for 2+ members), 5MB file uploads, 7-day page history, 10 guests", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Unlimited pages/blocks for individuals (limited for 2+ members), 5MB file uploads, 7-day page history, 10 guests", "fr": "Pages/blocs illimités pour un usage individuel (limité à partir de 2 membres), fichiers de 5 Mo maximum, historique des pages sur 7 jours, 10 invités" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

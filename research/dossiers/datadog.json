@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Up to 5 hosts, 1-day metric retention (Infrastructure Free)", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Up to 5 hosts, 1-day metric retention (Infrastructure Free)", "fr": "Jusqu'à 5 hôtes, rétention des métriques sur 1 jour (offre Infrastructure gratuite)" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

@@ -40,7 +40,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "125 one-time credits, 5GB storage, exploration-only",
+      "limits": { "en": "125 one-time credits, 5GB storage, exploration-only", "fr": "125 crédits ponctuels, 5 Go de stockage, usage exploratoire uniquement" },
       "sourceIds": [
         "s1"
       ]
@@ -60,7 +60,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "125 one-time credits (not monthly), 5GB storage.",
+            "en": "125 one-time credits (not monthly), 5GB storage.", "fr": "125 crédits ponctuels (non renouvelés chaque mois), 5 Go de stockage.",
             "sourceIds": [
               "s1"
             ]
@@ -83,7 +83,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "625 credits/month, 5 parallel generations, 3 projects, no watermarks, 4K upscaling, 20GB storage.",
+            "en": "625 credits/month, 5 parallel generations, 3 projects, no watermarks, 4K upscaling, 20GB storage.", "fr": "625 crédits par mois, 5 générations en parallèle, 3 projets, sans filigrane, upscaling 4K, 20 Go de stockage.",
             "sourceIds": [
               "s1"
             ]
@@ -106,7 +106,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "2,250 credits/month, 15 parallel generations, 5 projects, 1 Brand Kit, 1 voice clone, credit top-ups available, 100GB storage.",
+            "en": "2,250 credits/month, 15 parallel generations, 5 projects, 1 Brand Kit, 1 voice clone, credit top-ups available, 100GB storage.", "fr": "2 250 crédits par mois, 15 générations en parallèle, 5 projets, 1 kit de marque, 1 clone vocal, recharges de crédits disponibles, 100 Go de stockage.",
             "sourceIds": [
               "s1"
             ]
@@ -129,7 +129,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "9,500 credits/month with 1-month rollover, 20 parallel generations, 10 projects, 3 Brand Kits, 3 voice clones, studio-grade HDR/ProRes output, 500GB storage.",
+            "en": "9,500 credits/month with 1-month rollover, 20 parallel generations, 10 projects, 3 Brand Kits, 3 voice clones, studio-grade HDR/ProRes output, 500GB storage.", "fr": "9 500 crédits par mois avec report d'un mois, 20 générations en parallèle, 10 projets, 3 kits de marque, 3 clones vocaux, export HDR/ProRes qualité studio, 500 Go de stockage.",
             "sourceIds": [
               "s1"
             ]

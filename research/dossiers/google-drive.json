@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "15 GB shared across Drive, Gmail, and Google Photos", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "15 GB shared across Drive, Gmail, and Google Photos", "fr": "15 Go partagés entre Drive, Gmail et Google Photos" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

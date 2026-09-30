@@ -27,7 +27,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Houdini Apprentice: non-commercial use only, near-full feature access, watermarked renders and file format restricted to Apprentice-only files.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Houdini Apprentice: non-commercial use only, near-full feature access, watermarked renders and file format restricted to Apprentice-only files.", "fr": "Houdini Apprentice : usage non commercial uniquement, accès quasi complet aux fonctionnalités, rendus filigranés et format de fichier limité aux fichiers Apprentice." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

@@ -28,7 +28,7 @@
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
-      "limits": "Experience Analytics (heatmaps + session replay): 200,000 sessions/month, 1 project. Includes 100 survey responses/month and 5 user interviews/month (Voice of Customer free tier).",
+      "limits": { "en": "Experience Analytics (heatmaps + session replay): 200,000 sessions/month, 1 project. Includes 100 survey responses/month and 5 user interviews/month (Voice of Customer free tier).", "fr": "Experience Analytics (heatmaps + relecture de sessions) : 200 000 sessions par mois, 1 projet. Inclut 100 réponses d'enquête par mois et 5 entretiens utilisateurs par mois (offre gratuite Voice of Customer)." },
       "sourceIds": ["s1", "s3"]
     },
     "trial": null,

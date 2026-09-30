@@ -25,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.", "fr": "Corrections d'orthographe et de grammaire, détection du ton d'écriture, et 100 requêtes IA par mois." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.", "fr": "Corrections d'orthographe et de grammaire, détection du ton d'écriture, et 100 requêtes IA par mois.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 12, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Full sentence rewrites, tone adjustment, fluency suggestions, plagiarism and AI-generated-text detection, 2,000 AI prompts/member/month, account roles, up to 2 user groups and 1 style guide/brand tone, team analytics.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Full sentence rewrites, tone adjustment, fluency suggestions, plagiarism and AI-generated-text detection, 2,000 AI prompts/member/month, account roles, up to 2 user groups and 1 style guide/brand tone, team analytics.", "fr": "Réécriture complète des phrases, ajustement du ton, suggestions de fluidité, détection du plagiat et du texte généré par IA, 2 000 requêtes IA par membre et par mois, rôles de compte, jusqu'à 2 groupes d'utilisateurs et 1 guide de style/ton de marque, statistiques d'équipe.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Everything in Pro plus proactive AI, dedicated support, BYOK encryption, custom roles, data loss prevention, SAML SSO, SCIM, managed mode, unlimited prompts/style guides/brand tones/user groups, and advanced security controls (confidential mode, audit logs, session timeout).", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Everything in Pro plus proactive AI, dedicated support, BYOK encryption, custom roles, data loss prevention, SAML SSO, SCIM, managed mode, unlimited prompts/style guides/brand tones/user groups, and advanced security controls (confidential mode, audit logs, session timeout).", "fr": "Tout ce qui est inclus dans Pro, plus l'IA proactive, un support dédié, le chiffrement BYOK, des rôles personnalisés, la prévention de perte de données, le SSO SAML, SCIM, le mode géré, des requêtes/guides de style/tons de marque/groupes d'utilisateurs illimités, et des contrôles de sécurité avancés (mode confidentiel, journaux d'audit, expiration de session).", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],

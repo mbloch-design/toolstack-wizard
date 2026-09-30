@@ -26,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Free plan includes over 1,000 assets and the 4 time-saving tools, versus 6,000+ assets on the paid subscription; brief also notes a library limit of up to 500 items on the free tier per the seed data.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Free plan includes over 1,000 assets and the 4 time-saving tools, versus 6,000+ assets on the paid subscription; brief also notes a library limit of up to 500 items on the free tier per the seed data.", "fr": "L'offre gratuite comprend plus de 1 000 assets et les 4 outils de gain de temps, contre plus de 6 000 assets sur l'abonnement payant ; le brief mentionne aussi une limite de bibliothèque allant jusqu'à 500 éléments sur l'offre gratuite selon les données sources." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

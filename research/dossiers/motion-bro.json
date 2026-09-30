@@ -25,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Motion Bro plugin itself is free with no paid tier; only individual asset packs and bundles are paid", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Motion Bro plugin itself is free with no paid tier; only individual asset packs and bundles are paid", "fr": "Le plugin Motion Bro en lui-même est gratuit, sans offre payante ; seuls les packs d'assets individuels et les bundles sont payants" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {

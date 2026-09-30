@@ -33,7 +33,7 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "Fully free and open source, no paid tier",
+      "limits": { "en": "Fully free and open source, no paid tier", "fr": "Entièrement gratuit et open source, sans offre payante" },
       "sourceIds": [
         "s1"
       ]
@@ -53,7 +53,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Free React (and Angular/Vue variants) component library, no paid tier or hosted service.",
+            "en": "Free React (and Angular/Vue variants) component library, no paid tier or hosted service.", "fr": "Bibliothèque de composants React (et variantes Angular/Vue) gratuite, sans offre payante ni service hébergé.",
             "sourceIds": [
               "s1"
             ]

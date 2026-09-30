@@ -27,7 +27,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "Full editor, 1 infinite scene, unlimited collaborators, export to PNG/SVG, local libraries, E2EE, open source", "sourceIds": ["s3"] },
+    "freePlan": { "exists": true, "limits": { "en": "Full editor, 1 infinite scene, unlimited collaborators, export to PNG/SVG, local libraries, E2EE, open source", "fr": "Éditeur complet, 1 scène infinie, collaborateurs illimités, export PNG/SVG, bibliothèques locales, chiffrement de bout en bout, open source" }, "sourceIds": ["s3"] },
     "trial": { "days": 14, "sourceIds": ["s3"] },
     "plans": [
       {
