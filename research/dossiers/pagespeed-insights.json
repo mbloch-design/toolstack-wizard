@@ -3,7 +3,7 @@
   "slug": "pagespeed-insights",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "PageSpeed Insights",
     "vendor": "Google LLC",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://developers.google.com/speed/docs/insights/v5/about", "tier": 1, "accessedOn": "2026-09-25", "title": "PageSpeed Insights - about" }
+    {
+      "id": "s1",
+      "url": "https://developers.google.com/speed/docs/insights/v5/about",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "PageSpeed Insights - about"
+    }
   ],
   "pricing": {
     "model": "free",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,10 +44,21 @@
         "name": "Free",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "No paid tier exists; the tool and its API are free to use.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "No paid tier exists; the tool and its API are free to use.",
+            "fr": "Aucun palier payant : l'outil et son API sont gratuits."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "free",
@@ -44,24 +67,186 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Reports on the user experience of a page on mobile and desktop, and suggests concrete improvements.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Combines real-world field data (Chrome User Experience Report) with lab data (Lighthouse simulation).", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Scores pages against Core Web Vitals: Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint, plus FCP, Speed Index and Total Blocking Time.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Reports on the user experience of a page on mobile and desktop, and suggests concrete improvements.",
+        "fr": "Analyse l'expérience utilisateur d'une page sur mobile et desktop, et propose des améliorations concrètes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Combines real-world field data (Chrome User Experience Report) with lab data (Lighthouse simulation).",
+        "fr": "Combine des données réelles de terrain (Chrome User Experience Report) avec des données de laboratoire (simulation Lighthouse).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Scores pages against Core Web Vitals: Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint, plus FCP, Speed Index and Total Blocking Time.",
+        "fr": "Note les pages sur les Core Web Vitals : Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint, plus FCP, Speed Index et Total Blocking Time.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Field (real-user) data is only available for pages that are publicly crawlable and indexable, and have enough CrUX traffic.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Testing locations are limited to a few regions (North America, Europe, Asia), which may not reflect performance for other audiences.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Field (real-user) data is only available for pages that are publicly crawlable and indexable, and have enough CrUX traffic.",
+        "fr": "Les données de terrain (utilisateurs réels) ne sont disponibles que pour les pages publiquement crawlables et indexables, avec assez de trafic dans CrUX.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Testing locations are limited to a few regions (North America, Europe, Asia), which may not reflect performance for other audiences.",
+        "fr": "Les emplacements de test sont limités à quelques régions (Amérique du Nord, Europe, Asie), ce qui peut ne pas refléter la performance pour d'autres audiences.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "grafana", "reason": { "en": "General performance/observability dashboarding, broader than a single-page audit.", "fr": "…" } }
+    {
+      "slug": "grafana",
+      "reason": {
+        "en": "General performance/observability dashboarding, broader than a single-page audit.",
+        "fr": "Tableaux de bord de performance et d'observabilité généraux, plus larges qu'un audit d'une seule page."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "WebPageTest", "officialUrl": "https://www.webpagetest.org", "reason": "Main independent alternative for detailed web performance testing, not in the catalogue." },
-    { "name": "GTmetrix", "officialUrl": "https://gtmetrix.com", "reason": "Popular free/paid page speed auditing tool, not in the catalogue." }
+    {
+      "name": "WebPageTest",
+      "officialUrl": "https://www.webpagetest.org",
+      "reason": "Main independent alternative for detailed web performance testing, not in the catalogue."
+    },
+    {
+      "name": "GTmetrix",
+      "officialUrl": "https://gtmetrix.com",
+      "reason": "Popular free/paid page speed auditing tool, not in the catalogue."
+    }
   ],
-  "unknowns": ["Exact PageSpeed Insights API rate limits and quota tiers were not detailed on the fetched page."],
-  "conflicts": []
+  "unknowns": [
+    "Exact PageSpeed Insights API rate limits and quota tiers were not detailed on the fetched page."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Completely free with no paid tier at all, for a report that scores real Core Web Vitals and suggests concrete fixes, a strong return for zero cost.",
+        "fr": "Entièrement gratuit, sans aucun palier payant, pour un rapport qui note les vrais Core Web Vitals et propose des corrections concrètes, un excellent retour pour un coût nul.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Entering a URL returns a usable report immediately, combining field and lab data with no setup or account needed.",
+        "fr": "Saisir une URL renvoie immédiatement un rapport exploitable, combinant données de terrain et de laboratoire, sans configuration ni compte nécessaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It scores real Core Web Vitals metrics and gives concrete suggestions as promised, though field data is unavailable for pages without enough CrUX traffic.",
+        "fr": "L'outil note les vrais Core Web Vitals et donne des suggestions concrètes comme promis, mais les données de terrain sont indisponibles pour les pages sans assez de trafic dans CrUX.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers a solid set of Core Web Vitals and diagnostics, but stays a single-page audit tool, not a broader monitoring or dashboarding platform.",
+        "fr": "Couvre un bon ensemble de Core Web Vitals et de diagnostics, mais reste un outil d'audit d'une seule page, pas une plateforme de monitoring ou de tableaux de bord plus large.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: since it's a free diagnostic tool with no stored account data to migrate, portability isn't meaningfully covered by the collected sources.",
+        "fr": "Note neutre : s'agissant d'un outil de diagnostic gratuit sans donnée de compte stockée à migrer, la portabilité n'est pas vraiment couverte par les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Consultants and site owners who need a quick, free Core Web Vitals report to diagnose and justify page speed fixes for a client site.",
+      "fr": "Consultants et propriétaires de site qui ont besoin d'un rapport Core Web Vitals rapide et gratuit pour diagnostiquer et justifier des corrections de vitesse sur un site client."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: run a client's homepage through PageSpeed Insights to get a concrete list of Core Web Vitals issues before a redesign.",
+      "fr": "Cas d'usage : passer la page d'accueil d'un client dans PageSpeed Insights pour obtenir une liste concrète de problèmes Core Web Vitals avant une refonte."
+    },
+    {
+      "en": "Use case: compare field data (CrUX) against lab data (Lighthouse) on a page to see whether real visitors experience the same slowness as the simulated test.",
+      "fr": "Cas d'usage : comparer les données de terrain (CrUX) aux données de laboratoire (Lighthouse) sur une page pour voir si les vrais visiteurs vivent la même lenteur que le test simulé."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Page speed audit",
+      "fr": "Audit de vitesse"
+    },
+    "shortDescription": {
+      "en": "Free Google tool that scores a page's Core Web Vitals using real-user and lab data, with concrete improvement suggestions.",
+      "fr": "Outil gratuit de Google qui note les Core Web Vitals d'une page avec des données réelles et de laboratoire, et propose des corrections concrètes."
+    },
+    "longDescription": {
+      "en": "PageSpeed Insights reports on a page's user experience on mobile and desktop, combining real-world field data from the Chrome User Experience Report with lab data from a Lighthouse simulation. It scores Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint) plus FCP, Speed Index and Total Blocking Time, and suggests concrete fixes.\n\nIt's entirely free, with no paid tier. Field data only exists for pages that are publicly crawlable with enough real traffic, and test locations are limited to a few regions. It fits anyone who needs a fast, free performance diagnosis of a specific page, not a full ongoing monitoring platform.",
+      "fr": "PageSpeed Insights analyse l'expérience utilisateur d'une page sur mobile et desktop, en combinant des données réelles du Chrome User Experience Report avec des données de laboratoire issues d'une simulation Lighthouse. Il note les Core Web Vitals (Largest Contentful Paint, Cumulative Layout Shift, Interaction to Next Paint) plus FCP, Speed Index et Total Blocking Time, et propose des corrections concrètes.\n\nIl est entièrement gratuit, sans palier payant. Les données de terrain n'existent que pour les pages publiquement crawlables avec assez de trafic réel, et les emplacements de test sont limités à quelques régions. Il convient à quiconque a besoin d'un diagnostic de performance rapide et gratuit sur une page précise, pas d'une plateforme de monitoring continu complète."
+    },
+    "pros": [
+      {
+        "en": "Completely free with no account or paid tier needed.",
+        "fr": "Entièrement gratuit, sans compte ni palier payant nécessaire."
+      },
+      {
+        "en": "Combines real-user field data with lab data for a fuller picture than a simulation alone.",
+        "fr": "Combine des données réelles de terrain avec des données de laboratoire, pour une vision plus complète qu'une simple simulation."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Field data is missing for pages without enough real-user traffic in CrUX.",
+        "fr": "Les données de terrain manquent pour les pages sans assez de trafic réel dans CrUX."
+      },
+      {
+        "en": "Test locations are limited to a few regions, which may not match every audience.",
+        "fr": "Les emplacements de test sont limités à quelques régions, ce qui peut ne pas correspondre à toutes les audiences."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a quick, free, credible Core Web Vitals report for a specific page.",
+        "fr": "Tu as besoin d'un rapport Core Web Vitals rapide, gratuit et crédible pour une page précise."
+      },
+      "avoidIf": {
+        "en": "You need continuous monitoring across many pages or regions beyond what a single-page, single-run report covers.",
+        "fr": "Tu as besoin d'un monitoring continu sur beaucoup de pages ou de régions, au-delà de ce que couvre un rapport ponctuel sur une seule page."
+      },
+      "threshold": {
+        "en": "There's no price threshold: it's free either way, so the decision is about scope (single page vs. ongoing monitoring), not cost.",
+        "fr": "Il n'y a pas de seuil de prix : c'est gratuit dans tous les cas, donc la décision porte sur le périmètre (une page vs. un monitoring continu), pas sur le coût."
+      }
+    }
+  },
+  "reviewNotes": []
 }

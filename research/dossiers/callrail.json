@@ -3,7 +3,8 @@
   "slug": "callrail",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "CallRail",
     "vendor": "CallRail, Inc.",
@@ -34,7 +35,12 @@
         "minSeats": 1,
         "price": { "monthly": 50, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 local numbers, 250 minutes, 25 SMS included; call & text tracking, recording, routing, transcription, automation rules." }],
+        "keyLimits": [
+          {
+            "en": "5 local numbers, 250 minutes, 25 SMS included; call & text tracking, recording, routing, transcription, automation rules.",
+            "fr": "5 numéros locaux, 250 minutes, 25 SMS inclus ; suivi des appels et SMS, enregistrement, routage, transcription, règles d'automatisation."
+          }
+        ],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +50,12 @@
         "minSeats": 1,
         "price": { "monthly": 95, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds 1,000 form submissions, form tracking & attribution, custom form builder, multi-touch CPL reporting." }],
+        "keyLimits": [
+          {
+            "en": "Adds 1,000 form submissions, form tracking & attribution, custom form builder, multi-touch CPL reporting.",
+            "fr": "Ajoute 1 000 soumissions de formulaires, le suivi et l'attribution de formulaires, un créateur de formulaires personnalisé, et le reporting CPL multi-touch."
+          }
+        ],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +65,12 @@
         "minSeats": 1,
         "price": { "monthly": 150, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "10,000 analysis/transcription minutes; call summaries, sentiment analysis, conversation trends, automatic conversion tagging, coaching tools." }],
+        "keyLimits": [
+          {
+            "en": "10,000 analysis/transcription minutes; call summaries, sentiment analysis, conversation trends, automatic conversion tagging, coaching tools.",
+            "fr": "10 000 minutes d'analyse/transcription ; résumés d'appels, analyse de sentiment, tendances de conversation, tag automatique des conversions, outils de coaching."
+          }
+        ],
         "sourceIds": ["s1"]
       },
       {
@@ -64,39 +80,185 @@
         "minSeats": 1,
         "price": { "monthly": 195, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Combines all features and maximum included usage from lower tiers." }],
+        "keyLimits": [
+          {
+            "en": "Combines all features and maximum included usage from lower tiers.",
+            "fr": "Combine toutes les fonctionnalités et l'usage inclus maximal des forfaits inférieurs."
+          }
+        ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "lead-tracking",
     "addOns": [
-      { "en": "AI Voice Assistant from $95/month, requiring the $55 Lead Tracking add-on minimum; includes 50 calls, then $1/call.", "sourceIds": ["s1"] }
+      {
+        "en": "AI Voice Assistant from $95/month, requiring the $55 Lead Tracking add-on minimum; includes 50 calls, then $1/call.",
+        "fr": "Assistant vocal IA à partir de 95 $/mois, nécessitant au minimum l'add-on Lead Tracking à 55 $ ; inclut 50 appels, puis 1 $/appel.",
+        "sourceIds": ["s1"]
+      }
     ],
     "cautions": [
-      { "en": "Usage overages billed separately: local minutes $0.05-0.06 each, extra local numbers $3 each, toll-free numbers $5 each, SMS $0.03 each, form submissions $0.02 each.", "sourceIds": ["s1"] }
+      {
+        "en": "Usage overages billed separately: local minutes $0.05-0.06 each, extra local numbers $3 each, toll-free numbers $5 each, SMS $0.03 each, form submissions $0.02 each.",
+        "fr": "Les dépassements d'usage sont facturés séparément : minutes locales 0,05-0,06 $ chacune, numéros locaux supplémentaires 3 $ chacun, numéros gratuits 5 $ chacun, SMS 0,03 $ chacun, soumissions de formulaires 0,02 $ chacune.",
+        "sourceIds": ["s1"]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Call tracking with dynamic number insertion to attribute inbound calls to marketing sources.", "sourceIds": ["s1"] },
-      { "en": "Call recording, transcription and AI-driven sentiment/conversation analysis on higher tiers.", "sourceIds": ["s1"] },
-      { "en": "Form tracking and multi-touch conversion attribution on the Complete plans.", "sourceIds": ["s1"] },
-      { "en": "Public API with tiered pricing (free up to 1,500 calls/month, then paid tiers up to 300,000 calls).", "sourceIds": ["s1"] }
+      {
+        "en": "Call tracking with dynamic number insertion to attribute inbound calls to marketing sources.",
+        "fr": "Suivi d'appels avec insertion dynamique de numéros pour attribuer les appels entrants aux sources marketing.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Call recording, transcription and AI-driven sentiment/conversation analysis on higher tiers.",
+        "fr": "Enregistrement des appels, transcription et analyse de sentiment et de conversation pilotée par IA sur les forfaits supérieurs.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Form tracking and multi-touch conversion attribution on the Complete plans.",
+        "fr": "Suivi de formulaires et attribution de conversion multi-touch sur les forfaits Complete.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Public API with tiered pricing (free up to 1,500 calls/month, then paid tiers up to 300,000 calls).",
+        "fr": "API publique avec tarification par palier (gratuite jusqu'à 1 500 appels par mois, puis forfaits payants jusqu'à 300 000 appels).",
+        "sourceIds": ["s1"]
+      }
     ],
     "limitations": [
-      { "en": "Entry plan excludes form tracking and conversation-intelligence features, which require upgrading.", "sourceIds": ["s1"] },
-      { "en": "Included usage (minutes, numbers, SMS) is modest and overage fees apply quickly beyond the base allotment.", "sourceIds": ["s1"] }
+      {
+        "en": "Entry plan excludes form tracking and conversation-intelligence features, which require upgrading.",
+        "fr": "Le forfait d'entrée exclut le suivi de formulaires et les fonctions d'intelligence conversationnelle, qui nécessitent une mise à niveau.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Included usage (minutes, numbers, SMS) is modest and overage fees apply quickly beyond the base allotment.",
+        "fr": "L'usage inclus (minutes, numéros, SMS) est modeste et des frais de dépassement s'appliquent rapidement au-delà du forfait de base.",
+        "sourceIds": ["s1"]
+      }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams running marketing campaigns who need to attribute inbound phone calls to the exact channel or ad that generated them.",
+      "fr": "Petites équipes qui gèrent des campagnes marketing et ont besoin d'attribuer les appels entrants au canal ou à la publicité exacte qui les a générés."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a marketing agency assigns a unique tracked number to each ad campaign, so a client can see exactly which ad generated an inbound call.",
+      "fr": "Usage : une agence marketing attribue un numéro suivi unique à chaque campagne publicitaire, pour que le client voie exactement quelle pub a généré un appel entrant."
+    },
+    {
+      "en": "Usage: a sales manager on Lead Conversion reviews AI sentiment analysis on recorded calls to spot which reps need coaching.",
+      "fr": "Usage : un responsable des ventes sur Lead Conversion consulte l'analyse de sentiment par IA sur les appels enregistrés pour repérer les commerciaux à accompagner."
+    }
+  ],
   "alternatives": [
-    { "slug": "hotjar", "reason": { "en": "Overlaps for marketing attribution and conversion analytics, though behavior-tracking rather than call-based." } }
+    {
+      "slug": "hotjar",
+      "reason": {
+        "en": "Overlaps for marketing attribution and conversion analytics, though behavior-tracking rather than call-based.",
+        "fr": "Se recoupe pour l'attribution marketing et l'analytique de conversion, bien que basé sur le comportement plutôt que sur les appels."
+      }
+    }
   ],
   "missingAlternatives": [
     { "name": "WhatConverts", "officialUrl": "https://www.whatconverts.com/", "reason": "Direct call tracking and lead attribution competitor, not in the catalogue." },
     { "name": "Aircall", "officialUrl": "https://aircall.io/", "reason": "Business phone and call analytics competitor; not accepted as an alternatives slug because \"aircall-inc\" is not a recognized catalogue slug." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The $50/month entry plan is reasonable, but form tracking and conversation intelligence require upgrading, and overage fees on minutes, numbers and SMS can add up quickly for an active account.",
+        "fr": "Le forfait d'entrée à 50 $/mois est raisonnable, mais le suivi de formulaires et l'intelligence conversationnelle nécessitent une mise à niveau, et les frais de dépassement sur les minutes, numéros et SMS peuvent vite s'accumuler pour un compte actif.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and ease of first setup are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la facilité de la première configuration ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Dynamic number insertion attributes calls to marketing sources as described, and higher tiers deliver recording, transcription and sentiment analysis without a reported workaround.",
+        "fr": "L'insertion dynamique de numéros attribue les appels aux sources marketing comme décrit, et les forfaits supérieurs livrent enregistrement, transcription et analyse de sentiment sans contournement signalé.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Combining call tracking, AI sentiment analysis, form tracking and multi-touch attribution in one tool covers more ground than a single-purpose call tracker.",
+        "fr": "Combiner le suivi d'appels, l'analyse de sentiment par IA, le suivi de formulaires et l'attribution multi-touch dans un seul outil couvre plus de terrain qu'un simple traceur d'appels.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats and portability of call/attribution history if you leave CallRail are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité de l'historique des appels et de l'attribution en cas de départ de CallRail ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Call tracking, attribution", "fr": "Suivi d'appels, attribution" },
+    "shortDescription": {
+      "en": "Call tracking and attribution tool linking inbound calls to marketing sources, with AI analysis and form tracking on higher tiers.",
+      "fr": "Outil de suivi d'appels et d'attribution qui relie les appels entrants aux sources marketing, avec analyse IA et suivi de formulaires sur les forfaits supérieurs."
+    },
+    "longDescription": {
+      "en": "CallRail uses dynamic number insertion to attribute inbound calls to the marketing channel that generated them, then layers on call recording, transcription and AI-driven sentiment and conversation analysis on higher tiers. Form tracking and multi-touch attribution join calls to the rest of the funnel on the Complete plans.\n\nLead Tracking starts at $50/month with 5 local numbers, 250 minutes and 25 SMS included; form tracking and conversation intelligence require upgrading to $95/month (Lead Tracking Complete) or $150+/month (Lead Conversion). Usage beyond the included allotment is billed separately (extra minutes, numbers, SMS, form submissions), so cost can climb quickly for busier accounts. It suits a marketing-focused small team that needs to prove which channels drive calls, more than a solo freelancer.",
+      "fr": "CallRail utilise l'insertion dynamique de numéros pour attribuer les appels entrants au canal marketing qui les a générés, puis ajoute l'enregistrement, la transcription et l'analyse de sentiment par IA sur les forfaits supérieurs. Le suivi de formulaires et l'attribution multi-touch relient les appels au reste du tunnel sur les forfaits Complete.\n\nLead Tracking démarre à 50 $/mois avec 5 numéros locaux, 250 minutes et 25 SMS inclus ; le suivi de formulaires nécessite 95 $/mois (Lead Tracking Complete) ou 150 $ et plus (Lead Conversion). L'usage au-delà du forfait inclus est facturé séparément, donc le coût peut grimper vite pour les comptes actifs. L'outil convient à une petite équipe marketing qui doit prouver quels canaux génèrent des appels."
+    },
+    "pros": [
+      {
+        "en": "Dynamic number insertion attributes calls to the exact marketing source without manual tracking.",
+        "fr": "L'insertion dynamique de numéros attribue les appels à la source marketing exacte, sans suivi manuel."
+      },
+      {
+        "en": "Public API with a free tier up to 1,500 calls/month for lightweight integrations.",
+        "fr": "API publique avec un palier gratuit jusqu'à 1 500 appels par mois pour des intégrations légères."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Entry plan excludes form tracking and conversation-intelligence features, which require upgrading to a pricier tier.",
+        "fr": "Le forfait d'entrée exclut le suivi de formulaires et les fonctions d'intelligence conversationnelle, qui nécessitent de passer à un forfait plus cher."
+      },
+      {
+        "en": "Included usage (minutes, numbers, SMS) is modest, and overage fees apply quickly beyond the base allotment.",
+        "fr": "L'usage inclus (minutes, numéros, SMS) est modeste, et des frais de dépassement s'appliquent rapidement au-delà du forfait de base."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run marketing campaigns and need to prove which channel (ad, page, campaign) drives a specific phone call.",
+        "fr": "Tu gères des campagnes marketing et as besoin de prouver quel canal (pub, page, campagne) génère un appel précis."
+      },
+      "avoidIf": {
+        "en": "You just need a business phone line without per-call attribution; a plain phone system will cost less.",
+        "fr": "Tu as seulement besoin d'une ligne téléphonique professionnelle sans attribution par appel ; un simple système téléphonique coûtera moins cher."
+      },
+      "threshold": {
+        "en": "Budget at least $50/month (Lead Tracking) as the entry cost; add $45/month more ($95 total) for form tracking and multi-touch attribution.",
+        "fr": "Prévois au moins 50 $/mois (Lead Tracking) comme coût d'entrée ; ajoute 45 $/mois de plus (95 $ au total) pour le suivi de formulaires et l'attribution multi-touch."
+      },
+      "billingTraps": {
+        "en": "Overages are billed per unit beyond the included allotment: local minutes $0.05-0.06 each, extra numbers $3-5 each, SMS $0.03 each, form submissions $0.02 each, so a busy month can cost well above the base price.",
+        "fr": "Les dépassements sont facturés à l'unité au-delà du forfait inclus : minutes locales 0,05-0,06 $ chacune, numéros supplémentaires 3-5 $ chacun, SMS 0,03 $ chacun, soumissions de formulaires 0,02 $ chacune, donc un mois chargé peut coûter bien au-delà du prix de base."
+      }
+    }
+  },
   "unknowns": [
     "Whether a lower-cost entry tier or freemium option exists beyond the 14-day trial was not confirmed."
   ],

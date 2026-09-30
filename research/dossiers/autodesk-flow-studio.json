@@ -3,7 +3,8 @@
   "slug": "autodesk-flow-studio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Autodesk Flow Studio",
     "vendor": "Autodesk, Inc.",
@@ -40,11 +41,10 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Free tier gives access to core AI tools such as AI Mocap and Live Action."
+        "en": "Free tier gives access to core AI tools such as AI Mocap and Live Action.",
+        "fr": "Le palier gratuit donne accès aux outils IA de base comme AI Mocap et Live Action."
       },
-      "sourceIds": [
-        "s2"
-      ]
+      "sourceIds": ["s2"]
     },
     "plans": [
       {
@@ -54,7 +54,12 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Access to core AI tools such as AI Mocap and Live Action, at reduced credits/quality vs paid tiers." }],
+        "keyLimits": [
+          {
+            "en": "Access to core AI tools such as AI Mocap and Live Action, at reduced credits/quality vs paid tiers.",
+            "fr": "Accès aux outils IA de base comme AI Mocap et Live Action, avec des crédits et une qualité réduits par rapport aux forfaits payants."
+          }
+        ],
         "sourceIds": ["s2"]
       },
       {
@@ -62,60 +67,45 @@
         "name": "Lite",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 10,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 10, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "2,100 credits/month, max 1080p resolution, 5 GB storage, 500 MB upload cap, 6 custom character uploads, tracking for 2 actors per project."
+            "en": "2,100 credits/month, max 1080p resolution, 5 GB storage, 500 MB upload cap, 6 custom character uploads, tracking for 2 actors per project.",
+            "fr": "2 100 crédits par mois, résolution maximale 1080p, 5 Go de stockage, plafond d'upload de 500 Mo, 6 imports de personnages personnalisés, suivi de 2 acteurs par projet."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "standard",
         "name": "Standard",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 45,
-          "annualPerMonth": 30,
-          "oneTime": null
-        },
+        "price": { "monthly": 45, "annualPerMonth": 30, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "6,000 credits/month; access to all features except character pass and PNG image sequence export. $360/year equals $30/month equivalent."
+            "en": "6,000 credits/month; access to all features except character pass and PNG image sequence export. $360/year equals $30/month equivalent.",
+            "fr": "6 000 crédits par mois ; accès à toutes les fonctionnalités sauf le character pass et l'export en séquence d'images PNG. 360 $/an équivaut à 30 $/mois."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 95,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 95, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "12,000 credits/month, full feature set including character pass and PNG sequence export."
+            "en": "12,000 credits/month, full feature set including character pass and PNG sequence export.",
+            "fr": "12 000 crédits par mois, ensemble complet des fonctionnalités incluant le character pass et l'export en séquence PNG."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "lite",
@@ -123,15 +113,13 @@
     "cautions": [
       {
         "en": "Enterprise tier is quote-based and not included above.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Le forfait Enterprise est sur devis et n'est pas inclus ci-dessus.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "3-year subscription terms lock in a price and protect against future increases, per vendor messaging.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les abonnements sur 3 ans verrouillent un prix et protègent contre de futures hausses, selon le discours du fournisseur.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -139,59 +127,72 @@
     "capabilities": [
       {
         "en": "Hardware-free motion capture: extracts actor performance from ordinary video without mocap suits.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Capture de mouvement sans matériel : extrait la performance d'un acteur à partir d'une vidéo ordinaire, sans combinaison de mocap.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Automatically animates CG characters onto footage and composites them into the scene with lighting/shadows.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Anime automatiquement des personnages CG sur les images et les compose dans la scène avec un éclairage et des ombres cohérents.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Supports custom character uploads and multi-actor tracking per project.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Prend en charge l'import de personnages personnalisés et le suivi multi-acteurs par projet.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "3D editing tools with creative control over the generated animation, integrated with Autodesk's ecosystem.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Outils d'édition 3D avec contrôle créatif sur l'animation générée, intégrés à l'écosystème Autodesk.",
+        "sourceIds": ["s1"]
       }
     ],
     "limitations": [
       {
         "en": "Standard tier cannot export character passes or PNG image sequences; that requires the Pro tier.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Le forfait Standard ne peut pas exporter de character pass ni de séquences d'images PNG ; cela nécessite le forfait Pro.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Credits and resolution are capped by tier (e.g. Lite is limited to 1080p and 2 tracked actors per project).",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les crédits et la résolution sont plafonnés selon le forfait (par exemple Lite est limité au 1080p et à 2 acteurs suivis par projet).",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Solo filmmakers and small studios who want to animate CG characters from ordinary footage without mocap hardware or a dedicated studio.",
+      "fr": "Cinéastes solo et petits studios qui veulent animer des personnages CG à partir d'images ordinaires, sans matériel de mocap ni studio dédié."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: an indie filmmaker shoots an actor's performance on ordinary video and uses Flow Studio to animate a custom CG creature onto the footage instead of hiring a mocap studio.",
+      "fr": "Usage : un cinéaste indépendant filme la performance d'un acteur en vidéo ordinaire et utilise Flow Studio pour animer une créature CG personnalisée sur les images, au lieu de louer un studio de mocap."
+    },
+    {
+      "en": "Usage: a small studio on the Standard plan tracks two actors in one scene and works within a 6,000-credit month of shots for a short film, staying on the $30/month annual rate.",
+      "fr": "Usage : un petit studio sur le forfait Standard suit deux acteurs dans une même scène et reste dans un mois de 6 000 crédits de plans pour un court métrage, au tarif annuel de 30 $/mois."
+    }
+  ],
   "alternatives": [
     {
       "slug": "move-ai",
       "reason": {
-        "en": "Direct competitor for markerless, hardware-free motion capture and character animation."
+        "en": "Direct competitor for markerless, hardware-free motion capture and character animation.",
+        "fr": "Concurrent direct pour la capture de mouvement sans matériel et l'animation de personnages."
       }
     },
     {
       "slug": "runway",
       "reason": {
-        "en": "Overlaps for AI-assisted video/VFX generation and editing workflows."
+        "en": "Overlaps for AI-assisted video/VFX generation and editing workflows.",
+        "fr": "Se recoupe pour la génération et l'édition vidéo/VFX assistées par IA."
       }
     }
   ],
@@ -202,6 +203,90 @@
       "reason": "Open-source alternative for 3D animation and character rigging, already partially referenced by the catalogue's currentAlternatives but worth a dedicated entry."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Lite starts at $10/month, a low entry price for hardware-free mocap, but the sources give no comparison against buying or renting mocap equipment to weigh the real savings.",
+        "fr": "Lite démarre à 10 $/mois, un prix d'entrée bas pour du mocap sans matériel, mais les sources ne fournissent pas de comparaison avec l'achat ou la location d'équipement de mocap pour évaluer l'économie réelle.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time and skill needed to get a usable first animated shot are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir un premier plan animé utilisable ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Automatically extracts performance and animates a CG character onto footage with matching lighting, matching the core promise as described.",
+        "fr": "Extrait automatiquement la performance et anime un personnage CG sur les images avec un éclairage cohérent, conforme à la promesse principale décrite.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Hardware-free mocap, custom character uploads, multi-actor tracking and 3D editing tools together cover more ground than a simple face-swap or filter tool.",
+        "fr": "Le mocap sans matériel, l'import de personnages personnalisés, le suivi multi-acteurs et les outils d'édition 3D couvrent ensemble plus de terrain qu'un simple outil de filtre ou d'échange de visage.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if you stop subscribing are not covered by the collected sources, beyond the Pro-only PNG sequence export.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas d'arrêt de l'abonnement ne figurent pas dans les sources relevées, au-delà de l'export en séquence PNG réservé à Pro.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI VFX and mocap", "fr": "VFX et mocap IA" },
+    "shortDescription": {
+      "en": "AI motion-capture and VFX tool that animates CG characters onto footage without mocap hardware, with a free tier and paid credit-based tiers.",
+      "fr": "Outil IA de mocap et VFX qui anime des personnages CG sans matériel dédié, avec un palier gratuit et des forfaits à crédits."
+    },
+    "longDescription": {
+      "en": "Autodesk Flow Studio (formerly Wonder Studio) extracts an actor's performance from ordinary video, no mocap suit required, then automatically animates a CG character onto the footage with matching lighting and shadows. It supports custom character uploads, multi-actor tracking and 3D editing tools for creative control.\n\nA free tier gives access to core tools like AI Mocap and Live Action. Paid tiers run on monthly credits: Lite at $10/month (2,100 credits, 1080p cap, 2 tracked actors), Standard at $45/month or $30/month billed annually (6,000 credits, most features), and Pro at $95/month (12,000 credits, full feature set including character pass and PNG sequence export). Enterprise is quote-based. It suits a solo creator or small studio doing character VFX work.",
+      "fr": "Autodesk Flow Studio (anciennement Wonder Studio) extrait la performance d'un acteur d'une vidéo ordinaire, sans combinaison de mocap, puis anime un personnage CG sur les images avec un éclairage cohérent. Il gère les personnages personnalisés, le suivi multi-acteurs et des outils d'édition 3D.\n\nUn palier gratuit donne accès aux outils de base (AI Mocap, Live Action). Les forfaits payants fonctionnent par crédits mensuels : Lite à 10 $/mois (2 100 crédits, plafond 1080p, 2 acteurs), Standard à 45 $/mois ou 30 $/mois en annuel (6 000 crédits), et Pro à 95 $/mois (12 000 crédits, ensemble complet). Enterprise est sur devis. L'outil convient à un créateur solo ou petit studio de VFX."
+    },
+    "pros": [
+      {
+        "en": "Hardware-free motion capture from ordinary video removes the cost and setup of a mocap suit or studio.",
+        "fr": "La capture de mouvement sans matériel à partir d'une vidéo ordinaire supprime le coût et l'installation d'une combinaison ou d'un studio de mocap."
+      },
+      {
+        "en": "Free tier gives real access to core AI Mocap and Live Action tools before paying.",
+        "fr": "Le palier gratuit donne un accès réel aux outils de base AI Mocap et Live Action avant de payer."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Standard tier can't export character passes or PNG image sequences; that needs the $95/month Pro tier.",
+        "fr": "Le forfait Standard ne peut pas exporter de character pass ni de séquences d'images PNG ; cela nécessite le forfait Pro à 95 $/mois."
+      },
+      {
+        "en": "Credits and resolution are capped by tier, e.g. Lite is limited to 1080p and 2 tracked actors per project.",
+        "fr": "Les crédits et la résolution sont plafonnés selon le forfait, par exemple Lite est limité au 1080p et à 2 acteurs suivis par projet."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want to animate CG characters from ordinary footage without mocap hardware, and can work within monthly credit limits.",
+        "fr": "Tu veux animer des personnages CG à partir d'images ordinaires sans matériel de mocap, et tu peux composer avec des limites de crédits mensuelles."
+      },
+      "avoidIf": {
+        "en": "You need character-pass or PNG sequence export on a low budget; that requires the $95/month Pro tier, not Standard.",
+        "fr": "Tu as besoin de l'export character pass ou en séquence PNG avec un petit budget ; cela nécessite le forfait Pro à 95 $/mois, pas Standard."
+      },
+      "threshold": {
+        "en": "Budget at least $10/month (Lite) to get past the free tier, or $45/month ($30/month annually, Standard) for most features short of character pass export.",
+        "fr": "Prévois au moins 10 $/mois (Lite) pour dépasser le palier gratuit, ou 45 $/mois (30 $/mois en annuel, Standard) pour la plupart des fonctionnalités hors export character pass."
+      },
+      "billingTraps": {
+        "en": "3-year subscription terms lock in a price against future increases, per vendor messaging; check whether that commitment suits your usage before signing.",
+        "fr": "Les abonnements sur 3 ans verrouillent un prix contre de futures hausses, selon le discours du fournisseur ; vérifie que cet engagement te convient avant de signer."
+      }
+    }
+  },
   "unknowns": [
     "Enterprise tier pricing and exact quota were not published on the pages accessible (autodesk.com/products/flow-studio/buy returned HTTP 403)."
   ],

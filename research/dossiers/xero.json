@@ -3,7 +3,8 @@
   "slug": "xero",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Xero",
     "vendor": "Xero Limited",
@@ -34,7 +35,12 @@
         "minSeats": 1,
         "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry-level plan; monthly billing only in the US as of March 2026." }],
+        "keyLimits": [
+          {
+            "en": "Entry-level plan; monthly billing only in the US as of March 2026.",
+            "fr": "Forfait d'entrée de gamme ; facturation mensuelle uniquement aux États-Unis depuis mars 2026."
+          }
+        ],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +50,12 @@
         "minSeats": 1,
         "price": { "monthly": 55, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Mid-tier plan, feature limits not detailed on the pricing page fetched." }],
+        "keyLimits": [
+          {
+            "en": "Mid-tier plan, feature limits not detailed on the pricing page fetched.",
+            "fr": "Forfait intermédiaire, limites de fonctionnalités non détaillées sur la page de tarifs consultée."
+          }
+        ],
         "sourceIds": ["s1"]
       },
       {
@@ -54,37 +65,197 @@
         "minSeats": 1,
         "price": { "monthly": 90, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Top-tier plan with the fullest feature set, exact limits not detailed on the page fetched." }],
+        "keyLimits": [
+          {
+            "en": "Top-tier plan with the fullest feature set, exact limits not detailed on the page fetched.",
+            "fr": "Forfait le plus complet, avec les limites exactes non détaillées sur la page consultée."
+          }
+        ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "early",
     "addOns": [],
     "cautions": [
-      { "en": "US prices increase to $27/$59/$97 (Early/Growing/Established) starting October 1, 2026.", "sourceIds": ["s1"] },
-      { "en": "Multi-organization discounts are being phased out starting October 1, 2026.", "sourceIds": ["s1"] },
-      { "en": "A limited-time offer of 90% off the first 6 months was live through September 30, 2026; treat as promotional, not the regular price.", "sourceIds": ["s1"] }
+      {
+        "en": "US prices increase to $27/$59/$97 (Early/Growing/Established) starting October 1, 2026.",
+        "fr": "Les tarifs américains passeront à 27 $/59 $/97 $ (Early/Growing/Established) à partir du 1er octobre 2026.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Multi-organization discounts are being phased out starting October 1, 2026.",
+        "fr": "Les réductions multi-organisations seront supprimées progressivement à partir du 1er octobre 2026.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "A limited-time offer of 90% off the first 6 months was live through September 30, 2026; treat as promotional, not the regular price.",
+        "fr": "Une offre limitée de 90 % de réduction sur les 6 premiers mois était en cours jusqu'au 30 septembre 2026 ; à considérer comme promotionnelle, pas comme le prix habituel.",
+        "sourceIds": ["s1"]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Cloud accounting: invoicing, bank reconciliation and bookkeeping in a single platform.", "sourceIds": ["s1"] },
-      { "en": "30-day free trial available before committing to a paid plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Cloud accounting: invoicing, bank reconciliation and bookkeeping in a single platform.",
+        "fr": "Comptabilité en ligne : facturation, rapprochement bancaire et tenue de livres dans une seule plateforme.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "30-day free trial available before committing to a paid plan.",
+        "fr": "Essai gratuit de 30 jours disponible avant de s'engager sur un forfait payant.",
+        "sourceIds": ["s1"]
+      }
     ],
     "limitations": [
-      { "en": "Feature limits (invoice counts, users) per plan are not detailed on the official pricing page as fetched; only headline prices are public.", "sourceIds": ["s1"] },
-      { "en": "US pricing is monthly-billing only; annual discounted billing not offered there as of March 2026.", "sourceIds": ["s1"] }
+      {
+        "en": "Feature limits (invoice counts, users) per plan are not detailed on the official pricing page as fetched; only headline prices are public.",
+        "fr": "Les limites de fonctionnalités (nombre de factures, utilisateurs) par forfait ne sont pas détaillées sur la page de tarifs officielle consultée ; seuls les prix affichés sont publics.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "US pricing is monthly-billing only; annual discounted billing not offered there as of March 2026.",
+        "fr": "Les tarifs américains sont en facturation mensuelle uniquement ; aucune facturation annuelle avec réduction n'y est proposée depuis mars 2026.",
+        "sourceIds": ["s1"]
+      }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small businesses and freelancers who handle their own invoicing, bank reconciliation and bookkeeping without a dedicated accounting department.",
+      "fr": "Petites entreprises et indépendants qui gèrent eux-mêmes leur facturation, leur rapprochement bancaire et leur tenue de livres, sans service comptable dédié."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a small business owner reconciles bank transactions weekly in Xero instead of manually matching a spreadsheet to the bank statement.",
+      "fr": "Usage : un chef de petite entreprise rapproche les transactions bancaires chaque semaine dans Xero, au lieu de faire correspondre manuellement une feuille de calcul au relevé bancaire."
+    },
+    {
+      "en": "Usage: a freelancer sends and tracks client invoices from the $25/month Early plan during the 30-day trial before deciding to subscribe.",
+      "fr": "Usage : un indépendant envoie et suit ses factures clients depuis le forfait Early à 25 $/mois pendant l'essai de 30 jours, avant de décider de s'abonner."
+    }
+  ],
   "alternatives": [
-    { "slug": "quickbooks", "reason": { "en": "Direct competitor in cloud accounting for small businesses with a similar tiered pricing structure." } },
-    { "slug": "quickbooks-online", "reason": { "en": "Same segment, cloud-based bookkeeping and invoicing for SMEs." } },
-    { "slug": "freshbooks", "reason": { "en": "Cloud accounting aimed at freelancers and small businesses, comparable scope." } },
-    { "slug": "pennylane", "reason": { "en": "Cloud accounting competitor, though more focused on the French/EU market." } }
+    {
+      "slug": "quickbooks",
+      "reason": {
+        "en": "Direct competitor in cloud accounting for small businesses with a similar tiered pricing structure.",
+        "fr": "Concurrent direct en comptabilité cloud pour petites entreprises, avec une structure tarifaire par paliers similaire."
+      }
+    },
+    {
+      "slug": "quickbooks-online",
+      "reason": {
+        "en": "Same segment, cloud-based bookkeeping and invoicing for SMEs.",
+        "fr": "Même segment, tenue de livres et facturation cloud pour PME."
+      }
+    },
+    {
+      "slug": "freshbooks",
+      "reason": {
+        "en": "Cloud accounting aimed at freelancers and small businesses, comparable scope.",
+        "fr": "Comptabilité cloud pensée pour les indépendants et petites entreprises, périmètre comparable."
+      }
+    },
+    {
+      "slug": "pennylane",
+      "reason": {
+        "en": "Cloud accounting competitor, though more focused on the French/EU market.",
+        "fr": "Concurrent en comptabilité cloud, bien que plus centré sur le marché français et européen."
+      }
+    }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "US prices are set to rise 8-13% on October 1, 2026 and multi-organization discounts are being phased out, while per-plan feature limits stay unpublished, making the value hard to judge confidently.",
+        "fr": "Les tarifs américains vont augmenter de 8 à 13 % le 1er octobre 2026 et les réductions multi-organisations seront supprimées, tandis que les limites de fonctionnalités par forfait restent non publiées, ce qui rend la valeur difficile à juger avec confiance.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and ease of first setup are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la facilité de la première configuration ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Invoicing, bank reconciliation and bookkeeping are delivered as a single platform, matching the core promise, though per-plan limits aren't detailed enough to confirm no workaround is ever needed.",
+        "fr": "La facturation, le rapprochement bancaire et la tenue de livres sont livrés dans une seule plateforme, conforme à la promesse principale, mais les limites par forfait ne sont pas assez détaillées pour confirmer qu'aucun contournement n'est jamais nécessaire.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Neutral score: exact feature limits per plan (invoices, users, bank accounts) are not published, so a capability ceiling can't be judged from the collected sources.",
+        "fr": "Note neutre : les limites de fonctionnalités exactes par forfait (factures, utilisateurs, comptes bancaires) ne sont pas publiées, donc un plafond de capacité ne peut pas être jugé à partir des sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats and portability if you leave Xero are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export des données et la portabilité en cas de départ de Xero ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cloud accounting", "fr": "Comptabilité en ligne" },
+    "shortDescription": {
+      "en": "Cloud accounting software for invoicing, bank reconciliation and bookkeeping, with a 30-day trial and no free plan.",
+      "fr": "Logiciel de comptabilité en ligne pour la facturation, le rapprochement bancaire et la tenue de livres, avec un essai de 30 jours, sans plan gratuit."
+    },
+    "longDescription": {
+      "en": "Xero handles invoicing, bank reconciliation and day-to-day bookkeeping in a single cloud platform, with a 30-day free trial before you commit to a paid plan.\n\nUS pricing starts at $25/month (Early), rising to $55/month (Growing) and $90/month (Established); per-plan feature limits like invoice counts or user seats aren't detailed on the public pricing page. Billing in the US is monthly only, with no annual discount currently offered there. A limited-time 90% off promotion for the first 6 months ran through September 30, 2026, and shouldn't be treated as the regular price. It suits a small business handling its own bookkeeping rather than one already committed to a competing platform.",
+      "fr": "Xero gère la facturation, le rapprochement bancaire et la tenue de livres au quotidien dans une seule plateforme cloud, avec un essai gratuit de 30 jours avant de s'engager sur un forfait payant.\n\nLes tarifs américains démarrent à 25 $/mois (Early), montent à 55 $/mois (Growing) et 90 $/mois (Established) ; les limites de fonctionnalités par forfait (factures, sièges) ne sont pas détaillées sur la page publique. La facturation US est mensuelle uniquement, sans réduction annuelle actuellement. Une promotion de 90 % sur les 6 premiers mois a couru jusqu'au 30 septembre 2026 : ce n'est pas le prix habituel. L'outil convient à une petite entreprise qui gère elle-même sa comptabilité."
+    },
+    "pros": [
+      {
+        "en": "30-day free trial lets you test invoicing and reconciliation before paying.",
+        "fr": "L'essai gratuit de 30 jours permet de tester la facturation et le rapprochement avant de payer."
+      },
+      {
+        "en": "Single platform covers invoicing, bank reconciliation and bookkeeping without separate tools.",
+        "fr": "Une seule plateforme couvre la facturation, le rapprochement bancaire et la tenue de livres, sans outils séparés."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Per-plan feature limits (invoices, users, bank accounts) aren't published, so it's hard to know what each tier actually caps.",
+        "fr": "Les limites de fonctionnalités par forfait (factures, utilisateurs, comptes bancaires) ne sont pas publiées, ce qui rend difficile de savoir ce que chaque forfait plafonne réellement."
+      },
+      {
+        "en": "US billing is monthly only, with no annual discount currently offered there, and prices are set to rise on October 1, 2026.",
+        "fr": "La facturation aux États-Unis est mensuelle uniquement, sans réduction annuelle actuellement proposée, et les prix doivent augmenter le 1er octobre 2026."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a single cloud tool for invoicing, reconciliation and bookkeeping and can start on the $25/month Early plan.",
+        "fr": "Tu veux un seul outil cloud pour la facturation, le rapprochement et la tenue de livres, et tu peux démarrer sur le forfait Early à 25 $/mois."
+      },
+      "avoidIf": {
+        "en": "You need to know exact per-plan invoice or user limits before committing; they aren't published.",
+        "fr": "Tu as besoin de connaître les limites exactes de factures ou d'utilisateurs par forfait avant de t'engager ; elles ne sont pas publiées."
+      },
+      "threshold": {
+        "en": "Budget at least $25/month (Early plan, US pricing) as the entry cost, rising to $27/month from October 1, 2026.",
+        "fr": "Prévois au moins 25 $/mois (forfait Early, tarifs US) comme coût d'entrée, qui passera à 27 $/mois à partir du 1er octobre 2026."
+      },
+      "billingTraps": {
+        "en": "US prices rise to $27/$59/$97 on October 1, 2026, and multi-organization discounts are being phased out from that date; the visible 90% first-6-months offer is promotional, not the regular price.",
+        "fr": "Les prix américains passeront à 27 $/59 $/97 $ le 1er octobre 2026, et les réductions multi-organisations seront supprimées à cette date ; l'offre visible de 90 % sur les 6 premiers mois est promotionnelle, pas le prix habituel."
+      }
+    }
+  },
   "unknowns": [
     "Per-plan feature limits (invoices, bank accounts, multi-currency, number of users) were not detailed on the pricing page as fetched.",
     "Whether annual/discounted billing exists in other regions besides the US was not confirmed."

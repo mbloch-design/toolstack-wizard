@@ -3,7 +3,7 @@
   "slug": "posthog",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "PostHog",
     "vendor": "PostHog Inc.",
@@ -32,7 +32,10 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "1M analytics events, 5K session recordings, 1M feature flag requests, 100K exception events, 1,500 survey responses, 1M data warehouse rows + free historical data, 10K events + 1M rows for data pipelines, 100K AI observability events, 10 GB ingested logs, all reset monthly.",
+      "limits": {
+        "en": "1M analytics events, 5K session recordings, 1M feature flag requests, 100K exception events, 1,500 survey responses, 1M data warehouse rows + free historical data, 10K events + 1M rows for data pipelines, 100K AI observability events, 10 GB ingested logs, all reset monthly.",
+        "fr": "1 M d'événements analytics, 5 000 enregistrements de session, 1 M de requêtes de feature flags, 100 000 événements d'erreur, 1 500 réponses de sondage, 1 M de lignes d'entrepôt de données plus historique gratuit, 10 000 événements + 1 M de lignes pour les data pipelines, 100 000 événements d'AI observability, 10 Go de logs ingérés, tout remis à zéro chaque mois."
+      },
       "sourceIds": [
         "s1"
       ]
@@ -53,7 +56,7 @@
         "keyLimits": [
           {
             "en": "Generous monthly free allowances across every product (analytics, replay, feature flags, error tracking, surveys, data warehouse, pipelines, AI observability, logs); no payment method required until limits are exceeded.",
-            "fr": null
+            "fr": "Quotas mensuels gratuits généreux sur chaque produit (analytics, replay, feature flags, error tracking, sondages, entrepôt de données, pipelines, AI observability, logs) ; aucun moyen de paiement requis tant que les limites ne sont pas dépassées."
           }
         ],
         "sourceIds": [
@@ -74,7 +77,7 @@
         "keyLimits": [
           {
             "en": "Usage-based pricing kicks in once free monthly allowances are exceeded, billed per unit consumed per product; exact per-unit rates were not itemized on the page checked.",
-            "fr": null
+            "fr": "La tarification à l'usage démarre une fois les quotas mensuels gratuits dépassés, facturée par unité consommée et par produit ; les tarifs exacts par unité n'étaient pas détaillés sur la page consultée."
           }
         ],
         "sourceIds": [
@@ -87,7 +90,7 @@
     "cautions": [
       {
         "en": "PostHog bundles many separate products (analytics, session replay, feature flags, error tracking, surveys, data warehouse, data pipelines, AI observability, logs) each with its own free allowance and usage-based overage pricing, so total cost depends on which products are used, not a single flat rate.",
-        "fr": null,
+        "fr": "PostHog regroupe plusieurs produits séparés (analytics, session replay, feature flags, error tracking, sondages, entrepôt de données, data pipelines, AI observability, logs), chacun avec son propre quota gratuit et sa tarification de dépassement à l'usage, donc le coût total dépend des produits utilisés et non d'un tarif unique.",
         "sourceIds": [
           "s1"
         ]
@@ -98,28 +101,28 @@
     "capabilities": [
       {
         "en": "Product analytics with event tracking, funnels and dashboards.",
-        "fr": null,
+        "fr": "Analytics produit avec suivi d'événements, funnels et tableaux de bord.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Session replay (recordings) of user sessions.",
-        "fr": null,
+        "fr": "Enregistrement (replay) des sessions utilisateur.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Feature flags and A/B experimentation.",
-        "fr": null,
+        "fr": "Feature flags et expérimentation A/B.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Error tracking, surveys, a data warehouse, data pipelines, AI observability and log ingestion as additional bundled products.",
-        "fr": null,
+        "fr": "Error tracking, sondages, entrepôt de données, data pipelines, AI observability et ingestion de logs comme produits supplémentaires regroupés.",
         "sourceIds": [
           "s1"
         ]
@@ -128,14 +131,14 @@
     "limitations": [
       {
         "en": "Free monthly allowances vary widely by product and reset monthly, which can make total cost estimation complex for teams using several PostHog products at once.",
-        "fr": null,
+        "fr": "Les quotas mensuels gratuits varient beaucoup selon le produit et se remettent à zéro chaque mois, ce qui peut compliquer l'estimation du coût total pour une équipe utilisant plusieurs produits PostHog à la fois.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Exact pay-as-you-go per-unit overage rates were not itemized on the pricing page checked and require deeper review of the pricing calculator.",
-        "fr": null,
+        "fr": "Les tarifs exacts de dépassement à l'usage par unité n'étaient pas détaillés sur la page de tarifs consultée et demandent d'examiner le calculateur de prix.",
         "sourceIds": [
           "s1"
         ]
@@ -151,21 +154,21 @@
       "slug": "mixpanel",
       "reason": {
         "en": "Direct product analytics competitor with events, funnels and a comparable free tier.",
-        "fr": null
+        "fr": "Concurrent direct en analytics produit, avec événements, funnels et un plan gratuit comparable."
       }
     },
     {
       "slug": "amplitude",
       "reason": {
         "en": "Product analytics platform covering similar event tracking and experimentation use cases.",
-        "fr": null
+        "fr": "Plateforme d'analytics produit couvrant des cas d'usage similaires de suivi d'événements et d'expérimentation."
       }
     },
     {
       "slug": "plausible",
       "reason": {
         "en": "Lighter-weight, privacy-focused analytics alternative for teams that don't need PostHog's full product suite.",
-        "fr": null
+        "fr": "Alternative analytics plus légère, axée vie privée, pour les équipes qui n'ont pas besoin de la suite complète de PostHog."
       }
     }
   ],
@@ -173,5 +176,125 @@
   "unknowns": [
     "Exact pay-as-you-go per-unit prices for each product (analytics events, replay recordings, etc.) beyond the free allowance were not detailed on the pricing page checked."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free plan covers 1M analytics events, 5K session recordings and generous allowances across every bundled product each month, with no payment method required until limits are exceeded.",
+        "fr": "Le plan gratuit couvre 1 M d'événements analytics, 5 000 enregistrements de session et des quotas généreux sur chaque produit regroupé, chaque mois, sans moyen de paiement requis tant que les limites ne sont pas dépassées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Bundling many separate products with their own free allowances and usage-based overage pricing makes total cost estimation complex for a team using several at once.",
+        "fr": "Le regroupement de nombreux produits séparés, chacun avec son propre quota gratuit et sa tarification de dépassement à l'usage, complique l'estimation du coût total pour une équipe qui en utilise plusieurs à la fois.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Event tracking, funnels, dashboards, session replay, feature flags and A/B experimentation all work directly in the product as described.",
+        "fr": "Suivi d'événements, funnels, tableaux de bord, session replay, feature flags et expérimentation A/B fonctionnent directement dans le produit comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Bundles product analytics, session replay, feature flags, error tracking, surveys, a data warehouse, data pipelines, AI observability and log ingestion in one product, well beyond a single-purpose analytics tool.",
+        "fr": "Regroupe analytics produit, session replay, feature flags, error tracking, sondages, entrepôt de données, data pipelines, AI observability et ingestion de logs dans un seul produit, bien au-delà d'un outil d'analytics à fonction unique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export and data-portability details are not covered by the collected sources.",
+        "fr": "Note neutre : les modalités d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who want product analytics, session replay, feature flags and error tracking in one platform instead of stitching together separate tools.",
+      "fr": "Développeurs qui veulent analytics produit, session replay, feature flags et error tracking dans une seule plateforme plutôt que d'assembler des outils séparés."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Feature rollout: ship behind a feature flag, watch adoption in the analytics dashboard, roll back instantly if needed.",
+      "fr": "Déploiement de fonctionnalité : livrer derrière un feature flag, suivre l'adoption dans le tableau de bord analytics, revenir en arrière instantanément si besoin."
+    },
+    {
+      "en": "Bug diagnosis: watch a session replay of a user hitting an error, cross-reference with the error-tracking event.",
+      "fr": "Diagnostic de bug : regarder le replay de session d'un utilisateur qui rencontre une erreur, croiser avec l'événement d'error tracking."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Product analytics suite",
+      "fr": "Suite d'analytics produit"
+    },
+    "shortDescription": {
+      "en": "Bundled product analytics, session replay, feature flags, error tracking and more, each with its own free monthly allowance.",
+      "fr": "Suite regroupant analytics produit, session replay, feature flags, error tracking et plus, chacun avec son propre quota mensuel gratuit."
+    },
+    "longDescription": {
+      "en": "PostHog bundles product analytics (events, funnels, dashboards), session replay, feature flags with A/B experimentation, error tracking, surveys, a data warehouse, data pipelines, AI observability and log ingestion in one platform.\n\nEach product has its own generous free monthly allowance, for example 1M analytics events or 5K session recordings, with no payment method required until limits are exceeded. Beyond that, pay-as-you-go usage pricing applies per product, with exact per-unit rates not itemized on the pricing page. It suits a developer who wants several product tools in one place, though total cost is harder to predict than a single flat-rate analytics tool.",
+      "fr": "PostHog regroupe analytics produit (événements, funnels, tableaux de bord), session replay, feature flags avec expérimentation A/B, error tracking, sondages, entrepôt de données, data pipelines, AI observability et ingestion de logs dans une seule plateforme.\n\nChaque produit a son propre quota mensuel gratuit généreux, par exemple 1 M d'événements analytics ou 5 000 enregistrements de session, sans moyen de paiement requis tant que les limites ne sont pas dépassées. Au-delà, une tarification à l'usage s'applique par produit, sans tarif exact par unité détaillé sur la page de prix. Il convient à un développeur qui veut plusieurs outils produit au même endroit, même si le coût total est plus difficile à prévoir qu'un outil d'analytics à tarif unique."
+    },
+    "pros": [
+      {
+        "en": "Generous free monthly allowance across every bundled product, no payment method required to start.",
+        "fr": "Quota mensuel gratuit généreux sur chaque produit regroupé, aucun moyen de paiement requis pour démarrer."
+      },
+      {
+        "en": "Several product tools (analytics, replay, flags, error tracking) live in one platform instead of separate subscriptions.",
+        "fr": "Plusieurs outils produit (analytics, replay, flags, error tracking) vivent dans une seule plateforme au lieu d'abonnements séparés."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Total cost is harder to predict since each bundled product has its own allowance and overage rate.",
+        "fr": "Le coût total est plus difficile à prévoir car chaque produit regroupé a son propre quota et son propre tarif de dépassement."
+      },
+      {
+        "en": "Exact pay-as-you-go per-unit rates are not itemized on the pricing page.",
+        "fr": "Les tarifs exacts de dépassement à l'usage par unité ne sont pas détaillés sur la page de prix."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if several product tools (analytics, session replay, feature flags, error tracking) are needed together and the generous free allowances cover current volume.",
+        "fr": "À garder si plusieurs outils produit (analytics, session replay, feature flags, error tracking) sont nécessaires ensemble et que les quotas gratuits généreux couvrent le volume actuel."
+      },
+      "avoidIf": {
+        "en": "Avoid it if only one capability, like analytics, is needed and predictable flat-rate pricing matters more than a bundled suite.",
+        "fr": "À éviter si une seule capacité, comme l'analytics, est nécessaire et qu'un tarif fixe prévisible compte plus qu'une suite regroupée."
+      },
+      "threshold": {
+        "en": "The free plan covers 1M analytics events and 5K session recordings a month at no cost; beyond that, pay-as-you-go usage pricing applies per product with rates not itemized on the pricing page.",
+        "fr": "Le plan gratuit couvre 1 M d'événements analytics et 5 000 enregistrements de session par mois sans coût ; au-delà, une tarification à l'usage s'applique par produit, sans tarifs détaillés sur la page de prix."
+      },
+      "billingTraps": {
+        "en": "A team using several bundled products at once can exceed several separate free allowances in the same month, each triggering its own usage-based charge rather than one combined limit.",
+        "fr": "Une équipe qui utilise plusieurs produits regroupés à la fois peut dépasser plusieurs quotas gratuits séparés le même mois, chacun déclenchant son propre coût à l'usage plutôt qu'une limite combinée unique."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
+  "reviewNotes": [
+    "pricing.comparePlanKey is set to 'free' rather than a paid tier: the pay-as-you-go plan carries no public per-unit rate (onQuote, no itemized numbers), so no priced paid plan exists to compare on; verify on posthog.com/pricing whether a usable minimum paid figure now exists."
+  ]
 }

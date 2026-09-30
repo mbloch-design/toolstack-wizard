@@ -3,7 +3,7 @@
   "slug": "revenuecat",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "RevenueCat",
     "vendor": "RevenueCat, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.revenuecat.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "RevenueCat pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.revenuecat.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "RevenueCat pricing"
+    }
   ],
   "pricing": {
     "model": "usage",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Free up to $2,500 in monthly tracked revenue (MTR).", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free up to $2,500 in monthly tracked revenue (MTR).",
+        "fr": "Gratuit jusqu'à 2 500 $ de revenu mensuel suivi (MTR)."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,62 +47,284 @@
         "name": "Free (under $2,500 MTR)",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free up to $2,500 in monthly tracked revenue; all features included.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Free up to $2,500 in monthly tracked revenue; all features included.",
+            "fr": "Gratuit jusqu'à 2 500 $ de revenu mensuel suivi ; toutes les fonctionnalités incluses."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "1% of monthly tracked revenue once MTR exceeds $2,500; no other usage limits.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1% of monthly tracked revenue once MTR exceeds $2,500; no other usage limits.",
+            "fr": "1 % du revenu mensuel suivi au-delà de 2 500 $ de MTR ; aucune autre limite d'usage."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom pricing, volume discounts, dedicated support and custom SLAs for high transaction volume.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Custom pricing, volume discounts, dedicated support and custom SLAs for high transaction volume.",
+            "fr": "Tarif personnalisé, remises sur volume, support dédié et SLA sur mesure pour un volume de transactions élevé."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "free",
     "addOns": [
-      { "en": "Growth tools (paywall editor, web-to-app funnels, A/B/n testing) can be billed at 1% of MTR on conversions from those tools when using your own subscription infrastructure.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Growth tools (paywall editor, web-to-app funnels, A/B/n testing) can be billed at 1% of MTR on conversions from those tools when using your own subscription infrastructure.",
+        "fr": "Les outils de croissance (éditeur de paywall, funnels web-to-app, tests A/B/n) peuvent être facturés à 1 % du MTR sur les conversions issues de ces outils, en cas d'usage de sa propre infrastructure d'abonnement.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Pricing is a percentage of tracked revenue, not a flat seat price: cost scales directly with the app's in-app revenue.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Pricing is a percentage of tracked revenue, not a flat seat price: cost scales directly with the app's in-app revenue.",
+        "fr": "Le tarif est un pourcentage du revenu suivi, pas un prix fixe par siège : le coût évolue directement avec le revenu in-app de l'application.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Unifies in-app purchase and subscription management across iOS, Android and web with a single backend and REST API.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Provides a built-in paywall editor with A/B testing and customer segmentation for subscription conversion.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Ships open-source SDKs and integrates with 40+ platforms including mobile measurement partners (MMPs) and webhooks.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Unifies in-app purchase and subscription management across iOS, Android and web with a single backend and REST API.",
+        "fr": "Unifie la gestion des achats intégrés et des abonnements sur iOS, Android et web avec un seul backend et une API REST.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Provides a built-in paywall editor with A/B testing and customer segmentation for subscription conversion.",
+        "fr": "Fournit un éditeur de paywall intégré avec tests A/B et segmentation client pour la conversion des abonnements.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Ships open-source SDKs and integrates with 40+ platforms including mobile measurement partners (MMPs) and webhooks.",
+        "fr": "Fournit des SDK open source et s'intègre avec plus de 40 plateformes, dont des partenaires de mesure mobile (MMP) et des webhooks.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Cost is a percentage of tracked revenue rather than a flat fee, so it grows automatically with app revenue past the free threshold.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "No published flat per-seat or per-app plan for teams wanting predictable fixed costs; only Pro (percentage) or custom Enterprise.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Cost is a percentage of tracked revenue rather than a flat fee, so it grows automatically with app revenue past the free threshold.",
+        "fr": "Le coût est un pourcentage du revenu suivi plutôt qu'un tarif fixe, donc il augmente automatiquement avec le revenu de l'application au-delà du seuil gratuit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No published flat per-seat or per-app plan for teams wanting predictable fixed costs; only Pro (percentage) or custom Enterprise.",
+        "fr": "Aucun plan fixe par siège ou par application publié pour les équipes qui veulent un coût prévisible ; seulement Pro (pourcentage) ou Enterprise sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Webhooks", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Webhooks",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["ios", "android", "web"]
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "stripe", "reason": { "en": "Handles subscription billing directly, an alternative for web-first products not needing app-store entitlement sync.", "fr": "…" } }
+    {
+      "slug": "stripe",
+      "reason": {
+        "en": "Handles subscription billing directly, an alternative for web-first products not needing app-store entitlement sync.",
+        "fr": "Gère directement la facturation d'abonnement, une alternative pour les produits web-first qui n'ont pas besoin de synchronisation des droits avec les app stores."
+      }
+    },
+    {
+      "slug": "lemon-squeezy",
+      "reason": {
+        "en": "Merchant-of-record billing platform that handles web subscriptions directly, an alternative for apps that can sell subscriptions on the web instead of through app-store IAP.",
+        "fr": "Plateforme de facturation en tant que marchand officiel qui gère directement les abonnements web, une alternative pour les applications qui peuvent vendre des abonnements sur le web plutôt que via les achats intégrés des app stores."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Adapty", "officialUrl": "https://adapty.io", "reason": "Direct competitor for mobile in-app purchase and subscription management, not in the catalogue." },
-    { "name": "Qonversion", "officialUrl": "https://qonversion.io", "reason": "Direct competitor for mobile subscription infrastructure, not in the catalogue." }
+    {
+      "name": "Adapty",
+      "officialUrl": "https://adapty.io",
+      "reason": "Direct competitor for mobile in-app purchase and subscription management, not in the catalogue."
+    },
+    {
+      "name": "Qonversion",
+      "officialUrl": "https://qonversion.io",
+      "reason": "Direct competitor for mobile subscription infrastructure, not in the catalogue."
+    }
   ],
-  "unknowns": ["Exact currency/region handling for MTR calculation outside the US was not detailed on the fetched page."],
-  "conflicts": []
+  "unknowns": [
+    "Exact currency/region handling for MTR calculation outside the US was not detailed on the fetched page."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free until $2,500 monthly tracked revenue, then 1% of MTR: a fair deal for small apps, but cost scales automatically with success rather than staying flat.",
+        "fr": "Gratuit jusqu'à 2 500 $ de revenu mensuel suivi, puis 1 % du MTR : un bon accord pour une petite application, mais le coût augmente automatiquement avec le succès plutôt que de rester fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A single backend and REST API unify in-app purchases across iOS, Android and web, avoiding separate integration work per platform.",
+        "fr": "Un seul backend et une API REST unifient les achats intégrés sur iOS, Android et web, évitant un travail d'intégration séparé par plateforme.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It unifies subscription management and entitlement sync across platforms as promised, with a built-in paywall editor for conversion.",
+        "fr": "L'outil unifie la gestion des abonnements et la synchronisation des droits entre plateformes comme promis, avec un éditeur de paywall intégré pour la conversion.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers cross-platform IAP management, paywall A/B testing, segmentation and 40+ integrations including MMPs and webhooks, a wide feature set for the category.",
+        "fr": "Couvre la gestion des achats intégrés multi-plateformes, les tests A/B de paywall, la segmentation et plus de 40 intégrations dont des MMP et des webhooks, une large couverture pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: open-source SDKs are mentioned, but exporting subscriber and entitlement data to migrate off RevenueCat isn't detailed in the collected sources.",
+        "fr": "Note neutre : les SDK open source sont mentionnés, mais l'export des données d'abonnés et de droits pour migrer hors de RevenueCat ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Mobile app developers who need to manage in-app purchases and subscriptions across iOS, Android and web without building the backend themselves.",
+      "fr": "Développeurs d'applications mobiles qui doivent gérer les achats intégrés et les abonnements sur iOS, Android et web sans construire eux-mêmes le backend."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: sync subscription entitlements across iOS, Android and web from one backend instead of building and maintaining separate receipt-validation logic per platform.",
+      "fr": "Cas d'usage : synchroniser les droits d'abonnement sur iOS, Android et web depuis un seul backend, plutôt que de construire et maintenir une logique de validation de reçus distincte par plateforme."
+    },
+    {
+      "en": "Use case: A/B test paywall designs with the built-in editor to improve subscription conversion without shipping a new app version for each variant.",
+      "fr": "Cas d'usage : tester en A/B des designs de paywall avec l'éditeur intégré pour améliorer la conversion des abonnements, sans publier une nouvelle version d'application pour chaque variante."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "IAP & subscriptions",
+      "fr": "Abonnements in-app"
+    },
+    "shortDescription": {
+      "en": "Unifies in-app purchase and subscription management across iOS, Android and web with one backend, a paywall editor and A/B testing.",
+      "fr": "Unifie la gestion des achats intégrés et des abonnements sur iOS, Android et web avec un backend, un éditeur de paywall et des tests A/B."
+    },
+    "longDescription": {
+      "en": "RevenueCat unifies in-app purchase and subscription management across iOS, Android and web with a single backend and REST API. It adds a built-in paywall editor with A/B testing and customer segmentation, plus open-source SDKs and 40+ integrations including mobile measurement partners and webhooks.\n\nIt's free until $2,500 in monthly tracked revenue, then Pro costs 1% of MTR with no other usage limits; Enterprise is custom-priced for high volume. There's no flat per-seat plan, so cost scales directly with the app's revenue. It fits a mobile developer who wants unified subscription infrastructure without building receipt validation from scratch.",
+      "fr": "RevenueCat unifie la gestion des achats intégrés et des abonnements sur iOS, Android et web avec un backend et une API REST. Il ajoute un éditeur de paywall avec tests A/B et segmentation client, des SDK open source et plus de 40 intégrations, dont des partenaires de mesure mobile et des webhooks.\n\nGratuit jusqu'à 2 500 $ de revenu suivi par mois, Pro coûte ensuite 1 % de ce revenu sans autre limite. Enterprise est sur devis pour un volume élevé. Sans plan fixe par siège, le coût évolue directement avec le revenu de l'application. Il convient à un développeur mobile qui veut une infrastructure d'abonnement unifiée sans la construire de zéro."
+    },
+    "pros": [
+      {
+        "en": "Free until $2,500 monthly tracked revenue, with all features included at that stage.",
+        "fr": "Gratuit jusqu'à 2 500 $ de revenu mensuel suivi, avec toutes les fonctionnalités incluses à ce stade."
+      },
+      {
+        "en": "Single backend and API replace separate IAP integration work on each platform.",
+        "fr": "Un seul backend et une seule API remplacent un travail d'intégration des achats intégrés séparé sur chaque plateforme."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Cost is a percentage of revenue rather than a flat fee, so it grows automatically as the app succeeds.",
+        "fr": "Le coût est un pourcentage du revenu plutôt qu'un tarif fixe, donc il augmente automatiquement à mesure que l'application réussit."
+      },
+      {
+        "en": "No flat per-seat or per-app plan exists for teams wanting a predictable fixed cost.",
+        "fr": "Aucun plan fixe par siège ou par application n'existe pour les équipes qui veulent un coût fixe prévisible."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're building a mobile app with in-app purchases and want unified subscription management across platforms without building it yourself.",
+        "fr": "Tu construis une application mobile avec des achats intégrés et tu veux une gestion d'abonnement unifiée entre plateformes sans la construire toi-même."
+      },
+      "avoidIf": {
+        "en": "You need a fully predictable flat cost, since the Pro plan's 1% of tracked revenue scales with the app's success.",
+        "fr": "Tu as besoin d'un coût fixe totalement prévisible, car le 1 % de revenu suivi du plan Pro évolue avec le succès de l'application."
+      },
+      "threshold": {
+        "en": "It's free until $2,500 in monthly tracked revenue; past that, Pro's 1% fee only makes sense once you value the time saved building this yourself over a flat percentage of growing revenue.",
+        "fr": "C'est gratuit jusqu'à 2 500 $ de revenu mensuel suivi ; au-delà, les 1 % de Pro ne se justifient que si tu préfères déléguer ce travail plutôt que payer un pourcentage fixe sur un revenu qui grandit."
+      }
+    }
+  },
+  "reviewNotes": []
 }

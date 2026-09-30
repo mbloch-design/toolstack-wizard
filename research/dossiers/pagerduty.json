@@ -3,7 +3,8 @@
   "slug": "pagerduty",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "PagerDuty",
     "vendor": "PagerDuty, Inc.",
@@ -15,20 +16,8 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://www.pagerduty.com/pricing/",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "PagerDuty pricing"
-    },
-    {
-      "id": "s2",
-      "url": "https://www.pagerduty.com/newsroom/pagerduty-operations-cloud-spring-2026-release/",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "PagerDuty Spring 2026 Release"
-    }
+    { "id": "s1", "url": "https://www.pagerduty.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "PagerDuty pricing" },
+    { "id": "s2", "url": "https://www.pagerduty.com/newsroom/pagerduty-operations-cloud-spring-2026-release/", "tier": 1, "accessedOn": "2026-09-25", "title": "PagerDuty Spring 2026 Release" }
   ],
   "pricing": {
     "model": "quote",
@@ -40,11 +29,10 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Legacy Incident Management free tier: up to 5 users, 1 schedule, 1 escalation policy, 100 SMS/phone notifications per month."
+        "en": "Legacy Incident Management free tier: up to 5 users, 1 schedule, 1 escalation policy, 100 SMS/phone notifications per month.",
+        "fr": "Palier gratuit historique de l'Incident Management : jusqu'à 5 utilisateurs, 1 planning, 1 politique d'escalade, 100 notifications SMS/téléphone par mois."
       },
-      "sourceIds": [
-        "s1"
-      ]
+      "sourceIds": ["s1"]
     },
     "plans": [
       {
@@ -54,7 +42,12 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 5 users, 1 schedule, 1 escalation policy, 100 SMS/phone notifications per month." }],
+        "keyLimits": [
+          {
+            "en": "Up to 5 users, 1 schedule, 1 escalation policy, 100 SMS/phone notifications per month.",
+            "fr": "Jusqu'à 5 utilisateurs, 1 planning, 1 politique d'escalade, 100 notifications SMS/téléphone par mois."
+          }
+        ],
         "sourceIds": ["s1"]
       },
       {
@@ -62,40 +55,30 @@
         "name": "Professional (Incident Management)",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": 21,
-          "annualPerMonth": 21,
-          "oneTime": null
-        },
+        "price": { "monthly": 21, "annualPerMonth": 21, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Annual billing at $252/user/year (about 16% discount vs monthly); includes enhanced chat and post-incident reviews."
+            "en": "Annual billing at $252/user/year (about 16% discount vs monthly); includes enhanced chat and post-incident reviews.",
+            "fr": "Facturation annuelle à 252 $/utilisateur/an (environ 16 % de réduction par rapport au mensuel) ; inclut le chat amélioré et les revues post-incident."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "reliability-starter",
         "name": "PD Reliability Platform - Starter",
         "unit": "account",
         "minSeats": 10,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "$2,800/year platform fee, 10 seats, 5,000 Signal Intelligence events, 5,000 AI actions, 1 Live Call Routing line."
+            "en": "$2,800/year platform fee, 10 seats, 5,000 Signal Intelligence events, 5,000 AI actions, 1 Live Call Routing line.",
+            "fr": "Frais de plateforme de 2 800 $/an, 10 sièges, 5 000 événements Signal Intelligence, 5 000 actions IA, 1 ligne Live Call Routing."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "professional",
@@ -103,9 +86,8 @@
     "cautions": [
       {
         "en": "PagerDuty now sells two distinct product lines: legacy per-seat Incident Management (Free/Professional) and the newer PD Reliability Platform priced as an annual platform fee with seat and usage caps; do not mix the two pricing models when comparing.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "PagerDuty vend désormais deux lignes de produits distinctes : l'Incident Management historique par siège (Free/Professional) et la nouvelle PD Reliability Platform facturée en frais de plateforme annuels avec plafonds de sièges et d'usage ; ne mélange pas les deux modèles tarifaires lors d'une comparaison.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -113,75 +95,81 @@
     "capabilities": [
       {
         "en": "Real-time incident management with on-call scheduling and automatic escalation policies.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Gestion des incidents en temps réel avec planification des astreintes et politiques d'escalade automatiques.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "AI-assisted operations: SRE Agent can detect, triage and diagnose incidents before waking a human (Spring 2026 release).",
-        "sourceIds": [
-          "s2"
-        ]
+        "fr": "Opérations assistées par IA : SRE Agent peut détecter, trier et diagnostiquer les incidents avant de réveiller un humain (sortie printemps 2026).",
+        "sourceIds": ["s2"]
       },
       {
         "en": "Integrates with over 700 native applications and supports MCP plugins (e.g. for Claude Code, Cursor).",
-        "sourceIds": [
-          "s2"
-        ]
+        "fr": "S'intègre à plus de 700 applications natives et prend en charge les plugins MCP (par exemple pour Claude Code, Cursor).",
+        "sourceIds": ["s2"]
       },
       {
         "en": "Works across web, mobile and chat-ops surfaces so teams can respond where they already work.",
-        "sourceIds": [
-          "s2"
-        ]
+        "fr": "Fonctionne sur le web, mobile et via des outils de chat, pour que les équipes répondent là où elles travaillent déjà.",
+        "sourceIds": ["s2"]
       }
     ],
     "limitations": [
       {
         "en": "Free tier is capped at 5 users, 1 schedule and 1 escalation policy, unsuitable beyond a very small team.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Le palier gratuit est plafonné à 5 utilisateurs, 1 planning et 1 politique d'escalade, insuffisant au-delà d'une toute petite équipe.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "The newer PD Reliability Platform tiers are usage-capped (events, AI actions) and largely quote-based above the entry tier.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les nouveaux paliers PD Reliability Platform sont plafonnés en usage (événements, actions IA) et en grande partie sur devis au-delà du palier d'entrée.",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [
-      {
-        "name": "Slack",
-        "slug": "slack",
-        "sourceIds": [
-          "s2"
-        ]
-      }
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] }
     ],
-    "platforms": [
-      "web",
-      "ios",
-      "android"
-    ]
+    "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Engineering teams running on-call rotations who need automatic escalation and incident response, not a solo developer working alone.",
+      "fr": "Équipes techniques qui gèrent des rotations d'astreinte et ont besoin d'escalade automatique et de réponse aux incidents, pas un développeur solo travaillant seul."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: an on-call engineer gets a critical alert auto-escalated after 10 minutes of no response, following a policy set up on the free tier.",
+      "fr": "Usage : un ingénieur d'astreinte reçoit une alerte critique auto-escaladée après 10 minutes sans réponse, selon une politique configurée sur le palier gratuit."
+    },
+    {
+      "en": "Usage: a platform team lets SRE Agent triage and diagnose a spike in errors before paging a human, so only alerts that truly need attention get escalated.",
+      "fr": "Usage : une équipe plateforme laisse SRE Agent trier et diagnostiquer un pic d'erreurs avant de notifier un humain, pour que seules les alertes qui demandent vraiment attention soient escaladées."
+    }
+  ],
   "alternatives": [
     {
       "slug": "better-stack",
       "reason": {
-        "en": "Competes directly for incident management, on-call and uptime alerting for smaller teams."
+        "en": "Competes directly for incident management, on-call and uptime alerting for smaller teams.",
+        "fr": "Concurrent direct pour la gestion des incidents, les astreintes et les alertes de disponibilité pour petites équipes."
       }
     },
     {
       "slug": "datadog",
       "reason": {
-        "en": "Overlaps for monitoring and alerting workflows that feed into incident response."
+        "en": "Overlaps for monitoring and alerting workflows that feed into incident response.",
+        "fr": "Se recoupe pour la surveillance et les alertes qui alimentent la réponse aux incidents."
       }
     },
     {
       "slug": "sentry",
       "reason": {
-        "en": "Used for error/incident alerting in a similar on-call workflow, though more developer-error focused."
+        "en": "Used for error/incident alerting in a similar on-call workflow, though more developer-error focused.",
+        "fr": "Utilisé pour l'alerte d'erreurs et d'incidents dans un flux d'astreinte similaire, bien que plus centré sur les erreurs de développement."
       }
     }
   ],
@@ -192,6 +180,90 @@
       "reason": "Direct incident management and on-call competitor, not in the catalogue."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A usable free tier plus a $21/user/month paid tier is a reasonable entry point, but the split between two pricing lines (legacy seats and the new platform fee) makes total cost harder to judge without a comparison.",
+        "fr": "Un palier gratuit utilisable plus un palier payant à 21 $/utilisateur/mois est un point d'entrée raisonnable, mais la coexistence de deux lignes tarifaires (sièges historiques et nouveaux frais de plateforme) rend le coût total plus difficile à juger sans comparaison.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and ease of first setup for on-call scheduling are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la facilité de la première configuration des astreintes ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "On-call scheduling, automatic escalation and AI-assisted triage are delivered as described, with SRE Agent explicitly built to reduce unnecessary human paging.",
+        "fr": "La planification des astreintes, l'escalade automatique et le triage assisté par IA sont livrés comme décrit, SRE Agent étant explicitement conçu pour réduire les notifications humaines inutiles.",
+        "sourceIds": ["s2"]
+      },
+      "puissance": {
+        "en": "Over 700 native integrations plus MCP plugin support and an AI triage agent give it a wide capability ceiling for incident response.",
+        "fr": "Plus de 700 intégrations natives, le support des plugins MCP et un agent de triage par IA lui donnent un large plafond de capacité pour la réponse aux incidents.",
+        "sourceIds": ["s2"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability of schedules/incident history if you leave PagerDuty are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité des plannings ou de l'historique d'incidents en cas de départ de PagerDuty ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Incident management", "fr": "Gestion des incidents" },
+    "shortDescription": {
+      "en": "On-call incident management with escalation policies, a free tier for up to 5 users, and a newer usage-capped Reliability Platform.",
+      "fr": "Gestion des incidents et astreintes avec politiques d'escalade, un palier gratuit jusqu'à 5 utilisateurs, et une nouvelle offre Reliability Platform plafonnée à l'usage."
+    },
+    "longDescription": {
+      "en": "PagerDuty manages on-call scheduling and automatic escalation for incidents, integrates with over 700 applications, and its Spring 2026 SRE Agent can detect, triage and diagnose incidents before waking a human. It works across web, mobile and chat-ops surfaces.\n\nPagerDuty now sells two separate pricing lines: legacy per-seat Incident Management (Free up to 5 users, then $21/user/month on Professional) and a newer PD Reliability Platform starting at a $2,800/year fee for 10 seats with usage caps on Signal Intelligence events and AI actions. The free tier is limited to 5 users, 1 schedule and 1 escalation policy, unsuitable beyond a very small team. It fits an engineering team that needs on-call and escalation, not a solo freelancer.",
+      "fr": "PagerDuty gère la planification des astreintes et l'escalade automatique des incidents, s'intègre à plus de 700 applications, et son agent SRE Agent (printemps 2026) peut détecter, trier et diagnostiquer les incidents avant de réveiller un humain. Il fonctionne sur le web, mobile et via des outils de chat.\n\nPagerDuty vend deux lignes tarifaires distinctes : l'Incident Management par siège (Free jusqu'à 5 utilisateurs, puis 21 $/utilisateur/mois sur Professional) et la nouvelle PD Reliability Platform, dès 2 800 $/an pour 10 sièges avec des plafonds d'usage sur les événements et actions IA. Le palier gratuit se limite à 5 utilisateurs, 1 planning et 1 politique d'escalade. L'outil convient à une équipe technique, pas à un indépendant seul."
+    },
+    "pros": [
+      {
+        "en": "Free tier covers a small team's basic on-call needs (5 users, 1 schedule, 1 escalation policy) at no cost.",
+        "fr": "Le palier gratuit couvre les besoins d'astreinte de base d'une petite équipe (5 utilisateurs, 1 planning, 1 politique d'escalade) sans frais."
+      },
+      {
+        "en": "SRE Agent can triage and diagnose incidents automatically before escalating to a human.",
+        "fr": "SRE Agent peut trier et diagnostiquer les incidents automatiquement avant d'escalader vers un humain."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free tier caps out at 5 users, 1 schedule and 1 escalation policy, too small for most growing teams.",
+        "fr": "Le palier gratuit plafonne à 5 utilisateurs, 1 planning et 1 politique d'escalade, trop restreint pour la plupart des équipes en croissance."
+      },
+      {
+        "en": "The newer Reliability Platform mixes an annual platform fee with usage caps, a different pricing logic from the legacy per-seat plans that's easy to conflate.",
+        "fr": "La nouvelle Reliability Platform mélange des frais de plateforme annuels avec des plafonds d'usage, une logique tarifaire différente des forfaits historiques par siège, facile à confondre."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run an engineering team that needs on-call scheduling, automatic escalation and AI-assisted triage.",
+        "fr": "Tu diriges une équipe technique qui a besoin de planning d'astreinte, d'escalade automatique et de triage assisté par IA."
+      },
+      "avoidIf": {
+        "en": "You're a solo developer or a team of 5 or fewer that fits entirely within the free tier's limits.",
+        "fr": "Tu es un développeur solo ou une équipe de 5 personnes ou moins qui tient entièrement dans les limites du palier gratuit."
+      },
+      "threshold": {
+        "en": "Budget $21/user/month (Professional, Incident Management) once you outgrow the free tier's 5-user cap; the newer Reliability Platform starts at $2,800/year for 10 seats.",
+        "fr": "Prévois 21 $/utilisateur/mois (Professional, Incident Management) une fois dépassé le plafond de 5 utilisateurs du palier gratuit ; la nouvelle Reliability Platform démarre à 2 800 $/an pour 10 sièges."
+      },
+      "billingTraps": {
+        "en": "Don't mix the two pricing models: legacy per-seat Incident Management and the newer annual-fee Reliability Platform with seat and usage caps are sold separately.",
+        "fr": "Ne mélange pas les deux modèles tarifaires : l'Incident Management historique par siège et la nouvelle Reliability Platform à frais annuels avec plafonds de sièges et d'usage sont vendus séparément."
+      }
+    }
+  },
   "unknowns": [
     "Exact seat/usage limits for the Essential, Plus and Ultimate PD Reliability Platform tiers were captured but not independently re-verified beyond the single pricing page fetch.",
     "Whether the legacy Incident Management Professional plan remains sold to new customers alongside the new Reliability Platform was not clarified."

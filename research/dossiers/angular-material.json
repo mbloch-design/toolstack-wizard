@@ -3,7 +3,7 @@
   "slug": "angular-material",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Angular Material",
     "vendor": "Google (Angular team)",
@@ -15,8 +15,20 @@
     "statusNote": "Old material.angular.io now redirects to material.angular.dev."
   },
   "sources": [
-    { "id": "s1", "url": "https://material.angular.dev/", "tier": 1, "accessedOn": "2026-09-25", "title": "Angular Material" },
-    { "id": "s2", "url": "https://github.com/angular/components", "tier": 1, "accessedOn": "2026-09-25", "title": "angular/components repository" }
+    {
+      "id": "s1",
+      "url": "https://material.angular.dev/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Angular Material"
+    },
+    {
+      "id": "s2",
+      "url": "https://github.com/angular/components",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "angular/components repository"
+    }
   ],
   "pricing": {
     "model": "open_source",
@@ -25,7 +37,13 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s2"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,10 +51,21 @@
         "name": "Open source",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "MIT-licensed, free to use with no paid tier.", "fr": "…" }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "MIT-licensed, free to use with no paid tier.",
+            "fr": "Sous licence MIT, gratuit à utiliser, sans palier payant."
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": null,
@@ -45,27 +74,213 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Provides a full set of Material Design UI components (buttons, forms, navigation, layout, data table) for Angular applications.", "fr": "…", "sourceIds": ["s1", "s2"] },
-      { "en": "Ships alongside the Angular CDK, a set of behavior primitives (overlay, drag-drop, a11y) for building custom components.", "fr": "…", "sourceIds": ["s2"] },
-      { "en": "Officially maintained by the Angular team at Google, following the same support and release policy as the Angular framework.", "fr": "…", "sourceIds": ["s2"] }
+      {
+        "en": "Provides a full set of Material Design UI components (buttons, forms, navigation, layout, data table) for Angular applications.",
+        "fr": "Fournit un ensemble complet de composants d'interface Material Design (boutons, formulaires, navigation, mise en page, tableau de données) pour les applications Angular.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "en": "Ships alongside the Angular CDK, a set of behavior primitives (overlay, drag-drop, a11y) for building custom components.",
+        "fr": "Livré avec l'Angular CDK, un ensemble de briques de comportement (overlay, glisser-déposer, accessibilité) pour construire des composants sur mesure.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Officially maintained by the Angular team at Google, following the same support and release policy as the Angular framework.",
+        "fr": "Maintenu officiellement par l'équipe Angular chez Google, avec la même politique de support et de publication que le framework Angular.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Angular-only: no React, Vue or vanilla JS support, so it cannot be reused outside an Angular codebase.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Visual customization beyond Material Design theming requires overriding CSS/SCSS, which adds friction compared to headless component kits.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Angular-only: no React, Vue or vanilla JS support, so it cannot be reused outside an Angular codebase.",
+        "fr": "Réservé à Angular : pas de support React, Vue ou JavaScript natif, donc impossible à réutiliser hors d'une base de code Angular.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Visual customization beyond Material Design theming requires overriding CSS/SCSS, which adds friction compared to headless component kits.",
+        "fr": "Personnaliser l'apparence au-delà du thème Material Design demande de surcharger le CSS/SCSS, ce qui ajoute de la friction par rapport à des kits de composants headless.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Angular CDK", "slug": null, "sourceIds": ["s2"] },
-      { "name": "Google Maps", "slug": null, "sourceIds": ["s2"] },
-      { "name": "YouTube Player", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "Angular CDK",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Google Maps",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "YouTube Player",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "material-ui", "reason": { "en": "Same Material Design system, but for React instead of Angular.", "fr": "…" } },
-    { "slug": "tailwind-css", "reason": { "en": "Utility-first alternative for teams that want full visual control instead of Material Design defaults.", "fr": "…" } },
-    { "slug": "radix-ui", "reason": { "en": "Headless component primitives, an alternative approach for teams not wanting Material Design's visual language.", "fr": "…" } }
+    {
+      "slug": "material-ui",
+      "reason": {
+        "en": "Same Material Design system, but for React instead of Angular.",
+        "fr": "Le même système Material Design, mais pour React au lieu d'Angular."
+      }
+    },
+    {
+      "slug": "tailwind-css",
+      "reason": {
+        "en": "Utility-first alternative for teams that want full visual control instead of Material Design defaults.",
+        "fr": "Alternative utility-first pour les équipes qui veulent un contrôle visuel total plutôt que les réglages par défaut de Material Design."
+      }
+    },
+    {
+      "slug": "radix-ui",
+      "reason": {
+        "en": "Headless component primitives, an alternative approach for teams not wanting Material Design's visual language.",
+        "fr": "Primitives de composants headless, une approche différente pour les équipes qui ne veulent pas du langage visuel Material Design."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "unknowns": ["No pricing page relevant, project is fully open source (MIT); exact npm download stats and release cadence not captured."],
-  "conflicts": []
+  "unknowns": [
+    "No pricing page relevant, project is fully open source (MIT); exact npm download stats and release cadence not captured."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Fully free under the MIT license with no paid tier, and it ships a complete component set plus the CDK, a strong return for any Angular team.",
+        "fr": "Entièrement gratuit sous licence MIT, sans palier payant, et il livre un ensemble complet de composants plus le CDK, un bon retour pour toute équipe Angular.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Components work out of the box with Material Design defaults, but customizing the visual style beyond that requires CSS/SCSS overrides, adding friction to a first result.",
+        "fr": "Les composants fonctionnent directement avec les réglages Material Design par défaut, mais personnaliser le style au-delà demande de surcharger le CSS/SCSS, ce qui ajoute de la friction pour un premier résultat.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers a full Material Design component set and behavior primitives (CDK) as promised, for Angular apps specifically.",
+        "fr": "Il fournit un ensemble complet de composants Material Design et des briques de comportement (CDK) comme promis, spécifiquement pour les applications Angular.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers UI components, layout, navigation, data tables and low-level behavior primitives (overlay, drag-drop, a11y) via the CDK, a wide surface for the category.",
+        "fr": "Couvre les composants d'interface, la mise en page, la navigation, les tableaux de données et des briques de comportement bas niveau (overlay, glisser-déposer, accessibilité) via le CDK, une couverture large pour la catégorie.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: migrating an app's Material Design markup and theming away from Angular Material to another library is not covered by the collected sources.",
+        "fr": "Note neutre : la migration du balisage et du thème Material Design d'une application hors d'Angular Material vers une autre bibliothèque ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Angular developers who want an officially maintained, ready-made Material Design component library instead of building UI components from scratch.",
+      "fr": "Développeurs Angular qui veulent une bibliothèque de composants Material Design officiellement maintenue, plutôt que de construire les composants d'interface à partir de zéro."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: build an Angular app's forms, navigation and data tables with ready-made Material Design components instead of coding them from scratch.",
+      "fr": "Cas d'usage : construire les formulaires, la navigation et les tableaux de données d'une application Angular avec des composants Material Design prêts à l'emploi plutôt que de les coder de zéro."
+    },
+    {
+      "en": "Use case: use the Angular CDK's overlay and drag-drop primitives to build a fully custom component while keeping Angular Material for the rest of the UI.",
+      "fr": "Cas d'usage : utiliser les primitives overlay et glisser-déposer de l'Angular CDK pour construire un composant sur mesure, tout en gardant Angular Material pour le reste de l'interface."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Angular UI components",
+      "fr": "Composants UI Angular"
+    },
+    "shortDescription": {
+      "en": "Official Material Design component library for Angular, maintained by Google's Angular team, with the Angular CDK for custom behavior.",
+      "fr": "Bibliothèque officielle de composants Material Design pour Angular, maintenue par l'équipe Angular de Google, avec l'Angular CDK pour du comportement sur mesure."
+    },
+    "longDescription": {
+      "en": "Angular Material provides a full set of Material Design UI components, forms, navigation, layout and data tables, for Angular applications. It ships alongside the Angular CDK, a set of behavior primitives (overlay, drag-drop, accessibility) for building custom components, and is maintained officially by Google's Angular team following the framework's own release policy.\n\nIt's free and open source (MIT), with no paid tier at all. It's Angular-only, so it doesn't help React or Vue projects, and visual customization beyond Material Design theming means overriding CSS/SCSS. It fits an Angular developer or team that wants a maintained, coherent component set rather than building UI from scratch.",
+      "fr": "Angular Material fournit un ensemble complet de composants Material Design (formulaires, navigation, mise en page, tableaux de données) pour les applications Angular. Il est livré avec l'Angular CDK, des briques de comportement (overlay, glisser-déposer, accessibilité) pour construire des composants sur mesure, et il est maintenu officiellement par l'équipe Angular de Google.\n\nIl est gratuit et open source (MIT), sans aucun palier payant. Il est réservé à Angular, donc il n'aide pas les projets React ou Vue, et personnaliser l'apparence au-delà du thème Material Design demande de surcharger le CSS/SCSS. Il convient à un développeur ou une équipe Angular qui veut un ensemble de composants maintenu plutôt que de construire l'interface de zéro."
+    },
+    "pros": [
+      {
+        "en": "Completely free and open source, with official Google/Angular team maintenance.",
+        "fr": "Entièrement gratuit et open source, avec une maintenance officielle par l'équipe Google/Angular."
+      },
+      {
+        "en": "Ships with the Angular CDK for building fully custom components on solid behavior primitives.",
+        "fr": "Livré avec l'Angular CDK pour construire des composants entièrement sur mesure sur des briques de comportement solides."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Locked to Angular, unusable in a React or Vue codebase.",
+        "fr": "Réservé à Angular, inutilisable dans une base de code React ou Vue."
+      },
+      {
+        "en": "Moving away from the default Material Design look requires CSS/SCSS override work.",
+        "fr": "S'éloigner de l'apparence Material Design par défaut demande un travail de surcharge CSS/SCSS."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're building an Angular app and want an officially maintained, coherent component set instead of assembling one yourself.",
+        "fr": "Tu construis une application Angular et tu veux un ensemble de composants cohérent et officiellement maintenu, plutôt que de l'assembler toi-même."
+      },
+      "avoidIf": {
+        "en": "You're not using Angular, or you need a visual style far from Material Design without heavy CSS overrides.",
+        "fr": "Tu n'utilises pas Angular, ou tu as besoin d'un style visuel très éloigné de Material Design sans lourdes surcharges CSS."
+      },
+      "threshold": {
+        "en": "There's no price threshold: it's free and open source (MIT) either way, so the decision is about framework fit, not cost.",
+        "fr": "Il n'y a pas de seuil de prix : c'est gratuit et open source (MIT) dans tous les cas, donc la décision porte sur l'adéquation au framework, pas sur le coût."
+      }
+    }
+  },
+  "reviewNotes": []
 }

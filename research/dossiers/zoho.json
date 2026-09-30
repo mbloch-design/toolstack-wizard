@@ -3,7 +3,8 @@
   "slug": "zoho",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Zoho One",
     "vendor": "Zoho Corporation",
@@ -30,13 +31,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": {
-      "exists": false,
-      "limits": null,
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -44,42 +39,30 @@
         "name": "All Employee Pricing",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
           {
             "en": "Requires purchasing a license for every employee in the organization; exact per-user rate not published without this commitment. Includes 50+ business applications.",
-            "fr": null
+            "fr": "Exige l'achat d'une licence pour chaque employé de l'organisation ; le tarif exact par utilisateur n'est pas publié sans cet engagement. Inclut plus de 50 applications professionnelles."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "flexible-users",
         "name": "Flexible Users",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 90,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 90, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
           {
             "en": "$90/user/month billed annually, licensing only the specific users who need access rather than the whole company; includes 50+ business applications.",
-            "fr": null
+            "fr": "90 $/utilisateur/mois facturé annuellement, en ne licenciant que les utilisateurs qui ont réellement besoin d'accès plutôt que toute l'entreprise ; inclut plus de 50 applications professionnelles."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "flexible-users",
@@ -87,17 +70,13 @@
     "cautions": [
       {
         "en": "Switching between the 'Essentials' tier and 'Standard' tier of Zoho One requires upgrading or downgrading ALL users in the organization at once, not per-user.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Passer du niveau « Essentials » au niveau « Standard » de Zoho One exige de mettre à niveau ou de rétrograder TOUS les utilisateurs de l'organisation en une fois, pas utilisateur par utilisateur.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "The 'All Employee Pricing' plan mandates buying a license for every person on payroll, even non-users, which can inflate cost for organizations with many non-software users.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Le forfait « All Employee Pricing » impose l'achat d'une licence pour chaque personne sur la paie, même les non-utilisateurs, ce qui peut gonfler le coût pour les organisations avec beaucoup de personnes hors logiciel.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -105,70 +84,74 @@
     "capabilities": [
       {
         "en": "Bundles 50+ Zoho business applications (CRM, collaboration, finance, marketing, customer service, HR) under one subscription and single invoice.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Regroupe plus de 50 applications professionnelles Zoho (CRM, collaboration, finance, marketing, service client, RH) sous un seul abonnement et une seule facture.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Centralized administrative control across all bundled apps, including mobile device management.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Contrôle administratif centralisé sur toutes les applications intégrées, y compris la gestion des appareils mobiles.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Available as web, mobile and desktop applications, plus browser extensions.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Disponible en applications web, mobile et desktop, ainsi qu'en extensions de navigateur.",
+        "sourceIds": ["s1"]
       }
     ],
     "limitations": [
       {
         "en": "Plan changes (Essentials/Standard) apply to the whole organization, not individual users, reducing flexibility for mixed usage needs.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les changements de forfait (Essentials/Standard) s'appliquent à toute l'organisation, pas aux utilisateurs individuellement, ce qui réduit la flexibilité pour des besoins d'usage mixtes.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "The lower headline per-user price requires either committing to license every employee or paying a higher flexible-user rate ($90/month) for partial adoption.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Le prix par utilisateur affiché le plus bas exige soit de licencier tous les employés, soit de payer le tarif flexible plus élevé (90 $/mois) pour une adoption partielle.",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [],
-    "platforms": [
-      "web",
-      "ios",
-      "android",
-      "desktop"
-    ]
+    "platforms": ["web", "ios", "android", "desktop"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and companies that want to standardize CRM, finance, HR and collaboration on a single vendor instead of many separate subscriptions.",
+      "fr": "Petites équipes et entreprises qui veulent standardiser le CRM, la finance, les RH et la collaboration sur un seul fournisseur plutôt que sur de multiples abonnements séparés."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a 15-person company licenses Flexible Users at $90/user/month to run CRM, finance and HR from Zoho apps under one admin console instead of five separate vendor logins.",
+      "fr": "Usage : une entreprise de 15 personnes licencie Flexible Users à 90 $/utilisateur/mois pour faire tourner le CRM, la finance et les RH depuis les applications Zoho sous une seule console d'administration, au lieu de cinq connexions fournisseurs distinctes."
+    },
+    {
+      "en": "Usage: an ops manager standardizes the whole team on the Standard tier at once, since Zoho One only allows organization-wide tier changes, not per-user mixing.",
+      "fr": "Usage : un responsable ops standardise toute l'équipe sur le niveau Standard en une fois, car Zoho One n'autorise que des changements de niveau à l'échelle de l'organisation, pas un mélange par utilisateur."
+    }
+  ],
   "alternatives": [
     {
       "slug": "netsuite",
       "reason": {
         "en": "Broader ERP suite competitor for businesses needing a unified operations platform, at a higher price point.",
-        "fr": null
+        "fr": "Suite ERP plus large, pour les entreprises qui ont besoin d'une plateforme d'exploitation unifiée, à un prix plus élevé."
       }
     },
     {
       "slug": "microsoft-dynamics-business-central",
       "reason": {
         "en": "All-in-one business application suite competing for the same unified-platform buyer.",
-        "fr": null
+        "fr": "Suite d'applications professionnelles tout-en-un qui vise le même acheteur cherchant une plateforme unifiée."
       }
     },
     {
       "slug": "hive",
       "reason": {
         "en": "Alternative all-in-one work platform combining collaboration and business tools for small teams.",
-        "fr": null
+        "fr": "Plateforme de travail tout-en-un alternative, combinant collaboration et outils métier pour petites équipes."
       }
     }
   ],
@@ -179,6 +162,90 @@
       "reason": "Direct competitor as an all-in-one, modular business application suite with per-app or bundled pricing, not in the catalogue."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Bundling 50+ apps under one subscription can reduce total vendor cost, but the dossier has no published per-user price for the discounted 'All Employee' tier to compare against buying apps separately.",
+        "fr": "Regrouper plus de 50 applications sous un seul abonnement peut réduire le coût total fournisseurs, mais le dossier n'a pas de prix par utilisateur publié pour le tarif réduit « All Employee » à comparer avec un achat d'applications séparées.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and ease of first setup across 50+ apps are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la facilité de la première configuration sur plus de 50 applications ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers a broad app bundle as promised, but the whole-organization plan-switching rule is a real constraint reported in the sources, not a pure workaround-free experience.",
+        "fr": "Livre bien le paquet d'applications promis, mais la règle de changement de forfait à l'échelle de l'organisation est une contrainte réelle rapportée par les sources, pas une expérience totalement sans contournement.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covering 50+ business applications in one subscription is a scope no single-purpose tool matches, a clear ceiling advantage for the category.",
+        "fr": "Couvrir plus de 50 applications professionnelles dans un seul abonnement est une étendue qu'aucun outil mono-fonction n'égale, un avantage de plafond clair pour la catégorie.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability across the 50+ bundled apps if you leave Zoho One are not covered by the collected sources.",
+        "fr": "Note neutre : l'export et la portabilité des données sur les plus de 50 applications intégrées en cas de départ de Zoho One ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "All-in-one suite", "fr": "Suite tout-en-un" },
+    "shortDescription": {
+      "en": "Bundle of 50+ Zoho business apps under one subscription, priced per employee or per flexible user, with no free plan.",
+      "fr": "Suite de plus de 50 applications Zoho réunies sous un seul abonnement, facturée par employé ou par utilisateur flexible, sans plan gratuit."
+    },
+    "longDescription": {
+      "en": "Zoho One bundles over 50 Zoho applications (CRM, collaboration, finance, marketing, customer service, HR) into a single subscription with centralized admin control across every app, including mobile device management. It runs on web, mobile, desktop and browser extensions.\n\nPricing works two ways: license every employee in the company at a discounted rate not published without a quote, or pay $90/user/month for only the specific users who need access. Switching between the Essentials and Standard tiers applies to the whole organization at once, not per user, so mixed usage needs lose flexibility. It suits a small team standardizing on one vendor across departments rather than a single freelancer.",
+      "fr": "Zoho One regroupe plus de 50 applications Zoho (CRM, collaboration, finance, marketing, service client, RH) sous un seul abonnement, avec une administration centralisée sur toutes les applications, y compris la gestion des appareils mobiles. Disponible sur le web, mobile, desktop et en extensions de navigateur.\n\nLa tarification fonctionne de deux façons : licencier tous les employés à un tarif réduit non publié sans devis, ou payer 90 $/utilisateur/mois pour les seules personnes qui ont besoin d'accès. Passer d'Essentials à Standard s'applique à toute l'organisation d'un coup, pas utilisateur par utilisateur, ce qui réduit la flexibilité en cas d'usages mixtes. L'outil convient à une équipe qui standardise ses outils sur un seul fournisseur plutôt qu'à un indépendant seul."
+    },
+    "pros": [
+      {
+        "en": "Single subscription and invoice cover 50+ business apps instead of juggling separate vendor contracts.",
+        "fr": "Un seul abonnement et une seule facture couvrent plus de 50 applications professionnelles, au lieu de jongler avec des contrats fournisseurs séparés."
+      },
+      {
+        "en": "Centralized admin console manages users and mobile devices across every bundled app.",
+        "fr": "Une console d'administration centralisée gère les utilisateurs et les appareils mobiles sur toutes les applications intégrées."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public per-user price for 'All Employee Pricing'; you must request a quote to know the real cost.",
+        "fr": "Aucun prix par utilisateur publié pour l'offre « All Employee Pricing » : il faut demander un devis pour connaître le coût réel."
+      },
+      {
+        "en": "Essentials/Standard tier changes apply to the whole organization at once, with no per-user mix.",
+        "fr": "Le changement de niveau Essentials/Standard s'applique à toute l'organisation en une fois, sans mixité possible par utilisateur."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want to standardize most business functions (CRM, HR, finance, collaboration) on one vendor for the whole team.",
+        "fr": "Tu veux standardiser la plupart des fonctions de l'entreprise (CRM, RH, finance, collaboration) sur un seul fournisseur pour toute l'équipe."
+      },
+      "avoidIf": {
+        "en": "You only need one or two specific apps and would rather buy them individually than license everyone.",
+        "fr": "Tu n'as besoin que d'une ou deux applications précises et préfères les acheter séparément plutôt que licencier tout le monde."
+      },
+      "threshold": {
+        "en": "Budget at least $90/user/month (Flexible Users) if you don't want to license every employee; the 'All Employee Pricing' rate requires a quote.",
+        "fr": "Prévois au moins 90 $/utilisateur/mois (Flexible Users) si tu ne veux pas licencier tous les employés ; le tarif « All Employee Pricing » nécessite un devis."
+      },
+      "billingTraps": {
+        "en": "The 'All Employee Pricing' plan requires buying a license for every person on payroll, even non-software users, which can inflate cost.",
+        "fr": "Le forfait « All Employee Pricing » oblige à acheter une licence pour chaque personne sur la paie, même les non-utilisateurs du logiciel, ce qui peut gonfler la facture."
+      }
+    }
+  },
   "unknowns": [
     "Exact per-user price for the 'All Employee Pricing' plan was not published on the page without initiating a quote.",
     "Pricing for the Essentials tier specifically (as opposed to Standard) was not itemized with a monthly figure on the page checked."

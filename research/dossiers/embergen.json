@@ -3,7 +3,7 @@
   "slug": "embergen",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "EmberGen",
     "vendor": "JangaFX",
@@ -60,7 +60,7 @@
         "keyLimits": [
           {
             "en": "First-year cost of $300 instantly grants a permanent license including 12 months of updates; optional annual maintenance afterward is $180/year for continued updates.",
-            "fr": null
+            "fr": "Le paiement initial de 300 $ donne immédiatement une licence permanente incluant 12 mois de mises à jour ; la maintenance annuelle optionnelle ensuite coûte 180 $/an pour continuer à recevoir les mises à jour."
           }
         ],
         "sourceIds": [
@@ -73,14 +73,14 @@
     "cautions": [
       {
         "en": "The $300 'first year' payment is actually a permanent license purchase, not a recurring subscription; only the optional $180/year maintenance renews for continued updates.",
-        "fr": null,
+        "fr": "Le paiement de 300 $ « première année » est en réalité l'achat d'une licence permanente, pas un abonnement récurrent ; seule la maintenance optionnelle de 180 $/an se renouvelle pour continuer à recevoir les mises à jour.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "A free trial is offered at a separate URL (jangafx.com/software/embergen/try) but its duration was not stated on the pages checked.",
-        "fr": null,
+        "fr": "Un essai gratuit est proposé sur une URL séparée (jangafx.com/software/embergen/try) mais sa durée n'était pas indiquée sur les pages consultées.",
         "sourceIds": [
           "s1"
         ]
@@ -91,28 +91,28 @@
     "capabilities": [
       {
         "en": "Real-time GPU-accelerated fluid simulation for fire, smoke and explosions.",
-        "fr": null,
+        "fr": "Simulation de fluides en temps réel accélérée par GPU pour le feu, la fumée et les explosions.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Exports flipbooks, sprite sheets and VDB volumes for use in game engines and DCC tools.",
-        "fr": null,
+        "fr": "Exporte des flipbooks, sprite sheets et volumes VDB pour une utilisation dans les moteurs de jeu et outils DCC.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Imports FBX/Alembic meshes as emitters and colliders, plus FBX cameras.",
-        "fr": null,
+        "fr": "Importe des maillages FBX/Alembic comme émetteurs et collisionneurs, ainsi que des caméras FBX.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Ships with 100+ preset simulation projects.",
-        "fr": null,
+        "fr": "Livré avec plus de 100 projets de simulation préréglés.",
         "sourceIds": [
           "s1"
         ]
@@ -121,14 +121,14 @@
     "limitations": [
       {
         "en": "No public monthly subscription option; access is via a one-time license purchase plus optional yearly maintenance.",
-        "fr": null,
+        "fr": "Aucune option d'abonnement mensuel public ; l'accès se fait par achat de licence unique plus maintenance annuelle optionnelle.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Platform support (Windows/macOS/Linux) is not detailed on the pages checked and requires further verification.",
-        "fr": null,
+        "fr": "Le support des plateformes (Windows/macOS/Linux) n'est pas détaillé sur les pages consultées et nécessite une vérification complémentaire.",
         "sourceIds": [
           "s1"
         ]
@@ -157,23 +157,147 @@
       "slug": "houdini",
       "reason": {
         "en": "Higher-end VFX suite with its own (slower) fluid/pyro simulation toolset, used by studios needing more control.",
-        "fr": null
+        "fr": "Suite VFX plus haut de gamme avec son propre outil de simulation fluide/pyro (plus lent), utilisée par les studios qui ont besoin de plus de contrôle."
       }
     },
     {
       "slug": "blender",
       "reason": {
         "en": "Free 3D suite with a built-in (non-real-time) fire/smoke simulation system, a lower-cost alternative for indie creators.",
-        "fr": null
+        "fr": "Suite 3D gratuite avec un système de simulation feu/fumée intégré (hors temps réel), une alternative moins coûteuse pour les créateurs indépendants."
       }
     }
   ],
-  "missingAlternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Chaos Phoenix",
+      "officialUrl": "https://www.chaos.com/phoenix",
+      "reason": "Fire/smoke/liquid simulation plugin for 3ds Max and Maya, a direct real-time-adjacent competitor not in the catalogue"
+    }
+  ],
   "unknowns": [
     "Trial duration for EmberGen not stated on the pages checked.",
     "Supported OS platforms not confirmed on the product or pricing pages checked."
   ],
   "conflicts": [
     "The seed data described pricing as a $19.99/month subscription plus a $299.99 one-time purchase; the official pricing page instead shows a single $300 permanent-license purchase with an optional $180/year maintenance fee. The official page was used as the source of truth."
-  ]
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A one-time $300 permanent license with 12 months of updates costs far less over time than a recurring VFX subscription, with optional $180/year maintenance only if continued updates are wanted.",
+        "fr": "Une licence permanente à 300 $ payée une fois, avec 12 mois de mises à jour, coûte bien moins dans la durée qu'un abonnement VFX récurrent, avec une maintenance optionnelle de 180 $/an seulement si l'on veut continuer à recevoir les mises à jour.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Ships with 100+ preset simulation projects to start from, but real-time fluid simulation still requires some familiarity with VFX tools to get a usable first result.",
+        "fr": "Livré avec plus de 100 projets de simulation préréglés pour démarrer, mais la simulation de fluides en temps réel demande tout de même une certaine familiarité avec les outils VFX pour un premier résultat utilisable.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers real-time GPU-accelerated fire, smoke and explosion simulation directly, with exports to flipbooks, sprite sheets and VDB volumes usable in game engines and DCC tools without extra conversion tools.",
+        "fr": "Réalise directement la simulation temps réel de feu, fumée et explosions accélérée par GPU, avec des exports en flipbooks, sprite sheets et volumes VDB utilisables dans les moteurs de jeu et outils DCC sans outil de conversion supplémentaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Real-time GPU simulation plus FBX/Alembic import for emitters, colliders and cameras covers a full VFX pipeline need, positioned as faster than Houdini's fluid toolset per the collected facts.",
+        "fr": "La simulation GPU temps réel et l'import FBX/Alembic pour émetteurs, collisionneurs et caméras couvrent un besoin de pipeline VFX complet, positionné comme plus rapide que l'outil fluide de Houdini d'après les faits relevés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: no export or data-portability details beyond simulation file formats are covered by the collected sources.",
+        "fr": "Note neutre : aucune modalité d'export ou de portabilité des données au-delà des formats de fichiers de simulation ne figure dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "VFX artists and game developers who need fast, real-time fire, smoke and explosion simulations to export into a game engine or compositing tool.",
+      "fr": "Artistes VFX et développeurs de jeux qui ont besoin de simulations rapides et en temps réel de feu, fumée et explosions à exporter vers un moteur de jeu ou un outil de compositing."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Game VFX: simulate an explosion in real time, export as a flipbook sprite sheet for a game engine particle system.",
+      "fr": "VFX de jeu : simuler une explosion en temps réel, exporter en flipbook sprite sheet pour un système de particules de moteur de jeu."
+    },
+    {
+      "en": "Film compositing: simulate smoke around an imported FBX mesh, export VDB volumes into a DCC tool for final compositing.",
+      "fr": "Compositing film : simuler de la fumée autour d'un maillage FBX importé, exporter des volumes VDB vers un outil DCC pour le compositing final."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Real-time fluid simulation",
+      "fr": "Simulation fluide temps réel"
+    },
+    "shortDescription": {
+      "en": "GPU-accelerated real-time simulation tool for fire, smoke and explosions, exporting to game engines and DCC tools.",
+      "fr": "Outil de simulation temps réel accéléré par GPU pour le feu, la fumée et les explosions, avec export vers moteurs de jeu et outils DCC."
+    },
+    "longDescription": {
+      "en": "EmberGen simulates fire, smoke and explosions in real time on the GPU, well beyond the speed of traditional offline fluid solvers. It imports FBX/Alembic meshes as emitters and colliders, and exports flipbooks, sprite sheets and VDB volumes for game engines and DCC tools, with 100+ preset projects to start from.\n\nAccess is a one-time $300 permanent license including 12 months of updates, with optional $180/year maintenance afterward, rather than a recurring subscription. It suits VFX artists and game developers who need fast iteration on fire and smoke effects, less a studio wanting the deeper simulation control of Houdini.",
+      "fr": "EmberGen simule le feu, la fumée et les explosions en temps réel sur le GPU, bien au-delà de la vitesse des solveurs de fluides hors ligne traditionnels. Il importe des maillages FBX/Alembic comme émetteurs et collisionneurs, et exporte flipbooks, sprite sheets et volumes VDB pour moteurs de jeu et outils DCC, avec plus de 100 projets préréglés pour démarrer.\n\nL'accès se fait par une licence permanente à 300 $ payée une fois, incluant 12 mois de mises à jour, avec une maintenance optionnelle de 180 $/an ensuite. Il convient aux artistes VFX et développeurs de jeux qui itèrent vite sur des effets de feu et de fumée, moins à un studio voulant le contrôle de simulation plus poussé de Houdini."
+    },
+    "pros": [
+      {
+        "en": "Real-time GPU simulation gives fast iteration compared to offline fluid solvers.",
+        "fr": "La simulation GPU temps réel permet une itération rapide comparée aux solveurs de fluides hors ligne."
+      },
+      {
+        "en": "One-time license cost instead of a recurring subscription.",
+        "fr": "Coût de licence unique au lieu d'un abonnement récurrent."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public monthly subscription option, only a one-time purchase plus optional yearly maintenance.",
+        "fr": "Aucune option d'abonnement mensuel public, seulement un achat unique et une maintenance annuelle optionnelle."
+      },
+      {
+        "en": "Supported platforms are not detailed on the official pages, worth confirming before buying.",
+        "fr": "Les plateformes supportées ne sont pas détaillées sur les pages officielles, à confirmer avant l'achat."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if fast, real-time fire and smoke simulation for games or compositing is the main need.",
+        "fr": "À garder si une simulation rapide et en temps réel de feu et de fumée pour des jeux ou du compositing est le besoin principal."
+      },
+      "avoidIf": {
+        "en": "Avoid it if deeper simulation control across a full VFX pipeline matters more than speed, where Houdini's toolset goes further.",
+        "fr": "À éviter si un contrôle de simulation plus poussé sur un pipeline VFX complet compte plus que la vitesse, un terrain où l'outil de Houdini va plus loin."
+      },
+      "threshold": {
+        "en": "The only plan, Indie, costs a one-time $300 including 12 months of updates, with optional $180/year maintenance after that.",
+        "fr": "Le seul plan, Indie, coûte 300 $ payés une fois, incluant 12 mois de mises à jour, avec une maintenance optionnelle de 180 $/an ensuite."
+      },
+      "billingTraps": {
+        "en": "The $300 'first year' payment is a permanent license, not a subscription: only the optional $180/year maintenance renews, and skipping it just stops new updates rather than losing access.",
+        "fr": "Le paiement de 300 $ « première année » est une licence permanente, pas un abonnement : seule la maintenance optionnelle de 180 $/an se renouvelle, et ne pas la prendre arrête juste les nouvelles mises à jour sans perte d'accès."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
+  "reviewNotes": []
 }

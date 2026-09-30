@@ -37,7 +37,10 @@ const budgets = {
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
   htmlBytes: 880 * MiB,
   javascriptBytes: 15 * MiB,
-  cssBytes: 30.5 * MiB,
+  // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
+  // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200
+  // remaining fiches instead of a bump per batch.
+  cssBytes: 32 * MiB,
   duplicateBytes: 3 * MiB,
 };
 

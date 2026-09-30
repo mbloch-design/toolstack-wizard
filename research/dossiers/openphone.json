@@ -3,7 +3,8 @@
   "slug": "openphone",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Quo (formerly OpenPhone)",
     "vendor": "Quo, Inc. (Y Combinator-backed)",
@@ -58,7 +59,7 @@
         "keyLimits": [
           {
             "en": "One phone number per user, unlimited calling/messaging to US & Canada, voicemail transcripts, API access, manual call recording, limited task management.",
-            "fr": null
+            "fr": "Un numéro de téléphone par utilisateur, appels et SMS illimités vers les États-Unis et le Canada, transcription de messagerie vocale, accès API, enregistrement d'appel manuel, gestion des tâches limitée."
           }
         ],
         "sourceIds": [
@@ -79,7 +80,7 @@
         "keyLimits": [
           {
             "en": "Adds AI call summaries/transcripts, group calling and call transfers, HubSpot/Salesforce integrations, phone menus (IVR), analytics/reporting, automatic call recording, live chat support.",
-            "fr": null
+            "fr": "Ajoute les résumés et transcriptions d'appels par IA, les appels groupés et transferts d'appels, les intégrations HubSpot/Salesforce, les menus téléphoniques (SVI), les statistiques et l'enregistrement automatique des appels, ainsi que le support par chat en direct."
           }
         ],
         "sourceIds": [
@@ -100,7 +101,7 @@
         "keyLimits": [
           {
             "en": "Adds AI call tags, dedicated onboarding, priority live chat/email support, inbound phone support.",
-            "fr": null
+            "fr": "Ajoute les tags d'appels par IA, un accompagnement dédié à la mise en route, un support prioritaire par chat et email, et le support téléphonique entrant."
           }
         ],
         "sourceIds": [
@@ -112,7 +113,7 @@
     "addOns": [
       {
         "en": "Additional phone numbers at $5/month each; automated SMS at $0.01 per segment; international calling/messaging billed per-minute/per-message at variable rates.",
-        "fr": null,
+        "fr": "Numéros de téléphone supplémentaires à 5 $/mois chacun ; SMS automatisés à 0,01 $ par segment ; appels et messages internationaux facturés à la minute ou au message selon des tarifs variables.",
         "sourceIds": [
           "s1"
         ]
@@ -121,7 +122,7 @@
     "cautions": [
       {
         "en": "Only Starter offers month-to-month billing at $19/user; the advertised lower per-seat rates ($15/$23/$35) require annual commitment.",
-        "fr": null,
+        "fr": "Seul le forfait Starter propose une facturation mensuelle sans engagement à 19 $/utilisateur ; les tarifs par siège plus bas affichés (15 $/23 $/35 $) exigent un engagement annuel.",
         "sourceIds": [
           "s1"
         ]
@@ -132,28 +133,28 @@
     "capabilities": [
       {
         "en": "Business phone numbers (local or toll-free) per user with unlimited calling/messaging to US and Canadian numbers.",
-        "fr": null,
+        "fr": "Numéros de téléphone professionnels (locaux ou gratuits) par utilisateur, avec appels et SMS illimités vers les numéros américains et canadiens.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Shared phone numbers with team collaboration, internal messaging threads, auto-replies and scheduled messages.",
-        "fr": null,
+        "fr": "Numéros partagés avec collaboration d'équipe, fils de messages internes, réponses automatiques et messages programmés.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "AI features: an AI agent (Sona), AI call summaries/transcripts and AI call tags on higher tiers, plus MCP integration for ChatGPT/Claude.",
-        "fr": null,
+        "fr": "Fonctions IA : un agent IA (Sona), des résumés et transcriptions d'appels par IA et des tags d'appels IA sur les forfaits supérieurs, plus une intégration MCP pour ChatGPT/Claude.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Phone menus (IVR), group calling, call transfers and call recording (manual on Starter, automatic on Business/Scale).",
-        "fr": null,
+        "fr": "Menus téléphoniques (SVI), appels groupés, transferts d'appels et enregistrement des appels (manuel sur Starter, automatique sur Business et Scale).",
         "sourceIds": [
           "s1"
         ]
@@ -162,82 +163,67 @@
     "limitations": [
       {
         "en": "No free plan; only a 7-day trial before billing begins.",
-        "fr": null,
+        "fr": "Aucun plan gratuit ; seulement un essai de 7 jours avant le début de la facturation.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Automatic call recording, IVR, CRM integrations (HubSpot/Salesforce) and analytics all require at least the Business tier, not available on Starter.",
-        "fr": null,
+        "fr": "L'enregistrement automatique des appels, le SVI, les intégrations CRM (HubSpot/Salesforce) et les statistiques nécessitent au minimum le forfait Business, indisponibles sur Starter.",
         "sourceIds": [
           "s1"
         ]
       }
     ],
     "integrations": [
-      {
-        "name": "HubSpot",
-        "slug": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "name": "Salesforce",
-        "slug": "salesforce",
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "name": "Slack",
-        "slug": "slack",
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "name": "Zapier",
-        "slug": "zapier",
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "name": "Pipedrive",
-        "slug": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Salesforce", "slug": "salesforce", "sourceIds": ["s1"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
+      { "name": "Zapier", "slug": "zapier", "sourceIds": ["s1"] },
+      { "name": "Pipedrive", "slug": null, "sourceIds": ["s1"] }
     ],
-    "platforms": [
-      "web",
-      "ios",
-      "android"
-    ]
+    "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams handling calls and texts (sales, support, ops) who need shared numbers and call routing without a dedicated phone system.",
+      "fr": "Petites équipes qui gèrent des appels et des SMS (vente, support, ops) et ont besoin de numéros partagés et d'un routage d'appels sans système téléphonique dédié."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a 3-person sales team shares one toll-free number with automatic call recording on Business, so any rep can review a prospect's past conversation before calling back.",
+      "fr": "Usage : une équipe de vente de 3 personnes partage un numéro gratuit avec enregistrement automatique des appels sur Business, pour que chaque commercial puisse consulter l'historique d'un prospect avant de le rappeler."
+    },
+    {
+      "en": "Usage: a solo consultant sets an auto-reply and gets voicemail transcripts on Starter, so a missed call outside office hours still produces a written follow-up note.",
+      "fr": "Usage : un consultant indépendant configure une réponse automatique et reçoit les transcriptions de messagerie vocale sur Starter, pour qu'un appel manqué hors horaires produise quand même une note de suivi écrite."
+    }
+  ],
   "alternatives": [
     {
       "slug": "aircall",
       "reason": {
         "en": "Direct business phone system competitor with similar per-seat pricing and CRM integrations.",
-        "fr": null
+        "fr": "Concurrent direct sur les systèmes de téléphonie professionnelle, avec une tarification par siège et des intégrations CRM similaires."
       }
     },
     {
       "slug": "zoom-pro",
       "reason": {
         "en": "Offers a business phone add-on that overlaps with Quo's core calling functionality for small teams.",
-        "fr": null
+        "fr": "Propose une option téléphonie professionnelle qui recoupe les fonctions d'appel principales de Quo pour les petites équipes."
       }
     },
     {
       "slug": "calltrackingmetrics",
       "reason": {
         "en": "Alternative call management platform with analytics and call tracking for small teams.",
-        "fr": null
+        "fr": "Plateforme alternative de gestion des appels avec analytique et suivi d'appels pour les petites équipes."
       }
     }
   ],
@@ -248,6 +234,90 @@
       "reason": "Major direct competitor in AI-powered business phone systems, not in the catalogue."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Starter costs $19/month per user for unlimited US/Canada calling, a reasonable entry price, but the dossier has no comparison data against cheaper alternatives to justify a higher score.",
+        "fr": "Le forfait Starter coûte 19 $/mois par utilisateur pour des appels illimités vers les États-Unis et le Canada, un prix d'entrée raisonnable, mais le dossier ne fournit pas de comparaison avec des alternatives moins chères pour justifier une note plus haute.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and ease of first setup are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la facilité de la première configuration ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The described feature set (calling, texting, IVR, recording, CRM integrations) matches what each tier promises, with no workaround reported.",
+        "fr": "L'ensemble de fonctionnalités décrit (appels, SMS, SVI, enregistrement, intégrations CRM) correspond à ce que chaque forfait promet, sans contournement signalé.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers standard business phone features plus some AI additions (call summaries, tags), but advanced telephony features like queuing analytics are not mentioned.",
+        "fr": "Couvre les fonctions standards de téléphonie professionnelle et quelques ajouts IA (résumés, tags d'appels), mais les fonctions avancées comme l'analyse des files d'attente ne sont pas mentionnées.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability if you leave the tool are not covered by the collected sources, beyond a mention of API access.",
+        "fr": "Note neutre : l'export et la portabilité des données en cas de départ ne figurent pas dans les sources relevées, au-delà d'une mention de l'accès API.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Business phone system", "fr": "Téléphonie d'entreprise" },
+    "shortDescription": {
+      "en": "Per-seat business phone numbers with calling, texting and AI call features for small teams, with no free plan and only a 7-day trial.",
+      "fr": "Numéros de téléphone professionnels facturés par utilisateur, avec appels, SMS et IA pour petites équipes ; sans plan gratuit, essai de 7 jours seulement."
+    },
+    "longDescription": {
+      "en": "Quo (formerly OpenPhone) gives each team member a dedicated or shared business phone number for calling and texting US and Canadian contacts. Shared numbers, internal threads, auto-replies and AI call summaries let small teams handle calls collaboratively instead of routing everything through one person's cellphone.\n\nPricing starts at $19/month per user on Starter (month-to-month), or $15/user/month on annual billing. CRM integrations, IVR and automatic recording require the $33/month Business tier. There is no free plan, only a 7-day trial, so budget for billing right away. It suits small sales, support or ops teams more than a solo user who just needs one number.",
+      "fr": "Quo (anciennement OpenPhone) donne à chaque membre de l'équipe un numéro professionnel, dédié ou partagé, pour appeler et envoyer des SMS aux contacts américains et canadiens. Numéros partagés, fils de discussion internes, réponses automatiques et résumés d'appels par IA permettent à une petite équipe de gérer les appels ensemble plutôt que via le portable d'une seule personne.\n\nLes tarifs démarrent à 19 $/mois par utilisateur sur Starter (sans engagement), ou 15 $/mois en facturation annuelle. Les intégrations CRM, le SVI et l'enregistrement automatique nécessitent le forfait Business à 33 $/mois. Il n'y a pas de plan gratuit, seulement un essai de 7 jours. L'outil convient mieux à une petite équipe de vente, de support ou d'ops qu'à un indépendant seul."
+    },
+    "pros": [
+      {
+        "en": "Month-to-month billing available on the entry Starter plan, no annual lock-in required to get started.",
+        "fr": "Facturation mensuelle sans engagement disponible dès le forfait Starter, pas besoin de s'engager sur un an pour démarrer."
+      },
+      {
+        "en": "AI call summaries, transcripts and tags reduce manual note-taking on the Business and Scale tiers.",
+        "fr": "Les résumés, transcriptions et tags d'appels par IA réduisent la prise de notes manuelle sur les forfaits Business et Scale."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Automatic call recording, IVR and CRM integrations are locked behind the Business tier, not available on Starter.",
+        "fr": "L'enregistrement automatique des appels, le SVI et les intégrations CRM sont réservés au forfait Business, indisponibles sur Starter."
+      },
+      {
+        "en": "No free plan: only a 7-day trial before billing starts, and the lowest per-seat rates require an annual commitment.",
+        "fr": "Aucun plan gratuit : seulement un essai de 7 jours avant la facturation, et les tarifs par siège les plus bas exigent un engagement annuel."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run a small sales, support or ops team that needs shared numbers, call routing and AI call notes without a legacy phone system.",
+        "fr": "Tu diriges une petite équipe de vente, de support ou d'ops qui a besoin de numéros partagés, de routage d'appels et de notes d'appels par IA, sans système téléphonique classique."
+      },
+      "avoidIf": {
+        "en": "You only need one phone number for yourself and don't want to commit to a paid plan after a short trial.",
+        "fr": "Tu n'as besoin que d'un seul numéro pour toi-même et tu ne veux pas t'engager sur un forfait payant après un court essai."
+      },
+      "threshold": {
+        "en": "Budget at least $33/month per user (Business) if you need CRM integrations, IVR or automatic recording; $19/month per user (Starter) covers basic calling and texting only.",
+        "fr": "Prévois au moins 33 $/mois par utilisateur (Business) si tu as besoin des intégrations CRM, du SVI ou de l'enregistrement automatique ; 19 $/mois par utilisateur (Starter) ne couvre que les appels et SMS de base."
+      },
+      "billingTraps": {
+        "en": "Only Starter offers month-to-month billing at $19/user; the lower advertised per-seat rates ($15/$23/$35) require an annual commitment.",
+        "fr": "Seul Starter propose une facturation mensuelle sans engagement à 19 $/utilisateur ; les tarifs par siège plus bas affichés (15 $/23 $/35 $) exigent un engagement annuel."
+      }
+    }
+  },
   "unknowns": [
     "Whether the seed's 'openphone' slug should be renamed to reflect the Quo rebrand is a catalogue/editorial decision, not resolved here."
   ],

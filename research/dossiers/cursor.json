@@ -3,7 +3,7 @@
   "slug": "cursor",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Cursor",
     "vendor": "Anysphere Inc.",
@@ -15,7 +15,13 @@
     "statusNote": "cursor.sh now redirects to cursor.com."
   },
   "sources": [
-    { "id": "s1", "url": "https://cursor.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Cursor pricing" }
+    {
+      "id": "s1",
+      "url": "https://cursor.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Cursor pricing"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Hobby plan: limited Agent requests, access to Composer, no credit card required.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Hobby plan: limited Agent requests, access to Composer, no credit card required.",
+        "fr": "Plan Hobby : requêtes Agent limitées, accès à Composer, sans carte bancaire requise."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,72 +47,310 @@
         "name": "Hobby",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Limited Agent requests per month", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Limited Agent requests per month",
+            "fr": "Requêtes Agent limitées par mois"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 20,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Extended Agent limits and frontier model access", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Extended Agent limits and frontier model access",
+            "fr": "Limites Agent étendues et accès aux modèles de pointe"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "teams",
         "name": "Teams",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 40, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 40,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Centralized billing/admin, team marketplace, shared cloud agents, SAML/OIDC SSO", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Centralized billing/admin, team marketplace, shared cloud agents, SAML/OIDC SSO",
+            "fr": "Facturation et administration centralisées, marketplace d'équipe, agents cloud partagés, SSO SAML/OIDC"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Pooled usage, SCIM, access controls, audit logs, priority support", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Pooled usage, SCIM, access controls, audit logs, priority support",
+            "fr": "Usage mutualisé, SCIM, contrôles d'accès, journaux d'audit, support prioritaire"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [
-      { "en": "Bugbot code review billed on usage beyond included amount.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Bugbot code review billed on usage beyond included amount.",
+        "fr": "Revue de code Bugbot facturée à l'usage au-delà du montant inclus.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Usage-based pricing allows continued access beyond included model usage, billed in arrears; prices exclude taxes.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Usage-based pricing allows continued access beyond included model usage, billed in arrears; prices exclude taxes.",
+        "fr": "La tarification à l'usage permet de continuer au-delà de l'usage de modèle inclus, facturé a posteriori ; les prix excluent les taxes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "AI-native code editor (VS Code fork) with Composer for multi-file edits and an autonomous Agent mode.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Codebase-wide indexing lets the AI reason about the whole project, not just the open file.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Access to multiple frontier models (Claude, GPT, Gemini, Grok) from one interface, plus native MCP support for connecting external tools.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "AI-native code editor (VS Code fork) with Composer for multi-file edits and an autonomous Agent mode.",
+        "fr": "Éditeur de code natif IA (fork de VS Code) avec Composer pour les éditions multi-fichiers et un mode Agent autonome.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Codebase-wide indexing lets the AI reason about the whole project, not just the open file.",
+        "fr": "L'indexation de toute la base de code permet à l'IA de raisonner sur l'ensemble du projet, pas seulement le fichier ouvert.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Access to multiple frontier models (Claude, GPT, Gemini, Grok) from one interface, plus native MCP support for connecting external tools.",
+        "fr": "Accès à plusieurs modèles de pointe (Claude, GPT, Gemini, Grok) depuis une seule interface, avec support natif MCP pour connecter des outils externes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "The free Hobby plan has limited Agent requests, making it unsuitable for daily heavy use.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Heavy usage of frontier models triggers usage-based billing beyond the plan's included amount.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "The free Hobby plan has limited Agent requests, making it unsuitable for daily heavy use.",
+        "fr": "Le plan gratuit Hobby a des requêtes Agent limitées, insuffisant pour un usage intensif quotidien.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Heavy usage of frontier models triggers usage-based billing beyond the plan's included amount.",
+        "fr": "Un usage intensif des modèles de pointe déclenche une facturation à l'usage au-delà du montant inclus dans le plan.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "GitHub", "slug": "github", "sourceIds": ["s1"] },
-      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] }
+      {
+        "name": "GitHub",
+        "slug": "github",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["macos", "windows", "linux"]
+    "platforms": [
+      "macos",
+      "windows",
+      "linux"
+    ]
   },
   "alternatives": [
-    { "slug": "github-copilot", "reason": { "en": "AI coding assistant integrated directly into VS Code/JetBrains instead of a standalone editor.", "fr": "…" } },
-    { "slug": "zed", "reason": { "en": "Fast, AI-assisted code editor built from scratch rather than a VS Code fork.", "fr": "…" } },
-    { "slug": "windsurf", "reason": { "en": "Direct competitor: another AI-native, VS Code-based editor with agentic coding.", "fr": "…" } }
+    {
+      "slug": "github-copilot",
+      "reason": {
+        "en": "AI coding assistant integrated directly into VS Code/JetBrains instead of a standalone editor.",
+        "fr": "Assistant de code IA intégré directement dans VS Code/JetBrains plutôt qu'un éditeur autonome."
+      }
+    },
+    {
+      "slug": "zed",
+      "reason": {
+        "en": "Fast, AI-assisted code editor built from scratch rather than a VS Code fork.",
+        "fr": "Éditeur de code rapide assisté par IA, construit de zéro plutôt qu'un fork de VS Code."
+      }
+    },
+    {
+      "slug": "windsurf",
+      "reason": {
+        "en": "Direct competitor: another AI-native, VS Code-based editor with agentic coding.",
+        "fr": "Concurrent direct : un autre éditeur natif IA basé sur VS Code avec du codage agentique."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "unknowns": ["Exact Pro+/Ultra tier names and prices ($60 and $200 per month per the internal seed) were not directly re-verified against the live pricing page structure during this pass."],
-  "conflicts": []
+  "unknowns": [
+    "Exact Pro+/Ultra tier names and prices ($60 and $200 per month per the internal seed) were not directly re-verified against the live pricing page structure during this pass."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Pro is $20/month for extended Agent limits and access to multiple frontier models from one interface, a strong return for a developer's daily coding tool.",
+        "fr": "Pro coûte 20 $/mois pour des limites Agent étendues et l'accès à plusieurs modèles de pointe depuis une seule interface, un bon retour pour l'outil de code quotidien d'un développeur.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "As a VS Code fork, it works immediately for anyone familiar with VS Code, with no credit card required to try the free Hobby plan.",
+        "fr": "En tant que fork de VS Code, il fonctionne immédiatement pour quiconque connaît déjà VS Code, sans carte bancaire requise pour essayer le plan gratuit Hobby.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Composer and Agent mode deliver codebase-wide, multi-file edits as promised, without needing a separate tool to reason about the whole project.",
+        "fr": "Composer et le mode Agent réalisent des éditions multi-fichiers sur toute la base de code comme promis, sans nécessiter d'outil séparé pour raisonner sur l'ensemble du projet.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Combines codebase-wide indexing, an autonomous Agent mode, multiple frontier models and native MCP support in one editor, a category-leading feature set.",
+        "fr": "Combine indexation de toute la base de code, mode Agent autonome, plusieurs modèles de pointe et support natif MCP dans un seul éditeur, un ensemble de fonctionnalités qui fait référence dans la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: exporting settings or switching back to plain VS Code with the underlying codebase intact is not detailed in the collected sources.",
+        "fr": "Note neutre : l'export des réglages ou le retour vers VS Code standard en gardant la base de code intacte ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who want an AI-native coding editor with codebase-wide context and an autonomous Agent mode, not just inline autocomplete.",
+      "fr": "Développeurs qui veulent un éditeur de code natif IA avec du contexte sur toute la base de code et un mode Agent autonome, pas seulement de l'autocomplétion en ligne."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: use Agent mode to implement a multi-file feature across the codebase from a natural-language description instead of editing each file by hand.",
+      "fr": "Cas d'usage : utiliser le mode Agent pour implémenter une fonctionnalité multi-fichiers dans toute la base de code à partir d'une description en langage naturel, plutôt que d'éditer chaque fichier à la main."
+    },
+    {
+      "en": "Use case: connect an external tool via native MCP support so the AI can act on project data (issue tracker, database) directly from the editor.",
+      "fr": "Cas d'usage : connecter un outil externe via le support natif MCP pour que l'IA agisse directement sur les données du projet (suivi de tickets, base de données) depuis l'éditeur."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "AI code editor",
+      "fr": "Éditeur de code IA"
+    },
+    "shortDescription": {
+      "en": "AI-native code editor (VS Code fork) with multi-file Composer edits, an autonomous Agent mode and access to several frontier models.",
+      "fr": "Éditeur de code natif IA (fork de VS Code) avec éditions multi-fichiers Composer, mode Agent autonome et accès à plusieurs modèles de pointe."
+    },
+    "longDescription": {
+      "en": "Cursor is an AI-native code editor built as a VS Code fork, with Composer for multi-file edits and an autonomous Agent mode. Codebase-wide indexing lets the AI reason about the whole project rather than just the open file, and native MCP support connects external tools directly to the editor.\n\nThe free Hobby plan has limited Agent requests; Pro is $20/month for extended limits and access to multiple frontier models (Claude, GPT, Gemini, Grok). Heavy usage beyond a plan's included amount is billed separately, in arrears. It fits a developer who wants an AI coding assistant that understands the whole codebase, not just autocomplete in one file.",
+      "fr": "Cursor est un éditeur de code natif IA construit comme un fork de VS Code, avec Composer pour les éditions multi-fichiers et un mode Agent autonome. L'indexation de toute la base de code permet à l'IA de raisonner sur l'ensemble du projet, et le support natif MCP connecte des outils externes directement à l'éditeur.\n\nLe plan gratuit Hobby a des requêtes Agent limitées ; Pro coûte 20 $/mois pour des limites étendues et l'accès à plusieurs modèles de pointe (Claude, GPT, Gemini, Grok). Un usage important au-delà du montant inclus est facturé séparément, a posteriori. Il convient à un développeur qui veut un assistant de code IA comprenant toute la base de code, pas seulement l'autocomplétion d'un fichier."
+    },
+    "pros": [
+      {
+        "en": "Codebase-wide indexing gives the AI real project context, not just the open file.",
+        "fr": "L'indexation de toute la base de code donne à l'IA un vrai contexte projet, pas seulement le fichier ouvert."
+      },
+      {
+        "en": "Access to several frontier models from one interface, with native MCP support for external tools.",
+        "fr": "Accès à plusieurs modèles de pointe depuis une seule interface, avec support natif MCP pour les outils externes."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free Hobby plan's Agent request limits make it unsuitable for daily heavy use.",
+        "fr": "Les limites de requêtes Agent du plan gratuit Hobby le rendent inadapté à un usage intensif quotidien."
+      },
+      {
+        "en": "Usage-based billing beyond the plan's included amount can add unpredictable cost.",
+        "fr": "La facturation à l'usage au-delà du montant inclus dans le plan peut ajouter un coût imprévisible."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a developer who wants an AI assistant with full codebase context and an agentic mode, not just line-by-line autocomplete.",
+        "fr": "Tu es développeur et tu veux un assistant IA avec un contexte complet sur la base de code et un mode agentique, pas seulement de l'autocomplétion ligne par ligne."
+      },
+      "avoidIf": {
+        "en": "You want a fully predictable flat cost, since heavy frontier-model usage triggers billing beyond the plan's included amount.",
+        "fr": "Tu veux un coût fixe totalement prévisible, car un usage intensif des modèles de pointe déclenche une facturation au-delà du montant inclus dans le plan."
+      },
+      "threshold": {
+        "en": "At $20/month for Pro, it pays off once the free Hobby plan's Agent request limit becomes a daily blocker.",
+        "fr": "À 20 $/mois pour Pro, ça devient rentable dès que la limite de requêtes Agent du plan gratuit Hobby devient un frein quotidien."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Pro+/Ultra tier names and prices ($60/$200 per month per an internal seed) weren't directly re-verified against the live pricing page structure; re-check on cursor.com/pricing before publishing tier names beyond Hobby/Pro/Teams/Enterprise."
+  ]
 }

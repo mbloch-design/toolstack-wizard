@@ -24,7 +24,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Starter plan: 5 active forms, 100 monthly submissions, Jotform branding included.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Starter plan: 5 active forms, 100 monthly submissions, Jotform branding included.", "fr": "Plan Starter : 5 formulaires actifs, 100 soumissions par mois, marque Jotform incluse." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +34,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 active forms, 100 submissions/month, Jotform branding", "fr": "…" }],
+        "keyLimits": [{ "en": "5 active forms, 100 submissions/month, Jotform branding", "fr": "5 formulaires actifs, 100 soumissions par mois, marque Jotform" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +44,7 @@
         "minSeats": null,
         "price": { "monthly": 39, "annualPerMonth": 34, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "25 active forms, 1,000 submissions/month, branding removable", "fr": "…" }],
+        "keyLimits": [{ "en": "25 active forms, 1,000 submissions/month, branding removable", "fr": "25 formulaires actifs, 1 000 soumissions par mois, marque retirable" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +54,7 @@
         "minSeats": null,
         "price": { "monthly": 49, "annualPerMonth": 39, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "50 active forms, 2,500 submissions/month, 10 GB upload space", "fr": "…" }],
+        "keyLimits": [{ "en": "50 active forms, 2,500 submissions/month, 10 GB upload space", "fr": "50 formulaires actifs, 2 500 soumissions par mois, 10 Go d'espace de stockage" }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +64,7 @@
         "minSeats": null,
         "price": { "monthly": 129, "annualPerMonth": 99, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "100 active forms, 10,000 submissions/month, 100 GB storage, HIPAA-friendly option", "fr": "…" }],
+        "keyLimits": [{ "en": "100 active forms, 10,000 submissions/month, 100 GB storage, HIPAA-friendly option", "fr": "100 formulaires actifs, 10 000 soumissions par mois, 100 Go de stockage, option compatible HIPAA" }],
         "sourceIds": ["s1"]
       },
       {
@@ -74,36 +74,130 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited forms/submissions, SSO, HIPAA, data residency, dedicated support", "fr": "…" }],
+        "keyLimits": [{ "en": "Unlimited forms/submissions, SSO, HIPAA, data residency, dedicated support", "fr": "Formulaires et soumissions illimités, SSO, HIPAA, résidence des données, support dédié" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "bronze",
     "addOns": [],
     "cautions": [
-      { "en": "Monthly billing costs noticeably more than annual (e.g. Bronze $39/mo monthly vs $34/mo billed annually).", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "50% nonprofit/education discount on Bronze/Silver/Gold, 30% on Enterprise, is a separate program not reflected in list prices.", "fr": "…", "sourceIds": ["s1"] }
+      { "en": "Monthly billing costs noticeably more than annual (e.g. Bronze $39/mo monthly vs $34/mo billed annually).", "fr": "La facturation mensuelle coûte nettement plus cher que l'annuelle (ex. Bronze à 39 $/mois contre 34 $/mois en engagement annuel).", "sourceIds": ["s1"] },
+      { "en": "50% nonprofit/education discount on Bronze/Silver/Gold, 30% on Enterprise, is a separate program not reflected in list prices.", "fr": "La réduction de 50 % pour les associations et l'éducation sur Bronze/Silver/Gold (30 % sur Enterprise) est un programme à part, non reflété dans les prix affichés.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Drag-and-drop form builder with 10,000+ templates covering surveys, orders, applications and more.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Built-in payment collection and workflow automations tied to form submissions.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Includes AI Agents (chat-based form assistants) with a usage allowance that scales per plan.", "fr": "…", "sourceIds": ["s1"] }
+      { "en": "Drag-and-drop form builder with 10,000+ templates covering surveys, orders, applications and more.", "fr": "Générateur de formulaires par glisser-déposer avec plus de 10 000 modèles pour sondages, commandes, candidatures et plus.", "sourceIds": ["s1"] },
+      { "en": "Built-in payment collection and workflow automations tied to form submissions.", "fr": "Collecte de paiements intégrée et automatisations de workflow déclenchées par les soumissions de formulaires.", "sourceIds": ["s1"] },
+      { "en": "Includes AI Agents (chat-based form assistants) with a usage allowance that scales per plan.", "fr": "Inclut des AI Agents (assistants de formulaire conversationnels) avec un quota d'usage qui augmente selon le plan.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free Starter plan caps at 5 active forms and 100 submissions/month, quickly outgrown by any real use case.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Submission and form-count caps apply on every paid tier up to Gold; only Enterprise removes them, at custom pricing.", "fr": "…", "sourceIds": ["s1"] }
+      { "en": "Free Starter plan caps at 5 active forms and 100 submissions/month, quickly outgrown by any real use case.", "fr": "Le plan gratuit Starter plafonne à 5 formulaires actifs et 100 soumissions par mois, vite dépassé par un usage réel.", "sourceIds": ["s1"] },
+      { "en": "Submission and form-count caps apply on every paid tier up to Gold; only Enterprise removes them, at custom pricing.", "fr": "Des plafonds de soumissions et de formulaires s'appliquent sur tous les plans payants jusqu'à Gold ; seul Enterprise les retire, à un tarif sur devis.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
   "alternatives": [
-    { "slug": "typeform", "reason": { "en": "More design-focused conversational form builder, a common alternative for polished lead forms.", "fr": "…" } },
-    { "slug": "tally", "reason": { "en": "Free, simpler form builder alternative for teams that don't need Jotform's breadth.", "fr": "…" } },
-    { "slug": "fillout", "reason": { "en": "Newer form builder with a generous free tier, positioned as a lighter Typeform/Jotform alternative.", "fr": "…" } }
+    { "slug": "typeform", "reason": { "en": "More design-focused conversational form builder, a common alternative for polished lead forms.", "fr": "Générateur de formulaires plus orienté design conversationnel, une alternative courante pour des formulaires de leads soignés." } },
+    { "slug": "tally", "reason": { "en": "Free, simpler form builder alternative for teams that don't need Jotform's breadth.", "fr": "Générateur de formulaires gratuit et plus simple, pour les équipes qui n'ont pas besoin de toute l'étendue de Jotform." } },
+    { "slug": "fillout", "reason": { "en": "Newer form builder with a generous free tier, positioned as a lighter Typeform/Jotform alternative.", "fr": "Générateur de formulaires plus récent avec un plan gratuit généreux, positionné comme une alternative plus légère à Typeform/Jotform." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The paid entry plan (Bronze, $34 to $39/month) caps forms and submissions like every tier up to Gold, so value depends on staying under those caps rather than a clear cost advantage.",
+        "fr": "Le plan payant d'entrée (Bronze, 34 à 39 $/mois) plafonne formulaires et soumissions comme tous les plans jusqu'à Gold, donc la valeur dépend surtout de rester sous ces plafonds plutôt que d'un net avantage de coût.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Drag-and-drop builder with 10,000+ ready templates lets a first usable form be published quickly without training.",
+        "fr": "Le générateur par glisser-déposer et ses plus de 10 000 modèles prêts à l'emploi permettent de publier un premier formulaire utilisable rapidement, sans formation.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Form building, payment collection and submission-triggered automations work as described directly in the product, without needing a third-party tool.",
+        "fr": "La création de formulaires, la collecte de paiements et les automatisations déclenchées par soumission fonctionnent comme annoncé, directement dans le produit, sans outil tiers nécessaire.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers forms, payments, automations and AI Agents in one product, but every capability stays capped by plan up to Gold, unlike an uncapped Enterprise-only ceiling.",
+        "fr": "Couvre formulaires, paiements, automatisations et AI Agents dans un seul produit, mais chaque capacité reste plafonnée par plan jusqu'à Gold, contrairement à un plafond levé seulement en Enterprise.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export and data-portability details are not covered by the collected sources.",
+        "fr": "Note neutre : les modalités d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and ops roles that need to collect structured data (orders, applications, surveys) through forms without building anything custom.",
+      "fr": "Petites équipes et rôles ops qui doivent collecter des données structurées (commandes, candidatures, sondages) via des formulaires, sans rien développer sur mesure."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Job applications: build an application form with file upload, route submissions to a hiring inbox automatically.",
+      "fr": "Candidatures : créer un formulaire de candidature avec upload de fichier, router les soumissions automatiquement vers une boîte de recrutement."
+    },
+    {
+      "en": "Order intake: collect paid orders through a form with built-in payment collection, no separate checkout tool needed.",
+      "fr": "Prise de commande : collecter des commandes payantes via un formulaire avec paiement intégré, sans outil de caisse séparé."
+    }
+  ],
+  "editorial": {
+    "tagline": { "en": "Online form builder", "fr": "Générateur de formulaires" },
+    "shortDescription": {
+      "en": "Drag-and-drop form builder with thousands of templates, built-in payment collection and submission-triggered automations.",
+      "fr": "Générateur de formulaires par glisser-déposer avec des milliers de modèles, paiement intégré et automatisations déclenchées par soumission."
+    },
+    "longDescription": {
+      "en": "Jotform covers form building end to end: templates for surveys, orders and applications, built-in payment collection, and automations triggered by submissions. AI Agents add a chat-based assistant layer on top of forms, with usage scaling by plan.\n\nThe free Starter plan caps at 5 forms and 100 submissions a month. The paid entry plan, Bronze, starts at $34 to $39 a month and still limits forms and submissions; only the custom-priced Enterprise plan removes those caps. It suits a small team or ops role collecting structured data regularly, less a one-off form need.",
+      "fr": "Jotform couvre la création de formulaires de bout en bout : modèles pour sondages, commandes et candidatures, paiement intégré, et automatisations déclenchées par les soumissions. Les AI Agents ajoutent une couche d'assistant conversationnel au-dessus des formulaires, avec un quota qui évolue selon le plan.\n\nLe plan gratuit Starter plafonne à 5 formulaires et 100 soumissions par mois. Le plan payant d'entrée, Bronze, démarre entre 34 et 39 $ par mois et limite encore formulaires et soumissions ; seul le plan Enterprise, sur devis, lève ces plafonds. Il convient à une petite équipe ou un rôle ops qui collecte des données structurées régulièrement, moins à un besoin de formulaire ponctuel."
+    },
+    "pros": [
+      { "en": "Very large template library covers most common form types out of the box.", "fr": "Bibliothèque de modèles très large qui couvre la plupart des types de formulaires courants d'emblée." },
+      { "en": "Payment collection and automations are built in, no separate integration needed.", "fr": "Paiement et automatisations sont intégrés, sans besoin d'intégration séparée." }
+    ],
+    "cons": [
+      { "en": "Form and submission caps persist on every paid tier below Enterprise.", "fr": "Les plafonds de formulaires et de soumissions persistent sur tous les plans payants en dessous d'Enterprise." },
+      { "en": "Monthly billing costs noticeably more than the annual commitment.", "fr": "La facturation mensuelle coûte nettement plus cher que l'engagement annuel." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if forms, payment collection and submission automations need to live in one tool without custom development.",
+        "fr": "À garder si formulaires, paiement et automatisations de soumission doivent vivre dans un seul outil sans développement sur mesure."
+      },
+      "avoidIf": {
+        "en": "Avoid it if submission volume regularly exceeds a few thousand a month without an Enterprise budget, since every tier below it stays capped.",
+        "fr": "À éviter si le volume de soumissions dépasse régulièrement quelques milliers par mois sans budget Enterprise, car tous les plans en dessous restent plafonnés."
+      },
+      "threshold": {
+        "en": "The entry paid plan, Bronze, costs $34/month billed annually ($408/year) for 25 forms and 1,000 submissions a month.",
+        "fr": "Le plan payant d'entrée, Bronze, coûte 34 $/mois en engagement annuel (408 $/an) pour 25 formulaires et 1 000 soumissions par mois."
+      },
+      "billingTraps": {
+        "en": "Monthly billing runs noticeably above the annual rate on every tier (e.g. Bronze $39/mo monthly vs $34/mo annual).",
+        "fr": "La facturation mensuelle est nettement au-dessus du tarif annuel sur tous les plans (ex. Bronze à 39 $/mois contre 34 $/mois en annuel)."
+      }
+    }
+  },
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
+  "reviewNotes": [],
   "unknowns": [],
   "conflicts": []
 }

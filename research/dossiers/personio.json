@@ -3,7 +3,8 @@
   "slug": "personio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Personio",
     "vendor": "Personio SE & Co. KG",
@@ -44,59 +45,42 @@
     "verifiedOn": "2026-09-25",
     "region": "EU",
     "taxIncluded": false,
-    "freePlan": {
-      "exists": false,
-      "limits": null,
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "core",
         "name": "Core",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Custom quote based on employee count, modules and contract length; official site could not be accessed (HTTP 429) to confirm exact figures."
+            "en": "Custom quote based on employee count, modules and contract length; official site could not be accessed (HTTP 429) to confirm exact figures.",
+            "fr": "Devis personnalisé selon le nombre de salariés, les modules et la durée du contrat ; le site officiel n'a pas pu être consulté (erreur HTTP 429) pour confirmer les chiffres exacts."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": null,
     "addOns": [
       {
         "en": "Recruiting module (applicant tracking), estimated separately by third parties, not confirmed on official site.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Module Recruiting (suivi des candidatures), estimé séparément par des tiers, non confirmé sur le site officiel.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Payroll module, integrated with time tracking and employee data.",
-        "fr": null,
-        "sourceIds": [
-          "s3"
-        ]
+        "fr": "Module Paie, intégré au suivi du temps et aux données salariés.",
+        "sourceIds": ["s3"]
       }
     ],
     "cautions": [
       {
         "en": "No public price list; official pricing page returned HTTP 429 during research and could not be verified directly.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Aucune liste de prix publique ; la page de tarifs officielle a renvoyé une erreur HTTP 429 pendant la recherche et n'a pas pu être vérifiée directement.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -104,90 +88,173 @@
     "capabilities": [
       {
         "en": "Core HR: employee records, absence and leave management, org charts in one system.",
-        "sourceIds": [
-          "s3"
-        ]
+        "fr": "RH de base : dossiers salariés, gestion des absences et congés, organigrammes dans un seul système.",
+        "sourceIds": ["s3"]
       },
       {
         "en": "Structured onboarding workflows with automated task assignment for new hires.",
-        "sourceIds": [
-          "s3"
-        ]
+        "fr": "Flux d'onboarding structurés avec assignation automatique des tâches pour les nouvelles recrues.",
+        "sourceIds": ["s3"]
       },
       {
         "en": "Integrated payroll processing that syncs with employee data and time tracking.",
-        "sourceIds": [
-          "s3"
-        ]
+        "fr": "Traitement de la paie intégré, synchronisé avec les données salariés et le suivi du temps.",
+        "sourceIds": ["s3"]
       },
       {
         "en": "Optional applicant tracking (Personio Recruiting) add-on for end-to-end hiring.",
-        "sourceIds": [
-          "s3"
-        ]
+        "fr": "Suivi des candidatures optionnel (Personio Recruiting) pour un recrutement de bout en bout.",
+        "sourceIds": ["s3"]
       }
     ],
     "limitations": [
       {
         "en": "No public pricing; buyers must request a custom quote before knowing the real cost.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Aucun tarif public ; les acheteurs doivent demander un devis personnalisé avant de connaître le coût réel.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Recruiting and payroll are separate paid modules, not included in the base HR package.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Recruiting et la paie sont des modules payants séparés, non inclus dans le socle RH de base.",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [
-      {
-        "name": "Slack",
-        "slug": "slack",
-        "sourceIds": [
-          "s3"
-        ]
-      },
-      {
-        "name": "Greenhouse",
-        "slug": "greenhouse",
-        "sourceIds": [
-          "s3"
-        ]
-      }
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s3"] },
+      { "name": "Greenhouse", "slug": "greenhouse", "sourceIds": ["s3"] }
     ],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small to mid-size teams that need core HR, onboarding and payroll centralized in one system with dedicated HR staff to manage it.",
+      "fr": "Équipes petites à moyennes qui ont besoin de centraliser les RH de base, l'onboarding et la paie dans un seul système, avec du personnel RH dédié pour le gérer."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: an HR manager automates a new hire's onboarding checklist in Personio so tasks (equipment, paperwork, training) are assigned without manual follow-up.",
+      "fr": "Usage : un responsable RH automatise la checklist d'onboarding d'une nouvelle recrue dans Personio, pour que les tâches (matériel, paperasse, formation) soient assignées sans relance manuelle."
+    },
+    {
+      "en": "Usage: a small company runs payroll directly from Personio's synced employee and time-tracking data instead of re-entering hours in a separate payroll tool.",
+      "fr": "Usage : une petite entreprise fait tourner sa paie directement depuis les données salariés et de suivi du temps synchronisées de Personio, sans ressaisir les heures dans un outil de paie séparé."
+    }
+  ],
   "alternatives": [
     {
       "slug": "bamboohr",
       "reason": {
-        "en": "Comparable all-in-one HRIS for SMEs with similar core HR, time-off and onboarding scope."
+        "en": "Comparable all-in-one HRIS for SMEs with similar core HR, time-off and onboarding scope.",
+        "fr": "HRIS tout-en-un comparable pour PME, avec un périmètre similaire de RH de base, congés et onboarding."
       }
     },
     {
       "slug": "hibob",
       "reason": {
-        "en": "Modern HRIS competitor targeting the same SME segment with people analytics and onboarding."
+        "en": "Modern HRIS competitor targeting the same SME segment with people analytics and onboarding.",
+        "fr": "Concurrent HRIS moderne qui vise le même segment PME, avec people analytics et onboarding."
       }
     },
     {
       "slug": "factorial",
       "reason": {
-        "en": "European HRIS competitor with a similar mix of core HR, payroll and recruiting modules."
+        "en": "European HRIS competitor with a similar mix of core HR, payroll and recruiting modules.",
+        "fr": "Concurrent HRIS européen avec un mélange similaire de modules RH de base, paie et recrutement."
       }
     },
     {
       "slug": "deel",
       "reason": {
-        "en": "Overlaps for HR and payroll, particularly for distributed or international teams."
+        "en": "Overlaps for HR and payroll, particularly for distributed or international teams.",
+        "fr": "Se recoupe sur les RH et la paie, en particulier pour les équipes distribuées ou internationales."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: no public price is available to weigh against the value delivered, so a value judgment can't be made from the collected sources.",
+        "fr": "Note neutre : aucun prix public n'est disponible pour le comparer à la valeur livrée, un jugement de valeur n'est donc pas possible à partir des sources relevées.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and ease of first setup for HR staff are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la facilité de première configuration pour l'équipe RH ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s3"]
+      },
+      "utilisation": {
+        "en": "Core HR, structured onboarding with automated task assignment, and integrated payroll all match what the product promises, with no workaround reported.",
+        "fr": "Les RH de base, l'onboarding structuré avec assignation automatique des tâches et la paie intégrée correspondent tous à ce que le produit promet, sans contournement signalé.",
+        "sourceIds": ["s3"]
+      },
+      "puissance": {
+        "en": "Covers core HR plus optional recruiting and payroll modules, a standard SME HRIS scope, but the sources give no comparison against category leaders.",
+        "fr": "Couvre les RH de base plus des modules optionnels de recrutement et de paie, une étendue standard pour un HRIS PME, mais les sources ne fournissent pas de comparaison avec les leaders de la catégorie.",
+        "sourceIds": ["s3"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats and portability if you leave Personio are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export des données et la portabilité en cas de départ de Personio ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "HR platform", "fr": "Plateforme RH" },
+    "shortDescription": {
+      "en": "Cloud HR platform covering employee records, onboarding and payroll, priced through a custom quote not publicly listed.",
+      "fr": "Plateforme RH cloud couvrant les dossiers salariés, l'onboarding et la paie, avec des tarifs sur devis non publiés publiquement."
+    },
+    "longDescription": {
+      "en": "Personio centralizes core HR (employee records, absence and leave management, org charts) with structured onboarding workflows that auto-assign tasks to new hires. Payroll processing syncs with employee data and time tracking, and an optional Recruiting module adds applicant tracking for end-to-end hiring.\n\nPricing is quote-only: Personio's own pricing page could not be verified during this research (HTTP 429), and third-party estimates aren't a substitute for an official quote. Payroll and Recruiting are separate paid modules on top of the base HR package. It suits a small or mid-size team centralizing HR operations, more than a single freelancer.",
+      "fr": "Personio centralise les RH de base (dossiers salariés, absences et congés, organigrammes) avec des flux d'onboarding structurés qui assignent automatiquement les tâches aux nouvelles recrues. La paie se synchronise avec les données salariés et le suivi du temps, et un module Recruiting optionnel ajoute le suivi des candidatures.\n\nLa tarification se fait uniquement sur devis : la page officielle n'a pas pu être vérifiée pendant cette recherche (erreur HTTP 429), et les estimations tierces ne remplacent pas un devis officiel. Paie et Recruiting sont des modules payants séparés en plus du socle RH. L'outil convient à une équipe petite ou moyenne qui centralise ses RH, plus qu'à un indépendant seul."
+    },
+    "pros": [
+      {
+        "en": "Onboarding workflows automatically assign tasks to new hires instead of relying on manual checklists.",
+        "fr": "Les flux d'onboarding assignent automatiquement les tâches aux nouvelles recrues, sans checklist manuelle."
+      },
+      {
+        "en": "Payroll syncs directly with employee records and time tracking instead of a separate manual export.",
+        "fr": "La paie se synchronise directement avec les dossiers salariés et le suivi du temps, sans export manuel séparé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public pricing: the official pricing page returned an error during research, so the real cost is unknown until you request a quote.",
+        "fr": "Aucun tarif public : la page de tarifs officielle a renvoyé une erreur pendant la recherche, donc le coût réel reste inconnu tant qu'on n'a pas demandé de devis."
+      },
+      {
+        "en": "Recruiting and payroll are separate paid modules, not included in the base HR package.",
+        "fr": "Recruiting et la paie sont des modules payants séparés, non inclus dans le socle RH de base."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need core HR, onboarding and payroll in one system for a growing team and can get a quote from Personio directly.",
+        "fr": "Tu as besoin des RH de base, de l'onboarding et de la paie dans un seul système pour une équipe en croissance, et tu peux obtenir un devis directement auprès de Personio."
+      },
+      "avoidIf": {
+        "en": "You want to compare prices upfront without going through a sales quote process.",
+        "fr": "Tu veux comparer les prix directement sans passer par un processus de devis commercial."
+      },
+      "threshold": {
+        "en": "No public price is available; treat any third-party estimate as unverified and request Personio's own quote before comparing costs.",
+        "fr": "Aucun prix public n'est disponible ; considère toute estimation tierce comme non vérifiée et demande le devis officiel de Personio avant de comparer les coûts."
+      }
+    }
+  },
   "unknowns": [
     "Exact plan names, tiers and per-employee prices could not be verified: personio.com/pricing/ returned HTTP 429 during research.",
     "Trial length, free plan existence and full platform/mobile app availability not confirmed from an official source."

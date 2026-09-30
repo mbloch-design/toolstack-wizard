@@ -3,7 +3,7 @@
   "slug": "maze",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Maze",
     "vendor": "Maze Design, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://maze.co/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Maze pricing" }
+    {
+      "id": "s1",
+      "url": "https://maze.co/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Maze pricing"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,40 +44,227 @@
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "AI Moderator, AI Study Builder, interview studies, mobile testing, card sorting reserved for Enterprise per the official comparison table.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "AI Moderator, AI Study Builder, interview studies, mobile testing, card sorting reserved for Enterprise per the official comparison table.",
+            "fr": "AI Moderator, AI Study Builder, études par entretien, tests mobiles et tri de cartes réservés à Enterprise selon le tableau comparatif officiel."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Maze does not publish plan prices on its own site; the pricing page is a feature-comparison table only, with every paid tier resolving to a sales conversation.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Maze does not publish plan prices on its own site; the pricing page is a feature-comparison table only, with every paid tier resolving to a sales conversation.",
+        "fr": "Maze ne publie aucun prix de plan sur son propre site ; la page de prix n'est qu'un tableau comparatif de fonctionnalités, chaque palier payant renvoyant vers un contact commercial.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Integrated user research platform combining participant recruitment, prototype testing, moderated interviews and surveys in one tool.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "AI-assisted features (AI Moderator, AI Study Builder, Maze AI) for building and analyzing studies faster.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Supports card sorting and mobile app testing in addition to standard prototype usability tests.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Integrated user research platform combining participant recruitment, prototype testing, moderated interviews and surveys in one tool.",
+        "fr": "Plateforme de recherche utilisateur intégrée combinant recrutement de participants, tests de prototype, entretiens modérés et sondages dans un seul outil.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-assisted features (AI Moderator, AI Study Builder, Maze AI) for building and analyzing studies faster.",
+        "fr": "Fonctions assistées par IA (AI Moderator, AI Study Builder, Maze AI) pour construire et analyser les études plus rapidement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supports card sorting and mobile app testing in addition to standard prototype usability tests.",
+        "fr": "Prend en charge le tri de cartes et les tests d'applications mobiles en plus des tests d'usabilité de prototype classiques.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Interview studies, AI Moderator, AI Study Builder and mobile testing are gated to the Enterprise tier per the public feature table.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Panel recruitment (recruiting external participants) is capped by plan-based limits even on paid tiers.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Interview studies, AI Moderator, AI Study Builder and mobile testing are gated to the Enterprise tier per the public feature table.",
+        "fr": "Les études par entretien, AI Moderator, AI Study Builder et les tests mobiles sont réservés au palier Enterprise selon le tableau public des fonctionnalités.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Panel recruitment (recruiting external participants) is capped by plan-based limits even on paid tiers.",
+        "fr": "Le recrutement via le panel (recruter des participants externes) est plafonné selon des limites par plan, même sur les paliers payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] }
+      {
+        "name": "Figma",
+        "slug": "figma",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "invision", "reason": { "en": "Prototyping tool with lighter usability-testing features, a simpler alternative for basic feedback.", "fr": "…" } }
+    {
+      "slug": "invision",
+      "reason": {
+        "en": "Prototyping tool with lighter usability-testing features, a simpler alternative for basic feedback.",
+        "fr": "Outil de prototypage avec des fonctions de test d'usabilité plus légères, une alternative plus simple pour un retour basique."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "UserTesting", "officialUrl": "https://www.usertesting.com", "reason": "Major direct competitor for moderated/unmoderated user research, not in the catalogue." },
-    { "name": "Lyssna (formerly UsabilityHub)", "officialUrl": "https://www.lyssna.com", "reason": "Direct competitor for unmoderated usability testing and card sorting, not in the catalogue." }
+    {
+      "name": "UserTesting",
+      "officialUrl": "https://www.usertesting.com",
+      "reason": "Major direct competitor for moderated/unmoderated user research, not in the catalogue."
+    },
+    {
+      "name": "Lyssna (formerly UsabilityHub)",
+      "officialUrl": "https://www.lyssna.com",
+      "reason": "Direct competitor for unmoderated usability testing and card sorting, not in the catalogue."
+    }
   ],
-  "unknowns": ["No public price points for Starter/Team plans; third-party trackers (not official sources, not used as facts here) suggest a Starter tier around $75-99/month, but this could not be confirmed on maze.co itself."],
-  "conflicts": []
+  "unknowns": [
+    "No public price points for Starter/Team plans; third-party trackers (not official sources, not used as facts here) suggest a Starter tier around $75-99/month, but this could not be confirmed on maze.co itself."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No plan prices are published at all; every paid tier requires a sales conversation, making it impossible to judge value against cost without contacting Maze directly.",
+        "fr": "Aucun prix de plan n'est publié ; chaque palier payant nécessite une conversation commerciale, ce qui rend impossible de juger la valeur par rapport au coût sans contacter Maze directement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Combining recruitment, prototype testing, interviews and surveys in one tool avoids stitching together several separate research tools for a first study.",
+        "fr": "Combiner recrutement, tests de prototype, entretiens et sondages dans un seul outil évite d'assembler plusieurs outils de recherche séparés pour une première étude.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Standard prototype usability tests and surveys work as promised, but key features like interview studies and AI Moderator require the Enterprise tier, a workaround for teams below that level.",
+        "fr": "Les tests d'usabilité de prototype et les sondages standards fonctionnent comme promis, mais des fonctions clés comme les études par entretien et l'AI Moderator demandent le palier Enterprise, un contournement pour les équipes en dessous de ce niveau.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers prototype testing, interviews, surveys, card sorting and mobile app testing with AI-assisted study building, a wide feature range for the category, though the most advanced pieces sit behind Enterprise.",
+        "fr": "Couvre tests de prototype, entretiens, sondages, tri de cartes et tests mobiles avec construction d'études assistée par IA, une large couverture pour la catégorie, même si les fonctions les plus avancées sont réservées à Enterprise.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of study results and participant data when leaving Maze is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des résultats d'étude et des données de participants en cas de départ de Maze ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Product designers and researchers who need prototype usability testing and survey feedback without assembling separate recruitment and interview tools.",
+      "fr": "Designers produit et chercheurs qui ont besoin de tests d'usabilité de prototype et de retours par sondage sans assembler des outils séparés de recrutement et d'entretien."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: run a prototype usability test with recruited participants to validate a design before development starts.",
+      "fr": "Cas d'usage : lancer un test d'usabilité de prototype avec des participants recrutés pour valider un design avant le début du développement."
+    },
+    {
+      "en": "Use case: use card sorting to check whether a proposed navigation structure matches how real users expect to find content.",
+      "fr": "Cas d'usage : utiliser le tri de cartes pour vérifier si une structure de navigation proposée correspond à la façon dont les utilisateurs réels s'attendent à trouver le contenu."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "User research platform",
+      "fr": "Recherche utilisateur"
+    },
+    "shortDescription": {
+      "en": "Integrated user research platform for prototype testing, interviews, surveys and card sorting, with AI-assisted study building.",
+      "fr": "Plateforme de recherche utilisateur intégrée pour tester des prototypes, mener des entretiens, des sondages et du tri de cartes, avec des études assistées par IA."
+    },
+    "longDescription": {
+      "en": "Maze combines participant recruitment, prototype usability testing, moderated interviews and surveys in one platform, with AI-assisted features (AI Moderator, AI Study Builder) for building and analyzing studies faster. It also supports card sorting and mobile app testing.\n\nMaze publishes no plan prices at all; the pricing page is a feature-comparison table where every paid tier requires contacting sales. Interview studies, AI Moderator, AI Study Builder and mobile testing are reserved for the Enterprise tier specifically. It fits a design or research team that wants an all-in-one research tool and is prepared to negotiate pricing directly with Maze.",
+      "fr": "Maze combine recrutement de participants, tests d'usabilité de prototype, entretiens modérés et sondages dans une seule plateforme, avec des fonctions assistées par IA (AI Moderator, AI Study Builder) pour construire et analyser les études plus rapidement. Il prend aussi en charge le tri de cartes et les tests d'applications mobiles.\n\nMaze ne publie aucun prix de plan ; la page de prix est un tableau comparatif où chaque palier payant demande de contacter les ventes. Les études par entretien, AI Moderator, AI Study Builder et les tests mobiles sont réservés au palier Enterprise. Il convient à une équipe design ou recherche qui veut un outil tout-en-un et qui est prête à négocier le tarif directement avec Maze."
+    },
+    "pros": [
+      {
+        "en": "Combines recruitment, prototype testing, interviews and surveys in one integrated platform.",
+        "fr": "Combine recrutement, tests de prototype, entretiens et sondages dans une seule plateforme intégrée."
+      },
+      {
+        "en": "AI-assisted study building can speed up setting up and analyzing a research study.",
+        "fr": "La construction d'études assistée par IA peut accélérer la mise en place et l'analyse d'une étude de recherche."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No plan prices are published anywhere; every paid tier requires a sales conversation.",
+        "fr": "Aucun prix de plan n'est publié nulle part ; chaque palier payant nécessite une conversation commerciale."
+      },
+      {
+        "en": "Interview studies, AI Moderator and mobile testing are locked to the Enterprise tier only.",
+        "fr": "Les études par entretien, l'AI Moderator et les tests mobiles sont réservés au seul palier Enterprise."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a design or research team that wants an all-in-one platform for prototype testing, interviews and surveys, and you're willing to negotiate pricing.",
+        "fr": "Tu es une équipe design ou recherche qui veut une plateforme tout-en-un pour tester des prototypes, mener des entretiens et des sondages, et tu es prêt à négocier le tarif."
+      },
+      "avoidIf": {
+        "en": "You need transparent, public pricing before evaluating a tool, or you specifically need interview studies or AI Moderator without an Enterprise contract.",
+        "fr": "Tu as besoin d'un tarif public et transparent avant d'évaluer un outil, ou tu as spécifiquement besoin des études par entretien ou de l'AI Moderator sans contrat Enterprise."
+      },
+      "threshold": {
+        "en": "No public price exists to set a threshold against; treat contacting sales as a required first step rather than a self-serve signup.",
+        "fr": "Aucun prix public n'existe pour fixer un seuil ; considère le contact commercial comme une étape obligatoire plutôt qu'une inscription en libre-service."
+      }
+    }
+  },
+  "reviewNotes": [
+    "No public price points exist for any Maze plan below Enterprise; do not display a comparePlanKey price on the fiche until a public source confirms one."
+  ]
 }

@@ -3,7 +3,8 @@
   "slug": "eslint",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "ESLint",
     "vendor": "OpenJS Foundation",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://eslint.org/",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "ESLint homepage"
-    }
+    { "id": "s1", "url": "https://eslint.org/", "tier": 1, "accessedOn": "2026-09-25", "title": "ESLint homepage" }
   ],
   "pricing": {
     "model": "open_source",
@@ -33,11 +28,10 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Fully free and open source, no paid tier."
+        "en": "Fully free and open source, no paid tier.",
+        "fr": "Entièrement gratuit et open source, aucun palier payant."
       },
-      "sourceIds": [
-        "s1"
-      ]
+      "sourceIds": ["s1"]
     },
     "plans": [
       {
@@ -47,7 +41,12 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Fully free, open source under MIT license; no paid tier or usage cap." }],
+        "keyLimits": [
+          {
+            "en": "Fully free, open source under MIT license; no paid tier or usage cap.",
+            "fr": "Entièrement gratuit, open source sous licence MIT ; aucun palier payant ni plafond d'usage."
+          }
+        ],
         "sourceIds": ["s1"]
       }
     ],
@@ -59,48 +58,59 @@
     "capabilities": [
       {
         "en": "Statically analyzes JavaScript/TypeScript code to find problems and enforce code style.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Analyse statiquement le code JavaScript et TypeScript pour repérer les problèmes et imposer un style de code.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Auto-fixes many problems with syntax-aware fixes, avoiding naive find-and-replace errors.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Corrige automatiquement de nombreux problèmes grâce à des corrections sensibles à la syntaxe, évitant les erreurs d'un simple rechercher-remplacer.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Supports custom parsers and user-defined rules alongside a large built-in rule set.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Prend en charge des parseurs personnalisés et des règles définies par l'utilisateur, en plus d'un large jeu de règles intégrées.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Works in browser or server-side JavaScript, with or without frameworks, and with JSX.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Fonctionne en JavaScript navigateur ou serveur, avec ou sans framework, et prend en charge JSX.",
+        "sourceIds": ["s1"]
       }
     ],
     "limitations": [
       {
         "en": "No built-in dashboard or team analytics; reporting and CI aggregation require third-party tooling.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Aucun tableau de bord ni analytique d'équipe intégrés ; le reporting et l'agrégation en CI nécessitent un outil tiers.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Configuration and rule tuning require developer expertise, unlike zero-config alternatives.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "La configuration et l'ajustement des règles demandent une expertise développeur, contrairement aux linters sans configuration.",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and small engineering teams who maintain a JavaScript or TypeScript codebase and want to enforce code quality themselves.",
+      "fr": "Développeurs et petites équipes techniques qui maintiennent une base de code JavaScript ou TypeScript et veulent gérer eux-mêmes la qualité du code."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a developer runs ESLint in CI to block a pull request that introduces an unused variable or an unsafe pattern, catching it before code review.",
+      "fr": "Usage : un développeur exécute ESLint en CI pour bloquer une pull request qui introduit une variable inutilisée ou un pattern non sûr, avant même la revue de code."
+    },
+    {
+      "en": "Usage: a team adopts a shared ESLint config with custom rules so every contributor's code follows the same style without manual review comments.",
+      "fr": "Usage : une équipe adopte une configuration ESLint partagée avec des règles personnalisées, pour que le code de chaque contributeur suive le même style sans commentaires de revue manuels."
+    }
+  ],
   "alternatives": [],
   "missingAlternatives": [
     {
@@ -114,6 +124,86 @@
       "reason": "Commonly paired with or compared to ESLint for JS/TS code quality, not in the catalogue."
     }
   ],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Fully free and open source under the MIT license with no paid tier or usage cap, so the cost to justify is zero at any team size.",
+        "fr": "Entièrement gratuit et open source sous licence MIT, sans palier payant ni plafond d'usage, donc le coût à justifier est nul quelle que soit la taille de l'équipe.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Configuration and rule tuning require developer expertise, unlike zero-config linters, so a useful first result takes more than casual setup.",
+        "fr": "La configuration et l'ajustement des règles demandent une expertise développeur, contrairement aux linters sans configuration, donc obtenir un premier résultat utile prend plus qu'une installation rapide.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Statically analyzes code and auto-fixes many problems with syntax-aware fixes, delivering what it promises without a reported workaround.",
+        "fr": "Analyse statiquement le code et corrige automatiquement de nombreux problèmes grâce à des corrections sensibles à la syntaxe, tenant sa promesse sans contournement signalé.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "A large built-in rule set plus support for custom parsers and user-defined rules gives it wide coverage as the reference linter for JavaScript and TypeScript.",
+        "fr": "Un large jeu de règles intégrées, associé au support de parseurs personnalisés et de règles définies par l'utilisateur, lui donne une couverture étendue en tant que linter de référence pour JavaScript et TypeScript.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: portability of a custom rule configuration if you switch tooling is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité d'une configuration de règles personnalisée en cas de changement d'outil ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "JS/TS linter", "fr": "Linter JS/TS" },
+    "shortDescription": {
+      "en": "Free, open-source static analysis tool that finds problems and enforces code style in JavaScript and TypeScript.",
+      "fr": "Outil d'analyse statique gratuit et open source qui détecte les problèmes et impose un style de code en JavaScript et TypeScript."
+    },
+    "longDescription": {
+      "en": "ESLint statically analyzes JavaScript and TypeScript code to catch problems and enforce style rules, with syntax-aware auto-fixes that avoid naive find-and-replace errors. It supports custom parsers and user-defined rules on top of a large built-in rule set, and works in browser or server-side code, with or without frameworks, including JSX.\n\nIt is fully free and open source under the MIT license, with no paid tier or usage cap. There is no built-in dashboard or team analytics, so reporting and CI aggregation need third-party tooling, and getting the most out of it requires developer time to configure and tune rules. It fits a developer or small engineering team maintaining code quality themselves.",
+      "fr": "ESLint analyse statiquement le code JavaScript et TypeScript pour repérer les problèmes et imposer un style, avec des corrections automatiques sensibles à la syntaxe. Il prend en charge des parseurs et règles personnalisés en plus d'un large jeu de règles intégrées, et fonctionne en code navigateur ou serveur, avec ou sans framework, JSX compris.\n\nIl est entièrement gratuit et open source sous licence MIT, sans palier payant ni plafond d'usage. Il n'y a pas de tableau de bord ni d'analytique d'équipe, donc le reporting en CI passe par un outil tiers, et en tirer le meilleur demande du temps pour configurer les règles. Il convient à un développeur ou une petite équipe technique."
+    },
+    "pros": [
+      {
+        "en": "Fully free with no usage cap, unlike many commercial code-quality tools.",
+        "fr": "Entièrement gratuit et sans plafond d'usage, contrairement à de nombreux outils commerciaux de qualité de code."
+      },
+      {
+        "en": "Syntax-aware auto-fixes correct many problems automatically instead of just flagging them.",
+        "fr": "Les corrections automatiques sensibles à la syntaxe corrigent de nombreux problèmes automatiquement au lieu de simplement les signaler."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No built-in dashboard or team analytics; reporting across a team requires separate tooling.",
+        "fr": "Aucun tableau de bord ni analytique d'équipe intégrés ; le reporting à l'échelle d'une équipe nécessite un outil séparé."
+      },
+      {
+        "en": "Rule configuration and tuning require developer expertise, unlike zero-config linters.",
+        "fr": "La configuration et l'ajustement des règles demandent une expertise développeur, contrairement aux linters sans configuration."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You maintain a JavaScript or TypeScript codebase and want a free, configurable linter with auto-fixes.",
+        "fr": "Tu maintiens une base de code JavaScript ou TypeScript et tu veux un linter gratuit et configurable avec des corrections automatiques."
+      },
+      "avoidIf": {
+        "en": "You want a zero-config tool with a built-in team dashboard out of the box.",
+        "fr": "Tu veux un outil sans configuration avec un tableau de bord d'équipe intégré d'emblée."
+      },
+      "threshold": {
+        "en": "There's no price threshold: ESLint is free at any team size, so the real cost is the developer time spent configuring rules.",
+        "fr": "Il n'y a pas de seuil de prix : ESLint est gratuit quelle que soit la taille de l'équipe, le vrai coût est le temps développeur passé à configurer les règles."
+      }
+    }
+  },
   "unknowns": [
     "No direct in-catalogue alternatives were found among the provided candidate list (mostly unrelated no-code/dev tools), so `alternatives` is left empty."
   ],

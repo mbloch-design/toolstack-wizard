@@ -3,7 +3,8 @@
   "slug": "suno",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Suno",
     "vendor": "Suno, Inc.",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://suno.com/pricing",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Suno pricing plans"
-    }
+    { "id": "s1", "url": "https://suno.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Suno pricing plans" }
   ],
   "pricing": {
     "model": "freemium",
@@ -33,11 +28,10 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "50 credits/day, no song downloads, no commercial rights, shared creation queue, v6-mini model only."
+        "en": "50 credits/day, no song downloads, no commercial rights, shared creation queue, v6-mini model only.",
+        "fr": "50 crédits par jour, aucun téléchargement de chanson, aucun droit commercial, file de création partagée, modèle v6-mini uniquement."
       },
-      "sourceIds": [
-        "s1"
-      ]
+      "sourceIds": ["s1"]
     },
     "plans": [
       {
@@ -47,7 +41,12 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "50 credits/day, no song downloads, no commercial rights, shared creation queue, v6-mini model only." }],
+        "keyLimits": [
+          {
+            "en": "50 credits/day, no song downloads, no commercial rights, shared creation queue, v6-mini model only.",
+            "fr": "50 crédits par jour, aucun téléchargement de chanson, aucun droit commercial, file de création partagée, modèle v6-mini uniquement."
+          }
+        ],
         "sourceIds": ["s1"]
       },
       {
@@ -55,40 +54,30 @@
         "name": "Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 8,
-          "annualPerMonth": 6.4,
-          "oneTime": null
-        },
+        "price": { "monthly": 8, "annualPerMonth": 6.4, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "2,500 credits/month, 20 song downloads/month, commercial rights included, priority queue, up to 10 songs at once, 30 min audio upload, 2 stem separation types."
+            "en": "2,500 credits/month, 20 song downloads/month, commercial rights included, priority queue, up to 10 songs at once, 30 min audio upload, 2 stem separation types.",
+            "fr": "2 500 crédits par mois, 20 téléchargements de chansons par mois, droits commerciaux inclus, file prioritaire, jusqu'à 10 chansons en simultané, 30 min d'upload audio, 2 types de séparation de pistes."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "premier",
         "name": "Premier",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 24,
-          "annualPerMonth": 19.2,
-          "oneTime": null
-        },
+        "price": { "monthly": 24, "annualPerMonth": 19.2, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "10,000 credits/month, 60 song downloads/month, access to Suno Studio (MIDI, effects, automation), 3 stem separation types, custom models."
+            "en": "10,000 credits/month, 60 song downloads/month, access to Suno Studio (MIDI, effects, automation), 3 stem separation types, custom models.",
+            "fr": "10 000 crédits par mois, 60 téléchargements de chansons par mois, accès à Suno Studio (MIDI, effets, automatisation), 3 types de séparation de pistes, modèles personnalisés."
           }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
@@ -96,9 +85,8 @@
     "cautions": [
       {
         "en": "Credits do not carry over from day to day or month to month.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les crédits ne se reportent pas d'un jour à l'autre ni d'un mois à l'autre.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -106,69 +94,165 @@
     "capabilities": [
       {
         "en": "Generates complete songs (lyrics, vocals, instrumentation) from a text description in under a minute.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Génère des chansons complètes (paroles, voix, instrumentation) à partir d'une description textuelle en moins d'une minute.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Multiple AI model versions (v6, v6-mini, v6-wild) with different quality/speed tradeoffs.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Plusieurs versions du modèle IA (v6, v6-mini, v6-wild) avec des compromis qualité/vitesse différents.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Stem separation to isolate vocals/instruments, with more stem types on higher tiers.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Séparation des pistes pour isoler voix et instruments, avec plus de types de pistes sur les forfaits supérieurs.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Suno Studio (Premier tier) adds MIDI export, effects and automation for deeper editing.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Suno Studio (forfait Premier) ajoute l'export MIDI, des effets et de l'automatisation pour une édition plus poussée.",
+        "sourceIds": ["s1"]
       }
     ],
     "limitations": [
       {
         "en": "Free plan has no commercial rights and no song downloads, limiting it to experimentation.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Le forfait Free n'a ni droits commerciaux ni téléchargement de chanson, ce qui le limite à l'expérimentation.",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Custom model training is restricted to paid (Pro/Premier) plans.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "L'entraînement de modèles personnalisés est réservé aux forfaits payants (Pro/Premier).",
+        "sourceIds": ["s1"]
       },
       {
         "en": "Credits are monthly allotments that expire unused, so irregular usage wastes quota.",
-        "sourceIds": [
-          "s1"
-        ]
+        "fr": "Les crédits sont des dotations mensuelles qui expirent non utilisées, donc un usage irrégulier gaspille le quota.",
+        "sourceIds": ["s1"]
       }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Solo content creators who need quick, usable music (themes, backing tracks) without hiring a composer or musician.",
+      "fr": "Créateurs de contenu solo qui ont besoin de musique rapide et utilisable (thèmes, fonds musicaux) sans embaucher de compositeur ou de musicien."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a podcaster generates a 30-second theme song from a one-line prompt on Free, then upgrades to Pro to download it with commercial rights for the show.",
+      "fr": "Usage : un podcasteur génère un thème de 30 secondes à partir d'un prompt d'une ligne sur Free, puis passe à Pro pour le télécharger avec les droits commerciaux de son émission."
+    },
+    {
+      "en": "Usage: a solo musician on Premier uses Suno Studio's MIDI export to bring a generated track into their own DAW for further mixing.",
+      "fr": "Usage : un musicien solo sur Premier utilise l'export MIDI de Suno Studio pour importer un morceau généré dans son propre logiciel de mixage."
+    }
+  ],
   "alternatives": [
     {
       "slug": "udio",
       "reason": {
-        "en": "Direct competitor generating full AI songs from text prompts with similar commercial licensing tiers."
+        "en": "Direct competitor generating full AI songs from text prompts with similar commercial licensing tiers.",
+        "fr": "Concurrent direct qui génère des chansons IA complètes à partir de prompts textuels, avec des paliers de licence commerciale similaires."
       }
     },
     {
       "slug": "elevenlabs",
       "reason": {
-        "en": "Overlaps for AI-generated audio and voice, used by some creators alongside Suno for production."
+        "en": "Overlaps for AI-generated audio and voice, used by some creators alongside Suno for production.",
+        "fr": "Se recoupe pour l'audio et la voix générés par IA, utilisé par certains créateurs en complément de Suno pour la production."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "$8/month for 2,500 credits, 20 downloads and commercial rights is a low entry cost for usable AI-generated music, though the dossier has no direct price comparison to competitors.",
+        "fr": "8 $/mois pour 2 500 crédits, 20 téléchargements et les droits commerciaux est un coût d'entrée bas pour de la musique IA utilisable, même si le dossier ne fournit pas de comparaison directe avec des concurrents.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Generates a complete song from a text prompt in under a minute, no musical training or setup required, well above the one-hour bar for a top score.",
+        "fr": "Génère une chanson complète à partir d'un prompt textuel en moins d'une minute, sans formation musicale ni configuration, largement au-dessus du seuil d'une heure pour la note maximale.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers complete songs with lyrics, vocals and instrumentation as advertised, with no workaround reported to get a usable result.",
+        "fr": "Livre des chansons complètes avec paroles, voix et instrumentation comme annoncé, sans contournement signalé pour obtenir un résultat utilisable.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Multiple model versions, stem separation and Suno Studio's MIDI export cover a solid range, but the sources give no comparison against other AI music generators to judge a category ceiling.",
+        "fr": "Plusieurs versions de modèle, la séparation de pistes et l'export MIDI de Suno Studio couvrent une gamme solide, mais les sources ne fournissent pas de comparaison avec d'autres générateurs de musique IA pour juger d'un plafond de catégorie.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether generated songs and stems can be fully exported and reused outside Suno beyond the stated downloads is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter et de réutiliser entièrement les chansons et pistes générées en dehors de Suno, au-delà des téléchargements indiqués, ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI music generator", "fr": "Générateur de musique IA" },
+    "shortDescription": {
+      "en": "AI tool that generates full songs from text prompts, free to try with paid tiers adding downloads, commercial rights and more credits.",
+      "fr": "Outil IA qui génère des chansons complètes à partir d'un texte, gratuit à l'essai, avec des forfaits payants ajoutant téléchargements et droits commerciaux."
+    },
+    "longDescription": {
+      "en": "Suno turns a text description into a complete song, lyrics, vocals and instrumentation, in under a minute. Multiple AI model versions trade off quality and speed, stem separation isolates vocals or instruments, and the Premier tier's Suno Studio adds MIDI export, effects and automation for deeper editing.\n\nThe Free plan gives 50 credits/day but no downloads or commercial rights, so it works for experimentation only. Pro starts at $8/month ($6.40/month billed annually) with 2,500 monthly credits, 20 downloads and commercial rights. Credits don't roll over, so irregular use wastes quota. It suits a solo creator producing music for content or personal projects more than a team workflow.",
+      "fr": "Suno transforme une description textuelle en chanson complète, paroles, voix et instrumentation, en moins d'une minute. Plusieurs versions du modèle IA offrent un compromis qualité/vitesse, la séparation des pistes isole voix ou instruments, et le niveau Premier ajoute Suno Studio avec export MIDI, effets et automatisation.\n\nLe forfait Free donne 50 crédits par jour mais aucun téléchargement ni droits commerciaux, ce qui le limite à l'expérimentation. Pro démarre à 8 $/mois (6,40 $ en annuel) avec 2 500 crédits mensuels, 20 téléchargements et les droits commerciaux. Les crédits ne se reportent pas, donc un usage irrégulier gaspille le quota. L'outil convient mieux à un créateur solo qu'à un usage en équipe."
+    },
+    "pros": [
+      {
+        "en": "Generates a complete song, including lyrics and vocals, from a short text prompt in under a minute.",
+        "fr": "Génère une chanson complète, paroles et voix incluses, à partir d'un court prompt textuel en moins d'une minute."
+      },
+      {
+        "en": "Stem separation and Suno Studio's MIDI/effects tools allow deeper editing beyond a one-shot generation.",
+        "fr": "La séparation des pistes et les outils MIDI/effets de Suno Studio permettent une édition plus poussée au-delà d'une simple génération."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan has no commercial rights and no downloads, so generated songs can't be used or exported without upgrading.",
+        "fr": "Le forfait Free n'a ni droits commerciaux ni téléchargement, donc les chansons générées ne peuvent pas être utilisées ni exportées sans passer au payant."
+      },
+      {
+        "en": "Monthly credits expire unused each cycle, so irregular usage wastes part of the paid quota.",
+        "fr": "Les crédits mensuels expirent non utilisés à chaque cycle, donc un usage irrégulier gaspille une partie du quota payant."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want to generate usable songs with commercial rights for content or personal projects and can use your monthly credits regularly.",
+        "fr": "Tu veux générer des chansons utilisables avec des droits commerciaux pour du contenu ou des projets personnels, et tu peux utiliser tes crédits mensuels régulièrement."
+      },
+      "avoidIf": {
+        "en": "You only want to experiment without downloading or ever using the songs commercially; the free plan covers that already.",
+        "fr": "Tu veux seulement expérimenter sans télécharger ni jamais utiliser les chansons commercialement ; le forfait gratuit couvre déjà ce besoin."
+      },
+      "threshold": {
+        "en": "Budget at least $8/month (Pro) for downloads and commercial rights; $24/month (Premier) if you need Suno Studio's MIDI export and effects.",
+        "fr": "Prévois au moins 8 $/mois (Pro) pour les téléchargements et les droits commerciaux ; 24 $/mois (Premier) si tu as besoin de l'export MIDI et des effets de Suno Studio."
+      },
+      "billingTraps": {
+        "en": "Credits do not carry over from day to day or month to month, so unused quota is lost at each reset.",
+        "fr": "Les crédits ne se reportent pas d'un jour à l'autre ni d'un mois à l'autre, donc le quota non utilisé est perdu à chaque renouvellement."
+      }
+    }
+  },
   "unknowns": [
     "Whether a native mobile app exists was not confirmed on the pricing page."
   ],

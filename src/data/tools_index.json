@@ -284,11 +284,14 @@
     "slug": "acast",
     "name": "Acast",
     "categoryId": "creation",
-    "shortDescription": "Plateforme d'hébergement et de monétisation de podcasts.",
-    "shortDescriptionEn": "Podcast hosting and monetization platform.",
-    "pricing": "Hébergement gratuit possible ; monétisation via le réseau publicitaire intégré selon l'audience.",
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
+    "shortDescription": "Plateforme d'hébergement de podcast avec distribution RSS, monétisation publicitaire intégrée et publication de podcasts vidéo sur les plans supérieurs.",
+    "shortDescriptionEn": "Podcast hosting platform with RSS distribution, built-in ad and sponsorship monetization, and video podcast publishing on higher plans.",
+    "pricing": {
+      "free": "Plan gratuit : 1 émission, 5 épisodes (épisodes illimités une fois l'émission monétisée par la publicité).",
+      "paid": "Dès 14,99 $/mois, plan Essential."
+    },
+    "defaultMonthlyPrice": 12.87,
+    "compareMonthlyPrice": 12.87,
     "affiliateLink": "https://acast.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
     "logo": "https://logo.clearbit.com/acast.com",
@@ -313,7 +316,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "lina"
+      "ALIX"
     ]
   },
   {
@@ -1907,13 +1910,14 @@
     "slug": "angular-material",
     "name": "Angular Material",
     "categoryId": "ui-components",
-    "shortDescription": "Composants Material Design officiels pour les applications Angular.",
-    "shortDescriptionEn": "Official Material Design components for Angular applications.",
+    "shortDescription": "Bibliothèque officielle de composants Material Design pour Angular, maintenue par l'équipe Angular de Google, avec l'Angular CDK pour du comportement sur mesure.",
+    "shortDescriptionEn": "Official Material Design component library for Angular, maintained by Google's Angular team, with the Angular CDK for custom behavior.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "websiteUrl": "https://material.angular.io",
+    "compareMonthlyPrice": 0,
+    "websiteUrl": "https://material.angular.dev/",
     "ogImageUrl": "https://material.angular.dev/assets/img/site-preview.png",
     "substitution_cluster_v2": "angular-component-library",
     "functional_needs": [
@@ -1929,7 +1933,7 @@
     ],
     "prescription_quality": "strong",
     "personas": [
-      "DEV"
+      "THEO"
     ],
     "substitutable": false
   },
@@ -5066,12 +5070,14 @@
     "slug": "callrail",
     "name": "CallRail",
     "categoryId": "analytics",
-    "shortDescription": "Call tracking, attribution marketing et analyse des appels entrants.",
-    "shortDescriptionEn": "Call tracking, marketing attribution and inbound call analytics.",
+    "shortDescription": "Outil de suivi d'appels et d'attribution qui relie les appels entrants aux sources marketing, avec analyse IA et suivi de formulaires sur les forfaits supérieurs.",
+    "shortDescriptionEn": "Call tracking and attribution tool linking inbound calls to marketing sources, with AI analysis and form tracking on higher tiers.",
     "pricing": {
-      "free": "Essai de 14 jours sans carte bancaire ; pas de forfait gratuit permanent.",
-      "paid": "Tarifs US : Lead Tracking 55 $US/mois en mensuel, ou 50 $US/mois avec paiement annuel. En annuel : Lead Tracking Complete 95, Lead Conversion 150 et Lead Conversion Complete 195 $US/mois. Usage supplémentaire en sus. Base : 5 numéros locaux et 250 minutes/mois."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 50 $/mois, plan Lead Tracking."
     },
+    "defaultMonthlyPrice": 42.94,
+    "compareMonthlyPrice": 42.94,
     "affiliateLink": "https://partners.callrail.com/80aos1quxy64",
     "websiteUrl": "https://www.callrail.com",
     "ogImageUrl": "/og-images/callrail.jpg",
@@ -5092,7 +5098,6 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "MARC",
       "CLAIRE"
     ]
   },
@@ -6728,12 +6733,14 @@
     "slug": "cloudinary",
     "name": "Cloudinary",
     "categoryId": "storage",
-    "shortDescription": "Gestion, optimisation et transformation d’images et vidéos.",
-    "shortDescriptionEn": "Image and video management, optimization, and transformation.",
+    "shortDescription": "API développeur pour uploader, transformer et diffuser images et vidéos via un CDN mondial avec optimisation automatique.",
+    "shortDescriptionEn": "Developer API for uploading, transforming and delivering images and video through a global CDN with automatic optimization.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : 25 crédits mensuels, 3 utilisateurs, 1 compte.",
+      "paid": "Dès 89 $/mois, plan Plus."
     },
+    "defaultMonthlyPrice": 76.43,
+    "compareMonthlyPrice": 76.43,
     "websiteUrl": "https://cloudinary.com",
     "ogImageUrl": "https://res.cloudinary.com/cloudinary-marketing/images/c_scale,w_auto,dpr_auto/f_auto,q_auto/v1781274585/2026_Homepage_OG_1200x630_updated/2026_Homepage_OG_1200x630_updated.jpg?_i=AA",
     "substitution_cluster_v2": "storage",
@@ -7764,15 +7771,15 @@
     "slug": "cursor",
     "name": "Cursor",
     "categoryId": "ai-general",
-    "shortDescription": "Éditeur de code IA natif (basé VS Code) avec Composer (multi-fichiers), Agent mode, indexation codebase, accès aux modèles Claude/GPT-4o/Gemini et MCP intégré.",
-    "shortDescriptionEn": "AI-native code editor (VS Code-based) with Composer for multi-file edits, Agent mode, codebase indexing, access to Claude/GPT-4o/Gemini models, and native MCP support.",
+    "shortDescription": "Éditeur de code natif IA (fork de VS Code) avec éditions multi-fichiers Composer, mode Agent autonome et accès à plusieurs modèles de pointe.",
+    "shortDescriptionEn": "AI-native code editor (VS Code fork) with multi-file Composer edits, an autonomous Agent mode and access to several frontier models.",
     "pricing": {
-      "free": "Gratuit sans limite de temps ; crédits limités par rapport aux plans payants.",
-      "paid": "Free: 0 $ (crédits limités) ; Pro: 20 $/mois (15 $ crédits) ; Pro+: 60 $/mois (70 $ crédits) ; Ultra: 200 $/mois (200 $ crédits)"
+      "free": "Plan gratuit : Plan Hobby : requêtes Agent limitées, accès à Composer, sans carte bancaire requise.",
+      "paid": "Dès 20 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 17.32,
-    "affiliateLink": "https://cursor.sh",
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
+    "affiliateLink": "https://cursor.com",
     "ogImageUrl": "https://cursor.com/marketing-static/_next/image?url=https%3A%2F%2Fptht05hbb1ssoooe.public.blob.vercel-storage.com%2Fassets%2Fmisc%2Fasset-cc24ca462279ca23250c.jpg&w=3840&q=70",
     "tool_type": "metier",
     "substitution_cluster_v2": "ai-code-assistant",
@@ -7793,8 +7800,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "theo",
-      "alix"
+      "THEO"
     ],
     "substitutable": false
   },
@@ -9330,12 +9336,13 @@
     "slug": "dxo-photolab",
     "name": "DxO PhotoLab",
     "categoryId": "photo",
-    "shortDescription": "Développement RAW et corrections photo avancées, souvent utilisé en alternative ou complément à Lightroom.",
-    "shortDescriptionEn": "RAW development and advanced photo corrections, often used as a Lightroom alternative or complement.",
+    "shortDescription": "Éditeur de photos RAW avec corrections optiques automatiques et débruitage IA, vendu sous forme de licence perpétuelle à achat unique.",
+    "shortDescriptionEn": "RAW photo editor with optics-based automatic corrections and AI denoising, sold as a one-time perpetual license.",
     "pricing": {
-      "free": "",
-      "paid": "Licence perpétuelle dès 99,99$ (Essential), Elite plus chère. Prix vérifié le 2026-07-08."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 159,99 $ (licence à vie), plan Essential."
     },
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://www.dxo.com/dxo-photolab/",
     "ogImageUrl": "https://prod-www-cdn.dxo.com/wp-content/uploads/2024/06/newhero-en@2x-1-1024x725.jpg",
     "tool_type": "metier",
@@ -9358,7 +9365,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "photographe"
+      "SOFIA"
     ]
   },
   {
@@ -9744,14 +9751,13 @@
     "slug": "embergen",
     "name": "EmberGen",
     "categoryId": "creation",
-    "shortDescription": "Simulation de fluides temps réel (feu, fumée, explosions) ultra-rapide (JangaFX).",
-    "shortDescriptionEn": "Ultra-fast real-time fluid simulation (fire, smoke, explosions) by JangaFX.",
+    "shortDescription": "Outil de simulation temps réel accéléré par GPU pour le feu, la fumée et les explosions, avec export vers moteurs de jeu et outils DCC.",
+    "shortDescriptionEn": "GPU-accelerated real-time simulation tool for fire, smoke and explosions, exporting to game engines and DCC tools.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Indie 19,99$/mois ; achat direct 299,99$."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 300 $ (licence à vie), plan Indie."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://jangafx.com/software/embergen",
     "ogImageUrl": "https://jangafx.com/opengraph-image.png?opengraph-image.2xwmfd9hv7l5u.png",
     "tool_type": "metier",
@@ -9770,7 +9776,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "designer"
+      "SOFIA"
     ],
     "freeAlternative": "blender"
   },
@@ -10084,12 +10090,13 @@
     "slug": "eslint",
     "name": "ESLint",
     "categoryId": "nocode-web",
-    "shortDescription": "Linting JavaScript/TypeScript pour éviter erreurs, dette et incohérences de code.",
-    "shortDescriptionEn": "JavaScript/TypeScript linting to avoid errors, debt, and code inconsistencies.",
+    "shortDescription": "Outil d'analyse statique gratuit et open source qui détecte les problèmes et impose un style de code en JavaScript et TypeScript.",
+    "shortDescriptionEn": "Free, open-source static analysis tool that finds problems and enforces code style in JavaScript and TypeScript.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Entièrement gratuit et open source, aucun palier payant.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://eslint.org",
     "ogImageUrl": "https://eslint.org/icon-512.png",
     "tool_type": "metier",
@@ -16000,14 +16007,14 @@
     "slug": "jotform",
     "name": "Jotform",
     "categoryId": "nocode-web",
-    "shortDescription": "Créateur de formulaires puissant avec 10 000+ templates, paiements et automatisations.",
-    "shortDescriptionEn": "Powerful form builder with 10,000+ templates, payments and automations.",
+    "shortDescription": "Générateur de formulaires par glisser-déposer avec des milliers de modèles, paiement intégré et automatisations déclenchées par soumission.",
+    "shortDescriptionEn": "Drag-and-drop form builder with thousands of templates, built-in payment collection and submission-triggered automations.",
     "pricing": {
-      "free": "Gratuit avec 5 formulaires et 100 soumissions/mois",
-      "paid": "Bronze 34$/mois · Silver 39$/mois · Gold 99$/mois"
+      "free": "Plan gratuit : Plan Starter : 5 formulaires actifs, 100 soumissions par mois, marque Jotform incluse.",
+      "paid": "Dès 34 $/mois, plan Bronze."
     },
-    "defaultMonthlyPrice": 31.28,
-    "compareMonthlyPrice": 31.28,
+    "defaultMonthlyPrice": 29.2,
+    "compareMonthlyPrice": 29.2,
     "websiteUrl": "https://www.jotform.com",
     "ogImageUrl": "https://cdn.jotfor.ms/assets/img/landing/opengraph.png",
     "substitution_cluster_v2": "form-builder",
@@ -16027,7 +16034,10 @@
       "Événementiel",
       "Éducation"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "jquery",
@@ -19880,14 +19890,14 @@
     "slug": "maze",
     "name": "Maze",
     "categoryId": "design-tools",
-    "shortDescription": "Plateforme de recherche utilisateur intégrée qui combine recrutement, tests de prototypes, entretiens modérés, enquêtes et analyse pour aider les équipes à prendre des décisions produit basées sur des données.",
-    "shortDescriptionEn": "Integrated user research platform combining recruitment, prototype testing, moderated interviews, surveys, and analysis to help teams make data-driven product decisions.",
+    "shortDescription": "Plateforme de recherche utilisateur intégrée pour tester des prototypes, mener des entretiens, des sondages et du tri de cartes, avec des études assistées par IA.",
+    "shortDescriptionEn": "Integrated user research platform for prototype testing, interviews, surveys and card sorting, with AI-assisted study building.",
     "pricing": {
-      "free": "Essai gratuit et tier limité disponible. Accès à certains outils de recherche de base avec restrictions de participants ou de nombre d'études.",
-      "paid": "Free Trial / Limited Free: Gratuit ; Standard: Montants sur la page officielle (plans échelonnés) ; Enterprise: Tarification personnalisée sur demande"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 64.95,
-    "compareMonthlyPrice": 64.95,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://maze.co",
     "ogImageUrl": "https://www.datocms-assets.com/38511/1778262436-promo-ai-study-builder.png?auto=format&dpr=0.94&fit=max&w=640",
     "substitution_cluster_v2": "design-support",
@@ -19908,8 +19918,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "theo"
+      "SOFIA"
     ]
   },
   {
@@ -22873,15 +22882,15 @@
     "slug": "openphone",
     "name": "OpenPhone",
     "categoryId": "communication",
-    "shortDescription": "Système téléphonique tout-en-un pour équipes.",
-    "shortDescriptionEn": "All-in-one phone system for teams.",
+    "shortDescription": "Numéros de téléphone professionnels facturés par utilisateur, avec appels, SMS et IA pour petites équipes ; sans plan gratuit, essai de 7 jours seulement.",
+    "shortDescriptionEn": "Per-seat business phone numbers with calling, texting and AI call features for small teams, with no free plan and only a 7-day trial.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
-    "affiliateLink": "https://openphone.com",
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
+    "affiliateLink": "https://www.quo.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6899ec2c2b29c1edf8c20f15/690d0a9bad3f5225ab9fc359_7c18f9d49ac0d507597d6c00b78e10b4_OG%20image.png",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
@@ -22896,7 +22905,10 @@
       "Support client",
       "Agences"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "optimizely",
@@ -23618,14 +23630,15 @@
     "slug": "pagerduty",
     "name": "PagerDuty",
     "categoryId": "analytics",
-    "shortDescription": "Gestion des incidents en temps réel avec astreintes et escalade automatique.",
-    "shortDescriptionEn": "Real-time incident management with on-call schedules and automatic escalation.",
+    "shortDescription": "Gestion des incidents et astreintes avec politiques d'escalade, un palier gratuit jusqu'à 5 utilisateurs, et une nouvelle offre Reliability Platform plafonnée à l'usage.",
+    "shortDescriptionEn": "On-call incident management with escalation policies, a free tier for up to 5 users, and a newer usage-capped Reliability Platform.",
     "pricing": {
-      "free": "5 utilisateurs",
-      "paid": "21$/utilisateur/mois"
+      "free": "Plan gratuit : Palier gratuit historique de l'Incident Management : jusqu'à 5 utilisateurs, 1 planning, 1 politique d'escalade, 100 notifications SMS/téléphone par mois.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 18.19,
-    "compareMonthlyPrice": 18.19,
+    "defaultMonthlyPrice": 18.03,
+    "compareMonthlyPrice": 18.03,
+    "priceUndisclosed": true,
     "affiliateLink": "https://pagerduty.com",
     "ogImageUrl": "https://cdn.pagerduty.com/wp-content/uploads/2025/12/pagerduty-green-bg.png",
     "substitution_cluster_v2": "analytics",
@@ -23646,7 +23659,7 @@
     ],
     "prescription_quality": "ferme",
     "personas": [
-      "marc"
+      "THEO"
     ]
   },
   {
@@ -23654,11 +23667,11 @@
     "slug": "pagespeed-insights",
     "name": "PageSpeed Insights",
     "categoryId": "analytics",
-    "shortDescription": "Audit Google des performances et Core Web Vitals.",
-    "shortDescriptionEn": "Google audit for performance and Core Web Vitals.",
+    "shortDescription": "Outil gratuit de Google qui note les Core Web Vitals d'une page avec des données réelles et de laboratoire, et propose des corrections concrètes.",
+    "shortDescriptionEn": "Free Google tool that scores a page's Core Web Vitals using real-user and lab data, with concrete improvement suggestions.",
     "pricing": {
-      "free": "Gratuit, sans abonnement",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://pagespeed.web.dev",
@@ -23678,7 +23691,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "THEO"
+      "MARC"
     ],
     "substitutable": false
   },
@@ -24268,12 +24281,14 @@
     "slug": "personio",
     "name": "Personio",
     "categoryId": "hris-payroll",
-    "shortDescription": "SIRH complet pour PME : recrutement, onboarding, paie, congés.",
-    "shortDescriptionEn": "Complete HRIS for SMEs: recruitment, onboarding, payroll, leave.",
+    "shortDescription": "Plateforme RH cloud couvrant les dossiers salariés, l'onboarding et la paie, avec des tarifs sur devis non publiés publiquement.",
+    "shortDescriptionEn": "Cloud HR platform covering employee records, onboarding and payroll, priced through a custom quote not publicly listed.",
     "pricing": {
-      "paid": "Sur devis (environ 3€/employé/mois)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://personio.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/personio.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -24295,8 +24310,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "marc",
-      "claire"
+      "CLAIRE"
     ]
   },
   {
@@ -25298,11 +25312,11 @@
     "slug": "posthog",
     "name": "PostHog",
     "categoryId": "analytics",
-    "shortDescription": "Suite analytics produit open source : events, replays, feature flags, A/B.",
-    "shortDescriptionEn": "Open-source product analytics suite: events, replays, feature flags, A/B.",
+    "shortDescription": "Suite regroupant analytics produit, session replay, feature flags, error tracking et plus, chacun avec son propre quota mensuel gratuit.",
+    "shortDescriptionEn": "Bundled product analytics, session replay, feature flags, error tracking and more, each with its own free monthly allowance.",
     "pricing": {
-      "free": "1M events/mois gratuits",
-      "paid": "Pay-as-you-go après"
+      "free": "Plan gratuit : 1 M d'événements analytics, 5 000 enregistrements de session, 1 M de requêtes de feature flags, 100 000 événements d'erreur, 1 500 réponses de sondage, 1 M de lignes d'entrepôt de données plus historique gratuit, 10 000 événements + 1 M de lignes pour les data pipelines, 100 000 événements d'AI observability, 10 Go de logs ingérés, tout remis à zéro chaque mois.",
+      "paid": "Dès 0 $/mois, plan Free."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://posthog.com",
@@ -25325,8 +25339,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "theo",
-      "marc"
+      "THEO"
     ]
   },
   {
@@ -26123,12 +26136,13 @@
     "slug": "prometheus",
     "name": "Prometheus",
     "categoryId": "analytics",
-    "shortDescription": "Monitoring open source orienté métriques et alerting.",
-    "shortDescriptionEn": "Open-source monitoring focused on metrics and alerting.",
+    "shortDescription": "Outil gratuit et open source de collecte de métriques en séries temporelles et d'alerting avec PromQL, auto-hébergé, sans offre managée.",
+    "shortDescriptionEn": "Free, open-source time-series metrics collection and alerting tool with PromQL, self-hosted, no managed offering.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Entièrement gratuit et open source sous licence Apache 2.0 ; aucune offre payante de la part du projet lui-même.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://prometheus.io",
     "ogImageUrl": "https://prometheus.io/opengraph-image.png?b370f6418ef38b42",
     "substitution_cluster_v2": "analytics",
@@ -28418,12 +28432,13 @@
     "slug": "revenuecat",
     "name": "RevenueCat",
     "categoryId": "finance",
-    "shortDescription": "Gestion des achats in-app, abonnements et entitlements mobile.",
-    "shortDescriptionEn": "In-app purchases, subscriptions, and mobile entitlement management.",
+    "shortDescription": "Unifie la gestion des achats intégrés et des abonnements sur iOS, Android et web avec un backend, un éditeur de paywall et des tests A/B.",
+    "shortDescriptionEn": "Unifies in-app purchase and subscription management across iOS, Android and web with one backend, a paywall editor and A/B testing.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Gratuit jusqu'à 2 500 $ de revenu mensuel suivi (MTR).",
+      "paid": "Dès 0 $/mois, plan Free (under $2,500 MTR)."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.revenuecat.com",
     "ogImageUrl": "https://www.revenuecat.com/social-previews/index.jpg",
     "substitution_cluster_v2": "finance",
@@ -32646,14 +32661,14 @@
     "slug": "suno",
     "name": "Suno",
     "categoryId": "ai-general",
-    "shortDescription": "Générateur de musique IA qui crée des chansons complètes (paroles, voix, production) à partir de descriptions textuelles en moins d'une minute, avec support multi-genres et droits commerciaux.",
-    "shortDescriptionEn": "AI music generator creating complete songs (lyrics, vocals, production) from text descriptions in under a minute, with multi-genre support and commercial rights.",
+    "shortDescription": "Outil IA qui génère des chansons complètes à partir d'un texte, gratuit à l'essai, avec des forfaits payants ajoutant téléchargements et droits commerciaux.",
+    "shortDescriptionEn": "AI tool that generates full songs from text prompts, free to try with paid tiers adding downloads, commercial rights and more credits.",
     "pricing": {
-      "free": "10 chansons quotidiennes gratuites, pas de carte bancaire requise",
-      "paid": "Free: Gratuit (10 chansons/jour) ; Pro: 20% rabais annuel (500 chansons/mois, droits commerciaux) ; Premier: 20% rabais annuel (2000 chansons/mois, Suno Studio, MIDI export)"
+      "free": "Plan gratuit : 50 crédits par jour, aucun téléchargement de chanson, aucun droit commercial, file de création partagée, modèle v6-mini uniquement.",
+      "paid": "Dès 6,40 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 8.66,
-    "compareMonthlyPrice": 8.66,
+    "defaultMonthlyPrice": 5.5,
+    "compareMonthlyPrice": 5.5,
     "affiliateLink": "https://suno.com",
     "ogImageUrl": "https://cdn-o.suno.com/Aura-1-Hero-Web.jpg",
     "tool_type": "ia",
@@ -32674,9 +32689,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "alix",
-      "theo"
+      "ALIX"
     ],
     "betterAlternative": {
       "tool": "udio",
@@ -32690,13 +32703,14 @@
     "slug": "supabase",
     "name": "Supabase",
     "categoryId": "nocode-web",
-    "shortDescription": "Backend tout-en-un open source (Postgres, auth, stockage, API) : l'alternative à Firebase.",
-    "shortDescriptionEn": "All-in-one open-source backend (Postgres, auth, storage, API): the Firebase alternative.",
+    "shortDescription": "Backend Postgres open source tout-en-un (base de données, auth, stockage, API auto-générées, temps réel), positionné comme une alternative à Firebase.",
+    "shortDescriptionEn": "Open-source, all-in-one Postgres backend (database, auth, storage, auto-generated APIs, realtime), positioned as a Firebase alternative.",
     "pricing": {
-      "free": "Gratuit : 2 projets, 500 Mo de base, généreux pour démarrer",
-      "paid": "Pro à 25$/mois plus l'usage, Team à 599$/mois"
+      "free": "Plan gratuit : 500 Mo de base de données, 5 Go de trafic sortant, 1 Go de stockage de fichiers, jusqu'à 50 000 MAU, 2 projets actifs, mise en pause après 1 semaine d'inactivité.",
+      "paid": "Dès 25 $/mois, plan Pro."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 21.47,
+    "compareMonthlyPrice": 21.47,
     "websiteUrl": "https://supabase.com",
     "ogImageUrl": "https://supabase.com/images/og/supabase-og.png",
     "tool_type": "metier",
@@ -32715,7 +32729,10 @@
       "Startups SaaS",
       "Teams web modernes"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "superdev-pro",
@@ -34803,14 +34820,14 @@
     "slug": "trello",
     "name": "Trello",
     "categoryId": "project-management",
-    "shortDescription": "Le Kanban visuel pour organiser ses projets sans complexité.",
-    "shortDescriptionEn": "Visual Kanban for organizing your projects without the complexity.",
+    "shortDescription": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+    "shortDescriptionEn": "Visual Kanban board tool with cards, lists, Power-Ups and built-in automation for lightweight project tracking.",
     "pricing": {
-      "free": "Gratuit, jusqu'à 10 tableaux par espace",
-      "paid": "Standard à 5$/utilisateur/mois, Premium à 10$"
+      "free": "Plan gratuit : Jusqu'à 10 collaborateurs et 10 tableaux par Workspace, cartes illimitées, 250 exécutions de commandes Workspace par mois, 10 Mo par fichier.",
+      "paid": "Dès 5 $/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 5,
-    "compareMonthlyPrice": 5,
+    "defaultMonthlyPrice": 4.29,
+    "compareMonthlyPrice": 4.29,
     "affiliateLink": "https://trello.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/trello.jpg",
     "substitution_cluster_v2": "project-management-general",
@@ -34831,6 +34848,9 @@
       "Petits studios créatifs"
     ],
     "prescription_quality": "oui",
+    "personas": [
+      "CLAIRE"
+    ],
     "freeAlternative": "Notion"
   },
   {
@@ -37760,11 +37780,11 @@
     "slug": "xero",
     "name": "Xero",
     "categoryId": "finance",
-    "shortDescription": "Logiciel de comptabilité cloud",
-    "shortDescriptionEn": "Cloud accounting software.",
+    "shortDescription": "Logiciel de comptabilité en ligne pour la facturation, le rapprochement bancaire et la tenue de livres, avec un essai de 30 jours, sans plan gratuit.",
+    "shortDescriptionEn": "Cloud accounting software for invoicing, bank reconciliation and bookkeeping, with a 30-day trial and no free plan.",
     "pricing": {
-      "free": "Essai gratuit 30 jours",
-      "paid": "Early à 25$/mois, Growing à 55$/mois, Established à 90$/mois (facturation mensuelle uniquement aux US depuis mars 2026)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 25 $/mois, plan Early."
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
@@ -37786,7 +37806,10 @@
       "E-commerces",
       "Prestataires de services"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "yoast",
@@ -38173,14 +38196,14 @@
     "slug": "zendesk",
     "name": "Zendesk",
     "categoryId": "communication",
-    "shortDescription": "Plateforme de support client omnicanal (email, chat, social, téléphone) avec IA intégrée.",
-    "shortDescriptionEn": "Omnichannel customer support platform (email, chat, social, phone) with built-in AI.",
+    "shortDescription": "Plateforme de support client omnicanal (e-mail, chat, réseaux sociaux, téléphone) avec triage assisté par IA, à partir du ticketing e-mail seul.",
+    "shortDescriptionEn": "Omnichannel customer support platform (email, chat, social, phone) with AI-assisted triage, starting from email-only ticketing.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours du plan Suite Professional",
-      "paid": "Support Team à 19$/agent/mois (ticketing e-mail seul) ; Suite Team à 55$/agent/mois ; Suite Professional à 115$/agent/mois ; Enterprise sur devis."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 19 $/mois, plan Support Team."
     },
-    "defaultMonthlyPrice": 19,
-    "compareMonthlyPrice": 19,
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "affiliateLink": "https://zendesk.com",
     "ogImageUrl": "https://d1eipm3vz40hy0.cloudfront.net/images/logos/favicons/zendesk-image.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -38196,7 +38219,10 @@
       "SaaS et entreprises en ligne",
       "Services clients multi-canaux"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "zeplin",
@@ -38245,14 +38271,14 @@
     "slug": "zoho",
     "name": "Zoho",
     "categoryId": "erp",
-    "shortDescription": "Suite d’outils de productivité en ligne et applications SaaS.",
-    "shortDescriptionEn": "Online productivity suite and SaaS applications.",
+    "shortDescription": "Suite de plus de 50 applications Zoho réunies sous un seul abonnement, facturée par employé ou par utilisateur flexible, sans plan gratuit.",
+    "shortDescriptionEn": "Bundle of 50+ Zoho business apps under one subscription, priced per employee or per flexible user, with no free plan.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 90 $/mois, plan Flexible Users."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 77.29,
+    "compareMonthlyPrice": 77.29,
     "affiliateLink": "https://zoho.com",
     "ogImageUrl": "https://www.zohowebstatic.com/sites/zweb/images/ogimage/zoho-logo.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -38268,7 +38294,10 @@
       "Dirigeants et ops",
       "Entreprises multi-services"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "zoom",

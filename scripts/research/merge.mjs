@@ -83,6 +83,11 @@ for (const slug of slugs) {
     console.log(`⏸ ${slug}: compared price has no official source, kept for a manual check`);
     continue;
   }
+  // The site shows EUR, USD and GBP only (src/lib/currencyRates.ts).
+  if (!EUR_TO[d.pricing.currency]) {
+    console.log(`⏸ ${slug}: prices in ${d.pricing.currency}, a currency the site does not handle yet`);
+    continue;
+  }
   const tool = bySlug.get(slug);
   if (!tool) { console.log(`✖ ${slug}: not in catalogue`); continue; }
 

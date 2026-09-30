@@ -3,7 +3,7 @@
   "slug": "dxo-photolab",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "DxO PhotoLab 10",
     "vendor": "DxO Labs",
@@ -60,7 +60,7 @@
         "keyLimits": [
           {
             "en": "Lifetime license activatable on 2 computers (Mac and/or PC); upgrade pricing from versions 8/9 available from $84.99.",
-            "fr": null
+            "fr": "Licence à vie activable sur 2 ordinateurs (Mac et/ou PC) ; tarif de mise à niveau depuis les versions 8/9 disponible à partir de 84,99 $."
           }
         ],
         "sourceIds": [
@@ -81,7 +81,7 @@
         "keyLimits": [
           {
             "en": "Lifetime license activatable on 3 computers; adds advanced features over Essential (e.g. more correction tools); upgrade from Essential costs $99.",
-            "fr": null
+            "fr": "Licence à vie activable sur 3 ordinateurs ; ajoute des fonctionnalités avancées par rapport à Essential (ex. plus d'outils de correction) ; la mise à niveau depuis Essential coûte 99 $."
           }
         ],
         "sourceIds": [
@@ -94,14 +94,14 @@
     "cautions": [
       {
         "en": "No subscription option exists; both editions are perpetual, one-time-purchase licenses, with paid upgrade pricing for future major versions.",
-        "fr": null,
+        "fr": "Aucune option d'abonnement n'existe ; les deux éditions sont des licences perpétuelles achetées une fois, avec un tarif de mise à niveau payant pour les futures versions majeures.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "License requires periodic online reactivation; offline usage is limited to 37 days after the last online activation.",
-        "fr": null,
+        "fr": "La licence nécessite une réactivation en ligne périodique ; l'usage hors ligne est limité à 37 jours après la dernière activation en ligne.",
         "sourceIds": [
           "s1"
         ]
@@ -112,21 +112,21 @@
     "capabilities": [
       {
         "en": "End-to-end RAW photo editing with DxO's optics-based automatic corrections (lens sharpness, distortion, vignetting).",
-        "fr": null,
+        "fr": "Édition RAW de bout en bout avec les corrections automatiques basées sur l'optique de DxO (netteté de l'objectif, distorsion, vignettage).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "AI-powered denoising and other AI features, which require a dedicated GPU (NVIDIA RTX 3000+, AMD Radeon RX6000+, Intel ARC, or Apple M1+).",
-        "fr": null,
+        "fr": "Débruitage assisté par IA et autres fonctionnalités IA, qui nécessitent un GPU dédié (NVIDIA RTX 3000+, AMD Radeon RX6000+, Intel ARC, ou Apple M1+).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Available in English, French, German, Japanese and Simplified Chinese.",
-        "fr": null,
+        "fr": "Disponible en anglais, français, allemand, japonais et chinois simplifié.",
         "sourceIds": [
           "s1"
         ]
@@ -135,21 +135,21 @@
     "limitations": [
       {
         "en": "No monthly subscription plan; buyers pay a full one-time price per major version, with separate paid upgrades for future releases.",
-        "fr": null,
+        "fr": "Aucun plan d'abonnement mensuel ; les acheteurs paient un prix complet unique par version majeure, avec des mises à niveau payantes séparées pour les futures versions.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "AI features require a fairly recent, capable GPU (8GB VRAM minimum on supported cards), which not all users' machines will have.",
-        "fr": null,
+        "fr": "Les fonctionnalités IA nécessitent un GPU assez récent et capable (8 Go de VRAM minimum sur les cartes supportées), que toutes les machines des utilisateurs n'ont pas.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "License activation is capped at 2 computers on Essential and 3 on Elite, with only 37 days of offline use before requiring reactivation.",
-        "fr": null,
+        "fr": "L'activation de licence est plafonnée à 2 ordinateurs sur Essential et 3 sur Elite, avec seulement 37 jours d'usage hors ligne avant réactivation obligatoire.",
         "sourceIds": [
           "s1"
         ]
@@ -166,21 +166,21 @@
       "slug": "adobe-lightroom",
       "reason": {
         "en": "Dominant subscription-based RAW editor and asset manager, the main alternative for photographers comparing pricing models.",
-        "fr": null
+        "fr": "Éditeur RAW et gestionnaire d'assets dominant, sur abonnement, la principale alternative pour les photographes qui comparent les modèles de tarification."
       }
     },
     {
       "slug": "capture-one",
       "reason": {
         "en": "Professional RAW editing competitor offering both subscription and perpetual license options.",
-        "fr": null
+        "fr": "Concurrent professionnel en édition RAW proposant à la fois abonnement et licence perpétuelle."
       }
     },
     {
       "slug": "darktable",
       "reason": {
         "en": "Free, open-source RAW editor alternative for users who don't want to pay for a perpetual license.",
-        "fr": null
+        "fr": "Éditeur RAW gratuit et open source, une alternative pour les utilisateurs qui ne veulent pas payer de licence perpétuelle."
       }
     }
   ],
@@ -191,5 +191,123 @@
   ],
   "conflicts": [
     "The current product version is DxO PhotoLab 10 (Essential $159.99 / Elite $249.99), not version 7/8 or the $99.99 Essential price implied by the seed data's earlier pricingText, which appears outdated."
-  ]
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A one-time $159.99 purchase for Essential avoids a recurring subscription entirely, cheaper over several years than Lightroom's ongoing plan for a photographer who doesn't need cloud sync.",
+        "fr": "Un achat unique à 159,99 $ pour Essential évite totalement un abonnement récurrent, moins cher sur plusieurs années que le plan continu de Lightroom pour un photographe qui n'a pas besoin de synchronisation cloud.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Optics-based automatic corrections give a usable result quickly on a first import, though AI features need a specific, fairly recent GPU to work at all.",
+        "fr": "Les corrections automatiques basées sur l'optique donnent un résultat exploitable rapidement dès un premier import, mais les fonctionnalités IA nécessitent un GPU spécifique et assez récent pour fonctionner du tout.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "End-to-end RAW editing with automatic lens corrections and AI denoising works directly in the product, without needing a separate correction tool.",
+        "fr": "L'édition RAW de bout en bout avec corrections d'objectif automatiques et débruitage IA fonctionne directement dans le produit, sans outil de correction séparé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Optics-based automatic corrections plus AI denoising cover advanced RAW editing, comparable to Capture One's professional tier, though without Lightroom's cloud asset management.",
+        "fr": "Les corrections automatiques basées sur l'optique et le débruitage IA couvrent une édition RAW avancée, comparable au niveau professionnel de Capture One, mais sans la gestion d'assets cloud de Lightroom.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "License activation is capped at 2 or 3 computers with only 37 days of offline use before requiring reactivation, a real constraint on portability compared to a subscription with no activation cap.",
+        "fr": "L'activation de licence est plafonnée à 2 ou 3 ordinateurs avec seulement 37 jours d'usage hors ligne avant réactivation obligatoire, une vraie contrainte de portabilité comparée à un abonnement sans plafond d'activation.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Photographers who want a one-time-purchase RAW editor with strong automatic optical corrections instead of a recurring subscription.",
+      "fr": "Photographes qui veulent un éditeur RAW à achat unique avec de fortes corrections optiques automatiques plutôt qu'un abonnement récurrent."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Batch RAW correction: apply automatic lens sharpness and distortion correction across a shoot's import without manual per-photo adjustment.",
+      "fr": "Correction RAW par lot : appliquer la correction automatique de netteté et de distorsion d'objectif sur l'import d'une séance sans réglage manuel photo par photo."
+    },
+    {
+      "en": "Low-light cleanup: run AI denoising on high-ISO shots on a machine with a supported GPU before export.",
+      "fr": "Nettoyage basse lumière : lancer le débruitage IA sur des photos à ISO élevé, sur une machine avec un GPU supporté, avant export."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "One-time-purchase RAW editor",
+      "fr": "Éditeur RAW achat unique"
+    },
+    "shortDescription": {
+      "en": "RAW photo editor with optics-based automatic corrections and AI denoising, sold as a one-time perpetual license.",
+      "fr": "Éditeur de photos RAW avec corrections optiques automatiques et débruitage IA, vendu sous forme de licence perpétuelle à achat unique."
+    },
+    "longDescription": {
+      "en": "DxO PhotoLab 10 edits RAW photos end to end with automatic optics-based corrections for lens sharpness, distortion and vignetting, plus AI-powered denoising that requires a fairly recent, dedicated GPU (8 GB VRAM minimum).\n\nBoth editions are one-time purchases: Essential at $159.99 for 2 computers, Elite at $249.99 for 3, with paid upgrades for future major versions and no subscription option. The license needs periodic online reactivation, with only 37 days of offline use allowed. It suits a photographer who wants to avoid a recurring subscription and doesn't need Lightroom's cloud asset management.",
+      "fr": "DxO PhotoLab 10 édite les photos RAW de bout en bout avec des corrections automatiques basées sur l'optique pour la netteté, la distorsion et le vignettage de l'objectif, plus un débruitage assisté par IA qui nécessite un GPU dédié assez récent (8 Go de VRAM minimum).\n\nLes deux éditions sont des achats uniques : Essential à 159,99 $ pour 2 ordinateurs, Elite à 249,99 $ pour 3, avec des mises à niveau payantes pour les futures versions majeures et aucune option d'abonnement. La licence nécessite une réactivation en ligne périodique, avec seulement 37 jours d'usage hors ligne autorisés. Il convient à un photographe qui veut éviter un abonnement récurrent et n'a pas besoin de la gestion d'assets cloud de Lightroom."
+    },
+    "pros": [
+      {
+        "en": "One-time purchase avoids a recurring subscription entirely.",
+        "fr": "L'achat unique évite totalement un abonnement récurrent."
+      },
+      {
+        "en": "Optics-based automatic corrections give strong results with little manual adjustment.",
+        "fr": "Les corrections automatiques basées sur l'optique donnent de bons résultats avec peu de réglage manuel."
+      }
+    ],
+    "cons": [
+      {
+        "en": "AI features need a fairly recent, capable GPU, not guaranteed on every machine.",
+        "fr": "Les fonctionnalités IA nécessitent un GPU assez récent et capable, non garanti sur toutes les machines."
+      },
+      {
+        "en": "License activation caps at 2 or 3 computers with only 37 days of offline use before reactivation.",
+        "fr": "L'activation de licence est plafonnée à 2 ou 3 ordinateurs avec seulement 37 jours d'usage hors ligne avant réactivation."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if a one-time purchase for RAW editing with strong automatic optical corrections beats paying a recurring subscription.",
+        "fr": "À garder si un achat unique pour l'édition RAW avec de fortes corrections optiques automatiques vaut mieux que payer un abonnement récurrent."
+      },
+      "avoidIf": {
+        "en": "Avoid it if AI denoising is needed but the machine lacks a supported GPU, or if cloud-based asset management across devices matters.",
+        "fr": "À éviter si le débruitage IA est nécessaire mais que la machine n'a pas de GPU supporté, ou si la gestion d'assets basée cloud entre appareils compte."
+      },
+      "threshold": {
+        "en": "The entry edition, Essential, costs a one-time $159.99 for a license activatable on 2 computers.",
+        "fr": "L'édition d'entrée, Essential, coûte 159,99 $ payés une fois pour une licence activable sur 2 ordinateurs."
+      },
+      "billingTraps": {
+        "en": "The license requires periodic online reactivation, with offline use limited to 37 days after the last activation, and future major versions require a separate paid upgrade rather than being included.",
+        "fr": "La licence nécessite une réactivation en ligne périodique, l'usage hors ligne étant limité à 37 jours après la dernière activation, et les futures versions majeures demandent une mise à niveau payante séparée plutôt que d'être incluses."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
+  "reviewNotes": []
 }

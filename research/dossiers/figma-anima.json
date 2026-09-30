@@ -3,7 +3,7 @@
   "slug": "figma-anima",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Anima",
     "vendor": "AnimaApp",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://animaapp.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Anima pricing (plan prices not fully rendered in fetched content)" }
+    {
+      "id": "s1",
+      "url": "https://animaapp.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Anima pricing (plan prices not fully rendered in fetched content)"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "5 chat messages/day in AI Playground, 5 Figma design imports or website clones/day, 5 code generations/day in the Figma plugin.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "5 chat messages/day in AI Playground, 5 Figma design imports or website clones/day, 5 code generations/day in the Figma plugin.",
+        "fr": "5 messages par jour dans l'AI Playground, 5 imports de designs Figma ou clonages de site par jour, 5 générations de code par jour dans le plugin Figma."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,53 +47,253 @@
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 24, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 24,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5,000 code exports/month, unlimited Figma inspects, higher AI Playground usage.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "5,000 code exports/month, unlimited Figma inspects, higher AI Playground usage.",
+            "fr": "5 000 exports de code par mois, inspections Figma illimitées, usage plus élevé de l'AI Playground."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Starts around $500/month (paid annually per secondary sources); includes SSO, MFA, enterprise-grade SLAs and enhanced security; requires contacting sales, no public fixed price on the official page.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Starts around $500/month (paid annually per secondary sources); includes SSO, MFA, enterprise-grade SLAs and enhanced security; requires contacting sales, no public fixed price on the official page.",
+            "fr": "Démarre autour de 500 $/mois selon des sources secondaires (facturé annuellement) ; inclut SSO, MFA, SLA entreprise et sécurité renforcée ; nécessite de contacter les ventes, aucun prix fixe public sur la page officielle."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "The official pricing page's detailed plan table (exact monthly vs. annual prices for Pro and any mid-tier plan) did not fully render in this session's fetch; the $24/mo annual Pro figure comes from secondary sources and should be re-verified against the live pricing table.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "The official pricing page's detailed plan table (exact monthly vs. annual prices for Pro and any mid-tier plan) did not fully render in this session's fetch; the $24/mo annual Pro figure comes from secondary sources and should be re-verified against the live pricing table.",
+        "fr": "Le tableau détaillé des prix (mensuel vs annuel pour Pro et un éventuel palier intermédiaire) ne s'est pas entièrement chargé lors de cette session ; le montant de 24 $/mois en annuel pour Pro vient de sources secondaires et doit être revérifié sur la page de prix en direct.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Converts Figma designs into production-ready code (React, HTML, Vue, Tailwind CSS).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI Playground for prototyping full apps from natural-language prompts, including Figma imports and website cloning.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Converts Figma designs into production-ready code (React, HTML, Vue, Tailwind CSS).",
+        "fr": "Convertit les maquettes Figma en code prêt pour la production (React, HTML, Vue, Tailwind CSS).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI Playground for prototyping full apps from natural-language prompts, including Figma imports and website cloning.",
+        "fr": "AI Playground pour prototyper des applications complètes à partir de prompts en langage naturel, y compris l'import Figma et le clonage de sites.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan caps daily usage (5 chat messages, 5 imports/clones, 5 code generations per day), unsuitable for regular production use.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Generated code from design tools like this typically needs manual cleanup/integration into an existing codebase.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free plan caps daily usage (5 chat messages, 5 imports/clones, 5 code generations per day), unsuitable for regular production use.",
+        "fr": "Le plan gratuit limite l'usage quotidien (5 messages, 5 imports/clonages, 5 générations de code par jour), insuffisant pour un usage de production régulier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Generated code from design tools like this typically needs manual cleanup/integration into an existing codebase.",
+        "fr": "Le code généré par ce type d'outil nécessite généralement un nettoyage manuel avant intégration dans une base de code existante.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] }
+      {
+        "name": "Figma",
+        "slug": "figma",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "figma", "reason": { "en": "Anima operates as a plugin/extension of Figma, addressing the same design-to-code workflow within the same tool.", "fr": null } },
-    { "slug": "figma-tokens", "reason": { "en": "Another Figma-ecosystem plugin targeting design-to-code/design-system workflows.", "fr": null } },
-    { "slug": "framer", "reason": { "en": "Also converts design into a publishable/functional product, overlapping on the design-to-production use case.", "fr": null } }
+    {
+      "slug": "figma",
+      "reason": {
+        "en": "Anima operates as a plugin/extension of Figma, addressing the same design-to-code workflow within the same tool.",
+        "fr": "Anima fonctionne comme un plugin de Figma, sur le même flux design-to-code, dans le même outil."
+      }
+    },
+    {
+      "slug": "figma-tokens",
+      "reason": {
+        "en": "Another Figma-ecosystem plugin targeting design-to-code/design-system workflows.",
+        "fr": "Un autre plugin de l'écosystème Figma ciblé sur les flux design-to-code et design system."
+      }
+    },
+    {
+      "slug": "framer",
+      "reason": {
+        "en": "Also converts design into a publishable/functional product, overlapping on the design-to-production use case.",
+        "fr": "Convertit aussi un design en produit publiable et fonctionnel, sur le même cas d'usage design-to-production."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Locofy", "officialUrl": "https://www.locofy.ai", "reason": "Direct competitor in Figma-to-code AI plugins, referenced in comparison content but absent from the catalogue." }
+    {
+      "name": "Locofy",
+      "officialUrl": "https://www.locofy.ai",
+      "reason": "Direct competitor in Figma-to-code AI plugins, referenced in comparison content but absent from the catalogue."
+    }
   ],
   "unknowns": [
     "Exact monthly (non-annual) Pro price and whether a mid-tier plan exists between Free and Pro could not be confirmed; the pricing table did not fully render in this session's fetch.",
     "Precise definition of what counts as a 'code export' toward the 5,000/month Pro limit was not detailed on the fetched content."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Pro costs about $24/month billed annually for 5,000 code exports, but the exact live pricing table wasn't fully confirmed, and the free tier is too capped for real production use.",
+        "fr": "Pro coûte environ 24 $/mois facturés annuellement pour 5 000 exports de code, mais le tableau de prix en direct n'a pas pu être entièrement confirmé, et le plan gratuit est trop limité pour un usage de production réel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The AI Playground builds prototypes directly from natural-language prompts, including Figma imports and website cloning, without manual setup.",
+        "fr": "L'AI Playground construit des prototypes directement à partir de prompts en langage naturel, y compris l'import Figma et le clonage de site, sans configuration manuelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It converts designs to code as promised, but the generated code typically needs manual cleanup before it fits an existing codebase.",
+        "fr": "L'outil convertit bien les designs en code comme promis, mais le code généré nécessite généralement un nettoyage manuel avant de s'intégrer à une base de code existante.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Exports to multiple frameworks (React, HTML, Vue, Tailwind) and includes a full AI Playground for app prototyping, beyond a simple code exporter.",
+        "fr": "L'outil exporte vers plusieurs frameworks (React, HTML, Vue, Tailwind) et inclut un AI Playground complet pour prototyper des applications, au-delà d'un simple exporteur de code.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export format lock-in and API access for migrating away from Anima are not covered by the collected sources.",
+        "fr": "Note neutre : le format des exports et l'accès API pour migrer hors d'Anima ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designers and small product teams who want a working code export from a Figma file without briefing a developer for the first pass.",
+      "fr": "Designers et petites équipes produit qui veulent un export de code fonctionnel depuis un fichier Figma sans avoir à briefer un développeur pour le premier jet."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: convert a Figma design into production-ready React code to hand a developer a working prototype instead of a static mockup.",
+      "fr": "Cas d'usage : convertir une maquette Figma en code React prêt pour la production, pour remettre à un développeur un prototype fonctionnel plutôt qu'une maquette statique."
+    },
+    {
+      "en": "Use case: clone an existing website in the AI Playground from a text prompt, to explore a product direction before building it for real.",
+      "fr": "Cas d'usage : cloner un site existant dans l'AI Playground à partir d'un prompt texte, pour explorer une direction produit avant de la construire pour de vrai."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Figma to code",
+      "fr": "Figma vers code"
+    },
+    "shortDescription": {
+      "en": "AI plugin that turns Figma designs into React, HTML, Vue or Tailwind code, with an AI Playground for prompting full app prototypes.",
+      "fr": "Plugin IA qui transforme des maquettes Figma en code React, HTML, Vue ou Tailwind, avec un AI Playground pour prototyper des applications par prompt."
+    },
+    "longDescription": {
+      "en": "Anima is a Figma plugin that converts designs into production-ready code across React, HTML, Vue and Tailwind CSS. Its AI Playground goes further, building working app prototypes from natural-language prompts, including importing a Figma file or cloning an existing site as a starting point.\n\nThe free plan caps daily usage at 5 messages, imports and code generations, enough to test the workflow but not for regular production work. The Pro plan lists around $24/month billed annually for 5,000 code exports; the live pricing table didn't fully load during research, so treat that figure as unconfirmed. It suits a designer or small team wanting a first code draft before involving a developer.",
+      "fr": "Anima est un plugin Figma qui convertit des maquettes en code prêt pour la production, en React, HTML, Vue et Tailwind CSS. Son AI Playground construit aussi des prototypes d'applications fonctionnels à partir de prompts en langage naturel, en important un fichier Figma ou en clonant un site existant.\n\nLe plan gratuit limite l'usage quotidien à 5 messages, imports et générations de code, suffisant pour tester le flux mais pas pour un usage régulier. Le plan Pro affiche environ 24 $/mois facturés annuellement pour 5 000 exports de code ; ce chiffre vient de sources secondaires et reste à confirmer. Il convient à un designer ou une petite équipe qui veut un premier jet de code avant d'impliquer un développeur."
+    },
+    "pros": [
+      {
+        "en": "Exports to multiple frameworks (React, HTML, Vue, Tailwind) from the same design.",
+        "fr": "Exporte vers plusieurs frameworks (React, HTML, Vue, Tailwind) depuis la même maquette."
+      },
+      {
+        "en": "The AI Playground lets a designer prototype a working app or clone a site from a text prompt.",
+        "fr": "L'AI Playground permet à un designer de prototyper une application fonctionnelle ou de cloner un site à partir d'un prompt texte."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free tier's daily caps (5 imports, 5 generations) are too tight for regular production use.",
+        "fr": "Les plafonds quotidiens du plan gratuit (5 imports, 5 générations) sont trop serrés pour un usage de production régulier."
+      },
+      {
+        "en": "Generated code still needs manual cleanup before it fits an existing codebase.",
+        "fr": "Le code généré nécessite encore un nettoyage manuel avant de s'intégrer à une base de code existante."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a designer or small team that wants a working code export from Figma without hiring a developer for the first pass.",
+        "fr": "Tu es designer ou une petite équipe et tu veux un export de code fonctionnel depuis Figma sans embaucher un développeur pour le premier jet."
+      },
+      "avoidIf": {
+        "en": "You need pixel-perfect, production-grade code straight out of the box, or you regularly exceed the free plan's daily caps.",
+        "fr": "Tu as besoin d'un code de qualité production immédiatement exploitable, ou tu dépasses régulièrement les plafonds quotidiens du plan gratuit."
+      },
+      "threshold": {
+        "en": "The Pro plan is listed around $24/month (annual) for 5,000 code exports; it's worth it once you export design-to-code on a weekly basis.",
+        "fr": "Le plan Pro affiche environ 24 $/mois (annuel) pour 5 000 exports de code ; il devient rentable dès que tu exportes du design vers du code chaque semaine."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Pro plan price ($24/mo annual) comes from secondary sources, not the fully-rendered official pricing table; re-verify on animaapp.com/pricing.",
+    "Enterprise plan's ~$500/month figure is also from secondary sources and not a public official price; keep it out of any displayed price."
+  ],
+  "hold": "Pro and Enterprise prices from secondary sources; reconfirm on the official page"
 }

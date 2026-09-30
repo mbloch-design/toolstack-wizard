@@ -3,7 +3,7 @@
   "slug": "acast",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Acast",
     "vendor": "Acast AB",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://acast.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Acast pricing" }
+    {
+      "id": "s1",
+      "url": "https://acast.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Acast pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "1 show, 5 episodes (unlimited episodes once the show is monetized via ads).", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "1 show, 5 episodes (unlimited episodes once the show is monetized via ads).",
+        "fr": "1 émission, 5 épisodes (épisodes illimités une fois l'émission monétisée par la publicité)."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,69 +47,283 @@
         "name": "Essential",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 25, "annualPerMonth": 14.99, "oneTime": null },
+        "price": {
+          "monthly": 25,
+          "annualPerMonth": 14.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Multiple shows, unlimited episodes, ad and sponsorship monetization, advanced analytics.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Multiple shows, unlimited episodes, ad and sponsorship monetization, advanced analytics.",
+            "fr": "Plusieurs émissions, épisodes illimités, monétisation par publicité et sponsoring, analytique avancée."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 40, "annualPerMonth": 29.99, "oneTime": null },
+        "price": {
+          "monthly": 40,
+          "annualPerMonth": 29.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Everything in Essential plus team management, prioritized support, publishing API.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Everything in Essential plus team management, prioritized support, publishing API.",
+            "fr": "Tout ce qui est dans Essential, plus gestion d'équipe, support prioritaire, API de publication."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "video",
         "name": "Video",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 50, "annualPerMonth": 39.99, "oneTime": null },
+        "price": {
+          "monthly": 50,
+          "annualPerMonth": 39.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Everything in Pro plus up to 10,000 monthly video views, video publishing to Apple Podcasts, automatic video-to-audio conversion.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Everything in Pro plus up to 10,000 monthly video views, video publishing to Apple Podcasts, automatic video-to-audio conversion.",
+            "fr": "Tout ce qui est dans Pro, plus jusqu'à 10 000 vues vidéo mensuelles, publication vidéo sur Apple Podcasts, conversion automatique vidéo vers audio."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "creator-network",
         "name": "Acast Creator Network",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom pricing for established creators with significant audiences, contact required.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Custom pricing for established creators with significant audiences, contact required.",
+            "fr": "Tarif personnalisé pour les créateurs établis avec une audience importante, contact commercial requis."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "essential",
     "addOns": [],
     "cautions": [
-      { "en": "Exact ad-revenue share percentage taken by Acast on monetized shows was not disclosed on the pricing page fetched in this session.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Exact ad-revenue share percentage taken by Acast on monetized shows was not disclosed on the pricing page fetched in this session.",
+        "fr": "Le pourcentage exact de revenus publicitaires prélevé par Acast sur les émissions monétisées n'était pas indiqué sur la page de prix consultée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Podcast hosting with RSS distribution to major listening platforms.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in ad and sponsorship monetization tools with advanced analytics on paid plans.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Video podcast publishing and automatic video-to-audio conversion on the Video plan.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Podcast hosting with RSS distribution to major listening platforms.",
+        "fr": "Hébergement de podcast avec distribution RSS vers les principales plateformes d'écoute.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in ad and sponsorship monetization tools with advanced analytics on paid plans.",
+        "fr": "Outils intégrés de monétisation par publicité et sponsoring, avec analytique avancée sur les plans payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Video podcast publishing and automatic video-to-audio conversion on the Video plan.",
+        "fr": "Publication de podcasts vidéo et conversion automatique vidéo vers audio sur le plan Video.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 1 show and 5 episodes unless the show becomes ad-monetized.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Video features and the publishing API are gated behind the two highest paid tiers.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free plan is capped at 1 show and 5 episodes unless the show becomes ad-monetized.",
+        "fr": "Le plan gratuit est plafonné à 1 émission et 5 épisodes, sauf si l'émission devient monétisée par la publicité.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Video features and the publishing API are gated behind the two highest paid tiers.",
+        "fr": "Les fonctions vidéo et l'API de publication sont réservées aux deux plans payants les plus élevés.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "podbean", "reason": { "en": "Direct competitor podcast hosting and monetization platform.", "fr": null } },
-    { "slug": "spotify-for-podcasters", "reason": { "en": "Free podcast hosting and distribution tool from Spotify, overlapping on the core hosting use case.", "fr": null } },
-    { "slug": "buzzsprout", "reason": { "en": "Another podcast hosting platform with monetization and analytics features targeting the same audience.", "fr": null } }
+    {
+      "slug": "podbean",
+      "reason": {
+        "en": "Direct competitor podcast hosting and monetization platform.",
+        "fr": "Concurrent direct pour l'hébergement de podcast et sa monétisation."
+      }
+    },
+    {
+      "slug": "spotify-for-podcasters",
+      "reason": {
+        "en": "Free podcast hosting and distribution tool from Spotify, overlapping on the core hosting use case.",
+        "fr": "Outil gratuit d'hébergement et de distribution de podcast de Spotify, sur le même cas d'usage principal."
+      }
+    },
+    {
+      "slug": "buzzsprout",
+      "reason": {
+        "en": "Another podcast hosting platform with monetization and analytics features targeting the same audience.",
+        "fr": "Autre plateforme d'hébergement de podcast avec monétisation et analytique, visant la même audience."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Ad-revenue share percentage taken by Acast on monetized episodes was not disclosed on the fetched pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Essential starts at $14.99/month billed annually and unlocks unlimited episodes plus monetization tools, but the exact ad-revenue share Acast keeps wasn't disclosed, making the real net value hard to judge fully.",
+        "fr": "Essential démarre à 14,99 $/mois facturés annuellement et débloque les épisodes illimités et les outils de monétisation, mais la part exacte des revenus publicitaires gardée par Acast n'était pas indiquée, ce qui rend la valeur nette difficile à juger pleinement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The free plan lets anyone publish a show with 5 episodes and RSS distribution right away, with no setup beyond signing up.",
+        "fr": "Le plan gratuit permet à n'importe qui de publier une émission avec 5 épisodes et une distribution RSS immédiatement, sans configuration au-delà de l'inscription.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers hosting, distribution and monetization as promised on paid plans, without needing a separate tool for ad sales.",
+        "fr": "L'outil délivre hébergement, distribution et monétisation comme promis sur les plans payants, sans nécessiter un outil séparé pour la vente publicitaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers hosting, monetization, analytics and even video podcast publishing on the top plan, a solid but not exceptional range for the category.",
+        "fr": "Couvre hébergement, monétisation, analytique et même la publication de podcasts vidéo sur le plan le plus élevé, une couverture solide mais pas exceptionnelle pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of episodes/RSS feed and audience data when leaving Acast is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des épisodes/flux RSS et des données d'audience en cas de départ d'Acast ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent podcast creators who want to grow beyond a hobby show into ad-monetized, multi-show publishing with real analytics.",
+      "fr": "Créateurs de podcasts indépendants qui veulent passer d'une émission amateur à une publication multi-émissions monétisée par la publicité, avec une vraie analytique."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: launch a first show for free with 5 episodes and RSS distribution, then upgrade once ad monetization is switched on.",
+      "fr": "Cas d'usage : lancer une première émission gratuitement avec 5 épisodes et une distribution RSS, puis passer au payant une fois la monétisation publicitaire activée."
+    },
+    {
+      "en": "Use case: run multiple shows with unlimited episodes and advanced analytics on the Essential plan to track sponsorship performance.",
+      "fr": "Cas d'usage : gérer plusieurs émissions avec des épisodes illimités et une analytique avancée sur le plan Essential pour suivre la performance des sponsors."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Podcast hosting & ads",
+      "fr": "Hébergement et pub podcast"
+    },
+    "shortDescription": {
+      "en": "Podcast hosting platform with RSS distribution, built-in ad and sponsorship monetization, and video podcast publishing on higher plans.",
+      "fr": "Plateforme d'hébergement de podcast avec distribution RSS, monétisation publicitaire intégrée et publication de podcasts vidéo sur les plans supérieurs."
+    },
+    "longDescription": {
+      "en": "Acast hosts podcasts and distributes them via RSS to the major listening platforms, with built-in ad and sponsorship monetization tools and analytics on paid plans. The Video plan adds video podcast publishing, including automatic conversion between video and audio.\n\nThe free plan covers 1 show and 5 episodes, or unlimited episodes once the show is ad-monetized. Essential starts at $14.99/month billed annually for multiple shows and unlimited episodes. It suits an independent podcaster ready to monetize and grow past a single hobby show, less so someone who only wants basic free hosting long-term.",
+      "fr": "Acast héberge des podcasts et les distribue par RSS vers les principales plateformes d'écoute, avec des outils de monétisation publicitaire et de sponsoring intégrés, et une analytique sur les plans payants. Le plan Video ajoute la publication de podcasts vidéo, avec conversion automatique entre vidéo et audio.\n\nLe plan gratuit couvre 1 émission et 5 épisodes, ou des épisodes illimités une fois l'émission monétisée par la publicité. Essential démarre à 14,99 $/mois facturés annuellement pour plusieurs émissions et des épisodes illimités. Il convient à un podcasteur indépendant prêt à monétiser et à dépasser une émission amateur unique, moins à quelqu'un qui ne veut qu'un hébergement gratuit basique sur le long terme."
+    },
+    "pros": [
+      {
+        "en": "Free plan lets you publish and test a show before paying anything.",
+        "fr": "Le plan gratuit permet de publier et tester une émission avant de payer quoi que ce soit."
+      },
+      {
+        "en": "Monetization and analytics are built in rather than requiring a separate ad-sales tool.",
+        "fr": "Monétisation et analytique sont intégrées, sans nécessiter d'outil de vente publicitaire séparé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The exact ad-revenue share Acast keeps isn't disclosed on the pricing page.",
+        "fr": "La part exacte des revenus publicitaires gardée par Acast n'est pas indiquée sur la page de prix."
+      },
+      {
+        "en": "Video publishing and the API are locked behind the two most expensive plans.",
+        "fr": "La publication vidéo et l'API sont réservées aux deux plans les plus chers."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're growing a podcast past a single hobby show and want built-in ad monetization and analytics.",
+        "fr": "Tu fais grandir un podcast au-delà d'une émission amateur unique et tu veux une monétisation publicitaire et une analytique intégrées."
+      },
+      "avoidIf": {
+        "en": "You only need permanent free hosting for one small show, since the free tier caps out at 5 episodes.",
+        "fr": "Tu n'as besoin que d'un hébergement gratuit permanent pour une petite émission, car le plan gratuit plafonne à 5 épisodes."
+      },
+      "threshold": {
+        "en": "At $14.99/month (annual) for Essential, it's worth it once a show needs more than 5 episodes or ad monetization.",
+        "fr": "À 14,99 $/mois (annuel) pour Essential, ça devient rentable dès qu'une émission dépasse 5 épisodes ou a besoin d'une monétisation publicitaire."
+      }
+    }
+  },
+  "reviewNotes": []
 }

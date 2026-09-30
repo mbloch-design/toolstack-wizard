@@ -3,7 +3,7 @@
   "slug": "cloudinary",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Cloudinary",
     "vendor": "Cloudinary Ltd.",
@@ -32,7 +32,10 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "25 monthly credits, 3 users, 1 account",
+      "limits": {
+        "en": "25 monthly credits, 3 users, 1 account.",
+        "fr": "25 crédits mensuels, 3 utilisateurs, 1 compte."
+      },
       "sourceIds": [
         "s1"
       ]
@@ -58,7 +61,7 @@
         "keyLimits": [
           {
             "en": "25 monthly credits (1 credit = 1,000 transformations, or 1 GB storage, or 1 GB image bandwidth), 3 users, 1 account.",
-            "fr": null
+            "fr": "25 crédits mensuels (1 crédit = 1 000 transformations, ou 1 Go de stockage, ou 1 Go de bande passante image), 3 utilisateurs, 1 compte."
           }
         ],
         "sourceIds": [
@@ -79,7 +82,7 @@
         "keyLimits": [
           {
             "en": "225 monthly credits, 3 users, 2 accounts; adds S3 bucket backup, auto-tagging search, expedited support, asset access controls.",
-            "fr": null
+            "fr": "225 crédits mensuels, 3 utilisateurs, 2 comptes ; ajoute la sauvegarde sur bucket S3, la recherche par auto-tagging, un support accéléré, des contrôles d'accès aux assets."
           }
         ],
         "sourceIds": [
@@ -100,7 +103,7 @@
         "keyLimits": [
           {
             "en": "600 monthly credits, 5 users, 3 accounts; adds custom domain support, HTTPS SSL certificate, and additional authentication options.",
-            "fr": null
+            "fr": "600 crédits mensuels, 5 utilisateurs, 3 comptes ; ajoute un domaine personnalisé, un certificat SSL HTTPS et des options d'authentification supplémentaires."
           }
         ],
         "sourceIds": [
@@ -121,7 +124,7 @@
         "keyLimits": [
           {
             "en": "Custom pricing; multi-CDN infrastructure, enterprise SLAs, dedicated customer success manager, SSO, compliance reviews.",
-            "fr": null
+            "fr": "Tarif sur devis ; infrastructure multi-CDN, SLA entreprise, chargé de compte dédié, SSO, revues de conformité."
           }
         ],
         "sourceIds": [
@@ -134,14 +137,14 @@
     "cautions": [
       {
         "en": "Video bandwidth consumes credits twice as fast as image bandwidth (1 credit = 1 GB image bandwidth vs. 2 GB video bandwidth), which can matter for video-heavy usage.",
-        "fr": null,
+        "fr": "La bande passante vidéo consomme les crédits deux fois plus vite que la bande passante image (1 crédit = 1 Go de bande passante image contre 2 Go en vidéo), ce qui compte pour un usage vidéo intensif.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "A separate Digital Asset Management (DAM) product line exists with its own 30-day free trial (25 GB storage, 3 users) and custom enterprise pricing, distinct from the core media API plans.",
-        "fr": null,
+        "fr": "Une ligne de produit distincte de gestion d'actifs numériques (DAM) existe avec son propre essai gratuit de 30 jours (25 Go de stockage, 3 utilisateurs) et un tarif entreprise sur devis, séparé des plans de l'API média principale.",
         "sourceIds": [
           "s1"
         ]
@@ -152,28 +155,28 @@
     "capabilities": [
       {
         "en": "Image and video upload, storage, transformation and optimization via API, widgets and a web console.",
-        "fr": null,
+        "fr": "Upload, stockage, transformation et optimisation d'images et de vidéos via API, widgets et une console web.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Global CDN delivery of media assets with automatic format/quality optimization.",
-        "fr": null,
+        "fr": "Diffusion des assets média via un CDN mondial avec optimisation automatique du format et de la qualité.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Auto-tagging and AI-assisted asset search on paid plans.",
-        "fr": null,
+        "fr": "Auto-tagging et recherche d'assets assistée par IA sur les plans payants.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "S3 bucket backup and custom domain/SSL support on paid plans.",
-        "fr": null,
+        "fr": "Sauvegarde sur bucket S3 et support de domaine personnalisé/SSL sur les plans payants.",
         "sourceIds": [
           "s1"
         ]
@@ -182,14 +185,14 @@
     "limitations": [
       {
         "en": "The free plan caps usage at only 25 monthly credits, which is easily consumed by a video-heavy or high-traffic site.",
-        "fr": null,
+        "fr": "Le plan gratuit plafonne l'usage à seulement 25 crédits mensuels, vite consommés par un site à fort trafic ou riche en vidéo.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Advanced authentication and custom domain/SSL support require at least the $249/month Advanced plan.",
-        "fr": null,
+        "fr": "L'authentification avancée et le domaine personnalisé/SSL exigent au moins le plan Advanced à 249 $/mois.",
         "sourceIds": [
           "s1"
         ]
@@ -238,24 +241,17 @@
   },
   "alternatives": [
     {
-      "slug": "google-drive",
-      "reason": {
-        "en": "General-purpose cloud storage sometimes used for basic media hosting, though without Cloudinary's transformation/CDN pipeline.",
-        "fr": null
-      }
-    },
-    {
       "slug": "bynder",
       "reason": {
         "en": "Digital asset management competitor targeting teams that need brand asset libraries rather than a developer-first media API.",
-        "fr": null
+        "fr": "Concurrent en gestion d'actifs numériques, ciblant les équipes qui ont besoin de bibliothèques d'assets de marque plutôt qu'une API média pensée développeur."
       }
     },
     {
-      "slug": "onedrive",
+      "slug": "pics-io",
       "reason": {
-        "en": "General cloud storage alternative for basic file/media hosting needs.",
-        "fr": null
+        "en": "Digital asset management layered on top of Google Drive or S3, a lighter alternative for teams organizing media without Cloudinary's transformation pipeline.",
+        "fr": "Gestion d'actifs numériques posée sur Google Drive ou S3, une alternative plus légère pour organiser des médias sans le pipeline de transformation de Cloudinary."
       }
     }
   ],
@@ -275,5 +271,125 @@
     "Whether taxes are included in the listed USD prices was not stated on the pricing page.",
     "Mobile SDK platform support (iOS/Android) was not confirmed on the pricing page checked."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The entry paid plan, Plus, jumps to $89 to $99/month for 225 credits, a steep step from the free plan's 25 credits, so value depends on actually needing that transformation/CDN volume.",
+        "fr": "Le plan payant d'entrée, Plus, saute à 89-99 $/mois pour 225 crédits, un écart important par rapport aux 25 crédits du plan gratuit, donc la valeur dépend surtout d'avoir vraiment besoin de ce volume de transformation/CDN.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and learning curve for the API, widgets or console are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la courbe d'apprentissage de l'API, des widgets ou de la console ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Upload, transformation, optimization and global CDN delivery work directly through the API, widgets and console as described, without needing a separate CDN tool.",
+        "fr": "Upload, transformation, optimisation et diffusion CDN mondiale fonctionnent directement via l'API, les widgets et la console comme annoncé, sans outil CDN séparé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Combines media transformation, global CDN delivery, AI-assisted tagging and a separate DAM product line, covering more ground than a plain storage or DAM-only competitor.",
+        "fr": "Combine transformation média, diffusion CDN mondiale, tagging assisté par IA et une ligne DAM séparée, couvrant plus de terrain qu'un simple stockage ou un concurrent DAM seul.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export and data-portability details beyond the API itself are not covered by the collected sources.",
+        "fr": "Note neutre : les modalités d'export et de portabilité des données au-delà de l'API elle-même ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who need to upload, transform and deliver images and video through an API and CDN without building that pipeline themselves.",
+      "fr": "Développeurs qui doivent uploader, transformer et diffuser images et vidéos via une API et un CDN sans construire ce pipeline eux-mêmes."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "E-commerce product images: upload once, serve automatically optimized and resized versions through the CDN for every device.",
+      "fr": "Images produit e-commerce : uploader une fois, servir des versions optimisées et redimensionnées automatiquement via le CDN pour chaque appareil."
+    },
+    {
+      "en": "User-generated video: accept uploads via API, transcode and deliver through the global CDN without managing encoding infrastructure.",
+      "fr": "Vidéo générée par les utilisateurs : accepter les uploads via l'API, transcoder et diffuser via le CDN mondial sans gérer d'infrastructure d'encodage."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Media API and CDN",
+      "fr": "API média et CDN"
+    },
+    "shortDescription": {
+      "en": "Developer API for uploading, transforming and delivering images and video through a global CDN with automatic optimization.",
+      "fr": "API développeur pour uploader, transformer et diffuser images et vidéos via un CDN mondial avec optimisation automatique."
+    },
+    "longDescription": {
+      "en": "Cloudinary handles image and video upload, transformation and delivery through an API, widgets and a web console, backed by a global CDN with automatic format and quality optimization. Paid plans add auto-tagging, S3 backup, custom domains and SSL, and a separate DAM product line covers brand asset libraries.\n\nThe free plan gives 25 monthly credits, quickly used up by video-heavy or high-traffic sites, since video bandwidth consumes credits twice as fast as images. The entry paid plan, Plus, starts at $89 to $99 a month for 225 credits. It suits a developer who needs media transformation and CDN delivery built in, not a team just looking for basic file storage.",
+      "fr": "Cloudinary gère l'upload, la transformation et la diffusion d'images et de vidéos via une API, des widgets et une console web, avec un CDN mondial et optimisation automatique du format et de la qualité. Les plans payants ajoutent l'auto-tagging, la sauvegarde S3, les domaines personnalisés et le SSL, et une ligne DAM séparée couvre les bibliothèques d'assets de marque.\n\nLe plan gratuit donne 25 crédits mensuels, vite consommés par un site riche en vidéo, la vidéo coûtant deux fois plus de crédits que l'image. Le plan d'entrée, Plus, démarre entre 89 et 99 $/mois pour 225 crédits. Il convient à un développeur ayant besoin de transformation média et de CDN intégrés, pas à une équipe cherchant un simple stockage."
+    },
+    "pros": [
+      {
+        "en": "Transformation, optimization and CDN delivery all live in one API instead of separate tools.",
+        "fr": "Transformation, optimisation et diffusion CDN vivent dans une seule API au lieu d'outils séparés."
+      },
+      {
+        "en": "30-day trial lets a real project be tested before committing to a paid plan.",
+        "fr": "L'essai de 30 jours permet de tester un vrai projet avant de s'engager sur un plan payant."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The jump from the free plan's 25 credits to Plus's 225 credits is steep, with no middle tier.",
+        "fr": "Le saut des 25 crédits du plan gratuit aux 225 crédits de Plus est important, sans palier intermédiaire."
+      },
+      {
+        "en": "Video bandwidth burns through credits twice as fast as images, a real cost factor for video-heavy sites.",
+        "fr": "La bande passante vidéo consomme les crédits deux fois plus vite que l'image, un vrai facteur de coût pour les sites riches en vidéo."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if media transformation and CDN delivery need to be handled through one API rather than assembled from separate tools.",
+        "fr": "À garder si la transformation média et la diffusion CDN doivent être gérées via une seule API plutôt qu'assemblées à partir d'outils séparés."
+      },
+      "avoidIf": {
+        "en": "Avoid it if the need is just basic file storage without transformation, or if video-heavy usage would burn through credits fast on the entry plans.",
+        "fr": "À éviter si le besoin est juste du stockage de fichiers basique sans transformation, ou si un usage riche en vidéo consommerait vite les crédits des plans d'entrée."
+      },
+      "threshold": {
+        "en": "The entry paid plan, Plus, costs $89/month billed annually ($1,068/year) for 225 monthly credits and 2 accounts.",
+        "fr": "Le plan payant d'entrée, Plus, coûte 89 $/mois en engagement annuel (1 068 $/an) pour 225 crédits mensuels et 2 comptes."
+      },
+      "billingTraps": {
+        "en": "Video bandwidth consumes credits twice as fast as image bandwidth, so a mostly-video use case can burn through a plan's monthly credits far faster than the numbers suggest.",
+        "fr": "La bande passante vidéo consomme les crédits deux fois plus vite que la bande passante image, donc un usage surtout vidéo peut épuiser les crédits mensuels d'un plan bien plus vite que les chiffres ne le suggèrent."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
+  "reviewNotes": [
+    "Dropped google-drive and onedrive from alternatives (facts stage): general cloud storage does not cover Cloudinary's main need (media transformation and CDN delivery), replaced with bynder and pics-io (closer DAM competitors); imgix and ImageKit remain the real direct competitors, kept in missingAlternatives since they are not in the catalogue."
+  ]
 }

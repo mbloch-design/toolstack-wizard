@@ -3,7 +3,7 @@
   "slug": "zendesk",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Zendesk",
     "vendor": "Zendesk, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.zendesk.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Zendesk pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.zendesk.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Zendesk pricing"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -24,80 +30,335 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "support-team",
         "name": "Support Team",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 19, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 19,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Email ticketing only: routing, analytics, pre-written responses, automations, no omnichannel/chat.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Email ticketing only: routing, analytics, pre-written responses, automations, no omnichannel/chat.",
+            "fr": "Ticketing e-mail uniquement : routage, analytique, réponses prérédigées, automatisations, sans omnicanal ni chat."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "suite-team",
         "name": "Suite Team",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 55, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 55,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds AI agents, knowledge base, omnichannel routing, messaging, live chat, telephony.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds AI agents, knowledge base, omnichannel routing, messaging, live chat, telephony.",
+            "fr": "Ajoute des agents IA, une base de connaissances, le routage omnicanal, la messagerie, le chat en direct et la téléphonie."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "suite-professional",
         "name": "Suite Professional",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 115, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 115,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds Admin Copilot, App Builder, writing tools, quick reports, skills-based routing, IVR.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds Admin Copilot, App Builder, writing tools, quick reports, skills-based routing, IVR.",
+            "fr": "Ajoute Admin Copilot, App Builder, des outils de rédaction, des rapports rapides, le routage par compétences et l'IVR."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "suite-enterprise-copilot",
         "name": "Suite Enterprise + Copilot",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Intelligent triage, generative AI for voice, approval workflows, sandbox, custom roles.", "fr": "…" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Intelligent triage, generative AI for voice, approval workflows, sandbox, custom roles.",
+            "fr": "Triage intelligent, IA générative pour la voix, workflows d'approbation, environnement de test, rôles personnalisés."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "support-team",
     "addOns": [
-      { "en": "Copilot add-on: $50/agent/month (annual).", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Workforce Engagement bundle: $50/agent/month (annual).", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Contact Center: $83/agent/month (annual).", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Copilot add-on: $50/agent/month (annual).",
+        "fr": "Module Copilot : 50 $/agent/mois (annuel).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Workforce Engagement bundle: $50/agent/month (annual).",
+        "fr": "Module Workforce Engagement : 50 $/agent/mois (annuel).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Contact Center: $83/agent/month (annual).",
+        "fr": "Contact Center : 83 $/agent/mois (annuel).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Listed prices are annual commitment per agent; a small team's real monthly cost multiplies by seat count quickly.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "The entry Support Team plan covers email ticketing only, not the omnichannel/chat experience most buyers expect from Zendesk.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Listed prices are annual commitment per agent; a small team's real monthly cost multiplies by seat count quickly.",
+        "fr": "Les prix affichés sont un engagement annuel par agent ; le coût mensuel réel d'une petite équipe se multiplie vite avec le nombre de sièges.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The entry Support Team plan covers email ticketing only, not the omnichannel/chat experience most buyers expect from Zendesk.",
+        "fr": "Le plan d'entrée Support Team ne couvre que le ticketing e-mail, pas l'expérience omnicanal/chat que la plupart des acheteurs attendent de Zendesk.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Omnichannel customer support across email, chat, social and phone from one unified inbox.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Built-in AI agents and Admin Copilot for automated triage and agent assistance on higher tiers.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Knowledge base, skills-based routing and IVR available starting from Suite Team/Professional.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "Omnichannel customer support across email, chat, social and phone from one unified inbox.",
+        "fr": "Support client omnicanal par e-mail, chat, réseaux sociaux et téléphone depuis une boîte de réception unifiée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in AI agents and Admin Copilot for automated triage and agent assistance on higher tiers.",
+        "fr": "Agents IA intégrés et Admin Copilot pour le triage automatisé et l'assistance aux agents sur les plans supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Knowledge base, skills-based routing and IVR available starting from Suite Team/Professional.",
+        "fr": "Base de connaissances, routage par compétences et IVR disponibles à partir de Suite Team/Professional.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No permanent free plan; only a 14-day trial of Suite Professional.", "fr": "…", "sourceIds": ["s1"] },
-      { "en": "Omnichannel features (chat, messaging, telephony) require moving up to the Suite plans, not available on Support Team.", "fr": "…", "sourceIds": ["s1"] }
+      {
+        "en": "No permanent free plan; only a 14-day trial of Suite Professional.",
+        "fr": "Aucun plan gratuit permanent ; seulement un essai de 14 jours de Suite Professional.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Omnichannel features (chat, messaging, telephony) require moving up to the Suite plans, not available on Support Team.",
+        "fr": "Les fonctions omnicanal (chat, messagerie, téléphonie) nécessitent de passer aux plans Suite, indisponibles sur Support Team.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "intercom", "reason": { "en": "Direct competitor for omnichannel customer support with strong chat and AI bot focus.", "fr": "…" } },
-    { "slug": "freshservice", "reason": { "en": "Comparable helpdesk platform, more IT-service-management oriented.", "fr": "…" } },
-    { "slug": "helpscout", "reason": { "en": "Simpler, lower-cost helpdesk alternative for small teams.", "fr": "…" } }
+    {
+      "slug": "intercom",
+      "reason": {
+        "en": "Direct competitor for omnichannel customer support with strong chat and AI bot focus.",
+        "fr": "Concurrent direct pour le support client omnicanal, avec un fort accent sur le chat et les bots IA."
+      }
+    },
+    {
+      "slug": "freshservice",
+      "reason": {
+        "en": "Comparable helpdesk platform, more IT-service-management oriented.",
+        "fr": "Plateforme de support comparable, davantage orientée gestion des services IT."
+      }
+    },
+    {
+      "slug": "helpscout",
+      "reason": {
+        "en": "Simpler, lower-cost helpdesk alternative for small teams.",
+        "fr": "Alternative de support plus simple et moins chère pour les petites équipes."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "unknowns": ["Monthly (non-annual) per-agent pricing was not shown on the fetched page, only annual commitment prices."],
-  "conflicts": []
+  "unknowns": [
+    "Monthly (non-annual) per-agent pricing was not shown on the fetched page, only annual commitment prices."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Entry Support Team is $19/agent/month (annual) for email-only ticketing; the omnichannel experience most buyers expect requires jumping to Suite Team at $55/agent/month, making real value harder to judge at the entry price.",
+        "fr": "Support Team d'entrée coûte 19 $/agent/mois (annuel) pour du ticketing e-mail seul ; l'expérience omnicanal attendue par la plupart des acheteurs demande de passer à Suite Team à 55 $/agent/mois, ce qui rend la valeur réelle plus difficile à juger au prix d'entrée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A unified inbox covers multiple channels, but reaching the full omnichannel setup buyers expect means moving up tiers and configuring routing, IVR and AI triage.",
+        "fr": "Une boîte de réception unifiée couvre plusieurs canaux, mais atteindre la configuration omnicanal complète attendue par les acheteurs demande de monter en gamme et de configurer le routage, l'IVR et le triage IA.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers omnichannel support and AI triage as promised once on the right Suite tier, without needing a separate third-party tool for those features.",
+        "fr": "L'outil délivre le support omnicanal et le triage IA comme promis une fois sur le bon palier Suite, sans nécessiter d'outil tiers séparé pour ces fonctions.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Spans email, chat, social, phone, AI agents, Admin Copilot, knowledge base, skills-based routing and IVR across its tiers, a category-leading feature range.",
+        "fr": "Couvre e-mail, chat, réseaux sociaux, téléphone, agents IA, Admin Copilot, base de connaissances, routage par compétences et IVR selon les paliers, une couverture qui fait référence dans la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: exporting ticket history and knowledge base content when leaving Zendesk is not covered by the collected sources.",
+        "fr": "Note neutre : l'export de l'historique des tickets et du contenu de la base de connaissances en cas de départ de Zendesk ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small support or ops teams that need a real omnichannel helpdesk (email, chat, social, phone) with AI-assisted triage as they grow.",
+      "fr": "Petites équipes support ou ops qui ont besoin d'un vrai helpdesk omnicanal (e-mail, chat, réseaux sociaux, téléphone) avec un triage assisté par IA à mesure qu'elles grandissent."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: run a small team's customer support from one unified inbox spanning email, chat and social instead of juggling separate tools per channel.",
+      "fr": "Cas d'usage : gérer le support client d'une petite équipe depuis une boîte de réception unifiée couvrant e-mail, chat et réseaux sociaux, plutôt que de jongler entre plusieurs outils par canal."
+    },
+    {
+      "en": "Use case: use AI agents and Admin Copilot on a Suite plan to auto-triage incoming tickets before an agent picks them up.",
+      "fr": "Cas d'usage : utiliser les agents IA et Admin Copilot sur un plan Suite pour trier automatiquement les tickets entrants avant qu'un agent ne les prenne en charge."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Customer support suite",
+      "fr": "Suite support client"
+    },
+    "shortDescription": {
+      "en": "Omnichannel customer support platform (email, chat, social, phone) with AI-assisted triage, starting from email-only ticketing.",
+      "fr": "Plateforme de support client omnicanal (e-mail, chat, réseaux sociaux, téléphone) avec triage assisté par IA, à partir du ticketing e-mail seul."
+    },
+    "longDescription": {
+      "en": "Zendesk provides omnichannel customer support across email, chat, social and phone from one unified inbox, with built-in AI agents and Admin Copilot for automated triage on higher tiers, plus a knowledge base, skills-based routing and IVR from Suite Team/Professional upward.\n\nThere's no permanent free plan, only a 14-day trial. Support Team starts at $19/agent/month (annual) but covers email ticketing only; the omnichannel experience most buyers expect requires Suite Team at $55/agent/month. Prices are per agent, so a small team's real monthly cost multiplies quickly with seat count. It fits a growing support team ready to invest in a full omnichannel setup.",
+      "fr": "Zendesk fournit un support client omnicanal par e-mail, chat, réseaux sociaux et téléphone depuis une boîte de réception unifiée, avec agents IA et Admin Copilot pour le triage automatisé sur les paliers supérieurs, plus une base de connaissances, un routage par compétences et l'IVR à partir de Suite Team/Professional.\n\nAucun plan gratuit permanent, seulement un essai de 14 jours. Support Team démarre à 19 $/agent/mois (annuel) mais ne couvre que le ticketing e-mail ; l'omnicanal attendu par la plupart des acheteurs demande Suite Team à 55 $/agent/mois. Les prix par agent font vite grimper le coût réel d'une petite équipe. Il convient à une équipe support en croissance prête à investir dans une configuration omnicanal complète."
+    },
+    "pros": [
+      {
+        "en": "Wide feature range: email, chat, social, phone, AI triage and knowledge base under one platform.",
+        "fr": "Large gamme de fonctionnalités : e-mail, chat, réseaux sociaux, téléphone, triage IA et base de connaissances sous une seule plateforme."
+      },
+      {
+        "en": "AI agents and Admin Copilot automate triage and agent assistance on higher tiers.",
+        "fr": "Les agents IA et Admin Copilot automatisent le triage et l'assistance aux agents sur les paliers supérieurs."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No permanent free plan, only a 14-day trial.",
+        "fr": "Aucun plan gratuit permanent, seulement un essai de 14 jours."
+      },
+      {
+        "en": "The cheapest plan covers email only; real omnichannel support requires a pricier Suite tier.",
+        "fr": "Le plan le moins cher ne couvre que l'e-mail ; le vrai support omnicanal demande un palier Suite plus cher."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a growing support team that needs real omnichannel coverage (chat, social, phone) and AI-assisted triage.",
+        "fr": "Tu es une équipe support en croissance qui a besoin d'une vraie couverture omnicanal (chat, réseaux sociaux, téléphone) et d'un triage assisté par IA."
+      },
+      "avoidIf": {
+        "en": "You only need basic email ticketing, or you're a solo operator where per-agent Suite pricing doesn't pay off.",
+        "fr": "Tu n'as besoin que d'un ticketing e-mail basique, ou tu es seul et le tarif par agent des plans Suite ne se justifie pas."
+      },
+      "threshold": {
+        "en": "Real omnichannel support starts at Suite Team, $55/agent/month (annual); it's worth it once your team handles support across more than email.",
+        "fr": "Le vrai support omnicanal démarre avec Suite Team à 55 $/agent/mois (annuel) ; ça se justifie dès que ton équipe gère du support au-delà du simple e-mail."
+      },
+      "billingTraps": {
+        "en": "Listed prices are annual commitments per agent; switching to monthly billing or adding agents later can cost significantly more.",
+        "fr": "Les prix affichés sont des engagements annuels par agent ; passer en facturation mensuelle ou ajouter des agents plus tard peut coûter nettement plus cher."
+      }
+    }
+  },
+  "reviewNotes": []
 }
