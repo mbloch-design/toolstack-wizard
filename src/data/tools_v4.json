@@ -234155,21 +234155,21 @@
       "idealForEn": "Drone pilots planning flights in France who still verify official sources before flying."
     },
     "toolTrimRating": {
-      "valeurAjoutee": 4, "simplicite": 3, "utilisation": 3, "puissance": 4, "reversibilite": 3,
+      "valeurAjoutee": 4, "simplicite": 3, "utilisation": 4, "puissance": 4, "reversibilite": 4,
       "notedOn": "2026-09-30", "lastActivityVerifiedOn": null,
       "evidence": {
         "valeurAjoutee": "Carte aéronautique, météo et préparation de mission réunies dans une même interface, pour préparer un vol sans multiplier les outils. Source : drone-ops-mission.fr, 30 septembre 2026.",
         "simplicite": "La préparation suit un parcours en trois étapes, avec les informations utiles au vol rassemblées au même endroit. Source : drone-ops-mission.fr, 30 septembre 2026.",
-        "utilisation": "Tracer une mission, consulter les conditions météo, générer un briefing et conserver l'historique : les principales étapes de préparation sont couvertes. Sources : drone-ops-mission.fr et /meteo-drone, 30 septembre 2026.",
+        "utilisation": "Le parcours est balisé en trois étapes : tracer la zone, examiner le créneau avec la météo et les contraintes, puis archiver la mission. Le briefing Pro prolonge la préparation. Sources : drone-ops-mission.fr et /meteo-drone, 30 septembre 2026.",
         "puissance": "Pro ajoute les couches SIA et RTBA, la météo calibrée au drone, la vue 3D et les exports. Le GO/NOGO aide à préparer le vol, sans constituer une autorisation de vol. Source : drone-ops-mission.fr, 30 septembre 2026.",
-        "reversibilite": "Les exports CSV et PDF de l'offre Pro permettent de conserver les éléments et comptes rendus de mission hors de l'outil. Source : drone-ops-mission.fr, 30 septembre 2026."
+        "reversibilite": "Avec Pro, les missions et rapports s'exportent en CSV ou PDF pour en garder une copie hors de l'outil. Source : drone-ops-mission.fr, 30 septembre 2026."
       },
       "evidenceEn": {
         "valeurAjoutee": "Aeronautical maps, weather and mission planning come together in one interface, so pilots can prepare a flight without juggling separate tools. Source: drone-ops-mission.fr, September 30, 2026.",
         "simplicite": "Flight preparation follows a three-step workflow, with the relevant information gathered in one place. Source: drone-ops-mission.fr, September 30, 2026.",
-        "utilisation": "Plan a mission, review weather conditions, create a briefing and keep its history: the main preparation steps are covered. Sources: drone-ops-mission.fr and /meteo-drone, September 30, 2026.",
+        "utilisation": "A clear three-step workflow covers the task: map the flight area, review the time slot against weather and restrictions, then archive the mission. Pro adds the drone-specific briefing. Sources: drone-ops-mission.fr and /meteo-drone, September 30, 2026.",
         "puissance": "Pro adds SIA and RTBA layers, drone-calibrated weather, 3D views and exports. The GO/NO-GO briefing supports flight preparation but is not flight authorization. Source: drone-ops-mission.fr, September 30, 2026.",
-        "reversibilite": "CSV and PDF exports on Pro let pilots keep mission details and reports outside the tool. Source: drone-ops-mission.fr, September 30, 2026."
+        "reversibilite": "With Pro, missions and reports can be exported as CSV or PDF, so pilots can keep a copy outside the tool. Source: drone-ops-mission.fr, September 30, 2026."
       }
     }
   }

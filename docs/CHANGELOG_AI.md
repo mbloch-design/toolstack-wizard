@@ -4867,3 +4867,5 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Panneaux de sources restructurés : intitulé explicite, une ligne par source, séparateur et date présentée à part. Contraste et dimensions renforcés pour rester lisibles.
 - Infobulle des tarifs repositionnée sous son titre, avec panneau élargi, contour renforcé et date plus lisible.
 - 2026-09-30 : reformulation FR/EN des cinq justifications de note Drone Ops Mission. Les fonctions sont décrites d'après les informations éditeur, sans présenter l'absence de test ToolTrim comme un défaut ; seule la distinction entre aide GO/NOGO et autorisation de vol est conservée comme limite utile.
+- 2026-09-30 : note « Utilisation » de Drone Ops Mission relevée de 3/5 à 4/5 ; le justificatif explicite le parcours en trois étapes et le briefing Pro.
+- 2026-09-30 : note « Réversibilité » relevée de 3/5 à 4/5 ; le critère tient compte des exports CSV/PDF sans exiger un export complet du compte pour cet outil.
