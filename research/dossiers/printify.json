@@ -3,7 +3,7 @@
   "slug": "printify",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Printify",
     "vendor": "Printify, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://printify.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Printify pricing" }
+    {
+      "id": "s1",
+      "url": "https://printify.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Printify pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Up to 5 stores per account, unlimited product designs, manual order creation, integrations with Shopify/Etsy/eBay etc." }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Up to 5 stores per account, unlimited product designs, manual order creation, integrations with Shopify/Etsy/eBay etc.",
+        "fr": "Jusqu'à 5 boutiques par compte, designs de produits illimités, création de commande manuelle, intégrations avec Shopify/Etsy/eBay etc."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,63 +47,281 @@
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 5 stores, unlimited product designs, manual order creation." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 5 stores, unlimited product designs, manual order creation.",
+            "fr": "Jusqu'à 5 boutiques, designs de produits illimités, création de commande manuelle."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 39, "annualPerMonth": 24.99, "oneTime": null },
+        "price": {
+          "monthly": 39,
+          "annualPerMonth": 24.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 10 stores; up to 33% product discount; AI Mockups; 1:1 mentorship." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 10 stores; up to 33% product discount; AI Mockups; 1:1 mentorship.",
+            "fr": "Jusqu'à 10 boutiques ; remise produit jusqu'à 33 % ; mockups par IA ; mentorat individuel."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited stores, custom API integration, dedicated account manager." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited stores, custom API integration, dedicated account manager.",
+            "fr": "Boutiques illimitées, intégration API personnalisée, gestionnaire de compte dédié."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "free",
     "addOns": [],
     "cautions": [
-      { "en": "Premium annual billing saves 36% vs monthly ($24.99 vs $39/month); the everyday print-on-demand workflow (unlimited designs, 5 stores) works fully on the free plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Premium annual billing saves 36% vs monthly ($24.99 vs $39/month); the everyday print-on-demand workflow (unlimited designs, 5 stores) works fully on the free plan.",
+        "fr": "La facturation annuelle Premium économise 36 % par rapport au mensuel (24,99 $ contre 39 $/mois) ; le flux d'impression à la demande courant (designs illimités, 5 boutiques) fonctionne entièrement sur le plan gratuit.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Print-on-demand product creation and mockup generator with a large supplier/blank-product catalogue.", "sourceIds": ["s1"] },
-      { "en": "Native integrations to sell on Shopify, Etsy, eBay and other storefronts, with automated order routing to print partners.", "sourceIds": ["s1"] }
+      {
+        "en": "Print-on-demand product creation and mockup generator with a large supplier/blank-product catalogue.",
+        "fr": "Création de produits à la demande et générateur de mockups avec un large catalogue de fournisseurs et de produits vierges.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Native integrations to sell on Shopify, Etsy, eBay and other storefronts, with automated order routing to print partners.",
+        "fr": "Intégrations natives pour vendre sur Shopify, Etsy, eBay et d'autres boutiques, avec routage automatique des commandes vers les partenaires d'impression.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan caps accounts at 5 connected stores; scaling past that needs the Premium plan.", "sourceIds": ["s1"] },
-      { "en": "Custom API integration is only available on the quote-only Enterprise plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan caps accounts at 5 connected stores; scaling past that needs the Premium plan.",
+        "fr": "Le plan gratuit limite les comptes à 5 boutiques connectées ; aller au-delà nécessite le plan Premium.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Custom API integration is only available on the quote-only Enterprise plan.",
+        "fr": "L'intégration API personnalisée n'est disponible que sur le plan Enterprise, uniquement sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Shopify", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Etsy", "slug": null, "sourceIds": ["s1"] },
-      { "name": "eBay", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Shopify",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Etsy",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "eBay",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A solo creator or small brand selling print-on-demand products online who needs design-to-fulfillment without holding inventory.",
+      "fr": "Un créateur indépendant ou une petite marque qui vend des produits à la demande en ligne et a besoin d'aller du design à la livraison sans gérer de stock."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: upload a design and generate mockups for a new product, result: a product listing ready for Shopify or Etsy without a photoshoot.",
+      "fr": "Usage : uploader un design et générer des mockups pour un nouveau produit, résultat : une fiche produit prête pour Shopify ou Etsy sans séance photo."
+    },
+    {
+      "en": "Usage: connect a storefront so orders route automatically to a print partner, result: each sale is produced and shipped without manual order entry.",
+      "fr": "Usage : connecter une boutique pour que les commandes soient routées automatiquement vers un partenaire d'impression, résultat : chaque vente est produite et expédiée sans saisie manuelle de commande."
+    }
+  ],
   "alternatives": [
-    { "slug": "gelato", "reason": { "en": "Direct print-on-demand production and fulfillment competitor." } }
+    {
+      "slug": "gelato",
+      "reason": {
+        "en": "Direct print-on-demand production and fulfillment competitor.",
+        "fr": "Concurrent direct pour la production et la livraison à la demande."
+      }
+    },
+    {
+      "slug": "sellfy",
+      "reason": {
+        "en": "E-commerce platform with its own print-on-demand product line, overlapping on the same core need.",
+        "fr": "Plateforme e-commerce avec sa propre gamme de produits à la demande, recoupant le même besoin principal."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Printful", "officialUrl": "https://www.printful.com", "reason": "Main direct print-on-demand competitor, not in the catalogue" },
-    { "name": "Gooten", "officialUrl": "https://www.gooten.com", "reason": "Print-on-demand competitor not in the catalogue" }
+    {
+      "name": "Printful",
+      "officialUrl": "https://www.printful.com",
+      "reason": "Main direct print-on-demand competitor, not in the catalogue"
+    },
+    {
+      "name": "Gooten",
+      "officialUrl": "https://www.gooten.com",
+      "reason": "Print-on-demand competitor not in the catalogue"
+    }
   ],
   "unknowns": [
     "Per-product discount percentages on Premium vary by product category; exact figures were not itemized on the pricing page snapshot."
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The everyday print-on-demand workflow (unlimited designs, 5 stores) works fully on the free plan, with Premium's discount ($24.99/month annual) paying for itself through per-product savings at volume.",
+        "fr": "Le flux d'impression à la demande courant (designs illimités, 5 boutiques) fonctionne entièrement sur le plan gratuit, la remise Premium (24,99 $/mois en annuel) s'amortissant par les économies par produit au volume.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Native integrations with Shopify, Etsy, and eBay let a store connect and start selling without custom setup.",
+        "fr": "Les intégrations natives avec Shopify, Etsy et eBay permettent de connecter une boutique et de commencer à vendre sans configuration personnalisée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers product creation, mockups, and automated order routing to print partners as advertised, on both free and paid plans.",
+        "fr": "Assure la création de produits, les mockups et le routage automatique des commandes vers les partenaires d'impression comme annoncé, sur les plans gratuit et payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers a large supplier and blank-product catalogue with mockups and storefront integrations, but custom API integration is reserved for the quote-only Enterprise plan.",
+        "fr": "Couvre un large catalogue de fournisseurs et de produits vierges avec mockups et intégrations de boutique, mais l'intégration API personnalisée est réservée au plan Enterprise sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: order history and design export options after closing an account are not covered by the collected sources.",
+        "fr": "Note neutre : l'historique des commandes et l'export des designs après fermeture de compte ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Print on demand",
+      "fr": "Impression à la demande"
+    },
+    "shortDescription": {
+      "en": "Print-on-demand platform for creating and fulfilling custom products, free for up to 5 connected stores.",
+      "fr": "Plateforme d'impression à la demande pour créer et livrer des produits personnalisés, gratuite jusqu'à 5 boutiques connectées."
+    },
+    "longDescription": {
+      "en": "Printify handles print-on-demand product creation with a mockup generator and a large supplier/blank-product catalogue, plus native integrations to sell on Shopify, Etsy, eBay, and other storefronts with orders routed automatically to print partners.\n\nThe free plan covers up to 5 stores with unlimited product designs and manual order creation. Premium at $24.99/month (annual, $39 monthly) raises the store limit to 10 and adds a product discount of up to 33%, AI mockups, and 1:1 mentorship; Enterprise is quote-only for unlimited stores and custom API access. It fits a solo creator or small brand selling print-on-demand products without holding inventory.",
+      "fr": "Printify gère la création de produits à la demande avec un générateur de mockups et un large catalogue de fournisseurs, ainsi que des intégrations natives pour vendre sur Shopify, Etsy, eBay et d'autres boutiques, avec routage automatique des commandes vers les partenaires d'impression.\n\nLe plan gratuit couvre jusqu'à 5 boutiques avec des designs illimités. Premium à 24,99 $/mois (annuel) porte la limite à 10 boutiques et ajoute une remise produit jusqu'à 33 %, des mockups par IA et un mentorat ; Enterprise est sur devis pour des boutiques illimitées. L'outil convient à un créateur indépendant qui vend des produits à la demande sans gérer de stock."
+    },
+    "pros": [
+      {
+        "en": "Free plan covers the full everyday workflow: unlimited designs and up to 5 connected stores.",
+        "fr": "Le plan gratuit couvre tout le flux de travail courant : designs illimités et jusqu'à 5 boutiques connectées."
+      },
+      {
+        "en": "Native integrations with Shopify, Etsy, and eBay with automated order routing to print partners.",
+        "fr": "Intégrations natives avec Shopify, Etsy et eBay avec routage automatique des commandes vers les partenaires d'impression."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Custom API integration is locked behind the quote-only Enterprise plan.",
+        "fr": "L'intégration API personnalisée est réservée au plan Enterprise, uniquement sur devis."
+      },
+      {
+        "en": "Scaling past 5 connected stores requires upgrading to Premium.",
+        "fr": "Dépasser 5 boutiques connectées nécessite de passer au plan Premium."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You sell print-on-demand products on up to 5 storefronts and want unlimited designs without a subscription.",
+        "fr": "Tu vends des produits à la demande sur jusqu'à 5 boutiques et tu veux des designs illimités sans abonnement."
+      },
+      "avoidIf": {
+        "en": "You need more than 5 connected stores or a custom API integration without contacting sales.",
+        "fr": "Tu as besoin de plus de 5 boutiques connectées ou d'une intégration API personnalisée sans passer par le commercial."
+      },
+      "threshold": {
+        "en": "Premium costs $24.99/month billed annually ($39 monthly) and raises the store limit from 5 to 10 while adding a per-product discount of up to 33%.",
+        "fr": "Premium coûte 24,99 $/mois en facturation annuelle (39 $ en mensuel) et fait passer la limite de boutiques de 5 à 10 tout en ajoutant une remise produit jusqu'à 33 %."
+      },
+      "billingTraps": null
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
   "conflicts": []
 }

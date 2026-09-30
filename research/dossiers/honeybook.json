@@ -3,7 +3,7 @@
   "slug": "honeybook",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "HoneyBook",
     "vendor": "HoneyBook, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.honeybook.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "HoneyBook pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.honeybook.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "HoneyBook pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,75 +30,336 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 29, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 29,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited clients and projects; up to 2 live lead forms; basic reports." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited clients and projects; up to 2 live lead forms; basic reports.",
+            "fr": "Clients et projets illimités ; jusqu'à 2 formulaires de prospection actifs ; rapports de base."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "essentials",
         "name": "Essentials",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 49, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 49,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 2 team members; up to 10 live lead forms; scheduler, automations, QuickBooks Online integration." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 2 team members; up to 10 live lead forms; scheduler, automations, QuickBooks Online integration.",
+            "fr": "Jusqu'à 2 membres d'équipe ; jusqu'à 10 formulaires de prospection actifs ; planificateur, automatisations, intégration QuickBooks Online."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 109, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 109,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited team members; multiple companies management; unlimited live lead forms." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited team members; multiple companies management; unlimited live lead forms.",
+            "fr": "Membres d'équipe illimités ; gestion de plusieurs entreprises ; formulaires de prospection actifs illimités."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "name": "Card payment processing", "unit": "usage", "price": { "monthly": null }, "sourceIds": ["s1"] },
-      { "name": "ACH bank transfer processing (1.5%)", "unit": "usage", "price": { "monthly": null }, "sourceIds": ["s1"] }
+      {
+        "name": "Card payment processing",
+        "unit": "usage",
+        "price": {
+          "monthly": null
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "ACH bank transfer processing (1.5%)",
+        "unit": "usage",
+        "price": {
+          "monthly": null
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Prices shown ($29/$49/$109) are the annual-billing monthly-equivalent rate; the separate monthly-billing rate was not captured on this page.", "sourceIds": ["s1"] },
-      { "en": "Payment processing carries its own fee (2.7% + 10c for cards, 1.5% for ACH) on top of the subscription.", "sourceIds": ["s1"] }
+      {
+        "en": "Prices shown ($29/$49/$109) are the annual-billing monthly-equivalent rate; the separate monthly-billing rate was not captured on this page.",
+        "fr": "Les prix affichés (29 $/49 $/109 $) sont le tarif mensuel équivalent en facturation annuelle ; le tarif de facturation mensuelle séparé n'a pas été relevé sur cette page.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Payment processing carries its own fee (2.7% + 10c for cards, 1.5% for ACH) on top of the subscription.",
+        "fr": "Le traitement des paiements comporte ses propres frais (2,7 % + 10 cents pour les cartes, 1,5 % pour l'ACH) en plus de l'abonnement.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Client relationship management with proposals, contracts, invoices and online payments in one workflow.", "sourceIds": ["s1"] },
-      { "en": "Client portal and scheduling with automations available from the Essentials plan.", "sourceIds": ["s1"] },
-      { "en": "Built-in HoneyBook AI assistant included from the Starter plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Client relationship management with proposals, contracts, invoices and online payments in one workflow.",
+        "fr": "Gestion de la relation client avec propositions, contrats, factures et paiements en ligne dans un seul flux de travail.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Client portal and scheduling with automations available from the Essentials plan.",
+        "fr": "Portail client et prise de rendez-vous avec automatisations disponibles à partir du plan Essentials.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in HoneyBook AI assistant included from the Starter plan.",
+        "fr": "Assistant IA HoneyBook intégré dès le plan Starter.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free plan; smallest commitment is a 30-day trial then a paid subscription.", "sourceIds": ["s1"] },
-      { "en": "Starter plan is single-user; adding team members requires upgrading to Essentials or Premium.", "sourceIds": ["s1"] }
+      {
+        "en": "No free plan; smallest commitment is a 30-day trial then a paid subscription.",
+        "fr": "Pas de plan gratuit ; l'engagement minimal est un essai de 30 jours suivi d'un abonnement payant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Starter plan is single-user; adding team members requires upgrading to Essentials or Premium.",
+        "fr": "Le plan Starter est mono-utilisateur ; ajouter des membres d'équipe nécessite de passer à Essentials ou Premium.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "QuickBooks Online", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "QuickBooks Online",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "A solo consultant or creative freelancer who needs proposals, contracts, invoicing, and payments in one client workflow.",
+      "fr": "Un consultant indépendant ou un freelance créatif qui a besoin de propositions, contrats, facturation et paiements dans un seul flux client."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: send a proposal and contract together from a lead form submission, result: the client signs and the project starts without switching tools.",
+      "fr": "Usage : envoyer une proposition et un contrat ensemble depuis un formulaire de prospection, résultat : le client signe et le projet démarre sans changer d'outil."
+    },
+    {
+      "en": "Usage: invoice a client and collect payment online after project completion, result: the payment is tracked in the same workflow as the contract and proposal.",
+      "fr": "Usage : facturer un client et encaisser le paiement en ligne après la fin du projet, résultat : le paiement est suivi dans le même flux que le contrat et la proposition."
+    }
+  ],
   "alternatives": [
-    { "slug": "dubsado", "reason": { "en": "Direct client-management/CRM competitor for creative freelancers." } },
-    { "slug": "plutio", "reason": { "en": "Similar all-in-one client and project management tool for solo businesses." } }
+    {
+      "slug": "dubsado",
+      "reason": {
+        "en": "Direct client-management/CRM competitor for creative freelancers.",
+        "fr": "Concurrent direct de gestion client/CRM pour les freelances créatifs."
+      }
+    },
+    {
+      "slug": "plutio",
+      "reason": {
+        "en": "Similar all-in-one client and project management tool for solo businesses.",
+        "fr": "Outil tout-en-un similaire de gestion client et de projet pour les entreprises individuelles."
+      }
+    },
+    {
+      "slug": "bloom-crm",
+      "reason": {
+        "en": "Direct CRM and client management competitor built for creative freelancers.",
+        "fr": "Concurrent direct de CRM et gestion client conçu pour les freelances créatifs."
+      }
+    },
+    {
+      "slug": "vcita",
+      "reason": {
+        "en": "Competing client management platform combining scheduling, CRM, and invoicing for small businesses.",
+        "fr": "Plateforme de gestion client concurrente qui combine prise de rendez-vous, CRM et facturation pour les petites entreprises."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Bonsai", "officialUrl": "https://www.hellobonsai.com", "reason": "Direct client management / proposals / invoicing competitor for freelancers, not in the catalogue" }
+    {
+      "name": "Bonsai",
+      "officialUrl": "https://www.hellobonsai.com",
+      "reason": "Direct client management / proposals / invoicing competitor for freelancers, not in the catalogue"
+    }
   ],
   "unknowns": [
     "Monthly (non-annual) billing prices for Starter, Essentials and Premium were not shown on the fetched page.",
     "Exact per-plan storage or automation-run limits were not itemized in the fetched summary."
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Starter covers unlimited clients and projects at $29/month (annual), but payment processing fees (2.7% + 10c cards, 1.5% ACH) add to the real cost on top of the subscription.",
+        "fr": "Starter couvre clients et projets illimités à 29 $/mois (annuel), mais les frais de traitement des paiements (2,7 % + 10 cents cartes, 1,5 % ACH) s'ajoutent au coût réel en plus de l'abonnement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Proposals, contracts, invoices, and payments are combined in one workflow with a built-in AI assistant from the Starter plan.",
+        "fr": "Propositions, contrats, factures et paiements sont réunis dans un seul flux avec un assistant IA intégré dès le plan Starter.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the full client workflow (lead form to contract to payment) as advertised, without a workaround tool.",
+        "fr": "Assure le flux client complet (du formulaire de prospection au contrat jusqu'au paiement) comme annoncé, sans outil de contournement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Scales from a single-user Starter plan to unlimited team members and multiple companies on Premium, covering solo and growing-team use.",
+        "fr": "Évolue d'un plan Starter mono-utilisateur à des membres d'équipe illimités et la gestion de plusieurs entreprises sur Premium, couvrant l'usage solo et en équipe croissante.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and contract/invoice portability if leaving the platform are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité des contrats/factures en cas de départ de la plateforme ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Client management for freelancers",
+      "fr": "Gestion client pour freelances"
+    },
+    "shortDescription": {
+      "en": "Client workflow platform combining proposals, contracts, invoicing, and online payments, with a 30-day trial.",
+      "fr": "Plateforme de flux client qui combine propositions, contrats, facturation et paiements en ligne, avec un essai de 30 jours."
+    },
+    "longDescription": {
+      "en": "HoneyBook manages the full client relationship in one workflow: proposals, contracts, invoices, and online payments, with a client portal and scheduling automations from the Essentials plan, and a built-in AI assistant from Starter. It integrates with QuickBooks Online.\n\nThere is no free plan, only a 30-day trial before a paid subscription starting at $29/month (annual billing) for Starter, single-user. Essentials adds team members and automations at $49/month, and Premium removes the team-size cap at $109/month; card and ACH payment processing carry separate fees on top. It fits a solo consultant or creative freelancer who wants one tool from lead to paid invoice.",
+      "fr": "HoneyBook gère toute la relation client dans un seul flux : propositions, contrats, factures et paiements en ligne, avec un portail client et des automatisations à partir du plan Essentials, et un assistant IA intégré dès Starter. L'outil s'intègre à QuickBooks Online.\n\nIl n'y a pas de plan gratuit, seulement un essai de 30 jours avant un abonnement à partir de 29 $/mois (annuel) pour Starter, mono-utilisateur. Essentials ajoute des membres d'équipe à 49 $/mois, et Premium supprime la limite de taille d'équipe à 109 $/mois ; les paiements par carte et ACH comportent des frais séparés. L'outil convient à un consultant indépendant qui veut un seul outil du prospect à la facture payée."
+    },
+    "pros": [
+      {
+        "en": "Combines proposals, contracts, invoicing, and payments in one workflow instead of separate tools.",
+        "fr": "Combine propositions, contrats, facturation et paiements dans un seul flux au lieu d'outils séparés."
+      },
+      {
+        "en": "Built-in AI assistant included from the entry Starter plan.",
+        "fr": "Assistant IA intégré dès le plan d'entrée Starter."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan; only a 30-day trial before billing starts.",
+        "fr": "Pas de plan gratuit ; seulement un essai de 30 jours avant le début de la facturation."
+      },
+      {
+        "en": "Starter plan is single-user, so a second team member forces an upgrade to Essentials.",
+        "fr": "Le plan Starter est mono-utilisateur, donc un second membre d'équipe force le passage à Essentials."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a solo consultant or freelancer who wants proposals, contracts, invoicing, and payments in one workflow.",
+        "fr": "Tu es consultant indépendant ou freelance et tu veux propositions, contrats, facturation et paiements dans un seul flux."
+      },
+      "avoidIf": {
+        "en": "You need more than one user without upgrading past the entry plan, or want to avoid separate payment processing fees.",
+        "fr": "Tu as besoin de plus d'un utilisateur sans passer au plan supérieur, ou tu veux éviter des frais de traitement de paiement séparés."
+      },
+      "threshold": {
+        "en": "Entry cost is $29/month billed annually for the single-user Starter plan; a second team member requires Essentials at $49/month.",
+        "fr": "Le coût d'entrée est de 29 $/mois en facturation annuelle pour le plan Starter mono-utilisateur ; un second membre d'équipe nécessite Essentials à 49 $/mois."
+      },
+      "billingTraps": {
+        "en": "Card and ACH payment processing carry separate fees (2.7% + 10c for cards, 1.5% for ACH) on top of the monthly subscription.",
+        "fr": "Le traitement des paiements par carte et ACH comporte des frais séparés (2,7 % + 10 cents pour les cartes, 1,5 % pour l'ACH) en plus de l'abonnement mensuel."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
   "conflicts": []
 }

@@ -3,7 +3,7 @@
   "slug": "google-docs",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Google Docs",
     "vendor": "Google LLC",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.google.com/docs/about", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Docs about page" },
-    { "id": "s2", "url": "https://workspace.google.com/pricing.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Workspace pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.google.com/docs/about",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Google Docs about page"
+    },
+    {
+      "id": "s2",
+      "url": "https://workspace.google.com/pricing.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Google Workspace pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,56 +37,302 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s2"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Free (personal Google account)",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Storage shared with Drive/Gmail/Photos (15 GB total)" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Storage shared with Drive/Gmail/Photos (15 GB total)",
+            "fr": "Stockage partagé avec Drive/Gmail/Photos (15 Go au total)"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "free",
     "addOns": [
-      { "name": "Google Workspace Business Starter (30GB pooled storage/user, admin controls)", "unit": "seat", "price": { "monthly": 8.40, "annualPerMonth": 7 }, "sourceIds": ["s2"] },
-      { "name": "Google Workspace Business Standard (2TB/user)", "unit": "seat", "price": { "monthly": 16.80, "annualPerMonth": 14 }, "sourceIds": ["s2"] },
-      { "name": "Google Workspace Business Plus (5TB/user)", "unit": "seat", "price": { "monthly": 26.40, "annualPerMonth": 22 }, "sourceIds": ["s2"] }
+      {
+        "name": "Google Workspace Business Starter (30GB pooled storage/user, admin controls)",
+        "unit": "seat",
+        "price": {
+          "monthly": 8.4,
+          "annualPerMonth": 7
+        },
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Google Workspace Business Standard (2TB/user)",
+        "unit": "seat",
+        "price": {
+          "monthly": 16.8,
+          "annualPerMonth": 14
+        },
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Google Workspace Business Plus (5TB/user)",
+        "unit": "seat",
+        "price": {
+          "monthly": 26.4,
+          "annualPerMonth": 22
+        },
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Google Docs itself is fully usable free with any Google account. Paying only matters for storage pooling and admin/security features via Google Workspace, sold per user with a 300-user cap on Starter/Standard/Plus.", "sourceIds": ["s1", "s2"] }
+      {
+        "en": "Google Docs itself is fully usable free with any Google account. Paying only matters for storage pooling and admin/security features via Google Workspace, sold per user with a 300-user cap on Starter/Standard/Plus.",
+        "fr": "Google Docs est utilisable gratuitement avec n'importe quel compte Google. Payer ne compte que pour la mutualisation du stockage et les fonctions d'administration/sécurité via Google Workspace, vendu par utilisateur avec un plafond de 300 utilisateurs sur Starter/Standard/Plus.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Real-time collaborative word processing with comments, suggestions and version history.", "sourceIds": ["s1"] },
-      { "en": "Works offline and syncs automatically when back online.", "sourceIds": ["s1"] },
-      { "en": "Imports and exports Microsoft Word (.docx) files without a separate conversion step.", "sourceIds": ["s1"] }
+      {
+        "en": "Real-time collaborative word processing with comments, suggestions and version history.",
+        "fr": "Traitement de texte collaboratif en temps réel avec commentaires, suggestions et historique des versions.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Works offline and syncs automatically when back online.",
+        "fr": "Fonctionne hors ligne et se synchronise automatiquement au retour de la connexion.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Imports and exports Microsoft Word (.docx) files without a separate conversion step.",
+        "fr": "Importe et exporte des fichiers Microsoft Word (.docx) sans étape de conversion séparée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Advanced layout/print-design features (e.g. complex desktop-publishing layouts) are weaker than dedicated word processors.", "sourceIds": ["s1"] },
-      { "en": "Storage is pooled with the rest of the free Google account (15 GB total across Gmail, Drive, Photos), so heavy users hit limits without a paid Workspace/Drive plan.", "sourceIds": ["s1", "s2"] }
+      {
+        "en": "Advanced layout/print-design features (e.g. complex desktop-publishing layouts) are weaker than dedicated word processors.",
+        "fr": "Les fonctions avancées de mise en page (mises en page complexes de type PAO) sont plus faibles que dans les traitements de texte dédiés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Storage is pooled with the rest of the free Google account (15 GB total across Gmail, Drive, Photos), so heavy users hit limits without a paid Workspace/Drive plan.",
+        "fr": "Le stockage est mutualisé avec le reste du compte Google gratuit (15 Go au total entre Gmail, Drive et Photos), donc les gros utilisateurs atteignent la limite sans plan Workspace/Drive payant.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Google Drive", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Google Sheets", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Microsoft Word", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Google Drive",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Google Sheets",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Microsoft Word",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A small team or solo professional who needs a free, real-time collaborative word processor without buying office software.",
+      "fr": "Une petite équipe ou un professionnel indépendant qui a besoin d'un traitement de texte collaboratif gratuit sans acheter de logiciel bureautique."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: co-edit a proposal with a client in real time, result: both sides see the same document update live without emailing versions back and forth.",
+      "fr": "Usage : co-rédiger une proposition avec un client en temps réel, résultat : les deux parties voient le même document se mettre à jour en direct sans échanger de versions par email."
+    },
+    {
+      "en": "Usage: open and edit a Word .docx file received by email, result: the file is edited and exported back to .docx without a conversion step.",
+      "fr": "Usage : ouvrir et modifier un fichier Word .docx reçu par email, résultat : le fichier est édité et réexporté en .docx sans étape de conversion."
+    }
+  ],
   "alternatives": [
-    { "slug": "microsoft-365", "reason": { "en": "Direct competitor for cloud word processing bundled with a productivity suite." } }
+    {
+      "slug": "microsoft-365",
+      "reason": {
+        "en": "Direct competitor for cloud word processing bundled with a productivity suite.",
+        "fr": "Concurrent direct pour le traitement de texte dans le cloud, intégré à une suite bureautique."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Zoho Writer", "officialUrl": "https://www.zoho.com/writer/", "reason": "Free collaborative word processor competitor not in the catalogue" }
+    {
+      "name": "Zoho Writer",
+      "officialUrl": "https://www.zoho.com/writer/",
+      "reason": "Free collaborative word processor competitor not in the catalogue"
+    },
+    {
+      "name": "Apple Pages",
+      "officialUrl": "https://www.apple.com/iwork/",
+      "reason": "Free word processor bundled with macOS/iOS, not in the catalogue"
+    },
+    {
+      "name": "LibreOffice Writer",
+      "officialUrl": "https://www.libreoffice.org/discover/writer/",
+      "reason": "Free open-source word processor competitor, not in the catalogue"
+    }
   ],
   "unknowns": [
     "Exact current per-GB overage cost or Google One storage add-on price for free-tier accounts not confirmed on the fetched page.",
     "Google Workspace Enterprise pricing is quote-only and was not captured in numeric form."
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Fully usable for free with any Google account, so the cost for the core word-processing function is zero for most solo or small-team use.",
+        "fr": "Entièrement utilisable gratuitement avec n'importe quel compte Google, donc le coût de la fonction principale de traitement de texte est nul pour la plupart des usages solo ou en petite équipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "No setup beyond a Google account; real-time collaboration and offline sync work without configuration.",
+        "fr": "Aucune configuration au-delà d'un compte Google ; la collaboration en temps réel et la synchronisation hors ligne fonctionnent sans réglage.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers collaborative editing, offline access, and .docx compatibility as advertised, without a workaround tool for everyday word processing.",
+        "fr": "Assure l'édition collaborative, l'accès hors ligne et la compatibilité .docx comme annoncé, sans outil de contournement pour le traitement de texte courant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Advanced layout and desktop-publishing features are weaker than dedicated word processors, capping it below specialized tools for complex documents.",
+        "fr": "Les fonctions avancées de mise en page et de PAO sont plus faibles que dans les traitements de texte dédiés, ce qui limite l'outil face aux logiciels spécialisés pour des documents complexes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Exports to Microsoft Word .docx format without a separate conversion step, giving a usable path out of the platform.",
+        "fr": "Exporte au format Microsoft Word .docx sans étape de conversion séparée, ce qui donne une porte de sortie utilisable hors de la plateforme.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Online word processor",
+      "fr": "Traitement de texte"
+    },
+    "shortDescription": {
+      "en": "Free real-time collaborative word processor that works offline and imports/exports Microsoft Word files.",
+      "fr": "Traitement de texte collaboratif gratuit en temps réel, utilisable hors ligne et compatible avec les fichiers Microsoft Word."
+    },
+    "longDescription": {
+      "en": "Google Docs offers real-time collaborative editing with comments, suggestions, and version history, works offline with automatic sync, and imports/exports Microsoft Word .docx files without a separate conversion step. It is fully usable free with any Google account.\n\nStorage is pooled with the rest of the free Google account (15 GB across Gmail, Drive, and Photos); paying only matters for storage pooling and admin/security controls through Google Workspace, which starts at $8.40/month per user ($7/month billed annually). It fits a solo professional or small team that needs collaborative editing without buying office software, though heavy desktop-publishing layouts are better served by a dedicated word processor.",
+      "fr": "Google Docs propose l'édition collaborative en temps réel avec commentaires, suggestions et historique des versions, fonctionne hors ligne avec synchronisation automatique, et importe/exporte des fichiers Word .docx sans conversion séparée. L'outil est entièrement utilisable gratuitement avec n'importe quel compte Google.\n\nLe stockage est mutualisé avec le compte Google gratuit (15 Go entre Gmail, Drive et Photos) ; payer ne compte que pour le stockage et l'administration via Google Workspace, à partir de 8,40 $/mois par utilisateur (7 $ en annuel). L'outil convient à un indépendant ou une petite équipe qui veut de l'édition collaborative sans logiciel bureautique, même si les mises en page complexes de type PAO restent mieux servies ailleurs."
+    },
+    "pros": [
+      {
+        "en": "Fully usable for free with any Google account, no forced upgrade for core word processing.",
+        "fr": "Entièrement utilisable gratuitement avec n'importe quel compte Google, sans mise à niveau forcée pour le traitement de texte de base."
+      },
+      {
+        "en": "Imports and exports Microsoft Word files without a separate conversion step.",
+        "fr": "Importe et exporte les fichiers Microsoft Word sans étape de conversion séparée."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free storage is pooled with Gmail and Photos, so heavy document use eats into the same 15 GB quota.",
+        "fr": "Le stockage gratuit est mutualisé avec Gmail et Photos, donc un usage intensif de documents entame le même quota de 15 Go."
+      },
+      {
+        "en": "Weaker advanced layout and desktop-publishing features than dedicated word processors.",
+        "fr": "Fonctions avancées de mise en page et de PAO plus faibles que dans les traitements de texte dédiés."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need free, real-time collaborative word processing with Word-file compatibility and don't require advanced print-layout design.",
+        "fr": "Tu as besoin d'un traitement de texte collaboratif gratuit en temps réel, compatible avec les fichiers Word, sans besoin de mise en page avancée pour l'impression."
+      },
+      "avoidIf": {
+        "en": "You need advanced desktop-publishing layouts or already store enough in Gmail/Drive/Photos that the pooled 15 GB free quota is a problem.",
+        "fr": "Tu as besoin de mises en page avancées de type PAO ou tu stockes déjà assez dans Gmail/Drive/Photos pour que le quota gratuit mutualisé de 15 Go pose problème."
+      },
+      "threshold": {
+        "en": "The core word processor is free; paying only becomes relevant at $8.40/month per user ($7/month annual) for Workspace Business Starter's pooled storage and admin controls.",
+        "fr": "Le traitement de texte de base est gratuit ; payer ne devient pertinent qu'à partir de 8,40 $/mois par utilisateur (7 $/mois en annuel) pour le stockage mutualisé et les contrôles d'administration de Workspace Business Starter."
+      },
+      "billingTraps": null
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
   "conflicts": []
 }

@@ -3,7 +3,7 @@
   "slug": "adobe-cc",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Adobe Creative Cloud",
     "vendor": "Adobe Inc.",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.adobe.com/fr/creativecloud/plans.html", "tier": 1, "accessedOn": "2026-08-30", "title": "Adobe Creative Cloud plans (FR)" },
-    { "id": "s2", "url": "https://www.adobe.com/creativecloud/plans.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Creative Cloud plans (US)" }
+    {
+      "id": "s1",
+      "url": "https://www.adobe.com/fr/creativecloud/plans.html",
+      "tier": 1,
+      "accessedOn": "2026-08-30",
+      "title": "Adobe Creative Cloud plans (FR)"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.adobe.com/creativecloud/plans.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Creative Cloud plans (US)"
+    }
   ],
   "pricing": {
     "model": "bundle_only",
@@ -25,73 +37,211 @@
     "verifiedOn": "2026-08-30",
     "region": "FR",
     "taxIncluded": true,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "individual",
         "name": "Creative Cloud Pro (individual)",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 78.65, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 78.65,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "20+ Adobe desktop and web apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro), plus Firefly generative AI credits. Annual commitment billed monthly.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "20+ Adobe desktop and web apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro), plus Firefly generative AI credits. Annual commitment billed monthly.",
+            "fr": "20+ applications de bureau et web Adobe (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro), plus crédits IA générative Firefly. Engagement annuel facturé au mois."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "teams",
         "name": "Creative Cloud Pro (teams)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 86.55, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 86.55,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Per-license pricing (HT/excl. tax) for teams, includes license management and admin console.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Per-license pricing (HT/excl. tax) for teams, includes license management and admin console.",
+            "fr": "Prix par licence (HT) pour les équipes, inclut la gestion des licences et la console d'administration."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "teams-pro-plus",
         "name": "Creative Cloud Pro Plus (teams)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 95.79, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 95.79,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds Adobe Stock access on top of the standard Pro teams plan.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds Adobe Stock access on top of the standard Pro teams plan.",
+            "fr": "Ajoute l'accès à Adobe Stock en plus du forfait Pro teams standard."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "students",
         "name": "Students and teachers",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 19.50, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 19.5,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "First-year discounted price, then renews at 40.32€/month. Requires eligibility verification.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "First-year discounted price, then renews at 40.32€/month. Requires eligibility verification.",
+            "fr": "Prix réduit la première année, puis renouvellement à 40,32 €/mois. Nécessite une vérification d'éligibilité."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "individual",
     "addOns": [
-      { "en": "Adobe Firefly generative AI credit packs available separately from the base suite subscription.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Adobe Firefly generative AI credit packs available separately from the base suite subscription.",
+        "fr": "Packs de crédits IA générative Adobe Firefly disponibles séparément de l'abonnement de base à la suite.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Individual and teams plans require an annual commitment even though billed monthly; cancelling early during the commitment period incurs an early termination fee.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "US pricing page shows a different promotional structure (e.g. $34.99/mo for 3 months then $69.99/mo) than the French page's flat 78.65€/mo, confirming prices and promotions vary by region.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Individual and teams plans require an annual commitment even though billed monthly; cancelling early during the commitment period incurs an early termination fee.",
+        "fr": "Les forfaits individuel et équipes demandent un engagement annuel même si la facturation est mensuelle ; une résiliation anticipée pendant la période d'engagement entraîne des frais de résiliation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "US pricing page shows a different promotional structure (e.g. $34.99/mo for 3 months then $69.99/mo) than the French page's flat 78.65€/mo, confirming prices and promotions vary by region.",
+        "fr": "La page de prix US affiche une structure promotionnelle différente (par ex. 34,99 $/mois pendant 3 mois puis 69,99 $/mois) de celle du prix fixe de la page française à 78,65 €/mois, confirmant que les prix et promotions varient selon la région.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Bundles over 20 creative desktop and web apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro, and more) under one subscription.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Includes Adobe Firefly generative AI features integrated across apps, with a monthly generative credit allowance.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Cloud storage, shared libraries, and centralized license management for teams via the admin console.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Bundles over 20 creative desktop and web apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro, and more) under one subscription.",
+        "fr": "Regroupe plus de 20 applications créatives de bureau et web (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro, et plus) sous un seul abonnement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Includes Adobe Firefly generative AI features integrated across apps, with a monthly generative credit allowance.",
+        "fr": "Inclut les fonctions d'IA générative Adobe Firefly intégrées dans les applications, avec une allocation mensuelle de crédits génératifs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Cloud storage, shared libraries, and centralized license management for teams via the admin console.",
+        "fr": "Stockage cloud, bibliothèques partagées et gestion centralisée des licences pour les équipes via la console d'administration.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No permanent free plan for the full suite; only a 7-day trial for individuals.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Bundle pricing is significantly more expensive than buying a single app plan if only one application is needed.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "No permanent free plan for the full suite; only a 7-day trial for individuals.",
+        "fr": "Pas de forfait gratuit permanent pour la suite complète ; seulement un essai de 7 jours pour les particuliers.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Bundle pricing is significantly more expensive than buying a single app plan if only one application is needed.",
+        "fr": "Le prix du bundle est nettement plus élevé que l'achat d'un forfait mono-application si une seule application suffit.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "mac", "windows", "ios", "android"]
+    "platforms": [
+      "web",
+      "mac",
+      "windows",
+      "ios",
+      "android"
+    ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "affinity-designer",
+      "reason": {
+        "en": "One-time-purchase vector and layout design competitor, cheaper long-term than Adobe's subscription-only equivalents.",
+        "fr": "Concurrent de design vectoriel et de mise en page à achat unique, moins cher sur la durée que les équivalents d'Adobe en abonnement."
+      }
+    },
+    {
+      "slug": "affinity-photo",
+      "reason": {
+        "en": "One-time-purchase photo editing competitor to Photoshop, without a recurring subscription.",
+        "fr": "Concurrent de retouche photo à achat unique face à Photoshop, sans abonnement récurrent."
+      }
+    },
+    {
+      "slug": "canva-pro",
+      "reason": {
+        "en": "Simpler, browser-based design competitor covering a chunk of the same graphic design needs at a much lower price.",
+        "fr": "Concurrent de design plus simple, dans le navigateur, qui couvre une partie des mêmes besoins graphiques à un prix bien plus bas."
+      }
+    },
+    {
+      "slug": "davinci-resolve",
+      "reason": {
+        "en": "Free-tier video editing and color grading competitor to Premiere Pro, one of the apps bundled in Creative Cloud.",
+        "fr": "Concurrent de montage vidéo et d'étalonnage avec un forfait gratuit, face à Premiere Pro, l'une des applications incluses dans Creative Cloud."
+      }
+    }
+  ],
   "missingAlternatives": [],
   "unknowns": [
     "Whether the 14-day cancellation refund mentioned on the US page also applies to the French/EU plans was not verified.",
@@ -99,5 +249,128 @@
   ],
   "conflicts": [
     "The French pricing page (78.65€/mo, TTC, individual Pro) and the US pricing page (promotional $34.99/mo then $69.99/mo) show materially different price structures for the same plan name, reflecting regional pricing rather than a data error."
-  ]
+  ],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At 78.65€/month for the individual Pro plan, the bundle replaces buying 20+ apps separately, but is a poor deal if only one application is actually needed.",
+        "fr": "À 78,65 €/mois pour le forfait individuel Pro, le bundle remplace l'achat de 20+ applications séparées, mais c'est un mauvais calcul si une seule application est réellement nécessaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and setup complexity per app are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la complexité de mise en place par application ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers 20+ professional creative apps, generative AI credits, cloud storage, and license management as one subscription, covering the stated bundle promise.",
+        "fr": "Livre 20+ applications créatives professionnelles, des crédits IA générative, du stockage cloud et la gestion des licences dans un seul abonnement, tenant la promesse du bundle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Bundles industry-standard apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro) plus Firefly generative AI, a wide capability ceiling versus single-purpose tools.",
+        "fr": "Regroupe des applications de référence du secteur (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro) plus l'IA générative Firefly, un plafond de capacité large face aux outils mono-usage.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "No permanent free tier, and an annual commitment with an early termination fee if cancelled mid-term, limits how easily someone can back out.",
+        "fr": "Pas de forfait gratuit permanent, et un engagement annuel avec des frais de résiliation en cas d'arrêt anticipé, ce qui limite la possibilité de faire marche arrière facilement.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designers and creative professionals who need a full suite of desktop creative apps rather than a single tool.",
+      "fr": "Designers et professionnels de la création qui ont besoin d'une suite complète d'applications créatives plutôt que d'un seul outil."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: move a project across Photoshop, Illustrator, and InDesign in one subscription instead of buying each app separately.",
+      "fr": "Usage : faire circuler un projet entre Photoshop, Illustrator et InDesign avec un seul abonnement, plutôt que d'acheter chaque application séparément."
+    },
+    {
+      "en": "Usage: manage licenses for a small design team from one admin console instead of tracking per-app purchases.",
+      "fr": "Usage : gérer les licences d'une petite équipe de design depuis une seule console d'administration, plutôt que de suivre des achats application par application."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Creative app suite",
+      "fr": "Suite d'applications créatives"
+    },
+    "shortDescription": {
+      "en": "A bundled subscription to 20+ Adobe creative desktop and web apps plus generative AI credits, from 78.65 euros a month with an annual commitment.",
+      "fr": "Un abonnement groupé à plus de 20 applications créatives Adobe (bureau et web), avec crédits IA générative, dès 78,65 €/mois en engagement annuel."
+    },
+    "longDescription": {
+      "en": "Adobe Creative Cloud bundles 20+ desktop and web creative apps (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro, and more) under one subscription, with Firefly generative AI features and a monthly generative credit allowance built into apps, plus cloud storage and team license management.\n\nThe individual Pro plan runs 78.65 euros a month on the French pricing page (taxes included), billed monthly but requiring an annual commitment, with an early termination fee if cancelled mid-term. There is no permanent free tier, only a 7-day trial, and the bundle costs far more than a single-app plan if only one application is needed.",
+      "fr": "Adobe Creative Cloud regroupe plus de 20 applications créatives de bureau et web (Photoshop, Illustrator, Premiere Pro, InDesign, Acrobat Pro, et plus) sous un seul abonnement, avec les fonctions d'IA générative Firefly et une allocation mensuelle de crédits intégrée dans les applications, plus le stockage cloud et la gestion des licences pour les équipes.\n\nLe forfait individuel Pro coûte 78,65 €/mois sur la page de prix française (TTC), facturé au mois mais avec un engagement annuel, avec des frais en cas de résiliation anticipée. Il n'y a pas de forfait gratuit permanent, seulement un essai de 7 jours, et le bundle coûte bien plus cher qu'un forfait mono-application si une seule application suffit."
+    },
+    "pros": [
+      {
+        "en": "One subscription covers 20+ professional creative apps instead of buying each one separately.",
+        "fr": "Un seul abonnement couvre plus de 20 applications créatives professionnelles, au lieu d'acheter chacune séparément."
+      },
+      {
+        "en": "Generative AI (Firefly) credits are built into the apps, with cloud storage and team license management included.",
+        "fr": "Les crédits IA générative (Firefly) sont intégrés aux applications, avec stockage cloud et gestion des licences d'équipe inclus."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No permanent free tier, only a 7-day trial, and an annual commitment with an early termination fee.",
+        "fr": "Pas de forfait gratuit permanent, seulement un essai de 7 jours, et un engagement annuel avec des frais de résiliation anticipée."
+      },
+      {
+        "en": "The bundle costs far more than a single-app plan when only one application is actually needed.",
+        "fr": "Le bundle coûte bien plus cher qu'un forfait mono-application quand une seule application suffit réellement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You regularly use several Adobe apps together and want them under one license and subscription.",
+        "fr": "Tu utilises régulièrement plusieurs applications Adobe ensemble et veux les regrouper sous une seule licence et un seul abonnement."
+      },
+      "avoidIf": {
+        "en": "You only need one Adobe app; a single-app plan or a one-time-purchase competitor costs less.",
+        "fr": "Tu n'as besoin que d'une seule application Adobe ; un forfait mono-application ou un concurrent à achat unique coûte moins cher."
+      },
+      "threshold": {
+        "en": "Below the individual Pro plan's annual cost of about 943.80 euros (78.65 x 12 months), a single-app plan or a one-time-purchase alternative likely covers a narrower need for less.",
+        "fr": "En dessous du coût annuel du forfait individuel Pro, environ 943,80 € (78,65 x 12 mois), un forfait mono-application ou une alternative à achat unique couvre sans doute un besoin plus étroit pour moins cher."
+      },
+      "billingTraps": {
+        "en": "Individual and teams plans require an annual commitment even though billed monthly; cancelling early during that period triggers an early termination fee.",
+        "fr": "Les forfaits individuel et équipes demandent un engagement annuel même en facturation mensuelle ; une résiliation anticipée pendant cette période entraîne des frais de résiliation."
+      }
+    }
+  },
+  "reviewNotes": [
+    "The Students and teachers plan's 19.50€/month price is a first-year promotional rate that renews at 40.32€/month per the dossier's own facts; verify current terms on Adobe's site before publishing.",
+    "French (78.65€/mo TTC) and US ($34.99 promo then $69.99/mo) pricing pages show materially different structures for the same 'individual Pro' plan; already flagged in `conflicts`, but confirm which region ToolTrim should display by default."
+  ],
+  "hold": "French and US pricing pages disagree; confirm the default region and price"
 }

@@ -3,7 +3,7 @@
   "slug": "semrush",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Semrush",
     "vendor": "Semrush Inc.",
@@ -33,7 +33,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "1 demo project, 10 reports/day, basic AI visibility features"
+        "en": "1 demo project, 10 reports/day, basic AI visibility features",
+        "fr": "1 projet de démo, 10 rapports par jour, fonctionnalités de visibilité IA de base."
       },
       "sourceIds": [
         "s1"
@@ -59,7 +60,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "5 websites, 500 keywords tracked daily, basic research tools, position tracking, site audit"
+            "en": "5 websites, 500 keywords tracked daily, basic research tools, position tracking, site audit",
+            "fr": "5 sites, 500 mots-clés suivis quotidiennement, outils de recherche de base, suivi de position, audit de site."
           }
         ],
         "sourceIds": [
@@ -79,7 +81,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "5 websites, 500 keywords, MCP access, 50 AI prompts tracked daily"
+            "en": "5 websites, 500 keywords, MCP access, 50 AI prompts tracked daily",
+            "fr": "5 sites, 500 mots-clés, accès MCP, 50 prompts IA suivis par jour."
           }
         ],
         "sourceIds": [
@@ -99,7 +102,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "15 websites, 1,500 keywords, historical data, content optimization, 100 AI prompts/day"
+            "en": "15 websites, 1,500 keywords, historical data, content optimization, 100 AI prompts/day",
+            "fr": "15 sites, 1 500 mots-clés, données historiques, optimisation de contenu, 100 prompts IA par jour."
           }
         ],
         "sourceIds": [
@@ -119,7 +123,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "40 websites, 5,000 keywords, share of voice, API access, 200 AI prompts/day"
+            "en": "40 websites, 5,000 keywords, share of voice, API access, 200 AI prompts/day",
+            "fr": "40 sites, 5 000 mots-clés, part de voix, accès API, 200 prompts IA par jour."
           }
         ],
         "sourceIds": [
@@ -134,7 +139,8 @@
         "en": "The free plan is a limited demo tier, not a full free version of the tool; 7-day trial requires no credit card.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le forfait gratuit est une version de démonstration limitée, pas une véritable version gratuite de l'outil ; l'essai de 7 jours ne demande pas de carte bancaire."
       }
     ]
   },
@@ -144,13 +150,15 @@
         "en": "Keyword research, rank tracking, backlink analysis, and competitor research in one platform.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Recherche de mots-clés, suivi de position, analyse de backlinks et étude de la concurrence réunis dans une seule plateforme."
       },
       {
         "en": "AI Search visibility tracking (AI Overviews/AI prompt monitoring) layered on top of classic SEO tools.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Suivi de la visibilité dans les recherches IA (AI Overviews, prompts) en plus des outils SEO classiques."
       }
     ],
     "limitations": [
@@ -158,13 +166,15 @@
         "en": "Website and keyword tracking limits scale sharply by tier (5 sites/500 keywords on entry vs 40 sites/5,000 keywords on Advanced).",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Les limites de sites et de mots-clés suivis augmentent fortement selon le forfait (5 sites/500 mots-clés en entrée contre 40 sites/5 000 en Advanced)."
       },
       {
         "en": "API access is reserved for the top Advanced tier.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "L'accès API est réservé au forfait Advanced, le plus cher."
       }
     ],
     "integrations": [],
@@ -176,7 +186,22 @@
     {
       "slug": "similarweb",
       "reason": {
-        "en": "Overlaps on competitive traffic and market intelligence analysis."
+        "en": "Overlaps on competitive traffic and market intelligence analysis.",
+        "fr": "Chevauchement sur l'analyse du trafic concurrentiel et de l'intelligence de marché."
+      }
+    },
+    {
+      "slug": "ahrefs",
+      "reason": {
+        "en": "Comparable all-in-one SEO suite covering keyword research, rank tracking, and backlink analysis at similar depth.",
+        "fr": "Suite SEO complète comparable, avec une profondeur similaire en recherche de mots-clés, suivi de position et analyse de backlinks."
+      }
+    },
+    {
+      "slug": "screaming-frog",
+      "reason": {
+        "en": "Focused technical SEO crawler for site audits, cheaper than Semrush's full marketing suite for that single need.",
+        "fr": "Crawler SEO technique ciblé pour l'audit de site, moins cher que la suite marketing complète de Semrush pour ce seul besoin."
       }
     }
   ],
@@ -185,5 +210,118 @@
     "Exact per-integration list (Google Analytics, Search Console, etc.) not detailed on the fetched pricing page.",
     "Category mismatch in the seed data ('email-productivity') versus Semrush's actual SEO/marketing positioning was noted but not corrected here (out of scope for facts-only mode)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Consolidates keyword research, rank tracking, backlink analysis and AI Search visibility monitoring in one subscription starting at $139/month, replacing several separate point tools.",
+        "fr": "Regroupe recherche de mots-clés, suivi de position, analyse de backlinks et suivi de visibilité IA dans un seul abonnement à partir de 139 $/mois, à la place de plusieurs outils séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and learning curve are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers its stated core functions, keyword research, rank tracking, backlink analysis and competitor research, as one platform without needing third-party tools for the basics.",
+        "fr": "Livre ses fonctions principales annoncées, recherche de mots-clés, suivi de position, analyse de backlinks et étude de la concurrence, comme une seule plateforme sans outils tiers pour l'essentiel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "The Advanced tier tracks up to 40 websites and 5,000 keywords with API access and AI Search visibility monitoring, well beyond the entry tier's limits.",
+        "fr": "Le forfait Advanced suit jusqu'à 40 sites et 5 000 mots-clés, avec accès API et suivi de la visibilité dans les recherches IA, bien au-delà des limites du forfait d'entrée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent consultants and small agencies running SEO work for client sites.",
+      "fr": "Consultants indépendants et petites agences qui gèrent le SEO de sites clients."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: track weekly keyword rankings and backlink changes for a client's website to report on SEO progress.",
+      "fr": "Usage : suivre chaque semaine les positions de mots-clés et les backlinks d'un site client pour rendre compte de l'avancée SEO."
+    },
+    {
+      "en": "Usage: run a competitor site audit to find content gaps before pitching a new SEO project.",
+      "fr": "Usage : auditer le site d'un concurrent pour repérer des lacunes de contenu avant de proposer une nouvelle mission SEO."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "SEO research suite",
+      "fr": "Suite recherche SEO"
+    },
+    "shortDescription": {
+      "en": "An SEO and AI-search visibility platform for keyword research, rank tracking, backlink analysis, and competitor research, priced per account from $139 a month.",
+      "fr": "Une plateforme SEO et de visibilité IA : recherche de mots-clés, suivi de position, analyse de backlinks et étude de la concurrence, dès 139 $/mois."
+    },
+    "longDescription": {
+      "en": "Semrush combines keyword research, rank tracking, backlink analysis, and competitor research in a single SEO platform, with AI Search visibility monitoring layered on top for tracking how a site shows up in AI Overviews and AI prompts.\n\nThe entry SEO plan starts at $139/month ($117.33/month billed annually) covering 5 websites and 500 tracked keywords, enough for one consultant managing a handful of client sites. Higher tiers add historical data, API access, and larger keyword and AI-prompt tracking limits for agencies managing more accounts.",
+      "fr": "Semrush réunit recherche de mots-clés, suivi de position, analyse de backlinks et étude de la concurrence dans une seule plateforme SEO, avec un suivi de la visibilité dans les recherches IA (AI Overviews, prompts) en plus.\n\nLe forfait SEO d'entrée démarre à 139 $/mois (117,33 $/mois en engagement annuel) pour 5 sites et 500 mots-clés suivis, suffisant pour un consultant qui gère quelques sites clients. Les forfaits supérieurs ajoutent des données historiques, l'accès API et des limites plus larges pour les agences qui gèrent plus de comptes."
+    },
+    "pros": [
+      {
+        "en": "One subscription covers keyword, rank, backlink, and AI-visibility tracking instead of several separate tools.",
+        "fr": "Un seul abonnement couvre le suivi des mots-clés, des positions, des backlinks et de la visibilité IA au lieu de plusieurs outils séparés."
+      },
+      {
+        "en": "Entry tier already includes 5 websites and 500 tracked keywords, enough for a single active client.",
+        "fr": "Le forfait d'entrée inclut déjà 5 sites et 500 mots-clés suivis, suffisant pour un client actif."
+      }
+    ],
+    "cons": [
+      {
+        "en": "API access is reserved for the $549/month Advanced tier.",
+        "fr": "L'accès API est réservé au forfait Advanced à 549 $/mois."
+      },
+      {
+        "en": "The free plan is a limited demo (1 project, 10 reports/day), not a usable free version of the tool.",
+        "fr": "Le forfait gratuit est une démo limitée (1 projet, 10 rapports par jour), pas une vraie version gratuite de l'outil."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You manage SEO for at least one site professionally and need keyword, rank, and backlink data in one place.",
+        "fr": "Tu gères le SEO d'au moins un site à titre professionnel et as besoin des données de mots-clés, de position et de backlinks au même endroit."
+      },
+      "avoidIf": {
+        "en": "You only need occasional keyword lookups, not ongoing tracking across multiple websites.",
+        "fr": "Tu n'as besoin que de recherches de mots-clés ponctuelles, pas d'un suivi continu sur plusieurs sites."
+      },
+      "threshold": {
+        "en": "Below the SEO plan's annual cost of about $1,408 (117.33 x 12 months), a narrower single-purpose SEO tool likely covers the same need for less.",
+        "fr": "En dessous du coût annuel du forfait SEO, environ 1 408 $ (117,33 x 12 mois), un outil SEO plus ciblé couvre sans doute le même besoin pour moins cher."
+      }
+    }
+  }
 }

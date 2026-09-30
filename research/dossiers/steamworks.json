@@ -3,7 +3,7 @@
   "slug": "steamworks",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Steamworks",
     "vendor": "Valve Corporation",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://partner.steamgames.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Steamworks partner site" }
+    {
+      "id": "s1",
+      "url": "https://partner.steamgames.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Steamworks partner site"
+    }
   ],
   "pricing": {
     "model": "one_time",
@@ -24,58 +30,266 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Account access and most developer tools are free; publishing a game requires a per-app submission fee.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Account access and most developer tools are free; publishing a game requires a per-app submission fee.",
+        "fr": "L'accès au compte et la plupart des outils développeur sont gratuits ; publier un jeu demande des frais de soumission par jeu."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Steamworks account access",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free developer account access and tools; publishing an app to the Steam store requires the separate one-time per-app submission fee.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Free developer account access and tools; publishing an app to the Steam store requires the separate one-time per-app submission fee.",
+            "fr": "Accès gratuit au compte développeur et aux outils ; publier une app sur la boutique Steam demande les frais de soumission par jeu séparés."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "app-submission",
         "name": "Per-app submission fee",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 0
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "A one-time fee is charged per application submitted to Steam; exact amount not shown on the fetched page (commonly cited elsewhere as $100, recoupable from sales, but not independently confirmed here). Account access itself is free.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "A one-time fee is charged per application submitted to Steam; exact amount not shown on the fetched page (commonly cited elsewhere as $100, recoupable from sales, but not independently confirmed here). Account access itself is free.",
+            "fr": "Des frais uniques sont facturés par application soumise à Steam ; le montant exact n'est pas indiqué sur la page consultée (souvent cité ailleurs à 100 $, récupérable sur les ventes, mais non confirmé ici de façon indépendante). L'accès au compte lui-même est gratuit."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "regularPriceUnknown": true,
     "addOns": [],
     "cautions": [
-      { "en": "Steam also takes a revenue share cut on sales (industry-known ~30%, reduced at high volume), which was not stated on the fetched page and should be re-verified before publishing.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Steam also takes a revenue share cut on sales (industry-known ~30%, reduced at high volume), which was not stated on the fetched page and should be re-verified before publishing.",
+        "fr": "Steam prélève aussi une commission sur les ventes (environ 30 % selon les usages du secteur, réduite à fort volume), non indiquée sur la page consultée et à revérifier avant publication.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Distribution to Steam's user base (reported 132 million monthly active users) across 250+ countries via 400 distributed servers.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in monetization: 80+ payment methods, sales in 35+ currencies, regional pricing tools.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Gameplay services: achievements, leaderboards, matchmaking, cloud saves, voice chat, and Steam Workshop mod support.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Real-time sales, player count, and wishlist analytics by region.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Distribution to Steam's user base (reported 132 million monthly active users) across 250+ countries via 400 distributed servers.",
+        "fr": "Distribution auprès de la base d'utilisateurs Steam (132 millions d'utilisateurs actifs mensuels revendiqués) dans plus de 250 pays via 400 serveurs répartis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in monetization: 80+ payment methods, sales in 35+ currencies, regional pricing tools.",
+        "fr": "Monétisation intégrée : plus de 80 moyens de paiement, ventes dans plus de 35 devises, outils de prix régionaux.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Gameplay services: achievements, leaderboards, matchmaking, cloud saves, voice chat, and Steam Workshop mod support.",
+        "fr": "Services de jeu : succès, classements, matchmaking, sauvegardes cloud, chat vocal et support des mods Steam Workshop.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Real-time sales, player count, and wishlist analytics by region.",
+        "fr": "Analytique en temps réel des ventes, du nombre de joueurs et des listes de souhaits par région.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Publishing requires a per-app fee and going through Steam's review/approval process before a game becomes available.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Many gameplay and store features require explicit integration with the Steamworks API in the game's code.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Publishing requires a per-app fee and going through Steam's review/approval process before a game becomes available.",
+        "fr": "La publication demande des frais par jeu et le passage par le processus de revue/approbation de Steam avant qu'un jeu ne soit disponible.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Many gameplay and store features require explicit integration with the Steamworks API in the game's code.",
+        "fr": "De nombreuses fonctions de gameplay et de boutique demandent une intégration explicite avec l'API Steamworks dans le code du jeu.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["windows", "mac"]
+    "platforms": [
+      "windows",
+      "mac"
+    ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "itch-io",
+      "reason": {
+        "en": "Alternative indie game distribution platform with a simpler, revenue-share-only pricing model instead of a per-app submission fee.",
+        "fr": "Plateforme de distribution de jeux indépendants alternative, avec un modèle de prix simplifié basé uniquement sur le partage de revenus, sans frais de soumission par jeu."
+      }
+    }
+  ],
   "missingAlternatives": [
-    { "name": "itch.io", "officialUrl": "https://itch.io/", "reason": "Alternative indie game distribution platform with simpler, revenue-share-only pricing" },
-    { "name": "Epic Games Store", "officialUrl": "https://dev.epicgames.com/", "reason": "Major competing PC game distribution platform with a lower revenue cut" }
+    {
+      "name": "Epic Games Store",
+      "officialUrl": "https://dev.epicgames.com/",
+      "reason": "Major competing PC game distribution platform with a lower revenue cut"
+    },
+    {
+      "name": "GOG.com / GOG Galaxy",
+      "officialUrl": "https://www.gog.com/",
+      "reason": "DRM-free PC game distribution platform competitor, not in the catalogue"
+    }
   ],
   "unknowns": [
     "Exact per-app submission fee amount not confirmed on the fetched Steamworks page in this session.",
     "Current revenue share percentage and its volume-based tiers not stated on the fetched page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free account access plus distribution to a reported 132 million monthly active users across 80+ payment methods and 35+ currencies offers broad reach for a one-time per-app fee.",
+        "fr": "L'accès gratuit au compte, plus une distribution auprès de 132 millions d'utilisateurs actifs mensuels revendiqués et 80+ moyens de paiement dans 35+ devises, offre une large portée pour des frais uniques par jeu.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Many gameplay and store features require explicit integration with the Steamworks API in the game's code, more setup than a plug-and-play storefront.",
+        "fr": "De nombreuses fonctions de gameplay et de boutique demandent une intégration explicite avec l'API Steamworks dans le code du jeu, plus de travail qu'une simple boutique prête à l'emploi.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers its stated distribution, monetization, and gameplay services (achievements, leaderboards, matchmaking, cloud saves) as described.",
+        "fr": "Livre ses services annoncés de distribution, monétisation et gameplay (succès, classements, matchmaking, sauvegardes cloud) comme décrit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Gameplay services span achievements, leaderboards, matchmaking, cloud saves, voice chat, and mod support, a wide feature set versus a bare storefront.",
+        "fr": "Les services de gameplay couvrent succès, classements, matchmaking, sauvegardes cloud, chat vocal et support des mods, un ensemble large face à une simple boutique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data and save portability if a developer leaves the platform are not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données et des sauvegardes en cas de départ de la plateforme ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Independent and small-team game developers publishing and distributing a PC game.",
+      "fr": "Développeurs de jeux indépendants ou en petite équipe qui publient et distribuent un jeu PC."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: submit a finished PC game for the one-time per-app fee to get it listed and sold on the Steam store.",
+      "fr": "Usage : soumettre un jeu PC terminé, contre les frais uniques par jeu, pour le faire lister et vendre sur la boutique Steam."
+    },
+    {
+      "en": "Usage: integrate the Steamworks API to add achievements, cloud saves, and leaderboards to a game already in development.",
+      "fr": "Usage : intégrer l'API Steamworks pour ajouter succès, sauvegardes cloud et classements à un jeu déjà en développement."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Game publishing platform",
+      "fr": "Publication de jeux"
+    },
+    "shortDescription": {
+      "en": "A game distribution and publishing platform for PC, with a one-time per-app fee and free developer account access and tools.",
+      "fr": "Une plateforme de distribution et de publication de jeux PC, avec des frais uniques par jeu et un accès développeur gratuit."
+    },
+    "longDescription": {
+      "en": "Steamworks is Valve's platform for distributing and publishing PC games to Steam's user base, reported at 132 million monthly active users across 250+ countries. It includes built-in monetization (80+ payment methods, 35+ currencies, regional pricing) and gameplay services: achievements, leaderboards, matchmaking, cloud saves, voice chat, and Steam Workshop mod support, plus real-time sales and player analytics.\n\nDeveloper account access and most tools are free; publishing a game requires a one-time per-app submission fee whose exact amount wasn't confirmed on the page checked, plus going through Steam's review process. Many gameplay features need direct integration with the Steamworks API in the game's code.",
+      "fr": "Steamworks est la plateforme de Valve pour distribuer et publier des jeux PC auprès des utilisateurs de Steam, avec 132 millions d'utilisateurs actifs mensuels revendiqués dans plus de 250 pays. Elle inclut une monétisation intégrée (80+ moyens de paiement, 35+ devises, prix régionaux) et des services de gameplay : succès, classements, matchmaking, sauvegardes cloud, chat vocal et mods Steam Workshop.\n\nLe compte développeur et la plupart des outils sont gratuits ; publier un jeu demande des frais de soumission uniques par jeu, au montant non confirmé sur la page consultée, plus la revue de Steam. De nombreuses fonctions de gameplay demandent une intégration directe avec l'API Steamworks dans le code du jeu."
+    },
+    "pros": [
+      {
+        "en": "Free developer account and tools, with distribution reaching a reported 132 million monthly active users.",
+        "fr": "Compte et outils développeur gratuits, avec une distribution touchant 132 millions d'utilisateurs actifs mensuels revendiqués."
+      },
+      {
+        "en": "Built-in monetization and gameplay services (achievements, cloud saves, matchmaking) save building that infrastructure from scratch.",
+        "fr": "Monétisation et services de gameplay intégrés (succès, sauvegardes cloud, matchmaking) évitent de construire cette infrastructure soi-même."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The exact per-app submission fee and Steam's revenue-share cut aren't confirmed in the collected facts.",
+        "fr": "Le montant exact des frais de soumission par jeu et la commission de Steam sur les ventes ne sont pas confirmés dans les faits recueillis."
+      },
+      {
+        "en": "Many gameplay and store features require direct integration with the Steamworks API in the game's code.",
+        "fr": "De nombreuses fonctions de gameplay et de boutique demandent une intégration directe avec l'API Steamworks dans le code du jeu."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You have a PC game ready to publish and want access to Steam's large player base and built-in monetization.",
+        "fr": "Tu as un jeu PC prêt à publier et veux accéder à la large base de joueurs de Steam et à sa monétisation intégrée."
+      },
+      "avoidIf": {
+        "en": "You want to avoid Steam's revenue-share cut on sales or need confirmed pricing before committing.",
+        "fr": "Tu veux éviter la commission de Steam sur les ventes, ou as besoin d'un prix confirmé avant de t'engager."
+      },
+      "threshold": {
+        "en": "The per-app fee and revenue-share percentage aren't confirmed here; verify both on the Steamworks partner site before treating this as a fixed-cost decision.",
+        "fr": "Les frais par jeu et le pourcentage de commission ne sont pas confirmés ici ; vérifie les deux sur le site partenaire Steamworks avant de considérer cela comme un coût fixe."
+      }
+    }
+  },
+  "reviewNotes": [
+    "The per-app submission fee (commonly cited elsewhere as $100) and Steam's revenue-share percentage are not confirmed on the fetched page; both are marked onQuote/regularPriceUnknown and should be verified on the Steamworks partner site before publishing."
+  ]
 }

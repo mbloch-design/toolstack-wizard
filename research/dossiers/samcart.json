@@ -3,7 +3,8 @@
   "slug": "samcart",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "SamCart",
     "vendor": "SamCart",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 79, "annualPerMonth": 71.25, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 team seat, unlimited pages/products/checkouts, 1 marketplace, limited AI usage.", "fr": null }],
+        "keyLimits": [{ "en": "1 team seat, unlimited pages/products/checkouts, 1 marketplace, limited AI usage.", "fr": "1 siège d'équipe, pages/produits/paiements illimités, 1 marketplace, usage de l'IA limité." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 199, "annualPerMonth": 149.25, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "10 team seats, advanced AI features, unlimited video hosting.", "fr": null }],
+        "keyLimits": [{ "en": "10 team seats, advanced AI features, unlimited video hosting.", "fr": "10 sièges d'équipe, fonctions IA avancées, hébergement vidéo illimité." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,36 +55,55 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited team seats, dedicated account manager, priority support, best processing rates.", "fr": null }],
+        "keyLimits": [{ "en": "Unlimited team seats, dedicated account manager, priority support, best processing rates.", "fr": "Sièges d'équipe illimités, gestionnaire de compte dédié, support prioritaire, meilleurs taux de traitement des paiements." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "core",
     "addOns": [],
     "cautions": [
-      { "en": "SamPay native processing carries its own transaction rate (2.9% + $0.30) plus a tax-collection fee (50 bps on Core, 35 bps on Pro), on top of the subscription price.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "The 7-day trial is time-limited, not a durable free plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "SamPay native processing carries its own transaction rate (2.9% + $0.30) plus a tax-collection fee (50 bps on Core, 35 bps on Pro), on top of the subscription price.", "fr": "Le traitement natif SamPay applique son propre taux de transaction (2,9 % + 0,30 $) plus des frais de collecte de taxe (0,50 % sur Core, 0,35 % sur Pro), en plus du prix de l'abonnement.", "sourceIds": ["s1"] },
+      { "en": "The 7-day trial is time-limited, not a durable free plan.", "fr": "L'essai de 7 jours est limité dans le temps, ce n'est pas un plan gratuit durable.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Hosted checkout pages optimized for selling digital products, courses and subscriptions with conversion-focused templates.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in AI tools for optimizing checkout pages and offers (more advanced on Pro).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Unlimited digital products, subscriptions, pages and checkouts on all paid plans.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Hosted checkout pages optimized for selling digital products, courses and subscriptions with conversion-focused templates.", "fr": "Pages de paiement hébergées, optimisées pour vendre produits numériques, formations et abonnements, avec des modèles pensés pour la conversion.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI tools for optimizing checkout pages and offers (more advanced on Pro).", "fr": "Outils IA intégrés pour optimiser pages de paiement et offres (plus avancés sur Pro).", "sourceIds": ["s1"] },
+      { "en": "Unlimited digital products, subscriptions, pages and checkouts on all paid plans.", "fr": "Produits numériques, abonnements, pages et paiements illimités sur toutes les offres payantes.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Core plan is limited to 1 team seat and 1 marketplace listing.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "SamPay processing fees and tax-collection fees add to the base subscription cost.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Core plan is limited to 1 team seat and 1 marketplace listing.", "fr": "L'offre Core est limitée à 1 siège d'équipe et 1 fiche marketplace.", "sourceIds": ["s1"] },
+      { "en": "SamPay processing fees and tax-collection fees add to the base subscription cost.", "fr": "Les frais de traitement SamPay et de collecte de taxe s'ajoutent au coût de base de l'abonnement.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
   "alternatives": [
-    { "slug": "gumroad", "reason": { "en": "Also a checkout/selling platform for digital products, with a simpler fee-based model.", "fr": null } },
-    { "slug": "thrivecart", "reason": { "en": "Direct competitor checkout platform with a similar one-time-purchase pricing angle.", "fr": null } },
-    { "slug": "kajabi", "reason": { "en": "All-in-one course/product platform that overlaps with SamCart's checkout and selling use case.", "fr": null } }
+    { "slug": "gumroad", "reason": { "en": "Also a checkout/selling platform for digital products, with a simpler fee-based model.", "fr": "Également une plateforme de paiement/vente de produits numériques, avec un modèle plus simple basé sur des frais." } },
+    { "slug": "thrivecart", "reason": { "en": "Direct competitor checkout platform with a similar one-time-purchase pricing angle.", "fr": "Plateforme de paiement concurrente directe, avec un positionnement tarifaire proche à l'achat unique." } },
+    { "slug": "kajabi", "reason": { "en": "All-in-one course/product platform that overlaps with SamCart's checkout and selling use case.", "fr": "Plateforme tout-en-un de formations/produits qui recoupe l'usage de paiement et de vente de SamCart." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Core costs $79/month ($71.25 on annual billing) for unlimited products, pages and checkouts, but SamPay's own transaction rate and tax-collection fee add to that base cost, moderating the value.", "fr": "Core coûte 79 $/mois (71,25 $ en facturation annuelle) pour des produits, pages et paiements illimités, mais le taux de transaction propre à SamPay et les frais de collecte de taxe s'ajoutent à ce coût de base, ce qui modère la valeur.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers hosted, conversion-focused checkout pages with built-in AI optimization as described, with no workaround mentioned in the facts.", "fr": "Assure des pages de paiement hébergées et optimisées pour la conversion, avec IA intégrée, comme décrit, sans contournement mentionné dans les faits.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Core is capped at 1 team seat and 1 marketplace listing; broader AI features and 10 seats require upgrading to Pro, so the entry tier covers a focused rather than category-leading scope.", "fr": "Core est plafonné à 1 siège d'équipe et 1 fiche marketplace ; les fonctions IA plus poussées et les 10 sièges demandent de passer à Pro, donc l'offre d'entrée couvre un périmètre ciblé plutôt que la référence de la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Checkout page builder", "fr": "Pages de paiement" },
+    "shortDescription": { "en": "SamCart provides hosted, conversion-focused checkout pages for digital products, courses and subscriptions, with built-in AI optimization tools and a 7-day trial.", "fr": "SamCart propose des pages de paiement hébergées, optimisées pour la conversion, pour produits numériques, formations et abonnements, avec IA intégrée et essai de 7 jours." }
+  },
   "unknowns": [
     "Whether the 25% annual discount applies identically across all future price changes was not verified beyond the current page snapshot."
   ],

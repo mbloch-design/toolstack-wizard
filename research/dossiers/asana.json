@@ -3,7 +3,8 @@
   "slug": "asana",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Asana",
     "vendor": "Asana, Inc.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-06-24",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Basic project and task management for individuals and small teams up to 10 members." }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Basic project and task management for individuals and small teams up to 10 members.", "fr": "Gestion de base des tâches et des projets pour les particuliers et petites équipes jusqu'à 10 membres." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 10 team members, basic task/project management." }],
+        "keyLimits": [{ "en": "Up to 10 team members, basic task/project management.", "fr": "Jusqu'à 10 membres, gestion de tâches et de projets basique." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 10.99, "annualPerMonth": 9.63, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Timeline, workflows, custom fields, unlimited free guests." }],
+        "keyLimits": [{ "en": "Timeline, workflows, custom fields, unlimited free guests.", "fr": "Frise, flux de travail, champs personnalisés, invités gratuits illimités." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,24 +55,24 @@
         "minSeats": 2,
         "price": { "monthly": 24.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Requires a minimum of 2 seats; adds portfolios, goals, advanced reporting and approvals." }],
+        "keyLimits": [{ "en": "Requires a minimum of 2 seats; adds portfolios, goals, advanced reporting and approvals.", "fr": "Minimum de 2 sièges requis ; ajoute portefeuilles, objectifs, reporting avancé et validations." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Advanced plan has a 2-seat minimum, so a true solo user cannot buy it alone; Starter is the smallest paid tier a single person can purchase.", "sourceIds": ["s1"] }
+      { "en": "Advanced plan has a 2-seat minimum, so a true solo user cannot buy it alone; Starter is the smallest paid tier a single person can purchase.", "fr": "L'offre Advanced impose un minimum de 2 sièges, donc un utilisateur vraiment seul ne peut pas l'acheter seul ; Starter est la plus petite offre payante accessible à une seule personne.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Task and project management with lists, boards, timeline (Gantt) and calendar views.", "sourceIds": ["s1"] },
-      { "en": "Workflow automation rules and cross-project reporting dashboards.", "sourceIds": ["s1"] }
+      { "en": "Task and project management with lists, boards, timeline (Gantt) and calendar views.", "fr": "Gestion de tâches et de projets avec listes, tableaux, frise (façon Gantt) et vues calendrier.", "sourceIds": ["s1"] },
+      { "en": "Workflow automation rules and cross-project reporting dashboards.", "fr": "Règles d'automatisation des flux de travail et tableaux de bord de reporting transverses.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 10 team members.", "sourceIds": ["s1"] },
-      { "en": "Portfolios, goals and advanced reporting require the Advanced tier, which has a 2-seat purchase minimum.", "sourceIds": ["s1"] }
+      { "en": "Free plan is capped at 10 team members.", "fr": "Le plan gratuit est limité à 10 membres d'équipe.", "sourceIds": ["s1"] },
+      { "en": "Portfolios, goals and advanced reporting require the Advanced tier, which has a 2-seat purchase minimum.", "fr": "Portefeuilles, objectifs et reporting avancé nécessitent l'offre Advanced, avec un minimum d'achat de 2 sièges.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
@@ -79,13 +80,60 @@
     ],
     "platforms": ["web", "windows", "macos", "ios", "android"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "A small team (2 to a few dozen people) coordinating shared projects who need more structure than a to-do list.", "fr": "Une petite équipe (2 à quelques dizaines de personnes) qui coordonne des projets communs et a besoin de plus de structure qu'une simple liste de tâches." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Coordinate a project launch: assign tasks across a board, track progress on a timeline, and automate recurring approval steps with workflow rules.", "fr": "Coordonner le lancement d'un projet : répartir les tâches sur un tableau, suivre l'avancement sur une frise, automatiser les étapes d'approbation récurrentes." },
+    { "en": "Report portfolio-wide progress to stakeholders using cross-project dashboards and goal tracking on the Advanced tier.", "fr": "Faire un point d'avancement multi-projets pour les parties prenantes grâce aux tableaux de bord transverses et au suivi des objectifs de l'offre Advanced." }
+  ],
   "alternatives": [
-    { "slug": "clickup", "reason": { "en": "Direct all-in-one project management competitor with a similar freemium structure." } },
-    { "slug": "monday", "reason": { "en": "Work OS competitor covering similar project and workflow management use cases." } },
-    { "slug": "trello", "reason": { "en": "Lighter, board-based alternative for teams that find Asana too structured." } },
-    { "slug": "notion", "reason": { "en": "Flexible workspace alternative often chosen by solo freelancers instead of a dedicated PM tool." } }
+    { "slug": "clickup", "reason": { "en": "Direct all-in-one project management competitor with a similar freemium structure.", "fr": "Concurrent direct de gestion de projet tout-en-un, avec une structure freemium similaire." } },
+    { "slug": "monday", "reason": { "en": "Work OS competitor covering similar project and workflow management use cases.", "fr": "Concurrent « Work OS » couvrant des cas d'usage similaires de gestion de projet et de flux." } },
+    { "slug": "trello", "reason": { "en": "Lighter, board-based alternative for teams that find Asana too structured.", "fr": "Alternative plus légère, basée sur des tableaux, pour les équipes qui trouvent Asana trop structuré." } },
+    { "slug": "notion", "reason": { "en": "Flexible workspace alternative often chosen by solo freelancers instead of a dedicated PM tool.", "fr": "Espace de travail flexible souvent choisi par les freelances solo à la place d'un outil de gestion de projet dédié." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The entry paid tier (about $9.63/seat/month annually) unlocks timeline views, automation and unlimited guests on top of a free plan that already covers basic task management for up to 10 people.", "fr": "L'offre d'entrée payante (environ 9,63 $/siège/mois en annuel) débloque frise, automatisation et invités illimités, en plus d'un plan gratuit qui couvre déjà la gestion de tâches de base jusqu'à 10 personnes.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers task and project tracking through dedicated list, board, timeline and calendar views plus automation rules, without any workaround mentioned in the collected facts.", "fr": "Assure le suivi des tâches et des projets via des vues dédiées (liste, tableau, frise, calendrier) et des règles d'automatisation, sans contournement mentionné dans les faits relevés.", "sourceIds": ["s1"] },
+      "puissance": { "en": "The Advanced tier adds portfolios, goals, advanced reporting and approvals on top of the Starter feature set, covering a broad range of project management needs.", "fr": "L'offre Advanced ajoute portefeuilles, objectifs, reporting avancé et validations en plus des fonctions de Starter, ce qui couvre un large éventail de besoins en gestion de projet.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Team project management", "fr": "Gestion de projets d'équipe" },
+    "shortDescription": { "en": "Asana is a project and task management tool with boards, timelines, calendars, workflow automation and cross-project reporting for teams.", "fr": "Asana est un outil de gestion de projets et de tâches avec tableaux, frise, calendrier, automatisation des flux et reporting multi-projets pour les équipes." },
+    "longDescription": {
+      "en": "Asana combines task lists, Kanban boards, Gantt-style timelines and calendars in one workspace, letting teams plan projects and track progress from a single view. Workflow automation rules handle repetitive steps, and cross-project dashboards give visibility across multiple initiatives at once.\n\nThe Free plan covers up to 10 team members with basic task and project management, at no cost. Paid tiers start with Starter, around $9.63 per seat monthly billed annually, adding automation, custom fields and unlimited guests; the Advanced plan requires a minimum of 2 seats and adds portfolios, goals and approvals. Asana suits small teams that have outgrown a simple to-do list.",
+      "fr": "Asana réunit listes de tâches, tableaux Kanban, frises façon Gantt et calendriers dans un même espace, pour planifier un projet et suivre son avancement en un coup d'œil. Des règles d'automatisation gèrent les étapes répétitives, et des tableaux de bord transverses donnent une vue sur plusieurs projets à la fois.\n\nLe plan gratuit couvre jusqu'à 10 membres pour une gestion de base, sans frais. Les offres payantes commencent avec Starter, autour de 9,63 $ par utilisateur et par mois en annuel, avec automatisation, champs personnalisés et invités illimités ; Advanced demande un minimum de 2 sièges et ajoute portefeuilles, objectifs et validations. Asana convient aux petites équipes qui dépassent la simple liste de tâches."
+    },
+    "pros": [
+      { "en": "The Free plan is fully usable for small teams up to 10 members, not just a limited trial.", "fr": "Le plan gratuit est pleinement utilisable pour les petites équipes jusqu'à 10 membres, pas juste un essai limité." },
+      { "en": "Workflow automation and reporting are available from the entry paid tier, not locked to an enterprise plan.", "fr": "L'automatisation et le reporting sont accessibles dès la première offre payante, pas réservés à une offre entreprise." }
+    ],
+    "cons": [
+      { "en": "The Advanced tier, which unlocks portfolios and goals, has a 2-seat purchase minimum, so a true solo user cannot access it alone.", "fr": "L'offre Advanced, qui débloque portefeuilles et objectifs, impose un minimum de 2 sièges : impossible d'y accéder seul." },
+      { "en": "Enterprise pricing is quote-only, so budgeting beyond Advanced requires contacting sales.", "fr": "Le tarif Enterprise est sur devis, donc budgétiser au-delà d'Advanced demande de contacter les ventes." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You manage a team of 2 or more and need shared timelines, automation and reporting beyond a simple task list.", "fr": "Tu gères une équipe de 2 personnes ou plus et as besoin de frises partagées, d'automatisation et de reporting au-delà d'une simple liste de tâches." },
+      "avoidIf": { "en": "You work alone and only need basic task tracking: the Free plan already covers that without upgrading.", "fr": "Tu travailles seul et n'as besoin que d'un suivi de tâches basique : le plan gratuit suffit déjà, sans passer à l'offre payante." },
+      "threshold": { "en": "Starter costs about $9.63 per seat monthly on annual billing; Advanced requires buying at least 2 seats at $24.99/month each to unlock portfolios and goals.", "fr": "Starter coûte environ 9,63 $ par utilisateur et par mois en engagement annuel ; Advanced impose l'achat d'au moins 2 sièges à 24,99 $/mois chacun pour débloquer portefeuilles et objectifs." },
+      "billingTraps": { "en": "Advanced enforces a 2-seat minimum purchase, effectively doubling the entry cost for anyone wanting its features alone.", "fr": "Advanced impose un minimum de 2 sièges à l'achat, ce qui double de fait le coût d'entrée pour qui veut ses fonctions seul." }
+    }
+  },
   "unknowns": [
     "Enterprise plan pricing is quote-only and was not captured numerically."
   ],

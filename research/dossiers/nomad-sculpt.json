@@ -3,7 +3,8 @@
   "slug": "nomad-sculpt",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Nomad Sculpt",
     "vendor": "Nomad Sculpt (independent developer)",
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 35 },
         "onQuote": false,
-        "keyLimits": [{ "en": "One license covers 2 computers (Windows x64 and/or macOS universal). No cross-platform purchases with mobile.", "fr": null }],
+        "keyLimits": [{ "en": "One license covers 2 computers (Windows x64 and/or macOS universal). No cross-platform purchases with mobile.", "fr": "Une licence couvre 2 ordinateurs (Windows x64 et/ou macOS universal). Pas de partage d'achat avec le mobile." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,34 +45,53 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 15 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Purchased separately per app store (App Store, Google Play, Huawei AppGallery); desktop key does not unlock mobile.", "fr": null }],
+        "keyLimits": [{ "en": "Purchased separately per app store (App Store, Google Play, Huawei AppGallery); desktop key does not unlock mobile.", "fr": "Acheté séparément selon la boutique (App Store, Google Play, Huawei AppGallery) ; la clé desktop ne débloque pas le mobile." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "mobile",
     "addOns": [],
     "cautions": [
-      { "en": "No cross-platform license sharing: desktop and each mobile store purchase are billed separately, so a user on both iPad and desktop pays twice.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No cross-platform license sharing: desktop and each mobile store purchase are billed separately, so a user on both iPad and desktop pays twice.", "fr": "Pas de partage de licence entre plateformes : le desktop et chaque boutique mobile sont facturés séparément, donc un utilisateur sur iPad et desktop paie deux fois.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Full 3D sculpting and painting toolset (multires sculpting, dynamic tessellation, PBR materials).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Cloud-based license activation with offline use for up to 15 days without reverification.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Multi-seat and classroom licensing with command-line activation for lab deployment.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Full 3D sculpting and painting toolset (multires sculpting, dynamic tessellation, PBR materials).", "fr": "Outillage complet de sculpture et peinture 3D (sculpture multirésolution, tessellation dynamique, matériaux PBR).", "sourceIds": ["s1"] },
+      { "en": "Cloud-based license activation with offline use for up to 15 days without reverification.", "fr": "Activation de licence basée sur le cloud, avec usage hors ligne jusqu'à 15 jours sans revérification.", "sourceIds": ["s1"] },
+      { "en": "Multi-seat and classroom licensing with command-line activation for lab deployment.", "fr": "Licences multi-postes et pour salle de classe, avec activation en ligne de commande pour un déploiement en labo.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "An activation is tied to a specific computer, not an account; reformatting or replacing a machine consumes a new activation.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "No educational discounts except through Apple School Manager on iOS; purchase orders not accepted.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "An activation is tied to a specific computer, not an account; reformatting or replacing a machine consumes a new activation.", "fr": "Une activation est liée à un ordinateur précis, pas à un compte ; reformater ou remplacer une machine consomme une nouvelle activation.", "sourceIds": ["s1"] },
+      { "en": "No educational discounts except through Apple School Manager on iOS; purchase orders not accepted.", "fr": "Pas de tarif éducation en dehors d'Apple School Manager sur iOS ; les bons de commande ne sont pas acceptés.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows", "macos", "ipad", "android", "ios"]
   },
   "alternatives": [
-    { "slug": "zbrush", "reason": { "en": "The dominant professional 3D sculpting tool that Nomad Sculpt is commonly positioned as an affordable, mobile-friendly alternative to.", "fr": null } },
-    { "slug": "blender", "reason": { "en": "Free, general-purpose 3D suite that includes sculpting tools covering an overlapping use case.", "fr": null } }
+    { "slug": "zbrush", "reason": { "en": "The dominant professional 3D sculpting tool that Nomad Sculpt is commonly positioned as an affordable, mobile-friendly alternative to.", "fr": "L'outil de sculpture 3D professionnel dominant, auquel Nomad Sculpt est souvent présenté comme une alternative abordable et adaptée au mobile." } },
+    { "slug": "blender", "reason": { "en": "Free, general-purpose 3D suite that includes sculpting tools covering an overlapping use case.", "fr": "Suite 3D généraliste et gratuite qui inclut des outils de sculpture couvrant un usage similaire." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A full 3D sculpting toolset (multires sculpting, dynamic tessellation, PBR materials) is available for a one-time payment of $35 desktop or $15 per mobile platform, with no subscription.", "fr": "Un outillage complet de sculpture 3D (sculpture multirésolution, tessellation dynamique, matériaux PBR) est disponible pour un paiement unique de 35 $ sur desktop ou 15 $ par plateforme mobile, sans abonnement.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers multires sculpting, dynamic tessellation and PBR materials as described, with offline use for up to 15 days, no workaround mentioned in the facts.", "fr": "Assure sculpture multirésolution, tessellation dynamique et matériaux PBR comme décrit, avec un usage hors ligne jusqu'à 15 jours, sans contournement mentionné dans les faits.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers a full sculpting and painting toolset plus multi-seat and classroom licensing, a broad range for a mobile-first 3D tool.", "fr": "Couvre un outillage complet de sculpture et peinture, plus des licences multi-postes et salle de classe, un large périmètre pour un outil 3D pensé mobile d'abord.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Mobile 3D sculpting", "fr": "Sculpture numérique 3D" },
+    "shortDescription": { "en": "Nomad Sculpt is a 3D sculpting and painting app with multires sculpting, dynamic tessellation and PBR materials, sold as a one-time purchase per platform.", "fr": "Nomad Sculpt est une appli de sculpture et peinture 3D avec sculpture multirésolution, tessellation dynamique et matériaux PBR, vendue à l'achat unique par plateforme." }
+  },
   "unknowns": [
     "Exact current mobile price could vary slightly by app store/region; only the figure shown on the official site was captured."
   ],

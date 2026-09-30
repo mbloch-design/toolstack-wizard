@@ -3,7 +3,7 @@
   "slug": "magic-bullet",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Magic Bullet Suite (Red Giant)",
     "vendor": "Maxon Computer GmbH",
@@ -12,10 +12,19 @@
     "changelogUrl": null,
     "urlStatus": "ok",
     "productStatus": "active",
-    "statusNote": { "en": "Red Giant was acquired by Maxon; Magic Bullet is now sold as part of the Red Giant product line under Maxon.", "fr": null }
+    "statusNote": {
+      "en": "Red Giant was acquired by Maxon; Magic Bullet is now sold as part of the Red Giant product line under Maxon.",
+      "fr": "Red Giant a été racheté par Maxon ; Magic Bullet est désormais vendu dans la gamme de produits Red Giant, sous Maxon."
+    }
   },
   "sources": [
-    { "id": "s1", "url": "https://www.maxon.net/en/red-giant", "tier": 1, "accessedOn": "2026-09-25", "title": "Red Giant / Maxon product page" }
+    {
+      "id": "s1",
+      "url": "https://www.maxon.net/en/red-giant",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Red Giant / Maxon product page"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,50 +33,257 @@
     "verifiedOn": "2026-07-24",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "red-giant-complete",
         "name": "Red Giant Complete Annual Subscription",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Includes the full Red Giant toolkit (100+ tools) including Magic Bullet Looks, Trapcode Particular/Form, Universe plugin library, and Maxon Studio templates. Exact price not published on the fetched page; a downloadable trial is offered.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Includes the full Red Giant toolkit (100+ tools) including Magic Bullet Looks, Trapcode Particular/Form, Universe plugin library, and Maxon Studio templates. Exact price not published on the fetched page; a downloadable trial is offered.",
+            "fr": "Inclut la boîte à outils Red Giant complète (100+ outils) dont Magic Bullet Looks, Trapcode Particular/Form, la bibliothèque de plugins Universe et les modèles Maxon Studio. Le prix exact n'est pas publié sur la page consultée ; un essai téléchargeable est proposé."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "regularPriceUnknown": true,
     "addOns": [],
     "cautions": [
-      { "en": "Magic Bullet is not sold standalone on the fetched page; it is bundled inside the Red Giant Complete annual subscription alongside dozens of other plugins.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Magic Bullet is not sold standalone on the fetched page; it is bundled inside the Red Giant Complete annual subscription alongside dozens of other plugins.",
+        "fr": "Magic Bullet n'est pas vendu seul sur la page consultée ; il est inclus dans l'abonnement annuel Red Giant Complete, aux côtés de dizaines d'autres plugins.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Magic Bullet Looks provides cinematic color grading and film emulation presets as a plugin for host video editors.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Part of the wider Red Giant toolkit offering particle systems, lens flares, keying/compositing, and motion graphics tools.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Integrates as plugins directly inside After Effects, Premiere Pro, DaVinci Resolve, Apple Motion, Final Cut Pro, and Avid Media Composer.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Magic Bullet Looks provides cinematic color grading and film emulation presets as a plugin for host video editors.",
+        "fr": "Magic Bullet Looks propose des préréglages d'étalonnage cinématographique et d'émulation film en tant que plugin pour les logiciels de montage hôtes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Part of the wider Red Giant toolkit offering particle systems, lens flares, keying/compositing, and motion graphics tools.",
+        "fr": "Fait partie de la boîte à outils Red Giant plus large, avec systèmes de particules, effets de flare, incrustation/compositing et outils de motion design.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Integrates as plugins directly inside After Effects, Premiere Pro, DaVinci Resolve, Apple Motion, Final Cut Pro, and Avid Media Composer.",
+        "fr": "S'intègre en tant que plugins directement dans After Effects, Premiere Pro, DaVinci Resolve, Apple Motion, Final Cut Pro et Avid Media Composer.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Not a standalone application; requires a supported host video editor (After Effects, Premiere Pro, DaVinci Resolve, etc.) to run.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Exact subscription price and whether Magic Bullet alone can be purchased separately from the full Red Giant bundle was not shown on the fetched page.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Not a standalone application; requires a supported host video editor (After Effects, Premiere Pro, DaVinci Resolve, etc.) to run.",
+        "fr": "N'est pas une application autonome ; nécessite un logiciel de montage hôte compatible (After Effects, Premiere Pro, DaVinci Resolve, etc.) pour fonctionner.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Exact subscription price and whether Magic Bullet alone can be purchased separately from the full Red Giant bundle was not shown on the fetched page.",
+        "fr": "Le prix exact de l'abonnement et la possibilité d'acheter Magic Bullet seul, séparément du bundle Red Giant complet, ne figuraient pas sur la page consultée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Adobe After Effects", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Adobe Premiere Pro", "slug": "adobe-premiere-pro", "sourceIds": ["s1"] },
-      { "name": "DaVinci Resolve", "slug": "davinci-resolve", "sourceIds": ["s1"] }
+      {
+        "name": "Adobe After Effects",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Adobe Premiere Pro",
+        "slug": "adobe-premiere-pro",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "DaVinci Resolve",
+        "slug": "davinci-resolve",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["mac", "windows"]
+    "platforms": [
+      "mac",
+      "windows"
+    ]
   },
   "alternatives": [
-    { "slug": "davinci-resolve", "reason": { "en": "DaVinci Resolve includes built-in color grading tools that can substitute for Magic Bullet's color plugins in many workflows.", "fr": null } }
+    {
+      "slug": "davinci-resolve",
+      "reason": {
+        "en": "DaVinci Resolve includes built-in color grading tools that can substitute for Magic Bullet's color plugins in many workflows.",
+        "fr": "DaVinci Resolve inclut des outils d'étalonnage intégrés qui peuvent remplacer les plugins de couleur de Magic Bullet dans de nombreux workflows."
+      }
+    }
   ],
-  "missingAlternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "FilmConvert",
+      "officialUrl": "https://www.filmconvert.com/",
+      "reason": "Direct competitor plugin for film emulation and color grading inside NLEs, not in the catalogue"
+    },
+    {
+      "name": "Dehancer",
+      "officialUrl": "https://dehancer.com/",
+      "reason": "Film emulation and color grading plugin competitor, not in the catalogue"
+    }
+  ],
   "unknowns": [
     "Exact monthly/annual subscription price for Red Giant Complete not published on the fetched page; the seed's cached price could not be re-verified.",
     "Whether Magic Bullet Looks can be purchased as a standalone product separate from the full Red Giant bundle."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Magic Bullet is only available bundled inside the Red Giant Complete subscription with 100+ other tools at an unpublished price, making its standalone value hard to judge.",
+        "fr": "Magic Bullet n'est disponible que dans l'abonnement Red Giant Complete avec 100+ autres outils, à un prix non publié, ce qui rend sa valeur autonome difficile à évaluer.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and ease of first use are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la facilité du premier usage ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers cinematic color grading and film emulation presets directly inside supported host editors (After Effects, Premiere Pro, DaVinci Resolve, and more), as promised.",
+        "fr": "Livre des préréglages d'étalonnage cinématographique et d'émulation film directement dans les logiciels hôtes compatibles (After Effects, Premiere Pro, DaVinci Resolve, et plus), comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Part of a 100+ tool Red Giant bundle covering particles, keying, and motion graphics beyond color grading alone, though exact Magic Bullet-specific depth isn't detailed.",
+        "fr": "Fait partie d'un bundle Red Giant de 100+ outils couvrant particules, incrustation et motion design au-delà du seul étalonnage, mais la profondeur spécifique de Magic Bullet n'est pas détaillée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Requires a supported host editor to function at all and is only sold bundled, with no standalone export or portability path stated.",
+        "fr": "Nécessite un logiciel de montage hôte compatible pour fonctionner, et n'est vendu qu'en bundle, sans possibilité d'export ou de portabilité autonome mentionnée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Video editors and content creators who want cinematic color grading presets inside their existing editor.",
+      "fr": "Monteurs vidéo et créateurs de contenu qui veulent des préréglages d'étalonnage cinématographique dans leur logiciel de montage existant."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: apply a cinematic color grade preset to raw footage inside Premiere Pro before final export.",
+      "fr": "Usage : appliquer un préréglage d'étalonnage cinématographique à des rushes bruts dans Premiere Pro avant l'export final."
+    },
+    {
+      "en": "Usage: match the look of several clips shot in different conditions using film emulation presets in one editing pass.",
+      "fr": "Usage : uniformiser le rendu de plusieurs plans tournés dans des conditions différentes avec des préréglages d'émulation film en un seul passage de montage."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Color grading plugin",
+      "fr": "Plugin d'étalonnage"
+    },
+    "shortDescription": {
+      "en": "A color grading and film emulation plugin for video editors, bundled inside the Red Giant Complete subscription at an unpublished price.",
+      "fr": "Un plugin d'étalonnage et d'émulation film pour monteurs vidéo, inclus dans l'abonnement Red Giant Complete à un prix non publié."
+    },
+    "longDescription": {
+      "en": "Magic Bullet Looks is a color grading and film emulation plugin for video editors, part of the wider Red Giant toolkit (Maxon) that also covers particle effects, keying, and motion graphics. It installs directly inside host editors: After Effects, Premiere Pro, DaVinci Resolve, Apple Motion, Final Cut Pro, and Avid Media Composer.\n\nIt is not sold standalone; it's bundled inside the Red Giant Complete annual subscription with 100+ other tools, and the exact price wasn't published on the page checked. A downloadable trial is available to test it before committing.",
+      "fr": "Magic Bullet Looks est un plugin d'étalonnage et d'émulation film pour monteurs vidéo, qui fait partie de la boîte à outils Red Giant (Maxon) plus large, couvrant aussi les effets de particules, l'incrustation et le motion design. Il s'installe directement dans les logiciels hôtes : After Effects, Premiere Pro, DaVinci Resolve, Apple Motion, Final Cut Pro et Avid Media Composer.\n\nIl n'est pas vendu seul ; il est inclus dans l'abonnement annuel Red Giant Complete avec 100+ autres outils, et le prix exact n'était pas publié sur la page consultée. Un essai téléchargeable est proposé pour le tester avant de s'engager."
+    },
+    "pros": [
+      {
+        "en": "Installs directly inside major host editors (Premiere Pro, After Effects, DaVinci Resolve, and more) without a separate app to learn.",
+        "fr": "S'installe directement dans les principaux logiciels hôtes (Premiere Pro, After Effects, DaVinci Resolve, et plus) sans application séparée à apprendre."
+      },
+      {
+        "en": "Bundled access to the wider 100+ tool Red Giant toolkit, not just color grading, inside the same subscription.",
+        "fr": "Accès groupé à la boîte à outils Red Giant plus large (100+ outils), pas seulement l'étalonnage, dans le même abonnement."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Cannot be bought standalone; the price is only published as part of the full Red Giant Complete bundle.",
+        "fr": "Ne peut pas être acheté seul ; le prix n'est publié que dans le cadre du bundle Red Giant Complete complet."
+      },
+      {
+        "en": "Requires a supported host video editor to run at all; it isn't a standalone application.",
+        "fr": "Nécessite un logiciel de montage hôte compatible pour fonctionner ; ce n'est pas une application autonome."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You already edit in a supported host app and want cinematic color presets without switching tools.",
+        "fr": "Tu montes déjà dans un logiciel hôte compatible et veux des préréglages d'étalonnage cinématographique sans changer d'outil."
+      },
+      "avoidIf": {
+        "en": "You want color grading only, without paying for the rest of the 100+ tool Red Giant bundle.",
+        "fr": "Tu veux uniquement l'étalonnage, sans payer pour le reste du bundle Red Giant et ses 100+ outils."
+      },
+      "threshold": {
+        "en": "Since the Red Giant Complete price isn't published, compare it against DaVinci Resolve's built-in, free color grading tools before committing to the bundle.",
+        "fr": "Le prix de Red Giant Complete n'étant pas publié, compare-le aux outils d'étalonnage intégrés et gratuits de DaVinci Resolve avant de t'engager sur le bundle."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Red Giant Complete's subscription price is not published on the page checked; the dossier's cached seed price could not be re-verified, so comparePlanKey stays null with regularPriceUnknown true."
+  ]
 }

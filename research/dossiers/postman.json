@@ -3,7 +3,7 @@
   "slug": "postman",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Postman",
     "vendor": "Postman, Inc.",
@@ -33,7 +33,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "50 AI credits/month, 1,000 Context Graph API queries/month, 1,000 monitoring requests, 5 integrations, 10,000 monthly API calls"
+        "en": "50 AI credits/month, 1,000 Context Graph API queries/month, 1,000 monitoring requests, 5 integrations, 10,000 monthly API calls",
+        "fr": "50 crédits IA/mois, 1 000 requêtes Context Graph API/mois, 1 000 requêtes de monitoring, 5 intégrations, 10 000 appels API par mois."
       },
       "sourceIds": [
         "s1"
@@ -54,7 +55,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "400 AI credits/month, 5,000 Context Graph queries/month, up to 10 integrations, 100,000 monthly API calls, 30-day collection recovery"
+            "en": "400 AI credits/month, 5,000 Context Graph queries/month, up to 10 integrations, 100,000 monthly API calls, 30-day collection recovery",
+            "fr": "400 crédits IA/mois, 5 000 requêtes Context Graph/mois, jusqu'à 10 intégrations, 100 000 appels API par mois, récupération de collection sur 30 jours."
           }
         ],
         "sourceIds": [
@@ -74,7 +76,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "400 AI credits/user/month, unlimited users, 50 integrations, 1M monthly API calls, advanced RBAC, SDK generation"
+            "en": "400 AI credits/user/month, unlimited users, 50 integrations, 1M monthly API calls, advanced RBAC, SDK generation",
+            "fr": "400 crédits IA/utilisateur/mois, utilisateurs illimités, 50 intégrations, 1M d'appels API par mois, RBAC avancé, génération de SDK."
           }
         ],
         "sourceIds": [
@@ -94,7 +97,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "800 pooled AI credits/user/month, 100 integrations, 10M monthly API calls, advanced security/governance"
+            "en": "800 pooled AI credits/user/month, 100 integrations, 10M monthly API calls, advanced security/governance",
+            "fr": "800 crédits IA mutualisés/utilisateur/mois, 100 intégrations, 10M d'appels API par mois, sécurité et gouvernance avancées."
           }
         ],
         "sourceIds": [
@@ -109,7 +113,8 @@
         "en": "Context Graph API overage is billed at $0.01 per additional query beyond the plan quota.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le dépassement de l'API Context Graph est facturé 0,01 $ par requête supplémentaire au-delà du quota du forfait."
       }
     ]
   },
@@ -119,19 +124,22 @@
         "en": "API request building, testing, documentation, and mocking in a single client.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Construction, test, documentation et simulation de requêtes API dans un seul client."
       },
       {
         "en": "Team collaboration on shared API collections with role-based access control on paid tiers.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Collaboration d'équipe sur des collections API partagées, avec contrôle d'accès par rôle sur les forfaits payants."
       },
       {
         "en": "Built-in AI assistant (Postbot) and Context Graph API for AI-assisted API work, credit-metered.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Assistant IA intégré (Postbot) et API Context Graph pour le travail assisté par IA, facturés au crédit."
       }
     ],
     "limitations": [
@@ -139,13 +147,15 @@
         "en": "Free plan caps integrations at 5 and monthly API calls at 10,000, restrictive for active teams.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le forfait gratuit limite à 5 intégrations et 10 000 appels API par mois, ce qui est restrictif pour une équipe active."
       },
       {
         "en": "Collection version recovery window is only 1 day on Free, versus 30-90 days on paid tiers.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "La fenêtre de récupération des versions de collection n'est que d'un jour en gratuit, contre 30 à 90 jours sur les forfaits payants."
       }
     ],
     "integrations": [],
@@ -160,14 +170,150 @@
     {
       "slug": "insomnia",
       "reason": {
-        "en": "Direct lightweight competitor for API client/testing workflows."
+        "en": "Direct lightweight competitor for API client/testing workflows.",
+        "fr": "Concurrent plus léger pour la construction et le test de requêtes API."
+      }
+    },
+    {
+      "slug": "thunder-client",
+      "reason": {
+        "en": "Lightweight API client built into VS Code, a common substitute for developers who don't want a separate app.",
+        "fr": "Client API léger intégré à VS Code, une alternative courante pour les développeurs qui ne veulent pas d'application séparée."
       }
     }
   ],
-  "missingAlternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Hoppscotch",
+      "officialUrl": "https://hoppscotch.io/",
+      "reason": "Open-source lightweight API client alternative, not in the catalogue"
+    },
+    {
+      "name": "Bruno",
+      "officialUrl": "https://www.usebruno.com/",
+      "reason": "Offline-first open-source API client alternative, not in the catalogue"
+    }
+  ],
   "unknowns": [
     "Named third-party integrations list (e.g. GitHub, Slack, CI tools) not detailed on the pricing page itself.",
     "Category assignment in the seed ('nocode-web') may not match Postman's actual developer-tools positioning, left unresolved in facts-only mode."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The $11/month Solo plan already includes AI-assisted request building, documentation, and mocking that would otherwise need several separate tools.",
+        "fr": "Le forfait Solo à 11 $/mois inclut déjà la construction de requêtes assistée par IA, la documentation et la simulation, qui demanderaient sinon plusieurs outils séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Basic request testing is quick to start, but advanced use (environments, scripts, mocks, RBAC) requires learning, and the free tier's tight integration cap (5) limits how easily it scales in team use.",
+        "fr": "Le test de requête de base est rapide à démarrer, mais l'usage avancé (environnements, scripts, mocks, RBAC) demande un apprentissage, et la limite serrée du forfait gratuit (5 intégrations) freine son usage en équipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers its stated core job, building, testing, documenting, and mocking API requests, directly, without third-party add-ons for the basics.",
+        "fr": "Livre sa mission principale annoncée, construire, tester, documenter et simuler des requêtes API, directement, sans module tiers pour l'essentiel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Team and Enterprise tiers add role-based access control, SDK generation, and up to 10 million monthly API calls, covering large team workflows.",
+        "fr": "Les forfaits Team et Enterprise ajoutent le contrôle d'accès par rôle, la génération de SDK et jusqu'à 10 millions d'appels API par mois, pour des workflows de grande équipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability formats are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and small engineering teams building, testing, and documenting APIs.",
+      "fr": "Développeurs et petites équipes techniques qui construisent, testent et documentent des API."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: build and test a REST API's endpoints against a shared team collection before merging code.",
+      "fr": "Usage : construire et tester les endpoints d'une API REST dans une collection partagée avant de merger le code."
+    },
+    {
+      "en": "Usage: generate living API documentation directly from a Postman collection to hand to external partners.",
+      "fr": "Usage : générer une documentation API à jour directement depuis une collection Postman pour la transmettre à des partenaires externes."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "API client",
+      "fr": "Client API"
+    },
+    "shortDescription": {
+      "en": "An API client for building, testing, documenting, and mocking requests, free with limits, from $11/month for more integrations and API calls.",
+      "fr": "Un client API pour construire, tester, documenter et simuler des requêtes, gratuit avec des limites, dès 11 $/mois pour plus d'intégrations et d'appels API."
+    },
+    "longDescription": {
+      "en": "Postman is an API client that bundles request building, testing, documentation, and mocking in one tool, plus an AI assistant (Postbot) and a Context Graph API for AI-assisted work, both credit-metered.\n\nThe free plan works for solo experimentation (10,000 API calls, 5 integrations a month) but the Solo plan at $11/month (or $9/month billed annually) removes the tightest caps. Team plans add role-based access control and SDK generation for engineering teams collaborating on shared collections.",
+      "fr": "Postman est un client API qui réunit construction, test, documentation et simulation de requêtes dans un seul outil, avec un assistant IA (Postbot) et une API Context Graph pour le travail assisté par IA, tous deux facturés au crédit.\n\nLe forfait gratuit convient pour un usage solo ponctuel (10 000 appels API, 5 intégrations par mois), mais le forfait Solo à 11 $/mois (ou 9 $/mois en engagement annuel) lève les limites les plus serrées. Les forfaits Team ajoutent le contrôle d'accès par rôle et la génération de SDK pour les équipes qui collaborent sur des collections partagées."
+    },
+    "pros": [
+      {
+        "en": "One client covers building, testing, documenting, and mocking API requests without extra tools.",
+        "fr": "Un seul client couvre la construction, le test, la documentation et la simulation de requêtes API sans outil supplémentaire."
+      },
+      {
+        "en": "The Solo plan at $11/month already includes 100,000 monthly API calls and 30-day collection recovery.",
+        "fr": "Le forfait Solo à 11 $/mois inclut déjà 100 000 appels API par mois et une récupération de collection sur 30 jours."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan's 5-integration and 10,000-call caps are tight for an active team.",
+        "fr": "Les limites du forfait gratuit (5 intégrations, 10 000 appels) sont serrées pour une équipe active."
+      },
+      {
+        "en": "AI features (Postbot, Context Graph) are credit-metered with overage fees once the plan quota is used.",
+        "fr": "Les fonctions IA (Postbot, Context Graph) sont facturées au crédit, avec des frais de dépassement une fois le quota du forfait épuisé."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You build or test APIs regularly and want request building, docs, and mocking in one client.",
+        "fr": "Tu construis ou testes des API régulièrement et veux la construction de requêtes, la doc et la simulation dans un seul client."
+      },
+      "avoidIf": {
+        "en": "You need unlimited free integrations and API calls without ever paying.",
+        "fr": "Tu as besoin d'intégrations et d'appels API illimités et gratuits, sans jamais payer."
+      },
+      "threshold": {
+        "en": "Below the Solo plan's annual cost of about $108 (9 x 12 months), the free plan's 10,000 monthly calls likely suffice for solo, occasional use.",
+        "fr": "En dessous du coût annuel du forfait Solo, environ 108 $ (9 x 12 mois), les 10 000 appels mensuels du forfait gratuit suffisent probablement pour un usage solo occasionnel."
+      },
+      "billingTraps": {
+        "en": "Context Graph API overage is billed at $0.01 per query beyond the plan's quota, an easy way to run up a bill on AI-assisted features.",
+        "fr": "Le dépassement de l'API Context Graph est facturé 0,01 $ par requête au-delà du quota du forfait, un moyen facile de voir la facture grimper avec les fonctions IA."
+      }
+    }
+  }
 }

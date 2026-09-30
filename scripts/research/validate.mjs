@@ -235,5 +235,9 @@ function validate(d, errors, warnings) {
   if (/—/.test(text)) errors.push("em dash (—) found somewhere in the dossier");
   const hype = text.match(/\b(powerful|robust|revolutionary|seamless|game[- ]changer|puissant|robuste|révolutionnaire)\b/gi);
   if (hype) warnings.push(`generic superlatives: ${[...new Set(hype.map((w) => w.toLowerCase()))].join(", ")}`);
+  // Invented economics (time saved, revenue, missed invoices) slipped into a
+  // Haiku test run: flag them so a human checks each one has a source.
+  const invented = text.match(/(\d[\d\s,.-]*(hours?|heures?) (a|per|par) (month|mois|week|semaine))|(revenu mensuel|monthly revenue)|(\d+\s?-?\s?\d*\s?k\s?\$)|(hourly rate|taux horaire)/gi);
+  if (invented) warnings.push(`possible invented figures, check each has a source: ${[...new Set(invented)].slice(0, 4).join(" | ")}`);
   if (!Array.isArray(d.unknowns)) errors.push("unknowns must be an array (empty when nothing is unknown)");
 }

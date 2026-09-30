@@ -3,7 +3,8 @@
   "slug": "tally",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Tally",
     "vendor": "Tally Labs",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Unlimited forms and submissions within fair-usage guidelines; payments, e-signatures, file uploads (10MB/file), conditional logic, 45+ languages." }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Unlimited forms and submissions within fair-usage guidelines; payments, e-signatures, file uploads (10MB/file), conditional logic, 45+ languages.", "fr": "Formulaires et soumissions illimités dans le cadre d'un usage raisonnable ; paiements, signatures électroniques, envoi de fichiers (10 Mo/fichier), logique conditionnelle, plus de 45 langues." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited forms and submissions within fair-usage guidelines; 10MB per-file upload cap." }],
+        "keyLimits": [{ "en": "Unlimited forms and submissions within fair-usage guidelines; 10MB per-file upload cap.", "fr": "Formulaires et soumissions illimités dans le cadre d'un usage raisonnable ; envoi de fichier plafonné à 10 Mo." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 24, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Removes Tally branding, custom domains, unlimited team collaboration, unlimited file uploads, extended analytics and version history." }],
+        "keyLimits": [{ "en": "Removes Tally branding, custom domains, unlimited team collaboration, unlimited file uploads, extended analytics and version history.", "fr": "Retire la marque Tally, ajoute un domaine personnalisé, une collaboration d'équipe illimitée, des envois de fichiers illimités, des analyses étendues et l'historique des versions." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,25 +55,25 @@
         "minSeats": 1,
         "price": { "monthly": 74, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds automatic data retention controls, respondent email verification, 90-day version history." }],
+        "keyLimits": [{ "en": "Adds automatic data retention controls, respondent email verification, 90-day version history.", "fr": "Ajoute des contrôles automatiques de rétention des données, la vérification d'e-mail des répondants, un historique des versions de 90 jours." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "Annual billing is described as '2 months free' (roughly a 17% discount) versus monthly, but the exact annual-per-month figure was not itemized on the page.", "sourceIds": ["s1"] },
-      { "en": "The free plan already covers most solo use cases (unlimited forms/submissions, payments, e-signatures); Pro mainly buys branding removal and team features.", "sourceIds": ["s1"] }
+      { "en": "Annual billing is described as '2 months free' (roughly a 17% discount) versus monthly, but the exact annual-per-month figure was not itemized on the page.", "fr": "La facturation annuelle est présentée comme '2 mois offerts' (environ 17% de réduction) par rapport au mensuel, mais le montant exact par mois en annuel n'était pas détaillé sur la page.", "sourceIds": ["s1"] },
+      { "en": "The free plan already covers most solo use cases (unlimited forms/submissions, payments, e-signatures); Pro mainly buys branding removal and team features.", "fr": "Le plan gratuit couvre déjà la plupart des usages solo (formulaires/soumissions illimités, paiements, signatures électroniques) ; Pro sert surtout à retirer la marque et à ajouter des fonctions d'équipe.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Notion-style block-based form builder with conditional logic and payment/e-signature collection.", "sourceIds": ["s1"] },
-      { "en": "Native integrations with Google Sheets, Notion, Airtable, Zapier, Make and webhooks.", "sourceIds": ["s1"] }
+      { "en": "Notion-style block-based form builder with conditional logic and payment/e-signature collection.", "fr": "Créateur de formulaires par blocs façon Notion, avec logique conditionnelle et collecte de paiement/signature électronique.", "sourceIds": ["s1"] },
+      { "en": "Native integrations with Google Sheets, Notion, Airtable, Zapier, Make and webhooks.", "fr": "Intégrations natives avec Google Sheets, Notion, Airtable, Zapier, Make et les webhooks.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan caps file uploads at 10MB per file; removed only on the Pro plan.", "sourceIds": ["s1"] },
-      { "en": "Custom domains and branding removal require the paid Pro plan.", "sourceIds": ["s1"] }
+      { "en": "Free plan caps file uploads at 10MB per file; removed only on the Pro plan.", "fr": "Le plan gratuit plafonne les envois de fichiers à 10 Mo par fichier ; la limite ne disparaît qu'avec Pro.", "sourceIds": ["s1"] },
+      { "en": "Custom domains and branding removal require the paid Pro plan.", "fr": "Le domaine personnalisé et le retrait de la marque nécessitent l'offre payante Pro.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Google Sheets", "slug": null, "sourceIds": ["s1"] },
@@ -81,12 +82,58 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "An independent consultant collecting client intake, bookings or payments who wants forms to work out of the box, without a developer.", "fr": "Un consultant indépendant qui collecte des demandes clients, des réservations ou des paiements et veut des formulaires qui fonctionnent tout de suite, sans développeur." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Build a client intake form with conditional logic and collect a deposit payment directly inside the form.", "fr": "Créer un formulaire de prise de contact client avec logique conditionnelle et encaisser un acompte directement dans le formulaire." },
+    { "en": "Publish a survey that syncs responses automatically to Google Sheets or Notion through the native integrations.", "fr": "Publier une enquête dont les réponses se synchronisent automatiquement vers Google Sheets ou Notion grâce aux intégrations natives." }
+  ],
   "alternatives": [
-    { "slug": "typeform", "reason": { "en": "Direct form-builder competitor, more polished but priced higher." } },
-    { "slug": "jotform", "reason": { "en": "Established form builder competitor with a comparable freemium model." } },
-    { "slug": "fillout", "reason": { "en": "Newer flexible form-builder competitor in the same segment." } }
+    { "slug": "typeform", "reason": { "en": "Direct form-builder competitor, more polished but priced higher.", "fr": "Concurrent direct de créateur de formulaires, plus soigné visuellement mais plus cher." } },
+    { "slug": "jotform", "reason": { "en": "Established form builder competitor with a comparable freemium model.", "fr": "Créateur de formulaires établi, avec un modèle freemium comparable." } },
+    { "slug": "fillout", "reason": { "en": "Newer flexible form-builder competitor in the same segment.", "fr": "Concurrent plus récent et flexible dans le même segment." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free plan already includes unlimited forms and submissions, payments and e-signatures at no cost; the $24/month Pro tier only becomes necessary for branding removal, a custom domain or team collaboration.", "fr": "Le plan gratuit inclut déjà formulaires et soumissions illimités, paiements et signatures électroniques sans frais ; l'offre Pro à 24 $/mois ne devient nécessaire que pour retirer la marque, avoir un domaine personnalisé ou collaborer en équipe.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers conditional logic, payments and e-signatures natively, plus direct sync to Sheets, Notion, Airtable and Zapier without third-party middleware mentioned in the facts.", "fr": "Assure logique conditionnelle, paiements et signatures électroniques nativement, plus une synchronisation directe vers Sheets, Notion, Airtable et Zapier, sans intermédiaire tiers mentionné dans les faits.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers form building, payments and e-signatures, but the collected facts do not show advanced logic branching or reporting beyond basic analytics on paid tiers, so it is rated as solid rather than a category reference.", "fr": "Couvre la création de formulaires, les paiements et les signatures électroniques, mais les faits relevés ne montrent pas de logique avancée ni de reporting au-delà d'analyses de base sur les offres payantes ; note solide mais pas référence de la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Form builder", "fr": "Créateur de formulaires" },
+    "shortDescription": { "en": "Tally is a free-first, block-based form builder with conditional logic, payments and e-signatures, plus native Notion, Sheets and Zapier integrations.", "fr": "Tally est un créateur de formulaires gratuit en priorité, avec logique conditionnelle, paiements, signatures électroniques et intégrations natives Notion, Sheets et Zapier." },
+    "longDescription": {
+      "en": "Tally builds forms block by block, Notion-style, with conditional logic, payment collection and e-signatures included even on the free plan. It connects natively to Google Sheets, Notion, Airtable, Zapier, Make and webhooks, so responses flow straight into the tools a freelancer already uses.\n\nThe Free plan already covers unlimited forms and submissions, capped only by a 10MB per-file upload limit. Pro, at $24/month, removes Tally branding, adds a custom domain, unlimited file uploads and team collaboration; Business, at $74/month, adds data retention controls and respondent email verification. Most solo use cases never need to leave the free tier.",
+      "fr": "Tally construit les formulaires bloc par bloc, façon Notion, avec logique conditionnelle, paiement et signature électronique inclus dès le plan gratuit. Il se connecte nativement à Google Sheets, Notion, Airtable, Zapier, Make et aux webhooks, pour que les réponses arrivent directement dans les outils qu'un freelance utilise déjà.\n\nLe plan gratuit couvre déjà des formulaires et soumissions illimités, avec pour seule limite un fichier plafonné à 10 Mo. Pro, à 24 $/mois, retire la marque Tally, ajoute un domaine personnalisé, des envois illimités et la collaboration en équipe ; Business, à 74 $/mois, ajoute rétention de données et vérification d'e-mail. La plupart des usages solo n'ont jamais besoin de dépasser le plan gratuit."
+    },
+    "pros": [
+      { "en": "The free plan already includes payments, e-signatures and unlimited submissions, not just basic forms.", "fr": "Le plan gratuit inclut déjà paiements, signatures électroniques et soumissions illimitées, pas seulement des formulaires basiques." },
+      { "en": "Native integrations with Google Sheets, Notion, Airtable and Zapier work without extra middleware.", "fr": "Les intégrations natives avec Google Sheets, Notion, Airtable et Zapier fonctionnent sans intermédiaire supplémentaire." }
+    ],
+    "cons": [
+      { "en": "File uploads are capped at 10MB per file until you upgrade to Pro.", "fr": "Les envois de fichiers sont plafonnés à 10 Mo par fichier tant que tu n'es pas passé à Pro." },
+      { "en": "Custom domain and branding removal require the $24/month Pro plan.", "fr": "Le domaine personnalisé et le retrait de la marque demandent l'offre Pro à 24 $/mois." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need forms with payments or e-signatures and don't yet need a custom domain or team seats.", "fr": "Tu as besoin de formulaires avec paiements ou signatures électroniques, sans avoir encore besoin d'un domaine personnalisé ou de sièges d'équipe." },
+      "avoidIf": { "en": "You need to remove Tally branding or use a custom domain: that requires upgrading to Pro at $24/month.", "fr": "Tu as besoin de retirer la marque Tally ou d'utiliser un domaine personnalisé : cela demande de passer à Pro à 24 $/mois." },
+      "threshold": { "en": "Pro costs $24/month; that becomes the entry cost as soon as you need branding removal, a custom domain or team collaboration.", "fr": "Pro coûte 24 $/mois ; c'est le coût d'entrée dès que tu as besoin de retirer la marque, d'un domaine personnalisé ou de collaboration en équipe." }
+    }
+  },
   "unknowns": [
     "Exact annual per-month price for Pro and Business plans was not captured; only the monthly rate and a general 'save 2 months' claim were shown."
   ],

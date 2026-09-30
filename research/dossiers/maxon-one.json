@@ -3,7 +3,7 @@
   "slug": "maxon-one",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Maxon One",
     "vendor": "Maxon Computer GmbH",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy/pricing page" }
+    {
+      "id": "s1",
+      "url": "https://www.maxon.net/en/buy",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Maxon buy/pricing page"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,45 +30,232 @@
     "verifiedOn": "2026-06-17",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "maxon-one",
         "name": "Maxon One (annual)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 99.91, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 99.91,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Bundles Cinema 4D, Redshift, ZBrush, Red Giant, and Universe under one subscription, with 'Save 30% or more' framed versus buying products individually with annual billing; includes access to 7,500+ Maxon Capsules and a training video library. Exact monthly-only price and full plan breakdown were not visible in the fetched page content.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Bundles Cinema 4D, Redshift, ZBrush, Red Giant, and Universe under one subscription, with 'Save 30% or more' framed versus buying products individually with annual billing; includes access to 7,500+ Maxon Capsules and a training video library. Exact monthly-only price and full plan breakdown were not visible in the fetched page content.",
+            "fr": "Regroupe Cinema 4D, Redshift, ZBrush, Red Giant et Universe dans un seul abonnement, avec une remise annoncée d'au moins 30 % par rapport à l'achat séparé de chaque produit en facturation annuelle ; inclut l'accès à plus de 7 500 Maxon Capsules et une bibliothèque de vidéos de formation. Le prix mensuel exact et le détail complet des plans n'étaient pas visibles dans le contenu de la page récupérée."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "maxon-one",
     "addOns": [],
     "cautions": [
-      { "en": "The fetched pricing page did not render the actual pricing table in extracted content; figures here rely on the previously seeded/cached value and were not independently re-confirmed line by line in this session.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "The fetched pricing page did not render the actual pricing table in extracted content; figures here rely on the previously seeded/cached value and were not independently re-confirmed line by line in this session.",
+        "fr": "La page tarifaire récupérée n'a pas affiché le tableau de prix réel dans le contenu extrait ; les chiffres ici reposent sur une valeur mise en cache au préalable et n'ont pas été reconfirmés ligne par ligne dans cette session.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Single subscription bundling Maxon's full 3D toolset: Cinema 4D (3D modeling/animation), Redshift (GPU renderer), ZBrush (digital sculpting), Red Giant (VFX/motion graphics plugins), and Universe.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Includes access to a library of 7,500+ ready-made Maxon Capsules (assets) and training videos.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Single subscription bundling Maxon's full 3D toolset: Cinema 4D (3D modeling/animation), Redshift (GPU renderer), ZBrush (digital sculpting), Red Giant (VFX/motion graphics plugins), and Universe.",
+        "fr": "Abonnement unique qui regroupe tous les outils 3D de Maxon : Cinema 4D (modélisation/animation 3D), Redshift (moteur de rendu GPU), ZBrush (sculpture numérique), Red Giant (plugins VFX/motion design) et Universe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Includes access to a library of 7,500+ ready-made Maxon Capsules (assets) and training videos.",
+        "fr": "Donne accès à une bibliothèque de plus de 7 500 Maxon Capsules (assets prêts à l'emploi) et à des vidéos de formation.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free tier; the suite is subscription-only, with annual billing offering the best discount versus monthly.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Full pricing table and per-app breakdown were not accessible in this session's page fetch, limiting confidence in exact figures.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No free tier; the suite is subscription-only, with annual billing offering the best discount versus monthly.",
+        "fr": "Aucun palier gratuit ; la suite est uniquement disponible par abonnement, la facturation annuelle offrant la meilleure remise par rapport au mensuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Full pricing table and per-app breakdown were not accessible in this session's page fetch, limiting confidence in exact figures.",
+        "fr": "Le tableau tarifaire complet et le détail par application n'étaient pas accessibles lors de la récupération de la page, ce qui limite la fiabilité des chiffres exacts.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["mac", "windows"]
+    "platforms": [
+      "mac",
+      "windows"
+    ]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A 3D artist, motion designer, or VFX freelancer who needs modeling, sculpting, rendering, and motion graphics tools in one subscription.",
+      "fr": "Un artiste 3D, motion designer ou freelance VFX qui a besoin d'outils de modélisation, sculpture, rendu et motion design réunis dans un seul abonnement."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: model and render a 3D product animation in Cinema 4D with Redshift, result: a finished render without buying a separate renderer license.",
+      "fr": "Usage : modéliser et rendre une animation 3D produit dans Cinema 4D avec Redshift, résultat : un rendu fini sans acheter de licence de moteur de rendu séparée."
+    },
+    {
+      "en": "Usage: sculpt a character in ZBrush then add motion graphics effects with Red Giant, result: a full 3D-to-VFX pipeline inside one subscription.",
+      "fr": "Usage : sculpter un personnage dans ZBrush puis ajouter des effets de motion design avec Red Giant, résultat : un pipeline complet de la 3D au VFX dans un seul abonnement."
+    }
+  ],
   "alternatives": [
-    { "slug": "blender", "reason": { "en": "Free, open-source 3D suite covering much of the same modeling/animation/rendering workflow.", "fr": null } },
-    { "slug": "houdini", "reason": { "en": "Competing professional 3D/VFX toolset, particularly for procedural and simulation work.", "fr": null } }
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Free, open-source 3D suite covering much of the same modeling/animation/rendering workflow.",
+        "fr": "Suite 3D libre et gratuite qui couvre une grande partie du même flux de modélisation, animation et rendu."
+      }
+    },
+    {
+      "slug": "houdini",
+      "reason": {
+        "en": "Competing professional 3D/VFX toolset, particularly for procedural and simulation work.",
+        "fr": "Outil 3D/VFX professionnel concurrent, particulièrement pour le travail procédural et les simulations."
+      }
+    },
+    {
+      "slug": "adobe",
+      "reason": {
+        "en": "Broad creative subscription bundle that overlaps on motion graphics and VFX, though centered on video/design rather than 3D modeling.",
+        "fr": "Large bundle créatif par abonnement qui recoupe le motion design et le VFX, même s'il est centré sur la vidéo et le design plutôt que sur la modélisation 3D."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact current monthly and annual prices could not be confirmed directly from the fetched page content in this session; relies on previously cached figures.",
     "Whether a standalone Cinema 4D-only plan exists separate from the full Maxon One bundle was not confirmed."
   ],
-  "conflicts": []
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Bundling five professional tools under one subscription is framed as a 30%+ saving versus buying separately, but the exact monthly price could not be confirmed in this session.",
+        "fr": "Regrouper cinq outils professionnels dans un seul abonnement est présenté comme une économie d'au moins 30 % par rapport à un achat séparé, mais le prix mensuel exact n'a pas pu être confirmé dans cette session.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A suite spanning modeling, sculpting, rendering, and VFX plugins implies a learning curve across several distinct applications, not a single simple workflow.",
+        "fr": "Une suite qui couvre modélisation, sculpture, rendu et plugins VFX implique une courbe d'apprentissage sur plusieurs applications distinctes, pas un flux de travail unique et simple.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Each bundled app (Cinema 4D, Redshift, ZBrush, Red Giant) is an established professional tool in its category, delivering the advertised 3D and VFX workflow.",
+        "fr": "Chaque application du bundle (Cinema 4D, Redshift, ZBrush, Red Giant) est un outil professionnel reconnu dans sa catégorie, qui tient la promesse du flux 3D et VFX annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Combines a full 3D modeling/animation app, a GPU renderer, a sculpting tool, and VFX plugins, covering a professional production pipeline end to end.",
+        "fr": "Combine une application complète de modélisation/animation 3D, un moteur de rendu GPU, un outil de sculpture et des plugins VFX, couvrant un pipeline de production professionnel de bout en bout.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and file portability after cancellation are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des fichiers après résiliation ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "3D and VFX suite",
+      "fr": "Suite 3D et VFX"
+    },
+    "shortDescription": {
+      "en": "Subscription bundle covering 3D modeling, sculpting, GPU rendering, and VFX/motion graphics plugins in one license.",
+      "fr": "Bundle par abonnement qui réunit modélisation 3D, sculpture, rendu GPU et plugins VFX/motion design en une licence."
+    },
+    "longDescription": {
+      "en": "Maxon One combines Cinema 4D for modeling and animation, Redshift as the GPU renderer, ZBrush for digital sculpting, and Red Giant's VFX and motion graphics plugins under a single subscription, plus access to a library of 7,500+ ready-made assets and training videos.\n\nIt is billed as a subscription only, with annual billing pitched as a 30%+ saving versus buying the tools separately; the exact monthly-only figure was not confirmed in this session. It suits a 3D artist, motion designer, or VFX freelancer who needs the full modeling-to-rendering pipeline rather than a single specialized app.",
+      "fr": "Maxon One réunit Cinema 4D pour la modélisation et l'animation, Redshift comme moteur de rendu GPU, ZBrush pour la sculpture numérique et les plugins VFX de Red Giant dans un seul abonnement, avec l'accès à plus de 7 500 assets prêts à l'emploi et des vidéos de formation.\n\nL'offre est uniquement par abonnement, la facturation annuelle étant présentée comme une économie d'au moins 30 % par rapport à un achat séparé ; le montant mensuel exact n'a pas pu être confirmé dans cette session. L'outil convient à un artiste 3D, motion designer ou freelance VFX qui a besoin du pipeline complet plutôt que d'une seule application spécialisée."
+    },
+    "pros": [
+      {
+        "en": "Five professional 3D/VFX tools under one license instead of separate purchases.",
+        "fr": "Cinq outils 3D/VFX professionnels sous une seule licence au lieu d'achats séparés."
+      },
+      {
+        "en": "Includes a large library of ready-made assets and training videos.",
+        "fr": "Inclut une grande bibliothèque d'assets prêts à l'emploi et de vidéos de formation."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free tier; access requires an active subscription.",
+        "fr": "Aucun palier gratuit ; l'accès nécessite un abonnement actif."
+      },
+      {
+        "en": "Spans several distinct applications, so mastering the full suite takes longer than learning a single tool.",
+        "fr": "Couvre plusieurs applications distinctes, donc maîtriser la suite complète prend plus de temps que d'apprendre un seul outil."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You regularly need modeling, sculpting, rendering, and VFX/motion graphics tools together and would otherwise buy several of these apps separately.",
+        "fr": "Tu as régulièrement besoin de modélisation, sculpture, rendu et VFX/motion design ensemble, et tu achèterais sinon plusieurs de ces applications séparément."
+      },
+      "avoidIf": {
+        "en": "You only need one of the bundled apps, since a standalone license for that single tool may cost less than the full suite.",
+        "fr": "Tu n'as besoin que d'une seule des applications du bundle, car une licence isolée pour cet outil peut coûter moins cher que la suite complète."
+      },
+      "threshold": {
+        "en": "The annual plan bills at roughly $99.91/month per seat when paid yearly; compare that to the combined cost of buying Cinema 4D, Redshift, ZBrush, and Red Giant separately.",
+        "fr": "Le plan annuel revient à environ 99,91 $/mois par siège en facturation annuelle ; compare ce montant au coût cumulé de Cinema 4D, Redshift, ZBrush et Red Giant achetés séparément."
+      },
+      "billingTraps": {
+        "en": "Pricing is framed around annual billing as the best rate; the monthly-only price was not visible on the fetched page, so confirm it before committing to a shorter term.",
+        "fr": "La tarification met en avant la facturation annuelle comme le meilleur tarif ; le prix en facturation mensuelle seule n'était pas visible sur la page récupérée, à vérifier avant de t'engager sur une durée plus courte."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
+  "conflicts": [],
+  "hold": "pricing table not rendered, figures from a cached value; check in a browser"
 }

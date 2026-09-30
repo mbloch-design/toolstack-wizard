@@ -3,7 +3,8 @@
   "slug": "elevenlabs",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "ElevenLabs",
     "vendor": "ElevenLabs Inc.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "10,000 credits/month, access to Text to Speech, Speech to Text, Sound Effects, Voice Design, Music, Productions, Image, up to 3 projects.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "10,000 credits/month, access to Text to Speech, Speech to Text, Sound Effects, Voice Design, Music, Productions, Image, up to 3 projects.", "fr": "10 000 crédits/mois, accès à la synthèse vocale, la transcription, les effets sonores, la conception de voix, la musique, Productions, Image, jusqu'à 3 projets." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 6, "annualPerMonth": 5, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "30,000 credits/month, commercial license, instant voice cloning, 20 projects, dubbing studio.", "fr": null }],
+        "keyLimits": [{ "en": "30,000 credits/month, commercial license, instant voice cloning, 20 projects, dubbing studio.", "fr": "30 000 crédits/mois, licence commerciale, clonage de voix instantané, 20 projets, Dubbing Studio." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 22, "annualPerMonth": 18.33, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "121,000 credits/month, professional voice cloning.", "fr": null }],
+        "keyLimits": [{ "en": "121,000 credits/month, professional voice cloning.", "fr": "121 000 crédits/mois, clonage de voix professionnel." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": 99, "annualPerMonth": 82.5, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "600,000 credits/month, 44.1kHz PCM audio output via API, 192kbps quality audio.", "fr": null }],
+        "keyLimits": [{ "en": "600,000 credits/month, 44.1kHz PCM audio output via API, 192kbps quality audio.", "fr": "600 000 crédits/mois, sortie audio 44,1 kHz PCM via API, qualité audio 192 kbps." }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +65,7 @@
         "minSeats": 3,
         "price": { "monthly": 299, "annualPerMonth": 249.17, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1.8M credits/month, 3 workspace seats, team collaboration, 3 professional voice clones.", "fr": null }],
+        "keyLimits": [{ "en": "1.8M credits/month, 3 workspace seats, team collaboration, 3 professional voice clones.", "fr": "1,8 M de crédits/mois, 3 sièges d'espace de travail, collaboration d'équipe, 3 clones de voix professionnels." }],
         "sourceIds": ["s1"]
       },
       {
@@ -74,7 +75,7 @@
         "minSeats": 10,
         "price": { "monthly": 990, "annualPerMonth": 825, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "6M credits/month, low-latency TTS (~5 cents/minute), 10 professional voice clones, 10 workspace seats.", "fr": null }],
+        "keyLimits": [{ "en": "6M credits/month, low-latency TTS (~5 cents/minute), 10 professional voice clones, 10 workspace seats.", "fr": "6 M de crédits/mois, synthèse vocale faible latence (~5 cents/minute), 10 clones de voix professionnels, 10 sièges d'espace de travail." }],
         "sourceIds": ["s1"]
       },
       {
@@ -84,37 +85,84 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom credits, custom terms and DPA/SLA assurances, BAAs for HIPAA customers.", "fr": null }],
+        "keyLimits": [{ "en": "Custom credits, custom terms and DPA/SLA assurances, BAAs for HIPAA customers.", "fr": "Crédits sur mesure, conditions et garanties DPA/SLA personnalisées, BAA pour les clients soumis à HIPAA." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Pricing is usage-based via a monthly credit allowance that is consumed by text-to-speech, dubbing and other generative features; heavy use of high-quality voices or dubbing can exhaust credits before the month ends.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "The Creator plan page showed a promotional '50% off first month' banner ($11 instead of $22); the regular price ($22/mo) was used here, not the promo.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Pricing is usage-based via a monthly credit allowance that is consumed by text-to-speech, dubbing and other generative features; heavy use of high-quality voices or dubbing can exhaust credits before the month ends.", "fr": "La tarification est basée sur l'usage, via une allocation de crédits mensuelle consommée par la synthèse vocale, le doublage et les autres fonctions génératives ; un usage intensif de voix haute qualité ou de doublage peut épuiser les crédits avant la fin du mois.", "sourceIds": ["s1"] },
+      { "en": "The Creator plan page showed a promotional '50% off first month' banner ($11 instead of $22); the regular price ($22/mo) was used here, not the promo.", "fr": "La page de l'offre Creator affichait une bannière promotionnelle '50% de réduction le premier mois' (11 $ au lieu de 22 $) ; c'est le prix normal (22 $/mois) qui a été retenu ici, pas la promo.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Text-to-speech synthesis with a large library of AI voices and multiple languages.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Instant and professional voice cloning for creating custom AI voices.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Dubbing Studio for translating and re-voicing video/audio content across languages.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Speech-to-text, sound effects generation and AI music generation included in the same platform.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Text-to-speech synthesis with a large library of AI voices and multiple languages.", "fr": "Synthèse vocale avec une large bibliothèque de voix IA et plusieurs langues.", "sourceIds": ["s1"] },
+      { "en": "Instant and professional voice cloning for creating custom AI voices.", "fr": "Clonage de voix instantané et professionnel pour créer des voix IA sur mesure.", "sourceIds": ["s1"] },
+      { "en": "Dubbing Studio for translating and re-voicing video/audio content across languages.", "fr": "Dubbing Studio pour traduire et redoubler du contenu vidéo/audio dans d'autres langues.", "sourceIds": ["s1"] },
+      { "en": "Speech-to-text, sound effects generation and AI music generation included in the same platform.", "fr": "Transcription, génération d'effets sonores et génération de musique par IA inclus dans la même plateforme.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan credits (10,000/month) are consumed quickly by longer audio generations, limiting sustained use.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Professional voice cloning, needed for the highest-fidelity custom voices, is gated behind the Creator plan and above.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free plan credits (10,000/month) are consumed quickly by longer audio generations, limiting sustained use.", "fr": "Les crédits du plan gratuit (10 000/mois) sont vite consommés par les générations audio longues, ce qui limite un usage soutenu.", "sourceIds": ["s1"] },
+      { "en": "Professional voice cloning, needed for the highest-fidelity custom voices, is gated behind the Creator plan and above.", "fr": "Le clonage de voix professionnel, nécessaire pour les voix sur mesure les plus fidèles, est réservé à l'offre Creator et au-delà.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator who needs voiceovers, dubbing or sound design for videos and wants AI voice generation without recording studio equipment.", "fr": "Un créateur de contenu qui a besoin de voix off, de doublage ou de conception sonore pour ses vidéos et veut générer des voix par IA sans matériel de studio." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Generate a voiceover for a video script using text-to-speech and a cloned voice, under the Starter plan's commercial license.", "fr": "Générer une voix off pour un script vidéo avec la synthèse vocale et une voix clonée, sous la licence commerciale de l'offre Starter." },
+    { "en": "Translate and re-voice a video into another language for a new audience using Dubbing Studio.", "fr": "Traduire et redoubler une vidéo dans une autre langue pour un nouveau public grâce à Dubbing Studio." }
+  ],
   "alternatives": [
-    { "slug": "whisper", "reason": { "en": "OpenAI's speech-to-text model, overlapping with ElevenLabs' transcription capability.", "fr": null } },
-    { "slug": "descript", "reason": { "en": "Audio/video editing tool with AI voice and dubbing features targeting similar creator workflows.", "fr": null } },
-    { "slug": "suno", "reason": { "en": "AI audio generation platform, overlapping on the music-generation side.", "fr": null } }
+    { "slug": "whisper", "reason": { "en": "OpenAI's speech-to-text model, overlapping with ElevenLabs' transcription capability.", "fr": "Le modèle de transcription d'OpenAI, qui recoupe la fonction de transcription d'ElevenLabs." } },
+    { "slug": "descript", "reason": { "en": "Audio/video editing tool with AI voice and dubbing features targeting similar creator workflows.", "fr": "Outil de montage audio/vidéo avec des fonctions de voix IA et de doublage, pour des flux de créateurs similaires." } },
+    { "slug": "suno", "reason": { "en": "AI audio generation platform, overlapping on the music-generation side.", "fr": "Plateforme de génération audio par IA, qui recoupe le volet génération de musique." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Starter unlocks a commercial license and instant voice cloning for $6/month ($5 on annual billing), a low entry cost for creators who need to use generated voices commercially.", "fr": "Starter débloque une licence commerciale et le clonage de voix instantané pour 6 $/mois (5 $ en engagement annuel), un coût d'entrée faible pour les créateurs qui doivent exploiter des voix générées commercialement.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers text-to-speech, voice cloning, dubbing, speech-to-text, sound effects and music generation as described, with no workaround mentioned in the facts.", "fr": "Assure synthèse vocale, clonage de voix, doublage, transcription, effets sonores et génération de musique comme décrit, sans contournement mentionné dans les faits.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines text-to-speech, cloning, dubbing, transcription, sound effects and music generation in one platform, a broad range compared to a single-purpose voice tool.", "fr": "Combine synthèse vocale, clonage, doublage, transcription, effets sonores et génération de musique dans une seule plateforme, un large périmètre comparé à un outil de voix mono-usage.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI voice generation", "fr": "Voix générées par IA" },
+    "shortDescription": { "en": "ElevenLabs generates AI voices for text-to-speech, voice cloning, dubbing, speech-to-text, sound effects and music, priced by a monthly credit allowance.", "fr": "ElevenLabs génère des voix IA pour synthèse vocale, clonage de voix, doublage, transcription, effets sonores et musique, avec une tarification par crédits mensuels." },
+    "longDescription": {
+      "en": "ElevenLabs turns text into natural-sounding speech across many languages, with instant and professional voice cloning for building custom AI voices. The same platform includes Dubbing Studio for translating and re-voicing video content, plus speech-to-text, sound effects and AI music generation.\n\nThe Free plan gives 10,000 credits per month, enough to try most features but consumed quickly by longer generations. Starter, at $6/month ($5 on annual billing), adds a commercial license and instant voice cloning with 30,000 credits; professional voice cloning requires Creator ($22/month) or above. Higher tiers raise the credit allowance and add team seats, up to Business at $990/month for 10 seats.",
+      "fr": "ElevenLabs transforme du texte en voix naturelle dans de nombreuses langues, avec un clonage de voix instantané ou professionnel pour créer des voix sur mesure. La plateforme inclut aussi Dubbing Studio pour traduire et redoubler des vidéos, ainsi que la transcription, les effets sonores et la musique par IA.\n\nLe plan gratuit offre 10 000 crédits par mois, de quoi essayer la plupart des fonctions, mais vite consommés par des générations longues. Starter, à 6 $/mois (5 $ en annuel), ajoute licence commerciale et clonage de voix instantané avec 30 000 crédits ; le clonage professionnel demande Creator (22 $/mois) ou plus. Les offres supérieures augmentent crédits et sièges d'équipe, jusqu'à Business à 990 $/mois pour 10 sièges."
+    },
+    "pros": [
+      { "en": "Commercial license and instant voice cloning are available from the cheapest paid tier, at $6/month.", "fr": "La licence commerciale et le clonage de voix instantané sont accessibles dès l'offre payante la moins chère, à 6 $/mois." },
+      { "en": "One platform covers text-to-speech, cloning, dubbing, speech-to-text, sound effects and music, instead of separate tools.", "fr": "Une seule plateforme couvre synthèse vocale, clonage, doublage, transcription, effets sonores et musique, au lieu d'outils séparés." }
+    ],
+    "cons": [
+      { "en": "The free plan's 10,000 monthly credits run out quickly with longer audio generations.", "fr": "Les 10 000 crédits mensuels du plan gratuit s'épuisent vite avec des générations audio longues." },
+      { "en": "Professional (higher-fidelity) voice cloning is gated behind the Creator plan at $22/month or above.", "fr": "Le clonage de voix professionnel (plus fidèle) est réservé à l'offre Creator à 22 $/mois ou plus." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need AI voice generation with a commercial license and are fine starting at $6/month with a credit allowance.", "fr": "Tu as besoin de génération de voix IA avec une licence commerciale, et un départ à 6 $/mois avec une allocation de crédits te convient." },
+      "avoidIf": { "en": "You need professional voice cloning from day one: that requires the $22/month Creator plan, not Starter.", "fr": "Tu as besoin de clonage de voix professionnel dès le départ : cela demande l'offre Creator à 22 $/mois, pas Starter." },
+      "threshold": { "en": "Starter costs $6/month ($5 annual) for 30,000 credits and a commercial license, the cheapest paid tier confirmed for real use beyond the free plan.", "fr": "Starter coûte 6 $/mois (5 $ en annuel) pour 30 000 crédits et une licence commerciale, l'offre payante la moins chère confirmée pour un usage réel au-delà du plan gratuit." },
+      "billingTraps": { "en": "Pricing runs on a monthly credit allowance consumed by every generation; heavy dubbing or high-quality voice use can exhaust credits before the month ends, with no hard overage price documented in the facts.", "fr": "La tarification repose sur une allocation de crédits mensuelle consommée par chaque génération ; un usage intensif de doublage ou de voix haute qualité peut épuiser les crédits avant la fin du mois, sans tarif de dépassement documenté dans les faits." }
+    }
+  },
   "unknowns": [
     "Exact credit-to-audio-minute conversion rate (how many credits one minute of speech consumes) was not detailed on the pricing page in this session."
   ],

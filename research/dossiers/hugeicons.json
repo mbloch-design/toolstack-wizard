@@ -3,7 +3,7 @@
   "slug": "hugeicons",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Hugeicons",
     "vendor": "Hugeicons",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://hugeicons.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Hugeicons pricing" }
+    {
+      "id": "s1",
+      "url": "https://hugeicons.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Hugeicons pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,75 +30,321 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "6,000+ Stroke Rounded icons, web app access, dev formats, free design & dev plugins.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "6,000+ Stroke Rounded icons, web app access, dev formats, free design & dev plugins.",
+        "fr": "Plus de 6 000 icônes Stroke Rounded, accès à l'application web, formats dev, plugins design et dev gratuits."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Free",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "6,000+ icons (Stroke Rounded style only), web app and free plugins.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "6,000+ icons (Stroke Rounded style only), web app and free plugins.",
+            "fr": "Plus de 6 000 icônes (style Stroke Rounded uniquement), application web et plugins gratuits."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 8.25, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 8.25,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "60,000+ icons across 10 styles, 300K monthly pageviews, 2GB monthly bandwidth, up to 6 project icon sets, custom icon upload, Figma source files, priority support. Billed at $99/year.", "fr": null }
+          {
+            "en": "60,000+ icons across 10 styles, 300K monthly pageviews, 2GB monthly bandwidth, up to 6 project icon sets, custom icon upload, Figma source files, priority support. Billed at $99/year.",
+            "fr": "Plus de 60 000 icônes dans 10 styles, 300K pages vues mensuelles, 2 Go de bande passante mensuelle, jusqu'à 6 sets d'icônes de projet, upload d'icônes personnalisées, fichiers source Figma, support prioritaire. Facturé 99 $/an."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro-plus",
         "name": "Pro Plus",
         "unit": "one_time",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 1197 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 1197
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Lifetime access: 60,000+ icons across 10 styles, 900K lifetime pageviews, 4GB lifetime bandwidth, up to 500 custom icon uploads, up to 10 project icon sets.", "fr": null }
+          {
+            "en": "Lifetime access: 60,000+ icons across 10 styles, 900K lifetime pageviews, 4GB lifetime bandwidth, up to 500 custom icon uploads, up to 10 project icon sets.",
+            "fr": "Accès à vie : plus de 60 000 icônes dans 10 styles, 900K pages vues à vie, 4 Go de bande passante à vie, jusqu'à 500 uploads d'icônes personnalisées, jusqu'à 10 sets d'icônes de projet."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [
-      { "en": "Extra bandwidth at $1/GB and extra pageviews at $3 per 300K views beyond plan limits.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Extra bandwidth at $1/GB and extra pageviews at $3 per 300K views beyond plan limits.",
+        "fr": "Bande passante supplémentaire à 1 $/Go et pages vues supplémentaires à 3 $ par 300K vues au-delà des limites du forfait.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Pro plan usage is metered by pageviews and bandwidth, with overage fees if a project exceeds its monthly allowance.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Pro plan usage is metered by pageviews and bandwidth, with overage fees if a project exceeds its monthly allowance.",
+        "fr": "L'usage du forfait Pro est mesuré en pages vues et bande passante, avec des frais de dépassement si un projet dépasse son quota mensuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Library of 51,000+ professional UI icons across multiple styles (stroke, solid, duotone, etc.) for designers and developers.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Provides ready-to-use dev formats (React, CDN) and design plugins for direct integration into codebases and design tools.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Supports custom icon uploads so teams can host their own icon sets alongside the library.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Library of 51,000+ professional UI icons across multiple styles (stroke, solid, duotone, etc.) for designers and developers.",
+        "fr": "Bibliothèque de plus de 51 000 icônes d'interface professionnelles dans plusieurs styles (trait, plein, duotone, etc.) pour designers et développeurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Provides ready-to-use dev formats (React, CDN) and design plugins for direct integration into codebases and design tools.",
+        "fr": "Fournit des formats prêts à l'emploi pour le dev (React, CDN) et des plugins de design pour une intégration directe dans le code et les outils de design.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supports custom icon uploads so teams can host their own icon sets alongside the library.",
+        "fr": "Permet l'upload d'icônes personnalisées pour que les équipes hébergent leurs propres sets d'icônes à côté de la bibliothèque.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan is restricted to a single icon style (Stroke Rounded) and a subset of the full library (6,000+ of 51,000+ icons).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Pro plan usage is capped by monthly pageviews and bandwidth, requiring paid overage or upgrade for high-traffic projects.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free plan is restricted to a single icon style (Stroke Rounded) and a subset of the full library (6,000+ of 51,000+ icons).",
+        "fr": "Le forfait gratuit est limité à un seul style d'icône (Stroke Rounded) et à une partie de la bibliothèque complète (6 000+ sur 51 000+ icônes).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pro plan usage is capped by monthly pageviews and bandwidth, requiring paid overage or upgrade for high-traffic projects.",
+        "fr": "L'usage du forfait Pro est plafonné par les pages vues et la bande passante mensuelles, avec dépassement payant ou mise à niveau nécessaire pour les projets à fort trafic.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] },
-      { "name": "React", "slug": "react", "sourceIds": ["s1"] }
+      {
+        "name": "Figma",
+        "slug": "figma",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "React",
+        "slug": "react",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
+    {
+      "slug": "figma-iconify",
+      "reason": {
+        "en": "Free Figma plugin giving access to 150,000+ icons from many libraries directly inside Figma.",
+        "fr": "Plugin Figma gratuit donnant accès à plus de 150 000 icônes de nombreuses bibliothèques directement dans Figma."
+      }
+    },
+    {
+      "slug": "icons8",
+      "reason": {
+        "en": "Broader icon, illustration, and photo library with built-in AI editing tools, a similar all-in-one asset approach.",
+        "fr": "Bibliothèque d'icônes, d'illustrations et de photos plus large avec des outils IA de retouche intégrés, une approche similaire d'assets tout-en-un."
+      }
+    },
+    {
+      "slug": "noun-project",
+      "reason": {
+        "en": "Long-standing icon library competitor with a large catalogue and a similar subscription model.",
+        "fr": "Concurrent historique de bibliothèque d'icônes, avec un grand catalogue et un modèle d'abonnement similaire."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Phosphor Icons", "officialUrl": "https://phosphoricons.com/", "reason": "Direct competitor: another large open icon library with multiple styles, not in the catalogue" }
+    {
+      "name": "Phosphor Icons",
+      "officialUrl": "https://phosphoricons.com/",
+      "reason": "Direct competitor: another large open icon library with multiple styles, not in the catalogue"
+    },
+    {
+      "name": "Font Awesome",
+      "officialUrl": "https://fontawesome.com/",
+      "reason": "Major icon library competitor, not in the catalogue as its own entry"
+    },
+    {
+      "name": "Lucide",
+      "officialUrl": "https://lucide.dev/",
+      "reason": "Popular open-source icon set competitor, not in the catalogue as its own entry"
+    }
   ],
   "unknowns": [
     "Exact number of icons per style beyond totals shown was not itemized on the pricing page.",
     "Whether a free trial of Pro exists was not stated."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Pro at $99/year covers 60,000+ icons across 10 styles for one site, but usage is metered by pageviews and bandwidth, adding overage risk absent from flat-fee icon libraries.",
+        "fr": "Pro à 99 $/an couvre plus de 60 000 icônes dans 10 styles pour un site, mais l'usage est mesuré en pages vues et bande passante, avec un risque de dépassement absent des bibliothèques d'icônes à prix fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Ready-to-use React and CDN formats plus design plugins let a project start using icons directly, without a build step.",
+        "fr": "Les formats React et CDN prêts à l'emploi, plus les plugins de design, permettent d'utiliser les icônes directement dans un projet, sans étape de build.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers a working icon library with dev-ready formats and design plugins across both free and paid tiers, as promised.",
+        "fr": "Livre une bibliothèque d'icônes fonctionnelle avec des formats prêts pour le dev et des plugins de design, sur les forfaits gratuit et payants, comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "60,000+ icons across 10 styles on Pro is solid but mid-sized versus the category's largest multi-format libraries, and the full range needs a paid upgrade.",
+        "fr": "60 000+ icônes dans 10 styles sur Pro, c'est solide mais de taille moyenne face aux plus grandes bibliothèques multi-formats de la catégorie, et la gamme complète demande une mise à niveau payante.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and license portability beyond the plan's usage terms are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité de la licence au-delà des conditions d'usage du forfait ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designers and frontend developers who need a consistent, ready-to-use icon set for products and interfaces.",
+      "fr": "Designers et développeurs frontend qui ont besoin d'un set d'icônes cohérent et prêt à l'emploi pour leurs produits et interfaces."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: drop a consistent icon set into a new product's UI using the React or CDN format instead of designing icons from scratch.",
+      "fr": "Usage : intégrer un set d'icônes cohérent dans l'interface d'un nouveau produit via le format React ou CDN, plutôt que de dessiner des icônes à zéro."
+    },
+    {
+      "en": "Usage: pull matching icons directly into a Figma file via the plugin while designing a screen.",
+      "fr": "Usage : récupérer des icônes assorties directement dans un fichier Figma via le plugin pendant la conception d'un écran."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Icon library",
+      "fr": "Bibliothèque d'icônes"
+    },
+    "shortDescription": {
+      "en": "An icon library of 51,000+ UI icons across multiple styles, with dev and design formats, free for one style and paid from $8.25/month.",
+      "fr": "Une bibliothèque de plus de 51 000 icônes dans plusieurs styles, avec formats dev et design, gratuite pour un style et payante dès 8,25 $/mois."
+    },
+    "longDescription": {
+      "en": "Hugeicons is an icon library of 51,000+ UI icons across styles like stroke, solid, and duotone, with ready-to-use dev formats (React, CDN) and design plugins (Figma) for direct integration. Teams can also upload custom icons to sit alongside the library.\n\nThe free plan gives access to 6,000+ icons in one style only. The Pro plan, around $99/year, unlocks the full 60,000+ icon, 10-style library but is metered by monthly pageviews and bandwidth, with overage fees for high-traffic projects. A one-time Pro Plus option at $1,197 covers lifetime access instead.",
+      "fr": "Hugeicons est une bibliothèque de plus de 51 000 icônes d'interface dans plusieurs styles (trait, plein, duotone), avec des formats dev prêts à l'emploi (React, CDN) et des plugins de design (Figma) pour une intégration directe. Les équipes peuvent aussi uploader leurs propres icônes à côté de la bibliothèque.\n\nLe forfait gratuit donne accès à plus de 6 000 icônes dans un seul style. Le forfait Pro, environ 99 $/an, débloque la bibliothèque complète (60 000+ icônes, 10 styles) mais est mesuré en pages vues et bande passante mensuelles, avec des frais de dépassement pour les projets à fort trafic. Une option Pro Plus à 1 197 $ en un seul paiement donne un accès à vie."
+    },
+    "pros": [
+      {
+        "en": "Ready-to-use React and CDN formats plus a Figma plugin cover both dev and design workflows.",
+        "fr": "Les formats React et CDN prêts à l'emploi, plus le plugin Figma, couvrent les workflows dev et design."
+      },
+      {
+        "en": "Custom icon upload lets a team host its own icon sets alongside the library.",
+        "fr": "L'upload d'icônes personnalisées permet à une équipe d'héberger ses propres sets d'icônes à côté de la bibliothèque."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan is limited to one icon style and a fraction of the full library.",
+        "fr": "Le forfait gratuit est limité à un seul style d'icône et à une fraction de la bibliothèque complète."
+      },
+      {
+        "en": "Pro plan usage is metered by pageviews and bandwidth, with overage fees for high-traffic projects.",
+        "fr": "L'usage du forfait Pro est mesuré en pages vues et bande passante, avec des frais de dépassement pour les projets à fort trafic."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a large, consistent icon library with ready dev and design formats across a real project.",
+        "fr": "Tu as besoin d'une grande bibliothèque d'icônes cohérente, avec des formats dev et design prêts à l'emploi, sur un vrai projet."
+      },
+      "avoidIf": {
+        "en": "A single icon style covers your needs, or your project's traffic would trigger frequent overage fees.",
+        "fr": "Un seul style d'icône couvre ton besoin, ou le trafic de ton projet déclencherait souvent des frais de dépassement."
+      },
+      "threshold": {
+        "en": "Below the Pro plan's annual cost of $99, the free single-style tier likely covers a small, low-traffic project.",
+        "fr": "En dessous du coût annuel du forfait Pro, 99 $, le forfait gratuit à un seul style couvre sans doute un petit projet à faible trafic."
+      },
+      "billingTraps": {
+        "en": "Pro plan usage is metered by pageviews and bandwidth; exceeding the monthly allowance triggers per-unit overage fees ($1/GB, $3 per 300K views).",
+        "fr": "L'usage du forfait Pro est mesuré en pages vues et bande passante ; dépasser le quota mensuel déclenche des frais de dépassement à l'unité (1 $/Go, 3 $ par 300K vues)."
+      }
+    }
+  }
 }

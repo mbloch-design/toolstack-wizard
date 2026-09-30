@@ -3,7 +3,7 @@
   "slug": "clockify",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Clockify",
     "vendor": "CAKE.com Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://clockify.me/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Clockify pricing" }
+    {
+      "id": "s1",
+      "url": "https://clockify.me/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Clockify pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Unlimited users and projects; time tracking, timesheet, calendar; reports limited to a 1-month range; PDF-only export." }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Unlimited users and projects; time tracking, timesheet, calendar; reports limited to a 1-month range; PDF-only export.",
+        "fr": "Utilisateurs et projets illimités ; suivi du temps, feuille de temps, calendrier ; rapports limités à une plage d'un mois ; export au format PDF uniquement."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,84 +47,344 @@
         "name": "Free",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users and projects; reports limited to a 1-month range." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited users and projects; reports limited to a 1-month range.",
+            "fr": "Utilisateurs et projets illimités ; rapports limités à une plage d'un mois."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "basic",
         "name": "Basic",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 4.99, "annualPerMonth": 3.99, "oneTime": null },
+        "price": {
+          "monthly": 4.99,
+          "annualPerMonth": 3.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds bulk editing, kiosk mode, time import." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds bulk editing, kiosk mode, time import.",
+            "fr": "Ajoute l'édition en masse, le mode kiosque et l'import de temps."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard",
         "name": "Standard",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 6.99, "annualPerMonth": 5.49, "oneTime": null },
+        "price": {
+          "monthly": 6.99,
+          "annualPerMonth": 5.49,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds invoicing, time off, attendance, approval workflows." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds invoicing, time off, attendance, approval workflows.",
+            "fr": "Ajoute la facturation, la gestion des congés, la présence et les workflows d'approbation."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 9.99, "annualPerMonth": 7.99, "oneTime": null },
+        "price": {
+          "monthly": 9.99,
+          "annualPerMonth": 7.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds activity monitoring, scheduling, forecasting, expenses, budget tracking, GPS tracking." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds activity monitoring, scheduling, forecasting, expenses, budget tracking, GPS tracking.",
+            "fr": "Ajoute le suivi d'activité, la planification, les prévisions, les notes de frais, le suivi budgétaire et le suivi GPS."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 14.99, "annualPerMonth": 11.99, "oneTime": null },
+        "price": {
+          "monthly": 14.99,
+          "annualPerMonth": 11.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds SSO, custom subdomain, SCIM provisioning, audit log." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds SSO, custom subdomain, SCIM provisioning, audit log.",
+            "fr": "Ajoute le SSO, un sous-domaine personnalisé, le provisionnement SCIM et le journal d'audit."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [],
     "cautions": [
-      { "en": "Annual billing is roughly 20% cheaper per seat than monthly billing across all paid tiers.", "sourceIds": ["s1"] }
+      {
+        "en": "Annual billing is roughly 20% cheaper per seat than monthly billing across all paid tiers.",
+        "fr": "La facturation annuelle coûte environ 20 % de moins par siège que la facturation mensuelle sur tous les paliers payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Unlimited-user time tracking with timer, timesheet and calendar views on web, desktop and mobile apps.", "sourceIds": ["s1"] },
-      { "en": "80+ native integrations plus a public API and browser extension.", "sourceIds": ["s1"] },
-      { "en": "Invoicing, budgeting and time-off management available from the Standard plan up.", "sourceIds": ["s1"] }
+      {
+        "en": "Unlimited-user time tracking with timer, timesheet and calendar views on web, desktop and mobile apps.",
+        "fr": "Suivi du temps sans limite d'utilisateurs, avec vues minuteur, feuille de temps et calendrier sur les apps web, bureau et mobile.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "80+ native integrations plus a public API and browser extension.",
+        "fr": "Plus de 80 intégrations natives, une API publique et une extension navigateur.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Invoicing, budgeting and time-off management available from the Standard plan up.",
+        "fr": "Facturation, gestion budgétaire et gestion des congés disponibles à partir du plan Standard.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan report history is capped at a 1-month range and only exports to PDF.", "sourceIds": ["s1"] },
-      { "en": "Advanced admin/security features (SSO, SCIM, audit log) require the top Enterprise tier.", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan report history is capped at a 1-month range and only exports to PDF.",
+        "fr": "L'historique des rapports du plan gratuit est plafonné à une plage d'un mois et n'exporte qu'au format PDF.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced admin/security features (SSO, SCIM, audit log) require the top Enterprise tier.",
+        "fr": "Les fonctions avancées d'administration/sécurité (SSO, SCIM, journal d'audit) nécessitent le plan Enterprise le plus élevé.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Asana", "slug": "asana", "sourceIds": ["s1"] },
-      { "name": "Trello", "slug": "trello", "sourceIds": ["s1"] },
-      { "name": "QuickBooks", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Asana",
+        "slug": "asana",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Trello",
+        "slug": "trello",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "QuickBooks",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web", "windows", "macos", "linux", "ios", "android"]
+    "platforms": [
+      "web",
+      "windows",
+      "macos",
+      "linux",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A small team or solo freelancer who needs unlimited-user time tracking with optional invoicing and approval workflows as the team grows.",
+      "fr": "Une petite équipe ou un freelance qui a besoin d'un suivi du temps sans limite d'utilisateurs, avec facturation et workflows d'approbation en option quand l'équipe grandit."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: track billable hours per project on the free plan, result: a client-ready timesheet without paying for a seat.",
+      "fr": "Usage : suivre les heures facturables par projet sur le plan gratuit, résultat : une feuille de temps prête pour le client sans payer de siège."
+    },
+    {
+      "en": "Usage: turn tracked hours into an invoice on the Standard plan, result: billing goes out without re-entering hours in a separate tool.",
+      "fr": "Usage : transformer les heures suivies en facture sur le plan Standard, résultat : la facturation part sans ressaisir les heures dans un autre outil."
+    }
+  ],
   "alternatives": [
-    { "slug": "timecamp", "reason": { "en": "Direct time-tracking competitor with a similar freemium model." } },
-    { "slug": "asana", "reason": { "en": "Broader project management tool with time-tracking overlap for teams." } }
+    {
+      "slug": "timecamp",
+      "reason": {
+        "en": "Direct time-tracking competitor with a similar freemium model.",
+        "fr": "Concurrent direct de suivi du temps avec un modèle freemium similaire."
+      }
+    },
+    {
+      "slug": "deputy",
+      "reason": {
+        "en": "Competing time tracking and scheduling tool aimed at shift-based and attendance tracking.",
+        "fr": "Outil concurrent de suivi du temps et de planification orienté suivi des équipes et de la présence."
+      }
+    },
+    {
+      "slug": "plutio",
+      "reason": {
+        "en": "All-in-one freelancer tool that bundles time tracking with invoicing, covering the same core need.",
+        "fr": "Outil tout-en-un pour freelances qui associe suivi du temps et facturation, couvrant le même besoin principal."
+      }
+    },
+    {
+      "slug": "asana",
+      "reason": {
+        "en": "Broader project management tool with time-tracking overlap for teams.",
+        "fr": "Outil de gestion de projet plus large avec un recoupement sur le suivi du temps pour les équipes."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Toggl Track", "officialUrl": "https://toggl.com/track/", "reason": "Leading time-tracking competitor, not in the catalogue" }
+    {
+      "name": "Toggl Track",
+      "officialUrl": "https://toggl.com/track/",
+      "reason": "Leading time-tracking competitor, not in the catalogue"
+    }
   ],
   "unknowns": [
     "Free plan user cap: pricing page snapshot showed a table implying 'up to 5 users' in one summary but Clockify's public marketing elsewhere states the free plan is unlimited-user; not fully reconciled from the single page fetched."
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Unlimited users and projects are free, and the entry paid plan is $3.99/month per seat billed annually, cheap for basic time tracking with reporting.",
+        "fr": "Utilisateurs et projets illimités sont gratuits, et le plan payant d'entrée coûte 3,99 $/mois par siège en facturation annuelle, un tarif bas pour le suivi du temps avec rapports.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The free plan alone covers timer, timesheet, and calendar views across web, desktop, and mobile without setup beyond signup.",
+        "fr": "Le plan gratuit seul couvre les vues minuteur, feuille de temps et calendrier sur web, bureau et mobile sans configuration au-delà de l'inscription.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers time tracking, timesheets, and (from Standard up) invoicing and approvals as advertised, with 80+ integrations to fit existing workflows.",
+        "fr": "Assure le suivi du temps, les feuilles de temps et, à partir du plan Standard, la facturation et les approbations comme annoncé, avec plus de 80 intégrations pour s'adapter aux flux existants.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Scales from basic tracking to activity monitoring, scheduling, forecasting, budget tracking, and GPS tracking on the Pro tier, covering a wide range of team needs.",
+        "fr": "Évolue du suivi de base au suivi d'activité, à la planification, aux prévisions, au suivi budgétaire et au suivi GPS sur le plan Pro, couvrant un large éventail de besoins d'équipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats beyond the free plan's PDF-only report export are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export au-delà de l'export PDF des rapports du plan gratuit ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Time tracking",
+      "fr": "Suivi du temps"
+    },
+    "shortDescription": {
+      "en": "Time-tracking tool with unlimited free users and paid tiers adding invoicing, scheduling, and admin controls.",
+      "fr": "Outil de suivi du temps avec utilisateurs gratuits illimités et plans payants ajoutant facturation, planification et contrôles d'administration."
+    },
+    "longDescription": {
+      "en": "Clockify tracks time with a timer, timesheet, and calendar view across web, desktop, and mobile apps, with 80+ integrations and a public API. The free plan includes unlimited users and projects, with reports capped at a 1-month range and PDF-only export.\n\nPaid tiers start at $3.99/month per seat (annual billing) for bulk editing and kiosk mode, rising to $5.49 for invoicing and time-off management, $7.99 for activity monitoring and budget tracking, and $11.99 for SSO and audit logs. It fits a solo freelancer or small team that wants free time tracking now and a clear upgrade path to invoicing and admin features as the team grows.",
+      "fr": "Clockify suit le temps via un minuteur, une feuille de temps et un calendrier sur les apps web, bureau et mobile, avec plus de 80 intégrations et une API publique. Le plan gratuit inclut utilisateurs et projets illimités, avec des rapports plafonnés à un mois et un export PDF uniquement.\n\nLes plans payants démarrent à 3,99 $/mois par siège (annuel) pour l'édition en masse, montent à 5,49 $ pour la facturation et les congés, 7,99 $ pour le suivi d'activité et le budget, et 11,99 $ pour le SSO. L'outil convient à un freelance ou une petite équipe qui veut un suivi gratuit dès maintenant et un chemin clair vers la facturation."
+    },
+    "pros": [
+      {
+        "en": "Unlimited users and projects on the free plan, not just a limited trial.",
+        "fr": "Utilisateurs et projets illimités sur le plan gratuit, pas seulement un essai limité."
+      },
+      {
+        "en": "Clear upgrade path from basic tracking to invoicing, scheduling, and admin controls as needs grow.",
+        "fr": "Chemin d'évolution clair du suivi de base vers la facturation, la planification et les contrôles d'administration selon les besoins."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan reports are capped at a 1-month range and export only to PDF.",
+        "fr": "Les rapports du plan gratuit sont plafonnés à un mois et n'exportent qu'au format PDF."
+      },
+      {
+        "en": "SSO, SCIM, and audit logs require the top Enterprise tier.",
+        "fr": "Le SSO, le SCIM et les journaux d'audit nécessitent le plan Enterprise le plus élevé."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need unlimited-user time tracking for free, with the option to add invoicing or scheduling later without switching tools.",
+        "fr": "Tu as besoin d'un suivi du temps gratuit sans limite d'utilisateurs, avec la possibilité d'ajouter facturation ou planification plus tard sans changer d'outil."
+      },
+      "avoidIf": {
+        "en": "You need more than a 1-month report range or non-PDF exports without upgrading to a paid seat.",
+        "fr": "Tu as besoin de plus d'un mois d'historique de rapports ou d'exports autres que PDF sans passer à un siège payant."
+      },
+      "threshold": {
+        "en": "The entry paid plan is $3.99/month per seat billed annually ($4.99 monthly) for bulk editing and kiosk mode beyond the free tier.",
+        "fr": "Le plan payant d'entrée coûte 3,99 $/mois par siège en facturation annuelle (4,99 $ en mensuel) pour l'édition en masse et le mode kiosque au-delà du plan gratuit."
+      },
+      "billingTraps": null
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
   "conflicts": []
 }

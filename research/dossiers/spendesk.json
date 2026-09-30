@@ -3,7 +3,7 @@
   "slug": "spendesk",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Spendesk",
     "vendor": "Spendesk SAS",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.spendesk.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Spendesk pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.spendesk.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Spendesk pricing"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -24,50 +30,272 @@
     "verifiedOn": "2026-09-25",
     "region": "EU",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "foundations",
         "name": "Foundations",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Base package with unlimited cards, users, and control settings: physical/virtual cards, OCR receipt tracking, expense management, budget monitoring, multi-entity management, API access, SSO/SAML. Priced via custom quote combining a fixed subscription fee plus variable transaction-based fees.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Base package with unlimited cards, users, and control settings: physical/virtual cards, OCR receipt tracking, expense management, budget monitoring, multi-entity management, API access, SSO/SAML. Priced via custom quote combining a fixed subscription fee plus variable transaction-based fees.",
+            "fr": "Offre de base avec cartes, utilisateurs et paramètres de contrôle illimités : cartes physiques/virtuelles, capture des reçus par OCR, gestion des notes de frais, suivi budgétaire, gestion multi-entités, accès API, SSO/SAML. Tarif sur devis combinant un abonnement fixe et des frais variables liés aux transactions."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [
-      { "en": "Optional modules: Procurement, Accounts Payable, advanced workflows & policies, multi-entity management, HR/ERP integrations, AI-based automation and fraud detection.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Optional modules: Procurement, Accounts Payable, advanced workflows & policies, multi-entity management, HR/ERP integrations, AI-based automation and fraud detection.",
+        "fr": "Modules optionnels : Achats (Procurement), comptes fournisseurs, workflows et politiques avancés, gestion multi-entités, intégrations RH/ERP, automatisation et détection de fraude par IA.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Pricing has two components: a fixed monthly subscription fee for platform access, plus variable fees tied to transaction volume (card purchases, invoices, expense claims); neither component's amount is published.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Pricing has two components: a fixed monthly subscription fee for platform access, plus variable fees tied to transaction volume (card purchases, invoices, expense claims); neither component's amount is published.",
+        "fr": "Le prix comporte deux volets : un abonnement mensuel fixe pour l'accès à la plateforme, plus des frais variables liés au volume de transactions (achats par carte, factures, notes de frais) ; aucun des deux montants n'est publié.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Issues unlimited physical and virtual corporate cards with spend controls, as part of the base Foundations package.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Automates receipt capture via OCR and expense/reimbursement management.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Supports multi-entity management and integrates with accounting tools such as Xero, QuickBooks, and Datev via API.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Issues unlimited physical and virtual corporate cards with spend controls, as part of the base Foundations package.",
+        "fr": "Émet un nombre illimité de cartes d'entreprise physiques et virtuelles avec contrôle des dépenses, inclus dans l'offre de base Foundations.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automates receipt capture via OCR and expense/reimbursement management.",
+        "fr": "Automatise la capture des reçus par OCR ainsi que la gestion des notes de frais et remboursements.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supports multi-entity management and integrates with accounting tools such as Xero, QuickBooks, and Datev via API.",
+        "fr": "Prend en charge la gestion multi-entités et s'intègre à des outils comptables comme Xero, QuickBooks et Datev via API.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No public pricing; every plan requires contacting sales for a custom quote, making cost comparison difficult upfront.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Advanced modules (Procurement, Accounts Payable, HR/ERP integrations, AI fraud detection) are separate paid add-ons on top of the base Foundations package.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No public pricing; every plan requires contacting sales for a custom quote, making cost comparison difficult upfront.",
+        "fr": "Aucun tarif public ; chaque offre nécessite de contacter l'équipe commerciale pour un devis personnalisé, ce qui rend la comparaison de coût difficile en amont.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced modules (Procurement, Accounts Payable, HR/ERP integrations, AI fraud detection) are separate paid add-ons on top of the base Foundations package.",
+        "fr": "Les modules avancés (Achats, comptes fournisseurs, intégrations RH/ERP, détection de fraude par IA) sont des options payantes en plus de l'offre de base Foundations.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Xero", "slug": "xero", "sourceIds": ["s1"] },
-      { "name": "QuickBooks", "slug": "quickbooks", "sourceIds": ["s1"] }
+      {
+        "name": "Xero",
+        "slug": "xero",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "QuickBooks",
+        "slug": "quickbooks",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An operations or finance lead at a small or mid-size company who needs corporate cards, expense control, and multi-entity spend management in one platform.",
+      "fr": "Une responsable ops ou finance dans une petite ou moyenne entreprise qui a besoin de cartes d'entreprise, de contrôle des dépenses et de gestion multi-entités dans une seule plateforme."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: issue a virtual card with a spend limit for a one-off vendor purchase, result: the purchase is tracked and receipted without a manual expense report.",
+      "fr": "Usage : émettre une carte virtuelle avec un plafond de dépense pour un achat ponctuel, résultat : l'achat est suivi et justifié sans note de frais manuelle."
+    },
+    {
+      "en": "Usage: capture a receipt by OCR after a business trip, result: the expense is categorized and ready for the accounting export without manual entry.",
+      "fr": "Usage : capturer un reçu par OCR après un déplacement professionnel, résultat : la dépense est catégorisée et prête pour l'export comptable sans saisie manuelle."
+    }
+  ],
   "alternatives": [
-    { "slug": "qonto", "reason": { "en": "Competing business finance platform combining business banking with expense/card management.", "fr": null } }
+    {
+      "slug": "qonto",
+      "reason": {
+        "en": "Competing business finance platform combining business banking with expense/card management.",
+        "fr": "Plateforme financière concurrente qui combine banque professionnelle et gestion des dépenses/cartes."
+      }
+    },
+    {
+      "slug": "soldo",
+      "reason": {
+        "en": "Direct competitor for corporate card issuance and spend management with budget controls.",
+        "fr": "Concurrent direct pour l'émission de cartes d'entreprise et la gestion des dépenses avec contrôle budgétaire."
+      }
+    },
+    {
+      "slug": "payhawk",
+      "reason": {
+        "en": "Competing spend management platform covering cards, expenses, and multi-entity control.",
+        "fr": "Plateforme de gestion des dépenses concurrente qui couvre cartes, notes de frais et contrôle multi-entités."
+      }
+    },
+    {
+      "slug": "pennylane",
+      "reason": {
+        "en": "French finance platform overlapping on expense and accounting management for small and mid-size companies.",
+        "fr": "Plateforme financière française qui recoupe la gestion des notes de frais et de la comptabilité pour les PME."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "No public price point exists for Foundations; exact fixed fee and transaction-based fee rates were not disclosed on the pricing page.",
     "Whether a free trial exists was not stated on the pricing page."
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: no public price exists to weigh against the value delivered, since both the subscription fee and transaction fees require a custom quote.",
+        "fr": "Note neutre : aucun prix public n'existe pour évaluer la valeur par rapport au coût, car l'abonnement et les frais de transaction nécessitent un devis personnalisé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The base package covers cards, OCR receipts, and expense management out of the box, but sales-led onboarding for a custom quote adds a step before first use.",
+        "fr": "L'offre de base couvre cartes, reçus OCR et notes de frais d'emblée, mais l'onboarding commercial pour obtenir un devis ajoute une étape avant la première utilisation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers card issuance, OCR expense capture, and multi-entity management as advertised, with API integrations to standard accounting tools.",
+        "fr": "Assure l'émission de cartes, la capture OCR des notes de frais et la gestion multi-entités comme annoncé, avec des intégrations API vers les outils comptables standards.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Base package plus optional Procurement, Accounts Payable, and AI fraud detection modules covers a broad range of spend management needs beyond just cards.",
+        "fr": "L'offre de base plus les modules optionnels Achats, comptes fournisseurs et détection de fraude par IA couvrent un large éventail de besoins en gestion des dépenses au-delà des simples cartes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and account portability if leaving the platform are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité du compte en cas de départ de la plateforme ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Spend management",
+      "fr": "Gestion des dépenses"
+    },
+    "shortDescription": {
+      "en": "Corporate card issuance and expense management platform with OCR receipt capture, priced on a custom quote.",
+      "fr": "Plateforme d'émission de cartes d'entreprise et de gestion des dépenses avec capture OCR des reçus, tarifée sur devis."
+    },
+    "longDescription": {
+      "en": "Spendesk's Foundations package issues unlimited physical and virtual corporate cards with spend controls, automates receipt capture with OCR, and covers expense and reimbursement management plus multi-entity support. It integrates with accounting tools such as Xero and QuickBooks via API, and optional modules add Procurement, Accounts Payable, advanced workflows, and AI-based fraud detection.\n\nPricing is not public: every plan combines a fixed subscription fee with variable transaction-based fees, both set through a custom quote. It fits an operations or finance lead at a small or mid-size company who needs card issuance and expense control across several entities rather than a single freelance user.",
+      "fr": "L'offre Foundations de Spendesk émet un nombre illimité de cartes d'entreprise physiques et virtuelles avec contrôle des dépenses, automatise la capture des reçus par OCR, et couvre la gestion des notes de frais et le support multi-entités. Elle s'intègre à Xero et QuickBooks via API, et des modules optionnels ajoutent Achats, comptes fournisseurs et détection de fraude par IA.\n\nLe tarif n'est pas public : chaque offre combine un abonnement fixe et des frais variables liés aux transactions, fixés sur devis. L'outil convient à une responsable ops ou finance dans une PME qui contrôle les dépenses sur plusieurs entités, plutôt qu'à un freelance isolé."
+    },
+    "pros": [
+      {
+        "en": "Unlimited cards and users included in the base Foundations package.",
+        "fr": "Cartes et utilisateurs illimités inclus dans l'offre de base Foundations."
+      },
+      {
+        "en": "OCR receipt capture and multi-entity management are built in, not separate add-ons.",
+        "fr": "La capture OCR des reçus et la gestion multi-entités sont intégrées, pas des options séparées."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public pricing; every quote requires a sales conversation before comparing cost.",
+        "fr": "Aucun tarif public ; chaque devis nécessite un échange commercial avant de pouvoir comparer le coût."
+      },
+      {
+        "en": "Advanced modules like Procurement and AI fraud detection are paid add-ons on top of the base package.",
+        "fr": "Les modules avancés comme les Achats et la détection de fraude par IA sont des options payantes en plus de l'offre de base."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You manage spend across a company or multiple entities and need corporate cards with built-in expense control and accounting integrations.",
+        "fr": "Tu gères les dépenses d'une entreprise ou de plusieurs entités et tu as besoin de cartes d'entreprise avec contrôle des dépenses intégré et intégrations comptables."
+      },
+      "avoidIf": {
+        "en": "You need a fixed, comparable price before talking to sales, since Spendesk publishes no plan amounts.",
+        "fr": "Tu as besoin d'un prix fixe et comparable avant d'échanger avec un commercial, car Spendesk ne publie aucun montant."
+      },
+      "threshold": {
+        "en": "No public price exists to set a threshold; every plan requires a custom quote combining a fixed fee and transaction-based fees.",
+        "fr": "Aucun prix public n'existe pour fixer un seuil ; chaque offre nécessite un devis combinant un abonnement fixe et des frais liés aux transactions."
+      },
+      "billingTraps": {
+        "en": "Cost has a variable component tied to transaction volume in addition to the fixed subscription fee, and advanced modules bill separately.",
+        "fr": "Le coût comporte une part variable liée au volume de transactions en plus de l'abonnement fixe, et les modules avancés se facturent séparément."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
+  "reviewNotes": [
+    "Pricing is on-quote with no public figures; comparePlanKey is null per rule 5.4 for quote-based pricing. Verify actual fee structure on the vendor site before publishing any amount."
   ],
   "conflicts": []
 }

@@ -3,7 +3,8 @@
   "slug": "trainerize",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Trainerize",
     "vendor": "ABC Fitness (Trainerize)",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Free plan for a small number of clients to trial the coaching workflow." }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Free plan for a small number of clients to trial the coaching workflow.", "fr": "Plan gratuit pour un petit nombre de clients, afin de tester le flux de coaching." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Small number of clients to trial the coaching workflow." }],
+        "keyLimits": [{ "en": "Small number of clients to trial the coaching workflow.", "fr": "Petit nombre de clients pour tester le flux de coaching." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,33 +45,79 @@
         "minSeats": 1,
         "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry paid tier for managing client training programs remotely." }],
+        "keyLimits": [{ "en": "Entry paid tier for managing client training programs remotely.", "fr": "Offre payante d'entrée pour gérer les programmes d'entraînement des clients à distance." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "grow",
     "addOns": [],
     "cautions": [
-      { "en": "Only the Free and Grow tiers' prices were confirmed; higher tiers (for larger client rosters or studios) exist but their prices were not captured within the page budget.", "sourceIds": ["s1"] }
+      { "en": "Only the Free and Grow tiers' prices were confirmed; higher tiers (for larger client rosters or studios) exist but their prices were not captured within the page budget.", "fr": "Seuls les tarifs des offres Free et Grow ont été confirmés ; des offres supérieures existent (pour de plus gros portefeuilles de clients ou des studios) mais leurs prix n'ont pas été relevés dans le budget de page alloué.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Remote fitness coaching workflow: assign workout and nutrition programs, track client progress.", "sourceIds": ["s1"] },
-      { "en": "Client-facing mobile app for logging workouts and communicating with the coach.", "sourceIds": ["s1"] }
+      { "en": "Remote fitness coaching workflow: assign workout and nutrition programs, track client progress.", "fr": "Flux de coaching sportif à distance : assigner des programmes d'entraînement et de nutrition, suivre l'avancement des clients.", "sourceIds": ["s1"] },
+      { "en": "Client-facing mobile app for logging workouts and communicating with the coach.", "fr": "Appli mobile côté client pour enregistrer les séances et échanger avec le coach.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan is limited to a small number of clients, unsuitable for a growing coaching business.", "sourceIds": ["s1"] },
-      { "en": "Higher-volume or studio-level features require upgrading beyond the entry Grow plan.", "sourceIds": ["s1"] }
+      { "en": "Free plan is limited to a small number of clients, unsuitable for a growing coaching business.", "fr": "Le plan gratuit est limité à un petit nombre de clients, insuffisant pour une activité de coaching en croissance.", "sourceIds": ["s1"] },
+      { "en": "Higher-volume or studio-level features require upgrading beyond the entry Grow plan.", "fr": "Les fonctions à plus gros volume ou niveau studio demandent de dépasser l'offre d'entrée Grow.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "An independent personal trainer or coach who delivers training programs remotely and needs one app to assign programs, track clients and get paid.", "fr": "Un coach sportif indépendant qui délivre ses programmes à distance et a besoin d'une seule appli pour assigner ses programmes, suivre ses clients et se faire payer." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Assign a personalized workout and nutrition program to a client and track their progress remotely through the client-facing app.", "fr": "Assigner un programme d'entraînement et de nutrition personnalisé à un client et suivre son avancement à distance via l'appli client." },
+    { "en": "Trial the remote coaching workflow on the free plan before upgrading to Grow to manage a paying client roster.", "fr": "Tester le flux de coaching à distance sur le plan gratuit avant de passer à Grow pour gérer un portefeuille de clients payants." }
+  ],
   "alternatives": [],
   "missingAlternatives": [
     { "name": "TrueCoach", "officialUrl": "https://truecoach.co", "reason": "Direct remote fitness coaching competitor, not in the catalogue" },
     { "name": "My PT Hub", "officialUrl": "https://www.myPThub.net", "reason": "Fitness coaching client-management competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A trainer can trial the full coaching workflow for free, then pay only $9/month on Grow to manage clients beyond the free cap, a low entry cost for a solo coaching business.", "fr": "Un coach peut tester tout le flux de coaching gratuitement, puis ne payer que 9 $/mois sur Grow pour gérer des clients au-delà du plafond gratuit, un coût d'entrée faible pour une activité de coaching solo.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised remote coaching workflow: assigning programs and tracking progress through a dedicated client app, with no workaround mentioned in the facts.", "fr": "Assure le flux de coaching à distance promis : assignation de programmes et suivi de l'avancement via une appli client dédiée, sans contournement mentionné dans les faits.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Core coaching workflow is confirmed, but capacity for larger rosters or multi-trainer studios (higher tiers) was not verified, so this is rated as adequate rather than a category reference.", "fr": "Le flux de coaching de base est confirmé, mais la capacité pour de plus gros portefeuilles ou des studios multi-coachs (offres supérieures) n'a pas été vérifiée ; note correcte sans être référence de la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Remote fitness coaching", "fr": "Coaching fitness à distance" },
+    "shortDescription": { "en": "Trainerize lets personal trainers assign workout and nutrition programs and track client progress remotely through a client-facing mobile app.", "fr": "Trainerize permet aux coachs sportifs d'assigner programmes d'entraînement et de nutrition, et de suivre l'avancement de leurs clients à distance via une appli mobile dédiée." },
+    "longDescription": {
+      "en": "Trainerize gives personal trainers a remote coaching workflow: assign workout and nutrition programs, and track each client's progress from a dashboard, while clients log their sessions and message their coach through a dedicated mobile app.\n\nThe Free plan lets a trainer try this workflow with a small number of clients at no cost. The entry paid tier, Grow, starts at $9/month and removes that client cap for a growing coaching business. Trainerize also offers higher tiers for larger client rosters or multi-trainer studios, but their prices were not confirmed here.",
+      "fr": "Trainerize offre aux coachs sportifs un flux de coaching à distance : assigner des programmes d'entraînement et de nutrition, et suivre l'avancement de chaque client depuis un tableau de bord, pendant que les clients enregistrent leurs séances et échangent avec leur coach via une appli mobile dédiée.\n\nLe plan gratuit permet de tester ce flux avec un petit nombre de clients, sans frais. L'offre payante d'entrée, Grow, commence à 9 $/mois et retire ce plafond de clients pour une activité de coaching en croissance. Trainerize propose aussi des offres supérieures pour de plus gros portefeuilles de clients ou des studios multi-coachs, mais leurs tarifs n'ont pas été confirmés ici."
+    },
+    "pros": [
+      { "en": "The free plan lets you trial the full remote coaching workflow before paying anything.", "fr": "Le plan gratuit permet de tester tout le flux de coaching à distance avant de payer quoi que ce soit." },
+      { "en": "The entry paid tier is inexpensive, at $9/month for a solo coach.", "fr": "L'offre payante d'entrée est peu chère, à 9 $/mois pour un coach solo." }
+    ],
+    "cons": [
+      { "en": "The free plan's client cap is small, so it doesn't scale into a real client roster without upgrading.", "fr": "Le plafond de clients du plan gratuit est faible : il ne suffit pas pour un vrai portefeuille de clients sans passer à l'offre payante." },
+      { "en": "Prices for higher tiers (larger rosters, multi-trainer studios) aren't confirmed, making it harder to budget for growth.", "fr": "Les tarifs des offres supérieures (plus gros portefeuilles, studios multi-coachs) ne sont pas confirmés, ce qui complique le budget pour grandir." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You coach clients remotely and want a dedicated app for assigning programs and tracking progress, starting at $9/month.", "fr": "Tu coaches des clients à distance et veux une appli dédiée pour assigner des programmes et suivre l'avancement, à partir de 9 $/mois." },
+      "avoidIf": { "en": "You need multi-trainer studio features or a large client roster: higher-tier pricing wasn't confirmed, so check it directly before committing.", "fr": "Tu as besoin de fonctions studio multi-coachs ou d'un gros portefeuille de clients : les tarifs des offres supérieures n'étaient pas confirmés, vérifie-les directement avant de t'engager." },
+      "threshold": { "en": "Grow costs $9/month for a single trainer account, the cheapest paid tier confirmed for managing clients beyond the free plan's cap.", "fr": "Grow coûte 9 $/mois pour un compte de coach, l'offre payante la moins chère confirmée pour gérer des clients au-delà du plafond du plan gratuit." }
+    }
+  },
   "unknowns": [
     "No relevant fitness/coaching-software alternatives were present in the seed's alternativeCandidates list (candidates were all unrelated creative-tool slugs), so `alternatives` is left empty rather than forcing an unfit match.",
     "Prices for Trainerize tiers above Grow (e.g. for larger client counts or multi-trainer studios) were not captured."

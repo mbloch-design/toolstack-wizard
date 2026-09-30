@@ -3,7 +3,7 @@
   "slug": "google-search-console",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Google Search Console",
     "vendor": "Google LLC",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://search.google.com/search-console/about", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Search Console about page" }
+    {
+      "id": "s1",
+      "url": "https://search.google.com/search-console/about",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Google Search Console about page"
+    }
   ],
   "pricing": {
     "model": "free",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,10 +44,21 @@
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Fully free, no paid tier exists." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Fully free, no paid tier exists.",
+            "fr": "Entièrement gratuit, aucun palier payant n'existe."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
@@ -44,29 +67,203 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Search analytics on queries, clicks, impressions and ranking positions.", "sourceIds": ["s1"] },
-      { "en": "Sitemap submission and index-coverage reporting.", "sourceIds": ["s1"] },
-      { "en": "URL Inspection tool showing how Google crawls, indexes and renders a given page.", "sourceIds": ["s1"] }
+      {
+        "en": "Search analytics on queries, clicks, impressions and ranking positions.",
+        "fr": "Statistiques de recherche sur les requêtes, clics, impressions et positions de classement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Sitemap submission and index-coverage reporting.",
+        "fr": "Soumission de sitemap et rapport de couverture d'indexation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "URL Inspection tool showing how Google crawls, indexes and renders a given page.",
+        "fr": "Outil d'inspection d'URL qui montre comment Google explore, indexe et affiche une page donnée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Requires a Google account and site ownership verification; no anonymous or agency-wide multi-site view without adding each property.", "sourceIds": ["s1"] },
-      { "en": "Historical search-performance data is limited to roughly 16 months in the standard UI.", "sourceIds": ["s1"] }
+      {
+        "en": "Requires a Google account and site ownership verification; no anonymous or agency-wide multi-site view without adding each property.",
+        "fr": "Nécessite un compte Google et une vérification de la propriété du site ; pas de vue multi-sites anonyme ou d'agence sans ajouter chaque propriété.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Historical search-performance data is limited to roughly 16 months in the standard UI.",
+        "fr": "L'historique des données de performance de recherche est limité à environ 16 mois dans l'interface standard.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Google Analytics", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Looker Studio", "slug": "looker-studio", "sourceIds": ["s1"] }
+      {
+        "name": "Google Analytics",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Looker Studio",
+        "slug": "looker-studio",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "A consultant or small team managing a site's organic search performance who needs free, direct data from Google without an SEO suite subscription.",
+      "fr": "Un consultant ou une petite équipe qui gère la performance de recherche organique d'un site et a besoin de données directes de Google, gratuitement, sans abonnement à une suite SEO."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: check the URL Inspection tool after publishing a page, result: confirm Google can crawl and index it before waiting for organic traffic.",
+      "fr": "Usage : vérifier l'outil d'inspection d'URL après la publication d'une page, résultat : confirmer que Google peut l'explorer et l'indexer sans attendre le trafic organique."
+    },
+    {
+      "en": "Usage: review query and click data in search analytics, result: spot which search terms already bring traffic without paying for a third-party keyword tool.",
+      "fr": "Usage : consulter les données de requêtes et de clics dans les statistiques de recherche, résultat : repérer les termes qui apportent déjà du trafic sans payer un outil de mots-clés tiers."
+    }
+  ],
   "alternatives": [
-    { "slug": "ahrefs", "reason": { "en": "Broader SEO suite covering keyword research and backlinks beyond Search Console's own-site scope." } },
-    { "slug": "plausible", "reason": { "en": "Alternative site-performance monitoring tool, privacy-focused." } }
+    {
+      "slug": "ahrefs",
+      "reason": {
+        "en": "Broader SEO suite covering keyword research and backlinks beyond Search Console's own-site scope.",
+        "fr": "Suite SEO plus large qui couvre la recherche de mots-clés et les backlinks au-delà du périmètre propre au site de Search Console."
+      }
+    },
+    {
+      "slug": "plausible",
+      "reason": {
+        "en": "Alternative site-performance monitoring tool, privacy-focused.",
+        "fr": "Outil alternatif de suivi de performance de site, orienté respect de la vie privée."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Bing Webmaster Tools", "officialUrl": "https://www.bing.com/webmasters", "reason": "Direct free equivalent for Bing search, not in the catalogue" }
+    {
+      "name": "Bing Webmaster Tools",
+      "officialUrl": "https://www.bing.com/webmasters",
+      "reason": "Direct free equivalent for Bing search, not in the catalogue"
+    }
   ],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Fully free with no paid tier, giving direct Google search data at zero cost.",
+        "fr": "Entièrement gratuit sans aucun palier payant, ce qui donne un accès direct aux données de recherche Google sans coût.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Site ownership verification and per-property setup are required before analytics or the URL Inspection tool become usable.",
+        "fr": "La vérification de la propriété du site et la configuration par propriété sont nécessaires avant de pouvoir utiliser les statistiques ou l'outil d'inspection d'URL.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers search analytics, sitemap/index reporting, and URL inspection as advertised, directly from Google's own index.",
+        "fr": "Fournit les statistiques de recherche, le rapport de couverture et l'inspection d'URL comme annoncé, directement depuis l'index de Google.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers a site's own search performance and indexing status but not keyword research or competitor/backlink analysis, which sit outside its scope.",
+        "fr": "Couvre la performance de recherche et l'état d'indexation du site lui-même, mais pas la recherche de mots-clés ni l'analyse de la concurrence ou des backlinks, hors de son périmètre.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export options beyond the standard UI are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export des données au-delà de l'interface standard ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Search performance monitoring",
+      "fr": "Suivi de recherche"
+    },
+    "shortDescription": {
+      "en": "Free Google tool for tracking a site's search analytics, indexing status, and crawl issues.",
+      "fr": "Outil Google gratuit pour suivre les statistiques de recherche, l'état d'indexation et les problèmes d'exploration d'un site."
+    },
+    "longDescription": {
+      "en": "Search Console shows search analytics (queries, clicks, impressions, ranking positions), sitemap submission and index-coverage reporting, and a URL Inspection tool that shows how Google crawls, indexes, and renders a given page. It requires a Google account and ownership verification per property.\n\nThe tool is fully free with no paid tier. It fits a consultant or small team who wants direct data on their own site's organic search performance, though it doesn't cover keyword research or competitor analysis, which sit in dedicated SEO suites instead.",
+      "fr": "Search Console affiche les statistiques de recherche (requêtes, clics, impressions, positions), la soumission de sitemap et le rapport de couverture d'indexation, ainsi qu'un outil d'inspection d'URL qui montre comment Google explore, indexe et affiche une page. Il nécessite un compte Google et une vérification de propriété par site.\n\nL'outil est entièrement gratuit, sans palier payant. Il convient à un consultant ou une petite équipe qui veut des données directes sur la performance de recherche organique de son propre site, même s'il ne couvre ni la recherche de mots-clés ni l'analyse de la concurrence, réservées aux suites SEO dédiées."
+    },
+    "pros": [
+      {
+        "en": "Fully free, direct data from Google with no paid tier.",
+        "fr": "Entièrement gratuit, avec des données directes de Google et aucun palier payant."
+      },
+      {
+        "en": "URL Inspection tool shows exactly how Google crawls and renders a specific page.",
+        "fr": "L'outil d'inspection d'URL montre précisément comment Google explore et affiche une page donnée."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No keyword research or competitor/backlink data, unlike dedicated SEO suites.",
+        "fr": "Pas de recherche de mots-clés ni de données sur la concurrence ou les backlinks, contrairement aux suites SEO dédiées."
+      },
+      {
+        "en": "Historical performance data is limited to roughly 16 months in the standard UI.",
+        "fr": "L'historique de performance est limité à environ 16 mois dans l'interface standard."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need free, direct visibility into how Google crawls, indexes, and ranks your own site.",
+        "fr": "Tu as besoin d'une visibilité gratuite et directe sur la façon dont Google explore, indexe et classe ton propre site."
+      },
+      "avoidIf": {
+        "en": "You need keyword research, competitor tracking, or backlink analysis, which are outside its scope.",
+        "fr": "Tu as besoin de recherche de mots-clés, de suivi de la concurrence ou d'analyse de backlinks, hors du périmètre de l'outil."
+      },
+      "threshold": {
+        "en": "No threshold applies: the tool is fully free with no paid tier.",
+        "fr": "Aucun seuil ne s'applique : l'outil est entièrement gratuit, sans palier payant."
+      },
+      "billingTraps": null
+    }
+  },
   "unknowns": [
     "Exact retention window for historical performance data and any API-specific rate limits were not verified beyond the marketing overview page."
   ],
+  "completedLocallyOn": "2026-09-30",
   "conflicts": []
 }

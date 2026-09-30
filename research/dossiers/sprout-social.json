@@ -3,7 +3,7 @@
   "slug": "sprout-social",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Sprout Social",
     "vendor": "Sprout Social, Inc.",
@@ -57,7 +57,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "5 social profiles, 100 AI credits/month, consolidated inbox, review management"
+            "en": "5 social profiles, 100 AI credits/month, consolidated inbox, review management",
+            "fr": "5 profils sociaux, 100 crédits IA/mois, boîte de réception consolidée, gestion des avis."
           }
         ],
         "sourceIds": [
@@ -77,7 +78,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "5 social profiles, 10 brand keywords, adds keyword/location monitoring"
+            "en": "5 social profiles, 10 brand keywords, adds keyword/location monitoring",
+            "fr": "5 profils sociaux, 10 mots-clés de marque, ajoute le suivi par mot-clé et localisation."
           }
         ],
         "sourceIds": [
@@ -97,7 +99,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Unlimited profiles, 10 brand keywords, message tagging, competitor insights"
+            "en": "Unlimited profiles, 10 brand keywords, message tagging, competitor insights",
+            "fr": "Profils illimités, 10 mots-clés de marque, étiquetage des messages, analyse de la concurrence."
           }
         ],
         "sourceIds": [
@@ -117,7 +120,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Unlimited profiles, 20 brand keywords, AI-assisted replies, sentiment analysis, Sprout API"
+            "en": "Unlimited profiles, 20 brand keywords, AI-assisted replies, sentiment analysis, Sprout API",
+            "fr": "Profils illimités, 20 mots-clés de marque, réponses assistées par IA, analyse de sentiment, API Sprout."
           }
         ],
         "sourceIds": [
@@ -137,7 +141,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "White-glove onboarding, dedicated SSO support, priority support"
+            "en": "White-glove onboarding, dedicated SSO support, priority support",
+            "fr": "Onboarding personnalisé, support SSO dédié, support prioritaire."
           }
         ],
         "sourceIds": [
@@ -152,7 +157,8 @@
         "en": "Essentials is the only tier with published monthly (non-annual) billing at $99/seat; Standard and above prices shown are annual billing only.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Essentials est le seul forfait avec une facturation mensuelle publiée (99 $/siège) ; les prix de Standard et au-dessus affichés sont en facturation annuelle uniquement."
       }
     ]
   },
@@ -162,19 +168,22 @@
         "en": "Unified social inbox, scheduling, and publishing across major social networks.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Boîte de réception sociale unifiée, planification et publication sur les principaux réseaux sociaux."
       },
       {
         "en": "Social listening and competitor insights via brand keyword monitoring.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Veille sociale et analyse de la concurrence via le suivi de mots-clés de marque."
       },
       {
         "en": "Trellis AI agent and AI-assisted reply/post enhancement on higher tiers.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Agent IA Trellis et amélioration des réponses/publications assistée par IA sur les forfaits supérieurs."
       }
     ],
     "limitations": [
@@ -182,13 +191,15 @@
         "en": "Entry tiers (Essentials, Standard) cap social profiles at 5; unlimited profiles require Professional or above.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Les forfaits d'entrée (Essentials, Standard) limitent à 5 profils sociaux ; les profils illimités demandent le forfait Professional ou plus."
       },
       {
         "en": "API access, sentiment analysis, and AI-assisted replies are reserved for the Advanced tier and up.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "L'accès API, l'analyse de sentiment et les réponses assistées par IA sont réservés au forfait Advanced et au-delà."
       }
     ],
     "integrations": [],
@@ -202,7 +213,29 @@
     {
       "slug": "buffer",
       "reason": {
-        "en": "Lighter-weight, cheaper social media scheduling competitor for the same core job."
+        "en": "Lighter-weight, cheaper social media scheduling competitor for the same core job.",
+        "fr": "Concurrent de planification social media plus léger et moins cher, pour le même besoin de base."
+      }
+    },
+    {
+      "slug": "hootsuite",
+      "reason": {
+        "en": "Long-standing all-in-one social media management competitor with comparable scheduling, inbox, and listening features.",
+        "fr": "Concurrent historique de gestion des réseaux sociaux tout-en-un, avec des fonctions comparables de planification, boîte de réception et veille."
+      }
+    },
+    {
+      "slug": "later",
+      "reason": {
+        "en": "Visual-first scheduling competitor, popular for Instagram-heavy content calendars at a lower price.",
+        "fr": "Concurrent de planification centré sur le visuel, populaire pour les calendriers de contenu Instagram, à prix plus bas."
+      }
+    },
+    {
+      "slug": "socialbee",
+      "reason": {
+        "en": "Cheaper social media scheduling and content-category competitor aimed at solo users and small teams.",
+        "fr": "Concurrent de planification social media moins cher, avec gestion par catégories de contenu, visant les indépendants et petites équipes."
       }
     }
   ],
@@ -211,5 +244,118 @@
     "Detailed integration list (e.g. helpdesk tools mentioned for Advanced) not itemized by name on the pricing page.",
     "Seed category 'creation' likely mismatched with Sprout Social's actual social-media-management positioning; left unresolved in facts-only mode."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At $99/seat/month for the entry tier (5 profiles, 100 AI credits), Sprout Social costs more than lighter scheduling tools for a similar core publishing job.",
+        "fr": "À 99 $/siège/mois pour le forfait d'entrée (5 profils, 100 crédits IA), Sprout Social coûte plus cher que des outils de planification plus légers pour un besoin de publication similaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to a first useful result is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir un premier résultat utile ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers unified inbox, scheduling, and publishing across major networks as promised, with listening and competitor insight layered on top tiers.",
+        "fr": "Livre la boîte de réception unifiée, la planification et la publication sur les principaux réseaux comme annoncé, avec la veille et l'analyse concurrentielle sur les forfaits supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Advanced tier adds sentiment analysis, AI-assisted replies, and API access, well past a basic scheduling tool's ceiling.",
+        "fr": "Le forfait Advanced ajoute l'analyse de sentiment, les réponses assistées par IA et l'accès API, bien au-delà du plafond d'un simple outil de planification.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and agencies managing several brand social profiles together.",
+      "fr": "Petites équipes et agences qui gèrent plusieurs profils sociaux de marque ensemble."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: manage a consolidated inbox across several social networks to reply to customer messages from one place.",
+      "fr": "Usage : gérer une boîte de réception unifiée sur plusieurs réseaux sociaux pour répondre aux messages clients depuis un seul endroit."
+    },
+    {
+      "en": "Usage: track brand-keyword mentions to monitor competitor activity and sentiment around a launch.",
+      "fr": "Usage : suivre les mentions de mots-clés de marque pour surveiller l'activité des concurrents et le sentiment autour d'un lancement."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Social media management",
+      "fr": "Gestion réseaux sociaux"
+    },
+    "shortDescription": {
+      "en": "A per-seat social media management platform: scheduling, unified inbox, listening, and reporting, starting at $99 per seat monthly.",
+      "fr": "Une plateforme de gestion des réseaux sociaux par siège : planification, boîte de réception unifiée, veille et reporting, dès 99 $/siège/mois."
+    },
+    "longDescription": {
+      "en": "Sprout Social is a per-seat social media management platform combining a unified inbox, scheduling and publishing, social listening through brand-keyword tracking, and an AI agent (Trellis) for assisted replies on higher tiers.\n\nThe entry Essentials plan starts at $99/seat/month for 5 social profiles; unlimited profiles, sentiment analysis, and API access require the pricier Professional and Advanced tiers. It suits a small team or agency managing several brand accounts, less so a solo user on a tight budget.",
+      "fr": "Sprout Social est une plateforme de gestion des réseaux sociaux facturée par siège, qui réunit boîte de réception unifiée, planification et publication, veille sociale par suivi de mots-clés de marque, et un agent IA (Trellis) pour les réponses assistées sur les forfaits supérieurs.\n\nLe forfait d'entrée Essentials démarre à 99 $/siège/mois pour 5 profils sociaux ; les profils illimités, l'analyse de sentiment et l'accès API demandent les forfaits Professional et Advanced, plus chers. L'outil convient à une petite équipe ou une agence qui gère plusieurs comptes de marque, moins à un indépendant au budget serré."
+    },
+    "pros": [
+      {
+        "en": "Unified inbox and scheduling cover the main social networks from one dashboard.",
+        "fr": "La boîte de réception unifiée et la planification couvrent les principaux réseaux sociaux depuis un seul tableau de bord."
+      },
+      {
+        "en": "Brand-keyword listening and competitor insights are built in, not a separate add-on.",
+        "fr": "La veille par mots-clés de marque et l'analyse de la concurrence sont intégrées, pas un module séparé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Entry tiers cap social profiles at 5, and most pricing is published as annual billing only.",
+        "fr": "Les forfaits d'entrée limitent à 5 profils sociaux, et la plupart des prix affichés sont en facturation annuelle uniquement."
+      },
+      {
+        "en": "Sentiment analysis and API access require the Advanced tier at $399/seat/month.",
+        "fr": "L'analyse de sentiment et l'accès API demandent le forfait Advanced à 399 $/siège/mois."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You manage several brand social profiles as a team and need a shared inbox with listening built in.",
+        "fr": "Tu gères plusieurs profils sociaux de marque en équipe et as besoin d'une boîte de réception partagée avec la veille intégrée."
+      },
+      "avoidIf": {
+        "en": "You're a solo user managing one or two profiles on a tight budget.",
+        "fr": "Tu es indépendant et gères un ou deux profils avec un budget serré."
+      },
+      "threshold": {
+        "en": "Below the Essentials plan's annual cost of about $948 per seat (79 x 12 months), a lighter scheduling tool likely covers the same need for less.",
+        "fr": "En dessous du coût annuel du forfait Essentials, environ 948 $ par siège (79 x 12 mois), un outil de planification plus léger couvre sans doute le même besoin pour moins cher."
+      }
+    }
+  }
 }

@@ -3,7 +3,7 @@
   "slug": "mailchimp",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Mailchimp",
     "vendor": "Intuit Mailchimp",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://mailchimp.com/pricing/marketing/compare-plans/", "tier": 1, "accessedOn": "2026-09-25", "title": "Mailchimp Marketing plans comparison" }
+    {
+      "id": "s1",
+      "url": "https://mailchimp.com/pricing/marketing/compare-plans/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Mailchimp Marketing plans comparison"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,79 +30,322 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Up to 250 contacts, 500 emails/month (max 250/day), 1 audience, 1 seat, limited templates, no scheduling.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Up to 250 contacts, 500 emails/month (max 250/day), 1 audience, 1 seat, limited templates, no scheduling.",
+        "fr": "Jusqu'à 250 contacts, 500 emails/mois (max 250/jour), 1 audience, 1 siège, modèles limités, pas de planification."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Free",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "250 contacts, 500 emails/month, 1 audience, 1 seat.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "250 contacts, 500 emails/month, 1 audience, 1 seat.",
+            "fr": "250 contacts, 500 emails/mois, 1 audience, 1 siège."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "essentials",
         "name": "Essentials",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 13, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 13,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "3 seats, 3 audiences, up to 4-step automation flows, email scheduling, A/B testing, limited reporting, no dynamic content. Price scales with contact count.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "3 seats, 3 audiences, up to 4-step automation flows, email scheduling, A/B testing, limited reporting, no dynamic content. Price scales with contact count.",
+            "fr": "3 sièges, 3 audiences, flux d'automatisation jusqu'à 4 étapes, planification d'email, tests A/B, reporting limité, pas de contenu dynamique. Le prix évolue avec le nombre de contacts."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard",
         "name": "Standard",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 20,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 seats, 5 audiences, up to 200-step automations, advanced segmentation, SMS add-on, basic dynamic content.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "5 seats, 5 audiences, up to 200-step automations, advanced segmentation, SMS add-on, basic dynamic content.",
+            "fr": "5 sièges, 5 audiences, automatisations jusqu'à 200 étapes, segmentation avancée, module SMS, contenu dynamique basique."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 350, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 350,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited seats and unlimited contacts (custom pricing beyond 250,000 contacts), advanced automations with branching, predictive segmentation, priority phone support.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited seats and unlimited contacts (custom pricing beyond 250,000 contacts), advanced automations with branching, predictive segmentation, priority phone support.",
+            "fr": "Sièges et contacts illimités (tarif sur devis au-delà de 250 000 contacts), automatisations avancées à embranchements, segmentation prédictive, support téléphonique prioritaire."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "essentials",
     "addOns": [
-      { "en": "SMS marketing add-on available on Standard and Premium plans.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "SMS marketing add-on available on Standard and Premium plans.",
+        "fr": "Module de marketing SMS disponible sur les forfaits Standard et Premium.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Listed monthly prices are entry-tier for the smallest contact count; price rises with list size and a promotional discount (around 15% for the first 12 months) applies to the displayed prices, so renewal price is higher.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Listed monthly prices are entry-tier for the smallest contact count; price rises with list size and a promotional discount (around 15% for the first 12 months) applies to the displayed prices, so renewal price is higher.",
+        "fr": "Les prix mensuels affichés correspondent au plus petit volume de contacts, et une remise promotionnelle (environ 15 % pendant les 12 premiers mois) s'applique aux prix affichés, donc le prix de renouvellement est plus élevé.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Email campaign creation with templates, forms, landing pages, and marketing automation flows.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Audience segmentation, A/B testing, and reporting/analytics on campaign performance.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Predictive segmentation and advanced branching automations on higher tiers.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Email campaign creation with templates, forms, landing pages, and marketing automation flows.",
+        "fr": "Création de campagnes email avec modèles, formulaires, pages d'atterrissage et flux de marketing automation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Audience segmentation, A/B testing, and reporting/analytics on campaign performance.",
+        "fr": "Segmentation d'audience, tests A/B et reporting/analytique sur la performance des campagnes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Predictive segmentation and advanced branching automations on higher tiers.",
+        "fr": "Segmentation prédictive et automatisations avancées à embranchements sur les forfaits supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free and Essentials plans restrict number of audiences and automation steps, and lack dynamic content.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Pricing scales with contact list size, so cost grows significantly as a list grows even on the same plan tier.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free and Essentials plans restrict number of audiences and automation steps, and lack dynamic content.",
+        "fr": "Les forfaits Free et Essentials limitent le nombre d'audiences et d'étapes d'automatisation, et n'incluent pas le contenu dynamique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pricing scales with contact list size, so cost grows significantly as a list grows even on the same plan tier.",
+        "fr": "Le prix évolue avec la taille de la liste de contacts, donc le coût augmente sensiblement à mesure que la liste grandit, même sur le même forfait.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "brevo", "reason": { "en": "Direct competitor with a more generous free tier and transactional email features.", "fr": null } }
+    {
+      "slug": "brevo",
+      "reason": {
+        "en": "Direct competitor with a more generous free tier and transactional email features.",
+        "fr": "Concurrent direct avec un forfait gratuit plus généreux et des fonctions d'email transactionnel."
+      }
+    },
+    {
+      "slug": "kit",
+      "reason": {
+        "en": "Creator-focused email marketing competitor with simpler automation and a free plan up to 10,000 subscribers.",
+        "fr": "Concurrent d'email marketing pensé pour les créateurs, avec des automatisations plus simples et un forfait gratuit jusqu'à 10 000 abonnés."
+      }
+    },
+    {
+      "slug": "mailerlite",
+      "reason": {
+        "en": "Cheaper freemium email marketing competitor with a similar automation and landing-page feature set.",
+        "fr": "Concurrent d'email marketing freemium moins cher, avec un ensemble de fonctions d'automatisation et de pages d'atterrissage similaire."
+      }
+    },
+    {
+      "slug": "activecampaign",
+      "reason": {
+        "en": "More automation-focused email marketing and CRM competitor, aimed at similar small-business use cases.",
+        "fr": "Concurrent d'email marketing et CRM plus centré sur l'automatisation, pour des cas d'usage de petite entreprise similaires."
+      }
+    }
   ],
-  "missingAlternatives": [
-    { "name": "ConvertKit (Kit)", "officialUrl": "https://kit.com/", "reason": "Creator-focused email marketing alternative with simpler automation, not in the catalogue under that slug" }
-  ],
+  "missingAlternatives": [],
   "unknowns": [
     "Exact annualPerMonth discounted price was not isolated from the displayed introductory discount on this page.",
     "Whether tax is included depends on billing region; not stated."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Entry pricing starts at $13/month but scales with contact list size, and displayed prices already include a promotional discount whose renewal price is unconfirmed, making entry value harder to pin down.",
+        "fr": "Le prix d'entrée démarre à 13 $/mois mais évolue avec la taille de la liste de contacts, et les prix affichés incluent déjà une remise promotionnelle dont le prix de renouvellement n'est pas confirmé, ce qui rend la valeur d'entrée plus difficile à évaluer.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Template-based campaign creation, forms, and landing pages are aimed at non-specialists, with a free tier requiring no payment to start.",
+        "fr": "La création de campagnes, formulaires et pages d'atterrissage basée sur des modèles vise les non-spécialistes, avec un forfait gratuit ne demandant aucun paiement pour démarrer.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers core email campaign, automation, and reporting functions, but dynamic content and larger automation flows are withheld until Standard or above.",
+        "fr": "Livre les fonctions principales de campagne email, d'automatisation et de reporting, mais le contenu dynamique et les flux d'automatisation plus larges sont réservés au forfait Standard et au-delà.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Premium tier adds unlimited seats and contacts, branching automations, and predictive segmentation, well past a basic email tool's ceiling.",
+        "fr": "Le forfait Premium ajoute sièges et contacts illimités, automatisations à embranchements et segmentation prédictive, bien au-delà du plafond d'un simple outil d'emailing.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and contact-list portability are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité de la liste de contacts ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and businesses running regular email campaigns and marketing automation.",
+      "fr": "Petites équipes et entreprises qui envoient des campagnes email régulières et du marketing automation."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: send a segmented product-launch email campaign to part of an audience and A/B test the subject line.",
+      "fr": "Usage : envoyer une campagne email de lancement produit segmentée à une partie de l'audience et tester la ligne d'objet en A/B."
+    },
+    {
+      "en": "Usage: set up a multi-step welcome automation for new subscribers to a mailing list.",
+      "fr": "Usage : mettre en place une automatisation de bienvenue à plusieurs étapes pour les nouveaux abonnés d'une liste."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Email marketing",
+      "fr": "Email marketing"
+    },
+    "shortDescription": {
+      "en": "A freemium email marketing platform: campaigns, automation, and segmentation, free up to 250 contacts, paid from $13/month, scaling with list size.",
+      "fr": "Une plateforme d'email marketing freemium : campagnes, automatisation, segmentation, gratuite jusqu'à 250 contacts, payante dès 13 $/mois selon la taille de liste."
+    },
+    "longDescription": {
+      "en": "Mailchimp is a freemium email marketing platform for building campaigns, forms, and landing pages, with marketing automation, audience segmentation, A/B testing, and reporting. Higher tiers add predictive segmentation and branching automations.\n\nThe free plan covers up to 250 contacts and 500 emails a month. Paid plans start at $13/month (Essentials), but pricing scales with contact list size and the displayed price already includes a promotional discount, so the renewal price is likely higher. It suits a small team running regular campaigns more than a large list on a tight budget.",
+      "fr": "Mailchimp est une plateforme d'email marketing freemium pour créer campagnes, formulaires et pages d'atterrissage, avec marketing automation, segmentation d'audience, tests A/B et reporting. Les forfaits supérieurs ajoutent la segmentation prédictive et les automatisations à embranchements.\n\nLe forfait gratuit couvre jusqu'à 250 contacts et 500 emails par mois. Les forfaits payants démarrent à 13 $/mois (Essentials), mais le prix évolue avec la taille de la liste de contacts et le prix affiché inclut déjà une remise promotionnelle, donc le prix de renouvellement est probablement plus élevé. L'outil convient à une petite équipe qui envoie des campagnes régulières, plus qu'à une grande liste avec un budget serré."
+    },
+    "pros": [
+      {
+        "en": "Free plan covers 250 contacts and 500 emails a month with no payment required.",
+        "fr": "Le forfait gratuit couvre 250 contacts et 500 emails par mois sans paiement."
+      },
+      {
+        "en": "Template-based campaigns, forms, and landing pages need no design or coding skill to start.",
+        "fr": "Les campagnes, formulaires et pages d'atterrissage basés sur des modèles ne demandent aucune compétence en design ou en code pour démarrer."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Pricing scales with contact list size, so cost can rise significantly as a list grows.",
+        "fr": "Le prix évolue avec la taille de la liste de contacts, donc le coût peut augmenter sensiblement à mesure que la liste grandit."
+      },
+      {
+        "en": "Displayed prices include a first-year promotional discount, so the renewal price is likely higher.",
+        "fr": "Les prix affichés incluent une remise promotionnelle de première année, donc le prix de renouvellement est probablement plus élevé."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You send regular email campaigns to a small-to-medium list and want templates, automation, and reporting together.",
+        "fr": "Tu envoies des campagnes email régulières à une liste petite à moyenne et veux modèles, automatisation et reporting réunis."
+      },
+      "avoidIf": {
+        "en": "Your contact list is large and growing fast; the per-contact pricing will scale up quickly.",
+        "fr": "Ta liste de contacts est grande et grandit vite ; le prix par contact va augmenter rapidement."
+      },
+      "threshold": {
+        "en": "Below the Essentials plan's list price of $13/month (about $156/year before any promotional discount ends), the free plan's 250-contact cap likely suffices.",
+        "fr": "En dessous du prix affiché du forfait Essentials, 13 $/mois (environ 156 $/an avant la fin d'une éventuelle remise promotionnelle), la limite de 250 contacts du forfait gratuit suffit probablement."
+      },
+      "billingTraps": {
+        "en": "Displayed monthly prices already include a promotional discount (about 15% for the first 12 months); confirm the renewal price before committing.",
+        "fr": "Les prix mensuels affichés incluent déjà une remise promotionnelle (environ 15 % pendant les 12 premiers mois) ; vérifie le prix de renouvellement avant de t'engager."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Mailchimp's listed Essentials/Standard/Premium monthly prices appear to already include a first-year promotional discount (~15%) per the pricing page's own caution; confirm the true renewal price on the vendor's site before publishing."
+  ],
+  "hold": "displayed prices likely include a first-year promotion; confirm the regular price"
 }

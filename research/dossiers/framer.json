@@ -3,7 +3,8 @@
   "slug": "framer",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-09-30",
   "identity": {
     "officialName": "Framer",
     "vendor": "Framer B.V.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "framer.site domain, 1,000 pages, 10 CMS collections, 1 GB bandwidth, 5 MB file uploads, 500 AI credits, no custom domain.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "framer.site domain, 1,000 pages, 10 CMS collections, 1 GB bandwidth, 5 MB file uploads, 500 AI credits, no custom domain.", "fr": "Domaine framer.site, 1 000 pages, 10 collections CMS, 1 Go de bande passante, envois de fichiers de 5 Mo, 500 crédits IA, pas de domaine personnalisé." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 10, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Custom domain included, 30 site pages, 2 CMS collections, 50 GB bandwidth, built-in SEO.", "fr": null }],
+        "keyLimits": [{ "en": "Custom domain included, 30 site pages, 2 CMS collections, 50 GB bandwidth, built-in SEO.", "fr": "Domaine personnalisé inclus, 30 pages de site, 2 collections CMS, 50 Go de bande passante, SEO intégré." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 30, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "150 site pages (expandable to 700 with add-ons), 10 CMS collections, 100 GB bandwidth, staging environment, branching with previews.", "fr": null }],
+        "keyLimits": [{ "en": "150 site pages (expandable to 700 with add-ons), 10 CMS collections, 100 GB bandwidth, staging environment, branching with previews.", "fr": "150 pages de site (extensible à 700 avec des options), 10 collections CMS, 100 Go de bande passante, environnement de préproduction, branches avec aperçus." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,38 +55,85 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom limits, unlimited editors, enterprise-grade security, uptime guarantee, SCIM, SSO.", "fr": null }],
+        "keyLimits": [{ "en": "Custom limits, unlimited editors, enterprise-grade security, uptime guarantee, SCIM, SSO.", "fr": "Limites personnalisées, éditeurs illimités, sécurité de niveau entreprise, garantie de disponibilité, SCIM, SSO." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [
-      { "en": "Extra editor seat: $20/month; content editor seat: $10/month; viewer seats are free.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Extra editor seat: $20/month; content editor seat: $10/month; viewer seats are free.", "fr": "Siège éditeur supplémentaire : 20 $/mois ; siège éditeur de contenu : 10 $/mois ; les sièges lecteur sont gratuits.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Displayed plan prices are billed yearly; monthly-billing prices were not separately confirmed on the page in this session.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI credits are limited (500 on free plan) and consumed by AI-assisted features, a mechanism worth checking before relying on them heavily.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Displayed plan prices are billed yearly; monthly-billing prices were not separately confirmed on the page in this session.", "fr": "Les prix affichés sont facturés à l'année ; les prix en facturation mensuelle n'ont pas été confirmés séparément sur la page dans cette session.", "sourceIds": ["s1"] },
+      { "en": "AI credits are limited (500 on free plan) and consumed by AI-assisted features, a mechanism worth checking before relying on them heavily.", "fr": "Les crédits IA sont limités (500 sur le plan gratuit) et consommés par les fonctions assistées par IA, un mécanisme à vérifier avant d'en dépendre fortement.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "No-code/low-code visual website builder with a built-in CMS for content-driven pages.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Staging environment and branching with previews on the Pro plan for safer publishing workflows.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI credits for AI-assisted design/content features included on all plans.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No-code/low-code visual website builder with a built-in CMS for content-driven pages.", "fr": "Créateur de sites visuel sans code/low-code avec CMS intégré pour les pages orientées contenu.", "sourceIds": ["s1"] },
+      { "en": "Staging environment and branching with previews on the Pro plan for safer publishing workflows.", "fr": "Environnement de préproduction et branches avec aperçus sur l'offre Pro, pour publier plus sereinement.", "sourceIds": ["s1"] },
+      { "en": "AI credits for AI-assisted design/content features included on all plans.", "fr": "Crédits IA pour les fonctions de conception/contenu assistées par IA, inclus sur toutes les offres.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan has no custom domain and caps CMS collections and bandwidth.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Page count is capped even on Pro (150, extendable to 700 max via add-ons), which can limit large content sites.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free plan has no custom domain and caps CMS collections and bandwidth.", "fr": "Le plan gratuit n'a pas de domaine personnalisé et plafonne collections CMS et bande passante.", "sourceIds": ["s1"] },
+      { "en": "Page count is capped even on Pro (150, extendable to 700 max via add-ons), which can limit large content sites.", "fr": "Le nombre de pages est plafonné même sur Pro (150, extensible jusqu'à 700 via des options), ce qui peut limiter les sites à fort contenu.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "A designer or freelancer who wants to design and publish a polished site visually, without writing code or hiring a developer.", "fr": "Un designer ou freelance qui veut concevoir et publier un site soigné visuellement, sans écrire de code ni faire appel à un développeur." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Design and publish a marketing site with a custom domain and built-in SEO on the Basic plan, without writing code.", "fr": "Concevoir et publier un site vitrine avec domaine personnalisé et SEO intégré sur l'offre Basic, sans écrire de code." },
+    { "en": "Manage a content-driven site's blog or portfolio through Framer's CMS collections, publishing safely from a staging environment on Pro.", "fr": "Gérer le blog ou le portfolio d'un site orienté contenu via les collections CMS de Framer, en publiant en sécurité depuis un environnement de préproduction sur Pro." }
+  ],
   "alternatives": [
-    { "slug": "webflow", "reason": { "en": "Direct competitor no-code website builder with a similar visual design + CMS approach.", "fr": null } },
-    { "slug": "wix", "reason": { "en": "Mainstream website builder targeting a similar non-developer audience.", "fr": null } },
-    { "slug": "squarespace", "reason": { "en": "Another all-in-one website builder competing for the same small-business/portfolio use case.", "fr": null } }
+    { "slug": "webflow", "reason": { "en": "Direct competitor no-code website builder with a similar visual design + CMS approach.", "fr": "Concurrent direct de créateur de sites sans code, avec une approche similaire de conception visuelle + CMS." } },
+    { "slug": "wix", "reason": { "en": "Mainstream website builder targeting a similar non-developer audience.", "fr": "Créateur de sites grand public ciblant un public similaire de non-développeurs." } },
+    { "slug": "squarespace", "reason": { "en": "Another all-in-one website builder competing for the same small-business/portfolio use case.", "fr": "Un autre créateur de sites tout-en-un, en concurrence sur le même usage petite entreprise/portfolio." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Basic, at about $10/month on annual billing, adds a custom domain, 30 pages and 50GB bandwidth on top of a usable free plan, a low cost for a working published site.", "fr": "Basic, autour de 10 $/mois en engagement annuel, ajoute domaine personnalisé, 30 pages et 50 Go de bande passante en plus d'un plan gratuit déjà utilisable, un coût faible pour un site publié fonctionnel.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers a visual site builder with a working CMS and, on Pro, a staging environment with branching previews, without a workaround mentioned in the facts.", "fr": "Assure un créateur de site visuel avec un CMS fonctionnel et, sur Pro, un environnement de préproduction avec aperçus de branches, sans contournement mentionné dans les faits.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines a visual builder, CMS collections, staging/branching and AI credits in one product, though page counts stay capped even on Pro (150, extendable via paid add-ons).", "fr": "Combine créateur visuel, collections CMS, préproduction/branches et crédits IA dans un seul produit, même si le nombre de pages reste plafonné jusque sur Pro (150, extensible via des options payantes).", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Website builder", "fr": "Créateur de sites" },
+    "shortDescription": { "en": "Framer is a no-code visual website builder with a built-in CMS, staging environment and AI-assisted design and content features.", "fr": "Framer est un créateur de sites sans code avec CMS intégré, environnement de préproduction et fonctions de conception et contenu assistées par IA." },
+    "longDescription": {
+      "en": "Framer is a visual, no-code website builder built around a CMS for content-driven pages, so a designer can build and publish a site without writing code. Pro adds a staging environment and branching with previews for safer publishing, and AI credits power AI-assisted design and content features on every plan.\n\nThe Free plan has no custom domain and caps pages, CMS collections and bandwidth. Basic, at about $10/month billed annually, adds a custom domain, 30 pages and 50GB bandwidth; Pro, at about $30/month, raises those limits to 150 pages (expandable via add-ons) and adds the staging workflow. Extra editor seats cost $20/month each.",
+      "fr": "Framer est un créateur de sites visuel et sans code, construit autour d'un CMS pour les pages orientées contenu, pour publier un site sans écrire de code. Pro ajoute un environnement de préproduction et des branches avec aperçus, et des crédits IA alimentent les fonctions assistées par IA sur toutes les offres.\n\nLe plan gratuit n'a pas de domaine personnalisé et plafonne pages, collections CMS et bande passante. Basic, autour de 10 $/mois en annuel, ajoute un domaine personnalisé, 30 pages et 50 Go de bande passante ; Pro, autour de 30 $/mois, relève ces limites à 150 pages (extensible via des options) et ajoute la préproduction. Un siège éditeur de plus coûte 20 $/mois."
+    },
+    "pros": [
+      { "en": "AI credits for AI-assisted design and content features are included on every plan, even Free.", "fr": "Les crédits IA pour les fonctions de conception et de contenu assistées par IA sont inclus sur toutes les offres, même Free." },
+      { "en": "Pro's staging environment with branching and previews lets you publish safely without a separate tool.", "fr": "L'environnement de préproduction de Pro, avec branches et aperçus, permet de publier en sécurité sans outil séparé." }
+    ],
+    "cons": [
+      { "en": "The Free plan has no custom domain, so any public site needs at least the $10/month Basic plan.", "fr": "Le plan gratuit n'a pas de domaine personnalisé, donc tout site public a besoin d'au moins l'offre Basic à 10 $/mois." },
+      { "en": "Page count is capped even on Pro (150, extendable via paid add-ons), which can limit large content sites.", "fr": "Le nombre de pages est plafonné même sur Pro (150, extensible via des options payantes), ce qui peut limiter les sites à fort contenu." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a visual, no-code site with a built-in CMS and are fine starting around $10/month for a custom domain.", "fr": "Tu veux un site visuel et sans code avec CMS intégré, et un budget de départ autour de 10 $/mois pour un domaine personnalisé te convient." },
+      "avoidIf": { "en": "You're building a very large content site: even Pro's page cap (150, extendable) may not fit without extra add-on cost.", "fr": "Tu construis un site à très fort contenu : même le plafond de pages de Pro (150, extensible) peut ne pas suffire sans coût d'option supplémentaire." },
+      "threshold": { "en": "Basic costs about $10/month on annual billing for a custom domain and 30 pages; Pro is about $30/month for 150 pages and a staging workflow.", "fr": "Basic coûte environ 10 $/mois en engagement annuel pour un domaine personnalisé et 30 pages ; Pro est autour de 30 $/mois pour 150 pages et un flux de préproduction." },
+      "billingTraps": { "en": "Extra editor seats cost $20/month each on top of the plan price, and displayed prices are billed yearly, with monthly billing not separately confirmed.", "fr": "Chaque siège éditeur supplémentaire coûte 20 $/mois en plus du prix de l'offre, et les prix affichés sont facturés à l'année, la facturation mensuelle n'ayant pas été confirmée séparément." }
+    }
+  },
   "unknowns": [
     "Monthly (non-annual) billing prices for Basic and Pro were not separately displayed/confirmed on the page fetched in this session."
   ],

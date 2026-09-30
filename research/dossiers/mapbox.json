@@ -3,7 +3,7 @@
   "slug": "mapbox",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Mapbox",
     "vendor": "Mapbox, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://mapbox.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Mapbox pricing" }
+    {
+      "id": "s1",
+      "url": "https://mapbox.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Mapbox pricing"
+    }
   ],
   "pricing": {
     "model": "usage",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Free monthly allowances vary by API, e.g. up to 50,000 Mapbox GL JS map loads, 25,000 monthly active users on Maps SDKs, 100,000 geocoding requests." }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free monthly allowances vary by API, e.g. up to 50,000 Mapbox GL JS map loads, 25,000 monthly active users on Maps SDKs, 100,000 geocoding requests.",
+        "fr": "Les quotas gratuits mensuels varient selon l'API, par exemple jusqu'à 50 000 chargements de carte Mapbox GL JS, 25 000 utilisateurs actifs mensuels sur les SDK Maps, 100 000 requêtes de géocodage."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,44 +47,251 @@
         "name": "Free tier (per-API allowances)",
         "unit": "usage",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free monthly allowances vary by API, e.g. up to 50,000 Mapbox GL JS map loads, 25,000 MAU on Maps SDKs, 100,000 geocoding requests." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Free monthly allowances vary by API, e.g. up to 50,000 Mapbox GL JS map loads, 25,000 MAU on Maps SDKs, 100,000 geocoding requests.",
+            "fr": "Les quotas gratuits mensuels varient selon l'API, par exemple jusqu'à 50 000 chargements de carte Mapbox GL JS, 25 000 utilisateurs actifs mensuels sur les SDK Maps, 100 000 requêtes de géocodage."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "free",
     "addOns": [
-      { "name": "Individual premium support", "unit": "account", "price": { "monthly": 50 }, "sourceIds": ["s1"] },
-      { "name": "Business premium support", "unit": "account", "price": { "monthly": null }, "sourceIds": ["s1"] }
+      {
+        "name": "Individual premium support",
+        "unit": "account",
+        "price": {
+          "monthly": 50
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Business premium support",
+        "unit": "account",
+        "price": {
+          "monthly": null
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Pricing is pay-as-you-go per API (Maps SDK, GL JS, Directions, Geocoding, etc.), each with its own free allowance and volume-discounted tiers past it; there is no single flat plan price.", "sourceIds": ["s1"] },
-      { "en": "Traffic Data, Movement Data and Boundaries products require custom licensing, sold on quote only.", "sourceIds": ["s1"] }
+      {
+        "en": "Pricing is pay-as-you-go per API (Maps SDK, GL JS, Directions, Geocoding, etc.), each with its own free allowance and volume-discounted tiers past it; there is no single flat plan price.",
+        "fr": "Le prix est à l'usage par API (Maps SDK, GL JS, Directions, Geocoding, etc.), chacune avec son propre quota gratuit et des paliers dégressifs au-delà ; il n'existe pas de prix de plan unique et fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Traffic Data, Movement Data and Boundaries products require custom licensing, sold on quote only.",
+        "fr": "Les produits Traffic Data, Movement Data et Boundaries nécessitent une licence sur mesure, vendue uniquement sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Customizable web and mobile map rendering (Mapbox GL JS, Maps SDKs for iOS/Android).", "sourceIds": ["s1"] },
-      { "en": "Geocoding, directions/navigation and static image generation APIs.", "sourceIds": ["s1"] }
+      {
+        "en": "Customizable web and mobile map rendering (Mapbox GL JS, Maps SDKs for iOS/Android).",
+        "fr": "Rendu de carte personnalisable pour le web et le mobile (Mapbox GL JS, SDK Maps pour iOS/Android).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Geocoding, directions/navigation and static image generation APIs.",
+        "fr": "API de géocodage, d'itinéraires/navigation et de génération d'images statiques.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No flat subscription; cost scales with usage and can become unpredictable at scale without monitoring.", "sourceIds": ["s1"] },
-      { "en": "High-value geospatial datasets (traffic, movement, boundaries) are not self-serve and require a sales conversation.", "sourceIds": ["s1"] }
+      {
+        "en": "No flat subscription; cost scales with usage and can become unpredictable at scale without monitoring.",
+        "fr": "Pas d'abonnement fixe ; le coût suit l'usage et peut devenir imprévisible à grande échelle sans suivi.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "High-value geospatial datasets (traffic, movement, boundaries) are not self-serve and require a sales conversation.",
+        "fr": "Les jeux de données géospatiales à forte valeur (trafic, mouvement, frontières) ne sont pas en libre-service et nécessitent un échange commercial.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer building a web or mobile app who needs customizable map rendering, geocoding, or routing without building a mapping stack from scratch.",
+      "fr": "Un développeur qui construit une application web ou mobile et a besoin de cartes personnalisables, de géocodage ou d'itinéraires sans construire une pile cartographique de zéro."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: embed a customizable map in a web app with Mapbox GL JS, result: an interactive map without hosting map tiles yourself.",
+      "fr": "Usage : intégrer une carte personnalisable dans une application web avec Mapbox GL JS, résultat : une carte interactive sans héberger soi-même les tuiles cartographiques."
+    },
+    {
+      "en": "Usage: call the geocoding API to turn a customer address into coordinates, result: the address is placed on a map without building a geocoding service in-house.",
+      "fr": "Usage : appeler l'API de géocodage pour convertir une adresse client en coordonnées, résultat : l'adresse est placée sur une carte sans construire un service de géocodage en interne."
+    }
+  ],
   "alternatives": [
-    { "slug": "google-maps", "reason": { "en": "Direct competitor for map rendering, geocoding and directions APIs." } }
+    {
+      "slug": "google-maps",
+      "reason": {
+        "en": "Direct competitor for map rendering, geocoding and directions APIs.",
+        "fr": "Concurrent direct pour le rendu de carte, le géocodage et les API d'itinéraires."
+      }
+    },
+    {
+      "slug": "arcgis",
+      "reason": {
+        "en": "Competing mapping and GIS platform with rendering, geocoding, and spatial analysis APIs.",
+        "fr": "Plateforme cartographique et SIG concurrente avec rendu, géocodage et API d'analyse spatiale."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "MapTiler", "officialUrl": "https://www.maptiler.com", "reason": "Usage-based map/geocoding API competitor not in the catalogue" },
-    { "name": "OpenStreetMap / Leaflet ecosystem", "officialUrl": "https://www.openstreetmap.org", "reason": "Free open-data alternative frequently compared to Mapbox" }
+    {
+      "name": "MapTiler",
+      "officialUrl": "https://www.maptiler.com",
+      "reason": "Usage-based map/geocoding API competitor not in the catalogue"
+    },
+    {
+      "name": "OpenStreetMap / Leaflet ecosystem",
+      "officialUrl": "https://www.openstreetmap.org",
+      "reason": "Free open-data alternative frequently compared to Mapbox"
+    }
   ],
   "unknowns": [
     "Exact free-tier allowance and unit price for every Mapbox API were not enumerated; only representative examples (Maps SDK, Directions) were captured within the page-budget.",
     "No entry-level flat paid plan exists, so a single comparePriceMonthly figure cannot be derived without an assumed usage volume."
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Generous free allowances per API (e.g. 50,000 GL JS map loads, 100,000 geocoding requests) cover a small app before any billing starts.",
+        "fr": "Des quotas gratuits généreux par API (par exemple 50 000 chargements de carte GL JS, 100 000 requêtes de géocodage) couvrent une petite application avant toute facturation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Usage-based pricing across separate APIs (Maps SDK, GL JS, Directions, Geocoding) means checking several allowances rather than one flat plan, adding setup overhead.",
+        "fr": "La tarification à l'usage répartie sur plusieurs API (SDK Maps, GL JS, Directions, Geocoding) oblige à vérifier plusieurs quotas plutôt qu'un seul plan fixe, ce qui ajoute de la complexité au démarrage.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers customizable map rendering, geocoding, and directions as advertised across web and mobile SDKs.",
+        "fr": "Assure le rendu de carte personnalisable, le géocodage et les itinéraires comme annoncé, sur les SDK web et mobile.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers map rendering, geocoding, directions, and static images, with additional high-value datasets (traffic, movement, boundaries) available on custom license.",
+        "fr": "Couvre le rendu de carte, le géocodage, les itinéraires et les images statiques, avec des jeux de données à forte valeur (trafic, mouvement, frontières) disponibles sur licence sur mesure.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or migration path away from Mapbox's map styles and data is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données ou la portabilité des styles de carte hors de Mapbox ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Map and location APIs",
+      "fr": "Cartographie et localisation"
+    },
+    "shortDescription": {
+      "en": "Usage-based mapping platform with customizable map rendering, geocoding, and directions APIs for web and mobile apps.",
+      "fr": "Plateforme cartographique à l'usage avec rendu de carte personnalisable, géocodage et API d'itinéraires pour applications web et mobile."
+    },
+    "longDescription": {
+      "en": "Mapbox provides customizable map rendering for web and mobile (Mapbox GL JS, Maps SDKs for iOS/Android) plus geocoding, directions/navigation, and static image generation APIs. Each API has its own free monthly allowance, such as 50,000 GL JS map loads or 100,000 geocoding requests.\n\nThere is no flat subscription; pricing is pay-as-you-go per API with volume-discounted tiers past the free allowance, and high-value datasets like traffic and movement data require a custom quote. It fits a developer building a map-driven feature into a web or mobile app who wants to start free and pay only as usage grows.",
+      "fr": "Mapbox propose un rendu de carte personnalisable pour le web et le mobile (GL JS, SDK Maps pour iOS/Android), ainsi que des API de géocodage, d'itinéraires et de génération d'images statiques. Chaque API a son propre quota gratuit mensuel, par exemple 50 000 chargements de carte ou 100 000 requêtes de géocodage.\n\nIl n'y a pas d'abonnement fixe ; la tarification est à l'usage par API avec des paliers dégressifs au-delà du quota gratuit, et les données à forte valeur comme le trafic nécessitent un devis. L'outil convient à un développeur qui intègre une fonctionnalité cartographique et veut démarrer gratuitement puis payer selon l'usage."
+    },
+    "pros": [
+      {
+        "en": "Generous free monthly allowances per API before any cost starts.",
+        "fr": "Quotas gratuits mensuels généreux par API avant tout coût."
+      },
+      {
+        "en": "Covers map rendering, geocoding, and directions in one platform with web and mobile SDKs.",
+        "fr": "Couvre rendu de carte, géocodage et itinéraires dans une seule plateforme avec des SDK web et mobile."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No flat subscription, so cost can become unpredictable at scale without usage monitoring.",
+        "fr": "Pas d'abonnement fixe, donc le coût peut devenir imprévisible à grande échelle sans suivi de l'usage."
+      },
+      {
+        "en": "High-value datasets like traffic and movement data are not self-serve and require a sales conversation.",
+        "fr": "Les jeux de données à forte valeur comme le trafic et le mouvement ne sont pas en libre-service et nécessitent un échange commercial."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need customizable map rendering, geocoding, or directions in an app and expect usage within or near the free monthly allowances.",
+        "fr": "Tu as besoin de cartes personnalisables, de géocodage ou d'itinéraires dans une application, avec un usage proche des quotas gratuits mensuels."
+      },
+      "avoidIf": {
+        "en": "You need a predictable flat monthly cost, since Mapbox bills per API usage rather than a single plan price.",
+        "fr": "Tu as besoin d'un coût mensuel fixe et prévisible, car Mapbox facture à l'usage par API plutôt qu'un prix de plan unique."
+      },
+      "threshold": {
+        "en": "The free tier covers up to 50,000 GL JS map loads or 100,000 geocoding requests per month before usage-based billing kicks in per API.",
+        "fr": "Le palier gratuit couvre jusqu'à 50 000 chargements de carte GL JS ou 100 000 requêtes de géocodage par mois avant que la facturation à l'usage ne s'applique par API."
+      },
+      "billingTraps": {
+        "en": "Each API (map loads, geocoding, directions) has its own separate free allowance and billing meter, so a spike in one API can trigger charges even if others stay within their free quota.",
+        "fr": "Chaque API (chargements de carte, géocodage, itinéraires) a son propre quota gratuit et son propre compteur de facturation, donc un pic sur une API peut déclencher des frais même si les autres restent dans leur quota gratuit."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
   "conflicts": []
 }

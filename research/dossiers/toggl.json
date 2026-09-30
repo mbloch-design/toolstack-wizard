@@ -3,7 +3,7 @@
   "slug": "toggl",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Toggl Track",
     "vendor": "Toggl OÜ",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://toggl.com/focus/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Toggl Track pricing" }
+    {
+      "id": "s1",
+      "url": "https://toggl.com/focus/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Toggl Track pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,78 +30,317 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Free forever for a limited number of users, with manual/real-time timers, calendar integrations, and personal-level insights.", "fr": null }, "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free forever for a limited number of users, with manual/real-time timers, calendar integrations, and personal-level insights.",
+        "fr": "Gratuit à vie pour un nombre limité d'utilisateurs, avec chronomètres manuels/temps réel, intégrations calendrier et indicateurs personnels."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Free",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Limited number of users; core time tracking without team reports.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Limited number of users; core time tracking without team reports.",
+            "fr": "Nombre d'utilisateurs limité ; suivi du temps de base sans rapports d'équipe."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "starter",
         "name": "Starter",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 9, "annualPerMonth": 6, "oneTime": null },
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": 6,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Billable rates, team-level reports, timeline views, tags, milestones, basic capacity planning.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Billable rates, team-level reports, timeline views, tags, milestones, basic capacity planning.",
+            "fr": "Taux facturables, rapports au niveau équipe, vues chronologiques, tags, jalons, planification de capacité basique."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 16, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 16,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Labor cost and profitability reports, fixed-fee projects, timesheet approvals, Jira/Asana integrations, SSO.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Labor cost and profitability reports, fixed-fee projects, timesheet approvals, Jira/Asana integrations, SSO.",
+            "fr": "Rapports de coût de main-d'œuvre et de rentabilité, projets au forfait, validation des feuilles de temps, intégrations Jira/Asana, SSO."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom roles, custom integrations, multiple workspaces, dedicated customer success manager, volume discounts.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Custom roles, custom integrations, multiple workspaces, dedicated customer success manager, volume discounts.",
+            "fr": "Rôles personnalisés, intégrations sur mesure, plusieurs espaces de travail, chargé de compte dédié, remises sur volume."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Annual billing gives roughly a 33% discount versus monthly on paid plans.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Annual billing gives roughly a 33% discount versus monthly on paid plans.",
+        "fr": "La facturation annuelle donne une remise d'environ 33 % par rapport au mensuel sur les forfaits payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Manual and real-time time tracking with a focus mode and calendar integrations.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Team-level and profitability reporting, billable rates, timesheet approvals on paid plans.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Manual and real-time time tracking with a focus mode and calendar integrations.",
+        "fr": "Suivi du temps manuel et en temps réel, avec un mode focus et des intégrations calendrier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Team-level and profitability reporting, billable rates, timesheet approvals on paid plans.",
+        "fr": "Reporting d'équipe et de rentabilité, taux facturables, validation des feuilles de temps sur les forfaits payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan restricts the number of users, making it unsuitable beyond a very small team.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Advanced integrations (Jira, Asana) and SSO require the Premium tier or above.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free plan restricts the number of users, making it unsuitable beyond a very small team.",
+        "fr": "Le forfait gratuit limite le nombre d'utilisateurs, ce qui le rend inadapté au-delà d'une très petite équipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Advanced integrations (Jira, Asana) and SSO require the Premium tier or above.",
+        "fr": "Les intégrations avancées (Jira, Asana) et le SSO demandent le forfait Premium ou plus.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Jira", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Asana", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Jira",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Asana",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "clockify",
+      "reason": {
+        "en": "Free time tracking competitor covering similar core tracking and reporting, with a more generous free tier for teams.",
+        "fr": "Concurrent de suivi du temps gratuit, avec un suivi et un reporting similaires et un forfait gratuit plus généreux pour les équipes."
+      }
+    },
+    {
+      "slug": "harvest",
+      "reason": {
+        "en": "Direct time tracking and invoicing competitor for freelancers and small teams billing clients by the hour.",
+        "fr": "Concurrent direct de suivi du temps et de facturation pour les indépendants et petites équipes qui facturent leurs clients à l'heure."
+      }
+    }
+  ],
   "missingAlternatives": [
-    { "name": "Harvest", "officialUrl": "https://www.getharvest.com/", "reason": "Already appears in candidate list as a close time-tracking/invoicing competitor" }
+    {
+      "name": "RescueTime",
+      "officialUrl": "https://www.rescuetime.com/",
+      "reason": "Automatic background time tracking alternative, not in the catalogue"
+    },
+    {
+      "name": "Hubstaff",
+      "officialUrl": "https://hubstaff.com/",
+      "reason": "Time tracking with screenshots/activity monitoring, alternative approach not in the catalogue"
+    }
   ],
   "unknowns": [
     "Exact free-plan user cap not specified on the pricing page.",
     "Mobile/desktop app platform coverage (iOS, Android, desktop apps) not confirmed in this session's single fetch."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Starter plan at $6/month billed annually already adds billable rates, team reports, and capacity planning, roughly a third off the monthly price.",
+        "fr": "Le forfait Starter à 6 $/mois en engagement annuel ajoute déjà taux facturables, rapports d'équipe et planification de capacité, environ un tiers de moins que le prix mensuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A free forever tier with manual and real-time timers needs no payment or setup to try the core tracking function.",
+        "fr": "Un forfait gratuit à vie avec chronomètres manuels et temps réel ne demande ni paiement ni configuration pour essayer la fonction de suivi de base.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Core time tracking works as promised on the free plan, but team-level reports, billable rates, and integrations are withheld until a paid tier.",
+        "fr": "Le suivi de temps de base fonctionne comme annoncé sur le forfait gratuit, mais les rapports d'équipe, les taux facturables et les intégrations sont réservés à un forfait payant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Premium tier adds profitability reports and SSO, solid for a small team, but Enterprise gates custom roles and integrations behind a quote, capping the top end.",
+        "fr": "Le forfait Premium ajoute rapports de rentabilité et SSO, solide pour une petite équipe, mais Enterprise réserve les rôles personnalisés et intégrations sur mesure à un devis, ce qui plafonne le haut de gamme.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent consultants and small teams who bill time to clients and need proof of hours worked.",
+      "fr": "Consultants indépendants et petites équipes qui facturent du temps à des clients et ont besoin de justifier les heures travaillées."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: track billable hours on a client project with a real-time timer, then export a report for the client invoice.",
+      "fr": "Usage : suivre les heures facturables d'un projet client avec un chronomètre en temps réel, puis exporter un rapport pour la facture client."
+    },
+    {
+      "en": "Usage: review team-level profitability reports across several ongoing projects to see which ones run over budget.",
+      "fr": "Usage : consulter les rapports de rentabilité au niveau de l'équipe sur plusieurs projets en cours pour repérer ceux qui dépassent le budget."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Time tracking",
+      "fr": "Suivi du temps"
+    },
+    "shortDescription": {
+      "en": "A freemium time tracking tool with manual and real-time timers, team reporting, and billable rates, free for a limited team size, paid from $6/month.",
+      "fr": "Un outil de suivi du temps freemium : chronomètres manuels et temps réel, reporting équipe, taux facturables, dès 6 $/mois."
+    },
+    "longDescription": {
+      "en": "Toggl Track is a freemium time tracking tool offering manual and real-time timers, a focus mode, and calendar integrations. Paid tiers add team-level and profitability reporting, billable rates, and timesheet approvals.\n\nThe free plan works forever for a limited number of users but caps out at basic tracking. The Starter plan starts at $9/month (or $6/month billed annually) and adds team reports and capacity planning; Premium at $16/month adds profitability reports, fixed-fee projects, and integrations with Jira and Asana. It suits a freelancer or small team billing time to clients.",
+      "fr": "Toggl Track est un outil de suivi du temps freemium avec chronomètres manuels et temps réel, un mode focus et des intégrations calendrier. Les forfaits payants ajoutent le reporting d'équipe et de rentabilité, les taux facturables et la validation des feuilles de temps.\n\nLe forfait gratuit fonctionne à vie pour un nombre limité d'utilisateurs, mais reste au suivi de base. Le forfait Starter démarre à 9 $/mois (ou 6 $/mois en engagement annuel) et ajoute rapports d'équipe et planification de capacité ; Premium à 16 $/mois ajoute rapports de rentabilité, projets au forfait et intégrations Jira/Asana. Il convient à un indépendant ou une petite équipe qui facture du temps à des clients."
+    },
+    "pros": [
+      {
+        "en": "Free forever tier covers manual and real-time tracking with no payment required to start.",
+        "fr": "Le forfait gratuit à vie couvre le suivi manuel et temps réel sans paiement pour démarrer."
+      },
+      {
+        "en": "Starter plan billed annually drops to $6/month, cheap for billable-rate and team reporting features.",
+        "fr": "Le forfait Starter en engagement annuel descend à 6 $/mois, peu cher pour les taux facturables et le reporting d'équipe."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan caps the number of users, unsuitable beyond a very small team.",
+        "fr": "Le forfait gratuit limite le nombre d'utilisateurs, inadapté au-delà d'une toute petite équipe."
+      },
+      {
+        "en": "Jira and Asana integrations and SSO require the pricier Premium tier.",
+        "fr": "Les intégrations Jira, Asana et le SSO demandent le forfait Premium, plus cher."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You bill time to clients or need team-level time reports beyond basic tracking.",
+        "fr": "Tu factures du temps à des clients ou as besoin de rapports de temps au niveau équipe, au-delà du suivi de base."
+      },
+      "avoidIf": {
+        "en": "You're a solo user who only needs a simple personal timer with no team reports.",
+        "fr": "Tu es seul et n'as besoin que d'un chronomètre personnel simple, sans rapport d'équipe."
+      },
+      "threshold": {
+        "en": "Below the Starter plan's annual cost of $72 per user (6 x 12 months), the free plan's basic tracking likely suffices for a very small team.",
+        "fr": "En dessous du coût annuel du forfait Starter, 72 $ par utilisateur (6 x 12 mois), le suivi de base du forfait gratuit suffit probablement pour une toute petite équipe."
+      }
+    }
+  }
 }

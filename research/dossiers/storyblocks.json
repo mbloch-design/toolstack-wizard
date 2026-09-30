@@ -3,7 +3,7 @@
   "slug": "storyblocks",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Storyblocks",
     "vendor": "Storyblocks, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.storyblocks.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Storyblocks pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.storyblocks.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Storyblocks pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,73 +44,298 @@
         "name": "Essentials",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 21, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 21,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited downloads of video, photos, vectors, illustrations at up to 8K; 3,000 AI credits/month; individual license only." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited downloads of video, photos, vectors, illustrations at up to 8K; 3,000 AI credits/month; individual license only.",
+            "fr": "Téléchargements illimités de vidéos, photos, vecteurs, illustrations jusqu'à 8K ; 3 000 crédits IA par mois ; licence individuelle uniquement."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "unlimited-all-access",
         "name": "Unlimited All Access",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 30, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 30,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds music, sound effects, voiceover and the Maker tool; 4,500 AI credits/month." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds music, sound effects, voiceover and the Maker tool; 4,500 AI credits/month.",
+            "fr": "Ajoute la musique, les effets sonores, la voix off et l'outil Maker ; 4 500 crédits IA par mois."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "small-business",
         "name": "Small Business",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 40, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 40,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Small-business license (under 50 employees); 6,000 AI credits/month." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Small-business license (under 50 employees); 6,000 AI credits/month.",
+            "fr": "Licence petite entreprise (moins de 50 employés) ; 6 000 crédits IA par mois."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "$1M indemnification, broadcast & OTT rights, dedicated support and admin controls." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "$1M indemnification, broadcast & OTT rights, dedicated support and admin controls.",
+            "fr": "Indemnisation de 1 million $, droits de diffusion et OTT, support dédié et contrôles d'administration."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "essentials",
     "addOns": [],
     "cautions": [
-      { "en": "The $21/month Essentials price is the annual-billing monthly-equivalent rate; a separate monthly-billing rate was not captured on this page.", "sourceIds": ["s1"] }
+      {
+        "en": "The $21/month Essentials price is the annual-billing monthly-equivalent rate; a separate monthly-billing rate was not captured on this page.",
+        "fr": "Le prix de 21 $/mois pour Essentials est le tarif mensuel équivalent en facturation annuelle ; un tarif de facturation mensuelle séparé n'a pas été relevé sur cette page.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Unlimited-download subscription stock library covering video, music, photos, vectors and illustrations.", "sourceIds": ["s1"] },
-      { "en": "Built-in AI generation (image and video) and editing tools, metered by a monthly AI-credit allowance.", "sourceIds": ["s1"] },
-      { "en": "Adobe Creative Cloud plugin for in-app asset search and insertion.", "sourceIds": ["s1"] }
+      {
+        "en": "Unlimited-download subscription stock library covering video, music, photos, vectors and illustrations.",
+        "fr": "Bibliothèque de stock par abonnement avec téléchargements illimités couvrant vidéo, musique, photos, vecteurs et illustrations.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in AI generation (image and video) and editing tools, metered by a monthly AI-credit allowance.",
+        "fr": "Génération par IA intégrée (image et vidéo) et outils d'édition, mesurés par un quota mensuel de crédits IA.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Adobe Creative Cloud plugin for in-app asset search and insertion.",
+        "fr": "Plugin Adobe Creative Cloud pour rechercher et insérer des assets directement dans l'application.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free plan; entry cost is a paid annual-billed subscription.", "sourceIds": ["s1"] },
-      { "en": "Music, sound effects and voiceover assets are gated behind the Unlimited All Access tier or higher.", "sourceIds": ["s1"] }
+      {
+        "en": "No free plan; entry cost is a paid annual-billed subscription.",
+        "fr": "Pas de plan gratuit ; le coût d'entrée est un abonnement payant facturé annuellement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Music, sound effects and voiceover assets are gated behind the Unlimited All Access tier or higher.",
+        "fr": "Les assets musique, effets sonores et voix off sont réservés au palier Unlimited All Access ou supérieur.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Adobe Creative Cloud", "slug": "adobe", "sourceIds": ["s1"] }
+      {
+        "name": "Adobe Creative Cloud",
+        "slug": "adobe",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator or video editor who needs an unlimited-download stock library instead of paying per clip or image.",
+      "fr": "Un créateur de contenu ou monteur vidéo qui a besoin d'une bibliothèque de stock à téléchargements illimités plutôt que de payer par clip ou par image."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: download stock footage and photos for a video project without a per-clip license, result: the project ships without tracking individual asset costs.",
+      "fr": "Usage : télécharger des séquences et photos de stock pour un projet vidéo sans licence par clip, résultat : le projet sort sans suivre le coût de chaque asset."
+    },
+    {
+      "en": "Usage: search and insert a stock clip directly from Adobe Creative Cloud, result: the asset lands in the timeline without leaving the editing app.",
+      "fr": "Usage : rechercher et insérer un clip de stock directement depuis Adobe Creative Cloud, résultat : l'asset arrive dans la timeline sans quitter le logiciel de montage."
+    }
+  ],
   "alternatives": [
-    { "slug": "envato-elements", "reason": { "en": "Direct unlimited-download subscription stock library competitor." } },
-    { "slug": "motion-array", "reason": { "en": "Subscription stock footage and templates competitor for video production." } }
+    {
+      "slug": "envato-elements",
+      "reason": {
+        "en": "Direct unlimited-download subscription stock library competitor.",
+        "fr": "Concurrent direct de bibliothèque de stock par abonnement à téléchargements illimités."
+      }
+    },
+    {
+      "slug": "motion-array",
+      "reason": {
+        "en": "Subscription stock footage and templates competitor for video production.",
+        "fr": "Concurrent d'abonnement pour séquences de stock et templates pour la production vidéo."
+      }
+    },
+    {
+      "slug": "productioncrate",
+      "reason": {
+        "en": "Subscription stock footage and VFX assets competitor covering the same core library need.",
+        "fr": "Concurrent d'abonnement pour séquences de stock et assets VFX, couvrant le même besoin de bibliothèque."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Artgrid", "officialUrl": "https://artgrid.io", "reason": "Subscription stock footage competitor not in the catalogue" }
+    {
+      "name": "Artgrid",
+      "officialUrl": "https://artgrid.io",
+      "reason": "Subscription stock footage competitor not in the catalogue"
+    }
   ],
   "unknowns": [
     "Separate monthly (non-annual) billing prices were not shown on the fetched page.",
     "Free trial length and terms mentioned as an FAQ topic on the page but not detailed in the fetched content."
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Unlimited downloads at $21/month (annual) replaces per-clip licensing, which pays off quickly for anyone downloading more than a handful of assets a month.",
+        "fr": "Les téléchargements illimités à 21 $/mois (annuel) remplacent les licences par clip, ce qui s'amortit vite pour quiconque télécharge plus de quelques assets par mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Unlimited downloads with no per-asset checkout step, plus a direct Adobe Creative Cloud plugin for in-app search.",
+        "fr": "Téléchargements illimités sans étape de paiement par asset, avec un plugin Adobe Creative Cloud direct pour rechercher dans l'application.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers unlimited video, photo, vector, and illustration downloads plus AI generation as advertised, metered only by the AI-credit allowance.",
+        "fr": "Assure les téléchargements illimités de vidéo, photo, vecteur et illustration plus la génération par IA comme annoncé, seul le quota de crédits IA étant limité.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers video, photos, vectors, illustrations, AI generation, and (from Unlimited All Access) music, sound effects, and voiceover in one subscription.",
+        "fr": "Couvre vidéo, photos, vecteurs, illustrations, génération par IA et, à partir d'Unlimited All Access, musique, effets sonores et voix off dans un seul abonnement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether downloaded assets remain licensed for use after cancellation is not covered by the collected sources.",
+        "fr": "Note neutre : la question de savoir si les assets téléchargés restent sous licence après résiliation ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Unlimited stock media",
+      "fr": "Médias de stock illimités"
+    },
+    "shortDescription": {
+      "en": "Subscription stock library with unlimited downloads of video, photos, and illustrations, plus AI generation tools.",
+      "fr": "Bibliothèque de stock par abonnement avec téléchargements illimités de vidéos, photos et illustrations, plus des outils de génération par IA."
+    },
+    "longDescription": {
+      "en": "Storyblocks offers unlimited downloads of video, photos, vectors, and illustrations up to 8K, plus built-in AI image and video generation metered by a monthly credit allowance, and an Adobe Creative Cloud plugin for in-app search.\n\nThe entry Essentials plan is $21/month (annual billing) for an individual license with 3,000 AI credits/month. Unlimited All Access at $30/month adds music, sound effects, voiceover, and the Maker tool; Small Business at $40/month covers companies under 50 employees; Business is quote-only with $1M indemnification and broadcast rights. It fits a content creator or video editor who wants unlimited asset downloads instead of paying per clip.",
+      "fr": "Storyblocks propose des téléchargements illimités de vidéos, photos, vecteurs et illustrations jusqu'à 8K, plus une génération d'image et de vidéo par IA, mesurée par un quota mensuel de crédits, et un plugin Adobe Creative Cloud pour rechercher directement dans l'application.\n\nLe plan d'entrée Essentials coûte 21 $/mois (annuel) pour une licence individuelle avec 3 000 crédits IA. Unlimited All Access à 30 $/mois ajoute musique, effets sonores et voix off ; Small Business à 40 $/mois couvre les entreprises de moins de 50 employés ; Business est sur devis. L'outil convient à un créateur de contenu qui veut des téléchargements illimités plutôt que de payer par clip."
+    },
+    "pros": [
+      {
+        "en": "Unlimited downloads at a fixed monthly price instead of per-clip licensing.",
+        "fr": "Téléchargements illimités à un prix mensuel fixe plutôt qu'une licence par clip."
+      },
+      {
+        "en": "Direct Adobe Creative Cloud plugin for searching and inserting assets without leaving the editing app.",
+        "fr": "Plugin Adobe Creative Cloud direct pour rechercher et insérer des assets sans quitter le logiciel de montage."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan; entry cost is a paid annual-billed subscription.",
+        "fr": "Pas de plan gratuit ; le coût d'entrée est un abonnement payant facturé annuellement."
+      },
+      {
+        "en": "Music, sound effects, and voiceover require upgrading past the entry Essentials plan.",
+        "fr": "Musique, effets sonores et voix off nécessitent de passer au-delà du plan d'entrée Essentials."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You regularly download stock video, photos, or illustrations and want a flat monthly cost instead of per-clip licensing.",
+        "fr": "Tu télécharges régulièrement des vidéos, photos ou illustrations de stock et tu veux un coût mensuel fixe plutôt qu'une licence par clip."
+      },
+      "avoidIf": {
+        "en": "You need music, sound effects, or voiceover assets but want to stay on the cheapest entry plan.",
+        "fr": "Tu as besoin d'assets musique, effets sonores ou voix off mais tu veux rester sur le plan d'entrée le moins cher."
+      },
+      "threshold": {
+        "en": "Entry cost is $21/month billed annually for unlimited downloads on an individual license, before music/sound/voiceover access at $30/month.",
+        "fr": "Le coût d'entrée est de 21 $/mois en facturation annuelle pour des téléchargements illimités sur licence individuelle, avant l'accès musique/son/voix off à 30 $/mois."
+      },
+      "billingTraps": null
+    }
+  },
+  "completedLocallyOn": "2026-09-30",
   "conflicts": []
 }

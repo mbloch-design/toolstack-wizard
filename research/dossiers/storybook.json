@@ -3,7 +3,7 @@
   "slug": "storybook",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Storybook",
     "vendor": "Storybook (Chromatic / open source community)",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://storybook.js.org", "tier": 1, "accessedOn": "2026-09-25", "title": "Storybook homepage" },
-    { "id": "s2", "url": "https://www.chromatic.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Chromatic pricing (Storybook's companion cloud service)" }
+    {
+      "id": "s1",
+      "url": "https://storybook.js.org",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Storybook homepage"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.chromatic.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Chromatic pricing (Storybook's companion cloud service)"
+    }
   ],
   "pricing": {
     "model": "open_source",
@@ -25,54 +37,263 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Storybook itself is fully free open source with no usage limits; only its optional cloud companion Chromatic has paid tiers.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Storybook itself is fully free open source with no usage limits; only its optional cloud companion Chromatic has paid tiers.",
+        "fr": "Storybook lui-même est entièrement gratuit et open source, sans limite d'usage ; seul son service cloud optionnel Chromatic a des forfaits payants."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Open source",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "No feature limits; self-hosted, no included cloud visual testing/publishing.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "No feature limits; self-hosted, no included cloud visual testing/publishing.",
+            "fr": "Aucune limite fonctionnelle ; auto-hébergé, sans test visuel ni publication cloud inclus."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [
-      { "en": "Chromatic (cloud visual testing and Storybook publishing) starts around $149/month for teams, separate from Storybook itself.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Chromatic (cloud visual testing and Storybook publishing) starts around $149/month for teams, separate from Storybook itself.",
+        "fr": "Chromatic (test visuel cloud et publication de Storybook) démarre autour de 149 $/mois pour les équipes, séparément de Storybook lui-même.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Storybook the tool is entirely free; only the optional Chromatic cloud service (visual regression testing, hosted Storybook) is paid, and pricing for it was not directly re-verified in this session.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Storybook the tool is entirely free; only the optional Chromatic cloud service (visual regression testing, hosted Storybook) is paid, and pricing for it was not directly re-verified in this session.",
+        "fr": "Storybook l'outil est entièrement gratuit ; seul le service cloud optionnel Chromatic (test de régression visuelle, Storybook hébergé) est payant, et son prix n'a pas été revérifié directement dans cette session.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Build and preview UI components and pages in isolation from the main application, outside of business logic and app state.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Interaction testing and visual regression testing of components directly from stories.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Auto-generates living documentation for a component library from stories and component metadata.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Large open-source ecosystem: reports over 80 million installs per month and 90k+ GitHub stars, with a large addon ecosystem.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Build and preview UI components and pages in isolation from the main application, outside of business logic and app state.",
+        "fr": "Développer et prévisualiser des composants et des pages d'interface de façon isolée, hors de la logique métier et de l'état de l'application.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Interaction testing and visual regression testing of components directly from stories.",
+        "fr": "Test d'interaction et test de régression visuelle des composants directement depuis les stories.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Auto-generates living documentation for a component library from stories and component metadata.",
+        "fr": "Génère automatiquement une documentation vivante d'une bibliothèque de composants à partir des stories et des métadonnées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Large open-source ecosystem: reports over 80 million installs per month and 90k+ GitHub stars, with a large addon ecosystem.",
+        "fr": "Grand écosystème open source : plus de 80 millions d'installations mensuelles revendiquées et 90 000+ étoiles GitHub, avec un large écosystème d'extensions.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Storybook itself does not include hosted publishing or cloud visual-diffing; that requires a separate paid service such as Chromatic.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Requires initial setup and configuration inside a project's build tooling (webpack/Vite) and ongoing maintenance as the app's dependencies evolve.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Storybook itself does not include hosted publishing or cloud visual-diffing; that requires a separate paid service such as Chromatic.",
+        "fr": "Storybook lui-même n'inclut pas de publication hébergée ni de diff visuel dans le cloud ; cela demande un service payant séparé comme Chromatic.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Requires initial setup and configuration inside a project's build tooling (webpack/Vite) and ongoing maintenance as the app's dependencies evolve.",
+        "fr": "Demande une configuration initiale dans l'outillage de build du projet (webpack/Vite) et un entretien continu à mesure que les dépendances évoluent.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "React", "slug": "react", "sourceIds": ["s1"] },
-      { "name": "Chromatic", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "React",
+        "slug": "react",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Chromatic",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "alternatives": [
-    { "slug": "react", "reason": { "en": "Storybook is commonly used alongside React component development; not a direct substitute but frequently paired.", "fr": null } }
-  ],
+  "alternatives": [],
   "missingAlternatives": [
-    { "name": "Ladle", "officialUrl": "https://ladle.dev/", "reason": "Lightweight Vite-based alternative to Storybook for isolated component development" },
-    { "name": "Histoire", "officialUrl": "https://histoire.dev/", "reason": "Vite-native component workshop tool, direct Storybook alternative for Vue/Vite projects" }
+    {
+      "name": "Ladle",
+      "officialUrl": "https://ladle.dev/",
+      "reason": "Lightweight Vite-based alternative to Storybook for isolated component development"
+    },
+    {
+      "name": "Histoire",
+      "officialUrl": "https://histoire.dev/",
+      "reason": "Vite-native component workshop tool, direct Storybook alternative for Vue/Vite projects"
+    },
+    {
+      "name": "Bit",
+      "officialUrl": "https://bit.dev/",
+      "reason": "Component workshop and sharing platform, alternative approach to isolated component development"
+    }
   ],
   "unknowns": [
     "Exact list of all supported frameworks (Vue, Angular, Svelte, Web Components, etc.) not confirmed in this session's single fetch.",
     "Current Chromatic pricing tiers not independently re-verified beyond the seed's cached figure."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-09-30",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Storybook itself is free and open source with no usage limits, while covering isolated component development, interaction testing, and auto-generated docs that would otherwise need separate tools.",
+        "fr": "Storybook lui-même est gratuit et open source, sans limite d'usage, tout en couvrant le développement isolé de composants, le test d'interaction et la doc auto-générée, qui demanderaient sinon des outils séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Requires initial setup inside the project's build tooling (webpack/Vite) and ongoing maintenance as dependencies evolve, more setup than a plug-and-play tool.",
+        "fr": "Demande une configuration initiale dans l'outillage de build du projet (webpack/Vite) et un entretien continu à mesure que les dépendances évoluent, plus qu'un outil prêt à l'emploi.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers isolated component development, interaction testing, visual regression testing, and auto-generated docs directly from stories, as promised.",
+        "fr": "Livre le développement isolé de composants, le test d'interaction, le test de régression visuelle et la doc auto-générée à partir des stories, comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Reports over 80 million monthly installs and a large addon ecosystem, indicating broad capability and community-tested coverage across frameworks.",
+        "fr": "Revendique plus de 80 millions d'installations mensuelles et un large écosystème d'extensions, signe d'une couverture large et testée par la communauté sur plusieurs frameworks.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Storybook is open source and self-hosted directly inside the project's codebase, so there is no vendor lock-in or proprietary data format to migrate away from.",
+        "fr": "Storybook est open source et auto-hébergé directement dans le code du projet, donc pas de dépendance à un éditeur ni de format propriétaire à migrer.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Frontend developers building and documenting reusable UI components outside the main app.",
+      "fr": "Développeurs frontend qui construisent et documentent des composants d'interface réutilisables en dehors de l'application principale."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: build and preview a new button component in isolation before wiring it into the main app.",
+      "fr": "Usage : construire et prévisualiser un nouveau composant bouton de façon isolée avant de l'intégrer à l'application principale."
+    },
+    {
+      "en": "Usage: run visual regression tests on a component library to catch unintended UI changes before a release.",
+      "fr": "Usage : lancer des tests de régression visuelle sur une bibliothèque de composants pour repérer les changements d'interface non voulus avant une release."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Component workshop",
+      "fr": "Atelier de composants"
+    },
+    "shortDescription": {
+      "en": "A free, open-source tool for building, testing, and documenting UI components in isolation from the main application.",
+      "fr": "Un outil open source et gratuit pour construire, tester et documenter des composants d'interface isolés de l'application principale."
+    },
+    "longDescription": {
+      "en": "Storybook is a free, open-source tool for developing UI components and pages in isolation, outside the main application's business logic and state. It supports interaction testing, visual regression testing, and auto-generates living documentation from component stories.\n\nStorybook itself carries no cost and no usage limits, but it needs setup inside the project's build tooling and ongoing maintenance as dependencies evolve. Teams that want hosted publishing or cloud visual diffing add a separate paid service such as Chromatic, priced apart from Storybook.",
+      "fr": "Storybook est un outil open source et gratuit pour développer des composants et des pages d'interface de façon isolée, hors de la logique métier et de l'état de l'application principale. Il propose le test d'interaction, le test de régression visuelle, et génère automatiquement une documentation vivante à partir des stories de composants.\n\nStorybook lui-même ne coûte rien et n'a pas de limite d'usage, mais il demande une configuration dans l'outillage de build du projet et un entretien continu. Les équipes qui veulent une publication hébergée ou un diff visuel dans le cloud ajoutent un service payant séparé comme Chromatic, facturé à part."
+    },
+    "pros": [
+      {
+        "en": "Completely free and open source, with no usage caps on the core tool.",
+        "fr": "Entièrement gratuit et open source, sans limite d'usage sur l'outil de base."
+      },
+      {
+        "en": "Auto-generates living component documentation directly from stories, no separate docs tool needed.",
+        "fr": "Génère automatiquement une documentation vivante des composants directement depuis les stories, sans outil de doc séparé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Requires initial setup inside the project's build tooling and ongoing maintenance as dependencies evolve.",
+        "fr": "Demande une configuration initiale dans l'outillage de build du projet et un entretien continu."
+      },
+      {
+        "en": "Hosted publishing and cloud visual diffing need a separate paid service (Chromatic), not included.",
+        "fr": "La publication hébergée et le diff visuel cloud demandent un service payant séparé (Chromatic), non inclus."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You build reusable UI components and want to develop and test them outside the full application.",
+        "fr": "Tu construis des composants d'interface réutilisables et veux les développer et les tester hors de l'application complète."
+      },
+      "avoidIf": {
+        "en": "You don't want to maintain extra build tooling and configuration alongside your main app.",
+        "fr": "Tu ne veux pas maintenir un outillage de build et une configuration supplémentaires à côté de ton application principale."
+      },
+      "threshold": {
+        "en": "Storybook itself is free; the only cost to weigh is Chromatic's cloud add-on (around $149/month) if hosted publishing or visual diffing is needed.",
+        "fr": "Storybook lui-même est gratuit ; le seul coût à considérer est le module cloud Chromatic (environ 149 $/mois) si la publication hébergée ou le diff visuel sont nécessaires."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Chromatic's ~$149/month figure comes from the dossier's cached seed data and was not independently re-verified in this session; confirm current Chromatic pricing before publishing."
+  ]
 }
