@@ -4863,3 +4863,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 
 - Un seul picto information à côté de « Pourquoi ce verdict », avec sources et dates dédupliquées. Les cinq critères conservent uniquement leur explication.
 - Le picto des tarifs est conservé. Aucun changement des notes, des sources originales ni des liens sortants.
+- Alignement vertical du picto corrigé : suppression de la marge du libellé dans l'en-tête, infobulle au-dessus et ancrée au début du titre pour éviter les critères et les débordements sur petit écran.

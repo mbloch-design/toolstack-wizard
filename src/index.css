@@ -9658,10 +9658,25 @@
   }
   .td-review-verdict-header {
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
   }
+  .td-review-verdict-header .td-eyebrow { margin: 0; }
+  .td-review-verdict-header .td-score-axis-heading { position: relative; }
+  .td-review-verdict-header .td-evidence-info { position: static; }
+  .td-review-verdict-header .td-evidence-info-panel { top: auto; bottom: calc(100% + 8px); left: 0; }
   .td-review-verdict-header .td-review-label { margin: 0; }
+  @media (max-width: 640px) {
+    .td-review-verdict-header .td-score-axis-heading { display: inline-flex; flex-wrap: nowrap; }
+    .td-review-verdict-header .td-evidence-info-panel {
+      top: calc(100% + 6px);
+      bottom: auto;
+      left: 0;
+      max-width: min(290px, calc(100vw - 80px));
+    }
+    .td-review-verdict-header:has(.td-evidence-info.is-open) .td-score-axis-heading { margin-bottom: 66px; }
+  }
   .td-review-label {
     font-family: var(--font-brand);
     font-size: 22px;
