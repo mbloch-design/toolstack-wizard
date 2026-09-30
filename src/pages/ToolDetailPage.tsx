@@ -758,15 +758,21 @@ const ToolDetailPage = () => {
               <div id="prix" className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title td-title--with-info">
-                    <span>{t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name} ?`, `What does ${tool.name} cost?`)}</span></span>
+                    <span>{t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name}\u00a0?`, `What does ${tool.name} cost\u00a0?`)}</span></span>
                     {(tool.pricing_v5?.verified_on || tool.pricing_v5?.official_source_url) && (
                       <EvidenceInfo label={t("Voir la source et la date du tarif", "View pricing source and verification date")}>
+                        <span className="td-evidence-panel-title">{t("Source tarifaire", "Pricing source")}</span>
                         {tool.pricing_v5?.official_source_url && safeExternalUrl(tool.pricing_v5.official_source_url) ? (
                           <a href={tool.pricing_v5.official_source_url} target="_blank" rel={relPourLienOutil(tool.pricing_v5.official_source_url, tool.affiliateLink, tool.websiteUrl)}>
                             {t("Source tarifaire officielle", "Official pricing source")}
                           </a>
                         ) : t("Tarif vérifié par ToolTrim", "Pricing verified by ToolTrim")}
-                        {tool.pricing_v5?.verified_on && <time dateTime={tool.pricing_v5.verified_on}>{t("Vérifié le", "Verified on")} {tool.pricing_v5.verified_on}</time>}
+                        {tool.pricing_v5?.verified_on && (
+                          <span className="td-evidence-date">
+                            <span>{t("Vérifié le", "Verified on")}</span>
+                            <time dateTime={tool.pricing_v5.verified_on}>{tool.pricing_v5.verified_on}</time>
+                          </span>
+                        )}
                       </EvidenceInfo>
                     )}
                   </h2>
@@ -981,7 +987,20 @@ const ToolDetailPage = () => {
                               <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
                               {ratingSources.length > 0 && (
                                 <EvidenceInfo label={t("Voir les sources du verdict", "View verdict sources")}>
-                                  {ratingSources.map((source) => <span className="td-evidence-source" key={source}>{source}</span>)}
+                                  {ratingSources.map((group, index) => (
+                                    <span className="td-evidence-source-group" key={`${group.date ?? "undated"}-${index}`}>
+                                      <span className="td-evidence-panel-title">{t("Sources du verdict", "Verdict sources")}</span>
+                                      <span className="td-evidence-citations">
+                                        {group.citations.map((citation) => <span className="td-evidence-citation" key={citation}>{citation}</span>)}
+                                      </span>
+                                      {group.date && (
+                                        <span className="td-evidence-date">
+                                          <span>{t("Vérifié le", "Verified on")}</span>
+                                          <time>{group.date}</time>
+                                        </span>
+                                      )}
+                                    </span>
+                                  ))}
                                 </EvidenceInfo>
                               )}
                             </span>

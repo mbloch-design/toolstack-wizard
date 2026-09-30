@@ -4864,3 +4864,6 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Un seul picto information à côté de « Pourquoi ce verdict », avec sources et dates dédupliquées. Les cinq critères conservent uniquement leur explication.
 - Le picto des tarifs est conservé. Aucun changement des notes, des sources originales ni des liens sortants.
 - En-têtes affinés après contrôle desktop et mobile : picto tarif placé à la suite du titre, picto de verdict rapproché de la note, sources ouvertes sous le titre avec l'espace nécessaire avant les critères.
+- Panneaux de sources restructurés : intitulé explicite, une ligne par source, séparateur et date présentée à part. Contraste et dimensions renforcés pour rester lisibles.
+- Infobulle des tarifs repositionnée sous son titre, avec panneau élargi, contour renforcé et date plus lisible.
+- 2026-09-30 : reformulation FR/EN des cinq justifications de note Drone Ops Mission. Les fonctions sont décrites d'après les informations éditeur, sans présenter l'absence de test ToolTrim comme un défaut ; seule la distinction entre aide GO/NOGO et autorisation de vol est conservée comme limite utile.

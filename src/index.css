@@ -9023,6 +9023,7 @@
   }
   .td-score-axis-heading { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
   .td-title--with-info { display: block; }
+  .td-title--with-info:has(.td-evidence-info.is-open) { padding-bottom: 104px; }
   .td-title--with-info > .td-evidence-info { margin-left: 8px; transform: translateY(-0.08em); }
   .td-evidence-info { position: relative; display: inline-flex; flex: 0 0 auto; vertical-align: middle; font-family: var(--font-ui); }
   .td-evidence-info-trigger {
@@ -9035,20 +9036,23 @@
   .td-evidence-info-trigger svg { width: 16px; height: 16px; }
   .td-evidence-info-panel {
     position: absolute; top: calc(100% + 7px); left: 0; z-index: 20;
-    width: max-content; max-width: min(290px, calc(100vw - 40px));
-    padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 8px;
-    background: var(--color-surface); box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
-    color: var(--color-text); font-size: 12px; font-weight: 400; line-height: 1.5;
+    width: 320px; max-width: min(320px, calc(100vw - 40px));
+    padding: 12px 14px; border: 1px solid var(--color-border-strong); border-radius: 10px;
+    background: var(--color-surface); box-shadow: 0 8px 24px rgb(0 0 0 / 0.14);
+    color: var(--color-text); font-size: 14px; font-weight: 450; line-height: 1.5;
     text-align: left; white-space: normal; visibility: hidden; opacity: 0;
     pointer-events: none; transition: opacity 120ms ease;
   }
-  .td-evidence-info-panel a { display: block; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 2px; }
-  .td-evidence-info-panel time { display: block; margin-top: 4px; color: var(--color-muted); }
+  .td-evidence-panel-title { display: block; margin-bottom: 6px; color: var(--color-muted); font-size: 11px; font-weight: 650; text-transform: uppercase; }
+  .td-evidence-info-panel a { display: block; color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+  .td-evidence-citation { display: block; overflow-wrap: anywhere; }
+  .td-evidence-date { display: block; margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 12px; }
+  .td-evidence-date time { display: block; margin-top: 2px; color: var(--color-text); font-size: 14px; font-weight: 550; }
   .td-evidence-info:hover .td-evidence-info-panel,
   .td-evidence-info:focus-within .td-evidence-info-panel,
   .td-evidence-info.is-open .td-evidence-info-panel { visibility: visible; opacity: 1; pointer-events: auto; }
-  .td-evidence-source { display: block; }
-  .td-title--with-info .td-evidence-info-panel { top: auto; bottom: calc(100% + 7px); left: 0; right: auto; }
+  .td-evidence-source-group { display: block; }
+  .td-title--with-info .td-evidence-info-panel { top: calc(100% + 7px); bottom: auto; left: 0; right: auto; min-width: min(220px, calc(100vw - 40px)); }
   .td-score-meter {
     display: flex;
     gap: 3px;
@@ -9668,13 +9672,32 @@
   .td-review-verdict-header { gap: 6px; }
   .td-review-verdict-header .td-evidence-info { position: relative; }
   .td-review-verdict-header .td-evidence-info-panel { top: calc(100% + 6px); bottom: auto; left: 0; }
-  .td-review-verdict-header:has(.td-evidence-info.is-open) { padding-bottom: 54px; }
+  .td-review-verdict-header:has(.td-evidence-info.is-open) { padding-bottom: 128px; }
   .td-review-verdict-header .td-review-label { margin: 0; }
   @media (max-width: 640px) {
-    .td-review-verdict-header .td-score-axis-heading { display: inline-flex; flex-wrap: nowrap; }
-    .td-review-verdict-header .td-evidence-info-panel {
-      max-width: min(290px, calc(100vw - 80px));
+    .td-title--with-info:has(.td-evidence-info.is-open) { padding-bottom: 0; }
+    .td-title--with-info > .td-evidence-info.is-open {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: top;
     }
+    .td-title--with-info .td-evidence-info-panel {
+      position: static;
+      width: min(320px, calc(100vw - 80px));
+      max-width: min(320px, calc(100vw - 80px));
+      margin-top: 8px;
+    }
+    .td-review-verdict-header .td-score-axis-heading { display: inline-flex; flex-wrap: nowrap; }
+    .td-review-verdict-header { position: relative; }
+    .td-review-verdict-header .td-score-axis-heading,
+    .td-review-verdict-header .td-evidence-info { position: static; }
+    .td-review-verdict-header .td-evidence-info-panel {
+      top: 30px;
+      left: 0;
+      width: min(320px, calc(100vw - 80px));
+      max-width: min(320px, calc(100vw - 80px));
+    }
+    .td-review-verdict-header:has(.td-evidence-info.is-open) { padding-bottom: 140px; }
   }
   .td-review-label {
     font-family: var(--font-brand);

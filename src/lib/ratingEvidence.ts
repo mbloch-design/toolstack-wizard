@@ -8,7 +8,7 @@ export function splitRatingEvidence(value: string): { finding: string; source: s
 }
 
 /** Merge repeated citations, keeping a shared date only once. */
-export function collectRatingSources(values: string[]): string[] {
+export function collectRatingSources(values: string[]): Array<{ citations: string[]; date: string | null }> {
   const groups = new Map<string, Set<string>>();
   for (const value of values) {
     const source = splitRatingEvidence(value).source?.replace(/^Sources?\s*:\s*/i, "");
@@ -19,5 +19,5 @@ export function collectRatingSources(values: string[]): string[] {
     for (const citation of (match?.[1] ?? source).split(/\s+(?:et|and)\s+/)) citations.add(citation);
     groups.set(date, citations);
   }
-  return [...groups].map(([date, citations]) => `${[...citations].join(" · ")}${date ? `, ${date}` : ""}`);
+  return [...groups].map(([date, citations]) => ({ citations: [...citations], date: date || null }));
 }

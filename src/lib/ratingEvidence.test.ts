@@ -6,7 +6,7 @@ describe("splitRatingEvidence", () => {
     expect(collectRatingSources([
       "Carte. Source : drone-ops-mission.fr, 30 septembre 2026.",
       "Météo. Sources : drone-ops-mission.fr et /meteo-drone, 30 septembre 2026.",
-    ])).toEqual(["drone-ops-mission.fr · /meteo-drone, 30 septembre 2026"]);
+    ])).toEqual([{ citations: ["drone-ops-mission.fr", "/meteo-drone"], date: "30 septembre 2026" }]);
   });
   it("moves a dated official source out of the visible finding", () => {
     expect(splitRatingEvidence("Carte et météo réunies. Source : drone-ops-mission.fr, 30 septembre 2026.")).toEqual({
