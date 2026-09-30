@@ -9022,7 +9022,8 @@
     color: var(--color-text);
   }
   .td-score-axis-heading { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
-  .td-title--with-info { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .td-title--with-info { display: block; }
+  .td-title--with-info > .td-evidence-info { margin-left: 8px; transform: translateY(-0.08em); }
   .td-evidence-info { position: relative; display: inline-flex; flex: 0 0 auto; vertical-align: middle; font-family: var(--font-ui); }
   .td-evidence-info-trigger {
     display: inline-flex; align-items: center; justify-content: center;
@@ -9047,7 +9048,7 @@
   .td-evidence-info:focus-within .td-evidence-info-panel,
   .td-evidence-info.is-open .td-evidence-info-panel { visibility: visible; opacity: 1; pointer-events: auto; }
   .td-evidence-source { display: block; }
-  .td-title--with-info .td-evidence-info-panel { top: auto; bottom: calc(100% + 7px); left: auto; right: 0; }
+  .td-title--with-info .td-evidence-info-panel { top: auto; bottom: calc(100% + 7px); left: 0; right: auto; }
   .td-score-meter {
     display: flex;
     gap: 3px;
@@ -9663,19 +9664,17 @@
     gap: 10px;
   }
   .td-review-verdict-header .td-eyebrow { margin: 0; }
-  .td-review-verdict-header .td-score-axis-heading { position: relative; }
-  .td-review-verdict-header .td-evidence-info { position: static; }
-  .td-review-verdict-header .td-evidence-info-panel { top: auto; bottom: calc(100% + 8px); left: 0; }
+  .td-review-verdict-header .td-score-axis-heading { position: relative; gap: 4px; }
+  .td-review-verdict-header { gap: 6px; }
+  .td-review-verdict-header .td-evidence-info { position: relative; }
+  .td-review-verdict-header .td-evidence-info-panel { top: calc(100% + 6px); bottom: auto; left: 0; }
+  .td-review-verdict-header:has(.td-evidence-info.is-open) { padding-bottom: 54px; }
   .td-review-verdict-header .td-review-label { margin: 0; }
   @media (max-width: 640px) {
     .td-review-verdict-header .td-score-axis-heading { display: inline-flex; flex-wrap: nowrap; }
     .td-review-verdict-header .td-evidence-info-panel {
-      top: calc(100% + 6px);
-      bottom: auto;
-      left: 0;
       max-width: min(290px, calc(100vw - 80px));
     }
-    .td-review-verdict-header:has(.td-evidence-info.is-open) .td-score-axis-heading { margin-bottom: 66px; }
   }
   .td-review-label {
     font-family: var(--font-brand);
