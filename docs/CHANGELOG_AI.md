@@ -1,3 +1,11 @@
+## 2026-09-30 — Nouvelle fiche Viso AI
+
+- Ajoute une fiche FR/EN qui distingue Viso Now de Viso Suite, les usages annoncés, les limites de crédits et les publics adaptés.
+- Reprend les tarifs officiels en USD sans conversion en euros, ajoute les visuels officiels (logo, OG et galerie) et complète le système de notation avec des éléments sourcés.
+- La FAQ tarifaire reprend les offres natives lorsqu'aucun prix EUR comparable n'est établi, au lieu de présenter la fiche comme gratuite à 0 €.
+- Le lien officiel `viso.ai` est explicitement autorisé en do-follow. Aucune affiliation n'est déclarée.
+- Sources produit et prix vérifiées le 30 septembre 2026.
+
 ## 2026-09-27 : Domain Rating de la page de soumission
 
 - DR porté de 36 à 40 dans le composant commun FR/EN, selon la valeur communiquée par l'utilisateur. Date et mise en page conservées.

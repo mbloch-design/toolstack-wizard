@@ -65,6 +65,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.planeezy.com",
   "drone-ops-mission.fr",
   "www.drone-ops-mission.fr",
+  "viso.ai",
+  "www.viso.ai",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait

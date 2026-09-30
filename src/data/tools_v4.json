@@ -234174,3 +234174,187 @@
     }
   }
 ]
+  },
+  {
+    "id": "viso-ai",
+    "slug": "viso-ai",
+    "name": "Viso AI",
+    "categoryId": "ai-general",
+    "category": "ai-general",
+    "shortDescription": "Créez des applications de vision par ordinateur à partir d'une consigne, d'une vidéo ou de flux caméra.",
+    "shortDescriptionEn": "Build computer vision applications from a prompt, video, or camera feed.",
+    "description": "Viso AI réunit deux offres de vision par ordinateur. Viso Now permet de décrire une détection en langage naturel ou de fournir un extrait vidéo, puis de construire un agent visuel, d'ajuster ses règles et de diffuser les résultats. Viso Suite s'adresse aux déploiements d'entreprise qui demandent une plateforme de développement, d'exploitation et de gouvernance sur cloud, infrastructure locale ou edge.",
+    "longDescription": "Viso AI regroupe deux offres à distinguer. Viso Now sert à créer et exécuter des applications de vision : l'utilisateur décrit ce qu'il veut repérer ou dépose un clip, ajuste les règles et les seuils, puis publie l'agent. L'éditeur présente ce parcours comme utilisable sans créer de jeu de données ni entraîner ou sélectionner un modèle.\n\nLes cas d'usage annoncés couvrent le suivi d'activité, la sécurité, les contrôles qualité et la maintenance. Viso Now se connecte à des caméras et systèmes vidéo compatibles, à des fichiers ou à du stockage cloud, puis peut envoyer des alertes vers Slack, Teams, email ou une API. Des modèles de départ et tableaux de bord sont également proposés.\n\nViso Suite est l'offre distincte destinée aux organisations qui développent, déploient et administrent plusieurs applications de vision à l'échelle. Elle prend en charge des déploiements cloud, sur site ou edge, des intégrations à l'existant et des fonctions de gouvernance. Son tarif dépend de la taille de l'entreprise et des besoins de déploiement.\n\nViso Now possède un forfait gratuit avec crédits limités. Les formules Pro et Business sont affichées à 25 et 50 $US par mois, TVA incluse, avec des crédits partagés entre utilisateurs. Leur consommation varie selon la tâche, les capacités utilisées et le traitement demandé. Tarifs relevés sur le site de l'éditeur le 30 septembre 2026.",
+    "longDescriptionEn": "Viso AI brings together two distinct computer vision offerings. Viso Now is for building and running vision applications: describe what to detect in plain language or provide a video clip, refine the rules and thresholds, then publish the agent. The publisher says this workflow does not require creating a dataset or training or selecting a model.\n\nAdvertised use cases include activity monitoring, safety, quality checks, and maintenance. Viso Now connects to compatible cameras and video systems, files, or cloud storage, then sends alerts to Slack, Teams, email, or an API. Starter templates and dashboards are also available.\n\nViso Suite is a separate offering for organizations that need to build, deploy, and operate vision applications at scale. It supports cloud, on-premises, and edge deployments, integrations with existing systems, and governance features. Pricing depends on company size and deployment requirements.\n\nViso Now has a free plan with limited credits. Pro and Business are listed at $25 and $50 per month, including VAT, with credits shared across users. Usage varies by task, selected capabilities, and processing requirements. Prices checked on the publisher's website on September 30, 2026.",
+    "pricing": {
+      "free": "Forfait gratuit permanent, sans carte bancaire, avec 5 crédits par jour dans la limite de 30 crédits par mois.",
+      "paid": "Viso Now Pro : 25 $US/mois. Business : 50 $US/mois. TVA incluse, crédits partagés entre utilisateurs. Viso Suite Enterprise : tarif sur devis selon la taille de l'entreprise et le déploiement."
+    },
+    "pricingEn": {
+      "free": "Permanent free plan, no credit card required, with 5 daily credits up to 30 per month.",
+      "paid": "Viso Now Pro: $25/month. Business: $50/month. VAT included, credits shared across users. Viso Suite Enterprise: custom pricing based on company size and deployment."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "cautions": [
+        "Les montants Pro et Business sont affichés en dollars US par mois, TVA incluse. Le sélecteur tarifaire propose une option annuelle ; confirmez la périodicité et le montant dû au paiement.",
+        "Les crédits sont partagés entre utilisateurs et leur consommation varie selon la tâche, les capacités activées et le traitement vidéo.",
+        "Viso Suite Enterprise est tarifé sur devis. Aucun prix en euros n'est affiché par l'éditeur."
+      ],
+      "cautionsEn": [
+        "Pro and Business are listed in US dollars per month, including VAT. The pricing selector offers an annual option; confirm the billing cadence and amount due at checkout.",
+        "Credits are shared across users and usage varies by task, selected capabilities, and video processing.",
+        "Viso Suite Enterprise is custom-priced. The publisher does not list a euro price."
+      ],
+      "verified_on": "2026-09-30",
+      "source_domain": "viso.ai",
+      "usage_sensitive": true,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Viso Now Free",
+      "price_reliability": "official_explicit",
+      "location_sensitive": true,
+      "official_source_url": "https://viso.ai/viso-now/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "free_plan_card": "Gratuit sans limite de durée ni carte bancaire. 5 crédits quotidiens, jusqu'à 30 par mois, pour créer et exécuter des agents de vision.",
+      "free_plan_cardEn": "Free indefinitely with no credit card. 5 daily credits, up to 30 per month, to build and run vision agents.",
+      "plans": [
+        {"planKey":"free","displayName":"Free","summary":"Pour découvrir la plateforme et tester des agents avec un quota limité.","featureHighlights":["5 crédits quotidiens, jusqu'à 30 par mois","Création et exécution d'agents","Collaborateurs et connecteurs inclus"],"detailsSourceUrl":"https://viso.ai/viso-now/pricing/","pricingUnit":"account","isFree":true,"isComparePlan":true,"nativeAmount":0,"nativeCurrency":"USD","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"},
+        {"planKey":"pro","displayName":"Pro","summary":"25 $US/mois, TVA incluse, avec un pool de crédits partagé entre utilisateurs. La consommation dépend des traitements effectués.","featureHighlights":["100 crédits mensuels et crédits quotidiens","Crédits reportables et recharges à la demande","Agents illimités et connecteurs API tiers"],"detailsSourceUrl":"https://viso.ai/viso-now/pricing/","pricingUnit":"account","isFree":false,"isComparePlan":false,"nativeAmount":25,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":null,"taxInclusion":"ttc","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"},
+        {"planKey":"business","displayName":"Business","summary":"50 $US/mois, TVA incluse. Ajoute des contrôles d'accès et de sécurité ainsi qu'un traitement prioritaire.","featureHighlights":["100 crédits mensuels et crédits quotidiens","SSO/SAML et rôles d'accès","Traitement prioritaire et support email"],"detailsSourceUrl":"https://viso.ai/viso-now/pricing/","pricingUnit":"account","isFree":false,"isComparePlan":false,"nativeAmount":50,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":null,"taxInclusion":"ttc","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"},
+        {"planKey":"enterprise","displayName":"Viso Suite Enterprise","summary":"Tarification personnalisée selon la taille de l'organisation et le déploiement.","featureHighlights":["Déploiements edge","Accompagnement dédié","Connecteurs et gouvernance avancés"],"detailsSourceUrl":"https://viso.ai/viso-suite/","pricingUnit":"organization","isFree":false,"isComparePlan":false,"nativeAmount":null,"nativeCurrency":"USD","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"}
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "Pro and Business are listed in US dollars per month, including VAT. The pricing selector offers an annual option; confirm the billing cadence and amount due at checkout.",
+        "Credits are shared across users and usage varies by task, selected capabilities, and video processing.",
+        "Viso Suite Enterprise is custom-priced. The publisher does not list a euro price."
+      ],
+      "verified_on": "2026-09-30",
+      "source_domain": "viso.ai",
+      "usage_sensitive": true,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Viso Now Free",
+      "price_reliability": "official_explicit",
+      "location_sensitive": true,
+      "official_source_url": "https://viso.ai/viso-now/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "free_plan_card": "Free indefinitely with no credit card. 5 daily credits, up to 30 per month, to build and run vision agents.",
+      "plans": [
+        {"planKey":"free","displayName":"Free","summary":"Explore the platform and test vision agents with a limited credit allowance.","featureHighlights":["5 daily credits, up to 30 per month","Build and run agents","Collaborators and connectors included"],"detailsSourceUrl":"https://viso.ai/viso-now/pricing/","pricingUnit":"account","isFree":true,"isComparePlan":true,"nativeAmount":0,"nativeCurrency":"USD","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"},
+        {"planKey":"pro","displayName":"Pro","summary":"$25/month including VAT, with credits shared across users. Usage depends on the work performed.","featureHighlights":["100 monthly credits plus daily credits","Credit rollovers and on-demand top-ups","Unlimited agents and third-party API connectors"],"detailsSourceUrl":"https://viso.ai/viso-now/pricing/","pricingUnit":"account","isFree":false,"isComparePlan":false,"nativeAmount":25,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":null,"taxInclusion":"ttc","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"},
+        {"planKey":"business","displayName":"Business","summary":"$50/month including VAT. Adds access and security controls plus priority processing.","featureHighlights":["100 monthly credits plus daily credits","SSO/SAML and role-based access","Priority processing and email support"],"detailsSourceUrl":"https://viso.ai/viso-now/pricing/","pricingUnit":"account","isFree":false,"isComparePlan":false,"nativeAmount":50,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":null,"taxInclusion":"ttc","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"},
+        {"planKey":"enterprise","displayName":"Viso Suite Enterprise","summary":"Custom pricing based on company size and deployment requirements.","featureHighlights":["Edge deployments","Dedicated services and support","Custom connectors and advanced governance"],"detailsSourceUrl":"https://viso.ai/viso-suite/","pricingUnit":"organization","isFree":false,"isComparePlan":false,"nativeAmount":null,"nativeCurrency":"USD","observedMarket":"Global","observedLocale":"en","observedOn":"2026-09-30","lastConfirmedOn":"2026-09-30"}
+      ]
+    },
+    "affiliateLink": "",
+    "websiteUrl": "https://viso.ai/",
+    "logo": "https://viso.ai/wp-content/uploads/2026/08/cropped-Viso-Now-Favicon-270x270.png",
+    "ogImageUrl": "https://viso.ai/wp-content/uploads/2026/06/viso-now-agentic-ai-vision.png",
+    "galleryImages": [
+      "https://viso.ai/wp-content/uploads/2026/08/viso-now-chat-thinking.png",
+      "https://viso.ai/wp-content/uploads/2026/08/viso-now-industry-templates.png",
+      "https://viso.ai/wp-content/uploads/2026/08/viso-now-dashboard-metrics-custom.png",
+      "https://viso.ai/wp-content/uploads/2026/08/viso-now-output-connectors.png"
+    ],
+    "seo": {
+      "presentationTitleFr": "Viso AI : plateforme de vision par ordinateur, prix et avis | ToolTrim",
+      "presentationTitleEn": "Viso AI: computer vision platform, pricing and review | ToolTrim",
+      "presentationMetaDescriptionFr": "Découvrez Viso Now et Viso Suite : agents de vision par ordinateur, intégrations caméra, crédits gratuits, prix Pro et déploiement entreprise.",
+      "presentationMetaDescriptionEn": "Compare Viso Now and Viso Suite: computer vision agents, camera integrations, free credits, Pro pricing, and enterprise deployment.",
+      "idealForFr": "Idéal pour les équipes qui veulent créer des détections visuelles à partir de flux caméra ou vidéo sans construire toute la chaîne de vision par ordinateur en interne.",
+      "idealForEn": "For teams that want to build visual detection workflows from camera feeds or video without building the entire computer vision stack in-house.",
+      "metaDescription": "Viso AI : avis et prix de Viso Now et Viso Suite. Comparez les crédits gratuits, les forfaits Pro et Business, les connecteurs et les options de déploiement edge ou entreprise."
+    },
+    "pros": [
+      "Un forfait gratuit donne accès à la création et à l'exécution d'agents sans carte bancaire.",
+      "Consignes en langage naturel et modèles de départ pour réduire le travail initial annoncé par l'éditeur.",
+      "Entrées vidéo et caméra, alertes et API réunies dans un même parcours.",
+      "Viso Suite ajoute des options cloud, sur site et edge pour les déploiements d'entreprise."
+    ],
+    "prosEn": [
+      "A free plan includes agent creation and execution without a credit card.",
+      "Natural-language prompts and starter templates reduce the setup work described by the publisher.",
+      "Video and camera inputs, alerts, and APIs are covered in the same workflow.",
+      "Viso Suite adds cloud, on-premises, and edge deployment options for enterprise use."
+    ],
+    "cons": [
+      "Les crédits limitent le volume et leur consommation varie selon les traitements vidéo.",
+      "Pro et Business sont affichés en dollars ; la périodicité doit être confirmée au paiement.",
+      "Viso Suite n'a pas de tarif public et suppose un échange commercial pour cadrer le déploiement."
+    ],
+    "consEn": [
+      "Credits limit throughput and usage varies with video processing.",
+      "Pro and Business are listed in US dollars; confirm the billing cadence at checkout.",
+      "Viso Suite has no public price and requires a sales discussion to scope deployment."
+    ],
+    "useCases": [
+      "Détecter des situations de sécurité ou conformité à partir de vidéos et de caméras.",
+      "Suivre des événements opérationnels, des files d'attente ou des indicateurs de production.",
+      "Envoyer des événements visuels vers Slack, Teams, email ou un système interne par API.",
+      "Déployer des applications de vision sur plusieurs sites avec Viso Suite."
+    ],
+    "useCasesEn": [
+      "Detect safety or compliance situations from video and camera feeds.",
+      "Track operational events, queues, or production indicators.",
+      "Send visual events to Slack, Teams, email, or an internal system through an API.",
+      "Deploy vision applications across multiple sites with Viso Suite."
+    ],
+    "relevantFor": ["Équipes opérations et sécurité", "Sites industriels et logistiques", "Intégrateurs de systèmes vidéo", "Équipes techniques qui prototypent des applications de vision"],
+    "relevantForEn": ["Operations and safety teams", "Industrial and logistics sites", "Video system integrators", "Technical teams prototyping vision applications"],
+    "verdict": {
+      "keepIf": ["Vous devez transformer des flux caméra ou vidéo en détections et alertes exploitables.", "Vous voulez tester un cas de vision à partir d'une consigne ou d'un modèle de départ.", "Vous avez un besoin multi-site, edge ou de gouvernance adapté à Viso Suite."],
+      "avoidIf": ["Vous cherchez un chatbot ou un générateur d'images plutôt qu'une application de vision.", "Votre besoin se limite à quelques analyses ponctuelles qui ne justifient pas une plateforme d'agents.", "Vous avez besoin d'un coût fixe prévisible alors que le volume de crédits reste incertain."],
+      "threshold": "Commencez par le forfait gratuit pour valider un cas concret et estimer sa consommation de crédits. Passez à Pro ou Business seulement si les intégrations et le volume récurrent justifient le coût ; contactez l'éditeur pour Viso Suite et les déploiements d'entreprise."
+    },
+    "verdictEn": {
+      "keepIf": ["You need to turn camera or video feeds into actionable detections and alerts.", "You want to test a vision use case from a prompt or starter template.", "You have multi-site, edge, or governance needs that fit Viso Suite."],
+      "avoidIf": ["You need a chatbot or image generator rather than a vision application.", "Your use is limited to occasional analyses that do not justify an agent platform.", "You need a predictable fixed cost while credit usage is uncertain."],
+      "threshold": "Start with the free plan to validate a real use case and estimate credit consumption. Move to Pro or Business only when the integrations and recurring volume justify the cost; contact the publisher for Viso Suite and enterprise deployment."
+    },
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "tool_type": "ia",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": ["industrial-operations", "logistics", "video-security"],
+    "functional_needs": ["computer-vision", "video-analysis", "visual-monitoring", "workflow-automation"],
+    "ia_use_case": ["vision", "video-analysis"],
+    "alternatives": ["roboflow", "landing-ai"],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": ["camera_or_video_source", "expected_video_volume", "deployment_environment"],
+    "substitution_cluster_v2": "computer-vision-platforms",
+    "decision_policy_v3": {"auto_cancel_allowed":false,"auto_replace_allowed":false,"auto_downgrade_allowed":false,"requires_context_questions":true,"default_decision_lane":"review_then_prescribe"},
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Le forfait gratuit inclut la création et l'exécution d'agents, puis les formules payantes commencent à 25 $US/mois. La valeur économique dépend du nombre et de la complexité des analyses qui consomment des crédits (source : viso.ai/viso-now/pricing, consulté le 2026-09-30).",
+        "simplicite": "Le parcours annoncé part d'une consigne en langage naturel ou d'un clip et propose des modèles de départ. Connecter une caméra, ajuster les règles puis intégrer les alertes demande néanmoins de configurer un flux métier (source : viso.ai/viso-now, consulté le 2026-09-30).",
+        "utilisation": "La plateforme couvre la création d'agents, l'analyse de clips et de caméras, les tableaux de bord et la diffusion d'événements vers des outils tiers. Le quota varie selon le traitement vidéo (sources : viso.ai/viso-now et viso.ai/viso-now/pricing, consultées le 2026-09-30).",
+        "puissance": "Viso Now réunit création d'agents, entrées caméra/fichier/cloud, règles, tableaux de bord et connecteurs. Viso Suite ajoute les déploiements cloud, sur site ou edge et des outils de gouvernance entreprise (sources : viso.ai/viso-now et viso.ai/viso-suite, consultées le 2026-09-30).",
+        "reversibilite": "Viso Now annonce des sorties par API et connecteurs, et Viso Suite s'intègre aux systèmes existants. Les pages produit consultées ne détaillent pas l'export complet des configurations et journaux ni la procédure de sortie : la portabilité est partiellement documentée (sources : viso.ai/viso-now et viso.ai/viso-suite, consultées le 2026-09-30)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The free plan includes agent creation and execution, while paid plans start at $25/month. Economic value depends on the number and complexity of credit-consuming analyses (source: viso.ai/viso-now/pricing, checked 2026-09-30).",
+        "simplicite": "The advertised workflow starts from a natural-language prompt or clip and offers starter templates. Connecting cameras, refining rules, and integrating alerts still requires workflow configuration (source: viso.ai/viso-now, checked 2026-09-30).",
+        "utilisation": "The platform covers agent creation, clip and camera analysis, dashboards, and event delivery to third-party tools. Credit limits vary with video processing (sources: viso.ai/viso-now and viso.ai/viso-now/pricing, checked 2026-09-30).",
+        "puissance": "Viso Now combines agent creation, camera/file/cloud inputs, rules, dashboards, and connectors. Viso Suite adds cloud, on-premises, or edge deployment and enterprise governance (sources: viso.ai/viso-now and viso.ai/viso-suite, checked 2026-09-30).",
+        "reversibilite": "Viso Now lists API and connector outputs, and Viso Suite integrates with existing systems. The product pages checked do not detail full export of configurations or logs, or an exit process, so portability is only partially documented (sources: viso.ai/viso-now and viso.ai/viso-suite, checked 2026-09-30)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-30"
+    }

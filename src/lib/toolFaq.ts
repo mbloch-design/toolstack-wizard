@@ -40,6 +40,10 @@ export function buildToolFaqs(
   // controle qui n'avait pas eu lieu, sur 644 pages.
   const verifiedSuffixFr = verifiedOn ? ` Prix vérifié le ${verifiedOn}.` : "";
   const verifiedSuffixEn = verifiedOn ? ` Price verified on ${verifiedOn}.` : "";
+  const hasUnconvertedNativePlans = tool.pricing_v5?.compare_price_monthly_eur == null
+    && tool.pricing_v5?.plans?.some((candidate) =>
+      !candidate.isFree && candidate.nativeAmount != null && candidate.nativeCurrency != null && candidate.nativeCurrency !== "EUR"
+    );
 
   const faqs: ToolFaqEntry[] = [
     {
@@ -65,6 +69,10 @@ export function buildToolFaqs(
         ? (isFr
           ? `${tool.name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedSuffixFr}`
           : `${tool.name} doesn't publish a price list; check the official page for current pricing.${verifiedSuffixEn}`)
+        : hasUnconvertedNativePlans
+        ? isFr
+          ? `${tool.pricing?.free ? `${tool.pricing.free} ` : ""}${tool.pricing?.paid || "Consultez le tarif officiel."}${verifiedSuffixFr}`
+          : `${tool.pricingEn?.free ? `${tool.pricingEn.free} ` : ""}${tool.pricingEn?.paid || "See the official pricing source for details."}${verifiedSuffixEn}`
         : isFr
           ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${formatToolPrice(tool, displayPrice, "EUR", "fr").text}/mois`}${plan}.${verifiedSuffixFr}`
           : `${tool.name} costs ${displayPrice === 0 ? "$0 (free)" : `${formatToolPrice(tool, displayPrice, "USD", "en").text}/month`}${plan}.${verifiedSuffixEn}`,

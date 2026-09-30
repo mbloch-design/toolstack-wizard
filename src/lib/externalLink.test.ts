@@ -29,4 +29,9 @@ describe("relPourLienOutil", () => {
       expect(relPourLienOutil(url, "", url)).toBe("nofollow noopener noreferrer");
     },
   );
+
+  it("keeps Viso's direct official link dofollow when no affiliate URL is configured", () => {
+    expect(relPourLienOutil("https://viso.ai/", "", "https://viso.ai/"))
+      .toBe("noopener noreferrer");
+  });
 });

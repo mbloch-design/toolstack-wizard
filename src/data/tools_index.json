@@ -42895,3 +42895,37 @@
     "logo": "https://drone-ops-mission.fr/images/logo.png"
   }
 ]
+  },
+  {
+    "id": "viso-ai",
+    "slug": "viso-ai",
+    "name": "Viso AI",
+    "categoryId": "ai-general",
+    "shortDescription": "Créez des applications de vision par ordinateur à partir d'une consigne, d'une vidéo ou de flux caméra.",
+    "shortDescriptionEn": "Build computer vision applications from a prompt, video, or camera feed.",
+    "pricing": {
+      "free": "Forfait gratuit permanent, sans carte bancaire, avec 5 crédits par jour dans la limite de 30 crédits par mois.",
+      "paid": "Viso Now Pro : 25 $US/mois. Business : 50 $US/mois. TVA incluse, crédits partagés entre utilisateurs. Viso Suite Enterprise : tarif sur devis selon la taille de l'entreprise et le déploiement."
+    },
+    "websiteUrl": "https://viso.ai/",
+    "ogImageUrl": "https://viso.ai/wp-content/uploads/2026/06/viso-now-agentic-ai-vision.png",
+    "logo": "https://viso.ai/wp-content/uploads/2026/08/cropped-Viso-Now-Favicon-270x270.png",
+    "tool_type": "ia",
+    "substitution_cluster_v2": "computer-vision-platforms",
+    "functional_needs": [
+      "computer-vision",
+      "video-analysis",
+      "visual-monitoring",
+      "workflow-automation"
+    ],
+    "verticals": [
+      "industrial-operations",
+      "logistics",
+      "video-security"
+    ],
+    "relevantFor": [
+      "Équipes opérations et sécurité",
+      "Sites industriels et logistiques",
+      "Intégrateurs de systèmes vidéo",
+      "Équipes techniques qui prototypent des applications de vision"
+    ]
