@@ -234101,5 +234101,76 @@
       "idealForFr": "Équipes marketing B2B SaaS capables de suivre un panel régulier de prompts d'achat.",
       "idealForEn": "B2B SaaS marketing teams tracking a consistent set of buyer prompts."
     }
+  },
+  {
+    "id": "drone-ops-mission",
+    "slug": "drone-ops-mission",
+    "name": "Drone Ops Mission",
+    "category": "organization",
+    "shortDescription": "Prépare un vol de drone avec carte aéronautique, météo et briefing GO/NOGO.",
+    "shortDescriptionEn": "Plan drone flights with an aeronautical map, weather and a GO/NO-GO briefing.",
+    "description": "Drone Ops Mission regroupe sur une même console la zone de vol, les couches aéronautiques, la météo et les contraintes à examiner avant un décollage. Le télépilote peut tracer une mission, consulter les restrictions et comparer les conditions météo aux limites du drone sélectionné dans l'offre Pro. L'outil produit une aide à la décision GO/NOGO, pas une autorisation de voler. Les publications officielles, les conditions réelles sur le terrain et la responsabilité du télépilote restent déterminantes.\n\nLe compte Découverte donne accès à une carte, à des couches DGAC de base et à la météo. Pro ajoute notamment les couches SIA et RTBA complètes, le briefing calibré par drone, la vue 3D, l'archivage des missions et les exports. Les fonctions et leur exactitude en situation réelle n'ont pas été testées par ToolTrim.",
+    "longDescription": "Drone Ops Mission regroupe sur une même console la zone de vol, les couches aéronautiques, la météo et les contraintes à examiner avant un décollage. Le télépilote peut tracer une mission, consulter les restrictions et comparer les conditions météo aux limites du drone sélectionné dans l'offre Pro. L'outil produit une aide à la décision GO/NOGO, pas une autorisation de voler. Les publications officielles, les conditions réelles sur le terrain et la responsabilité du télépilote restent déterminantes.\n\nLe compte Découverte donne accès à une carte, à des couches DGAC de base et à la météo. Pro ajoute notamment les couches SIA et RTBA complètes, le briefing calibré par drone, la vue 3D, l'archivage des missions et les exports. Les fonctions et leur exactitude en situation réelle n'ont pas été testées par ToolTrim.",
+    "longDescriptionEn": "Drone Ops Mission brings the flight area, aeronautical map layers, weather and preflight constraints into one console. Pilots can draw a mission, inspect restrictions and, on Pro, compare forecast conditions with the selected drone's limits. Its GO/NO-GO briefing supports a decision; it is not permission to fly. Official publications, actual conditions on site and the pilot's responsibility remain decisive.\n\nA Discovery account includes a map, basic DGAC layers and weather. Pro adds full SIA and RTBA layers, drone-specific briefing, 3D terrain, mission history and exports. ToolTrim has not tested these features or their real-world accuracy.",
+    "pricing": {"free": "Découverte gratuite après création d'un compte", "paid": "Pro : 8,99 €/mois ou 69 €/an, soit 5,75 €/mois facturés annuellement"},
+    "pricingEn": {"free": "Free Discovery account after registration", "paid": "Pro: €8.99/month or €69/year, equivalent to €5.75/month billed annually"},
+    "defaultMonthlyPrice": 8.99,
+    "pricing_v5": {
+      "cautions": ["L'offre annuelle est facturée 69 € en une fois, pas 5,75 € chaque mois.", "Le verdict météo calibré sur le drone et les exports sont réservés à Pro.", "Les tarifs et fonctions affichés par l'éditeur peuvent évoluer."],
+      "cautionsEn": ["The annual plan is charged as €69 once, not €5.75 each month.", "Drone-calibrated weather decisions and exports require Pro.", "The publisher may change prices and plan features."],
+      "verified_on": "2026-09-30",
+      "source_domain": "drone-ops-mission.fr",
+      "usage_sensitive": false,
+      "compare_plan_kind": "monthly",
+      "compare_plan_name": "Pro mensuel",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://drone-ops-mission.fr/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 8.99
+    },
+    "websiteUrl": "https://drone-ops-mission.fr/",
+    "affiliateLink": "",
+    "logo": "https://drone-ops-mission.fr/images/logo.png",
+    "ogImageUrl": "https://drone-ops-mission.fr/images/landing/feature-carte.webp",
+    "galleryImages": ["https://drone-ops-mission.fr/images/landing/feature-meteo.webp", "https://drone-ops-mission.fr/images/landing/feature-3d.webp", "https://drone-ops-mission.fr/images/landing/feature-ia.webp"],
+    "pros": ["Carte, météo et contraintes aéronautiques réunies dans une préparation de mission.", "Briefing météo Pro adapté aux limites du drone sélectionné.", "Archivage et export des missions annoncés dans Pro."],
+    "prosEn": ["Map, weather and airspace constraints combined in one mission workflow.", "Pro weather briefing tailored to the selected drone's limits.", "Mission history and exports advertised on Pro."],
+    "cons": ["Une recommandation GO/NOGO ne vaut ni autorisation ni vérification réglementaire définitive.", "Les données météo et aéronautiques peuvent être incomplètes ou changer avant le vol.", "Les fonctions de briefing avancé et d'export nécessitent Pro."],
+    "consEn": ["A GO/NO-GO recommendation is neither flight permission nor a final regulatory check.", "Weather and airspace data can be incomplete or change before takeoff.", "Advanced briefing and exports require Pro."],
+    "useCases": ["Tracer une zone et repérer les restrictions à vérifier avant le vol.", "Comparer un créneau météo aux limites du drone utilisé.", "Conserver un briefing et un rapport de préparation de mission."],
+    "useCasesEn": ["Draw a flight area and identify restrictions to verify before takeoff.", "Compare a weather window with the selected drone's limits.", "Keep a mission briefing and preparation report."],
+    "verdict": {"keepIf": ["Tu prépares régulièrement des vols de drone en France et consultes plusieurs cartes et sources météo.", "Tu veux conserver un briefing de mission et peux vérifier chaque contrainte auprès des publications officielles."], "avoidIf": ["Tu cherches une autorisation automatique de vol ou une garantie de conformité.", "Tu n'as besoin que d'une carte ponctuelle et les fonctions Pro ne t'apportent rien."], "profitableIf": ["Les couches SIA et RTBA, le briefing par drone ou l'export remplacent réellement plusieurs étapes de ta préparation.", "Tu vérifies malgré tout les publications officielles avant chaque vol."], "tooExpensiveIf": ["La carte et la météo gratuites suffisent à ton usage occasionnel.", "Tu attends de l'abonnement une garantie de sécurité ou une autorisation réglementaire."], "threshold": "Teste une mission réelle dans Découverte, puis compare le briefing Pro aux sources officielles et aux limites de ton drone avant de payer. Ne décolle jamais sur la seule foi d'un indicateur GO."},
+    "verdictEn": {"keepIf": ["You regularly plan drone flights in France and consult several maps and weather sources.", "You need a recorded mission briefing and can verify each constraint against official publications."], "avoidIf": ["You expect automatic flight permission or a guarantee of compliance.", "You only need an occasional map and do not benefit from Pro features."], "profitableIf": ["Full SIA and RTBA layers, drone-specific briefing or exports genuinely replace steps in your planning process.", "You still check official publications before every flight."], "tooExpensiveIf": ["The free map and weather tools cover your occasional needs.", "You expect a subscription to guarantee safety or grant regulatory permission."], "threshold": "Try one real mission on Discovery, then compare the Pro briefing with official sources and your drone's limits before paying. Never launch based only on a GO indicator."},
+    "alternatives": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "timeGainedHoursPerMonth": null,
+    "seo": {
+      "presentationTitleFr": "Drone Ops Mission : avis, carte drone et météo GO/NOGO | ToolTrim",
+      "presentationTitleEn": "Drone Ops Mission review: flight maps and GO/NO-GO weather | ToolTrim",
+      "presentationMetaDescriptionFr": "Drone Ops Mission réunit carte aéronautique, météo et briefing drone. Comparez Découverte et Pro, le prix et les limites avant un vol.",
+      "presentationMetaDescriptionEn": "Drone Ops Mission combines airspace maps, weather and drone briefing. Compare Discovery and Pro, pricing and limits before a flight.",
+      "idealForFr": "Télépilotes qui préparent des missions drone en France et vérifient les sources officielles avant de voler.",
+      "idealForEn": "Drone pilots planning flights in France who still verify official sources before flying."
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4, "simplicite": 3, "utilisation": 3, "puissance": 4, "reversibilite": 3,
+      "notedOn": "2026-09-30", "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Carte, météo, couches aéronautiques et préparation réunies ; gain de temps non mesuré. Source : drone-ops-mission.fr, 30 septembre 2026.",
+        "simplicite": "Parcours en trois étapes présenté par l'éditeur, mais densité des couches et prise en main non testées. Source : drone-ops-mission.fr, 30 septembre 2026.",
+        "utilisation": "Tracé de mission, briefing et archivage décrits ; fiabilité terrain et actualisation des données non testées par ToolTrim. Sources : drone-ops-mission.fr et /meteo-drone, 30 septembre 2026.",
+        "puissance": "Pro annonce SIA, RTBA, météo calibrée, vue 3D et exports ; ce périmètre ne remplace pas les vérifications officielles. Source : drone-ops-mission.fr, 30 septembre 2026.",
+        "reversibilite": "Exports CSV et PDF annoncés en Pro ; modalités de récupération complète des données et résiliation à vérifier. Source : drone-ops-mission.fr, 30 septembre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Map, weather, airspace layers and planning in one place; time savings have not been measured. Source: drone-ops-mission.fr, September 30, 2026.",
+        "simplicite": "The publisher shows a three-step workflow, but ToolTrim has not tested layer density or onboarding. Source: drone-ops-mission.fr, September 30, 2026.",
+        "utilisation": "Mission drawing, briefing and history are described; field reliability and data freshness are untested. Sources: drone-ops-mission.fr and /meteo-drone, September 30, 2026.",
+        "puissance": "Pro advertises SIA, RTBA, drone-calibrated weather, 3D and exports; this does not replace official checks. Source: drone-ops-mission.fr, September 30, 2026.",
+        "reversibilite": "CSV and PDF exports are advertised on Pro; full data recovery and cancellation terms remain to be checked. Source: drone-ops-mission.fr, September 30, 2026."
+      }
+    }
   }
 ]

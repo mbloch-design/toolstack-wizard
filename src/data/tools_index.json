@@ -42876,5 +42876,22 @@
       "marketing",
       "saas"
     ]
+  },
+  {
+    "id": "drone-ops-mission",
+    "slug": "drone-ops-mission",
+    "name": "Drone Ops Mission",
+    "categoryId": "organization",
+    "shortDescription": "Prépare un vol de drone avec carte aéronautique, météo et briefing GO/NOGO.",
+    "shortDescriptionEn": "Plan drone flights with an aeronautical map, weather and a GO/NO-GO briefing.",
+    "pricing": {
+      "free": "Découverte gratuite après création d'un compte",
+      "paid": "Pro : 8,99 €/mois ou 69 €/an, soit 5,75 €/mois facturés annuellement"
+    },
+    "defaultMonthlyPrice": 8.99,
+    "compareMonthlyPrice": 8.99,
+    "websiteUrl": "https://drone-ops-mission.fr/",
+    "ogImageUrl": "https://drone-ops-mission.fr/images/landing/feature-carte.webp",
+    "logo": "https://drone-ops-mission.fr/images/logo.png"
   }
 ]

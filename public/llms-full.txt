@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1344
+# Records: 1345
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18732,5 +18732,19 @@
     },
     "description_fr": "Suit la présence d'une marque B2B dans des réponses IA et la compare à ses concurrents.",
     "description_en": "Tracks a B2B brand's presence in AI answers and compares it with competitors."
+  },
+  {
+    "name": "Drone Ops Mission",
+    "slug": "drone-ops-mission",
+    "url_fr": "https://tooltrim.com/fr/tool/drone-ops-mission",
+    "url_en": "https://tooltrim.com/en/tool/drone-ops-mission",
+    "website": "https://drone-ops-mission.fr/",
+    "category": "organization",
+    "pricing": {
+      "free": "Découverte gratuite après création d'un compte",
+      "paid": "Pro : 8,99 €/mois ou 69 €/an, soit 5,75 €/mois facturés annuellement"
+    },
+    "description_fr": "Prépare un vol de drone avec carte aéronautique, météo et briefing GO/NOGO.",
+    "description_en": "Plan drone flights with an aeronautical map, weather and a GO/NO-GO briefing."
   }
 ]

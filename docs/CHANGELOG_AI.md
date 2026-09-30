@@ -4856,3 +4856,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Contraste renforcé de la pastille de réduction : fond texte sombre, libellé et code blancs, séparateur interne et dimensions lisibles aussi dans l'en-tête sticky.
 - Revue visuelle après retour utilisateur : abandon du fond sombre trop proche du CTA au profit d'une surface crème chaude, d'un contour discret et d'une hiérarchie typographique remise/code.
 - Palette finale demandée : bleu ToolTrim via `--primary` pour le fond léger, le contour et la remise ; code foncé, CTA toujours noir.
+- 2026-09-30 : fiche Drone Ops Mission créée en français et en anglais, à partir du site officiel. Tarifs Découverte/Pro distingués, limites de l'aide GO/NOGO explicitées et cinq visuels officiels référencés (logo, carte, météo, vue 3D et assistant).
