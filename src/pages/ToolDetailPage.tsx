@@ -36,7 +36,7 @@ import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import TapstitchDecision from "@/components/tool/TapstitchDecision";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
-import { splitRatingEvidence } from "@/lib/ratingEvidence";
+import { splitRatingEvidence, collectRatingSources } from "@/lib/ratingEvidence";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
 import { toolPageHeadingSuffix, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "@/lib/toolSeo";
 import { getExplorerHref } from "@/lib/toolExploration";
@@ -942,6 +942,11 @@ const ToolDetailPage = () => {
                 {(() => {
                   if (tool.slug === "tapstitch") return <div className="td-section"><TapstitchDecision t={t} /></div>;
                   const ts = computeToolTrimScore(tool);
+                  const ratingSources = collectRatingSources(
+                    Object.entries(tool.toolTrimRating?.evidence ?? {}).map(([key, value]) =>
+                      (lang === "en" && tool.toolTrimRating?.evidenceEn?.[key]) || value
+                    )
+                  );
                   // One synthesized sentence instead of a 6-item checklist
                   // with half the items greyed out — a list of "things that
                   // are NOT true about this tool" reads as padding, not
@@ -972,7 +977,14 @@ const ToolDetailPage = () => {
                       {ts.source === "v2" && tool.toolTrimRating ? (
                         <div className="td-review-rationale-v2">
                           <div className="td-review-verdict-header">
-                            <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
+                            <span className="td-score-axis-heading">
+                              <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
+                              {ratingSources.length > 0 && (
+                                <EvidenceInfo label={t("Voir les sources du verdict", "View verdict sources")}>
+                                  {ratingSources.map((source) => <span className="td-evidence-source" key={source}>{source}</span>)}
+                                </EvidenceInfo>
+                              )}
+                            </span>
                             <p className="td-review-label">{t(ts.labelFr, ts.labelEn)}</p>
                           </div>
                           <div className="td-score-breakdown">
@@ -992,9 +1004,6 @@ const ToolDetailPage = () => {
                                   <div className="td-score-axis-row">
                                     <span className="td-score-axis-heading">
                                       <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
-                                      {evidence?.source && (
-                                        <EvidenceInfo label={t(`Voir la source pour ${labelFr}`, `View source for ${labelEn}`)}>{evidence.source}</EvidenceInfo>
-                                      )}
                                     </span>
                                     <div className="td-score-meter" aria-label={`${value}/5`}>
                                       {[1, 2, 3, 4, 5].map((i) =>

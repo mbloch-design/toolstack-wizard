@@ -9046,7 +9046,7 @@
   .td-evidence-info:hover .td-evidence-info-panel,
   .td-evidence-info:focus-within .td-evidence-info-panel,
   .td-evidence-info.is-open .td-evidence-info-panel { visibility: visible; opacity: 1; pointer-events: auto; }
-  .td-score-axis-card:nth-child(3n) .td-evidence-info-panel { left: auto; right: 0; }
+  .td-evidence-source { display: block; }
   .td-title--with-info .td-evidence-info-panel { top: auto; bottom: calc(100% + 7px); left: auto; right: 0; }
   .td-score-meter {
     display: flex;
