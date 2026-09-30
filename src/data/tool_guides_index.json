@@ -2280,6 +2280,7 @@
           "slug": "clickup",
           "name": "ClickUp",
           "hasPricing": true,
+          "logo": "/tool-media/logos/clickup.png",
           "websiteUrl": "https://clickup.com"
         }
       ],
@@ -4119,6 +4120,7 @@
           "slug": "clickup",
           "name": "ClickUp",
           "hasPricing": true,
+          "logo": "/tool-media/logos/clickup.png",
           "websiteUrl": "https://clickup.com"
         }
       ],
