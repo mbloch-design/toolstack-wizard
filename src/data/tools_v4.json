@@ -234172,8 +234172,6 @@
         "reversibilite": "With Pro, missions and reports can be exported as CSV or PDF, so pilots can keep a copy outside the tool. Source: drone-ops-mission.fr, September 30, 2026."
       }
     }
-  }
-]
   },
   {
     "id": "viso-ai",
@@ -234358,3 +234356,5 @@
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-30"
     }
+  }
+]

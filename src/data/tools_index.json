@@ -42893,8 +42893,6 @@
     "websiteUrl": "https://drone-ops-mission.fr/",
     "ogImageUrl": "https://drone-ops-mission.fr/images/landing/feature-carte.webp",
     "logo": "https://drone-ops-mission.fr/images/logo.png"
-  }
-]
   },
   {
     "id": "viso-ai",
@@ -42928,4 +42926,7 @@
       "Sites industriels et logistiques",
       "Intégrateurs de systèmes vidéo",
       "Équipes techniques qui prototypent des applications de vision"
-    ]
+    ],
+    "prescription_quality": "question"
+  }
+]
