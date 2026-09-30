@@ -11974,7 +11974,7 @@
     "websiteUrl": "https://misterhorse.com/animation-composer",
     "defaultMonthlyPrice": 14.17,
     "pricing": {
-      "free": "Plan gratuit : Free plan includes over 1,000 assets and the 4 time-saving tools, versus 6,000+ assets on the paid subscription; brief also notes a library limit of up to 500 items on the free tier per the seed data.",
+      "free": "Plan gratuit : L'offre gratuite comprend plus de 1 000 assets et les 4 outils de gain de temps, contre plus de 6 000 assets sur l'abonnement payant ; le brief mentionne aussi une limite de bibliothèque allant jusqu'à 500 éléments sur l'offre gratuite selon les données sources.",
       "paid": "Dès 16,50 $/mois, plan Mister Horse Subscription (annual)."
     },
     "logo": "",
@@ -12319,7 +12319,7 @@
     "websiteUrl": "https://ant.design",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Plan gratuit : Fully free and open source, no paid tier",
+      "free": "Plan gratuit : Entièrement gratuit et open source, sans offre payante",
       "paid": "Pas d'offre payante obligatoire."
     },
     "logo": "",
@@ -12409,7 +12409,7 @@
           "displayName": "Open Source",
           "summary": null,
           "featureHighlights": [
-            "Free React (and Angular/Vue variants) component library, no paid tier or hosted service."
+            "Bibliothèque de composants React (et variantes Angular/Vue) gratuite, sans offre payante ni service hébergé."
           ],
           "detailsSourceUrl": "https://ant.design/",
           "pricingUnit": "open_source",
@@ -19649,7 +19649,7 @@
     "websiteUrl": "https://basecamp.com",
     "defaultMonthlyPrice": 12.88,
     "pricing": {
-      "free": "Plan gratuit : 1 active project, up to 20 people, 1 GB storage, no time limit",
+      "free": "Plan gratuit : 1 projet actif, jusqu'à 20 personnes, 1 Go de stockage, sans limite de durée",
       "paid": "Dès 15 $/mois, plan Basecamp Plus."
     },
     "logo": "",
@@ -34224,7 +34224,7 @@
     "longDescription": "Clerk gère les écrans d'inscription, de connexion et de profil utilisateur avec des composants d'interface et des API préconstruits, pour éviter à un développeur de construire l'authentification à partir de zéro. Le plan Hobby est gratuit jusqu'à 50 000 utilisateurs actifs mensuels par app avec des applications illimitées, ce qui couvre la plupart des side projects et produits en démarrage à coût nul.\n\nPro à 20-25 $/mois ajoute le MFA, des durées de session personnalisables et retire le branding Clerk, avec des utilisateurs actifs supplémentaires facturés 0,02 $ chacun au-delà des 50 000 inclus. Business saute fortement à 250-300 $/mois pour le rapport SOC2, le support prioritaire et plus de sièges dashboard, un grand pas pour une petite équipe qui a surtout besoin de la paperasse de conformité.\n\nLa multi-tenancy B2B (organisations, rôles, invitations) est incluse gratuitement sur tous les plans jusqu'à 100 organisations actives mensuelles, avec un add-on amélioré pour des membres illimités et des rôles personnalisés.",
     "longDescriptionEn": "Clerk handles sign-up, sign-in and user profile screens with prebuilt UI components and APIs, so a developer does not have to build authentication from scratch. The Hobby plan is free up to 50,000 monthly retained users per app with unlimited applications, which covers most side projects and early-stage products at zero cost.\n\nPro at $20 to $25/month adds MFA, custom session lifetimes and removes Clerk's branding, with extra retained users metered at $0.02 each beyond the included 50,000. Business jumps sharply to $250 to $300/month for SOC2 reporting, priority support and more dashboard seats, a large step for a small team that mainly needs compliance paperwork.\n\nB2B multi-tenancy (organizations, roles, invitations) is included free on every plan up to 100 monthly retained organizations, with an enhanced add-on for unlimited members and custom roles.",
     "pricing": {
-      "free": "Plan gratuit : Up to 50,000 monthly retained users per app, up to 3 dashboard seats, fixed 7-day session lifetime, no credit card required",
+      "free": "Plan gratuit : Jusqu'à 50 000 utilisateurs actifs mensuels retenus par application, jusqu'à 3 sièges de tableau de bord, durée de session fixe de 7 jours, sans carte bancaire requise",
       "paid": "Dès 20 $/mois, plan Pro."
     },
     "pricingEn": {
@@ -37038,7 +37038,7 @@
     "longDescription": "Codemagic exécute des pipelines CI/CD pour Flutter, React Native, iOS/Android natif, Ionic, Unity et .NET MAUI, en automatisant la signature de code, la compilation, la mise en ligne de nouvelles versions et la soumission aux stores, configurables via l'interface ou un fichier codemagic.yaml.\n\nLe plan gratuit inclut 500 minutes de build macOS par mois avec 1 build en parallèle. Au-delà, Pay as You Go facture 0,045 $/minute pour les builds Linux/Windows et 0,095 à 0,114 $/minute pour les builds Mac, avec des paliers à prix fixe et Enterprise (à partir de 3 990 $/an) pour les équipes qui ont besoin d'une concurrence garantie. Il convient à un développeur ou une petite équipe mobile qui veut automatiser ses sorties sans gérer ses propres serveurs de build.",
     "longDescriptionEn": "Codemagic runs CI/CD pipelines for Flutter, React Native, native iOS/Android, Ionic, Unity and .NET MAUI, automating code signing, building, uploading new app versions and store submissions, configured through the UI or a codemagic.yaml file.\n\nThe free plan includes 500 macOS build minutes a month with 1 parallel build. Beyond that, Pay as You Go bills $0.045/minute for Linux/Windows builds and $0.095-0.114/minute for Mac builds, with fixed-price and enterprise tiers (from $3,990/year) available for teams needing guaranteed concurrency. It suits a developer or small team building mobile apps who wants to automate releases without running dedicated build servers.",
     "pricing": {
-      "free": "Plan gratuit : 500 free macOS M2 build minutes per month, 1 parallel build, community support only",
+      "free": "Plan gratuit : 500 minutes de build macOS M2 gratuites par mois, 1 build en parallèle, support communautaire uniquement",
       "paid": "Dès 0 $/mois, plan Pay as You Go."
     },
     "pricingEn": {
@@ -37068,7 +37068,7 @@
           "displayName": "Free",
           "summary": null,
           "featureHighlights": [
-            "500 macOS M2 build minutes per month, 1 parallel build, 30-day build history, 1 team member."
+            "500 minutes de build macOS M2 par mois, 1 build en parallèle, historique de build sur 30 jours, 1 membre d'équipe."
           ],
           "detailsSourceUrl": "https://codemagic.io/pricing/",
           "pricingUnit": "account",
@@ -37088,7 +37088,7 @@
           "displayName": "Pay as You Go",
           "summary": null,
           "featureHighlights": [
-            "Usage-based: $0.045/min Linux or Windows, $0.095/min Mac mini M2, $0.114/min Mac mini M4; unlimited team members, 60-day build history, $49/month per extra concurrency."
+            "Facturation à l'usage : 0,045 $/min sur Linux ou Windows, 0,095 $/min sur Mac mini M2, 0,114 $/min sur Mac mini M4 ; membres d'équipe illimités, historique de build sur 60 jours, 49 $/mois par concurrence supplémentaire."
           ],
           "detailsSourceUrl": "https://codemagic.io/pricing/",
           "pricingUnit": "usage",
@@ -37108,7 +37108,7 @@
           "displayName": "Fixed Price - M2",
           "summary": "Par utilisateur.",
           "featureHighlights": [
-            "Billed as $3,990/year (about $332.50/month equivalent), 3 concurrent builds included, 1-year build history."
+            "Facturé 3 990 $/an (soit environ 332,50 $/mois), 3 builds simultanés inclus, historique de build sur 1 an."
           ],
           "detailsSourceUrl": "https://codemagic.io/pricing/",
           "pricingUnit": "seat",
@@ -37128,7 +37128,7 @@
           "displayName": "Enterprise",
           "summary": "Sur devis. Par utilisateur.",
           "featureHighlights": [
-            "Starting at $12,000/year, custom configuration, SSO, priority support and dedicated account management."
+            "À partir de 12 000 $/an, configuration sur mesure, SSO, support prioritaire et gestion de compte dédiée."
           ],
           "detailsSourceUrl": "https://codemagic.io/pricing/",
           "pricingUnit": "seat",
@@ -43604,7 +43604,7 @@
     "websiteUrl": "https://datadoghq.com",
     "defaultMonthlyPrice": 12.88,
     "pricing": {
-      "free": "Plan gratuit : Up to 5 hosts, 1-day metric retention (Infrastructure Free)",
+      "free": "Plan gratuit : Jusqu'à 5 hôtes, rétention des métriques sur 1 jour (offre Infrastructure gratuite)",
       "paid": "Dès 15 $/mois, plan Infrastructure Pro."
     },
     "logo": "",
@@ -45330,7 +45330,7 @@
     "longDescription": "Dependabot est une fonctionnalité intégrée à GitHub, pas un produit séparé à acheter : il scanne le graphe de dépendances d'un dépôt et ouvre des pull requests pour corriger les vulnérabilités connues ou mettre à jour les paquets obsolètes. Il est gratuit sur tous les plans GitHub, dépôt public ou privé, sans limite d'usage.\n\nSon périmètre est volontairement étroit : il corrige les dépendances et les versions des GitHub Actions, et regroupe les correctifs pour limiter le bruit des pull requests, mais il ne scanne ni le code source ni les secrets. Cela vit dans les add-ons payants GitHub Advanced Security, facturés séparément par contributeur actif.\n\nPour la plupart des écosystèmes de dépendances transitives (npm excepté), Dependabot ne peut pas corriger une dépendance indirecte si sa dépendance parente doit aussi être mise à jour, donc certains correctifs retombent encore sur un humain.",
     "longDescriptionEn": "Dependabot is a built-in GitHub feature, not a separate product to buy: it scans a repository's dependency graph and opens pull requests to patch known vulnerabilities or bump outdated packages. It is free on every GitHub plan, public or private repo, with no usage cap.\n\nIt is deliberately narrow: it patches dependencies and GitHub Actions versions, and groups fixes to cut down on pull request noise, but it does not scan source code or secrets. Those live in GitHub's paid Advanced Security add-ons, billed separately per active committer.\n\nFor most transitive-dependency ecosystems (npm excluded), Dependabot cannot patch an indirect dependency if its parent also needs updating, so some fixes still land on a human.",
     "pricing": {
-      "free": "Plan gratuit : Fully free on all GitHub plans, for both public and private repositories, no usage limits",
+      "free": "Plan gratuit : Entièrement gratuit sur toutes les offres GitHub, pour les dépôts publics comme privés, sans limite d'utilisation",
       "paid": "Pas d'offre payante obligatoire."
     },
     "pricingEn": {
@@ -49166,7 +49166,7 @@
     "websiteUrl": "https://dropbox.com",
     "defaultMonthlyPrice": 8.58,
     "pricing": {
-      "free": "Plan gratuit : Basic plan: 2 GB storage, store and share files.",
+      "free": "Plan gratuit : Offre Basic : 2 Go de stockage, pour stocker et partager des fichiers.",
       "paid": "Dès 9,99 $/mois, plan Plus."
     },
     "logo": "",
@@ -54743,7 +54743,7 @@
       "paid": "Plus 5€/mois (cloud + collab persistante)"
     },
     "pricing": {
-      "free": "Plan gratuit : Full editor, 1 infinite scene, unlimited collaborators, export to PNG/SVG, local libraries, E2EE, open source",
+      "free": "Plan gratuit : Éditeur complet, 1 scène infinie, collaborateurs illimités, export PNG/SVG, bibliothèques locales, chiffrement de bout en bout, open source",
       "paid": "Dès 6 $/mois, plan Excalidraw+ Plus."
     },
     "pricingEn": {
@@ -56511,7 +56511,7 @@
     "websiteUrl": "https://figma.com",
     "defaultMonthlyPrice": 13.74,
     "pricing": {
-      "free": "Plan gratuit : Unlimited drafts, UI kits and templates, 150 AI credits/day (max 500/mo)",
+      "free": "Plan gratuit : Brouillons illimités, kits d'interface et modèles, 150 crédits IA par jour (500 max par mois)",
       "paid": "Dès 16 $/mois, plan Professional (Full seat)."
     },
     "logo": "",
@@ -61269,7 +61269,7 @@
           "displayName": "Pay as you go",
           "summary": null,
           "featureHighlights": [
-            "No base subscription fee; per-organization usage billing, pro-rated by provisioning time. Shared-CPU Machines from about $0.00000078 to $0.00003429 per second depending on cores/RAM; Performance-CPU Machines from about $0.00001242 to $0.00019556 per second; stopped Machines billed at $0.15/GB rootfs per month. Volumes $0.15/GB per month; volume snapshots $0.08/GB per month (first 10GB free); dedicated IPv4 $2/month; data egress $0.02-$0.12/GB depending on region."
+            "Aucun abonnement de base ; facturation à l'usage par organisation, au prorata du temps de provisionnement. Machines Shared-CPU d'environ 0,00000078 $ à 0,00003429 $ par seconde selon les cœurs/la RAM ; Machines Performance-CPU d'environ 0,00001242 $ à 0,00019556 $ par seconde ; Machines arrêtées facturées 0,15 $/Go de rootfs par mois. Volumes à 0,15 $/Go par mois ; snapshots de volumes à 0,08 $/Go par mois (10 premiers Go gratuits) ; IPv4 dédiée à 2 $/mois ; sortie de données de 0,02 à 0,12 $/Go selon la région."
           ],
           "detailsSourceUrl": "https://docs.fly.io/about/pricing/",
           "pricingUnit": "usage",
@@ -62412,7 +62412,7 @@
     "websiteUrl": "https://frame.io",
     "defaultMonthlyPrice": 12.88,
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Jusqu'à 2 membres, 2 projets, 2 Go de stockage standard + 2 Go de stockage monté",
       "paid": "Dès 15 $/mois, plan Pro."
     },
     "logo": "",
@@ -62635,7 +62635,7 @@
       "threshold": "The Pro plan costs $15/month per seat (5 seats included), so a solo editor pays $180/year for frame-accurate review and 2TB of storage."
     },
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Up to 2 members, 2 projects, 2GB standard storage + 2GB mounted storage",
       "paid": "From $15/mo, Pro plan."
     },
     "force_silence": false,
@@ -69911,7 +69911,7 @@
       ]
     },
     "pricing": {
-      "free": "Plan gratuit : 15 GB shared across Drive, Gmail, and Google Photos",
+      "free": "Plan gratuit : 15 Go partagés entre Drive, Gmail et Google Photos",
       "paid": "Dès 1,67 $/mois, plan Google One Basic (100GB)."
     },
     "affiliateLink": "https://google.com/drive",
@@ -72243,7 +72243,7 @@
     "websiteUrl": "https://grammarly.com",
     "defaultMonthlyPrice": 10.3,
     "pricing": {
-      "free": "Plan gratuit : Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.",
+      "free": "Plan gratuit : Corrections d'orthographe et de grammaire, détection du ton d'écriture, et 100 requêtes IA par mois.",
       "paid": "Dès 12 $/mois, plan Pro."
     },
     "logo": "",
@@ -72378,7 +72378,7 @@
           "displayName": "Free",
           "summary": null,
           "featureHighlights": [
-            "Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month."
+            "Corrections d'orthographe et de grammaire, détection du ton d'écriture, et 100 requêtes IA par mois."
           ],
           "detailsSourceUrl": "https://www.grammarly.com/plans",
           "pricingUnit": "account",
@@ -72398,7 +72398,7 @@
           "displayName": "Pro",
           "summary": "Par utilisateur.",
           "featureHighlights": [
-            "Full sentence rewrites, tone adjustment, fluency suggestions, plagiarism and AI-generated-text detection, 2,000 AI prompts/member/month, account roles, up to 2 user groups and 1 style guide/brand tone, team analytics."
+            "Réécriture complète des phrases, ajustement du ton, suggestions de fluidité, détection du plagiat et du texte généré par IA, 2 000 requêtes IA par membre et par mois, rôles de compte, jusqu'à 2 groupes d'utilisateurs et 1 guide de style/ton de marque, statistiques d'équipe."
           ],
           "detailsSourceUrl": "https://www.grammarly.com/plans",
           "pricingUnit": "seat",
@@ -72418,7 +72418,7 @@
           "displayName": "Enterprise",
           "summary": "Sur devis. Par utilisateur.",
           "featureHighlights": [
-            "Everything in Pro plus proactive AI, dedicated support, BYOK encryption, custom roles, data loss prevention, SAML SSO, SCIM, managed mode, unlimited prompts/style guides/brand tones/user groups, and advanced security controls (confidential mode, audit logs, session timeout)."
+            "Tout ce qui est inclus dans Pro, plus l'IA proactive, un support dédié, le chiffrement BYOK, des rôles personnalisés, la prévention de perte de données, le SSO SAML, SCIM, le mode géré, des requêtes/guides de style/tons de marque/groupes d'utilisateurs illimités, et des contrôles de sécurité avancés (mode confidentiel, journaux d'audit, expiration de session)."
           ],
           "detailsSourceUrl": "https://www.grammarly.com/plans",
           "pricingUnit": "seat",
@@ -75554,7 +75554,7 @@
     "longDescription": "Help Scout s'articule autour d'une boîte de réception partagée pour l'email et d'autres canaux, avec réponses enregistrées, rédaction assistée par IA, récapitulatif de conversation et traduction. Beacon, un widget intégrable, ajoute le chat en direct et du contenu d'aide en libre-service par-dessus la boîte de réception, et l'automatisation de workflow organise les conversations avec des rapports sur le temps de réponse et la performance de l'équipe.\n\nLe plan gratuit couvre jusqu'à 5 utilisateurs, 1 boîte de réception, 1 site Docs et 100 contacts par mois. Le plan Standard coûte 25 $/utilisateur/mois pour jusqu'à 25 utilisateurs et 2 boîtes de réception, Plus est à 45 $/utilisateur/mois pour jusqu'à 50 utilisateurs et 5 boîtes, et Pro est à 75 $/utilisateur/mois avec un minimum de 10 sièges, des utilisateurs illimités au-delà, et la conformité HIPAA. Les boîtes de réception supplémentaires coûtent 10 $/mois chacune, et l'add-on AI Answers facture 0,75 $ par résolution après un essai gratuit de 3 mois.",
     "longDescriptionEn": "Help Scout centers on a shared inbox for email and other channels, with saved replies, AI-assisted drafting, conversation recapping and translation. Beacon, an embeddable widget, adds live chat and self-service help content on top of the inbox, and workflow automation routes and organizes conversations with reporting on response time and team performance.\n\nThe free plan covers up to 5 users, 1 inbox, 1 Docs site and 100 contacts a month. The Standard plan is $25/user/month for up to 25 users and 2 inboxes, Plus is $45/user/month for up to 50 users and 5 inboxes, and Pro is $75/user/month with a 10-seat minimum, unlimited users beyond that, and HIPAA compliance. Extra inboxes cost $10/month each, and an AI Answers add-on bills $0.75 per resolution after a 3-month free trial.",
     "pricing": {
-      "free": "Plan gratuit : Up to 5 users, 1 inbox, 1 Docs (knowledge base) site, 100 contacts/month",
+      "free": "Plan gratuit : Jusqu'à 5 utilisateurs, 1 boîte de réception, 1 site Docs (base de connaissances), 100 contacts par mois",
       "paid": "Dès 25 $/mois, plan Standard."
     },
     "pricingEn": {
@@ -78042,7 +78042,7 @@
     "shortDescription": "Houdini est une application 3D et VFX procédurale à nœuds, gratuite en usage non commercial et à 299 $/an via l'offre Indie.",
     "shortDescriptionEn": "Houdini is a node-based procedural 3D and VFX application, free for non-commercial use and $299/year for eligible small studios via the Indie tier.",
     "pricing": {
-      "free": "Plan gratuit : Houdini Apprentice: non-commercial use only, near-full feature access, watermarked renders and file format restricted to Apprentice-only files.",
+      "free": "Plan gratuit : Houdini Apprentice : usage non commercial uniquement, accès quasi complet aux fonctionnalités, rendus filigranés et format de fichier limité aux fichiers Apprentice.",
       "paid": "Dès 24,92 $/mois, plan Houdini Indie."
     },
     "pricingEn": {
@@ -87786,7 +87786,7 @@
     "longDescription": "Klaviyo combine email et SMS marketing avec un CRM B2C : il stocke des profils client unifiés, prédit la valeur vie client et le risque de churn, et permet de construire des flux automatisés pour les paniers abandonnés, la série de bienvenue et le suivi post-achat. Il se connecte nativement à Shopify, WooCommerce, BigCommerce, Magento, Wix et Salesforce Commerce Cloud, et un outil IA appelé Composer génère des campagnes à partir d'un prompt.\n\nLe plan gratuit couvre jusqu'à 250 profils actifs et 500 envois d'email par mois, avec 5 $ de crédit SMS et un support limité aux 60 premiers jours. Le premier plan payant démarre à 60 $/mois une fois le seuil gratuit de profils dépassé, et le prix augmente automatiquement avec le nombre de profils de contact actifs ; le SMS est facturé à part de l'email, donc le coût total dépend à la fois de la taille de la liste et du volume de messages.",
     "longDescriptionEn": "Klaviyo combines email and SMS marketing with a B2C CRM: it stores unified customer profiles, predicts lifetime value and churn risk, and lets a store build automated flows for abandoned carts, welcome series and post-purchase follow-up. It connects natively to Shopify, WooCommerce, BigCommerce, Magento, Wix and Salesforce Commerce Cloud, and an AI tool called Composer generates campaigns from a prompt.\n\nThe free plan covers up to 250 active profiles and 500 email sends a month, with $5 of SMS credit and support limited to the first 60 days. The entry paid tier starts at $60/month once the free profile threshold is crossed, and the price scales automatically with the number of active contact profiles; SMS is metered and billed separately from email, so total cost depends on both list size and messaging volume.",
     "pricing": {
-      "free": "Plan gratuit : Up to 250 active profiles, 500 email sends/month, $5/month SMS credit, email support limited to first 60 days",
+      "free": "Plan gratuit : Jusqu'à 250 profils actifs, 500 envois d'e-mails par mois, 5 $ de crédit SMS par mois, support par e-mail limité aux 60 premiers jours",
       "paid": "Dès 60 $/mois, plan Marketing."
     },
     "defaultMonthlyPrice": 51.52,
@@ -92477,7 +92477,7 @@
           "displayName": "Email",
           "summary": "69 $/mois sans engagement.",
           "featureHighlights": [
-            "50,000 emails/month, unlimited users and senders, email/phone finder, 650M+ leads database, lemAgent, email warm-up, CRM integrations."
+            "50 000 e-mails par mois, utilisateurs et expéditeurs illimités, recherche d'e-mails/téléphones, base de plus de 650 millions de leads, lemAgent, préchauffage des e-mails, intégrations CRM."
           ],
           "detailsSourceUrl": "https://www.lemlist.com/pricing",
           "pricingUnit": "account",
@@ -92497,7 +92497,7 @@
           "displayName": "Multichannel",
           "summary": "109 $/mois sans engagement. Par utilisateur.",
           "featureHighlights": [
-            "Unlimited emails and messages; all Email plan features plus up to 5 senders per user, LinkedIn automation, SMS, WhatsApp add-on, and a built-in call dialer."
+            "E-mails et messages illimités ; toutes les fonctionnalités de l'offre Email plus jusqu'à 5 expéditeurs par utilisateur, automatisation LinkedIn, SMS, module complémentaire WhatsApp et un numéroteur d'appels intégré."
           ],
           "detailsSourceUrl": "https://www.lemlist.com/pricing",
           "pricingUnit": "seat",
@@ -92517,7 +92517,7 @@
           "displayName": "Enterprise",
           "summary": "Sur devis.",
           "featureHighlights": [
-            "Multichannel features plus 5+ senders per user, CRM integration, custom roles, dedicated account manager, SSO/SAML, priority support."
+            "Fonctionnalités multicanal plus 5 expéditeurs ou plus par utilisateur, intégration CRM, rôles personnalisés, chargé de compte dédié, SSO/SAML, support prioritaire."
           ],
           "detailsSourceUrl": "https://www.lemlist.com/pricing",
           "pricingUnit": "account",
@@ -94359,7 +94359,7 @@
     "websiteUrl": "https://linear.app",
     "defaultMonthlyPrice": 8.59,
     "pricing": {
-      "free": "Plan gratuit : Unlimited members, 2 teams, 250 issues, 10MB file upload",
+      "free": "Plan gratuit : Membres illimités, 2 équipes, 250 tickets, fichiers de 10 Mo maximum",
       "paid": "Dès 10 $/mois, plan Basic."
     },
     "logo": "",
@@ -94488,7 +94488,7 @@
           "displayName": "Free",
           "summary": null,
           "featureHighlights": [
-            "Unlimited members, 2 teams, 250 issues total, 10MB file uploads."
+            "Membres illimités, 2 équipes, 250 tickets au total, fichiers de 10 Mo maximum."
           ],
           "detailsSourceUrl": "https://linear.app/pricing",
           "pricingUnit": "account",
@@ -94508,7 +94508,7 @@
           "displayName": "Basic",
           "summary": "Par utilisateur.",
           "featureHighlights": [
-            "Billed annually only at this rate; 5 teams, unlimited issues and file uploads."
+            "Facturé uniquement à l'année à ce tarif ; 5 équipes, tickets et fichiers illimités."
           ],
           "detailsSourceUrl": "https://linear.app/pricing",
           "pricingUnit": "seat",
@@ -94528,7 +94528,7 @@
           "displayName": "Business",
           "summary": "Par utilisateur.",
           "featureHighlights": [
-            "Billed annually only at this rate; unlimited teams and guests, Triage Intelligence, Loops, Code Intelligence, Insights."
+            "Facturé uniquement à l'année à ce tarif ; équipes et invités illimités, Triage Intelligence, Loops, Code Intelligence, Insights."
           ],
           "detailsSourceUrl": "https://linear.app/pricing",
           "pricingUnit": "seat",
@@ -94548,7 +94548,7 @@
           "displayName": "Enterprise",
           "summary": "Sur devis. Par utilisateur.",
           "featureHighlights": [
-            "Custom pricing, annual billing only."
+            "Tarification sur mesure, facturation annuelle uniquement."
           ],
           "detailsSourceUrl": "https://linear.app/pricing",
           "pricingUnit": "seat",
@@ -110428,7 +110428,7 @@
     "websiteUrl": "https://mongodb.com/atlas",
     "defaultMonthlyPrice": 6.87,
     "pricing": {
-      "free": "Plan gratuit : M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
+      "free": "Plan gratuit : Cluster M0, 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie",
       "paid": "Dès 8 $/mois, plan Flex."
     },
     "logo": "",
@@ -111735,7 +111735,7 @@
     "websiteUrl": "https://motionbro.com",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Plan gratuit : Motion Bro plugin itself is free with no paid tier; only individual asset packs and bundles are paid",
+      "free": "Plan gratuit : Le plugin Motion Bro en lui-même est gratuit, sans offre payante ; seuls les packs d'assets individuels et les bundles sont payants",
       "paid": "Dès 0 $ (licence à vie), plan Motion Bro plugin."
     },
     "logo": "",
@@ -115908,7 +115908,7 @@
     "longDescription": "NordPass stocke mots de passe, passkeys et fichiers sensibles dans un coffre-fort chiffré xChaCha20, avec remplissage automatique, générateur de mots de passe et analyse des fuites sur les plans payants. Le plan gratuit fonctionne mais reste limité à un seul appareil à la fois, ce qui pousse assez vite vers Premium.\n\nPour les équipes, Business et Enterprise ajoutent dossiers partagés, gestion de groupes et journal d'activité, mais les deux exigent un minimum de 5 utilisateurs, et le palier Teams le moins cher ne se vend que par packs fixes de 10. Un indépendant qui veut un partage de niveau entreprise pour un ou deux collaborateurs finira par payer des sièges inutilisés.\n\nLes prix affichés sur le site sont des promotions de première période et NordPass ne publie pas le prix de renouvellement : demande-le avant de t'engager, et prévois davantage que le tarif réduit après la première période.",
     "longDescriptionEn": "NordPass stores passwords, passkeys and sensitive files in an xChaCha20-encrypted vault, with autofill, a password generator and a breach scanner on paid plans. The free plan works but is capped at one device at a time, which pushes most people toward Premium fairly quickly.\n\nFor teams, Business and Enterprise add shared folders, group management and an activity log, but both require a 5-user minimum, and the cheapest Teams tier only comes in fixed 10-user packs. A single freelancer who wants business-grade sharing for one or two collaborators will end up paying for seats they do not use.\n\nThe prices shown on the site are first-term promotions and NordPass does not publish the renewal price: ask for it before committing, and budget for more than the discounted rate after the first term.",
     "pricing": {
-      "free": "Plan gratuit : 1 account, single device only, no Password Health or Data Breach Scanner",
+      "free": "Plan gratuit : 1 compte, un seul appareil, sans analyse de la santé des mots de passe ni scanner de fuites de données",
       "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
     "pricingEn": {
@@ -116474,7 +116474,7 @@
     "websiteUrl": "https://notion.so",
     "defaultMonthlyPrice": 9.5,
     "pricing": {
-      "free": "Plan gratuit : Unlimited pages/blocks for individuals (limited for 2+ members), 5MB file uploads, 7-day page history, 10 guests",
+      "free": "Plan gratuit : Pages/blocs illimités pour un usage individuel (limité à partir de 2 membres), fichiers de 5 Mo maximum, historique des pages sur 7 jours, 10 invités",
       "paid": "Dès 9,50 €/mois, plan Plus."
     },
     "logo": "",
@@ -129219,7 +129219,7 @@
     "websiteUrl": "https://pixieset.com",
     "defaultMonthlyPrice": 6.87,
     "pricing": {
-      "free": "Plan gratuit : 3 GB storage, unlimited galleries, up to 3 mobile apps, 15% commission on store sales",
+      "free": "Plan gratuit : 3 Go de stockage, galeries illimitées, jusqu'à 3 applications mobiles, commission de 15 % sur les ventes en boutique",
       "paid": "Dès 8 $/mois, plan Basic."
     },
     "logo": "",
@@ -129325,7 +129325,7 @@
           "displayName": "Free",
           "summary": null,
           "featureHighlights": [
-            "3 GB storage; 15% commission on print/digital sales; no credit card required."
+            "3 Go de stockage ; commission de 15 % sur les ventes de tirages/numérique ; sans carte bancaire requise."
           ],
           "detailsSourceUrl": "https://pixieset.com/pricing/",
           "pricingUnit": "account",
@@ -129345,7 +129345,7 @@
           "displayName": "Basic",
           "summary": "10 $/mois sans engagement.",
           "featureHighlights": [
-            "10 GB photo storage + 30 minutes HD video, custom domain, full-resolution downloads, 100 emails/month, commission-free sales."
+            "10 Go de stockage photo + 30 minutes de vidéo HD, domaine personnalisé, téléchargements en pleine résolution, 100 e-mails par mois, ventes sans commission."
           ],
           "detailsSourceUrl": "https://pixieset.com/pricing/",
           "pricingUnit": "account",
@@ -129365,7 +129365,7 @@
           "displayName": "Plus",
           "summary": "20 $/mois sans engagement.",
           "featureHighlights": [
-            "100 GB storage with video support, 500 emails/month."
+            "100 Go de stockage avec prise en charge vidéo, 500 e-mails par mois."
           ],
           "detailsSourceUrl": "https://pixieset.com/pricing/",
           "pricingUnit": "account",
@@ -129385,7 +129385,7 @@
           "displayName": "Pro",
           "summary": "30 $/mois sans engagement.",
           "featureHighlights": [
-            "1 TB photo storage, RAW support, bulk share collections, email campaigns, commission-free sales."
+            "1 To de stockage photo, prise en charge du RAW, partage de collections en masse, campagnes e-mail, ventes sans commission."
           ],
           "detailsSourceUrl": "https://pixieset.com/pricing/",
           "pricingUnit": "account",
@@ -129405,7 +129405,7 @@
           "displayName": "Ultimate",
           "summary": "50 $/mois sans engagement.",
           "featureHighlights": [
-            "Unlimited photo storage (RAW capped at 1 TB), video support, 10,000 emails/month."
+            "Stockage photo illimité (RAW plafonné à 1 To), prise en charge vidéo, 10 000 e-mails par mois."
           ],
           "detailsSourceUrl": "https://pixieset.com/pricing/",
           "pricingUnit": "account",
@@ -141176,7 +141176,7 @@
     "longDescription": "React Router est une bibliothèque de routing pour les applications React : routes imbriquées, conventions de chargement de données, et un mode client léger ou un mode framework complet (l'ancien Remix) dans le même paquet.\n\nIl est entièrement open source et gratuit, sans offre payante ni support éditeur ; l'aide vient de GitHub Discussions et Discord. La version 8 reste compatible avec les API de la v7, mais elle exige une chaîne d'outils récente (Node 22+, ESM uniquement), ce qui peut forcer une mise à jour sur d'anciens projets. Elle convient aux développeurs qui construisent ou maintiennent une app React et veulent un routing qui va du simple SPA au framework complet.",
     "longDescriptionEn": "React Router is a routing library for React applications: nested routes, data loading conventions, and either a lightweight client-side mode or a full-stack framework mode (the former Remix) in the same package.\n\nIt's fully open source and free, with no paid tier or vendor support plan; help comes from GitHub Discussions and Discord. Version 8 keeps backward compatibility with v7 APIs, but it requires a modern toolchain (Node 22+, ESM-only), which can force upgrades in older codebases. It suits developers building or maintaining React apps who want routing that scales from a simple SPA to a full framework.",
     "pricing": {
-      "free": "Plan gratuit : Fully open-source library, free to use with no paid tier.",
+      "free": "Plan gratuit : Bibliothèque entièrement open source, gratuite à l'usage et sans offre payante.",
       "paid": "Pas d'offre payante obligatoire."
     },
     "pricingEn": {
@@ -141203,7 +141203,7 @@
           "displayName": "Open Source",
           "summary": null,
           "featureHighlights": [
-            "Free routing library, no paid tier or hosted service."
+            "Bibliothèque de routage gratuite, sans offre payante ni service hébergé."
           ],
           "detailsSourceUrl": "https://reactrouter.com",
           "pricingUnit": "open_source",
@@ -149877,7 +149877,7 @@
     "websiteUrl": "https://runway.com",
     "defaultMonthlyPrice": 10.3,
     "pricing": {
-      "free": "Plan gratuit : 125 one-time credits, 5GB storage, exploration-only",
+      "free": "Plan gratuit : 125 crédits ponctuels, 5 Go de stockage, usage exploratoire uniquement",
       "paid": "Dès 12 $/mois, plan Standard."
     },
     "logo": "",
@@ -150001,7 +150001,7 @@
           "displayName": "Free",
           "summary": null,
           "featureHighlights": [
-            "125 one-time credits (not monthly), 5GB storage."
+            "125 crédits ponctuels (non renouvelés chaque mois), 5 Go de stockage."
           ],
           "detailsSourceUrl": "https://runway.com/pricing",
           "pricingUnit": "account",
@@ -150021,7 +150021,7 @@
           "displayName": "Standard",
           "summary": "15 $/mois sans engagement. Par utilisateur.",
           "featureHighlights": [
-            "625 credits/month, 5 parallel generations, 3 projects, no watermarks, 4K upscaling, 20GB storage."
+            "625 crédits par mois, 5 générations en parallèle, 3 projets, sans filigrane, upscaling 4K, 20 Go de stockage."
           ],
           "detailsSourceUrl": "https://runway.com/pricing",
           "pricingUnit": "seat",
@@ -150041,7 +150041,7 @@
           "displayName": "Pro",
           "summary": "35 $/mois sans engagement. Par utilisateur.",
           "featureHighlights": [
-            "2,250 credits/month, 15 parallel generations, 5 projects, 1 Brand Kit, 1 voice clone, credit top-ups available, 100GB storage."
+            "2 250 crédits par mois, 15 générations en parallèle, 5 projets, 1 kit de marque, 1 clone vocal, recharges de crédits disponibles, 100 Go de stockage."
           ],
           "detailsSourceUrl": "https://runway.com/pricing",
           "pricingUnit": "seat",
@@ -150061,7 +150061,7 @@
           "displayName": "Max",
           "summary": "95 $/mois sans engagement. Par utilisateur.",
           "featureHighlights": [
-            "9,500 credits/month with 1-month rollover, 20 parallel generations, 10 projects, 3 Brand Kits, 3 voice clones, studio-grade HDR/ProRes output, 500GB storage."
+            "9 500 crédits par mois avec report d'un mois, 20 générations en parallèle, 10 projets, 3 kits de marque, 3 clones vocaux, export HDR/ProRes qualité studio, 500 Go de stockage."
           ],
           "detailsSourceUrl": "https://runway.com/pricing",
           "pricingUnit": "seat",
@@ -191856,7 +191856,7 @@
     "description": "Plateforme hébergée pour créer des sites web, boutiques et services en ligne avec éditeur visuel, génération IA, modèles et outils métier intégrés.\n\nFonctions clés : Éditeur visuel et constructeur par IA ; Plus de 2 000 modèles personnalisables ; Hébergement géré et sécurité intégrée ; Boutique, paiements, réservations et marketing.\n\nChoisissez Wix si la plateforme remplace plusieurs étapes récurrentes; sinon, une solution plus légère suffit.",
     "category": "nocode-web",
     "pricing": {
-      "free": "Plan gratuit : Wix-branded subdomain (mysite.wixsite.com), no custom domain, Wix ads/branding, basic storage",
+      "free": "Plan gratuit : Sous-domaine à la marque Wix (mysite.wixsite.com), sans domaine personnalisé, publicités/marque Wix affichées, stockage basique",
       "paid": "Dès 17,77 $/mois, plan Light."
     },
     "website": "https://wix.com",
@@ -197665,7 +197665,7 @@
     "websiteUrl": "https://zoom.us/pricing",
     "defaultMonthlyPrice": 12.16,
     "pricing": {
-      "free": "Plan gratuit : 40-minute meeting limit, 100 participants, 3 AI meeting summaries/month, 20 AI queries/month, 3 whiteboards",
+      "free": "Plan gratuit : Réunions limitées à 40 minutes, 100 participants, 3 résumés de réunion IA par mois, 20 requêtes IA par mois, 3 tableaux blancs",
       "paid": "Dès 14,16 $/mois, plan Pro."
     },
     "logo": "",

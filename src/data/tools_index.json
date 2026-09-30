@@ -2013,7 +2013,7 @@
     "shortDescription": "Animation Composer est un plugin Mister Horse pour After Effects et Premiere Pro qui fournit une bibliothèque d'animations prêtes à l'emploi, gratuite avec plus de 1 000 assets ou à 16,50 $/mois (annuel) pour plus de 6 000.",
     "shortDescriptionEn": "Animation Composer is a Mister Horse plugin for After Effects and Premiere Pro that provides a browsable library of animation presets, free with 1,000+ assets or $16.50/month (annual) for 6,000+.",
     "pricing": {
-      "free": "Plan gratuit : Free plan includes over 1,000 assets and the 4 time-saving tools, versus 6,000+ assets on the paid subscription; brief also notes a library limit of up to 500 items on the free tier per the seed data.",
+      "free": "Plan gratuit : L'offre gratuite comprend plus de 1 000 assets et les 4 outils de gain de temps, contre plus de 6 000 assets sur l'abonnement payant ; le brief mentionne aussi une limite de bibliothèque allant jusqu'à 500 éléments sur l'offre gratuite selon les données sources.",
       "paid": "Dès 16,50 $/mois, plan Mister Horse Subscription (annual)."
     },
     "defaultMonthlyPrice": 14.17,
@@ -2049,7 +2049,7 @@
     "shortDescription": "Bibliothèque de composants React gratuite et open source pour applications d'entreprise, avec personnalisation de thème et outils complémentaires pour le mobile et la visualisation de données.",
     "shortDescriptionEn": "Free, open source React component library for enterprise applications, with theme customization and companion tools for mobile and data visualization.",
     "pricing": {
-      "free": "Plan gratuit : Fully free and open source, no paid tier",
+      "free": "Plan gratuit : Entièrement gratuit et open source, sans offre payante",
       "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
@@ -3611,7 +3611,7 @@
     "shortDescription": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
     "shortDescriptionEn": "Project management and team collaboration software.",
     "pricing": {
-      "free": "Plan gratuit : 1 active project, up to 20 people, 1 GB storage, no time limit",
+      "free": "Plan gratuit : 1 projet actif, jusqu'à 20 personnes, 1 Go de stockage, sans limite de durée",
       "paid": "Dès 15 $/mois, plan Basecamp Plus."
     },
     "defaultMonthlyPrice": 12.88,
@@ -6370,7 +6370,7 @@
     "shortDescription": "Plateforme d'authentification et de gestion utilisateur avec interface préconstruite, gratuite jusqu'à 50 000 utilisateurs actifs mensuels par app.",
     "shortDescriptionEn": "Authentication and user management platform with prebuilt UI, free up to 50,000 monthly retained users per app.",
     "pricing": {
-      "free": "Plan gratuit : Up to 50,000 monthly retained users per app, up to 3 dashboard seats, fixed 7-day session lifetime, no credit card required",
+      "free": "Plan gratuit : Jusqu'à 50 000 utilisateurs actifs mensuels retenus par application, jusqu'à 3 sièges de tableau de bord, durée de session fixe de 7 jours, sans carte bancaire requise",
       "paid": "Dès 20 $/mois, plan Pro."
     },
     "defaultMonthlyPrice": 17.17,
@@ -6853,7 +6853,7 @@
     "shortDescription": "CI/CD mobile pour Flutter, React Native, iOS/Android natif et plus, automatisant builds, signature de code et soumissions aux stores, en gratuit ou à l'usage.",
     "shortDescriptionEn": "Mobile CI/CD for Flutter, React Native, native iOS/Android and more, automating builds, code signing and store submissions, free tier or usage-based pricing.",
     "pricing": {
-      "free": "Plan gratuit : 500 free macOS M2 build minutes per month, 1 parallel build, community support only",
+      "free": "Plan gratuit : 500 minutes de build macOS M2 gratuites par mois, 1 build en parallèle, support communautaire uniquement",
       "paid": "Dès 0 $/mois, plan Pay as You Go."
     },
     "compareMonthlyPrice": 0,
@@ -8134,7 +8134,7 @@
     "shortDescription": "Datadog est une plateforme d'observabilité complète (infrastructure, APM, logs, sécurité) facturée par host et à l'usage, avec un palier gratuit jusqu'à 5 hosts et Infrastructure Pro dès 15 $/host/mois facturé annuellement.",
     "shortDescriptionEn": "Datadog is a full observability platform (infrastructure, APM, logs, security) priced per host and by usage, with a free tier for up to 5 hosts and Infrastructure Pro from $15/host/month billed annually.",
     "pricing": {
-      "free": "Plan gratuit : Up to 5 hosts, 1-day metric retention (Infrastructure Free)",
+      "free": "Plan gratuit : Jusqu'à 5 hôtes, rétention des métriques sur 1 jour (offre Infrastructure gratuite)",
       "paid": "Dès 15 $/mois, plan Infrastructure Pro."
     },
     "defaultMonthlyPrice": 12.88,
@@ -8413,7 +8413,7 @@
     "shortDescription": "Le bot gratuit et intégré de GitHub qui ouvre des pull requests pour corriger les dépendances vulnérables ou obsolètes.",
     "shortDescriptionEn": "GitHub's free, built-in bot that opens pull requests to patch vulnerable or outdated dependencies.",
     "pricing": {
-      "free": "Plan gratuit : Fully free on all GitHub plans, for both public and private repositories, no usage limits",
+      "free": "Plan gratuit : Entièrement gratuit sur toutes les offres GitHub, pour les dépôts publics comme privés, sans limite d'utilisation",
       "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
@@ -9154,7 +9154,7 @@
     "shortDescription": "Dropbox est un service de stockage cloud et de synchronisation de fichiers avec sync automatique, partage et historique de versions, d'un plan gratuit à 2 Go jusqu'à un plan Advanced à 24 $/siège/mois.",
     "shortDescriptionEn": "Dropbox is a cloud storage and file-sync service with automatic sync, sharing and version history, from a 2 GB free plan up to a $24/seat/month Advanced plan.",
     "pricing": {
-      "free": "Plan gratuit : Basic plan: 2 GB storage, store and share files.",
+      "free": "Plan gratuit : Offre Basic : 2 Go de stockage, pour stocker et partager des fichiers.",
       "paid": "Dès 9,99 $/mois, plan Plus."
     },
     "defaultMonthlyPrice": 8.58,
@@ -10172,7 +10172,7 @@
     "shortDescription": "Tableau blanc à canevas infini au style dessiné à la main, collaboration en temps réel gratuite et cœur open source.",
     "shortDescriptionEn": "Infinite-canvas whiteboard with a hand-drawn style, free real-time collaboration, and an open-source core.",
     "pricing": {
-      "free": "Plan gratuit : Full editor, 1 infinite scene, unlimited collaborators, export to PNG/SVG, local libraries, E2EE, open source",
+      "free": "Plan gratuit : Éditeur complet, 1 scène infinie, collaborateurs illimités, export PNG/SVG, bibliothèques locales, chiffrement de bout en bout, open source",
       "paid": "Dès 6 $/mois, plan Excalidraw+ Plus."
     },
     "defaultMonthlyPrice": 5.15,
@@ -10568,7 +10568,7 @@
     "shortDescription": "Outil de design d'interface vectoriel avec collaboration en temps réel, composants et transmission au code via Dev Mode.",
     "shortDescriptionEn": "Vector-based interface design tool with real-time collaboration, components and a Dev Mode handoff to code.",
     "pricing": {
-      "free": "Plan gratuit : Unlimited drafts, UI kits and templates, 150 AI credits/day (max 500/mo)",
+      "free": "Plan gratuit : Brouillons illimités, kits d'interface et modèles, 150 crédits IA par jour (500 max par mois)",
       "paid": "Dès 16 $/mois, plan Professional (Full seat)."
     },
     "defaultMonthlyPrice": 13.74,
@@ -11799,7 +11799,7 @@
     "shortDescription": "Frame.io permet aux équipes vidéo et à leurs clients de commenter les montages image par image et de partager les rushs directement depuis la caméra.",
     "shortDescriptionEn": "Frame.io lets video teams and their clients comment frame-by-frame on cuts, stack versions and share footage straight from the camera.",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Jusqu'à 2 membres, 2 projets, 2 Go de stockage standard + 2 Go de stockage monté",
       "paid": "Dès 15 $/mois, plan Pro."
     },
     "defaultMonthlyPrice": 12.88,
@@ -13196,7 +13196,7 @@
     "shortDescription": "Le standard du stockage cloud.",
     "shortDescriptionEn": "The standard for cloud storage.",
     "pricing": {
-      "free": "Plan gratuit : 15 GB shared across Drive, Gmail, and Google Photos",
+      "free": "Plan gratuit : 15 Go partagés entre Drive, Gmail et Google Photos",
       "paid": "Dès 1,67 $/mois, plan Google One Basic (100GB)."
     },
     "defaultMonthlyPrice": 1.43,
@@ -13647,7 +13647,7 @@
     "shortDescription": "Correcteur de grammaire, style et ton assisté par IA, avec réécriture, détection de plagiat, et un plan gratuit limité à 100 requêtes IA/mois.",
     "shortDescriptionEn": "AI-assisted grammar, style and tone checker with sentence rewriting, plagiarism detection, and a free plan capped at 100 AI prompts a month.",
     "pricing": {
-      "free": "Plan gratuit : Spelling/grammar corrections, writing-tone detection, and 100 AI prompts per month.",
+      "free": "Plan gratuit : Corrections d'orthographe et de grammaire, détection du ton d'écriture, et 100 requêtes IA par mois.",
       "paid": "Dès 12 $/mois, plan Pro."
     },
     "defaultMonthlyPrice": 10.3,
@@ -14323,7 +14323,7 @@
     "shortDescription": "Help Scout est une plateforme de support client par email avec boîte de réception partagée, base de connaissance et widget Beacon intégrable, dès 25 $/utilisateur/mois après un plan gratuit à 5 utilisateurs.",
     "shortDescriptionEn": "Help Scout is an email-based customer support platform with a shared inbox, a help center and the embeddable Beacon widget, starting at $25 per user/month after a 5-user free plan.",
     "pricing": {
-      "free": "Plan gratuit : Up to 5 users, 1 inbox, 1 Docs (knowledge base) site, 100 contacts/month",
+      "free": "Plan gratuit : Jusqu'à 5 utilisateurs, 1 boîte de réception, 1 site Docs (base de connaissances), 100 contacts par mois",
       "paid": "Dès 25 $/mois, plan Standard."
     },
     "defaultMonthlyPrice": 21.47,
@@ -14724,7 +14724,7 @@
     "shortDescription": "Houdini est une application 3D et VFX procédurale à nœuds, gratuite en usage non commercial et à 299 $/an via l'offre Indie.",
     "shortDescriptionEn": "Houdini is a node-based procedural 3D and VFX application, free for non-commercial use and $299/year for eligible small studios via the Indie tier.",
     "pricing": {
-      "free": "Plan gratuit : Houdini Apprentice: non-commercial use only, near-full feature access, watermarked renders and file format restricted to Apprentice-only files.",
+      "free": "Plan gratuit : Houdini Apprentice : usage non commercial uniquement, accès quasi complet aux fonctionnalités, rendus filigranés et format de fichier limité aux fichiers Apprentice.",
       "paid": "Dès 24,92 $/mois, plan Houdini Indie."
     },
     "defaultMonthlyPrice": 21.4,
@@ -16564,7 +16564,7 @@
     "shortDescription": "Klaviyo est une plateforme d'email et SMS marketing pensée pour l'e-commerce, avec un plan gratuit jusqu'à 250 contacts et des plans payants dès 60 $/mois selon la taille de la liste.",
     "shortDescriptionEn": "Klaviyo is an email and SMS marketing platform built for ecommerce, with a free plan up to 250 contacts and paid plans starting at $60/month as the contact list grows.",
     "pricing": {
-      "free": "Plan gratuit : Up to 250 active profiles, 500 email sends/month, $5/month SMS credit, email support limited to first 60 days",
+      "free": "Plan gratuit : Jusqu'à 250 profils actifs, 500 envois d'e-mails par mois, 5 $ de crédit SMS par mois, support par e-mail limité aux 60 premiers jours",
       "paid": "Dès 60 $/mois, plan Marketing."
     },
     "defaultMonthlyPrice": 51.52,
@@ -17917,7 +17917,7 @@
     "shortDescription": "Suivi de tickets et planification de projets pour équipes produit et ingénierie, avec cycles, flux IA et un plan gratuit limité à 250 tickets.",
     "shortDescriptionEn": "Issue tracking and project planning for product and engineering teams, with cycles, AI workflows and a free plan capped at 250 issues.",
     "pricing": {
-      "free": "Plan gratuit : Unlimited members, 2 teams, 250 issues, 10MB file upload",
+      "free": "Plan gratuit : Membres illimités, 2 équipes, 250 tickets, fichiers de 10 Mo maximum",
       "paid": "Dès 10 $/mois, plan Basic."
     },
     "defaultMonthlyPrice": 8.59,
@@ -21080,7 +21080,7 @@
     "shortDescription": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage.",
     "shortDescriptionEn": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.",
     "pricing": {
-      "free": "Plan gratuit : M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
+      "free": "Plan gratuit : Cluster M0, 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie",
       "paid": "Dès 8 $/mois, plan Flex."
     },
     "defaultMonthlyPrice": 6.87,
@@ -21343,7 +21343,7 @@
     "shortDescription": "Plugin gratuit pour After Effects et Premiere Pro donnant accès en un clic à des packs de transitions et presets payants.",
     "shortDescriptionEn": "Free plugin for After Effects and Premiere Pro giving one-click access to paid transition and preset packs.",
     "pricing": {
-      "free": "Plan gratuit : Motion Bro plugin itself is free with no paid tier; only individual asset packs and bundles are paid",
+      "free": "Plan gratuit : Le plugin Motion Bro en lui-même est gratuit, sans offre payante ; seuls les packs d'assets individuels et les bundles sont payants",
       "paid": "Dès 0 $ (licence à vie), plan Motion Bro plugin."
     },
     "compareMonthlyPrice": 0,
@@ -22104,7 +22104,7 @@
     "shortDescription": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège.",
     "shortDescriptionEn": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
     "pricing": {
-      "free": "Plan gratuit : 1 account, single device only, no Password Health or Data Breach Scanner",
+      "free": "Plan gratuit : 1 compte, un seul appareil, sans analyse de la santé des mots de passe ni scanner de fuites de données",
       "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
     "compareMonthlyPrice": 0,
@@ -22170,7 +22170,7 @@
     "shortDescription": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
     "shortDescriptionEn": "All-in-one workspace for notes, docs, wikis and databases, with a generous free plan and per-seat paid tiers.",
     "pricing": {
-      "free": "Plan gratuit : Unlimited pages/blocks for individuals (limited for 2+ members), 5MB file uploads, 7-day page history, 10 guests",
+      "free": "Plan gratuit : Pages/blocs illimités pour un usage individuel (limité à partir de 2 membres), fichiers de 5 Mo maximum, historique des pages sur 7 jours, 10 invités",
       "paid": "Dès 9,50 €/mois, plan Plus."
     },
     "defaultMonthlyPrice": 9.5,
@@ -24823,7 +24823,7 @@
     "shortDescription": "Livraison de galeries photo client, site portfolio et vente de tirages numériques pour photographes, avec un plan gratuit qui prélève 15% de commission sur les ventes.",
     "shortDescriptionEn": "Client photo gallery delivery, portfolio website and print/digital sales for photographers, with a free plan that takes a 15% sales commission.",
     "pricing": {
-      "free": "Plan gratuit : 3 GB storage, unlimited galleries, up to 3 mobile apps, 15% commission on store sales",
+      "free": "Plan gratuit : 3 Go de stockage, galeries illimitées, jusqu'à 3 applications mobiles, commission de 15 % sur les ventes en boutique",
       "paid": "Dès 8 $/mois, plan Basic."
     },
     "defaultMonthlyPrice": 6.87,
@@ -27276,7 +27276,7 @@
     "shortDescription": "Bibliothèque de routing open source pour React, utilisable comme simple routeur côté client ou en mode framework complet, gratuite et sans offre payante.",
     "shortDescriptionEn": "Open source routing library for React apps, usable as a lightweight client-side router or a full-stack framework mode, free with no paid tier.",
     "pricing": {
-      "free": "Plan gratuit : Fully open-source library, free to use with no paid tier.",
+      "free": "Plan gratuit : Bibliothèque entièrement open source, gratuite à l'usage et sans offre payante.",
       "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
@@ -29019,7 +29019,7 @@
     "shortDescription": "Plateforme de génération et d'édition vidéo, image et audio par IA avec plusieurs modèles maison, upscaling 4K, et des crédits gratuits accordés une seule fois.",
     "shortDescriptionEn": "AI video, image and audio generation and editing platform with multiple in-house models, 4K upscaling, and a one-time free credit grant.",
     "pricing": {
-      "free": "Plan gratuit : 125 one-time credits, 5GB storage, exploration-only",
+      "free": "Plan gratuit : 125 crédits ponctuels, 5 Go de stockage, usage exploratoire uniquement",
       "paid": "Dès 12 $/mois, plan Standard."
     },
     "defaultMonthlyPrice": 10.3,
@@ -37171,7 +37171,7 @@
     "shortDescription": "Wix est un créateur de site hébergé combinant éditeur visuel, génération de site par IA, e-commerce intégré et outils marketing, avec des plans payants dès 17,77 $ par mois.",
     "shortDescriptionEn": "Wix is a hosted website builder combining a visual editor, AI site generation, built-in ecommerce and marketing tools, with paid plans starting at $17.77 per month.",
     "pricing": {
-      "free": "Plan gratuit : Wix-branded subdomain (mysite.wixsite.com), no custom domain, Wix ads/branding, basic storage",
+      "free": "Plan gratuit : Sous-domaine à la marque Wix (mysite.wixsite.com), sans domaine personnalisé, publicités/marque Wix affichées, stockage basique",
       "paid": "Dès 17,77 $/mois, plan Light."
     },
     "defaultMonthlyPrice": 15.26,
@@ -38334,7 +38334,7 @@
     "shortDescription": "Plan payant de Zoom qui supprime la limite de 40 minutes, avec enregistrement cloud, résumés IA et clips illimités.",
     "shortDescriptionEn": "Paid Zoom plan removing the 40-minute meeting cap, with cloud recording, AI summaries and unlimited clips.",
     "pricing": {
-      "free": "Plan gratuit : 40-minute meeting limit, 100 participants, 3 AI meeting summaries/month, 20 AI queries/month, 3 whiteboards",
+      "free": "Plan gratuit : Réunions limitées à 40 minutes, 100 participants, 3 résumés de réunion IA par mois, 20 requêtes IA par mois, 3 tableaux blancs",
       "paid": "Dès 14,16 $/mois, plan Pro."
     },
     "defaultMonthlyPrice": 12.16,
