@@ -2674,14 +2674,14 @@
     "slug": "asana",
     "name": "Asana",
     "categoryId": "organization",
-    "shortDescription": "Gestion de projet pour équipes avec plusieurs projets clients, deadlines et reporting. Souvent trop structuré pour un freelance solo.",
-    "shortDescriptionEn": "Project management for teams running several client projects, deadlines and reporting. Often overkill for a solo freelancer.",
+    "shortDescription": "Asana est un outil de gestion de projets et de tâches avec tableaux, frise, calendrier, automatisation des flux et reporting multi-projets pour les équipes.",
+    "shortDescriptionEn": "Asana is a project and task management tool with boards, timelines, calendars, workflow automation and cross-project reporting for teams.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10,99$/mois par utilisateur (Starter, annuel) ; Advanced à 24,99$/mois (min. 2 utilisateurs)"
+      "free": "Plan gratuit : Gestion de base des tâches et des projets pour les particuliers et petites équipes jusqu'à 10 membres.",
+      "paid": "Dès 9,63 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 10.99,
-    "compareMonthlyPrice": 9.63,
+    "defaultMonthlyPrice": 8.27,
+    "compareMonthlyPrice": 8.27,
     "affiliateLink": "https://asana.com",
     "ogImageUrl": "https://assets.asana.biz/m/4aecf2c7c66aa51b/original/asana-meta-coral-1x.png",
     "substitution_cluster_v2": "project-management-general",
@@ -2701,6 +2701,9 @@
       "PME et Entreprises"
     ],
     "prescription_quality": "silence",
+    "personas": [
+      "CLAIRE"
+    ],
     "betterAlternative": {
       "tool": "clickup",
       "reason": "ClickUp regroupe tâches, docs, chat et automatisations dans un seul outil. Pour une couverture fonctionnelle comparable, ClickUp Business (12$/mois/utilisateur, annuel) coûte environ moitié moins qu'Asana Advanced (24,99$/mois/utilisateur).",
@@ -6599,14 +6602,14 @@
     "slug": "clockify",
     "name": "Clockify",
     "categoryId": "organization",
-    "shortDescription": "Suivi du temps gratuit et illimité en utilisateurs, avec montée en gamme progressive vers la facturation.",
-    "shortDescriptionEn": "Free, unlimited-user time tracking, with a gradual upgrade path toward invoicing.",
+    "shortDescription": "Outil de suivi du temps avec utilisateurs gratuits illimités et plans payants ajoutant facturation, planification et contrôles d'administration.",
+    "shortDescriptionEn": "Time-tracking tool with unlimited free users and paid tiers adding invoicing, scheduling, and admin controls.",
     "pricing": {
-      "free": "Gratuit, illimité en utilisateurs et projets",
-      "paid": "Basic à 3,99$/utilisateur/mois (annuel) ; Standard 5,49$ ; Pro 7,99$ ; Enterprise 14,99$."
+      "free": "Plan gratuit : Utilisateurs et projets illimités ; suivi du temps, feuille de temps, calendrier ; rapports limités à une plage d'un mois ; export au format PDF uniquement.",
+      "paid": "Dès 3,99 $/mois, plan Basic."
     },
-    "defaultMonthlyPrice": 3.99,
-    "compareMonthlyPrice": 3.99,
+    "defaultMonthlyPrice": 3.43,
+    "compareMonthlyPrice": 3.43,
     "affiliateLink": "https://clockify.com",
     "websiteUrl": "https://clockify.me",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/clockify.jpg",
@@ -6624,7 +6627,10 @@
       "Équipes distantes",
       "Startup lean"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "clockshark",
@@ -9609,14 +9615,14 @@
     "slug": "elevenlabs",
     "name": "ElevenLabs",
     "categoryId": "ai-general",
-    "shortDescription": "Plateforme d'audio par IA : synthèse vocale (text-to-speech), clonage de voix et doublage.",
-    "shortDescriptionEn": "AI-powered audio platform: text-to-speech synthesis, voice cloning, and voice dubbing.",
+    "shortDescription": "ElevenLabs génère des voix IA pour synthèse vocale, clonage de voix, doublage, transcription, effets sonores et musique, avec une tarification par crédits mensuels.",
+    "shortDescriptionEn": "ElevenLabs generates AI voices for text-to-speech, voice cloning, dubbing, speech-to-text, sound effects and music, priced by a monthly credit allowance.",
     "pricing": {
-      "free": "Gratuit : 10 000 crédits/mois, TTS et STT de base.",
-      "paid": "Starter: 6 $/mois ; Creator: 11 $/mois ; Pro: 99 $/mois"
+      "free": "Plan gratuit : 10 000 crédits/mois, accès à la synthèse vocale, la transcription, les effets sonores, la conception de voix, la musique, Productions, Image, jusqu'à 3 projets.",
+      "paid": "Dès 5 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 4.33,
-    "compareMonthlyPrice": 4.33,
+    "defaultMonthlyPrice": 4.29,
+    "compareMonthlyPrice": 4.29,
     "affiliateLink": "https://elevenlabs.io",
     "ogImageUrl": "https://elevenlabs.io/_next/image?url=https%3A%2F%2Feleven-public-cdn.elevenlabs.io%2Fmarketing_website%2F_next%2Fstatic%2Fmedia%2Feleven-creative.f5fbfcf5.png&w=3840&q=80",
     "tool_type": "ia",
@@ -9638,6 +9644,9 @@
       "Studios de localisation"
     ],
     "prescription_quality": "silence",
+    "personas": [
+      "ALIX"
+    ],
     "freeAlternative": "elevenlabs"
   },
   {
@@ -11829,14 +11838,14 @@
     "slug": "framer",
     "name": "Framer",
     "categoryId": "design-tools",
-    "shortDescription": "Créer et publier des sites visuels premium sans dépendre lourdement d'un développeur.",
-    "shortDescriptionEn": "Create and publish premium visual websites without relying heavily on a developer.",
+    "shortDescription": "Framer est un créateur de sites sans code avec CMS intégré, environnement de préproduction et fonctions de conception et contenu assistées par IA.",
+    "shortDescriptionEn": "Framer is a no-code visual website builder with a built-in CMS, staging environment and AI-assisted design and content features.",
     "pricing": {
-      "free": "Plan gratuit : domaine framer.site, 1 000 pages, 1 collection CMS (1 000 items), collaboration jusqu'à 3 éditeurs — sans domaine custom",
-      "paid": "Basic 10$/mois (domaine custom, 30 pages, 1 CMS collection) · Pro 30$/mois (150 pages, 10 collections, staging) · Scale 100$/mois (300 pages, 20 collections, CDN premium)"
+      "free": "Plan gratuit : Domaine framer.site, 1 000 pages, 10 collections CMS, 1 Go de bande passante, envois de fichiers de 5 Mo, 500 crédits IA, pas de domaine personnalisé.",
+      "paid": "Dès 10 $/mois, plan Basic."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 5,
+    "defaultMonthlyPrice": 8.59,
+    "compareMonthlyPrice": 8.59,
     "websiteUrl": "https://framer.com",
     "ogImageUrl": "https://framerusercontent.com/images/qAuYmOzzj4F8wIEJiqfcOgjFdiY.png",
     "tool_type": "metier",
@@ -13149,14 +13158,13 @@
     "slug": "google-docs",
     "name": "Google Docs",
     "categoryId": "legal-contracts",
-    "shortDescription": "Le traitement de texte collaboratif de Google, gratuit et en temps réel.",
-    "shortDescriptionEn": "Google's collaborative word processor, free and real-time.",
+    "shortDescription": "Traitement de texte collaboratif gratuit en temps réel, utilisable hors ligne et compatible avec les fichiers Microsoft Word.",
+    "shortDescriptionEn": "Free real-time collaborative word processor that works offline and imports/exports Microsoft Word files.",
     "pricing": {
-      "free": "Gratuit avec un compte Google, stockage partagé avec Drive (15 Go).",
-      "paid": "Via Google Workspace : à partir de 6,90€/mois/utilisateur pour plus de stockage et des fonctionnalités d'administration."
+      "free": "Plan gratuit.",
+      "paid": "Dès 0 $/mois, plan Free (personal Google account)."
     },
     "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
     "affiliateLink": "https://www.google.com/docs/about",
     "ogImageUrl": "https://lh3.googleusercontent.com/IiFEbz_dcLIKBLVIMfIhq2KOiT0C98fB7hCBEwf7BOHjWJ3Gin_FEqbQngrLIc1hvSYn25R6V3iQYKLqb3XijtVzVvQk1FuF_Aaw=w1200-e365",
     "tool_type": "metier",
@@ -13175,7 +13183,10 @@
       "PME sur Google Workspace",
       "Équipes rédactionnelles"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "google-drive",
@@ -13352,9 +13363,13 @@
     "slug": "google-search-console",
     "name": "Google Search Console",
     "categoryId": "analytics",
-    "shortDescription": "Suivi SEO gratuit : indexation, requêtes, pages, erreurs et performance de recherche.",
-    "shortDescriptionEn": "Free SEO monitoring: indexing, queries, pages, errors, and search performance.",
-    "pricing": "Gratuit, aucun plan payant.",
+    "shortDescription": "Outil Google gratuit pour suivre les statistiques de recherche, l'état d'indexation et les problèmes d'exploration d'un site.",
+    "shortDescriptionEn": "Free Google tool for tracking a site's search analytics, indexing status, and crawl issues.",
+    "pricing": {
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://search.google.com/search-console/about",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/google-search-console.jpg",
     "substitution_cluster_v2": "analytics",
@@ -13374,7 +13389,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "MARC"
     ]
   },
   {
@@ -14576,14 +14591,14 @@
     "slug": "honeybook",
     "name": "HoneyBook",
     "categoryId": "crm",
-    "shortDescription": "Gestion de projets clients et facturation créative.",
-    "shortDescriptionEn": "Client management software for small businesses (CRM)",
+    "shortDescription": "Plateforme de flux client qui combine propositions, contrats, facturation et paiements en ligne, avec un essai de 30 jours.",
+    "shortDescriptionEn": "Client workflow platform combining proposals, contracts, invoicing, and online payments, with a 30-day trial.",
     "pricing": {
-      "free": "Essai gratuit 7 jours",
-      "paid": "À partir de 16$/mois"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 29 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 16,
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 24.9,
+    "compareMonthlyPrice": 24.9,
     "affiliateLink": "https://www.honeybook.com",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
@@ -14602,8 +14617,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "MARC",
-      "SOFIA"
+      "MARC"
     ]
   },
   {
@@ -14808,14 +14822,14 @@
     "slug": "hugeicons",
     "name": "Hugeicons",
     "categoryId": "design-tools",
-    "shortDescription": "Bibliothèque de 51 000+ icônes UI professionnelles pour designers et développeurs.",
-    "shortDescriptionEn": "Library of 51,000+ professional UI icons for designers and developers.",
+    "shortDescription": "Une bibliothèque de plus de 51 000 icônes dans plusieurs styles, avec formats dev et design, gratuite pour un style et payante dès 8,25 $/mois.",
+    "shortDescriptionEn": "An icon library of 51,000+ UI icons across multiple styles, with dev and design formats, free for one style and paid from $8.25/month.",
     "pricing": {
-      "free": "Gratuit avec 5 100+ icônes",
-      "paid": "Pro 99$/an (8,25$/mois) · Pro Plus 1 197$ achat unique"
+      "free": "Plan gratuit : Plus de 6 000 icônes Stroke Rounded, accès à l'application web, formats dev, plugins design et dev gratuits.",
+      "paid": "Dès 8,25 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 7.59,
-    "compareMonthlyPrice": 7.59,
+    "defaultMonthlyPrice": 7.08,
+    "compareMonthlyPrice": 7.08,
     "websiteUrl": "https://hugeicons.com",
     "ogImageUrl": "https://hugeicons.com/og_preview.png",
     "substitution_cluster_v2": "creative-assets",
@@ -14838,7 +14852,10 @@
       "Design teams",
       "Design system managers"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "personas": [
+      "SOFIA"
+    ]
   },
   {
     "id": "humaans",
@@ -19058,12 +19075,14 @@
     "slug": "magic-bullet",
     "name": "Magic Bullet",
     "categoryId": "creation",
-    "shortDescription": "Famille Red Giant dédiée à la correction colorimétrique, aux looks et à la texture de l'image.",
-    "shortDescriptionEn": "A Red Giant family for colour correction, looks and image texture.",
+    "shortDescription": "Un plugin d'étalonnage et d'émulation film pour monteurs vidéo, inclus dans l'abonnement Red Giant Complete à un prix non publié.",
+    "shortDescriptionEn": "A color grading and film emulation plugin for video editors, bundled inside the Red Giant Complete subscription at an unpublished price.",
     "pricing": {
-      "free": "",
-      "paid": "Accès lié à Red Giant ou Maxon One. Vérifie les conditions de la formule."
+      "free": "Pas de plan gratuit.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Magic-Bullet-Looks-2024-loop.jpg",
     "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
@@ -19087,7 +19106,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "designer"
+      "ALIX"
     ],
     "freeAlternative": "davinci-resolve"
   },
@@ -19521,12 +19540,13 @@
     "slug": "mapbox",
     "name": "Mapbox",
     "categoryId": "analytics",
-    "shortDescription": "Cartographie web, styles de cartes, données géographiques et APIs.",
-    "shortDescriptionEn": "Web maps, map styles, geographic data, and APIs.",
+    "shortDescription": "Plateforme cartographique à l'usage avec rendu de carte personnalisable, géocodage et API d'itinéraires pour applications web et mobile.",
+    "shortDescriptionEn": "Usage-based mapping platform with customizable map rendering, geocoding, and directions APIs for web and mobile apps.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Plan gratuit : Les quotas gratuits mensuels varient selon l'API, par exemple jusqu'à 50 000 chargements de carte Mapbox GL JS, 25 000 utilisateurs actifs mensuels sur les SDK Maps, 100 000 requêtes de géocodage.",
+      "paid": "Dès 0 $/mois, plan Free tier (per-API allowances)."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.mapbox.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6050a76fa6a633d5d54ae714/6a3eb9c605068d6b1c91dbb6_home_og-image.jpg",
     "substitution_cluster_v2": "mapping-api",
@@ -19545,7 +19565,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "THEO"
     ]
   },
   {
@@ -22049,14 +22069,13 @@
     "slug": "nomad-sculpt",
     "name": "Nomad Sculpt",
     "categoryId": "creation",
-    "shortDescription": "App de sculpture 3D mobile (iPad/Android) puissante et abordable, alternative à ZBrush.",
-    "shortDescriptionEn": "Powerful, affordable mobile 3D sculpting app (iPad/Android), a ZBrush alternative.",
+    "shortDescription": "Nomad Sculpt est une appli de sculpture et peinture 3D avec sculpture multirésolution, tessellation dynamique et matériaux PBR, vendue à l'achat unique par plateforme.",
+    "shortDescriptionEn": "Nomad Sculpt is a 3D sculpting and painting app with multires sculpting, dynamic tessellation and PBR materials, sold as a one-time purchase per platform.",
     "pricing": {
-      "free": "",
-      "paid": "Achat unique ~15€ (one-time, iPad et Android)."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 15 $ (licence à vie), plan Mobile license (iPad/iPhone/Android, per platform)."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://nomadsculpt.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/nomad-sculpt.jpg",
     "substitution_cluster_v2": "3d-software",
@@ -25315,12 +25334,14 @@
     "slug": "postman",
     "name": "Postman",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme de test, documentation et collaboration autour des API.",
-    "shortDescriptionEn": "API testing, documentation, and collaboration platform.",
+    "shortDescription": "Un client API pour construire, tester, documenter et simuler des requêtes, gratuit avec des limites, dès 11 $/mois pour plus d'intégrations et d'appels API.",
+    "shortDescriptionEn": "An API client for building, testing, documenting, and mocking requests, free with limits, from $11/month for more integrations and API calls.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : 50 crédits IA/mois, 1 000 requêtes Context Graph API/mois, 1 000 requêtes de monitoring, 5 intégrations, 10 000 appels API par mois.",
+      "paid": "Dès 9 $/mois, plan Solo."
     },
+    "defaultMonthlyPrice": 7.73,
+    "compareMonthlyPrice": 7.73,
     "websiteUrl": "https://www.postman.com",
     "ogImageUrl": "https://voyager.postman.com/social-preview/postman-v12-social-preview-homepage.jpg",
     "tool_type": "metier",
@@ -25637,14 +25658,13 @@
     "slug": "printify",
     "name": "Printify",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme d’impression à la demande pour entrepreneurs.",
-    "shortDescriptionEn": "Print-on-demand platform for entrepreneurs.",
+    "shortDescription": "Plateforme d'impression à la demande pour créer et livrer des produits personnalisés, gratuite jusqu'à 5 boutiques connectées.",
+    "shortDescriptionEn": "Print-on-demand platform for creating and fulfilling custom products, free for up to 5 connected stores.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "5€/mois pour version Pro"
+      "free": "Plan gratuit : Jusqu'à 5 boutiques par compte, designs de produits illimités, création de commande manuelle, intégrations avec Shopify/Etsy/eBay etc.",
+      "paid": "Dès 0 $/mois, plan Free."
     },
-    "defaultMonthlyPrice": 5,
-    "compareMonthlyPrice": 5,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://printify.com",
     "ogImageUrl": "https://printify.com/pfh/assets/png/meta-preview.png",
     "substitution_cluster_v2": "website-app-builder",
@@ -25660,7 +25680,10 @@
       "Créateurs de contenu",
       "Petites marques de mode"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "priority",
@@ -29285,13 +29308,14 @@
     "slug": "samcart",
     "name": "SamCart",
     "categoryId": "finance",
-    "shortDescription": "Plateforme de checkout optimisée pour vendre formations et produits numériques.",
-    "shortDescriptionEn": "Checkout platform optimized for selling courses and digital products.",
+    "shortDescription": "SamCart propose des pages de paiement hébergées, optimisées pour la conversion, pour produits numériques, formations et abonnements, avec IA intégrée et essai de 7 jours.",
+    "shortDescriptionEn": "SamCart provides hosted, conversion-focused checkout pages for digital products, courses and subscriptions, with built-in AI optimization tools and a 7-day trial.",
     "pricing": {
-      "free": "Essai 7 jours",
-      "paid": "Launch 79$/mois"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 71,25 $/mois, plan Core."
     },
-    "defaultMonthlyPrice": 67,
+    "defaultMonthlyPrice": 61.19,
+    "compareMonthlyPrice": 61.19,
     "affiliateLink": "https://www.samcart.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/samcart.jpg",
     "substitution_cluster_v2": "checkout-platforms",
@@ -30018,14 +30042,14 @@
     "slug": "semrush",
     "name": "SEMrush",
     "categoryId": "email-productivity",
-    "shortDescription": "Plateforme SEO et marketing tout-en-un : mots-clés, backlinks, concurrents et audit de site.",
-    "shortDescriptionEn": "Digital marketing and SEO SaaS platform.",
+    "shortDescription": "Une plateforme SEO et de visibilité IA : recherche de mots-clés, suivi de position, analyse de backlinks et étude de la concurrence, dès 139 $/mois.",
+    "shortDescriptionEn": "An SEO and AI-search visibility platform for keyword research, rank tracking, backlink analysis, and competitor research, priced per account from $139 a month.",
     "pricing": {
-      "free": "Pas de vraie offre gratuite, compte limité et essai de 7 jours",
-      "paid": "Pro à environ 140$/mois, Guru ~250$, Business ~500$"
+      "free": "Plan gratuit : 1 projet de démo, 10 rapports par jour, fonctionnalités de visibilité IA de base.",
+      "paid": "Dès 117,33 $/mois, plan SEO."
     },
-    "defaultMonthlyPrice": 140,
-    "compareMonthlyPrice": 140,
+    "defaultMonthlyPrice": 100.76,
+    "compareMonthlyPrice": 100.76,
     "affiliateLink": "https://semrush.com",
     "ogImageUrl": "https://www.semrush.com/__static__/semrush-logo-700.43215feb8faa.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -30041,7 +30065,10 @@
       "Entreprises e-commerce",
       "Consultants SEO"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "sendible",
@@ -31626,12 +31653,14 @@
     "slug": "spendesk",
     "name": "Spendesk",
     "categoryId": "finance",
-    "shortDescription": "Gestion des dépenses d'entreprise : cartes virtuelles, notes de frais, approbations.",
-    "shortDescriptionEn": "Corporate spend management: virtual cards, expense reports, approvals.",
+    "shortDescription": "Plateforme d'émission de cartes d'entreprise et de gestion des dépenses avec capture OCR des reçus, tarifée sur devis.",
+    "shortDescriptionEn": "Corporate card issuance and expense management platform with OCR receipt capture, priced on a custom quote.",
     "pricing": {
-      "paid": "Sur devis, avec abonnement fixe et frais variables selon les transactions"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
     "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.spendesk.com/pricing/",
     "ogImageUrl": "https://a.storyblok.com/f/146026/2400x1260/7f4c022aeb/en-seo-image.png",
     "tool_type": "gestion",
@@ -31651,8 +31680,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "claire",
-      "marc"
+      "CLAIRE"
     ]
   },
   {
@@ -31773,14 +31801,14 @@
     "slug": "sprout-social",
     "name": "Sprout Social",
     "categoryId": "creation",
-    "shortDescription": "Gestion réseaux sociaux premium avec CRM social et analytics avancés.",
-    "shortDescriptionEn": "Premium social media management with social CRM and advanced analytics.",
+    "shortDescription": "Une plateforme de gestion des réseaux sociaux par siège : planification, boîte de réception unifiée, veille et reporting, dès 99 $/siège/mois.",
+    "shortDescriptionEn": "A per-seat social media management platform: scheduling, unified inbox, listening, and reporting, starting at $99 per seat monthly.",
     "pricing": {
-      "free": "Aucune offre gratuite, essai uniquement",
-      "paid": "À partir d'environ 249$/utilisateur/mois (jusqu'à 399$)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 79 $/mois, plan Essentials."
     },
-    "defaultMonthlyPrice": 215.64,
-    "compareMonthlyPrice": 215.64,
+    "defaultMonthlyPrice": 67.84,
+    "compareMonthlyPrice": 67.84,
     "affiliateLink": "https://sproutsocial.com",
     "ogImageUrl": "https://brandfolder.sproutsocial.com/VXTUTVL1/at/xzptwj9cwpvmpnh6wpxgnx/og_general.png?auto=webp",
     "substitution_cluster_v2": "content-creation",
@@ -31800,7 +31828,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "marc"
+      "CLAIRE"
     ],
     "freeAlternative": "Buffer"
   },
@@ -32041,12 +32069,14 @@
     "slug": "steamworks",
     "name": "Steamworks",
     "categoryId": "creation",
-    "shortDescription": "Portail développeur Steam pour publier, tester et gérer un jeu.",
-    "shortDescriptionEn": "Steam developer portal for publishing, testing, and managing a game.",
+    "shortDescription": "Une plateforme de distribution et de publication de jeux PC, avec des frais uniques par jeu et un accès développeur gratuit.",
+    "shortDescriptionEn": "A game distribution and publishing platform for PC, with a one-time per-app fee and free developer account access and tools.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : L'accès au compte et la plupart des outils développeur sont gratuits ; publier un jeu demande des frais de soumission par jeu.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "websiteUrl": "https://partner.steamgames.com",
     "ogImageUrl": "https://cdn.akamai.steamstatic.com/appmgmt/home/share_img.jpg",
     "substitution_cluster_v2": "creation",
@@ -32103,11 +32133,14 @@
     "slug": "storyblocks",
     "name": "Storyblocks",
     "categoryId": "creation",
-    "shortDescription": "Vidéos, musiques et images stock en abonnement illimité pour la production de contenu.",
-    "shortDescriptionEn": "Unlimited subscription stock video, music, and images for content production.",
-    "pricing": "À partir de ~15€/mois en abonnement annuel pour un accès illimité.",
-    "defaultMonthlyPrice": 18,
-    "compareMonthlyPrice": 18,
+    "shortDescription": "Bibliothèque de stock par abonnement avec téléchargements illimités de vidéos, photos et illustrations, plus des outils de génération par IA.",
+    "shortDescriptionEn": "Subscription stock library with unlimited downloads of video, photos, and illustrations, plus AI generation tools.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 21 $/mois, plan Essentials."
+    },
+    "defaultMonthlyPrice": 18.03,
+    "compareMonthlyPrice": 18.03,
     "affiliateLink": "https://storyblocks.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/storyblocks.jpg",
     "logo": "https://logo.clearbit.com/storyblocks.com",
@@ -32128,7 +32161,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "lina"
+      "ALIX"
     ]
   },
   {
@@ -32136,12 +32169,13 @@
     "slug": "storybook",
     "name": "Storybook",
     "categoryId": "design-tools",
-    "shortDescription": "Outil pour développer, documenter et tester des composants UI en isolation.",
-    "shortDescriptionEn": "Tool for developing, documenting and testing UI components in isolation.",
+    "shortDescription": "Un outil open source et gratuit pour construire, tester et documenter des composants d'interface isolés de l'application principale.",
+    "shortDescriptionEn": "A free, open-source tool for building, testing, and documenting UI components in isolation from the main application.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": "Chromatic (service cloud) à partir de 149$/mois"
+      "free": "Plan gratuit : Storybook lui-même est entièrement gratuit et open source, sans limite d'usage ; seul son service cloud optionnel Chromatic a des forfaits payants.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://storybook.js.org",
     "ogImageUrl": "https://storybook.js.org/opengraph-image.jpg?841db310ba5a3a1e",
     "substitution_cluster_v2": "design-system-tooling",
@@ -32160,7 +32194,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "DEV"
+      "THEO"
     ]
   },
   {
@@ -33289,13 +33323,14 @@
     "slug": "tally",
     "name": "Tally",
     "categoryId": "communication",
-    "shortDescription": "Le Typeform gratuit (en mieux).",
-    "shortDescriptionEn": "The free Typeform (only better).",
+    "shortDescription": "Tally est un créateur de formulaires gratuit en priorité, avec logique conditionnelle, paiements, signatures électroniques et intégrations natives Notion, Sheets et Zapier.",
+    "shortDescriptionEn": "Tally is a free-first, block-based form builder with conditional logic, payments and e-signatures, plus native Notion, Sheets and Zapier integrations.",
     "pricing": {
-      "free": "Cœur gratuit illimité",
-      "paid": "Pro 29$/mois ou 290$/an; Business 89$/mois"
+      "free": "Plan gratuit : Formulaires et soumissions illimités dans le cadre d'un usage raisonnable ; paiements, signatures électroniques, envoi de fichiers (10 Mo/fichier), logique conditionnelle, plus de 45 langues.",
+      "paid": "Dès 24 $/mois, plan Pro."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 20.61,
+    "compareMonthlyPrice": 20.61,
     "affiliateLink": "https://tally.so",
     "ogImageUrl": "https://tally.so/images/og.jpg",
     "substitution_cluster_v2": "form-builder",
@@ -33316,6 +33351,9 @@
       "Creators"
     ],
     "prescription_quality": "silence",
+    "personas": [
+      "MARC"
+    ],
     "freeAlternative": "tally"
   },
   {
@@ -34330,14 +34368,14 @@
     "slug": "toggl",
     "name": "Toggl Track",
     "categoryId": "productivity-tracking",
-    "shortDescription": "Le tracker de temps pour facturer au juste prix.",
-    "shortDescriptionEn": "The time tracker for billing at the right price.",
+    "shortDescription": "Un outil de suivi du temps freemium : chronomètres manuels et temps réel, reporting équipe, taux facturables, dès 6 $/mois.",
+    "shortDescriptionEn": "A freemium time tracking tool with manual and real-time timers, team reporting, and billable rates, free for a limited team size, paid from $6/month.",
     "pricing": {
-      "free": "Illimité pour 1 utilisateur",
-      "paid": "9$/mois par utilisateur (Starter)"
+      "free": "Plan gratuit : Gratuit à vie pour un nombre limité d'utilisateurs, avec chronomètres manuels/temps réel, intégrations calendrier et indicateurs personnels.",
+      "paid": "Dès 6 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 7.79,
-    "compareMonthlyPrice": 7.79,
+    "defaultMonthlyPrice": 5.15,
+    "compareMonthlyPrice": 5.15,
     "affiliateLink": "https://toggl.com",
     "ogImageUrl": "https://public-assets.toggl.com/b/static/toggl-track-main-86a903eba7e603cda581878765469d51.jpg",
     "tool_type": "gestion",
@@ -34358,6 +34396,9 @@
       "Startups bootstrap"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ],
     "freeAlternative": "toggl"
   },
   {
@@ -34624,9 +34665,12 @@
     "slug": "trainerize",
     "name": "Trainerize",
     "categoryId": "creation",
-    "shortDescription": "Application de coaching fitness à distance pour gérer ses clients et leurs programmes d'entraînement.",
-    "shortDescriptionEn": "Remote fitness coaching app to manage clients and their training programs.",
-    "pricing": "À partir de ~5$/mois par client actif, selon le plan.",
+    "shortDescription": "Trainerize permet aux coachs sportifs d'assigner programmes d'entraînement et de nutrition, et de suivre l'avancement de leurs clients à distance via une appli mobile dédiée.",
+    "shortDescriptionEn": "Trainerize lets personal trainers assign workout and nutrition programs and track client progress remotely through a client-facing mobile app.",
+    "pricing": {
+      "free": "Plan gratuit : Plan gratuit pour un petit nombre de clients, afin de tester le flux de coaching.",
+      "paid": "Dès 9 $/mois, plan Grow."
+    },
     "defaultMonthlyPrice": 7.73,
     "compareMonthlyPrice": 7.73,
     "affiliateLink": "https://trainerize.com",
@@ -34647,7 +34691,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "lina"
+      "MARC"
     ]
   },
   {
