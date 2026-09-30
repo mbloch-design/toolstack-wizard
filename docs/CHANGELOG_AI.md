@@ -4858,3 +4858,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Palette finale demandée : bleu ToolTrim via `--primary` pour le fond léger, le contour et la remise ; code foncé, CTA toujours noir.
 - 2026-09-30 : fiche Drone Ops Mission créée en français et en anglais, à partir du site officiel. Tarifs Découverte/Pro distingués, limites de l'aide GO/NOGO explicitées et cinq visuels officiels référencés (logo, carte, météo, vue 3D et assistant).
 - 2026-09-30 : lien officiel Drone Ops Mission autorisé en dofollow sur la fiche, sans modifier la règle `sponsored` des liens affiliés.
+- 2026-09-30 : les justificatifs des cinq axes de notation conservent le constat visible et déplacent la source datée dans un picto d'information près du titre. La source et la date tarifaires passent dans le même dispositif près du titre Prix, accessible au survol, au clavier et au toucher.

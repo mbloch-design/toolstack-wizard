@@ -16,6 +16,7 @@ import { nativePriceFromTool } from "@/lib/currencyRates";
 
 import ToolSummaryBlock from "@/components/tool/ToolSummaryBlock";
 import ToolPricingSection from "@/components/tool/ToolPricingSection";
+import EvidenceInfo from "@/components/tool/EvidenceInfo";
 import ToolBundleSection from "@/components/tool/ToolBundleSection";
 import ToolFeaturesBlock from "@/components/tool/ToolFeaturesBlock";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
@@ -35,6 +36,7 @@ import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import TapstitchDecision from "@/components/tool/TapstitchDecision";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
+import { splitRatingEvidence } from "@/lib/ratingEvidence";
 import { hasEditorialSubstance } from "@/lib/editorialSubstance";
 import { toolPageHeadingSuffix, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "@/lib/toolSeo";
 import { getExplorerHref } from "@/lib/toolExploration";
@@ -755,8 +757,18 @@ const ToolDetailPage = () => {
             {showPricing && (
               <div id="prix" className="td-subpage-content">
                 <div className="td-section">
-                  <h2 className="td-title">
-                    {t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name} ?`, `What does ${tool.name} cost?`)}</span>
+                  <h2 className="td-title td-title--with-info">
+                    <span>{t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name} ?`, `What does ${tool.name} cost?`)}</span></span>
+                    {(tool.pricing_v5?.verified_on || tool.pricing_v5?.official_source_url) && (
+                      <EvidenceInfo label={t("Voir la source et la date du tarif", "View pricing source and verification date")}>
+                        {tool.pricing_v5?.official_source_url && safeExternalUrl(tool.pricing_v5.official_source_url) ? (
+                          <a href={tool.pricing_v5.official_source_url} target="_blank" rel={relPourLienOutil(tool.pricing_v5.official_source_url, tool.affiliateLink, tool.websiteUrl)}>
+                            {t("Source tarifaire officielle", "Official pricing source")}
+                          </a>
+                        ) : t("Tarif vérifié par ToolTrim", "Pricing verified by ToolTrim")}
+                        {tool.pricing_v5?.verified_on && <time dateTime={tool.pricing_v5.verified_on}>{t("Vérifié le", "Verified on")} {tool.pricing_v5.verified_on}</time>}
+                      </EvidenceInfo>
+                    )}
                   </h2>
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
@@ -974,10 +986,16 @@ const ToolDetailPage = () => {
                               const value = tool.toolTrimRating![key] ?? 0;
                               const evidenceText = (lang === "en" && tool.toolTrimRating!.evidenceEn?.[key])
                                 || tool.toolTrimRating!.evidence[key];
+                              const evidence = evidenceText ? splitRatingEvidence(evidenceText) : null;
                               return (
                                 <div className="td-score-axis-card" key={key}>
                                   <div className="td-score-axis-row">
-                                    <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
+                                    <span className="td-score-axis-heading">
+                                      <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
+                                      {evidence?.source && (
+                                        <EvidenceInfo label={t(`Voir la source pour ${labelFr}`, `View source for ${labelEn}`)}>{evidence.source}</EvidenceInfo>
+                                      )}
+                                    </span>
                                     <div className="td-score-meter" aria-label={`${value}/5`}>
                                       {[1, 2, 3, 4, 5].map((i) =>
                                         i <= value
@@ -986,8 +1004,8 @@ const ToolDetailPage = () => {
                                       )}
                                     </div>
                                   </div>
-                                  {evidenceText && (
-                                    <p className="td-score-axis-evidence">{evidenceText}</p>
+                                  {evidence?.finding && (
+                                    <p className="td-score-axis-evidence">{evidence.finding}</p>
                                   )}
                                 </div>
                               );

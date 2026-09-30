@@ -64,8 +64,6 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const freeCard = (pv5 as { free_plan_card?: string } | undefined)?.free_plan_card || null;
   const hasFree = hasGenuineFreeTier(pricing?.free);
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
-  const verifiedOn = pv5?.verified_on;
-  const officialUrl = safeExternalUrl(pv5?.official_source_url);
   const affiliateUrl = safeExternalUrl(tool.affiliateLink);
   const isOneTime = pv5?.compare_plan_kind === "one_time";
   const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
@@ -217,21 +215,6 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
       </div>
       )}
 
-      {(verifiedOn || officialUrl) && (
-        <p className="td-pricing-evidence">
-          {affiliateUrl ? t("Tarif vérifié auprès de l’éditeur", "Pricing verified with the vendor") : officialUrl ? (
-            <a href={officialUrl} target="_blank" rel={relPourLienOutil(officialUrl, tool.affiliateLink, tool.websiteUrl)}>
-              {t("Source tarifaire officielle", "Official pricing source")}
-            </a>
-          ) : t("Tarif vérifié par ToolTrim", "Pricing verified by ToolTrim")}
-          {verifiedOn && (
-            <>
-              <span aria-hidden>·</span>
-              {t("vérifié le", "verified on")} <time dateTime={verifiedOn}>{verifiedOn}</time>
-            </>
-          )}
-        </p>
-      )}
 
     </section>
   );
