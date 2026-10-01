@@ -19,16 +19,17 @@
       "id": "s1",
       "url": "https://animaapp.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Anima pricing (plan prices not fully rendered in fetched content)"
+      "accessedOn": "2026-10-01",
+      "checkedOn": "2026-10-01",
+      "title": "Anima pricing (official page, rendered and interacted with)"
     }
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://animaapp.com/pricing",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-01",
+    "region": "EU",
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
@@ -43,25 +44,63 @@
     "trial": null,
     "plans": [
       {
-        "key": "pro",
-        "name": "Pro",
+        "key": "starter",
+        "name": "Starter",
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": null,
-          "annualPerMonth": 24,
+          "monthly": 25,
+          "annualPerMonth": 20,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "5,000 code exports/month, unlimited Figma inspects, higher AI Playground usage.",
-            "fr": "5 000 exports de code par mois, inspections Figma illimitées, usage plus élevé de l'AI Playground."
+            "en": "100 monthly chat messages, 50 monthly code generations, two-way Figma to code, custom domains.",
+            "fr": "100 messages par mois, 50 générations de code par mois, Figma vers code dans les deux sens, domaines personnalisés."
+          }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 50,
+          "annualPerMonth": 40,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "200 monthly code generations (1,000 monthly chat messages as a limited-time offer), unlimited Figma inspects, priority support.",
+            "fr": "200 générations de code par mois (1 000 messages par mois en offre limitée dans le temps), inspections Figma illimitées, support prioritaire."
           }
         ],
         "sourceIds": [
           "s1"
         ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 180,
+          "annualPerMonth": 150,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Starting price for the plan; 600 monthly code generations (2,000 monthly chat messages as a limited-time offer), team roles and permissions, premium support, SSO on annual billing.",
+            "fr": "Prix de départ du forfait ; 600 générations de code par mois (2 000 messages par mois en offre limitée dans le temps), rôles et permissions d'équipe, support premium, SSO en facturation annuelle."
+          }
+        ],
+        "sourceIds": ["s1"]
       },
       {
         "key": "enterprise",
@@ -76,8 +115,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Starts around $500/month (paid annually per secondary sources); includes SSO, MFA, enterprise-grade SLAs and enhanced security; requires contacting sales, no public fixed price on the official page.",
-            "fr": "Démarre autour de 500 $/mois selon des sources secondaires (facturé annuellement) ; inclut SSO, MFA, SLA entreprise et sécurité renforcée ; nécessite de contacter les ventes, aucun prix fixe public sur la page officielle."
+            "en": "Starts at $500/month paid annually, stated in USD directly on the official FAQ regardless of the visitor's region; includes SSO, MFA, enterprise-grade SLAs and enhanced security; requires contacting sales, no fixed self-serve price.",
+            "fr": "Démarre à 500 $/mois facturé annuellement, montant indiqué en dollars directement sur la FAQ officielle quelle que soit la région du visiteur ; inclut SSO, MFA, SLA entreprise et sécurité renforcée ; nécessite de contacter les ventes, pas de prix fixe en libre-service."
           }
         ],
         "sourceIds": [
@@ -85,15 +124,24 @@
         ]
       }
     ],
-    "comparePlanKey": "pro",
-    "addOns": [],
+    "comparePlanKey": "starter",
+    "addOns": [
+      {
+        "en": "Additional Business seat: $49/mo per extra seat.",
+        "fr": "Poste Business supplémentaire : 49 $/mois par poste additionnel.",
+        "sourceIds": ["s1"]
+      }
+    ],
     "cautions": [
       {
-        "en": "The official pricing page's detailed plan table (exact monthly vs. annual prices for Pro and any mid-tier plan) did not fully render in this session's fetch; the $24/mo annual Pro figure comes from secondary sources and should be re-verified against the live pricing table.",
-        "fr": "Le tableau détaillé des prix (mensuel vs annuel pour Pro et un éventuel palier intermédiaire) ne s'est pas entièrement chargé lors de cette session ; le montant de 24 $/mois en annuel pour Pro vient de sources secondaires et doit être revérifié sur la page de prix en direct.",
-        "sourceIds": [
-          "s1"
-        ]
+        "en": "The official pricing page serves prices in EUR to EU visitors and shows a separate USD figure for Enterprise; a US visitor may see different (USD) amounts for Free/Starter/Pro/Business, so reconfirm in USD if the catalogue standardizes on that currency.",
+        "fr": "La page de tarifs officielle affiche les prix en EUR aux visiteurs européens et un montant distinct en USD pour Enterprise ; un visiteur américain peut voir des montants différents (en USD) pour Free/Starter/Pro/Business, donc à revérifier en USD si le catalogue standardise sur cette devise.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Pro and Business higher message quotas (1,000 and 2,000 monthly chat messages) are flagged on the official page as a limited-time offer, not the permanent limit.",
+        "fr": "Les quotas de messages plus élevés sur Pro et Business (1 000 et 2 000 messages par mois) sont signalés sur la page officielle comme une offre limitée dans le temps, pas la limite permanente.",
+        "sourceIds": ["s1"]
       }
     ]
   },
@@ -174,8 +222,7 @@
     }
   ],
   "unknowns": [
-    "Exact monthly (non-annual) Pro price and whether a mid-tier plan exists between Free and Pro could not be confirmed; the pricing table did not fully render in this session's fetch.",
-    "Precise definition of what counts as a 'code export' toward the 5,000/month Pro limit was not detailed on the fetched content."
+    "Precise definition of what counts as a monthly 'code generation' toward each plan's limit was not detailed on the pricing page."
   ],
   "conflicts": [],
   "completedLocallyOn": "2026-09-30",
@@ -187,8 +234,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Pro costs about $24/month billed annually for 5,000 code exports, but the exact live pricing table wasn't fully confirmed, and the free tier is too capped for real production use.",
-        "fr": "Pro coûte environ 24 $/mois facturés annuellement pour 5 000 exports de code, mais le tableau de prix en direct n'a pas pu être entièrement confirmé, et le plan gratuit est trop limité pour un usage de production réel.",
+        "en": "The cheapest paid plan, Starter, costs 20 euros/month billed annually for 50 code generations, and the free tier is too capped (5/day) for real production use.",
+        "fr": "Le forfait payant le moins cher, Starter, coûte 20 euros par mois facturés annuellement pour 50 générations de code, et le plan gratuit est trop limité (5/jour) pour un usage de production réel.",
         "sourceIds": [
           "s1"
         ]
@@ -253,8 +300,8 @@
       "fr": "Plugin IA qui transforme des maquettes Figma en code React, HTML, Vue ou Tailwind, avec un AI Playground pour prototyper des applications par prompt."
     },
     "longDescription": {
-      "en": "Anima is a Figma plugin that converts designs into production-ready code across React, HTML, Vue and Tailwind CSS. Its AI Playground goes further, building working app prototypes from natural-language prompts, including importing a Figma file or cloning an existing site as a starting point.\n\nThe free plan caps daily usage at 5 messages, imports and code generations, enough to test the workflow but not for regular production work. The Pro plan lists around $24/month billed annually for 5,000 code exports; the live pricing table didn't fully load during research, so treat that figure as unconfirmed. It suits a designer or small team wanting a first code draft before involving a developer.",
-      "fr": "Anima est un plugin Figma qui convertit des maquettes en code prêt pour la production, en React, HTML, Vue et Tailwind CSS. Son AI Playground construit aussi des prototypes d'applications fonctionnels à partir de prompts en langage naturel, en important un fichier Figma ou en clonant un site existant.\n\nLe plan gratuit limite l'usage quotidien à 5 messages, imports et générations de code, suffisant pour tester le flux mais pas pour un usage régulier. Le plan Pro affiche environ 24 $/mois facturés annuellement pour 5 000 exports de code ; ce chiffre vient de sources secondaires et reste à confirmer. Il convient à un designer ou une petite équipe qui veut un premier jet de code avant d'impliquer un développeur."
+      "en": "Anima is a Figma plugin that converts designs into production-ready code across React, HTML, Vue and Tailwind CSS. Its AI Playground goes further, building working app prototypes from natural-language prompts, including importing a Figma file or cloning an existing site as a starting point.\n\nThe free plan caps daily usage at 5 messages, imports and code generations, enough to test the workflow but not for regular production work. Starter costs 20 euros a month billed annually (25 euros month to month) for 50 code generations a month, Pro steps up to 40 euros a month annual for 200 generations, and Business starts at 150 euros a month annual for 600 generations with team roles and SSO. Enterprise, with SSO/MFA and SLAs, starts at $500/month paid annually and requires a sales quote. It suits a designer or small team wanting a first code draft before involving a developer.",
+      "fr": "Anima est un plugin Figma qui convertit des maquettes en code prêt pour la production, en React, HTML, Vue et Tailwind CSS. Son AI Playground construit aussi des prototypes d'applications fonctionnels à partir de prompts en langage naturel, en important un fichier Figma ou en clonant un site existant.\n\nLe plan gratuit limite l'usage quotidien à 5 messages, imports et générations de code, suffisant pour tester le flux mais pas pour un usage régulier. Starter coûte 20 euros par mois facturés à l'année (25 euros au mois) pour 50 générations de code par mois, Pro monte à 40 euros par mois en annuel pour 200 générations, et Business démarre à 150 euros par mois en annuel pour 600 générations avec rôles d'équipe et SSO. Enterprise, avec SSO/MFA et SLA, démarre à 500 $/mois facturés annuellement et passe par un devis commercial. Il convient à un designer ou une petite équipe qui veut un premier jet de code avant d'impliquer un développeur."
     },
     "pros": [
       {
@@ -286,14 +333,11 @@
         "fr": "Tu as besoin d'un code de qualité production immédiatement exploitable, ou tu dépasses régulièrement les plafonds quotidiens du plan gratuit."
       },
       "threshold": {
-        "en": "The Pro plan is listed around $24/month (annual) for 5,000 code exports; it's worth it once you export design-to-code on a weekly basis.",
-        "fr": "Le plan Pro affiche environ 24 $/mois (annuel) pour 5 000 exports de code ; il devient rentable dès que tu exportes du design vers du code chaque semaine."
+        "en": "Starter costs 20 euros/month (annual) for 50 code generations; it's worth it once you export design-to-code on a weekly basis.",
+        "fr": "Starter coûte 20 euros/mois (annuel) pour 50 générations de code ; il devient rentable dès que tu exportes du design vers du code chaque semaine."
       }
     }
   },
-  "reviewNotes": [
-    "Pro plan price ($24/mo annual) comes from secondary sources, not the fully-rendered official pricing table; re-verify on animaapp.com/pricing.",
-    "Enterprise plan's ~$500/month figure is also from secondary sources and not a public official price; keep it out of any displayed price."
-  ],
-  "hold": "Pro and Enterprise prices from secondary sources; reconfirm on the official page"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

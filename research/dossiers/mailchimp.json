@@ -19,15 +19,15 @@
       "id": "s1",
       "url": "https://mailchimp.com/pricing/marketing/compare-plans/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Mailchimp Marketing plans comparison"
+      "accessedOn": "2026-10-01",
+      "title": "Mailchimp Marketing plans comparison (USD, 0-500 contacts)"
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://mailchimp.com/pricing/marketing/compare-plans/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -138,8 +138,8 @@
     ],
     "cautions": [
       {
-        "en": "Listed monthly prices are entry-tier for the smallest contact count; price rises with list size and a promotional discount (around 15% for the first 12 months) applies to the displayed prices, so renewal price is higher.",
-        "fr": "Les prix mensuels affichés correspondent au plus petit volume de contacts, et une remise promotionnelle (environ 15 % pendant les 12 premiers mois) s'applique aux prix affichés, donc le prix de renouvellement est plus élevé.",
+        "en": "The $13/mo (Essentials) and $20/mo (Standard) prices are the ongoing starting rate for 0-500 contacts, with no first-year promotional discount shown on the official comparison page. Premium separately shows a first-year promo of $297.50/mo for 12 months, renewing at the $350/mo listed here; prices scale with contact list size for all paid plans.",
+        "fr": "Les prix de 13 $/mois (Essentials) et 20 $/mois (Standard) sont les tarifs de base courants pour 0 a 500 contacts, sans remise promotionnelle de premiere annee visible sur la page officielle. Premium affiche separement une promo de premiere annee a 297,50 $/mois pendant 12 mois, qui se renouvelle au tarif de 350 $/mois indique ici ; les prix augmentent avec la taille de la liste de contacts pour tous les forfaits payants.",
         "sourceIds": [
           "s1"
         ]
@@ -223,7 +223,6 @@
   ],
   "missingAlternatives": [],
   "unknowns": [
-    "Exact annualPerMonth discounted price was not isolated from the displayed introductory discount on this page.",
     "Whether tax is included depends on billing region; not stated."
   ],
   "conflicts": [],
@@ -344,8 +343,6 @@
       }
     }
   },
-  "reviewNotes": [
-    "Mailchimp's listed Essentials/Standard/Premium monthly prices appear to already include a first-year promotional discount (~15%) per the pricing page's own caution; confirm the true renewal price on the vendor's site before publishing."
-  ],
-  "hold": "displayed prices likely include a first-year promotion; confirm the regular price"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

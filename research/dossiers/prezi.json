@@ -17,27 +17,28 @@
   },
   "sources": [
     { "id": "s1", "url": "https://www.presentations.ai/blog/prezi-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Prezi Pricing 2026: Plans, Cost, Better Alternatives" },
-    { "id": "s2", "url": "https://costbench.com/software/ai-presentations/prezi/", "tier": 2, "accessedOn": "2026-09-25", "title": "Prezi Pricing 2026: 5 Plans from Free to $39/user/month" }
+    { "id": "s2", "url": "https://costbench.com/software/ai-presentations/prezi/", "tier": 2, "accessedOn": "2026-09-25", "title": "Prezi Pricing 2026: 5 Plans from Free to $39/user/month" },
+    { "id": "s3", "url": "https://prezi.com/pricing/", "tier": 1, "accessedOn": "2026-10-01", "title": "Prezi official pricing (Individual and Business tabs, full plan comparison table)" }
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://prezi.com/pricing/",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-01",
+    "region": "EU (page served in EUR from a France-based session, in both French and English UI; a US-region USD price was not reachable)",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "Basic plan: public presentations only, limited storage, per third-party pricing research.", "fr": "Offre Basic : présentations publiques uniquement, stockage limité, selon une étude tarifaire tierce." }, "sourceIds": ["s2"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Basic plan, confirmed as one of the official tabs (Basic / Individual / Students & Educators / Business); public presentations only, per third-party pricing research for the exact storage limit.", "fr": "Offre Basic, confirmée comme l'un des onglets officiels (Basic / Individuel / Étudiants et enseignants / Entreprises) ; présentations publiques uniquement, limite de stockage exacte selon une étude tarifaire tierce." }, "sourceIds": ["s3", "s2"] },
+    "trial": { "days": 14, "sourceIds": ["s3"] },
     "plans": [
       {
         "key": "standard",
         "name": "Standard",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 7, "oneTime": null },
+        "price": { "monthly": null, "annualPerMonth": 5, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry paid tier, private presentations, per third-party pricing research; official plan naming not independently confirmed on prezi.com within this session.", "fr": "Palier payant d'entrée, présentations privées, selon une étude tarifaire tierce ; le nom officiel du plan n'a pas été confirmé directement sur prezi.com." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [{ "en": "For personal use: unlimited projects (videos, presentations, infographics), privacy control, revocable share links, 500 Prezi AI credits/month.", "fr": "Pour un usage personnel : projets illimités (vidéos, présentations, infographies), contrôle de confidentialité, liens de partage révocables, 500 crédits Prezi AI/mois." }],
+        "sourceIds": ["s3"]
       },
       {
         "key": "plus",
@@ -46,8 +47,8 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 15, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Mid tier with more storage/features, per third-party pricing research.", "fr": "Palier intermédiaire avec plus de stockage et de fonctions, selon une étude tarifaire tierce." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [{ "en": "Adds unlimited Prezi AI, PowerPoint import, premium images/icons/backgrounds, advanced image editing, presentation recording, PDF export, presenter view.", "fr": "Ajoute Prezi AI illimité, import PowerPoint, images/icônes/fonds premium, édition d'image avancée, enregistrement de présentation, export PDF, vue présentateur." }],
+        "sourceIds": ["s3"]
       },
       {
         "key": "premium",
@@ -56,24 +57,24 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 25, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Top individual tier, per third-party pricing research.", "fr": "Palier individuel le plus complet, selon une étude tarifaire tierce." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [{ "en": "Everything in Plus, plus presentation analytics and priority technical support.", "fr": "Tout Plus, plus les données d'analyse de présentation et l'assistance technique prioritaire." }],
+        "sourceIds": ["s3"]
       },
       {
         "key": "teams",
-        "name": "Teams",
+        "name": "Teams (Équipes)",
         "unit": "seat",
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 39, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Team collaboration tier, per third-party pricing research.", "fr": "Palier de collaboration d'équipe, selon une étude tarifaire tierce." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [{ "en": "Everything in Premium, plus team collaboration tools, comments, Slack integration, smart branding/visual identity and single sign-on.", "fr": "Tout Premium, plus des outils de collaboration d'équipe, les commentaires, l'intégration Slack, l'identité visuelle de marque et la connexion unique sécurisée." }],
+        "sourceIds": ["s3"]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [],
     "cautions": [
-      { "en": "The official prezi.com/pricing page could not be fetched directly in this session (empty response); plan names and prices above come from third-party pricing-research sites and should be re-verified against the official page before publication.", "fr": "La page officielle prezi.com/pricing n'a pas pu être chargée dans cette session (réponse vide) ; les noms de plans et les prix ci-dessus viennent de sites tiers d'étude tarifaire et doivent être revérifiés sur la page officielle avant publication.", "sourceIds": ["s1", "s2"] }
+      { "en": "Prices were confirmed directly on prezi.com/pricing but shown in EUR (Standard EUR 5/mo, Plus EUR 15/mo, Premium EUR 25/mo, Teams EUR 39/mo/user, all billed annually); the session was geo-routed to a European price list and a USD price list was not reachable even after switching the page language to English.", "fr": "Les prix ont été confirmés directement sur prezi.com/pricing mais affichés en EUR (Standard 5 EUR/mois, Plus 15 EUR/mois, Premium 25 EUR/mois, Teams 39 EUR/mois/utilisateur, tous facturés annuellement) ; la session a été redirigée vers une grille tarifaire européenne et une grille en USD n'a pas pu être atteinte même après passage de la page en anglais.", "sourceIds": ["s3"] }
     ]
   },
   "product": {
@@ -113,7 +114,7 @@
     "puissance": 3,
     "reversibilite": 3,
     "evidence": {
-      "valeurAjoutee": { "en": "The zooming format differentiates Prezi from static slide decks, but the entry paid price itself could not be confirmed on the official site within this session.", "fr": "Le format en zoom différencie Prezi des diaporamas statiques, mais le prix du palier d'entrée n'a pas pu être confirmé sur le site officiel dans cette session.", "sourceIds": ["s1", "s2"] },
+      "valeurAjoutee": { "en": "The zooming format differentiates Prezi from static slide decks, for a confirmed entry price of EUR 5/month (Standard, billed annually).", "fr": "Le format en zoom différencie Prezi des diaporamas statiques, pour un prix d'entrée confirmé de 5 EUR/mois (Standard, facturé annuellement).", "sourceIds": ["s3"] },
       "simplicite": { "en": "The non-linear zooming format has a steeper authoring learning curve than a standard slide tool, per third-party reviews.", "fr": "Le format non linéaire en zoom demande un temps d'apprentissage plus long qu'un outil de diapositives classique, selon des avis tiers.", "sourceIds": ["s1"] },
       "utilisation": { "en": "Delivers the promised zooming, non-linear presentation format with animated transitions, per the collected sources.", "fr": "Assure le format de présentation non linéaire en zoom et les transitions animées promis, selon les sources relevées.", "sourceIds": ["s1"] },
       "puissance": { "en": "Animated transitions and spatial storytelling are the main differentiator collected; no other advanced capability or integration was documented in this session.", "fr": "Les transitions animées et la narration spatiale sont le principal atout relevé ; aucune autre fonction avancée ni intégration n'a été documentée dans cette session.", "sourceIds": ["s1"] },
@@ -125,8 +126,8 @@
     "tagline": { "en": "Visual presentations", "fr": "Présentations visuelles" },
     "shortDescription": { "en": "Prezi builds zooming, non-linear presentations that move around a canvas instead of flipping through static slides.", "fr": "Prezi conçoit des présentations non linéaires en zoom, qui se déplacent sur une toile plutôt que d'enchaîner des diapositives statiques." },
     "longDescription": {
-      "en": "Prezi replaces the slide-by-slide format with a zooming canvas: content sits in one large space, and the presentation moves between zoomed-in sections instead of flipping static slides, with animated transitions supporting the storytelling. Building a deck this way takes longer to learn than a standard slide tool.\n\nA free Basic plan covers public presentations only; private decks start around $7/month equivalent billed annually on the Standard plan, rising through Plus, Premium and a Teams tier (figures from third-party pricing research, pending official confirmation). It fits a consultant or presenter who wants a visually distinct pitch more than fast, familiar slide editing.",
-      "fr": "Prezi remplace le diaporama classique par une toile en zoom : le contenu tient dans un seul grand espace, et la présentation se déplace entre des sections zoomées au lieu d'enchaîner des diapositives statiques, avec des transitions animées qui soutiennent la narration. Construire un support ainsi demande plus de temps d'apprentissage qu'un outil de diapositives classique.\n\nL'offre Basic gratuite se limite aux présentations publiques ; les présentations privées démarrent autour de 7 $/mois en facturation annuelle sur l'offre Standard, puis montent avec Plus, Premium et une offre Teams (chiffres issus d'une étude tarifaire tierce, à confirmer officiellement). Convient à un consultant ou intervenant qui veut un support visuellement distinctif plus qu'une édition de diapositives rapide et familière."
+      "en": "Prezi replaces the slide-by-slide format with a zooming canvas: content sits in one large space, and the presentation moves between zoomed-in sections instead of flipping static slides, with animated transitions supporting the storytelling. Building a deck this way takes longer to learn than a standard slide tool.\n\nA free Basic plan covers public presentations only; private decks start at EUR 5/month on the Standard plan (billed annually, 500 Prezi AI credits/month), rising to Plus (EUR 15, unlimited AI), Premium (EUR 25, adds analytics) and Teams (EUR 39/user, adds collaboration tools and SSO). It fits a consultant or presenter who wants a visually distinct pitch more than fast, familiar slide editing.",
+      "fr": "Prezi remplace le diaporama classique par une toile en zoom : le contenu tient dans un seul grand espace, et la présentation se déplace entre des sections zoomées au lieu d'enchaîner des diapositives statiques, avec des transitions animées qui soutiennent la narration. Construire un support ainsi demande plus de temps d'apprentissage qu'un outil de diapositives classique.\n\nL'offre Basic gratuite se limite aux présentations publiques ; les présentations privées démarrent à 5 EUR/mois sur l'offre Standard (facturation annuelle, 500 crédits Prezi AI/mois), puis montent avec Plus (15 EUR, IA illimitée), Premium (25 EUR, ajoute les analyses) et Teams (39 EUR/utilisateur, ajoute les outils de collaboration et la connexion unique). Convient à un consultant ou intervenant qui veut un support visuellement distinctif plus qu'une édition de diapositives rapide et familière."
     },
     "pros": [
       { "en": "Zooming, non-linear format stands out visually from standard slide decks.", "fr": "Le format non linéaire en zoom se démarque visuellement des diaporamas classiques." },

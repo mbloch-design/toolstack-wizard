@@ -18,16 +18,16 @@
     {
       "id": "s1",
       "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "Comparing Midjourney Plans (search-summarized, official docs page returned 403 to direct fetch)"
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "title": "Comparing Midjourney Plans"
     }
   ],
   "pricing": {
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -216,9 +216,7 @@
     }
   ],
   "missingAlternatives": [],
-  "unknowns": [
-    "Official docs.midjourney.com pricing page returned HTTP 403 to direct fetch; figures here come from a search-engine synthesis of the same official page rather than a direct read, so exact wording (e.g. rounded GPU-hour numbers) should be re-verified locally."
-  ],
+  "unknowns": [],
   "conflicts": [],
   "rating": {
     "valeurAjoutee": 3,
@@ -333,5 +331,6 @@
     }
   },
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": []
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

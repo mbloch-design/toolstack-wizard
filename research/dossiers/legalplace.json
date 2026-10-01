@@ -18,17 +18,24 @@
   "sources": [
     {
       "id": "s1",
-      "url": "https://legalplace.fr",
+      "url": "https://www.legalplace.fr/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "LegalPlace homepage"
+      "accessedOn": "2026-10-01",
+      "title": "LegalPlace - création d'entreprise"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.legalplace.fr/landing/logiciel-facturation",
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "title": "LegalPlace - logiciel de facturation électronique"
     }
   ],
   "pricing": {
-    "model": "usage",
+    "model": "one_time",
     "currency": "EUR",
     "pricingUrl": "https://legalplace.fr",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "FR",
     "taxIncluded": null,
     "freePlan": {
@@ -59,26 +66,17 @@
         "sourceIds": [
           "s1"
         ]
-      },
-      {
-        "key": "invoicing",
-        "name": "Logiciel de facturation",
-        "unit": "seat",
-        "minSeats": 1,
-        "price": {
-          "monthly": 8.25,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
-        "onQuote": false,
-        "keyLimits": [],
-        "sourceIds": [
-          "s1"
-        ]
       }
     ],
-    "comparePlanKey": "invoicing",
+    "comparePlanKey": null,
     "addOns": [
+      {
+        "en": "Electronic invoicing software (compliant with the 2026 French e-invoicing reform): from 8.25 EUR HT/month, no commitment, with a 20-day free trial.",
+        "fr": "Logiciel de facturation électronique (conforme à la réforme de facturation électronique 2026) : à partir de 8,25 EUR HT/mois, sans engagement, avec 20 jours d'essai gratuit.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
       {
         "en": "Business address domiciliation (Paris), with CFE tax reduction claims up to 1,000 EUR/year",
         "fr": "Domiciliation d'entreprise (Paris), avec des réductions de CFE revendiquées jusqu'à 1 000 EUR par an",

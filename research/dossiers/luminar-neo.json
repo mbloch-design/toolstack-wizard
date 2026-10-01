@@ -22,14 +22,21 @@
       "tier": 1,
       "accessedOn": "2026-09-25",
       "title": "Luminar Neo product page"
+    },
+    {
+      "id": "s2",
+      "url": "https://skylum.com/luminar/pricing",
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "title": "Luminar official pricing page (Desktop Only / All Platforms / Max licenses)"
     }
   ],
   "pricing": {
     "model": "subscription_and_perpetual",
-    "currency": "USD",
-    "pricingUrl": "https://skylum.com/luminar-neo",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "currency": "EUR",
+    "pricingUrl": "https://skylum.com/luminar/pricing",
+    "verifiedOn": "2026-10-01",
+    "region": "EU (page served in EUR from a France-based session; a US-region USD price was not reachable)",
     "taxIncluded": null,
     "freePlan": {
       "exists": false,
@@ -48,9 +55,9 @@
         "price": {
           "monthly": null,
           "annualPerMonth": null,
-          "oneTime": null
+          "oneTime": 129
         },
-        "onQuote": true,
+        "onQuote": false,
         "keyLimits": [
           {
             "en": "Perpetual license usable on 2 devices, desktop app only, includes 1 year of access to AI tools (Restoration, GenErase, GenSwap, GenExpand, AI Assistant).",
@@ -58,7 +65,7 @@
           }
         ],
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       },
       {
@@ -69,9 +76,9 @@
         "price": {
           "monthly": null,
           "annualPerMonth": null,
-          "oneTime": null
+          "oneTime": 159
         },
-        "onQuote": true,
+        "onQuote": false,
         "keyLimits": [
           {
             "en": "Perpetual license including desktop, mobile, and web access (web planned for Fall 2026).",
@@ -79,28 +86,28 @@
           }
         ],
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       },
       {
         "key": "max",
         "name": "Max License",
-        "unit": "account",
-        "minSeats": 1,
+        "unit": "one_time",
+        "minSeats": null,
         "price": {
           "monthly": null,
           "annualPerMonth": null,
-          "oneTime": null
+          "oneTime": 199
         },
-        "onQuote": true,
+        "onQuote": false,
         "keyLimits": [
           {
-            "en": "Annual subscription with ongoing access to new features and the asset library.",
-            "fr": "Abonnement annuel avec accès continu aux nouvelles fonctionnalités et à la bibliothèque d'assets."
+            "en": "One-time purchase ('Most Popular') including everything in All Platforms plus Luminar Prime (2900+ presets, 490+ LUTs, skies, courses); AI tools and the asset library auto-renew after 365 days to keep access current.",
+            "fr": "Achat unique (« le plus populaire ») incluant tout All Platforms plus Luminar Prime (2900+ préréglages, 490+ LUTs, ciels, cours) ; les outils IA et la bibliothèque d'assets se renouvellent automatiquement après 365 jours pour rester à jour."
           }
         ],
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       }
     ],
@@ -108,17 +115,17 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Exact prices were not shown on the fetched product page; only license types and inclusions were listed, plus a '10% off first purchase' promotion to exclude from the regular price.",
-        "fr": "Les prix exacts n'apparaissaient pas sur la page produit consultée ; seuls les types de licence et leur contenu étaient listés, avec une promotion « 10 % sur le premier achat » à exclure du prix régulier.",
+        "en": "Prices confirmed on skylum.com/luminar/pricing were shown in EUR (Desktop Only EUR 129, All Platforms EUR 159, Max EUR 199); the session was geo-routed to a European price list and a USD price list was not reachable. A '10% off first purchase' coupon banner was excluded from these regular prices.",
+        "fr": "Les prix confirmés sur skylum.com/luminar/pricing étaient affichés en EUR (Desktop Only 129 EUR, All Platforms 159 EUR, Max 199 EUR) ; la session a été redirigée vers une grille tarifaire européenne et une grille en USD n'a pas pu être atteinte. Une bannière « 10 % sur le premier achat » a été exclue de ces prix réguliers.",
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       },
       {
-        "en": "The perpetual license only guarantees 1 year of access to the newest AI tools; continued access to future AI features likely requires renewal.",
-        "fr": "La licence perpétuelle ne garantit qu'1 an d'accès aux derniers outils IA ; l'accès continu aux futures fonctions IA nécessite probablement un renouvellement.",
+        "en": "The Desktop Only and All Platforms perpetual licenses only guarantee 1 year of access to the newest AI tools; continued access to future AI features and the asset library likely requires renewal after that.",
+        "fr": "Les licences perpétuelles Desktop Only et All Platforms ne garantissent qu'1 an d'accès aux derniers outils IA ; l'accès continu aux futures fonctions IA et à la bibliothèque d'assets nécessite probablement un renouvellement après cela.",
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       }
     ]
@@ -195,10 +202,10 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Neutral score: no price is published for any license, so real cost versus competitors cannot be assessed from the sources collected.",
-        "fr": "Note neutre : aucun prix n'est publié pour aucune licence, donc le coût réel face aux concurrents ne peut pas être évalué d'après les sources relevées.",
+        "en": "A one-time EUR 129 to 199 perpetual license against 24+ AI tools and no recurring fee is a reasonable value case versus subscription-only competitors, though continued access to new AI features needs periodic renewal.",
+        "fr": "Une licence perpétuelle à paiement unique de 129 à 199 EUR contre plus de 24 outils IA et sans frais récurrent est un bon rapport face aux concurrents en abonnement seul, même si l'accès continu aux nouvelles fonctions IA demande un renouvellement périodique.",
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       },
       "simplicite": {
@@ -261,8 +268,8 @@
       "fr": "Luminar Neo est un logiciel de retouche photo par IA pour le portrait, le paysage et l'édition générative, vendu en licence perpétuelle ou abonnement annuel."
     },
     "longDescription": {
-      "en": "Luminar Neo combines over 24 AI-based tools and 100+ features for portrait retouching (skin and body enhancement), landscape editing (sky replacement, haze removal) and generative editing (object removal, scene expansion). Editing is non-destructive and layer-based, with RAW support, upscaling, HDR merge and panorama stitching.\n\nIt's sold as a perpetual Desktop Only or All Platforms license, or an annual Max subscription; exact prices weren't shown on the page checked, only a temporary 10% first-purchase promotion. The perpetual license guarantees only one year of access to the newest AI tools. A web version is planned for Fall 2026 but wasn't available at research time.",
-      "fr": "Luminar Neo combine plus de 24 outils IA et 100+ fonctionnalités pour la retouche portrait (peau, corps), l'édition paysage (remplacement de ciel, suppression de brume) et l'édition générative (suppression d'objet, extension de scène). L'édition est non destructive et par calques, avec support RAW, upscaling, fusion HDR et panoramas.\n\nLe logiciel se vend en licence perpétuelle Desktop Only ou All Platforms, ou en abonnement annuel Max ; les prix exacts n'étaient pas affichés sur la page consultée, seulement une promo temporaire de 10 % sur le premier achat. La licence perpétuelle ne garantit qu'un an d'accès aux derniers outils IA. Une version web est prévue pour l'automne 2026 mais n'était pas encore disponible."
+      "en": "Luminar Neo combines over 24 AI-based tools and 100+ features for portrait retouching (skin and body enhancement), landscape editing (sky replacement, haze removal) and generative editing (object removal, scene expansion). Editing is non-destructive and layer-based, with RAW support, upscaling, HDR merge and panorama stitching.\n\nIt's sold as one-time perpetual licenses: Desktop Only (EUR 129), All Platforms (EUR 159, adds mobile and the upcoming web app), and Max (EUR 199, adds the Luminar Prime asset library). All three guarantee only one year of access to the newest AI tools and, for Max, the asset library, before an auto-renewal model kicks in. A web version is planned for Fall 2026 but wasn't available at research time.",
+      "fr": "Luminar Neo combine plus de 24 outils IA et 100+ fonctionnalités pour la retouche portrait (peau, corps), l'édition paysage (remplacement de ciel, suppression de brume) et l'édition générative (suppression d'objet, extension de scène). L'édition est non destructive et par calques, avec support RAW, upscaling, fusion HDR et panoramas.\n\nLe logiciel se vend en licences perpétuelles à paiement unique : Desktop Only (129 EUR), All Platforms (159 EUR, ajoute le mobile et la future version web) et Max (199 EUR, ajoute la bibliothèque d'assets Luminar Prime). Les trois ne garantissent qu'un an d'accès aux derniers outils IA, et à la bibliothèque d'assets pour Max, avant un renouvellement automatique. Une version web est prévue pour l'automne 2026 mais n'était pas encore disponible."
     },
     "pros": [
       {
@@ -276,8 +283,8 @@
     ],
     "cons": [
       {
-        "en": "No prices are published for any license; only inclusions are shown on the product page.",
-        "fr": "Aucun prix n'est publié pour aucune licence ; seul le contenu de chaque licence est affiché sur la page produit."
+        "en": "Prices are only confirmed in EUR; a US-region USD price list wasn't reachable during research.",
+        "fr": "Les prix ne sont confirmés qu'en EUR ; une grille tarifaire USD pour la zone US n'a pas pu être atteinte pendant la recherche."
       },
       {
         "en": "The perpetual license only guarantees one year of access to the newest AI tools, so staying current likely needs renewal.",
@@ -290,22 +297,20 @@
         "fr": "Tu veux un éditeur photo IA tout-en-un avec une licence perpétuelle plutôt qu'un abonnement mensuel récurrent."
       },
       "avoidIf": {
-        "en": "You need to see a price before buying, or you need a web-based version right now.",
-        "fr": "Tu as besoin de voir un prix avant d'acheter, ou tu as besoin d'une version web dès maintenant."
+        "en": "You need a web-based version right now, since Luminar on Web is not yet available.",
+        "fr": "Tu as besoin d'une version web dès maintenant, car Luminar on Web n'est pas encore disponible."
       },
       "threshold": {
-        "en": "Desktop Only is the cheapest listed license but only guarantees one year of newest-AI-tool access; needing multiple devices or ongoing new features points to All Platforms or the Max subscription instead.",
-        "fr": "Desktop Only est la licence la moins chère affichée mais ne garantit qu'un an d'accès aux derniers outils IA ; pour plusieurs appareils ou des nouveautés continues, il faut plutôt All Platforms ou l'abonnement Max."
+        "en": "Desktop Only (EUR 129) is the cheapest license but only guarantees one year of newest-AI-tool access; needing mobile access points to All Platforms (EUR 159), and wanting the Luminar Prime preset/LUT/course library points to Max (EUR 199).",
+        "fr": "Desktop Only (129 EUR) est la licence la moins chère mais ne garantit qu'un an d'accès aux derniers outils IA ; pour l'accès mobile, prends All Platforms (159 EUR), et pour la bibliothèque de préréglages/LUTs/cours Luminar Prime, prends Max (199 EUR)."
       }
     }
   },
   "unknowns": [
-    "Exact license prices in USD/EUR were not visible on the fetched page and need direct pricing-page verification.",
-    "Whether the Max License includes desktop-only or all-platform access was not fully clarified."
+    "USD (US-region) prices were not reachable in this session; only the EUR price list was served.",
+    "The Advantage/renewal price charged after the first 365 days of AI-tool access (for all three licenses) is not stated on the pricing page."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "All three plans are marked onQuote with no price captured, but Luminar Neo is a consumer product sold directly online, not a sales-quote business; this likely reflects a page that didn't render prices during the fetch rather than an actual quote-only model. Re-verify exact prices on skylum.com/luminar-neo before merging."
-  ],
-  "hold": "compared Desktop Only License has no price in the dossier; confirm the perpetual price on skylum.com"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

@@ -19,15 +19,15 @@
       "id": "s1",
       "url": "https://simpletexting.com/pricing/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "SimpleTexting pricing"
+      "accessedOn": "2026-10-01",
+      "title": "SimpleTexting pricing (plan-only cost, number add-on excluded)"
     }
   ],
   "pricing": {
     "model": "usage",
     "currency": "USD",
     "pricingUrl": "https://simpletexting.com/pricing/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -45,14 +45,17 @@
         "minSeats": null,
         "price": {
           "monthly": 29,
-          "annualPerMonth": null,
+          "annualPerMonth": 23.2,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "500 monthly text credits, unlimited contacts and keywords, 3 user seats included, MMS at 3 credits each, extra credits billed at 5.5 cents each.",
-            "fr": "500 crédits SMS par mois, contacts et mots-clés illimités, 3 sièges utilisateur inclus, MMS à 3 crédits chacun, crédits supplémentaires facturés 5,5 cents."
+            "en": "500 text credits/month on monthly billing ($29/mo), or 6,000 credits/year (equivalent to 500/mo) at $23.20/mo billed yearly ($278.40/year), a 20% saving versus monthly. Unlimited contacts and keywords, 3 user seats included, MMS at 3 credits each, extra credits billed at 5.5 cents each. A local number ($10/mo) and $4 one-time carrier registration are billed separately as add-ons, not part of the plan price.",
+            "fr": "500 crédits SMS par mois en facturation mensuelle (29 $/mois), ou 6 000 crédits par an (équivalent 500/mois) à 23,20 $/mois en facturation annuelle (278,40 $/an), soit 20 % d'économie par rapport au mensuel. Contacts et mots-clés illimités, 3 sièges utilisateur inclus, MMS à 3 crédits chacun, crédits supplémentaires facturés 5,5 cents. Un numéro local (10 $/mois) et des frais uniques d'activation opérateur de 4 $ sont facturés séparément en option, hors prix du forfait.",
+            "sourceIds": [
+              "s1"
+            ]
           }
         ],
         "sourceIds": [
@@ -81,6 +84,13 @@
       {
         "en": "No credit card is required for the free trial, but there is no permanent free plan.",
         "fr": "Aucune carte bancaire n'est demandée pour l'essai gratuit, mais il n'existe pas de plan gratuit permanent.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pricing scales by monthly text credit volume (500 to 50,000+); the $29/mo (or $23.20/mo annual) figures are the entry tier only, and higher-volume plans cost more. The estimated-cost widget on the pricing page bundles in a $10/mo local number by default; that add-on is excluded from the plan price here.",
+        "fr": "Le prix augmente avec le volume de crédits SMS mensuels (de 500 à 50 000+) ; les montants de 29 $/mois (ou 23,20 $/mois en annuel) ne couvrent que le palier d'entrée, les paliers supérieurs coûtent plus cher. Le simulateur de coût de la page tarifs inclut par défaut un numéro local à 10 $/mois ; cette option est exclue du prix du forfait indiqué ici.",
         "sourceIds": [
           "s1"
         ]
@@ -284,14 +294,12 @@
     }
   },
   "unknowns": [
-    "The fetched annual price ($398.40/year = $33.20/month) is higher per month than the $29/month plan, which is inconsistent with typical 'save with annual billing' framing; likely reflects a different bundled credit allowance than the monthly plan, but this was not confirmed on the page, so annualPerMonth was left null pending local re-verification.",
     "Full list of higher-volume plan tiers and their prices was not itemized on the fetched page."
   ],
   "reviewNotes": [
-    "Only one source (s1) was collected for this dossier; rating evidence and editorial text rely entirely on the pricing page. A second source (features/docs page) would strengthen puissance and reversibilite scoring.",
-    "Annual pricing figure noted in unknowns looks inconsistent (higher per-month than monthly plan) and should be re-checked on the vendor site before publishing."
+    "Only one source (s1) was collected for this dossier; rating evidence and editorial text rely entirely on the pricing page. A second source (features/docs page) would strengthen puissance and reversibilite scoring."
   ],
   "completedLocallyOn": "2026-09-30",
   "conflicts": [],
-  "hold": "annual price per month higher than monthly price, check on the vendor site"
+  "priceCheckedOn": "2026-10-01"
 }

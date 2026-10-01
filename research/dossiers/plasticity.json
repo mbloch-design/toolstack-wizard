@@ -21,6 +21,7 @@
       "url": "https://www.plasticity.xyz/",
       "tier": 1,
       "accessedOn": "2026-09-25",
+      "checkedOn": "2026-10-01",
       "title": "Plasticity homepage / pricing"
     }
   ],
@@ -28,7 +29,7 @@
     "model": "one_time",
     "currency": "USD",
     "pricingUrl": "https://www.plasticity.xyz/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -307,11 +308,7 @@
   "unknowns": [
     "Whether renewing updates after 12 months requires an additional fee is not stated on the page reviewed"
   ],
-  "conflicts": [
-    "Seed data listed an Indie/Studio one-time price of $149; the live pricing page shows Indie at $175 and Studio at $299."
-  ],
-  "reviewNotes": [
-    "Price discrepancy versus the catalogue's seed data: seed listed a one-time price of $149 for Indie/Studio, but the live pricing page on plasticity.xyz shows Indie at $175 and Studio at $299. Amounts in this dossier were kept as read on the live page per the no-change rule; the catalogue entry should be checked against plasticity.xyz before merging."
-  ],
-  "hold": "seed price 149 USD conflicts with live page (Indie 175, Studio 299); confirm on plasticity.xyz"
+  "conflicts": [],
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

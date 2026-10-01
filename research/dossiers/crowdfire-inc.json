@@ -122,6 +122,8 @@
   ],
   "reviewNotes": [
     "Statut produit en conflit : crowdfireapp.com decrit un pivot vers une plateforme media le 25/09/2026, alors que des sources tierces independantes rapportent un arret du service de gestion des reseaux sociaux et une suppression des donnees utilisateurs mi-2025. A verifier avant toute publication ; la fiche ne doit pas etre mise en avant si le produit n'est plus vendu.",
-    "Prix de 9,99 $/mois (plan Plus) base sur des tarifs historiques tiers (Social Champ), non confirme sur une page de tarifs actuelle."
-  ]
+    "Prix de 9,99 $/mois (plan Plus) base sur des tarifs historiques tiers (Social Champ), non confirme sur une page de tarifs actuelle.",
+    "Reverifie le 2026-10-01 : crowdfireapp.com/pricing-page/ se charge mais n'affiche aucune grille tarifaire ; le site confirme le pivot vers une plateforme media, sans plan payant publie pour l'ancien produit de gestion des reseaux sociaux."
+  ],
+  "hold": "aucune page de tarifs publique : crowdfireapp.com/pricing-page/ ne montre plus aucun prix, le site a pivote vers une plateforme media (journalisme IA/Web3) ; statut produit (gestion des reseaux sociaux active, arretee ou remplacee) et prix restent non confirmables sur source officielle"
 }

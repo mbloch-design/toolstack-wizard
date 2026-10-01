@@ -34,8 +34,9 @@
       "id": "s3",
       "url": "https://gitkraken.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "GitKraken plans pricing"
+      "accessedOn": "2026-10-01",
+      "checkedOn": "2026-10-01",
+      "title": "GitKraken plans pricing, read live in a browser (EUR shown to this session, no region/currency switch found)"
     },
     {
       "id": "s4",
@@ -198,8 +199,8 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "GitKraken's pricing page renders plan prices via JavaScript; the exact per-seat dollar amounts for Pro, Advanced and Business were not retrievable through static page fetches and must be confirmed on gitkraken.com/pricing before publishing.",
-        "fr": "La page de tarifs de GitKraken affiche les prix via JavaScript ; les montants exacts par siège pour Pro, Advanced et Business n'ont pas pu être récupérés par une simple lecture statique de la page et doivent être confirmés sur gitkraken.com/pricing avant publication.",
+        "en": "GitKraken's pricing page renders plan prices via JavaScript, so a static fetch returns nothing; a live-browser read on 2026-10-01 did show prices (Pro EUR 8, Advanced EUR 14, Business EUR 18 per seat/month, paid annually), but only in EUR, with no region or currency switcher found to confirm the USD figure for this dossier's US region.",
+        "fr": "La page de tarifs de GitKraken affiche les prix via JavaScript, donc une lecture statique ne renvoie rien ; une lecture en direct dans un navigateur le 2026-10-01 a bien montré des prix (Pro 8 €, Advanced 14 €, Business 18 € par siège/mois, facturé annuellement), mais seulement en euros, sans sélecteur de région ou de devise trouvé pour confirmer le montant en dollars pour la région US de cette fiche.",
         "sourceIds": [
           "s3"
         ]
@@ -415,13 +416,12 @@
     }
   },
   "unknowns": [
-    "Exact monthly/annual per-seat USD prices for GitLens Pro, Advanced and Business are not statically retrievable from gitkraken.com/pricing (JS-rendered checkout); needs a live-browser check before publishing.",
-    "Whether taxes are included in listed prices is not stated."
+    "Whether taxes are included in listed prices is not stated (the page says 'Listed prices do not include tax')."
   ],
   "conflicts": [],
   "reviewNotes": [
     "Removed \"vercel\" from alternatives: it is a deployment platform, not a Git-visualization tool, so it does not cover GitLens's main need per the brief's alternatives rule. No catalogue slug for a same-need Git GUI competitor (GitHub Desktop, Sourcetree, GitKraken, Fork) was found, so alternatives is empty and both real competitors are listed under missingAlternatives instead.",
-    "Pro/Advanced/Business seat prices are JS-rendered and not confirmed; regularPriceUnknown is set to true and comparePlanKey left null pending a live pricing check."
+    "Re-checked gitkraken.com/pricing live on 2026-10-01: prices ARE now visible (no longer blank JS placeholders), but the page serves EUR to this session with no region or currency switcher: Pro EUR 8/seat/mo paid annually (first seat currently EUR 3.20/mo, a 60%-off-first-year promo), Advanced EUR 14/seat/mo paid annually, Business EUR 18/seat/mo paid annually, Enterprise on quote. The dossier's region is US/USD and no USD figure could be confirmed from an official source in this session."
   ],
-  "hold": "paid prices rendered by script, not read; the fiche must not say the price is not public"
+  "hold": "official GitKraken pricing page confirmed live but only in EUR; USD price for the US region not accessible from this session"
 }

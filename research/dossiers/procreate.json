@@ -28,13 +28,27 @@
       "tier": 2,
       "accessedOn": "2026-09-25",
       "title": "Procreate pricing breakdown (third-party, used to corroborate App Store prices)"
+    },
+    {
+      "id": "s3",
+      "url": "https://apps.apple.com/us/app/procreate/id425073498",
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "title": "Procreate on the App Store (official, US storefront)"
+    },
+    {
+      "id": "s4",
+      "url": "https://itunes.apple.com/lookup?id=363433636&entity=software&country=us",
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "title": "Apple iTunes Search API lookup of Savage Interactive's App Store listings (Procreate, Procreate Pocket, Procreate Dreams), official Apple data"
     }
   ],
   "pricing": {
     "model": "one_time",
     "currency": "USD",
-    "pricingUrl": "https://apps.apple.com/app/procreate/id425073498",
-    "verifiedOn": "2026-09-25",
+    "pricingUrl": "https://apps.apple.com/us/app/procreate/id425073498",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -63,7 +77,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s3"
         ]
       },
       {
@@ -74,7 +88,7 @@
         "price": {
           "monthly": null,
           "annualPerMonth": null,
-          "oneTime": 4.99
+          "oneTime": 5.99
         },
         "onQuote": false,
         "keyLimits": [
@@ -84,7 +98,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s4"
         ]
       },
       {
@@ -105,7 +119,7 @@
           }
         ],
         "sourceIds": [
-          "s1"
+          "s4"
         ]
       }
     ],
@@ -113,10 +127,10 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Procreate.com's homepage does not display pricing directly; the $12.99/$4.99 figures were corroborated via a third-party pricing tracker referencing the App Store listing and should be re-verified against the App Store directly.",
-        "fr": "La page d'accueil de Procreate.com n'affiche pas directement les prix ; les montants de 12,99 $/4,99 $ ont été corroborés via un comparateur tiers qui se réfère à la fiche App Store, et doivent être revérifiés directement sur l'App Store.",
+        "en": "Procreate.com's homepage does not display pricing directly; prices are confirmed on the App Store itself: Procreate $12.99, Procreate Pocket $5.99 (the previous research pass had recorded $4.99 from a third-party tracker, which was wrong), Procreate Dreams $12.99.",
+        "fr": "La page d'accueil de Procreate.com n'affiche pas directement les prix ; ils sont confirmés directement sur l'App Store : Procreate 12,99 $, Procreate Pocket 5,99 $ (le passage de recherche précédent avait retenu 4,99 $ d'après un comparateur tiers, ce qui était faux), Procreate Dreams 12,99 $.",
         "sourceIds": [
-          "s2"
+          "s3", "s4"
         ]
       }
     ]
@@ -176,9 +190,7 @@
     }
   ],
   "missingAlternatives": [],
-  "unknowns": [
-    "Exact current App Store price for Procreate and Procreate Pocket was not confirmed directly from apple.com or procreate.com in this session; figures come from a third-party price tracker."
-  ],
+  "unknowns": [],
   "conflicts": [],
   "rating": {
     "valeurAjoutee": 5,
@@ -191,7 +203,7 @@
         "en": "A single purchase of $12.99 covers the full app and all future updates, with no recurring subscription, a strong value anchor versus subscription illustration tools.",
         "fr": "Un achat unique de 12,99 $ couvre l'application complète et toutes les mises à jour futures, sans abonnement récurrent, un ancrage de valeur fort face aux outils d'illustration par abonnement.",
         "sourceIds": [
-          "s2"
+          "s3"
         ]
       },
       "simplicite": {
@@ -254,8 +266,8 @@
       "fr": "Procreate est une application de peinture et d'illustration numérique pour iPad, vendue en achat unique sans abonnement."
     },
     "longDescription": {
-      "en": "Procreate is a digital painting and illustration app built specifically for iPad, used by illustrators and concept artists for layered artwork, sketching and brush-based painting. The ecosystem extends to Procreate Pocket for iPhone and Procreate Dreams, a separate animation app from the same publisher.\n\nEach app is a one-time purchase: Procreate costs $12.99, Procreate Pocket $4.99, and Procreate Dreams $12.99, with no subscription and all future updates included. It suits illustrators and designers who want a professional painting tool on iPad without a recurring fee, though it stays limited to iOS with no Windows, Android or web version.",
-      "fr": "Procreate est une application de peinture et d'illustration numérique conçue pour iPad, utilisée par des illustrateurs et des artistes concept pour des œuvres en calques, des croquis et de la peinture au pinceau. L'écosystème s'étend à Procreate Pocket pour iPhone et à Procreate Dreams, une application d'animation distincte du même éditeur.\n\nChaque application est un achat unique : Procreate coûte 12,99 $, Procreate Pocket 4,99 $, et Procreate Dreams 12,99 $, sans abonnement et avec les mises à jour futures incluses. Il convient aux illustrateurs et designers qui veulent un outil de peinture professionnel sur iPad sans frais récurrents, même s'il reste limité à iOS, sans version Windows, Android ou web."
+      "en": "Procreate is a digital painting and illustration app built specifically for iPad, used by illustrators and concept artists for layered artwork, sketching and brush-based painting. The ecosystem extends to Procreate Pocket for iPhone and Procreate Dreams, a separate animation app from the same publisher.\n\nEach app is a one-time purchase: Procreate costs $12.99, Procreate Pocket $5.99, and Procreate Dreams $12.99, with no subscription and all future updates included. It suits illustrators and designers who want a professional painting tool on iPad without a recurring fee, though it stays limited to iOS with no Windows, Android or web version.",
+      "fr": "Procreate est une application de peinture et d'illustration numérique conçue pour iPad, utilisée par des illustrateurs et des artistes concept pour des œuvres en calques, des croquis et de la peinture au pinceau. L'écosystème s'étend à Procreate Pocket pour iPhone et à Procreate Dreams, une application d'animation distincte du même éditeur.\n\nChaque application est un achat unique : Procreate coûte 12,99 $, Procreate Pocket 5,99 $, et Procreate Dreams 12,99 $, sans abonnement et avec les mises à jour futures incluses. Il convient aux illustrateurs et designers qui veulent un outil de peinture professionnel sur iPad sans frais récurrents, même s'il reste limité à iOS, sans version Windows, Android ou web."
     },
     "pros": [
       {
@@ -287,13 +299,12 @@
         "fr": "Tu as besoin d'une application de peinture sur Windows, Android ou le web, ou d'une collaboration cloud en temps réel."
       },
       "threshold": {
-        "en": "A one-time $12.99 for Procreate on iPad, or $4.99 for Procreate Pocket on iPhone.",
-        "fr": "12,99 $ en achat unique pour Procreate sur iPad, ou 4,99 $ pour Procreate Pocket sur iPhone."
+        "en": "A one-time $12.99 for Procreate on iPad, or $5.99 for Procreate Pocket on iPhone.",
+        "fr": "12,99 $ en achat unique pour Procreate sur iPad, ou 5,99 $ pour Procreate Pocket sur iPhone."
       }
     }
   },
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": [
-    "Procreate and Procreate Pocket prices ($12.99 / $4.99) come from a third-party pricing tracker, not apple.com or procreate.com directly; reverify on the App Store listing."
-  ]
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

@@ -18,39 +18,27 @@
   "sources": [
     {
       "id": "s1",
-      "url": "https://1of10.com/blog/vidiq-pricing/",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "vidIQ Pricing 2026: Every Plan and Cost Compared"
-    },
-    {
-      "id": "s2",
-      "url": "https://comparedge.com/tools/vidiq-ai/pricing",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "vidIQ AI Pricing 2026: Free, Boost & Max Plans"
-    },
-    {
-      "id": "s3",
-      "url": "https://vidiq.com",
+      "url": "https://vidiq.com/pricing/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "VidIQ homepage"
+      "accessedOn": "2026-10-01",
+      "title": "vidIQ Pricing & Plans (official, EUR/EU pricing as geo-detected)"
     }
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://vidiq.com/pricing/",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-01",
+    "region": "EU (geo-detected; no manual region/currency selector found on vidiq.com)",
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": { "en": "150 AI credits per month; core YouTube analytics via browser extension", "fr": "150 crédits IA par mois ; statistiques YouTube essentielles via l'extension navigateur" },
+      "limits": {
+        "en": "150 AI credits per month; core YouTube analytics via browser extension",
+        "fr": "150 crédits IA par mois ; statistiques YouTube essentielles via l'extension navigateur"
+      },
       "sourceIds": [
-        "s1",
-        "s2"
+        "s1"
       ]
     },
     "trial": null,
@@ -68,15 +56,15 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "150 AI credits per month, basic browser-extension analytics only.", "fr": "150 crédits IA par mois, statistiques limitées à l'extension navigateur de base.",
+            "en": "150 AI credits per month, basic browser-extension analytics only.",
+            "fr": "150 crédits IA par mois, statistiques limitées à l'extension navigateur de base.",
             "sourceIds": [
-              "s2"
+              "s1"
             ]
           }
         ],
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       },
       {
@@ -85,14 +73,15 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": 39,
+          "monthly": 19,
           "annualPerMonth": 16.58,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Only tier that can be paid monthly; annual billing drops the effective price to about $199/year.", "fr": "Seule offre pouvant être payée au mois ; la facturation annuelle fait baisser le prix effectif à environ 199 $ par an.",
+            "en": "Billed monthly at €19/month, or €16.58/month billed annually (≈€199/year, saving €29/year).",
+            "fr": "Facturation mensuelle à 19 €/mois, ou 16,58 €/mois en facturation annuelle (≈199 €/an, soit 29 € d'économie par an).",
             "sourceIds": [
               "s1"
             ]
@@ -108,14 +97,15 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": null,
-          "annualPerMonth": 39,
+          "monthly": 39,
+          "annualPerMonth": 31,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Annual billing only (about $468/year); 6,000 AI credits/month, up to 3x more AI Coach conversations, up to 11 hours of short-form clip generation.", "fr": "Facturation annuelle uniquement (environ 468 $ par an) ; 6 000 crédits IA par mois, jusqu'à 3 fois plus de conversations avec AI Coach, jusqu'à 11 heures de génération de clips courts.",
+            "en": "Available monthly at €39/month or €31/month billed annually (≈€372/year, saving €96/year); 6,000 AI credits/month, up to 3x more AI Coach conversations, up to 11 hours of short-form clip generation.",
+            "fr": "Disponible au mois à 39 €/mois ou à 31 €/mois en facturation annuelle (≈372 €/an, soit 96 € d'économie par an) ; 6 000 crédits IA par mois, jusqu'à 3 fois plus de conversations avec AI Coach, jusqu'à 11 heures de génération de clips courts.",
             "sourceIds": [
               "s1"
             ]
@@ -130,8 +120,8 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Max and the Coaching add-on are annual-only; only Boost offers a monthly billing option.",
-        "fr": "Max et le module Coaching sont facturés uniquement à l'année ; seul Boost propose un paiement mensuel.",
+        "en": "Prices confirmed on vidiq.com on 2026-10-01 render in EUR (geo-detected EU pricing); the site has no manual region/currency selector, and the official US/USD pricing endpoint returned HTTP 429 (bot protection) on every attempt this session, so the USD price shown to US visitors was not independently re-verified. Both Boost and Max are available with monthly or annual billing (annual is cheaper); Max is not annual-only as previously noted.",
+        "fr": "Prix confirmés sur vidiq.com le 01/10/2026, affichés en EUR (géolocalisation UE) ; le site n'a pas de sélecteur de région/devise manuel, et la page officielle US/USD a renvoyé une erreur HTTP 429 (protection anti-bot) à chaque tentative cette session, donc le prix en dollars affiché aux visiteurs américains n'a pas pu être reconfirmé indépendamment. Boost et Max sont tous deux disponibles en facturation mensuelle ou annuelle (l'annuel est moins cher) ; Max n'est pas réservé à l'annuel contrairement à ce qui était indiqué avant.",
         "sourceIds": [
           "s1"
         ]
@@ -143,21 +133,21 @@
       {
         "en": "YouTube keyword and topic research to find video ideas with search demand.",
         "sourceIds": [
-          "s3"
+          "s1"
         ],
         "fr": "Recherche de mots-clés et de sujets YouTube pour trouver des idées de vidéos qui ont de la demande."
       },
       {
         "en": "AI-generated titles, descriptions, tags and thumbnail suggestions for a channel's videos.",
         "sourceIds": [
-          "s3"
+          "s1"
         ],
         "fr": "Titres, descriptions, tags et suggestions de miniatures générés par IA pour les vidéos d'une chaîne."
       },
       {
         "en": "Competitor and channel analytics beyond YouTube Studio's native data.",
         "sourceIds": [
-          "s3"
+          "s1"
         ],
         "fr": "Analyse des concurrents et des chaînes au-delà des données natives de YouTube Studio."
       },
@@ -173,14 +163,14 @@
       {
         "en": "Full analytics and AI features require the Chrome/browser extension alongside the web app.",
         "sourceIds": [
-          "s2"
+          "s1"
         ],
         "fr": "Les analyses complètes et les fonctions IA demandent l'extension de navigateur en plus de l'application web."
       },
       {
         "en": "Free plan is capped at 150 AI credits per month, well below what active channel management needs.",
         "sourceIds": [
-          "s2"
+          "s1"
         ],
         "fr": "Le plan gratuit est plafonné à 150 crédits IA par mois, bien en dessous des besoins d'une chaîne active."
       },
@@ -197,7 +187,7 @@
         "name": "YouTube",
         "slug": null,
         "sourceIds": [
-          "s3"
+          "s1"
         ]
       }
     ],
@@ -248,8 +238,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Boost drops to about $16.58/month if billed annually (about $199/year), reasonable for a channel that needs consistent keyword research and AI titles, but the free plan's 150 AI credits/month cover very little.",
-        "fr": "Boost descend à environ 16,58 $/mois en facturation annuelle (environ 199 $/an), raisonnable pour une chaîne qui a besoin de recherche de mots-clés et de titres IA en continu, mais les 150 crédits IA/mois du plan gratuit couvrent très peu d'usage.",
+        "en": "Boost drops to about €16.58/month if billed annually (about €199/year), reasonable for a channel that needs consistent keyword research and AI titles, but the free plan's 150 AI credits/month cover very little.",
+        "fr": "Boost descend à environ 16,58 €/mois en facturation annuelle (environ 199 €/an), raisonnable pour une chaîne qui a besoin de recherche de mots-clés et de titres IA en continu, mais les 150 crédits IA/mois du plan gratuit couvrent très peu d'usage.",
         "sourceIds": [
           "s1"
         ]
@@ -265,15 +255,14 @@
         "en": "Delivers keyword/topic research, AI-generated titles/descriptions/thumbnails and competitor analytics beyond YouTube Studio's native data, as advertised.",
         "fr": "Fournit la recherche de mots-clés/sujets, des titres/descriptions/miniatures générés par IA et des analyses concurrentielles au-delà des données natives de YouTube Studio, comme annoncé.",
         "sourceIds": [
-          "s3"
+          "s1"
         ]
       },
       "puissance": {
         "en": "Adds AI Coach and short-form clip generation from long-form video on Max, but full analytics and AI features require installing a browser extension alongside the web app.",
         "fr": "Ajoute un AI Coach et la génération de clips courts à partir de vidéos longues sur Max, mais les analyses et fonctions IA complètes demandent d'installer une extension navigateur en plus de l'appli web.",
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       },
       "reversibilite": {
@@ -296,8 +285,8 @@
       "fr": "Recherche de mots-clés YouTube et titres, descriptions et miniatures générés par IA, avec des analyses concurrentielles au-delà de YouTube Studio, via une extension gratuite ou payante."
     },
     "longDescription": {
-      "en": "VidIQ helps YouTube creators find video topics with real search demand, then generates AI-suggested titles, descriptions, tags and thumbnails, alongside competitor and channel analytics that go beyond YouTube Studio's native data.\n\nThe free plan gives 150 AI credits a month through the browser extension; Boost runs $39/month or drops to about $16.58/month billed annually, and Max (annual-only, about $39/month) adds an AI Coach and short-form clip generation from long-form video. Higher tiers lock you into annual billing with no monthly option. It suits a solo creator actively growing a channel who wants data-backed video ideas.",
-      "fr": "VidIQ aide les créateurs YouTube à trouver des sujets de vidéo avec une réelle demande de recherche, puis génère des titres, descriptions, tags et miniatures suggérés par IA, avec des analyses de concurrents et de chaîne qui vont au-delà des données natives de YouTube Studio.\n\nLe plan gratuit donne 150 crédits IA par mois via l'extension navigateur ; Boost coûte 39 $/mois ou environ 16,58 $/mois en facturation annuelle, et Max (annuel uniquement, environ 39 $/mois) ajoute un AI Coach et la génération de clips courts à partir de vidéos longues. Les paliers supérieurs imposent une facturation annuelle sans option mensuelle. Il convient à un créateur solo qui développe activement sa chaîne et veut des idées de vidéos appuyées sur des données."
+      "en": "VidIQ helps YouTube creators find video topics with real search demand, then generates AI-suggested titles, descriptions, tags and thumbnails, alongside competitor and channel analytics that go beyond YouTube Studio's native data.\n\nThe free plan gives 150 AI credits a month through the browser extension; Boost runs €19/month or drops to about €16.58/month billed annually, and Max (€39/month, or about €31/month billed annually) adds an AI Coach and short-form clip generation from long-form video. Both paid tiers offer monthly or annual billing, with annual priced lower. It suits a solo creator actively growing a channel who wants data-backed video ideas.",
+      "fr": "VidIQ aide les créateurs YouTube à trouver des sujets de vidéo avec une réelle demande de recherche, puis génère des titres, descriptions, tags et miniatures suggérés par IA, avec des analyses de concurrents et de chaîne qui vont au-delà des données natives de YouTube Studio.\n\nLe plan gratuit donne 150 crédits IA par mois via l'extension navigateur ; Boost coûte 19 €/mois ou environ 16,58 €/mois en facturation annuelle, et Max (39 €/mois, ou environ 31 €/mois en facturation annuelle) ajoute un AI Coach et la génération de clips courts à partir de vidéos longues. Les deux paliers payants proposent une facturation mensuelle ou annuelle, l'annuelle étant moins chère. Il convient à un créateur solo qui développe activement sa chaîne et veut des idées de vidéos appuyées sur des données."
     },
     "pros": [
       {
@@ -305,8 +294,8 @@
         "fr": "Combine recherche de mots-clés, suggestions IA de titres/miniatures et analyses concurrentielles dans un seul outil."
       },
       {
-        "en": "Boost's annual price (about $16.58/month) is affordable for an active solo channel.",
-        "fr": "Le prix annuel de Boost (environ 16,58 $/mois) est abordable pour une chaîne solo active."
+        "en": "Boost's annual price (about €16.58/month) is affordable for an active solo channel.",
+        "fr": "Le prix annuel de Boost (environ 16,58 €/mois) est abordable pour une chaîne solo active."
       }
     ],
     "cons": [
@@ -329,8 +318,8 @@
         "fr": "Tu publies seulement de temps en temps et tu n'utiliseras pas plus que les 150 crédits IA mensuels du plan gratuit."
       },
       "threshold": {
-        "en": "Boost's annual rate (about $199/year) is the entry point worth comparing against the time cost of doing keyword research and title testing manually.",
-        "fr": "Le tarif annuel de Boost (environ 199 $/an) est le point d'entrée à comparer au temps que prendrait une recherche de mots-clés et un test de titres à la main."
+        "en": "Boost's annual rate (about €199/year) is the entry point worth comparing against the time cost of doing keyword research and title testing manually.",
+        "fr": "Le tarif annuel de Boost (environ 199 €/an) est le point d'entrée à comparer au temps que prendrait une recherche de mots-clés et un test de titres à la main."
       },
       "billingTraps": {
         "en": "Max and the Coaching add-on only bill annually; there's no monthly option above the Boost plan.",
@@ -339,11 +328,9 @@
     }
   },
   "unknowns": [
-    "vidiq.com returned HTTP 429 (bot protection) on repeated direct fetch attempts during this session; pricing and feature facts above are sourced from independent 2026 pricing round-ups (tier 2), not the official pricing page directly.",
-    "Exact currency handling (tax inclusion, regional pricing) not confirmed from an official source."
+    "Exact currency/price shown to US visitors (USD) could not be confirmed this session; vidiq.com geo-detects region with no manual override, and the US endpoint was blocked (HTTP 429) on every attempt."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "vidIQ's official pricing page (vidiq.com/pricing) returned HTTP 429 during research; pricing and feature facts here come from third-party pricing round-ups (tier 2 sources), not the official page directly, and should be re-verified on vidiq.com before publishing these prices."
-  ]
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

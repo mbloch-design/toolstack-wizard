@@ -18,57 +18,104 @@
   "sources": [
     {
       "id": "s1",
-      "url": "https://www.artstation.com/subscribe/pro",
+      "url": "https://www.artstation.com/subscribe/compare",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "ArtStation subscribe/pro page (blocked by anti-bot in this session)"
-    },
-    {
-      "id": "s2",
-      "url": "https://magazine.artstation.com/2018/06/pro-member-pricing/",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "ArtStation Magazine - Pro pricing announcement"
+      "accessedOn": "2026-10-01",
+      "title": "ArtStation Compare Free, Pro and Studio (official, plus /subscribe/pro and /subscribe/studio)"
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://www.artstation.com/subscribe/compare",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Free portfolio and community access with basic features; ad-supported.",
-        "fr": "Portfolio gratuit et accès à la communauté avec des fonctions de base ; financé par la publicité."
+        "en": "Free portfolio and community access with basic features.",
+        "fr": "Portfolio gratuit et accès à la communauté avec des fonctions de base.",
+        "sourceIds": [
+          "s1"
+        ]
       },
       "sourceIds": [
-        "s2"
+        "s1"
       ]
     },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Basic portfolio and community access without custom domain, advanced analytics or priority support.",
+            "fr": "Portfolio de base et accès à la communauté sans domaine personnalisé, analyses avancées ni support prioritaire.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": 9.95,
-          "annualPerMonth": 4.98,
+          "monthly": 15,
+          "annualPerMonth": 9.95,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Custom domain support, advanced analytics, priority support, ad-free experience.",
-            "fr": "Domaine personnalisé, analyses avancées, support prioritaire, expérience sans publicité."
+            "en": "$15/month on monthly billing, or $9.95/month billed annually ($119.40/year). Custom domain support, advanced analytics, priority support, higher Marketplace revenue share, top placement in search.",
+            "fr": "15 $/mois en facturation mensuelle, ou 9,95 $/mois en facturation annuelle (119,40 $/an). Domaine personnalisé, analyses avancées, support prioritaire, meilleure part de revenus sur le Marketplace, mise en avant dans les recherches.",
+            "sourceIds": [
+              "s1"
+            ]
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
+        ]
+      },
+      {
+        "key": "studio",
+        "name": "Studio",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 29.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Annual billing only: $29.99/month ($359.88/year). Adds multiple team admins and studio-level visibility for companies hiring or showcasing a studio.",
+            "fr": "Facturation annuelle uniquement : 29,99 $/mois (359,88 $/an). Ajoute plusieurs administrateurs d'équipe et une visibilité studio pour les entreprises qui recrutent ou se présentent.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
         ]
       }
     ],
@@ -76,10 +123,10 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "The official artstation.com pricing pages returned HTTP 403 (anti-bot) in this session; the $9.95/mo (monthly) and $4.98/mo (annual) figures come from a secondary source (ArtStation Magazine) and a Studio tier at $29.99/mo was mentioned in search snippets but not independently confirmed on the official page.",
-        "fr": "Les pages de tarifs officielles d'artstation.com ont renvoyé une erreur 403 (anti-bot) dans cette session ; les montants de 9,95 $/mois (mensuel) et 4,98 $/mois (annuel) proviennent d'une source secondaire (ArtStation Magazine), et une offre Studio à 29,99 $/mois a été aperçue dans des extraits de recherche sans confirmation sur la page officielle.",
+        "en": "Prices confirmed directly on the official artstation.com/subscribe/pro, /subscribe/studio and /subscribe/compare pages on 2026-10-01 (accessible via browser; direct automated fetch was still blocked, HTTP 403). The previous $9.95/$4.98 figures from a secondary source were incorrect: Pro's actual monthly-billing price is $15/month ($9.95/month only applies to annual billing).",
+        "fr": "Prix confirmés directement sur les pages officielles artstation.com/subscribe/pro, /subscribe/studio et /subscribe/compare le 01/10/2026 (accessibles via navigateur ; la récupération automatisée directe restait bloquée, HTTP 403). Les montants précédents de 9,95 $/4,98 $ issus d'une source secondaire étaient inexacts : le prix réel de Pro en facturation mensuelle est 15 $/mois (9,95 $/mois ne s'applique qu'à la facturation annuelle).",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     ]
@@ -90,14 +137,14 @@
         "en": "Hosts online portfolios for concept, 3D and game artists with a searchable community feed.",
         "fr": "Héberge des portfolios en ligne pour artistes concept, 3D et jeu vidéo, avec un fil communautaire consultable.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       {
         "en": "Includes a marketplace for selling brushes, assets, tutorials and prints.",
         "fr": "Inclut une marketplace pour vendre pinceaux, assets, tutoriels et tirages.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     ],
@@ -106,14 +153,14 @@
         "en": "Free tier is ad-supported and lacks custom domain and advanced analytics.",
         "fr": "L'offre gratuite est financée par la publicité et n'a ni domaine personnalisé ni analyses avancées.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       {
         "en": "Primarily a visibility/portfolio platform, not a project management or client-delivery tool.",
         "fr": "C'est avant tout une plateforme de visibilité/portfolio, pas un outil de gestion de projet ou de livraison client.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     ],
@@ -146,38 +193,38 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Pro adds custom domain, advanced analytics and an ad-free experience for a modest fee (about $4.98 to $9.95/month), but the figures come from a secondary source, not the official pricing page, so value cannot be judged with full confidence.",
-        "fr": "Pro ajoute domaine personnalisé, analyses avancées et une expérience sans publicité pour un tarif modeste (environ 4,98 à 9,95 $/mois), mais les montants viennent d'une source secondaire et non de la page officielle, ce qui limite la confiance dans ce jugement.",
+        "en": "Pro adds custom domain, advanced analytics and priority support for $9.95 to $15/month depending on billing term, confirmed on the official pricing pages.",
+        "fr": "Pro ajoute domaine personnalisé, analyses avancées et support prioritaire pour 9,95 à 15 $/mois selon la durée d'engagement, confirmé sur les pages tarifaires officielles.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       "simplicite": {
         "en": "Neutral score: time-to-first-result and onboarding difficulty are not covered by the collected sources.",
         "fr": "Note neutre : le temps nécessaire pour un premier résultat utile ne figure pas dans les sources relevées.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       "utilisation": {
         "en": "Hosts searchable portfolios and a marketplace as promised, delivering visibility and sales channels for artists without a workaround mentioned in the facts.",
         "fr": "Héberge des portfolios consultables et une marketplace comme promis, offrant visibilité et canaux de vente aux artistes sans contournement mentionné dans les faits.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       "puissance": {
         "en": "Covers portfolio hosting and a creative marketplace but is not a project management or client-delivery tool, so its scope stays within a single, focused use case.",
         "fr": "Couvre l'hébergement de portfolio et une marketplace créative, mais ce n'est pas un outil de gestion de projet ou de livraison client ; son périmètre reste centré sur un seul usage.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       "reversibilite": {
         "en": "Neutral score: data export and portability are not covered by the collected sources.",
         "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     },
@@ -194,13 +241,9 @@
     }
   },
   "unknowns": [
-    "The official artstation.com pricing pages (subscribe/pro and subscribe/compare) returned HTTP 403 (anti-bot) in this session; Studio plan price and exact free-plan limits could not be independently verified against the primary source.",
-    "Whether a Plus tier (mentioned at $6.99/mo in some third-party sources) is still current could not be confirmed.",
     "No other catalogue slug matched ArtStation's portfolio/visibility use case closely enough to add as an alternative beyond Canva; Behance, the closest direct competitor, is not in the catalogue."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "Official pricing pages returned HTTP 403 in this session; the Pro price ($9.95/mo, $4.98/mo annual) came from a secondary source (ArtStation Magazine) and should be reconfirmed on artstation.com/subscribe/compare. A possible Studio tier ($29.99/mo, seen in search snippets) was not verified."
-  ],
-  "hold": "Pro price from a secondary source, official pages blocked"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

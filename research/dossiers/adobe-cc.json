@@ -19,14 +19,14 @@
       "id": "s1",
       "url": "https://www.adobe.com/fr/creativecloud/plans.html",
       "tier": 1,
-      "accessedOn": "2026-08-30",
+      "accessedOn": "2026-10-01",
       "title": "Adobe Creative Cloud plans (FR)"
     },
     {
       "id": "s2",
       "url": "https://www.adobe.com/creativecloud/plans.html",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-01",
       "title": "Adobe Creative Cloud plans (US)"
     }
   ],
@@ -34,7 +34,7 @@
     "model": "bundle_only",
     "currency": "EUR",
     "pricingUrl": "https://www.adobe.com/fr/creativecloud/plans.html",
-    "verifiedOn": "2026-08-30",
+    "verifiedOn": "2026-10-01",
     "region": "FR",
     "taxIncluded": true,
     "freePlan": {
@@ -120,20 +120,28 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 19.5,
+          "monthly": 40.32,
           "annualPerMonth": null,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "First-year discounted price, then renews at 40.32€/month. Requires eligibility verification.",
-            "fr": "Prix réduit la première année, puis renouvellement à 40,32 €/mois. Nécessite une vérification d'éligibilité."
+            "en": "Ongoing student/teacher price is 40.32€/month after eligibility verification; a first-year promotional price of 19.50€/month (75% off the 78.65€/month standard rate) applies to new subscribers only.",
+            "fr": "Le prix étudiant/enseignant courant est de 40,32 €/mois après vérification d'éligibilité ; un prix promotionnel de première année de 19,50 €/mois (-75 % sur le tarif standard de 78,65 €/mois) s'applique uniquement aux nouveaux abonnés.",
+            "sourceIds": [
+              "s1"
+            ]
           }
         ],
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "promoPrice": {
+          "monthly": 19.5,
+          "annualPerMonth": null,
+          "oneTime": null
+        }
       }
     ],
     "comparePlanKey": "individual",
@@ -244,11 +252,10 @@
   ],
   "missingAlternatives": [],
   "unknowns": [
-    "Whether the 14-day cancellation refund mentioned on the US page also applies to the French/EU plans was not verified.",
     "Exact Firefly credit allowance included by default in the Pro individual plan was not itemized on the fetched pages."
   ],
   "conflicts": [
-    "The French pricing page (78.65€/mo, TTC, individual Pro) and the US pricing page (promotional $34.99/mo then $69.99/mo) show materially different price structures for the same plan name, reflecting regional pricing rather than a data error."
+    "The French pricing page (78.65€/mo TTC, individual Pro, confirmed 2026-10-01) and the US pricing page ($69.99/mo regular, individual Pro, confirmed 2026-10-01) show materially different price structures for the same plan name; this is genuine regional pricing, not a data error. ToolTrim displays the French/EUR price by default (pricing.region = FR), matching the existing dossier currency and this site's French-first audience."
   ],
   "completedLocallyOn": "2026-09-30",
   "rating": {
@@ -368,9 +375,6 @@
       }
     }
   },
-  "reviewNotes": [
-    "The Students and teachers plan's 19.50€/month price is a first-year promotional rate that renews at 40.32€/month per the dossier's own facts; verify current terms on Adobe's site before publishing.",
-    "French (78.65€/mo TTC) and US ($34.99 promo then $69.99/mo) pricing pages show materially different structures for the same 'individual Pro' plan; already flagged in `conflicts`, but confirm which region ToolTrim should display by default."
-  ],
-  "hold": "French and US pricing pages disagree; confirm the default region and price"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

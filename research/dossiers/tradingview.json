@@ -19,16 +19,16 @@
       "id": "s1",
       "url": "https://www.tradingview.com/pricing/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-01",
       "title": "TradingView pricing"
     }
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://www.tradingview.com/pricing/",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-01",
+    "region": "EU (page shown in EUR; TradingView prices by visitor region)",
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
@@ -74,7 +74,7 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 12.95,
+          "monthly": 14.95,
           "annualPerMonth": 12.95,
           "oneTime": null
         },
@@ -98,7 +98,7 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 29.95,
+          "monthly": 34.95,
           "annualPerMonth": 29.95,
           "oneTime": null
         },
@@ -122,7 +122,7 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 59.95,
+          "monthly": 69.95,
           "annualPerMonth": 59.95,
           "oneTime": null
         },
@@ -146,7 +146,7 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 199.95,
+          "monthly": 239.95,
           "annualPerMonth": 199.95,
           "oneTime": null
         },
@@ -169,11 +169,11 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Pricing page shows identical monthly and 'annual' per-month rates but frames annual billing as saving a fixed dollar amount per year; the underlying billing cadence difference could not be fully disentangled within budget.",
+        "en": "The pricing page defaults to the annual-billing toggle, which shows a lower 'special price' per month (e.g. Essential 12.95 EUR/mo); switching to the monthly toggle shows the true month-to-month rate (e.g. Essential 14.95 EUR/mo). Both are recorded here as monthly and annualPerMonth.",
         "sourceIds": [
           "s1"
         ],
-        "fr": "La page tarifs affiche le même montant mensuel et le même montant 'annualisé' par mois, tout en présentant la facturation annuelle comme une économie en dollars par an ; la différence réelle de cadence de facturation n'a pas pu être totalement démêlée avec le budget disponible."
+        "fr": "La page tarifs affiche par défaut l'onglet facturation annuelle, qui montre un 'prix spécial' mensuel plus bas (ex. Essential 12,95 EUR/mois) ; basculer sur l'onglet mensuel révèle le vrai tarif mois par mois (ex. Essential 14,95 EUR/mois). Les deux sont enregistrés ici en monthly et annualPerMonth."
       }
     ]
   },
@@ -320,8 +320,8 @@
       "fr": "Plateforme de graphiques et d'analyse technique en temps réel pour actions, crypto et forex, avec un plan gratuit limité et cinq formules payantes."
     },
     "longDescription": {
-      "en": "TradingView provides real-time and historical charting for stocks, crypto and forex, with technical indicators, custom alerts and a built-in social trading community. The free plan allows only 1 chart per tab, 2 indicators and 5,000 historical bars, which is workable for casual checking but too narrow for serious multi-asset analysis.\n\nThe entry paid plan, Essential, costs $12.95/month and raises those caps to 2 charts, 5 indicators and 20 price alerts. Capacity keeps scaling through Plus, Premium and Ultimate ($199.95/month), which adds up to 50 indicators and 1,000 alerts for traders who need deep, simultaneous monitoring across many assets.",
-      "fr": "TradingView propose des graphiques en temps réel et historiques pour actions, crypto et forex, avec des indicateurs techniques, des alertes personnalisées et une communauté de trading social intégrée. Le plan gratuit n'autorise qu'1 graphique par onglet, 2 indicateurs et 5 000 barres historiques, suffisant pour une consultation occasionnelle mais trop limité pour une analyse sérieuse multi-actifs.\n\nLa formule payante d'entrée, Essential, coûte 12,95 $/mois et relève ces plafonds à 2 graphiques, 5 indicateurs et 20 alertes de prix. La capacité continue d'augmenter avec Plus, Premium puis Ultimate (199,95 $/mois), qui offre jusqu'à 50 indicateurs et 1 000 alertes pour un suivi simultané et poussé de nombreux actifs."
+      "en": "TradingView provides real-time and historical charting for stocks, crypto and forex, with technical indicators, custom alerts and a built-in social trading community. The free plan allows only 1 chart per tab, 2 indicators and 5,000 historical bars, which is workable for casual checking but too narrow for serious multi-asset analysis.\n\nThe entry paid plan, Essential, costs 14.95 EUR/month billed monthly (12.95 EUR/month billed annually) and raises those caps to 2 charts, 5 indicators and 20 price alerts. Capacity keeps scaling through Plus, Premium and Ultimate (239.95 EUR/month, 199.95 EUR/month billed annually), which adds up to 50 indicators and 1,000 alerts for traders who need deep, simultaneous monitoring across many assets.",
+      "fr": "TradingView propose des graphiques en temps réel et historiques pour actions, crypto et forex, avec des indicateurs techniques, des alertes personnalisées et une communauté de trading social intégrée. Le plan gratuit n'autorise qu'1 graphique par onglet, 2 indicateurs et 5 000 barres historiques, suffisant pour une consultation occasionnelle mais trop limité pour une analyse sérieuse multi-actifs.\n\nLa formule payante d'entrée, Essential, coûte 14,95 EUR/mois en facturation mensuelle (12,95 EUR/mois en engagement annuel) et relève ces plafonds à 2 graphiques, 5 indicateurs et 20 alertes de prix. La capacité continue d'augmenter avec Plus, Premium puis Ultimate (239,95 EUR/mois, 199,95 EUR/mois en engagement annuel), qui offre jusqu'à 50 indicateurs et 1 000 alertes pour un suivi simultané et poussé de nombreux actifs."
     },
     "pros": [
       {
@@ -353,14 +353,12 @@
         "fr": "Un graphique, deux indicateurs et 5 000 barres historiques couvrent déjà tes besoins : le plan gratuit suffit."
       },
       "threshold": {
-        "en": "Worth upgrading to Essential ($12.95/month, about $155/year) once 2 indicators and 20 alerts per chart become limiting.",
-        "fr": "Le passage à Essential (12,95 $/mois, environ 155 $/an) devient rentable dès que 2 indicateurs et 20 alertes par graphique deviennent limitants."
+        "en": "Worth upgrading to Essential (14.95 EUR/month billed monthly, or 12.95 EUR/month, about 155 EUR/year, billed annually) once 2 indicators and 20 alerts per chart become limiting.",
+        "fr": "Le passage à Essential (14,95 EUR/mois en facturation mensuelle, ou 12,95 EUR/mois, environ 155 EUR/an, en engagement annuel) devient rentable dès que 2 indicateurs et 20 alertes par graphique deviennent limitants."
       }
     }
   },
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": [
-    "pricing.plans: every paid plan shows an identical price.monthly and price.annualPerMonth value (e.g. Essential $12.95 both), while the pricing page frames annual billing as a yearly saving. This looks like a research or site-display inconsistency and should be re-verified on tradingview.com/pricing before merge."
-  ],
-  "hold": "monthly equals annualPerMonth on every paid plan while the page shows an annual saving"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

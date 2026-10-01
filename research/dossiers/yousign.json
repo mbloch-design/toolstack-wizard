@@ -17,18 +17,29 @@
   },
   "sources": [
     { "id": "s1", "url": "https://yousign.com/en-us/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Yousign pricing (redirects to youtrust.com/en-us/pricing)" },
-    { "id": "s2", "url": "https://verdocs.com/yousign-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "Yousign Pricing: Complete Guide (2026) - Verdocs" }
+    { "id": "s2", "url": "https://verdocs.com/yousign-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "Yousign Pricing: Complete Guide (2026) - Verdocs" },
+    { "id": "s3", "url": "https://youtrust.com/pricing", "tier": 1, "accessedOn": "2026-10-01", "checkedOn": "2026-10-01", "title": "Youtrust (Yousign) official pricing page" }
   ],
   "pricing": {
-    "model": "subscription",
+    "model": "freemium",
     "currency": "EUR",
-    "pricingUrl": "https://youtrust.com/en-us/pricing",
-    "verifiedOn": "2026-09-25",
+    "pricingUrl": "https://youtrust.com/pricing",
+    "verifiedOn": "2026-10-01",
     "region": "EU",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "2 signature requests per month, 1 user", "fr": "2 demandes de signature par mois, 1 utilisateur" }, "sourceIds": ["s3"] },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2 signature requests per month, 1 user", "fr": "2 demandes de signature par mois, 1 utilisateur", "sourceIds": ["s3"] }],
+        "sourceIds": ["s3"]
+      },
       {
         "key": "one",
         "name": "One",
@@ -36,8 +47,8 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 9, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "10 signatures per month included", "fr": "10 signatures par mois incluses", "sourceIds": ["s2"] }],
-        "sourceIds": ["s2"]
+        "keyLimits": [{ "en": "10 signature requests per month included", "fr": "10 demandes de signature par mois incluses", "sourceIds": ["s3"] }],
+        "sourceIds": ["s3"]
       },
       {
         "key": "plus",
@@ -46,17 +57,29 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 23, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Higher signature volume than One plan; billed annually at approximately 276 EUR/year", "fr": "Volume de signatures supérieur à l'offre One ; facturé annuellement à environ 276 EUR/an", "sourceIds": ["s2"] }],
-        "sourceIds": ["s2"]
+        "keyLimits": [{ "en": "Unlimited signature requests per user, billed annually at approximately 276 EUR/year", "fr": "Demandes de signature illimitées par utilisateur, facturé annuellement à environ 276 EUR/an", "sourceIds": ["s3"] }],
+        "sourceIds": ["s3"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 38, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited signature requests per user, adds advanced features such as yearly add-on options (SSO); billed annually at approximately 456 EUR/year", "fr": "Demandes de signature illimitées par utilisateur, ajoute des fonctions avancées en option annuelle (SSO) ; facturé annuellement à environ 456 EUR/an", "sourceIds": ["s3"] }],
+        "sourceIds": ["s3"]
       }
     ],
     "comparePlanKey": "one",
     "addOns": [
-      { "name": "Qualified Electronic Signature (QES)", "sourceIds": ["s2"] }
+      { "name": "Qualified Electronic Signature (QES)", "sourceIds": ["s3"] },
+      { "name": "Automated Forms", "sourceIds": ["s3"] },
+      { "name": "Advanced Electronic Signature (AES), yearly add-on on Plus and Pro", "sourceIds": ["s3"] },
+      { "name": "Single Sign-On (SSO), yearly add-on on Pro", "sourceIds": ["s3"] }
     ],
     "cautions": [
-      { "en": "Qualified Electronic Signature (QES) is billed per signing party, roughly 10-15 EUR each, on top of the base plan; 50 QES signatures a month can add 500-750 EUR to the bill.", "fr": "La signature électronique qualifiée (QES) est facturée par signataire, environ 10 à 15 EUR chacun, en plus de l'offre de base ; 50 signatures QES par mois peuvent ajouter 500 à 750 EUR à la facture.", "sourceIds": ["s2"] },
-      { "en": "These prices were confirmed only via a secondary source (Verdocs) since the official pricing page redirected to the new Youtrust domain during this research pass; verify directly on youtrust.com before use.", "fr": "Ces prix n'ont été confirmés que via une source secondaire (Verdocs), car la page de tarifs officielle redirigeait vers le nouveau domaine Youtrust durant cette recherche ; à vérifier directement sur youtrust.com avant utilisation.", "sourceIds": ["s1", "s2"] }
+      { "en": "Qualified Electronic Signature (QES) is billed per signing party: from 10 EUR each with annual billing (bundles of 10+), or 15 EUR each with monthly billing (1-9 signatures); 50 QES signatures a month can add 500-750 EUR to the bill.", "fr": "La signature électronique qualifiée (QES) est facturée par signataire : à partir de 10 EUR chacune en facturation annuelle (lots de 10 et plus), ou 15 EUR chacune en facturation mensuelle (1 à 9 signatures) ; 50 signatures QES par mois peuvent ajouter 500 à 750 EUR à la facture.", "sourceIds": ["s3"] }
     ]
   },
   "product": {
@@ -65,7 +88,7 @@
       { "en": "Identity verification workflows (ID card/passport, SMS validation) available for Advanced Electronic Signature.", "fr": "Parcours de vérification d'identité (carte d'identité/passeport, validation par SMS) disponibles pour la signature électronique avancée.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "No free plan; entry paid plan (One) is capped at 10 signatures per month, which may be insufficient for active use.", "fr": "Aucune offre gratuite ; l'offre payante d'entrée (One) est plafonnée à 10 signatures par mois, ce qui peut être insuffisant pour un usage actif.", "sourceIds": ["s2"] },
+      { "en": "Free plan is capped at 2 signatures a month; entry paid plan (One) is capped at 10 signatures per month, which may be insufficient for active use.", "fr": "L'offre gratuite est plafonnée à 2 signatures par mois ; l'offre payante d'entrée (One) est plafonnée à 10 signatures par mois, ce qui peut être insuffisant pour un usage actif.", "sourceIds": ["s3"] },
       { "en": "Qualified Electronic Signature is a separately priced add-on rather than included in standard plans.", "fr": "La signature électronique qualifiée est une option facturée séparément plutôt qu'incluse dans les offres standards.", "sourceIds": ["s2"] }
     ],
     "integrations": [],
@@ -108,15 +131,15 @@
     "tagline": { "en": "Electronic signature", "fr": "Signature électronique" },
     "shortDescription": { "en": "Electronic signature for quotes, contracts and engagement letters, with identity verification for higher-trust documents.", "fr": "Signature électronique pour devis, contrats et lettres de mission, avec vérification d'identité pour les documents à plus forte confiance." },
     "longDescription": {
-      "en": "Yousign (rebranding to Youtrust in 2026) provides legally valid electronic signature for quotes, contracts, engagement letters and client approvals, supporting Simple and Advanced signature levels under eIDAS, with identity verification for higher-trust cases.\n\nThe entry One plan costs about 9 EUR a month per seat for 10 signatures, billed annually, with no free plan. Qualified Electronic Signature is a separate per-signature add-on that can add several hundred euros a month for frequent use. A freelancer or small team signing a handful of documents monthly fits the entry plan; heavier qualified-signature use changes the cost picture significantly.",
-      "fr": "Yousign (en cours de rebranding vers Youtrust en 2026) propose une signature électronique juridiquement valide pour les devis, contrats, lettres de mission et validations client, avec les niveaux simple et avancé au sens d'eIDAS, et une vérification d'identité pour les cas à plus forte confiance.\n\nL'offre d'entrée One coûte environ 9 EUR par mois et par poste pour 10 signatures, facturée annuellement, sans offre gratuite. La signature électronique qualifiée est une option facturée par signature qui peut ajouter plusieurs centaines d'euros par mois en cas d'usage fréquent. Un indépendant ou une petite équipe qui signe quelques documents par mois correspond à l'offre d'entrée ; un usage intensif de la signature qualifiée change nettement le calcul du coût."
+      "en": "Yousign (rebranding to Youtrust) provides legally valid electronic signature for quotes, contracts, engagement letters and client approvals, with Simple and Advanced signature levels under eIDAS and identity verification for higher-trust cases.\n\nA free plan covers 2 signatures a month. The entry One plan costs about 9 EUR/month per seat for 10 signatures; Plus (23 EUR) and Pro (38 EUR) add unlimited signatures per user. Qualified Electronic Signature is a separate add-on, 10 to 15 EUR per signature, that can add hundreds of euros a month at volume.",
+      "fr": "Yousign (en cours de rebranding vers Youtrust) propose une signature électronique juridiquement valide pour devis, contrats, lettres de mission et validations client, avec les niveaux simple et avancé au sens d'eIDAS, et une vérification d'identité pour les cas à plus forte confiance.\n\nUne offre gratuite couvre 2 signatures par mois. L'offre d'entrée One coûte environ 9 EUR/mois par poste pour 10 signatures ; Plus (23 EUR) et Pro (38 EUR) ajoutent des signatures illimitées par utilisateur. La signature électronique qualifiée est une option à part, de 10 à 15 EUR par signature, qui peut ajouter plusieurs centaines d'euros par mois en volume."
     },
     "pros": [
       { "en": "Entry plan is cheap for low monthly signature volume.", "fr": "L'offre d'entrée est peu chère pour un faible volume mensuel de signatures." },
       { "en": "Identity verification is available for higher-trust Advanced signatures.", "fr": "La vérification d'identité est disponible pour les signatures avancées à plus forte confiance." }
     ],
     "cons": [
-      { "en": "No free plan, and the entry plan caps out at 10 signatures a month.", "fr": "Aucune offre gratuite, et l'offre d'entrée plafonne à 10 signatures par mois." },
+      { "en": "Free plan caps out at 2 signatures a month, and the entry paid plan at 10 signatures a month.", "fr": "L'offre gratuite plafonne à 2 signatures par mois, et l'offre payante d'entrée à 10 signatures par mois." },
       { "en": "Qualified Electronic Signature add-on fees can become a significant recurring cost at volume.", "fr": "Les frais de l'option signature qualifiée peuvent devenir un coût récurrent important en volume." }
     ],
     "verdict": {
@@ -126,11 +149,9 @@
     }
   },
   "unknowns": [
-    "Official pricing page could not be read directly during this session because yousign.com now 301-redirects to youtrust.com; plan prices above come from a secondary source (Verdocs) and should be reverified on youtrust.com/en-us/pricing.",
     "Whether the Yousign brand and product will fully disappear in favor of Youtrust, or coexist, is not fully clear from available sources."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "All plan prices (One, Plus, QES add-on) come from a tier-2 secondary source (Verdocs), not the official pricing page, because yousign.com redirected to youtrust.com during research. Verify every amount directly on youtrust.com/en-us/pricing before merging."
-  ]
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

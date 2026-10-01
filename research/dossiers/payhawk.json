@@ -21,14 +21,15 @@
       "url": "https://www.payhawk.com/pricing",
       "tier": 1,
       "accessedOn": "2026-09-25",
+      "checkedOn": "2026-10-01",
       "title": "Payhawk pricing"
     }
   ],
   "pricing": {
-    "model": "quote",
+    "model": "subscription",
     "currency": "GBP",
     "pricingUrl": "https://www.payhawk.com/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "UK",
     "taxIncluded": null,
     "freePlan": {
@@ -323,8 +324,6 @@
     "Whether VAT/tax is included in the £149/month Growth Program price is not stated."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "pricing.model is set to \"quote\" but the Growth Program plan has a published fixed price (149 GBP/month); only the Enterprise tier is genuinely on quote. Consider reclassifying the model as \"subscription\" with Enterprise kept as an onQuote plan, if that better matches the merge rules."
-  ],
-  "hold": "model is quote but Growth has a public 149 GBP/month price; reclassify before publishing"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

@@ -20,7 +20,7 @@
       "id": "s1",
       "url": "https://dext.com/en/business/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-01",
       "title": "Dext Pricing | Plans for Every Business"
     }
   ],
@@ -28,7 +28,7 @@
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://dext.com/en/business/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": false,
     "freePlan": {
@@ -311,12 +311,9 @@
     }
   },
   "unknowns": [
-    "Whether the $25.21/month base price is itself billed monthly or is the monthly-equivalent of the $302.50 annual price was not stated unambiguously on the pricing page; both values are recorded here as seen.",
     "Currency shown was USD by default on the fetched page; Dext prices in multiple currencies (GBP, EUR, CAD, AUD, ZAR) by region, per third-party sources, not independently confirmed here."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "pricing.plans[0].price has monthly and annualPerMonth both set to 25.21, but the page also showed a $302.50/year annual price ($25.21/month equivalent only if billed monthly, not clearly a lower annual rate); verify on dext.com whether annual billing actually discounts versus the monthly rate before publishing."
-  ],
-  "hold": "base monthly price and annual total do not reconcile"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

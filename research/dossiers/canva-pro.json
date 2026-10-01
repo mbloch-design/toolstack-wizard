@@ -18,23 +18,26 @@
     {
       "id": "s1",
       "url": "https://www.canva.com/pricing/",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "Third-party summary of Canva pricing (direct fetch of canva.com/pricing/ was blocked, HTTP 403)"
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "title": "Canva pricing (official, EUR as geo-detected)"
     }
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://www.canva.com/pricing/",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-01",
+    "region": "EU (geo-detected; Canva has no manual region/currency selector found this session)",
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
       "limits": {
         "en": "Free Canva plan available with limited templates and no Magic Studio AI feature access; Canva Pro is the upgraded paid tier.",
-        "fr": "Plan Canva gratuit disponible avec des modeles limites et sans acces aux fonctions IA Magic Studio ; Canva Pro est le palier payant superieur."
+        "fr": "Plan Canva gratuit disponible avec des modèles limités et sans accès aux fonctions IA Magic Studio ; Canva Pro est le palier payant supérieur.",
+        "sourceIds": [
+          "s1"
+        ]
       },
       "sourceIds": [
         "s1"
@@ -43,20 +46,47 @@
     "trial": null,
     "plans": [
       {
-        "key": "pro",
-        "name": "Canva Pro",
-        "unit": "seat",
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 18,
-          "annualPerMonth": 12,
+          "monthly": 0,
+          "annualPerMonth": 0,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "$18/month billed monthly, or $144/year (≈$12/month) billed annually. Full access to Magic Studio AI tools, premium templates, brand kit, background remover and automatic resizing.",
-            "fr": "18 $/mois facture au mois, ou 144 $/an (environ 12 $/mois) facture a l'annee. Acces complet aux outils IA Magic Studio, modeles premium, kit de marque, suppression d'arriere-plan et redimensionnement automatique."
+            "en": "Limited templates and no Magic Studio AI feature access.",
+            "fr": "Modèles limités et sans accès aux fonctions IA Magic Studio.",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Canva Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 12,
+          "annualPerMonth": 9.17,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "€12/month billed monthly, or €110/year (≈€9.17/month) billed annually. Full access to Magic Studio AI tools, premium templates, brand kit, background remover and automatic resizing.",
+            "fr": "12 €/mois facturé au mois, ou 110 €/an (environ 9,17 €/mois) facturé à l'année. Accès complet aux outils IA Magic Studio, modèles premium, kit de marque, suppression d'arrière-plan et redimensionnement automatique.",
+            "sourceIds": [
+              "s1"
+            ]
           }
         ],
         "sourceIds": [
@@ -68,8 +98,8 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "The official canva.com/pricing/ page returned HTTP 403 when fetched directly in this session; the price figures come from independent pricing-tracker sites rather than Canva's own page, and should be re-verified against the official source before publication.",
-        "fr": "La page officielle canva.com/pricing/ a renvoye une erreur HTTP 403 lors d'un acces direct dans cette session ; les montants viennent de sites tiers de suivi des prix plutot que de la page Canva elle-meme, a revrifier sur la source officielle avant publication.",
+        "en": "Prices confirmed directly on canva.com/pricing/ on 2026-10-01 via browser (direct automated fetch was still blocked, HTTP 403). The page geo-detects EUR pricing for this session with no manual region/currency selector found; USD pricing shown to US visitors was not independently re-verified.",
+        "fr": "Prix confirmés directement sur canva.com/pricing/ le 01/10/2026 via navigateur (la récupération automatisée directe restait bloquée, HTTP 403). La page détecte géographiquement l'EUR pour cette session, sans sélecteur de région/devise manuel trouvé ; le prix en dollars affiché aux visiteurs américains n'a pas pu être reconfirmé indépendamment.",
         "sourceIds": [
           "s1"
         ]
@@ -109,8 +139,8 @@
     ],
     "limitations": [
       {
-        "en": "Pricing could not be independently confirmed on Canva's own official pricing page in this session (blocked, HTTP 403), only via third-party trackers.",
-        "fr": "Le prix n'a pas pu etre confirme independamment sur la page tarifaire officielle de Canva dans cette session (bloquee, HTTP 403), seulement via des trackers tiers.",
+        "en": "Canva.com geo-detects pricing currency with no manual region selector; EUR pricing was confirmed this session but USD pricing shown to US visitors was not independently re-verified.",
+        "fr": "Canva.com detecte la devise par geolocalisation, sans selecteur de region manuel ; le prix en euros a ete confirme cette session, mais le prix en dollars affiche aux visiteurs americains n'a pas pu etre reconfirme independamment.",
         "sourceIds": [
           "s1"
         ]
@@ -152,7 +182,6 @@
     }
   ],
   "unknowns": [
-    "Official canva.com/pricing/ page blocked direct fetch (HTTP 403) in this session; the $18/month and $144/year figures are taken from independent pricing-tracker sites, not Canva's own page, and need re-verification.",
     "Canva Teams price not confirmed in this session."
   ],
   "conflicts": [
@@ -185,8 +214,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Unlocks Magic Studio AI tools, a brand kit and premium templates for $12 to $18/month, though this figure comes from a third-party tracker rather than Canva's own pricing page.",
-        "fr": "Debloque les outils IA Magic Studio, un kit de marque et des modeles premium pour 12 a 18 $/mois, mais ce montant vient d'un tracker tiers plutot que de la page tarifaire de Canva elle-meme.",
+        "en": "Unlocks Magic Studio AI tools, a brand kit and premium templates for €9.17 to €12/month, confirmed on Canva's own pricing page.",
+        "fr": "Débloque les outils IA Magic Studio, un kit de marque et des modèles premium pour 9,17 à 12 €/mois, confirmé sur la page tarifaire de Canva elle-même.",
         "sourceIds": [
           "s1"
         ]
@@ -228,12 +257,12 @@
       "fr": "Suite de design"
     },
     "shortDescription": {
-      "en": "Paid Canva tier unlocking Magic Studio AI tools, premium templates and a brand kit, from $12/month billed annually.",
-      "fr": "Palier payant de Canva : outils IA Magic Studio, modeles premium et kit de marque, a partir de 12 $/mois facture a l'annee."
+      "en": "Paid Canva tier unlocking Magic Studio AI tools, premium templates and a brand kit, from €9.17/month billed annually.",
+      "fr": "Palier payant de Canva : outils IA Magic Studio, modèles premium et kit de marque, à partir de 9,17 €/mois facturé à l'année."
     },
     "longDescription": {
-      "en": "Canva Pro is the paid tier of Canva, adding full access to Magic Studio AI tools (image generation, background removal, Magic Write), a brand kit for consistent colors and fonts, a premium template library, and Magic Resize to adapt one design across formats.\n\nPricing runs $18/month billed monthly or about $12/month billed annually, per the tracker data used here (Canva's own pricing page was blocked during research). It's built for a solo content creator; teams needing shared brand controls and approvals need the separate Canva Teams plan instead.",
-      "fr": "Canva Pro est le palier payant de Canva, qui donne un acces complet aux outils IA Magic Studio (generation d'images, suppression d'arriere-plan, Magic Write), un kit de marque pour des couleurs et polices coherentes, une bibliotheque de modeles premium, et Magic Resize pour adapter un design a plusieurs formats.\n\nLe prix est de 18 $/mois facture au mois ou environ 12 $/mois facture a l'annee, selon les donnees de tracker utilisees ici (la page tarifaire officielle de Canva etait bloquee durant la recherche). Il est pense pour un createur de contenu solo ; une equipe qui a besoin de controles de marque partages et d'approbations doit passer au plan Canva Teams separe."
+      "en": "Canva Pro is the paid tier of Canva, adding full access to Magic Studio AI tools (image generation, background removal, Magic Write), a brand kit for consistent colors and fonts, a premium template library, and Magic Resize to adapt one design across formats.\n\nPricing runs €12/month billed monthly or about €9.17/month billed annually (€110/year), confirmed on Canva's own pricing page. It's built for a solo content creator; teams needing shared brand controls and approvals need the separate Canva Teams plan instead.",
+      "fr": "Canva Pro est le palier payant de Canva, qui donne un acces complet aux outils IA Magic Studio (generation d'images, suppression d'arriere-plan, Magic Write), un kit de marque pour des couleurs et polices coherentes, une bibliotheque de modeles premium, et Magic Resize pour adapter un design a plusieurs formats.\n\nLe prix est de 12 €/mois facturé au mois ou environ 9,17 €/mois facturé à l'année (110 €/an), confirmé sur la page tarifaire officielle de Canva. Il est pensé pour un créateur de contenu solo ; une équipe qui a besoin de contrôles de marque partagés et d'approbations doit passer au plan Canva Teams séparé."
     },
     "pros": [
       {
@@ -265,15 +294,14 @@
         "fr": "Tu as besoin de controles de marque partages ou de workflows d'approbation pour une equipe, ce qui demande Canva Teams a la place."
       },
       "threshold": {
-        "en": "Worth it once the $144/year (annual billing) cost is lower than what you'd otherwise pay for premium templates or a background-removal tool separately.",
-        "fr": "Rentable des que le cout de 144 $/an (facturation annuelle) est inferieur a ce que tu paierais autrement pour des modeles premium ou un outil de suppression d'arriere-plan a part."
+        "en": "Worth it once the €110/year (annual billing) cost is lower than what you'd otherwise pay for premium templates or a background-removal tool separately.",
+        "fr": "Rentable dès que le coût de 110 €/an (facturation annuelle) est inférieur à ce que tu paierais autrement pour des modèles premium ou un outil de suppression d'arrière-plan à part."
       }
     }
   },
   "completedLocallyOn": "2026-09-25",
   "reviewNotes": [
-    "Only one real in-catalogue alternative (adobe-cc) was found via scripts/research/seed.mjs canva-pro; most candidates returned (video/podcast/3D tools) are not template-based design suite competitors. Adobe Express and Visme were added to missingAlternatives instead.",
-    "pricing.cautions already flags that the $18/month and $144/year figures come from a third-party tracker (tier 2 source) because canva.com/pricing/ returned HTTP 403; these amounts should be re-verified on Canva's own page before publication.",
-    "pricing.freePlan.exists is true (free Canva tier) but no plan in pricing.plans is priced at $0; only the Pro plan was captured during the facts stage."
-  ]
+    "Only one real in-catalogue alternative (adobe-cc) was found via scripts/research/seed.mjs canva-pro; most candidates returned (video/podcast/3D tools) are not template-based design suite competitors. Adobe Express and Visme were added to missingAlternatives instead."
+  ],
+  "priceCheckedOn": "2026-10-01"
 }

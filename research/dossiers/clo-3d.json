@@ -17,17 +17,18 @@
   },
   "sources": [
     { "id": "s1", "url": "https://www.clo3d.com", "tier": 1, "accessedOn": "2026-09-25", "title": "CLO 3D homepage" },
-    { "id": "s2", "url": "https://www.spotsaas.com/product/clo-3d-fashion/pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "CLO 3D Fashion pricing (third-party aggregator)" }
+    { "id": "s2", "url": "https://www.spotsaas.com/product/clo-3d-fashion/pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "CLO 3D Fashion pricing (third-party aggregator)" },
+    { "id": "s3", "url": "https://www.clo3d.com/en/plans", "tier": 1, "accessedOn": "2026-10-01", "title": "CLO Plans (official pricing page, monthly/yearly toggle)" }
   ],
   "pricing": {
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://www.clo3d.com/en/plans",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
-    "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
-    "trial": { "days": 30, "sourceIds": ["s2"] },
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s3"] },
+    "trial": { "days": 14, "sourceIds": ["s3"] },
     "plans": [
       {
         "key": "individual",
@@ -36,14 +37,14 @@
         "minSeats": 1,
         "price": { "monthly": 50, "annualPerMonth": 37.5, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Single-user license for 3D garment simulation and pattern making", "fr": "Licence mono-utilisateur pour la simulation 3D de vêtements et le patronage" }],
-        "sourceIds": ["s2"]
+        "keyLimits": [{ "en": "Single-user license for 3D garment simulation and pattern making, for hobbyists, freelancers, self-employed individuals or one-person companies.", "fr": "Licence mono-utilisateur pour la simulation 3D de vêtements et le patronage, pour amateurs, freelances, indépendants ou entreprises individuelles." }],
+        "sourceIds": ["s3"]
       }
     ],
     "comparePlanKey": "individual",
     "addOns": [],
     "cautions": [
-      { "en": "Exact current pricing could not be confirmed directly from clo3d.com's own pricing page, which did not return content; figures are sourced from a third-party listing and should be reverified against the official site.", "fr": "Le tarif exact n'a pas pu être confirmé directement sur la page de prix de clo3d.com, qui n'a pas renvoyé de contenu ; les chiffres viennent d'une source tierce et doivent être revérifiés sur le site officiel.", "sourceIds": ["s2"] }
+      { "en": "Confirmed directly on clo3d.com/en/plans: Individual is $50/month billed monthly, or $450/year ($37.50/month) billed annually (save 25%). Tax/VAT not included.", "fr": "Confirmé directement sur clo3d.com/en/plans : Individual coûte 50 $/mois en facturation mensuelle, ou 450 $/an (37,50 $/mois) en facturation annuelle (économie de 25 %). Taxe/TVA non incluse.", "sourceIds": ["s3"] }
     ]
   },
   "product": {
@@ -84,7 +85,7 @@
     "puissance": 4,
     "reversibilite": 3,
     "evidence": {
-      "valeurAjoutee": { "en": "Linking 2D pattern work live to 3D fabric simulation can cut physical sampling, a real cost saving for a fashion studio, but pricing itself is unconfirmed on the official site, so the cost side of the ratio is uncertain.", "fr": "Relier le patronage 2D en direct à la simulation 3D du tissu peut réduire l'échantillonnage physique, une vraie économie pour un studio de mode, mais le prix lui-même n'est pas confirmé sur le site officiel, ce qui rend le volet coût incertain.", "sourceIds": ["s1"] },
+      "valeurAjoutee": { "en": "Linking 2D pattern work live to 3D fabric simulation can cut physical sampling, a real cost saving for a fashion studio, against a $37.50 to $50/month single-seat subscription.", "fr": "Relier le patronage 2D en direct à la simulation 3D du tissu peut réduire l'échantillonnage physique, une vraie économie pour un studio de mode, face à un abonnement mono-siège de 37,50 à 50 $/mois.", "sourceIds": ["s3"] },
       "simplicite": { "en": "The facts explicitly describe a steep learning curve for pattern-making, aimed at users who already know garment construction, not a first-hour result for a beginner.", "fr": "Les faits décrivent explicitement une courbe d'apprentissage raide pour le patronage, destinée à des utilisateurs qui connaissent déjà la construction du vêtement, pas un résultat en une heure pour un débutant.", "sourceIds": ["s1"] },
       "utilisation": { "en": "Delivers its stated promise of 3D garment simulation linked to 2D pattern making and digital sample visualization, without a documented need for third-party tools.", "fr": "Tient sa promesse de simulation 3D de vêtement reliée au patronage 2D et à la visualisation d'échantillons numériques, sans besoin documenté d'outil tiers.", "sourceIds": ["s1"] },
       "puissance": { "en": "Combines realistic fabric physics simulation, live-linked pattern making and collection visualization, broad enough that large scenes require a capable workstation.", "fr": "Combine une simulation physique réaliste du tissu, un patronage relié en direct et une visualisation de collection, un périmètre large au point que les grandes scènes demandent un poste de travail performant.", "sourceIds": ["s1"] },
@@ -99,8 +100,8 @@
       "fr": "CLO est un logiciel de simulation 3D de vêtements et de patronage, reliant un patron 2D en direct à un échantillon simulé."
     },
     "longDescription": {
-      "en": "CLO simulates how fabric drapes and fits on a 3D avatar, with 2D pattern pieces linked live to that simulation so a change in one view updates the other instantly. The goal is fewer physical samples during design and fitting, though pattern-making still demands real garment-construction knowledge and large scenes need a capable workstation.\n\nAn individual seat runs about $37.50/month billed annually, or $50/month, with a 30-day trial; pricing here comes from a third-party listing since CLO's own plans page did not load during research, so the figures should be double-checked on clo3d.com. It fits an independent designer or small studio moving from physical to digital sampling.",
-      "fr": "CLO simule le tombé et l'ajustement du tissu sur un avatar 3D, avec des pièces de patron 2D reliées en direct à la simulation : un changement sur une vue met à jour l'autre instantanément. Le patronage exige une vraie connaissance de la construction du vêtement, et les grandes scènes demandent un poste de travail performant.\n\nUn siège individuel coûte environ 37,50 $/mois en engagement annuel, ou 50 $/mois, avec un essai de 30 jours ; ces chiffres viennent d'une source tierce, la page des forfaits de CLO n'ayant pas pu être chargée pendant la recherche, donc à vérifier sur clo3d.com. L'outil convient à un créateur indépendant ou un petit studio qui passe au prototypage numérique."
+      "en": "CLO simulates how fabric drapes and fits on a 3D avatar, with 2D pattern pieces linked live to that simulation so a change in one view updates the other instantly. The goal is fewer physical samples during design and fitting, though pattern-making still demands real garment-construction knowledge and large scenes need a capable workstation.\n\nAn Individual seat costs $50/month billed monthly, or $37.50/month ($450/year) billed annually, with a 14-day free trial. It fits an independent designer or small studio moving from physical to digital sampling; Enterprise and Academic pricing is quote-only.",
+      "fr": "CLO simule le tombé et l'ajustement du tissu sur un avatar 3D, avec des pièces de patron 2D reliées en direct à la simulation : un changement sur une vue met à jour l'autre instantanément. Le patronage exige une vraie connaissance de la construction du vêtement, et les grandes scènes demandent un poste de travail performant.\n\nUn siège Individual coûte 50 $/mois en facturation mensuelle, ou 37,50 $/mois (450 $/an) en facturation annuelle, avec un essai gratuit de 14 jours. L'outil convient à un créateur indépendant ou un petit studio qui passe au prototypage numérique ; les tarifs Enterprise et Academic sont sur devis."
     },
     "pros": [
       { "en": "Links 2D pattern editing live to 3D fabric simulation, so fit changes show immediately.", "fr": "Relie le patronage 2D en direct à la simulation 3D du tissu, les changements d'ajustement s'affichant immédiatement." },
@@ -113,16 +114,15 @@
     "verdict": {
       "keepIf": { "en": "You design garments and want to cut physical sampling by prototyping fit and fabric digitally.", "fr": "Tu conçois des vêtements et tu veux réduire l'échantillonnage physique en prototypant l'ajustement et le tissu en numérique." },
       "avoidIf": { "en": "You have no garment-construction background: the pattern-making tools have a steep learning curve.", "fr": "Tu n'as pas de base en construction de vêtement : les outils de patronage ont une courbe d'apprentissage raide." },
-      "threshold": { "en": "Budget about $37.50 to $50 a month for one seat, and reverify that price on clo3d.com before committing, since it was not confirmed on the official pricing page during this research.", "fr": "Prévois environ 37,50 à 50 $ par mois pour un siège, et revérifie ce prix sur clo3d.com avant de t'engager, car il n'a pas pu être confirmé sur la page officielle pendant cette recherche." }
+      "threshold": { "en": "Budget $37.50/month billed annually, or $50/month billed monthly, for one Individual seat.", "fr": "Prévois 37,50 $/mois en engagement annuel, ou 50 $/mois en mensuel, pour un siège Individual." }
     }
   },
   "unknowns": [
-    "The official clo3d.com pricing page (/plans) did not return usable content during this session; plan names, exact prices and enterprise pricing should be reverified directly on the official site.",
-    "Whether there is a free/limited plan beyond the trial was not confirmed from a tier-1 source."
+    "Enterprise and Academic pricing is sales-quote only and not public."
   ],
   "conflicts": [],
   "reviewNotes": [
-    "Pricing (Individual seat at $50/month, $37.50/month billed annually) is sourced only from a third-party aggregator (SpotSaas), not from clo3d.com directly, since the official /plans page did not return content during research. Verify the current price and plan names directly on clo3d.com before publishing.",
     "Alternatives corrected locally: Browzwear and Marvelous Designer are both already in the ToolTrim catalogue (slugs 'browzwear' and 'marvelous-designer') and are closer competitors on the same core need (3D garment simulation) than Substance 3D Painter or ZBrush, which were removed as they serve a different main need (texturing/sculpting, not garment simulation). The original dossier had listed Browzwear and Marvelous Designer under missingAlternatives, which was incorrect."
-  ]
+  ],
+  "priceCheckedOn": "2026-10-01"
 }

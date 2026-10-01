@@ -20,7 +20,7 @@
       "id": "s1",
       "url": "https://www.format.com/pricing-portfolio",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-01",
       "title": "Format pricing"
     }
   ],
@@ -28,9 +28,10 @@
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://www.format.com/pricing-portfolio",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
+    "regularPriceUnknown": true,
     "freePlan": {
       "exists": false,
       "limits": null,
@@ -52,6 +53,11 @@
         "minSeats": 1,
         "price": {
           "monthly": 14,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "promoPrice": {
+          "monthly": null,
           "annualPerMonth": 10,
           "oneTime": null
         },
@@ -73,6 +79,11 @@
         "minSeats": 1,
         "price": {
           "monthly": 24,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "promoPrice": {
+          "monthly": null,
           "annualPerMonth": 12,
           "oneTime": null
         },
@@ -94,6 +105,11 @@
         "minSeats": 1,
         "price": {
           "monthly": 36,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "promoPrice": {
+          "monthly": null,
           "annualPerMonth": 15,
           "oneTime": null
         },
@@ -113,8 +129,8 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "The pricing page shows a promotional annual discount (up to 50%, time-limited); regular monthly prices are the ones recorded here.",
-        "fr": "La page tarifaire affiche une remise annuelle promotionnelle (jusqu'à 50 %, limitée dans le temps) ; les prix mensuels réguliers sont ceux retenus ici.",
+        "en": "The pricing page banner reads \"Limited Time Offer! Save up to 50% Off annual plans\"; the annual per-month figures ($10/$12/$15) are this promotion, not a published standing annual rate, so they are recorded in promoPrice and the real annual price is unknown.",
+        "fr": "La page tarifs affiche la bannière \"Limited Time Offer! Save up to 50% Off annual plans\" ; les montants mensuels annualisés (10 $/12 $/15 $) sont cette promotion, pas un tarif annuel standard publié, donc ils sont enregistrés dans promoPrice et le vrai prix annuel est inconnu.",
         "sourceIds": [
           "s1"
         ]
@@ -279,8 +295,8 @@
       "fr": "Format construit des sites portfolio pour photographes avec galeries clients, validation d'épreuves et boutique en ligne sur les offres supérieures."
     },
     "longDescription": {
-      "en": "Format builds a mobile-optimized portfolio website from templates, with client galleries for proofing, download and password protection, plus a Lightroom plugin for direct publishing. An online store for prints and digital products opens up from the Pro plan.\n\nThere's no free plan: Basic starts at $14/month ($10/month billed annually) for 10 pages and 70 images, Pro at $24/month for unlimited pages and more storage, and Pro Plus at $36/month adds CRM Light and client contracts. It fits a photographer who needs a portfolio with client delivery built in, more than a general-purpose site builder.",
-      "fr": "Format construit un site portfolio optimisé mobile à partir de modèles, avec galeries clients pour validation, téléchargement et protection par mot de passe, plus un plugin Lightroom pour publier directement. Une boutique en ligne pour tirages et produits numériques s'ouvre à partir de l'offre Pro.\n\nPas d'offre gratuite : Basic démarre à 14 $/mois (10 $/mois en facturation annuelle) pour 10 pages et 70 images, Pro à 24 $/mois pour des pages illimitées et plus de stockage, et Pro Plus à 36 $/mois ajoute CRM Light et les contrats clients. Convient à un photographe qui a besoin d'un portfolio avec livraison client intégrée, plus qu'un constructeur de site généraliste."
+      "en": "Format builds a mobile-optimized portfolio website from templates, with client galleries for proofing, download and password protection, plus a Lightroom plugin for direct publishing. An online store for prints and digital products opens up from the Pro plan.\n\nThere's no free plan: Basic starts at $14/month for 10 pages and 70 images, Pro at $24/month for unlimited pages and more storage, and Pro Plus at $36/month adds CRM Light and client contracts. A \"save up to 50%\" annual-billing promotion was live at research time (for example Pro at $12/month), but Format doesn't publish a standing annual rate outside that promotion. It fits a photographer who needs a portfolio with client delivery built in, more than a general-purpose site builder.",
+      "fr": "Format construit un site portfolio optimisé mobile à partir de modèles, avec galeries clients pour validation, téléchargement et protection par mot de passe, plus un plugin Lightroom pour publier directement. Une boutique en ligne pour tirages et produits numériques s'ouvre à partir de l'offre Pro.\n\nPas d'offre gratuite : Basic démarre à 14 $/mois pour 10 pages et 70 images, Pro à 24 $/mois pour des pages illimitées et plus de stockage, et Pro Plus à 36 $/mois ajoute CRM Light et les contrats clients. Une promotion \"jusqu'à 50 % d'économie\" en facturation annuelle était active au moment de la recherche (par exemple Pro à 12 $/mois), mais Format ne publie pas de tarif annuel standard en dehors de cette promotion. Convient à un photographe qui a besoin d'un portfolio avec livraison client intégrée, plus qu'un constructeur de site généraliste."
     },
     "pros": [
       {
@@ -312,17 +328,15 @@
         "fr": "Tu veux une offre gratuite pour démarrer, ou un stockage d'images et une vidéo hébergée illimités sans monter de palier."
       },
       "threshold": {
-        "en": "The comparison plan, Pro, costs $288/year on annual billing ($24/month equivalent before the current promotion); budget against the regular monthly rate, not the promotional one.",
-        "fr": "L'offre de comparaison, Pro, coûte 288 $/an en facturation annuelle (équivalent 24 $/mois avant la promotion en cours) ; prévois ce budget sur le tarif mensuel régulier, pas sur le tarif promotionnel."
+        "en": "The comparison plan, Pro, costs $24/month billed monthly; a \"save up to 50%\" annual banner currently shows $12/month, but that is a limited-time promotion, not a published standing annual rate, so budget on the $24/month figure.",
+        "fr": "L'offre de comparaison, Pro, coûte 24 $/mois en facturation mensuelle ; une bannière \"jusqu'à 50 % d'économie\" affiche actuellement 12 $/mois, mais c'est une promotion limitée dans le temps, pas un tarif annuel standard publié, donc prévois ton budget sur 24 $/mois."
       }
     }
   },
   "unknowns": [
-    "No annual list price shown independent of the current promotional discount; regular annual pricing could not be confirmed beyond the monthly rate."
+    "No annual list price shown independent of the current promotional discount; regular annual pricing could not be confirmed beyond the monthly rate, so pricing.regularPriceUnknown is true and the discounted figures live in each plan's promoPrice."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "The dossier's own caution notes a time-limited promotional annual discount (up to 50%) on the pricing page; the annualPerMonth figures recorded (Basic $10, Pro $12, Pro Plus $15) may be the promotional rate rather than the regular annual rate. Re-verify the non-promotional annual price on format.com before publishing."
-  ],
-  "hold": "annualPerMonth may be the promotional price rather than the regular annual price"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

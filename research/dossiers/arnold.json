@@ -136,6 +136,8 @@
   ],
   "conflicts": [],
   "reviewNotes": [
-    "Le prix autonome d'Arnold (55 $/mois, ~430 $/an) vient d'un tracker tiers (Vendr) car la page officielle autodesk.com/products/arnold/overview a renvoyé une erreur 403 lors de cette session ; à reconfirmer directement sur autodesk.com avant publication."
-  ]
+    "Le prix autonome d'Arnold (55 $/mois, ~430 $/an) vient d'un tracker tiers (Vendr) car la page officielle autodesk.com/products/arnold/overview a renvoyé une erreur 403 lors de cette session ; à reconfirmer directement sur autodesk.com avant publication.",
+    "Nouvelle tentative le 2026-10-01 : autodesk.com/products/arnold/overview et autodesk.com/products/arnold/buy se chargent mais le widget de prix reste vide (placeholder {{PRICE}} ou zone blanche, geo-bloqué côté API), dans un navigateur rendu comme via fetch direct. Prix toujours non confirmé sur source officielle."
+  ],
+  "hold": "prix autonome (55 $/mois) non confirmable : le widget de prix officiel sur autodesk.com/products/arnold/overview et /buy ne se charge pas (bloqué), reverifier manuellement dans un navigateur connecté depuis les US"
 }

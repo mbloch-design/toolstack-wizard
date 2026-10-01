@@ -19,15 +19,15 @@
       "id": "s1",
       "url": "https://www.maxon.net/en/buy",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Maxon buy/pricing page"
+      "accessedOn": "2026-10-01",
+      "title": "Maxon buy/pricing page (Individuals tab, Monthly and Annual toggles)"
     }
   ],
   "pricing": {
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://www.maxon.net/en/buy",
-    "verifiedOn": "2026-06-17",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -40,19 +40,22 @@
     "plans": [
       {
         "key": "maxon-one",
-        "name": "Maxon One (annual)",
+        "name": "Maxon One",
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": null,
-          "annualPerMonth": 99.91,
+          "monthly": 169.0,
+          "annualPerMonth": 105.42,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Bundles Cinema 4D, Redshift, ZBrush, Red Giant, and Universe under one subscription, with 'Save 30% or more' framed versus buying products individually with annual billing; includes access to 7,500+ Maxon Capsules and a training video library. Exact monthly-only price and full plan breakdown were not visible in the fetched page content.",
-            "fr": "Regroupe Cinema 4D, Redshift, ZBrush, Red Giant et Universe dans un seul abonnement, avec une remise annoncée d'au moins 30 % par rapport à l'achat séparé de chaque produit en facturation annuelle ; inclut l'accès à plus de 7 500 Maxon Capsules et une bibliothèque de vidéos de formation. Le prix mensuel exact et le détail complet des plans n'étaient pas visibles dans le contenu de la page récupérée."
+            "en": "Bundles Cinema 4D, Redshift, ZBrush, Red Giant, and Universe under one subscription. $169/month on monthly billing, or $105.42/month billed annually (save 30%+). Includes access to 7,500+ Maxon Capsules and a training video library. A standalone Cinema 4D-only plan also exists ($109/month, or $69.92/month billed annually), separate from the full Maxon One bundle.",
+            "fr": "Regroupe Cinema 4D, Redshift, ZBrush, Red Giant et Universe dans un seul abonnement. 169 $/mois en facturation mensuelle, ou 105,42 $/mois en facturation annuelle (plus de 30 % d'économie). Inclut l'accès à plus de 7 500 Maxon Capsules et une bibliothèque de vidéos de formation. Un plan Cinema 4D seul existe aussi (109 $/mois, ou 69,92 $/mois en facturation annuelle), distinct du pack complet Maxon One.",
+            "sourceIds": [
+              "s1"
+            ]
           }
         ],
         "sourceIds": [
@@ -64,8 +67,8 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "The fetched pricing page did not render the actual pricing table in extracted content; figures here rely on the previously seeded/cached value and were not independently re-confirmed line by line in this session.",
-        "fr": "La page tarifaire récupérée n'a pas affiché le tableau de prix réel dans le contenu extrait ; les chiffres ici reposent sur une valeur mise en cache au préalable et n'ont pas été reconfirmés ligne par ligne dans cette session.",
+        "en": "Prices confirmed directly on the official pricing table (maxon.net/en/buy) on 2026-10-01, with both Monthly and Annual billing toggles checked. A standalone Cinema 4D plan exists separately from Maxon One.",
+        "fr": "Prix confirmés directement sur le tableau tarifaire officiel (maxon.net/en/buy) le 01/10/2026, en vérifiant les deux options de facturation mensuelle et annuelle. Un plan Cinema 4D autonome existe séparément de Maxon One.",
         "sourceIds": [
           "s1"
         ]
@@ -98,8 +101,8 @@
         ]
       },
       {
-        "en": "Full pricing table and per-app breakdown were not accessible in this session's page fetch, limiting confidence in exact figures.",
-        "fr": "Le tableau tarifaire complet et le détail par application n'étaient pas accessibles lors de la récupération de la page, ce qui limite la fiabilité des chiffres exacts.",
+        "en": "Monthly billing costs over 60% more per month than annual billing ($169 vs $105.42/month); the annual commitment is required to get the advertised discount.",
+        "fr": "La facturation mensuelle coûte plus de 60 % de plus par mois que la facturation annuelle (169 $ contre 105,42 $/mois) ; l'engagement annuel est nécessaire pour obtenir la remise annoncée.",
         "sourceIds": [
           "s1"
         ]
@@ -154,10 +157,7 @@
     }
   ],
   "missingAlternatives": [],
-  "unknowns": [
-    "Exact current monthly and annual prices could not be confirmed directly from the fetched page content in this session; relies on previously cached figures.",
-    "Whether a standalone Cinema 4D-only plan exists separate from the full Maxon One bundle was not confirmed."
-  ],
+  "unknowns": [],
   "rating": {
     "valeurAjoutee": 3,
     "simplicite": 2,
@@ -166,8 +166,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Bundling five professional tools under one subscription is framed as a 30%+ saving versus buying separately, but the exact monthly price could not be confirmed in this session.",
-        "fr": "Regrouper cinq outils professionnels dans un seul abonnement est présenté comme une économie d'au moins 30 % par rapport à un achat séparé, mais le prix mensuel exact n'a pas pu être confirmé dans cette session.",
+        "en": "Bundling five professional tools under one subscription offers a 30%+ saving versus monthly billing ($169/month on monthly billing, $105.42/month billed annually).",
+        "fr": "Regrouper cinq outils professionnels dans un seul abonnement offre une économie d'au moins 30 % par rapport à la facturation mensuelle (169 $/mois au mois, 105,42 $/mois en facturation annuelle).",
         "sourceIds": [
           "s1"
         ]
@@ -213,8 +213,8 @@
       "fr": "Bundle par abonnement qui réunit modélisation 3D, sculpture, rendu GPU et plugins VFX/motion design en une licence."
     },
     "longDescription": {
-      "en": "Maxon One combines Cinema 4D for modeling and animation, Redshift as the GPU renderer, ZBrush for digital sculpting, and Red Giant's VFX and motion graphics plugins under a single subscription, plus access to a library of 7,500+ ready-made assets and training videos.\n\nIt is billed as a subscription only, with annual billing pitched as a 30%+ saving versus buying the tools separately; the exact monthly-only figure was not confirmed in this session. It suits a 3D artist, motion designer, or VFX freelancer who needs the full modeling-to-rendering pipeline rather than a single specialized app.",
-      "fr": "Maxon One réunit Cinema 4D pour la modélisation et l'animation, Redshift comme moteur de rendu GPU, ZBrush pour la sculpture numérique et les plugins VFX de Red Giant dans un seul abonnement, avec l'accès à plus de 7 500 assets prêts à l'emploi et des vidéos de formation.\n\nL'offre est uniquement par abonnement, la facturation annuelle étant présentée comme une économie d'au moins 30 % par rapport à un achat séparé ; le montant mensuel exact n'a pas pu être confirmé dans cette session. L'outil convient à un artiste 3D, motion designer ou freelance VFX qui a besoin du pipeline complet plutôt que d'une seule application spécialisée."
+      "en": "Maxon One combines Cinema 4D for modeling and animation, Redshift as the GPU renderer, ZBrush for digital sculpting, and Red Giant's VFX and motion graphics plugins under a single subscription, plus access to a library of 7,500+ ready-made assets and training videos.\n\nIt is billed as a subscription only: $169/month on monthly billing, or $105.42/month billed annually (30%+ saving). It suits a 3D artist, motion designer, or VFX freelancer who needs the full modeling-to-rendering pipeline rather than a single specialized app.",
+      "fr": "Maxon One réunit Cinema 4D pour la modélisation et l'animation, Redshift comme moteur de rendu GPU, ZBrush pour la sculpture numérique et les plugins VFX de Red Giant dans un seul abonnement, avec l'accès à plus de 7 500 assets prêts à l'emploi et des vidéos de formation.\n\nL'offre est uniquement par abonnement : 169 $/mois en facturation mensuelle, ou 105,42 $/mois en facturation annuelle (plus de 30 % d'économie). L'outil convient à un artiste 3D, motion designer ou freelance VFX qui a besoin du pipeline complet plutôt que d'une seule application spécialisée."
     },
     "pros": [
       {
@@ -246,16 +246,17 @@
         "fr": "Tu n'as besoin que d'une seule des applications du bundle, car une licence isolée pour cet outil peut coûter moins cher que la suite complète."
       },
       "threshold": {
-        "en": "The annual plan bills at roughly $99.91/month per seat when paid yearly; compare that to the combined cost of buying Cinema 4D, Redshift, ZBrush, and Red Giant separately.",
-        "fr": "Le plan annuel revient à environ 99,91 $/mois par siège en facturation annuelle ; compare ce montant au coût cumulé de Cinema 4D, Redshift, ZBrush et Red Giant achetés séparément."
+        "en": "The annual plan bills at roughly $105.42/month per seat when paid yearly (versus $169/month on monthly billing); compare that to the combined cost of buying Cinema 4D, Redshift, ZBrush, and Red Giant separately.",
+        "fr": "Le plan annuel revient à environ 105,42 $/mois par siège en facturation annuelle (contre 169 $/mois en facturation mensuelle) ; compare ce montant au coût cumulé de Cinema 4D, Redshift, ZBrush et Red Giant achetés séparément."
       },
       "billingTraps": {
-        "en": "Pricing is framed around annual billing as the best rate; the monthly-only price was not visible on the fetched page, so confirm it before committing to a shorter term.",
-        "fr": "La tarification met en avant la facturation annuelle comme le meilleur tarif ; le prix en facturation mensuelle seule n'était pas visible sur la page récupérée, à vérifier avant de t'engager sur une durée plus courte."
+        "en": "Monthly billing ($169/month) costs 60%+ more than annual billing ($105.42/month); check whether the shorter commitment is worth the premium.",
+        "fr": "La facturation mensuelle (169 $/mois) coûte plus de 60 % de plus que la facturation annuelle (105,42 $/mois) ; à mettre en balance avec l'intérêt d'un engagement plus court."
       }
     }
   },
   "completedLocallyOn": "2026-09-30",
   "conflicts": [],
-  "hold": "pricing table not rendered, figures from a cached value; check in a browser"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

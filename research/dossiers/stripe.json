@@ -21,6 +21,7 @@
       "url": "https://stripe.com/pricing",
       "tier": 1,
       "accessedOn": "2026-09-25",
+      "checkedOn": "2026-10-01",
       "title": "Stripe pricing"
     }
   ],
@@ -28,7 +29,7 @@
     "model": "usage",
     "currency": "USD",
     "pricingUrl": "https://stripe.com/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": false,
     "freePlan": {
@@ -49,7 +50,7 @@
           "annualPerMonth": null,
           "oneTime": null
         },
-        "onQuote": true,
+        "onQuote": false,
         "keyLimits": [
           {
             "en": "2.9% + 30¢ per successful domestic card transaction, no setup or monthly fee. International cards add 1.5%, currency conversion adds 1%, manually entered cards add 0.5%. Usage-based, no fixed plan price.",
@@ -61,8 +62,8 @@
         ]
       }
     ],
-    "comparePlanKey": null,
-    "regularPriceUnknown": true,
+    "comparePlanKey": "standard",
+    "regularPriceUnknown": false,
     "addOns": [
       {
         "en": "Custom domain for hosted pages/checkout: $10/month.",
@@ -274,8 +275,6 @@
     "No explicit maximum transaction volume cap stated; enterprise/custom pricing exists but exact thresholds and negotiated rates are not public."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "The standard processing plan is marked onQuote: true and regularPriceUnknown: true, but the dossier's own facts show a public, non-promotional rate (2.9% + 30 cents domestic). This looks like a usage model misclassified as a quote-only plan rather than a genuine inconsistency in the published price; verify on stripe.com/pricing whether a structured comparePlanKey (e.g. the base domestic rate) should replace the quote flag."
-  ],
-  "hold": "standard 2.9% + 0.30 rate is public but stored as onQuote; reclassify as usage before publishing"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

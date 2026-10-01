@@ -18,10 +18,11 @@
   "sources": [
     {
       "id": "s1",
-      "url": "https://www.chaos.com/enscape/pricing",
+      "url": "https://www.chaos.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Enscape pricing"
+      "accessedOn": "2026-10-01",
+      "checkedOn": "2026-10-01",
+      "title": "Chaos buy / pricing page, Enscape tab (EUR shown to this session, no region/currency switch found)"
     },
     {
       "id": "s2",
@@ -34,7 +35,7 @@
   "pricing": {
     "model": "subscription",
     "currency": "USD",
-    "pricingUrl": "https://www.chaos.com/enscape/pricing",
+    "pricingUrl": "https://www.chaos.com/pricing",
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
@@ -374,7 +375,7 @@
     "chaos.com/enscape/pricing lists Premium at $77.00/mo and Collection at $208.00/mo (annual billing), while chaos.com/enscape lists Premium at $55.90/mo and Collection at $60.90/mo (both accessed 2026-09-25)"
   ],
   "reviewNotes": [
-    "Two official Chaos pages give different Premium/Collection monthly prices ($77/$208 on the pricing page vs $55.90/$60.90 on the product page); verify the correct current figures directly on chaos.com/enscape/pricing before publishing."
+    "Re-checked chaos.com/pricing (Enscape tab) live on 2026-10-01: there is now a single official pricing page (the old chaos.com/enscape/pricing URL 404s), so the earlier two-page conflict no longer applies. But the page serves EUR to this session with no region or currency switcher (unlike maxon.net, which has one): annual billing shows Solo EUR 44.90/mo (EUR 538.80/yr), Premium EUR 51.90/mo (EUR 622.80/yr), Collection EUR 57.90/mo (EUR 694.80/yr); monthly billing shows Premium EUR 72.00/mo and Collection EUR 191.00/mo. The dossier's region is US/USD, and no USD figure could be confirmed from an official source in this session."
   ],
-  "hold": "two official Chaos pages disagree on Premium and Collection prices"
+  "hold": "official Chaos pricing page confirmed live but only in EUR; USD price for the US region not accessible from this session"
 }

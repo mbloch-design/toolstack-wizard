@@ -11,17 +11,18 @@
     "officialUrl": "https://aescripts.com/flow/",
     "docsUrl": null,
     "changelogUrl": null,
-    "urlStatus": "blocked",
+    "urlStatus": "ok",
     "productStatus": "active",
-    "statusNote": "aescripts.com returned HTTP 403 to automated fetch; facts below come from search-indexed summaries and third-party review sites, not a direct read of the official page."
+    "statusNote": "aescripts.com returns HTTP 403 to simple automated fetches, but is reachable in a live browser; confirmed directly there on 2026-10-01."
   },
   "sources": [
     {
       "id": "s1",
       "url": "https://aescripts.com/flow/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Flow - aescripts.com (blocked, 403, indexed summary only)"
+      "accessedOn": "2026-10-01",
+      "checkedOn": "2026-10-01",
+      "title": "Flow - aescripts.com, read live in a browser"
     },
     {
       "id": "s2",
@@ -35,7 +36,7 @@
     "model": "one_time",
     "currency": "USD",
     "pricingUrl": "https://aescripts.com/flow/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -49,7 +50,7 @@
     "plans": [
       {
         "key": "flow",
-        "name": "Flow",
+        "name": "Flow (Single User License)",
         "unit": "one_time",
         "minSeats": null,
         "price": {
@@ -60,13 +61,12 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Single-user license for the Flow After Effects extension; exact price not directly confirmed from the official page due to a 403 block",
-            "fr": "Licence mono-utilisateur pour l'extension Flow d'After Effects ; le prix exact n'a pas pu être confirmé directement sur la page officielle, bloquée (erreur 403)"
+            "en": "Single-user license for the Flow After Effects extension; price confirmed live on aescripts.com on 2026-10-01. A separate, pricier Floating Server License option also exists for multi-seat use.",
+            "fr": "Licence mono-utilisateur pour l'extension Flow d'After Effects ; prix confirmé en direct sur aescripts.com le 2026-10-01. Une licence Floating Server distincte, plus chère, existe aussi pour un usage multi-postes."
           }
         ],
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       }
     ],
@@ -74,11 +74,10 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Price ($35) could not be directly confirmed on the official pricing page (blocked by anti-bot protection); it comes from third-party review/search summaries and should be re-verified.",
-        "fr": "Le prix (35$) n'a pas pu être confirmé directement sur la page tarifs officielle (bloquée par une protection anti-bot) ; il provient de résumés tiers et doit être revérifié.",
+        "en": "A free trial is offered (button labeled 'FREE TRIAL' on the product page), but its duration is not stated anywhere on the page.",
+        "fr": "Un essai gratuit est proposé (bouton « FREE TRIAL » sur la page produit), mais sa durée n'est indiquée nulle part sur la page.",
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       }
     ]
@@ -123,8 +122,8 @@
         ]
       },
       {
-        "en": "Official pricing and system-requirements page could not be directly verified due to anti-bot blocking; details rely on third-party sources",
-        "fr": "La page officielle de tarifs et de prérequis système n'a pas pu être vérifiée directement à cause d'un blocage anti-bot ; les détails reposent sur des sources tierces",
+        "en": "Compatible with After Effects 2020 through 2026 only; no standalone use outside Adobe's app.",
+        "fr": "Compatible uniquement avec After Effects 2020 à 2026 ; aucun usage autonome hors de l'application Adobe.",
         "sourceIds": [
           "s1"
         ]
@@ -187,11 +186,10 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Neutral score: the exact price could not be confirmed on the official page (blocked), so the cost-to-benefit ratio for a one-time purchase can't be judged reliably from the collected sources.",
-        "fr": "Note neutre : le prix exact n'a pas pu être confirmé sur la page officielle (bloquée), donc le rapport coût-bénéfice de cet achat unique ne peut pas être jugé de façon fiable à partir des sources relevées.",
+        "en": "A $35 one-time license (confirmed live on aescripts.com) for a dedicated easing editor and reusable preset library is a low, pays-for-itself cost for anyone animating in After Effects regularly, with a free trial to check fit first.",
+        "fr": "Une licence à vie à 35 $ (confirmée en direct sur aescripts.com) pour un éditeur d'easing dédié et une bibliothèque de presets réutilisable est un coût faible, vite rentabilisé pour qui anime régulièrement dans After Effects, avec un essai gratuit pour vérifier que ça convient avant d'acheter.",
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       },
       "simplicite": {
@@ -235,8 +233,8 @@
       "fr": "Flow est une extension After Effects qui remplace le Graph Editor natif par un éditeur de courbes d'easing moderne et une bibliothèque de presets réutilisables."
     },
     "longDescription": {
-      "en": "Flow targets one specific friction point in After Effects: shaping keyframe easing without fighting the native Graph Editor. It comes with 25 built-in curves based on Robert Penner's easing functions, a library system to save and reuse custom presets across projects, and a CSS cubic-bezier export for handing motion values to a web developer.\n\nIt is sold as a one-time license, reported at $35, but the official aescripts.com page blocked automated access during this research pass, so that price and any trial availability should be confirmed directly on the site before purchase. It only works as a plugin inside After Effects, not as a standalone app.",
-      "fr": "Flow cible un point de friction précis dans After Effects : façonner l'easing des images clés sans lutter contre le Graph Editor natif. Il est livré avec 25 courbes intégrées basées sur les fonctions d'easing de Robert Penner, un système de bibliothèque pour sauvegarder et réutiliser des presets personnalisés entre projets, et un export CSS cubic-bezier pour transmettre les valeurs de mouvement à un développeur web.\n\nIl est vendu en licence à vie, indiquée à 35$, mais la page officielle aescripts.com a bloqué l'accès automatisé pendant cette recherche, donc ce prix et la disponibilité d'un essai doivent être confirmés directement sur le site avant achat. Il ne fonctionne que comme plugin à l'intérieur d'After Effects, pas comme application autonome."
+      "en": "Flow targets one specific friction point in After Effects: shaping keyframe easing without fighting the native Graph Editor. It comes with 25 built-in curves based on Robert Penner's easing functions, a library system to save and reuse custom presets across projects, and a CSS cubic-bezier export for handing motion values to a web developer.\n\nIt is sold as a one-time Single User License at $35, confirmed directly on aescripts.com, with a free trial available (duration not stated) and a pricier Floating Server License for multi-seat use. It only works as a plugin inside After Effects (versions 2020-2026), not as a standalone app.",
+      "fr": "Flow cible un point de friction précis dans After Effects : façonner l'easing des images clés sans lutter contre le Graph Editor natif. Il est livré avec 25 courbes intégrées basées sur les fonctions d'easing de Robert Penner, un système de bibliothèque pour sauvegarder et réutiliser des presets personnalisés entre projets, et un export CSS cubic-bezier pour transmettre les valeurs de mouvement à un développeur web.\n\nIl est vendu en licence à vie mono-utilisateur à 35 $, confirmé directement sur aescripts.com, avec un essai gratuit disponible (durée non précisée) et une licence Floating Server plus chère pour un usage multi-postes. Il ne fonctionne que comme plugin à l'intérieur d'After Effects (versions 2020 à 2026), pas comme application autonome."
     },
     "pros": [
       {
@@ -250,8 +248,8 @@
     ],
     "cons": [
       {
-        "en": "The official pricing page was inaccessible during this research pass, so the current price and terms are not independently confirmed.",
-        "fr": "La page tarifs officielle était inaccessible pendant cette recherche, donc le prix et les conditions actuels ne sont pas confirmés de façon indépendante."
+        "en": "The free trial's duration isn't stated anywhere on the product page.",
+        "fr": "La durée de l'essai gratuit n'est indiquée nulle part sur la page produit."
       },
       {
         "en": "It only works as a plugin inside After Effects, so it adds no value without an existing Adobe subscription.",
@@ -268,21 +266,18 @@
         "fr": "Évite-le si tu n'utilises pas After Effects, ou si un outil déjà en pack comme Animation Composer couvre déjà tes besoins d'easing."
       },
       "threshold": {
-        "en": "The license is reported at a $35 one-time cost, unconfirmed on the official page; verify the current price directly on aescripts.com before buying.",
-        "fr": "La licence est indiquée à 35$ en achat unique, non confirmé sur la page officielle ; vérifie le prix actuel directement sur aescripts.com avant d'acheter."
+        "en": "The Single User License is a $35 one-time cost, confirmed directly on aescripts.com; try the free trial first since its duration isn't stated.",
+        "fr": "La licence mono-utilisateur coûte 35 $ en achat unique, confirmé directement sur aescripts.com ; essaie d'abord l'essai gratuit puisque sa durée n'est pas précisée."
       }
     }
   },
   "unknowns": [
-    "Exact official price not confirmed directly (site blocked automated access); third-party sources cite $35, an older source cites $30",
-    "Trial availability and duration not confirmed from the official page",
-    "Supported After Effects versions and OS requirements not confirmed"
+    "Free trial duration is not stated on the official page.",
+    "Floating Server License price was not captured (only the Single User License price was read from the plan's default view)."
   ],
-  "conflicts": [
-    "Search-indexed summaries disagree on price: $35 (most recent) vs $30 (older source)"
-  ],
+  "conflicts": [],
   "reviewNotes": [
-    "The official aescripts.com page returned HTTP 403 during research; the $35 one-time price should be re-verified directly on the site before this dossier is merged."
+    "Re-checked aescripts.com/flow/ live in a browser on 2026-10-01 (a plain fetch still 403s, but the page loads normally in a browser): confirms Single User License at $35 one-time, a free trial button with no stated duration, and a separate Floating Server License for multi-seat use. The earlier $30 figure from an older indexed summary is superseded by this direct read."
   ],
-  "hold": "official page blocked (403); evidence too thin to publish"
+  "priceCheckedOn": "2026-10-01"
 }

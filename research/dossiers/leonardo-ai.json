@@ -11,23 +11,23 @@
     "officialUrl": "https://leonardo.ai",
     "docsUrl": "https://docs.leonardo.ai",
     "changelogUrl": null,
-    "urlStatus": "blocked",
+    "urlStatus": "ok",
     "productStatus": "active",
-    "statusNote": "Official leonardo.ai and docs.leonardo.ai pages returned HTTP 403 to automated fetch in this session; pricing facts below come from search-engine snippets of the official pricing page title plus independent trackers, and should be re-verified directly."
+    "statusNote": "leonardo.ai/pricing confirmed live and rendered directly on 2026-10-01; the docs.leonardo.ai Pay-As-You-Go FAQ describes a separate API product, distinct from the consumer app's Essential/Premium/Ultimate subscription tiers confirmed below."
   },
   "sources": [
-    { "id": "s1", "url": "https://leonardo.ai/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Leonardo.Ai Pricing: Individual, Team & API Plans (fetch blocked, title/snippet only)" },
-    { "id": "s2", "url": "https://docs.leonardo.ai/docs/pricing-and-plans-faq", "tier": 1, "accessedOn": "2026-09-25", "title": "Pricing & Plans FAQ - confirms move toward Pay-As-You-Go model" },
+    { "id": "s1", "url": "https://leonardo.ai/pricing", "tier": 1, "accessedOn": "2026-10-01", "checkedOn": "2026-10-01", "title": "Leonardo.Ai Pricing: Individual, Team & API Plans" },
+    { "id": "s2", "url": "https://docs.leonardo.ai/docs/pricing-and-plans-faq", "tier": 1, "accessedOn": "2026-09-25", "title": "Pricing & Plans FAQ - describes the separate Pay-As-You-Go API product" },
     { "id": "s3", "url": "https://fluxnote.io/guides/leonardo-ai-pricing-guide-2026", "tier": 2, "accessedOn": "2026-09-25", "title": "Leonardo AI Pricing 2026 (third-party tracker)" }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://leonardo.ai/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "150 fast tokens/day, generations carry a watermark, non-commercial use only.", "sourceIds": ["s3"] },
+    "freePlan": { "exists": true, "limits": "150 fast tokens/day, generations carry a watermark, non-commercial use only.", "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "free",
@@ -39,50 +39,50 @@
         "keyLimits": [
           { "en": "150 fast tokens/day, watermarked output, non-commercial use only.", "fr": "150 jetons rapides/jour, sortie avec filigrane, usage non commercial uniquement." }
         ],
-        "sourceIds": ["s3"]
+        "sourceIds": ["s1"]
       },
       {
         "key": "essential",
-        "name": "Essential (formerly Apprentice)",
+        "name": "Essential",
         "unit": "seat",
         "minSeats": 1,
         "price": { "monthly": 12, "annualPerMonth": 9.6, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "8,500 fast tokens/month, commercial use permitted.", "fr": "8 500 jetons rapides/mois, usage commercial autorisé." }
+          { "en": "8,500 fast tokens/month, 25,500 token bank, private creations, commercial use permitted.", "fr": "8 500 jetons rapides/mois, banque de 25 500 jetons, créations privées, usage commercial autorisé." }
         ],
-        "sourceIds": ["s3"]
+        "sourceIds": ["s1"]
       },
       {
         "key": "premium",
-        "name": "Premium (formerly Artisan)",
+        "name": "Premium",
         "unit": "seat",
         "minSeats": 1,
         "price": { "monthly": 30, "annualPerMonth": 24, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "25,000 fast tokens/month, adds relaxed (queued) generation on selected models.", "fr": "25 000 jetons rapides/mois, ajoute la génération relâchée (en file d'attente) sur certains modèles." }
+          { "en": "25,000 fast tokens/month, 75,000 token bank, adds relaxed (queued) generation on selected models.", "fr": "25 000 jetons rapides/mois, banque de 75 000 jetons, ajoute la génération relâchée (en file d'attente) sur certains modèles." }
         ],
-        "sourceIds": ["s3"]
+        "sourceIds": ["s1"]
       },
       {
         "key": "ultimate",
-        "name": "Ultimate (formerly Maestro)",
+        "name": "Ultimate",
         "unit": "seat",
         "minSeats": 1,
         "price": { "monthly": 60, "annualPerMonth": 48, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "60,000 fast tokens/month, extends relaxed access to selected image and video models.", "fr": "60 000 jetons rapides/mois, étend l'accès relâché à certains modèles image et vidéo." }
+          { "en": "60,000 fast tokens/month, 180,000 token bank, extends relaxed access to selected image and video models.", "fr": "60 000 jetons rapides/mois, banque de 180 000 jetons, étend l'accès relâché à certains modèles image et vidéo." }
         ],
-        "sourceIds": ["s3"]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "essential",
     "addOns": [],
     "cautions": [
-      { "en": "Leonardo AI's own documentation (pricing-and-plans FAQ) describes the product as moving to a Pay-As-You-Go model with no monthly fees, which conflicts with the tiered Essential/Premium/Ultimate subscription pricing reported by third-party trackers; the plan names and figures here could not be confirmed on the official pricing page directly (403 blocked) and should be re-verified.", "fr": "La documentation officielle de Leonardo AI (FAQ pricing-and-plans) décrit le produit comme passant à un modèle Pay-As-You-Go sans frais mensuels, ce qui contredit la tarification par paliers Essential/Premium/Ultimate rapportée par des trackers tiers ; les noms de plans et chiffres ici n'ont pas pu être confirmés directement sur la page tarifs officielle (bloquée, 403) et devraient être revérifiés.", "sourceIds": ["s2", "s3"] },
-      { "en": "Older plan names (Apprentice, Artisan, Maestro) have reportedly been renamed to Essential, Premium, Ultimate; some still-live third-party content uses the old names interchangeably.", "fr": "Les anciens noms de plans (Apprentice, Artisan, Maestro) auraient été renommés en Essential, Premium, Ultimate ; certains contenus tiers encore en ligne utilisent les deux séries de noms de façon interchangeable.", "sourceIds": ["s3"] }
+      { "en": "Leonardo AI's docs.leonardo.ai FAQ describes a separate Pay-As-You-Go API product with no monthly fees; this is distinct from the consumer app at leonardo.ai, which runs the Free/Essential/Premium/Ultimate subscription tiers confirmed directly on leonardo.ai/pricing.", "fr": "La FAQ docs.leonardo.ai décrit un produit API distinct, facturé à l'usage et sans frais mensuel ; cela ne concerne pas l'application grand public sur leonardo.ai, qui fonctionne avec les paliers d'abonnement Free/Essential/Premium/Ultimate confirmés directement sur leonardo.ai/pricing.", "sourceIds": ["s1", "s2"] },
+      { "en": "Older plan names (Apprentice, Artisan, Maestro) have been renamed to Essential, Premium, Ultimate; some third-party content still uses the old names.", "fr": "Les anciens noms de plans (Apprentice, Artisan, Maestro) ont été renommés en Essential, Premium, Ultimate ; certains contenus tiers utilisent encore les anciens noms.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
@@ -122,10 +122,10 @@
     "puissance": 3,
     "reversibilite": 3,
     "evidence": {
-      "valeurAjoutee": { "en": "The pricing model itself is disputed between official docs (Pay-As-You-Go) and third-party trackers (tiered subscriptions), making a clear value judgment premature until this is verified directly.", "fr": "Le modèle de tarification lui-même est contesté entre la documentation officielle (Pay-As-You-Go) et des trackers tiers (abonnements par paliers), ce qui rend un jugement de valeur clair prématuré avant vérification directe.", "sourceIds": ["s2", "s3"] },
+      "valeurAjoutee": { "en": "The Essential plan at $12/month (9,500 tokens including bank) opens commercial use and private generations, a clear step up from the watermarked free tier, confirmed on the official pricing page.", "fr": "L'offre Essential à 12 $/mois (jetons rapides et banque inclus) ouvre l'usage commercial et les créations privées, nette amélioration par rapport au plan gratuit filigrané, confirmé sur la page tarifs officielle.", "sourceIds": ["s1"] },
       "simplicite": { "en": "Neutral score: time to a first usable image is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir une première image utilisable ne figure pas dans les sources relevées.", "sourceIds": ["s3"] },
-      "utilisation": { "en": "Third-party trackers describe working image generation and editing features, but this could not be confirmed on the official site, which returned a 403 in this session.", "fr": "Des trackers tiers décrivent des fonctions de génération et d'édition d'images fonctionnelles, mais cela n'a pas pu être confirmé sur le site officiel, qui a renvoyé une erreur 403 pendant cette session.", "sourceIds": ["s3"] },
-      "puissance": { "en": "Access to both proprietary and third-party models (e.g. Flux) for image generation and editing, per third-party sources; the official page could not be checked for the full feature scope.", "fr": "Accès à des modèles propriétaires et tiers (ex. Flux) pour la génération et l'édition d'images, selon des sources tierces ; la page officielle n'a pas pu être vérifiée pour le périmètre complet des fonctions.", "sourceIds": ["s3"] },
+      "utilisation": { "en": "Image generation and editing features are confirmed directly on the official pricing and product pages.", "fr": "Les fonctions de génération et d'édition d'images sont confirmées directement sur les pages tarifs et produit officielles.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Access to both proprietary and third-party models (e.g. Flux) for image generation and editing, confirmed on the official site; higher tiers add relaxed video generation.", "fr": "Accès à des modèles propriétaires et tiers (ex. Flux) pour la génération et l'édition d'images, confirmé sur le site officiel ; les paliers supérieurs ajoutent la génération vidéo relâchée.", "sourceIds": ["s1"] },
       "reversibilite": { "en": "Neutral score: export of generated assets and account portability are not covered by the collected sources.", "fr": "Note neutre : l'export des créations et la portabilité du compte ne figurent pas dans les sources relevées.", "sourceIds": ["s3"] }
     },
     "lastActivityVerifiedOn": null
@@ -134,8 +134,8 @@
     "tagline": { "en": "AI image generator", "fr": "Génération d'images IA" },
     "shortDescription": { "en": "Leonardo AI generates and edits images with proprietary and third-party AI models, using a token-based credit system across free and paid tiers.", "fr": "Leonardo AI génère et édite des images avec des modèles IA propres et tiers, via un système de jetons/crédits sur des plans gratuits et payants." },
     "longDescription": {
-      "en": "Leonardo AI generates and edits images using its own models and third-party ones such as Flux, with tools for upscaling and style transformation like photo-to-painting. Usage runs on a token-based credit system shared across image (and, on higher plans, video) generation.\n\nThe free plan allows 150 fast tokens a day but restricts output to non-commercial, watermarked use. Paid plans reportedly start around $12 a month for commercial use and higher token allowances, though published figures vary between sources at the time of writing.",
-      "fr": "Leonardo AI génère et édite des images avec ses propres modèles et des modèles tiers comme Flux, avec des outils d'agrandissement et de transformation de style (ex. photo vers peinture). L'usage repose sur un système de jetons/crédits partagé entre la génération d'images (et, sur les plans supérieurs, de vidéos).\n\nLe plan gratuit permet 150 jetons rapides par jour mais limite la sortie à un usage non commercial et filigrané. Les plans payants démarreraient autour de 12 $ par mois pour un usage commercial et plus de jetons, bien que les chiffres publiés varient selon les sources au moment de la rédaction."
+      "en": "Leonardo AI generates and edits images using its own models and third-party ones such as Flux, with tools for upscaling and style transformation like photo-to-painting. Usage runs on a token-based credit system shared across image (and, on higher plans, video) generation.\n\nThe free plan allows 150 fast tokens a day but restricts output to non-commercial, watermarked use. Paid plans start at $12/month (Essential, 8,500 fast tokens), then $30/month (Premium, 25,000 fast tokens) and $60/month (Ultimate, 60,000 fast tokens), each about 20% cheaper billed annually. A separate Pay-As-You-Go API product exists for developers, with its own usage-based pricing.",
+      "fr": "Leonardo AI génère et édite des images avec ses propres modèles et des modèles tiers comme Flux, avec des outils d'agrandissement et de transformation de style (ex. photo vers peinture). L'usage repose sur des jetons/crédits partagés entre la génération d'images et, sur les plans supérieurs, de vidéos.\n\nLe plan gratuit permet 150 jetons rapides par jour mais limite la sortie à un usage non commercial et filigrané. Les plans payants démarrent à 12 $/mois (Essential, 8 500 jetons), puis 30 $/mois (Premium, 25 000) et 60 $/mois (Ultimate, 60 000), chacun ~20 % moins cher en annuel. Un produit API distinct, facturé à l'usage, existe pour les développeurs."
     },
     "pros": [
       { "en": "Free tier allows daily generation without payment, useful to test the tool before committing.", "fr": "Le plan gratuit permet une génération quotidienne sans paiement, utile pour tester l'outil avant de s'engager." },
@@ -143,24 +143,18 @@
     ],
     "cons": [
       { "en": "Free tier output is watermarked and restricted to non-commercial use.", "fr": "La sortie du plan gratuit est filigranée et limitée à un usage non commercial." },
-      { "en": "Published pricing is inconsistent between Leonardo's own documentation and third-party trackers at the time of writing, so the billing model should be checked directly before subscribing.", "fr": "La tarification publiée est incohérente entre la documentation officielle de Leonardo et des trackers tiers au moment de la rédaction ; le modèle de facturation doit être vérifié directement avant de s'abonner." }
+      { "en": "A separate Pay-As-You-Go API product exists for developers; it is not a substitute for the consumer app's subscription tiers above.", "fr": "Un produit API distinct, facturé à l'usage, existe pour les développeurs ; il ne remplace pas les paliers d'abonnement de l'application grand public ci-dessus." }
     ],
     "verdict": {
       "keepIf": { "en": "Occasional or non-commercial image generation is enough, where the free daily token allowance covers the need.", "fr": "Une génération d'images occasionnelle ou non commerciale suffit, et l'allocation quotidienne de jetons gratuits couvre le besoin." },
-      "avoidIf": { "en": "Commercial, high-volume image generation is needed and the current pricing cannot be confirmed with confidence.", "fr": "Une génération d'images commerciale à fort volume est nécessaire et la tarification actuelle ne peut pas être confirmée avec certitude." },
-      "threshold": { "en": "Paid commercial use reportedly starts around $12/month (Essential plan), but this should be confirmed on leonardo.ai/pricing before budgeting.", "fr": "L'usage commercial payant démarrerait autour de 12 $/mois (plan Essential), mais ce chiffre doit être confirmé sur leonardo.ai/pricing avant de budgéter." }
+      "avoidIf": { "en": "Commercial, high-volume image generation is needed beyond what the Essential plan's monthly token allowance covers.", "fr": "Une génération d'images commerciale à fort volume est nécessaire, au-delà de l'allocation mensuelle de jetons du plan Essential." },
+      "threshold": { "en": "Paid commercial use starts at $12/month (Essential plan, 8,500 fast tokens/month), confirmed on leonardo.ai/pricing.", "fr": "L'usage commercial payant démarre à 12 $/mois (plan Essential, 8 500 jetons rapides/mois), confirmé sur leonardo.ai/pricing." }
     }
   },
-  "reviewNotes": [
-    "Conflit de tarification non résolu entre la documentation officielle (FAQ pricing-and-plans, modèle Pay-As-You-Go) et des trackers tiers (paliers Essential 12 $, Premium 30 $, Ultimate 60 $) ; à vérifier directement sur leonardo.ai/pricing (page bloquée en 403 pendant cette session).",
-    "Les noms de plans (Essential/Premium/Ultimate vs anciens Apprentice/Artisan/Maestro) proviennent de sources tierces, pas de la page officielle ; à reconfirmer."
-  ],
+  "reviewNotes": [],
   "unknowns": [
-    "Official leonardo.ai pricing page and docs.leonardo.ai were blocked (HTTP 403) to automated fetch in this session; the plan names (Essential/Premium/Ultimate vs. Apprentice/Artisan/Maestro) and exact prices come from third-party trackers and a search snippet, not a directly read official page.",
-    "Whether Leonardo AI has fully transitioned to Pay-As-You-Go pricing (as its own FAQ doc states) or still runs tiered monthly subscriptions (as trackers report) is unresolved.",
-    "Team plan pricing (Starter/Growth) mentioned by trackers was not verified."
+    "Team plan pricing (Starter $72/month and Growth $144/month, per-seat equivalents $24 and $48) was seen on leonardo.ai/pricing but not independently cross-checked against a second source."
   ],
-  "conflicts": [
-    "Official docs.leonardo.ai/docs/pricing-and-plans-faq describes a Pay-As-You-Go, no-monthly-fee model, while multiple independent pricing trackers describe fixed monthly subscription tiers (Essential $12, Premium $30, Ultimate $60); could not reconcile within this session's budget."
-  ]
+  "conflicts": [],
+  "priceCheckedOn": "2026-10-01"
 }

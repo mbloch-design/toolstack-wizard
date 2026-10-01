@@ -19,15 +19,15 @@
       "id": "s1",
       "url": "https://aloware.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Aloware pricing"
+      "accessedOn": "2026-10-01",
+      "title": "Aloware pricing (official; confirmed Annually tab shows $30/$60/$85 per user and Monthly tab shows $40/$70/$100)"
     }
   ],
   "pricing": {
     "model": "per_seat",
     "currency": "USD",
     "pricingUrl": "https://aloware.com/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -127,8 +127,8 @@
     ],
     "cautions": [
       {
-        "en": "Every plan carries a minimum seat count (5 or 10 users), which raises the effective entry cost well above the headline per-seat price; the source page listed monthly and annual figures in a way that read as annual costing more than monthly, but the stated '15% savings' only reconciles if annual billing ($30/$60/$85 per user) is cheaper than monthly billing ($40/$70/$100 per user), so this dossier applies that correction and it should be reverified on the official page.",
-        "fr": "Chaque plan impose un nombre minimum de sièges (5 ou 10 utilisateurs), ce qui relève sensiblement le coût d'entrée réel au-delà du prix par siège affiché ; la page source présentait les montants mensuels et annuels d'une façon qui laissait penser que l'annuel coûtait plus que le mensuel, mais l'économie de « 15 % » annoncée ne se vérifie que si la facturation annuelle (30 $/60 $/85 $ par utilisateur) est moins chère que la mensuelle (40 $/70 $/100 $ par utilisateur) ; ce dossier applique cette correction et elle doit être revérifiée sur la page officielle.",
+        "en": "Every plan carries a minimum seat count (5 or 10 users), which raises the effective entry cost well above the headline per-seat price. Confirmed directly on aloware.com/pricing: the 'Annually' tab (labeled 'Save 15%') shows $30/$60/$85 per user, and the 'Monthly' tab shows $40/$70/$100 per user, matching the comparison table's 'Monthly Price: $40/month' for iPro + AI.",
+        "fr": "Chaque plan impose un nombre minimum de sièges (5 ou 10 utilisateurs), ce qui relève sensiblement le coût d'entrée réel au-delà du prix par siège affiché. Confirmé directement sur aloware.com/pricing : l'onglet « Annually » (étiqueté « Save 15% ») affiche 30 $/60 $/85 $ par utilisateur, et l'onglet « Monthly » affiche 40 $/70 $/100 $ par utilisateur, cohérent avec le tableau comparatif qui indique « Monthly Price : 40 $/mois » pour iPro + AI.",
         "sourceIds": [
           "s1"
         ]
@@ -342,13 +342,9 @@
       }
     }
   },
-  "unknowns": [
-    "The pricing page's monthly vs. annual labeling was ambiguous (fetched text implied annual billing costs more per user than monthly, which contradicts its own '15% savings' claim); this dossier reassigned monthly=$40/$70/$100 and annual=$30/$60/$85 per user to match the stated discount, and it should be reverified directly against aloware.com/pricing."
-  ],
+  "unknowns": [],
   "conflicts": [],
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": [
-    "aloware.com/pricing's monthly-vs-annual labeling was ambiguous (text implied annual costs more per seat than monthly, contradicting the stated 15% annual savings); this dossier reassigned monthly=$40/$70/$100 and annual=$30/$60/$85 per user to match the discount claim. Reverify directly on the pricing page before publishing."
-  ],
-  "hold": "monthly and annualPerMonth were reassigned to match the advertised 15% saving; confirm on the page"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

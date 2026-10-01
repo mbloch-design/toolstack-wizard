@@ -20,8 +20,8 @@
       "id": "s1",
       "url": "https://udio.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Udio pricing (page title only retrievable this session)"
+      "accessedOn": "2026-10-01",
+      "title": "Udio pricing (official, full plan comparison table confirmed)"
     },
     {
       "id": "s2",
@@ -35,7 +35,7 @@
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://udio.com/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -45,7 +45,7 @@
         "fr": "100 crédits par mois, environ 1 à 3 morceaux par jour."
       },
       "sourceIds": [
-        "s2"
+        "s1"
       ]
     },
     "plans": [
@@ -67,7 +67,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       {
@@ -88,7 +88,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       {
@@ -109,7 +109,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     ],
@@ -117,10 +117,10 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Commercial usage rights are tied to paid plans per third-party sources; the exact commercial-rights terms were not independently confirmed on udio.com in this session because the pricing page returned only its title on fetch.",
-        "fr": "Les droits d'usage commercial sont liés aux plans payants selon des sources tierces ; les conditions exactes de ces droits n'ont pas été confirmées indépendamment sur udio.com lors de cette session, la page tarifaire n'ayant renvoyé que son titre.",
+        "en": "The official pricing page's feature comparison table lists paid-plan-only features (uploading custom audio files/cover art, Voice Control, style reference) but does not spell out a distinct \"commercial rights\" clause; exact commercial usage terms should be checked in Udio's Terms of Service.",
+        "fr": "Le tableau comparatif officiel liste des fonctions réservées aux plans payants (import de fichiers audio/pochette personnalisés, Voice Control, référence de style) mais ne détaille pas de clause distincte de « droits commerciaux » ; les conditions exactes d'usage commercial sont à vérifier dans les conditions d'utilisation d'Udio.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     ]
@@ -187,10 +187,10 @@
     "puissance": 3,
     "reversibilite": 3,
     "evidence": {
-      "valeurAjoutee": { "en": "Neutral score: credit-based plans (Standard $10/mo, Pro $30/mo per third-party sources) could be cheap versus hiring a composer, but exact value cannot be confirmed since pricing wasn't independently verified on udio.com.", "fr": "Note neutre : les plans par crédits (Standard 10 $/mois, Pro 30 $/mois selon des sources tierces) pourraient être économiques face à l'embauche d'un compositeur, mais la valeur réelle ne peut pas être confirmée, le prix n'ayant pas été vérifié indépendamment sur udio.com.", "sourceIds": ["s2"] },
-      "simplicite": { "en": "Neutral score: time needed to get a usable song from a prompt is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir un morceau utilisable à partir d'un prompt ne figure pas dans les sources relevées.", "sourceIds": ["s2"] },
-      "utilisation": { "en": "Neutral score: text-to-song generation and remix/extend tools are described in the sources, but results were not independently verified since the official pricing page returned only its title.", "fr": "Note neutre : la génération texte-vers-morceau et les outils de remix/extension sont décrits dans les sources, mais les résultats n'ont pas été vérifiés indépendamment, la page tarifaire officielle n'ayant renvoyé que son titre.", "sourceIds": ["s2"] },
-      "puissance": { "en": "Covers full-song generation plus remix, style-copy and extend, a moderate scope comparable to the main direct competitor (Suno) rather than a clear category leader.", "fr": "Couvre la génération de morceaux complets ainsi que le remix, la copie de style et l'extension, un périmètre modéré comparable au principal concurrent direct (Suno) plutôt qu'une référence claire de la catégorie.", "sourceIds": ["s2"] },
+      "valeurAjoutee": { "en": "Credit-based plans (Standard $10/mo or $8/mo annual, Pro $30/mo or $24/mo annual, confirmed on the official pricing page) are cheap versus hiring a composer, for a few thousand monthly song credits.", "fr": "Les plans par crédits (Standard 10 $/mois ou 8 $/mois en annuel, Pro 30 $/mois ou 24 $/mois en annuel, confirmés sur la page tarifaire officielle) restent économiques face à l'embauche d'un compositeur, pour quelques milliers de crédits de morceaux par mois.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time needed to get a usable song from a prompt is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir un morceau utilisable à partir d'un prompt ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Text-to-song generation and remix/extend tools are confirmed directly in the official plan comparison table, though the collected sources don't document whether results hold up without manual touch-ups.", "fr": "La génération texte-vers-morceau et les outils de remix/extension sont confirmés directement dans le tableau comparatif officiel, mais les sources relevées ne documentent pas si le résultat tient sans retouche manuelle.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers full-song generation plus remix, style-copy and extend, a moderate scope comparable to the main direct competitor (Suno) rather than a clear category leader.", "fr": "Couvre la génération de morceaux complets ainsi que le remix, la copie de style et l'extension, un périmètre modéré comparable au principal concurrent direct (Suno) plutôt qu'une référence claire de la catégorie.", "sourceIds": ["s1"] },
       "reversibilite": { "en": "Neutral score: export formats and ownership of generated tracks if a subscription ends are not confirmed from the primary source.", "fr": "Note neutre : les formats d'export et la propriété des morceaux générés en cas de fin d'abonnement ne sont pas confirmés depuis la source principale.", "sourceIds": ["s1"] }
     },
     "lastActivityVerifiedOn": null
@@ -209,8 +209,8 @@
     "tagline": { "en": "AI music generator", "fr": "Génération musicale IA" },
     "shortDescription": { "en": "Udio generates complete AI songs with vocals from text prompts, with a credit-limited free tier and paid plans from $10/month.", "fr": "Udio génère des morceaux complets par IA avec voix à partir de prompts textuels, avec un plan gratuit limité en crédits et des plans dès 10 $/mois." },
     "longDescription": {
-      "en": "Udio generates complete songs with vocals and production from text prompts, and supports remixing, style-copying and extending existing tracks, with permission controls on paid plans.\n\nThe free plan is limited to about 100 credits a month (roughly 1-3 songs a day), too little for regular use. Standard ($10/month, $8 annual) and Pro ($30/month, $24 annual) raise the credit allowance and concurrent generation slots. Commercial usage rights reportedly depend on the paid plan, though this wasn't independently confirmed on udio.com in this session. It suits a content creator who needs quick, prompt-based music rather than hiring a composer.",
-      "fr": "Udio génère des morceaux complets avec voix et production à partir de prompts textuels, et permet de remixer, copier le style et prolonger des morceaux existants, avec des contrôles de permission sur les plans payants.\n\nLe plan gratuit est limité à environ 100 crédits par mois (environ 1 à 3 morceaux par jour), insuffisant pour un usage régulier. Standard (10 $/mois, 8 $/mois en annuel) et Pro (30 $/mois, 24 $/mois en annuel) augmentent le quota de crédits et les générations simultanées. Les droits d'usage commercial dépendraient du plan payant, sans confirmation indépendante sur udio.com lors de cette session. L'outil convient à une créatrice de contenu qui a besoin rapidement d'une musique par prompt plutôt que d'embaucher un compositeur."
+      "en": "Udio generates complete songs with vocals and production from text prompts, and supports remixing, style-copying and extending existing tracks, with upload and style-reference tools reserved for paid plans.\n\nThe free plan is limited to about 100 credits a month (roughly 1-3 full-length songs a day), too little for regular use. Standard ($10/month, $8/month billed annually) and Pro ($30/month, $24/month billed annually) raise the monthly credit allowance to 2,400 and 6,000 and the concurrent generation slots to 3 and 5. It suits a content creator who needs quick, prompt-based music rather than hiring a composer.",
+      "fr": "Udio génère des morceaux complets avec voix et production à partir de prompts textuels, et permet de remixer, copier le style et prolonger des morceaux existants, avec des outils d'import et de référence de style réservés aux plans payants.\n\nLe plan gratuit est limité à environ 100 crédits par mois (environ 1 à 3 morceaux complets par jour), insuffisant pour un usage régulier. Standard (10 $/mois, 8 $/mois en engagement annuel) et Pro (30 $/mois, 24 $/mois en engagement annuel) portent le quota mensuel de crédits à 2 400 et 6 000, et les générations simultanées à 3 et 5. L'outil convient à une créatrice de contenu qui a besoin rapidement d'une musique par prompt plutôt que d'embaucher un compositeur."
     },
     "pros": [
       { "en": "Generates a complete song with vocals from a single text prompt, without composing or recording.", "fr": "Génère un morceau complet avec voix à partir d'un simple prompt textuel, sans composer ni enregistrer." },
@@ -218,20 +218,18 @@
     ],
     "cons": [
       { "en": "The free plan's roughly 100 credits a month cover only 1-3 songs a day, too little for regular production.", "fr": "Les environ 100 crédits mensuels du plan gratuit ne couvrent que 1 à 3 morceaux par jour, insuffisant pour une production régulière." },
-      { "en": "Commercial usage rights reportedly depend on the paid plan but weren't independently confirmed on the official site in this research.", "fr": "Les droits d'usage commercial dépendraient du plan payant mais n'ont pas été confirmés indépendamment sur le site officiel lors de cette recherche." }
+      { "en": "Uploading your own audio files, using an existing song as a style reference, and custom cover art are reserved for paid plans.", "fr": "L'import de tes propres fichiers audio, l'usage d'un morceau existant comme référence de style, et la pochette personnalisée sont réservés aux plans payants." }
     ],
     "verdict": {
       "keepIf": { "en": "You want to generate music quickly from a text prompt without hiring a composer.", "fr": "Tu veux générer rapidement une musique à partir d'un prompt texte sans embaucher de compositeur." },
-      "avoidIf": { "en": "You need commercial rights confirmed in writing beforehand, or the free plan's credit limit doesn't cover your volume.", "fr": "Tu as besoin de droits commerciaux confirmés par écrit au préalable, ou le plan gratuit ne couvre pas ton volume de production." },
+      "avoidIf": { "en": "You need to upload your own audio or use a style reference at the free tier, or the free plan's credit limit doesn't cover your volume.", "fr": "Tu as besoin d'importer ton propre audio ou d'utiliser une référence de style au plan gratuit, ou le plan gratuit ne couvre pas ton volume de production." },
       "threshold": { "en": "Standard at $10/month ($8/month annual) is the threshold to get past the free plan's 1-3 songs a day.", "fr": "Le plan Standard à 10 $/mois (8 $/mois en annuel) est le seuil pour sortir des 1 à 3 morceaux par jour du plan gratuit." }
     }
   },
   "unknowns": [
-    "Official udio.com/pricing page did not return full content in this session's fetch (only the page title); plan prices and credit amounts were corroborated via a third-party source and should be re-verified directly on udio.com.",
-    "Exact commercial-rights terms per plan were not confirmed from the primary source."
+    "No distinct commercial-usage-rights clause is spelled out on the pricing page itself; check Udio's Terms of Service for the exact commercial terms per plan."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "Plan prices, credit amounts and commercial-rights terms come from a third-party source (eesel.ai) because the official udio.com/pricing fetch returned only its page title; re-verify directly on udio.com before merging."
-  ]
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

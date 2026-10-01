@@ -166,9 +166,12 @@
     }
   },
   "unknowns": [
-    "Could not access patreon.com or support.patreon.com directly in this session (HTTP 403); exact current fee percentages and whether the 10% Standard rate has changed since August 2025 should be reverified against the official Creator fees overview page before publishing.",
+    "Could not access patreon.com or support.patreon.com directly in this session (HTTP 403 via WebFetch; both domains were also refused by the browser tool's own safety policy as disallowed sites in this session, so a live-browser check could not be attempted either); exact current fee percentages and whether the 10% Standard rate has changed since August 2025 should be reverified against the official Creator fees overview page before publishing.",
     "No slugs from the catalogue's alternativeCandidates initially matched a same-need competitor for this seed; memberful, substack and gumroad were confirmed as valid catalogue slugs and added to alternatives during local completion."
   ],
   "conflicts": [],
-  "reviewNotes": []
+  "reviewNotes": [
+    "Re-attempted the official source on 2026-10-01: support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview returned HTTP 403 via WebFetch, and both patreon.com and support.patreon.com were blocked outright by the browser tool's safety restrictions in this session (could not even load the page to try a live read). No official confirmation of the fee percentages was possible today; a human check in an ordinary browser is needed."
+  ],
+  "hold": "official Patreon site and help center are both unreachable from this session (fetch 403, browser tool refuses the domain); fee percentages not re-confirmed today"
 }

@@ -143,6 +143,8 @@
   ],
   "conflicts": [],
   "reviewNotes": [
-    "Les prix des plans payants (Plus a 10 $/mois et 25 $/mois) viennent d'une liste tierce (SoftwareSuggest) car la page officielle streamelements.com/plus n'a pas pu etre recuperee completement lors de cette session ; a reconfirmer sur la source officielle avant publication."
-  ]
+    "Les prix des plans payants (Plus a 10 $/mois et 25 $/mois) viennent d'une liste tierce (SoftwareSuggest) car la page officielle streamelements.com/plus n'a pas pu etre recuperee completement lors de cette session ; a reconfirmer sur la source officielle avant publication.",
+    "Reverifie le 2026-10-01 dans un navigateur : streamelements.com/plus et streamelements.com/pricing sont traites comme des routes de profil streamer (page \"PLUS\" renvoie vers un profil utilisateur, /store renvoie 404) ; la page d'accueil streamelements.com affiche desormais '100% FREE forever !' sans grille tarifaire Plus visible. Impossible de confirmer si le plan Plus payant existe toujours."
+  ],
+  "hold": "aucune page de tarifs officielle trouvee : streamelements.com/plus et /pricing resolvent en routes de profil streamer, pas en grille tarifaire ; la homepage ne presente que l'offre gratuite ('100% FREE forever'), le plan Plus payant (et ses prix 10 $/25 $ releves via un tiers) reste a confirmer"
 }

@@ -29,13 +29,21 @@
       "tier": 1,
       "accessedOn": "2026-09-25",
       "title": "Clip Studio Paint product lineup (search snippet only)"
+    },
+    {
+      "id": "s3",
+      "url": "https://ec.clip-studio.com/en-us/application/plans",
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "checkedOn": "2026-10-01",
+      "title": "Clip Studio plan selector (official store, single-device and smartphone plans)"
     }
   ],
   "pricing": {
     "model": "subscription_and_perpetual",
     "currency": "USD",
     "pricingUrl": "https://www.clipstudio.net/en/purchase/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -49,23 +57,44 @@
     "plans": [
       {
         "key": "pro-subscription",
-        "name": "PRO (subscription)",
+        "name": "PRO (subscription, single device)",
         "unit": "account",
         "minSeats": null,
         "price": {
-          "monthly": 0.99,
-          "annualPerMonth": null,
+          "monthly": 4.49,
+          "annualPerMonth": 2.25,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Introductory subscription price starting at $0.99/month (first period); works across iPad, Android, Windows, macOS, iPhone; includes 10GB cloud storage and monthly bonus materials.",
-            "fr": "Prix d'abonnement d'appel à partir de 0,99 $/mois (première période) ; fonctionne sur iPad, Android, Windows, macOS, iPhone ; inclut 10 Go de stockage cloud et des bonus mensuels."
+            "en": "One device (iPad, Android, Windows, macOS or iPhone); includes 10GB cloud storage and monthly bonus materials. Annual billing is $26.99/year.",
+            "fr": "Un seul appareil (iPad, Android, Windows, macOS ou iPhone) ; inclut 10 Go de stockage cloud et des bonus mensuels. Facturation annuelle à 26,99 $/an."
           }
         ],
         "sourceIds": [
-          "s1"
+          "s3"
+        ]
+      },
+      {
+        "key": "ex-subscription",
+        "name": "EX (subscription, single device)",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 8.99,
+          "annualPerMonth": 6.42,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One device; adds unlimited animation frames and multi-page comic project management over PRO. Annual billing is $76.99/year.",
+            "fr": "Un seul appareil ; ajoute images d'animation illimitées et gestion de projet BD multi-pages par rapport à PRO. Facturation annuelle à 76,99 $/an."
+          }
+        ],
+        "sourceIds": [
+          "s3"
         ]
       },
       {
@@ -76,7 +105,7 @@
         "price": {
           "monthly": null,
           "annualPerMonth": null,
-          "oneTime": 49.99
+          "oneTime": 63.00
         },
         "onQuote": false,
         "keyLimits": [
@@ -97,7 +126,7 @@
         "price": {
           "monthly": null,
           "annualPerMonth": null,
-          "oneTime": 219
+          "oneTime": 277.00
         },
         "onQuote": false,
         "keyLimits": [
@@ -126,6 +155,16 @@
         "sourceIds": [
           "s1"
         ]
+      },
+      {
+        "en": "12-month single-payment license code (no auto-renewal): PRO $26.99, EX $76.99, same amount as a year of the annual subscription.",
+        "fr": "Code de licence à paiement unique pour 12 mois (sans renouvellement auto) : PRO 26,99 $, EX 76,99 $, soit le même montant qu'une année d'abonnement annuel.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Cheaper Smartphone-only subscription plan (iPhone/Android, no desktop/tablet access): PRO $0.99/month or $6.49/year.",
+        "fr": "Forfait d'abonnement smartphone uniquement moins cher (iPhone/Android, sans accès bureau/tablette) : PRO 0,99 $/mois ou 6,49 $/an.",
+        "sourceIds": ["s3"]
       }
     ],
     "cautions": [
@@ -137,11 +176,9 @@
         ]
       },
       {
-        "en": "The $0.99/month subscription price is an introductory rate for a limited period, not the ongoing price; the page did not display the regular recurring subscription price clearly in this session.",
-        "fr": "Le prix d'abonnement de 0,99 $/mois est un tarif d'appel pour une période limitée, pas le prix récurrent normal ; la page n'affichait pas clairement le prix d'abonnement régulier dans cette session.",
-        "sourceIds": [
-          "s1"
-        ]
+        "en": "The $0.99/month figure advertised on the homepage is the regular (not introductory) price of the Smartphone-only plan, a narrower product than the single-device subscription used for comparePlanKey.",
+        "fr": "Le chiffre de 0,99 $/mois affiché sur la page d'accueil est le prix normal (pas d'appel) du forfait smartphone uniquement, un produit plus restreint que l'abonnement mono-appareil retenu pour comparePlanKey.",
+        "sourceIds": ["s3"]
       }
     ]
   },
@@ -233,8 +270,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "A perpetual PRO license costs $49.99 once for a full drawing, comic and animation toolset with no recurring fee, which is a low one-time entry cost relative to its feature set.",
-        "fr": "Une licence perpétuelle PRO coûte 49,99 $ une fois pour un outillage complet de dessin, BD et animation, sans frais récurrent ; un coût d'entrée unique modeste au regard des fonctions offertes.",
+        "en": "A perpetual PRO license costs $63 once for a full drawing, comic and animation toolset with no recurring fee, which is a low one-time entry cost relative to its feature set.",
+        "fr": "Une licence perpétuelle PRO coûte 63 $ une fois pour un outillage complet de dessin, BD et animation, sans frais récurrent ; un coût d'entrée unique modeste au regard des fonctions offertes.",
         "sourceIds": [
           "s1"
         ]
@@ -280,13 +317,8 @@
       "fr": "Clip Studio Paint est un outil de dessin, BD/manga et animation avec un moteur de pinceaux sensible à la pression, en abonnement ou licence perpétuelle."
     }
   },
-  "unknowns": [
-    "Exact regular (non-introductory) subscription price per month could not be confirmed on the official page in this session.",
-    "Whether the 12-month license codes noted as 'temporarily unavailable' have since returned was not checked further to respect the page budget."
-  ],
+  "unknowns": [],
   "conflicts": [],
-  "reviewNotes": [
-    "The PRO subscription plan lists $0.99/month, which the page itself describes as an introductory/first-period rate, not the regular ongoing price; this looks like a promotional price recorded in `price` instead of `promoPrice`. Reconfirm the regular subscription price on the vendor page before publishing."
-  ],
-  "hold": "introductory $0.99 price recorded as the regular price; reconfirm the regular price"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

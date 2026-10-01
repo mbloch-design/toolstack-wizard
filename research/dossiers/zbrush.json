@@ -21,8 +21,9 @@
       "id": "s1",
       "url": "https://www.maxon.net/en/buy",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Maxon buy / pricing page"
+      "accessedOn": "2026-10-01",
+      "checkedOn": "2026-10-01",
+      "title": "Maxon buy / pricing page (United States region, USD)"
     },
     {
       "id": "s2",
@@ -50,7 +51,7 @@
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://www.maxon.net/en/buy",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -89,8 +90,8 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": 49,
-          "annualPerMonth": 33.25,
+          "monthly": 54.00,
+          "annualPerMonth": 35.90,
           "oneTime": null
         },
         "onQuote": false,
@@ -131,10 +132,10 @@
         ]
       },
       {
-        "en": "The exact annual price ($399/year per a third-party reseller, equivalent to $33.25/month) could not be independently confirmed by extracting the live pricing table directly from maxon.net; it is corroborated by a search summary and an authorized reseller listing, not a direct page read.",
-        "fr": "Le prix annuel exact (399 $/an selon un revendeur tiers, soit 33,25 $/mois) n'a pas pu être confirmé indépendamment en extrayant la grille tarifaire en direct depuis maxon.net ; il est corroboré par un résumé de recherche et une liste de revendeur agréé, pas une lecture directe de la page.",
+        "en": "Price confirmed directly on maxon.net/en/buy with the region switcher set to United States (USD): $54.00/month billed monthly, or $35.90/month ($430.80/year) billed annually.",
+        "fr": "Prix confirmé directement sur maxon.net/en/buy avec le sélecteur de région réglé sur United States (USD) : 54,00 $/mois en facturation mensuelle, ou 35,90 $/mois (430,80 $/an) en facturation annuelle.",
         "sourceIds": [
-          "s4"
+          "s1"
         ]
       }
     ]
@@ -300,11 +301,10 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "The desktop-plus-iPad bundle at $33.25/month (annual) gives a professional sculpting toolset with pipeline integration, but the subscription-only model with no perpetual option means the tool never fully pays for itself the way a one-time license would.",
-        "fr": "Le pack desktop + iPad à 33,25 $/mois (annuel) donne un jeu d'outils de sculpture professionnel avec intégration de pipeline, mais le modèle uniquement par abonnement, sans option perpétuelle, signifie que l'outil ne se rentabilise jamais complètement comme le ferait une licence unique.",
+        "en": "The desktop-plus-iPad bundle at $35.90/month (annual) gives a professional sculpting toolset with pipeline integration, but the subscription-only model with no perpetual option means the tool never fully pays for itself the way a one-time license would.",
+        "fr": "Le pack desktop + iPad à 35,90 $/mois (annuel) donne un jeu d'outils de sculpture professionnel avec intégration de pipeline, mais le modèle uniquement par abonnement, sans option perpétuelle, signifie que l'outil ne se rentabilise jamais complètement comme le ferait une licence unique.",
         "sourceIds": [
-          "s1",
-          "s4"
+          "s1"
         ]
       },
       "simplicite": {
@@ -345,12 +345,12 @@
       "fr": "Sculpture 3D"
     },
     "shortDescription": {
-      "en": "ZBrush is Maxon's professional digital sculpting software for characters, creatures and hard-surface models, sold only as a subscription from $49/month or $33.25/month billed annually.",
-      "fr": "ZBrush est le logiciel de sculpture numérique professionnel de Maxon pour personnages, créatures et modèles hard-surface, vendu uniquement en abonnement dès 49 $/mois ou 33,25 $/mois facturé annuellement."
+      "en": "ZBrush is Maxon's professional digital sculpting software for characters, creatures and hard-surface models, sold only as a subscription from $54/month or $35.90/month billed annually.",
+      "fr": "ZBrush est le logiciel de sculpture numérique professionnel de Maxon pour personnages, créatures et modèles hard-surface, vendu uniquement en abonnement dès 54 $/mois ou 35,90 $/mois facturé annuellement."
     },
     "longDescription": {
-      "en": "ZBrush is built for digital sculpting at very high polygon counts, with 440+ proprietary brushes on desktop, hard-surface and polygon modeling via ZModeler and Live Boolean, PolyPaint for direct-surface texture painting, and UV Master for UV mapping. GoZ integration moves work directly to and from Cinema 4D, Maya and 3ds Max, and Cineware connects it to After Effects.\n\nZBrush moved to a subscription-only model; perpetual licenses are no longer sold. The desktop-plus-iPad bundle is $49/month, or $33.25/month billed annually (reported as $399/year by a reseller, not independently confirmed on Maxon's own pricing table in this pass). A standalone ZBrush for iPad subscription is $9.99/month or $89.99/year for users who only want the iPad app, and it is also included at no extra cost inside the wider Maxon One bundle from $99.91/month billed annually. A free, more limited ZBrush for iPad tier exists, but there is no free desktop version.",
-      "fr": "ZBrush est conçu pour la sculpture numérique à très haute densité de polygones, avec plus de 440 pinceaux propriétaires sur desktop, la modélisation hard-surface et polygonale via ZModeler et Live Boolean, PolyPaint pour peindre directement sur la surface, et UV Master pour le mapping UV. L'intégration GoZ transfère le travail directement vers et depuis Cinema 4D, Maya et 3ds Max, et Cineware le connecte à After Effects.\n\nZBrush est passé à un modèle uniquement par abonnement ; les licences perpétuelles ne sont plus vendues. Le pack desktop + iPad coûte 49 $/mois, ou 33,25 $/mois facturé annuellement (rapporté à 399 $/an par un revendeur, non confirmé indépendamment sur la grille tarifaire propre de Maxon lors de cette recherche). Un abonnement ZBrush pour iPad seul coûte 9,99 $/mois ou 89,99 $/an pour qui ne veut que l'app iPad, et il est aussi inclus sans coût supplémentaire dans le pack plus large Maxon One dès 99,91 $/mois facturé annuellement. Un palier ZBrush pour iPad gratuit et plus limité existe, mais il n'y a pas de version desktop gratuite."
+      "en": "ZBrush is built for digital sculpting at very high polygon counts, with 440+ proprietary brushes on desktop, hard-surface and polygon modeling via ZModeler and Live Boolean, PolyPaint for direct-surface texture painting, and UV Master for UV mapping. GoZ integration moves work directly to and from Cinema 4D, Maya and 3ds Max, and Cineware connects it to After Effects.\n\nZBrush moved to a subscription-only model; perpetual licenses are no longer sold. The desktop-plus-iPad bundle is $54/month, or $35.90/month billed annually ($430.80/year), confirmed directly on Maxon's own pricing page for the United States region. A standalone ZBrush for iPad subscription is $9.99/month or $89.99/year for users who only want the iPad app, and it is also included at no extra cost inside the wider Maxon One bundle from $99.91/month billed annually. A free, more limited ZBrush for iPad tier exists, but there is no free desktop version.",
+      "fr": "ZBrush est conçu pour la sculpture numérique à très haute densité de polygones, avec plus de 440 pinceaux propriétaires sur desktop, la modélisation hard-surface et polygonale via ZModeler et Live Boolean, PolyPaint pour peindre directement sur la surface, et UV Master pour le mapping UV. L'intégration GoZ transfère le travail directement vers et depuis Cinema 4D, Maya et 3ds Max, et Cineware le connecte à After Effects.\n\nZBrush est passé à un modèle uniquement par abonnement ; les licences perpétuelles ne sont plus vendues. Le pack desktop + iPad coûte 54 $/mois, ou 35,90 $/mois facturé annuellement (430,80 $/an), confirmé directement sur la page tarifs de Maxon pour la région United States. Un abonnement ZBrush pour iPad seul coûte 9,99 $/mois ou 89,99 $/an pour qui ne veut que l'app iPad, et il est aussi inclus sans coût supplémentaire dans le pack plus large Maxon One dès 99,91 $/mois facturé annuellement. Un palier ZBrush pour iPad gratuit et plus limité existe, mais il n'y a pas de version desktop gratuite."
     },
     "pros": [
       {
@@ -382,23 +382,19 @@
         "fr": "Tu veux un achat unique plutôt qu'un abonnement continu, car ZBrush ne vend plus de licence perpétuelle."
       },
       "threshold": {
-        "en": "Budget the annual desktop-plus-iPad subscription at $33.25/month (about $399/year); confirm this figure directly on maxon.net since it was corroborated by a reseller rather than a direct read of the primary pricing table.",
-        "fr": "Prévois l'abonnement annuel desktop + iPad à 33,25 $/mois (environ 399 $/an) ; vérifie ce chiffre directement sur maxon.net car il a été corroboré par un revendeur plutôt que lu directement sur la grille tarifaire principale."
+        "en": "Budget the annual desktop-plus-iPad subscription at $35.90/month ($430.80/year), confirmed directly on maxon.net/en/buy.",
+        "fr": "Prévois l'abonnement annuel desktop + iPad à 35,90 $/mois (430,80 $/an), confirmé directement sur maxon.net/en/buy."
       },
       "billingTraps": {
-        "en": "The subscription is the only option (no perpetual license), and the exact annual price could not be confirmed directly on Maxon's own pricing table in this pass; verify the current rate on maxon.net/en/buy before subscribing.",
-        "fr": "L'abonnement est la seule option (pas de licence perpétuelle), et le prix annuel exact n'a pas pu être confirmé directement sur la grille tarifaire de Maxon lors de cette recherche ; vérifie le tarif actuel sur maxon.net/en/buy avant de t'abonner."
+        "en": "The subscription is the only option (no perpetual license); the price shown on maxon.net depends on the selected region, so always check the region switcher is set to your own country before subscribing.",
+        "fr": "L'abonnement est la seule option (pas de licence perpétuelle) ; le prix affiché sur maxon.net dépend de la région sélectionnée, vérifie toujours que le sélecteur de région correspond à ton pays avant de t'abonner."
       }
     }
   },
   "unknowns": [
-    "The exact current monthly/annual price could not be confirmed via a direct extraction of maxon.net/en/buy (the page returned only navigation content); figures are corroborated by search summary and a reseller page instead of the primary pricing table itself.",
-    "Whether ZBrush pricing shown is region/currency-specific to the US was not confirmed.",
     "No explicit trial period is stated on the official plan comparison page."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "The $49/month and $33.25/month (annual) ZBrush prices were corroborated via a reseller page (novedge.com), not a direct read of maxon.net/en/buy's own pricing table (which returned mostly navigation content); re-verify the current figures directly on Maxon's site before publishing."
-  ],
-  "hold": "Maxon prices rendered by script; price from a reseller page, check in a browser"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }

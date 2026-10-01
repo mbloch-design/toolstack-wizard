@@ -28,13 +28,20 @@
       "tier": 2,
       "accessedOn": "2026-09-25",
       "title": "Highcharts Core price list (third-party reseller, used to corroborate license tiers)"
+    },
+    {
+      "id": "s3",
+      "url": "https://shop.highcharts.com/",
+      "tier": 1,
+      "accessedOn": "2026-10-01",
+      "title": "Highcharts Online Shop (official license configurator with per-product, per-seat prices)"
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://shop.highcharts.com/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -70,72 +77,48 @@
         ]
       },
       {
-        "key": "single-dev",
-        "name": "Single Developer License (without Premium Support)",
+        "key": "core",
+        "name": "Highcharts Core",
         "unit": "seat",
         "minSeats": 1,
         "price": {
           "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": 430
+          "annualPerMonth": 30.5,
+          "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Commercial license for 1 developer, no premium support included.",
-            "fr": null
+            "en": "Commercial license for the base charting library, billed per developer seat per year (366 USD/seat/year); Stock, Maps and Gantt can be added as per-seat libraries on top, and a one-time 'Advantage Plus' option adds perpetual lifetime access to the version held when the subscription ends.",
+            "fr": "Licence commerciale pour la bibliothèque de graphiques de base, facturée par siège développeur et par an (366 $/siège/an) ; Stock, Maps et Gantt peuvent s'ajouter comme bibliothèques par siège, et une option « Advantage Plus » ajoute un accès perpétuel à la version détenue à la fin de l'abonnement."
           }
         ],
         "sourceIds": [
-          "s2"
-        ]
-      },
-      {
-        "key": "single-dev-support",
-        "name": "Single Developer License (with Premium Support)",
-        "unit": "seat",
-        "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": 595
-        },
-        "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Commercial license for 1 developer with premium support included.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s2"
+          "s3"
         ]
       }
     ],
-    "comparePlanKey": "single-dev",
+    "comparePlanKey": "core",
     "addOns": [
       {
-        "en": "5-developer and 10-developer license bundles are available (with or without Premium Support), priced above single-developer tiers.",
-        "fr": null,
-        "sourceIds": [
-          "s2"
-        ]
+        "en": "Library add-ons priced per developer seat on top of Core: Stock +366 USD/seat, Maps +128 USD/seat, Gantt +73 USD/seat. Highcharts for Python is +110 USD/year (not per seat).",
+        "fr": "Bibliothèques additionnelles facturées par siège développeur en plus de Core : Stock +366 $/siège, Maps +128 $/siège, Gantt +73 $/siège. Highcharts for Python coûte +110 $/an (pas par siège).",
+        "sourceIds": ["s3"]
+      },
+      {
+        "en": "Highcharts Dashboards (264 USD/seat/year) and Grid Pro (316 USD/seat/year) are separate products sold through the same configurator, not add-ons to Core.",
+        "fr": "Highcharts Dashboards (264 $/siège/an) et Grid Pro (316 $/siège/an) sont des produits distincts vendus via le même configurateur, pas des modules de Core.",
+        "sourceIds": ["s3"]
       }
     ],
     "cautions": [
       {
-        "en": "Commercial license pricing was confirmed via a third-party reseller (ComponentSource), not directly itemized on the official shop.highcharts.com configurator in this session; figures should be re-verified against the primary shop page.",
-        "fr": "Le prix de la licence commerciale a été confirmé via un revendeur tiers (ComponentSource), pas directement détaillé sur le configurateur officiel shop.highcharts.com lors de cette session ; les montants doivent être revérifiés sur la page principale.",
-        "sourceIds": [
-          "s2"
-        ]
+        "en": "The pricing model changed since the previous (September) research pass: Highcharts now sells Core as an annual per-developer-seat subscription (366 USD/seat/year, i.e. 30.50 USD/month equivalent) through its own shop.highcharts.com configurator, not as the one-time 'Single Developer License' at $430/$595 previously recorded from a third-party reseller. That reseller listing should be treated as outdated.", "fr": "Le modèle tarifaire a changé depuis le passage de recherche précédent (septembre) : Highcharts vend désormais Core en abonnement annuel par siège développeur (366 $/siège/an, soit 30,50 $/mois en équivalent), via son propre configurateur shop.highcharts.com, et non plus en licence à vie « Single Developer » à 430 $/595 $ relevée précédemment chez un revendeur tiers. Cette source tierce doit être considérée comme obsolète.",
+        "sourceIds": ["s3"]
       },
       {
-        "en": "Both perpetual (one-time) and annual subscription license models exist per the official site; this dossier records the perpetual developer-license price as the entry point.",
-        "fr": "Des modèles de licence perpétuelle (achat unique) et par abonnement annuel existent selon le site officiel ; ce dossier retient le prix de la licence développeur perpétuelle comme point d'entrée.",
-        "sourceIds": [
-          "s1"
-        ]
+        "en": "A one-time 'Advantage Plus' perpetual option exists (lifetime access to the version held when the subscription ends) but its price is not itemized separately in the configurator's text output; it is selected as a checkbox during checkout.", "fr": "Une option perpétuelle à paiement unique « Advantage Plus » existe (accès à vie à la version détenue à la fin de l'abonnement), mais son prix n'est pas détaillé isolément dans le texte du configurateur ; elle se sélectionne par une case à cocher au moment du paiement.",
+        "sourceIds": ["s3"]
       }
     ]
   },
@@ -202,8 +185,8 @@
   ],
   "missingAlternatives": [],
   "unknowns": [
-    "Exact prices on the official shop.highcharts.com configurator could not be itemized directly in this session; the developer-license figures come from a third-party reseller and should be re-verified.",
-    "Whether the perpetual license quoted includes 1 year of updates/support by default, or if that is the separate 'annual license' model, was not fully clarified from the sources read."
+    "The price of the one-time 'Advantage Plus' perpetual add-on is not itemized as a standalone figure in the configurator's text output; it must be checked by adding a product and selecting the checkbox during checkout.",
+    "Whether multi-seat (team) pricing is strictly linear per seat or has volume breaks was not confirmed."
   ],
   "conflicts": [],
   "audience": {
@@ -233,10 +216,10 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Per-developer commercial licensing (around $430 and up) scales directly with team size rather than a flat product fee, which raises cost for larger teams.",
-        "fr": "La licence commerciale par développeur (environ 430 $ et plus) augmente directement avec la taille de l'équipe plutôt qu'un tarif produit fixe, ce qui alourdit le coût pour les grandes équipes.",
+        "en": "Per-developer-seat annual licensing (366 USD/seat/year for Core) scales directly with team size rather than a flat product fee, which raises cost for larger teams.",
+        "fr": "La licence annuelle par siège développeur (366 $/siège/an pour Core) augmente directement avec la taille de l'équipe plutôt qu'un tarif produit fixe, ce qui alourdit le coût pour les grandes équipes.",
         "sourceIds": [
-          "s2"
+          "s3"
         ]
       },
       "simplicite": {
@@ -276,12 +259,12 @@
       "fr": "Bibliothèque de graphiques JS"
     },
     "shortDescription": {
-      "en": "Highcharts is a JavaScript charting library for interactive charts, maps and Gantt timelines, free for non-commercial use and from $430 per developer commercially.",
-      "fr": "Highcharts est une bibliothèque JS de graphiques, cartes et plannings Gantt, gratuite en usage non commercial et dès 430 $/développeur en usage commercial."
+      "en": "Highcharts is a JavaScript charting library for interactive charts, maps and Gantt timelines, free for non-commercial use and from $366 per developer seat per year commercially.",
+      "fr": "Highcharts est une bibliothèque JS de graphiques, cartes et plannings Gantt, gratuite en usage non commercial et dès 366 $/siège développeur par an en usage commercial."
     },
     "longDescription": {
-      "en": "Highcharts is a configurable JavaScript charting library covering standard charts (Core), financial and timeline charts (Stock), maps (Maps) and Gantt/project timelines (Gantt), plus a broader suite with Highcharts Grid for tables and Highcharts Dashboards for KPI dashboards.\n\nIt's free only for personal, school, charitable and non-profit non-commercial projects; any commercial product needs a paid per-developer license starting around $430 (or $595 with premium support), a figure confirmed via a reseller listing rather than the official shop configurator. Licensing is per developer, so team costs scale with headcount rather than a flat product fee.",
-      "fr": "Highcharts est une bibliothèque JavaScript de graphiques configurable, couvrant les graphiques standard (Core), financiers et temporels (Stock), les cartes (Maps) et les plannings Gantt/projet (Gantt), plus une suite plus large avec Highcharts Grid pour les tableaux et Highcharts Dashboards pour les tableaux de bord KPI.\n\nElle est gratuite uniquement pour les projets personnels, scolaires, caritatifs et associatifs non commerciaux ; tout produit commercial nécessite une licence payante par développeur à partir d'environ 430 $ (ou 595 $ avec support premium), un montant confirmé via un revendeur plutôt que le configurateur officiel. La licence est par développeur, donc le coût équipe augmente directement avec l'effectif."
+      "en": "Highcharts is a configurable JavaScript charting library covering standard charts (Core), financial and timeline charts (Stock), maps (Maps) and Gantt/project timelines (Gantt), plus a broader suite with Highcharts Grid for tables and Highcharts Dashboards for KPI dashboards.\n\nIt's free only for personal, school, charitable and non-profit non-commercial projects; any commercial product needs a paid license billed per developer seat per year, starting at $366/seat/year for Core (Stock, Maps and Gantt add $366, $128 and $73 per seat on top; Dashboards and Grid Pro are separate products at $264 and $316 per seat/year). A one-time 'Advantage Plus' option can be added for perpetual access to the version held when the subscription ends.",
+      "fr": "Highcharts est une bibliothèque JavaScript de graphiques configurable, couvrant les graphiques standard (Core), financiers et temporels (Stock), les cartes (Maps) et les plannings Gantt/projet (Gantt), plus une suite plus large avec Highcharts Grid pour les tableaux et Highcharts Dashboards pour les tableaux de bord KPI.\n\nElle est gratuite uniquement pour les projets personnels, scolaires, caritatifs et associatifs non commerciaux ; tout produit commercial nécessite une licence payante facturée par siège développeur et par an, à partir de 366 $/siège/an pour Core (Stock, Maps et Gantt ajoutent 366 $, 128 $ et 73 $ par siège ; Dashboards et Grid Pro sont des produits distincts à 264 $ et 316 $ par siège/an). Une option à paiement unique « Advantage Plus » peut s'ajouter pour un accès perpétuel à la version détenue à la fin de l'abonnement."
     },
     "pros": [
       {
@@ -313,13 +296,11 @@
         "fr": "Tu construis un projet gratuit, open source ou non commercial, car le palier gratuit ne couvre pas l'usage commercial."
       },
       "threshold": {
-        "en": "A commercial project needs at least the Single Developer license, around $430 per developer (price confirmed via a reseller, to re-verify on the official shop).",
-        "fr": "Un projet commercial nécessite au moins la licence Single Developer, environ 430 $ par développeur (prix confirmé via un revendeur, à revérifier sur la boutique officielle)."
+        "en": "A commercial project needs at least Highcharts Core, $366 per developer seat per year.", "fr": "Un projet commercial nécessite au moins Highcharts Core, 366 $ par siège développeur et par an."
       }
     }
   },
-  "reviewNotes": [
-    "The Single Developer license price ($430 without support, $595 with premium support) comes from a third-party reseller (ComponentSource), not itemized directly on the official shop.highcharts.com configurator; re-verify before publishing a firm figure."
-  ],
-  "completedLocallyOn": "2026-10-01"
+  "reviewNotes": [],
+  "completedLocallyOn": "2026-10-01",
+  "priceCheckedOn": "2026-10-01"
 }

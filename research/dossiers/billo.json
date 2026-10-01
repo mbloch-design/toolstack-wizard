@@ -123,6 +123,8 @@
   ],
   "conflicts": [],
   "reviewNotes": [
-    "Tous les montants (pack de crédits ~500 $, coût de base ~99 $/vidéo, jusqu'à ~150 $ avec options) viennent d'un article tiers (ugcroster.com) car /pricing redirige vers un ecran de connexion sur billo.app ; a reconfirmer sur une page de tarifs officielle avant publication."
-  ]
+    "Tous les montants (pack de crédits ~500 $, coût de base ~99 $/vidéo, jusqu'à ~150 $ avec options) viennent d'un article tiers (ugcroster.com) car /pricing redirige vers un ecran de connexion sur billo.app ; a reconfirmer sur une page de tarifs officielle avant publication.",
+    "Reverifie le 2026-10-01 : billo.app/pricing redirige toujours (301) vers manage.billo.app/login/, un ecran de connexion ; aucune page de tarifs publique accessible sans compte."
+  ],
+  "hold": "page de tarifs officielle inaccessible : billo.app/pricing redirige vers manage.billo.app/login/ (ecran de connexion), montants non confirmables sans compte actif"
 }

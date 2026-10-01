@@ -11,7 +11,7 @@
     "officialUrl": "https://motionarray.com/",
     "docsUrl": "https://help.motionarray.com/",
     "changelogUrl": null,
-    "urlStatus": "blocked",
+    "urlStatus": "ok",
     "productStatus": "active",
     "statusNote": null
   },
@@ -55,8 +55,9 @@
       "id": "s6",
       "url": "https://motionarray.com/pricing/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Motion Array pricing page (fetch blocked, anti-bot)"
+      "accessedOn": "2026-10-01",
+      "checkedOn": "2026-10-01",
+      "title": "Motion Array pricing page, read live in a browser (EUR shown to this session, no region/currency switch found)"
     }
   ],
   "pricing": {
@@ -111,10 +112,10 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "The official pricing page (motionarray.com/pricing) blocked automated access (403); the plan price above was cross-checked via a secondary Motion Array page (motionarray.com/unlimited) but should be re-verified manually before publishing.",
-        "fr": "La page tarifs officielle (motionarray.com/pricing) a bloqué l'accès automatisé (403) ; le prix ci-dessus vient d'une page secondaire Motion Array (motionarray.com/unlimited) et doit être revérifié manuellement avant publication.",
+        "en": "Re-checked live in a browser on 2026-10-01: motionarray.com/pricing now loads (no longer 403) and shows an 'Everything' plan 'starting at' EUR 24.99/month, a 'Video Templates' plan at EUR 15.99/month and an 'AI Voiceover' plan at EUR 10.99/month, each shown as a single 'starting at' figure with no monthly/annual toggle and no region or currency switcher found. This is in EUR, not the USD this dossier's region expects, and it differs from the $29.99/$20.83 figures above (sourced from motionarray.com/unlimited); the USD price could not be confirmed from an official source in this session.",
+        "fr": "Revérifié en direct dans un navigateur le 2026-10-01 : motionarray.com/pricing se charge maintenant (plus d'erreur 403) et affiche un plan « Everything » « à partir de » 24,99 €/mois, un plan « Video Templates » à 15,99 €/mois et un plan « AI Voiceover » à 10,99 €/mois, chacun sous forme d'un seul montant « à partir de », sans bascule mensuel/annuel ni sélecteur de région ou de devise trouvé. C'est en euros, pas en dollars comme l'attend la région de cette fiche, et ça diffère des montants 29,99 $/20,83 $ ci-dessus (issus de motionarray.com/unlimited) ; le prix en dollars n'a pas pu être confirmé à partir d'une source officielle dans cette session.",
         "sourceIds": [
-          "s1"
+          "s6"
         ]
       },
       {
@@ -354,13 +355,13 @@
     }
   },
   "unknowns": [
-    "Exact current price on motionarray.com/pricing could not be directly confirmed (403 on automated fetch); the $29.99/mo and $249.99/yr figures come from a secondary Motion Array page and should be re-verified before publishing.",
     "Details of the voiceover-only, templates-only and Teams plans (price, seat count, limits) were not collected within the facts budget.",
-    "Whether a free trial exists was not confirmed on an official page within the pages read."
+    "Whether a free trial exists was not confirmed on an official page within the pages read.",
+    "Whether the 'starting at' prices shown live (EUR 24.99/15.99/10.99 per month) are a monthly-billing or longest-commitment-annual price was not stated on the page (no monthly/annual toggle was visible)."
   ],
   "conflicts": [],
   "reviewNotes": [
-    "Motion Array's official pricing page (motionarray.com/pricing) returned a blocked/403 response during research; the $29.99/mo and $20.83/mo (annual) figures come from a secondary page (motionarray.com/unlimited) and should be manually re-verified on the live pricing page before publishing."
+    "Motion Array's pricing page (motionarray.com/pricing) is reachable live in a browser as of 2026-10-01 (the earlier 403 was specific to automated fetches); it shows 'Everything' starting at EUR 24.99/month, but in EUR with no region or currency switcher found, not the USD this dossier's region expects. The $29.99/mo and $20.83/mo (annual) figures already in this dossier still come from the secondary motionarray.com/unlimited page, not today's direct read, and remain unconfirmed against an official USD price."
   ],
-  "hold": "official pricing page blocked (403); price from a secondary page, check in a browser"
+  "hold": "official pricing page now loads but only in EUR; USD price for the US region not accessible from this session"
 }

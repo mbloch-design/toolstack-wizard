@@ -17,13 +17,14 @@
   },
   "sources": [
     { "id": "s1", "url": "https://home.otoy.com/render/octane-render/", "tier": 1, "accessedOn": "2026-09-25", "title": "OctaneRender homepage" },
-    { "id": "s2", "url": "https://www.cgchannel.com/2022/11/otoy-launches-octanerender-studio-subscriptions/", "tier": 2, "accessedOn": "2026-09-25", "title": "Otoy launches OctaneRender Studio+ subscriptions" }
+    { "id": "s2", "url": "https://www.cgchannel.com/2022/11/otoy-launches-octanerender-studio-subscriptions/", "tier": 2, "accessedOn": "2026-09-25", "title": "Otoy launches OctaneRender Studio+ subscriptions" },
+    { "id": "s3", "url": "https://home.otoy.com/render/octane-render/purchase/", "tier": 1, "accessedOn": "2026-10-01", "checkedOn": "2026-10-01", "title": "OctaneRender purchase page" }
   ],
   "pricing": {
     "model": "subscription",
     "currency": "EUR",
     "pricingUrl": "https://home.otoy.com/render/octane-render/purchase/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-01",
     "region": "EU",
     "taxIncluded": null,
     "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
@@ -34,10 +35,10 @@
         "name": "Octane Studio+",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 24, "annualPerMonth": 20, "oneTime": null },
+        "price": { "monthly": 23.95, "annualPerMonth": 19.99, "oneTime": null },
         "onQuote": false,
         "keyLimits": [{ "en": "Unlimited network rendering across 10+ nodes, full access to the OTOY ecosystem", "fr": "Rendu réseau illimité sur 10+ nœuds, accès complet à l'écosystème OTOY", "sourceIds": ["s2"] }],
-        "sourceIds": ["s2"]
+        "sourceIds": ["s3"]
       }
     ],
     "comparePlanKey": "studio-plus",
@@ -96,10 +97,10 @@
   },
   "editorial": {
     "tagline": { "en": "GPU rendering", "fr": "Rendu GPU" },
-    "shortDescription": { "en": "OctaneRender is a GPU-accelerated spectral renderer with RTX support, sold as one Studio+ subscription from €24/month, with a 30-day trial and no free plan.", "fr": "OctaneRender est un moteur de rendu GPU spectral avec support RTX, en abonnement Studio+ dès 24 €/mois, essai de 30 jours, sans plan gratuit." },
+    "shortDescription": { "en": "OctaneRender is a GPU-accelerated spectral renderer with RTX support, sold as one Studio+ subscription from €23.95/month, with a 30-day trial and no free plan.", "fr": "OctaneRender est un moteur de rendu GPU spectral avec support RTX, en abonnement Studio+ dès 23,95 €/mois, essai de 30 jours, sans plan gratuit." },
     "longDescription": {
-      "en": "OctaneRender is OTOY's GPU-accelerated, physically correct spectral renderer, with RTX acceleration giving a 2-5x speedup on NVIDIA raytracing GPUs. It supports layered materials, spectral hair and random-walk subsurface scattering, plus an AI denoiser, an AI Light system, and procedural content generation through the VECTRON and SPECTRON modules.\n\nIt is sold as a single Studio+ subscription at €24/month (€20/month billed annually), with a 30-day trial and no permanent free plan. It suits a solo artist or small studio already working with NVIDIA GPUs who wants unlimited network rendering across 10+ nodes in one subscription.",
-      "fr": "OctaneRender est le moteur de rendu GPU spectral et physiquement correct d'OTOY, avec une accélération RTX offrant un gain de 2 à 5x sur les GPU NVIDIA à ray tracing. Il gère les matériaux en couches, les cheveux spectraux et la diffusion sous-surface en marche aléatoire, plus un débruiteur IA, un système AI Light, et une génération de contenu procédural via les modules VECTRON et SPECTRON.\n\nIl est vendu en un seul abonnement Studio+ à 24 €/mois (20 €/mois en engagement annuel), avec un essai de 30 jours et sans plan gratuit permanent. Il convient à un artiste solo ou un petit studio déjà équipé en GPU NVIDIA qui veut du rendu réseau illimité sur 10+ nœuds en un seul abonnement."
+      "en": "OctaneRender is OTOY's GPU-accelerated, physically correct spectral renderer, with RTX acceleration giving a 2-5x speedup on NVIDIA raytracing GPUs. It supports layered materials, spectral hair and random-walk subsurface scattering, plus an AI denoiser, an AI Light system, and procedural content generation through the VECTRON and SPECTRON modules.\n\nIt is sold as a single Studio+ subscription at €23.95/month (€19.99/month billed annually), with a 30-day trial and no permanent free plan. It suits a solo artist or small studio already working with NVIDIA GPUs who wants unlimited network rendering across 10+ nodes in one subscription.",
+      "fr": "OctaneRender est le moteur de rendu GPU spectral et physiquement correct d'OTOY, avec une accélération RTX offrant un gain de 2 à 5x sur les GPU NVIDIA à ray tracing. Il gère les matériaux en couches, les cheveux spectraux et la diffusion sous-surface en marche aléatoire, plus un débruiteur IA, un système AI Light, et une génération procédurale via les modules VECTRON et SPECTRON.\n\nIl est vendu en un seul abonnement Studio+ à 23,95 €/mois (19,99 €/mois en engagement annuel), avec un essai de 30 jours et sans plan gratuit. Il convient à un artiste solo ou un petit studio équipé en GPU NVIDIA qui veut du rendu réseau illimité sur 10+ nœuds en un seul abonnement."
     },
     "pros": [
       { "en": "RTX acceleration gives a measured 2-5x speedup on NVIDIA GPUs instead of a vague performance claim.", "fr": "L'accélération RTX offre un gain mesuré de 2 à 5x sur les GPU NVIDIA, plutôt qu'une promesse de performance vague." },
@@ -112,10 +113,11 @@
     "verdict": {
       "keepIf": { "en": "You already render on NVIDIA GPUs and want one subscription covering spectral rendering, AI denoising and unlimited network rendering.", "fr": "Tu rends déjà sur des GPU NVIDIA et tu veux un seul abonnement couvrant le rendu spectral, le débruitage par IA et le rendu réseau illimité." },
       "avoidIf": { "en": "You render mainly on non-NVIDIA hardware, since the RTX-accelerated speedups will not apply.", "fr": "Tu rends principalement sur du matériel non NVIDIA, car les gains d'accélération RTX ne s'appliqueront pas." },
-      "threshold": { "en": "Worth it once the €24/month (or €240/year billed annually at €20/month) replaces a per-node rendering license for a studio with 10 or more render nodes.", "fr": "Rentable dès que les 24 €/mois (ou 240 €/an en facturation annuelle à 20 €/mois) remplacent une licence de rendu par nœud pour un studio avec 10 nœuds de rendu ou plus." }
+      "threshold": { "en": "Worth it once the €23.95/month (or €19.99/month billed annually) replaces a per-node rendering license for a studio with 10 or more render nodes.", "fr": "Rentable dès que les 23,95 €/mois (ou 19,99 €/mois en facturation annuelle) remplacent une licence de rendu par nœud pour un studio avec 10 nœuds de rendu ou plus." }
     }
   },
   "unknowns": ["Exact list of supported host applications (3ds Max, Cinema 4D, Blender, Maya, etc.) not confirmed from a primary source on this pass", "Whether taxes are included in the listed EUR price is not stated"],
   "conflicts": [],
-  "reviewNotes": []
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-01"
 }
