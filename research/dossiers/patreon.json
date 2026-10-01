@@ -171,7 +171,7 @@
   ],
   "conflicts": [],
   "reviewNotes": [
-    "Re-attempted the official source on 2026-10-01: support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview returned HTTP 403 via WebFetch, and both patreon.com and support.patreon.com were blocked outright by the browser tool's safety restrictions in this session (could not even load the page to try a live read). No official confirmation of the fee percentages was possible today; a human check in an ordinary browser is needed."
+    "Re-attempted the official source again on 2026-10-01 and 2026-10-02: support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview returns HTTP 403 via WebFetch both times, and both patreon.com and support.patreon.com were blocked outright by the browser tool's safety restrictions on both days (could not even load the page to try a live read, error: 'not allowed due to safety restrictions'). No official confirmation of the fee percentages was possible on any attempt; a human check in an ordinary browser (not an automated tool) is needed, at https://support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview or https://www.patreon.com/pricing."
   ],
-  "hold": "official Patreon site and help center are both unreachable from this session (fetch 403, browser tool refuses the domain); fee percentages not re-confirmed today"
+  "hold": "official Patreon site and help center are both unreachable from this session (fetch 403, browser tool refuses the domain); fee percentages not re-confirmed on 2026-10-02 either. Needs a human check in an ordinary browser at support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview"
 }

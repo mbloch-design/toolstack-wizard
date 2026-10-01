@@ -276,5 +276,6 @@
   ],
   "conflicts": [],
   "reviewNotes": [],
-  "priceCheckedOn": "2026-10-01"
+  "priceCheckedOn": "2026-10-01",
+  "hold": "percentage-only fee (2.9% + 0.30 USD) cannot be expressed in the plan schema without showing it as quote or 0; needs a fee-rate field before publishing"
 }

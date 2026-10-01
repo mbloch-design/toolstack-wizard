@@ -28,14 +28,21 @@
       "tier": 1,
       "accessedOn": "2026-09-25",
       "title": "Artlist Max pricing page"
+    },
+    {
+      "id": "s3",
+      "url": "https://artlist.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Artlist Stock Catalog pricing (live render, Music & SFX license picker opened: confirms Social = personal use only, Pro = client work/commercial use)"
     }
   ],
   "pricing": {
     "model": "subscription",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://artlist.io/pricing",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-02",
+    "region": "EU (page geolocation; no country/currency selector found on the pricing page)",
     "taxIncluded": false,
     "freePlan": {
       "exists": false,
@@ -51,18 +58,19 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 14.99,
+          "monthly": 13.50,
           "annualPerMonth": 9.99,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Music and sound effects for one personal channel per social platform (Facebook, YouTube, Instagram, TikTok, Twitch); not licensed for commercial/client use."
+            "en": "Music and sound effects for personal use only; not licensed for client work, paid ads, broadcasts/TV or commercial use."
           }
         ],
         "sourceIds": [
-          "s1"
+          "s1",
+          "s3"
         ]
       },
       {
@@ -78,11 +86,12 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Commercial-use license for music and sound effects, for client work or broader business use."
+            "en": "Commercial-use license: client work, paid ads, broadcasts & TV, monetizing up to 3 channels per social platform and unlimited YouTube videos. Billed annually only (299 EUR/year); no non-annual monthly price is offered for this tier. A Music-only (no SFX) variant exists at 16.58 EUR/month annual."
           }
         ],
         "sourceIds": [
-          "s1"
+          "s1",
+          "s3"
         ]
       },
       {
@@ -92,21 +101,21 @@
         "minSeats": 1,
         "price": {
           "monthly": null,
-          "annualPerMonth": 39.99,
+          "annualPerMonth": 50.66,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Bundles full music, SFX, footage, templates and AI generation library in one plan; 5 free team seats unlocked at 180,000+ AI credits usage tier."
+            "en": "Bundles full music, SFX, footage, templates and AI generation library in one plan; entry tier shown is 16,500 AI credits/month (selectable up to higher credit tiers), billed annually. Business/Enterprise variants exist for 50+ employee teams."
           }
         ],
         "sourceIds": [
-          "s2"
+          "s3"
         ]
       }
     ],
-    "comparePlanKey": "music-sfx-social",
+    "comparePlanKey": "music-sfx-pro",
     "addOns": [
       {
         "en": "Separate AI plans (AI Starter, AI Core, AI Creator) offer AI image/video/voiceover/music generation on a credits system, sold independently from the core music/SFX/footage subscriptions.",
@@ -124,11 +133,18 @@
         "fr": "Les prix excluent la TVA et les taxes locales."
       },
       {
-        "en": "Annual billing gives roughly 40% savings versus monthly across plans; the Social plan is not licensed for commercial/client use, unlike the Pro tier.",
+        "en": "Annual billing saves roughly 26-33% versus monthly on Social and Max; the Social plan is not licensed for commercial/client use, unlike the Pro tier, confirmed directly in Artlist's license picker and FAQ (commercial coverage listed only for Music & SFX Pro, Footage & Templates, Max or Business).",
         "sourceIds": [
-          "s1"
+          "s3"
         ],
-        "fr": "La facturation annuelle fait économiser environ 40 % par rapport au mensuel sur tous les plans ; le plan Social n'est pas sous licence pour un usage commercial/client, à la différence du plan Pro."
+        "fr": "La facturation annuelle fait économiser environ 26 à 33 % par rapport au mensuel sur Social et Max ; le plan Social n'est pas sous licence pour un usage commercial/client, à la différence du plan Pro, confirmé directement dans le sélecteur de licence et la FAQ Artlist (la couverture commerciale n'est listée que pour Music & SFX Pro, Footage & Templates, Max ou Business)."
+      },
+      {
+        "en": "Prices shown are in EUR via page geolocation (no region/currency selector was found); Artlist's own FAQ states customers outside Europe are billed in USD instead, at the same numeric amount.",
+        "sourceIds": [
+          "s3"
+        ],
+        "fr": "Les prix affichés sont en euros via la géolocalisation de la page (aucun sélecteur de région/devise trouvé) ; la FAQ d'Artlist indique que les clients hors d'Europe sont facturés en dollars US, au même montant numérique."
       }
     ]
   },
@@ -228,8 +244,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "The entry Social plan at 9.99 USD/month (annual) gives access to a large music/SFX library, but it excludes commercial use, so a freelancer doing client work needs the pricier Pro tier (24.92 USD/month) to get real value.",
-        "fr": "Le plan d'entrée Social à 9,99 $/mois (annuel) donne accès à une grande bibliothèque musique/SFX, mais exclut l'usage commercial : un indépendant qui travaille pour des clients doit passer au plan Pro, plus cher (24,92 $/mois), pour une vraie valeur.",
+        "en": "The entry Social plan at 9.99 EUR/month (annual) gives access to a large music/SFX library, but it excludes commercial use, so a freelancer doing client work needs the pricier Pro tier (24.92 EUR/month) to get real value.",
+        "fr": "Le plan d'entree Social a 9,99 euros/mois (annuel) donne acces a une grande bibliotheque musique/SFX, mais exclut l'usage commercial : un independant qui travaille pour des clients doit passer au plan Pro, plus cher (24,92 euros/mois), pour une vraie valeur.",
         "sourceIds": [
           "s1"
         ]
@@ -272,12 +288,12 @@
       "fr": "Bibliothèque musicale libre"
     },
     "shortDescription": {
-      "en": "Artlist is a royalty-free music, sound effects and footage subscription for video creators, from 9.99 USD/month with a separate commercial-use license tier.",
-      "fr": "Artlist est un abonnement de musique, effets sonores et images libres de droits pour créateurs vidéo, dès 9,99 $/mois, avec un palier pour l'usage commercial."
+      "en": "Artlist is a royalty-free music, sound effects and footage subscription for video creators, from 9.99 EUR/month with a separate commercial-use license tier.",
+      "fr": "Artlist est un abonnement de musique, effets sonores et images libres de droits pour créateurs vidéo, dès 9,99 euros/mois, avec un palier pour l'usage commercial."
     },
     "longDescription": {
-      "en": "Artlist is a subscription library of royalty-free music, sound effects, stock footage and templates for video creators, with separate AI generation tools (image, video, voiceover, music) available on credit-based plans or bundled in Max.\n\nThe entry Social plan starts at 9.99 USD/month (annual) but covers only one personal channel per platform and excludes commercial use; the Pro tier at 24.92 USD/month adds a commercial-use license for client work, and Max at 39.99 USD/month bundles everything. It suits a creator or freelancer who needs cleared music and footage regularly, not a one-off project.",
-      "fr": "Artlist est une bibliothèque sous abonnement de musique, effets sonores, images vidéo et templates libres de droits pour créateurs vidéo, avec des outils de génération IA séparés (image, vidéo, voix off, musique) disponibles sur des plans à crédits ou intégrés dans Max.\n\nLe plan d'entrée Social démarre à 9,99 $/mois (annuel) mais ne couvre qu'un canal personnel par plateforme et exclut l'usage commercial ; le plan Pro à 24,92 $/mois ajoute une licence commerciale pour le travail client, et Max à 39,99 $/mois regroupe tout. L'outil convient à un créateur ou indépendant qui a besoin régulièrement de musique et d'images sous licence, pas pour un projet ponctuel."
+      "en": "Artlist is a subscription library of royalty-free music, sound effects, stock footage and templates for video creators, with separate AI generation tools (image, video, voiceover, music) available on credit-based plans or bundled in Max.\n\nThe entry Social plan starts at 9.99 EUR/month (annual) but covers only one personal channel per platform and excludes commercial use; the Pro tier at 24.92 EUR/month adds a commercial-use license for client work, and Max starts at 50.66 EUR/month bundles everything. It suits a creator or freelancer who needs cleared music and footage regularly, not a one-off project.",
+      "fr": "Artlist est une bibliothèque sous abonnement de musique, effets sonores, images vidéo et templates libres de droits pour créateurs vidéo, avec des outils de génération IA séparés (image, vidéo, voix off, musique) disponibles sur des plans à crédits ou intégrés dans Max.\n\nLe plan d'entree Social demarre a 9,99 euros/mois (annuel) mais ne couvre qu'un canal personnel par plateforme et exclut l'usage commercial ; le plan Pro a 24,92 euros/mois ajoute une licence commerciale pour le travail client, et Max a partir de 50,66 euros/mois regroupe tout. L'outil convient à un créateur ou indépendant qui a besoin régulièrement de musique et d'images sous licence, pas pour un projet ponctuel."
     },
     "pros": [
       {
@@ -309,20 +325,16 @@
         "fr": "Tu n'as besoin de musique que pour un seul projet commercial ; le plan Social le moins cher ne couvre pas cet usage."
       },
       "threshold": {
-        "en": "Freelancers doing client work should budget for Pro at 24.92 USD/month (about 299 USD/year), not the 9.99 USD/month Social plan, since Social excludes commercial use.",
-        "fr": "Les indépendants qui travaillent pour des clients doivent prévoir le plan Pro à 24,92 $/mois (environ 299 $/an), pas le plan Social à 9,99 $/mois, car Social exclut l'usage commercial."
+        "en": "Freelancers doing client work should budget for Pro at 24.92 EUR/month (299 EUR/year, billed annually), not the 9.99 EUR/month Social plan, since Social excludes commercial use.",
+        "fr": "Les independants qui travaillent pour des clients doivent prevoir le plan Pro a 24,92 euros/mois (299 euros/an, facture annuellement), pas le plan Social a 9,99 euros/mois, car Social exclut l'usage commercial."
       }
     }
   },
   "unknowns": [
-    "Exact monthly (non-annual) price for Music & SFX Pro was not found; only the annual-billed monthly-equivalent figure ($24.92) was available.",
-    "Full list of what counts toward 'commercial use' license restrictions on lower tiers was not itemized in detail."
+    "Confirmed on 2026-10-02: Music & SFX Pro has no non-annual monthly price; the license picker on artlist.io only offers annual billing for Pro (24.92 EUR/month, 299 EUR/year)."
   ],
   "conflicts": [],
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": [
-    "comparePlanKey is set to music-sfx-social, the cheapest plan, but that plan explicitly excludes commercial/client use. For ToolTrim's freelance/small-team audience, the plan that actually covers the tool's main professional use case may be music-sfx-pro instead; verify on artlist.io which plan should serve as the comparison plan before merge.",
-    "The exact monthly (non-annual) price for Music & SFX Pro was not found in the collected sources; only the annual-billed monthly-equivalent (24.92 USD) is recorded, consistent with the dossier's own unknowns."
-  ],
-  "hold": "compare plan Social excludes commercial use; Pro may be the right comparison plan"
+  "priceCheckedOn": "2026-10-02",
+  "reviewNotes": []
 }

@@ -140,15 +140,11 @@
     "verdict": {
       "keepIf": { "en": "You want a visually distinct, non-linear deck for client pitches and are willing to spend time learning the zooming canvas.", "fr": "Tu veux un support non linéaire et visuellement différenciant pour tes rendez-vous clients et tu es prêt à apprendre la toile en zoom." },
       "avoidIf": { "en": "You need to produce private slides quickly with a familiar editor, or confidentiality rules out the public-only free plan.", "fr": "Tu dois produire rapidement des diapositives privées avec un éditeur familier, ou la confidentialité exclut l'offre gratuite publique uniquement." },
-      "threshold": { "en": "The entry paid plan is about $84/year equivalent (annual billing, per third-party pricing research pending official confirmation); budget for private presentations beyond the free public-only tier.", "fr": "Le palier payant d'entrée équivaut à environ 84 $/an en facturation annuelle (selon une étude tarifaire tierce, à confirmer officiellement) ; prévois ce budget pour des présentations privées au-delà de l'offre gratuite publique uniquement." }
+      "threshold": { "en": "The entry paid plan, Standard, is EUR 5/month billed annually (EUR 60/year) on the official page; budget for that amount for private presentations beyond the free public-only tier.", "fr": "Le palier payant d'entrée, Standard, est à 5 EUR/mois facturé annuellement (60 EUR/an) sur la page officielle ; prévois ce budget pour des présentations privées au-delà de l'offre gratuite publique uniquement." },
+      "billingTraps": { "en": "The four paid plans are shown only as an annual commitment (annualPerMonth); no monthly-billing option was visible on the official page.", "fr": "Les quatre offres payantes ne sont affichées qu'en engagement annuel (équivalent mensuel) ; aucune option de facturation mensuelle n'était visible sur la page officielle." }
     }
   },
-  "unknowns": [
-    "Official prezi.com/pricing page did not return content in this session; plan names/prices are sourced from third-party research and need re-verification against the official source.",
-    "Whether Standard/Plus/Premium/Teams are the current official plan names, or renamed, could not be confirmed directly."
-  ],
+  "unknowns": [],
   "conflicts": [],
-  "reviewNotes": [
-    "Every price in pricing.plans (Standard $7, Plus $15, Premium $25, Teams $39, all annualPerMonth) comes from third-party pricing-research sites (s1, s2), not from prezi.com/pricing directly: the official page returned an empty response in this session. Re-verify all four amounts and plan names on prezi.com before publishing."
-  ]
+  "priceCheckedOn": "2026-10-02"
 }

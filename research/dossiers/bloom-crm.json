@@ -20,7 +20,7 @@
       "id": "s1",
       "url": "https://bloom.io/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-02",
       "title": "Bloom pricing"
     }
   ],
@@ -28,7 +28,7 @@
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://bloom.io/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -52,7 +52,7 @@
         "minSeats": 1,
         "price": {
           "monthly": 14,
-          "annualPerMonth": 7,
+          "annualPerMonth": null,
           "oneTime": null
         },
         "onQuote": false,
@@ -64,7 +64,12 @@
         ],
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 7,
+          "oneTime": null
+        }
       },
       {
         "key": "standard",
@@ -73,7 +78,7 @@
         "minSeats": 1,
         "price": {
           "monthly": 34,
-          "annualPerMonth": 17,
+          "annualPerMonth": null,
           "oneTime": null
         },
         "onQuote": false,
@@ -85,7 +90,12 @@
         ],
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 17,
+          "oneTime": null
+        }
       },
       {
         "key": "plus",
@@ -94,7 +104,7 @@
         "minSeats": 1,
         "price": {
           "monthly": 66,
-          "annualPerMonth": 33,
+          "annualPerMonth": null,
           "oneTime": null
         },
         "onQuote": false,
@@ -106,7 +116,12 @@
         ],
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "promoPrice": {
+          "monthly": null,
+          "annualPerMonth": 33,
+          "oneTime": null
+        }
       }
     ],
     "comparePlanKey": "starter",
@@ -326,8 +341,8 @@
         "fr": "À éviter si tu as besoin de plus de 3 projets actifs ou de plus d'1 workflow avec un petit budget, car les plafonds de Starter poussent vite vers Standard."
       },
       "threshold": {
-        "en": "Decision threshold: Starter's listed $14/month is the entry point, but confirm the standing annual rate beyond the first-year promo before budgeting (see reviewNotes).",
-        "fr": "Seuil de décision : le tarif Starter affiché à 14 $/mois est le point d'entrée, mais vérifie le tarif annuel standard au-delà de la promotion de première année avant de budgétiser (voir reviewNotes)."
+        "en": "Decision threshold: Starter's listed $14/month is the real standing rate; the $7/month shown at signup is only a 50%-off annual-billing promo for the first 12 months, reverting to $14/month after.",
+        "fr": "Seuil de décision : le tarif Starter affiché à 14 $/mois est bien le tarif standard ; les 7 $/mois montrés à l'inscription ne sont qu'une promotion à -50 % en facturation annuelle pour les 12 premiers mois, qui revient ensuite à 14 $/mois."
       },
       "billingTraps": {
         "en": "The $7/$17/$33 monthly rates shown at signup are a 50%-off first-year promo on annual billing, not the standing price; and Starter adds a 1.5% payment processing fee that higher tiers don't charge.",
@@ -335,13 +350,10 @@
       }
     }
   },
-  "reviewNotes": [
-    "pricing.plans[*].price.annualPerMonth (7/17/33) are flagged in the dossier's own caution as a 50%-off first-year promotional rate, not the standing annual price; per the brief's rule on promotional pricing, these values likely belong in a promoPrice field rather than price.annualPerMonth. Re-verify the real standing annual rate on bloom.io/pricing before merge; comparePlanKey (\"starter\") uses the non-promotional monthly price ($14) so the compare amount itself should still be correct."
-  ],
+  "reviewNotes": [],
   "unknowns": [
-    "Standing (non-promotional) annual price per plan after the first 12 months was not shown explicitly on the pricing page.",
     "Whether the Plus plan has a per-seat minimum or a flat team price beyond the base seat was not fully detailed."
   ],
   "conflicts": [],
-  "hold": "annualPerMonth values are a first-year 50% promo per the dossier caution; move to promoPrice"
+  "priceCheckedOn": "2026-10-02"
 }

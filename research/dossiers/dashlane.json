@@ -27,16 +27,24 @@
       "url": "https://support.dashlane.com/hc/en-us/articles/360001166969-Compare-Dashlane-personal-plans",
       "tier": 2,
       "accessedOn": "2026-09-25",
-      "title": "Dashlane personal plans comparison (Family plan price), independent of official page which did not display amounts in this session"
+      "title": "Dashlane personal plans comparison (Family plan price), used in a prior session before the official amounts were confirmed live; superseded by s3"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.dashlane.com/personal",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "checkedOn": "2026-10-02",
+      "title": "Dashlane personal password manager page, confirmed live in a browser on 2026-10-02: Premium EUR 4.00/month + VAT billed annually, Family (10 accounts, 1 subscription) EUR 6.05/month + VAT billed annually. EUR shown, no region/currency switcher found."
     }
   ],
   "pricing": {
     "model": "subscription",
-    "currency": "USD",
-    "pricingUrl": "https://www.dashlane.com/pricing",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
-    "taxIncluded": null,
+    "currency": "EUR",
+    "pricingUrl": "https://www.dashlane.com/personal",
+    "verifiedOn": "2026-10-02",
+    "region": "EU (page serves EUR with no region/currency switcher; US/USD could not be confirmed)",
+    "taxIncluded": false,
     "freePlan": {
       "exists": false,
       "limits": null,
@@ -52,24 +60,45 @@
     },
     "plans": [
       {
-        "key": "friends-family",
-        "name": "Friends & Family",
+        "key": "premium",
+        "name": "Premium",
         "unit": "account",
         "minSeats": 1,
         "price": {
           "monthly": null,
-          "annualPerMonth": 7.49,
+          "annualPerMonth": 4.0,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Shared subscription for up to 10 members; plan administrator gets full premium features, other members get everything except VPN.",
-            "fr": "Abonnement partagé pour jusqu'à 10 membres ; l'administrateur du plan a toutes les fonctions premium, les autres membres ont tout sauf le VPN."
+            "en": "Single-account plan with Scam Protection, unlimited passwords and passkeys, sync across devices, secure sharing and a built-in VPN.",
+            "fr": "Offre mono-compte avec protection anti-arnaque, mots de passe et passkeys illimités, synchronisation multi-appareils, partage sécurisé et VPN intégré."
           }
         ],
         "sourceIds": [
-          "s2"
+          "s3"
+        ]
+      },
+      {
+        "key": "family",
+        "name": "Family",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 6.05,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Shared subscription for up to 10 accounts under one subscription; the plan manager gets the full Premium feature set, other members get everything except the VPN.",
+            "fr": "Abonnement partagé pour jusqu'à 10 comptes sous un seul abonnement ; l'administrateur du plan a toutes les fonctions Premium, les autres membres ont tout sauf le VPN."
+          }
+        ],
+        "sourceIds": [
+          "s3"
         ]
       },
       {
@@ -136,7 +165,7 @@
         ]
       }
     ],
-    "comparePlanKey": "friends-family",
+    "comparePlanKey": "premium",
     "addOns": [],
     "cautions": [
       {
@@ -147,10 +176,10 @@
         ]
       },
       {
-        "en": "The official personal-plan pricing page (dashlane.com/personal/pricing) returned a 404 during this session; the Friends & Family price of $7.49/mo comes from a Dashlane support article rather than the primary pricing page and should be re-verified.",
-        "fr": "La page de prix personnelle officielle (dashlane.com/personal/pricing) a renvoyé une erreur 404 pendant cette session ; le prix Friends & Family de 7,49 $/mois provient d'un article du support Dashlane et non de la page de prix principale, et doit être revérifié.",
+        "en": "Premium and Family prices are shown in EUR, plus VAT, with no region or currency switcher found; no USD figure is published for the US region.",
+        "fr": "Les prix Premium et Family sont affichés en euros, hors TVA, sans sélecteur de région ou de devise trouvé ; aucun montant en dollars n'est publié pour la région US.",
         "sourceIds": [
-          "s2"
+          "s3"
         ]
       }
     ]
@@ -242,7 +271,7 @@
   "missingAlternatives": [],
   "unknowns": [
     "Exact per-seat prices for Dashlane Business Password Management, Credential Protection and Enterprise plans are not public and were not disclosed on the pricing page.",
-    "Individual Premium plan price (non-family) could not be confirmed directly on dashlane.com in this session (personal pricing URL returned 404)."
+    "No USD figure for the US region is published on the official page; only EUR (plus VAT) is shown, with no region or currency selector."
   ],
   "conflicts": [],
   "completedLocallyOn": "2026-10-01",
@@ -273,11 +302,11 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "The Friends & Family plan offers clear value at a fixed $7.49/mo for up to 10 members, but Business and Enterprise prices are not public, so the cost-to-value ratio for a team cannot be confirmed without a sales quote.",
-        "fr": "Le plan Friends & Family offre une valeur claire à 7,49 $/mois fixe pour jusqu'à 10 membres, mais les tarifs Business et Enterprise ne sont pas publics, donc le rapport coût/valeur pour une équipe ne peut pas être confirmé sans devis commercial.",
+        "en": "Premium costs EUR 4.00/month (plus VAT) for a single account with Scam Protection and a built-in VPN, and the Family plan extends that to 10 accounts for EUR 6.05/month; Business and Enterprise prices remain on quote, so the cost-to-value ratio for a team cannot be confirmed without a sales quote.",
+        "fr": "Premium coûte 4,00 EUR/mois (hors TVA) pour un compte avec protection anti-arnaque et VPN intégré, et le plan Family étend cela à 10 comptes pour 6,05 EUR/mois ; les tarifs Business et Enterprise restent sur devis, donc le rapport coût/valeur pour une équipe ne peut pas être confirmé sans devis commercial.",
         "sourceIds": [
           "s1",
-          "s2"
+          "s3"
         ]
       },
       "simplicite": {
@@ -321,13 +350,13 @@
       "fr": "Un gestionnaire de mots de passe pour particuliers, familles et entreprises, avec remplissage automatique, partage sécurisé et contrôles d'administration pour les équipes."
     },
     "longDescription": {
-      "en": "Dashlane is a password manager that stores and autofills logins across devices, built for individuals, families and businesses. Paid plans add secure credential sharing, a password health dashboard and, for business accounts, SSO, SCIM and AI-powered phishing detection.\n\nThere is no permanent free plan: individuals get a 14-day trial, and business pricing is only available by quote rather than listed publicly. A shared Friends & Family plan covers up to 10 members at a fixed monthly rate, with the organizer getting the full feature set and other members missing the VPN feature.",
-      "fr": "Dashlane est un gestionnaire de mots de passe qui stocke et remplit automatiquement les identifiants sur tous les appareils, pensé pour les particuliers, les familles et les entreprises. Les offres payantes ajoutent le partage sécurisé d'identifiants, un tableau de bord de santé des mots de passe et, côté entreprise, le SSO, le SCIM et une détection du phishing par IA.\n\nPas d'offre gratuite permanente : les particuliers ont droit à un essai de 14 jours, et le tarif entreprise n'est communiqué que sur devis. Un plan Friends & Family partagé couvre jusqu'à 10 membres à tarif mensuel fixe, l'administrateur profitant de toutes les fonctions tandis que les autres membres n'ont pas accès au VPN."
+      "en": "Dashlane is a password manager that stores and autofills logins across devices, built for individuals, families and businesses. Paid plans add secure credential sharing, a password health dashboard and, for business accounts, SSO, SCIM and AI-powered phishing detection.\n\nThere is no permanent free plan: individuals get a 14-day trial. Premium costs EUR 4.00/month (plus VAT, billed annually) for one account with a built-in VPN and Scam Protection. The Family plan covers up to 10 accounts for EUR 6.05/month, with the plan manager getting the full feature set and other members missing the VPN. Business pricing is only available by quote rather than listed publicly, and the official page only shows EUR.",
+      "fr": "Dashlane est un gestionnaire de mots de passe qui stocke et remplit automatiquement les identifiants sur tous les appareils, pensé pour les particuliers, les familles et les entreprises. Les offres payantes ajoutent le partage sécurisé d'identifiants, un tableau de bord de santé et, côté entreprise, SSO, SCIM et détection du phishing par IA.\n\nPas d'offre gratuite permanente : un essai de 14 jours. Premium coûte 4,00 EUR/mois (hors TVA, engagement annuel) pour un compte avec VPN et protection anti-arnaque. Family couvre jusqu'à 10 comptes pour 6,05 EUR/mois. Le tarif entreprise n'est communiqué que sur devis, et la page officielle n'affiche que des euros."
     },
     "pros": [
       {
-        "en": "The Friends & Family plan covers up to 10 people under a single, fixed monthly price.",
-        "fr": "Le plan Friends & Family couvre jusqu'à 10 personnes pour un tarif mensuel fixe unique."
+        "en": "The Family plan covers up to 10 accounts under a single, fixed monthly price.",
+        "fr": "Le plan Family couvre jusqu'à 10 comptes pour un tarif mensuel fixe unique."
       },
       {
         "en": "The Business tier adds AI phishing detection and SIEM/SOAR integration beyond basic password storage.",
@@ -346,26 +375,26 @@
     ],
     "verdict": {
       "keepIf": {
-        "en": "You want a shared family vault at a fixed price, or you run a business that needs SSO/SCIM and is ready to get a quote.",
-        "fr": "Tu veux un coffre-fort familial partagé à prix fixe, ou tu diriges une entreprise qui a besoin de SSO/SCIM et es prêt à demander un devis."
+        "en": "You want a single-account vault at EUR 4/month, a shared family vault at a fixed price, or you run a business that needs SSO/SCIM and is ready to get a quote.",
+        "fr": "Tu veux un coffre-fort mono-compte à 4 EUR/mois, un coffre-fort familial partagé à prix fixe, ou tu diriges une entreprise qui a besoin de SSO/SCIM et es prêt à demander un devis."
       },
       "avoidIf": {
         "en": "You want to see the exact business price before talking to anyone, or you need a permanent free plan.",
         "fr": "Tu veux voir le prix entreprise exact avant de parler à quelqu'un, ou tu as besoin d'une offre gratuite permanente."
       },
       "threshold": {
-        "en": "The Friends & Family plan costs $7.49/mo (billed annually) for up to 10 people; business plans have no public price to use as a threshold.",
-        "fr": "Le plan Friends & Family coûte 7,49 $/mois (facturé annuellement) pour jusqu'à 10 personnes ; les offres entreprise n'ont pas de prix public à utiliser comme seuil."
+        "en": "Premium costs EUR 4.00/month plus VAT (billed annually) for one account; Family costs EUR 6.05/month for up to 10 accounts. Business plans have no public price to use as a threshold, and the page only shows EUR, not USD.",
+        "fr": "Premium coûte 4,00 EUR/mois hors TVA (engagement annuel) pour un compte ; Family coûte 6,05 EUR/mois pour jusqu'à 10 comptes. Les offres entreprise n'ont pas de prix public à utiliser comme seuil, et la page n'affiche que des euros, pas de dollars."
       },
       "billingTraps": {
-        "en": "The Friends & Family price is an annual-commitment rate billed monthly; confirm whether a month-to-month option costs more before subscribing.",
-        "fr": "Le tarif Friends & Family est un prix avec engagement annuel facturé au mois ; vérifie avant de t'abonner si une option mensuelle sans engagement coûte plus cher."
+        "en": "Both Premium and Family prices are an annual-commitment rate billed monthly, shown plus VAT; confirm whether a month-to-month option costs more, and confirm the USD charge at checkout.",
+        "fr": "Les prix Premium et Family sont des tarifs avec engagement annuel facturés au mois, affichés hors TVA ; vérifie si une option mensuelle sans engagement coûte plus cher, et confirme le montant en dollars facturé au paiement."
       }
     }
   },
   "reviewNotes": [
-    "La page officielle de prix individuel (dashlane.com/personal/pricing) renvoyait une erreur 404 lors de la collecte ; le prix Friends & Family (7,49 $/mois) vient d'un article du support Dashlane (source tier 2), pas de la page tarifs officielle, et sert de comparePlanKey faute de prix individuel public confirmé. A revérifier sur le site avant publication.",
+    "La page dashlane.com/personal/pricing renvoyait une erreur 404 lors de la collecte initiale ; dashlane.com/personal (atteinte en direct le 2026-10-02) affiche bien le prix Premium individuel (4,00 EUR/mois hors TVA, engagement annuel) et le prix Family (6,05 EUR/mois, 10 comptes), tous deux en euros sans sélecteur de région. comparePlanKey passe donc de la fiche Family au plan Premium individuel, conformément à la règle du plan le moins cher qu'une seule personne peut acheter pour la fonction principale.",
     "Les tarifs des offres Business (Password Management, Credential Protection, Enterprise) ne sont pas publics (onQuote) ; impossible de vérifier un éventuel palier d'appel qui retirerait la fonction principale, comme l'exige la règle du comparePlanKey."
   ],
-  "hold": "compare plan is the 10-person Friends and Family plan; individual Premium price missing"
+  "priceCheckedOn": "2026-10-02"
 }

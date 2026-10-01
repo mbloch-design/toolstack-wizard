@@ -19,14 +19,14 @@
     { "id": "s1", "url": "https://docs.feedly.com/article/140-what-is-the-difference-between-feedly-basic-pro-and-teams", "tier": 1, "accessedOn": "2026-09-25", "title": "Feedly Documentation - difference between Free, Pro, Pro+ and Teams" },
     { "id": "s2", "url": "https://www.readless.app/blog/feedly-pro-pricing-vs-readless-2026", "tier": 2, "accessedOn": "2026-09-25", "title": "Feedly pricing 2026: Pro vs Pro+ and the first-year offer" },
     { "id": "s3", "url": "https://www.readless.app/blog/feedly-pricing-2026-free-vs-pro-limits", "tier": 2, "accessedOn": "2026-09-25", "title": "Feedly Pricing 2026: Free vs Pro Limits Compared" },
-    { "id": "s4", "url": "https://feedly.com/i/pro", "tier": 1, "accessedOn": "2026-10-01", "checkedOn": "2026-10-01", "title": "Feedly Pro/Pro+/Enterprise pricing, read live in a browser (feedly.com/i/pricing now 404s; this is the current URL, reached via the News Reader page). EUR shown to this session, no region/currency switch found." }
+    { "id": "s4", "url": "https://feedly.com/i/pro", "tier": 1, "accessedOn": "2026-10-02", "checkedOn": "2026-10-02", "title": "Feedly Pro/Pro+/Enterprise pricing, re-confirmed live in a browser on 2026-10-02 (feedly.com/i/pricing 404s; this is the current URL). Pro EUR 6.99/mo, Pro+ EUR 12.15/mo regular (EUR 8.81/mo first-year promo), both billed annually. EUR shown throughout, no region/currency switch found." }
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://feedly.com/i/pro",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-02",
+    "region": "EU (page serves EUR with no region/currency switcher; US/USD could not be confirmed)",
     "taxIncluded": null,
     "freePlan": { "exists": true, "limits": { "en": "Basic RSS reading with a limited number of sources/feeds; no AI Feeds.", "fr": "Lecture RSS de base avec un nombre limité de sources/flux ; pas d'AI Feeds." }, "sourceIds": ["s1", "s3"] },
     "trial": null,
@@ -46,20 +46,21 @@
         "name": "Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 6, "oneTime": null },
+        "price": { "monthly": null, "annualPerMonth": 6.99, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Advanced features and enhanced sharing beyond the free tier; billed annually. Confirmed live on feedly.com/i/pro on 2026-10-01 at EUR 6.99/month billed annually, but only in EUR (no USD figure accessible from this session).", "fr": "Fonctionnalités avancées et partage amélioré au-delà du plan gratuit ; facturé annuellement. Confirmé en direct sur feedly.com/i/pro le 2026-10-01 à 6,99 €/mois facturé annuellement, mais seulement en euros (pas de montant en dollars accessible depuis cette session).", "sourceIds": ["s2", "s4"] }],
-        "sourceIds": ["s2", "s4"]
+        "keyLimits": [{ "en": "Advanced features and enhanced sharing beyond the free tier; billed annually. Confirmed live on feedly.com/i/pro on 2026-10-02 at EUR 6.99/month billed annually, but only in EUR (no USD figure published).", "fr": "Fonctionnalités avancées et partage amélioré au-delà du plan gratuit ; facturé annuellement. Confirmé en direct sur feedly.com/i/pro le 2026-10-02 à 6,99 €/mois facturé annuellement, mais seulement en euros (pas de montant en dollars publié).", "sourceIds": ["s4"] }],
+        "sourceIds": ["s4"]
       },
       {
         "key": "pro-plus",
         "name": "Pro+",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 12.99, "annualPerMonth": 12, "oneTime": null },
+        "price": { "monthly": null, "annualPerMonth": 12.15, "oneTime": null },
+        "promoPrice": { "monthly": null, "annualPerMonth": 8.81, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds AI Feeds (Leo AI) that analyze articles, reports and social posts, plus an RSS Builder for sites without native RSS. Confirmed live on feedly.com/i/pro on 2026-10-01: regular price EUR 12.15/month billed annually, discounted to EUR 8.81/month for the first year (saving EUR 40); only confirmed in EUR, not USD.", "fr": "Ajoute les AI Feeds (Leo AI) qui analysent articles, rapports et posts sociaux, plus un RSS Builder pour les sites sans flux RSS natif. Confirmé en direct sur feedly.com/i/pro le 2026-10-01 : prix normal 12,15 €/mois facturé annuellement, réduit à 8,81 €/mois la première année (économie de 40 €) ; confirmé seulement en euros, pas en dollars.", "sourceIds": ["s1", "s2", "s4"] }],
-        "sourceIds": ["s1", "s2", "s4"]
+        "keyLimits": [{ "en": "Adds AI Feeds (Leo AI) that analyze articles, reports and social posts, plus an RSS Builder for sites without native RSS. Confirmed live on feedly.com/i/pro on 2026-10-02: regular price EUR 12.15/month billed annually, discounted to EUR 8.81/month for the first year (saving EUR 40); only confirmed in EUR, not USD.", "fr": "Ajoute les AI Feeds (Leo AI) qui analysent articles, rapports et posts sociaux, plus un RSS Builder pour les sites sans flux RSS natif. Confirmé en direct sur feedly.com/i/pro le 2026-10-02 : prix normal 12,15 €/mois facturé annuellement, réduit à 8,81 €/mois la première année (économie de 40 €) ; confirmé seulement en euros, pas en dollars.", "sourceIds": ["s4"] }],
+        "sourceIds": ["s4"]
       },
       {
         "key": "enterprise",
@@ -75,7 +76,7 @@
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "The official feedly.com/i/pro page was reached live on 2026-10-01 and confirms Pro and Pro+ prices, but only in EUR (EUR 6.99/mo and EUR 12.15/mo regular, EUR 8.81/mo first-year promo), with no region or currency switcher found. The USD figures in this dossier are still tier-2 estimates, not an official same-day USD read.", "fr": "La page officielle feedly.com/i/pro a été atteinte en direct le 2026-10-01 et confirme les prix Pro et Pro+, mais seulement en euros (6,99 €/mois et 12,15 €/mois au tarif normal, 8,81 €/mois en promo la première année), sans sélecteur de région ou de devise trouvé. Les montants en dollars de cette fiche restent des estimations de niveau 2, pas une lecture officielle en dollars du jour.", "sourceIds": ["s4"] }
+      { "en": "The official feedly.com/i/pro page only shows prices in EUR (EUR 6.99/mo Pro, EUR 12.15/mo Pro+ regular, EUR 8.81/mo Pro+ first-year promo), with no region or currency switcher found; no USD figure is published for the US region.", "fr": "La page officielle feedly.com/i/pro n'affiche les prix qu'en euros (6,99 €/mois Pro, 12,15 €/mois Pro+ au tarif normal, 8,81 €/mois en promo Pro+ la première année), sans sélecteur de région ou de devise trouvé ; aucun montant en dollars n'est publié pour la région US.", "sourceIds": ["s4"] }
     ]
   },
   "product": {
@@ -125,9 +126,9 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Pro+ at roughly $12/month (annual) adds AI-assisted filtering that saves manual reading time, but the exact recurring price could not be confirmed on an official page, which limits how confidently the return can be judged.",
-        "fr": "Pro+ à environ 12$/mois (annuel) ajoute un filtrage assisté par IA qui fait gagner du temps de lecture manuelle, mais le prix récurrent exact n'a pas pu être confirmé sur une page officielle, ce qui limite la fiabilité du jugement sur le retour.",
-        "sourceIds": ["s1", "s2"]
+        "en": "Pro+ at EUR 12.15/month (annual, EUR 8.81 the first year) adds AI-assisted filtering that saves manual reading time, confirmed on the official page though only in EUR for this session.",
+        "fr": "Pro+ à 12,15 EUR/mois (annuel, 8,81 EUR la première année) ajoute un filtrage assisté par IA qui fait gagner du temps de lecture manuelle, confirmé sur la page officielle mais seulement en euros pour cette session.",
+        "sourceIds": ["s4"]
       },
       "simplicite": {
         "en": "Neutral score: the time and skill needed to set up a first useful set of feeds is not covered by the collected sources.",
@@ -162,8 +163,8 @@
       "fr": "Feedly agrège les flux RSS, blogs, sites d'actualité et chaînes YouTube dans un flux unique, avec un filtrage assisté par IA sur les plans payants."
     },
     "longDescription": {
-      "en": "Feedly replaces checking many individual sites with a single stream from RSS/Atom feeds, blogs, news sites and YouTube channels. On Pro+, Leo AI-powered AI Feeds filter, prioritize and summarize large volumes of articles, and an RSS Builder covers sites without a native feed.\n\nThe free plan reads a limited number of sources with no AI filtering. Pro costs about $6/month (annual). Pro+ unlocks AI Feeds at roughly $12/month (annual) or $12.99/month, though a discounted first-year rate (~$99/year) has been seen advertised. Enterprise is quote-based, reported by third parties around $1,600/month. The official pricing page could not be reached during this research; confirm figures there.",
-      "fr": "Feedly remplace la visite de nombreux sites par un flux unique construit à partir de flux RSS/Atom, blogs, sites d'actualité et chaînes YouTube. Sur Pro+, les AI Feeds (Leo AI) filtrent, priorisent et résument de gros volumes d'articles, et un RSS Builder couvre les sites sans flux natif.\n\nLe plan gratuit lit un nombre limité de sources sans filtrage IA. Pro coûte environ 6$/mois (annuel). Pro+ débloque les AI Feeds à environ 12$/mois (annuel) ou 12,99$/mois, bien qu'un tarif de lancement réduit la première année (~99$/an) ait été vu affiché. Enterprise est sur devis, rapporté par des tiers autour de 1 600$/mois. La page tarifs officielle n'a pas pu être atteinte ; à confirmer directement."
+      "en": "Feedly replaces checking many individual sites with a single stream from RSS/Atom feeds, blogs, news sites and YouTube channels. On Pro+, Leo AI-powered AI Feeds filter, prioritize and summarize large volumes of articles, and an RSS Builder covers sites without a native feed.\n\nThe free plan reads a limited number of sources with no AI filtering. Pro costs EUR 6.99/month billed annually. Pro+ unlocks AI Feeds at EUR 12.15/month billed annually (EUR 8.81/month for the first year). Enterprise is quote-based, reported by third parties around $1,600/month. Prices are shown in EUR on the official page with no region selector; no USD figure is published.",
+      "fr": "Feedly remplace la visite de nombreux sites par un flux unique construit à partir de flux RSS/Atom, blogs, sites d'actualité et chaînes YouTube. Sur Pro+, les AI Feeds (Leo AI) filtrent, priorisent et résument de gros volumes d'articles, et un RSS Builder couvre les sites sans flux natif.\n\nLe plan gratuit lit un nombre limité de sources sans filtrage IA. Pro coûte 6,99 EUR/mois en engagement annuel. Pro+ débloque les AI Feeds à 12,15 EUR/mois en engagement annuel (8,81 EUR/mois la première année). Enterprise est sur devis, rapporté par des tiers autour de 1 600$/mois. Les prix sont affichés en euros sur la page officielle sans sélecteur de région ; aucun montant en dollars n'est publié."
     },
     "pros": [
       {
@@ -177,8 +178,8 @@
     ],
     "cons": [
       {
-        "en": "The official pricing page was unreachable during this research, leaving the exact current Pro/Pro+ prices unconfirmed on an official source.",
-        "fr": "La page tarifs officielle était inaccessible pendant cette recherche, laissant les prix exacts actuels de Pro/Pro+ non confirmés sur une source officielle."
+        "en": "The official pricing page only displays EUR, with no USD figure published for US buyers.",
+        "fr": "La page tarifs officielle n'affiche que des euros, sans montant en dollars publié pour les acheteurs américains."
       },
       {
         "en": "AI Feeds, the main upgrade over a plain RSS reader, are locked behind the Pro+ tier, not available on the cheaper Pro plan.",
@@ -195,18 +196,19 @@
         "fr": "Évite-le si tu suis seulement une poignée de sites, auquel cas le plafond de sources du plan gratuit et l'absence de filtrage IA suffisent déjà sans passer au payant."
       },
       "threshold": {
-        "en": "AI Feeds require Pro+ at roughly $12/month billed annually (about $144/year); confirm the current recurring price on feedly.com before subscribing.",
-        "fr": "Les AI Feeds demandent Pro+ à environ 12$/mois en facturation annuelle (environ 144$/an) ; confirme le prix récurrent actuel sur feedly.com avant de t'abonner."
+        "en": "AI Feeds require Pro+ at EUR 12.15/month billed annually (about EUR 146/year); the page only shows EUR, so confirm the USD charge at checkout.",
+        "fr": "Les AI Feeds demandent Pro+ à 12,15 EUR/mois en facturation annuelle (environ 146 EUR/an) ; la page n'affiche que des euros, confirme donc le montant en dollars facturé au paiement."
       }
     }
   },
   "unknowns": [
-    "Whether the Pro plan has a monthly (non-annual) price option was not confirmed.",
-    "Exact source/feed limits on the Free plan were not confirmed on an official page."
+    "Whether the Pro plan has a monthly (non-annual) price option was not confirmed; only the annual-billed price is shown officially.",
+    "Exact source/feed limits on the Free plan were not confirmed on an official page.",
+    "No USD figure for the US region is published on the official page; only EUR is shown, with no region or currency selector."
   ],
   "conflicts": [],
   "reviewNotes": [
-    "feedly.com/i/pricing (the dossier's original URL) now 404s; the live pricing page is feedly.com/i/pro, reached via the News Reader section. It confirms Pro and Pro+ prices directly (EUR 6.99/mo and EUR 12.15/mo regular, EUR 8.81/mo Pro+ first-year promo), but only in EUR; this session found no region or currency switcher on feedly.com to confirm a USD figure for the dossier's US region."
+    "feedly.com/i/pricing (the dossier's original URL) 404s; the live pricing page is feedly.com/i/pro, reached via the News Reader section. Re-confirmed live again on 2026-10-02: Pro EUR 6.99/mo, Pro+ EUR 12.15/mo regular (EUR 8.81/mo first-year promo), both billed annually. EUR shown throughout, no region/currency switcher found. Per the brief's instruction, EUR confirmed by geolocation with no selector is accepted as valid; currency set to EUR, tier-2-sourced amounts replaced with the official EUR figures, and a promoPrice added for Pro+."
   ],
-  "hold": "official Feedly pricing page confirmed live but only in EUR; USD price for the US region not accessible from this session"
+  "priceCheckedOn": "2026-10-02"
 }

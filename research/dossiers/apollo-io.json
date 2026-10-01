@@ -21,21 +21,22 @@
       "url": "https://www.apollo.io/pricing",
       "tier": 1,
       "accessedOn": "2026-09-25",
-      "title": "Apollo.io pricing (features/FAQ content only; plan price amounts not rendered in fetched content)"
+      "checkedOn": "2026-10-02",
+      "title": "Apollo.io pricing, confirmed live in browser on 2026-10-02 with both the annual and monthly billing toggles (USD, no region/currency switcher needed): Free $0, Basic $49/seat/mo annual ($65/seat/mo monthly), Professional $79/seat/mo annual ($99/seat/mo monthly), Organization $119/seat/mo annual (min 3 seats, billed annually only)"
     },
     {
       "id": "s2",
       "url": "https://www.warmly.ai/p/blog/apollo-pricing",
       "tier": 2,
       "accessedOn": "2026-09-25",
-      "title": "Third-party summary of Apollo.io 2026 plan prices, used to fill amounts not visible on the official page in this session"
+      "title": "Third-party summary of Apollo.io 2026 plan prices, used in a prior session before the official amounts were confirmed live; superseded by s1"
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://www.apollo.io/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -85,7 +86,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       {
@@ -106,7 +107,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       {
@@ -127,7 +128,7 @@
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     ],
@@ -142,10 +143,10 @@
         ]
       },
       {
-        "en": "Plan price amounts (Basic/Professional/Organization) could not be read directly from the official pricing page's rendered content in this session; figures were cross-checked against a third-party pricing summary and should be re-verified against apollo.io/pricing.",
-        "fr": "Les montants des plans (Basic/Professional/Organization) n'ont pas pu être lus directement sur le contenu rendu de la page tarifs officielle lors de cette session ; les chiffres ont été recoupés avec un résumé tarifaire tiers et doivent être revérifiés sur apollo.io/pricing.",
+        "en": "The Organization plan is billed annually only; the $149/seat/month figure shown when the monthly toggle is selected is a reference price, not an actual monthly billing option.",
+        "fr": "Le plan Organization est facturé uniquement à l'année ; le montant de 149 $/siège/mois affiché quand on sélectionne la facturation mensuelle est un prix de référence, pas une option de facturation mensuelle réelle.",
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       }
     ]
@@ -252,24 +253,31 @@
   ],
   "alternatives": [
     {
-      "slug": "cognism",
+      "slug": "hubspot",
       "reason": {
-        "en": "Direct competitor in B2B contact database and sales intelligence.",
-        "fr": "Concurrent direct sur la base de données B2B et le sales intelligence."
+        "en": "CRM with its own prospecting and sequencing tools, a direct substitute for Apollo.io's database-plus-outreach workflow for teams that want everything inside one CRM.",
+        "fr": "CRM avec ses propres outils de prospection et de séquençage, un substitut direct au couple base de données plus prospection d'Apollo.io pour une équipe qui veut tout réunir dans un seul CRM."
       }
     },
     {
-      "slug": "attio",
+      "slug": "pipedrive",
       "reason": {
-        "en": "Go-to-market CRM that overlaps with Apollo.io's lightweight pipeline (Opportunities) and contact management for sales teams.",
-        "fr": "CRM go-to-market qui chevauche le pipeline léger d'Apollo.io (Opportunities) et la gestion de contacts pour les équipes commerciales."
+        "en": "Sales-pipeline CRM that competes with Apollo.io's lightweight Opportunities pipeline and contact management for outbound teams.",
+        "fr": "CRM orienté pipeline commercial qui concurrence le pipeline léger (Opportunities) et la gestion de contacts d'Apollo.io pour les équipes outbound."
       }
     },
     {
-      "slug": "linkedin",
+      "slug": "lemlist",
       "reason": {
-        "en": "LinkedIn's Sales Navigator tier competes directly on sourcing B2B leads before outreach.",
-        "fr": "Le palier Sales Navigator de LinkedIn est en concurrence directe sur le sourcing de leads B2B avant la prospection."
+        "en": "Cold-email sequencing tool that directly competes on Apollo.io's outreach-sequence feature for prospecting campaigns.",
+        "fr": "Outil de séquençage d'e-mails à froid qui concurrence directement la fonction de séquences de prospection d'Apollo.io."
+      }
+    },
+    {
+      "slug": "la-growth-machine",
+      "reason": {
+        "en": "Multichannel prospecting tool (email plus LinkedIn) that competes with Apollo.io's sequencing for outbound sales campaigns.",
+        "fr": "Outil de prospection multicanal (e-mail et LinkedIn) qui concurrence le séquençage d'Apollo.io pour les campagnes de prospection outbound."
       }
     }
   ],
@@ -336,13 +344,12 @@
     }
   },
   "unknowns": [
-    "Exact monthly/annual price amounts for Basic, Professional and Organization plans were not visible in the fetched official pricing page content and were sourced from a third-party breakdown; needs re-verification on apollo.io/pricing.",
     "Credit allowances per plan (number of email/mobile/export credits) not confirmed from the primary source."
   ],
   "conflicts": [],
   "reviewNotes": [
-    "Basic/Professional/Organization plan price amounts in this dossier come only from a tier-2 third-party source (s2), not from the official apollo.io/pricing page directly (see sources and cautions); re-verify all four amounts (59/49, 99/79, 149/119) against the official page before publishing.",
     "The catalogue's alternativeCandidates list (seed.mjs) for apollo-io includes a separate entry with slug \"apollo\" whose shortDescription ('Prospection commerciale B2B : sourcing de leads, séquences d'e-mails et CRM léger') appears to describe Apollo.io itself under a different catalogue slug. This looks like a duplicate catalogue entry for the same product and was excluded from alternatives; worth a catalogue dedup check.",
-    "The dossier's original alternatives (hubspot, pipedrive, lemlist, la-growth-machine) are not in this dossier's alternativeCandidates list because those tools are catalogued under different category/substitution-cluster tags (crm, email-productivity, automation) than apollo-io's own tags (category: communication, cluster: crm-prospection), even though they are real outbound-sales competitors already linked as apollo-io's live-site alternatives. Replaced here with candidates from the seed list (cognism, attio, linkedin) per the instruction to only use alternativeCandidates slugs; a human reviewer may want to keep the original four instead since they are stronger matches."
-  ]
+    "Alternatives restored to hubspot, pipedrive, lemlist, la-growth-machine on 2026-10-02 (stronger, real outbound-sales competitors already used on the live site) in place of cognism, attio, linkedin."
+  ],
+  "priceCheckedOn": "2026-10-02"
 }

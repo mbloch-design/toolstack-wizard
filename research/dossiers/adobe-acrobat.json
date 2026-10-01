@@ -19,15 +19,16 @@
       "id": "s1",
       "url": "https://www.adobe.com/acrobat/pricing/pricing.html",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Adobe Acrobat Pricing"
+      "accessedOn": "2026-10-02",
+      "checkedOn": "2026-10-02",
+      "title": "Adobe Acrobat Pricing (individual plans: Standard, Pro, Studio; annual-billed-monthly and month-to-month prices)"
     }
   ],
   "pricing": {
     "model": "subscription",
     "currency": "USD",
     "pricingUrl": "https://www.adobe.com/acrobat/pricing/pricing.html",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -40,33 +41,12 @@
     "trial": null,
     "plans": [
       {
-        "key": "express",
-        "name": "Acrobat Express",
-        "unit": "account",
-        "minSeats": 1,
-        "price": {
-          "monthly": 9.99,
-          "annualPerMonth": 9.99,
-          "oneTime": null
-        },
-        "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Basic PDF tools (create, convert, export, password-protect, compress), AI summaries and PDF Spaces.",
-            "fr": "Outils PDF de base (création, conversion, export, protection par mot de passe, compression), résumés IA et PDF Spaces."
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
         "key": "standard",
         "name": "Acrobat Standard",
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 14.99,
+          "monthly": 24.99,
           "annualPerMonth": 14.99,
           "oneTime": null
         },
@@ -87,7 +67,7 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 19.99,
+          "monthly": 29.99,
           "annualPerMonth": 19.99,
           "oneTime": null
         },
@@ -108,7 +88,7 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 24.99,
+          "monthly": 34.99,
           "annualPerMonth": 24.99,
           "oneTime": null
         },
@@ -128,11 +108,11 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "The advertised monthly price is only for an annual commitment billed monthly; the true pay-monthly (cancel anytime) price is higher, e.g. Pro is $19.99/mo on an annual plan versus $29.99/mo cancel-anytime.",
+        "en": "The headline monthly price ($14.99/$19.99/$24.99 for Standard/Pro/Studio) requires a 1-year commitment billed monthly; month-to-month billing with no commitment costs more ($24.99/$29.99/$34.99). A 14-day cancellation window applies to the annual commitment, with a fee of up to half the remaining term after that.",
         "sourceIds": [
           "s1"
         ],
-        "fr": "Le prix mensuel affiché suppose un engagement annuel facturé au mois ; le vrai prix sans engagement est plus élevé, par exemple Pro est à 19,99 $/mois en engagement annuel contre 29,99 $/mois sans engagement."
+        "fr": "Le prix mensuel affiché (14,99 $/19,99 $/24,99 $ pour Standard/Pro/Studio) suppose un engagement d'un an facturé au mois ; la facturation sans engagement coûte plus cher (24,99 $/29,99 $/34,99 $). Un délai d'annulation de 14 jours s'applique à l'engagement annuel, avec des frais pouvant aller jusqu'à la moitié de la durée restante au-delà."
       }
     ]
   },
@@ -160,11 +140,11 @@
         "fr": "Collecte de signatures électroniques et remplissage/signature de formulaires intégrés dès l'offre Standard."
       },
       {
-        "en": "AI Assistant and AI summaries/insights available on higher tiers (Express and Studio).",
+        "en": "AI Assistant and AI summaries/insights available on the Studio tier.",
         "sourceIds": [
           "s1"
         ],
-        "fr": "Assistant IA et résumés/analyses IA disponibles sur les offres supérieures (Express et Studio)."
+        "fr": "Assistant IA et résumés/analyses IA disponibles sur l'offre Studio."
       }
     ],
     "limitations": [
@@ -176,11 +156,11 @@
         "fr": "L'usage gratuit se limite à Acrobat Reader (lecture/impression uniquement) ; toute fonction d'édition, de conversion ou de signature demande une offre payante."
       },
       {
-        "en": "Advanced tools like redaction and OCR are gated to the Pro and Studio tiers, not available on Express or Standard.",
+        "en": "Advanced tools like redaction and OCR are gated to the Pro and Studio tiers, not available on Standard.",
         "sourceIds": [
           "s1"
         ],
-        "fr": "Les outils avancés comme la rédaction et l'OCR sont réservés aux offres Pro et Studio, indisponibles sur Express ou Standard."
+        "fr": "Les outils avancés comme la rédaction et l'OCR sont réservés aux offres Pro et Studio, indisponibles sur Standard."
       },
       {
         "en": "The headline monthly price requires an annual commitment; monthly billing without commitment costs noticeably more.",
@@ -239,15 +219,15 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Prices seem moderate for the feature range, but the advertised monthly figure requires an annual commitment and the true pay-monthly cost is not shown, making the real value harder to judge.",
-        "fr": "Les prix semblent modérés pour l'étendue des fonctions, mais le montant mensuel affiché suppose un engagement annuel et le vrai prix sans engagement n'est pas indiqué, ce qui rend la valeur réelle plus difficile à juger.",
+        "en": "Prices seem moderate for the feature range at the annual-commitment rate ($14.99 to $24.99/month), but month-to-month billing with no commitment costs 50% to 67% more ($24.99 to $34.99/month).",
+        "fr": "Les prix semblent modérés pour l'étendue des fonctions au tarif en engagement annuel (14,99 $ à 24,99 $/mois), mais la facturation sans engagement coûte de 50 % à 67 % de plus (24,99 $ à 34,99 $/mois).",
         "sourceIds": [
           "s1"
         ]
       },
       "simplicite": {
-        "en": "Core PDF tasks are familiar, but the split of tools across four tiers (e.g. OCR only from Pro) adds a decision step before a first useful result.",
-        "fr": "Les tâches PDF de base sont familières, mais la répartition des outils sur quatre offres (l'OCR seulement à partir de Pro) ajoute une étape de choix avant un premier résultat utile.",
+        "en": "Core PDF tasks are familiar, but the split of tools across three tiers (e.g. OCR only from Pro) adds a decision step before a first useful result.",
+        "fr": "Les tâches PDF de base sont familières, mais la répartition des outils sur trois offres (l'OCR seulement à partir de Pro) ajoute une étape de choix avant un premier résultat utile.",
         "sourceIds": [
           "s1"
         ]
@@ -305,8 +285,8 @@
       "fr": "Une suite par abonnement pour créer, modifier, signer et convertir des PDF, avec des outils avancés comme la rédaction et l'OCR sur les offres supérieures."
     },
     "longDescription": {
-      "en": "Adobe Acrobat is a subscription PDF suite spanning four tiers. Express covers basic creation, conversion and compression; Standard adds e-signature collection and form filling; Pro unlocks 70+ advanced tools including redaction, web forms and OCR for scans; Studio adds an AI Assistant, PDF Spaces and Adobe Express design tools.\n\nPrices range from $9.99 to $24.99 per month, but all advertised figures require an annual commitment billed monthly; cancel-anytime billing costs more, which the pricing page does not spell out as a separate number next to each plan. It fits anyone who regularly edits, signs or converts PDFs and needs more than free Acrobat Reader's view-only access.",
-      "fr": "Adobe Acrobat est une suite PDF par abonnement avec quatre offres. Express couvre la création, la conversion et la compression de base ; Standard ajoute signature et remplissage de formulaires ; Pro débloque plus de 70 outils avancés dont la rédaction, les formulaires web et l'OCR pour les scans ; Studio ajoute un assistant IA, les PDF Spaces et les outils de design d'Adobe Express.\n\nLes prix vont de 9,99 $ à 24,99 $ par mois, mais ces montants supposent un engagement annuel facturé au mois ; la facturation sans engagement coûte plus cher, sans que la page l'indique séparément. L'outil convient à qui modifie, signe ou convertit des PDF régulièrement, au-delà de la lecture gratuite d'Acrobat Reader."
+      "en": "Adobe Acrobat is a subscription PDF suite spanning three individual tiers. Standard covers PDF editing and organization plus e-signature collection and form filling; Pro unlocks 70+ advanced tools including redaction, web forms and OCR for scans; Studio adds an AI Assistant, PDF Spaces and Adobe Express design tools.\n\nPrices on a 1-year commitment billed monthly run from $14.99 (Standard) to $19.99 (Pro) to $24.99 (Studio) per month; paying month to month with no commitment costs more ($24.99, $29.99 and $34.99 respectively). It fits anyone who regularly edits, signs or converts PDFs and needs more than free Acrobat Reader's view-only access.",
+      "fr": "Adobe Acrobat est une suite PDF par abonnement avec trois offres individuelles. Standard couvre l'édition et l'organisation de PDF ainsi que la signature électronique et le remplissage de formulaires ; Pro débloque plus de 70 outils avancés dont la rédaction, les formulaires web et l'OCR pour les scans ; Studio ajoute un assistant IA, les PDF Spaces et les outils de design d'Adobe Express.\n\nEn engagement d'un an facturé au mois, les prix vont de 14,99 $ (Standard) à 19,99 $ (Pro) et 24,99 $ (Studio) par mois ; sans engagement, la facturation au mois coûte plus cher (24,99 $, 29,99 $ et 34,99 $ respectivement). L'outil convient à qui modifie, signe ou convertit des PDF régulièrement, au-delà de la lecture gratuite d'Acrobat Reader."
     },
     "pros": [
       {
@@ -324,8 +304,8 @@
         "fr": "L'usage gratuit se limite à la lecture/impression dans Acrobat Reader ; toute édition demande une offre payante."
       },
       {
-        "en": "The advertised monthly price requires an annual commitment; the actual cancel-anytime price is not shown on the pricing page.",
-        "fr": "Le prix mensuel affiché suppose un engagement annuel ; le vrai prix sans engagement n'est pas affiché sur la page tarifaire."
+        "en": "The advertised monthly price requires a 1-year commitment; month-to-month billing with no commitment costs 50% to 67% more.",
+        "fr": "Le prix mensuel affiché suppose un engagement d'un an ; la facturation au mois sans engagement coûte de 50 % à 67 % plus cher."
       }
     ],
     "verdict": {
@@ -338,17 +318,14 @@
         "fr": "Tu as seulement besoin de voir et d'imprimer des PDF, ce qu'Acrobat Reader fait déjà gratuitement."
       },
       "threshold": {
-        "en": "Budget about $240 per year for Acrobat Pro (12 x $19.99) on the annual commitment, the tier that includes redaction and OCR.",
-        "fr": "Compte environ 240 $ par an pour Acrobat Pro (12 x 19,99 $) en engagement annuel, l'offre qui inclut la rédaction et l'OCR."
+        "en": "Budget $239.88 per year for Acrobat Pro (12 x $19.99) on the 1-year commitment, the tier that includes redaction and OCR.",
+        "fr": "Compte 239,88 $ par an pour Acrobat Pro (12 x 19,99 $) en engagement d'un an, l'offre qui inclut la rédaction et l'OCR."
       },
       "billingTraps": {
-        "en": "The $19.99/month Pro price requires an annual commitment; paying month to month without commitment costs more, a figure not shown next to the plan.",
-        "fr": "Le prix de 19,99 $/mois pour Pro suppose un engagement annuel ; payer au mois sans engagement coûte plus cher, un chiffre non affiché à côté de l'offre."
+        "en": "The $19.99/month Pro price requires a 1-year commitment; paying month to month without commitment costs $29.99/month instead. Cancelling the annual commitment after the first 14 days charges a fee of up to half the remaining term.",
+        "fr": "Le prix de 19,99 $/mois pour Pro suppose un engagement d'un an ; payer au mois sans engagement coûte 29,99 $/mois. Annuler l'engagement annuel après les 14 premiers jours entraîne des frais pouvant aller jusqu'à la moitié de la durée restante."
       }
     }
   },
-  "reviewNotes": [
-    "pricing.plans show identical monthly and annualPerMonth values for all four plans ($9.99/$9.99, $14.99/$14.99, $19.99/$19.99, $24.99/$24.99) even though pricing.cautions states the true cancel-anytime monthly price is higher (e.g. Pro at $29.99/mo versus $19.99/mo annual); the 'monthly' field most likely should carry the cancel-anytime price and 'annualPerMonth' the committed one. Needs a check on adobe.com/acrobat/pricing before merge."
-  ],
-  "hold": "monthly equals annualPerMonth on every plan while cautions say month-to-month is higher; confirm on adobe.com"
+  "priceCheckedOn": "2026-10-02"
 }

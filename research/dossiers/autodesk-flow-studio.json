@@ -27,15 +27,16 @@
       "id": "s2",
       "url": "https://adsknews.autodesk.com/en/pressrelease/autodesk-launches-freemium-access-to-autodesk-flow-studio-with-new-pricing-tiers-making-world-class-vfx-ai-more-affordable-to-all-creators/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Autodesk launches freemium access to Autodesk Flow Studio"
+      "accessedOn": "2026-10-02",
+      "checkedOn": "2026-10-02",
+      "title": "Autodesk launches freemium access to Autodesk Flow Studio (confirms Free tier and Lite at $10/month only; does not state Standard/Pro/Enterprise prices)"
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://www.autodesk.com/products/flow-studio/buy",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": false,
     "freePlan": {
@@ -71,11 +72,11 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "2,100 credits/month, max 1080p resolution, 5 GB storage, 500 MB upload cap, 6 custom character uploads, tracking for 2 actors per project.",
-            "fr": "2 100 crédits par mois, résolution maximale 1080p, 5 Go de stockage, plafond d'upload de 500 Mo, 6 imports de personnages personnalisés, suivi de 2 acteurs par projet."
+            "en": "2,100 credits/month, max 1080p resolution, 5 GB storage, 500 MB upload cap, 6 custom character uploads, tracking for 2 actors per project. The $10/month price is confirmed by Autodesk's own press release; the credit/storage limits come from a tier-2 source.",
+            "fr": "2 100 crédits par mois, résolution maximale 1080p, 5 Go de stockage, plafond d'upload de 500 Mo, 6 imports de personnages personnalisés, suivi de 2 acteurs par projet. Le prix de 10 $/mois est confirmé par le communiqué officiel d'Autodesk ; les limites de crédits et de stockage viennent d'une source tierce."
           }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": ["s1", "s2"]
       },
       {
         "key": "standard",
@@ -120,6 +121,11 @@
         "en": "3-year subscription terms lock in a price and protect against future increases, per vendor messaging.",
         "fr": "Les abonnements sur 3 ans verrouillent un prix et protègent contre de futures hausses, selon le discours du fournisseur.",
         "sourceIds": ["s1"]
+      },
+      {
+        "en": "The official pricing page (autodesk.com/products/flow-studio/buy, /overview and the en-us variant) returned HTTP 403 (anti-bot block) on every attempt on 2026-10-02; Standard and Pro prices below are not confirmed on a tier-1 source, only the Free tier and Lite at $10/month are confirmed by Autodesk's own press release.",
+        "fr": "La page tarifaire officielle (autodesk.com/products/flow-studio/buy, /overview et la variante en-us) a renvoyé une erreur HTTP 403 (blocage anti-robot) à chaque tentative le 2026-10-02 ; les prix Standard et Pro ci-dessous ne sont pas confirmés sur une source de niveau 1, seuls le palier gratuit et Lite à 10 $/mois sont confirmés par le communiqué officiel d'Autodesk.",
+        "sourceIds": ["s2"]
       }
     ]
   },
@@ -288,7 +294,8 @@
     }
   },
   "unknowns": [
-    "Enterprise tier pricing and exact quota were not published on the pages accessible (autodesk.com/products/flow-studio/buy returned HTTP 403)."
+    "Enterprise tier pricing and exact quota were not published on the pages accessible (autodesk.com/products/flow-studio/buy returned HTTP 403, retried 2026-10-02 with the same result on /buy, /overview and the en-us URL)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "hold": "Standard ($45 / $30 annual) and Pro ($95) prices come only from a tier-2 source (digitalproduction.com); autodesk.com/products/flow-studio (buy, overview, en-us) returned HTTP 403 anti-bot on every attempt on 2026-10-02, and Autodesk's own press release (tier 1) confirms only Free and Lite ($10/month)."
 }

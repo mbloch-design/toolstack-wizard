@@ -17,10 +17,10 @@
   "sources": [
     {
       "id": "s1",
-      "url": "https://costbench.com/software/design/photopea/",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "Photopea free vs premium pricing summary"
+      "url": "https://www.photopea.com/",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Photopea official app, Account > Account Types and Go Premium panels"
     },
     {
       "id": "s2",
@@ -32,39 +32,101 @@
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://www.photopea.com/",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-02",
+    "region": "App defaulted to French UI and EUR pricing on this session's connection (geolocation); no manual country/currency selector was found in the app.",
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Ad-supported, full PSD support, 40+ file format compatibility, layers/masks/blending, 500 MB PeaDrive storage, shorter edit history, base AI credits.",
-        "fr": "Financé par la publicité, support complet des fichiers PSD, compatibilité avec plus de 40 formats, calques/masques/fusion, 500 Mo de stockage PeaDrive, historique d'édition plus court, crédits IA de base."
+        "en": "All editing features unlocked, ad-supported, 0.5 GB PeaDrive cloud storage, shorter edit history, base AI credits.",
+        "fr": "Toutes les fonctionnalités d'édition débloquées, financé par la publicité, 0,5 Go de stockage cloud PeaDrive, historique d'édition plus court, crédits IA de base."
       },
       "sourceIds": [
-        "s1",
-        "s2"
+        "s1"
       ]
     },
     "trial": null,
     "plans": [
       {
-        "key": "premium",
-        "name": "Premium",
+        "key": "free",
+        "name": "Free",
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 5,
-          "annualPerMonth": 4.17,
+          "monthly": 0,
+          "annualPerMonth": null,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "$5/month or $50/year; removes ads, widens editor to full screen width, raises PeaDrive storage from 500 MB to 5 GB, doubles edit history length, adds more AI credits and priority support.",
-            "fr": "5 $/mois ou 50 $/an ; retire les publicités, élargit l'éditeur à toute la largeur d'écran, fait passer le stockage PeaDrive de 500 Mo à 5 Go, double la longueur de l'historique d'édition, ajoute plus de crédits IA et un support prioritaire."
+            "en": "All editing features unlocked, ad-supported, 0.5 GB PeaDrive cloud storage, shorter edit history, base AI credits.",
+            "fr": "Toutes les fonctionnalités d'édition débloquées, financé par la publicité, 0,5 Go de stockage cloud PeaDrive, historique d'édition plus court, crédits IA de base."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium-single-30d",
+        "name": "Premium, Single user, 30 days",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 8
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One-time payment of 8 EUR for 30 days of Premium (no subscription): removes ads, raises PeaDrive storage to 5 GB, doubles edit history length, adds 3,000 AI credits/month. Reverts to the Free plan automatically when the 30 days end.",
+            "fr": "Paiement unique de 8 EUR pour 30 jours de Premium (sans abonnement) : retire les publicités, porte le stockage PeaDrive à 5 Go, double la longueur de l'historique d'édition, ajoute 3 000 crédits IA par mois. Repasse automatiquement au plan gratuit à la fin des 30 jours."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium-single-90d",
+        "name": "Premium, Single user, 90 days",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 15
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One-time payment of 15 EUR for 90 days of Premium, same features as the 30-day pass.",
+            "fr": "Paiement unique de 15 EUR pour 90 jours de Premium, mêmes fonctionnalités que le forfait de 30 jours."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium-single-365d",
+        "name": "Premium, Single user, 365 days",
+        "unit": "account",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 50
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One-time payment of 50 EUR for 365 days of Premium (about 4.17 EUR/month equivalent), same features as the 30-day pass.",
+            "fr": "Paiement unique de 50 EUR pour 365 jours de Premium (environ 4,17 EUR/mois en équivalent), mêmes fonctionnalités que le forfait de 30 jours."
           }
         ],
         "sourceIds": [
@@ -72,9 +134,32 @@
         ]
       }
     ],
-    "comparePlanKey": "premium",
-    "addOns": [],
-    "cautions": []
+    "comparePlanKey": "premium-single-30d",
+    "addOns": [
+      {
+        "en": "Team passes use the same prepaid, non-recurring model as Single user: Team of 5 from 20 EUR/30 days, Team of 20 from 70 EUR/30 days, Team of 50 from 150 EUR/30 days (each also available as 90-day and 365-day passes).",
+        "fr": "Les forfaits équipe suivent le même modèle prépayé et non reconduit que Single user : Team of 5 à partir de 20 EUR/30 jours, Team of 20 à partir de 70 EUR/30 jours, Team of 50 à partir de 150 EUR/30 jours (chacun aussi disponible en forfait 90 et 365 jours).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Premium is explicitly not a subscription: the official app states 'No subscription, just one-time payments.' Each purchase grants Premium for a fixed number of days, after which the account automatically reverts to the ad-supported Free plan rather than auto-renewing or charging again.",
+        "fr": "Premium n'est explicitement pas un abonnement : l'application officielle indique « Pas d'abonnement, juste des paiements uniques ». Chaque achat donne Premium pour un nombre de jours fixe, après quoi le compte repasse automatiquement au plan gratuit avec publicité, sans reconduction ni nouveau prélèvement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Prices were observed in EUR on this session's connection; the app appears to localize currency and language by region, so a USD or other-currency price could differ by country.",
+        "fr": "Les prix observés lors de cette session sont en EUR ; l'application semble localiser la devise et la langue selon la région, le prix pourrait donc différer en dollars ou dans une autre devise selon le pays.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
   },
   "product": {
     "capabilities": [
@@ -140,8 +225,7 @@
   ],
   "missingAlternatives": [],
   "unknowns": [
-    "Exact AI credit allowance difference between free and Premium was not precisely quantified in the sources checked.",
-    "Whether Premium billing is per-account or supports team seats was not confirmed."
+    "Official USD pricing was not observed directly; the app showed EUR prices on this session's connection, and currency may vary by region."
   ],
   "conflicts": [],
   "rating": {
@@ -152,8 +236,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "A free, ad-supported browser editor that opens native PSD files covers most occasional Photoshop-style edits without any subscription.",
-        "fr": "Un éditeur gratuit dans le navigateur, financé par la publicité, qui ouvre des fichiers PSD natifs couvre la plupart des retouches occasionnelles de type Photoshop sans aucun abonnement.",
+        "en": "A free, ad-supported browser editor that opens native PSD files covers most occasional Photoshop-style edits, and Premium is a one-time payment rather than a recurring subscription.",
+        "fr": "Un éditeur gratuit dans le navigateur, financé par la publicité, qui ouvre des fichiers PSD natifs couvre la plupart des retouches occasionnelles de type Photoshop, et Premium est un paiement unique plutôt qu'un abonnement récurrent.",
         "sourceIds": [
           "s1"
         ]
@@ -218,8 +302,8 @@
       "fr": "Photopea est un éditeur gratuit et financé par la publicité, dans le navigateur, qui ouvre les PSD natifs et 40+ autres formats, sans installation."
     },
     "longDescription": {
-      "en": "Photopea runs entirely in the browser and opens native PSD files with layers, masks and blending modes preserved. It also supports more than 40 other formats (XD, Sketch, XCF, AI, PDF), making it a practical fallback editor when the original design app is not available.\n\nThe free tier is ad-supported and caps PeaDrive cloud storage at 500MB. Premium removes ads and raises storage to 5GB for $5 a month or $50 a year. It suits designers and freelancers who need occasional PSD or cross-format edits without a Photoshop license.",
-      "fr": "Photopea fonctionne entièrement dans le navigateur et ouvre des fichiers PSD natifs en conservant calques, masques et modes de fusion. Il prend aussi en charge plus de 40 autres formats (XD, Sketch, XCF, AI, PDF), ce qui en fait un éditeur de secours pratique quand l'application de design d'origine n'est pas disponible.\n\nLe palier gratuit est financé par la publicité et plafonne le stockage cloud PeaDrive à 500 Mo. Premium retire les publicités et porte le stockage à 5 Go pour 5 $ par mois ou 50 $ par an. L'outil convient aux designers et freelances qui ont besoin de retouches PSD ou multi-formats occasionnelles sans licence Photoshop."
+      "en": "Photopea runs entirely in the browser and opens native PSD files with layers, masks and blending preserved, plus 40+ other formats (XD, Sketch, XCF, AI, PDF), as a fallback editor when the original app is missing.\n\nThe free tier is ad-supported, capped at 0.5GB PeaDrive storage. Premium is not a subscription: a one-time payment unlocks ad-free use, 5GB storage and more AI credits for a fixed number of days, from 8 EUR for 30 days (EUR seen this session; may vary by region), then it reverts to Free. Suits freelancers needing occasional PSD edits without a Photoshop license.",
+      "fr": "Photopea fonctionne entièrement dans le navigateur et ouvre des fichiers PSD natifs avec calques, masques et fusion intacts, plus 40 autres formats (XD, Sketch, XCF, AI, PDF), comme éditeur de secours quand l'application d'origine manque.\n\nLe palier gratuit est financé par la publicité, plafonné à 0,5 Go de stockage PeaDrive. Premium n'est pas un abonnement : un paiement unique débloque l'usage sans publicité, 5 Go de stockage et plus de crédits IA pour un nombre de jours fixe, dès 8 EUR pour 30 jours (EUR constaté cette session, peut varier selon la région), puis repasse au plan gratuit. Convient aux freelances pour des retouches PSD occasionnelles sans licence Photoshop."
     },
     "pros": [
       {
@@ -251,13 +335,12 @@
         "fr": "Tu édites des images au quotidien et as besoin d'un espace de travail sans publicité avec plus de stockage cloud que n'offre le palier gratuit."
       },
       "threshold": {
-        "en": "Upgrade to Premium at $5/month (or $50/year) once the ads or the 500MB PeaDrive cap start getting in the way.",
-        "fr": "Passe à Premium à 5 $/mois (ou 50 $/an) dès que les publicités ou le plafond de 500 Mo de PeaDrive commencent à gêner."
+        "en": "Buy a Premium pass once ads or the 0.5GB PeaDrive cap get in the way: 8 EUR for 30 days, up to 50 EUR for a year, paid once rather than billed on a recurring basis.",
+        "fr": "Achète un forfait Premium dès que la publicité ou le plafond de 0,5 Go de PeaDrive gêne : 8 EUR pour 30 jours, jusqu'à 50 EUR pour un an, payé une fois et non facturé de façon récurrente."
       }
     }
   },
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": [
-    "pricing.freePlan.exists est true mais aucun plan de pricing.plans n'est à 0 : le palier gratuit n'a pas de ligne de plan dédiée (seul Premium est listé). À vérifier sur photopea.com."
-  ]
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-02"
 }

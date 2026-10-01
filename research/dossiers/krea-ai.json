@@ -208,10 +208,10 @@
         ]
       },
       {
-        "en": "Plan structure above the Pro tier appears configurable rather than fixed, making it harder to compare a single flat price across tools.",
-        "fr": "La structure des plans au-delà de Pro semble configurable plutôt que fixe, ce qui complique la comparaison d'un tarif unique entre outils.",
+        "en": "Above Business, the Enterprise tier has no public price and requires contacting sales for a custom compute-unit allocation.",
+        "fr": "Au-delà de Business, l'offre Enterprise n'a pas de prix public et nécessite de contacter les ventes pour une allocation d'unités de calcul sur mesure.",
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       }
     ],
@@ -245,12 +245,9 @@
   ],
   "missingAlternatives": [],
   "unknowns": [
-    "krea.ai's own pricing page could not be fetched in this session (header-overflow/bot-blocking error on every attempt: pricing, homepage, /apps); all pricing figures here are sourced from a third-party tracker and require re-verification directly on krea.ai/pricing.",
     "Exact platform support (mobile apps vs. web-only) was not confirmed from an official source."
   ],
-  "conflicts": [
-    "Third-party sources disagree on Max-plan pricing ($70/month for 40,000 units vs. $105/month for a 60,000-unit configuration), likely because higher tiers use a configurable compute-unit selector rather than one fixed price; not resolved here for lack of official-page access."
-  ],
+  "conflicts": [],
   "rating": {
     "valeurAjoutee": 3,
     "simplicite": 4,
@@ -259,10 +256,10 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "The entry paid plan, Basic, is reported at $9/month for around 5,000 compute units, but the exact figure comes from a third-party tracker since the official pricing page could not be reached, so cost-to-value confidence stays moderate.",
-        "fr": "Le plan payant d'entrée, Basic, est rapporté à 9 $/mois pour environ 5 000 unités de calcul, mais le chiffre exact vient d'un comparateur tiers puisque la page de prix officielle n'a pas pu être atteinte, donc la confiance dans le rapport coût/valeur reste modérée.",
+        "en": "The entry paid plan, Basic, is confirmed on the official pricing page at $9/month (or $5/month billed annually) for 5,000 compute units, a low entry cost for access to 60+ aggregated models.",
+        "fr": "Le plan payant d'entrée, Basic, est confirmé sur la page de prix officielle à 9 $/mois (ou 5 $/mois en facturation annuelle) pour 5 000 unités de calcul, un coût d'entrée bas pour accéder à plus de 60 modèles agrégés.",
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       },
       "simplicite": {
@@ -325,8 +322,8 @@
       "fr": "Interface unifiée agrégeant plus de 60 modèles de génération d'image et vidéo par IA avec un système de crédits en unités de calcul partagé."
     },
     "longDescription": {
-      "en": "Krea AI aggregates 60+ third-party and proprietary AI image and video generation models, such as Flux, Runway and Veo, in one interface with a shared compute-unit credit system, and adds real-time generation alongside standard asynchronous workflows.\n\nThe free plan gives 100 compute units a day. The entry paid plan, Basic, is reported at $9/month for around 5,000 units, though this dossier's pricing comes from a third-party tracker since the official page could not be reached, and plan structure above Pro appears configurable rather than fixed. It suits a creator who wants to try many models from one place rather than subscribe to each separately.",
-      "fr": "Krea AI agrège plus de 60 modèles tiers et propriétaires de génération d'image et vidéo par IA, comme Flux, Runway et Veo, dans une seule interface avec un système de crédits en unités de calcul partagé, et ajoute la génération en temps réel en plus des workflows asynchrones standards.\n\nLe plan gratuit donne 100 unités de calcul par jour. Le plan payant d'entrée, Basic, est rapporté à 9 $/mois pour environ 5 000 unités, chiffre venant d'un comparateur tiers puisque la page officielle n'a pas pu être atteinte. Il convient à un créateur qui veut essayer de nombreux modèles depuis un seul endroit plutôt que s'abonner à chacun séparément."
+      "en": "Krea AI aggregates 60+ third-party and proprietary AI image and video generation models, such as Flux, Runway and Veo, in one interface with a shared compute-unit credit system, and adds real-time generation alongside standard asynchronous workflows.\n\nThe free plan gives 100 compute units a day. The entry paid plan, Basic, is $9/month (or $5/month billed annually) for 5,000 units, rising to Pro ($35, 20,000 units), Max ($105, 60,000 units) and Business ($200, 80,000 units, up to 50 seats), with a custom Enterprise tier on quote. It suits a creator who wants to try many models from one place rather than subscribe to each separately.",
+      "fr": "Krea AI agrège plus de 60 modèles tiers et propriétaires de génération d'image et vidéo par IA, comme Flux, Runway et Veo, dans une seule interface avec un système de crédits en unités de calcul partagé, et ajoute la génération en temps réel en plus des workflows asynchrones standards.\n\nLe plan gratuit donne 100 unités de calcul par jour. Le plan payant d'entrée, Basic, est à 9 $/mois (ou 5 $/mois en facturation annuelle) pour 5 000 unités, puis Pro (35 $, 20 000 unités), Max (105 $, 60 000 unités) et Business (200 $, 80 000 unités, jusqu'à 50 sièges), avec une offre Enterprise sur devis. Il convient à un créateur qui veut essayer de nombreux modèles depuis un seul endroit plutôt que s'abonner à chacun séparément."
     },
     "pros": [
       {
@@ -344,8 +341,8 @@
         "fr": "Les modèles plus lourds ou plus coûteux consomment le quota de calcul partagé plus vite que les autres, sans détail clair par modèle sur la page consultée."
       },
       {
-        "en": "Plan structure above Basic/Pro appears configurable rather than fixed, making price comparison harder.",
-        "fr": "La structure des plans au-delà de Basic/Pro semble configurable plutôt que fixe, ce qui complique la comparaison de prix."
+        "en": "Annual billing is required to reach the lower per-month price; monthly billing costs 40% more on every paid plan.",
+        "fr": "La facturation annuelle est nécessaire pour obtenir le prix mensuel le plus bas ; la facturation au mois coûte 40 % de plus sur chaque forfait payant."
       }
     ],
     "verdict": {
@@ -358,8 +355,8 @@
         "fr": "À éviter si le tarif dédié et le support d'un modèle spécifique unique comptent plus que la diversité de choix."
       },
       "threshold": {
-        "en": "The entry paid plan, Basic, is reported at $9/month for around 5,000 compute units (figure from a third-party tracker, pending official confirmation).",
-        "fr": "Le plan payant d'entrée, Basic, est rapporté à 9 $/mois pour environ 5 000 unités de calcul (chiffre issu d'un comparateur tiers, en attente de confirmation officielle)."
+        "en": "The entry paid plan, Basic, is $9/month (or $5/month billed annually) for 5,000 compute units, confirmed on krea.ai/pricing.",
+        "fr": "Le plan payant d'entrée, Basic, est à 9 $/mois (ou 5 $/mois en facturation annuelle) pour 5 000 unités de calcul, confirmé sur krea.ai/pricing."
       },
       "billingTraps": {
         "en": "Compute units are shared across all aggregated models, so using heavier or pricier models can exhaust a monthly allowance far faster than a lighter model would.",
@@ -368,8 +365,5 @@
     }
   },
   "completedLocallyOn": "2026-09-30",
-  "reviewNotes": [
-    "All pricing figures (Basic $9/mo ~5,000 units, Pro $35/mo ~20,000 units, Max plan $70 vs $105/mo across sources) come from a third-party tracker, not krea.ai/pricing directly, because the official domain returned a bot-blocking error in this session; re-verify every amount on krea.ai/pricing before publishing."
-  ],
-  "hold": "all prices from a third-party tracker; reconfirm on krea.ai/pricing"
+  "priceCheckedOn": "2026-10-02"
 }

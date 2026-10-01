@@ -18,16 +18,16 @@
     {
       "id": "s1",
       "url": "https://help.vimeo.com/hc/en-us/articles/12425432033937-About-Vimeo-plans",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "About Vimeo plans (Vimeo Help Center)"
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "About Vimeo plans (Vimeo Help Center, official) - feature comparison, no prices"
     },
     {
       "id": "s2",
       "url": "https://vimeo.com/upgrade-plan",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Vimeo upgrade plan page"
+      "accessedOn": "2026-10-02",
+      "title": "Vimeo upgrade plan page - now behind a signup/login wall, prices not accessible without creating an account"
     }
   ],
   "pricing": {
@@ -348,10 +348,12 @@
     }
   },
   "unknowns": [
-    "Exact free-plan upload/storage caps were not independently re-verified from the live pricing page (fetch returned only footer content); figures rely on third-party summaries and the help center article.",
-    "Whether taxes are included in listed USD prices is not stated."
+    "Exact free-plan upload/storage caps were not independently re-verified from the live pricing page; figures rely on third-party summaries and the help center article.",
+    "Whether taxes are included in listed USD prices is not stated.",
+    "help.vimeo.com now lists Free/Starter/Standard/Advanced/Enterprise storage and feature limits (Free: 1 GB storage, all plans share a 2 TB/month bandwidth cap, Starter/Standard include up to 200 seats with 5/10 included), but no dollar prices; could not confirm whether these feature details changed since the dossier was written."
   ],
   "conflicts": [],
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": []
+  "reviewNotes": [],
+  "hold": "La page tarifs officielle (vimeo.com/upgrade-plan et vimeo.com/pricing) exige desormais la creation d'un compte ou une connexion avant d'afficher le moindre prix (mur d'inscription confirme le 2026-10-02) ; help.vimeo.com (officiel) detaille les fonctionnalites par plan mais ne publie aucun montant. Aucun prix ne peut etre confirme aujourd'hui sans creer de compte, ce qui est hors perimetre. Montants actuels (Free 0, Starter 20/12, Standard 41/25, Advanced 125/75, Enterprise sur devis) laisses en l'etat, non reverifies."
 }

@@ -318,5 +318,5 @@
   "reviewNotes": [
     "Le dossier mélange deux entités du catalogue : « lottie » (le format ouvert) et « lottiefiles » (la plateforme éditeur, fiche séparée). Toute la grille tarifaire relevée ici (Individual, Team, Enterprise) décrit en réalité l'offre LottieFiles, pas le format Lottie lui-même qui est gratuit. lottiefiles a été retiré des alternatives car c'est l'éditeur du format, pas un concurrent ; à vérifier si les deux fiches ne devraient pas être fusionnées ou clairement distinguées côté contenu."
   ],
-  "hold": "pricing grid is the LottieFiles platform, not the free Lottie format; overlaps slug lottiefiles"
+  "hold": "doublon de lottiefiles : ce dossier decrit la plateforme LottieFiles, pas le format Lottie ; pas de travail de prix ici, voir le slug lottiefiles"
 }

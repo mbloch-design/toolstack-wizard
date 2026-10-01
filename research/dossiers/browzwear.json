@@ -99,7 +99,7 @@
           "annualPerMonth": null,
           "oneTime": null
         },
-        "onQuote": false,
+        "onQuote": true,
         "keyLimits": [
           {
             "en": "$3,950/year, annual billing only (no monthly option), up to 3 named active users at 1 site, limited AI/render credits (50 total), email support.",
@@ -115,7 +115,11 @@
         "name": "Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
         "keyLimits": [
           {
@@ -123,7 +127,9 @@
             "fr": "Périmètre sur mesure, Vray local et cloud, hébergement AWS ou Azure, support technique dédié avec SLA 24 heures."
           }
         ],
-        "sourceIds": ["s2"]
+        "sourceIds": [
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": "freelancer",

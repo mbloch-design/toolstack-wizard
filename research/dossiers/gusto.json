@@ -18,16 +18,16 @@
     {
       "id": "s1",
       "url": "https://gusto.com/product/pricing",
-      "tier": 2,
-      "accessedOn": "2026-09-25",
-      "title": "Gusto Pricing, Plans & Fees (2026) - aggregated from third-party pricing trackers, official pricing page returned 403 during this session"
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Gusto Pricing, Plans & Fees (2026)"
     }
   ],
   "pricing": {
     "model": "per_seat",
     "currency": "USD",
     "pricingUrl": "https://gusto.com/product/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -100,27 +100,6 @@
         "sourceIds": [
           "s1"
         ]
-      },
-      {
-        "key": "contractor-only",
-        "name": "Contractor Only",
-        "unit": "seat",
-        "minSeats": 1,
-        "price": {
-          "monthly": 41,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
-        "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Base fee $35/month + $6/contractor/month; contractor payments, 1099-NEC filing, international contractor payments in 120+ countries.",
-            "fr": "Frais de base de 35 $/mois + 6 $/freelance/mois ; paiements de freelances, déclaration 1099-NEC, paiements de freelances internationaux dans plus de 120 pays."
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
       }
     ],
     "comparePlanKey": "simple",
@@ -142,8 +121,8 @@
         ]
       },
       {
-        "en": "Official gusto.com pricing page returned an access error during this research session; figures come from third-party pricing trackers and were not independently verified on gusto.com. Re-verify before publishing.",
-        "fr": "La page tarifs officielle de gusto.com a renvoyé une erreur d'accès pendant cette session de recherche ; les chiffres proviennent de comparateurs tiers et n'ont pas été vérifiés indépendamment sur gusto.com. À revérifier avant publication.",
+        "en": "The official pricing page no longer lists a standalone Contractor Only plan; domestic contractor payments are included at no extra plan fee on Simple, Plus and Premium, and a separate Solo plan ($49/mo + $6/mo per person) targets self-pay S corp founders who also pay contractors.",
+        "fr": "La page tarifs officielle ne propose plus de plan distinct Contractor Only ; les paiements de freelances domestiques sont inclus sans frais de plan supplémentaire sur Simple, Plus et Premium, et un plan Solo séparé (49 $/mois + 6 $/mois par personne) vise les fondateurs en S corp qui se rémunèrent eux-mêmes et paient aussi des freelances.",
         "sourceIds": [
           "s1"
         ]
@@ -229,8 +208,8 @@
   ],
   "missingAlternatives": [],
   "unknowns": [
-    "Official pricing page (gusto.com) blocked access (HTTP 403) during this session; plan prices sourced from third-party trackers and should be re-verified directly on gusto.com.",
-    "Exact benefits/HR add-on pricing not confirmed from an official source."
+    "Gusto's public pricing page no longer lists a standalone Contractor Only plan; the dossier's earlier $35 base + $6/contractor figures (from a third-party tracker) could not be reverified on gusto.com today and were removed rather than republished unverified.",
+    "Exact benefits/HR add-on pricing beyond what the official page lists was not fully detailed."
   ],
   "conflicts": [],
   "rating": {
@@ -262,8 +241,8 @@
         ]
       },
       "puissance": {
-        "en": "Covers payroll, benefits administration, contractor payments and multi-state compliance across four plans, a broad feature set for the category.",
-        "fr": "Couvre la paie, la gestion des avantages sociaux, les paiements de freelances et la conformité multi-états sur quatre plans, un périmètre large pour la catégorie.",
+        "en": "Covers payroll, benefits administration, contractor payments and multi-state compliance across three plans plus a Solo plan for self-employed founders, a broad feature set for the category.",
+        "fr": "Couvre la paie, la gestion des avantages sociaux, les paiements de freelances et la conformité multi-états sur trois plans, plus un plan Solo pour les fondateurs indépendants, un périmètre large pour la catégorie.",
         "sourceIds": [
           "s1"
         ]
@@ -293,8 +272,8 @@
       "fr": "Usage : un dirigeant de petite entreprise gère la paie et la déclaration fiscale automatique, étatique et fédérale, sur le plan Simple pour une équipe mono-état."
     },
     {
-      "en": "Usage: a company with only freelancers uses the Contractor Only plan to pay and file 1099-NEC forms for US and international contractors.",
-      "fr": "Usage : une entreprise qui n'emploie que des freelances utilise le plan Contractor Only pour les payer et déclarer les formulaires 1099-NEC, y compris à l'international."
+      "en": "Usage: a company with only freelancers uses the Simple plan's included domestic contractor payments to pay and file 1099-NEC forms, or Gusto's global contractor payments for international ones.",
+      "fr": "Usage : une entreprise qui n'emploie que des freelances utilise les paiements de freelances domestiques inclus dans le plan Simple pour les payer et déclarer les formulaires 1099-NEC, ou les paiements de freelances internationaux de Gusto pour l'étranger."
     }
   ],
   "editorial": {
@@ -307,8 +286,8 @@
       "fr": "Plateforme de paie américaine qui gère la déclaration fiscale, les avantages sociaux et les paiements de freelances pour les petites entreprises."
     },
     "longDescription": {
-      "en": "Gusto runs payroll for US-based teams, filing state and federal taxes automatically and handling employee benefits like health insurance and retirement plans. A separate Contractor Only plan covers 1099-NEC filing and payments to contractors in more than 120 countries, for businesses with no W-2 employees.\n\nThere is no free tier: every plan combines a monthly base fee with a per-employee charge, starting around $55/month for a single employee on Simple. Multi-state payroll and time tracking require the Plus plan; certified HR support and custom reporting are reserved for Premium.",
-      "fr": "Gusto gère la paie des équipes basées aux États-Unis, avec déclaration fiscale automatique aux niveaux étatique et fédéral, et prend en charge les avantages sociaux comme l'assurance santé et les plans de retraite. Un plan distinct, Contractor Only, couvre la déclaration 1099-NEC et les paiements de freelances dans plus de 120 pays, pour les entreprises sans employé salarié.\n\nIl n'y a pas d'offre gratuite : chaque plan combine un forfait mensuel de base et un montant par employé, à partir d'environ 55 $/mois pour un seul employé sur Simple. La paie multi-états et le suivi du temps nécessitent le plan Plus ; l'accès à des pros RH certifiés et les rapports personnalisés sont réservés à Premium."
+      "en": "Gusto runs payroll for US-based teams, filing state and federal taxes automatically and handling employee benefits like health insurance and retirement plans. Domestic contractor payments are included on every team plan, and a separate Solo plan covers S corp founders who pay themselves plus contractors.\n\nThere is no free tier: every plan combines a monthly base fee with a per-employee charge, starting at $55/month for a single employee on Simple ($49 base plus $6/person). Multi-state payroll and time tracking require the Plus plan; certified HR support and custom reporting are reserved for Premium.",
+      "fr": "Gusto gère la paie des équipes basées aux États-Unis, avec déclaration fiscale automatique étatique et fédérale, et les avantages sociaux comme l'assurance santé et la retraite. Les paiements de freelances domestiques sont inclus sur chaque plan d'équipe, et un plan Solo vise les fondateurs en S corp qui se rémunèrent eux-mêmes et paient aussi des freelances.\n\nPas d'offre gratuite : chaque plan combine un forfait de base et un montant par employé, à partir de 55 $/mois sur Simple (49 $ de base plus 6 $/personne). La paie multi-états et le suivi du temps nécessitent Plus ; les pros RH certifiés et les rapports personnalisés sont réservés à Premium."
     },
     "pros": [
       {
@@ -316,8 +295,8 @@
         "fr": "La déclaration fiscale est gérée automatiquement dans tous les États américains, supprimant une tâche de conformité récurrente."
       },
       {
-        "en": "A dedicated Contractor Only plan exists for businesses that pay freelancers instead of employees.",
-        "fr": "Un plan dédié Contractor Only existe pour les entreprises qui paient des freelances plutôt que des employés."
+        "en": "Domestic contractor payments are included on every team plan, with no separate contractor-only tier required.",
+        "fr": "Les paiements de freelances domestiques sont inclus sur chaque plan d'équipe, sans qu'un plan dédié aux freelances soit nécessaire."
       }
     ],
     "cons": [
@@ -336,8 +315,8 @@
         "fr": "Tu gères une paie américaine et veux la déclaration fiscale automatisée et la gestion des avantages sociaux au même endroit."
       },
       "avoidIf": {
-        "en": "You only pay international contractors with no US payroll need, and the Contractor Only plan alone would cover it.",
-        "fr": "Tu ne paies que des freelances à l'international sans besoin de paie américaine, auquel cas le seul plan Contractor Only suffirait."
+        "en": "You only pay international contractors with no US payroll need; Gusto's global contractor payments are billed per payment ($5 each) rather than through a dedicated low-cost contractor plan.",
+        "fr": "Tu ne paies que des freelances à l'international sans besoin de paie américaine ; les paiements de freelances internationaux de Gusto sont facturés par paiement (5 $ chacun) plutôt que via un plan dédié à bas coût."
       },
       "threshold": {
         "en": "Priced for real use from the Simple plan's $55/month (a $49 base fee plus $6 for one employee); a 10-person team runs about $109/month per the dossier's own example.",
@@ -350,7 +329,6 @@
     }
   },
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": [
-    "Pricing source is tier 2 (third-party aggregator), not gusto.com directly: the official pricing page returned a 403 during the cloud research session. Re-verify the Simple/Plus/Premium/Contractor Only base fees and per-employee amounts directly on gusto.com before this dossier is merged into the catalogue."
-  ]
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-02"
 }

@@ -263,5 +263,5 @@
     "No catalogue competitor matches Newton's specific 2D physics-simulation niche for After Effects (ae-duik and ae-rubberhose are rigging/bones tools, a different need); alternatives left empty rather than listing an unrelated plugin as a substitute.",
     "The seed data described this slug as 'Newton 3' at 249.99 USD with a separate 99.99 USD Newton 4 upgrade; the live page now sells Newton 4 itself at 249.99 USD, with 99.99 USD being the upgrade price for Newton 3 owners specifically. Identity/pricing fields in this dossier reflect the current Newton 4 sale; verify the catalogue entry name matches before merge."
   ],
-  "hold": "Newton 3 replaced by Newton 4; dossier mixes both versions"
+  "hold": "Produit renomme : Newton 3 n'existe plus en vente, la page officielle (aescripts.com/newton) ne vend que Newton 4 a 249,99 $ avec upgrade a 99,99 $ pour les proprietaires de Newton 3 (reconfirme en direct le 2026-10-02, aucun changement). Hold maintenu : decision catalogue sur le nom/slug en attente, aucun travail de prix effectue sur ce point."
 }

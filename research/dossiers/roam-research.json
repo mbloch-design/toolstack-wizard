@@ -16,7 +16,7 @@
     "statusNote": "Pricing has reportedly not changed meaningfully since 2020."
   },
   "sources": [
-    { "id": "s1", "url": "https://roamresearch.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Roam Research homepage" },
+    { "id": "s1", "url": "https://roamresearch.com", "tier": 1, "accessedOn": "2026-10-02", "title": "Roam Research homepage, pricing section" },
     { "id": "s2", "url": "https://costbench.com/software/note-taking/roam-research/", "tier": 2, "accessedOn": "2026-09-25", "title": "Roam Research pricing 2026" }
   ],
   "pricing": {
@@ -26,8 +26,8 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
-    "trial": { "days": 31, "sourceIds": ["s2"] },
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 31, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "pro",
@@ -36,8 +36,8 @@
         "minSeats": 1,
         "price": { "monthly": 15, "annualPerMonth": 13.75, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited graphs and blocks, daily notes, bidirectional links, block references, queries, native mobile apps", "fr": "Graphes et blocs illimités, notes quotidiennes, liens bidirectionnels, références de blocs, requêtes, applications mobiles natives" }],
-        "sourceIds": ["s2"]
+        "keyLimits": [{ "en": "Unlimited private or public Roam graphs, unlimited collaborators, API access and apps. $15/month or $165/year ($13.75/month equivalent), confirmed on the official site.", "fr": "Graphes Roam privés ou publics illimités, collaborateurs illimités, accès API et applications. 15 $/mois ou 165 $/an (équivalent 13,75 $/mois), confirmé sur le site officiel." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "believer",
@@ -46,24 +46,14 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 500 },
         "onQuote": false,
-        "keyLimits": [{ "en": "5-year access to all Pro features for a single upfront payment (~$8.33/month equivalent)", "fr": "Accès de 5 ans à toutes les fonctionnalités Pro pour un paiement unique (~8,33 $/mois en équivalent)" }],
-        "sourceIds": ["s2"]
-      },
-      {
-        "key": "scholar",
-        "name": "Scholar",
-        "unit": "account",
-        "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 13.75, "oneTime": null },
-        "onQuote": false,
-        "keyLimits": [{ "en": "Same features as Pro, requires a valid student/educator .edu email", "fr": "Mêmes fonctionnalités que Pro, nécessite une adresse e-mail étudiant/enseignant .edu valide" }],
-        "sourceIds": ["s2"]
+        "keyLimits": [{ "en": "5-year access to all Pro features for a single upfront payment of $500 (~$8.33/month, $100/year equivalent), confirmed on the official site.", "fr": "Accès de 5 ans à toutes les fonctionnalités Pro pour un paiement unique de 500 $ (environ 8,33 $/mois, 100 $/an en équivalent), confirmé sur le site officiel." }],
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "No free plan exists; only a 31-day trial. The Believer plan is a one-time 5-year payment, not a recurring subscription.", "fr": "Il n'existe pas de plan gratuit, seulement un essai de 31 jours. Le plan Believer est un paiement unique sur 5 ans, pas un abonnement récurrent.", "sourceIds": ["s2"] }
+      { "en": "No free plan exists; only a 31-day trial (valid only if the account has never had a paid plan). The Believer plan is a one-time 5-year payment, not a recurring subscription.", "fr": "Il n'existe pas de plan gratuit, seulement un essai de 31 jours (valable uniquement si le compte n'a jamais eu de plan payant). Le plan Believer est un paiement unique sur 5 ans, pas un abonnement récurrent.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
@@ -134,7 +124,9 @@
     }
   },
   "unknowns": [
-    "Whether Roam Research still offers team/graph-sharing pricing beyond the individual Pro/Believer/Scholar tiers"
+    "Whether Roam Research still offers team/graph-sharing pricing beyond the individual Pro/Believer tiers.",
+    "A 'Scholar' student plan at $13.75/month was previously reported by a third-party source (costbench.com) but does not appear on the official pricing page as of 2026-10-02; may be discontinued or only shown after signup with an .edu email."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "priceCheckedOn": "2026-10-02"
 }

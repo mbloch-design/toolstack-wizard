@@ -43,6 +43,11 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [ ] Doublons catalogue : `apollo` / `apollo-io`, `lottie` / `lottiefiles`
 - [ ] Apollo : l'agent a remplacé HubSpot, Pipedrive, lemlist, La Growth Machine par des alternatives plus faibles ; restaurer avant fusion
 - [ ] Prix à vérifier : Smartsuite (minimum 3 sièges sur tous les plans), Kajabi (179 $ contre 55 $ dans l'ancien catalogue)
+- [x] Vérification des prix sur pages officielles (02/10/2026, brief `docs/PRICE_CHECK_BRIEF.md`) : 58 fiches sur 69 débloquées et fusionnées (348 fiches recherchées en ligne). Plusieurs passées en EUR (page officielle géolocalisée sans sélecteur).
+- [ ] Prix encore à vérifier par un humain (navigateur ordinaire) : Arnold et Autodesk Flow Studio (widget de prix Autodesk bloqué), Patreon (support.patreon.com refusé), Vimeo (compte obligatoire), Billo (page de connexion), Dynamics 365 (Team Member et option non confirmés)
+- [ ] Crowdfire (site pivoté, plus de prix) et StreamElements (aucune grille Plus) **[décision]** : produits encore vivants ?
+- [ ] Newton 3 vendu sous le nom Newton 4 **[décision]** : renommer la fiche `ae-newton3`
+- [ ] Stripe : commission en pourcentage impossible à saisir dans le schéma v2 ; ajouter un champ de taux (aussi utile pour Shopify Payments, aujourd'hui « sur devis »)
 - [ ] Afficher le champ `tagline` des fiches dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « produit arrêté / racheté » depuis `lifecycle`
 - [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
 - [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`

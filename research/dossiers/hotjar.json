@@ -17,13 +17,14 @@
   "sources": [
     { "id": "s1", "url": "https://contentsquare.com/hotjar/", "tier": 1, "accessedOn": "2026-09-25", "title": "Hotjar (Contentsquare) product page" },
     { "id": "s2", "url": "https://contentsquare.com/pricing/?utm_source=hotjar-pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Contentsquare pricing page (JS-rendered, plan details not exposed to fetch)" },
-    { "id": "s3", "url": "https://quackback.io/blog/hotjar-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Hotjar Pricing in 2026: Plans, Session Limits, and the Contentsquare Merger (secondary source, used to cross-check plan numbers since the official pricing page is JS-rendered and the official support article was blocked)" }
+    { "id": "s3", "url": "https://quackback.io/blog/hotjar-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Hotjar Pricing in 2026: Plans, Session Limits, and the Contentsquare Merger (secondary source, used to cross-check plan numbers since the official pricing page is JS-rendered and the official support article was blocked)" },
+    { "id": "s4", "url": "https://contentsquare.com/pricing/", "tier": 1, "accessedOn": "2026-10-02", "title": "Contentsquare pricing page (live browser render, both Pay monthly and Pay yearly views: confirms Experience Analytics Growth at $49/month, $39/month billed annually, Save 20%)" }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://contentsquare.com/pricing/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": false,
     "freePlan": {
@@ -51,13 +52,12 @@
         "name": "Growth",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 49, "oneTime": null },
+        "price": { "monthly": 49, "annualPerMonth": 39, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Starts at $49/month (annual billing, card/PayPal) for the lowest session tier; scales with session volume up to roughly $739/month at 200K+ sessions.", "fr": "A partir de 49 $/mois (facturation annuelle, carte/PayPal) pour le palier de sessions le plus bas ; le prix augmente avec le volume, jusqu'a environ 739 $/mois pour 200 000+ sessions." },
-          { "en": "Invoice-based (non-card) billing is quoted separately, around $588/year at the entry tier, with no card-payment discount.", "fr": "La facturation sur facture (hors carte) est cotee separement, environ 588 $/an au palier d'entree, sans la remise reservee au paiement par carte." }
+          { "en": "Starts at $49/month paid monthly, or $39/month billed annually (Save 20%), for the lowest session tier (from 7K monthly sessions); scales with session volume up to a materially higher price at 200K+ sessions (exact top figure not confirmed on an official page).", "fr": "A partir de 49 $/mois en paiement mensuel, ou 39 $/mois facture annuellement (-20 %), pour le palier de sessions le plus bas (a partir de 7 000 sessions/mois) ; le prix augmente avec le volume jusqu'a un montant nettement plus eleve pour 200 000+ sessions (montant exact au sommet non confirme sur une page officielle)." }
         ],
-        "sourceIds": ["s3"]
+        "sourceIds": ["s3", "s4"]
       },
       {
         "key": "pro",
@@ -92,7 +92,7 @@
     "cautions": [
       { "en": "The single Hotjar bill of the pre-acquisition era is gone: heatmaps/session replay, surveys, and product analytics are now three separately priced products, so replicating old Hotjar coverage can mean paying multiple bills.", "fr": "La facture unique Hotjar d'avant le rachat n'existe plus : heatmaps/replays, sondages et analytics produit sont desormais trois produits factures separement, donc retrouver la couverture de l'ancien Hotjar peut demander plusieurs factures.", "sourceIds": ["s3"] },
       { "en": "Growth-tier price scales steeply with session volume (roughly 15x between the entry and top sub-tier), which is easy to underestimate when budgeting.", "fr": "Le prix du palier Growth grimpe fortement avec le volume de sessions (environ 15x entre le bas et le haut de la fourchette), ce qui est facile a sous-estimer lors du budget.", "sourceIds": ["s3"] },
-      { "en": "The official pricing page is JavaScript-rendered and could not be fully read directly; current figures were cross-checked against a secondary source and should be reverified before publishing exact numbers.", "fr": "La page de prix officielle est rendue en JavaScript et n'a pas pu etre lue integralement ; les chiffres actuels ont ete recoupes avec une source secondaire et devraient etre reverifies avant publication de montants exacts.", "sourceIds": ["s2"] }
+      { "en": "The official pricing page is JavaScript-rendered; a live browser render on 2026-10-02 confirmed the Growth price directly ($49/month, $39/month billed annually), resolving the earlier gap.", "fr": "La page de prix officielle est rendue en JavaScript ; un rendu en direct dans un navigateur le 2026-10-02 a confirme directement le prix Growth (49 $/mois, 39 $/mois facture annuellement), comblant l'ecart precedent.", "sourceIds": ["s4"] }
     ]
   },
   "product": {
@@ -180,13 +180,13 @@
     }
   },
   "unknowns": [
-    "The seed's officialSourceUrl (support.contentsquare.com Hotjar Plans and Pricing article) returned HTTP 403 and could not be read; pricing figures here were cross-checked from a secondary blog source instead and should be reverified against that article or a live pricing page render.",
-    "contentsquare.com/pricing renders its plan grid via JavaScript, so the fetch tool could not extract concrete plan numbers directly from the primary source.",
+    "The seed's officialSourceUrl (support.contentsquare.com Hotjar Plans and Pricing article) still returns HTTP 403 as of 2026-10-02 and could not be read directly; the Growth price itself is now confirmed from a live render of contentsquare.com/pricing/ (tier 1) instead.",
     "Trial length (if any) for Growth/Pro was not found on the accessible pages.",
-    "Exact current price for the top of the Growth session-volume range ($739/month figure) and for Voice of Customer/Product Analytics plans is from a secondary source only, not independently confirmed on an official page.",
+    "Exact price at the top of the Growth session-volume range (200K+ sessions) and for Voice of Customer/Product Analytics plans beyond their entry tier is still not confirmed on an official page; only the entry-tier Growth price ($49/$39) and Voice of Customer entry price ($99/$79) were read live.",
     "Whether a self-serve bulk data export/API exists for historical heatmaps and recordings was not confirmed on the pages accessed."
   ],
   "conflicts": [
-    "Seed data listed a 'Plus' plan at 32 EUR/month sourced from the Contentsquare support article; that plan name no longer appears in the current three-product structure found during this research (Free/Growth/Pro/Enterprise per product line), and the support article itself could not be re-verified (403 blocked)."
-  ]
+    "Seed data listed a 'Plus' plan at 32 EUR/month sourced from the Contentsquare support article; re-checked live on 2026-10-02, that plan name still does not appear in the current three-product structure (Free/Growth/Pro/Enterprise per product line), and the support article remains blocked (403)."
+  ],
+  "priceCheckedOn": "2026-10-02"
 }

@@ -132,11 +132,11 @@
     "website": "https://www.ableton.com/live/",
     "category": "creation",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Pas de plan gratuit permanent, essai de 90 jours.",
+      "paid": "Dès 99 $ (licence à vie), plan Live Intro."
     },
-    "description_fr": "Production musicale, live performance et sound design.",
-    "description_en": "Music production, live performance, and sound design."
+    "description_fr": "Ableton Live est une station audionumérique pour la production musicale et la performance live, vendue en licence à vie à partir d'environ 99 $.",
+    "description_en": "Ableton Live is a digital audio workstation for music production and live performance, sold as a one-time license from around $99."
   },
   {
     "name": "Acast",
@@ -236,11 +236,11 @@
     "website": "https://www.adobe.com/acrobat.html",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 19,99 $/mois, plan Acrobat Pro."
     },
-    "description_fr": "Outil de référence pour contrôler, annoter, signer et préparer des PDF professionnels.",
-    "description_en": "Reference tool to check, annotate, sign, and prepare professional PDFs."
+    "description_fr": "Une suite par abonnement pour créer, modifier, signer et convertir des PDF, avec des outils avancés comme la rédaction et l'OCR sur les offres supérieures.",
+    "description_en": "A subscription suite for creating, editing, signing and converting PDFs, with advanced tools like redaction and OCR on higher-tier plans."
   },
   {
     "name": "Adobe Acrobat Sign",
@@ -295,11 +295,11 @@
     "website": "https://adobe.com/creativecloud",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai complet de 7 jours pour les particuliers ; aucun plan gratuit permanent pour la suite complète.",
-      "paid": "Creative Cloud Pro particulier: 78,65 €/mois TTC, engagement annuel facturé mensuellement ; Creative Cloud Pro équipes: 86,55 €/mois/licence HT, engagement annuel facturé mensuellement ; Creative Cloud Pro Plus équipes: 95,79 €/mois/licence HT ; Étudiants et enseignants: 19,50 €/mois TTC la première année, puis 40,32 €/mois TTC"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 78,65 €/mois, plan Creative Cloud Pro (individual)."
     },
-    "description_fr": "Suite Adobe par abonnement réunissant plus de vingt applications de création, dont Photoshop, Illustrator, Premiere Pro, InDesign et Acrobat Pro, ainsi que les services Firefly.",
-    "description_en": "Adobe subscription suite combining more than twenty creative applications, including Photoshop, Illustrator, Premiere Pro, InDesign, and Acrobat Pro, plus Firefly services."
+    "description_fr": "Un abonnement groupé à plus de 20 applications créatives Adobe (bureau et web), avec crédits IA générative, dès 78,65 €/mois en engagement annuel.",
+    "description_en": "A bundled subscription to 20+ Adobe creative desktop and web apps plus generative AI credits, from 78.65 euros a month with an annual commitment."
   },
   {
     "name": "Adobe Creative Cloud All Apps",
@@ -351,11 +351,11 @@
     "website": "https://firefly.adobe.com",
     "category": "ai-general",
     "pricing": {
-      "free": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite).",
-      "paid": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite)."
+      "free": "Plan gratuit : Générations gratuites quotidiennes en image, vidéo et son hors de toute offre payante ; les limites se réinitialisent chaque jour. Le quota quotidien exact n'est pas donné sous forme de chiffre fixe sur la page des offres.",
+      "paid": "Dès 9,99 $/mois, plan Firefly Standard."
     },
-    "description_fr": "Web app et famille de modèles d'IA générative d'Adobe pour la production créative (image, vidéo, audio).",
-    "description_en": "Adobe's web app and generative AI model family for creative production (image, video, audio)."
+    "description_fr": "Adobe Firefly est une application web d'IA générative pour l'image, la vidéo et le son, aussi intégrée à Photoshop, Premiere Pro et InDesign.",
+    "description_en": "Adobe Firefly is a generative AI web app for images, video and audio, also powering features inside Photoshop, Premiere Pro and InDesign."
   },
   {
     "name": "Adobe Fresco",
@@ -444,8 +444,8 @@
     "website": "https://podcast.adobe.com",
     "category": "ai-general",
     "pricing": {
-      "free": "Plan gratuit : Audio-only enhancement (no video), single-file processing, files capped at 30 minutes / 500 MB, 1 hour of enhancement per day, Studio downloads capped at 30-minute projects twice a day, no original-recording downloads, audiograms are branded.",
-      "paid": "Dès 9,99 $/mois, plan Premium."
+      "free": "Plan gratuit : Amélioration audio uniquement (pas de vidéo), traitement d'un seul fichier à la fois, fichiers limités à 30 minutes ou 500 Mo, 1 heure d'amélioration par jour, téléchargements Studio limités à des projets de 30 minutes deux fois par jour, pas de téléchargement de l'enregistrement original, audiogrammes marqués de la marque du service.",
+      "paid": "Dès 19,99 $/mois, plan Adobe Firefly Pro plan (includes Adobe Podcast Premium features)."
     },
     "description_fr": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
     "description_en": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality."
@@ -743,9 +743,12 @@
     "url_en": "https://tooltrim.com/en/tool/aloware",
     "website": "https://aloware.com",
     "category": "communication",
-    "pricing": "iPro à 30$/utilisateur/mois (minimum 10 sièges, facturation trimestrielle = 300$/mois) ; uPro à 60$/utilisateur (minimum 5 sièges).",
-    "description_fr": "Centre d'appels cloud avec dialer automatisé et agents IA vocaux, intégré à HubSpot/Salesforce.",
-    "description_en": "Cloud call center with automated dialer and voice AI agents, integrated with HubSpot/Salesforce."
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 30 $/mois, plan iPro + AI."
+    },
+    "description_fr": "Aloware est un centre d'appels cloud avec analyse d'appels par IA et intégrations CRM, facturé par siège avec un minimum de 5 à 10 utilisateurs.",
+    "description_en": "Aloware is a cloud call center with AI call analytics and CRM integrations, priced per seat with a minimum of 5 to 10 users."
   },
   {
     "name": "Alpine.js",
@@ -839,11 +842,11 @@
     "website": "https://animaapp.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit sans limite de temps avec accès au plugin et à l'AI Playground.",
-      "paid": "Free Trial: Gratuit (accès complet temporaire) ; Pro: À partir de 24 $ / mois (montants sur la page officielle) ; Business: À partir de 150 $ / mois (montants sur la page officielle)"
+      "free": "Plan gratuit : 5 messages par jour dans l'AI Playground, 5 imports de designs Figma ou clonages de site par jour, 5 générations de code par jour dans le plugin Figma.",
+      "paid": "Dès 20 €/mois, plan Starter."
     },
-    "description_fr": "Plugin Figma avec IA pour convertir des designs en code fonctionnel (React, HTML, Vue, Tailwind CSS). Inclut un AI Playground pour prototyper des apps entières via prompts naturels.",
-    "description_en": "AI-powered Figma plugin that converts designs to production code (React, HTML, Vue, Tailwind CSS). Includes an AI Playground to prototype full apps using natural language prompts."
+    "description_fr": "Plugin IA qui transforme des maquettes Figma en code React, HTML, Vue ou Tailwind, avec un AI Playground pour prototyper des applications par prompt.",
+    "description_en": "AI plugin that turns Figma designs into React, HTML, Vue or Tailwind code, with an AI Playground for prompting full app prototypes."
   },
   {
     "name": "Animation Composer 3",
@@ -943,11 +946,11 @@
     "website": "https://www.apollo.io",
     "category": "communication",
     "pricing": {
-      "free": "Plan gratuit limité disponible.",
-      "paid": "Avec facturation annuelle : Basic 49 $US/utilisateur/mois ; Professional 79 $US ; Organization 119 $US avec 3 utilisateurs minimum (357 $US/mois minimum). Crédits supplémentaires et options à vérifier."
+      "free": "Plan gratuit : Free plan for 1 user with access to the 240M contact / 30M company database; email sending limited to Gmail only; capped credits.",
+      "paid": "Dès 49 $/mois, plan Basic."
     },
-    "description_fr": "Base de prospection B2B et séquences outbound pour trouver, qualifier et contacter des leads.",
-    "description_en": "B2B sales intelligence and outbound sequencing to find, qualify and contact leads."
+    "description_fr": "Apollo.io associe une base de 240 millions de contacts B2B à des séquences d'e-mails, un enregistrement d'appels et un pipeline commercial pour l'outbound.",
+    "description_en": "Apollo.io combines a 240-million-contact B2B database with email sequencing, call recording and a sales pipeline for prospecting and outbound sales."
   },
   {
     "name": "App Store Connect",
@@ -1013,11 +1016,11 @@
     "website": "https://graphisoft.com/solutions/archicad",
     "category": "design-tools",
     "pricing": {
-      "free": "Licences éducatives gratuites pour étudiants et enseignants. Essai gratuit de 30 jours pour tous.",
-      "paid": "Archicad Studio: À partir de 203 EUR/mois (2.440 EUR/an) ; Archicad Collaborate: À partir de 239 EUR/mois (2.870 EUR/an)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 203 €/mois, plan Archicad Studio."
     },
-    "description_fr": "Plateforme BIM (Building Information Modeling) pour architectes, designers et ingénieurs. Permet de concevoir, modéliser, visualiser et documenter des projets de toutes tailles du concept à la construction. Travail collaboratif via BIMcloud, interopérabilité OpenBIM (IFC, BCF).",
-    "description_en": "BIM (Building Information Modeling) platform for architects, designers, and engineers. Design, model, visualize, document, and collaborate on projects of any size from concept through construction. Collaborative via BIMcloud, OpenBIM interoperability (IFC, BCF)."
+    "description_fr": "Archicad est la plateforme BIM de Graphisoft pour concevoir, modéliser et collaborer sur des projets de bâtiment, du concept à la construction.",
+    "description_en": "Archicad is Graphisoft's BIM platform for architects to design, model, and collaborate on building projects from concept through construction."
   },
   {
     "name": "Archive Tools",
@@ -1114,11 +1117,11 @@
     "website": "https://artlist.io",
     "category": "creation",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 17€/mois environ"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 24,92 €/mois, plan Music & SFX Pro."
     },
-    "description_fr": "Musique, effets sonores et assets vidéo sous licence pour productions créatives.",
-    "description_en": "Licensed music, sound effects, and video assets for creative productions."
+    "description_fr": "Artlist est un abonnement de musique, effets sonores et images libres de droits pour créateurs vidéo, dès 9,99 euros/mois, avec un palier pour l'usage commercial.",
+    "description_en": "Artlist is a royalty-free music, sound effects and footage subscription for video creators, from 9.99 EUR/month with a separate commercial-use license tier."
   },
   {
     "name": "ArtStation",
@@ -1128,11 +1131,11 @@
     "website": "https://www.artstation.com",
     "category": "creation",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Plan gratuit : Portfolio gratuit et accès à la communauté avec des fonctions de base.",
+      "paid": "Dès 9,95 $/mois, plan Pro."
     },
-    "description_fr": "Portfolio et plateforme de visibilité pour artistes concept, 3D et game art.",
-    "description_en": "Portfolio and visibility platform for concept, 3D, and game artists."
+    "description_fr": "ArtStation héberge des portfolios et une marketplace pour artistes concept, 3D et jeu vidéo, avec un plan gratuit avec pub et une offre Pro payante.",
+    "description_en": "ArtStation hosts searchable online portfolios and a marketplace for concept, 3D and game artists, with a free ad-supported tier and a paid Pro tier."
   },
   {
     "name": "Asana",
@@ -1307,11 +1310,11 @@
     "website": "https://www.autodesk.com/products/autocad-lt/overview",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit 30 jours ; pas de version gratuite.",
-      "paid": "AutoCAD LT (abonnement annuel): 60 $/mois ou 440 $/an"
+      "free": "Pas de plan gratuit permanent, essai de 15 jours.",
+      "paid": "Dès 45 $/mois, plan AutoCAD LT Subscription."
     },
-    "description_fr": "Version allégée d'AutoCAD dédiée au dessin technique 2D. Conçue pour les petites équipes et freelances ayant besoin d'une CAO basique sans les outils 3D coûteux.",
-    "description_en": "Lightweight version of AutoCAD dedicated to 2D technical drawing. Designed for small teams and freelancers needing basic CAD without expensive 3D tools."
+    "description_fr": "AutoCAD LT est l'abonnement de dessin 2D uniquement d'Autodesk, une alternative allégée à AutoCAD complet pour qui n'a pas besoin de modélisation 3D.",
+    "description_en": "AutoCAD LT is Autodesk's 2D-only drafting subscription, a lighter alternative to full AutoCAD for teams that don't need 3D modeling."
   },
   {
     "name": "Autodesk Flow Studio",
@@ -1496,11 +1499,11 @@
     "website": "https://aescripts.com/boa",
     "category": "design-tools",
     "pricing": {
-      "free": "Pas de version gratuite. Aucun essai gratuit visible sur le site officiel.",
-      "paid": "BAO Boa (Single User License): 99,99 USD ; BAO Boa (Floating License Server): 99,99 USD"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 69,99 $ (licence à vie), plan Single User License."
     },
-    "description_fr": "Plugin After Effects qui permet de déformer les couches le long de courbes de masque. BAO Boa crée des distorsions fluides et organiques en suivant précisément les formes définies par des masques, utile pour l'animation de texte, formes et éléments complexes.",
-    "description_en": "After Effects plugin that distorts layers along mask paths. BAO Boa creates smooth, organic distortions by following mask shapes precisely, useful for animating text, shapes, and complex elements."
+    "description_fr": "BAO Boa est un plugin After Effects qui distord les calques précisément le long de tracés de masque, pour des distorsions animées fluides et organiques.",
+    "description_en": "BAO Boa is an After Effects plugin that distorts layers precisely along mask paths for organic, smooth animated distortions."
   },
   {
     "name": "Base44",
@@ -1699,11 +1702,11 @@
     "website": "https://bloom.io",
     "category": "crm",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai disponible sur chaque palier.",
-      "paid": "Starter (Side Jobs) 14$/mois (7$/mois en annuel) ; Standard (Solo Business) 34$/mois (17$/mois en annuel) ; Plus (Small Teams) 66$/mois (33$/mois en annuel)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 14 $/mois, plan Starter (Side Jobs)."
     },
-    "description_fr": "CRM et portail client pour créatifs et photographes.",
-    "description_en": "CRM and client portal for creatives and photographers."
+    "description_fr": "CRM et portail client pour freelances créatifs, qui réunit prospects, contrats, facturation, planification et galeries clients dans un seul flux de travail.",
+    "description_en": "CRM and client portal for creative freelancers, combining leads, contracts, invoicing, scheduling and client galleries in one workflow."
   },
   {
     "name": "Blueink eSignatures",
@@ -1954,11 +1957,11 @@
     "website": "https://browzwear.com",
     "category": "creation",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 99€/mois environ"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 62,50 $/mois, plan Freelancer."
     },
-    "description_fr": "Solution 3D mode pour prototypage vêtement et production textile.",
-    "description_en": "3D fashion solution for garment prototyping and textile production."
+    "description_fr": "Browzwear est un logiciel de prototypage 3D de vêtements (VStitcher) pour la mode, avec des forfaits Freelancer et Teams en libre-service et un tarif Enterprise sur devis au-delà.",
+    "description_en": "Browzwear is 3D garment prototyping software (VStitcher) for fashion, with self-serve Freelancer and Teams plans and quote-based Enterprise pricing above them."
   },
   {
     "name": "Bubble",
@@ -2236,8 +2239,12 @@
     "url_en": "https://tooltrim.com/en/tool/canva-pro",
     "website": "https://www.canva.com/pro/",
     "category": "creation",
-    "description_fr": "Offre payante de Canva, l'outil de design en ligne grand public : accès complet aux fonctions IA (Magic Studio), kits de marque, suppression d'arrière-plan, redimensionnement automatique et bibliothèque premium d'assets.",
-    "description_en": "Professional design suite with premium templates and brand kit."
+    "pricing": {
+      "free": "Plan gratuit : Plan Canva gratuit disponible avec des modèles limités et sans accès aux fonctions IA Magic Studio ; Canva Pro est le palier payant supérieur.",
+      "paid": "Dès 9,17 €/mois, plan Canva Pro."
+    },
+    "description_fr": "Palier payant de Canva : outils IA Magic Studio, modèles premium et kit de marque, à partir de 9,17 €/mois facturé à l'année.",
+    "description_en": "Paid Canva tier unlocking Magic Studio AI tools, premium templates and a brand kit, from €9.17/month billed annually."
   },
   {
     "name": "Canva Templates",
@@ -2596,11 +2603,11 @@
     "website": "https://www.maxon.net/en/cinema-4d",
     "category": "creation",
     "pricing": {
-      "free": "Essai proposé par Maxon.",
-      "paid": "838,8 EUR facturés par an pour Cinema 4D. Prix régional et TVA définitifs au panier."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 69,92 $/mois, plan Cinema 4D (annual billing)."
     },
-    "description_fr": "Modélisation, animation et motion design 3D, avec le moteur Redshift inclus dans l'abonnement.",
-    "description_en": "3D modelling, animation and motion design, with Redshift included in the subscription.",
+    "description_fr": "Cinema 4D est une suite de modélisation, animation et rendu 3D pour le motion design, avec le moteur GPU Redshift inclus dans chaque abonnement.",
+    "description_en": "Cinema 4D is a 3D modeling, animation and rendering suite for motion design, bundling the Redshift GPU renderer in every subscription.",
     "alternatives": [
       "blender"
     ]
@@ -2756,11 +2763,11 @@
     "website": "https://www.clipstudio.net/",
     "category": "illustration",
     "pricing": {
-      "free": "",
-      "paid": "Achat unique : Pro 49,99$ / EX 219$. Ou abonnement dès ~27$/an (Pro). Prix vérifié le 2026-07-08."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 63 $ (licence à vie), plan PRO (perpetual license, Ver. 5.0)."
     },
-    "description_fr": "Outil de dessin, illustration, BD et concept art pour workflows tablette ou desktop.",
-    "description_en": "Drawing, illustration, comics and concept art tool for tablet or desktop workflows."
+    "description_fr": "Clip Studio Paint est un outil de dessin, BD/manga et animation avec un moteur de pinceaux sensible à la pression, en abonnement ou licence perpétuelle.",
+    "description_en": "Clip Studio Paint is a drawing, comic/manga and animation tool with a pressure-sensitive brush engine, sold as a subscription or a one-time perpetual license."
   },
   {
     "name": "Clipwing",
@@ -2787,11 +2794,11 @@
     "website": "https://www.clo3d.com",
     "category": "creation",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 50€/mois environ"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 37,50 $/mois, plan Individual."
     },
-    "description_fr": "Simulation vêtement 3D pour mode, textile et prototypage collection.",
-    "description_en": "3D garment simulation for fashion, textile, and collection prototyping."
+    "description_fr": "CLO est un logiciel de simulation 3D de vêtements et de patronage, reliant un patron 2D en direct à un échantillon simulé.",
+    "description_en": "CLO is 3D garment simulation and pattern-making software for fashion design, linking a 2D pattern live to a simulated 3D sample to cut physical prototyping."
   },
   {
     "name": "Clockify",
@@ -2960,11 +2967,11 @@
     "website": "https://atlassian.com/software/confluence",
     "category": "organization",
     "pricing": {
-      "free": "Jusqu'à 10 utilisateurs",
-      "paid": "5,75$/utilisateur/mois"
+      "free": "Plan gratuit : Jusqu'à 10 utilisateurs",
+      "paid": "Dès 5,42 $/mois, plan Standard."
     },
-    "description_fr": "Wiki d'entreprise Atlassian. Documentation technique et knowledge base.",
-    "description_en": "Atlassian enterprise wiki. Technical documentation and knowledge base."
+    "description_fr": "Wiki d'équipe Atlassian pour la documentation technique, avec permissions de page, modèles et lien vers Jira.",
+    "description_en": "Atlassian's team wiki for technical documentation, with page permissions, templates and Jira linking."
   },
   {
     "name": "Conga",
@@ -3442,8 +3449,12 @@
     "url_en": "https://tooltrim.com/en/tool/dashlane",
     "website": "https://dashlane.com",
     "category": "security",
-    "description_fr": "Gestionnaire de mots de passe et VPN",
-    "description_en": "Password manager and VPN."
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 4 €/mois, plan Premium."
+    },
+    "description_fr": "Un gestionnaire de mots de passe pour particuliers, familles et entreprises, avec remplissage automatique, partage sécurisé et contrôles d'administration pour les équipes.",
+    "description_en": "A password manager and credential vault for individuals, families and businesses, with autofill, secure sharing and admin controls for teams."
   },
   {
     "name": "Datadog",
@@ -3655,11 +3666,11 @@
     "website": "https://dext.com",
     "category": "finance",
     "pricing": {
-      "free": "France : compte gratuit pour 1 utilisateur, jusqu’à 5 factures électroniques émises/an et réception illimitée.",
-      "paid": "Repère France : 25 € HT/mois avec engagement annuel, 250 documents/mois et 1 à 5 utilisateurs. Prix à confirmer dans le configurateur. Cabinets : selon dossiers clients. Autres pays et options : tarifs distincts."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 25,21 $/mois, plan Base plan."
     },
-    "description_fr": "Collecte de justificatifs, extraction des données et transmission à votre comptabilité.",
-    "description_en": "Capture receipts and invoices, extract data and send it to your accounting workflow."
+    "description_fr": "Dext capture justificatifs et factures par OCR et les transmet à ton logiciel de comptabilité, avec des options d'extraction vendues séparément.",
+    "description_en": "Dext captures receipts and invoices with OCR and pushes them into your accounting software, with extraction add-ons sold separately."
   },
   {
     "name": "Didomi",
@@ -4220,11 +4231,11 @@
     "website": "https://enscape3d.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit 14 jours avec accès complet ; pas de version gratuite permanente après essai.",
-      "paid": "Enscape Solo: 45 €/mois (100 AI credits/mois) ; Enscape Premium: 72 €/mois (500 AI credits/mois, 10k assets) ; Enscape Collection: 191 €/mois (1500 AI credits/mois, 18.5k+ assets, animation)"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 44,90 €/mois, plan Enscape Solo."
     },
-    "description_fr": "Plugin de visualisation 3D en temps réel et rendu pour Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, avec IA intégrée (Veras) pour génération de design et analyse de durabilité.",
-    "description_en": "Real-time 3D visualization and rendering plugin for Revit, SketchUp, Rhino, ArchiCAD, and Vectorworks, with integrated AI (Veras) for design generation and sustainability analysis."
+    "description_fr": "Enscape est un plugin de rendu temps réel intégré à Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, synchronisé instantanément avec le modèle CAD.",
+    "description_en": "Enscape is a real-time rendering plugin embedded in Revit, SketchUp, Rhino, ArchiCAD and Vectorworks, syncing instantly with the CAD model."
   },
   {
     "name": "Envato",
@@ -4443,11 +4454,11 @@
     "website": "https://feedly.com",
     "category": "project-management",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Plan gratuit : Lecture RSS de base avec un nombre limité de sources/flux ; pas d'AI Feeds.",
+      "paid": "Dès 6,99 €/mois, plan Pro."
     },
-    "description_fr": "Lecteur de flux RSS et outil de veille : agrège sources, blogs et actualités en un seul endroit, avec des « AI Feeds » pour filtrer et prioriser l'information.",
-    "description_en": "RSS reader and monitoring tool that aggregates sources, blogs and news in one place, with AI Feeds to filter and prioritise information."
+    "description_fr": "Feedly agrège les flux RSS, blogs, sites d'actualité et chaînes YouTube dans un flux unique, avec un filtrage assisté par IA sur les plans payants.",
+    "description_en": "Feedly aggregates RSS feeds, blogs, news sites and YouTube channels into one reading stream, with AI-assisted filtering on paid plans."
   },
   {
     "name": "Fellow",
@@ -4821,11 +4832,11 @@
     "website": "https://aescripts.com/flow/",
     "category": "design-tools",
     "pricing": {
-      "free": "Version d'essai gratuit avec fonctionnalités limitées ; version complète payante.",
-      "paid": "Flow (complet): montants sur la page officielle"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 35 $ (licence à vie), plan Flow (Single User License)."
     },
-    "description_fr": "Éditeur de courbes d'interpolation (easing) pour After Effects remplaçant le Graph Editor natif par une interface moderne et normalisée. Inclut une librairie de presets d'easing réutilisables et partageables.",
-    "description_en": "After Effects easing curve editor replacing the native Graph Editor with a modern, normalized interface. Includes a preset library for shareable, reusable easing animations."
+    "description_fr": "Flow est une extension After Effects qui remplace le Graph Editor natif par un éditeur de courbes d'easing moderne et une bibliothèque de presets réutilisables.",
+    "description_en": "Flow is an After Effects extension that replaces the native Graph Editor with a modern easing-curve editor and a reusable preset library."
   },
   {
     "name": "Flowcub",
@@ -4973,9 +4984,12 @@
     "url_en": "https://tooltrim.com/en/tool/format",
     "website": "https://format.com",
     "category": "creation",
-    "pricing": "Basic à 9$/mois ; Pro à 16$/mois ; Pro Plus à 25$/mois (facturation annuelle). Essai gratuit 14 jours.",
-    "description_fr": "Constructeur de portfolio en ligne pour photographes, avec galerie client et proofing intégrés.",
-    "description_en": "Online portfolio builder for photographers, with built-in client gallery and proofing."
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
+    },
+    "description_fr": "Format construit des sites portfolio pour photographes avec galeries clients, validation d'épreuves et boutique en ligne sur les offres supérieures.",
+    "description_en": "Format builds portfolio websites for photographers with client galleries, proofing, and an online store on higher plans."
   },
   {
     "name": "Formik",
@@ -5215,11 +5229,11 @@
     "website": "https://gelato.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Plan gratuit : Accès complet au réseau de production à la demande, aux intégrations boutique (Shopify, Etsy, WooCommerce) et à la création illimitée de produits, sans les remises et extras de Gelato+.",
+      "paid": "Dès 19,99 $/mois, plan Gelato+."
     },
-    "description_fr": "Plateforme d’impression à la demande avec production locale.",
-    "description_en": "Print-on-demand platform with local production."
+    "description_fr": "Gelato relie une boutique en ligne à un réseau mondial d'impression à la demande qui crée, imprime et expédie des produits automatiquement via Shopify, Etsy ou WooCommerce.",
+    "description_en": "Gelato links an online store to a distributed print-on-demand network, creating, printing and shipping custom products automatically through Shopify, Etsy or WooCommerce integrations."
   },
   {
     "name": "Gemini",
@@ -5406,11 +5420,11 @@
     "website": "https://www.gitkraken.com/gitlens",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités principales gratuites dans VS Code",
-      "paid": "GitLens Pro autour de 10$/mois (intégrations, vues cloud), inclus dans GitKraken"
+      "free": "Plan gratuit : Édition Community : dépôts publics et locaux uniquement, vues blame/historique basiques, prise en charge de GitHub Copilot avec un plafond hebdomadaire de crédits IA.",
+      "paid": "Dès 8 €/mois, plan Pro."
     },
-    "description_fr": "Extension VS Code pour Git : blame inline, historique, auteurs et contexte de code.",
-    "description_en": "VS Code extension for Git: inline blame, history, authors, and code context.",
+    "description_fr": "GitLens est une extension VS Code qui ajoute blame en ligne, graphe de commits, historique de fichiers et outils IA au-dessus de Git.",
+    "description_en": "GitLens is a VS Code extension that adds inline blame, a visual commit graph, file history and AI-assisted commit tools on top of Git.",
     "alternatives": [
       "Git natif dans VS Code"
     ]
@@ -5448,11 +5462,11 @@
     "website": "https://gmail.com",
     "category": "communication",
     "pricing": {
-      "free": "Gratuit avec une adresse @gmail.com, 15 Go partagés avec Drive et Photos.",
-      "paid": "Via Google Workspace : Business Starter à partir de 6,90€/mois/utilisateur pour une adresse pro et 30 Go."
+      "free": "Plan gratuit : Compte personnel @gmail.com gratuit avec 15 Go de stockage partagés entre Gmail, Drive et Photos.",
+      "paid": "Dès 6,80 €/mois, plan Google Workspace Business Starter."
     },
-    "description_fr": "La messagerie de Google : gratuite en perso, intégrée à Workspace pour les pros.",
-    "description_en": "Google's email service: free for personal use, integrated into Workspace for business."
+    "description_fr": "Un service de messagerie personnelle gratuit qui évolue vers une suite professionnelle Google Workspace avec stockage partagé, Gmail, Drive et l'IA Gemini.",
+    "description_en": "A free personal email service that scales into a paid Google Workspace business suite with shared storage, Gmail, Drive and Gemini AI."
   },
   {
     "name": "Go",
@@ -5969,11 +5983,11 @@
     "website": "https://gusto.com",
     "category": "hris-payroll",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 55 $/mois, plan Simple."
     },
-    "description_fr": "Paie et avantages sociaux",
-    "description_en": "Payroll and employee benefits."
+    "description_fr": "Plateforme de paie américaine qui gère la déclaration fiscale, les avantages sociaux et les paiements de freelances pour les petites entreprises.",
+    "description_en": "US payroll platform handling tax filing, employee benefits and contractor payments for small businesses."
   },
   {
     "name": "Hard Ops / Boxcutter",
@@ -6161,11 +6175,11 @@
     "website": "https://www.highcharts.com",
     "category": "ui-components",
     "pricing": {
-      "free": "Gratuit pour usage non commercial",
-      "paid": "Licences à partir de ~1 000$/an"
+      "free": "Plan gratuit : Free for non-commercial use only: personal projects, school websites, charitable and non-profit organizations. No trial license required.",
+      "paid": "Dès 30,50 $/mois, plan Highcharts Core."
     },
-    "description_fr": "Bibliothèque de graphiques JavaScript interactive et hautement configurable.",
-    "description_en": "Interactive and highly configurable JavaScript charting library.",
+    "description_fr": "Highcharts est une bibliothèque JS de graphiques, cartes et plannings Gantt, gratuite en usage non commercial et dès 366 $/siège développeur par an en usage commercial.",
+    "description_en": "Highcharts is a JavaScript charting library for interactive charts, maps and Gantt timelines, free for non-commercial use and from $366 per developer seat per year commercially.",
     "alternatives": [
       "chartjs"
     ]
@@ -6231,8 +6245,8 @@
     "website": "https://contentsquare.com/hotjar/",
     "category": "analytics",
     "pricing": {
-      "free": "Plan gratuit : Experience Analytics (heatmaps + session replay): 200,000 sessions/month, 1 project. Includes 100 survey responses/month and 5 user interviews/month (Voice of Customer free tier).",
-      "paid": "Dès 49 $/mois, plan Growth."
+      "free": "Plan gratuit : Experience Analytics (heatmaps + relecture de sessions) : 200 000 sessions par mois, 1 projet. Inclut 100 réponses d'enquête par mois et 5 entretiens utilisateurs par mois (offre gratuite Voice of Customer).",
+      "paid": "Dès 39 $/mois, plan Growth."
     },
     "description_fr": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
     "description_en": "Heatmaps, session replays, and surveys to understand user behaviour."
@@ -7101,11 +7115,11 @@
     "website": "https://krea.ai",
     "category": "ai-general",
     "pricing": {
-      "free": "Gratuit : 100 compute units/jour (limité générations selon qualité/modèle).",
-      "paid": "Free: 0 $ (100 daily units) ; Basic: 10 $/mois (image + video generation) ; Pro: 35 $/mois (plus video) ; Max: 60 $/mois (3x Pro generation)"
+      "free": "Plan gratuit : 100 unités de calcul par jour.",
+      "paid": "Dès 5 $/mois, plan Basic."
     },
-    "description_fr": "Agrégateur de 64+ modèles d'IA image et vidéo (Flux, Runway, Veo 3, Krea propriétaire) dans une plateforme unifiée avec compute units et tarification à l'usage. Real-time art generation.",
-    "description_en": "Aggregator of 64+ AI image and video models (Flux, Runway, Veo 3, proprietary Krea) in a unified platform with compute units and usage-based pricing. Real-time art generation."
+    "description_fr": "Interface unifiée agrégeant plus de 60 modèles de génération d'image et vidéo par IA avec un système de crédits en unités de calcul partagé.",
+    "description_en": "Unified interface aggregating 60+ AI image and video generation models with a shared compute-unit credit system."
   },
   {
     "name": "Krea AI duplicate",
@@ -7391,11 +7405,11 @@
     "website": "https://legalplace.fr",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 0 € (licence à vie), plan Création d'entreprise."
     },
-    "description_fr": "Legaltech française spécialisée dans la création d'entreprise en ligne et les démarches juridiques : statuts, modifications, dissolution, domiciliation, comptabilité et documents juridiques du quotidien.",
-    "description_en": "French legaltech specialised in online company formation and legal procedures: articles, changes, dissolution, business address, accounting and everyday legal documents."
+    "description_fr": "Legaltech française pour la création d'entreprise en ligne et l'administratif juridique courant, frais de service à 0 EUR, plus frais de greffe obligatoires.",
+    "description_en": "French legaltech for online company formation and ongoing legal and accounting admin, with a 0 EUR formation service fee plus mandatory registry costs."
   },
   {
     "name": "Legalstart",
@@ -7485,11 +7499,11 @@
     "website": "https://leonardo.ai",
     "category": "ai-general",
     "pricing": {
-      "free": "Gratuit : 150 tokens/jour (~30-50 images) avec watermark ; usage non-commercial uniquement.",
-      "paid": "Free: 0 $ (150 tokens/jour, non-commercial) ; Apprentice: 12 $/mois (8.5K crédits, commercial ok) ; Artisan: 30 $/mois (25K crédits) ; Ultimate: 60 $/mois (60K crédits) ; Enterprise: 2.5K crédits à 89 $/mois"
+      "free": "Plan gratuit : 150 fast tokens/day, generations carry a watermark, non-commercial use only.",
+      "paid": "Dès 9,60 $/mois, plan Essential."
     },
-    "description_fr": "Générateur d'images IA avec modèles propriétaires (Leonardo) et tiers : haute qualité, édition, upscaling, photo-to-painting. Crédits system ; usage commercial dès Free.",
-    "description_en": "AI image generator with proprietary and third-party models: high quality, editing, upscaling, photo-to-painting. Credit system; commercial use from Free tier."
+    "description_fr": "Leonardo AI génère et édite des images avec des modèles IA propres et tiers, via un système de jetons/crédits sur des plans gratuits et payants.",
+    "description_en": "Leonardo AI generates and edits images with proprietary and third-party AI models, using a token-based credit system across free and paid tiers."
   },
   {
     "name": "Lever",
@@ -7541,11 +7555,11 @@
     "website": "https://lightroommobile.com",
     "category": "creation",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Plan gratuit : Lightroom for mobile is a free iOS/Android app for capturing, editing and sharing photos, with in-app upgrade to premium features.",
+      "paid": "Dès 11,99 $/mois, plan Lightroom (Individual)."
     },
-    "description_fr": "Version mobile d'Adobe Lightroom : retouche photo non destructive sur smartphone/tablette, synchronisée au cloud.",
-    "description_en": "Mobile version of Adobe Lightroom: non-destructive photo editing, presets and cloud sync, part of the Creative Cloud ecosystem."
+    "description_fr": "Une application mobile de retouche photo non destructive avec synchronisation cloud, gratuite, avec des offres payantes optionnelles pour le stockage et le desktop.",
+    "description_en": "A mobile app for non-destructive photo editing and cloud sync, free to use with optional paid plans for storage and desktop tools."
   },
   {
     "name": "Lightroom presets génériques",
@@ -8011,11 +8025,11 @@
     "website": "https://skylum.com/luminar-neo",
     "category": "design-tools",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai gratuit disponible avec garantie de remboursement 30 jours sur les plans payants.",
-      "paid": "Desktop Only License: Achat unique (licence perpétuelle, accès 2 appareils) ; All Platforms License: Achat unique (inclut accès mobile et web — disponible automne 2026) ; Max License: Abonnement annuel (montants sur la page officielle, accès nouvelles fonctionnalités et bibliothèque de ressources)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 129 € (licence à vie), plan Desktop Only License."
     },
-    "description_fr": "Éditeur photo desktop alimenté par l'IA avec plus de 24 outils IA et 100+ fonctionnalités pour améliorer les portraits, paysages et autres styles photographiques sur Mac et Windows.",
-    "description_en": "AI-powered desktop photo editor with 24+ AI tools and 100+ features to enhance portraits, landscapes, and photography styles on Mac and Windows platforms."
+    "description_fr": "Luminar Neo est un logiciel de retouche photo par IA pour le portrait, le paysage et l'édition générative, vendu en licence perpétuelle ou abonnement annuel.",
+    "description_en": "Luminar Neo is AI-powered photo editing software for portrait, landscape and generative editing, sold as a perpetual license or annual subscription."
   },
   {
     "name": "Lumion",
@@ -8164,11 +8178,11 @@
     "website": "https://mailchimp.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Gratuit jusqu'à 500 contacts (1 audience)",
-      "paid": "13$/mois (Essentials) à 350$/mois (Premium)"
+      "free": "Plan gratuit : Jusqu'à 250 contacts, 500 emails/mois (max 250/jour), 1 audience, 1 siège, modèles limités, pas de planification.",
+      "paid": "Dès 13 $/mois, plan Essentials."
     },
-    "description_fr": "L'incontournable de l'email marketing pour petites listes.",
-    "description_en": "The essential email marketing tool for small lists.",
+    "description_fr": "Une plateforme d'email marketing freemium : campagnes, automatisation, segmentation, gratuite jusqu'à 250 contacts, payante dès 13 $/mois selon la taille de liste.",
+    "description_en": "A freemium email marketing platform: campaigns, automation, and segmentation, free up to 250 contacts, paid from $13/month, scaling with list size.",
     "alternatives": [
       "Brevo"
     ]
@@ -8411,11 +8425,11 @@
     "website": "https://www.maxon.net/en/maxon-one",
     "category": "creation",
     "pricing": {
-      "free": "Essai proposé par Maxon.",
-      "paid": "1 390,8 EUR facturés par an pour Maxon One. Prix régional et TVA définitifs au panier."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 105,42 $/mois, plan Maxon One."
     },
-    "description_fr": "Suite réunissant Cinema 4D, Redshift, ZBrush et Red Giant pour la création 3D et vidéo.",
-    "description_en": "A suite combining Cinema 4D, Redshift, ZBrush and Red Giant for 3D and video work.",
+    "description_fr": "Bundle par abonnement qui réunit modélisation 3D, sculpture, rendu GPU et plugins VFX/motion design en une licence.",
+    "description_en": "Subscription bundle covering 3D modeling, sculpting, GPU rendering, and VFX/motion graphics plugins in one license.",
     "alternatives": [
       "blender"
     ]
@@ -8805,11 +8819,11 @@
     "website": "https://midjourney.com",
     "category": "creation",
     "pricing": {
-      "free": "Aucune offre gratuite",
-      "paid": "Basic 10$/mois, Standard 30$, Pro 60$, Mega 120$"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 8 $/mois, plan Basic."
     },
-    "description_fr": "L'IA génératrice d'images pour les pros.",
-    "description_en": "The image generation AI for pros."
+    "description_fr": "Outil IA par abonnement qui génère des images à partir de texte, facturé en heures de GPU rapide mensuelles, sans offre gratuite.",
+    "description_en": "Subscription AI tool that generates images from text prompts, billed by monthly fast GPU hours, with no free plan."
   },
   {
     "name": "Milanote",
@@ -9031,9 +9045,12 @@
     "url_en": "https://tooltrim.com/en/tool/motion-array",
     "website": "https://motionarray.com/",
     "category": "creation",
-    "pricing": "Abonnement à tarif variable selon le plan. Prix à confirmer sur la page officielle.",
-    "description_fr": "Marketplace de templates vidéo, musiques et stock footage en abonnement illimité.",
-    "description_en": "Video templates, music, and stock footage marketplace with unlimited subscription."
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 24,99 €/mois, plan Everything (Unlimited)."
+    },
+    "description_fr": "Motion Array est un abonnement à téléchargement illimité pour templates vidéo, stock footage, musique, effets sonores et plugins de montage, à partir de 24,99 EUR/mois.",
+    "description_en": "Motion Array is an unlimited-download subscription for video templates, stock footage, music, sound effects and editing plugins, starting at EUR 24.99/month."
   },
   {
     "name": "Motion Bro",
@@ -9137,11 +9154,11 @@
     "website": "https://www.namecheap.com",
     "category": "storage",
     "pricing": {
-      "free": "Pas de plan gratuit",
-      "paid": "Domaines .com à partir de ~9$/an"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 14,98 $ (licence à vie), plan .com domain (first year)."
     },
-    "description_fr": "Registrar de domaines abordable avec hébergement, SSL et emails inclus.",
-    "description_en": "Affordable domain registrar with hosting, SSL and emails included."
+    "description_fr": "Namecheap est un registrar de domaines avec des options d'hébergement, SSL et email, connu pour des prix bas la première année qui augmentent au renouvellement.",
+    "description_en": "Namecheap is a domain registrar with bundled hosting, SSL and email options, known for low first-year domain prices that rise at renewal."
   },
   {
     "name": "Namely",
@@ -9532,11 +9549,11 @@
     "website": "https://home.otoy.com/render/octane-render/",
     "category": "creation",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Studio+ ~16,65€/mois (annuel) à 23,95€/mois (OTOY)."
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 19,99 €/mois, plan Octane Studio+."
     },
-    "description_fr": "Moteur de rendu GPU photoréaliste (OTOY), réputé pour sa vitesse et son rendu spectral.",
-    "description_en": "Photorealistic GPU render engine (OTOY), known for speed and spectral rendering.",
+    "description_fr": "OctaneRender est un moteur de rendu GPU spectral avec support RTX, en abonnement Studio+ dès 23,95 €/mois, essai de 30 jours, sans plan gratuit.",
+    "description_en": "OctaneRender is a GPU-accelerated spectral renderer with RTX support, sold as one Studio+ subscription from €23.95/month, with a 30-day trial and no free plan.",
     "alternatives": [
       "blender"
     ]
@@ -10117,11 +10134,11 @@
     "website": "https://payhawk.com",
     "category": "finance",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "À partir de 12€/mois par utilisateur"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 149 £/mois, plan Growth Program."
     },
-    "description_fr": "Plateforme tout-en-un dépenses, cartes et factures.",
-    "description_en": "All-in-one platform for expenses, cards, and invoices."
+    "description_fr": "Cartes d'entreprise, dépenses, paiement de factures et remboursements réunis, avec extraction de données par IA, pour une entreprise à entité unique.",
+    "description_en": "All-in-one corporate cards, expenses, bill pay and reimbursements, with AI-based data extraction for a single-entity company."
   },
   {
     "name": "Payload CMS",
@@ -10330,11 +10347,11 @@
     "website": "https://www.photopea.com/",
     "category": "photo",
     "pricing": {
-      "free": "Version gratuite avec limites possibles.",
-      "paid": "Gratuit (financé par la pub). Premium sans pub dès ~5$/mois. Prix vérifié le 2026-07-08."
+      "free": "Plan gratuit : Toutes les fonctionnalités d'édition débloquées, financé par la publicité, 0,5 Go de stockage cloud PeaDrive, historique d'édition plus court, crédits IA de base.",
+      "paid": "Dès 8 € (licence à vie), plan Premium, Single user, 30 days."
     },
-    "description_fr": "Éditeur image dans le navigateur pour retouche, PSD, compositions rapides et dépannages.",
-    "description_en": "Browser-based image editor for retouching, PSD files, quick compositions and fallback workflows."
+    "description_fr": "Photopea est un éditeur gratuit et financé par la publicité, dans le navigateur, qui ouvre les PSD natifs et 40+ autres formats, sans installation.",
+    "description_en": "Photopea is a free, ad-supported browser editor that opens native PSD and 40+ other design file formats, no install required."
   },
   {
     "name": "PHP",
@@ -10573,11 +10590,11 @@
     "website": "https://www.plasticity.xyz",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit complet et sans limitation pour 30 jours (fonctionnalités identiques à version payante).",
-      "paid": "Indie or Studio (one-time): $149 (one-time purchase, perpetual license)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 175 $ (licence à vie), plan Indie."
     },
-    "description_fr": "Modeleur 3D NURBS basé sur les kernels Parasolid et xNURBS, conçu pour surfacing CAD et design concept sans historique de modélisation.",
-    "description_en": "NURBS-based 3D modeler using Parasolid and xNURBS kernels, designed for CAD surfacing and concept design without constraint-laden history workflows."
+    "description_fr": "Plasticity est un outil de modélisation 3D directe, sans historique, avec surfaçage NURBS, vendu en licence unique dès 175 $, essai de 30 jours.",
+    "description_en": "Plasticity is a direct, history-free 3D modeling tool with NURBS surfacing, sold as a one-time license from $175 with a 30-day trial."
   },
   {
     "name": "Plausible Analytics",
@@ -10855,11 +10872,11 @@
     "website": "https://try.prezi.com/6op8bpbxu641",
     "category": "creation",
     "pricing": {
-      "free": "Basic disponible ; essai gratuit de 14 jours sur les offres payantes.",
-      "paid": "Tarifs individuels localisés : Standard 5 €, Plus 15 €, Premium 25 € par mois équivalent, facturés annuellement. Taxes et offres entreprises/éducation à vérifier séparément."
+      "free": "Plan gratuit : Offre Basic, confirmée comme l'un des onglets officiels (Basic / Individuel / Étudiants et enseignants / Entreprises) ; présentations publiques uniquement, limite de stockage exacte selon une étude tarifaire tierce.",
+      "paid": "Dès 5 €/mois, plan Standard."
     },
-    "description_fr": "Présentations visuelles avec navigation non linéaire.",
-    "description_en": "Visual presentations with non-linear navigation."
+    "description_fr": "Prezi conçoit des présentations non linéaires en zoom, qui se déplacent sur une toile plutôt que d'enchaîner des diapositives statiques.",
+    "description_en": "Prezi builds zooming, non-linear presentations that move around a canvas instead of flipping through static slides."
   },
   {
     "name": "Printify",
@@ -10953,11 +10970,11 @@
     "website": "https://procreate.com",
     "category": "creation",
     "pricing": {
-      "free": "Achat unique / plan gratuit selon usage",
-      "paid": null
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 12,99 $ (licence à vie), plan Procreate (iPad)."
     },
-    "description_fr": "Application de dessin et illustration numérique sur iPad, très utilisée par illustrateurs et concept artists.",
-    "description_en": "iPad digital drawing and illustration app used by illustrators and concept artists."
+    "description_fr": "Procreate est une application de peinture et d'illustration numérique pour iPad, vendue en achat unique sans abonnement.",
+    "description_en": "Procreate is a digital painting and illustration app for iPad, sold as a one-time purchase with no subscription."
   },
   {
     "name": "Product Hunt",
@@ -11753,11 +11770,11 @@
     "website": "https://www.maxon.net/en/redshift",
     "category": "creation",
     "pricing": {
-      "free": "Essai proposé par Maxon.",
-      "paid": "298,8 EUR facturés par an pour Redshift. Prix régional et TVA définitifs au panier."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 24,08 $/mois, plan Redshift standalone (annual billing)."
     },
-    "description_fr": "Moteur de rendu 3D pour éclairer et finaliser des scènes dans les applications compatibles.",
-    "description_en": "A 3D renderer for lighting and finishing scenes in compatible applications.",
+    "description_fr": "Redshift est un moteur de rendu GPU qui se connecte à Houdini, Maya, 3ds Max, Blender et d'autres applications 3D pour un rendu rapide.",
+    "description_en": "Redshift is a GPU-accelerated renderer that plugs into Houdini, Maya, 3ds Max, Blender and other 3D applications for fast photorealistic rendering.",
     "alternatives": [
       "blender"
     ]
@@ -12189,11 +12206,11 @@
     "website": "https://roamresearch.com",
     "category": "organization",
     "pricing": {
-      "free": "Pas de plan gratuit : essai de 31 jours.",
-      "paid": "Pro 15$/mois (165$/an) ; Believer 500$ pour 5 ans (≈8,33$/mois)."
+      "free": "Pas de plan gratuit permanent, essai de 31 jours.",
+      "paid": "Dès 13,75 $/mois, plan Pro."
     },
-    "description_fr": "Prise de notes en réseau avec liens bidirectionnels.",
-    "description_en": "Networked note-taking with bidirectional links."
+    "description_fr": "Roam Research est une application de prise de notes en réseau basée sur les liens bidirectionnels, les notes quotidiennes et les références de blocs.",
+    "description_en": "Roam Research is a networked note-taking app built on bidirectional links, daily notes and block references."
   },
   {
     "name": "Rocket Lawyer",
@@ -13060,11 +13077,11 @@
     "website": "https://simpletexting.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 23,20 $/mois, plan Standard (500 credits)."
     },
-    "description_fr": "Plateforme d’envoi de campagnes SMS marketing et alertes.",
-    "description_en": "Platform for sending SMS marketing campaigns and alerts."
+    "description_fr": "Plateforme d'envoi de campagnes SMS/MMS en masse et de messages bidirectionnels, facturée au crédit mensuel.",
+    "description_en": "Platform for sending mass SMS/MMS marketing campaigns and two-way texts, priced by monthly text credits."
   },
   {
     "name": "Simvoly",
@@ -13782,11 +13799,11 @@
     "website": "https://www.adobe.com/products/substance3d/apps/designer.html",
     "category": "creation",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Plan Texturing 24,99$/mois (249,88$/an, avec Painter) ou Collection 59,99$/mois."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 59,99 $/mois, plan Substance 3D Collection."
     },
-    "description_fr": "Création de matériaux 3D procéduraux par noeuds (Adobe), pour textures réutilisables.",
-    "description_en": "Node-based procedural 3D material authoring (Adobe), for reusable textures.",
+    "description_fr": "Substance 3D Designer est l'outil Adobe par noeuds pour créer des matériaux, motifs et filtres d'image 3D procéduraux et non destructifs.",
+    "description_en": "Substance 3D Designer is Adobe's node-based tool for authoring procedural, non-destructive 3D materials, patterns, and image filters.",
     "alternatives": [
       "blender"
     ]
@@ -14673,9 +14690,12 @@
     "url_en": "https://tooltrim.com/en/tool/tradingview",
     "website": "https://tradingview.com",
     "category": "creation",
-    "pricing": "Version gratuite disponible ; plans payants à partir de ~13€/mois pour plus d'indicateurs et d'alertes.",
-    "description_fr": "Plateforme de graphiques boursiers et d'analyse technique en temps réel, avec une communauté de traders.",
-    "description_en": "Real-time stock charting and technical analysis platform, with a trading community."
+    "pricing": {
+      "free": "Plan gratuit : 1 chart per tab, 2 indicators per chart, 5,000 historical bars, 3 price alerts.",
+      "paid": "Dès 12,95 €/mois, plan Essential."
+    },
+    "description_fr": "Plateforme de graphiques et d'analyse technique en temps réel pour actions, crypto et forex, avec un plan gratuit limité et cinq formules payantes.",
+    "description_en": "Real-time charting and technical analysis platform for stocks, crypto and forex, with a capped free plan and five paid tiers."
   },
   {
     "name": "Trainerize",
@@ -14992,11 +15012,11 @@
     "website": "https://udio.com",
     "category": "ai-general",
     "pricing": {
-      "free": "100 crédits/mois gratuits (environ 1-3 chansons quotidiennement)",
-      "paid": "Free: Gratuit (100 crédits/mois) ; Standard: 10 $/mois (2400 crédits) ou 8 $/mois annuel ; Pro: 30 $/mois (6000 crédits) ou 24 $/mois annuel"
+      "free": "Plan gratuit : 100 crédits par mois, environ 1 à 3 morceaux par jour.",
+      "paid": "Dès 8 $/mois, plan Standard."
     },
-    "description_fr": "Générateur de musique IA permettant créer des chansons complètes (avec voix et production) à partir de descriptions texte, avec support des droits commerciaux sur forfaits payants.",
-    "description_en": "AI music generator creating complete songs (with vocals and production) from text descriptions, with commercial rights support on paid plans."
+    "description_fr": "Udio génère des morceaux complets par IA avec voix à partir de prompts textuels, avec un plan gratuit limité en crédits et des plans dès 10 $/mois.",
+    "description_en": "Udio generates complete AI songs with vocals from text prompts, with a credit-limited free tier and paid plans from $10/month."
   },
   {
     "name": "UKG Pro",
@@ -15293,11 +15313,11 @@
     "website": "https://vidiq.com",
     "category": "creation",
     "pricing": {
-      "free": "Analytics de base (extension navigateur)",
-      "paid": "Plans payants dès ~7$/mois, paliers Boost et Max au-dessus"
+      "free": "Plan gratuit : 150 crédits IA par mois ; statistiques YouTube essentielles via l'extension navigateur",
+      "paid": "Dès 16,58 €/mois, plan Boost."
     },
-    "description_fr": "Analytics YouTube et IA pour trouver les sujets viraux et optimiser chaque vidéo.",
-    "description_en": "YouTube analytics and AI to find viral topics and optimise every video."
+    "description_fr": "Recherche de mots-clés YouTube et titres, descriptions et miniatures générés par IA, avec des analyses concurrentielles au-delà de YouTube Studio, via une extension gratuite ou payante.",
+    "description_en": "YouTube keyword research and AI-generated titles, descriptions and thumbnails, plus competitor analytics beyond YouTube Studio, via a free or paid browser extension."
   },
   {
     "name": "Vidyard",
@@ -15632,8 +15652,8 @@
     "website": "https://wetransfer.com",
     "category": "storage",
     "pricing": {
-      "free": "Plan gratuit : 3 GB per transfer, capped at 10 transfers per rolling 30 days, links valid 3 days, individual non-commercial use only, ads shown",
-      "paid": "Dès 7 $/mois, plan Starter."
+      "free": "Plan gratuit : 3 Go par transfert, plafonné à 10 transferts sur une période glissante de 30 jours, liens valables 3 jours, usage individuel non commercial uniquement, publicités affichées",
+      "paid": "Dès 7 €/mois, plan Starter."
     },
     "description_fr": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024.",
     "description_en": "Send large files by link, no account needed. Free tier capped since 2024.",
@@ -16025,14 +16045,14 @@
     "slug": "yousign",
     "url_fr": "https://tooltrim.com/fr/tool/yousign",
     "url_en": "https://tooltrim.com/en/tool/yousign",
-    "website": "https://yousign.com",
+    "website": "https://youtrust.com/",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Plans payants"
+      "free": "Plan gratuit : 2 demandes de signature par mois, 1 utilisateur",
+      "paid": "Dès 9 €/mois, plan One."
     },
-    "description_fr": "Signature électronique pour devis, contrats, lettres de mission et validations client.",
-    "description_en": "Electronic signature for quotes, contracts, engagement letters and client approvals."
+    "description_fr": "Signature électronique pour devis, contrats et lettres de mission, avec vérification d'identité pour les documents à plus forte confiance.",
+    "description_en": "Electronic signature for quotes, contracts and engagement letters, with identity verification for higher-trust documents."
   },
   {
     "name": "Youtube Live",
@@ -16098,11 +16118,11 @@
     "website": "https://www.maxon.net/en/zbrush",
     "category": "creation",
     "pricing": {
-      "free": "Essai proposé par Maxon.",
-      "paid": "430,8 EUR facturés par an pour ZBrush. Prix régional et TVA définitifs au panier."
+      "free": "Plan gratuit : Offre gratuite de ZBrush pour iPad : 28 brosses, Dynamesh/SculptrisPro/ZSpheres/ZRemesher limités, maximum 20 millions de polygones par maillage. Pas de version bureau gratuite.",
+      "paid": "Dès 35,90 $/mois, plan ZBrush (desktop + iPad)."
     },
-    "description_fr": "Sculpture et peinture numériques pour personnages, créatures et modèles détaillés.",
-    "description_en": "Digital sculpting and painting for characters, creatures and detailed models.",
+    "description_fr": "ZBrush est le logiciel de sculpture numérique professionnel de Maxon pour personnages, créatures et modèles hard-surface, vendu uniquement en abonnement dès 54 $/mois ou 35,90 $/mois facturé annuellement.",
+    "description_en": "ZBrush is Maxon's professional digital sculpting software for characters, creatures and hard-surface models, sold only as a subscription from $54/month or $35.90/month billed annually.",
     "alternatives": [
       "blender"
     ]

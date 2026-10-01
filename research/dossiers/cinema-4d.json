@@ -19,7 +19,7 @@
       "id": "s1",
       "url": "https://www.maxon.net/en/buy",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-02",
       "title": "Maxon buy/pricing page"
     },
     {
@@ -53,40 +53,39 @@
         "minSeats": 1,
         "price": {
           "monthly": 109,
-          "annualPerMonth": 69.91,
+          "annualPerMonth": 69.92,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Includes Redshift GPU rendering and 5 Team Render nodes at no extra cost; annual billing saves roughly 30%+ vs monthly.",
-            "fr": "Inclut le rendu GPU Redshift et 5 nœuds Team Render sans coût supplémentaire ; la facturation annuelle fait économiser environ 30 % ou plus par rapport au mensuel."
+            "en": "$839 billed annually ($69.92/month equivalent) or $109 billed monthly. Includes Redshift GPU rendering and 5 Team Render nodes at no extra cost.",
+            "fr": "839 $ facturés à l'année (équivalent 69,92 $/mois) ou 109 $ facturés au mois. Inclut le rendu GPU Redshift et 5 nœuds Team Render sans coût supplémentaire."
           }
         ],
         "sourceIds": [
-          "s2"
+          "s1"
         ]
       },
       {
         "key": "maxon-one",
-        "name": "Maxon One (bundle: Cinema 4D, Redshift, Red Giant, ZBrush, Forger, Universe)",
+        "name": "Maxon One (bundle: Cinema 4D, Redshift, Red Giant, ZBrush, Universe)",
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": 149,
-          "annualPerMonth": null,
+          "monthly": 169,
+          "annualPerMonth": 105.42,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Bundle price varies by source (some show ~$99.91-105.41/month billed annually with promotions); official rate not independently re-confirmed beyond the buy page tabs in this session.",
-            "fr": "Le prix du pack varie selon la source (certaines affichent environ 99,91 à 105,41 $/mois facturé annuellement avec promotions) ; le tarif officiel n'a pas été reconfirmé indépendamment au-delà des onglets de la page d'achat durant cette session."
+            "en": "$1265 billed annually ($105.42/month equivalent) or $169 billed monthly, confirmed on the official Maxon buy page.",
+            "fr": "1265 $ facturés à l'année (équivalent 105,42 $/mois) ou 169 $ facturés au mois, confirmé sur la page d'achat officielle Maxon."
           }
         ],
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       }
     ],
@@ -94,11 +93,10 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "The official maxon.net/en/buy page splits pricing across Individuals/Teams/Educational/Mobile/Reseller tabs and did not render specific numeric rates during automated fetch; figures above are corroborated by a reseller (Toolfarm) and should be re-verified against the live tabs.",
-        "fr": "La page officielle maxon.net/en/buy répartit les prix sur des onglets Particuliers/Équipes/Éducation/Mobile/Revendeurs et n'a pas affiché de tarifs chiffrés précis lors de la récupération automatisée ; les chiffres ci-dessus sont corroborés par un revendeur (Toolfarm) et doivent être revérifiés sur les onglets en direct.",
+        "en": "Prices shown on maxon.net are inclusive of the highest potential VAT rate for the browsing region; actual VAT appears at checkout and may vary by country.",
+        "fr": "Les prix affichés sur maxon.net incluent le taux de TVA potentiel le plus élevé pour la région de navigation ; la TVA réelle apparaît au moment du paiement et peut varier selon le pays.",
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       }
     ]
@@ -173,7 +171,6 @@
     }
   ],
   "unknowns": [
-    "Exact current Maxon One bundle price not independently confirmed; the official buy page's specific dollar figures did not render in this session's automated fetch.",
     "Trial period length (if any) not confirmed on the official site."
   ],
   "conflicts": [],
@@ -294,5 +291,6 @@
       }
     }
   },
-  "completedLocallyOn": "2026-10-01"
+  "completedLocallyOn": "2026-10-01",
+  "priceCheckedOn": "2026-10-02"
 }

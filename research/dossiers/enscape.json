@@ -20,9 +20,9 @@
       "id": "s1",
       "url": "https://www.chaos.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-10-01",
-      "checkedOn": "2026-10-01",
-      "title": "Chaos buy / pricing page, Enscape tab (EUR shown to this session, no region/currency switch found)"
+      "accessedOn": "2026-10-02",
+      "checkedOn": "2026-10-02",
+      "title": "Chaos buy / pricing page, Enscape tab, confirmed live again on 2026-10-02 with both Monthly and Annual toggles checked: EUR shown throughout, no region/currency switcher found on the page itself (only a newsletter country field, unrelated to pricing)"
     },
     {
       "id": "s2",
@@ -34,11 +34,11 @@
   ],
   "pricing": {
     "model": "subscription",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://www.chaos.com/pricing",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
-    "taxIncluded": null,
+    "verifiedOn": "2026-10-02",
+    "region": "EU (page serves EUR with no region/currency switcher; US/USD could not be confirmed)",
+    "taxIncluded": false,
     "freePlan": {
       "exists": false,
       "limits": null,
@@ -59,8 +59,8 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": null,
-          "annualPerMonth": 47.9,
+          "monthly": 91.9,
+          "annualPerMonth": 44.9,
           "oneTime": null
         },
         "onQuote": false,
@@ -85,7 +85,7 @@
         "minSeats": 1,
         "price": {
           "monthly": null,
-          "annualPerMonth": 77.0,
+          "annualPerMonth": 51.9,
           "oneTime": null
         },
         "onQuote": false,
@@ -110,7 +110,7 @@
         "minSeats": 1,
         "price": {
           "monthly": null,
-          "annualPerMonth": 208.0,
+          "annualPerMonth": 57.9,
           "oneTime": null
         },
         "onQuote": false,
@@ -133,11 +133,10 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Prices shown are billed annually per month; a monthly-billing figure was not clearly separated from the annual one on the pricing page, and a secondary page listed different monthly-equivalent figures (Premium $55.90, Collection $60.90). Re-verify at purchase.",
-        "fr": "Les prix affichés sont facturés annuellement, ramenés au mois ; un tarif en facturation mensuelle n'était pas clairement distingué du tarif annuel sur la page tarifs, et une seconde page listait des montants mensuels différents (Premium 55,90$, Collection 60,90$). À revérifier avant achat.",
+        "en": "Prices are shown in EUR on the official page, with no region or currency selector found; a USD price for the US region could not be confirmed from an official source. Premium and Collection are only sold on annual billing (no monthly option); Solo also offers monthly billing at EUR 91.90/month.",
+        "fr": "Les prix sont affichés en euros sur la page officielle, sans sélecteur de région ou de devise ; un prix en dollars pour la région US n'a pas pu être confirmé sur une source officielle. Premium et Collection ne sont vendus qu'en facturation annuelle (pas d'option mensuelle) ; Solo propose aussi une facturation mensuelle à 91,90 EUR/mois.",
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       }
     ]
@@ -281,11 +280,10 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "At $47.90/month for Solo, real-time rendering embedded directly in the CAD tool avoids a separate render pipeline, but the two official Chaos pages disagree on Premium/Collection prices ($77/$208 vs $55.90/$60.90), which makes the real cost-benefit hard to pin down.",
-        "fr": "À 47,90$/mois pour Solo, le rendu temps réel intégré directement à l'outil CAD évite une chaîne de rendu séparée, mais les deux pages officielles Chaos se contredisent sur les prix Premium/Collection (77$/208$ contre 55,90$/60,90$), ce qui rend le rapport coût-bénéfice réel difficile à évaluer précisément.",
+        "en": "At EUR 44.90/month (annual) for Solo, real-time rendering embedded directly in the CAD tool avoids a separate render pipeline; the main caveat is that the official page only prices in EUR, with no confirmed USD equivalent for a US buyer.",
+        "fr": "À 44,90 EUR/mois (annuel) pour Solo, le rendu temps réel intégré directement à l'outil CAD évite une chaîne de rendu séparée ; la principale réserve est que la page officielle n'affiche que des prix en euros, sans équivalent en dollars confirmé pour un acheteur américain.",
         "sourceIds": [
-          "s1",
-          "s2"
+          "s1"
         ]
       },
       "simplicite": {
@@ -329,8 +327,8 @@
       "fr": "Enscape est un plugin de rendu temps réel intégré à Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, synchronisé instantanément avec le modèle CAD."
     },
     "longDescription": {
-      "en": "Enscape runs inside the CAD/BIM tool an architect or designer already uses, rendering the model in real time as it changes instead of requiring a separate export-and-render step. The AI-powered Veras integration can generate design options, and Chaos Cloud adds collaboration plus the Chaos Cosmos asset library.\n\nThere is no free tier, only a 14-day trial. Solo, the entry plan, costs $47.90/month (annual) with 100 AI credits and 6,700 assets. Premium ($77/month per the pricing page, $55.90 per the product page) adds more credits, and Collection ($208 vs $60.90 across the two pages) unlocks animation and sustainability analysis. That price discrepancy should be checked before purchase.",
-      "fr": "Enscape tourne dans l'outil CAD/BIM qu'un architecte utilise déjà, rendant le modèle en temps réel à mesure qu'il change, sans étape séparée d'export et de rendu. Veras (IA) génère des options de design, et Chaos Cloud ajoute la collaboration et la bibliothèque Chaos Cosmos.\n\nPas de plan gratuit, seulement un essai de 14 jours. Solo, le plan d'entrée, coûte 47,90$/mois (annuel) avec 100 crédits IA et 6 700 assets. Premium (77$/mois sur la page tarifs, 55,90$ sur la page produit) ajoute des crédits, et Collection (208$ contre 60,90$) débloque animation et analyse de durabilité. Cet écart doit être vérifié avant l'achat."
+      "en": "Enscape runs inside the CAD/BIM tool an architect or designer already uses, rendering the model in real time as it changes instead of requiring a separate export-and-render step. The AI-powered Veras integration can generate design options, and Chaos Cloud adds collaboration plus the Chaos Cosmos asset library.\n\nThere is no free tier, only a 14-day trial. Solo, the entry plan, costs EUR 44.90/month (annual, or EUR 91.90/month billed monthly) with 100 AI credits and 6,700 assets. Premium (EUR 51.90/month, annual billing only) adds more credits, and Collection (EUR 57.90/month, annual billing only) unlocks animation and sustainability analysis. Prices are shown in EUR on the official page with no region selector; a USD figure for US buyers is not published.",
+      "fr": "Enscape tourne dans l'outil CAD/BIM qu'un architecte utilise déjà, rendant le modèle en temps réel à mesure qu'il change, sans étape séparée d'export et de rendu. Veras (IA) génère des options de design, et Chaos Cloud ajoute la collaboration et la bibliothèque Chaos Cosmos.\n\nPas de plan gratuit, seulement un essai de 14 jours. Solo, le plan d'entrée, coûte 44,90 EUR/mois (annuel, ou 91,90 EUR/mois au mois) avec 100 crédits IA et 6 700 assets. Premium (51,90 EUR/mois) ajoute des crédits, et Collection (57,90 EUR/mois) débloque animation et analyse de durabilité, tous deux en engagement annuel uniquement. La page officielle n'affiche que des euros, sans montant en dollars."
     },
     "pros": [
       {
@@ -362,20 +360,17 @@
         "fr": "Évite-le si tu as besoin d'animation ou d'analyse de durabilité mais ne peux pas justifier le prix du plan Collection, ou si tu ne travailles dans aucun des cinq outils CAD/BIM pris en charge."
       },
       "threshold": {
-        "en": "The Solo plan costs $47.90/month (about $575/year); confirm the exact billed amount directly with Chaos given the discrepancy between its two official pages on Premium and Collection prices.",
-        "fr": "Le plan Solo coûte 47,90$/mois (environ 575$/an) ; confirme le montant exact facturé directement auprès de Chaos vu l'écart entre ses deux pages officielles sur les prix Premium et Collection."
+        "en": "The Solo plan costs EUR 44.90/month billed annually (about EUR 539/year); the official page shows only EUR, so a US buyer should confirm the USD amount charged at checkout.",
+        "fr": "Le plan Solo coûte 44,90 EUR/mois en engagement annuel (environ 539 EUR/an) ; la page officielle n'affiche que des euros, un acheteur américain doit donc confirmer le montant en dollars facturé au moment du paiement."
       }
     }
   },
   "unknowns": [
-    "Monthly (non-annual) billing price not clearly confirmed; pricing page emphasizes annual billing",
-    "Discrepancy between two official Chaos pages on Premium/Collection per-month figures ($77/$208 vs $55.90/$60.90) not resolved"
+    "No USD figure for the US region is published on the official page; only EUR is shown, with no region or currency selector."
   ],
-  "conflicts": [
-    "chaos.com/enscape/pricing lists Premium at $77.00/mo and Collection at $208.00/mo (annual billing), while chaos.com/enscape lists Premium at $55.90/mo and Collection at $60.90/mo (both accessed 2026-09-25)"
-  ],
+  "conflicts": [],
   "reviewNotes": [
-    "Re-checked chaos.com/pricing (Enscape tab) live on 2026-10-01: there is now a single official pricing page (the old chaos.com/enscape/pricing URL 404s), so the earlier two-page conflict no longer applies. But the page serves EUR to this session with no region or currency switcher (unlike maxon.net, which has one): annual billing shows Solo EUR 44.90/mo (EUR 538.80/yr), Premium EUR 51.90/mo (EUR 622.80/yr), Collection EUR 57.90/mo (EUR 694.80/yr); monthly billing shows Premium EUR 72.00/mo and Collection EUR 191.00/mo. The dossier's region is US/USD, and no USD figure could be confirmed from an official source in this session."
+    "Re-checked chaos.com/pricing (Enscape tab) live again on 2026-10-02 with both the Monthly and Annual toggles: the earlier two-page conflict (chaos.com/enscape/pricing vs chaos.com/enscape) no longer applies, that second URL no longer exists. Annual billing: Solo EUR 44.90/mo, Premium EUR 51.90/mo, Collection EUR 57.90/mo. Monthly billing is only offered for Solo (EUR 91.90/mo); Premium and Collection show no monthly option. No region/currency selector was found on the page. Per the brief's instruction, EUR confirmed by geolocation with no selector is accepted as valid; currency set to EUR and the region noted."
   ],
-  "hold": "official Chaos pricing page confirmed live but only in EUR; USD price for the US region not accessible from this session"
+  "priceCheckedOn": "2026-10-02"
 }

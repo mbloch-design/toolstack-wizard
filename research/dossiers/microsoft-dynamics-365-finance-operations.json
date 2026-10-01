@@ -22,6 +22,13 @@
       "tier": 2,
       "accessedOn": "2026-09-25",
       "title": "Microsoft Dynamics 365 Finance pricing, figures aggregated via web search summary of third-party partner pricing guides (encorebusiness.com, erpresearch.com); page not fetched directly this session"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Microsoft Dynamics 365 Finance official pricing page, fetched directly this session"
     }
   ],
   "pricing": {
@@ -52,12 +59,12 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Full user license for finance module only; adding a second app (e.g. Supply Chain Management) costs an additional $30/user/month.",
-            "fr": "Licence utilisateur complète pour le seul module finance ; ajouter une deuxième application (par exemple Supply Chain Management) coûte 30 $ par utilisateur et par mois en plus."
+            "en": "$210/user/month, paid yearly, confirmed on the official Microsoft pricing page. Adding a second app (e.g. Supply Chain Management) reportedly costs an additional $30/user/month per third-party partner guides, not shown on this official page.",
+            "fr": "210 $ par utilisateur et par mois, facturé à l'année, confirmé sur la page tarifs officielle de Microsoft. Ajouter une deuxième application (par exemple Supply Chain Management) coûterait 30 $ par utilisateur et par mois en plus selon des guides de partenaires tiers, non confirmé sur cette page officielle."
           }
         ],
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       },
       {
@@ -73,12 +80,12 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Includes 1,000 Copilot credits per user per month.",
-            "fr": "Inclut 1 000 crédits Copilot par utilisateur et par mois."
+            "en": "$300/user/month, paid yearly, confirmed on the official Microsoft pricing page. Includes 1,000 Copilot credits per user per month (not included on the base Finance plan).",
+            "fr": "300 $ par utilisateur et par mois, facturé à l'année, confirmé sur la page tarifs officielle de Microsoft. Inclut 1 000 crédits Copilot par utilisateur et par mois (non inclus sur le plan Finance de base)."
           }
         ],
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       },
       {
@@ -94,8 +101,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Read-only access and basic data entry; same rate for Activity User licenses.",
-            "fr": "Accès en lecture seule et saisie de données basique ; même tarif pour les licences Activity User."
+            "en": "Read-only access and basic data entry; same rate reported for Activity User licenses. Not shown on the official Dynamics 365 Finance pricing page as of 2026-10-02; figure comes from third-party partner pricing guides only.",
+            "fr": "Accès en lecture seule et saisie de données basique ; même tarif rapporté pour les licences Activity User. Absent de la page tarifs officielle Dynamics 365 Finance au 2026-10-02 ; ce chiffre vient uniquement de guides de partenaires tiers."
           }
         ],
         "sourceIds": [
@@ -106,8 +113,8 @@
     "comparePlanKey": "finance-single-app",
     "addOns": [
       {
-        "en": "Second app add-on (e.g. Supply Chain Management alongside Finance): +$30/user/month.",
-        "fr": "Module complémentaire pour une deuxième application (par exemple Supply Chain Management en plus de Finance) : +30 $ par utilisateur et par mois.",
+        "en": "Second app add-on (e.g. Supply Chain Management alongside Finance): reportedly +$30/user/month per third-party partner guides; not confirmed on the official Dynamics 365 Finance pricing page.",
+        "fr": "Module complémentaire pour une deuxième application (par exemple Supply Chain Management en plus de Finance) : rapporté à +30 $ par utilisateur et par mois selon des guides de partenaires tiers ; non confirmé sur la page tarifs officielle Dynamics 365 Finance.",
         "sourceIds": [
           "s1"
         ]
@@ -122,10 +129,10 @@
         ]
       },
       {
-        "en": "Pricing figures were not fetched directly from the official Microsoft pricing page in this session (aggregated from partner/reseller summaries); re-verify against microsoft.com/en-us/dynamics-365/products/finance/pricing.",
-        "fr": "Les montants n'ont pas été relevés directement sur la page tarifs officielle de Microsoft lors de cette session (ils viennent de résumés de partenaires et revendeurs) ; à revérifier sur microsoft.com/en-us/dynamics-365/products/finance/pricing.",
+        "en": "Prices on the official page are for informational purposes only and may not reflect the actual list price due to currency, country and regional factors; the real price appears at checkout.",
+        "fr": "Les prix de la page officielle sont donnés à titre indicatif et peuvent différer du prix de liste réel selon la devise, le pays et des facteurs régionaux ; le prix réel apparaît au moment du paiement.",
         "sourceIds": [
-          "s1"
+          "s2"
         ]
       }
     ]
@@ -313,11 +320,11 @@
     }
   },
   "unknowns": [
-    "Official Microsoft pricing page could not be fetched directly in this session; all figures come from third-party partner pricing guides and should be re-verified on microsoft.com.",
-    "Regional/currency variations (outside US) not covered."
+    "Regional/currency variations (outside US) not covered.",
+    "No free trial length is advertised on the official pricing page."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "Tous les montants (210 $, 300 $, 8 $, 30 $) viennent de guides tiers (encorebusiness.com, erpresearch.com) et non de la page tarifs officielle Microsoft : à vérifier sur microsoft.com/en-us/dynamics-365/products/finance/pricing avant publication."
-  ]
+  "reviewNotes": [],
+  "hold": "Team Member ($8/user/month) et l'add-on seconde application (+$30/user/month) viennent de guides de partenaires tiers, non confirmes sur la page tarifs officielle Microsoft au 2026-10-02 (qui ne liste que Finance a 210 $ et Finance Premium a 300 $, toutes deux confirmees aujourd'hui) ; comparePlanKey (finance-single-app, 210 $) reste fiable.",
+  "priceCheckedOn": "2026-10-02"
 }

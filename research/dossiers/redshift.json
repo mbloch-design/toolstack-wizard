@@ -28,6 +28,13 @@
       "tier": 2,
       "accessedOn": "2026-09-25",
       "title": "B&H Photo Video listing of Redshift annual subscription price"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.maxon.net/en/buy",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Maxon buy/pricing page, Redshift tab"
     }
   ],
   "pricing": {
@@ -59,12 +66,12 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Annual subscription listed at $289/year (~$24/month equivalent) by a reseller, roughly half the monthly rate of $49/month.",
-            "fr": "Abonnement annuel affiché à 289 $/an (environ 24 $/mois équivalent) par un revendeur, soit environ la moitié du tarif mensuel de 49 $/mois."
+            "en": "$289 billed annually ($24.08/month equivalent) or $49 billed monthly, confirmed on the official Maxon buy page.",
+            "fr": "289 $ facturés à l'année (équivalent 24,08 $/mois) ou 49 $ facturés au mois, confirmé sur la page d'achat officielle Maxon."
           }
         ],
         "sourceIds": [
-          "s2"
+          "s3"
         ]
       }
     ],
@@ -158,7 +165,6 @@
     }
   ],
   "unknowns": [
-    "Exact current monthly price on the official maxon.net buy page not independently re-confirmed; figures rely on a reseller listing.",
     "Whether a free trial is offered was not confirmed on the official site."
   ],
   "conflicts": [],
@@ -279,8 +285,7 @@
       }
     }
   },
-  "reviewNotes": [
-    "Le prix mensuel (49 $/mois) vient de la page officielle Maxon tandis que l'équivalent annuel (24,08 $/mois) vient d'un revendeur (B&H) ; les deux chiffres n'ont pas été confirmés sur la même page, à revérifier sur maxon.net/en/buy."
-  ],
-  "completedLocallyOn": "2026-10-01"
+  "reviewNotes": [],
+  "completedLocallyOn": "2026-10-01",
+  "priceCheckedOn": "2026-10-02"
 }

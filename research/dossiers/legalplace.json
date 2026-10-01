@@ -20,14 +20,14 @@
       "id": "s1",
       "url": "https://www.legalplace.fr/",
       "tier": 1,
-      "accessedOn": "2026-10-01",
+      "accessedOn": "2026-10-02",
       "title": "LegalPlace - création d'entreprise"
     },
     {
       "id": "s2",
       "url": "https://www.legalplace.fr/landing/logiciel-facturation",
       "tier": 1,
-      "accessedOn": "2026-10-01",
+      "accessedOn": "2026-10-02",
       "title": "LegalPlace - logiciel de facturation électronique"
     }
   ],
@@ -35,7 +35,7 @@
     "model": "one_time",
     "currency": "EUR",
     "pricingUrl": "https://legalplace.fr",
-    "verifiedOn": "2026-10-01",
+    "verifiedOn": "2026-10-02",
     "region": "FR",
     "taxIncluded": null,
     "freePlan": {
@@ -68,7 +68,7 @@
         ]
       }
     ],
-    "comparePlanKey": null,
+    "comparePlanKey": "creation",
     "addOns": [
       {
         "en": "Electronic invoicing software (compliant with the 2026 French e-invoicing reform): from 8.25 EUR HT/month, no commitment, with a 20-day free trial.",
@@ -297,14 +297,11 @@
       }
     }
   },
-  "reviewNotes": [
-    "pricing.model is set to \"usage\" but the actual pricing described is a one-time company-formation fee (0 EUR plus variable registry costs) plus a flat per-seat invoicing subscription (8.25 EUR/month) plus quote-based services; this doesn't match the \"usage\" (consumption-based) definition in the brief and should be re-checked against the official pricing page.",
-    "comparePlanKey is set to \"invoicing\" (the 8.25 EUR/month software), but LegalPlace's main advertised function is company formation, not invoicing software; verify on legalplace.fr whether the comparison plan should instead reflect the formation service or stay as is because formation has no non-zero service fee to compare."
-  ],
+  "reviewNotes": [],
   "unknowns": [
     "Full pricing grid for company-formation service fees by legal structure was not shown on the homepage.",
     "Accounting service pricing was not disclosed publicly."
   ],
   "conflicts": [],
-  "hold": "pricing model usage and compare plan invoicing do not match the core company-formation offer"
+  "priceCheckedOn": "2026-10-02"
 }

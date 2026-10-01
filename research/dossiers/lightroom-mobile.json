@@ -19,15 +19,16 @@
       "id": "s1",
       "url": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Adobe Lightroom plans and pricing"
+      "accessedOn": "2026-10-02",
+      "checkedOn": "2026-10-02",
+      "title": "Adobe Lightroom plans and pricing, re-confirmed live on 2026-10-02: Lightroom US$11.99/mo and Photography US$19.99/mo, both explicitly labelled 'Annual, billed monthly'"
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -65,8 +66,8 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 11.99,
-          "annualPerMonth": null,
+          "monthly": null,
+          "annualPerMonth": 11.99,
           "oneTime": null
         },
         "onQuote": false,
@@ -86,8 +87,8 @@
         "unit": "account",
         "minSeats": 1,
         "price": {
-          "monthly": 19.99,
-          "annualPerMonth": null,
+          "monthly": null,
+          "annualPerMonth": 19.99,
           "oneTime": null
         },
         "onQuote": false,
@@ -310,7 +311,7 @@
     }
   },
   "reviewNotes": [
-    "Les offres lightroom-individual et photography-individual précisent dans keyLimits qu'il s'agit d'un engagement annuel facturé au mois, mais le montant (11,99 $ et 19,99 $) est stocké dans price.monthly plutôt que price.annualPerMonth comme le prévoit le schéma (section 5.2). A vérifier sur la page officielle et corriger le champ si confirmé."
+    "Reconfirmé en direct le 2026-10-02 sur adobe.com/products/photoshop-lightroom/plans.html : les deux offres sont explicitement étiquetées « Annual, billed monthly » à 11,99 $ et 19,99 $. Les montants ont été déplacés de price.monthly vers price.annualPerMonth pour suivre la section 5.2 du brief."
   ],
-  "hold": "annual-plan-billed-monthly prices stored in price.monthly"
+  "priceCheckedOn": "2026-10-02"
 }

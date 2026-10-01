@@ -10,22 +10,23 @@
     "officialUrl": "https://wetransfer.com",
     "docsUrl": null,
     "changelogUrl": null,
-    "urlStatus": "blocked",
+    "urlStatus": "ok",
     "productStatus": "active",
-    "statusNote": "Official site (homepage, pricing, terms) renders via JavaScript and returned only skeleton content to automated fetches; pricing and ToS details below are cross-verified via secondary sources dated September 2026 and the well-documented July 2025 ToS controversy."
+    "statusNote": "Official site (homepage, pricing, terms) renders via JavaScript and returned only skeleton content to the automated WebFetch tool, but rendered correctly in a live browser on 2026-10-02, which directly confirmed current pricing. ToS content-license details still rely on secondary reporting of the well-documented July 2025 controversy."
   },
   "sources": [
     { "id": "s1", "url": "https://wetransfer.com", "tier": 1, "accessedOn": "2026-09-25", "title": "WeTransfer homepage (official, JS-blocked at fetch time)" },
     { "id": "s2", "url": "https://brault.app/blog/file-transfer-and-sharing/wetransfer-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "WeTransfer pricing 2026: plans, real cost, alternatives (verified 2026-09-17)" },
     { "id": "s3", "url": "https://www.medianama.com/2025/07/223-wetransfer-terms-of-service-backlash-ai-training/", "tier": 2, "accessedOn": "2026-09-25", "title": "WeTransfer Clarifies Terms Of Service Amid AI Training Backlash" },
-    { "id": "s4", "url": "https://wetransfer.com/explore/legal/terms", "tier": 1, "accessedOn": "2026-09-25", "title": "WeTransfer Terms of Service (official, JS-blocked at fetch time; last publicly noted update August 2026)" }
+    { "id": "s4", "url": "https://wetransfer.com/explore/legal/terms", "tier": 1, "accessedOn": "2026-09-25", "title": "WeTransfer Terms of Service (official, JS-blocked at fetch time; last publicly noted update August 2026)" },
+    { "id": "s5", "url": "https://wetransfer.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "WeTransfer Plans et tarifs (live browser render, monthly and annual views): Free 0, Starter 8/7, Ultimate 23/19, Teams 19/16.58 per seat (min 2), all EUR via page geolocation" }
   ],
   "pricing": {
     "model": "freemium",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://wetransfer.com/pricing",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-02",
+    "region": "EU (page geolocation, no country/currency selector found; only a language switcher)",
     "taxIncluded": false,
     "freePlan": {
       "exists": true,
@@ -44,7 +45,7 @@
         "keyLimits": [
           { "en": "3 GB per transfer, capped at 10 transfers per rolling 30 days, links valid 3 days, individual non-commercial use only, ads shown.", "fr": "3 Go par envoi, plafonné à 10 envois par période glissante de 30 jours, liens valables 3 jours, usage individuel non commercial uniquement, publicités affichées." }
         ],
-        "sourceIds": ["s2"]
+        "sourceIds": ["s2", "s5"]
       },
       {
         "key": "starter",
@@ -57,7 +58,7 @@
           { "en": "300 GB per rolling 30 days, commercial use allowed", "fr": "300 Go par période glissante de 30 jours, usage commercial autorisé" },
           { "en": "Still capped at 10 transfers/month, 3-day link expiry, ads remain", "fr": "Toujours plafonné à 10 envois/mois, liens valables 3 jours, publicités toujours présentes" }
         ],
-        "sourceIds": ["s2"]
+        "sourceIds": ["s2", "s5"]
       },
       {
         "key": "ultimate",
@@ -70,7 +71,7 @@
           { "en": "Unlimited transfers, up to 1 TB per transfer", "fr": "Envois illimités, jusqu'à 1 To par envoi" },
           { "en": "Custom or no link expiry with recovery option, branded pages, no ads, automatic malware scanning", "fr": "Expiration des liens personnalisable ou désactivable avec récupération, pages personnalisées, sans publicité, scan antivirus automatique" }
         ],
-        "sourceIds": ["s2"]
+        "sourceIds": ["s2", "s5"]
       },
       {
         "key": "teams",
@@ -83,7 +84,7 @@
           { "en": "Everything in Ultimate for 2 to 50 members, shared branding", "fr": "Tout Ultimate pour 2 à 50 membres, marque partagée" },
           { "en": "5 TB shared archive", "fr": "5 To d'archive partagée" }
         ],
-        "sourceIds": ["s2"]
+        "sourceIds": ["s2", "s5"]
       },
       {
         "key": "enterprise",
@@ -101,7 +102,7 @@
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Starter's monthly price rose from $6.99 to $8 since mid-2026; check the live pricing page before quoting a figure.", "fr": "Le prix mensuel de Starter est passé de 6,99 $ à 8 $ depuis mi-2026 ; vérifie la page tarifs en direct avant de citer un chiffre.", "sourceIds": ["s2"] },
+      { "en": "Starter's monthly price rose from 6.99 to 8 (EUR/USD, same numeric value) since mid-2026, confirmed directly on the live official pricing page on 2026-10-02.", "fr": "Le prix mensuel de Starter est passé de 6,99 à 8 (euros/dollars, même montant numérique) depuis mi-2026, confirmé directement sur la page tarifs officielle en direct le 2026-10-02.", "sourceIds": ["s2", "s5"] },
       { "en": "Even paid Starter keeps the 10-transfers-per-month cap and ads, which surprises users expecting an ad-free experience once they pay.", "fr": "Même en payant Starter, le plafond de 10 envois par mois et les publicités restent, ce qui surprend les utilisateurs qui pensaient payer pour s'en débarrasser.", "sourceIds": ["s2"] }
     ]
   },
@@ -162,15 +163,15 @@
       "fr": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024."
     },
     "longDescription": {
-      "en": "WeTransfer solves one narrow problem well: getting a large file from you to someone else without either of you needing an account. The free tier still works for occasional use, but it has shrunk since 2024 to 3 GB per transfer and 10 transfers a month, with links that expire in 3 days.\n\nPaying doesn't remove the friction as much as you'd expect: Starter, at $8/month as of late 2026, lifts the size cap to 300 GB but keeps the 10-transfer limit and the ads. Only Ultimate ($23/month) removes ads and gives real flexibility on expiry, at which point it competes directly with general cloud storage that does more for a similar price.\n\nIn 2025, WeTransfer briefly rewrote its terms to claim a broad license over uploaded content, including for machine-learning uses, then walked it back within two weeks after public backlash and clarified it does not train AI on user files.",
-      "fr": "WeTransfer règle bien un problème précis : faire passer un gros fichier de toi à quelqu'un d'autre sans que ni l'un ni l'autre n'ait besoin d'un compte. L'offre gratuite reste utilisable pour un usage occasionnel, mais elle a rétréci depuis 2024 à 3 Go par envoi et 10 envois par mois, avec des liens qui expirent en 3 jours.\n\nPayer ne retire pas autant de friction qu'on pourrait l'espérer : Starter, à 8 $/mois fin 2026, fait passer la limite de taille à 300 Go mais garde le plafond de 10 envois et les publicités. Seule l'offre Ultimate (23 $/mois) retire les pubs et assouplit vraiment l'expiration, à un tarif qui rivalise directement avec du stockage cloud généraliste offrant plus pour un prix comparable.\n\nEn 2025, WeTransfer a brièvement réécrit ses conditions pour revendiquer une licence large sur les contenus envoyés, y compris pour des usages de machine learning, avant de faire marche arrière sous deux semaines suite à la controverse publique et de clarifier qu'il n'entraîne pas d'IA sur les fichiers des utilisateurs."
+      "en": "WeTransfer solves one narrow problem well: getting a large file from you to someone else without either of you needing an account. The free tier still works for occasional use, but it has shrunk since 2024 to 3 GB per transfer and 10 transfers a month, with links that expire in 3 days.\n\nPaying doesn't remove the friction as much as you'd expect: Starter, at 8 EUR/month as of late 2026, lifts the size cap to 300 GB but keeps the 10-transfer limit and the ads. Only Ultimate (23 EUR/month) removes ads and gives real flexibility on expiry, at which point it competes directly with general cloud storage that does more for a similar price.\n\nIn 2025, WeTransfer briefly rewrote its terms to claim a broad license over uploaded content, including for machine-learning uses, then walked it back within two weeks after public backlash and clarified it does not train AI on user files.",
+      "fr": "WeTransfer règle bien un problème précis : faire passer un gros fichier de toi à quelqu'un d'autre sans que ni l'un ni l'autre n'ait besoin d'un compte. L'offre gratuite reste utilisable pour un usage occasionnel, mais elle a rétréci depuis 2024 à 3 Go par envoi et 10 envois par mois, avec des liens qui expirent en 3 jours.\n\nPayer ne retire pas autant de friction qu'on pourrait l'espérer : Starter, à 8 euros/mois fin 2026, fait passer la limite de taille à 300 Go mais garde le plafond de 10 envois et les publicités. Seule l'offre Ultimate (23 euros/mois) retire les pubs et assouplit vraiment l'expiration, à un tarif qui rivalise directement avec du stockage cloud généraliste offrant plus pour un prix comparable.\n\nEn 2025, WeTransfer a brièvement réécrit ses conditions pour revendiquer une licence large sur les contenus envoyés, y compris pour des usages de machine learning, avant de faire marche arrière sous deux semaines suite à la controverse publique et de clarifier qu'il n'entraîne pas d'IA sur les fichiers des utilisateurs."
     },
     "pros": [
       { "en": "No account required to send or receive on the free tier.", "fr": "Aucun compte requis pour envoyer ou recevoir sur l'offre gratuite." },
       { "en": "Extremely low learning curve, works in seconds for a one-off send.", "fr": "Courbe d'apprentissage quasi nulle, fonctionne en quelques secondes pour un envoi ponctuel." }
     ],
     "cons": [
-      { "en": "Free tier caps have tightened since 2024, and the Starter price rose to $8/month by late 2026.", "fr": "Les plafonds de l'offre gratuite se sont resserrés depuis 2024, et le prix de Starter est passé à 8 $/mois fin 2026." },
+      { "en": "Free tier caps have tightened since 2024, and the Starter price rose to 8 EUR/month by late 2026.", "fr": "Les plafonds de l'offre gratuite se sont resserrés depuis 2024, et le prix de Starter est passé à 8 euros/mois fin 2026." },
       { "en": "Paying doesn't remove the transfer-count cap or ads until the pricier Ultimate tier.", "fr": "Payer ne fait pas disparaître le plafond d'envois ni les publicités avant l'offre Ultimate, plus chère." },
       { "en": "2025 terms-of-service episode briefly granted WeTransfer broad rights over uploaded content for machine-learning uses, later reversed; worth a quick check of current terms before trusting sensitive files.", "fr": "En 2025, les conditions d'utilisation ont brièvement accordé à WeTransfer des droits larges sur les contenus envoyés pour des usages de machine learning, avant marche arrière ; ça vaut le coup de vérifier rapidement les conditions actuelles avant d'y envoyer des fichiers sensibles." }
     ],
@@ -182,11 +183,9 @@
     }
   },
   "unknowns": [
-    "Official pricing page (wetransfer.com/pricing) and terms page (wetransfer.com/explore/legal/terms) render via JavaScript and returned only skeleton content to automated fetch; figures here are cross-verified via a secondary source dated 2026-09-17 rather than read directly from the live official page on 2026-09-25.",
     "Exact current wording of the content license clause in WeTransfer's terms of service was not independently read from the primary source at research time; the reversal is documented via secondary reporting (medianama, July 2025) which itself references WeTransfer's own clarifying statement.",
     "No dedicated docs/help-center URL was verified for this dossier; integrations list is empty because none could be confirmed from an official source within the fetch budget."
   ],
-  "conflicts": [
-    "Seed pricingV5 (verifiedOn 2026-06-15) listed Starter at $6.99/month; research on 2026-09-25 (via secondary source dated 2026-09-17) finds Starter at $8/month ($7/month annual), suggesting a price increase between June and September 2026 that should be reconfirmed on the live pricing page."
-  ]
+  "conflicts": [],
+  "priceCheckedOn": "2026-10-02"
 }

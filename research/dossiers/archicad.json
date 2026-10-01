@@ -18,16 +18,16 @@
       "id": "s1",
       "url": "https://graphisoft.com/solutions/archicad",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-02",
       "title": "Archicad product page"
     }
   ],
   "pricing": {
     "model": "subscription",
-    "currency": "USD",
+    "currency": "EUR",
     "pricingUrl": "https://graphisoft.com/solutions/archicad",
-    "verifiedOn": "2026-09-25",
-    "region": "US",
+    "verifiedOn": "2026-10-02",
+    "region": "EU (page not geolocated to US; shown in EUR by default)",
     "taxIncluded": null,
     "freePlan": {
       "exists": false,
@@ -54,15 +54,15 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": 201,
-          "annualPerMonth": null,
+          "monthly": null,
+          "annualPerMonth": 203,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Local collaboration only; $2,414 billed annually",
-            "fr": "Collaboration locale uniquement ; 2 414 $ facturés annuellement"
+            "en": "Local collaboration only; €2,440 + tax billed upfront for the 1-year term",
+            "fr": "Collaboration locale uniquement ; 2 440 € HT facturés d'avance pour l'engagement d'un an"
           }
         ],
         "sourceIds": [
@@ -75,15 +75,15 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": 237,
-          "annualPerMonth": null,
+          "monthly": null,
+          "annualPerMonth": 239,
           "oneTime": null
         },
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Adds cloud-based BIMcloud teamwork; $2,840 billed annually; most popular plan",
-            "fr": "Ajoute le travail en équipe BIMcloud dans le cloud ; 2 840 $ facturés annuellement ; plan le plus populaire"
+            "en": "Adds cloud-based BIMcloud teamwork; €2,870 + tax billed upfront for the 1-year term; most popular plan",
+            "fr": "Ajoute le travail en équipe BIMcloud dans le cloud ; 2 870 € HT facturés d'avance pour l'engagement d'un an ; plan le plus populaire"
           }
         ],
         "sourceIds": [
@@ -95,8 +95,8 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Both plan prices are annual commitments shown as a monthly-equivalent figure; the $201/$237 monthly numbers are not month-to-month rates.",
-        "fr": "Les deux tarifs sont des engagements annuels présentés comme un équivalent mensuel ; les montants de 201 $/237 $ ne sont pas des tarifs facturés mois par mois.",
+        "en": "Both plan prices are annual commitments (1-year term) billed upfront, shown as a monthly-equivalent figure in EUR; the €203/€239 monthly numbers are not month-to-month rates, and tax is extra.",
+        "fr": "Les deux tarifs sont des engagements annuels (terme d'un an) facturés d'avance, présentés en équivalent mensuel en EUR ; les montants de 203 €/239 € ne sont pas des tarifs mois par mois, et la TVA est en sus.",
         "sourceIds": [
           "s1"
         ]
@@ -188,6 +188,20 @@
         "en": "Widely used architectural 3D modeling tool covering overlapping design and documentation workflows.",
         "fr": "Outil de modélisation 3D architecturale très utilisé, couvrant des workflows de conception et de documentation proches."
       }
+    },
+    {
+      "slug": "revit",
+      "reason": {
+        "en": "Dominant BIM competitor with deeper MEP/structural coordination, widely required on larger AEC teams.",
+        "fr": "Concurrent BIM dominant avec une coordination MEP/structure plus poussée, souvent imposé sur les grandes équipes AEC."
+      }
+    },
+    {
+      "slug": "vectorworks",
+      "reason": {
+        "en": "Comparable BIM/CAD platform for architecture, often chosen for its landscape and entertainment-design modules alongside building design.",
+        "fr": "Plateforme BIM/CAO comparable pour l'architecture, souvent choisie pour ses modules paysage et scénographie en plus de la conception de bâtiments."
+      }
     }
   ],
   "missingAlternatives": [
@@ -210,8 +224,8 @@
     "reversibilite": 4,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Full professional BIM functionality justifies the cost for an architecture practice, but the entry Studio plan already requires a $2,414/year annual commitment with no month-to-month option.",
-        "fr": "Les fonctionnalités BIM professionnelles complètes justifient le coût pour une agence d'architecture, mais le plan Studio d'entrée impose déjà un engagement annuel de 2 414 $/an, sans option mois par mois.",
+        "en": "Full professional BIM functionality justifies the cost for an architecture practice, but the entry Studio plan already requires a €2,440 + tax/year commitment with no month-to-month option.",
+        "fr": "Les fonctionnalités BIM professionnelles complètes justifient le coût pour une agence d'architecture, mais le plan Studio d'entrée impose déjà un engagement d'un an de 2 440 € HT par an, sans option mois par mois.",
         "sourceIds": [
           "s1"
         ]
@@ -257,8 +271,8 @@
       "fr": "Archicad est la plateforme BIM de Graphisoft pour concevoir, modéliser et collaborer sur des projets de bâtiment, du concept à la construction."
     },
     "longDescription": {
-      "en": "Archicad is a full BIM authoring tool for architecture: parametric walls, slabs, roofs, doors, windows, and more with intelligent relationships, plus MEP design with clash detection and OpenBIM interoperability through IFC 4.3, BCF, and IDS.\n\nThe entry Studio plan costs $201/month under an annual commitment ($2,414/year) and covers local collaboration only; the Collaborate plan adds real-time BIMcloud teamwork for $237/month ($2,840/year). There's no month-to-month option, and the free tier is limited to students and teachers.",
-      "fr": "Archicad est un outil BIM complet pour l'architecture : murs, dalles, toits, portes, fenêtres et autres éléments paramétriques aux relations intelligentes, avec conception MEP, détection de collisions et interopérabilité OpenBIM via IFC 4.3, BCF et IDS.\n\nLe plan d'entrée Studio coûte 201 $/mois sous engagement annuel (2 414 $/an) et ne couvre que la collaboration locale ; le plan Collaborate ajoute le travail en temps réel via BIMcloud pour 237 $/mois (2 840 $/an). Il n'y a pas d'option mois par mois, et l'offre gratuite se limite aux étudiants et enseignants."
+      "en": "Archicad is a full BIM authoring tool for architecture: parametric walls, slabs, roofs, doors, windows, and more with intelligent relationships, plus MEP design with clash detection and OpenBIM interoperability through IFC 4.3, BCF, and IDS.\n\nThe entry Studio plan costs €203/month under a 1-year commitment (€2,440 + tax billed upfront) and covers local collaboration only; the Collaborate plan adds real-time BIMcloud teamwork for €239/month (€2,870 + tax billed upfront). There's no month-to-month option, and the free tier is limited to students and teachers.",
+      "fr": "Archicad est un outil BIM complet pour l'architecture : murs, dalles, toits, portes, fenêtres et autres éléments paramétriques aux relations intelligentes, avec conception MEP, détection de collisions et interopérabilité OpenBIM via IFC 4.3, BCF et IDS.\n\nLe plan d'entrée Studio coûte 203 €/mois sous engagement d'un an (2 440 € HT facturés d'avance) et ne couvre que la collaboration locale ; le plan Collaborate ajoute le travail en temps réel via BIMcloud pour 239 €/mois (2 870 € HT facturés d'avance). Il n'y a pas d'option mois par mois, et l'offre gratuite se limite aux étudiants et enseignants."
     },
     "pros": [
       {
@@ -290,12 +304,12 @@
         "fr": "Tu as besoin d'une facturation flexible mois par mois, ou tu veux seulement du dessin CAO 2D/3D basique sans relations BIM."
       },
       "threshold": {
-        "en": "Budget at least $2,414/year for the entry Studio plan under annual commitment; Collaborate costs $2,840/year for real-time BIMcloud teamwork.",
-        "fr": "Prévoir au moins 2 414 $/an pour le plan Studio d'entrée sous engagement annuel ; Collaborate coûte 2 840 $/an pour le travail en équipe en temps réel via BIMcloud."
+        "en": "Budget at least €2,440 + tax/year for the entry Studio plan under a 1-year commitment; Collaborate costs €2,870 + tax/year for real-time BIMcloud teamwork.",
+        "fr": "Prévoir au moins 2 440 € HT/an pour le plan Studio d'entrée sous engagement d'un an ; Collaborate coûte 2 870 € HT/an pour le travail en équipe en temps réel via BIMcloud."
       },
       "billingTraps": {
-        "en": "Both plans require an annual commitment; the $201/$237 figures are monthly-equivalent prices, not actual month-to-month billing.",
-        "fr": "Les deux plans imposent un engagement annuel ; les montants de 201 $/237 $ sont des prix mensuels équivalents, pas une facturation réelle mois par mois."
+        "en": "Both plans require a 1-year commitment billed upfront; the €203/€239 figures are monthly-equivalent prices in EUR plus tax, not actual month-to-month billing.",
+        "fr": "Les deux plans imposent un engagement d'un an facturé d'avance ; les montants de 203 €/239 € sont des prix mensuels équivalents en EUR hors taxe, pas une facturation réelle mois par mois."
       }
     }
   },
@@ -304,11 +318,8 @@
     "Whether Windows and macOS support are fully feature-equivalent for BIMcloud teamwork was only stated in general terms."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "pricing.plans[].price.monthly holds $201 (Studio) and $237 (Collaborate), but the dossier's own caution and keyLimits confirm these are annual-commitment, monthly-equivalent figures ($2,414/year and $2,840/year), not true month-to-month rates. Per the schema's price.monthly vs price.annualPerMonth distinction, these values likely belong in annualPerMonth with monthly left null; worth re-checking the official pricing page for whether a real month-to-month rate exists separately.",
-    "The catalogue's existing pricingText for this tool shows EUR figures (203 EUR/mois, 2 440 EUR/an for Studio; 239 EUR/mois, 2 870 EUR/an for Collaborate) from a 2026-07-24 check, while this dossier captured USD figures ($201/$2,414 and $237/$2,840) from a US region check on 2026-09-25. Worth confirming whether this is a genuine regional price difference or a stale figure before merging."
-  ],
+  "reviewNotes": [],
   "status": "needs_review",
   "completedLocallyOn": "2026-10-01",
-  "hold": "monthly figures are annual-commitment monthly equivalents; move to annualPerMonth. Also add revit and vectorworks as alternatives (both in catalogue)"
+  "priceCheckedOn": "2026-10-02"
 }

@@ -18,15 +18,15 @@
       "id": "s1",
       "url": "https://www.adobe.com/products/substance3d/apps/designer.html",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-02",
       "title": "Adobe Substance 3D Designer"
     }
   ],
   "pricing": {
-    "model": "subscription",
+    "model": "bundle_only",
     "currency": "USD",
     "pricingUrl": "https://www.adobe.com/products/substance3d/apps/designer.html",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -69,8 +69,8 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": 119.99,
-          "annualPerMonth": null,
+          "monthly": null,
+          "annualPerMonth": 119.99,
           "oneTime": null
         },
         "onQuote": false,
@@ -303,15 +303,11 @@
     }
   },
   "unknowns": [
-    "Exact system requirements/OS platform list was not shown on this page (linked out to separate documentation).",
-    "Whether a Designer-only single-app subscription exists outside the Collection bundle was not confirmed."
+    "Exact system requirements/OS platform list was not shown on this page (linked out to separate documentation)."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "pricing.model is set to \"subscription\" but the dossier's own cautions state Substance 3D Designer is only sold inside the Substance 3D Collection bundle, never standalone: this matches the schema's \"bundle_only\" model definition better and should be double-checked on the official page.",
-    "The catalogue's existing pricingText for this tool mentions a cheaper \"Texturing\" plan at $24.99/month ($249.88/year, bundled with Painter) that is not captured anywhere in this dossier's pricing.plans (only Collection at $59.99 and Collection for Teams at $119.99 are listed): worth re-checking the official pricing page for a Designer+Painter-only tier."
-  ],
+  "reviewNotes": [],
   "status": "needs_review",
   "completedLocallyOn": "2026-10-01",
-  "hold": "sold only inside the Substance 3D Collection (bundle_only) but modelled as subscription"
+  "priceCheckedOn": "2026-10-02"
 }
