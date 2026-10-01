@@ -3,7 +3,8 @@
   "slug": "spotify-for-podcasters",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Spotify for Creators",
     "vendor": "Spotify AB",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Free hosting and distribution tools for podcast creators, with optional monetization through the Spotify Partner Program", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Free hosting and distribution tools for podcast creators, with optional monetization through the Spotify Partner Program", "fr": "Outils gratuits d'hébergement et de distribution pour les créateurs de podcast, avec une monétisation optionnelle via le Spotify Partner Program" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,41 +35,93 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free hosting and distribution tools for podcast creators, with optional monetization through the Spotify Partner Program", "fr": null }],
+        "keyLimits": [{ "en": "Free hosting and distribution tools for podcast creators, with optional monetization through the Spotify Partner Program", "fr": "Outils gratuits d'hébergement et de distribution pour les créateurs de podcast, avec une monétisation optionnelle via le Spotify Partner Program" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "No paid subscription tier is advertised on the homepage; monetization is revenue-share based through the Spotify Partner Program rather than a flat plan price.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No paid subscription tier is advertised on the homepage; monetization is revenue-share based through the Spotify Partner Program rather than a flat plan price.", "fr": "Aucun palier d'abonnement payant n'est annoncé sur la page d'accueil ; la monétisation se fait par partage de revenus via le Spotify Partner Program plutôt que par un prix de plan fixe.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Upload and distribute audio and video podcast episodes to Spotify listeners.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Audience engagement tools including clip creation and comment management.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in analytics for tracking episode performance and audience growth.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Monetization options through the Spotify Partner Program for eligible creators.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Upload and distribute audio and video podcast episodes to Spotify listeners.", "fr": "Mettre en ligne et distribuer des épisodes de podcast audio et vidéo aux auditeurs de Spotify.", "sourceIds": ["s1"] },
+      { "en": "Audience engagement tools including clip creation and comment management.", "fr": "Outils d'engagement d'audience incluant la création de clips et la gestion des commentaires.", "sourceIds": ["s1"] },
+      { "en": "Built-in analytics for tracking episode performance and audience growth.", "fr": "Analytics intégrées pour suivre la performance des épisodes et la croissance de l'audience.", "sourceIds": ["s1"] },
+      { "en": "Monetization options through the Spotify Partner Program for eligible creators.", "fr": "Options de monétisation via le Spotify Partner Program pour les créateurs éligibles.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No advanced/paid tier is documented; deeper analytics or team collaboration features beyond the free toolset are not detailed on the homepage.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Distribution and growth tools are centered on the Spotify platform itself; cross-platform (Apple Podcasts, etc.) distribution mechanics are not detailed on this page.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No advanced/paid tier is documented; deeper analytics or team collaboration features beyond the free toolset are not detailed on the homepage.", "fr": "Aucun palier avancé/payant n'est documenté ; des analytics plus poussées ou des fonctions de collaboration d'équipe au-delà de la boîte à outils gratuite ne sont pas détaillées sur la page d'accueil.", "sourceIds": ["s1"] },
+      { "en": "Distribution and growth tools are centered on the Spotify platform itself; cross-platform (Apple Podcasts, etc.) distribution mechanics are not detailed on this page.", "fr": "Les outils de distribution et de croissance sont centrés sur la plateforme Spotify elle-même ; la mécanique de distribution multiplateforme (Apple Podcasts, etc.) n'est pas détaillée sur cette page.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Megaphone", "slug": null, "sourceIds": ["s1"] }
     ],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Solo podcast creators who want free hosting, distribution and basic analytics in one place, with optional revenue-share monetization.",
+      "fr": "Créateurs de podcast solos qui veulent l'hébergement, la distribution et des analytics basiques gratuits en un seul endroit, avec une monétisation optionnelle par partage de revenus."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Podcast distribution: upload an audio or video episode once and distribute it to Spotify listeners with built-in analytics.", "fr": "Distribution de podcast : mettre en ligne un épisode audio ou vidéo une fois et le distribuer aux auditeurs de Spotify avec des analytics intégrées." },
+    { "en": "Audience engagement: create clips from an episode and manage listener comments to grow the show's audience.", "fr": "Engagement d'audience : créer des clips à partir d'un épisode et gérer les commentaires des auditeurs pour développer l'audience de l'émission." }
+  ],
   "alternatives": [
-    { "slug": "buzzsprout", "reason": { "en": "Dedicated podcast hosting platform with cross-platform distribution, a common alternative for creators wanting a host independent of one listening app.", "fr": null } },
-    { "slug": "podbean", "reason": { "en": "Podcast hosting and monetization competitor covering the same creator workflow.", "fr": null } },
-    { "slug": "acast", "reason": { "en": "Podcast hosting and ad monetization network competing for the same creator audience.", "fr": null } }
+    { "slug": "buzzsprout", "reason": { "en": "Dedicated podcast hosting platform with cross-platform distribution, a common alternative for creators wanting a host independent of one listening app.", "fr": "Plateforme d'hébergement de podcast dédiée avec distribution multiplateforme, une alternative courante pour les créateurs qui veulent un hébergeur indépendant d'une seule appli d'écoute." } },
+    { "slug": "podbean", "reason": { "en": "Podcast hosting and monetization competitor covering the same creator workflow.", "fr": "Concurrent d'hébergement et de monétisation de podcast couvrant le même workflow créateur." } },
+    { "slug": "acast", "reason": { "en": "Podcast hosting and ad monetization network competing for the same creator audience.", "fr": "Réseau d'hébergement de podcast et de monétisation publicitaire concurrent pour la même audience de créateurs." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Hosting, distribution, analytics and monetization through the Partner Program are all free, with no flat subscription fee replacing a paid host.", "fr": "L'hébergement, la distribution, les analytics et la monétisation via le Partner Program sont tous gratuits, sans frais d'abonnement fixe à la place d'un hébergeur payant.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or first-episode-published effort is stated in the collected source.", "fr": "Note neutre : aucun temps de mise en place ni effort pour un premier épisode publié n'est précisé dans la source relevée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Episode upload, clip creation, comment management and performance analytics are all delivered natively per the source, with no third-party tool mentioned as a workaround.", "fr": "La mise en ligne d'épisodes, la création de clips, la gestion des commentaires et les analytics de performance sont tous livrés nativement selon la source, sans outil tiers mentionné en contournement.", "sourceIds": ["s1"] },
+      "puissance": { "en": "There is no paid tier with deeper analytics or team features, and cross-platform distribution mechanics beyond Spotify are not detailed, so the capability ceiling is modest compared to dedicated hosting platforms.", "fr": "Il n'existe pas de palier payant avec des analytics plus poussées ou des fonctions d'équipe, et la mécanique de distribution multiplateforme au-delà de Spotify n'est pas détaillée, donc le plafond de capacité est modeste face aux plateformes d'hébergement dédiées.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: episode export and portability to another host are not covered by the collected sources.", "fr": "Note neutre : l'export des épisodes et la portabilité vers un autre hébergeur ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Podcast hosting", "fr": "Hébergement podcast" },
+    "shortDescription": { "en": "Spotify for Creators is a free hosting and distribution tool for audio and video podcasts, with built-in analytics and Partner Program monetization.", "fr": "Spotify for Creators est un outil gratuit d'hébergement et de distribution pour podcasts audio et vidéo, avec analytics intégrées et monétisation via le Partner Program." },
+    "longDescription": {
+      "en": "Spotify for Creators (formerly Spotify for Podcasters) lets you upload and distribute audio and video podcast episodes to Spotify listeners, with audience-engagement tools like clip creation and comment management, plus built-in analytics on episode performance and audience growth.\n\nEverything is free, with no advertised paid subscription tier; eligible creators can monetize through the revenue-share-based Spotify Partner Program instead. It suits a solo podcaster who wants hosting, distribution and basic analytics in one place without a flat monthly fee.",
+      "fr": "Spotify for Creators (anciennement Spotify for Podcasters) permet de mettre en ligne et de distribuer des épisodes de podcast audio et vidéo aux auditeurs de Spotify, avec des outils d'engagement d'audience comme la création de clips et la gestion des commentaires, plus des analytics intégrées sur la performance des épisodes et la croissance de l'audience.\n\nTout est gratuit, sans palier d'abonnement payant annoncé ; les créateurs éligibles peuvent monétiser via le Spotify Partner Program, basé sur un partage de revenus. L'outil convient à un podcasteur solo qui veut l'hébergement, la distribution et des analytics basiques en un seul endroit, sans frais mensuel fixe."
+    },
+    "pros": [
+      { "en": "Hosting, distribution and analytics are entirely free, with no paid tier gating the core workflow.", "fr": "L'hébergement, la distribution et les analytics sont entièrement gratuits, sans palier payant qui verrouille le workflow principal." },
+      { "en": "Both audio and video podcasts are supported from the same account after the Spotify for Creators rebrand.", "fr": "Les podcasts audio et vidéo sont tous deux pris en charge depuis le même compte depuis le rebranding Spotify for Creators." }
+    ],
+    "cons": [
+      { "en": "No paid tier exists for deeper analytics or team collaboration beyond the free toolset.", "fr": "Aucun palier payant n'existe pour des analytics plus poussées ou une collaboration d'équipe au-delà de la boîte à outils gratuite." },
+      { "en": "Distribution and growth tools center on Spotify itself; cross-platform distribution mechanics are not detailed on the homepage.", "fr": "Les outils de distribution et de croissance se concentrent sur Spotify lui-même ; la mécanique de distribution multiplateforme n'est pas détaillée sur la page d'accueil." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want free podcast hosting, distribution and basic analytics with built-in monetization, without paying a flat monthly fee.", "fr": "Tu veux l'hébergement, la distribution et des analytics basiques de podcast gratuits avec une monétisation intégrée, sans payer de frais mensuel fixe." },
+      "avoidIf": { "en": "You need advanced analytics, team collaboration or detailed cross-platform distribution control that a paid, dedicated host might offer.", "fr": "Tu as besoin d'analytics avancées, de collaboration d'équipe ou d'un contrôle détaillé de la distribution multiplateforme qu'un hébergeur payant dédié pourrait offrir." },
+      "threshold": { "en": "There is no paid plan to weigh against a threshold; it is worth using as long as the free hosting and Partner Program monetization meet your needs.", "fr": "Il n'y a pas de plan payant à comparer à un seuil ; l'outil vaut le coup tant que l'hébergement gratuit et la monétisation via le Partner Program répondent à tes besoins." }
+    }
+  },
   "unknowns": [
     "Monetization eligibility criteria (region, audience size) for the Spotify Partner Program were not detailed on the homepage in this session.",
     "Whether any paid/pro tier exists for larger creators or networks was not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Le produit s'appelle maintenant Spotify for Creators (podcasters.spotify.com redirige vers creators.spotify.com) ; le slug du catalogue (spotify-for-podcasters) reste l'ancien nom, a signaler pour une eventuelle mise a jour du nom affiche ou du slug."
+  ]
 }

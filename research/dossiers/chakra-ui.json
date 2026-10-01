@@ -3,7 +3,8 @@
   "slug": "chakra-ui",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Chakra UI",
     "vendor": "Chakra UI open source project",
@@ -113,6 +114,52 @@
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Free and open source with no license cost, while delivering accessible component patterns a team would otherwise have to build itself.", "fr": "Gratuit et open source sans coût de licence, tout en livrant des patterns de composants accessibles qu'une équipe devrait sinon construire elle-même.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time needed to reach a first useful screen is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir un premier écran utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Pre-built components ship with focus styling and animations already handled, delivering accessible UI as described without extra tooling.", "fr": "Les composants prêts à l'emploi intègrent déjà le style de focus et les animations, livrant une UI accessible comme annoncé sans outillage supplémentaire.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers a broad set of components plus design-token and theming tooling, comparable in scope to other major React component libraries.", "fr": "Couvre un large ensemble de composants ainsi que des outils de tokens et de thématisation, un périmètre comparable aux autres grandes bibliothèques de composants React.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: migrating away from Chakra's component and token system if the project switches library is not described in the collected sources.", "fr": "Note neutre : la migration hors du système de composants et de tokens de Chakra en cas de changement de bibliothèque n'est pas décrite dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer building a React product UI who wants accessible, pre-built components instead of building a design system from scratch.", "fr": "Un développeur qui construit une UI React et veut des composants accessibles prêts à l'emploi plutôt que de construire un design system à partir de zéro." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Admin UI: build an accessible dashboard with pre-built components (tabs, menus, switches) instead of styling each control from scratch.", "fr": "UI d'administration : construire un tableau de bord accessible avec des composants prêts à l'emploi (onglets, menus, switches) au lieu de styliser chaque contrôle à la main." },
+    { "en": "Design consistency: apply semantic design tokens and recipe-based variants to keep components consistent across light and dark mode.", "fr": "Cohérence visuelle : appliquer des tokens sémantiques et des variantes par recipes pour garder des composants cohérents en mode clair et sombre." }
+  ],
+  "editorial": {
+    "tagline": { "en": "React component library", "fr": "Bibliothèque de composants React" },
+    "shortDescription": { "en": "Chakra UI is a free, open-source React component library with accessible pre-built components, design tokens and built-in dark mode.", "fr": "Chakra UI est une bibliothèque de composants React gratuite et open source, avec composants accessibles, tokens de design et mode sombre intégré." },
+    "longDescription": {
+      "en": "Chakra UI provides accessible, pre-built React components (sliders, tabs, menus, switches, pin inputs) with built-in focus styling and animations, so a team doesn't style every control from scratch. Design system tooling includes semantic design tokens, centralized typography and recipe-based component variants, with dark mode built in.\n\nIt's free and open source with no paid tier, but works with React only, so it isn't an option for Vue, Svelte or other frameworks. Fully customizing the design means adopting Chakra's token and theme system, which adds a learning curve compared to plain CSS. It suits a developer building a product UI who wants accessible defaults without building a design system from scratch.",
+      "fr": "Chakra UI fournit des composants React accessibles et prêts à l'emploi (sliders, onglets, menus, switches, pin inputs) avec style de focus et animations intégrés, pour éviter de styliser chaque contrôle à la main. Les outils de design system incluent des tokens sémantiques, une typographie centralisée et des variantes via recipes, avec un mode sombre intégré.\n\nC'est gratuit et open source, sans palier payant, mais réservé à React. Personnaliser pleinement le design suppose d'adopter le système de tokens de Chakra, ce qui ajoute une courbe d'apprentissage par rapport au CSS simple. L'outil convient à un développeur qui construit une UI produit et veut des valeurs par défaut accessibles sans bâtir un design system de zéro."
+    },
+    "pros": [
+      { "en": "Free and open source, with accessible components and built-in focus styling out of the box.", "fr": "Gratuit et open source, avec des composants accessibles et un style de focus intégré dès le départ." },
+      { "en": "Design tokens, centralized typography and recipe-based variants make it easier to keep a consistent design system.", "fr": "Les tokens de design, la typographie centralisée et les variantes via recipes facilitent un design system cohérent." }
+    ],
+    "cons": [
+      { "en": "React only; not usable with Vue, Svelte or other frameworks.", "fr": "Réservé à React ; non utilisable avec Vue, Svelte ou d'autres frameworks." },
+      { "en": "Fully customizing the design means adopting Chakra's token/theme system, adding a learning curve compared to plain CSS.", "fr": "Personnaliser pleinement le design suppose d'adopter le système de tokens/thèmes de Chakra, ce qui ajoute une courbe d'apprentissage par rapport au CSS simple." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're building a React UI and want accessible, pre-built components without paying for a license.", "fr": "Tu construis une UI React et tu veux des composants accessibles prêts à l'emploi sans payer de licence." },
+      "avoidIf": { "en": "Your stack isn't React, or you'd rather hand-write CSS than adopt a token system.", "fr": "Ton stack n'est pas React, ou tu préfères écrire le CSS toi-même plutôt qu'adopter un système de tokens." },
+      "threshold": { "en": "There's no direct cost since it's free and open source; the real cost is the time to learn the token/theme system, to weigh against the speed gained from ready-made accessible components.", "fr": "Il n'y a pas de coût direct puisque c'est gratuit et open source ; le vrai coût est le temps d'apprentissage du système de tokens/thèmes, à mettre en balance avec la vitesse gagnée grâce aux composants accessibles prêts à l'emploi." }
+    }
+  },
   "unknowns": [
     "Exact open-source license (MIT) not explicitly re-confirmed on the fetched homepage."
   ],

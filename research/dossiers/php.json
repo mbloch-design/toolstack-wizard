@@ -3,7 +3,7 @@
   "slug": "php",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "PHP",
     "vendor": "The PHP Foundation / PHP Group (open-source)",
@@ -110,26 +110,133 @@
       "slug": "python",
       "reason": {
         "en": "Alternative general-purpose server-side language used heavily for web backends.",
-        "fr": null
+        "fr": "Langage alternatif généraliste côté serveur, très utilisé pour les backends web."
       }
     },
     {
-      "slug": "wordpress",
+      "slug": "node-js",
       "reason": {
-        "en": "The dominant CMS built on PHP; often the practical reason teams touch PHP at all.",
-        "fr": null
+        "en": "Major alternative server-side runtime (JavaScript) commonly compared to PHP for web backends.",
+        "fr": "Alternative majeure comme environnement d'exécution serveur (JavaScript), souvent comparée à PHP pour les backends web."
       }
     }
   ],
-  "missingAlternatives": [
-    {
-      "name": "Node.js",
-      "officialUrl": "https://nodejs.org",
-      "reason": "Major alternative server-side runtime (JavaScript) commonly compared to PHP for web backends, not present in the catalogue."
-    }
-  ],
+  "missingAlternatives": [],
   "unknowns": [
     "No pricing page exists since PHP is a free open-source language; no unknowns beyond confirming the current stable version list stays accurate over time."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer building or maintaining a web backend, or already working inside a PHP-based CMS like WordPress.",
+      "fr": "Un développeur qui construit ou maintient un backend web, ou travaille déjà dans un CMS basé sur PHP comme WordPress."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Backend web development: write a server-side web app (an online store, a CMS) on a free, open-source language with wide hosting support.",
+      "fr": "Développement backend : écrire une application web côté serveur (boutique en ligne, CMS) sur un langage gratuit et open source largement supporté par les hébergeurs."
+    },
+    {
+      "en": "Running existing ecosystems: deploy or extend software built on PHP, like WordPress or WooCommerce, which require a PHP runtime underneath.",
+      "fr": "Faire fonctionner un écosystème existant : déployer ou étendre un logiciel construit sur PHP, comme WordPress ou WooCommerce, qui nécessite un environnement PHP en dessous."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Fully free with no licensing cost, and powers a large existing ecosystem (WordPress, WooCommerce), though hosting and infrastructure costs are separate.",
+        "fr": "Entièrement gratuit sans coût de licence, et fait tourner un large écosystème existant (WordPress, WooCommerce), même si l'hébergement et l'infrastructure restent séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "As a language rather than a hosted product, a first useful result depends on separately chosen hosting, not a single setup step.",
+        "fr": "En tant que langage et non produit hébergé, un premier résultat utile dépend d'un hébergement choisi à part, et non d'une seule étape de configuration.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Actively maintained with regular security and bug-fix releases across multiple supported branches, delivering on its role as a maintained web language.",
+        "fr": "Activement maintenu avec des versions régulières de sécurité et de correctifs sur plusieurs branches supportées, tenant son rôle de langage web entretenu.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "General-purpose and widely used for web backends, powering major platforms like WordPress and WooCommerce at scale.",
+        "fr": "Langage généraliste largement utilisé pour les backends web, faisant tourner à grande échelle des plateformes majeures comme WordPress et WooCommerce.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: as a language rather than a hosted service, portability depends entirely on the separately chosen hosting and codebase, which the collected sources do not cover.",
+        "fr": "Note neutre : en tant que langage et non service hébergé, la portabilité dépend entièrement de l'hébergement et du code choisis séparément, ce que les sources relevées ne couvrent pas.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Server-side scripting language",
+      "fr": "Langage de script serveur"
+    },
+    "shortDescription": {
+      "en": "PHP is a free, open-source server-side scripting language for web development, widely used to build and run platforms like WordPress and WooCommerce.",
+      "fr": "PHP est un langage de script serveur gratuit et open source pour le web, utilisé pour créer des plateformes comme WordPress et WooCommerce."
+    },
+    "longDescription": {
+      "en": "PHP is a free, open-source, general-purpose server-side scripting language built for web development; it still powers major platforms like WordPress and WooCommerce. It's actively maintained with regular security and bug-fix releases across several supported version branches.\n\nThere's no license cost since it's a language, not a hosted product: costs come from the hosting and infrastructure you choose separately, and from the ongoing work of upgrading to a supported version branch as older ones are deprecated. It fits developers building or maintaining web backends, especially anyone already working inside a PHP-based CMS.",
+      "fr": "PHP est un langage de script serveur généraliste, gratuit et open source, conçu pour le web ; il fait encore tourner des plateformes majeures comme WordPress et WooCommerce. Il est activement maintenu avec des versions régulières de sécurité et de correctifs sur plusieurs branches supportées.\n\nIl n'y a aucun coût de licence puisque c'est un langage et non un produit hébergé : les coûts viennent de l'hébergement et de l'infrastructure choisis séparément, ainsi que du travail continu de mise à niveau vers une branche supportée à mesure que les anciennes sont abandonnées. L'outil convient aux développeurs qui construisent ou maintiennent des backends web, surtout ceux déjà dans un CMS basé sur PHP."
+    },
+    "pros": [
+      {
+        "en": "Free and open source, with no licensing cost for the language itself.",
+        "fr": "Gratuit et open source, sans coût de licence pour le langage lui-même."
+      },
+      {
+        "en": "Wide hosting support and a large existing ecosystem (WordPress, WooCommerce) to build on.",
+        "fr": "Large support d'hébergement et un vaste écosystème existant (WordPress, WooCommerce) sur lequel construire."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No built-in hosting, billing or managed infrastructure; these have to be sourced separately.",
+        "fr": "Aucun hébergement, facturation ou infrastructure gérée intégrés ; tout cela doit être trouvé séparément."
+      },
+      {
+        "en": "Staying on a supported, secure version branch requires ongoing manual upgrade work.",
+        "fr": "Rester sur une branche de version supportée et sécurisée demande un travail de mise à niveau manuel et continu."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're building or maintaining a web backend, or already working inside a PHP-based CMS like WordPress.",
+        "fr": "Tu construis ou maintiens un backend web, ou travailles déjà dans un CMS basé sur PHP comme WordPress."
+      },
+      "avoidIf": {
+        "en": "You want a single managed platform instead of assembling hosting and infrastructure yourself.",
+        "fr": "Tu veux une plateforme gérée unique plutôt que d'assembler toi-même hébergement et infrastructure."
+      },
+      "threshold": {
+        "en": "There's no paid tier to compare since PHP is free and open source; the real cost is the hosting you choose separately.",
+        "fr": "Il n'y a pas de palier payant à comparer puisque PHP est gratuit et open source ; le vrai coût est celui de l'hébergement choisi séparément."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01"
 }

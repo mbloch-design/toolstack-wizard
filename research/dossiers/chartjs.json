@@ -3,7 +3,7 @@
   "slug": "chartjs",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Chart.js",
     "vendor": "Chart.js open source project",
@@ -115,5 +115,118 @@
   "unknowns": [
     "Exact open-source license (MIT) not explicitly re-confirmed on the fetched homepage."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who need to add charts to a web app without adopting a heavier visualization framework or a paid license.",
+      "fr": "Développeurs qui doivent ajouter des graphiques à une application web sans adopter un framework de visualisation plus lourd ni une licence payante."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Dashboard: render bar, line or pie charts on a web dashboard with animations and responsive resizing out of the box.",
+      "fr": "Tableau de bord : afficher des graphiques en barres, lignes ou camembert sur un dashboard web avec animations et redimensionnement réactif prêts à l'emploi."
+    },
+    {
+      "en": "Large datasets: use the decimation plugin to keep a chart readable and performant with 1M+ data points.",
+      "fr": "Gros jeux de données : utiliser le plugin de décimation pour garder un graphique lisible et performant avec plus d'1 million de points."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Being free and open source removes any licensing cost, so the value is clearly favorable for any project needing standard charts, with no cheaper equivalent to weigh against.",
+        "fr": "Étant gratuit et open source, aucun coût de licence n'entre en jeu : la valeur est clairement favorable pour tout projet ayant besoin de graphiques standards, sans équivalent moins cher à comparer.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Renders 8 chart types out of the box with tree-shaking to register only needed components, which points to a usable first chart without much setup.",
+        "fr": "Génère 8 types de graphiques prêts à l'emploi avec un tree-shaking pour n'enregistrer que les composants nécessaires, ce qui suppose un premier graphique utilisable sans grosse configuration.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers canvas-based charting with animations, responsive resizing and mixed chart types as announced, with no official React/Vue components, which pushes framework users to separate community wrappers.",
+        "fr": "Tient sa promesse de graphiques sur Canvas avec animations, redimensionnement réactif et types mixtes, mais sans composants React/Vue officiels, ce qui pousse les utilisateurs de ces frameworks vers des wrappers communautaires séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers 8 chart types plus mixed charts and a decimation plugin for very large datasets, but Canvas-based rendering limits fine-grained DOM styling compared to SVG-based libraries.",
+        "fr": "Couvre 8 types de graphiques plus les graphiques mixtes et un plugin de décimation pour de très gros jeux de données, mais le rendu Canvas limite le style fin au niveau du DOM par rapport aux bibliothèques SVG.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "As an MIT-style open-source library with no account or hosted data, there is no lock-in: the charting code and configuration stay fully portable to another project.",
+        "fr": "En tant que bibliothèque open source sans compte ni donnée hébergée, il n'y a pas d'enfermement : le code de graphique et sa configuration restent entièrement portables vers un autre projet.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "JavaScript charting library",
+      "fr": "Bibliothèque de graphiques JS"
+    },
+    "shortDescription": {
+      "en": "Chart.js is a free, open-source JavaScript library that renders 8 chart types on HTML5 Canvas with animations and responsive resizing.",
+      "fr": "Chart.js est une bibliothèque JavaScript gratuite et open source qui génère 8 types de graphiques sur Canvas HTML5, avec animations et redimensionnement réactif."
+    },
+    "longDescription": {
+      "en": "Chart.js renders 8 chart types (bar, line, pie, radar and more) on HTML5 Canvas, with animations, responsive resizing, mixed chart types, tree-shaking to register only needed components, and a decimation plugin for datasets with over 1 million points.\n\nIt is free and open source, with no pricing tiers. There are no official React or Vue components bundled, so framework users rely on separate community wrapper packages. It fits a developer who needs standard, performant charts in a web app without adopting a heavier or commercial visualization framework.",
+      "fr": "Chart.js génère 8 types de graphiques (barres, lignes, camembert, radar et plus) sur Canvas HTML5, avec animations, redimensionnement réactif, graphiques mixtes, tree-shaking pour n'enregistrer que les composants nécessaires, et un plugin de décimation pour les jeux de données de plus d'1 million de points.\n\nLa bibliothèque est gratuite et open source, sans palier tarifaire. Aucun composant React ou Vue officiel n'est inclus : les utilisateurs de ces frameworks dépendent de paquets wrapper communautaires séparés. Elle convient à un développeur qui a besoin de graphiques standards et performants dans une application web, sans adopter un framework de visualisation plus lourd ou payant."
+    },
+    "pros": [
+      {
+        "en": "Free and open source, with no license cost at any scale.",
+        "fr": "Gratuite et open source, sans coût de licence à aucune échelle."
+      },
+      {
+        "en": "Tree-shaking and a decimation plugin keep bundle size and performance manageable on large datasets.",
+        "fr": "Tree-shaking et plugin de décimation permettent de garder une taille de bundle et une performance maîtrisées sur de gros jeux de données."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No official React or Vue components; framework integration relies on community packages.",
+        "fr": "Pas de composants React ou Vue officiels ; l'intégration aux frameworks repose sur des paquets communautaires."
+      },
+      {
+        "en": "Canvas-based rendering limits fine-grained DOM styling of individual chart elements compared to SVG libraries.",
+        "fr": "Le rendu Canvas limite le style fin au niveau du DOM sur chaque élément du graphique, par rapport aux bibliothèques SVG."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "A developer needs standard, performant charts in a web app for free, without a commercial visualization license.",
+        "fr": "Un développeur a besoin de graphiques standards et performants dans une application web, gratuitement, sans licence de visualisation payante."
+      },
+      "avoidIf": {
+        "en": "The project is built entirely in React or Vue and needs official first-party chart components rather than a community wrapper.",
+        "fr": "Le projet est entièrement construit en React ou Vue et a besoin de composants de graphique officiels plutôt que d'un wrapper communautaire."
+      },
+      "threshold": {
+        "en": "No cost threshold applies: Chart.js is free and open source at any scale.",
+        "fr": "Aucun seuil de coût ne s'applique : Chart.js est gratuite et open source à toute échelle."
+      }
+    }
+  }
 }

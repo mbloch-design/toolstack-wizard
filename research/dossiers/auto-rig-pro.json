@@ -3,7 +3,7 @@
   "slug": "auto-rig-pro",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Auto-Rig Pro",
     "vendor": "Artell (independent developer, distributed via Superhive Market / Blender Market)",
@@ -52,7 +52,7 @@
         "keyLimits": [
           {
             "en": "Core rigging functionality only, includes 12 months of support and updates.",
-            "fr": null
+            "fr": "Fonctionnalités de rig de base uniquement, inclut 12 mois de support et de mises à jour."
           }
         ],
         "sourceIds": [
@@ -73,7 +73,7 @@
         "keyLimits": [
           {
             "en": "Core plus Smart tool (automatic biped bone placement), FBX/GLTF export for game engines, and animation retargeting (Remap tool); includes 12 months of support and updates.",
-            "fr": null
+            "fr": "Base plus l'outil Smart (placement automatique des os pour bipeds), export FBX/GLTF pour moteurs de jeu, et retargeting d'animation (outil Remap) ; inclut 12 mois de support et de mises à jour."
           }
         ],
         "sourceIds": [
@@ -94,7 +94,7 @@
         "keyLimits": [
           {
             "en": "10-seat team license bundle.",
-            "fr": null
+            "fr": "Licence équipe pour 10 sièges."
           }
         ],
         "sourceIds": [
@@ -115,7 +115,7 @@
         "keyLimits": [
           {
             "en": "20-seat team license bundle.",
-            "fr": null
+            "fr": "Licence équipe pour 20 sièges."
           }
         ],
         "sourceIds": [
@@ -127,7 +127,7 @@
     "addOns": [
       {
         "en": "Support/update extension beyond the initial 12 months costs 25% of the product price annually.",
-        "fr": null,
+        "fr": "Prolonger le support/les mises à jour au-delà des 12 premiers mois coûte 25 % du prix du produit par an.",
         "sourceIds": [
           "s1"
         ]
@@ -136,7 +136,7 @@
     "cautions": [
       {
         "en": "Perpetual license usable across Blender 2.93 to 5.2 at time of check, but support and updates beyond 12 months require an additional paid extension.",
-        "fr": null,
+        "fr": "Licence perpétuelle utilisable de Blender 2.93 à 5.2 au moment du relevé, mais le support et les mises à jour au-delà de 12 mois nécessitent une extension payante.",
         "sourceIds": [
           "s1"
         ]
@@ -147,21 +147,21 @@
     "capabilities": [
       {
         "en": "Automatic bone placement solver for biped humanoid characters, generating an articulated rig from mesh recognition.",
-        "fr": null,
+        "fr": "Solveur de placement automatique des os pour les personnages humanoïdes bipeds, générant un rig articulé par reconnaissance du maillage.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Modular rig customization: fingers, toes, ears, tail and spine variations, plus advanced facial rigging with automated setup.",
-        "fr": null,
+        "fr": "Personnalisation modulaire du rig : doigts, orteils, oreilles, variations de queue et de colonne, plus un rig facial avancé avec configuration automatisée.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Animation retargeting (Remap tool) and FBX/GLTF export presets for Unity, Unreal Engine, and Godot.",
-        "fr": null,
+        "fr": "Retargeting d'animation (outil Remap) et préréglages d'export FBX/GLTF pour Unity, Unreal Engine et Godot.",
         "sourceIds": [
           "s1"
         ]
@@ -170,14 +170,14 @@
     "limitations": [
       {
         "en": "Automatic Smart placement works primarily for humanoid bipeds; quadrupeds and other creature types require manual rig setup.",
-        "fr": null,
+        "fr": "Le placement automatique Smart fonctionne surtout pour les bipeds humanoïdes ; les quadrupèdes et autres créatures nécessitent une configuration manuelle du rig.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Automatic skinning results depend on water-tight mesh geometry, which not all source models provide.",
-        "fr": null,
+        "fr": "Les résultats du skinning automatique dépendent d'une géométrie de maillage étanche, que tous les modèles source n'ont pas.",
         "sourceIds": [
           "s1"
         ]
@@ -188,15 +188,7 @@
       "web"
     ]
   },
-  "alternatives": [
-    {
-      "slug": "blender",
-      "reason": {
-        "en": "Auto-Rig Pro is an add-on built specifically on top of Blender's native rigging tools.",
-        "fr": null
-      }
-    }
-  ],
+  "alternatives": [],
   "missingAlternatives": [
     {
       "name": "Mixamo",
@@ -207,5 +199,122 @@
   "unknowns": [
     "No stated region/currency variation was found; prices are assumed USD as displayed on the Superhive Market listing."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "A solo 3D artist or indie game developer rigging humanoid characters in Blender who wants automatic bone placement instead of manual setup.",
+      "fr": "Un artiste 3D solo ou un développeur de jeu indépendant qui rigue des personnages humanoïdes dans Blender et veut un placement automatique des os plutôt qu'une configuration manuelle."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Character rigging: auto-place bones on a humanoid biped mesh with the Smart tool instead of placing every joint by hand.",
+      "fr": "Rig de personnage : placer automatiquement les os sur un maillage humanoïde biped avec l'outil Smart plutôt qu'à la main, articulation par articulation."
+    },
+    {
+      "en": "Game export: retarget animations with the Remap tool and export FBX/GLTF rigs ready for Unity, Unreal or Godot.",
+      "fr": "Export jeu vidéo : retargeter des animations avec l'outil Remap et exporter des rigs FBX/GLTF prêts pour Unity, Unreal ou Godot."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A one-time $25-50 price with 12 months of support included is low compared to a subscription rigging tool, though continued support after year one adds a recurring 25% fee.",
+        "fr": "Un prix unique de 25 à 50 $ avec 12 mois de support inclus reste bas face à un outil de rig par abonnement, même si continuer le support après la première année ajoute des frais récurrents de 25 %.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Automatic Smart placement speeds up biped rigging, but results depend on water-tight mesh geometry that not all source models provide.",
+        "fr": "Le placement automatique Smart accélère le rig de personnages bipeds, mais les résultats dépendent d'une géométrie de maillage étanche que tous les modèles source n'ont pas.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers automatic bone placement, animation retargeting and game-engine export as advertised for humanoid bipeds.",
+        "fr": "Tient sa promesse de placement automatique des os, de retargeting d'animation et d'export pour moteurs de jeu sur les personnages humanoïdes bipeds.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers humanoid biped rigging well with modular facial/finger/tail setups, but quadrupeds and other creature types fall back to manual setup.",
+        "fr": "Couvre bien le rig de personnages bipeds avec des configurations modulaires (visage, doigts, queue), mais les quadrupèdes et autres créatures retombent sur une configuration manuelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: rig and data portability outside Blender beyond the stated FBX/GLTF export presets is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité du rig et des données hors de Blender, au-delà des préréglages d'export FBX/GLTF mentionnés, ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Blender auto-rigging",
+      "fr": "Rig automatique Blender"
+    },
+    "shortDescription": {
+      "en": "Auto-Rig Pro auto-places bones on humanoid Blender characters and exports game-ready rigs, as a one-time $25 to $50 purchase per developer.",
+      "fr": "Auto-Rig Pro place automatiquement les os sur des personnages Blender humanoïdes et exporte des rigs jeu vidéo, en achat unique de 25 à 50 $."
+    },
+    "longDescription": {
+      "en": "Auto-Rig Pro adds an automatic bone-placement solver for biped humanoid characters inside Blender, plus modular rigging for fingers, tails and faces, animation retargeting (Remap) and FBX/GLTF export presets for Unity, Unreal and Godot. The Smart auto-placement mainly targets humanoid bipeds; quadrupeds and creatures still need manual rig setup, and automatic skinning depends on clean, water-tight mesh geometry.\n\nIt's a one-time purchase: $25 for the Lite version (core rigging) or $50 for Full (adds Smart placement, export and Remap), with 12 months of support and updates included; extending support afterward costs 25% of the price per year. Team licenses for 10 or 20 seats are also available.",
+      "fr": "Auto-Rig Pro ajoute un solveur de placement automatique des os pour les bipeds humanoïdes dans Blender, plus un rig modulaire (doigts, queue, visage), un retargeting d'animation (Remap) et des préréglages d'export FBX/GLTF pour Unity, Unreal et Godot. Le placement Smart vise surtout les bipeds humanoïdes ; les quadrupèdes nécessitent encore une configuration manuelle, et le skinning automatique dépend d'une géométrie propre et étanche.\n\nC'est un achat unique : 25 $ pour Lite (rig de base) ou 50 $ pour Full (ajoute Smart, export et Remap), avec 12 mois de support inclus ; prolonger le support ensuite coûte 25 % du prix par an. Des licences équipe de 10 ou 20 sièges existent aussi."
+    },
+    "pros": [
+      {
+        "en": "One-time purchase instead of a subscription, with 12 months of support and updates included.",
+        "fr": "Achat unique plutôt qu'un abonnement, avec 12 mois de support et de mises à jour inclus."
+      },
+      {
+        "en": "Direct FBX/GLTF export presets for Unity, Unreal and Godot save a manual export setup.",
+        "fr": "Des préréglages d'export FBX/GLTF directs pour Unity, Unreal et Godot évitent une configuration d'export manuelle."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Automatic placement is built for humanoid bipeds; quadrupeds and other creatures need manual rigging.",
+        "fr": "Le placement automatique est conçu pour les bipeds humanoïdes ; les quadrupèdes et autres créatures nécessitent un rig manuel."
+      },
+      {
+        "en": "Support and updates beyond the first 12 months cost an extra 25% of the price every year.",
+        "fr": "Le support et les mises à jour au-delà des 12 premiers mois coûtent 25 % du prix en plus chaque année."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You rig humanoid characters in Blender regularly and want automatic bone placement plus game-engine export presets.",
+        "fr": "Tu rigues régulièrement des personnages humanoïdes dans Blender et veux un placement automatique des os plus des préréglages d'export pour moteur de jeu."
+      },
+      "avoidIf": {
+        "en": "You mostly rig quadrupeds or other creatures, since the automatic Smart placement targets humanoid bipeds.",
+        "fr": "Tu rigues surtout des quadrupèdes ou d'autres créatures, car le placement automatique Smart vise les bipeds humanoïdes."
+      },
+      "threshold": {
+        "en": "The $50 Full version is the entry point for automatic placement, retargeting and game export; the $25 Lite version only covers core manual rigging.",
+        "fr": "La version Full à 50 $ est le seuil d'entrée pour le placement automatique, le retargeting et l'export jeu ; la version Lite à 25 $ ne couvre que le rig manuel de base."
+      },
+      "billingTraps": {
+        "en": "Support and updates run for 12 months only; continuing past that costs 25% of the purchase price every year.",
+        "fr": "Le support et les mises à jour ne durent que 12 mois ; continuer au-delà coûte 25 % du prix d'achat chaque année."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01"
 }

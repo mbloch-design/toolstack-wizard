@@ -3,7 +3,8 @@
   "slug": "shadcn-ui",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "shadcn/ui",
     "vendor": "shadcn (independent maintainer, hosted via Vercel)",
@@ -33,12 +34,12 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Copy-paste, accessible React component collection built with Radix UI primitives and Tailwind CSS, distributed as source code rather than an npm package.", "sourceIds": ["s1"] },
-      { "en": "Components are fully customizable and owned by the developer once copied into the project, rather than imported from an opaque library.", "sourceIds": ["s1"] }
+      { "en": "Copy-paste, accessible React component collection built with Radix UI primitives and Tailwind CSS, distributed as source code rather than an npm package.", "fr": "Collection de composants React accessibles à copier-coller, construite avec les primitives Radix UI et Tailwind CSS, distribuée en code source plutôt qu'en paquet npm.", "sourceIds": ["s1"] },
+      { "en": "Components are fully customizable and owned by the developer once copied into the project, rather than imported from an opaque library.", "fr": "Les composants sont entièrement personnalisables et appartiennent au développeur une fois copiés dans le projet, plutôt qu'importés depuis une bibliothèque opaque.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No hosted service, dashboard, or paid support tier; it is entirely community-maintained open-source code.", "sourceIds": ["s1"] },
-      { "en": "Requires React and Tailwind CSS in the target project; not a standalone drop-in UI kit for other stacks.", "sourceIds": ["s1"] }
+      { "en": "No hosted service, dashboard, or paid support tier; it is entirely community-maintained open-source code.", "fr": "Aucun service hébergé, tableau de bord ou support payant ; c'est du code open source entièrement maintenu par la communauté.", "sourceIds": ["s1"] },
+      { "en": "Requires React and Tailwind CSS in the target project; not a standalone drop-in UI kit for other stacks.", "fr": "Nécessite React et Tailwind CSS dans le projet cible ; ce n'est pas un kit d'interface autonome pour d'autres stacks.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
@@ -46,15 +47,33 @@
   "audience": null,
   "useCases": [],
   "alternatives": [
-    { "slug": "material-ui", "reason": { "en": "Also a widely used React component library, but installed as a package rather than copy-pasted source." } },
-    { "slug": "radix-primitives", "reason": { "en": "The underlying accessible primitives shadcn/ui is built on top of; a lower-level alternative for teams building their own design system." } },
-    { "slug": "chakra-ui", "reason": { "en": "Competing React component library with a similar goal of accessible, themeable components." } }
+    { "slug": "material-ui", "reason": { "en": "Also a widely used React component library, but installed as a package rather than copy-pasted source.", "fr": "Également une bibliothèque de composants React très utilisée, mais installée comme un paquet plutôt que copiée en source." } },
+    { "slug": "radix-primitives", "reason": { "en": "The underlying accessible primitives shadcn/ui is built on top of; a lower-level alternative for teams building their own design system.", "fr": "Les primitives accessibles sous-jacentes sur lesquelles shadcn/ui est construit ; une alternative plus bas niveau pour les équipes qui construisent leur propre design system." } },
+    { "slug": "chakra-ui", "reason": { "en": "Competing React component library with a similar goal of accessible, themeable components.", "fr": "Bibliothèque de composants React concurrente, avec un objectif similaire de composants accessibles et personnalisables." } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "shadcn/ui is entirely free open-source code with no license to buy, so any time saved building accessible components is rentabilized immediately.", "fr": "shadcn/ui est un code open source entièrement gratuit, sans licence à acheter, donc tout temps gagné à construire des composants accessibles est rentabilisé immédiatement.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Components are copy-pasted directly into a React and Tailwind project, which is designed to produce a usable result without installing a package manager dependency first.", "fr": "Les composants sont copiés-collés directement dans un projet React et Tailwind, conçu pour produire un résultat utilisable sans installer d'abord une dépendance de gestionnaire de paquets.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The library delivers accessible, customizable components built on Radix UI primitives as promised, confirmed on the official home page.", "fr": "La bibliothèque livre des composants accessibles et personnalisables construits sur les primitives Radix UI comme promis, confirmé sur la page d'accueil officielle.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Full ownership of the copied source code lets a team customize components beyond what a packaged library typically allows, within the category.", "fr": "La pleine propriété du code source copié permet à une équipe de personnaliser les composants au-delà de ce qu'une bibliothèque empaquetée permet en général, dans la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Components are copied as plain source code owned by the developer, with no runtime dependency on shadcn/ui itself, making it fully portable.", "fr": "Les composants sont copiés en code source brut appartenant au développeur, sans dépendance d'exécution à shadcn/ui lui-même, ce qui le rend totalement portable.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Copy-paste React components", "fr": "Composants React à copier" },
+    "shortDescription": { "en": "Accessible, customizable React component collection built on Radix UI and Tailwind CSS, distributed as copy-paste source code, free.", "fr": "Collection de composants React accessibles et personnalisables, construite sur Radix UI et Tailwind CSS, distribuée en code source à copier-coller, gratuite." }
+  },
   "unknowns": [
     "Exact open-source license (e.g. MIT) not explicitly stated on the fetched homepage content, though the project is publicly hosted on GitHub."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

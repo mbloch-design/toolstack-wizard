@@ -3,7 +3,8 @@
   "slug": "darktable",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "darktable",
     "vendor": "darktable open-source project",
@@ -35,7 +36,7 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Entirely free, no limitations, GNU GPL v3 licensed.", "fr": null }
+          { "en": "Entirely free, no limitations, GNU GPL v3 licensed.", "fr": "Entièrement gratuit, sans limitation, sous licence GNU GPL v3." }
         ],
         "sourceIds": ["s1"]
       }
@@ -46,25 +47,78 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Non-destructive RAW photo processing and development using a caching architecture: edits apply only at export time, originals stay untouched.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Database-driven image management with a zoomable lighttable interface for browsing and organizing large photo collections.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Modules ranging from basic adjustments (crop, exposure) to advanced color and effect processing, using rawspeed for camera RAW decoding.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Tethered shooting support, described by the project as one of the few free/open-source tools offering this capability.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Floating-point processing pipeline that also supports scientific/non-photography imaging use cases.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Non-destructive RAW photo processing and development using a caching architecture: edits apply only at export time, originals stay untouched.", "fr": "Développement RAW non destructif grâce à une architecture de cache : les retouches ne s'appliquent qu'à l'export, le fichier d'origine reste intact.", "sourceIds": ["s1"] },
+      { "en": "Database-driven image management with a zoomable lighttable interface for browsing and organizing large photo collections.", "fr": "Gestion d'images via une base de données, avec une table lumineuse zoomable pour parcourir et organiser de grandes collections de photos.", "sourceIds": ["s1"] },
+      { "en": "Modules ranging from basic adjustments (crop, exposure) to advanced color and effect processing, using rawspeed for camera RAW decoding.", "fr": "Modules allant des réglages de base (recadrage, exposition) jusqu'au traitement avancé des couleurs et des effets, avec rawspeed pour le décodage des RAW.", "sourceIds": ["s1"] },
+      { "en": "Tethered shooting support, described by the project as one of the few free/open-source tools offering this capability.", "fr": "Prise en charge du tethering, présentée par le projet comme l'un des rares outils libres et gratuits à offrir cette fonction.", "sourceIds": ["s1"] },
+      { "en": "Floating-point processing pipeline that also supports scientific/non-photography imaging use cases.", "fr": "Pipeline de traitement en virgule flottante qui prend aussi en charge des usages d'imagerie scientifique hors photographie.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No official mobile app; darktable is a desktop-only application.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Being community-maintained open source software, support relies on documentation and community forums rather than a commercial support line.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No official mobile app; darktable is a desktop-only application.", "fr": "Aucune application mobile officielle ; darktable est une application réservée à l'ordinateur.", "sourceIds": ["s2"] },
+      { "en": "Being community-maintained open source software, support relies on documentation and community forums rather than a commercial support line.", "fr": "Logiciel libre maintenu par la communauté, le support repose sur la documentation et les forums plutôt que sur un service client éditeur.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows", "macos", "linux"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Hobbyist to semi-professional photographer who processes RAW files and wants a serious workflow without a subscription.",
+      "fr": "Photographe amateur à semi-professionnel qui développe ses fichiers RAW et veut un vrai flux de travail sans abonnement."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Use: develop RAW photos non-destructively, adjusting exposure and color before exporting without altering the original files.", "fr": "Usage : développer des photos RAW de façon non destructive, ajuster exposition et couleurs avant export sans toucher aux fichiers d'origine." },
+    { "en": "Use: shoot tethered from a camera directly into darktable and review images immediately during a shoot.", "fr": "Usage : shooter en tethering depuis l'appareil directement dans darktable et vérifier les images pendant la prise de vue." }
+  ],
   "alternatives": [
-    { "slug": "adobe-lightroom", "reason": { "en": "Leading commercial RAW processing and photo management tool, the main alternative darktable is positioned against.", "fr": null } },
-    { "slug": "capture-one", "reason": { "en": "Professional commercial RAW editor with similar non-destructive workflow, a direct paid alternative.", "fr": null } },
-    { "slug": "dxo-photolab", "reason": { "en": "Commercial RAW processing software with advanced optical corrections, competing on image quality.", "fr": null } }
+    { "slug": "adobe-lightroom", "reason": { "en": "Leading commercial RAW processing and photo management tool, the main alternative darktable is positioned against.", "fr": "Outil commercial de référence pour le développement RAW et la gestion de photos, la principale alternative face à laquelle darktable se positionne." } },
+    { "slug": "capture-one", "reason": { "en": "Professional commercial RAW editor with similar non-destructive workflow, a direct paid alternative.", "fr": "Éditeur RAW commercial professionnel avec un flux de travail non destructif similaire, une alternative payante directe." } },
+    { "slug": "dxo-photolab", "reason": { "en": "Commercial RAW processing software with advanced optical corrections, competing on image quality.", "fr": "Logiciel commercial de développement RAW avec des corrections optiques avancées, concurrent sur la qualité d'image." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "Entirely free and open source with non-destructive RAW processing, image management and tethered shooting, a feature set that competes with paid tools at zero cost.", "fr": "Entièrement libre et gratuit, avec développement RAW non destructif, gestion d'images et tethering, un périmètre qui rivalise avec des outils payants pour un coût nul.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed for a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers its stated promise of non-destructive RAW development, collection management and tethered shooting without a documented need for third-party tools.", "fr": "Tient sa promesse de développement RAW non destructif, de gestion de collection et de tethering, sans besoin documenté d'outil tiers.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers basic to advanced color and effect modules, a floating-point pipeline and tethered shooting, a capability set the project itself describes as rare among free tools.", "fr": "Couvre des modules allant du réglage de base au traitement avancé des couleurs et des effets, un pipeline en virgule flottante et le tethering, un périmètre que le projet lui-même décrit comme rare parmi les outils gratuits.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Non-destructive editing keeps the original RAW file untouched at every step, and the GPL license removes any vendor lock-in risk, though specific export format options were not detailed.", "fr": "L'édition non destructive garde le fichier RAW d'origine intact à chaque étape, et la licence GPL élimine tout risque de dépendance à un éditeur, même si les formats d'export précis n'ont pas été détaillés.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "RAW photo editor", "fr": "Éditeur de RAW" },
+    "shortDescription": {
+      "en": "darktable is a free, open-source application for non-destructive RAW photo development, image management and tethered shooting, licensed under the GPL.",
+      "fr": "darktable est une application libre et gratuite pour développer des RAW de façon non destructive, gérer ses photos et shooter en tethering, sous licence GPL."
+    },
+    "longDescription": {
+      "en": "darktable processes RAW photos non-destructively: edits are stored separately and only applied at export, so the original file is never touched. A zoomable lighttable manages large photo collections, and tethered shooting lets a connected camera feed images straight into the app during a session.\n\nThe software is entirely free and open source under the GPL, with no paid tier, account or subscription at any point. It runs on Windows, macOS and Linux and suits any photographer who wants a serious RAW workflow without a Lightroom-style subscription, though support comes from documentation and community forums rather than a vendor help desk.",
+      "fr": "darktable développe les RAW de façon non destructive : les retouches sont stockées à part et appliquées seulement à l'export, le fichier d'origine n'est jamais modifié. Une table lumineuse zoomable gère de grandes collections de photos, et le tethering permet de faire remonter les images d'un appareil connecté directement dans l'application pendant la prise de vue.\n\nLe logiciel est entièrement libre et gratuit sous licence GPL, sans forfait payant, compte ni abonnement à aucun moment. Il tourne sous Windows, macOS et Linux et convient à tout photographe qui veut un vrai flux RAW sans abonnement à la Lightroom, même si le support repose sur la documentation et les forums communautaires plutôt que sur un service client éditeur."
+    },
+    "pros": [
+      { "en": "Completely free and open source, with no account or subscription ever required.", "fr": "Entièrement libre et gratuit, sans compte ni abonnement à créer." },
+      { "en": "Non-destructive editing keeps original RAW files untouched at every step.", "fr": "L'édition non destructive garde les fichiers RAW d'origine intacts à chaque étape." },
+      { "en": "Tethered shooting support, uncommon among free RAW tools.", "fr": "Le tethering est pris en charge, ce qui reste rare parmi les outils RAW gratuits." }
+    ],
+    "cons": [
+      { "en": "Desktop only, with no official mobile app.", "fr": "Disponible uniquement sur ordinateur, sans application mobile officielle." },
+      { "en": "Support relies on community forums and documentation rather than a vendor help desk.", "fr": "Le support repose sur les forums communautaires et la documentation plutôt que sur un service client éditeur." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a serious RAW workflow without ever paying a subscription.", "fr": "Tu veux un vrai flux de travail RAW sans jamais payer d'abonnement." },
+      "avoidIf": { "en": "You need official vendor support or a mobile editing app.", "fr": "Tu as besoin d'un support officiel de l'éditeur ou d'une application mobile." },
+      "threshold": { "en": "There is no price threshold to weigh: darktable stays free at every scale, so the real question is whether community-based support is enough for your workflow.", "fr": "Il n'y a pas de seuil de prix à évaluer : darktable reste gratuit à toute échelle, la vraie question est de savoir si un support communautaire suffit à ton flux de travail." }
+    }
+  },
   "unknowns": [
     "Exact list of currently supported camera RAW formats/models not verified (referenced via a separate camera support page not fetched in this session)."
   ],

@@ -3,7 +3,8 @@
   "slug": "reflect-notes",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Reflect",
     "vendor": "Reflect",
@@ -34,25 +35,25 @@
         "minSeats": null,
         "price": { "monthly": 12, "annualPerMonth": 10, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Single plan covering all features; no tiered feature gating", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Single plan covering all features; no tiered feature gating", "fr": "Un seul plan couvrant toutes les fonctionnalités, sans palier de fonctionnalités", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "No permanent free plan; only a 14-day trial before billing starts.", "fr": "", "sourceIds": ["s1"] }
+      { "en": "No permanent free plan; only a 14-day trial before billing starts.", "fr": "Pas de plan gratuit permanent : seulement un essai de 14 jours avant le début de la facturation.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Networked note-taking with backlinks and real-time cross-device sync", "sourceIds": ["s1"] },
-      { "en": "AI writing assistance and voice transcription using GPT-4 and Whisper", "sourceIds": ["s1"] },
-      { "en": "Meeting notes organized with calendar integration, plus a web clipper for browser and Kindle highlights", "sourceIds": ["s1"] }
+      { "en": "Networked note-taking with backlinks and real-time cross-device sync", "fr": "Prise de notes en réseau avec liens retour et synchronisation en temps réel entre appareils", "sourceIds": ["s1"] },
+      { "en": "AI writing assistance and voice transcription using GPT-4 and Whisper", "fr": "Assistance à l'écriture par IA et transcription vocale avec GPT-4 et Whisper", "sourceIds": ["s1"] },
+      { "en": "Meeting notes organized with calendar integration, plus a web clipper for browser and Kindle highlights", "fr": "Notes de réunion organisées avec intégration de calendrier, plus un clipper web pour le navigateur et les surlignages Kindle", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Single plan with one price; no lower-cost tier for lighter use", "sourceIds": ["s1"] },
-      { "en": "No permanent free plan, only a 14-day trial", "sourceIds": ["s1"] }
+      { "en": "Single plan with one price; no lower-cost tier for lighter use", "fr": "Un seul plan à un seul prix : aucun palier moins cher pour un usage léger", "sourceIds": ["s1"] },
+      { "en": "No permanent free plan, only a 14-day trial", "fr": "Pas de plan gratuit permanent, seulement un essai de 14 jours", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Google Calendar", "slug": null, "sourceIds": ["s1"] },
@@ -62,12 +63,62 @@
     ],
     "platforms": ["web", "ios"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent consultants who take meeting notes, want AI-assisted writing and need one tool across devices without a team workspace.",
+      "fr": "Consultants indépendants qui prennent des notes de réunion, veulent une aide à l'écriture par IA et un seul outil sur tous leurs appareils, sans espace d'équipe."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Meeting prep and follow-up: sync the calendar, take notes during the call, then let AI draft a summary to send afterward.", "fr": "Préparation et suivi de réunion : synchroniser le calendrier, prendre des notes pendant l'appel, puis laisser l'IA rédiger un résumé à envoyer après." },
+    { "en": "Research capture: clip web pages and Kindle highlights, then link them to related notes for later recall.", "fr": "Capture de recherche : clipper des pages web et des surlignages Kindle, puis les relier à des notes connexes pour les retrouver plus tard." }
+  ],
   "alternatives": [
-    { "slug": "obsidian", "reason": { "en": "Direct networked note-taking competitor with backlinks" } },
-    { "slug": "roam-research", "reason": { "en": "Original networked notes tool with the same backlink-centric approach" } },
-    { "slug": "logseq", "reason": { "en": "Backlink-based note-taking competitor" } }
+    { "slug": "obsidian", "reason": { "en": "Direct networked note-taking competitor with backlinks", "fr": "Concurrent direct de prise de notes en réseau avec liens retour" } },
+    { "slug": "roam-research", "reason": { "en": "Original networked notes tool with the same backlink-centric approach", "fr": "Outil historique de notes en réseau avec la même approche centrée sur les liens retour" } },
+    { "slug": "logseq", "reason": { "en": "Backlink-based note-taking competitor", "fr": "Concurrent de prise de notes basé sur les liens retour" } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "One $12/month plan bundles AI writing, voice transcription and calendar-linked meeting notes without separate add-on fees, but the dossier has no data to compare that cost against the time or money it actually saves.", "fr": "Un seul plan à 12 $/mois regroupe écriture assistée par IA, transcription vocale et notes de réunion liées au calendrier sans frais d'option séparés, mais le dossier ne contient pas de données pour comparer ce coût au temps ou à l'argent réellement économisés.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or onboarding effort is stated in the collected source.", "fr": "Note neutre : aucun temps de mise en place ni effort d'onboarding n'est précisé dans la source relevée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Backlinks, AI writing, voice transcription and calendar-linked meeting notes are all delivered natively per the source, with no third-party workaround mentioned.", "fr": "Les liens retour, l'écriture assistée par IA, la transcription vocale et les notes de réunion liées au calendrier sont tous livrés nativement selon la source, sans contournement tiers mentionné.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Core backlink and AI features match the networked-notes category, but the source does not mention a plugin or extension ecosystem like some competitors, so the capability ceiling is unconfirmed.", "fr": "Les fonctions de liens retour et d'IA correspondent à la catégorie des notes en réseau, mais la source ne mentionne pas d'écosystème de plugins comme chez certains concurrents, donc le plafond de capacité n'est pas confirmé.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and account portability are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité du compte ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Networked notes", "fr": "Notes en réseau" },
+    "shortDescription": { "en": "Reflect is a networked note-taking app with backlinks, AI writing help and voice transcription, priced at one $12 monthly plan with no free tier.", "fr": "Reflect est une appli de notes en réseau avec liens retour, IA d'écriture et transcription vocale, à 12 $ par mois sans plan gratuit." },
+    "longDescription": {
+      "en": "Reflect combines networked note-taking with backlinks, AI-assisted writing, and voice transcription powered by GPT-4 and Whisper. Meeting notes link to a connected calendar, and a web clipper pulls in browser pages and Kindle highlights alongside Zapier, Google Calendar, Outlook and Readwise connections.\n\nThere is a single $12/month plan ($10/month billed annually) and no permanent free tier, only a 14-day trial. It suits an independent user who wants one AI-assisted notes app across web and iOS rather than a team workspace with multiple pricing tiers.",
+      "fr": "Reflect associe prise de notes en réseau avec liens retour, aide à l'écriture par IA et transcription vocale via GPT-4 et Whisper. Les notes de réunion se relient au calendrier connecté, et un clipper web récupère les pages du navigateur et les surlignages Kindle, avec des connexions Zapier, Google Calendar, Outlook et Readwise.\n\nIl existe un seul plan à 12 $/mois (10 $/mois en engagement annuel) et aucun palier gratuit permanent, seulement un essai de 14 jours. L'outil convient à un indépendant qui veut une seule appli de notes assistée par IA sur le web et iOS, plutôt qu'un espace d'équipe à plusieurs paliers de prix."
+    },
+    "pros": [
+      { "en": "One flat price covers AI writing, voice transcription and calendar-linked meeting notes without separate add-on fees.", "fr": "Un seul prix fixe couvre l'écriture par IA, la transcription vocale et les notes de réunion liées au calendrier, sans frais d'option supplémentaires." },
+      { "en": "Connects to Zapier, Google Calendar, Outlook and Readwise instead of staying siloed from other tools.", "fr": "Se connecte à Zapier, Google Calendar, Outlook et Readwise plutôt que de rester isolé des autres outils." }
+    ],
+    "cons": [
+      { "en": "No free plan: billing starts right after the 14-day trial ends.", "fr": "Pas de plan gratuit : la facturation démarre dès la fin de l'essai de 14 jours." },
+      { "en": "Only one plan and one price, so a lighter user pays the same as a heavy one.", "fr": "Un seul plan à un seul prix, donc un usage léger paie autant qu'un usage intensif." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want one AI-assisted, backlink-based notes app across devices and are fine paying a flat monthly fee from day 15.", "fr": "Tu veux une seule appli de notes assistée par IA avec liens retour sur tous tes appareils, et tu acceptes de payer un tarif fixe dès le 15e jour." },
+      "avoidIf": { "en": "You want a free tier to test long-term before paying, or need a lower-cost tier for occasional, light use.", "fr": "Tu veux un palier gratuit pour tester sur la durée avant de payer, ou un palier moins cher pour un usage occasionnel." },
+      "threshold": { "en": "Worth it once the $12/month (or $120/year billed annually at $10/month) replaces a separate notes app, a voice-transcription tool and a meeting-notes workflow.", "fr": "Rentable dès que les 12 $/mois (ou 120 $/an en facturation annuelle à 10 $/mois) remplacent une appli de notes séparée, un outil de transcription vocale et un workflow de notes de réunion." }
+    }
+  },
   "unknowns": ["Exact monthly (non-annual) price not fully confirmed beyond the seed's $12/month figure; Android support not mentioned on the page reviewed"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

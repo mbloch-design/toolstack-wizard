@@ -3,7 +3,7 @@
   "slug": "deputy",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Deputy",
     "vendor": "Deputy",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.deputy.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Deputy pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.deputy.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Deputy pricing"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -24,78 +30,346 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "lite",
         "name": "Lite",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 5, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 5,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Basic scheduling, timesheets, time clocking, labor law compliance, shift swapping" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Basic scheduling, timesheets, time clocking, labor law compliance, shift swapping"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "core",
         "name": "Core",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 6.5, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 6.5,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds auto-scheduling, demand forecasting, labor optimization and wage budgets" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds auto-scheduling, demand forecasting, labor optimization and wage budgets"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds custom access levels, SSO, 24/7 live chat and a sandbox environment" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds custom access levels, SSO, 24/7 live chat and a sandbox environment"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "lite",
     "addOns": [
-      { "name": { "en": "Payroll (Paycor)" }, "unit": "seat", "sourceIds": ["s1"] },
-      { "name": { "en": "HR" }, "unit": "seat", "sourceIds": ["s1"] },
-      { "name": { "en": "Messaging+" }, "unit": "seat", "sourceIds": ["s1"] },
-      { "name": { "en": "Analytics+" }, "unit": "seat", "sourceIds": ["s1"] }
+      {
+        "name": {
+          "en": "Payroll (Paycor)"
+        },
+        "unit": "seat",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": {
+          "en": "HR"
+        },
+        "unit": "seat",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": {
+          "en": "Messaging+"
+        },
+        "unit": "seat",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": {
+          "en": "Analytics+"
+        },
+        "unit": "seat",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "A minimum monthly spend of $30 applies per account regardless of how few users are on it, and every admin/manager role is billed as a user.", "sourceIds": ["s1"] },
-      { "en": "Monthly billing charges for a full month even when a user is added partway through the month, and annual plans allow no mid-term downgrades or refunds.", "sourceIds": ["s1"] }
+      {
+        "en": "A minimum monthly spend of $30 applies per account regardless of how few users are on it, and every admin/manager role is billed as a user.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Un minimum de 30 $ par mois s'applique par compte quel que soit le nombre d'utilisateurs, et chaque rôle admin/manager est facturé comme un utilisateur."
+      },
+      {
+        "en": "Monthly billing charges for a full month even when a user is added partway through the month, and annual plans allow no mid-term downgrades or refunds.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "La facturation mensuelle compte un mois complet même si un utilisateur est ajouté en cours de mois, et les plans annuels n'autorisent ni downgrade ni remboursement en cours de contrat."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Staff scheduling with auto-scheduling and demand forecasting on the Core plan and above.", "sourceIds": ["s1"] },
-      { "en": "Time clocking and timesheets with built-in labor law compliance checks.", "sourceIds": ["s1"] },
-      { "en": "Team messaging and shift-swap workflows.", "sourceIds": ["s1"] },
-      { "en": "AI features (\"Deputy AI\") included across all plans.", "sourceIds": ["s1"] }
+      {
+        "en": "Staff scheduling with auto-scheduling and demand forecasting on the Core plan and above.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Planification du personnel avec auto-planification et prévision de la demande sur le plan Core et au-dessus."
+      },
+      {
+        "en": "Time clocking and timesheets with built-in labor law compliance checks.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Pointage et feuilles de temps avec vérifications de conformité légale intégrées."
+      },
+      {
+        "en": "Team messaging and shift-swap workflows.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Messagerie d'équipe et échange de shifts."
+      },
+      {
+        "en": "AI features (\"Deputy AI\") included across all plans.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Fonctions IA (« Deputy AI ») incluses sur tous les plans."
+      }
     ],
     "limitations": [
-      { "en": "No free plan; only a 30-day trial.", "sourceIds": ["s1"] },
-      { "en": "Auto-scheduling and demand forecasting are not available on the entry Lite plan.", "sourceIds": ["s1"] }
+      {
+        "en": "No free plan; only a 30-day trial.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Aucun plan gratuit ; seulement un essai de 30 jours."
+      },
+      {
+        "en": "Auto-scheduling and demand forecasting are not available on the entry Lite plan.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'auto-planification et la prévision de la demande ne sont pas disponibles sur le plan Lite d'entrée."
+      }
     ],
     "integrations": [
-      { "name": "Paycor", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Paycor",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
   "alternatives": [
-    { "slug": "timecamp", "reason": { "en": "Time tracking and scheduling alternative for hourly and shift-based teams." } },
-    { "slug": "clockify", "reason": { "en": "Alternative time tracking tool that also covers basic scheduling needs." } }
+    {
+      "slug": "timecamp",
+      "reason": {
+        "en": "Time tracking and scheduling alternative for hourly and shift-based teams.",
+        "fr": "Alternative de suivi du temps et de planification pour les équipes horaires et en shifts."
+      }
+    },
+    {
+      "slug": "clockify",
+      "reason": {
+        "en": "Alternative time tracking tool that also covers basic scheduling needs.",
+        "fr": "Outil de suivi du temps alternatif qui couvre aussi des besoins basiques de planification."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "When I Work", "officialUrl": "https://wheniwork.com", "reason": "Direct competitor for shift scheduling and time tracking, not in the catalogue" },
-    { "name": "Homebase", "officialUrl": "https://joinhomebase.com", "reason": "Direct competitor for hourly team scheduling and time clocking, not in the catalogue" }
+    {
+      "name": "When I Work",
+      "officialUrl": "https://wheniwork.com",
+      "reason": "Direct competitor for shift scheduling and time tracking, not in the catalogue"
+    },
+    {
+      "name": "Homebase",
+      "officialUrl": "https://joinhomebase.com",
+      "reason": "Direct competitor for hourly team scheduling and time clocking, not in the catalogue"
+    }
   ],
   "unknowns": [
     "Whether platform mobile apps support all Lite-plan features equally was not detailed on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops manager or small-business owner running an hourly or shift-based team who needs scheduling and compliant time tracking in one place.",
+      "fr": "Une responsable ops ou une petite entreprise qui gère une équipe horaire ou en shifts et a besoin de planification et de suivi du temps conforme en un seul outil."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Shift scheduling: build weekly shift rosters with auto-scheduling and demand forecasting from the Core plan up, instead of planning shifts by hand.",
+      "fr": "Planification des shifts : construire les plannings hebdomadaires avec auto-planification et prévision de la demande dès le plan Core, plutôt qu'à la main."
+    },
+    {
+      "en": "Compliant time tracking: have hourly staff clock in and out on mobile with built-in labor law checks, cutting manual timesheet errors.",
+      "fr": "Pointage conforme : faire pointer les employés horaires sur mobile avec des vérifications légales intégrées, pour réduire les erreurs de feuille de temps."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Entry pricing is low per seat ($5) but a $30 monthly account minimum and full-month billing on partial months raise the real cost for very small teams.",
+        "fr": "Le prix de base est bas par siège (5 $) mais un minimum de 30 $ par mois par compte et une facturation au mois complet même en cours de mois augmentent le coût réel pour les très petites équipes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The Lite plan covers scheduling and time clocking directly via web and mobile apps without needing the auto-scheduling setup reserved for higher tiers.",
+        "fr": "Le plan Lite couvre la planification et le pointage directement via le web et les applications mobiles, sans nécessiter la configuration de l'auto-planification réservée aux plans supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers scheduling, time clocking and compliance checks as advertised; auto-scheduling and demand forecasting are tiered rather than hidden behind workarounds.",
+        "fr": "Tient ses promesses de planification, pointage et conformité ; l'auto-planification et la prévision de la demande sont réservées à des plans supérieurs plutôt que cachées derrière des contournements.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers core shift scheduling and compliance, but anything beyond that (payroll, HR, messaging, analytics) needs separate paid add-ons billed per seat.",
+        "fr": "Couvre la planification et la conformité de base, mais tout le reste (paie, RH, messagerie, analytics) nécessite des modules payants séparés facturés par siège.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability on leaving Deputy are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité en quittant Deputy ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Shift scheduling",
+      "fr": "Planification des shifts"
+    },
+    "shortDescription": {
+      "en": "Deputy schedules shifts, tracks time and checks labor law compliance for hourly teams, with plans from $5 per user plus a $30 monthly account minimum.",
+      "fr": "Deputy planifie les shifts, suit le temps et vérifie la conformité des équipes horaires, dès 5 $/utilisateur avec 30 $ minimum par compte."
+    },
+    "longDescription": {
+      "en": "Deputy covers shift scheduling, time clocking and timesheets for hourly teams, with built-in labor law compliance checks and shift-swap workflows. Auto-scheduling and demand forecasting are available from the Core plan upward; the entry Lite plan only covers manual scheduling and time tracking. AI features are included across all plans.\n\nPricing starts at $5 per user on Lite, with a $30 monthly minimum per account regardless of headcount, so it suits shift-based teams of six or more. It fits ops managers running hourly staff; payroll or deeper HR need separate paid add-ons.",
+      "fr": "Deputy couvre la planification des shifts, le pointage et les feuilles de temps pour les équipes horaires, avec des vérifications de conformité légale et l'échange de shifts intégrés. L'auto-planification et la prévision de la demande sont disponibles dès le plan Core ; le plan Lite d'entrée ne couvre que la planification et le pointage manuels. Les fonctions IA sont incluses sur tous les plans.\n\nLe tarif démarre à 5 $ par utilisateur sur Lite, avec un minimum mensuel de 30 $ par compte quel que soit l'effectif, ce qui convient aux équipes de six personnes ou plus. L'outil vise les responsables ops gérant du personnel horaire ; la paie ou les RH poussées nécessitent des modules payants séparés."
+    },
+    "pros": [
+      {
+        "en": "Labor law compliance checks are built into time clocking, not a separate add-on.",
+        "fr": "Les vérifications de conformité légale sont intégrées au pointage, pas un module à part."
+      },
+      {
+        "en": "AI features are included on every plan, even the cheapest Lite tier.",
+        "fr": "Les fonctions IA sont incluses sur tous les plans, même le plan Lite le moins cher."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan, only a 30-day trial.",
+        "fr": "Aucun plan gratuit, seulement un essai de 30 jours."
+      },
+      {
+        "en": "A $30 monthly minimum applies per account no matter how few users are on it.",
+        "fr": "Un minimum de 30 $ par mois s'applique par compte, quel que soit le nombre d'utilisateurs."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run an hourly or shift-based team of six or more and need scheduling plus compliant time tracking in one tool.",
+        "fr": "Tu gères une équipe horaire ou en shifts de six personnes ou plus et as besoin de planification et de pointage conforme dans un seul outil."
+      },
+      "avoidIf": {
+        "en": "You have a team of one or two, since the $30 monthly account minimum makes the per-seat price less competitive below that size.",
+        "fr": "Tu as une équipe d'une ou deux personnes, car le minimum mensuel de 30 $ par compte rend le prix par siège peu compétitif en dessous de ce seuil."
+      },
+      "threshold": {
+        "en": "Below 6 users, the $30 monthly account minimum costs more than the $5 per-seat Lite price, so Deputy's per-user math only pays off at 6 users or more.",
+        "fr": "En dessous de 6 utilisateurs, le minimum mensuel de 30 $ par compte coûte plus cher que le prix par siège de 5 $ du plan Lite ; le calcul par utilisateur de Deputy ne devient avantageux qu'à partir de 6 utilisateurs."
+      },
+      "billingTraps": {
+        "en": "A $30 monthly minimum applies per account, every admin or manager counts as a billed user, monthly billing charges a full month even for a user added partway through, and annual plans allow no mid-term downgrades or refunds.",
+        "fr": "Un minimum de 30 $ par mois s'applique par compte, chaque admin ou manager compte comme un utilisateur facturé, la facturation mensuelle compte un mois complet même pour un utilisateur ajouté en cours de mois, et les plans annuels n'autorisent ni downgrade ni remboursement en cours de contrat."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01"
 }

@@ -3,7 +3,8 @@
   "slug": "leonardo-ai",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Leonardo AI",
     "vendor": "Leonardo Interactive Pty Ltd (Canva)",
@@ -36,7 +37,7 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "150 fast tokens/day, watermarked output, non-commercial use only.", "fr": null }
+          { "en": "150 fast tokens/day, watermarked output, non-commercial use only.", "fr": "150 jetons rapides/jour, sortie avec filigrane, usage non commercial uniquement." }
         ],
         "sourceIds": ["s3"]
       },
@@ -48,7 +49,7 @@
         "price": { "monthly": 12, "annualPerMonth": 9.6, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "8,500 fast tokens/month, commercial use permitted.", "fr": null }
+          { "en": "8,500 fast tokens/month, commercial use permitted.", "fr": "8 500 jetons rapides/mois, usage commercial autorisé." }
         ],
         "sourceIds": ["s3"]
       },
@@ -60,7 +61,7 @@
         "price": { "monthly": 30, "annualPerMonth": 24, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "25,000 fast tokens/month, adds relaxed (queued) generation on selected models.", "fr": null }
+          { "en": "25,000 fast tokens/month, adds relaxed (queued) generation on selected models.", "fr": "25 000 jetons rapides/mois, ajoute la génération relâchée (en file d'attente) sur certains modèles." }
         ],
         "sourceIds": ["s3"]
       },
@@ -72,7 +73,7 @@
         "price": { "monthly": 60, "annualPerMonth": 48, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "60,000 fast tokens/month, extends relaxed access to selected image and video models.", "fr": null }
+          { "en": "60,000 fast tokens/month, extends relaxed access to selected image and video models.", "fr": "60 000 jetons rapides/mois, étend l'accès relâché à certains modèles image et vidéo." }
         ],
         "sourceIds": ["s3"]
       }
@@ -80,30 +81,80 @@
     "comparePlanKey": "essential",
     "addOns": [],
     "cautions": [
-      { "en": "Leonardo AI's own documentation (pricing-and-plans FAQ) describes the product as moving to a Pay-As-You-Go model with no monthly fees, which conflicts with the tiered Essential/Premium/Ultimate subscription pricing reported by third-party trackers; the plan names and figures here could not be confirmed on the official pricing page directly (403 blocked) and should be re-verified.", "fr": null, "sourceIds": ["s2", "s3"] },
-      { "en": "Older plan names (Apprentice, Artisan, Maestro) have reportedly been renamed to Essential, Premium, Ultimate; some still-live third-party content uses the old names interchangeably.", "fr": null, "sourceIds": ["s3"] }
+      { "en": "Leonardo AI's own documentation (pricing-and-plans FAQ) describes the product as moving to a Pay-As-You-Go model with no monthly fees, which conflicts with the tiered Essential/Premium/Ultimate subscription pricing reported by third-party trackers; the plan names and figures here could not be confirmed on the official pricing page directly (403 blocked) and should be re-verified.", "fr": "La documentation officielle de Leonardo AI (FAQ pricing-and-plans) décrit le produit comme passant à un modèle Pay-As-You-Go sans frais mensuels, ce qui contredit la tarification par paliers Essential/Premium/Ultimate rapportée par des trackers tiers ; les noms de plans et chiffres ici n'ont pas pu être confirmés directement sur la page tarifs officielle (bloquée, 403) et devraient être revérifiés.", "sourceIds": ["s2", "s3"] },
+      { "en": "Older plan names (Apprentice, Artisan, Maestro) have reportedly been renamed to Essential, Premium, Ultimate; some still-live third-party content uses the old names interchangeably.", "fr": "Les anciens noms de plans (Apprentice, Artisan, Maestro) auraient été renommés en Essential, Premium, Ultimate ; certains contenus tiers encore en ligne utilisent les deux séries de noms de façon interchangeable.", "sourceIds": ["s3"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "AI image generation using proprietary Leonardo models and third-party models (e.g. Flux), with fine-tuned styles.", "fr": null, "sourceIds": ["s3"] },
-      { "en": "Image editing, upscaling and photo-to-painting style transformation tools.", "fr": null, "sourceIds": ["s3"] },
-      { "en": "Credit/token-based generation system shared across image (and on higher plans, video) models.", "fr": null, "sourceIds": ["s3"] }
+      { "en": "AI image generation using proprietary Leonardo models and third-party models (e.g. Flux), with fine-tuned styles.", "fr": "Génération d'images par IA utilisant les modèles propriétaires de Leonardo et des modèles tiers (ex. Flux), avec des styles affinés.", "sourceIds": ["s3"] },
+      { "en": "Image editing, upscaling and photo-to-painting style transformation tools.", "fr": "Outils d'édition d'image, d'agrandissement et de transformation photo-vers-peinture.", "sourceIds": ["s3"] },
+      { "en": "Credit/token-based generation system shared across image (and on higher plans, video) models.", "fr": "Système de génération basé sur crédits/jetons partagé entre les modèles image (et, sur les plans supérieurs, vidéo).", "sourceIds": ["s3"] }
     ],
     "limitations": [
-      { "en": "Free tier output carries a watermark and is restricted to non-commercial use.", "fr": null, "sourceIds": ["s3"] },
-      { "en": "Usage is metered by a token/credit system, so heavy generation workloads can exhaust a plan's monthly allotment before the billing cycle ends.", "fr": null, "sourceIds": ["s3"] }
+      { "en": "Free tier output carries a watermark and is restricted to non-commercial use.", "fr": "La sortie du plan gratuit porte un filigrane et est limitée à un usage non commercial.", "sourceIds": ["s3"] },
+      { "en": "Usage is metered by a token/credit system, so heavy generation workloads can exhaust a plan's monthly allotment before the billing cycle ends.", "fr": "L'usage est mesuré par un système de jetons/crédits, donc des charges de génération importantes peuvent épuiser l'allocation mensuelle d'un plan avant la fin du cycle de facturation.", "sourceIds": ["s3"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "Content creator or marketer who wants AI-generated images for social or marketing content without a design team.", "fr": "Créateur de contenu ou marketeur qui veut des images générées par IA pour du contenu social ou marketing sans équipe de design." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Social content: generate on-brand images for posts using Leonardo's own or third-party AI models without a designer.", "fr": "Contenu social : générer des images cohérentes avec la marque pour des publications grâce aux modèles IA propres ou tiers de Leonardo, sans designer." },
+    { "en": "Image editing: upscale or restyle an existing image (e.g. photo-to-painting) instead of starting a new generation from scratch.", "fr": "Édition d'image : agrandir ou retravailler le style d'une image existante (ex. photo vers peinture) au lieu de repartir d'une nouvelle génération." }
+  ],
   "alternatives": [
-    { "slug": "midjourney", "reason": { "en": "Leading commercial AI image generator frequently compared to Leonardo AI on quality and pricing.", "fr": null } },
-    { "slug": "firefly", "reason": { "en": "Adobe's AI image generator, a direct competitor with tighter Creative Cloud integration.", "fr": null } },
-    { "slug": "krea-ai", "reason": { "en": "Another AI image generation and editing platform targeting a similar creative audience.", "fr": null } },
-    { "slug": "flux-ai", "reason": { "en": "Flux models compete directly with Leonardo's own image models and are also usable inside Leonardo itself.", "fr": null } }
+    { "slug": "midjourney", "reason": { "en": "Leading commercial AI image generator frequently compared to Leonardo AI on quality and pricing.", "fr": "Générateur d'images IA commercial de référence, souvent comparé à Leonardo AI sur la qualité et le prix." } },
+    { "slug": "firefly", "reason": { "en": "Adobe's AI image generator, a direct competitor with tighter Creative Cloud integration.", "fr": "Générateur d'images IA d'Adobe, concurrent direct avec une intégration plus étroite à Creative Cloud." } },
+    { "slug": "krea-ai", "reason": { "en": "Another AI image generation and editing platform targeting a similar creative audience.", "fr": "Autre plateforme de génération et d'édition d'images IA visant un public créatif similaire." } },
+    { "slug": "flux-ai", "reason": { "en": "Flux models compete directly with Leonardo's own image models and are also usable inside Leonardo itself.", "fr": "Les modèles Flux concurrencent directement les modèles propres de Leonardo et sont aussi utilisables à l'intérieur de Leonardo lui-même." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The pricing model itself is disputed between official docs (Pay-As-You-Go) and third-party trackers (tiered subscriptions), making a clear value judgment premature until this is verified directly.", "fr": "Le modèle de tarification lui-même est contesté entre la documentation officielle (Pay-As-You-Go) et des trackers tiers (abonnements par paliers), ce qui rend un jugement de valeur clair prématuré avant vérification directe.", "sourceIds": ["s2", "s3"] },
+      "simplicite": { "en": "Neutral score: time to a first usable image is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir une première image utilisable ne figure pas dans les sources relevées.", "sourceIds": ["s3"] },
+      "utilisation": { "en": "Third-party trackers describe working image generation and editing features, but this could not be confirmed on the official site, which returned a 403 in this session.", "fr": "Des trackers tiers décrivent des fonctions de génération et d'édition d'images fonctionnelles, mais cela n'a pas pu être confirmé sur le site officiel, qui a renvoyé une erreur 403 pendant cette session.", "sourceIds": ["s3"] },
+      "puissance": { "en": "Access to both proprietary and third-party models (e.g. Flux) for image generation and editing, per third-party sources; the official page could not be checked for the full feature scope.", "fr": "Accès à des modèles propriétaires et tiers (ex. Flux) pour la génération et l'édition d'images, selon des sources tierces ; la page officielle n'a pas pu être vérifiée pour le périmètre complet des fonctions.", "sourceIds": ["s3"] },
+      "reversibilite": { "en": "Neutral score: export of generated assets and account portability are not covered by the collected sources.", "fr": "Note neutre : l'export des créations et la portabilité du compte ne figurent pas dans les sources relevées.", "sourceIds": ["s3"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI image generator", "fr": "Génération d'images IA" },
+    "shortDescription": { "en": "Leonardo AI generates and edits images with proprietary and third-party AI models, using a token-based credit system across free and paid tiers.", "fr": "Leonardo AI génère et édite des images avec des modèles IA propres et tiers, via un système de jetons/crédits sur des plans gratuits et payants." },
+    "longDescription": {
+      "en": "Leonardo AI generates and edits images using its own models and third-party ones such as Flux, with tools for upscaling and style transformation like photo-to-painting. Usage runs on a token-based credit system shared across image (and, on higher plans, video) generation.\n\nThe free plan allows 150 fast tokens a day but restricts output to non-commercial, watermarked use. Paid plans reportedly start around $12 a month for commercial use and higher token allowances, though published figures vary between sources at the time of writing.",
+      "fr": "Leonardo AI génère et édite des images avec ses propres modèles et des modèles tiers comme Flux, avec des outils d'agrandissement et de transformation de style (ex. photo vers peinture). L'usage repose sur un système de jetons/crédits partagé entre la génération d'images (et, sur les plans supérieurs, de vidéos).\n\nLe plan gratuit permet 150 jetons rapides par jour mais limite la sortie à un usage non commercial et filigrané. Les plans payants démarreraient autour de 12 $ par mois pour un usage commercial et plus de jetons, bien que les chiffres publiés varient selon les sources au moment de la rédaction."
+    },
+    "pros": [
+      { "en": "Free tier allows daily generation without payment, useful to test the tool before committing.", "fr": "Le plan gratuit permet une génération quotidienne sans paiement, utile pour tester l'outil avant de s'engager." },
+      { "en": "Access to both Leonardo's own models and third-party models like Flux in the same interface.", "fr": "Accès aux modèles propres de Leonardo et à des modèles tiers comme Flux dans la même interface." }
+    ],
+    "cons": [
+      { "en": "Free tier output is watermarked and restricted to non-commercial use.", "fr": "La sortie du plan gratuit est filigranée et limitée à un usage non commercial." },
+      { "en": "Published pricing is inconsistent between Leonardo's own documentation and third-party trackers at the time of writing, so the billing model should be checked directly before subscribing.", "fr": "La tarification publiée est incohérente entre la documentation officielle de Leonardo et des trackers tiers au moment de la rédaction ; le modèle de facturation doit être vérifié directement avant de s'abonner." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Occasional or non-commercial image generation is enough, where the free daily token allowance covers the need.", "fr": "Une génération d'images occasionnelle ou non commerciale suffit, et l'allocation quotidienne de jetons gratuits couvre le besoin." },
+      "avoidIf": { "en": "Commercial, high-volume image generation is needed and the current pricing cannot be confirmed with confidence.", "fr": "Une génération d'images commerciale à fort volume est nécessaire et la tarification actuelle ne peut pas être confirmée avec certitude." },
+      "threshold": { "en": "Paid commercial use reportedly starts around $12/month (Essential plan), but this should be confirmed on leonardo.ai/pricing before budgeting.", "fr": "L'usage commercial payant démarrerait autour de 12 $/mois (plan Essential), mais ce chiffre doit être confirmé sur leonardo.ai/pricing avant de budgéter." }
+    }
+  },
+  "reviewNotes": [
+    "Conflit de tarification non résolu entre la documentation officielle (FAQ pricing-and-plans, modèle Pay-As-You-Go) et des trackers tiers (paliers Essential 12 $, Premium 30 $, Ultimate 60 $) ; à vérifier directement sur leonardo.ai/pricing (page bloquée en 403 pendant cette session).",
+    "Les noms de plans (Essential/Premium/Ultimate vs anciens Apprentice/Artisan/Maestro) proviennent de sources tierces, pas de la page officielle ; à reconfirmer."
+  ],
   "unknowns": [
     "Official leonardo.ai pricing page and docs.leonardo.ai were blocked (HTTP 403) to automated fetch in this session; the plan names (Essential/Premium/Ultimate vs. Apprentice/Artisan/Maestro) and exact prices come from third-party trackers and a search snippet, not a directly read official page.",
     "Whether Leonardo AI has fully transitioned to Pay-As-You-Go pricing (as its own FAQ doc states) or still runs tiered monthly subscriptions (as trackers report) is unresolved.",

@@ -3,7 +3,8 @@
   "slug": "quickbooks",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "QuickBooks Online",
     "vendor": "Intuit Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "2 invoices/month, 1 bank connection" }],
+        "keyLimits": [{ "en": "2 invoices/month, 1 bank connection", "fr": "2 factures/mois, 1 connexion bancaire" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 38, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 user plus 2 accountant seats, general business reports" }],
+        "keyLimits": [{ "en": "1 user plus 2 accountant seats, general business reports", "fr": "1 utilisateur plus 2 sièges comptable, rapports d'activité généraux" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 3,
         "price": { "monthly": 85, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "3 users plus 2 accountant seats, enhanced reports, employee time tracking" }],
+        "keyLimits": [{ "en": "3 users plus 2 accountant seats, enhanced reports, employee time tracking", "fr": "3 utilisateurs plus 2 sièges comptable, rapports enrichis, suivi du temps des employés" }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +65,7 @@
         "minSeats": 5,
         "price": { "monthly": 140, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 users plus 2 accountant seats, up to 40 classes/locations, inventory tracking" }],
+        "keyLimits": [{ "en": "5 users plus 2 accountant seats, up to 40 classes/locations, inventory tracking", "fr": "5 utilisateurs plus 2 sièges comptable, jusqu'à 40 classes/sites, suivi des stocks" }],
         "sourceIds": ["s1"]
       },
       {
@@ -74,36 +75,89 @@
         "minSeats": 25,
         "price": { "monthly": 340, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "25 users plus 3 accountant seats, unlimited classes/locations, batch tools" }],
+        "keyLimits": [{ "en": "25 users plus 3 accountant seats, unlimited classes/locations, batch tools", "fr": "25 utilisateurs plus 3 sièges comptable, classes/sites illimités, outils de traitement par lot" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "simple-start",
     "addOns": [],
     "cautions": [
-      { "en": "Introductory prices (e.g. 50% off for 3 months) are promotional; the figures above are the regular list prices.", "sourceIds": ["s1"] },
-      { "en": "The Free plan caps invoicing at 2 per month, which is too low for most active freelance billing.", "sourceIds": ["s1"] }
+      { "en": "Introductory prices (e.g. 50% off for 3 months) are promotional; the figures above are the regular list prices.", "fr": "Les prix de lancement (par exemple -50 % pendant 3 mois) sont promotionnels ; les montants ci-dessus sont les tarifs réguliers.", "sourceIds": ["s1"] },
+      { "en": "The Free plan caps invoicing at 2 per month, which is too low for most active freelance billing.", "fr": "Le plan gratuit limite la facturation à 2 par mois, ce qui est trop faible pour la plupart des facturations freelance actives.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Core small-business accounting: income/expense tracking, invoicing, and profit and loss reporting.", "sourceIds": ["s1"] },
-      { "en": "AI-assisted features (Intuit Intelligence) for automated expense categorization and tax deduction suggestions.", "sourceIds": ["s1"] },
-      { "en": "Mobile app access and accountant/bookkeeper collaboration on paid plans.", "sourceIds": ["s1"] },
-      { "en": "Inventory tracking and multi-class/location reporting on higher-tier plans.", "sourceIds": ["s1"] }
+      { "en": "Core small-business accounting: income/expense tracking, invoicing, and profit and loss reporting.", "fr": "Comptabilité de base pour petite entreprise : suivi des revenus/dépenses, facturation et compte de résultat.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted features (Intuit Intelligence) for automated expense categorization and tax deduction suggestions.", "fr": "Fonctions assistées par IA (Intuit Intelligence) pour la catégorisation automatique des dépenses et des suggestions de déductions fiscales.", "sourceIds": ["s1"] },
+      { "en": "Mobile app access and accountant/bookkeeper collaboration on paid plans.", "fr": "Accès via application mobile et collaboration avec un comptable sur les forfaits payants.", "sourceIds": ["s1"] },
+      { "en": "Inventory tracking and multi-class/location reporting on higher-tier plans.", "fr": "Suivi des stocks et rapports multi-classes/sites sur les forfaits supérieurs.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "The Free plan restricts invoicing to 2 per month and has no mobile app access, limiting it to very light bookkeeping.", "sourceIds": ["s1"] },
-      { "en": "Some AI features are explicitly marked BETA or noted as having limited capacity.", "sourceIds": ["s1"] }
+      { "en": "The Free plan restricts invoicing to 2 per month and has no mobile app access, limiting it to very light bookkeeping.", "fr": "Le plan gratuit limite la facturation à 2 par mois et n'a pas d'accès mobile, ce qui le réserve à une comptabilité très légère.", "sourceIds": ["s1"] },
+      { "en": "Some AI features are explicitly marked BETA or noted as having limited capacity.", "fr": "Certaines fonctions IA sont explicitement marquées bêta ou signalées comme ayant une capacité limitée.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Freelancer or small-team admin/ops person who needs invoicing, expense tracking and bank reconciliation without hiring a bookkeeper full-time.",
+      "fr": "Freelance ou personne ops/admin en petite équipe qui a besoin de facturation, de suivi des dépenses et de rapprochement bancaire sans embaucher un comptable à temps plein."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: invoice clients and reconcile a bank account automatically, producing a profit-and-loss report each month.", "fr": "Usage : facturer ses clients et rapprocher un compte bancaire automatiquement, pour obtenir un compte de résultat chaque mois." },
+    { "en": "Use: add inventory tracking and multi-location class reporting once the business outgrows the Simple Start plan.", "fr": "Usage : activer le suivi des stocks et les rapports multi-classes/sites une fois que l'activité dépasse le forfait Simple Start." }
+  ],
   "alternatives": [
-    { "slug": "xero", "reason": { "en": "Direct competitor in small-business cloud accounting software." } },
-    { "slug": "freshbooks", "reason": { "en": "Alternative accounting and invoicing tool aimed at freelancers and small businesses." } }
+    { "slug": "xero", "reason": { "en": "Direct competitor in small-business cloud accounting software.", "fr": "Concurrent direct en logiciel de comptabilité cloud pour petites entreprises." } },
+    { "slug": "freshbooks", "reason": { "en": "Alternative accounting and invoicing tool aimed at freelancers and small businesses.", "fr": "Outil alternatif de comptabilité et de facturation destiné aux freelances et petites entreprises." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Simple Start covers core invoicing, expense tracking and reporting at $38/month, but the free plan's 2-invoice cap makes it unusable for active billing, pushing real cost onto a paid tier.", "fr": "Simple Start couvre facturation, suivi des dépenses et rapports de base à 38 $/mois, mais la limite de 2 factures du plan gratuit le rend inutilisable pour une facturation active, ce qui pousse le coût réel vers un forfait payant.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed for a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the stated promise of income/expense tracking, invoicing and profit-and-loss reporting, without a documented need for third-party bookkeeping tools.", "fr": "Tient sa promesse de suivi des revenus/dépenses, de facturation et de compte de résultat, sans besoin documenté d'outil de comptabilité tiers.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Scales from basic bookkeeping to inventory tracking, multi-class/location reporting and batch tools across five tiers up to Advanced.", "fr": "Évolue d'une comptabilité de base jusqu'au suivi des stocks, aux rapports multi-classes/sites et aux outils de traitement par lot sur cinq niveaux jusqu'à Advanced.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export or migration options when leaving QuickBooks are not covered by the collected sources.", "fr": "Note neutre : les options d'export ou de migration des données en quittant QuickBooks ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Accounting software", "fr": "Logiciel comptable" },
+    "shortDescription": {
+      "en": "QuickBooks Online is Intuit's cloud accounting software for invoicing, expense tracking and profit-and-loss reporting, with paid plans adding users, inventory and automation.",
+      "fr": "QuickBooks Online est le logiciel de comptabilité d'Intuit pour la facturation, le suivi des dépenses et le compte de résultat, avec des forfaits payants additionnels."
+    },
+    "longDescription": {
+      "en": "QuickBooks Online covers the core of small-business bookkeeping: tracking income and expenses, sending invoices, reconciling a bank account, and producing profit-and-loss reports. AI-assisted features suggest expense categories and tax deductions, though some remain marked beta.\n\nPricing starts at $38/month for Simple Start, one user plus two accountant seats; Essentials, Plus and Advanced add more users, inventory tracking and multi-location reporting up to $340/month. The free plan caps invoicing at 2 per month and drops mobile access, so it only fits very light bookkeeping; the figures above are regular prices, as introductory discounts are temporary.",
+      "fr": "QuickBooks Online couvre l'essentiel de la comptabilité d'une petite entreprise : suivi des revenus et dépenses, envoi de factures, rapprochement bancaire et compte de résultat. Des fonctions assistées par IA suggèrent des catégories de dépenses et des déductions fiscales, certaines restant marquées bêta.\n\nLes tarifs démarrent à 38 $/mois pour Simple Start, un utilisateur plus deux sièges comptable ; Essentials, Plus et Advanced ajoutent des utilisateurs, le suivi des stocks et des rapports multi-sites jusqu'à 340 $/mois. Le plan gratuit limite la facturation à 2 par mois et n'a pas d'accès mobile, donc il ne convient qu'à une comptabilité très légère ; les montants ci-dessus sont les prix réguliers, les remises de lancement étant temporaires."
+    },
+    "pros": [
+      { "en": "Covers invoicing, bank reconciliation and profit-and-loss reporting in one subscription.", "fr": "Facturation, rapprochement bancaire et compte de résultat réunis dans un seul abonnement." },
+      { "en": "Scales from solo Simple Start up to 25-user Advanced without switching software.", "fr": "Évolue du Simple Start solo jusqu'à l'Advanced à 25 utilisateurs sans changer de logiciel." }
+    ],
+    "cons": [
+      { "en": "The free plan's 2-invoice-a-month cap and missing mobile access make it unusable for active freelance billing.", "fr": "La limite de 2 factures par mois et l'absence d'accès mobile rendent le plan gratuit inutilisable pour une facturation freelance active." },
+      { "en": "Several AI-assisted features are still marked beta, with limited capacity.", "fr": "Plusieurs fonctions assistées par IA restent marquées bêta, avec une capacité limitée." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You invoice regularly and want bookkeeping, invoicing and bank reconciliation in one place.", "fr": "Tu factures régulièrement et tu veux comptabilité, facturation et rapprochement bancaire au même endroit." },
+      "avoidIf": { "en": "You expect to stay on the free plan: 2 invoices a month is not enough for active billing.", "fr": "Tu comptes rester sur le plan gratuit : 2 factures par mois ne suffisent pas pour une facturation active." },
+      "threshold": { "en": "Budget $38/month for Simple Start as soon as you send more than 2 invoices a month; move to Essentials at $85/month only once a second or third user needs seat access.", "fr": "Prévois 38 $/mois pour Simple Start dès que tu dépasses 2 factures par mois ; passe à Essentials à 85 $/mois seulement si un deuxième ou troisième utilisateur a besoin d'un accès." },
+      "billingTraps": { "en": "Introductory discounts (such as 50% off for 3 months) are temporary; the prices above are the regular list prices that apply afterward.", "fr": "Les remises de lancement (par exemple -50 % pendant 3 mois) sont temporaires ; les prix ci-dessus sont les tarifs réguliers appliqués ensuite." }
+    }
+  },
   "unknowns": [
     "Whether taxes are included in the listed monthly prices was not stated on the pricing page."
   ],

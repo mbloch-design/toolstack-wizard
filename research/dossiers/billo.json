@@ -3,7 +3,8 @@
   "slug": "billo",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Billo",
     "vendor": "Billo Inc.",
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 500 },
         "onQuote": false,
-        "keyLimits": [{ "en": "One-time credit package covering roughly 1-5 UGC videos over 12 months, per third-party pricing breakdown; base cost is reported around 99 USD per video.", "fr": null }],
+        "keyLimits": [{ "en": "One-time credit package covering roughly 1-5 UGC videos over 12 months, per third-party pricing breakdown; base cost is reported around 99 USD per video.", "fr": "Pack de crédits à paiement unique couvrant environ 1 à 5 vidéos UGC sur 12 mois, selon une analyse tarifaire tierce ; le coût de base rapporté est d'environ 99 $ par vidéo." }],
         "sourceIds": ["s1"]
       }
     ],
@@ -43,32 +44,85 @@
       { "name": "Expedited delivery / enhanced creator selection add-ons, reported to push per-video cost to ~150 USD", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The official pricing page was not directly accessible (redirects to a login screen); all pricing figures come from third-party reviews and should be reverified once a public pricing page is confirmed.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Pricing is package/credit-based rather than a flat monthly subscription; per-video cost varies with add-ons like rush delivery.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The official pricing page was not directly accessible (redirects to a login screen); all pricing figures come from third-party reviews and should be reverified once a public pricing page is confirmed.", "fr": "La page de tarifs officielle n'était pas directement accessible (redirection vers un écran de connexion) ; tous les montants de prix viennent d'avis tiers et doivent être revérifiés dès qu'une page de tarifs publique est confirmée.", "sourceIds": ["s1"] },
+      { "en": "Pricing is package/credit-based rather than a flat monthly subscription; per-video cost varies with add-ons like rush delivery.", "fr": "Le prix est basé sur des packs/crédits plutôt que sur un abonnement mensuel fixe ; le coût par vidéo varie selon des options comme la livraison accélérée.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Marketplace connecting brands with vetted UGC (user-generated content) creators to produce authentic ad-style videos on demand.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Brief-based creator matching with revision rounds included in each video order.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Bulk credit packages for brands needing recurring volumes of video content for ad campaigns.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Marketplace connecting brands with vetted UGC (user-generated content) creators to produce authentic ad-style videos on demand.", "fr": "Marketplace mettant en relation des marques avec des créateurs UGC vérifiés pour produire des vidéos publicitaires authentiques à la demande.", "sourceIds": ["s1"] },
+      { "en": "Brief-based creator matching with revision rounds included in each video order.", "fr": "Mise en relation basée sur un brief avec des tours de révision inclus dans chaque commande de vidéo.", "sourceIds": ["s1"] },
+      { "en": "Bulk credit packages for brands needing recurring volumes of video content for ad campaigns.", "fr": "Packs de crédits en volume pour les marques qui ont besoin de volumes récurrents de contenu vidéo pour leurs campagnes publicitaires.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No public flat-rate pricing; costs depend on package size and optional add-ons like expedited delivery.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Video turnaround and quality depend on marketplace creator availability rather than an in-house production team.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No public flat-rate pricing; costs depend on package size and optional add-ons like expedited delivery.", "fr": "Pas de tarification publique à taux fixe ; les coûts dépendent de la taille du pack et d'options comme la livraison accélérée.", "sourceIds": ["s1"] },
+      { "en": "Video turnaround and quality depend on marketplace creator availability rather than an in-house production team.", "fr": "Le délai et la qualité des vidéos dépendent de la disponibilité des créateurs du marketplace plutôt que d'une équipe de production interne.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small marketing teams and solo founders running paid ad campaigns who need a recurring supply of UGC-style video ads without an in-house production team.",
+      "fr": "Petites équipes marketing et fondateurs solos qui gèrent des campagnes publicitaires payantes et ont besoin d'un approvisionnement récurrent en vidéos publicitaires de style UGC sans équipe de production interne."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Ad creative sourcing: brief a vetted creator through the marketplace to produce a UGC-style ad video for a paid campaign.", "fr": "Approvisionnement en créatifs publicitaires : briefer un créateur vérifié du marketplace pour produire une vidéo publicitaire de style UGC pour une campagne payante." },
+    { "en": "Recurring content volume: buy a credit package to cover several UGC videos over the year instead of negotiating per project.", "fr": "Volume de contenu récurrent : acheter un pack de crédits pour couvrir plusieurs vidéos UGC sur l'année plutôt que de négocier projet par projet." }
+  ],
   "alternatives": [],
   "missingAlternatives": [
     { "name": "Insense", "officialUrl": "https://insense.pro/", "reason": "Direct UGC creator marketplace competitor frequently compared to Billo, not present in the catalogue." },
     { "name": "JoinBrands", "officialUrl": "https://www.joinbrands.com/", "reason": "UGC content marketplace competitor referenced alongside Billo in third-party comparisons, not present in the catalogue." },
     { "name": "Trend", "officialUrl": "https://www.trend.io/", "reason": "UGC creator marketplace competitor referenced in third-party comparisons, not present in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A ~$500 credit package reportedly covers 1-5 videos at around $99 each, but the figures are third-party estimates, not an official price, so cost-to-value cannot be confirmed precisely.", "fr": "Un pack de crédits d'environ 500 $ couvrirait 1 à 5 vidéos à environ 99 $ chacune selon des sources tierces, mais ces chiffres ne sont pas un prix officiel, donc le rapport coût-valeur ne peut pas être confirmé précisément.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or first-video turnaround is stated in the collected source.", "fr": "Note neutre : aucun temps de mise en place ni délai pour une première vidéo n'est précisé dans la source relevée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Brief-based creator matching and revision rounds are described as delivered, but turnaround and quality depend on marketplace creator availability rather than a guaranteed in-house process.", "fr": "La mise en relation basée sur un brief et les tours de révision sont décrits comme livrés, mais le délai et la qualité dépendent de la disponibilité des créateurs du marketplace plutôt que d'un processus interne garanti.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Neutral score: the source describes the marketplace model but does not compare Billo's output ceiling against other UGC marketplaces.", "fr": "Note neutre : la source décrit le modèle de marketplace mais ne compare pas le plafond de production de Billo à d'autres marketplaces UGC.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: ownership and portability of delivered video files are not covered by the collected sources.", "fr": "Note neutre : la propriété et la portabilité des fichiers vidéo livrés ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "UGC video marketplace", "fr": "Marketplace vidéos UGC" },
+    "shortDescription": { "en": "Billo is a marketplace connecting brands with UGC creators for ad-style videos, sold in credit packages reported around $99-150 per video.", "fr": "Billo est un marketplace reliant marques et créateurs UGC pour des vidéos publicitaires, vendu en packs de crédits autour de 99-150 $ par vidéo." },
+    "longDescription": {
+      "en": "Billo is a marketplace that connects brands with vetted UGC (user-generated content) creators to produce ad-style videos on demand. Briefs are matched to creators, each video order includes revision rounds, and bulk credit packages serve brands needing recurring volumes of content for ad campaigns.\n\nPricing is package/credit-based rather than a flat subscription; third-party reviews report a base cost around $99 per video, rising to about $150 with add-ons like expedited delivery. The official pricing page redirects to a login screen, so these figures should be reverified before you commit.",
+      "fr": "Billo est un marketplace qui met en relation des marques avec des créateurs UGC (contenu généré par les utilisateurs) vérifiés pour produire des vidéos publicitaires à la demande. Les briefs sont mis en relation avec des créateurs, chaque commande de vidéo inclut des tours de révision, et des packs de crédits en volume servent les marques qui ont besoin de volumes récurrents de contenu pour leurs campagnes publicitaires.\n\nLa tarification est basée sur des packs/crédits plutôt que sur un abonnement fixe ; des avis tiers rapportent un coût de base autour de 99 $ par vidéo, montant à environ 150 $ avec des options comme la livraison accélérée. La page de tarifs officielle redirige vers un écran de connexion, donc ces montants doivent être revérifiés avant de t'engager."
+    },
+    "pros": [
+      { "en": "Each video order includes revision rounds instead of a one-shot, take-it-or-leave-it delivery.", "fr": "Chaque commande de vidéo inclut des tours de révision, au lieu d'une livraison figée sans retour possible." },
+      { "en": "Bulk credit packages suit brands that need a recurring volume of ad videos rather than one-off orders.", "fr": "Les packs de crédits en volume conviennent aux marques qui ont besoin d'un volume récurrent de vidéos publicitaires plutôt que de commandes ponctuelles." }
+    ],
+    "cons": [
+      { "en": "The official pricing page redirects to a login screen, so current package prices are not publicly verifiable.", "fr": "La page de tarifs officielle redirige vers un écran de connexion, donc les prix actuels des packs ne sont pas vérifiables publiquement." },
+      { "en": "Turnaround and video quality depend on marketplace creator availability rather than an in-house production team.", "fr": "Le délai et la qualité des vidéos dépendent de la disponibilité des créateurs du marketplace plutôt que d'une équipe de production interne." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need a recurring supply of UGC-style ad videos with revision rounds and are comfortable buying credit packages instead of a flat subscription.", "fr": "Tu as besoin d'un approvisionnement récurrent en vidéos publicitaires de style UGC avec des tours de révision, et tu es à l'aise d'acheter des packs de crédits plutôt qu'un abonnement fixe." },
+      "avoidIf": { "en": "You need a confirmed public price before budgeting, since the official pricing page is not reachable without logging in.", "fr": "Tu as besoin d'un prix public confirmé avant de budgétiser, car la page de tarifs officielle n'est pas accessible sans se connecter." },
+      "threshold": { "en": "Worth it once the reported ~$99-150 per video, bought in a credit package, replaces the cost of briefing and producing UGC ads in-house or through an agency.", "fr": "Rentable dès que les 99-150 $ rapportés par vidéo, achetés en pack de crédits, remplacent le coût de briefer et produire des pubs UGC en interne ou via une agence." },
+      "billingTraps": { "en": "Per-video cost is not fixed: the reported base price is around $99, but add-ons like expedited delivery or enhanced creator selection can push it to about $150, and credit packages are bought upfront rather than billed per video after the fact.", "fr": "Le coût par vidéo n'est pas fixe : le prix de base rapporté est d'environ 99 $, mais des options comme la livraison accélérée ou une sélection de créateurs améliorée peuvent le faire monter à environ 150 $, et les packs de crédits sont achetés à l'avance plutôt que facturés vidéo par vidéo après coup." }
+    }
+  },
   "unknowns": [
     "No official pricing page was accessible; exact current package prices and per-video costs are unconfirmed from a primary source.",
     "The seed candidate list did not include any true UGC-marketplace competitors already in the catalogue, hence the missingAlternatives entries."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Tous les montants (pack de crédits ~500 $, coût de base ~99 $/vidéo, jusqu'à ~150 $ avec options) viennent d'un article tiers (ugcroster.com) car /pricing redirige vers un ecran de connexion sur billo.app ; a reconfirmer sur une page de tarifs officielle avant publication."
+  ]
 }

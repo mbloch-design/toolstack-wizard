@@ -30,6 +30,10 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [x] Lot local M, N, O (01/10/2026) : 24 fiches fusionnées (173 en tout). Retenues : browzwear, autocad-lt, gmail (prix sans source officielle) ; tubebody, adobe-acrobat, stripe (`hold`).
 - [ ] Prix à vérifier sur le site de l'éditeur : Rydoo (forfait de comparaison à 5 postes minimum), Microsoft Defender et Adobe Acrobat (mensuel = annuel), Restream Business (239 $ pour 2 postes, pas un vrai prix par poste), Stripe (taux public classé « sur devis »), TubeBuddy (prix Pro/Legend non confirmés)
 - [ ] Doublon catalogue : `tubebody` et `tubebuddy`
+- [x] Lot local P à X (01/10/2026) : 54 fiches fusionnées sur 70. Retenues (prix sans source officielle) : yousign, octane-render, arnold, crowdfire-inc, streamelements, billo, leonardo-ai, gelato, clo-3d, ableton-live, udio, highcharts ; `hold` : plasticity, luminar-neo, payhawk ; skribble en CHF.
+- [ ] Prix à vérifier : D5 Render (unité Teams), Indy (prix auto-entrepreneur seulement), Doola (mensuel non publié), Descript (annuel), Superlist (annuel recalculé), Ignition (aucun prix au dossier)
+- [ ] Doublon catalogue : `descript` et `descript-ai`
+- [x] Fragments du catalogue client répartis par hachage du slug (48 fichiers, 0,3 Mo max) au lieu de la première lettre (le « u » dépassait 1 Mo à cause des 106 `universal-*`)
 - [ ] Afficher le champ `tagline` des fiches dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « produit arrêté / racheté » depuis `lifecycle`
 - [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
 - [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`

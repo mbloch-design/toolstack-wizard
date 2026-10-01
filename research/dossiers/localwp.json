@@ -3,7 +3,8 @@
   "slug": "localwp",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Local (LocalWP)",
     "vendor": "WP Engine, Inc.",
@@ -25,7 +26,14 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "All features, including the formerly paid 'Local Pro' add-ons (Live Links, Connect, Cloud Backups, Image Optimizer), are free for every user as of Local 6.0.", "sourceIds": ["s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "All features, including the formerly paid 'Local Pro' add-ons (Live Links, Connect, Cloud Backups, Image Optimizer), are free for every user as of Local 6.0.",
+        "fr": "Toutes les fonctionnalités, y compris les extensions autrefois payantes de « Local Pro » (Live Links, Connect, Cloud Backups, Image Optimizer), sont gratuites pour tous les utilisateurs depuis Local 6.0."
+      },
+      "sourceIds": ["s2"]
+    },
     "plans": [
       {
         "key": "free",
@@ -35,7 +43,7 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "All features, including the formerly paid Pro add-ons, included at no cost.", "fr": null }
+          { "en": "All features, including the formerly paid Pro add-ons, included at no cost.", "fr": "Toutes les fonctionnalités, y compris les anciennes extensions Pro, incluses sans frais." }
         ],
         "sourceIds": ["s2"]
       }
@@ -43,19 +51,19 @@
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Local previously sold a paid 'Local Pro' subscription; WP Engine made all Pro features free for everyone starting with Local 6.0, so older third-party pricing information referencing a paid Pro tier is stale.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Local previously sold a paid 'Local Pro' subscription; WP Engine made all Pro features free for everyone starting with Local 6.0, so older third-party pricing information referencing a paid Pro tier is stale.", "fr": "Local vendait auparavant un abonnement payant « Local Pro » ; WP Engine a rendu toutes les fonctionnalités Pro gratuites pour tout le monde à partir de Local 6.0, donc les anciennes informations tarifaires tierces mentionnant un palier Pro payant sont obsolètes.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Local WordPress development environment for building, testing and iterating on WordPress sites offline.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Live Links: shareable temporary public URLs for a local site, for client or team review.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Connect and Cloud Backups: syncing and backing up local sites, with the Image Optimizer add-on for compressing site assets.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Add-ons ecosystem extending core functionality (e.g. integrations with Advanced Custom Fields, WP Migrate).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Local WordPress development environment for building, testing and iterating on WordPress sites offline.", "fr": "Environnement de développement WordPress local pour construire, tester et faire évoluer des sites WordPress hors ligne.", "sourceIds": ["s1"] },
+      { "en": "Live Links: shareable temporary public URLs for a local site, for client or team review.", "fr": "Live Links : URL publiques temporaires et partageables pour un site local, pour le faire relire par un client ou une équipe.", "sourceIds": ["s1"] },
+      { "en": "Connect and Cloud Backups: syncing and backing up local sites, with the Image Optimizer add-on for compressing site assets.", "fr": "Connect et Cloud Backups : synchronisation et sauvegarde des sites locaux, avec l'extension Image Optimizer pour compresser les fichiers du site.", "sourceIds": ["s1"] },
+      { "en": "Add-ons ecosystem extending core functionality (e.g. integrations with Advanced Custom Fields, WP Migrate).", "fr": "Écosystème d'extensions qui élargit les fonctionnalités de base (par exemple avec Advanced Custom Fields, WP Migrate).", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Focused on WordPress specifically; not a general-purpose local dev environment for other CMS or frameworks.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Owned and maintained by WP Engine, which also sells managed WordPress hosting, a potential conflict of interest for hosting-agnostic workflows.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Focused on WordPress specifically; not a general-purpose local dev environment for other CMS or frameworks.", "fr": "Concentré spécifiquement sur WordPress ; ce n'est pas un environnement de développement local généraliste pour d'autres CMS ou frameworks.", "sourceIds": ["s1"] },
+      { "en": "Owned and maintained by WP Engine, which also sells managed WordPress hosting, a potential conflict of interest for hosting-agnostic workflows.", "fr": "Détenu et maintenu par WP Engine, qui vend aussi de l'hébergement WordPress managé, un conflit d'intérêt potentiel pour des flux de travail neutres sur l'hébergeur.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Advanced Custom Fields", "slug": null, "sourceIds": ["s1"] },
@@ -63,11 +71,63 @@
     ],
     "platforms": ["windows", "macos", "linux"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer or freelancer building and testing WordPress sites who wants a free local environment with client review links and backups.",
+      "fr": "Un développeur ou indépendant qui construit et teste des sites WordPress et veut un environnement local gratuit avec liens de relecture client et sauvegardes."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Build offline, share instantly: develop a WordPress site locally, then generate a Live Links URL so a client can review it before it goes live.", "fr": "Construire hors ligne, partager instantanément : développer un site WordPress en local, puis générer une URL Live Links pour qu'un client le relise avant la mise en ligne." },
+    { "en": "Back up before risky changes: use Cloud Backups to snapshot a local WordPress site before testing a plugin or theme update.", "fr": "Sauvegarder avant un changement risqué : utiliser Cloud Backups pour prendre un instantané d'un site WordPress local avant de tester une mise à jour de plugin ou de thème." }
+  ],
   "alternatives": [],
   "missingAlternatives": [
     { "name": "DevKinsta", "officialUrl": "https://kinsta.com/devkinsta/", "reason": "Direct free local WordPress development tool competitor from hosting provider Kinsta, not in the catalogue." },
     { "name": "XAMPP / MAMP", "officialUrl": "https://www.mamp.info/en/", "reason": "General-purpose local server stacks commonly used for WordPress development as a lower-level alternative, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "All features, including the formerly paid Pro add-ons, are free since Local 6.0, so there is no cost to justify against alternatives.", "fr": "Toutes les fonctionnalités, y compris les anciennes extensions Pro payantes, sont gratuites depuis Local 6.0, donc il n'y a aucun coût à justifier face aux alternatives.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "A dedicated local WordPress environment with one-click Live Links and Cloud Backups needs no server configuration skill to get a working site.", "fr": "Un environnement WordPress local dédié avec Live Links et Cloud Backups en un clic ne demande aucune compétence de configuration serveur pour obtenir un site fonctionnel.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers local build/test, client review links, sync and backups as described, specifically for WordPress.", "fr": "Assure la construction et le test en local, les liens de relecture client, la synchronisation et les sauvegardes comme décrit, spécifiquement pour WordPress.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers the core local WordPress workflow well but stays WordPress-specific, unlike general-purpose local server stacks.", "fr": "Couvre bien le flux de travail WordPress local de base, mais reste spécifique à WordPress, à la différence des piles serveur locales généralistes.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: whether local sites and backups export cleanly to another local dev tool is not covered by the collected sources.", "fr": "Note neutre : la possibilité d'exporter proprement les sites locaux et les sauvegardes vers un autre outil local ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Local WordPress dev", "fr": "WordPress en local" },
+    "shortDescription": {
+      "en": "Local is a free desktop app for building, testing and backing up WordPress sites offline, with one-click links to share a site for review.",
+      "fr": "Local est une application de bureau gratuite pour construire, tester et sauvegarder des sites WordPress hors ligne, avec des liens en un clic pour les faire relire."
+    },
+    "longDescription": {
+      "en": "Local gives developers and freelancers a dedicated offline environment to build and iterate on WordPress sites without a live server. Live Links generate a temporary public URL for client or team review, Connect and Cloud Backups handle syncing and backups, and an add-ons ecosystem covers tools like Advanced Custom Fields or WP Migrate.\n\nSince Local 6.0, every feature that used to require a paid 'Local Pro' subscription is free for all users, so there is no pricing tier to compare. The main trade-off is scope: Local is built specifically for WordPress, and it is maintained by WP Engine, which also sells managed WordPress hosting.",
+      "fr": "Local offre aux développeurs et indépendants un environnement hors ligne dédié pour construire et faire évoluer des sites WordPress sans serveur en production. Live Links génère une URL publique temporaire pour une relecture client ou équipe, Connect et Cloud Backups gèrent la synchronisation et les sauvegardes, et un écosystème d'extensions couvre des outils comme Advanced Custom Fields ou WP Migrate.\n\nDepuis Local 6.0, toutes les fonctionnalités qui nécessitaient autrefois l'abonnement payant « Local Pro » sont gratuites pour tous, donc il n'y a aucun palier tarifaire à comparer. Le principal compromis porte sur le périmètre : Local est construit spécifiquement pour WordPress, et il est maintenu par WP Engine, qui vend aussi de l'hébergement WordPress managé."
+    },
+    "pros": [
+      { "en": "Every feature, including the formerly paid Pro add-ons, is free since Local 6.0.", "fr": "Toutes les fonctionnalités, y compris les anciennes extensions Pro payantes, sont gratuites depuis Local 6.0." },
+      { "en": "Live Links let a client or teammate review a local site without deploying it anywhere.", "fr": "Live Links permet à un client ou un collègue de relire un site local sans le déployer où que ce soit." }
+    ],
+    "cons": [
+      { "en": "Built specifically for WordPress, so it does not help with other CMS or framework-based local development.", "fr": "Construit spécifiquement pour WordPress, il n'aide donc pas pour du développement local sur un autre CMS ou framework." },
+      { "en": "Maintained by WP Engine, a managed WordPress hosting provider, which is worth knowing for a hosting-agnostic workflow.", "fr": "Maintenu par WP Engine, un hébergeur WordPress managé, ce qui vaut la peine d'être su pour un flux de travail neutre sur l'hébergeur." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You build or maintain WordPress sites and want a free local environment with built-in client review links and backups.", "fr": "Garde Local si tu construis ou maintiens des sites WordPress et veux un environnement local gratuit avec liens de relecture client et sauvegardes intégrés." },
+      "avoidIf": { "en": "You need a general-purpose local server stack for non-WordPress projects, or want to avoid a tool maintained by a hosting provider.", "fr": "Évite Local si tu as besoin d'une pile serveur locale généraliste pour des projets hors WordPress, ou veux éviter un outil maintenu par un hébergeur." },
+      "threshold": { "en": "There is no paid tier to weigh: every feature is free, so the only cost is the time spent learning the add-ons ecosystem.", "fr": "Il n'y a aucun palier payant à peser : tout est gratuit, le seul coût est le temps passé à apprendre l'écosystème d'extensions." }
+    }
+  },
   "unknowns": [
     "No slug in this tool's alternativeCandidates list (a generic nocode-web/hosting list) represents a genuine same-need local WordPress development competitor, so no in-catalogue alternatives could be selected; closest real competitors are listed under missingAlternatives instead.",
     "Exact release date of the Local 6.0 free-for-everyone change was not independently confirmed beyond a search snippet referencing 'May 2025'."

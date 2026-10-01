@@ -3,7 +3,7 @@
   "slug": "linkedin-recruiter",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "LinkedIn Recruiter",
     "vendor": "LinkedIn Corporation (Microsoft)",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://business.linkedin.com/talent-solutions/recruiter", "tier": 1, "accessedOn": "2026-09-25", "title": "LinkedIn Recruiter overview" }
+    {
+      "id": "s1",
+      "url": "https://business.linkedin.com/talent-solutions/recruiter",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "LinkedIn Recruiter overview"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,55 +44,263 @@
         "name": "Recruiter Lite",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "20 search filters, access limited to 3rd-degree connections, 30 InMails per month, no Hiring Assistant access" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "20 search filters, access limited to 3rd-degree connections, 30 InMails per month, no Hiring Assistant access",
+            "fr": "20 filtres de recherche, accès limité aux relations de 3e degré, 30 InMails par mois, pas d'accès à Hiring Assistant."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "recruiter",
         "name": "Recruiter (Corporate)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "40+ advanced search filters, 100-150 InMails per month per seat, AI-assisted search, ATS/CRM integrations, team collaboration and analytics" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "40+ advanced search filters, 100-150 InMails per month per seat, AI-assisted search, ATS/CRM integrations, team collaboration and analytics",
+            "fr": "Plus de 40 filtres de recherche avancés, 100 à 150 InMails par mois et par poste, recherche assistée par IA, intégrations ATS/CRM, collaboration d'équipe et analyses."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [
-      { "name": { "en": "Hiring Assistant" }, "unit": "seat", "sourceIds": ["s1"] }
+      {
+        "name": {
+          "en": "Hiring Assistant",
+          "fr": "Hiring Assistant"
+        },
+        "unit": "seat",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "No public pricing is published; both Recruiter Lite and full Recruiter (Corporate) require contacting a sales consultant for a quote, and price depends on company size and seat count.", "sourceIds": ["s1"] }
+      {
+        "en": "No public pricing is published; both Recruiter Lite and full Recruiter (Corporate) require contacting a sales consultant for a quote, and price depends on company size and seat count.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Aucun prix public n'est publié : Recruiter Lite comme Recruiter (Corporate) nécessitent de contacter un commercial pour un devis, le prix dépendant de la taille de l'entreprise et du nombre de postes."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Candidate search across LinkedIn's professional network with advanced filters (job title, location, skills, industry).", "sourceIds": ["s1"] },
-      { "en": "InMail messaging to contact candidates outside a recruiter's existing network.", "sourceIds": ["s1"] },
-      { "en": "AI-assisted search and personalized outreach message drafting.", "sourceIds": ["s1"] },
-      { "en": "Team collaboration and recruiting analytics tools, with ATS/CRM integrations on the full Recruiter plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Candidate search across LinkedIn's professional network with advanced filters (job title, location, skills, industry).",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Recherche de candidats dans le réseau professionnel LinkedIn avec filtres avancés (intitulé de poste, localisation, compétences, secteur)."
+      },
+      {
+        "en": "InMail messaging to contact candidates outside a recruiter's existing network.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Messagerie InMail pour contacter des candidats en dehors du réseau existant du recruteur."
+      },
+      {
+        "en": "AI-assisted search and personalized outreach message drafting.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Recherche assistée par IA et rédaction de messages d'approche personnalisés."
+      },
+      {
+        "en": "Team collaboration and recruiting analytics tools, with ATS/CRM integrations on the full Recruiter plan.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Outils de collaboration d'équipe et d'analyse du recrutement, avec intégrations ATS/CRM sur le plan Recruiter complet."
+      }
     ],
     "limitations": [
-      { "en": "Recruiter Lite restricts candidate visibility to 3rd-degree connections and provides only 20 search filters, well below the full Recruiter tier.", "sourceIds": ["s1"] },
-      { "en": "No public pricing is disclosed, making budget comparison against other sourcing tools difficult without contacting sales.", "sourceIds": ["s1"] }
+      {
+        "en": "Recruiter Lite restricts candidate visibility to 3rd-degree connections and provides only 20 search filters, well below the full Recruiter tier.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Recruiter Lite limite la visibilité des candidats aux relations de 3e degré et ne propose que 20 filtres de recherche, bien en dessous du palier Recruiter complet."
+      },
+      {
+        "en": "No public pricing is disclosed, making budget comparison against other sourcing tools difficult without contacting sales.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Aucun prix public n'est communiqué, ce qui complique la comparaison budgétaire avec d'autres outils de sourcing sans contacter le service commercial."
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "greenhouse", "reason": { "en": "Applicant tracking system that also supports candidate sourcing workflows, often used alongside or instead of Recruiter." } },
-    { "slug": "ashby", "reason": { "en": "Recruiting platform combining ATS and sourcing features, a modern alternative to LinkedIn Recruiter for hiring teams." } }
+    {
+      "slug": "greenhouse",
+      "reason": {
+        "en": "Applicant tracking system that also supports candidate sourcing workflows, often used alongside or instead of Recruiter.",
+        "fr": "Système de suivi des candidatures (ATS) qui prend aussi en charge le sourcing, souvent utilisé en complément ou à la place de Recruiter."
+      }
+    },
+    {
+      "slug": "ashby",
+      "reason": {
+        "en": "Recruiting platform combining ATS and sourcing features, a modern alternative to LinkedIn Recruiter for hiring teams.",
+        "fr": "Plateforme de recrutement combinant ATS et sourcing, une alternative moderne à LinkedIn Recruiter pour les équipes RH."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "SeekOut", "officialUrl": "https://www.seekout.com", "reason": "Direct competitor for AI-powered candidate sourcing, not in the catalogue" },
-    { "name": "hireEZ", "officialUrl": "https://hireez.com", "reason": "Direct competitor for recruiting sourcing and outreach automation, not in the catalogue" }
+    {
+      "name": "SeekOut",
+      "officialUrl": "https://www.seekout.com",
+      "reason": "Direct competitor for AI-powered candidate sourcing, not in the catalogue"
+    },
+    {
+      "name": "hireEZ",
+      "officialUrl": "https://hireez.com",
+      "reason": "Direct competitor for recruiting sourcing and outreach automation, not in the catalogue"
+    }
   ],
   "unknowns": [
     "Exact Recruiter Lite and Corporate list prices were not published on the fetched page; sourcing data mentioned approximate figures (~$170/mo Lite, ~$1,000/mo/seat Corporate) that could not be directly verified against an official price list.",
     "Whether a free trial is offered for Recruiter Lite was not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams with a hiring need who source candidates directly on LinkedIn rather than relying only on inbound applications.",
+      "fr": "Petites équipes qui recrutent et qui vont chercher des candidats directement sur LinkedIn plutôt que de ne compter que sur les candidatures spontanées."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Sourcing: search LinkedIn's network with advanced filters to build a shortlist of candidates matching a specific role.",
+      "fr": "Sourcing : chercher dans le réseau LinkedIn avec des filtres avancés pour constituer une liste de candidats correspondant à un poste précis."
+    },
+    {
+      "en": "Outreach: contact candidates outside an existing network through InMail, with AI-assisted drafting of the first message.",
+      "fr": "Approche : contacter des candidats hors du réseau existant via InMail, avec une rédaction du premier message assistée par IA."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No public pricing is disclosed, so the cost cannot be weighed against the value of candidate access without first contacting sales, which makes the trade-off hard to judge upfront.",
+        "fr": "Aucun prix public n'est communiqué, donc le coût ne peut pas être mis en balance avec la valeur de l'accès aux candidats sans contacter d'abord le service commercial, ce qui rend le compromis difficile à juger à l'avance.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Search filters and InMail are standard LinkedIn interface patterns, but Recruiter Lite's restriction to 3rd-degree connections and only 20 filters requires learning where the real limits sit.",
+        "fr": "Les filtres de recherche et InMail reprennent les usages classiques de LinkedIn, mais la restriction de Recruiter Lite aux relations de 3e degré et à 20 filtres impose d'apprendre où se situent les vraies limites.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers candidate search and outreach as announced, but Recruiter Lite's reduced filter set and connection-degree limit mean the full promise only holds on the Corporate tier.",
+        "fr": "Tient ses promesses de recherche et d'approche de candidats, mais le filtrage réduit et la limite de degré de relation de Recruiter Lite font que la promesse complète ne tient que sur le palier Corporate.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "The full Recruiter plan offers 40+ advanced filters, AI-assisted search, ATS/CRM integrations, team collaboration and analytics, built on LinkedIn's own professional network data.",
+        "fr": "Le plan Recruiter complet propose plus de 40 filtres avancés, une recherche assistée par IA, des intégrations ATS/CRM, la collaboration d'équipe et des analyses, construits sur les données du réseau professionnel LinkedIn lui-même.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of saved searches, candidate lists or InMail history when leaving Recruiter are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des recherches enregistrées, des listes de candidats ou de l'historique InMail en quittant Recruiter ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Candidate sourcing",
+      "fr": "Sourcing de candidats"
+    },
+    "shortDescription": {
+      "en": "LinkedIn Recruiter searches LinkedIn's network for candidates and lets recruiters contact them via InMail, with pricing available only on quote.",
+      "fr": "LinkedIn Recruiter permet de chercher des candidats dans le réseau LinkedIn et de les contacter via InMail, avec un tarif disponible uniquement sur devis."
+    },
+    "longDescription": {
+      "en": "LinkedIn Recruiter searches LinkedIn's professional network with advanced filters (title, location, skills, industry) and lets a recruiter contact candidates outside their own network through InMail, with AI-assisted search and outreach drafting.\n\nNo price is published: both Recruiter Lite and the full Recruiter plan require a sales conversation, and Lite further limits visibility to 3rd-degree connections with only 20 filters. It fits a small team actively sourcing candidates on LinkedIn rather than one relying only on inbound applications.",
+      "fr": "LinkedIn Recruiter permet de chercher dans le réseau professionnel LinkedIn avec des filtres avancés (intitulé, localisation, compétences, secteur) et de contacter des candidats hors de son réseau via InMail, avec une recherche et une rédaction d'approche assistées par IA.\n\nAucun prix n'est publié : Recruiter Lite comme le plan Recruiter complet nécessitent un échange commercial, et Lite limite en plus la visibilité aux relations de 3e degré avec seulement 20 filtres. L'outil convient à une petite équipe qui va activement chercher des candidats sur LinkedIn plutôt qu'à une équipe qui ne compte que sur les candidatures spontanées."
+    },
+    "pros": [
+      {
+        "en": "Direct access to LinkedIn's own professional network data for sourcing.",
+        "fr": "Accès direct aux données du réseau professionnel LinkedIn pour le sourcing."
+      },
+      {
+        "en": "AI-assisted search and outreach message drafting on top of the search filters.",
+        "fr": "Recherche et rédaction de messages d'approche assistées par IA en plus des filtres."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public pricing: every plan requires a sales conversation before any cost estimate.",
+        "fr": "Aucun prix public : chaque plan nécessite un échange commercial avant toute estimation de coût."
+      },
+      {
+        "en": "Recruiter Lite restricts visibility to 3rd-degree connections with far fewer filters than the full plan.",
+        "fr": "Recruiter Lite limite la visibilité aux relations de 3e degré avec beaucoup moins de filtres que le plan complet."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "A small team needs to actively source candidates on LinkedIn beyond what inbound applications bring in.",
+        "fr": "Une petite équipe a besoin de chercher activement des candidats sur LinkedIn au-delà des candidatures spontanées reçues."
+      },
+      "avoidIf": {
+        "en": "Hiring volume is low or occasional, where a one-off job post or a cheaper ATS-only tool covers the need without a sales negotiation.",
+        "fr": "Le volume de recrutement est faible ou occasionnel : une simple offre d'emploi ou un ATS moins cher couvre le besoin sans négociation commerciale."
+      },
+      "threshold": {
+        "en": "Pricing is quote-only, so budget for a sales conversation before committing; no public monthly figure can be used as a comparison threshold.",
+        "fr": "Le tarif est uniquement sur devis : prévoir un échange commercial avant de s'engager, aucun montant mensuel public ne peut servir de seuil de comparaison."
+      }
+    }
+  }
 }

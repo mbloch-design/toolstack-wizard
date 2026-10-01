@@ -3,7 +3,8 @@
   "slug": "quarkxpress",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "QuarkXPress",
     "vendor": "Quark Software Inc.",
@@ -35,7 +36,7 @@
         "price": { "monthly": null, "annualPerMonth": 23.25, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "USD 279/year, includes upgrades, updates and technical support while active, with automatic renewal.", "fr": null }
+          { "en": "USD 279/year, includes upgrades, updates and technical support while active, with automatic renewal.", "fr": "279 $/an, inclut les mises à jour, les nouvelles versions et le support technique tant que l'abonnement est actif, avec renouvellement automatique." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,39 +48,94 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 699 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "USD 699 one-time purchase; no upgrades or support included after purchase unless a separate Advantage maintenance plan is added.", "fr": null }
+          { "en": "USD 699 one-time purchase; no upgrades or support included after purchase unless a separate Advantage maintenance plan is added.", "fr": "Achat unique de 699 $ ; aucune mise à jour ni support inclus après l'achat, sauf ajout séparé d'un plan de maintenance Advantage." }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "annual-subscription",
     "addOns": [
-      { "en": "QuarkXPress Advantage Plan: optional maintenance/support add-on for perpetual license holders.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "QuarkXPress Advantage Plan: optional maintenance/support add-on for perpetual license holders.", "fr": "QuarkXPress Advantage Plan : extension optionnelle de maintenance et support pour les détenteurs d'une licence perpétuelle.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The perpetual license does not include ongoing upgrades or support by default; customers must add a separate Advantage maintenance plan to keep receiving updates.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The perpetual license does not include ongoing upgrades or support by default; customers must add a separate Advantage maintenance plan to keep receiving updates.", "fr": "La licence perpétuelle n'inclut pas les mises à jour ni le support par défaut ; il faut ajouter un plan de maintenance Advantage séparé pour continuer à recevoir les nouvelles versions.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Professional desktop publishing (DTP) for brochures, magazines, books and multi-channel documents with advanced typography and style-sheet management.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Collaborative workflows for teams working on layout projects.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Professional desktop publishing (DTP) for brochures, magazines, books and multi-channel documents with advanced typography and style-sheet management.", "fr": "Publication assistée par ordinateur (PAO) professionnelle pour brochures, magazines, livres et documents multicanaux, avec typographie avancée et gestion des feuilles de style.", "sourceIds": ["s2"] },
+      { "en": "Collaborative workflows for teams working on layout projects.", "fr": "Flux de travail collaboratifs pour les équipes travaillant sur des projets de mise en page.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "No free tier or ongoing free version; access requires either a paid subscription or a one-time perpetual license purchase.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Perpetual license buyers lose access to new feature updates unless they separately purchase an Advantage maintenance plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No free tier or ongoing free version; access requires either a paid subscription or a one-time perpetual license purchase.", "fr": "Pas de palier gratuit ni de version gratuite durable ; l'accès nécessite un abonnement payant ou l'achat d'une licence perpétuelle.", "sourceIds": ["s1"] },
+      { "en": "Perpetual license buyers lose access to new feature updates unless they separately purchase an Advantage maintenance plan.", "fr": "Les acheteurs d'une licence perpétuelle n'ont plus accès aux nouvelles fonctionnalités, sauf à acheter séparément un plan de maintenance Advantage.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows", "macos"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "An independent consultant or small studio producing professional print and multi-channel layouts (brochures, magazines, books) for clients.",
+      "fr": "Un consultant indépendant ou un petit studio qui produit des mises en page professionnelles imprimées et multicanaux (brochures, magazines, livres) pour ses clients."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Produce a magazine issue: lay out multi-page content with style sheets and advanced typography, then export for print and digital channels.", "fr": "Produire un numéro de magazine : mettre en page un contenu multi-pages avec feuilles de style et typographie avancée, puis exporter pour l'impression et le numérique." },
+    { "en": "Buy once, own it: choose the perpetual license to avoid a recurring subscription, adding the Advantage plan only in years where new features are needed.", "fr": "Acheter une fois, le garder : choisir la licence perpétuelle pour éviter un abonnement récurrent, et n'ajouter le plan Advantage que les années où de nouvelles fonctionnalités sont nécessaires." }
+  ],
   "alternatives": [
-    { "slug": "indesign", "reason": { "en": "Adobe's dominant desktop publishing tool and QuarkXPress's main direct competitor in professional layout work.", "fr": null } },
-    { "slug": "affinity-publisher", "reason": { "en": "Lower-cost desktop publishing alternative with a one-time purchase model, appealing to the same budget-conscious segment as QuarkXPress's perpetual license.", "fr": null } }
+    { "slug": "indesign", "reason": { "en": "Adobe's dominant desktop publishing tool and QuarkXPress's main direct competitor in professional layout work.", "fr": "L'outil de PAO dominant d'Adobe, principal concurrent direct de QuarkXPress en mise en page professionnelle." } },
+    { "slug": "affinity-publisher", "reason": { "en": "Lower-cost desktop publishing alternative with a one-time purchase model, appealing to the same budget-conscious segment as QuarkXPress's perpetual license.", "fr": "Alternative de PAO moins chère avec un modèle d'achat unique, qui séduit le même public soucieux de son budget que la licence perpétuelle de QuarkXPress." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The perpetual license ($699 once) can be cheaper over several years than a subscription, but losing update access without Advantage maintenance weighs against the value for teams that need current features.", "fr": "La licence perpétuelle (699 $ une fois) peut coûter moins cher qu'un abonnement sur plusieurs années, mais la perte d'accès aux mises à jour sans la maintenance Advantage pèse sur la valeur pour les équipes qui ont besoin des dernières fonctionnalités.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Professional desktop publishing with advanced typography and style-sheet management targets users with prior layout experience, not a quick first result for a newcomer.", "fr": "La PAO professionnelle avec typographie avancée et gestion des feuilles de style vise des utilisateurs ayant déjà une expérience de mise en page, pas un premier résultat rapide pour un débutant.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers full desktop publishing for brochures, magazines, books and multi-channel documents as described, with collaborative workflows for teams.", "fr": "Assure une PAO complète pour brochures, magazines, livres et documents multicanaux comme décrit, avec des flux collaboratifs pour les équipes.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Advanced typography, style-sheet management and multi-channel output place it at the professional end of desktop publishing tools.", "fr": "La typographie avancée, la gestion des feuilles de style et la sortie multicanale le placent au niveau professionnel des outils de PAO.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: export formats and file portability to other layout tools are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des fichiers vers d'autres outils de mise en page ne figurent pas dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Desktop publishing", "fr": "Mise en page PAO" },
+    "shortDescription": {
+      "en": "QuarkXPress is professional desktop publishing software for brochures, magazines and books, sold either as an annual subscription or a one-time perpetual license.",
+      "fr": "QuarkXPress est un logiciel de PAO professionnel pour brochures, magazines et livres, vendu en abonnement annuel ou en licence perpétuelle à l'achat unique."
+    },
+    "longDescription": {
+      "en": "QuarkXPress handles professional desktop publishing for brochures, magazines, books and other multi-channel documents, with advanced typography and style-sheet management built for layout teams and freelancers producing client work. Collaborative workflows support several people working on the same kind of project.\n\nThere is no free tier. A prepaid annual subscription costs $279/year ($23.25/month) and includes ongoing upgrades and support. A perpetual license costs $699 once but stops receiving updates unless a separate Advantage maintenance plan is purchased, so the right choice depends on whether staying on the latest version matters more than a lower long-term cost.",
+      "fr": "QuarkXPress gère la PAO professionnelle pour brochures, magazines, livres et autres documents multicanaux, avec une typographie avancée et une gestion des feuilles de style pensées pour les équipes de mise en page et les indépendants qui produisent pour des clients. Les flux collaboratifs permettent à plusieurs personnes de travailler sur un même type de projet.\n\nPas de palier gratuit. L'abonnement annuel prépayé coûte 279 $/an (23,25 $/mois) et inclut les mises à jour et le support en continu. La licence perpétuelle coûte 699 $ une fois mais n'inclut plus les mises à jour sans l'ajout d'un plan de maintenance Advantage séparé ; le bon choix dépend donc de l'importance de rester sur la dernière version face à un coût plus bas sur la durée."
+    },
+    "pros": [
+      { "en": "Choice between a subscription and a one-time perpetual license, unlike most desktop publishing competitors.", "fr": "Choix entre un abonnement et une licence perpétuelle à l'achat unique, contrairement à la plupart des concurrents en PAO." },
+      { "en": "Advanced typography and style-sheet management built for long, multi-page professional documents.", "fr": "Typographie avancée et gestion des feuilles de style pensées pour les longs documents professionnels multi-pages." }
+    ],
+    "cons": [
+      { "en": "No free tier or free trial mentioned in the pricing facts collected.", "fr": "Pas de palier gratuit ni d'essai gratuit mentionné dans les faits tarifaires relevés." },
+      { "en": "Perpetual license buyers must keep paying for Advantage maintenance to keep receiving feature updates.", "fr": "Les acheteurs de la licence perpétuelle doivent continuer à payer la maintenance Advantage pour continuer à recevoir les nouvelles fonctionnalités." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You produce professional print or multi-channel layouts regularly and want the option of a one-time purchase instead of a forced subscription.", "fr": "Garde QuarkXPress si tu produis régulièrement des mises en page professionnelles imprimées ou multicanaux et veux pouvoir choisir un achat unique plutôt qu'un abonnement forcé." },
+      "avoidIf": { "en": "You are new to desktop publishing and want a tool with a gentle learning curve and a free tier to start on.", "fr": "Évite QuarkXPress si tu débutes en PAO et cherches un outil à la prise en main simple avec un palier gratuit pour démarrer." },
+      "threshold": { "en": "The annual subscription costs $279/year versus $699 once for the perpetual license: the perpetual license becomes cheaper after about two and a half years if you don't add Advantage maintenance.", "fr": "L'abonnement annuel coûte 279 $/an contre 699 $ une fois pour la licence perpétuelle : la licence perpétuelle devient moins chère après environ deux ans et demi si tu n'ajoutes pas la maintenance Advantage." }
+    }
+  },
   "unknowns": [
     "The main product page (quark.com/products/quarkxpress) returned empty content to automated fetch in this session; pricing and buying-options details rely on search-engine snippets of official Quark pages instead of a direct read.",
     "Exact contents of the Advantage maintenance plan (price, duration) were not verified."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Pricing facts come from search-snippet reads of quark.com pages, not a direct fetch of the live pricing page; re-verify the $279/year and $699 one-time figures, and the Advantage plan's own price, directly on quark.com before publishing."
+  ]
 }

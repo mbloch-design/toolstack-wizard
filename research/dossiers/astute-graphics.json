@@ -3,7 +3,8 @@
   "slug": "astute-graphics",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Astute Graphics",
     "vendor": "Astute Graphics Ltd.",
@@ -37,7 +38,7 @@
         "price": { "monthly": null, "annualPerMonth": 12.42, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Approx. USD 149/year (about USD 12.42/month equivalent) for the full collection of Adobe Illustrator plugins, 12 months of updates, tutorials and support; exact figure not shown on the pricing page itself but confirmed via search of official/docs sources; price rose in February 2026 for new and existing customers.", "fr": null }
+          { "en": "Approx. USD 149/year (about USD 12.42/month equivalent) for the full collection of Adobe Illustrator plugins, 12 months of updates, tutorials and support; exact figure not shown on the pricing page itself but confirmed via search of official/docs sources; price rose in February 2026 for new and existing customers.", "fr": "Environ 149 $/an (environ 12,42 $/mois équivalent) pour la collection complète de plugins Adobe Illustrator, 12 mois de mises à jour, tutoriels et support ; le chiffre exact n'est pas affiché sur la page tarifs elle-même mais confirmé via une recherche de sources officielles/docs ; le prix a augmenté en février 2026 pour les nouveaux et anciens clients." }
         ],
         "sourceIds": ["s1", "s3"]
       },
@@ -49,7 +50,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Per-seat annual pricing with volume discounts for teams of 5 and 11+ members; exact amount not public, requires quote.", "fr": null }
+          { "en": "Per-seat annual pricing with volume discounts for teams of 5 and 11+ members; exact amount not public, requires quote.", "fr": "Tarif annuel par siège avec remises de volume pour les équipes de 5 et 11+ membres ; montant exact non public, sur devis." }
         ],
         "sourceIds": ["s1"]
       }
@@ -57,34 +58,81 @@
     "comparePlanKey": "individual",
     "addOns": [],
     "cautions": [
-      { "en": "The pricing page did not display the exact individual-plan dollar amount directly in this session; the commonly cited USD 149/year figure comes from official/docs sources found via search and should be re-verified on a future pass.", "fr": null, "sourceIds": ["s1", "s3"] },
-      { "en": "Subscription lapses end plugin access entirely per the official subscription FAQ; it does not confirm any plugins remaining usable for free after cancellation, contradicting some third-party claims.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "The pricing page did not display the exact individual-plan dollar amount directly in this session; the commonly cited USD 149/year figure comes from official/docs sources found via search and should be re-verified on a future pass.", "fr": "La page tarifs n'affichait pas directement le montant exact du plan individuel pendant cette session ; le chiffre couramment cité de 149 $/an provient de sources officielles/docs trouvées via recherche et devrait être revérifié lors d'un prochain passage.", "sourceIds": ["s1", "s3"] },
+      { "en": "Subscription lapses end plugin access entirely per the official subscription FAQ; it does not confirm any plugins remaining usable for free after cancellation, contradicting some third-party claims.", "fr": "La fin de l'abonnement coupe totalement l'accès aux plugins selon la FAQ officielle sur l'abonnement ; elle ne confirme aucun plugin restant utilisable gratuitement après annulation, contredisant certaines affirmations tierces.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Suite of specialized Adobe Illustrator plugins (around 18-21 tools) covering vector cleanup (Vector First Aid), sketching (DynamicSketch), ink/line work (InkFlow, InkScribe), and color/geometry utilities.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Subscription includes the entire plugin collection plus 12 months of updates and new features.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Extensive tutorial library (video and blog resources) and technical support included with subscription.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Stylus/tablet compatibility for sketch-oriented tools.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Suite of specialized Adobe Illustrator plugins (around 18-21 tools) covering vector cleanup (Vector First Aid), sketching (DynamicSketch), ink/line work (InkFlow, InkScribe), and color/geometry utilities.", "fr": "Suite de plugins spécialisés pour Adobe Illustrator (environ 18 à 21 outils) couvrant le nettoyage vectoriel (Vector First Aid), le dessin (DynamicSketch), le travail d'encrage/lignes (InkFlow, InkScribe), et des utilitaires de couleur/géométrie.", "sourceIds": ["s1"] },
+      { "en": "Subscription includes the entire plugin collection plus 12 months of updates and new features.", "fr": "L'abonnement inclut toute la collection de plugins plus 12 mois de mises à jour et de nouvelles fonctions.", "sourceIds": ["s1"] },
+      { "en": "Extensive tutorial library (video and blog resources) and technical support included with subscription.", "fr": "Bibliothèque de tutoriels complète (vidéos et articles de blog) et support technique inclus avec l'abonnement.", "sourceIds": ["s1"] },
+      { "en": "Stylus/tablet compatibility for sketch-oriented tools.", "fr": "Compatibilité stylet/tablette pour les outils de dessin.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No standalone free version; a 7-day trial (no payment details required) is the only no-cost access to the full suite.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Plugins only extend Adobe Illustrator and require an active, compatible Illustrator installation (2021-2026); they are not a standalone application.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No standalone free version; a 7-day trial (no payment details required) is the only no-cost access to the full suite.", "fr": "Pas de version gratuite autonome ; un essai de 7 jours (sans informations de paiement requises) est le seul accès sans frais à la suite complète.", "sourceIds": ["s1"] },
+      { "en": "Plugins only extend Adobe Illustrator and require an active, compatible Illustrator installation (2021-2026); they are not a standalone application.", "fr": "Les plugins étendent uniquement Adobe Illustrator et nécessitent une installation Illustrator active et compatible (2021-2026) ; ce n'est pas une application autonome.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Adobe Illustrator", "slug": "adobe-illustrator", "sourceIds": ["s1"] }
     ],
     "platforms": ["macos", "windows"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "Illustrator-based designer or illustrator who wants specialized vector cleanup, sketching and inking tools beyond Illustrator's native toolset.", "fr": "Designer ou illustrateur travaillant sous Illustrator qui veut des outils spécialisés de nettoyage vectoriel, de dessin et d'encrage au-delà des outils natifs d'Illustrator." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Vector cleanup: fix messy paths and anchor points from a scanned sketch or import using the Vector First Aid tools.", "fr": "Nettoyage vectoriel : corriger des tracés et points d'ancrage désordonnés issus d'un croquis scanné grâce aux outils Vector First Aid." },
+    { "en": "Stylus sketching: draw directly in Illustrator with DynamicSketch instead of switching to a separate sketching app.", "fr": "Dessin au stylet : dessiner directement dans Illustrator avec DynamicSketch sans basculer vers une application de croquis séparée." }
+  ],
   "alternatives": [
-    { "slug": "adobe-illustrator", "reason": { "en": "Astute Graphics plugins extend Illustrator directly; some users compare the cost of the add-on suite against staying with Illustrator's native tools alone.", "fr": null } },
-    { "slug": "affinity-photo", "reason": { "en": "Alternative vector/raster design suite sometimes chosen instead of an Illustrator-plus-plugins workflow.", "fr": null } },
-    { "slug": "figma", "reason": { "en": "Vector design tool increasingly used for illustration and iconography work that would otherwise rely on Illustrator plus Astute Graphics.", "fr": null } }
+    { "slug": "adobe-illustrator", "reason": { "en": "Astute Graphics plugins extend Illustrator directly; some users compare the cost of the add-on suite against staying with Illustrator's native tools alone.", "fr": "Les plugins Astute Graphics étendent directement Illustrator ; certains utilisateurs comparent le coût de la suite d'extensions à celui de rester avec les outils natifs d'Illustrator seuls." } },
+    { "slug": "affinity-photo", "reason": { "en": "Alternative vector/raster design suite sometimes chosen instead of an Illustrator-plus-plugins workflow.", "fr": "Suite de design vectoriel/raster alternative parfois choisie à la place d'un flux Illustrator-plus-plugins." } },
+    { "slug": "figma", "reason": { "en": "Vector design tool increasingly used for illustration and iconography work that would otherwise rely on Illustrator plus Astute Graphics.", "fr": "Outil de design vectoriel de plus en plus utilisé pour l'illustration et les icônes, un usage qui reposerait sinon sur Illustrator plus Astute Graphics." } }
   ],
   "missingAlternatives": [
     { "name": "Vectornator / Linearity Curve", "officialUrl": "https://www.linearity.io/curve/", "reason": "Standalone vector illustration app with built-in precision tools comparable to some Astute Graphics plugins, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "The full plugin collection costs roughly $149/year per the available sources, covering around 18-21 specialized tools, though the exact figure wasn't directly confirmed on the pricing page itself.", "fr": "La collection complète de plugins coûte environ 149 $/an selon les sources disponibles, pour environ 18 à 21 outils spécialisés, bien que le chiffre exact n'ait pas été confirmé directement sur la page tarifs.", "sourceIds": ["s1", "s3"] },
+      "simplicite": { "en": "Neutral score: time needed to learn the plugin collection is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour apprendre la collection de plugins ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers specialized vector editing, cleanup and inking tools directly inside Illustrator, as advertised.", "fr": "Fournit des outils spécialisés d'édition vectorielle, de nettoyage et d'encrage directement dans Illustrator, comme annoncé.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers a wide range of specialized Illustrator add-ons (18-21 tools), but remains an extension of Illustrator rather than a standalone design application.", "fr": "Couvre un large éventail d'extensions spécialisées pour Illustrator (18 à 21 outils), mais reste une extension d'Illustrator plutôt qu'une application de design autonome.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "According to the official subscription FAQ, letting the subscription lapse ends access to all plugins, with no stated fallback.", "fr": "Selon la FAQ officielle sur l'abonnement, laisser l'abonnement expirer coupe l'accès à tous les plugins, sans repli indiqué.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Illustrator plugin suite", "fr": "Extensions pour Illustrator" },
+    "shortDescription": { "en": "Astute Graphics is a subscription suite of Adobe Illustrator plugins for vector cleanup, sketching and ink/line work, with no standalone free version.", "fr": "Astute Graphics est une suite d'extensions payantes pour Adobe Illustrator, pour le nettoyage vectoriel, le dessin et le travail d'encrage, sans version gratuite autonome." },
+    "longDescription": {
+      "en": "Astute Graphics is a collection of about 18 to 21 specialized plugins that extend Adobe Illustrator: vector cleanup tools, stylus-based sketching, ink and line work, and color/geometry utilities. The subscription covers the whole collection plus a year of updates, tutorials and support rather than selling plugins individually.\n\nThe Individual plan costs roughly $149 a year, with no standalone free version beyond a 7-day trial. It suits Illustrator-based designers and illustrators who want extra precision tools inside their existing workflow, not people looking for a replacement for Illustrator itself.",
+      "fr": "Astute Graphics est une collection d'environ 18 à 21 plugins spécialisés qui étendent Adobe Illustrator : outils de nettoyage vectoriel, dessin au stylet, travail d'encrage et de lignes, et utilitaires de couleur/géométrie. L'abonnement couvre toute la collection plus un an de mises à jour, tutoriels et support, plutôt que de vendre les plugins séparément.\n\nLe plan Individual coûte environ 149 $ par an, sans version gratuite autonome au-delà d'un essai de 7 jours. Il convient aux designers et illustrateurs travaillant sous Illustrator qui veulent des outils de précision en plus dans leur flux existant, pas à ceux qui cherchent un remplaçant d'Illustrator."
+    },
+    "pros": [
+      { "en": "One subscription unlocks the whole plugin collection instead of buying each tool separately.", "fr": "Un seul abonnement débloque toute la collection de plugins au lieu d'acheter chaque outil séparément." },
+      { "en": "7-day trial requires no payment details before committing.", "fr": "L'essai de 7 jours ne demande aucune information de paiement avant de s'engager." }
+    ],
+    "cons": [
+      { "en": "Letting the subscription lapse ends access to all plugins, per the official subscription FAQ.", "fr": "Laisser l'abonnement expirer coupe l'accès à tous les plugins, selon la FAQ officielle sur l'abonnement." },
+      { "en": "Only extends Adobe Illustrator; it is not usable without an active, compatible Illustrator installation.", "fr": "Ne fait qu'étendre Adobe Illustrator ; inutilisable sans une installation Illustrator active et compatible." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Illustrator is already the main vector tool and precision cleanup, sketching or inking plugins would speed up recurring work.", "fr": "Illustrator est déjà l'outil vectoriel principal et des plugins de précision pour le nettoyage, le dessin ou l'encrage accéléreraient un travail récurrent." },
+      "avoidIf": { "en": "Illustrator isn't part of the workflow, or the subscription-only access model (no permanent ownership) is a dealbreaker.", "fr": "Illustrator ne fait pas partie du flux de travail, ou le modèle d'accès uniquement par abonnement (pas de possession permanente) est un frein." },
+      "threshold": { "en": "Budget roughly $149/year for the Individual plan on top of an existing Adobe Illustrator subscription.", "fr": "Prévoir environ 149 $/an pour le plan Individual, en plus d'un abonnement Adobe Illustrator existant." },
+      "billingTraps": { "en": "Access to the entire plugin collection ends immediately if the subscription lapses, with no stated partial or free fallback.", "fr": "L'accès à toute la collection de plugins s'arrête immédiatement si l'abonnement expire, sans repli partiel ou gratuit indiqué." }
+    }
+  },
   "unknowns": [
     "Exact individual-plan annual price (USD 149/year per third-party/docs mentions) was not directly visible on the fetched pricing page in this session; needs re-verification.",
     "Enterprise per-seat price and exact discount tiers for 5+ and 11+ seats are not public."

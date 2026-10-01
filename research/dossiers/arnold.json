@@ -3,7 +3,8 @@
   "slug": "arnold",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Arnold",
     "vendor": "Autodesk Inc.",
@@ -35,7 +36,7 @@
         "minSeats": 1,
         "price": { "monthly": 55, "annualPerMonth": 36, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Standalone Arnold license for users without a Maya or 3ds Max subscription; ~$430/year equivalent per third-party trackers.", "fr": null }],
+        "keyLimits": [{ "en": "Standalone Arnold license for users without a Maya or 3ds Max subscription; ~$430/year equivalent per third-party trackers.", "fr": "Licence Arnold autonome pour les utilisateurs sans abonnement Maya ou 3ds Max ; équivalent à environ 430 $/an selon des trackers tiers." }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,26 +46,26 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Pay-as-you-go token model for occasional use, tokens purchased in advance and consumed per use.", "fr": null }],
+        "keyLimits": [{ "en": "Pay-as-you-go token model for occasional use, tokens purchased in advance and consumed per use.", "fr": "Modèle de jetons prépayés pour un usage occasionnel, jetons achetés à l'avance et consommés à l'usage." }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "single-user",
     "addOns": [],
     "cautions": [
-      { "en": "Arnold is included at no extra cost for users who already hold a Maya or 3ds Max subscription; the standalone price above only applies to Arnold-only licenses.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Exact current single-user monthly/annual price could not be confirmed on autodesk.com directly (page blocked); the $55/mo and $430/yr figures are third-party estimates and should be reverified.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Arnold is included at no extra cost for users who already hold a Maya or 3ds Max subscription; the standalone price above only applies to Arnold-only licenses.", "fr": "Arnold est inclus sans coût supplémentaire pour les utilisateurs qui possèdent déjà un abonnement Maya ou 3ds Max ; le prix autonome ci-dessus ne s'applique qu'aux licences Arnold seules.", "sourceIds": ["s1"] },
+      { "en": "Exact current single-user monthly/annual price could not be confirmed on autodesk.com directly (page blocked); the $55/mo and $430/yr figures are third-party estimates and should be reverified.", "fr": "Le prix mensuel/annuel actuel exact pour un utilisateur unique n'a pas pu être confirmé directement sur autodesk.com (page bloquée) ; les montants de 55 $/mois et 430 $/an sont des estimations tierces à revérifier.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Advanced Monte Carlo ray-tracing (path-tracing) renderer built for production-quality, physically based rendering.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Scales for large production pipelines in film, TV, games and design visualization.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Plugs into major 3D applications: Maya, 3ds Max, Houdini, Cinema 4D, Katana, and Blender via community/third-party plugins.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Advanced Monte Carlo ray-tracing (path-tracing) renderer built for production-quality, physically based rendering.", "fr": "Rendu Monte Carlo avancé par ray tracing (path tracing) conçu pour un rendu de qualité production et physiquement basé.", "sourceIds": ["s1"] },
+      { "en": "Scales for large production pipelines in film, TV, games and design visualization.", "fr": "S'adapte aux grands pipelines de production dans le film, la télévision, le jeu vidéo et la visualisation de design.", "sourceIds": ["s1"] },
+      { "en": "Plugs into major 3D applications: Maya, 3ds Max, Houdini, Cinema 4D, Katana, and Blender via community/third-party plugins.", "fr": "S'intègre aux principales applications 3D : Maya, 3ds Max, Houdini, Cinema 4D, Katana, et Blender via des plugins communautaires/tiers.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No standalone free tier; a paid subscription (or bundled Maya/3ds Max license) or Flex tokens are required beyond any trial.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Physically based path-tracing is compute-intensive and typically requires capable CPU/GPU hardware for production-time renders.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No standalone free tier; a paid subscription (or bundled Maya/3ds Max license) or Flex tokens are required beyond any trial.", "fr": "Pas de palier gratuit autonome ; un abonnement payant (ou une licence Maya/3ds Max incluse) ou des jetons Flex sont nécessaires au-delà d'un éventuel essai.", "sourceIds": ["s1"] },
+      { "en": "Physically based path-tracing is compute-intensive and typically requires capable CPU/GPU hardware for production-time renders.", "fr": "Le path tracing physiquement basé est gourmand en calcul et nécessite généralement un matériel CPU/GPU performant pour des rendus en temps de production.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Autodesk Maya", "slug": null, "sourceIds": ["s1"] },
@@ -73,16 +74,68 @@
     ],
     "platforms": ["windows", "macos", "linux"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "3D/VFX artists and render pipeline technical directors in film, TV, game and design-visualization studios who need a production-grade path tracer.",
+      "fr": "Artistes 3D/VFX et directeurs techniques de pipeline de rendu dans des studios de film, télévision, jeu vidéo et visualisation de design, qui ont besoin d'un moteur de path tracing de niveau production."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Production rendering: render film, TV or game assets with Arnold's Monte Carlo path tracer inside Maya or 3ds Max.", "fr": "Rendu de production : rendre des assets de film, de télévision ou de jeu avec le moteur de path tracing Monte Carlo d'Arnold dans Maya ou 3ds Max." },
+    { "en": "Occasional rendering: buy Flex tokens to render on Arnold without a full subscription when usage is irregular.", "fr": "Rendu occasionnel : acheter des jetons Flex pour rendre avec Arnold sans abonnement complet quand l'usage est irrégulier." }
+  ],
   "alternatives": [
-    { "slug": "v-ray", "reason": { "en": "Direct competing production renderer used across the same DCC applications.", "fr": null } },
-    { "slug": "redshift", "reason": { "en": "GPU-accelerated production renderer competing for the same VFX/animation studios.", "fr": null } },
-    { "slug": "octane-render", "reason": { "en": "Another GPU renderer targeting similar 3D content creation pipelines.", "fr": null } },
-    { "slug": "corona-renderer", "reason": { "en": "Physically based renderer overlapping with Arnold's use cases in architectural visualization and VFX.", "fr": null } }
+    { "slug": "v-ray", "reason": { "en": "Direct competing production renderer used across the same DCC applications.", "fr": "Concurrent direct, moteur de rendu de production utilisé dans les mêmes applications DCC." } },
+    { "slug": "redshift", "reason": { "en": "GPU-accelerated production renderer competing for the same VFX/animation studios.", "fr": "Moteur de rendu de production accéléré par GPU, concurrent pour les mêmes studios VFX/animation." } },
+    { "slug": "octane-render", "reason": { "en": "Another GPU renderer targeting similar 3D content creation pipelines.", "fr": "Autre moteur de rendu GPU visant des pipelines de création de contenu 3D similaires." } },
+    { "slug": "corona-renderer", "reason": { "en": "Physically based renderer overlapping with Arnold's use cases in architectural visualization and VFX.", "fr": "Moteur de rendu physiquement basé qui recoupe les usages d'Arnold en visualisation architecturale et VFX." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Arnold is included at no extra cost with a Maya or 3ds Max subscription, but the standalone price itself comes from third-party trackers, not a confirmed official figure, so cost-to-value cannot be judged precisely.", "fr": "Arnold est inclus sans coût supplémentaire avec un abonnement Maya ou 3ds Max, mais le prix autonome lui-même vient de trackers tiers, pas d'un chiffre officiel confirmé, donc le rapport coût-valeur ne peut pas être jugé précisément.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or first-render effort is stated in the collected sources.", "fr": "Note neutre : aucun temps de mise en place ni effort pour un premier rendu n'est précisé dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Production-quality path tracing and plug-ins into Maya, 3ds Max, Houdini, Cinema 4D and Katana are delivered natively per the source, with Blender covered only via community plugins.", "fr": "Le path tracing de qualité production et les intégrations à Maya, 3ds Max, Houdini, Cinema 4D et Katana sont livrés nativement selon la source, Blender n'étant couvert que par des plugins communautaires.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Neutral score: the sources describe production-pipeline scale and host-application reach but do not compare Arnold's rendering ceiling against competing renderers.", "fr": "Note neutre : les sources décrivent l'échelle des pipelines de production et la portée des applications hôtes, mais ne comparent pas le plafond de rendu d'Arnold aux moteurs concurrents.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: scene and data portability are not covered by the collected sources.", "fr": "Note neutre : la portabilité des scènes et des données ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Production rendering", "fr": "Rendu de production" },
+    "shortDescription": { "en": "Arnold is Autodesk's production ray-tracing renderer for Maya and 3ds Max, priced around $55/month standalone or included with a Maya/3ds Max subscription.", "fr": "Arnold est le moteur de rendu de production par ray tracing d'Autodesk pour Maya et 3ds Max, autour de 55 $/mois ou inclus avec Maya/3ds Max." },
+    "longDescription": {
+      "en": "Arnold is Autodesk's Monte Carlo ray-tracing renderer for production-quality, physically based rendering, built to scale across film, TV, game and design-visualization pipelines. It plugs into Maya, 3ds Max, Houdini, Cinema 4D and Katana, with community plugins for Blender.\n\nThere is no free standalone tier: a single-user license runs around $55/month (about $430/year, per third-party trackers, since the official pricing page was unreachable in this review), or pay-as-you-go Flex tokens for occasional use. It is already included at no extra cost for anyone with a Maya or 3ds Max subscription.",
+      "fr": "Arnold est le moteur de rendu Monte Carlo par ray tracing d'Autodesk, pour un rendu physiquement basé de qualité production, conçu pour les pipelines de film, télévision, jeu vidéo et visualisation de design. Il s'intègre à Maya, 3ds Max, Houdini, Cinema 4D et Katana, avec des plugins communautaires pour Blender.\n\nIl n'y a pas de palier gratuit autonome : une licence pour un utilisateur coûte environ 55 $/mois (environ 430 $/an selon des trackers tiers, la page de tarifs officielle étant inaccessible lors de cette relecture), ou des jetons Flex prépayés pour un usage occasionnel. Il est déjà inclus sans coût supplémentaire pour qui possède un abonnement Maya ou 3ds Max."
+    },
+    "pros": [
+      { "en": "Already included at no extra cost for anyone with an existing Maya or 3ds Max subscription.", "fr": "Déjà inclus sans coût supplémentaire pour qui possède déjà un abonnement Maya ou 3ds Max." },
+      { "en": "Flex tokens offer a pay-as-you-go option for occasional rendering instead of a full monthly subscription.", "fr": "Les jetons Flex offrent une option prépayée pour un rendu occasionnel, au lieu d'un abonnement mensuel complet." }
+    ],
+    "cons": [
+      { "en": "The official Autodesk pricing page was unreachable in this review, so the standalone price could not be confirmed directly from the vendor.", "fr": "La page de tarifs officielle d'Autodesk était inaccessible lors de cette relecture, donc le prix autonome n'a pas pu être confirmé directement auprès de l'éditeur." },
+      { "en": "Physically based path tracing needs capable CPU/GPU hardware to render at production speed.", "fr": "Le path tracing physiquement basé nécessite un matériel CPU/GPU performant pour rendre à la vitesse de production." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already pay for Maya or 3ds Max, since Arnold is included, or you need occasional rendering covered by pay-as-you-go Flex tokens.", "fr": "Tu paies déjà pour Maya ou 3ds Max, car Arnold est inclus, ou tu as besoin d'un rendu occasionnel couvert par des jetons Flex prépayés." },
+      "avoidIf": { "en": "You want a confirmed current price before buying a standalone license, since the official pricing page could not be verified in this review.", "fr": "Tu veux un prix actuel confirmé avant d'acheter une licence autonome, car la page de tarifs officielle n'a pas pu être vérifiée lors de cette relecture." },
+      "threshold": { "en": "Worth a standalone license around $55/month (about $430/year, unconfirmed) once it replaces a per-project Flex token budget for regular rendering work.", "fr": "Une licence autonome autour de 55 $/mois (environ 430 $/an, non confirmé) devient rentable dès qu'elle remplace un budget de jetons Flex par projet pour un travail de rendu régulier." }
+    }
+  },
   "unknowns": [
     "Official autodesk.com/products/arnold pricing page was blocked (403) during this session; current single-user price and Flex token cost per render are unconfirmed from a primary source.",
     "Full platform support list (e.g. specific Linux distributions) not independently verified this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Le prix autonome d'Arnold (55 $/mois, ~430 $/an) vient d'un tracker tiers (Vendr) car la page officielle autodesk.com/products/arnold/overview a renvoyé une erreur 403 lors de cette session ; à reconfirmer directement sur autodesk.com avant publication."
+  ]
 }

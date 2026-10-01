@@ -3,7 +3,8 @@
   "slug": "renderman",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "RenderMan",
     "vendor": "Pixar Animation Studios",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Free for non-commercial use, students and educators, but limited to the latest version", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": [{ "en": "Free for non-commercial use, students and educators, but limited to the latest version", "fr": "Gratuit pour un usage non commercial, les étudiants et les enseignants, mais limité à la dernière version", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free for students, educators and non-commercial use, limited to latest version only", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Free for students, educators and non-commercial use, limited to latest version only", "fr": "Gratuit pour les étudiants, les enseignants et l'usage non commercial, limité à la dernière version uniquement", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 595 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Includes one Tractor render-farm-management license; annual maintenance renewal is $250/license for upgrades", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Includes one Tractor render-farm-management license; annual maintenance renewal is $250/license for upgrades", "fr": "Inclut une licence Tractor de gestion de ferme de rendu ; le renouvellement de maintenance annuelle coûte 250 $/licence pour les mises à jour", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
@@ -55,28 +56,79 @@
       { "name": "Rental license (minimum 10 licenses, 7 days)", "price": { "oneTime": 5 }, "unit": "one_time", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The commercial license is perpetual, but staying on the latest version requires paying $250/year in maintenance; lapsed maintenance keeps the current version usable but stops upgrades.", "fr": "", "sourceIds": ["s1"] }
+      { "en": "The commercial license is perpetual, but staying on the latest version requires paying $250/year in maintenance; lapsed maintenance keeps the current version usable but stops upgrades.", "fr": "La licence commerciale est perpétuelle, mais rester sur la dernière version exige de payer 250 $/an de maintenance ; une maintenance expirée laisse la version en cours utilisable mais bloque les mises à jour.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Batch rendering and artist seat rendering for production pipelines", "sourceIds": ["s1"] },
-      { "en": "Render farm management through the bundled Tractor tool", "sourceIds": ["s1"] },
-      { "en": "Cloud rendering integration available", "sourceIds": ["s1"] }
+      { "en": "Batch rendering and artist seat rendering for production pipelines", "fr": "Rendu par lots et rendu par poste artiste pour les pipelines de production", "sourceIds": ["s1"] },
+      { "en": "Render farm management through the bundled Tractor tool", "fr": "Gestion de ferme de rendu via l'outil Tractor inclus", "sourceIds": ["s1"] },
+      { "en": "Cloud rendering integration available", "fr": "Intégration de rendu dans le cloud disponible", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Non-commercial tier is restricted to the latest version only; older versions require a commercial purchase", "sourceIds": ["s1"] },
-      { "en": "Ongoing upgrades on the commercial license require paying annual maintenance separately from the base license fee", "sourceIds": ["s1"] }
+      { "en": "Non-commercial tier is restricted to the latest version only; older versions require a commercial purchase", "fr": "Le palier non commercial est limité à la dernière version uniquement ; les versions plus anciennes nécessitent un achat commercial", "sourceIds": ["s1"] },
+      { "en": "Ongoing upgrades on the commercial license require paying annual maintenance separately from the base license fee", "fr": "Les mises à jour continues sur la licence commerciale nécessitent de payer une maintenance annuelle séparée du prix de la licence de base", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows", "macos", "linux"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "3D/VFX artists and render pipeline technical directors in film, animation and game studios who need a production-grade renderer with render-farm management.",
+      "fr": "Artistes 3D/VFX et directeurs techniques de pipeline de rendu dans des studios de film, d'animation et de jeux, qui ont besoin d'un moteur de rendu de niveau production avec gestion de ferme de rendu."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Production rendering: run Pixar's path-tracing renderer across a studio's batch and render-farm pipeline for a film or animation project.", "fr": "Rendu de production : utiliser le moteur de path tracing de Pixar sur le pipeline de rendu par lots et la ferme de rendu d'un studio pour un film ou un projet d'animation." },
+    { "en": "Render farm management: use the bundled Tractor tool to distribute and monitor rendering jobs across multiple machines.", "fr": "Gestion de ferme de rendu : utiliser l'outil Tractor inclus pour répartir et suivre les tâches de rendu sur plusieurs machines." }
+  ],
   "alternatives": [
-    { "slug": "arnold", "reason": { "en": "Direct competitor as a production-grade renderer used across the same VFX/animation pipelines" } },
-    { "slug": "v-ray", "reason": { "en": "Widely used commercial rendering engine competing on the same professional segment" } },
-    { "slug": "redshift", "reason": { "en": "GPU-accelerated rendering competitor aimed at the same professional studios" } }
+    { "slug": "arnold", "reason": { "en": "Direct competitor as a production-grade renderer used across the same VFX/animation pipelines", "fr": "Concurrent direct en tant que moteur de rendu de niveau production utilisé dans les mêmes pipelines VFX/animation" } },
+    { "slug": "v-ray", "reason": { "en": "Widely used commercial rendering engine competing on the same professional segment", "fr": "Moteur de rendu commercial largement utilisé, concurrent sur le même segment professionnel" } },
+    { "slug": "redshift", "reason": { "en": "GPU-accelerated rendering competitor aimed at the same professional studios", "fr": "Concurrent de rendu accéléré par GPU visant les mêmes studios professionnels" } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The $595 one-time commercial license bundles a Tractor render-farm license, but the source gives no data to compare that cost against the value delivered for a production pipeline.", "fr": "La licence commerciale à 595 $ inclut une licence Tractor de ferme de rendu, mais la source ne donne pas de données pour comparer ce coût à la valeur apportée pour un pipeline de production.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or first-render effort is stated in the collected source.", "fr": "Note neutre : aucun temps de mise en place ni effort pour un premier rendu n'est précisé dans la source relevée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Batch rendering, render-farm management via Tractor, and cloud rendering integration are all delivered natively per the source, with no third-party workaround mentioned.", "fr": "Le rendu par lots, la gestion de ferme de rendu via Tractor et l'intégration de rendu dans le cloud sont tous livrés nativement selon la source, sans contournement tiers mentionné.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Neutral score: the source states the available features but does not compare RenderMan's rendering ceiling against the category.", "fr": "Note neutre : la source décrit les fonctions disponibles mais ne compare pas le plafond de rendu de RenderMan au reste de la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and scene portability are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité des scènes ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Production rendering", "fr": "Rendu de production" },
+    "shortDescription": { "en": "RenderMan is Pixar's production renderer with batch rendering and render-farm management, free for non-commercial use or $595 one-time for a commercial license.", "fr": "RenderMan, moteur de rendu de production de Pixar, offre le rendu par lots, gratuit en non commercial ou 595 $ en licence commerciale unique." },
+    "longDescription": {
+      "en": "RenderMan is Pixar's production renderer, built for batch rendering and artist-seat rendering across film, animation and visualization pipelines. It bundles Tractor for render-farm management and offers cloud rendering integration, running on Windows, macOS and Linux.\n\nA non-commercial version is free for students, educators and non-commercial projects, limited to the latest release. The commercial license costs $595 one-time, includes one Tractor license, and needs $250/year in maintenance to keep receiving upgrades; lapsed maintenance still lets you use the current version.",
+      "fr": "RenderMan est le moteur de rendu de production de Pixar, conçu pour le rendu par lots et le rendu par poste artiste sur des pipelines de film, d'animation et de visualisation. Il inclut Tractor pour la gestion de ferme de rendu et propose une intégration de rendu dans le cloud, sous Windows, macOS et Linux.\n\nUne version non commerciale est gratuite pour les étudiants, les enseignants et les projets non commerciaux, limitée à la dernière version. La licence commerciale coûte 595 $ en paiement unique, inclut une licence Tractor, et nécessite 250 $/an de maintenance pour continuer à recevoir les mises à jour ; une maintenance expirée laisse la version en cours utilisable."
+    },
+    "pros": [
+      { "en": "The commercial license is a one-time purchase, not a recurring subscription, and already includes a Tractor render-farm license.", "fr": "La licence commerciale est un achat unique, pas un abonnement récurrent, et inclut déjà une licence Tractor de ferme de rendu." },
+      { "en": "A genuinely free non-commercial version exists for students, educators and personal projects, not just a time-limited trial.", "fr": "Une version non commerciale réellement gratuite existe pour les étudiants, les enseignants et les projets personnels, pas seulement un essai limité dans le temps." }
+    ],
+    "cons": [
+      { "en": "Keeping the commercial license on the latest version costs $250/year in maintenance, on top of the $595 purchase.", "fr": "Garder la licence commerciale sur la dernière version coûte 250 $/an de maintenance, en plus des 595 $ d'achat." },
+      { "en": "The free version is locked to the newest release only, so it cannot be used to support an older production pipeline.", "fr": "La version gratuite est limitée à la dernière version uniquement, donc elle ne peut pas servir à un pipeline de production plus ancien." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a production rendering pipeline and want a one-time commercial license with a bundled render-farm manager instead of a per-seat subscription.", "fr": "Tu fais tourner un pipeline de rendu de production et tu veux une licence commerciale à paiement unique avec un gestionnaire de ferme de rendu inclus, plutôt qu'un abonnement par poste." },
+      "avoidIf": { "en": "You only need occasional rendering and do not want to pay $250/year in maintenance just to stay on the current version.", "fr": "Tu n'as besoin de rendu qu'occasionnellement et tu ne veux pas payer 250 $/an de maintenance juste pour rester sur la version en cours." },
+      "threshold": { "en": "Worth the $595 one-time purchase plus $250/year maintenance once it replaces a recurring per-seat renderer subscription for a studio pipeline.", "fr": "Rentable avec les 595 $ d'achat unique plus 250 $/an de maintenance dès que cela remplace un abonnement de moteur de rendu par poste pour un pipeline de studio." },
+      "billingTraps": { "en": "The $595 price is one-time, but staying current requires a separate $250/year maintenance renewal; lapsed maintenance keeps the existing version working but blocks upgrades.", "fr": "Le prix de 595 $ est unique, mais rester à jour exige un renouvellement de maintenance séparé à 250 $/an ; une maintenance expirée laisse la version existante fonctionner mais bloque les mises à jour." }
+    }
+  },
   "unknowns": ["Named host application integrations (Maya, Houdini, Katana) referenced generically as 'interfaces to all supported authoring applications' but not listed explicitly on the page reviewed"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

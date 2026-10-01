@@ -3,7 +3,8 @@
   "slug": "workable",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Workable",
     "vendor": "Workable Software Ltd.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 299, "annualPerMonth": 299, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Candidate sourcing, ATS, unlimited active jobs, HRIS, onboarding, time off management; video interviews/assessments/texting are paid add-ons ($39-$109/month); scoped for companies of 1-20 employees before scaling.", "fr": null }],
+        "keyLimits": [{ "en": "Candidate sourcing, ATS, unlimited active jobs, HRIS, onboarding, time off management; video interviews/assessments/texting are paid add-ons ($39-$109/month); scoped for companies of 1-20 employees before scaling.", "fr": "Sourcing de candidats, ATS, offres actives illimitées, SIRH, intégration, gestion des congés ; entretiens vidéo, évaluations et SMS sont des options payantes (39-109 $/mois) ; pensé pour des entreprises de 1 à 20 salariés avant de monter en gamme." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 599, "annualPerMonth": 599, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds texting, video interviews, assessments, and performance/engagement tools included (not add-ons)", "fr": null }],
+        "keyLimits": [{ "en": "Adds texting, video interviews, assessments, and performance/engagement tools included (not add-ons)", "fr": "Ajoute SMS, entretiens vidéo et évaluations inclus (plus en option), ainsi que des outils de performance et d'engagement." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": 719, "annualPerMonth": 719, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Highest tier with Premier features plus Workable Agent add-on availability", "fr": null }],
+        "keyLimits": [{ "en": "Highest tier with Premier features plus Workable Agent add-on availability", "fr": "Palier le plus complet, avec les fonctions Premier plus l'option Workable Agent." }],
         "sourceIds": ["s1"]
       }
     ],
@@ -64,30 +65,80 @@
       { "name": "AI Agent credit packages (600-4,750 USD for 5,000-50,000 credits; 3,000 credits included free on all plans, expire after 1 year)", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Pricing is tied to total company employee headcount rather than a per-seat ATS user count; the fetched page did not clearly show annual-discount math beyond the plan totals given.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Third-party listings and the seed data reference a lower-priced 'Starter' plan around $149/month that was not visible on the pricing page fetched in this session; this may be an outdated or region-specific plan name. See conflicts.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Pricing is tied to total company employee headcount rather than a per-seat ATS user count; the fetched page did not clearly show annual-discount math beyond the plan totals given.", "fr": "Le tarif dépend de l'effectif total de l'entreprise plutôt que du nombre d'utilisateurs ATS ; la page consultée ne détaillait pas clairement le calcul de la remise annuelle au-delà des totaux affichés.", "sourceIds": ["s1"] },
+      { "en": "Third-party listings and the seed data reference a lower-priced 'Starter' plan around $149/month that was not visible on the pricing page fetched in this session; this may be an outdated or region-specific plan name. See conflicts.", "fr": "Des sites tiers et les données du seed mentionnent un plan 'Starter' d'entrée de gamme à environ 149 $/mois, non visible sur la page tarifs consultée pendant cette session ; il peut s'agir d'un plan obsolète ou limité à une région. Voir conflicts.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Applicant tracking system (ATS) with unlimited active job postings and AI-assisted candidate sourcing.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in HR information system (HRIS), onboarding, and time-off management.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Video interviews, skills assessments, and candidate texting (included or as paid add-ons depending on plan).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Applicant tracking system (ATS) with unlimited active job postings and AI-assisted candidate sourcing.", "fr": "Système de suivi des candidatures (ATS) avec offres d'emploi actives illimitées et sourcing de candidats assisté par IA.", "sourceIds": ["s1"] },
+      { "en": "Built-in HR information system (HRIS), onboarding, and time-off management.", "fr": "Système RH (SIRH) intégré, avec intégration des nouveaux salariés et gestion des congés.", "sourceIds": ["s1"] },
+      { "en": "Video interviews, skills assessments, and candidate texting (included or as paid add-ons depending on plan).", "fr": "Entretiens vidéo, évaluations de compétences et SMS aux candidats (inclus ou en option selon le plan).", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No permanent free plan; only a 15-day trial before payment is required.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Video interviews, assessments and texting are gated as paid add-ons on the entry Standard plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No permanent free plan; only a 15-day trial before payment is required.", "fr": "Pas de plan gratuit permanent ; seul un essai de 15 jours est proposé avant le paiement.", "sourceIds": ["s1"] },
+      { "en": "Video interviews, assessments and texting are gated as paid add-ons on the entry Standard plan.", "fr": "Entretiens vidéo, évaluations et SMS sont verrouillés en options payantes sur le plan Standard d'entrée de gamme.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [
-    { "slug": "personio", "reason": { "en": "HR platform with recruiting/ATS features competing for the same small-to-mid company hiring workflow.", "fr": null } },
-    { "slug": "zoho", "reason": { "en": "Zoho's recruiting suite competes directly with Workable's ATS and hiring tools.", "fr": null } }
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "Ops or HR lead at a small company who wants recruiting, onboarding and time off in one system instead of separate tools.", "fr": "Responsable RH ou ops d'une petite entreprise qui veut recrutement, intégration et congés dans un seul système plutôt que des outils séparés." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Hiring: post unlimited job openings and move every candidate through one pipeline instead of spreadsheets.", "fr": "Recrutement : publier des offres illimitées et suivre chaque candidat dans un seul pipeline plutôt que sur des tableurs." },
+    { "en": "Onboarding: a new hire completes paperwork and time-off setup in the same platform used to recruit them.", "fr": "Intégration : un nouveau salarié complète ses documents et son solde de congés dans la même plateforme qui a servi à le recruter." }
   ],
-  "missingAlternatives": [
-    { "name": "Greenhouse", "officialUrl": "https://www.greenhouse.com/", "reason": "Major direct ATS competitor to Workable, not present in the catalogue." },
-    { "name": "Lever", "officialUrl": "https://www.lever.co/", "reason": "Well-known ATS and recruiting CRM competitor to Workable, not present in the catalogue." }
+  "alternatives": [
+    { "slug": "personio", "reason": { "en": "HR platform with recruiting/ATS features competing for the same small-to-mid company hiring workflow.", "fr": "Plateforme RH avec des fonctions de recrutement/ATS qui couvre le même besoin d'embauche pour les petites et moyennes entreprises." } },
+    { "slug": "zoho", "reason": { "en": "Zoho's recruiting suite competes directly with Workable's ATS and hiring tools.", "fr": "La suite recrutement de Zoho est en concurrence directe avec l'ATS et les outils d'embauche de Workable." } },
+    { "slug": "greenhouse", "reason": { "en": "Major direct ATS competitor to Workable, covering the same core hiring workflow.", "fr": "Concurrent ATS majeur de Workable, ciblant le même besoin de suivi des candidatures." } },
+    { "slug": "lever", "reason": { "en": "Well-known ATS and recruiting CRM, a direct competitor to Workable for the same hiring need.", "fr": "ATS et CRM de recrutement reconnu, en concurrence directe avec Workable sur le même usage." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Bundles ATS, HRIS, onboarding and time-off in one $299/month flat fee for up to about 20 employees, but video interviews, assessments and texting cost extra on the entry plan.", "fr": "Regroupe ATS, SIRH, intégration et congés pour 299 $/mois forfaitaire jusqu'à environ 20 salariés, mais entretiens vidéo, évaluations et SMS restent payants en plus sur le plan d'entrée.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time-to-first-result and onboarding complexity are not covered by the collected sources.", "fr": "Note neutre : le temps de prise en main n'est pas couvert par les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the advertised ATS, HRIS and onboarding functions, but core add-ons (video interviews, assessments, texting) require an extra purchase on the entry plan to work as marketed.", "fr": "Remplit les fonctions ATS, SIRH et intégration annoncées, mais des fonctions clés (entretiens vidéo, évaluations, SMS) nécessitent un achat supplémentaire sur le plan d'entrée pour fonctionner comme promis.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines ATS, HRIS, onboarding and time-off management under one product, a broader scope than a single-purpose ATS.", "fr": "Combine ATS, SIRH, intégration et gestion des congés dans un seul produit, un périmètre plus large qu'un ATS mono-fonction.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability on leaving Workable are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité en cas de départ de Workable ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "ATS and HR platform", "fr": "ATS et RH" },
+    "shortDescription": { "en": "Workable combines an applicant tracking system with HR tools: AI sourcing, hiring pipelines, onboarding and time-off management for small companies.", "fr": "Workable est un logiciel de recrutement et RH qui combine sourcing, suivi des candidatures, onboarding et gestion des congés pour les petites entreprises." },
+    "longDescription": {
+      "en": "Workable pairs an applicant tracking system with built-in HR tools: AI-assisted candidate sourcing, unlimited job postings and a single pipeline through hiring. Once someone is hired, the same platform handles onboarding and time-off tracking, so teams are not switching between a separate ATS and HR system.\n\nThe Standard plan starts at $299 a month, billed per company rather than per seat, and is scoped for companies up to about 20 employees before moving to a higher tier. Video interviews, skills assessments and candidate texting are paid add-ons on this entry plan rather than included.",
+      "fr": "Workable associe un système de suivi des candidatures à des outils RH intégrés : sourcing assisté par IA, offres d'emploi illimitées et un pipeline unique du recrutement à l'embauche. Une fois le salarié recruté, la même plateforme gère l'intégration et le suivi des congés, sans basculer vers un autre outil.\n\nLe plan Standard démarre à 299 $ par mois, facturé par entreprise et non par utilisateur, pensé pour des entreprises allant jusqu'à environ 20 salariés avant de changer de palier. Entretiens vidéo, évaluations de compétences et SMS aux candidats restent des options payantes sur ce plan d'entrée plutôt qu'inclus."
+    },
+    "pros": [
+      { "en": "One flat monthly price per company rather than per-seat billing, so adding hiring managers doesn't raise the bill.", "fr": "Un tarif mensuel forfaitaire par entreprise plutôt qu'une facturation par utilisateur, donc ajouter des recruteurs n'augmente pas la facture." },
+      { "en": "ATS and HR/onboarding live in the same account, avoiding a separate handoff to another system after hiring.", "fr": "ATS et RH/intégration vivent dans le même compte, sans transfert vers un autre outil après l'embauche." }
+    ],
+    "cons": [
+      { "en": "No free plan: only a 15-day trial before the $299/month minimum applies.", "fr": "Pas de plan gratuit : seul un essai de 15 jours précède le minimum de 299 $/mois." },
+      { "en": "Video interviews, assessments and texting cost extra on the entry Standard plan instead of being included.", "fr": "Entretiens vidéo, évaluations et SMS sont facturés en plus sur le plan Standard d'entrée au lieu d'être inclus." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "A small company (up to about 20 people) wants ATS, HRIS and onboarding in one account and doesn't need video interviews or texting included from day one.", "fr": "Une petite entreprise (jusqu'à environ 20 salariés) veut ATS, SIRH et intégration dans un seul compte, sans avoir besoin des entretiens vidéo ou des SMS inclus dès le départ." },
+      "avoidIf": { "en": "The team needs video interviews, assessments or texting included without extra cost, or has grown well past 20 employees.", "fr": "L'équipe a besoin des entretiens vidéo, évaluations ou SMS inclus sans surcoût, ou a largement dépassé les 20 salariés." },
+      "threshold": { "en": "Budget at least $299/month for the Standard plan, plus $39-109/month if video interviews, assessments or texting are needed.", "fr": "Prévoir au moins 299 $/mois pour le plan Standard, plus 39 à 109 $/mois si les entretiens vidéo, évaluations ou SMS sont nécessaires." },
+      "billingTraps": { "en": "Entry Standard plan excludes video interviews, assessments and texting, which are billed separately at $39-109/month each.", "fr": "Le plan Standard exclut entretiens vidéo, évaluations et SMS, facturés séparément de 39 à 109 $/mois chacun." }
+    }
+  },
+  "reviewNotes": [
+    "Les plans Standard (299 $), Premier (599 $) et Enterprise (719 $) ont price.monthly identique à price.annualPerMonth : à vérifier si la page affichait un seul prix (auquel cas l'autre champ devrait être null) ou un vrai prix identique en mensuel et en annuel.",
+    "Le seed évoque un plan 'Starter' à environ 149 $/mois absent de la page tarifs consultée (Standard à 299 $ comme palier d'entrée) ; à vérifier directement sur workable.com/pricing."
   ],
   "unknowns": [
     "A 'Starter' plan around $149/month referenced in the seed data was not visible on the current pricing page (only Standard $299, Premier $599, Enterprise $719 were shown); could be discontinued, renamed, or region-gated.",

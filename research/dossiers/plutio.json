@@ -3,7 +3,8 @@
   "slug": "plutio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Plutio",
     "vendor": "Plutio Inc.",
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 19, "annualPerMonth": 15, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 9 active clients, no team contributors, 800 AI credits/month, 900 workflow actions/month, 100 GB storage" }],
+        "keyLimits": [{ "en": "Up to 9 active clients, no team contributors, 800 AI credits/month, 900 workflow actions/month, 100 GB storage", "fr": "Jusqu'à 9 clients actifs, aucun collaborateur d'équipe, 800 crédits IA/mois, 900 actions de workflow/mois, 100 Go de stockage" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": 49, "annualPerMonth": 39, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited active clients, up to 30 team contributors, 2,500 AI credits/month, 5,500 workflow actions/month, 500 GB storage" }],
+        "keyLimits": [{ "en": "Unlimited active clients, up to 30 team contributors, 2,500 AI credits/month, 5,500 workflow actions/month, 500 GB storage", "fr": "Clients actifs illimités, jusqu'à 30 collaborateurs d'équipe, 2 500 crédits IA/mois, 5 500 actions de workflow/mois, 500 Go de stockage" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,36 +55,88 @@
         "minSeats": null,
         "price": { "monthly": 199, "annualPerMonth": 159, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited clients and contributors, 10,000 AI credits/month, 50,000 workflow actions/month, 2 TB storage, white-labeling and SSO" }],
+        "keyLimits": [{ "en": "Unlimited clients and contributors, 10,000 AI credits/month, 50,000 workflow actions/month, 2 TB storage, white-labeling and SSO", "fr": "Clients et collaborateurs illimités, 10 000 crédits IA/mois, 50 000 actions de workflow/mois, 2 To de stockage, marque blanche et SSO" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "core",
     "addOns": [],
     "cautions": [
-      { "en": "The Core plan caps active clients at 9 and includes no team contributors, so a growing freelance practice or small team quickly needs Pro.", "sourceIds": ["s1"] }
+      { "en": "The Core plan caps active clients at 9 and includes no team contributors, so a growing freelance practice or small team quickly needs Pro.", "fr": "Le plan Core plafonne à 9 clients actifs et n'inclut aucun collaborateur d'équipe, donc une activité d'indépendant en croissance ou une petite équipe doit vite passer à Pro.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "All-in-one client work management: projects, tasks, invoicing, proposals and contracts in one platform.", "sourceIds": ["s1"] },
-      { "en": "Client portal for shared visibility on projects, files and invoices.", "sourceIds": ["s1"] },
-      { "en": "Built-in time tracking and scheduling.", "sourceIds": ["s1"] },
-      { "en": "AI assistant (\"Plutio Pal\") for proposal writing, contract generation and project planning, metered by monthly AI credits.", "sourceIds": ["s1"] }
+      { "en": "All-in-one client work management: projects, tasks, invoicing, proposals and contracts in one platform.", "fr": "Gestion du travail client tout-en-un : projets, tâches, facturation, propositions et contrats sur une seule plateforme.", "sourceIds": ["s1"] },
+      { "en": "Client portal for shared visibility on projects, files and invoices.", "fr": "Portail client pour une visibilité partagée sur les projets, les fichiers et les factures.", "sourceIds": ["s1"] },
+      { "en": "Built-in time tracking and scheduling.", "fr": "Suivi du temps et planification intégrés.", "sourceIds": ["s1"] },
+      { "en": "AI assistant (\"Plutio Pal\") for proposal writing, contract generation and project planning, metered by monthly AI credits.", "fr": "Assistant IA (« Plutio Pal ») pour la rédaction de propositions, la génération de contrats et la planification de projet, mesuré par des crédits IA mensuels.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "The entry Core plan supports no team contributors, so it only fits a solo freelancer.", "sourceIds": ["s1"] },
-      { "en": "Active client count is capped on Core (9 clients), forcing an upgrade as a client base grows.", "sourceIds": ["s1"] }
+      { "en": "The entry Core plan supports no team contributors, so it only fits a solo freelancer.", "fr": "Le plan d'entrée Core ne prend en charge aucun collaborateur d'équipe, il ne convient donc qu'à un indépendant seul.", "sourceIds": ["s1"] },
+      { "en": "Active client count is capped on Core (9 clients), forcing an upgrade as a client base grows.", "fr": "Le nombre de clients actifs est plafonné sur Core (9 clients), ce qui force une montée de gamme quand la base de clients grandit.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "A solo freelancer or small agency owner who wants projects, invoicing, proposals and a client portal in one subscription instead of several separate tools.",
+      "fr": "Un indépendant seul ou un gérant de petite agence qui veut projets, facturation, propositions et portail client dans un seul abonnement plutôt que dans plusieurs outils séparés."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Run a freelance practice from one tool: manage up to 9 clients' projects, tasks and invoices on the Core plan without juggling separate apps.", "fr": "Gérer une activité d'indépendant depuis un seul outil : suivre les projets, tâches et factures de jusqu'à 9 clients sur le plan Core sans jongler entre plusieurs applications." },
+    { "en": "Give clients visibility: share a client portal so a customer can see project progress, files and invoices without emailing back and forth.", "fr": "Donner de la visibilité aux clients : partager un portail client pour qu'un client voie l'avancement du projet, les fichiers et les factures sans échange d'e-mails incessant." }
+  ],
   "alternatives": [
-    { "slug": "suitedash", "reason": { "en": "Direct all-in-one competitor combining CRM, project management, invoicing and client portal." } },
-    { "slug": "better-proposals", "reason": { "en": "Covers the proposal and contract part of the same freelance workflow." } },
-    { "slug": "dubsado", "reason": { "en": "Freelancer/small agency client management platform with similar scope." } }
+    { "slug": "suitedash", "reason": { "en": "Direct all-in-one competitor combining CRM, project management, invoicing and client portal.", "fr": "Concurrent direct tout-en-un combinant CRM, gestion de projet, facturation et portail client." } },
+    { "slug": "better-proposals", "reason": { "en": "Covers the proposal and contract part of the same freelance workflow.", "fr": "Couvre le volet proposition et contrat du même flux de travail indépendant." } },
+    { "slug": "dubsado", "reason": { "en": "Freelancer/small agency client management platform with similar scope.", "fr": "Plateforme de gestion client pour indépendants et petites agences, de périmètre similaire." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Replaces separate project management, invoicing, proposal and client-portal tools with one $19/month subscription for a solo freelancer.", "fr": "Remplace des outils séparés de gestion de projet, facturation, propositions et portail client par un seul abonnement à 19 $/mois pour un indépendant seul.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Combining projects, invoicing, proposals, time tracking and an AI assistant in one platform means more to learn up front than a single-purpose tool.", "fr": "Combiner projets, facturation, propositions, suivi du temps et assistant IA sur une seule plateforme demande plus d'apprentissage au départ qu'un outil mono-usage.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers project, task, invoicing, proposal, contract and client-portal management as described on a single platform.", "fr": "Assure la gestion des projets, tâches, factures, propositions, contrats et portail client comme décrit sur une seule plateforme.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers the full client-work lifecycle, but the entry Core plan excludes team contributors and caps active clients at 9, limiting its ceiling for growing teams.", "fr": "Couvre tout le cycle de vie du travail client, mais le plan d'entrée Core exclut les collaborateurs d'équipe et plafonne à 9 clients actifs, ce qui limite son plafond pour les équipes en croissance.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: whether projects, invoices and client data export to another tool is not covered by the collected sources.", "fr": "Note neutre : la possibilité d'exporter les projets, factures et données clients vers un autre outil ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Client work hub", "fr": "Hub travail client" },
+    "shortDescription": {
+      "en": "Plutio is an all-in-one platform for freelancers and small agencies, combining projects, invoicing, proposals and a client portal.",
+      "fr": "Plutio est une plateforme tout-en-un pour indépendants et petites agences, combinant projets, facturation, propositions et portail client."
+    },
+    "longDescription": {
+      "en": "Plutio brings projects, tasks, invoicing, proposals and contracts together in one platform, with a client portal for shared visibility and built-in time tracking and scheduling. An AI assistant ('Plutio Pal'), metered by monthly credits, helps draft proposals and contracts and plan projects.\n\nThere is no free plan, only a 7-day trial. Core starts at $19/month ($15/month billed annually) for up to 9 active clients with no team contributors, which fits a solo freelancer. Pro at $49/month removes the client cap and adds up to 30 team contributors, for a growing agency.",
+      "fr": "Plutio réunit projets, tâches, facturation, propositions et contrats sur une seule plateforme, avec un portail client pour une visibilité partagée et un suivi du temps et une planification intégrés. Un assistant IA (« Plutio Pal »), mesuré par des crédits mensuels, aide à rédiger propositions et contrats et à planifier les projets.\n\nPas de plan gratuit, seulement un essai de 7 jours. Core démarre à 19 $/mois (15 $/mois en facturation annuelle) pour jusqu'à 9 clients actifs sans collaborateur d'équipe, ce qui convient à un indépendant seul. Pro à 49 $/mois retire le plafond de clients et ajoute jusqu'à 30 collaborateurs, pour une agence qui grandit."
+    },
+    "pros": [
+      { "en": "Combines projects, invoicing, proposals and a client portal in one subscription instead of several tools.", "fr": "Combine projets, facturation, propositions et portail client dans un seul abonnement plutôt que plusieurs outils." },
+      { "en": "AI assistant helps draft proposals, contracts and project plans directly inside the platform.", "fr": "L'assistant IA aide à rédiger propositions, contrats et plans de projet directement dans la plateforme." }
+    ],
+    "cons": [
+      { "en": "The entry Core plan has no team contributors, so it only works for a solo freelancer.", "fr": "Le plan d'entrée Core n'a aucun collaborateur d'équipe, il ne fonctionne donc que pour un indépendant seul." },
+      { "en": "Active clients are capped at 9 on Core, forcing an upgrade to Pro as a client base grows.", "fr": "Les clients actifs sont plafonnés à 9 sur Core, ce qui force une montée vers Pro quand la base de clients grandit." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a freelance practice or small agency and want projects, invoicing, proposals and a client portal in one subscription.", "fr": "Garde Plutio si tu gères une activité d'indépendant ou une petite agence et veux projets, facturation, propositions et portail client dans un seul abonnement." },
+      "avoidIf": { "en": "You need to add team contributors from day one, since the entry Core plan does not include any.", "fr": "Évite Plutio si tu as besoin d'ajouter des collaborateurs d'équipe dès le départ, car le plan d'entrée Core n'en inclut aucun." },
+      "threshold": { "en": "Core costs $180/year billed annually ($15/month); compare that against the combined cost of separate project, invoicing and proposal tools before switching.", "fr": "Core coûte 180 $/an en facturation annuelle (15 $/mois) ; compare ce montant au coût combiné d'outils séparés de projet, de facturation et de proposition avant de changer." }
+    }
+  },
   "unknowns": [
     "Whether unsubscribed accounts keep read-only access to past data (\"limited-free mode\") beyond the trial was not fully detailed on the pricing page."
   ],

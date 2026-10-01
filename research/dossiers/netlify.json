@@ -3,7 +3,8 @@
   "slug": "netlify",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Netlify",
     "vendor": "Netlify Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN", "fr": null }],
+        "keyLimits": [{ "en": "300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN", "fr": "300 crédits mensuels, déploiements via Git/IA/API, aperçus de déploiement illimités, domaines personnalisés avec SSL, fonctions, modèles IA, stockage base de données et blob, pare-feu/limitation de débit basique, CDN mondial." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1,000 monthly credits, adds smart secret detection, 1-day observability window, priority email support", "fr": null }],
+        "keyLimits": [{ "en": "1,000 monthly credits, adds smart secret detection, 1-day observability window, priority email support", "fr": "1 000 crédits mensuels, ajoute la détection intelligente de secrets, une fenêtre d'observabilité d'1 jour, support email prioritaire." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": 20, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited team members, 3,000 monthly credits, private organization repositories, shared environment variables, 3+ concurrent builds, 30-day analytics", "fr": null }],
+        "keyLimits": [{ "en": "Unlimited team members, 3,000 monthly credits, private organization repositories, shared environment variables, 3+ concurrent builds, 30-day analytics", "fr": "Membres d'équipe illimités, 3 000 crédits mensuels, dépôts d'organisation privés, variables d'environnement partagées, 3 builds simultanés ou plus, 30 jours d'analytics." }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +65,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited credits, 99.99% SLA, 24/7 dedicated support, SSO/SCIM, log drains, organization management", "fr": null }],
+        "keyLimits": [{ "en": "Unlimited credits, 99.99% SLA, 24/7 dedicated support, SSO/SCIM, log drains, organization management", "fr": "Crédits illimités, SLA 99,99 %, support dédié 24/7, SSO/SCIM, exports de logs, gestion d'organisation." }],
         "sourceIds": ["s1"]
       }
     ],
@@ -73,28 +74,75 @@
       { "name": "Usage-based credits: production deploys 15 credits ($0.10 each), bandwidth 20 credits/GB ($0.13/GB), compute 10 credits/GB-hour ($0.07/GB-hour), web requests 2 credits/10k ($0.01/10k), variable AI inference cost", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Netlify's model shifted to a credit-based system: monthly plan fees include a credit allowance, and usage beyond it (deploys, bandwidth, compute, requests) is billed per-credit, so effective monthly cost can exceed the headline plan price for high-traffic sites.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Netlify's model shifted to a credit-based system: monthly plan fees include a credit allowance, and usage beyond it (deploys, bandwidth, compute, requests) is billed per-credit, so effective monthly cost can exceed the headline plan price for high-traffic sites.", "fr": "Le modèle de Netlify est passé à un système de crédits : les forfaits mensuels incluent une allocation de crédits, et l'usage au-delà (déploiements, bande passante, calcul, requêtes) est facturé au crédit, donc le coût réel mensuel peut dépasser le prix affiché pour les sites à fort trafic.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "JAMstack/modern web hosting with Git-based, AI-assisted, or API-driven deploys and unlimited deploy previews.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Serverless functions, AI model access, database storage, and blob storage available from the free tier.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Global CDN, custom domains with automatic SSL, and basic firewall/rate limiting included even on the free plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "JAMstack/modern web hosting with Git-based, AI-assisted, or API-driven deploys and unlimited deploy previews.", "fr": "Hébergement web JAMstack/moderne avec déploiements via Git, assistés par IA ou pilotés par API, et aperçus de déploiement illimités.", "sourceIds": ["s1"] },
+      { "en": "Serverless functions, AI model access, database storage, and blob storage available from the free tier.", "fr": "Fonctions serverless, accès à des modèles IA, stockage base de données et stockage blob disponibles dès le plan gratuit.", "sourceIds": ["s1"] },
+      { "en": "Global CDN, custom domains with automatic SSL, and basic firewall/rate limiting included even on the free plan.", "fr": "CDN mondial, domaines personnalisés avec SSL automatique, et pare-feu/limitation de débit basique inclus même sur le plan gratuit.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Usage-based credit billing means production deploys, bandwidth, and compute all consume credits, making costs less predictable than a flat monthly fee for high-traffic projects.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Advanced security/observability features (extended observability window, SSO/SCIM, log drains) are reserved for paid Personal/Pro tiers or Enterprise.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Usage-based credit billing means production deploys, bandwidth, and compute all consume credits, making costs less predictable than a flat monthly fee for high-traffic projects.", "fr": "La facturation par crédits d'usage fait que déploiements de production, bande passante et calcul consomment tous des crédits, rendant les coûts moins prévisibles qu'un tarif fixe pour les projets à fort trafic.", "sourceIds": ["s1"] },
+      { "en": "Advanced security/observability features (extended observability window, SSO/SCIM, log drains) are reserved for paid Personal/Pro tiers or Enterprise.", "fr": "Les fonctions avancées de sécurité/observabilité (fenêtre d'observabilité étendue, SSO/SCIM, exports de logs) sont réservées aux plans payants Personal/Pro ou à Enterprise.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "Developer or small team shipping a web app who wants Git-based deploys, serverless functions and storage without managing their own infrastructure.", "fr": "Développeur ou petite équipe qui déploie une application web et veut des déploiements basés sur Git, des fonctions serverless et du stockage sans gérer sa propre infrastructure." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Site hosting: push to Git and get an automatic deploy with a preview URL for every branch.", "fr": "Hébergement de site : un push Git déclenche un déploiement automatique avec une URL de prévisualisation pour chaque branche." },
+    { "en": "Serverless backend: run functions and store data in Netlify's own database and blob storage without a separate backend host.", "fr": "Backend serverless : exécuter des fonctions et stocker des données dans la base et le stockage blob de Netlify sans hébergeur backend séparé." }
+  ],
   "alternatives": [
-    { "slug": "vercel", "reason": { "en": "Direct competitor for JAMstack/frontend hosting and Git-based deploys.", "fr": null } },
-    { "slug": "fly-io", "reason": { "en": "Competing deployment platform for web apps, often compared for pricing and performance.", "fr": null } },
-    { "slug": "digitalocean", "reason": { "en": "Alternative hosting/deployment platform used for similar web app hosting needs, though with a broader infrastructure scope.", "fr": null } }
+    { "slug": "vercel", "reason": { "en": "Direct competitor for JAMstack/frontend hosting and Git-based deploys.", "fr": "Concurrent direct pour l'hébergement JAMstack/frontend et les déploiements basés sur Git." } },
+    { "slug": "fly-io", "reason": { "en": "Competing deployment platform for web apps, often compared for pricing and performance.", "fr": "Plateforme de déploiement concurrente pour applications web, souvent comparée sur le prix et la performance." } },
+    { "slug": "digitalocean", "reason": { "en": "Alternative hosting/deployment platform used for similar web app hosting needs, though with a broader infrastructure scope.", "fr": "Plateforme d'hébergement/déploiement alternative utilisée pour des besoins similaires, avec un périmètre d'infrastructure plus large." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Free plan already includes functions, AI model access, database/blob storage and a global CDN; paid tiers add team features and more credits rather than gating core hosting.", "fr": "Le plan gratuit inclut déjà fonctions, accès à des modèles IA, stockage base de données/blob et un CDN mondial ; les plans payants ajoutent des fonctions d'équipe et plus de crédits plutôt que de verrouiller l'hébergement de base.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to a first successful deploy is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier déploiement réussi ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers Git-based, AI-assisted or API-driven deploys with unlimited previews and a global CDN as advertised.", "fr": "Livre des déploiements basés sur Git, assistés par IA ou pilotés par API, avec aperçus illimités et CDN mondial, comme annoncé.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers hosting, serverless functions, AI model access and storage in one platform, a broad scope for a hosting product.", "fr": "Couvre hébergement, fonctions serverless, accès à des modèles IA et stockage dans une seule plateforme, un périmètre large pour un produit d'hébergement.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability on leaving Netlify are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité en cas de départ de Netlify ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Web hosting platform", "fr": "Hébergement web" },
+    "shortDescription": { "en": "Netlify hosts modern web apps with Git-based deploys, serverless functions, AI model access and storage, billed through a monthly credit allowance.", "fr": "Netlify héberge des applications web modernes avec déploiements Git, fonctions serverless, accès à des modèles IA et stockage, facturés via un forfait de crédits mensuels." },
+    "longDescription": {
+      "en": "Netlify hosts web projects with Git-based, AI-assisted or API-driven deploys, plus unlimited deploy previews for every branch. Even the free plan includes serverless functions, AI model access, database and blob storage, custom domains with SSL, and a global CDN.\n\nPlans run on a monthly credit allowance starting at $9 for the Personal tier, with usage beyond the included credits (deploys, bandwidth, compute, requests) billed separately. That makes Netlify affordable to start, but costs can grow for high-traffic sites once the included credits run out.",
+      "fr": "Netlify héberge des projets web avec des déploiements basés sur Git, assistés par IA ou pilotés par API, plus des aperçus de déploiement illimités pour chaque branche. Même le plan gratuit inclut fonctions serverless, accès à des modèles IA, stockage base de données et blob, domaines personnalisés avec SSL, et un CDN mondial.\n\nLes plans reposent sur un forfait de crédits mensuels à partir de 9 $ pour le plan Personal, l'usage au-delà des crédits inclus (déploiements, bande passante, calcul, requêtes) étant facturé séparément. Netlify reste abordable au départ, mais le coût peut augmenter pour les sites à fort trafic une fois les crédits épuisés."
+    },
+    "pros": [
+      { "en": "Generous free tier already includes functions, AI model access and storage, not just static hosting.", "fr": "Le plan gratuit généreux inclut déjà fonctions, accès IA et stockage, pas seulement un hébergement statique." },
+      { "en": "Unlimited deploy previews on every plan make it easy to review changes before they go live.", "fr": "Les aperçus de déploiement illimités sur tous les plans facilitent la relecture des changements avant mise en ligne." }
+    ],
+    "cons": [
+      { "en": "Usage-based credits for deploys, bandwidth and compute make monthly cost less predictable than a flat fee.", "fr": "Les crédits à l'usage pour déploiements, bande passante et calcul rendent le coût mensuel moins prévisible qu'un tarif fixe." },
+      { "en": "Extended observability, SSO/SCIM and log drains require the Pro plan or higher.", "fr": "L'observabilité étendue, le SSO/SCIM et les exports de logs nécessitent le plan Pro ou supérieur." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "A developer or small team wants modern hosting with functions and storage included, and traffic stays within the plan's credit allowance.", "fr": "Un développeur ou une petite équipe veut un hébergement moderne avec fonctions et stockage inclus, et le trafic reste dans le forfait de crédits." },
+      "avoidIf": { "en": "Traffic or AI inference usage is high and unpredictable, where per-credit billing could exceed a flat-fee hosting plan.", "fr": "Le trafic ou l'usage d'inférence IA est élevé et imprévisible, où la facturation au crédit pourrait dépasser un hébergement à tarif fixe." },
+      "threshold": { "en": "Budget at least $9/month for the Personal plan, or $20/month for Pro if the team needs unlimited members and more credits.", "fr": "Prévoir au moins 9 $/mois pour le plan Personal, ou 20 $/mois pour Pro si l'équipe a besoin de membres illimités et plus de crédits." },
+      "billingTraps": { "en": "Production deploys, bandwidth, compute and requests all consume credits beyond the plan's monthly allowance, at per-unit rates on top of the base price.", "fr": "Déploiements de production, bande passante, calcul et requêtes consomment tous des crédits au-delà du forfait mensuel, facturés à l'unité en plus du prix de base." }
+    }
+  },
   "unknowns": [
     "Exact credit-to-dollar conversion nuances for AI inference usage were only partially detailed (\"variable by model\") on the pricing page."
   ],

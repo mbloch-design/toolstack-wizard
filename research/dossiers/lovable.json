@@ -3,7 +3,8 @@
   "slug": "lovable",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Lovable",
     "vendor": "Lovable Labs",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "5 daily build credits (up to 30/month), 20 monthly Cloud credits, 4 AI feature credits", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": [{ "en": "5 daily build credits (up to 30/month), 20 monthly Cloud credits, 4 AI feature credits", "fr": "5 crédits de build par jour (jusqu'à 30/mois), 20 crédits Cloud par mois, 4 crédits de fonctionnalités IA", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 daily build credits (~30/month), limited Cloud and AI feature credits", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "5 daily build credits (~30/month), limited Cloud and AI feature credits", "fr": "5 crédits de build par jour (environ 30/mois), crédits Cloud et IA limités", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Monthly credit balance covering builds, Cloud hosting and AI features; credits expire after 2 months", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Monthly credit balance covering builds, Cloud hosting and AI features; credits expire after 2 months", "fr": "Solde de crédits mensuel couvrant les builds, l'hébergement Cloud et les fonctionnalités IA ; les crédits expirent après 2 mois", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,26 +55,26 @@
         "minSeats": null,
         "price": { "monthly": 50, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Larger credit balance plus additional team/admin features versus Pro", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Larger credit balance plus additional team/admin features versus Pro", "fr": "Solde de crédits plus élevé, plus des fonctionnalités d'équipe et d'administration supplémentaires par rapport à Pro", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "Task cost varies by complexity (roughly 0.5 credits for a simple change up to 1.7+ for a complex one), so the effective number of usable prompts per month is variable, not fixed.", "fr": "", "sourceIds": ["s1"] },
-      { "en": "Credits are non-refundable and expire: monthly credits after 2 months, annual grants after 1 month, top-ups after 12 months.", "fr": "", "sourceIds": ["s1"] }
+      { "en": "Task cost varies by complexity (roughly 0.5 credits for a simple change up to 1.7+ for a complex one), so the effective number of usable prompts per month is variable, not fixed.", "fr": "Le coût d'une tâche varie selon sa complexité (environ 0,5 crédit pour un changement simple, jusqu'à 1,7 ou plus pour un changement complexe), le nombre réel de requêtes utilisables par mois n'est donc pas fixe.", "sourceIds": ["s1"] },
+      { "en": "Credits are non-refundable and expire: monthly credits after 2 months, annual grants after 1 month, top-ups after 12 months.", "fr": "Les crédits ne sont pas remboursables et expirent : les crédits mensuels après 2 mois, les crédits annuels après 1 mois, les recharges après 12 mois.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "AI software engineer that builds a web app or website from a natural-language chat", "sourceIds": ["s1"] },
-      { "en": "Cloud hosting included as part of the credit system, no separate hosting purchase needed", "sourceIds": ["s1"] },
-      { "en": "Shared workspace credits for teams, with admins able to cap monthly credit usage per member", "sourceIds": ["s1"] }
+      { "en": "AI software engineer that builds a web app or website from a natural-language chat", "fr": "Ingénieur logiciel IA qui construit une application web ou un site à partir d'une conversation en langage naturel", "sourceIds": ["s1"] },
+      { "en": "Cloud hosting included as part of the credit system, no separate hosting purchase needed", "fr": "Hébergement cloud inclus dans le système de crédits, sans achat d'hébergement séparé", "sourceIds": ["s1"] },
+      { "en": "Shared workspace credits for teams, with admins able to cap monthly credit usage per member", "fr": "Crédits de workspace partagés pour les équipes, les administrateurs pouvant plafonner l'usage mensuel de crédits par membre", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Cost per task is variable and complexity-dependent, making monthly usage harder to predict than a flat seat price", "sourceIds": ["s1"] },
-      { "en": "Credits are non-refundable and expire on a schedule, so unused capacity is lost rather than rolled over indefinitely", "sourceIds": ["s1"] }
+      { "en": "Cost per task is variable and complexity-dependent, making monthly usage harder to predict than a flat seat price", "fr": "Le coût par tâche est variable et dépend de la complexité, ce qui rend l'usage mensuel plus difficile à prévoir qu'un prix de siège fixe", "sourceIds": ["s1"] },
+      { "en": "Credits are non-refundable and expire on a schedule, so unused capacity is lost rather than rolled over indefinitely", "fr": "Les crédits ne sont pas remboursables et expirent selon un calendrier fixe, la capacité inutilisée est donc perdue plutôt que reportée indéfiniment", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "GitHub", "slug": "github-copilot", "sourceIds": ["s1"] },
@@ -81,11 +82,73 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer or technical builder who wants to generate a working web app from a chat prompt instead of writing all the scaffolding by hand.",
+      "fr": "Un développeur ou un bâtisseur technique qui veut générer une application web fonctionnelle à partir d'un prompt plutôt que d'écrire toute la base de code à la main."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a solo builder describes a web app in chat and gets a working version deployed on Lovable's included Cloud hosting, with no separate hosting setup.",
+      "fr": "Usage : un créateur seul décrit une application en chat et obtient une version fonctionnelle déployée sur l'hébergement Cloud inclus de Lovable, sans configuration d'hébergement séparée."
+    },
+    {
+      "en": "Usage: a small team on Business caps each member's monthly credit usage so one person's complex prompts don't exhaust the shared workspace balance.",
+      "fr": "Usage : une petite équipe sur Business plafonne l'usage mensuel de crédits de chaque membre pour qu'une personne avec des prompts complexes n'épuise pas le solde partagé du workspace."
+    }
+  ],
   "alternatives": [
-    { "slug": "bolt-new", "reason": { "en": "Direct AI web app builder competitor with a similar chat-to-code, live preview workflow" } },
-    { "slug": "base44", "reason": { "en": "Competing no-code/AI app builder targeting the same non-technical and solo builder audience" } }
+    { "slug": "bolt-new", "reason": { "en": "Direct AI web app builder competitor with a similar chat-to-code, live preview workflow", "fr": "Concurrent direct de création d'applications par IA, avec un workflow similaire de chat vers code et aperçu en direct" } },
+    { "slug": "base44", "reason": { "en": "Competing no-code/AI app builder targeting the same non-technical and solo builder audience", "fr": "Concurrent no-code/IA visant le même public de créateurs non techniques et solos" } },
+    { "slug": "v0-vercel", "reason": { "en": "Direct AI app-building competitor from chat, with a similar credit-based usage model", "fr": "Concurrent direct de création d'applications par IA depuis un chat, avec un modèle d'usage par crédits similaire" } },
+    { "slug": "replit", "reason": { "en": "Competing AI-assisted app builder and hosting environment for building and deploying from a browser", "fr": "Environnement concurrent de création et d'hébergement d'applications assisté par IA, depuis un navigateur" } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Cloud hosting is bundled into the credit system, so Pro at $25/month covers building and hosting together instead of paying for a separate hosting provider.", "fr": "L'hébergement Cloud est intégré au système de crédits, Pro à 25 $/mois couvre donc la création et l'hébergement ensemble, au lieu de payer un hébergeur séparé.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Building a working app from a natural-language chat, with hosting included, points to a first working result reachable without separate infrastructure setup.", "fr": "Construire une application fonctionnelle à partir d'un chat en langage naturel, hébergement inclus, pointe vers un premier résultat atteignable sans configuration d'infrastructure séparée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The product delivers on building an app from chat, but the variable, complexity-dependent credit cost per task is itself a kind of workaround around a predictable usage allowance.", "fr": "Le produit tient sa promesse de construire une application depuis un chat, mais le coût variable par tâche selon la complexité constitue lui-même une forme de contournement d'un forfait d'usage prévisible.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Business adds a larger credit balance plus team/admin controls on top of Pro, and GitHub and Supabase integrations extend what a generated app can connect to.", "fr": "Business ajoute un solde de crédits plus élevé et des contrôles d'équipe/admin par rapport à Pro, et les intégrations GitHub et Supabase étendent ce à quoi une application générée peut se connecter.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: whether generated app code and data can be exported and run outside Lovable is not covered by the collected sources.", "fr": "Note neutre : la possibilité d'exporter le code et les données d'une application générée pour les faire tourner hors de Lovable ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI app builder", "fr": "Créateur d'app IA" },
+    "shortDescription": {
+      "en": "Lovable builds a working web app from a chat prompt, with Cloud hosting included, billed through a credit system starting at $25/month.",
+      "fr": "Lovable construit une application web à partir d'un prompt, hébergement Cloud inclus, facturé par un système de crédits dès 25 $/mois."
+    },
+    "longDescription": {
+      "en": "Lovable acts as an AI software engineer: describe an app in chat and it builds and deploys a working version, with Cloud hosting bundled in and GitHub or Supabase connections available for a real codebase and database.\n\nThe free plan gives about 30 build credits a month to try it. Pro, at $25/month, adds a larger credit balance covering builds, hosting and AI features together, though cost per task varies with complexity and unused credits expire after 2 months. Business, at $50/month, adds team credit caps per member. It suits a developer or technical builder who wants a working app fast, more than someone who needs a fixed, predictable monthly bill.",
+      "fr": "Lovable agit comme un ingénieur logiciel IA : on décrit une application en chat et il construit et déploie une version fonctionnelle, hébergement Cloud inclus, avec des connexions GitHub ou Supabase disponibles pour un vrai code et une vraie base de données.\n\nLe forfait gratuit donne environ 30 crédits de build par mois. Pro, à 25 $/mois, ajoute un solde de crédits plus élevé couvrant builds, hébergement et fonctionnalités IA ensemble, même si le coût par tâche varie selon la complexité et que les crédits inutilisés expirent après 2 mois. Business, à 50 $/mois, ajoute des plafonds de crédits par membre. Il convient à un développeur voulant une application rapidement, plus qu'à qui veut une facture fixe et prévisible."
+    },
+    "pros": [
+      { "en": "Cloud hosting is included in the credit price, removing a separate hosting bill.", "fr": "L'hébergement Cloud est inclus dans le prix des crédits, ce qui supprime une facture d'hébergement séparée." },
+      { "en": "GitHub and Supabase connections let a generated app plug into a real codebase and database rather than staying a closed prototype.", "fr": "Les connexions GitHub et Supabase permettent à une application générée de se brancher sur un vrai code et une vraie base de données, plutôt que de rester un prototype fermé." }
+    ],
+    "cons": [
+      { "en": "Credit cost per task varies with complexity, so the real number of usable prompts per month is hard to predict in advance.", "fr": "Le coût en crédits par tâche varie selon la complexité, le nombre réel de requêtes utilisables par mois est donc difficile à prévoir à l'avance." },
+      { "en": "Unused monthly credits expire after 2 months and aren't refunded, so they don't roll over indefinitely.", "fr": "Les crédits mensuels inutilisés expirent après 2 mois et ne sont pas remboursés, ils ne se reportent donc pas indéfiniment." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want to go from a chat prompt to a deployed, working app without setting up separate hosting.", "fr": "Tu veux passer d'un prompt à une application déployée et fonctionnelle sans configurer un hébergement séparé." },
+      "avoidIf": { "en": "You need a fixed, predictable monthly cost rather than a credit balance that varies with task complexity.", "fr": "Tu as besoin d'un coût mensuel fixe et prévisible plutôt que d'un solde de crédits qui varie selon la complexité des tâches." },
+      "threshold": { "en": "Pro costs $25/month (300 USD/year) for a credit balance covering builds, hosting and AI features together.", "fr": "Pro coûte 25 $/mois (300 $/an) pour un solde de crédits couvrant builds, hébergement et fonctionnalités IA ensemble." },
+      "billingTraps": { "en": "Credits expire on a schedule (2 months for monthly grants, 1 month for annual grants, 12 months for top-ups) and are non-refundable once unused past that point.", "fr": "Les crédits expirent selon un calendrier (2 mois pour les crédits mensuels, 1 mois pour les crédits annuels, 12 mois pour les recharges) et ne sont pas remboursés une fois ce délai passé." }
+    }
+  },
   "unknowns": ["Exact Student plan price and eligibility rules not re-verified beyond the seed note of -50% first year", "Full integrations list (beyond GitHub and Supabase) not confirmed from the homepage, which returned a 403 on this pass"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

@@ -3,7 +3,7 @@
   "slug": "kubernetes",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Kubernetes",
     "vendor": "Cloud Native Computing Foundation",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://kubernetes.io", "tier": 1, "accessedOn": "2026-09-25", "title": "Kubernetes.io" },
-    { "id": "s2", "url": "https://kubernetes.io/docs/home/", "tier": 1, "accessedOn": "2026-09-25", "title": "Kubernetes documentation" }
+    {
+      "id": "s1",
+      "url": "https://kubernetes.io",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Kubernetes.io"
+    },
+    {
+      "id": "s2",
+      "url": "https://kubernetes.io/docs/home/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Kubernetes documentation"
+    }
   ],
   "pricing": {
     "model": "open_source",
@@ -25,37 +37,222 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Fully free and open source under Apache 2.0; costs come from the infrastructure or managed service running it", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": "Fully free and open source under Apache 2.0; costs come from the infrastructure or managed service running it",
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Kubernetes itself has no license fee; the real cost is the compute, storage and managed control-plane fees charged by the cloud provider or self-hosted infrastructure running it.", "sourceIds": ["s1"] }
+      {
+        "en": "Kubernetes itself has no license fee; the real cost is the compute, storage and managed control-plane fees charged by the cloud provider or self-hosted infrastructure running it.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Kubernetes n'a pas de coût de licence ; le coût réel vient du calcul, du stockage et des frais de plan de contrôle managé facturés par le fournisseur cloud ou l'infrastructure auto-hébergée qui le fait tourner."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Container orchestration: automated deployment, scaling and management of containerized applications.", "sourceIds": ["s1"] },
-      { "en": "Self-healing (automatic restarts, rescheduling and replacement of failed containers) and rolling updates/rollbacks.", "sourceIds": ["s2"] },
-      { "en": "Service discovery, load balancing and declarative configuration via YAML manifests.", "sourceIds": ["s2"] }
+      {
+        "en": "Container orchestration: automated deployment, scaling and management of containerized applications.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Orchestration de conteneurs : déploiement, mise à l'échelle et gestion automatisés des applications conteneurisées."
+      },
+      {
+        "en": "Self-healing (automatic restarts, rescheduling and replacement of failed containers) and rolling updates/rollbacks.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Auto-réparation (redémarrages, replanification et remplacement automatiques des conteneurs en panne) et mises à jour/retours en arrière progressifs."
+      },
+      {
+        "en": "Service discovery, load balancing and declarative configuration via YAML manifests.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Découverte de service, répartition de charge et configuration déclarative via des manifestes YAML."
+      }
     ],
     "limitations": [
-      { "en": "Steep learning curve and significant operational complexity compared to simpler deployment platforms (e.g. Heroku, Netlify).", "sourceIds": ["s2"] },
-      { "en": "Requires ongoing cluster operations (upgrades, security patching, networking) unless using a fully managed offering.", "sourceIds": ["s2"] }
+      {
+        "en": "Steep learning curve and significant operational complexity compared to simpler deployment platforms (e.g. Heroku, Netlify).",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Courbe d'apprentissage raide et complexité opérationnelle importante comparées à des plateformes de déploiement plus simples (Heroku, Netlify)."
+      },
+      {
+        "en": "Requires ongoing cluster operations (upgrades, security patching, networking) unless using a fully managed offering.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Nécessite des opérations de cluster continues (mises à jour, correctifs de sécurité, réseau), hors offre entièrement managée."
+      }
     ],
     "integrations": [],
-    "platforms": ["linux", "web"]
+    "platforms": [
+      "linux",
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "fly-io", "reason": { "en": "Simpler managed container deployment platform for teams that don't need full Kubernetes." } },
-    { "slug": "digitalocean", "reason": { "en": "Offers a managed Kubernetes service as a simpler entry point to container orchestration." } },
-    { "slug": "aws", "reason": { "en": "Provides managed Kubernetes (EKS) alongside its own container orchestration options." } }
+    {
+      "slug": "fly-io",
+      "reason": {
+        "en": "Simpler managed container deployment platform for teams that don't need full Kubernetes.",
+        "fr": "Plateforme de déploiement de conteneurs managée plus simple pour les équipes qui n'ont pas besoin de Kubernetes complet."
+      }
+    },
+    {
+      "slug": "digitalocean",
+      "reason": {
+        "en": "Offers a managed Kubernetes service as a simpler entry point to container orchestration.",
+        "fr": "Propose un service Kubernetes managé comme point d'entrée plus simple vers l'orchestration de conteneurs."
+      }
+    },
+    {
+      "slug": "aws",
+      "reason": {
+        "en": "Provides managed Kubernetes (EKS) alongside its own container orchestration options.",
+        "fr": "Propose un Kubernetes managé (EKS) ainsi que ses propres options d'orchestration de conteneurs."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Docker Swarm", "officialUrl": "https://docs.docker.com/engine/swarm/", "reason": "Simpler built-in container orchestration alternative to Kubernetes, not in the catalogue" },
-    { "name": "Nomad", "officialUrl": "https://www.nomadproject.io", "reason": "HashiCorp's lighter-weight workload orchestrator, an alternative to Kubernetes, not in the catalogue" }
+    {
+      "name": "Docker Swarm",
+      "officialUrl": "https://docs.docker.com/engine/swarm/",
+      "reason": "Simpler built-in container orchestration alternative to Kubernetes, not in the catalogue"
+    },
+    {
+      "name": "Nomad",
+      "officialUrl": "https://www.nomadproject.io",
+      "reason": "HashiCorp's lighter-weight workload orchestrator, an alternative to Kubernetes, not in the catalogue"
+    }
   ],
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and small technical teams who need to run and scale containerized applications themselves rather than relying on a fully managed deploy target.",
+      "fr": "Développeurs et petites équipes techniques qui doivent faire tourner et scaler eux-mêmes des applications conteneurisées, plutôt que de s'appuyer sur une plateforme de déploiement entièrement managée."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Scaling: automatically add and remove application instances as traffic changes, without manual server management.",
+      "fr": "Mise à l'échelle : ajouter et retirer automatiquement des instances de l'application selon le trafic, sans gestion manuelle des serveurs."
+    },
+    {
+      "en": "Resilience: restart and reschedule failed containers automatically to keep a service available during incidents.",
+      "fr": "Résilience : redémarrer et replanifier automatiquement les conteneurs en panne pour garder un service disponible pendant un incident."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 1,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Kubernetes itself has no license fee, but the real cost is the compute, storage and managed control-plane fees of the infrastructure running it, so the value only pays off once an application genuinely needs orchestration at scale.",
+        "fr": "Kubernetes n'a pas de coût de licence, mais le coût réel vient du calcul, du stockage et des frais de plan de contrôle managé de l'infrastructure qui le fait tourner : la valeur ne se justifie que si l'application a vraiment besoin d'orchestration à grande échelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The documentation itself describes a steep learning curve and significant operational complexity compared to simpler deployment platforms, plus ongoing cluster operations unless using a fully managed offering.",
+        "fr": "La documentation elle-même décrit une courbe d'apprentissage raide et une complexité opérationnelle importante par rapport à des plateformes de déploiement plus simples, avec des opérations de cluster continues hors offre entièrement managée.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers what it announces: automated deployment, self-healing restarts, rolling updates/rollbacks, service discovery and load balancing through declarative manifests.",
+        "fr": "Tient sa promesse : déploiement automatisé, redémarrages auto-réparateurs, mises à jour/retours en arrière progressifs, découverte de service et répartition de charge via des manifestes déclaratifs.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers the full orchestration stack (deployment, self-healing, rolling updates, service discovery, load balancing) rather than a subset of it.",
+        "fr": "Couvre l'ensemble de la chaîne d'orchestration (déploiement, auto-réparation, mises à jour progressives, découverte de service, répartition de charge) plutôt qu'un sous-ensemble.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export and portability of workloads leaving a given Kubernetes setup are not covered by the collected sources.",
+        "fr": "Note neutre : l'export et la portabilité des charges de travail en quittant une installation Kubernetes donnée ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Container orchestration",
+      "fr": "Orchestration de conteneurs"
+    },
+    "shortDescription": {
+      "en": "Kubernetes automates the deployment, scaling and self-healing of containerized applications, with costs coming from the infrastructure that runs it.",
+      "fr": "Kubernetes automatise le déploiement, la mise à l'échelle et l'auto-réparation d'applications conteneurisées ; le coût vient de l'infrastructure qui le fait tourner."
+    },
+    "longDescription": {
+      "en": "Kubernetes orchestrates containerized applications: it schedules them across machines, restarts and replaces failed containers, handles rolling updates and rollbacks, and manages service discovery and load balancing through declarative YAML manifests.\n\nIt is free and open source under Apache 2.0, so the real budget line is the compute, storage and managed control-plane fees charged by whichever cloud provider or self-hosted infrastructure runs it. It fits a developer or small technical team that already needs to run containers at scale, not someone looking for the simplest way to put an app online.",
+      "fr": "Kubernetes orchestre des applications conteneurisées : il les répartit sur plusieurs machines, redémarre et remplace les conteneurs en panne, gère les mises à jour progressives et prend en charge la découverte de service et la répartition de charge via des manifestes YAML déclaratifs.\n\nIl est gratuit et open source sous licence Apache 2.0 : le vrai poste de dépense est le calcul, le stockage et les frais de plan de contrôle facturés par le fournisseur cloud ou l'infrastructure qui le fait tourner. Il convient à un développeur ou une petite équipe technique qui doit déjà faire tourner des conteneurs à l'échelle, pas à qui cherche le moyen le plus simple de mettre une appli en ligne."
+    },
+    "pros": [
+      {
+        "en": "No license fee: the software itself is free and open source.",
+        "fr": "Aucun coût de licence : le logiciel lui-même est gratuit et open source."
+      },
+      {
+        "en": "Self-healing and rolling updates reduce manual intervention once a cluster is running.",
+        "fr": "Auto-réparation et mises à jour progressives réduisent les interventions manuelles une fois le cluster en place."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Steep learning curve and real operational complexity to run and maintain.",
+        "fr": "Courbe d'apprentissage raide et réelle complexité opérationnelle à faire tourner et à maintenir."
+      },
+      {
+        "en": "Requires ongoing cluster operations (upgrades, security patching, networking) unless fully managed.",
+        "fr": "Nécessite des opérations de cluster continues (mises à jour, correctifs de sécurité, réseau) hors offre entièrement managée."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "A developer or technical team already needs to run and scale multiple containerized services and has the skills (or budget for a managed service) to operate a cluster.",
+        "fr": "Un développeur ou une équipe technique doit déjà faire tourner et scaler plusieurs services conteneurisés, et a les compétences (ou le budget pour un service managé) pour opérer un cluster."
+      },
+      "avoidIf": {
+        "en": "A single application needs to go online without dedicated operational time, where a simpler managed deploy platform fits better.",
+        "fr": "Une seule application doit être mise en ligne sans temps opérationnel dédié : une plateforme de déploiement managée plus simple convient mieux."
+      },
+      "threshold": {
+        "en": "Kubernetes carries no license cost; the decision point is whether the team can absorb the compute and management fees of a managed Kubernetes offering, or the time cost of self-hosting.",
+        "fr": "Kubernetes n'a pas de coût de licence ; le seuil de décision est la capacité de l'équipe à absorber les frais de calcul et de gestion d'une offre Kubernetes managée, ou le temps nécessaire à un auto-hébergement."
+      }
+    }
+  }
 }

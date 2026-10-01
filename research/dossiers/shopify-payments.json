@@ -3,7 +3,8 @@
   "slug": "shopify-payments",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Shopify Payments",
     "vendor": "Shopify Inc.",
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "2.9% + $0.30 per online credit card transaction on the Basic Shopify plan; +1% for cards issued outside the merchant's country", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "2.9% + $0.30 per online credit card transaction on the Basic Shopify plan; +1% for cards issued outside the merchant's country", "fr": "2,9 % + 0,30 $ par transaction carte en ligne sur le forfait Basic Shopify ; +1 % pour les cartes émises hors du pays du marchand", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "2.6% + $0.30 per online credit card transaction", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "2.6% + $0.30 per online credit card transaction", "fr": "2,6 % + 0,30 $ par transaction carte en ligne", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       },
       {
@@ -55,42 +56,97 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "2.4-2.5% + $0.30 per online credit card transaction, the lowest tier rate", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "2.4-2.5% + $0.30 per online credit card transaction, the lowest tier rate", "fr": "2,4 à 2,5 % + 0,30 $ par transaction carte en ligne, le taux le plus bas de la gamme", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [],
     "cautions": [
-      { "en": "Shopify Payments is not a standalone product; its transaction rate depends entirely on which Shopify store plan (Basic/Shopify/Advanced) the merchant subscribes to.", "sourceIds": ["s2"] },
-      { "en": "Using Shopify Payments removes Shopify's separate third-party payment gateway fee (0.6% to 2% depending on plan), which otherwise applies on top of any external processor's own fees.", "sourceIds": ["s2"] },
-      { "en": "Cards issued outside the merchant's own country add a further 1% surcharge; premium cards (e.g. Amex, corporate, high-rewards) may carry different rates.", "sourceIds": ["s2"] }
+      { "en": "Shopify Payments is not a standalone product; its transaction rate depends entirely on which Shopify store plan (Basic/Shopify/Advanced) the merchant subscribes to.", "fr": "Shopify Payments n'est pas un produit autonome ; son taux de transaction dépend entièrement du forfait de boutique Shopify (Basic/Shopify/Advanced) souscrit par le marchand.", "sourceIds": ["s2"] },
+      { "en": "Using Shopify Payments removes Shopify's separate third-party payment gateway fee (0.6% to 2% depending on plan), which otherwise applies on top of any external processor's own fees.", "fr": "Utiliser Shopify Payments supprime les frais de passerelle de paiement tiers de Shopify (0,6 à 2 % selon le forfait), qui s'appliqueraient sinon en plus des frais propres d'un autre prestataire.", "sourceIds": ["s2"] },
+      { "en": "Cards issued outside the merchant's own country add a further 1% surcharge; premium cards (e.g. Amex, corporate, high-rewards) may carry different rates.", "fr": "Les cartes émises hors du pays du marchand ajoutent 1 % de frais supplémentaires ; les cartes premium (Amex, cartes entreprise, cartes à forte récompense) peuvent avoir des taux différents.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Built-in payment processing for Shopify stores: cards, digital wallets, installments, and crypto payment acceptance.", "sourceIds": ["s1"] },
-      { "en": "Supports 130+ currencies and integrates with Shop Pay accelerated checkout.", "sourceIds": ["s1"] }
+      { "en": "Built-in payment processing for Shopify stores: cards, digital wallets, installments, and crypto payment acceptance.", "fr": "Traitement des paiements intégré aux boutiques Shopify : cartes, portefeuilles numériques, paiement en plusieurs fois et acceptation de cryptomonnaies.", "sourceIds": ["s1"] },
+      { "en": "Supports 130+ currencies and integrates with Shop Pay accelerated checkout.", "fr": "Prend en charge plus de 130 devises et s'intègre au paiement accéléré Shop Pay.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Only available to merchants running a Shopify store; not usable as a standalone payment processor outside Shopify.", "sourceIds": ["s1"] },
-      { "en": "Transaction rate is tied to the merchant's Shopify subscription tier rather than being independently negotiable at the entry tiers.", "sourceIds": ["s2"] }
+      { "en": "Only available to merchants running a Shopify store; not usable as a standalone payment processor outside Shopify.", "fr": "Réservé aux marchands qui exploitent une boutique Shopify ; inutilisable comme prestataire de paiement autonome hors Shopify.", "sourceIds": ["s1"] },
+      { "en": "Transaction rate is tied to the merchant's Shopify subscription tier rather than being independently negotiable at the entry tiers.", "fr": "Le taux de transaction est lié au forfait Shopify du marchand plutôt que négociable indépendamment sur les forfaits d'entrée.", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A small online store owner who wants card and wallet payments built into Shopify without setting up and reconciling a separate payment gateway.",
+      "fr": "Le ou la responsable d'une petite boutique en ligne qui veut des paiements par carte et portefeuille intégrés à Shopify, sans configurer et rapprocher une passerelle de paiement séparée."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a merchant on the Shopify plan accepts a card payment at checkout and pays 2.6% + $0.30, with no separate gateway fee on top.",
+      "fr": "Usage : un marchand sur le forfait Shopify encaisse un paiement par carte au moment du paiement et paie 2,6 % + 0,30 $, sans frais de passerelle séparés en plus."
+    },
+    {
+      "en": "Usage: a store switches from an external payment processor to Shopify Payments to remove the extra third-party gateway fee that applied on top.",
+      "fr": "Usage : une boutique passe d'un prestataire de paiement externe à Shopify Payments pour supprimer les frais de passerelle tiers qui s'appliquaient en plus."
+    }
+  ],
   "alternatives": [
-    { "slug": "stripe", "reason": { "en": "General-purpose payment processor that can also power e-commerce checkouts outside Shopify's own gateway." } },
-    { "slug": "razorpay", "reason": { "en": "Alternative payment processing platform for online commerce, though more India-market focused." } }
+    { "slug": "stripe", "reason": { "en": "General-purpose payment processor that can also power e-commerce checkouts outside Shopify's own gateway.", "fr": "Prestataire de paiement généraliste qui peut aussi traiter des paiements e-commerce hors de la passerelle propre de Shopify." } },
+    { "slug": "razorpay", "reason": { "en": "Alternative payment processing platform for online commerce, though more India-market focused.", "fr": "Plateforme de paiement alternative pour le commerce en ligne, mais plus centrée sur le marché indien." } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Using Shopify Payments removes the separate third-party gateway fee (0.6-2%) that otherwise stacks on top of any external processor, a direct saving for a Shopify merchant.", "fr": "Utiliser Shopify Payments supprime les frais de passerelle tiers (0,6 à 2 %) qui s'ajouteraient sinon à tout autre prestataire, une économie directe pour un marchand Shopify.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "It activates within the existing Shopify checkout with no separate gateway account to configure, since it is built into the store plan.", "fr": "Il s'active directement dans le paiement Shopify existant, sans compte de passerelle séparé à configurer, puisqu'il est intégré au forfait de la boutique.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "It processes cards, wallets, installments and crypto payments as described, with the rate simply varying by store plan.", "fr": "Il traite les cartes, portefeuilles, paiements en plusieurs fois et cryptomonnaies comme annoncé, seul le taux variant selon le forfait de la boutique.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Capability is tied to whatever the merchant's Shopify plan unlocks; it is not a standalone processor with its own independent feature ceiling.", "fr": "Sa capacité dépend de ce que débloque le forfait Shopify du marchand ; ce n'est pas un prestataire autonome avec son propre plafond de fonctionnalités.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and switching-away mechanics are not covered by the collected sources.", "fr": "Note neutre : l'export des données et les modalités pour en sortir ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Built-in Shopify payments", "fr": "Paiements intégrés Shopify" },
+    "shortDescription": {
+      "en": "Shopify Payments processes cards and wallets directly inside a Shopify store, at a rate set by the store's subscription plan.",
+      "fr": "Shopify Payments traite les cartes et portefeuilles directement dans une boutique Shopify, à un taux fixé par le forfait d'abonnement de la boutique."
+    },
+    "longDescription": {
+      "en": "Shopify Payments is the payment processor built into Shopify stores, handling cards, digital wallets, installments and crypto at checkout, with support for over 130 currencies and Shop Pay accelerated checkout.\n\nThere's no separate price: the online card rate runs from 2.9% + $0.30 on the Basic plan down to 2.4-2.5% + $0.30 on Advanced, and using it removes the extra third-party gateway fee that would otherwise apply. It suits a merchant already committed to Shopify who wants one less account to manage, rather than someone comparing standalone processors.",
+      "fr": "Shopify Payments est le prestataire de paiement intégré aux boutiques Shopify : il gère les cartes, portefeuilles numériques, paiements en plusieurs fois et cryptomonnaies au moment du paiement, avec plus de 130 devises et le paiement accéléré Shop Pay.\n\nIl n'a pas de prix séparé : le taux carte en ligne va de 2,9 % + 0,30 $ sur le forfait Basic à 2,4-2,5 % + 0,30 $ sur Advanced, et l'utiliser supprime les frais de passerelle tiers qui s'appliqueraient sinon. Il convient à un marchand déjà engagé sur Shopify qui veut un compte de moins à gérer, plutôt qu'à quelqu'un qui compare des prestataires autonomes."
+    },
+    "pros": [
+      { "en": "Removes the separate third-party gateway fee that would otherwise stack on top of the card processing rate.", "fr": "Supprime les frais de passerelle tiers qui s'ajouteraient sinon au taux de traitement des cartes." },
+      { "en": "Activates inside the existing Shopify checkout, with no separate gateway account to set up.", "fr": "S'active directement dans le paiement Shopify existant, sans compte de passerelle séparé à créer." }
+    ],
+    "cons": [
+      { "en": "Only works for merchants already running a Shopify store; it cannot be used as a standalone processor.", "fr": "Ne fonctionne que pour les marchands qui exploitent déjà une boutique Shopify ; inutilisable comme prestataire autonome." },
+      { "en": "The transaction rate is set by the Shopify plan tier, not independently negotiable at the entry plans.", "fr": "Le taux de transaction est fixé par le forfait Shopify, non négociable indépendamment sur les forfaits d'entrée." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already run a Shopify store and want card payments without managing a separate gateway account.", "fr": "Tu exploites déjà une boutique Shopify et tu veux encaisser les paiements sans gérer de compte de passerelle séparé." },
+      "avoidIf": { "en": "You sell outside Shopify, or you need a payment processor you can use independently of any one e-commerce platform.", "fr": "Tu vends hors de Shopify, ou tu as besoin d'un prestataire de paiement utilisable indépendamment de toute plateforme e-commerce." },
+      "threshold": { "en": "On the entry Basic plan, the rate is 2.9% + $0.30 per online card transaction; it drops to 2.4-2.5% + $0.30 on the Advanced plan.", "fr": "Sur le forfait d'entrée Basic, le taux est de 2,9 % + 0,30 $ par transaction carte en ligne ; il baisse à 2,4-2,5 % + 0,30 $ sur le forfait Advanced." }
+    }
+  },
   "unknowns": [
     "In-person (POS) card rates were not confirmed in this pass, only online transaction rates.",
     "Exact surcharge for premium/corporate cards is not quantified on the fetched pages."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

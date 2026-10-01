@@ -3,7 +3,8 @@
   "slug": "indy",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Indy",
     "vendor": "Indy",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "FR",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": [{ "en": "Unlimited electronic invoicing (DGFiP-approved platform), unlimited quotes and invoices, automated bookkeeping; excludes mandatory tax declarations", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": [{ "en": "Unlimited electronic invoicing (DGFiP-approved platform), unlimited quotes and invoices, automated bookkeeping; excludes mandatory tax declarations", "fr": "Facturation électronique illimitée (plateforme agréée DGFiP), devis et factures illimités, comptabilité automatisée ; les déclarations fiscales obligatoires sont exclues", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited invoicing and quotes, automated bookkeeping; no mandatory tax declarations included", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Unlimited invoicing and quotes, automated bookkeeping; no mandatory tax declarations included", "fr": "Facturation et devis illimités, comptabilité automatisée ; déclarations fiscales obligatoires non incluses", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 12, "annualPerMonth": 9, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds e-signature of quotes, automated late-payment reminders, pro account with 3 sub-accounts; no mandatory tax declarations", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Adds e-signature of quotes, automated late-payment reminders, pro account with 3 sub-accounts; no mandatory tax declarations", "fr": "Ajoute la signature électronique des devis, les relances automatiques d'impayés, un compte pro avec 3 sous-comptes ; déclarations fiscales obligatoires non incluses", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": 19, "annualPerMonth": 15, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds automated mandatory tax declarations, one-click government filings, priority support; price varies by legal structure (auto-entrepreneur shown, other structures range 22-49 EUR/month HT)", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Adds automated mandatory tax declarations, one-click government filings, priority support; price varies by legal structure (auto-entrepreneur shown, other structures range 22-49 EUR/month HT)", "fr": "Ajoute les déclarations fiscales obligatoires automatisées, le dépôt en un clic auprès de l'administration, un support prioritaire ; le prix varie selon la structure juridique (tarif auto-entrepreneur affiché, 22 à 49 €/mois HT pour les autres structures)", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
@@ -63,34 +64,91 @@
       { "name": "Expert-Accountant option (third-party accountant validation)", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Premium plan pricing varies significantly by legal structure: 15-19 EUR/month for auto-entrepreneurs, 22-49 EUR/month for individual enterprises, 24 EUR/month for SCI/LMNP, 49 EUR/month for companies (SAS/SASU/SARL/EURL).", "sourceIds": ["s1"] },
-      { "en": "Neither the free Essentiel nor the Plus plan includes mandatory tax declarations; that requires Premium.", "sourceIds": ["s1"] }
+      { "en": "Premium plan pricing varies significantly by legal structure: 15-19 EUR/month for auto-entrepreneurs, 22-49 EUR/month for individual enterprises, 24 EUR/month for SCI/LMNP, 49 EUR/month for companies (SAS/SASU/SARL/EURL).", "fr": "Le tarif du forfait Premium varie fortement selon la structure juridique : 15 à 19 €/mois pour les auto-entrepreneurs, 22 à 49 €/mois pour les entreprises individuelles, 24 €/mois pour les SCI/LMNP, 49 €/mois pour les sociétés (SAS/SASU/SARL/EURL).", "sourceIds": ["s1"] },
+      { "en": "Neither the free Essentiel nor the Plus plan includes mandatory tax declarations; that requires Premium.", "fr": "Ni le forfait gratuit Essentiel ni le forfait Plus n'incluent les déclarations fiscales obligatoires ; il faut passer à Premium.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Automated invoicing and quoting via a DGFiP-approved electronic invoicing platform, built for French freelancers.", "sourceIds": ["s1"] },
-      { "en": "Automated bookkeeping and, on Premium, automated mandatory tax declarations with one-click government filings.", "sourceIds": ["s1"] }
+      { "en": "Automated invoicing and quoting via a DGFiP-approved electronic invoicing platform, built for French freelancers.", "fr": "Facturation et devis automatisés via une plateforme de facturation électronique agréée DGFiP, pensée pour les freelances français.", "sourceIds": ["s1"] },
+      { "en": "Automated bookkeeping and, on Premium, automated mandatory tax declarations with one-click government filings.", "fr": "Comptabilité automatisée et, sur Premium, déclarations fiscales obligatoires automatisées avec dépôt en un clic auprès de l'administration.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Mandatory tax declarations are gated behind the Premium plan; not available on the free or Plus tiers.", "sourceIds": ["s1"] },
-      { "en": "Premium plan cost depends on legal structure, complicating direct price comparison across business types.", "sourceIds": ["s1"] }
+      { "en": "Mandatory tax declarations are gated behind the Premium plan; not available on the free or Plus tiers.", "fr": "Les déclarations fiscales obligatoires sont réservées au forfait Premium ; non disponibles sur les offres gratuite ou Plus.", "sourceIds": ["s1"] },
+      { "en": "Premium plan cost depends on legal structure, complicating direct price comparison across business types.", "fr": "Le coût du forfait Premium dépend de la structure juridique, ce qui complique la comparaison directe des prix entre types d'entreprise.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "An independent consultant or auto-entrepreneur who handles their own invoicing, bookkeeping and tax filing without an in-house finance team.",
+      "fr": "Un consultant indépendant ou un auto-entrepreneur qui gère lui-même sa facturation, sa comptabilité et ses déclarations fiscales, sans équipe finance en interne."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a freelancer sends an electronic invoice through Indy's DGFiP-approved template, and the payment is logged automatically in the bookkeeping.",
+      "fr": "Usage : un freelance envoie une facture électronique via le modèle agréé DGFiP d'Indy, et le paiement est enregistré automatiquement dans la comptabilité."
+    },
+    {
+      "en": "Usage: an auto-entrepreneur upgrades to Premium so each tax declaration is pre-filled and filed with one click instead of done by hand.",
+      "fr": "Usage : un auto-entrepreneur passe à Premium pour que chaque déclaration fiscale soit pré-remplie et déposée en un clic plutôt que faite à la main."
+    }
+  ],
   "alternatives": [
-    { "slug": "shine", "reason": { "en": "Direct competitor for French freelancer banking, invoicing and tax management, already flagged as a current alternative." } },
-    { "slug": "qonto", "reason": { "en": "Overlaps on business banking and invoicing for French independents and small teams." } },
-    { "slug": "freshbooks", "reason": { "en": "Competes on automated invoicing and bookkeeping for freelancers, though not France-specific." } }
+    { "slug": "shine", "reason": { "en": "Direct competitor for French freelancer banking, invoicing and tax management, already flagged as a current alternative.", "fr": "Concurrent direct sur la banque, la facturation et la fiscalité des freelances français, déjà identifié comme alternative actuelle." } },
+    { "slug": "qonto", "reason": { "en": "Overlaps on business banking and invoicing for French independents and small teams.", "fr": "Chevauche la banque pro et la facturation pour les indépendants et petites équipes françaises." } },
+    { "slug": "freshbooks", "reason": { "en": "Competes on automated invoicing and bookkeeping for freelancers, though not France-specific.", "fr": "Concurrent sur la facturation et la comptabilité automatisées pour freelances, mais sans spécificité française." } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free Essentiel plan already covers unlimited invoicing and bookkeeping, and Premium adds mandatory tax declarations from 15 EUR/month for auto-entrepreneurs, a low fixed cost for the administrative tasks it replaces.", "fr": "Le forfait gratuit Essentiel couvre déjà la facturation et la comptabilité illimitées, et Premium ajoute les déclarations fiscales obligatoires dès 15 €/mois pour les auto-entrepreneurs, un coût fixe bas pour les tâches administratives remplacées.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed to reach a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Automated bookkeeping and one-click government filings on Premium show the product carries out the declared task directly, without describing workarounds.", "fr": "La comptabilité automatisée et le dépôt en un clic sur Premium montrent que l'outil réalise la tâche annoncée directement, sans contournement décrit.", "sourceIds": ["s1"] },
+      "puissance": { "en": "The feature set stays focused on invoicing, bookkeeping and mandatory declarations; broader accounting or banking capabilities are not described in the collected sources.", "fr": "Le périmètre reste centré sur la facturation, la comptabilité et les déclarations obligatoires ; des capacités de comptabilité ou de banque plus larges ne sont pas décrites dans les sources relevées.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export formats and portability are not covered by the collected sources.", "fr": "Note neutre : les formats d'export des données et la portabilité ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Freelance invoicing", "fr": "Facturation freelance" },
+    "shortDescription": {
+      "en": "Indy handles invoicing, quotes and bookkeeping for French freelancers, with mandatory tax declarations added on the Premium plan.",
+      "fr": "Indy gère la facturation, les devis et la comptabilité des freelances français, avec les déclarations fiscales obligatoires incluses sur le forfait Premium."
+    },
+    "longDescription": {
+      "en": "Indy is built for French freelancers and auto-entrepreneurs who want electronic invoicing, quotes and automated bookkeeping in one place. The free Essentiel plan already covers unlimited invoicing through a DGFiP-approved platform plus automated bookkeeping, with no mandatory tax declarations included.\n\nPaid plans start at 9 EUR/month billed annually on Plus, which adds e-signature and late-payment reminders. Premium, from 15 EUR/month for auto-entrepreneurs, adds automated mandatory tax declarations and one-click filings, though the price rises for other legal structures, up to 49 EUR/month for companies. It suits a solo freelancer handling their own admin, since the structure centers on one account.",
+      "fr": "Indy s'adresse aux freelances et auto-entrepreneurs français qui veulent la facturation électronique, les devis et la comptabilité automatisée au même endroit. Le forfait gratuit Essentiel couvre déjà une facturation illimitée via une plateforme agréée DGFiP, plus une comptabilité automatisée, sans les déclarations fiscales obligatoires.\n\nLes forfaits payants démarrent à 9 € par mois en engagement annuel sur Plus, qui ajoute la signature des devis et les relances d'impayés. Premium, dès 15 € par mois pour les auto-entrepreneurs, ajoute les déclarations fiscales automatisées et le dépôt en un clic, mais le tarif grimpe ensuite, jusqu'à 49 € pour les sociétés. Il convient à un freelance seul gérant son administratif, la structure restant centrée sur un compte unique."
+    },
+    "pros": [
+      { "en": "Mandatory tax filing is included in a single monthly price on Premium, instead of a separate accountant invoice.", "fr": "Les déclarations fiscales obligatoires sont incluses dans un seul prix mensuel sur Premium, au lieu d'une facture séparée d'expert-comptable." },
+      { "en": "The free plan already removes the cost of basic invoicing and bookkeeping needs.", "fr": "Le forfait gratuit supprime déjà le coût des besoins de base en facturation et comptabilité." }
+    ],
+    "cons": [
+      { "en": "Premium plan price depends on legal structure, so the real monthly cost needs checking against your own status.", "fr": "Le prix du forfait Premium dépend de la structure juridique, il faut donc vérifier le coût mensuel réel pour son propre statut." },
+      { "en": "Mandatory tax declarations are locked behind Premium; the free and Plus tiers can't handle them.", "fr": "Les déclarations fiscales obligatoires sont réservées à Premium ; les offres gratuite et Plus ne les gèrent pas." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're a French freelancer or auto-entrepreneur who wants invoicing, bookkeeping and tax filing handled in one account.", "fr": "Tu es freelance ou auto-entrepreneur en France et tu veux la facturation, la comptabilité et les déclarations fiscales gérées dans un seul compte." },
+      "avoidIf": { "en": "You run a company structure, where Premium costs up to 49 EUR/month, or you need multi-user team accounting.", "fr": "Tu es en société, où Premium coûte jusqu'à 49 € par mois, ou tu as besoin d'une comptabilité multi-utilisateurs pour une équipe." },
+      "threshold": { "en": "Worth it once mandatory tax filing is needed: Premium starts at 15 EUR/month (180 EUR/year) for auto-entrepreneurs, billed annually.", "fr": "Rentable dès que la déclaration fiscale obligatoire devient nécessaire : Premium démarre à 15 €/mois (180 €/an) pour les auto-entrepreneurs, facturé annuellement." }
+    }
+  },
   "unknowns": [
     "Exact price for the Premium plan across all legal structures (SCI/LMNP annual figure vs monthly not fully reconciled) was only partially detailed on the page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Premium monthly price shown (19 EUR) and comparePlanKey (plus, 9 EUR/month annual) are specific to the auto-entrepreneur rate card; other legal structures range 22-49 EUR/month per the source for Premium, which a single plan price field can't reflect. Worth confirming on indy.fr which structure the catalogue should display."
+  ]
 }

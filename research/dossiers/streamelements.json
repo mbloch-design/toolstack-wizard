@@ -3,7 +3,8 @@
   "slug": "streamelements",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "StreamElements",
     "vendor": "StreamElements Inc.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Overlays, chatbot, alerts, and a merch store with limited sizes and designs; 1 user, 1 project, 1 GB storage per third-party tracker", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Overlays, chatbot, alerts, and a merch store with limited sizes and designs; 1 user, 1 project, 1 GB storage per third-party tracker", "fr": "Overlays, chatbot, alertes et une boutique de merch avec tailles et designs limités ; 1 utilisateur, 1 projet, 1 Go de stockage selon un tracker tiers" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Overlays, chatbot, alerts, and a merch store with limited sizes and designs; 1 user, 1 project, 1 GB storage per third-party tracker", "fr": null }],
+        "keyLimits": [{ "en": "Overlays, chatbot, alerts, and a merch store with limited sizes and designs; 1 user, 1 project, 1 GB storage per third-party tracker", "fr": "Overlays, chatbot, alertes et une boutique de merch avec tailles et designs limités ; 1 utilisateur, 1 projet, 1 Go de stockage selon un tracker tiers" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 10, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "More merch sizes/designs and overlay options, 5 users, 5 projects, 10 GB storage per third-party tracker; not confirmed on the official pricing page in this session.", "fr": null }],
+        "keyLimits": [{ "en": "More merch sizes/designs and overlay options, 5 users, 5 projects, 10 GB storage per third-party tracker; not confirmed on the official pricing page in this session.", "fr": "Plus de tailles/designs de merch et d'options d'overlay, 5 utilisateurs, 5 projets, 10 Go de stockage selon un tracker tiers ; non confirmé sur la page de tarifs officielle lors de cette session." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,26 +55,26 @@
         "minSeats": 1,
         "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users/projects, 100 GB storage, priority support per third-party tracker; not confirmed on the official pricing page in this session.", "fr": null }],
+        "keyLimits": [{ "en": "Unlimited users/projects, 100 GB storage, priority support per third-party tracker; not confirmed on the official pricing page in this session.", "fr": "Utilisateurs/projets illimités, 100 Go de stockage, support prioritaire selon un tracker tiers ; non confirmé sur la page de tarifs officielle lors de cette session." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "plus-10",
     "addOns": [],
     "cautions": [
-      { "en": "The official streamelements.com/plus pricing page could not be retrieved with full content in this session; prices above come from a third-party listing and should be reverified against the primary source.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The official streamelements.com/plus pricing page could not be retrieved with full content in this session; prices above come from a third-party listing and should be reverified against the primary source.", "fr": "La page de tarifs officielle streamelements.com/plus n'a pas pu être récupérée avec son contenu complet lors de cette session ; les prix ci-dessus viennent d'une liste tierce et doivent être revérifiés sur la source officielle.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Cloud-based stream overlay editor with customizable alerts and widgets.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Stream chatbot with moderation and custom commands.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Integrated merch store (SE.Merch) and tipping/donation system, no subscription required to start.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Loyalty program with stream currency viewers can earn and spend.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Cloud-based stream overlay editor with customizable alerts and widgets.", "fr": "Éditeur d'overlays de stream dans le cloud avec alertes et widgets personnalisables.", "sourceIds": ["s1"] },
+      { "en": "Stream chatbot with moderation and custom commands.", "fr": "Chatbot de stream avec modération et commandes personnalisées.", "sourceIds": ["s1"] },
+      { "en": "Integrated merch store (SE.Merch) and tipping/donation system, no subscription required to start.", "fr": "Boutique de merch intégrée (SE.Merch) et système de pourboires/dons, sans abonnement requis pour démarrer.", "sourceIds": ["s1"] },
+      { "en": "Loyalty program with stream currency viewers can earn and spend.", "fr": "Programme de fidélité avec une monnaie de stream que les viewers peuvent gagner et dépenser.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan caps merch design/size options and overlay features compared to paid tiers.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Some features (larger storage, more projects/users) require a paid plan starting around 10 USD/month.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free plan caps merch design/size options and overlay features compared to paid tiers.", "fr": "Le plan gratuit limite les options de design/taille de merch et d'overlay par rapport aux paliers payants.", "sourceIds": ["s1"] },
+      { "en": "Some features (larger storage, more projects/users) require a paid plan starting around 10 USD/month.", "fr": "Certaines fonctions (stockage plus grand, plus de projets/utilisateurs) nécessitent un plan payant à partir d'environ 10 $/mois.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "OBS Studio", "slug": "obs", "sourceIds": ["s1"] },
@@ -82,14 +83,66 @@
     ],
     "platforms": ["web", "windows"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Solo streamers who want free overlays, a chatbot and a merch store without building their stream setup from scratch.",
+      "fr": "Streamers solos qui veulent des overlays, un chatbot et une boutique de merch gratuits sans construire leur setup de stream de zéro."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Stream overlays: set up alerts and widgets for a live stream without building them from scratch in OBS.", "fr": "Overlays de stream : mettre en place des alertes et des widgets pour un live sans les construire à zéro dans OBS." },
+    { "en": "Viewer engagement: run the chatbot and loyalty currency so viewers earn and spend points during the stream.", "fr": "Engagement des viewers : faire tourner le chatbot et la monnaie de fidélité pour que les viewers gagnent et dépensent des points pendant le stream." }
+  ],
   "alternatives": [
-    { "slug": "streamlabs", "reason": { "en": "Direct competitor offering the same overlay/alerts/chatbot toolkit for streamers.", "fr": null } },
-    { "slug": "obs", "reason": { "en": "Free broadcasting software StreamElements integrates with; some streamers use OBS's native tools instead of StreamElements overlays.", "fr": null } }
+    { "slug": "streamlabs", "reason": { "en": "Direct competitor offering the same overlay/alerts/chatbot toolkit for streamers.", "fr": "Concurrent direct offrant le même kit d'overlays/alertes/chatbot pour les streamers." } },
+    { "slug": "obs", "reason": { "en": "Free broadcasting software StreamElements integrates with; some streamers use OBS's native tools instead of StreamElements overlays.", "fr": "Logiciel de diffusion gratuit auquel StreamElements s'intègre ; certains streamers utilisent les outils natifs d'OBS plutôt que les overlays StreamElements." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free plan bundles working overlays, a chatbot, tipping and a merch store at no cost, but paid-tier prices are unconfirmed, so a full cost-to-value comparison is not possible.", "fr": "Le plan gratuit regroupe des overlays fonctionnels, un chatbot, des pourboires et une boutique de merch sans frais, mais les prix des paliers payants ne sont pas confirmés, donc une comparaison complète coût-valeur n'est pas possible.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or first-stream effort is stated in the collected source.", "fr": "Note neutre : aucun temps de mise en place ni effort pour un premier stream n'est précisé dans la source relevée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Overlays, the chatbot, the merch store and the loyalty program are all delivered natively per the source, with no third-party tool mentioned as a workaround.", "fr": "Les overlays, le chatbot, la boutique de merch et le programme de fidélité sont tous livrés nativement selon la source, sans outil tiers mentionné en contournement.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Neutral score: the source lists free vs. paid feature gaps but does not compare StreamElements' ceiling against competing overlay/chatbot platforms.", "fr": "Note neutre : la source liste les écarts entre fonctions gratuites et payantes mais ne compare pas le plafond de StreamElements aux plateformes concurrentes d'overlays/chatbot.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: overlay and data export if leaving the platform are not covered by the collected sources.", "fr": "Note neutre : l'export des overlays et des données en cas de départ de la plateforme ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Stream overlays", "fr": "Overlays de stream" },
+    "shortDescription": { "en": "StreamElements is a free stream-overlay, chatbot and merch platform for streamers, with paid plans from around $10/month for more storage and users.", "fr": "StreamElements est une plateforme gratuite d'overlays, de chatbot et de merch pour streamers, avec des plans payants dès environ 10 $/mois pour plus de stockage." },
+    "longDescription": {
+      "en": "StreamElements is a cloud-based stream overlay editor with customizable alerts and widgets, a chatbot with moderation and custom commands, an integrated merch store (SE.Merch), a tipping/donation system, and a loyalty program with a stream currency viewers can earn and spend.\n\nThe free plan covers overlays, the chatbot, alerts and a limited merch store. Paid Plus plans reportedly start around $10/month for more users, projects and storage, up to around $25/month for unlimited users and priority support, per a third-party listing not confirmed on the official pricing page.",
+      "fr": "StreamElements est un éditeur d'overlays de stream dans le cloud avec alertes et widgets personnalisables, un chatbot avec modération et commandes personnalisées, une boutique de merch intégrée (SE.Merch), un système de pourboires/dons, et un programme de fidélité avec une monnaie de stream que les viewers peuvent gagner et dépenser.\n\nLe plan gratuit couvre les overlays, le chatbot, les alertes et une boutique de merch limitée. Les plans payants Plus démarreraient autour de 10 $/mois pour plus d'utilisateurs, de projets et de stockage, jusqu'à environ 25 $/mois pour des utilisateurs illimités et un support prioritaire, selon une liste tierce non confirmée sur la page de tarifs officielle."
+    },
+    "pros": [
+      { "en": "The free plan is a real working set of overlays, chatbot and merch store, not a time-limited trial.", "fr": "Le plan gratuit est un vrai jeu fonctionnel d'overlays, de chatbot et de boutique de merch, pas un essai limité dans le temps." },
+      { "en": "Tipping, donations and the merch store work without requiring a paid subscription to start.", "fr": "Les pourboires, les dons et la boutique de merch fonctionnent sans nécessiter d'abonnement payant pour démarrer." }
+    ],
+    "cons": [
+      { "en": "The official pricing page could not be fully retrieved in this review, so current paid-plan prices come from a third-party listing only.", "fr": "La page de tarifs officielle n'a pas pu être entièrement récupérée lors de cette relecture, donc les prix actuels des plans payants viennent uniquement d'une liste tierce." },
+      { "en": "The free plan caps merch design and overlay options compared to the paid Plus tiers.", "fr": "Le plan gratuit limite les options de design de merch et d'overlay par rapport aux paliers Plus payants." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want free stream overlays, a chatbot and a merch store, and only need more storage or users once you outgrow the free plan.", "fr": "Tu veux des overlays de stream, un chatbot et une boutique de merch gratuits, et tu n'as besoin de plus de stockage ou d'utilisateurs qu'une fois le plan gratuit dépassé." },
+      "avoidIf": { "en": "You need confirmed, current paid-plan pricing before committing, since this review could not verify it on the official page.", "fr": "Tu as besoin d'un prix de plan payant confirmé et actuel avant de t'engager, car cette relecture n'a pas pu le vérifier sur la page officielle." },
+      "threshold": { "en": "Worth the entry Plus plan, reportedly around $10/month, once more storage, projects or users are needed beyond the free plan's 1 GB and 1 project (figures unconfirmed, reverify before publishing).", "fr": "Le plan Plus d'entrée, autour de 10 $/mois selon les sources, devient rentable une fois que plus de stockage, de projets ou d'utilisateurs sont nécessaires au-delà du plan gratuit (1 Go, 1 projet) ; montants non confirmés, à revérifier avant publication." }
+    }
+  },
   "unknowns": [
     "Exact current paid plan pricing and feature breakdown were not confirmed on the official streamelements.com pricing page in this session; figures come from a third-party source.",
     "Catalogue lacks enough direct StreamElements competitors beyond Streamlabs for a full 3-6 alternative list."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Les prix des plans payants (Plus a 10 $/mois et 25 $/mois) viennent d'une liste tierce (SoftwareSuggest) car la page officielle streamelements.com/plus n'a pas pu etre recuperee completement lors de cette session ; a reconfirmer sur la source officielle avant publication."
+  ]
 }

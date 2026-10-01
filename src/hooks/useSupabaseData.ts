@@ -126,9 +126,15 @@ async function loadLocalTools(): Promise<Tool[]> {
 
 const localToolShardPromises = new Map<string, Promise<Tool[]>>();
 
-function getToolShardKey(slug: string): string {
-  const firstCharacter = slug.trim().toLowerCase().charAt(0);
-  return /^[a-z0-9]$/.test(firstCharacter) ? firstCharacter : "other";
+// Keep in sync with getShardKey in scripts/emit-tool-catalog-shards.mjs.
+const TOOL_SHARD_COUNT = 48;
+export function getToolShardKey(slug: string): string {
+  const key = slug.trim().toLowerCase();
+  let hash = 5381;
+  for (let index = 0; index < key.length; index += 1) {
+    hash = ((hash * 33) ^ key.charCodeAt(index)) >>> 0;
+  }
+  return `s${hash % TOOL_SHARD_COUNT}`;
 }
 
 async function loadLocalTool(slug: string): Promise<Tool | null> {

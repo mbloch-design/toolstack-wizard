@@ -3,7 +3,8 @@
   "slug": "sysaid",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "SysAid",
     "vendor": "SysAid Technologies",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 89, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Includes AI Copilot with unlimited agentic AI and no usage caps, 100K Workato integration credits, incident/change/problem/request management, asset management, SLA management, dashboards and BI analytics", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Includes AI Copilot with unlimited agentic AI and no usage caps, 100K Workato integration credits, incident/change/problem/request management, asset management, SLA management, dashboards and BI analytics", "fr": "Inclut AI Copilot avec IA agentique illimitée sans plafond d'usage, 100 000 crédits d'intégration Workato, gestion des incidents/changements/problèmes/demandes, gestion des actifs, gestion des SLA, tableaux de bord et BI", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,45 +45,100 @@
         "minSeats": 20,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Starts at 20 agents; adds sandbox environment, tailor-made AI agents, advanced analytics, 300K Workato credits, gold support", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Starts at 20 agents; adds sandbox environment, tailor-made AI agents, advanced analytics, 300K Workato credits, gold support", "fr": "À partir de 20 agents ; ajoute un environnement sandbox, des agents IA sur mesure, des analyses avancées, 300 000 crédits Workato, un support gold", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "professional",
     "addOns": [],
     "cautions": [
-      { "en": "Price also depends on the number of managed assets (workstations, servers, mobile devices), not agent seats alone.", "sourceIds": ["s1"] },
-      { "en": "Free trial requires no credit card, but there is no permanent free plan.", "sourceIds": ["s1"] }
+      { "en": "Price also depends on the number of managed assets (workstations, servers, mobile devices), not agent seats alone.", "fr": "Le prix dépend aussi du nombre d'actifs gérés (postes de travail, serveurs, appareils mobiles), pas seulement du nombre de sièges agent.", "sourceIds": ["s1"] },
+      { "en": "Free trial requires no credit card, but there is no permanent free plan.", "fr": "L'essai gratuit ne demande pas de carte bancaire, mais il n'existe aucun forfait gratuit permanent.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "ITSM platform covering incident, change, problem and request management with ITIL-aligned workflows.", "sourceIds": ["s1"] },
-      { "en": "Built-in AI Copilot for agents and end users, plus asset/IT inventory management.", "sourceIds": ["s1"] }
+      { "en": "ITSM platform covering incident, change, problem and request management with ITIL-aligned workflows.", "fr": "Plateforme ITSM couvrant la gestion des incidents, changements, problèmes et demandes avec des workflows alignés ITIL.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI Copilot for agents and end users, plus asset/IT inventory management.", "fr": "AI Copilot intégré pour les agents et les utilisateurs finaux, ainsi que la gestion des actifs et de l'inventaire IT.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No public list price beyond the Professional tier; Enterprise requires a custom quote starting at 20 agents.", "sourceIds": ["s1"] },
-      { "en": "No permanent free plan; only a time-limited free trial is offered.", "sourceIds": ["s1"] }
+      { "en": "No public list price beyond the Professional tier; Enterprise requires a custom quote starting at 20 agents.", "fr": "Aucun prix public au-delà du forfait Professional ; Enterprise nécessite un devis sur mesure à partir de 20 agents.", "sourceIds": ["s1"] },
+      { "en": "No permanent free plan; only a time-limited free trial is offered.", "fr": "Pas de forfait gratuit permanent ; seul un essai gratuit limité dans le temps est proposé.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Workato", "slug": null, "sourceIds": ["s1"] }
     ],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An IT or ops lead running a help desk who needs incident, asset and SLA management with ITIL-aligned workflows for a small support team.",
+      "fr": "Un responsable IT ou ops qui gère un support technique et a besoin de la gestion des incidents, des actifs et des SLA avec des workflows alignés ITIL pour une petite équipe de support."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: an IT team logs and routes an incident through SysAid's ITIL-aligned workflow, then tracks it against an SLA deadline on the dashboard.",
+      "fr": "Usage : une équipe IT enregistre et route un incident dans le workflow aligné ITIL de SysAid, puis le suit par rapport à une échéance de SLA sur le tableau de bord."
+    },
+    {
+      "en": "Usage: a support agent asks the built-in AI Copilot for a fix suggestion on a ticket instead of manually searching the knowledge base.",
+      "fr": "Usage : un agent de support demande une suggestion de résolution à l'AI Copilot intégré sur un ticket, au lieu de chercher manuellement dans la base de connaissances."
+    }
+  ],
   "alternatives": [
-    { "slug": "freshservice", "reason": { "en": "Direct ITSM competitor with a comparable help desk, asset management and ITIL workflow feature set." } }
+    { "slug": "freshservice", "reason": { "en": "Direct ITSM competitor with a comparable help desk, asset management and ITIL workflow feature set.", "fr": "Concurrent ITSM direct avec un support technique, une gestion des actifs et des workflows ITIL comparables." } }
   ],
   "missingAlternatives": [
     { "name": "Jira Service Management", "officialUrl": "https://www.atlassian.com/software/jira/service-management", "reason": "Major ITSM competitor not currently in the catalogue" },
     { "name": "ServiceNow", "officialUrl": "https://www.servicenow.com/", "reason": "Leading enterprise ITSM platform SysAid competes with, not in the catalogue" }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Professional bundles AI Copilot, asset management and SLA tooling at a fixed per-agent rate, but the real cost also scales with the number of managed assets, making the net value harder to pin down.", "fr": "Professional regroupe AI Copilot, gestion des actifs et outils de SLA à un tarif fixe par agent, mais le coût réel dépend aussi du nombre d'actifs gérés, ce qui rend la valeur nette difficile à cerner.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed to reach a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The feature list covers incident, change, problem and request management plus asset and SLA tracking directly, matching what an ITSM desk needs.", "fr": "La liste de fonctionnalités couvre directement la gestion des incidents, changements, problèmes et demandes, ainsi que le suivi des actifs et des SLA, ce dont a besoin un support ITSM.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Enterprise adds a sandbox environment, tailor-made AI agents and 300K integration credits, indicating substantial headroom above the entry tier.", "fr": "Enterprise ajoute un environnement sandbox, des agents IA sur mesure et 300 000 crédits d'intégration, ce qui indique une marge de puissance importante au-dessus du forfait d'entrée.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and API-based data portability are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des données via API ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "IT service desk", "fr": "Support IT ITSM" },
+    "shortDescription": {
+      "en": "SysAid is an ITSM platform for incident, change, asset and SLA management, with a built-in AI Copilot, priced per agent from $89/month.",
+      "fr": "SysAid est une plateforme ITSM pour la gestion des incidents, changements, actifs et SLA, avec un AI Copilot intégré, facturée par agent dès 89 $/mois."
+    },
+    "longDescription": {
+      "en": "SysAid is an ITSM platform covering incident, change, problem and request management with ITIL-aligned workflows, plus asset and IT inventory tracking and SLA management on dashboards. A built-in AI Copilot assists both agents and end users without a separate add-on purchase.\n\nThe Professional plan starts at $89/month per agent and already includes unlimited AI Copilot use and 100K Workato integration credits, though the real bill also depends on how many assets are managed. Enterprise, from 20 agents, is quote-only and adds a sandbox and custom AI agents. It fits an IT or ops team running a structured help desk, not a solo user.",
+      "fr": "SysAid est une plateforme ITSM qui couvre la gestion des incidents, changements, problèmes et demandes avec des workflows alignés ITIL, ainsi que le suivi des actifs et de l'inventaire IT et la gestion des SLA sur tableaux de bord. Un AI Copilot intégré assiste agents et utilisateurs finaux, sans option séparée.\n\nLe forfait Professional démarre à 89 $ par mois par agent et inclut un usage illimité d'AI Copilot et 100 000 crédits Workato, même si la facture dépend aussi du nombre d'actifs gérés. Enterprise, à partir de 20 agents, est sur devis et ajoute un sandbox et des agents IA sur mesure. Il convient à une équipe IT avec un support structuré, pas à un utilisateur seul."
+    },
+    "pros": [
+      { "en": "AI Copilot is included on Professional with no separate usage cap or add-on fee.", "fr": "AI Copilot est inclus dans Professional sans plafond d'usage séparé ni frais d'option." },
+      { "en": "Covers incident, change, problem, request, asset and SLA management in one platform rather than several point tools.", "fr": "Couvre la gestion des incidents, changements, problèmes, demandes, actifs et SLA dans une seule plateforme plutôt qu'avec plusieurs outils séparés." }
+    ],
+    "cons": [
+      { "en": "The per-agent price doesn't reflect the full bill, since cost also scales with the number of managed assets.", "fr": "Le prix par agent ne reflète pas la facture complète, le coût dépendant aussi du nombre d'actifs gérés." },
+      { "en": "Enterprise has no public price and requires a minimum of 20 agents before you can even get a quote.", "fr": "Enterprise n'a pas de prix public et impose un minimum de 20 agents avant même d'obtenir un devis." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run an IT or ops support desk that needs ITIL-aligned incident, asset and SLA management in one tool.", "fr": "Tu gères un support IT ou ops qui a besoin de la gestion des incidents, actifs et SLA alignée ITIL dans un seul outil." },
+      "avoidIf": { "en": "You're a solo operator or very small team without a formal ticketing and asset-tracking need.", "fr": "Tu es seul ou dans une toute petite équipe sans besoin formel de ticketing et de suivi des actifs." },
+      "threshold": { "en": "Professional runs $89/month per agent (about $1,068/year for one agent) before asset-count costs are added.", "fr": "Professional coûte 89 $ par mois par agent (environ 1 068 $ par an pour un agent), avant d'ajouter le coût lié au nombre d'actifs." }
+    }
+  },
   "unknowns": [
     "Exact trial length in days is not stated on the pricing page, only that it exists and requires no credit card.",
     "Enterprise pricing formula (per-agent equivalent) is not disclosed publicly."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

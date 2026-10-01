@@ -3,7 +3,8 @@
   "slug": "better-proposals",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Better Proposals",
     "vendor": "Better Proposals Ltd.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 19, "annualPerMonth": 13, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 user seat, 10 documents per month" }],
+        "keyLimits": [{ "en": "1 user seat, 10 documents per month", "fr": "1 poste utilisateur, 10 documents par mois" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 5,
         "price": { "monthly": 29, "annualPerMonth": 21, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 user seats included, 50 documents per month, custom domain, CRM integrations, API/Zapier" }],
+        "keyLimits": [{ "en": "5 user seats included, 50 documents per month, custom domain, CRM integrations, API/Zapier", "fr": "5 postes utilisateur inclus, 50 documents par mois, domaine personnalisé, intégrations CRM, API/Zapier" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,29 +55,29 @@
         "minSeats": 5,
         "price": { "monthly": 42, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 user seats included, unlimited documents, content locking, simultaneous editing, advanced permissions" }],
+        "keyLimits": [{ "en": "5 user seats included, unlimited documents, content locking, simultaneous editing, advanced permissions", "fr": "5 postes utilisateur inclus, documents illimités, verrouillage de contenu, édition simultanée, permissions avancées" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "name": { "en": "Nudge (follow-up automation)" }, "unit": "seat", "sourceIds": ["s1"] },
-      { "name": { "en": "Custom template design" }, "unit": "one_time", "sourceIds": ["s1"] }
+      { "name": { "en": "Nudge (follow-up automation)", "fr": "Nudge (relance automatisée)" }, "unit": "seat", "sourceIds": ["s1"] },
+      { "name": { "en": "Custom template design", "fr": "Création de modèle personnalisé" }, "unit": "one_time", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The Starter plan is limited to a single user and 10 documents a month, so a small team quickly needs to move to Premium.", "sourceIds": ["s1"] }
+      { "en": "The Starter plan is limited to a single user and 10 documents a month, so a small team quickly needs to move to Premium.", "fr": "Le plan Starter est limité à un seul utilisateur et 10 documents par mois, donc une petite équipe doit vite passer à Premium.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Proposal, quote and contract creation with a document editor, templates and a content library.", "sourceIds": ["s1"] },
-      { "en": "Legally binding electronic signatures built into each document.", "sourceIds": ["s1"] },
-      { "en": "Document tracking and live open/read notifications for sent proposals.", "sourceIds": ["s1"] },
-      { "en": "Payment collection directly inside an accepted proposal via Stripe, PayPal or GoCardless.", "sourceIds": ["s1"] }
+      { "en": "Proposal, quote and contract creation with a document editor, templates and a content library.", "fr": "Création de propositions, devis et contrats avec un éditeur de documents, des modèles et une bibliothèque de contenu.", "sourceIds": ["s1"] },
+      { "en": "Legally binding electronic signatures built into each document.", "fr": "Signatures électroniques juridiquement valables, intégrées directement dans chaque document.", "sourceIds": ["s1"] },
+      { "en": "Document tracking and live open/read notifications for sent proposals.", "fr": "Suivi des documents et notifications en direct d'ouverture et de lecture pour les propositions envoyées.", "sourceIds": ["s1"] },
+      { "en": "Payment collection directly inside an accepted proposal via Stripe, PayPal or GoCardless.", "fr": "Encaissement du paiement directement dans une proposition acceptée via Stripe, PayPal ou GoCardless.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No permanent free plan; only a 14-day trial without a credit card.", "sourceIds": ["s1"] },
-      { "en": "CRM integrations, API/Zapier access and a custom domain are gated behind the Premium plan and above.", "sourceIds": ["s1"] }
+      { "en": "No permanent free plan; only a 14-day trial without a credit card.", "fr": "Pas de plan gratuit permanent ; seulement un essai de 14 jours sans carte bancaire.", "sourceIds": ["s1"] },
+      { "en": "CRM integrations, API/Zapier access and a custom domain are gated behind the Premium plan and above.", "fr": "Les intégrations CRM, l'accès à l'API/Zapier et le domaine personnalisé sont réservés au plan Premium et au-dessus.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Stripe", "slug": null, "sourceIds": ["s1"] },
@@ -88,16 +89,70 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "An independent consultant or small agency sending sales proposals and contracts who wants signatures, tracking and payment in one document.",
+      "fr": "Un consultant indépendant ou une petite agence qui envoie des propositions commerciales et des contrats, et veut signature, suivi et paiement dans un seul document."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Close faster: send a proposal with built-in e-signature and payment collection so a client can accept and pay in the same document.", "fr": "Conclure plus vite : envoyer une proposition avec signature électronique et paiement intégrés pour qu'un client accepte et paie dans le même document." },
+    { "en": "Know when to follow up: use open/read tracking on a sent proposal to see exactly when a prospect viewed it before calling them.", "fr": "Savoir quand relancer : utiliser le suivi d'ouverture et de lecture d'une proposition envoyée pour voir exactement quand un prospect l'a consultée avant de le rappeler." }
+  ],
   "alternatives": [
-    { "slug": "proposify", "reason": { "en": "Direct competitor for proposal creation, tracking and e-signatures." } },
-    { "slug": "plutio", "reason": { "en": "Freelancer/agency platform that also covers proposals alongside broader project management." } },
-    { "slug": "suitedash", "reason": { "en": "All-in-one client management suite with proposal and contract tools." } }
+    { "slug": "proposify", "reason": { "en": "Direct competitor for proposal creation, tracking and e-signatures.", "fr": "Concurrent direct pour la création de propositions, le suivi et la signature électronique." } },
+    { "slug": "plutio", "reason": { "en": "Freelancer/agency platform that also covers proposals alongside broader project management.", "fr": "Plateforme pour indépendants et agences qui couvre aussi les propositions en plus de la gestion de projet au sens large." } },
+    { "slug": "suitedash", "reason": { "en": "All-in-one client management suite with proposal and contract tools.", "fr": "Suite tout-en-un de gestion client avec des outils de proposition et de contrat." } },
+    { "slug": "pandadoc", "reason": { "en": "Major proposal and document e-signature competitor, directly comparable in scope.", "fr": "Concurrent majeur pour les propositions et la signature électronique de documents, directement comparable en périmètre." } }
   ],
-  "missingAlternatives": [
-    { "name": "PandaDoc", "officialUrl": "https://www.pandadoc.com", "reason": "Major proposal/document and e-signature competitor, not in the catalogue" }
-  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Combines document creation, e-signature and payment collection in one $19/month plan, replacing several separate tools for a solo consultant.", "fr": "Combine création de documents, signature électronique et encaissement en un seul plan à 19 $/mois, ce qui remplace plusieurs outils séparés pour un consultant indépendant.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Templates, a content library and built-in signatures and payments mean a first proposal can be sent without extra tools or specialist setup.", "fr": "Les modèles, la bibliothèque de contenu et les signatures et paiements intégrés permettent d'envoyer une première proposition sans outil supplémentaire ni configuration spécialisée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers proposal creation, e-signature, tracking and payment collection inside the sent document as described.", "fr": "Assure la création de propositions, la signature électronique, le suivi et l'encaissement directement dans le document envoyé, comme décrit.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers the full proposal-to-payment workflow but CRM integrations, API/Zapier and a custom domain only unlock from Premium up, limiting the entry plan's ceiling.", "fr": "Couvre tout le flux de la proposition au paiement, mais les intégrations CRM, l'API/Zapier et le domaine personnalisé ne se débloquent qu'à partir de Premium, ce qui limite le plafond du plan d'entrée.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: whether sent proposals and client data export to another tool is not covered by the collected sources.", "fr": "Note neutre : la possibilité d'exporter les propositions envoyées et les données clients vers un autre outil ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Sales proposals", "fr": "Propositions commerciales" },
+    "shortDescription": {
+      "en": "Better Proposals creates, tracks and gets e-signatures and payment on sales proposals, quotes and contracts in a single document.",
+      "fr": "Better Proposals crée, suit et fait signer et payer des propositions commerciales, devis et contrats dans un seul document."
+    },
+    "longDescription": {
+      "en": "Better Proposals combines a document editor, templates and a content library to build proposals, quotes and contracts, with legally binding e-signatures built into each one. Sent documents carry live open and read tracking, and an accepted proposal can collect payment directly through Stripe, PayPal or GoCardless.\n\nThere is no free plan, only a 14-day trial. Starter costs $19/month ($13/month billed annually) for one seat and 10 documents a month; Premium at $29/month adds CRM integrations, a custom domain and API/Zapier access from 5 seats. It fits a consultant or small agency that wants signatures, tracking and payment in one place rather than stitched together from separate tools.",
+      "fr": "Better Proposals combine un éditeur de documents, des modèles et une bibliothèque de contenu pour créer propositions, devis et contrats, avec des signatures électroniques juridiquement valables intégrées à chacun. Les documents envoyés affichent un suivi d'ouverture et de lecture en direct, et une proposition acceptée peut encaisser le paiement directement via Stripe, PayPal ou GoCardless.\n\nPas de plan gratuit, seulement un essai de 14 jours. Starter coûte 19 $/mois (13 $/mois en facturation annuelle) pour un poste et 10 documents par mois ; Premium à 29 $/mois ajoute les intégrations CRM, un domaine personnalisé et l'accès API/Zapier à partir de 5 postes. Convient à un consultant ou une petite agence qui veut signature, suivi et paiement au même endroit plutôt que répartis entre plusieurs outils."
+    },
+    "pros": [
+      { "en": "Combines document creation, e-signature, tracking and payment collection in a single tool.", "fr": "Combine création de document, signature électronique, suivi et encaissement dans un seul outil." },
+      { "en": "Document open/read tracking shows exactly when a prospect viewed a proposal.", "fr": "Le suivi d'ouverture et de lecture montre exactement quand un prospect a consulté une proposition." }
+    ],
+    "cons": [
+      { "en": "No permanent free plan, only a 14-day trial.", "fr": "Pas de plan gratuit permanent, seulement un essai de 14 jours." },
+      { "en": "CRM integrations, a custom domain and API/Zapier access require the Premium plan and 5 seats minimum.", "fr": "Les intégrations CRM, le domaine personnalisé et l'accès API/Zapier nécessitent le plan Premium et un minimum de 5 postes." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You regularly send sales proposals or contracts and want built-in e-signature and payment collection in the same document.", "fr": "Garde Better Proposals si tu envoies régulièrement des propositions commerciales ou des contrats et veux signature électronique et paiement intégrés au même document." },
+      "avoidIf": { "en": "You need CRM integrations or API access on a single-user budget, since those require the 5-seat Premium plan.", "fr": "Évite Better Proposals si tu as besoin des intégrations CRM ou de l'accès API avec un budget mono-utilisateur, car elles nécessitent le plan Premium à 5 postes." },
+      "threshold": { "en": "Starter costs $156/year billed annually ($13/month); that is the entry cost to compare against sending proposals as plain PDFs plus a separate e-signature tool.", "fr": "Starter coûte 156 $/an en facturation annuelle (13 $/mois) ; c'est le coût d'entrée à comparer avec l'envoi de propositions en PDF simple plus un outil de signature séparé." }
+    }
+  },
   "unknowns": [
     "Whether document limits on Premium/Enterprise apply per seat or per account was not fully clear from the pricing page alone."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "PandaDoc was initially filed under missingAlternatives as 'not in the catalogue', but it is already a catalogue entry (slug pandadoc); moved to alternatives during local completion."
+  ]
 }

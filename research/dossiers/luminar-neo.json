@@ -3,7 +3,8 @@
   "slug": "luminar-neo",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Luminar Neo",
     "vendor": "Skylum",
@@ -186,9 +187,125 @@
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: no price is published for any license, so real cost versus competitors cannot be assessed from the sources collected.",
+        "fr": "Note neutre : aucun prix n'est publié pour aucune licence, donc le coût réel face aux concurrents ne peut pas être évalué d'après les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time needed to reach a first useful edit is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir une première retouche utile ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Neutral score: the product page lists portrait, landscape and generative editing tools, but nothing in the collected sources confirms results hold up without manual touch-ups.",
+        "fr": "Note neutre : la page produit liste des outils de retouche portrait, paysage et édition générative, mais rien dans les sources relevées ne confirme que le résultat tient sans retouche manuelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "24+ AI tools and 100+ features spanning portrait, landscape and generative editing, plus RAW, HDR and panorama support, is a broad set for a photo editor.",
+        "fr": "Plus de 24 outils IA et 100+ fonctionnalités couvrant le portrait, le paysage et l'édition générative, avec support RAW, HDR et panorama, un périmètre large pour un éditeur photo.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability if the license isn't renewed are not described in the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de non-renouvellement de la licence ne sont pas décrits dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator or photographer who retouches portraits and landscapes and wants AI editing tools without a monthly subscription commitment.",
+      "fr": "Une créatrice de contenu ou photographe qui retouche portraits et paysages et veut des outils d'édition IA sans engagement d'abonnement mensuel."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Portrait delivery: retouch skin and body with AI tools and replace the sky to deliver a finished photo without switching to Photoshop.",
+      "fr": "Livraison de portrait : retoucher la peau et le corps avec les outils IA et remplacer le ciel pour livrer une photo finie sans repasser par Photoshop."
+    },
+    {
+      "en": "Landscape cleanup: remove an unwanted object from a shot and expand the scene with generative editing before exporting the final image.",
+      "fr": "Nettoyage de paysage : supprimer un objet indésirable d'une photo et étendre la scène avec l'édition générative avant d'exporter l'image finale."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "AI photo editing",
+      "fr": "Édition photo IA"
+    },
+    "shortDescription": {
+      "en": "Luminar Neo is AI-powered photo editing software for portrait, landscape and generative editing, sold as a perpetual license or annual subscription.",
+      "fr": "Luminar Neo est un logiciel de retouche photo par IA pour le portrait, le paysage et l'édition générative, vendu en licence perpétuelle ou abonnement annuel."
+    },
+    "longDescription": {
+      "en": "Luminar Neo combines over 24 AI-based tools and 100+ features for portrait retouching (skin and body enhancement), landscape editing (sky replacement, haze removal) and generative editing (object removal, scene expansion). Editing is non-destructive and layer-based, with RAW support, upscaling, HDR merge and panorama stitching.\n\nIt's sold as a perpetual Desktop Only or All Platforms license, or an annual Max subscription; exact prices weren't shown on the page checked, only a temporary 10% first-purchase promotion. The perpetual license guarantees only one year of access to the newest AI tools. A web version is planned for Fall 2026 but wasn't available at research time.",
+      "fr": "Luminar Neo combine plus de 24 outils IA et 100+ fonctionnalités pour la retouche portrait (peau, corps), l'édition paysage (remplacement de ciel, suppression de brume) et l'édition générative (suppression d'objet, extension de scène). L'édition est non destructive et par calques, avec support RAW, upscaling, fusion HDR et panoramas.\n\nLe logiciel se vend en licence perpétuelle Desktop Only ou All Platforms, ou en abonnement annuel Max ; les prix exacts n'étaient pas affichés sur la page consultée, seulement une promo temporaire de 10 % sur le premier achat. La licence perpétuelle ne garantit qu'un an d'accès aux derniers outils IA. Une version web est prévue pour l'automne 2026 mais n'était pas encore disponible."
+    },
+    "pros": [
+      {
+        "en": "Large set of AI tools (24+) covers portrait, landscape and generative editing in one app.",
+        "fr": "Un large ensemble d'outils IA (24+) couvre le portrait, le paysage et l'édition générative dans une seule application."
+      },
+      {
+        "en": "Non-destructive, layer-based editing with RAW support, upscaling, HDR merge and panorama stitching.",
+        "fr": "Édition non destructive par calques, avec support RAW, upscaling, fusion HDR et assemblage panoramique."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No prices are published for any license; only inclusions are shown on the product page.",
+        "fr": "Aucun prix n'est publié pour aucune licence ; seul le contenu de chaque licence est affiché sur la page produit."
+      },
+      {
+        "en": "The perpetual license only guarantees one year of access to the newest AI tools, so staying current likely needs renewal.",
+        "fr": "La licence perpétuelle ne garantit qu'un an d'accès aux derniers outils IA, donc rester à jour nécessite probablement un renouvellement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want an all-in-one AI photo editor with a perpetual license instead of a recurring monthly subscription.",
+        "fr": "Tu veux un éditeur photo IA tout-en-un avec une licence perpétuelle plutôt qu'un abonnement mensuel récurrent."
+      },
+      "avoidIf": {
+        "en": "You need to see a price before buying, or you need a web-based version right now.",
+        "fr": "Tu as besoin de voir un prix avant d'acheter, ou tu as besoin d'une version web dès maintenant."
+      },
+      "threshold": {
+        "en": "Desktop Only is the cheapest listed license but only guarantees one year of newest-AI-tool access; needing multiple devices or ongoing new features points to All Platforms or the Max subscription instead.",
+        "fr": "Desktop Only est la licence la moins chère affichée mais ne garantit qu'un an d'accès aux derniers outils IA ; pour plusieurs appareils ou des nouveautés continues, il faut plutôt All Platforms ou l'abonnement Max."
+      }
+    }
+  },
   "unknowns": [
     "Exact license prices in USD/EUR were not visible on the fetched page and need direct pricing-page verification.",
     "Whether the Max License includes desktop-only or all-platform access was not fully clarified."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "All three plans are marked onQuote with no price captured, but Luminar Neo is a consumer product sold directly online, not a sales-quote business; this likely reflects a page that didn't render prices during the fetch rather than an actual quote-only model. Re-verify exact prices on skylum.com/luminar-neo before merging."
+  ],
+  "hold": "compared Desktop Only License has no price in the dossier; confirm the perpetual price on skylum.com"
 }

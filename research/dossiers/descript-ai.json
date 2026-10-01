@@ -3,7 +3,7 @@
   "slug": "descript-ai",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Descript",
     "vendor": "Descript, Inc.",
@@ -177,9 +177,126 @@
   "missingAlternatives": [],
   "unknowns": [
     "The seed's website URL (descriptai.com) points to a parked/for-sale domain, not an active product; facts were gathered from descript.com, assumed to be the intended product, but this mismatch should be confirmed before the catalogue entry is finalized.",
-    "Annual (vs monthly) pricing figures could not be reliably confirmed from the fetched page."
+    "Annual (vs monthly) pricing figures could not be reliably confirmed from the fetched page.",
+    "The catalogue holds both \"descript\" and \"descript-ai\" as separate entries that appear to describe the same product (Descript); likely a duplicate to resolve before merge."
   ],
   "conflicts": [
     "Seed officialUrl (descriptai.com) is a parked domain; researched facts instead describe descript.com, the well-known 'Descript' product, based on matching feature description."
-  ]
+  ],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A solo podcaster, YouTuber or small content team who edits audio/video by cutting text instead of a timeline and wants AI voice tools.",
+      "fr": "Un créateur ou une petite équipe de contenu qui monte l'audio et la vidéo en coupant du texte plutôt qu'une timeline, et veut des outils de voix IA."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Podcast editing: cut filler words and tighten an episode by editing the automatic transcript text instead of scrubbing a timeline.",
+      "fr": "Montage podcast : couper les hésitations et resserrer un épisode en éditant la transcription automatique plutôt qu'en manipulant une timeline."
+    },
+    {
+      "en": "Multilingual repurposing: translate and dub a video into one of 30+ languages on the Business plan to reach new audiences without re-recording.",
+      "fr": "Diffusion multilingue : traduire et doubler une vidéo dans plus de 30 langues sur le plan Business pour toucher un nouveau public sans réenregistrer."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The entry paid tier ($16/month) only unlocks 10 media hours and 400 AI credits; heavier use requires jumping tiers or the custom Enterprise plan.",
+        "fr": "Le premier plan payant (16 $/mois) ne débloque que 10 heures de média et 400 crédits IA ; un usage plus intensif oblige à monter de palier ou à passer sur le plan Enterprise sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Editing audio or video by cutting an auto-generated transcript lets a first edit happen without learning a timeline-based editor.",
+        "fr": "Monter l'audio ou la vidéo en coupant une transcription générée automatiquement permet un premier montage sans apprendre un éditeur basé sur une timeline.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Transcript-based editing, AI voice cloning and the Underlord AI co-editor work as described for the core editing workflow.",
+        "fr": "Le montage par transcription, le clonage de voix IA et le co-éditeur IA Underlord fonctionnent comme annoncé pour le flux de montage principal.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers editing, voice cloning and translation/dubbing, but monthly media-hour and AI-credit caps limit sustained heavy production compared to unlimited desktop editors.",
+        "fr": "Couvre le montage, le clonage de voix et la traduction/doublage, mais les plafonds mensuels d'heures de média et de crédits IA limitent une production intensive soutenue par rapport à des éditeurs de bureau illimités.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability when leaving Descript are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en quittant Descript ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Text-based video editing",
+      "fr": "Montage par texte"
+    },
+    "shortDescription": {
+      "en": "Descript edits audio and video by editing a transcript and adds AI voice cloning, starting free with a 60-minute quota, then $16 per month.",
+      "fr": "Descript monte l'audio et la vidéo via une transcription éditable et clone la voix par IA, gratuit sous 60 min puis dès 16 $/mois."
+    },
+    "longDescription": {
+      "en": "Descript edits audio and video by letting you cut and rearrange an automatically generated transcript, with the media updating to match; an AI co-editor (Underlord) and AI voice/avatar tools go further than manual timeline editing.\n\nThe free plan gives a 60-minute quota with watermarked 720p exports; paid plans start at $16/month (Hobbyist) for 10 media hours and 1080p exports, rising to $50/month (Business) for translation/dubbing in 30+ languages and up to 5 team members. It suits solo creators and small podcast or video teams; heavier monthly usage needs the custom Enterprise tier.",
+      "fr": "Descript monte l'audio et la vidéo en permettant de couper et réorganiser une transcription générée automatiquement, le média se mettant à jour en conséquence ; un co-éditeur IA (Underlord) et des outils de voix/avatar IA vont plus loin qu'un montage manuel sur timeline.\n\nLe plan gratuit donne un quota de 60 minutes avec des exports filigranés en 720p ; les plans payants démarrent à 16 $/mois (Hobbyist) pour 10 heures de média et des exports 1080p, jusqu'à 50 $/mois (Business) pour la traduction/doublage en plus de 30 langues et jusqu'à 5 membres d'équipe. L'outil convient aux créateurs solo et petites équipes podcast/vidéo ; un usage mensuel plus intensif nécessite le plan Enterprise sur devis."
+    },
+    "pros": [
+      {
+        "en": "Editing by cutting text is faster than scrubbing a timeline for talking-head podcast or video content.",
+        "fr": "Monter en coupant du texte est plus rapide que manipuler une timeline pour du contenu podcast ou vidéo face caméra."
+      },
+      {
+        "en": "AI voice cloning and the Underlord AI co-editor go beyond plain cut-and-paste editing.",
+        "fr": "Le clonage de voix IA et le co-éditeur IA Underlord vont au-delà du simple montage par copier-coller."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan exports are watermarked and capped at 720p with only 100 one-time AI credits.",
+        "fr": "Les exports du plan gratuit sont filigranés, plafonnés à 720p, avec seulement 100 crédits IA à usage unique."
+      },
+      {
+        "en": "Media hours and AI credits are capped per plan (10 to 40 hours/month), so heavy use requires the custom Enterprise tier.",
+        "fr": "Les heures de média et les crédits IA sont plafonnés par plan (10 à 40 heures/mois), donc un usage intensif nécessite le plan Enterprise sur devis."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You edit podcasts or talking-head video solo or in a small team and want to cut by editing text instead of a timeline.",
+        "fr": "Tu montes des podcasts ou des vidéos face caméra seul ou en petite équipe et veux couper en éditant du texte plutôt qu'une timeline."
+      },
+      "avoidIf": {
+        "en": "You need unwatermarked exports above 720p regularly without paying, since the free plan caps both quality and hours.",
+        "fr": "Tu as besoin d'exports sans filigrane au-delà de 720p régulièrement sans payer, car le plan gratuit plafonne la qualité et les heures."
+      },
+      "threshold": {
+        "en": "The Hobbyist plan at $16/month (10 media hours, 1080p, no watermark) is the entry point once the free plan's 60-minute, 720p-watermarked quota is not enough.",
+        "fr": "Le plan Hobbyist à 16 $/mois (10 heures de média, 1080p, sans filigrane) est le seuil d'entrée une fois le quota gratuit de 60 minutes en 720p filigrané dépassé."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Annual (vs monthly) pricing could not be reliably confirmed from the fetched pricing page (extracted annual figures looked higher than monthly ones, which is inconsistent with a typical annual discount); re-verify directly on descript.com/pricing before publishing annualPerMonth values."
+  ],
+  "completedLocallyOn": "2026-10-01"
 }

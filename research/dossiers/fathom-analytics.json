@@ -3,7 +3,7 @@
   "slug": "fathom-analytics",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Fathom Analytics",
     "vendor": "Fathom Analytics",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://usefathom.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Fathom Analytics pricing" }
+    {
+      "id": "s1",
+      "url": "https://usefathom.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Fathom Analytics pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,70 +30,293 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 100,000 monthly pageviews, up to 50 sites.", "fr": "Jusqu'à 100 000 pages vues mensuelles, jusqu'à 50 sites." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 100,000 monthly pageviews, up to 50 sites.",
+            "fr": "Jusqu'à 100 000 pages vues mensuelles, jusqu'à 50 sites."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "growth",
         "name": "Growth (200k)",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 25,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 200,000 monthly pageviews, up to 50 sites.", "fr": "Jusqu'à 200 000 pages vues mensuelles, jusqu'à 50 sites." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 200,000 monthly pageviews, up to 50 sites.",
+            "fr": "Jusqu'à 200 000 pages vues mensuelles, jusqu'à 50 sites."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro (500k)",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 45, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 45,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 500,000 monthly pageviews, up to 50 sites.", "fr": "Jusqu'à 500 000 pages vues mensuelles, jusqu'à 50 sites." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 500,000 monthly pageviews, up to 50 sites.",
+            "fr": "Jusqu'à 500 000 pages vues mensuelles, jusqu'à 50 sites."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "en": "Extra site packs of 50 sites for $10/month or $100/year beyond plan allowance.", "fr": "Lots supplémentaires de 50 sites pour 10 $/mois ou 100 $/an au-delà du quota du plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Extra site packs of 50 sites for $10/month or $100/year beyond plan allowance.",
+        "fr": "Lots supplémentaires de 50 sites pour 10 $/mois ou 100 $/an au-delà du quota du plan.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "7-day trial requires a credit card and billing starts automatically once it ends.", "fr": "L'essai de 7 jours nécessite une carte bancaire et la facturation démarre automatiquement à la fin de l'essai.", "sourceIds": ["s1"] },
-      { "en": "Annual billing gives 2 months free (~17% discount) versus monthly.", "fr": "La facturation annuelle offre 2 mois gratuits (environ 17 % de remise) par rapport au mensuel.", "sourceIds": ["s1"] }
+      {
+        "en": "7-day trial requires a credit card and billing starts automatically once it ends.",
+        "fr": "L'essai de 7 jours nécessite une carte bancaire et la facturation démarre automatiquement à la fin de l'essai.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Annual billing gives 2 months free (~17% discount) versus monthly.",
+        "fr": "La facturation annuelle offre 2 mois gratuits (environ 17 % de remise) par rapport au mensuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Cookie-free, privacy-first web analytics that does not require a cookie consent banner under GDPR.", "fr": "Analytics web sans cookies et respectueux de la vie privée, sans bandeau de consentement RGPD nécessaire.", "sourceIds": ["s1"] },
-      { "en": "Tracks traffic sources, top pages, conversions and marketing campaigns.", "fr": "Suit les sources de trafic, les pages populaires, les conversions et les campagnes marketing.", "sourceIds": ["s1"] }
+      {
+        "en": "Cookie-free, privacy-first web analytics that does not require a cookie consent banner under GDPR.",
+        "fr": "Analytics web sans cookies et respectueux de la vie privée, sans bandeau de consentement RGPD nécessaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Tracks traffic sources, top pages, conversions and marketing campaigns.",
+        "fr": "Suit les sources de trafic, les pages populaires, les conversions et les campagnes marketing.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free plan; the cheapest tier starts at $15/month for 100k pageviews.", "fr": "Pas de plan gratuit ; le palier le moins cher démarre à 15 $/mois pour 100 000 pages vues.", "sourceIds": ["s1"] },
-      { "en": "Pricing scales with pageview volume, which can become costly for high-traffic sites beyond 25M pageviews (custom pricing).", "fr": "Le prix évolue avec le volume de pages vues, ce qui peut devenir coûteux pour des sites à fort trafic au-delà de 25 M de pages vues (tarif sur devis).", "sourceIds": ["s1"] }
+      {
+        "en": "No free plan; the cheapest tier starts at $15/month for 100k pageviews.",
+        "fr": "Pas de plan gratuit ; le palier le moins cher démarre à 15 $/mois pour 100 000 pages vues.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Pricing scales with pageview volume, which can become costly for high-traffic sites beyond 25M pageviews (custom pricing).",
+        "fr": "Le prix évolue avec le volume de pages vues, ce qui peut devenir coûteux pour des sites à fort trafic au-delà de 25 M de pages vues (tarif sur devis).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "plausible", "reason": { "en": "Direct competitor: cookie-free, privacy-focused web analytics.", "fr": "Concurrent direct : analytics web sans cookies, axé vie privée." } },
-    { "slug": "simple-analytics", "reason": { "en": "Direct competitor targeting the same privacy-first analytics niche.", "fr": "Concurrent direct visant le même créneau d'analytics respectueux de la vie privée." } },
-    { "slug": "google-analytics", "reason": { "en": "Mainstream free alternative, though it relies on cookies and requires consent banners in the EU.", "fr": "Alternative gratuite grand public, mais qui repose sur des cookies et nécessite des bandeaux de consentement en UE." } }
+    {
+      "slug": "plausible",
+      "reason": {
+        "en": "Direct competitor: cookie-free, privacy-focused web analytics.",
+        "fr": "Concurrent direct : analytics web sans cookies, axé vie privée."
+      }
+    },
+    {
+      "slug": "simple-analytics",
+      "reason": {
+        "en": "Direct competitor targeting the same privacy-first analytics niche.",
+        "fr": "Concurrent direct visant le même créneau d'analytics respectueux de la vie privée."
+      }
+    },
+    {
+      "slug": "google-analytics",
+      "reason": {
+        "en": "Mainstream free alternative, though it relies on cookies and requires consent banners in the EU.",
+        "fr": "Alternative gratuite grand public, mais qui repose sur des cookies et nécessite des bandeaux de consentement en UE."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact annual price per pageview tier not shown numerically on the fetched pricing page (only described as '2 months free').",
     "Vendor legal entity not confirmed on the fetched pages."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent site owners and content creators who want traffic and conversion numbers without a cookie banner or a complex dashboard.",
+      "fr": "Propriétaires de sites et créateurs de contenu indépendants qui veulent des chiffres de trafic et de conversion sans bandeau cookies ni tableau de bord complexe."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Compliance: track site traffic without showing a cookie consent banner, since no cookies are used.",
+      "fr": "Conformité : suivre le trafic du site sans afficher de bandeau de consentement cookies, puisqu'aucun cookie n'est utilisé."
+    },
+    {
+      "en": "Campaign tracking: follow traffic sources and conversions for a marketing campaign across up to 50 sites on one plan.",
+      "fr": "Suivi de campagne : suivre les sources de trafic et les conversions d'une campagne marketing sur jusqu'à 50 sites avec un seul plan."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Starting at $15/month with no free plan, the value depends on needing to avoid a cookie banner and Google Analytics' complexity; pricing scales with pageviews, which can become costly for high-traffic sites beyond 25M pageviews.",
+        "fr": "À partir de 15 $/mois sans plan gratuit, la valeur dépend du besoin d'éviter un bandeau cookies et la complexité de Google Analytics ; le prix évolue avec les pages vues, ce qui peut devenir coûteux pour des sites à fort trafic au-delà de 25 M de pages vues.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Being cookie-free and not requiring a consent banner removes a configuration step that other analytics tools need under GDPR.",
+        "fr": "L'absence de cookies et de bandeau de consentement supprime une étape de configuration que d'autres outils d'analytics imposent sous le RGPD.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Tracks traffic sources, top pages, conversions and marketing campaigns as announced, cookie-free, with no workaround described in the sources.",
+        "fr": "Suit les sources de trafic, les pages populaires, les conversions et les campagnes marketing comme annoncé, sans cookies, sans contournement décrit dans les sources.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers the core analytics metrics (traffic sources, top pages, conversions, campaigns) but the sources do not describe deeper features like funnels or session replay found in broader analytics suites.",
+        "fr": "Couvre les métriques analytiques de base (sources de trafic, pages populaires, conversions, campagnes), mais les sources ne décrivent pas de fonctions plus poussées comme les entonnoirs ou la relecture de session présentes dans des suites analytics plus larges.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export options when leaving Fathom are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export des données en quittant Fathom ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Privacy-first analytics",
+      "fr": "Analytics sans cookies"
+    },
+    "shortDescription": {
+      "en": "Fathom Analytics tracks website traffic and conversions without cookies, avoiding the GDPR consent banner, starting at $15/month.",
+      "fr": "Fathom Analytics suit le trafic et les conversions d'un site sans cookies, évitant le bandeau de consentement RGPD, à partir de 15 $/mois."
+    },
+    "longDescription": {
+      "en": "Fathom Analytics is cookie-free, privacy-first web analytics that tracks traffic sources, top pages, conversions and marketing campaigns without needing a GDPR consent banner.\n\nThere is no free plan: the Starter tier starts at $15/month for up to 100,000 monthly pageviews and 50 sites, with a 7-day trial that requires a credit card. Pricing scales with pageview volume, which can grow costly for high-traffic sites. It fits an independent site owner who wants simple traffic numbers without a cookie banner or Google Analytics' complexity.",
+      "fr": "Fathom Analytics est un outil d'analytics web sans cookies et respectueux de la vie privée, qui suit les sources de trafic, les pages populaires, les conversions et les campagnes marketing sans nécessiter de bandeau de consentement RGPD.\n\nIl n'existe pas de plan gratuit : le palier Starter démarre à 15 $/mois pour jusqu'à 100 000 pages vues mensuelles et 50 sites, avec un essai de 7 jours qui demande une carte bancaire. Le prix évolue avec le volume de pages vues, ce qui peut devenir coûteux pour des sites à fort trafic. L'outil convient à un propriétaire de site indépendant qui veut des chiffres de trafic simples sans bandeau cookies ni la complexité de Google Analytics."
+    },
+    "pros": [
+      {
+        "en": "No cookies, so no GDPR consent banner is needed on the tracked site.",
+        "fr": "Aucun cookie, donc aucun bandeau de consentement RGPD n'est nécessaire sur le site suivi."
+      },
+      {
+        "en": "Up to 50 sites included even on the entry Starter plan.",
+        "fr": "Jusqu'à 50 sites inclus même sur le plan Starter d'entrée."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan: the cheapest tier is $15/month with a credit card required for the trial.",
+        "fr": "Aucun plan gratuit : le palier le moins cher est à 15 $/mois, avec carte bancaire exigée pour l'essai."
+      },
+      {
+        "en": "Price scales with pageview volume and can become costly on high-traffic sites.",
+        "fr": "Le prix évolue avec le volume de pages vues et peut devenir coûteux sur des sites à fort trafic."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "A site owner wants traffic and conversion numbers without a cookie banner or Google Analytics' complexity, on a small number of sites.",
+        "fr": "Un propriétaire de site veut des chiffres de trafic et de conversion sans bandeau cookies ni la complexité de Google Analytics, sur un petit nombre de sites."
+      },
+      "avoidIf": {
+        "en": "Pageview volume is already well into the millions, where pricing climbs quickly and a flat free tool becomes more attractive.",
+        "fr": "Le volume de pages vues se compte déjà en millions : le prix grimpe vite et un outil gratuit devient plus attractif."
+      },
+      "threshold": {
+        "en": "Budget $15/month ($180/year) for the Starter plan covering up to 100,000 monthly pageviews across up to 50 sites.",
+        "fr": "Prévoir 15 $/mois (180 $/an) pour le plan Starter couvrant jusqu'à 100 000 pages vues mensuelles sur jusqu'à 50 sites."
+      },
+      "billingTraps": {
+        "en": "The 7-day trial requires a credit card and billing starts automatically once it ends.",
+        "fr": "L'essai de 7 jours nécessite une carte bancaire et la facturation démarre automatiquement à la fin de l'essai."
+      }
+    }
+  }
 }

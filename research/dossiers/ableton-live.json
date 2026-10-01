@@ -3,7 +3,8 @@
   "slug": "ableton-live",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Ableton Live",
     "vendor": "Ableton AG",
@@ -36,7 +37,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Entry edition with a reduced number of tracks, scenes, and included instruments/effects compared to Standard and Suite.", "fr": null }
+          { "en": "Entry edition with a reduced number of tracks, scenes, and included instruments/effects compared to Standard and Suite.", "fr": "Édition d'entrée avec un nombre réduit de pistes, de scènes et d'instruments/effets inclus par rapport à Standard et Suite." }
         ],
         "sourceIds": ["s2"]
       },
@@ -48,7 +49,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 439 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Unlimited tracks and scenes, full audio/MIDI editing, larger instrument and effect library than Intro.", "fr": null }
+          { "en": "Unlimited tracks and scenes, full audio/MIDI editing, larger instrument and effect library than Intro.", "fr": "Pistes et scènes illimitées, édition audio/MIDI complète, bibliothèque d'instruments et d'effets plus large que Intro." }
         ],
         "sourceIds": ["s2"]
       },
@@ -60,7 +61,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 749 },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Adds full instrument/sound-pack collection, Max for Live, and additional production tools not in Standard.", "fr": null }
+          { "en": "Adds full instrument/sound-pack collection, Max for Live, and additional production tools not in Standard.", "fr": "Ajoute la collection complète d'instruments/packs de sons, Max for Live et des outils de production supplémentaires absents de Standard." }
         ],
         "sourceIds": ["s2"]
       }
@@ -68,33 +69,82 @@
     "comparePlanKey": "intro",
     "addOns": [],
     "cautions": [
-      { "en": "List prices confirmed via a third-party pricing guide (Live Intro $99, Standard $439, Suite $749); the official shop page did not render itemized prices in this session's fetch and should be re-verified before publication.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Ableton typically runs seasonal discounts (around Black Friday) of 20-25% off list price, per third-party sources; not confirmed on the official page.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "List prices confirmed via a third-party pricing guide (Live Intro $99, Standard $439, Suite $749); the official shop page did not render itemized prices in this session's fetch and should be re-verified before publication.", "fr": "Prix de liste confirmés via un guide tarifaire tiers (Live Intro 99 $, Standard 439 $, Suite 749 $) ; la page officielle de la boutique n'a pas affiché de prix détaillés lors de cette consultation et doit être revérifiée avant publication.", "sourceIds": ["s2"] },
+      { "en": "Ableton typically runs seasonal discounts (around Black Friday) of 20-25% off list price, per third-party sources; not confirmed on the official page.", "fr": "Ableton propose généralement des remises saisonnières (autour du Black Friday) de 20 à 25 % sur le prix de liste, selon des sources tierces ; non confirmé sur la page officielle.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Digital audio workstation combining a linear arrangement view with a non-linear Session view for live performance and improvisation.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Built-in instruments, audio effects, and MIDI effects for music production and sound design.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Digital audio workstation combining a linear arrangement view with a non-linear Session view for live performance and improvisation.", "fr": "Station de travail audionumérique combinant une vue Arrangement linéaire et une vue Session non linéaire pour la performance live et l'improvisation.", "sourceIds": ["s2"] },
+      { "en": "Built-in instruments, audio effects, and MIDI effects for music production and sound design.", "fr": "Instruments, effets audio et effets MIDI intégrés pour la production musicale et le sound design.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Live Intro caps the number of tracks/scenes and included content, making it unsuitable for larger productions.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "One-time license with no bundled cloud collaboration features comparable to some subscription-based competitors.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Live Intro caps the number of tracks/scenes and included content, making it unsuitable for larger productions.", "fr": "Live Intro plafonne le nombre de pistes/scènes et le contenu inclus, ce qui le rend inadapté aux productions plus importantes.", "sourceIds": ["s2"] },
+      { "en": "One-time license with no bundled cloud collaboration features comparable to some subscription-based competitors.", "fr": "Licence à vie sans fonctions de collaboration cloud intégrées comparables à certains concurrents par abonnement.", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["macos", "windows"]
   },
   "alternatives": [
-    { "slug": "reaper", "reason": { "en": "Lower-cost DAW alternative with a comparable feature set for music production.", "fr": null } },
-    { "slug": "davinci-resolve", "reason": { "en": "Not a direct DAW competitor but frequently paired or compared for AV production workflows.", "fr": null } }
+    { "slug": "reaper", "reason": { "en": "Lower-cost DAW alternative with a comparable feature set for music production.", "fr": "Alternative DAW moins chère avec un ensemble de fonctionnalités comparable pour la production musicale." } },
+    { "slug": "davinci-resolve", "reason": { "en": "Not a direct DAW competitor but frequently paired or compared for AV production workflows.", "fr": "Pas un concurrent DAW direct, mais souvent associé ou comparé pour les flux de production audiovisuelle." } }
   ],
   "missingAlternatives": [
     { "name": "FL Studio", "officialUrl": "https://www.image-line.com/fl-studio/", "reason": "Major direct competitor DAW, especially popular for electronic music production, absent from the catalogue." },
     { "name": "Logic Pro", "officialUrl": "https://www.apple.com/logic-pro/", "reason": "Leading macOS-only DAW competitor with a one-time price, not present in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A one-time purchase avoids a recurring subscription for sustained use, though the list prices rely on a third-party guide rather than an itemized official page.", "fr": "Un achat unique évite un abonnement récurrent pour un usage durable, mais les prix de liste s'appuient sur un guide tiers plutôt que sur une page officielle détaillée.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Neutral score: time needed to reach a first finished track is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour obtenir un premier morceau terminé ne figure pas dans les sources relevées.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "The Arrangement/Session view combination and built-in instruments and effects cover the music production workflow as described, without third-party tools for the core function.", "fr": "La combinaison des vues Arrangement/Session et les instruments et effets intégrés couvrent le flux de production musicale comme décrit, sans outil tiers pour la fonction principale.", "sourceIds": ["s2"] },
+      "puissance": { "en": "The Suite edition adds a full instrument and sound-pack collection plus Max for Live, a broad scope comparable to other professional DAWs.", "fr": "L'édition Suite ajoute une collection complète d'instruments et de packs de sons ainsi que Max for Live, un périmètre large comparable aux autres DAW professionnels.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: project file portability to other DAWs is not described in the collected sources.", "fr": "Note neutre : la portabilité des fichiers de projet vers d'autres DAW n'est pas décrite dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A music producer or content creator who wants a perpetual-license DAW with live-performance workflow instead of a subscription.", "fr": "Une productrice de musique ou créatrice de contenu qui veut un DAW en licence à vie avec un flux de performance live plutôt qu'un abonnement." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Live improvisation: arrange loops in Session view to improvise live, then finalize the track in the linear Arrangement view.", "fr": "Improvisation live : arranger des boucles en vue Session pour improviser en direct, puis finaliser le morceau en vue Arrangement linéaire." },
+    { "en": "In-the-box production: produce a track entirely with Ableton's built-in instruments and effects without buying third-party plugins.", "fr": "Production tout-en-un : produire un morceau entièrement avec les instruments et effets intégrés d'Ableton sans acheter de plugins tiers." }
+  ],
+  "editorial": {
+    "tagline": { "en": "Digital audio workstation", "fr": "Station audionumérique" },
+    "shortDescription": { "en": "Ableton Live is a digital audio workstation for music production and live performance, sold as a one-time license from around $99.", "fr": "Ableton Live est une station audionumérique pour la production musicale et la performance live, vendue en licence à vie à partir d'environ 99 $." },
+    "longDescription": {
+      "en": "Ableton Live combines a linear Arrangement view with a non-linear Session view built for live performance and improvisation, alongside built-in instruments, audio effects and MIDI effects for production and sound design.\n\nIt's sold as a one-time license across three editions: Intro (around $99) caps tracks, scenes and included content; Standard (around $439) removes those caps; Suite (around $749) adds the full instrument and sound-pack collection plus Max for Live. These list prices come from a third-party pricing guide rather than an itemized official page and should be re-verified. It suits a producer who wants a perpetual license instead of a subscription DAW.",
+      "fr": "Ableton Live combine une vue Arrangement linéaire et une vue Session non linéaire conçue pour la performance live et l'improvisation, avec des instruments, effets audio et effets MIDI intégrés pour la production et le sound design.\n\nIl se vend en licence à vie sur trois éditions : Intro (environ 99 $) plafonne les pistes, scènes et contenu inclus ; Standard (environ 439 $) retire ces limites ; Suite (environ 749 $) ajoute la collection complète d'instruments et de packs de sons plus Max for Live. Ces prix de liste viennent d'un guide tarifaire tiers plutôt que d'une page officielle détaillée et doivent être revérifiés. L'outil convient à une productrice qui veut une licence à vie plutôt qu'un DAW par abonnement."
+    },
+    "pros": [
+      { "en": "A one-time license avoids a recurring subscription compared to some competing DAWs.", "fr": "La licence à vie évite un abonnement récurrent par rapport à certains DAW concurrents." },
+      { "en": "Session view supports live improvisation alongside the standard linear Arrangement view.", "fr": "La vue Session permet l'improvisation en direct, en complément de la vue Arrangement linéaire classique." }
+    ],
+    "cons": [
+      { "en": "Live Intro caps tracks, scenes and included content, making it unsuitable for larger productions.", "fr": "Live Intro plafonne les pistes, les scènes et le contenu inclus, ce qui le rend inadapté aux productions plus importantes." },
+      { "en": "No bundled cloud collaboration features comparable to some subscription-based competitors.", "fr": "Aucune fonction de collaboration cloud intégrée comparable à certains concurrents par abonnement." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a DAW with live improvisation in Session view and prefer a one-time license over a subscription.", "fr": "Tu veux un DAW avec improvisation live en vue Session et tu préfères une licence à vie à un abonnement." },
+      "avoidIf": { "en": "You need built-in cloud collaboration features, or the entry budget of around $439 for Standard is too high.", "fr": "Tu as besoin de fonctions de collaboration cloud intégrées, ou le budget d'entrée d'environ 439 $ pour Standard est trop élevé." },
+      "threshold": { "en": "Live Standard (around $439) is the realistic entry point for production without Intro's (around $99) track/scene caps.", "fr": "Live Standard (environ 439 $) est le palier d'entrée réaliste pour la production, sans les limites de pistes/scènes de Intro (environ 99 $)." }
+    }
+  },
   "unknowns": [
     "Official ableton.com shop page did not return itemized pricing in this session (fetch returned only a product title); prices were corroborated via a third-party comparison site and should be re-verified against ableton.com directly.",
     "Exact discounted/upgrade pricing between editions was not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "List prices (Intro $99, Standard $439, Suite $749) come from a third-party pricing guide, not an itemized official page; verify directly on ableton.com/en/shop/live/ before merging."
+  ]
 }

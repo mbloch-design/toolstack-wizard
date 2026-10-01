@@ -3,7 +3,8 @@
   "slug": "shine",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Shine",
     "vendor": "Shine (Qonto Group)",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "FR",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": "1 IBAN account, 5 free SEPA transfers/month (then 0.40 EUR each), 1 basic Mastercard, optional virtual cards at 2 EUR/month each", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "1 IBAN account, 5 free SEPA transfers/month (then 0.40 EUR each), 1 basic Mastercard, optional virtual cards at 2 EUR/month each", "fr": "1 compte IBAN, 5 virements SEPA gratuits/mois (puis 0,40 € chacun), 1 Mastercard basique, cartes virtuelles optionnelles à 2 €/mois chacune" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -73,32 +74,85 @@
       { "name": "Extra virtual card", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The fetched pricing page also mentioned annual billing figures (e.g. 108 EUR/year for Start) that appear inconsistent with the stated monthly rate; annual figures could not be reliably reconciled in this session and are omitted from plan pricing.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Extra SEPA transfers beyond the included quota cost 0.40 EUR each; international transfers cost 0.45%-1% and card payments abroad 1%-2%.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The fetched pricing page also mentioned annual billing figures (e.g. 108 EUR/year for Start) that appear inconsistent with the stated monthly rate; annual figures could not be reliably reconciled in this session and are omitted from plan pricing.", "fr": "La page tarifs consultée mentionnait aussi des montants de facturation annuelle (ex. 108 €/an pour Start) qui semblent incohérents avec le tarif mensuel annoncé ; les montants annuels n'ont pas pu être réconciliés de façon fiable dans cette session et sont omis des prix de plan.", "sourceIds": ["s1"] },
+      { "en": "Extra SEPA transfers beyond the included quota cost 0.40 EUR each; international transfers cost 0.45%-1% and card payments abroad 1%-2%.", "fr": "Les virements SEPA supplémentaires au-delà du quota inclus coûtent 0,40 € chacun ; les virements internationaux coûtent 0,45 %-1 % et les paiements par carte à l'étranger 1 %-2 %.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "French business bank account (IBAN) with free invoicing and quote creation tools.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Payment collection and administrative/charges tracking dashboard for freelancers.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Physical and virtual Mastercards issued per plan, with sub-accounts for budgeting.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "French business bank account (IBAN) with free invoicing and quote creation tools.", "fr": "Compte bancaire professionnel français (IBAN) avec outils gratuits de facturation et de devis.", "sourceIds": ["s1"] },
+      { "en": "Payment collection and administrative/charges tracking dashboard for freelancers.", "fr": "Encaissement des paiements et tableau de bord de suivi administratif et des charges pour les indépendants.", "sourceIds": ["s1"] },
+      { "en": "Physical and virtual Mastercards issued per plan, with sub-accounts for budgeting.", "fr": "Cartes Mastercard physiques et virtuelles selon le plan, avec des sous-comptes pour budgétiser.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 5 SEPA transfers/month before per-transfer fees apply.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Sub-accounts and premium cards are gated behind paid plans (Start and above).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free plan is capped at 5 SEPA transfers/month before per-transfer fees apply.", "fr": "Le plan gratuit est limité à 5 virements SEPA par mois avant application de frais par virement.", "sourceIds": ["s1"] },
+      { "en": "Sub-accounts and premium cards are gated behind paid plans (Start and above).", "fr": "Les sous-comptes et les cartes premium sont réservés aux plans payants (Start et au-dessus).", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent freelancers and consultants in France who need a business IBAN account with built-in invoicing and expense tracking.",
+      "fr": "Indépendants et consultants en France qui ont besoin d'un compte IBAN professionnel avec facturation et suivi des dépenses intégrés."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Freelance invoicing: issue invoices and quotes from the account and track payments as they arrive.", "fr": "Facturation en freelance : émettre factures et devis depuis le compte et suivre les paiements à leur arrivée." },
+    { "en": "Expense control: use sub-accounts and a virtual card to separate budgets like taxes or a specific project.", "fr": "Contrôle des dépenses : utiliser des sous-comptes et une carte virtuelle pour séparer des budgets comme les impôts ou un projet précis." }
+  ],
   "alternatives": [
-    { "slug": "qonto", "reason": { "en": "Direct competitor French business account with invoicing and card features.", "fr": null } },
-    { "slug": "indy", "reason": { "en": "French freelancer administrative and invoicing tool overlapping with Shine's core use case.", "fr": null } },
-    { "slug": "pennylane", "reason": { "en": "French finance platform combining accounting and banking, competing on the same freelance/small business segment.", "fr": null } }
+    { "slug": "qonto", "reason": { "en": "Direct competitor French business account with invoicing and card features.", "fr": "Concurrent direct, compte professionnel français avec facturation et fonctions de carte." } },
+    { "slug": "indy", "reason": { "en": "French freelancer administrative and invoicing tool overlapping with Shine's core use case.", "fr": "Outil français de gestion administrative et de facturation pour indépendants, qui recoupe le cœur de métier de Shine." } },
+    { "slug": "pennylane", "reason": { "en": "French finance platform combining accounting and banking, competing on the same freelance/small business segment.", "fr": "Plateforme française combinant comptabilité et banque, concurrente sur le même segment des indépendants/petites entreprises." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A real free IBAN account with invoicing, plus a paid plan from €9/month with 30 transfers and an income dashboard, but the source gives no cost-comparison data against separate invoicing and banking tools.", "fr": "Un vrai compte IBAN gratuit avec facturation, plus un plan payant dès 9 €/mois avec 30 virements et un tableau de bord de revenus, mais la source ne fournit pas de données de comparaison de coût avec des outils séparés de facturation et de banque.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or onboarding effort is stated in the collected source.", "fr": "Note neutre : aucun temps de mise en place ni effort d'onboarding n'est précisé dans la source relevée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Invoicing, payment collection, charges tracking and card issuance are all delivered natively per the source, with no third-party tool mentioned as a workaround.", "fr": "Facturation, encaissement, suivi des charges et émission de carte sont tous livrés nativement selon la source, sans outil tiers mentionné en contournement.", "sourceIds": ["s1"] },
+      "puissance": { "en": "The free and Start plans cap transfers, sub-accounts and premium cards; the broader feature set only appears on Plus and Business, so the ceiling is not reached on the entry tiers.", "fr": "Les plans Gratuit et Start limitent les virements, les sous-comptes et les cartes premium ; l'ensemble de fonctions plus large n'apparaît que sur Plus et Business, donc le plafond n'est pas atteint sur les paliers d'entrée.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and account portability if leaving Shine are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité du compte en cas de départ de Shine ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "French business account", "fr": "Compte pro français" },
+    "shortDescription": { "en": "Shine is a French business bank account for freelancers with free invoicing, from a free plan to €60/month for a full team plan.", "fr": "Shine est un compte bancaire professionnel français pour indépendants avec facturation gratuite, du plan gratuit à 60 €/mois pour une équipe complète." },
+    "longDescription": {
+      "en": "Shine is a French business bank account built for freelancers, with free invoicing and quote tools, a payment and expense-tracking dashboard, and physical or virtual Mastercards. Sub-accounts let you set budgets aside for things like taxes.\n\nThe free plan includes 1 IBAN account and 5 SEPA transfers a month; paid plans run from Start at €9/month (1 sub-account, 30 transfers) to Business at €60/month (unlimited team access, 10 premium cards, 500 transfers). Extra transfers beyond a plan's quota cost €0.40 each.",
+      "fr": "Shine est un compte bancaire professionnel français pensé pour les indépendants, avec facturation et devis gratuits, un tableau de bord de suivi des paiements et des charges, et des Mastercard physiques ou virtuelles. Les sous-comptes permettent de mettre de côté des budgets, par exemple pour les impôts.\n\nLe plan gratuit inclut 1 compte IBAN et 5 virements SEPA par mois ; les plans payants vont de Start à 9 €/mois (1 sous-compte, 30 virements) à Business à 60 €/mois (accès équipe illimité, 10 cartes premium, 500 virements). Les virements au-delà du quota du plan coûtent 0,40 € chacun."
+    },
+    "pros": [
+      { "en": "The free plan is a real IBAN account with invoicing, not just a trial of a paid account.", "fr": "Le plan gratuit est un vrai compte IBAN avec facturation, pas seulement un essai d'un compte payant." },
+      { "en": "Sub-accounts and a payment-tracking dashboard are included from the entry paid plan rather than sold separately.", "fr": "Les sous-comptes et le tableau de bord de suivi des paiements sont inclus dès le premier plan payant plutôt que vendus séparément." }
+    ],
+    "cons": [
+      { "en": "Free-plan SEPA transfers are capped at 5 a month before a per-transfer fee kicks in.", "fr": "Les virements SEPA du plan gratuit sont limités à 5 par mois avant l'application de frais par virement." },
+      { "en": "Premium cards and multiple sub-accounts require moving up to the Plus or Business plan.", "fr": "Les cartes premium et plusieurs sous-comptes nécessitent de passer au plan Plus ou Business." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You are a freelancer in France who wants a business IBAN with built-in invoicing and expense tracking, from a free or low-cost paid plan.", "fr": "Tu es indépendant en France et tu veux un IBAN professionnel avec facturation et suivi des dépenses intégrés, à partir du plan gratuit ou d'un plan payant abordable." },
+      "avoidIf": { "en": "You need a confirmed, reconciled annual price before committing, since the dossier's annual figures could not be verified against the monthly rate.", "fr": "Tu as besoin d'un prix annuel confirmé et cohérent avant de t'engager, car les montants annuels du dossier n'ont pas pu être vérifiés face au tarif mensuel." },
+      "threshold": { "en": "Worth the Start plan at €9/month once the 30 included transfers and the income-tracking dashboard replace a spreadsheet and a separate invoicing tool.", "fr": "Le plan Start à 9 €/mois devient rentable dès que les 30 virements inclus et le tableau de bord de suivi remplacent un tableur et un outil de facturation séparé." },
+      "billingTraps": { "en": "Extra SEPA transfers beyond the plan's quota cost €0.40 each, and international transfers or card payments abroad add 0.45%-2% fees; the annual pricing figures on the site could not be reconciled with the monthly rate in this review.", "fr": "Les virements SEPA au-delà du quota coûtent 0,40 € chacun, et les virements internationaux ou paiements par carte à l'étranger ajoutent des frais de 0,45 % à 2 % ; les montants annuels affichés sur le site n'ont pas pu être réconciliés avec le tarif mensuel lors de cette relecture." }
+    }
+  },
   "unknowns": [
     "Annual billing amounts shown on the pricing page appeared internally inconsistent with monthly prices; could not be verified precisely in this session.",
     "No platform confirmation source was opened beyond the pricing page; iOS/Android app existence is assumed from general knowledge of the product category, not directly sourced."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "La page shine.fr/tarifs affichait aussi des montants annuels (par exemple 108 €/an pour Start) qui ne se recoupent pas avec le tarif mensuel annoncé (9 €/mois = 108 €/an, donc potentiellement cohérent en réalité mais pas confirmé) ; à vérifier directement sur shine.fr/tarifs avant publication, notamment si un tarif annuel distinct (annualPerMonth) existe."
+  ]
 }

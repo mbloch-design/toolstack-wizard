@@ -3,7 +3,8 @@
   "slug": "d5-render",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "D5 Render",
     "vendor": "D5 Technologies",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Non-commercial use only, limited AI credits, capped storage", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": [{ "en": "Non-commercial use only, limited AI credits, capped storage", "fr": "Usage non commercial uniquement, crédits IA limités, stockage plafonné", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Non-commercial use only, 50 AI trial credits, up to 16K images / 4K video, limited cloud storage", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Non-commercial use only, 50 AI trial credits, up to 16K images / 4K video, limited cloud storage", "fr": "Usage non commercial uniquement, 50 crédits IA d'essai, images jusqu'en 16K / vidéo 4K, stockage cloud limité", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": 1,
         "price": { "monthly": 38, "annualPerMonth": 30, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited AI features, up to 16K rendering, 4K video, 16,000+ assets, 10 GB cloud storage", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Unlimited AI features, up to 16K rendering, 4K video, 16,000+ assets, 10 GB cloud storage", "fr": "Fonctionnalités IA illimitées, rendu jusqu'en 16K, vidéo 4K, plus de 16 000 assets, 10 Go de stockage cloud", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -55,26 +56,26 @@
         "minSeats": 1,
         "price": { "monthly": 75, "annualPerMonth": 59, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "All Pro features, multi-user scene editing, up to 8K video, 100 GB cloud storage, member access control", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "All Pro features, multi-user scene editing, up to 8K video, 100 GB cloud storage, member access control", "fr": "Toutes les fonctionnalités Pro, édition de scène multi-utilisateur, vidéo jusqu'en 8K, 100 Go de stockage cloud, contrôle d'accès des membres", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "Team seats are billed per member on top of the Teams base price on the official pricing page.", "fr": "", "sourceIds": ["s1"] }
+      { "en": "Team seats are billed per member on top of the Teams base price on the official pricing page.", "fr": "Les sièges Teams sont facturés par membre, en plus du prix de base de Teams, sur la page tarifaire officielle.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Real-time ray-traced rendering with instant preview while editing the scene", "sourceIds": ["s2"] },
-      { "en": "AI-native visualization tools through the D5 Lite plugin for fast material and lighting generation", "sourceIds": ["s2"] },
-      { "en": "Cloud collaboration allowing distributed teams to access the same project", "sourceIds": ["s2"] },
-      { "en": "Interactive presentations with live material, lighting and design swaps for client walkthroughs", "sourceIds": ["s2"] }
+      { "en": "Real-time ray-traced rendering with instant preview while editing the scene", "fr": "Rendu en temps réel par ray-tracing avec aperçu instantané pendant l'édition de la scène", "sourceIds": ["s2"] },
+      { "en": "AI-native visualization tools through the D5 Lite plugin for fast material and lighting generation", "fr": "Outils de visualisation natifs IA via le plugin D5 Lite pour générer rapidement matériaux et éclairages", "sourceIds": ["s2"] },
+      { "en": "Cloud collaboration allowing distributed teams to access the same project", "fr": "Collaboration cloud permettant à des équipes distribuées d'accéder au même projet", "sourceIds": ["s2"] },
+      { "en": "Interactive presentations with live material, lighting and design swaps for client walkthroughs", "fr": "Présentations interactives avec changement en direct des matériaux, éclairages et conceptions pour les visites client", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "D5 Arco, the contextual AI co-design engine, is listed as coming soon and not yet available", "sourceIds": ["s2"] },
-      { "en": "Community (free) tier is restricted to non-commercial use", "sourceIds": ["s1"] }
+      { "en": "D5 Arco, the contextual AI co-design engine, is listed as coming soon and not yet available", "fr": "D5 Arco, le moteur de co-conception IA contextuel, est annoncé comme à venir et pas encore disponible", "sourceIds": ["s2"] },
+      { "en": "Community (free) tier is restricted to non-commercial use", "fr": "Le forfait gratuit Community est réservé à un usage non commercial", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "SketchUp", "slug": null, "sourceIds": ["s2"] },
@@ -88,12 +89,74 @@
     ],
     "platforms": ["windows"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "An architect or interior designer who needs fast, photorealistic real-time renders to show clients during design walkthroughs.",
+      "fr": "Un architecte ou designer d'intérieur qui a besoin de rendus photoréalistes en temps réel pour montrer son travail aux clients pendant les visites de projet."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a designer imports a SketchUp model into D5 Render and gets a ray-traced preview that updates instantly as materials are swapped.",
+      "fr": "Usage : un designer importe une maquette SketchUp dans D5 Render et obtient un aperçu ray-traced qui se met à jour instantanément au changement de matériaux."
+    },
+    {
+      "en": "Usage: a studio presents a live interactive walkthrough to a client, swapping lighting and finishes on the spot instead of re-rendering static images.",
+      "fr": "Usage : un studio présente une visite interactive en direct à un client, en changeant éclairages et finitions sur place plutôt que de refaire des rendus statiques."
+    }
+  ],
   "alternatives": [
-    { "slug": "enscape", "reason": { "en": "Direct real-time rendering competitor plugged into the same BIM/CAD tools" } },
-    { "slug": "twinmotion", "reason": { "en": "Real-time visualization tool for architecture with a free tier" } },
-    { "slug": "lumion", "reason": { "en": "Established real-time architectural rendering competitor" } }
+    { "slug": "enscape", "reason": { "en": "Direct real-time rendering competitor plugged into the same BIM/CAD tools", "fr": "Concurrent direct de rendu en temps réel branché sur les mêmes outils BIM/CAO" } },
+    { "slug": "twinmotion", "reason": { "en": "Real-time visualization tool for architecture with a free tier", "fr": "Outil de visualisation en temps réel pour l'architecture avec un forfait gratuit" } },
+    { "slug": "lumion", "reason": { "en": "Established real-time architectural rendering competitor", "fr": "Concurrent établi du rendu architectural en temps réel" } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Pro, at $30/month annually, already includes unlimited AI features and 16K rendering, bundling what competitors often split across tiers or add-ons.", "fr": "Pro, à 30 $/mois en engagement annuel, inclut déjà les fonctionnalités IA illimitées et le rendu en 16K, regroupant ce que des concurrents séparent souvent en paliers ou options.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Real-time ray-traced preview while editing the scene means a usable image appears as soon as the model is imported, without a separate render step.", "fr": "L'aperçu ray-traced en temps réel pendant l'édition signifie qu'une image utilisable apparaît dès l'import du modèle, sans étape de rendu séparée.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "The real-time rendering, interactive presentations and cloud collaboration described are concrete delivered capabilities, not promises pending the still-unreleased D5 Arco.", "fr": "Le rendu en temps réel, les présentations interactives et la collaboration cloud décrits sont des capacités livrées concrètes, pas des promesses liées à D5 Arco, encore non disponible.", "sourceIds": ["s2"] },
+      "puissance": { "en": "The Pro tier already reaches 16K image and 4K video output with 16,000+ bundled assets, a high ceiling for the category.", "fr": "Le forfait Pro atteint déjà une sortie image en 16K et vidéo en 4K avec plus de 16 000 assets inclus, un plafond élevé pour la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats for scenes and assets beyond the rendering engine itself are not covered by the collected sources.", "fr": "Note neutre : les formats d'export des scènes et des assets au-delà du moteur de rendu lui-même ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Real-time rendering", "fr": "Rendu temps réel" },
+    "shortDescription": {
+      "en": "D5 Render is a real-time ray-traced rendering tool for architects and designers, with AI material generation and a free non-commercial tier.",
+      "fr": "D5 Render est un outil de rendu ray-traced temps réel pour architectes et designers, avec génération IA de matériaux et un forfait gratuit non commercial."
+    },
+    "longDescription": {
+      "en": "D5 Render turns a SketchUp, Revit, Rhino or Blender model into a photorealistic, ray-traced scene that updates instantly as materials, lighting or layouts change, which makes it suited to live client walkthroughs rather than only static renders.\n\nThe free Community tier is for non-commercial use only; Pro starts at $30/month billed annually and already unlocks unlimited AI features and 16K rendering. Teams, from $59/month per seat, adds multi-user scene editing and member access control, though each extra seat is billed on top. It fits an architecture or interior design practice already working in one of its supported CAD tools.",
+      "fr": "D5 Render transforme une maquette SketchUp, Revit, Rhino ou Blender en scène photoréaliste ray-traced qui se met à jour instantanément aux changements de matériaux, d'éclairage ou de disposition, ce qui le rend adapté aux visites client en direct plutôt qu'aux seuls rendus statiques.\n\nLe forfait gratuit Community est réservé à l'usage non commercial ; Pro démarre à 30 $/mois en engagement annuel et débloque déjà les fonctionnalités IA illimitées et le rendu en 16K. Teams, dès 59 $/mois par siège, ajoute l'édition de scène multi-utilisateur et le contrôle d'accès des membres, chaque siège supplémentaire étant facturé en plus. Il convient à une agence d'architecture ou de design d'intérieur déjà équipée d'un de ses outils CAO pris en charge."
+    },
+    "pros": [
+      { "en": "Rendering updates instantly while editing, with no separate render queue to wait on.", "fr": "Le rendu se met à jour instantanément pendant l'édition, sans file de rendu séparée à attendre." },
+      { "en": "AI features and high-resolution output are included on Pro rather than sold as separate add-ons.", "fr": "Les fonctionnalités IA et la sortie haute résolution sont incluses dans Pro plutôt que vendues en options séparées." }
+    ],
+    "cons": [
+      { "en": "The free Community tier can't be used for paid client work, only non-commercial projects.", "fr": "Le forfait gratuit Community ne peut pas servir pour des projets clients payants, seulement pour des projets non commerciaux." },
+      { "en": "D5 Arco, the AI co-design engine shown on the site, isn't available yet.", "fr": "D5 Arco, le moteur de co-conception IA présenté sur le site, n'est pas encore disponible." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You work in SketchUp, Revit, Rhino or a similar CAD tool and need fast, photorealistic renders for client presentations.", "fr": "Tu travailles dans SketchUp, Revit, Rhino ou un outil CAO similaire et tu as besoin de rendus photoréalistes rapides pour tes présentations client." },
+      "avoidIf": { "en": "You only need occasional non-commercial renders, where the free Community tier's restriction already rules out paid work.", "fr": "Tu n'as besoin que de rendus occasionnels non commerciaux, où la restriction du forfait gratuit Community exclut déjà tout travail payant." },
+      "threshold": { "en": "Pro costs $30/month billed annually (about $360/year) for one seat with unlimited AI features and 16K rendering.", "fr": "Pro coûte 30 $/mois en engagement annuel (environ 360 $/an) pour un siège avec fonctionnalités IA illimitées et rendu en 16K." },
+      "billingTraps": { "en": "The lower $30/month Pro price requires annual billing; monthly billing costs $38/month instead.", "fr": "Le tarif Pro à 30 $/mois suppose une facturation annuelle ; la facturation mensuelle coûte 38 $/mois." }
+    }
+  },
   "unknowns": ["Exact desktop OS support (Windows/Mac) not explicitly stated on the pages reviewed; tax treatment not stated"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The Teams plan lists a seat price ($75 monthly / $59 annual) but its own caution says seats are billed per member on top of a Teams base price, which suggests the listed amount may be a base/organization price rather than a true per-seat rate. Worth re-checking the breakdown on d5render.com/pricing before this is merged."
+  ]
 }

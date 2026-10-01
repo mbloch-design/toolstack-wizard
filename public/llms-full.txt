@@ -489,11 +489,11 @@
     "website": "https://www.adobe.com/products/substance3d.html",
     "category": "creation",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 50€/mois environ"
+      "free": "Plan gratuit : Offre étudiant/enseignant, usage personnel non commercial uniquement, 5 Go de stockage cloud.",
+      "paid": "Dès 59,99 $/mois, plan Substance 3D Collection."
     },
-    "description_fr": "Suite 3D Adobe pour matériaux, textures, staging et visualisation produit.",
-    "description_en": "Adobe 3D suite for materials, textures, staging, and product visualization."
+    "description_fr": "Adobe Substance 3D regroupe cinq applications de texturing, création de matériaux et rendu de scène, uniquement par abonnement, sans licence perpétuelle.",
+    "description_en": "Adobe Substance 3D bundles five apps for texturing, material creation and scene rendering, by subscription only with no perpetual license."
   },
   {
     "name": "Adobe XD",
@@ -797,11 +797,11 @@
     "website": "https://www.anaplan.com",
     "category": "budgeting-fpa",
     "pricing": {
-      "free": "Aucun plan gratuit public ni essai libre-service annoncé.",
-      "paid": "Anaplan Platform: Sur devis"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Plateforme de planification d'entreprise modulaire (CPM) avec modélisation multi-dimensionnelle, budgeting, forecasting, planification des ventes et gestion des stocks, intégration IA pour scénarios prédictifs.",
-    "description_en": "Modular corporate performance management (CPM) platform with multi-dimensional modeling, budgeting, forecasting, sales planning, and inventory management, plus AI-powered predictive scenarios."
+    "description_fr": "Anaplan est une plateforme cloud de planification et de modélisation pour les équipes finance, ventes et supply chain, au tarif uniquement sur devis.",
+    "description_en": "Anaplan is a cloud planning and modeling platform for finance, sales and supply chain teams, priced only on a sales quote."
   },
   {
     "name": "Angular Material",
@@ -1170,11 +1170,11 @@
     "website": "https://astutegraphics.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit 7 jours ; après annulation, 4 plugins restent gratuits (Autosaviour, DirectPrefs, MirrorMe, AstuteBuddy).",
-      "paid": "Astute Graphics Annual Bundle: 149 USD/an"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 12,42 $/mois, plan Individual (Annual Bundle)."
     },
-    "description_fr": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.",
-    "description_en": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord."
+    "description_fr": "Astute Graphics est une suite d'extensions payantes pour Adobe Illustrator, pour le nettoyage vectoriel, le dessin et le travail d'encrage, sans version gratuite autonome.",
+    "description_en": "Astute Graphics is a subscription suite of Adobe Illustrator plugins for vector cleanup, sketching and ink/line work, with no standalone free version."
   },
   {
     "name": "Attio",
@@ -1279,11 +1279,11 @@
     "website": "https://superhivemarket.com/products/auto-rig-pro",
     "category": "design-tools",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Deux tiers payants : Lite ($25) et Full ($50).",
-      "paid": "Auto-Rig Pro Lite: 25 USD ; Auto-Rig Pro Full: 50 USD"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 50 $ (licence à vie), plan Auto-Rig Pro Full."
     },
-    "description_fr": "Addon Blender pour le rigging automatique de personnages humanoïdes. Généère rapidement un squelette articulé, poids de déformation et contrôles d'animation. Inclut presets d'export pour Unity et Unreal Engine. Développé pour studios de petite et moyenne taille.",
-    "description_en": "Blender addon for automatic humanoid character rigging. Quickly generates articulated skeleton, deformation weights, and animation controls. Includes export presets for Unity and Unreal Engine. Built for small to medium studios."
+    "description_fr": "Auto-Rig Pro place automatiquement les os sur des personnages Blender humanoïdes et exporte des rigs jeu vidéo, en achat unique de 25 à 50 $.",
+    "description_en": "Auto-Rig Pro auto-places bones on humanoid Blender characters and exports game-ready rigs, as a one-time $25 to $50 purchase per developer."
   },
   {
     "name": "AutoCAD",
@@ -1593,11 +1593,11 @@
     "website": "https://betterproposals.io",
     "category": "organization",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours sans carte bancaire.",
-      "paid": "Starter 19$/mois (13$/mois en annuel, 1 utilisateur, 10 docs/mois) ; Premium 29$/mois (21$/mois en annuel, 5 utilisateurs, 50 docs/mois) ; Enterprise 42$/mois (5 utilisateurs, documents illimités). Utilisateur sup. facturé en plus au-delà du quota inclus."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 13 $/mois, plan Starter."
     },
-    "description_fr": "Propositions commerciales avec suivi et signatures.",
-    "description_en": "Commercial proposals with tracking and signatures."
+    "description_fr": "Better Proposals crée, suit et fait signer et payer des propositions commerciales, devis et contrats dans un seul document.",
+    "description_en": "Better Proposals creates, tracks and gets e-signatures and payment on sales proposals, quotes and contracts in a single document."
   },
   {
     "name": "Better Stack",
@@ -2454,11 +2454,11 @@
     "website": "https://chakra-ui.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Bibliothèque de composants React accessible, modulaire et stylisable.",
-    "description_en": "Accessible, modular and styleable React component library.",
+    "description_fr": "Chakra UI est une bibliothèque de composants React gratuite et open source, avec composants accessibles, tokens de design et mode sombre intégré.",
+    "description_en": "Chakra UI is a free, open-source React component library with accessible pre-built components, design tokens and built-in dark mode.",
     "alternatives": [
       "shadcn-ui"
     ]
@@ -2485,11 +2485,11 @@
     "website": "https://www.chartjs.org",
     "category": "ui-components",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Bibliothèque de graphiques simple, propre et réactive pour le web.",
-    "description_en": "Simple, clean and responsive charting library for the web."
+    "description_fr": "Chart.js est une bibliothèque JavaScript gratuite et open source qui génère 8 types de graphiques sur Canvas HTML5, avec animations et redimensionnement réactif.",
+    "description_en": "Chart.js is a free, open-source JavaScript library that renders 8 chart types on HTML5 Canvas with animations and responsive resizing."
   },
   {
     "name": "Chartmogul",
@@ -3221,11 +3221,11 @@
     "website": "https://www.creditsafe.com",
     "category": "vendor-risk-data",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Creditsafe fournit des données de risque ou de conformité sur les fournisseurs.",
-    "description_en": "Business intelligence platform providing credit reports, credit risk scores, and real-time alerts on 430+ million businesses worldwide to assess partners, suppliers, and prospects."
+    "description_fr": "Creditsafe fournit des rapports de crédit et scores de risque sur plus de 430 millions d'entreprises, avec surveillance en temps réel, vendu sur devis.",
+    "description_en": "Creditsafe provides business credit reports and risk scores on 430+ million companies worldwide, with real-time monitoring, sold on a custom quote."
   },
   {
     "name": "Crisp",
@@ -3374,11 +3374,11 @@
     "website": "https://www.d5render.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Community tier gratuit ; plans Pro et Teams payants.",
-      "paid": "Community: Gratuit ; Pro: 38 $/mois ou 360 $/an (20% de réduction annuelle) ; Teams: 75 $/siège/mois ou 708 $/siège/an (21% de réduction annuelle)"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 30 $/mois, plan Pro."
     },
-    "description_fr": "Logiciel de rendu 3D en temps réel destiné aux architectes et designers, avec support du ray tracing instantané et intégration avec SketchUp, Revit et 3ds Max.",
-    "description_en": "Real-time 3D rendering software for architects and designers, featuring instant ray tracing and integration with SketchUp, Revit, and 3ds Max.",
+    "description_fr": "D5 Render est un outil de rendu ray-traced temps réel pour architectes et designers, avec génération IA de matériaux et un forfait gratuit non commercial.",
+    "description_en": "D5 Render is a real-time ray-traced rendering tool for architects and designers, with AI material generation and a free non-commercial tier.",
     "alternatives": [
       "blender"
     ]
@@ -3391,11 +3391,11 @@
     "website": "https://www.darktable.org/",
     "category": "photo",
     "pricing": {
-      "free": "Entièrement gratuit, sans limitations. Logiciel libre sous licence GNU General Public License v3.",
-      "paid": "Voir le tarif officiel."
+      "free": "Plan gratuit : Entirely free and open source, no limitations or paid tier; licensed under GNU GPL v3 or later.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Logiciel open source gratuit pour le traitement et l'édition non-destructive de fichiers RAW. Fonctionne comme une chambre noire virtuelle (darkroom) avec gestion complète des workflows photo professionnels.",
-    "description_en": "Free open source software for non-destructive processing and editing of RAW files. Functions as a virtual darkroom with complete management of professional photo workflows."
+    "description_fr": "darktable est une application libre et gratuite pour développer des RAW de façon non destructive, gérer ses photos et shooter en tethering, sous licence GPL.",
+    "description_en": "darktable is a free, open-source application for non-destructive RAW photo development, image management and tethered shooting, licensed under the GPL."
   },
   {
     "name": "Dart",
@@ -3575,11 +3575,11 @@
     "website": "https://deputy.com",
     "category": "organization",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 30 jours sans carte bancaire",
-      "paid": "Lite à 5$/utilisateur/mois ; Core à 6,50$ (auto-scheduling, prévision de la demande) ; Pro à 9$ (SSO, add-ons inclus). Minimum de facturation de 30$/mois par facture, quel que soit le nombre d'utilisateurs."
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 5 $/mois, plan Lite."
     },
-    "description_fr": "Planning d'équipe et pointage avec auto-scheduling et conformité légale intégrée.",
-    "description_en": "Team scheduling and time clocking with auto-scheduling and built-in legal compliance."
+    "description_fr": "Deputy planifie les shifts, suit le temps et vérifie la conformité des équipes horaires, dès 5 $/utilisateur avec 30 $ minimum par compte.",
+    "description_en": "Deputy schedules shifts, tracks time and checks labor law compliance for hourly teams, with plans from $5 per user plus a $30 monthly account minimum."
   },
   {
     "name": "Descript",
@@ -3600,11 +3600,14 @@
     "slug": "descript-ai",
     "url_fr": "https://tooltrim.com/fr/tool/descript-ai",
     "url_en": "https://tooltrim.com/en/tool/descript-ai",
-    "website": "https://descriptai.com",
+    "website": "https://www.descript.com/",
     "category": "creation",
-    "pricing": "Plan gratuit limité ; plans payants à partir de ~15$/mois pour le clonage vocal et plus de fonctionnalités.",
-    "description_fr": "Monte de l'audio et de la vidéo en éditant du texte, avec clonage vocal IA et transcription automatique.",
-    "description_en": "Edit audio and video by editing text, with AI voice cloning and automatic transcription."
+    "pricing": {
+      "free": "Plan gratuit : Quota équivalent à 60 minutes de média/mois, 100 crédits IA à usage unique, 5 Go de stockage cloud, exports filigranés en 720p, accès limité aux outils IA.",
+      "paid": "Dès 16 $/mois, plan Hobbyist."
+    },
+    "description_fr": "Descript monte l'audio et la vidéo via une transcription éditable et clone la voix par IA, gratuit sous 60 min puis dès 16 $/mois.",
+    "description_en": "Descript edits audio and video by editing a transcript and adds AI voice cloning, starting free with a 60-minute quota, then $16 per month."
   },
   {
     "name": "Deskpro",
@@ -3761,9 +3764,12 @@
     "url_en": "https://tooltrim.com/en/tool/doola",
     "website": "https://doola.com",
     "category": "finance",
-    "pricing": "Starter à 297$/an (plus frais d'État) ; Premium avec déclarations annuelles ; Total Compliance à 2397$/an (déclarations IRS incluses). Promo -25% en cours.",
-    "description_fr": "Création de LLC américaine pour entrepreneurs non-résidents, avec services de conformité inclus.",
-    "description_en": "US LLC formation for non-resident entrepreneurs, with compliance services included."
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 19,75 $/mois, plan Starter."
+    },
+    "description_fr": "Crée une LLC ou une C Corp américaine pour les fondateurs non-résidents ou solo, avec des offres payantes séparées pour la conformité et la comptabilité.",
+    "description_en": "Forms a US LLC or C Corp for non-resident and solo founders, with separate paid plans for compliance and bookkeeping."
   },
   {
     "name": "Doppler",
@@ -3860,11 +3866,11 @@
     "website": "https://drata.com",
     "category": "security",
     "pricing": {
-      "free": "",
-      "paid": "Sur devis, à partir de ~7 500-15 000$/an (Foundation), moyenne réelle ~24 600$/an"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Automatisation de conformité SOC 2 / ISO 27001, sur devis à partir de plusieurs milliers d'euros par an.",
-    "description_en": "SOC 2 / ISO 27001 compliance automation, quote-based from several thousand euros per year."
+    "description_fr": "Drata automatise la conformité SOC 2, ISO 27001 et d'autres frameworks avec un suivi continu des contrôles ; chaque palier tarifaire nécessite un devis commercial.",
+    "description_en": "Drata automates SOC 2, ISO 27001 and other compliance frameworks with continuous control monitoring; every pricing tier requires a sales quote."
   },
   {
     "name": "Dropbox",
@@ -3975,11 +3981,11 @@
     "website": "https://eagle.cool",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit 30 jours avec accès complet ; pas de version permanente gratuite. Achat requis pour continuer.",
-      "paid": "Eagle (license): Achat unique, prix sur la page officielle"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 34,95 $ (licence à vie), plan Eagle license."
     },
-    "description_fr": "Application desktop de gestion d'assets créatifs pour les designers, permettant de centraliser, organiser et rechercher visuellement des fichiers (images, vidéos, fonts, PDFs).",
-    "description_en": "Desktop application for managing creative assets, enabling designers to centralize, organize, and visually search files (images, videos, fonts, PDFs)."
+    "description_fr": "Eagle est une application desktop qui centralise et étiquette les assets créatifs avec une recherche visuelle, vendue en licence unique à vie.",
+    "description_en": "Eagle is a desktop app that centralizes and tags creative assets with visual search, sold as a one-time lifetime license."
   },
   {
     "name": "EAS Build",
@@ -3989,11 +3995,11 @@
     "website": "https://expo.dev/eas",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : 15 builds Android et 15 builds iOS par mois, file de build à priorité basse, 20 Gio de stockage pour les mises à jour, 1 000 utilisateurs actifs mensuels pour les mises à jour.",
+      "paid": "Dès 199 $/mois, plan Production."
     },
-    "description_fr": "Service Expo pour compiler et distribuer des apps mobiles.",
-    "description_en": "Expo service for building and distributing mobile apps."
+    "description_fr": "EAS Build gère les builds dans le cloud, la signature de code, les mises à jour par-dessus l'air et la soumission aux stores pour les applications React Native et Expo, sur Android et iOS.",
+    "description_en": "EAS Build runs cloud builds, code signing, over-the-air updates and app store submission for React Native and Expo apps on Android and iOS."
   },
   {
     "name": "EasyDMARC",
@@ -4085,9 +4091,12 @@
     "url_en": "https://tooltrim.com/en/tool/elfsight",
     "website": " formulaires…).",
     "category": "email-productivity",
-    "pricing": "Gratuit (1 widget limité) ; à partir de ~5$/mois ; Enterprise de 42$/mois (1 app) à 336$/mois (toutes les apps).",
-    "description_fr": "Plus de 90 widgets no-code (avis, réseaux sociaux, formulaires) pour tout type de site web.",
-    "description_en": "Over 90 no-code widgets (reviews, social feeds, forms) for any type of website."
+    "pricing": {
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 5 $/mois, plan Basic (single app)."
+    },
+    "description_fr": "Elfsight est une bibliothèque de plus de 90 widgets sans code (avis, flux sociaux, popups) qui s'installent sur la plupart des sites, facturés par application.",
+    "description_en": "Elfsight is a library of 90+ no-code widgets (reviews, social feeds, popups) that install on most website platforms, priced per widget app."
   },
   {
     "name": "Elgato",
@@ -4404,11 +4413,11 @@
     "website": "https://usefathom.com",
     "category": "analytics",
     "pricing": {
-      "free": "Pas de version gratuite. Plans commencent à 14 $/mois pour 100k pageviews.",
-      "paid": "Starter: 14 $/mois pour 100k pageviews mensuels ; Growth: 24 $/mois pour 200k pageviews mensuels ; Pro: 44 $/mois pour 500k pageviews mensuels"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Starter."
     },
-    "description_fr": "Analytics web sans cookies, sans consentement banners. Respect GDPR nativement. Suive sources trafic, pages populaires, conversions, campagnes. Startup canadienne, pas de VC, pas de vente données.",
-    "description_en": "Cookie-free, GDPR-compliant web analytics. No consent banners needed. Track traffic sources, top pages, conversions, campaigns. Canadian startup, no VC, no data selling.",
+    "description_fr": "Fathom Analytics suit le trafic et les conversions d'un site sans cookies, évitant le bandeau de consentement RGPD, à partir de 15 $/mois.",
+    "description_en": "Fathom Analytics tracks website traffic and conversions without cookies, avoiding the GDPR consent banner, starting at $15/month.",
     "alternatives": [
       "Google Analytics"
     ]
@@ -4701,11 +4710,11 @@
     "website": "https://firecrawl.dev",
     "category": "automation",
     "pricing": {
-      "free": "Gratuit — 1 000 crédits/mois",
-      "paid": "Hobby 16$/mois · Standard 83$ · Growth 333$"
+      "free": "Plan gratuit : 1 000 crédits/mois, ~500 recherches ou 1 000 pages scrapées, 2 requêtes simultanées, support communautaire",
+      "paid": "Dès 16 $/mois, plan Hobby."
     },
-    "description_fr": "API de scraping web propre : transforme n'importe quel site en données structurées.",
-    "description_en": "Clean web scraping API: turns any website into structured data."
+    "description_fr": "Firecrawl est une API de scraping et de crawling qui transforme les sites en Markdown/JSON propre, avec un palier gratuit et des plans dès 19 $/mois.",
+    "description_en": "Firecrawl is a web scraping and crawling API that turns sites into clean Markdown/JSON, with a free tier and paid plans from $19/month."
   },
   {
     "name": "Fiverr",
@@ -4729,11 +4738,11 @@
     "website": "https://flask.palletsprojects.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Micro-framework Python pour API, prototypes et services légers.",
-    "description_en": "Python micro-framework for APIs, prototypes, and lightweight services."
+    "description_fr": "Micro-framework Python gratuit et open source pour construire des applications web et des API, étendu par des extensions tierces.",
+    "description_en": "Free, open-source Python micro-framework for building web applications and APIs, extended through third-party packages."
   },
   {
     "name": "FlexiQuiz",
@@ -5131,11 +5140,11 @@
     "website": "https://quadspinner.com",
     "category": "creation",
     "pricing": {
-      "free": "Community gratuit (non-commercial)",
-      "paid": "Indie 99$, Pro 199$, Enterprise 299$ (licence à vie)."
+      "free": "Plan gratuit : Community edition: max resolution 1024x1024, no commercial use, no tiled builds, no Unreal Engine or Houdini integration, no macros.",
+      "paid": "Dès 99 $ (licence à vie), plan Indie."
     },
-    "description_fr": "Générateur de terrains 3D par noeuds (QuadSpinner), standard du paysage et de l'environnement.",
-    "description_en": "Node-based 3D terrain generator (QuadSpinner), a landscape and environment standard.",
+    "description_fr": "Générateur de terrain 3D procédural par noeuds pour le jeu, la VFX et la visualisation, vendu sous forme de licence commerciale ponctuelle.",
+    "description_en": "Node-based procedural 3D terrain generator for games, VFX and visualization, sold as a one-time commercial license.",
     "alternatives": [
       "blender"
     ]
@@ -6378,14 +6387,14 @@
     "slug": "ignition",
     "url_fr": "https://tooltrim.com/fr/tool/ignition",
     "url_en": "https://tooltrim.com/en/tool/ignition",
-    "website": "https://www.ignitionapp.com/",
+    "website": "https://www.ignitionapp.com",
     "category": "finance",
     "pricing": {
-      "free": "Essai de 14 jours sans carte bancaire, pas de forfait gratuit permanent. Offre US : jusqu’à 10 000 $US encaissés sans frais pendant l’essai, puis paiements suspendus jusqu’au passage à une offre payante.",
-      "paid": "Tarifs US hors taxes, en mensuel : Solo 49 $US (sous conditions), Core 149 $, Pro 279 $, Pro+ 499 $. En annuel : équivalents de 39 $, 99 $, 229 $ et 399 $/mois. Clients supplémentaires, options et paiements en sus."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Propositions, signatures, facturation et encaissements reliés pour les cabinets et agences.",
-    "description_en": "Connected proposals, signatures, billing and payment collection for service firms and agencies."
+    "description_fr": "Relie propositions, lettres de mission, signature électronique et facturation automatisée pour les cabinets comptables et de conseil.",
+    "description_en": "Connects proposals, engagement letters, e-signature and automated billing for accounting and consulting firms."
   },
   {
     "name": "Impact",
@@ -6437,11 +6446,11 @@
     "website": "https://indy.fr",
     "category": "finance",
     "pricing": {
-      "free": "Formule gratuite très complète",
-      "paid": "20€/mois pour déclarations automatisées"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 9 €/mois, plan Plus."
     },
-    "description_fr": "Compta et facturation automatisées pour indépendants.",
-    "description_en": "Automated accounting and invoicing for freelancers.",
+    "description_fr": "Indy gère la facturation, les devis et la comptabilité des freelances français, avec les déclarations fiscales obligatoires incluses sur le forfait Premium.",
+    "description_en": "Indy handles invoicing, quotes and bookkeeping for French freelancers, with mandatory tax declarations added on the Premium plan.",
     "alternatives": [
       "indy"
     ]
@@ -7142,11 +7151,11 @@
     "website": "https://kubernetes.io",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Fully free and open source under Apache 2.0; costs come from the infrastructure or managed service running it",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Orchestration de containers pour workloads distribués et environnements complexes.",
-    "description_en": "Container orchestration for distributed workloads and complex environments."
+    "description_fr": "Kubernetes automatise le déploiement, la mise à l'échelle et l'auto-réparation d'applications conteneurisées ; le coût vient de l'infrastructure qui le fait tourner.",
+    "description_en": "Kubernetes automates the deployment, scaling and self-healing of containerized applications, with costs coming from the infrastructure that runs it."
   },
   {
     "name": "La Growth Machine",
@@ -7652,11 +7661,11 @@
     "website": "https://business.linkedin.com/talent-solutions/recruiter",
     "category": "hris-payroll",
     "pricing": {
-      "free": "Aucun plan gratuit (compte LinkedIn de base limité)",
-      "paid": "Lite ~148.92€/mois ; Corporate ~788.4-946.08€/mois/poste (annuel)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Recherche et sourcing de candidats sur LinkedIn, de Lite (170$/mois) à Corporate (~1000$/mois/poste).",
-    "description_en": "LinkedIn candidate search and sourcing, from Lite ($170/mo) to Corporate (~$1,000/mo/seat)."
+    "description_fr": "LinkedIn Recruiter permet de chercher des candidats dans le réseau LinkedIn et de les contacter via InMail, avec un tarif disponible uniquement sur devis.",
+    "description_en": "LinkedIn Recruiter searches LinkedIn's network for candidates and lets recruiters contact them via InMail, with pricing available only on quote."
   },
   {
     "name": "Linktree",
@@ -7722,11 +7731,11 @@
     "website": "https://localwp.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Toutes les fonctionnalités, y compris les extensions autrefois payantes de « Local Pro » (Live Links, Connect, Cloud Backups, Image Optimizer), sont gratuites pour tous les utilisateurs depuis Local 6.0.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Environnement local WordPress pour développer, tester et migrer sans casser le site.",
-    "description_en": "Local WordPress environment for developing, testing, and migrating safely."
+    "description_fr": "Local est une application de bureau gratuite pour construire, tester et sauvegarder des sites WordPress hors ligne, avec des liens en un clic pour les faire relire.",
+    "description_en": "Local is a free desktop app for building, testing and backing up WordPress sites offline, with one-click links to share a site for review."
   },
   {
     "name": "Logic Pro",
@@ -7915,11 +7924,11 @@
     "website": "https://lovable.dev",
     "category": "ai-general",
     "pricing": {
-      "free": "Gratuit : 5 messages/jour (≈ 30/mois), projects illimités publics, GitHub sync, one-click deploy.",
-      "paid": "Free: 0 $ (5 msgs/jour) ; Pro: 25 $/mois (100 msgs/mois avec credit variation) ; Business: 50 $/mois (illimité msgs) ; Student: 12,50 $/mois (first year Pro, -50 %)"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 25 $/mois, plan Pro."
     },
-    "description_fr": "AI web app builder : chat naturel → code React/Supabase generé en temps réel. Preview live, GitHub sync, one-click deployment. Crédits system (message complexity). Students : -50 % first year.",
-    "description_en": "AI web app builder: natural chat → real-time generated React/Supabase code. Live preview, GitHub sync, one-click deployment. Credits system (message complexity). Students: -50% first year."
+    "description_fr": "Lovable construit une application web à partir d'un prompt, hébergement Cloud inclus, facturé par un système de crédits dès 25 $/mois.",
+    "description_en": "Lovable builds a working web app from a chat prompt, with Cloud hosting included, billed through a credit system starting at $25/month."
   },
   {
     "name": "Ltk",
@@ -9028,11 +9037,11 @@
     "website": "https://www.move.ai",
     "category": "ai-general",
     "pricing": {
-      "free": "Accès via démo ; tarifs sur demande",
-      "paid": "Enterprise: Montants sur la page officielle (devis personnalisé)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Système de capture de mouvement sans marqueurs utilisant l'IA et plusieurs caméras pour capturer les mouvements humains sans tenues ni marqueurs physiques, destiné à la VFX, l'animation et les jeux vidéo.",
-    "description_en": "Markerless motion capture system using AI and multi-camera setup to capture human movement without physical suits or markers, designed for VFX, animation, and gaming."
+    "description_fr": "Capture de mouvement sans marqueurs pour les studios VFX et jeu vidéo, vendue uniquement via une démonstration commerciale, sans tarif public.",
+    "description_en": "Markerless motion capture for VFX and gaming studios, sold through a sales demo only, with no public pricing."
   },
   {
     "name": "MRPeasy",
@@ -9205,8 +9214,12 @@
     "url_en": "https://tooltrim.com/en/tool/netlify",
     "website": "https://netlify.com",
     "category": "nocode-web",
-    "description_fr": "Hébergement et déploiement JAMstack",
-    "description_en": "JAMstack hosting and deployment."
+    "pricing": {
+      "free": "Plan gratuit : 300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN",
+      "paid": "Dès 9 $/mois, plan Personal."
+    },
+    "description_fr": "Netlify héberge des applications web modernes avec déploiements Git, fonctions serverless, accès à des modèles IA et stockage, facturés via un forfait de crédits mensuels.",
+    "description_en": "Netlify hosts modern web apps with Git-based deploys, serverless functions, AI model access and storage, billed through a monthly credit allowance."
   },
   {
     "name": "NetSuite",
@@ -9582,11 +9595,11 @@
     "website": "https://www.onetrust.com",
     "category": "security",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "OneTrust aide à gérer accès, conformité ou sécurité dans une stack d’entreprise.",
-    "description_en": "AI-powered governance platform for managing data privacy, compliance, risk management, and AI governance in real-time across the organization."
+    "description_fr": "OneTrust automatise la gestion du consentement, les opérations de confidentialité, la gouvernance IA et le risque tiers via des modules séparés, vendu sur devis.",
+    "description_en": "OneTrust automates consent management, privacy operations, AI governance and third-party risk across separate modules, sold on a custom sales quote."
   },
   {
     "name": "Onramp Funds",
@@ -10311,11 +10324,11 @@
     "website": "https://www.php.net",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Fully free and open-source language, no paid tier for the language itself; costs come from hosting/infrastructure chosen separately.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Langage serveur central pour WordPress, WooCommerce et beaucoup de sites existants.",
-    "description_en": "Server language central to WordPress, WooCommerce, and many existing sites."
+    "description_fr": "PHP est un langage de script serveur gratuit et open source pour le web, utilisé pour créer des plateformes comme WordPress et WooCommerce.",
+    "description_en": "PHP is a free, open-source server-side scripting language for web development, widely used to build and run platforms like WordPress and WooCommerce."
   },
   {
     "name": "Pics.io",
@@ -10602,11 +10615,11 @@
     "website": " finances).",
     "category": "organization",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 7 jours sans carte bancaire",
-      "paid": "Core à 19$/mois (jusqu'à 9 clients actifs) ; Pro à 49$/mois (clients illimités, 30 contributeurs) ; Max à 199$/mois (tout illimité)"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Core."
     },
-    "description_fr": "Plateforme de gestion tout-en-un pour freelances (projets, tâches, facturation et CRM).",
-    "description_en": "All-in-one management platform for freelancers (projects, tasks, invoicing, and CRM)."
+    "description_fr": "Plutio est une plateforme tout-en-un pour indépendants et petites agences, combinant projets, facturation, propositions et portail client.",
+    "description_en": "Plutio is an all-in-one platform for freelancers and small agencies, combining projects, invoicing, proposals and a client portal."
   },
   {
     "name": "Podbean",
@@ -10616,11 +10629,11 @@
     "website": "https://podbean.com",
     "category": "creation",
     "pricing": {
-      "free": "5h stockage",
-      "paid": "9$/mois (Unlimited Audio)"
+      "free": "Plan gratuit : Basic free account with limited storage and features, cannot be downgraded back to after subscribing",
+      "paid": "Dès 12 $/mois, plan Unlimited Audio."
     },
-    "description_fr": "Hébergement podcast avec monétisation intégrée (dynamic ads, abonnements).",
-    "description_en": "Podcast hosting with built-in monetisation (dynamic ads, subscriptions).",
+    "description_fr": "Podbean héberge des podcasts et les distribue vers les principaux annuaires, avec insertion publicitaire et abonnements auditeurs intégrés sur les plans payants.",
+    "description_en": "Podbean hosts podcasts and distributes them to major directories, with built-in ad insertion and listener subscriptions on paid plans.",
     "alternatives": [
       "anchor-spotify"
     ]
@@ -11217,11 +11230,11 @@
     "website": "https://www.python.org",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Entièrement gratuit et open source sous la licence PSF, aucun palier payant pour le langage lui-même.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Langage polyvalent pour API, scripts, data, automatisation et IA.",
-    "description_en": "Versatile language for APIs, scripts, data, automation, and AI."
+    "description_fr": "Python est un langage de programmation généraliste, gratuit et open source, utilisé pour les backends web, l'automatisation, l'analyse de données et le machine learning.",
+    "description_en": "Python is a free, open source general-purpose programming language used for web backends, automation, data analysis and machine learning."
   },
   {
     "name": "Qdrant",
@@ -11287,11 +11300,11 @@
     "website": "https://www.quark.com/products/quarkxpress",
     "category": "publishing",
     "pricing": {
-      "free": "Pas de version gratuite. Accès payant uniquement via abonnement ou licence perpétuelle.",
-      "paid": "Abonnement annuel avec maintenance: 279 $ par an (inclut mises à jour et support) ; Licence perpétuelle: 699 $ (sans upgrades ni support après achat)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 23,25 $/mois, plan Prepaid Annual Subscription."
     },
-    "description_fr": "Logiciel de mise en page et publication assistée par ordinateur (PAO) professionnel pour la création de brochures, magazines, livres et documents multi-canal avec typographie avancée et style sheets.",
-    "description_en": "Professional desktop publishing (DTP) software for creating brochures, magazines, books, and multi-channel documents with advanced typography, style management, and collaborative workflows."
+    "description_fr": "QuarkXPress est un logiciel de PAO professionnel pour brochures, magazines et livres, vendu en abonnement annuel ou en licence perpétuelle à l'achat unique.",
+    "description_en": "QuarkXPress is professional desktop publishing software for brochures, magazines and books, sold either as an annual subscription or a one-time perpetual license."
   },
   {
     "name": "Quartile",
@@ -11329,11 +11342,11 @@
     "website": "https://quickbooks.intuit.com",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Plan gratuit : 1 user, 2 invoices/month, 1 bank connection, income/expense tracking and basic profit/loss reporting",
+      "paid": "Dès 38 $/mois, plan Simple Start."
     },
-    "description_fr": "Logiciel de comptabilité pour petites entreprises.",
-    "description_en": "Accounting software for small businesses."
+    "description_fr": "QuickBooks Online est le logiciel de comptabilité d'Intuit pour la facturation, le suivi des dépenses et le compte de résultat, avec des forfaits payants additionnels.",
+    "description_en": "QuickBooks Online is Intuit's cloud accounting software for invoicing, expense tracking and profit-and-loss reporting, with paid plans adding users, inventory and automation."
   },
   {
     "name": "QuickBooks Online",
@@ -11737,11 +11750,11 @@
     "website": "https://reflect.app",
     "category": "organization",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours.",
-      "paid": "10$/mois (100$/an en annuel, 120$/an en mensuel)."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 10 $/mois, plan Pro."
     },
-    "description_fr": "Notes networked avec IA intégrée et backlinks.",
-    "description_en": "Networked notes with built-in AI and backlinks."
+    "description_fr": "Reflect est une appli de notes en réseau avec liens retour, IA d'écriture et transcription vocale, à 12 $ par mois sans plan gratuit.",
+    "description_en": "Reflect is a networked note-taking app with backlinks, AI writing help and voice transcription, priced at one $12 monthly plan with no free tier."
   },
   {
     "name": "Relay",
@@ -11841,11 +11854,11 @@
     "website": "https://renderman.pixar.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Gratuit pour tous les usages non-commerciaux",
-      "paid": "Non-Commercial: Gratuit ; Professional License: USD 595 par licence (perpetual) ; Annual Maintenance: USD 250/an (support et upgrades)"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 595 $ (licence à vie), plan Commercial license."
     },
-    "description_fr": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.",
-    "description_en": "Pixar's professional rendering software delivering feature film quality. Used by Pixar in production. Offers free non-commercial rendering, flexible licensing (floating or node-locked) for professional use.",
+    "description_fr": "RenderMan, moteur de rendu de production de Pixar, offre le rendu par lots, gratuit en non commercial ou 595 $ en licence commerciale unique.",
+    "description_en": "RenderMan is Pixar's production renderer with batch rendering and render-farm management, free for non-commercial use or $595 one-time for a commercial license.",
     "alternatives": [
       "blender"
     ]
@@ -12034,11 +12047,11 @@
     "website": "https://autodesk.com/products/revit",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit disponible ; version gratuite inexistante, abonnement obligatoire",
-      "paid": "Revit Annual: USD 3005/an ; Revit Monthly: USD 380/mois ; Revit LT Annual: USD 560/an ; Revit LT Monthly: USD 70/mois"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 46,67 $/mois, plan Revit LT (annual subscription)."
     },
-    "description_fr": "Logiciel BIM (Building Information Modeling) d'Autodesk pour la conception architecturale, l'ingénierie et la gestion de projets bâtiment. Coordonne plans, élévations, coupes et planifications automatiquement.",
-    "description_en": "Autodesk's BIM (Building Information Modeling) software for architectural design, engineering, and building project management. Automatically coordinates plans, elevations, sections, and schedules."
+    "description_fr": "Autodesk Revit est un logiciel BIM par abonnement pour l'architecture, la structure et le génie technique, qui coordonne une maquette paramétrique unique entre disciplines.",
+    "description_en": "Autodesk Revit is subscription-only BIM software for architecture, structural and MEP design, coordinating a single parametric building model across disciplines."
   },
   {
     "name": "Rewardful",
@@ -12142,11 +12155,11 @@
     "website": "https://riverside.fm",
     "category": "communication",
     "pricing": {
-      "free": "2 h d'enregistrement multipiste au total, export 720p avec watermark",
-      "paid": "Standard : 15 $/mois annuel ou 19 $ mensuel, avec Magic Audio et export 4K"
+      "free": "Plan gratuit : 2 heures d'enregistrement multipiste au total, export vidéo jusqu'à 720p avec filigrane, enregistrement/montage monopiste illimité.",
+      "paid": "Dès 24 $/mois, plan Pro."
     },
-    "description_fr": "Enregistrement podcast et vidéo en qualité studio, à distance.",
-    "description_en": "Studio-quality podcast and video recording, remotely."
+    "description_fr": "Riverside enregistre des pistes audio/vidéo locales séparées par participant à distance jusqu'en 4K, avec 2h gratuites puis dès 29 $ par mois.",
+    "description_en": "Riverside records separate local audio/video tracks per remote participant in up to 4K, with a free 2-hour plan and paid tiers from $29 per month."
   },
   {
     "name": "Roam Research",
@@ -12767,11 +12780,11 @@
     "website": "https://ui.shadcn.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Composants React accessibles construits avec Radix UI et Tailwind CSS.",
-    "description_en": "Accessible React components built with Radix UI and Tailwind CSS."
+    "description_fr": "Collection de composants React accessibles et personnalisables, construite sur Radix UI et Tailwind CSS, distribuée en code source à copier-coller, gratuite.",
+    "description_en": "Accessible, customizable React component collection built on Radix UI and Tailwind CSS, distributed as copy-paste source code, free."
   },
   {
     "name": "Shared Cloud Folders",
@@ -12837,11 +12850,11 @@
     "website": "https://www.shine.fr",
     "category": "finance",
     "pricing": {
-      "free": "Outil de facturation gratuit",
-      "paid": "Compte pro à partir de 7,90€/mois HT selon formule"
+      "free": "Plan gratuit : 1 compte IBAN, 5 virements SEPA gratuits/mois (puis 0,40 € chacun), 1 Mastercard basique, cartes virtuelles optionnelles à 2 €/mois chacune",
+      "paid": "Dès 9 €/mois, plan Start."
     },
-    "description_fr": "Compte pro français avec facturation gratuite, devis, encaissement et suivi administratif.",
-    "description_en": "French business account with free invoicing, quotes, payments, and admin tracking."
+    "description_fr": "Shine est un compte bancaire professionnel français pour indépendants avec facturation gratuite, du plan gratuit à 60 €/mois pour une équipe complète.",
+    "description_en": "Shine is a French business bank account for freelancers with free invoicing, from a free plan to €60/month for a full team plan."
   },
   {
     "name": "ShipStation",
@@ -12918,11 +12931,11 @@
     "website": "https://www.shopify.com/payments",
     "category": "finance",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Pas de plan gratuit.",
+      "paid": "Plan Basic (online card rate) sur devis."
     },
-    "description_fr": "Paiement intégré Shopify pour cartes, checkout et gestion e-commerce.",
-    "description_en": "Built-in Shopify payment solution for cards, checkout, and commerce management."
+    "description_fr": "Shopify Payments traite les cartes et portefeuilles directement dans une boutique Shopify, à un taux fixé par le forfait d'abonnement de la boutique.",
+    "description_en": "Shopify Payments processes cards and wallets directly inside a Shopify store, at a rate set by the store's subscription plan."
   },
   {
     "name": "Shopmy",
@@ -13285,11 +13298,11 @@
     "website": "https://softr.io",
     "category": "automation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit : Up to 3 builders and 5 combined app users; no custom domain included.",
+      "paid": "Dès 19 $/mois, plan Basic."
     },
-    "description_fr": "Plateforme pour créer des outils internes et portails sans code.",
-    "description_en": "Platform for creating internal tools and portals without code."
+    "description_fr": "Softr est une plateforme no-code pour créer des outils internes, des portails client et des applications web au-dessus d'Airtable, Google Sheets ou de tables natives.",
+    "description_en": "Softr is a no-code platform for building internal tools, client portals and web apps on top of Airtable, Google Sheets or native tables."
   },
   {
     "name": "Soldo",
@@ -13408,11 +13421,11 @@
     "website": "https://spline.design",
     "category": "design-tools",
     "pricing": {
-      "free": "Fichiers personnels limités, viewers illimités, accès à la bibliothèque et exports web avec filigrane.",
-      "paid": "Free: 0 $ par mois ; Hobby: 12 $ par siège et par mois facturé annuellement, ou 15 $ en mensuel ; Pro: 25 $ par siège et par mois facturé annuellement, ou 30 $ en mensuel ; Max: 60 $ par siège et par mois facturé annuellement, ou 70 $ en mensuel ; Enterprise: Sur devis, facturation annuelle"
+      "free": "Plan gratuit : Limited number of personal files, unlimited viewers, access to the community asset library, web exports carry a watermark.",
+      "paid": "Dès 12 $/mois, plan Hobby."
     },
-    "description_fr": "Spline est une plateforme collaborative de création 2D et 3D interactive en temps réel. Elle permet de modéliser, animer et publier des expériences pour le web et, selon le plan, pour les plateformes Apple et Android.",
-    "description_en": "Spline is a collaborative platform for real-time interactive 2D and 3D creation. It lets teams model, animate, and publish experiences for the web and, depending on the plan, Apple and Android platforms.",
+    "description_fr": "Spline est un outil dans le navigateur pour créer des scènes 2D et 3D interactives, avec génération de médias par IA.",
+    "description_en": "Spline is a browser-based tool for building interactive 2D and 3D scenes, with AI-assisted media generation and export options that scale by plan.",
     "alternatives": [
       "Spline free"
     ]
@@ -13422,14 +13435,14 @@
     "slug": "spotify-for-podcasters",
     "url_fr": "https://tooltrim.com/fr/tool/spotify-for-podcasters",
     "url_en": "https://tooltrim.com/en/tool/spotify-for-podcasters",
-    "website": "https://podcasters.spotify.com",
+    "website": "https://creators.spotify.com",
     "category": "creation",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Plan gratuit : Outils gratuits d'hébergement et de distribution pour les créateurs de podcast, avec une monétisation optionnelle via le Spotify Partner Program",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Hébergement et distribution podcast gratuits par Spotify.",
-    "description_en": "Free podcast hosting and distribution by Spotify."
+    "description_fr": "Spotify for Creators est un outil gratuit d'hébergement et de distribution pour podcasts audio et vidéo, avec analytics intégrées et monétisation via le Partner Program.",
+    "description_en": "Spotify for Creators is a free hosting and distribution tool for audio and video podcasts, with built-in analytics and Partner Program monetization."
   },
   {
     "name": "Spotify for Podcasters",
@@ -13874,11 +13887,11 @@
     "website": "https://www.superlist.com",
     "category": "organization",
     "pricing": {
-      "free": "Gratuit pour individus et équipes",
-      "paid": "Plans équipe sur devis"
+      "free": "Plan gratuit : Up to 5 private/shared lists, up to 5 people per shared list, unlimited tasks and notes, 25MB uploads and 500MB storage.",
+      "paid": "Dès 4,92 $/mois, plan Basic."
     },
-    "description_fr": "Application de tâches personnelles et d'équipe avec IA — gratuite.",
-    "description_en": "Personal and team task app with AI — free.",
+    "description_fr": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois.",
+    "description_en": "Superlist is a task management app with shared lists and AI features, free for up to 5 lists then from $5 per month.",
     "alternatives": [
       "Superlist"
     ]
@@ -14014,11 +14027,11 @@
     "website": "https://sysaid.com",
     "category": "organization",
     "pricing": {
-      "free": "Aucun plan gratuit : SysAid propose uniquement un essai de 30 jours. Aucun accès permanent sans contrat.",
-      "paid": "Tarification sur devis. Tier Help Desk : environ 1 200–1 500 $/an pour 3 agents et 250 actifs (estimation marché). Tier ITSM et ITSM+ : à partir de ~3 000–6 000 $/an selon agents et modules. Déploiement on-premise et cloud disponibles à des tarifs différents."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 89 $/mois, plan Professional."
     },
-    "description_fr": "Logiciel ITSM (IT Service Management) avec helpdesk, gestion des actifs et workflows ITIL — prix sur devis uniquement.",
-    "description_en": "ITSM platform with help desk, asset management, and ITIL workflows — quote-only pricing."
+    "description_fr": "SysAid est une plateforme ITSM pour la gestion des incidents, changements, actifs et SLA, avec un AI Copilot intégré, facturée par agent dès 89 $/mois.",
+    "description_en": "SysAid is an ITSM platform for incident, change, asset and SLA management, with a built-in AI Copilot, priced per agent from $89/month."
   },
   {
     "name": "Systeme Io",
@@ -14326,11 +14339,11 @@
     "website": "https://thinkific.com",
     "category": "formation-education",
     "pricing": {
-      "free": "1 cours gratuit",
-      "paid": "36$/mois (Basic)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 40 $/mois, plan Basic."
     },
-    "description_fr": "Plateforme de création de cours en ligne avec branding personnalisé.",
-    "description_en": "Online course creation platform with custom branding."
+    "description_fr": "Thinkific héberge et vend des cours en ligne avec ecommerce et communauté intégrés, à partir de 54 $/mois après un essai de 30 jours.",
+    "description_en": "Thinkific hosts and sells online courses with built-in ecommerce and community features, starting at $54/month after a 30-day trial."
   },
   {
     "name": "Thirstyaffiliates",
@@ -14452,9 +14465,12 @@
     "url_en": "https://tooltrim.com/en/tool/tiktok-studio",
     "website": "https://tiktok.com/tiktok-studio",
     "category": "communication",
-    "pricing": "Gratuit, fourni par TikTok.",
-    "description_fr": "Application desktop de TikTok pour gérer sa chaîne, ses analytics et publier du contenu.",
-    "description_en": "TikTok's desktop app to manage your channel, analytics, and publish content."
+    "pricing": {
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "description_fr": "TikTok Studio est l'outil bureau gratuit de TikTok pour les analytics de chaîne, la gestion des commentaires et la planification sur comptes pro ou créateur.",
+    "description_en": "TikTok Studio is TikTok's free desktop tool for channel analytics, comment management and post scheduling on business or creator accounts."
   },
   {
     "name": "Timber",
@@ -14890,11 +14906,11 @@
     "website": "https://typeform.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 28 $/mois, plan Basic."
     },
-    "description_fr": "Outil en ligne de création de formulaires et enquêtes interactifs.",
-    "description_en": "Online tool for creating interactive forms and surveys."
+    "description_fr": "Créateur de formulaires et d'enquêtes interactifs et conversationnels avec logique conditionnelle, gratuit jusqu'à 100 réponses par mois.",
+    "description_en": "Interactive, conversational form and survey builder with conditional logic, free up to 100 responses a month."
   },
   {
     "name": "Typefully",
@@ -15796,11 +15812,11 @@
     "website": "https://workable.com",
     "category": "organization",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 15 jours sans carte bancaire",
-      "paid": "Starter à 149$/mois ; Standard à 299$/mois (jusqu'à 20 employés, ~500$/mois au-delà) ; Premier à 599$/mois ; Enterprise à 719$/mois. Tarif basé sur l'effectif total de l'entreprise, pas sur le nombre de sièges."
+      "free": "Pas de plan gratuit permanent, essai de 15 jours.",
+      "paid": "Dès 299 $/mois, plan Standard."
     },
-    "description_fr": "ATS tout-en-un avec sourcing IA, job boards et onboarding.",
-    "description_en": "All-in-one ATS with AI sourcing, job boards, and onboarding."
+    "description_fr": "Workable est un logiciel de recrutement et RH qui combine sourcing, suivi des candidatures, onboarding et gestion des congés pour les petites entreprises.",
+    "description_en": "Workable combines an applicant tracking system with HR tools: AI sourcing, hiring pipelines, onboarding and time-off management for small companies."
   },
   {
     "name": "Workday",
@@ -16017,11 +16033,11 @@
     "website": "https://studio.youtube.com",
     "category": "communication",
     "pricing": {
-      "free": "Gratuit, sans limite. Pas un abonnement : c'est l'interface de gestion de la chaîne YouTube.",
-      "paid": "Pas de version payante de YouTube Studio lui-même. La monétisation (Partner Program) dépend de seuils d'audience, pas d'un paiement."
+      "free": "Plan gratuit : Fully free channel management, analytics, upload and editing interface; no paid tier of YouTube Studio itself.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Outil de gestion de chaîne YouTube, gratuit ; la monétisation a ses propres seuils.",
-    "description_en": "Free YouTube channel management tool; monetization has its own thresholds."
+    "description_fr": "YouTube Studio est le tableau de bord gratuit de Google pour publier, modifier et analyser ses vidéos. La monétisation dépend du Partner Program.",
+    "description_en": "YouTube Studio is Google's free dashboard for uploading, editing and analyzing videos. Monetization depends on meeting Partner Program eligibility thresholds."
   },
   {
     "name": "Zapier",
@@ -16093,11 +16109,11 @@
     "website": "https://zed.dev/",
     "category": "ai-general",
     "pricing": {
-      "free": "Complètement gratuit et open-source. Pas de limitation fonctionnelle. Développé par Zed Industries.",
-      "paid": "Zed Free: Gratuit et open-source"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 10 $/mois, plan Pro."
     },
-    "description_fr": "Éditeur de code moderne open-source écrit en Rust pour Linux, macOS et Windows. Créé par Nathan Sobo, co-créateur d'Atom. Conçu pour performance maximale avec collaboration en temps réel et fonctionnalités IA.",
-    "description_en": "Modern open-source code editor written in Rust for Linux, macOS, and Windows. Created by Nathan Sobo, co-creator of Atom. Designed for maximum performance with real-time collaboration and AI features."
+    "description_fr": "Éditeur de code rapide écrit en Rust, avec collaboration en temps réel et prédictions d'édition IA intégrées, gratuit avec une offre Pro payante en option.",
+    "description_en": "Fast, Rust-built code editor with built-in real-time collaboration and AI edit predictions, free with an optional paid Pro plan."
   },
   {
     "name": "Zelt",

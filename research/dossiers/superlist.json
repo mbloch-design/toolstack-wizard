@@ -3,7 +3,7 @@
   "slug": "superlist",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Superlist",
     "vendor": "Superlist GmbH",
@@ -110,7 +110,7 @@
     "cautions": [
       {
         "en": "Annual per-seat prices were derived from the stated yearly totals ($59/year for Basic, $249/year for Super) divided by 12; the page lists these as yearly amounts rather than an explicit monthly-equivalent figure.",
-        "fr": null,
+        "fr": "Les prix annuels par siège ont été calculés en divisant par 12 les montants annuels affichés (59 $/an pour Basic, 249 $/an pour Super) ; la page les présente comme des montants annuels plutôt qu'un équivalent mensuel explicite.",
         "sourceIds": [
           "s1"
         ]
@@ -163,14 +163,14 @@
       "slug": "todoist",
       "reason": {
         "en": "Direct competitor task-management app with a comparable free tier and paid plans.",
-        "fr": null
+        "fr": "Application de gestion de tâches concurrente directe, avec un palier gratuit comparable et des plans payants."
       }
     },
     {
       "slug": "notion",
       "reason": {
         "en": "Broader workspace tool frequently used for task lists and personal/team organization.",
-        "fr": null
+        "fr": "Outil de travail plus large, fréquemment utilisé pour les listes de tâches et l'organisation personnelle ou d'équipe."
       }
     }
   ],
@@ -184,5 +184,121 @@
   "unknowns": [
     "Whether 'unlimited team members' on paid plans has any soft cap or fair-use limit was not stated on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A solo operator or small team lead who wants a straightforward shared task list with AI meeting notes and voice capture.",
+      "fr": "Une personne solo ou responsable d'une petite équipe qui veut une liste de tâches partagée simple avec notes de réunion IA et capture vocale."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Shared team lists: coordinate a small team's tasks in shared lists with AI meeting notes and Slack or email task summarization on paid plans.",
+      "fr": "Listes partagées en équipe : coordonner les tâches d'une petite équipe dans des listes partagées avec notes de réunion IA et résumé des tâches Slack ou email sur les plans payants."
+    },
+    {
+      "en": "Personal task capture: capture tasks by voice or quick note on the free plan's up to 5 lists for personal organization.",
+      "fr": "Capture personnelle de tâches : capturer des tâches par la voix ou une note rapide sur les 5 listes du plan gratuit pour s'organiser au quotidien."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Basic plan at $5/month (or $4.92 billed yearly) removes the free plan's list/member caps cheaply, though AI meeting notes and chat require the pricier Super tier.",
+        "fr": "Le plan Basic à 5 $/mois (ou 4,92 $ en annuel) lève à bas coût les plafonds de listes et de membres du plan gratuit, même si les notes de réunion et le chat IA nécessitent le plan Super plus cher.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Shared lists, sublists and voice-to-task capture are usable directly from native apps across macOS, iOS, Android and web.",
+        "fr": "Les listes partagées, sous-listes et la capture de tâches par la voix sont utilisables directement depuis les applications natives macOS, iOS, Android et web.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers shared and private task lists plus the described AI features (meeting notes, chat, summarization) as advertised on the plans that include them.",
+        "fr": "Tient sa promesse de listes de tâches partagées et privées, et des fonctions IA décrites (notes de réunion, chat, résumé) sur les plans qui les incluent.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers personal and team task management well, but storage and upload limits stay modest (100MB uploads, 25GB storage) even on Basic compared to general-purpose tools.",
+        "fr": "Couvre bien la gestion de tâches personnelle et d'équipe, mais les limites de stockage et d'upload restent modestes (uploads 100 Mo, stockage 25 Go) même sur Basic, comparé à des outils généralistes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability when leaving Superlist are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en quittant Superlist ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Task management",
+      "fr": "Gestion de tâches"
+    },
+    "shortDescription": {
+      "en": "Superlist is a task management app with shared lists and AI features, free for up to 5 lists then from $5 per month.",
+      "fr": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois."
+    },
+    "longDescription": {
+      "en": "Superlist is a task management app with shared and private lists and sublists, built with native apps for macOS, iOS, Android and web. Paid plans add AI features: voice-to-task capture, AI meeting notes, AI chat and email or Slack task summarization.\n\nThe free plan caps out at 5 lists and 5 people per shared list with 500MB storage, which is tight for a growing team; Basic starts at $5/month ($4.92/month billed yearly) and removes those caps, while Super at $21/month adds unlimited AI meeting notes and chat. It suits individuals and small teams organizing personal and shared tasks together.",
+      "fr": "Superlist est une application de gestion de tâches avec listes partagées et privées et sous-listes, avec des apps natives macOS, iOS, Android et web. Les plans payants ajoutent des fonctions IA : capture de tâches par la voix, notes de réunion IA, chat IA et résumé des tâches par email ou Slack.\n\nLe plan gratuit est plafonné à 5 listes et 5 personnes par liste partagée avec 500 Mo de stockage, ce qui devient juste pour une équipe qui grandit ; Basic démarre à 5 $/mois (4,92 $ en annuel) et lève ces plafonds, tandis que Super à 21 $/mois ajoute notes de réunion et chat IA illimités. L'outil convient aux individus et petites équipes."
+    },
+    "pros": [
+      {
+        "en": "Unlimited team members and lists once on a paid plan, not gated further by seats.",
+        "fr": "Membres et listes illimités une fois sur un plan payant, sans restriction supplémentaire par siège."
+      },
+      {
+        "en": "Native apps across macOS, iOS, Android and web keep tasks in sync everywhere.",
+        "fr": "Des applications natives macOS, iOS, Android et web gardent les tâches synchronisées partout."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan caps out at 5 lists and 5 people per shared list, tight for a growing team.",
+        "fr": "Le plan gratuit est plafonné à 5 listes et 5 personnes par liste partagée, ce qui devient juste pour une équipe qui grandit."
+      },
+      {
+        "en": "Storage and upload limits stay modest even on Basic (100MB uploads, 25GB storage).",
+        "fr": "Les limites de stockage et d'upload restent modestes même sur Basic (uploads 100 Mo, stockage 25 Go)."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a straightforward shared task list for a small team or yourself and want AI meeting notes or voice capture without paying for unlimited AI chat.",
+        "fr": "Tu as besoin d'une liste de tâches partagée simple pour une petite équipe ou toi-même et veux des notes de réunion ou une capture vocale IA sans payer pour un chat IA illimité."
+      },
+      "avoidIf": {
+        "en": "You're already past 5 shared-list members and need more than modest storage, since the free plan's caps make Basic the real starting point.",
+        "fr": "Tu dépasses déjà 5 membres sur une liste partagée et as besoin de plus qu'un stockage modeste, car les plafonds du plan gratuit font de Basic le vrai point de départ."
+      },
+      "threshold": {
+        "en": "The Basic plan at $5/month ($4.92/month billed yearly) is the entry point once the free plan's 5-list, 5-person cap is reached.",
+        "fr": "Le plan Basic à 5 $/mois (4,92 $/mois en annuel) est le seuil d'entrée une fois le plafond de 5 listes et 5 personnes du plan gratuit atteint."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Annual per-seat prices ($4.92 Basic, $20.75 Super) were calculated by dividing the page's stated yearly totals ($59, $249) by 12 rather than read as an explicit monthly-equivalent figure; confirm directly on superlist.com/pricing."
+  ],
+  "completedLocallyOn": "2026-10-01"
 }

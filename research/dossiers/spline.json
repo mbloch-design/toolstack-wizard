@@ -3,7 +3,8 @@
   "slug": "spline",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Spline",
     "vendor": "Spline",
@@ -34,7 +35,7 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Limited personal files, unlimited viewers, community asset library, watermarked web exports.", "fr": null }
+          { "en": "Limited personal files, unlimited viewers, community asset library, watermarked web exports.", "fr": "Nombre limité de fichiers personnels, visionneurs illimités, bibliothèque d'assets communautaire, exports web avec filigrane." }
         ],
         "sourceIds": ["s1"]
       },
@@ -46,7 +47,7 @@
         "price": { "monthly": 15, "annualPerMonth": 12, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Unlimited files, 2,000 monthly AI credits included; annual billing saves $36/seat/year (2 months free) versus monthly.", "fr": null }
+          { "en": "Unlimited files, 2,000 monthly AI credits included; annual billing saves $36/seat/year (2 months free) versus monthly.", "fr": "Fichiers illimités, 2 000 crédits IA mensuels inclus ; l'engagement annuel fait économiser 36 $/siège/an (2 mois gratuits) par rapport au mensuel." }
         ],
         "sourceIds": ["s1"]
       },
@@ -58,7 +59,7 @@
         "price": { "monthly": 30, "annualPerMonth": 25, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "3,000 monthly AI credits included, progressively unlocks iOS/Android/GLTF/USDZ/STL export formats; annual billing saves $60/seat/year.", "fr": null }
+          { "en": "3,000 monthly AI credits included, progressively unlocks iOS/Android/GLTF/USDZ/STL export formats; annual billing saves $60/seat/year.", "fr": "3 000 crédits IA mensuels inclus, débloque progressivement les formats d'export iOS/Android/GLTF/USDZ/STL ; l'engagement annuel fait économiser 60 $/siège/an." }
         ],
         "sourceIds": ["s1"]
       },
@@ -70,7 +71,7 @@
         "price": { "monthly": 70, "annualPerMonth": 60, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "10,000 monthly AI credits included, 5x more media generation per week than lower tiers; annual billing saves $120/seat/year.", "fr": null }
+          { "en": "10,000 monthly AI credits included, 5x more media generation per week than lower tiers; annual billing saves $120/seat/year.", "fr": "10 000 crédits IA mensuels inclus, 5 fois plus de génération de médias par semaine que les forfaits inférieurs ; l'engagement annuel fait économiser 120 $/siège/an." }
         ],
         "sourceIds": ["s1"]
       },
@@ -82,7 +83,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Custom AI credit allotment, adds code exports and self-hosted deployment options; annual billing only, custom quote.", "fr": null }
+          { "en": "Custom AI credit allotment, adds code exports and self-hosted deployment options; annual billing only, custom quote.", "fr": "Allocation de crédits IA personnalisée, ajoute l'export de code et des options de déploiement auto-hébergé ; facturation annuelle uniquement, sur devis." }
         ],
         "sourceIds": ["s1"]
       }
@@ -90,29 +91,82 @@
     "comparePlanKey": "hobby",
     "addOns": [],
     "cautions": [
-      { "en": "AI credits (image/media generation) are metered separately per plan and can be a hidden cost driver beyond the base seat price.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "AI credits (image/media generation) are metered separately per plan and can be a hidden cost driver beyond the base seat price.", "fr": "Les crédits IA (génération d'images/médias) sont facturés à part selon le forfait et peuvent faire grimper la facture au-delà du prix de base du siège.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Real-time collaborative 2D and 3D scene creation with modeling, texturing and animation tools in the browser.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Interactive publishing: exported scenes respond to user input (mouse, scroll, events) for embedding in web experiences.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI-assisted media generation (credits-based) for textures, materials or assets within the editor.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Export to multiple formats depending on plan, including GLTF, USDZ, STL and native iOS/Android integration on higher tiers.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Real-time collaborative 2D and 3D scene creation with modeling, texturing and animation tools in the browser.", "fr": "Création collaborative en temps réel de scènes 2D et 3D avec modélisation, texturage et animation dans le navigateur.", "sourceIds": ["s1"] },
+      { "en": "Interactive publishing: exported scenes respond to user input (mouse, scroll, events) for embedding in web experiences.", "fr": "Publication interactive : les scènes exportées réagissent aux actions de l'utilisateur (souris, défilement, événements) pour s'intégrer dans un site.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted media generation (credits-based) for textures, materials or assets within the editor.", "fr": "Génération de médias assistée par IA (facturée en crédits) pour textures, matériaux ou assets directement dans l'éditeur.", "sourceIds": ["s1"] },
+      { "en": "Export to multiple formats depending on plan, including GLTF, USDZ, STL and native iOS/Android integration on higher tiers.", "fr": "Export vers plusieurs formats selon le forfait, dont GLTF, USDZ, STL et une intégration native iOS/Android sur les forfaits supérieurs.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan limits the number of personal files and adds a watermark to web exports.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Code exports and self-hosted deployment are Enterprise-only, unavailable on Hobby/Pro/Max plans.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Free plan limits the number of personal files and adds a watermark to web exports.", "fr": "Le forfait gratuit limite le nombre de fichiers personnels et ajoute un filigrane aux exports web.", "sourceIds": ["s1"] },
+      { "en": "Code exports and self-hosted deployment are Enterprise-only, unavailable on Hobby/Pro/Max plans.", "fr": "L'export de code et le déploiement auto-hébergé sont réservés à Enterprise, indisponibles sur Hobby/Pro/Max.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designer building interactive 3D or animated content for websites and product experiences, alone or with a small team.",
+      "fr": "Designer qui conçoit du contenu 3D interactif ou animé pour des sites web et des expériences produit, seul ou en petite équipe."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: design an interactive 3D scene in the browser and embed it in a website to replace a static hero image.", "fr": "Usage : concevoir une scène 3D interactive dans le navigateur et l'intégrer à un site pour remplacer une image statique en en-tête." },
+    { "en": "Use: prototype an animated UI or product visualization collaboratively with teammates in real time.", "fr": "Usage : prototyper une interface animée ou une visualisation produit en collaboration en temps réel avec son équipe." }
+  ],
   "alternatives": [
-    { "slug": "blender", "reason": { "en": "Full-featured free 3D creation suite, a common alternative for 3D modeling and animation work.", "fr": null } },
-    { "slug": "framer", "reason": { "en": "Interactive web design tool that overlaps with Spline for building interactive, animated web experiences.", "fr": null } },
-    { "slug": "rive", "reason": { "en": "Real-time interactive animation tool, direct competitor for embeddable interactive graphics.", "fr": null } }
+    { "slug": "blender", "reason": { "en": "Full-featured free 3D creation suite, a common alternative for 3D modeling and animation work.", "fr": "Suite de création 3D gratuite et complète, une alternative courante pour la modélisation et l'animation 3D." } },
+    { "slug": "framer", "reason": { "en": "Interactive web design tool that overlaps with Spline for building interactive, animated web experiences.", "fr": "Outil de design web interactif qui recouvre Spline pour construire des expériences web animées et interactives." } },
+    { "slug": "rive", "reason": { "en": "Real-time interactive animation tool, direct competitor for embeddable interactive graphics.", "fr": "Outil d'animation interactive en temps réel, concurrent direct pour les graphismes interactifs intégrables." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "Paid seats start low ($12/month annually) and bundle real-time collaboration with interactive publishing, but AI credits are metered separately and can add unpredictable extra cost.", "fr": "Les sièges payants démarrent bas (12 $/mois en engagement annuel) et combinent collaboration en temps réel et publication interactive, mais les crédits IA sont facturés à part et peuvent ajouter un coût imprévisible.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed for a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The tool delivers its stated promise of real-time collaborative 2D/3D creation and interactive publishing that reacts to user input, without a documented need for third-party tools.", "fr": "L'outil tient sa promesse de création collaborative 2D/3D en temps réel et de publication interactive qui réagit aux actions de l'utilisateur, sans besoin documenté d'outil tiers.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines real-time 2D/3D modeling, texturing, animation, interactive publishing and AI-assisted media generation, with export to GLTF, USDZ, STL and native iOS/Android on higher tiers.", "fr": "Combine modélisation 2D/3D en temps réel, texturage, animation, publication interactive et génération de médias par IA, avec export vers GLTF, USDZ, STL et intégration native iOS/Android sur les forfaits supérieurs.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Code export and self-hosted deployment, the paths that avoid lock-in to Spline's own viewer, are reserved for the custom-quoted Enterprise plan and unavailable on Hobby, Pro or Max.", "fr": "L'export de code et le déploiement auto-hébergé, les options qui évitent la dépendance au visualiseur de Spline, sont réservés au forfait Enterprise sur devis et indisponibles sur Hobby, Pro ou Max.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "3D design tool", "fr": "Outil de design 3D" },
+    "shortDescription": {
+      "en": "Spline is a browser-based tool for building interactive 2D and 3D scenes, with AI-assisted media generation and export options that scale by plan.",
+      "fr": "Spline est un outil dans le navigateur pour créer des scènes 2D et 3D interactives, avec génération de médias par IA."
+    },
+    "longDescription": {
+      "en": "Spline lets teams model, texture and animate 2D and 3D scenes together in the browser, then publish them as interactive content that reacts to clicks, scroll and other input directly on a website. AI-assisted generation can produce textures or assets inside the editor, metered by monthly credits.\n\nThe free plan covers light personal use with a watermark; paid seats start at $12/month billed annually and add unlimited files plus AI credits, with export formats such as iOS, Android, GLTF and USDZ unlocking progressively on higher tiers. Code export and self-hosting are reserved for the custom-quoted Enterprise plan.",
+      "fr": "Spline permet de modéliser, texturer et animer des scènes 2D et 3D en équipe directement dans le navigateur, puis de les publier en contenu interactif qui réagit aux clics, au défilement et à d'autres entrées sur un site. La génération assistée par IA peut créer textures ou éléments dans l'éditeur, facturée en crédits mensuels.\n\nLe forfait gratuit couvre un usage personnel léger avec filigrane ; les sièges payants démarrent à 12 $/mois en engagement annuel et ajoutent des fichiers illimités plus des crédits IA, les formats d'export comme iOS, Android, GLTF et USDZ se débloquant progressivement sur les forfaits supérieurs. L'export de code et l'auto-hébergement sont réservés au forfait Enterprise sur devis."
+    },
+    "pros": [
+      { "en": "Real-time collaboration and interactive publishing in one browser-based tool, no separate embed framework needed.", "fr": "Collaboration en temps réel et publication interactive réunies dans un seul outil navigateur, sans framework d'intégration séparé." },
+      { "en": "Annual billing saves two months per seat on every paid tier.", "fr": "L'engagement annuel fait économiser deux mois par siège sur chaque forfait payant." }
+    ],
+    "cons": [
+      { "en": "AI credits are metered separately per plan and can add cost beyond the base seat price.", "fr": "Les crédits IA sont facturés à part selon le forfait et peuvent faire grimper la facture au-delà du prix de base." },
+      { "en": "Code export and self-hosting are locked behind the custom-quoted Enterprise plan.", "fr": "L'export de code et l'auto-hébergement ne sont accessibles qu'au forfait Enterprise sur devis." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You design interactive 3D or animated web content and want modeling, animation and publishing in one browser tool.", "fr": "Tu conçois du contenu web 3D interactif ou animé et tu veux modélisation, animation et publication dans un seul outil navigateur." },
+      "avoidIf": { "en": "You need code export or self-hosted delivery without paying for a custom Enterprise quote.", "fr": "Tu as besoin d'export de code ou d'un hébergement autonome sans passer par un devis Enterprise." },
+      "threshold": { "en": "Budget at least $12/month per seat (annual billing) for unlimited files and 2,000 AI credits; heavy AI media generation can push the real cost toward the $25 or $60 tiers.", "fr": "Prévois au moins 12 $/mois par siège (engagement annuel) pour des fichiers illimités et 2 000 crédits IA ; une génération IA intensive peut faire monter le coût réel vers les forfaits à 25 $ ou 60 $." },
+      "billingTraps": { "en": "AI credits are a separate metered cost on top of the seat price, and annual billing is required to reach the lowest per-seat rate.", "fr": "Les crédits IA s'ajoutent au prix du siège en facturation séparée, et l'engagement annuel est nécessaire pour obtenir le tarif par siège le plus bas." }
+    }
+  },
   "unknowns": [],
   "conflicts": []
 }

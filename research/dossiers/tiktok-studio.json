@@ -3,7 +3,8 @@
   "slug": "tiktok-studio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "TikTok Studio",
     "vendor": "TikTok (ByteDance)",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Full channel management, analytics, comment management and scheduling included at no cost", "sourceIds": ["s2"] }], "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": [{ "en": "Full channel management, analytics, comment management and scheduling included at no cost", "fr": "Gestion complète de la chaîne, analytics, gestion des commentaires et planification incluses sans coût", "sourceIds": ["s2"] }], "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +36,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Requires a TikTok business or creator account for post scheduling; personal accounts lack scheduling", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Requires a TikTok business or creator account for post scheduling; personal accounts lack scheduling", "fr": "Nécessite un compte TikTok professionnel ou créateur pour planifier des publications ; les comptes personnels ne peuvent pas planifier", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       }
     ],
@@ -45,21 +46,82 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Desktop channel management with analytics (views, follower growth, per-video engagement)", "sourceIds": ["s2"] },
-      { "en": "Post scheduling up to 10 days in advance for business/creator accounts", "sourceIds": ["s2"] },
-      { "en": "Comments manager for replying to and moderating comments from desktop", "sourceIds": ["s2"] }
+      { "en": "Desktop channel management with analytics (views, follower growth, per-video engagement)", "fr": "Gestion de chaîne depuis le bureau avec analytics (vues, croissance des abonnés, engagement par vidéo)", "sourceIds": ["s2"] },
+      { "en": "Post scheduling up to 10 days in advance for business/creator accounts", "fr": "Planification des publications jusqu'à 10 jours à l'avance pour les comptes professionnels/créateurs", "sourceIds": ["s2"] },
+      { "en": "Comments manager for replying to and moderating comments from desktop", "fr": "Gestionnaire de commentaires pour répondre et modérer depuis le bureau", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Post scheduling requires a business or creator account; personal accounts cannot schedule", "sourceIds": ["s2"] },
-      { "en": "Scheduled posts cannot be edited after the fact; they must be deleted and re-uploaded to make changes", "sourceIds": ["s2"] }
+      { "en": "Post scheduling requires a business or creator account; personal accounts cannot schedule", "fr": "La planification des publications nécessite un compte professionnel ou créateur ; les comptes personnels ne le peuvent pas", "sourceIds": ["s2"] },
+      { "en": "Scheduled posts cannot be edited after the fact; they must be deleted and re-uploaded to make changes", "fr": "Les publications planifiées ne peuvent pas être modifiées après coup ; il faut les supprimer et les reposter pour faire un changement", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator who manages their TikTok channel's posting schedule, comments and performance from a desktop instead of only the mobile app.",
+      "fr": "Un créateur de contenu qui gère la planification, les commentaires et les performances de sa chaîne TikTok depuis un ordinateur plutôt que seulement l'application mobile."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a creator schedules a week of TikTok posts from the desktop app instead of uploading each one manually from a phone.",
+      "fr": "Usage : un créateur planifie une semaine de publications TikTok depuis l'application bureau plutôt que de poster chacune manuellement depuis un téléphone."
+    },
+    {
+      "en": "Usage: a creator checks per-video engagement in the analytics dashboard to see which recent post drove the most follower growth.",
+      "fr": "Usage : un créateur vérifie l'engagement par vidéo dans le tableau de bord analytics pour voir quelle publication récente a généré le plus de croissance d'abonnés."
+    }
+  ],
   "alternatives": [
-    { "slug": "youtube-studio", "reason": { "en": "Equivalent first-party channel management and analytics dashboard for another short-video platform" } }
+    { "slug": "youtube-studio", "reason": { "en": "Equivalent first-party channel management and analytics dashboard for another short-video platform", "fr": "Tableau de bord de gestion de chaîne et d'analytics équivalent, propre à une autre plateforme vidéo" } },
+    { "slug": "buffer", "reason": { "en": "Cross-platform scheduling and analytics tool that can cover the same post-scheduling need across TikTok and other networks", "fr": "Outil de planification et d'analytics multi-plateformes qui peut couvrir le même besoin de planification sur TikTok et d'autres réseaux" } },
+    { "slug": "later", "reason": { "en": "Social media scheduler with analytics that covers TikTok alongside other platforms from one dashboard", "fr": "Planificateur de réseaux sociaux avec analytics qui couvre TikTok en plus d'autres plateformes depuis un seul tableau de bord" } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Full channel management, analytics and scheduling are included at no cost, which removes the need to pay for a third-party scheduler just for TikTok.", "fr": "La gestion de chaîne, les analytics et la planification sont inclus sans coût, ce qui évite de payer un planificateur tiers juste pour TikTok.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "It runs as a desktop extension of the existing TikTok account, with no separate signup or setup described beyond having a business or creator account.", "fr": "Il fonctionne comme une extension bureau du compte TikTok existant, sans inscription ni configuration séparée décrite au-delà d'avoir un compte professionnel ou créateur.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Scheduling works but with a real workaround: a scheduled post can't be edited and must be deleted and re-uploaded to change it.", "fr": "La planification fonctionne mais avec un vrai contournement : une publication planifiée ne peut pas être modifiée, il faut la supprimer et la reposter pour la changer.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Scheduling is capped at 10 days in advance and requires a business/creator account, a narrower ceiling than cross-platform schedulers that plan further out.", "fr": "La planification est limitée à 10 jours à l'avance et nécessite un compte professionnel/créateur, un plafond plus restreint que des planificateurs multi-plateformes qui programment plus loin.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: data export or portability of analytics and content outside TikTok Studio is not covered by the collected sources.", "fr": "Note neutre : l'export ou la portabilité des données analytics et du contenu hors de TikTok Studio ne figurent pas dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "TikTok channel manager", "fr": "Gestion chaîne TikTok" },
+    "shortDescription": {
+      "en": "TikTok Studio is TikTok's free desktop tool for channel analytics, comment management and post scheduling on business or creator accounts.",
+      "fr": "TikTok Studio est l'outil bureau gratuit de TikTok pour les analytics de chaîne, la gestion des commentaires et la planification sur comptes pro ou créateur."
+    },
+    "longDescription": {
+      "en": "TikTok Studio is TikTok's own desktop tool for managing a channel: analytics on views, follower growth and per-video engagement, a comments manager, and post scheduling up to 10 days in advance for business or creator accounts.\n\nIt's free, with no paid tier, since it's a first-party extension of a TikTok account rather than a standalone product. The main catch is that scheduled posts can't be edited once set, only deleted and re-uploaded, and scheduling itself requires a business or creator account rather than a personal one. It suits a creator managing their own channel from a desktop rather than a team running multiple brand accounts.",
+      "fr": "TikTok Studio est l'outil bureau propre à TikTok pour gérer une chaîne : analytics sur les vues, la croissance des abonnés et l'engagement par vidéo, un gestionnaire de commentaires, et la planification de publications jusqu'à 10 jours à l'avance pour les comptes professionnels ou créateurs.\n\nIl est gratuit, sans forfait payant, puisqu'il s'agit d'une extension propre à TikTok d'un compte existant plutôt qu'un produit autonome. Le principal piège est qu'une publication planifiée ne peut pas être modifiée une fois programmée, seulement supprimée et repostée, et la planification elle-même demande un compte professionnel ou créateur plutôt qu'un compte personnel. Il convient à un créateur qui gère sa chaîne depuis un ordinateur, plutôt qu'à une équipe gérant plusieurs comptes de marque."
+    },
+    "pros": [
+      { "en": "Full channel management, analytics and scheduling are free, with no paid tier to unlock any of it.", "fr": "La gestion de chaîne, les analytics et la planification sont gratuits, sans forfait payant à débloquer." },
+      { "en": "Runs as a direct extension of the TikTok account, so there's no separate login or data sync to manage.", "fr": "Fonctionne comme une extension directe du compte TikTok, sans connexion ni synchronisation de données séparée à gérer." }
+    ],
+    "cons": [
+      { "en": "A scheduled post can't be edited; it has to be deleted and re-uploaded to change anything.", "fr": "Une publication planifiée ne peut pas être modifiée ; il faut la supprimer et la reposter pour changer quoi que ce soit." },
+      { "en": "Scheduling only works on business or creator accounts, not personal ones.", "fr": "La planification ne fonctionne que sur les comptes professionnels ou créateurs, pas sur les comptes personnels." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You manage your own TikTok channel and want free scheduling and analytics without a third-party tool.", "fr": "Tu gères ta propre chaîne TikTok et tu veux la planification et les analytics gratuitement, sans outil tiers." },
+      "avoidIf": { "en": "You need to schedule across TikTok and other platforms from one dashboard, or need to edit a scheduled post without redoing it.", "fr": "Tu dois planifier sur TikTok et d'autres plateformes depuis un seul tableau de bord, ou modifier une publication planifiée sans tout refaire." },
+      "threshold": { "en": "No cost threshold applies: the tool is entirely free, so the deciding factor is whether its scheduling limits fit your workflow.", "fr": "Aucun seuil de coût ne s'applique : l'outil est entièrement gratuit, le facteur décisif est de savoir si ses limites de planification conviennent à ton flux de travail." }
+    }
+  },
   "unknowns": ["The official tiktok.com/tiktok-studio page renders via JavaScript and did not return readable content directly; facts here rely on a secondary source", "Exact monetization tool details and full analytics feature list not confirmed from a primary source"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

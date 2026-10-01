@@ -3,7 +3,8 @@
   "slug": "python",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Python",
     "vendor": "Python Software Foundation",
@@ -25,36 +26,95 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Fully free and open source under the PSF license, no paid tier for the language itself", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Fully free and open source under the PSF license, no paid tier for the language itself.",
+        "fr": "Entièrement gratuit et open source sous la licence PSF, aucun palier payant pour le langage lui-même."
+      },
+      "sourceIds": ["s1"]
+    },
     "trial": null,
     "plans": [],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Python itself is free; costs come from hosting, managed runtimes or third-party libraries used alongside it, none of which are set by the Python Software Foundation.", "sourceIds": ["s1"] }
+      { "en": "Python itself is free; costs come from hosting, managed runtimes or third-party libraries used alongside it, none of which are set by the Python Software Foundation.", "fr": "Python lui-même est gratuit ; les coûts viennent de l'hébergement, des environnements managés ou des bibliothèques tierces utilisées à côté, qui ne sont fixés par la Python Software Foundation.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "General-purpose programming language used for web backends, scripts, automation, data analysis and machine learning.", "sourceIds": ["s1"] },
-      { "en": "Large standard library and package ecosystem (PyPI) covering web frameworks, data science, testing and more.", "sourceIds": ["s2"] },
-      { "en": "Runs on Windows, macOS and Linux, and embeds in many other environments.", "sourceIds": ["s2"] }
+      { "en": "General-purpose programming language used for web backends, scripts, automation, data analysis and machine learning.", "fr": "Langage de programmation généraliste utilisé pour les backends web, les scripts, l'automatisation, l'analyse de données et le machine learning.", "sourceIds": ["s1"] },
+      { "en": "Large standard library and package ecosystem (PyPI) covering web frameworks, data science, testing and more.", "fr": "Grande bibliothèque standard et écosystème de paquets (PyPI) couvrant les frameworks web, la data science, les tests et plus encore.", "sourceIds": ["s2"] },
+      { "en": "Runs on Windows, macOS and Linux, and embeds in many other environments.", "fr": "Fonctionne sous Windows, macOS et Linux, et s'intègre dans de nombreux autres environnements.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Slower raw execution speed than compiled languages for CPU-bound workloads.", "sourceIds": ["s2"] },
-      { "en": "The Global Interpreter Lock (GIL) limits true multi-threaded CPU parallelism in the standard CPython implementation.", "sourceIds": ["s2"] }
+      { "en": "Slower raw execution speed than compiled languages for CPU-bound workloads.", "fr": "Vitesse d'exécution brute plus lente que les langages compilés pour les traitements intensifs en calcul.", "sourceIds": ["s2"] },
+      { "en": "The Global Interpreter Lock (GIL) limits true multi-threaded CPU parallelism in the standard CPython implementation.", "fr": "Le Global Interpreter Lock (GIL) limite le vrai parallélisme multi-thread sur le CPU dans l'implémentation standard CPython.", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["windows", "macos", "linux"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer who needs a general-purpose language for backend services, automation scripts or data work, backed by a large library ecosystem.",
+      "fr": "Un développeur qui a besoin d'un langage généraliste pour des services backend, des scripts d'automatisation ou du traitement de données, avec un grand écosystème de bibliothèques."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Automate a repetitive task: write a short Python script to process files or call an API on a schedule, using the standard library with no paid tooling.", "fr": "Automatiser une tâche répétitive : écrire un petit script Python pour traiter des fichiers ou appeler une API sur un planning, avec la bibliothèque standard et sans outil payant." },
+    { "en": "Build a backend API: use a Python web framework and PyPI packages to ship a service, then deploy it on a hosting platform of your choice.", "fr": "Construire une API backend : utiliser un framework web Python et des paquets PyPI pour livrer un service, puis le déployer sur la plateforme d'hébergement de son choix." }
+  ],
   "alternatives": [
-    { "slug": "php", "reason": { "en": "Another general-purpose scripting language commonly used for web backends." } },
-    { "slug": "nestjs", "reason": { "en": "Alternative backend framework/runtime (Node.js/TypeScript) for building APIs and services." } }
+    { "slug": "php", "reason": { "en": "Another general-purpose scripting language commonly used for web backends.", "fr": "Un autre langage de script généraliste couramment utilisé pour les backends web." } },
+    { "slug": "nestjs", "reason": { "en": "Alternative backend framework/runtime (Node.js/TypeScript) for building APIs and services.", "fr": "Framework et environnement backend alternatif (Node.js/TypeScript) pour construire des API et des services." } }
   ],
   "missingAlternatives": [
     { "name": "Node.js", "officialUrl": "https://nodejs.org", "reason": "Major general-purpose runtime competing with Python for backend and scripting use cases, not in the catalogue" },
     { "name": "Go", "officialUrl": "https://go.dev", "reason": "Common alternative language for backend services and CLIs, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 4,
+    "utilisation": 5,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Fully free and open source with no paid tier, while covering web backends, automation, data analysis and machine learning through its standard library and PyPI ecosystem.", "fr": "Entièrement gratuit et open source sans aucun palier payant, tout en couvrant les backends web, l'automatisation, l'analyse de données et le machine learning grâce à sa bibliothèque standard et à l'écosystème PyPI.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Widely documented with large official docs and a big package ecosystem, though building production systems still requires programming skill, not a no-code first result.", "fr": "Largement documenté avec une grande documentation officielle et un vaste écosystème de paquets, mais construire un système en production demande quand même des compétences de programmation, ce n'est pas un premier résultat sans code.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers on its promise as a general-purpose language across backends, scripts, automation and data work as documented.", "fr": "Tient sa promesse de langage généraliste pour les backends, les scripts, l'automatisation et le traitement de données, comme documenté.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Large standard library, PyPI ecosystem and cross-platform support (Windows, macOS, Linux, plus embedding) place it at the top of general-purpose languages.", "fr": "Grande bibliothèque standard, écosystème PyPI et prise en charge multiplateforme (Windows, macOS, Linux, plus intégration) le placent au sommet des langages généralistes.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: code portability away from Python itself (rewriting in another language) is not a standard export/API question and is not covered by the collected sources.", "fr": "Note neutre : la portabilité du code hors de Python (réécriture dans un autre langage) n'est pas une question classique d'export ou d'API et ne figure pas dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Programming language", "fr": "Langage de programmation" },
+    "shortDescription": {
+      "en": "Python is a free, open source general-purpose programming language used for web backends, automation, data analysis and machine learning.",
+      "fr": "Python est un langage de programmation généraliste, gratuit et open source, utilisé pour les backends web, l'automatisation, l'analyse de données et le machine learning."
+    },
+    "longDescription": {
+      "en": "Python is a general-purpose programming language with a large standard library and the PyPI package ecosystem, covering web frameworks, data science, testing and automation. It runs on Windows, macOS and Linux and embeds into many other environments, backed by extensive official documentation.\n\nThe language itself is entirely free and open source under the PSF license; any cost comes from hosting, managed runtimes or third-party libraries used alongside it, not from Python itself. The trade-offs are technical rather than financial: slower raw execution than compiled languages for CPU-heavy work, and the Global Interpreter Lock, which limits true multi-threaded CPU parallelism in the standard CPython implementation.",
+      "fr": "Python est un langage de programmation généraliste avec une grande bibliothèque standard et l'écosystème de paquets PyPI, couvrant les frameworks web, la data science, les tests et l'automatisation. Il fonctionne sous Windows, macOS et Linux et s'intègre dans de nombreux autres environnements, avec une documentation officielle très complète.\n\nLe langage lui-même est entièrement gratuit et open source sous la licence PSF ; tout coût vient de l'hébergement, des environnements managés ou des bibliothèques tierces utilisées à côté, pas de Python lui-même. Les compromis sont techniques plutôt que financiers : exécution brute plus lente que les langages compilés pour les traitements intensifs en calcul, et le Global Interpreter Lock, qui limite le vrai parallélisme multi-thread dans l'implémentation standard CPython."
+    },
+    "pros": [
+      { "en": "Completely free and open source, with no paid tier for the language itself.", "fr": "Entièrement gratuit et open source, sans aucun palier payant pour le langage lui-même." },
+      { "en": "Large standard library and PyPI ecosystem cover most backend, automation and data use cases out of the box.", "fr": "Grande bibliothèque standard et écosystème PyPI qui couvrent la plupart des cas d'usage backend, automatisation et données directement." }
+    ],
+    "cons": [
+      { "en": "Slower raw execution speed than compiled languages for CPU-bound workloads.", "fr": "Vitesse d'exécution brute plus lente que les langages compilés pour les traitements intensifs en calcul." },
+      { "en": "The Global Interpreter Lock limits true multi-threaded CPU parallelism in the standard implementation.", "fr": "Le Global Interpreter Lock limite le vrai parallélisme multi-thread sur le CPU dans l'implémentation standard." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need a free, well-documented general-purpose language for backend services, scripts, automation or data work.", "fr": "Garde Python si tu as besoin d'un langage généraliste gratuit et bien documenté pour des services backend, des scripts, de l'automatisation ou du traitement de données." },
+      "avoidIf": { "en": "Your workload is CPU-bound and needs true multi-threaded parallelism or maximum raw execution speed, where a compiled language fits better.", "fr": "Évite Python si ta charge de travail est intensive en calcul et a besoin d'un vrai parallélisme multi-thread ou de la vitesse d'exécution maximale, où un langage compilé convient mieux." },
+      "threshold": { "en": "Python has no license cost to weigh; the real budget line is the hosting or managed runtime chosen to run it, not the language itself.", "fr": "Python n'a aucun coût de licence à peser ; le vrai poste de budget est l'hébergement ou l'environnement managé choisi pour le faire tourner, pas le langage lui-même." }
+    }
+  },
   "unknowns": [],
   "conflicts": []
 }

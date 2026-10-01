@@ -3,7 +3,8 @@
   "slug": "doola",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "doola",
     "vendor": "doola",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 19.75, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "LLC or C Corp formation, EIN filing, operating agreement, registered agent, virtual business address, email support; state fees not included", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "LLC or C Corp formation, EIN filing, operating agreement, registered agent, virtual business address, email support; state fees not included", "fr": "Création de LLC ou de C Corp, dépôt de l'EIN, accord d'exploitation, agent enregistré, adresse professionnelle virtuelle, support par e-mail ; frais d'état non inclus", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 25, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Automated bookkeeping, expense tracking, payout management, financial health reports, multiple bank connections", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Automated bookkeeping, expense tracking, payout management, financial health reports, multiple bank connections", "fr": "Comptabilité automatisée, suivi des dépenses, gestion des versements, rapports de santé financière, connexions à plusieurs comptes bancaires", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": 133.25, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Everything in Starter plus annual state report filing, licensed tax professional consultation, IRS tax filings, e-commerce analytics; state fees not included", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Everything in Starter plus annual state report filing, licensed tax professional consultation, IRS tax filings, e-commerce analytics; state fees not included", "fr": "Tout ce qui est inclus dans Starter, plus le dépôt du rapport d'état annuel, une consultation avec un fiscaliste agréé, les déclarations fiscales fédérales, et des statistiques e-commerce ; frais d'état non inclus", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,43 +65,86 @@
         "minSeats": 1,
         "price": { "monthly": 263, "annualPerMonth": 199.92, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Everything in Tax and Compliance plus dedicated bookkeeper, monthly financial statements, estimated quarterly taxes; state fees not included", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Everything in Tax and Compliance plus dedicated bookkeeper, monthly financial statements, estimated quarterly taxes; state fees not included", "fr": "Tout ce qui est inclus dans Tax and Compliance, plus un comptable dédié, des états financiers mensuels, et le calcul des acomptes fiscaux trimestriels ; frais d'état non inclus", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "State formation fees are billed separately on top of every plan's subscription price.", "sourceIds": ["s1"] },
-      { "en": "Listed annual prices are shown as already-discounted totals; the per-month equivalents were computed from the stated annual figures and are not separately confirmed on the page.", "sourceIds": ["s1"] }
+      { "en": "State formation fees are billed separately on top of every plan's subscription price.", "fr": "Les frais de création d'entreprise auprès de l'état sont facturés séparément, en plus du prix d'abonnement de chaque offre.", "sourceIds": ["s1"] },
+      { "en": "Listed annual prices are shown as already-discounted totals; the per-month equivalents were computed from the stated annual figures and are not separately confirmed on the page.", "fr": "Les prix annuels affichés sont déjà présentés comme des totaux remisés ; les équivalents mensuels ont été calculés à partir des montants annuels indiqués et ne sont pas confirmés séparément sur la page.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "US LLC and C Corp formation for non-resident and resident entrepreneurs, including EIN filing and registered agent service.", "sourceIds": ["s1"] },
-      { "en": "Ongoing compliance services: annual state report filing, IRS tax filings, and access to a licensed tax professional.", "sourceIds": ["s1"] },
-      { "en": "Automated bookkeeping and financial reporting via the Pulse add-on, including multi-bank-account connections.", "sourceIds": ["s1"] }
+      { "en": "US LLC and C Corp formation for non-resident and resident entrepreneurs, including EIN filing and registered agent service.", "fr": "Création de LLC et de C Corp américaines pour des entrepreneurs résidents et non-résidents, incluant le dépôt de l'EIN et un service d'agent enregistré.", "sourceIds": ["s1"] },
+      { "en": "Ongoing compliance services: annual state report filing, IRS tax filings, and access to a licensed tax professional.", "fr": "Services de conformité continus : dépôt du rapport d'état annuel, déclarations fiscales fédérales, et accès à un fiscaliste agréé.", "sourceIds": ["s1"] },
+      { "en": "Automated bookkeeping and financial reporting via the Pulse add-on, including multi-bank-account connections.", "fr": "Comptabilité automatisée et rapports financiers via l'offre Pulse, incluant la connexion de plusieurs comptes bancaires.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Formation and compliance plans exclude mandatory state filing fees, added on top of the subscription cost.", "sourceIds": ["s1"] },
-      { "en": "Bookkeeping (Pulse) and formation/compliance are sold as separate plans rather than bundled by default.", "sourceIds": ["s1"] }
+      { "en": "Formation and compliance plans exclude mandatory state filing fees, added on top of the subscription cost.", "fr": "Les offres de création et de conformité excluent les frais de dépôt obligatoires auprès de l'état, ajoutés en plus du coût de l'abonnement.", "sourceIds": ["s1"] },
+      { "en": "Bookkeeping (Pulse) and formation/compliance are sold as separate plans rather than bundled by default.", "fr": "La comptabilité (Pulse) et la création/conformité sont vendues comme des offres séparées plutôt que regroupées par défaut.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
-  "alternatives": [
-    { "slug": "stripe", "reason": { "en": "Also used by non-US founders to set up US-facing payment and business infrastructure, though not a formation service itself." } }
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A non-resident or solo entrepreneur who needs to form and keep compliant a US LLC or C Corp without hiring a lawyer or accountant directly.", "fr": "Un entrepreneur indépendant ou non-résident qui doit créer et maintenir en conformité une LLC ou une C Corp américaine sans embaucher directement un avocat ou un comptable." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Non-resident founder: form a US LLC with EIN and registered agent through the Starter plan before opening a US bank account.", "fr": "Fondateur non-résident : créer une LLC américaine avec EIN et agent enregistré via l'offre Starter avant d'ouvrir un compte bancaire américain." },
+    { "en": "Solo operator: add the Pulse plan to get automated bookkeeping and financial health reports across several connected bank accounts.", "fr": "Opérateur solo : ajouter l'offre Pulse pour obtenir une comptabilité automatisée et des rapports de santé financière sur plusieurs comptes bancaires connectés." }
   ],
+  "alternatives": [],
   "missingAlternatives": [
     { "name": "Stripe Atlas", "officialUrl": "https://stripe.com/atlas", "reason": "Direct competitor for US company formation aimed at non-resident founders, not in the catalogue" },
     { "name": "Firstbase", "officialUrl": "https://www.firstbase.io/", "reason": "Direct competitor offering US LLC/C Corp formation and compliance, not in the catalogue" }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Starter plan is cheap relative to hiring a lawyer for formation, but mandatory state fees are added on top and compliance requires a separate, pricier plan, which tempers the overall gain for the cost.", "fr": "L'offre Starter est peu chère comparée à l'embauche d'un avocat pour la création, mais les frais d'état obligatoires s'ajoutent et la conformité exige une offre séparée plus chère, ce qui tempère le gain global rapporté au coût.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Formation, EIN filing and a registered agent are bundled into one guided plan, which is designed to let a first-time founder get a result without a lawyer.", "fr": "La création, le dépôt de l'EIN et l'agent enregistré sont réunis dans une seule offre guidée, pensée pour permettre à un fondateur débutant d'obtenir un résultat sans avocat.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "doola is confirmed to form LLCs and C Corps and to handle ongoing compliance filings as advertised, without needing a third-party service to complete the job.", "fr": "doola est confirmé pour créer des LLC et des C Corp et pour gérer les dépôts de conformité continus comme annoncé, sans avoir besoin d'un service tiers pour finir le travail.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Coverage extends from formation to bookkeeping and tax filing, but each layer is a separate paid plan rather than one unified offering, capping the ceiling of a single plan.", "fr": "La couverture va de la création à la comptabilité et aux déclarations fiscales, mais chaque niveau est une offre payante séparée plutôt qu'une offre unifiée, ce qui plafonne la portée d'une seule offre.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: whether a company's formation records and financial data can be exported if a founder leaves doola is not covered by the collected sources.", "fr": "Note neutre : la possibilité d'exporter les documents de création et les données financières d'une entreprise en cas de départ de doola ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "US company formation", "fr": "Création de société US" },
+    "shortDescription": { "en": "Forms a US LLC or C Corp for non-resident and solo founders, with separate paid plans for compliance and bookkeeping.", "fr": "Crée une LLC ou une C Corp américaine pour les fondateurs non-résidents ou solo, avec des offres payantes séparées pour la conformité et la comptabilité." },
+    "longDescription": {
+      "en": "doola forms a US LLC or C Corp, including EIN filing and a registered agent, aimed at non-resident and solo entrepreneurs who want to incorporate in the US without hiring a lawyer. Ongoing compliance, such as annual state filings and IRS tax filings, and automated bookkeeping are sold as separate higher-tier plans rather than included by default.\n\nThe entry Starter plan costs about 19.75 USD a month billed annually, plus mandatory state filing fees charged on top. A 30-day trial is offered before committing. A solo founder who only needs formation fits Starter; one who also wants bookkeeping or tax filing needs to add Pulse or the Tax and Compliance plan.",
+      "fr": "doola crée une LLC ou une C Corp américaine, avec dépôt de l'EIN et agent enregistré, pour des entrepreneurs non-résidents ou solo qui veulent s'immatriculer aux États-Unis sans avocat. La conformité continue, comme les dépôts d'état annuels et les déclarations fiscales fédérales, ainsi que la comptabilité automatisée, sont vendues en offres supérieures séparées plutôt qu'incluses par défaut.\n\nL'offre Starter d'entrée coûte environ 19,75 $ par mois facturés annuellement, plus les frais de dépôt d'état obligatoires ajoutés en plus. Un essai de 30 jours est proposé avant de s'engager. Un fondateur solo qui a seulement besoin de la création correspond à Starter ; celui qui veut aussi la comptabilité ou les déclarations fiscales doit ajouter Pulse ou l'offre Tax and Compliance."
+    },
+    "pros": [
+      { "en": "Bundles formation, EIN and registered agent into one guided plan without a lawyer.", "fr": "Regroupe création, EIN et agent enregistré dans une seule offre guidée sans avocat." },
+      { "en": "A 30-day trial is offered before committing to a paid plan.", "fr": "Un essai de 30 jours est proposé avant de s'engager sur une offre payante." }
+    ],
+    "cons": [
+      { "en": "Mandatory state filing fees are always added on top of the subscription price.", "fr": "Les frais de dépôt d'état obligatoires s'ajoutent toujours en plus du prix de l'abonnement." },
+      { "en": "Bookkeeping and tax compliance are separate paid plans, not included with formation.", "fr": "La comptabilité et la conformité fiscale sont des offres payantes séparées, non incluses avec la création." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You are a non-resident or solo founder who wants US company formation and ongoing compliance handled without hiring a lawyer directly.", "fr": "Tu es un fondateur non-résident ou solo qui veut la création et la conformité continue d'une société américaine sans embaucher directement un avocat." },
+      "avoidIf": { "en": "You want formation, bookkeeping and tax compliance bundled into a single plan rather than paying for each layer separately.", "fr": "Tu veux la création, la comptabilité et la conformité fiscale réunies dans une seule offre plutôt que de payer chaque niveau séparément." },
+      "threshold": { "en": "The Starter plan costs about 19.75 USD a month billed annually (roughly 237 USD a year), plus state filing fees charged separately.", "fr": "L'offre Starter coûte environ 19,75 $ par mois facturés annuellement (environ 237 $ par an), plus les frais de dépôt d'état facturés séparément." }
+    }
+  },
   "unknowns": [
     "Exact state filing fee amounts vary by state and are not published as a fixed figure on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The Starter/Pulse/Tax-and-Compliance plan prices are published only as annual-equivalent monthly figures; no separate standalone monthly price is shown for those three plans (only Business-in-a-Box shows both monthly and annual). Verify on doola.com/pricing whether a true monthly billing option exists for the cheaper plans before merging."
+  ]
 }

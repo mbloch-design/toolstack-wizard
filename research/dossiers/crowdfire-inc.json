@@ -3,7 +3,8 @@
   "slug": "crowdfire-inc",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Crowdfire",
     "vendor": "Crowdfire Inc.",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": "Historically had a free tier with basic scheduling features, but current availability is unconfirmed given the product's uncertain status.", "sourceIds": ["s2"] },
+    "freePlan": { "exists": false, "limits": { "en": "Historically had a free tier with basic scheduling features, but current availability is unconfirmed given the product's uncertain status.", "fr": "Avait historiquement un palier gratuit avec des fonctions de planification basiques, mais la disponibilité actuelle n'est pas confirmée étant donné le statut incertain du produit." }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {
@@ -35,39 +36,92 @@
         "minSeats": 1,
         "price": { "monthly": 9.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry paid tier per historical pricing; not independently confirmed on the live site this session.", "fr": null }],
+        "keyLimits": [{ "en": "Entry paid tier per historical pricing; not independently confirmed on the live site this session.", "fr": "Palier payant d'entrée selon les tarifs historiques ; non confirmé de façon indépendante sur le site actuel lors de cette session." }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "plus",
     "addOns": [],
     "cautions": [
-      { "en": "Product status is unclear: third-party sources say the service shut down in 2025, but the domain is still live with different messaging about a pivot to a media platform. Pricing figures here are historical and were not confirmed on a live, current pricing page.", "fr": null, "sourceIds": ["s1", "s2"] }
+      { "en": "Product status is unclear: third-party sources say the service shut down in 2025, but the domain is still live with different messaging about a pivot to a media platform. Pricing figures here are historical and were not confirmed on a live, current pricing page.", "fr": "Le statut du produit est incertain : des sources tierces indiquent un arrêt du service en 2025, mais le domaine est toujours actif avec un message différent sur un pivot vers une plateforme média. Les montants de prix ici sont historiques et n'ont pas été confirmés sur une page de tarifs actuelle en ligne.", "sourceIds": ["s1", "s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Historically offered social media content scheduling across multiple networks.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Historically offered social listening and competitor analysis tools.", "fr": null, "sourceIds": ["s2"] }
+      { "en": "Historically offered social media content scheduling across multiple networks.", "fr": "Proposait historiquement la planification de contenu sur plusieurs réseaux sociaux.", "sourceIds": ["s2"] },
+      { "en": "Historically offered social listening and competitor analysis tools.", "fr": "Proposait historiquement des outils d'écoute sociale et d'analyse concurrentielle.", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Service continuity is uncertain: reported shutdown of the social media management product in 2025 conflicts with the live domain's current content about a platform pivot.", "fr": null, "sourceIds": ["s1", "s2"] },
-      { "en": "No current, verifiable pricing or feature page was found in this session.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Service continuity is uncertain: reported shutdown of the social media management product in 2025 conflicts with the live domain's current content about a platform pivot.", "fr": "La continuité du service est incertaine : un arrêt signalé du produit de gestion des réseaux sociaux en 2025 contredit le contenu actuel du domaine en ligne qui parle d'un pivot de plateforme.", "sourceIds": ["s1", "s2"] },
+      { "en": "No current, verifiable pricing or feature page was found in this session.", "fr": "Aucune page de tarifs ou de fonctionnalités actuelle et vérifiable n'a été trouvée lors de cette session.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Content creators and small social media managers who historically scheduled posts across several networks and tracked competitors from one dashboard.",
+      "fr": "Créateurs de contenu et petits gestionnaires de réseaux sociaux qui planifiaient historiquement leurs publications sur plusieurs réseaux et suivaient leurs concurrents depuis un seul tableau de bord."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Multi-network scheduling: queue posts across several social accounts from one dashboard instead of logging into each network.", "fr": "Planification multi-réseaux : mettre en file des publications sur plusieurs comptes sociaux depuis un seul tableau de bord plutôt que de se connecter à chaque réseau." },
+    { "en": "Competitive tracking: monitor competitor activity through the social listening tools alongside scheduled content.", "fr": "Suivi concurrentiel : observer l'activité des concurrents via les outils d'écoute sociale en parallèle du contenu planifié." }
+  ],
   "alternatives": [
-    { "slug": "hootsuite", "reason": { "en": "Established social media management competitor covering the same scheduling and analytics use case.", "fr": null } },
-    { "slug": "later", "reason": { "en": "Direct competitor for visual content scheduling across social networks.", "fr": null } },
-    { "slug": "sendible", "reason": { "en": "Comparable social media management platform for agencies and small teams.", "fr": null } }
+    { "slug": "hootsuite", "reason": { "en": "Established social media management competitor covering the same scheduling and analytics use case.", "fr": "Concurrent établi de gestion des réseaux sociaux couvrant le même usage de planification et d'analyse." } },
+    { "slug": "later", "reason": { "en": "Direct competitor for visual content scheduling across social networks.", "fr": "Concurrent direct pour la planification de contenu visuel sur les réseaux sociaux." } },
+    { "slug": "sendible", "reason": { "en": "Comparable social media management platform for agencies and small teams.", "fr": "Plateforme de gestion des réseaux sociaux comparable pour les agences et petites équipes." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 3,
+    "utilisation": 2,
+    "puissance": 2,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A historical ~$9.99/month entry tier is cheap on paper, but the cost is hard to justify today since the sources conflict on whether the product is even still operating.", "fr": "Un palier d'entrée historique à environ 9,99 $/mois est bon marché sur le papier, mais le coût est difficile à justifier aujourd'hui car les sources se contredisent sur le fait que le produit fonctionne encore ou non.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "Neutral score: no setup time or onboarding effort is stated in the collected sources.", "fr": "Note neutre : aucun temps de mise en place ni effort d'onboarding n'est précisé dans les sources relevées.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Scheduling and social listening are described as historical features; the sources conflict on whether the live site still delivers them today, so the promise cannot be confirmed as currently kept.", "fr": "La planification et l'écoute sociale sont décrites comme des fonctions historiques ; les sources se contredisent sur le fait que le site en ligne les livre encore aujourd'hui, donc la promesse ne peut pas être confirmée comme tenue actuellement.", "sourceIds": ["s1", "s2"] },
+      "puissance": { "en": "The capability ceiling cannot be assessed against the category today: the sources describe historical features only, with no current feature page confirming what, if anything, is still offered.", "fr": "Le plafond de capacité ne peut pas être évalué face à la catégorie aujourd'hui : les sources décrivent seulement des fonctions historiques, sans page de fonctionnalités actuelle confirmant ce qui est encore proposé, le cas échéant.", "sourceIds": ["s1", "s2"] },
+      "reversibilite": { "en": "Neutral score: data export and account portability are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité du compte ne figurent pas dans les sources relevées.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Social scheduling", "fr": "Planification sociale" },
+    "shortDescription": { "en": "Crowdfire historically offered social media scheduling and listening tools from $9.99/month, though its current product status and live pricing are unconfirmed.", "fr": "Crowdfire proposait historiquement la planification et l'écoute des réseaux sociaux dès 9,99 $/mois, mais son statut actuel et ses tarifs ne sont pas confirmés." },
+    "longDescription": {
+      "en": "Crowdfire historically offered social media content scheduling across multiple networks, plus social listening and competitor analysis tools, aimed at creators and small teams managing several accounts from one dashboard.\n\nThird-party sources describe an entry Plus plan around $9.99/month, but this review found no live, confirmed pricing page, and the product's current status is unclear: some sources report a 2025 shutdown while the live domain describes a pivot to a broader media platform. Verify current availability before relying on it.",
+      "fr": "Crowdfire proposait historiquement la planification de contenu sur plusieurs réseaux sociaux, ainsi que des outils d'écoute sociale et d'analyse concurrentielle, destinés aux créateurs et petites équipes gérant plusieurs comptes depuis un seul tableau de bord.\n\nDes sources tierces décrivent un plan d'entrée Plus autour de 9,99 $/mois, mais cette relecture n'a trouvé aucune page de tarifs actuelle confirmée, et le statut actuel du produit est incertain : certaines sources signalent un arrêt en 2025 tandis que le domaine en ligne décrit un pivot vers une plateforme média plus large. Vérifie la disponibilité actuelle avant de t'y fier."
+    },
+    "pros": [
+      { "en": "Historically bundled multi-network scheduling with social listening and competitor analysis in one dashboard.", "fr": "Regroupait historiquement la planification multi-réseaux avec l'écoute sociale et l'analyse concurrentielle dans un seul tableau de bord." },
+      { "en": "An entry paid tier was priced under $10/month per historical third-party listings, cheaper than many scheduling competitors.", "fr": "Un palier payant d'entrée était affiché à moins de 10 $/mois selon des sources tierces historiques, moins cher que de nombreux concurrents de planification." }
+    ],
+    "cons": [
+      { "en": "The product's current status is unconfirmed: third-party sources report a 2025 shutdown while the live site shows different content, so continuity cannot be guaranteed.", "fr": "Le statut actuel du produit n'est pas confirmé : des sources tierces signalent un arrêt en 2025 alors que le site en ligne affiche un contenu différent, donc la continuité ne peut pas être garantie." },
+      { "en": "No current, official pricing page could be reached to confirm what, if anything, is still sold today.", "fr": "Aucune page de tarifs officielle actuelle n'a pu être atteinte pour confirmer ce qui, le cas échéant, est encore vendu aujourd'hui." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already use Crowdfire and its dashboard is still reachable and working for your account, pending confirmation of its current status.", "fr": "Tu utilises déjà Crowdfire et son tableau de bord est encore accessible et fonctionnel pour ton compte, en attendant confirmation de son statut actuel." },
+      "avoidIf": { "en": "You are choosing a new social scheduling tool today, given the unresolved conflict about whether the service is still operating.", "fr": "Tu choisis un nouvel outil de planification sociale aujourd'hui, étant donné le conflit non résolu sur la poursuite ou non du service." },
+      "threshold": { "en": "Not applicable until the product's current status and live pricing are confirmed; do not budget around the historical ~$9.99/month figure.", "fr": "Non applicable tant que le statut actuel du produit et ses tarifs en ligne ne sont pas confirmés ; ne budgétise pas sur la base du montant historique d'environ 9,99 $/mois." }
+    }
+  },
   "unknowns": [
     "Whether Crowdfire's social media management product is currently active, discontinued, or pivoted to a different product is unresolved; requires direct verification of crowdfireapp.com's current offering and any official shutdown announcement.",
     "Current pricing (if the product is still active) is unconfirmed; figures used are from third-party trackers referencing pre-2025 plans."
   ],
   "conflicts": [
     "crowdfireapp.com homepage content (accessed 2026-09-25) describes an active pivot to a 'media platform', while independent search results state the service shut down and deleted user data in mid-2025."
+  ],
+  "reviewNotes": [
+    "Statut produit en conflit : crowdfireapp.com decrit un pivot vers une plateforme media le 25/09/2026, alors que des sources tierces independantes rapportent un arret du service de gestion des reseaux sociaux et une suppression des donnees utilisateurs mi-2025. A verifier avant toute publication ; la fiche ne doit pas etre mise en avant si le produit n'est plus vendu.",
+    "Prix de 9,99 $/mois (plan Plus) base sur des tarifs historiques tiers (Social Champ), non confirme sur une page de tarifs actuelle."
   ]
 }

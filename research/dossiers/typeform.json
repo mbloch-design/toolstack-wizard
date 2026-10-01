@@ -3,7 +3,8 @@
   "slug": "typeform",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Typeform",
     "vendor": "Typeform S.L.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Up to 100 responses per month, 1 user, unlimited forms and questions with basic customization", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": [{ "en": "Up to 100 responses per month, 1 user, unlimited forms and questions with basic customization", "fr": "Jusqu'à 100 réponses par mois, 1 utilisateur, formulaires et questions illimités avec une personnalisation de base", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
     "trial": { "days": 14, "sourceIds": ["s1"] },
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 39, "annualPerMonth": 28, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "100 responses/month included, max 750/month; 1 user", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "100 responses/month included, max 750/month; 1 user", "fr": "100 réponses/mois incluses, maximum 750/mois ; 1 utilisateur", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 79, "annualPerMonth": 56, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1,000 responses/month included, max 2,500/month; up to 3 users; removes Typeform branding, custom subdomain", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "1,000 responses/month included, max 2,500/month; up to 3 users; removes Typeform branding, custom subdomain", "fr": "1 000 réponses/mois incluses, maximum 2 500/mois ; jusqu'à 3 utilisateurs ; retire la marque Typeform, sous-domaine personnalisé", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": 129, "annualPerMonth": 91, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "10,000 responses/month included, max 50,000/month; up to 5 users; drop-off rates, conversion tracking, priority support", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "10,000 responses/month included, max 50,000/month; up to 5 users; drop-off rates, conversion tracking, priority support", "fr": "10 000 réponses/mois incluses, maximum 50 000/mois ; jusqu'à 5 utilisateurs ; taux d'abandon, suivi de conversion, support prioritaire", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +65,7 @@
         "minSeats": 1,
         "price": { "monthly": 169, "annualPerMonth": 119, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "3,000 responses/month included; up to 3 users; video Q&A, multi-language support, AI clarification", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "3,000 responses/month included; up to 3 users; video Q&A, multi-language support, AI clarification", "fr": "3 000 réponses/mois incluses ; jusqu'à 3 utilisateurs ; questions-réponses vidéo, support multilingue, clarification par IA", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -74,43 +75,87 @@
         "minSeats": 6,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom/unlimited responses; 6+ users with SSO, dedicated support, HIPAA/GDPR compliance, custom domains", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Custom/unlimited responses; 6+ users with SSO, dedicated support, HIPAA/GDPR compliance, custom domains", "fr": "Réponses personnalisées/illimitées ; 6 utilisateurs et plus avec SSO, support dédié, conformité HIPAA/RGPD, domaines personnalisés", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [],
     "cautions": [
-      { "en": "There is also a separate 'Growth Flow' plan at $379/month ($266/month annual) with lead enrichment and Salesforce integration, positioned above Business rather than in the standard tier ladder.", "sourceIds": ["s1"] },
-      { "en": "Response limits are hard caps per plan; exceeding the included monthly responses requires an upgrade.", "sourceIds": ["s1"] }
+      { "en": "There is also a separate 'Growth Flow' plan at $379/month ($266/month annual) with lead enrichment and Salesforce integration, positioned above Business rather than in the standard tier ladder.", "fr": "Il existe aussi une offre séparée « Growth Flow » à 379 $/mois (266 $/mois en annuel) avec enrichissement de leads et intégration Salesforce, positionnée au-dessus de Business plutôt que dans l'échelle d'offres standard.", "sourceIds": ["s1"] },
+      { "en": "Response limits are hard caps per plan; exceeding the included monthly responses requires an upgrade.", "fr": "Les limites de réponses sont des plafonds stricts par offre ; dépasser le nombre de réponses mensuelles incluses exige une mise à niveau.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Interactive, conversational online form and survey builder with conditional logic and AI-assisted form creation.", "sourceIds": ["s1"] },
-      { "en": "Response analytics including drop-off rates and conversion tracking on Business plan and above.", "sourceIds": ["s1"] }
+      { "en": "Interactive, conversational online form and survey builder with conditional logic and AI-assisted form creation.", "fr": "Créateur de formulaires et d'enquêtes en ligne interactifs et conversationnels, avec logique conditionnelle et création assistée par IA.", "sourceIds": ["s1"] },
+      { "en": "Response analytics including drop-off rates and conversion tracking on Business plan and above.", "fr": "Statistiques de réponses incluant les taux d'abandon et le suivi de conversion à partir de l'offre Business.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan caps responses at 100/month, which is quickly exhausted for active forms.", "sourceIds": ["s1"] },
-      { "en": "Branding removal and custom subdomain require at least the Plus plan.", "sourceIds": ["s1"] }
+      { "en": "Free plan caps responses at 100/month, which is quickly exhausted for active forms.", "fr": "L'offre gratuite plafonne les réponses à 100/mois, un quota vite atteint pour des formulaires actifs.", "sourceIds": ["s1"] },
+      { "en": "Branding removal and custom subdomain require at least the Plus plan.", "fr": "Retirer la marque et obtenir un sous-domaine personnalisé exige au moins l'offre Plus.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] }
     ],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A solo creator or small team building interactive forms and surveys to collect leads or feedback, who needs more than 100 responses a month.", "fr": "Un créateur solo ou une petite équipe qui construit des formulaires et enquêtes interactifs pour collecter des leads ou des retours, et qui dépasse 100 réponses par mois." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Solo creator: build a conversational lead-capture form with conditional logic and upgrade to Basic once monthly responses pass the free 100 cap.", "fr": "Créateur solo : construire un formulaire de capture de leads conversationnel avec logique conditionnelle, et passer à Basic une fois le plafond gratuit de 100 réponses dépassé." },
+    { "en": "Small team: track drop-off rates and conversion on a client feedback survey using the Business plan's analytics.", "fr": "Petite équipe : suivre les taux d'abandon et la conversion d'une enquête de retour client grâce aux statistiques de l'offre Business." }
+  ],
   "alternatives": [
-    { "slug": "jotform", "reason": { "en": "Direct competitor form builder already flagged as a current alternative for Typeform." } },
-    { "slug": "tally", "reason": { "en": "Lightweight form builder competing on simplicity and lower cost." } },
-    { "slug": "fillout", "reason": { "en": "Form and survey builder targeting the same conversational-form use case." } }
+    { "slug": "jotform", "reason": { "en": "Direct competitor form builder already flagged as a current alternative for Typeform.", "fr": "Créateur de formulaires concurrent direct, déjà identifié comme alternative actuelle à Typeform." } },
+    { "slug": "tally", "reason": { "en": "Lightweight form builder competing on simplicity and lower cost.", "fr": "Créateur de formulaires léger qui concurrence sur la simplicité et un coût plus bas." } },
+    { "slug": "fillout", "reason": { "en": "Form and survey builder targeting the same conversational-form use case.", "fr": "Créateur de formulaires et d'enquêtes qui vise le même usage de formulaire conversationnel." } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The cheapest paid plan jumps to 39 USD a month for only 750 responses, which is a steep entry cost once the 100-response free plan is exhausted.", "fr": "L'offre payante la moins chère monte à 39 $ par mois pour seulement 750 réponses, un coût d'entrée élevé une fois le plafond gratuit de 100 réponses dépassé.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The form builder is designed around a conversational, one-question-at-a-time interface with AI-assisted creation, which typically gets a usable form live quickly.", "fr": "Le créateur de formulaires repose sur une interface conversationnelle, une question à la fois, avec une création assistée par IA, ce qui permet en général de publier un formulaire utilisable rapidement.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Typeform delivers interactive forms with conditional logic as promised, and response analytics on higher plans confirm the stated conversion-tracking capability.", "fr": "Typeform livre des formulaires interactifs avec logique conditionnelle comme promis, et les statistiques de réponses sur les offres supérieures confirment la capacité de suivi de conversion annoncée.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Drop-off analytics, Salesforce integration, and a dedicated Growth Flow plan with lead enrichment show capability well above a basic form builder.", "fr": "Les statistiques d'abandon, l'intégration Salesforce et une offre Growth Flow dédiée avec enrichissement de leads montrent une capacité bien au-dessus d'un simple créateur de formulaires.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats for collected responses and form structures are not covered by the collected sources.", "fr": "Note neutre : les formats d'export des réponses collectées et de la structure des formulaires ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Conversational forms", "fr": "Formulaires conversationnels" },
+    "shortDescription": { "en": "Interactive, conversational form and survey builder with conditional logic, free up to 100 responses a month.", "fr": "Créateur de formulaires et d'enquêtes interactifs et conversationnels avec logique conditionnelle, gratuit jusqu'à 100 réponses par mois." },
+    "longDescription": {
+      "en": "Typeform builds interactive, conversational forms and surveys, one question at a time, with conditional logic and AI-assisted creation. The free plan covers up to 100 responses a month for a single user, enough to test a form before deciding to pay.\n\nThe entry Basic plan costs 39 USD a month (28 USD on annual billing) and raises the cap to 750 responses, but branding removal and a custom subdomain only arrive on Plus. Business adds drop-off and conversion analytics, while a separate Growth Flow plan above the standard ladder adds lead enrichment and Salesforce integration for sales-driven teams.",
+      "fr": "Typeform construit des formulaires et enquêtes interactifs et conversationnels, une question à la fois, avec logique conditionnelle et création assistée par IA. L'offre gratuite couvre jusqu'à 100 réponses par mois pour un utilisateur, suffisant pour tester un formulaire avant de payer.\n\nL'offre Basic d'entrée coûte 39 $ par mois (28 $ en facturation annuelle) et relève le plafond à 750 réponses, mais retirer la marque et obtenir un sous-domaine personnalisé n'arrivent qu'avec Plus. Business ajoute les statistiques d'abandon et de conversion, tandis qu'une offre Growth Flow séparée, au-dessus de l'échelle standard, ajoute l'enrichissement de leads et l'intégration Salesforce pour les équipes commerciales."
+    },
+    "pros": [
+      { "en": "Conversational, one-question-at-a-time format that tends to improve completion rates.", "fr": "Format conversationnel, une question à la fois, qui tend à améliorer les taux de complétion." },
+      { "en": "Free plan is usable to test a form before paying, not just a time-limited trial.", "fr": "L'offre gratuite permet de tester un formulaire avant de payer, pas seulement un essai limité dans le temps." },
+      { "en": "Business plan adds drop-off and conversion analytics missing from cheaper form builders.", "fr": "L'offre Business ajoute des statistiques d'abandon et de conversion absentes des créateurs de formulaires moins chers." }
+    ],
+    "cons": [
+      { "en": "The cheapest paid plan still caps responses at 750 a month, a hard limit for active forms.", "fr": "L'offre payante la moins chère plafonne quand même les réponses à 750 par mois, une limite stricte pour des formulaires actifs." },
+      { "en": "Removing Typeform branding requires upgrading past the entry Basic plan.", "fr": "Retirer la marque Typeform exige de passer au-dessus de l'offre Basic d'entrée." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a conversational form experience and your monthly response volume stays within a paid plan's cap.", "fr": "Tu veux une expérience de formulaire conversationnelle et ton volume de réponses mensuel reste dans le plafond d'une offre payante." },
+      "avoidIf": { "en": "You need unbranded forms on a tight budget, or your response volume regularly exceeds what the Basic or Plus plan includes.", "fr": "Tu as besoin de formulaires sans marque avec un petit budget, ou ton volume de réponses dépasse régulièrement ce qu'incluent les offres Basic ou Plus." },
+      "threshold": { "en": "The Basic plan costs 39 USD a month (28 USD a month billed annually, about 336 USD a year) for up to 750 responses.", "fr": "L'offre Basic coûte 39 $ par mois (28 $ par mois en facturation annuelle, environ 336 $ par an) pour un maximum de 750 réponses." }
+    }
+  },
   "unknowns": [
     "Whether taxes are included in the listed USD prices is not stated on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

@@ -3,7 +3,8 @@
   "slug": "plasticity",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Plasticity",
     "vendor": "Plasticity",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.plasticity.xyz/", "tier": 1, "accessedOn": "2026-09-25", "title": "Plasticity homepage / pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.plasticity.xyz/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Plasticity homepage / pricing"
+    }
   ],
   "pricing": {
     "model": "one_time",
@@ -24,54 +31,287 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "indie",
         "name": "Indie",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 175 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 175
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Node-locked to 2 machines (10 activations/year), 12 months of updates included, STEP/OBJ/STL/Parasolid export, FBX import", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Node-locked to 2 machines (10 activations/year), 12 months of updates included, STEP/OBJ/STL/Parasolid export, FBX import",
+            "fr": "Licence liée à 2 machines (10 activations par an), 12 mois de mises à jour incluses, export STEP/OBJ/STL/Parasolid, import FBX",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "studio",
         "name": "Studio",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 299 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 299
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Node-locked to 4 machines, professional surfacing tools, IGES/ACIS/Rhino/DXF/DWG support, beta program access", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Node-locked to 4 machines, professional surfacing tools, IGES/ACIS/Rhino/DXF/DWG support, beta program access",
+            "fr": "Licence liée à 4 machines, outils de surfaçage professionnels, prise en charge IGES/ACIS/Rhino/DXF/DWG, accès au programme bêta",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "indie",
     "addOns": [],
     "cautions": [
-      { "en": "Licenses are perpetual but only include 12 months of version updates; continuing to get new versions afterward likely requires renewing maintenance (not fully detailed on the page).", "fr": "", "sourceIds": ["s1"] }
+      {
+        "en": "Licenses are perpetual but only include 12 months of version updates; continuing to get new versions afterward likely requires renewing maintenance (not fully detailed on the page).",
+        "fr": "Les licences sont perpétuelles mais n'incluent que 12 mois de mises à jour de version ; continuer à recevoir les nouvelles versions ensuite demande probablement de renouveler la maintenance (non détaillé entièrement sur la page).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Direct, non-history-based 3D modeling with NURBS surfacing (Parasolid and xNURBS kernels)", "sourceIds": ["s1"] },
-      { "en": "Complex Boolean operations with watertight results", "sourceIds": ["s1"] },
-      { "en": "Intelligent fillets, construction planes, bridge curves and live engineering-grade dimensions", "sourceIds": ["s1"] }
+      {
+        "en": "Direct, non-history-based 3D modeling with NURBS surfacing (Parasolid and xNURBS kernels)",
+        "fr": "Modélisation 3D directe, sans historique, avec surfaçage NURBS (moteurs Parasolid et xNURBS)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Complex Boolean operations with watertight results",
+        "fr": "Opérations booléennes complexes avec des résultats étanches",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Intelligent fillets, construction planes, bridge curves and live engineering-grade dimensions",
+        "fr": "Congés intelligents, plans de construction, courbes de pontage et cotations de précision ingénierie en direct",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Starter/trial tier restricted to non-commercial use and limited export formats (STEP, low-res OBJ/STL)", "sourceIds": ["s1"] },
-      { "en": "Licenses are node-locked to a limited number of machines (2 for Indie, 4 for Studio)", "sourceIds": ["s1"] }
+      {
+        "en": "Starter/trial tier restricted to non-commercial use and limited export formats (STEP, low-res OBJ/STL)",
+        "fr": "Le forfait de démarrage/essai est réservé à un usage non commercial et limité à certains formats d'export (STEP, OBJ/STL basse résolution)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Licenses are node-locked to a limited number of machines (2 for Indie, 4 for Studio)",
+        "fr": "Les licences sont liées à un nombre limité de machines (2 pour Indie, 4 pour Studio)",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Blender", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Rhino", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Blender",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Rhino",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["windows", "macos", "linux"]
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A product designer or engineer who wants direct NURBS surfacing and solid modeling without the history-based workflow of a traditional CAD tool.",
+      "fr": "Un designer produit ou ingénieur qui veut un surfaçage NURBS et une modélisation solide directs, sans le workflow basé sur l'historique d'un outil CAO traditionnel."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a designer models a watertight enclosure with direct Boolean operations, then exports it as STEP for manufacturing without rebuilding a feature tree.",
+      "fr": "Usage : un designer modélise un boîtier étanche avec des opérations booléennes directes, puis l'exporte en STEP pour la fabrication sans reconstruire un arbre de fonctions."
+    },
+    {
+      "en": "Usage: an engineer buys the Studio license to import a supplier's IGES file, refine the surfacing, and re-export it in the original format.",
+      "fr": "Usage : un ingénieur achète la licence Studio pour importer un fichier IGES d'un fournisseur, affiner le surfaçage, et le réexporter dans le format d'origine."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "fusion-360",
+      "reason": {
+        "en": "Widely used CAD competitor covering solid and surface modeling for product design and engineering.",
+        "fr": "Concurrent CAO largement utilisé, couvrant la modélisation solide et surfacique pour le design produit et l'ingénierie."
+      }
+    },
+    {
+      "slug": "rhino",
+      "reason": {
+        "en": "Direct competitor on NURBS surfacing and free-form 3D modeling.",
+        "fr": "Concurrent direct sur le surfaçage NURBS et la modélisation 3D libre."
+      }
+    },
+    {
+      "slug": "solidworks",
+      "reason": {
+        "en": "Established parametric CAD competitor for solid modeling and engineering documentation.",
+        "fr": "Concurrent CAO paramétrique établi pour la modélisation solide et la documentation d'ingénierie."
+      }
+    }
+  ],
   "missingAlternatives": [],
-  "unknowns": ["Whether renewing updates after 12 months requires an additional fee is not stated on the page reviewed"],
-  "conflicts": ["Seed data listed an Indie/Studio one-time price of $149; the live pricing page shows Indie at $175 and Studio at $299."]
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A one-time payment of $175 for Indie with 12 months of updates, rather than a recurring subscription, is a low fixed cost against perpetual-license CAD alternatives.",
+        "fr": "Un paiement unique de 175 $ pour Indie avec 12 mois de mises à jour, plutôt qu'un abonnement récurrent, représente un coût fixe bas face aux alternatives CAO à licence perpétuelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to reach a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Direct, non-history-based modeling with watertight Boolean operations is described as delivered functionality, not a planned feature.",
+        "fr": "La modélisation directe sans historique avec des opérations booléennes étanches est décrite comme une fonctionnalité livrée, pas une fonctionnalité prévue.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Indie's export formats are limited (STEP/OBJ/STL/Parasolid) compared to Studio's broader IGES/ACIS/Rhino/DXF/DWG support, so the ceiling depends heavily on which license is bought.",
+        "fr": "Les formats d'export d'Indie sont limités (STEP/OBJ/STL/Parasolid) comparés à la prise en charge plus large d'IGES/ACIS/Rhino/DXF/DWG de Studio, le plafond de puissance dépend donc fortement de la licence achetée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: Indie exports to STEP and Parasolid, which are open-ish engineering formats, but full portability details beyond that aren't covered by the collected sources.",
+        "fr": "Note neutre : Indie exporte en STEP et Parasolid, des formats d'ingénierie relativement ouverts, mais les détails complets de portabilité au-delà ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Direct NURBS modeling",
+      "fr": "Modélisation NURBS directe"
+    },
+    "shortDescription": {
+      "en": "Plasticity is a direct, history-free 3D modeling tool with NURBS surfacing, sold as a one-time license from $175 with a 30-day trial.",
+      "fr": "Plasticity est un outil de modélisation 3D directe, sans historique, avec surfaçage NURBS, vendu en licence unique dès 175 $, essai de 30 jours."
+    },
+    "longDescription": {
+      "en": "Plasticity is a 3D modeling tool built around direct, history-free editing with NURBS surfacing on the Parasolid and xNURBS kernels, supporting complex Boolean operations with watertight results, intelligent fillets and live engineering-grade dimensions.\n\nIt's sold as a one-time license rather than a subscription: Indie costs $175 and is node-locked to 2 machines with 12 months of updates and STEP/OBJ/STL/Parasolid export, while Studio, at $299 for 4 machines, adds professional surfacing tools and IGES/ACIS/Rhino/DXF/DWG support. A 30-day trial is available first. It suits a solo designer or engineer who wants CAD-grade surfacing without a recurring subscription.",
+      "fr": "Plasticity est un outil de modélisation 3D construit autour d'une édition directe, sans historique, avec surfaçage NURBS sur les moteurs Parasolid et xNURBS, prenant en charge des opérations booléennes complexes avec des résultats étanches, des congés intelligents et des cotations de précision ingénierie en direct.\n\nIl est vendu en licence unique plutôt qu'en abonnement : Indie coûte 175 $, lié à 2 machines, avec 12 mois de mises à jour et export STEP/OBJ/STL/Parasolid, tandis que Studio, à 299 $ pour 4 machines, ajoute des outils de surfaçage professionnels et la prise en charge IGES/ACIS/Rhino/DXF/DWG. Un essai de 30 jours est proposé d'abord. Il convient à un designer ou ingénieur seul qui veut un surfaçage de niveau CAO sans abonnement récurrent."
+    },
+    "pros": [
+      {
+        "en": "A one-time $175 payment replaces a recurring subscription for the core modeling toolset.",
+        "fr": "Un paiement unique de 175 $ remplace un abonnement récurrent pour l'outil de modélisation principal."
+      },
+      {
+        "en": "Direct, history-free editing avoids rebuilding a feature tree when a design changes.",
+        "fr": "L'édition directe sans historique évite de reconstruire un arbre de fonctions quand la conception change."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The license is node-locked to a small number of machines (2 for Indie, 4 for Studio), which limits moving between devices freely.",
+        "fr": "La licence est liée à un petit nombre de machines (2 pour Indie, 4 pour Studio), ce qui limite la liberté de changer d'appareil."
+      },
+      {
+        "en": "New version updates are only guaranteed for 12 months after purchase, with the renewal mechanism not fully detailed.",
+        "fr": "Les nouvelles mises à jour ne sont garanties que pendant 12 mois après l'achat, le mécanisme de renouvellement n'étant pas détaillé entièrement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want CAD-grade NURBS surfacing as a one-time purchase instead of a recurring subscription.",
+        "fr": "Tu veux un surfaçage NURBS de niveau CAO en achat unique plutôt qu'en abonnement récurrent."
+      },
+      "avoidIf": {
+        "en": "You need to use the license on more than 2 (Indie) or 4 (Studio) machines, or need broader format support than Indie offers.",
+        "fr": "Tu dois utiliser la licence sur plus de 2 (Indie) ou 4 (Studio) machines, ou tu as besoin d'une prise en charge de formats plus large qu'Indie."
+      },
+      "threshold": {
+        "en": "Indie is a one-time $175 for 2 machines; Studio is a one-time $299 for 4 machines with broader format support.",
+        "fr": "Indie coûte 175 $ en paiement unique pour 2 machines ; Studio coûte 299 $ en paiement unique pour 4 machines avec une prise en charge de formats plus large."
+      }
+    }
+  },
+  "unknowns": [
+    "Whether renewing updates after 12 months requires an additional fee is not stated on the page reviewed"
+  ],
+  "conflicts": [
+    "Seed data listed an Indie/Studio one-time price of $149; the live pricing page shows Indie at $175 and Studio at $299."
+  ],
+  "reviewNotes": [
+    "Price discrepancy versus the catalogue's seed data: seed listed a one-time price of $149 for Indie/Studio, but the live pricing page on plasticity.xyz shows Indie at $175 and Studio at $299. Amounts in this dossier were kept as read on the live page per the no-change rule; the catalogue entry should be checked against plasticity.xyz before merging."
+  ],
+  "hold": "seed price 149 USD conflicts with live page (Indie 175, Studio 299); confirm on plasticity.xyz"
 }

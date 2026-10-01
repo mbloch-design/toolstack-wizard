@@ -3,7 +3,8 @@
   "slug": "onetrust",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "OneTrust",
     "vendor": "OneTrust LLC",
@@ -34,37 +35,96 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "No public pricing; access via demo request and sales quote, priced per module chosen", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "No public pricing; access via demo request and sales quote, priced per module chosen", "fr": "Pas de tarif public ; accès via demande de démo et devis commercial, facturé par module choisi", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "The platform is sold as a set of separate modules (consent, privacy ops, AI governance, third-party risk); the overall bill depends on which modules are licensed.", "fr": "", "sourceIds": ["s1"] }
+      { "en": "The platform is sold as a set of separate modules (consent, privacy ops, AI governance, third-party risk); the overall bill depends on which modules are licensed.", "fr": "La plateforme est vendue sous forme de modules séparés (consentement, opérations de confidentialité, gouvernance IA, risque tiers) ; la facture globale dépend des modules choisis.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Universal consent and preference management across websites, mobile apps, OTT and connected TVs", "sourceIds": ["s1"] },
-      { "en": "Privacy operations automation with data flow visibility, asset classification and incident management", "sourceIds": ["s1"] },
-      { "en": "AI governance tooling embedding compliance controls across the AI lifecycle", "sourceIds": ["s1"] },
-      { "en": "Third-party risk management automating the vendor lifecycle from onboarding to offboarding", "sourceIds": ["s1"] }
+      { "en": "Universal consent and preference management across websites, mobile apps, OTT and connected TVs", "fr": "Gestion universelle du consentement et des préférences sur sites web, applications mobiles, OTT et téléviseurs connectés", "sourceIds": ["s1"] },
+      { "en": "Privacy operations automation with data flow visibility, asset classification and incident management", "fr": "Automatisation des opérations de confidentialité avec visibilité des flux de données, classification des actifs et gestion des incidents", "sourceIds": ["s1"] },
+      { "en": "AI governance tooling embedding compliance controls across the AI lifecycle", "fr": "Outils de gouvernance IA intégrant des contrôles de conformité sur tout le cycle de vie de l'IA", "sourceIds": ["s1"] },
+      { "en": "Third-party risk management automating the vendor lifecycle from onboarding to offboarding", "fr": "Gestion du risque tiers automatisant le cycle de vie des fournisseurs, de l'intégration à la sortie", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No self-serve pricing; every deployment requires a sales-led quote and demo", "sourceIds": ["s1"] },
-      { "en": "Capability set is split across many separate modules, so a small team likely needs several to cover full privacy/risk needs", "sourceIds": ["s1"] }
+      { "en": "No self-serve pricing; every deployment requires a sales-led quote and demo", "fr": "Pas de tarification en libre-service ; chaque déploiement nécessite un devis commercial et une démo", "sourceIds": ["s1"] },
+      { "en": "Capability set is split across many separate modules, so a small team likely needs several to cover full privacy/risk needs", "fr": "Les fonctionnalités sont réparties sur de nombreux modules séparés, une petite équipe a donc probablement besoin de plusieurs pour couvrir l'ensemble des besoins de confidentialité et de risque", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or compliance lead who needs consent management, privacy operations or third-party risk automated across several modules.",
+      "fr": "Un responsable ops ou conformité qui a besoin d'automatiser la gestion du consentement, les opérations de confidentialité ou le risque tiers sur plusieurs modules."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a compliance lead deploys the consent management module to collect and record cookie consent across a website and mobile app from one dashboard.",
+      "fr": "Usage : un responsable conformité déploie le module de gestion du consentement pour collecter et enregistrer le consentement aux cookies sur un site et une app depuis un seul tableau de bord."
+    },
+    {
+      "en": "Usage: an ops team runs a new supplier through the third-party risk module to automate onboarding checks instead of tracking them in spreadsheets.",
+      "fr": "Usage : une équipe ops fait passer un nouveau fournisseur par le module de risque tiers pour automatiser les vérifications d'intégration au lieu de les suivre dans des tableurs."
+    }
+  ],
   "alternatives": [
-    { "slug": "vanta", "reason": { "en": "Competing compliance automation platform covering overlapping risk and trust workflows" } },
-    { "slug": "drata", "reason": { "en": "Competing compliance and third-party risk automation platform" } }
+    { "slug": "vanta", "reason": { "en": "Competing compliance automation platform covering overlapping risk and trust workflows", "fr": "Plateforme concurrente d'automatisation de la conformité couvrant des workflows de risque et de confiance similaires" } },
+    { "slug": "drata", "reason": { "en": "Competing compliance and third-party risk automation platform", "fr": "Plateforme concurrente d'automatisation de la conformité et du risque tiers" } }
   ],
   "missingAlternatives": [
     { "name": "TrustArc", "officialUrl": "https://trustarc.com", "reason": "Direct privacy and consent management competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "With no public price and a per-module billing structure, the real cost for a given scope is unknown, so value for money can't be judged from the collected sources alone.", "fr": "Sans prix public et avec une facturation par module, le coût réel pour un périmètre donné est inconnu, le rapport qualité-prix ne peut donc pas être jugé à partir des seules sources relevées.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Every deployment requires a sales-led quote and demo rather than self-serve signup, and capability is split across many separate modules, pointing to a longer setup than a single-login tool.", "fr": "Chaque déploiement nécessite un devis commercial et une démo plutôt qu'une inscription en libre-service, et les fonctionnalités sont réparties sur de nombreux modules séparés, ce qui indique une mise en place plus longue qu'un outil à connexion unique.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Consent management, privacy operations, AI governance and third-party risk are each described as delivered automation, not pending features.", "fr": "La gestion du consentement, les opérations de confidentialité, la gouvernance IA et le risque tiers sont chacun décrits comme de l'automatisation livrée, pas des fonctionnalités en attente.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Coverage spans consent across websites, apps, OTT and connected TVs plus AI governance and vendor lifecycle risk, a broad ceiling versus a single-purpose privacy tool.", "fr": "La couverture s'étend du consentement sur sites, apps, OTT et téléviseurs connectés à la gouvernance IA et au risque fournisseur, un plafond large face à un outil de confidentialité à fonction unique.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability if a team leaves the platform are not covered by the collected sources.", "fr": "Note neutre : l'export et la portabilité des données en cas de départ de la plateforme ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Privacy & risk platform", "fr": "Plateforme confidentialité" },
+    "shortDescription": {
+      "en": "OneTrust automates consent management, privacy operations, AI governance and third-party risk across separate modules, sold on a custom sales quote.",
+      "fr": "OneTrust automatise la gestion du consentement, les opérations de confidentialité, la gouvernance IA et le risque tiers via des modules séparés, vendu sur devis."
+    },
+    "longDescription": {
+      "en": "OneTrust covers four main areas: universal consent and preference management across websites, apps, OTT and connected TVs, privacy operations automation with data flow visibility and incident management, AI governance controls across the AI lifecycle, and third-party risk management for the vendor lifecycle.\n\nEach area is sold as its own module, with no public price; every deployment goes through a sales-led quote and demo, and the final bill depends on how many modules are licensed. It suits an ops or compliance function at a company with a real multi-module need, since a small team may need several modules just to cover its privacy and risk basics.",
+      "fr": "OneTrust couvre quatre grands domaines : la gestion universelle du consentement et des préférences sur sites, apps, OTT et téléviseurs connectés, l'automatisation des opérations de confidentialité avec visibilité des flux de données et gestion des incidents, les contrôles de gouvernance IA sur tout le cycle de vie, et la gestion du risque tiers pour le cycle de vie fournisseur.\n\nChaque domaine est vendu comme un module à part, sans prix public ; chaque déploiement passe par un devis et une démo, et la facture dépend du nombre de modules sous licence. Il convient à une fonction ops ou conformité avec un vrai besoin multi-module, une petite équipe pouvant avoir besoin de plusieurs modules pour ses bases en confidentialité et risque."
+    },
+    "pros": [
+      { "en": "Covers consent, privacy ops, AI governance and third-party risk under one vendor instead of stitching together separate point tools.", "fr": "Couvre consentement, opérations de confidentialité, gouvernance IA et risque tiers chez un seul éditeur, plutôt que d'assembler des outils séparés." },
+      { "en": "Third-party risk automation covers the full vendor lifecycle from onboarding to offboarding, not just an initial check.", "fr": "L'automatisation du risque tiers couvre tout le cycle de vie fournisseur, de l'intégration à la sortie, pas seulement une vérification initiale." }
+    ],
+    "cons": [
+      { "en": "No price is published anywhere, so budgeting requires a sales conversation before any real comparison is possible.", "fr": "Aucun prix n'est publié nulle part, le budget nécessite donc un échange commercial avant toute vraie comparaison." },
+      { "en": "The modular structure means a small team likely needs more than one module to cover its actual needs, each adding to the quote.", "fr": "La structure modulaire implique qu'une petite équipe a probablement besoin de plus d'un module pour couvrir ses besoins réels, chacun s'ajoutant au devis." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need consent, privacy ops, AI governance or third-party risk automated and can go through a sales-led deployment.", "fr": "Tu as besoin d'automatiser le consentement, les opérations de confidentialité, la gouvernance IA ou le risque tiers et tu peux passer par un déploiement commercial." },
+      "avoidIf": { "en": "You only need one narrow piece of this (e.g. cookie consent alone) and want a self-serve price without a sales quote.", "fr": "Tu n'as besoin que d'une partie restreinte (par exemple le seul consentement cookies) et tu veux un prix en libre-service sans devis commercial." },
+      "threshold": { "en": "No public threshold can be given: pricing is quote-only and depends on which modules are licensed.", "fr": "Aucun seuil public ne peut être donné : la tarification est uniquement sur devis et dépend des modules sous licence." }
+    }
+  },
   "unknowns": ["No pricing figures published anywhere on the site; specific named integrations not listed beyond a generic mention of 'native integrations'"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

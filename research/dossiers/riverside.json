@@ -3,7 +3,7 @@
   "slug": "riverside",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Riverside",
     "vendor": "Riverside.fm Ltd.",
@@ -199,13 +199,6 @@
         "en": "Direct competitor for remote podcast recording with AI editing tools.",
         "fr": "Concurrent direct pour l'enregistrement podcast à distance avec outils de montage IA."
       }
-    },
-    {
-      "slug": "auphonic",
-      "reason": {
-        "en": "Complementary/competing tool for automated audio post-production of recorded content.",
-        "fr": "Outil complémentaire/concurrent pour la post-production audio automatisée du contenu enregistré."
-      }
     }
   ],
   "missingAlternatives": [],
@@ -213,5 +206,118 @@
     "Business plan pricing is fully quote-based; no indicative range published.",
     "Exact vendor legal entity name not independently re-verified beyond public knowledge."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A solo podcaster, YouTuber or small content/marketing team recording remote guests who needs broadcast-quality tracks and text-based editing.",
+      "fr": "Un créateur solo ou une petite équipe contenu/marketing qui enregistre des invités à distance et a besoin de pistes qualité broadcast et d'un montage basé sur le texte."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Remote podcast recording: record separate local 4K/48kHz tracks per remote guest so audio and video stay broadcast-quality even on a bad connection.",
+      "fr": "Enregistrement podcast à distance : enregistrer des pistes locales séparées en 4K/48kHz par invité pour garder une qualité broadcast même avec une mauvaise connexion."
+    },
+    {
+      "en": "Webinar hosting: run a live webinar for up to 100 registrants with the HubSpot CRM integration on the Webinar plan to capture leads during the session.",
+      "fr": "Webinar : organiser un webinar en direct pour jusqu'à 100 inscrits avec l'intégration CRM HubSpot du plan Webinar pour capter des prospects pendant la session."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The entry paid tier ($29/month) removes the watermark and unlocks 4K, but separate-track download hours stay capped (15h/month) even once paying.",
+        "fr": "Le premier plan payant (29 $/mois) retire le filigrane et débloque la 4K, mais les heures de téléchargement de pistes séparées restent plafonnées (15h/mois) même en payant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Recording starts from a browser link per participant, and unlimited single-track recording/editing is available even on the free plan.",
+        "fr": "L'enregistrement démarre via un lien navigateur par participant, et l'enregistrement/montage monopiste illimité est disponible même sur le plan gratuit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers separate local per-participant tracks and text-based editing as advertised, without needing third-party recording software.",
+        "fr": "Tient sa promesse de pistes locales séparées par participant et de montage par le texte, sans logiciel d'enregistrement tiers nécessaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers recording, editing, streaming, hosting and webinars across tiers, but each added capability is gated to its own separate paid plan rather than bundled.",
+        "fr": "Couvre l'enregistrement, le montage, le streaming, l'hébergement et les webinars selon les paliers, mais chaque capacité ajoutée est réservée à son propre plan payant plutôt que groupée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability when leaving Riverside are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en quittant Riverside ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Remote podcast recording",
+      "fr": "Enregistrement podcast à distance"
+    },
+    "shortDescription": {
+      "en": "Riverside records separate local audio/video tracks per remote participant in up to 4K, with a free 2-hour plan and paid tiers from $29 per month.",
+      "fr": "Riverside enregistre des pistes audio/vidéo locales séparées par participant à distance jusqu'en 4K, avec 2h gratuites puis dès 29 $ par mois."
+    },
+    "longDescription": {
+      "en": "Riverside records each remote participant's audio and video as separate local tracks, so quality holds up even with a weak connection, then offers text-based editing, transcription and live streaming on top. Higher tiers add podcast hosting, social scheduling and webinars.\n\nThe free plan allows 2 hours of multi-track recording total (not monthly) with watermarked 720p exports; paid plans start at $29/month ($24/month billed yearly) for 4K/48kHz, no watermark and unlimited editing, but separate-track downloads stay capped at 15 to 25 hours a month even on paid tiers. It fits solo podcasters and small video teams; webinars for up to 100 people need the Webinar plan at $99/month.",
+      "fr": "Riverside enregistre l'audio et la vidéo de chaque participant distant en pistes locales séparées, pour garder la qualité même avec une connexion faible, puis propose montage par texte, transcription et streaming en direct. Les paliers supérieurs ajoutent hébergement podcast, planification réseaux sociaux et webinars.\n\nLe plan gratuit permet 2h d'enregistrement multipiste au total (pas par mois) avec exports filigranés en 720p ; les plans payants démarrent à 29 $/mois (24 $/mois en annuel) pour la 4K/48kHz, sans filigrane et montage illimité, mais les téléchargements de pistes séparées restent plafonnés à 15-25h/mois même en payant. L'outil convient aux podcasteurs solo et petites équipes vidéo ; les webinars jusqu'à 100 personnes nécessitent le plan Webinar à 99 $/mois."
+    },
+    "pros": [
+      {
+        "en": "Separate local tracks per participant protect quality even if a guest's connection drops.",
+        "fr": "Les pistes locales séparées par participant protègent la qualité même si la connexion d'un invité flanche."
+      },
+      {
+        "en": "Unlimited text-based editing and transcription on every paid plan, not gated by tier.",
+        "fr": "Montage par le texte et transcription illimités sur tous les plans payants, sans restriction par palier."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan's 2-hour multi-track quota is a lifetime total, not a monthly allowance.",
+        "fr": "Le quota de 2 heures multipiste du plan gratuit est un total à vie, pas une allocation mensuelle."
+      },
+      {
+        "en": "Separate-track download hours stay capped (15 to 25h/month) even on paid plans.",
+        "fr": "Les heures de téléchargement de pistes séparées restent plafonnées (15 à 25h/mois) même sur les plans payants."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You record remote podcast or video guests and need broadcast-quality separate tracks that survive a bad connection.",
+        "fr": "Tu enregistres des invités podcast ou vidéo à distance et as besoin de pistes séparées qualité broadcast qui survivent à une mauvaise connexion."
+      },
+      "avoidIf": {
+        "en": "You only need single-track recording, since the paid tiers' core advantage (4K, no watermark) comes with capped track-download hours either way.",
+        "fr": "Tu n'as besoin que d'un enregistrement monopiste, car l'avantage principal des plans payants (4K, sans filigrane) reste limité par des heures de téléchargement de pistes plafonnées."
+      },
+      "threshold": {
+        "en": "The Pro plan at $29/month ($24/month paid yearly) is the entry point once the free plan's one-time 2-hour multi-track quota and 720p watermark are not enough.",
+        "fr": "Le plan Pro à 29 $/mois (24 $/mois en annuel) est le seuil d'entrée une fois le quota unique de 2 heures multipiste et le filigrane 720p du plan gratuit dépassés."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01"
 }

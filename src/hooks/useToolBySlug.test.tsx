@@ -2,7 +2,7 @@ import { renderHook, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ReactNode } from "react";
 import type { Tool } from "@/data/types";
-import { SsrToolContext, useToolBySlug } from "./useSupabaseData";
+import { getToolShardKey, SsrToolContext, useToolBySlug } from "./useSupabaseData";
 
 vi.mock("@/integrations/supabase/client", () => ({ supabase: { from: vi.fn() } }));
 
@@ -14,7 +14,7 @@ describe("tool route identity", () => {
     vi.stubGlobal("fetch", request);
     const { result } = renderHook(() => useToolBySlug("tapstitch"));
     await waitFor(() => expect(result.current.tool?.slug).toBe("tapstitch"));
-    expect(request).toHaveBeenCalledWith("/assets/tool-catalog/t.json", { cache: "no-cache" });
+    expect(request).toHaveBeenCalledWith(`/assets/tool-catalog/${getToolShardKey("tapstitch")}.json`, { cache: "no-cache" });
   });
   it("restores the SSR record when navigating back from another listing", async () => {
     const gamma = { id: "gamma", slug: "gamma", name: "Gamma" } as Tool;

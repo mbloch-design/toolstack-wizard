@@ -3,7 +3,8 @@
   "slug": "creditsafe",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Creditsafe",
     "vendor": "Creditsafe Group",
@@ -34,35 +35,94 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "No public pricing; quote depends on report volume and data coverage needed", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "No public pricing; quote depends on report volume and data coverage needed", "fr": "Pas de tarif public ; le devis dépend du volume de rapports et de la couverture de données demandée", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "No pricing is published; every quote depends on report volume and coverage negotiated with sales.", "fr": "", "sourceIds": ["s1"] }
+      { "en": "No pricing is published; every quote depends on report volume and coverage negotiated with sales.", "fr": "Aucun tarif n'est publié ; chaque devis dépend du volume de rapports et de la couverture négociée avec l'équipe commerciale.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Business credit reports and credit risk scores covering 430+ million companies worldwide", "sourceIds": ["s1"] },
-      { "en": "Real-time monitoring and alerts on changes to a business's credit status", "sourceIds": ["s1"] },
-      { "en": "Uses machine learning and alternative data sources to enrich risk analysis", "sourceIds": ["s1"] }
+      { "en": "Business credit reports and credit risk scores covering 430+ million companies worldwide", "fr": "Rapports de crédit entreprise et scores de risque crédit couvrant plus de 430 millions d'entreprises dans le monde", "sourceIds": ["s1"] },
+      { "en": "Real-time monitoring and alerts on changes to a business's credit status", "fr": "Surveillance en temps réel et alertes sur les changements de statut de crédit d'une entreprise", "sourceIds": ["s1"] },
+      { "en": "Uses machine learning and alternative data sources to enrich risk analysis", "fr": "Utilise le machine learning et des sources de données alternatives pour enrichir l'analyse de risque", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No self-serve pricing or plan comparison published; access requires going through sales", "sourceIds": ["s1"] },
-      { "en": "Specific API or CRM integrations are not detailed on the public marketing pages", "sourceIds": ["s1"] }
+      { "en": "No self-serve pricing or plan comparison published; access requires going through sales", "fr": "Pas de tarification en libre-service ni de comparatif de forfaits publié ; l'accès passe par l'équipe commerciale", "sourceIds": ["s1"] },
+      { "en": "Specific API or CRM integrations are not detailed on the public marketing pages", "fr": "Les intégrations API ou CRM précises ne sont pas détaillées sur les pages marketing publiques", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or finance lead who needs to check a prospective customer's or supplier's credit risk before signing a contract.",
+      "fr": "Un responsable ops ou finance qui doit vérifier le risque de crédit d'un futur client ou fournisseur avant de signer un contrat."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a finance team pulls a credit report on a new B2B customer before extending payment terms, to check default risk first.",
+      "fr": "Usage : une équipe finance récupère un rapport de crédit sur un nouveau client B2B avant d'accorder des délais de paiement, pour vérifier d'abord le risque de défaut."
+    },
+    {
+      "en": "Usage: an ops lead sets a monitoring alert on a key supplier so a credit status change is flagged as soon as it happens.",
+      "fr": "Usage : un responsable ops met en place une alerte de surveillance sur un fournisseur clé pour être prévenu dès qu'un changement de statut de crédit survient."
+    }
+  ],
   "alternatives": [
-    { "slug": "dun-bradstreet", "reason": { "en": "Direct competitor in global business credit reporting and risk scoring" } }
+    { "slug": "dun-bradstreet", "reason": { "en": "Direct competitor in global business credit reporting and risk scoring", "fr": "Concurrent direct sur les rapports de crédit entreprise et le scoring de risque à l'échelle mondiale" } }
   ],
   "missingAlternatives": [
     { "name": "Experian Business", "officialUrl": "https://www.experian.com/business-information/business-credit.html", "reason": "Major business credit reporting competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Coverage of 430+ million companies and real-time monitoring is a broad data asset, but with no public price it's impossible to judge value for money from the collected sources.", "fr": "La couverture de plus de 430 millions d'entreprises et la surveillance en temps réel sont un atout de données large, mais sans prix public il est impossible de juger le rapport qualité-prix à partir des sources relevées.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed to reach a first useful result, and the sales-quote onboarding process, are not detailed in the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile, ainsi que le parcours de devis commercial, ne sont pas détaillés dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Credit reports, risk scores and real-time status monitoring are delivered as described, covering the core promise of business credit checking.", "fr": "Les rapports de crédit, scores de risque et la surveillance de statut en temps réel sont livrés comme annoncé, couvrant la promesse principale de vérification de crédit entreprise.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Global coverage of 430+ million companies plus machine-learning-enriched risk analysis is a high ceiling compared to a basic credit lookup tool.", "fr": "La couverture mondiale de plus de 430 millions d'entreprises associée à une analyse de risque enrichie par machine learning constitue un plafond élevé face à un simple outil de consultation de crédit.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: report export formats and data portability after cancelling are not covered by the collected sources.", "fr": "Note neutre : les formats d'export des rapports et la portabilité des données après annulation ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Business credit reports", "fr": "Rapports crédit entreprise" },
+    "shortDescription": {
+      "en": "Creditsafe provides business credit reports and risk scores on 430+ million companies worldwide, with real-time monitoring, sold on a custom quote.",
+      "fr": "Creditsafe fournit des rapports de crédit et scores de risque sur plus de 430 millions d'entreprises, avec surveillance en temps réel, vendu sur devis."
+    },
+    "longDescription": {
+      "en": "Creditsafe delivers business credit reports and risk scores covering over 430 million companies worldwide, enriched with machine learning and alternative data sources, plus real-time monitoring and alerts when a business's credit status changes.\n\nThere's no self-serve pricing: every account goes through a sales quote that depends on report volume and the data coverage needed, so the cost for a small team can't be estimated from the public site. It fits an ops or finance function that regularly needs to vet a customer's or supplier's credit risk, not a one-off occasional check.",
+      "fr": "Creditsafe fournit des rapports de crédit entreprise et des scores de risque couvrant plus de 430 millions d'entreprises dans le monde, enrichis par du machine learning et des sources de données alternatives, avec surveillance en temps réel et alertes en cas de changement de statut de crédit.\n\nIl n'y a pas de tarification en libre-service : chaque compte passe par un devis commercial qui dépend du volume de rapports et de la couverture de données nécessaire, donc le coût pour une petite équipe ne peut pas être estimé depuis le site public. Il convient à une fonction ops ou finance qui doit régulièrement évaluer le risque de crédit d'un client ou fournisseur, pas à une vérification ponctuelle."
+    },
+    "pros": [
+      { "en": "Covers over 430 million companies worldwide, a broad base for checking almost any counterparty.", "fr": "Couvre plus de 430 millions d'entreprises dans le monde, une base large pour vérifier presque n'importe quelle contrepartie." },
+      { "en": "Real-time monitoring flags a credit status change without needing to re-pull a report manually.", "fr": "La surveillance en temps réel signale un changement de statut de crédit sans avoir à ressortir un rapport manuellement." }
+    ],
+    "cons": [
+      { "en": "No price is published anywhere, so budgeting for it requires a sales conversation before any comparison is possible.", "fr": "Aucun prix n'est publié nulle part, il faut donc passer par un échange commercial avant de pouvoir comparer quoi que ce soit." },
+      { "en": "Named API or CRM integrations aren't detailed publicly, so compatibility with an existing stack needs checking directly with sales.", "fr": "Les intégrations API ou CRM précises ne sont pas détaillées publiquement, la compatibilité avec un outil existant doit donc être vérifiée directement avec l'équipe commerciale." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need to regularly check business credit risk across many counterparties and can go through a sales quote process.", "fr": "Tu dois vérifier régulièrement le risque de crédit d'entreprises sur de nombreuses contreparties et tu peux passer par un devis commercial." },
+      "avoidIf": { "en": "You only need an occasional credit check and want a self-serve price you can see before talking to anyone.", "fr": "Tu n'as besoin que d'une vérification de crédit occasionnelle et tu veux un prix en libre-service visible sans échanger avec quelqu'un." },
+      "threshold": { "en": "No public threshold can be given: pricing is quote-only and depends on report volume and coverage.", "fr": "Aucun seuil public ne peut être donné : la tarification est uniquement sur devis et dépend du volume de rapports et de la couverture." }
+    }
+  },
   "unknowns": ["No pricing figures published anywhere on the site; integrations and platform details not documented on the pages reviewed"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

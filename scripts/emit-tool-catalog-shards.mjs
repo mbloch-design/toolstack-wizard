@@ -11,9 +11,17 @@ if (!Array.isArray(tools)) {
   throw new Error(`${sourcePath} must contain a tool array.`);
 }
 
+// Keep in sync with getToolShardKey in src/hooks/useSupabaseData.ts.
+// Shards were keyed by first letter until 106 "universal-*" slugs pushed the
+// "u" shard past 1 MiB; a hash spreads the catalogue evenly instead.
+const SHARD_COUNT = 48;
 const getShardKey = (value) => {
-  const firstCharacter = String(value || "").trim().toLowerCase().charAt(0);
-  return /^[a-z0-9]$/.test(firstCharacter) ? firstCharacter : "other";
+  const key = String(value || "").trim().toLowerCase();
+  let hash = 5381;
+  for (let index = 0; index < key.length; index += 1) {
+    hash = ((hash * 33) ^ key.charCodeAt(index)) >>> 0;
+  }
+  return `s${hash % SHARD_COUNT}`;
 };
 
 const shards = new Map();

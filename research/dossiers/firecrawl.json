@@ -3,7 +3,8 @@
   "slug": "firecrawl",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Firecrawl",
     "vendor": "Firecrawl (Mendable AI Inc.)",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "1,000 credits/month, ~500 searches or 1,000 pages scraped, 2 concurrent requests, community support", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "1,000 credits/month, ~500 searches or 1,000 pages scraped, 2 concurrent requests, community support", "fr": "1 000 crédits/mois, ~500 recherches ou 1 000 pages scrapées, 2 requêtes simultanées, support communautaire" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1,000 credits/month (~500 searches or 1,000 pages scraped), 2 concurrent requests, community support", "fr": null }],
+        "keyLimits": [{ "en": "1,000 credits/month (~500 searches or 1,000 pages scraped), 2 concurrent requests, community support", "fr": "1 000 crédits/mois (~500 recherches ou 1 000 pages scrapées), 2 requêtes simultanées, support communautaire" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": 19, "annualPerMonth": 16, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5,000 credits/month (~2,500 searches or 5,000 pages scraped), 5 concurrent requests, basic support", "fr": null }],
+        "keyLimits": [{ "en": "5,000 credits/month (~2,500 searches or 5,000 pages scraped), 5 concurrent requests, basic support", "fr": "5 000 crédits/mois (~2 500 recherches ou 5 000 pages scrapées), 5 requêtes simultanées, support basique" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": 83, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "100,000 credits/month (~50,000 searches or 100,000 pages scraped), 25 concurrent requests, standard support", "fr": null }],
+        "keyLimits": [{ "en": "100,000 credits/month (~50,000 searches or 100,000 pages scraped), 25 concurrent requests, standard support", "fr": "100 000 crédits/mois (~50 000 recherches ou 100 000 pages scrapées), 25 requêtes simultanées, support standard" }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +65,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": 333, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "500,000 credits/month (~250,000 searches or 500,000 pages scraped), 50 concurrent requests, priority support", "fr": null }],
+        "keyLimits": [{ "en": "500,000 credits/month (~250,000 searches or 500,000 pages scraped), 50 concurrent requests, priority support", "fr": "500 000 crédits/mois (~250 000 recherches ou 500 000 pages scrapées), 50 requêtes simultanées, support prioritaire" }],
         "sourceIds": ["s1"]
       },
       {
@@ -74,7 +75,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": 599, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1,000,000 credits/month (~500,000 searches or 1,000,000 pages scraped), 100 concurrent requests, priority support", "fr": null }],
+        "keyLimits": [{ "en": "1,000,000 credits/month (~500,000 searches or 1,000,000 pages scraped), 100 concurrent requests, priority support", "fr": "1 000 000 crédits/mois (~500 000 recherches ou 1 000 000 pages scrapées), 100 requêtes simultanées, support prioritaire" }],
         "sourceIds": ["s1"]
       },
       {
@@ -84,7 +85,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom credits, zero-data retention, SSO, API key restrictions, static egress IPs, dedicated support with SLA", "fr": null }],
+        "keyLimits": [{ "en": "Custom credits, zero-data retention, SSO, API key restrictions, static egress IPs, dedicated support with SLA", "fr": "Crédits personnalisés, zéro rétention de données, SSO, restrictions de clé API, IP de sortie statiques, support dédié avec SLA" }],
         "sourceIds": ["s1"]
       }
     ],
@@ -93,32 +94,81 @@
       { "name": "Extra credits (1,000 per $5 on Hobby, cheaper per-credit rate on higher tiers)", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Costs scale by API operation: scrape/crawl/map cost 1 credit/page, search costs 2 credits per 10 results, browser 'interact' costs 2 credits/minute, and monitoring costs 1 credit per page per check; actual spend depends heavily on usage pattern, not just the plan's monthly credit allowance.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Costs scale by API operation: scrape/crawl/map cost 1 credit/page, search costs 2 credits per 10 results, browser 'interact' costs 2 credits/minute, and monitoring costs 1 credit per page per check; actual spend depends heavily on usage pattern, not just the plan's monthly credit allowance.", "fr": "Les coûts varient selon l'opération API : scrape/crawl/map coûtent 1 crédit/page, la recherche coûte 2 crédits par 10 résultats, l'interaction navigateur 'interact' coûte 2 crédits/minute, et la surveillance coûte 1 crédit par page à chaque vérification ; la dépense réelle dépend surtout du mode d'usage, pas seulement du quota mensuel du plan.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Converts any website into clean, structured data (Markdown/JSON) via a scraping and crawling API.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Offers a search API and a site-mapping capability alongside scraping, plus browser-based 'interact' actions for dynamic pages.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Provides a monitoring feature to re-check pages for changes on a schedule.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Converts any website into clean, structured data (Markdown/JSON) via a scraping and crawling API.", "fr": "Convertit n'importe quel site web en données structurées propres (Markdown/JSON) via une API de scraping et de crawling.", "sourceIds": ["s1"] },
+      { "en": "Offers a search API and a site-mapping capability alongside scraping, plus browser-based 'interact' actions for dynamic pages.", "fr": "Propose une API de recherche et une fonction de cartographie de site en plus du scraping, ainsi que des actions navigateur 'interact' pour les pages dynamiques.", "sourceIds": ["s1"] },
+      { "en": "Provides a monitoring feature to re-check pages for changes on a schedule.", "fr": "Fournit une fonction de surveillance pour revérifier les changements de pages selon un calendrier.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Usage is credit-metered; scraping large sites or using search/interact features can consume the monthly allowance quickly.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Concurrency (parallel requests) is capped per plan (2 on Free up to 100 on Scale), which limits large-batch crawling speed on lower tiers.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Usage is credit-metered; scraping large sites or using search/interact features can consume the monthly allowance quickly.", "fr": "L'usage est mesuré en crédits ; scraper de grands sites ou utiliser la recherche/interact peut consommer rapidement le quota mensuel.", "sourceIds": ["s1"] },
+      { "en": "Concurrency (parallel requests) is capped per plan (2 on Free up to 100 on Scale), which limits large-batch crawling speed on lower tiers.", "fr": "La simultanéité (requêtes en parallèle) est plafonnée par plan (2 en Free jusqu'à 100 en Scale), ce qui limite la vitesse de crawling en gros lot sur les paliers inférieurs.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who need to turn websites into structured data for an app or an AI pipeline, without maintaining their own scraping infrastructure.",
+      "fr": "Développeurs qui ont besoin de transformer des sites web en données structurées pour une appli ou un pipeline IA, sans maintenir leur propre infrastructure de scraping."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Data extraction pipeline: scrape or crawl a site into clean Markdown/JSON to feed an app or an AI pipeline.", "fr": "Pipeline d'extraction de données : scraper ou crawler un site en Markdown/JSON propre pour alimenter une appli ou un pipeline IA." },
+    { "en": "Change monitoring: schedule the monitoring feature to re-check key pages and catch content changes automatically.", "fr": "Surveillance des changements : planifier la fonction de monitoring pour revérifier des pages clés et détecter automatiquement les changements de contenu." }
+  ],
   "alternatives": [
-    { "slug": "crawlbase", "reason": { "en": "Direct competitor offering web scraping/crawling APIs for structured data extraction.", "fr": null } },
-    { "slug": "hyperbrowser", "reason": { "en": "Competing browser-automation/scraping API used for similar structured web data extraction workflows.", "fr": null } }
+    { "slug": "crawlbase", "reason": { "en": "Direct competitor offering web scraping/crawling APIs for structured data extraction.", "fr": "Concurrent direct proposant des API de scraping/crawling web pour l'extraction de données structurées." } },
+    { "slug": "hyperbrowser", "reason": { "en": "Competing browser-automation/scraping API used for similar structured web data extraction workflows.", "fr": "API concurrente d'automatisation de navigateur/scraping utilisée pour des workflows similaires d'extraction de données web structurées." } }
   ],
   "missingAlternatives": [
     { "name": "ScrapingBee", "officialUrl": "https://www.scrapingbee.com/", "reason": "Well-known web scraping API competitor to Firecrawl, not present in the catalogue." },
     { "name": "Apify", "officialUrl": "https://apify.com/", "reason": "Major web scraping and automation platform competing directly with Firecrawl, not present in the catalogue." }
   ],
-  "unknowns": [
-    "Whether the Standard/Growth/Scale monthly (non-annual) prices differ from the annual-equivalent figures shown was not fully confirmed; only Hobby showed both monthly and annual prices on the fetched page."
-  ],
-  "conflicts": []
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A genuinely usable free tier (1,000 credits/month) plus a $19/month entry plan with published per-operation credit costs let a developer start and scale without guessing at cost.", "fr": "Un palier gratuit réellement utilisable (1 000 crédits/mois) plus un plan d'entrée à 19 $/mois avec des coûts en crédits publiés par opération permettent à un développeur de démarrer et de monter en charge sans deviner le coût.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: no setup time or time-to-first-scrape is stated in the collected source.", "fr": "Note neutre : aucun temps de mise en place ni délai jusqu'au premier scraping n'est précisé dans la source relevée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Scraping, crawling, mapping, search, browser interact and scheduled monitoring are all delivered natively per the source, with no third-party tool mentioned as a workaround.", "fr": "Le scraping, le crawling, la cartographie, la recherche, les actions navigateur interact et la surveillance planifiée sont tous livrés nativement selon la source, sans outil tiers mentionné en contournement.", "sourceIds": ["s1"] },
+      "puissance": { "en": "The source lists scraping, crawling, search, site mapping, browser interaction and monitoring plus enterprise-grade options (SSO, zero-data retention, static IPs), a broad feature set for the API-scraping category.", "fr": "La source liste le scraping, le crawling, la recherche, la cartographie de site, l'interaction navigateur et le monitoring, plus des options de niveau entreprise (SSO, zéro rétention de données, IP statiques), un ensemble de fonctions large pour la catégorie des API de scraping.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: account portability and whether scraped data or configurations can be exported if leaving Firecrawl are not covered by the collected sources.", "fr": "Note neutre : la portabilité du compte et la possibilité d'exporter les données ou configurations en cas de départ de Firecrawl ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Web scraping API", "fr": "API de scraping" },
+    "shortDescription": { "en": "Firecrawl is a web scraping and crawling API that turns sites into clean Markdown/JSON, with a free tier and paid plans from $19/month.", "fr": "Firecrawl est une API de scraping et de crawling qui transforme les sites en Markdown/JSON propre, avec un palier gratuit et des plans dès 19 $/mois." },
+    "longDescription": {
+      "en": "Firecrawl is an API that converts any website into clean, structured Markdown or JSON through scraping and crawling. It also offers a search API, a site-mapping capability, browser-based 'interact' actions for dynamic pages, and a monitoring feature that re-checks pages for changes on a schedule.\n\nThe Free plan gives 1,000 credits/month (about 500 searches or 1,000 pages scraped). Paid plans start at Hobby for $19/month (5,000 credits), rising to Standard, Growth and Scale at $83, $333 and $599/month billed annually, up to Enterprise with custom credits and SSO on quote. Costs scale by operation, so actual spend depends on usage pattern.",
+      "fr": "Firecrawl est une API qui convertit n'importe quel site web en Markdown ou JSON propre et structuré via le scraping et le crawling. Elle propose aussi une API de recherche, une fonction de cartographie de site, des actions navigateur 'interact' pour les pages dynamiques, et une fonction de surveillance qui revérifie les pages selon un calendrier.\n\nLe plan Free donne 1 000 crédits/mois (environ 500 recherches ou 1 000 pages scrapées). Les plans payants démarrent avec Hobby à 19 $/mois (5 000 crédits), puis Standard, Growth et Scale à 83 $, 333 $ et 599 $/mois en facturation annuelle, jusqu'à Enterprise à crédits personnalisés et SSO sur devis. Les coûts varient selon l'opération, donc la dépense réelle dépend du mode d'usage."
+    },
+    "pros": [
+      { "en": "The free tier gives a real 1,000 credits a month, enough to test scraping, crawling and search before paying.", "fr": "Le palier gratuit donne un vrai quota de 1 000 crédits par mois, suffisant pour tester le scraping, le crawling et la recherche avant de payer." },
+      { "en": "Credit costs per operation (scrape, search, interact, monitor) are published, instead of a vague usage-based price.", "fr": "Le coût en crédits de chaque opération (scrape, recherche, interact, monitoring) est publié, au lieu d'un prix à l'usage flou." }
+    ],
+    "cons": [
+      { "en": "Search and browser 'interact' actions consume credits faster than plain scraping, so usage pattern matters more than the plan's headline credit count.", "fr": "La recherche et les actions navigateur 'interact' consomment les crédits plus vite qu'un simple scraping, donc le mode d'usage compte plus que le nombre de crédits affiché du plan." },
+      { "en": "Concurrency is capped per plan, from 2 requests on Free up to 100 on Scale, which limits large-batch crawling speed on lower tiers.", "fr": "La simultanéité est plafonnée par plan, de 2 requêtes en Free jusqu'à 100 en Scale, ce qui limite la vitesse de crawling en gros lot sur les paliers inférieurs." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need a scraping/crawling API with a real free tier to start and transparent per-operation credit pricing as usage grows.", "fr": "Tu as besoin d'une API de scraping/crawling avec un vrai palier gratuit pour démarrer et une tarification en crédits transparente par opération à mesure que l'usage grandit." },
+      "avoidIf": { "en": "Your workload is mostly search or interact-heavy, since those operations burn through credits faster than plain page scraping.", "fr": "Ton usage est surtout basé sur la recherche ou les actions interact, car ces opérations consomment les crédits plus vite qu'un simple scraping de page." },
+      "threshold": { "en": "Worth the Hobby plan at $19/month (or $16/month billed annually) once the free tier's 1,000 monthly credits are no longer enough.", "fr": "Le plan Hobby à 19 $/mois (ou 16 $/mois en facturation annuelle) devient rentable dès que les 1 000 crédits mensuels du palier gratuit ne suffisent plus." },
+      "billingTraps": { "en": "Spend is not just the plan's monthly credit count: search costs 2 credits per 10 results, browser interact costs 2 credits/minute, and monitoring costs 1 credit per page per check, so a search- or interact-heavy workload can burn through credits faster than the headline number suggests.", "fr": "La dépense ne se limite pas au quota mensuel du plan : la recherche coûte 2 crédits par 10 résultats, l'interaction navigateur coûte 2 crédits/minute, et le monitoring coûte 1 crédit par page à chaque vérification, donc un usage orienté recherche ou interact peut consommer les crédits plus vite que le chiffre affiché ne le suggère." }
+    }
+  },
+  "unknowns": ["Whether the Standard/Growth/Scale monthly (non-annual) prices differ from the annual-equivalent figures shown was not fully confirmed; only Hobby showed both monthly and annual prices on the fetched page."],
+  "conflicts": [],
+  "reviewNotes": []
 }

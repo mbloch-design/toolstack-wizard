@@ -3,7 +3,7 @@
   "slug": "anaplan",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Anaplan",
     "vendor": "Anaplan, Inc.",
@@ -131,5 +131,121 @@
     "No pricing model details (per-seat, per-module, usage-based) available without a sales quote.",
     "No trial or free tier information found on the official site."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "No pricing figures are published anywhere on the official site (quote-only); verify on anaplan.com whether a published rate card or published starting price exists before relying on this dossier for budget comparisons."
+  ],
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Finance, sales and supply chain teams inside large enterprises building multi-dimensional planning models, not solo freelancers or small teams.",
+      "fr": "Équipes finance, ventes et supply chain de grandes entreprises qui construisent des modèles de planification multi-dimensionnels, pas des indépendants ou de petites équipes."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Forecasting: build a multi-dimensional financial model to run scenario analysis across finance, sales or supply chain data.",
+      "fr": "Prévision : construire un modèle financier multi-dimensionnel pour exécuter des analyses de scénarios sur des données finance, ventes ou supply chain."
+    },
+    {
+      "en": "Scenario analysis: use role-based AI agents to test planning assumptions before committing a budget or a workforce plan.",
+      "fr": "Analyse de scénarios : utiliser des agents IA par rôle pour tester des hypothèses de planification avant de valider un budget ou un plan d'effectifs."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 1,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No pricing is published anywhere, so the cost cannot be weighed against the gain without a sales quote; the stated enterprise focus (48% of Fortune 50 cited as customers) points to a cost scaled for large budgets.",
+        "fr": "Aucun tarif n'est publié, donc le coût ne peut pas être comparé au gain sans devis commercial ; le positionnement entreprise affiché (48 % des clients Fortune 50 cités) suppose un coût calibré pour de gros budgets.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "No self-serve pricing or trial exists, and the tool is positioned for large enterprises, which the source explicitly ties to setup complexity rather than a quick first result.",
+        "fr": "Aucun prix ni essai en libre-service n'existe, et l'outil est positionné pour les grandes entreprises, ce que la source relie explicitement à une mise en place complexe plutôt qu'à un résultat rapide.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Capabilities described (multi-dimensional modeling, role-based AI agents for scenario analysis) match the announced enterprise planning use, but no independent evidence of outcomes is in the sources.",
+        "fr": "Les capacités décrites (modélisation multi-dimensionnelle, agents IA par rôle pour l'analyse de scénarios) correspondent à l'usage de planification d'entreprise annoncé, mais aucune preuve indépendante de résultats ne figure dans les sources.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Combines a multi-dimensional modeling and calculation engine with role-based AI agents (Finance, Sales, Supply Chain, Workforce Analyst), a broad capability set for enterprise planning.",
+        "fr": "Combine un moteur de modélisation et de calcul multi-dimensionnel avec des agents IA par rôle (Finance, Ventes, Supply Chain, RH), un ensemble de capacités large pour la planification d'entreprise.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or model portability when leaving Anaplan are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données ou la portabilité des modèles en quittant Anaplan ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Enterprise planning platform",
+      "fr": "Plateforme de planification d'entreprise"
+    },
+    "shortDescription": {
+      "en": "Anaplan is a cloud planning and modeling platform for finance, sales and supply chain teams, priced only on a sales quote.",
+      "fr": "Anaplan est une plateforme cloud de planification et de modélisation pour les équipes finance, ventes et supply chain, au tarif uniquement sur devis."
+    },
+    "longDescription": {
+      "en": "Anaplan is a cloud-based multi-dimensional modeling and calculation engine for enterprise planning across finance, sales, supply chain, HR and retail, with role-based AI agents for predictive scenario analysis.\n\nNo pricing is published: every deployment is scoped and quoted by sales based on users, modules and data volume, and there is no free tier or trial. The site cites large enterprises (48% of Fortune 50) among its customers, so it is built for organizations with a dedicated planning team, not a solo freelancer or a very small team.",
+      "fr": "Anaplan est un moteur cloud de modélisation et de calcul multi-dimensionnel pour la planification d'entreprise en finance, ventes, supply chain, RH et retail, avec des agents IA par rôle pour l'analyse prédictive de scénarios.\n\nAucun tarif n'est publié : chaque déploiement est défini et chiffré par l'équipe commerciale selon les utilisateurs, les modules et le volume de données, sans palier gratuit ni essai. Le site cite de grandes entreprises (48 % des clients Fortune 50) parmi ses clients : l'outil est construit pour des organisations avec une équipe de planification dédiée, pas pour un indépendant ou une très petite équipe."
+    },
+    "pros": [
+      {
+        "en": "Combines multi-dimensional modeling with role-based AI agents for scenario analysis in one platform.",
+        "fr": "Combine modélisation multi-dimensionnelle et agents IA par rôle pour l'analyse de scénarios dans une seule plateforme."
+      },
+      {
+        "en": "Covers planning across multiple functions (finance, sales, supply chain, HR, retail) rather than one department alone.",
+        "fr": "Couvre la planification sur plusieurs fonctions (finance, ventes, supply chain, RH, retail) plutôt qu'un seul service."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No published pricing or trial: every engagement starts with a sales conversation.",
+        "fr": "Aucun tarif ni essai publié : chaque projet commence par un échange commercial."
+      },
+      {
+        "en": "Positioned for large enterprises, implying a setup complexity not aimed at solo users or very small teams.",
+        "fr": "Positionné pour les grandes entreprises, ce qui suppose une mise en place complexe, peu adaptée aux indépendants ou très petites équipes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "A large organization needs a dedicated multi-dimensional planning platform across finance, sales or supply chain and has the budget for an enterprise sales process.",
+        "fr": "Une grande organisation a besoin d'une plateforme dédiée de planification multi-dimensionnelle en finance, ventes ou supply chain, et a le budget pour un processus commercial d'entreprise."
+      },
+      "avoidIf": {
+        "en": "The team is a freelancer or a very small team: the lack of published pricing, free tier or trial makes Anaplan a poor fit to evaluate without an enterprise budget.",
+        "fr": "L'équipe est un indépendant ou une très petite équipe : l'absence de tarif public, de palier gratuit ou d'essai rend Anaplan difficile à évaluer sans un budget d'entreprise."
+      },
+      "threshold": {
+        "en": "No public monthly or annual figure exists; budgeting requires a sales quote before any comparison is possible.",
+        "fr": "Aucun montant mensuel ou annuel public n'existe ; établir un budget nécessite un devis commercial avant toute comparaison."
+      }
+    }
+  }
 }

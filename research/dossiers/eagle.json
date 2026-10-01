@@ -3,7 +3,7 @@
   "slug": "eagle",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Eagle",
     "vendor": "Eagle",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://eagle.cool", "tier": 1, "accessedOn": "2026-09-25", "title": "Eagle homepage" },
-    { "id": "s2", "url": "https://eagle.cool/store", "tier": 1, "accessedOn": "2026-09-25", "title": "Eagle license store" }
+    {
+      "id": "s1",
+      "url": "https://eagle.cool",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Eagle homepage"
+    },
+    {
+      "id": "s2",
+      "url": "https://eagle.cool/store",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Eagle license store"
+    }
   ],
   "pricing": {
     "model": "one_time",
@@ -25,49 +37,261 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "license",
         "name": "Eagle license",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 34.95 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 34.95
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "One license key usable on 2 devices, lifetime access, free future updates, unlimited deactivations.", "fr": "Une clé de licence utilisable sur 2 appareils, accès à vie, mises à jour futures gratuites, désactivations illimitées." }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "One license key usable on 2 devices, lifetime access, free future updates, unlimited deactivations.",
+            "fr": "Une clé de licence utilisable sur 2 appareils, accès à vie, mises à jour futures gratuites, désactivations illimitées."
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": "license",
     "addOns": [],
     "cautions": [
-      { "en": "No subscription or team/bundle pricing is published; each additional user needs a separate license.", "fr": "Aucune formule abonnement ni tarif équipe/lot n'est publié ; chaque utilisateur supplémentaire nécessite une licence séparée.", "sourceIds": ["s2"] }
+      {
+        "en": "No subscription or team/bundle pricing is published; each additional user needs a separate license.",
+        "fr": "Aucune formule abonnement ni tarif équipe/lot n'est publié ; chaque utilisateur supplémentaire nécessite une licence séparée.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Centralizes and visually organizes creative assets (images, videos, fonts, PDFs, audio, web bookmarks) with tags, colors, ratings and smart folders.", "fr": "Centralise et organise visuellement les assets créatifs (images, vidéos, fonts, PDFs, audio, favoris web) avec tags, couleurs, notes et dossiers intelligents.", "sourceIds": ["s1"] },
-      { "en": "AI-powered visual and semantic search across the asset library, plus a browser extension for batch saving.", "fr": "Recherche visuelle et sémantique alimentée par l'IA dans la bibliothèque, plus une extension navigateur pour l'enregistrement par lot.", "sourceIds": ["s1"] }
+      {
+        "en": "Centralizes and visually organizes creative assets (images, videos, fonts, PDFs, audio, web bookmarks) with tags, colors, ratings and smart folders.",
+        "fr": "Centralise et organise visuellement les assets créatifs (images, vidéos, fonts, PDFs, audio, favoris web) avec tags, couleurs, notes et dossiers intelligents.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-powered visual and semantic search across the asset library, plus a browser extension for batch saving.",
+        "fr": "Recherche visuelle et sémantique alimentée par l'IA dans la bibliothèque, plus une extension navigateur pour l'enregistrement par lot.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Desktop-only application (Windows 10+ / macOS 10.15+); no official web or mobile app.", "fr": "Application desktop uniquement (Windows 10+ / macOS 10.15+) ; pas d'application web ou mobile officielle.", "sourceIds": ["s1"] },
-      { "en": "No permanent free tier; requires a paid one-time license after the 30-day trial ends.", "fr": "Pas de palier gratuit permanent ; nécessite une licence payante à l'achat unique après les 30 jours d'essai.", "sourceIds": ["s1"] }
+      {
+        "en": "Desktop-only application (Windows 10+ / macOS 10.15+); no official web or mobile app.",
+        "fr": "Application desktop uniquement (Windows 10+ / macOS 10.15+) ; pas d'application web ou mobile officielle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No permanent free tier; requires a paid one-time license after the 30-day trial ends.",
+        "fr": "Pas de palier gratuit permanent ; nécessite une licence payante à l'achat unique après les 30 jours d'essai.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["windows", "macos"]
+    "platforms": [
+      "windows",
+      "macos"
+    ]
   },
   "alternatives": [
-    { "slug": "dropbox", "reason": { "en": "Alternative for centralizing and storing creative files, though without Eagle's visual tagging and search system.", "fr": "Alternative pour centraliser et stocker des fichiers créatifs, sans le système de tags et de recherche visuelle d'Eagle." } },
-    { "slug": "box", "reason": { "en": "Cloud file storage alternative usable for asset organization, though less specialized for visual/creative search.", "fr": "Alternative de stockage cloud utilisable pour l'organisation d'assets, mais moins spécialisée pour la recherche visuelle/créative." } },
-    { "slug": "bynder", "reason": { "en": "Dedicated digital asset management alternative aimed at organizing creative files for teams.", "fr": "Alternative dédiée de gestion d'assets numériques pour organiser des fichiers créatifs en équipe." } }
+    {
+      "slug": "dropbox",
+      "reason": {
+        "en": "Alternative for centralizing and storing creative files, though without Eagle's visual tagging and search system.",
+        "fr": "Alternative pour centraliser et stocker des fichiers créatifs, sans le système de tags et de recherche visuelle d'Eagle."
+      }
+    },
+    {
+      "slug": "box",
+      "reason": {
+        "en": "Cloud file storage alternative usable for asset organization, though less specialized for visual/creative search.",
+        "fr": "Alternative de stockage cloud utilisable pour l'organisation d'assets, mais moins spécialisée pour la recherche visuelle/créative."
+      }
+    },
+    {
+      "slug": "bynder",
+      "reason": {
+        "en": "Dedicated digital asset management alternative aimed at organizing creative files for teams.",
+        "fr": "Alternative dédiée de gestion d'assets numériques pour organiser des fichiers créatifs en équipe."
+      }
+    },
+    {
+      "slug": "arena",
+      "reason": {
+        "en": "Visual bookmarking and moodboard tool for collecting references, a lighter alternative to Eagle's local asset library.",
+        "fr": "Outil de curation visuelle et de moodboards pour collecter des références, une alternative plus légère à la bibliothèque d'assets locale d'Eagle."
+      }
+    },
+    {
+      "slug": "arena",
+      "reason": {
+        "en": "Visual bookmarking and moodboard tool for collecting references, a lighter alternative to Eagle's local asset library.",
+        "fr": "Outil de curation visuelle et de moodboards pour collecter des références, une alternative plus légère à la bibliothèque d'assets locale d'Eagle."
+      }
+    },
+    {
+      "slug": "arena",
+      "reason": {
+        "en": "Visual bookmarking and moodboard tool for collecting references, a lighter alternative to Eagle's local asset library.",
+        "fr": "Outil de curation visuelle et de moodboards pour collecter des références, une alternative plus légère à la bibliothèque d'assets locale d'Eagle."
+      }
+    },
+    {
+      "slug": "arena",
+      "reason": {
+        "en": "Visual bookmarking and moodboard tool for collecting references, a lighter alternative to Eagle's local asset library.",
+        "fr": "Outil de curation visuelle et de moodboards pour collecter des références, une alternative plus légère à la bibliothèque d'assets locale d'Eagle."
+      }
+    }
   ],
-  "missingAlternatives": [
-    { "name": "Pinterest boards / Are.na", "officialUrl": "https://www.are.na", "reason": "Are.na is already a candidate but other moodboard-style asset tools like Milanote could also compete for visual reference collection" }
-  ],
+  "missingAlternatives": [],
   "unknowns": [
     "Legal vendor entity behind Eagle not clearly stated on the official site.",
     "No published team/multi-seat pricing option."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Designers and creative freelancers who collect, tag and search a large personal library of images, videos and reference files.",
+      "fr": "Designers et créatifs indépendants qui collectent, étiquettent et recherchent une large bibliothèque personnelle d'images, vidéos et fichiers de référence."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Reference collection: save images and web bookmarks from a browser extension directly into tagged, color-coded folders.",
+      "fr": "Collecte de références : enregistrer images et favoris web depuis une extension navigateur directement dans des dossiers étiquetés et classés par couleur."
+    },
+    {
+      "en": "Asset retrieval: find a specific file again later using visual and semantic search instead of browsing folders by hand.",
+      "fr": "Récupération d'asset : retrouver plus tard un fichier précis grâce à la recherche visuelle et sémantique plutôt qu'en parcourant les dossiers à la main."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A single $34.95 lifetime license usable on 2 devices with free future updates is a low one-time cost for someone who already struggles to organize a large creative asset library.",
+        "fr": "Une licence unique à vie à 34,95 $, utilisable sur 2 appareils avec mises à jour futures gratuites, reste un coût ponctuel faible pour qui a déjà du mal à organiser une large bibliothèque d'assets créatifs.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Tags, colors, ratings and smart folders are standard organizing primitives, and a browser extension allows batch saving without a separate import step.",
+        "fr": "Tags, couleurs, notes et dossiers intelligents sont des primitives de classement courantes, et une extension navigateur permet l'enregistrement par lot sans étape d'import séparée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Centralizing and organizing creative assets with AI-powered visual and semantic search matches the announced promise, with no workaround mentioned in the sources.",
+        "fr": "Centraliser et organiser des assets créatifs avec une recherche visuelle et sémantique par IA correspond à la promesse annoncée, sans contournement mentionné dans les sources.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers tagging, smart folders and AI-powered search across many file types (images, video, fonts, PDFs, audio, bookmarks), but is a desktop-only, single-user tool with no team or web features mentioned.",
+        "fr": "Couvre l'étiquetage, les dossiers intelligents et la recherche par IA sur de nombreux types de fichiers (images, vidéo, fonts, PDF, audio, favoris), mais reste un outil desktop mono-utilisateur, sans fonction d'équipe ou web mentionnée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of the tagged library structure if leaving Eagle for another tool is not covered by the collected sources.",
+        "fr": "Note neutre : l'export de la structure de bibliothèque étiquetée en quittant Eagle pour un autre outil ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Visual asset manager",
+      "fr": "Gestionnaire d'assets visuels"
+    },
+    "shortDescription": {
+      "en": "Eagle is a desktop app that centralizes and tags creative assets with visual search, sold as a one-time lifetime license.",
+      "fr": "Eagle est une application desktop qui centralise et étiquette les assets créatifs avec une recherche visuelle, vendue en licence unique à vie."
+    },
+    "longDescription": {
+      "en": "Eagle centralizes and visually organizes creative assets (images, videos, fonts, PDFs, audio, web bookmarks) with tags, colors, ratings and smart folders, plus AI-powered visual and semantic search and a browser extension for batch saving.\n\nIt costs a single $34.95 lifetime license usable on 2 devices, with free future updates and a 30-day trial, rather than a subscription. It is desktop-only (Windows or macOS), with no official web or mobile app, and fits a designer or creative freelancer managing a large personal reference library rather than a team needing shared web access.",
+      "fr": "Eagle centralise et organise visuellement les assets créatifs (images, vidéos, fonts, PDF, audio, favoris web) avec tags, couleurs, notes et dossiers intelligents, plus une recherche visuelle et sémantique par IA et une extension navigateur pour l'enregistrement par lot.\n\nIl coûte une licence unique à vie de 34,95 $ utilisable sur 2 appareils, avec mises à jour futures gratuites et un essai de 30 jours, plutôt qu'un abonnement. L'application est desktop uniquement (Windows ou macOS), sans application web ou mobile officielle, et convient à un designer ou créatif indépendant qui gère une large bibliothèque de référence personnelle plutôt qu'à une équipe ayant besoin d'un accès web partagé."
+    },
+    "pros": [
+      {
+        "en": "One-time $34.95 license with free future updates, instead of a recurring subscription.",
+        "fr": "Licence unique à 34,95 $ avec mises à jour futures gratuites, au lieu d'un abonnement récurrent."
+      },
+      {
+        "en": "AI-powered visual and semantic search across many file types, not just filename search.",
+        "fr": "Recherche visuelle et sémantique par IA sur de nombreux types de fichiers, pas seulement par nom de fichier."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Desktop-only: no official web or mobile app for access away from the installed machine.",
+        "fr": "Desktop uniquement : pas d'application web ou mobile officielle pour y accéder hors de la machine installée."
+      },
+      {
+        "en": "Each additional user needs a separate license, with no published team or bundle pricing.",
+        "fr": "Chaque utilisateur supplémentaire nécessite une licence séparée, sans tarif équipe ou lot publié."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "A designer or creative freelancer needs one desktop library to tag and visually search a large collection of reference files.",
+        "fr": "Un designer ou créatif indépendant a besoin d'une seule bibliothèque desktop pour étiqueter et rechercher visuellement une large collection de fichiers de référence."
+      },
+      "avoidIf": {
+        "en": "The team needs shared web or mobile access to the library, which Eagle does not offer.",
+        "fr": "L'équipe a besoin d'un accès web ou mobile partagé à la bibliothèque, ce qu'Eagle ne propose pas."
+      },
+      "threshold": {
+        "en": "A one-time $34.95 license covers 2 devices for life, well below the annual cost of most subscription-based asset managers.",
+        "fr": "Une licence unique à 34,95 $ couvre 2 appareils à vie, bien en dessous du coût annuel de la plupart des gestionnaires d'assets par abonnement."
+      }
+    }
+  }
 }

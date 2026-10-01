@@ -3,7 +3,8 @@
   "slug": "revit",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Autodesk Revit",
     "vendor": "Autodesk, Inc.",
@@ -35,7 +36,7 @@
         "price": { "monthly": 380, "annualPerMonth": 250.42, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Full Revit BIM software, annual subscription billed as USD 3,005/year (approx. USD 250/month equivalent) for one seat; a 3-year term is also offered at USD 9,020 total; a monthly plan is billed at USD 380/month.", "fr": null }
+          { "en": "Full Revit BIM software, annual subscription billed as USD 3,005/year (approx. USD 250/month equivalent) for one seat; a 3-year term is also offered at USD 9,020 total; a monthly plan is billed at USD 380/month.", "fr": "Logiciel Revit complet, abonnement annuel facturé 3 005 $/an (environ 250 $/mois équivalent) pour un poste ; un engagement de 3 ans existe aussi à 9 020 $ au total ; un plan mensuel sans engagement est facturé 380 $/mois." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 70, "annualPerMonth": 46.67, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Lighter, lower-cost edition of Revit for small teams and sole practitioners; USD 560/year (about USD 46.67/month equivalent), or USD 70/month billed monthly; feature set is reduced compared to full Revit (e.g. no worksharing/multi-user collaboration).", "fr": null }
+          { "en": "Lighter, lower-cost edition of Revit for small teams and sole practitioners; USD 560/year (about USD 46.67/month equivalent), or USD 70/month billed monthly; feature set is reduced compared to full Revit (e.g. no worksharing/multi-user collaboration).", "fr": "Édition allégée et moins chère de Revit pour les petites équipes et les praticiens solo ; 560 $/an (environ 46,67 $/mois équivalent), ou 70 $/mois sans engagement ; les fonctions sont réduites par rapport à Revit complet (par exemple pas de travail partagé multi-utilisateur)." }
         ],
         "sourceIds": ["s1"]
       }
@@ -55,30 +56,83 @@
     "comparePlanKey": "revit-lt-annual",
     "addOns": [],
     "cautions": [
-      { "en": "Autodesk no longer sells perpetual licenses for Revit; a subscription (monthly, annual, or 3-year term) is the only way to access the software.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Revit LT is a separate, cheaper edition with reduced functionality (e.g. no multi-user worksharing), not simply a discount on full Revit; the two should not be treated as the same plan tier.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Autodesk no longer sells perpetual licenses for Revit; a subscription (monthly, annual, or 3-year term) is the only way to access the software.", "fr": "Autodesk ne vend plus de licence perpétuelle pour Revit ; seul un abonnement (mensuel, annuel ou sur 3 ans) donne accès au logiciel.", "sourceIds": ["s1"] },
+      { "en": "Revit LT is a separate, cheaper edition with reduced functionality (e.g. no multi-user worksharing), not simply a discount on full Revit; the two should not be treated as the same plan tier.", "fr": "Revit LT est une édition distincte et moins chère, avec des fonctions réduites (pas de travail partagé multi-utilisateur) : ce n'est pas une simple remise sur Revit complet, les deux ne doivent pas être traités comme le même niveau d'offre.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Building Information Modeling (BIM) for architectural design, structural engineering and MEP (mechanical/electrical/plumbing).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Automatically coordinates plans, elevations, sections and schedules from a single parametric building model.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Cloud services for collaboration and access to previous software versions included with an active subscription.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Building Information Modeling (BIM) for architectural design, structural engineering and MEP (mechanical/electrical/plumbing).", "fr": "Modélisation des données du bâtiment (BIM) pour la conception architecturale, l'ingénierie structure et le génie technique (CVC/électricité/plomberie).", "sourceIds": ["s1"] },
+      { "en": "Automatically coordinates plans, elevations, sections and schedules from a single parametric building model.", "fr": "Coordonne automatiquement plans, élévations, coupes et nomenclatures à partir d'une maquette paramétrique unique.", "sourceIds": ["s1"] },
+      { "en": "Cloud services for collaboration and access to previous software versions included with an active subscription.", "fr": "Services cloud pour la collaboration et accès aux versions antérieures du logiciel inclus avec un abonnement actif.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No perpetual license option; access requires an ongoing paid subscription indefinitely.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Revit LT, the lower-cost edition, drops key collaboration features (such as multi-user worksharing) compared to full Revit.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No perpetual license option; access requires an ongoing paid subscription indefinitely.", "fr": "Aucune option de licence perpétuelle ; l'accès exige un abonnement payant maintenu en continu.", "sourceIds": ["s1"] },
+      { "en": "Revit LT, the lower-cost edition, drops key collaboration features (such as multi-user worksharing) compared to full Revit.", "fr": "Revit LT, l'édition moins chère, supprime des fonctions clés de collaboration (comme le travail partagé multi-utilisateur) par rapport à Revit complet.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Architect, structural or MEP engineer working solo or in a small design practice that needs BIM authoring.",
+      "fr": "Architecte, ingénieur structure ou génie technique exerçant seul ou en petite agence de conception qui a besoin d'une maquette BIM."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use: model a building in parametric BIM and generate coordinated plans, sections and schedules automatically.", "fr": "Usage : modéliser un bâtiment en BIM paramétrique et générer plans, coupes et nomenclatures coordonnés automatiquement." },
+    { "en": "Use: coordinate architecture, structure and MEP work on a single shared model within a design practice.", "fr": "Usage : coordonner les travaux d'architecture, de structure et de génie technique sur une maquette unique partagée en agence." }
+  ],
   "alternatives": [
-    { "slug": "archicad", "reason": { "en": "Direct BIM competitor for architectural design, already listed as a current alternative for Revit.", "fr": null } },
-    { "slug": "sketchup-pro", "reason": { "en": "Lower-cost 3D modeling tool used by smaller practices as an alternative or complement to full BIM software like Revit.", "fr": null } }
+    { "slug": "archicad", "reason": { "en": "Direct BIM competitor for architectural design, already listed as a current alternative for Revit.", "fr": "Concurrent BIM direct pour la conception architecturale, déjà listé comme alternative actuelle à Revit." } },
+    { "slug": "sketchup-pro", "reason": { "en": "Lower-cost 3D modeling tool used by smaller practices as an alternative or complement to full BIM software like Revit.", "fr": "Outil de modélisation 3D moins coûteux, utilisé par les petites agences comme alternative ou complément à un logiciel BIM complet tel que Revit." } }
   ],
   "missingAlternatives": [
     { "name": "Vectorworks Architect", "officialUrl": "https://www.vectorworks.net/en-US/architect", "reason": "BIM/CAD competitor for architecture, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A single parametric model that coordinates plans, sections and schedules across architecture, structure and MEP has real value for a design practice, but the subscription runs indefinitely with no perpetual option, which weighs against the cost.", "fr": "Une maquette paramétrique unique qui coordonne plans, coupes et nomenclatures entre architecture, structure et génie technique a une vraie valeur pour une agence, mais l'abonnement est sans fin et sans option perpétuelle, ce qui pèse sur le coût.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed for a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The tool delivers its stated promise: it automatically coordinates plans, elevations, sections and schedules from one model, without a documented need for third-party workarounds.", "fr": "L'outil tient sa promesse : il coordonne automatiquement plans, élévations, coupes et nomenclatures à partir d'une seule maquette, sans besoin documenté d'outil tiers.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers architectural, structural and MEP BIM authoring in one parametric model with cloud collaboration, a broad capability set for the category.", "fr": "Couvre la conception BIM en architecture, structure et génie technique dans une seule maquette paramétrique avec collaboration cloud, un périmètre large pour la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats, data portability and API access on leaving the subscription are not covered by the collected sources.", "fr": "Note neutre : les formats d'export, la portabilité des données et l'accès API en cas d'arrêt de l'abonnement ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "BIM modeling", "fr": "Modélisation BIM" },
+    "shortDescription": {
+      "en": "Autodesk Revit is subscription-only BIM software for architecture, structural and MEP design, coordinating a single parametric building model across disciplines.",
+      "fr": "Autodesk Revit est un logiciel BIM par abonnement pour l'architecture, la structure et le génie technique, qui coordonne une maquette paramétrique unique entre disciplines."
+    },
+    "longDescription": {
+      "en": "Revit builds a single parametric model shared across architecture, structural and MEP teams, keeping plans, sections, elevations and schedules in sync as the design changes. It only works through Autodesk's cloud-connected ecosystem, with no offline perpetual license.\n\nFull Revit starts near $250 a month billed annually, or $380 month-to-month; Revit LT cuts the price to about $47 a month but drops multi-user worksharing, so it only suits a solo practitioner who does not need to collaborate live on the same model. Teams needing shared BIM work should budget for full Revit seats.",
+      "fr": "Revit construit une maquette paramétrique unique partagée entre architecture, structure et génie technique, qui garde plans, coupes, élévations et nomenclatures synchronisés à chaque modification. Le logiciel ne fonctionne que dans l'écosystème cloud d'Autodesk, sans licence perpétuelle hors ligne.\n\nRevit complet démarre autour de 250 $ par mois en engagement annuel, ou 380 $ en mensuel sans engagement ; Revit LT descend à environ 47 $ par mois mais supprime le travail collaboratif multi-utilisateur, donc il ne convient qu'à un praticien solo qui n'a pas besoin de co-éditer la même maquette en direct. Une équipe qui partage un modèle BIM doit prévoir des licences Revit complètes."
+    },
+    "pros": [
+      { "en": "Single model keeps architecture, structural and MEP drawings automatically in sync.", "fr": "Une maquette unique garde les plans d'architecture, de structure et de génie technique synchronisés automatiquement." },
+      { "en": "Revit LT offers a lower-cost entry point for solo practitioners.", "fr": "Revit LT offre une entrée moins chère pour un praticien solo." }
+    ],
+    "cons": [
+      { "en": "No perpetual license: access stops the day the subscription lapses.", "fr": "Aucune licence perpétuelle : l'accès s'arrête dès la fin de l'abonnement." },
+      { "en": "Revit LT removes multi-user worksharing, so it does not scale to a collaborating team.", "fr": "Revit LT supprime le travail collaboratif multi-utilisateur, donc il ne convient pas à une équipe." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a solo architecture or BIM practice and only need single-user modeling.", "fr": "Tu exerces seul en architecture ou en BIM et tu n'as besoin que d'une modélisation mono-utilisateur." },
+      "avoidIf": { "en": "Your team needs to co-edit the same model live, or you want a one-time purchase instead of a perpetual subscription.", "fr": "Ton équipe doit co-éditer la même maquette en direct, ou tu veux un achat unique plutôt qu'un abonnement perpétuel." },
+      "threshold": { "en": "Revit LT runs about $560 a year for one solo seat; budget about $3,005 a year per seat for full Revit as soon as more than one person needs to edit the same model.", "fr": "Revit LT coûte environ 560 $ par an pour un poste solo ; prévois environ 3 005 $ par an par poste pour Revit complet dès qu'une deuxième personne doit modifier la même maquette." },
+      "billingTraps": { "en": "There is no perpetual license tier anymore: the subscription must be kept active continuously to keep access to the software.", "fr": "Il n'existe plus de licence perpétuelle : l'abonnement doit être maintenu en continu pour garder l'accès au logiciel." }
+    }
+  },
   "unknowns": [
     "The main Revit product overview page (autodesk.com/products/revit/overview) returned HTTP 403 to automated fetch in this session; capability and pricing details rely on the subscription FAQ page reached via search snippet instead.",
     "Exact regional/tax treatment outside the US was not verified."

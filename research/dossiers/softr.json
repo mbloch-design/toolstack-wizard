@@ -3,7 +3,8 @@
   "slug": "softr",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Softr",
     "vendor": "Softr Inc.",
@@ -34,7 +35,7 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Up to 3 builders and 5 combined app users; no custom domain.", "fr": null }
+          { "en": "Up to 3 builders and 5 combined app users; no custom domain.", "fr": "Jusqu'à 3 créateurs et 5 utilisateurs d'application combinés ; pas de domaine personnalisé." }
         ],
         "sourceIds": ["s1"]
       },
@@ -46,7 +47,7 @@
         "price": { "monthly": 25, "annualPerMonth": 19, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 builder, 5 team users, 5 client users.", "fr": null }
+          { "en": "1 builder, 5 team users, 5 client users.", "fr": "1 créateur, 5 utilisateurs équipe, 5 utilisateurs client." }
         ],
         "sourceIds": ["s1"]
       },
@@ -58,7 +59,7 @@
         "price": { "monthly": 119, "annualPerMonth": 99, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "2 builders, up to 10 team users (max 50), up to 50 client users (max 250); extra builders cost extra per month.", "fr": null }
+          { "en": "2 builders, up to 10 team users (max 50), up to 50 client users (max 250); extra builders cost extra per month.", "fr": "2 créateurs, jusqu'à 10 utilisateurs équipe (max 50), jusqu'à 50 utilisateurs client (max 250) ; les créateurs supplémentaires sont facturés en plus chaque mois." }
         ],
         "sourceIds": ["s1"]
       },
@@ -70,7 +71,7 @@
         "price": { "monthly": 395, "annualPerMonth": 329, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "3 builders, up to 30 team users (max 100), up to 100 client users (max 500), 10 custom user groups; extra builders cost extra per month.", "fr": null }
+          { "en": "3 builders, up to 30 team users (max 100), up to 100 client users (max 500), 10 custom user groups; extra builders cost extra per month.", "fr": "3 créateurs, jusqu'à 30 utilisateurs équipe (max 100), jusqu'à 100 utilisateurs client (max 500), 10 groupes d'utilisateurs personnalisés ; les créateurs supplémentaires sont facturés en plus chaque mois." }
         ],
         "sourceIds": ["s1"]
       },
@@ -82,39 +83,92 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Custom limits, advanced data sources (e.g. Snowflake, BigQuery) and custom integrations.", "fr": null }
+          { "en": "Custom limits, advanced data sources (e.g. Snowflake, BigQuery) and custom integrations.", "fr": "Limites personnalisées, sources de données avancées (Snowflake, BigQuery) et intégrations sur mesure." }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [
-      { "en": "Extra builder seats on Pro and Business plans cost an additional $10-$24/month each depending on plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Extra builder seats on Pro and Business plans cost an additional $10-$24/month each depending on plan.", "fr": "Les sièges créateur supplémentaires sur les forfaits Pro et Business coûtent de 10 à 24 $/mois chacun en plus, selon le forfait.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Softr updated its pricing plans effective August 2026; older plan names and prices found elsewhere online may be stale.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "'Users' are split between internal team users and external client users, each with separate caps that scale with the plan; deactivated users don't count toward the limit.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Softr updated its pricing plans effective August 2026; older plan names and prices found elsewhere online may be stale.", "fr": "Softr a mis à jour ses forfaits en août 2026 ; les anciens noms de forfaits et prix trouvés ailleurs en ligne peuvent être obsolètes.", "sourceIds": ["s1"] },
+      { "en": "'Users' are split between internal team users and external client users, each with separate caps that scale with the plan; deactivated users don't count toward the limit.", "fr": "Les « utilisateurs » se répartissent entre utilisateurs équipe internes et utilisateurs client externes, chacun avec des plafonds distincts qui évoluent selon le forfait ; les utilisateurs désactivés ne comptent pas dans la limite.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "No-code builder for internal tools, client portals and web apps on top of databases (e.g. Airtable, Google Sheets, native Softr tables).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in workflow automation and user management (team vs. client user groups with permissions).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Native integrations and, on Enterprise, connections to advanced data sources like Snowflake and BigQuery.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No-code builder for internal tools, client portals and web apps on top of databases (e.g. Airtable, Google Sheets, native Softr tables).", "fr": "Créateur no-code d'outils internes, de portails client et d'applications web au-dessus de bases de données (Airtable, Google Sheets, tables natives Softr).", "sourceIds": ["s1"] },
+      { "en": "Built-in workflow automation and user management (team vs. client user groups with permissions).", "fr": "Automatisation de workflow et gestion des utilisateurs intégrées (groupes équipe et client avec permissions).", "sourceIds": ["s1"] },
+      { "en": "Native integrations and, on Enterprise, connections to advanced data sources like Snowflake and BigQuery.", "fr": "Intégrations natives et, sur Enterprise, connexions à des sources de données avancées comme Snowflake et BigQuery.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Builder seats (people who can edit the app) are capped per plan and cost extra beyond the included count.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Free plan has no custom domain support, limiting its use for anything beyond internal testing.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Builder seats (people who can edit the app) are capped per plan and cost extra beyond the included count.", "fr": "Les sièges créateur (personnes qui peuvent modifier l'application) sont plafonnés par forfait et coûtent plus cher au-delà du quota inclus.", "sourceIds": ["s1"] },
+      { "en": "Free plan has no custom domain support, limiting its use for anything beyond internal testing.", "fr": "Le plan gratuit n'a pas de domaine personnalisé, ce qui le limite à des tests internes.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Ops or admin person in a small team who needs an internal tool or client portal built on existing spreadsheet or Airtable data, without hiring a developer.",
+      "fr": "Personne ops ou admin en petite équipe qui a besoin d'un outil interne ou d'un portail client construit sur des données existantes (tableur, Airtable), sans embaucher de développeur."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use: build an internal tool or dashboard on top of Airtable or Google Sheets without writing code.", "fr": "Usage : construire un outil interne ou un tableau de bord au-dessus d'Airtable ou Google Sheets sans écrire de code." },
+    { "en": "Use: launch a client portal with separate team and client permissions to share project status securely.", "fr": "Usage : lancer un portail client avec des permissions distinctes pour l'équipe et les clients afin de partager l'état d'un projet en sécurité." }
+  ],
   "alternatives": [
-    { "slug": "glide", "reason": { "en": "No-code app builder targeting a similar audience of internal tools and client portals, already listed as a current alternative.", "fr": null } },
-    { "slug": "draftbit", "reason": { "en": "No-code app builder alternative for teams that need more custom app logic than Softr's data-source-first model offers.", "fr": null } },
-    { "slug": "quick-base", "reason": { "en": "No-code internal tools and workflow platform targeting a similar operations/business use case.", "fr": null } }
+    { "slug": "glide", "reason": { "en": "No-code app builder targeting a similar audience of internal tools and client portals, already listed as a current alternative.", "fr": "Créateur d'applications no-code visant un public similaire d'outils internes et de portails client, déjà listé comme alternative actuelle." } },
+    { "slug": "draftbit", "reason": { "en": "No-code app builder alternative for teams that need more custom app logic than Softr's data-source-first model offers.", "fr": "Alternative no-code pour les équipes qui ont besoin d'une logique applicative plus poussée que le modèle de Softr centré sur la source de données." } },
+    { "slug": "quick-base", "reason": { "en": "No-code internal tools and workflow platform targeting a similar operations/business use case.", "fr": "Plateforme no-code d'outils internes et de workflow visant un usage opérationnel/métier similaire." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A real client portal with permissions starts at $19/month, but extra builder seats and higher user caps add cost quickly on Pro and Business, as flagged in the plan cautions.", "fr": "Un vrai portail client avec permissions démarre à 19 $/mois, mais les sièges créateur supplémentaires et les plafonds d'utilisateurs plus élevés font grimper vite la facture sur Pro et Business, comme le signalent les mises en garde du forfait.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed for a first useful result are not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers its stated promise of building internal tools, client portals and web apps directly on top of existing databases, with built-in permissions rather than a bolt-on tool.", "fr": "Tient sa promesse de construire outils internes, portails client et applications web directement au-dessus de bases de données existantes, avec des permissions intégrées plutôt qu'un outil rapporté.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers no-code app building, workflow automation and user permission groups, with advanced data sources like Snowflake and BigQuery reserved for the Enterprise tier only.", "fr": "Couvre la création d'applications no-code, l'automatisation de workflow et les groupes de permissions, mais réserve les sources de données avancées comme Snowflake et BigQuery au seul forfait Enterprise.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export or migration options when leaving Softr are not covered by the collected sources.", "fr": "Note neutre : les options d'export ou de migration des données en quittant Softr ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "No-code app builder", "fr": "Création d'applications no-code" },
+    "shortDescription": {
+      "en": "Softr is a no-code platform for building internal tools, client portals and web apps on top of Airtable, Google Sheets or native tables.",
+      "fr": "Softr est une plateforme no-code pour créer des outils internes, des portails client et des applications web au-dessus d'Airtable, Google Sheets ou de tables natives."
+    },
+    "longDescription": {
+      "en": "Softr turns a database such as Airtable, Google Sheets or its own native tables into a working app: internal tool, client portal or web app, with built-in workflow automation and separate permission groups for team members and external clients.\n\nThe free plan allows up to 3 builders and 5 combined users but no custom domain; paid plans start at $19/month billed annually for one builder and 5 team plus 5 client users, with extra builder seats billed separately on Pro and Business. Enterprise adds custom limits and connections to data sources like Snowflake or BigQuery.",
+      "fr": "Softr transforme une base de données comme Airtable, Google Sheets ou ses propres tables natives en application fonctionnelle : outil interne, portail client ou application web, avec automatisation de workflow intégrée et des groupes de permissions distincts pour l'équipe et les clients externes.\n\nLe plan gratuit autorise jusqu'à 3 créateurs et 5 utilisateurs combinés mais sans domaine personnalisé ; les plans payants démarrent à 19 $/mois en engagement annuel pour 1 créateur et 5 utilisateurs équipe plus 5 utilisateurs client, les sièges créateurs supplémentaires étant facturés à part sur Pro et Business. Enterprise ajoute des limites personnalisées et des connexions à des sources comme Snowflake ou BigQuery."
+    },
+    "pros": [
+      { "en": "Separate team and client user groups with permissions built in, no extra plugin needed.", "fr": "Groupes d'utilisateurs équipe et client séparés avec permissions intégrées, sans plugin supplémentaire." },
+      { "en": "Works directly on top of Airtable or Google Sheets, so there is no new database to maintain.", "fr": "Fonctionne directement au-dessus d'Airtable ou Google Sheets, donc aucune nouvelle base de données à maintenir." }
+    ],
+    "cons": [
+      { "en": "Extra builder seats beyond the plan's included count cost $10 to $24 a month each.", "fr": "Les sièges créateur supplémentaires au-delà du quota du forfait coûtent de 10 $ à 24 $ par mois chacun." },
+      { "en": "The free plan has no custom domain, limiting it to internal testing.", "fr": "Le plan gratuit n'a pas de domaine personnalisé, ce qui le limite à des tests internes." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already keep your data in Airtable or Google Sheets and want a client-facing app on top of it without code.", "fr": "Tes données sont déjà dans Airtable ou Google Sheets et tu veux une application visible par tes clients sans coder." },
+      "avoidIf": { "en": "Your team needs more than 2 or 3 builders: extra seats add up quickly on Pro and Business.", "fr": "Ton équipe a besoin de plus de 2 ou 3 créateurs : les sièges supplémentaires chiffrent vite sur Pro et Business." },
+      "threshold": { "en": "Budget at least $19/month (annual billing) for the Basic plan once you need a custom domain or more than 5 users; moving past 2 builders adds $10 to $24 per extra seat each month.", "fr": "Prévois au moins 19 $/mois (engagement annuel) pour le forfait Basic dès qu'il faut un domaine personnalisé ou plus de 5 utilisateurs ; dépasser 2 créateurs ajoute de 10 $ à 24 $ par siège supplémentaire chaque mois." },
+      "billingTraps": { "en": "Extra builder seats are billed separately on top of the plan price, and team/client user caps vary by plan, so growth can force a tier upgrade.", "fr": "Les sièges créateur supplémentaires sont facturés en plus du prix du forfait, et les quotas d'utilisateurs équipe/client varient selon le forfait, donc la croissance peut forcer un changement de forfait." }
+    }
+  },
   "unknowns": [],
   "conflicts": []
 }

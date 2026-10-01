@@ -3,7 +3,8 @@
   "slug": "clo-3d",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "CLO",
     "vendor": "CLO Virtual Fashion Inc.",
@@ -35,40 +36,93 @@
         "minSeats": 1,
         "price": { "monthly": 50, "annualPerMonth": 37.5, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Single-user license for 3D garment simulation and pattern making" }],
+        "keyLimits": [{ "en": "Single-user license for 3D garment simulation and pattern making", "fr": "Licence mono-utilisateur pour la simulation 3D de vêtements et le patronage" }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "individual",
     "addOns": [],
     "cautions": [
-      { "en": "Exact current pricing could not be confirmed directly from clo3d.com's own pricing page, which did not return content; figures are sourced from a third-party listing and should be reverified against the official site.", "sourceIds": ["s2"] }
+      { "en": "Exact current pricing could not be confirmed directly from clo3d.com's own pricing page, which did not return content; figures are sourced from a third-party listing and should be reverified against the official site.", "fr": "Le tarif exact n'a pas pu être confirmé directement sur la page de prix de clo3d.com, qui n'a pas renvoyé de contenu ; les chiffres viennent d'une source tierce et doivent être revérifiés sur le site officiel.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "3D garment simulation with realistic fabric physics for fashion design and prototyping.", "sourceIds": ["s1"] },
-      { "en": "2D pattern making linked live to the 3D simulated garment.", "sourceIds": ["s1"] },
-      { "en": "Digital sample and collection visualization intended to reduce physical sampling.", "sourceIds": ["s1"] }
+      { "en": "3D garment simulation with realistic fabric physics for fashion design and prototyping.", "fr": "Simulation 3D de vêtements avec une physique de tissu réaliste pour la conception et le prototypage en mode.", "sourceIds": ["s1"] },
+      { "en": "2D pattern making linked live to the 3D simulated garment.", "fr": "Patronage 2D relié en direct au vêtement simulé en 3D.", "sourceIds": ["s1"] },
+      { "en": "Digital sample and collection visualization intended to reduce physical sampling.", "fr": "Visualisation numérique d'échantillons et de collections pensée pour réduire l'échantillonnage physique.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Steep learning curve for pattern-making features, aimed at users with garment construction knowledge.", "sourceIds": ["s1"] },
-      { "en": "Full-scene rendering and large collections can be resource-intensive, requiring a capable workstation.", "sourceIds": ["s1"] }
+      { "en": "Steep learning curve for pattern-making features, aimed at users with garment construction knowledge.", "fr": "Courbe d'apprentissage raide pour le patronage, destiné à des utilisateurs ayant des connaissances en construction de vêtement.", "sourceIds": ["s1"] },
+      { "en": "Full-scene rendering and large collections can be resource-intensive, requiring a capable workstation.", "fr": "Le rendu complet de scène et les grandes collections demandent beaucoup de ressources et un poste de travail performant.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows", "macos"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Independent fashion designer or patternmaker, or small studio, prototyping garments digitally before physical sampling.",
+      "fr": "Créateur de mode ou patronnier indépendant, ou petit studio, qui prototype des vêtements en numérique avant l'échantillonnage physique."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: simulate a garment's fabric drape and fit on a 3D avatar before cutting a physical sample.", "fr": "Usage : simuler le tombé et l'ajustement d'un vêtement sur un avatar 3D avant de couper un échantillon physique." },
+    { "en": "Use: build a 2D pattern linked live to the 3D simulation so design changes update both views at once.", "fr": "Usage : construire un patron 2D relié en direct à la simulation 3D pour que chaque modification mette à jour les deux vues." }
+  ],
   "alternatives": [
-    { "slug": "substance-3d-painter", "reason": { "en": "3D content creation tool used for texturing/material work that can complement or substitute parts of a 3D fashion pipeline." } },
-    { "slug": "zbrush", "reason": { "en": "General 3D modeling/sculpting tool sometimes used as an alternative for garment and character asset creation." } }
+    { "slug": "browzwear", "reason": { "en": "Direct competitor in 3D garment design and simulation software, covering the same core need.", "fr": "Concurrent direct en logiciel de conception et de simulation 3D de vêtements, couvrant le même besoin principal." } },
+    { "slug": "marvelous-designer", "reason": { "en": "3D clothing simulation tool made by the same parent company, the closest direct alternative for the same core need.", "fr": "Outil de simulation 3D de vêtements de la même société mère, l'alternative directe la plus proche pour le même besoin principal." } }
   ],
-  "missingAlternatives": [
-    { "name": "Browzwear", "officialUrl": "https://browzwear.com", "reason": "Direct competitor in 3D garment design and simulation software, not in the catalogue" },
-    { "name": "Marvelous Designer", "officialUrl": "https://marvelousdesigner.com", "reason": "3D clothing simulation tool made by the same parent company, close alternative, not in the catalogue" }
-  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Linking 2D pattern work live to 3D fabric simulation can cut physical sampling, a real cost saving for a fashion studio, but pricing itself is unconfirmed on the official site, so the cost side of the ratio is uncertain.", "fr": "Relier le patronage 2D en direct à la simulation 3D du tissu peut réduire l'échantillonnage physique, une vraie économie pour un studio de mode, mais le prix lui-même n'est pas confirmé sur le site officiel, ce qui rend le volet coût incertain.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The facts explicitly describe a steep learning curve for pattern-making, aimed at users who already know garment construction, not a first-hour result for a beginner.", "fr": "Les faits décrivent explicitement une courbe d'apprentissage raide pour le patronage, destinée à des utilisateurs qui connaissent déjà la construction du vêtement, pas un résultat en une heure pour un débutant.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers its stated promise of 3D garment simulation linked to 2D pattern making and digital sample visualization, without a documented need for third-party tools.", "fr": "Tient sa promesse de simulation 3D de vêtement reliée au patronage 2D et à la visualisation d'échantillons numériques, sans besoin documenté d'outil tiers.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines realistic fabric physics simulation, live-linked pattern making and collection visualization, broad enough that large scenes require a capable workstation.", "fr": "Combine une simulation physique réaliste du tissu, un patronage relié en direct et une visualisation de collection, un périmètre large au point que les grandes scènes demandent un poste de travail performant.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and data portability when leaving CLO are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des données en quittant CLO ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "3D garment simulation", "fr": "Simulation 3D vêtement" },
+    "shortDescription": {
+      "en": "CLO is 3D garment simulation and pattern-making software for fashion design, linking a 2D pattern live to a simulated 3D sample to cut physical prototyping.",
+      "fr": "CLO est un logiciel de simulation 3D de vêtements et de patronage, reliant un patron 2D en direct à un échantillon simulé."
+    },
+    "longDescription": {
+      "en": "CLO simulates how fabric drapes and fits on a 3D avatar, with 2D pattern pieces linked live to that simulation so a change in one view updates the other instantly. The goal is fewer physical samples during design and fitting, though pattern-making still demands real garment-construction knowledge and large scenes need a capable workstation.\n\nAn individual seat runs about $37.50/month billed annually, or $50/month, with a 30-day trial; pricing here comes from a third-party listing since CLO's own plans page did not load during research, so the figures should be double-checked on clo3d.com. It fits an independent designer or small studio moving from physical to digital sampling.",
+      "fr": "CLO simule le tombé et l'ajustement du tissu sur un avatar 3D, avec des pièces de patron 2D reliées en direct à la simulation : un changement sur une vue met à jour l'autre instantanément. Le patronage exige une vraie connaissance de la construction du vêtement, et les grandes scènes demandent un poste de travail performant.\n\nUn siège individuel coûte environ 37,50 $/mois en engagement annuel, ou 50 $/mois, avec un essai de 30 jours ; ces chiffres viennent d'une source tierce, la page des forfaits de CLO n'ayant pas pu être chargée pendant la recherche, donc à vérifier sur clo3d.com. L'outil convient à un créateur indépendant ou un petit studio qui passe au prototypage numérique."
+    },
+    "pros": [
+      { "en": "Links 2D pattern editing live to 3D fabric simulation, so fit changes show immediately.", "fr": "Relie le patronage 2D en direct à la simulation 3D du tissu, les changements d'ajustement s'affichant immédiatement." },
+      { "en": "Aims to cut the number of physical samples needed during design iteration.", "fr": "Vise à réduire le nombre d'échantillons physiques pendant les itérations de conception." }
+    ],
+    "cons": [
+      { "en": "Pattern-making tools demand real garment-construction knowledge, with a steep learning curve.", "fr": "Le patronage exige une vraie connaissance de la construction du vêtement, avec une courbe d'apprentissage raide." },
+      { "en": "Large scenes and full-scene rendering are resource-intensive and need a capable workstation.", "fr": "Les grandes scènes et le rendu complet demandent beaucoup de ressources et un poste de travail performant." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You design garments and want to cut physical sampling by prototyping fit and fabric digitally.", "fr": "Tu conçois des vêtements et tu veux réduire l'échantillonnage physique en prototypant l'ajustement et le tissu en numérique." },
+      "avoidIf": { "en": "You have no garment-construction background: the pattern-making tools have a steep learning curve.", "fr": "Tu n'as pas de base en construction de vêtement : les outils de patronage ont une courbe d'apprentissage raide." },
+      "threshold": { "en": "Budget about $37.50 to $50 a month for one seat, and reverify that price on clo3d.com before committing, since it was not confirmed on the official pricing page during this research.", "fr": "Prévois environ 37,50 à 50 $ par mois pour un siège, et revérifie ce prix sur clo3d.com avant de t'engager, car il n'a pas pu être confirmé sur la page officielle pendant cette recherche." }
+    }
+  },
   "unknowns": [
     "The official clo3d.com pricing page (/plans) did not return usable content during this session; plan names, exact prices and enterprise pricing should be reverified directly on the official site.",
     "Whether there is a free/limited plan beyond the trial was not confirmed from a tier-1 source."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Pricing (Individual seat at $50/month, $37.50/month billed annually) is sourced only from a third-party aggregator (SpotSaas), not from clo3d.com directly, since the official /plans page did not return content during research. Verify the current price and plan names directly on clo3d.com before publishing.",
+    "Alternatives corrected locally: Browzwear and Marvelous Designer are both already in the ToolTrim catalogue (slugs 'browzwear' and 'marvelous-designer') and are closer competitors on the same core need (3D garment simulation) than Substance 3D Painter or ZBrush, which were removed as they serve a different main need (texturing/sculpting, not garment simulation). The original dossier had listed Browzwear and Marvelous Designer under missingAlternatives, which was incorrect."
+  ]
 }

@@ -33,16 +33,19 @@ const budgets = {
   // the pricing cards. Narrow margin kept.
   // 2026-09-30: Viso AI adds 47 bilingual prerender outputs; measured 14,933.
   // Keep a narrow 17-file margin for generated variants, without changing byte budgets.
-  files: 14_950,
+  // 2026-10-01: 54 more researched fiches and 48 hashed catalogue shards
+  // (was 29 by first letter): measured 14,972 files, 987.2 MiB total,
+  // 880.1 MiB HTML, 32.5 MiB CSS. Sized for the ~120 dossiers still to merge.
+  files: 15_050,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
-  totalBytes: 985 * MiB,
+  totalBytes: 1_010 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
-  htmlBytes: 880 * MiB,
+  htmlBytes: 900 * MiB,
   javascriptBytes: 15 * MiB,
   // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
   // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200
   // remaining fiches instead of a bump per batch.
-  cssBytes: 32 * MiB,
+  cssBytes: 34 * MiB,
   duplicateBytes: 3 * MiB,
 };
 

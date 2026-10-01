@@ -3,7 +3,8 @@
   "slug": "elfsight",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Elfsight",
     "vendor": "Elfsight",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "200 monthly widget views, single widget, unlimited websites, Elfsight branding", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": [{ "en": "200 monthly widget views, single widget, unlimited websites, Elfsight branding", "fr": "200 vues de widget par mois, un seul widget, sites web illimités, marque Elfsight conservée", "sourceIds": ["s1"] }], "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "200 monthly views, 1 widget, Elfsight branding kept", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "200 monthly views, 1 widget, Elfsight branding kept", "fr": "200 vues par mois, 1 widget, marque Elfsight conservée", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": 6, "annualPerMonth": 5, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Single widget app, ad-free, advanced CSS customization", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Single widget app, ad-free, advanced CSS customization", "fr": "Une seule application widget, sans publicité, personnalisation CSS avancée", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": null,
         "price": { "monthly": 12, "annualPerMonth": 10, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Priority support, higher view limits than Basic", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Priority support, higher view limits than Basic", "fr": "Support prioritaire, plafonds de vues plus élevés que Basic", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,7 +65,7 @@
         "minSeats": null,
         "price": { "monthly": 24, "annualPerMonth": 20, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Best for high-traffic websites", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Best for high-traffic websites", "fr": "Pensé pour les sites à fort trafic", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -74,25 +75,25 @@
         "minSeats": null,
         "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Access to 96 widget apps in one subscription", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Access to 96 widget apps in one subscription", "fr": "Accès à 96 applications widget dans un seul abonnement", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "basic-single",
     "addOns": [],
     "cautions": [
-      { "en": "Views represent every time a widget loads on a page; exceeding the plan's view cap temporarily deactivates the widget.", "fr": "", "sourceIds": ["s1"] }
+      { "en": "Views represent every time a widget loads on a page; exceeding the plan's view cap temporarily deactivates the widget.", "fr": "Une vue correspond à chaque chargement du widget sur une page ; dépasser le plafond de vues du forfait désactive temporairement le widget.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Library of 90+ no-code widgets covering reviews, social feeds, forms, galleries and popups", "sourceIds": ["s1"] },
-      { "en": "Installs on 112+ website platforms without writing code", "sourceIds": ["s1"] },
-      { "en": "Advanced CSS customization available on paid plans", "sourceIds": ["s1"] }
+      { "en": "Library of 90+ no-code widgets covering reviews, social feeds, forms, galleries and popups", "fr": "Bibliothèque de plus de 90 widgets no-code couvrant avis, flux sociaux, formulaires, galeries et popups", "sourceIds": ["s1"] },
+      { "en": "Installs on 112+ website platforms without writing code", "fr": "S'installe sur plus de 112 plateformes de sites web sans écrire de code", "sourceIds": ["s1"] },
+      { "en": "Advanced CSS customization available on paid plans", "fr": "Personnalisation CSS avancée disponible sur les forfaits payants", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 200 monthly widget views and a single widget, with Elfsight branding kept", "sourceIds": ["s1"] },
-      { "en": "Pricing is per widget app; using several widget types can require stacking multiple app subscriptions unless on a bundle plan", "sourceIds": ["s1"] }
+      { "en": "Free plan is capped at 200 monthly widget views and a single widget, with Elfsight branding kept", "fr": "Le forfait gratuit est plafonné à 200 vues de widget par mois et un seul widget, avec la marque Elfsight conservée", "sourceIds": ["s1"] },
+      { "en": "Pricing is per widget app; using several widget types can require stacking multiple app subscriptions unless on a bundle plan", "fr": "La tarification se fait par application widget ; utiliser plusieurs types de widgets peut demander de cumuler plusieurs abonnements, sauf à prendre un forfait bundle", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Squarespace", "slug": null, "sourceIds": ["s1"] },
@@ -104,8 +105,73 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A small business owner or site manager who wants reviews, social feeds or popups added to their website without writing code.",
+      "fr": "Un ou une responsable de petite entreprise ou de site web qui veut ajouter des avis, des flux sociaux ou des popups à son site sans écrire de code."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a site owner drops a reviews widget onto a Shopify product page in minutes, with no developer involved.",
+      "fr": "Usage : un propriétaire de site ajoute un widget d'avis sur une page produit Shopify en quelques minutes, sans développeur."
+    },
+    {
+      "en": "Usage: a small team upgrades from the free plan to Basic once monthly widget views exceed the 200-view cap and the widget deactivates.",
+      "fr": "Usage : une petite équipe passe du forfait gratuit à Basic une fois que les vues mensuelles dépassent le plafond de 200 et que le widget se désactive."
+    }
+  ],
   "alternatives": [],
-  "missingAlternatives": [],
+  "missingAlternatives": [
+    { "name": "POWR.io", "officialUrl": "https://www.powr.io", "reason": "Direct no-code website widget competitor (reviews, forms, popups), not in the catalogue" },
+    { "name": "Common Ninja", "officialUrl": "https://www.commoninja.com", "reason": "Competing widget library for adding no-code apps to any website, not in the catalogue" },
+    { "name": "EmbedSocial", "officialUrl": "https://embedsocial.com", "reason": "Competing social feed and reviews widget tool, not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Basic starts at $5/month for one widget, but pricing is per widget app, so covering several widget types can mean stacking several subscriptions unless on the bundle plan.", "fr": "Basic démarre à 5 $/mois pour un widget, mais la tarification se fait par application ; couvrir plusieurs types de widgets peut donc demander de cumuler plusieurs abonnements, sauf avec le forfait bundle.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Widgets install on 112+ website platforms without writing code, matching a first-result-in-minutes experience.", "fr": "Les widgets s'installent sur plus de 112 plateformes sans écrire de code, ce qui correspond à un premier résultat obtenu en quelques minutes.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The 90+ widget library covers reviews, social feeds, forms, galleries and popups directly, as described, without extra setup steps mentioned.", "fr": "La bibliothèque de plus de 90 widgets couvre directement avis, flux sociaux, formulaires, galeries et popups, comme annoncé, sans étape de configuration supplémentaire mentionnée.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Each app covers one widget type with a view cap tied to the plan; the ceiling is set per app rather than offering one broad platform-level capacity.", "fr": "Chaque application couvre un seul type de widget avec un plafond de vues lié au forfait ; la limite est fixée par application plutôt que par une capacité globale de la plateforme.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export or migration options for widget content are not covered by the collected sources.", "fr": "Note neutre : les options d'export ou de migration du contenu des widgets ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "No-code website widgets", "fr": "Widgets site sans code" },
+    "shortDescription": {
+      "en": "Elfsight is a library of 90+ no-code widgets (reviews, social feeds, popups) that install on most website platforms, priced per widget app.",
+      "fr": "Elfsight est une bibliothèque de plus de 90 widgets sans code (avis, flux sociaux, popups) qui s'installent sur la plupart des sites, facturés par application."
+    },
+    "longDescription": {
+      "en": "Elfsight offers a library of over 90 no-code widgets, covering reviews, social feeds, forms, galleries and popups, that install on 112+ website platforms including Shopify, WordPress, Wix and Webflow without writing code.\n\nThe free plan covers one widget at 200 monthly views with Elfsight branding kept. A single paid widget app starts at $5/month billed annually on Basic, removing ads and branding, while a 96-app bundle starts at $15/month for sites needing several widget types at once. It suits a site owner adding one or two features quickly rather than someone wanting a single all-in-one platform price.",
+      "fr": "Elfsight propose une bibliothèque de plus de 90 widgets sans code, couvrant avis, flux sociaux, formulaires, galeries et popups, qui s'installent sur plus de 112 plateformes de sites dont Shopify, WordPress, Wix et Webflow, sans écrire de code.\n\nLe forfait gratuit couvre un widget avec 200 vues par mois et la marque Elfsight conservée. Une application payante démarre à 5 $/mois en engagement annuel sur Basic, qui retire publicités et marque, tandis qu'un bundle de 96 applications démarre à 15 $/mois pour les sites qui ont besoin de plusieurs types de widgets à la fois. Il convient à un site qui ajoute une ou deux fonctions rapidement, plutôt qu'à qui veut un prix de plateforme unique tout-en-un."
+    },
+    "pros": [
+      { "en": "Installs on 112+ website platforms without writing code, so a single widget can be live in minutes.", "fr": "S'installe sur plus de 112 plateformes sans écrire de code, un widget peut donc être en ligne en quelques minutes." },
+      { "en": "A 96-app bundle at $15/month covers many widget types at once instead of paying per app.", "fr": "Un bundle de 96 applications à 15 $/mois couvre de nombreux types de widgets à la fois, au lieu de payer par application." }
+    ],
+    "cons": [
+      { "en": "Pricing is per widget app, so using several different widget types outside the bundle plan means paying for each one separately.", "fr": "La tarification se fait par application widget ; utiliser plusieurs types différents hors du forfait bundle signifie payer chacun séparément." },
+      { "en": "The free plan keeps Elfsight branding and caps monthly views at 200, with the widget deactivating past that.", "fr": "Le forfait gratuit conserve la marque Elfsight et plafonne les vues mensuelles à 200, le widget se désactivant au-delà." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need one or two specific no-code widgets (reviews, social feed, popup) added to a site fast.", "fr": "Tu as besoin d'un ou deux widgets sans code précis (avis, flux social, popup) ajoutés rapidement à un site." },
+      "avoidIf": { "en": "You need many different widget types and want a single predictable price rather than one per app.", "fr": "Tu as besoin de nombreux types de widgets différents et tu veux un prix unique prévisible plutôt qu'un par application." },
+      "threshold": { "en": "One widget app on Basic costs $5/month billed annually (about $60/year); the 96-app bundle starts at $15/month for broader needs.", "fr": "Une application sur Basic coûte 5 $/mois en engagement annuel (environ 60 $/an) ; le bundle de 96 applications démarre à 15 $/mois pour des besoins plus larges." }
+    }
+  },
   "unknowns": ["Enterprise tier exact view caps and full feature breakdown not detailed on the pricing summary reviewed", "Whether taxes are included in listed prices is not stated"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "No catalogue slug matches Elfsight's actual category (no-code website widgets); seed.mjs returned only email/marketing tools as candidates because of a category mismatch in the catalogue. No alternatives slug was added; real competitors are listed in missingAlternatives instead."
+  ]
 }

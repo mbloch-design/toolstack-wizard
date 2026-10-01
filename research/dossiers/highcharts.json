@@ -3,7 +3,7 @@
   "slug": "highcharts",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Highcharts",
     "vendor": "Highsoft AS",
@@ -125,14 +125,14 @@
     "cautions": [
       {
         "en": "Commercial license pricing was confirmed via a third-party reseller (ComponentSource), not directly itemized on the official shop.highcharts.com configurator in this session; figures should be re-verified against the primary shop page.",
-        "fr": null,
+        "fr": "Le prix de la licence commerciale a été confirmé via un revendeur tiers (ComponentSource), pas directement détaillé sur le configurateur officiel shop.highcharts.com lors de cette session ; les montants doivent être revérifiés sur la page principale.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Both perpetual (one-time) and annual subscription license models exist per the official site; this dossier records the perpetual developer-license price as the entry point.",
-        "fr": null,
+        "fr": "Des modèles de licence perpétuelle (achat unique) et par abonnement annuel existent selon le site officiel ; ce dossier retient le prix de la licence développeur perpétuelle comme point d'entrée.",
         "sourceIds": [
           "s1"
         ]
@@ -182,21 +182,21 @@
       "slug": "chartjs",
       "reason": {
         "en": "Free, open-source charting library often compared directly to Highcharts for JavaScript projects.",
-        "fr": null
+        "fr": "Bibliothèque de graphiques gratuite et open source, souvent comparée directement à Highcharts pour les projets JavaScript."
       }
     },
     {
       "slug": "d3js",
       "reason": {
         "en": "Lower-level, free charting/visualization library offering more customization at the cost of more code.",
-        "fr": null
+        "fr": "Bibliothèque de graphiques/visualisation de plus bas niveau, gratuite, offrant plus de personnalisation au prix de plus de code."
       }
     },
     {
       "slug": "apexcharts",
       "reason": {
         "en": "Free, MIT-licensed charting library alternative with similar out-of-the-box chart types.",
-        "fr": null
+        "fr": "Bibliothèque de graphiques alternative gratuite sous licence MIT, avec des types de graphiques similaires prêts à l'emploi."
       }
     }
   ],
@@ -205,5 +205,121 @@
     "Exact prices on the official shop.highcharts.com configurator could not be itemized directly in this session; the developer-license figures come from a third-party reseller and should be re-verified.",
     "Whether the perpetual license quoted includes 1 year of updates/support by default, or if that is the separate 'annual license' model, was not fully clarified from the sources read."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer who needs a broad, configurable charting library (standard, financial, maps, Gantt) inside a commercial web app.",
+      "fr": "Un développeur qui a besoin d'une bibliothèque de graphiques large et configurable (standard, financier, cartes, Gantt) dans une application web commerciale."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Dashboard charts: embed interactive financial, map or Gantt charts in a commercial web app using the paid per-developer license.",
+      "fr": "Graphiques de tableau de bord : intégrer des graphiques financiers, cartes ou Gantt interactifs dans une application web commerciale via la licence payante par développeur."
+    },
+    {
+      "en": "Non-commercial or learning projects: build interactive charts for a personal, school or non-profit site for free under the non-commercial license.",
+      "fr": "Projets non commerciaux ou pédagogiques : créer des graphiques interactifs pour un site personnel, scolaire ou associatif gratuitement sous la licence non commerciale."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Per-developer commercial licensing (around $430 and up) scales directly with team size rather than a flat product fee, which raises cost for larger teams.",
+        "fr": "La licence commerciale par développeur (environ 430 $ et plus) augmente directement avec la taille de l'équipe plutôt qu'un tarif produit fixe, ce qui alourdit le coût pour les grandes équipes.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Ships ready-made chart types (standard, financial, maps, Gantt) rather than requiring charts to be built from a lower-level drawing library.",
+        "fr": "Fournit des types de graphiques prêts à l'emploi (standard, financier, cartes, Gantt) plutôt que d'obliger à les construire depuis une bibliothèque de dessin bas niveau.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the advertised chart types and the extended Grid/Dashboards suite without needing a separate library for maps or Gantt timelines.",
+        "fr": "Tient sa promesse de types de graphiques annoncés et de la suite étendue Grid/Dashboards, sans bibliothèque séparée nécessaire pour les cartes ou les plannings Gantt.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers standard, financial, map and Gantt/project charts plus tabular and dashboard products in one suite, more than a single-purpose charting library.",
+        "fr": "Couvre les graphiques standard, financiers, cartes et Gantt/projet, plus des produits tableaux et tableaux de bord dans une seule suite, davantage qu'une bibliothèque de graphiques à usage unique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data and chart-configuration portability if switching away from Highcharts is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données et des configurations de graphiques en quittant Highcharts ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "JavaScript charting library",
+      "fr": "Bibliothèque de graphiques JS"
+    },
+    "shortDescription": {
+      "en": "Highcharts is a JavaScript charting library for interactive charts, maps and Gantt timelines, free for non-commercial use and from $430 per developer commercially.",
+      "fr": "Highcharts est une bibliothèque JS de graphiques, cartes et plannings Gantt, gratuite en usage non commercial et dès 430 $/développeur en usage commercial."
+    },
+    "longDescription": {
+      "en": "Highcharts is a configurable JavaScript charting library covering standard charts (Core), financial and timeline charts (Stock), maps (Maps) and Gantt/project timelines (Gantt), plus a broader suite with Highcharts Grid for tables and Highcharts Dashboards for KPI dashboards.\n\nIt's free only for personal, school, charitable and non-profit non-commercial projects; any commercial product needs a paid per-developer license starting around $430 (or $595 with premium support), a figure confirmed via a reseller listing rather than the official shop configurator. Licensing is per developer, so team costs scale with headcount rather than a flat product fee.",
+      "fr": "Highcharts est une bibliothèque JavaScript de graphiques configurable, couvrant les graphiques standard (Core), financiers et temporels (Stock), les cartes (Maps) et les plannings Gantt/projet (Gantt), plus une suite plus large avec Highcharts Grid pour les tableaux et Highcharts Dashboards pour les tableaux de bord KPI.\n\nElle est gratuite uniquement pour les projets personnels, scolaires, caritatifs et associatifs non commerciaux ; tout produit commercial nécessite une licence payante par développeur à partir d'environ 430 $ (ou 595 $ avec support premium), un montant confirmé via un revendeur plutôt que le configurateur officiel. La licence est par développeur, donc le coût équipe augmente directement avec l'effectif."
+    },
+    "pros": [
+      {
+        "en": "Covers standard, financial, map and Gantt charts in one consistent library instead of combining several tools.",
+        "fr": "Couvre les graphiques standard, financiers, cartes et Gantt dans une seule bibliothèque cohérente plutôt que de combiner plusieurs outils."
+      },
+      {
+        "en": "Free to use for personal, school, charitable and non-profit non-commercial projects.",
+        "fr": "Utilisation gratuite pour les projets personnels, scolaires, caritatifs et associatifs non commerciaux."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Any commercial use requires a paid license; there's no commercial free tier.",
+        "fr": "Tout usage commercial nécessite une licence payante ; il n'existe pas de palier gratuit commercial."
+      },
+      {
+        "en": "Per-developer licensing means team costs grow directly with headcount.",
+        "fr": "La licence par développeur fait grossir le coût équipe directement avec l'effectif."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a broad, configurable charting library (standard, financial, maps, Gantt) in one commercial product and can budget per-developer licensing.",
+        "fr": "Tu as besoin d'une bibliothèque de graphiques large et configurable (standard, financier, cartes, Gantt) dans un produit commercial et peux budgétiser une licence par développeur."
+      },
+      "avoidIf": {
+        "en": "You're building a free, open-source or non-commercial project, since the free tier doesn't cover commercial use.",
+        "fr": "Tu construis un projet gratuit, open source ou non commercial, car le palier gratuit ne couvre pas l'usage commercial."
+      },
+      "threshold": {
+        "en": "A commercial project needs at least the Single Developer license, around $430 per developer (price confirmed via a reseller, to re-verify on the official shop).",
+        "fr": "Un projet commercial nécessite au moins la licence Single Developer, environ 430 $ par développeur (prix confirmé via un revendeur, à revérifier sur la boutique officielle)."
+      }
+    }
+  },
+  "reviewNotes": [
+    "The Single Developer license price ($430 without support, $595 with premium support) comes from a third-party reseller (ComponentSource), not itemized directly on the official shop.highcharts.com configurator; re-verify before publishing a firm figure."
+  ],
+  "completedLocallyOn": "2026-10-01"
 }

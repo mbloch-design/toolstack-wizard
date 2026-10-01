@@ -3,7 +3,8 @@
   "slug": "gaea",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Gaea",
     "vendor": "QuadSpinner",
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Max resolution 1024x1024, non-commercial use only, no macros, no Unreal Engine/Houdini integration.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Max resolution 1024x1024, non-commercial use only, no macros, no Unreal Engine/Houdini integration.", "fr": "Résolution maximale de 1024x1024, usage non commercial uniquement, pas de macros, pas d'intégration Unreal Engine ou Houdini.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Max resolution 8192x8192, commercial use permitted, node-locked license on up to 2 computers, no Houdini support, no macro creation.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Max resolution 8192x8192, commercial use permitted, node-locked license on up to 2 computers, no Houdini support, no macro creation.", "fr": "Résolution maximale de 8192x8192, usage commercial autorisé, licence liée à la machine sur 2 ordinateurs maximum, pas de support Houdini, pas de création de macros.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 199 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Max resolution 16,384x16,384 (up to 262,144x262,144 with tiles), limited automation, Houdini support, macro creation, node-locked license, revenue must be under $1M/year.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Max resolution 16,384x16,384 (up to 262,144x262,144 with tiles), limited automation, Houdini support, macro creation, node-locked license, revenue must be under $1M/year.", "fr": "Résolution maximale de 16 384x16 384 (jusqu'à 262 144x262 144 avec des tuiles), automatisation limitée, support Houdini, création de macros, licence liée à la machine, chiffre d'affaires de l'entreprise inférieur à 1 M$/an exigé.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,29 +65,29 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 299 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Same max resolution as Professional, full automation workflow, transferable (movable) license within a company, required for revenue over $1M/year.", "sourceIds": ["s1"] }],
+        "keyLimits": [{ "en": "Same max resolution as Professional, full automation workflow, transferable (movable) license within a company, required for revenue over $1M/year.", "fr": "Même résolution maximale que Professional, automatisation complète, licence transférable au sein d'une entreprise, obligatoire au-delà de 1 M$ de chiffre d'affaires annuel.", "sourceIds": ["s1"] }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "indie",
     "addOns": [],
     "cautions": [
-      { "en": "Licenses are one-time (perpetual) purchases, node-locked by default; floating or offline licensing is only available on higher tiers, not on Indie.", "sourceIds": ["s1"] },
-      { "en": "Commercial eligibility depends on company revenue: Professional is capped under $1M/year revenue, above that Enterprise is required.", "sourceIds": ["s1"] }
+      { "en": "Licenses are one-time (perpetual) purchases, node-locked by default; floating or offline licensing is only available on higher tiers, not on Indie.", "fr": "Les licences sont des achats ponctuels (perpétuels), liées à la machine par défaut ; les licences flottantes ou hors ligne ne sont disponibles que sur les offres supérieures, pas sur Indie.", "sourceIds": ["s1"] },
+      { "en": "Commercial eligibility depends on company revenue: Professional is capped under $1M/year revenue, above that Enterprise is required.", "fr": "L'éligibilité commerciale dépend du chiffre d'affaires de l'entreprise : Professional est plafonné à 1 M$/an, au-delà Enterprise est obligatoire.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Node-based procedural 3D terrain generator used as a standard for landscape and environment creation.", "sourceIds": ["s1"] },
-      { "en": "Supports tiled builds at very high resolution (up to 262,144x262,144) on the Professional and Enterprise editions.", "sourceIds": ["s1"] },
-      { "en": "Integrates with Unreal Engine and Houdini on paid editions (Houdini support from Professional up).", "sourceIds": ["s1"] },
-      { "en": "Macro creation and automation workflows available from Professional (limited) and Enterprise (full).", "sourceIds": ["s1"] }
+      { "en": "Node-based procedural 3D terrain generator used as a standard for landscape and environment creation.", "fr": "Générateur de terrain 3D procédural par noeuds, considéré comme une référence pour la création de paysages et d'environnements.", "sourceIds": ["s1"] },
+      { "en": "Supports tiled builds at very high resolution (up to 262,144x262,144) on the Professional and Enterprise editions.", "fr": "Prend en charge des constructions en tuiles à très haute résolution (jusqu'à 262 144x262 144) sur les éditions Professional et Enterprise.", "sourceIds": ["s1"] },
+      { "en": "Integrates with Unreal Engine and Houdini on paid editions (Houdini support from Professional up).", "fr": "S'intègre à Unreal Engine et Houdini sur les éditions payantes (support Houdini à partir de Professional).", "sourceIds": ["s1"] },
+      { "en": "Macro creation and automation workflows available from Professional (limited) and Enterprise (full).", "fr": "Création de macros et flux d'automatisation disponibles à partir de Professional (limité) et Enterprise (complet).", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free Community edition is capped at 1024x1024 resolution and forbids commercial use entirely.", "sourceIds": ["s1"] },
-      { "en": "Indie edition, the cheapest commercial tier, has no Houdini support and cannot create macros, only use them.", "sourceIds": ["s1"] },
-      { "en": "Node-locked licensing is the default across tiers; floating/offline licenses are not available on Indie.", "sourceIds": ["s1"] },
-      { "en": "Commercial use above $1M annual company revenue legally requires the more expensive Enterprise edition regardless of feature needs.", "sourceIds": ["s1"] }
+      { "en": "Free Community edition is capped at 1024x1024 resolution and forbids commercial use entirely.", "fr": "L'édition Community gratuite est plafonnée à une résolution de 1024x1024 et interdit totalement l'usage commercial.", "sourceIds": ["s1"] },
+      { "en": "Indie edition, the cheapest commercial tier, has no Houdini support and cannot create macros, only use them.", "fr": "L'édition Indie, l'offre commerciale la moins chère, n'a pas de support Houdini et ne permet pas de créer des macros, seulement de les utiliser.", "sourceIds": ["s1"] },
+      { "en": "Node-locked licensing is the default across tiers; floating/offline licenses are not available on Indie.", "fr": "La licence liée à la machine est la norme sur toutes les offres ; les licences flottantes ou hors ligne ne sont pas disponibles sur Indie.", "sourceIds": ["s1"] },
+      { "en": "Commercial use above $1M annual company revenue legally requires the more expensive Enterprise edition regardless of feature needs.", "fr": "Au-delà de 1 M$ de chiffre d'affaires annuel, l'usage commercial oblige légalement à passer sur l'édition Enterprise, plus chère, quels que soient les besoins fonctionnels.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Unreal Engine", "slug": null, "sourceIds": ["s1"] },
@@ -94,13 +95,62 @@
     ],
     "platforms": ["windows"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": { "en": "Environment artists and small studios building procedural 3D terrains for games, VFX or visualization, who need a one-time commercial license rather than a subscription.", "fr": "Artistes d'environnement et petits studios qui construisent des terrains 3D procéduraux pour le jeu, la VFX ou la visualisation, et qui préfèrent une licence commerciale ponctuelle à un abonnement." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Game studio: generate a large, tiled terrain heightmap procedurally, then bring it into Unreal Engine for a level.", "fr": "Studio de jeu : générer un terrain en tuiles à grande échelle de façon procédurale, puis l'importer dans Unreal Engine pour un niveau." },
+    { "en": "Freelance 3D artist: buy the Indie license once to produce commercial landscape renders without a recurring subscription.", "fr": "Artiste 3D indépendant : acheter la licence Indie une seule fois pour produire des rendus de paysages commerciaux sans abonnement récurrent." }
+  ],
   "alternatives": [
-    { "slug": "blender", "reason": { "en": "Free general-purpose 3D suite that can also build terrains via add-ons, at zero cost." } },
-    { "slug": "houdini", "reason": { "en": "Node-based procedural tool with broader scope than terrain, used alongside or instead of Gaea in VFX pipelines." } }
+    { "slug": "blender", "reason": { "en": "Free general-purpose 3D suite that can also build terrains via add-ons, at zero cost.", "fr": "Suite 3D généraliste gratuite qui peut aussi construire des terrains via des extensions, sans aucun coût." } },
+    { "slug": "houdini", "reason": { "en": "Node-based procedural tool with broader scope than terrain, used alongside or instead of Gaea in VFX pipelines.", "fr": "Outil procédural par noeuds avec un périmètre plus large que le terrain, utilisé en complément ou à la place de Gaea dans les pipelines VFX." } }
   ],
   "missingAlternatives": [
     { "name": "World Machine", "officialUrl": "https://www.world-machine.com", "reason": "Direct procedural terrain generator competitor, not in the catalogue" }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A one-time 99 USD Indie license covers commercial terrain work indefinitely, with no recurring subscription, which is cheap relative to the category.", "fr": "Une licence Indie à 99 $ payée une seule fois couvre un usage commercial du terrain sans limite de temps, sans abonnement récurrent, un coût faible pour la catégorie.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: the time needed to produce a first usable terrain is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour produire un premier terrain utilisable ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The tool is described as a standard for procedural terrain generation, with tiled builds at very high resolution confirmed on paid editions.", "fr": "L'outil est décrit comme une référence pour la génération de terrain procédural, avec des constructions en tuiles à très haute résolution confirmées sur les éditions payantes.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Support for tiled builds up to 262,144x262,144 and macro-based automation on the higher tiers point to a high capability ceiling in the category.", "fr": "Le support des constructions en tuiles jusqu'à 262 144x262 144 et l'automatisation par macros sur les offres supérieures indiquent un plafond de capacité élevé dans la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and data portability out of Gaea are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des données hors de Gaea ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Procedural terrain generator", "fr": "Générateur de terrain procédural" },
+    "shortDescription": { "en": "Node-based procedural 3D terrain generator for games, VFX and visualization, sold as a one-time commercial license.", "fr": "Générateur de terrain 3D procédural par noeuds pour le jeu, la VFX et la visualisation, vendu sous forme de licence commerciale ponctuelle." },
+    "longDescription": {
+      "en": "Gaea builds procedural 3D terrains through a node graph, and is used as a reference tool for landscape and environment work in games and VFX. Paid editions add tiled builds at very high resolution, Houdini support, and macro-based automation on top of the free, non-commercial Community edition.\n\nThe entry commercial license, Indie, costs 99 USD once, with no subscription, but is node-locked to two computers and excludes Houdini and macro creation. Freelancers and small studios under 1M USD in annual revenue fit the Indie or Professional editions; above that threshold, the more expensive Enterprise edition is required by the license terms.",
+      "fr": "Gaea construit des terrains 3D procéduraux grâce à un graphe de noeuds, et sert de référence pour les paysages et environnements dans le jeu et la VFX. Les éditions payantes ajoutent des constructions en tuiles à très haute résolution, le support Houdini et une automatisation par macros par rapport à l'édition Community, gratuite mais non commerciale.\n\nLa licence commerciale d'entrée, Indie, coûte 99 $ une seule fois, sans abonnement, mais elle est liée à deux ordinateurs maximum et exclut Houdini et la création de macros. Les indépendants et petits studios sous 1 M$ de chiffre d'affaires annuel correspondent aux éditions Indie ou Professional ; au-delà, les termes de licence imposent l'édition Enterprise, plus chère."
+    },
+    "pros": [
+      { "en": "One-time license, no recurring subscription for commercial use.", "fr": "Licence ponctuelle, pas d'abonnement récurrent pour l'usage commercial." },
+      { "en": "Supports very high-resolution tiled terrain builds on the paid editions.", "fr": "Prend en charge des constructions de terrain en tuiles à très haute résolution sur les éditions payantes." },
+      { "en": "Integrates with Unreal Engine and, from Professional up, with Houdini.", "fr": "S'intègre à Unreal Engine et, à partir de Professional, à Houdini." }
+    ],
+    "cons": [
+      { "en": "Node-locked by default; no floating license on the entry Indie tier.", "fr": "Licence liée à la machine par défaut ; pas de licence flottante sur l'offre Indie d'entrée." },
+      { "en": "Macro creation and Houdini support are missing from the cheapest commercial tier.", "fr": "La création de macros et le support Houdini sont absents de l'offre commerciale la moins chère." },
+      { "en": "Windows only, based on available material.", "fr": "Windows uniquement, d'après les informations disponibles." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need a procedural terrain tool for commercial work and prefer a one-time license over a subscription.", "fr": "Tu as besoin d'un outil de terrain procédural pour un usage commercial et tu préfères une licence ponctuelle à un abonnement." },
+      "avoidIf": { "en": "You need Houdini integration or macro automation on a budget, or you work outside Windows.", "fr": "Tu as besoin de l'intégration Houdini ou de l'automatisation par macros avec un petit budget, ou tu travailles hors Windows." },
+      "threshold": { "en": "The Indie license costs 99 USD once; below 1M USD in annual company revenue, that single payment covers commercial use indefinitely.", "fr": "La licence Indie coûte 99 $ une seule fois ; sous 1 M$ de chiffre d'affaires annuel, ce paiement unique couvre l'usage commercial sans limite de temps." }
+    }
+  },
   "unknowns": ["Whether macOS or Linux versions exist was not stated; the product appears Windows-only based on available material."],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

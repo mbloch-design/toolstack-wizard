@@ -3,7 +3,8 @@
   "slug": "thinkific",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Thinkific",
     "vendor": "Thinkific Labs Inc.",
@@ -35,7 +36,7 @@
         "price": { "monthly": 54, "annualPerMonth": 40, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Unlimited courses, 1 community (5 spaces), 5 digital downloads, basic ecommerce, custom domain, email/chat support only.", "fr": null }
+          { "en": "Unlimited courses, 1 community (5 spaces), 5 digital downloads, basic ecommerce, custom domain, email/chat support only.", "fr": "Cours illimités, 1 communauté (5 espaces), 5 téléchargements numériques, ecommerce basique, domaine personnalisé, support email/chat uniquement." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 109, "annualPerMonth": 82, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Adds live Zoom sessions, completion certificates, graded quizzes, payment plans, memberships, 2 site administrators.", "fr": null }
+          { "en": "Adds live Zoom sessions, completion certificates, graded quizzes, payment plans, memberships, 2 site administrators.", "fr": "Ajoute les sessions Zoom en direct, les certificats de réussite, les quiz notés, les plans de paiement, les adhésions, 2 administrateurs du site." }
         ],
         "sourceIds": ["s1"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": 219, "annualPerMonth": 164, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Removes Thinkific branding, 3 communities (20 spaces each), B2B invoicing, API access and webhooks, 6 administrators.", "fr": null }
+          { "en": "Removes Thinkific branding, 3 communities (20 spaces each), B2B invoicing, API access and webhooks, 6 administrators.", "fr": "Retire la marque Thinkific, 3 communautés (20 espaces chacune), facturation B2B, accès API et webhooks, 6 administrateurs." }
         ],
         "sourceIds": ["s1"]
       },
@@ -71,40 +72,86 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Dedicated support, AI teaching assistant, SSO, SCORM compliance, CRM integrations, 10,000+ user seats, custom roles.", "fr": null }
+          { "en": "Dedicated support, AI teaching assistant, SSO, SCORM compliance, CRM integrations, 10,000+ user seats, custom roles.", "fr": "Support dédié, assistant pédagogique IA, SSO, conformité SCORM, intégrations CRM, plus de 10 000 sièges utilisateurs, rôles personnalisés." }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [
-      { "en": "Branded mobile app add-on: $199/month for white-labeled iOS and Android app.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Branded mobile app add-on: $199/month for white-labeled iOS and Android app.", "fr": "Option application mobile de marque : 199 $/mois pour une app iOS et Android en marque blanche.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "No free plan; only a 30-day trial. The cheapest plan usable for real course sales is Basic at $54/mo (or $40/mo billed annually).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No free plan; only a 30-day trial. The cheapest plan usable for real course sales is Basic at $54/mo (or $40/mo billed annually).", "fr": "Pas de plan gratuit ; seulement un essai de 30 jours. Le plan le moins cher utilisable pour de vraies ventes de cours est Basic à 54 $/mois (ou 40 $/mois en facturation annuelle).", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Drag-and-drop online course builder with video hosting and multimedia content support.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in ecommerce: checkout, coupons, order bumps, payment plans, and multiple payment processors (Thinkific Payments, Stripe, PayPal, Apple/Google Pay).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Community features (spaces), live Zoom sessions, and completion certificates from the Start plan up.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Drag-and-drop online course builder with video hosting and multimedia content support.", "fr": "Créateur de cours en ligne par glisser-déposer avec hébergement vidéo et support de contenu multimédia.", "sourceIds": ["s1"] },
+      { "en": "Built-in ecommerce: checkout, coupons, order bumps, payment plans, and multiple payment processors (Thinkific Payments, Stripe, PayPal, Apple/Google Pay).", "fr": "Ecommerce intégré : paiement, coupons, ventes additionnelles, plans de paiement et plusieurs processeurs de paiement (Thinkific Payments, Stripe, PayPal, Apple/Google Pay).", "sourceIds": ["s1"] },
+      { "en": "Community features (spaces), live Zoom sessions, and completion certificates from the Start plan up.", "fr": "Fonctions communautaires (espaces), sessions Zoom en direct et certificats de réussite à partir du plan Start.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No permanent free plan; every plan is a paid subscription after the 30-day trial.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "API access and webhooks are gated behind the Grow plan ($219/mo or $164/mo annual).", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No permanent free plan; every plan is a paid subscription after the 30-day trial.", "fr": "Pas de plan gratuit permanent ; chaque plan est un abonnement payant après l'essai de 30 jours.", "sourceIds": ["s1"] },
+      { "en": "API access and webhooks are gated behind the Grow plan ($219/mo or $164/mo annual).", "fr": "L'accès API et les webhooks sont réservés au plan Grow (219 $/mois ou 164 $/mois en annuel).", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
   "alternatives": [
-    { "slug": "kajabi", "reason": { "en": "Direct all-in-one competitor for course creators, bundling marketing tools with course hosting.", "fr": null } },
-    { "slug": "learnworlds", "reason": { "en": "Similar course platform with strong customization and branding options.", "fr": null } },
-    { "slug": "podia", "reason": { "en": "Simpler, lower-cost alternative for selling courses, memberships and digital downloads.", "fr": null } }
+    { "slug": "kajabi", "reason": { "en": "Direct all-in-one competitor for course creators, bundling marketing tools with course hosting.", "fr": "Concurrent direct tout-en-un pour les créateurs de cours, combinant outils marketing et hébergement de cours." } },
+    { "slug": "learnworlds", "reason": { "en": "Similar course platform with strong customization and branding options.", "fr": "Plateforme de cours similaire avec de fortes options de personnalisation et de marque." } },
+    { "slug": "podia", "reason": { "en": "Simpler, lower-cost alternative for selling courses, memberships and digital downloads.", "fr": "Alternative plus simple et moins chère pour vendre des cours, adhésions et téléchargements numériques." } }
   ],
   "missingAlternatives": [
     { "name": "Teachable", "officialUrl": "https://teachable.com", "reason": "Major direct competitor in the course-hosting space, not present in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Entry plan (Basic, $54/mo) bundles hosting, ecommerce and a basic community, replacing several separate tools, but there's no free plan to test the value first.", "fr": "Le plan d'entrée (Basic, 54 $/mois) réunit hébergement, ecommerce et communauté basique, remplaçant plusieurs outils séparés, mais il n'y a pas de plan gratuit pour tester la valeur d'abord.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time needed to publish a first course is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour publier un premier cours ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Course hosting works with built-in ecommerce and multiple payment processors, so selling a course doesn't require a separate ecommerce plugin.", "fr": "L'hébergement de cours fonctionne avec un ecommerce intégré et plusieurs processeurs de paiement, donc vendre un cours ne nécessite pas de plugin ecommerce séparé.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers course hosting, ecommerce, community, live sessions, certificates and (on Plus) SCORM and CRM integrations, a broad scope for the category.", "fr": "Couvre l'hébergement de cours, l'ecommerce, la communauté, les sessions en direct, les certificats et (sur Plus) la conformité SCORM et les intégrations CRM, un périmètre large pour la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: course content and student data export options are not described in the collected sources.", "fr": "Note neutre : les options d'export du contenu des cours et des données des élèves ne sont pas décrites dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator who sells online courses and wants hosting, checkout and community together instead of stitching together separate tools.", "fr": "Une créatrice de contenu qui vend des cours en ligne et veut hébergement, paiement et communauté réunis plutôt que d'assembler plusieurs outils." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Course launch: sell a paid course with built-in checkout and coupons, without connecting a separate ecommerce tool.", "fr": "Lancement de cours : vendre un cours payant avec paiement et coupons intégrés, sans connecter d'outil ecommerce séparé." },
+    { "en": "Student engagement: run live Zoom sessions and award completion certificates to keep students engaged through a course.", "fr": "Engagement des élèves : organiser des sessions Zoom en direct et délivrer des certificats de réussite pour maintenir l'engagement pendant un cours." }
+  ],
+  "editorial": {
+    "tagline": { "en": "Online course platform", "fr": "Plateforme de cours" },
+    "shortDescription": { "en": "Thinkific hosts and sells online courses with built-in ecommerce and community features, starting at $54/month after a 30-day trial.", "fr": "Thinkific héberge et vend des cours en ligne avec ecommerce et communauté intégrés, à partir de 54 $/mois après un essai de 30 jours." },
+    "longDescription": {
+      "en": "Thinkific is a drag-and-drop course builder with video hosting, built-in ecommerce (checkout, coupons, payment plans, multiple processors) and community spaces. From the Start plan up it adds live Zoom sessions, completion certificates and graded quizzes.\n\nThere's no free plan, only a 30-day trial; Basic starts at $54/month ($40/month billed annually) but limits support to email/chat and caps community size. API access and webhooks require the Grow plan ($219/month). It suits a course creator who wants hosting, selling and community in one product instead of stitching together separate tools.",
+      "fr": "Thinkific est un créateur de cours par glisser-déposer avec hébergement vidéo, ecommerce intégré (paiement, coupons, plans de paiement, plusieurs processeurs) et espaces communautaires. À partir du plan Start, il ajoute les sessions Zoom en direct, les certificats de réussite et les quiz notés.\n\nIl n'y a pas de plan gratuit, seulement un essai de 30 jours ; Basic démarre à 54 $/mois (40 $/mois en annuel) mais limite le support à l'email/chat et la taille de la communauté. L'accès API et les webhooks nécessitent le plan Grow (219 $/mois). L'outil convient à une créatrice de cours qui veut hébergement, vente et communauté réunis dans un seul produit plutôt que d'assembler plusieurs outils."
+    },
+    "pros": [
+      { "en": "Course hosting, ecommerce and community are bundled in one product instead of several separate tools.", "fr": "Hébergement de cours, ecommerce et communauté sont réunis dans un seul produit plutôt que dans plusieurs outils séparés." },
+      { "en": "Multiple payment processors (Thinkific Payments, Stripe, PayPal, Apple/Google Pay) are supported out of the box.", "fr": "Plusieurs processeurs de paiement (Thinkific Payments, Stripe, PayPal, Apple/Google Pay) sont pris en charge nativement." }
+    ],
+    "cons": [
+      { "en": "No free plan; every plan is a paid subscription after the 30-day trial.", "fr": "Pas de plan gratuit ; chaque plan est un abonnement payant après l'essai de 30 jours." },
+      { "en": "API access and webhooks are gated behind the Grow plan at $219/month ($164/month annual).", "fr": "L'accès API et les webhooks sont réservés au plan Grow à 219 $/mois (164 $/mois en annuel)." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You sell online courses and want hosting, checkout and community in a single tool.", "fr": "Tu vends des cours en ligne et tu veux hébergement, paiement et communauté dans un seul outil." },
+      "avoidIf": { "en": "You need a permanent free plan, or API access from day one without paying for the Grow plan.", "fr": "Tu as besoin d'un plan gratuit permanent, ou d'un accès API dès le départ sans payer le plan Grow." },
+      "threshold": { "en": "Basic at $54/month ($40/month billed annually) is the entry point to actually sell courses; below that, only the 30-day trial is available.", "fr": "Le plan Basic à 54 $/mois (40 $/mois en annuel) est le seuil d'entrée pour vraiment vendre des cours ; en dessous, seul l'essai de 30 jours est disponible." }
+    }
+  },
   "unknowns": [
     "Exact bandwidth caps per plan (100GB-7,500GB+) were only given as a broad range on the pricing page, not per-plan figures."
   ],

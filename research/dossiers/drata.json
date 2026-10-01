@@ -3,7 +3,8 @@
   "slug": "drata",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Drata",
     "vendor": "Drata Inc.",
@@ -218,9 +219,58 @@
       "reason": "Another significant compliance automation competitor, not in the catalogue"
     }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Neutral score: no public price is available for any tier, so the real cost cannot be weighed against the time saved by the sources collected.", "fr": "Note neutre : aucun prix public n'est disponible pour aucun palier, donc le coût réel ne peut pas être mis en balance avec le temps gagné d'après les sources relevées.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed to reach a first useful result is not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir un premier résultat utile ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Neutral score: the pricing page describes continuous control monitoring and pre-built integrations, but nothing in the collected sources confirms this works without manual workarounds in practice.", "fr": "Note neutre : la page tarifaire décrit un suivi continu des contrôles et des intégrations prêtes à l'emploi, mais rien dans les sources relevées ne confirme que cela fonctionne sans contournement manuel en pratique.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers several compliance frameworks (SOC 2, ISO 27001, Cyber Essentials, HIPAA, GDPR) plus a separate Trust Center product line, a broad scope for the category.", "fr": "Couvre plusieurs frameworks de conformité (SOC 2, ISO 27001, Cyber Essentials, HIPAA, GDPR) ainsi qu'une gamme Trust Center séparée, un périmètre large pour la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export formats and API access are not described in the collected sources.", "fr": "Note neutre : les formats d'export des données et l'accès API ne sont pas décrits dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An ops or security lead at a small company preparing for a SOC 2 or ISO 27001 audit who needs continuous control monitoring instead of manual evidence collection.", "fr": "Une responsable ops ou sécurité d'une petite entreprise qui prépare un audit SOC 2 ou ISO 27001 et a besoin d'un suivi continu des contrôles plutôt que d'une collecte manuelle de preuves." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Audit prep: connect cloud and HR tools so Drata continuously monitors controls ahead of a SOC 2 or ISO 27001 audit, instead of gathering evidence manually.", "fr": "Préparation d'audit : connecter les outils cloud et RH pour que Drata suive en continu les contrôles avant un audit SOC 2 ou ISO 27001, au lieu de collecter les preuves manuellement." },
+    { "en": "Sales questionnaires: publish a Trust Center page so prospects can self-serve compliance evidence instead of the team answering each security questionnaire by hand.", "fr": "Questionnaires commerciaux : publier une page Trust Center pour que les prospects accèdent eux-mêmes aux preuves de conformité, au lieu que l'équipe réponde à chaque questionnaire de sécurité à la main." }
+  ],
+  "editorial": {
+    "tagline": { "en": "Compliance automation", "fr": "Automatisation conformité" },
+    "shortDescription": { "en": "Drata automates SOC 2, ISO 27001 and other compliance frameworks with continuous control monitoring; every pricing tier requires a sales quote.", "fr": "Drata automatise la conformité SOC 2, ISO 27001 et d'autres frameworks avec un suivi continu des contrôles ; chaque palier tarifaire nécessite un devis commercial." },
+    "longDescription": {
+      "en": "Drata automates compliance work for frameworks like SOC 2, ISO 27001, HIPAA and GDPR, connecting to cloud and business tools to monitor controls continuously rather than collecting evidence by hand before an audit. A separate Assurance Platform (Trust Center) publishes compliance posture externally, handles NDAs and uses AI to help answer security questionnaires.\n\nAll three GRC tiers (Foundation, Advanced, Enterprise) are quote-only, so there is no public price to compare against competitors before contacting sales. Foundation caps out at 50 FTEs and a single pre-mapped framework, so growing teams or multi-framework needs move to Advanced or Enterprise. It fits a security or ops team preparing a first audit, not a solo operator.",
+      "fr": "Drata automatise la conformité pour des frameworks comme SOC 2, ISO 27001, HIPAA et GDPR, en se connectant aux outils cloud et métier pour suivre les contrôles en continu plutôt que de collecter les preuves à la main. Une Assurance Platform (Trust Center) séparée publie la posture de conformité et utilise l'IA pour répondre aux questionnaires de sécurité.\n\nLes trois paliers GRC (Foundation, Advanced, Enterprise) sont sur devis, sans prix public avant de contacter un commercial. Foundation est plafonné à 50 ETP et un seul framework, ce qui pousse les équipes en croissance vers Advanced ou Enterprise. L'outil convient à une équipe sécurité ou ops qui prépare un premier audit, pas à une personne seule."
+    },
+    "pros": [
+      { "en": "Continuous control monitoring across several frameworks reduces manual evidence-gathering before an audit.", "fr": "Le suivi continu des contrôles sur plusieurs frameworks réduit la collecte manuelle de preuves avant un audit." },
+      { "en": "The separate Trust Center lets a team answer security questionnaires with AI assistance instead of replying one by one.", "fr": "Le Trust Center séparé permet à une équipe de répondre aux questionnaires de sécurité avec l'aide de l'IA plutôt qu'une par une." }
+    ],
+    "cons": [
+      { "en": "No public pricing anywhere; every tier needs a sales conversation before the real cost is known.", "fr": "Aucun prix public nulle part ; chaque palier nécessite un échange commercial avant de connaître le coût réel." },
+      { "en": "The entry Foundation tier is capped at 50 FTEs and one pre-mapped framework, forcing an upgrade as needs grow.", "fr": "Le palier d'entrée Foundation est plafonné à 50 ETP et un seul framework pré-cartographié, ce qui oblige à monter de gamme dès que les besoins augmentent." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're preparing a first SOC 2 or ISO 27001 audit, or managing several compliance frameworks, and want continuous control monitoring.", "fr": "Tu prépares un premier audit SOC 2 ou ISO 27001, ou tu gères plusieurs frameworks de conformité, et tu veux un suivi continu des contrôles." },
+      "avoidIf": { "en": "You want to compare prices before talking to sales, or your company has no near-term compliance deadline.", "fr": "Tu veux comparer les prix avant de parler à un commercial, ou ton entreprise n'a pas d'échéance de conformité à court terme." },
+      "threshold": { "en": "Past 50 FTEs or more than one compliance framework, you move from Foundation to the quote-only Advanced tier.", "fr": "Au-delà de 50 ETP ou de plus d'un framework de conformité, on passe de Foundation au palier Advanced, lui aussi sur devis." }
+    }
+  },
   "unknowns": [
     "No numeric pricing available anywhere; external estimates (e.g. ~$7,500-$24,600/year) exist but are not sourced from the official site and were excluded.",
     "No trial policy stated on the official plans page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Only vanta and onetrust matched as genuine GRC/compliance competitors already in the catalogue; secureframe and sprinto (real direct competitors) are listed in missingAlternatives instead, which keeps alternatives below the tier A target of 3-6."
+  ]
 }

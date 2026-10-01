@@ -3,7 +3,8 @@
   "slug": "octane-render",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "OctaneRender",
     "vendor": "OTOY Inc.",
@@ -35,36 +36,86 @@
         "minSeats": 1,
         "price": { "monthly": 24, "annualPerMonth": 20, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited network rendering across 10+ nodes, full access to the OTOY ecosystem", "sourceIds": ["s2"] }],
+        "keyLimits": [{ "en": "Unlimited network rendering across 10+ nodes, full access to the OTOY ecosystem", "fr": "Rendu réseau illimité sur 10+ nœuds, accès complet à l'écosystème OTOY", "sourceIds": ["s2"] }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "studio-plus",
     "addOns": [],
     "cautions": [
-      { "en": "OTOY has consolidated the older Studio/Enterprise/Enterprise+ tiers into a single Studio+ subscription; older plan names still referenced in some third-party listings no longer reflect current pricing.", "fr": "", "sourceIds": ["s2"] }
+      { "en": "OTOY has consolidated the older Studio/Enterprise/Enterprise+ tiers into a single Studio+ subscription; older plan names still referenced in some third-party listings no longer reflect current pricing.", "fr": "OTOY a regroupé les anciens paliers Studio/Enterprise/Enterprise+ en un seul abonnement Studio+ ; les anciens noms de palier encore cités sur certains sites tiers ne reflètent plus les prix actuels.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "GPU-based, physically correct spectral renderer with RTX acceleration (2-5x speedup on NVIDIA raytracing GPUs)", "sourceIds": ["s1"] },
-      { "en": "Layered materials, spectral hair materials and random-walk subsurface scattering", "sourceIds": ["s1"] },
-      { "en": "AI-powered Spectral AI Denoiser and AI Light system", "sourceIds": ["s1"] },
-      { "en": "Procedural content generation via the VECTRON and SPECTRON modules", "sourceIds": ["s1"] }
+      { "en": "GPU-based, physically correct spectral renderer with RTX acceleration (2-5x speedup on NVIDIA raytracing GPUs)", "fr": "Moteur de rendu GPU physiquement correct et spectral avec accélération RTX (gain de 2 à 5x sur les GPU NVIDIA à ray tracing)", "sourceIds": ["s1"] },
+      { "en": "Layered materials, spectral hair materials and random-walk subsurface scattering", "fr": "Matériaux en couches, matériaux de cheveux spectraux et diffusion sous-surface en marche aléatoire", "sourceIds": ["s1"] },
+      { "en": "AI-powered Spectral AI Denoiser and AI Light system", "fr": "Débruiteur Spectral AI et système AI Light basés sur l'IA", "sourceIds": ["s1"] },
+      { "en": "Procedural content generation via the VECTRON and SPECTRON modules", "fr": "Génération de contenu procédural via les modules VECTRON et SPECTRON", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Requires NVIDIA GPUs to get RTX-accelerated raytracing speed gains", "sourceIds": ["s1"] },
-      { "en": "Named host-application integrations (3ds Max, Cinema 4D, Blender, etc.) are not detailed on the marketing pages reviewed", "sourceIds": ["s1"] }
+      { "en": "Requires NVIDIA GPUs to get RTX-accelerated raytracing speed gains", "fr": "Nécessite des GPU NVIDIA pour bénéficier des gains de vitesse du ray tracing accéléré RTX", "sourceIds": ["s1"] },
+      { "en": "Named host-application integrations (3ds Max, Cinema 4D, Blender, etc.) are not detailed on the marketing pages reviewed", "fr": "Les intégrations nommées avec les applications hôtes (3ds Max, Cinema 4D, Blender, etc.) ne sont pas détaillées sur les pages marketing consultées", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["windows", "macos"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Freelance 3D artists and small visualization studios with NVIDIA GPUs who need GPU-accelerated, physically correct rendering in one subscription.",
+      "fr": "Artistes 3D indépendants et petits studios de visualisation équipés en GPU NVIDIA, qui ont besoin d'un rendu accéléré par GPU et physiquement correct dans un seul abonnement."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "GPU production rendering: render scenes with RTX-accelerated ray tracing and spectral materials for visualization or VFX work.", "fr": "Rendu de production GPU : rendre des scènes avec le ray tracing accéléré RTX et des matériaux spectraux pour de la visualisation ou du VFX." },
+    { "en": "Network rendering: distribute a render across 10+ nodes included in the Studio+ subscription to speed up delivery.", "fr": "Rendu en réseau : répartir un rendu sur 10+ nœuds inclus dans l'abonnement Studio+ pour accélérer la livraison." }
+  ],
   "alternatives": [
-    { "slug": "redshift", "reason": { "en": "Direct GPU-accelerated rendering competitor targeting the same production studios" } },
-    { "slug": "v-ray", "reason": { "en": "Widely adopted rendering engine competing across the same host applications" } },
-    { "slug": "corona-renderer", "reason": { "en": "Rendering engine competitor aimed at the same architectural/VFX visualization market" } }
+    { "slug": "redshift", "reason": { "en": "Direct GPU-accelerated rendering competitor targeting the same production studios", "fr": "Concurrent direct de rendu accéléré par GPU visant les mêmes studios de production" } },
+    { "slug": "v-ray", "reason": { "en": "Widely adopted rendering engine competing across the same host applications", "fr": "Moteur de rendu largement adopté, concurrent sur les mêmes applications hôtes" } },
+    { "slug": "corona-renderer", "reason": { "en": "Rendering engine competitor aimed at the same architectural/VFX visualization market", "fr": "Moteur de rendu concurrent visant le même marché de visualisation architecturale/VFX" } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "One Studio+ subscription bundles GPU rendering, AI denoising and unlimited network rendering across 10+ nodes, but the source gives no cost-comparison data against alternatives.", "fr": "Un seul abonnement Studio+ regroupe le rendu GPU, le débruitage par IA et le rendu réseau illimité sur 10+ nœuds, mais la source ne fournit pas de données de comparaison de coût avec des alternatives.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "Neutral score: no setup time or first-render effort is stated in the collected sources.", "fr": "Note neutre : aucun temps de mise en place ni effort pour un premier rendu n'est précisé dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "RTX acceleration, the AI denoiser, AI Light and network rendering are all delivered natively per the source, with no third-party workaround mentioned.", "fr": "L'accélération RTX, le débruiteur IA, AI Light et le rendu réseau sont tous livrés nativement selon la source, sans contournement tiers mentionné.", "sourceIds": ["s1"] },
+      "puissance": { "en": "The source states a measured 2-5x RTX speedup plus spectral materials, random-walk subsurface scattering and procedural generation modules, a feature set at the higher end of the GPU-renderer category.", "fr": "La source indique un gain RTX mesuré de 2 à 5x, avec matériaux spectraux, diffusion sous-surface en marche aléatoire et modules de génération procédurale, un ensemble de fonctions dans le haut de la catégorie des moteurs de rendu GPU.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and scene portability are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité des scènes ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "GPU rendering", "fr": "Rendu GPU" },
+    "shortDescription": { "en": "OctaneRender is a GPU-accelerated spectral renderer with RTX support, sold as one Studio+ subscription from €24/month, with a 30-day trial and no free plan.", "fr": "OctaneRender est un moteur de rendu GPU spectral avec support RTX, en abonnement Studio+ dès 24 €/mois, essai de 30 jours, sans plan gratuit." },
+    "longDescription": {
+      "en": "OctaneRender is OTOY's GPU-accelerated, physically correct spectral renderer, with RTX acceleration giving a 2-5x speedup on NVIDIA raytracing GPUs. It supports layered materials, spectral hair and random-walk subsurface scattering, plus an AI denoiser, an AI Light system, and procedural content generation through the VECTRON and SPECTRON modules.\n\nIt is sold as a single Studio+ subscription at €24/month (€20/month billed annually), with a 30-day trial and no permanent free plan. It suits a solo artist or small studio already working with NVIDIA GPUs who wants unlimited network rendering across 10+ nodes in one subscription.",
+      "fr": "OctaneRender est le moteur de rendu GPU spectral et physiquement correct d'OTOY, avec une accélération RTX offrant un gain de 2 à 5x sur les GPU NVIDIA à ray tracing. Il gère les matériaux en couches, les cheveux spectraux et la diffusion sous-surface en marche aléatoire, plus un débruiteur IA, un système AI Light, et une génération de contenu procédural via les modules VECTRON et SPECTRON.\n\nIl est vendu en un seul abonnement Studio+ à 24 €/mois (20 €/mois en engagement annuel), avec un essai de 30 jours et sans plan gratuit permanent. Il convient à un artiste solo ou un petit studio déjà équipé en GPU NVIDIA qui veut du rendu réseau illimité sur 10+ nœuds en un seul abonnement."
+    },
+    "pros": [
+      { "en": "RTX acceleration gives a measured 2-5x speedup on NVIDIA GPUs instead of a vague performance claim.", "fr": "L'accélération RTX offre un gain mesuré de 2 à 5x sur les GPU NVIDIA, plutôt qu'une promesse de performance vague." },
+      { "en": "One Studio+ subscription includes unlimited network rendering across 10+ nodes instead of per-node licensing.", "fr": "Un seul abonnement Studio+ inclut le rendu réseau illimité sur 10+ nœuds, au lieu d'une licence par nœud." }
+    ],
+    "cons": [
+      { "en": "RTX speed gains depend on owning NVIDIA GPUs; the renderer is less advantageous on other hardware.", "fr": "Les gains de vitesse RTX dépendent de posséder des GPU NVIDIA ; le moteur est moins avantageux sur un autre matériel." },
+      { "en": "The marketing pages do not detail which host applications (3ds Max, Cinema 4D, Blender) are supported, so plugin compatibility needs checking separately.", "fr": "Les pages marketing ne détaillent pas les applications hôtes prises en charge (3ds Max, Cinema 4D, Blender), donc la compatibilité des plugins doit être vérifiée séparément." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You already render on NVIDIA GPUs and want one subscription covering spectral rendering, AI denoising and unlimited network rendering.", "fr": "Tu rends déjà sur des GPU NVIDIA et tu veux un seul abonnement couvrant le rendu spectral, le débruitage par IA et le rendu réseau illimité." },
+      "avoidIf": { "en": "You render mainly on non-NVIDIA hardware, since the RTX-accelerated speedups will not apply.", "fr": "Tu rends principalement sur du matériel non NVIDIA, car les gains d'accélération RTX ne s'appliqueront pas." },
+      "threshold": { "en": "Worth it once the €24/month (or €240/year billed annually at €20/month) replaces a per-node rendering license for a studio with 10 or more render nodes.", "fr": "Rentable dès que les 24 €/mois (ou 240 €/an en facturation annuelle à 20 €/mois) remplacent une licence de rendu par nœud pour un studio avec 10 nœuds de rendu ou plus." }
+    }
+  },
   "unknowns": ["Exact list of supported host applications (3ds Max, Cinema 4D, Blender, Maya, etc.) not confirmed from a primary source on this pass", "Whether taxes are included in the listed EUR price is not stated"],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

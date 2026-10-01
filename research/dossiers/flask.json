@@ -3,7 +3,8 @@
   "slug": "flask",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Flask",
     "vendor": "Pallets (open-source community project)",
@@ -30,34 +31,50 @@
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Flask itself is free and unlicensed for hosting costs; running it in production requires paying separately for hosting, deployment, and scaling infrastructure.", "sourceIds": ["s1"] }
+      { "en": "Flask itself is free and unlicensed for hosting costs; running it in production requires paying separately for hosting, deployment, and scaling infrastructure.", "fr": "Flask lui-même est gratuit et ne couvre pas les frais d'hébergement ; le faire tourner en production suppose de payer séparément l'hébergement, le déploiement et la montée en charge.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Lightweight Python micro-framework (WSGI) for building web applications and APIs with minimal built-in structure.", "sourceIds": ["s1"] },
-      { "en": "Extensible via a large ecosystem of third-party extensions (e.g. Flask-SQLAlchemy, Flask-Login) rather than bundled features.", "sourceIds": ["s1"] }
+      { "en": "Lightweight Python micro-framework (WSGI) for building web applications and APIs with minimal built-in structure.", "fr": "Micro-framework Python léger (WSGI) pour construire des applications web et des API avec une structure intégrée minimale.", "sourceIds": ["s1"] },
+      { "en": "Extensible via a large ecosystem of third-party extensions (e.g. Flask-SQLAlchemy, Flask-Login) rather than bundled features.", "fr": "Extensible grâce à un large écosystème d'extensions tierces (par exemple Flask-SQLAlchemy, Flask-Login) plutôt que par des fonctionnalités intégrées d'office.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No built-in admin panel, ORM, or authentication system; these require adding third-party extensions.", "sourceIds": ["s1"] },
-      { "en": "No official hosting or managed cloud offering from the Flask project itself; deployment is entirely the user's responsibility.", "sourceIds": ["s1"] }
+      { "en": "No built-in admin panel, ORM, or authentication system; these require adding third-party extensions.", "fr": "Aucun panneau d'administration, ORM ou système d'authentification intégré ; il faut ajouter des extensions tierces.", "sourceIds": ["s1"] },
+      { "en": "No official hosting or managed cloud offering from the Flask project itself; deployment is entirely the user's responsibility.", "fr": "Aucune offre d'hébergement ou de cloud géré officielle de la part du projet Flask lui-même ; le déploiement reste entièrement à la charge de l'utilisateur.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
   "audience": null,
   "useCases": [],
-  "alternatives": [
-    { "slug": "python", "reason": { "en": "Flask is a framework built on Python; teams choosing a lightweight backend stack often evaluate the two at once." } }
-  ],
+  "alternatives": [],
   "missingAlternatives": [
     { "name": "Django", "officialUrl": "https://www.djangoproject.com/", "reason": "The other major Python web framework, more batteries-included, direct alternative to Flask, not in the catalogue" },
     { "name": "FastAPI", "officialUrl": "https://fastapi.tiangolo.com/", "reason": "Modern Python API framework directly competing with Flask for API projects, not in the catalogue" }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 5,
+    "evidence": {
+      "valeurAjoutee": { "en": "Flask is free open-source software with no licensing cost at all, so any result it produces is rentabilized immediately for a developer who only pays for their own hosting.", "fr": "Flask est un logiciel libre et gratuit, sans aucun coût de licence, donc tout résultat produit est rentabilisé immédiatement pour un développeur qui ne paie que son propre hébergement.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The framework is documented as minimal and lightweight by design, which typically allows a developer with Python knowledge to get a first route running quickly, though no first-hour benchmark is given in the sources.", "fr": "Le framework est documenté comme minimal et léger par conception, ce qui permet en général à un développeur connaissant Python d'obtenir une première route rapidement, sans qu'un repère chiffré de première heure figure dans les sources.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Flask is confirmed to build working web applications and APIs as promised, relying on its documented extension ecosystem rather than workarounds for missing features.", "fr": "Flask est confirmé pour construire des applications web et des API fonctionnelles comme promis, en s'appuyant sur son écosystème d'extensions documenté plutôt que sur des contournements pour les fonctionnalités manquantes.", "sourceIds": ["s1"] },
+      "puissance": { "en": "As a micro-framework with no built-in ORM, admin panel or auth system, Flask covers the baseline of the category and depends on third-party extensions for more advanced capability.", "fr": "En tant que micro-framework sans ORM, panneau d'administration ou authentification intégrés, Flask couvre le strict minimum de la catégorie et dépend d'extensions tierces pour des capacités plus avancées.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Flask applications are plain Python code with no proprietary format or vendor lock-in; a project can be redeployed on any host or migrated to another framework's code structure freely.", "fr": "Les applications Flask sont du code Python ordinaire, sans format propriétaire ni dépendance à un éditeur ; un projet peut être redéployé sur n'importe quel hébergeur ou migré librement vers la structure d'un autre framework.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Python web micro-framework", "fr": "Micro-framework web Python" },
+    "shortDescription": { "en": "Free, open-source Python micro-framework for building web applications and APIs, extended through third-party packages.", "fr": "Micro-framework Python gratuit et open source pour construire des applications web et des API, étendu par des extensions tierces." }
+  },
   "unknowns": [
     "No official pricing page exists since Flask is free open-source software with no vendor-provided paid tier."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

@@ -1151,13 +1151,14 @@
     "slug": "adobe-substance-3d",
     "name": "Adobe Substance 3D",
     "categoryId": "creation",
-    "shortDescription": "Suite 3D Adobe pour matériaux, textures, staging et visualisation produit.",
-    "shortDescriptionEn": "Adobe 3D suite for materials, textures, staging, and product visualization.",
+    "shortDescription": "Adobe Substance 3D regroupe cinq applications de texturing, création de matériaux et rendu de scène, uniquement par abonnement, sans licence perpétuelle.",
+    "shortDescriptionEn": "Adobe Substance 3D bundles five apps for texturing, material creation and scene rendering, by subscription only with no perpetual license.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 50€/mois environ"
+      "free": "Plan gratuit : Offre étudiant/enseignant, usage personnel non commercial uniquement, 5 Go de stockage cloud.",
+      "paid": "Dès 59,99 $/mois, plan Substance 3D Collection."
     },
-    "defaultMonthlyPrice": 50,
+    "defaultMonthlyPrice": 51.52,
+    "compareMonthlyPrice": 51.52,
     "websiteUrl": "https://www.adobe.com/products/substance3d.html",
     "ogImageUrl": "https://www.adobe.com/products/media_1493006c2adba238de471ed68a47f1663e254966c.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "bundle_parent": "adobe-creative-cloud",
@@ -1178,7 +1179,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "SOFIA"
     ]
   },
   {
@@ -1881,11 +1882,11 @@
     "slug": "anaplan",
     "name": "Anaplan",
     "categoryId": "budgeting-fpa",
-    "shortDescription": "Plateforme de planification d'entreprise modulaire (CPM) avec modélisation multi-dimensionnelle, budgeting, forecasting, planification des ventes et gestion des stocks, intégration IA pour scénarios prédictifs.",
-    "shortDescriptionEn": "Modular corporate performance management (CPM) platform with multi-dimensional modeling, budgeting, forecasting, sales planning, and inventory management, plus AI-powered predictive scenarios.",
+    "shortDescription": "Anaplan est une plateforme cloud de planification et de modélisation pour les équipes finance, ventes et supply chain, au tarif uniquement sur devis.",
+    "shortDescriptionEn": "Anaplan is a cloud planning and modeling platform for finance, sales and supply chain teams, priced only on a sales quote.",
     "pricing": {
-      "free": "Aucun plan gratuit public ni essai libre-service annoncé.",
-      "paid": "Anaplan Platform: Sur devis"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
@@ -2759,13 +2760,14 @@
     "slug": "astute-graphics",
     "name": "Astute Graphics",
     "categoryId": "design-tools",
-    "shortDescription": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.",
-    "shortDescriptionEn": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.",
+    "shortDescription": "Astute Graphics est une suite d'extensions payantes pour Adobe Illustrator, pour le nettoyage vectoriel, le dessin et le travail d'encrage, sans version gratuite autonome.",
+    "shortDescriptionEn": "Astute Graphics is a subscription suite of Adobe Illustrator plugins for vector cleanup, sketching and ink/line work, with no standalone free version.",
     "pricing": {
-      "free": "Essai gratuit 7 jours ; après annulation, 4 plugins restent gratuits (Autosaviour, DirectPrefs, MirrorMe, AstuteBuddy).",
-      "paid": "Astute Graphics Annual Bundle: 149 USD/an"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 12,42 $/mois, plan Individual (Annual Bundle)."
     },
-    "defaultMonthlyPrice": 14,
+    "defaultMonthlyPrice": 10.67,
+    "compareMonthlyPrice": 10.67,
     "websiteUrl": "https://astutegraphics.com",
     "ogImageUrl": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
     "host_app": "adobe-illustrator",
@@ -2784,7 +2786,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "SOFIA"
     ]
   },
   {
@@ -3033,14 +3035,13 @@
     "slug": "auto-rig-pro",
     "name": "Auto-Rig Pro",
     "categoryId": "design-tools",
-    "shortDescription": "Addon Blender pour le rigging automatique de personnages humanoïdes. Généère rapidement un squelette articulé, poids de déformation et contrôles d'animation. Inclut presets d'export pour Unity et Unreal Engine. Développé pour studios de petite et moyenne taille.",
-    "shortDescriptionEn": "Blender addon for automatic humanoid character rigging. Quickly generates articulated skeleton, deformation weights, and animation controls. Includes export presets for Unity and Unreal Engine. Built for small to medium studios.",
+    "shortDescription": "Auto-Rig Pro place automatiquement les os sur des personnages Blender humanoïdes et exporte des rigs jeu vidéo, en achat unique de 25 à 50 $.",
+    "shortDescriptionEn": "Auto-Rig Pro auto-places bones on humanoid Blender characters and exports game-ready rigs, as a one-time $25 to $50 purchase per developer.",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Deux tiers payants : Lite ($25) et Full ($50).",
-      "paid": "Auto-Rig Pro Lite: 25 USD ; Auto-Rig Pro Full: 50 USD"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 50 $ (licence à vie), plan Auto-Rig Pro Full."
     },
-    "defaultMonthlyPrice": 50,
-    "compareMonthlyPrice": 50,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://superhivemarket.com/products/auto-rig-pro",
     "ogImageUrl": "https://assets.superhivemarket.com/store/product/126738/image/xlarge-8c2f231da5b8fcd134fee5a937fc0824.jpg",
     "tool_type": "plugin",
@@ -3057,10 +3058,7 @@
       "Développeurs de jeux",
       "Studios de petit/moyen effectif"
     ],
-    "prescription_quality": "question",
-    "personas": [
-      "designer"
-    ]
+    "prescription_quality": "question"
   },
   {
     "id": "autocad",
@@ -3782,14 +3780,14 @@
     "slug": "better-proposals",
     "name": "Better Proposals",
     "categoryId": "organization",
-    "shortDescription": "Propositions commerciales avec suivi et signatures.",
-    "shortDescriptionEn": "Commercial proposals with tracking and signatures.",
+    "shortDescription": "Better Proposals crée, suit et fait signer et payer des propositions commerciales, devis et contrats dans un seul document.",
+    "shortDescriptionEn": "Better Proposals creates, tracks and gets e-signatures and payment on sales proposals, quotes and contracts in a single document.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours sans carte bancaire.",
-      "paid": "Starter 19$/mois (13$/mois en annuel, 1 utilisateur, 10 docs/mois) ; Premium 29$/mois (21$/mois en annuel, 5 utilisateurs, 50 docs/mois) ; Enterprise 42$/mois (5 utilisateurs, documents illimités). Utilisateur sup. facturé en plus au-delà du quota inclus."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 13 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 19,
-    "compareMonthlyPrice": 17,
+    "defaultMonthlyPrice": 11.16,
+    "compareMonthlyPrice": 11.16,
     "websiteUrl": "https://betterproposals.io",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
@@ -5836,12 +5834,13 @@
     "slug": "chakra-ui",
     "name": "Chakra UI",
     "categoryId": "design-tools",
-    "shortDescription": "Bibliothèque de composants React accessible, modulaire et stylisable.",
-    "shortDescriptionEn": "Accessible, modular and styleable React component library.",
+    "shortDescription": "Chakra UI est une bibliothèque de composants React gratuite et open source, avec composants accessibles, tokens de design et mode sombre intégré.",
+    "shortDescriptionEn": "Chakra UI is a free, open-source React component library with accessible pre-built components, design tokens and built-in dark mode.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://chakra-ui.com",
     "ogImageUrl": "https://next.chakra-ui.com/og-image.png",
     "host_app": "react",
@@ -5861,7 +5860,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "DEV"
+      "THEO"
     ],
     "betterAlternative": "shadcn-ui"
   },
@@ -5901,12 +5900,13 @@
     "slug": "chartjs",
     "name": "Chart.js",
     "categoryId": "ui-components",
-    "shortDescription": "Bibliothèque de graphiques simple, propre et réactive pour le web.",
-    "shortDescriptionEn": "Simple, clean and responsive charting library for the web.",
+    "shortDescription": "Chart.js est une bibliothèque JavaScript gratuite et open source qui génère 8 types de graphiques sur Canvas HTML5, avec animations et redimensionnement réactif.",
+    "shortDescriptionEn": "Chart.js is a free, open-source JavaScript library that renders 8 chart types on HTML5 Canvas with animations and responsive resizing.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.chartjs.org",
     "ogImageUrl": "https://www.chartjs.org/img/cover.png",
     "substitution_cluster_v2": "charting-library",
@@ -5924,7 +5924,7 @@
     ],
     "prescription_quality": "strong",
     "personas": [
-      "DEV"
+      "THEO"
     ]
   },
   {
@@ -7624,11 +7624,11 @@
     "slug": "creditsafe",
     "name": "Creditsafe",
     "categoryId": "vendor-risk-data",
-    "shortDescription": "Creditsafe fournit des données de risque ou de conformité sur les fournisseurs.",
-    "shortDescriptionEn": "Business intelligence platform providing credit reports, credit risk scores, and real-time alerts on 430+ million businesses worldwide to assess partners, suppliers, and prospects.",
+    "shortDescription": "Creditsafe fournit des rapports de crédit et scores de risque sur plus de 430 millions d'entreprises, avec surveillance en temps réel, vendu sur devis.",
+    "shortDescriptionEn": "Creditsafe provides business credit reports and risk scores on 430+ million companies worldwide, with real-time monitoring, sold on a custom quote.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
@@ -7650,7 +7650,10 @@
       "Responsables achats",
       "Spécialistes AML"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "crisp",
@@ -7982,14 +7985,14 @@
     "slug": "d5-render",
     "name": "D5 Render",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel de rendu 3D en temps réel destiné aux architectes et designers, avec support du ray tracing instantané et intégration avec SketchUp, Revit et 3ds Max.",
-    "shortDescriptionEn": "Real-time 3D rendering software for architects and designers, featuring instant ray tracing and integration with SketchUp, Revit, and 3ds Max.",
+    "shortDescription": "D5 Render est un outil de rendu ray-traced temps réel pour architectes et designers, avec génération IA de matériaux et un forfait gratuit non commercial.",
+    "shortDescriptionEn": "D5 Render is a real-time ray-traced rendering tool for architects and designers, with AI material generation and a free non-commercial tier.",
     "pricing": {
-      "free": "Community tier gratuit ; plans Pro et Teams payants.",
-      "paid": "Community: Gratuit ; Pro: 38 $/mois ou 360 $/an (20% de réduction annuelle) ; Teams: 75 $/siège/mois ou 708 $/siège/an (21% de réduction annuelle)"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 30 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 38,
-    "compareMonthlyPrice": 38,
+    "defaultMonthlyPrice": 25.76,
+    "compareMonthlyPrice": 25.76,
     "affiliateLink": "https://www.d5render.com",
     "ogImageUrl": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346.webp",
     "tool_type": "metier",
@@ -8009,7 +8012,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "designer"
+      "SOFIA"
     ],
     "freeAlternative": "blender"
   },
@@ -8018,12 +8021,13 @@
     "slug": "darktable",
     "name": "darktable",
     "categoryId": "photo",
-    "shortDescription": "Logiciel open source gratuit pour le traitement et l'édition non-destructive de fichiers RAW. Fonctionne comme une chambre noire virtuelle (darkroom) avec gestion complète des workflows photo professionnels.",
-    "shortDescriptionEn": "Free open source software for non-destructive processing and editing of RAW files. Functions as a virtual darkroom with complete management of professional photo workflows.",
+    "shortDescription": "darktable est une application libre et gratuite pour développer des RAW de façon non destructive, gérer ses photos et shooter en tethering, sous licence GPL.",
+    "shortDescriptionEn": "darktable is a free, open-source application for non-destructive RAW photo development, image management and tethered shooting, licensed under the GPL.",
     "pricing": {
-      "free": "Entièrement gratuit, sans limitations. Logiciel libre sous licence GNU General Public License v3.",
-      "paid": "Voir le tarif officiel."
+      "free": "Plan gratuit : Entirely free and open source, no limitations or paid tier; licensed under GNU GPL v3 or later.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://www.darktable.org/",
     "ogImageUrl": "https://www.darktable.org/images/darktable-logo-only-512w.png",
     "tool_type": "metier",
@@ -8043,10 +8047,7 @@
       "Photographes RAW",
       "Enthusiastes open source"
     ],
-    "prescription_quality": "question",
-    "personas": [
-      "photographe"
-    ]
+    "prescription_quality": "question"
   },
   {
     "id": "dart",
@@ -8458,14 +8459,14 @@
     "slug": "deputy",
     "name": "Deputy",
     "categoryId": "organization",
-    "shortDescription": "Planning d'équipe et pointage avec auto-scheduling et conformité légale intégrée.",
-    "shortDescriptionEn": "Team scheduling and time clocking with auto-scheduling and built-in legal compliance.",
+    "shortDescription": "Deputy planifie les shifts, suit le temps et vérifie la conformité des équipes horaires, dès 5 $/utilisateur avec 30 $ minimum par compte.",
+    "shortDescriptionEn": "Deputy schedules shifts, tracks time and checks labor law compliance for hourly teams, with plans from $5 per user plus a $30 monthly account minimum.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 30 jours sans carte bancaire",
-      "paid": "Lite à 5$/utilisateur/mois ; Core à 6,50$ (auto-scheduling, prévision de la demande) ; Pro à 9$ (SSO, add-ons inclus). Minimum de facturation de 30$/mois par facture, quel que soit le nombre d'utilisateurs."
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 5 $/mois, plan Lite."
     },
-    "defaultMonthlyPrice": 5,
-    "compareMonthlyPrice": 5,
+    "defaultMonthlyPrice": 4.29,
+    "compareMonthlyPrice": 4.29,
     "affiliateLink": "https://deputy.com",
     "ogImageUrl": "https://www.deputy.com/g-assets/deputy-social-image.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -8482,7 +8483,10 @@
       "Franchises",
       "Grandes entreprises"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "descript",
@@ -8529,12 +8533,15 @@
     "slug": "descript-ai",
     "name": "Descript AI",
     "categoryId": "creation",
-    "shortDescription": "Monte de l'audio et de la vidéo en éditant du texte, avec clonage vocal IA et transcription automatique.",
-    "shortDescriptionEn": "Edit audio and video by editing text, with AI voice cloning and automatic transcription.",
-    "pricing": "Plan gratuit limité ; plans payants à partir de ~15$/mois pour le clonage vocal et plus de fonctionnalités.",
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
-    "affiliateLink": "https://descriptai.com",
+    "shortDescription": "Descript monte l'audio et la vidéo via une transcription éditable et clone la voix par IA, gratuit sous 60 min puis dès 16 $/mois.",
+    "shortDescriptionEn": "Descript edits audio and video by editing a transcript and adds AI voice cloning, starting free with a 60-minute quota, then $16 per month.",
+    "pricing": {
+      "free": "Plan gratuit : Quota équivalent à 60 minutes de média/mois, 100 crédits IA à usage unique, 5 Go de stockage cloud, exports filigranés en 720p, accès limité aux outils IA.",
+      "paid": "Dès 16 $/mois, plan Hobbyist."
+    },
+    "defaultMonthlyPrice": 13.74,
+    "compareMonthlyPrice": 13.74,
+    "affiliateLink": "https://www.descript.com/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/descript-ai.jpg",
     "logo": "https://logo.clearbit.com/descriptai.com",
     "tool_type": "specialise",
@@ -8552,7 +8559,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "lina"
+      "ALIX"
     ]
   },
   {
@@ -8906,11 +8913,14 @@
     "slug": "doola",
     "name": "doola",
     "categoryId": "finance",
-    "shortDescription": "Création de LLC américaine pour entrepreneurs non-résidents, avec services de conformité inclus.",
-    "shortDescriptionEn": "US LLC formation for non-resident entrepreneurs, with compliance services included.",
-    "pricing": "Starter à 297$/an (plus frais d'État) ; Premium avec déclarations annuelles ; Total Compliance à 2397$/an (déclarations IRS incluses). Promo -25% en cours.",
-    "defaultMonthlyPrice": 21.68,
-    "compareMonthlyPrice": 0,
+    "shortDescription": "Crée une LLC ou une C Corp américaine pour les fondateurs non-résidents ou solo, avec des offres payantes séparées pour la conformité et la comptabilité.",
+    "shortDescriptionEn": "Forms a US LLC or C Corp for non-resident and solo founders, with separate paid plans for compliance and bookkeeping.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 19,75 $/mois, plan Starter."
+    },
+    "defaultMonthlyPrice": 16.96,
+    "compareMonthlyPrice": 16.96,
     "affiliateLink": "https://doola.com",
     "ogImageUrl": "https://x3a7k7p5.delivery.rocketcdn.me/wp-content/uploads/2025/04/doola-is-for-dooers.png",
     "tool_type": "gestion",
@@ -8927,7 +8937,10 @@
       "Créateurs e-commerce",
       "Non-citoyens US"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "doppler",
@@ -9132,14 +9145,14 @@
     "slug": "drata",
     "name": "Drata",
     "categoryId": "security",
-    "shortDescription": "Automatisation de conformité SOC 2 / ISO 27001, sur devis à partir de plusieurs milliers d'euros par an.",
-    "shortDescriptionEn": "SOC 2 / ISO 27001 compliance automation, quote-based from several thousand euros per year.",
+    "shortDescription": "Drata automatise la conformité SOC 2, ISO 27001 et d'autres frameworks avec un suivi continu des contrôles ; chaque palier tarifaire nécessite un devis commercial.",
+    "shortDescriptionEn": "Drata automates SOC 2, ISO 27001 and other compliance frameworks with continuous control monitoring; every pricing tier requires a sales quote.",
     "pricing": {
-      "free": "",
-      "paid": "Sur devis, à partir de ~7 500-15 000$/an (Foundation), moyenne réelle ~24 600$/an"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 2050,
-    "compareMonthlyPrice": 2050,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://drata.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/drata.jpg",
     "logo": "https://logo.clearbit.com/drata.com",
@@ -9158,7 +9171,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "marc"
+      "CLAIRE"
     ]
   },
   {
@@ -9415,11 +9428,11 @@
     "slug": "eagle",
     "name": "Eagle",
     "categoryId": "design-tools",
-    "shortDescription": "Application desktop de gestion d'assets créatifs pour les designers, permettant de centraliser, organiser et rechercher visuellement des fichiers (images, vidéos, fonts, PDFs).",
-    "shortDescriptionEn": "Desktop application for managing creative assets, enabling designers to centralize, organize, and visually search files (images, videos, fonts, PDFs).",
+    "shortDescription": "Eagle est une application desktop qui centralise et étiquette les assets créatifs avec une recherche visuelle, vendue en licence unique à vie.",
+    "shortDescriptionEn": "Eagle is a desktop app that centralizes and tags creative assets with visual search, sold as a one-time lifetime license.",
     "pricing": {
-      "free": "Essai gratuit 30 jours avec accès complet ; pas de version permanente gratuite. Achat requis pour continuer.",
-      "paid": "Eagle (license): Achat unique, prix sur la page officielle"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 34,95 $ (licence à vie), plan Eagle license."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://eagle.cool",
@@ -9436,19 +9449,24 @@
       "UX/UI designers",
       "Directeurs artistiques"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "SOFIA"
+    ]
   },
   {
     "id": "eas-build",
     "slug": "eas-build",
     "name": "EAS Build",
     "categoryId": "nocode-web",
-    "shortDescription": "Service Expo pour compiler et distribuer des apps mobiles.",
-    "shortDescriptionEn": "Expo service for building and distributing mobile apps.",
+    "shortDescription": "EAS Build gère les builds dans le cloud, la signature de code, les mises à jour par-dessus l'air et la soumission aux stores pour les applications React Native et Expo, sur Android et iOS.",
+    "shortDescriptionEn": "EAS Build runs cloud builds, code signing, over-the-air updates and app store submission for React Native and Expo apps on Android and iOS.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : 15 builds Android et 15 builds iOS par mois, file de build à priorité basse, 20 Gio de stockage pour les mises à jour, 1 000 utilisateurs actifs mensuels pour les mises à jour.",
+      "paid": "Dès 199 $/mois, plan Production."
     },
+    "defaultMonthlyPrice": 170.89,
+    "compareMonthlyPrice": 170.89,
     "websiteUrl": "https://expo.dev/eas",
     "ogImageUrl": "https://static.expo.dev/static/images/services/og-image.png",
     "tool_type": "metier",
@@ -9670,11 +9688,14 @@
     "slug": "elfsight",
     "name": "Elfsight",
     "categoryId": "email-productivity",
-    "shortDescription": "Plus de 90 widgets no-code (avis, réseaux sociaux, formulaires) pour tout type de site web.",
-    "shortDescriptionEn": "Over 90 no-code widgets (reviews, social feeds, forms) for any type of website.",
-    "pricing": "Gratuit (1 widget limité) ; à partir de ~5$/mois ; Enterprise de 42$/mois (1 app) à 336$/mois (toutes les apps).",
-    "defaultMonthlyPrice": 4.38,
-    "compareMonthlyPrice": 0,
+    "shortDescription": "Elfsight est une bibliothèque de plus de 90 widgets sans code (avis, flux sociaux, popups) qui s'installent sur la plupart des sites, facturés par application.",
+    "shortDescriptionEn": "Elfsight is a library of 90+ no-code widgets (reviews, social feeds, popups) that install on most website platforms, priced per widget app.",
+    "pricing": {
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 5 $/mois, plan Basic (single app)."
+    },
+    "defaultMonthlyPrice": 4.29,
+    "compareMonthlyPrice": 4.29,
     "affiliateLink": " formulaires…).",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
@@ -9689,7 +9710,10 @@
       "Agences web",
       "Créateurs de sites no-code"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "elgato",
@@ -10417,13 +10441,14 @@
     "slug": "fathom-analytics",
     "name": "Fathom Analytics",
     "categoryId": "analytics",
-    "shortDescription": "Analytics web sans cookies, sans consentement banners. Respect GDPR nativement. Suive sources trafic, pages populaires, conversions, campagnes. Startup canadienne, pas de VC, pas de vente données.",
-    "shortDescriptionEn": "Cookie-free, GDPR-compliant web analytics. No consent banners needed. Track traffic sources, top pages, conversions, campaigns. Canadian startup, no VC, no data selling.",
+    "shortDescription": "Fathom Analytics suit le trafic et les conversions d'un site sans cookies, évitant le bandeau de consentement RGPD, à partir de 15 $/mois.",
+    "shortDescriptionEn": "Fathom Analytics tracks website traffic and conversions without cookies, avoiding the GDPR consent banner, starting at $15/month.",
     "pricing": {
-      "free": "Pas de version gratuite. Plans commencent à 14 $/mois pour 100k pageviews.",
-      "paid": "Starter: 14 $/mois pour 100k pageviews mensuels ; Growth: 24 $/mois pour 200k pageviews mensuels ; Pro: 44 $/mois pour 500k pageviews mensuels"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": "https://usefathom.com",
     "ogImageUrl": "https://usefathom.com/assets/src/share-usefathom.com.jpg",
     "substitution_cluster_v2": "privacy-analytics",
@@ -10443,9 +10468,7 @@
     ],
     "prescription_quality": "ferme",
     "personas": [
-      "dev",
-      "marketer",
-      "creator"
+      "ALIX"
     ],
     "freeAlternative": "Google Analytics"
   },
@@ -11126,14 +11149,14 @@
     "slug": "firecrawl",
     "name": "Firecrawl",
     "categoryId": "automation",
-    "shortDescription": "API de scraping web propre : transforme n'importe quel site en données structurées.",
-    "shortDescriptionEn": "Clean web scraping API: turns any website into structured data.",
+    "shortDescription": "Firecrawl est une API de scraping et de crawling qui transforme les sites en Markdown/JSON propre, avec un palier gratuit et des plans dès 19 $/mois.",
+    "shortDescriptionEn": "Firecrawl is a web scraping and crawling API that turns sites into clean Markdown/JSON, with a free tier and paid plans from $19/month.",
     "pricing": {
-      "free": "Gratuit — 1 000 crédits/mois",
-      "paid": "Hobby 16$/mois · Standard 83$ · Growth 333$"
+      "free": "Plan gratuit : 1 000 crédits/mois, ~500 recherches ou 1 000 pages scrapées, 2 requêtes simultanées, support communautaire",
+      "paid": "Dès 16 $/mois, plan Hobby."
     },
-    "defaultMonthlyPrice": 14.74,
-    "compareMonthlyPrice": 14.74,
+    "defaultMonthlyPrice": 13.74,
+    "compareMonthlyPrice": 13.74,
     "websiteUrl": "https://firecrawl.dev",
     "ogImageUrl": "https://www.firecrawl.dev/og.png",
     "substitution_cluster_v2": "web-scraping",
@@ -11152,7 +11175,10 @@
       "Développeurs Python/Node.js",
       "Startups ML"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "fiverr",
@@ -11193,12 +11219,13 @@
     "slug": "flask",
     "name": "Flask",
     "categoryId": "nocode-web",
-    "shortDescription": "Micro-framework Python pour API, prototypes et services légers.",
-    "shortDescriptionEn": "Python micro-framework for APIs, prototypes, and lightweight services.",
+    "shortDescription": "Micro-framework Python gratuit et open source pour construire des applications web et des API, étendu par des extensions tierces.",
+    "shortDescriptionEn": "Free, open-source Python micro-framework for building web applications and APIs, extended through third-party packages.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://flask.palletsprojects.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/flask.jpg",
     "tool_type": "metier",
@@ -12156,14 +12183,13 @@
     "slug": "gaea",
     "name": "Gaea",
     "categoryId": "creation",
-    "shortDescription": "Générateur de terrains 3D par noeuds (QuadSpinner), standard du paysage et de l'environnement.",
-    "shortDescriptionEn": "Node-based 3D terrain generator (QuadSpinner), a landscape and environment standard.",
+    "shortDescription": "Générateur de terrain 3D procédural par noeuds pour le jeu, la VFX et la visualisation, vendu sous forme de licence commerciale ponctuelle.",
+    "shortDescriptionEn": "Node-based procedural 3D terrain generator for games, VFX and visualization, sold as a one-time commercial license.",
     "pricing": {
-      "free": "Community gratuit (non-commercial)",
-      "paid": "Indie 99$, Pro 199$, Enterprise 299$ (licence à vie)."
+      "free": "Plan gratuit : Community edition: max resolution 1024x1024, no commercial use, no tiled builds, no Unreal Engine or Houdini integration, no macros.",
+      "paid": "Dès 99 $ (licence à vie), plan Indie."
     },
-    "defaultMonthlyPrice": 99,
-    "compareMonthlyPrice": 99,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://quadspinner.com",
     "ogImageUrl": "https://cdn.gaea.app/web2025/img/StillFinalShot3.webp",
     "tool_type": "metier",
@@ -12181,9 +12207,6 @@
       "Développeurs de jeux"
     ],
     "prescription_quality": "oui",
-    "personas": [
-      "designer"
-    ],
     "freeAlternative": "blender"
   },
   {
@@ -15156,14 +15179,16 @@
     "slug": "ignition",
     "name": "Ignition",
     "categoryId": "finance",
-    "shortDescription": "Propositions, signatures, facturation et encaissements reliés pour les cabinets et agences.",
-    "shortDescriptionEn": "Connected proposals, signatures, billing and payment collection for service firms and agencies.",
+    "shortDescription": "Relie propositions, lettres de mission, signature électronique et facturation automatisée pour les cabinets comptables et de conseil.",
+    "shortDescriptionEn": "Connects proposals, engagement letters, e-signature and automated billing for accounting and consulting firms.",
     "pricing": {
-      "free": "Essai de 14 jours sans carte bancaire, pas de forfait gratuit permanent. Offre US : jusqu’à 10 000 $US encaissés sans frais pendant l’essai, puis paiements suspendus jusqu’au passage à une offre payante.",
-      "paid": "Tarifs US hors taxes, en mensuel : Solo 49 $US (sous conditions), Core 149 $, Pro 279 $, Pro+ 499 $. En annuel : équivalents de 39 $, 99 $, 229 $ et 399 $/mois. Clients supplémentaires, options et paiements en sus."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Prix non public, sur devis."
     },
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://get.practiceignition.com/e261f8d417a0",
-    "websiteUrl": "https://www.ignitionapp.com/",
+    "websiteUrl": "https://www.ignitionapp.com",
     "ogImageUrl": "/og-images/ignition.png",
     "logo": "/tool-media/logos/ignition.svg",
     "tool_type": "gestion",
@@ -15182,7 +15207,10 @@
       "Agences digitales/marketing",
       "Consulting"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "impact",
@@ -15287,14 +15315,14 @@
     "slug": "indy",
     "name": "Indy",
     "categoryId": "finance",
-    "shortDescription": "Compta et facturation automatisées pour indépendants.",
-    "shortDescriptionEn": "Automated accounting and invoicing for freelancers.",
+    "shortDescription": "Indy gère la facturation, les devis et la comptabilité des freelances français, avec les déclarations fiscales obligatoires incluses sur le forfait Premium.",
+    "shortDescriptionEn": "Indy handles invoicing, quotes and bookkeeping for French freelancers, with mandatory tax declarations added on the Premium plan.",
     "pricing": {
-      "free": "Formule gratuite très complète",
-      "paid": "20€/mois pour déclarations automatisées"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 9 €/mois, plan Plus."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 9,
+    "compareMonthlyPrice": 9,
     "affiliateLink": "https://indy.fr",
     "ogImageUrl": "https://www.indy.fr/wp-content/uploads/img-indy-www.jpg",
     "tool_type": "gestion",
@@ -15317,6 +15345,9 @@
       "Indépendants français"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ],
     "freeAlternative": "indy"
   },
   {
@@ -16934,12 +16965,13 @@
     "slug": "kubernetes",
     "name": "Kubernetes",
     "categoryId": "nocode-web",
-    "shortDescription": "Orchestration de containers pour workloads distribués et environnements complexes.",
-    "shortDescriptionEn": "Container orchestration for distributed workloads and complex environments.",
+    "shortDescription": "Kubernetes automatise le déploiement, la mise à l'échelle et l'auto-réparation d'applications conteneurisées ; le coût vient de l'infrastructure qui le fait tourner.",
+    "shortDescriptionEn": "Kubernetes automates the deployment, scaling and self-healing of containerized applications, with costs coming from the infrastructure that runs it.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Fully free and open source under Apache 2.0; costs come from the infrastructure or managed service running it",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://kubernetes.io",
     "ogImageUrl": "https://kubernetes.io/images/kubernetes-open-graph.png",
     "tool_type": "metier",
@@ -18108,14 +18140,14 @@
     "slug": "linkedin-recruiter",
     "name": "Linkedin Recruiter",
     "categoryId": "hris-payroll",
-    "shortDescription": "Recherche et sourcing de candidats sur LinkedIn, de Lite (170$/mois) à Corporate (~1000$/mois/poste).",
-    "shortDescriptionEn": "LinkedIn candidate search and sourcing, from Lite ($170/mo) to Corporate (~$1,000/mo/seat).",
+    "shortDescription": "LinkedIn Recruiter permet de chercher des candidats dans le réseau LinkedIn et de les contacter via InMail, avec un tarif disponible uniquement sur devis.",
+    "shortDescriptionEn": "LinkedIn Recruiter searches LinkedIn's network for candidates and lets recruiters contact them via InMail, with pricing available only on quote.",
     "pricing": {
-      "free": "Aucun plan gratuit (compte LinkedIn de base limité)",
-      "paid": "Lite ~148.92€/mois ; Corporate ~788.4-946.08€/mois/poste (annuel)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 148.92,
-    "compareMonthlyPrice": 148.92,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://business.linkedin.com/talent-solutions/recruiter",
     "ogImageUrl": "https://delivery-p143253-e1476319.adobeaemcloud.com/adobe/assets/urn:aaid:aem:83e6a64d-9e07-406d-b348-8e1a415f9fc6/as/LTS-hero-hire-social-share.jpg",
     "logo": "https://logo.clearbit.com/business.linkedin.com",
@@ -18134,7 +18166,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "marc"
+      "CLAIRE"
     ]
   },
   {
@@ -18266,12 +18298,13 @@
     "slug": "localwp",
     "name": "LocalWP",
     "categoryId": "nocode-web",
-    "shortDescription": "Environnement local WordPress pour développer, tester et migrer sans casser le site.",
-    "shortDescriptionEn": "Local WordPress environment for developing, testing, and migrating safely.",
+    "shortDescription": "Local est une application de bureau gratuite pour construire, tester et sauvegarder des sites WordPress hors ligne, avec des liens en un clic pour les faire relire.",
+    "shortDescriptionEn": "Local is a free desktop app for building, testing and backing up WordPress sites offline, with one-click links to share a site for review.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Toutes les fonctionnalités, y compris les extensions autrefois payantes de « Local Pro » (Live Links, Connect, Cloud Backups, Image Optimizer), sont gratuites pour tous les utilisateurs depuis Local 6.0.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://localwp.com",
     "ogImageUrl": "https://localwp.com/wp-content/uploads/2024/08/Local-Social-Share-Image.png",
     "tool_type": "metier",
@@ -18729,14 +18762,14 @@
     "slug": "lovable",
     "name": "Lovable",
     "categoryId": "ai-general",
-    "shortDescription": "AI web app builder : chat naturel → code React/Supabase generé en temps réel. Preview live, GitHub sync, one-click deployment. Crédits system (message complexity). Students : -50 % first year.",
-    "shortDescriptionEn": "AI web app builder: natural chat → real-time generated React/Supabase code. Live preview, GitHub sync, one-click deployment. Credits system (message complexity). Students: -50% first year.",
+    "shortDescription": "Lovable construit une application web à partir d'un prompt, hébergement Cloud inclus, facturé par un système de crédits dès 25 $/mois.",
+    "shortDescriptionEn": "Lovable builds a working web app from a chat prompt, with Cloud hosting included, billed through a credit system starting at $25/month.",
     "pricing": {
-      "free": "Gratuit : 5 messages/jour (≈ 30/mois), projects illimités publics, GitHub sync, one-click deploy.",
-      "paid": "Free: 0 $ (5 msgs/jour) ; Pro: 25 $/mois (100 msgs/mois avec credit variation) ; Business: 50 $/mois (illimité msgs) ; Student: 12,50 $/mois (first year Pro, -50 %)"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 25 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 17.32,
-    "compareMonthlyPrice": 17.32,
+    "defaultMonthlyPrice": 21.47,
+    "compareMonthlyPrice": 21.47,
     "affiliateLink": "https://lovable.dev",
     "ogImageUrl": "https://lovable.dev/img/opengraph-image.png",
     "tool_type": "ia",
@@ -18760,8 +18793,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "theo",
-      "alix"
+      "THEO"
     ]
   },
   {
@@ -21401,14 +21433,14 @@
     "slug": "move-ai",
     "name": "Move AI",
     "categoryId": "ai-general",
-    "shortDescription": "Système de capture de mouvement sans marqueurs utilisant l'IA et plusieurs caméras pour capturer les mouvements humains sans tenues ni marqueurs physiques, destiné à la VFX, l'animation et les jeux vidéo.",
-    "shortDescriptionEn": "Markerless motion capture system using AI and multi-camera setup to capture human movement without physical suits or markers, designed for VFX, animation, and gaming.",
+    "shortDescription": "Capture de mouvement sans marqueurs pour les studios VFX et jeu vidéo, vendue uniquement via une démonstration commerciale, sans tarif public.",
+    "shortDescriptionEn": "Markerless motion capture for VFX and gaming studios, sold through a sales demo only, with no public pricing.",
     "pricing": {
-      "free": "Accès via démo ; tarifs sur demande",
-      "paid": "Enterprise: Montants sur la page officielle (devis personnalisé)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://www.move.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/695feac1f2e19ffbc09581db/696f9a8fcc78b469d694ff48_transfer.png",
     "tool_type": "ia",
@@ -21425,10 +21457,7 @@
       "Producteurs animation",
       "Équipes jeux AAA"
     ],
-    "prescription_quality": "oui",
-    "personas": [
-      "designer"
-    ]
+    "prescription_quality": "oui"
   },
   {
     "id": "mrpeasy",
@@ -21805,8 +21834,14 @@
     "slug": "netlify",
     "name": "Netlify",
     "categoryId": "nocode-web",
-    "shortDescription": "Hébergement et déploiement JAMstack",
-    "shortDescriptionEn": "JAMstack hosting and deployment.",
+    "shortDescription": "Netlify héberge des applications web modernes avec déploiements Git, fonctions serverless, accès à des modèles IA et stockage, facturés via un forfait de crédits mensuels.",
+    "shortDescriptionEn": "Netlify hosts modern web apps with Git-based deploys, serverless functions, AI model access and storage, billed through a monthly credit allowance.",
+    "pricing": {
+      "free": "Plan gratuit : 300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN",
+      "paid": "Dès 9 $/mois, plan Personal."
+    },
+    "defaultMonthlyPrice": 7.73,
+    "compareMonthlyPrice": 7.73,
     "websiteUrl": "https://netlify.com",
     "ogImageUrl": "https://www.netlify.com/images/og-image-default.png",
     "substitution_cluster_v2": "cloud-hosting-paas",
@@ -21824,7 +21859,10 @@
       "Agences web",
       "Équipes produit"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "netsuite",
@@ -22703,11 +22741,11 @@
     "slug": "onetrust",
     "name": "OneTrust",
     "categoryId": "security",
-    "shortDescription": "OneTrust aide à gérer accès, conformité ou sécurité dans une stack d’entreprise.",
-    "shortDescriptionEn": "AI-powered governance platform for managing data privacy, compliance, risk management, and AI governance in real-time across the organization.",
+    "shortDescription": "OneTrust automatise la gestion du consentement, les opérations de confidentialité, la gouvernance IA et le risque tiers via des modules séparés, vendu sur devis.",
+    "shortDescriptionEn": "OneTrust automates consent management, privacy operations, AI governance and third-party risk across separate modules, sold on a custom sales quote.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
@@ -22729,7 +22767,10 @@
       "Gestionnaires de conformité",
       "Entreprises multinationales"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "onramp-funds",
@@ -24446,12 +24487,13 @@
     "slug": "php",
     "name": "PHP",
     "categoryId": "nocode-web",
-    "shortDescription": "Langage serveur central pour WordPress, WooCommerce et beaucoup de sites existants.",
-    "shortDescriptionEn": "Server language central to WordPress, WooCommerce, and many existing sites.",
+    "shortDescription": "PHP est un langage de script serveur gratuit et open source pour le web, utilisé pour créer des plateformes comme WordPress et WooCommerce.",
+    "shortDescriptionEn": "PHP is a free, open-source server-side scripting language for web development, widely used to build and run platforms like WordPress and WooCommerce.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Fully free and open-source language, no paid tier for the language itself; costs come from hosting/infrastructure chosen separately.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.php.net",
     "ogImageUrl": "https://www.php.net/images/meta-image.png",
     "tool_type": "metier",
@@ -25130,14 +25172,14 @@
     "slug": "plutio",
     "name": "Plutio",
     "categoryId": "organization",
-    "shortDescription": "Plateforme de gestion tout-en-un pour freelances (projets, tâches, facturation et CRM).",
-    "shortDescriptionEn": "All-in-one management platform for freelancers (projects, tasks, invoicing, and CRM).",
+    "shortDescription": "Plutio est une plateforme tout-en-un pour indépendants et petites agences, combinant projets, facturation, propositions et portail client.",
+    "shortDescriptionEn": "Plutio is an all-in-one platform for freelancers and small agencies, combining projects, invoicing, proposals and a client portal.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 7 jours sans carte bancaire",
-      "paid": "Core à 19$/mois (jusqu'à 9 clients actifs) ; Pro à 49$/mois (clients illimités, 30 contributeurs) ; Max à 199$/mois (tout illimité)"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Core."
     },
-    "defaultMonthlyPrice": 19,
-    "compareMonthlyPrice": 19,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": " finances).",
     "substitution_cluster_v2": "workspace-ops",
     "functional_needs": [
@@ -25152,21 +25194,24 @@
       "Petites agences (3-15 personnes)",
       "Professionnels des services"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "podbean",
     "slug": "podbean",
     "name": "Podbean",
     "categoryId": "creation",
-    "shortDescription": "Hébergement podcast avec monétisation intégrée (dynamic ads, abonnements).",
-    "shortDescriptionEn": "Podcast hosting with built-in monetisation (dynamic ads, subscriptions).",
+    "shortDescription": "Podbean héberge des podcasts et les distribue vers les principaux annuaires, avec insertion publicitaire et abonnements auditeurs intégrés sur les plans payants.",
+    "shortDescriptionEn": "Podbean hosts podcasts and distributes them to major directories, with built-in ad insertion and listener subscriptions on paid plans.",
     "pricing": {
-      "free": "5h stockage",
-      "paid": "9$/mois (Unlimited Audio)"
+      "free": "Plan gratuit : Basic free account with limited storage and features, cannot be downgraded back to after subscribing",
+      "paid": "Dès 12 $/mois, plan Unlimited Audio."
     },
-    "defaultMonthlyPrice": 7.79,
-    "compareMonthlyPrice": 7.79,
+    "defaultMonthlyPrice": 10.3,
+    "compareMonthlyPrice": 10.3,
     "affiliateLink": "https://podbean.com",
     "ogImageUrl": "https://pbcdn1.podbean.com/fs1/site/images/podbean_og.png",
     "substitution_cluster_v2": "content-creation",
@@ -25184,8 +25229,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "theo"
+      "ALIX"
     ],
     "freeAlternative": "anchor-spotify"
   },
@@ -26582,12 +26626,13 @@
     "slug": "python",
     "name": "Python",
     "categoryId": "nocode-web",
-    "shortDescription": "Langage polyvalent pour API, scripts, data, automatisation et IA.",
-    "shortDescriptionEn": "Versatile language for APIs, scripts, data, automation, and AI.",
+    "shortDescription": "Python est un langage de programmation généraliste, gratuit et open source, utilisé pour les backends web, l'automatisation, l'analyse de données et le machine learning.",
+    "shortDescriptionEn": "Python is a free, open source general-purpose programming language used for web backends, automation, data analysis and machine learning.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Entièrement gratuit et open source sous la licence PSF, aucun palier payant pour le langage lui-même.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.python.org",
     "ogImageUrl": "https://www.python.org/static/opengraph-icon-200x200.png",
     "tool_type": "metier",
@@ -26748,12 +26793,14 @@
     "slug": "quarkxpress",
     "name": "QuarkXPress",
     "categoryId": "publishing",
-    "shortDescription": "Logiciel de mise en page et publication assistée par ordinateur (PAO) professionnel pour la création de brochures, magazines, livres et documents multi-canal avec typographie avancée et style sheets.",
-    "shortDescriptionEn": "Professional desktop publishing (DTP) software for creating brochures, magazines, books, and multi-channel documents with advanced typography, style management, and collaborative workflows.",
+    "shortDescription": "QuarkXPress est un logiciel de PAO professionnel pour brochures, magazines et livres, vendu en abonnement annuel ou en licence perpétuelle à l'achat unique.",
+    "shortDescriptionEn": "QuarkXPress is professional desktop publishing software for brochures, magazines and books, sold either as an annual subscription or a one-time perpetual license.",
     "pricing": {
-      "free": "Pas de version gratuite. Accès payant uniquement via abonnement ou licence perpétuelle.",
-      "paid": "Abonnement annuel avec maintenance: 279 $ par an (inclut mises à jour et support) ; Licence perpétuelle: 699 $ (sans upgrades ni support après achat)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 23,25 $/mois, plan Prepaid Annual Subscription."
     },
+    "defaultMonthlyPrice": 19.97,
+    "compareMonthlyPrice": 19.97,
     "affiliateLink": "https://www.quark.com/products/quarkxpress",
     "ogImageUrl": "https://www.quark.com/favicon.ico",
     "tool_type": "metier",
@@ -26773,7 +26820,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "graphiste-da"
+      "MARC"
     ]
   },
   {
@@ -26841,13 +26888,14 @@
     "slug": "quickbooks",
     "name": "QuickBooks",
     "categoryId": "finance",
-    "shortDescription": "Logiciel de comptabilité pour petites entreprises.",
-    "shortDescriptionEn": "Accounting software for small businesses.",
+    "shortDescription": "QuickBooks Online est le logiciel de comptabilité d'Intuit pour la facturation, le suivi des dépenses et le compte de résultat, avec des forfaits payants additionnels.",
+    "shortDescriptionEn": "QuickBooks Online is Intuit's cloud accounting software for invoicing, expense tracking and profit-and-loss reporting, with paid plans adding users, inventory and automation.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Plan gratuit : 1 user, 2 invoices/month, 1 bank connection, income/expense tracking and basic profit/loss reporting",
+      "paid": "Dès 38 $/mois, plan Simple Start."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 32.63,
+    "compareMonthlyPrice": 32.63,
     "affiliateLink": "https://quickbooks.intuit.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks.jpg",
     "tool_type": "gestion",
@@ -26864,7 +26912,10 @@
       "Artisans",
       "Commerçants"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "quickbooks-online",
@@ -27795,14 +27846,14 @@
     "slug": "reflect-notes",
     "name": "Reflect",
     "categoryId": "organization",
-    "shortDescription": "Notes networked avec IA intégrée et backlinks.",
-    "shortDescriptionEn": "Networked notes with built-in AI and backlinks.",
+    "shortDescription": "Reflect est une appli de notes en réseau avec liens retour, IA d'écriture et transcription vocale, à 12 $ par mois sans plan gratuit.",
+    "shortDescriptionEn": "Reflect is a networked note-taking app with backlinks, AI writing help and voice transcription, priced at one $12 monthly plan with no free tier.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours.",
-      "paid": "10$/mois (100$/an en annuel, 120$/an en mensuel)."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 10 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 8.33,
-    "compareMonthlyPrice": 9,
+    "defaultMonthlyPrice": 8.59,
+    "compareMonthlyPrice": 8.59,
     "websiteUrl": "https://reflect.app",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
@@ -28062,14 +28113,13 @@
     "slug": "renderman",
     "name": "RenderMan",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.",
-    "shortDescriptionEn": "Pixar's professional rendering software delivering feature film quality. Used by Pixar in production. Offers free non-commercial rendering, flexible licensing (floating or node-locked) for professional use.",
+    "shortDescription": "RenderMan, moteur de rendu de production de Pixar, offre le rendu par lots, gratuit en non commercial ou 595 $ en licence commerciale unique.",
+    "shortDescriptionEn": "RenderMan is Pixar's production renderer with batch rendering and render-farm management, free for non-commercial use or $595 one-time for a commercial license.",
     "pricing": {
-      "free": "Gratuit pour tous les usages non-commerciaux",
-      "paid": "Non-Commercial: Gratuit ; Professional License: USD 595 par licence (perpetual) ; Annual Maintenance: USD 250/an (support et upgrades)"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 595 $ (licence à vie), plan Commercial license."
     },
-    "defaultMonthlyPrice": 595,
-    "compareMonthlyPrice": 595,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://renderman.pixar.com",
     "ogImageUrl": "https://assets.renderman.pixar.com/images-pixar/hoppers-bkg-homepage.webp",
     "tool_type": "metier",
@@ -28087,9 +28137,6 @@
       "Directeurs de photographie numériques"
     ],
     "prescription_quality": "question",
-    "personas": [
-      "designer"
-    ],
     "freeAlternative": "blender"
   },
   {
@@ -28525,14 +28572,14 @@
     "slug": "revit",
     "name": "Revit",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel BIM (Building Information Modeling) d'Autodesk pour la conception architecturale, l'ingénierie et la gestion de projets bâtiment. Coordonne plans, élévations, coupes et planifications automatiquement.",
-    "shortDescriptionEn": "Autodesk's BIM (Building Information Modeling) software for architectural design, engineering, and building project management. Automatically coordinates plans, elevations, sections, and schedules.",
+    "shortDescription": "Autodesk Revit est un logiciel BIM par abonnement pour l'architecture, la structure et le génie technique, qui coordonne une maquette paramétrique unique entre disciplines.",
+    "shortDescriptionEn": "Autodesk Revit is subscription-only BIM software for architecture, structural and MEP design, coordinating a single parametric building model across disciplines.",
     "pricing": {
-      "free": "Essai gratuit disponible ; version gratuite inexistante, abonnement obligatoire",
-      "paid": "Revit Annual: USD 3005/an ; Revit Monthly: USD 380/mois ; Revit LT Annual: USD 560/an ; Revit LT Monthly: USD 70/mois"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 46,67 $/mois, plan Revit LT (annual subscription)."
     },
-    "defaultMonthlyPrice": 268.47,
-    "compareMonthlyPrice": 268.47,
+    "defaultMonthlyPrice": 40.08,
+    "compareMonthlyPrice": 40.08,
     "affiliateLink": "https://autodesk.com/products/revit",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/USDuwSeAOZpDfwimuqRiN/190b88f9077d7fa38fdb74eb0888e351/see-whats-new-autodesk-revit-2025-thumb-788x444.avif",
     "tool_type": "metier",
@@ -28553,10 +28600,6 @@
       "Bureaux d'études"
     ],
     "prescription_quality": "oui",
-    "personas": [
-      "sofia",
-      "marc"
-    ],
     "substitutable": false
   },
   {
@@ -28796,14 +28839,14 @@
     "slug": "riverside",
     "name": "Riverside",
     "categoryId": "communication",
-    "shortDescription": "Enregistrement podcast et vidéo en qualité studio, à distance.",
-    "shortDescriptionEn": "Studio-quality podcast and video recording, remotely.",
+    "shortDescription": "Riverside enregistre des pistes audio/vidéo locales séparées par participant à distance jusqu'en 4K, avec 2h gratuites puis dès 29 $ par mois.",
+    "shortDescriptionEn": "Riverside records separate local audio/video tracks per remote participant in up to 4K, with a free 2-hour plan and paid tiers from $29 per month.",
     "pricing": {
-      "free": "2 h d'enregistrement multipiste au total, export 720p avec watermark",
-      "paid": "Standard : 15 $/mois annuel ou 19 $ mensuel, avec Magic Audio et export 4K"
+      "free": "Plan gratuit : 2 heures d'enregistrement multipiste au total, export vidéo jusqu'à 720p avec filigrane, enregistrement/montage monopiste illimité.",
+      "paid": "Dès 24 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 12.99,
-    "compareMonthlyPrice": 12.99,
+    "defaultMonthlyPrice": 20.61,
+    "compareMonthlyPrice": 20.61,
     "affiliateLink": "https://riverside.fm",
     "ogImageUrl": "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67f92c5268b90dfee63e3719_social-share.png",
     "substitution_cluster_v2": "communication-ops",
@@ -28822,9 +28865,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "theo",
-      "alix"
+      "ALIX"
     ]
   },
   {
@@ -30265,12 +30306,13 @@
     "slug": "shadcn-ui",
     "name": "shadcn UI",
     "categoryId": "design-tools",
-    "shortDescription": "Composants React accessibles construits avec Radix UI et Tailwind CSS.",
-    "shortDescriptionEn": "Accessible React components built with Radix UI and Tailwind CSS.",
+    "shortDescription": "Collection de composants React accessibles et personnalisables, construite sur Radix UI et Tailwind CSS, distribuée en code source à copier-coller, gratuite.",
+    "shortDescriptionEn": "Accessible, customizable React component collection built on Radix UI and Tailwind CSS, distributed as copy-paste source code, free.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://ui.shadcn.com",
     "ogImageUrl": "https://ui.shadcn.com/og?title=The%20Foundation%20for%20your%20Design%20System&amp;description=A%20set%20of%20beautifully%20designed%20components%20that%20you%20can%20customize%2C%20extend%2C%20and%20build%20on.%20Start%20here%20then%20make%20it%20your%20own.%20Open%20Source.%20Open%20Code.",
     "host_app": "react",
@@ -30418,14 +30460,14 @@
     "slug": "shine",
     "name": "Shine",
     "categoryId": "finance",
-    "shortDescription": "Compte pro français avec facturation gratuite, devis, encaissement et suivi administratif.",
-    "shortDescriptionEn": "French business account with free invoicing, quotes, payments, and admin tracking.",
+    "shortDescription": "Shine est un compte bancaire professionnel français pour indépendants avec facturation gratuite, du plan gratuit à 60 €/mois pour une équipe complète.",
+    "shortDescriptionEn": "Shine is a French business bank account for freelancers with free invoicing, from a free plan to €60/month for a full team plan.",
     "pricing": {
-      "free": "Outil de facturation gratuit",
-      "paid": "Compte pro à partir de 7,90€/mois HT selon formule"
+      "free": "Plan gratuit : 1 compte IBAN, 5 virements SEPA gratuits/mois (puis 0,40 € chacun), 1 Mastercard basique, cartes virtuelles optionnelles à 2 €/mois chacune",
+      "paid": "Dès 9 €/mois, plan Start."
     },
-    "defaultMonthlyPrice": 7.9,
-    "compareMonthlyPrice": 7.9,
+    "defaultMonthlyPrice": 9,
+    "compareMonthlyPrice": 9,
     "affiliateLink": "https://www.shine.fr/lp/outil-facturation-gratuit/?utm_source=affilae&utm_medium=affiliation&utm_campaign=tooltrim&ae=1734",
     "websiteUrl": "https://www.shine.fr",
     "ogImageUrl": "https://www.shine.fr/images/meta-thumbnail-v2.png",
@@ -30450,9 +30492,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "freelance",
-      "solo",
-      "startup"
+      "MARC"
     ]
   },
   {
@@ -30614,12 +30654,13 @@
     "slug": "shopify-payments",
     "name": "Shopify Payments",
     "categoryId": "finance",
-    "shortDescription": "Paiement intégré Shopify pour cartes, checkout et gestion e-commerce.",
-    "shortDescriptionEn": "Built-in Shopify payment solution for cards, checkout, and commerce management.",
+    "shortDescription": "Shopify Payments traite les cartes et portefeuilles directement dans une boutique Shopify, à un taux fixé par le forfait d'abonnement de la boutique.",
+    "shortDescriptionEn": "Shopify Payments processes cards and wallets directly inside a Shopify store, at a rate set by the store's subscription plan.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Pas de plan gratuit.",
+      "paid": "Plan Basic (online card rate) sur devis."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.shopify.com/payments",
     "ogImageUrl": "https://cdn.shopify.com/b/shopify-brochure2-assets/3da4cb58a2a3e3d589b37e2206355ebb.png",
     "substitution_cluster_v2": "finance",
@@ -30636,7 +30677,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "THEO"
+      "CLAIRE"
     ],
     "substitutable": false
   },
@@ -31456,14 +31497,14 @@
     "slug": "softr",
     "name": "Softr",
     "categoryId": "automation",
-    "shortDescription": "Plateforme pour créer des outils internes et portails sans code.",
-    "shortDescriptionEn": "Platform for creating internal tools and portals without code.",
+    "shortDescription": "Softr est une plateforme no-code pour créer des outils internes, des portails client et des applications web au-dessus d'Airtable, Google Sheets ou de tables natives.",
+    "shortDescriptionEn": "Softr is a no-code platform for building internal tools, client portals and web apps on top of Airtable, Google Sheets or native tables.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit : Up to 3 builders and 5 combined app users; no custom domain included.",
+      "paid": "Dès 19 $/mois, plan Basic."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "affiliateLink": "https://softr.io",
     "ogImageUrl": "https://cdn.prod.website-files.com/6772e8855f7859bc8df95c78/69cb9d33b244d44a7d3d428c_AI%20Launch%20Image.jpg",
     "substitution_cluster_v2": "automation-orchestration",
@@ -31479,7 +31520,10 @@
       "Support teams",
       "Product managers"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "soldo",
@@ -31740,14 +31784,14 @@
     "slug": "spline",
     "name": "Spline",
     "categoryId": "design-tools",
-    "shortDescription": "Spline est une plateforme collaborative de création 2D et 3D interactive en temps réel. Elle permet de modéliser, animer et publier des expériences pour le web et, selon le plan, pour les plateformes Apple et Android.",
-    "shortDescriptionEn": "Spline is a collaborative platform for real-time interactive 2D and 3D creation. It lets teams model, animate, and publish experiences for the web and, depending on the plan, Apple and Android platforms.",
+    "shortDescription": "Spline est un outil dans le navigateur pour créer des scènes 2D et 3D interactives, avec génération de médias par IA.",
+    "shortDescriptionEn": "Spline is a browser-based tool for building interactive 2D and 3D scenes, with AI-assisted media generation and export options that scale by plan.",
     "pricing": {
-      "free": "Fichiers personnels limités, viewers illimités, accès à la bibliothèque et exports web avec filigrane.",
-      "paid": "Free: 0 $ par mois ; Hobby: 12 $ par siège et par mois facturé annuellement, ou 15 $ en mensuel ; Pro: 25 $ par siège et par mois facturé annuellement, ou 30 $ en mensuel ; Max: 60 $ par siège et par mois facturé annuellement, ou 70 $ en mensuel ; Enterprise: Sur devis, facturation annuelle"
+      "free": "Plan gratuit : Limited number of personal files, unlimited viewers, access to the community asset library, web exports carry a watermark.",
+      "paid": "Dès 12 $/mois, plan Hobby."
     },
-    "defaultMonthlyPrice": 11.04,
-    "compareMonthlyPrice": 11.04,
+    "defaultMonthlyPrice": 10.3,
+    "compareMonthlyPrice": 10.3,
     "affiliateLink": "https://spline.design",
     "ogImageUrl": "https://spline.design/_next/image?q=100&url=%2F_next%2Fstatic%2Fimmutable%2Fmedia%2FdesignImg.2gbezukrw1o7o.webp&w=3840",
     "substitution_cluster_v2": "3d-design",
@@ -31770,8 +31814,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "designer",
-      "dev"
+      "SOFIA"
     ],
     "freeAlternative": "Spline free"
   },
@@ -31780,13 +31823,14 @@
     "slug": "spotify-for-podcasters",
     "name": "Spotify for Podcasters",
     "categoryId": "creation",
-    "shortDescription": "Hébergement et distribution podcast gratuits par Spotify.",
-    "shortDescriptionEn": "Free podcast hosting and distribution by Spotify.",
+    "shortDescription": "Spotify for Creators est un outil gratuit d'hébergement et de distribution pour podcasts audio et vidéo, avec analytics intégrées et monétisation via le Partner Program.",
+    "shortDescriptionEn": "Spotify for Creators is a free hosting and distribution tool for audio and video podcasts, with built-in analytics and Partner Program monetization.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Plan gratuit : Outils gratuits d'hébergement et de distribution pour les créateurs de podcast, avec une monétisation optionnelle via le Spotify Partner Program",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "websiteUrl": "https://podcasters.spotify.com",
+    "compareMonthlyPrice": 0,
+    "websiteUrl": "https://creators.spotify.com",
     "ogImageUrl": "https://microfrontend-nonhosted-cdn.spotifycdn.com/images/social-thumbnail.png",
     "substitution_cluster_v2": "podcast-hosting",
     "functional_needs": [
@@ -31806,7 +31850,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "ALIX"
     ]
   },
   {
@@ -32848,13 +32892,14 @@
     "slug": "superlist",
     "name": "Superlist",
     "categoryId": "organization",
-    "shortDescription": "Application de tâches personnelles et d'équipe avec IA — gratuite.",
-    "shortDescriptionEn": "Personal and team task app with AI — free.",
+    "shortDescription": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois.",
+    "shortDescriptionEn": "Superlist is a task management app with shared lists and AI features, free for up to 5 lists then from $5 per month.",
     "pricing": {
-      "free": "Gratuit pour individus et équipes",
-      "paid": "Plans équipe sur devis"
+      "free": "Plan gratuit : Up to 5 private/shared lists, up to 5 people per shared list, unlimited tasks and notes, 25MB uploads and 500MB storage.",
+      "paid": "Dès 4,92 $/mois, plan Basic."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 4.22,
+    "compareMonthlyPrice": 4.22,
     "websiteUrl": "https://www.superlist.com",
     "ogImageUrl": "https://framerusercontent.com/assets/xlouachsGTVuJaHXsYmxxI66e2s.png",
     "substitution_cluster_v2": "personal-task-manager",
@@ -32873,6 +32918,9 @@
       "Individus cherchant app élégante et simple"
     ],
     "prescription_quality": "ferme",
+    "personas": [
+      "CLAIRE"
+    ],
     "freeAlternative": "Superlist"
   },
   {
@@ -33177,14 +33225,14 @@
     "slug": "sysaid",
     "name": "SysAid",
     "categoryId": "organization",
-    "shortDescription": "Logiciel ITSM (IT Service Management) avec helpdesk, gestion des actifs et workflows ITIL — prix sur devis uniquement.",
-    "shortDescriptionEn": "ITSM platform with help desk, asset management, and ITIL workflows — quote-only pricing.",
+    "shortDescription": "SysAid est une plateforme ITSM pour la gestion des incidents, changements, actifs et SLA, avec un AI Copilot intégré, facturée par agent dès 89 $/mois.",
+    "shortDescriptionEn": "SysAid is an ITSM platform for incident, change, asset and SLA management, with a built-in AI Copilot, priced per agent from $89/month.",
     "pricing": {
-      "free": "Aucun plan gratuit : SysAid propose uniquement un essai de 30 jours. Aucun accès permanent sans contrat.",
-      "paid": "Tarification sur devis. Tier Help Desk : environ 1 200–1 500 $/an pour 3 agents et 250 actifs (estimation marché). Tier ITSM et ITSM+ : à partir de ~3 000–6 000 $/an selon agents et modules. Déploiement on-premise et cloud disponibles à des tarifs différents."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 89 $/mois, plan Professional."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 76.43,
+    "compareMonthlyPrice": 76.43,
     "affiliateLink": "https://sysaid.com",
     "ogImageUrl": "https://cdn.sysaid.com/wp-content/uploads/sysaid-logo-blogs.png",
     "substitution_cluster_v2": "itsm-helpdesk",
@@ -33200,7 +33248,10 @@
       "Support technique",
       "Entreprises petites à moyennes"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "systeme-io",
@@ -33934,14 +33985,14 @@
     "slug": "thinkific",
     "name": "Thinkific",
     "categoryId": "formation-education",
-    "shortDescription": "Plateforme de création de cours en ligne avec branding personnalisé.",
-    "shortDescriptionEn": "Online course creation platform with custom branding.",
+    "shortDescription": "Thinkific héberge et vend des cours en ligne avec ecommerce et communauté intégrés, à partir de 54 $/mois après un essai de 30 jours.",
+    "shortDescriptionEn": "Thinkific hosts and sells online courses with built-in ecommerce and community features, starting at $54/month after a 30-day trial.",
     "pricing": {
-      "free": "1 cours gratuit",
-      "paid": "36$/mois (Basic)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 40 $/mois, plan Basic."
     },
-    "defaultMonthlyPrice": 31.18,
-    "compareMonthlyPrice": 31.18,
+    "defaultMonthlyPrice": 34.35,
+    "compareMonthlyPrice": 34.35,
     "affiliateLink": "https://thinkific.com",
     "ogImageUrl": "https://www.thinkific.com/wp-content/uploads/2025/07/Jacques-wong.webp",
     "substitution_cluster_v2": "learning-platform",
@@ -33960,7 +34011,7 @@
     ],
     "prescription_quality": "ferme",
     "personas": [
-      "sofia"
+      "ALIX"
     ],
     "betterAlternative": {
       "tool": "kajabi",
@@ -34257,11 +34308,13 @@
     "slug": "tiktok-studio",
     "name": "Tiktok Studio",
     "categoryId": "communication",
-    "shortDescription": "Application desktop de TikTok pour gérer sa chaîne, ses analytics et publier du contenu.",
-    "shortDescriptionEn": "TikTok's desktop app to manage your channel, analytics, and publish content.",
-    "pricing": "Gratuit, fourni par TikTok.",
+    "shortDescription": "TikTok Studio est l'outil bureau gratuit de TikTok pour les analytics de chaîne, la gestion des commentaires et la planification sur comptes pro ou créateur.",
+    "shortDescriptionEn": "TikTok Studio is TikTok's free desktop tool for channel analytics, comment management and post scheduling on business or creator accounts.",
+    "pricing": {
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Pas d'offre payante obligatoire."
+    },
     "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
     "affiliateLink": "https://tiktok.com/tiktok-studio",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok-studio.jpg",
     "logo": "https://logo.clearbit.com/tiktok.com",
@@ -34288,7 +34341,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "lina"
+      "ALIX"
     ]
   },
   {
@@ -35297,14 +35350,14 @@
     "slug": "typeform",
     "name": "Typeform",
     "categoryId": "email-productivity",
-    "shortDescription": "Outil en ligne de création de formulaires et enquêtes interactifs.",
-    "shortDescriptionEn": "Online tool for creating interactive forms and surveys.",
+    "shortDescription": "Créateur de formulaires et d'enquêtes interactifs et conversationnels avec logique conditionnelle, gratuit jusqu'à 100 réponses par mois.",
+    "shortDescriptionEn": "Interactive, conversational form and survey builder with conditional logic, free up to 100 responses a month.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 28 $/mois, plan Basic."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 24.04,
+    "compareMonthlyPrice": 24.04,
     "affiliateLink": "https://typeform.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/66ffe2174aa8e8d5661c2708/6889ccfec828e151ddd96537_ogimage.png",
     "substitution_cluster_v2": "form-builder",
@@ -35320,7 +35373,10 @@
       "Freelances",
       "Créateurs de contenu"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "typefully",
@@ -37454,14 +37510,14 @@
     "slug": "workable",
     "name": "Workable",
     "categoryId": "organization",
-    "shortDescription": "ATS tout-en-un avec sourcing IA, job boards et onboarding.",
-    "shortDescriptionEn": "All-in-one ATS with AI sourcing, job boards, and onboarding.",
+    "shortDescription": "Workable est un logiciel de recrutement et RH qui combine sourcing, suivi des candidatures, onboarding et gestion des congés pour les petites entreprises.",
+    "shortDescriptionEn": "Workable combines an applicant tracking system with HR tools: AI sourcing, hiring pipelines, onboarding and time-off management for small companies.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 15 jours sans carte bancaire",
-      "paid": "Starter à 149$/mois ; Standard à 299$/mois (jusqu'à 20 employés, ~500$/mois au-delà) ; Premier à 599$/mois ; Enterprise à 719$/mois. Tarif basé sur l'effectif total de l'entreprise, pas sur le nombre de sièges."
+      "free": "Pas de plan gratuit permanent, essai de 15 jours.",
+      "paid": "Dès 299 $/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 149,
-    "compareMonthlyPrice": 149,
+    "defaultMonthlyPrice": 256.76,
+    "compareMonthlyPrice": 256.76,
     "affiliateLink": "https://workable.com",
     "ogImageUrl": "https://www.workable.com/static/images/workable_meta_image.jpg?v=4d3bd5c24a770825c594b28ab2ab4c4e",
     "substitution_cluster_v2": "workspace-ops",
@@ -37481,7 +37537,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "marc"
+      "CLAIRE"
     ]
   },
   {
@@ -37980,14 +38036,13 @@
     "slug": "youtube-studio",
     "name": "Youtube Studio",
     "categoryId": "communication",
-    "shortDescription": "Outil de gestion de chaîne YouTube, gratuit ; la monétisation a ses propres seuils.",
-    "shortDescriptionEn": "Free YouTube channel management tool; monetization has its own thresholds.",
+    "shortDescription": "YouTube Studio est le tableau de bord gratuit de Google pour publier, modifier et analyser ses vidéos. La monétisation dépend du Partner Program.",
+    "shortDescriptionEn": "YouTube Studio is Google's free dashboard for uploading, editing and analyzing videos. Monetization depends on meeting Partner Program eligibility thresholds.",
     "pricing": {
-      "free": "Gratuit, sans limite. Pas un abonnement : c'est l'interface de gestion de la chaîne YouTube.",
-      "paid": "Pas de version payante de YouTube Studio lui-même. La monétisation (Partner Program) dépend de seuils d'audience, pas d'un paiement."
+      "free": "Plan gratuit : Fully free channel management, analytics, upload and editing interface; no paid tier of YouTube Studio itself.",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
     "affiliateLink": "https://studio.youtube.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/youtube-studio.jpg",
     "logo": "https://logo.clearbit.com/studio.youtube.com",
@@ -38014,7 +38069,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "lina"
+      "ALIX"
     ]
   },
   {
@@ -38162,13 +38217,14 @@
     "slug": "zed",
     "name": "Zed",
     "categoryId": "ai-general",
-    "shortDescription": "Éditeur de code moderne open-source écrit en Rust pour Linux, macOS et Windows. Créé par Nathan Sobo, co-créateur d'Atom. Conçu pour performance maximale avec collaboration en temps réel et fonctionnalités IA.",
-    "shortDescriptionEn": "Modern open-source code editor written in Rust for Linux, macOS, and Windows. Created by Nathan Sobo, co-creator of Atom. Designed for maximum performance with real-time collaboration and AI features.",
+    "shortDescription": "Éditeur de code rapide écrit en Rust, avec collaboration en temps réel et prédictions d'édition IA intégrées, gratuit avec une offre Pro payante en option.",
+    "shortDescriptionEn": "Fast, Rust-built code editor with built-in real-time collaboration and AI edit predictions, free with an optional paid Pro plan.",
     "pricing": {
-      "free": "Complètement gratuit et open-source. Pas de limitation fonctionnelle. Développé par Zed Industries.",
-      "paid": "Zed Free: Gratuit et open-source"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 10 $/mois, plan Pro."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 8.59,
+    "compareMonthlyPrice": 8.59,
     "affiliateLink": "https://zed.dev/",
     "ogImageUrl": "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/img/parallel-agents/sidebar.webp",
     "logo": "/logos/zed.svg",

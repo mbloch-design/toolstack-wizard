@@ -3,7 +3,8 @@
   "slug": "payhawk",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Payhawk",
     "vendor": "Payhawk",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.payhawk.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Payhawk pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.payhawk.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Payhawk pricing"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -24,68 +31,300 @@
     "verifiedOn": "2026-09-25",
     "region": "UK",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "growth",
         "name": "Growth Program",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 149, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 149,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "10 corporate cards, 10 user seats (8 employee + 2 admin/accountant), up to 15 invoices/month, up to 15 reimbursements/month, single entity only, basic ERP integrations, no Procure-to-Pay or multi-entity management", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "10 corporate cards, 10 user seats (8 employee + 2 admin/accountant), up to 15 invoices/month, up to 15 reimbursements/month, single entity only, basic ERP integrations, no Procure-to-Pay or multi-entity management",
+            "fr": "10 cartes d'entreprise, 10 postes utilisateurs (8 employés + 2 admin/comptable), jusqu'à 15 factures/mois, jusqu'à 15 remboursements/mois, une seule entité, intégrations ERP de base, pas de Procure-to-Pay ni de gestion multi-entités",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise (custom)",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Modular pricing: choose core modules (Travel, Cards & Expenses, Bill Pay, Procure to Pay), unit-based scaling for cards/reimbursements/invoices, and optional add-ons for advanced ERP/HRIS integrations, multi-entity, budget tracking, credit line; typically annual or multi-year contracts, no flat setup fee", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Modular pricing: choose core modules (Travel, Cards & Expenses, Bill Pay, Procure to Pay), unit-based scaling for cards/reimbursements/invoices, and optional add-ons for advanced ERP/HRIS integrations, multi-entity, budget tracking, credit line; typically annual or multi-year contracts, no flat setup fee",
+            "fr": "Tarification modulaire : choix des modules principaux (Voyage, Cartes et dépenses, Paiement de factures, Procure-to-Pay), facturation à l'unité pour les cartes/remboursements/factures, et options pour les intégrations ERP/SIRH avancées, le multi-entités, le suivi budgétaire, la ligne de crédit ; contrats généralement annuels ou pluriannuels, sans frais de mise en place fixe",
+            "sourceIds": [
+              "s1"
+            ]
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "growth",
     "addOns": [
-      { "name": "Advanced ERP integrations (SAP, NetSuite, Dynamics)", "sourceIds": ["s1"] },
-      { "name": "Enterprise HRIS integrations (Workday, ADP)", "sourceIds": ["s1"] },
-      { "name": "Budget tracking", "sourceIds": ["s1"] },
-      { "name": "Additional entities", "sourceIds": ["s1"] },
-      { "name": "Credit line", "sourceIds": ["s1"] }
+      {
+        "name": "Advanced ERP integrations (SAP, NetSuite, Dynamics)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Enterprise HRIS integrations (Workday, ADP)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Budget tracking",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Additional entities",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Credit line",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "The entry-level Growth Program is capped at a single legal entity and excludes Procure-to-Pay and multi-entity management, which require the custom Enterprise plan.", "sourceIds": ["s1"] },
-      { "en": "Enterprise pricing is fully custom and modular; no fixed price list is published beyond the Growth Program.", "sourceIds": ["s1"] }
+      {
+        "en": "The entry-level Growth Program is capped at a single legal entity and excludes Procure-to-Pay and multi-entity management, which require the custom Enterprise plan.",
+        "fr": "L'offre d'entrée Growth Program est plafonnée à une seule entité juridique et exclut le Procure-to-Pay et la gestion multi-entités, qui demandent l'offre Enterprise sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Enterprise pricing is fully custom and modular; no fixed price list is published beyond the Growth Program.",
+        "fr": "Le tarif Enterprise est entièrement sur devis et modulaire ; aucune grille de prix fixe n'est publiée au-delà de l'offre Growth Program.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "All-in-one spend management: corporate cards, expense management, bill pay/invoices, and reimbursements in one platform.", "sourceIds": ["s1"] },
-      { "en": "AI-native automated data extraction for expenses and invoices.", "sourceIds": ["s1"] }
+      {
+        "en": "All-in-one spend management: corporate cards, expense management, bill pay/invoices, and reimbursements in one platform.",
+        "fr": "Gestion des dépenses tout-en-un : cartes d'entreprise, gestion des dépenses, paiement de factures et remboursements dans une seule plateforme.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-native automated data extraction for expenses and invoices.",
+        "fr": "Extraction automatisée des données par IA pour les dépenses et les factures.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Growth Program plan supports a single legal entity only; multi-entity management requires the custom Enterprise tier.", "sourceIds": ["s1"] },
-      { "en": "Procure-to-Pay functionality is not available on the Growth Program plan.", "sourceIds": ["s1"] }
+      {
+        "en": "Growth Program plan supports a single legal entity only; multi-entity management requires the custom Enterprise tier.",
+        "fr": "L'offre Growth Program ne prend en charge qu'une seule entité juridique ; la gestion multi-entités exige l'offre Enterprise sur devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Procure-to-Pay functionality is not available on the Growth Program plan.",
+        "fr": "La fonctionnalité Procure-to-Pay n'est pas disponible sur l'offre Growth Program.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or finance lead at a small single-entity company who wants corporate cards, expenses and invoices in one platform without a custom contract.",
+      "fr": "Une responsable ops ou finance dans une petite entreprise à entité unique qui veut cartes d'entreprise, dépenses et factures dans une seule plateforme sans contrat sur mesure."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Small company finance lead: issue corporate cards to 8 employees and automate expense and invoice data extraction on the Growth Program plan.",
+      "fr": "Responsable finance d'une petite entreprise : distribuer des cartes d'entreprise à 8 employés et automatiser l'extraction des données de dépenses et de factures sur l'offre Growth Program."
+    },
+    {
+      "en": "Growing team: centralize up to 15 invoices and 15 reimbursements a month in one platform instead of juggling separate tools.",
+      "fr": "Équipe en croissance : centraliser jusqu'à 15 factures et 15 remboursements par mois dans une seule plateforme au lieu de jongler entre plusieurs outils."
+    }
+  ],
   "alternatives": [
-    { "slug": "spendesk", "reason": { "en": "Direct competitor for spend management, cards and expense automation." } },
-    { "slug": "soldo", "reason": { "en": "Competing expense and corporate card management platform." } },
-    { "slug": "qonto", "reason": { "en": "Overlapping business banking and expense management features for the same buyer." } }
+    {
+      "slug": "spendesk",
+      "reason": {
+        "en": "Direct competitor for spend management, cards and expense automation.",
+        "fr": "Concurrent direct pour la gestion des dépenses, les cartes et l'automatisation des notes de frais."
+      }
+    },
+    {
+      "slug": "soldo",
+      "reason": {
+        "en": "Competing expense and corporate card management platform.",
+        "fr": "Plateforme concurrente de gestion des dépenses et des cartes d'entreprise."
+      }
+    },
+    {
+      "slug": "qonto",
+      "reason": {
+        "en": "Overlapping business banking and expense management features for the same buyer.",
+        "fr": "Fonctionnalités de banque professionnelle et de gestion des dépenses qui se recoupent pour le même acheteur."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Growth Program bundles cards, expenses, bill pay and reimbursements into one 149 GBP/month plan, replacing several separate tools, though it is capped at a single entity and 10 seats.",
+        "fr": "L'offre Growth Program réunit cartes, dépenses, paiement de factures et remboursements dans une seule offre à 149 £/mois, remplaçant plusieurs outils séparés, mais elle est plafonnée à une entité et 10 postes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time needed to onboard a company and get a first card issued is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour intégrer une entreprise et obtenir une première carte n'est pas couvert par les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The Growth Program is confirmed to deliver cards, expense management, bill pay and reimbursements together as promised, with AI-based data extraction for expenses and invoices.",
+        "fr": "L'offre Growth Program livre bien cartes, gestion des dépenses, paiement de factures et remboursements ensemble comme promis, avec une extraction des données par IA pour les dépenses et les factures.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "The modular Enterprise tier adds Procure-to-Pay, multi-entity management, and advanced ERP/HRIS integrations, showing a high capability ceiling beyond the entry plan.",
+        "fr": "L'offre Enterprise modulaire ajoute le Procure-to-Pay, la gestion multi-entités et des intégrations ERP/SIRH avancées, montrant un plafond de capacité élevé au-delà de l'offre d'entrée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats for expense and invoice data if a company leaves Payhawk are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export des données de dépenses et de factures en cas de départ de Payhawk ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Spend management platform",
+      "fr": "Gestion des dépenses"
+    },
+    "shortDescription": {
+      "en": "All-in-one corporate cards, expenses, bill pay and reimbursements, with AI-based data extraction for a single-entity company.",
+      "fr": "Cartes d'entreprise, dépenses, paiement de factures et remboursements réunis, avec extraction de données par IA, pour une entreprise à entité unique."
+    },
+    "longDescription": {
+      "en": "Payhawk combines corporate cards, expense management, bill pay and reimbursements in one platform, with AI-based data extraction for expenses and invoices. The entry Growth Program plan covers a single legal entity, 10 corporate cards and seats, and up to 15 invoices or reimbursements a month.\n\nAt 149 GBP a month, Growth Program excludes Procure-to-Pay and multi-entity management, which require the custom, modular Enterprise tier with its own ERP and HRIS integrations. A 7-day trial is offered before committing. The entry plan fits a small, single-entity company; a growing or multi-entity business needs the quoted Enterprise plan.",
+      "fr": "Payhawk réunit cartes d'entreprise, gestion des dépenses, paiement de factures et remboursements dans une seule plateforme, avec une extraction de données par IA pour les dépenses et les factures. L'offre d'entrée Growth Program couvre une seule entité juridique, 10 cartes et postes d'entreprise, et jusqu'à 15 factures ou remboursements par mois.\n\nÀ 149 £ par mois, Growth Program exclut le Procure-to-Pay et la gestion multi-entités, qui demandent l'offre Enterprise modulaire sur devis avec ses propres intégrations ERP et SIRH. Un essai de 7 jours est proposé avant de s'engager. L'offre d'entrée convient à une petite entreprise à entité unique ; une entreprise en croissance ou multi-entités a besoin de l'offre Enterprise sur devis."
+    },
+    "pros": [
+      {
+        "en": "Bundles cards, expenses, bill pay and reimbursements into one plan at a fixed monthly price.",
+        "fr": "Réunit cartes, dépenses, paiement de factures et remboursements dans une seule offre à prix mensuel fixe."
+      },
+      {
+        "en": "AI-based data extraction reduces manual entry for expenses and invoices.",
+        "fr": "L'extraction de données par IA réduit la saisie manuelle pour les dépenses et les factures."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Growth Program is capped at a single legal entity and 10 seats, with no published price beyond it.",
+        "fr": "Growth Program est plafonné à une seule entité juridique et 10 postes, sans prix publié au-delà."
+      },
+      {
+        "en": "Procure-to-Pay and multi-entity management require a custom Enterprise quote.",
+        "fr": "Le Procure-to-Pay et la gestion multi-entités exigent un devis Enterprise sur mesure."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run a single-entity company that wants cards, expenses, bill pay and reimbursements in one platform at a fixed monthly price.",
+        "fr": "Tu diriges une entreprise à entité unique qui veut cartes, dépenses, paiement de factures et remboursements dans une seule plateforme à prix mensuel fixe."
+      },
+      "avoidIf": {
+        "en": "You need Procure-to-Pay or multi-entity management now, which pushes you straight to a custom Enterprise quote.",
+        "fr": "Tu as besoin du Procure-to-Pay ou de la gestion multi-entités dès maintenant, ce qui t'oriente directement vers un devis Enterprise sur mesure."
+      },
+      "threshold": {
+        "en": "The Growth Program plan costs 149 GBP a month (about 1,788 GBP a year) for up to 10 seats and a single entity.",
+        "fr": "L'offre Growth Program coûte 149 £ par mois (environ 1 788 £ par an) pour un maximum de 10 postes et une seule entité."
+      }
+    }
+  },
   "unknowns": [
     "Full Enterprise-tier pricing is not published; figures depend on module selection and negotiated contract.",
     "Whether VAT/tax is included in the £149/month Growth Program price is not stated."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.model is set to \"quote\" but the Growth Program plan has a published fixed price (149 GBP/month); only the Enterprise tier is genuinely on quote. Consider reclassifying the model as \"subscription\" with Enterprise kept as an onQuote plan, if that better matches the merge rules."
+  ],
+  "hold": "model is quote but Growth has a public 149 GBP/month price; reclassify before publishing"
 }

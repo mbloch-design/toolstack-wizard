@@ -3,7 +3,8 @@
   "slug": "move-ai",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Move AI",
     "vendor": "Move AI Ltd.",
@@ -30,29 +31,76 @@
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "No public pricing page exists; the official site directs prospects to book a demo and request a quote.", "sourceIds": ["s1"] }
+      { "en": "No public pricing page exists; the official site directs prospects to book a demo and request a quote.", "fr": "Aucune page de tarifs publique n'existe ; le site officiel oriente les prospects vers une démonstration et un devis.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Markerless motion capture using a multi-camera setup, without physical suits or markers, powered by a patented AI motion engine.", "sourceIds": ["s1"] },
-      { "en": "Cloud-based Move One platform with scalable capture volumes and claimed data quality comparable to traditional optical mocap.", "sourceIds": ["s1"] },
-      { "en": "Integration with Unreal Engine for direct use of captured motion data in production pipelines.", "sourceIds": ["s1"] }
+      { "en": "Markerless motion capture using a multi-camera setup, without physical suits or markers, powered by a patented AI motion engine.", "fr": "Capture de mouvement sans marqueurs grâce à une installation multi-caméras, sans combinaison ni marqueur physique, propulsée par un moteur IA brevété.", "sourceIds": ["s1"] },
+      { "en": "Cloud-based Move One platform with scalable capture volumes and claimed data quality comparable to traditional optical mocap.", "fr": "Plateforme cloud Move One à volumes de capture évolutifs, avec une qualité de données annoncée comme comparable au mocap optique traditionnel.", "sourceIds": ["s1"] },
+      { "en": "Integration with Unreal Engine for direct use of captured motion data in production pipelines.", "fr": "Intégration avec Unreal Engine pour utiliser directement les données de mouvement capturées en production.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No self-serve pricing; access requires booking a demo and going through a sales process.", "sourceIds": ["s1"] },
-      { "en": "Targeted at studio-scale production (VFX, gaming, entertainment) with named enterprise clients (Ubisoft, Disney, Sony), suggesting a cost structure not aimed at solo freelancers.", "sourceIds": ["s1"] }
+      { "en": "No self-serve pricing; access requires booking a demo and going through a sales process.", "fr": "Aucun tarif en libre-service ; l'accès suppose de réserver une démo et de passer par un parcours commercial.", "sourceIds": ["s1"] },
+      { "en": "Targeted at studio-scale production (VFX, gaming, entertainment) with named enterprise clients (Ubisoft, Disney, Sony), suggesting a cost structure not aimed at solo freelancers.", "fr": "Destiné à une production à l'échelle des studios (VFX, jeu vidéo, divertissement), avec des clients entreprise cités (Ubisoft, Disney, Sony), ce qui laisse supposer une structure de coût qui ne vise pas un indépendant.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Unreal Engine", "slug": null, "sourceIds": ["s1"] }
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": { "en": "VFX, animation and game studios needing markerless motion capture at production scale, not solo freelancers or small teams.", "fr": "Studios VFX, d'animation ou de jeu vidéo ayant besoin d'une capture de mouvement sans marqueurs à l'échelle de la production, pas un indépendant ou une petite équipe." },
+    "soloRelevance": "low",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "VFX studio: capture an actor's movement without a mocap suit, then export the data to Unreal Engine for a game cinematic.", "fr": "Studio VFX : capturer le mouvement d'un acteur sans combinaison de mocap, puis exporter les données vers Unreal Engine pour une cinématique de jeu." },
+    { "en": "Game production: prototype character animation from multi-camera video instead of booking a traditional optical mocap stage.", "fr": "Production de jeu : prototyper une animation de personnage à partir de vidéos multi-caméras, sans réserver un plateau de mocap optique traditionnel." }
+  ],
   "alternatives": [
-    { "slug": "autodesk-flow-studio", "reason": { "en": "Alternative animation/production tool also used in VFX and game pipelines." } },
-    { "slug": "blender", "reason": { "en": "Free option for 3D animation, though without markerless motion capture hardware/AI pipeline." } }
+    { "slug": "autodesk-flow-studio", "reason": { "en": "Alternative animation/production tool also used in VFX and game pipelines.", "fr": "Outil d'animation et de production alternatif, également utilisé dans les pipelines VFX et jeu vidéo." } },
+    { "slug": "blender", "reason": { "en": "Free option for 3D animation, though without markerless motion capture hardware/AI pipeline.", "fr": "Option gratuite pour l'animation 3D, mais sans dispositif de capture de mouvement sans marqueurs ni pipeline IA." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "No public pricing and an enterprise-only sales process, explicitly aimed at studio-scale clients rather than solo freelancers, make the cost hard to justify for ToolTrim's audience.", "fr": "L'absence de tarif public et un parcours commercial réservé aux studios, explicitement pensé pour des clients à l'échelle de la production plutôt que pour un indépendant, rendent le coût difficile à justifier pour la cible de ToolTrim.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time and skill needed for a first usable capture is not covered by the collected sources.", "fr": "Note neutre : le temps et la compétence nécessaires pour obtenir une première capture utilisable ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The product page claims data quality comparable to traditional optical mocap, but this is a vendor claim not confirmed by an independent source.", "fr": "La page produit annonce une qualité de données comparable au mocap optique traditionnel, mais c'est une affirmation de l'éditeur non confirmée par une source indépendante.", "sourceIds": ["s1"] },
+      "puissance": { "en": "A patented AI motion engine used by named studios like Ubisoft, Disney and Sony points to a high capability ceiling within the motion-capture category.", "fr": "Un moteur IA brevété utilisé par des studios cités comme Ubisoft, Disney et Sony indique un plafond de capacité élevé dans la catégorie de la capture de mouvement.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and data portability if a studio stops using Move AI are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des données en cas d'arrêt d'utilisation de Move AI ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI motion capture", "fr": "Capture de mouvement IA" },
+    "shortDescription": { "en": "Markerless motion capture for VFX and gaming studios, sold through a sales demo only, with no public pricing.", "fr": "Capture de mouvement sans marqueurs pour les studios VFX et jeu vidéo, vendue uniquement via une démonstration commerciale, sans tarif public." },
+    "longDescription": {
+      "en": "Move AI captures human motion with a multi-camera setup and AI processing, without suits or physical markers. The cloud-based Move One platform claims capture quality comparable to traditional optical mocap, and the resulting motion data integrates directly with Unreal Engine for production pipelines.\n\nThere is no published pricing: access goes through a sales demo, and named clients include large studios such as Ubisoft, Disney and Sony. That enterprise-oriented sales process, with no self-serve tier, makes Move AI a poor match for a solo freelancer or a small team working with a limited budget.",
+      "fr": "Move AI capture le mouvement humain grâce à une installation multi-caméras et un traitement par IA, sans combinaison ni marqueur physique. La plateforme cloud Move One revendique une qualité de capture comparable au mocap optique traditionnel, et les données obtenues s'intègrent directement dans Unreal Engine pour la production.\n\nAucun tarif n'est publié : l'accès passe par une démonstration commerciale, et les clients cités comptent de grands studios comme Ubisoft, Disney et Sony. Ce parcours commercial orienté entreprise, sans offre en libre-service, rend l'outil peu adapté à un indépendant ou une petite équipe au budget limité."
+    },
+    "pros": [
+      { "en": "No physical markers needed, faster to set up than a traditional optical mocap rig.", "fr": "Aucun marqueur physique nécessaire, installation plus rapide qu'un dispositif de mocap optique classique." },
+      { "en": "Direct export to Unreal Engine for production pipelines.", "fr": "Export direct vers Unreal Engine pour les pipelines de production." }
+    ],
+    "cons": [
+      { "en": "No public pricing; access only through a sales demo.", "fr": "Aucun tarif public ; accès uniquement via une démonstration commerciale." },
+      { "en": "Positioned for studios, not for a budget-conscious freelancer.", "fr": "Positionné pour les studios, pas pour un indépendant au budget limité." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a VFX, animation or game studio that needs markerless mocap at production scale and can go through an enterprise sales process.", "fr": "Tu diriges un studio VFX, d'animation ou de jeu vidéo qui a besoin de mocap sans marqueurs à l'échelle de la production et tu peux passer par un parcours commercial de type entreprise." },
+      "avoidIf": { "en": "You are a solo freelancer or small team without the budget for an enterprise sales negotiation.", "fr": "Tu es indépendant ou en petite équipe, sans budget pour une négociation commerciale de type entreprise." },
+      "threshold": { "en": "No public price exists in the collected sources; budget only after getting a quote through the sales demo.", "fr": "Aucun prix public ne figure dans les sources relevées ; budgétise seulement après un devis obtenu via la démonstration commerciale." }
+    }
+  },
   "unknowns": ["No pricing tiers, trial terms, or currency published anywhere on the official site; all commercial terms are behind a sales/demo process."],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

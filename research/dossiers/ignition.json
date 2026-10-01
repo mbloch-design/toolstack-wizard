@@ -3,7 +3,8 @@
   "slug": "ignition",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Ignition",
     "vendor": "Ignition (formerly Practice Ignition)",
@@ -15,8 +16,20 @@
     "statusNote": "The seed URL practiceignition.com now 301-redirects permanently to ignitionapp.com, reflecting the vendor's rebrand from Practice Ignition to Ignition."
   },
   "sources": [
-    { "id": "s1", "url": "https://www.ignitionapp.com/au/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Ignition Pricing (AU)" },
-    { "id": "s2", "url": "https://www.ignitionapp.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Ignition product page" }
+    {
+      "id": "s1",
+      "url": "https://www.ignitionapp.com/au/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Ignition Pricing (AU)"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.ignitionapp.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Ignition product page"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -25,41 +38,271 @@
     "verifiedOn": "2026-09-25",
     "region": "AU",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [],
     "comparePlanKey": null,
     "addOns": [
-      { "name": "Deals Pipeline", "unit": "account", "price": {}, "sourceIds": ["s1"] },
-      { "name": "Online Forms", "unit": "account", "price": {}, "sourceIds": ["s1"] }
+      {
+        "name": "Deals Pipeline",
+        "unit": "account",
+        "price": {},
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Online Forms",
+        "unit": "account",
+        "price": {},
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "The pricing page renders plan names and dollar amounts dynamically (monthly/annual toggle); the fetched content only confirmed the 14-day trial and add-on names, not the underlying tier prices, which must be reverified on a rendered page before use.", "sourceIds": ["s1"] }
+      {
+        "en": "The pricing page renders plan names and dollar amounts dynamically (monthly/annual toggle); the fetched content only confirmed the 14-day trial and add-on names, not the underlying tier prices, which must be reverified on a rendered page before use.",
+        "fr": "La page de tarifs affiche les noms d'offres et les montants de façon dynamique (bascule mensuel/annuel) ; le contenu récupéré n'a confirmé que l'essai de 14 jours et les noms des options, pas les prix des offres, à revérifier sur une page rendue avant toute utilisation.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Creates professional online proposals with upselling options for service-based businesses.", "sourceIds": ["s2"] },
-      { "en": "Manages contracts and engagement letters digitally alongside proposals.", "sourceIds": ["s2"] },
-      { "en": "Captures client payment details upfront and automates billing and invoicing.", "sourceIds": ["s2"] },
-      { "en": "AI-powered price insights to help set service pricing, plus workflow automation templates and custom intake forms.", "sourceIds": ["s2"] }
+      {
+        "en": "Creates professional online proposals with upselling options for service-based businesses.",
+        "fr": "Crée des propositions en ligne professionnelles avec des options de vente additionnelle pour les entreprises de service.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Manages contracts and engagement letters digitally alongside proposals.",
+        "fr": "Gère les contrats et lettres de mission numériquement, en complément des propositions.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Captures client payment details upfront and automates billing and invoicing.",
+        "fr": "Récupère les informations de paiement du client en amont et automatise la facturation.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "AI-powered price insights to help set service pricing, plus workflow automation templates and custom intake forms.",
+        "fr": "Recommandations tarifaires basées sur l'IA pour aider à fixer le prix des services, plus des modèles d'automatisation de flux et des formulaires d'intégration personnalisés.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Exact pricing tiers and dollar amounts are not published as static content; they require a JavaScript-rendered page or contacting sales to see plan costs.", "sourceIds": ["s1"] },
-      { "en": "Positioned for accounting, bookkeeping, consulting and professional services firms rather than a general-purpose proposal tool, per the target industries listed.", "sourceIds": ["s2"] }
+      {
+        "en": "Exact pricing tiers and dollar amounts are not published as static content; they require a JavaScript-rendered page or contacting sales to see plan costs.",
+        "fr": "Les offres et montants exacts ne sont pas publiés en contenu statique ; il faut une page rendue en JavaScript ou contacter l'équipe commerciale pour voir le coût des offres.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Positioned for accounting, bookkeeping, consulting and professional services firms rather than a general-purpose proposal tool, per the target industries listed.",
+        "fr": "Positionné pour les cabinets de comptabilité, tenue de livres, conseil et services professionnels plutôt que comme un outil de proposition généraliste, d'après les secteurs cibles listés.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Xero", "slug": null, "sourceIds": ["s2"] },
-      { "name": "QuickBooks", "slug": "quickbooks", "sourceIds": ["s2"] },
-      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
-      { "name": "Zapier", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "Xero",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "QuickBooks",
+        "slug": "quickbooks",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "Zapier",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "alternatives": [],
-  "missingAlternatives": [
-    { "name": "PandaDoc", "officialUrl": "https://www.pandadoc.com", "reason": "Common proposal and e-signature competitor for service businesses, not in the catalogue" }
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Accounting, bookkeeping and consulting firms that need to combine proposals, engagement letters, e-signature and billing in one workflow.",
+      "fr": "Cabinets de comptabilité, de tenue de livres et de conseil qui veulent réunir propositions, lettres de mission, signature électronique et facturation dans un seul flux."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Accounting firm: send a proposal with upsell options, get it signed, and capture the client's card for automatic recurring billing.",
+      "fr": "Cabinet comptable : envoyer une proposition avec des options de vente additionnelle, la faire signer, puis enregistrer la carte du client pour une facturation récurrente automatique."
+    },
+    {
+      "en": "Consulting practice: use AI price insights to set a new service's fee before sending the engagement letter.",
+      "fr": "Cabinet de conseil : utiliser les recommandations tarifaires de l'IA pour fixer le prix d'un nouveau service avant d'envoyer la lettre de mission."
+    }
   ],
-  "unknowns": ["Exact monthly/annual price for each plan (Solo/Core/Pro or similar tier names) could not be confirmed from official sources: the pricing page requires JavaScript rendering not available to this session, and only listicle/comparison sites (not admissible as proof) showed figures."],
-  "conflicts": []
+  "alternatives": [
+    {
+      "slug": "pandadoc",
+      "reason": {
+        "en": "Proposal and e-signature competitor also used by service businesses for contracts and payment collection.",
+        "fr": "Concurrent pour les propositions et la signature électronique, aussi utilisé par les entreprises de service pour les contrats et l'encaissement."
+      }
+    },
+    {
+      "slug": "proposify",
+      "reason": {
+        "en": "Proposal software competing directly on winning and tracking client proposals.",
+        "fr": "Logiciel de propositions qui concurrence directement sur la création et le suivi des propositions client."
+      }
+    },
+    {
+      "slug": "dubsado",
+      "reason": {
+        "en": "Client management tool covering proposals, contracts and invoicing for a similar service-business audience.",
+        "fr": "Outil de gestion client qui couvre propositions, contrats et facturation pour un public d'entreprises de service similaire."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: with no confirmed plan prices in the collected sources, the gain relative to cost cannot be judged.",
+        "fr": "Note neutre : sans prix d'offre confirmé dans les sources relevées, le gain rapporté au coût ne peut pas être jugé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the time needed to send a first proposal is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour envoyer une première proposition ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Proposals, contracts, payment capture and billing are confirmed as working together in one flow, matching the stated promise for service firms.",
+        "fr": "Les propositions, contrats, capture de paiement et facturation sont confirmés comme fonctionnant ensemble dans un seul flux, conforme à la promesse affichée pour les cabinets de service.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "AI price insights, workflow automation templates and native Xero/QuickBooks integrations go beyond a basic proposal tool.",
+        "fr": "Les recommandations tarifaires par IA, les modèles d'automatisation de flux et les intégrations natives Xero/QuickBooks dépassent un simple outil de proposition.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability out of Ignition are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données hors d'Ignition ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Proposals and billing",
+      "fr": "Propositions et facturation"
+    },
+    "shortDescription": {
+      "en": "Connects proposals, engagement letters, e-signature and automated billing for accounting and consulting firms.",
+      "fr": "Relie propositions, lettres de mission, signature électronique et facturation automatisée pour les cabinets comptables et de conseil."
+    },
+    "longDescription": {
+      "en": "Ignition (formerly Practice Ignition) lets service firms send online proposals with upsell options, attach contracts or engagement letters, and capture a client's payment details upfront to automate billing once the proposal is signed. AI-based price insights and workflow automation templates sit on top of that core flow.\n\nThe official pricing page renders amounts dynamically, so exact plan costs were not confirmed in this pass; a 14-day trial is offered, and add-ons like a deals pipeline or online forms extend the base plan. The product targets accounting, bookkeeping and consulting firms rather than a general audience.",
+      "fr": "Ignition (anciennement Practice Ignition) permet aux cabinets de service d'envoyer des propositions en ligne avec des options de vente additionnelle, d'y joindre des contrats ou lettres de mission, et de récupérer le paiement du client en amont pour automatiser la facturation une fois la proposition signée. Des recommandations tarifaires par IA complètent ce flux.\n\nLa page de tarifs affiche les montants de façon dynamique : les coûts exacts n'ont pas pu être confirmés ici. Un essai de 14 jours est proposé, avec des options comme un pipeline de deals ou des formulaires en ligne. Le produit cible les cabinets de comptabilité, de tenue de livres et de conseil."
+    },
+    "pros": [
+      {
+        "en": "Combines proposal, contract, signature and billing in one connected flow.",
+        "fr": "Réunit proposition, contrat, signature et facturation dans un seul flux connecté."
+      },
+      {
+        "en": "Native integrations with Xero and QuickBooks for accounting firms.",
+        "fr": "Intégrations natives avec Xero et QuickBooks pour les cabinets comptables."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Exact plan prices are not published as static content and require contacting sales or a rendered page to see.",
+        "fr": "Les prix exacts des offres ne sont pas publiés en contenu statique et nécessitent de contacter l'équipe commerciale ou de consulter une page rendue."
+      },
+      {
+        "en": "Built for accounting, bookkeeping and consulting firms, not a general-purpose proposal tool.",
+        "fr": "Conçu pour les cabinets de comptabilité, de tenue de livres et de conseil, pas comme un outil de proposition généraliste."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run an accounting, bookkeeping or consulting practice and want proposals, signature and billing in one connected tool.",
+        "fr": "Tu diriges un cabinet de comptabilité, de tenue de livres ou de conseil et tu veux des propositions, une signature et une facturation dans un seul outil connecté."
+      },
+      "avoidIf": {
+        "en": "You need a general-purpose proposal tool outside professional services, or you want to see every plan price before talking to sales.",
+        "fr": "Tu as besoin d'un outil de proposition généraliste hors services professionnels, ou tu veux voir chaque prix d'offre avant de parler à un commercial."
+      },
+      "threshold": {
+        "en": "No confirmed monthly or annual plan price is available in the collected sources; get the current figures from a rendered pricing page or sales before budgeting.",
+        "fr": "Aucun prix d'offre mensuel ou annuel confirmé n'est disponible dans les sources relevées ; obtiens les chiffres actuels sur une page de tarifs rendue ou auprès des commerciaux avant de budgéter."
+      }
+    }
+  },
+  "unknowns": [
+    "Exact monthly/annual price for each plan (Solo/Core/Pro or similar tier names) could not be confirmed from official sources: the pricing page requires JavaScript rendering not available to this session, and only listicle/comparison sites (not admissible as proof) showed figures."
+  ],
+  "conflicts": [],
+  "reviewNotes": [
+    "The pricing page could not be statically confirmed (JS-rendered) and the dossier holds no plan price; check ignitionapp.com/pricing before publishing any price."
+  ]
 }
